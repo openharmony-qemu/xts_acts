@@ -33,6 +33,7 @@ export default function albumCommitModifyTest () {
     let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
     const helper:ESObject  = photoAccessHelper.getPhotoAccessHelper(testContext)
     const invalidArgErrorCode = 13900020;
+    const ts = `_${Date.now()}`;
 
     beforeAll(async () => {
       console.info('beforeAll case');
@@ -53,7 +54,7 @@ export default function albumCommitModifyTest () {
     it('album_commitModify_callback_000', Level.LEVEL0, async (done: Function) => {
       const testNum = 'album_commitModify_callback_000';
       try {
-        const album:ESObject = await helper.createAlbum(testNum);
+        const album:ESObject = await helper.createAlbum(`${testNum}${ts}`);
         const newName:ESObject = Date.now() + album.albumName;
         album.albumName = newName;
         album.commitModify(async (err:BusinessError) => {
@@ -92,7 +93,7 @@ export default function albumCommitModifyTest () {
        it('album_commitModify_callback_001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'album_commitModify_callback_001';
       try {
-        const album: photoAccessHelper.Album = await helper.createAlbum(testNum);
+        const album: photoAccessHelper.Album = await helper.createAlbum(`${testNum}${ts}`);
         album.commitModify(async (err: BusinessError) => {
           if (err) {
             console.info(`${testNum} err: ${err}`);
@@ -120,7 +121,7 @@ export default function albumCommitModifyTest () {
     it('album_commitModify_callback_002', Level.LEVEL2, async (done: Function) => {
       const testNum = 'album_commitModify_callback_002';
       try {
-        const album: photoAccessHelper.Album = await helper.createAlbum(testNum);
+        const album: photoAccessHelper.Album = await helper.createAlbum(`${testNum}${ts}`);
         const invalidName:string = genRadomStr(256);
         album.albumName = invalidName;
         album.commitModify(async (err: BusinessError) => {
@@ -145,7 +146,7 @@ export default function albumCommitModifyTest () {
     it('album_commitModify_callback_003', Level.LEVEL2, async (done: Function) => {
       const testNum = 'album_commitModify_callback_003';
       try {
-        const album: photoAccessHelper.Album = await helper.createAlbum(testNum);
+        const album: photoAccessHelper.Album = await helper.createAlbum(`${testNum}${ts}`);
         const TITLE_REGEX_CHECK: string = '\\/:*?"\'`<>|{}\[\]';
         let count = 0;
         for (let i = 0; i < TITLE_REGEX_CHECK.length; i++) {
@@ -220,7 +221,7 @@ export default function albumCommitModifyTest () {
     */
     it('album_commitModify_callback_005', Level.LEVEL0, async (done: Function) => {
       let testNum: string = 'album_commitModify_callback_005';
-      let album: photoAccessHelper.Album = await helper.createAlbum(testNum);
+      let album: photoAccessHelper.Album = await helper.createAlbum(`${testNum}${ts}`);
       
       let newName = '1234';
       try {
@@ -258,7 +259,7 @@ export default function albumCommitModifyTest () {
     */
     it('album_commitModify_callback_006', Level.LEVEL2, async (done: Function) => {
       let testNum: string = 'album_commitModify_callback_006';
-      let album: photoAccessHelper.Album = await helper.createAlbum(testNum);
+      let album: photoAccessHelper.Album = await helper.createAlbum(`${testNum}${ts}`);
       
       let invalidName = '?';
       try {
@@ -290,7 +291,7 @@ export default function albumCommitModifyTest () {
     */
     it('album_commitModify_callback_007', Level.LEVEL0, async (done: Function) => {
       let testNum: string = 'album_commitModify_callback_007';
-      let album: photoAccessHelper.Album = await helper.createAlbum(testNum);
+      let album: photoAccessHelper.Album = await helper.createAlbum(`${testNum}${ts}`);
       try {
         album.commitModify((err) => {
           console.info(`${testNum} Entering the callback`);
@@ -355,7 +356,7 @@ export default function albumCommitModifyTest () {
     */
     it('album_commitModify_callback_009', Level.LEVEL2, async (done: Function) => {
       let testNum: string = 'album_commitModify_callback_009';
-      let album: photoAccessHelper.Album = await helper.createAlbum(testNum);
+      let album: photoAccessHelper.Album = await helper.createAlbum(`${testNum}${ts}`);
       try {
         album.albumName = testNum;
         album.commitModify((err) => {
@@ -418,7 +419,7 @@ export default function albumCommitModifyTest () {
     */
     it('album_commitModify_callback_011', Level.LEVEL2, async (done: Function) => {
       let testNum: string = 'album_commitModify_callback_011';
-      let album: photoAccessHelper.Album = await helper.createAlbum(testNum);
+      let album: photoAccessHelper.Album = await helper.createAlbum(`${testNum}${ts}`);
       try {
         album.albumName = '';
         album.commitModify((err) => {
@@ -449,7 +450,7 @@ export default function albumCommitModifyTest () {
     */
     it('album_commitModify_callback_012', Level.LEVEL2, async (done: Function) => {
       let testNum: string = 'album_commitModify_callback_012';
-      let album: photoAccessHelper.Album = await helper.createAlbum(testNum);
+      let album: photoAccessHelper.Album = await helper.createAlbum(`${testNum}${ts}`);
       try {
         album.albumName = 'm'.repeat(256);
         album.commitModify((err) => {
@@ -481,7 +482,7 @@ export default function albumCommitModifyTest () {
     it('album_commitModify_callback_013', Level.LEVEL2, async (done: Function) => {
       const testNum = 'album_commitModify_callback_013';
       try {
-        const album: photoAccessHelper.Album = await helper.createAlbum(testNum);
+        const album: photoAccessHelper.Album = await helper.createAlbum(`${testNum}${ts}`);
         const newName: string = genRadomStr(255);
         album.albumName = newName;
         album.commitModify(async (err:BusinessError) => {
@@ -521,7 +522,7 @@ export default function albumCommitModifyTest () {
     it('album_commitModify_promise_000', Level.LEVEL0, async (done: Function) => {
       const testNum = 'album_commitModify_promise_000';
       try {
-        const album:ESObject = await helper.createAlbum(testNum);
+        const album:ESObject = await helper.createAlbum(`${testNum}${ts}`);
         const newName:ESObject = Date.now() + album.albumName;
         album.albumName = newName;
         await album.commitModify();
@@ -550,7 +551,7 @@ export default function albumCommitModifyTest () {
     it('album_commitModify_promise_001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'album_commitModify_promise_001';
       try {
-        const album:ESObject = await helper.createAlbum(testNum);
+        const album:ESObject = await helper.createAlbum(`${testNum}${ts}`);
         await album.commitModify();
         done();
       } catch (error) {
@@ -571,7 +572,7 @@ export default function albumCommitModifyTest () {
     it('album_commitModify_promise_002', Level.LEVEL2, async (done: Function) => {
       const testNum = 'album_commitModify_promise_002';
       try {
-        const album:ESObject = await helper.createAlbum(testNum);
+        const album:ESObject = await helper.createAlbum(`${testNum}${ts}`);
         const invalidName:ESObject = genRadomStr(256);
         album.albumName = invalidName;
         await album.commitModify();
@@ -593,7 +594,7 @@ export default function albumCommitModifyTest () {
     it('album_commitModify_promise_003', Level.LEVEL2, async (done: Function) => {
       const testNum = 'album_commitModify_promise_003';
       try {
-        const album:ESObject = await helper.createAlbum(testNum);
+        const album:ESObject = await helper.createAlbum(`${testNum}${ts}`);
         const TITLE_REGEX_CHECK: string = '\\/:*?"\'`<>|{}\[\]';
         let count = 0;
         for (let i = 0; i < TITLE_REGEX_CHECK.length; i++) {
@@ -629,7 +630,7 @@ export default function albumCommitModifyTest () {
     it('album_commitModify_promise_004', Level.LEVEL2, async (done: Function) => {
       const testNum = 'album_commitModify_promise_004';
       try {
-        const album: ESObject = await helper.createAlbum(testNum);
+        const album: ESObject = await helper.createAlbum(`${testNum}${ts}`);
         const newName: ESObject = genRadomStr(255);
         album.albumName = newName;
         await album.commitModify();
@@ -684,7 +685,7 @@ export default function albumCommitModifyTest () {
      */
     it('album_commitModify_promise_006', Level.LEVEL2, async (done: Function) => {
       const testNum = 'album_commitModify_promise_006';
-      let album: photoAccessHelper.Album = await helper.createAlbum(testNum);
+      let album: photoAccessHelper.Album = await helper.createAlbum(`${testNum}${ts}`);
       let invalidName = '?';
       try {
         album.albumName = invalidName;
@@ -735,7 +736,7 @@ export default function albumCommitModifyTest () {
      */
     it('SUB_MULTIMEDIA_ALBUM_COMMITMODIFY_PROMISE_008', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MULTIMEDIA_ALBUM_COMMITMODIFY_PROMISE_008';
-      let album: photoAccessHelper.Album = await helper.createAlbum(testNum);
+      let album: photoAccessHelper.Album = await helper.createAlbum(`${testNum}${ts}`);
       try {
         album.albumName = '';
         await album.commitModify();
@@ -758,7 +759,7 @@ export default function albumCommitModifyTest () {
      */
     it('SUB_MULTIMEDIA_ALBUM_COMMITMODIFY_PROMISE_009', Level.LEVEL2, async (done: Function) => {
       const testNum = 'SUB_MULTIMEDIA_ALBUM_COMMITMODIFY_PROMISE_009';
-      let album: photoAccessHelper.Album = await helper.createAlbum(testNum);
+      let album: photoAccessHelper.Album = await helper.createAlbum(`${testNum}${ts}`);
       try {
         album.albumName = 'm'.repeat(256);
         await album.commitModify();

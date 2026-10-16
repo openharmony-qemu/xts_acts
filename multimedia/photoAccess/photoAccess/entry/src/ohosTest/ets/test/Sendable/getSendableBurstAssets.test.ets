@@ -23,7 +23,9 @@ import {
   pushCreateAsset,
   photoFetchOption,
   fetchAllOption,
-  driveFn
+  driveFn,
+  checkResourceFile,
+  createResource
 } from '../common'
 import common from '@ohos.app.ability.common';
 
@@ -42,7 +44,8 @@ export default function getSendableBurstAssetsTest () {
       await getPermission();
       await driveFn();
       await sleep(1000)
-      await pushCreateAsset(testContext, fileNameList);
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNameList)
     });
 
     const getBurstKey = async (testNum: string, fetchOps: photoAccessHelper.FetchOptions): Promise<string> => {
