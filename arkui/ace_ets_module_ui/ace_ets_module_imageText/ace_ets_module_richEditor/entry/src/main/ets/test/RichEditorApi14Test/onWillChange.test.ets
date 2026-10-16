@@ -58,7 +58,7 @@ export default function RichEditorOnWillChangeTest() {
       let button = await driver.findComponent(ON.id('setCaretOffset'));
       let point = await button.getBoundsCenter();
       await CommonFunc.sleep(500);
-      await driver.click(point.x, point.y);
+      await driver.clickAt({ x: point.x, y: point.y, displayId: displayID });
       await CommonFunc.sleep(1000);
       try {
         await driver.triggerKey(2054, displayID);

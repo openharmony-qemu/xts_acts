@@ -226,7 +226,7 @@ export default function textAreaBC1Jsunit() {
       let textAreaRect = CommonFunc.getComponentRectOnScreen('textArea1')
       let clickX = Math.round((textAreaRect.right + textAreaRect.left)/2)
       let clickY = Math.round((textAreaRect.bottom + textAreaRect.top)/2)
-      await driverX.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_RIGHT)
+      await driverX.mouseClick({ x: clickX, y: clickY, displayId: displayID }, MouseButton.MOUSE_BUTTON_RIGHT)
       await CommonFunc.sleep(1000);
       let allSelect = await driver.findComponent(ON.text('全选'));
       await CommonFunc.sleep(1000);
@@ -236,7 +236,7 @@ export default function textAreaBC1Jsunit() {
         await allSelect.click();
         await CommonFunc.sleep(1000);
       }
-      await driverX.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_RIGHT)
+      await driverX.mouseClick({ x: clickX, y: clickY, displayId: displayID }, MouseButton.MOUSE_BUTTON_RIGHT)
       await CommonFunc.sleep(1000);
       let copy = await driver.findComponent(ON.text('复制'));
       await CommonFunc.sleep(1000);
@@ -252,7 +252,7 @@ export default function textAreaBC1Jsunit() {
       await CommonFunc.sleep(1000);
       console.info('textAreaBC1Jsunit_0600 component obj is: ' + txt);
       expect(txt).assertEqual('copy');
-      await driverX.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_RIGHT)
+      await driverX.mouseClick({ x: clickX, y: clickY, displayId: displayID }, MouseButton.MOUSE_BUTTON_RIGHT)
       await CommonFunc.sleep(1000);
       let paste = await driver.findComponent(ON.text('粘贴'));
       if (paste != null) {
@@ -285,7 +285,7 @@ export default function textAreaBC1Jsunit() {
       let textAreaRect = CommonFunc.getComponentRectOnScreen('textArea1')
       let clickX = Math.round((textAreaRect.right + textAreaRect.left)/2)
       let clickY = Math.round((textAreaRect.bottom + textAreaRect.top)/2)
-      await driverX.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_RIGHT)
+      await driverX.mouseClick({ x: clickX, y: clickY, displayId: displayID }, MouseButton.MOUSE_BUTTON_RIGHT)
       await CommonFunc.sleep(1000);
       let allSelect = await driver.findComponent(ON.text('全选'));
       await CommonFunc.sleep(2000);
@@ -293,7 +293,7 @@ export default function textAreaBC1Jsunit() {
         await allSelect.click();
         await CommonFunc.sleep(1000);
       }
-      await driverX.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_RIGHT)
+      await driverX.mouseClick({ x: clickX, y: clickY, displayId: displayID }, MouseButton.MOUSE_BUTTON_RIGHT)
       await CommonFunc.sleep(1000);
       let cutComponent = await driver.findComponent(ON.text('剪切'));
       await CommonFunc.sleep(2000);

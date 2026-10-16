@@ -14,7 +14,7 @@
  */
 import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { window } from '@kit.ArkUI';
+import { window, display } from '@kit.ArkUI';
 import { BusinessError } from '@ohos.base';
 
 export default class EntryAbility extends UIAbility {
@@ -33,13 +33,9 @@ export default class EntryAbility extends UIAbility {
 
     globalThis.windowStage = windowStage
     globalThis.abilityContext = this.context
-    let mainWindow: window.Window = windowStage.getMainWindowSync();
-    let promise1 = mainWindow.getProperties();
-    promise1.then((data) => {
-      console.info('当前屏幕ID' + data.displayId);
-      AppStorage.setOrCreate('displayID',data.displayId);
-    }).catch((err: BusinessError) => {
-    });
+    let displayInfo = display.getDefaultDisplaySync();
+    console.info('当前屏幕ID' + displayInfo.id);
+    AppStorage.setOrCreate('displayID', displayInfo.id);
     windowStage.loadContent('MainAbility/pages/index/index', (err: BusinessError, data) => {
       if (err.code) {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');

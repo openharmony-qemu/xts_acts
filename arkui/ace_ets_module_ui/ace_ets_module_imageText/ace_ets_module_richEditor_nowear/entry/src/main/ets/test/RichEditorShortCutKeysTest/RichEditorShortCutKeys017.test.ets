@@ -69,7 +69,7 @@ export default function RichEditorShortCutKeys017() {
       let driver = Driver.create();
       let rich = await driver.findComponent(ON.id('RichEditorShortCutKeys017'));
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
       await CommonFunc.sleep(500);
       driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_I, 0, displayID);
       await CommonFunc.sleep(500);
@@ -80,7 +80,7 @@ export default function RichEditorShortCutKeys017() {
       let addText = await driver.findComponent(ON.id('addText'));
       await addText.click();
       await CommonFunc.sleep(500);
-      await driver.click(pointCenter.x, pointCenter.y);
+      await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
       await CommonFunc.sleep(500);
       let selectAll = await driver.findComponent(ON.text('全选'));
       await selectAll.click();

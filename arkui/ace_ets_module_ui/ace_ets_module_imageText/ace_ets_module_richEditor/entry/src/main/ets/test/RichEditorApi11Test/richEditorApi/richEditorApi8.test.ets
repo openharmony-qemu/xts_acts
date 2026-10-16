@@ -31,6 +31,8 @@ import {
   MouseButton
 } from '@ohos.UiTest';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function richEditorApi81() {
   describe('richEditorApi81', () => {
     beforeEach(async (done: Function) => {
@@ -75,7 +77,7 @@ export default function richEditorApi81() {
       let richEditor = CommonFunc.getComponentRectOnScreen('RichEditor8');
 
       await driver.mouseClick({
-        x:Math.round(richEditor.left) + 300, y: Math.round(richEditor.top) + 300
+        x:Math.round(richEditor.left) + 300, y: Math.round(richEditor.top) + 300, displayId: displayID
       }, MouseButton.MOUSE_BUTTON_LEFT)
 
       await CommonFunc.sleep(2000);

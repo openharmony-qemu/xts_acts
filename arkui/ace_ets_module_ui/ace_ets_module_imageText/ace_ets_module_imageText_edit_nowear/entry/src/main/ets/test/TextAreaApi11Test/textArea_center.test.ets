@@ -19,6 +19,8 @@ import CommonFunc from '../../MainAbility/common/Common';
 import { MessageManager, Callback } from '../../MainAbility/common/MessageManager';
 
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function textArea_center() {
   describe('textArea_center', () => {
     beforeEach(async (done: Function) => {
@@ -65,9 +67,7 @@ export default function textArea_center() {
 
         let driver = await Driver.create();
         await CommonFunc.sleep(500);
-        await driver.click(
-          (Math.round(textArea_01.left + (textArea_01.right - textArea_01.left) /2)),(Math.round(textArea_01.top + (textArea_01.bottom - textArea_01.top) /45))
-        );
+        await driver.clickAt({ x: (Math.round(textArea_01.left + (textArea_01.right - textArea_01.left) /2)), y: (Math.round(textArea_01.top + (textArea_01.bottom - textArea_01.top) /45)), displayId: displayID });
         await CommonFunc.sleep(1000);
 
         console.log('get click after Initial value')
@@ -104,9 +104,7 @@ export default function textArea_center() {
 
         let driver = await Driver.create();
         await CommonFunc.sleep(500);
-        await driver.click(
-          (Math.round(textArea_01.left + (textArea_01.right - textArea_01.left) /2)),(Math.round(textArea_01.top + (textArea_01.bottom - textArea_01.top) * 0.7))
-        );
+        await driver.clickAt({ x: (Math.round(textArea_01.left + (textArea_01.right - textArea_01.left) /2)), y: (Math.round(textArea_01.top + (textArea_01.bottom - textArea_01.top) * 0.7)), displayId: displayID });
         await CommonFunc.sleep(1000);
 
         console.log('get click after Initial value')
@@ -148,9 +146,7 @@ export default function textArea_center() {
         let y5 = textArea_01.bottom
 
         await CommonFunc.sleep(500);
-        await driver.click(
-          (Math.round(textArea_01.left + (textArea_01.right - textArea_01.left) /2)),(Math.round(textArea_01.top + (textArea_01.bottom - textArea_01.top) /45 *40))
-        );
+        await driver.clickAt({ x: (Math.round(textArea_01.left + (textArea_01.right - textArea_01.left) /2)), y: (Math.round(textArea_01.top + (textArea_01.bottom - textArea_01.top) /45 *40)), displayId: displayID });
         await CommonFunc.sleep(1000);
 
         console.log('get click after Initial value')

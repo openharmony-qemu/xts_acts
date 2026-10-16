@@ -77,7 +77,7 @@ export default function RichEditorShortCutKeys009() {
       expect(styleText).assertContain('"fontWeight":11');
       let rich = await driver.findComponent(ON.id('RichEditorShortCutKeys009'));
       let pointCenter = await rich.getBoundsCenter();
-      await driver.longClick(pointCenter.x, pointCenter.y);
+      await driver.longClickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
       await CommonFunc.sleep(500);
       let selectAll = await driver.findComponent(ON.text('全选'));
       await selectAll.click();

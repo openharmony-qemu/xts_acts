@@ -70,7 +70,7 @@ export default function RichEditorSetStyledString019() {
       let rich = await driver.findComponent(ON.id('RichEditorSetStyledString019'));
       let getBounds = await rich.getBoundsCenter();
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.x, getBounds.y);
+      await driver.clickAt({ x: getBounds.x, y: getBounds.y, displayId: displayID });
       await CommonFunc.sleep(1000);
       let get_paragraphStyle = await driver.findComponent(ON.id('get_paragraphStyle'));
       await get_paragraphStyle.click();

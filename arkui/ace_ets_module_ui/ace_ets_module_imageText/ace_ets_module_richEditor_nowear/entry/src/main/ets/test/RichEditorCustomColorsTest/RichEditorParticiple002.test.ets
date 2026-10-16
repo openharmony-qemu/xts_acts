@@ -31,6 +31,8 @@ import {
 import CommonFunc from '../../MainAbility/common/Common';
 
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RichEditorParticiple002() {
   describe('RichEditorParticiple002', () => {
     beforeEach(async (done: Function) => {
@@ -69,14 +71,14 @@ export default function RichEditorParticiple002() {
       let rich = await driver.findComponent(ON.id('RichEditorParticiple002'));
       let getBounds = await rich.getBounds();
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.left + 70, getBounds.top + 30);
+      await driver.clickAt({ x: getBounds.left + 70, y: getBounds.top + 30, displayId: displayID });
       await CommonFunc.sleep(100);
       let message = await driver.findComponent(ON.id('message'));
       let messageText = await message.getText();
       await CommonFunc.sleep(1000);
       expect(messageText).assertContain('"start"');
       expect(messageText).assertContain('"end"');
-      await driver.click(getBounds.left + 78, getBounds.top + 30);
+      await driver.clickAt({ x: getBounds.left + 78, y: getBounds.top + 30, displayId: displayID });
       await CommonFunc.sleep(100);
       messageText = await message.getText();
       await CommonFunc.sleep(1000);

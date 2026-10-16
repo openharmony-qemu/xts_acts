@@ -18,6 +18,8 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import { Driver, ON, MouseButton } from '@ohos.UiTest';
 import CommonFunc from '../MainAbility/common/Common'
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function BindSelectionMenuTest() {
   describe('BindSelectionMenuTest', () => {
     beforeEach(async (done: Function) => {
@@ -62,7 +64,7 @@ export default function BindSelectionMenuTest() {
         await CommonFunc.sleep(500);
         let point = await Text.getBoundsCenter();
         await CommonFunc.sleep(500);
-        await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT);
+        await driver.mouseClick({ x: point.x, y: point.y, displayId: displayID }, MouseButton.MOUSE_BUTTON_RIGHT);
         await CommonFunc.sleep(500);
         let  CustomMenu = await driver.findComponent(ON.text('自定义菜单'))
         expect(CustomMenu != null).assertEqual(true)
@@ -136,7 +138,7 @@ export default function BindSelectionMenuTest() {
         await CommonFunc.sleep(500);
         let point = await image.getBoundsCenter();
         await CommonFunc.sleep(500);
-        await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT);
+        await driver.mouseClick({ x: point.x, y: point.y, displayId: displayID }, MouseButton.MOUSE_BUTTON_RIGHT);
         await CommonFunc.sleep(500);
         let  CustomMenu = await driver.findComponent(ON.text('自定义菜单'))
         expect(CustomMenu != null).assertEqual(true)
@@ -211,7 +213,7 @@ export default function BindSelectionMenuTest() {
         await CommonFunc.sleep(500);
         let point = await mixed.getBoundsCenter();
         await CommonFunc.sleep(500);
-        await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT);
+        await driver.mouseClick({ x: point.x, y: point.y, displayId: displayID }, MouseButton.MOUSE_BUTTON_RIGHT);
         await CommonFunc.sleep(500);
         let  CustomMenu = await driver.findComponent(ON.text('自定义菜单'))
         expect(CustomMenu != null).assertEqual(true)

@@ -71,7 +71,7 @@ export default function RichEditorPreventDefault004() {
       let getBounds = await rich.getBounds();
       await CommonFunc.sleep(100);
 
-      await driver.longClick(getBounds.left + 30, getBounds.top + 30);
+      await driver.longClickAt({ x: getBounds.left + 30, y: getBounds.top + 30, displayId: displayID });
       await CommonFunc.sleep(100);
 
       let callClick = await driver.findComponent(ON.id('callClick'));
@@ -87,14 +87,14 @@ export default function RichEditorPreventDefault004() {
       await CommonFunc.sleep(500);
       driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_X, 0, displayID);
       await CommonFunc.sleep(500);
-      await driver.longClick(getBounds.left + 30, getBounds.top + 30);
+      await driver.longClickAt({ x: getBounds.left + 30, y: getBounds.top + 30, displayId: displayID });
       await CommonFunc.sleep(100);
       driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V, 0, displayID);
       await CommonFunc.sleep(500);
 
       let boundsCenter = await rich.getBoundsCenter();
       await CommonFunc.sleep(100);
-      await driver.longClick(boundsCenter.x, boundsCenter.y);
+      await driver.longClickAt({ x: boundsCenter.x, y: boundsCenter.y, displayId: displayID });
       await CommonFunc.sleep(500);
       driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A, 0, displayID);
       await CommonFunc.sleep(1000);

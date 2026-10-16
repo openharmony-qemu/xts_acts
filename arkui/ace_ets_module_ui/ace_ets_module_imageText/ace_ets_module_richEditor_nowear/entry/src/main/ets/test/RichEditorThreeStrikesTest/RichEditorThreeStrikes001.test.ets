@@ -31,6 +31,8 @@ import {
 import CommonFunc from '../../MainAbility/common/Common';
 
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RichEditorThreeStrikes001() {
   describe('RichEditorThreeStrikes001', () => {
     beforeEach(async (done: Function) => {
@@ -68,11 +70,11 @@ export default function RichEditorThreeStrikes001() {
       let driver = Driver.create();
       let rich = await driver.findComponent(ON.id('RichEditorThreeStrikes001'));
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
       await CommonFunc.sleep(50);
-      await driver.click(pointCenter.x, pointCenter.y);
+      await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
       await CommonFunc.sleep(50);
-      await driver.click(pointCenter.x, pointCenter.y);
+      await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
       await CommonFunc.sleep(50);
       let copy = await driver.findComponent(ON.text('复制'))
       await copy?.click()
@@ -99,39 +101,39 @@ export default function RichEditorThreeStrikes001() {
       let rich = await driver.findComponent(ON.id('RichEditorThreeStrikes001'));
       let getBounds = await rich.getBounds();
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.left + 30, getBounds.top + 30);
+      await driver.clickAt({ x: getBounds.left + 30, y: getBounds.top + 30, displayId: displayID });
       await CommonFunc.sleep(1000);
-      await driver.click(getBounds.left + 30, getBounds.top + 30);
+      await driver.clickAt({ x: getBounds.left + 30, y: getBounds.top + 30, displayId: displayID });
       await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 30, getBounds.top + 30);
+      await driver.clickAt({ x: getBounds.left + 30, y: getBounds.top + 30, displayId: displayID });
       await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 30, getBounds.top + 30);
+      await driver.clickAt({ x: getBounds.left + 30, y: getBounds.top + 30, displayId: displayID });
       await CommonFunc.sleep(100);
       let message = await driver.findComponent(ON.id('message'));
       let messageText = await message.getText();
       await CommonFunc.sleep(1000);
       expect(messageText).assertContain('"start"');
       expect(messageText).assertContain('"end"');
-      await driver.click(getBounds.left + 200, getBounds.top + 30);
+      await driver.clickAt({ x: getBounds.left + 200, y: getBounds.top + 30, displayId: displayID });
       await CommonFunc.sleep(1000);
-      await driver.click(getBounds.left + 200, getBounds.top + 30);
+      await driver.clickAt({ x: getBounds.left + 200, y: getBounds.top + 30, displayId: displayID });
       await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 200, getBounds.top + 30);
+      await driver.clickAt({ x: getBounds.left + 200, y: getBounds.top + 30, displayId: displayID });
       await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 200, getBounds.top + 30);
+      await driver.clickAt({ x: getBounds.left + 200, y: getBounds.top + 30, displayId: displayID });
       await CommonFunc.sleep(100);
       messageText = await message.getText();
       await CommonFunc.sleep(500);
       expect(messageText).assertContain('"start"');
       expect(messageText).assertContain('"end"');
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
       await CommonFunc.sleep(1000);
-      await driver.click(pointCenter.x, pointCenter.y);
+      await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
       await CommonFunc.sleep(100);
-      await driver.click(pointCenter.x, pointCenter.y);
+      await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
       await CommonFunc.sleep(100);
-      await driver.click(pointCenter.x, pointCenter.y);
+      await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
       await CommonFunc.sleep(100);
       messageText = await message.getText();
       await CommonFunc.sleep(500);
@@ -153,11 +155,11 @@ export default function RichEditorThreeStrikes001() {
       let driver = Driver.create();
       let rich = await driver.findComponent(ON.id('RichEditorThreeStrikes001'));
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
       await CommonFunc.sleep(100);
-      await driver.click(pointCenter.x, pointCenter.y);
+      await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
       await CommonFunc.sleep(100);
-      await driver.click(pointCenter.x, pointCenter.y);
+      await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
       await CommonFunc.sleep(100);
       let copy = await driver.findComponent(ON.text('复制'));
       await copy?.click();

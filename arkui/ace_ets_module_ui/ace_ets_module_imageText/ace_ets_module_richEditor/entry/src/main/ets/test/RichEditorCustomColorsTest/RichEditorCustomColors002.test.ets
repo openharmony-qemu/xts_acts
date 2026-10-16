@@ -29,6 +29,8 @@ import {
 } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RichEditorCustomColors002() {
   describe('RichEditorCustomColors002', () => {
     beforeEach(async (done: Function) => {
@@ -66,7 +68,7 @@ export default function RichEditorCustomColors002() {
       let driver = Driver.create();
       let rich = await driver.findComponent(ON.id('rich_struct'));
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('rich_struct');
       await CommonFunc.sleep(200);

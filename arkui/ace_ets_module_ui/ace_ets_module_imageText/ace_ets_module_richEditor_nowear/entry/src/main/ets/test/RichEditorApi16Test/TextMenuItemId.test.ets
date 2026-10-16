@@ -21,6 +21,8 @@ import CommonFunc from '../../MainAbility/common/Common';
 let translateSupport: string = "1";
 let flag: boolean = true;
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function TextMenuItemId() {
   describe('TextMenuItemId', () => {
     beforeEach(async (done: Function) => {
@@ -71,7 +73,7 @@ export default function TextMenuItemId() {
         await CommonFunc.sleep(500); 
         let point = await text.getBoundsCenter();
         await CommonFunc.sleep(500);
-        await driver.longClick(point.x, point.y);
+        await driver.longClickAt({ x: point.x, y: point.y, displayId: displayID });
         await CommonFunc.sleep(500);
         await driver.assertComponentExist(ON.text('翻译'));
       }else{
@@ -101,7 +103,7 @@ export default function TextMenuItemId() {
         await CommonFunc.sleep(500);
         let point = await textArea.getBoundsCenter();
         await CommonFunc.sleep(500);
-        await driver.longClick(point.x, point.y);
+        await driver.longClickAt({ x: point.x, y: point.y, displayId: displayID });
         await CommonFunc.sleep(500);
         await driver.assertComponentExist(ON.text('翻译'));
       }else{
@@ -131,7 +133,7 @@ export default function TextMenuItemId() {
         await CommonFunc.sleep(500);
         let point = await textInput.getBoundsCenter();
         await CommonFunc.sleep(500);
-        await driver.longClick(point.x, point.y);
+        await driver.longClickAt({ x: point.x, y: point.y, displayId: displayID });
         await CommonFunc.sleep(500);
         await driver.assertComponentExist(ON.text('翻译'));
       }else{
@@ -161,7 +163,7 @@ export default function TextMenuItemId() {
         await CommonFunc.sleep(500);
         let point = await richEditor.getBoundsCenter();
         await CommonFunc.sleep(500);
-        await driver.longClick(point.x, point.y);
+        await driver.longClickAt({ x: point.x, y: point.y, displayId: displayID });
         await CommonFunc.sleep(500);
         await driver.assertComponentExist(ON.text('翻译'));
       }else{
@@ -191,7 +193,7 @@ export default function TextMenuItemId() {
         await CommonFunc.sleep(500);
         let point = await search.getBoundsCenter();
         await CommonFunc.sleep(500);
-        await driver.longClick(point.x, point.y);
+        await driver.longClickAt({ x: point.x, y: point.y, displayId: displayID });
         await CommonFunc.sleep(500);
         await driver.assertComponentExist(ON.text('翻译'));
       }else{

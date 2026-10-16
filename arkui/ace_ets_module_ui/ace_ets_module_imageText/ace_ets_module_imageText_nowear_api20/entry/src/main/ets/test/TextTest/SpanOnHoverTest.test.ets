@@ -18,6 +18,8 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import { Driver, ON, MouseButton } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common'
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function SpanOnHoverTest() {
   describe('SpanOnHoverTest', () => {
     beforeEach(async (done: Function) => {
@@ -61,7 +63,7 @@ export default function SpanOnHoverTest() {
       await CommonFunc.sleep(500);
       let point = await span.getBoundsCenter()
       await CommonFunc.sleep(500);
-      await driver.mouseMoveTo({x:Math.floor(point.x), y:Math.floor(point.y)});
+      await driver.mouseMoveTo({x:Math.floor(point.x), y:Math.floor(point.y), displayId: displayID});
       await CommonFunc.sleep(500);
       expect(''+AppStorage.get('spanIsHover')).assertEqual('true');
       expect(''+AppStorage.get('spanOnHoverEvent')).assertContain('"source":1,"target":');

@@ -31,6 +31,8 @@ import {
 import CommonFunc from '../../MainAbility/common/Common';
 
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RichEditorThreeStrikes006() {
   describe('RichEditorThreeStrikes006', () => {
     beforeEach(async (done: Function) => {
@@ -69,13 +71,13 @@ export default function RichEditorThreeStrikes006() {
       let rich = await driver.findComponent(ON.id('RichEditorThreeStrikes006'));
       let getBounds = await rich.getBounds();
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.left + 50, getBounds.top + 20);
+      await driver.clickAt({ x: getBounds.left + 50, y: getBounds.top + 20, displayId: displayID });
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.left + 110, getBounds.top + 20);
+      await driver.clickAt({ x: getBounds.left + 110, y: getBounds.top + 20, displayId: displayID });
       await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 110, getBounds.top + 20);
+      await driver.clickAt({ x: getBounds.left + 110, y: getBounds.top + 20, displayId: displayID });
       await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 110, getBounds.top + 20);
+      await driver.clickAt({ x: getBounds.left + 110, y: getBounds.top + 20, displayId: displayID });
       await CommonFunc.sleep(100);
       let copy = await driver.findComponent(ON.text('复制'));
       await copy?.click();

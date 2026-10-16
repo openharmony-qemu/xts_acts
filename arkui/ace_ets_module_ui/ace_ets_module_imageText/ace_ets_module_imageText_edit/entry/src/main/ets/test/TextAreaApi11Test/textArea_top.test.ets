@@ -18,6 +18,7 @@ import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern
 import CommonFunc from '../../MainAbility/common/Common';
 import { MessageManager, Callback } from '../../MainAbility/common/MessageManager';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 
 export default function textArea_top() {
   describe('textArea_top', () => {
@@ -68,11 +69,9 @@ export default function textArea_top() {
         console.log('textArea_01.top' + textArea_01.top)
         console.log('column_01.top' + column_01.top)
 
-        let driver = await UiDriver.create();
-        await driver.click(
-          // vp2px(100),vp2px(10)
-          Math.round((textArea_01.left + (textArea_01.right - textArea_01.left) /2)),Math.round((textArea_01.top + (textArea_01.bottom - textArea_01.top) /45))
-        );
+        let driver = await Driver.create();
+        // vp2px(100),vp2px(10)
+        await driver.clickAt({ x: Math.round((textArea_01.left + (textArea_01.right - textArea_01.left) /2)), y: Math.round((textArea_01.top + (textArea_01.bottom - textArea_01.top) /45)), displayId: displayID });
         await CommonFunc.sleep(1000);
 
         expect(textArea_01.top).assertEqual(column_01.top);
@@ -108,10 +107,7 @@ export default function textArea_top() {
         console.log('column_01.top' + column_01.top)
 
         let driver = await Driver.create();
-        await driver.click(
-          Math.round(vp2px(100)),Math.round(vp2px(200))
-          // (textArea_01.left + (textArea_01.right - textArea_01.left) /2),(textArea_01.top + (textArea_01.bottom - textArea_01.top) /2)
-        );
+        await driver.clickAt({ x: Math.round(vp2px(100)), y: Math.round(vp2px(200)), displayId: displayID });
         await CommonFunc.sleep(1000);
 
         expect(textArea_01.top).assertEqual(column_01.top);
@@ -149,9 +145,7 @@ export default function textArea_top() {
 
         let driver = await Driver.create();
         await CommonFunc.sleep(500);
-        await driver.click(
-          Math.round((textArea_01.left + (textArea_01.right - textArea_01.left) /2)),Math.round((textArea_01.top + (textArea_01.bottom - textArea_01.top) /45 * 44))
-        );
+        await driver.clickAt({ x: Math.round((textArea_01.left + (textArea_01.right - textArea_01.left) /2)), y: Math.round((textArea_01.top + (textArea_01.bottom - textArea_01.top) /45 * 44)), displayId: displayID });
         await CommonFunc.sleep(1000);
 
         let text_02 = CommonFunc.getComponentRect('textArea_top_text_02');
