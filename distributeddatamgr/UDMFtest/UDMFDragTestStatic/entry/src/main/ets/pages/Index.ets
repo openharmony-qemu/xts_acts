@@ -514,15 +514,15 @@ struct Index {
               let loadHandler: unifiedDataChannel.DataLoadHandler = (acceptableInfo?: unifiedDataChannel.DataLoadInfo) => {
                 let unifiedData = new unifiedDataChannel.UnifiedData();
 
-                for (let audioRecord of audioFiles) {
+                for (let audioRecord of audioFiles!) {
                   unifiedData.addRecord(audioRecord);
                 }
 
-                for (let videoRecord of videoFiles) {
+                for (let videoRecord of videoFiles!) {
                   unifiedData.addRecord(videoRecord);
                 }
 
-                for (let imageRecord of imageFiles) {
+                for (let imageRecord of imageFiles!) {
                   unifiedData.addRecord(imageRecord);
                 }
                 console.log(`DragTest: `, `loadHandler records=${unifiedData.getRecords().length}`);
