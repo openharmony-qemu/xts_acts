@@ -2,6 +2,7 @@ import {CanIUseLPPTest, executeLowPowerAVSink} from './CanIUseLPPTest.test';
 import OhLPPAudioNDKTest from './OhLPPAudioNDKTest.test';
 import OhLPPVideoNDKTest from './OhLPPVideoNDKTest.test';
 import OhLPPMp4NDKTest from './OhLPPMp4NDKTest.test';
+import LowPowerSinkNdk2Test from './LowPowerSinkTwoNDK.test';
 let isExecute = executeLowPowerAVSink();
 export default function testsuite() {
   CanIUseLPPTest();
@@ -9,5 +10,6 @@ export default function testsuite() {
     OhLPPAudioNDKTest();
     OhLPPVideoNDKTest();
     OhLPPMp4NDKTest();
+    LowPowerSinkNdk2Test();
   }
 }
