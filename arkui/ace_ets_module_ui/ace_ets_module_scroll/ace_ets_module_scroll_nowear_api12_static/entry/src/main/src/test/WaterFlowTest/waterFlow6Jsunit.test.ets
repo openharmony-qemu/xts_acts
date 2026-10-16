@@ -29,8 +29,8 @@ export default function waterFlow6Jsunit() {
         url: "MainAbility/pages/WaterFlow/waterFlow6",
       }
       try {
-       const routerScroll = AppStorage.get<Router>("router") as Router
-        // routerScroll.clear();
+        const routerScroll = AppStorage.get<Router>("router") as Router
+         // routerScroll.clear();
         let pages = routerScroll.getState();
         console.info("get waterFlow6Jsunit state pages:" + JSON.stringify(pages));
         if (!("waterFlow6" == pages.name)) {
@@ -64,17 +64,24 @@ it('waterFlow6Jsunit_static_001', Level.LEVEL1, async (done: () => void): Promis
       expect(obj.getElement('$attrs').getString('content')).assertEqual('onReachText: onReachStart:succ');
       await CommonFunc.sleep(1000);
 
-      let swiperFlow = CommonFunc.getComponentRectOnScreen('water_event');
-      let top = swiperFlow.top;
-      let right = swiperFlow.right;
-      let left = swiperFlow.left;
-      let bottom = swiperFlow.bottom;
-      console.info("waterFlow6Jsunit_static_001 value is" + left + " --" + right + "--" + top + "--" + bottom);
-      let height = bottom -top;
-      let width = right - left;
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(left + width/2).toInt(),Math.round(top + height*0.9).toInt(),Math.round(left + width/2).toInt(),Math.round(top + height*0.1).toInt());
+      let swipeComp = await driver.findComponent(ON.id('water_event'));
+      let rect = await swipeComp!.getBounds();
+      let displayId = await swipeComp!.getDisplayId();
+      let height = rect.bottom - rect.top;
+      let width = rect.right - rect.left;
+      let centerX = (Math.round(rect.left + width / 2)).toInt();
+      let startY = (Math.round(rect.top + height * 0.9)).toInt();
+      let endY = (Math.round(rect.top + height * 0.1)).toInt();
+      console.info("[waterFlow6Jsunit_static_001] rect left=" + rect.left + " right=" + rect.right +
+        " top=" + rect.top + " bottom=" + rect.bottom + " displayId=" + displayId);
+      console.info("[waterFlow6Jsunit_static_001] swipe from (" + centerX + "," + startY +
+        ") to (" + centerX + "," + endY + ") displayId=" + displayId);
+      await driver.swipeBetween(
+        { x: centerX, y: startY, displayId: displayId },
+        { x: centerX, y: endY, displayId: displayId }
+      );
       await CommonFunc.sleep(2000);
 
       let strJson1 = inspector.getInspectorByKey('waterFlow_onScrollText');
@@ -96,8 +103,7 @@ it('waterFlow6Jsunit_static_001', Level.LEVEL1, async (done: () => void): Promis
       expect(obj3.getElement('$attrs').getString('content')).assertEqual('onScrollFrameBegin: success');
       // console.info("[waterFlow6Jsunit_static_001] component obj3 end ");
       let btn = await driver.findComponent(ON.id('waterFlow_sctm'));
-      // console.info("[waterFlow6Jsunit_static_001] get btn ");
-      await (btn?.click() as Promise<void>);
+      await btn!.click();
       // console.info("[waterFlow6Jsunit_static_001] btn.click ");
       await CommonFunc.sleep(1000);
       // console.info("[waterFlow6Jsunit_static_001] sleep ");

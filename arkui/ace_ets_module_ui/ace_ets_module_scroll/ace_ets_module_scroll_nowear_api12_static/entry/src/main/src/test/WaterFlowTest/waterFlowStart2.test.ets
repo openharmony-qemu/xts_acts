@@ -61,30 +61,34 @@ it('waterFlowStart2_static_0100', Level.LEVEL1, async (done: () => void): Promis
         let driver = Driver.create();
         await CommonFunc.sleep(1000);
         let onReachStartText = await driver.findComponent(ON.id('onReachStart_wText_2'));
-        let text1 = await (onReachStartText?.getText() as Promise<string>);
+        let text1 = await onReachStartText!.getText();
         console.info('[waterFlowStart2_static_0100] onReachStartText' + text1);
         expect(text1).assertEqual('onReachStart:succ');
         await CommonFunc.sleep(1000);
-        let swiperScroll = CommonFunc.getComponentRectOnScreen('waterFlowStart2');
-        let top = swiperScroll.top;
-        let right = swiperScroll.right;
-        let left = swiperScroll.left;
-        let bottom = swiperScroll.bottom;
-        console.info("waterFlowStart2_static_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
-        let height = bottom -top;
-        let width = right - left;
+        let swipeComp = await driver.findComponent(ON.id('waterFlowStart2'));
+        let rect = await swipeComp!.getBounds();
+        let displayId = await swipeComp!.getDisplayId();
+        let height = rect.bottom - rect.top;
+        let width = rect.right - rect.left;
+        let centerX = (Math.round(rect.left + width / 2)).toInt();
+        let scrollY = (Math.round(rect.top + height * 0.3)).toInt();
+        console.info("[waterFlowStart2_static_0100] rect left=" + rect.left + " right=" + rect.right +
+          " top=" + rect.top + " bottom=" + rect.bottom + " displayId=" + displayId);
+        console.info("[waterFlowStart2_static_0100] mouseScroll at (" + centerX + "," +
+          scrollY + ") displayId=" + displayId);
         await CommonFunc.sleep(1000);
-        await driver.mouseScroll({x:Math.round(left + width/2).toInt(), y: Math.round(top + height*0.3).toInt()}, true ,20)
+        await driver.mouseScroll(
+          { x: centerX, y: scrollY, displayId: displayId }, true, 20)
         await CommonFunc.sleep(2000)
 
         let onScrollStartText = await driver.findComponent(ON.id('onScrollStart_wText_2'));
-        let text2 = await (onScrollStartText?.getText() as Promise<string>);
+        let text2 = await onScrollStartText!.getText();
         console.info('[waterFlowStart2_static_0100] onScrollStartText' + text2);
         expect(text2).assertEqual('onScrollStart:succ');
         await CommonFunc.sleep(1000);
 
         let onScrollStopText = await driver.findComponent(ON.id('onScrollStop_wText_2'));
-        let text3 = await (onScrollStopText?.getText() as Promise<string>);
+        let text3 = await onScrollStopText!.getText();
         console.info('[waterFlowStart2_static_0100] onScrollStopText' + text3);
         expect(text3).assertEqual('onScrollStop:succ');
         await CommonFunc.sleep(1000);

@@ -92,17 +92,23 @@ it('repeatWaterFlow_static_0100', Level.LEVEL1, async (done: () => void): Promis
 it('repeatWaterFlow_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         console.info('[repeatWaterFlow_static_0200] START');
-        let waterFlowRect = CommonFunc.getComponentRectOnScreen('flowRepeat_event')
         let driver = Driver.create()
         await CommonFunc.sleep(1000);
-        await driver.fling({
-          x: Number.parseInt(`${(waterFlowRect.right - waterFlowRect.left) * 0.5 + waterFlowRect.left}`).toInt(),
-          y: Number.parseInt(`${(waterFlowRect.bottom - waterFlowRect.top) * 0.6 + waterFlowRect.top}`).toInt()
-        },
-          {
-            x: Number.parseInt(`${(waterFlowRect.right - waterFlowRect.left) * 0.5 + waterFlowRect.left}`).toInt(),
-            y: Number.parseInt(`${(waterFlowRect.bottom - waterFlowRect.top) * 0.2 + waterFlowRect.top}`).toInt()
-          }, 5, 1000);
+        let swipeComp = await driver.findComponent(ON.id('flowRepeat_event'));
+        let rect = await swipeComp!.getBounds();
+        let displayId = await swipeComp!.getDisplayId();
+        let width = rect.right - rect.left;
+        let height = rect.bottom - rect.top;
+        let centerX = (Math.round(rect.left + width * 0.5)).toInt();
+        let startY = (Math.round(rect.top + height * 0.6)).toInt();
+        let endY = (Math.round(rect.top + height * 0.2)).toInt();
+        console.info("[repeatWaterFlow_static_0200] rect left=" + rect.left + " right=" + rect.right +
+          " top=" + rect.top + " bottom=" + rect.bottom + " displayId=" + displayId);
+        console.info("[repeatWaterFlow_static_0200] fling from (" + centerX + "," + startY +
+          ") to (" + centerX + "," + endY + ") displayId=" + displayId);
+        await driver.fling(
+          { x: centerX, y: startY, displayId: displayId },
+          { x: centerX, y: endY, displayId: displayId }, 5, 1000);
         await CommonFunc.sleep(2000);
 
         let strJson1 = inspector.getInspectorByKey('flowRepeat_onFrameBegin');
@@ -124,7 +130,7 @@ it('repeatWaterFlow_static_0200', Level.LEVEL1, async (done: () => void): Promis
         expect(obj3.getElement('$attrs').getString('content')).assertEqual('onDidScroll: success');
 
         let btm = await driver.findComponent(ON.id('flowRepeat_scroll'));
-        await (btm?.click() as Promise<void>);
+        await btm!.click();
         await CommonFunc.sleep(5000);
 
         let strJson4 = inspector.getInspectorByKey('flowRepeat_onReachText');

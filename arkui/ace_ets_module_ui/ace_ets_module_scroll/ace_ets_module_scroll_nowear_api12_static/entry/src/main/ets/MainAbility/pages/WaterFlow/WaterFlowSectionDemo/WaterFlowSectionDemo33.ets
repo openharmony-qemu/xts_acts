@@ -127,6 +127,6 @@ struct WaterFlowSectionDemo33 {
       .height(200)
       .layoutWeight(1)
 
-    }.margin({top:'10%',left:'10%'} as Margin)
+    }.margin({top:'2%',left:'5%'} as Margin)
   }
 }

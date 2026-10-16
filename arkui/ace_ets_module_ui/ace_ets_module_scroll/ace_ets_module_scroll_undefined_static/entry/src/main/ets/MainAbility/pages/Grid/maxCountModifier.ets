@@ -69,11 +69,14 @@ struct GridExample {
         }
         .attributeModifier(this.modifier4)
         .id('maxCountModifier')
+        .width('90%')
+        .height('80%')
 
         Button('Change').onClick(() => {
           this.modifier4.maxCount_ = this.modifier4.maxCount_ === undefined ? 4 : undefined
         })
           .id('changeButton')
+          .height('5%')
 
       }
       .width('90%')
