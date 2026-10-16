@@ -737,11 +737,12 @@ export default function UiTest() {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
             await driver.delayMs(waitUiReadyMs)
             let scrollBar = await driver.findComponent(ON.type('Scroll').id('parentScroll'))
+            let disPlayId = await scrollBar.getDisplayId()
             let rect = await scrollBar.getBounds()
             let center = await scrollBar.getBoundsCenter()
-            let result = await driver.isComponentPresentWhenSwipe(ON.text('ShowSwipeEventCom'),
-                { x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4) },
-                { x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4) }, 200)
+            let result = await driver.isComponentPresentWhenSwipe(ON.belongingDisplay(disPlayId).text('ShowSwipeEventCom'),
+                { x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4), displayId: disPlayId },
+                { x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4), displayId: disPlayId }, 200)
             console.log(`${TestTag}, tesIsComponentPresentWhenSwipeTrue result, ${JSON.stringify(result)}`);
             expect(result).assertTrue();
             let text = await driver.findComponent(ON.text('toast'))
@@ -792,11 +793,12 @@ export default function UiTest() {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
             await driver.delayMs(waitUiReadyMs)
             let scrollBar = await driver.findComponent(ON.type('Scroll').id('parentScroll'))
+            let disPlayId = await scrollBar.getDisplayId()
             let rect = await scrollBar.getBounds()
             let center = await scrollBar.getBoundsCenter()
-            let result = await driver.isComponentPresentWhenSwipe(ON.text('ShowSwipeEventComNot'),
-                { x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4) },
-                { x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4) }, null)
+            let result = await driver.isComponentPresentWhenSwipe(ON.belongingDisplay(disPlayId).text('ShowSwipeEventComNot'),
+                { x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4), displayId: disPlayId },
+                { x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4), displayId: disPlayId }, null)
             console.log(`${TestTag}, tesIsComponentPresentWhenSwipeDuringNull result, ${JSON.stringify(result)}`);
             expect(result).assertFalse();
             let text = await driver.findComponent(ON.text('toast'))
@@ -820,11 +822,12 @@ export default function UiTest() {
                 await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
                 await driver.delayMs(waitUiReadyMs)
                 let scrollBar = await driver.findComponent(ON.type('Scroll').id('parentScroll'))
+                let disPlayId = await scrollBar.getDisplayId()
                 let rect = await scrollBar.getBounds()
                 let center = await scrollBar.getBoundsCenter()
-                let result = await driver.isComponentPresentWhenSwipe(ON.text('ShowSwipeEventComNot'),
-                    { x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4) },
-                    { x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4) }, undefined)
+                let result = await driver.isComponentPresentWhenSwipe(ON.belongingDisplay(disPlayId).text('ShowSwipeEventComNot'),
+                    { x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4), displayId: disPlayId },
+                    { x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4), displayId: disPlayId }, undefined)
                 console.log(`${TestTag}, tesIsComponentPresentWhenSwipeDuringUndefined result, ${JSON.stringify(result)}`);
                 expect(result).assertFalse();
                 let text = await driver.findComponent(ON.text('toast'))
@@ -933,19 +936,19 @@ export default function UiTest() {
                 let play = display.getDefaultDisplaySync();
                 let centerX = play.width / 2;
                 let centY = play.height / 2;
-                let fivePoint: Point = { x: centerX - 40, y: centY - 80 };
-                let sixPoint: Point = { x: centerX - 40, y: centY - 60 };
-                let sevPoint: Point = { x: centerX - 40, y: centY - 40 };
-                let eigPoint: Point = { x: centerX - 40, y: centY - 20 };
-                let niePoint: Point = { x: centerX - 40, y: centY };
-                let tenPoint: Point = { x: centerX - 20, y: centY };
-                let ten1Point: Point = { x: centerX, y: centY };
-                let ten2Point: Point = { x: centerX + 20, y: centY };
-                let ten3Point: Point = { x: centerX + 40, y: centY };
-                let ten4Point: Point = { x: centerX + 40, y: centY + 20 };
-                let ten5Point: Point = { x: centerX + 40, y: centY + 40 };
-                let ten6Point: Point = { x: centerX + 40, y: centY + 60 };
-                let ten7Point: Point = { x: centerX + 40, y: centY + 80 };
+                let fivePoint: Point = { x: centerX - 40, y: centY - 80, displayId: play.id };
+                let sixPoint: Point = { x: centerX - 40, y: centY - 60, displayId: play.id };
+                let sevPoint: Point = { x: centerX - 40, y: centY - 40, displayId: play.id };
+                let eigPoint: Point = { x: centerX - 40, y: centY - 20, displayId: play.id };
+                let niePoint: Point = { x: centerX - 40, y: centY, displayId: play.id };
+                let tenPoint: Point = { x: centerX - 20, y: centY, displayId: play.id };
+                let ten1Point: Point = { x: centerX, y: centY, displayId: play.id };
+                let ten2Point: Point = { x: centerX + 20, y: centY, displayId: play.id };
+                let ten3Point: Point = { x: centerX + 40, y: centY, displayId: play.id };
+                let ten4Point: Point = { x: centerX + 40, y: centY + 20, displayId: play.id };
+                let ten5Point: Point = { x: centerX + 40, y: centY + 40, displayId: play.id };
+                let ten6Point: Point = { x: centerX + 40, y: centY + 60, displayId: play.id };
+                let ten7Point: Point = { x: centerX + 40, y: centY + 80, displayId: play.id };
                 let pointers = PointerMatrix.create(1, 13);
                 pointers.setPoint(0, 0, fivePoint);
                 pointers.setPoint(0, 1, sixPoint);
@@ -964,7 +967,7 @@ export default function UiTest() {
                 await driver.delayMs(waitUiReadyMs * 5);
                 let screenPng = await driver.findComponent(ON.id('ScrollHandWriteBoxStack'));
                 expect(screenPng != null).assertTrue();
-                await driver.pressBack();
+                await driver.pressBack(play.id);
                 await driver.delayMs(waitUiReadyMs * 2);
             } catch (error) {
                 console.log(`${TestTag}, tesKnuckleKnockS error, ${JSON.stringify(error)}`);
@@ -989,14 +992,15 @@ export default function UiTest() {
                 await driver.delayMs(waitUiReadyMs);
                 let scrollBar = await driver.findComponent(ON.type('Scroll').id('parentScroll'));
                 await driver.delayMs(waitUiReadyMs);
+                let disPlayId = await scrollBar.getDisplayId();
                 let center = await scrollBar.getBoundsCenter();
                 await driver.delayMs(waitUiReadyMs);
-                await driver.touchPadTwoFingersScroll({ x: center.x, y: center.y }, UiDirection.UP, 300);
+                await driver.touchPadTwoFingersScroll({ x: center.x, y: center.y, displayId: disPlayId }, UiDirection.UP, 300);
                 await driver.delayMs(waitUiReadyMs);
                 let text = await driver.findComponent(ON.text('toast'));
                 await driver.delayMs(waitUiReadyMs);
                 expect(text == null).assertTrue()
-                await driver.touchPadTwoFingersScroll({ x: center.x, y: center.y }, UiDirection.DOWN, 400, 20);
+                await driver.touchPadTwoFingersScroll({ x: center.x, y: center.y, displayId: disPlayId }, UiDirection.DOWN, 400, 20);
                 let text1 = await driver.findComponent(ON.text('toast'));
                 await driver.delayMs(waitUiReadyMs);
                 expect(text1 != null).assertTrue()
@@ -1031,16 +1035,17 @@ export default function UiTest() {
                 await driver.delayMs(waitUiReadyMs);
                 let scrollBar = await driver.findComponent(ON.type('Scroll').id('horizontalScroll'))
                 await driver.delayMs(waitUiReadyMs);
+                let disPlayId = await scrollBar.getDisplayId();
                 let center = await scrollBar.getBoundsCenter();
                 await driver.delayMs(waitUiReadyMs);
-                await driver.touchPadTwoFingersScroll({ x: center.x, y: center.y },
+                await driver.touchPadTwoFingersScroll({ x: center.x, y: center.y, displayId: disPlayId },
                     UiDirection.LEFT, 600, null);
                 await driver.delayMs(waitUiReadyMs);
                 let scroll11 = await driver.findComponent(ON.text('1_hor'));
                 await driver.delayMs(waitUiReadyMs);
                 expect(scroll11 == null).assertTrue();
                 await driver.delayMs(waitUiReadyMs);
-                await driver.touchPadTwoFingersScroll({ x: center.x, y: center.y },
+                await driver.touchPadTwoFingersScroll({ x: center.x, y: center.y, displayId: disPlayId },
                     UiDirection.RIGHT, 800, undefined);
                 let scroll22 = await driver.findComponent(ON.text('1_hor'));
                 await driver.delayMs(waitUiReadyMs);
@@ -2144,7 +2149,7 @@ export default function UiTest() {
                 text = await scorll.scrollSearch(ON.belongingDisplay(disPlay.id).type('TextInput'))
             }
             let center = await text.getBoundsCenter()
-            await driver.click(center.x, center.y)
+            await text.click();
             await driver.delayMs(waitUiReadyMs)
             await driver.triggerCombineKeys(2072, 2017, 0, disPlay.id)
             await driver.delayMs(waitUiReadyMs)
@@ -2976,12 +2981,13 @@ export default function UiTest() {
                 // 垂直滑动
                 await driver.delayMs(waitUiReadyMs);
                 let scroll = await driver.findComponent(ON.type('Scroll'))
+                let disPlayId = await scroll.getDisplayId();
                 let scrollRect = await scroll.getBounds()
                 let screenWidth = scrollRect.right - scrollRect.left;
                 let screenHeight = scrollRect.bottom - scrollRect.top;
                 console.log(TestTag, 'screenWidth:' + screenWidth + ', screenHeight:' + screenHeight);
-                await driver.penSwipe({ x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 + screenHeight / 4) },
-                    { x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 - screenHeight / 4) }, 600, 0.5);
+                await driver.penSwipe({ x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 + screenHeight / 4), displayId: disPlayId },
+                    { x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 - screenHeight / 4), displayId: disPlayId }, 600, 0.5);
                 await driver.delayMs(waitUiReadyMs);
                 let text = await driver.findComponent(ON.text('toast'));
                 await driver.delayMs(waitUiReadyMs);
@@ -3022,12 +3028,13 @@ export default function UiTest() {
                 // 垂直滑动
                 await driver.delayMs(waitUiReadyMs);
                 let scroll = await driver.findComponent(ON.type('Scroll'))
+                let disPlayId = await scroll.getDisplayId();
                 let scrollRect = await scroll.getBounds()
                 let screenWidth = scrollRect.right - scrollRect.left;
                 let screenHeight = scrollRect.bottom - scrollRect.top;
                 console.log(TestTag, 'screenWidth:' + screenWidth + ', screenHeight:' + screenHeight);
-                await driver.penSwipe({ x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 + screenHeight / 4) },
-                    { x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 - screenHeight / 4) }, 600);
+                await driver.penSwipe({ x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 + screenHeight / 4), displayId: disPlayId },
+                    { x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 - screenHeight / 4), displayId: disPlayId }, 600);
                 await driver.delayMs(waitUiReadyMs);
                 let text = await driver.findComponent(ON.text('toast'));
                 await driver.delayMs(waitUiReadyMs);
@@ -3058,12 +3065,13 @@ export default function UiTest() {
                 // 垂直滑动
                 await driver.delayMs(waitUiReadyMs);
                 let scroll = await driver.findComponent(ON.type('Scroll'))
+                let disPlayId = await scroll.getDisplayId();
                 let scrollRect = await scroll.getBounds()
                 let screenWidth = scrollRect.right - scrollRect.left;
                 let screenHeight = scrollRect.bottom - scrollRect.top;
                 console.log(TestTag, 'screenWidth:' + screenWidth + ', screenHeight:' + screenHeight);
-                await driver.penSwipe({ x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 + screenHeight / 4) },
-                    { x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 - screenHeight / 4) });
+                await driver.penSwipe({ x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 + screenHeight / 4), displayId: disPlayId },
+                    { x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 - screenHeight / 4), displayId: disPlayId });
                 await driver.delayMs(waitUiReadyMs);
                 let text = await driver.findComponent(ON.text('toast'));
                 await driver.delayMs(waitUiReadyMs);
@@ -3094,12 +3102,13 @@ export default function UiTest() {
                 // 垂直滑动
                 await driver.delayMs(waitUiReadyMs);
                 let scroll = await driver.findComponent(ON.type('Scroll'))
+                let disPlayId = await scroll.getDisplayId();
                 let scrollRect = await scroll.getBounds()
                 let screenWidth = scrollRect.right - scrollRect.left;
                 let screenHeight = scrollRect.bottom - scrollRect.top;
                 console.log(TestTag, 'screenWidth:' + screenWidth + ', screenHeight:' + screenHeight);
-                await driver.penSwipe({ x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 + screenHeight / 4) },
-                    { x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 - screenHeight / 4) }, null);
+                await driver.penSwipe({ x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 + screenHeight / 4), displayId: disPlayId },
+                    { x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 - screenHeight / 4), displayId: disPlayId }, null);
                 await driver.delayMs(waitUiReadyMs);
                 let text = await driver.findComponent(ON.text('toast'));
                 await driver.delayMs(waitUiReadyMs);
@@ -3131,12 +3140,13 @@ export default function UiTest() {
                 // 垂直滑动
                 await driver.delayMs(waitUiReadyMs);
                 let scroll = await driver.findComponent(ON.type('Scroll'))
+                let disPlayId = await scroll.getDisplayId();
                 let scrollRect = await scroll.getBounds()
                 let screenWidth = scrollRect.right - scrollRect.left;
                 let screenHeight = scrollRect.bottom - scrollRect.top;
                 console.log(TestTag, 'screenWidth:' + screenWidth + ', screenHeight:' + screenHeight);
-                await driver.penSwipe({ x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 + screenHeight / 4) },
-                    { x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 - screenHeight / 4) }, undefined);
+                await driver.penSwipe({ x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 + screenHeight / 4), displayId: disPlayId },
+                    { x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 - screenHeight / 4), displayId: disPlayId }, undefined);
                 await driver.delayMs(waitUiReadyMs);
                 let text = await driver.findComponent(ON.text('toast'));
                 await driver.delayMs(waitUiReadyMs);
@@ -3168,12 +3178,13 @@ export default function UiTest() {
                 // 垂直滑动
                 await driver.delayMs(waitUiReadyMs);
                 let scroll = await driver.findComponent(ON.type('Scroll'))
+                let disPlayId = await scroll.getDisplayId();
                 let scrollRect = await scroll.getBounds()
                 let screenWidth = scrollRect.right - scrollRect.left;
                 let screenHeight = scrollRect.bottom - scrollRect.top;
                 console.log(TestTag, 'screenWidth:' + screenWidth + ', screenHeight:' + screenHeight);
-                await driver.penSwipe({ x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 + screenHeight / 4) },
-                    { x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 - screenHeight / 4) }, 199);
+                await driver.penSwipe({ x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 + screenHeight / 4), displayId: disPlayId },
+                    { x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 - screenHeight / 4), displayId: disPlayId }, 199);
                 await driver.delayMs(waitUiReadyMs);
                 let text = await driver.findComponent(ON.text('toast'));
                 await driver.delayMs(waitUiReadyMs);
@@ -3205,12 +3216,13 @@ export default function UiTest() {
                 // 垂直滑动
                 await driver.delayMs(waitUiReadyMs);
                 let scroll = await driver.findComponent(ON.type('Scroll'))
+                let disPlayId = await scroll.getDisplayId();
                 let scrollRect = await scroll.getBounds()
                 let screenWidth = scrollRect.right - scrollRect.left;
                 let screenHeight = scrollRect.bottom - scrollRect.top;
                 console.log(TestTag, 'screenWidth:' + screenWidth + ', screenHeight:' + screenHeight);
-                await driver.penSwipe({ x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 + screenHeight / 4) },
-                    { x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 - screenHeight / 4) }, 40001);
+                await driver.penSwipe({ x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 + screenHeight / 4), displayId: disPlayId },
+                    { x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 - screenHeight / 4), displayId: disPlayId }, 40001);
                 await driver.delayMs(waitUiReadyMs);
                 let text = await driver.findComponent(ON.text('toast'));
                 await driver.delayMs(waitUiReadyMs);
@@ -3242,12 +3254,13 @@ export default function UiTest() {
                 // 垂直滑动
                 await driver.delayMs(waitUiReadyMs);
                 let scroll = await driver.findComponent(ON.type('Scroll'))
+                let disPlayId = await scroll.getDisplayId();
                 let scrollRect = await scroll.getBounds()
                 let screenWidth = scrollRect.right - scrollRect.left;
                 let screenHeight = scrollRect.bottom - scrollRect.top;
                 console.log(TestTag, 'screenWidth:' + screenWidth + ', screenHeight:' + screenHeight);
-                await driver.penSwipe({ x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 + screenHeight / 4) },
-                    { x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 - screenHeight / 4) }, 600, null);
+                await driver.penSwipe({ x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 + screenHeight / 4), displayId: disPlayId },
+                    { x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 - screenHeight / 4), displayId: disPlayId }, 600, null);
                 await driver.delayMs(waitUiReadyMs);
                 let text = await driver.findComponent(ON.text('toast'));
                 await driver.delayMs(waitUiReadyMs);
@@ -3279,12 +3292,13 @@ export default function UiTest() {
                 // 垂直滑动
                 await driver.delayMs(waitUiReadyMs);
                 let scroll = await driver.findComponent(ON.type('Scroll'))
+                let disPlayId = await scroll.getDisplayId();
                 let scrollRect = await scroll.getBounds()
                 let screenWidth = scrollRect.right - scrollRect.left;
                 let screenHeight = scrollRect.bottom - scrollRect.top;
                 console.log(TestTag, 'screenWidth:' + screenWidth + ', screenHeight:' + screenHeight);
-                await driver.penSwipe({ x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 + screenHeight / 4) },
-                    { x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 - screenHeight / 4) }, 600, undefined);
+                await driver.penSwipe({ x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 + screenHeight / 4), displayId: disPlayId },
+                    { x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 - screenHeight / 4), displayId: disPlayId }, 600, undefined);
                 await driver.delayMs(waitUiReadyMs);
                 let text = await driver.findComponent(ON.text('toast'));
                 await driver.delayMs(waitUiReadyMs);
@@ -3377,6 +3391,7 @@ export default function UiTest() {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
             await driver.delayMs(waitUiReadyMs)
             let scroll = await driver.findComponent(ON.type('Scroll'))
+            let disPlayId = await scroll.getDisplayId();
             let scrollRect = await scroll.getBounds()
             let screenWidth = scrollRect.right - scrollRect.left;
             let screenHeight = scrollRect.bottom - scrollRect.top;
@@ -3388,7 +3403,7 @@ export default function UiTest() {
             for (let step = 0; step < 8; step++) {
                 let startY = Math.floor((screenHeight / 2 + screenHeight / 4) - stepLength * step);
                 console.log(TestTag, `startX is, ${startX}, startY is, ${startY}`);
-                pointer.setPoint(0, step, { x: startX, y: startY });
+                pointer.setPoint(0, step, { x: startX, y: startY, displayId: disPlayId });
             }
             try {
                 await driver.injectPenPointerAction(pointer, 600, 0.5);
@@ -3481,6 +3496,7 @@ export default function UiTest() {
                 await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
                 await driver.delayMs(waitUiReadyMs)
                 let scroll = await driver.findComponent(ON.type('Scroll'))
+                let disPlayId = await scroll.getDisplayId();
                 let scrollRect = await scroll.getBounds()
                 let screenWidth = scrollRect.right - scrollRect.left;
                 let screenHeight = scrollRect.bottom - scrollRect.top;
@@ -3492,7 +3508,7 @@ export default function UiTest() {
                 for (let step = 0; step < 8; step++) {
                     let startY = Math.floor((screenHeight / 2 + screenHeight / 4) - stepLength * step);
                     console.log(TestTag, `startX is, ${startX}, startY is, ${startY}`);
-                    pointer.setPoint(0, step, { x: startX, y: startY });
+                    pointer.setPoint(0, step, { x: startX, y: startY, displayId: disPlayId });
                 }
                 await driver.injectPenPointerAction(pointer, 800);
                 await driver.delayMs(waitUiReadyMs * 2);
@@ -3540,6 +3556,7 @@ export default function UiTest() {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
             await driver.delayMs(waitUiReadyMs)
             let scroll = await driver.findComponent(ON.type('Scroll'))
+            let disPlayId = await scroll.getDisplayId();
             let scrollRect = await scroll.getBounds()
             let screenWidth = scrollRect.right - scrollRect.left;
             let screenHeight = scrollRect.bottom - scrollRect.top;
@@ -3551,7 +3568,7 @@ export default function UiTest() {
             for (let step = 0; step < 8; step++) {
                 let startY = Math.floor((screenHeight / 2 + screenHeight / 4) - stepLength * step);
                 console.log(TestTag, `startX is, ${startX}, startY is, ${startY}`);
-                pointer.setPoint(0, step, { x: startX, y: startY });
+                pointer.setPoint(0, step, { x: startX, y: startY, displayId: disPlayId });
             }
             try {
                 await driver.injectPenPointerAction(pointer, null);
