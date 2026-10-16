@@ -13,12 +13,15 @@
  * limitations under the License.
  */
 import Ability from '@ohos.app.ability.UIAbility'
+import window from '@ohos.window';
+import AbilityConstant from '@ohos.app.ability.AbilityConstant';
+import UIAbility from '@ohos.app.ability.UIAbility';
 
 export default class MainAbility extends Ability {
-    onCreate(want,launchParam){
+onCreate(want: Want, launchParam: AbilityConstant.LaunchParam){
         // Ability is creating, initialize resources for this ability
         console.log("MainAbility onCreate")
-        globalThis.abilityWant = want;
+        AppStorage.setOrCreate('abilityWant', want);
     }
 
     onDestroy() {
@@ -26,11 +29,11 @@ export default class MainAbility extends Ability {
         console.log("MainAbility onDestroy")
     }
 
-    onWindowStageCreate(windowStage) {
+    onWindowStageCreate(windowStage: window.WindowStage): void {
         // Main window is created, set main page for this ability
         console.log("MainAbility onWindowStageCreate")
-        globalThis.abilityContext = this.context
-        windowStage.setUIContent(this.context, "MainAbility/pages/index/index", null)
+        AppStorage.setOrCreate('abilityContext', this.context)
+        windowStage.loadContent("MainAbility/pages/index/index", null)
     }
 
     onWindowStageDestroy() {

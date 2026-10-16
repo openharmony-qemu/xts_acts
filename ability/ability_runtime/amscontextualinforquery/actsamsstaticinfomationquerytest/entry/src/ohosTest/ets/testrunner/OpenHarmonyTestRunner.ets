@@ -13,19 +13,20 @@
  * limitations under the License.
  */
 import TestRunner from '@ohos.application.testRunner'
-import AbilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry'
+import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
+import { BusinessError } from '@ohos.base'
 
-var abilityDelegator = undefined
-var abilityDelegatorArguments = undefined
+let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator | undefined = undefined
+let abilityDelegatorArguments: AbilityDelegatorRegistry.AbilityDelegatorArgs | undefined = undefined
 
-function translateParamsToString(parameters) {
+function translateParamsToString(parameters: ESObject) {
     const keySet = new Set([
         '-s class', '-s notClass', '-s suite', '-s it',
         '-s level', '-s testType', '-s size', '-s timeout',
         '-s dryRun'
     ])
     let targetParams = '';
-    for (const key in parameters) {
+    for (const key of Object.keys(parameters)) {
         if (keySet.has(key)) {
             targetParams = `${targetParams} ${key} ${parameters[key]}`
         }
@@ -37,7 +38,7 @@ async function onAbilityCreateCallback() {
     console.log("onAbilityCreateCallback");
 }
 
-async function addAbilityMonitorCallback(err: any) {
+async function addAbilityMonitorCallback(err: BusinessError) {
     console.info("addAbilityMonitorCallback : " + JSON.stringify(err))
 }
 
@@ -53,26 +54,26 @@ export default class OpenHarmonyTestRunner implements TestRunner {
         console.log('OpenHarmonyTestRunner onRun run')
         abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
         abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
-        var testAbilityName = abilityDelegatorArguments.bundleName + '.MainAbility'
-        let lMonitor = {
+        let testAbilityName = abilityDelegatorArguments.bundleName + '.MainAbility'
+        let lMonitor: AbilityDelegatorRegistry.AbilityMonitor = {
             abilityName: testAbilityName,
             onAbilityCreate: onAbilityCreateCallback,
         };
         abilityDelegator.addAbilityMonitor(lMonitor, addAbilityMonitorCallback)
-        var cmd = 'aa start -d 0 -a com.acts.staticinfomationquery.MainAbility' + ' -b ' + abilityDelegatorArguments.bundleName
+        let cmd = 'aa start -d 0 -a com.acts.staticinfomationquery.MainAbility' + ' -b ' + abilityDelegatorArguments.bundleName
         cmd += ' '+translateParamsToString(abilityDelegatorArguments.parameters)
-        var user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+        let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
         if(user !== undefined){
             cmd += ' -u ' + user;
         }
-        var debug = abilityDelegatorArguments.parameters["-D"]
+        let debug = abilityDelegatorArguments.parameters["-D"]
         if (debug == 'true')
         {
             cmd += ' -D'
         }
         console.info('cmd : '+cmd)
         abilityDelegator.executeShellCommand(cmd,
-            (err: any, d: any) => {
+            (err: BusinessError, d: AbilityDelegatorRegistry.ShellCmdResult) => {
                 console.info('executeShellCommand : err : ' + JSON.stringify(err));
                 console.info('executeShellCommand : data : ' + d.stdResult);
                 console.info('executeShellCommand : data : ' + d.exitCode);

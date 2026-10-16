@@ -15,9 +15,9 @@
 
 {
   "module": {
-    "name": "com.example.staticquerytesttwo",
+    "name": "entry",
     "type": "entry",
-    "srcEntry": "./ets/Application/AbilityStage.ts",
+    "srcEntry": "./ets/Application/AbilityStage.ets",
     "description": "$string:phone_entry_dsc",
     "mainElement": "MainAbility",
     "deviceTypes": [],
@@ -27,7 +27,7 @@
     "abilities": [
       {
         "name": "com.example.staticquerytesttwo.MainAbility",
-        "srcEntry": "./ets/MainAbility/MainAbility.ts",
+        "srcEntry": "./ets/MainAbility/MainAbility.ets",
         "description": "$string:phone_entry_main",
         "icon": "$media:icon",
         "label": "$string:entry_label",
@@ -48,7 +48,7 @@
       },
       {
         "name": "com.example.staticquerytesttwo.SecondAbility",
-        "srcEntry": "./ets/SecondMainAbility/SecondMainAbility.ts",
+        "srcEntry": "./ets/SecondMainAbility/SecondMainAbility.ets",
         "description": "$string:phone_entry_main",
         "icon": "$media:icon",
         "label": "$string:entry_label",
