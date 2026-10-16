@@ -18,8 +18,8 @@
 #include <cstdlib>
 #include <cstring>
 #include <string>
+#include <pthread.h>
 #include <sys/wait.h>
-#include <thread>
 #include <unistd.h>
 
 #define QSORT_NO_ERR 0
@@ -756,6 +756,18 @@ static napi_value QsortScale10KRand(napi_env env, napi_callback_info)
     return QsortMakeResult(env, ret);
 }
 
+struct QsortThreadArg {
+    int *arr;
+    int len;
+};
+
+static void *QsortThreadFn(void *arg)
+{
+    QsortThreadArg *targ = static_cast<QsortThreadArg *>(arg);
+    qsort(targ->arr, targ->len, sizeof(int), QsortCmpInt);
+    return nullptr;
+}
+
 static napi_value QsortConcurrent2(napi_env env, napi_callback_info)
 {
     const int n = QSORT_ELEM_THOUSAND;
@@ -765,11 +777,14 @@ static napi_value QsortConcurrent2(napi_env env, napi_callback_info)
         arr1[i] = n - i;
         arr2[i] = n - i;
     }
-    auto sortFn = [](int *a, int len) { qsort(a, len, sizeof(int), QsortCmpInt); };
-    std::thread t1(sortFn, arr1, n);
-    std::thread t2(sortFn, arr2, n);
-    t1.join();
-    t2.join();
+    QsortThreadArg arg1 = {arr1, n};
+    QsortThreadArg arg2 = {arr2, n};
+    pthread_t t1;
+    pthread_t t2;
+    pthread_create(&t1, nullptr, QsortThreadFn, &arg1);
+    pthread_create(&t2, nullptr, QsortThreadFn, &arg2);
+    pthread_join(t1, nullptr);
+    pthread_join(t2, nullptr);
     int ret = QsortVerifyAsc(arr1, n, 1);
     if (ret == QSORT_NO_ERR) {
         ret = QsortVerifyAsc(arr2, n, 1);
@@ -786,13 +801,15 @@ static napi_value QsortConcurrent4(napi_env env, napi_callback_info)
             arr[k][i] = n - i;
         }
     }
-    auto sortFn = [](int *a, int len) { qsort(a, len, sizeof(int), QsortCmpInt); };
-    std::thread threads[QSORT_ELEM_FOUR];
+    QsortThreadArg args[QSORT_ELEM_FOUR];
+    pthread_t threads[QSORT_ELEM_FOUR];
     for (int k = 0; k < QSORT_ELEM_FOUR; k++) {
-        threads[k] = std::thread(sortFn, arr[k], n);
+        args[k].arr = arr[k];
+        args[k].len = n;
+        pthread_create(&threads[k], nullptr, QsortThreadFn, &args[k]);
     }
     for (int k = 0; k < QSORT_ELEM_FOUR; k++) {
-        threads[k].join();
+        pthread_join(threads[k], nullptr);
     }
     int ret = QSORT_NO_ERR;
     for (int k = 0; k < QSORT_ELEM_FOUR && ret == QSORT_NO_ERR; k++) {
