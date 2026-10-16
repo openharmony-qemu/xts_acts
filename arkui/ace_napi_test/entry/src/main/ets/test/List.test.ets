@@ -23,6 +23,7 @@ import napiWorkerTest from './NapiWorker.test';
 import napiWorkerGCTest from './NapiWorkerGC.test';
 import napiRefTest from './NapiRef.test';
 import napiCallsiteInfoTest from './NapiCallsiteInfo.test';
+import napiMicrotaskScopeTest from './NapiMicrotaskScope.test';
 
 export default function testsuite() {
   napiRefTest();
@@ -36,4 +37,5 @@ export default function testsuite() {
   napiWorkerGCTest();
   napiCheckExTest();
   napiCallsiteInfoTest();
+  napiMicrotaskScopeTest();
 }

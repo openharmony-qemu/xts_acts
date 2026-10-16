@@ -487,6 +487,32 @@ workerPort.onmessage = (e: MessageEvents) => {
       workerPort.postMessage(res1 && res2 && res3);
       break;
     }
+    case 'napiMicrotaskScopeOpenBasic': {
+      let value = napitest.NapiMicrotaskScopeOpenBasic();
+      workerPort.postMessage(value);
+      break;
+    }
+    case 'napiMicrotaskScopeSuppressCallFunction': {
+      let resolved = Promise.resolve();
+      let value = napitest.NapiMicrotaskScopeSuppressCallFunction(resolved, resolved.then);
+      workerPort.postMessage(value);
+      break;
+    }
+    case 'napiMicrotaskScopeSuppressNewInstance': {
+      let value = napitest.NapiMicrotaskScopeSuppressNewInstance();
+      workerPort.postMessage(value);
+      break;
+    }
+    case 'napiMicrotaskScopeSuppressResolve': {
+      let value = napitest.NapiMicrotaskScopeSuppressResolve();
+      workerPort.postMessage(value);
+      break;
+    }
+    case 'napiMicrotaskScopeDefaultDrain': {
+      let value = napitest.NapiMicrotaskScopeDefaultDrain();
+      workerPort.postMessage(value);
+      break;
+    }
     default:
       break;
   }

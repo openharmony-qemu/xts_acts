@@ -3074,5 +3074,190 @@ export default function NapiWorkerTest() {
         };
       });
     });
+
+    /**
+     * @tc.name   testNapiMicrotaskScopeWorker0001
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_MICROTASKSCOPE_WORKER_0100
+     * @tc.desc   NapiWorkerTest NapiMicrotaskScopeOpenBasic in worker thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNapiMicrotaskScopeWorker0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      const caseName = 'testNapiMicrotaskScopeWorker0001';
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('napiMicrotaskScopeOpenBasic');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
+        myWorker.onmessage = (e) => {
+          try {
+            expect(e.data).assertEqual(true);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
+          myWorker.terminate();
+          reject(e);
+        };
+      });
+    });
+
+    /**
+     * @tc.name   testNapiMicrotaskScopeWorker0002
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_MICROTASKSCOPE_WORKER_0200
+     * @tc.desc   NapiWorkerTest NapiMicrotaskScopeSuppressCallFunction in worker thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNapiMicrotaskScopeWorker0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      const caseName = 'testNapiMicrotaskScopeWorker0002';
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('napiMicrotaskScopeSuppressCallFunction');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
+        myWorker.onmessage = (e) => {
+          try {
+            expect(e.data).assertEqual(true);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
+          myWorker.terminate();
+          reject(e);
+        };
+      });
+    });
+
+    /**
+     * @tc.name   testNapiMicrotaskScopeWorker0003
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_MICROTASKSCOPE_WORKER_0300
+     * @tc.desc   NapiWorkerTest NapiMicrotaskScopeSuppressResolve in worker thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNapiMicrotaskScopeWorker0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      const caseName = 'testNapiMicrotaskScopeWorker0003';
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('napiMicrotaskScopeSuppressResolve');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
+        myWorker.onmessage = (e) => {
+          try {
+            expect(e.data).assertEqual(true);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
+          myWorker.terminate();
+          reject(e);
+        };
+      });
+    });
+
+    /**
+     * @tc.name   testNapiMicrotaskScopeWorker0004
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_MICROTASKSCOPE_WORKER_0400
+     * @tc.desc   NapiWorkerTest NapiMicrotaskScopeDefaultDrain in worker thread + main thread isolation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNapiMicrotaskScopeWorker0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      const caseName = 'testNapiMicrotaskScopeWorker0004';
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('napiMicrotaskScopeDefaultDrain');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
+        myWorker.onmessage = (e) => {
+          try {
+            expect(e.data).assertEqual(true);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
+          myWorker.terminate();
+          reject(e);
+        };
+      });
+    });
+
+    /**
+     * @tc.name   testNapiMicrotaskScopeWorker0005
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_MICROTASKSCOPE_WORKER_0500
+     * @tc.desc   NapiWorkerTest NapiMicrotaskScopeSuppressNewInstance in worker thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNapiMicrotaskScopeWorker0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      const caseName = 'testNapiMicrotaskScopeWorker0005';
+      const myWorker = new worker.ThreadWorker('../workers/MyWorker.ets');
+      myWorker.postMessage('napiMicrotaskScopeSuppressNewInstance');
+      await new Promise<void>((resolve, reject) => {
+        let resolved = false;
+        myWorker.onmessage = (e) => {
+          try {
+            expect(e.data).assertEqual(true);
+            resolved = true;
+            myWorker.terminate();
+            resolve();
+          } catch (error) {
+            myWorker.terminate();
+            reject(error);
+          }
+        };
+        myWorker.onexit = () => {
+          if (!resolved) {
+            reject(new Error(`${caseName}: Worker exited without sending result`));
+          }
+        };
+        myWorker.onerror = (e) => {
+          myWorker.terminate();
+          reject(e);
+        };
+      });
+    });
   })
 }
