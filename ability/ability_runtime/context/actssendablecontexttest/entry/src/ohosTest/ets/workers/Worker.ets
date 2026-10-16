@@ -297,12 +297,12 @@ workerPort.onmessage = (e: MessageEvents) => {
         JSON.stringify(context.currentHapModuleInfo));
       // config
       hilog.info(0x0000, 'testTag', 'Worker AbilityStage context.config: %{public}s', JSON.stringify(context.config));
-      workerPort.postMessage({'key': '[sendableAbilityStageContext] AbilityStageContext convert to'
+      workerPort.postMessage({'key': '[sendableAbilityStageContext] AbilityStageContext convert to' +
         'AbilityStageContext', 'value': 'succeed'});
     } catch (error) {
       hilog.error(0x0000, 'testTag', 'Worker abilitystage context convert to abilitystage context failed %{public}s',
         JSON.stringify(error));
-      workerPort.postMessage({'key': '[sendableAbilityStageContext] AbilityStageContext convert to'
+      workerPort.postMessage({'key': '[sendableAbilityStageContext] AbilityStageContext convert to' +
         'AbilityStageContext', 'value': 'failed'});
     }
 

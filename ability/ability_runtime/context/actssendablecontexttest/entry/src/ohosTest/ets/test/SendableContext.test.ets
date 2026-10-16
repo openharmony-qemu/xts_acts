@@ -55,13 +55,13 @@ export default function sendableContextTest() {
     it('SUB_Ability_AbilityRuntime_SendableContext_AbilityStageContext_0100', Level.LEVEL0, async () => {
       hilog.info(0x0000, 'testTag', '%{public}s',
         'SUB_Ability_AbilityRuntime_SendableContext_AbilityStageContext_0100 begin');
-      let aStr = AppStorage.get<string>('[sendableAbilityStageContext] AbilityStageContext convert to'
+      let aStr = AppStorage.get<string>('[sendableAbilityStageContext] AbilityStageContext convert to' +
         'AbilityStageContext');
       expect(aStr == 'succeed').assertTrue();
-      let bStr = AppStorage.get<string>('[sendableAbilityStageContext] AbilityStageContext convert to'
+      let bStr = AppStorage.get<string>('[sendableAbilityStageContext] AbilityStageContext convert to' +
         'ApplicationContext');
       expect(bStr == 'failed').assertTrue();
-      let cStr = AppStorage.get<string>('[sendableAbilityStageContext] AbilityStageContext convert to'
+      let cStr = AppStorage.get<string>('[sendableAbilityStageContext] AbilityStageContext convert to' +
         'UIAbilityContext');
       expect(cStr == 'failed').assertTrue();
       let dStr = AppStorage.get<string>('[sendableAbilityStageContext] AbilityStageContext convert to Context');
@@ -110,12 +110,12 @@ export default function sendableContextTest() {
     it('SUB_Ability_AbilityRuntime_SendableContext_ApplicationContext_0100', Level.LEVEL0, async () => {
       hilog.info(0x0000, 'testTag', '%{public}s',
         'SUB_Ability_AbilityRuntime_SendableContext_ApplicationContext_0100 begin');
-      let aStr = AppStorage.get<string>('[sendableApplicationContext] ApplicationContext convert to'
+      let aStr = AppStorage.get<string>('[sendableApplicationContext] ApplicationContext convert to' +
         'ApplicationContext');
       expect(aStr == 'succeed').assertTrue();
       let bStr = AppStorage.get<string>('[sendableApplicationContext] ApplicationContext convert to UIAbilityContext');
       expect(bStr == 'failed').assertTrue();
-      let cStr = AppStorage.get<string>('[sendableApplicationContext] ApplicationContext convert to'
+      let cStr = AppStorage.get<string>('[sendableApplicationContext] ApplicationContext convert to' +
         'AbilityStageContext');
       expect(cStr == 'failed').assertTrue();
       let dStr = AppStorage.get<string>('[sendableApplicationContext] ApplicationContext convert to Context');
