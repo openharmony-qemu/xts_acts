@@ -76,7 +76,12 @@ async function startAbility(bundleName: string, abilityName: string) {
 }
 
 async function stopApplication(bundleName: string) {
-    await delegator.executeShellCommand(`aa force-stop ${bundleName} `).then(result => {
+    let cmd = `aa force-stop ${bundleName}`;
+    let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
+    await delegator.executeShellCommand(cmd).then(result => {
         console.info(`UiTestCase, stop application finished: ${result}`)
     }).catch((err: BusinessError) => {
         console.error(`UiTestCase,stop application failed: ${err}`)
@@ -102,16 +107,17 @@ async function maxUiWindow(driver: Driver, window: UiWindow | null) {
 
 async function exitInputMethod() {
     let driver = Driver.create()
+    let disPlay = display.getDefaultDisplaySync();
     let softKeyBoard = await driver.findComponent(ON.type('Canvas'))
     console.log(`${TestTag},softKeyBoard: ${JSON.stringify(softKeyBoard)}`);
     if (softKeyBoard != null) {
-        await driver.pressBack()
+        await driver.pressBack(disPlay.id)
     }
     await driver.delayMs(2000)
     let keyCanvasKeyboard = await driver.findComponent(ON.id('KeyCanvasKeyboard'))
     console.log(`${TestTag},keyCanvasKeyboard: ${JSON.stringify(keyCanvasKeyboard)}`);
     if (keyCanvasKeyboard != null) {
-        await driver.pressBack()
+        await driver.pressBack(disPlay.id)
     }
 }
 
@@ -355,10 +361,11 @@ export default function UiTest() {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
             let scrollBar = await driver.findComponent(ON.type('Scroll').id('parentScroll'))
+            let disPlayId = await scrollBar.getDisplayId()
             let rect = await scrollBar.getBounds()
             let center = await scrollBar.getBoundsCenter()
-            await driver.swipeBetween({ x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4) },
-                { x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4) })
+            await driver.swipeBetween({ x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4), displayId: disPlayId },
+                { x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4), displayId: disPlayId })
             await driver.delayMs(5000);
             await stopApplication('com.uitestScene.acts');
             expect(isCallBack).assertTrue();
@@ -402,10 +409,11 @@ export default function UiTest() {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
             let scrollBar = await driver.findComponent(ON.type('Scroll').id('parentScroll'))
+            let disPlayId = await scrollBar.getDisplayId()
             let rect = await scrollBar.getBounds()
             let center = await scrollBar.getBoundsCenter()
-            await driver.swipeBetween({ x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4) },
-                { x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4) })
+            await driver.swipeBetween({ x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4), displayId: disPlayId },
+                { x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4), displayId: disPlayId })
             await driver.delayMs(5000);
             await stopApplication('com.uitestScene.acts');
             expect(isCallBack).assertTrue();
@@ -534,9 +542,10 @@ export default function UiTest() {
             await driver.delayMs(waitUiReadyMs);
             let longClickBtn = await driver.findComponent(ON.id('longClickBtn'));
             await driver.delayMs(waitUiReadyMs);
+            let disPlayId = await longClickBtn.getDisplayId();
             let center = await longClickBtn.getBoundsCenter();
             await driver.delayMs(waitUiReadyMs);
-            let result = await driver.isComponentPresentWhenLongClick(ON.text('ShowLongEventText'), center, 2500)
+            let result = await driver.isComponentPresentWhenLongClick(ON.belongingDisplay(disPlayId).text('ShowLongEventText'), center, 2500)
             expect(result).assertTrue();
             await driver.delayMs(waitUiReadyMs);
             let longClickTextResultBtn = await driver.findComponent(ON.id('longClickTextResult'));
@@ -611,9 +620,10 @@ export default function UiTest() {
                 await driver.delayMs(waitUiReadyMs);
                 let longClickBtn = await driver.findComponent(ON.id('longClickBtn'));
                 await driver.delayMs(waitUiReadyMs);
+                let disPlayId = await longClickBtn.getDisplayId();
                 let center = await longClickBtn.getBoundsCenter();
                 await driver.delayMs(waitUiReadyMs);
-                let result = await driver.isComponentPresentWhenLongClick(ON.text('ShowLongEventTextNot'), center, null)
+                let result = await driver.isComponentPresentWhenLongClick(ON.belongingDisplay(disPlayId).text('ShowLongEventTextNot'), center, null)
                 expect(result).assertFalse();
                 await driver.delayMs(waitUiReadyMs);
                 let longClickTextResultBtn = await driver.findComponent(ON.id('longClickTextResult'));
@@ -651,9 +661,10 @@ export default function UiTest() {
                 await driver.delayMs(waitUiReadyMs);
                 let longClickBtn = await driver.findComponent(ON.id('longClickBtn'));
                 await driver.delayMs(waitUiReadyMs);
+                let disPlayId = await longClickBtn.getDisplayId();
                 let center = await longClickBtn.getBoundsCenter();
                 await driver.delayMs(waitUiReadyMs);
-                let result = await driver.isComponentPresentWhenLongClick(ON.text('ShowLongEventTextNot'), center, undefined)
+                let result = await driver.isComponentPresentWhenLongClick(ON.belongingDisplay(disPlayId).text('ShowLongEventTextNot'), center, undefined)
                 expect(result).assertFalse();
                 await driver.delayMs(waitUiReadyMs);
                 let longClickTextResultBtn = await driver.findComponent(ON.id('longClickTextResult'));
