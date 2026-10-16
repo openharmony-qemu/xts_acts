@@ -166,6 +166,7 @@ export interface FilterResult {
 
 export const getKeyEventFilter: (windowId: number) => FilterResult;
 export const getKeyEventFilterNullParam: (windowId: number) => number;
+export const getWindowAvoidAreaNullParam: (windowId: number) => number;
 export const getMouseEventFilter: (windowId: number) => FilterResult;
 export const getMouseEventFilterNullParam: (windowId: number) => number;
 export const getTouchEventFilter: (windowId: number) => FilterResult;

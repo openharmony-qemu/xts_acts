@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import http from '@ohos.net.http';
 import { BusinessError } from '@ohos.base';
 import connection from '@ohos.net.connection';
@@ -163,7 +163,7 @@ export default function HttpFlushTest() {
                       } else {
                         console.info(`${caseName} secondResponse performanceTiming ${JSON.stringify(data?.performanceTiming)}`);
                         console.info(`${caseName} secondResponse tcpTiming ${data?.performanceTiming.tcpTiming}`);
-                        ExpectTrue(data?.performanceTiming.tcpTiming == 0);
+                        ExpectTrue(data?.performanceTiming.tcpTiming === 0);
                         httpRequest.destroy();
                         done();
                       }
@@ -232,7 +232,7 @@ export default function HttpFlushTest() {
                           } else {
                             console.info(`${caseName} thirdResponse performanceTiming ${JSON.stringify(data?.performanceTiming)}`);
                             console.info(`${caseName} thirdResponse tcpTiming ${data?.performanceTiming.tcpTiming}`);
-                            ExpectTrue(data?.performanceTiming.tcpTiming == 0);
+                            ExpectTrue(data?.performanceTiming.tcpTiming === 0);
                             httpRequest.destroy();
                             done();
                           }
@@ -311,7 +311,7 @@ export default function HttpFlushTest() {
                               } else {
                                 console.info(`${caseName} fourthResponse performanceTiming ${JSON.stringify(data?.performanceTiming)}`);
                                 console.info(`${caseName} fourthResponse tcpTiming ${data?.performanceTiming.tcpTiming}`);
-                                ExpectTrue(data?.performanceTiming.tcpTiming == 0);
+                                ExpectTrue(data?.performanceTiming.tcpTiming === 0);
                                 httpRequest.destroy();
                                 done();
                               }
@@ -400,7 +400,7 @@ export default function HttpFlushTest() {
                                 } else {
                                   console.info(`${caseName} fifthResponse performanceTiming ${JSON.stringify(data?.performanceTiming)}`);
                                   console.info(`${caseName} fifthResponse tcpTiming ${data?.performanceTiming.tcpTiming}`);
-                                  ExpectTrue(data?.performanceTiming.tcpTiming == 0);
+                                  ExpectTrue(data?.performanceTiming.tcpTiming === 0);
                                   httpRequest.destroy();
                                   done();
                                 }
@@ -512,7 +512,7 @@ export default function HttpFlushTest() {
                     } else {
                       console.info(`${caseName} secondResponse performanceTiming ${JSON.stringify(data?.performanceTiming)}`);
                       console.info(`${caseName} secondResponse tcpTiming ${data?.performanceTiming.tcpTiming}`);
-                      ExpectTrue(data?.performanceTiming.tcpTiming == 0);
+                      ExpectTrue(data?.performanceTiming.tcpTiming === 0);
                       httpRequest.destroy();
                       done();
                     }
@@ -579,7 +579,7 @@ export default function HttpFlushTest() {
                         } else {
                           console.info(`${caseName} thirdResponse performanceTiming ${JSON.stringify(data?.performanceTiming)}`);
                           console.info(`${caseName} thirdResponse tcpTiming ${data?.performanceTiming.tcpTiming}`);
-                          ExpectTrue(data?.performanceTiming.tcpTiming == 0);
+                          ExpectTrue(data?.performanceTiming.tcpTiming === 0);
                           httpRequest.destroy();
                           done();
                         }
@@ -656,7 +656,7 @@ export default function HttpFlushTest() {
                             } else {
                               console.info(`${caseName} fourthResponse performanceTiming ${JSON.stringify(data?.performanceTiming)}`);
                               console.info(`${caseName} fourthResponse tcpTiming ${data?.performanceTiming.tcpTiming}`);
-                              ExpectTrue(data?.performanceTiming.tcpTiming == 0);
+                              ExpectTrue(data?.performanceTiming.tcpTiming === 0);
                               httpRequest.destroy();
                               done();
                             }
@@ -743,7 +743,7 @@ export default function HttpFlushTest() {
                                 } else {
                                   console.info(`${caseName} fifthResponse performanceTiming ${JSON.stringify(data?.performanceTiming)}`);
                                   console.info(`${caseName} fifthResponse tcpTiming ${data?.performanceTiming.tcpTiming}`);
-                                  ExpectTrue(data?.performanceTiming.tcpTiming == 0);
+                                  ExpectTrue(data?.performanceTiming.tcpTiming === 0);
                                   httpRequest.destroy();
                                   done();
                                 }
@@ -930,7 +930,7 @@ export default function HttpFlushTest() {
                     } else {
                       console.info(`${caseName} secondResponse performanceTiming ${JSON.stringify(data?.performanceTiming)}`);
                       console.info(`${caseName} secondResponse tcpTiming ${data?.performanceTiming.tcpTiming}`);
-                      ExpectTrue(data?.performanceTiming.tcpTiming == 0);
+                      ExpectTrue(data?.performanceTiming.tcpTiming === 0);
                       httpRequest.destroy();
                       done();
                     }
@@ -997,7 +997,7 @@ export default function HttpFlushTest() {
                         } else {
                           console.info(`${caseName} thirdResponse performanceTiming ${JSON.stringify(data?.performanceTiming)}`);
                           console.info(`${caseName} thirdResponse tcpTiming ${data?.performanceTiming.tcpTiming}`);
-                          ExpectTrue(data?.performanceTiming.tcpTiming == 0);
+                          ExpectTrue(data?.performanceTiming.tcpTiming === 0);
                           httpRequest.destroy();
                           done();
                         }
@@ -1066,7 +1066,7 @@ export default function HttpFlushTest() {
                       } else {
                         console.info(`${caseName} secondResponse performanceTiming ${JSON.stringify(data?.performanceTiming)}`);
                         console.info(`${caseName} secondResponse tcpTiming ${data?.performanceTiming.tcpTiming}`);
-                        ExpectTrue(data?.performanceTiming.tcpTiming == 0);
+                        ExpectTrue(data?.performanceTiming.tcpTiming === 0);
                         httpRequest.destroy();
                         done();
                       }
@@ -1125,7 +1125,7 @@ export default function HttpFlushTest() {
                     } else {
                       console.info(`${caseName} secondResponse performanceTiming ${JSON.stringify(data?.performanceTiming)}`);
                       console.info(`${caseName} secondResponse tcpTiming ${data?.performanceTiming.tcpTiming}`);
-                      ExpectTrue(data?.performanceTiming.tcpTiming == 0);
+                      ExpectTrue(data?.performanceTiming.tcpTiming === 0);
                       httpRequest.destroy();
                       done();
                     }
@@ -1188,7 +1188,7 @@ export default function HttpFlushTest() {
                 } else {
                   console.info(`${caseName} secondResponse performanceTiming ${JSON.stringify(data?.performanceTiming)}`);
                   console.info(`${caseName} secondResponse tcpTiming ${data?.performanceTiming.tcpTiming}`);
-                  ExpectTrue(data?.performanceTiming.tcpTiming == 0);
+                  ExpectTrue(data?.performanceTiming.tcpTiming === 0);
                   httpRequest.destroy();
                   done();
                 }
@@ -1239,7 +1239,7 @@ export default function HttpFlushTest() {
               httpRequest.request(XTS_TEST_HTTP_URL).then((data: http.HttpResponse) => {
                 console.info(`${caseName} secondResponse performanceTiming ${JSON.stringify(data?.performanceTiming)}`);
                 console.info(`${caseName} secondResponse tcpTiming ${data?.performanceTiming.tcpTiming}`);
-                ExpectTrue(data?.performanceTiming.tcpTiming == 0);
+                ExpectTrue(data?.performanceTiming.tcpTiming === 0);
                 httpRequest.destroy();
                 done();
               }).catch((err: Error) => {

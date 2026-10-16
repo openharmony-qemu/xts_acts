@@ -14,7 +14,9 @@
  */
 export const Test_CencInfo_Destroy: (handle: string) => number;
 export const Test_AVCencInfo_SetAlgorithm: (handle: string, algo: number) => number;
+export const AVCencInfoSetAlgorithmOne: () => number;
 export const Test_AVCencInfo_SetKeyIdAndIv: (handle: string, keyid: string, keyidlen: number, iv:string, ivlen: number) => number;
 export const Test_AVCencInfo_SetSubsampleInfo: (handle: string, enblocknum: number, skipblocknum: number, fstenoffset:number, subsamplenum:number, subsample:string) => number;
 export const Test_AVCencInfo_SetMode: (handle: string, mode: number) => number;
 export const Test_AVCencInfo_SetAVBuffer: (handle: string, buff: string) => number;
+export const DrmCencAlgorithmEnum: () => number;

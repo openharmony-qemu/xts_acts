@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, it, expect,beforeAll, Level } from '@ohos/hypium';
+import { describe, beforeEach, afterEach, it, expect,beforeAll, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router'
 import { UiDriver, UiComponent, BY, Driver, Component, ON } from '@ohos.UiTest'
 import events_emitter from '@ohos.events.emitter';
@@ -26,6 +26,7 @@ const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.arkui.ace.commonEvents.api11/EntryAbility';
 
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function ShortcutKeyTest() {
 
   const SUITE = 'ShortcutKey'
@@ -118,7 +119,7 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       }
       events_emitter.on(event, callback);
       let driver = Driver.create()
-      await driver.triggerCombineKeys(input.KeyCode.KEYCODE_CTRL_LEFT, input.KeyCode.KEYCODE_B)
+      await driver.triggerCombineKeys(input.KeyCode.KEYCODE_CTRL_LEFT, input.KeyCode.KEYCODE_B, 0, displayID)
 
       console.info(`${SUITE} ${CASE} END`);
     });
@@ -145,7 +146,7 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       }
       events_emitter.on(event, callback);
       let driver = Driver.create()
-      await driver.triggerCombineKeys(input.KeyCode.KEYCODE_SHIFT_LEFT, input.KeyCode.KEYCODE_1);
+      await driver.triggerCombineKeys(input.KeyCode.KEYCODE_SHIFT_LEFT, input.KeyCode.KEYCODE_1, 0, displayID);
 
       console.info(`${SUITE} ${CASE} END`);
     });
@@ -172,7 +173,7 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       }
       events_emitter.on(event, callback);
       let driver = Driver.create()
-      await driver.triggerCombineKeys(input.KeyCode.KEYCODE_ALT_LEFT, input.KeyCode.KEYCODE_Q);
+      await driver.triggerCombineKeys(input.KeyCode.KEYCODE_ALT_LEFT, input.KeyCode.KEYCODE_Q, 0, displayID);
 
       console.info(`${SUITE} ${CASE} END`);
     });
@@ -206,7 +207,7 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
           priority: events_emitter.EventPriority.LOW
         }
         events_emitter.on(event, callback);
-        await driver.triggerCombineKeys(input.KeyCode.KEYCODE_CTRL_LEFT, arr_keyCode[i])
+        await driver.triggerCombineKeys(input.KeyCode.KEYCODE_CTRL_LEFT, arr_keyCode[i], 0, displayID)
       }
 
       console.info(`${SUITE} ${CASE} END`);

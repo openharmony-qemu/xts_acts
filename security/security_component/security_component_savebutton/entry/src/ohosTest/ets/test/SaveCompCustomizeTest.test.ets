@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium-dynamic"
 import router from '@ohos.router';
 import display from '@ohos.display';
 import events_emitter from '@ohos.events.emitter';
@@ -52,7 +52,7 @@ export default function saveCompCustomizeTest() {
       console.info(`====>${testname} clickSecComponent function Start====`);
       try {
         let button = await driver.findComponent(ON.type('SaveButton'));
-        await Utils.sleep(500);
+        await Utils.sleep(3000);
         console.info(`====>${testname} button is:` + JSON.stringify(button));
         let buttonText = await button.getText();
         console.info(`====>${testname} buttonText is:` + JSON.stringify(buttonText));
@@ -60,6 +60,7 @@ export default function saveCompCustomizeTest() {
         await button.click();
         await Utils.sleep(1000);
         let titleTx = await driver.findComponent(ON.text('安全保存图片和视频'));
+        await Utils.sleep(3000);
         console.info(`====>${testname} titleTx is:` + JSON.stringify(titleTx));
         if (titleTx !== null) {
           await clickAllowBtn(testname, driver);
@@ -75,6 +76,7 @@ export default function saveCompCustomizeTest() {
       console.info(`====>${testname} clickAllowBtn function Start====`);
       try {
         let allowBtn = await driver.findComponent(ON.text('允许'));
+        await Utils.sleep(3000);
         console.info(`====>${testname} allowBtn is:` + JSON.stringify(allowBtn));
         if(allowBtn !== null) {
           console.info(`====>${testname} allowBtnClick START====`);
@@ -97,6 +99,7 @@ export default function saveCompCustomizeTest() {
             await Utils.sleep(100);
           }
           let allowBtn = await driver.findComponent(ON.text('允许'));
+          await Utils.sleep(3000);
           console.info(`====>${testname} allowBtn is:` + JSON.stringify(allowBtn));
           console.info(`====>${testname} allowBtnClick START====`);
           await allowBtn.click();
@@ -176,6 +179,8 @@ export default function saveCompCustomizeTest() {
       }
       await Utils.sleep(1000);
       let strJson = getInspectorByKey('keyCustomSave');
+      await Utils.sleep(3000);
+      console.info(`====>${TCNAME} strJson is: ${strJson}`);
       let obj : ESObject = JSON.parse(strJson);
       expect(obj.$attrs.icon).assertEqual(0);
       expect(obj.$attrs.text).assertEqual(0);
@@ -219,6 +224,8 @@ export default function saveCompCustomizeTest() {
       }
       await Utils.sleep(1000);
       let strJson = getInspectorByKey('keyCustomSave');
+      await Utils.sleep(3000);
+      console.info(`====>${TCNAME} strJson is: ${strJson}`);
       let obj : ESObject = JSON.parse(strJson);
       console.info(`====>${TCNAME} obj.$attrs.stateEffect: ` + obj.$attrs.stateEffect);
       expect(obj.$attrs.icon).assertEqual(0);
@@ -264,6 +271,8 @@ export default function saveCompCustomizeTest() {
       }
       await Utils.sleep(1000);
       let strJson = getInspectorByKey('keyCustomSave');
+      await Utils.sleep(3000);
+      console.info(`====>${TCNAME} strJson is: ${strJson}`);
       let obj : ESObject = JSON.parse(strJson);
       expect(obj.$attrs.iconBorderRadius.topLeft).assertEqual(undefined);
       expect(obj.$attrs.iconBorderRadius.topRight).assertEqual(undefined);
@@ -312,6 +321,8 @@ export default function saveCompCustomizeTest() {
       }
       await Utils.sleep(1000);
       let strJson = getInspectorByKey('keyCustomSave');
+      await Utils.sleep(3000);
+      console.info(`====>${TCNAME} strJson is: ${strJson}`);
       let obj : ESObject = JSON.parse(strJson);
       expect(obj.$attrs.iconBorderRadius.topLeft).assertEqual(undefined);
       expect(obj.$attrs.iconBorderRadius.topRight).assertEqual(undefined);
@@ -358,6 +369,8 @@ export default function saveCompCustomizeTest() {
       }
       await Utils.sleep(1000);
       let strJson = getInspectorByKey('keyCustomSave');
+      await Utils.sleep(3000);
+      console.info(`====>${TCNAME} strJson is: ${strJson}`);
       let obj : ESObject = JSON.parse(strJson);
       expect(obj.$attrs.iconBorderRadius.topLeft).assertEqual(undefined);
       expect(obj.$attrs.iconBorderRadius.topRight).assertEqual(undefined);

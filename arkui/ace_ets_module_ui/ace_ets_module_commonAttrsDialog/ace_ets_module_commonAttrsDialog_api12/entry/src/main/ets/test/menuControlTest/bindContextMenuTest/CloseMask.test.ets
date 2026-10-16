@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../MainAbility/common/Common';
@@ -20,6 +20,8 @@ import {MessageManager,Callback} from '../../../MainAbility/utils/MessageManager
 import window from '@ohos.window';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
+
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 
 export default function CloseMask() {
   describe('CloseMask',  () =>{
@@ -61,7 +63,9 @@ export default function CloseMask() {
       await Button.click();
       await CommonFunc.sleep(1000);
 
-      await driver.click(200,200);
+      // 涉及坐标
+      await driver.clickAt({ x: 200, y: 200, displayId: displayID });
+      // await driver.click(200,200);
       await CommonFunc.sleep(1000);
 
       let strJson = getInspectorByKey('CloseMaskText');

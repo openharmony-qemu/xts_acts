@@ -83,6 +83,7 @@ struct WebComponent {
                   break;
               }
             case "blurMode02": {
+                  this.controller.onActive();
                   this.userAgentPC = this.controller.getUserAgent();
                   if ((this.userAgentPC).includes("PC")) {
                     Utils.emitEvent(true, 178220)
@@ -93,6 +94,7 @@ struct WebComponent {
                   break;
               }
             case "blurMode03": {
+              this.controller.onActive();
               this.userAgentPC = this.controller.getUserAgent();
               if ((this.userAgentPC).includes("PC")) {
                 Utils.emitEvent(true, 178230)

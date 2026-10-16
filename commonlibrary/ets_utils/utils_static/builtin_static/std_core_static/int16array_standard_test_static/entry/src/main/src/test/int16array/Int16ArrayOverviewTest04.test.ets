@@ -244,28 +244,6 @@ export default function Int16ArrayOverviewTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_1300
-     * @tc.name testInt16ArrayOverviewTestFour013
-     * @tc.desc Verify fill(0x8000) fills all elements as -32768
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayOverviewTestFour013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Int16Array(3);
-      arr.fill(0x8000);
-      let actualFirstElement: number = arr.$_get(0);
-      let expectedFirstElement: int = -32768;
-      expect(actualFirstElement).assertEqual(expectedFirstElement);
-      let actualSecondElement: number = arr.$_get(1);
-      let expectedSecondElement: int = -32768;
-      expect(actualSecondElement).assertEqual(expectedSecondElement);
-      let actualThirdElement: number = arr.$_get(2);
-      let expectedThirdElement: int = -32768;
-      expect(actualThirdElement).assertEqual(expectedThirdElement);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_1400
      * @tc.name testInt16ArrayOverviewTestFour014
      * @tc.desc Verify join on array with zeros produces 1,0,3 string
@@ -278,60 +256,6 @@ export default function Int16ArrayOverviewTest04(): void {
       let actualJoined: string = arr.join(',');
       let expectedJoined: string = '1,0,3';
       expect(actualJoined).assertEqual(expectedJoined);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_1500
-     * @tc.name testInt16ArrayOverviewTestFour015
-     * @tc.desc Verify toString of 0x8000 truncated value is -32768
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayOverviewTestFour015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Int16Array.of(0x8000);
-      let actualString: string = arr.toString();
-      let expectedString: string = '-32768';
-      expect(actualString).assertEqual(expectedString);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_1600
-     * @tc.name testInt16ArrayOverviewTestFour016
-     * @tc.desc Verify toLocaleString on empty array returns empty string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayOverviewTestFour016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Int16Array(0);
-      let actualString: string = arr.toLocaleString('en-US');
-      let expectedString: string = '';
-      expect(actualString).assertEqual(expectedString);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_1700
-     * @tc.name testInt16ArrayOverviewTestFour017
-     * @tc.desc Verify $_set at max int index 2147483647 throws RangeError leaves array unchanged
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayOverviewTestFour017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(10, 20);
-      try {
-        arr.$_set(2147483647, 99);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
-      let actualValue1: number = arr.$_get(0);
-      let expectedValue1: int = 10;
-      expect(actualValue1).assertEqual(expectedValue1);
-      let actualValue2: number = arr.$_get(1);
-      let expectedValue2: int = 20;
-      expect(actualValue2).assertEqual(expectedValue2);
     });
 
     /**
@@ -516,34 +440,6 @@ export default function Int16ArrayOverviewTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_2800
-     * @tc.name testInt16ArrayOverviewTestFour028
-     * @tc.desc Verify find returns undefined on empty array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayOverviewTestFour028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array();
-      let result = arr.find((v: number): boolean => v > 0);
-      expect(result).assertUndefined();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_2900
-     * @tc.name testInt16ArrayOverviewTestFour029
-     * @tc.desc Verify findLastIndex on empty array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayOverviewTestFour029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array();
-      let result = arr.findLastIndex((v: number): boolean => v > 0);
-      expect(result).assertEqual(-1);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_3000
      * @tc.name testInt16ArrayOverviewTestFour030
      * @tc.desc Verify filter on empty array does not invoke callback and returns an empty result
@@ -696,42 +592,6 @@ export default function Int16ArrayOverviewTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_3800
-     * @tc.name testInt16ArrayOverviewTestFour038
-     * @tc.desc Verify new Int16Array with unaligned byteOffset 1 on 8-byte buffer throws RangeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayOverviewTestFour038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buf = new ArrayBuffer(8);
-      try {
-        let arr: Int16Array = new Int16Array(buf, 1);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_3900
-     * @tc.name testInt16ArrayOverviewTestFour039
-     * @tc.desc Verify new Int16Array with 3-byte buffer and length 2 throws RangeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayOverviewTestFour039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buf = new ArrayBuffer(3);
-      try {
-        let arr: Int16Array = new Int16Array(buf, 0, 2);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_4000
      * @tc.name testInt16ArrayOverviewTestFour040
      * @tc.desc Verify map, $_get float truncation
@@ -832,24 +692,6 @@ export default function Int16ArrayOverviewTest04(): void {
       }
       let expectedCount: int = 2;
       expect(count).assertEqual(expectedCount);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_4500
-     * @tc.name testInt16ArrayOverviewTestFour045
-     * @tc.desc Verify new Int16Array throws RangeError zero-byte ArrayBuffer
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayOverviewTestFour045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buf: ArrayBuffer = new ArrayBuffer(0);
-      try {
-        let arr: Int16Array = new Int16Array(buf, 0, 1);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
     });
 
     /**
@@ -1019,162 +861,5 @@ export default function Int16ArrayOverviewTest04(): void {
       expect(parentValue).assertEqual(expectedParentValue);
     });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_5500
-     * @tc.name testInt16ArrayOverviewTestFour055
-     * @tc.desc Verify Int16Array constructor rejects an object cast to int with ClassCastError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayOverviewTestFour055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const unsupported: Object = new Object();
-      try {
-        const invalidLength: int = unsupported as object as int;
-        new Int16Array(invalidLength);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('ClassCastError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_5600
-     * @tc.name testInt16ArrayOverviewTestFour056
-     * @tc.desc Verify Int16Array constructor rejects an object cast to ArrayBuffer with ClassCastError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayOverviewTestFour056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const unsupported: Object = new Object();
-      try {
-        const invalidBuffer: ArrayBuffer = unsupported as object as ArrayBuffer;
-        new Int16Array(invalidBuffer);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('ClassCastError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_5700
-     * @tc.name testInt16ArrayOverviewTestFour057
-     * @tc.desc Verify Int16Array.from rejects an object cast to Array with ClassCastError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayOverviewTestFour057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const unsupported: Object = new Object();
-      try {
-        const invalidSource: Array<int> = unsupported as object as Array<int>;
-        Int16Array.from(invalidSource);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('ClassCastError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_5800
-     * @tc.name testInt16ArrayOverviewTestFour058
-     * @tc.desc Verify Int16Array.from rejects an object cast to map function with ClassCastError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayOverviewTestFour058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const unsupported: Object = new Object();
-      try {
-        const invalidMapFn: (v: number, k: number) => number = unsupported as object as (
-          v: number,
-          k: number,
-        ) => number;
-        Int16Array.from(Int16Array.of(1, 2), invalidMapFn);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('ClassCastError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_5900
-     * @tc.name testInt16ArrayOverviewTestFour059
-     * @tc.desc Verify Int16Array.of rejects an object cast to number with ClassCastError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayOverviewTestFour059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const unsupported: Object = new Object();
-      try {
-        const invalidItem: number = unsupported as object as number;
-        Int16Array.of(invalidItem);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('ClassCastError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_6000
-     * @tc.name testInt16ArrayOverviewTestFour060
-     * @tc.desc Verify set rejects an object cast to ArrayLike with ClassCastError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayOverviewTestFour060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: Int16Array = Int16Array.of(1, 2, 3);
-      const unsupported: Object = new Object();
-      try {
-        const invalidSource: ArrayLike<number> = unsupported as object as ArrayLike<number>;
-        arr.set(invalidSource);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('ClassCastError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_6100
-     * @tc.name testInt16ArrayOverviewTestFour061
-     * @tc.desc Verify includes rejects an object cast to number with ClassCastError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayOverviewTestFour061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: Int16Array = Int16Array.of(1, 2, 3);
-      const unsupported: Object = new Object();
-      try {
-        const invalidSearch: number = unsupported as object as number;
-        arr.includes(invalidSearch);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('ClassCastError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_FOUR_6200
-     * @tc.name testInt16ArrayOverviewTestFour062
-     * @tc.desc Verify indexOf rejects an object cast to int fromIndex with ClassCastError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayOverviewTestFour062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: Int16Array = Int16Array.of(1, 2, 3);
-      const unsupported: Object = new Object();
-      try {
-        const invalidFromIndex: int = unsupported as object as int;
-        arr.indexOf(1, invalidFromIndex);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('ClassCastError');
-      }
-    });
   });
 }

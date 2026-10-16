@@ -70,6 +70,22 @@ int TestTextBlobBuilderMakeMultipleCalls();
 // TextBlob Destroy related functions
 int TestTextBlobDestroyNormal();
 int TestTextBlobDestroyNull();
+int TestTextBlobsArrayDestroyNull();
+int TestTextBlobsArrayDestroyMultipleCalls();
+
+// TextBlob WithFallback related functions
+int TestTextBlobCreateFromTextWithFallbackNormal();
+int TestTextBlobCreateFromTextWithFallbackNull();
+int TestTextBlobCreateFromTextWithFallbackAbnormal();
+int TestTextBlobCreateFromTextWithFallbackMultipleCalls();
+int TestTextBlobCreateFromPosTextWithFallbackNormal();
+int TestTextBlobCreateFromPosTextWithFallbackNull();
+int TestTextBlobCreateFromPosTextWithFallbackAbnormal();
+int TestTextBlobCreateFromPosTextWithFallbackMultipleCalls();
+int TestTextBlobCreateFromStringWithFallbackNormal();
+int TestTextBlobCreateFromStringWithFallbackNull();
+int TestTextBlobCreateFromStringWithFallbackAbnormal();
+int TestTextBlobCreateFromStringWithFallbackMultipleCalls();
 } // namespace Drawing
 } // namespace Rosen
 } // namespace OHOS

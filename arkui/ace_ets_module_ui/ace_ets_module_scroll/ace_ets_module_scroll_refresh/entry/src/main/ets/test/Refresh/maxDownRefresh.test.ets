@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
@@ -57,7 +57,9 @@ export default function maxDownRefresh() {
       let btn_64 = await driver.findComponent(ON.id('maxPull_text_z'));
       await btn_64.click();
       await CommonFunc.sleep(1500);
-      let swiperOffset = CommonFunc.getComponentRectOnScreen('maxPull_down_refresh');
+      let refreshComp = await driver.findComponent(ON.id('maxPull_down_refresh'))
+      let swiperOffset = await refreshComp.getBounds()
+      let displayId = await refreshComp.getDisplayId()
       let top = swiperOffset.top;
       let right = swiperOffset.right;
       let left = swiperOffset.left;
@@ -65,7 +67,8 @@ export default function maxDownRefresh() {
       console.info("maxDownRefresh_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom -top;
       let width = right - left;
-      await driver.swipe(Math.round(left + width/2),Math.round(top + height/6),Math.round(left + width/2),Math.round(bottom - height/6));
+      await driver.swipeBetween({x: Math.round(left + width/2), y: Math.round(top + height/6), displayId: displayId},
+        {x: Math.round(left + width/2), y: Math.round(bottom - height/6), displayId: displayId});
       await CommonFunc.sleep(2000);
       let strJson = getInspectorByKey('onState_text');
       console.info("[maxDownRefresh_0100] component obj is: " + JSON.stringify(JSON.parse(strJson)));
@@ -93,7 +96,9 @@ export default function maxDownRefresh() {
       let btn_out = await driver.findComponent(ON.id('maxPull_text_fu'));
       await btn_out.click();
       await CommonFunc.sleep(1500);
-      let swiperOffset = CommonFunc.getComponentRectOnScreen('maxPull_down_refresh');
+      let refreshComp = await driver.findComponent(ON.id('maxPull_down_refresh'))
+      let swiperOffset = await refreshComp.getBounds()
+      let displayId = await refreshComp.getDisplayId()
       let top = swiperOffset.top;
       let right = swiperOffset.right;
       let left = swiperOffset.left;
@@ -101,7 +106,8 @@ export default function maxDownRefresh() {
       console.info("maxDownRefresh_0200 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom -top;
       let width = right - left;
-      await driver.swipe(Math.round(left + width/2),Math.round(top + height/6),Math.round(left + width/2),Math.round(bottom - height/6));
+      await driver.swipeBetween({x: Math.round(left + width/2), y: Math.round(top + height/6), displayId: displayId},
+        {x: Math.round(left + width/2), y: Math.round(bottom - height/6), displayId: displayId});
       await CommonFunc.sleep(2000);
       let strJson = getInspectorByKey('onState_text');
       console.info("[maxDownRefresh_0200] component obj is: " + JSON.stringify(JSON.parse(strJson)));
@@ -129,7 +135,9 @@ export default function maxDownRefresh() {
       let btn_64 = await driver.findComponent(ON.id('maxPull_text_null'));
       await btn_64.click();
       await CommonFunc.sleep(1500);
-      let swiperOffset = CommonFunc.getComponentRectOnScreen('maxPull_down_refresh');
+      let refreshComp = await driver.findComponent(ON.id('maxPull_down_refresh'))
+      let swiperOffset = await refreshComp.getBounds()
+      let displayId = await refreshComp.getDisplayId()
       let top = swiperOffset.top;
       let right = swiperOffset.right;
       let left = swiperOffset.left;
@@ -137,7 +145,8 @@ export default function maxDownRefresh() {
       console.info("maxDownRefresh_0300 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom -top;
       let width = right - left;
-      await driver.swipe(Math.round(left + width/2),Math.round(top + height/6),Math.round(left + width/2),Math.round(bottom - height/6));
+      await driver.swipeBetween({x: Math.round(left + width/2), y: Math.round(top + height/6), displayId: displayId},
+        {x: Math.round(left + width/2), y: Math.round(bottom - height/6), displayId: displayId});
       await CommonFunc.sleep(2000);
       let strJson = getInspectorByKey('onState_text');
       console.info("[maxDownRefresh_0300] component obj is: " + JSON.stringify(JSON.parse(strJson)));
@@ -165,7 +174,9 @@ export default function maxDownRefresh() {
       let btn_64 = await driver.findComponent(ON.id('maxPull_text_ude'));
       await btn_64.click();
       await CommonFunc.sleep(1500);
-      let swiperOffset = CommonFunc.getComponentRectOnScreen('maxPull_down_refresh');
+      let refreshComp = await driver.findComponent(ON.id('maxPull_down_refresh'))
+      let swiperOffset = await refreshComp.getBounds()
+      let displayId = await refreshComp.getDisplayId()
       let top = swiperOffset.top;
       let right = swiperOffset.right;
       let left = swiperOffset.left;
@@ -173,7 +184,8 @@ export default function maxDownRefresh() {
       console.info("maxDownRefresh_0400 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom -top;
       let width = right - left;
-      await driver.swipe(Math.round(left + width/2),Math.round(top + height/6),Math.round(left + width/2),Math.round(bottom - height/6));
+      await driver.swipeBetween({x: Math.round(left + width/2), y: Math.round(top + height/6), displayId: displayId},
+        {x: Math.round(left + width/2), y: Math.round(bottom - height/6), displayId: displayId});
       await CommonFunc.sleep(2000);
       let strJson = getInspectorByKey('onState_text');
       console.info("[maxDownRefresh_0400] component obj is: " + JSON.stringify(JSON.parse(strJson)));

@@ -17,23 +17,23 @@
 #include "include/DrawingNativeScalarCommonTest.h"
 #include "include/OhosCommonTest.h"
 
-#define DRAWING_NUMBER_10 10
-#define DRAWING_NUMBER_20 20
-#define DRAWING_NUMBER_30 30
-#define DRAWING_NUMBER_40 40
-#define DRAWING_NUMBER_440 40
-#define DRAWING_NUMBER_100 100
-#define DRAWING_NUMBER_200 200
-#define DRAWING_NUMBER_300 300
-#define DRAWING_NUMBER_400 400
-#define DRAWING_NUMBER_500 500
-#define DRAWING_NUMBER_600 600
-#define DRAWING_NUMBER_700 700
-#define DRAWING_NUMBER_800 800
-#define DRAWING_NUMBER_4096 4096
-#define DRAWING_NUMBER_2160 2160
-#define DRAWING_NUMBER_2139095040 2139095040
-#define DRAWING_NUMBER_2139095170 2139095170
+#define NUMBER_10 10
+#define NUMBER_20 20
+#define NUMBER_30 30
+#define NUMBER_40 40
+#define NUMBER_440 40
+#define NUMBER_100 100
+#define NUMBER_200 200
+#define NUMBER_300 300
+#define NUMBER_400 400
+#define NUMBER_500 500
+#define NUMBER_600 600
+#define NUMBER_700 700
+#define NUMBER_800 800
+#define NUMBER_4096 4096
+#define NUMBER_2160 2160
+#define NUMBER_2139095040 2139095040
+#define NUMBER_2139095170 2139095170
 
 namespace OHOS {
 namespace Rosen {
@@ -57,7 +57,7 @@ int TestRectCreateNormal()
 {
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(100, 200, DRAWING_NUMBER_500, 600);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(100, 200, NUMBER_500, 600);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Free memory
@@ -70,11 +70,11 @@ int TestRectIntersectNormal()
 {
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(100, 200, DRAWING_NUMBER_500, 600);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(100, 200, NUMBER_500, 600);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectCreate to create another rectangle object other
-    OH_Drawing_Rect *other = OH_Drawing_RectCreate(DRAWING_NUMBER_300, DRAWING_NUMBER_400, 700, 800);
+    OH_Drawing_Rect *other = OH_Drawing_RectCreate(NUMBER_300, NUMBER_400, 700, 800);
     // add assert
     EXPECT_NE(other, nullptr);
     // 3. Call OH_Drawing_RectSetLeft to set the x-coordinate of the top-left corner of rect
@@ -86,24 +86,24 @@ int TestRectIntersectNormal()
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // 5. Call OH_Drawing_RectSetRight to set the x-coordinate of the bottom-right corner of rect
-    OH_Drawing_RectSetRight(rect, DRAWING_NUMBER_200);
+    OH_Drawing_RectSetRight(rect, NUMBER_200);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // 6. Call OH_Drawing_RectSetBottom to set the y-coordinate of the bottom-right corner of rect
-    OH_Drawing_RectSetBottom(rect, DRAWING_NUMBER_200);
+    OH_Drawing_RectSetBottom(rect, NUMBER_200);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // 7. Repeat steps 3-6 to set the coordinates of the other rectangle object
-    OH_Drawing_RectSetLeft(other, DRAWING_NUMBER_100);
+    OH_Drawing_RectSetLeft(other, NUMBER_100);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
-    OH_Drawing_RectSetTop(other, DRAWING_NUMBER_100);
+    OH_Drawing_RectSetTop(other, NUMBER_100);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
-    OH_Drawing_RectSetRight(other, DRAWING_NUMBER_300);
+    OH_Drawing_RectSetRight(other, NUMBER_300);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
-    OH_Drawing_RectSetBottom(other, DRAWING_NUMBER_300);
+    OH_Drawing_RectSetBottom(other, NUMBER_300);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // 8. Call OH_Drawing_RectIntersect to check if the two rectangles intersect, Returns true if they intersect,
@@ -121,11 +121,11 @@ int TestRectIntersectNull()
 {
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(100, 200, DRAWING_NUMBER_500, 600);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(100, 200, NUMBER_500, 600);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectCreate to create another rectangle object other
-    OH_Drawing_Rect *other = OH_Drawing_RectCreate(DRAWING_NUMBER_300, DRAWING_NUMBER_400, 700, 800);
+    OH_Drawing_Rect *other = OH_Drawing_RectCreate(NUMBER_300, NUMBER_400, 700, 800);
     // add assert
     EXPECT_NE(other, nullptr);
     // 3. Call OH_Drawing_RectIntersect with the first parameter as nullptr, Returns error code
@@ -150,12 +150,12 @@ int TestRectJoinNormal()
 {
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_200, NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectCreate to create another rectangle object other
-    OH_Drawing_Rect *other = OH_Drawing_RectCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100, DRAWING_NUMBER_300,
-        DRAWING_NUMBER_300);
+    OH_Drawing_Rect *other = OH_Drawing_RectCreate(NUMBER_100, NUMBER_100, NUMBER_300,
+        NUMBER_300);
     // add assert
     EXPECT_NE(other, nullptr);
     // 3. Call OH_Drawing_RectSetLeft to set the x-coordinate of the top-left corner of rect
@@ -167,24 +167,24 @@ int TestRectJoinNormal()
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // 5. Call OH_Drawing_RectSetRight to set the x-coordinate of the bottom-right corner of rect
-    OH_Drawing_RectSetRight(rect, DRAWING_NUMBER_200);
+    OH_Drawing_RectSetRight(rect, NUMBER_200);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // 6. Call OH_Drawing_RectSetBottom to set the y-coordinate of the bottom-right corner of rect
-    OH_Drawing_RectSetBottom(rect, DRAWING_NUMBER_200);
+    OH_Drawing_RectSetBottom(rect, NUMBER_200);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // 7. Repeat steps 3-6 to set the coordinates of the other rectangle object
-    OH_Drawing_RectSetLeft(other, DRAWING_NUMBER_100);
+    OH_Drawing_RectSetLeft(other, NUMBER_100);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
-    OH_Drawing_RectSetTop(other, DRAWING_NUMBER_100);
+    OH_Drawing_RectSetTop(other, NUMBER_100);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
-    OH_Drawing_RectSetRight(other, DRAWING_NUMBER_300);
+    OH_Drawing_RectSetRight(other, NUMBER_300);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
-    OH_Drawing_RectSetBottom(other, DRAWING_NUMBER_300);
+    OH_Drawing_RectSetBottom(other, NUMBER_300);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // 8. Call OH_Drawing_RectJoin to take the union of the two rectangles
@@ -203,12 +203,12 @@ int TestRectJoinNull()
 {
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_200, NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectCreate to create another rectangle object other
-    OH_Drawing_Rect *other = OH_Drawing_RectCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100, DRAWING_NUMBER_300,
-        DRAWING_NUMBER_300);
+    OH_Drawing_Rect *other = OH_Drawing_RectCreate(NUMBER_100, NUMBER_100, NUMBER_300,
+        NUMBER_300);
     // add assert
     EXPECT_NE(other, nullptr);
     // 3. Call OH_Drawing_RectJoin with the first parameter as nullptr, Returns error code
@@ -233,17 +233,17 @@ int TestRectSetLeftNormal()
 {
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_200, NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetLeft to set the x-coordinate of the top-left corner of rect
-    OH_Drawing_RectSetLeft(rect, DRAWING_NUMBER_100);
+    OH_Drawing_RectSetLeft(rect, NUMBER_100);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // 3. Call OH_Drawing_RectGetLeft to get the x-coordinate of the top-left corner of rect, Returns the value set
     // in step 2
     float left = OH_Drawing_RectGetLeft(rect);
-    EXPECT_TRUE(IsScalarAlmostEqual(left, DRAWING_NUMBER_100));
+    EXPECT_TRUE(IsScalarAlmostEqual(left, NUMBER_100));
     // 4. Free memory
     OH_Drawing_RectDestroy(rect);
     DrawingNativeRectTestTearDown();
@@ -254,7 +254,7 @@ int TestRectSetLeftNull()
 {
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_200, NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetLeft with the first parameter as nullptr, Returns error code
@@ -273,17 +273,17 @@ int TestRectSetLeftAbnormal()
 {
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_200, NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetLeft with the second parameter as an integer or character data
-    OH_Drawing_RectSetLeft(rect, DRAWING_NUMBER_100);
+    OH_Drawing_RectSetLeft(rect, NUMBER_100);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // 3. Call OH_Drawing_RectGetLeft to get the x-coordinate of the top-left corner of rect, Returns the value set
     // in step 2 (the passed parameter is forcibly converted)
     float left = OH_Drawing_RectGetLeft(rect);
-    EXPECT_TRUE(IsScalarAlmostEqual(left, DRAWING_NUMBER_100));
+    EXPECT_TRUE(IsScalarAlmostEqual(left, NUMBER_100));
     // 4. Free memory
     OH_Drawing_RectDestroy(rect);
     DrawingNativeRectTestTearDown();
@@ -293,13 +293,13 @@ int TestRectSetLeftAbnormal()
 int TestRectSetLeftMultipleCalls()
 {
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_200, NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
-        OH_Drawing_RectSetLeft(rect, i * DRAWING_NUMBER_10);
+    for (int i = 0; i < NUMBER_10; i++) {
+        OH_Drawing_RectSetLeft(rect, i * NUMBER_10);
         float left = OH_Drawing_RectGetLeft(rect);
-        EXPECT_TRUE(IsScalarAlmostEqual(left, i * DRAWING_NUMBER_10));
+        EXPECT_TRUE(IsScalarAlmostEqual(left, i * NUMBER_10));
     }
     OH_Drawing_RectDestroy(rect);
     DrawingNativeRectTestTearDown();
@@ -310,17 +310,17 @@ int TestRectSetTopNormal()
 {
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_200, NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetTop to set the y-coordinate of the top-left corner of rect
-    OH_Drawing_RectSetTop(rect, DRAWING_NUMBER_100);
+    OH_Drawing_RectSetTop(rect, NUMBER_100);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // 3. Call OH_Drawing_RectGetTop to get the y-coordinate of the top-left corner of rect, Returns the value set in
     // step 2
     float top = OH_Drawing_RectGetTop(rect);
-    EXPECT_TRUE(IsScalarAlmostEqual(top, DRAWING_NUMBER_100));
+    EXPECT_TRUE(IsScalarAlmostEqual(top, NUMBER_100));
     // 4. Free memory
     OH_Drawing_RectDestroy(rect);
     DrawingNativeRectTestTearDown();
@@ -331,7 +331,7 @@ int TestRectSetTopNull()
 {
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_200, NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetTop with the first parameter as nullptr, Returns error code
@@ -350,17 +350,17 @@ int TestRectSetTopAbnormal()
 {
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_200, NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetTop with the second parameter as an integer or character data
-    OH_Drawing_RectSetTop(rect, DRAWING_NUMBER_100);
+    OH_Drawing_RectSetTop(rect, NUMBER_100);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // 3. Call OH_Drawing_RectGetTop to get the y-coordinate of the top-left corner of rect, Returns the value set in
     // step 2 (the passed parameter is forcibly converted)
     float top = OH_Drawing_RectGetTop(rect);
-    EXPECT_TRUE(IsScalarAlmostEqual(top, DRAWING_NUMBER_100));
+    EXPECT_TRUE(IsScalarAlmostEqual(top, NUMBER_100));
     // 4. Free memory
     OH_Drawing_RectDestroy(rect);
     DrawingNativeRectTestTearDown();
@@ -371,30 +371,30 @@ int TestRectSetTopMultipleCalls()
 {
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_200, NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Loop to call OH_Drawing_RectSetTop to set the y-coordinate of the top-left corner of rect 10 times (each time
     // with a different value)
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
-        OH_Drawing_RectSetTop(rect, i * DRAWING_NUMBER_10);
+    for (int i = 0; i < NUMBER_10; i++) {
+        OH_Drawing_RectSetTop(rect, i * NUMBER_10);
         // add assert
         EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
         // 3. Loop to call OH_Drawing_RectGetTop to get the y-coordinate of the top-left corner of rect 10 times, Each
         // time the returned value is consistent with the set value
         float top = OH_Drawing_RectGetTop(rect);
-        EXPECT_TRUE(IsScalarAlmostEqual(top, i * DRAWING_NUMBER_10));
+        EXPECT_TRUE(IsScalarAlmostEqual(top, i * NUMBER_10));
     }
     // 3. Loop to call OH_Drawing_RectGetTop to get the y-coordinate of the top-left corner of rect 10 times, Each time
     // the returned value is consistent with the set value
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
-        OH_Drawing_RectSetTop(rect, DRAWING_NUMBER_10);
+    for (int i = 0; i < NUMBER_10; i++) {
+        OH_Drawing_RectSetTop(rect, NUMBER_10);
         // add assert
         EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
         // 3. Loop to call OH_Drawing_RectGetTop to get the y-coordinate of the top-left corner of rect 10 times, Each
         // time the returned value is consistent with the set value
         float top = OH_Drawing_RectGetTop(rect);
-        EXPECT_TRUE(IsScalarAlmostEqual(top, DRAWING_NUMBER_10));
+        EXPECT_TRUE(IsScalarAlmostEqual(top, NUMBER_10));
     }
     // 4. Free memory
     OH_Drawing_RectDestroy(rect);
@@ -406,17 +406,17 @@ int TestRectSetRightNormal()
 {
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_200, NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetRight to set the x-coordinate of the bottom-right corner of rect
-    OH_Drawing_RectSetRight(rect, DRAWING_NUMBER_300);
+    OH_Drawing_RectSetRight(rect, NUMBER_300);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // 3. Call OH_Drawing_RectGetRight to get the x-coordinate of the bottom-right corner of rect, Returns the value set
     // in step 2
     float right = OH_Drawing_RectGetRight(rect);
-    EXPECT_TRUE(IsScalarAlmostEqual(right, DRAWING_NUMBER_300));
+    EXPECT_TRUE(IsScalarAlmostEqual(right, NUMBER_300));
     // 4. Free memory
     OH_Drawing_RectDestroy(rect);
     DrawingNativeRectTestTearDown();
@@ -427,7 +427,7 @@ int TestRectSetRightNull()
 {
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_200, NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetRight with the first parameter as nullptr, Returns error code
@@ -446,17 +446,17 @@ int TestRectSetRightAbnormal()
 {
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_200, NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetRight with the second parameter as an integer or character data
-    OH_Drawing_RectSetRight(rect, DRAWING_NUMBER_100);
+    OH_Drawing_RectSetRight(rect, NUMBER_100);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // 3. Call OH_Drawing_RectGetRight to get the x-coordinate of the bottom-right corner of rect, Returns the value set
     // in step 2 (the passed parameter is forcibly converted)
     float right = OH_Drawing_RectGetRight(rect);
-    EXPECT_TRUE(IsScalarAlmostEqual(right, DRAWING_NUMBER_100));
+    EXPECT_TRUE(IsScalarAlmostEqual(right, NUMBER_100));
     // 4. Free memory
     OH_Drawing_RectDestroy(rect);
     DrawingNativeRectTestTearDown();
@@ -467,30 +467,30 @@ int TestRectSetRightMultipleCalls()
 {
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_200, NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Loop to call OH_Drawing_RectSetRight to set the x-coordinate of the bottom-right corner of rect 10 times (each
     // time with a different value)
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
-        OH_Drawing_RectSetRight(rect, i * DRAWING_NUMBER_10);
+    for (int i = 0; i < NUMBER_10; i++) {
+        OH_Drawing_RectSetRight(rect, i * NUMBER_10);
         // add assert
         EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
         // 3. Loop to call OH_Drawing_RectGetRight to get the x-coordinate of the bottom-right corner of rect 10 times,
         // Each time the returned value is consistent with the set value
         float right = OH_Drawing_RectGetRight(rect);
-        EXPECT_TRUE(IsScalarAlmostEqual(right, i * DRAWING_NUMBER_10));
+        EXPECT_TRUE(IsScalarAlmostEqual(right, i * NUMBER_10));
     }
     // 3. Loop to call OH_Drawing_RectGetRight to get the x-coordinate of the bottom-right corner of rect 10 times, Each
     // time the returned value is consistent with the set value
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
-        OH_Drawing_RectSetRight(rect, DRAWING_NUMBER_10);
+    for (int i = 0; i < NUMBER_10; i++) {
+        OH_Drawing_RectSetRight(rect, NUMBER_10);
         // add assert
         EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
         // 3. Loop to call OH_Drawing_RectGetRight to get the x-coordinate of the bottom-right corner of rect 10 times,
         // Each time the returned value is consistent with the set value
         float right = OH_Drawing_RectGetRight(rect);
-        EXPECT_TRUE(IsScalarAlmostEqual(right, DRAWING_NUMBER_10));
+        EXPECT_TRUE(IsScalarAlmostEqual(right, NUMBER_10));
     }
     // 4. Free memory
     OH_Drawing_RectDestroy(rect);
@@ -502,17 +502,17 @@ int TestRectSetBottomNormal()
 {
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_200, NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetBottom to set the y-coordinate of the bottom-right corner of rect
-    OH_Drawing_RectSetBottom(rect, DRAWING_NUMBER_300);
+    OH_Drawing_RectSetBottom(rect, NUMBER_300);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // 3. Call OH_Drawing_RectGetBottom to get the y-coordinate of the bottom-right corner of rect, 3. Returns the value
     // set in step 2
     float bottom = OH_Drawing_RectGetBottom(rect);
-    EXPECT_TRUE(IsScalarAlmostEqual(bottom, DRAWING_NUMBER_300));
+    EXPECT_TRUE(IsScalarAlmostEqual(bottom, NUMBER_300));
     // 4. Free memory
     OH_Drawing_RectDestroy(rect);
     DrawingNativeRectTestTearDown();
@@ -523,7 +523,7 @@ int TestRectSetBottomNull()
 {
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_200, NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetBottom with the first parameter as nullptr, returns error code
@@ -542,16 +542,16 @@ int TestRectSetBottomAbnormal()
 {
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_200, NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetBottom with the second parameter as an integer or character data
-    OH_Drawing_RectSetBottom(rect, DRAWING_NUMBER_100);
+    OH_Drawing_RectSetBottom(rect, NUMBER_100);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // 3. Call OH_Drawing_RectGetBottom to get the y-coordinate of the bottom-right corner of rect
     float bottom = OH_Drawing_RectGetBottom(rect);
-    EXPECT_TRUE(IsScalarAlmostEqual(bottom, DRAWING_NUMBER_100));
+    EXPECT_TRUE(IsScalarAlmostEqual(bottom, NUMBER_100));
     // 4. Free memory
     OH_Drawing_RectDestroy(rect);
     DrawingNativeRectTestTearDown();
@@ -561,14 +561,14 @@ int TestRectSetBottomAbnormal()
 int TestRectSetBottomMultipleCalls()
 {
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_200, NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
 
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
-        OH_Drawing_RectSetBottom(rect, i * DRAWING_NUMBER_10);
+    for (int i = 0; i < NUMBER_10; i++) {
+        OH_Drawing_RectSetBottom(rect, i * NUMBER_10);
         float bottom = OH_Drawing_RectGetBottom(rect);
-        EXPECT_TRUE(IsScalarAlmostEqual(bottom, i * DRAWING_NUMBER_10));
+        EXPECT_TRUE(IsScalarAlmostEqual(bottom, i * NUMBER_10));
     }
 
     OH_Drawing_RectDestroy(rect);
@@ -580,14 +580,14 @@ int TestRectGetLeftNormal()
 {
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_200, NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetLeft to set the x-coordinate of the top-left corner of rect
-    OH_Drawing_RectSetLeft(rect, DRAWING_NUMBER_100);
+    OH_Drawing_RectSetLeft(rect, NUMBER_100);
     // 3. Call OH_Drawing_RectGetLeft to get the x-coordinate of the top-left corner of rect
     float left = OH_Drawing_RectGetLeft(rect);
-    EXPECT_TRUE(IsScalarAlmostEqual(left, DRAWING_NUMBER_100));
+    EXPECT_TRUE(IsScalarAlmostEqual(left, NUMBER_100));
     // 4. Free memory
     OH_Drawing_RectDestroy(rect);
     DrawingNativeRectTestTearDown();
@@ -598,7 +598,7 @@ int TestRectGetLeftNull()
 {
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_200, NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectGetLeft with nullptr as the parameter
@@ -614,14 +614,14 @@ int TestRectGetTopNormal()
 {
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_200, NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetTop to set the y-coordinate of the top-left corner of rect
-    OH_Drawing_RectSetTop(rect, DRAWING_NUMBER_100);
+    OH_Drawing_RectSetTop(rect, NUMBER_100);
     // 3. Call OH_Drawing_RectGetTop to get the y-coordinate of the top-left corner of rect
     float top = OH_Drawing_RectGetTop(rect);
-    EXPECT_TRUE(IsScalarAlmostEqual(top, DRAWING_NUMBER_100));
+    EXPECT_TRUE(IsScalarAlmostEqual(top, NUMBER_100));
     // 4. Free memory
     OH_Drawing_RectDestroy(rect);
     DrawingNativeRectTestTearDown();
@@ -632,7 +632,7 @@ int TestRectGetTopNull()
 {
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_200, NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectGetTop with nullptr as the parameter
@@ -648,14 +648,14 @@ int TestRectGetRightNormal()
 {
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_200, NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetRight to set the x-coordinate of the bottom-right corner of rect
-    OH_Drawing_RectSetRight(rect, DRAWING_NUMBER_300);
+    OH_Drawing_RectSetRight(rect, NUMBER_300);
     // 3. Call OH_Drawing_RectGetRight to get the x-coordinate of the bottom-right corner of rect
     float right = OH_Drawing_RectGetRight(rect);
-    EXPECT_TRUE(IsScalarAlmostEqual(right, DRAWING_NUMBER_300));
+    EXPECT_TRUE(IsScalarAlmostEqual(right, NUMBER_300));
     // 4. Free memory
     OH_Drawing_RectDestroy(rect);
     DrawingNativeRectTestTearDown();
@@ -666,7 +666,7 @@ int TestRectGetRightNull()
 {
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_200, NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectGetRight with nullptr as the parameter, returns error code
@@ -683,15 +683,15 @@ int TestRectGetBottomNormal()
 {
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_200, NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetBottom to set the y-coordinate of the bottom-right corner of rect
-    OH_Drawing_RectSetBottom(rect, DRAWING_NUMBER_300);
+    OH_Drawing_RectSetBottom(rect, NUMBER_300);
     // 3. Call OH_Drawing_RectGetBottom to get the y-coordinate of the bottom-right corner of rect, the return value
     // should be the same as the set value
     float bottom = OH_Drawing_RectGetBottom(rect);
-    EXPECT_TRUE(IsScalarAlmostEqual(bottom, DRAWING_NUMBER_300));
+    EXPECT_TRUE(IsScalarAlmostEqual(bottom, NUMBER_300));
     // 4. Free memory
     OH_Drawing_RectDestroy(rect);
     DrawingNativeRectTestTearDown();
@@ -702,7 +702,7 @@ int TestRectGetBottomNull()
 {
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_200, NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectGetBottom with nullptr as the parameter, returns error code
@@ -719,7 +719,7 @@ int TestRectGetHeightNormal()
 {
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_200, NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetLeft to set the x-coordinate of the top-left corner of rect
@@ -727,13 +727,13 @@ int TestRectGetHeightNormal()
     // 3. Call OH_Drawing_RectSetTop to set the y-coordinate of the top-left corner of rect
     OH_Drawing_RectSetTop(rect, 0);
     // 4. Call OH_Drawing_RectSetRight to set the x-coordinate of the bottom-right corner of rect
-    OH_Drawing_RectSetRight(rect, DRAWING_NUMBER_200);
+    OH_Drawing_RectSetRight(rect, NUMBER_200);
     // 5. Call OH_Drawing_RectSetBottom to set the y-coordinate of the bottom-right corner of rect
-    OH_Drawing_RectSetBottom(rect, DRAWING_NUMBER_200);
+    OH_Drawing_RectSetBottom(rect, NUMBER_200);
     // 6. Call OH_Drawing_RectGetHeight to get the height of the rectangle, which is the difference between the
     // y-coordinate of the bottom-right corner and the y-coordinate of the top-left corner
     float height = OH_Drawing_RectGetHeight(rect);
-    EXPECT_TRUE(IsScalarAlmostEqual(height, DRAWING_NUMBER_200 - 0));
+    EXPECT_TRUE(IsScalarAlmostEqual(height, NUMBER_200 - 0));
     // 7. Free memory
     OH_Drawing_RectDestroy(rect);
     DrawingNativeRectTestTearDown();
@@ -744,7 +744,7 @@ int TestRectGetHeightNull()
 {
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_200, NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectGetHeight with nullptr as the parameter, returns error code
@@ -761,7 +761,7 @@ int TestRectGetWidthNormal()
 {
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_200, NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectSetLeft to set the x-coordinate of the top-left corner
@@ -769,13 +769,13 @@ int TestRectGetWidthNormal()
     // 3. Call OH_Drawing_RectSetTop to set the y-coordinate of the top-left corner
     OH_Drawing_RectSetTop(rect, 0);
     // 4. Call OH_Drawing_RectSetRight to set the x-coordinate of the bottom-right corner
-    OH_Drawing_RectSetRight(rect, DRAWING_NUMBER_200);
+    OH_Drawing_RectSetRight(rect, NUMBER_200);
     // 5. Call OH_Drawing_RectSetBottom to set the y-coordinate of the bottom-right corner
-    OH_Drawing_RectSetBottom(rect, DRAWING_NUMBER_200);
+    OH_Drawing_RectSetBottom(rect, NUMBER_200);
     // 6. Call OH_Drawing_RectGetWidth to get the width of the rectangle, which is the difference between the
     // x-coordinate of the bottom-right corner and the x-coordinate of the top-left corner
     float width = OH_Drawing_RectGetWidth(rect);
-    EXPECT_TRUE(IsScalarAlmostEqual(width, DRAWING_NUMBER_200 - 0));
+    EXPECT_TRUE(IsScalarAlmostEqual(width, NUMBER_200 - 0));
     // 7. Free memory
     OH_Drawing_RectDestroy(rect);
     DrawingNativeRectTestTearDown();
@@ -786,7 +786,7 @@ int TestRectGetWidthNull()
 {
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_200, NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectGetWidth with nullptr as the parameter, returns error code
@@ -803,8 +803,8 @@ int TestRectGetWidthBoundary()
 {
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object rect
-    uint32_t width = DRAWING_NUMBER_4096;
-    uint32_t height = DRAWING_NUMBER_2160;
+    uint32_t width = NUMBER_4096;
+    uint32_t height = NUMBER_2160;
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, width, height);
     // add assert
     EXPECT_NE(rect, nullptr);
@@ -830,7 +830,7 @@ int TestRectCopyNormal()
 {
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object src
-    OH_Drawing_Rect *src = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    OH_Drawing_Rect *src = OH_Drawing_RectCreate(0, 0, NUMBER_200, NUMBER_200);
     // add assert
     EXPECT_NE(src, nullptr);
     // 2. Call OH_Drawing_RectCreate to create a rectangle object dst
@@ -838,13 +838,13 @@ int TestRectCopyNormal()
     // add assert
     EXPECT_NE(dst, nullptr);
     // 3. Call OH_Drawing_RectSetLeft to set the x-coordinate of the top-left corner of src
-    OH_Drawing_RectSetLeft(src, DRAWING_NUMBER_100);
+    OH_Drawing_RectSetLeft(src, NUMBER_100);
     // 4. Call OH_Drawing_RectSetTop to set the y-coordinate of the top-left corner of src
-    OH_Drawing_RectSetTop(src, DRAWING_NUMBER_100);
+    OH_Drawing_RectSetTop(src, NUMBER_100);
     // 5. Call OH_Drawing_RectSetRight to set the x-coordinate of the bottom-right corner of src
-    OH_Drawing_RectSetRight(src, DRAWING_NUMBER_300);
+    OH_Drawing_RectSetRight(src, NUMBER_300);
     // 6. Call OH_Drawing_RectSetBottom to set the y-coordinate of the bottom-right corner of src
-    OH_Drawing_RectSetBottom(src, DRAWING_NUMBER_300);
+    OH_Drawing_RectSetBottom(src, NUMBER_300);
     // 7. Call OH_Drawing_RectCopy to copy the source rectangle object src to the destination rectangle object dst
     OH_Drawing_RectCopy(src, dst);
     // add assert
@@ -852,31 +852,31 @@ int TestRectCopyNormal()
     // 8. Call OH_Drawing_RectGetLeft to get the x-coordinate of the top-left corner of dst, which should be the same as
     // the value set in src
     float left = OH_Drawing_RectGetLeft(dst);
-    EXPECT_TRUE(IsScalarAlmostEqual(left, DRAWING_NUMBER_100));
+    EXPECT_TRUE(IsScalarAlmostEqual(left, NUMBER_100));
     // 9. Call OH_Drawing_RectGetTop to get the y-coordinate of the top-left corner of dst, which should be the same as
     // the value set in src
     float top = OH_Drawing_RectGetTop(dst);
-    EXPECT_TRUE(IsScalarAlmostEqual(top, DRAWING_NUMBER_100));
+    EXPECT_TRUE(IsScalarAlmostEqual(top, NUMBER_100));
     // 10. Call OH_Drawing_RectGetRight to get the x-coordinate of the bottom-right corner of dst, which should be the
     // same as the value set in src
     float right = OH_Drawing_RectGetRight(dst);
-    EXPECT_TRUE(IsScalarAlmostEqual(right, DRAWING_NUMBER_300));
+    EXPECT_TRUE(IsScalarAlmostEqual(right, NUMBER_300));
     // 11. Call OH_Drawing_RectGetBottom to get the y-coordinate of the bottom-right corner of dst, which should be the
     // same as the value set in src
     float bottom = OH_Drawing_RectGetBottom(dst);
-    EXPECT_TRUE(IsScalarAlmostEqual(bottom, DRAWING_NUMBER_300));
+    EXPECT_TRUE(IsScalarAlmostEqual(bottom, NUMBER_300));
     // 12. Call OH_Drawing_RectSetLeft to modify the x-coordinate of the top-left corner of src
-    OH_Drawing_RectSetLeft(src, DRAWING_NUMBER_200);
+    OH_Drawing_RectSetLeft(src, NUMBER_200);
     // 13. Call OH_Drawing_RectSetTop to modify the y-coordinate of the top-left corner of src
-    OH_Drawing_RectSetTop(src, DRAWING_NUMBER_200);
+    OH_Drawing_RectSetTop(src, NUMBER_200);
     // 14. Call OH_Drawing_RectGetLeft to get the x-coordinate of the top-left corner of dst, which should be the same
     // as the previous value (indicating that the modification in src does not affect the result in dst)
     left = OH_Drawing_RectGetLeft(dst);
-    EXPECT_TRUE(IsScalarAlmostEqual(left, DRAWING_NUMBER_100));
+    EXPECT_TRUE(IsScalarAlmostEqual(left, NUMBER_100));
     // 15. Call OH_Drawing_RectGetTop to get the y-coordinate of the top-left corner of dst, which should be the same as
     // the previous value (indicating that the modification in src does not affect the result in dst)
     top = OH_Drawing_RectGetTop(dst);
-    EXPECT_TRUE(IsScalarAlmostEqual(top, DRAWING_NUMBER_100));
+    EXPECT_TRUE(IsScalarAlmostEqual(top, NUMBER_100));
     // 16. Free memory
     OH_Drawing_RectDestroy(src);
     OH_Drawing_RectDestroy(dst);
@@ -888,7 +888,7 @@ int TestRectCopyNull()
 {
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object src
-    OH_Drawing_Rect *src = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    OH_Drawing_Rect *src = OH_Drawing_RectCreate(0, 0, NUMBER_200, NUMBER_200);
     // add assert
     EXPECT_NE(src, nullptr);
     // 2. Call OH_Drawing_RectCreate to create a rectangle object dst
@@ -915,7 +915,7 @@ int TestRectDestroyNormal()
 {
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_200, NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectDestroy to destroy the rectangle object
@@ -928,7 +928,7 @@ int TestRectDestroyNull()
 {
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_200, NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 2. Call OH_Drawing_RectDestroy with nullptr as the parameter, returns error code
@@ -944,13 +944,13 @@ int TestRectInsetNormal()
 {
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_200, DRAWING_NUMBER_400,
-        DRAWING_NUMBER_300);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(NUMBER_100, NUMBER_200, NUMBER_400,
+        NUMBER_300);
     EXPECT_NE(rect, nullptr);
-    float left = DRAWING_NUMBER_10;
-    float top = -DRAWING_NUMBER_20;
-    float right = DRAWING_NUMBER_30;
-    float bottom = -DRAWING_NUMBER_40;
+    float left = NUMBER_10;
+    float top = -NUMBER_20;
+    float right = NUMBER_30;
+    float bottom = -NUMBER_40;
     OH_Drawing_ErrorCode code = OH_Drawing_RectInset(rect, left, top, right, bottom);
     EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 110.0f);
     EXPECT_EQ(OH_Drawing_RectGetTop(rect), 180.0f);
@@ -967,13 +967,13 @@ int TestRectInsetAbNormal()
 {
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_200, DRAWING_NUMBER_400,
-        DRAWING_NUMBER_300);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(NUMBER_100, NUMBER_200, NUMBER_400,
+        NUMBER_300);
     EXPECT_NE(rect, nullptr);
-    float left = DRAWING_NUMBER_100;
+    float left = NUMBER_100;
     float top = 0;
-    float right = DRAWING_NUMBER_200;
-    float bottom = DRAWING_NUMBER_100;
+    float right = NUMBER_200;
+    float bottom = NUMBER_100;
     OH_Drawing_ErrorCode code = OH_Drawing_RectInset(rect, left, top, right, bottom);
     EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 200.0f);
     EXPECT_EQ(OH_Drawing_RectGetTop(rect), 200.0f);
@@ -990,13 +990,13 @@ int TestRectInsetNull()
 {
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_200, DRAWING_NUMBER_400,
-        DRAWING_NUMBER_300);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(NUMBER_100, NUMBER_200, NUMBER_400,
+        NUMBER_300);
     EXPECT_NE(rect, nullptr);
-    float left = DRAWING_NUMBER_100;
+    float left = NUMBER_100;
     float top = 0;
-    float right = DRAWING_NUMBER_200;
-    float bottom = DRAWING_NUMBER_100;
+    float right = NUMBER_200;
+    float bottom = NUMBER_100;
     OH_Drawing_ErrorCode code = OH_Drawing_RectInset(nullptr, left, top, right, bottom);
     EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 100.0f);
     EXPECT_EQ(OH_Drawing_RectGetTop(rect), 200.0f);
@@ -1013,14 +1013,14 @@ int TestRectInsetCalls()
 {
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_200, DRAWING_NUMBER_400,
-        DRAWING_NUMBER_300);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(NUMBER_100, NUMBER_200, NUMBER_400,
+        NUMBER_300);
     EXPECT_NE(rect, nullptr);
-    float left = DRAWING_NUMBER_10;
-    float top = -DRAWING_NUMBER_20;
-    float right = DRAWING_NUMBER_30;
-    float bottom = -DRAWING_NUMBER_40;
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    float left = NUMBER_10;
+    float top = -NUMBER_20;
+    float right = NUMBER_30;
+    float bottom = -NUMBER_40;
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_ErrorCode code = OH_Drawing_RectInset(rect, left, top, right, bottom);
         EXPECT_EQ(code, OH_DRAWING_SUCCESS);
     }
@@ -1038,10 +1038,10 @@ int TestRectContainsNormal()
 {
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100, DRAWING_NUMBER_500,
-        DRAWING_NUMBER_500);
-    OH_Drawing_Rect *other = OH_Drawing_RectCreate(DRAWING_NUMBER_200, DRAWING_NUMBER_200, DRAWING_NUMBER_300,
-        DRAWING_NUMBER_300);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(NUMBER_100, NUMBER_100, NUMBER_500,
+        NUMBER_500);
+    OH_Drawing_Rect *other = OH_Drawing_RectCreate(NUMBER_200, NUMBER_200, NUMBER_300,
+        NUMBER_300);
     EXPECT_NE(rect, nullptr);
     EXPECT_NE(other, nullptr);
     bool isContains;
@@ -1059,10 +1059,10 @@ int TestRectContainsNull()
 {
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100, DRAWING_NUMBER_500,
-        DRAWING_NUMBER_500);
-    OH_Drawing_Rect *other = OH_Drawing_RectCreate(DRAWING_NUMBER_200, DRAWING_NUMBER_200, DRAWING_NUMBER_300,
-        DRAWING_NUMBER_300);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(NUMBER_100, NUMBER_100, NUMBER_500,
+        NUMBER_500);
+    OH_Drawing_Rect *other = OH_Drawing_RectCreate(NUMBER_200, NUMBER_200, NUMBER_300,
+        NUMBER_300);
     EXPECT_NE(rect, nullptr);
     EXPECT_NE(other, nullptr);
     bool isContains = false;
@@ -1088,14 +1088,14 @@ int TestRectContainsCalls()
 {
     DrawingNativeRectTestSetUp();
     // 1. Call OH_Drawing_RectCreate to create a rectangle object
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100, DRAWING_NUMBER_500,
-        DRAWING_NUMBER_500);
-    OH_Drawing_Rect *other = OH_Drawing_RectCreate(DRAWING_NUMBER_200, DRAWING_NUMBER_200, DRAWING_NUMBER_300,
-        DRAWING_NUMBER_300);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(NUMBER_100, NUMBER_100, NUMBER_500,
+        NUMBER_500);
+    OH_Drawing_Rect *other = OH_Drawing_RectCreate(NUMBER_200, NUMBER_200, NUMBER_300,
+        NUMBER_300);
     EXPECT_NE(rect, nullptr);
     EXPECT_NE(other, nullptr);
     bool isContains;
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_ErrorCode code = OH_Drawing_RectContains(rect, other, &isContains);
         EXPECT_EQ(code, OH_DRAWING_SUCCESS);
         EXPECT_EQ(isContains, true);
@@ -1110,7 +1110,7 @@ int TestRectContainsCalls()
 int TestRectSetEmptyNormal()
 {
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     EXPECT_NE(rect, nullptr);
     OH_Drawing_ErrorCode errorCode = OH_Drawing_RectSetEmpty(rect);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
@@ -1122,7 +1122,7 @@ int TestRectSetEmptyNormal()
 int TestRectSetEmptyNull()
 {
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     EXPECT_NE(rect, nullptr);
     OH_Drawing_ErrorCode errorCode = OH_Drawing_RectSetEmpty(nullptr);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
@@ -1134,9 +1134,9 @@ int TestRectSetEmptyNull()
 int TestRectSetEmptyMultipleCalls()
 {
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     EXPECT_NE(rect, nullptr);
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_ErrorCode errorCode = OH_Drawing_RectSetEmpty(rect);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     }
@@ -1148,7 +1148,7 @@ int TestRectSetEmptyMultipleCalls()
 int TestRectIsEmptyNormal()
 {
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     EXPECT_NE(rect, nullptr);
     bool isEmpty = true;
     OH_Drawing_ErrorCode errorCode = OH_Drawing_RectIsEmpty(rect, &isEmpty);
@@ -1166,7 +1166,7 @@ int TestRectIsEmptyNormal()
 int TestRectIsEmptyNull()
 {
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     EXPECT_NE(rect, nullptr);
     bool isEmpty = false;
     OH_Drawing_ErrorCode errorCode = OH_Drawing_RectIsEmpty(nullptr, &isEmpty);
@@ -1183,10 +1183,10 @@ int TestRectIsEmptyNull()
 int TestRectIsEmptyMultipleCalls()
 {
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     EXPECT_NE(rect, nullptr);
     bool isEmpty = true;
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_ErrorCode errorCode = OH_Drawing_RectIsEmpty(rect, &isEmpty);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
         EXPECT_EQ(isEmpty, false);
@@ -1199,15 +1199,15 @@ int TestRectIsEmptyMultipleCalls()
 int TestRectOffsetNormal()
 {
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     EXPECT_NE(rect, nullptr);
-    OH_Drawing_ErrorCode errorCode = OH_Drawing_RectOffset(rect, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_RectOffset(rect, NUMBER_100, NUMBER_100);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 100.0f);
     EXPECT_EQ(OH_Drawing_RectGetTop(rect), 100.0f);
     EXPECT_EQ(OH_Drawing_RectGetRight(rect), 200.0f);
     EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 200.0f);
-    errorCode = OH_Drawing_RectOffset(rect, -DRAWING_NUMBER_100, -DRAWING_NUMBER_100);
+    errorCode = OH_Drawing_RectOffset(rect, -NUMBER_100, -NUMBER_100);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 0.0f);
     EXPECT_EQ(OH_Drawing_RectGetTop(rect), 0.0f);
@@ -1221,21 +1221,21 @@ int TestRectOffsetNormal()
 int TestRectOffsetNull()
 {
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     EXPECT_NE(rect, nullptr);
-    OH_Drawing_ErrorCode errorCode = OH_Drawing_RectOffset(nullptr, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_RectOffset(nullptr, NUMBER_100, NUMBER_100);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 0.0f);
     EXPECT_EQ(OH_Drawing_RectGetTop(rect), 0.0f);
     EXPECT_EQ(OH_Drawing_RectGetRight(rect), 100.0f);
     EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 100.0f);
-    errorCode = OH_Drawing_RectOffset(rect, 0, DRAWING_NUMBER_100);
+    errorCode = OH_Drawing_RectOffset(rect, 0, NUMBER_100);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 0.0f);
     EXPECT_EQ(OH_Drawing_RectGetTop(rect), 100.0f);
     EXPECT_EQ(OH_Drawing_RectGetRight(rect), 100.0f);
     EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 200.0f);
-    errorCode = OH_Drawing_RectOffset(rect, DRAWING_NUMBER_100, 0);
+    errorCode = OH_Drawing_RectOffset(rect, NUMBER_100, 0);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 100.0f);
     EXPECT_EQ(OH_Drawing_RectGetTop(rect), 100.0f);
@@ -1249,14 +1249,14 @@ int TestRectOffsetNull()
 int TestRectOffsetAbnormal()
 {
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     EXPECT_NE(rect, nullptr);
     OH_Drawing_ErrorCode errorCode = OH_Drawing_RectOffset(rect, 0x7F7FFFFF, 0x7F7FFFFF);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
-    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), DRAWING_NUMBER_2139095040);
-    EXPECT_EQ(OH_Drawing_RectGetTop(rect), DRAWING_NUMBER_2139095040);
-    EXPECT_EQ(OH_Drawing_RectGetRight(rect), DRAWING_NUMBER_2139095170);
-    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), DRAWING_NUMBER_2139095170);
+    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), NUMBER_2139095040);
+    EXPECT_EQ(OH_Drawing_RectGetTop(rect), NUMBER_2139095040);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect), NUMBER_2139095170);
+    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), NUMBER_2139095170);
     OH_Drawing_RectDestroy(rect);
     DrawingNativeRectTestTearDown();
     return OH_DRAWING_SUCCESS;
@@ -1265,10 +1265,10 @@ int TestRectOffsetAbnormal()
 int TestRectOffsetMultipleCalls()
 {
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     EXPECT_NE(rect, nullptr);
-    for (float i = 0; i < DRAWING_NUMBER_10; i++) {
-        OH_Drawing_ErrorCode errorCode = OH_Drawing_RectOffset(rect, DRAWING_NUMBER_10, DRAWING_NUMBER_10);
+    for (float i = 0; i < NUMBER_10; i++) {
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_RectOffset(rect, NUMBER_10, NUMBER_10);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
         EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 10.0f + i * 10.0f);
         EXPECT_EQ(OH_Drawing_RectGetTop(rect), 10.0f + i * 10.0f);
@@ -1283,9 +1283,9 @@ int TestRectOffsetMultipleCalls()
 int TestRectOffsetToNormal()
 {
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     EXPECT_NE(rect, nullptr);
-    OH_Drawing_ErrorCode errorCode = OH_Drawing_RectOffsetTo(rect, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_RectOffsetTo(rect, NUMBER_100, NUMBER_100);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 100.0f);
     EXPECT_EQ(OH_Drawing_RectGetTop(rect), 100.0f);
@@ -1299,21 +1299,21 @@ int TestRectOffsetToNormal()
 int TestRectOffsetToNull()
 {
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     EXPECT_NE(rect, nullptr);
-    OH_Drawing_ErrorCode errorCode = OH_Drawing_RectOffsetTo(nullptr, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_RectOffsetTo(nullptr, NUMBER_100, NUMBER_100);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 0.0f);
     EXPECT_EQ(OH_Drawing_RectGetTop(rect), 0.0f);
     EXPECT_EQ(OH_Drawing_RectGetRight(rect), 100.0f);
     EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 100.0f);
-    errorCode = OH_Drawing_RectOffsetTo(rect, 0, DRAWING_NUMBER_100);
+    errorCode = OH_Drawing_RectOffsetTo(rect, 0, NUMBER_100);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 0.0f);
     EXPECT_EQ(OH_Drawing_RectGetTop(rect), 100.0f);
     EXPECT_EQ(OH_Drawing_RectGetRight(rect), 100.0f);
     EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 200.0f);
-    errorCode = OH_Drawing_RectOffsetTo(rect, DRAWING_NUMBER_100, 0);
+    errorCode = OH_Drawing_RectOffsetTo(rect, NUMBER_100, 0);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 100.0f);
     EXPECT_EQ(OH_Drawing_RectGetTop(rect), 0.0f);
@@ -1327,14 +1327,14 @@ int TestRectOffsetToNull()
 int TestRectOffsetToAbnormal()
 {
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     EXPECT_NE(rect, nullptr);
     OH_Drawing_ErrorCode errorCode = OH_Drawing_RectOffsetTo(rect, 0x7F7FFFFF, 0x7F7FFFFF);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
-    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), DRAWING_NUMBER_2139095040);
-    EXPECT_EQ(OH_Drawing_RectGetTop(rect), DRAWING_NUMBER_2139095040);
-    EXPECT_EQ(OH_Drawing_RectGetRight(rect), DRAWING_NUMBER_2139095170);
-    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), DRAWING_NUMBER_2139095170);
+    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), NUMBER_2139095040);
+    EXPECT_EQ(OH_Drawing_RectGetTop(rect), NUMBER_2139095040);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect), NUMBER_2139095170);
+    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), NUMBER_2139095170);
     OH_Drawing_RectDestroy(rect);
     DrawingNativeRectTestTearDown();
     return OH_DRAWING_SUCCESS;
@@ -1343,10 +1343,10 @@ int TestRectOffsetToAbnormal()
 int TestRectOffsetToMultipleCalls()
 {
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     EXPECT_NE(rect, nullptr);
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
-        OH_Drawing_ErrorCode errorCode = OH_Drawing_RectOffsetTo(rect, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    for (int i = 0; i < NUMBER_10; i++) {
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_RectOffsetTo(rect, NUMBER_100, NUMBER_100);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
         EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 100.0f);
         EXPECT_EQ(OH_Drawing_RectGetTop(rect), 100.0f);
@@ -1361,7 +1361,7 @@ int TestRectOffsetToMultipleCalls()
 int TestRectSortNormal()
 {
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     EXPECT_NE(rect, nullptr);
     OH_Drawing_ErrorCode errorCode = OH_Drawing_RectSort(rect);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
@@ -1369,7 +1369,7 @@ int TestRectSortNormal()
     EXPECT_EQ(OH_Drawing_RectGetTop(rect), 0.0f);
     EXPECT_EQ(OH_Drawing_RectGetRight(rect), 100.0f);
     EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 100.0f);
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100, 0, 0);
+    rect = OH_Drawing_RectCreate(NUMBER_100, NUMBER_100, 0, 0);
     errorCode = OH_Drawing_RectSort(rect);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 0.0f);
@@ -1384,7 +1384,7 @@ int TestRectSortNormal()
 int TestRectSortNull()
 {
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     EXPECT_NE(rect, nullptr);
     OH_Drawing_ErrorCode errorCode = OH_Drawing_RectSort(nullptr);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
@@ -1400,9 +1400,9 @@ int TestRectSortNull()
 int TestRectSortMultipleCalls()
 {
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     EXPECT_NE(rect, nullptr);
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_ErrorCode errorCode = OH_Drawing_RectSort(rect);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
         EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 0.0f);
@@ -1418,10 +1418,10 @@ int TestRectSortMultipleCalls()
 int TestRectUnionNormal()
 {
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     EXPECT_NE(rect, nullptr);
-    OH_Drawing_Rect *other = OH_Drawing_RectCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100, DRAWING_NUMBER_200,
-        DRAWING_NUMBER_200);
+    OH_Drawing_Rect *other = OH_Drawing_RectCreate(NUMBER_100, NUMBER_100, NUMBER_200,
+        NUMBER_200);
     EXPECT_NE(rect, nullptr);
     OH_Drawing_ErrorCode errorCode = OH_Drawing_RectUnion(rect, other);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
@@ -1438,10 +1438,10 @@ int TestRectUnionNormal()
 int TestRectUnionNull()
 {
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     EXPECT_NE(rect, nullptr);
-    OH_Drawing_Rect *other = OH_Drawing_RectCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100, DRAWING_NUMBER_200,
-        DRAWING_NUMBER_200);
+    OH_Drawing_Rect *other = OH_Drawing_RectCreate(NUMBER_100, NUMBER_100, NUMBER_200,
+        NUMBER_200);
     EXPECT_NE(rect, nullptr);
     OH_Drawing_ErrorCode errorCode = OH_Drawing_RectUnion(nullptr, other);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
@@ -1456,12 +1456,12 @@ int TestRectUnionNull()
 int TestRectUnionMultipleCalls()
 {
     DrawingNativeRectTestSetUp();
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     EXPECT_NE(rect, nullptr);
-    OH_Drawing_Rect *other = OH_Drawing_RectCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100, DRAWING_NUMBER_200,
-        DRAWING_NUMBER_200);
+    OH_Drawing_Rect *other = OH_Drawing_RectCreate(NUMBER_100, NUMBER_100, NUMBER_200,
+        NUMBER_200);
     EXPECT_NE(rect, nullptr);
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_ErrorCode errorCode = OH_Drawing_RectUnion(rect, other);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
         EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 0.0f);

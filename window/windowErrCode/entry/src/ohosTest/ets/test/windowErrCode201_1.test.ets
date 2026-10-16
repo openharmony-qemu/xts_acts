@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import ohosWindow from '@ohos.window';
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
@@ -29,12 +29,24 @@ export default function windowErrCode201_1() {
     let windowStage:ohosWindow.WindowStage;
     let deviceType: string = deviceInfo.deviceType;
     let mainWindowClass: ohosWindow.Window;
-
+    let isPCMode: boolean = false;
     beforeAll(() => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context))
       windowStage = AppStorage.get('windowStage') as ohosWindow.WindowStage;
       mainWindowClass = windowStage.getMainWindowSync();
+      let promise = mainWindowClass.getWindowStateSnapshot();
+      promise.then((data) => {
+        let jsonObj: object = JSON.parse(data);
+        console.info(
+          `beforeAll: Succeeded. data=${data}, isPcMod=${jsonObj["isPcMode"]},isSupportFreeWindowMode=${jsonObj["isSupportFreeWindowMode"]}`);
+        isPCMode = jsonObj["isPcMode"];
+      }).catch((err: BusinessError) => {
+        console.error(
+          `beforeAll: getWindowStateSnapshot Failed. Cause code: ${err.code}, cancel message: ${err.message}`);
+      });
+      console.info(`beforeAll: isPCMode=${isPCMode}`);
+      console.info(`beforeAll: deviceType=${deviceType}`);
     })
 
     /**
@@ -292,6 +304,48 @@ export default function windowErrCode201_1() {
       }
     })
 
+ /**
+     * @tc.name   SUB_BASIC_WMS_setWindowPosition_NoPermission_0100
+     * @tc.number SUB_BASIC_WMS_setWindowPosition_NoPermission_0100
+     * @tc.desc   SUB_BASIC_WMS_setWindowPosition_NoPermission_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_WMS_setWindowPosition_NoPermission_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let caseName: string = 'SUB_BASIC_WMS_setWindowPosition_NoPermission_0100 ';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        console.log(msgStr + 'begin');
+        try {
+          let mainWindow: ohosWindow.Window = windowStage.getMainWindowSync();
+          let windowId = mainWindow.getWindowProperties().id;
+          console.info(`${msgStr} windowId: ${windowId}`);
+          let windowPositionParamsArray: Array<ohosWindow.WindowPositionParams> = [{
+            windowId: windowId,
+            insertAfter: ohosWindow.WindowPosition.TOPMOST
+          }];
+          ohosWindow.setWindowPosition(windowPositionParamsArray).then(async () => {
+            console.info(`${msgStr} Succeeded in getWindowsByCoordinate. windowPositionParamsArray: ${JSON.stringify(
+              windowPositionParamsArray.length)}`);
+            expect(false).assertTrue();
+            done();
+          }).catch(async (err: BusinessError) => {
+            console.error(`${msgStr} Failed to setWindowPosition. Cause code: ${err.code},message:${err.message}`);
+            if (!(deviceType === '2in1' || isPCMode)) {
+              expect(err.code).assertEqual(801);
+            } else {
+              expect(err.code).assertEqual(201);
+            }
+            expect(err.message !== '').assertTrue();
+            done();
+          });
+        } catch (exception) {
+          console.error(`${msgStr} Failed. Cause code: ${exception.code},message: ${exception.message}`);
+          expect(false).assertTrue();
+          done();
+        }
+      });
 
   })
 }

@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import { SwiperContentInfo, SwiperItemInfo } from '@kit.ArkUI';
 import router from '@ohos.router';
 import CommonFunc from '../../../MainAbility/utils/Common';
@@ -29,6 +29,8 @@ import {
   WindowMode,
   PointerMatrix
 } from '@ohos.UiTest';
+
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 
 export default function SwiperContentUpdateOne() {
   describe('SwiperContentUpdateOne', () => {
@@ -81,7 +83,7 @@ export default function SwiperContentUpdateOne() {
       let height = bottom -top;
       let width = right - left;
       console.info("SwiperContentUpdateOne_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
-      await driver.swipe(Math.round(left + width*0.3),Math.round(top + height/2),Math.round(right - vp2px(20)),Math.round(top + height/2));
+      await driver.swipeBetween({ x: Math.round(left + width*0.3), y: Math.round(top + height/2), displayId: displayID }, { x: Math.round(right - vp2px(20)), y: Math.round(top + height/2), displayId: displayID });
       await CommonFunc.sleep(2000);
       let value: SwiperContentInfo = AppStorage.get('swiperContentInfo') as SwiperContentInfo
       expect(Object.keys(value).includes('id') && Object.keys(value).includes('uniqueId') && Object.keys(value).includes('swiperItemInfos')).assertTrue();

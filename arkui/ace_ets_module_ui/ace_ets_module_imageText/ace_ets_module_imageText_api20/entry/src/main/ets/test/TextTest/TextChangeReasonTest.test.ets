@@ -14,7 +14,7 @@
  */
 
 
-import { describe, afterEach, afterAll, it, expect, Level } from "@ohos/hypium"
+import { describe, afterEach, afterAll, it, expect, Level } from "@ohos/hypium-dynamic"
 import CommonFunc from '../../MainAbility/common/Common'
 
 export default function TextChangeReasonTest() {

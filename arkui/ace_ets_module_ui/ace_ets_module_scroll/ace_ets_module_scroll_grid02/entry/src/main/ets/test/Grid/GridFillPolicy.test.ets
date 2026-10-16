@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
@@ -65,9 +65,11 @@ export default function GridFillPolicy() {
       console.info("[GridFillPolicy_0100] itemFillPolicy: " + JSON.stringify(JSON.parse(strJson2).$attrs.itemFillPolicy));
       expect(JSON.parse(strJson2).$attrs.itemFillPolicy).assertEqual("PresetFillType.BREAKPOINT_DEFAULT");
 
-      let gridItem1 = CommonFunc.getComponentRectOnScreen('gridType_1');
+      let gridItem1Component = await driver.findComponent(ON.id('gridType_1'));
+      let gridItem1 = await gridItem1Component.getBounds();
       console.info('[GridFillPolicy_0100] gridItem1.right: ' + gridItem1.right);
-      let gridItem2 = CommonFunc.getComponentRectOnScreen('gridType_2');
+      let gridItem2Component = await driver.findComponent(ON.id('gridType_2'));
+      let gridItem2 = await gridItem2Component.getBounds();
       console.info('[GridFillPolicy_0100] gridItem2.left: ' + gridItem2.left);
       await CommonFunc.sleep(500);
       expect(Math.abs(Math.floor(gridItem2.left - gridItem1.right)) <= 1 ).assertTrue();
@@ -98,9 +100,11 @@ export default function GridFillPolicy() {
       console.info("[GridFillPolicy_0200] itemFillPolicy: " + JSON.stringify(JSON.parse(strJson2).$attrs.itemFillPolicy));
       expect(JSON.parse(strJson2).$attrs.itemFillPolicy).assertEqual("PresetFillType.BREAKPOINT_SM1MD2LG3");
 
-      let gridItem1 = CommonFunc.getComponentRectOnScreen('gridType_1');
+      let gridItem1Component = await driver.findComponent(ON.id('gridType_1'));
+      let gridItem1 = await gridItem1Component.getBounds();
       console.info('[GridFillPolicy_0200] gridItem1.bottom: ' + gridItem1.bottom);
-      let gridItem2 = CommonFunc.getComponentRectOnScreen('gridType_2');
+      let gridItem2Component = await driver.findComponent(ON.id('gridType_2'));
+      let gridItem2 = await gridItem2Component.getBounds();
       console.info('[GridFillPolicy_0200] gridItem2.top: ' + gridItem2.top);
       await CommonFunc.sleep(500);
       expect(Math.abs(Math.floor(gridItem2.top - gridItem1.bottom)) <= 1 ).assertTrue();
@@ -131,9 +135,11 @@ export default function GridFillPolicy() {
       console.info("[GridFillPolicy_0300] itemFillPolicy: " + JSON.stringify(JSON.parse(strJson2).$attrs.itemFillPolicy));
       expect(JSON.parse(strJson2).$attrs.itemFillPolicy).assertEqual("PresetFillType.BREAKPOINT_SM2MD3LG5");
 
-      let gridItem1 = CommonFunc.getComponentRectOnScreen('gridType_1');
+      let gridItem1Component = await driver.findComponent(ON.id('gridType_1'));
+      let gridItem1 = await gridItem1Component.getBounds();
       console.info('[GridFillPolicy_0300] gridItem1.right: ' + gridItem1.right);
-      let gridItem2 = CommonFunc.getComponentRectOnScreen('gridType_2');
+      let gridItem2Component = await driver.findComponent(ON.id('gridType_2'));
+      let gridItem2 = await gridItem2Component.getBounds();
       console.info('[GridFillPolicy_0300] gridItem2.left: ' + gridItem2.left);
       await CommonFunc.sleep(500);
       expect(Math.abs(Math.floor(gridItem2.left - gridItem1.right)) <= 1 ).assertTrue();

@@ -14,7 +14,7 @@
  */
 import { BusinessError } from '@ohos.base';
 import http from '@ohos.net.http';
-import { describe, expect, it, Level, Size, TestType  } from '@ohos/hypium';
+import { describe, expect, it, Level, Size, TestType  } from '@ohos/hypium-dynamic';
 import connection from '@ohos.net.connection';
 
 export const ADDR_TEST_STREAM_HTTPS = "https://httpbin.moyufangge.com/image/svg";
@@ -92,7 +92,7 @@ export default function HttpRequestOnOffTest() {
               }).forEach(() => {
                 httpRequest.on("headerReceive", (data: BusinessError) => {
                   console.info(`${caseName} headerReceive header success: ${JSON.stringify(data)}`);
-                  ExpectTrue(data == undefined);
+                  ExpectTrue(data === undefined);
                 });
               });
               let list: Promise<void>[] = [];
@@ -180,7 +180,7 @@ export default function HttpRequestOnOffTest() {
               }
               Promise.all(list).then(async() => {
                 await sleep(100);
-                ExpectTrue(called == 1);
+                ExpectTrue(called === 1);
                 httpRequest.destroy();
                 done();
               }).catch((error: BusinessError) => {
@@ -251,7 +251,7 @@ export default function HttpRequestOnOffTest() {
               }
               Promise.all(list).then(async() => {
                 await sleep(100);
-                ExpectTrue(called == TEST_MORE_REQUEST_LEN);
+                ExpectTrue(called === TEST_MORE_REQUEST_LEN);
                 httpRequest.destroy();
                 done();
               }).catch((error: BusinessError) => {
@@ -321,7 +321,7 @@ export default function HttpRequestOnOffTest() {
               }
               Promise.all(list).then(async() => {
                 await sleep(100);
-                ExpectTrue(called == 1);
+                ExpectTrue(called === 1);
                 httpRequest.destroy();
                 httpRequest.off('headersReceive');
                 done();
@@ -393,7 +393,7 @@ export default function HttpRequestOnOffTest() {
               }
               Promise.all(list).then(async() => {
                 await sleep(100);
-                ExpectTrue(called == 1);
+                ExpectTrue(called === 1);
                 httpRequest.destroy();
                 httpRequest.off('headersReceive');
                 done();
@@ -465,7 +465,7 @@ export default function HttpRequestOnOffTest() {
               }
               Promise.all(list).then(async() => {
                 await sleep(100);
-                ExpectTrue(called == TEST_MORE_REQUEST_LEN);
+                ExpectTrue(called === TEST_MORE_REQUEST_LEN);
                 httpRequest.destroy();
                 httpRequest.off('headersReceive');
                 done();
@@ -754,7 +754,7 @@ export default function HttpRequestOnOffTest() {
               }
               Promise.all(list).then(async() => {
                 await sleep(100);
-                ExpectTrue(called == 1);
+                ExpectTrue(called === 1);
                 httpRequest.destroy();
                 done();
               }).catch((error: BusinessError) => {
@@ -827,7 +827,7 @@ export default function HttpRequestOnOffTest() {
               }
               Promise.all(list).then(async() => {
                 await sleep(100);
-                ExpectTrue(called == 1);
+                ExpectTrue(called === 1);
                 httpRequest.destroy();
                 done();
               }).catch((error: BusinessError) => {
@@ -900,7 +900,7 @@ export default function HttpRequestOnOffTest() {
               }
               Promise.all(list).then(async() => {
                 await sleep(100);
-                ExpectTrue(called == 2);
+                ExpectTrue(called === 2);
                 httpRequest.destroy();
                 done();
               }).catch((error: BusinessError) => {
@@ -1399,7 +1399,7 @@ export default function HttpRequestOnOffTest() {
               }
               Promise.all(list).then(async() => {
                 await sleep(100);
-                ExpectTrue(called == 1);
+                ExpectTrue(called === 1);
                 httpRequest.destroy();
                 httpRequest.off('headersReceive');
                 done();
@@ -1471,7 +1471,7 @@ export default function HttpRequestOnOffTest() {
               }
               Promise.all(list).then(async() => {
                 await sleep(100);
-                ExpectTrue(called == 1);
+                ExpectTrue(called === 1);
                 httpRequest.destroy();
                 httpRequest.off('headersReceive');
                 done();
@@ -1542,7 +1542,7 @@ export default function HttpRequestOnOffTest() {
               }
               Promise.all(list).then(async() => {
                 await sleep(100);
-                ExpectTrue(called == 1);
+                ExpectTrue(called === 1);
                 httpRequest.destroy();
                 httpRequest.off('headersReceive');
                 done();
@@ -1614,7 +1614,7 @@ export default function HttpRequestOnOffTest() {
               }
               Promise.all(list).then(async() => {
                 await sleep(100);
-                ExpectTrue(called == 1);
+                ExpectTrue(called === 1);
                 httpRequest.destroy();
                 httpRequest.off('headersReceive');
                 done();
@@ -1686,7 +1686,7 @@ export default function HttpRequestOnOffTest() {
               }
               Promise.all(list).then(async() => {
                 await sleep(100);
-                ExpectTrue(called == 1);
+                ExpectTrue(called === 1);
                 httpRequest.destroy();
                 httpRequest.off('headersReceive');
                 done();
@@ -1758,7 +1758,7 @@ export default function HttpRequestOnOffTest() {
               }
               Promise.all(list).then(async() => {
                 await sleep(100);
-                ExpectTrue(called == 1);
+                ExpectTrue(called === 1);
                 httpRequest.destroy();
                 httpRequest.off('headersReceive');
                 done();
@@ -1821,7 +1821,7 @@ export default function HttpRequestOnOffTest() {
               });
               promise.then(async() => {
                 await sleep(100);
-                ExpectTrue(called == 0);
+                ExpectTrue(called === 0);
                 httpRequest.destroy();
                 done();
               }).catch((error: BusinessError) => {
@@ -1882,7 +1882,7 @@ export default function HttpRequestOnOffTest() {
               });
               promise.then(async() => {
                 await sleep(100);
-                ExpectTrue(called == 0);
+                ExpectTrue(called === 0);
                 httpRequest.destroy();
                 done();
               }).catch((error: BusinessError) => {
@@ -1944,7 +1944,7 @@ export default function HttpRequestOnOffTest() {
               });
               promise.then(async() => {
                 await sleep(100);
-                ExpectTrue(called == 0);
+                ExpectTrue(called === 0);
                 httpRequest.destroy();
                 done();
               }).catch((error: BusinessError) => {
@@ -2069,7 +2069,7 @@ export default function HttpRequestOnOffTest() {
               }
               Promise.all(list).then(async() => {
                 await sleep(100);
-                ExpectTrue(called == 1);
+                ExpectTrue(called === 1);
                 httpRequest.destroy();
                 done();
               }).catch((error: BusinessError) => {
@@ -2131,7 +2131,7 @@ export default function HttpRequestOnOffTest() {
               }
               Promise.all(list).then(async() => {
                 await sleep(100);
-                ExpectTrue(called == 1);
+                ExpectTrue(called === 1);
                 httpRequest.destroy();
                 done();
               }).catch((error: BusinessError) => {
@@ -2193,7 +2193,7 @@ export default function HttpRequestOnOffTest() {
               }
               Promise.all(list).then(async() => {
                 await sleep(100);
-                ExpectTrue(called == TEST_MORE_REQUEST_LEN);
+                ExpectTrue(called === TEST_MORE_REQUEST_LEN);
                 httpRequest.destroy();
                 done();
               }).catch((error: BusinessError) => {
@@ -2256,7 +2256,7 @@ export default function HttpRequestOnOffTest() {
               }
               Promise.all(list).then(async() => {
                 await sleep(100);
-                ExpectTrue(called == 1);
+                ExpectTrue(called === 1);
                 httpRequest.off('headersReceive');
                 httpRequest.destroy();
                 done();
@@ -2319,7 +2319,7 @@ export default function HttpRequestOnOffTest() {
               }
               Promise.all(list).then(async() => {
                 await sleep(100);
-                ExpectTrue(called == 1);
+                ExpectTrue(called === 1);
                 httpRequest.destroy();
                 httpRequest.off('headersReceive');
                 done();
@@ -2382,7 +2382,7 @@ export default function HttpRequestOnOffTest() {
               }
               Promise.all(list).then(async() => {
                 await sleep(100);
-                ExpectTrue(called == TEST_MORE_REQUEST_LEN);
+                ExpectTrue(called === TEST_MORE_REQUEST_LEN);
                 httpRequest.destroy();
                 httpRequest.off('headersReceive');
                 done();
@@ -2635,7 +2635,7 @@ export default function HttpRequestOnOffTest() {
                 setTimeout(async() => {
                   await sleep(100);
                   console.info(`${caseName} called: ${called}}`);
-                  ExpectTrue(called == 1);
+                  ExpectTrue(called === 1);
                   httpRequest.destroy();
                   done();
                 }, 0)
@@ -2701,7 +2701,7 @@ export default function HttpRequestOnOffTest() {
                 setTimeout(async() => {
                   await sleep(100);
                   console.info(`${caseName} called: ${called}}`);
-                  ExpectTrue(called == 1);
+                  ExpectTrue(called === 1);
                   httpRequest.destroy();
                   done();
                 }, 0)
@@ -2767,7 +2767,7 @@ export default function HttpRequestOnOffTest() {
                 setTimeout(async() => {
                   await sleep(100);
                   console.info(`${caseName} called: ${called}}`);
-                  ExpectTrue(called == 2);
+                  ExpectTrue(called === 2);
                   httpRequest.destroy();
                   done();
                 }, 0)
@@ -3081,7 +3081,7 @@ export default function HttpRequestOnOffTest() {
               }
               Promise.all(list).then(async() => {
                 await sleep(100);
-                ExpectTrue(called == 0);
+                ExpectTrue(called === 0);
                 httpRequest.destroy();
                 done();
               }).catch((error: BusinessError) => {
@@ -3250,7 +3250,7 @@ export default function HttpRequestOnOffTest() {
                 await sleep(100);
                 console.info(`${caseName} request sunccess, data: ${JSON.stringify(res)}`);
                 console.info(`${caseName} called: ${called}`);
-                ExpectTrue(called == 0);
+                ExpectTrue(called === 0);
                 httpRequest.destroy();
                 done();
               }).catch((error: BusinessError) => {
@@ -3304,7 +3304,7 @@ export default function HttpRequestOnOffTest() {
                 await sleep(100);
                 console.info(`${caseName} request sunccess, data: ${JSON.stringify(res)}`);
                 console.info(`${caseName} called: ${called}`);
-                ExpectTrue(called == 1);
+                ExpectTrue(called === 1);
                 httpRequest.destroy();
                 done();
               }).catch((error: BusinessError) => {
@@ -3357,7 +3357,7 @@ export default function HttpRequestOnOffTest() {
               httpRequest.request(ADDR_TEST_STREAM_HTTPS).then(async(res: http.HttpResponse) => {
                 await sleep(100);
                 console.info(`${caseName} request sunccess, data: ${JSON.stringify(res)}`);
-                ExpectTrue(called == 0);
+                ExpectTrue(called === 0);
                 httpRequest.destroy();
                 done();
               }).catch((error: BusinessError) => {

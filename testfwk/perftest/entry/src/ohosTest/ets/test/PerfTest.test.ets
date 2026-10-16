@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
+import { describe, beforeAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic';
 import Want from '@ohos.app.ability.Want';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Driver, ON, UiDirection } from '@ohos.UiTest'
@@ -111,15 +111,17 @@ export default function PerfTestTest() {
       let driver = Driver.create()
       await driver.delayMs(3000)
       let metrics: Array<PerfMetric> = [PerfMetric.PAGE_SWITCH_COMPLETE_TIME]
+      let displayId: number = 0;
       let actionCode = async (finish: Callback<boolean>) => {
         let button = await driver.findComponent(ON.text('ListPage'))
+        displayId = await button.getDisplayId()
         await driver.delayMs(1000)
         await button.click()
         await driver.delayMs(1000)
         finish(true)
       }
       let resetCode = async (finish: Callback<boolean>) => {
-        await driver.pressBack()
+        await driver.pressBack(displayId)
         await driver.delayMs(1000)
         finish(true)
       }
@@ -246,8 +248,9 @@ export default function PerfTestTest() {
       let textCom = await driver.findComponent(ON.text('navigation'))
       await driver.delayMs(1000)
       let center = await textCom.getBoundsCenter()
+      let displayId = await textCom.getDisplayId();
       await driver.delayMs(1000)
-      await driver.click(center.x, center.y)
+      await textCom.click()
       await driver.delayMs(1000)
       let metrics: Array<PerfMetric> = [PerfMetric.DURATION, PerfMetric.MEMORY_RSS, PerfMetric.MEMORY_PSS, PerfMetric.PAGE_SWITCH_COMPLETE_TIME]
       let actionCode = async (finish: Callback<boolean>) => {
@@ -257,14 +260,14 @@ export default function PerfTestTest() {
         await driver.delayMs(1000)
         let center1 = await textCom1.getBoundsCenter()
         await driver.delayMs(1000)
-        await driver.click(center1.x, center1.y)
+        await textCom1.click()
         await driver.delayMs(1000)
         finish(true)
       }
       let resetCode = async (finish: Callback<boolean>) => {
         let driver = Driver.create()
         await driver.delayMs(1000)
-        await driver.pressBack()
+        await driver.pressBack(displayId)
         await driver.delayMs(1000)
         finish(true)
       }

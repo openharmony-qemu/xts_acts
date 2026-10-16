@@ -25,6 +25,7 @@ import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
 import { Driver, MatchPattern, ON } from '@kit.TestKit';
 import { common } from '@kit.AbilityKit';
+import fs from '@ohos.file.fs';
 
 export const LOG_TAG = '[PhotoAccessXts].';
 
@@ -99,9 +100,25 @@ export function fetchOption(testName: string, key: string, value: string | numbe
   return ops;
 }
 
+export function checkResourceFile(context: Context) {
+  try {
+    const sandboxPath = context.filesDir;
+    let resourcePath = context.resourceDir;
+    let resourcePathArray = fs.listFileSync(resourcePath);
+    for (let index = 0; index < resourcePathArray.length; index++) {
+      fs.copyFileSync((resourcePath + '/' + resourcePathArray[index]), (sandboxPath + '/' + resourcePathArray[index]));
+    }
+    let sandboxFileArray = fs.listFileSync(sandboxPath)
+    console.log(`sandbox fileList ==> ${sandboxFileArray}`)
+  } catch (error) {
+    console.error(`checkResourceFile failed, err is ${error}`);
+  }
+}
+
 export async function createMovingPhoto(testNum: string, context: Context, titleName: string):Promise<photoAccessHelper.PhotoAsset> {
   let photoAsset: photoAccessHelper.PhotoAsset | null = null;
   try {
+    checkResourceFile(context);
     let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
     let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
     let extension: string = 'jpg';

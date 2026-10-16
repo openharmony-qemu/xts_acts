@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
@@ -22,6 +22,7 @@ import config from '@ohos.accessibility.config';
 import accessibility from '@ohos.accessibility';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.arkui.ace.commonEvents.api11/EntryAbility';
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0;
 export default function PanGesture3() {
   describe('PanGesture3', () => {
       beforeEach(async (done: Function) => {
@@ -89,7 +90,7 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       let colum = CommonFunc.getComponentRectOnScreen('PanGesture3');
       console.info("[PanGesture3_0200] colum.left: " ,colum.left);
       let top = colum.top
-      await driver.swipe(Math.round(colum.left+(colum.right - colum.left)/2), Math.round(colum.bottom), Math.round(colum.right), Math.round(top), 600)
+      await driver.swipeBetween({x:Math.round(colum.left+(colum.right - colum.left)/2),y:Math.round(colum.bottom),displayId:displayID},{x:Math.round(colum.right),y:Math.round(top),displayId:displayID}, 600)
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('PanGesture3' + '_1');
       let obj: ESObject = JSON.parse(strJson);

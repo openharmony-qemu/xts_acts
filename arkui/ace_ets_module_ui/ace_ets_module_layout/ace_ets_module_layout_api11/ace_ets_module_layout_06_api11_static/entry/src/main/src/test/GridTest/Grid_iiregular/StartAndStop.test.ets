@@ -74,13 +74,17 @@ export default function StartAndStop() {
 it('StartAndStop_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[StartAndStop_0300] START');
-      let gridRect: RectValue = CommonFunc.getComponentRect('StartandStop')
       let driver = Driver.create()
-      await driver.swipe(
-        (Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`)).toInt(),
-        (Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.9 + gridRect.top}`)).toInt(),
-        (Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`)).toInt(),
-        (Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.1 + gridRect.top}`)).toInt(),
+      let gridRectComp = await driver.findComponent(ON.id('StartandStop'))
+      let gridRect = await gridRectComp!.getBounds()
+      let displayId = await gridRectComp!.getDisplayId()
+      await driver.swipeBetween(
+        { x: (Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`)).toInt(),
+          y: (Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.9 + gridRect.top}`)).toInt(),
+          displayId: displayId },
+        { x: (Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`)).toInt(),
+          y: (Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.1 + gridRect.top}`)).toInt(),
+          displayId: displayId },
         1000);
       await CommonFunc.sleep(2000);
 

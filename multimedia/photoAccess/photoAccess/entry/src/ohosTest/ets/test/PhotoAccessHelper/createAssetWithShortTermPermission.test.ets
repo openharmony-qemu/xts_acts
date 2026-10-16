@@ -17,7 +17,7 @@ import { common } from '@kit.AbilityKit';
 import { fileIo } from '@kit.CoreFileKit';
 import { Component, Driver, ON } from '@ohos.UiTest';
 import { photoAccessHelper } from '@kit.MediaLibraryKit';
-import { describe, beforeAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import { geoLocationManager } from '@kit.LocationKit'
 
 import {

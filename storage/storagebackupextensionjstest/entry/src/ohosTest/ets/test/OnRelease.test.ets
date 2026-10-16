@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, Level } from '@ohos/hypium';
+import { describe, it, expect, Level } from '@ohos/hypium-dynamic';
 import BackupExtensionContext from '@ohos.file.BackupExtensionContext';
 import BackupExtensionAbility, { BundleVersion } from '@ohos.application.BackupExtensionAbility';
 import contextConstant from '@ohos.app.ability.contextConstant';

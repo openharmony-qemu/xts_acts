@@ -1,4 +1,4 @@
-import { describe, it, expect, Level } from '@ohos/hypium';
+import { describe, it, expect, Level } from '@ohos/hypium-dynamic';
 import subscribe from 'libsubscribe.so';
 
 function sleep(time: number) {

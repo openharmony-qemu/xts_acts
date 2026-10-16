@@ -1,6 +1,6 @@
 import type { BusinessError } from "@ohos.base";
 import http from "@ohos.net.http";
-import { describe, expect, it, Level, Size, TestType } from "@ohos/hypium";
+import { describe, expect, it, Level, Size, TestType } from "@ohos/hypium-dynamic";
 import connection from "@ohos.net.connection";
 export const ADDR_TEST_ILLEGAL: string = "abc";
 export const ADDR_TEST_DOMAIN_HTTPS: string = "https://httpbin.moyufangge.com/anything";
@@ -52,7 +52,7 @@ export default function HttpRequestInStreamTest() {
                             }
                             else {
                                 console.info(`${caseName} requestInStream success ${JSON.stringify(data)}`);
-                                ExpectTrue(data == 200);
+                                ExpectTrue(data === 200);
                                 httpRequest.destroy();
                                 done();
                             }
@@ -97,7 +97,7 @@ export default function HttpRequestInStreamTest() {
                             }
                             else {
                                 console.info(`${caseName} destory httpRequest and requestStream success ${data}`);
-                                ExpectTrue(data == 200);
+                                ExpectTrue(data === 200);
                                 httpRequest.destroy();
                                 done();
                             }
@@ -135,7 +135,7 @@ export default function HttpRequestInStreamTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.requestInStream(ADDR_TEST_DOMAIN_HTTPS).then((data: number) => {
                             console.info(`${caseName} RequestInStream work true all progress success data ${JSON.stringify(data)}`);
-                            ExpectTrue(data == 200);
+                            ExpectTrue(data === 200);
                             httpRequest.destroy();
                             done();
                         }).catch((err: BusinessError) => {
@@ -183,7 +183,7 @@ export default function HttpRequestInStreamTest() {
                             done();
                         }).catch((err: BusinessError) => {
                             console.info(`${caseName} RequestInStream work true all progress fail err ${JSON.stringify(err)}`);
-                            ExpectTrue(err.code == 2300999);
+                            ExpectTrue(err.code === 2300999);
                             httpRequest.destroy();
                             done();
                         });
@@ -223,7 +223,7 @@ export default function HttpRequestInStreamTest() {
                         });
                         httpRequest.requestInStream(ADDR_TEST_DOMAIN_HTTPS).then((data: number) => {
                             console.info(`${caseName} RequestInStream work true all progress success data ${JSON.stringify(data)}`);
-                            ExpectTrue(data == 200);
+                            ExpectTrue(data === 200);
                             done();
                         }).catch((err: BusinessError) => {
                             console.info(`${caseName} RequestInStream work true all progress fail err ${JSON.stringify(err)}`);
@@ -264,7 +264,7 @@ export default function HttpRequestInStreamTest() {
                         httpRequest.requestInStream(ADDR_TEST_ILLEGAL, (err: BusinessError, data: number) => {
                             if (err) {
                                 console.info(`${caseName}  requestInStream fail err ${JSON.stringify(err)}`);
-                                ExpectTrue(err.code == 2300006);
+                                ExpectTrue(err.code === 2300006);
                                 httpRequest.destroy();
                                 done();
                             }
@@ -313,7 +313,7 @@ export default function HttpRequestInStreamTest() {
                             done();
                         }).catch((err: BusinessError) => {
                             console.info('error:' + JSON.stringify(err));
-                            ExpectTrue(err.code == 2300006);
+                            ExpectTrue(err.code === 2300006);
                             httpRequest.destroy();
                             done();
                         });

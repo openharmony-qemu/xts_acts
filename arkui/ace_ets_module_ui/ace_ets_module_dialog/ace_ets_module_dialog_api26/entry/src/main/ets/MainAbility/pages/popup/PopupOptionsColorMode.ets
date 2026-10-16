@@ -23,7 +23,7 @@ struct PopupOptionsColorMode {
   @State showDarkTheme: boolean = false;
 
   build() {
-    Column({ space: 12 }) {
+    Column() {
       Text('PopupOptions.colorMode').fontSize(18).fontWeight(FontWeight.Bold)
         .id('popup_options_colormode_title')
       WithTheme({ colorMode: ThemeColorMode.LIGHT }) {

@@ -13,11 +13,12 @@
  * limitations under the License.
  */
 
-import {describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium';
+import {describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-dynamic';
 import {UiComponent, UiDriver, Component, Driver, ON, BY, } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function SwiperGestureHandlerTest() {
 
   describe('SwiperGestureHandlerTest', () => {
@@ -64,8 +65,7 @@ export default function SwiperGestureHandlerTest() {
       let bottom = colum.bottom
       let left = colum.left
       let right = colum.right
-      await driver.swipe(Math.round(left + 100), Math.round((top + bottom) / 2),
-        Math.round(right - 100), Math.round((top + bottom) / 2));
+      await driver.swipeBetween({x:Math.round(left + 100),y:Math.round((top + bottom) / 2),displayId:displayID},{x:Math.round(right - 100),y:Math.round((top + bottom) / 2),displayId:displayID});
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('SwiperGestureHandler1');
       let obj: ESObject = JSON.parse(strJson);

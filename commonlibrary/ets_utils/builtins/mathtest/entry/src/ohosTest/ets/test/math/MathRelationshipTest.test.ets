@@ -20,7 +20,7 @@ import {
   Level,
   Size,
   TestType
-} from '@ohos/hypium';
+} from '@ohos/hypium-dynamic';
 import {
   isApprox
 } from '../MathTestUtils';

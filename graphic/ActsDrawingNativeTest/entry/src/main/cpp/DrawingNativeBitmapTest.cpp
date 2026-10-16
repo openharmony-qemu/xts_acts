@@ -17,30 +17,32 @@
 #include "include/OhosCommonTest.h"
 #include "include/log_common.h"
 
-#define DRAWING_NUMBER_1 1
-#define DRAWING_NUMBER_3 3
-#define DRAWING_NUMBER_4 4
-#define DRAWING_NUMBER_5 5
-#define DRAWING_NUMBER_10 10
-#define DRAWING_NUMBER_47 47
-#define DRAWING_NUMBER_48 48
-#define DRAWING_NUMBER_100 100
-#define DRAWING_NUMBER_192 192
-#define DRAWING_NUMBER_256 256
-#define DRAWING_NUMBER_400 400
-#define DRAWING_NUMBER_500 500
-#define DRAWING_NUMBER_512 512
-#define DRAWING_NUMBER_565 565
-#define DRAWING_NUMBER_1000 1000
-#define DRAWING_NUMBER_2000 2000
-#define DRAWING_NUMBER_4444 4444
-#define DRAWING_NUMBER_8888 8888
-#define DRAWING_NUMBER_2160 2160
-#define DRAWING_NUMBER_4096 4096
-#define DRAWING_NUMBER_10000 10000
-#define DRAWING_NUMBER_16384 16384
-#define DRAWING_NUMBER_1000000 1000000
-#define DRAWING_NUMBER_4000000 4000000
+#define NUMBER_1 1
+#define NUMBER_3 3
+#define NUMBER_4 4
+#define NUMBER_5 5
+#define NUMBER_10 10
+#define NUMBER_47 47
+#define NUMBER_48 48
+#define NUMBER_50 50
+#define NUMBER_100 100
+#define NUMBER_192 192
+#define NUMBER_200 200
+#define NUMBER_256 256
+#define NUMBER_400 400
+#define NUMBER_500 500
+#define NUMBER_512 512
+#define NUMBER_565 565
+#define NUMBER_1000 1000
+#define NUMBER_2000 2000
+#define NUMBER_4444 4444
+#define NUMBER_8888 8888
+#define NUMBER_2160 2160
+#define NUMBER_4096 4096
+#define NUMBER_10000 10000
+#define NUMBER_16384 16384
+#define NUMBER_1000000 1000000
+#define NUMBER_4000000 4000000
 
 namespace OHOS {
 namespace Rosen {
@@ -98,9 +100,9 @@ int TestBitmapCreateFromPixelsNormal()
 {
     DrawingNativeBitmapTestSetUp();
     // 1. Construct OH_Drawing_Image_Info by iterating through OH_Drawing_ColorFormat and OH_Drawing_AlphaFormat
-    int width = DRAWING_NUMBER_100;
-    int height = DRAWING_NUMBER_100;
-    int rowBytes = DRAWING_NUMBER_400;
+    int width = NUMBER_100;
+    int height = NUMBER_100;
+    int rowBytes = NUMBER_400;
     OH_Drawing_Bitmap *bitmap1 = OH_Drawing_BitmapCreate();
     EXPECT_NE(bitmap1, nullptr);
     for (OH_Drawing_ColorFormat colorFormat : colorFormats) {
@@ -143,10 +145,10 @@ int TestBitmapCreateFromPixelsNormal()
 int TestBitmapCreateFromPixelsNull()
 {
     DrawingNativeBitmapTestSetUp();
-    int width = DRAWING_NUMBER_100;
-    int height = DRAWING_NUMBER_100;
-    int rowBytes = DRAWING_NUMBER_400;
-    uint8_t *pixels = new uint8_t[width * height * DRAWING_NUMBER_4];
+    int width = NUMBER_100;
+    int height = NUMBER_100;
+    int rowBytes = NUMBER_400;
+    uint8_t *pixels = new uint8_t[width * height * NUMBER_4];
     OH_Drawing_Image_Info imageInfo{width, height, COLOR_FORMAT_ALPHA_8, ALPHA_FORMAT_UNKNOWN};
     // 1. OH_Drawing_BitmapCreateFromPixels the first parameter OH_Drawing_Image_Info is empty
     OH_Drawing_Bitmap *bitmap1 = OH_Drawing_BitmapCreateFromPixels(nullptr, pixels, rowBytes);
@@ -180,27 +182,27 @@ int TestBitmapCreateFromPixelsNull()
 int TestBitmapCreateFromPixelsMismatch()
 {
     DrawingNativeBitmapTestSetUp();
-    int width = DRAWING_NUMBER_48;
-    int height = DRAWING_NUMBER_48;
-    int rowBytes = DRAWING_NUMBER_192;
-    uint8_t *pixels = new uint8_t[width * height * DRAWING_NUMBER_4];
+    int width = NUMBER_48;
+    int height = NUMBER_48;
+    int rowBytes = NUMBER_192;
+    uint8_t *pixels = new uint8_t[width * height * NUMBER_4];
     OH_Drawing_Image_Info imageInfo{width, height, COLOR_FORMAT_ALPHA_8, ALPHA_FORMAT_UNKNOWN};
     // 1. OH_Drawing_BitmapCreateFromPixels initializes a 48*48 image, but the memory allocated for pixels is 47*48
-    uint8_t *pixels1 = new uint8_t[DRAWING_NUMBER_47 * height * DRAWING_NUMBER_4];
+    uint8_t *pixels1 = new uint8_t[NUMBER_47 * height * NUMBER_4];
     OH_Drawing_Bitmap *bitmap1 = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels1, rowBytes);
     EXPECT_EQ(bitmap1, nullptr);
     // 2. OH_Drawing_BitmapCreateFromPixels initializes a 48*48 image, but the memory allocated for pixels is 48*47
-    uint8_t *pixels2 = new uint8_t[width * DRAWING_NUMBER_47 * DRAWING_NUMBER_4];
+    uint8_t *pixels2 = new uint8_t[width * NUMBER_47 * NUMBER_4];
     OH_Drawing_Bitmap *bitmap2 = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels2, rowBytes);
     EXPECT_EQ(bitmap2, nullptr);
     // 3. OH_Drawing_BitmapCreateFromPixels initializes a 48*48 image, but the memory allocated for pixels is 48*48 and
     // rowBytes is 47
-    rowBytes = DRAWING_NUMBER_47;
-    uint8_t *pixels3 = new uint8_t[width * height * DRAWING_NUMBER_4];
+    rowBytes = NUMBER_47;
+    uint8_t *pixels3 = new uint8_t[width * height * NUMBER_4];
     OH_Drawing_Bitmap *bitmap3 = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels3, rowBytes);
     EXPECT_EQ(bitmap3, nullptr);
     // 4. OH_Drawing_BitmapCreateFromPixels
-    rowBytes = width * DRAWING_NUMBER_4 + DRAWING_NUMBER_1;
+    rowBytes = width * NUMBER_4 + NUMBER_1;
     OH_Drawing_Bitmap *bitmap4 = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels, rowBytes);
     height = OH_Drawing_BitmapGetHeight(bitmap4);
     width = OH_Drawing_BitmapGetWidth(bitmap4);
@@ -222,13 +224,13 @@ int TestBitmapCreateFromPixelsMismatch()
 int TestBitmapCreateFromPixelsAbnormal()
 {
     DrawingNativeBitmapTestSetUp();
-    int width = DRAWING_NUMBER_48;
-    int height = DRAWING_NUMBER_48;
-    int rowBytes = DRAWING_NUMBER_192;
-    uint8_t *pixels = new uint8_t[width * height * DRAWING_NUMBER_4];
+    int width = NUMBER_48;
+    int height = NUMBER_48;
+    int rowBytes = NUMBER_192;
+    uint8_t *pixels = new uint8_t[width * height * NUMBER_4];
     OH_Drawing_Image_Info imageInfo{width, height, COLOR_FORMAT_ALPHA_8, ALPHA_FORMAT_UNKNOWN};
     // 1. After constructing OH_Drawing_Image_Info, modify the byte value to an abnormal value
-    imageInfo.width = -DRAWING_NUMBER_1;
+    imageInfo.width = -NUMBER_1;
     // 2. OH_Drawing_BitmapCreateFromPixels
     OH_Drawing_Bitmap *bitmap = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels, rowBytes);
     EXPECT_EQ(bitmap, nullptr);
@@ -255,9 +257,9 @@ int TestBitmapCreateFromPixelsVeryBig()
     };
     for (OH_Drawing_ColorFormat format : formats) {
         for (OH_Drawing_AlphaFormat alphaFormat : alphaFormats) {
-            int width = DRAWING_NUMBER_1000000;
-            int height = DRAWING_NUMBER_1000000;
-            int rowBytes = DRAWING_NUMBER_4000000;
+            int width = NUMBER_1000000;
+            int height = NUMBER_1000000;
+            int rowBytes = NUMBER_4000000;
             OH_Drawing_Bitmap *bitmap1 = OH_Drawing_BitmapCreate();
             EXPECT_NE(bitmap1, nullptr);
             OH_Drawing_BitmapFormat cFormat{format, alphaFormat};
@@ -281,8 +283,8 @@ int TestBitmapCreateFromPixelsVeryBig()
                 // Initialize the Bitmap with rowBytes larger than the image, call OH_Drawing_BitmapGet related
                 // interfaces (OH_Drawing_BitmapGetHeight, OH_Drawing_BitmapGetWidth), Verify that the parameters match
                 // the initialization parameters
-                int rowBytesDRAWING_NUMBER_2 = width * DRAWING_NUMBER_4 + DRAWING_NUMBER_1;
-                bitmap = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels, rowBytesDRAWING_NUMBER_2);
+                int rowBytesNUMBER_2 = width * NUMBER_4 + NUMBER_1;
+                bitmap = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels, rowBytesNUMBER_2);
                 height_ = OH_Drawing_BitmapGetHeight(bitmap);
                 width_ = OH_Drawing_BitmapGetWidth(bitmap);
                 EXPECT_EQ(height_, height);
@@ -301,9 +303,9 @@ int TestBitmapCreateFromPixelsBoundary()
     DrawingNativeBitmapTestSetUp();
     // 1. Construct OH_Drawing_Image_Info by iterating through OH_Drawing_ColorFormat and OH_Drawing_AlphaFormat
     // 4K screen resolutionp
-    int width = DRAWING_NUMBER_4096;
-    int height = DRAWING_NUMBER_2160;
-    int rowBytes = DRAWING_NUMBER_16384;
+    int width = NUMBER_4096;
+    int height = NUMBER_2160;
+    int rowBytes = NUMBER_16384;
     OH_Drawing_Bitmap *bitmap1 = OH_Drawing_BitmapCreate();
     EXPECT_NE(bitmap1, nullptr);
     for (OH_Drawing_ColorFormat colorFormat : colorFormats) {
@@ -343,11 +345,124 @@ int TestBitmapCreateFromPixelsBoundary()
     return OH_DRAWING_SUCCESS;
 }
 
+// 补充场景1: BitmapBuild所有ColorFormat枚举测试
+int TestBitmapBuildAllColorFormats()
+{
+    DrawingNativeBitmapTestSetUp();
+    OH_Drawing_Bitmap *bitmap = OH_Drawing_BitmapCreate();
+    EXPECT_NE(bitmap, nullptr);
+    
+    OH_Drawing_BitmapFormat format;
+    format.alphaFormat = ALPHA_FORMAT_OPAQUE;
+    
+    // 遍历所有ColorFormat枚举
+    OH_Drawing_ColorFormat colorFormats[] = {
+        COLOR_FORMAT_UNKNOWN,
+        COLOR_FORMAT_ALPHA_8,
+        COLOR_FORMAT_RGB_565,
+        COLOR_FORMAT_ARGB_4444,
+        COLOR_FORMAT_RGBA_8888,
+        COLOR_FORMAT_BGRA_8888
+    };
+    
+    int formatCount = sizeof(colorFormats) / sizeof(colorFormats[0]);
+    for (int i = 0; i < formatCount; i++) {
+        OH_Drawing_ErrorCodeReset();
+        format.colorFormat = colorFormats[i];
+        OH_Drawing_BitmapBuild(bitmap, NUMBER_100, NUMBER_100, &format);
+        EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
+        
+        OH_Drawing_ColorFormat getColorFormat = OH_Drawing_BitmapGetColorFormat(bitmap);
+        EXPECT_EQ(getColorFormat, colorFormats[i]);
+    }
+    
+    OH_Drawing_BitmapDestroy(bitmap);
+    DrawingNativeBitmapTestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+// 补充场景2: BitmapBuild所有AlphaFormat枚举测试
+int TestBitmapBuildAllAlphaFormats()
+{
+    DrawingNativeBitmapTestSetUp();
+    OH_Drawing_Bitmap *bitmap = OH_Drawing_BitmapCreate();
+    EXPECT_NE(bitmap, nullptr);
+    
+    OH_Drawing_BitmapFormat format;
+    format.colorFormat = COLOR_FORMAT_RGBA_8888;
+    
+    // 遍历所有AlphaFormat枚举
+    OH_Drawing_AlphaFormat alphaFormats[] = {
+        ALPHA_FORMAT_UNKNOWN,
+        ALPHA_FORMAT_OPAQUE,
+        ALPHA_FORMAT_PREMUL,
+        ALPHA_FORMAT_UNPREMUL
+    };
+    
+    int formatCount = sizeof(alphaFormats) / sizeof(alphaFormats[0]);
+    for (int i = 0; i < formatCount; i++) {
+        OH_Drawing_ErrorCodeReset();
+        format.alphaFormat = alphaFormats[i];
+        OH_Drawing_BitmapBuild(bitmap, NUMBER_100, NUMBER_100, &format);
+        EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
+        
+        OH_Drawing_AlphaFormat getAlphaFormat = OH_Drawing_BitmapGetAlphaFormat(bitmap);
+        EXPECT_EQ(getAlphaFormat, alphaFormats[i]);
+    }
+    
+    OH_Drawing_BitmapDestroy(bitmap);
+    DrawingNativeBitmapTestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+// 补充场景3: BitmapBuild所有ColorFormat与AlphaFormat组合测试
+int TestBitmapBuildAllFormatCombinations()
+{
+    DrawingNativeBitmapTestSetUp();
+    
+    OH_Drawing_ColorFormat colorFormats[] = {
+        COLOR_FORMAT_ALPHA_8,
+        COLOR_FORMAT_RGB_565,
+        COLOR_FORMAT_ARGB_4444,
+        COLOR_FORMAT_RGBA_8888,
+        COLOR_FORMAT_BGRA_8888
+    };
+    
+    OH_Drawing_AlphaFormat alphaFormats[] = {
+        ALPHA_FORMAT_OPAQUE,
+        ALPHA_FORMAT_PREMUL,
+        ALPHA_FORMAT_UNPREMUL
+    };
+    
+    int colorCount = sizeof(colorFormats) / sizeof(colorFormats[0]);
+    int alphaCount = sizeof(alphaFormats) / sizeof(alphaFormats[0]);
+    
+    for (int i = 0; i < colorCount; i++) {
+        for (int j = 0; j < alphaCount; j++) {
+            OH_Drawing_Bitmap *bitmap = OH_Drawing_BitmapCreate();
+            EXPECT_NE(bitmap, nullptr);
+            
+            OH_Drawing_BitmapFormat format;
+            format.colorFormat = colorFormats[i];
+            format.alphaFormat = alphaFormats[j];
+            
+            OH_Drawing_ErrorCodeReset();
+            OH_Drawing_BitmapBuild(bitmap, NUMBER_100, NUMBER_100, &format);
+            EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
+            
+            OH_Drawing_BitmapDestroy(bitmap);
+        }
+    }
+    
+    DrawingNativeBitmapTestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
 int TestBitmapBuildNormal()
 {
     DrawingNativeBitmapTestSetUp();
-    const unsigned int width = DRAWING_NUMBER_500;
-    const unsigned int height = DRAWING_NUMBER_500;
+    const unsigned int width = NUMBER_500;
+    const unsigned int height = NUMBER_500;
     OH_Drawing_ColorFormat formats[] = {
         COLOR_FORMAT_UNKNOWN,   COLOR_FORMAT_ALPHA_8,   COLOR_FORMAT_RGB_565,
         COLOR_FORMAT_ARGB_4444, COLOR_FORMAT_RGBA_8888, COLOR_FORMAT_BGRA_8888,
@@ -365,8 +480,8 @@ int TestBitmapBuildNormal()
     OH_Drawing_Bitmap *bitmap = OH_Drawing_BitmapCreate();
     EXPECT_NE(bitmap, nullptr);
     // step 2
-    for (int i = DRAWING_NUMBER_1; i < sizeof(alphaFormats) / sizeof(alphaFormats[0]); i++) {
-        OH_Drawing_BitmapFormat bitmapFormat = {formats[DRAWING_NUMBER_3], alphaFormats[i]};
+    for (int i = NUMBER_1; i < sizeof(alphaFormats) / sizeof(alphaFormats[0]); i++) {
+        OH_Drawing_BitmapFormat bitmapFormat = {formats[NUMBER_3], alphaFormats[i]};
         OH_Drawing_BitmapBuild(bitmap, width, height, &bitmapFormat);
         if (bitmap == nullptr) {
             alphaFormat_ = OH_Drawing_BitmapGetAlphaFormat(bitmap);
@@ -386,8 +501,8 @@ int TestBitmapBuildNormal()
 int TestBitmapBuildNull()
 {
     DrawingNativeBitmapTestSetUp();
-    const unsigned int width = DRAWING_NUMBER_500;
-    const unsigned int height = DRAWING_NUMBER_500;
+    const unsigned int width = NUMBER_500;
+    const unsigned int height = NUMBER_500;
 
     OH_Drawing_ColorFormat formats[] = {
         COLOR_FORMAT_UNKNOWN,   COLOR_FORMAT_ALPHA_8,   COLOR_FORMAT_RGB_565,
@@ -404,7 +519,7 @@ int TestBitmapBuildNull()
     OH_Drawing_Bitmap *bitmap = OH_Drawing_BitmapCreate();
     // add assert
     EXPECT_NE(bitmap, nullptr);
-    OH_Drawing_BitmapFormat bitmapFormat = {formats[DRAWING_NUMBER_3], alphaFormats[0]};
+    OH_Drawing_BitmapFormat bitmapFormat = {formats[NUMBER_3], alphaFormats[0]};
 
     OH_Drawing_BitmapBuild(bitmap, 0, height, &bitmapFormat);
     // add assert
@@ -420,11 +535,36 @@ int TestBitmapBuildNull()
     return OH_DRAWING_SUCCESS;
 }
 
+// 补充场景4: BitmapBuild width和height异常值测试
+int TestBitmapBuildAbnormal()
+{
+    DrawingNativeBitmapTestSetUp();
+    OH_Drawing_Bitmap *bitmap = OH_Drawing_BitmapCreate();
+    EXPECT_NE(bitmap, nullptr);
+    
+    OH_Drawing_BitmapFormat format = {COLOR_FORMAT_RGBA_8888, ALPHA_FORMAT_OPAQUE};
+    OH_Drawing_BitmapBuild(bitmap, -NUMBER_100, NUMBER_100, &format);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
+    
+    OH_Drawing_BitmapBuild(bitmap, NUMBER_100, -NUMBER_100, &format);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
+    
+    OH_Drawing_BitmapBuild(bitmap, UINT32_MAX, NUMBER_100, &format);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
+    
+    OH_Drawing_BitmapBuild(bitmap, NUMBER_100, UINT32_MAX, &format);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
+    
+    OH_Drawing_BitmapDestroy(bitmap);
+    DrawingNativeBitmapTestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
 int TestBitmapBuildMultipleCalls()
 {
     DrawingNativeBitmapTestSetUp();
-    const unsigned int width = DRAWING_NUMBER_500;
-    const unsigned int height = DRAWING_NUMBER_500;
+    const unsigned int width = NUMBER_500;
+    const unsigned int height = NUMBER_500;
     OH_Drawing_ColorFormat formats[] = {
         COLOR_FORMAT_UNKNOWN,   COLOR_FORMAT_ALPHA_8,   COLOR_FORMAT_RGB_565,
         COLOR_FORMAT_ARGB_4444, COLOR_FORMAT_RGBA_8888, COLOR_FORMAT_BGRA_8888,
@@ -442,8 +582,8 @@ int TestBitmapBuildMultipleCalls()
     OH_Drawing_Bitmap *bitmap = OH_Drawing_BitmapCreate();
     EXPECT_NE(bitmap, nullptr);
     // step 2
-    for (int i = DRAWING_NUMBER_1; i < sizeof(alphaFormats) / sizeof(alphaFormats[0]); i++) {
-        OH_Drawing_BitmapFormat bitmapFormat = {formats[DRAWING_NUMBER_3], alphaFormats[i]};
+    for (int i = NUMBER_1; i < sizeof(alphaFormats) / sizeof(alphaFormats[0]); i++) {
+        OH_Drawing_BitmapFormat bitmapFormat = {formats[NUMBER_3], alphaFormats[i]};
         OH_Drawing_BitmapBuild(bitmap, width, height, &bitmapFormat);
         if (bitmap == nullptr) {
             alphaFormat_ = OH_Drawing_BitmapGetAlphaFormat(bitmap);
@@ -464,13 +604,13 @@ int TestBitmapBuildMultipleCalls()
     OH_Drawing_BitmapBuild(bitmap2, width, height, &cFormat);
     void *pixels = OH_Drawing_BitmapGetPixels(bitmap2);
     EXPECT_NE(pixels, nullptr);
-    uint32_t rowBytes = width * height * DRAWING_NUMBER_4;
+    uint32_t rowBytes = width * height * NUMBER_4;
     OH_Drawing_Bitmap *bitmap3 = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels, rowBytes);
     EXPECT_NE(bitmap3, nullptr);
 
     // step 5
-    for (int i = DRAWING_NUMBER_1; i < sizeof(alphaFormats)/sizeof(alphaFormats[0]); i++) {
-        OH_Drawing_BitmapFormat bitmapFormat = {formats[DRAWING_NUMBER_3], alphaFormats[i]};
+    for (int i = NUMBER_1; i < sizeof(alphaFormats)/sizeof(alphaFormats[0]); i++) {
+        OH_Drawing_BitmapFormat bitmapFormat = {formats[NUMBER_3], alphaFormats[i]};
         OH_Drawing_BitmapBuild(bitmap3, width, height, &bitmapFormat);
         alphaFormat_ = OH_Drawing_BitmapGetAlphaFormat(bitmap3);
         EXPECT_EQ(alphaFormat_, alphaFormats[i]);
@@ -483,8 +623,8 @@ int TestBitmapBuildBoundary()
 {
     DrawingNativeBitmapTestSetUp();
     // 4K screen resolutionp
-    const unsigned int width = DRAWING_NUMBER_4096;
-    const unsigned int height = DRAWING_NUMBER_2160;
+    const unsigned int width = NUMBER_4096;
+    const unsigned int height = NUMBER_2160;
     OH_Drawing_ColorFormat formats[] = {
         COLOR_FORMAT_UNKNOWN,   COLOR_FORMAT_ALPHA_8,   COLOR_FORMAT_RGB_565,
         COLOR_FORMAT_ARGB_4444, COLOR_FORMAT_RGBA_8888, COLOR_FORMAT_BGRA_8888,
@@ -502,8 +642,8 @@ int TestBitmapBuildBoundary()
     OH_Drawing_Bitmap *bitmap = OH_Drawing_BitmapCreate();
     EXPECT_NE(bitmap, nullptr);
     // step 2
-    for (int i = DRAWING_NUMBER_1; i < sizeof(alphaFormats) / sizeof(alphaFormats[0]); i++) {
-        OH_Drawing_BitmapFormat bitmapFormat = {formats[DRAWING_NUMBER_3], alphaFormats[i]};
+    for (int i = NUMBER_1; i < sizeof(alphaFormats) / sizeof(alphaFormats[0]); i++) {
+        OH_Drawing_BitmapFormat bitmapFormat = {formats[NUMBER_3], alphaFormats[i]};
         OH_Drawing_BitmapBuild(bitmap, width, height, &bitmapFormat);
         if (bitmap == nullptr) {
             alphaFormat_ = OH_Drawing_BitmapGetAlphaFormat(bitmap);
@@ -526,24 +666,24 @@ int TestBitmapGetXXNormal()
     OH_Drawing_Bitmap *cBitmap = OH_Drawing_BitmapCreate();
     EXPECT_NE(cBitmap, nullptr);
     OH_Drawing_BitmapFormat cFormat{COLOR_FORMAT_RGBA_8888, ALPHA_FORMAT_OPAQUE};
-    int32_t width = DRAWING_NUMBER_100;
-    int32_t height = DRAWING_NUMBER_100;
+    int32_t width = NUMBER_100;
+    int32_t height = NUMBER_100;
     OH_Drawing_BitmapBuild(cBitmap, width, height, &cFormat);
 
     OH_Drawing_Image_Info imageInfo1{width, height, COLOR_FORMAT_RGBA_8888, ALPHA_FORMAT_UNPREMUL};
     void *pixels1 = new int32_t[width * height];
 
     // step 1
-    bool res = OH_Drawing_BitmapReadPixels(cBitmap, &imageInfo1, pixels1, width * DRAWING_NUMBER_4, 0, 0);
+    bool res = OH_Drawing_BitmapReadPixels(cBitmap, &imageInfo1, pixels1, width * NUMBER_4, 0, 0);
     EXPECT_EQ(res, true);
 
     // step 2
     int32_t w = OH_Drawing_BitmapGetWidth(cBitmap);
-    EXPECT_EQ(w, DRAWING_NUMBER_100);
+    EXPECT_EQ(w, NUMBER_100);
 
     // step 3
     int32_t h = OH_Drawing_BitmapGetHeight(cBitmap);
-    EXPECT_EQ(h, DRAWING_NUMBER_100);
+    EXPECT_EQ(h, NUMBER_100);
 
     // step 5
     OH_Drawing_ColorFormat colorFormat_ = OH_Drawing_BitmapGetColorFormat(cBitmap);
@@ -575,8 +715,8 @@ int TestBitmapGetXXNull()
     OH_Drawing_Bitmap *cBitmap = OH_Drawing_BitmapCreate();
     EXPECT_NE(cBitmap, nullptr);
     OH_Drawing_BitmapFormat cFormat{COLOR_FORMAT_RGBA_8888, ALPHA_FORMAT_OPAQUE};
-    uint32_t width = DRAWING_NUMBER_100;
-    uint32_t height = DRAWING_NUMBER_100;
+    uint32_t width = NUMBER_100;
+    uint32_t height = NUMBER_100;
     OH_Drawing_BitmapBuild(cBitmap, width, height, &cFormat);
 
     // step 1
@@ -628,15 +768,15 @@ int TestBitmapGetXXBoundary()
     OH_Drawing_Bitmap *cBitmap = OH_Drawing_BitmapCreate();
     EXPECT_NE(cBitmap, nullptr);
     OH_Drawing_BitmapFormat cFormat{COLOR_FORMAT_RGBA_8888, ALPHA_FORMAT_OPAQUE};
-    int32_t width = DRAWING_NUMBER_4096;
-    int32_t height = DRAWING_NUMBER_2160;
+    int32_t width = NUMBER_4096;
+    int32_t height = NUMBER_2160;
     OH_Drawing_BitmapBuild(cBitmap, width, height, &cFormat);
 
     OH_Drawing_Image_Info imageInfo1{width, height, COLOR_FORMAT_RGBA_8888, ALPHA_FORMAT_UNPREMUL};
     void *pixels1 = new int32_t[width * height];
 
     // step 1
-    bool res = OH_Drawing_BitmapReadPixels(cBitmap, &imageInfo1, pixels1, width * DRAWING_NUMBER_4, 0, 0);
+    bool res = OH_Drawing_BitmapReadPixels(cBitmap, &imageInfo1, pixels1, width * NUMBER_4, 0, 0);
     EXPECT_EQ(res, true);
 
     // step 2
@@ -676,8 +816,8 @@ int TestBitmapGetXXBoundary()
 int TestBitmapReadPixelsNormal()
 {
     DrawingNativeBitmapTestSetUp();
-    const unsigned int width = DRAWING_NUMBER_500;
-    const unsigned int height = DRAWING_NUMBER_500;
+    const unsigned int width = NUMBER_500;
+    const unsigned int height = NUMBER_500;
 
     // step 1
     OH_Drawing_Bitmap *bitmap = OH_Drawing_BitmapCreate();
@@ -689,7 +829,7 @@ int TestBitmapReadPixelsNormal()
     void *pixels = new uint32_t[width * height];
 
     // step 3
-    bool res = OH_Drawing_BitmapReadPixels(bitmap, &imageInfo, pixels, width * DRAWING_NUMBER_4, 0, 0);
+    bool res = OH_Drawing_BitmapReadPixels(bitmap, &imageInfo, pixels, width * NUMBER_4, 0, 0);
     EXPECT_EQ(res, true);
 
     // step 4
@@ -704,8 +844,8 @@ int TestBitmapReadPixelsNormal()
 int TestBitmapReadPixelsNull()
 {
     DrawingNativeBitmapTestSetUp();
-    const unsigned int width = DRAWING_NUMBER_500;
-    const unsigned int height = DRAWING_NUMBER_500;
+    const unsigned int width = NUMBER_50;
+    const unsigned int height = NUMBER_50;
 
     // step 1
     OH_Drawing_Bitmap *bitmap = OH_Drawing_BitmapCreate();
@@ -719,15 +859,15 @@ int TestBitmapReadPixelsNull()
     void *pixels = new uint32_t[width * height];
 
     // step 3
-    bool res = OH_Drawing_BitmapReadPixels(nullptr, &imageInfo, pixels, width * DRAWING_NUMBER_4, 0, 0);
+    bool res = OH_Drawing_BitmapReadPixels(nullptr, &imageInfo, pixels, width * NUMBER_4, 0, 0);
     EXPECT_EQ(res, false);
 
     // step 4
-    res = OH_Drawing_BitmapReadPixels(bitmap, nullptr, pixels, width * DRAWING_NUMBER_4, 0, 0);
+    res = OH_Drawing_BitmapReadPixels(bitmap, nullptr, pixels, width * NUMBER_4, 0, 0);
     EXPECT_EQ(res, false);
 
     // step 5
-    res = OH_Drawing_BitmapReadPixels(bitmap, &imageInfo, nullptr, width * DRAWING_NUMBER_4, 0, 0);
+    res = OH_Drawing_BitmapReadPixels(bitmap, &imageInfo, nullptr, width * NUMBER_4, 0, 0);
     EXPECT_EQ(res, false);
 
     // step 6
@@ -735,12 +875,20 @@ int TestBitmapReadPixelsNull()
     EXPECT_EQ(res, false);
 
     // step 7
-    res = OH_Drawing_BitmapReadPixels(bitmap, &imageInfo, pixels, width * DRAWING_NUMBER_4, 0, DRAWING_NUMBER_1);
+    res = OH_Drawing_BitmapReadPixels(bitmap, &imageInfo, pixels, width * NUMBER_4, 0, NUMBER_1);
     EXPECT_EQ(res, true);
 
     // step 8
-    res = OH_Drawing_BitmapReadPixels(bitmap, &imageInfo, pixels, width * DRAWING_NUMBER_4, DRAWING_NUMBER_1, 0);
+    res = OH_Drawing_BitmapReadPixels(bitmap, &imageInfo, pixels, width * NUMBER_4, NUMBER_1, 0);
     EXPECT_EQ(res, true);
+    
+    // srcX out of range
+    res = OH_Drawing_BitmapReadPixels(bitmap, &imageInfo, pixels, width * NUMBER_4, NUMBER_200, 0);
+    EXPECT_EQ(res, false);
+    
+    // srcY out of range
+    res = OH_Drawing_BitmapReadPixels(bitmap, &imageInfo, pixels, width * NUMBER_4, 0, NUMBER_200);
+    EXPECT_EQ(res, false);
 
     // step 9
     OH_Drawing_BitmapDestroy(bitmap);
@@ -760,8 +908,8 @@ int TestBitmapReadPixelsMismatch()
 {
     DrawingNativeBitmapTestSetUp();
     // step 1
-    const unsigned int width = DRAWING_NUMBER_500;
-    const unsigned int height = DRAWING_NUMBER_500;
+    const unsigned int width = NUMBER_500;
+    const unsigned int height = NUMBER_500;
     OH_Drawing_Bitmap *bitmap = OH_Drawing_BitmapCreate();
     // add assert
     EXPECT_NE(bitmap, nullptr);
@@ -771,14 +919,14 @@ int TestBitmapReadPixelsMismatch()
     OH_Drawing_BitmapBuild(bitmap, width, height, &bitmapFormat);
 
     // step 3
-    OH_Drawing_Image_Info imageInfo{DRAWING_NUMBER_1, height, COLOR_FORMAT_RGBA_8888, ALPHA_FORMAT_UNPREMUL};
+    OH_Drawing_Image_Info imageInfo{NUMBER_1, height, COLOR_FORMAT_RGBA_8888, ALPHA_FORMAT_UNPREMUL};
     void *pixels = new uint32_t[width * height];
-    bool res = OH_Drawing_BitmapReadPixels(bitmap, &imageInfo, pixels, width * DRAWING_NUMBER_4, 0, 0);
+    bool res = OH_Drawing_BitmapReadPixels(bitmap, &imageInfo, pixels, width * NUMBER_4, 0, 0);
     EXPECT_EQ(res, true);
 
     // step 4
-    OH_Drawing_Image_Info imageInfo2{width, DRAWING_NUMBER_1, COLOR_FORMAT_RGBA_8888, ALPHA_FORMAT_UNPREMUL};
-    res = OH_Drawing_BitmapReadPixels(bitmap, &imageInfo2, pixels, width * DRAWING_NUMBER_4, 0, 0);
+    OH_Drawing_Image_Info imageInfo2{width, NUMBER_1, COLOR_FORMAT_RGBA_8888, ALPHA_FORMAT_UNPREMUL};
+    res = OH_Drawing_BitmapReadPixels(bitmap, &imageInfo2, pixels, width * NUMBER_4, 0, 0);
     EXPECT_EQ(res, true);
 
     // step 5
@@ -791,17 +939,17 @@ int TestBitmapReadPixelsMismatch()
 
     // step 7
     OH_Drawing_Image_Info imageInfo4{width, height, COLOR_FORMAT_RGBA_8888, ALPHA_FORMAT_UNPREMUL};
-    res = OH_Drawing_BitmapReadPixels(bitmap, &imageInfo4, pixels, width * DRAWING_NUMBER_3, 0, 0);
+    res = OH_Drawing_BitmapReadPixels(bitmap, &imageInfo4, pixels, width * NUMBER_3, 0, 0);
     EXPECT_EQ(res, false);
 
     // step 8
     OH_Drawing_Image_Info imageInfo5{width, height, COLOR_FORMAT_RGBA_8888, ALPHA_FORMAT_UNPREMUL};
-    res = OH_Drawing_BitmapReadPixels(bitmap, &imageInfo5, pixels, width * DRAWING_NUMBER_4, DRAWING_NUMBER_1000, 0);
+    res = OH_Drawing_BitmapReadPixels(bitmap, &imageInfo5, pixels, width * NUMBER_4, NUMBER_1000, 0);
     EXPECT_EQ(res, false);
 
     // step 9
     OH_Drawing_Image_Info imageInfo6{width, height, COLOR_FORMAT_RGBA_8888, ALPHA_FORMAT_UNPREMUL};
-    res = OH_Drawing_BitmapReadPixels(bitmap, &imageInfo6, pixels, width * DRAWING_NUMBER_4, 0, DRAWING_NUMBER_1000);
+    res = OH_Drawing_BitmapReadPixels(bitmap, &imageInfo6, pixels, width * NUMBER_4, 0, NUMBER_1000);
     EXPECT_EQ(res, false);
     DrawingNativeBitmapTestTearDown();
     return OH_DRAWING_SUCCESS;
@@ -810,8 +958,8 @@ int TestBitmapReadPixelsMismatch()
 int TestBitmapReadPixelsBoundary()
 {
     DrawingNativeBitmapTestSetUp();
-    const unsigned int width = DRAWING_NUMBER_4096;
-    const unsigned int height = DRAWING_NUMBER_2160;
+    const unsigned int width = NUMBER_4096;
+    const unsigned int height = NUMBER_2160;
 
     // step 1
     OH_Drawing_Bitmap *bitmap = OH_Drawing_BitmapCreate();
@@ -825,7 +973,7 @@ int TestBitmapReadPixelsBoundary()
     void *pixels = new uint32_t[width * height];
 
     // step 3
-    bool res = OH_Drawing_BitmapReadPixels(bitmap, &imageInfo, pixels, width * DRAWING_NUMBER_4, 0, 0);
+    bool res = OH_Drawing_BitmapReadPixels(bitmap, &imageInfo, pixels, width * NUMBER_4, 0, 0);
     EXPECT_EQ(res, true);
 
     // step 4
@@ -841,8 +989,8 @@ int TestBitmapBuildMaximum()
 {
     DrawingNativeBitmapTestSetUp();
     // Build a very large bitmap
-    const unsigned int width = DRAWING_NUMBER_10000;
-    const unsigned int height = DRAWING_NUMBER_10000;
+    const unsigned int width = NUMBER_10000;
+    const unsigned int height = NUMBER_10000;
     OH_Drawing_Bitmap *bitmap = OH_Drawing_BitmapCreate();
     EXPECT_NE(bitmap, nullptr);
     OH_Drawing_BitmapFormat bitmapFormat{COLOR_FORMAT_RGBA_8888, ALPHA_FORMAT_PREMUL};
@@ -852,7 +1000,7 @@ int TestBitmapBuildMaximum()
     OH_Drawing_Canvas *imageCanvas = OH_Drawing_CanvasCreate();
     EXPECT_NE(imageCanvas, nullptr);
     OH_Drawing_CanvasBind(imageCanvas, bitmap);
-    OH_Drawing_Rect *imageRect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_5, DRAWING_NUMBER_5);
+    OH_Drawing_Rect *imageRect = OH_Drawing_RectCreate(0, 0, NUMBER_5, NUMBER_5);
     OH_Drawing_CanvasDrawRect(imageCanvas, imageRect);
 
     // Create a picture object
@@ -863,8 +1011,7 @@ int TestBitmapBuildMaximum()
     // Draws the image onto the specified area of the canvas.
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
     EXPECT_NE(canvas, nullptr);
-    OH_Drawing_Rect *dstRect =
-        OH_Drawing_RectCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100, DRAWING_NUMBER_500, DRAWING_NUMBER_500);
+    OH_Drawing_Rect *dstRect = OH_Drawing_RectCreate(NUMBER_100, NUMBER_100, NUMBER_500, NUMBER_500);
     OH_Drawing_SamplingOptions *samplingOptions = OH_Drawing_SamplingOptionsCreate(
         OH_Drawing_FilterMode::FILTER_MODE_NEAREST, OH_Drawing_MipmapMode::MIPMAP_MODE_NEAREST);
     EXPECT_NE(samplingOptions, nullptr);
@@ -884,15 +1031,15 @@ int TestBitmapBuildMaximum()
 int TestBitmapGetRowBytesNormal()
 {
     DrawingNativeBitmapTestSetUp();
-    uint32_t width = DRAWING_NUMBER_256;
-    uint32_t height = DRAWING_NUMBER_256;
+    uint32_t width = NUMBER_256;
+    uint32_t height = NUMBER_256;
     OH_Drawing_Bitmap *bitmap = OH_Drawing_BitmapCreate();
     OH_Drawing_BitmapFormat bitmapFormat{COLOR_FORMAT_ARGB_4444, ALPHA_FORMAT_OPAQUE};
     OH_Drawing_BitmapBuild(bitmap, width, height, &bitmapFormat);
     uint32_t bytes = 0;
     OH_Drawing_ErrorCode errorCode = OH_Drawing_BitmapGetRowBytes(bitmap, &bytes);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
-    EXPECT_EQ(bytes, DRAWING_NUMBER_512);
+    EXPECT_EQ(bytes, NUMBER_512);
     OH_Drawing_BitmapDestroy(bitmap);
     DrawingNativeBitmapTestTearDown();
     return OH_DRAWING_SUCCESS;
@@ -901,8 +1048,8 @@ int TestBitmapGetRowBytesNormal()
 int TestBitmapGetRowBytesNull()
 {
     DrawingNativeBitmapTestSetUp();
-    uint32_t width = DRAWING_NUMBER_256;
-    uint32_t height = DRAWING_NUMBER_256;
+    uint32_t width = NUMBER_256;
+    uint32_t height = NUMBER_256;
     OH_Drawing_Bitmap *bitmap = OH_Drawing_BitmapCreate();
     OH_Drawing_BitmapFormat bitmapFormat{COLOR_FORMAT_ARGB_4444, ALPHA_FORMAT_OPAQUE};
     OH_Drawing_BitmapBuild(bitmap, width, height, &bitmapFormat);
@@ -919,7 +1066,7 @@ int TestBitmapGetRowBytesAbnormal()
 {
     DrawingNativeBitmapTestSetUp();
     uint32_t width = 0;
-    uint32_t height = DRAWING_NUMBER_256;
+    uint32_t height = NUMBER_256;
     OH_Drawing_Bitmap *bitmap = OH_Drawing_BitmapCreate();
     OH_Drawing_BitmapFormat bitmapFormat{COLOR_FORMAT_ARGB_4444, ALPHA_FORMAT_OPAQUE};
     OH_Drawing_BitmapBuild(bitmap, width, height, &bitmapFormat);
@@ -935,16 +1082,16 @@ int TestBitmapGetRowBytesAbnormal()
 int TestBitmapGetRowBytesMultipleCalls()
 {
     DrawingNativeBitmapTestSetUp();
-    uint32_t width = DRAWING_NUMBER_256;
-    uint32_t height = DRAWING_NUMBER_256;
+    uint32_t width = NUMBER_256;
+    uint32_t height = NUMBER_256;
     OH_Drawing_Bitmap *bitmap = OH_Drawing_BitmapCreate();
     OH_Drawing_BitmapFormat bitmapFormat{COLOR_FORMAT_ARGB_4444, ALPHA_FORMAT_OPAQUE};
     OH_Drawing_BitmapBuild(bitmap, width, height, &bitmapFormat);
     uint32_t bytes = 0;
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_ErrorCode errorCode = OH_Drawing_BitmapGetRowBytes(bitmap, &bytes);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
-        EXPECT_EQ(bytes, DRAWING_NUMBER_512);
+        EXPECT_EQ(bytes, NUMBER_512);
     }
     OH_Drawing_BitmapDestroy(bitmap);
     DrawingNativeBitmapTestTearDown();

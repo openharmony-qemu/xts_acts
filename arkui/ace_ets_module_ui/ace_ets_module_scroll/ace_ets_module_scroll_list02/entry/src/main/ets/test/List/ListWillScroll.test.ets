@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
@@ -50,7 +50,10 @@ export default function ListWillScroll() {
      */
     it('ListWillScroll_0100', Level.LEVEL2, async (done: Function) => {
       console.info('ListWillScroll_0100 START');
-      let swiperAnimation = CommonFunc.getComponentRectOnScreen('listScroll_4');
+      let driver = await Driver.create()
+      let swiperAnimationComponent = await driver.findComponent(ON.id('listScroll_4'));
+      let swiperAnimation = await swiperAnimationComponent.getBounds();
+      let displayId = await swiperAnimationComponent.getDisplayId();
       let top = swiperAnimation.top;
       let right = swiperAnimation.right;
       let left = swiperAnimation.left;
@@ -58,9 +61,10 @@ export default function ListWillScroll() {
       console.info("ListWillScroll_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom -top;
       let width = right - left;
-      let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(left + width*0.5),Math.round(bottom - height/4),Math.round(left + width*0.5),Math.round(bottom - height/2));
+      await driver.swipeBetween(
+        { x: Math.round(left + width*0.5), y: Math.round(bottom - height/4), displayId: displayId },
+        { x: Math.round(left + width*0.5), y: Math.round(bottom - height/2), displayId: displayId });
       await CommonFunc.sleep(3000);
       let strJson = getInspectorByKey('listScroll_1');
       let strJson1 = getInspectorByKey('listScroll_2');

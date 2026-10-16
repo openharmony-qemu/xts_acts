@@ -20,7 +20,7 @@
       {
         "name": "default",
         "signingConfig": "default",
-        "compileSdkVersion": "26.0.0",
+        "compileSdkVersion": "26.0.1",
         "compatibleSdkVersion": 14,
         "runtimeOS": "OpenHarmony",
         "buildOption": {
@@ -33,7 +33,7 @@
     ],
     "buildModeSet": [
       {
-        "name": "debug",
+        "name": "debug"
       },
       {
         "name": "release"
@@ -87,11 +87,27 @@
     },
     {
       "name": "sharedHarOne",
-      "srcPath": "./sharedHarOne",
+      "srcPath": "./sharedHarOne"
     },
     {
       "name": "sharedHspOne",
       "srcPath": "./sharedHspOne",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "staticModule",
+      "srcPath": "./staticModule"
+    },
+    {
+      "name": "sharedModule",
+      "srcPath": "./sharedModule",
       "targets": [
         {
           "name": "default",

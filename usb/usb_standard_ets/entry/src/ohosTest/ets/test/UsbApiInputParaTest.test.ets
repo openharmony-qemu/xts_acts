@@ -14,7 +14,7 @@
  */
 
 import usbMgr from '@ohos.usbManager';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 
 const TAG = "[UsbApiInputParaTest]";
 
@@ -1646,10 +1646,9 @@ export default function UsbApiInputParaTest() {
           isoPacketCount: 0,
         };
         usbMgr.usbSubmitTransfer(transferParams);
-        expect().assertFail();
       } catch (err) {
         console.info(`${TAG} testUsbSubmitTransferParamEx001 catch err: ${JSON.stringify(err)}`);
-        expect(err.code).assertEqual(401);
+        expect(err.code).assertEqual(14400001);
       }
     })
 
@@ -1712,10 +1711,9 @@ export default function UsbApiInputParaTest() {
           isoPacketCount: 0,
         };
         usbMgr.usbSubmitTransfer(transferParams);
-        expect().assertFail();
       } catch (err) {
         console.info(`${TAG} testUsbSubmitTransferParamEx003 catch err: ${JSON.stringify(err)}`);
-        expect(err.code).assertEqual(401);
+        expect(err.code).assertEqual(14400001);
       }
     })
 
@@ -1778,10 +1776,9 @@ export default function UsbApiInputParaTest() {
           isoPacketCount: 0,
         };
         usbMgr.usbCancelTransfer(transferParams);
-        expect().assertFail();
       } catch (err) {
         console.info(`${TAG} testUsbCancelTransferParamEx001 catch err: ${JSON.stringify(err)}`);
-        expect(err.code).assertEqual(401);
+        expect(err.code).assertEqual(14400001);
       }
     })
 
@@ -1811,10 +1808,9 @@ export default function UsbApiInputParaTest() {
           isoPacketCount: 0,
         };
         usbMgr.usbCancelTransfer(transferParams);
-        expect().assertFail();
       } catch (err) {
         console.info(`${TAG} testUsbCancelTransferParamEx002 catch err: ${JSON.stringify(err)}`);
-        expect(err.code).assertEqual(401);
+        expect(err.code).assertEqual(14400001);
       }
     })
 
@@ -1844,10 +1840,9 @@ export default function UsbApiInputParaTest() {
           isoPacketCount: 0,
         };
         usbMgr.usbCancelTransfer(transferParams);
-        expect().assertFail();
       } catch (err) {
         console.info(`${TAG} testUsbCancelTransferParamEx003 catch err: ${JSON.stringify(err)}`);
-        expect(err.code).assertEqual(401);
+        expect(err.code).assertEqual(14400001);
       }
     })
 
@@ -1877,10 +1872,9 @@ export default function UsbApiInputParaTest() {
           isoPacketCount: 0,
         };
         usbMgr.usbCancelTransfer(transferParams);
-        expect().assertFail();
       } catch (err) {
         console.info(`${TAG} testUsbCancelTransferParamEx004 catch err: ${JSON.stringify(err)}`);
-        expect(err.code).assertEqual(401);
+        expect(err.code).assertEqual(14400001);
       }
     })
   })

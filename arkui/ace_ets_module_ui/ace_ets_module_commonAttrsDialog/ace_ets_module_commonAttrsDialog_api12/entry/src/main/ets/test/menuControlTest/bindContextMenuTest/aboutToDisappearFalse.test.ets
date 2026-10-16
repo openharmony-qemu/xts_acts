@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import {
   UiComponent,
@@ -29,6 +29,8 @@ import {
 } from '@ohos.UiTest';
 import CommonFunc from '../../../MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../MainAbility/utils/MessageManager';
+
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 
 export default function aboutToDisappearFalse() {
   describe('aboutToDisappearFalse', () => {
@@ -68,8 +70,9 @@ export default function aboutToDisappearFalse() {
       let button = await driver.findComponent(ON.id('aboutToDisappearFalse'));
       await button.click();
       await CommonFunc.sleep(1000);
-
-      await driver.click(200, 200);
+      // 涉及坐标
+      await driver.clickAt({ x: 200, y: 200, displayId: displayID });
+      // await driver.click(200, 200);
       await CommonFunc.sleep(1000);
 
       let strJson = getInspectorByKey('aboutToDisappearFalseText');

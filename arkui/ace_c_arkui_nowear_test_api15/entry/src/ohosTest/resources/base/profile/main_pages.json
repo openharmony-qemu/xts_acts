@@ -7,6 +7,8 @@
     "MainAbility/pages/scroll/ScrollBackToTopTest",
     "MainAbility/pages/focuscontrol/focuscontrol3x",
     "MainAbility/pages/focuscontrol/focuscontrol4",
-    "MainAbility/pages/getGestureParam/getGestureParam"
+    "MainAbility/pages/getGestureParam/getGestureParam",
+    "MainAbility/pages/GameController/GameController",
+    "MainAbility/pages/CapiSourceType/CapiSourceType"
   ]
 }

@@ -24,6 +24,7 @@
 #include <napi/native_api.h>
 #include <string>
 #include <sys/stat.h>
+#include "native_common.h"
 
 namespace RelationalStoreTest {
 const char *RDB_TEST = "/data/storage/el2/database/com.acts.acttransactiontest/";
@@ -156,7 +157,22 @@ void AddRelationStoreTest3(std::vector<napi_property_descriptor> &descData)
     descData.push_back({"testCommitByTrxIdSuccess", nullptr, TestCommitByTrxIdSuccess, nullptr, nullptr, nullptr,
                         napi_default, nullptr});
     descData.push_back(
-        {"testSubscribeSuccess", nullptr, TestSubscribeSuccess, nullptr, nullptr, nullptr, napi_default, nullptr});
+        {"testSubscribeSuccess", nullptr, TestSubscribeSuccess, nullptr, nullptr, nullptr, napi_default, nullptr}),
+    descData.push_back(
+        {"TestUpdateWithConflictResolutionSuccess_0100", nullptr,
+         TestUpdateWithConflictResolutionSuccess_0100, nullptr, nullptr, nullptr, napi_default, nullptr}),
+    descData.push_back(
+        {"TestUpdateWithConflictResolutionSuccess_0200", nullptr,
+         TestUpdateWithConflictResolutionSuccess_0200, nullptr, nullptr, nullptr, napi_default, nullptr}),
+    descData.push_back(
+        {"TestUpdateWithConflictResolutionSuccess_0300", nullptr,
+         TestUpdateWithConflictResolutionSuccess_0300, nullptr, nullptr, nullptr, napi_default, nullptr}),
+    descData.push_back(
+        {"TestUpdateWithConflictResolutionSuccess_0400", nullptr,
+         TestUpdateWithConflictResolutionSuccess_0400, nullptr, nullptr, nullptr, napi_default, nullptr}),
+    descData.push_back(
+        {"TestUpdateWithConflictResolutionSuccess_0500", nullptr,
+         TestUpdateWithConflictResolutionSuccess_0500, nullptr, nullptr, nullptr, napi_default, nullptr});
 }
 
 void AddRelationStoreTest(std::vector<napi_property_descriptor> &descData)
@@ -1595,10 +1611,13 @@ napi_value TestSetTokenizerNotSupported(napi_env env, napi_callback_info info)
     OH_Rdb_SetEncrypted(configV2_, false);
     OH_Rdb_SetSecurityLevel(configV2_, OH_Rdb_SecurityLevel::S1);
     OH_Rdb_SetArea(configV2_, RDB_SECURITY_AREA_EL1);
+    configV2_ = nullptr;
     Rdb_Tokenizer token = Rdb_Tokenizer::RDB_ICU_TOKENIZER;
     int ret = OH_Rdb_SetTokenizer(configV2_, token);
-    if (ret == OH_Rdb_ErrCode::RDB_E_NOT_SUPPORTED || ret == OH_Rdb_ErrCode::RDB_OK) {
-        napi_create_int32(env, ret, &result);
+    if (ret == OH_Rdb_ErrCode::RDB_OK) {
+        napi_create_int32(env, ret == OH_Rdb_ErrCode::RDB_OK, &result);
+    } else if (ret == OH_Rdb_ErrCode::RDB_E_NOT_SUPPORTED) {
+        napi_create_int32(env, ret == OH_Rdb_ErrCode::RDB_E_NOT_SUPPORTED, &result);
     } else {
         napi_create_int32(env, -1, &result);
     }
@@ -1638,9 +1657,12 @@ napi_value TestRollBackByTrxIdSuccess(napi_env env, napi_callback_info info)
     OH_Rdb_Insert(testStore, "test1", insertBucket);
     int64_t trxId = 0;
     OH_Rdb_BeginTransWithTrxId(testStore, &trxId);
+    testStore = nullptr;
     int ret = OH_Rdb_RollBackByTrxId(testStore, trxId);
-    if (ret == OH_Rdb_ErrCode::RDB_E_NOT_SUPPORTED || ret == OH_Rdb_ErrCode::RDB_OK) {
-        napi_create_int32(env, ret, &result);
+    if (ret == OH_Rdb_ErrCode::RDB_OK) {
+        napi_create_int32(env, ret == OH_Rdb_ErrCode::RDB_OK, &result);
+    } else if (ret == OH_Rdb_ErrCode::RDB_E_NOT_SUPPORTED) {
+        napi_create_int32(env, ret == OH_Rdb_ErrCode::RDB_E_NOT_SUPPORTED, &result);
     } else {
         napi_create_int32(env, -1, &result);
     }
@@ -1682,9 +1704,12 @@ napi_value TestCommitByTrxIdSuccess(napi_env env, napi_callback_info info)
     OH_Rdb_Insert(testStore, "test", insertBucket);
     int64_t trxId = 0;
     OH_Rdb_BeginTransWithTrxId(testStore, &trxId);
+    testStore = nullptr;
     int ret = OH_Rdb_CommitByTrxId(testStore, trxId);
-    if (ret == OH_Rdb_ErrCode::RDB_E_NOT_SUPPORTED || ret == OH_Rdb_ErrCode::RDB_OK) {
-        napi_create_int32(env, ret, &result);
+    if (ret == OH_Rdb_ErrCode::RDB_OK) {
+        napi_create_int32(env, ret == OH_Rdb_ErrCode::RDB_OK, &result);
+    } else if (ret == OH_Rdb_ErrCode::RDB_E_NOT_SUPPORTED) {
+        napi_create_int32(env, ret == OH_Rdb_ErrCode::RDB_E_NOT_SUPPORTED, &result);
     } else {
         napi_create_int32(env, -1, &result);
     }
@@ -1716,5 +1741,126 @@ napi_value TestSubscribeSuccess(napi_env env, napi_callback_info info)
     napi_create_int32(env, ret == RDB_OK ? 0 : -1, &result);
     OH_Rdb_CloseStore(testRdbStore);
     OH_Rdb_DestroyConfig(configV2);
+    return result;
+}
+
+napi_value TestUpdateWithConflictResolutionSuccess_0100(napi_env env, napi_callback_info info)
+{
+    InitRdbConfig();
+    OH_Rdb_Store *testRdbStore = nullptr;
+    int errCode = 0;
+    testRdbStore = OH_Rdb_GetOrOpen(&RelationalStoreTest::RDB_CONFIG, &errCode);
+    const char *createTableSql = "CREATE TABLE IF NOT EXISTS test ("
+                                 "id INT64 PRIMARY KEY, "
+                                 "name TEXT, "
+                                 "score INT64)";
+
+    OH_Rdb_Execute(testRdbStore, createTableSql);
+    OH_VBucket *insertBucket = nullptr;
+    OH_VBucket *updateBucket = nullptr;
+    int64_t *changes = nullptr;
+    OH_Predicates *predicates = nullptr;
+    Rdb_ConflictResolution resolution = Rdb_ConflictResolution::RDB_CONFLICT_NONE ;
+    int ret = OH_Rdb_UpdateWithConflictResolution(testRdbStore, updateBucket, predicates, resolution, changes);
+    NAPI_ASSERT(env, ret == OH_Rdb_ErrCode::RDB_E_INVALID_ARGS, "OH_Rdb_UpdateWithConflictResolution is fail");
+    napi_value result;
+    int returnCode = 0;
+    napi_create_int32(env, returnCode, &result);
+    return result;
+}
+
+napi_value TestUpdateWithConflictResolutionSuccess_0200(napi_env env, napi_callback_info info)
+{
+    InitRdbConfig();
+    OH_Rdb_Store *testRdbStore = nullptr;
+    int errCode = 0;
+    testRdbStore = OH_Rdb_GetOrOpen(&RelationalStoreTest::RDB_CONFIG, &errCode);
+    const char *createTableSql = "CREATE TABLE IF NOT EXISTS test ("
+                                 "id INT64 PRIMARY KEY, "
+                                 "name TEXT, "
+                                 "score INT64)";
+
+    OH_Rdb_Execute(testRdbStore, createTableSql);
+    OH_VBucket *updateBucket = nullptr;
+    int64_t *changes = nullptr;
+    OH_Predicates *predicates = nullptr;
+    Rdb_ConflictResolution resolution = Rdb_ConflictResolution::RDB_CONFLICT_ABORT ;
+    int ret = OH_Rdb_UpdateWithConflictResolution(testRdbStore, updateBucket, predicates, resolution, changes);
+    NAPI_ASSERT(env, ret == OH_Rdb_ErrCode::RDB_E_INVALID_ARGS, "OH_Rdb_UpdateWithConflictResolution is fail");
+    napi_value result;
+    int returnCode = 0;
+    napi_create_int32(env, returnCode, &result);
+    return result;
+}
+
+napi_value TestUpdateWithConflictResolutionSuccess_0300(napi_env env, napi_callback_info info)
+{
+    InitRdbConfig();
+    OH_Rdb_Store *testRdbStore = nullptr;
+    int errCode = 0;
+    testRdbStore = OH_Rdb_GetOrOpen(&RelationalStoreTest::RDB_CONFIG, &errCode);
+    const char *createTableSql = "CREATE TABLE IF NOT EXISTS test ("
+                                 "id INT64 PRIMARY KEY, "
+                                 "name TEXT, "
+                                 "score INT64)";
+
+    OH_Rdb_Execute(testRdbStore, createTableSql);
+    OH_VBucket *updateBucket = nullptr;
+    int64_t *changes = nullptr;
+    OH_Predicates *predicates = nullptr;
+    Rdb_ConflictResolution resolution = Rdb_ConflictResolution::RDB_CONFLICT_FAIL ;
+    int ret = OH_Rdb_UpdateWithConflictResolution(testRdbStore, updateBucket, predicates, resolution, changes);
+    NAPI_ASSERT(env, ret == OH_Rdb_ErrCode::RDB_E_INVALID_ARGS, "OH_Rdb_UpdateWithConflictResolution is fail");
+    napi_value result;
+    int returnCode = 0;
+    napi_create_int32(env, returnCode, &result);
+    return result;
+}
+
+napi_value TestUpdateWithConflictResolutionSuccess_0400(napi_env env, napi_callback_info info)
+{
+    InitRdbConfig();
+    OH_Rdb_Store *testRdbStore = nullptr;
+    int errCode = 0;
+    testRdbStore = OH_Rdb_GetOrOpen(&RelationalStoreTest::RDB_CONFIG, &errCode);
+    const char *createTableSql = "CREATE TABLE IF NOT EXISTS test ("
+                                 "id INT64 PRIMARY KEY, "
+                                 "name TEXT, "
+                                 "score INT64)";
+
+    OH_Rdb_Execute(testRdbStore, createTableSql);
+    OH_VBucket *updateBucket = nullptr;
+    int64_t *changes = nullptr;
+    OH_Predicates *predicates = nullptr;
+    Rdb_ConflictResolution resolution = Rdb_ConflictResolution::RDB_CONFLICT_IGNORE ;
+    int ret = OH_Rdb_UpdateWithConflictResolution(testRdbStore, updateBucket, predicates, resolution, changes);
+    NAPI_ASSERT(env, ret == OH_Rdb_ErrCode::RDB_E_INVALID_ARGS, "OH_Rdb_UpdateWithConflictResolution is fail");
+    napi_value result;
+    int returnCode = 0;
+    napi_create_int32(env, returnCode, &result);
+    return result;
+}
+
+napi_value TestUpdateWithConflictResolutionSuccess_0500(napi_env env, napi_callback_info info)
+{
+    InitRdbConfig();
+    OH_Rdb_Store *testRdbStore = nullptr;
+    int errCode = 0;
+    testRdbStore = OH_Rdb_GetOrOpen(&RelationalStoreTest::RDB_CONFIG, &errCode);
+    const char *createTableSql = "CREATE TABLE IF NOT EXISTS test ("
+                                 "id INT64 PRIMARY KEY, "
+                                 "name TEXT, "
+                                 "score INT64)";
+
+    OH_Rdb_Execute(testRdbStore, createTableSql);
+    OH_VBucket *updateBucket = nullptr;
+    int64_t *changes = nullptr;
+    OH_Predicates *predicates = nullptr;
+    Rdb_ConflictResolution resolution = Rdb_ConflictResolution::RDB_CONFLICT_REPLACE;
+    int ret = OH_Rdb_UpdateWithConflictResolution(testRdbStore, updateBucket, predicates, resolution, changes);
+    NAPI_ASSERT(env, ret == OH_Rdb_ErrCode::RDB_E_INVALID_ARGS, "OH_Rdb_UpdateWithConflictResolution is fail");
+    napi_value result;
+    int returnCode = 0;
+    napi_create_int32(env, returnCode, &result);
     return result;
 }

@@ -14,7 +14,7 @@
  */
 
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "@ohos/hypium";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "@ohos/hypium-dynamic";
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import abilityAccessCtrl from '@ohos.abilityAccessCtrl';
 import osAccount from '@ohos.account.osAccount';
@@ -32,10 +32,11 @@ let textConfig: intelligence.ModelConfig = {
   cachePath: "test"
 }
 
+let image:string = "image"
 let imageConfig: intelligence.ModelConfig = {
   version: intelligence.ModelVersion.BASIC_MODEL,
   isNpuAvailable: false,
-  cachePath: "image"
+  cachePath: image
 }
 
 
@@ -1968,6 +1969,72 @@ export default function intelligenceTest() {
       } catch (err) {
         console.info(TAG + "get getImageEmbeddingModel fail: " + err.code + ', message: ' + err.message);
         expect(err.code).assertEqual(401);
+      }
+    })
+
+    /**
+     * @tc.name   intelligenceApiTest4600
+     * @tc.number SUB_DistributedDataManager_Intelligence_NetworkPolicy_PARAM_0600
+     * @tc.desc   Test cloudModelInfo modelType is "" and,networkPolicy is Illegal enumeration.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("intelligenceApiTest4600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info(TAG + "intelligenceApiTest4600 start");
+      let cloudModelInfo: intelligence.CloudModelInfo = {
+        modelType: '',
+        modelVersionCode: ''
+      };
+      let textConfig1: intelligence.ModelConfig = {
+        version: 9999999 as intelligence.ModelVersion,
+        isNpuAvailable: false,
+        cachePath: "test",
+        modelInfo:cloudModelInfo,
+        networkPolicy:99999999 as intelligence.NetworkPolicy
+      }
+      try {
+        let data = await intelligence.getTextEmbeddingModel(textConfig1);
+        console.info(TAG + "data is " + data);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(TAG + "errcode is "+ err.code + "err message is " + err.message);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   intelligenceApiTest4700
+     * @tc.number SUB_DistributedDataManager_Intelligence_NetworkPolicy_PARAM_0700
+     * @tc.desc   Test cloudModelInfo modelType is "" and,networkPolicy is Illegal enumeration.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it("intelligenceApiTest4700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info(TAG + "intelligenceApiTest4700 start");
+      let cloudModelInfo: intelligence.CloudModelInfo = {
+        modelType: '',
+        modelVersionCode: ''
+      };
+
+      let imageConfigWithPolicy: intelligence.ModelConfig = {
+        version: 9999999 as intelligence.ModelVersion,
+        isNpuAvailable: false,
+        cachePath: "test",
+        modelInfo: cloudModelInfo,
+        networkPolicy: 9999999999 as intelligence.NetworkPolicy
+      };
+      try {
+        await intelligence.getImageEmbeddingModel(imageConfigWithPolicy);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(TAG + "get getImageEmbeddingModel fail: " + err.code + ', message: ' + err.message);
+        expect(err.code).assertEqual(401);
+        done();
       }
     })
   })

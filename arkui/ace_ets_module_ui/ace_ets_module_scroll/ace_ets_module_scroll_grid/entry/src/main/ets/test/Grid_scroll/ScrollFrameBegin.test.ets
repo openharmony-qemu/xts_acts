@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium-dynamic";
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import { MessageManager, Callback } from '../../MainAbility/common/MessageManager';
@@ -88,14 +88,21 @@ export default function ScrollFrameBegin() {
      */
     it('Grid_ScrollFrameBegin_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('[Grid_ScrollFrameBegin_0200] START');
-      let gridRect = CommonFunc.getComponentRectOnScreen('Grid_ScrollFrameBegin_grid')
       let driver = Driver.create()
-      await driver.swipe(
-        Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
-        Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`),
-        Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
-        Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.1 + gridRect.top}`),
-        1000);
+      let gridRectComponent = await driver.findComponent(ON.id('Grid_ScrollFrameBegin_grid'))
+      let gridRect = await gridRectComponent.getBounds()
+      let displayId = await gridRectComponent.getDisplayId()
+      await driver.swipeBetween(
+        {
+          x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
+          y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`),
+          displayId: displayId
+        },
+        {
+          x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
+          y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.1 + gridRect.top}`),
+          displayId: displayId
+        }, 1000);
       await CommonFunc.sleep(2000);
 
       let strJson1 = getInspectorByKey('Grid_ScrollFrameBegin_text')
@@ -117,15 +124,19 @@ export default function ScrollFrameBegin() {
      */
     it('Grid_ScrollFrameBegin_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('[Grid_ScrollFrameBegin_0300] START');
-      let gridRect = CommonFunc.getComponentRectOnScreen('Grid_ScrollFrameBegin_grid')
       let driver = Driver.create()
+      let gridRectComponent = await driver.findComponent(ON.id('Grid_ScrollFrameBegin_grid'))
+      let gridRect = await gridRectComponent.getBounds()
+      let displayId = await gridRectComponent.getDisplayId()
       await driver.fling({
         x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
-        y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`)
+        y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`),
+        displayId: displayId
       },
         {
           x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
-          y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.3 + gridRect.top}`)
+          y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.3 + gridRect.top}`),
+          displayId: displayId
         }, 5, 1000);
       await CommonFunc.sleep(2000);
 

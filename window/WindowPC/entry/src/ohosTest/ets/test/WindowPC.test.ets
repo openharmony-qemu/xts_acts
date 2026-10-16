@@ -14,7 +14,7 @@
  */
 import hilog from '@ohos.hilog';
 import window from '@ohos.window';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { Driver, ON } from '@kit.TestKit';
@@ -3144,6 +3144,69 @@ export default function windowPCTest() {
         done()
       }
     })
+
+     /**
+     * @tc.name   testOffWindowStatusDidChange_NoCallback
+     * @tc.desc   off('windowStatusDidChange') 不传参，关闭所有 callback；
+     * @tc.number SUB_BASIC_WMS_OFFWINDOWSTATUSDIDCHANGE_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testOffWindowStatusDidChange_NoCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'testOffWindowStatusDidChange_NoCallback';
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let count1 = 0;
+      let count2 = 0;
+      let options: window.SubWindowOptions = {
+        title: 'testOffWindowStatusDidChange_NoCallback',
+        decorEnabled: true,
+        maximizeSupported: true
+      };
+      try {
+        let windowClass = await windowStage.createSubWindowWithOptions('testOffWindowStatusDidChange_NoCallback',options);
+        await windowClass.setUIContent('testability/pages/Index1')
+        await windowClass.showWindow()
+        const callback1 = (data: window.WindowStatusType) => {
+          console.log(`${msgStr} callback1 data: ${JSON.stringify(data)}`);
+          count1++;
+        };
+        const callback2 = (data: window.WindowStatusType) => {
+          console.log(`${msgStr} callback2 data: ${JSON.stringify(data)}`);
+          count2++;
+        };
+        windowClass.on('windowStatusDidChange', callback1);
+        windowClass.on('windowStatusDidChange', callback2);
+        windowClass.off('windowStatusDidChange');
+        console.log(msgStr + 'Succeeded off windowStatusDidChange without callback ');
+        let windowStatusTypeBefore = windowClass.getWindowStatus()
+        await sleep(100)
+        if((windowStatusTypeBefore !== window.WindowStatusType.FULL_SCREEN && windowStatusTypeBefore !== window.WindowStatusType.MAXIMIZE)&&isFreeWindowMode){
+          await windowClass.maximize()
+          console.log(msgStr + 'Succeeded maximize');
+        }else{
+          await windowClass.minimize()
+          console.log(msgStr + 'Succeeded minimize ');
+        }
+        await sleep(100)
+        let windowStatusTypeAfter = windowClass.getWindowStatus()
+        console.log(msgStr +`count1:${count1},count2:${count2},windowStatusTypeBefore:${JSON.stringify(windowStatusTypeBefore)},windowStatusTypeAfter:${JSON.stringify(windowStatusTypeAfter)}`);
+        await windowClass.destroyWindow();
+        expect(count1).assertEqual(0);
+        expect(count2).assertEqual(0);
+        expect(windowStatusTypeBefore === windowStatusTypeAfter).assertFalse()
+        done();
+      } catch (err) {
+        console.error(`${caseName} failed, error: ${JSON.stringify(err)}`);
+        if (!isSyscapSessionManagerSupported) {
+          expect(err.code).assertEqual(801)
+        }else{
+          expect(true).assertFalse();
+        }
+        done();
+      }
+    });
 
 
     /**

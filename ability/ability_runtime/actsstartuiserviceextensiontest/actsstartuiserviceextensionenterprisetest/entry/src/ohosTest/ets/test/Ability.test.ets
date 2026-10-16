@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeAll, afterEach, Level } from '@ohos/hypium';
+import { describe, it, expect, beforeAll, afterEach, Level } from '@ohos/hypium-dynamic';
 import { BusinessError } from '@ohos.base';
 import { appManager } from '@kit.AbilityKit';
 import { Driver, ON } from '@kit.TestKit';
@@ -19,7 +19,7 @@ export default function abilityTest() {
     beforeAll((done:Function) => {
       testAbilityContext = AppStorage.get<common.UIAbilityContext>('TestAbilityContext') as common.UIAbilityContext;
       mpEnable = systemParameterEnhance.getSync('persist.sys.abilityms.multi_process_model') == 'true';
-      console.info('====> [test ] isSupportCapability: ' + isSupportCapability +  " mpEnable:" + mpEnable);
+      console.info('====> [test ] isSupportCapability: ' + isSupportCapability +  ' mpEnable:' + mpEnable);
       if(mpEnable != true && mpEnable != false){
         expect().assertFail();
       }
@@ -40,9 +40,9 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_0100', Level.LEVEL0, async (done: Function) => {
-      let tag = "SUB_Ability_AbilityRuntime_AppManager_0100";
+      let tag = 'SUB_Ability_AbilityRuntime_AppManager_0100';
       console.info('====> [SUB_Ability_AbilityRuntime_AppManager_0100] start');
-      appManager.isAppRunning("com.acts.startuiserviceextensiontestenterprise").then((data: boolean) => {
+      appManager.isAppRunning('com.acts.startuiserviceextensiontestenterprise').then((data: boolean) => {
         hilog.info(0x0000, 'testTag', `data: ${JSON.stringify(data)}`);
         try{expect(data).assertTrue();}catch{};
         done();
@@ -62,9 +62,9 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_0200', Level.LEVEL0, async (done: Function) => {
-      let tag = "SUB_Ability_AbilityRuntime_AppManager_0200";
+      let tag = 'SUB_Ability_AbilityRuntime_AppManager_0200';
       console.info('====> [SUB_Ability_AbilityRuntime_AppManager_0200] start');
-      appManager.isAppRunning("com.acts.startuiserviceextensiontestenterprise", 1001).then((data: boolean) => {
+      appManager.isAppRunning('com.acts.startuiserviceextensiontestenterprise', 1001).then((data: boolean) => {
         hilog.info(0x0000, 'testTag', `data: ${JSON.stringify(data)}`);
         try{expect().assertFail();}catch{};
         done();
@@ -84,7 +84,7 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_0300', Level.LEVEL0, async (done: Function) => {
-          let tag = "SUB_Ability_AbilityRuntime_AppManager_0300";
+          let tag = 'SUB_Ability_AbilityRuntime_AppManager_0300';
           console.info('====> [SUB_Ability_AbilityRuntime_AppManager_0300] start');
           try{
             await appManager.isAppRunning(undefined, 0).then((data: boolean) => {
@@ -113,15 +113,15 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_0400', Level.LEVEL0, async (done: Function) => {
-      let tag = "SUB_Ability_AbilityRuntime_AppManager_0400";
+      let tag = 'SUB_Ability_AbilityRuntime_AppManager_0400';
       console.info('====> [SUB_Ability_AbilityRuntime_AppManager_0400] start');
       let pid = 0;
       let applicationStateObserver: appManager.ApplicationStateObserver = {
-        onForegroundApplicationChanged(appStateData: appManager.AppStateData) {
+        onForegroundApplicationChanged(appStateData) {
           console.log(tag + `onForegroundApplicationChanged appStateData: ${JSON.stringify(appStateData)}`);
-          if(appStateData?.bundleName == "com.acts.startuiserviceextensionrely"){
+          if(appStateData.bundleName == 'com.acts.startuiserviceextensionrely'){
             try{
-              expect(appStateData?.bundleName).assertEqual("com.acts.startuiserviceextensionrely");
+              expect(appStateData?.bundleName).assertEqual('com.acts.startuiserviceextensionrely');
               expect(appStateData?.uid).assertLarger(0);
               expect(appStateData?.state).assertLarger(0);
               expect(appStateData?.isSplitScreenMode).assertFalse();
@@ -129,40 +129,40 @@ export default function abilityTest() {
             }catch(e){}
           }
         },
-        onAbilityStateChanged(abilityStateData: appManager.AbilityStateData) {
+        onAbilityStateChanged(abilityStateData) {
           console.log(tag + `onAbilityStateChanged onAbilityStateChanged: ${JSON.stringify(abilityStateData)}`);
-          if(abilityStateData?.bundleName == "com.acts.startuiserviceextensionrely"){
+          if(abilityStateData.bundleName == 'com.acts.startuiserviceextensionrely'){
             try{
-              expect(abilityStateData?.bundleName).assertEqual("com.acts.startuiserviceextensionrely");
+              expect(abilityStateData?.bundleName).assertEqual('com.acts.startuiserviceextensionrely');
               expect(abilityStateData?.uid).assertLarger(0);
-              expect(typeof(abilityStateData?.state)).assertEqual("number");
-              expect(abilityStateData?.abilityName).assertEqual("EntryAbility");
+              expect(typeof(abilityStateData?.state)).assertEqual('number');
+              expect(abilityStateData?.abilityName).assertEqual('EntryAbility');
               expect(abilityStateData?.pid).assertEqual(pid);
-              expect(abilityStateData?.moduleName).assertEqual("entry");
+              expect(abilityStateData?.moduleName).assertEqual('entry');
               expect(abilityStateData?.abilityType).assertEqual(1);
               expect(abilityStateData?.isAtomicService).assertFalse();
               expect(abilityStateData?.appCloneIndex).assertEqual(undefined);
-              expect(abilityStateData?.callerBundleName).assertEqual("com.acts.startuiserviceextensiontestenterprise");
+              expect(abilityStateData?.callerBundleName).assertEqual('com.acts.startuiserviceextensiontestenterprise');
             }catch(e){}
           }
         },
-        onProcessCreated(processData: appManager.ProcessData) {
+        onProcessCreated(processData) {
           console.log(`onProcessCreated onProcessCreated: ${JSON.stringify(processData)}`);
-          if(processData?.bundleName == "com.acts.startuiserviceextensionrely"){
+          if(processData.bundleName == 'com.acts.startuiserviceextensionrely'){
             pid = processData.pid
             try{
             expect(processData?.pid).assertLarger(0);
-            expect(processData?.bundleName).assertEqual("com.acts.startuiserviceextensionrely");
+            expect(processData?.bundleName).assertEqual('com.acts.startuiserviceextensionrely');
             expect(processData?.uid).assertLarger(0);
             expect(processData?.isContinuousTask).assertFalse();
             expect(processData?.isKeepAlive).assertFalse();
-			      expect(typeof(processData?.state)).assertEqual("number");
+			expect(typeof(processData?.state)).assertEqual('number');
           }catch(e){}
           }
         },
         onProcessDied(processData) {
           console.log(tag + `onProcessDied onProcessDied: ${JSON.stringify(processData)}`);
-          if(processData?.bundleName == "com.acts.startuiserviceextensionrely"){
+          if(processData.bundleName == 'com.acts.startuiserviceextensionrely'){
             done();
           }
         },
@@ -178,8 +178,8 @@ export default function abilityTest() {
       };
       appManager.on('applicationState', applicationStateObserver);
       testAbilityContext.startAbility({
-        bundleName: "com.acts.startuiserviceextensionrely",
-        abilityName: "EntryAbility"
+        bundleName: 'com.acts.startuiserviceextensionrely',
+        abilityName: 'EntryAbility'
       },(err, data)=>{
         console.info('====> [SUB_Ability_AbilityRuntime_AppManager_0400] startAbility result ' + err?.code);
       })
@@ -187,7 +187,7 @@ export default function abilityTest() {
       try {
         let allowed = await driver.waitForComponent(ON.id('advanced_dialog_button_1'), 2000);
         if (allowed) {
-          console.log("find button");
+          console.log('find button');
           let point = await allowed.getBoundsCenter();
           console.log('point.x : ' + point.x + 'point.y : ' + point.y);
           await driver.click(point.x, point.y);
@@ -208,10 +208,10 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_0500', Level.LEVEL0, async (done: Function) => {
-      let tag = "SUB_Ability_AbilityRuntime_AppManager_0500";
+      let tag = 'SUB_Ability_AbilityRuntime_AppManager_0500';
       console.info('====> [SUB_Ability_AbilityRuntime_AppManager_0500] start');
       try{
-        appManager.isAppRunning("com.acts.startuiserviceextensionrely").then((data: boolean) => {
+        appManager.isAppRunning('com.acts.startuiserviceextensionrely').then((data: boolean) => {
           hilog.info(0x0000, 'testTag', tag + `data: ${JSON.stringify(data)}`);
           try {
             expect(data).assertFalse();
@@ -242,9 +242,9 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_0600', Level.LEVEL0, async (done: Function) => {
-      let tag = "SUB_Ability_AbilityRuntime_AppManager_0600";
+      let tag = 'SUB_Ability_AbilityRuntime_AppManager_0600';
       console.info('====> [SUB_Ability_AbilityRuntime_AppManager_0600] start');
-      await appManager.isAppRunning("com.acts.startuiserviceextensionrely", 0).then((data: boolean) => {
+      await appManager.isAppRunning('com.acts.startuiserviceextensionrely', 0).then((data: boolean) => {
         hilog.info(0x0000, 'testTag', tag + `data: ${JSON.stringify(data)}`);
         try {
           expect(data).assertFalse();
@@ -270,9 +270,9 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_0700', Level.LEVEL0, async (done: Function) => {
-      let tag = "SUB_Ability_AbilityRuntime_AppManager_0700";
+      let tag = 'SUB_Ability_AbilityRuntime_AppManager_0700';
       console.info('====> [SUB_Ability_AbilityRuntime_AppManager_0700] start');
-      appManager.isAppRunning("").then((data: boolean) => {
+      appManager.isAppRunning('').then((data: boolean) => {
         hilog.info(0x0000, 'testTag', tag + `data: ${JSON.stringify(data)}`);
         try {
           expect().assertFail();
@@ -298,10 +298,10 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_0800', Level.LEVEL0, async (done: Function) => {
-      let tag = "SUB_Ability_AbilityRuntime_AppManager_0800";
+      let tag = 'SUB_Ability_AbilityRuntime_AppManager_0800';
       console.info('====> [SUB_Ability_AbilityRuntime_AppManager_0800] start');
       try{
-        appManager.isAppRunning("", null).then((data: boolean) => {
+        appManager.isAppRunning('', null).then((data: boolean) => {
           hilog.info(0x0000, 'testTag',
             `empty bundle name with appCloneIndex null, data: ${JSON.stringify(data)}`);
           try {
@@ -333,7 +333,7 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_0900', Level.LEVEL0, async (done: Function) => {
-      let tag = "SUB_Ability_AbilityRuntime_AppManager_0900";
+      let tag = 'SUB_Ability_AbilityRuntime_AppManager_0900';
       console.info('====> [SUB_Ability_AbilityRuntime_AppManager_0900] start');
       try{
         appManager.isAppRunning(null, 0).then((data: boolean) => {
@@ -370,7 +370,7 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_1000', Level.LEVEL0, async (done: Function) => {
-      let tag = "SUB_Ability_AbilityRuntime_AppManager_1000";
+      let tag = 'SUB_Ability_AbilityRuntime_AppManager_1000';
       console.info('====> [SUB_Ability_Ability_AbilityRuntime_AppManager_isAppRunning_0802] start');
       try {
         const result = await appManager.isAppRunning(undefined, 1);
@@ -394,10 +394,10 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_1100', Level.LEVEL0, async (done: Function) => {
-      let tag = "SUB_Ability_AbilityRuntime_AppManager_1100";
+      let tag = 'SUB_Ability_AbilityRuntime_AppManager_1100';
       console.info('====> [SUB_Ability_AbilityRuntime_AppManager_1100] start');
       try {
-        const result = await appManager.isAppRunning("com.acts.startuiserviceextensiontestenterprise", 1);
+        const result = await appManager.isAppRunning('com.acts.startuiserviceextensiontestenterprise', 1);
         hilog.info(0x0000, 'testTag', tag + `isAppRunning valid bundleName normal appCloneIndex result: ${result}`);
         expect().assertFail();
         done();
@@ -418,7 +418,7 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_1200', Level.LEVEL0, async (done: Function) => {
-      let tag = "SUB_Ability_AbilityRuntime_AppManager_1200";
+      let tag = 'SUB_Ability_AbilityRuntime_AppManager_1200';
       console.info('====> [SUB_Ability_AbilityRuntime_AppManager_1200] start');
       try {
         const result = await appManager.isAppRunning(null);
@@ -441,7 +441,7 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_1300', Level.LEVEL0, async (done: Function) => {
-      let tag = "SUB_Ability_AbilityRuntime_AppManager_1300";
+      let tag = 'SUB_Ability_AbilityRuntime_AppManager_1300';
       console.info('====> [SUB_Ability_AbilityRuntime_AppManager_1300] start');
       try {
         const result = await appManager.isAppRunning(undefined);
@@ -463,10 +463,10 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_1400', Level.LEVEL0, async (done: Function) => {
-      let tag = "SUB_Ability_AbilityRuntime_AppManager_1400";
+      let tag = 'SUB_Ability_AbilityRuntime_AppManager_1400';
       console.info('====> [SUB_Ability_AbilityRuntime_AppManager_1400] start');
       try {
-        const result = await appManager.isAppRunning("com.acts.startuiserviceextensiontestenterprise", null);
+        const result = await appManager.isAppRunning('com.acts.startuiserviceextensiontestenterprise', null);
         hilog.info(0x0000, 'testTag', tag + `isAppRunning valid bundleName null appCloneIndex result: ${result}`);
         expect().assertFail();
       } catch (err) {
@@ -486,10 +486,10 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_1500', Level.LEVEL0, async (done: Function) => {
-      let tag = "SUB_Ability_AbilityRuntime_AppManager_1500";
+      let tag = 'SUB_Ability_AbilityRuntime_AppManager_1500';
       console.info('====> [SUB_Ability_AbilityRuntime_AppManager_1500] start');
       try {
-        const result = await appManager.isAppRunning("com.acts.startuiserviceextensiontestenterprise", undefined);
+        const result = await appManager.isAppRunning('com.acts.startuiserviceextensiontestenterprise', undefined);
         hilog.info(0x0000, 'testTag', tag + `isAppRunning valid bundleName undefined appCloneIndex result: ${result}`);
         expect().assertFail();
       } catch (err) {
@@ -509,10 +509,10 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_1600', Level.LEVEL0, async (done: Function) => {
-      let tag = "SUB_Ability_AbilityRuntime_AppManager_1600";
+      let tag = 'SUB_Ability_AbilityRuntime_AppManager_1600';
       console.info('====> [SUB_Ability_AbilityRuntime_AppManager_1600] start');
       try {
-        const result = await appManager.isAppRunning("com.acts.startuiserviceextensiontestenterprise", -1);
+        const result = await appManager.isAppRunning('com.acts.startuiserviceextensiontestenterprise', -1);
         hilog.info(0x0000, 'testTag', tag + `isAppRunning valid bundleName negative appCloneIndex result: ${result}`);
         expect().assertFail();
       } catch (err) {
@@ -532,7 +532,7 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_1700', Level.LEVEL0, async (done: Function) => {
-      let tag = "SUB_Ability_AbilityRuntime_AppManager_1700";
+      let tag = 'SUB_Ability_AbilityRuntime_AppManager_1700';
       console.info('====> [SUB_Ability_AbilityRuntime_AppManager_1700] start');
       let observerId = 999999;
       try {
@@ -561,10 +561,10 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_1900', Level.LEVEL0, async (done: Function) => {
-      let tag = "SUB_Ability_AbilityRuntime_AppManager_1900";
+      let tag = 'SUB_Ability_AbilityRuntime_AppManager_1900';
       console.info('====> [SUB_Ability_AbilityRuntime_AppManager_1900] start');
       try {
-        await appManager.killProcessesByBundleName("com.non.exist.app", false, 0).then(()=>{
+        await appManager.killProcessesByBundleName('com.non.exist.app', false, 0).then(()=>{
           hilog.info(0x0000, 'testTag', tag + `killProcessesByBundleName succeed`);
           expect().assertFail();
           done();
@@ -589,10 +589,10 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_2000', Level.LEVEL0, async (done: Function) => {
-      let tag = "SUB_Ability_AbilityRuntime_AppManager_2000";
+      let tag = 'SUB_Ability_AbilityRuntime_AppManager_2000';
       console.info('====> [SUB_Ability_AbilityRuntime_AppManager_2000] start');
       try {
-        await appManager.killProcessesByBundleName("com.non.exist.app", true, 1).then(()=>{
+        await appManager.killProcessesByBundleName('com.non.exist.app', true, 1).then(()=>{
           hilog.info(0x0000, 'testTag', tag + `killProcessesByBundleName succeed`);
           expect().assertFail();
           done();
@@ -617,7 +617,7 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_1800', Level.LEVEL0, async (done: Function) => {
-      let tag = "SUB_Ability_AbilityRuntime_AppManager_1800";
+      let tag = 'SUB_Ability_AbilityRuntime_AppManager_1800';
       console.info('====> [SUB_Ability_AbilityRuntime_AppManager_1800] start');
       let observerId = 999999;
       try {
@@ -647,12 +647,12 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAbilityByCall_0100', Level.LEVEL0, async (done: Function) => {
-      let tag = "SUB_Ability_AbilityRuntime_StartAbilityByCall_0100";
+      let tag = 'SUB_Ability_AbilityRuntime_StartAbilityByCall_0100';
       console.info('====> [SUB_Ability_AbilityRuntime_StartAbilityByCall_0100] start');
       try {
         await testAbilityContext.startAbilityByCall({
-          bundleName: "com.acts.startuiserviceextensionrely",
-          abilityName: "EntryAbility"
+          bundleName: 'com.acts.startuiserviceextensionrely',
+          abilityName: 'EntryAbility'
         }).then(()=>{
           hilog.info(0x0000, 'testTag', tag + `startAbilityByCall succeed`);
           expect().assertFail();

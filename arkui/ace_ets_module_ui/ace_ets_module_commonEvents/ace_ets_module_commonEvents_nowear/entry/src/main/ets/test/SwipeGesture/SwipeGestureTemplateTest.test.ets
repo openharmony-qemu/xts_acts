@@ -12,11 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0;
 export default function SwipeGestureTemplateTest() {
   describe('SwipeGestureTemplateTest', () => {
     beforeEach(async (done: Function) => {
@@ -67,10 +68,10 @@ export default function SwipeGestureTemplateTest() {
       let driver = Driver.create();
       let speed = Math.floor(areaWidth1 * 0.6 / 0.016 / 1000) * 1000
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.2),Math.round(areaObj1.top + areaHeight1/2),Math.round(areaObj1.left + areaWidth1 * 0.8),Math.round(areaObj1.top + areaHeight1/2),speed)
+      await driver.swipeBetween({x:Math.round(areaObj1.left + areaWidth1 * 0.2),y:Math.round(areaObj1.top + areaHeight1/2),displayId:displayID},{x:Math.round(areaObj1.left + areaWidth1 * 0.8),y:Math.round(areaObj1.top + areaHeight1/2),displayId:displayID},speed)
       await CommonFunc.sleep(timeSpace);
       let timeBefore:number = Date.now();
-      await driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.2),Math.round(areaObj1.top + areaHeight1/2),Math.round(areaObj1.left + areaWidth1 * 0.8),Math.round(areaObj1.top + areaHeight1/2),speed)
+      await driver.swipeBetween({x:Math.round(areaObj1.left + areaWidth1 * 0.2),y:Math.round(areaObj1.top + areaHeight1/2),displayId:displayID},{x:Math.round(areaObj1.left + areaWidth1 * 0.8),y:Math.round(areaObj1.top + areaHeight1/2),displayId:displayID},speed)
       let timeAfter:number = Date.now();
       await CommonFunc.sleep(3000);
       let text1 = getInspectorByKey('SwipeGestureTemplate' + '_Text01');

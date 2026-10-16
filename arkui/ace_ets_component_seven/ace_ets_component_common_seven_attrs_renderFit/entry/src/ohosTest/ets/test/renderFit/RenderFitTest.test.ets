@@ -14,7 +14,7 @@
  */
 import { AttrsManager } from '../../MainAbility/common/AttrsManager';
 import CommonTest from '../common/CommonTest';
-import { describe, expect } from '@ohos/hypium'
+import { describe, expect } from '@ohos/hypium-dynamic'
 import Utils from '../../MainAbility/common/Utils';
 
 export default function RenderFitTest() {

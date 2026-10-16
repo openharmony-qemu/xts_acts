@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, beforeEach, afterEach, Level, Size, TestType } from '@ohos/hypium';
+import { describe, expect, it, beforeEach, afterEach, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import http from '@ohos.net.http';
 import { BusinessError } from '@ohos.base';
 
@@ -68,8 +68,16 @@ export default function httpRequestJsunit() {
         };
         let httpRequest = http.createHttp();
         httpRequest.request("https://www.baidu.com/", httpRequestOptions, (err, data) => {
+          if (err) {
+            console.log(caseName + " request error: " + JSON.stringify(err));
+            expectFalse();
+            httpRequest.destroy();
+            console.info(`${caseName}---End`);
+            done();
+            return;
+          }
           console.log(caseName + JSON.stringify(err) + " data: " + JSON.stringify(data));
-          expectTrue(data.responseCode == 200);
+          expectTrue(data.responseCode === 200);
           httpRequest.destroy();
           console.info(`${caseName}---End`);
           done();
@@ -95,8 +103,16 @@ export default function httpRequestJsunit() {
       try {
         let httpRequest = http.createHttp();
         httpRequest.request("https://www.baidu.com/", (err, data) => {
+          if (err) {
+            console.log(caseName + " request error: " + JSON.stringify(err));
+            expectFalse();
+            httpRequest.destroy();
+            console.info(`${caseName}---End`);
+            done();
+            return;
+          }
           console.log(caseName + JSON.stringify(err) + " data: " + JSON.stringify(data));
-          expectTrue(data.responseCode == 200);
+          expectTrue(data.responseCode === 200);
           httpRequest.destroy();
           console.info(`${caseName}---End`);
           done();
@@ -129,7 +145,7 @@ export default function httpRequestJsunit() {
         let httpRequest = http.createHttp();
         httpRequest.request("https://www.baidu.com/", httpRequestOptions).then(data => {
           console.log(caseName + JSON.stringify(data));
-          expectTrue(data.responseCode == 200);
+          expectTrue(data.responseCode === 200);
           httpRequest.destroy();
           console.info(`${caseName}---End`);
           done();
@@ -163,7 +179,7 @@ export default function httpRequestJsunit() {
              dnsServers:['223.5.5.5'],
         });
         console.info(`${caseName} createHttp success `+ JSON.stringify(resp));
-        expectTrue(resp.responseCode == 200);
+        expectTrue(resp.responseCode === 200);
         console.info(`${caseName}---End`);
         httpRequest.destroy();
         done();
@@ -225,6 +241,7 @@ export default function httpRequestJsunit() {
     it("testNetworkMgrHttpHttpRequestOnHeaderReceive0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName:string = "testNetworkMgrHttpHttpRequestOnHeaderReceive0100";
       console.info(`${caseName}---Start`);
+      let isDone = false;
       try {
         let httpRequest = http.createHttp();
         httpRequest.on('headersReceive', (data) => {
@@ -232,10 +249,22 @@ export default function httpRequestJsunit() {
           expectTrue(data !== undefined);
           console.info(`${caseName}---End`);
           httpRequest.destroy();
-          done();
+          if (!isDone) {
+            isDone = true;
+            done();
+          }
         });
         httpRequest.request("https://www.baidu.com/", (err, data) => {
-          console.log(caseName + " data: " + JSON.stringify(data.responseCode) + " err: " + JSON.stringify(err));
+          if (err && !isDone) {
+            isDone = true;
+            console.log(caseName + " request error: " + JSON.stringify(err));
+            expectFalse();
+            httpRequest.destroy();
+            console.info(`${caseName}---End`);
+            done();
+            return;
+          }
+          console.log(caseName + " data: " + JSON.stringify(data?.responseCode) + " err: " + JSON.stringify(err));
         });
       } catch (error) {
         console.log("testNetworkMgrHttpHttpRequestOnHeaderReceive0100 : error = " + error);
@@ -267,7 +296,18 @@ export default function httpRequestJsunit() {
         httpRequest.on('headersReceive', callbackdata1);
         httpRequest.off('headersReceive', callbackdata1);
         httpRequest.request("https://www.baidu.com/", (err, data) => {
-          console.log(caseName + " data: " + JSON.stringify(data.responseCode) + " err: " + JSON.stringify(err));
+          if (err) {
+            console.log(caseName + " request error: " + JSON.stringify(err));
+            expectFalse();
+            httpRequest.destroy();
+            console.info(`${caseName}---End`);
+            done();
+            return;
+          }
+          console.log(caseName + " data: " + JSON.stringify(data?.responseCode) + " err: " + JSON.stringify(err));
+          expectTrue(data?.responseCode === 200);
+          httpRequest.destroy();
+          console.info(`${caseName}---End`);
           done();
         });
       } catch (error) {
@@ -298,7 +338,17 @@ export default function httpRequestJsunit() {
           done();
         });
         httpRequest.request("https://www.baidu.com/", (err, data) => {
-          console.log(caseName + " data: " + JSON.stringify(data.responseCode) + " err: " + JSON.stringify(err));
+          if (err) {
+            console.log(caseName + " request error: " + JSON.stringify(err));
+            expectFalse();
+            httpRequest.destroy();
+            console.info(`${caseName}---End`);
+            done();
+            return;
+          }
+          console.log(caseName + " data: " + JSON.stringify(data?.responseCode) + " err: " + JSON.stringify(err));
+          expectTrue(data?.responseCode === 200);
+          httpRequest.destroy();
           console.info(`${caseName}---End`);
           done();
         });
@@ -345,17 +395,28 @@ export default function httpRequestJsunit() {
     it("testNetworkMgrHttpHttpRequestOnceHeadersReceive0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = "testNetworkMgrHttpHttpRequestOnceHeadersReceive0100";
       console.info(`${caseName}---Start`);
+      let isDone = false;
       try {
         let httpRequest = http.createHttp();
         httpRequest.once('headersReceive', async (data) => {
+          isDone = true;
           console.log(caseName + " data: " + JSON.stringify(data));
-          expectTrue(data != null);
+          expectTrue(data !== undefined);
           await sleep(250);
           httpRequest.destroy();
           console.info(`${caseName}---End`);
           done();
         });
         httpRequest.request("https://www.baidu.com/", (err, data) => {
+          if (err && !isDone) {
+            isDone = true;
+            console.log(caseName + " request error: " + JSON.stringify(err));
+            expectFalse();
+            httpRequest.destroy();
+            console.info(`${caseName}---End`);
+            done();
+            return;
+          }
           console.log(caseName + " data: " + JSON.stringify(data?.responseCode) + " err: " + JSON.stringify(err));
         });
       } catch (error) {

@@ -14,16 +14,16 @@
  */
 
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { Hypium } from '@ohos/hypium';
+import { Hypium } from '@ohos/hypium-dynamic';
 import testsuite from '../../../test/List.test';
 
 let testTime = 0;
 
 @Entry
 @Component
-struct Index {
+struct MainAbilityIndex {
   aboutToAppear() {
-    console.info("start run testcase!!!!");
+    console.info('start run testcase!!!!');
     if (testTime++ == 0) {
       let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
       let abilityDelegatorArguments: AbilityDelegatorRegistry.AbilityDelegatorArgs = AbilityDelegatorRegistry.getArguments();

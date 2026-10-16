@@ -12,11 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function dispatchKeyEventNullAndUndefinedTest() {
   describe('dispatchKeyEventNullAndUndefinedTest', () => {
     beforeEach(async (done: Function) => {
@@ -60,11 +61,11 @@ export default function dispatchKeyEventNullAndUndefinedTest() {
       await CommonFunc.sleep(1000);
       
       // 使用 triggerKey 模拟键盘事件
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
       
       console.info('[SUB_ARKUI_UICONTEXT_DISPATCHKEYEVENT_PARAM_001] dispatchNullResult: ' + AppStorage.get('dispatchNullResult'));
@@ -88,13 +89,13 @@ export default function dispatchKeyEventNullAndUndefinedTest() {
       await CommonFunc.sleep(1000);
       
       // 使用 triggerKey 模拟键盘事件
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
       
       console.info('[SUB_ARKUI_UICONTEXT_DISPATCHKEYEVENT_PARAM_002] dispatchUndefinedResult: ' + AppStorage.get('dispatchUndefinedResult'));
@@ -118,15 +119,15 @@ export default function dispatchKeyEventNullAndUndefinedTest() {
       await CommonFunc.sleep(1000);
 
       // 使用 triggerKey 模拟键盘事件
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
       
       console.info('[SUB_ARKUI_UICONTEXT_DISPATCHKEYEVENT_PARAM_003] dispatchNullKeyEventResult: ' + AppStorage.get('dispatchNullKeyEventResult'));
@@ -150,17 +151,17 @@ export default function dispatchKeyEventNullAndUndefinedTest() {
       await CommonFunc.sleep(1000);
 
       // 使用 triggerKey 模拟键盘事件
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
       
       console.info('[SUB_ARKUI_UICONTEXT_DISPATCHKEYEVENT_PARAM_004] dispatchUndefinedKeyEventResult: ' + AppStorage.get('dispatchUndefinedKeyEventResult'));
@@ -184,7 +185,7 @@ export default function dispatchKeyEventNullAndUndefinedTest() {
       await CommonFunc.sleep(1000);
       
       // 使用 triggerKey 模拟键盘事件
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
       
       console.info('[SUB_ARKUI_UICONTEXT_DISPATCHKEYEVENT_PARAM_005] dispatchNodeResult: ' + AppStorage.get('dispatchNodeResult'));

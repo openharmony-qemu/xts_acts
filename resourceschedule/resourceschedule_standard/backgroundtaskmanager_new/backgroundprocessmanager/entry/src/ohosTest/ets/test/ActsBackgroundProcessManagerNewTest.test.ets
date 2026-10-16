@@ -16,7 +16,7 @@
 import {BusinessError } from '@kit.BasicServicesKit'
 import {backgroundProcessManager } from '@kit.BackgroundTasksKit'
 import hilog from '@ohos.hilog'
-import {describe, it, TestType, Size, Level, beforeAll, afterAll, beforeEach, afterEach, expect } from '@ohos/hypium'
+import {describe, it, TestType, Size, Level, beforeAll, afterAll, beforeEach, afterEach, expect } from '@ohos/hypium-dynamic'
 import {process} from '@kit.ArkTS'
 import {backgroundTaskManager} from '@kit.BackgroundTasksKit'
 
@@ -820,6 +820,45 @@ export default function ActsBackgroundProcessManagerNewTest() {
                         done();
                     }}
                 hilog.info(DOMAIN, TAG, '%{public}s', '-------SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_2700 end-------')
+        })
+
+        /**
+         * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_2800
+         * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_2800
+         * @tc.desc   clearBackgroundApps non-system app calls system API returns 202
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_2800", TestType.FUNCTION | Size.MEDIUMTEST |Level.LEVEL3,
+            async (done: Function) => {
+                hilog.info(DOMAIN, TAG, '%{public}s', '-------SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_2800 begin-------');
+
+                try{
+                    backgroundProcessManager.clearBackgroundApps(backgroundProcessManager.ClearType.CLEAR_RECENT_CARDS).then(() => {
+                        hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_2800 clearBackgroundApps unexpected success');
+                        expect(false).assertTrue();
+                        done();
+                    }).catch((error: BusinessError) => {
+                        hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_2800 has failed for' + error.message + 'code:' + error.code);
+                        if (error.code === 202){
+                            expect(error.code === 202).assertTrue();
+                            done();
+                        }else{
+                            expect(false).assertTrue();
+                            done();
+                        }
+                    })
+                }catch(error){
+                    hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_2800 has failed for' + error.message + 'code:' + error.code);
+                    if (error.code === 202){
+                        expect(error.code === 202).assertTrue();
+                        done();
+                    }else{
+                        expect(false).assertTrue();
+                        done();
+                    }}
+                hilog.info(DOMAIN, TAG, '%{public}s', '-------SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_2800 end-------')
         })
     })
 }

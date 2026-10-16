@@ -13,7 +13,7 @@
 * limitations under the License.
 */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , TestType, Size, Level } from '@ohos/hypium-dynamic';
 import Utils from './Utils';
 import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
@@ -39,9 +39,15 @@ export default function webviewNApi() {
         console.info('get webviewBFCacheSuspendPlayer state success ' + JSON.stringify(pages));
         if (!('Index' == pages.name)) {
           console.info('get index state success ' + JSON.stringify(pages.name));
+          await router.pushUrl(options);
         }
       } catch (err) {
         console.error('push index page error:' + err);
+        try {
+          await router.pushUrl(options);
+        } catch (e2) {
+          console.error('retry push index page error:' + e2);
+        }
       }
       done()
     });

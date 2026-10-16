@@ -82,8 +82,8 @@ export default function list_ListInitialIndex1Test() {
       let tenthListItem = CommonFunc.getComponentRect('List_ListInitialIndex1_10');
       let eleventhListItem = CommonFunc.getComponentRect('List_ListInitialIndex1_11');
       let twelfthListItem = CommonFunc.getComponentRect('List_ListInitialIndex1_12');
-      let listContainer = CommonFunc.getComponentRect('List_ListInitialIndex1' + '_Container01');
-      let listContainerStrJson = getInspectorByKey('List_ListInitialIndex1' + '_Container01');
+      let listContainer = CommonFunc.getComponentRect('List_ListInitialIndex1_Container01');
+      let listContainerStrJson = getInspectorByKey('List_ListInitialIndex1_Container01');
       expect(JSON.parse(listContainerStrJson).$type).assertEqual('List');
 
       expect(Math.abs(Math.floor(firstListItem.right - firstListItem.left) - vp2px(0)) <= 1).assertTrue();
@@ -133,13 +133,18 @@ export default function list_ListInitialIndex1Test() {
       expect(Math.round(twelfthListItem.bottom - twelfthListItem.top)).assertEqual(vp2px(0));
 
       let driver = Driver.create();
-      await driver.swipe(Math.round(globalThis.winLeft + thirdListItem.left + ((thirdListItem.right - thirdListItem.left) / 2)),
-        Math.round(globalThis.winTop + thirdListItem.bottom), Math.round(globalThis.winLeft + fifthListItem.left + (fifthListItem.right - fifthListItem.left) / 2),
-        Math.round(globalThis.winTop + fifthListItem.bottom));
+      let swipeComponent = await driver.findComponent(ON.id('List_ListInitialIndex1_Container01'));
+      let sizeList = await swipeComponent.getBounds();
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween(
+        { x: Math.round(sizeList.left + ((sizeList.right - sizeList.left) / 2)),
+          y: Math.round(sizeList.top + ((sizeList.bottom - sizeList.top) / 10)), displayId: displayId },
+        { x: Math.round(sizeList.left + (sizeList.right - sizeList.left) / 2),
+          y: Math.round(sizeList.bottom - ((sizeList.bottom - sizeList.top) / 10)), displayId: displayId });
       await CommonFunc.sleep(2000);
       firstListItem = CommonFunc.getComponentRect('List_ListInitialIndex1_1');
       secondListItem = CommonFunc.getComponentRect('List_ListInitialIndex1_2');
-      listContainer = CommonFunc.getComponentRect('List_ListInitialIndex1' + '_Container01');
+      listContainer = CommonFunc.getComponentRect('List_ListInitialIndex1_Container01');
       expect(Math.abs(firstListItem.top - listContainer.top) <= 1).assertTrue();
       expect(Math.abs(firstListItem.left - listContainer.left) <= 1).assertTrue();
       expect(Math.abs(Math.round(firstListItem.right - firstListItem.left) - Math.round(vp2px(100))) <= 1).assertTrue();

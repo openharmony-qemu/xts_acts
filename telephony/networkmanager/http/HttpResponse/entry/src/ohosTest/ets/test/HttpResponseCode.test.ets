@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, TestType, Size, Level } from '@ohos/hypium';
+import { describe, expect, it, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import http from '@ohos.net.http';
 import { BusinessError } from '@ohos.base';
 import connection from '@ohos.net.connection';
@@ -59,7 +59,7 @@ export default function HttpResponseCodeTest() {
       const caseName: string = 'testNetworkMgrHttpResponseCode0100';
       console.info(`${caseName} test Start`);
       try {
-        ExpectTrue(http.ResponseCode.OK == 200)
+        ExpectTrue(http.ResponseCode.OK === 200)
         done();
       } catch (error) {
         console.info(`${caseName} trycatch error: ${JSON.stringify(error)}`);
@@ -82,7 +82,7 @@ export default function HttpResponseCodeTest() {
       const caseName: string = 'testNetworkMgrHttpResponseCode0200';
       console.info(`${caseName} test Start`);
       try {
-        ExpectTrue(http.ResponseCode.CREATED == 201)
+        ExpectTrue(http.ResponseCode.CREATED === 201)
         done();
       } catch (error) {
         console.info(`${caseName} trycatch error: ${JSON.stringify(error)}`);
@@ -105,7 +105,7 @@ export default function HttpResponseCodeTest() {
       const caseName: string = 'testNetworkMgrHttpResponseCode0300';
       console.info(`${caseName} test Start`);
       try {
-        ExpectTrue(http.ResponseCode.ACCEPTED == 202);
+        ExpectTrue(http.ResponseCode.ACCEPTED === 202);
         done();
       } catch (error) {
         console.info(`${caseName} trycatch error: ${JSON.stringify(error)}`);
@@ -128,7 +128,7 @@ export default function HttpResponseCodeTest() {
       const caseName: string = 'testNetworkMgrHttpResponseCode0400';
       console.info(`${caseName} test Start`);
       try {
-        ExpectTrue(http.ResponseCode.NOT_AUTHORITATIVE == 203);
+        ExpectTrue(http.ResponseCode.NOT_AUTHORITATIVE === 203);
         done();
       } catch (error) {
         console.info(`${caseName} trycatch error: ${JSON.stringify(error)}`);
@@ -151,7 +151,7 @@ export default function HttpResponseCodeTest() {
       const caseName: string = 'testNetworkMgrHttpResponseCode0500';
       console.info(`${caseName} test Start`);
       try {
-        ExpectTrue(http.ResponseCode.NO_CONTENT == 204);
+        ExpectTrue(http.ResponseCode.NO_CONTENT === 204);
         done();
       } catch (error) {
         console.info(`${caseName} trycatch error: ${JSON.stringify(error)}`);
@@ -174,7 +174,7 @@ export default function HttpResponseCodeTest() {
       const caseName: string = 'testNetworkMgrHttpResponseCode0600';
       console.info(`${caseName} test Start`);
       try {
-        ExpectTrue(http.ResponseCode.RESET == 205);
+        ExpectTrue(http.ResponseCode.RESET === 205);
         done();
       } catch (error) {
         console.info(`${caseName} trycatch error: ${JSON.stringify(error)}`);
@@ -197,7 +197,7 @@ export default function HttpResponseCodeTest() {
       const caseName: string = 'testNetworkMgrHttpResponseCode0700';
       console.info(`${caseName} test Start`);
       try {
-        ExpectTrue(http.ResponseCode.PARTIAL == 206);
+        ExpectTrue(http.ResponseCode.PARTIAL === 206);
         done();
       } catch (error) {
         console.info(`${caseName} trycatch error: ${JSON.stringify(error)}`);
@@ -220,7 +220,7 @@ export default function HttpResponseCodeTest() {
       const caseName: string = 'testNetworkMgrHttpResponseCode0800';
       console.info(`${caseName} test Start`);
       try {
-        ExpectTrue(http.ResponseCode.MULT_CHOICE == 300);
+        ExpectTrue(http.ResponseCode.MULT_CHOICE === 300);
         done();
       } catch (error) {
         console.info(`${caseName} trycatch error: ${JSON.stringify(error)}`);
@@ -243,7 +243,7 @@ export default function HttpResponseCodeTest() {
       const caseName: string = 'testNetworkMgrHttpResponseCode0900';
       console.info(`${caseName} test Start`);
       try {
-        ExpectTrue(http.ResponseCode.MOVED_PERM == 301);
+        ExpectTrue(http.ResponseCode.MOVED_PERM === 301);
         done();
       } catch (error) {
         console.info(`${caseName} trycatch error: ${JSON.stringify(error)}`);
@@ -266,7 +266,7 @@ export default function HttpResponseCodeTest() {
       const caseName: string = 'testNetworkMgrHttpResponseCode1000';
       console.info(`${caseName} test Start`);
       try {
-        ExpectTrue(http.ResponseCode.MOVED_TEMP == 302);
+        ExpectTrue(http.ResponseCode.MOVED_TEMP === 302);
         done();
       } catch (error) {
         console.info(`${caseName} trycatch error: ${JSON.stringify(error)}`);
@@ -289,7 +289,7 @@ export default function HttpResponseCodeTest() {
       const caseName: string = 'testNetworkMgrHttpResponseCode1100';
       console.info(`${caseName} test Start`);
       try {
-        ExpectTrue(http.ResponseCode.SEE_OTHER == 303);
+        ExpectTrue(http.ResponseCode.SEE_OTHER === 303);
         done();
       } catch (error) {
         console.info(`${caseName} trycatch error: ${JSON.stringify(error)}`);
@@ -312,7 +312,7 @@ export default function HttpResponseCodeTest() {
       const caseName: string = 'testNetworkMgrHttpResponseCode1200';
       console.info(`${caseName} test Start`);
       try {
-        ExpectTrue(http.ResponseCode.NOT_MODIFIED == 304);
+        ExpectTrue(http.ResponseCode.NOT_MODIFIED === 304);
         done();
       } catch (error) {
         console.info(`${caseName} trycatch error: ${JSON.stringify(error)}`);
@@ -335,7 +335,7 @@ export default function HttpResponseCodeTest() {
       const caseName: string = 'testNetworkMgrHttpResponseCode1300';
       console.info(`${caseName} test Start`);
       try {
-        ExpectTrue(http.ResponseCode.USE_PROXY == 305);
+        ExpectTrue(http.ResponseCode.USE_PROXY === 305);
         done();
       } catch (error) {
         console.info(`${caseName} trycatch error: ${JSON.stringify(error)}`);
@@ -358,7 +358,7 @@ export default function HttpResponseCodeTest() {
       const caseName: string = 'testNetworkMgrHttpResponseCode1400';
       console.info(`${caseName} test Start`);
       try {
-        ExpectTrue(http.ResponseCode.BAD_REQUEST == 400);
+        ExpectTrue(http.ResponseCode.BAD_REQUEST === 400);
         done();
       } catch (error) {
         console.info(`${caseName} trycatch error: ${JSON.stringify(error)}`);
@@ -381,7 +381,7 @@ export default function HttpResponseCodeTest() {
       const caseName: string = 'testNetworkMgrHttpResponseCode1500';
       console.info(`${caseName} test Start`);
       try {
-        ExpectTrue(http.ResponseCode.UNAUTHORIZED == 401);
+        ExpectTrue(http.ResponseCode.UNAUTHORIZED === 401);
         done();
       } catch (error) {
         console.info(`${caseName} trycatch error: ${JSON.stringify(error)}`);
@@ -404,7 +404,7 @@ export default function HttpResponseCodeTest() {
       const caseName: string = 'testNetworkMgrHttpResponseCode1600';
       console.info(`${caseName} test Start`);
       try {
-        ExpectTrue(http.ResponseCode.PAYMENT_REQUIRED == 402);
+        ExpectTrue(http.ResponseCode.PAYMENT_REQUIRED === 402);
         done();
       } catch (error) {
         console.info(`${caseName} trycatch error: ${JSON.stringify(error)}`);
@@ -427,7 +427,7 @@ export default function HttpResponseCodeTest() {
       const caseName: string = 'testNetworkMgrHttpResponseCode1700';
       console.info(`${caseName} test Start`);
       try {
-        ExpectTrue(http.ResponseCode.FORBIDDEN == 403);
+        ExpectTrue(http.ResponseCode.FORBIDDEN === 403);
         done();
       } catch (error) {
         console.info(`${caseName} trycatch error: ${JSON.stringify(error)}`);
@@ -450,7 +450,7 @@ export default function HttpResponseCodeTest() {
       const caseName: string = 'testNetworkMgrHttpResponseCode1800';
       console.info(`${caseName} test Start`);
       try {
-        ExpectTrue(http.ResponseCode.NOT_FOUND == 404);
+        ExpectTrue(http.ResponseCode.NOT_FOUND === 404);
         done();
       } catch (error) {
         console.info(`${caseName} trycatch error: ${JSON.stringify(error)}`);
@@ -473,7 +473,7 @@ export default function HttpResponseCodeTest() {
       const caseName: string = 'testNetworkMgrHttpResponseCode1900';
       console.info(`${caseName} test Start`);
       try {
-        ExpectTrue(http.ResponseCode.BAD_METHOD == 405);
+        ExpectTrue(http.ResponseCode.BAD_METHOD === 405);
         done();
       } catch (error) {
         console.info(`${caseName} trycatch error: ${JSON.stringify(error)}`);
@@ -496,7 +496,7 @@ export default function HttpResponseCodeTest() {
       const caseName: string = 'testNetworkMgrHttpResponseCode2000';
       console.info(`${caseName} test Start`);
       try {
-        ExpectTrue(http.ResponseCode.NOT_ACCEPTABLE == 406);
+        ExpectTrue(http.ResponseCode.NOT_ACCEPTABLE === 406);
         done();
       } catch (error) {
         console.info(`${caseName} trycatch error: ${JSON.stringify(error)}`);
@@ -519,7 +519,7 @@ export default function HttpResponseCodeTest() {
       const caseName: string = 'testNetworkMgrHttpResponseCode2100';
       console.info(`${caseName} test Start`);
       try {
-        ExpectTrue(http.ResponseCode.PROXY_AUTH == 407);
+        ExpectTrue(http.ResponseCode.PROXY_AUTH === 407);
         done();
       } catch (error) {
         console.info(`${caseName} trycatch error: ${JSON.stringify(error)}`);
@@ -542,7 +542,7 @@ export default function HttpResponseCodeTest() {
       const caseName: string = 'testNetworkMgrHttpResponseCode2200';
       console.info(`${caseName} test Start`);
       try {
-        ExpectTrue(http.ResponseCode.CLIENT_TIMEOUT == 408);
+        ExpectTrue(http.ResponseCode.CLIENT_TIMEOUT === 408);
         done();
       } catch (error) {
         console.info(`${caseName} trycatch error: ${JSON.stringify(error)}`);
@@ -565,7 +565,7 @@ export default function HttpResponseCodeTest() {
       const caseName: string = 'testNetworkMgrHttpResponseCode2300';
       console.info(`${caseName} test Start`);
       try {
-        ExpectTrue(http.ResponseCode.CONFLICT == 409);
+        ExpectTrue(http.ResponseCode.CONFLICT === 409);
         done();
       } catch (error) {
         console.info(`${caseName} trycatch error: ${JSON.stringify(error)}`);
@@ -588,7 +588,7 @@ export default function HttpResponseCodeTest() {
       const caseName: string = 'testNetworkMgrHttpResponseCode2400';
       console.info(`${caseName} test Start`);
       try {
-        ExpectTrue(http.ResponseCode.GONE == 410);
+        ExpectTrue(http.ResponseCode.GONE === 410);
         done();
       } catch (error) {
         console.info(`${caseName} trycatch error: ${JSON.stringify(error)}`);
@@ -612,7 +612,7 @@ export default function HttpResponseCodeTest() {
       const caseName: string = 'testNetworkMgrHttpResponseCode2500';
       console.info(`${caseName} test Start`);
       try {
-        ExpectTrue(http.ResponseCode.LENGTH_REQUIRED == 411);
+        ExpectTrue(http.ResponseCode.LENGTH_REQUIRED === 411);
         done();
       } catch (error) {
         console.info(`${caseName} trycatch error: ${JSON.stringify(error)}`);
@@ -635,7 +635,7 @@ export default function HttpResponseCodeTest() {
       const caseName: string = 'testNetworkMgrHttpResponseCode2600';
       console.info(`${caseName} test Start`);
       try {
-        ExpectTrue(http.ResponseCode.PRECON_FAILED == 412);
+        ExpectTrue(http.ResponseCode.PRECON_FAILED === 412);
         done();
       } catch (error) {
         console.info(`${caseName} trycatch error: ${JSON.stringify(error)}`);
@@ -658,7 +658,7 @@ export default function HttpResponseCodeTest() {
       const caseName: string = 'testNetworkMgrHttpResponseCode2700';
       console.info(`${caseName} test Start`);
       try {
-        ExpectTrue(http.ResponseCode.ENTITY_TOO_LARGE == 413);
+        ExpectTrue(http.ResponseCode.ENTITY_TOO_LARGE === 413);
         done();
       } catch (error) {
         console.info(`${caseName} trycatch error: ${JSON.stringify(error)}`);
@@ -681,7 +681,7 @@ export default function HttpResponseCodeTest() {
       const caseName: string = 'testNetworkMgrHttpResponseCode2800';
       console.info(`${caseName} test Start`);
       try {
-        ExpectTrue(http.ResponseCode.REQ_TOO_LONG == 414);
+        ExpectTrue(http.ResponseCode.REQ_TOO_LONG === 414);
         done();
       } catch (error) {
         console.info(`${caseName} trycatch error: ${JSON.stringify(error)}`);
@@ -704,7 +704,7 @@ export default function HttpResponseCodeTest() {
       const caseName: string = 'testNetworkMgrHttpResponseCode2900';
       console.info(`${caseName} test Start`);
       try {
-        ExpectTrue(http.ResponseCode.UNSUPPORTED_TYPE == 415);
+        ExpectTrue(http.ResponseCode.UNSUPPORTED_TYPE === 415);
         done();
       } catch (error) {
         console.info(`${caseName} trycatch error: ${JSON.stringify(error)}`);
@@ -727,7 +727,7 @@ export default function HttpResponseCodeTest() {
       const caseName: string = 'testNetworkMgrHttpResponseCode3000';
       console.info(`${caseName} test Start`);
       try {
-        ExpectTrue(http.ResponseCode.INTERNAL_ERROR == 500);
+        ExpectTrue(http.ResponseCode.INTERNAL_ERROR === 500);
         done();
       } catch (error) {
         console.info(`${caseName} trycatch error: ${JSON.stringify(error)}`);
@@ -750,7 +750,7 @@ export default function HttpResponseCodeTest() {
       const caseName: string = 'testNetworkMgrHttpResponseCode3100';
       console.info(`${caseName} test Start`);
       try {
-        ExpectTrue(http.ResponseCode.NOT_IMPLEMENTED == 501);
+        ExpectTrue(http.ResponseCode.NOT_IMPLEMENTED === 501);
         done();
       } catch (error) {
         console.info(`${caseName} trycatch error: ${JSON.stringify(error)}`);
@@ -773,7 +773,7 @@ export default function HttpResponseCodeTest() {
       const caseName: string = 'testNetworkMgrHttpResponseCode3200';
       console.info(`${caseName} test Start`);
       try {
-        ExpectTrue(http.ResponseCode.BAD_GATEWAY == 502);
+        ExpectTrue(http.ResponseCode.BAD_GATEWAY === 502);
         done();
       } catch (error) {
         console.info(`${caseName} trycatch error: ${JSON.stringify(error)}`);
@@ -796,7 +796,7 @@ export default function HttpResponseCodeTest() {
       const caseName: string = 'testNetworkMgrHttpResponseCode3300';
       console.info(`${caseName} test Start`);
       try {
-        ExpectTrue(http.ResponseCode.UNAVAILABLE == 503);
+        ExpectTrue(http.ResponseCode.UNAVAILABLE === 503);
         done();
       } catch (error) {
         console.info(`${caseName} trycatch error: ${JSON.stringify(error)}`);
@@ -819,7 +819,7 @@ export default function HttpResponseCodeTest() {
       const caseName: string = 'testNetworkMgrHttpResponseCode3400';
       console.info(`${caseName} test Start`);
       try {
-        ExpectTrue(http.ResponseCode.GATEWAY_TIMEOUT == 504);
+        ExpectTrue(http.ResponseCode.GATEWAY_TIMEOUT === 504);
         done();
       } catch (error) {
         console.info(`${caseName} trycatch error: ${JSON.stringify(error)}`);
@@ -842,7 +842,7 @@ export default function HttpResponseCodeTest() {
       const caseName: string = 'testNetworkMgrHttpResponseCode3500';
       console.info(`${caseName} test Start`);
       try {
-        ExpectTrue(http.ResponseCode.VERSION == 505);
+        ExpectTrue(http.ResponseCode.VERSION === 505);
         done();
       } catch (error) {
         console.info(`${caseName} trycatch error: ${JSON.stringify(error)}`);
@@ -885,7 +885,7 @@ export default function HttpResponseCodeTest() {
                   done();
                 } else {
                   console.info(`${caseName} request success, data: ${JSON.stringify(data)}`);
-                  ExpectTrue(data.responseCode == 200);
+                  ExpectTrue(data.responseCode === 200);
                   httpRequest.destroy();
                   done();
                 }
@@ -928,7 +928,7 @@ export default function HttpResponseCodeTest() {
               let httpRequest: http.HttpRequest = http.createHttp();
               httpRequest.request(XTS_TEST_HTTP_URL).then((data: http.HttpResponse) => {
                 console.info(`${caseName} request success, data: ${JSON.stringify(data)}`);
-                ExpectTrue(data.responseCode == 200);
+                ExpectTrue(data.responseCode === 200);
                 httpRequest.destroy();
                 done();
               }).catch((err: BusinessError) => {
@@ -981,7 +981,7 @@ export default function HttpResponseCodeTest() {
                   done();
                 } else {
                   console.info(`${caseName} request success, data: ${JSON.stringify(data)}`);
-                  ExpectTrue(data.responseCode == 404);
+                  ExpectTrue(data.responseCode === 404);
                   httpRequest.destroy();
                   done();
                 }
@@ -1024,7 +1024,7 @@ export default function HttpResponseCodeTest() {
               let httpRequest: http.HttpRequest = http.createHttp();
               httpRequest.request(`${XTS_TEST_HTTP_URL}openHarmonyXts`).then((data: http.HttpResponse) => {
                 console.info(`${caseName} request success, data: ${JSON.stringify(data)}`);
-                ExpectTrue(data.responseCode == 404);
+                ExpectTrue(data.responseCode === 404);
                 httpRequest.destroy();
                 done();
               }).catch((err: BusinessError) => {

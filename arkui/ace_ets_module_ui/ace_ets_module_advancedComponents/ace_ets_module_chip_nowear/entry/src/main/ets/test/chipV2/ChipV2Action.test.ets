@@ -12,7 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import {
   UiComponent,
@@ -31,6 +32,7 @@ import {
 } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 
 export default function ChipV2Action() {
   describe('ChipV2Action', () => {
@@ -89,9 +91,7 @@ export default function ChipV2Action() {
       vp2px(Number(rightImg.$attrs.height.match(/\d+/)[0]) / 2) + globalThis.winTop;
       console.info('SUB_ARKUI_API_ChipV2Action_0100 rightImg right：' + right + 'top:' + top);
       let driver = Driver.create();
-      await driver.click(
-        Math.round(right), Math.round(top)
-      );
+      await driver.clickAt({x: Math.round(right) , y: Math.round(top) , displayId: displayID});
       await CommonFunc.sleep(1000);
       console.info('SUB_ARKUI_API_ChipV2Action_0100 click success');
       let strJson1: ESObject = JSON.parse(getInspectorByKey('tvChipV2Action'));

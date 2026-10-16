@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic'
 import libGraphics2DApi20 from 'libgraphicsApiNdk.so'
 const DCI_P3 = 2;
 const DISPLAY_P3 = 3;

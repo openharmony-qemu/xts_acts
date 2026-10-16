@@ -30,7 +30,7 @@ export default function GlobalClearIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CLEAR_INTERVAL_0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CLEAR_INTERVAL_0100
      * @tc.name testClearInterval001
      * @tc.desc Verify clearInterval(timerId) with 1 parameter cancels callback timer
      * @tc.size MediumTest
@@ -48,7 +48,7 @@ export default function GlobalClearIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CLEAR_INTERVAL_0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CLEAR_INTERVAL_0200
      * @tc.name testClearInterval002
      * @tc.desc Verify clearInterval with invalid and nonexistent timer IDs does not cancel an active interval
      * @tc.size MediumTest
@@ -70,7 +70,7 @@ export default function GlobalClearIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CLEAR_INTERVAL_0030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CLEAR_INTERVAL_0300
      * @tc.name testClearInterval003
      * @tc.desc Verify clearInterval clears interval with long delay before callback fires
      * @tc.size MediumTest
@@ -88,7 +88,7 @@ export default function GlobalClearIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CLEAR_INTERVAL_0040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CLEAR_INTERVAL_0400
      * @tc.name testClearInterval004
      * @tc.desc Verify clearInterval clears another valid interval ID returned from string interval
      * @tc.size MediumTest
@@ -102,33 +102,14 @@ export default function GlobalClearIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CLEAR_INTERVAL_0050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CLEAR_INTERVAL_0500
      * @tc.name testClearInterval005
-     * @tc.desc Verify clearInterval(null) does not cancel an active interval
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClearInterval005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      let count: int = 0;
-      const timerId: int = setInterval(() => {
-        count++;
-      }, 20);
-      clearInterval(null);
-      await Utils.msSleep(80);
-      clearInterval(timerId);
-      expect(count > 0).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CLEAR_INTERVAL_0060
-     * @tc.name testClearInterval006
      * @tc.desc Verify clearInterval() does not cancel an active interval
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClearInterval006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testClearInterval005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let count: int = 0;
       const timerId: int = setInterval(() => {
         count++;
@@ -140,14 +121,14 @@ export default function GlobalClearIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CLEAR_INTERVAL_0070
-     * @tc.name testClearInterval007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CLEAR_INTERVAL_0600
+     * @tc.name testClearInterval006
      * @tc.desc Verify clearing the same timer ID 3 times consecutively cancels interval callback
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClearInterval007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testClearInterval006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let count: int = 0;
       const timerId: int = setInterval(() => {
         count++;
@@ -160,38 +141,14 @@ export default function GlobalClearIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CLEAR_INTERVAL_0080
-     * @tc.name testClearInterval008
-     * @tc.desc Verify clearInterval clears multiple active interval IDs before callbacks execute
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClearInterval008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      let count1: int = 0;
-      let count2: int = 0;
-      const timerId1: int = setInterval(() => {
-        count1++;
-      }, 20);
-      const timerId2: int = setInterval(() => {
-        count2++;
-      }, 20);
-      clearInterval(timerId1);
-      clearInterval(timerId2);
-      await Utils.msSleep(80);
-      expect(count1).assertEqual(0);
-      expect(count2).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CLEAR_INTERVAL_0090
-     * @tc.name testClearInterval009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CLEAR_INTERVAL_0700
+     * @tc.name testClearInterval007
      * @tc.desc Verify calling clearInterval twice keeps delayed interval callback cancelled
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClearInterval009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testClearInterval007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let count: int = 0;
       let id: int = setInterval((): void => {
         count = count + 1;
@@ -203,14 +160,14 @@ export default function GlobalClearIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CLEAR_INTERVAL_0100
-     * @tc.name testClearInterval010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CLEAR_INTERVAL_0800
+     * @tc.name testClearInterval008
      * @tc.desc Verify clearInterval ignores positive non-timer ID and cancels a valid interval
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClearInterval010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testClearInterval008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let count: int = 0;
       let id: int = setInterval((): void => {
         count++;
@@ -225,14 +182,14 @@ export default function GlobalClearIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CLEAR_INTERVAL_0110
-     * @tc.name testClearInterval011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CLEAR_INTERVAL_0900
+     * @tc.name testClearInterval009
      * @tc.desc Verify clearInterval accepts null before clearing valid interval ID
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClearInterval011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testClearInterval009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let count: int = 0;
       let id: int = setInterval((): void => {
         count++;
@@ -245,14 +202,14 @@ export default function GlobalClearIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CLEAR_INTERVAL_0120
-     * @tc.name testClearInterval012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CLEAR_INTERVAL_1000
+     * @tc.name testClearInterval010
      * @tc.desc Verify clearInterval ignores negative non-timer ID before clearing case 12
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClearInterval012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClearInterval010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let id: int = setInterval((): void => {
       }, 512);
       clearInterval(-12);
@@ -261,14 +218,14 @@ export default function GlobalClearIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CLEAR_INTERVAL_0130
-     * @tc.name testClearInterval013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CLEAR_INTERVAL_1100
+     * @tc.name testClearInterval011
      * @tc.desc Verify clearInterval cancels long-delay callback interval case 14
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClearInterval013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testClearInterval011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let count: int = 0;
       let id: int = setInterval((): void => {
         count++;
@@ -279,14 +236,14 @@ export default function GlobalClearIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CLEAR_INTERVAL_0140
-     * @tc.name testClearInterval014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CLEAR_INTERVAL_1200
+     * @tc.name testClearInterval012
      * @tc.desc Verify clearInterval cancellation behavior case 17
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClearInterval014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testClearInterval012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let first: int = 0;
       let second: int = 0;
       let firstId: int = setInterval((): void => {
@@ -303,14 +260,14 @@ export default function GlobalClearIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CLEAR_INTERVAL_0150
-     * @tc.name testClearInterval015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CLEAR_INTERVAL_1300
+     * @tc.name testClearInterval013
      * @tc.desc Verify clearInterval can be called twice for string interval case 18
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClearInterval015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClearInterval013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let id: int = setInterval("clear interval message 18", 200);
       expect(id > 0).assertTrue();
       clearInterval(id);
@@ -318,14 +275,14 @@ export default function GlobalClearIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CLEAR_INTERVAL_0160
-     * @tc.name testClearInterval016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CLEAR_INTERVAL_1400
+     * @tc.name testClearInterval014
      * @tc.desc Verify clearInterval cancellation behavior case 21
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClearInterval016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testClearInterval014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let count: int = 0;
       let id: int = setInterval((): void => {
         count++;

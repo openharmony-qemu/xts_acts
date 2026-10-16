@@ -24,9 +24,10 @@ async function click(id: string) {
   let rect = await refresh.getBounds();
   let centerX = Math.round((rect.left + rect.right) / 2);
   let centerY = Math.round((rect.top + rect.bottom) / 2);
-  await driver.mouseClick({ x: centerX, y: centerY }, 1);
+  await driver.mouseClick({ x: centerX, y: centerY, displayId: displayID }, 1);
 }
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 export default function EventInfoTest() {
 
   describe('EventInfoTest', () => {
@@ -53,7 +54,7 @@ export default function EventInfoTest() {
       let dataArrayTouch: string[] = nativeRender.TestEventInfoGetResultTouch();
       let dataArrayMove: string[] = nativeRender.TestEventInfoGetResultMove();
       console.log('EventInfoTest001', dataArrayTouch[0])
-      expect(dataArrayTouch[0] == '0,0').assertEqual(true)
+      expect(dataArrayTouch[0] == displayID + ',0').assertEqual(true)
       done()
     })
 
@@ -73,7 +74,7 @@ export default function EventInfoTest() {
       let dataArrayTouch: string[] = nativeRender.TestEventInfoGetResultTouch();
       let dataArrayMove: string[] = nativeRender.TestEventInfoGetResultMove();
       console.log('EventInfoTest002', dataArrayMove[0])
-      expect(dataArrayMove[0] == '0,0,0,0,401').assertEqual(true)
+      expect(dataArrayMove[0] == displayID + ',0,0,0,401').assertEqual(true)
       done()
     })
   })

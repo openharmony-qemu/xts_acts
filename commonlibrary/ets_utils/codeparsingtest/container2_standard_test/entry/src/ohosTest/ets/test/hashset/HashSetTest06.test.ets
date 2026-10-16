@@ -1,5 +1,5 @@
 import { HashSet } from '@kit.ArkTS';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 
 function sleep(ms: number) {
   return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));

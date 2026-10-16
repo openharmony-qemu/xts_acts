@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , TestType, Size, Level} from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , TestType, Size, Level} from '@ohos/hypium-dynamic';
 import ohosWindow from '@ohos.window';
 import display from '@ohos.display';
 import { BusinessError } from '@ohos.base';
@@ -101,6 +101,7 @@ export default function windowModalTest() {
     let isPCStatus: string = '';
     let driver: Driver;
     let isFreeWindowMode = false;
+    let canIUseRes: boolean = false;
     beforeAll(async () => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context))
@@ -124,6 +125,8 @@ export default function windowModalTest() {
       //isFreeWindowMode == true 自由窗口模式
       //isFreeWindowMode == false 非自由窗口模式
       console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
+      canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.log(`canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
       driver = Driver.create();
       
     })
@@ -290,73 +293,47 @@ export default function windowModalTest() {
     it("test_SubWindow_IsModal_true", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = "test_SubWindow_IsModal_true";
       console.log(msgStr + "begin");
-      let num = 0;
       let minWidth = 0;
       let minHeight = 0;
-      let subWindowClass: ohosWindow.Window;
-      let windowClass = await windowStage.getMainWindow();
+      let num = 0;
+      let subWindowClass: ohosWindow.Window | undefined;
       try {
-        let promise = windowStage.createSubWindow('test_SubWindow_IsModal_true');
-        promise.then(async (data) => {
-          subWindowClass = data;
-          console.info(msgStr + 'Succeeded in creating the subwindow. Data: ' + JSON.stringify(data));
-          minWidth = Number(subWindowClass.getWindowLimits().minWidth);
-          minHeight = Number(subWindowClass.getWindowLimits().minHeight);
-          console.log('Window WindowLimits:' + minWidth +' '+ minHeight);
-          await subWindowClass.resize(minWidth+200, minHeight+200);
-          await subWindowClass.moveWindowToAsync(100, 100);
-          await subWindowClass.setUIContent('testability/pages/First/index2');
-          await subWindowClass.showWindow();
-          await sleep(1000);
-          try {
-            await subWindowClass.setSubWindowModal(true).then(async () => {
-              console.info(msgStr + 'Succeeded in setting subwindow modal');
-              windowClass.on('noInteractionDetected', 4, () => {
-                num++;
-                console.log(msgStr + 'The num1 is :' + num);
-                windowClass.off('noInteractionDetected');
-                
-              });
-              let buttonTwo = await driver.findComponent(ON.text('Hello World'));
-              await buttonTwo.click();
-              await sleep(4000);
-              console.log(msgStr + 'The num is :' + num);
-              expect(num).assertEqual(1);
-              windowClass.off('noInteractionDetected');
-              subWindowClass.off('noInteractionDetected');
-              subWindowClass.destroyWindow();
-              done();
-            }).catch((err: BusinessError) => {
-              console.error(msgStr + `Failed to set subwindow modal. Cause code: ${err.code}, message: ${err.message}`);
-              subWindowClass.destroyWindow();
-              if (err.code == 801) {
-                console.log(msgStr + 'The device not support setSubWindowModal');
-                
-                done();
-              } else {
-                expect(false).assertTrue();
-                done();
-              }
-            });
-          } catch (error) {
-            console.error(msgStr + `Failed to setSubWindowModal. Cause code: ${error.code}, message: ${error.message}`);
-            expect(false).assertTrue();
-            done();
-          }
-        }).catch((err: BusinessError) => {
-          if(err.code == 801){
-            console.log(msgStr + `getWindowLimits 当前设备类型不支持系统能力SystemCapability.Window.SessionManager, message: ${err.message}`);
-            done();
-          }else{
-            console.error(msgStr + `Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
-          expect(false).assertTrue();
-          done();
-          }
-
-          
-        });
+        subWindowClass = await windowStage.createSubWindow('test_SubWindow_IsModal_true');
+        console.info(msgStr + 'Succeeded in creating the subwindow. Data: ' + JSON.stringify(subWindowClass));
+        minWidth = Number(subWindowClass.getWindowLimits().minWidth);
+        minHeight = Number(subWindowClass.getWindowLimits().minHeight);
+        console.log('Window WindowLimits:' + minWidth + ' ' + minHeight);
+        await subWindowClass.resize(minWidth, minHeight);
+        await subWindowClass.setUIContent('testability/pages/First/index2');
+        await subWindowClass.showWindow();
+        await sleep(500)
+        await subWindowClass.setSubWindowModal(true);
+        await sleep(500)
+        try {
+          subWindowClass.on('dialogTargetTouch', () => {
+            num++;
+            console.info(`${msgStr} touch dialog target`);
+          });
+        } catch (exception) {
+          console.error(`${msgStr} Failed to register callback. Cause code: ${exception.code}, message: ${exception.message}`);
+        }
+        let buttonTwo = await driver.findComponent(ON.id('mainWindow'));
+        await buttonTwo.click();
+        await sleep(500)
+        console.log(msgStr + 'The num is :' + num);
+        expect(num).assertEqual(1);
+        subWindowClass.off('dialogTargetTouch');
+        subWindowClass?.destroyWindow();
+        done();
       } catch (error) {
-        console.log(msgStr + 'Failed to register callback. Cause code:' + JSON.stringify(error.code) + error.message);
+        console.log(msgStr + 'Failed. Cause code:' + JSON.stringify(error.code) + error.message);
+        subWindowClass?.off('dialogTargetTouch');
+        subWindowClass?.destroyWindow();
+        if (!canIUseRes) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(false).assertTrue()
+        }
         done();
       }
     })
@@ -369,82 +346,54 @@ export default function windowModalTest() {
      * @tc.level  LEVEL3
      */
     it("test_SubWindow_IsModal_false", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let msgStr = "test_SubWindow_IsModal_false";
+      let msgStr = "test_SubWindow_IsModal_false ";
       console.log(msgStr + "begin");
       let minWidth = 0;
       let minHeight = 0;
       let num = 0;
-      let subWindowClass: ohosWindow.Window;
-      let windowClass = await windowStage.getMainWindow();
+      let subWindowClass: ohosWindow.Window | undefined;
+      let options1 : window.SubWindowOptions = {
+        title: 'title1',
+        decorEnabled: true,
+        isModal: true
+      };
       try {
-        let promise = windowStage.createSubWindow('test_SubWindow_IsModal_false');
-        promise.then(async (data) => {
-          subWindowClass = data;
-          console.info(msgStr + 'Succeeded in creating the subwindow. Data: ' + JSON.stringify(data));
-          minWidth = Number(subWindowClass.getWindowLimits().minWidth);
-          minHeight = Number(subWindowClass.getWindowLimits().minHeight);
-          console.log('Window WindowLimits:' + minWidth +' '+ minHeight);
-          await subWindowClass.resize(minWidth+200, minHeight+200);
-          await subWindowClass.moveWindowToAsync(100, 100);
-          await subWindowClass.setUIContent('testability/pages/First/index2');
-          await subWindowClass.showWindow();
-          try {
-            await subWindowClass.setSubWindowModal(false).then(async () => {
-              console.info(msgStr + 'Succeeded in setting subwindow modal');
-              windowClass.on('noInteractionDetected', 4, () => {
-                num++;
-                console.log(msgStr + 'The num1 is :' + num);
-                windowClass.off('noInteractionDetected');
-                expect(false).assertTrue();
-              });
-              subWindowClass.on('noInteractionDetected', 5, () => {
-                num++;
-                console.log(msgStr + 'The num2 is :' + num);
-                subWindowClass.off('noInteractionDetected');
-                expect(false).assertTrue();
-              });
-              let buttonOne = await driver.findComponent(ON.text('这是子窗'));
-              await buttonOne.click();
-              let buttonTwo = await driver.findComponent(ON.text('Hello World'));
-              await buttonTwo.click();
-              await sleep(3000);
-              console.log(msgStr + 'The num is :' + num);
-              expect(num).assertEqual(0);
-              windowClass.off('noInteractionDetected');
-              subWindowClass.off('noInteractionDetected');
-              subWindowClass.destroyWindow();
-              done();
-            }).catch((err: BusinessError) => {
-              console.error(msgStr + `Failed to set subwindow modal. Cause code: ${err.code}, message: ${err.message}`);
-              subWindowClass.destroyWindow();
-              if (err.code == 801) {
-                console.log(msgStr + 'The device not support setSubWindowModal');
-                
-                done();
-              } else {
-                expect(false).assertTrue();
-                done();
-              }
-            });
-          } catch (error) {
-            console.error(msgStr + `Failed to setSubWindowModal. Cause code: ${error.code}, message: ${error.message}`);
-            expect(false).assertTrue();
-            done();
-          }
-        }).catch((err: BusinessError) => {
-          if(err.code == 801){
-            console.log(msgStr + `getWindowLimits 当前设备类型不支持系统能力SystemCapability.Window.SessionManager, message: ${err.message}`);
-            done();
-          }else{
-            console.error(msgStr + `Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
-            expect(false).assertTrue();
-            done();
-          }
-
-          
-        });
+        subWindowClass = await windowStage.createSubWindowWithOptions('test_SubWindow_IsModal_false', options1);
+        console.info(msgStr + 'Succeeded in creating the subwindow. Data: ' + JSON.stringify(subWindowClass));
+        minWidth = Number(subWindowClass.getWindowLimits().minWidth);
+        minHeight = Number(subWindowClass.getWindowLimits().minHeight);
+        console.log('Window WindowLimits:' + minWidth + ' ' + minHeight);
+        await subWindowClass.resize(minWidth, minHeight);
+        await subWindowClass.setUIContent('testability/pages/First/index2');
+        await subWindowClass.showWindow();
+        await sleep(500)
+        await subWindowClass.setSubWindowModal(false);
+        await sleep(500)
+        try {
+          subWindowClass.on('dialogTargetTouch', () => {
+            num++;
+            console.info(`${msgStr} touch dialog target`);
+          });
+        } catch (exception) {
+          console.error(`${msgStr} Failed to register callback. Cause code: ${exception.code}, message: ${exception.message}`);
+        }
+        let buttonTwo = await driver.findComponent(ON.id('mainWindow'));
+        await buttonTwo.click();
+        await sleep(500)
+        console.log(msgStr + 'The num is :' + num);
+        expect(num).assertEqual(0);
+        subWindowClass.off('dialogTargetTouch');
+        subWindowClass?.destroyWindow();
+        done();
       } catch (error) {
-        console.log(msgStr + 'Failed to register callback. Cause code:' + JSON.stringify(error.code) + error.message);
+        console.log(msgStr + 'Failed. Cause code:' + JSON.stringify(error.code) + error.message);
+        subWindowClass?.off('dialogTargetTouch');
+        subWindowClass?.destroyWindow();
+        if (!canIUseRes) {
+          expect(error.code).assertEqual(1300002);
+        } else {
+          expect(false).assertTrue()
+        }
         done();
       }
     })
@@ -457,53 +406,40 @@ export default function windowModalTest() {
      * @tc.level  LEVEL3
      */
     it("test_SubWindow_hide_IsModal_true", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let msgStr = "test_SubWindow_hide_IsModal_true";
+      let msgStr = "test_SubWindow_hide_IsModal_true ";
       console.log(msgStr + "begin");
       let num = 0;
-      let subWindowClass: ohosWindow.Window;
-      let windowClass = await windowStage.getMainWindow();
+      let subWindowClass: ohosWindow.Window | undefined;
       try {
-        let promise = windowStage.createSubWindow('test_SubWindow_hide_IsModal_true');
-        promise.then(async (data) => {
-          subWindowClass = data;
-          console.info(msgStr + 'Succeeded in creating the subwindow. Data: ' + JSON.stringify(data));
-          try {
-            await subWindowClass.setSubWindowModal(true).then(async () => {
-              console.info(msgStr + 'Succeeded in setting subwindow modal');
-              windowClass.on('noInteractionDetected', 4, () => {
-                num++;
-                console.log(msgStr + 'The num is :' + num);
-                expect(num).assertEqual(1);
-                windowClass.off('noInteractionDetected');
-                subWindowClass.destroyWindow();
-                done();
-              });
-              let buttonTwo = await driver.findComponent(ON.text('Hello World'));
-              await buttonTwo.click();
-              await sleep(3000);
-            }).catch((err: BusinessError) => {
-              console.error(msgStr + `Failed to set subwindow modal. Cause code: ${err.code}, message: ${err.message}`);
-              if (err.code == 801) {
-                console.log(msgStr + 'The device not support setSubWindowModal');
-                
-                done();
-              } else {
-                expect(false).assertTrue();
-                done();
-              }
-            });
-          } catch (error) {
-            console.error(msgStr + `Failed to setSubWindowModal. Cause code: ${error.code}, message: ${error.message}`);
-            expect(false).assertTrue();
-            done();
-          }
-        }).catch((err: BusinessError) => {
-          console.error(msgStr + `Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
-          expect(false).assertTrue();
-          done();
-        });
+        subWindowClass = await windowStage.createSubWindow('test_SubWindow_hide_IsModal_true');
+        console.info(msgStr + 'Succeeded in creating the subwindow. Data: ' + JSON.stringify(subWindowClass));
+        await subWindowClass.setSubWindowModal(true);
+        await sleep(500)
+        try {
+          subWindowClass.on('dialogTargetTouch', () => {
+            num++;
+            console.info(`${msgStr} touch dialog target`);
+          });
+        } catch (exception) {
+          console.error(`${msgStr} Failed to register callback. Cause code: ${exception.code}, message: ${exception.message}`);
+        }
+        let buttonTwo = await driver.findComponent(ON.id('mainWindow'));
+        await buttonTwo.click();
+        await sleep(500)
+        console.log(msgStr + 'The num is :' + num);
+        expect(num).assertEqual(0);
+        subWindowClass.off('dialogTargetTouch');
+        subWindowClass?.destroyWindow();
+        done();
       } catch (error) {
-        console.log(msgStr + 'Failed to register callback. Cause code:' + JSON.stringify(error.code) + error.message);
+        console.log(msgStr + 'Failed. Cause code:' + JSON.stringify(error.code) + error.message);
+        subWindowClass?.off('dialogTargetTouch');
+        subWindowClass?.destroyWindow();
+        if (!canIUseRes) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(false).assertTrue()
+        }
         done();
       }
     })
@@ -1644,27 +1580,5 @@ export default function windowModalTest() {
       
     })
     
-   
-
-    
-   
-
-    
-
-    
-    
-    
-    
-    
-    
-    
-
-
-    
-
-    
-    
-
-
   })
 }

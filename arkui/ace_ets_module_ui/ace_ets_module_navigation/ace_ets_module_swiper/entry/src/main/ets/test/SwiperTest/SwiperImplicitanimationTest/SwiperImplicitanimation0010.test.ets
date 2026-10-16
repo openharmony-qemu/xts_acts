@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../MainAbility/utils/Common';
@@ -64,7 +64,7 @@ export default function SwiperImplicitanimation0010() {
       let width = right - left;
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      await driver.drag(Math.round(left + width*0.8),Math.round(bottom - height/2),Math.round(left + width*0.1),Math.round(bottom - height/2));
+      await driver.dragBetween({ x: Math.round(left + width*0.8), y: Math.round(bottom - height/2), displayId: 0 }, { x: Math.round(left + width*0.1), y: Math.round(bottom - height/2), displayId: 0 });
       await CommonFunc.sleep(3000);
       let strJson2: string = getInspectorByKey('implicitanimation_0010');
       let marq2: ESObject =JSON.parse(strJson2).$attrs.content;

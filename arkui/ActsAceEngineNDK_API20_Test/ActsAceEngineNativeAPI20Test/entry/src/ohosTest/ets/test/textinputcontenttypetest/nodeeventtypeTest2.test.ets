@@ -13,13 +13,15 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll } from '@ohos/hypium'
+import { describe, it, expect, TestType, Size, Level, beforeAll } from '@ohos/hypium-dynamic'
 import nativerenderndk from 'libnoderenderndk.so'
 import Utils from '../common/Utils';
 
 
 const ARKUI_ERROR_CODE_NO_ERROR = 0;
 const ARKUI_ERROR_CODE_ERROR = 1;
+
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 
 export default function NodeEventTypeTest2() {
   describe('NodeEventTypeTest2', () => {
@@ -43,7 +45,7 @@ export default function NodeEventTypeTest2() {
       async (done: Function) => {
         try {
           console.info("====>testNODE_LIST_ON_SCROLL_VISIBLE_CONTENT_CHANGE0100 start====");
-          await Utils.driver.swipe(x1, y2, x1, y1);
+          await Utils.driver.swipeBetween({ x: x1, y: y2, displayId: displayID }, { x: x1, y: y1, displayId: displayID });
           let result: number = nativerenderndk.NodeEventTypeTest_015();
           console.info(`====>testNODE_LIST_ON_SCROLL_VISIBLE_CONTENT_CHANGE0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);

@@ -31,6 +31,7 @@ struct DropAnimationExample {
       Column() {
         Text(this.message)
           .id('Common_text')
+          .height('5%')
         Column() {
           Image($r('app.media.startIcon'))
             .width(80)
@@ -46,9 +47,9 @@ struct DropAnimationExample {
               console.log(this.message)
             })
         }
-        .id('Column1')
         .width(150)
         .height(150)
+        .id('Column1')
         Column() {
           Image($r('app.media.startIcon'))
             .width(80)
@@ -73,11 +74,12 @@ struct DropAnimationExample {
         }
         .id('Column2')
         .width(150)
-        .height(150)
+        .height('30%')
 
-        Column({ space: 5 } as ColumnOptions) {
+        Column() {
           Button('resetText')
             .id('Common_resetText')
+            .height('10%')
             .onClick((e: ClickEvent) => {
               this.message = 'Hello World';
             })
@@ -85,28 +87,33 @@ struct DropAnimationExample {
             .onClick((e: ClickEvent) => {
               this.isOnDragEndUndefined = !this.isOnDragEndUndefined
             })
+            .height('10%')
             .id('Common_OnDragEnd')
           Button('isOnDragEnterUndefined : ' + this.isOnDragEnterUndefined)
             .onClick((e: ClickEvent) => {
               this.isOnDragEnterUndefined = !this.isOnDragEnterUndefined
             })
+            .height('10%')
             .id('Common_OnDragEnter')
           Button('isOnDragLeaveUndefined : ' + this.isOnDragLeaveUndefined)
             .onClick((e: ClickEvent) => {
               this.isOnDragLeaveUndefined = !this.isOnDragLeaveUndefined
             })
+            .height('10%')
             .id('Common_OnDragLeave')
           Button('isOnDragMoveUndefined : ' + this.isOnDragMoveUndefined)
             .onClick((e: ClickEvent) => {
               this.isOnDragMoveUndefined = !this.isOnDragMoveUndefined
             })
+            .height('10%')
             .id('Common_OnDragMove')
           Button('isOnDropUndefined : ' + this.isOnDropUndefined)
             .onClick((e: ClickEvent) => {
               this.isOnDropUndefined = !this.isOnDropUndefined
             })
+            .height('10%')
             .id('Common_OnDrop')
-        }
+        }.height('40%')
       }
       .alignItems(HorizontalAlign.Center)
       .width('80%')

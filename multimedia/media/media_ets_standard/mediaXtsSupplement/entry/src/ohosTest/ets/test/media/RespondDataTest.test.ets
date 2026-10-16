@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import media from '@ohos.multimedia.media';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic'
 import HashMap from '@ohos.util.HashMap';
 
 const TAG = 'AVPlayer.MediaSource';

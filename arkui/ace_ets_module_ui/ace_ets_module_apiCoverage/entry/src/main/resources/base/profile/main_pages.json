@@ -1,0 +1,9 @@
+{
+  "src": [
+    "MainAbility/pages/index/index",
+    "MainAbility/pages/coverage/CoverageTypes",
+    "MainAbility/pages/coverage/Coverage0917Batch",
+    "MainAbility/pages/coverage/TabsApiCoverage",
+    "MainAbility/pages/coverage/TabsApiCoverageAbnormal"
+  ]
+}

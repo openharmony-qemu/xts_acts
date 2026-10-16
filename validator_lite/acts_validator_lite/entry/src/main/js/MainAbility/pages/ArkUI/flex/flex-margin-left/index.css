@@ -1,0 +1,91 @@
+.container {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2px;
+    background-color: #000000;
+}
+.content-title {
+    width: 90%;
+    height: 56px;
+    flex-direction: row;
+    justify-content: center;
+}
+.title-text {
+    width: 150px;
+    height: 46px;
+    text-align: center;
+    font-size: 16px;
+    color: #ffffff;
+}
+.backBtnHelp {
+    width: 46px;
+    height: 46px;
+    font-size: 26px;
+}
+.content {
+    width: 95%;
+    height: 204px;
+    flex-direction: column;
+    align-items: center;
+}
+.status {
+    font-size: 14px;
+    color: #ffffff;
+    height: 18px;
+}
+.btn-row {
+    flex-direction: row;
+    width: 100%;
+    height: 34px;
+    align-items: center;
+    justify-content: center;
+}
+.btn {
+    font-size: 12px;
+    width: 24%;
+    height: 30px;
+    color: #333333;
+    background-color: #ffffff;
+    margin-right: 4px;
+    align-items: center;
+    justify-content: center;
+}
+.flex-row {
+    flex-direction: row;
+    width: 90%;
+    height: 38px;
+    background-color: #dddddd;
+    border-width: 2px;
+    border-color: #333333;
+    margin-bottom: 8px;
+}
+.item {
+    width: 80px;
+    height: 30px;
+    background-color: #00aaee;
+    align-items: center;
+    justify-content: center;
+}
+.item-text {
+    font-size: 11px;
+    color: #ffffff;
+}
+.bottom-bt {
+    width: 60%;
+    height: 52px;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.button {
+    width: 31%;
+    height: 44px;
+    margin-top: 4px;
+    font-size: 14px;
+}
+.button:active {
+    background-color: blueviolet;
+}

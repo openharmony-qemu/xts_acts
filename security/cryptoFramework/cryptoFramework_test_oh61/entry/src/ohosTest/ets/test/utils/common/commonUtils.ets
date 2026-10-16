@@ -124,6 +124,14 @@ async function createFullData(dataLen: number): Promise<cryptoFramework.DataBlob
   }
 }
 
+function createDataSync(len: number): Uint8Array {
+  let data = new Uint8Array(len);
+  for (let i = 0; i < len; i++) {
+    data[i] = Math.floor(Math.random() * 256);
+  }
+  return data;
+}
+
 
 export {
   stringToUint8Array,
@@ -135,5 +143,6 @@ export {
   compareNumber,
   compareString,
   asyncType,
-  compareUint8Array
+  compareUint8Array,
+  createDataSync
 }

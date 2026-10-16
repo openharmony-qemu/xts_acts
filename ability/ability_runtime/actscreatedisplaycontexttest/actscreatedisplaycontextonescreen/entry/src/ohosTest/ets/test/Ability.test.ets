@@ -14,7 +14,7 @@
 */
 
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import {
   application,
   common,
@@ -29,6 +29,7 @@ import { resourceManager } from '@kit.LocalizationKit';
 import { display } from '@kit.ArkUI';
 import { JSON, worker } from '@kit.ArkTS';
 import { Driver, ON } from '@ohos.UiTest';
+import { Configuration } from '@kit.AbilityKit';
 
 
 const TAG: string = 'DisplayContextTest';
@@ -72,7 +73,7 @@ export default function abilityTest() {
 
   describe('ActsAbilityTest', () => {
     beforeAll(async () => {
-      let driver = Driver.create();	
+      let driver = await Driver.create();	
       try {
         let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
         if (allowed) {
@@ -87,7 +88,7 @@ export default function abilityTest() {
           hilog.error(DOMAIN_NUMBER, TAG, 'Failed to obtain all the display objects. error: %{public}s',
             JSON.stringify(err));
         } else {
-          disPlayId = data[0].id;
+          disPlayId = display.getDefaultDisplaySync().id;
           hilog.info(DOMAIN_NUMBER, TAG, 'displayId: %{public}s', JSON.stringify(disPlayId));
         }
       });
@@ -723,7 +724,7 @@ export function sendableContext(context: Context): boolean | undefined {
   let myWorker: worker.ThreadWorker = new worker.ThreadWorker('../workers/Worker.ets');
   let sendableContext: sendableContextManager.SendableContext = sendableContextManager.convertFromContext(context);
   let object: SendableObject = new SendableObject(sendableContext, 'BaseContext');
-  let contextAfter: common.Context = sendableContextManager.convertToContext(sendableContext);
+  let contextAfter: common.Context | undefined = sendableContextManager.convertToContext(sendableContext);
 
   hilog.info(DOMAIN_NUMBER, TAG, 'Ability context after convert: %{public}s', JSON.stringify(contextAfter));
   expect(contextAfter.cacheDir).assertEqual(context.cacheDir);

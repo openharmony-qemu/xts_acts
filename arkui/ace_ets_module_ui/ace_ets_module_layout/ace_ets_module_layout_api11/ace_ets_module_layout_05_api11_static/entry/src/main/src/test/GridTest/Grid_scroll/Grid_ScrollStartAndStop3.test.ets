@@ -87,13 +87,17 @@ export default function Grid_ScrollStartandStop3() {
 it('Grid_ScrollStartandStop3_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[Grid_ScrollStartandStop3_static_0400] START');
-      let scrollBarRect: RectValue = CommonFunc.getComponentRectOnScreen('Grid_ScrollStartandStop_scrollBar')
       let driver = Driver.create()
-      await driver.swipe(
-        Number.parseInt(`${(scrollBarRect.right - scrollBarRect.left) * 0.5 + scrollBarRect.left}`).toInt(),
-        Number.parseInt(`${(scrollBarRect.bottom - scrollBarRect.top) * 0.1 + scrollBarRect.top}`).toInt(),
-        Number.parseInt(`${(scrollBarRect.right - scrollBarRect.left) * 0.5 + scrollBarRect.left}`).toInt(),
-        Number.parseInt(`${(scrollBarRect.bottom - scrollBarRect.top) * 0.9 + scrollBarRect.top}`).toInt(),
+      let scrollBarComp = await driver.findComponent(ON.id('Grid_ScrollStartandStop_scrollBar'))
+      let scrollBarRect = await scrollBarComp!.getBounds()
+      let displayId = await scrollBarComp!.getDisplayId()
+      await driver.swipeBetween(
+        { x: Number.parseInt(`${(scrollBarRect.right - scrollBarRect.left) * 0.5 + scrollBarRect.left}`).toInt(),
+          y: Number.parseInt(`${(scrollBarRect.bottom - scrollBarRect.top) * 0.1 + scrollBarRect.top}`).toInt(),
+          displayId: displayId },
+        { x: Number.parseInt(`${(scrollBarRect.right - scrollBarRect.left) * 0.5 + scrollBarRect.left}`).toInt(),
+          y: Number.parseInt(`${(scrollBarRect.bottom - scrollBarRect.top) * 0.9 + scrollBarRect.top}`).toInt(),
+          displayId: displayId },
         1000);
       await CommonFunc.sleep(2000);
 

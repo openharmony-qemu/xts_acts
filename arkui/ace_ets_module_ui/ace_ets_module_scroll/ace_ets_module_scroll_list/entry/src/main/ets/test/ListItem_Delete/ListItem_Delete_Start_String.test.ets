@@ -76,7 +76,9 @@ export default function ListItem_Delete_Start_String() {
     it('SUB_ACE_ListItem_Delete_Start_String_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_ListItem_Delete_Start_String_0100] START');
       await CommonFunc.sleep(1000);
-      let ListItem_00: RectValue = CommonFunc.getComponentRect('ListItem_Delete_Start_String_ListItem_00');
+      let driver = Driver.create();
+      let swipeComponent = await driver.findComponent(ON.id('ListItem_Delete_Start_String_ListItem_00'));
+      let ListItem_00 = await swipeComponent.getBounds();
       let ListItem_01: RectValue = CommonFunc.getComponentRect('ListItem_Delete_Start_String_ListItem_01');
       let right: number = ListItem_00.right;
       let left: number = ListItem_00.left;
@@ -86,21 +88,21 @@ export default function ListItem_Delete_Start_String() {
       let height = bottom -top;
       console.info("SUB_ACE_ListItem_Delete_Start_String_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
 
-      let driver = Driver.create();
-      await driver.swipe(
-        Math.round(globalThis.winLeft + left + vp2px(60)), Math.round(globalThis.winTop + top + height/2), Math.round(globalThis.winLeft + right - vp2px(10)), Math.round(globalThis.winTop  + top + height/2)
-      );
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween(
+        { x: Math.round(left + vp2px(60)), y: Math.round(top + height / 2), displayId: displayId },
+        { x: Math.round(right - vp2px(10)), y: Math.round(top + height / 2), displayId: displayId });
       await CommonFunc.sleep(2000);
 
-      let text_011 = getInspectorByKey('ListItem_Delete_Start_String' + '_text_01');
+      let text_011 = getInspectorByKey('ListItem_Delete_Start_String_text_01');
 
       expect(JSON.parse(text_011).$attrs.content).assertEqual('not enterEndDeleteArea');
 
-      let text_022 = getInspectorByKey('ListItem_Delete_Start_String' + '_text_02');
+      let text_022 = getInspectorByKey('ListItem_Delete_Start_String_text_02');
 
       expect(JSON.parse(text_022).$attrs.content).assertEqual('not exitEndDeleteArea');
 
-      let text_033 = getInspectorByKey('ListItem_Delete_Start_String' + '_text_03');
+      let text_033 = getInspectorByKey('ListItem_Delete_Start_String_text_03');
 
       expect(JSON.parse(text_033).$attrs.content).assertEqual('5');
 
@@ -130,7 +132,8 @@ export default function ListItem_Delete_Start_String() {
       await btn.click();
       await CommonFunc.sleep(2000);
 
-      let ListItem_00: RectValue = CommonFunc.getComponentRect('ListItem_Delete_Start_String_ListItem_00');
+      let swipeComponent = await driver.findComponent(ON.id('ListItem_Delete_Start_String_ListItem_00'));
+      let ListItem_00 = await swipeComponent.getBounds();
       let ListItem_01: RectValue = CommonFunc.getComponentRect('ListItem_Delete_Start_String_ListItem_01');
       let right: number = ListItem_00.right;
       let left: number = ListItem_00.left;
@@ -140,20 +143,21 @@ export default function ListItem_Delete_Start_String() {
       let height = bottom -top;
       console.info("SUB_ACE_ListItem_Delete_Start_String_0200 value is" + left + " --" + right + "--" + top + "--" + bottom);
 
-      await driver.swipe(
-        Math.round(globalThis.winLeft + left + vp2px(60)), Math.round(globalThis.winTop + top + height/2), Math.round(globalThis.winLeft + left + vp2px(120)), Math.round(globalThis.winTop  + top + height/2)
-      );
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween(
+        { x: Math.round(left + vp2px(60)), y: Math.round(top + height / 2), displayId: displayId },
+        { x: Math.round(left + vp2px(120)), y: Math.round(top + height / 2), displayId: displayId });
       await CommonFunc.sleep(2000);
 
-      let text_011 = getInspectorByKey('ListItem_Delete_Start_String' + '_text_01');
+      let text_011 = getInspectorByKey('ListItem_Delete_Start_String_text_01');
 
       expect(JSON.parse(text_011).$attrs.content).assertEqual('not enterEndDeleteArea');
 
-      let text_022 = getInspectorByKey('ListItem_Delete_Start_String' + '_text_02');
+      let text_022 = getInspectorByKey('ListItem_Delete_Start_String_text_02');
 
       expect(JSON.parse(text_022).$attrs.content).assertEqual('not exitEndDeleteArea');
 
-      let text_033 = getInspectorByKey('ListItem_Delete_Start_String' + '_text_03');
+      let text_033 = getInspectorByKey('ListItem_Delete_Start_String_text_03');
 
       expect(JSON.parse(text_033).$attrs.content).assertEqual('5');
 

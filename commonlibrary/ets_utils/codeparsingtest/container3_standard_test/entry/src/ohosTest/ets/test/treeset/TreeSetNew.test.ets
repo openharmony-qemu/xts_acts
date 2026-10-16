@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import TreeSet from '@ohos.util.TreeSet';
-import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import { test002, test006, test034, test036, test037, test045 } from './TreeSetResource';
 
 export default function TreeSetTest() {

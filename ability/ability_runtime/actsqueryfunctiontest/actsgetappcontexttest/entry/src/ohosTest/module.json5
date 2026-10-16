@@ -15,7 +15,7 @@
 
 {
   "module": {
-    "name": "entry",
+    "name": "entry_test",
     "type": "feature",
     "description": "$string:entry_desc",
     "mainElement": "MainAbility",
@@ -46,7 +46,7 @@
       },
       {
         "name": "MainAbility1",
-        "srcEntry": "./ets/MainAbility1/MainAbility1.ts",
+        "srcEntry": "./ets/MainAbility1/MainAbility1.ets",
         "description": "$string:MainAbility1_desc",
         "icon": "$media:icon",
         "label": "$string:MainAbility1_label",

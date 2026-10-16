@@ -28,6 +28,9 @@ export const DrawingRecordCmdUtilsDestroy: (caseName: number) => number;
 // RecordCmdUtils FinishRecording related functions
 export const DrawingRecordCmdUtilsFinishRecording: (caseName: number) => number;
 
+// RecordCmdUtils GetHeightOrWidth related functions
+export const DrawingRecordCmdUtilsGetHeightOrWidth: (caseName: number) => number;
+
 // Canvas DrawSingleCharacterWithFeatures related functions
 export const DrawingCanvasDrawSingleChaWithFeatures: (caseName: number) => number;
 
@@ -409,6 +412,9 @@ export const DrawingFontFeatures: (caseName: number) => number;
 // Font GetTextPathWithFallback related functions
 export const DrawingFontGetTextPathWithFallback: (caseName: number) => number;
 
+// Font WithFallback related functions
+export const DrawingFontWithFallback: (caseName: number) => number;
+
 // GpuContext related functions
 export const DrawingGpuContext: (caseName: number) => number;
 
@@ -545,6 +551,9 @@ export const DrawingTextBlobCreate: (caseName: number) => number;
 
 // TextBlob Other operations related functions
 export const DrawingTextBlobOther: (caseName: number) => number;
+
+// TextBlob WithFallback related functions
+export const DrawingTextBlobWithFallback: (caseName: number) => number;
 
 // Typeface Create related functions
 export const DrawingTypefaceCreate: (caseName: number) => number;

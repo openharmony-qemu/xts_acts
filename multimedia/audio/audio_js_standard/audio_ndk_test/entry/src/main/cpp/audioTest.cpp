@@ -5465,6 +5465,14 @@ static napi_value AudioSessionManagerSetScene_001(napi_env env, napi_callback_in
         LOG("SetScene fail AUDIO_SESSION_SCENE_VOICE_COMMUNICATION, result is: %{public}d", TEST_FAIL);
         return res;
     }
+
+    scene = AUDIO_SESSION_SCENE_VOICE_MESSAGE;
+    result = OH_AudioSessionManager_SetScene(audioSessionManager, scene);
+    if (result != AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("SetScene fail AUDIO_SESSION_SCENE_VOICE_MESSAGE, result is: %{public}d", TEST_FAIL);
+        return res;
+    }
     napi_create_int32(env, TEST_PASS, &res);
     return res;
 }
@@ -13906,8 +13914,13 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_FRAMELENGTH_0100(na
         return res;
     }
     streamResult = OH_AudioCapturer_Start(capturer);
-    if (streamResult != AUDIOSTREAM_SUCCESS) {
-        LOG("OH_AudioCapturer_Start failed: %{public}d", ret);
+    int retry = 0;
+    while (!g_isStreamStarted && retry < 50) {
+        usleep(10000);
+        retry++;
+    }
+    if (!g_isStreamStarted) {
+        LOG("Stream start timeout");
         napi_create_int32(env, TEST_FAIL, &res);
         return res;
     }
@@ -13966,8 +13979,13 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_ILLEGALSTATE_0100(n
         return res;
     }
     streamResult = OH_AudioCapturer_Start(capturer);
-    if (streamResult != AUDIOSTREAM_SUCCESS) {
-        LOG("OH_AudioCapturer_Start failed: %{public}d", ret);
+    int retry = 0;
+    while (!g_isStreamStarted && retry < 50) {
+        usleep(10000);
+        retry++;
+    }
+    if (!g_isStreamStarted) {
+        LOG("Stream start timeout");
         napi_create_int32(env, TEST_FAIL, &res);
         return res;
     }
@@ -14027,8 +14045,13 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_ERROR_ILLEGALSTATE_
         return res;
     }
     streamResult = OH_AudioCapturer_Start(capturer);
-    if (streamResult != AUDIOSTREAM_SUCCESS) {
-        LOG("OH_AudioCapturer_Start failed: %{public}d", ret);
+    int retry = 0;
+    while (!g_isStreamStarted && retry < 50) {
+        usleep(10000);
+        retry++;
+    }
+    if (!g_isStreamStarted) {
+        LOG("Stream start timeout");
         napi_create_int32(env, TEST_FAIL, &res);
         return res;
     }
@@ -14082,6 +14105,16 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTART_ERROR_ILLEGALSTATE_010
     (void)OH_AudioStreamBuilder_SetCapturerInfo(builder, AUDIOSTREAM_SOURCE_TYPE_MIC);
     OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
     OH_AudioCapturer_Start(capturer);
+    int retry = 0;
+    while (!g_isStreamStarted && retry < 50) {
+        usleep(10000);
+        retry++;
+    }
+    if (!g_isStreamStarted) {
+        LOG("Stream start timeout");
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
     OH_AudioAccessoryInputStream *stream = GetAccessoryStream();
     OH_AudioCommon_Result rets = OH_AudioAccessoryInputStreamManager_RegisterStartCallback(stream, AccessoryOnStreamStart);
     LOG("OH_AudioAccessoryInputStreamManager_RegisterStartCallback error illegal state: %{public}d", rets);
@@ -14131,6 +14164,16 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTOP_ERROR_ILLEGALSTATE_0100
     (void)OH_AudioStreamBuilder_SetCapturerInfo(builder, AUDIOSTREAM_SOURCE_TYPE_MIC);
     OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
     OH_AudioCapturer_Start(capturer);
+    int retry = 0;
+    while (!g_isStreamStarted && retry < 50) {
+        usleep(10000);
+        retry++;
+    }
+    if (!g_isStreamStarted) {
+        LOG("Stream start timeout");
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
     OH_AudioAccessoryInputStream *stream = GetAccessoryStream();
     OH_AudioCommon_Result rets = OH_AudioAccessoryInputStreamManager_RegisterStopCallback(stream, AccessoryOnStreamStop);
     LOG("OH_AudioAccessoryInputStreamManager_RegisterStopCallback error illegal state: %{public}d", rets);
@@ -14180,6 +14223,16 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGRELEASE_ERROR_ILLEGALSTATE_0
     (void)OH_AudioStreamBuilder_SetCapturerInfo(builder, AUDIOSTREAM_SOURCE_TYPE_MIC);
     OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
     OH_AudioCapturer_Start(capturer);
+    int retry = 0;
+    while (!g_isStreamStarted && retry < 50) {
+        usleep(10000);
+        retry++;
+    }
+    if (!g_isStreamStarted) {
+        LOG("Stream start timeout");
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
     OH_AudioAccessoryInputStream *stream = GetAccessoryStream();
     OH_AudioCommon_Result rets = OH_AudioAccessoryInputStreamManager_RegisterReleaseCallback(stream, AccessoryOnStreamRelease);
     LOG("OH_AudioAccessoryInputStreamManager_RegisterReleaseCallback error illegal state: %{public}d", rets);
@@ -14228,6 +14281,16 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGLATENCY_ERROR_ILLEGALSTATE_0
     (void)OH_AudioStreamBuilder_SetCapturerInfo(builder, AUDIOSTREAM_SOURCE_TYPE_MIC);
     OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
     OH_AudioCapturer_Start(capturer);
+    int retry = 0;
+    while (!g_isStreamStarted && retry < 50) {
+        usleep(10000);
+        retry++;
+    }
+    if (!g_isStreamStarted) {
+        LOG("Stream start timeout");
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
     OH_AudioAccessoryInputStream *stream = GetAccessoryStream();
     OH_AudioCapturer_Stop(capturer);
     OH_AudioCapturer_Release(capturer);
@@ -14276,6 +14339,16 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGFRAME_ERROR_ILLEGALSTATE_010
     (void)OH_AudioStreamBuilder_SetCapturerInfo(builder, AUDIOSTREAM_SOURCE_TYPE_MIC);
     OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
     OH_AudioCapturer_Start(capturer);
+    int retry = 0;
+    while (!g_isStreamStarted && retry < 50) {
+        usleep(10000);
+        retry++;
+    }
+    if (!g_isStreamStarted) {
+        LOG("Stream start timeout");
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
     OH_AudioAccessoryInputStream *stream = GetAccessoryStream();
     OH_AudioCapturer_Stop(capturer);
     OH_AudioCapturer_Release(capturer);
@@ -14540,6 +14613,16 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_SUCCESS_0100(napi_env env
         napi_create_int32(env, TEST_FAIL, &res);
     }
     streamResult = OH_AudioCapturer_Start(capturer);
+    int retry = 0;
+    while (!g_isStreamStarted && retry < 50) {
+        usleep(10000);
+        retry++;
+    }
+    if (!g_isStreamStarted) {
+        LOG("Stream start timeout");
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
     if (streamResult != AUDIOSTREAM_SUCCESS) {
         LOG("OH_AudioCapturer_Start failed: %{public}d", streamResult);
         napi_create_int32(env, TEST_FAIL, &res);
@@ -14589,6 +14672,16 @@ static napi_value SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_SUCCESS_0100(napi_e
     (void)OH_AudioStreamBuilder_SetCapturerInfo(builder, AUDIOSTREAM_SOURCE_TYPE_MIC);
     OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
     OH_AudioCapturer_Start(capturer);
+    int retry = 0;
+    while (!g_isStreamStarted && retry < 50) {
+        usleep(10000);
+        retry++;
+    }
+    if (!g_isStreamStarted) {
+        LOG("Stream start timeout");
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
     OH_AudioAccessoryInputStream *stream = GetAccessoryStream();
     OH_AudioCommon_Result rets = OH_AudioAccessoryInputStreamManager_GetWritableSize(stream, &writableSize);
     LOG("OH_AudioAccessoryInputStreamManager_GetWritableSize success test: %{public}d, writableSize: %{public}u",

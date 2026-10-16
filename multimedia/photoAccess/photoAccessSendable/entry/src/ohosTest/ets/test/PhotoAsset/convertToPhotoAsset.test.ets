@@ -14,7 +14,7 @@
  */
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
-import { describe, it, expect, beforeAll, Level } from '@ohos/hypium'
+import { describe, it, expect, beforeAll, Level } from '@ohos/hypium-dynamic'
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
 import sendablePhotoAccessHelper from '@ohos.file.sendablePhotoAccessHelper'
 import { common } from '@kit.AbilityKit';
@@ -23,7 +23,8 @@ import {
   driveFn,
   photoKeys,
   getPermission,
-  createResource
+  createResource,
+  checkResourceFile
 } from '../../util/common'
 
 export default function convertToPhotoAssetTest () {
@@ -38,6 +39,7 @@ export default function convertToPhotoAssetTest () {
       await getPermission();
       await sleep(10);
       await driveFn();
+      checkResourceFile(globalContext);
       await createResource(globalContext, fileNameList);
     })
 

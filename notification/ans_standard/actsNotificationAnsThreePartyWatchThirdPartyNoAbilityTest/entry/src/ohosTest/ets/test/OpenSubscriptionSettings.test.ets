@@ -1,5 +1,5 @@
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import { notificationExtensionSubscription, notificationManager } from '@kit.NotificationKit';
 import { abilityAccessCtrl, UIAbility } from '@kit.AbilityKit';
 import { common } from '@kit.AbilityKit';

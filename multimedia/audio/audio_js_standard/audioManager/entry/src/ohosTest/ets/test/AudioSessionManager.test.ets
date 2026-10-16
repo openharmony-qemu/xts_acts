@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import { BusinessError } from '@ohos.base';
 import audio from '@ohos.multimedia.audio';
 
@@ -330,6 +330,26 @@ export default function audioSessionManagerTest() {
         done();
       } catch (err) {
         console.info(`${TagFrmwk}: setAudioSessionScene with AUDIO_SESSION_SCENE_VOICE_COMMUNICATION: FAIL :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_AUDIO_SESSION_SCENE_VOICE_MESSAGE_0100
+    * @tc.number SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_AUDIO_SESSION_SCENE_VOICE_MESSAGE_0100
+    * @tc.desc   setAudioSessionScene with AUDIO_SESSION_SCENE_VOICE_MESSAGE test.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_AUDIO_SESSION_SCENE_VOICE_MESSAGE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioSessionManager.setAudioSessionScene(audio.AudioSessionScene.AUDIO_SESSION_SCENE_VOICE_MESSAGE);
+        console.info(`${TagFrmwk}: setAudioSessionScene with AUDIO_SESSION_SCENE_VOICE_MESSAGE: PASS`);
+        done();
+      } catch (error) {
+        console.info(`${TagFrmwk}: setAudioSessionScene with AUDIO_SESSION_SCENE_VOICE_MESSAGE: FAIL :${error.message}`);
         expect(false).assertTrue();
       }
       done();

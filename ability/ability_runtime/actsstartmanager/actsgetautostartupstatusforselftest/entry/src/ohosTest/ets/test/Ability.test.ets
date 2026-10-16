@@ -13,12 +13,12 @@
  * limitations under the License.
  */
 import hilog from '@ohos.hilog';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '@ohos/hypium-dynamic'
 import { autoStartupManager, common } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { worker, MessageEvents } from '@kit.ArkTS';
 import commonEventManager from '@ohos.commonEventManager';
-import systemParameterEnhance from "@ohos.systemParameterEnhance";
+import systemParameterEnhance from '@ohos.systemParameterEnhance';
 
 let context: common.UIAbilityContext;
 let mySubscriber: commonEventManager.CommonEventSubscriber;
@@ -112,8 +112,10 @@ export default function abilityTest() {
           hilog.info(0x0000, 'testTag', `${tcNumber} commonEventManager.createSubscriber callback`);
           mySubscriber = data
           commonEventManager.subscribe(mySubscriber, (err, data) => {
-            hilog.info(0x0000, 'testTag', `${tcNumber} commonEventManager.subscribe callback err: ${JSON.stringify(err)}`);
-            hilog.info(0x0000, 'testTag', `${tcNumber} commonEventManager.subscribe callback data: ${JSON.stringify(data)}`);
+            hilog.info(0x0000, 'testTag',
+              `${tcNumber} commonEventManager.subscribe callback err: ${JSON.stringify(err)}`);
+            hilog.info(0x0000, 'testTag',
+              `${tcNumber} commonEventManager.subscribe callback data: ${JSON.stringify(data)}`);
             let result: boolean = data.parameters?.result === 'false' || data.parameters?.result === '801';
             expect(result).assertTrue();
             commonEventManager.unsubscribe(mySubscriber, () => {

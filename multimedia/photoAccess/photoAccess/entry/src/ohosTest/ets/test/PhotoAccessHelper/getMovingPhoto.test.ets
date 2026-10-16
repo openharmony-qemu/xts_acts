@@ -14,7 +14,7 @@
  */
 
 
-import { describe, it, expect, beforeAll, Level } from "@ohos/hypium";
+import { describe, it, expect, beforeAll, Level } from "@ohos/hypium-dynamic";
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
 import { BusinessError } from '@ohos.base';
 import dataSharePredicates from '@ohos.data.dataSharePredicates';

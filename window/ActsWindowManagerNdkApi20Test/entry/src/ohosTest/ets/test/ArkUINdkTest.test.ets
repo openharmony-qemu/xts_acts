@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic'
 import osAccountNdk from 'libosaccountndk.so'
 import { Driver, ON } from '@kit.TestKit';
 
@@ -94,7 +94,7 @@ export default function ActsOsAccountNdkTest() {
       async (done: Function) => {
         try {
           console.info('====>GetDefaultDisplayRotation3 start====')
-          let result = osAccountNdk.GetDefaultDisplayRotation0();
+          let result = osAccountNdk.GetDefaultDisplayRotation3();
           expect(0).assertEqual(result)
           done()
         } catch (err) {

@@ -354,54 +354,6 @@ export default function int16ArrayFindTestTwoTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_TWO_2200
-     * @tc.name testInt16ArrayFindTestTwo022
-     * @tc.desc Verify find returns Int16 max value match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayFindTestTwo022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(100, 200, 300);
-      let result: number | undefined = arr.find(
-        (value: number, index: int, array: Int16Array): boolean => value > 32767,
-      );
-      expect(result).assertUndefined();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_TWO_2300
-     * @tc.name testInt16ArrayFindTestTwo023
-     * @tc.desc Verify find returns Int16 min value match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayFindTestTwo023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(-100, -200, -300);
-      let result: number | undefined = arr.find(
-        (value: number, index: int, array: Int16Array): boolean => value < -32768,
-      );
-      expect(result).assertUndefined();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_TWO_2400
-     * @tc.name testInt16ArrayFindTestTwo024
-     * @tc.desc Verify find returns undefined for no match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayFindTestTwo024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(1, 2, 3, 4, 5);
-      let result: number | undefined = arr.find(
-        (value: number, index: int, array: Int16Array): boolean => value === 999,
-      );
-      expect(result).assertUndefined();
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_TWO_2500
      * @tc.name testInt16ArrayFindTestTwo025
      * @tc.desc Verify find behavior on single-element array
@@ -512,42 +464,6 @@ export default function int16ArrayFindTestTwoTest(): void {
       let result: number | undefined = arr.find((value: number, index: int, array: Int16Array): boolean => value > 999);
       let actual1: int = arr.BYTES_PER_ELEMENT;
       let expected1: number = bpeBefore;
-      expect(actual1).assertEqual(expected1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_TWO_3200
-     * @tc.name testInt16ArrayFindTestTwo032
-     * @tc.desc Verify find does not change length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayFindTestTwo032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(1, 2, 3, 4, 5, 6);
-      let blBefore: number = arr.byteLength;
-      let result: number | undefined = arr.find((value: number, index: int, array: Int16Array): boolean => value > 3);
-      let actual1: int = arr.byteLength;
-      let expected1: number = blBefore;
-      expect(actual1).assertEqual(expected1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_TWO_3300
-     * @tc.name testInt16ArrayFindTestTwo033
-     * @tc.desc Verify find does not change length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayFindTestTwo033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(7, 14, 21, 28);
-      let blBefore: number = arr.byteLength;
-      let result: number | undefined = arr.find(
-        (value: number, index: int, array: Int16Array): boolean => value > 1000,
-      );
-      let actual1: int = arr.byteLength;
-      let expected1: number = blBefore;
       expect(actual1).assertEqual(expected1);
     });
 

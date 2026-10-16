@@ -15,7 +15,7 @@
 
 import hilog from '@ohos.hilog';
 import common from '@ohos.app.ability.common';
-import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import advertising from '@ohos.advertising';
 import webview from '@ohos.web.webview';
 import MyController from './MyController';

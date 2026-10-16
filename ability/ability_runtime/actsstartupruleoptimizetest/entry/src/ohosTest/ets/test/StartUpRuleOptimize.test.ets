@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, Level } from '@ohos/hypium'
+import { describe, it, expect, Level } from '@ohos/hypium-dynamic'
 import abilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry';
 import common from '@ohos.app.ability.common';
 import Want from '@ohos.app.ability.Want';
@@ -74,7 +74,8 @@ export default function abilityTest(abilityContext:common.UIAbilityContext) {
         };
         abilityContext.startAbilityForResult(want, (err: BusinessError, result: common.AbilityResult) => {
           if (err.code) {
-            console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}startAbilityForResult failed, code is ${err.code}, message is ${err.message}`);
+            console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}startAbilityForResult failed, code is ${err.code},
+              message is ${err.message}`);
             expect().assertFail();
             return;
           }
@@ -86,16 +87,18 @@ export default function abilityTest(abilityContext:common.UIAbilityContext) {
         let publishCallback = (err:BusinessError):void => {
           if (err) {
             console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} start successful`);
-            console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} publish failed, code is ${err.code}, message is ${err.message}`);
+            console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} publish failed, code is ${err.code}, message is
+              ${err.message}`);
           } else {
             console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} publish  callback`);
           }
         }
         try {
-          CommonEventManager.publish("event_100001", publishCallback);
+          CommonEventManager.publish('event_100001', publishCallback);
         } catch (error) {
           let err:BusinessError = error;
-          console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} publish failed, code is ${err.code}, message is ${err.message}`);
+          console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} publish failed, code is ${err.code}, message is
+            ${err.message}`);
         }
         await sleep(2000);
       } catch (err) {

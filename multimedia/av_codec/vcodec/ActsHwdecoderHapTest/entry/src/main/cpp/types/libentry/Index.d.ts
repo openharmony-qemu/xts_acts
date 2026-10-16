@@ -270,3 +270,6 @@ export const VideoHwdecState4000Test: () => Promise<number>;
 export const VideoHwdecState4100Test: () => Promise<number>;
 export const VideoHwdecState4200Test: () => Promise<number>;
 export const HevcHwHdr2sdrFunc002Test: () => Promise<number>;
+export const VideoDecodeH264DmabufSuffix0010: () => Promise<number>;
+export const VideoDecodeH265DmabufSuffix0010: () => Promise<number>;
+export const VideoDecodeH266DmabufSuffix0010: () => Promise<number>;

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll } from '@ohos/hypium'
+import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll } from '@ohos/hypium-dynamic'
 import { backgroundLoader } from '@kit.BackgroundTasksKit'
 import { BusinessError } from '@kit.BasicServicesKit'
 import hilog from '@ohos.hilog'
@@ -117,7 +117,7 @@ export default function BackgroundLoaderErrorCodeTest() {
     /**
      * @tc.number SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_ERROR_0400
      * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_ERROR_0400
-     * @tc.desc   Test unregisterTask with a negative taskId returns error 9700004
+     * @tc.desc   Test unregisterTask with invalid taskId negative number returns error 9700004
      * @tc.level  LEVEL3
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

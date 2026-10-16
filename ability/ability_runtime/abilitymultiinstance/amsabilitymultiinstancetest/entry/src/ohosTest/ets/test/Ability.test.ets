@@ -17,7 +17,7 @@ import commonEventManager from '@ohos.commonEventManager';
 import common from '@ohos.app.ability.common';
 import Want from '@ohos.app.ability.Want';
 import commonEvent from '@ohos.commonEventManager';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic'
 import { BusinessError } from '@ohos.base';
 import AbilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry'
 import systemParameterEnhance from '@ohos.systemParameterEnhance';
@@ -25,11 +25,11 @@ import systemParameterEnhance from '@ohos.systemParameterEnhance';
 let deviceSupport  = systemParameterEnhance.getSync('persist.sys.abilityms.move_ui_ability_to_background_api_enable');
 let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 
-class Params {
-  startId: number = 0
-  stepNum: number = 0
-  nextStep: number = 0
-  step: string[] = []
+interface Params {
+  startId: number;
+  stepNum: number;
+  nextStep: number;
+  step: string[];
 }
 
 let subscriberInfoMultiInstance: commonEventManager.CommonEventSubscribeInfo = {

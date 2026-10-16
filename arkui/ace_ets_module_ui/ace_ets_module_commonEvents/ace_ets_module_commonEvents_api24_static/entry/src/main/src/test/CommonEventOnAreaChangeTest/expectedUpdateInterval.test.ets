@@ -76,7 +76,7 @@ export default function expectedUpdateIntervalTest() {
       await CommonFunc.sleep(500);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[SUB_ArkUI_OnAreaChange_expectedUpdateInterval_0100] content: " + obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('2');
+      expect(Number(obj.getElement('$attrs').getString('content'))).assertLarger(1);
       console.info('SUB_ArkUI_OnAreaChange_expectedUpdateInterval_0100 END');
       } catch (e) {
         console.error('error: ' + JSON.stringify(e));

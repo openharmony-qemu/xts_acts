@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, Level } from '@ohos/hypium'
+import { describe, it, expect, beforeAll, Level } from '@ohos/hypium-dynamic'
 import { common } from '@kit.AbilityKit';
 import sendablePhotoAccessHelper from '@ohos.file.sendablePhotoAccessHelper'
 import { photoAccessHelper } from '@kit.MediaLibraryKit';
@@ -22,7 +22,8 @@ import {
   driveFn,
   getPermission,
   fetchAllOption,
-  createResource
+  createResource,
+  checkResourceFile
 } from '../../util/common'
 
 export default function getLastObjectTest () {
@@ -37,6 +38,7 @@ export default function getLastObjectTest () {
       await getPermission();
       await sleep(10);
       await driveFn();
+      checkResourceFile(globalContext);
       await createResource(globalContext, fileNameList);
     });
 

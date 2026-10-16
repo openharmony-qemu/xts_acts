@@ -51,6 +51,7 @@ export const KeyCode25: () => number;
 export const KeyCode26: () => number;
 export const KeyCode27: () => number;
 export const KeyCode28: () => number;
+export const KeyCode29: () => number;
 export const PointerStyle1: () => number;
 export const PointerStyle2: () => number;
 export const PointerStyle3: () => number;

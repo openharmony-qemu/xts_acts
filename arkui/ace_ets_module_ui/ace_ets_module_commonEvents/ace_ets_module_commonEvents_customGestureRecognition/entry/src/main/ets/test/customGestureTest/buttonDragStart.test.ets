@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import {
@@ -31,6 +31,7 @@ import {
   PointerMatrix
 } from '@ohos.UiTest';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function btnDragStart() {
   describe('btnDragStart', () => {
     beforeEach(async (done: Function) => {
@@ -78,7 +79,7 @@ export default function btnDragStart() {
       console.info("rect_left = " + CommonFunc.rect_left + "CommonFunc.rect_top = " + CommonFunc.rect_top);
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
-      await driver.drag(Math.round(CommonFunc.rect_left + vp2px(33.33)), Math.round(CommonFunc.rect_top + vp2px(26.66)), 200, 200, 600);
+      await driver.dragBetween({x: Math.round(CommonFunc.rect_left + vp2px(33.33)), y: Math.round(CommonFunc.rect_top + vp2px(26.66)), displayId: displayID}, {x: 200, y: 200, displayId: displayID}, 600);
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey("buttonDrag_2");
       await CommonFunc.sleep(200);

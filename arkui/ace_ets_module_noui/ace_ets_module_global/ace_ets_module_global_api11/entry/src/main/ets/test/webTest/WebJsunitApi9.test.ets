@@ -19,7 +19,7 @@ import {
     it,
     expect,
     Level,
-} from "@ohos/hypium"
+} from "@ohos/hypium-dynamic"
 import events_emitter from "@ohos.events.emitter"
 import Utils from "../../MainAbility/common/Utils"
 let emitKey = "emitUserAgent"

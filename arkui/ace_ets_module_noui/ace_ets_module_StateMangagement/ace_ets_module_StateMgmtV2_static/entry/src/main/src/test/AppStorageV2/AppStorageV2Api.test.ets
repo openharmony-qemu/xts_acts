@@ -69,7 +69,7 @@ export default function AppStorageV2Api(): void {
 
       let Btn = await driver.findComponent(ON.id('AppStorageV2_connect1'));
       await CommonFunc.sleep(1000);
-      await (Btn?.click() as Promise<void>);
+      await (Btn?.click());
       await CommonFunc.sleep(1000);
 
 
@@ -134,7 +134,7 @@ export default function AppStorageV2Api(): void {
 
       let Btn = await driver.findComponent(ON.id('AppStorageV2_remove'));
       await CommonFunc.sleep(1000);
-      await (Btn?.click() as Promise<void>);
+      await (Btn?.click());
       await CommonFunc.sleep(1000);
 
 
@@ -160,7 +160,7 @@ export default function AppStorageV2Api(): void {
 
       let Btn = await driver.findComponent(ON.id('AppStorageV2_connect3'));
       await CommonFunc.sleep(1000);
-      await (Btn?.click() as Promise<void>);
+      await (Btn?.click());
       await CommonFunc.sleep(1000);
 
 
@@ -204,7 +204,7 @@ export default function AppStorageV2Api(): void {
 
       let Btn = await driver.findComponent(ON.id('AppStorageV2_connect4'));
       await CommonFunc.sleep(1000);
-      await (Btn?.click() as Promise<void>);
+      await (Btn?.click());
       await CommonFunc.sleep(1000);
 
 
@@ -230,7 +230,7 @@ export default function AppStorageV2Api(): void {
 
       let Btn = await driver.findComponent(ON.id('AppStorageV2_remove2'));
       await CommonFunc.sleep(1000);
-      await (Btn?.click() as Promise<void>);
+      await (Btn?.click());
       await CommonFunc.sleep(1000);
 
       // 删除创建的值

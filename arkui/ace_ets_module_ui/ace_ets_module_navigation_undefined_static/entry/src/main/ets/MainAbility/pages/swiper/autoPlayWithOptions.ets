@@ -43,7 +43,8 @@ struct SwiperExample {
             .backgroundColor('#ffAFEEEE')
             .textAlign(TextAlign.Center)
             .fontSize(30)
-        }).autoPlay(true, this.isUndefined ? undefined : {stopWhenTouched : false} as AutoPlayOptions)
+        }).autoPlay(true, this.isUndefined ? 
+          {stopWhenTouched : true} as AutoPlayOptions : {stopWhenTouched : false} as AutoPlayOptions)
           .id('swiper_autoPlayWithOptions')
         Divider()
       }

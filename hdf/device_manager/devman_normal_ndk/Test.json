@@ -4,7 +4,7 @@
         "type": "OHJSUnitTest",
         "test-timeout": "60000",
         "bundle-name": "com.acts.device_manager.normal",
-        "module-name": "com.acts.device_manager.normal",
+        "module-name": "entry_test",
         "shell-timeout": "60000",
         "testcase-timeout": 60000
     },

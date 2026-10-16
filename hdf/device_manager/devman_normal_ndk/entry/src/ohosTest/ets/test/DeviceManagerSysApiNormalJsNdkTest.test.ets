@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { beforeAll, afterAll, describe, it, expect, TestType, Size, Level } from "@ohos/hypium"
+import { beforeAll, afterAll, describe, it, expect, TestType, Size, Level } from "@ohos/hypium-dynamic"
 import usbManager from "@ohos.usbManager"
 import { queryDeviceInfo, queryDriverInfo } from '@ohos.driver.deviceManager'
 
@@ -22,7 +22,7 @@ export default function DeviceManagerSysApiNormalJsNdkTest() {
   describe('DeviceManagerSysApiNormalJsNdkTest', () => {
 
     const TAG: string = "[DeviceManagerSysApiNormalJsNdkTest]";
-    const SYSTEMAPI_UNAVAILABLE_CODE = 26300001;
+    const SYSTEMAPI_DENIED_CODE = 202;
     const TEST_DEVICE_ID = 0;
     const TEST_DRIVER_UID = 'testDriverUid';
 
@@ -33,7 +33,6 @@ export default function DeviceManagerSysApiNormalJsNdkTest() {
           return true;
       }
       console.info("Test USB device is not connected");
-      expect(true).assertTrue();
       if (typeof(done) === 'function') {
         done();
       }
@@ -76,7 +75,7 @@ export default function DeviceManagerSysApiNormalJsNdkTest() {
       } catch (err) {
         console.info(TAG, 'testSystemApiQueryDeviceInfoNormal001 catch err code: ',
           err.code, ', message: ', err.message);
-        expect(err.code).assertEqual(SYSTEMAPI_UNAVAILABLE_CODE);
+        expect(err.code).assertEqual(SYSTEMAPI_DENIED_CODE);
         done();
       }
     });
@@ -101,7 +100,7 @@ export default function DeviceManagerSysApiNormalJsNdkTest() {
       } catch (err) {
         console.info(TAG, 'testSystemApiQueryDriverInfoNormal001 catch err code: ',
           err.code, ', message: ', err.message);
-        expect(err.code).assertEqual(SYSTEMAPI_UNAVAILABLE_CODE);
+        expect(err.code).assertEqual(SYSTEMAPI_DENIED_CODE);
         done();
       }
     });

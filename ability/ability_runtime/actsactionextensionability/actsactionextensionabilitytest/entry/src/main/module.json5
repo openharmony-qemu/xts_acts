@@ -30,7 +30,7 @@
     "abilities": [
       {
         "name": "EntryAbility",
-        "srcEntry": "./ets/entryability/EntryAbility.ts",
+        "srcEntry": "./ets/entryability/EntryAbility.ets",
         "description": "$string:EntryAbility_desc",
         "icon": "$media:icon",
         "label": "$string:EntryAbility_label",
@@ -50,7 +50,7 @@
       },
       {
         "name": "OtherAbility",
-        "srcEntry": "./ets/otherability/OtherAbility.ts",
+        "srcEntry": "./ets/otherability/OtherAbility.ets",
         "description": "$string:OtherAbility_desc",
         "visible": true,
         "icon": "$media:icon",
@@ -60,7 +60,7 @@
       },
       {
         "name": "CalledAbility",
-        "srcEntry": "./ets/calledability/CalledAbility.ts",
+        "srcEntry": "./ets/calledability/CalledAbility.ets",
         "description": "$string:CalledAbility_desc",
         "visible": true,
         "icon": "$media:icon",
@@ -78,7 +78,7 @@
         "description": "UIExtAbility",
         "type": "action",
         "visible": true,
-        "srcEntrance": "./ets/UIExtensionAbility/UIExtAbility.ts"
+        "srcEntrance": "./ets/UIExtensionAbility/UIExtAbility.ets"
       },
       {
         "name": "ActsActionExtensionAbility",
@@ -86,7 +86,7 @@
         "description": "ActsActionExtensionAbility",
         "type": "action",
         "visible": true,
-        "srcEntrance": "./ets/actionextensionability/ActsActionExtensionAbility.ts"
+        "srcEntrance": "./ets/actionextensionability/ActsActionExtensionAbility.ets"
       }
     ],
     "requestPermissions": [

@@ -13,18 +13,18 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, Level } from '@ohos/hypium';
+import { describe, it, expect, Level } from '@ohos/hypium-dynamic';
 import commonEvent from '@ohos.commonEvent';
 import common from '@ohos.app.ability.common';
 import commonEventManager from '@ohos.commonEventManager';
 import dialogRequest from '@ohos.app.ability.dialogRequest';
 
 let subscriberInfo: commonEventManager.CommonEventSubscribeInfo = {
-  events: ["ACTS_REQUEST_DIALOG_EVENT1", "ACTS_REQUEST_DIALOG_EVENT2"]
+  events: ['ACTS_REQUEST_DIALOG_EVENT1', 'ACTS_REQUEST_DIALOG_EVENT2']
 };
 
 const CASE_TIMEOUT = 3000;
-console.info("====>in Ability.test====>");
+console.info('====>in Ability.test====>');
 
 function sleep(time: number) {
   return new Promise<void>((resolve) => setTimeout(resolve, time));
@@ -32,7 +32,7 @@ function sleep(time: number) {
 
 export default function abilityTest() {
   describe('ActsRequestDialogTest', () => {
-    console.info("====>in ActsRequestDialogTest====>");
+    console.info('====>in ActsRequestDialogTest====>');
     /**
      * @tc.name   ACTS_requestDialog_0100
      * @tc.number ACTS_requestDialog_0100
@@ -48,34 +48,40 @@ export default function abilityTest() {
       let resultCode: dialogRequest.ResultCode;
 
       commonEvent.createSubscriber(subscriberInfo).then(async (data) => {
-        console.info("====>ACTS_requestDialog_0100 Create Subscriber====>");
+        console.info('====>ACTS_requestDialog_0100 Create Subscriber====>');
         subscriber = data;
         commonEvent.subscribe(subscriber, async (err, data) => {
-          console.info("====>ACTS_requestDialog_0100 Subscribe CallBack data:====>" + JSON.stringify(data));
-          if (data.event == "ACTS_REQUEST_DIALOG_EVENT1") {
+          if (err) {
+            console.error(JSON.stringify(err));
+          }
+          console.info('====>ACTS_requestDialog_0100 Subscribe CallBack data:====>' + JSON.stringify(data));
+          if (data.event == 'ACTS_REQUEST_DIALOG_EVENT1') {
             console.info('====> ACTS_startRecent_0100 ACTS_StartAbility_CommonEvent1 success=====>');
             await sleep(500);
             console.info('====> ACTS_requestDialog_0100 processInfoCheck=====>');
-            expect(AppStorage.get<boolean>("requestDialogSuccess")!).assertTrue();
-            expect(AppStorage.get<boolean>("validRequestInfo")!).assertTrue();
-            expect(AppStorage.get<boolean>("validRequestCallback")!).assertTrue();
+            expect(AppStorage.get<boolean>('requestDialogSuccess')!).assertTrue();
+            expect(AppStorage.get<boolean>('validRequestInfo')!).assertTrue();
+            expect(AppStorage.get<boolean>('validRequestCallback')!).assertTrue();
             commonEvent.unsubscribe(subscriber, () => {
-              console.info("====>UnSubscribe0100 CallBack====>");
+              console.info('====>UnSubscribe0100 CallBack====>');
             });
             done();
           }
         });
         try {
-          AppStorage.get<common.UIAbilityContext>("abilityContext")!.requestDialogService(
+          AppStorage.get<common.UIAbilityContext>('abilityContext')!.requestDialogService(
             {
               bundleName: 'com.acts.example.requestdialog',
               abilityName: 'com.acts.example.requestdialog.MainAbility2',
             }, (err, data) => {
-            console.info("====>ACTS_requestDialog_0100 request end + data:" + JSON.stringify(data));
+            if (err) {
+              console.error(JSON.stringify(err));
+            }
+            console.info('====>ACTS_requestDialog_0100 request end + data:' + JSON.stringify(data));
             resultCode = data.result;
           })
         } catch (paramError) {
-          console.info("====>ACTS_requestDialog_0100 requestDialogSerivce paramError====>");
+          console.info('====>ACTS_requestDialog_0100 requestDialogSerivce paramError====>');
         }
       })
 
@@ -100,39 +106,42 @@ export default function abilityTest() {
       let id: number;
       let resultCode: dialogRequest.ResultCode;
       commonEvent.createSubscriber(subscriberInfo).then(async (data) => {
-        console.info("====>ACTS_requestDialog_0200 Create Subscriber====>");
+        console.info('====>ACTS_requestDialog_0200 Create Subscriber====>');
         subscriber = data;
         commonEvent.subscribe(subscriber, async (err, data) => {
-          console.info("====>ACTS_requestDialog_0200 Subscribe CallBack data:====>" + JSON.stringify(data));
-          if (data.event == "ACTS_REQUEST_DIALOG_EVENT1") {
+          if (err) {
+            console.error(JSON.stringify(err));
+          }
+          console.info('====>ACTS_requestDialog_0200 Subscribe CallBack data:====>' + JSON.stringify(data));
+          if (data.event == 'ACTS_REQUEST_DIALOG_EVENT1') {
             console.info('====> ACTS_requestDialog_0200 ACTS_StartAbility_CommonEvent1 success=====>');
             await sleep(500);
             console.info('====> ACTS_requestDialog_0200 processInfoCheck=====>');
-            expect(AppStorage.get<boolean>("requestDialogSuccess")!).assertTrue();
-            expect(AppStorage.get<boolean>("validRequestInfo")!).assertTrue();
-            expect(AppStorage.get<boolean>("validRequestCallback")!).assertTrue();
-            expect(typeof AppStorage.get<number>("windowRectLeft")!).assertEqual('number');
-            expect(typeof AppStorage.get<number>("windowRectTop")!).assertEqual('number');
-            expect(typeof AppStorage.get<number>("windowRectWidth")!).assertEqual('number');
-            expect(typeof AppStorage.get<number>("windowRectHeight")!).assertEqual('number');
+            expect(AppStorage.get<boolean>('requestDialogSuccess')!).assertTrue();
+            expect(AppStorage.get<boolean>('validRequestInfo')!).assertTrue();
+            expect(AppStorage.get<boolean>('validRequestCallback')!).assertTrue();
+            expect(typeof AppStorage.get<number>('windowRectLeft')!).assertEqual('number');
+            expect(typeof AppStorage.get<number>('windowRectTop')!).assertEqual('number');
+            expect(typeof AppStorage.get<number>('windowRectWidth')!).assertEqual('number');
+            expect(typeof AppStorage.get<number>('windowRectHeight')!).assertEqual('number');
             commonEvent.unsubscribe(subscriber, () => {
-              console.info("====>UnSubscribe0200 CallBack====>");
+              console.info('====>UnSubscribe0200 CallBack====>');
             });
             done();
           }
         });
         try {
-          await AppStorage.get<common.UIAbilityContext>("abilityContext")!.requestDialogService(
+          await AppStorage.get<common.UIAbilityContext>('abilityContext')!.requestDialogService(
             {
               bundleName: 'com.acts.example.requestdialog',
               abilityName: 'com.acts.example.requestdialog.MainAbility2',
             })
             .then((data) => {
-              console.info("====>ACTS_requestDialog_0200 request end + data:" + JSON.stringify(data));
+              console.info('====>ACTS_requestDialog_0200 request end + data:' + JSON.stringify(data));
               resultCode = data.result;
             })
         } catch (paramError) {
-          console.info("====>ACTS_requestDialog_0200 requestDialogSerivce paramError====>");
+          console.info('====>ACTS_requestDialog_0200 requestDialogSerivce paramError====>');
         }
       })
 

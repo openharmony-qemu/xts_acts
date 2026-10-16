@@ -12,7 +12,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic';
 import * as tolowercase_compare_helper from './tolowercase_compare_helper';
 import * as tolowercase_exception_helper from './tolowercase_exception_helper';
 import * as tolowercase_practical_helper from './tolowercase_practical_helper';

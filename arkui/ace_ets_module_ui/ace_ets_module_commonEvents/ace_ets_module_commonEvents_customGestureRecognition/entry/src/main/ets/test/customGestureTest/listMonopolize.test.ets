@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import {
@@ -31,6 +31,7 @@ import {
   PointerMatrix
 } from '@ohos.UiTest';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function ListMonopolize() {
   describe('ListMonopolize', () => {
     beforeEach(async (done: Function) => {
@@ -73,7 +74,7 @@ export default function ListMonopolize() {
       let driver = Driver.create();
       let column = await driver.findComponent(ON.id('column'));
       await column.click();
-      await driver.mouseScroll({x: Math.round(globalThis.winLeft + vp2px(200)), y: Math.round(globalThis.winTop  + vp2px(200))}, true, 30, 2072, 20);
+      await driver.mouseScroll({x: Math.round(globalThis.winLeft + vp2px(200)), y: Math.round(globalThis.winTop  + vp2px(200)), displayId: displayID}, true, 30, 2072, 20);
       await CommonFunc.sleep(200);
       let strJson = getInspectorByKey('listText');
       console.info("[ListMonopolize_001] component obj is: " + JSON.stringify(JSON.parse(strJson)));

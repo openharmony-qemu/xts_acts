@@ -13,15 +13,15 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium-dynamic';
 // 加载js测试框架
 import { common, sendableContextManager, StartOptions, WantAgent, wantAgent ,wantConstant,contextConstant,startupManager,
   Want} from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { BusinessError ,systemParameterEnhance } from '@kit.BasicServicesKit';
+import { BusinessError, systemParameterEnhance, commonEventManager } from '@kit.BasicServicesKit';
 import { rpc } from '@kit.IPCKit';
 import Utils from './Utils';
-import { commonEventManager } from '@kit.BasicServicesKit';
+
 import { fileUri } from '@kit.CoreFileKit';
 import {Driver,ON, Component} from '@ohos.UiTest'
 

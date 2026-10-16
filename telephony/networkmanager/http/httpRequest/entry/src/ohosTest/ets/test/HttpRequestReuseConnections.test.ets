@@ -1,4 +1,4 @@
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { http } from '@kit.NetworkKit';
 import connection from '@ohos.net.connection';
@@ -69,10 +69,10 @@ export default function HttpRequestReuseConnectionsTest() {
                         done();
                       } else {
                         console.info(`${caseName} options is `+JSON.stringify(options));
-                        ExpectTrue(options.reuseConnections == true);
+                        ExpectTrue(options.reuseConnections === true);
                         console.info(`${caseName} secondResponse performanceTiming ${JSON.stringify(data?.performanceTiming)}`);
                         console.info(`${caseName} secondResponse tcpTiming ${data?.performanceTiming.tcpTiming}`);
-                        ExpectTrue(data?.performanceTiming.tcpTiming == 0);
+                        ExpectTrue(data?.performanceTiming.tcpTiming === 0);
                         httpRequest.destroy();
                         done();
                       }
@@ -137,7 +137,7 @@ export default function HttpRequestReuseConnectionsTest() {
                         done();
                       } else {
                         console.info(`${caseName} options is `+JSON.stringify(options));
-                        ExpectTrue(options.reuseConnections == false);
+                        ExpectTrue(options.reuseConnections === false);
                         console.info(`${caseName} secondResponse performanceTiming ${JSON.stringify(data?.performanceTiming)}`);
                         console.info(`${caseName} secondResponse tcpTiming ${data?.performanceTiming.tcpTiming}`);
                         ExpectTrue(data?.performanceTiming.tcpTiming > 0);
@@ -205,10 +205,10 @@ export default function HttpRequestReuseConnectionsTest() {
                         done();
                       } else {
                         console.info(`${caseName} options is `+JSON.stringify(options));
-                        ExpectTrue(options.reuseConnections == undefined);
+                        ExpectTrue(options.reuseConnections === undefined);
                         console.info(`${caseName} secondResponse performanceTiming ${JSON.stringify(data?.performanceTiming)}`);
                         console.info(`${caseName} secondResponse tcpTiming ${data?.performanceTiming.tcpTiming}`);
-                        ExpectTrue(data?.performanceTiming.tcpTiming == 0);
+                        ExpectTrue(data?.performanceTiming.tcpTiming === 0);
                         httpRequest.destroy();
                         done();
                       }
@@ -264,10 +264,10 @@ export default function HttpRequestReuseConnectionsTest() {
             const secondRequest: () => void = () => {
               httpRequest.request(XTS_TEST_HTTP_URL,options).then((data: http.HttpResponse) => {
                 console.info(`${caseName} options is `+JSON.stringify(options));
-                ExpectTrue(options.reuseConnections == true);
+                ExpectTrue(options.reuseConnections === true);
                 console.info(`${caseName} secondResponse performanceTiming ${JSON.stringify(data?.performanceTiming)}`);
                 console.info(`${caseName} secondResponse tcpTiming ${data?.performanceTiming.tcpTiming}`);
-                ExpectTrue(data?.performanceTiming.tcpTiming == 0);
+                ExpectTrue(data?.performanceTiming.tcpTiming === 0);
                 httpRequest.destroy();
                 done();
               }).catch((err: Error) => {
@@ -327,7 +327,7 @@ export default function HttpRequestReuseConnectionsTest() {
             const secondRequest: () => void = () => {
               httpRequest.request(XTS_TEST_HTTP_URL,options).then((data: http.HttpResponse) => {
                 console.info(`${caseName} options is `+JSON.stringify(options));
-                ExpectTrue(options.reuseConnections == false);
+                ExpectTrue(options.reuseConnections === false);
                 console.info(`${caseName} secondResponse performanceTiming ${JSON.stringify(data?.performanceTiming)}`);
                 console.info(`${caseName} secondResponse tcpTiming ${data?.performanceTiming.tcpTiming}`);
                 ExpectTrue(data?.performanceTiming.tcpTiming > 0);
@@ -390,10 +390,10 @@ export default function HttpRequestReuseConnectionsTest() {
             const secondRequest: () => void = () => {
               httpRequest.request(XTS_TEST_HTTP_URL,options).then((data: http.HttpResponse) => {
                 console.info(`${caseName} options is `+JSON.stringify(options));
-                ExpectTrue(options.reuseConnections == undefined);
+                ExpectTrue(options.reuseConnections === undefined);
                 console.info(`${caseName} secondResponse performanceTiming ${JSON.stringify(data?.performanceTiming)}`);
                 console.info(`${caseName} secondResponse tcpTiming ${data?.performanceTiming.tcpTiming}`);
-                ExpectTrue(data?.performanceTiming.tcpTiming == 0);
+                ExpectTrue(data?.performanceTiming.tcpTiming === 0);
                 httpRequest.destroy();
                 done();
               }).catch((err: Error) => {

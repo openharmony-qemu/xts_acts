@@ -422,16 +422,6 @@ napi_value WindowManagerErrorCodeDeviceNotSupported(napi_env env, napi_callback_
     return GetAllWindowLayoutInfoListOkOrDeviceNotSupported(env, info);
 }
 
-napi_value WindowManagerErrorCodeInvalidWindowId(napi_env env, napi_callback_info info)
-{
-    napi_value retValue = 0;
-    OH_NativeWindowManager_KeyEventFilter filter;
-    auto result = OH_NativeWindowManager_RegisterKeyEventFilter(-1, filter) ==
-                  INVAILD_WINDOW_ID ? INVAILD_WINDOW_ID : OK;
-    napi_create_int32(env, result, &retValue);
-    return retValue;
-}
-
 napi_value WindowManagerErrorCodeStateAbnormal(napi_env env, napi_callback_info info)
 {
     std::random_device randomNumber; // 随机数种子生成器
@@ -575,6 +565,18 @@ bool MouseEventFilter(Input_MouseEvent* mouseEvent)
     return flag;
 }
 
+napi_value RegisterMouseEventFilterInvalidParam(napi_env env, napi_callback_info info)
+{
+    napi_value retValue = 0;
+    int32_t result = OH_NativeWindowManager_RegisterMouseEventFilter(g_mainWindowId, nullptr) ==
+            WINDOW_MANAGER_ERRORCODE_INVALID_PARAM ? WINDOW_MANAGER_ERRORCODE_INVALID_PARAM :
+            OK;
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+                 "RegisterMouseEventFilterInvalidParam: %{public}d", result);
+    napi_create_int32(env, result, &retValue);
+    return retValue;
+}
+
 napi_value UnregisterMouseEventFilterOkOrServiceError(napi_env env, napi_callback_info info)
 {
     napi_value retValue = 0;
@@ -595,7 +597,7 @@ napi_value UnregisterMouseEventFilterOkOrServiceError(napi_env env, napi_callbac
 napi_value UnregisterMouseEventFilterInvaildWindowId(napi_env env, napi_callback_info info)
 {
     napi_value retValue = 0;
-    int32_t result = OH_NativeWindowManager_UnregisterTouchEventFilter(g_mainWindowId + 999);
+    int32_t result = OH_NativeWindowManager_UnregisterMouseEventFilter(g_mainWindowId + 999);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
                  "UnregisterMouseEventFilterInvaildWindowId: %{public}d", result);
     if (result == INVAILD_WINDOW_ID) {
@@ -629,17 +631,10 @@ napi_value RegisterTouchEventFilterOkOrServiceError(napi_env env, napi_callback_
 napi_value RegisterTouchEventFilterInvaildWindowId(napi_env env, napi_callback_info info)
 {
     napi_value retValue = 0;
-    int32_t result = OH_NativeWindowManager_UnregisterTouchEventFilter(g_mainWindowId + 999);
+    int32_t result = OH_NativeWindowManager_RegisterTouchEventFilter(g_mainWindowId + 999, TouchEventFilter);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
                  "RegisterTouchEventFilterInvaildWindowId: %{public}d", result);
-    if (result == INVAILD_WINDOW_ID) {
-        napi_create_int32(env, 1, &retValue);
-        return retValue;
-    } else if (result == SERVICE_ERROR) {
-        napi_create_int32(env, 1, &retValue);
-        return retValue;
-    }
-    napi_create_int32(env, PARAM_NEGATIVE_1, &retValue);
+    napi_create_int32(env, result, &retValue);
     return retValue;
 }
 
@@ -649,6 +644,18 @@ bool TouchEventFilter(Input_TouchEvent* touchEvent)
     std::mt19937 mt(randomNumber()); // 随机数生成器
     bool flag = mt() % 2;
     return flag;
+}
+
+napi_value RegisterTouchEventFilterInvalidParam(napi_env env, napi_callback_info info)
+{
+    napi_value retValue = 0;
+    int32_t result = OH_NativeWindowManager_RegisterTouchEventFilter(g_mainWindowId, nullptr) ==
+            WINDOW_MANAGER_ERRORCODE_INVALID_PARAM ? WINDOW_MANAGER_ERRORCODE_INVALID_PARAM :
+            OK;
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+                 "RegisterTouchEventFilterInvalidParam: %{public}d", result);
+    napi_create_int32(env, result, &retValue);
+    return retValue;
 }
 
 napi_value UnregisterTouchEventFilterOkOrServiceError(napi_env env, napi_callback_info info)
@@ -1359,4 +1366,77 @@ napi_value TestUnlockCursor(napi_env env, napi_callback_info info)
     }
     return retValue;
 }
+
+napi_value RegisterKeyEventFilterOkOrServiceError(napi_env env, napi_callback_info info)
+{
+    napi_value retValue = 0;
+    int32_t result = OH_NativeWindowManager_RegisterKeyEventFilter(g_mainWindowId, KeyEventFilter);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+                 "RegisterKeyEventFilterOkOrServiceError: %{public}d", result);
+    if (result == OK) {
+        napi_create_int32(env, 1, &retValue);
+        return retValue;
+    } else if (result == SERVICE_ERROR) {
+        napi_create_int32(env, 1, &retValue);
+        return retValue;
+    }
+    napi_create_int32(env, PARAM_NEGATIVE_1, &retValue);
+    return retValue;
+}
+
+napi_value RegisterKeyEventFilterInvalidWindowId(napi_env env, napi_callback_info info)
+{
+    napi_value retValue = 0;
+    int32_t result = OH_NativeWindowManager_RegisterKeyEventFilter(-1, KeyEventFilter);
+    napi_create_int32(env, result, &retValue);
+    return retValue;
+}
+
+bool KeyEventFilter(Input_KeyEvent *event)
+{
+    std::random_device randomNumber; // 随机数种子生成器
+    std::mt19937 mt(randomNumber()); // 随机数生成器
+    bool flag = mt() % 2;
+    return flag;
+}
+
+napi_value RegisterKeyEventFilterInvalidParam(napi_env env, napi_callback_info info)
+{
+    napi_value retValue = 0;
+    int32_t result = OH_NativeWindowManager_RegisterKeyEventFilter(g_mainWindowId, nullptr) ==
+            WINDOW_MANAGER_ERRORCODE_INVALID_PARAM ? WINDOW_MANAGER_ERRORCODE_INVALID_PARAM :
+            OK;
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+                 "RegisterKeyEventFilterInvalidParam: %{public}d", result);
+    napi_create_int32(env, result, &retValue);
+    return retValue;
+}
+
+napi_value UnregisterKeyEventFilterOkOrServiceError(napi_env env, napi_callback_info info)
+{
+    napi_value retValue = 0;
+    int32_t result = OH_NativeWindowManager_UnregisterKeyEventFilter(g_mainWindowId);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+                 "UnregisterKeyEventFilterOkOrServiceError: %{public}d", result);
+    if (result == OK) {
+        napi_create_int32(env, 1, &retValue);
+        return retValue;
+    } else if (result == SERVICE_ERROR) {
+        napi_create_int32(env, 1, &retValue);
+        return retValue;
+    }
+    napi_create_int32(env, PARAM_NEGATIVE_1, &retValue);
+    return retValue;
+}
+
+napi_value UnregisterKeyEventFilterInvalidWindowId(napi_env env, napi_callback_info info)
+{
+    napi_value retValue = 0;
+    int32_t result = OH_NativeWindowManager_UnregisterKeyEventFilter(-1);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+                 "UnregisterKeyEventFilterInvalidWindowId: %{public}d", result);
+    napi_create_int32(env, result, &retValue);
+    return retValue;
+}
+
 }

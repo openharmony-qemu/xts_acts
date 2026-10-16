@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, afterEach, it, expect, Level } from '@ohos/hypium'
+import { describe, beforeAll, afterEach, it, expect, Level } from '@ohos/hypium-dynamic'
 import commonEvent from '@ohos.commonEvent'
 import missionManager from '@ohos.application.missionManager'
 import { BusinessError } from '@ohos.base';
@@ -22,18 +22,18 @@ import common from '@ohos.app.ability.common';
 import { Caller } from '@ohos.app.ability.UIAbility';
 import rpc from '@ohos.rpc'
 
-let sysABundleName = "com.example.systemcalltest";
-let sysASecondAbilityName = "com.example.systemcalltest.SecondAbility";
+let sysABundleName = 'com.example.systemcalltest';
+let sysASecondAbilityName = 'com.example.systemcalltest.SecondAbility';
 
-let systemAppCalleeABundleName = "com.example.systemappcalleea";
-let systemAppCalleeAMainAbilityName = "com.example.systemappcalleea.MainAbility";
-let systemAppCalleeASecondAbilityName = "com.example.systemappcalleea.SecondAbility";
-let systemAppCalleeAThirdAbilityName = "com.example.systemappcalleea.ThirdAbility";
+let systemAppCalleeABundleName = 'com.example.systemappcalleea';
+let systemAppCalleeAMainAbilityName = 'com.example.systemappcalleea.MainAbility';
+let systemAppCalleeASecondAbilityName = 'com.example.systemappcalleea.SecondAbility';
+let systemAppCalleeAThirdAbilityName = 'com.example.systemappcalleea.ThirdAbility';
 
-let thirdAppABundleName = "com.example.thirdappa";
-let thirdAppAMainAbilityName = "com.example.thirdappa.MainAbility";
+let thirdAppABundleName = 'com.example.thirdappa';
+let thirdAppAMainAbilityName = 'com.example.thirdappa.MainAbility';
 let subscriberInfo:commonEventManager.CommonEventSubscribeInfo = {
-  events: ["CallTest"],
+  events: ['CallTest'],
 };
 let caseDepBundles:string[];
 let subscriber:commonEventManager.CommonEventSubscriber | null = null;
@@ -45,9 +45,9 @@ const ERROR_CODE_INNER_ERROR = 16000050;
 const ERROR_CODE_TYPE_ERROR = 16000002;
 
 class MySequenceable {
-  num: number = 0;
-  str: string = "default";
-  result: string = "default";
+  public num: number = 0;
+  public str: string = 'default';
+  public result: string = 'default';
 
   constructor(num:number, string:string, result:string) {
     this.num = num;
@@ -78,6 +78,19 @@ class MySequenceable {
 
 export default function abilityTest() {
   describe('ActsAbilityTest', () => {
+
+    beforeAll(async (done: Function) => {
+      try {
+        await globalThis.abilityContext.startAbility({
+          bundleName: 'com.example.systemcalltest',
+          abilityName: 'com.example.systemcalltest.MainAbility',
+          moduleName: 'entry_test',
+        });
+      } catch (err) {
+        console.log('beforeAll startAbility MainAbility err: ' + JSON.stringify(err));
+      }
+      done();
+    })
 
     afterEach(async (done:Function) => {
       if (subscriber != null) {
@@ -153,13 +166,13 @@ export default function abilityTest() {
         caller.release();
       });
 
-      let caller:Caller =  await globalThis.globalThis.abilityContext.startAbilityByCall({
+      let caller:Caller =  await globalThis.abilityContext.startAbilityByCall({
         bundleName: systemAppCalleeABundleName,
         abilityName: systemAppCalleeAMainAbilityName,
       });
 
       caller.onRelease(releaseCallback);
-      let param = new MySequenceable(300, "ACTS_CommonComponent_Call_0300", 'default');
+      let param = new MySequenceable(300, 'ACTS_CommonComponent_Call_0300', 'default');
       caller.call('testCall', param).then(() => {
         console.log('ACTS_CommonComponent_Call_0300 call success');
       }).catch((err:BusinessError) => {
@@ -186,13 +199,13 @@ export default function abilityTest() {
         done();
       }
 
-      let caller:Caller =  await globalThis.globalThis.abilityContext.startAbilityByCall({
+      let caller:Caller =  await globalThis.abilityContext.startAbilityByCall({
         bundleName: systemAppCalleeABundleName,
         abilityName: systemAppCalleeAMainAbilityName,
       });
 
       caller.onRelease(releaseCallback);
-      let param = new MySequenceable(400, "ACTS_CommonComponent_Call_0400", 'default');
+      let param = new MySequenceable(400, 'ACTS_CommonComponent_Call_0400', 'default');
       caller.callWithResult('testCallWithResult', param).then((data) => {
         console.log('ACTS_CommonComponent_Call_0400 call success');
         let result = new MySequenceable(0, '', '');
@@ -246,18 +259,18 @@ export default function abilityTest() {
         caller2.release();
       });
 
-      caller1 = await globalThis.globalThis.abilityContext.startAbilityByCall({
+      caller1 = await globalThis.abilityContext.startAbilityByCall({
         bundleName: systemAppCalleeABundleName,
         abilityName: systemAppCalleeAMainAbilityName,
       });
 
-      caller2 = await globalThis.globalThis.abilityContext.startAbilityByCall({
+      caller2 = await globalThis.abilityContext.startAbilityByCall({
         bundleName: systemAppCalleeABundleName,
         abilityName: systemAppCalleeASecondAbilityName,
       });
 
       caller2.onRelease(releaseCallback);
-      let param = new MySequenceable(500, "ACTS_CommonComponent_Call_0500", 'default');
+      let param = new MySequenceable(500, 'ACTS_CommonComponent_Call_0500', 'default');
       caller2.call('testCall', param).then(() => {
         console.log('ACTS_CommonComponent_Call_0500 call success');
       }).catch((err:BusinessError) => {
@@ -285,17 +298,17 @@ export default function abilityTest() {
         done();
       }
 
-      let caller1:Caller = await globalThis.globalThis.abilityContext.startAbilityByCall({
+      let caller1:Caller = await globalThis.abilityContext.startAbilityByCall({
         bundleName: systemAppCalleeABundleName,
         abilityName: systemAppCalleeAMainAbilityName,
       });
-      let caller2:Caller = await globalThis.globalThis.abilityContext.startAbilityByCall({
+      let caller2:Caller = await globalThis.abilityContext.startAbilityByCall({
         bundleName: systemAppCalleeABundleName,
         abilityName: systemAppCalleeASecondAbilityName,
       });
 
       caller2.onRelease(releaseCallback);
-      let param = new MySequenceable(600, "ACTS_CommonComponent_Call_0600", 'default');
+      let param = new MySequenceable(600, 'ACTS_CommonComponent_Call_0600', 'default');
       caller2.callWithResult('testCallWithResult', param).then((data:rpc.MessageSequence) => {
         console.log('ACTS_CommonComponent_Call_0600 call success');
         let result = new MySequenceable(0, '', '');
@@ -340,20 +353,23 @@ export default function abilityTest() {
         expect(data).assertEqual('release');
         console.log('ACTS_CommonComponent_Call_0700 releaseCallBack1' + data);
         setTimeout(() => {
-          globalThis.globalThis.abilityContext.startAbilityByCall({
+          globalThis.abilityContext.startAbilityByCall({
             bundleName: systemAppCalleeABundleName,
             abilityName: systemAppCalleeASecondAbilityName,
           }).then((data:Caller) => {
             caller = data;
             console.log('ACTS_CommonComponent_Call_0700 caller get')
             caller.onRelease(releaseCallback);
-            let param = new MySequenceable(700, "ACTS_CommonComponent_Call_0700", 'default');
+            let param = new MySequenceable(700, 'ACTS_CommonComponent_Call_0700', 'default');
             caller.call('testCall', param).then(() => {
               console.log('ACTS_CommonComponent_Call_0700 call success');
             }).catch((err:BusinessError) => {
               console.log('ACTS_CommonComponent_Call_0700 call exception' + err);
               expect().assertFail();
             })
+          }).catch((err: BusinessError) => {
+            console.log('ACTS_CommonComponent_Call_0700 startAbilityByCall exception' + err);
+            expect().assertFail();
           })
         }, 100);
       }
@@ -369,7 +385,7 @@ export default function abilityTest() {
         caller.release();
       });
 
-      globalThis.globalThis.abilityContext.startAbilityByCall({
+      globalThis.abilityContext.startAbilityByCall({
         bundleName: systemAppCalleeABundleName,
         abilityName: systemAppCalleeASecondAbilityName,
       }).then((data:Caller) => {
@@ -377,6 +393,9 @@ export default function abilityTest() {
         console.log('ACTS_CommonComponent_Call_0700 caller get')
         caller.onRelease(releaseCallback1);
         caller.release();
+      }).catch((err: BusinessError) => {
+        console.log('ACTS_CommonComponent_Call_0700 startAbilityByCall exception' + err);
+        expect().assertFail();
       })
     })
 
@@ -403,13 +422,13 @@ export default function abilityTest() {
         expect(data).assertEqual('release');
         console.log('ACTS_CommonComponent_Call_0800 releaseCallBack' + data);
         setTimeout(() => {
-          globalThis.globalThis.abilityContext.startAbilityByCall({
+          globalThis.abilityContext.startAbilityByCall({
             bundleName: systemAppCalleeABundleName,
             abilityName: systemAppCalleeASecondAbilityName,
           }).then((data:Caller) => {
             caller = data;
             caller.onRelease(releaseCallback);
-            let param = new MySequenceable(800, "ACTS_CommonComponent_Call_0800", 'default');
+            let param = new MySequenceable(800, 'ACTS_CommonComponent_Call_0800', 'default');
             caller.callWithResult('testCallWithResult', param).then((data) => {
               console.log('ACTS_CommonComponent_Call_0800 call success');
               let result = new MySequenceable(0, '', '');
@@ -423,11 +442,14 @@ export default function abilityTest() {
               expect().assertFail();
               caller.release();
             })
+          }).catch((err: BusinessError) => {
+            console.log('ACTS_CommonComponent_Call_0800 startAbilityByCall exception' + err);
+            expect().assertFail();
           });
         }, 100);
       }
 
-      globalThis.globalThis.abilityContext.startAbilityByCall({
+      globalThis.abilityContext.startAbilityByCall({
         bundleName: systemAppCalleeABundleName,
         abilityName: systemAppCalleeASecondAbilityName,
       }).then((data:Caller) => {
@@ -435,6 +457,9 @@ export default function abilityTest() {
         console.log('ACTS_CommonComponent_Call_0800 caller get')
         caller.onRelease(releaseCallback1);
         caller.release();
+      }).catch((err: BusinessError) => {
+        console.log('ACTS_CommonComponent_Call_0800 startAbilityByCall exception' + err);
+        expect().assertFail();
       })
     })
 
@@ -473,13 +498,13 @@ export default function abilityTest() {
         console.log('AMS_CallTest_0900 do release');
         caller.release();
       });
-      caller = await globalThis.globalThis.abilityContext.startAbilityByCall({
+      caller = await globalThis.abilityContext.startAbilityByCall({
         bundleName: thirdAppABundleName,
         abilityName: thirdAppAMainAbilityName,
       });
 
       caller.onRelease(releaseCallback);
-      let param = new MySequenceable(900, "ACTS_CommonComponent_Call_0900", 'default');
+      let param = new MySequenceable(900, 'ACTS_CommonComponent_Call_0900', 'default');
       caller.call('testCall', param).then(() => {
         console.log('ACTS_CommonComponent_Call_0900 call success');
       }).catch((err:BusinessError) => {
@@ -507,13 +532,13 @@ export default function abilityTest() {
         done();
       }
 
-      caller = await globalThis.globalThis.abilityContext.startAbilityByCall({
+      caller = await globalThis.abilityContext.startAbilityByCall({
         bundleName: thirdAppABundleName,
         abilityName: thirdAppAMainAbilityName,
       });
 
       caller.onRelease(releaseCallback);
-      let param = new MySequenceable(1000, "ACTS_CommonComponent_Call_1000", 'default');
+      let param = new MySequenceable(1000, 'ACTS_CommonComponent_Call_1000', 'default');
       caller.callWithResult('testCallWithResult', param).then((data:rpc.MessageSequence) => {
         console.log('ACTS_CommonComponent_Call_1000 call success');
         let result = new MySequenceable(0, '', '');
@@ -541,7 +566,7 @@ export default function abilityTest() {
       console.log('ACTS_CommonComponent_Call_1700 begin');
       let exceptionFlag = false;
 
-      await globalThis.globalThis.abilityContext.startAbilityByCall({
+      await globalThis.abilityContext.startAbilityByCall({
         bundleName: systemAppCalleeABundleName,
         abilityName: systemAppCalleeAThirdAbilityName,
       }).then((data:Caller) => {
@@ -732,7 +757,7 @@ export default function abilityTest() {
       console.log('ACTS_CommonComponent_Call_4300 begin');
       let finishFlag = 0;
       try {
-        globalThis.callee.on('testCall', "");
+        globalThis.callee.on('testCall', '');
       } catch (err) {
         console.log('ACTS_CommonComponent_Call_4300 call err.code: ' + JSON.stringify(err.code) +
           ' err.msg: ' + JSON.stringify(err.message));
@@ -804,12 +829,12 @@ export default function abilityTest() {
       console.log('ACTS_CommonComponent_Call_5000 begin');
       let finishFlag = 0;
 
-      let testCallback_5100 = ():void => {
+      let testcallback5100 = ():void => {
         console.log('ACTS_CommonComponent_Call_5000 testCallback');
       }
 
       try {
-        globalThis.callee.on('ACTS_CommonComponent_Call_5000', testCallback_5100);
+        globalThis.callee.on('ACTS_CommonComponent_Call_5000', testcallback5100);
       } catch (err) {
         console.log('ACTS_CommonComponent_Call_5000 call err' + err);
         expect().assertFail();
@@ -817,7 +842,7 @@ export default function abilityTest() {
         done();
       }
       try {
-        globalThis.callee.on('ACTS_CommonComponent_Call_5000', testCallback_5100);
+        globalThis.callee.on('ACTS_CommonComponent_Call_5000', testcallback5100);
       } catch (err) {
         console.log('ACTS_CommonComponent_Call_5000 call err.code: ' + JSON.stringify(err.code) +
           ' err.msg: ' + JSON.stringify(err.message));
@@ -843,12 +868,12 @@ export default function abilityTest() {
       console.log('ACTS_CommonComponent_Call_5100 begin');
       let finishFlag = 0;
 
-      let testCallback_5100 = ():void => {
+      let testcallback5100 = ():void => {
         console.log('ACTS_CommonComponent_Call_5100 testCallback');
       }
 
       try {
-        globalThis.callee.on('ACTS_CommonComponent_Call_5100', testCallback_5100);
+        globalThis.callee.on('ACTS_CommonComponent_Call_5100', testcallback5100);
         globalThis.callee.off('ACTS_CommonComponent_Call_5100');
       } catch (err) {
         console.log('ACTS_CommonComponent_Call_5100 first step err' + err);
@@ -883,7 +908,7 @@ export default function abilityTest() {
       let exceptionFlag = false;
 
 
-      await globalThis.globalThis.abilityContext.startAbilityByCall(null)
+      await globalThis.abilityContext.startAbilityByCall(null)
         .then((data:Caller) => {
           expect().assertFail();
           done();
@@ -910,9 +935,9 @@ export default function abilityTest() {
       console.log('ACTS_CommonComponent_Call_5300 begin');
       let exceptionFlag = false;
 
-      await globalThis.globalThis.abilityContext.startAbilityByCall({
-        bundleName: "",
-        abilityName: "",
+      await globalThis.abilityContext.startAbilityByCall({
+        bundleName: '',
+        abilityName: '',
       }).then((data:Caller) => {
         expect().assertFail();
         done();
@@ -939,7 +964,7 @@ export default function abilityTest() {
       console.log('ACTS_CommonComponent_Call_5400 begin');
       let exceptionFlag = false;
 
-      await globalThis.globalThis.abilityContext.startAbilityByCall(undefined)
+      await globalThis.abilityContext.startAbilityByCall(undefined)
         .then((data:Caller) => {
           expect().assertFail();
           done();
@@ -967,18 +992,18 @@ export default function abilityTest() {
 
       let releaseCallback = (data:string):void => {
         console.log('ACTS_CommonComponent_Call_5600 releaseCallBack:' + data);
-        expect(data).assertEqual("died");
+        expect(data).assertEqual('died');
         done();
       }
 
-      let bundleNameCallee = "com.example.systemappcalleea";
-      let abilityNameCallee = "com.example.systemappcalleea.MainAbility";
+      let bundleNameCallee = 'com.example.systemappcalleea';
+      let abilityNameCallee = 'com.example.systemappcalleea.MainAbility';
       let want:Want = {
         bundleName: bundleNameCallee,
         abilityName: abilityNameCallee,
       }
-      let caller:Caller =  await globalThis.globalThis.abilityContext.startAbilityByCall(want);
-      if (typeof caller !== "object" || caller == null) {
+      let caller:Caller =  await globalThis.abilityContext.startAbilityByCall(want);
+      if (typeof caller !== 'object' || caller == null) {
         console.log('ACTS_CommonComponent_Call_5600 startAbilityByCall fail');
         expect().assertFail();
       }
@@ -1004,14 +1029,14 @@ export default function abilityTest() {
     it('ACTS_CommonComponent_Call_6000', Level.LEVEL0, async (done:Function) => {
       console.log('ACTS_CommonComponent_Call_6000 begin');
 
-      let bundleNameCallee = "com.example.systemappcalleea";
-      let abilityNameCallee = "com.example.systemappcalleea.MainAbility";
+      let bundleNameCallee = 'com.example.systemappcalleea';
+      let abilityNameCallee = 'com.example.systemappcalleea.MainAbility';
       let want:Want = {
         bundleName: bundleNameCallee,
         abilityName: abilityNameCallee,
       }
-      let caller:Caller =  await globalThis.globalThis.abilityContext.startAbilityByCall(want);
-      if (typeof caller !== "object" || caller == null) {
+      let caller:Caller =  await globalThis.abilityContext.startAbilityByCall(want);
+      if (typeof caller !== 'object' || caller == null) {
         console.log('ACTS_CommonComponent_Call_6000 startAbilityByCall fail');
         expect().assertFail();
         done();

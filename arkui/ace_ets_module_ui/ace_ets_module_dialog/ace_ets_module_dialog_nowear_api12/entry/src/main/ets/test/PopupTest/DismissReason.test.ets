@@ -12,11 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 
 export default function DismissReasonTest() {
   describe('DismissReasonTest', () => {
@@ -57,7 +58,7 @@ export default function DismissReasonTest() {
       let button = await driver.findComponent(ON.id('DismissReason_Button'));
       await button.click();
       await CommonFunc.sleep(1000);
-      await driver.pressBack()
+      await driver.pressBack(displayID)
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('DismissReason_Button');
       let obj: ESObject = JSON.parse(strJson);

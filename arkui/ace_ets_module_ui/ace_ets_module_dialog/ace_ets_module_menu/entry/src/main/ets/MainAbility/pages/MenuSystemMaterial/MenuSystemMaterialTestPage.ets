@@ -15,7 +15,7 @@
 
 import { uiMaterial } from '@kit.ArkUI';
 import router from '@ohos.router';
-import { Size } from '@ohos/hypium';
+import { Size } from '@ohos/hypium-dynamic';
 
 @Entry
 @Component

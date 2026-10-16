@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import {
   UiComponent,
@@ -31,6 +31,7 @@ import {
 import CommonFunc from '../../MainAbility/common/Common';
 
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0;
 export default function setDistanceTest() {
   describe('setDistanceTest', () => {
     beforeEach(async (done: Function) => {
@@ -74,8 +75,8 @@ export default function setDistanceTest() {
       let column = await driver.findComponent(ON.id('column'));
       let rect = await column.getBounds();
       let center = await column.getBoundsCenter();
-      pointers.setPoint(0, 0, { x: Math.round(center.x), y: Math.round(center.y) });
-      pointers.setPoint(0, 1, { x: Math.round(rect.left), y: Math.round(center.y) });
+      pointers.setPoint(0, 0, { x: Math.round(center.x), y: Math.round(center.y), displayId: displayID });
+      pointers.setPoint(0, 1, { x: Math.round(rect.left), y: Math.round(center.y), displayId: displayID });
       await driver.injectMultiPointerAction(pointers);
       await CommonFunc.sleep(200);
       expect(AppStorage.get('positionX')).assertLess(0);
@@ -105,8 +106,8 @@ export default function setDistanceTest() {
       let column = await driver.findComponent(ON.id('column'));
       let rect = await column.getBounds();
       let center = await column.getBoundsCenter();
-      pointers.setPoint(0, 0, { x: Math.round(center.x), y: Math.round(center.y) });
-      pointers.setPoint(0, 1, { x: Math.round(rect.left), y: Math.round(center.y) });
+      pointers.setPoint(0, 0, { x: Math.round(center.x), y: Math.round(center.y), displayId: displayID });
+      pointers.setPoint(0, 1, { x: Math.round(rect.left), y: Math.round(center.y), displayId: displayID });
       await driver.injectMultiPointerAction(pointers);
       await CommonFunc.sleep(200);
       expect(AppStorage.get('positionX')).assertLess(0);
@@ -137,8 +138,8 @@ export default function setDistanceTest() {
       let column = await driver.findComponent(ON.id('column'));
       let rect = await column.getBounds();
       let center = await column.getBoundsCenter();
-      pointers.setPoint(0, 0, { x: Math.round(center.x), y: Math.round(center.y) });
-      pointers.setPoint(0, 1, { x: Math.round(rect.left), y: Math.round(center.y) });
+      pointers.setPoint(0, 0, { x: Math.round(center.x), y: Math.round(center.y), displayId: displayID });
+      pointers.setPoint(0, 1, { x: Math.round(rect.left), y: Math.round(center.y), displayId: displayID });
       await driver.injectMultiPointerAction(pointers);
       await CommonFunc.sleep(200);
       expect(AppStorage.get('positionX')).assertEqual(undefined);
@@ -170,8 +171,8 @@ export default function setDistanceTest() {
       let column = await driver.findComponent(ON.id('column'));
       let rect = await column.getBounds();
       let center = await column.getBoundsCenter();
-      pointers.setPoint(0, 0, { x: Math.round(center.x), y: Math.round(center.y) });
-      pointers.setPoint(0, 1, { x: Math.round(rect.left), y: Math.round(center.y) });
+      pointers.setPoint(0, 0, { x: Math.round(center.x), y: Math.round(center.y), displayId: displayID });
+      pointers.setPoint(0, 1, { x: Math.round(rect.left), y: Math.round(center.y), displayId: displayID });
       await driver.injectMultiPointerAction(pointers);
       await CommonFunc.sleep(200);
       expect(AppStorage.get('positionX')).assertLess(0);
@@ -206,8 +207,8 @@ export default function setDistanceTest() {
       let column = await driver.findComponent(ON.id('column'));
       let rect = await column.getBounds();
       let center = await column.getBoundsCenter();
-      pointers.setPoint(0, 0, { x: Math.round(center.x), y: Math.round(center.y) });
-      pointers.setPoint(0, 1, { x: Math.round(rect.left), y: Math.round(center.y) });
+      pointers.setPoint(0, 0, { x: Math.round(center.x), y: Math.round(center.y), displayId: displayID });
+      pointers.setPoint(0, 1, { x: Math.round(rect.left), y: Math.round(center.y), displayId: displayID });
       await driver.injectMultiPointerAction(pointers);
       await CommonFunc.sleep(200);
       expect(AppStorage.get('positionX')).assertLess(0);

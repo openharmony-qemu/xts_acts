@@ -16,7 +16,7 @@
 import common from '@ohos.app.ability.common';
 import fs from '@ohos.file.fs';
 import { sendableImage } from '@kit.ImageKit';
-import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium';
+import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium-dynamic';
 import { LOG_TAG, copyImageToSandbox, genRandomStr } from '../../common';
 
 const TAG = LOG_TAG + 'createImageSource';

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import RectValue from '../../../MainAbility/common/Rect';
 import CommonFunc from "../../../MainAbility/common/Common";
@@ -45,28 +45,37 @@ export default function ColumnSetPadding_SubChange() {
     });
 
     /**
-     * @tc.name   testColumnParentPaddingSubMarPad
-     * @tc.number SUB_ACE_COLUMN_SUBCOMPONENTCHANGED_0500
+     * @tc.name   ColumnSetPadding_SubChange_0100
+     * @tc.number SUB_ACE_ARKUI_ColumnSetPadding_SubChange_0100
      * @tc.desc   Parent component set paddding,subcomponent set paddding and margin.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testColumnParentPaddingSubMarPad',  Level.LEVEL0, async () => {
-      console.info('new testColumnParentPaddingSubMarPad START');
+    it('ColumnSetPadding_SubChange_0100',  Level.LEVEL0, async () => {
+      console.info('new ColumnSetPadding_SubChange_0100 START');
       await CommonFunc.sleep(2000);
       let columnSetPadding_1: RectValue = CommonFunc.getComponentRect('columnSetPadding_1');
       let columnSetPadding_2: RectValue = CommonFunc.getComponentRect('columnSetPadding_2');
       let columnSetPadding_3: RectValue = CommonFunc.getComponentRect('columnSetPadding_3');
       let columnSetPadding: RectValue = CommonFunc.getComponentRect('columnSetPadding');
-      expect(Math.abs(columnSetPadding_1.top - columnSetPadding.top - Math.round(vp2px(40))) <= 1).assertTrue()
-      expect(Math.abs(columnSetPadding_2.top - columnSetPadding_1.bottom - Math.round(vp2px(50))) <= 1).assertTrue()
-      expect(Math.abs(columnSetPadding_3.top - columnSetPadding_2.bottom - Math.round(vp2px(30))) <= 1).assertTrue()
       expect(columnSetPadding.bottom).assertLess(columnSetPadding_3.bottom)
-      expect(Math.abs(columnSetPadding_1.right - columnSetPadding_1.left - Math.round(vp2px(300))) <= 1).assertTrue()
-      expect(Math.abs(columnSetPadding_2.right - columnSetPadding_2.left - Math.round(vp2px(300))) <= 1).assertTrue()
-      expect(Math.abs(columnSetPadding_3.right - columnSetPadding_3.left - Math.round(vp2px(300))) <= 1).assertTrue()
-      console.info('new testColumnParentPaddingSubMarPad END');
+
+      console.info('ColumnSetPadding_SubChange_0100 chazhi1:'+ Math.floor(Math.abs((columnSetPadding_1.top - columnSetPadding.top) - vp2px(40))));
+      console.info('ColumnSetPadding_SubChange_0100 chazhi2:'+ Math.floor(Math.abs((columnSetPadding_2.top - columnSetPadding_1.bottom) - vp2px(50))));
+      console.info('ColumnSetPadding_SubChange_0100 chazhi3:'+ Math.floor(Math.abs((columnSetPadding_3.top - columnSetPadding_2.bottom) - vp2px(30))));
+      console.info('ColumnSetPadding_SubChange_0100 chazhi4:'+ Math.floor(Math.abs((columnSetPadding_1.right - columnSetPadding_1.left) - vp2px(300))));
+      console.info('ColumnSetPadding_SubChange_0100 chazhi5:'+ Math.floor(Math.abs((columnSetPadding_2.right - columnSetPadding_2.left) - vp2px(300))));
+      console.info('ColumnSetPadding_SubChange_0100 chazhi6:'+ Math.floor(Math.abs((columnSetPadding_3.right - columnSetPadding_3.left) - vp2px(300))));
+
+      expect(Math.floor(Math.abs((columnSetPadding_1.top - columnSetPadding.top) - vp2px(40))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((columnSetPadding_2.top - columnSetPadding_1.bottom) - vp2px(50))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((columnSetPadding_3.top - columnSetPadding_2.bottom) - vp2px(30))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((columnSetPadding_1.right - columnSetPadding_1.left) - vp2px(300))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((columnSetPadding_2.right - columnSetPadding_2.left) - vp2px(300))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((columnSetPadding_3.right - columnSetPadding_3.left) - vp2px(300))) <= 1).assertTrue()
+
+      console.info('new ColumnSetPadding_SubChange_0100 END');
     });
   })
 }

@@ -3,6 +3,8 @@
     "MainAbility/pages/index/index",
     "MainAbility/pages/Tabs/TabsIndex",
     "MainAbility/pages/Tabs/tabsBarFloatingStyle",
-    "MainAbility/pages/Tabs/systemMaterialBarStyle"
+    "MainAbility/pages/Tabs/systemMaterialBarStyle",
+    "MainAbility/pages/Tabs/TabsSidebarStyle",
+    "MainAbility/pages/Tabs/TabsSidebarDisplayStyle"
   ]
 }

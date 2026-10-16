@@ -12,12 +12,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 import events_emitter from '@ohos.events.emitter';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function HasAxisTest() {
   describe('HasAxis', () => {
     beforeEach(async (done: Function) => {
@@ -56,7 +57,7 @@ export default function HasAxisTest() {
       let button = await driver.findComponent(ON.id('button'));
       let center = await button.getBoundsCenter();
       await CommonFunc.sleep(500);
-      await driver.mouseScroll({ x: center.x, y: center.y }, true, 30);
+      await driver.mouseScroll({ x: center.x, y: center.y, displayId: displayID }, true, 30);
       let strJson: string = getInspectorByKey('has1');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info('[HasAxis_001] component obj is: ' + JSON.stringify(obj));
@@ -80,7 +81,7 @@ export default function HasAxisTest() {
       let button = await driver.findComponent(ON.id('button'));
       let center = await button.getBoundsCenter();
       await CommonFunc.sleep(500);
-      await driver.mouseScroll({ x: center.x, y: center.y }, true, 30);
+      await driver.mouseScroll({ x: center.x, y: center.y, displayId: displayID }, true, 30);
       let strJson: string = getInspectorByKey('has2');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info('[HasAxis_002] component obj is: ' + JSON.stringify(obj));

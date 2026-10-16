@@ -151,6 +151,10 @@ export const testNativeWindowGet3DMetadataValueNull: () => number;
 export const testNativeWindowGet3DMetadataValueAbnormal: () => number;
 export const testNativeWindowSetGet3DMetadataValueMultipleCalls: () => number;
 export const testNativeWindowSet3DMetadataValueUnknown: () => number;
+export const testNativeWindowHandleOptSetDmaBufferNameNormal: () => number;
+export const testNativeWindowHandleOptSetDmaBufferNameNull: () => number;
+export const testNativeWindowHandleOptSetDmaBufferNameAbnormal: () => number;
+export const testNativeWindowHandleOptSetDmaBufferNameMultipleCalls: () => number;
 
 
 

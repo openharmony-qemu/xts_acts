@@ -23,7 +23,9 @@ struct AccessibilityThirdFramework {
     '\n' +
     '预期结果：\n' +
     '若支持屏幕朗读，则下滑期间绿框会在黑色区域中绘制。若不支持屏幕朗读，直接按照失败处理走豁免。';
-  @State Vue: boolean = true;
+  @State vueStatus: boolean = false;
+  @State step1: boolean = false;
+  @State step2: boolean = false;
   @State active: boolean = false;
   @State intervalNum: number = 0;
   @State yesEnable: boolean = false
@@ -43,8 +45,8 @@ struct AccessibilityThirdFramework {
 
   @Builder
   PassBtn(text: Resource, isFullScreen: boolean) {
-    if (this.Vue == false) {
-      Button({ stateEffect: this.Vue }) {
+    if (this.vueStatus == false) {
+      Button({ stateEffect: this.vueStatus }) {
         Image($r('app.media.ic_public_pass'))
           .width('20vp')
           .height('20vp')
@@ -58,7 +60,7 @@ struct AccessibilityThirdFramework {
 
       })
     } else {
-      Button({ stateEffect: this.Vue }) {
+      Button({ stateEffect: this.vueStatus }) {
         Image($r('app.media.ic_public_pass'))
           .width('20vp')
           .height('20vp')
@@ -111,9 +113,8 @@ struct AccessibilityThirdFramework {
 
   onPageShow() {
     this.intervalNum = setInterval(() => {
-      if (this.text1 === 'HOVER_ENTER' && this.text2 === 'HOVER_MOVE' && this.text3 === 'HOVER_EXIT' &&
-        this.text4 === 'HOVER_CANCEL') {
-        this.Vue = true;
+      if (this.step1 && this.step2) {
+        this.vueStatus = true;
       }
     }, 500)
   }
@@ -162,6 +163,9 @@ struct AccessibilityThirdFramework {
           .borderRadius(8)
           .backgroundColor(0x317aff)
           .width('30%')
+          .onClick(() => {
+            this.step1 = true
+          })
 
         // 业务代码
         Column() {
@@ -191,6 +195,9 @@ struct AccessibilityThirdFramework {
           .borderRadius(8)
           .backgroundColor(0x317aff)
           .width('30%')
+          .onClick(() => {
+            this.step2 = true
+          })
       }.height('80%')
       .width('100%')
       .backgroundColor(Color.White)

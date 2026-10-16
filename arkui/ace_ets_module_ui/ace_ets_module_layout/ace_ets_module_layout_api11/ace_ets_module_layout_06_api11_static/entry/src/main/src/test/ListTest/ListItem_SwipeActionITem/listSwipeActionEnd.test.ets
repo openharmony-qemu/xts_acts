@@ -48,7 +48,7 @@ export default function listSwipeActionEndJsunit() {
     afterEach(async (done: () => void): Promise<void>=> {
       await CommonFunc.sleep(1000);
       console.info("listSwipeActionEndTest after each called");
-      
+
       let driverReset = Driver.create();
       await CommonFunc.sleep(500);
       let buttonReset = await driverReset.findComponent(ON.id('btresetEnd'));
@@ -59,9 +59,7 @@ export default function listSwipeActionEndJsunit() {
 
     });
 
-    
-    
-    
+
 
 
 
@@ -77,27 +75,23 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0080', Level.LEVEL0,
       let driver = Driver.create();
       console.info('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0080 driver' + driver);
       await CommonFunc.sleep(500);
-      
-      let strJson = inspector.getInspectorByKey('lSwipeActionEnd0');
-      console.info("[SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0080] current component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      let ListItem_00: RectValue = CommonFunc.getComponentRect('lSwipeActionEnd0');
-      let right: number = ListItem_00.right;
-      let left: number = ListItem_00.left;
-      let top: number = ListItem_00.top;
-      let bottom: number = ListItem_00.bottom;
-      let width = right - left;
-      let height = bottom -top;
-      console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0080 value is" + left + " --" + right + "--" + top + "--" + bottom);
-      
-      
-      await driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(100))).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + height/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(90))).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
+
+      let swipeComponent = await driver.findComponent(ON.id('lSwipeActionEnd0'));
+      let rect = await swipeComponent!.getBounds();
+      let displayId = await swipeComponent!.getDisplayId();
+      let width = rect.right - rect.left;
+      let height = rect.bottom - rect.top;
+      console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0080 value is" +
+        rect.left + " --" + rect.top);
+
+      await driver.swipeBetween(
+        { x: (Math.round(rect.left + UIContext.resolveUIContext()!.vp2px(100))).toInt(),
+          y: (Math.round(rect.top + height / 2)).toInt(), displayId: displayId },
+        { x: (Math.round(rect.left + UIContext.resolveUIContext()!.vp2px(90))).toInt(),
+          y: (Math.round(rect.top + height / 2)).toInt(), displayId: displayId }
       );
       await CommonFunc.sleep(5000);
-      
+
       let textSwipeState = inspector.getInspectorByKey('swipeStateEnd');
 
       console.info('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0080 json is ' + JSON.stringify(JSON.parseJsonElement(textSwipeState).getElement('$attrs')));
@@ -105,9 +99,7 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0080', Level.LEVEL0,
       done();
     });
 
-    
-    
-    
+
 
 
 
@@ -123,27 +115,27 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0090', Level.LEVEL0,
       let driver = Driver.create();
       console.info('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0090 driver' + driver);
       await CommonFunc.sleep(500);
-      
+
       let strJson = inspector.getInspectorByKey('lSwipeActionEnd0');
 
       console.info("[SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0090] current component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      
-      let ListItem_00: RectValue = CommonFunc.getComponentRect('lSwipeActionEnd0');
-      let right: number = ListItem_00.right;
-      let left: number = ListItem_00.left;
-      let top: number = ListItem_00.top;
-      let bottom: number = ListItem_00.bottom;
-      let width = right - left;
-      let height = bottom -top;
-      console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0090 value is" + left + " --" + right + "--" + top + "--" + bottom);
-      await driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(150))).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + height/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(50))).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
+
+      let swipeComponent = await driver.findComponent(ON.id('lSwipeActionEnd0'));
+      let rect = await swipeComponent!.getBounds();
+      let displayId = await swipeComponent!.getDisplayId();
+      let width = rect.right - rect.left;
+      let height = rect.bottom - rect.top;
+      console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0090 value is" +
+        rect.left + " --" + rect.top);
+
+      await driver.swipeBetween(
+        { x: (Math.round(rect.left + UIContext.resolveUIContext()!.vp2px(150))).toInt(),
+          y: (Math.round(rect.top + height / 2)).toInt(), displayId: displayId },
+        { x: (Math.round(rect.left + UIContext.resolveUIContext()!.vp2px(50))).toInt(),
+          y: (Math.round(rect.top + height / 2)).toInt(), displayId: displayId }
       );
       await CommonFunc.sleep(4000);
-      
+
       let textSwipeState = inspector.getInspectorByKey('swipeStateEnd');
 
       console.info('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0090 json is ' + JSON.stringify(JSON.parseJsonElement(textSwipeState).getElement('$attrs')));
@@ -152,9 +144,6 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0090', Level.LEVEL0,
     });
 
 
-    
-    
-    
 
 
 
@@ -169,27 +158,27 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0100', Level.LEVEL0,
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
       await CommonFunc.sleep(500);
-      
+
       let strJson = inspector.getInspectorByKey('lSwipeActionEnd0');
 
       console.info("[SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0100] current component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      
-      let ListItem_00: RectValue = CommonFunc.getComponentRect('lSwipeActionEnd0');
-      let right: number = ListItem_00.right;
-      let left: number = ListItem_00.left;
-      let top: number = ListItem_00.top;
-      let bottom: number = ListItem_00.bottom;
-      let width = right - left;
-      let height = bottom -top;
-      console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
-      await driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + right - UIContext.resolveUIContext()!.vp2px(20))).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + height/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(2))).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
+
+      let swipeComponent = await driver.findComponent(ON.id('lSwipeActionEnd0'));
+      let rect = await swipeComponent!.getBounds();
+      let displayId = await swipeComponent!.getDisplayId();
+      let width = rect.right - rect.left;
+      let height = rect.bottom - rect.top;
+      console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0100 value is" +
+        rect.left + " --" + rect.top);
+
+      await driver.swipeBetween(
+        { x: (Math.round(rect.right - UIContext.resolveUIContext()!.vp2px(20))).toInt(),
+          y: (Math.round(rect.top + height / 2)).toInt(), displayId: displayId },
+        { x: (Math.round(rect.left + UIContext.resolveUIContext()!.vp2px(2))).toInt(),
+          y: (Math.round(rect.top + height / 2)).toInt(), displayId: displayId }
       );
       await CommonFunc.sleep(5000);
-      
+
       let textSwipeState = inspector.getInspectorByKey('swipeStateEnd');
 
       console.info('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0100 json is ' + JSON.stringify(JSON.parseJsonElement(textSwipeState).getElement('$attrs')));

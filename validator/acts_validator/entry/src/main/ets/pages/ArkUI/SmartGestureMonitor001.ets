@@ -223,7 +223,12 @@ struct SmartGestureMonitor001 {
     .width('30%')
     .height('30vp')
     .backgroundColor(Color.Grey)
+    .opacity(this.isOk ? 1 : 0.4)
+    .enabled(this.isOk)
     .onClick(() => {
+      globalThis.arkTitle = this.name;
+      globalThis.arkResult = 'true ';
+      globalThis.arkTitle = this.name;
       router.back({
         url: 'pages/ArkUI/ArkUI_index',
         params: {
@@ -247,6 +252,7 @@ struct SmartGestureMonitor001 {
     .height('30vp')
     .backgroundColor(Color.Grey)
     .onClick(() => {
+      globalThis.arkTitle = this.name;
       router.back({
         url: 'pages/ArkUI/ArkUI_index',
         params: {
@@ -261,11 +267,15 @@ struct SmartGestureMonitor001 {
 
   aboutToAppear() {
     FirstDialog.ChooseDialog(this.stepTips, this.name);
-    this.controller().registerMonitor(this.passThroughCallback);
-    this.controller().registerMonitor(this.passThroughCallback);
-    this.controller().registerMonitor(this.passThroughCallback);
-    this.controller().unregisterMonitor(this.passThroughCallback);
-    this.getUIContext().getSmartGestureController().enableSmartTapAndSlideGestures(true);
+    try {
+      this.controller().registerMonitor(this.passThroughCallback);
+      this.controller().registerMonitor(this.passThroughCallback);
+      this.controller().registerMonitor(this.passThroughCallback);
+      this.controller().unregisterMonitor(this.passThroughCallback);
+      this.getUIContext().getSmartGestureController().enableSmartTapAndSlideGestures(true);
+    } catch (e) {
+      console.error('SmartGesture not supported on this device: ' + JSON.stringify(e));
+    }
   }
 
   onPageHide() {
@@ -289,6 +299,7 @@ struct SmartGestureMonitor001 {
         .backgroundColor(Color.Black)
         .size({ width: '10%', height: '10%' })
         .onClick(() => {
+          globalThis.arkTitle = this.name;
           router.back({
             url: 'pages/ArkUI/ArkUI_index',
             params: { result: 'None' }
@@ -354,6 +365,7 @@ struct SmartGestureMonitor001 {
                   .onClick(() => {
                     this.clickCount += 1;
                     this.pushLog(`onClick -> monitor_target_button, clickCount=${this.clickCount}`);
+                    this.isOk = true;
                   });
 
                 Scroll() {

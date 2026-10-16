@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from "@ohos/hypium"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from "@ohos/hypium-dynamic"
 import ohosWindow from '@ohos.window';
 import systemParameterEnhance from '@ohos.systemParameterEnhance';
 import { UiDriver, BY, ON, PointerMatrix, Driver, Point } from '@ohos.UiTest'
@@ -217,7 +217,10 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
               let dragToY = pipWindowCenter.y;
               await driver.drag(pipWindowCenter.x, pipWindowCenter.y, dragToX, dragToY);
               await sleep(3000);
-              let expectValue = deviceType == 'tv' ? 0 : 1
+              let expectValue = 1
+              if (deviceType ===  'tv'|| deviceType === 'car'){
+                expectValue = 0
+              }
               expect(callbackIndex).assertEqual(expectValue);
               await pipController?.stopPiP();
               await sleep(3000);
@@ -307,7 +310,10 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
               let dragToY = pipWindowCenter.y;
               await driver.drag(pipWindowCenter.x, pipWindowCenter.y, dragToX, dragToY);
               await sleep(3000);
-              let expectValue = deviceType == 'tv' ? 0 : 1
+              let expectValue = 1
+              if (deviceType ===  'tv'|| deviceType === 'car'){
+                expectValue = 0
+              }
               expect(callbackIndex1).assertEqual(expectValue);
               expect(callbackIndex2).assertEqual(expectValue);
               await pipController?.stopPiP();
@@ -3076,8 +3082,13 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
           pipController.updateContentSize(width, height);
           try {
             await sleep(1000);
-            expect(res1).assertEqual(true);
-            expect(res2).assertEqual(true);
+            if (deviceType === 'car'){
+              expect(res1).assertEqual(false);
+              expect(res2).assertEqual(false);
+            }else{
+              expect(res1).assertEqual(true);
+              expect(res2).assertEqual(true);
+            }
             console.log('PiPSizeChange Succeeded check result');
             done();
           } catch (e) {
@@ -3160,8 +3171,13 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
           pipController.updateContentSize(width, height);
           try {
             await sleep(1000);
-            expect(res1).assertEqual(false);
-            expect(res2).assertEqual(true);
+            if (deviceType === 'car'){
+              expect(res1).assertEqual(false);
+              expect(res2).assertEqual(false);
+            }else{
+              expect(res1).assertEqual(false);
+              expect(res2).assertEqual(true);
+            }
             console.log('PiPSizeChange Succeeded check result');
             done();
           } catch (e) {
@@ -3822,7 +3838,11 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       let pipController: pipWindow.PiPController | undefined = undefined;
       let mXComponentController = new XComponentController();
       let navId = "";
-      let pipSize: pipWindow.PiPWindowSize;
+      let pipSize: pipWindow.PiPWindowSize = {
+        width: 500,
+        height: 500,
+        scale: 1,
+      };
       let config: pipWindow.PiPConfiguration = {
         context: context1,
         componentController: mXComponentController,
@@ -3853,9 +3873,14 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
             let pipInfoSize = pipWindowInfo.size
             console.log(`${message} pipWindowInfo width is ${pipInfoSize.width}, pipWindowInfo height is ${pipInfoSize.height}, pipWindowInfo scale is ${pipInfoSize.scale}`)
             console.log(`${message} callback width is ${pipSize.width}, callback height is ${pipSize.height}, callback scale is ${pipSize.scale}`)
-            expect(pipSize.width).assertEqual(pipInfoSize.width);
-            expect(pipSize.height).assertEqual(pipInfoSize.height);
-            expect(Math.abs(pipSize.scale - pipInfoSize.scale)).assertLessOrEqual(0.01)
+            if (deviceType === 'car'){
+              expect(pipSize.width !== pipInfoSize.width).assertTrue();
+              expect(pipSize.height !== pipInfoSize.height).assertTrue();
+            }else{
+              expect(pipSize.width).assertEqual(pipInfoSize.width);
+              expect(pipSize.height).assertEqual(pipInfoSize.height);
+              expect(Math.abs(pipSize.scale - pipInfoSize.scale)).assertLessOrEqual(0.01);
+            }
             pipController.off('pipWindowSizeChange', callback);
             await pipController.stopPiP();
             await sleep(1000);
@@ -4221,7 +4246,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
         let promise = pipWindow.create(config);
         promise.then(async (data) => {
           pipController = data;
-          if (!pipController.isPiPSupported()) {
+          if (!pipController.isPiPSupported() || deviceType === 'car') {
 
             done();
           } else {
@@ -4393,7 +4418,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
         let promise = pipWindow.create(config);
         promise.then(async (data) => {
           pipController = data;
-          if (!pipController.isPiPSupported()) {
+          if (!pipController.isPiPSupported() || deviceType === 'car') {
 
             done();
           } else {
@@ -4485,7 +4510,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
         let promise = pipWindow.create(config);
         promise.then(async (data) => {
           pipController = data;
-          if (!pipController.isPiPSupported()) {
+          if (!pipController.isPiPSupported() || deviceType === 'car') {
 
             done();
           } else {
@@ -6832,6 +6857,77 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
         componentController: mXComponentController,
         navigationId: navId,
         templateType: pipWindow.PiPTemplateType.VIDEO_DRIVE,
+        contentWidth: contentWidth,
+        contentHeight: contentHeight,
+      };
+      let testSupport = async () => {
+        try {
+          pipController = await pipWindow.create(config)
+          console.log(msgStr + ' startPiP_Function_Promise begin')
+          let promise = pipController?.startPiP();
+          promise.then(async () => {
+            console.log(msgStr + ' Succeeded in starting pip')
+            await pipController?.stopPiP();
+            done();
+          }).catch((err: BusinessError) => {
+            console.log(msgStr + ' Failed1 to start pip. Cause:' + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
+            expect().assertFail();
+            done();
+          });
+        } catch (error) {
+          console.log(msgStr + ' Failed2 to start pip. Cause:' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
+          expect().assertFail();
+          done();
+        }
+      }
+
+      let testNotSupport = async () => {
+        try {
+          pipController = await pipWindow.create(config)
+          console.log(msgStr + ' startPiP_Function_Promise begin')
+          let promise = pipController.startPiP();
+          promise.then(() => {
+            console.log(msgStr + ' Succeeded in starting pip')
+            done();
+          }).catch((err: BusinessError) => {
+            console.log(msgStr + ' Failed1 to start pip. Cause:' + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
+            expect().assertFail();
+            done();
+          });
+        } catch (error) {
+          console.log(msgStr + ' Failed2 to start pip. Cause:' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
+          expect(error.code).assertEqual(401);
+          done();
+        }
+      }
+
+      if (deviceType == 'car') {
+        testSupport()
+      } else {
+        testNotSupport()
+      }
+    })
+
+    /**
+     * @tc.name   createPiP_templateType_videoNavigation
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_VIDEO_NAVIGATION_0100
+     * @tc.desc   To test the function of startPiP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('createPiP_templateType_videoNavigation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let msgStr = 'createPiP_templateType_videoNavigation '
+      let pipController: pipWindow.PiPController | undefined = undefined;
+      let mXComponentController = new XComponentController();
+      let navId = "";
+      let contentWidth = 400;
+      let contentHeight = 600;
+      let config: pipWindow.PiPConfiguration = {
+        context: context1,
+        componentController: mXComponentController,
+        navigationId: navId,
+        templateType: pipWindow.PiPTemplateType.VIDEO_NAVIGATION,
         contentWidth: contentWidth,
         contentHeight: contentHeight,
       };

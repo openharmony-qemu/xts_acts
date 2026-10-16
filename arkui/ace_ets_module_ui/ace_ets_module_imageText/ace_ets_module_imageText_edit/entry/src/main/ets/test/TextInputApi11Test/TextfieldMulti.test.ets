@@ -14,7 +14,7 @@
  */
 
 import router from '@ohos.router';
-import { beforeEach, describe, expect, it, Level } from '@ohos/hypium';
+import { beforeEach, describe, expect, it, Level } from '@ohos/hypium-dynamic';
 import { resourceManager } from '@kit.LocalizationKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 

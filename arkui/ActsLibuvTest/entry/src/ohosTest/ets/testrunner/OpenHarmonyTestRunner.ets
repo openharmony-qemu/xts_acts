@@ -1,7 +1,7 @@
 import hilog from '@ohos.hilog';
 import TestRunner from '@ohos.application.testRunner';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { Hypium } from '@ohos/hypium';
+import { Hypium } from '@ohos/hypium-dynamic';
 import testsuite from '../test/List.test';
 
 let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator | undefined = undefined;

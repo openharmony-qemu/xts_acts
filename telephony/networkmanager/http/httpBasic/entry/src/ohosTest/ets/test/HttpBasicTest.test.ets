@@ -14,7 +14,7 @@
  */
 
 import netHttp from '@ohos.net.http';
-import { describe, expect, it, TestType, Size, Level  } from '@ohos/hypium';
+import { describe, expect, it, TestType, Size, Level  } from '@ohos/hypium-dynamic';
 import {BusinessError} from '@ohos.base';
 
 const ExpectFail = () => {
@@ -53,9 +53,9 @@ export default function HttpBasicTest() {
           console.info(`${caseName} get data.responseCode is: `+ JSON.stringify(data.responseCode));
           console.info(`${caseName} get data.result is: `+ JSON.stringify(data));
           http.destroy();
-          ExpectTrue(data.responseCode == 200);
+          ExpectTrue(data.responseCode === 200);
           if (data.responseCode == 200) {
-            ExpectTrue(data.result.toString().search("user-agent") != -1 && data.result.toString().search("libcurl-agent/1.0") != -1);
+            ExpectTrue(data.result.toString().search("user-agent") !== -1 && data.result.toString().search("libcurl-agent/1.0") !== -1);
           }
           done();
           console.info(`${caseName}---end`);
@@ -87,11 +87,11 @@ export default function HttpBasicTest() {
           header: { 'Content-Type': 'application/json' }
         }).then((data)=> {
           http.destroy();
-          ExpectTrue(data.responseCode == 200);
+          ExpectTrue(data.responseCode === 200);
           console.info(`${caseName} get data is: ` + JSON.stringify(data));
           if (data.responseCode == 200) {
-            ExpectTrue(data.result.toString().search("Content-Type") != -1);
-            ExpectTrue(data.result.toString().search("application/json") != -1);
+            ExpectTrue(data.result.toString().search("Content-Type") !== -1);
+            ExpectTrue(data.result.toString().search("application/json") !== -1);
           }
           done();
           console.info(`${caseName}---end`);
@@ -126,9 +126,9 @@ export default function HttpBasicTest() {
           extraData: "MineMine"
         }).then((data) =>{
           http.destroy();
-          ExpectTrue(data.responseCode == 200);
+          ExpectTrue(data.responseCode === 200);
           if (data.responseCode == 200) {
-            ExpectTrue(data.result.toString().search("MineMine") != -1);
+            ExpectTrue(data.result.toString().search("MineMine") !== -1);
           }
           console.info(`${caseName}---end`);
           done();
@@ -159,9 +159,9 @@ export default function HttpBasicTest() {
           extraData: "MineMine"
         }).then((data) => {
           http.destroy();
-          ExpectTrue(data.responseCode == 200);
+          ExpectTrue(data.responseCode === 200);
           if (data.responseCode == 200) {
-            ExpectTrue(data.result.toString().search("MineMine") != -1);
+            ExpectTrue(data.result.toString().search("MineMine") !== -1);
           }
           done();
         });
@@ -189,7 +189,7 @@ export default function HttpBasicTest() {
         http.request("https://httpbin.org/cookies/set/name/value").then( (data) =>{
           console.info(`${caseName} request get data is: `+ JSON.stringify(data));
           http.destroy();
-          ExpectTrue(data.responseCode == 200);
+          ExpectTrue(data.responseCode === 200);
           if (data.responseCode == 200) {
             ExpectTrue(data.cookies !== "");
           }
@@ -224,16 +224,16 @@ export default function HttpBasicTest() {
           }
         }).then( (data) => {
           http.destroy();
-          ExpectTrue(data.responseCode == 200 || data.responseCode > 500);
+          ExpectTrue(data.responseCode === 200 || data.responseCode > 500);
           if (data.responseCode == 200) {
-            ExpectTrue(data.result.toString().search("key1") != -1);
-            ExpectTrue(data.result.toString().search("val1") != -1);
-            ExpectTrue(data.result.toString().search("key2") != -1);
-            ExpectTrue(data.result.toString().search("val2") != -1);
-            ExpectTrue(data.result.toString().search("name1") != -1);
-            ExpectTrue(data.result.toString().search("mine1") != -1);
-            ExpectTrue(data.result.toString().search("name2") != -1);
-            ExpectTrue(data.result.toString().search("mine2") != -1);
+            ExpectTrue(data.result.toString().search("key1") !== -1);
+            ExpectTrue(data.result.toString().search("val1") !== -1);
+            ExpectTrue(data.result.toString().search("key2") !== -1);
+            ExpectTrue(data.result.toString().search("val2") !== -1);
+            ExpectTrue(data.result.toString().search("name1") !== -1);
+            ExpectTrue(data.result.toString().search("mine1") !== -1);
+            ExpectTrue(data.result.toString().search("name2") !== -1);
+            ExpectTrue(data.result.toString().search("mine2") !== -1);
           }
           console.info(`${caseName}---end`);
           done();

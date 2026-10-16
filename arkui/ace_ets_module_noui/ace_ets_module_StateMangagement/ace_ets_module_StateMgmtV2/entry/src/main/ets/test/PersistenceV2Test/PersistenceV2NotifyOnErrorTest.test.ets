@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import { PersistenceV2, Type } from '@kit.ArkUI';
 import { Driver, ON } from '@kit.TestKit';
 import router from '@ohos.router';

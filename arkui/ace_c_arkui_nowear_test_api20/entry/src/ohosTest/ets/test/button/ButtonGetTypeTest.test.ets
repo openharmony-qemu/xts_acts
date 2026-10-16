@@ -17,6 +17,7 @@ import { beforeAll, describe, expect, it, Level } from '@ohos/hypium';
 import Utils from '../common/Utils';
 import { Driver, ON } from '@kit.TestKit';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function buttonGetTypeTest() {
 
   describe('ButtonGetTypeTest', () => {
@@ -37,9 +38,9 @@ export default function buttonGetTypeTest() {
      */
     it('ButtonGetTypeTest001', Level.LEVEL0, async (done: Function) => {
       let driver = await Driver.create()
-      await driver.triggerKey(2049)
+      await driver.triggerKey(2049, displayID)
       await Utils.sleep(2000)
-      await driver.triggerKey(2119)
+      await driver.triggerKey(2119, displayID)
       await Utils.sleep(1000)
       let strJson = getInspectorByKey('gettype');
       await Utils.sleep(2000);

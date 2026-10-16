@@ -30,7 +30,8 @@
           "hspOne",
           "hspTwo",
           "sharedHarOne",
-          "sharedHspOne"
+          "sharedHspOne",
+          "static_module"
         ],
         "sources": [
           "./Test.ets",

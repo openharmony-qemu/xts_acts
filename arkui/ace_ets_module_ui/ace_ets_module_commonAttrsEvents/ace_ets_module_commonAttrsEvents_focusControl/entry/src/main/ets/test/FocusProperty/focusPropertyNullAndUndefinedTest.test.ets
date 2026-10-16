@@ -14,10 +14,11 @@
  */
 
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "@ohos/hypium"
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "@ohos/hypium-dynamic"
 import { Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common'
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function focusPropertyNullAndUndefined() {
   describe('focusPropertyNullAndUndefined', () => {
     beforeAll(async () => {
@@ -57,7 +58,7 @@ export default function focusPropertyNullAndUndefined() {
       console.info('[focusBoxNullV12001] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(500);
       let strJson = getInspectorByKey('focusBoxNullResult');
       let obj: ESObject = JSON.parse(strJson);
@@ -78,7 +79,7 @@ export default function focusPropertyNullAndUndefined() {
       console.info('[focusBoxUndefinedV12002] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(500);
       let strJson = getInspectorByKey('focusBoxUndefinedResult');
       let obj: ESObject = JSON.parse(strJson);
@@ -99,7 +100,7 @@ export default function focusPropertyNullAndUndefined() {
       console.info('[focusScopeIdEmptyV12003] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(500);
       let strJson = getInspectorByKey('focusScopeIdEmptyResult');
       let obj: ESObject = JSON.parse(strJson);
@@ -120,7 +121,7 @@ export default function focusPropertyNullAndUndefined() {
       console.info('[focusScopeIdNullV12004] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(500);
       let strJson = getInspectorByKey('focusScopeIdNullResult');
       let obj: ESObject = JSON.parse(strJson);
@@ -141,7 +142,7 @@ export default function focusPropertyNullAndUndefined() {
       console.info('[focusScopeIdUndefinedV12005] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(500);
       let strJson = getInspectorByKey('focusScopeIdUndefinedResult');
       let obj: ESObject = JSON.parse(strJson);
@@ -162,7 +163,7 @@ export default function focusPropertyNullAndUndefined() {
       console.info('[focusScopeId14EmptyV14006] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(500);
       let strJson = getInspectorByKey('focusScopeId14EmptyResult');
       let obj: ESObject = JSON.parse(strJson);
@@ -183,7 +184,7 @@ export default function focusPropertyNullAndUndefined() {
       console.info('[focusScopeId14NullV14007] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(500);
       let strJson = getInspectorByKey('focusScopeId14NullResult');
       let obj: ESObject = JSON.parse(strJson);
@@ -204,7 +205,7 @@ export default function focusPropertyNullAndUndefined() {
       console.info('[focusScopeId14UndefinedV14008] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(500);
       let strJson = getInspectorByKey('focusScopeId14UndefinedResult');
       let obj: ESObject = JSON.parse(strJson);
@@ -225,7 +226,7 @@ export default function focusPropertyNullAndUndefined() {
       console.info('[focusScopeId14ArrowStepOutV14009] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(500);
       let strJson = getInspectorByKey('focusScopeId14ArrowStepOutResult');
       let obj: ESObject = JSON.parse(strJson);
@@ -246,7 +247,7 @@ export default function focusPropertyNullAndUndefined() {
       console.info('[focusScopePriorityScopeIdEmptyV12010] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(500);
       let strJson = getInspectorByKey('focusScopePriorityScopeIdEmptyResult');
       let obj: ESObject = JSON.parse(strJson);
@@ -267,7 +268,7 @@ export default function focusPropertyNullAndUndefined() {
       console.info('[focusScopePriorityScopeIdNullV12011] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(500);
       let strJson = getInspectorByKey('focusScopePriorityScopeIdNullResult');
       let obj: ESObject = JSON.parse(strJson);
@@ -288,7 +289,7 @@ export default function focusPropertyNullAndUndefined() {
       console.info('[focusScopePriorityScopeIdUndefinedV12012] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(500);
       let strJson = getInspectorByKey('focusScopePriorityScopeIdUndefinedResult');
       let obj: ESObject = JSON.parse(strJson);
@@ -309,7 +310,7 @@ export default function focusPropertyNullAndUndefined() {
       console.info('[focusScopePriorityPriorityNullV12013] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(500);
       let strJson = getInspectorByKey('focusScopePriorityPriorityNullResult');
       let obj: ESObject = JSON.parse(strJson);
@@ -330,7 +331,7 @@ export default function focusPropertyNullAndUndefined() {
       console.info('[focusScopePriorityPriorityUndefinedV12014] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(500);
       let strJson = getInspectorByKey('focusScopePriorityPriorityUndefinedResult');
       let obj: ESObject = JSON.parse(strJson);

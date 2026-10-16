@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
@@ -57,7 +57,9 @@ export default function listOffsetJsunit() {
       console.info('[listOffsetJsunit_001] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
-      let swiperScroll = CommonFunc.getComponentRectOnScreen('offset_list');
+      let swiperScrollComponent = await driver.findComponent(ON.id('offset_list'));
+      let swiperScroll = await swiperScrollComponent.getBounds();
+      let displayId = await swiperScrollComponent.getDisplayId();
       let top = swiperScroll.top;
       let right = swiperScroll.right;
       let left = swiperScroll.left;
@@ -66,7 +68,9 @@ export default function listOffsetJsunit() {
       let height = bottom -top;
       let width = right - left;
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(left + width/2),Math.round(top + height*0.7),Math.round(left + width/2),Math.round(top + height*0.2));
+      await driver.swipeBetween(
+        { x: Math.round(left + width/2), y: Math.round(top + height*0.7), displayId: displayId },
+        { x: Math.round(left + width/2), y: Math.round(top + height*0.2), displayId: displayId });
       await CommonFunc.sleep(2000);
       
       let strJson = getInspectorByKey('list_offset');

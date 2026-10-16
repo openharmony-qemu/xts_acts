@@ -35,9 +35,15 @@ import PixelMapDrawableDescriptorConstructorTest from './drawableDescriptorTest/
 import SetHdrCompositionTest from './drawableDescriptorTest/SetHdrComposition.test';
 import GetMaskClipPathTest from './drawableDescriptorTest/GetMaskClipPath.test';
 import ImageAnimatorAttributeModifierTest from './ImageAnimatorTest/ImageAnimatorAttributeModifier.test';
+import ImageAnimatorInterpolationModifierTest from './ImageAnimatorTest/ImageAnimatorInterpolationModifier.test';
+import ImageAnimatorInterpolationTest from './ImageAnimatorTest/ImageAnimatorInterpolation.test';
 import ImageAttributeModifierTest from './imageTest/ImageAttributeModifier.test';
 
 export default function testsuite() {
+  ImageAnimatorAttributeModifierTest();
+  ImageAnimatorInterpolationModifierTest();
+  ImageAnimatorInterpolationTest();
+  ImageAttributeModifierTest();
   blendNodeTest();
   getUIContextApiTest();
   ImageAlt22Test();
@@ -57,6 +63,4 @@ export default function testsuite() {
   PixelMapDrawableDescriptorConstructorTest();
   SetHdrCompositionTest();
   GetMaskClipPathTest();
-  ImageAnimatorAttributeModifierTest();
-  ImageAttributeModifierTest();
 }

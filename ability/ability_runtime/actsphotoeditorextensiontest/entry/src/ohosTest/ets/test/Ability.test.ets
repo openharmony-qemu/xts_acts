@@ -13,14 +13,14 @@
  * limitations under the License.
  */
 import hilog from '@ohos.hilog';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic'
 import commonEventManager from '@ohos.commonEventManager'
 import router from '@ohos.router'
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import Utils from './Utils'
 import { BusinessError } from '@kit.BasicServicesKit';
 
-const TAG = "ACTS_PhotoEditorExtension"
+const TAG = 'ACTS_PhotoEditorExtension'
 let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 
 export default function abilityTest() {
@@ -36,7 +36,7 @@ export default function abilityTest() {
         })
         afterEach(async() => {
  	        hilog.info(0x0000, TAG, `ACTS_PhotoEditorExtension afterEach start`);
- 	        commonEventManager.publish("Ability_Terminate",()=>{})
+ 	        commonEventManager.publish('Ability_Terminate',()=>{})
  	        await Utils.sleep(1000);
  	        hilog.info(0x0000, TAG, `ACTS_PhotoEditorExtension afterEach end`);
  	    })
@@ -60,16 +60,21 @@ export default function abilityTest() {
  	                events: ['ACTS_PhotoEditorExtension_OnRemoteReady'],
  	            };
  	            await commonEventManager.createSubscriber(subscribeInfo).then(async (data) => {
- 	                console.log(newTag + "createSubscriber data : " + JSON.stringify(data));
+ 	                console.log(newTag + 'createSubscriber data : ' + JSON.stringify(data));
  	                globalscribe = data;
  	                commonEventManager.subscribe(globalscribe, async (err, data) => {
- 	                    console.log(newTag + "SubscribeInfoCallback : " + JSON.stringify(data));
+ 	                    if (err) {
+ 	                      console.info(`callback err: ${JSON.stringify(err)}`);
+ 	                      expect().assertFail();
+ 	                      return;
+ 	                    }
+ 	                    console.log(newTag + 'SubscribeInfoCallback : ' + JSON.stringify(data));
  	   
  	                    await abilityDelegator.executeShellCommand('aa dump -e').then((data) => {
  	                        console.info(newTag + 'data: ' + JSON.stringify(data));
  	                        let output = JSON.stringify(data);
  	                        try {
- 	                            expect(output).assertContain("MuseEditorExtensionAbility");
+ 	                            expect(output).assertContain('MuseEditorExtensionAbility');
  	                            commonEventManager.unsubscribe(globalscribe)
  	                        } catch {
  	                            expect().assertFail();
@@ -77,17 +82,17 @@ export default function abilityTest() {
  	                    });
  	                });
  	            }).catch((error: BusinessError) => {
- 	                console.log(newTag + "createSubscriber err");
+ 	                console.log(newTag + 'createSubscriber err: ' + JSON.stringify(error));
  	                expect().assertFail();
  	            })
  	            let cmd = 'aa start -a EntryAbility2 -b com.acts.photoeditorextensiontest --ps action test_0100';
- 	            let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+ 	            let user = AbilityDelegatorRegistry.getArguments().parameters['-u'];
  	            if(user !== undefined){
  	                cmd += ' -u ' + user;
  	            }
  	            await abilityDelegator.executeShellCommand(cmd)
  	        }catch{
- 	            console.log(newTag + "createSubscriber err");
+ 	            console.log(newTag + 'createSubscriber err');
  	            expect().assertFail();
  	        }
  	    })

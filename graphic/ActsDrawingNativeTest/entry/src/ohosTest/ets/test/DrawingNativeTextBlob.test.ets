@@ -43,7 +43,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testTextBlobBuilderCreateDestroyNormal', Level.LEVEL0, () => {
+    it('testTextBlobBuilderCreateDestroyNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingTextBlobBuilder(0);
       expect(result).assertEqual(0);
     })
@@ -56,7 +56,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testTextBlobBuilderCreateDestroyNull', Level.LEVEL3, () => {
+    it('testTextBlobBuilderCreateDestroyNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingTextBlobBuilder(1);
       expect(result).assertEqual(0);
     })
@@ -69,7 +69,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testTextBlobBuilderCreateDestroyMultipleCalls', Level.LEVEL3, () => {
+    it('testTextBlobBuilderCreateDestroyMultipleCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingTextBlobBuilder(2);
       expect(result).assertEqual(0);
     })
@@ -82,7 +82,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testTextBlobCreateFromTextNormal', Level.LEVEL0, () => {
+    it('testTextBlobCreateFromTextNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingTextBlobCreate(0);
       expect(result).assertEqual(0);
     })
@@ -95,7 +95,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testTextBlobCreateFromTextNull', Level.LEVEL3, () => {
+    it('testTextBlobCreateFromTextNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingTextBlobCreate(1);
       expect(result).assertEqual(0);
     })
@@ -108,7 +108,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testTextBlobCreateFromTextMultipleCalls', Level.LEVEL3, () => {
+    it('testTextBlobCreateFromTextMultipleCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingTextBlobCreate(2);
       expect(result).assertEqual(0);
     })
@@ -121,7 +121,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testTextBlobCreateFromTextAbnormal', Level.LEVEL3, () => {
+    it('testTextBlobCreateFromTextAbnormal', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingTextBlobCreate(3);
       expect(result).assertEqual(0);
     })
@@ -134,7 +134,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testTextBlobCreateFromPosTextNormal', Level.LEVEL0, () => {
+    it('testTextBlobCreateFromPosTextNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingTextBlobCreate(4);
       expect(result).assertEqual(0);
     })
@@ -147,7 +147,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testTextBlobCreateFromPosTextNull', Level.LEVEL3, () => {
+    it('testTextBlobCreateFromPosTextNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingTextBlobCreate(5);
       expect(result).assertEqual(0);
     })
@@ -160,7 +160,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testTextBlobCreateFromPosTextMultipleCalls', Level.LEVEL3, () => {
+    it('testTextBlobCreateFromPosTextMultipleCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingTextBlobCreate(6);
       expect(result).assertEqual(0);
     })
@@ -173,7 +173,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testTextBlobCreateFromPosTextAbnormal', Level.LEVEL3, () => {
+    it('testTextBlobCreateFromPosTextAbnormal', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingTextBlobCreate(7);
       expect(result).assertEqual(0);
     })
@@ -186,7 +186,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testTextBlobCreateFromStringNormal', Level.LEVEL0, () => {
+    it('testTextBlobCreateFromStringNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingTextBlobCreate(8);
       expect(result).assertEqual(0);
     })
@@ -199,7 +199,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testTextBlobCreateFromStringNull', Level.LEVEL3, () => {
+    it('testTextBlobCreateFromStringNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingTextBlobCreate(9);
       expect(result).assertEqual(0);
     })
@@ -212,7 +212,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testTextBlobCreateFromStringMultipleCalls', Level.LEVEL3, () => {
+    it('testTextBlobCreateFromStringMultipleCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingTextBlobCreate(10);
       expect(result).assertEqual(0);
     })
@@ -225,7 +225,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testTextBlobCreateFromStringAbnormal', Level.LEVEL3, () => {
+    it('testTextBlobCreateFromStringAbnormal', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingTextBlobCreate(11);
       expect(result).assertEqual(0);
     })
@@ -238,7 +238,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testTextBlobGetBoundsNormal', Level.LEVEL0, () => {
+    it('testTextBlobGetBoundsNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingTextBlobOther(0);
       expect(result).assertEqual(0);
     })
@@ -251,7 +251,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testTextBlobGetBoundsNull', Level.LEVEL3, () => {
+    it('testTextBlobGetBoundsNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingTextBlobOther(1);
       expect(result).assertEqual(0);
     })
@@ -264,7 +264,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testTextBlobGetBoundsMultipleCalls', Level.LEVEL3, () => {
+    it('testTextBlobGetBoundsMultipleCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingTextBlobOther(2);
       expect(result).assertEqual(0);
     })
@@ -277,7 +277,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testTextBlobGetBoundsAbnormal', Level.LEVEL3, () => {
+    it('testTextBlobGetBoundsAbnormal', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingTextBlobOther(3);
       expect(result).assertEqual(0);
     })
@@ -290,7 +290,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testTextBlobUniqueIDNormal', Level.LEVEL0, () => {
+    it('testTextBlobUniqueIDNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingTextBlobOther(4);
       expect(result).assertEqual(0);
     })
@@ -303,7 +303,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testTextBlobUniqueIDNull', Level.LEVEL3, () => {
+    it('testTextBlobUniqueIDNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingTextBlobOther(5);
       expect(result).assertEqual(0);
     })
@@ -316,7 +316,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testTextBlobUniqueIDMultipleCalls', Level.LEVEL3, () => {
+    it('testTextBlobUniqueIDMultipleCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingTextBlobOther(6);
       expect(result).assertEqual(0);
     })
@@ -329,7 +329,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testTextBlobBuilderAllocRunPosNormal', Level.LEVEL0, () => {
+    it('testTextBlobBuilderAllocRunPosNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingTextBlobBuilder(3);
       expect(result).assertEqual(0);
     })
@@ -342,7 +342,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testTextBlobBuilderAllocRunPosNull', Level.LEVEL3, () => {
+    it('testTextBlobBuilderAllocRunPosNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingTextBlobBuilder(4);
       expect(result).assertEqual(0);
     })
@@ -355,7 +355,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testTextBlobBuilderAllocRunPosMultipleCalls', Level.LEVEL3, () => {
+    it('testTextBlobBuilderAllocRunPosMultipleCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingTextBlobBuilder(5);
       expect(result).assertEqual(0);
     })
@@ -368,7 +368,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testTextBlobBuilderMakeNormal', Level.LEVEL0, () => {
+    it('testTextBlobBuilderMakeNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingTextBlobBuilder(6);
       expect(result).assertEqual(0);
     })
@@ -381,7 +381,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testTextBlobBuilderMakeNull', Level.LEVEL3, () => {
+    it('testTextBlobBuilderMakeNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingTextBlobBuilder(7);
       expect(result).assertEqual(0);
     })
@@ -394,7 +394,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testTextBlobBuilderMakeMultipleCalls', Level.LEVEL3, () => {
+    it('testTextBlobBuilderMakeMultipleCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingTextBlobBuilder(8);
       expect(result).assertEqual(0);
     })
@@ -407,7 +407,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testTextBlobDestroyNormal', Level.LEVEL0, () => {
+    it('testTextBlobDestroyNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingTextBlobOther(7);
       expect(result).assertEqual(0);
     })
@@ -420,8 +420,190 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testTextBlobDestroyNull', Level.LEVEL3, () => {
+    it('testTextBlobDestroyNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingTextBlobOther(8);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testTextBlobsArrayDestroyNull
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobOther_1000
+     * @tc.desc   test for testTextBlobsArrayDestroyNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTextBlobsArrayDestroyNull', Level.LEVEL3, async () => {
+      const result = libDrawingNative.DrawingTextBlobOther(9);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testTextBlobsArrayDestroyMultipleCalls
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobOther_1100
+     * @tc.desc   test for testTextBlobsArrayDestroyMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTextBlobsArrayDestroyMultipleCalls', Level.LEVEL3, async () => {
+      const result = libDrawingNative.DrawingTextBlobOther(10);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testTextBlobCreateFromTextWithFallbackNormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobWithFallback_0100
+     * @tc.desc   test for testTextBlobCreateFromTextWithFallbackNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTextBlobCreateFromTextWithFallbackNormal', Level.LEVEL0, async () => {
+      const result = libDrawingNative.DrawingTextBlobWithFallback(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testTextBlobCreateFromTextWithFallbackNull
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobWithFallback_0200
+     * @tc.desc   test for testTextBlobCreateFromTextWithFallbackNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTextBlobCreateFromTextWithFallbackNull', Level.LEVEL3, async () => {
+      const result = libDrawingNative.DrawingTextBlobWithFallback(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testTextBlobCreateFromTextWithFallbackAbnormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobWithFallback_0300
+     * @tc.desc   test for testTextBlobCreateFromTextWithFallbackAbnormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTextBlobCreateFromTextWithFallbackAbnormal', Level.LEVEL3, async () => {
+      const result = libDrawingNative.DrawingTextBlobWithFallback(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testTextBlobCreateFromTextWithFallbackMultipleCalls
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobWithFallback_0400
+     * @tc.desc   test for testTextBlobCreateFromTextWithFallbackMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTextBlobCreateFromTextWithFallbackMultipleCalls', Level.LEVEL3, async () => {
+      const result = libDrawingNative.DrawingTextBlobWithFallback(3);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testTextBlobCreateFromPosTextWithFallbackNormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobWithFallback_0500
+     * @tc.desc   test for testTextBlobCreateFromPosTextWithFallbackNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTextBlobCreateFromPosTextWithFallbackNormal', Level.LEVEL0, async () => {
+      const result = libDrawingNative.DrawingTextBlobWithFallback(4);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testTextBlobCreateFromPosTextWithFallbackNull
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobWithFallback_0600
+     * @tc.desc   test for testTextBlobCreateFromPosTextWithFallbackNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTextBlobCreateFromPosTextWithFallbackNull', Level.LEVEL3, async () => {
+      const result = libDrawingNative.DrawingTextBlobWithFallback(5);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testTextBlobCreateFromPosTextWithFallbackAbnormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobWithFallback_0700
+     * @tc.desc   test for testTextBlobCreateFromPosTextWithFallbackAbnormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTextBlobCreateFromPosTextWithFallbackAbnormal', Level.LEVEL3, async () => {
+      const result = libDrawingNative.DrawingTextBlobWithFallback(6);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testTextBlobCreateFromPosTextWithFallbackMultipleCalls
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobWithFallback_0800
+     * @tc.desc   test for testTextBlobCreateFromPosTextWithFallbackMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTextBlobCreateFromPosTextWithFallbackMultipleCalls', Level.LEVEL3, async () => {
+      const result = libDrawingNative.DrawingTextBlobWithFallback(7);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testTextBlobCreateFromStringWithFallbackNormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobWithFallback_0900
+     * @tc.desc   test for testTextBlobCreateFromStringWithFallbackNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTextBlobCreateFromStringWithFallbackNormal', Level.LEVEL0, async () => {
+      const result = libDrawingNative.DrawingTextBlobWithFallback(8);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testTextBlobCreateFromStringWithFallbackNull
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobWithFallback_1000
+     * @tc.desc   test for testTextBlobCreateFromStringWithFallbackNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTextBlobCreateFromStringWithFallbackNull', Level.LEVEL3, async () => {
+      const result = libDrawingNative.DrawingTextBlobWithFallback(9);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testTextBlobCreateFromStringWithFallbackAbnormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobWithFallback_1100
+     * @tc.desc   test for testTextBlobCreateFromStringWithFallbackAbnormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTextBlobCreateFromStringWithFallbackAbnormal', Level.LEVEL3, async () => {
+      const result = libDrawingNative.DrawingTextBlobWithFallback(10);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testTextBlobCreateFromStringWithFallbackMultipleCalls
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingTextBlobWithFallback_1200
+     * @tc.desc   test for testTextBlobCreateFromStringWithFallbackMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTextBlobCreateFromStringWithFallbackMultipleCalls', Level.LEVEL3, async () => {
+      const result = libDrawingNative.DrawingTextBlobWithFallback(11);
       expect(result).assertEqual(0);
     })
   })

@@ -63,6 +63,7 @@ export default function onDidAppearTest(): void {
     it('onDidAppearTest_static_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
+        await Utils.sleep(500);
         let btn = await driver.findComponent(ON.id('onDidAppearBindMenu'));
         await (btn?.click() as Promise<void>);
         await Utils.sleep(1000);

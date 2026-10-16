@@ -29,6 +29,7 @@ struct Index {
           .fontWeight(FontWeight.Bold)
       }
       .width('100%')
+      .id('mainWindow')
     }
     .height('100%')
   }

@@ -28,7 +28,7 @@ const TAG = '[fingerInfos]';
 struct fingerInfosDemo {
   @State name: string = 'fingerInfos';
   @State stepTips: string = '操作步骤:\n' + '1.按照每个白色column组件中的文本内容在不同位置进行多次不同的手势操作\n' +
-    '2.搜索log"ccc"\n' +
+    '2.查看hilog,命令：进入cmd终端输入hdc shell,再输入hilog|grep -i -E "ccc"\n' +
     '预期结果：\n' +
     '1.执行完对应的手势操作后，log中会打印fingerlist和fingerinfos的有关信息,当fingerlist打印出的log中有null时,fingerinfos的log中不应该有null且id不为0\n' +
     '2.在不同位置执行手势操作时,fingerinfos打印的log中的globalDisplayX和globalDisplayY的值应不同\n'
@@ -61,7 +61,11 @@ struct fingerInfosDemo {
     .width('30%')
     .height('30vp')
     .backgroundColor(Color.Grey)
+    .opacity(this.isOk ? 1 : 0.4)
+    .enabled(this.isOk)
     .onClick(() => {
+      globalThis.arkResult = 'true ';
+      globalThis.arkTitle = this.name;
       router.back({
         url: 'pages/ArkUI/ArkUI_index',
         params: {
@@ -86,6 +90,7 @@ struct fingerInfosDemo {
     .height('30vp')
     .backgroundColor(Color.Grey)
     .onClick(() => {
+      globalThis.arkTitle = this.name;
       router.back({
         url: 'pages/ArkUI/ArkUI_index',
         params: {
@@ -122,6 +127,7 @@ struct fingerInfosDemo {
         .backgroundColor(Color.Black)
         .size({ width: '40vp', height: '30vp' })
         .onClick(() => {
+          globalThis.arkTitle = this.name;
           router.back({
             url: 'pages/ArkUI/ArkUI_index',
             params: { result: 'None' }
@@ -154,6 +160,7 @@ struct fingerInfosDemo {
                       console.log('cccfingerinfosLong' + JSON.stringify(event.fingerInfos))
                       if (event && event.repeat) {
                         this.count++
+                        this.isOk = true
                       }
                     })
                     .onActionEnd((event: GestureEvent) => {

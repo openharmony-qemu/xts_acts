@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach, afterEach, describe, expect, it, TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, afterEach, describe, expect, it, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import napitest from 'libentry.so';
 import { taskpool, collections, ArkTSUtils, lang } from '@kit.ArkTS';
 import { sleep } from './Utils';

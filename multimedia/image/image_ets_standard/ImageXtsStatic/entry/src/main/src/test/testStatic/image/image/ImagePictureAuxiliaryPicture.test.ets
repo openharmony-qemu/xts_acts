@@ -35,9 +35,16 @@ export default function ImagePictureAuxiliaryPicture(): void {
   describe('ImagePictureAuxiliaryPicture', (): void => {
     let filesDir: string | undefined | null;
     let filePath: string = '';
+    let isSupportHdr: Boolean = false;
 
     beforeAll(async () => {
       filesDir = Hypium.get('pathDir') as string;
+      try {
+        isSupportHdr = await fs.access('/sys_prod/lib64/VideoProcessingEngine/libaihdr_engine.so');
+        console.info('isSupportHdr is ' + isSupportHdr);
+      } catch (err) {
+        console.error('The file path does not exist');
+      }
     });
 
     beforeEach(() => {
@@ -427,6 +434,11 @@ export default function ImagePictureAuxiliaryPicture(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_AUXILIARY_PICTURE_HDR_static_0600', Level.LEVEL0, async (done: () => void) => {
+      if (!isSupportHdr) {
+        console.info("device does not support hdr");
+        done();
+        return
+      }
       const testName = 'SUB_MULTIMEDIA_IMAGE_AUXILIARY_PICTURE_HDR_static_0600'
       let result: boolean = false;
       let fileName = "all_auxtype.heic";

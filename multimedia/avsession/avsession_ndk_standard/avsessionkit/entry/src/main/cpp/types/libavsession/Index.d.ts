@@ -53,6 +53,10 @@ export const AVMetadataBuilderSetDurationSuccess: () => number;
 
 export const AVMetadataBuilderSetDurationInvalidParam: () => number;
 
+export const AVMetadataBuilderSetMediaImageUriSuccess: () => number;
+
+export const AVMetadataBuilderSetMediaImageUriInvalidParam: () => number;
+
 export const AVMetadataBuilderSetArtistSuccess: () => number;
 
 export const AVMetadataBuilderSetArtistInvalidParam: () => number;
@@ -222,6 +226,8 @@ export const AVSessionAcquireSessionSuccess: () => number;
 export const AVSessionAcquireSessionInvalidParam: () => number;
 
 export const AVSessionCreateAVCastControllerInvalidParam: () => number;
+
+export const AVSessionCreateAVCastControllerSuccess: () => number;
 
 export const AVSessionStopCastingSuccess: () => number;
 

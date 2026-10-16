@@ -12,11 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import {PointerMatrix, UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode} from '@ohos.UiTest';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0;
 export default function SwipeGestureExample03Test() {
   describe('SwipeGestureExample03Test', () => {
     beforeEach(async (done: Function) => {
@@ -72,10 +73,10 @@ export default function SwipeGestureExample03Test() {
       let speed = Math.floor(areaWidth1 * 0.5 / 0.016 / 1000) * 1000
       await CommonFunc.sleep(1000);
       let pointers: PointerMatrix = PointerMatrix.create(2,2);
-      pointers.setPoint(0,0,{x: Math.round(areaObj1.left + areaWidth1 * 0.2),y: Math.round(areaObj1.top + areaHeight1/2) });
-      pointers.setPoint(0,1,{x: Math.round(areaObj1.left + areaWidth1 * 0.7),y: Math.round(areaObj1.top + areaHeight1/2) });
-      pointers.setPoint(1,0,{x: Math.round(areaObj1.left + areaWidth1 * 0.3),y: Math.round(areaObj1.top + areaHeight1/2) });
-      pointers.setPoint(1,1,{x: Math.round(areaObj1.left + areaWidth1 * 0.8),y: Math.round(areaObj1.top + areaHeight1/2) });
+      pointers.setPoint(0,0,{x: Math.round(areaObj1.left + areaWidth1 * 0.2),y: Math.round(areaObj1.top + areaHeight1/2), displayId: displayID });
+      pointers.setPoint(0,1,{x: Math.round(areaObj1.left + areaWidth1 * 0.7),y: Math.round(areaObj1.top + areaHeight1/2), displayId: displayID });
+      pointers.setPoint(1,0,{x: Math.round(areaObj1.left + areaWidth1 * 0.3),y: Math.round(areaObj1.top + areaHeight1/2), displayId: displayID });
+      pointers.setPoint(1,1,{x: Math.round(areaObj1.left + areaWidth1 * 0.8),y: Math.round(areaObj1.top + areaHeight1/2), displayId: displayID });
       await driver.injectMultiPointerAction(pointers,speed);
       await CommonFunc.sleep(4000);
 

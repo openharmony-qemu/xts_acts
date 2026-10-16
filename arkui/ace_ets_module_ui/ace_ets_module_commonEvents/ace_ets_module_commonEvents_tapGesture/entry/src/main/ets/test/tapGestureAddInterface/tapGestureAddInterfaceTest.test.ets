@@ -12,11 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function tapGestureAddInterfaceTest() {
   describe('tapGestureAddInterfaceTest', () => {
     beforeEach(async (done: Function) => {
@@ -64,7 +65,7 @@ export default function tapGestureAddInterfaceTest() {
       console.info('tapGestureAddInterfaceTest_0010 column1 width = ' + width + ",height = " + height);
       let driver: Driver = Driver.create();
       let button: Component = await driver.findComponent(ON.id('interfaceTestKey'));
-      await driver.doubleClick(Math.round(column1.left + vp2px(10)),Math.round(column1.top + vp2px(10)));
+      await driver.doubleClickAt({x:Math.round(column1.left + vp2px(10)),y:Math.round(column1.top + vp2px(10)),displayId:displayID});
       await CommonFunc.sleep(3000)
       let tt1 = getInspectorByKey('valueKey');
       let obj: ESObject = JSON.parse(tt1);
@@ -75,7 +76,7 @@ export default function tapGestureAddInterfaceTest() {
       expect(Math.abs(dataE.localY -10) <=1 ).assertTrue();
 
       // click the distanceThreshold range
-      await driver.doubleClick(Math.round(column1.left + width/2 - vp2px(10)),Math.round(column1.top + vp2px(10)));
+      await driver.doubleClickAt({x:Math.round(column1.left + width/2 - vp2px(10)),y:Math.round(column1.top + vp2px(10)),displayId:displayID});
       await CommonFunc.sleep(4000)
       let tt2 = getInspectorByKey('valueKey');
       let obj2: ESObject = JSON.parse(tt2);
@@ -106,7 +107,7 @@ export default function tapGestureAddInterfaceTest() {
       console.info('tapGestureAddInterfaceTest_0010 column1 width = ' + width + ",height = " + height);
       let driver: Driver = Driver.create();
       let button: Component = await driver.findComponent(ON.id('interfaceTestKey'));
-      await driver.doubleClick(Math.round(column1.left + vp2px(10)),Math.round(column1.top + vp2px(10)));
+      await driver.doubleClickAt({x:Math.round(column1.left + vp2px(10)),y:Math.round(column1.top + vp2px(10)),displayId:displayID});
       await CommonFunc.sleep(3000)
       let tt1 = getInspectorByKey('valueKey');
       let obj: ESObject = JSON.parse(tt1);
@@ -117,7 +118,7 @@ export default function tapGestureAddInterfaceTest() {
       expect(Math.abs(dataE.localY - 10) <= 1).assertTrue();
 
       // swipe the distanceThreshold range
-      await driver.swipe(Math.round(column1.left + vp2px(10)),Math.round(column1.top + vp2px(10)),Math.round(column1.left + vp2px(80)), Math.round(column1.top + vp2px(10)));
+      await driver.swipeBetween({x:Math.round(column1.left + vp2px(10)),y:Math.round(column1.top + vp2px(10)),displayId:displayID},{x:Math.round(column1.left + vp2px(80)),y:Math.round(column1.top + vp2px(10)),displayId:displayID})
       await CommonFunc.sleep(3000)
       let tt2 = getInspectorByKey('valueKey');
       let obj2: ESObject = JSON.parse(tt2);
@@ -128,7 +129,7 @@ export default function tapGestureAddInterfaceTest() {
       expect(Math.abs(dataE2.localY - 10) <= 1).assertTrue();
 
        // swipe the distanceThreshold range
-      await driver.swipe(Math.round(column1.left + vp2px(10)),Math.round(column1.top + vp2px(10)),Math.round(column1.left + vp2px(130)), Math.round(column1.top + vp2px(10)));
+      await driver.swipeBetween({x:Math.round(column1.left + vp2px(10)),y:Math.round(column1.top + vp2px(10)),displayId:displayID},{x:Math.round(column1.left + vp2px(130)),y:Math.round(column1.top + vp2px(10)),displayId:displayID})
       await CommonFunc.sleep(3000)
       let tt3 = getInspectorByKey('valueKey');
       let obj3: ESObject = JSON.parse(tt3);
@@ -161,7 +162,7 @@ export default function tapGestureAddInterfaceTest() {
       console.info('tapGestureAddInterfaceTest_0010 column1 width = ' + width + ",height = " + height);
       let driver: Driver = Driver.create();
       let button: Component = await driver.findComponent(ON.id('interfaceTestKey'));
-      await driver.click(Math.round(column1.left + vp2px(10)),Math.round(column1.top + vp2px(10)));
+      await driver.clickAt({x:Math.round(column1.left + vp2px(10)),y:Math.round(column1.top + vp2px(10)),displayId:displayID});
       await CommonFunc.sleep(3000)
       let tt1 = getInspectorByKey('valueKey');
       let obj: ESObject = JSON.parse(tt1);
@@ -172,7 +173,7 @@ export default function tapGestureAddInterfaceTest() {
       expect(Math.abs(dataE.localY - 10) <= 1).assertTrue();
 
       // click the distanceThreshold range
-      await driver.click(Math.round(column1.left + width/2 - vp2px(10)),Math.round(column1.top + vp2px(10)));
+      await driver.clickAt({x:Math.round(column1.left + width/2 - vp2px(10)),y:Math.round(column1.top + vp2px(10)),displayId:displayID});
       await CommonFunc.sleep(4000)
       let tt2 = getInspectorByKey('valueKey');
       let obj2: ESObject = JSON.parse(tt2);
@@ -203,7 +204,7 @@ export default function tapGestureAddInterfaceTest() {
       console.info('tapGestureAddInterfaceTest_0010 column1 width = ' + width + ",height = " + height);
       let driver: Driver = Driver.create();
       let button: Component = await driver.findComponent(ON.id('interfaceTestKey'));
-      await driver.click(Math.round(column1.left + vp2px(10)),Math.round(column1.top + vp2px(10)));
+      await driver.clickAt({x:Math.round(column1.left + vp2px(10)),y:Math.round(column1.top + vp2px(10)),displayId:displayID});
       await CommonFunc.sleep(3000)
       let tt1 = getInspectorByKey('valueKey');
       let obj: ESObject = JSON.parse(tt1);
@@ -214,7 +215,7 @@ export default function tapGestureAddInterfaceTest() {
       expect(Math.abs(dataE.localY - 10) <= 1).assertTrue();
 
       // swipe the distanceThreshold range
-      await driver.swipe(Math.round(column1.left + vp2px(10)),Math.round(column1.top + vp2px(10)),Math.round(column1.left + vp2px(80)), Math.round(column1.top + vp2px(10)));
+      await driver.swipeBetween({x:Math.round(column1.left + vp2px(10)),y:Math.round(column1.top + vp2px(10)),displayId:displayID},{x:Math.round(column1.left + vp2px(80)),y:Math.round(column1.top + vp2px(10)),displayId:displayID})
       await CommonFunc.sleep(3000)
       let tt2 = getInspectorByKey('valueKey');
       let obj2: ESObject = JSON.parse(tt2);
@@ -225,7 +226,7 @@ export default function tapGestureAddInterfaceTest() {
       expect(Math.abs(dataE2.localY - 10) <= 1).assertTrue();
 
        // swipe out of the distanceThreshold range
-      await driver.swipe(Math.round(column1.left + vp2px(10)),Math.round(column1.top + vp2px(10)),Math.round(column1.left + vp2px(130)), Math.round(column1.top + vp2px(10)));
+      await driver.swipeBetween({x:Math.round(column1.left + vp2px(10)),y:Math.round(column1.top + vp2px(10)),displayId:displayID},{x:Math.round(column1.left + vp2px(130)),y:Math.round(column1.top + vp2px(10)),displayId:displayID})
       await CommonFunc.sleep(3000)
       let tt3 = getInspectorByKey('valueKey');
       let obj3: ESObject = JSON.parse(tt3);

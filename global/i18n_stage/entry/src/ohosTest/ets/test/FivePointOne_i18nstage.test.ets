@@ -14,7 +14,7 @@
  */
 
 import Ability from '@ohos.app.ability.UIAbility';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import { i18n, intl } from '@kit.LocalizationKit';
 import { LengthMetrics } from '@kit.ArkUI';
 

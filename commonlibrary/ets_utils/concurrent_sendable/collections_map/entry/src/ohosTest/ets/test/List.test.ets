@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2026 RKH Corp.
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -37,6 +37,12 @@ import collectionsMapSetGet from './CollectionsMapSetGet.test';
 import collectionsMapConcurrentTest from './CollectionsMapConcurrent.test';
 import CollectionsMapExpand1024Test from './CollectionsMapExpand1024Test.test';
 
+import MapBasicTest from './MapBasic.test';
+import MapConcurrentTest from './Concurrent/MapConcurrent.test';
+import MapNormalTest from './Normal/MapNormal.test';
+import MapTaskPoolTest from './TaskPool/MapTaskPool.test';
+
+import MapInheritanceTest from './collections/MapInheritanceTest.test';
 
 export default function testsuite() {
   CollectionsMapClearTest();
@@ -62,4 +68,10 @@ export default function testsuite() {
   collectionsMapSetGet();
   collectionsMapConcurrentTest();
   CollectionsMapExpand1024Test();
+  MapBasicTest();
+  MapConcurrentTest();
+  MapNormalTest();
+  MapTaskPoolTest();
+  
+  MapInheritanceTest();
 };

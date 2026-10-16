@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import {
   UiComponent,
@@ -30,6 +30,8 @@ import {
 } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 import bundle from '@ohos.bundle.bundleManager';
+
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 
 export default function sheetSize1Jsunit() {
   describe('sheetSize1Jsunit', () => {
@@ -91,7 +93,9 @@ export default function sheetSize1Jsunit() {
       let button: Component = await driver.findComponent(ON.id('bindSheet_SheetSize1'));
       await button.click();
       await CommonFunc.sleep(1000);
-      await driver.click(Math.round(globalThis.winLeft + vp2px(50)), Math.round(globalThis.winTop + vp2px(50)))
+      // 涉及坐标
+      await driver.clickAt({ x: Math.round(globalThis.winLeft + vp2px(50)), y: Math.round(globalThis.winTop + vp2px(50)), displayId: displayID });
+      // await driver.click(Math.round(globalThis.winLeft + vp2px(50)), Math.round(globalThis.winTop + vp2px(50)))
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('bindSheet_dismiss1');
       console.info("[sheetSize1Jsunit_0200] component obj is: " + JSON.stringify(JSON.parse(strJson)));

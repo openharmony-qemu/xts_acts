@@ -19,6 +19,7 @@ import CommonFunc from '../../MainAbility/common/Common';
 import {MessageManager,Callback} from '../../MainAbility/common/MessageManager';
 import window from '@ohos.window';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function openCustomDialog4() {
   describe('openCustomDialog4', () => {
     beforeEach(async (done: Function) => {
@@ -54,7 +55,7 @@ export default function openCustomDialog4() {
       let button = await driver.findComponent(ON.id('openCustomDialogXTS'));
       await button.click();
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2070);
+      await driver.triggerKey(2070,displayID);
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('openCustomDialogMessage');
       let obj: ESObject = JSON.parse(strJson);

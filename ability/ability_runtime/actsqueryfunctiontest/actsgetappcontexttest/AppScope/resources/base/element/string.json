@@ -3,6 +3,10 @@
     {
       "name": "app_name",
       "value": "actsgetappcontexttest"
+    },
+    {
+      "name": "description_application",
+      "value": "demo for test"
     }
   ]
 }

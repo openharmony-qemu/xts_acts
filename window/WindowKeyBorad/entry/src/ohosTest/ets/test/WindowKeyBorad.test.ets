@@ -14,7 +14,7 @@
  */
 import hilog from '@ohos.hilog';
 import window from '@ohos.window';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , TestType, Size, Level} from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , TestType, Size, Level} from '@ohos/hypium-dynamic';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { Driver, ON } from '@kit.TestKit';
@@ -523,6 +523,168 @@ export default function windowKeyBorad() {
     });
 
     /**
+     * @tc.name   test_OffKeyboardDidShow_OffKeyboardDidHide_WithCallback
+     * @tc.desc   off('keyboardDidShow', callback) 传参，关闭对应的 callback；
+     * @tc.number SUB_BASIC_WMS_OFFKEYBOARDDIDHIDE_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_OffKeyboardDidShow_OffKeyboardDidHide_WithCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'test_OffKeyboardDidShow_OffKeyboardDidHide_WithCallback ';
+      console.log(caseName + 'begin');
+      let count1 = 0;
+      let count2 = 0;
+      let count3 = 0;
+      let count4 = 0;
+      try {
+        const callback1 = (keyboardInfo: window.KeyboardInfo) => {
+          console.info(`${caseName} KeyboardInfo1: ${JSON.stringify(keyboardInfo)}`);
+          count1++;
+        };
+        const callback2 = (keyboardInfo: window.KeyboardInfo) => {
+          console.info(`${caseName} KeyboardInfo2: ${JSON.stringify(keyboardInfo)}`);
+          count2++;
+        };
+        let windowClass = await windowStage.createSubWindow('test_OffKeyboardDidShow_OffKeyboardDidHide_WithCallback')
+        console.info(`${caseName} Succeeded create subwindow:${JSON.stringify(windowClass)}`);
+        await windowClass.setUIContent('testability/pages/WindowTest/KeyBoradFocus')
+        console.info(`${caseName} Succeeded setuicontent`);
+        await windowClass.showWindow()
+        console.info(`${caseName} Succeeded show window`);
+        windowClass.on('keyboardDidShow', callback1);
+        windowClass.on('keyboardDidShow', callback2);
+        windowClass.off('keyboardDidShow', callback1);
+        console.info(`${caseName} Succeeded off callback1`);
+        const callback3 = (keyboardInfo: window.KeyboardInfo) => {
+          console.info(`${caseName} KeyboardInfo3: ${JSON.stringify(keyboardInfo)}`);
+          count3++;
+        };
+        const callback4 = (keyboardInfo: window.KeyboardInfo) => {
+          console.info(`${caseName} KeyboardInfo4: ${JSON.stringify(keyboardInfo)}`);
+          count4++;
+        };
+        windowClass.on('keyboardDidHide', callback3);
+        windowClass.on('keyboardDidHide', callback4);
+        windowClass.off('keyboardDidHide', callback3);
+        console.info(`${caseName} Succeeded off callback3`);
+        await sleep(500);
+        focusControl.requestFocus('textInput');
+        console.info(`${caseName} Succeeded requestFocus`);
+        await sleep(500)
+        focusControl.requestFocus('focusTarget');
+        console.info(`${caseName} Succeeded loseFocus`);
+        await sleep(1000)
+        windowClass.off('keyboardDidShow', callback2);
+        windowClass.off('keyboardDidHide', callback4);
+        console.info(`${caseName} Succeeded off callback2 callback4`);
+        await sleep(100)
+        console.info(`${caseName} count1:${JSON.stringify(count1)},count2:${JSON.stringify(count2)},count3:${JSON.stringify(count3)},count4:${JSON.stringify(count4)}`);
+        await windowClass.destroyWindow()
+        if(deviceType !== 'phone'){
+          expect(count1).assertEqual(0);
+          expect(count2).assertEqual(0);
+          expect(count3).assertEqual(0);
+          expect(count4).assertEqual(0);
+        }else{
+          expect(count1).assertEqual(0);
+          expect(count2).assertEqual(1);
+          expect(count3).assertEqual(0);
+          expect(count4).assertEqual(1);
+        }
+        done();
+      } catch (err) {
+        console.error(caseName + 'Failed. Cause:' + JSON.stringify(err));
+        if (!isSyscapSessionManagerSupported) {
+          expect(err.code).assertEqual(801)
+        }else{
+          expect(true).assertFalse()
+        }
+        done()
+      }
+    });
+
+    /**
+     * @tc.name   testSubWindowDestroy_offkeyboardDidShow
+     * @tc.number SUB_BASIC_WMS_ONKEYBOARDDIDSHOW_0100
+     * @tc.desc   子窗销毁后取消监听offKeyboarddidshow返回1300002错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSubWindowDestroy_offkeyboardDidShow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testSubWindowDestroy_offkeyboardDidShow ';
+      console.log(caseName + 'begin');
+      const subWindowClass = await windowStage.createSubWindow('testSubWindowDestroy_offkeyboardDidShow');
+      console.info(`${caseName} Succeeded in creating the sub window.`);
+      await subWindowClass.setUIContent('testability/pages/WindowTest/KeyBoradTest');
+      await sleep(200);
+      await subWindowClass.showWindow();
+      console.info(`${caseName} Succeeded in showWindow the sub window.`);
+      await sleep(200);
+      try {
+        await subWindowClass.destroyWindow()
+        console.info(`${caseName} Succeeded in destroyed the sub window.`);
+        const callback  = (keyboardInfo: window.KeyboardInfo) => {
+          console.info(`${caseName} KeyboardInfo: ${JSON.stringify(keyboardInfo)}`);
+        }
+        subWindowClass.off('keyboardDidShow', callback);
+        done();
+      } catch (err) {
+        console.error(caseName + 'Failed. Cause:' + JSON.stringify(err));
+        if(!isSyscapSessionManagerSupported){
+          expect(err.code).assertEqual(801);
+        }else if(err.code === 1300002){
+          expect(err.code).assertEqual(1300002);
+        }else{
+          expect(true).assertFalse();
+        }
+        done();
+      }
+    });
+
+     /**
+     * @tc.name   testSubWindowDestroy_offkeyboardDidHide
+     * @tc.number SUB_BASIC_WMS_ONKEYBOARDDIDHIDE_0300
+     * @tc.desc   子窗销毁后取消监听offKeyboarddidhide返回1300002错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSubWindowDestroy_offkeyboardDidHide', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testSubWindowDestroy_offkeyboardDidHide ';
+      console.log(caseName + 'begin');
+      const subWindowClass = await windowStage.createSubWindow('testSubWindowDestroy_offkeyboardDidHide');
+      console.info(`${caseName} Succeeded in creating the sub window.`);
+      await subWindowClass.setUIContent('testability/pages/WindowTest/KeyBoradTest');
+      await sleep(200);
+      await subWindowClass.showWindow();
+      console.info(`${caseName} Succeeded in showWindow the sub window.`);
+      await sleep(200);
+      try {
+        await subWindowClass.destroyWindow()
+        console.info(`${caseName} Succeeded in destroyed the sub window.`);
+        const callback  = (keyboardInfo: window.KeyboardInfo) => {
+          console.info(`${caseName} KeyboardInfo: ${JSON.stringify(keyboardInfo)}`);
+        }
+        subWindowClass.off('keyboardDidHide', callback);
+        done();
+      } catch (err) {
+        console.error(caseName + 'Failed. Cause:' + JSON.stringify(err));
+        if(!isSyscapSessionManagerSupported){
+          expect(err.code).assertEqual(801);
+        }else if(err.code === 1300002){
+          expect(err.code).assertEqual(1300002);
+        }else{
+          expect(true).assertFalse();
+        }
+        done();
+      }
+    });
+
+
+
+    /**
      * @tc.name   testSubWindowDestroy_onkeyboardWillHide
      * @tc.number SUB_BASIC_WMS_ONKEYBOARDWILLHIDE_0400
      * @tc.desc   子窗销毁后监听onKeyboardWillHide返回1300002错误码
@@ -889,6 +1051,85 @@ export default function windowKeyBorad() {
       expect(window.WindowAnimationCurve.INTERPOLATION_SPRING).assertEqual(1);
       done();
     })
+
+
+     /**
+     * @tc.name   testSubWindowDestroy_offkeyboardDidShow_error1300002
+     * @tc.number SUB_BASIC_WMS_OFFKEYBOARDDIDSHOW_0100
+     * @tc.desc   子窗销毁后取消监听offkeyboardDidShow返回1300002错误码，设备差异化：不支持SessionManager返回801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSubWindowDestroy_offkeyboardDidShow_error1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testSubWindowDestroy_offkeyboardDidShow_error1300002 ';
+      console.log(caseName + 'begin');
+      const subWindowClass = await windowStage.createSubWindow('testSubWindowDestroy_offkeyboardDidShow_error1300002');
+      console.info(`${caseName} Succeeded in creating the sub window.`);
+      await subWindowClass.setUIContent('testability/pages/WindowTest/KeyBoradTest');
+      await sleep(200);
+      await subWindowClass.showWindow();
+      console.info(`${caseName} Succeeded in showWindow the sub window.`);
+      await sleep(200);
+      try {
+        await subWindowClass.destroyWindow()
+        console.info(`${caseName} Succeeded in destroyed the sub window.`);
+        const callback  = (keyboardInfo: window.KeyboardInfo) => {
+          console.info(`${caseName} KeyboardInfo: ${JSON.stringify(keyboardInfo)}`);
+        }
+        subWindowClass.off('keyboardDidShow', callback);
+        done();
+      } catch (err) {
+        console.error(caseName + 'Failed. Cause:' + JSON.stringify(err));
+        if(!isSyscapSessionManagerSupported){
+          expect(err.code).assertEqual(801);
+        }else if(err.code === 1300002){
+          expect(err.code).assertEqual(1300002);
+        }else{
+          expect(true).assertFalse();
+        }
+        done();
+      }
+    });
+
+     /**
+     * @tc.name   testSubWindowDestroy_offkeyboardDidHide_error1300002
+     * @tc.number SUB_BASIC_WMS_OFFKEYBOARDDIDHIDE_0100
+     * @tc.desc   子窗销毁后取消监听offkeyboardDidHide返回1300002错误码，设备差异化：不支持SessionManager返回801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSubWindowDestroy_offkeyboardDidHide_error1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testSubWindowDestroy_offkeyboardDidHide_error1300002 ';
+      console.log(caseName + 'begin');
+      const subWindowClass = await windowStage.createSubWindow('testSubWindowDestroy_offkeyboardDidHide_error1300002');
+      console.info(`${caseName} Succeeded in creating the sub window.`);
+      await subWindowClass.setUIContent('testability/pages/WindowTest/KeyBoradTest');
+      await sleep(200);
+      await subWindowClass.showWindow();
+      console.info(`${caseName} Succeeded in showWindow the sub window.`);
+      await sleep(200);
+      try {
+        await subWindowClass.destroyWindow()
+        console.info(`${caseName} Succeeded in destroyed the sub window.`);
+        const callback  = (keyboardInfo: window.KeyboardInfo) => {
+          console.info(`${caseName} KeyboardInfo: ${JSON.stringify(keyboardInfo)}`);
+        }
+        subWindowClass.off('keyboardDidHide', callback);
+        done();
+      } catch (err) {
+        console.error(caseName + 'Failed. Cause:' + JSON.stringify(err));
+        if(!isSyscapSessionManagerSupported){
+          expect(err.code).assertEqual(801);
+        }else if(err.code === 1300002){
+          expect(err.code).assertEqual(1300002);
+        }else{
+          expect(true).assertFalse();
+        }
+        done();
+      }
+    });
     
 
   })

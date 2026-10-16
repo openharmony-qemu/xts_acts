@@ -43,7 +43,7 @@ export default function DrawingNativeMaskFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testMaskFilterCreateBlurDestroyNormal', Level.LEVEL0, () => {
+    it('testMaskFilterCreateBlurDestroyNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingMaskFilter(0);
       expect(result).assertEqual(0);
     })
@@ -56,7 +56,7 @@ export default function DrawingNativeMaskFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testMaskFilterCreateBlurDestroyNULL', Level.LEVEL3, () => {
+    it('testMaskFilterCreateBlurDestroyNULL', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingMaskFilter(1);
       expect(result).assertEqual(0);
     })
@@ -69,7 +69,7 @@ export default function DrawingNativeMaskFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testMaskFilterCreateBlurDestroyMultipleCalls', Level.LEVEL3, () => {
+    it('testMaskFilterCreateBlurDestroyMultipleCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingMaskFilter(2);
       expect(result).assertEqual(0);
     })
@@ -82,7 +82,7 @@ export default function DrawingNativeMaskFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testMaskFilterCreateBlurDestroyAbnormal', Level.LEVEL3, () => {
+    it('testMaskFilterCreateBlurDestroyAbnormal', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingMaskFilter(3);
       expect(result).assertEqual(0);
     })
@@ -95,7 +95,7 @@ export default function DrawingNativeMaskFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testMaskFilterCreateBlurDestroyMaximum', Level.LEVEL3, () => {
+    it('testMaskFilterCreateBlurDestroyMaximum', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingMaskFilter(4);
       expect(result).assertEqual(0);
     })

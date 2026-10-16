@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import {
   UiComponent,
@@ -29,6 +29,8 @@ import {
 } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 import { KeyCode } from '@kit.InputKit';
+
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 
 export default function RichEditorOnSelectionChange007() {
   describe('RichEditorOnSelectionChange007', () => {
@@ -84,7 +86,7 @@ export default function RichEditorOnSelectionChange007() {
       await CommonFunc.sleep(500);
       expect(messageText).assertEqual('message:{"start":1,"end":4}');
 
-      driver.triggerKey(KeyCode.KEYCODE_COPY);
+      driver.triggerKey(KeyCode.KEYCODE_COPY, displayID);
       await CommonFunc.sleep(1000);
 
       messageText = await message.getText();
@@ -95,5 +97,6 @@ export default function RichEditorOnSelectionChange007() {
 
   })
 }
+
 
 

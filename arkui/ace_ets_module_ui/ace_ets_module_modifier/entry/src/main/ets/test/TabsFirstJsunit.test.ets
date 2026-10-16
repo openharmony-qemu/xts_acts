@@ -14,7 +14,7 @@
  */
 
 import router from '@ohos.router';
-import { describe, beforeEach, afterEach, it, expect, Level} from '@ohos/hypium';
+import { describe, beforeEach, afterEach, it, expect, Level} from '@ohos/hypium-dynamic';
 import { UiDriver, UiComponent, BY, Driver, Component, ON } from '@ohos.UiTest'
 import Utils from './Utils';
 

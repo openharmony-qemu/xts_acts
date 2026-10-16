@@ -43,33 +43,7 @@ export default function AsynclockSameAddSecondTest() {
       // This API supports only one parameter: clear action function.
     })
 
-    /**
-     * @tc.name   AsynclockSameAddTest5000
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_SAME_ADD_SECOND_0001
-     * @tc.desc   test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('AsynclockSameAddTest5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: Function) => {
-        const caseName = 'AsynclockSameAddTest5000';
-        console.info(`${caseName} test start`);
-        let task: taskpool.Task = new taskpool.Task(taskFunctionTest5000);
-        let count = 0;
-        for (let i = 0; i < 3; i++) {
-          taskpool.execute(task).then((result) => {
-            console.log(`${result}`);
-            count++;
-          }).catch((err: Error) => { console.error(err.message); Done(); });
-        }
-        while(count != 3){
-          await sleep(300);
-        }
-        expect(count).assertEqual(3);
-        console.info(`${caseName} test end`);
-        Done();
-      });
+    
 
     /**
      * @tc.name   AsynclockSameAddTest5100

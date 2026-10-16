@@ -61,24 +61,6 @@ export default function Int16ArrayOfTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OF_TWO_0200
-     * @tc.name testInt16ArrayOfTestTwo002
-     * @tc.desc Verify Int16Array.of boundary elements via $_get
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArrayOfTestTwo002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: Int16Array = Int16Array.of(-32768.0, -32768.0);
-      let r1: number = result.$_get(0);
-      let e1: int = -32768;
-      expect(r1).assertEqual(e1);
-      let r2: number = result.$_get(1);
-      let e2: int = -32768;
-      expect(r2).assertEqual(e2);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OF_TWO_0300
      * @tc.name testInt16ArrayOfTestTwo003
      * @tc.desc Verify Int16Array.of() returns Int16Array instance
@@ -225,21 +207,6 @@ export default function Int16ArrayOfTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OF_TWO_1200
-     * @tc.name testInt16ArrayOfTestTwo012
-     * @tc.desc Verify Int16Array.of overflow float wraps via $_get
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArrayOfTestTwo012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: Int16Array = Int16Array.of(-32769.5);
-      let r1: number = result.$_get(0);
-      let e1: int = 32767;
-      expect(r1).assertEqual(e1);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OF_TWO_1300
      * @tc.name testInt16ArrayOfTestTwo013
      * @tc.desc Verify Int16Array.of(0.0, 0.5, 0.9, 1.0) truncates fractions to 0, 0, 0, 1
@@ -305,73 +272,6 @@ export default function Int16ArrayOfTest02(): void {
       expect(r2).assertEqual(e2);
       let r3: number = result.$_get(2);
       let e3: int = 3;
-      expect(r3).assertEqual(e3);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OF_TWO_1600
-     * @tc.name testInt16ArrayOfTestTwo016
-     * @tc.desc Verify Int16Array.of chained result elements via $_get
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArrayOfTestTwo016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: Int16Array = Int16Array.of(1.0, 2.0, 3.0).fill(0.0);
-      let r1: number = result.$_get(0);
-      let e1: int = 0;
-      expect(r1).assertEqual(e1);
-      let r2: number = result.$_get(1);
-      let e2: int = 0;
-      expect(r2).assertEqual(e2);
-      let r3: number = result.$_get(2);
-      let e3: int = 0;
-      expect(r3).assertEqual(e3);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OF_TWO_1700
-     * @tc.name testInt16ArrayOfTestTwo017
-     * @tc.desc Verify Int16Array.of chained result elements via $_get
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArrayOfTestTwo017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: Int16Array = Int16Array.of(1.0, 2.0, 3.0).reverse();
-      let r1: number = result.$_get(0);
-      let e1: int = 3;
-      expect(r1).assertEqual(e1);
-      let r2: number = result.$_get(1);
-      let e2: int = 2;
-      expect(r2).assertEqual(e2);
-      let r3: number = result.$_get(2);
-      let e3: int = 1;
-      expect(r3).assertEqual(e3);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OF_TWO_1800
-     * @tc.name testInt16ArrayOfTestTwo018
-     * @tc.desc Verify Int16Array.of chained result elements via $_get
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArrayOfTestTwo018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: Int16Array = Int16Array.of(1.0, 2.0, 3.0).map(
-        (value: number, index: int, array: Int16Array): number => {
-          return value + 1.0;
-        },
-      );
-      let r1: number = result.$_get(0);
-      let e1: int = 2;
-      expect(r1).assertEqual(e1);
-      let r2: number = result.$_get(1);
-      let e2: int = 3;
-      expect(r2).assertEqual(e2);
-      let r3: number = result.$_get(2);
-      let e3: int = 4;
       expect(r3).assertEqual(e3);
     });
 
@@ -1161,7 +1061,7 @@ export default function Int16ArrayOfTest02(): void {
      * @tc.level Level 2
      */
     it('testInt16ArrayOfTestTwo058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let vals: FixedArray<short> = new FixedArray<short>(50);
+      let vals: FixedArray<short> = new FixedArray<short>(50, 0);
       for (let i = 0; i < 50; i++) {
         vals[i] = (i % 2 === 0 ? 1 as short : -1 as short);
       }

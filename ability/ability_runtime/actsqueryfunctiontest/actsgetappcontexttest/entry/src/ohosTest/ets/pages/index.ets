@@ -15,7 +15,7 @@
 
 @Entry
 @Component
-struct Index {
+struct PagesIndex {
   @State message: string = 'Hello World';
 
   build() {

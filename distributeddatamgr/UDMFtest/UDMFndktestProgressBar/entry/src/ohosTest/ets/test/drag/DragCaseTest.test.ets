@@ -153,10 +153,17 @@ export default function DragTest(){
       let PAGE_TAG:string = 'ContentCardTest1';
       await Utils.pushPage(`drag/${PAGE_TAG}`);
       let button = await driver.findComponent(ON.id('card'));
-      await Utils.sleep(100);
-      await button?.click();
-      await Utils.sleep(10000);
       let smallCard = await driver.findComponent(ON.id('smallCard'));
+      console.log('SUB_UDMFndk_CASE_004', JSON.stringify(smallCard));
+      while(smallCard == undefined){
+        button = await driver.findComponent(ON.id('card'));
+        await Utils.sleep(500);
+        await button?.click();
+        await Utils.sleep(500);
+        smallCard = await driver.findComponent(ON.id('smallCard'));
+        console.log('SUB_UDMFndk_CASE_004', JSON.stringify(smallCard));
+      }
+      await Utils.sleep(500);
       let strJson = getInspectorByKey('smallCard');
       let obj: ESObject = JSON.parse(strJson);
       expect( JSON.stringify(obj) != '').assertEqual(true);
@@ -175,10 +182,17 @@ export default function DragTest(){
       let PAGE_TAG:string = 'ContentCardTest2';
       await Utils.pushPage(`drag/${PAGE_TAG}`);
       let button = await driver.findComponent(ON.id('card'));
-      await Utils.sleep(100);
-      await button?.click();
-      await Utils.sleep(10000);
       let midCard = await driver.findComponent(ON.id('midCard'));
+      console.log('SUB_UDMFndk_CASE_005', JSON.stringify(midCard));
+      while(midCard == undefined){
+        button = await driver.findComponent(ON.id('card'));
+        await Utils.sleep(500);
+        await button?.click();
+        await Utils.sleep(500);
+        midCard = await driver.findComponent(ON.id('midCard'));
+        console.log('SUB_UDMFndk_CASE_005', JSON.stringify(midCard));
+      }
+      await Utils.sleep(500);
       let strJson = getInspectorByKey('midCard');
       let obj: ESObject = JSON.parse(strJson);
       expect( JSON.stringify(obj) != '').assertEqual(true);
@@ -197,10 +211,17 @@ export default function DragTest(){
       let PAGE_TAG:string = 'ContentCardTest3';
       await Utils.pushPage(`drag/${PAGE_TAG}`);
       let button = await driver.findComponent(ON.id('card'));
-      await Utils.sleep(100);
-      await button?.click();
-      await Utils.sleep(10000);
       let bigCard = await driver.findComponent(ON.id('bigCard'));
+      console.log('SUB_UDMFndk_CASE_005', JSON.stringify(bigCard));
+      while(bigCard == undefined){
+        button = await driver.findComponent(ON.id('card'));
+        await Utils.sleep(500);
+        await button?.click();
+        await Utils.sleep(500);
+        bigCard = await driver.findComponent(ON.id('bigCard'));
+        console.log('SUB_UDMFndk_CASE_005', JSON.stringify(bigCard));
+      }
+      await Utils.sleep(500);
       let strJson = getInspectorByKey('bigCard');
       let obj: ESObject = JSON.parse(strJson);
       expect( JSON.stringify(obj) != '').assertEqual(true);

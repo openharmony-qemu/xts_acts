@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, it, expect, Level, Size, TestType } from '@ohos/hypium'
+import { describe, beforeEach, afterEach, it, expect, Level, Size, TestType } from '@ohos/hypium-dynamic'
 import router from '@ohos.router';
 import { Driver, On, ON, Component, Point } from '@ohos.UiTest';
 import CommonFunc from "../../MainAbility/common/Common";

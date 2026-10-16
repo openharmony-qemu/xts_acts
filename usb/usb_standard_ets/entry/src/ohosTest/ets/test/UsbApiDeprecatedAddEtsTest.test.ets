@@ -16,7 +16,7 @@
 import usb from '@ohos.usb';
 import { BusinessError } from '@ohos.base'
 import Buffer from '@ohos.buffer'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 
 const TAG = "[UsbApiDeprecatedAddEtsTest]";
 

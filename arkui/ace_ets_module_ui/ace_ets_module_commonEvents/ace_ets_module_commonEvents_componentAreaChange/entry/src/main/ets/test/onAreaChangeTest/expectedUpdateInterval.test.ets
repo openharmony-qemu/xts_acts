@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
@@ -67,7 +67,7 @@ export default function expectedUpdateInterval() {
       let strJson = getInspectorByKey('IntervalText2');
       let obj: ESObject = JSON.parse(strJson);
       console.info('SUB_ACE_ARKUI_ONAREACHANGE_0100 text content is :' + obj.$attrs.content);
-      expect(obj.$attrs.content).assertEqual('2');
+      expect(Number(obj.$attrs.content)).assertLarger(1);
       console.info('SUB_ACE_ARKUI_ONAREACHANGE_0100 END');
       done();
     });

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from "@ohos/hypium";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from "@ohos/hypium-dynamic";
 import { cert } from "@kit.DeviceCertificateKit";
 import { createCertChain, createX509Cert,
   caTrustCert, caChain2, caChainWithOcsp,

@@ -152,6 +152,22 @@ static napi_value OHGetSdkApiVersion(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value OHGetSdkMinorApiVersion(napi_env env, napi_callback_info info)
+{
+    int resultValue = OH_GetSdkMinorApiVersion();
+    napi_value result = nullptr;
+    napi_create_int32(env, resultValue, &result);
+    return result;
+}
+ 
+static napi_value OHGetSdkPatchApiVersion(napi_env env, napi_callback_info info)
+{
+    int resultValue = OH_GetSdkPatchApiVersion();
+    napi_value result = nullptr;
+    napi_create_int32(env, resultValue, &result);
+    return result;
+}
+
 static napi_value OHGetFirstApiVersion(napi_env env, napi_callback_info info)
 {
     int resultValue = OH_GetFirstApiVersion();
@@ -287,6 +303,8 @@ static napi_value Init(napi_env env, napi_value exports) {
         {"oHGetOsReleaseType", nullptr, OHGetOsReleaseType, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"oHGetOSFullName", nullptr, OHGetOSFullName, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"oHGetSdkApiVersion", nullptr, OHGetSdkApiVersion, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHGetSdkMinorApiVersion", nullptr, OHGetSdkMinorApiVersion, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHGetSdkPatchApiVersion", nullptr, OHGetSdkPatchApiVersion, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"oHGetFirstApiVersion", nullptr, OHGetFirstApiVersion, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"oHGetVersionId", nullptr, OHGetVersionId, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"oHGetBuildType", nullptr, OHGetBuildType, nullptr, nullptr, nullptr, napi_default, nullptr},

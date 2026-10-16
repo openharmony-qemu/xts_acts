@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { huks } from '@kit.UniversalKeystoreKit';
-import { beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import { GetDataBySize, StringToUint8Array } from './utils/common/CommonUtils';
 import { Logger } from './utils/common/Logger';
 import { Get3DesGenerateOptions } from './utils/huks/GenerateKeyUtils';

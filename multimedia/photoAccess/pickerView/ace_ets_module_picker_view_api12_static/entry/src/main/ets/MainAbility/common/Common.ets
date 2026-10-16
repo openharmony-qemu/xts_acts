@@ -26,17 +26,24 @@ export enum EventType {
   SELECT_CLICKTYPE,
   RECENT_PHOTO_INFO,
   VIDEO_PLAY_STATE,
-  PICKER_SHEET_PAGE
+  PICKER_SHEET_PAGE,
+  ITEM_CLICKED_NOTIFY,
+  COMPLETED_RESULT,
+  CONTROLLER_ACTION_RESULT
 }
 
 export interface RouterOptionsParams {
   eventId: Long;
   pickerOptions: PickerOptions;
   albumOptions?: AlbumPickerOptions;
+  isOnItemClickedSet?: boolean;
+  isOnItemClickedNotifySet?: boolean;
 }
 
 export interface RouterSelectOptionsParams {
-  photoSelectOptions: photoAccessHelper.PhotoSelectOptions;
+  photoSelectOptions?: photoAccessHelper.PhotoSelectOptions;
+  pickerOptions?: photoAccessHelper.PhotoSelectOptions;
+  eventId?: Long;
 }
 
 export interface RouterRecentPhotoOptions {

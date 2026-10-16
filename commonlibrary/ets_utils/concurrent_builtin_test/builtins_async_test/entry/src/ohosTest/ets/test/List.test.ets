@@ -16,6 +16,8 @@ import PromiseChainTest from './promise/PromiseChain.test';
 import CallbackWrapperTest from './callbackWrapper/CallbackWrapper.test';
 import PromisifyTest from './promisify/Promisify.test';
 
+import AsyncNestingTest from './AsyncNestingTest.test';
+
 export default function testsuite() {
   asyncFunctionTest()
   asyncGeneratorTest()
@@ -34,4 +36,5 @@ export default function testsuite() {
   PromiseChainTest();
   PromisifyTest();
   CallbackWrapperTest();
+  AsyncNestingTest();
 }

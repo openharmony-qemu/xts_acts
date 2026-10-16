@@ -96,6 +96,28 @@ napi_value DrawingRecordCmdUtilsDestroy(napi_env env, napi_callback_info info)
     });
 }
 
+// RecordCmdUtils GetHeightOrWidth related functions
+napi_value DrawingRecordCmdUtilsGetHeightOrWidth(napi_env env, napi_callback_info info)
+{
+    return NapiTry(env, [&]() -> napi_value {
+        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
+        static const std::array<DrawingNativeFn, RECORD_CMD_UTILS_GET_HEIGHT_OR_WIDTH_HANDLER_COUNT> handlers = {
+            OHOS::Rosen::Drawing::TestRecordCmdUtilsGetHeightNormal,
+            OHOS::Rosen::Drawing::TestRecordCmdUtilsGetHeightNull,
+            OHOS::Rosen::Drawing::TestRecordCmdUtilsGetHeightAbnormal,
+            OHOS::Rosen::Drawing::TestRecordCmdUtilsGetHeightMultipleCalls,
+            OHOS::Rosen::Drawing::TestRecordCmdUtilsGetWidthNormal,
+            OHOS::Rosen::Drawing::TestRecordCmdUtilsGetWidthNull,
+            OHOS::Rosen::Drawing::TestRecordCmdUtilsGetWidthAbnormal,
+            OHOS::Rosen::Drawing::TestRecordCmdUtilsGetWidthMultipleCalls,
+        };
+        int result = DispatchByCaseNum(caseNum, handlers);
+        napi_value resultValue;
+        napi_create_int32(env, result, &resultValue);
+        return resultValue;
+    });
+}
+
 // Canvas DrawSingleCharacterWithFeatures related functions
 napi_value DrawingCanvasDrawSingleChaWithFeatures(napi_env env, napi_callback_info info)
 {
@@ -220,9 +242,9 @@ napi_value DrawingRegionBasicOperations(napi_env env, napi_callback_info info)
             OHOS::Rosen::Drawing::TestRegionDestroyNormal,
             OHOS::Rosen::Drawing::TestRegionDestroyNull,
             OHOS::Rosen::Drawing::TestRegionSetRectResultTrue,
+            OHOS::Rosen::Drawing::TestRegionSetRectResultFalse,
             OHOS::Rosen::Drawing::TestRegionSetRectRegionNull,
             OHOS::Rosen::Drawing::TestRegionSetRectRectNull,
-            OHOS::Rosen::Drawing::TestRegionSetRectResultFalse,
             OHOS::Rosen::Drawing::TestRegionSetPathResultTrue,
             OHOS::Rosen::Drawing::TestRegionSetPathRegionNull,
             OHOS::Rosen::Drawing::TestRegionSetPathResultFalse,
@@ -248,6 +270,7 @@ napi_value DrawingRegionQueryOperations(napi_env env, napi_callback_info info)
     return NapiTry(env, [&]() -> napi_value {
         int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
         static const std::array<DrawingNativeFn, REGION_QUERY_OPERATIONS_HANDLER_COUNT> handlers = {
+            OHOS::Rosen::Drawing::TestRegionContainsBoundary,
             OHOS::Rosen::Drawing::TestRegionContainsInRange,
             OHOS::Rosen::Drawing::TestRegionContainsXvalueNotInRange,
             OHOS::Rosen::Drawing::TestRegionContainsYvalueNotInRange,
@@ -782,8 +805,12 @@ napi_value DrawingBitmap(napi_env env, napi_callback_info info)
             OHOS::Rosen::Drawing::TestBitmapCreateFromPixelsAbnormal,
             OHOS::Rosen::Drawing::TestBitmapCreateFromPixelsVeryBig,
             OHOS::Rosen::Drawing::TestBitmapCreateFromPixelsBoundary,
+            OHOS::Rosen::Drawing::TestBitmapBuildAllColorFormats,
+            OHOS::Rosen::Drawing::TestBitmapBuildAllAlphaFormats,
+            OHOS::Rosen::Drawing::TestBitmapBuildAllFormatCombinations,
             OHOS::Rosen::Drawing::TestBitmapBuildNormal,
             OHOS::Rosen::Drawing::TestBitmapBuildNull,
+            OHOS::Rosen::Drawing::TestBitmapBuildAbnormal,
             OHOS::Rosen::Drawing::TestBitmapBuildMultipleCalls,
             OHOS::Rosen::Drawing::TestBitmapBuildBoundary,
             OHOS::Rosen::Drawing::TestBitmapGetXXNormal,
@@ -854,6 +881,7 @@ napi_value DrawingColorFilterCreateMatrix(napi_env env, napi_callback_info info)
             OHOS::Rosen::Drawing::TestColorFilterCreateMatrixNULL,
             OHOS::Rosen::Drawing::TestColorFilterCreateMatrixAbnormal,
             OHOS::Rosen::Drawing::TestColorFilterCreateMatrixMultipleCalls,
+            OHOS::Rosen::Drawing::TestColorFilterCreateMatrixBoundaryValues
         };
         int result = DispatchByCaseNum(caseNum, handlers);
         napi_value resultValue;
@@ -1251,6 +1279,34 @@ napi_value DrawingFontGetTextPathWithFallback(napi_env env, napi_callback_info i
             OHOS::Rosen::Drawing::TestFontGetTextPathWithFallbackNomal,
             OHOS::Rosen::Drawing::TestFontGetTextPathWithFallbackNull,
             OHOS::Rosen::Drawing::TestFontGetTextPathWithFallbackMultipleCalls,
+        };
+        int result = DispatchByCaseNum(caseNum, handlers);
+        napi_value resultValue;
+        napi_create_int32(env, result, &resultValue);
+        return resultValue;
+    });
+}
+
+// Font WithFallback related functions
+napi_value DrawingFontWithFallback(napi_env env, napi_callback_info info)
+{
+    return NapiTry(env, [&]() -> napi_value {
+        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
+        static const std::array<DrawingNativeFn, FONT_WITH_FALLBACK_HANDLER_COUNT> handlers = {
+            OHOS::Rosen::Drawing::TestFontTextToGlyphsWithFallbackNormal,
+            OHOS::Rosen::Drawing::TestFontTextToGlyphsWithFallbackNull,
+            OHOS::Rosen::Drawing::TestFontTextToGlyphsWithFallbackAbnormal,
+            OHOS::Rosen::Drawing::TestFontTextToGlyphsWithFallbackMultipleCalls,
+            OHOS::Rosen::Drawing::TestFontMeasureTextWithFallbackNormal,
+            OHOS::Rosen::Drawing::TestFontMeasureTextWithFallbackNull,
+            OHOS::Rosen::Drawing::TestFontMeasureTextWithFallbackAbnormal,
+            OHOS::Rosen::Drawing::TestFontMeasureTextWithFallbackMultipleCalls,
+            OHOS::Rosen::Drawing::TestFontMeasureTextWithBrushOrPenWithFallbackNormal,
+            OHOS::Rosen::Drawing::TestFontMeasureTextWithBrushOrPenWithFallbackNull,
+            OHOS::Rosen::Drawing::TestFontMeasureTextWithBrushOrPenWithFallbackAbnormal,
+            OHOS::Rosen::Drawing::TestFontMeasureTextWithBrushOrPenWithFallbackMultipleCalls,
+            OHOS::Rosen::Drawing::TestFontTypefaceFallbackInfoDestroyNull,
+            OHOS::Rosen::Drawing::TestFontTypefaceFallbackInfoDestroyMultipleCalls,
         };
         int result = DispatchByCaseNum(caseNum, handlers);
         napi_value resultValue;

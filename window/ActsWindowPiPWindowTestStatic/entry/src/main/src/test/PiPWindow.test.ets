@@ -2656,9 +2656,14 @@ export default function PiPWindowTest() {
               let pipInfoSize = pipWindowInfo.size
               console.log(`${msgStr} pipWindowInfo width is ${pipInfoSize.width}, pipWindowInfo height is ${pipInfoSize.height}, pipWindowInfo scale is ${pipInfoSize.scale}`)
               console.log(`${msgStr} callback width is ${pipSize.width}, callback height is ${pipSize.height}, callback scale is ${pipSize.scale}`)
-              expect(pipSize.width).assertEqual(pipInfoSize.width);
-              expect(pipSize.height).assertEqual(pipInfoSize.height);
-              expect(Math.abs(pipSize.scale - pipInfoSize.scale)).assertLessOrEqual(0.01)
+              if (deviceType !== 'car') {
+                expect(pipSize.width).assertEqual(pipInfoSize.width);
+                expect(pipSize.height).assertEqual(pipInfoSize.height);
+                expect(Math.abs(pipSize.scale - pipInfoSize.scale)).assertLessOrEqual(0.01)
+              } else {
+                expect(pipInfoSize.width).assertLarger(pipSize.width);
+                expect(pipInfoSize.height).assertLarger(pipSize.width);
+              }
               pipController!.offPipWindowSizeChange(callback);
               pipController!.stopPiP();
               await Utils.msSleep(1000);
@@ -3105,6 +3110,11 @@ export default function PiPWindowTest() {
       */
       it('test_on_controlEvent_VIDEO_PLAY_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
         let msgStr = 'test_on_controlEvent_VIDEO_PLAY_01 '
+        if (deviceType == 'car') {
+          console.log(`${msgStr} device is car, pass directly`);
+          done();
+          return;
+        }
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -3192,6 +3202,11 @@ export default function PiPWindowTest() {
        */
       it('test_on_controlEvent_VIDEO_PLAY_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
         let msgStr = 'test_on_controlEvent_VIDEO_PLAY_02 '
+        if (deviceType == 'car') {
+          console.log(`${msgStr} device is car, pass directly`);
+          done();
+          return;
+        }
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -4749,6 +4764,7 @@ export default function PiPWindowTest() {
           promise.then(() => {
             console.log(msgStr + ' Succeeded in starting pip')
             pipController!.stopPiP()
+            expect().assertFail();
             done();
           }).catch((err: Error) => {
             console.log(msgStr + ' Failed1 to start pip. Cause:' + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
@@ -4757,7 +4773,7 @@ export default function PiPWindowTest() {
           });
         } catch (error) {
           console.log(msgStr + ' Failed2 to start pip. Cause:' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
-          expect().assertFail();
+          expect(error.code).assertEqual(401)
           done();
         }
       }

@@ -190,6 +190,10 @@ ArkUI_NodeHandle ListScrollToTest::CreateChildNode(ArkUI_NativeNodeAPI_1 *nodeAP
 {
     ArkUI_NodeHandle stack = nodeAPI->createNode(ARKUI_NODE_COLUMN);
     ArkUI_NodeHandle row = nodeAPI->createNode(ARKUI_NODE_ROW);
+    // 左右 margin 使按钮远离屏幕边缘手势返回区
+    ArkUI_NumberValue margin_value[] = {{.f32 = 20}, {.f32 = 0}, {.f32 = 20}, {.f32 = 0}};
+    ArkUI_AttributeItem margin_item = {margin_value, 4};
+    nodeAPI->setAttribute(row, NODE_MARGIN, &margin_item);
     ArkUI_NodeHandle column1 = nodeAPI->createNode(ARKUI_NODE_COLUMN);
     ArkUI_NodeHandle column2 = nodeAPI->createNode(ARKUI_NODE_COLUMN);
     ArkUI_NodeHandle row1 = nodeAPI->createNode(ARKUI_NODE_ROW);

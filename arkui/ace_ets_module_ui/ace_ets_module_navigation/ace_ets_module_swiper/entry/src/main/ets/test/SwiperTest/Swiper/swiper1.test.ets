@@ -12,10 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import CommonFunc from '../../../MainAbility/common/Common';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 
 export default function swiper1() {
   describe('swiper1', () => {
@@ -67,7 +69,7 @@ export default function swiper1() {
 
       let driver = await Driver.create();
       await CommonFunc.sleep(1000);
-      await driver.swipe(globalThis.winLeft + Math.round(btLeft + width*0.3), Math.round(globalThis.winTop + btBottom - vp2px(10)), globalThis.winLeft + Math.round(btLeft + width*0.3), Math.round(globalThis.winTop + btTop + vp2px(10)));
+      await driver.swipeBetween({ x: globalThis.winLeft + Math.round(btLeft + width*0.3), y: Math.round(globalThis.winTop + btBottom - vp2px(10)), displayId: displayID }, { x: globalThis.winLeft + Math.round(btLeft + width*0.3), y: Math.round(globalThis.winTop + btTop + vp2px(10)), displayId: displayID });
       await CommonFunc.sleep(5000);
 
       let strJson = getInspectorByKey('swiperText1');

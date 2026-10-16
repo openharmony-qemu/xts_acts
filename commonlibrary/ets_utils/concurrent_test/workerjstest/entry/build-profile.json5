@@ -1,0 +1,69 @@
+/*
+ * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+{
+  "apiType": 'stageMode',
+  "buildOption": {
+    "sourceOption": {
+      "workers": [
+        "./src/ohosTest/ets/workers/works1/worker.js",
+        "./src/ohosTest/ets/workers/works1/worker_0001.js",
+        "./src/ohosTest/ets/workers/works1/worker_0002.js",
+        "./src/ohosTest/ets/workers/works1/worker_002.js",
+        "./src/ohosTest/ets/workers/works1/worker_003.js",
+        "./src/ohosTest/ets/workers/works1/worker_004.js",
+        "./src/ohosTest/ets/workers/works1/worker_005.js",
+        "./src/ohosTest/ets/workers/works1/worker_006.js",
+        "./src/ohosTest/ets/workers/works1/worker_007.js",
+        "./src/ohosTest/ets/workers/works1/worker_008.js",
+        "./src/ohosTest/ets/workers/works1/worker_009.js",
+        "./src/ohosTest/ets/workers/works1/worker_0091.js",
+        "./src/ohosTest/ets/workers/works1/worker_010.js",
+        "./src/ohosTest/ets/workers/works1/worker_0101.js",
+        "./src/ohosTest/ets/workers/works1/worker_011.js",
+        "./src/ohosTest/ets/workers/works1/worker_0111.js",
+        "./src/ohosTest/ets/workers/works1/worker_012.js",
+        "./src/ohosTest/ets/workers/works1/worker_0121.js",
+        "./src/ohosTest/ets/workers/works1/worker_0122.js",
+        "./src/ohosTest/ets/workers/works1/worker_013.js",
+        "./src/ohosTest/ets/workers/works1/worker_0131.js",
+        "./src/ohosTest/ets/workers/works1/worker_014.js",
+        "./src/ohosTest/ets/workers/works1/worker_0141.js",
+        "./src/ohosTest/ets/workers/works1/worker_015.js",
+        "./src/ohosTest/ets/workers/works1/worker_0151.js",
+        "./src/ohosTest/ets/workers/works1/worker_0152.js",
+        "./src/ohosTest/ets/workers/works1/worker_016.js",
+        "./src/ohosTest/ets/workers/works1/worker_017.js",
+        "./src/ohosTest/ets/workers/works1/worker_018.js",
+        "./src/ohosTest/ets/workers/works1/worker_019.js",
+        "./src/ohosTest/ets/workers/works1/worker_020.js",
+        "./src/ohosTest/ets/workers/works1/worker_021.js",
+        "./src/ohosTest/ets/workers/works1/worker_022.js",
+        "./src/ohosTest/ets/workers/works1/worker_023.js",
+        "./src/ohosTest/ets/workers/works1/worker_024.js",
+        "./src/ohosTest/ets/workers/works1/worker_025.js",
+        "./src/ohosTest/ets/workers/works1/worker_026.js",
+        "./src/ohosTest/ets/workers/works1/worker_027.js"
+      ]
+    }
+  },
+  "targets": [
+    {
+      "name": "default",
+    },
+    {
+      "name": "ohosTest",
+    }
+  ]
+}

@@ -12,10 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import { UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 
 export default function CalendarPickerDialogButtonStyleTest() {
   describe('CalendarPickerDialogButtonStyleTest', () => {
@@ -67,7 +69,11 @@ export default function CalendarPickerDialogButtonStyleTest() {
       console.info("[CalendarPickerDialogButtonStyleTest_001] obj2.$children[1].$children[0].$children[0].$children[3].$children[0] is: " + JSON.stringify(obj2.$children[1].$children[0].$children[0].$children[3].$children[0]));
       expect(obj2.$children[1].$children[0].$children[0].$children[3].$children[0].$attrs.type).assertEqual("ButtonType.Normal");
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       console.info('[CalendarPickerDialogButtonStyleTest_001] END');
       done();

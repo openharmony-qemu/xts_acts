@@ -70,17 +70,22 @@ it('selectedSwiper_static_0100', Level.LEVEL0, async (done: () => void): Promise
         await CommonFunc.sleep(1000);
         let driver = Driver.create();
         await CommonFunc.sleep(1000);
-        let swiperScroll = CommonFunc.getComponentRectOnScreen('onSelect_swiper');
-        let top = swiperScroll.top;
-        let right = swiperScroll.right;
-        let left = swiperScroll.left;
-        let bottom = swiperScroll.bottom;
+        let swipeComp = await driver.findComponent(ON.id('onSelect_swiper'));
+        let rect = await swipeComp!.getBounds();
+        let displayId = await swipeComp!.getDisplayId();
+        let top = rect.top;
+        let right = rect.right;
+        let left = rect.left;
+        let bottom = rect.bottom;
         console.info("selectedSwiper_static_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
         let height = bottom - top;
         let width = right - left;
         await CommonFunc.sleep(1000);
-        await driver.swipe(Math.round(left + width * 0.8).toInt(), Math.round(top + height / 2).toInt(), Math.round(left + width * 0.2).toInt(),
-          Math.round(top + height / 2).toInt());
+        await driver.swipeBetween(
+          { x: (Math.round(left + width * 0.8)).toInt(),
+            y: (Math.round(top + height / 2)).toInt(), displayId: displayId },
+          { x: (Math.round(left + width * 0.2)).toInt(),
+            y: (Math.round(top + height / 2)).toInt(), displayId: displayId });
         await CommonFunc.sleep(2000);
         let strJson1 = inspector.getInspectorByKey('onUnselected_swiper_index');
         console.info("[selectedSwiper_static_0100] component obj1 is: " +
@@ -94,7 +99,8 @@ it('selectedSwiper_static_0100', Level.LEVEL0, async (done: () => void): Promise
         JSON.stringify(JSON.parseJsonElement(strJson2)));
         console.info("[selectedSwiper_static_0100] content2: " +
         JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')));
-        expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')).assertEqual('selectedIndex: 2');
+        expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content'))
+          .assertEqual('selectedIndex: 2');
         console.info('[selectedSwiper_static_0100] END');
         done();
       } catch (error) {

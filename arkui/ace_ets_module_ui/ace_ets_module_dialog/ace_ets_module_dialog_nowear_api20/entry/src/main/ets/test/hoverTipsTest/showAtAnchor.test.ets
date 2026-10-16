@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import { Driver, ON, Component, Point} from '@ohos.UiTest';
 import router from '@ohos.router';
 import Utils from '../../MainAbility/common/Utils';
@@ -22,6 +22,8 @@ const SLEEP_TIME = 1500;
 const POSITION_X = 80;
 const X = 0;
 const Y = 0;
+
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 
 export default function showAtAnchorTest() {
   describe('showAtAnchorTest', () => {
@@ -64,12 +66,12 @@ export default function showAtAnchorTest() {
       expect(!!tips1).assertTrue();
       let tipsPoint1Center: Point = await tips1.getBoundsCenter();
       await driver.mouseMoveTo({
-        x: X, y: Y
-      });
+        x: X, y: Y, displayId: displayID
+      })
       await Utils.sleep(SLEEP_TIME);
       let center2_X: number = center1.x+POSITION_X;
       let center2_Y: number = center1.y;
-      await driver.mouseMoveTo({x:center2_X,y:center2_Y});
+      await driver.mouseMoveTo({x:center2_X,y:center2_Y, displayId: displayID});
       await Utils.sleep(SLEEP_TIME);
       let tips2: Component = await driver.findComponent(ON.type('Column').isAfter(ON.text('hover tips')));
       expect(!!tips2).assertTrue();
@@ -80,7 +82,7 @@ export default function showAtAnchorTest() {
       }
       expect(tipsBol).assertTrue();
       await driver.mouseMoveTo({
-        x: X, y: Y
+        x: X, y: Y, displayId: displayID
       });
       await Utils.sleep(SLEEP_TIME);
       console.info('showAtAnchor_value_0001 END');
@@ -111,12 +113,12 @@ export default function showAtAnchorTest() {
       expect(!!tips1).assertTrue();
       let tipsPoint1Center: Point = await tips1.getBoundsCenter();
       await driver.mouseMoveTo({
-        x: X, y: Y
+        x: X, y: Y, displayId: displayID
       });
       await Utils.sleep(SLEEP_TIME);
       let center2_X: number = center1.x+POSITION_X;
       let center2_Y: number = center1.y;
-      await driver.mouseMoveTo({x:center2_X,y:center2_Y});
+      await driver.mouseMoveTo({x:center2_X,y:center2_Y, displayId: displayID});
       await Utils.sleep(SLEEP_TIME);
       let tips2: Component = await driver.findComponent(ON.type('Column').isAfter(ON.text('hover tips')));
       expect(!!tips2).assertTrue();
@@ -127,7 +129,7 @@ export default function showAtAnchorTest() {
       }
       expect(tipsBol).assertTrue();
       await driver.mouseMoveTo({
-        x: X, y: Y
+        x: X, y: Y, displayId: displayID
       });
       await Utils.sleep(SLEEP_TIME);
       console.info('showAtAnchor_value_0002 END');
@@ -158,12 +160,12 @@ export default function showAtAnchorTest() {
       expect(!!tips1).assertTrue();
       let tipsPoint1Center: Point = await tips1.getBoundsCenter();
       await driver.mouseMoveTo({
-        x: X, y: Y
+        x: X, y: Y, displayId: displayID
       });
       await Utils.sleep(SLEEP_TIME);
       let center2_X: number = center1.x+POSITION_X;
       let center2_Y: number = center1.y;
-      await driver.mouseMoveTo({x:center2_X,y:center2_Y});
+      await driver.mouseMoveTo({x:center2_X,y:center2_Y, displayId: displayID});
       await Utils.sleep(SLEEP_TIME);
       let tips2: Component = await driver.findComponent(ON.type('Column').isAfter(ON.text('hover tips')));
       expect(!!tips2).assertTrue();
@@ -174,7 +176,7 @@ export default function showAtAnchorTest() {
       }
       expect(tipsBol).assertTrue();
       await driver.mouseMoveTo({
-        x: X, y: Y
+        x: X, y: Y, displayId: displayID
       });
       await Utils.sleep(SLEEP_TIME);
       console.info('showAtAnchor_value_0003 END');
@@ -204,12 +206,12 @@ export default function showAtAnchorTest() {
       expect(!!tips1).assertTrue();
       let tipsPoint1Center: Point = await tips1.getBoundsCenter();
       await driver.mouseMoveTo({
-        x: X, y: Y
+        x: X, y: Y, displayId: displayID
       });
       await Utils.sleep(SLEEP_TIME);
       let center2_X: number = center1.x+POSITION_X;
       let center2_Y: number = center1.y;
-      await driver.mouseMoveTo({x:center2_X,y:center2_Y});
+      await driver.mouseMoveTo({x:center2_X,y:center2_Y, displayId: displayID});
       await Utils.sleep(SLEEP_TIME);
       let tips2: Component = await driver.findComponent(ON.type('Column').isAfter(ON.text('hover tips')));
       expect(!!tips2).assertTrue();
@@ -220,7 +222,7 @@ export default function showAtAnchorTest() {
       }
       expect(tipsBol).assertFalse();
       await driver.mouseMoveTo({
-        x: X, y: Y
+        x: X, y: Y, displayId: displayID
       });
       await Utils.sleep(SLEEP_TIME);
       console.info('showAtAnchor_value_0004 END');
@@ -251,12 +253,12 @@ export default function showAtAnchorTest() {
       expect(!!tips1).assertTrue();
       let tipsPoint1Center: Point = await tips1.getBoundsCenter();
       await driver.mouseMoveTo({
-        x: X, y: Y
+        x: X, y: Y, displayId: displayID
       });
       await Utils.sleep(SLEEP_TIME);
       let center2_X: number = center1.x+POSITION_X;
       let center2_Y: number = center1.y;
-      await driver.mouseMoveTo({x:center2_X,y:center2_Y});
+      await driver.mouseMoveTo({x:center2_X,y:center2_Y, displayId: displayID});
       await Utils.sleep(SLEEP_TIME);
       let tips2: Component = await driver.findComponent(ON.type('Column').isAfter(ON.text('hover tips')));
       expect(!!tips2).assertTrue();
@@ -267,7 +269,7 @@ export default function showAtAnchorTest() {
       }
       expect(tipsBol).assertTrue();
       await driver.mouseMoveTo({
-        x: X, y: Y
+        x: X, y: Y, displayId: displayID
       });
       await Utils.sleep(SLEEP_TIME);
       console.info('showAtAnchor_value_0005 END');

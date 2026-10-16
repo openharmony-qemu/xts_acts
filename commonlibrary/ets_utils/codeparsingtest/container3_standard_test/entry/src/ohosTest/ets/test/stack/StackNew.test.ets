@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import Stack from '@ohos.util.Stack';
-import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import { test004, test006, test007, test009, test010, test021, test032, test033, test035 } from './StackResource';
 
 export default function StackNewTest() {

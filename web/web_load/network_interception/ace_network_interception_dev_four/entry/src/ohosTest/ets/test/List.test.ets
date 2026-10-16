@@ -23,6 +23,7 @@ import customizeSchemes from './CustomizeSchemes.test';
 import WebNetError from './WebNetError.test';
 import webViewGetRequestResourceType from './WebViewGetRequestResourceType.test';
 import WebResourceType from './WebResourceType.test';
+import WebCustomErrorCode from './WebCustomErrorCode.test';
 
 
 export default function testsuite() {
@@ -37,4 +38,5 @@ export default function testsuite() {
        setAndClearServiceWorkerWebSchemeHandler()
        customizeSchemes()
        WebNetError()
+       WebCustomErrorCode()
 }

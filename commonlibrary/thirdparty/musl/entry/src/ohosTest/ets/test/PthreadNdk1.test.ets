@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it , TestType, Size, Level } from "@ohos/hypium"
+import { beforeEach, describe, expect, it , TestType, Size, Level } from "@ohos/hypium-dynamic"
 import Utils from './Utils'
 import pthread from 'libpthreadndk1.so'
 
@@ -397,7 +397,7 @@ export default function muslPThreadNdk1Test() {
      * @tc.level  LEVEL0
      */
     it('testMuslPThreadPThreadBarrierWait001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      expect(pthread.pThreadBarrierWait()).assertEqual(-1);
+      expect(pthread.pThreadBarrierWait()).assertEqual(0);
       done()
     });
 

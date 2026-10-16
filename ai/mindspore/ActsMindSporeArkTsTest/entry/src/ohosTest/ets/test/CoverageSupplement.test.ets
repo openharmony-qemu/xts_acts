@@ -5650,5 +5650,31 @@ export default function coverageSupplementTest() {
       }
     });
 
+    /**
+     * @tc.name   modelExportModelQuantizationTypeInvalidEnum001
+     * @tc.number SUB_AI_mindspore_exportModel_quantization_0001
+     * @tc.desc   Model exportModel quantizationType invalid enum value test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('modelExportModelQuantizationTypeInvalidEnum001', Level.LEVEL1, async () => {
+      console.log("SUB_AI_mindspore_exportModel_quantization_0001: modelExportModelQuantizationTypeInvalidEnum001");
+      try {
+        let context: mindSporeLite.Context = {};
+        context.target = ["cpu"];
+        let trainCfg: mindSporeLite.TrainCfg = {};
+        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
+        if (msliteModel !== null) {
+          let path: string = globalThis.abilityContext.filesDir + "/test_export_model.ms";
+          let ret = msliteModel.exportModel(path, 999, true);
+          expect(ret).assertFalse();
+        }
+      } catch (error) {
+        console.log("modelExportModelQuantizationTypeInvalidEnum001 error: " + JSON.stringify(error));
+      }
+    });
+
   })
 }

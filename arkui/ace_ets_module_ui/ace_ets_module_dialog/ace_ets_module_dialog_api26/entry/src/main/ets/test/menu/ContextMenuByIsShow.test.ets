@@ -14,27 +14,38 @@
  */
 
 
-import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-dynamic';
+import router from '@ohos.router';
 import { Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
-import DialogApi26TestHelper from '../common/DialogApi26TestHelper';
+
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 
 export default function ContextMenuByIsShow() {
   describe('ContextMenuByIsShow', () => {
     beforeEach(async (done: Function) => {
       console.info('[ARKUI_DYN] ContextMenuByIsShow beforeEach');
-      await DialogApi26TestHelper.openPageIfNeeded('ContextMenuByIsShow', 'MainAbility/pages/menu/ContextMenuByIsShow');
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/menu/ContextMenuByIsShow'
+      };
+      try {
+        router.clear();
+        let pages = router.getState();
+        if (pages.name !== 'ContextMenuByIsShow') {
+          await router.pushUrl(options);
+          await CommonFunc.sleep(2000);
+        }
+      } catch (err) {
+        console.error('[ARKUI_DYN] push ContextMenuByIsShow error: ' + err);
+        expect().assertFail();
+      }
       done();
     });
 
     afterEach(async () => {
+      await CommonFunc.sleep(800);
       console.info('[ARKUI_DYN] ContextMenuByIsShow afterEach');
     });
-    afterAll(async () => {
-      await DialogApi26TestHelper.leavePage();
-      console.info('[ARKUI_DYN] ContextMenuByIsShow afterAll');
-    });
-
 
     /**
      * @tc.number SUB_ArkUI_DialogApi26_ContextMenuByIsShow_0100
@@ -47,15 +58,15 @@ export default function ContextMenuByIsShow() {
     it('SUB_ArkUI_DialogApi26_ContextMenuByIsShow_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_ContextMenuByIsShow_0100 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(800);
       let btn = await driver.findComponent(ON.id('btn_isshow_elements'));
       expect(btn !== null).assertTrue();
       await btn.click();
       await CommonFunc.sleep(1000);
       let node = await driver.findComponent(ON.text('IsShowA'));
       expect(node !== null).assertTrue();
-      await driver.pressBack();
-      await CommonFunc.sleep(200);
+      await driver.pressBack(displayID);
+      await CommonFunc.sleep(500);
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_ContextMenuByIsShow_0100 END');
       done();
     });
@@ -71,15 +82,15 @@ export default function ContextMenuByIsShow() {
     it('SUB_ArkUI_DialogApi26_ContextMenuByIsShow_0200', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_ContextMenuByIsShow_0200 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(800);
       let btn = await driver.findComponent(ON.id('btn_isshow_custom'));
       expect(btn !== null).assertTrue();
       await btn.click();
       await CommonFunc.sleep(1000);
       let node = await driver.findComponent(ON.text('CustomIsShowX'));
       expect(node !== null).assertTrue();
-      await driver.pressBack();
-      await CommonFunc.sleep(200);
+      await driver.pressBack(displayID);
+      await CommonFunc.sleep(500);
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_ContextMenuByIsShow_0200 END');
       done();
     });
@@ -95,7 +106,7 @@ export default function ContextMenuByIsShow() {
     it('SUB_ArkUI_DialogApi26_ContextMenuByIsShow_0300', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_ContextMenuByIsShow_0300 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(800);
       let btn = await driver.findComponent(ON.id('btn_isshow_elements'));
       expect(btn !== null).assertTrue();
       await btn.click();
@@ -104,7 +115,7 @@ export default function ContextMenuByIsShow() {
       expect(node !== null).assertTrue();
       let item = await driver.findComponent(ON.text('IsShowB'));
       await item.click();
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(800);
       let label = await driver.findComponent(ON.id('isshow_last_action'));
       let txt = await label.getText();
       expect(txt === 'last=IsShowB').assertTrue();
@@ -123,24 +134,20 @@ export default function ContextMenuByIsShow() {
     it('SUB_ArkUI_DialogApi26_ContextMenuByIsShow_0400', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_ContextMenuByIsShow_0400 START');
       let driver = await Driver.create();
-      await DialogApi26TestHelper.openPageIfNeeded('ContextMenuByIsShow',
-        'MainAbility/pages/menu/ContextMenuByIsShow');
-      await CommonFunc.sleep(400);
-      let btn = await driver.waitForComponent(ON.id('btn_isshow_elements'), 5000);
+      await CommonFunc.sleep(800);
+      let btn = await driver.findComponent(ON.id('btn_isshow_elements'));
       expect(btn !== null).assertTrue();
       await btn.click();
-      let node = await driver.waitForComponent(ON.text('IsShowC'), 5000);
+      await CommonFunc.sleep(1000);
+      let node = await driver.findComponent(ON.text('IsShowC'));
       expect(node !== null).assertTrue();
-      await driver.pressBack();
-      await CommonFunc.sleep(500);
-      // pressBack may leave page if menu already closed; re-enter
-      await DialogApi26TestHelper.openPageIfNeeded('ContextMenuByIsShow',
-        'MainAbility/pages/menu/ContextMenuByIsShow');
-      let hide = await driver.waitForComponent(ON.id('btn_isshow_hide'), 5000);
+      await driver.pressBack(displayID);
+      await CommonFunc.sleep(800);
+      let hide = await driver.findComponent(ON.id('btn_isshow_hide'));
       expect(hide !== null).assertTrue();
       await hide.click();
-      await CommonFunc.sleep(300);
-      let label = await driver.waitForComponent(ON.id('isshow_last_action'), 5000);
+      await CommonFunc.sleep(500);
+      let label = await driver.findComponent(ON.id('isshow_last_action'));
       expect(label !== null).assertTrue();
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_ContextMenuByIsShow_0400 END');
       done();

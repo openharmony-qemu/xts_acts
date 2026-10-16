@@ -13,13 +13,14 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router'
 import { UiDriver, UiComponent, BY, Driver, Component, ON } from '@ohos.UiTest'
 import events_emitter from '@ohos.events.emitter';
 import input from '@ohos.multimodalInput.keyCode';
 import { BusinessError } from '@ohos.base';
 import CommonFunc from '../../MainAbility/common/Common';
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function ShortcutKeyDPADDOWNTest() {
   describe('ShortcutKeyDPADDOWNTest', () => {
     beforeEach(async () => {
@@ -65,7 +66,7 @@ export default function ShortcutKeyDPADDOWNTest() {
       }
       events_emitter.on(event, callback);
       let driver = Driver.create()
-      await driver.triggerCombineKeys(input.KeyCode.KEYCODE_CTRL_LEFT, input.KeyCode.KEYCODE_DPAD_DOWN)
+      await driver.triggerCombineKeys(input.KeyCode.KEYCODE_CTRL_LEFT, input.KeyCode.KEYCODE_DPAD_DOWN, 0, displayID)
       console.info(`ShortcutKeyDPADDOWNTest_0100 END`);
     });
   })

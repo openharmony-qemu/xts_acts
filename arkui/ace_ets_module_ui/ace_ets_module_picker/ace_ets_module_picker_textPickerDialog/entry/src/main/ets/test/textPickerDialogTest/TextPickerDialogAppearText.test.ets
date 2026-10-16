@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import {
@@ -75,7 +75,7 @@ export default function TextPickerDialogAppearTextTest() {
       await btn1.click();
       await CommonFunc.sleep(1000);
       let confirmBtn = await driver.findComponent(ON.text('确定'));
-      await confirmBtn.click();
+      await confirmBtn?.click();
       await CommonFunc.sleep(2000);
       let text = getInspectorByKey('AppearText');
       expect(JSON.parse(text).$attrs.content).assertEqual('onWillAppear_onDidAppear_onWillDisappear_onDidDisappear');

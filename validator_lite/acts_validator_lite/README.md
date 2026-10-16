@@ -14,27 +14,9 @@
 
 产物在 `out/.../suites/acts_validator_lite/`，独立于 `suites/acts/`，`run acts` 不会扫到。
 
-> ⚠️ **LiteOS 执行前必做（否则挂载失败）**
->
-> 编译生成的 `ActsValidatorLite.json` 第 17 行 `"type_kernel"` 字段固定为 `"linux"`（源自本目录 `Test.json`）。执行 **LiteOS 内核** 前，必须手动将其改为 `"lite"`，否则 MountKit 会按 Linux 方式挂载（`toybox mount -t nfs`）导致 NFS 挂载失败。
->
-> 文件路径（LiteOS 产物）：
-> `out/hispark_taurus/ipcamera_hispark_taurus/suites/acts_validator_lite/testcases/acts_validator_lite/ActsValidatorLite.json`
->
-> ```diff
->  "kits": [
->      {
->          "type": "MountKit",
->          "server": "NfsServer",
-> -        "type_kernel": "linux",
-> +        "type_kernel": "lite",
-> ```
->
-> Linux 内核产物（`..._linux/...`）保持 `"linux"` 不变。
+> `type_kernel` 由编译时按目标内核自动注入（LiteOS 产物为 `lite`，Linux 产物为 `linux`），无需手工修改。
 
 ## 执行
-
-> LiteOS 用户：执行前先按[编译章节](#编译)的说明，把产物 `ActsValidatorLite.json` 的 `type_kernel` 由 `linux` 改为 `lite`，否则 NFS 挂载失败、用例无法下发。
 
 ### 1. 配置 `config/user_config.xml`
 
@@ -76,7 +58,7 @@ run validator -ta update:true
 
 | 命令 | 行为 |
 |------|------|
-| `run validator -ta update:true` | 安装 HAP → reboot → 测试 → 卸载 HAP → reboot |
+| `run validator -ta update:true` | bm 安装 HAP（无需重启）→ 测试 → bm 卸载 |
 | `run validator` | 快速重跑（HAP 已安装，不卸载） |
 
 ### 3. 报告
@@ -87,23 +69,22 @@ run validator -ta update:true
 
 ```
 xdevice 自动:
-  1. MountKit: NFS 挂载 testcases → 设备 /test_root
+  1. MountKit: NFS 挂载 testcases → 设备 /test_root（type_kernel 编译时自动注入）
   2. ifconfig eth0 <设备IP>
-  3. cp testcases/ability-assistant → /storage/aa + chmod +x
-  4. cp testcases/ActsValidatorLite.hap → /system/internal/
-  5. rm -r /storage/app/etc/bundles
-  6. reboot/reset → 等待重连 → 重新 ifconfig
-  7. ./aa start -p <bundle> -n <ability>（无则提示手动启动）
-  8. 等待操作员输入 Y
+  3. cp testcases/ability-assistant、bm → /storage/ + chmod +x
+  4. bm install -p <test_root>/ActsValidatorLite.hap（成功则无需重启；
+     失败时回退：cp 到 /system/internal/ + rm bundles + reboot）
+  5. ./aa start -p <bundle> -n <ability>（无则提示手动启动）
+  6. 等待操作员输入 Y
 
 操作员:
-  9. 在设备上测试用例，点 Pass/Fail
-  10. 返回主入口，点 Generate Report
-  11. 在控制台输入 Y
+  7. 在设备上测试用例，点 Pass/Fail
+  8. 返回主入口，点 Generate Report
+  9. 在控制台输入 Y
 
 xdevice 自动:
-  12. 解析串口 [report] → 生成 XML 报告
-  13. 仅 -ta update:true 时：卸载 HAP + reboot
+  10. 优先读取设备端报告文件 report.txt，其次解析串口 [report] → 生成 XML 报告
+  11. 仅 -ta update:true 时：bm 卸载 HAP（失败时回退：rm + reboot）
 ```
 
 ## 内核差异
@@ -115,7 +96,8 @@ xdevice 自动:
 | 路径前缀 | `/storage` | `/storage` | 统一 |
 | aa 拉起 | 有 | 有（`tools_lite` 编译） | 自动重试 3 次 |
 | chmod +x | 需要 | 不需要 | 仅 Linux |
-| `type_kernel` | `linux` | `lite` | 产物 `ActsValidatorLite.json` 默认 `linux`；跑 LiteOS 前手改第 17 行为 `lite` |
+| bm 执行方式 | `/storage/bm install ...`（绝对路径） | `cd /storage && ./bm install ...`（LiteOS shell 不支持绝对路径执行） | driver 自动 |
+| `type_kernel` | `linux` | `lite` | 编译时按目标内核自动注入，无需手工配置 |
 
 ## Test.json 配置
 
@@ -151,12 +133,14 @@ acts_validator_lite/
         └── pages/
             ├── index/        # 主入口
             ├── common/help/  # 帮助页
-            ├── ArkUI/        # ArkUI 子系统
+            ├── ArkUI/        # ArkUI 子系统（含 RouterTransition 页切换动效）
             ├── PowerManager/
             ├── FileManagement/
             ├── DistributedData/
             ├── Startup/
-            └── Communication/
+            ├── Communication/
+            ├── Sensors/
+            └── Location/
 ```
 
 ## 用例开发

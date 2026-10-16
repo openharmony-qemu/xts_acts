@@ -14,7 +14,9 @@
  * limitations under the License.
  */
 import abilityTest from './Ability.test'
+import getLastErrorTest from './GetLastError.test'
 
 export default function testsuite() {
   abilityTest()
+  getLastErrorTest()
 }

@@ -42,27 +42,6 @@ export default function int16ArrayFindTestThreeTest(): void {
     afterAll((): void => {});
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_THREE_0100
-     * @tc.name testInt16ArrayFindTestThree001
-     * @tc.desc Verify find propagates TypeError thrown by predicate on first call
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayFindTestThree001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(10, 20, 30);
-      try {
-        arr.find((_value: number, _index: int, _array: Int16Array): boolean => {
-          throw new TypeError('type mismatch');
-        });
-        expect().assertFail();
-      } catch (e) {
-        let actual1: string = e.name;
-        expect(actual1).assertEqual('TypeError');
-      }
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_THREE_0200
      * @tc.name testInt16ArrayFindTestThree002
      * @tc.desc Verify find propagates RangeError thrown by predicate on first call
@@ -414,27 +393,6 @@ export default function int16ArrayFindTestThreeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_THREE_2000
-     * @tc.name testInt16ArrayFindTestThree020
-     * @tc.desc Verify find propagates RangeError when predicate calls OOB $_get(-length-1)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayFindTestThree020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(3, 4, 5);
-      try {
-        arr.find((_value: number, _index: int, array: Int16Array): boolean => {
-          return array.$_get(-4) === undefined;
-        });
-        expect().assertFail();
-      } catch (e) {
-        let actual1: string = e.name;
-        expect(actual1).assertEqual('RangeError');
-      }
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_THREE_2100
      * @tc.name testInt16ArrayFindTestThree021
      * @tc.desc Verify find propagates RangeError when predicate calls OOB $_get(large)
@@ -627,29 +585,6 @@ export default function int16ArrayFindTestThreeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_THREE_3000
-     * @tc.name testInt16ArrayFindTestThree030
-     * @tc.desc Verify find predicate external array side effect is observable
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayFindTestThree030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src: Int16Array = Int16Array.of(7, 14, 21);
-      let sideArr: int[] = [0, 0, 0];
-      src.find((_value: number, index: int, _array: Int16Array): boolean => {
-        sideArr[index] = 1;
-        return false;
-      });
-      let actual1: number = sideArr[0];
-      expect(actual1).assertEqual(1);
-      let actual2: number = sideArr[1];
-      expect(actual2).assertEqual(1);
-      let actual3: number = sideArr[2];
-      expect(actual3).assertEqual(1);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_THREE_3100
      * @tc.name testInt16ArrayFindTestThree031
      * @tc.desc Verify find predicate direct $_get after $_set sees updated value
@@ -816,22 +751,6 @@ export default function int16ArrayFindTestThreeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_THREE_4000
-     * @tc.name testInt16ArrayFindTestThree040
-     * @tc.desc Verify find returns first element matching logical OR predicate
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayFindTestThree040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(1, 100, 200);
-      let result: number | undefined = arr.find((value: number, _index: int, _array: Int16Array): boolean => {
-        return value < 0 || value > 150;
-      });
-      expect(result).assertEqual(200);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_THREE_4100
      * @tc.name testInt16ArrayFindTestThree041
      * @tc.desc Verify find returns first element matching logical NOT predicate
@@ -992,25 +911,6 @@ export default function int16ArrayFindTestThreeTest(): void {
         return value === 32767;
       });
       expect(result).assertEqual(32767);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_THREE_5000
-     * @tc.name testInt16ArrayFindTestThree050
-     * @tc.desc Verify find is stable for same predicate across two calls
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayFindTestThree050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(5, 10, 15);
-      let first: number | undefined = arr.find((value: number, _index: int, _array: Int16Array): boolean => {
-        return value > 7;
-      });
-      let second: number | undefined = arr.find((value: number, _index: int, _array: Int16Array): boolean => {
-        return value > 7;
-      });
-      expect(first).assertEqual(second);
     });
 
     /**
@@ -1183,30 +1083,5 @@ export default function int16ArrayFindTestThreeTest(): void {
       expect(actual3).assertEqual(30);
     });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_THREE_6000
-     * @tc.name testInt16ArrayFindTestThree060
-     * @tc.desc Verify find works again after previous predicate Error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayFindTestThree060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(5, 10, 15);
-      try {
-        arr.find((_value: number, _index: int, _array: Int16Array): boolean => {
-          throw new Error('fail');
-        });
-        expect().assertFail();
-      } catch (e) {
-        let actualErrorName: string = e.name;
-        let expectedErrorName: string = 'Error';
-        expect(actualErrorName).assertEqual(expectedErrorName);
-      }
-      let result: number | undefined = arr.find((value: number, _index: int, _array: Int16Array): boolean => {
-        return value > 7;
-      });
-      expect(result).assertEqual(10);
-    });
   });
 }

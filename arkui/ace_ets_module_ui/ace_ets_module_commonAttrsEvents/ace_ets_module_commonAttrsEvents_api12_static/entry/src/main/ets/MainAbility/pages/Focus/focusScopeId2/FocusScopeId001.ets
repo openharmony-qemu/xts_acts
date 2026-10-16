@@ -100,23 +100,24 @@ struct FocusScopeId001 {
   }
 
   build() {
-    Column({space: 5} as ColumnOptions) {
+    Column({space: 2} as ColumnOptions) {
       Navigation(this.pageInfos) {
         Scroll() {
-          Column({ space: 5 } as ColumnOptions) {
+          Column({ space: 2 } as ColumnOptions) {
 
             Text('焦点组1，可删除')
             if (this.flag) {
               Column({ space: 5 } as ColumnOptions) {
-                Button('btn1').focusOnTouch(true).id('FocusScopeId001_btn1_1')
-                Button('btn2').focusOnTouch(true).id('FocusScopeId001_btn2_1')
-                Button('btn3').focusOnTouch(true).id('FocusScopeId001_btn3_1')
+                Button('btn1').focusOnTouch(true).id('FocusScopeId001_btn1_1').height(32)
+                Button('btn2').focusOnTouch(true).id('FocusScopeId001_btn2_1').height(32)
+                Button('btn3').focusOnTouch(true).id('FocusScopeId001_btn3_1').height(32)
               }.focusScopeId(this.focusId[this.focusIdIndex], this.isGroupValue)
               .borderWidth(1)
             }
 
             Button('del').focusOnTouch(true)
               .id('FocusScopeId001_btn_del')
+              .height(32)
               .onClick((e: ClickEvent) => {
                 this.flag = !this.flag
               })
@@ -126,23 +127,25 @@ struct FocusScopeId001 {
             Column({ space: 5 } as ColumnOptions) {
               Button('btn1').focusOnTouch(true).id('FocusScopeId001_btn1_2')
               Button('btn2').focusOnTouch(true).id('FocusScopeId001_btn2_2')
-              Button('btn3').focusOnTouch(true)
+              Button('btn3').focusOnTouch(true).height(32)
             }
             .focusScopeId('FocusScopeId001_focusGroup2', true)
             .borderWidth(1)
 
-            Button('button').focusOnTouch(true).id('FocusScopeId001_btn_btn')
+            Button('button').focusOnTouch(true).id('FocusScopeId001_btn_btn').height(32)
 
             Column({ space: 2 } as ColumnOptions) {
               Button('clearFocus')
                 .id('FocusScopeId001_clearFocus')
+                .height(32)
                 .onClick((e: ClickEvent) => {
                   this.getUIContext().getFocusController().clearFocus()
                 })
 
-              Button('更改第一个焦点组的isGroup:' + this.isGroupValue)
+              Button('更改isGroup:' + this.isGroupValue)
                 .id('FocusScopeId001_changIsGroup')
                 .focusOnTouch(true)
+                .height(32)
                 .onClick((e: ClickEvent) => {
                   this.isGroupValue = !this.isGroupValue
                 })

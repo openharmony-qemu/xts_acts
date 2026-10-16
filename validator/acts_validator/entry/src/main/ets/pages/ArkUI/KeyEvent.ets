@@ -14,7 +14,7 @@
 import router from '@ohos.router';
 import promptAction from '@ohos.promptAction';
 import FirstDialog from '../model/FirstDialog';
-import { unifiedDataChannel, uniformTypeDescriptor } from '@kit.ArkData';
+import nativeKeyEvent from "libnativeKeyEvent.so";
 
 const TAG = '[keyEvent]';
 
@@ -22,25 +22,18 @@ const TAG = '[keyEvent]';
 @Component
 struct keyEventExample {
   @State text: string = ''
-  @State axisValue: string = ''
   @State name: string = 'KeyEvent';
   @State keyEventVue: boolean = false;
   @State intervalNum: number = 0;
-  @State hoverMoveText: string = '';
-  @State StepTips: string = '操作步骤：使用键盘分别点击CapsLock、NumLock键' + '\n' + '预期结果：指示灯亮起，结果为True'
-  @State uri: string = ""
-  @State AblockArr: string[] = []
-  @State BblockArr: string[] = []
-  @State AVisible: Visibility = Visibility.Visible
+  @State StepTips: string = '操作步骤：\n上方按键默认获焦，使用键盘分别点击CapsLock、NumLock键查看返回值。\n按Tab键走焦到下方按键后，再使用键盘分别点击CapsLock、NumLock键查看返回值。\n预期结果：上方按键接口返回结果随键盘指示灯亮起熄灭(若灯不亮与此接口无关为设备驱动问题)分别为true和false(下方显示ON/OFF)'
   @State dragSuccess: Boolean = false
+  @State capiVue: boolean = false
 
   aboutToAppear(): void {
-
     FirstDialog.ChooseDialog(this.StepTips, this.name);
   }
 
   aboutToDisappear(): void {
-
     clearInterval(this.intervalNum)
   }
 
@@ -49,52 +42,42 @@ struct keyEventExample {
   }
 
   onPageShow() {
-
     this.intervalNum = setInterval(() => {
       if (this.dragSuccess) {
         this.keyEventVue = true
+      }
+      if (nativeKeyEvent.isKeyEventCompleted()) {
+        this.capiVue = true
       }
     }, 500)
   }
 
   @Builder
   PassBtn(text: Resource, isFullScreen: boolean) {
-    if (this.keyEventVue == false) {
-      Button({ stateEffect: this.keyEventVue }) {
-        Image($r('app.media.ic_public_pass'))
-          .width('20vp')
-          .height('20vp')
-      }
-      .margin({ bottom: '20vp' })
-      .width('30%')
-      .height('30vp')
-      .backgroundColor(Color.Grey)
-      .opacity(0.4)
-      .onClick(() => {
-
-      })
-    } else {
-      Button({ stateEffect: this.keyEventVue }) {
-        Image($r('app.media.ic_public_pass'))
-          .width('20vp')
-          .height('20vp')
-      }
-      .margin({ bottom: '20vp' })
-      .width('30%')
-      .height('30vp')
-      .backgroundColor(Color.Grey)
-      .onClick(() => {
-        router.back({
-          url: 'pages/ArkUI/ArkUI_index',
-          params: {
-            result: 'true ', title: this.name,
-          }
-        })
-        promptAction.showToast({
-          message: '通过', duration: 1000
-        });
-      })
+    Button({ stateEffect: this.keyEventVue && this.capiVue }) {
+      Image($r('app.media.ic_public_pass'))
+        .width('20vp')
+        .height('20vp')
     }
+    .margin({ bottom: '20vp' })
+    .width('30%')
+    .height('30vp')
+    .backgroundColor(Color.Grey)
+    .opacity(this.keyEventVue && this.capiVue ? 1 : 0.4)
+    .enabled(this.keyEventVue && this.capiVue)
+    .onClick(() => {
+      globalThis.arkResult = 'true ';
+      globalThis.arkTitle = this.name;
+      router.back({
+        url: 'pages/ArkUI/ArkUI_index',
+        params: {
+          result: 'true ', title: this.name,
+        }
+      })
+      promptAction.showToast({
+        message: '通过', duration: 1000
+      });
+    })
   }
 
   @Builder
@@ -160,13 +143,28 @@ struct keyEventExample {
             if (event) {
               this.text = '\nkeyCode:' + event.keyCode + '\nkeyText:' + event.keyText +
                 '\nisNumLockOn: ' + event.isNumLockOn + '\nisCapsLockOn: ' + event.isCapsLockOn
-              if(event.isNumLockOn==true&&event.isCapsLockOn==true){
-                this.dragSuccess = true
-              }
+              this.dragSuccess = true
             }
           })
           .focusable(true)
           .defaultFocus(true)
+
+        XComponent({
+          id: 'xcomponentId',
+          type: "node",
+          libraryname: 'nativeKeyEvent'
+        })
+          .onAppear(() => {
+            try {
+              nativeKeyEvent.createNativeNode("xcomponentId", this.getUIContext());
+            } catch (e) {
+              console.error('nativeKeyEvent not supported: ' + JSON.stringify(e));
+            }
+          })
+          .focusable(true)
+          .focusOnTouch(true)
+          .width('100%')
+          .height('30%')
       }.height('80%')
       .width('100%')
       .backgroundColor(Color.White)

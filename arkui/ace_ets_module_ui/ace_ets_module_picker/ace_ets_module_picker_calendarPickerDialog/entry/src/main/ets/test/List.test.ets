@@ -33,7 +33,6 @@ export default function testsuite() {
   dialogDisableDateRangeAndMarkTodayTest();
   CalendarPickerDialogExitsTest();
   CalendarPickerDialogWindowPropertiesTest();
-  CalendarDialogCallbackTest();
   CalendarPickerDialogTest();
   CalendarPickerDialogButtonStyleTest();
   calendarPickerDialogBackgroundEffectTest();

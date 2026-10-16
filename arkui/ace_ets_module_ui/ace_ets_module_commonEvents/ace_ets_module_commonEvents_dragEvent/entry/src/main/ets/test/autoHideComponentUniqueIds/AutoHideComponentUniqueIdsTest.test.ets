@@ -13,10 +13,11 @@
  * limitations under the License.
  */
 
-import { beforeAll, describe, expect, it, Level, afterEach } from '@ohos/hypium';
+import { beforeAll, describe, expect, it, Level, afterEach } from '@ohos/hypium-dynamic';
 import Utils from '../common/Utils';
 import { Driver, ON } from '@ohos.UiTest';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function AutoHideComponentUniqueIdsTest() {
 
   describe('AutoHideComponentUniqueIdsTest', () => {
@@ -58,7 +59,7 @@ export default function AutoHideComponentUniqueIdsTest() {
       
       console.info(`[testDragEventAutoHideSingleNumber] drag upward from (${startX}, ${startY}) to (${endX}, ${endY})`);
       
-      await driver.drag(startX, startY, endX, endY);
+      await driver.dragBetween({x:startX,y:startY,displayId:displayID},{x:endX,y:endY,displayId:displayID});
       await Utils.sleep(500);
       
       let strJson = getInspectorByKey('dragSource2');
@@ -95,7 +96,7 @@ export default function AutoHideComponentUniqueIdsTest() {
       
       console.info(`[testDragEventAutoHideNumberArray] drag upward from (${startX}, ${startY}) to (${endX}, ${endY})`);
       
-      await driver.drag(startX, startY, endX, endY);
+      await driver.dragBetween({x:startX,y:startY,displayId:displayID},{x:endX,y:endY,displayId:displayID});
       await Utils.sleep(500);
       
       let strJson2 = getInspectorByKey('dragSource2');
@@ -137,7 +138,7 @@ export default function AutoHideComponentUniqueIdsTest() {
       
       console.info(`[testDragEventAutoHideEmptyArray] drag upward from (${startX}, ${startY}) to (${endX}, ${endY})`);
       
-      await driver.drag(startX, startY, endX, endY);
+      await driver.dragBetween({x:startX,y:startY,displayId:displayID},{x:endX,y:endY,displayId:displayID});
       await Utils.sleep(500);
       
       let strJson1 = getInspectorByKey('dragSource1');
@@ -184,7 +185,7 @@ export default function AutoHideComponentUniqueIdsTest() {
       
       console.info(`[testDragEventAutoHideIncludeSelf] drag upward from (${startX}, ${startY}) to (${endX}, ${endY})`);
       
-      await driver.drag(startX, startY, endX, endY);
+      await driver.dragBetween({x:startX,y:startY,displayId:displayID},{x:endX,y:endY,displayId:displayID});
       await Utils.sleep(500);
       
       let strJson1 = getInspectorByKey('dragSource1');

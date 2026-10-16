@@ -14,7 +14,7 @@
  */
 
 import sendablePhotoAccessHelper from '@ohos.file.sendablePhotoAccessHelper'
-import { describe, it, expect, beforeAll, Level } from '@ohos/hypium'
+import { describe, it, expect, beforeAll, Level } from '@ohos/hypium-dynamic'
 import { common } from '@kit.AbilityKit';
 import { photoAccessHelper } from '@kit.MediaLibraryKit';
 import {
@@ -22,7 +22,8 @@ import {
   driveFn,
   getPermission,
   fetchAllOption,
-  createResource
+  createResource,
+  checkResourceFile
 } from '../../util/common'
 
 export default function closeTest () {
@@ -37,6 +38,7 @@ export default function closeTest () {
       await getPermission();
       await sleep(10);
       await driveFn();
+      checkResourceFile(globalContext);
       await createResource(globalContext, fileNameList);
     });
 

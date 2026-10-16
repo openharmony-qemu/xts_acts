@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import calendarManager from '@ohos.calendarManager';
-import { describe, beforeAll, it, expect, Level, Size, TestType } from '@ohos/hypium';
+import { describe, beforeAll, it, expect, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import abilityAccessCtrl from '@ohos.abilityAccessCtrl';
 import uitest from '@ohos.UiTest';
 import systemDateTime from '@ohos.systemDateTime';
@@ -60,11 +60,13 @@ export default function CalendarManagerTest() {
         let permissions: Permissions[] = ["ohos.permission.WRITE_CALENDAR", "ohos.permission.READ_CALENDAR"];
         calendarMgrErr = calendarManager?.getCalendarManager(mContext);
         let atManager = abilityAccessCtrl.createAtManager();
+        let dialogShown = false;
         atManager.requestPermissionsFromUser(mContext, permissions, (err, result) => {
           if (err) {
             console.info('getPermission failed: ' + JSON.stringify(err));
           } else {
             console.info('getPermission success: ' + JSON.stringify(result));
+            dialogShown = result.dialogShownResults?.some((shown: boolean) => shown === true) ?? false;
           }
         });
 
@@ -73,10 +75,12 @@ export default function CalendarManagerTest() {
 
         await sleep(500);
         console.info("driver is " + JSON.stringify(driver));
-        let button = await driver.findComponent(uitest.ON.text('允许'));
-        if (button != undefined) {
-          console.info("button is " + JSON.stringify(button));
-          await button.click();
+        if (dialogShown) {
+          let button = await driver.findComponent(uitest.ON.text('允许'));
+          if (button != undefined) {
+            console.info("button is " + JSON.stringify(button));
+            await button.click();
+          }
         }
         console.info("getPermission end");
       } catch (error) {

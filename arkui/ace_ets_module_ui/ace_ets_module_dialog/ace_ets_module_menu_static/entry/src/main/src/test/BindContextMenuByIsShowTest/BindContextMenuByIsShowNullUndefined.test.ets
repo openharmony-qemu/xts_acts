@@ -31,6 +31,7 @@ const MENU_ITEM_TEXT = '菜单选项1';
 
 async function clickShowAndDismiss(btnId: string): Promise<void> {
   let driver = Driver.create();
+  await Utils.sleep(500);
   let btn = await driver.findComponent(ON.id(btnId));
   expect(!!btn).assertTrue();
   if (btn) {
@@ -103,6 +104,7 @@ export default function BindContextMenuByIsShowNullUndefinedTest(): void {
       try {
         await navigatePage();
         let driver = Driver.create();
+        await Utils.sleep(500);
         let button = await driver.findComponent(ON.id('BindContextMenuByIsShowNullUndefined_btnContentNull_01'));
         expect(!!button).assertTrue();
         if (button) {
@@ -130,6 +132,7 @@ export default function BindContextMenuByIsShowNullUndefinedTest(): void {
       try {
         await navigatePage();
         let driver = Driver.create();
+        await Utils.sleep(500);
         let button = await driver.findComponent(ON.id('BindContextMenuByIsShowNullUndefined_btnContentUndefined_01'));
         expect(!!button).assertTrue();
         if (button) {

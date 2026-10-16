@@ -14,7 +14,7 @@
  * Canvas / RenderingContextSettings antialias 探针；路由成功须得到 ok。
  */
 import CommonFunc from '../../MainAbility/common/Common';
-import { describe, it, expect, Level } from '@ohos/hypium';
+import { describe, it, expect, Level } from '@ohos/hypium-dynamic';
 import {
   CANVAS_RENDERER_ANTIALIAS_PAGE,
   CANVAS_RENDERER_ANTIALIAS_STATUS_KEY,

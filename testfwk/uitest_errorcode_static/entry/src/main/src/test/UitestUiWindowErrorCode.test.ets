@@ -17,6 +17,7 @@ import { beforeAll, beforeEach, describe, it, expect,TestType, Size, Level } fro
 import {Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver } from '@kit.TestKit'
 import { BusinessError } from '@ohos.base';
 import  hilog  from '@ohos.hilog'
+import display from '@ohos.display';
 import { Utils, startAbility, stopApplication } from './Util.test';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'uitestTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -30,8 +31,12 @@ const ErrorCode = 401;
 
 export default function uitestUiWindowErrorTest(): void {
   describe('UitestUiWindowErrorTest', (): void => {
+    let displayId: int = 0;
+    let primaryId: int = 0;
     beforeAll(async () : Promise<void> => {
       hilog.info(domain, tag, "UitestUiWindowErrorTest loadup start!!!!!")
+      displayId = display.getDefaultDisplaySync().id.toInt();
+      primaryId = display.getPrimaryDisplaySync().id.toInt();
       await Utils.msSleep(1000)
       hilog.info(domain, tag, "UitestUiWindowErrorTest loadup over!!!!!")
     })
@@ -52,7 +57,12 @@ export default function uitestUiWindowErrorTest(): void {
         await driver.delayMs(waitUiReadyMs);
         let window = await driver.findWindow({bundleName: 'com.uitestScene.acts'});
         await driver.delayMs(waitUiReadyMs);
-        await stopApplication('com.uitestScene.acts');
+        let disPlay = display.getDefaultDisplaySync();
+        if (displayId === primaryId) {
+          await stopApplication('com.uitestScene.acts');
+        } else {
+          await driver.pressBack(disPlay.id.toInt());
+        }
         await driver.delayMs(waitUiReadyMs);
         if (window != null) {
           await window.getBundleName();
@@ -84,7 +94,12 @@ export default function uitestUiWindowErrorTest(): void {
         await driver.delayMs(waitUiReadyMs);
         let window = await driver.findWindow({bundleName: 'com.uitestScene.acts'});
         await driver.delayMs(waitUiReadyMs);
-        await stopApplication('com.uitestScene.acts');
+        let disPlay = display.getDefaultDisplaySync();
+        if (displayId === primaryId) {
+          await stopApplication('com.uitestScene.acts');
+        } else {
+          await driver.pressBack(disPlay.id.toInt());
+        }
         await driver.delayMs(waitUiReadyMs);
         if (window != null) {
           await window.getBounds();
@@ -114,7 +129,12 @@ export default function uitestUiWindowErrorTest(): void {
         await driver.delayMs(waitUiReadyMs);
         let window = await driver.findWindow({bundleName: 'com.uitestScene.acts'});
         await driver.delayMs(waitUiReadyMs);
-        await stopApplication('com.uitestScene.acts');
+        let disPlay = display.getDefaultDisplaySync();
+        if (displayId === primaryId) {
+          await stopApplication('com.uitestScene.acts');
+        } else {
+          await driver.pressBack(disPlay.id.toInt());
+        }
         await driver.delayMs(waitUiReadyMs);
         if (window != null) {
           await window.getTitle();
@@ -146,7 +166,12 @@ export default function uitestUiWindowErrorTest(): void {
         await driver.delayMs(waitUiReadyMs);
         let window = await driver.findWindow({bundleName: 'com.uitestScene.acts'});
         await driver.delayMs(waitUiReadyMs);
-        await stopApplication('com.uitestScene.acts');
+        let disPlay = display.getDefaultDisplaySync();
+        if (displayId === primaryId) {
+          await stopApplication('com.uitestScene.acts');
+        } else {
+          await driver.pressBack(disPlay.id.toInt());
+        }
         await driver.delayMs(waitUiReadyMs);
         if (window != null) {
           await window.getWindowMode();
@@ -177,7 +202,12 @@ export default function uitestUiWindowErrorTest(): void {
         await driver.delayMs(waitUiReadyMs);
         let window = await driver.findWindow({bundleName: 'com.uitestScene.acts'});
         await driver.delayMs(waitUiReadyMs);
-        await stopApplication('com.uitestScene.acts');
+        let disPlay = display.getDefaultDisplaySync();
+        if (displayId === primaryId) {
+          await stopApplication('com.uitestScene.acts');
+        } else {
+          await driver.pressBack(disPlay.id.toInt());
+        }
         await driver.delayMs(waitUiReadyMs);
         if (window != null) {
           await window.isFocused();
@@ -208,7 +238,12 @@ export default function uitestUiWindowErrorTest(): void {
         await driver.delayMs(waitUiReadyMs);
         let window = await driver.findWindow({bundleName: 'com.uitestScene.acts'});
         await driver.delayMs(waitUiReadyMs);
-        await stopApplication('com.uitestScene.acts');
+        let disPlay = display.getDefaultDisplaySync();
+        if (displayId === primaryId) {
+          await stopApplication('com.uitestScene.acts');
+        } else {
+          await driver.pressBack(disPlay.id.toInt());
+        }
         await driver.delayMs(waitUiReadyMs);
         if (window != null) {
           await window.isActive();
@@ -240,7 +275,12 @@ export default function uitestUiWindowErrorTest(): void {
         await driver.delayMs(waitUiReadyMs);
         let window = await driver.findWindow({bundleName: 'com.uitestScene.acts'});
         await driver.delayMs(waitUiReadyMs);
-        await stopApplication('com.uitestScene.acts');
+        let disPlay = display.getDefaultDisplaySync();
+        if (displayId === primaryId) {
+          await stopApplication('com.uitestScene.acts');
+        } else {
+          await driver.pressBack(disPlay.id.toInt());
+        }
         await driver.delayMs(waitUiReadyMs);
         if (window != null) {
           await window.isActive();
@@ -271,7 +311,12 @@ export default function uitestUiWindowErrorTest(): void {
         await driver.delayMs(waitUiReadyMs);
         let window = await driver.findWindow({bundleName: 'com.uitestScene.acts'});
         await driver.delayMs(waitUiReadyMs);
-        await stopApplication('com.uitestScene.acts');
+        let disPlay = display.getDefaultDisplaySync();
+        if (displayId === primaryId) {
+          await stopApplication('com.uitestScene.acts');
+        } else {
+          await driver.pressBack(disPlay.id.toInt());
+        }
         await driver.delayMs(waitUiReadyMs);
         if (window != null) {
           await window.focus();
@@ -316,7 +361,12 @@ export default function uitestUiWindowErrorTest(): void {
           await driver.delayMs(waitUiReadyMs);
           let window = await driver.findWindow({bundleName: 'com.uitestScene.acts'});
           await driver.delayMs(waitUiReadyMs);
-          await stopApplication('com.uitestScene.acts');
+          let disPlay = display.getDefaultDisplaySync();
+          if (displayId === primaryId) {
+            await stopApplication('com.uitestScene.acts');
+          } else {
+            await driver.pressBack(disPlay.id.toInt());
+          }
           await driver.delayMs(waitUiReadyMs);
           if (window != null) {
             await window.moveTo(100, 100);
@@ -364,7 +414,12 @@ export default function uitestUiWindowErrorTest(): void {
           await driver.delayMs(waitUiReadyMs);
           let window = await driver.findWindow({bundleName: 'com.uitestScene.acts'});
           await driver.delayMs(waitUiReadyMs);
-          await stopApplication('com.uitestScene.acts');
+          let disPlay = display.getDefaultDisplaySync();
+          if (displayId === primaryId) {
+            await stopApplication('com.uitestScene.acts');
+          } else {
+            await driver.pressBack(disPlay.id.toInt());
+          }
           await driver.delayMs(waitUiReadyMs);
           if (window != null) {
             await window.resize(100, 100, ResizeDirection.LEFT);
@@ -411,7 +466,12 @@ export default function uitestUiWindowErrorTest(): void {
           await driver.delayMs(waitUiReadyMs);
           let window = await driver.findWindow({bundleName: 'com.uitestScene.acts'});
           await driver.delayMs(waitUiReadyMs);
-          await stopApplication('com.uitestScene.acts');
+          let disPlay = display.getDefaultDisplaySync();
+          if (displayId === primaryId) {
+            await stopApplication('com.uitestScene.acts');
+          } else {
+            await driver.pressBack(disPlay.id.toInt());
+          }
           await driver.delayMs(waitUiReadyMs);
           if (window != null) {
             await window.resize(100, 100, ResizeDirection.DOWN);
@@ -460,7 +520,12 @@ export default function uitestUiWindowErrorTest(): void {
           await driver.delayMs(waitUiReadyMs);
           let window = await driver.findWindow({bundleName: 'com.uitestScene.acts'});
           await driver.delayMs(waitUiReadyMs);
-          await stopApplication('com.uitestScene.acts');
+          let disPlay = display.getDefaultDisplaySync();
+          if (displayId === primaryId) {
+            await stopApplication('com.uitestScene.acts');
+          } else {
+            await driver.pressBack(disPlay.id.toInt());
+          }
           await driver.delayMs(waitUiReadyMs);
           if (window != null) {
             await window.split();
@@ -508,7 +573,12 @@ export default function uitestUiWindowErrorTest(): void {
           await driver.delayMs(waitUiReadyMs);
           let window = await driver.findWindow({bundleName: 'com.uitestScene.acts'});
           await driver.delayMs(waitUiReadyMs);
-          await stopApplication('com.uitestScene.acts');
+          let disPlay = display.getDefaultDisplaySync();
+          if (displayId === primaryId) {
+            await stopApplication('com.uitestScene.acts');
+          } else {
+            await driver.pressBack(disPlay.id.toInt());
+          }
           await driver.delayMs(waitUiReadyMs);
           if (window != null) {
             await window.maximize();
@@ -555,7 +625,12 @@ export default function uitestUiWindowErrorTest(): void {
           await driver.delayMs(waitUiReadyMs);
           let window = await driver.findWindow({bundleName: 'com.uitestScene.acts'});
           await driver.delayMs(waitUiReadyMs);
-          await stopApplication('com.uitestScene.acts');
+          let disPlay = display.getDefaultDisplaySync();
+          if (displayId === primaryId) {
+            await stopApplication('com.uitestScene.acts');
+          } else {
+            await driver.pressBack(disPlay.id.toInt());
+          }
           await driver.delayMs(waitUiReadyMs);
           if (window != null) {
             await window.minimize();
@@ -602,7 +677,12 @@ export default function uitestUiWindowErrorTest(): void {
           await driver.delayMs(waitUiReadyMs);
           let window = await driver.findWindow({bundleName: 'com.uitestScene.acts'});
           await driver.delayMs(waitUiReadyMs);
-          await stopApplication('com.uitestScene.acts');
+          let disPlay = display.getDefaultDisplaySync();
+          if (displayId === primaryId) {
+            await stopApplication('com.uitestScene.acts');
+          } else {
+            await driver.pressBack(disPlay.id.toInt());
+          }
           await driver.delayMs(waitUiReadyMs);
           if (window != null) {
             await window.resume();
@@ -649,7 +729,12 @@ export default function uitestUiWindowErrorTest(): void {
           await driver.delayMs(waitUiReadyMs);
           let window = await driver.findWindow({bundleName: 'com.uitestScene.acts'});
           await driver.delayMs(waitUiReadyMs);
-          await stopApplication('com.uitestScene.acts');
+          let disPlay = display.getDefaultDisplaySync();
+          if (displayId === primaryId) {
+            await stopApplication('com.uitestScene.acts');
+          } else {
+            await driver.pressBack(disPlay.id.toInt());
+          }
           await driver.delayMs(waitUiReadyMs);
           if (window != null) {
             await window.close();

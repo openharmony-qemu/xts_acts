@@ -16,12 +16,13 @@
 #include "include/DrawingNativePixelMapTest.h"
 #include "include/DrawingNativeCanvasCommonTest.h"
 #include "include/OhosCommonTest.h"
+#include "log_common.h"
 
-#define DRAWING_NUMBER_10 10
+#define NUMBER_10 10
 
 
-#define DRAWING_NUMBER_4096 4096
-#define DRAWING_NUMBER_2160 2160
+#define NUMBER_4096 4096
+#define NUMBER_2160 2160
 
 namespace OHOS {
 namespace Rosen {
@@ -68,7 +69,7 @@ int TestPixelMapGetFromNativePixelMapMultipleCalls()
     // todo: how to get NativePixelMap_?
     NativePixelMap_ *pixelMap = nullptr;
     // 1. Call OH_Drawing_PixelMapGetFromNativePixelMap 10 times
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_PixelMap *drPixelMap = OH_Drawing_PixelMapGetFromNativePixelMap(pixelMap);
         EXPECT_EQ(drPixelMap, nullptr);
     }
@@ -119,7 +120,7 @@ int TestPixelMapGetFromOhPixelMapNativeMultipleCalls()
     DrawingNativePixelMapTestSetUp();
     OH_PixelmapNative *pixelMap = GET_OH_PixelmapNative();
     // 1. Call OH_Drawing_PixelMapGetFromOhPixelMapNative 10 times
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_PixelMap *drPixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMap);
         // add assert
         EXPECT_NE(drPixelMap, nullptr);
@@ -133,19 +134,19 @@ int TestPixelMapGetFromOhPixelMapNativeMultipleCalls()
 int TestPixelMapGetFromOhPixelMapNativeBoundary()
 {
     DrawingNativePixelMapTestSetUp();
-    uint32_t width = DRAWING_NUMBER_4096;
-    uint32_t height = DRAWING_NUMBER_2160;
+    uint32_t width = NUMBER_4096;
+    uint32_t height = NUMBER_2160;
     OH_PixelmapNative *pixelMap = GET_OH_PixelmapNative(width, height);
-    // add assert
     EXPECT_EQ(pixelMap, nullptr);
+    
+    pixelMap = GET_OH_PixelmapNative4KBoundary();
+    EXPECT_NE(pixelMap, nullptr);
     // 1. Call OH_Drawing_PixelMapGetFromOhPixelMapNative
     OH_Drawing_PixelMap *drPixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMap);
-    // add assert
-    EXPECT_EQ(drPixelMap, nullptr);
+    EXPECT_NE(drPixelMap, nullptr);
     // 2. Release memory
     OH_Drawing_PixelMapDissolve(drPixelMap);
     OH_PixelmapNative_Release(pixelMap);
-    EXPECT_EQ(pixelMap, nullptr);
     DrawingNativePixelMapTestTearDown();
     return OH_DRAWING_SUCCESS;
 }

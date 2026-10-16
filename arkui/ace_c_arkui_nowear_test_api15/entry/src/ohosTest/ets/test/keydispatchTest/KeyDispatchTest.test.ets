@@ -19,6 +19,8 @@ import Utils from '../common/Utils';
 import router from '@ohos.router';
 import nativeRender from 'libnativerender.so'
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function keyDispatchTest() {
 
   describe('keyDispatchTest', () => {
@@ -42,10 +44,10 @@ export default function keyDispatchTest() {
       let driver = await Driver.create();
       await Utils.sleep(1000);
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await Utils.sleep(2000);
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await Utils.sleep(3000);
      
       // test the callbackData;

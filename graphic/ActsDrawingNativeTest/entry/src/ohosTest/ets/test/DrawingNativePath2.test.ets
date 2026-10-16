@@ -43,7 +43,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testPathApproximateNormal', Level.LEVEL0, () => {
+    it('testPathApproximateNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingPathPart3Advanced(3);
       expect(result).assertEqual(0);
     })
@@ -56,7 +56,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testPathApproximateNull', Level.LEVEL3, () => {
+    it('testPathApproximateNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingPathPart3Advanced(4);
       expect(result).assertEqual(0);
     })
@@ -69,7 +69,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testPathApproximateAbnormal', Level.LEVEL3, () => {
+    it('testPathApproximateAbnormal', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingPathPart3Advanced(5);
       expect(result).assertEqual(0);
     })
@@ -82,7 +82,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testPathApproximateMultiCalls', Level.LEVEL3, () => {
+    it('testPathApproximateMultiCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingPathPart3Advanced(6);
       expect(result).assertEqual(0);
     })
@@ -95,7 +95,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testPathInterpolateNormal', Level.LEVEL0, () => {
+    it('testPathInterpolateNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingPathPart3Advanced(7);
       expect(result).assertEqual(0);
     })
@@ -108,7 +108,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testPathInterpolateNull', Level.LEVEL3, () => {
+    it('testPathInterpolateNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingPathPart3Advanced(8);
       expect(result).assertEqual(0);
     })
@@ -121,7 +121,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testPathInterpolateAbnormal', Level.LEVEL3, () => {
+    it('testPathInterpolateAbnormal', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingPathPart3Advanced(9);
       expect(result).assertEqual(0);
     })
@@ -134,7 +134,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testPathInterpolateMultiCalls', Level.LEVEL3, () => {
+    it('testPathInterpolateMultiCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingPathPart3Advanced(10);
       expect(result).assertEqual(0);
     })
@@ -147,7 +147,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testPathIsInterpolateNormal', Level.LEVEL0, () => {
+    it('testPathIsInterpolateNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingPathPart3Advanced(11);
       expect(result).assertEqual(0);
     })
@@ -160,7 +160,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testPathIsInterpolateNull', Level.LEVEL3, () => {
+    it('testPathIsInterpolateNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingPathPart3Advanced(12);
       expect(result).assertEqual(0);
     })
@@ -173,7 +173,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testPathIsInterpolateMultiCalls', Level.LEVEL3, () => {
+    it('testPathIsInterpolateMultiCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingPathPart3Advanced(13);
       expect(result).assertEqual(0);
     })
@@ -186,7 +186,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testPathIsInverseFillTypeNormalOne', Level.LEVEL0, () => {
+    it('testPathIsInverseFillTypeNormalOne', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingPathPart4InverseFillType(0);
       expect(result).assertEqual(0);
     })
@@ -199,7 +199,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testPathIsInverseFillTypeNormalTwo', Level.LEVEL0, () => {
+    it('testPathIsInverseFillTypeNormalTwo', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingPathPart4InverseFillType(1);
       expect(result).assertEqual(0);
     })
@@ -212,7 +212,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testPathIsInverseFillTypeNormalThree', Level.LEVEL0, () => {
+    it('testPathIsInverseFillTypeNormalThree', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingPathPart4InverseFillType(2);
       expect(result).assertEqual(0);
     })
@@ -225,7 +225,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testPathIsInverseFillTypeNormalFour', Level.LEVEL0, () => {
+    it('testPathIsInverseFillTypeNormalFour', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingPathPart4InverseFillType(3);
       expect(result).assertEqual(0);
     })
@@ -238,7 +238,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testPathIsInverseFillTypeNull', Level.LEVEL3, () => {
+    it('testPathIsInverseFillTypeNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingPathPart4InverseFillType(4);
       expect(result).assertEqual(0);
     })
@@ -251,7 +251,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testPathToggleInverseFillTypeNull', Level.LEVEL3, () => {
+    it('testPathToggleInverseFillTypeNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingPathPart4InverseFillType(5);
       expect(result).assertEqual(0);
     })
@@ -264,7 +264,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testPathIsInverseFillTypeCalls', Level.LEVEL3, () => {
+    it('testPathIsInverseFillTypeCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingPathPart4InverseFillType(6);
       expect(result).assertEqual(0);
     })
@@ -277,7 +277,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testPathToggleInverseFillTypeCalls', Level.LEVEL3, () => {
+    it('testPathToggleInverseFillTypeCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingPathPart4InverseFillType(7);
       expect(result).assertEqual(0);
     })
@@ -290,7 +290,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testPathGetPointDataNormal', Level.LEVEL0, () => {
+    it('testPathGetPointDataNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingPathPart4GetData(0);
       expect(result).assertEqual(0);
     })
@@ -303,7 +303,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testPathGetPointDataNull', Level.LEVEL3, () => {
+    it('testPathGetPointDataNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingPathPart4GetData(1);
       expect(result).assertEqual(0);
     })
@@ -316,7 +316,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testPathGetPointDataAbnormal', Level.LEVEL3, () => {
+    it('testPathGetPointDataAbnormal', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingPathPart4GetData(2);
       expect(result).assertEqual(0);
     })
@@ -329,7 +329,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testPathGetPointDataMultipleCalls', Level.LEVEL3, () => {
+    it('testPathGetPointDataMultipleCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingPathPart4GetData(3);
       expect(result).assertEqual(0);
     })
@@ -342,7 +342,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testPathGetVerbDataNormal', Level.LEVEL0, () => {
+    it('testPathGetVerbDataNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingPathPart4GetData(4);
       expect(result).assertEqual(0);
     })
@@ -355,7 +355,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testPathGetVerbDataNull', Level.LEVEL3, () => {
+    it('testPathGetVerbDataNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingPathPart4GetData(5);
       expect(result).assertEqual(0);
     })
@@ -368,7 +368,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testPathGetVerbDataAbnormal', Level.LEVEL3, () => {
+    it('testPathGetVerbDataAbnormal', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingPathPart4GetData(6);
       expect(result).assertEqual(0);
     })
@@ -381,7 +381,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testPathGetVerbDataMultipleCalls', Level.LEVEL3, () => {
+    it('testPathGetVerbDataMultipleCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingPathPart4GetData(7);
       expect(result).assertEqual(0);
     })
@@ -394,7 +394,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testPathGetConicWeightNormal', Level.LEVEL0, () => {
+    it('testPathGetConicWeightNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingPathPart4GetData(8);
       expect(result).assertEqual(0);
     })
@@ -407,7 +407,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testPathGetConicWeightNull', Level.LEVEL3, () => {
+    it('testPathGetConicWeightNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingPathPart4GetData(9);
       expect(result).assertEqual(0);
     })
@@ -420,7 +420,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testPathGetConicWeightAbnormal', Level.LEVEL3, () => {
+    it('testPathGetConicWeightAbnormal', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingPathPart4GetData(10);
       expect(result).assertEqual(0);
     })
@@ -433,7 +433,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testPathGetConicWeightMultipleCalls', Level.LEVEL3, () => {
+    it('testPathGetConicWeightMultipleCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingPathPart4GetData(11);
       expect(result).assertEqual(0);
     })
@@ -446,7 +446,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testPathConvertToSvgStringNormal1', Level.LEVEL0, () => {
+    it('testPathConvertToSvgStringNormal1', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingPathPart4GetData(12);
       expect(result).assertEqual(0);
     })
@@ -459,7 +459,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
-    it('testPathConvertToSvgStringNormal2', Level.LEVEL1, () => {
+    it('testPathConvertToSvgStringNormal2', Level.LEVEL1, async () => {
       const result = libDrawingNative.DrawingPathPart4GetData(13);
       expect(result).assertEqual(0);
     })
@@ -472,7 +472,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testPathConvertToSvgStringNull', Level.LEVEL3, () => {
+    it('testPathConvertToSvgStringNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingPathPart4GetData(14);
       expect(result).assertEqual(0);
     })
@@ -485,7 +485,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testPathConvertToSvgStringAbnormal', Level.LEVEL3, () => {
+    it('testPathConvertToSvgStringAbnormal', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingPathPart4GetData(15);
       expect(result).assertEqual(0);
     })
@@ -498,7 +498,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testPathConvertToSvgStringMultipleCalls', Level.LEVEL3, () => {
+    it('testPathConvertToSvgStringMultipleCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingPathPart4GetData(16);
       expect(result).assertEqual(0);
     })
@@ -511,7 +511,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testPathGetLastPointNormal', Level.LEVEL0, () => {
+    it('testPathGetLastPointNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingPathPart4GetData(17);
       expect(result).assertEqual(0);
     })
@@ -524,7 +524,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testPathGetLastPointNull', Level.LEVEL3, () => {
+    it('testPathGetLastPointNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingPathPart4GetData(18);
       expect(result).assertEqual(0);
     })
@@ -537,7 +537,7 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testPathGetLastPointMultipleCalls', Level.LEVEL3, () => {
+    it('testPathGetLastPointMultipleCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingPathPart4GetData(19);
       expect(result).assertEqual(0);
     })
@@ -550,34 +550,47 @@ export default function DrawingNativePath2Test() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testPathIsEqualNormal', Level.LEVEL0, () => {
+    it('testPathIsEqualNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingPathPart4GetData(20);
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   testPathIsEqualNull
+     * @tc.name   testPathIsEqualNormal2
      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart4GetData_2200
-     * @tc.desc   test for testPathIsEqualNull
+     * @tc.desc   test for testPathIsEqualNormal2
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL1
      */
-    it('testPathIsEqualNull', Level.LEVEL3, () => {
+    it('testPathIsEqualNormal2', Level.LEVEL1, async () => {
       const result = libDrawingNative.DrawingPathPart4GetData(21);
       expect(result).assertEqual(0);
     })
 
     /**
-     * @tc.name   testPathIsEqualMultipleCalls
+     * @tc.name   testPathIsEqualNull
      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart4GetData_2300
+     * @tc.desc   test for testPathIsEqualNull
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testPathIsEqualNull', Level.LEVEL3, async () => {
+      const result = libDrawingNative.DrawingPathPart4GetData(22);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testPathIsEqualMultipleCalls
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart4GetData_2400
      * @tc.desc   test for testPathIsEqualMultipleCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testPathIsEqualMultipleCalls', Level.LEVEL3, () => {
-      const result = libDrawingNative.DrawingPathPart4GetData(22);
+    it('testPathIsEqualMultipleCalls', Level.LEVEL3, async () => {
+      const result = libDrawingNative.DrawingPathPart4GetData(23);
       expect(result).assertEqual(0);
     })
   })

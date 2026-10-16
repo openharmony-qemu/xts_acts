@@ -14,10 +14,11 @@
  */
 
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "@ohos/hypium"
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "@ohos/hypium-dynamic"
 import { Driver, ON, MouseButton } from '@kit.TestKit';
 import CommonFunc from '../../MainAbility/common/Common'
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function postInputEventWithStrategyTest() {
   describe('postInputEventWithStrategyTest', () => {
     beforeAll(async () => {
@@ -207,7 +208,7 @@ export default function postInputEventWithStrategyTest() {
       let bounds = await eventArea.getBounds();
       let centerX = (bounds.left + bounds.right) / 2;
       let centerY = (bounds.top + bounds.bottom) / 2;
-      await driver.mouseClick({ x: Math.round(centerX), y: Math.round(centerY) }, MouseButton.MOUSE_BUTTON_LEFT);
+      await driver.mouseClick({ x: Math.round(centerX), y: Math.round(centerY), displayId: displayID }, MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('postInputEventWithStrategyResultText');
       let obj: ESObject = JSON.parse(strJson);
@@ -235,7 +236,7 @@ export default function postInputEventWithStrategyTest() {
       let bounds = await eventArea.getBounds();
       let centerX = (bounds.left + bounds.right) / 2;
       let centerY = (bounds.top + bounds.bottom) / 2;
-      await driver.mouseClick({ x: Math.round(centerX), y: Math.round(centerY) }, MouseButton.MOUSE_BUTTON_LEFT);
+      await driver.mouseClick({ x: Math.round(centerX), y: Math.round(centerY), displayId: displayID }, MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('postInputEventWithStrategyResultText');
       let obj: ESObject = JSON.parse(strJson);

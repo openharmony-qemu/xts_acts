@@ -14,7 +14,7 @@
  */
 
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import Utils from '../../Util.test';
 import * as ToSortedJs from './ToSorted';
 import { arrayToSorted } from './ToSortedNative';

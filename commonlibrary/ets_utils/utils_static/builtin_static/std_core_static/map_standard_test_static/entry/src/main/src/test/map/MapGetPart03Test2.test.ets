@@ -874,7 +874,7 @@ export default function MapGetPart03Test(): void {
       let m: Map<string, string | null> = new Map<string, string | null>();
       m.set('nullable', null);
       let result: string | null = m.get('nullable', 'default');
-      expect(result).assertEqual('default');
+      expect(result).assertNull();
     });
 
     /**
@@ -889,7 +889,7 @@ export default function MapGetPart03Test(): void {
       let m: Map<string, string | undefined> = new Map<string, string | undefined>();
       m.set('undef', undefined);
       let result: string | undefined = m.get('undef', 'default');
-      expect(result).assertEqual('default');
+      expect(result).assertUndefined();
     });
 
     /**
@@ -1325,7 +1325,7 @@ export default function MapGetPart03Test(): void {
     it('mapGetPart03Test078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: Map<string, int | null> = new Map<string, int | null>();
       map.set('k', null);
-      expect(map.get('k', 99)).assertEqual(99);
+      expect(map.get('k', 99)).assertNull();
       expect(map.get('k')).assertNull();
     });
 

@@ -81,8 +81,9 @@ struct WebOnInterceptKeyEvent {
                 await Utils.waitForExist(()=>this.isPageEnd, 'WebOnInterceptKeyEventWebView', 1, 1000);
                 await Utils.clickComponent('WebOnInterceptKeyEventWebView', driver)
                 await Utils.waitForReleaseDriver(this.str,driver)
-                this.isOnInterceptKeyEventEnd = -1
-                await Utils.triggerKey(2047,driver)
+                this.isOnInterceptKeyEventEnd = -1;
+                const displayId:number=await (await driver.findComponent(ON.id('WebOnInterceptKeyEventWebView'))).getDisplayId();
+                await Utils.triggerKey(2047,driver,displayId)
                 await Utils.waitForExist(()=>this.isOnInterceptKeyEventEnd, 'isOnInterceptKeyEventEnd', 1, 1000);
                 await Utils.waitForReleaseDriver(this.str,driver)
                 let buttonTwo = await driver.findComponent(ON.id('KeyHideKbd'));
@@ -106,7 +107,8 @@ struct WebOnInterceptKeyEvent {
                 await Utils.clickComponent('WebOnInterceptKeyEventWebView', driver)
                 await Utils.waitForReleaseDriver(this.str,driver)
                 this.isOnInterceptKeyEventEnd = -1
-                await Utils.triggerKey(2047,driver)
+                const displayId:number=await (await driver.findComponent(ON.id('WebOnInterceptKeyEventWebView'))).getDisplayId();
+                await Utils.triggerKey(2047,driver,displayId)
                 await Utils.waitForReleaseDriver(this.str,driver)
                 await Utils.waitForExist(()=>this.isOnInterceptKeyEventEnd, 'isOnInterceptKeyEventEnd = -1', 1, 1000);
                 Utils.emitEvent(this.onInterceptKeyEventCode, 175220)

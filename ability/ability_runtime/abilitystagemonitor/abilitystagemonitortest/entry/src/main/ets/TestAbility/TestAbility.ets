@@ -17,7 +17,7 @@ import Want from '@ohos.app.ability.Want'
 import AbilityConstant from '@ohos.app.ability.AbilityConstant'
 import window from '@ohos.window'
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
-import { Hypium, Level } from '@ohos/hypium'
+import { Hypium, Level } from '@ohos/hypium-dynamic'
 import testsuite from '../test/List.test'
 import UIAbility from '@ohos.app.ability.UIAbility';
 

@@ -12,7 +12,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from "@ohos/hypium";
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from "@ohos/hypium-dynamic";
 import { dcrFuncWithEnumDefault, dcrFuncWithConstDefault } from '../exports_dcr/DcrFunctionDefault';
 import { DcrClassWithCtorDefault, DcrClassWithMethodDefault, DcrClassWithFieldDefault } from '../exports_dcr/DcrClassDefault';
 import { DcrStatus, DCR_CONST_VALUE, DcrExportedClass, DcrExportedInterface } from '../exports_dcr/DcrEnumSource';

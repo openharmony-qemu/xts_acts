@@ -59,7 +59,12 @@ struct CapionDigitalCrown {
     .width('30%')
     .height('30vp')
     .backgroundColor(Color.Grey)
+    .opacity(this.CapionDigitalCrownVue ? 1 : 0.4)
+    .enabled(this.CapionDigitalCrownVue)
     .onClick(() => {
+      globalThis.arkTitle = this.name;
+      globalThis.arkResult = 'true ';
+      globalThis.arkTitle = this.name;
       router.back({
         url: 'pages/ArkUI/ArkUI_index',
         params: {
@@ -84,6 +89,7 @@ struct CapionDigitalCrown {
     .height('30vp')
     .backgroundColor(Color.Grey)
     .onClick(() => {
+      globalThis.arkTitle = this.name;
       router.back({
         url: 'pages/ArkUI/ArkUI_index',
         params: {
@@ -102,8 +108,13 @@ struct CapionDigitalCrown {
 
   onPageShow() {
     this.intervalNum = setInterval(() => {
-      if (this.text1 === '0' && this.text2 === '0') {
-        this.CapionDigitalCrownVue = true;
+      try {
+        if (nativeonDigitalCrown && nativeonDigitalCrown.isOnDigitalCrownCompleted()) {
+          this.CapionDigitalCrownVue = true;
+        }
+      } catch (e) {
+        console.error('nativeonDigitalCrown poll error: ' + JSON.stringify(e));
+        clearInterval(this.intervalNum);
       }
     }, 500)
   }
@@ -128,6 +139,7 @@ struct CapionDigitalCrown {
         .backgroundColor(Color.Black)
         .size({ width: '40vp', height: '30vp' })
         .onClick(() => {
+          globalThis.arkTitle = this.name;
           router.back({
             url: 'pages/ArkUI/ArkUI_index',
             params: { result: 'None' }
@@ -155,9 +167,15 @@ struct CapionDigitalCrown {
             libraryname: 'nativeonDigitalCrown'
           })
             .onAppear(() => {
-              nativeonDigitalCrown.nativeonDigitalCrown('onDigitalCrownTest', this.getUIContext());
-              this.text1 = '0';
-              this.text2 = '0';
+              if (nativeonDigitalCrown && nativeonDigitalCrown.nativeonDigitalCrown) {
+                try {
+                  nativeonDigitalCrown.nativeonDigitalCrown('onDigitalCrownTest', this.getUIContext());
+                } catch (e) {
+                  console.error('nativeonDigitalCrown call error: ' + JSON.stringify(e));
+                }
+              } else {
+                console.error('nativeonDigitalCrown module not available');
+              }
             })
             .width(`${this.width1}`)
             .backgroundColor('#FFFAFA')

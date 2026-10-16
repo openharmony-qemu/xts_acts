@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
+import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic'
 import CommonEventManager from '@ohos.commonEventManager'
 import rpc from '@ohos.rpc'
 import Want from '@ohos.app.ability.Want';
@@ -34,9 +34,9 @@ let subscriberInfo:CommonEventManager.CommonEventSubscribeInfo = {
 };
 
 class MySequenceable {
-  num: number = 0;
-  str: string = "default";
-  result: string = "default";
+  public num: number = 0;
+  public str: string = "default";
+  public result: string = "default";
 
   constructor(num:number, string:string, result:string) {
     this.num = num;
@@ -50,17 +50,17 @@ class MySequenceable {
     this.result = result;
   }
 
-  marshalling(messageParcel:rpc.MessageParcel) {
-    messageParcel.writeInt(this.num);
-    messageParcel.writeString(this.str);
-    messageParcel.writeString(this.result);
+  marshalling(dataOut: rpc.MessageSequence) {
+    dataOut.writeInt(this.num);
+    dataOut.writeString(this.str);
+    dataOut.writeString(this.result);
     return true;
   }
 
-  unmarshalling(messageParcel:rpc.MessageParcel) {
-    this.num = messageParcel.readInt();
-    this.str = messageParcel.readString();
-    this.result = messageParcel.readString();
+  unmarshalling(dataOut: rpc.MessageSequence) {
+    this.num = dataOut.readInt();
+    this.str = dataOut.readString();
+    this.result = dataOut.readString();
     return true;
   }
 }
@@ -72,7 +72,7 @@ function delay(time:number) {
   } else {
     delta = Math.round(time);
   }
-  for (let start = Date.now(); Date.now() - start <= delta; );
+  for (let start = Date.now(); Date.now() - start <= delta; ) { }
 }
 
 export default function abilityTest() {

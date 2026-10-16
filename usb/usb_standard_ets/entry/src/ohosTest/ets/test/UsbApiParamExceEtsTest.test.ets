@@ -17,7 +17,7 @@ import usbMgr from '@ohos.usbManager';
 import { UiDriver, BY } from '@ohos.UiTest';
 import CheckEmptyUtils from './CheckEmptyUtils.js';
 import { isFilteredDevice } from './FilterUtils';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 
 
 const TAG = "[UsbApiParamExceEtsTest]";

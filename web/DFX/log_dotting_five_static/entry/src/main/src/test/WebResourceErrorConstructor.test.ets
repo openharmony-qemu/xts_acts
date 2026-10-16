@@ -62,6 +62,32 @@ export default function webResourceErrorConstructor():void {
       })
 
     /**
+     * @tc.name   testWebResourceErrorClassStatic001
+     * @tc.number SUB_WEB_RESOURCE_ERROR_CLASS_0100
+     * @tc.desc   WebResourceError class instanceof test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWebResourceErrorClassStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          await Utils.msSleep(1000);
+          Utils.emitEvent("SwitchNextPageStaticWebResourceError", 10)
+          await Utils.msSleep(3000);
+          Utils.emitEvent("emitClassStatic001", 10)
+          await Utils.msSleep(2000);
+          Utils.registerEvent("testWebResourceErrorClassStatic001", "true", 70037, done);
+          await Utils.msSleep(2000);
+          inspector.sendEventByKey('WebResourceErrorConstructorButton', 10, '');
+          await Utils.msSleep(3000);
+        } catch (err) {
+          console.log('testWebResourceErrorClassStatic001' + err)
+        }
+        done();
+      })
+
+    /**
      * @tc.name   testWebResourceErrorConstructorStatic002
      * @tc.number SUB_WEB_CONSTRUCTOR_RETURN_0200
      * @tc.desc   WebResourceError constructor invocation test.

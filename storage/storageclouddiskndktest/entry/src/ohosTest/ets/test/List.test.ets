@@ -14,9 +14,17 @@
  */
 import EmptyTest from './Empty.test'
 import CloudDiskNdkTest from './CloudDiskNdk.test'
+import CloudDiskPlaceholderTest from './CloudDiskPlaceholder.test'
+import CloudDiskCallbackTest from './CloudDiskCallback.test'
+import CloudDiskSyncFolderExTest from './CloudDiskSyncFolderEx.test'
+import CloudDiskPlaceholderStateTest from './CloudDiskPlaceholderState.test'
 export default function testsuite() {
   if (canIUse("SystemCapability.FileManagement.CloudDiskManager")){
     CloudDiskNdkTest()
+    CloudDiskPlaceholderTest()
+    CloudDiskCallbackTest()
+    CloudDiskSyncFolderExTest()
+    CloudDiskPlaceholderStateTest()
   }else{
     EmptyTest()
   }

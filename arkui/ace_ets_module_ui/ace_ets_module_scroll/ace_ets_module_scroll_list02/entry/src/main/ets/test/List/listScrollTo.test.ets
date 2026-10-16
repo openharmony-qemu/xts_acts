@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
@@ -56,14 +56,16 @@ export default function listScrollTo() {
     it('listScrollTo_0100', Level.LEVEL3, async (done: Function) => {
       console.info('[listScrollTo_0100] START');
       await CommonFunc.sleep(1000);
-      let listItem1 = CommonFunc.getComponentRectOnScreen('list_scroll_100_2');
+      let driver = Driver.create();
+      let listItem1Component = await driver.findComponent(ON.id('list_scroll_100_2'));
+      let listItem1 = await listItem1Component.getBounds();
       console.info('[listScrollTo_0100] listItem1.bottom: ' + listItem1.bottom);
       await CommonFunc.sleep(2000);
-      let driver = Driver.create();
       let btn: Component = await driver.findComponent(ON.id('list_scrollTo_1'));
       await btn.click();
       await CommonFunc.sleep(2000);
-      let listItem2 = CommonFunc.getComponentRectOnScreen('list_scroll_100_2');
+      let listItem2Component = await driver.findComponent(ON.id('list_scroll_100_2'));
+      let listItem2 = await listItem2Component.getBounds();
       console.info('[listScrollTo_0100] listItem2.bottom: ' + listItem2.bottom);
       await CommonFunc.sleep(1000);
       expect(Math.abs(Math.round(listItem1.bottom - listItem2.bottom) - Math.round(vp2px(100))) <=1 ).assertTrue();

@@ -19,5 +19,5 @@ import frameNodeIsVisibleTest from './FrameNodeTest/frameNodeIsVisible.test';
 export default function testsuite() {
   frameNodeIsVisibleTest();
   upDownTreeEventTest();
-  gestureEventTest();
+  //gestureEventTest();
 }

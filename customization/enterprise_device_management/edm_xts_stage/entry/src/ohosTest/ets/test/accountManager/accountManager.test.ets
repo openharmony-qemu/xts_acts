@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, afterAll, it, expect, Level } from "@ohos/hypium";
+import { describe, beforeAll, afterAll, it, expect, Level } from "@ohos/hypium-dynamic";
 import { ENTINFO1, SELFWANT, SELFHAPNAME, DEFAULT_USER_ID, INVALID_USER_ID, appIdsInit,
   INVALID_WANT, DOMAIN_ACCOUNT_INFO1, DOMAIN_ACCOUNT_POLICY1 } from "../commom.ets";
 import { Driver, ON } from '@kit.TestKit';
@@ -62,18 +62,6 @@ export default function accountManagerTest() {
       } catch (err) {
         console.error(`acquireAuthorization exception: code is ${err.code}, message is ${err.message}`);
       }
-
-      console.info(' --- resetDomainAccountPolicy  -------- START --------');
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-      let policy: accountManager.DomainAccountPolicy = {};
-      try {
-        accountManager.setDomainAccountPolicy(SELFWANT, DOMAIN_ACCOUNT_INFO1, policy);
-      } catch (error) {
-        console.info(' --- resetDomainAccountPolicy error 801 is expected, actually catch: ' + error.code);
-      } finally {
-        await adminManager.disableSuperAdmin(SELFHAPNAME);
-      }
-      console.info(' --- resetDomainAccountPolicy  -------- END --------');
       done();
     })
 
@@ -857,6 +845,7 @@ export default function accountManagerTest() {
         expect(getPolicy.authenticationValidityPeriod == -1).assertTrue();
         expect(getPolicy.passwordValidityPeriod == -1).assertTrue();
         expect(getPolicy.passwordExpirationNotification == 0).assertTrue();
+        expect(getPolicy.supportUKeyAuthentication).assertFalse();
       } catch (error) {
         console.info(' --- setDomainAccountPolicy_test_0400 error 801 is expected, actually catch: ' + error.code);
         expect(error.code == 801).assertTrue();
@@ -917,6 +906,7 @@ export default function accountManagerTest() {
         authenticationValidityPeriod: 6.9,
         passwordValidityPeriod: -0.1,
         passwordExpirationNotification: 3.3,
+        supportUKeyAuthentication: true,
       };
       try {
         await accountManager.setDomainAccountPolicy(SELFWANT, DOMAIN_ACCOUNT_INFO1, policy1);
@@ -925,6 +915,7 @@ export default function accountManagerTest() {
         expect(policy2.authenticationValidityPeriod == 6).assertTrue();
         expect(policy2.passwordValidityPeriod == 0).assertTrue();
         expect(policy2.passwordExpirationNotification == 3).assertTrue();
+        expect(policy2.supportUKeyAuthentication).assertTrue();
       } catch (error) {
         console.info(' --- setDomainAccountPolicy_test_0600 error 801 is expected, actually catch: ' + error.code);
         expect(error.code == 801).assertTrue();
@@ -1038,6 +1029,7 @@ export default function accountManagerTest() {
         expect(getPolicy.authenticationValidityPeriod == - 1).assertTrue();
         expect(getPolicy.passwordValidityPeriod == 300).assertTrue();
         expect(getPolicy.passwordExpirationNotification == 360).assertTrue();
+        expect(getPolicy.supportUKeyAuthentication).assertFalse();
       } catch (error) {
         console.info(' --- setDomainAccountPolicy_test_0900 error 801 is expected, actually catch: ' + error.code);
         expect(error.code == 801).assertTrue();

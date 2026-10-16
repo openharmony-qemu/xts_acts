@@ -13,10 +13,11 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, Level } from '@ohos/hypium'
+import { describe, it, expect, Level } from '@ohos/hypium-dynamic'
 import formProvider from '@ohos.app.form.formProvider'
 import formBindingData from '@ohos.app.form.formBindingData'
 import { BusinessError } from '@ohos.base';
+import { Want } from '@kit.AbilityKit';
 
 let ERROR_CODE = 202;
 export default function formProviderTest() {
@@ -33,13 +34,13 @@ export default function formProviderTest() {
     it('System_API_Test_Form_Provider_0100', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_Form_Provider_0100';
       try {
-        let obj = formBindingData.createFormBindingData({temperature:"22c", time:"22:00"});
+        let obj = formBindingData.createFormBindingData({temperature:'22c', time:'22:00'});
         formProvider.requestPublishForm({
-          abilityName: "FormAbility",
+          abilityName: 'FormAbility',
           parameters: {
-            "ohos.extra.param.key.form_dimension": 2,
-            "ohos.extra.param.key.form_name": "widget",
-            "ohos.extra.param.key.module_name": "entry"
+            'ohos.extra.param.key.form_dimension': 2,
+            'ohos.extra.param.key.form_name': 'widget',
+            'ohos.extra.param.key.module_name': 'entry'
           }
         }, obj, (error, data) => {
           if (error) {
@@ -68,13 +69,13 @@ export default function formProviderTest() {
     it('System_API_Test_Form_Provider_0200', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_Form_Provider_0200';
       try {
-        let obj = formBindingData.createFormBindingData({temperature:"22c", time:"22:00"});
+        let obj = formBindingData.createFormBindingData({temperature:'22c', time:'22:00'});
         formProvider.requestPublishForm({
-          abilityName: "FormAbility",
+          abilityName: 'FormAbility',
           parameters: {
-            "ohos.extra.param.key.form_dimension": 2,
-            "ohos.extra.param.key.form_name": "widget",
-            "ohos.extra.param.key.module_name": "entry"
+            'ohos.extra.param.key.form_dimension': 2,
+            'ohos.extra.param.key.form_name': 'widget',
+            'ohos.extra.param.key.module_name': 'entry'
           }
         }, obj).then((data) => {
           console.log(TAG + ' formProvider requestPublishForm success, form ID is :' + JSON.stringify(data));
@@ -101,11 +102,11 @@ export default function formProviderTest() {
     it('System_API_Test_Form_Provider_0300', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_Form_Provider_0300';
       let want : Want = {
-        abilityName: "FormAbility",
+        abilityName: 'FormAbility',
         parameters: {
-          "ohos.extra.param.key.form_dimension": 2,
-          "ohos.extra.param.key.form_name": "widget",
-          "ohos.extra.param.key.module_name": "entry"
+          'ohos.extra.param.key.form_dimension': 2,
+          'ohos.extra.param.key.form_name': 'widget',
+          'ohos.extra.param.key.module_name': 'entry'
         }
       };
       try {

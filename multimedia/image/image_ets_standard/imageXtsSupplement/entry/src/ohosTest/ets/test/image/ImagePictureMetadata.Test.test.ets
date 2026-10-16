@@ -1,4 +1,4 @@
-import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium';
+import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium-dynamic';
 import { image } from '@kit.ImageKit';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@kit.BasicServicesKit';
@@ -273,6 +273,42 @@ export default function ImagePictureMetadataTest() {
         expect(error.code).assertEqual('7600206');
         done();
       }
+    })
+    /**
+     * @tc.name   SUB_PICTURE_GET_HDR_COMPOSED_PIXELMAP_0001
+     * @tc.number SUB_PICTURE_GET_HDR_COMPOSED_PIXELMAP_0001
+     * @tc.desc   getHdrComposedPixelmap cover 7600201 (picture without gainmap)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_PICTURE_GET_HDR_COMPOSED_PIXELMAP_0001', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_PICTURE_GET_HDR_COMPOSED_PIXELMAP_0001';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let array = new ArrayBuffer(300000000);
+      let pathUri = 'AllAuxiliaryPictures_exclude_fragment.jpg';
+      let path = `file://${testContext.filesDir}/${pathUri}`;
+      console.info(TAG, testName, `path: ${path}`);
+      const fd = await fs.open(path, fs.OpenMode.READ_ONLY);
+      console.info(TAG, testName, `open: ${fd.fd}`);
+      let readLength = await fs.read(fd.fd, array);
+      console.info(TAG, testName, `readLength: ${readLength}`);
+      try {
+        let ops: image.SourceOptions = {
+          sourceDensity: 98,
+        }
+        let imageSource: image.ImageSource = image.createImageSource(array, ops);
+        let pixelMap: image.PixelMap = await imageSource.createPixelMap();
+        let pictureObj: image.Picture = image.createPicture(pixelMap);
+        console.info(TAG, testName, 'Create picture succeeded');
+        let hdrComposedPixelmap: image.PixelMap = await pictureObj.getHdrComposedPixelmap();
+        console.info(TAG, testName, `hdrComposedPixelmap wanted be errcode 7600201`, hdrComposedPixelmap);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Faild Error, errorCode: ${err.code},errorMessage: ${err.message}`)
+        expect(err.code).assertEqual('7600201');
+      }
+      done();
     })
   })
 }

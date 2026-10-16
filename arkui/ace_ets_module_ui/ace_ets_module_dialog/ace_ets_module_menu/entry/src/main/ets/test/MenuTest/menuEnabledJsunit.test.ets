@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Copyright (c) 2022 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -12,13 +12,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 import {MessageManager,Callback} from '../../MainAbility/common/MessageManager';
 
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function menuEnabledJsunit() {
   describe('menuEnabledJsunit', () => {
     beforeEach(async (done: Function) => {
@@ -76,16 +77,16 @@ export default function menuEnabledJsunit() {
     it('menuEnabledJsunit_0200', Level.LEVEL2, async (done: Function) => {
 
       console.info('menuEnabledJsunit_0200 START');
-      let driver = await UiDriver.create()
-      let button = await driver.findComponent(BY.key('cmEnd'));
+      let driver = await Driver.create()
+      let button = await driver.findComponent(ON.id('cmEnd'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let menuEnabled = await driver.findComponent(BY.key('menuEnabled'));
+      let menuEnabled = await driver.findComponent(ON.id('menuEnabled'));
       await menuEnabled.click();
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2070)
+      await driver.triggerKey(2070,displayID)
       await CommonFunc.sleep(1000);
-      let change = await driver.findComponent(BY.key('change'));
+      let change = await driver.findComponent(ON.id('change'));
       await change.click();
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('menuEnabled' + '_text');

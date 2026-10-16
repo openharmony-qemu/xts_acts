@@ -4492,6 +4492,95 @@ export default function printTest(): void {
       })
       hilog.info(domain, tag, '%{public}s', 'SUB_print_print_fwk_updatePrinterInformation_0500 end');
     })
+    
+    /**
+     * @tc.name   SUB_print_print_fwk_updatePrinterInformation_0600
+     * @tc.number SUB_print_print_fwk_updatePrinterInformation_0600
+     * @tc.desc   check success of updatePrinterInformation function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_print_print_fwk_updatePrinterInformation_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'SUB_print_print_fwk_updatePrinterInformation_0600 start');
+      let ppdInfo: print.PpdInfo = {
+        manufacturer: '',
+        nickName: '',
+        ppdName: '',
+      }
+      let printerPreferences: print.PrinterPreferences = {
+        defaultDuplexMode: print.PrintDuplexMode.DUPLEX_MODE_SHORT_EDGE,
+        defaultPrintQuality: print.PrintQuality.QUALITY_HIGH,
+        defaultMediaType: '',
+        defaultPageSizeId: '',
+        defaultOrientation: print.PrintOrientationMode.ORIENTATION_MODE_NONE,
+        borderless: false,
+        defaultColorMode: print.PrintColorMode.COLOR_MODE_COLOR,
+        defaultCollate: false,
+        defaultReverse: false,
+        options: '',
+        vendorOptions: ''
+      }
+      let printerCapabilities: print.PrinterCapabilities = {
+        supportedPageSizes: [
+          {
+            id: '',
+            name: '',
+            width: 210,
+            height: 297,
+          }
+        ],
+        supportedColorModes: [
+          print.PrintColorMode.COLOR_MODE_MONOCHROME,
+          print.PrintColorMode.COLOR_MODE_COLOR
+        ],
+        supportedDuplexModes: [
+          print.PrintDuplexMode.DUPLEX_MODE_NONE,
+          print.PrintDuplexMode.DUPLEX_MODE_LONG_EDGE,
+          print.PrintDuplexMode.DUPLEX_MODE_SHORT_EDGE
+        ],
+        supportedMediaTypes: [''],
+        supportedQualities: [
+          print.PrintQuality.QUALITY_DRAFT,
+          print.PrintQuality.QUALITY_NORMAL,
+          print.PrintQuality.QUALITY_HIGH
+        ],
+        supportedOrientations: [print.PrintOrientationMode.ORIENTATION_MODE_PORTRAIT,
+          print.PrintOrientationMode.ORIENTATION_MODE_LANDSCAPE,
+          print.PrintOrientationMode.ORIENTATION_MODE_REVERSE_LANDSCAPE,
+          print.PrintOrientationMode.ORIENTATION_MODE_REVERSE_PORTRAIT,
+          print.PrintOrientationMode.ORIENTATION_MODE_NONE],
+        options: '',
+        vendorPrinterPrefAbility: '',
+        vendorJobAttrAbility: ''
+      };
+      let printerInformation: print.PrinterInformation = {
+        printerId: '',
+        printerName: '',
+        printerStatus: print.PrinterStatus.PRINTER_BUSY,
+        description: '',
+        capability: printerCapabilities,
+        uri: '',
+        printerMake: '',
+        preferences: printerPreferences,
+        alias: '',
+        selectedDriver: ppdInfo,
+        selectedProtocol: '',
+        options: '',
+      };
+      // Permissions required: ohos.permission.MANAGE_PRINT_JOB or ohos.permission.ENTERPRISE_MANAGE_PRINT
+
+      print.updatePrinterInformation(printerInformation).then(() => {
+        hilog.info(domain, tag, 'SUB_print_print_fwk_updatePrinterInformation_0600 success');
+        done();
+      }).catch((err: Object | null | undefined) => {
+        let error = err as BusinessError;
+        hilog.info(domain, tag, 'SUB_print_print_fwk_updatePrinterInformation_0600 error: %{public}d', error.code);
+        expect(error.code).assertEqual(201);
+        done();
+      })
+      hilog.info(domain, tag, '%{public}s', 'SUB_print_print_fwk_updatePrinterInformation_0600 end');
+    })
 
     hilog.info(domain, tag, '%{public}s', 'printTest end');
   });

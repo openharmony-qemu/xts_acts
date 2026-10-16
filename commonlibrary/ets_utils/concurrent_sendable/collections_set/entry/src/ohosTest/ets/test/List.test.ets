@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2026 RKH Corp.
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -38,8 +38,19 @@ import collectionsSetConcurrentTest from './CollectionsSetConcurrent/Collections
 import collectionsSetWorkerTest from './CollectionsSetConcurrent/CollectionsSetWorker.test';
 import collectionsSetInheritanceAndSendableTypesTest from './CollectionSetBase/CollectionsSetInheritanceAndSendableTypes.test';
 import collectionsSetSendableFunctionTest from './CollectionSetBase/CollectionsSetSendableFunction.test';
+import SetBasicTest from './SetBasic.test';
+import SetConcurrentTest from './Concurrent/SetConcurrent.test';
+import SetNormalTest from './Normal/SetNormal.test';
+import SetTaskPoolTest from './TaskPool/SetTaskPool.test';
+
+import SetInheritanceTest from './collections/SetInheritanceTest.test';
 
 export default function testsuite() {
+  SetBasicTest();
+  SetConcurrentTest();
+  SetNormalTest();
+  SetTaskPoolTest();
+  
   CollectionsSetTest();
   CollectionsSetAddTest();
   CollectionsSetClearTest();
@@ -65,6 +76,7 @@ export default function testsuite() {
   collectionsSetAuxiliaryTest();
   collectionsSetInheritanceAndSendableTypesTest();
   collectionsSetSendableFunctionTest();
-
-};
+  
+  SetInheritanceTest();
+}
 

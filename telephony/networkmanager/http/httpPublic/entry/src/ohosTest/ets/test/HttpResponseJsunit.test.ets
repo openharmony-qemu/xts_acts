@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium';
+import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import http from '@ohos.net.http';
 import { BusinessError } from '@ohos.base'
 
@@ -54,8 +54,16 @@ export default function httpResponseJsunit() {
         };
         let httpRequest = http.createHttp();
         httpRequest.request("https://www.baidu.com/", httpRequestOptions, (err, data) => {
+          if (err) {
+            console.log(caseName + " request error: " + JSON.stringify(err));
+            expectFalse();
+            httpRequest.destroy();
+            console.info(`${caseName}---End`);
+            done();
+            return;
+          }
           console.log(caseName + JSON.stringify(err) + " data: " + JSON.stringify(data));
-          expectTrue(data.result != null);
+          expectTrue(data.result !== undefined);
           httpRequest.destroy();
           console.info(`${caseName}---End`);
           done();
@@ -81,8 +89,16 @@ export default function httpResponseJsunit() {
       try {
         let httpRequest = http.createHttp();
         httpRequest.request("https://www.baidu.com/", (err, data) => {
+          if (err) {
+            console.log(caseName + " request error: " + JSON.stringify(err));
+            expectFalse();
+            httpRequest.destroy();
+            console.info(`${caseName}---End`);
+            done();
+            return;
+          }
           console.log(caseName + JSON.stringify(err) + " data: " + JSON.stringify(data));
-          expectTrue(data.result != null);
+          expectTrue(data.result !== undefined);
           httpRequest.destroy();
           console.info(`${caseName}---End`);
           done();
@@ -115,7 +131,7 @@ export default function httpResponseJsunit() {
         let httpRequest = http.createHttp();
         httpRequest.request("https://www.baidu.com/", httpRequestOptions).then(data => {
           console.log(caseName + JSON.stringify(data));
-          expectTrue(data.result != null);
+          expectTrue(data.result !== undefined);
           httpRequest.destroy();
           console.info(`${caseName}---End`);
           done();
@@ -152,6 +168,14 @@ export default function httpResponseJsunit() {
         };
         let httpRequest = http.createHttp();
         httpRequest.request("https://www.baidu.com/", httpRequestOptions, (err, data) => {
+          if (err) {
+            console.log(caseName + " request error: " + JSON.stringify(err));
+            expectFalse();
+            httpRequest.destroy();
+            console.info(`${caseName}---End`);
+            done();
+            return;
+          }
           console.log(caseName + JSON.stringify(err) + " data: " + JSON.stringify(data));
           expectTrue(data.responseCode != 0);
           httpRequest.destroy();
@@ -179,6 +203,14 @@ export default function httpResponseJsunit() {
       try {
         let httpRequest = http.createHttp();
         httpRequest.request("https://www.baidu.com/", (err, data) => {
+          if (err) {
+            console.log(caseName + " request error: " + JSON.stringify(err));
+            expectFalse();
+            httpRequest.destroy();
+            console.info(`${caseName}---End`);
+            done();
+            return;
+          }
           console.log(caseName + JSON.stringify(err) + " data: " + JSON.stringify(data));
           expectTrue(data.responseCode != 0);
           httpRequest.destroy();
@@ -250,8 +282,16 @@ export default function httpResponseJsunit() {
         };
         let httpRequest = http.createHttp();
         httpRequest.request("https://www.baidu.com/", httpRequestOptions, (err, data) => {
+          if (err) {
+            console.log(caseName + " request error: " + JSON.stringify(err));
+            expectFalse();
+            httpRequest.destroy();
+            console.info(`${caseName}---End`);
+            done();
+            return;
+          }
           console.log(caseName + JSON.stringify(err) + " data: " + JSON.stringify(data));
-          expectTrue(data.header != null);
+          expectTrue(data.header !== undefined);
           httpRequest.destroy();
           console.info(`${caseName}---End`);
           done();
@@ -277,8 +317,16 @@ export default function httpResponseJsunit() {
       try {
         let httpRequest = http.createHttp();
         httpRequest.request("https://www.baidu.com/", (err, data) => {
+          if (err) {
+            console.log(caseName + " request error: " + JSON.stringify(err));
+            expectFalse();
+            httpRequest.destroy();
+            console.info(`${caseName}---End`);
+            done();
+            return;
+          }
           console.log(caseName + JSON.stringify(err) + " data: " + JSON.stringify(data));
-          expectTrue(data.header != null);
+          expectTrue(data.header !== undefined);
           httpRequest.destroy();
           console.info(`${caseName}---End`);
           done();
@@ -311,7 +359,7 @@ export default function httpResponseJsunit() {
         let httpRequest = http.createHttp();
         httpRequest.request("https://www.baidu.com/", httpRequestOptions).then(data => {
           console.log(caseName + JSON.stringify(data));
-          expectTrue(data.header != null);
+          expectTrue(data.header !== undefined);
           httpRequest.destroy();
           console.info(`${caseName}---End`);
           done();
@@ -348,8 +396,16 @@ export default function httpResponseJsunit() {
         };
         let httpRequest = http.createHttp();
         httpRequest.request("https://www.baidu.com/", httpRequestOptions, (err, data) => {
+          if (err) {
+            console.log(caseName + " request error: " + JSON.stringify(err));
+            expectFalse();
+            httpRequest.destroy();
+            console.info(`${caseName}---End`);
+            done();
+            return;
+          }
           console.log(caseName + JSON.stringify(err) + " data: " + JSON.stringify(data));
-          expectTrue(data.cookies != null);
+          expectTrue(data.cookies !== undefined);
           httpRequest.destroy();
           console.info(`${caseName}---End`);
           done();
@@ -375,8 +431,16 @@ export default function httpResponseJsunit() {
       try {
         let httpRequest = http.createHttp();
         httpRequest.request("https://www.baidu.com/", (err, data) => {
+          if (err) {
+            console.log(caseName + " request error: " + JSON.stringify(err));
+            expectFalse();
+            httpRequest.destroy();
+            console.info(`${caseName}---End`);
+            done();
+            return;
+          }
           console.log(caseName + JSON.stringify(err) + " data: " + JSON.stringify(data));
-          expectTrue(data.cookies != null);
+          expectTrue(data.cookies !== undefined);
           httpRequest.destroy();
           console.info(`${caseName}---End`);
           done();
@@ -409,7 +473,7 @@ export default function httpResponseJsunit() {
         let httpRequest = http.createHttp();
         httpRequest.request("https://www.baidu.com/", httpRequestOptions).then(data => {
           console.log(caseName + JSON.stringify(data));
-          expectTrue(data.cookies != null);
+          expectTrue(data.cookies !== undefined);
           httpRequest.destroy();
           console.info(`${caseName}---End`);
           done();

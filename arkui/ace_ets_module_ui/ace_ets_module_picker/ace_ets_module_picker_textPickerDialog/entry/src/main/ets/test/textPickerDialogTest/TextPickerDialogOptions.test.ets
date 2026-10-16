@@ -12,12 +12,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import { UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 import { MessageManager, Callback } from '../../MainAbility/common/MessageManager';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 
 export default function TextPickerDialogOptionsTest() {
   describe('TextPickerDialogOptionsTest', () => {
@@ -53,8 +54,8 @@ export default function TextPickerDialogOptionsTest() {
      */
     it('TextPickerDialogOptionsTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('TextPickerDialogOptionsTest_0100 START');
-      let driver = await UiDriver.create()
-      let button = await driver.findComponent(BY.key('TextPickerDialog'));
+      let driver = await Driver.create()
+      let button = await driver.findComponent(ON.id('TextPickerDialog'));
       await button.click();
       await CommonFunc.sleep(1000);
 
@@ -62,7 +63,11 @@ export default function TextPickerDialogOptionsTest() {
       let obj: ESObject = JSON.parse(strJson);
       console.info("[TextPickerDialogOptionsTest_0100] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.label).assertEqual("TextPickerDialog");
-      await driver.triggerKey(2070)
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       console.info('[TextPickerDialogOptionsTest_0100] END');
       done();

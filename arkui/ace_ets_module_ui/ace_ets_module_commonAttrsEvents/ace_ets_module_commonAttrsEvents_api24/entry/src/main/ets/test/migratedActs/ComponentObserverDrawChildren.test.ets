@@ -18,7 +18,7 @@
  */
 
 import CommonFunc from '../../MainAbility/common/Common';
-import { describe, it, expect, Level } from '@ohos/hypium';
+import { describe, it, expect, Level } from '@ohos/hypium-dynamic';
 import { Callback } from '@ohos.base';
 import inspector from '@ohos.arkui.inspector';
 import { COMPONENT_OBSERVER_DRAW_CHILDREN_PAGE } from '../../MainAbility/pages/migratedActs/ComponentObserverDrawChildrenPage';

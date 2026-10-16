@@ -19,31 +19,31 @@
 #include "include/OhosCommonTest.h"
 #include <cfloat> // For FLT_MAX
 
-#define DRAWING_NUMBER_1 1
-#define DRAWING_NUMBER_2 2
-#define DRAWING_NUMBER_3 3
-#define DRAWING_NUMBER_4 4
-#define DRAWING_NUMBER_5 5
-#define DRAWING_NUMBER_6 6
-#define DRAWING_NUMBER_7 7
-#define DRAWING_NUMBER_8 8
-#define DRAWING_NUMBER_9 9
-#define DRAWING_NUMBER_10 10
-#define DRAWING_NUMBER_12 12
-#define DRAWING_NUMBER_14 14
-#define DRAWING_NUMBER_18 18
-#define DRAWING_NUMBER_30 30
-#define DRAWING_NUMBER_32 32
-#define DRAWING_NUMBER_38 38
-#define DRAWING_NUMBER_40 40
-#define DRAWING_NUMBER_45 45
-#define DRAWING_NUMBER_50 50
-#define DRAWING_NUMBER_52 52
-#define DRAWING_NUMBER_70 70
-#define DRAWING_NUMBER_90 90
-#define DRAWING_NUMBER_100 100
-#define DRAWING_NUMBER_200 200
-#define DRAWING_NUMBER_19937 19937
+#define NUMBER_1 1
+#define NUMBER_2 2
+#define NUMBER_3 3
+#define NUMBER_4 4
+#define NUMBER_5 5
+#define NUMBER_6 6
+#define NUMBER_7 7
+#define NUMBER_8 8
+#define NUMBER_9 9
+#define NUMBER_10 10
+#define NUMBER_12 12
+#define NUMBER_14 14
+#define NUMBER_18 18
+#define NUMBER_30 30
+#define NUMBER_32 32
+#define NUMBER_38 38
+#define NUMBER_40 40
+#define NUMBER_45 45
+#define NUMBER_50 50
+#define NUMBER_52 52
+#define NUMBER_70 70
+#define NUMBER_90 90
+#define NUMBER_100 100
+#define NUMBER_200 200
+#define NUMBER_19937 19937
 
 namespace OHOS {
 namespace Rosen {
@@ -74,7 +74,7 @@ int TestMatrixPostTranslateNormal()
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 3. OH_Drawing_MatrixPostTranslate, passing integers
-    OH_Drawing_MatrixPostTranslate(matrix, DRAWING_NUMBER_3, DRAWING_NUMBER_4);
+    OH_Drawing_MatrixPostTranslate(matrix, NUMBER_3, NUMBER_4);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 4. Free memory
@@ -144,8 +144,8 @@ int TestMatrixPostTranslateMultipleCalls()
     // 2. Call OH_Drawing_MatrixPostTranslate 10 times, with dx and dy as random numbers
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_real_distribution<float> dis(-DRAWING_NUMBER_100, DRAWING_NUMBER_100);
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    std::uniform_real_distribution<float> dis(-NUMBER_100, NUMBER_100);
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_MatrixPostTranslate(matrix, dis(gen), dis(gen));
     }
     // 3. Free memory
@@ -166,8 +166,8 @@ int TestMatrixResetNormal()
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 3. OH_Drawing_MatrixReset with a non-identity matrix
-    OH_Drawing_MatrixSetMatrix(matrix, DRAWING_NUMBER_2, DRAWING_NUMBER_1, DRAWING_NUMBER_3, DRAWING_NUMBER_1,
-        DRAWING_NUMBER_2, DRAWING_NUMBER_2, DRAWING_NUMBER_3, DRAWING_NUMBER_1, DRAWING_NUMBER_1);
+    OH_Drawing_MatrixSetMatrix(matrix, NUMBER_2, NUMBER_1, NUMBER_3, NUMBER_1,
+        NUMBER_2, NUMBER_2, NUMBER_3, NUMBER_1, NUMBER_1);
     OH_Drawing_MatrixReset(matrix);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
@@ -196,18 +196,18 @@ int TestMatrixResetMultipleCalls()
     // add assert
     EXPECT_NE(matrix, nullptr);
     // 2. Call OH_Drawing_MatrixSetMatrix 10 times
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
-        OH_Drawing_MatrixSetMatrix(matrix, DRAWING_NUMBER_2, DRAWING_NUMBER_1, DRAWING_NUMBER_3, DRAWING_NUMBER_1,
-            DRAWING_NUMBER_2, DRAWING_NUMBER_2, DRAWING_NUMBER_3, DRAWING_NUMBER_1, DRAWING_NUMBER_1);
+    for (int i = 0; i < NUMBER_10; i++) {
+        OH_Drawing_MatrixSetMatrix(matrix, NUMBER_2, NUMBER_1, NUMBER_3, NUMBER_1,
+            NUMBER_2, NUMBER_2, NUMBER_3, NUMBER_1, NUMBER_1);
     }
     // 3. Call OH_Drawing_MatrixReset 10 times
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_MatrixReset(matrix);
     }
     // 4. Call OH_Drawing_MatrixSetMatrix and OH_Drawing_MatrixReset alternately 10 times
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
-        OH_Drawing_MatrixSetMatrix(matrix, DRAWING_NUMBER_2, DRAWING_NUMBER_1, DRAWING_NUMBER_3, DRAWING_NUMBER_1,
-            DRAWING_NUMBER_2, DRAWING_NUMBER_2, DRAWING_NUMBER_3, DRAWING_NUMBER_1, DRAWING_NUMBER_1);
+    for (int i = 0; i < NUMBER_10; i++) {
+        OH_Drawing_MatrixSetMatrix(matrix, NUMBER_2, NUMBER_1, NUMBER_3, NUMBER_1,
+            NUMBER_2, NUMBER_2, NUMBER_3, NUMBER_1, NUMBER_1);
         OH_Drawing_MatrixReset(matrix);
     }
     // 5. Free memory
@@ -223,11 +223,11 @@ int TestMatrixConcatNormal()
     OH_Drawing_Matrix *a = OH_Drawing_MatrixCreate();
     // add assert
     EXPECT_NE(a, nullptr);
-    OH_Drawing_MatrixSetMatrix(a, DRAWING_NUMBER_1, 0, 0, 0, -DRAWING_NUMBER_1, 0, 0, 0, DRAWING_NUMBER_1);
+    OH_Drawing_MatrixSetMatrix(a, NUMBER_1, 0, 0, 0, -NUMBER_1, 0, 0, 0, NUMBER_1);
     OH_Drawing_Matrix *b = OH_Drawing_MatrixCreate();
     // add assert
     EXPECT_NE(b, nullptr);
-    OH_Drawing_MatrixSetMatrix(b, DRAWING_NUMBER_1, 0, 0, 0, DRAWING_NUMBER_1, 0, 0, 0, DRAWING_NUMBER_1);
+    OH_Drawing_MatrixSetMatrix(b, NUMBER_1, 0, 0, 0, NUMBER_1, 0, 0, 0, NUMBER_1);
     OH_Drawing_Matrix *c = OH_Drawing_MatrixCreate();
     // add assert
     EXPECT_NE(c, nullptr);
@@ -236,9 +236,9 @@ int TestMatrixConcatNormal()
     OH_Drawing_MatrixConcat(c, b, a);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
-    float values[DRAWING_NUMBER_9];
+    float values[NUMBER_9];
     OH_Drawing_MatrixGetAll(c, values);
-    EXPECT_EQ(values[0], DRAWING_NUMBER_1);
+    EXPECT_EQ(values[0], NUMBER_1);
     // 2. Free memory
     OH_Drawing_MatrixDestroy(a);
     OH_Drawing_MatrixDestroy(b);
@@ -282,27 +282,27 @@ int TestMatrixConcatMultipleCalls()
     OH_Drawing_Matrix *a = OH_Drawing_MatrixCreate();
     // add assert
     EXPECT_NE(a, nullptr);
-    OH_Drawing_MatrixSetMatrix(a, DRAWING_NUMBER_1, 0, 0, 0, -DRAWING_NUMBER_1, 0, 0, 0, DRAWING_NUMBER_1);
+    OH_Drawing_MatrixSetMatrix(a, NUMBER_1, 0, 0, 0, -NUMBER_1, 0, 0, 0, NUMBER_1);
     OH_Drawing_Matrix *b = OH_Drawing_MatrixCreate();
     // add assert
     EXPECT_NE(b, nullptr);
-    OH_Drawing_MatrixSetMatrix(b, DRAWING_NUMBER_1, 0, 0, 0, DRAWING_NUMBER_1, 0, 0, 0, DRAWING_NUMBER_1);
+    OH_Drawing_MatrixSetMatrix(b, NUMBER_1, 0, 0, 0, NUMBER_1, 0, 0, 0, NUMBER_1);
     OH_Drawing_Matrix *c = OH_Drawing_MatrixCreate();
     // add assert
     EXPECT_NE(c, nullptr);
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_MatrixConcat(c, b, a);
-        float values[DRAWING_NUMBER_9];
+        float values[NUMBER_9];
         OH_Drawing_MatrixGetAll(c, values);
-        EXPECT_EQ(values[0], DRAWING_NUMBER_1);
-        EXPECT_EQ(values[DRAWING_NUMBER_1], 0);
-        EXPECT_EQ(values[DRAWING_NUMBER_2], 0);
-        EXPECT_EQ(values[DRAWING_NUMBER_3], 0);
-        EXPECT_EQ(values[DRAWING_NUMBER_4], -DRAWING_NUMBER_1);
-        EXPECT_EQ(values[DRAWING_NUMBER_5], 0);
-        EXPECT_EQ(values[DRAWING_NUMBER_6], 0);
-        EXPECT_EQ(values[DRAWING_NUMBER_7], 0);
-        EXPECT_EQ(values[DRAWING_NUMBER_8], DRAWING_NUMBER_1);
+        EXPECT_EQ(values[0], NUMBER_1);
+        EXPECT_EQ(values[NUMBER_1], 0);
+        EXPECT_EQ(values[NUMBER_2], 0);
+        EXPECT_EQ(values[NUMBER_3], 0);
+        EXPECT_EQ(values[NUMBER_4], -NUMBER_1);
+        EXPECT_EQ(values[NUMBER_5], 0);
+        EXPECT_EQ(values[NUMBER_6], 0);
+        EXPECT_EQ(values[NUMBER_7], 0);
+        EXPECT_EQ(values[NUMBER_8], NUMBER_1);
     }
     // 2. Free memory
     OH_Drawing_MatrixDestroy(a);
@@ -368,21 +368,21 @@ int TestMatrixInvertMultipleCalls()
     OH_Drawing_Matrix *inverse = OH_Drawing_MatrixCreate();
     // add assert
     EXPECT_NE(inverse, nullptr);
-    OH_Drawing_MatrixSetMatrix(matrix, DRAWING_NUMBER_1, 0, 0, 0, -DRAWING_NUMBER_1, 0, 0, 0, DRAWING_NUMBER_1);
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    OH_Drawing_MatrixSetMatrix(matrix, NUMBER_1, 0, 0, 0, -NUMBER_1, 0, 0, 0, NUMBER_1);
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_MatrixInvert(matrix, inverse);
         OH_Drawing_MatrixInvert(inverse, matrix);
-        float values[DRAWING_NUMBER_9];
+        float values[NUMBER_9];
         OH_Drawing_MatrixGetAll(matrix, values);
-        EXPECT_EQ(values[0], DRAWING_NUMBER_1);
-        EXPECT_EQ(values[DRAWING_NUMBER_1], 0);
-        EXPECT_EQ(values[DRAWING_NUMBER_2], 0);
-        EXPECT_EQ(values[DRAWING_NUMBER_3], 0);
-        EXPECT_EQ(values[DRAWING_NUMBER_4], -DRAWING_NUMBER_1);
-        EXPECT_EQ(values[DRAWING_NUMBER_5], 0);
-        EXPECT_EQ(values[DRAWING_NUMBER_6], 0);
-        EXPECT_EQ(values[DRAWING_NUMBER_7], 0);
-        EXPECT_EQ(values[DRAWING_NUMBER_8], DRAWING_NUMBER_1);
+        EXPECT_EQ(values[0], NUMBER_1);
+        EXPECT_EQ(values[NUMBER_1], 0);
+        EXPECT_EQ(values[NUMBER_2], 0);
+        EXPECT_EQ(values[NUMBER_3], 0);
+        EXPECT_EQ(values[NUMBER_4], -NUMBER_1);
+        EXPECT_EQ(values[NUMBER_5], 0);
+        EXPECT_EQ(values[NUMBER_6], 0);
+        EXPECT_EQ(values[NUMBER_7], 0);
+        EXPECT_EQ(values[NUMBER_8], NUMBER_1);
     }
     // 2. Free memory
     OH_Drawing_MatrixDestroy(matrix);
@@ -398,12 +398,12 @@ int TestMatrixSetPolyToPolyNormal()
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
     EXPECT_NE(matrix, nullptr);
     // 2. OH_Drawing_MatrixSetPolyToPoly
-    OH_Drawing_MatrixSetMatrix(matrix, DRAWING_NUMBER_1, 0, 0, 0, -DRAWING_NUMBER_1, 0, 0, 0, DRAWING_NUMBER_1);
-    OH_Drawing_Point2D src[] = {{0, 0}, {DRAWING_NUMBER_100, 0}, {DRAWING_NUMBER_100, DRAWING_NUMBER_100}, {0,
-        DRAWING_NUMBER_100}, {0, DRAWING_NUMBER_100}};
-    OH_Drawing_Point2D dst[] = {{0, 0}, {DRAWING_NUMBER_100, DRAWING_NUMBER_30}, {DRAWING_NUMBER_100,
-        DRAWING_NUMBER_70}, {0, DRAWING_NUMBER_100}, {0, DRAWING_NUMBER_100}};
-    bool ret = OH_Drawing_MatrixSetPolyToPoly(matrix, src, dst, DRAWING_NUMBER_1);
+    OH_Drawing_MatrixSetMatrix(matrix, NUMBER_1, 0, 0, 0, -NUMBER_1, 0, 0, 0, NUMBER_1);
+    OH_Drawing_Point2D src[] = {{0, 0}, {NUMBER_100, 0}, {NUMBER_100, NUMBER_100}, {0,
+        NUMBER_100}, {0, NUMBER_100}};
+    OH_Drawing_Point2D dst[] = {{0, 0}, {NUMBER_100, NUMBER_30}, {NUMBER_100,
+        NUMBER_70}, {0, NUMBER_100}, {0, NUMBER_100}};
+    bool ret = OH_Drawing_MatrixSetPolyToPoly(matrix, src, dst, NUMBER_1);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     EXPECT_EQ(ret, true);
@@ -412,8 +412,8 @@ int TestMatrixSetPolyToPolyNormal()
     // count
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_real_distribution<float> dis(0, DRAWING_NUMBER_100);
-    for (int i = 0; i < DRAWING_NUMBER_5; i++) {
+    std::uniform_real_distribution<float> dis(0, NUMBER_100);
+    for (int i = 0; i < NUMBER_5; i++) {
         OH_Drawing_ErrorCodeReset();
         OH_Drawing_Point2D src[i];
         OH_Drawing_Point2D dst[i];
@@ -442,21 +442,21 @@ int TestMatrixSetPolyToPolyNull()
     EXPECT_NE(matrix, nullptr);
     // 2. OH_Drawing_MatrixSetPolyToPoly, the first parameter is nullptr, check the error code with
     // OH_Drawing_ErrorCodeGet
-    OH_Drawing_Point2D src[] = {{0, 0}, {DRAWING_NUMBER_100, 0}, {DRAWING_NUMBER_100, DRAWING_NUMBER_100}, {0,
-        DRAWING_NUMBER_100}, {0, DRAWING_NUMBER_100}};
-    OH_Drawing_Point2D dst[] = {{0, 0}, {DRAWING_NUMBER_100, DRAWING_NUMBER_30}, {DRAWING_NUMBER_100,
-        DRAWING_NUMBER_70}, {0, DRAWING_NUMBER_100}, {0, DRAWING_NUMBER_100}};
-    bool ret = OH_Drawing_MatrixSetPolyToPoly(nullptr, src, dst, DRAWING_NUMBER_5);
+    OH_Drawing_Point2D src[] = {{0, 0}, {NUMBER_100, 0}, {NUMBER_100, NUMBER_100}, {0,
+        NUMBER_100}, {0, NUMBER_100}};
+    OH_Drawing_Point2D dst[] = {{0, 0}, {NUMBER_100, NUMBER_30}, {NUMBER_100,
+        NUMBER_70}, {0, NUMBER_100}, {0, NUMBER_100}};
+    bool ret = OH_Drawing_MatrixSetPolyToPoly(nullptr, src, dst, NUMBER_5);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     EXPECT_EQ(ret, false);
     // 3. OH_Drawing_MatrixSetPolyToPoly, the second parameter is nullptr, check the error code with
     // OH_Drawing_ErrorCodeGet
-    ret = OH_Drawing_MatrixSetPolyToPoly(matrix, nullptr, dst, DRAWING_NUMBER_5);
+    ret = OH_Drawing_MatrixSetPolyToPoly(matrix, nullptr, dst, NUMBER_5);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
     EXPECT_EQ(ret, false);
     // 4. OH_Drawing_MatrixSetPolyToPoly, the third parameter is nullptr, check the error code with
     // OH_Drawing_ErrorCodeGet
-    ret = OH_Drawing_MatrixSetPolyToPoly(matrix, src, nullptr, DRAWING_NUMBER_5);
+    ret = OH_Drawing_MatrixSetPolyToPoly(matrix, src, nullptr, NUMBER_5);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
     EXPECT_EQ(ret, false);
     // 5. Free memory
@@ -473,15 +473,15 @@ int TestMatrixSetPolyToPolyAbnormal()
     // add assert
     EXPECT_NE(matrix, nullptr);
     // 2. OH_Drawing_MatrixSetPolyToPoly, pass -1 as count, check the error code with OH_Drawing_ErrorCodeGet
-    OH_Drawing_Point2D src[] = {{0, 0}, {DRAWING_NUMBER_100, 0}, {DRAWING_NUMBER_100, DRAWING_NUMBER_100}, {0,
-        DRAWING_NUMBER_100}};
-    OH_Drawing_Point2D dst[] = {{0, 0}, {DRAWING_NUMBER_100, DRAWING_NUMBER_30}, {DRAWING_NUMBER_100,
-        DRAWING_NUMBER_70}, {0, DRAWING_NUMBER_100}};
-    bool ret = OH_Drawing_MatrixSetPolyToPoly(matrix, src, dst, -DRAWING_NUMBER_1);
+    OH_Drawing_Point2D src[] = {{0, 0}, {NUMBER_100, 0}, {NUMBER_100, NUMBER_100}, {0,
+        NUMBER_100}};
+    OH_Drawing_Point2D dst[] = {{0, 0}, {NUMBER_100, NUMBER_30}, {NUMBER_100,
+        NUMBER_70}, {0, NUMBER_100}};
+    bool ret = OH_Drawing_MatrixSetPolyToPoly(matrix, src, dst, -NUMBER_1);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
     EXPECT_EQ(ret, false);
     // 3. OH_Drawing_MatrixSetPolyToPoly, pass 5 as count, check the error code with OH_Drawing_ErrorCodeGet
-    ret = OH_Drawing_MatrixSetPolyToPoly(matrix, src, dst, DRAWING_NUMBER_5);
+    ret = OH_Drawing_MatrixSetPolyToPoly(matrix, src, dst, NUMBER_5);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
     EXPECT_EQ(ret, false);
     // 4. Free memory
@@ -500,11 +500,11 @@ int TestMatrixSetPolyToPolyMultipleCalls()
     // 2. Call OH_Drawing_MatrixSetPolyToPoly 10 times
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_real_distribution<float> dis(0, DRAWING_NUMBER_100);
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
-        OH_Drawing_Point2D src[DRAWING_NUMBER_2] = {{dis(gen), dis(gen)}, {dis(gen), dis(gen)}};
-        OH_Drawing_Point2D dst[DRAWING_NUMBER_2] = {{dis(gen), dis(gen)}, {dis(gen), dis(gen)}};
-        bool ret = OH_Drawing_MatrixSetPolyToPoly(matrix, src, dst, DRAWING_NUMBER_2);
+    std::uniform_real_distribution<float> dis(0, NUMBER_100);
+    for (int i = 0; i < NUMBER_10; i++) {
+        OH_Drawing_Point2D src[NUMBER_2] = {{dis(gen), dis(gen)}, {dis(gen), dis(gen)}};
+        OH_Drawing_Point2D dst[NUMBER_2] = {{dis(gen), dis(gen)}, {dis(gen), dis(gen)}};
+        bool ret = OH_Drawing_MatrixSetPolyToPoly(matrix, src, dst, NUMBER_2);
         EXPECT_EQ(ret, true);
     }
     // 3. Free memory
@@ -520,16 +520,16 @@ int TestMatrixMapPointsNormal()
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
     // add assert
     EXPECT_NE(matrix, nullptr);
-    OH_Drawing_Point2D src[] = {{0, 0}, {DRAWING_NUMBER_100, 0}, {DRAWING_NUMBER_100, DRAWING_NUMBER_100}, {0,
-        DRAWING_NUMBER_100}, {0, DRAWING_NUMBER_100}};
-    OH_Drawing_Point2D dst[] = {{0, 0}, {DRAWING_NUMBER_100, DRAWING_NUMBER_30}, {DRAWING_NUMBER_100,
-        DRAWING_NUMBER_70}, {0, DRAWING_NUMBER_100}, {0, DRAWING_NUMBER_100}};
+    OH_Drawing_Point2D src[] = {{0, 0}, {NUMBER_100, 0}, {NUMBER_100, NUMBER_100}, {0,
+        NUMBER_100}, {0, NUMBER_100}};
+    OH_Drawing_Point2D dst[] = {{0, 0}, {NUMBER_100, NUMBER_30}, {NUMBER_100,
+        NUMBER_70}, {0, NUMBER_100}, {0, NUMBER_100}};
     // 2. OH_Drawing_MatrixMapPoints, pass the float value 1.52 as count
     double value = 1.52f;
     uint32_t count = static_cast<uint32_t>(value);
     OH_Drawing_MatrixSetPolyToPoly(matrix, src, dst, count);
     // 3. OH_Drawing_MatrixMapPoints, pass integer 5 as count
-    OH_Drawing_MatrixSetPolyToPoly(matrix, src, dst, DRAWING_NUMBER_5);
+    OH_Drawing_MatrixSetPolyToPoly(matrix, src, dst, NUMBER_5);
     // 4. Free memory
     OH_Drawing_MatrixDestroy(matrix);
     DrawingNativeMatrixPart2TestTearDown();
@@ -543,20 +543,20 @@ int TestMatrixMapPointsNull()
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
     // add assert
     EXPECT_NE(matrix, nullptr);
-    OH_Drawing_Point2D src[] = {{0, 0}, {DRAWING_NUMBER_100, 0}, {DRAWING_NUMBER_100, DRAWING_NUMBER_100}, {0,
-        DRAWING_NUMBER_100}, {0, DRAWING_NUMBER_100}};
-    OH_Drawing_Point2D dst[] = {{0, 0}, {DRAWING_NUMBER_100, DRAWING_NUMBER_30}, {DRAWING_NUMBER_100,
-        DRAWING_NUMBER_70}, {0, DRAWING_NUMBER_100}, {0, DRAWING_NUMBER_100}};
+    OH_Drawing_Point2D src[] = {{0, 0}, {NUMBER_100, 0}, {NUMBER_100, NUMBER_100}, {0,
+        NUMBER_100}, {0, NUMBER_100}};
+    OH_Drawing_Point2D dst[] = {{0, 0}, {NUMBER_100, NUMBER_30}, {NUMBER_100,
+        NUMBER_70}, {0, NUMBER_100}, {0, NUMBER_100}};
     // 2. OH_Drawing_MatrixMapPoints, the first parameter is nullptr, check the error code with OH_Drawing_ErrorCodeGet
-    OH_Drawing_MatrixMapPoints(nullptr, src, dst, DRAWING_NUMBER_5);
+    OH_Drawing_MatrixMapPoints(nullptr, src, dst, NUMBER_5);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_ErrorCodeReset();
     // 3. OH_Drawing_MatrixMapPoints, the second parameter is nullptr, check the error code with OH_Drawing_ErrorCodeGet
-    OH_Drawing_MatrixMapPoints(matrix, nullptr, dst, DRAWING_NUMBER_5);
+    OH_Drawing_MatrixMapPoints(matrix, nullptr, dst, NUMBER_5);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_ErrorCodeReset();
     // 4. OH_Drawing_MatrixMapPoints, the third parameter is nullptr, check the error code with OH_Drawing_ErrorCodeGet
-    OH_Drawing_MatrixMapPoints(matrix, src, nullptr, DRAWING_NUMBER_5);
+    OH_Drawing_MatrixMapPoints(matrix, src, nullptr, NUMBER_5);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_ErrorCodeReset();
     // 5. OH_Drawing_MatrixMapPoints, the fourth parameter is nullptr, check the error code with OH_Drawing_ErrorCodeGet
@@ -575,12 +575,12 @@ int TestMatrixMapPointsAbnormal()
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
     // add assert
     EXPECT_NE(matrix, nullptr);
-    OH_Drawing_Point2D src[] = {{0, 0}, {DRAWING_NUMBER_100, 0}, {DRAWING_NUMBER_100, DRAWING_NUMBER_100}, {0,
-        DRAWING_NUMBER_100}, {0, DRAWING_NUMBER_100}};
-    OH_Drawing_Point2D dst[] = {{0, 0}, {DRAWING_NUMBER_100, DRAWING_NUMBER_30}, {DRAWING_NUMBER_100,
-        DRAWING_NUMBER_70}, {0, DRAWING_NUMBER_100}, {0, DRAWING_NUMBER_100}};
+    OH_Drawing_Point2D src[] = {{0, 0}, {NUMBER_100, 0}, {NUMBER_100, NUMBER_100}, {0,
+        NUMBER_100}, {0, NUMBER_100}};
+    OH_Drawing_Point2D dst[] = {{0, 0}, {NUMBER_100, NUMBER_30}, {NUMBER_100,
+        NUMBER_70}, {0, NUMBER_100}, {0, NUMBER_100}};
     // 2. OH_Drawing_MatrixMapPoints, pass -1 as count, check the error code with OH_Drawing_ErrorCodeGet
-    OH_Drawing_MatrixMapPoints(matrix, src, dst, -DRAWING_NUMBER_1);
+    OH_Drawing_MatrixMapPoints(matrix, src, dst, -NUMBER_1);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 3. Free memory
     OH_Drawing_MatrixDestroy(matrix);
@@ -595,14 +595,14 @@ int TestMatrixMapPointsMultipleCalls()
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
     // add assert
     EXPECT_NE(matrix, nullptr);
-    OH_Drawing_Point2D src[] = {{0, 0}, {DRAWING_NUMBER_100, 0}, {DRAWING_NUMBER_100, DRAWING_NUMBER_100}, {0,
-        DRAWING_NUMBER_100}, {0, DRAWING_NUMBER_100}};
-    OH_Drawing_Point2D dst[] = {{0, 0}, {DRAWING_NUMBER_100, DRAWING_NUMBER_30}, {DRAWING_NUMBER_100,
-        DRAWING_NUMBER_70}, {0, DRAWING_NUMBER_100}, {0, DRAWING_NUMBER_100}};
+    OH_Drawing_Point2D src[] = {{0, 0}, {NUMBER_100, 0}, {NUMBER_100, NUMBER_100}, {0,
+        NUMBER_100}, {0, NUMBER_100}};
+    OH_Drawing_Point2D dst[] = {{0, 0}, {NUMBER_100, NUMBER_30}, {NUMBER_100,
+        NUMBER_70}, {0, NUMBER_100}, {0, NUMBER_100}};
     // 2. Call OH_Drawing_MatrixMapPoints 10 times
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_ErrorCodeReset();
-        OH_Drawing_MatrixMapPoints(matrix, src, dst, DRAWING_NUMBER_5);
+        OH_Drawing_MatrixMapPoints(matrix, src, dst, NUMBER_5);
         // add assert
         EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     }
@@ -620,10 +620,10 @@ int TestMatrixMapRectNormal()
     // add assert
     EXPECT_NE(matrix, nullptr);
     // 2. OH_Drawing_MatrixMapRect, src and dst are the same
-    OH_Drawing_Rect *src = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *src = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(src, nullptr);
-    OH_Drawing_Rect *dst = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *dst = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(dst, nullptr);
     bool ret = OH_Drawing_MatrixMapRect(matrix, src, dst);
@@ -631,13 +631,13 @@ int TestMatrixMapRectNormal()
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     EXPECT_EQ(ret, true);
     // 3. OH_Drawing_MatrixMapRect, src and dst are different
-    OH_Drawing_Rect *srcDRAWING_NUMBER_2 = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *srcNUMBER_2 = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     // add assert
-    EXPECT_NE(srcDRAWING_NUMBER_2, nullptr);
-    OH_Drawing_Rect *dstDRAWING_NUMBER_2 = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    EXPECT_NE(srcNUMBER_2, nullptr);
+    OH_Drawing_Rect *dstNUMBER_2 = OH_Drawing_RectCreate(0, 0, NUMBER_200, NUMBER_200);
     // add assert
-    EXPECT_NE(dstDRAWING_NUMBER_2, nullptr);
-    ret = OH_Drawing_MatrixMapRect(matrix, srcDRAWING_NUMBER_2, dstDRAWING_NUMBER_2);
+    EXPECT_NE(dstNUMBER_2, nullptr);
+    ret = OH_Drawing_MatrixMapRect(matrix, srcNUMBER_2, dstNUMBER_2);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     EXPECT_EQ(ret, true);
@@ -645,8 +645,8 @@ int TestMatrixMapRectNormal()
     OH_Drawing_MatrixDestroy(matrix);
     OH_Drawing_RectDestroy(src);
     OH_Drawing_RectDestroy(dst);
-    OH_Drawing_RectDestroy(srcDRAWING_NUMBER_2);
-    OH_Drawing_RectDestroy(dstDRAWING_NUMBER_2);
+    OH_Drawing_RectDestroy(srcNUMBER_2);
+    OH_Drawing_RectDestroy(dstNUMBER_2);
     DrawingNativeMatrixPart2TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
@@ -659,10 +659,10 @@ int TestMatrixMapRectNull()
     // add assert
     EXPECT_NE(matrix, nullptr);
     // 2. OH_Drawing_MatrixMapRect, the first parameter is nullptr, check the error code with OH_Drawing_ErrorCodeGet
-    OH_Drawing_Rect *src = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *src = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(src, nullptr);
-    OH_Drawing_Rect *dst = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *dst = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(dst, nullptr);
     bool ret = OH_Drawing_MatrixMapRect(nullptr, src, dst);
@@ -696,8 +696,8 @@ int TestMatrixMapRectMultipleCalls()
     // 2. Call OH_Drawing_MatrixMapRect 10 times with different src and dst
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_real_distribution<float> dis(DRAWING_NUMBER_100, DRAWING_NUMBER_200);
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    std::uniform_real_distribution<float> dis(NUMBER_100, NUMBER_200);
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_ErrorCodeReset();
         OH_Drawing_Rect *src = OH_Drawing_RectCreate(0, 0, dis(gen), dis(gen));
         // add assert
@@ -725,13 +725,13 @@ int TestMatrixIsEqualNormal()
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
     // add assert
     EXPECT_NE(matrix, nullptr);
-    OH_Drawing_MatrixSetMatrix(matrix, DRAWING_NUMBER_1, DRAWING_NUMBER_2, DRAWING_NUMBER_3, DRAWING_NUMBER_4,
-        DRAWING_NUMBER_5, DRAWING_NUMBER_6, DRAWING_NUMBER_7, DRAWING_NUMBER_8, DRAWING_NUMBER_9);
+    OH_Drawing_MatrixSetMatrix(matrix, NUMBER_1, NUMBER_2, NUMBER_3, NUMBER_4,
+        NUMBER_5, NUMBER_6, NUMBER_7, NUMBER_8, NUMBER_9);
     OH_Drawing_Matrix *matrix2 = OH_Drawing_MatrixCreate();
     // add assert
     EXPECT_NE(matrix2, nullptr);
-    OH_Drawing_MatrixSetMatrix(matrix2, DRAWING_NUMBER_1, DRAWING_NUMBER_2, DRAWING_NUMBER_3, DRAWING_NUMBER_4,
-        DRAWING_NUMBER_5, DRAWING_NUMBER_6, DRAWING_NUMBER_7, DRAWING_NUMBER_8, DRAWING_NUMBER_9);
+    OH_Drawing_MatrixSetMatrix(matrix2, NUMBER_1, NUMBER_2, NUMBER_3, NUMBER_4,
+        NUMBER_5, NUMBER_6, NUMBER_7, NUMBER_8, NUMBER_9);
     bool ret = OH_Drawing_MatrixIsEqual(matrix, matrix2);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
@@ -740,8 +740,8 @@ int TestMatrixIsEqualNormal()
     OH_Drawing_Matrix *matrix3 = OH_Drawing_MatrixCreate();
     // add assert
     EXPECT_NE(matrix3, nullptr);
-    OH_Drawing_MatrixSetMatrix(matrix3, DRAWING_NUMBER_2, DRAWING_NUMBER_2, DRAWING_NUMBER_3, DRAWING_NUMBER_4,
-        DRAWING_NUMBER_5, DRAWING_NUMBER_6, DRAWING_NUMBER_7, DRAWING_NUMBER_8, DRAWING_NUMBER_9);
+    OH_Drawing_MatrixSetMatrix(matrix3, NUMBER_2, NUMBER_2, NUMBER_3, NUMBER_4,
+        NUMBER_5, NUMBER_6, NUMBER_7, NUMBER_8, NUMBER_9);
     ret = OH_Drawing_MatrixIsEqual(matrix, matrix3);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
@@ -761,8 +761,8 @@ int TestMatrixIsEqualNull()
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
     // add assert
     EXPECT_NE(matrix, nullptr);
-    OH_Drawing_MatrixSetMatrix(matrix, DRAWING_NUMBER_1, DRAWING_NUMBER_2, DRAWING_NUMBER_3, DRAWING_NUMBER_4,
-        DRAWING_NUMBER_5, DRAWING_NUMBER_6, DRAWING_NUMBER_7, DRAWING_NUMBER_8, DRAWING_NUMBER_9);
+    OH_Drawing_MatrixSetMatrix(matrix, NUMBER_1, NUMBER_2, NUMBER_3, NUMBER_4,
+        NUMBER_5, NUMBER_6, NUMBER_7, NUMBER_8, NUMBER_9);
     // 2. OH_Drawing_MatrixIsEqual, the first parameter is nullptr, check the error code with OH_Drawing_ErrorCodeGet
     OH_Drawing_MatrixIsEqual(nullptr, matrix);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
@@ -787,19 +787,19 @@ int TestMatrixIsEqualMultipleCalls()
     // add assert
     EXPECT_NE(matrix2, nullptr);
     // 2. Call OH_Drawing_MatrixIsEqual 10 times with alternating different or same matrices
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
-        if (i % DRAWING_NUMBER_2 == 0) {
-            OH_Drawing_MatrixSetMatrix(matrix, DRAWING_NUMBER_1, DRAWING_NUMBER_2, DRAWING_NUMBER_3, DRAWING_NUMBER_4,
-                DRAWING_NUMBER_5, DRAWING_NUMBER_6, DRAWING_NUMBER_7, DRAWING_NUMBER_8, DRAWING_NUMBER_9);
-            OH_Drawing_MatrixSetMatrix(matrix2, DRAWING_NUMBER_1, DRAWING_NUMBER_2, DRAWING_NUMBER_3, DRAWING_NUMBER_4,
-                DRAWING_NUMBER_5, DRAWING_NUMBER_6, DRAWING_NUMBER_7, DRAWING_NUMBER_8, DRAWING_NUMBER_9);
+    for (int i = 0; i < NUMBER_10; i++) {
+        if (i % NUMBER_2 == 0) {
+            OH_Drawing_MatrixSetMatrix(matrix, NUMBER_1, NUMBER_2, NUMBER_3, NUMBER_4,
+                NUMBER_5, NUMBER_6, NUMBER_7, NUMBER_8, NUMBER_9);
+            OH_Drawing_MatrixSetMatrix(matrix2, NUMBER_1, NUMBER_2, NUMBER_3, NUMBER_4,
+                NUMBER_5, NUMBER_6, NUMBER_7, NUMBER_8, NUMBER_9);
             bool ret = OH_Drawing_MatrixIsEqual(matrix, matrix2);
             EXPECT_EQ(ret, true);
         } else {
-            OH_Drawing_MatrixSetMatrix(matrix, DRAWING_NUMBER_1, DRAWING_NUMBER_2, DRAWING_NUMBER_3, DRAWING_NUMBER_4,
-                DRAWING_NUMBER_5, DRAWING_NUMBER_6, DRAWING_NUMBER_7, DRAWING_NUMBER_8, DRAWING_NUMBER_9);
-            OH_Drawing_MatrixSetMatrix(matrix2, DRAWING_NUMBER_2, DRAWING_NUMBER_2, DRAWING_NUMBER_3, DRAWING_NUMBER_4,
-                DRAWING_NUMBER_5, DRAWING_NUMBER_6, DRAWING_NUMBER_7, DRAWING_NUMBER_8, DRAWING_NUMBER_9);
+            OH_Drawing_MatrixSetMatrix(matrix, NUMBER_1, NUMBER_2, NUMBER_3, NUMBER_4,
+                NUMBER_5, NUMBER_6, NUMBER_7, NUMBER_8, NUMBER_9);
+            OH_Drawing_MatrixSetMatrix(matrix2, NUMBER_2, NUMBER_2, NUMBER_3, NUMBER_4,
+                NUMBER_5, NUMBER_6, NUMBER_7, NUMBER_8, NUMBER_9);
             bool ret = OH_Drawing_MatrixIsEqual(matrix, matrix2);
             EXPECT_EQ(ret, false);
         }
@@ -823,8 +823,8 @@ int TestMatrixIsIdentityNormal()
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     EXPECT_EQ(ret, true);
     // 2. OH_Drawing_MatrixIsIdentity with a non-identity matrix
-    OH_Drawing_MatrixSetMatrix(matrix, DRAWING_NUMBER_1, DRAWING_NUMBER_2, DRAWING_NUMBER_3, DRAWING_NUMBER_4,
-        DRAWING_NUMBER_5, DRAWING_NUMBER_6, DRAWING_NUMBER_7, DRAWING_NUMBER_8, DRAWING_NUMBER_9);
+    OH_Drawing_MatrixSetMatrix(matrix, NUMBER_1, NUMBER_2, NUMBER_3, NUMBER_4,
+        NUMBER_5, NUMBER_6, NUMBER_7, NUMBER_8, NUMBER_9);
     ret = OH_Drawing_MatrixIsIdentity(matrix);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
@@ -855,8 +855,8 @@ int TestMatrixIsIdentityMultipleCalls()
 {
     DrawingNativeMatrixPart2TestSetUp();
     // Call OH_Drawing_MatrixIsIdentity 10 times with alternating identity or non-identity matrices
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
-        if (i % DRAWING_NUMBER_2 == 0) {
+    for (int i = 0; i < NUMBER_10; i++) {
+        if (i % NUMBER_2 == 0) {
             OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
             // add assert
             EXPECT_NE(matrix, nullptr);
@@ -867,8 +867,8 @@ int TestMatrixIsIdentityMultipleCalls()
             OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
             // add assert
             EXPECT_NE(matrix, nullptr);
-            OH_Drawing_MatrixSetMatrix(matrix, DRAWING_NUMBER_1, DRAWING_NUMBER_2, DRAWING_NUMBER_3, DRAWING_NUMBER_4,
-                DRAWING_NUMBER_5, DRAWING_NUMBER_6, DRAWING_NUMBER_7, DRAWING_NUMBER_8, DRAWING_NUMBER_9);
+            OH_Drawing_MatrixSetMatrix(matrix, NUMBER_1, NUMBER_2, NUMBER_3, NUMBER_4,
+                NUMBER_5, NUMBER_6, NUMBER_7, NUMBER_8, NUMBER_9);
             bool ret = OH_Drawing_MatrixIsIdentity(matrix);
             EXPECT_EQ(ret, false);
             OH_Drawing_MatrixDestroy(matrix);
@@ -885,19 +885,19 @@ int TestMatrixCopyNormal()
     OH_Drawing_Matrix *matrix1 = OH_Drawing_MatrixCreate();
     EXPECT_NE(matrix1, nullptr);
     // 2. The function OH_Drawing_MatrixSetMatrix creates a identity matrix.
-    OH_Drawing_MatrixSetMatrix(matrix1, DRAWING_NUMBER_1, 0, 0, 0, DRAWING_NUMBER_1, 0, 0, 0, DRAWING_NUMBER_1);
+    OH_Drawing_MatrixSetMatrix(matrix1, NUMBER_1, 0, 0, 0, NUMBER_1, 0, 0, 0, NUMBER_1);
     // 3. Using the function OH_Drawing_MatrixCopy copy another matrix.
     OH_Drawing_Matrix *matrix2 = OH_Drawing_MatrixCopy(matrix1);
     EXPECT_NE(matrix2, nullptr);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix2, 0), DRAWING_NUMBER_1);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix2, DRAWING_NUMBER_1), 0);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix2, DRAWING_NUMBER_2), 0);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix2, DRAWING_NUMBER_3), 0);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix2, DRAWING_NUMBER_4), DRAWING_NUMBER_1);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix2, DRAWING_NUMBER_5), 0);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix2, DRAWING_NUMBER_6), 0);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix2, DRAWING_NUMBER_7), 0);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix2, DRAWING_NUMBER_8), DRAWING_NUMBER_1);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix2, 0), NUMBER_1);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix2, NUMBER_1), 0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix2, NUMBER_2), 0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix2, NUMBER_3), 0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix2, NUMBER_4), NUMBER_1);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix2, NUMBER_5), 0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix2, NUMBER_6), 0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix2, NUMBER_7), 0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix2, NUMBER_8), NUMBER_1);
     // 4. Free memory
     OH_Drawing_MatrixDestroy(matrix1);
     OH_Drawing_MatrixDestroy(matrix2);
@@ -912,7 +912,7 @@ int TestMatrixCopyNull()
     OH_Drawing_Matrix *matrix1 = OH_Drawing_MatrixCreate();
     EXPECT_NE(matrix1, nullptr);
     // 2. The function OH_Drawing_MatrixSetMatrix creates a identity matrix.
-    OH_Drawing_MatrixSetMatrix(matrix1, DRAWING_NUMBER_1, 0, 0, 0, DRAWING_NUMBER_1, 0, 0, 0, DRAWING_NUMBER_1);
+    OH_Drawing_MatrixSetMatrix(matrix1, NUMBER_1, 0, 0, 0, NUMBER_1, 0, 0, 0, NUMBER_1);
     // 3. The function OH_Drawing_MatrixCopy passes to nullptr.
     OH_Drawing_Matrix *matrix2 = OH_Drawing_MatrixCopy(nullptr);
     EXPECT_EQ(matrix2, nullptr);
@@ -930,11 +930,11 @@ int TestMatrixCopyMultipleCalls()
     OH_Drawing_Matrix *matrix1 = OH_Drawing_MatrixCreate();
     EXPECT_NE(matrix1, nullptr);
     // 2. The function OH_Drawing_MatrixSetMatrix creates a identity matrix.
-    OH_Drawing_MatrixSetMatrix(matrix1, DRAWING_NUMBER_1, 0, 0, 0, DRAWING_NUMBER_1, 0, 0, 0, DRAWING_NUMBER_1);
+    OH_Drawing_MatrixSetMatrix(matrix1, NUMBER_1, 0, 0, 0, NUMBER_1, 0, 0, 0, NUMBER_1);
     // 3. Using the function OH_Drawing_MatrixCopy copy another matrix.
     OH_Drawing_Matrix *matrix2 = OH_Drawing_MatrixCreate();
     // 4. The function OH_Drawing_MatrixCopy is called 10 times.
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_MatrixCopy(matrix1);
         EXPECT_NE(matrix2, nullptr);
     }
@@ -953,20 +953,20 @@ int TestMatrixPerConcatNormal()
     OH_Drawing_Matrix *other = OH_Drawing_MatrixCreate();
     EXPECT_NE(matrix, nullptr);
     // 2. The function OH_Drawing_MatrixSetMatrix creates a identity matrix.
-    OH_Drawing_MatrixSetMatrix(matrix, DRAWING_NUMBER_1, 0, DRAWING_NUMBER_1, 0, -DRAWING_NUMBER_2, 0, 0,
-        DRAWING_NUMBER_3, DRAWING_NUMBER_1);
-    OH_Drawing_MatrixSetMatrix(other, DRAWING_NUMBER_1, DRAWING_NUMBER_1, DRAWING_NUMBER_1, 0, -DRAWING_NUMBER_1, 0,
-        -DRAWING_NUMBER_1, 0, DRAWING_NUMBER_1);
+    OH_Drawing_MatrixSetMatrix(matrix, NUMBER_1, 0, NUMBER_1, 0, -NUMBER_2, 0, 0,
+        NUMBER_3, NUMBER_1);
+    OH_Drawing_MatrixSetMatrix(other, NUMBER_1, NUMBER_1, NUMBER_1, 0, -NUMBER_1, 0,
+        -NUMBER_1, 0, NUMBER_1);
     OH_Drawing_ErrorCode code = OH_Drawing_MatrixPreConcat(matrix, other);
     EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 0), 0.0f);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, DRAWING_NUMBER_1), 1.0f);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, DRAWING_NUMBER_2), DRAWING_NUMBER_2);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, DRAWING_NUMBER_3), 0.0f);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, DRAWING_NUMBER_4), DRAWING_NUMBER_2);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, DRAWING_NUMBER_5), 0.0f);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, DRAWING_NUMBER_6), -1.0f);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, DRAWING_NUMBER_7), -DRAWING_NUMBER_3);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, DRAWING_NUMBER_8), 1.0f);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, NUMBER_1), 1.0f);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, NUMBER_2), NUMBER_2);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, NUMBER_3), 0.0f);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, NUMBER_4), NUMBER_2);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, NUMBER_5), 0.0f);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, NUMBER_6), -1.0f);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, NUMBER_7), -NUMBER_3);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, NUMBER_8), 1.0f);
     EXPECT_EQ(code, OH_DRAWING_SUCCESS);
     // 3. Free memory
     OH_Drawing_MatrixDestroy(matrix);
@@ -983,20 +983,20 @@ int TestMatrixPerConcatNull1()
     OH_Drawing_Matrix *other = OH_Drawing_MatrixCreate();
     EXPECT_NE(matrix, nullptr);
     // 2. The function OH_Drawing_MatrixSetMatrix creates a identity matrix.
-    OH_Drawing_MatrixSetMatrix(matrix, DRAWING_NUMBER_1, 0, DRAWING_NUMBER_1, 0, -DRAWING_NUMBER_2, 0, 0,
-        DRAWING_NUMBER_3, DRAWING_NUMBER_1);
-    OH_Drawing_MatrixSetMatrix(other, DRAWING_NUMBER_1, DRAWING_NUMBER_1, DRAWING_NUMBER_1, 0, -DRAWING_NUMBER_1, 0,
-        -DRAWING_NUMBER_1, 0, DRAWING_NUMBER_1);
+    OH_Drawing_MatrixSetMatrix(matrix, NUMBER_1, 0, NUMBER_1, 0, -NUMBER_2, 0, 0,
+        NUMBER_3, NUMBER_1);
+    OH_Drawing_MatrixSetMatrix(other, NUMBER_1, NUMBER_1, NUMBER_1, 0, -NUMBER_1, 0,
+        -NUMBER_1, 0, NUMBER_1);
     OH_Drawing_ErrorCode code = OH_Drawing_MatrixPreConcat(nullptr, other);
     EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 0), 1.0f);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, DRAWING_NUMBER_1), 0.0f);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, DRAWING_NUMBER_2), 1.0f);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, DRAWING_NUMBER_3), 0.0f);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, DRAWING_NUMBER_4), -DRAWING_NUMBER_2);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, DRAWING_NUMBER_5), 0.0f);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, DRAWING_NUMBER_6), 0.0f);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, DRAWING_NUMBER_7), DRAWING_NUMBER_3);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, DRAWING_NUMBER_8), 1.0f);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, NUMBER_1), 0.0f);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, NUMBER_2), 1.0f);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, NUMBER_3), 0.0f);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, NUMBER_4), -NUMBER_2);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, NUMBER_5), 0.0f);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, NUMBER_6), 0.0f);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, NUMBER_7), NUMBER_3);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, NUMBER_8), 1.0f);
     EXPECT_EQ(code, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     // 3. Free memory
     OH_Drawing_MatrixDestroy(matrix);
@@ -1014,20 +1014,20 @@ int TestMatrixPerConcatNull2()
     EXPECT_NE(matrix, nullptr);
     EXPECT_NE(other, nullptr);
     // 2. The function OH_Drawing_MatrixSetMatrix creates a identity matrix.
-    OH_Drawing_MatrixSetMatrix(matrix, DRAWING_NUMBER_1, 0, DRAWING_NUMBER_1,  0, -DRAWING_NUMBER_2, 0, 0,
-        DRAWING_NUMBER_3, DRAWING_NUMBER_1);
-    OH_Drawing_MatrixSetMatrix(other, DRAWING_NUMBER_1, DRAWING_NUMBER_1, DRAWING_NUMBER_1, 0, -DRAWING_NUMBER_1, 0,
-        -DRAWING_NUMBER_1, 0, DRAWING_NUMBER_1);
+    OH_Drawing_MatrixSetMatrix(matrix, NUMBER_1, 0, NUMBER_1,  0, -NUMBER_2, 0, 0,
+        NUMBER_3, NUMBER_1);
+    OH_Drawing_MatrixSetMatrix(other, NUMBER_1, NUMBER_1, NUMBER_1, 0, -NUMBER_1, 0,
+        -NUMBER_1, 0, NUMBER_1);
     OH_Drawing_ErrorCode code = OH_Drawing_MatrixPreConcat(matrix, nullptr);
     EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 0), 1.0f);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, DRAWING_NUMBER_1), 0.0f);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, DRAWING_NUMBER_2), 1.0f);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, DRAWING_NUMBER_3), 0.0f);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, DRAWING_NUMBER_4), -DRAWING_NUMBER_2);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, DRAWING_NUMBER_5), 0.0f);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, DRAWING_NUMBER_6), 0.0f);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, DRAWING_NUMBER_7), DRAWING_NUMBER_3);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, DRAWING_NUMBER_8), 1.0f);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, NUMBER_1), 0.0f);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, NUMBER_2), 1.0f);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, NUMBER_3), 0.0f);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, NUMBER_4), -NUMBER_2);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, NUMBER_5), 0.0f);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, NUMBER_6), 0.0f);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, NUMBER_7), NUMBER_3);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, NUMBER_8), 1.0f);
     EXPECT_EQ(code, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     // 3. Free memory
     OH_Drawing_MatrixDestroy(matrix);
@@ -1043,23 +1043,23 @@ int TestMatrixPerConcatCalls()
     OH_Drawing_Matrix *other = OH_Drawing_MatrixCreate();
     EXPECT_NE(matrix, nullptr);
     // 2. The function OH_Drawing_MatrixSetMatrix creates a identity matrix.
-    OH_Drawing_MatrixSetMatrix(matrix, DRAWING_NUMBER_1, 0, DRAWING_NUMBER_1, 0, -DRAWING_NUMBER_2, 0, 0,
-        DRAWING_NUMBER_3, DRAWING_NUMBER_1);
-    OH_Drawing_MatrixSetMatrix(other, DRAWING_NUMBER_1, DRAWING_NUMBER_1, DRAWING_NUMBER_1, 0, -DRAWING_NUMBER_1, 0,
-        -DRAWING_NUMBER_1, 0, DRAWING_NUMBER_1);
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    OH_Drawing_MatrixSetMatrix(matrix, NUMBER_1, 0, NUMBER_1, 0, -NUMBER_2, 0, 0,
+        NUMBER_3, NUMBER_1);
+    OH_Drawing_MatrixSetMatrix(other, NUMBER_1, NUMBER_1, NUMBER_1, 0, -NUMBER_1, 0,
+        -NUMBER_1, 0, NUMBER_1);
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_ErrorCode code = OH_Drawing_MatrixPreConcat(matrix, other);
         EXPECT_EQ(code, OH_DRAWING_SUCCESS);
     }
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 0), -DRAWING_NUMBER_32);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, DRAWING_NUMBER_1), -DRAWING_NUMBER_7);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, DRAWING_NUMBER_2), DRAWING_NUMBER_32);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, DRAWING_NUMBER_3), 0.0f);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, DRAWING_NUMBER_4), -DRAWING_NUMBER_2);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, DRAWING_NUMBER_5), 0.0f);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, DRAWING_NUMBER_6), -DRAWING_NUMBER_32);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, DRAWING_NUMBER_7), -DRAWING_NUMBER_10);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, DRAWING_NUMBER_8), 0.0f);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 0), -NUMBER_32);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, NUMBER_1), -NUMBER_7);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, NUMBER_2), NUMBER_32);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, NUMBER_3), 0.0f);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, NUMBER_4), -NUMBER_2);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, NUMBER_5), 0.0f);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, NUMBER_6), -NUMBER_32);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, NUMBER_7), -NUMBER_10);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, NUMBER_8), 0.0f);
     // 3. Free memory
     OH_Drawing_MatrixDestroy(matrix);
     OH_Drawing_MatrixDestroy(other);
@@ -1077,29 +1077,29 @@ int TestMatrixIsAffineNormal()
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(isAffine, true);
 
-    matrix = OH_Drawing_MatrixCreateRotation(DRAWING_NUMBER_45, 0, 0);
+    matrix = OH_Drawing_MatrixCreateRotation(NUMBER_45, 0, 0);
     errorCode = OH_Drawing_MatrixIsAffine(matrix, &isAffine);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(isAffine, true);
 
-    matrix = OH_Drawing_MatrixCreateScale(DRAWING_NUMBER_1, DRAWING_NUMBER_1, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    matrix = OH_Drawing_MatrixCreateScale(NUMBER_1, NUMBER_1, NUMBER_100, NUMBER_100);
     errorCode = OH_Drawing_MatrixIsAffine(matrix, &isAffine);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(isAffine, true);
 
-    matrix = OH_Drawing_MatrixCreateTranslation(DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    matrix = OH_Drawing_MatrixCreateTranslation(NUMBER_200, NUMBER_200);
     errorCode = OH_Drawing_MatrixIsAffine(matrix, &isAffine);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(isAffine, true);
 
-    OH_Drawing_MatrixSetMatrix(matrix, DRAWING_NUMBER_1, DRAWING_NUMBER_2, DRAWING_NUMBER_3, DRAWING_NUMBER_4,
-        DRAWING_NUMBER_5, DRAWING_NUMBER_6, -DRAWING_NUMBER_1, 0, DRAWING_NUMBER_1);
+    OH_Drawing_MatrixSetMatrix(matrix, NUMBER_1, NUMBER_2, NUMBER_3, NUMBER_4,
+        NUMBER_5, NUMBER_6, -NUMBER_1, 0, NUMBER_1);
     errorCode = OH_Drawing_MatrixIsAffine(matrix, &isAffine);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(isAffine, false);
 
-    OH_Drawing_MatrixSetMatrix(matrix, DRAWING_NUMBER_1, DRAWING_NUMBER_2, DRAWING_NUMBER_3, DRAWING_NUMBER_4,
-        DRAWING_NUMBER_5, DRAWING_NUMBER_6, 0, 0, DRAWING_NUMBER_1);
+    OH_Drawing_MatrixSetMatrix(matrix, NUMBER_1, NUMBER_2, NUMBER_3, NUMBER_4,
+        NUMBER_5, NUMBER_6, 0, 0, NUMBER_1);
     errorCode = OH_Drawing_MatrixIsAffine(matrix, &isAffine);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(isAffine, true);
@@ -1131,7 +1131,7 @@ int TestMatrixIsAffineMultipleCalls()
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
     EXPECT_NE(matrix, nullptr);
     bool isAffine = false;
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_ErrorCode errorCode = OH_Drawing_MatrixIsAffine(matrix, &isAffine);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
         EXPECT_EQ(isAffine, true);
@@ -1149,36 +1149,36 @@ int TestMatrixPreSkewNormal()
     OH_Drawing_Matrix *result = OH_Drawing_MatrixCreate();
     EXPECT_NE(result, nullptr);
 
-    OH_Drawing_MatrixSetMatrix(result, DRAWING_NUMBER_1, DRAWING_NUMBER_2, -DRAWING_NUMBER_10, DRAWING_NUMBER_3,
-        DRAWING_NUMBER_1, -DRAWING_NUMBER_12, 0, 0, DRAWING_NUMBER_1);
-    OH_Drawing_ErrorCode errorCode = OH_Drawing_MatrixPreSkew(matrix, DRAWING_NUMBER_2, DRAWING_NUMBER_3,
-        DRAWING_NUMBER_4, DRAWING_NUMBER_5);
+    OH_Drawing_MatrixSetMatrix(result, NUMBER_1, NUMBER_2, -NUMBER_10, NUMBER_3,
+        NUMBER_1, -NUMBER_12, 0, 0, NUMBER_1);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_MatrixPreSkew(matrix, NUMBER_2, NUMBER_3,
+        NUMBER_4, NUMBER_5);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     bool ret = OH_Drawing_MatrixIsEqual(matrix, result);
     EXPECT_EQ(ret, true);
 
-    matrix = OH_Drawing_MatrixCreateRotation(DRAWING_NUMBER_90, 0, 0);
-    OH_Drawing_MatrixSetMatrix(result, -DRAWING_NUMBER_3, -DRAWING_NUMBER_1, DRAWING_NUMBER_12, DRAWING_NUMBER_1,
-        DRAWING_NUMBER_2, -DRAWING_NUMBER_10, 0, 0, DRAWING_NUMBER_1);
-    errorCode = OH_Drawing_MatrixPreSkew(matrix, DRAWING_NUMBER_2, DRAWING_NUMBER_3, DRAWING_NUMBER_4, DRAWING_NUMBER_5)
+    matrix = OH_Drawing_MatrixCreateRotation(NUMBER_90, 0, 0);
+    OH_Drawing_MatrixSetMatrix(result, -NUMBER_3, -NUMBER_1, NUMBER_12, NUMBER_1,
+        NUMBER_2, -NUMBER_10, 0, 0, NUMBER_1);
+    errorCode = OH_Drawing_MatrixPreSkew(matrix, NUMBER_2, NUMBER_3, NUMBER_4, NUMBER_5)
         ;
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     ret = OH_Drawing_MatrixIsEqual(matrix, result);
     EXPECT_EQ(ret, true);
 
-    matrix = OH_Drawing_MatrixCreateScale(DRAWING_NUMBER_1, DRAWING_NUMBER_1, 0, 0);
-    OH_Drawing_MatrixSetMatrix(result, DRAWING_NUMBER_1, DRAWING_NUMBER_2, -DRAWING_NUMBER_10, DRAWING_NUMBER_3,
-        DRAWING_NUMBER_1, -DRAWING_NUMBER_12, 0, 0, DRAWING_NUMBER_1);
-    errorCode = OH_Drawing_MatrixPreSkew(matrix, DRAWING_NUMBER_2, DRAWING_NUMBER_3, DRAWING_NUMBER_4, DRAWING_NUMBER_5)
+    matrix = OH_Drawing_MatrixCreateScale(NUMBER_1, NUMBER_1, 0, 0);
+    OH_Drawing_MatrixSetMatrix(result, NUMBER_1, NUMBER_2, -NUMBER_10, NUMBER_3,
+        NUMBER_1, -NUMBER_12, 0, 0, NUMBER_1);
+    errorCode = OH_Drawing_MatrixPreSkew(matrix, NUMBER_2, NUMBER_3, NUMBER_4, NUMBER_5)
         ;
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     ret = OH_Drawing_MatrixIsEqual(matrix, result);
     EXPECT_EQ(ret, true);
 
-    matrix = OH_Drawing_MatrixCreateTranslation(DRAWING_NUMBER_50, DRAWING_NUMBER_50);
-    OH_Drawing_MatrixSetMatrix(result, DRAWING_NUMBER_1, DRAWING_NUMBER_2, DRAWING_NUMBER_40, DRAWING_NUMBER_3,
-        DRAWING_NUMBER_1, DRAWING_NUMBER_38, 0, 0, DRAWING_NUMBER_1);
-    errorCode = OH_Drawing_MatrixPreSkew(matrix, DRAWING_NUMBER_2, DRAWING_NUMBER_3, DRAWING_NUMBER_4, DRAWING_NUMBER_5)
+    matrix = OH_Drawing_MatrixCreateTranslation(NUMBER_50, NUMBER_50);
+    OH_Drawing_MatrixSetMatrix(result, NUMBER_1, NUMBER_2, NUMBER_40, NUMBER_3,
+        NUMBER_1, NUMBER_38, 0, 0, NUMBER_1);
+    errorCode = OH_Drawing_MatrixPreSkew(matrix, NUMBER_2, NUMBER_3, NUMBER_4, NUMBER_5)
         ;
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     ret = OH_Drawing_MatrixIsEqual(matrix, result);
@@ -1192,37 +1192,37 @@ int TestMatrixPreSkewNormal()
 void MatrixPreSkewNull(OH_Drawing_Matrix *matrix1, OH_Drawing_Matrix *matrix2, OH_Drawing_Matrix *matrix3,
                        OH_Drawing_Matrix *matrix4, OH_Drawing_Matrix *matrix5, OH_Drawing_Matrix *result)
 {
-    OH_Drawing_MatrixSetMatrix(result, DRAWING_NUMBER_1, 0, 0, 0, DRAWING_NUMBER_1, 0, 0, 0, DRAWING_NUMBER_1);
-    OH_Drawing_ErrorCode errorCode = OH_Drawing_MatrixPreSkew(nullptr, DRAWING_NUMBER_2, DRAWING_NUMBER_3,
-        DRAWING_NUMBER_4, DRAWING_NUMBER_5);
+    OH_Drawing_MatrixSetMatrix(result, NUMBER_1, 0, 0, 0, NUMBER_1, 0, 0, 0, NUMBER_1);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_MatrixPreSkew(nullptr, NUMBER_2, NUMBER_3,
+        NUMBER_4, NUMBER_5);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     bool ret = OH_Drawing_MatrixIsEqual(matrix1, result);
     EXPECT_EQ(ret, true);
 
-    OH_Drawing_MatrixSetMatrix(result, DRAWING_NUMBER_1, 0, 0, DRAWING_NUMBER_3, DRAWING_NUMBER_1, -DRAWING_NUMBER_12,
-        0, 0, DRAWING_NUMBER_1);
-    errorCode = OH_Drawing_MatrixPreSkew(matrix2, 0, DRAWING_NUMBER_3, DRAWING_NUMBER_4, DRAWING_NUMBER_5);
+    OH_Drawing_MatrixSetMatrix(result, NUMBER_1, 0, 0, NUMBER_3, NUMBER_1, -NUMBER_12,
+        0, 0, NUMBER_1);
+    errorCode = OH_Drawing_MatrixPreSkew(matrix2, 0, NUMBER_3, NUMBER_4, NUMBER_5);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     ret = OH_Drawing_MatrixIsEqual(matrix2, result);
     EXPECT_EQ(ret, true);
 
-    OH_Drawing_MatrixSetMatrix(result, DRAWING_NUMBER_1, DRAWING_NUMBER_2, -DRAWING_NUMBER_10, 0, DRAWING_NUMBER_1, 0,
-        0, 0, DRAWING_NUMBER_1);
-    errorCode = OH_Drawing_MatrixPreSkew(matrix3, DRAWING_NUMBER_2, 0, DRAWING_NUMBER_4, DRAWING_NUMBER_5);
+    OH_Drawing_MatrixSetMatrix(result, NUMBER_1, NUMBER_2, -NUMBER_10, 0, NUMBER_1, 0,
+        0, 0, NUMBER_1);
+    errorCode = OH_Drawing_MatrixPreSkew(matrix3, NUMBER_2, 0, NUMBER_4, NUMBER_5);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     ret = OH_Drawing_MatrixIsEqual(matrix3, result);
     EXPECT_EQ(ret, true);
 
-    OH_Drawing_MatrixSetMatrix(result, DRAWING_NUMBER_1, DRAWING_NUMBER_2, -DRAWING_NUMBER_10, DRAWING_NUMBER_3,
-        DRAWING_NUMBER_1, 0, 0, 0, DRAWING_NUMBER_1);
-    errorCode = OH_Drawing_MatrixPreSkew(matrix4, DRAWING_NUMBER_2, DRAWING_NUMBER_3, 0, DRAWING_NUMBER_5);
+    OH_Drawing_MatrixSetMatrix(result, NUMBER_1, NUMBER_2, -NUMBER_10, NUMBER_3,
+        NUMBER_1, 0, 0, 0, NUMBER_1);
+    errorCode = OH_Drawing_MatrixPreSkew(matrix4, NUMBER_2, NUMBER_3, 0, NUMBER_5);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     ret = OH_Drawing_MatrixIsEqual(matrix4, result);
     EXPECT_EQ(ret, true);
 
-    OH_Drawing_MatrixSetMatrix(result, DRAWING_NUMBER_1, DRAWING_NUMBER_2, 0, DRAWING_NUMBER_3, DRAWING_NUMBER_1,
-        -DRAWING_NUMBER_12, 0, 0, DRAWING_NUMBER_1);
-    errorCode = OH_Drawing_MatrixPreSkew(matrix5, DRAWING_NUMBER_2, DRAWING_NUMBER_3, DRAWING_NUMBER_4, 0);
+    OH_Drawing_MatrixSetMatrix(result, NUMBER_1, NUMBER_2, 0, NUMBER_3, NUMBER_1,
+        -NUMBER_12, 0, 0, NUMBER_1);
+    errorCode = OH_Drawing_MatrixPreSkew(matrix5, NUMBER_2, NUMBER_3, NUMBER_4, 0);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     ret = OH_Drawing_MatrixIsEqual(matrix5, result);
     EXPECT_EQ(ret, true);
@@ -1261,8 +1261,8 @@ int TestMatrixPreSkewMultipleCalls()
     EXPECT_NE(matrix, nullptr);
     OH_Drawing_Matrix *result = OH_Drawing_MatrixCreate();
     EXPECT_NE(result, nullptr);
-    OH_Drawing_MatrixSetMatrix(result, DRAWING_NUMBER_1, 0, 0, 0, DRAWING_NUMBER_1, 0, 0, 0, DRAWING_NUMBER_1);
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    OH_Drawing_MatrixSetMatrix(result, NUMBER_1, 0, 0, 0, NUMBER_1, 0, 0, 0, NUMBER_1);
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_ErrorCode errorCode = OH_Drawing_MatrixPreSkew(matrix, 0, 0, 0, 0);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
         bool ret = OH_Drawing_MatrixIsEqual(matrix, result);
@@ -1279,28 +1279,28 @@ int TestMatrixRectStaysRectNormal()
     DrawingNativeMatrixPart2TestSetUp();
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
     EXPECT_NE(matrix, nullptr);
-    OH_Drawing_MatrixPreScale(matrix, DRAWING_NUMBER_2, DRAWING_NUMBER_3, DRAWING_NUMBER_4, DRAWING_NUMBER_5);
+    OH_Drawing_MatrixPreScale(matrix, NUMBER_2, NUMBER_3, NUMBER_4, NUMBER_5);
     bool isRectStaysRect = false;
     OH_Drawing_ErrorCode errorCode = OH_Drawing_MatrixRectStaysRect(matrix, &isRectStaysRect);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(isRectStaysRect, true);
 
-    OH_Drawing_MatrixPreSkew(matrix, DRAWING_NUMBER_2, DRAWING_NUMBER_3, DRAWING_NUMBER_4, DRAWING_NUMBER_5);
+    OH_Drawing_MatrixPreSkew(matrix, NUMBER_2, NUMBER_3, NUMBER_4, NUMBER_5);
     errorCode = OH_Drawing_MatrixRectStaysRect(matrix, &isRectStaysRect);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(isRectStaysRect, false);
 
-    matrix = OH_Drawing_MatrixCreateRotation(DRAWING_NUMBER_90, 0, 0);
+    matrix = OH_Drawing_MatrixCreateRotation(NUMBER_90, 0, 0);
     errorCode = OH_Drawing_MatrixRectStaysRect(matrix, &isRectStaysRect);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(isRectStaysRect, true);
 
-    matrix = OH_Drawing_MatrixCreateScale(DRAWING_NUMBER_1, DRAWING_NUMBER_1, 0, 0);
+    matrix = OH_Drawing_MatrixCreateScale(NUMBER_1, NUMBER_1, 0, 0);
     errorCode = OH_Drawing_MatrixRectStaysRect(matrix, &isRectStaysRect);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(isRectStaysRect, true);
 
-    matrix = OH_Drawing_MatrixCreateTranslation(DRAWING_NUMBER_50, DRAWING_NUMBER_50);
+    matrix = OH_Drawing_MatrixCreateTranslation(NUMBER_50, NUMBER_50);
     errorCode = OH_Drawing_MatrixRectStaysRect(matrix, &isRectStaysRect);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(isRectStaysRect, true);
@@ -1332,7 +1332,7 @@ int TestMatrixRectStaysRectMultipleCalls()
     OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
     EXPECT_NE(matrix, nullptr);
     bool isRectStaysRect = false;
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_ErrorCode errorCode = OH_Drawing_MatrixRectStaysRect(matrix, &isRectStaysRect);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
         EXPECT_EQ(isRectStaysRect, true);
@@ -1350,31 +1350,31 @@ int TestMatrixSetSinCosNormal()
     OH_Drawing_Matrix *result = OH_Drawing_MatrixCreate();
     EXPECT_NE(result, nullptr);
 
-    OH_Drawing_MatrixSetMatrix(result, DRAWING_NUMBER_3, -DRAWING_NUMBER_2, DRAWING_NUMBER_2, DRAWING_NUMBER_2,
-        DRAWING_NUMBER_3, -DRAWING_NUMBER_18, 0, 0, DRAWING_NUMBER_1);
-    OH_Drawing_ErrorCode errorCode = OH_Drawing_MatrixSetSinCos(matrix, DRAWING_NUMBER_2, DRAWING_NUMBER_3,
-        DRAWING_NUMBER_4, DRAWING_NUMBER_5);
+    OH_Drawing_MatrixSetMatrix(result, NUMBER_3, -NUMBER_2, NUMBER_2, NUMBER_2,
+        NUMBER_3, -NUMBER_18, 0, 0, NUMBER_1);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_MatrixSetSinCos(matrix, NUMBER_2, NUMBER_3,
+        NUMBER_4, NUMBER_5);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     bool ret = OH_Drawing_MatrixIsEqual(matrix, result);
     EXPECT_EQ(ret, true);
 
-    matrix = OH_Drawing_MatrixCreateRotation(DRAWING_NUMBER_90, 0, 0);
-    errorCode = OH_Drawing_MatrixSetSinCos(matrix, DRAWING_NUMBER_2, DRAWING_NUMBER_3, DRAWING_NUMBER_4,
-        DRAWING_NUMBER_5);
+    matrix = OH_Drawing_MatrixCreateRotation(NUMBER_90, 0, 0);
+    errorCode = OH_Drawing_MatrixSetSinCos(matrix, NUMBER_2, NUMBER_3, NUMBER_4,
+        NUMBER_5);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     ret = OH_Drawing_MatrixIsEqual(matrix, result);
     EXPECT_EQ(ret, true);
 
-    matrix = OH_Drawing_MatrixCreateScale(DRAWING_NUMBER_1, DRAWING_NUMBER_1, 0, 0);
-    errorCode = OH_Drawing_MatrixSetSinCos(matrix, DRAWING_NUMBER_2, DRAWING_NUMBER_3, DRAWING_NUMBER_4,
-        DRAWING_NUMBER_5);
+    matrix = OH_Drawing_MatrixCreateScale(NUMBER_1, NUMBER_1, 0, 0);
+    errorCode = OH_Drawing_MatrixSetSinCos(matrix, NUMBER_2, NUMBER_3, NUMBER_4,
+        NUMBER_5);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     ret = OH_Drawing_MatrixIsEqual(matrix, result);
     EXPECT_EQ(ret, true);
 
-    matrix = OH_Drawing_MatrixCreateTranslation(DRAWING_NUMBER_50, DRAWING_NUMBER_50);
-    errorCode = OH_Drawing_MatrixSetSinCos(matrix, DRAWING_NUMBER_2, DRAWING_NUMBER_3, DRAWING_NUMBER_4,
-        DRAWING_NUMBER_5);
+    matrix = OH_Drawing_MatrixCreateTranslation(NUMBER_50, NUMBER_50);
+    errorCode = OH_Drawing_MatrixSetSinCos(matrix, NUMBER_2, NUMBER_3, NUMBER_4,
+        NUMBER_5);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     ret = OH_Drawing_MatrixIsEqual(matrix, result);
     EXPECT_EQ(ret, true);
@@ -1387,32 +1387,32 @@ int TestMatrixSetSinCosNormal()
 void MatrixSetSinCosNull(OH_Drawing_Matrix *matrix1, OH_Drawing_Matrix *matrix2, OH_Drawing_Matrix *matrix3,
                          OH_Drawing_Matrix *matrix4, OH_Drawing_Matrix *matrix5, OH_Drawing_Matrix *result)
 {
-    OH_Drawing_ErrorCode errorCode = OH_Drawing_MatrixSetSinCos(nullptr, DRAWING_NUMBER_2, DRAWING_NUMBER_3,
-        DRAWING_NUMBER_4, DRAWING_NUMBER_5);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_MatrixSetSinCos(nullptr, NUMBER_2, NUMBER_3,
+        NUMBER_4, NUMBER_5);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     bool ret = OH_Drawing_MatrixIsEqual(matrix1, result);
     EXPECT_EQ(ret, true);
-    OH_Drawing_MatrixSetMatrix(result, DRAWING_NUMBER_3, 0, -DRAWING_NUMBER_8, 0, DRAWING_NUMBER_3, -DRAWING_NUMBER_10,
-        0, 0, DRAWING_NUMBER_1);
-    errorCode = OH_Drawing_MatrixSetSinCos(matrix2, 0, DRAWING_NUMBER_3, DRAWING_NUMBER_4, DRAWING_NUMBER_5);
+    OH_Drawing_MatrixSetMatrix(result, NUMBER_3, 0, -NUMBER_8, 0, NUMBER_3, -NUMBER_10,
+        0, 0, NUMBER_1);
+    errorCode = OH_Drawing_MatrixSetSinCos(matrix2, 0, NUMBER_3, NUMBER_4, NUMBER_5);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     ret = OH_Drawing_MatrixIsEqual(matrix2, result);
     EXPECT_EQ(ret, true);
-    OH_Drawing_MatrixSetMatrix(result, 0, -DRAWING_NUMBER_2, DRAWING_NUMBER_14, DRAWING_NUMBER_2, 0, -DRAWING_NUMBER_3,
-        0, 0, DRAWING_NUMBER_1);
-    errorCode = OH_Drawing_MatrixSetSinCos(matrix3, DRAWING_NUMBER_2, 0, DRAWING_NUMBER_4, DRAWING_NUMBER_5);
+    OH_Drawing_MatrixSetMatrix(result, 0, -NUMBER_2, NUMBER_14, NUMBER_2, 0, -NUMBER_3,
+        0, 0, NUMBER_1);
+    errorCode = OH_Drawing_MatrixSetSinCos(matrix3, NUMBER_2, 0, NUMBER_4, NUMBER_5);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     ret = OH_Drawing_MatrixIsEqual(matrix3, result);
     EXPECT_EQ(ret, true);
-    OH_Drawing_MatrixSetMatrix(result, DRAWING_NUMBER_3, -DRAWING_NUMBER_2, DRAWING_NUMBER_10, DRAWING_NUMBER_2,
-        DRAWING_NUMBER_3, -DRAWING_NUMBER_10, 0, 0, DRAWING_NUMBER_1);
-    errorCode = OH_Drawing_MatrixSetSinCos(matrix4, DRAWING_NUMBER_2, DRAWING_NUMBER_3, 0, DRAWING_NUMBER_5);
+    OH_Drawing_MatrixSetMatrix(result, NUMBER_3, -NUMBER_2, NUMBER_10, NUMBER_2,
+        NUMBER_3, -NUMBER_10, 0, 0, NUMBER_1);
+    errorCode = OH_Drawing_MatrixSetSinCos(matrix4, NUMBER_2, NUMBER_3, 0, NUMBER_5);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     ret = OH_Drawing_MatrixIsEqual(matrix4, result);
     EXPECT_EQ(ret, true);
-    OH_Drawing_MatrixSetMatrix(result, DRAWING_NUMBER_3, -DRAWING_NUMBER_2, -DRAWING_NUMBER_8, DRAWING_NUMBER_2,
-        DRAWING_NUMBER_3, -DRAWING_NUMBER_8, 0, 0, DRAWING_NUMBER_1);
-    errorCode = OH_Drawing_MatrixSetSinCos(matrix5, DRAWING_NUMBER_2, DRAWING_NUMBER_3, DRAWING_NUMBER_4, 0);
+    OH_Drawing_MatrixSetMatrix(result, NUMBER_3, -NUMBER_2, -NUMBER_8, NUMBER_2,
+        NUMBER_3, -NUMBER_8, 0, 0, NUMBER_1);
+    errorCode = OH_Drawing_MatrixSetSinCos(matrix5, NUMBER_2, NUMBER_3, NUMBER_4, 0);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     ret = OH_Drawing_MatrixIsEqual(matrix5, result);
     EXPECT_EQ(ret, true);
@@ -1451,7 +1451,7 @@ int TestMatrixSetSinCosMultipleCalls()
     EXPECT_NE(matrix, nullptr);
     OH_Drawing_Matrix *result = OH_Drawing_MatrixCreate();
     EXPECT_NE(result, nullptr);
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_ErrorCode errorCode = OH_Drawing_MatrixSetSinCos(matrix, 0, 0, 0, 0);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     }

@@ -13,10 +13,12 @@
  * limitations under the License.
  */
 
-import {describe, beforeAll, beforeEach, afterEach, it, expect, Level} from '@ohos/hypium'
+import {describe, beforeAll, beforeEach, afterEach, it, expect, Level} from '@ohos/hypium-dynamic'
 import {UiComponent, UiDriver, Component, Driver, ON, BY, } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
+
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 
 export default function getDisplayId() {
   describe('getDisplayIdTest', () => {
@@ -67,7 +69,7 @@ export default function getDisplayId() {
       let obj1: ESObject = JSON.parse(strJson1);
       console.info('[getDisplayIdTest_0010] PreDrag: ' + JSON.stringify(obj));
       console.info('[getDisplayIdTest_0010] PreDrag: ' + JSON.stringify(obj1.$attrs));
-      expect(obj1.$attrs.label).assertEqual('0');
+      expect(obj1.$attrs.label).assertEqual(displayID + '');
       console.info('[getDisplayIdTest_0010] END');
       done();
     });

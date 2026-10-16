@@ -34,14 +34,18 @@ export default function ListDraggingEventTest() {
       await Utils.pushPage(`list/ListWillStopDraggingTest`);
       await Utils.sleep(1500)
       let driver: Driver = Driver.create();
-      let rect = Utils.getComponentRect("list_dragging_event");
+      let component = await driver.findComponent(ON.id('list_dragging_event'));
+      let rect = await component.getBounds();
+      let displayId = await component.getDisplayId();
       let height = rect.bottom - rect.top;
       console.info("ListDraggingEvent_0100 height is" + height);
-      let centerX = Math.round(globalThis.winLeft + Utils.getRectHorizontalCenterX(rect));
-      let y1 = Math.round(globalThis.winTop + rect.top + height*0.2);
-      let y2 = Math.round(globalThis.winTop + rect.bottom - height*0.2);
+      let centerX = Math.round(rect.left + (rect.right - rect.left) / 2);
+      let y1 = Math.round(rect.top + height*0.2);
+      let y2 = Math.round(rect.bottom - height*0.2);
       console.info("ListDraggingEvent_0100  centerX= " +  centerX  + ", y1 = " + y1  + ", y2 = " + y2);
-      await driver.swipe(centerX, y2, centerX, y1);
+      await driver.swipeBetween(
+        { x: centerX, y: y2, displayId: displayId },
+        { x: centerX, y: y1, displayId: displayId });
       await Utils.sleep(2000);
       let strJson = getInspectorByKey('list_dragging_event');
       console.info("[ListDraggingEvent_0100] component obj is: " + JSON.stringify(JSON.parse(strJson)));
@@ -61,18 +65,22 @@ export default function ListDraggingEventTest() {
      * @tc.level  LEVEL1
      */
     it('ListDraggingEvent_0200', Level.LEVEL1, async (done: Function) => {
-      console.info('[ListDraggingEvent_0100] START');
+      console.info('[ListDraggingEvent_0200] START');
       await Utils.pushPage(`list/ListWillStartDraggingTest`);
       await Utils.sleep(1500)
       let driver: Driver = Driver.create();
-      let rect = Utils.getComponentRect("list_dragging_event");
+      let component = await driver.findComponent(ON.id('list_dragging_event'));
+      let rect = await component.getBounds();
+      let displayId = await component.getDisplayId();
       let height = rect.bottom - rect.top;
       console.info("ListDraggingEvent_0200 height is" + height);
-      let centerX = Math.round(globalThis.winLeft + Utils.getRectHorizontalCenterX(rect));
-      let y1 = Math.round(globalThis.winTop + rect.top + height*0.2);
-      let y2 = Math.round(globalThis.winTop + rect.bottom - height*0.2);
-      console.info("ListDraggingEvent_0100  centerX= " +  centerX  + ", y1 = " + y1  + ", y2 = " + y2);
-      await driver.swipe(centerX, y2, centerX, y1,1000);
+      let centerX = Math.round(rect.left + (rect.right - rect.left) / 2);
+      let y1 = Math.round(rect.top + height*0.2);
+      let y2 = Math.round(rect.bottom - height*0.2);
+      console.info("ListDraggingEvent_0200  centerX= " +  centerX  + ", y1 = " + y1  + ", y2 = " + y2);
+      await driver.swipeBetween(
+        { x: centerX, y: y2, displayId: displayId },
+        { x: centerX, y: y1, displayId: displayId }, 1000);
       await Utils.sleep(2000);
       let strJson = getInspectorByKey('list_dragging_event');
       console.info("[ListDraggingEvent_0200] component obj is: " + JSON.stringify(JSON.parse(strJson)));
@@ -95,14 +103,18 @@ export default function ListDraggingEventTest() {
       await Utils.pushPage(`list/ListDidStopDraggingTest`);
       await Utils.sleep(1500)
       let driver: Driver = Driver.create();
-      let rect = Utils.getComponentRect("list_dragging_event");
+      let component = await driver.findComponent(ON.id('list_dragging_event'));
+      let rect = await component.getBounds();
+      let displayId = await component.getDisplayId();
       let height = rect.bottom - rect.top;
       console.info("ListDraggingEvent_0300 height is" + height);
-      let centerX = Math.round(globalThis.winLeft + Utils.getRectHorizontalCenterX(rect));
-      let y1 = Math.round(globalThis.winTop + rect.top + height*0.2);
-      let y2 = Math.round(globalThis.winTop + rect.bottom - height*0.2);
+      let centerX = Math.round(rect.left + (rect.right - rect.left) / 2);
+      let y1 = Math.round(rect.top + height*0.2);
+      let y2 = Math.round(rect.bottom - height*0.2);
       console.info("ListDraggingEvent_0300  centerX= " +  centerX  + ", y1 = " + y1  + ", y2 = " + y2);
-      await driver.swipe(centerX, y2, centerX, y1,1000);
+      await driver.swipeBetween(
+        { x: centerX, y: y2, displayId: displayId },
+        { x: centerX, y: y1, displayId: displayId }, 1000);
       await Utils.sleep(2000);
       let strJson = getInspectorByKey('list_dragging_event');
       console.info("[ListDraggingEvent_0300] component obj is: " + JSON.stringify(JSON.parse(strJson)));

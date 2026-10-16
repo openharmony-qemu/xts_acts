@@ -1,0 +1,33 @@
+/*
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import Int8ArrayBasicTest from './Int8ArrayBasic.test';
+import Int8ArrayConcurrentTest from './Int8ArrayConcurrent.test';
+import Int8ArrayAllTest from './All/Int8ArrayAll.test';
+import Int8ArrayConcurrentTestConcurrent from './Concurrent/Int8ArrayConcurrent.test';
+import Int8ArrayNormalTest from './Normal/Int8ArrayNormal.test';
+import Int8ArrayTaskPoolTest from './TaskPool/Int8ArrayTaskPool.test';
+
+import IntByteArrayTest from './intArray/IntByteArrayTest.test'
+export default function testsuite() {
+  Int8ArrayBasicTest();
+  Int8ArrayConcurrentTest();
+  Int8ArrayAllTest();
+  Int8ArrayConcurrentTestConcurrent();
+  Int8ArrayNormalTest();
+  Int8ArrayTaskPoolTest();
+  
+  IntByteArrayTest();
+}

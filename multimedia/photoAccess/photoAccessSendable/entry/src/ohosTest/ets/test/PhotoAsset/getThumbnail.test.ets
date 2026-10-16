@@ -16,7 +16,7 @@
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
 import sendablePhotoAccessHelper from '@ohos.file.sendablePhotoAccessHelper'
 import image from '@ohos.multimedia.image';
-import { describe, it, expect, beforeAll, Level } from '@ohos/hypium'
+import { describe, it, expect, beforeAll, Level } from '@ohos/hypium-dynamic'
 import { common } from '@kit.AbilityKit';
 
 import {
@@ -25,7 +25,8 @@ import {
   getPermission,
   photoKeys,
   fetchOption,
-  createResource
+  createResource,
+  checkResourceFile
 } from '../../util/common'
 
 export default function getThumbnailTest () {
@@ -39,6 +40,7 @@ export default function getThumbnailTest () {
       await getPermission();
       await driveFn();
       await sleep(2000);
+      checkResourceFile(globalContext);
       await createResource(globalContext, fileNameList);
     });
 

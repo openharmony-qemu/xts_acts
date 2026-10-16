@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import { socket } from '@kit.NetworkKit';
 import http from '@ohos.net.http';
 
@@ -103,7 +103,7 @@ export default function HttpRequestCustomResponseHeaderTest() {
           httpRequest.request("http://localhost:"+ serverPort, (err: Error, data: http.HttpResponse) => {
             if (!err) {
               console.info(`${caseName} request success data is `+JSON.stringify(data));
-              ExpectTrue(data.responseCode == 200);
+              ExpectTrue(data.responseCode === 200);
               done();
             } else {
               console.error(`${caseName} request err is `+JSON.stringify(err));
@@ -186,7 +186,7 @@ export default function HttpRequestCustomResponseHeaderTest() {
           let httpRequest = http.createHttp();
           httpRequest.request("http://localhost:"+ serverPort).then((data: http.HttpResponse) => {
             console.info(`${caseName} request success data is `+JSON.stringify(data));
-            ExpectTrue(data.responseCode == 200);
+            ExpectTrue(data.responseCode === 200);
             done();
           }).catch((err: BusinessError) => {
             console.error(`${caseName} request err is `+JSON.stringify(err));
@@ -265,7 +265,7 @@ export default function HttpRequestCustomResponseHeaderTest() {
           httpRequest.request("http://localhost:"+ serverPort, (err: Error, data: http.HttpResponse) => {
             if (!err) {
               console.info(`${caseName} request success data is `+JSON.stringify(data));
-              ExpectTrue(data.responseCode == 200);
+              ExpectTrue(data.responseCode === 200);
               done();
             } else {
               console.error(`${caseName} request err is `+JSON.stringify(err));
@@ -344,7 +344,7 @@ export default function HttpRequestCustomResponseHeaderTest() {
           let httpRequest = http.createHttp();
           httpRequest.request("http://localhost:"+ serverPort).then((data: http.HttpResponse) => {
             console.info(`${caseName} request success data is `+JSON.stringify(data));
-            ExpectTrue(data.responseCode == 200);
+            ExpectTrue(data.responseCode === 200);
             done();
           }).catch((err: BusinessError) => {
             console.error(`${caseName} request err is `+JSON.stringify(err));

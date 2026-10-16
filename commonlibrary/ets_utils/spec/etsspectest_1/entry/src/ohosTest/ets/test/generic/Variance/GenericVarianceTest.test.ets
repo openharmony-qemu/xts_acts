@@ -23,7 +23,7 @@ import {
   beforeEach,
   afterEach,
   afterAll
-} from '@ohos/hypium';
+} from '@ohos/hypium-dynamic';
 
 class Animal {
   public name: string = 'animal'

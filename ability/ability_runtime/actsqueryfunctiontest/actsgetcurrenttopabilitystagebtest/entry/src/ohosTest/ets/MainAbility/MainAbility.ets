@@ -15,12 +15,13 @@
 
 import Ability from '@ohos.app.ability.UIAbility'
 import AbilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry'
-import { Hypium, Level } from '@ohos/hypium'
+import { Hypium, Level } from '@ohos/hypium-dynamic'
 import testsuite from '../test/List.test'
 import Want from '@ohos.app.ability.Want';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import window from '@ohos.window';
 import eventBus from '../lib/EventBus';
+import UIAbility from '@ohos.app.ability.UIAbility';
 
 export default class MainAbility extends Ability {
     onCreate(want:Want, launchParam:AbilityConstant.LaunchParam) {

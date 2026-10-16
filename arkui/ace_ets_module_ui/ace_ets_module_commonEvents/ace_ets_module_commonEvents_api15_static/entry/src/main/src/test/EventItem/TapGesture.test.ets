@@ -22,6 +22,7 @@ import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function tapGestureEventTest() {
   describe('tapGestureEvent', () => {
     beforeEach(async (): Promise<void> => {
@@ -66,7 +67,7 @@ it('TapGesture1_static_0100', Level.LEVEL0, async (done: () => void): Promise<vo
       let obj = JSON.parseJsonElement(strJson);
       console.info('[TapGesture1_static_0100] component obj is: ' + JSON.stringify(obj));
       console.info('[TapGesture1_static_0100] title: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('0');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual(displayID + '');
       console.info('[TapGesture1_static_0100] END');
       done();
     });

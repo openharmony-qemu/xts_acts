@@ -16,27 +16,18 @@
             "cleanup-apps": true
         },
         {
-            "type": "ShellKit",
-            "run-command": [
-                "mkdir -p /data/app/el2/100/base/ohos.acts.multimedia.image/haps/entry_test/files/",
-                "chmod -R 666 /data/app/el2/100/base/ohos.acts.multimedia.image/haps/entry_test/files/*"
-            ],
-            "teardown-command": []
-        },
-        {
             "type": "PushKit",
             "pre-push": [],
             "push": [
-                "./resource/image/test_large.svg ->/data/app/el2/100/base/ohos.acts.multimedia.image/haps/entry_test/files"
+                "./resource/image/test_large.svg ->/data/local/tmp/",
+                "./resource/image/sh/setup_image_svgJs_test.sh ->/data/local/tmp/"
             ]
         },
         {
             "type": "ShellKit",
             "run-command": [
-                "chmod 777 /data/app/el2/100/base/ohos.acts.multimedia.image/haps/entry/files/*"
-            ],
-            "teardown-command": [
-                "rm -rf /data/app/el2/100/base/ohos.acts.multimedia.image/*"
+                "chmod 755 /data/local/tmp/setup_image_svgJs_test.sh",
+                "sh /data/local/tmp/setup_image_svgJs_test.sh"
             ]
         }
     ]

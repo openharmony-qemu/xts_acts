@@ -14,7 +14,7 @@
  */
 import osAccount from '@ohos.account.osAccount'
 import commonEventManager from '@ohos.commonEventManager'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic'
 import { BusinessError } from '@ohos.base'
 import Want from '@ohos.app.ability.Want';
 import deviceInfo from '@ohos.deviceInfo';

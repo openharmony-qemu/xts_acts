@@ -12,7 +12,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,TestType, Level,Size} from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,TestType, Level,Size} from '@ohos/hypium-dynamic';
 import { ArrayConstructor0014, ArrayConstructor0019, ArrayConstructor0029,
   ArrayConstructor0045,
   ArrayConstructor0048,

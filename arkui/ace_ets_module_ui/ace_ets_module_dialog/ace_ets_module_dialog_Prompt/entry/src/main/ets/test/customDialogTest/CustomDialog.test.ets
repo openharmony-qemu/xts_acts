@@ -24,6 +24,7 @@ import { promptAction } from '@kit.ArkUI';
 
 
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function CustomDialog() {
   describe('CustomDialog', () => {
     beforeEach(async (done: Function) => {
@@ -71,7 +72,7 @@ export default function CustomDialog() {
       expect(properties.type).assertEqual(1)//1表示系统告警窗口TYPE_SYSTEM_ALERT
 
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2070)
+      await driver.triggerKey(2070,displayID)
       await CommonFunc.sleep(1000);
       console.info('[CustomDialog_0100] END');
       done();

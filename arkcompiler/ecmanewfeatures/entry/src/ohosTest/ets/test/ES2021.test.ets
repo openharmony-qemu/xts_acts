@@ -14,7 +14,7 @@
  */
 
 
-import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium';
+import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import { test2021_05_ans } from './test2021_05'
 
 export default function es2021Test() {

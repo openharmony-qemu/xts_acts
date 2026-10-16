@@ -17,11 +17,12 @@
 import { describe, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { Driver, ON } from '@ohos.UiTest';
+import { Driver, ON } from '@kit.TestKit';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function panGestureDistanceTest() {
 
   describe('panGestureDistanceTest', () => {
@@ -70,11 +71,13 @@ it('panGesture_panRecognizer_getDistance_static_0010', Level.LEVEL0, async (done
       let driver = Driver.create()
       await driver.fling({
         x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`).toInt(),
-        y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`).toInt()
+        y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`).toInt(),
+        displayId: displayID
       },
         {
           x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`).toInt(),
-          y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.3 + gridRect.top}`).toInt()
+          y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.3 + gridRect.top}`).toInt(),
+          displayId: displayID
         }, 5, 4000);
       let strJson = inspector.getInspectorByKey('distance1');
       let obj = JSON.parseJsonElement(strJson);
@@ -104,11 +107,13 @@ it('panGesture_panRecognizer_getDistance_static_0020', Level.LEVEL0, async (done
       let driver = Driver.create()
       await driver.fling({
         x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`).toInt(),
-        y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`).toInt()
+        y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`).toInt(),
+        displayId: displayID
       },
         {
           x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`).toInt(),
-          y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.3 + gridRect.top}`).toInt()
+          y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.3 + gridRect.top}`).toInt(),
+          displayId: displayID
         }, 5, 4000);
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('map');
@@ -139,11 +144,13 @@ it('panGesture_panRecognizer_getDistance_static_0030', Level.LEVEL0, async (done
       let driver = Driver.create()
       await driver.fling({
         x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`).toInt(),
-        y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`).toInt()
+        y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`).toInt(),
+        displayId: displayID
       },
         {
           x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`).toInt(),
-          y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.3 + gridRect.top}`).toInt()
+          y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.3 + gridRect.top}`).toInt(),
+          displayId: displayID
         }, 5, 4000);
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('modifierMap');

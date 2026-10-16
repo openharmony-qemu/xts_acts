@@ -13,11 +13,12 @@
  * limitations under the License.
  */
 
-import {describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium';
+import {describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-dynamic';
 import {UiComponent, UiDriver, Component, Driver, ON, BY, } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function PanGestureHandlerTest() {
 
   describe('PanGestureHandlerTest', () => {
@@ -64,7 +65,7 @@ export default function PanGestureHandlerTest() {
       let bottom = colum.bottom
       let left = colum.left
       let right = colum.right
-      await driver.swipe(Math.round(colum.left + (colum.right - colum.left) / 2), Math.round((top + bottom) / 2), Math.round(colum.right), Math.round((top + bottom) / 2))
+      await driver.swipeBetween({x:Math.round(colum.left + (colum.right - colum.left) / 2),y:Math.round((top + bottom) / 2),displayId:displayID},{x:Math.round(colum.right),y:Math.round((top + bottom) / 2),displayId:displayID})
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('PanGestureHandler1');
       let obj: ESObject = JSON.parse(strJson);

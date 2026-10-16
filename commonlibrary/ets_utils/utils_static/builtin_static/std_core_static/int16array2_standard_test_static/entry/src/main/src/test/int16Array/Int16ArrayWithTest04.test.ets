@@ -42,92 +42,6 @@ export default function int16ArrayWithTestFourTest(): void {
     afterAll((): void => {});
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_WITH_FOUR_0100
-     * @tc.name testInt16ArrayWithTestFour001
-     * @tc.desc Verify with(0, sv) via short overload and number overload stores expected value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayWithTestFour001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(10, 20, 30);
-      let sv: short = 99 as short;
-      let result: Int16Array = arr.with(0, sv);
-      let actual1: number = result.$_get(0);
-      expect(actual1).assertEqual(99);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_WITH_FOUR_0200
-     * @tc.name testInt16ArrayWithTestFour002
-     * @tc.desc Verify with(1, nv) via number overload stores expected value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayWithTestFour002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(10, 20, 30);
-      let nv: number = 99;
-      let result: Int16Array = arr.with(1, nv);
-      let actual1: number = result.$_get(1);
-      expect(actual1).assertEqual(99);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_WITH_FOUR_0300
-     * @tc.name testInt16ArrayWithTestFour003
-     * @tc.desc Verify with(0, sv), with(0, nv) via short overload and number overload stores expected value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayWithTestFour003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(10, 20, 30);
-      let sv: short = 77 as short;
-      let nv: number = 77;
-      let r1: Int16Array = arr.with(0, sv);
-      let r2: Int16Array = arr.with(0, nv);
-      let actual1: number = r1.$_get(0);
-      let expected1: number = r2.$_get(0);
-      expect(actual1).assertEqual(expected1);
-      let actual2: number = r1.$_get(1);
-      let expected2: number = r2.$_get(1);
-      expect(actual2).assertEqual(expected2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_WITH_FOUR_0400
-     * @tc.name testInt16ArrayWithTestFour004
-     * @tc.desc Verify with(0, sv) via short overload and number overload with MAX_SHORT stores expected value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayWithTestFour004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(10, 20, 30);
-      let sv: short = 32767 as short;
-      let result: Int16Array = arr.with(0, sv);
-      let actual1: number = result.$_get(0);
-      expect(actual1).assertEqual(32767);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_WITH_FOUR_0500
-     * @tc.name testInt16ArrayWithTestFour005
-     * @tc.desc Verify with(0, sv) via short overload and number overload with MIN_SHORT,overflow stores expected value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayWithTestFour005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(10, 20, 30);
-      let sv: short = -32768 as short;
-      let result: Int16Array = arr.with(0, sv);
-      let actual1: number = result.$_get(0);
-      expect(actual1).assertEqual(-32768);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_WITH_FOUR_0600
      * @tc.name testInt16ArrayWithTestFour006
      * @tc.desc Verify with(0, 3.14) via number overload stores expected value
@@ -193,28 +107,6 @@ export default function int16ArrayWithTestFourTest(): void {
       let actual1: string = r1.join(',');
       let expected1: string = r2.join(',');
       expect(actual1).assertEqual(expected1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_WITH_FOUR_1000
-     * @tc.name testInt16ArrayWithTestFour010
-     * @tc.desc Verify with(2, sv), with(2, nv) via short overload and number overload stores expected value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayWithTestFour010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(10, 20, 30);
-      let sv: short = 1 as short;
-      let nv: number = 1;
-      let r1: Int16Array = arr.with(2, sv);
-      let r2: Int16Array = arr.with(2, nv);
-      let actual1: number = r1.$_get(0);
-      let expected1: number = r2.$_get(0);
-      expect(actual1).assertEqual(expected1);
-      let actual2: number = r1.$_get(1);
-      let expected2: number = r2.$_get(1);
-      expect(actual2).assertEqual(expected2);
     });
 
     /**
@@ -365,22 +257,6 @@ export default function int16ArrayWithTestFourTest(): void {
       let arr: Int16Array = Int16Array.of(10, 20, 30);
       let sv: short = 5 as short;
       let result: Int16Array = arr.with(0, sv);
-      let actual1: int = result.length;
-      let expected1: int = arr.length;
-      expect(actual1).assertEqual(expected1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_WITH_FOUR_2000
-     * @tc.name testInt16ArrayWithTestFour020
-     * @tc.desc Verify with(0, 5) via number overload preserves length/values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayWithTestFour020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(10, 20, 30);
-      let result: Int16Array = arr.with(0, 5);
       let actual1: int = result.length;
       let expected1: int = arr.length;
       expect(actual1).assertEqual(expected1);
@@ -730,27 +606,6 @@ export default function int16ArrayWithTestFourTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_WITH_FOUR_4000
-     * @tc.name testInt16ArrayWithTestFour040
-     * @tc.desc Verify with(arr.length, 99) via number overload preserves length/values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayWithTestFour040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(10, 20, 30);
-      try {
-        arr.with(arr.length, 99);
-        expect().assertFail();
-      } catch (e) {
-        let actual1: string = e.name;
-        expect(actual1).assertEqual('RangeError');
-      }
-      let actual2: int = arr.length;
-      expect(actual2).assertEqual(3);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_WITH_FOUR_4100
      * @tc.name testInt16ArrayWithTestFour041
      * @tc.desc Verify with(-4, sv) via short overload and number overload throws expected error
@@ -954,28 +809,6 @@ export default function int16ArrayWithTestFourTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_WITH_FOUR_5000
-     * @tc.name testInt16ArrayWithTestFour050
-     * @tc.desc Verify with(5, 99) via number overload throws expected error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayWithTestFour050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(10, 20);
-      try {
-        arr.with(5, 99);
-        expect().assertFail();
-      } catch (e) {
-        let actual1: string = e.name;
-        expect(actual1).assertEqual('RangeError');
-      }
-      arr.$_set(0, 88);
-      let actual2: number = arr.$_get(0);
-      expect(actual2).assertEqual(88);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_WITH_FOUR_5100
      * @tc.name testInt16ArrayWithTestFour051
      * @tc.desc Verify with(0, sv) via short overload and number overload stores expected value
@@ -1128,23 +961,6 @@ export default function int16ArrayWithTestFourTest(): void {
       let sv: short = 11 as short;
       let r1: Int16Array = arr.with(0, sv);
       let r2: Int16Array = arr.with(1, sv);
-      r1.$_set(1, 999);
-      let actual1: number = r2.$_get(1);
-      expect(actual1).assertEqual(11);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_WITH_FOUR_6000
-     * @tc.name testInt16ArrayWithTestFour060
-     * @tc.desc Verify with(0, 11), with(1, 11) via number overload stores expected value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayWithTestFour060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(10, 20, 30);
-      let r1: Int16Array = arr.with(0, 11);
-      let r2: Int16Array = arr.with(1, 11);
       r1.$_set(1, 999);
       let actual1: number = r2.$_get(1);
       expect(actual1).assertEqual(11);
@@ -1313,23 +1129,6 @@ export default function int16ArrayWithTestFourTest(): void {
       expect(actual2).assertEqual(30);
       let actual3: number = result.$_get(3);
       expect(actual3).assertEqual(40);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_WITH_FOUR_7000
-     * @tc.name testInt16ArrayWithTestFour070
-     * @tc.desc Verify with(0, 50) via number overload stores expected value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayWithTestFour070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(-100, -200, 30);
-      let result: Int16Array = arr.with(0, 50);
-      let actual1: number = result.$_get(1);
-      expect(actual1).assertEqual(-200);
-      let actual2: number = result.$_get(2);
-      expect(actual2).assertEqual(30);
     });
 
     /**

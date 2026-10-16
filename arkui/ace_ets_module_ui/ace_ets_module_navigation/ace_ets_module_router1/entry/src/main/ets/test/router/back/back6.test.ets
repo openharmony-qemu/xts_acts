@@ -14,7 +14,7 @@
  */
 
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import CommonFunc from '../../../MainAbility/utils/Common';
 import { Driver, ON } from '@ohos.UiTest';
 
@@ -67,7 +67,7 @@ export default function back6() {
       await CommonFunc.sleep(2000);
       console.info('[back6_0100] btn click');
 
-      await driver.pressBack()
+      await driver.pressBack(0)
       await CommonFunc.sleep(2000);
       console.info('[back6_0100] pressBack');
 

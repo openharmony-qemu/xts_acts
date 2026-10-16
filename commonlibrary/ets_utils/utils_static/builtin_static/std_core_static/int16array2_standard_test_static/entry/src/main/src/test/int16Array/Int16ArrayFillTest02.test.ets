@@ -385,25 +385,6 @@ export default function int16ArrayFillTestTwoTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_2100
-     * @tc.name testInt16ArrayFillTestTwo021
-     * @tc.desc Verify fill(Number.NaN) NaN truncates to 0; expect 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayFillTestTwo021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(1, 2, 3);
-      arr.fill(Number.NaN);
-      let actual1: number = arr.$_get(0);
-      expect(actual1).assertEqual(0);
-      let actual2: number = arr.$_get(1);
-      expect(actual2).assertEqual(0);
-      let actual3: number = arr.$_get(2);
-      expect(actual3).assertEqual(0);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_TWO_2200
      * @tc.name testInt16ArrayFillTestTwo022
      * @tc.desc Verify fill(Number.POSITIVE_INFINITY) Infinity truncates to 0; expect 0

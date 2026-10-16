@@ -12,13 +12,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, MouseButton} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 import {MessageManager,Callback} from '../../MainAbility/common/MessageManager';
 
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function mouseEventTest() {
   describe('mouseEvent', () => {
     beforeEach(async (done: Function) => {
@@ -59,13 +60,13 @@ export default function mouseEventTest() {
       let mouseX = Math.round(areaObj.left + areaWidth * 0.5)
       let mouseY = Math.round(areaObj.top + areaHeight * 0.5)
       let driver = await Driver.create();
-      await driver.mouseClick({x: mouseX, y: mouseY}, MouseButton.MOUSE_BUTTON_LEFT);
+      await driver.mouseClick({x: mouseX, y: mouseY, displayId: displayID}, MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('value');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[Mouse1_0100] component obj is: ' + JSON.stringify(obj));
       console.info('[Mouse1_0100] title: ' + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertEqual('0,0,0,1');
+      expect(obj.$attrs.content).assertEqual(displayID + ',0,0,1');
       console.info('[Mouse1_0100] END');
       done();
     });

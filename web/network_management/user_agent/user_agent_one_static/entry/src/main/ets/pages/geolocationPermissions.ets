@@ -169,7 +169,6 @@ struct geolocationPermissions {
               }
               break;
             }
-
           }
         })
       }

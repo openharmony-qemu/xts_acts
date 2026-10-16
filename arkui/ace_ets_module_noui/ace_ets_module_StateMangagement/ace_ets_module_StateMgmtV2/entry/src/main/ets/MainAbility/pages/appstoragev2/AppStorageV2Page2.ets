@@ -29,5 +29,7 @@ struct AppStorageV2Page2 {
         .id('tvPage2Width')
         .fontSize(9)
     }
+    .padding(20)
+    .margin(20)
   }
 }

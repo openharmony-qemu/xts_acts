@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router'
 import { Driver, Component, ON } from '@ohos.UiTest'
 import CommonFunc from '../../MainAbility/common/Common';
@@ -57,11 +57,14 @@ export default function ListSwipeTest() {
       await driver.delayMs(waitUiReadyMs)
       // 3.swipe item to left
       let baseKey: string = 'MyList1_ListItem0'
-      let strJson: string = getInspectorByKey(baseKey);
-      console.info("windowRect Left: " + globalThis.winLeft + ',' + "windowRect Top: " + globalThis.winTop);
-      let rectCenter: number[] = getRectCenter(JSON.parse(strJson).$rect)
-      await driver.swipe(Math.round(globalThis.winLeft + rectCenter[0] + (rectCenter[3] - rectCenter[2]) / 4), Math.round( globalThis.winTop + rectCenter[1]),
-        0, Math.round(globalThis.winTop + rectCenter[1]))
+      let baseComp: Component = await driver.findComponent(ON.id(baseKey))
+      let baseRect = await baseComp.getBounds()
+      let displayId = await baseComp.getDisplayId()
+      let width = baseRect.right - baseRect.left
+      let centerY = Math.round(baseRect.top + (baseRect.bottom - baseRect.top) / 2)
+      await driver.swipeBetween(
+        { x: Math.round(baseRect.left + width / 4), y: centerY, displayId: displayId },
+        { x: 0, y: centerY, displayId: displayId })
 
       await sleep(3000) // wait for ui update
       console.info('get getInspectorByKey swipe0100')
@@ -89,10 +92,10 @@ export default function ListSwipeTest() {
       await driver.delayMs(waitUiReadyMs)
 
       let baseKey: string = 'MyList2_ListItem0'
-      let strJson: string = getInspectorByKey(baseKey);
-      console.info("windowRect Left: " + globalThis.winLeft + ',' + "windowRect Top: " + globalThis.winTop);
       // 2.swipe right
-      let swipeList = CommonFunc.getComponentRectOnScreen('MyList2_ListItem0');
+      let swipeListComp: Component = await driver.findComponent(ON.id('MyList2_ListItem0'));
+      let swipeList = await swipeListComp.getBounds();
+      let displayId = await swipeListComp.getDisplayId();
       let top = swipeList.top;
       let right = swipeList.right;
       let left = swipeList.left;
@@ -100,7 +103,9 @@ export default function ListSwipeTest() {
       console.info("ArkUI_List_Swipe_0300 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom -top;
       let width = right - left;
-      await driver.swipe(Math.round(left + width*0.3),Math.round(top + height/2),Math.round(left + width*0.9),Math.round(top + height/2));
+      await driver.swipeBetween(
+        { x: Math.round(left + width * 0.3), y: Math.round(top + height / 2), displayId: displayId },
+        { x: Math.round(left + width * 0.9), y: Math.round(top + height / 2), displayId: displayId });
 
       await sleep(3000) // wait for ui update
       console.info('get getInspectorByKey swipe0300')
@@ -154,11 +159,14 @@ export default function ListSwipeTest() {
       await driver.delayMs(waitUiReadyMs)
       // 2.swipe item to left
       let baseKey: string = 'MyList1_ListItem1'
-      let strJson: string = getInspectorByKey(baseKey);
-      let rectCenter: number[] = getRectCenter(JSON.parse(strJson).$rect)
-      console.info("windowRect Left: " + globalThis.winLeft + ',' + "windowRect Top: " + globalThis.winTop);
-      await driver.swipe(Math.round(globalThis.winLeft + rectCenter[0] + (rectCenter[3] -rectCenter[2]) / 4), Math.round(globalThis.winTop + rectCenter[1]),
-        0, Math.round(globalThis.winTop + rectCenter[1]))
+      let baseComp: Component = await driver.findComponent(ON.id(baseKey))
+      let baseRect = await baseComp.getBounds()
+      let displayId = await baseComp.getDisplayId()
+      let width = baseRect.right - baseRect.left
+      let centerY = Math.round(baseRect.top + (baseRect.bottom - baseRect.top) / 2)
+      await driver.swipeBetween(
+        { x: Math.round(baseRect.left + width / 4), y: centerY, displayId: displayId },
+        { x: 0, y: centerY, displayId: displayId })
       await sleep(3000) // wait for ui update
       let strJson2: string = getInspectorByKey('swipe0500')
 

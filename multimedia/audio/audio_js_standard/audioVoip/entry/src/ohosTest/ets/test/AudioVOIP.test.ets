@@ -15,9 +15,10 @@
 
 import audio from '@ohos.multimedia.audio';
 import fileio from '@ohos.fileio';
+import fs from '@ohos.file.fs'
 import featureAbility from '@ohos.ability.featureAbility'
 import resourceManager from '@ohos.resourceManager';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Driver } from '@ohos.UiTest';
 import { ON } from '@ohos.UiTest';
@@ -127,6 +128,7 @@ export default function audioVoip() {
       testContext = AppStorage.get<common.UIAbilityContext>('testContext') as common.UIAbilityContext;
       await getPermission();
       await driveFn();
+      await copyRawfileToFilesDir('StarWars10s-1C-44100-2SW.wav');
       console.info(`AudioFrameworkTest: beforeAll: END`);
     })
 
@@ -143,8 +145,44 @@ export default function audioVoip() {
       console.info(`AudioFrameworkTest: afterAll: Test suite-level cleanup condition`);
     })
 
+    let copyRawfileToFilesDir = async (fileName: string): Promise<string> => {
+      try {
+        let dirPath = testContext.filesDir;
+        let dstPath = dirPath + '/' +fileName;
+        try {
+          if (!fs.accessSync(dirPath)) {
+            fs.mkdirSync(dirPath, true);
+          }
+        } catch (e) {
+          fs.mkdirSync(dirPath, true);
+        }
+        try {
+          fs.unlinkSync(dstPath);
+        } catch (e) {
+          console.info(`unlinkSync failed : ${e}`);
+        }
+        let buffer = await testContext.resourceManager.getRawFileContent(fileName);
+        let fd = fs.openSync(dstPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE | fs.OpenMode.TRUNC);
+        fs.writeSync(fd.fd, buffer.buffer);
+        fs.closeSync(fd);
+        console.info(`copyRawfileToFilesDir success dstPath: ${dstPath}`);
+        return dstPath;
+      } catch (e) {
+        console.info(`copyRawfileToFilesDir failed : ${e}`);
+        return '';
+      }
+    }
+
     let getAbilityInfo = async (fileName: string) => {
       try {
+        let dirPath = testContext.filesDir;
+        try {
+          if(!fs.accessSync(dirPath)) {
+            fs.mkdirSync(dirPath, true);
+          }
+        } catch (e) {
+          fs.mkdirSync(dirPath, true);
+        }
         mediaDir = testContext.filesDir + '/' + fileName;
         console.info(`case2 mediaDir is : ${mediaDir}`);
       } catch (err) {
@@ -492,7 +530,20 @@ export default function audioVoip() {
      * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-
+      let audioManager = audio.getAudioManager();
+      let audioRoutingManager = audioManager.getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_VOIP_REC_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 0) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       let AudioStreamInfo: AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
         channels: audio.AudioChannel.CHANNEL_2,

@@ -13,11 +13,12 @@
  * limitations under the License.
  */
 
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function BoxSelectTest() {
 
   describe('BoxSelectTest', () => {
@@ -62,7 +63,7 @@ export default function BoxSelectTest() {
       let box = await driver.findComponent(ON.id('0'));
       let rect =await box.getBounds()
       let rectCenter =await box.getBoundsCenter()
-      await driver.swipe(rect.right,rectCenter.y,rectCenter.x,rectCenter.y)
+      await driver.swipeBetween({x: rect.right,y: rectCenter.y,displayId: displayID}, {x: rectCenter.x,y: rectCenter.y,displayId: displayID})
       await CommonFunc.sleep(1000);
       expect(AppStorage.get('BOX_SELECT_GESTURE')).assertEqual(GestureControl.GestureType.BOX_SELECT_GESTURE);
       console.info('[BoxSelectTest_0100] END');

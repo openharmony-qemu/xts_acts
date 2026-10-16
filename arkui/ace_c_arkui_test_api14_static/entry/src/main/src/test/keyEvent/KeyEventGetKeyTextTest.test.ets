@@ -15,11 +15,12 @@
  */
 
 import { expect, describe, it, afterEach, Level, beforeAll, beforeEach } from '../../../../hypium/index';
-import { Component, Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
+import { Component, Driver, ON, PointerMatrix, Rect } from '@kit.TestKit';
 import Utils from '../common/Utils';
 import router from '@ohos.router';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
+import { AppStorage } from '@ohos.arkui.stateManagement';
 export default function KeyEventGetKeyTextTest() {
 
   describe('KeyEventGetKeyTextTest', (): void  => {
@@ -44,7 +45,7 @@ export default function KeyEventGetKeyTextTest() {
       console.info('KeyEventGetKeyTextTest START');
       let driver =  Driver.create()
       await Utils.sleep(500);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, AppStorage.get<number>('displayID')?.toInt() ?? 0);
       await Utils.sleep(500);
       expect(Utils.getComponentInfoByKey('KeyEventGetKeyText').getElement("$attrs").getString("backgroundColor")).assertEqual('#FF00FF00');
       done();

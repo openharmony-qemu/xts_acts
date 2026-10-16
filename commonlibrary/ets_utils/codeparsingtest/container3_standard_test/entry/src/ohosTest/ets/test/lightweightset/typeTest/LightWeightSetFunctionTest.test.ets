@@ -14,7 +14,7 @@
  */
 
 import { LightWeightSet } from '@kit.ArkTS';
-import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium';
+import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium-dynamic';
 type FunctionItem = (value: number) => number;
 const FUNCTION_A: FunctionItem = (value: number): number => value + 1;
 const FUNCTION_B: FunctionItem = (value: number): number => value + 2;

@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { beforeAll, beforeEach, describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, describe, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils.test';
 import { Driver, ON } from '@ohos.UiTest';
@@ -103,5 +103,43 @@ export default function WebSchemeHandlerResponse() {
         done();
       }
     })
+
+    /**
+     * @tc.name   testWebSchemeHandlerResponseConstructor001
+     * @tc.number SUB_WEB_WEBSCHEMEHANDLERRESPONSE_CTOR_3500
+     * @tc.desc   test WebSchemeHandlerResponse class constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testWebSchemeHandlerResponseConstructor001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        Utils.emitEvent('WebSchemeHandlerResponse_ctor', EVENT_ID_SET_EMIT_KEY);
+        let isReturn = 0;
+        Utils.registerEvent('testWebSchemeHandlerResponseConstructor001', true, 202940, () => { isReturn = 1 });
+        await Utils.waitAndClickComponent(driver, 'WebSchemeHandlerResponse');
+        if (await Utils.waitForExist(() => isReturn, 'testWebSchemeHandlerResponseConstructor001_returnCheck', 1, 1000)) {
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testWebSchemeHandlerResponseClass001
+     * @tc.number SUB_WEB_WEBSCHEMEHANDLERRESPONSE_CLASS_3600
+     * @tc.desc   test WebSchemeHandlerResponse class instanceof
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testWebSchemeHandlerResponseClass001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        Utils.emitEvent('WebSchemeHandlerResponse_class', EVENT_ID_SET_EMIT_KEY);
+        let isReturn = 0;
+        Utils.registerEvent('testWebSchemeHandlerResponseClass001', true, 202941, () => { isReturn = 1 });
+        await Utils.waitAndClickComponent(driver, 'WebSchemeHandlerResponse');
+        if (await Utils.waitForExist(() => isReturn, 'testWebSchemeHandlerResponseClass001_returnCheck', 1, 1000)) {
+          done();
+        }
+      })
   })
 }

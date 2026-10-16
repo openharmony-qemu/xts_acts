@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
@@ -57,15 +57,18 @@ export default function listRepeatTrue() {
       console.info("[listRepeatTrue_0100] onText1 is: " + onText1);
       expect(onText1).assertEqual(null);
 
-      let listItem0 = CommonFunc.getComponentRectOnScreen('list_repeat_true_4');
+      let listItem0Comp = await driver.findComponent(ON.id('list_repeat_true_4'));
+      let listItem0 = await listItem0Comp.getBounds();
       let left = listItem0.left;
       let right = listItem0.right;
       console.info("listRepeatTrue_0100 value is" + left + " --" + right);
       let width = right - left;
       console.info("[listRepeatTrue_0100] listItem0 width is: " + width);
-      let listItem1 = CommonFunc.getComponentRectOnScreen('list_repeat_true_6');
+      let listItem1Comp = await driver.findComponent(ON.id('list_repeat_true_6'));
+      let listItem1 = await listItem1Comp.getBounds();
       console.info("[listRepeatTrue_0100] listItem1 right is: " + listItem1.right);
-      let listItem2 = CommonFunc.getComponentRectOnScreen('list_repeat_true_8');
+      let listItem2Comp = await driver.findComponent(ON.id('list_repeat_true_8'));
+      let listItem2 = await listItem2Comp.getBounds();
       console.info("[listRepeatTrue_0100] listItem2 left is: " + listItem2.left);
       expect(Math.floor(Math.abs(listItem2.left - listItem1.right - width)) <= 1).assertTrue();
       console.info('[listRepeatTrue_0100] END');

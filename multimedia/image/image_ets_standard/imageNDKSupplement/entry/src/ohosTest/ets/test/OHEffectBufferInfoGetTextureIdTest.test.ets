@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import testNapi from 'libimageEffect.so'
 import { JSON } from '@kit.ArkTS';
 
@@ -78,6 +78,21 @@ export default function OHEffectBufferInfoGetTextureIdTest() {
       const testName = "SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_GET_TEXTURE_ID_SUPP_003"
       console.info(TAG, testName, 'Start',);
       let result: number = testNapi.OHEffectBufferInfoGetTextureIdTest(CASE_INDEX_3);
+      console.info(TAG, testName, 'Success', JSON.stringify(result));
+      expect(result).assertEqual(EFFECT_ERROR_PARAM_INVALID);
+    });
+    /**
+     * @tc.number  SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_GET_TEXTURE_ID_SUPP_0400
+     * @tc.name    SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_GET_TEXTURE_ID_SUPP_0400
+     * @tc.desc    OHEffectBufferInfoGetTextureIdTest-EFFECT_ERROR_PARAM_INVALID
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_GET_TEXTURE_ID_SUPP_0400', Level.LEVEL0, () => {
+      const testName = "SUB_IMAGE_EFFECT_OH_EFFECT_BUFFER_INFO_GET_TEXTURE_ID_SUPP_0400"
+      console.info(TAG, testName, 'Start',);
+      let result: number = testNapi.OHEffectBufferInfoGetTextureIdTest(CASE_INDEX_4);
       console.info(TAG, testName, 'Success', JSON.stringify(result));
       expect(result).assertEqual(EFFECT_ERROR_PARAM_INVALID);
     });

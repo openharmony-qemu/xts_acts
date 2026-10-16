@@ -14,7 +14,7 @@
 * limitations under the License.
 */
 import zlib from '@ohos.zlib'
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic'
 import base from '@ohos.base'
 
 export default function ActsChecksumTest() { 

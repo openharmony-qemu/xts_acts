@@ -4,6 +4,8 @@
     "custom": [
       {
         "xts": [
+          "SystemCapability.Account.AppAccount",
+          "SystemCapability.Account.OsAccount",
           "SystemCapability.Multimedia.Media.Core",
           "SystemCapability.Multimedia.Media.CodecBase",
           "SystemCapability.Multimedia.Media.VideoDecoder",

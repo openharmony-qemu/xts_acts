@@ -243,10 +243,6 @@ napi_value OHConsumerSurfaceCreateWithSingleBufferModeUnusingTextImageAbnormal(n
     napi_callback_info info)
 {
     napi_value result = nullptr;
-    napi_value result1 = nullptr;
-    napi_value result2 = nullptr;
-    napi_value result3 = nullptr;
-    napi_create_array_with_length(env, ARR_NUMBER_3, &result);
     OH_NativeImage *nativeImage = OH_ConsumerSurface_CreateWithSingleBufferMode(true);
     NAPI_ASSERT(env, nativeImage != nullptr, "nativeImage == nullptr");
     OHNativeWindow *nativeWindow = OH_NativeImage_AcquireNativeWindow(nativeImage);
@@ -258,30 +254,19 @@ napi_value OHConsumerSurfaceCreateWithSingleBufferModeUnusingTextImageAbnormal(n
     OHNativeWindowBuffer *buffer = nullptr;
     int fenceFd = -1;
     int32_t ret0 = OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &buffer, &fenceFd);
-    if (ret0 == 0 && buffer == nullptr) {
-        napi_create_int32(env, FAIL, &result1);
-    } else {
-        napi_create_int32(env, SUCCESS, &result1);
-    }
-    napi_set_element(env, result, ARR_NUMBER_0, result1);
+    NAPI_ASSERT(env, ret0 == NATIVE_ERROR_OK, "ret0 != NATIVE_ERROR_OK");
     Region region{nullptr, PARAM_0};
     int32_t ret1 = OH_NativeWindow_NativeWindowFlushBuffer(nativeWindow, buffer, fenceFd, region);
+    NAPI_ASSERT(env, ret1 == NATIVE_ERROR_OK, "ret1 != NATIVE_ERROR_OK");
     int32_t ret2 = OH_NativeImage_AcquireNativeWindowBuffer(nativeImage, &buffer, &fenceFd);
+    NAPI_ASSERT(env, ret2 == NATIVE_ERROR_OK, "ret2 != NATIVE_ERROR_OK");
     int32_t ret3 = OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &buffer, &fenceFd);
-    if (ret1 != NATIVE_ERROR_OK || ret2 != NATIVE_ERROR_OK || ret3 != NATIVE_ERROR_NO_BUFFER) {
-        napi_create_int32(env, FAIL, &result2);
-    } else {
-        napi_create_int32(env, SUCCESS, &result2);
-    }
-    napi_set_element(env, result, ARR_NUMBER_1, result2);
+    NAPI_ASSERT(env, ret3 == NATIVE_ERROR_NO_BUFFER, "ret3 != NATIVE_ERROR_NO_BUFFER");
     int32_t ret4 = OH_NativeImage_ReleaseNativeWindowBuffer(nativeImage, buffer, fenceFd);
+    NAPI_ASSERT(env, ret4 == NATIVE_ERROR_OK, "ret4 != NATIVE_ERROR_OK");
     int32_t ret5 = OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &buffer, &fenceFd);
-    if (ret4 != NATIVE_ERROR_OK || ret5 != NATIVE_ERROR_OK) {
-        napi_create_int32(env, FAIL, &result3);
-    } else {
-        napi_create_int32(env, SUCCESS, &result3);
-    }
-    napi_set_element(env, result, ARR_NUMBER_2, result3);
+    NAPI_ASSERT(env, ret5 == NATIVE_ERROR_OK, "ret5 != NATIVE_ERROR_OK");
+    napi_create_int32(env, SUCCESS, &result);
     OH_NativeWindow_DestroyNativeWindowBuffer(buffer);
     OH_NativeWindow_DestroyNativeWindow(nativeWindow);
     OH_NativeImage_Destroy(&nativeImage);
@@ -691,20 +676,18 @@ napi_value OHNativeImageAcquireLatestNativeWindowBufferAbNormal01(napi_env env, 
     napi_value result = nullptr;
     OH_NativeImage *image = OH_ConsumerSurface_Create();
     InitNativeWindow *initNative = new InitNativeWindow(image);
-    OHNativeWindowBuffer *latestNativeWindowBuffer = nullptr;
     OHNativeWindowBuffer *NativeWindowBuffer = nullptr;
     OHNativeWindowBuffer *NativeWindowBuffer1 = nullptr;
     BufferHandle *handle1 = nullptr;
     int fenceFd = -1;
     // 生产3个buffer，返回最新的buffer地址
     int32_t ret = initNative->OH_FlushBuffer1(&handle1);
+    NAPI_ASSERT(env, ret == NATIVE_ERROR_OK, "ret != NATIVE_ERROR_OK");
     // 消费端请求buffer，保留最新的buffer
     int32_t ret1 = OH_NativeImage_AcquireLatestNativeWindowBuffer(image, &NativeWindowBuffer, &fenceFd);
+    NAPI_ASSERT(env, ret1 == NATIVE_ERROR_OK, "ret1 != NATIVE_ERROR_OK");
     BufferHandle *handle2 = OH_NativeWindow_GetBufferHandleFromNative(NativeWindowBuffer);
-    if (ret != 0 || ret1 != NATIVE_ERROR_OK || handle1 != handle2) {
-        napi_create_int32(env, ARR_NUMBER_1, &result);
-        return result;
-    }
+    NAPI_ASSERT(env, handle1 == handle2, "handle1 != handle2");
     //  消费端重复请求
     ret = OH_NativeImage_AcquireLatestNativeWindowBuffer(image, &NativeWindowBuffer1, &fenceFd);
     ret1 = OH_NativeImage_AcquireNativeWindowBuffer(image, &NativeWindowBuffer1, &fenceFd);
@@ -730,9 +713,6 @@ napi_value OHNativeImageAcquireLatestNativeWindowBufferAbNormal01(napi_env env, 
         napi_create_int32(env, FAIL, &result);
     }
     OH_NativeImage_Destroy(&image);
-    OH_NativeWindow_DestroyNativeWindowBuffer(latestNativeWindowBuffer);
-    OH_NativeWindow_DestroyNativeWindowBuffer(NativeWindowBuffer);
-    OH_NativeWindow_DestroyNativeWindowBuffer(NativeWindowBuffer1);
     delete initNative;
     return result;
 }
@@ -742,47 +722,41 @@ napi_value OHNativeImageAcquireLatestNativeWindowBufferAbNormal02(napi_env env, 
     napi_value result = nullptr;
     OH_NativeImage *image = OH_ConsumerSurface_Create();
     InitNativeWindow *initNative = new InitNativeWindow(image);
-    OHNativeWindowBuffer *LatestNativeWindowBuffer = nullptr;
     BufferHandle *handle1 = nullptr;
     // 生产3个buffer
     int32_t ret = initNative->OH_FlushBuffer1(&handle1);
+    NAPI_ASSERT(env, ret == NATIVE_ERROR_OK, "ret != NATIVE_ERROR_OK");
     OHNativeWindowBuffer *NativeWindowBuffer = nullptr;
     int fenceFd = -1;
     // 消费端请求buffer，保留最新的buffer
     int32_t ret1 = OH_NativeImage_AcquireLatestNativeWindowBuffer(image, &NativeWindowBuffer, &fenceFd);
     BufferHandle *handle2 = OH_NativeWindow_GetBufferHandleFromNative(NativeWindowBuffer);
-    if (ret1 != NATIVE_ERROR_OK || ret != 0 || handle1 != handle2) {
-        napi_create_int32(env, ARR_NUMBER_1, &result);
-        return result;
-    }
+    NAPI_ASSERT(env, ret1 == NATIVE_ERROR_OK, "ret1 != NATIVE_ERROR_OK");
+    NAPI_ASSERT(env, handle1 == handle2, "handle1 != handle2");
     // 消费端释放buffer
     OH_NativeImage_ReleaseNativeWindowBuffer(image, NativeWindowBuffer, fenceFd);
     // 生产2个buffer
     ret = initNative->OH_FlushBuffer1(&handle1, 2);
+    NAPI_ASSERT(env, ret == NATIVE_ERROR_OK, "ret != NATIVE_ERROR_OK");
     // 消费端请求buffer，保留最新的buffer
     ret1 = OH_NativeImage_AcquireLatestNativeWindowBuffer(image, &NativeWindowBuffer, &fenceFd);
     handle2 = OH_NativeWindow_GetBufferHandleFromNative(NativeWindowBuffer);
-    if (ret1 != 0 || ret != 0 || handle1 != handle2) {
-        napi_create_int32(env, ARR_NUMBER_2, &result);
-        return result;
-    }
+    NAPI_ASSERT(env, ret1 == NATIVE_ERROR_OK, "ret1 != NATIVE_ERROR_OK");
+    NAPI_ASSERT(env, handle1 == handle2, "handle1 != handle2");
     // 消费端释放buffer
     OH_NativeImage_ReleaseNativeWindowBuffer(image, NativeWindowBuffer, fenceFd);
     // 生产1个buffer
     ret = initNative->OH_FlushBuffer1(&handle1, 1);
+    NAPI_ASSERT(env, ret == NATIVE_ERROR_OK, "ret != NATIVE_ERROR_OK");
     // 消费端请求buffer，保留最新的buffer
     ret1 = OH_NativeImage_AcquireLatestNativeWindowBuffer(image, &NativeWindowBuffer, &fenceFd);
     handle2 = OH_NativeWindow_GetBufferHandleFromNative(NativeWindowBuffer);
-    if (ret1 != 0 || ret != 0 || handle1 != handle2) {
-        napi_create_int32(env, ARR_NUMBER_3, &result);
-        return result;
-    }
+    NAPI_ASSERT(env, ret1 == NATIVE_ERROR_OK, "ret1 != NATIVE_ERROR_OK");
+    NAPI_ASSERT(env, handle1 == handle2, "handle1 != handle2");
     // 消费端释放buffer
     OH_NativeImage_ReleaseNativeWindowBuffer(image, NativeWindowBuffer, fenceFd);
     napi_create_int32(env, SUCCESS, &result);
     OH_NativeImage_Destroy(&image);
-    OH_NativeWindow_DestroyNativeWindowBuffer(LatestNativeWindowBuffer);
-    OH_NativeWindow_DestroyNativeWindowBuffer(NativeWindowBuffer);
     delete initNative;
     return result;
 }
@@ -792,32 +766,26 @@ napi_value OHNativeImageAcquireLatestNativeWindowBufferAbNormal03(napi_env env, 
     napi_value result = nullptr;
     OH_NativeImage *image = OH_ConsumerSurface_Create();
     InitNativeWindow *initNative = new InitNativeWindow(image);
-    OHNativeWindowBuffer *LatestNativeWindowBuffer = nullptr;
     OHNativeWindowBuffer *NativeWindowBuffer = nullptr;
     BufferHandle *handle1 = nullptr;
     int fenceFd = -1;
     // 未生产buffer直接，消费端直接请求
     int32_t ret = OH_NativeImage_AcquireLatestNativeWindowBuffer(image, &NativeWindowBuffer, &fenceFd);
-    if (ret != NATIVE_ERROR_NO_BUFFER) {
-        napi_create_int32(env, ARR_NUMBER_1, &result);
-        return result;
-    }
+    NAPI_ASSERT(env, ret == NATIVE_ERROR_NO_BUFFER, "ret != NATIVE_ERROR_NO_BUFFER");
     int32_t ret1 = initNative->OH_FlushBuffer1(&handle1);
+    NAPI_ASSERT(env, ret1 == NATIVE_ERROR_OK, "ret1 != NATIVE_ERROR_OK");
     ret = OH_NativeImage_AcquireLatestNativeWindowBuffer(image, &NativeWindowBuffer, &fenceFd);
+    NAPI_ASSERT(env, ret == NATIVE_ERROR_OK, "ret != NATIVE_ERROR_OK");
     BufferHandle *handle2 = OH_NativeWindow_GetBufferHandleFromNative(NativeWindowBuffer);
-    if (ret != 0 || ret1 != 0 || handle1 != handle2) {
-        napi_create_int32(env, ARR_NUMBER_2, &result);
-        return result;
-    }
+    NAPI_ASSERT(env, handle1 == handle2, "handle1 != handle2");
+   
     // releaseBuffer后调用AcquireLatestNativeWindowBuffer
     int32_t ret2 = OH_NativeImage_ReleaseNativeWindowBuffer(image, NativeWindowBuffer, fenceFd);
+    NAPI_ASSERT(env, ret2 == NATIVE_ERROR_OK, "ret2 != NATIVE_ERROR_OK");
     ret = OH_NativeImage_AcquireLatestNativeWindowBuffer(image, &NativeWindowBuffer, &fenceFd);
-    if (ret2 != 0 || ret != NATIVE_ERROR_NO_BUFFER) {
-        napi_create_int32(env, ARR_NUMBER_3, &result);
-        return result;
-    }
+    NAPI_ASSERT(env, ret == NATIVE_ERROR_NO_BUFFER, "ret != NATIVE_ERROR_NO_BUFFER");
+    
     napi_create_int32(env, SUCCESS, &result);
-    OH_NativeWindow_DestroyNativeWindowBuffer(LatestNativeWindowBuffer);
     OH_NativeWindow_DestroyNativeWindowBuffer(NativeWindowBuffer);
     OH_NativeImage_Destroy(&image);
     delete initNative;
@@ -829,27 +797,21 @@ napi_value OHNativeImageAcquireLatestNativeWindowBufferCall(napi_env env, napi_c
     napi_value result = nullptr;
     OH_NativeImage *image = OH_ConsumerSurface_Create();
     InitNativeWindow *initNative = new InitNativeWindow(image);
-    OHNativeWindowBuffer *latestNativeWindowBuffer = nullptr;
     OHNativeWindowBuffer *NativeWindowBuffer = nullptr;
     BufferHandle *handle1 = nullptr;
     int fenceFd = -1;
     int num = 10;
     for (int i = 0; i < num; i++) {
         int32_t ret1 = initNative->OH_FlushBuffer1(&handle1);
+        NAPI_ASSERT(env, ret1 == NATIVE_ERROR_OK, "ret1 != NATIVE_ERROR_OK");
         int32_t ret2 = OH_NativeImage_AcquireLatestNativeWindowBuffer(image, &NativeWindowBuffer, &fenceFd);
+        NAPI_ASSERT(env, ret2 == NATIVE_ERROR_OK, "ret2 != NATIVE_ERROR_OK");
         BufferHandle *handle2 = OH_NativeWindow_GetBufferHandleFromNative(NativeWindowBuffer);
-        if (ret1 != NATIVE_ERROR_OK || ret2 != NATIVE_ERROR_OK || handle1 != handle2) {
-            napi_create_int32(env, ARR_NUMBER_1, &result);
-            return result;
-        }
+        NAPI_ASSERT(env, handle1 == handle2, "handle1 != handle2");
         int32_t ret3 = OH_NativeImage_ReleaseNativeWindowBuffer(image, NativeWindowBuffer, fenceFd);
-        if (ret3 != 0) {
-            napi_create_int32(env, ARR_NUMBER_2, &result);
-            return result;
-        }
+        NAPI_ASSERT(env, ret3 == NATIVE_ERROR_OK, "ret3 != NATIVE_ERROR_OK");
     }
     napi_create_int32(env, SUCCESS, &result);
-    OH_NativeWindow_DestroyNativeWindowBuffer(latestNativeWindowBuffer);
     OH_NativeWindow_DestroyNativeWindowBuffer(NativeWindowBuffer);
     OH_NativeImage_Destroy(&image);
     delete initNative;

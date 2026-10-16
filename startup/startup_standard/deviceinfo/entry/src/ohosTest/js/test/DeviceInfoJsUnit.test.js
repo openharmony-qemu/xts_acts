@@ -2323,5 +2323,82 @@ export default function DeviceInfoTest() {
             expect(len).assertEqual(MAX_CHARACTERS_NUM_TWO - 1)
             console.info('testGetUdid003 : end');
         })
+
+        /**
+         * @tc.name   testGetKernelVersion001
+         * @tc.number SUB_STARTUP_JS_DEVCEINFO_8800
+         * @tc.desc   Get the kernel version represented by a string and the return value is not null.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testGetKernelVersion001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info('testGetKernelVersion001 start');
+            let kernelVersionInfo = deviceinfo.kernelVersion;
+            
+            if (kernelVersionInfo != "" && kernelVersionInfo != null && kernelVersionInfo != undefined) {
+                console.info('the value of the deviceinfo kernelVersion is :' + kernelVersionInfo);
+                expect(kernelVersionInfo).assertInstanceOf('String');
+                done();
+            } else {
+                console.info('the return value kernelVersion is null or incorrect.');
+                expect().assertFail();
+                done();
+            }
+
+            console.info('testGetKernelVersion001 : end');
+        })
+
+        /**
+         * @tc.name   testGetKernelVersion002
+         * @tc.number SUB_STARTUP_JS_DEVCEINFO_8900
+         * @tc.desc   Get the kernel version format which should be 'HongMeng Kernel X.Y.Z'.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testGetKernelVersion002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info('testGetKernelVersion002 start');
+            let kernelVersionInfo = deviceinfo.kernelVersion;
+            console.info('the value of the deviceinfo kernelVersion is :' + kernelVersionInfo);
+
+            if (kernelVersionInfo != "" && kernelVersionInfo != null && kernelVersionInfo != undefined) {
+                expect(kernelVersionInfo).assertInstanceOf('String');
+                let charArray = kernelVersionInfo.split('');
+                let bufferstr = '';
+                for (let i = 0; i < charArray.length; i++) {
+                    console.info('the value of the char[' + i + '] is :' + charArray[i]);
+                    bufferstr += charArray[i];
+                }
+                console.info('the value of the bufferstr is :' + bufferstr);
+                expect(kernelVersionInfo).assertEqual(bufferstr);
+                done();
+            } else {
+                console.info('the return value kernelVersion is null or incorrect.');
+                expect().assertFail();
+                done();
+            }
+
+            console.info('testGetKernelVersion002 : end');
+        })
+
+        /**
+         * @tc.name   testGetKernelVersion003
+         * @tc.number SUB_STARTUP_JS_DEVCEINFO_9000
+         * @tc.desc   Get the kernel version which has at least one characters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testGetKernelVersion003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+            console.info('testGetKernelVersion003 start');
+            let kernelVersionInfo = deviceinfo.kernelVersion;
+            console.info('the value of the deviceinfo kernelVersion is :' + kernelVersionInfo);
+
+            let len = kernelVersionInfo.length;
+            console.info('the value of the kernel version characters is :' + len);
+            expect(len).assertLarger(MAX_CHARACTERS_NUM);
+            console.info('testGetKernelVersion003 : end');
+        })
     })
 }

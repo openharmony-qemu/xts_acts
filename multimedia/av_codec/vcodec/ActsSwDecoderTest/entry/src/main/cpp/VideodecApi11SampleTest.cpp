@@ -16,6 +16,7 @@
 #include <arpa/inet.h>
 #include <native_window/external_window.h>
 #include <sys/time.h>
+#include <cctype>
 #include <unistd.h>
 #include <utility>
 #include <CryptoArchitectureKit/crypto_digest.h>
@@ -275,6 +276,9 @@ int32_t VDecAPI11Sample::ConfigureVideoDecoder()
     (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, defaultFrameRate);
     if (useHDRSource) {
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PROFILE, DEFAULT_PROFILE);
+    }
+    if (enableDmabufNameSuffix) {
+        (void)OH_AVFormat_SetStringValue(format, OH_MD_KEY_VIDEO_SET_DMABUF_NAME_SUFFIX, dmabufNameSuffix.c_str());
     }
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_ENABLE_SYNC_MODE, enbleSyncMode);
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_DECODER_BLANK_FRAME_ON_SHUTDOWN, enbleBlankFrame);

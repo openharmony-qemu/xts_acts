@@ -108,6 +108,8 @@ public:
     bool needAutoSwitch = true;
     int32_t beforeSwitchTransform = -1;
     int32_t afterSwitchTransform = -2;
+    bool enableDmabufNameSuffix = false;
+    std::string dmabufNameSuffix;
     int32_t Start();
     int32_t Stop();
     int32_t Flush();
@@ -117,6 +119,7 @@ public:
     void SetEOS(uint32_t index, OH_AVBuffer* buffer);
     void WaitForEOS();
     int32_t ConfigureVideoDecoder();
+    void SetConfigure(OH_AVFormat *format);
     int32_t StartDecoder();
     int32_t StartSyncDecoder();
     int32_t StartVideoDecoder();

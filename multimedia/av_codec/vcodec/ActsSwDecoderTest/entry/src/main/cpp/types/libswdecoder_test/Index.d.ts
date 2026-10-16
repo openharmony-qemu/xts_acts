@@ -132,6 +132,7 @@ export const VideoDecodeSyncSw264Func0010: () => Promise<number>;
 export const VideoDecodeSyncSw264Func0020: () => Promise<number>;
 export const VideoDecodeSyncSw264Func0040: () => Promise<number>;
 export const VideoSwdecodeBlankFrame0010: () => Promise<number>;
+export const VideoDecoderS264DmabufSuffix0010: () => Promise<number>;
 
 export const VideoSwdecState0100: () => Promise<number>;
 export const VideoSwdecState0101: () => Promise<number>;

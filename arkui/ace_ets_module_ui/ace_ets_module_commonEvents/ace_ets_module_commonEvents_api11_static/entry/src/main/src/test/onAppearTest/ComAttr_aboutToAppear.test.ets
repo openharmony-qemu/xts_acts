@@ -31,12 +31,13 @@ import {
   UIEventObserver,
   UiWindow,
   WindowMode
-} from '@ohos.UiTest';
+} from '@kit.TestKit';
 import config from '@ohos.accessibility.config';
 import accessibility from '@ohos.accessibility';
 import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 
 export default function aboutToAppearTest() {
@@ -88,7 +89,7 @@ it('aboutToAppearTest_static_0100', Level.LEVEL0, async (done: () => void): Prom
       await CommonFunc.sleep(2000);
       let point = await (closeButton?.getBoundsCenter() as Promise<Point>);
       await CommonFunc.sleep(1000);
-      await driver.click(point.x, point.y)
+      await driver.clickAt({x: point.x, y: point.y, displayId: displayID})
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('aboutToAppear');
       let obj = JSON.parseJsonElement(strJson);
@@ -119,7 +120,7 @@ it('aboutToAppearTest_static_0200', Level.LEVEL0, async (done: () => void): Prom
       let closeButton: Component | null = await driver.findComponent(ON.id('close'))!;
       let point = await (closeButton?.getBoundsCenter() as Promise<Point>);
       await CommonFunc.sleep(1000);
-      await driver.click(point.x, point.y)
+      await driver.clickAt({x: point.x, y: point.y, displayId: displayID})
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('aboutToAppear');
       let obj = JSON.parseJsonElement(strJson);

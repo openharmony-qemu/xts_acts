@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic'
 import router from '@ohos.router';
 import display from '@ohos.display';
 import events_emitter from '@ohos.events.emitter';
@@ -105,12 +105,14 @@ export default function saveComponentUserCancelTest() {
       try {
         let driver = Driver.create();
         let button = await driver.findComponent(ON.type('SaveButton'));
-        await Utils.sleep(500);
+        await Utils.sleep(3000);
         console.info('====>[Test_Security_Button_SaveCancel_0100] button is:' + JSON.stringify(button));
         await button.click();
         await Utils.sleep(1000);
         let cancelBtn = await driver.findComponent(ON.text('取消'));
+        await Utils.sleep(3000);
         let titleTx = await driver.findComponent(ON.text('安全保存图片和视频'));
+        await Utils.sleep(3000);
         console.info('====>[Test_Security_Button_SaveCancel_0100] cancelBtn is:' + JSON.stringify(cancelBtn));
         console.info('====>[Test_Security_Button_SaveCancel_0100] titleTx is:' + JSON.stringify(titleTx));
         if(cancelBtn !== null){
@@ -134,6 +136,7 @@ export default function saveComponentUserCancelTest() {
             await Utils.sleep(100);
           }
           let cancelBtn = await driver.findComponent(ON.text('取消'));
+          await Utils.sleep(3000);
           console.info('====>[Test_Security_Button_SaveCancel_0100] cancelBtn is:' + JSON.stringify(cancelBtn));
           console.info('====>[Test_Security_Button_SaveCancel_0100] cancelBtnClick START====');
           await cancelBtn.click();
@@ -207,12 +210,14 @@ export default function saveComponentUserCancelTest() {
       try {
         let driver = Driver.create();
         let button = await driver.findComponent(ON.type('SaveButton'));
-        await Utils.sleep(500);
+        await Utils.sleep(3000);
         console.info('====>[Test_Security_Button_SaveCancel_0200] button is:' + JSON.stringify(button));
         await button.click();
         await Utils.sleep(1000);
         let allowBtn = await driver.findComponent(ON.text('允许'));
+        await Utils.sleep(3000);
         let titleTx = await driver.findComponent(ON.text('安全保存图片和视频'));
+        await Utils.sleep(3000);
         console.info('====>[Test_Security_Button_SaveCancel_0200] allowBtn is:' + JSON.stringify(allowBtn));
         console.info('====>[Test_Security_Button_SaveCancel_0200] titleTx is:' + JSON.stringify(titleTx));
         if(allowBtn !== null){
@@ -236,6 +241,7 @@ export default function saveComponentUserCancelTest() {
             await Utils.sleep(100);
           }
           let allowBtn = await driver.findComponent(ON.text('允许'));
+          await Utils.sleep(3000);
           console.info('====>[Test_Security_Button_SaveCancel_0200] allowBtn is:' + JSON.stringify(allowBtn));
           console.info('====>[Test_Security_Button_SaveCancel_0200] allowBtnClick START====');
           await allowBtn.click();
@@ -309,11 +315,12 @@ export default function saveComponentUserCancelTest() {
       try {
         let driver = Driver.create();
         let button = await driver.findComponent(ON.type('SaveButton'));
-        await Utils.sleep(500);
+        await Utils.sleep(3000);
         console.info('====>[Test_Security_Button_SaveCancel_0300] button is:' + JSON.stringify(button));
         await button.click();
         await Utils.sleep(1000);
         let allowBtn = await driver.findComponent(ON.text('允许'));
+        await Utils.sleep(3000);
         console.info('====>[Test_Security_Button_SaveCancel_0300] allowBtn is:' + JSON.stringify(allowBtn));
         if(allowBtn !== null){
           console.info('====>[Test_Security_Button_SaveCancel_0300] allowBtnClick START====');

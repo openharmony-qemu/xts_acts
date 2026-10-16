@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import RectValue from '../../../MainAbility/common/Rect';
 import CommonFunc from "../../../MainAbility/common/Common";
@@ -46,28 +46,37 @@ export default function ColumnSetPadding_SubChangeMar() {
     });
 
     /**
-     * @tc.name   testColumnParentPaddingSubMargin
-     * @tc.number SUB_ACE_COLUMN_SUBCOMPONENTCHANGED_0400
+     * @tc.name   ColumnSetPadding_SubChangeMar_0100
+     * @tc.number SUB_ACE_ARKUI_ColumnSetPadding_SubChangeMar_0100
      * @tc.desc   Parent component set paddding,subcomponent set margin.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testColumnParentPaddingSubMargin',  Level.LEVEL0, async () => {
-      console.info('new testColumnParentPaddingSubMargin START');
+    it('ColumnSetPadding_SubChangeMar_0100',  Level.LEVEL0, async () => {
+      console.info('new ColumnSetPadding_SubChangeMar_0100 START');
       await CommonFunc.sleep(2000);
       let columnSetPad_1: RectValue = CommonFunc.getComponentRect('columnSetPad_1');
       let columnSetPad_2: RectValue = CommonFunc.getComponentRect('columnSetPad_2');
       let columnSetPad_3: RectValue = CommonFunc.getComponentRect('columnSetPad_3');
       let columnSetPad: RectValue = CommonFunc.getComponentRect('columnSetPad');
-      expect(Math.abs(columnSetPad_1.top - columnSetPad.top - Math.round(vp2px(40))) <= 1).assertTrue()
-      expect(Math.abs(columnSetPad_2.top - columnSetPad_1.bottom - Math.round(vp2px(50))) <= 1).assertTrue()
-      expect(Math.abs(columnSetPad_3.top - columnSetPad_2.bottom - Math.round(vp2px(30))) <= 1).assertTrue()
       expect(columnSetPad.bottom).assertLess(columnSetPad_3.bottom)
-      expect(Math.abs(columnSetPad_1.right - columnSetPad_1.left - Math.round(vp2px(300))) <= 1).assertTrue()
-      expect(Math.abs(columnSetPad_2.right - columnSetPad_2.left - Math.round(vp2px(300))) <= 1).assertTrue()
-      expect(Math.abs(columnSetPad_3.right - columnSetPad_3.left - Math.round(vp2px(300))) <= 1).assertTrue()
-      console.info('new testColumnParentPaddingSubMargin END');
+
+      console.info('ColumnSetPadding_SubChangeMar_0100 chazhi1:'+ Math.floor(Math.abs((columnSetPad_1.top - columnSetPad.top) - vp2px(40))));
+      console.info('ColumnSetPadding_SubChangeMar_0100 chazhi2:'+ Math.floor(Math.abs((columnSetPad_2.top - columnSetPad_1.bottom) - vp2px(50))));
+      console.info('ColumnSetPadding_SubChangeMar_0100 chazhi3:'+ Math.floor(Math.abs((columnSetPad_3.top - columnSetPad_2.bottom) - vp2px(30))));
+      console.info('ColumnSetPadding_SubChangeMar_0100 chazhi4:'+ Math.floor(Math.abs((columnSetPad_1.right - columnSetPad_1.left) - vp2px(300))));
+      console.info('ColumnSetPadding_SubChangeMar_0100 chazhi5:'+ Math.floor(Math.abs((columnSetPad_2.right - columnSetPad_2.left) - vp2px(300))));
+      console.info('ColumnSetPadding_SubChangeMar_0100 chazhi6:'+ Math.floor(Math.abs((columnSetPad_3.right - columnSetPad_3.left) - vp2px(300))));
+
+      expect(Math.floor(Math.abs((columnSetPad_1.top - columnSetPad.top) - vp2px(40))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((columnSetPad_2.top - columnSetPad_1.bottom) - vp2px(50))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((columnSetPad_3.top - columnSetPad_2.bottom) - vp2px(30))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((columnSetPad_1.right - columnSetPad_1.left) - vp2px(300))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((columnSetPad_2.right - columnSetPad_2.left) - vp2px(300))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((columnSetPad_3.right - columnSetPad_3.left) - vp2px(300))) <= 1).assertTrue()
+
+      console.info('new ColumnSetPadding_SubChangeMar_0100 END');
     });
   })
 }

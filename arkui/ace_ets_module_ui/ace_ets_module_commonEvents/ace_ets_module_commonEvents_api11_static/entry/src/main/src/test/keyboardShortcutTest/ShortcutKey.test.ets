@@ -15,7 +15,7 @@
  */
 
 import { afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
-import { Component, Driver, ON } from '@ohos.UiTest'
+import { Component, Driver, ON } from '@kit.TestKit'
 import router from '@ohos.router'
 import emitter from '@ohos.events.emitter';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -27,6 +27,7 @@ import { FunctionKey } from '@ohos.arkui.component'
 import { KeyCode } from '@ohos.multimodalInput.keyCode'
 import { RecordData } from '@ohos.base';
 
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function ShortcutKeyTest() {
 
   const SUITE = 'ShortcutKey'
@@ -116,7 +117,7 @@ it('ArkUI_Shortcut_Key_static_0100', Level.LEVEL0, async () => {
       }
       emitter.on(event, callback);
       let driver = Driver.create()
-      await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_B)
+      await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_B, 0, displayID)
 
       console.info(`${SUITE} ${CASE} END`);
     });
@@ -144,7 +145,7 @@ it('ArkUI_Shortcut_Key_static_0200', Level.LEVEL0, async () => {
       }
       emitter.on(event, callback);
       let driver = Driver.create()
-      await driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_1);
+      await driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_1, 0, displayID);
 
       console.info(`${SUITE} ${CASE} END`);
     });
@@ -172,7 +173,7 @@ it('ArkUI_Shortcut_Key_static_0300', Level.LEVEL0, async () => {
       }
       emitter.on(event, callback);
       let driver = Driver.create()
-      await driver.triggerCombineKeys(KeyCode.KEYCODE_ALT_LEFT, KeyCode.KEYCODE_Q);
+      await driver.triggerCombineKeys(KeyCode.KEYCODE_ALT_LEFT, KeyCode.KEYCODE_Q, 0, displayID);
 
       console.info(`${SUITE} ${CASE} END`);
     });
@@ -208,7 +209,7 @@ it('ArkUI_Shortcut_Key_static_0400', Level.LEVEL0, async () => {
           priority: emitter.EventPriority.LOW
         }
         emitter.on(event, callback);
-        await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, arr_keyCode[i])
+        await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, arr_keyCode[i], 0, displayID)
       }
 
       console.info(`${SUITE} ${CASE} END`);

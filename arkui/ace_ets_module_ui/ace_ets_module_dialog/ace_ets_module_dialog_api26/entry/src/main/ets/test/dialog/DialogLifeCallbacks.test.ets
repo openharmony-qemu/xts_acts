@@ -13,27 +13,41 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-dynamic';
+import router from '@ohos.router';
 import { Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
-import DialogApi26TestHelper from '../common/DialogApi26TestHelper';
+
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 
 export default function DialogLifeCallbacks() {
   describe('DialogLifeCallbacks', () => {
     beforeEach(async (done: Function) => {
       console.info('[ARKUI_DYN] DialogLifeCallbacks beforeEach');
-      await DialogApi26TestHelper.openPageIfNeeded('DialogLifeCallbacks', 'MainAbility/pages/dialog/DialogLifeCallbacks');
+      let options: router.RouterOptions = { url: 'MainAbility/pages/dialog/DialogLifeCallbacks' };
+      try {
+        router.clear();
+        let pages = router.getState();
+        if (pages.name !== 'DialogLifeCallbacks') {
+          await router.pushUrl(options);
+          await CommonFunc.sleep(2000);
+        }
+      } catch (err) {
+        console.error('[ARKUI_DYN] push DialogLifeCallbacks error: ' + err);
+        expect().assertFail();
+      }
       done();
     });
 
     afterEach(async () => {
-      console.info('[ARKUI_DYN] afterEach');
+      await CommonFunc.sleep(800);
+      try {
+        let driver = await Driver.create();
+        await driver.pressBack(displayID);
+      } catch (e) {
+        console.info('[ARKUI_DYN] pressBack skip');
+      }
     });
-    afterAll(async () => {
-      await DialogApi26TestHelper.leavePage();
-      console.info('[ARKUI_DYN] DialogLifeCallbacks afterAll');
-    });
-
     /**
      * @tc.number SUB_ArkUI_DialogApi26_DialogLifeCallbacks_0100
      * @tc.name SUB_ArkUI_DialogApi26_DialogLifeCallbacks_0100
@@ -45,14 +59,14 @@ export default function DialogLifeCallbacks() {
     it('SUB_ArkUI_DialogApi26_DialogLifeCallbacks_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogLifeCallbacks_0100 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(200);
-      let btn = await driver.waitForComponent(ON.id('btn_life_will_appear'), 5000);
+      await CommonFunc.sleep(800);
+      let btn = await driver.findComponent(ON.id('btn_life_will_appear'));
       expect(btn !== null).assertTrue();
       await btn.click();
-      await CommonFunc.sleep(200);
-      let node = await driver.waitForComponent(ON.text('WillAppearTitle'), 3000);
+      await CommonFunc.sleep(1200);
+      let node = await driver.findComponent(ON.text('WillAppearTitle'));
       expect(node !== null).assertTrue();
-      let act = await driver.waitForComponent(ON.text('WillAppearOK'), 3000);
+      let act = await driver.findComponent(ON.text('WillAppearOK'));
       expect(act !== null).assertTrue();
       await act.click();
       await CommonFunc.sleep(1000);
@@ -75,14 +89,14 @@ export default function DialogLifeCallbacks() {
     it('SUB_ArkUI_DialogApi26_DialogLifeCallbacks_0200', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogLifeCallbacks_0200 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(200);
-      let btn = await driver.waitForComponent(ON.id('btn_life_did_appear'), 5000);
+      await CommonFunc.sleep(800);
+      let btn = await driver.findComponent(ON.id('btn_life_did_appear'));
       expect(btn !== null).assertTrue();
       await btn.click();
-      await CommonFunc.sleep(200);
-      let node = await driver.waitForComponent(ON.text('DidAppearTitle'), 3000);
+      await CommonFunc.sleep(1200);
+      let node = await driver.findComponent(ON.text('DidAppearTitle'));
       expect(node !== null).assertTrue();
-      let act = await driver.waitForComponent(ON.text('DidAppearOK'), 3000);
+      let act = await driver.findComponent(ON.text('DidAppearOK'));
       expect(act !== null).assertTrue();
       await act.click();
       await CommonFunc.sleep(1000);
@@ -105,14 +119,14 @@ export default function DialogLifeCallbacks() {
     it('SUB_ArkUI_DialogApi26_DialogLifeCallbacks_0300', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogLifeCallbacks_0300 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(200);
-      let btn = await driver.waitForComponent(ON.id('btn_life_will_disappear'), 5000);
+      await CommonFunc.sleep(800);
+      let btn = await driver.findComponent(ON.id('btn_life_will_disappear'));
       expect(btn !== null).assertTrue();
       await btn.click();
-      await CommonFunc.sleep(200);
-      let node = await driver.waitForComponent(ON.text('WillDisappearTitle'), 3000);
+      await CommonFunc.sleep(1200);
+      let node = await driver.findComponent(ON.text('WillDisappearTitle'));
       expect(node !== null).assertTrue();
-      let act = await driver.waitForComponent(ON.text('WillDisappearOK'), 3000);
+      let act = await driver.findComponent(ON.text('WillDisappearOK'));
       expect(act !== null).assertTrue();
       await act.click();
       await CommonFunc.sleep(1000);
@@ -135,14 +149,14 @@ export default function DialogLifeCallbacks() {
     it('SUB_ArkUI_DialogApi26_DialogLifeCallbacks_0400', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogLifeCallbacks_0400 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(200);
-      let btn = await driver.waitForComponent(ON.id('btn_life_did_disappear'), 5000);
+      await CommonFunc.sleep(800);
+      let btn = await driver.findComponent(ON.id('btn_life_did_disappear'));
       expect(btn !== null).assertTrue();
       await btn.click();
-      await CommonFunc.sleep(200);
-      let node = await driver.waitForComponent(ON.text('DidDisappearTitle'), 3000);
+      await CommonFunc.sleep(1200);
+      let node = await driver.findComponent(ON.text('DidDisappearTitle'));
       expect(node !== null).assertTrue();
-      let act = await driver.waitForComponent(ON.text('DidDisappearOK'), 3000);
+      let act = await driver.findComponent(ON.text('DidDisappearOK'));
       expect(act !== null).assertTrue();
       await act.click();
       await CommonFunc.sleep(1000);
@@ -165,14 +179,14 @@ export default function DialogLifeCallbacks() {
     it('SUB_ArkUI_DialogApi26_DialogLifeCallbacks_0500', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogLifeCallbacks_0500 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(200);
-      let btn = await driver.waitForComponent(ON.id('btn_life_full'), 5000);
+      await CommonFunc.sleep(800);
+      let btn = await driver.findComponent(ON.id('btn_life_full'));
       expect(btn !== null).assertTrue();
       await btn.click();
-      await CommonFunc.sleep(200);
-      let node = await driver.waitForComponent(ON.text('FullLifeTitle'), 3000);
+      await CommonFunc.sleep(1200);
+      let node = await driver.findComponent(ON.text('FullLifeTitle'));
       expect(node !== null).assertTrue();
-      let act = await driver.waitForComponent(ON.text('FullLifeOK'), 3000);
+      let act = await driver.findComponent(ON.text('FullLifeOK'));
       expect(act !== null).assertTrue();
       await act.click();
       await CommonFunc.sleep(1000);
@@ -195,14 +209,14 @@ export default function DialogLifeCallbacks() {
     it('SUB_ArkUI_DialogApi26_DialogLifeCallbacks_0600', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogLifeCallbacks_0600 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(200);
-      let btn = await driver.waitForComponent(ON.id('btn_life_will_dismiss'), 5000);
+      await CommonFunc.sleep(800);
+      let btn = await driver.findComponent(ON.id('btn_life_will_dismiss'));
       expect(btn !== null).assertTrue();
       await btn.click();
-      await CommonFunc.sleep(200);
-      let node = await driver.waitForComponent(ON.text('DismissLifeTitle'), 3000);
+      await CommonFunc.sleep(1200);
+      let node = await driver.findComponent(ON.text('DismissLifeTitle'));
       expect(node !== null).assertTrue();
-      await driver.pressBack();
+      await driver.pressBack(displayID);
       await CommonFunc.sleep(1000);
       let label = await driver.findComponent(ON.id('life_cb_action'));
       expect(label !== null).assertTrue();
@@ -223,14 +237,14 @@ export default function DialogLifeCallbacks() {
     it('SUB_ArkUI_DialogApi26_DialogLifeCallbacks_0700', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogLifeCallbacks_0700 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(200);
-      let btn = await driver.waitForComponent(ON.id('btn_life_subtitle'), 5000);
+      await CommonFunc.sleep(800);
+      let btn = await driver.findComponent(ON.id('btn_life_subtitle'));
       expect(btn !== null).assertTrue();
       await btn.click();
-      await CommonFunc.sleep(200);
-      let node = await driver.waitForComponent(ON.text('SubOnlyTitle'), 3000);
+      await CommonFunc.sleep(1200);
+      let node = await driver.findComponent(ON.text('SubOnlyTitle'));
       expect(node !== null).assertTrue();
-      let act = await driver.waitForComponent(ON.text('SubOnlyOK'), 3000);
+      let act = await driver.findComponent(ON.text('SubOnlyOK'));
       expect(act !== null).assertTrue();
       await act.click();
       await CommonFunc.sleep(1000);
@@ -253,14 +267,14 @@ export default function DialogLifeCallbacks() {
     it('SUB_ArkUI_DialogApi26_DialogLifeCallbacks_0800', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogLifeCallbacks_0800 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(200);
-      let btn = await driver.waitForComponent(ON.id('btn_life_tsm'), 5000);
+      await CommonFunc.sleep(800);
+      let btn = await driver.findComponent(ON.id('btn_life_tsm'));
       expect(btn !== null).assertTrue();
       await btn.click();
-      await CommonFunc.sleep(200);
-      let node = await driver.waitForComponent(ON.text('TSMTitle'), 3000);
+      await CommonFunc.sleep(1200);
+      let node = await driver.findComponent(ON.text('TSMTitle'));
       expect(node !== null).assertTrue();
-      let act = await driver.waitForComponent(ON.text('TSMOK'), 3000);
+      let act = await driver.findComponent(ON.text('TSMOK'));
       expect(act !== null).assertTrue();
       await act.click();
       await CommonFunc.sleep(1000);

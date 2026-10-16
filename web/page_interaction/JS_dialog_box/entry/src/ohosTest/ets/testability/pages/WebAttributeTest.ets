@@ -236,6 +236,42 @@ struct WebAttributeTest {
                   }
                   break;
               }
+              case 'emitJsResultConstructor001': {
+                Utils.emitEvent(true, 177170);
+                break;
+              }
+              case 'emitScreenCaptureHandlerConstructor001': {
+                Utils.emitEvent(true, 177180);
+                break;
+              }
+              case 'emitJsGeolocationConstructor001': {
+                Utils.emitEvent(true, 177190);
+                break;
+              }
+              case 'emitJsResultConstructorReturn001': {
+                Utils.emitEvent(true, 177171);
+                break;
+              }
+              case 'emitJsResultClass001': {
+                Utils.emitEvent(true, 177172);
+                break;
+              }
+              case 'emitScreenCaptureHandlerConstructorReturn001': {
+                Utils.emitEvent(true, 177181);
+                break;
+              }
+              case 'emitScreenCaptureHandlerClass001': {
+                Utils.emitEvent(true, 177182);
+                break;
+              }
+              case 'emitJsGeolocationConstructorReturn001': {
+                Utils.emitEvent(true, 177191);
+                break;
+              }
+              case 'emitJsGeolocationClass001': {
+                Utils.emitEvent(true, 177192);
+                break;
+              }
             }
           })
 

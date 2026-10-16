@@ -14,7 +14,7 @@
  */
 
 import { HashSet } from '@kit.ArkTS';
-import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium';
+import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import { SYMBOL_A, SYMBOL_B, SYMBOL_C, SYMBOL_D, SYMBOL_E } from '../../../../js/hashmap/SymbolValues';
 
 interface SymbolInvalidObject { marker: string; }

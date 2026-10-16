@@ -16,7 +16,7 @@
 #include "include/DrawingNativeMemoryStreamTest.h"
 #include "include/OhosCommonTest.h"
 
-#define DRAWING_NUMBER_10 10
+#define NUMBER_10 10
 
 namespace OHOS {
 namespace Rosen {
@@ -40,15 +40,15 @@ int TestMemoryStreamCreateNormal()
 {
     DrawingNativeMemoryStreamTestSetUp();
     // 1. Call OH_Drawing_MemoryStreamCreate with copyData set to true
-    char data[DRAWING_NUMBER_10] = {0};
-    OH_Drawing_MemoryStream *stream = OH_Drawing_MemoryStreamCreate(data, DRAWING_NUMBER_10, true);
+    char data[NUMBER_10] = {0};
+    OH_Drawing_MemoryStream *stream = OH_Drawing_MemoryStreamCreate(data, NUMBER_10, true);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // add assert
     EXPECT_NE(stream, nullptr);
     OH_Drawing_MemoryStreamDestroy(stream);
     // 2. Call OH_Drawing_MemoryStreamCreate with copyData set to false
-    stream = OH_Drawing_MemoryStreamCreate(data, DRAWING_NUMBER_10, false);
+    stream = OH_Drawing_MemoryStreamCreate(data, NUMBER_10, false);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // add assert
@@ -61,10 +61,10 @@ int TestMemoryStreamCreateNormal()
 int TestMemoryStreamCreateNull()
 {
     DrawingNativeMemoryStreamTestSetUp();
-    char data[DRAWING_NUMBER_10] = {0};
+    char data[NUMBER_10] = {0};
     // 1. OH_Drawing_MemoryStreamCreate with the first parameter set to nullptr, check the error code using
     // OH_Drawing_ErrorCodeGet
-    OH_Drawing_MemoryStream *stream = OH_Drawing_MemoryStreamCreate(nullptr, DRAWING_NUMBER_10, true);
+    OH_Drawing_MemoryStream *stream = OH_Drawing_MemoryStreamCreate(nullptr, NUMBER_10, true);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_ErrorCodeReset();
     // 2. OH_Drawing_MemoryStreamCreate with the second parameter set to 0, check the error code using
@@ -81,7 +81,7 @@ int TestMemoryStreamCreateAbnormal()
 {
     DrawingNativeMemoryStreamTestSetUp();
     // 1. OH_Drawing_MemoryStreamCreate with a negative value as the second parameter
-    OH_Drawing_MemoryStream *stream = OH_Drawing_MemoryStreamCreate(nullptr, -DRAWING_NUMBER_10, true);
+    OH_Drawing_MemoryStream *stream = OH_Drawing_MemoryStreamCreate(nullptr, -NUMBER_10, true);
     // add assert  ---待验证
     EXPECT_EQ(stream, nullptr);
     // add assert
@@ -96,9 +96,9 @@ int TestMemoryStreamCreateMultipleCalls()
 {
     DrawingNativeMemoryStreamTestSetUp();
     // 1. Call OH_Drawing_MemoryStreamCreate 10 times, passing different data segments
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
-        char data[DRAWING_NUMBER_10] = { static_cast<char>(i) };
-        OH_Drawing_MemoryStream *stream = OH_Drawing_MemoryStreamCreate(data, DRAWING_NUMBER_10, true);
+    for (int i = 0; i < NUMBER_10; i++) {
+        char data[NUMBER_10] = { static_cast<char>(i) };
+        OH_Drawing_MemoryStream *stream = OH_Drawing_MemoryStreamCreate(data, NUMBER_10, true);
         // add assert
         EXPECT_NE(stream, nullptr);
         OH_Drawing_MemoryStreamDestroy(stream);

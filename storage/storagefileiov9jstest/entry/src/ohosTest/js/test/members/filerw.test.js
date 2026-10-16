@@ -28,10 +28,12 @@ export default function FileIOFilerw_test() {
 
         async function IOfunc(file, bf, total, rand, read, promise) {
             let startTime = 0;
+            let tasks = [];
             try {
                 let array = new ArrayBuffer(bf);
                 let count = total / bf;
                 startTime = new Date().getTime();
+                console.log("FileIO_fs_filerw_test startTime: " + startTime);
                 for (let i = 0; i < count; i++) {
                     let offset = i * bf;
                     if (rand) {
@@ -39,34 +41,23 @@ export default function FileIOFilerw_test() {
                     }
                     if (promise) {
                         if (read) {
-                            fileIO.read(file.fd, array, { length: bf, offset: offset }).then((readLen) => {
-                            }).catch((e) => {
-                                console.log('fileIO_test_read_promise has failed for ' + e.message + ', code: ' + e.code);
-                                return -1;
-                            });
+                            tasks.push(fileIO.read(file.fd, array, { length: bf, offset: offset }));
                         } else {
-                            fileIO.write(file.fd, array, { length: bf, offset: offset, encoding: 'utf-8' }).then((writeLen) => {
-                            }).catch((e) => {
-                                console.log('fileIO_test_write_promise has failed for ' + e.message + ', code: ' + e.code);
-                                return -1;
-                            });
+                            tasks.push(fileIO.write(file.fd, array, { length: bf, offset: offset, encoding: 'utf-8' }));
                         }
                     } else {
-                        if (read) {
-                            fileIO.read(file.fd, array, { length: bf, offset: offset }, (err, readLen) => {
-                                if (err) {
-                                    console.log('fileIO_test_read_callback has failed for ' + err.message + ', code: ' + err.code);
-                                    return -1;
-                                }
-                            });
-                        } else {
-                            fileIO.write(file.fd, array, { length: bf, offset: offset, encoding: 'utf-8' }, (err, writeLen) => {
-                                if (err) {
-                                    console.log('fileIO_test_write_callback has failed for ' + err.message + ', code: ' + err.code);
-                                    return -1;
-                                }
-                            });
-                        }
+                        // Callback 版本包装为 Promise
+                        tasks.push(new Promise((resolve, reject) => {
+                            if (read) {
+                                fileIO.read(file.fd, array, { length: bf, offset: offset }, (err, len) => {
+                                    if (err) reject(err); else resolve(len);
+                                });
+                            } else {
+                                fileIO.write(file.fd, array, { length: bf, offset: offset, encoding: 'utf-8' }, (err, len) => {
+                                    if (err) reject(err); else resolve(len);
+                                });
+                            }
+                        }));
                     }
                 }
                 fileIO.fsyncSync(file.fd);
@@ -74,10 +65,11 @@ export default function FileIOFilerw_test() {
                 console.log('FileIO_fs_filerw_test has failed for ' + e.message + ', code: ' + e.code);
             } finally {
                 let endTime = new Date().getTime();
-                console.log("FileIO_fs_filerw_test finally" + JSON.stringify(endTime))
+                console.log("FileIO_fs_filerw_test endTime: " + endTime);
                 var interval = endTime - startTime;
                 var average = total * 1000 / interval;
                 var averagerate = average / 0x100000;
+                await Promise.allSettled(tasks);
                 return averagerate;
             }
         }

@@ -14,7 +14,7 @@
  */
 
 import hilog from '@ohos.hilog';
-import { describe, beforeAll, afterEach, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, afterEach, it, expect, Level } from '@ohos/hypium-dynamic';
 import image from '@ohos.multimedia.image';
 import common from '@ohos.app.ability.common';
 import taskpool from '@ohos.taskpool';

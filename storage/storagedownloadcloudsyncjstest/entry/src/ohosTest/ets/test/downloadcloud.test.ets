@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll,beforeEach,afterEach,afterAll,it,expect, Level } from '@ohos/hypium';
+import { describe, beforeAll,beforeEach,afterEach,afterAll,it,expect, Level } from '@ohos/hypium-dynamic';
 import connection from '@ohos.net.connection';
 import cloudSync from '@ohos.file.cloudSync';
 import fileUri from '@ohos.file.fileuri';

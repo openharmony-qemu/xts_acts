@@ -4,7 +4,7 @@
         "type": "OHJSUnitTest",
         "test-timeout": "600000",
         "bundle-name": "com.example.actsgetabilitystatestagetest",
-        "module-name": "entry",
+        "module-name": "entry_test",
         "shell-timeout": "10000"
     },
     "kits": [

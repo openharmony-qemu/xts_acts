@@ -19,8 +19,11 @@
 #include <sstream>
 #include <thread>
 #include "include/OhosCommonTest.h"
+#include "log_common.h"
 
-#define DRAWING_NUMBER_255 255
+#define NUMBER_10 10
+#define NUMBER_255 255
+#define NUMBER_256 256
 
 namespace OHOS {
 namespace Rosen {
@@ -72,15 +75,14 @@ OH_Drawing_RecordCmd* threadFunctionTest6()
     // 创建一个画笔Pen对象，Pen对象用于形状的边框线绘制
     OH_Drawing_Pen* cPen = OH_Drawing_PenCreate();
     OH_Drawing_PenSetAntiAlias(cPen, true);
-    OH_Drawing_PenSetColor(cPen, OH_Drawing_ColorSetArgb(DRAWING_NUMBER_255, DRAWING_NUMBER_255, 0, 0));
+    OH_Drawing_PenSetColor(cPen, OH_Drawing_ColorSetArgb(NUMBER_255, NUMBER_255, 0, 0));
     OH_Drawing_PenSetWidth(cPen, PEN_WIDTH);
     OH_Drawing_PenSetJoin(cPen, LINE_ROUND_JOIN);
     // 将Pen画笔设置到canvas中
     OH_Drawing_CanvasAttachPen(canvas, cPen);
     // 创建一个画刷Brush对象，Brush对象用于形状的填充
     OH_Drawing_Brush* cBrush = OH_Drawing_BrushCreate();
-    OH_Drawing_BrushSetColor(cBrush,
-                             OH_Drawing_ColorSetArgb(DRAWING_NUMBER_255, 0, DRAWING_NUMBER_255, 0));
+    OH_Drawing_BrushSetColor(cBrush, OH_Drawing_ColorSetArgb(NUMBER_255, 0, NUMBER_255, 0));
     // 将Brush画刷设置到canvas中
     OH_Drawing_CanvasAttachBrush(canvas, cBrush);
     drawCircle1(canvas, width);
@@ -261,6 +263,242 @@ int TestCanvasDrawRecordCmdNestingAbNormal1()
     EXPECT_EQ(result3, OH_DRAWING_SUCCESS);
     OH_Drawing_RecordCmdDestroy(recordCmd);
     OH_Drawing_RecordCmdDestroy(recordCmd1);
+
+    DrawingCanvasDrawRecordCmdTestTearDown();
+
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestRecordCmdUtilsGetHeightNormal()
+{
+    DrawingCanvasDrawRecordCmdTestSetUp();
+    
+    int32_t width = NUMBER_256;
+    int32_t height = NUMBER_256;
+    int32_t dstHeight = 0;
+    OH_Drawing_RecordCmd* recordCmd = nullptr;
+    OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
+    OH_Drawing_RecordCmdUtils* recordCmdUtils = OH_Drawing_RecordCmdUtilsCreate();
+    
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_RecordCmdUtilsGetHeight(recordCmdUtils, &dstHeight);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(dstHeight, 0);
+    
+    OH_Drawing_RecordCmdUtilsBeginRecording(recordCmdUtils, width, height, &canvas);
+    errorCode = OH_Drawing_RecordCmdUtilsGetHeight(recordCmdUtils, &dstHeight);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(dstHeight, height);
+    
+    OH_Drawing_RecordCmdUtilsFinishRecording(recordCmdUtils, &recordCmd);
+    OH_Drawing_RecordCmdUtilsDestroy(recordCmdUtils);
+    OH_Drawing_RecordCmdDestroy(recordCmd);
+    
+    DrawingCanvasDrawRecordCmdTestTearDown();
+
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestRecordCmdUtilsGetHeightNull()
+{
+    DrawingCanvasDrawRecordCmdTestSetUp();
+
+    int32_t width = NUMBER_256;
+    int32_t height = NUMBER_256;
+    int32_t dstHeight = 0;
+    OH_Drawing_RecordCmd* recordCmd = nullptr;
+    OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
+    OH_Drawing_RecordCmdUtils* recordCmdUtils = OH_Drawing_RecordCmdUtilsCreate();
+    OH_Drawing_RecordCmdUtilsBeginRecording(recordCmdUtils, width, height, &canvas);
+    // 1. recordCmdUtils is nullptr
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_RecordCmdUtilsGetHeight(nullptr, &dstHeight);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(dstHeight, 0);
+    // 2. height pointer is nullptr
+    errorCode = OH_Drawing_RecordCmdUtilsGetHeight(recordCmdUtils, nullptr);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    OH_Drawing_RecordCmdUtilsFinishRecording(recordCmdUtils, &recordCmd);
+    
+    height = 0;
+    errorCode = OH_Drawing_RecordCmdUtilsBeginRecording(recordCmdUtils, width, height, &canvas);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
+    errorCode = OH_Drawing_RecordCmdUtilsGetHeight(recordCmdUtils, &dstHeight);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(dstHeight, 0);
+    OH_Drawing_RecordCmdUtilsFinishRecording(recordCmdUtils, &recordCmd);
+    
+    OH_Drawing_RecordCmdUtilsDestroy(recordCmdUtils);
+    OH_Drawing_RecordCmdDestroy(recordCmd);
+
+    DrawingCanvasDrawRecordCmdTestTearDown();
+
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestRecordCmdUtilsGetHeightAbnormal()
+{
+    DrawingCanvasDrawRecordCmdTestSetUp();
+
+    // BeginRecording with extremely large height value
+    int32_t width = NUMBER_256;
+    int32_t height = INT32_MAX;
+    int32_t dstHeight = 0;
+    OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
+    OH_Drawing_RecordCmd* recordCmd = nullptr;
+    OH_Drawing_RecordCmdUtils* recordCmdUtils = OH_Drawing_RecordCmdUtilsCreate();
+    
+    OH_Drawing_ErrorCode errorCode1 = OH_Drawing_RecordCmdUtilsBeginRecording(recordCmdUtils, width, height, &canvas);
+    EXPECT_EQ(errorCode1, OH_DRAWING_SUCCESS);
+    // Extremely large height may cause allocation failure, verify GetHeight only when BeginRecording succeeds
+    OH_Drawing_ErrorCode errorCode2 = OH_Drawing_RecordCmdUtilsGetHeight(recordCmdUtils, &dstHeight);
+    EXPECT_EQ(errorCode2, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(dstHeight, height);
+    OH_Drawing_RecordCmdUtilsFinishRecording(recordCmdUtils, &recordCmd);
+    OH_Drawing_RecordCmdUtilsDestroy(recordCmdUtils);
+    OH_Drawing_RecordCmdDestroy(recordCmd);
+
+    DrawingCanvasDrawRecordCmdTestTearDown();
+
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestRecordCmdUtilsGetHeightMultipleCalls()
+{
+    DrawingCanvasDrawRecordCmdTestSetUp();
+
+    int32_t width = NUMBER_256;
+    int32_t height = NUMBER_256;
+    OH_Drawing_RecordCmd* recordCmd = nullptr;
+    OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
+    OH_Drawing_RecordCmdUtils* recordCmdUtils = OH_Drawing_RecordCmdUtilsCreate();
+    OH_Drawing_RecordCmdUtilsBeginRecording(recordCmdUtils, width, height, &canvas);
+    // Call OH_Drawing_RecordCmdUtilsGetHeight 10 times
+    for (int i = 0; i < NUMBER_10; i++) {
+        int32_t dstWidth = 0;
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_RecordCmdUtilsGetHeight(recordCmdUtils, &dstWidth);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+        EXPECT_EQ(dstWidth, width);
+    }
+    OH_Drawing_RecordCmdUtilsFinishRecording(recordCmdUtils, &recordCmd);
+    OH_Drawing_RecordCmdUtilsDestroy(recordCmdUtils);
+    OH_Drawing_RecordCmdDestroy(recordCmd);
+
+    DrawingCanvasDrawRecordCmdTestTearDown();
+
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestRecordCmdUtilsGetWidthNormal()
+{
+    DrawingCanvasDrawRecordCmdTestSetUp();
+
+    int32_t width = NUMBER_256;
+    int32_t height = NUMBER_256;
+    int32_t dstWidth = 0;
+    OH_Drawing_RecordCmd* recordCmd = nullptr;
+    OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
+    OH_Drawing_RecordCmdUtils* recordCmdUtils = OH_Drawing_RecordCmdUtilsCreate();
+    
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_RecordCmdUtilsGetWidth(recordCmdUtils, &dstWidth);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(dstWidth, 0);
+    
+    OH_Drawing_RecordCmdUtilsBeginRecording(recordCmdUtils, width, height, &canvas);
+    errorCode = OH_Drawing_RecordCmdUtilsGetWidth(recordCmdUtils, &dstWidth);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(dstWidth, NUMBER_256);
+    
+    OH_Drawing_RecordCmdUtilsFinishRecording(recordCmdUtils, &recordCmd);
+    OH_Drawing_RecordCmdUtilsDestroy(recordCmdUtils);
+    OH_Drawing_RecordCmdDestroy(recordCmd);
+
+    DrawingCanvasDrawRecordCmdTestTearDown();
+
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestRecordCmdUtilsGetWidthNull()
+{
+    DrawingCanvasDrawRecordCmdTestSetUp();
+
+    int32_t width = NUMBER_256;
+    int32_t height = NUMBER_256;
+    int32_t dstWidth = 0;
+    OH_Drawing_RecordCmd* recordCmd = nullptr;
+    OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
+    OH_Drawing_RecordCmdUtils* recordCmdUtils = OH_Drawing_RecordCmdUtilsCreate();
+    OH_Drawing_RecordCmdUtilsBeginRecording(recordCmdUtils, width, height, &canvas);
+    // 1. recordCmdUtils is nullptr
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_RecordCmdUtilsGetWidth(nullptr, &dstWidth);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(dstWidth, 0);
+    // 2. width pointer is nullptr
+    errorCode = OH_Drawing_RecordCmdUtilsGetWidth(recordCmdUtils, nullptr);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    OH_Drawing_RecordCmdUtilsFinishRecording(recordCmdUtils, &recordCmd);
+    
+    width = 0;
+    errorCode = OH_Drawing_RecordCmdUtilsBeginRecording(recordCmdUtils, width, height, &canvas);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
+    errorCode = OH_Drawing_RecordCmdUtilsGetWidth(recordCmdUtils, &dstWidth);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(dstWidth, 0);
+    OH_Drawing_RecordCmdUtilsFinishRecording(recordCmdUtils, &recordCmd);
+    
+    OH_Drawing_RecordCmdUtilsDestroy(recordCmdUtils);
+    OH_Drawing_RecordCmdDestroy(recordCmd);
+
+    DrawingCanvasDrawRecordCmdTestTearDown();
+
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestRecordCmdUtilsGetWidthAbnormal()
+{
+    DrawingCanvasDrawRecordCmdTestSetUp();
+
+    // BeginRecording with extremely large width value
+    int32_t width = INT32_MAX;
+    int32_t height = NUMBER_256;
+    int32_t dstWidth = 0;
+    OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
+    OH_Drawing_RecordCmd* recordCmd = nullptr;
+    OH_Drawing_RecordCmdUtils* recordCmdUtils = OH_Drawing_RecordCmdUtilsCreate();
+    
+    OH_Drawing_ErrorCode errorCode1 = OH_Drawing_RecordCmdUtilsBeginRecording(recordCmdUtils, width, height, &canvas);
+    EXPECT_EQ(errorCode1, OH_DRAWING_SUCCESS);
+    // Extremely large width may cause allocation failure, verify GetWidth only when BeginRecording succeeds
+    OH_Drawing_ErrorCode errorCode2 = OH_Drawing_RecordCmdUtilsGetWidth(recordCmdUtils, &dstWidth);
+    EXPECT_EQ(errorCode2, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(dstWidth, width);
+    OH_Drawing_RecordCmdUtilsFinishRecording(recordCmdUtils, &recordCmd);
+    OH_Drawing_RecordCmdUtilsDestroy(recordCmdUtils);
+    OH_Drawing_RecordCmdDestroy(recordCmd);
+
+    DrawingCanvasDrawRecordCmdTestTearDown();
+
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestRecordCmdUtilsGetWidthMultipleCalls()
+{
+    DrawingCanvasDrawRecordCmdTestSetUp();
+
+    int32_t width = NUMBER_256;
+    int32_t height = NUMBER_256;
+    OH_Drawing_RecordCmd* recordCmd = nullptr;
+    OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
+    OH_Drawing_RecordCmdUtils* recordCmdUtils = OH_Drawing_RecordCmdUtilsCreate();
+    OH_Drawing_RecordCmdUtilsBeginRecording(recordCmdUtils, width, height, &canvas);
+    // Call OH_Drawing_RecordCmdUtilsGetWidth 10 times
+    for (int i = 0; i < NUMBER_10; i++) {
+        int32_t outWidth = 0;
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_RecordCmdUtilsGetWidth(recordCmdUtils, &outWidth);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+        EXPECT_EQ(outWidth, NUMBER_256);
+    }
+    OH_Drawing_RecordCmdUtilsFinishRecording(recordCmdUtils, &recordCmd);
+    OH_Drawing_RecordCmdUtilsDestroy(recordCmdUtils);
+    OH_Drawing_RecordCmdDestroy(recordCmd);
 
     DrawingCanvasDrawRecordCmdTestTearDown();
 

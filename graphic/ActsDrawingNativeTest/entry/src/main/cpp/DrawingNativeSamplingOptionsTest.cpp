@@ -17,10 +17,10 @@
 #include <random>
 #include "include/OhosCommonTest.h"
 
-#define DRAWING_NUMBER_2 2
-#define DRAWING_NUMBER_3 3
-#define DRAWING_NUMBER_10 10
-#define DRAWING_NUMBER_19937 19937
+#define NUMBER_2 2
+#define NUMBER_3 3
+#define NUMBER_10 10
+#define NUMBER_19937 19937
 
 namespace OHOS {
 namespace Rosen {
@@ -84,24 +84,24 @@ int TestSamplingOptionsCreateDestroyDestroyMultipleCalls()
     // 1. Call OH_Drawing_SamplingOptionsCreate 10 times with random enum values
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_int_distribution<int> dis(0, DRAWING_NUMBER_10);
-    OH_Drawing_SamplingOptions *options[DRAWING_NUMBER_10];
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    std::uniform_int_distribution<int> dis(0, NUMBER_10);
+    OH_Drawing_SamplingOptions *options[NUMBER_10];
+    for (int i = 0; i < NUMBER_10; i++) {
         int random = dis(gen);
-        OH_Drawing_FilterMode filterMode = static_cast<OH_Drawing_FilterMode>(random % DRAWING_NUMBER_2);
-        OH_Drawing_MipmapMode mipmapMode = static_cast<OH_Drawing_MipmapMode>(random % DRAWING_NUMBER_3);
+        OH_Drawing_FilterMode filterMode = static_cast<OH_Drawing_FilterMode>(random % NUMBER_2);
+        OH_Drawing_MipmapMode mipmapMode = static_cast<OH_Drawing_MipmapMode>(random % NUMBER_3);
         options[i] = OH_Drawing_SamplingOptionsCreate(filterMode, mipmapMode);
         EXPECT_NE(options[i], nullptr);
     }
     // 2. Call OH_Drawing_SamplingOptionsDestroy 10 times
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_SamplingOptionsDestroy(options[i]);
     }
     // 3. Call OH_Drawing_SamplingOptionsCreate and OH_Drawing_SamplingOptionsDestroy alternately 10 times
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         int random = dis(gen);
-        OH_Drawing_FilterMode filterMode = static_cast<OH_Drawing_FilterMode>(random % DRAWING_NUMBER_2);
-        OH_Drawing_MipmapMode mipmapMode = static_cast<OH_Drawing_MipmapMode>(random % DRAWING_NUMBER_3);
+        OH_Drawing_FilterMode filterMode = static_cast<OH_Drawing_FilterMode>(random % NUMBER_2);
+        OH_Drawing_MipmapMode mipmapMode = static_cast<OH_Drawing_MipmapMode>(random % NUMBER_3);
         OH_Drawing_SamplingOptions *options = OH_Drawing_SamplingOptionsCreate(filterMode, mipmapMode);
         EXPECT_NE(options, nullptr);
         OH_Drawing_SamplingOptionsDestroy(options);
@@ -142,7 +142,7 @@ int TestSamplingOptionsCopyMultiCalls()
     OH_Drawing_SamplingOptions *src = OH_Drawing_SamplingOptionsCreate(FILTER_MODE_NEAREST, MIPMAP_MODE_NEAREST);
     OH_Drawing_SamplingOptions *samplingOptions = nullptr;
     // 1. The interface of OH_Drawing_SamplingOptionsCopy is called 10 times.
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         samplingOptions = OH_Drawing_SamplingOptionsCopy(src);
         EXPECT_NE(samplingOptions, nullptr);
     }

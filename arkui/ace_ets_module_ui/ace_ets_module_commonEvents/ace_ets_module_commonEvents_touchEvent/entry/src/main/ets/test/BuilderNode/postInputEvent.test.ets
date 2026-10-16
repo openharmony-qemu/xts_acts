@@ -13,11 +13,12 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-dynamic'
 import { UiComponent, UiDriver, Component, Driver, ON, BY, UiDirection, } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function postInputEvent() {
   describe('postInputEventTest', () => {
     beforeEach(async (done: Function) => {
@@ -82,7 +83,7 @@ export default function postInputEvent() {
       let column1 = await driver.findComponent(ON.id('column1'));
       let center1 = await column1.getBounds();
       console.info('postInputEventTest_0020 click at: ' + Math.round(center1.left + (center1.right - center1.left)/2), Math.round(center.bottom + (center1.bottom - center.bottom)/2));
-      await driver.click(Math.round(center1.left + (center1.right - center1.left)/2), Math.round(center.bottom + (center1.bottom - center.bottom)/2));
+      await driver.clickAt({x:Math.round(center1.left + (center1.right - center1.left)/2),y:Math.round(center.bottom + (center1.bottom - center.bottom)/2),displayId:displayID});
       await CommonFunc.sleep(1000);
       expect(AppStorage.get('lastPostInputEventResult')).assertEqual(false);
       console.info('[postInputEventTest_0020] END');

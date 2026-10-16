@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, Level, TestType, Size } from '@ohos/hypium';
+import { describe, it, expect, Level, TestType, Size } from '@ohos/hypium-dynamic';
 import { BusinessError } from '@kit.BasicServicesKit';
 import appManager from '@ohos.application.appManager';
 import { hilog } from '@kit.PerformanceAnalysisKit';
@@ -71,6 +71,9 @@ export default function getProcessRunningInfosTest() {
       console.info('====> [' + tag + '] start');
       try {
         appManager.getProcessRunningInfos((error: BusinessError, processInfos) => {
+          if (error) {
+            console.error(JSON.stringify(error));
+          }
           hilog.info(0x0000, 'testTag', `getProcessRunningInfos success: ${JSON.stringify(processInfos)}`);
           expect(Array.isArray(processInfos)).assertTrue();
           if (processInfos && processInfos.length > 0) {

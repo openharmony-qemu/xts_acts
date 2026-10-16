@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import { Driver, } from '@ohos.UiTest';
@@ -23,7 +23,7 @@ export default function DigitIndicatorNullUndefined() {
     beforeEach(async (done: Function) => {
       console.info("DigitIndicatorNullUndefined beforeEach start");
         let driver: Driver = Driver.create();
-    let size = await driver.getDisplaySize();
+    let size = await driver.getDisplaySize(0);
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/SwiperAttributeNullUndefined/DigitIndicatorNullUndefined',
       };

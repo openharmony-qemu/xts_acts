@@ -47,14 +47,15 @@ async function dragFromProbeHost(): Promise<void> {
     toX = left;
   }
   await driver.dragBetween(
-    { x: cx, y: cy } as Point,
-    { x: toX, y: cy } as Point,
+    { x: cx, y: cy, displayId: displayID } as Point,
+    { x: toX, y: cy, displayId: displayID } as Point,
     3500,
     1600
   );
   await Utils.sleep(500);
 }
 
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function CommonDragEventTest(): void {
   describe('CommonDragEventTest', () => {
 

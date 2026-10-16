@@ -34,14 +34,18 @@ export default function ListFlingEventTest() {
       await Utils.pushPage(`list/ListWillStartFlingTest`);
       await Utils.sleep(1500)
       let driver: Driver = Driver.create();
-      let rect = Utils.getComponentRect("list_fling_event");
+      let component = await driver.findComponent(ON.id('list_fling_event'));
+      let rect = await component.getBounds();
+      let displayId = await component.getDisplayId();
       let height = rect.bottom - rect.top;
       console.info("ListFlingEvent_0100 height is" + height);
-      let centerX = Math.round(globalThis.winLeft + Utils.getRectHorizontalCenterX(rect));
-      let y1 = Math.round(globalThis.winTop + rect.top + height*0.2);
-      let y2 = Math.round(globalThis.winTop + rect.bottom - height*0.2);
+      let centerX = Math.round(rect.left + (rect.right - rect.left) / 2);
+      let y1 = Math.round(rect.top + height*0.2);
+      let y2 = Math.round(rect.bottom - height*0.2);
       console.info("ListFlingEvent_0100  centerX= " +  centerX  + ", y1 = " + y1  + ", y2 = " + y2);
-      await driver.swipe(centerX, y2, centerX, y1);
+      await driver.swipeBetween(
+        { x: centerX, y: y2, displayId: displayId },
+        { x: centerX, y: y1, displayId: displayId });
       await Utils.sleep(2000);
       let strJson = getInspectorByKey('list_fling_event');
       console.info("[ListFlingEvent_0100] component obj is: " + JSON.stringify(JSON.parse(strJson)));
@@ -61,18 +65,22 @@ export default function ListFlingEventTest() {
      * @tc.level  LEVEL1
      */
     it('ListFlingEvent_0200', Level.LEVEL1, async (done: Function) => {
-      console.info('[ListFlingEvent_0100] START');
+      console.info('[ListFlingEvent_0200] START');
       await Utils.pushPage(`list/ListDidStopFlingTest`);
       await Utils.sleep(1500)
       let driver: Driver = Driver.create();
-      let rect = Utils.getComponentRect("list_fling_event");
+      let component = await driver.findComponent(ON.id('list_fling_event'));
+      let rect = await component.getBounds();
+      let displayId = await component.getDisplayId();
       let height = rect.bottom - rect.top;
       console.info("ListFlingEvent_0200 height is" + height);
-      let centerX = Math.round(globalThis.winLeft + Utils.getRectHorizontalCenterX(rect));
-      let y1 = Math.round(globalThis.winTop + rect.top + height*0.2);
-      let y2 = Math.round(globalThis.winTop + rect.bottom - height*0.2);
-      console.info("ListFlingEvent_0100  centerX= " +  centerX  + ", y1 = " + y1  + ", y2 = " + y2);
-      await driver.swipe(centerX, y2, centerX, y1,1000);
+      let centerX = Math.round(rect.left + (rect.right - rect.left) / 2);
+      let y1 = Math.round(rect.top + height*0.2);
+      let y2 = Math.round(rect.bottom - height*0.2);
+      console.info("ListFlingEvent_0200  centerX= " +  centerX  + ", y1 = " + y1  + ", y2 = " + y2);
+      await driver.swipeBetween(
+        { x: centerX, y: y2, displayId: displayId },
+        { x: centerX, y: y1, displayId: displayId }, 1000);
       await Utils.sleep(2000);
       let strJson = getInspectorByKey('list_fling_event');
       console.info("[ListFlingEvent_0200] component obj is: " + JSON.stringify(JSON.parse(strJson)));

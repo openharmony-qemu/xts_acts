@@ -14,7 +14,7 @@
  */
 
 import CommonTest from '../common/CommonTest';
-import { describe, expect } from '@ohos/hypium';
+import { describe, expect } from '@ohos/hypium-dynamic';
 import Utils, {RectValue} from '../../MainAbility/common/Utils';
 import { AttrsManager } from '../../MainAbility/common/AttrsManager';
 

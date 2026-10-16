@@ -47,7 +47,7 @@
 
       {
         "name": "MainAbility1",
-        "srcEntry": "./ets/test/MainAbility/MainAbility1.ts",
+        "srcEntry": "./ets/test/MainAbility/MainAbility1.ets",
         "description": "$string:MainAbility1_desc",
         "visible": true,
         "icon": "$media:icon",
@@ -60,7 +60,7 @@
 
       {
         "name": "MainAbility2",
-        "srcEntry": "./ets/test/MainAbility/MainAbility2.ts",
+        "srcEntry": "./ets/test/MainAbility/MainAbility2.ets",
         "description": "$string:MainAbility2_desc",
         "visible": true,
         "icon": "$media:icon",

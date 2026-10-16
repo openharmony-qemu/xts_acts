@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium-dynamic"
 import router from '@ohos.router';
 import display from '@ohos.display';
 import events_emitter from '@ohos.events.emitter';
@@ -52,7 +52,7 @@ export default function accessibilityRoleTest() {
       console.info(`====>${testname} clickSecComponent function Start====`);
       try {
         let button = await driver.findComponent(ON.type('SaveButton'));
-        await Utils.sleep(500);
+        await Utils.sleep(3000);
         console.info(`====>${testname} button is:` + JSON.stringify(button));
         let buttonText = await button.getText();
         console.info(`====>${testname} buttonText is:` + JSON.stringify(buttonText));
@@ -60,6 +60,7 @@ export default function accessibilityRoleTest() {
         await button.click();
         await Utils.sleep(1000);
         let titleTx = await driver.findComponent(ON.text('安全保存图片和视频'));
+        await Utils.sleep(3000);
         console.info(`====>${testname} titleTx is:` + JSON.stringify(titleTx));
         if (titleTx !== null) {
           await clickAllowBtn(testname, driver);
@@ -75,6 +76,7 @@ export default function accessibilityRoleTest() {
       console.info(`====>${testname} clickAllowBtn function Start====`);
       try {
         let allowBtn = await driver.findComponent(ON.text('允许'));
+        await Utils.sleep(3000);
         console.info(`====>${testname} allowBtn is:` + JSON.stringify(allowBtn));
         if(allowBtn !== null) {
           console.info(`====>${testname} allowBtnClick START====`);
@@ -97,6 +99,7 @@ export default function accessibilityRoleTest() {
             await Utils.sleep(100);
           }
           let allowBtn = await driver.findComponent(ON.text('允许'));
+          await Utils.sleep(3000);
           console.info(`====>${testname} allowBtn is:` + JSON.stringify(allowBtn));
           console.info(`====>${testname} allowBtnClick START====`);
           await allowBtn.click();
@@ -158,6 +161,8 @@ export default function accessibilityRoleTest() {
       
       try {
         let strJson = getInspectorByKey('keyAccessibilityRole');
+        await Utils.sleep(3000);
+        console.info(`====>${TCNAME} strJson is: ${strJson}`);
         let obj : ESObject = JSON.parse(strJson);
         console.info(`====>${TCNAME} getInspectorByKey result: ` + JSON.stringify(obj));
         
@@ -175,6 +180,8 @@ export default function accessibilityRoleTest() {
         await Utils.sleep(2000);
         
         strJson = getInspectorByKey('keyAccessibilityRole');
+        await Utils.sleep(3000);
+        console.info(`====>${TCNAME} strJson is: ${strJson}`);
         obj = JSON.parse(strJson);
         console.info(`====>${TCNAME} after emit, getInspectorByKey result: ` + JSON.stringify(obj));
         console.info(`====>${TCNAME} after emit, accessibilityRole result: ` + JSON.stringify(obj.$attrs.accessibilityRole));
@@ -204,6 +211,8 @@ export default function accessibilityRoleTest() {
       
       try {
         let strJson = getInspectorByKey('keyAccessibilityRole');
+        await Utils.sleep(3000);
+        console.info(`====>${TCNAME} strJson is: ${strJson}`);
         let obj : ESObject = JSON.parse(strJson);
         console.info(`====>${TCNAME} getInspectorByKey result: ` + JSON.stringify(obj));
         
@@ -221,6 +230,8 @@ export default function accessibilityRoleTest() {
         await Utils.sleep(2000);
         
         strJson = getInspectorByKey('keyAccessibilityRole');
+        await Utils.sleep(3000);
+        console.info(`====>${TCNAME} strJson is: ${strJson}`);
         obj = JSON.parse(strJson);
         console.info(`====>${TCNAME} after emit, getInspectorByKey result: ` + JSON.stringify(obj));
         console.info(`====>${TCNAME} after emit, accessibilityRole result: ` + JSON.stringify(obj.$attrs.accessibilityRole));
@@ -250,6 +261,8 @@ export default function accessibilityRoleTest() {
       
       try {
         let strJson = getInspectorByKey('keyAccessibilityRole');
+        await Utils.sleep(3000);
+        console.info(`====>${TCNAME} strJson is: ${strJson}`);
         let obj : ESObject = JSON.parse(strJson);
         console.info(`====>${TCNAME} getInspectorByKey result: ` + JSON.stringify(obj));
         
@@ -292,6 +305,8 @@ export default function accessibilityRoleTest() {
       }
       await Utils.sleep(1000);
       let strJson = getInspectorByKey('keyAccessibilityRole');
+      await Utils.sleep(3000);
+      console.info(`====>[Test_Security_Button_Accessibility_Description_0100] strJson is: ${strJson}`);
       let obj : ESObject = JSON.parse(strJson);
       expect(obj.$attrs.accessibilityDescription).assertEqual('SaveAccessibility');
       await Utils.sleep(500);

@@ -56,14 +56,15 @@ struct DialogBaseControllerLife {
   }
 
   build() {
-    Column({ space: 10 }) {
+    Column() {
       Text('DialogBaseController lifecycle').fontSize(18).fontWeight(FontWeight.Bold)
       Text('action=' + this.lastAction).id('ctrl_action')
       Text('stateBefore=' + this.stateBefore).id('ctrl_state_before')
       Text('stateAfter=' + this.stateAfter).id('ctrl_state_after')
       Text('dismissReason=' + this.dismissReason).id('ctrl_dismiss_reason')
       Text('dialogId=' + this.dialogId).id('ctrl_dialog_id')
-      Button('present with controller')
+      Row() {
+        Button('present with controller')
         .id('btn_ctrl_present')
         .onClick(async () => {
           this.controller = new DialogBaseController();
@@ -111,7 +112,9 @@ struct DialogBaseControllerLife {
           let result: DialogResult = await this.presenter().present(opts);
           this.dialogId = result.dialogId;
         })
-      Button('onWillDismiss')
+      }
+      Row() {
+        Button('onWillDismiss')
         .id('btn_ctrl_will_dismiss')
         .onClick(async () => {
           let opts: dialog.DialogStyleOptions = {
@@ -141,6 +144,7 @@ struct DialogBaseControllerLife {
           this.stateBefore = this.stateName(c.getState());
           this.lastAction = 'constructed';
         })
+      }   
     }
     .width('100%')
     .height('100%')

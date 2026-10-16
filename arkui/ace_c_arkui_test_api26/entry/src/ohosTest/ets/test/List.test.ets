@@ -13,16 +13,18 @@
  * limitations under the License.
  */
 import AreaChangeErrorCodeTest from './onAreaChange/AreaChangeErrorCodeTest.test'
-import ScrollWithMouseTest from "./scroll/scrollWithMouseTest.test";
-import AutoAdjustMarginTest from "./scroll/autoAdjustMarginTest.test";
-import ScrollBarHeightTest from "./scroll/scrollBarHeightTest.test";
-import ListBackBehaviorTest from "./list/listBackBehaviorTest.test";
-import ListEnableEditModeTest from "./list/listEnableEditModeTest.test";
-import ListEditModeOptionsTest from "./list/listEditModeOptionsTest.test";
-import GridEnableEditModeTest from "./grid/gridEnableEditModeTest.test";
-import GridEditModeOptionsTest from "./grid/gridEditModeOptionsTest.test";
-import RegisterCommonAreaApproximateChangeEventTest from './onAreaChange/RegisterCommonAreaApproximateChangeEventTest.test'
-import UnregisterCommonAreaApproximateChangeEventTest from './onAreaChange/UnregisterCommonAreaApproximateChangeEventTest.test'
+import ScrollWithMouseTest from './scroll/scrollWithMouseTest.test';
+import AutoAdjustMarginTest from './scroll/autoAdjustMarginTest.test';
+import ScrollBarHeightTest from './scroll/scrollBarHeightTest.test';
+import ListBackBehaviorTest from './list/listBackBehaviorTest.test';
+import ListEnableEditModeTest from './list/listEnableEditModeTest.test';
+import ListEditModeOptionsTest from './list/listEditModeOptionsTest.test';
+import GridEnableEditModeTest from './grid/gridEnableEditModeTest.test';
+import GridEditModeOptionsTest from './grid/gridEditModeOptionsTest.test';
+import RegisterCommonAreaApproximateChangeEventTest from
+  './onAreaChange/RegisterCommonAreaApproximateChangeEventTest.test'
+import UnregisterCommonAreaApproximateChangeEventTest from
+  './onAreaChange/UnregisterCommonAreaApproximateChangeEventTest.test'
 import OrphanCharOptimizationTest from './orphanCharOptimization/orphanCharOptimizationTest.test'
 import GestureInterceptTest from './gestureIntercept/GestureInterceptTest.test'
 import gestureErrorCodeTest from './gestureIntercept/GestureErrorCodeTest.test'
@@ -31,7 +33,7 @@ import GetSizeLimitationTest from './getSizeLimitation/GetSizeLimitationTest.tes
 import InspectorLabelTest from './inspectorLabel/InspectorLabelTest.test'
 import AccessibilityFocusIdTest from './accessibilityFocusId/AccessibilityFocusIdTest.test'
 import hoveredTest from './hovered/hovered.test'
-import shouldRecognizerParallelWith from "./shouldRecognizerParallelWith/shouldRecognizerParallelWith.test"
+import shouldRecognizerParallelWith from './shouldRecognizerParallelWith/shouldRecognizerParallelWith.test'
 import ArcListSpaceTest from './arcList/ArcListSpaceTest.test'
 import ArcListCachedCountTest from './arcList/ArcListCachedCountTest.test'
 import ArcListScrollToIndexTest from './arcList/ArcListScrollToIndexTest.test'
@@ -56,8 +58,16 @@ import ArcSwiperMethodTest from './arcSwiper/ArcSwiperMethodTest.test'
 import ArcSwiperEventCallbackTest from './arcSwiper/ArcSwiperEventCallbackTest.test'
 import ArcAlphabetIndexerAttributeTest from './arcAlphabetIndexer/ArcAlphabetIndexerAttributeTest.test'
 import ArcAlphabetIndexerEventCallbackTest from './arcAlphabetIndexer/ArcAlphabetIndexerEventCallbackTest.test'
+import SetUiDvsyncSwitchTest from './node/SetUiDvsyncSwitchTest.test'
+import RuntimeCheckModeTest from './nativeModule/RuntimeCheckModeTest.test'
+import UIAgentGetPageTextTest from './node/UIAgentGetPageTextTest.test'
+import NativeModuleAnimationTest from './animate/NativeModuleAnimation.test'
+import NativeModuleAnimApi2601Test from './animate/NativeModuleAnimApi2601.test'
+import DragEventSummaryTest from './dragEventSummary/DragEventSummaryTest.test';
 
 export default function testsuite() {
+  SetUiDvsyncSwitchTest() // 此条特殊用例请放在首行，勿动
+  UIAgentGetPageTextTest()
   RegisterCommonAreaApproximateChangeEventTest();
   UnregisterCommonAreaApproximateChangeEventTest();
   AreaChangeErrorCodeTest();
@@ -102,4 +112,8 @@ export default function testsuite() {
   ArcListEventCallbackTest()
   ArcSwiperEventCallbackTest()
   ArcAlphabetIndexerEventCallbackTest()
+  NativeModuleAnimationTest()
+  NativeModuleAnimApi2601Test()
+  DragEventSummaryTest()
+  RuntimeCheckModeTest()
 }

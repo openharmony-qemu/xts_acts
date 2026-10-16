@@ -63,10 +63,15 @@ it('ScrollTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void
       await CommonFunc.sleep(1000);
       const uiContext = AppStorage.get<UIContext>('uiContext')!;
       console.info("[ScrollTest_static_001] uiContext is : " + uiContext);
-      await driver.swipe(((AppStorage.get<number>("winLeft") ?? 0) + Math.round(uiContext.vp2px(67))).toInt(),
-        (Math.round((AppStorage.get<number>("winTop") ?? 0) + uiContext.vp2px(200))).toInt(),
-        (Math.round((AppStorage.get<number>("winLeft") ?? 0) + uiContext.vp2px(67))).toInt(),
-        (Math.round((AppStorage.get<number>("winTop") ?? 0) + uiContext.vp2px(133))).toInt());
+      let scrollComp = await driver.findComponent(ON.id('scrollText'));
+      let scrollRect = await scrollComp!.getBounds();
+      let scrollDisplayId = await scrollComp!.getDisplayId();
+      await driver.swipeBetween(
+        { x: (Math.round(scrollRect.left + uiContext.vp2px(67))).toInt(),
+          y: (Math.round(scrollRect.top + uiContext.vp2px(200))).toInt(), displayId: scrollDisplayId },
+        { x: (Math.round(scrollRect.left + uiContext.vp2px(67))).toInt(),
+          y: (Math.round(scrollRect.top + uiContext.vp2px(133))).toInt(), displayId: scrollDisplayId }
+      );
       await CommonFunc.sleep(1000);
       console.info("[ScrollTest_static_001] swipe success");
       let strJson1 = inspector.getInspectorByKey('scrollText');

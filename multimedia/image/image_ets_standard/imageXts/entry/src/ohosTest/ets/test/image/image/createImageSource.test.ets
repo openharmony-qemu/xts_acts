@@ -18,7 +18,7 @@ import { image } from '@kit.ImageKit';
 import { copyImageToSandbox, genRandomStr } from '../../common';
 import fs from '@ohos.file.fs';
 import { resourceManager } from '@kit.LocalizationKit';
-import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium';
+import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium-dynamic';
 import { LOG_TAG } from '../../common';
 
 const TAG = LOG_TAG + 'createImageSource';

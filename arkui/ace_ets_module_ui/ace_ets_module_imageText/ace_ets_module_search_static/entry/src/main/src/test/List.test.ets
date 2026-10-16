@@ -19,6 +19,7 @@ import SearchOnWillCopyTest from './SearchApi26Test/SearchOnWillCopy.test';
 import SearchOnWillCutTest from './SearchApi26Test/SearchOnWillCut.test';
 import SearchShaderStyleTest from './SearchApi26Test/SearchShaderStyle.test';
 import SearchStrokeJoinStyleTest from './SearchApi26Test/SearchStrokeJoinStyle.test';
+import SearchEnableSelectedDataDetectorTest from './SearchApi26Test/SearchEnableSelectedDataDetector.test';
 
 export default function testsuite() {
   SearchStyleTest();

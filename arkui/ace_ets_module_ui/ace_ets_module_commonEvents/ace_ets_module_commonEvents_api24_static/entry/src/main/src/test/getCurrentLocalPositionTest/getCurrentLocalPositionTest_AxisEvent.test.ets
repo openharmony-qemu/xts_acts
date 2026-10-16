@@ -17,11 +17,12 @@
 import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { Driver, ON, Point} from '@ohos.UiTest';
+import { Driver, ON, Point} from '@kit.TestKit';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function getCurrentLocalPositionTest_AxisEvent(): void {
   describe('getCurrentLocalPositionTest_AxisEvent', () => {
 
@@ -70,7 +71,7 @@ export default function getCurrentLocalPositionTest_AxisEvent(): void {
 
       let button = await driver.findComponent(ON.id('Button01'));
       let point = await (button?.getBoundsCenter() as Promise<Point>);
-      await driver.mouseScroll({x:point.x, y:point.y}, true, 120);
+      await driver.mouseScroll({x:point.x, y:point.y, displayId: displayID}, true, 120);
       await CommonFunc.sleep(1500);
 
       let strJson = inspector.getInspectorByKey('text01');

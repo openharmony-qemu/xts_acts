@@ -61,6 +61,8 @@ import columnsTemplateNullUndefined from './LazyVGridLayout/columnsTemplateNullU
 import columnsRowsGapNullUndefined from './LazyVGridLayout/columnsRowsGapNullUndefined.test';
 import onVisibleIndexesChangeTest from './LazyVGridLayout/onVisibleIndexesChangeTest.test';
 import headerFooterStickyGrid from './LazyVGridLayout/headerFooterStickyGrid.test';
+import ColumnsTemplateAutoTest from './LazyVGridLayout/ColumnsTemplateAuto.test';
+import ColumnsTemplateItemFillPolicyTest from './LazyVGridLayout/ColumnsTemplateItemFillPolicy.test';
 import gridEnableEditMode from './gridOptions/gridEnableEditMode.test';
 import gridEditModeOptions from './gridOptions/gridEditModeOptions.test';
 import gridEditModeChange from './gridOptions/gridEditModeChange.test';
@@ -114,6 +116,8 @@ export default function testsuite() {
   columnsRowsGapNullUndefined()
   onVisibleIndexesChangeTest()
   headerFooterStickyGrid()
+  ColumnsTemplateAutoTest()
+  ColumnsTemplateItemFillPolicyTest()
   gridEnableEditMode()
   gridEditModeOptions()
   gridEditModeChange()

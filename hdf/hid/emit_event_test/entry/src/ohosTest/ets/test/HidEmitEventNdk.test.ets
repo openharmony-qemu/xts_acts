@@ -290,7 +290,6 @@ export default function HidEmitEventTest() {
       try {
         if (deviceId < 0) {
           console.info("Test HID device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -319,7 +318,6 @@ export default function HidEmitEventTest() {
       try {
         if (deviceId < 0) {
           console.info("Test HID device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -348,7 +346,6 @@ export default function HidEmitEventTest() {
       try {
         if (deviceId < 0) {
           console.info("Test HID device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -377,7 +374,6 @@ export default function HidEmitEventTest() {
       try {
         if (deviceId < 0) {
           console.info("Test HID device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -406,7 +402,6 @@ export default function HidEmitEventTest() {
       try {
         if (deviceId < 0) {
           console.info("Test HID device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -435,7 +430,6 @@ export default function HidEmitEventTest() {
       try {
         if (deviceId < 0) {
           console.info("Test HID device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -464,7 +458,6 @@ export default function HidEmitEventTest() {
       try {
         if (deviceId < 0) {
           console.info("Test HID device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -493,7 +486,6 @@ export default function HidEmitEventTest() {
       try {
         if (deviceId < 0) {
           console.info("Test HID device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -522,7 +514,6 @@ export default function HidEmitEventTest() {
       try {
         if (deviceId < 0) {
           console.info("Test HID device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -551,7 +542,6 @@ export default function HidEmitEventTest() {
       try {
         if (deviceId < 0) {
           console.info("Test HID device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -580,7 +570,6 @@ export default function HidEmitEventTest() {
       try {
         if (deviceId < 0) {
           console.info("Test HID device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -609,7 +598,6 @@ export default function HidEmitEventTest() {
       try {
         if (deviceId < 0) {
           console.info("Test HID device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -638,7 +626,6 @@ export default function HidEmitEventTest() {
       try {
         if (deviceId < 0) {
           console.info("Test HID device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -667,7 +654,6 @@ export default function HidEmitEventTest() {
       try {
         if (deviceId < 0) {
           console.info("Test HID device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -696,7 +682,6 @@ export default function HidEmitEventTest() {
       try {
         if (deviceId < 0) {
           console.info("Test HID device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -725,7 +710,6 @@ export default function HidEmitEventTest() {
       try {
         if (deviceId < 0) {
           console.info("Test HID device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -754,7 +738,6 @@ export default function HidEmitEventTest() {
       try {
         if (deviceId < 0) {
           console.info("Test HID device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -783,7 +766,6 @@ export default function HidEmitEventTest() {
       try {
         if (deviceId < 0) {
           console.info("Test HID device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -812,7 +794,6 @@ export default function HidEmitEventTest() {
       try {
         if (deviceId < 0) {
           console.info("Test HID device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -841,7 +822,6 @@ export default function HidEmitEventTest() {
       try {
         if (deviceId < 0) {
           console.info("Test HID device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -870,7 +850,6 @@ export default function HidEmitEventTest() {
       try {
         if (deviceId < 0) {
           console.info("Test HID device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -899,7 +878,6 @@ export default function HidEmitEventTest() {
       try {
         if (deviceId < 0) {
           console.info("Test HID device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -928,7 +906,6 @@ export default function HidEmitEventTest() {
       try {
         if (deviceId < 0) {
           console.info("Test HID device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -957,7 +934,6 @@ export default function HidEmitEventTest() {
       try {
         if (deviceId < 0) {
           console.info("Test HID device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -986,7 +962,6 @@ export default function HidEmitEventTest() {
       try {
         if (deviceId < 0) {
           console.info("Test HID device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1015,7 +990,6 @@ export default function HidEmitEventTest() {
       try {
         if (deviceId < 0) {
           console.info("Test HID device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1044,7 +1018,6 @@ export default function HidEmitEventTest() {
       try {
         if (deviceId < 0) {
           console.info("Test HID device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1073,7 +1046,6 @@ export default function HidEmitEventTest() {
       try {
         if (deviceId < 0) {
           console.info("Test HID device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1102,7 +1074,6 @@ export default function HidEmitEventTest() {
       try {
         if (deviceId < 0) {
           console.info("Test HID device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1130,7 +1101,6 @@ export default function HidEmitEventTest() {
       try {
         if (deviceId < 0) {
           console.info("Test HID device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1159,7 +1129,6 @@ export default function HidEmitEventTest() {
       try {
         if (deviceId < 0) {
           console.info("Test HID device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1188,7 +1157,6 @@ export default function HidEmitEventTest() {
       try {
         if (deviceId < 0) {
           console.info("Test HID device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1217,7 +1185,6 @@ export default function HidEmitEventTest() {
       try {
         if (deviceId < 0) {
           console.info("Test HID device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1246,7 +1213,6 @@ export default function HidEmitEventTest() {
       try {
         if (deviceId < 0) {
           console.info("Test HID device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1275,7 +1241,6 @@ export default function HidEmitEventTest() {
       try {
         if (deviceId < 0) {
           console.info("Test HID device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1304,7 +1269,6 @@ export default function HidEmitEventTest() {
       try {
         if (deviceId < 0) {
           console.info("Test HID device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1332,7 +1296,6 @@ export default function HidEmitEventTest() {
       try {
         if (deviceId < 0) {
           console.info("Test HID device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1360,7 +1323,6 @@ export default function HidEmitEventTest() {
       try {
         if (deviceId < 0) {
           console.info("Test HID device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1389,7 +1351,6 @@ export default function HidEmitEventTest() {
       try {
         if (deviceId < 0) {
           console.info("Test HID device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1418,7 +1379,6 @@ export default function HidEmitEventTest() {
       try {
         if (deviceId < 0) {
           console.info("Test HID device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1447,7 +1407,6 @@ export default function HidEmitEventTest() {
       try {
         if (deviceId < 0) {
           console.info("Test HID device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1475,7 +1434,6 @@ export default function HidEmitEventTest() {
       try {
         if (deviceId < 0) {
           console.info("Test HID device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1504,7 +1462,6 @@ export default function HidEmitEventTest() {
       try {
         if (deviceId < 0) {
           console.info("Test HID device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1532,7 +1489,6 @@ export default function HidEmitEventTest() {
       try {
         if (deviceId < 0) {
           console.info("Test HID device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1561,7 +1517,6 @@ export default function HidEmitEventTest() {
       try {
         if (deviceId < 0) {
           console.info("Test HID device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1590,7 +1545,6 @@ export default function HidEmitEventTest() {
       try {
         if (deviceId < 0) {
           console.info("Test HID device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }

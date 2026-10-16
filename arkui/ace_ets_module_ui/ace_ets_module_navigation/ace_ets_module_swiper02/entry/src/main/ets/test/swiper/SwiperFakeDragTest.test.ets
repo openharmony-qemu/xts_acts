@@ -13,11 +13,10 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
-import { Driver } from '@ohos.UiTest';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import CommonFunc from '../../MainAbility/common/Common';
-import RectValue from '../../MainAbility/common/Rect';
 import router from '@ohos.router';
+import { Driver, ON } from '@ohos.UiTest';
 
 export default function SwiperFakeDragTest() {
   describe('SwiperFakeDragTest', () => {
@@ -56,13 +55,7 @@ export default function SwiperFakeDragTest() {
       console.info('[SwiperFakeDragTest_0100] START');
       try {
         await CommonFunc.sleep(1000);
-        let driver = await Driver.create()
-        let list: RectValue = CommonFunc.getComponentRect('swiper1');
-        await CommonFunc.sleep(1000);
-        await driver.swipe(Math.round(list.left + (list.right - list.left) / 2),
-          Math.round(list.top + (list.bottom - list.top) / 2),
-          Math.round(list.left + (list.right - list.left) / 4),
-          Math.round(list.top + (list.bottom - list.top) / 2));
+        sendEventByKey('btn_fakeDrag_0100', 10, '');
         await CommonFunc.sleep(1000);
         let isFakeDraggingFlag: boolean | undefined = AppStorage.get('isFakeDraggingFlag');
         expect(isFakeDraggingFlag == false).assertTrue();
@@ -91,30 +84,37 @@ export default function SwiperFakeDragTest() {
     it('SwiperFakeDragTest_0200', Level.LEVEL0, async () => {
       console.info('[SwiperFakeDragTest_0200] START');
       try {
-        // 验证页面加载成功且方法能正常调用
         await CommonFunc.sleep(1000);
-        let driver = await Driver.create()
-        let list: RectValue = CommonFunc.getComponentRect('swiper2');
-        console.info('[SwiperFakeDragTest_0200] list');
-        await CommonFunc.sleep(1000);
-        await driver.swipe(Math.round(list.left + (list.right - list.left) * 0.8),
-          Math.round(list.top + (list.bottom - list.top) / 2),
-          Math.round(list.left + (list.right - list.left) * 0.2),
-          Math.round(list.top + (list.bottom - list.top) / 2));
-        await CommonFunc.sleep(2000);
-        console.info('[SwiperFakeDragTest_0200] swipe');
+        sendEventByKey('btn_isFakeDragging_0200', 10, '');
+        await CommonFunc.sleep(500);
         let isFakeDraggingFlag: boolean | undefined = AppStorage.get('isFakeDraggingFlag');
         console.info('[SwiperFakeDragTest_0200] isFakeDraggingFlag is ', isFakeDraggingFlag);
         expect(isFakeDraggingFlag == false).assertTrue();
         AppStorage.delete('isFakeDraggingFlag');
+
+        sendEventByKey('btn_startFakeDrag_0200', 10, '');
+        await CommonFunc.sleep(500);
         let startFakeDragFlag: boolean | undefined = AppStorage.get('startFakeDragFlag');
         console.info('[SwiperFakeDragTest_0200] startFakeDragFlag is ', startFakeDragFlag);
         expect(startFakeDragFlag == true).assertTrue();
         AppStorage.delete('startFakeDragFlag');
+
+        sendEventByKey('btn_fakeDragBy_0200', 10, '');
+        await CommonFunc.sleep(500);
         let fakeDragByFlag: boolean | undefined = AppStorage.get('fakeDragByFlag');
         console.info('[SwiperFakeDragTest_0200] fakeDragByFlag is ', fakeDragByFlag);
         expect(fakeDragByFlag == true).assertTrue();
         AppStorage.delete('fakeDragByFlag');
+
+        let driver = Driver.create();
+        let stopBtn = await driver.findComponent(ON.id('btn_stopFakeDrag_0200'));
+        if (!stopBtn) {
+          await driver.swipe(150, 300, 150, 100, 300);
+          await CommonFunc.sleep(500);
+          stopBtn = await driver.findComponent(ON.id('btn_stopFakeDrag_0200'));
+        }
+        await stopBtn?.click();
+        await CommonFunc.sleep(500);
         let stopFakeDragFlag: boolean | undefined = AppStorage.get('stopFakeDragFlag');
         console.info('[SwiperFakeDragTest_0200] stopFakeDragFlag is ', stopFakeDragFlag);
         expect(stopFakeDragFlag == true).assertTrue();

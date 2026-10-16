@@ -1,4 +1,4 @@
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { http, socket } from '@kit.NetworkKit';
 
@@ -154,7 +154,7 @@ export default function HttpRequestSyncTest() {
         try {
           let data: http.HttpResponse = httpRequest.requestSync("https://localhost:"+ port, options);
           console.info(`${caseName} request success data is `+JSON.stringify(data));
-          ExpectTrue(data.responseCode == 0);
+          ExpectTrue(data.responseCode === 0);
           done();
         } catch (err) {
           console.error(`${caseName} request err is `+JSON.stringify(err));

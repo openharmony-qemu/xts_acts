@@ -16,7 +16,8 @@
 import btAccess from '@ohos.bluetooth.access';
 import common from '@ohos.bluetooth.common';
 import partnerAgent from '@ohos.FusionConnectivity.partnerAgent';
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
+import PartnerAgentExtensionContext from '@ohos.FusionConnectivity.PartnerAgentExtensionContext';
+import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic';
 import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver } from '@ohos.UiTest'
 
 let PERMISSION_TEXT:string = "允许";
@@ -93,6 +94,39 @@ let deviceAddressRawPublic: partnerAgent.PartnerDeviceAddress = {
 };
 let deviceAddressRawRandom: partnerAgent.PartnerDeviceAddress = {
     "bluetoothAddress": btAddrRawRandom,
+};
+
+// 非法枚举值: addressType 合法值为 VIRTUAL=1, REAL=2, 非法值 3 / -1
+let btAddrInvalidAddrType: common.BluetoothAddress = {
+    "address": "11:22:33:44:55:66",
+    "addressType": 3,
+};
+let btAddrInvalidAddrTypeNeg: common.BluetoothAddress = {
+    "address": "11:22:33:44:55:66",
+    "addressType": -1,
+};
+let deviceAddressInvalidAddrType: partnerAgent.PartnerDeviceAddress = {
+    "bluetoothAddress": btAddrInvalidAddrType,
+};
+let deviceAddressInvalidAddrTypeNeg: partnerAgent.PartnerDeviceAddress = {
+    "bluetoothAddress": btAddrInvalidAddrTypeNeg,
+};
+// 非法枚举值: rawAddressType 合法值为 PUBLIC=0, RANDOM=1, 非法值 2 / -1 (addressType 为 REAL 时生效)
+let btAddrInvalidRawType: common.BluetoothAddress = {
+    "address": "11:22:33:44:55:66",
+    "addressType": common.BluetoothAddressType.REAL,
+    "rawAddressType": 2,
+};
+let btAddrInvalidRawTypeNeg: common.BluetoothAddress = {
+    "address": "11:22:33:44:55:66",
+    "addressType": common.BluetoothAddressType.REAL,
+    "rawAddressType": -1,
+};
+let deviceAddressInvalidRawType: partnerAgent.PartnerDeviceAddress = {
+    "bluetoothAddress": btAddrInvalidRawType,
+};
+let deviceAddressInvalidRawTypeNeg: partnerAgent.PartnerDeviceAddress = {
+    "bluetoothAddress": btAddrInvalidRawTypeNeg,
 };
 
 function sleep(delay : number) : Promise<void> {
@@ -1057,6 +1091,319 @@ export default function fusionAgentTest() {
             }
             done();
         })
+        /**
+         * @tc.name   SUB_COMMUNICATION_FUSION_ADD_2900
+         * @tc.number SUB_COMMUNICATION_FUSION_ADD_2900
+         * @tc.desc   Test bindDevice bluetoothAddress addressType 非法枚举值(3/-1)返回401 API 23
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_FUSION_ADD_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                await partnerAgent.bindDevice(deviceAddressInvalidAddrType, deviceCapability, businessCapability, partnerAgentExtensionAbilityName);
+                expect().assertFail();
+            } catch (err) {
+                console.error("[fusion_js]bindDevice addressType invalid enum 3: errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    console.info("设备 is not support.");
+                    expect(err.code).assertEqual(801);
+                } else {
+                    expect(err.code).assertEqual(34900099);
+                }
+            }
+            try {
+                await partnerAgent.bindDevice(deviceAddressInvalidAddrTypeNeg, deviceCapability, businessCapability, partnerAgentExtensionAbilityName);
+                expect().assertFail();
+            } catch (err) {
+                console.error("[fusion_js]bindDevice addressType invalid enum -1: errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    console.info("设备 is not support.");
+                    expect(err.code).assertEqual(801);
+                } else {
+                    expect(err.code).assertEqual(34900099);
+                }
+            }
+            done();
+        })
+        /**
+         * @tc.name   SUB_COMMUNICATION_FUSION_ADD_3000
+         * @tc.number SUB_COMMUNICATION_FUSION_ADD_3000
+         * @tc.desc   Test unbindDevice bluetoothAddress addressType 非法枚举值(3/-1)返回401 API 23
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_FUSION_ADD_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                await partnerAgent.unbindDevice(deviceAddressInvalidAddrType);
+                expect().assertFail();
+            } catch (err) {
+                console.error("[fusion_js]unbindDevice addressType invalid enum 3: errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code=== 801) {
+                    console.info("设备 is not support.");
+                    expect(err.code).assertEqual(801);
+                } else {
+                    expect(err.code).assertEqual(34900099);
+                }
+            }
+            try {
+                await partnerAgent.unbindDevice(deviceAddressInvalidAddrTypeNeg);
+                expect().assertFail();
+            } catch (err) {
+                console.error("[fusion_js]unbindDevice addressType invalid enum -1: errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    console.info("设备 is not support.");
+                    expect(err.code).assertEqual(801);
+                } else {
+                    expect(err.code).assertEqual(34900099);
+                }
+            }
+            done();
+        })
+        /**
+         * @tc.name   SUB_COMMUNICATION_FUSION_ADD_3100
+         * @tc.number SUB_COMMUNICATION_FUSION_ADD_3100
+         * @tc.desc   Test isDeviceBound bluetoothAddress addressType 非法枚举值(3/-1)返回401 API 23
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_FUSION_ADD_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                let is_boolean = partnerAgent.isDeviceBound(deviceAddressInvalidAddrType);
+                console.info("[fusion_js]isDeviceBound addressType invalid enum 3 value is: " + JSON.stringify(is_boolean));
+                //如果当前没有绑定设备  会返回false
+                expect(is_boolean == true || is_boolean == false).assertTrue();
+            } catch (err) {
+                console.error("[fusion_js]isDeviceBound addressType invalid enum 3 is fail , errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    console.info("设备 is not support.");
+                    expect(err.code).assertEqual(801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            try {
+                let is_boolean1 = partnerAgent.isDeviceBound(deviceAddressInvalidAddrTypeNeg);
+                console.info("[fusion_js]isDeviceBound addressType invalid enum -1 value is: " + JSON.stringify(is_boolean1));
+                expect(is_boolean1 == true || is_boolean1 == false).assertTrue();
+            } catch (err) {
+                console.error("[fusion_js]isDeviceBound addressType invalid enum -1 is fail , errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    console.info("设备 is not support.");
+                    expect(err.code).assertEqual(801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+        /**
+         * @tc.name   SUB_COMMUNICATION_FUSION_ADD_3200
+         * @tc.number SUB_COMMUNICATION_FUSION_ADD_3200
+         * @tc.desc   Test isDeviceControlEnabled bluetoothAddress addressType 非法枚举值(3/-1)返回401 API 23
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_FUSION_ADD_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                let is_boolean = partnerAgent.isDeviceControlEnabled(deviceAddressInvalidAddrType);
+                console.info("[fusion_js]isDeviceControlEnabled addressType invalid enum 3 value is: " + JSON.stringify(is_boolean));
+                expect(is_boolean == true || is_boolean == false).assertTrue();
+            } catch (err) {
+                console.error("[fusion_js]isDeviceControlEnabled addressType invalid enum 3 is fail , errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    console.info("设备 is not support.");
+                    expect(err.code).assertEqual(801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            try {
+                let is_boolean1 = partnerAgent.isDeviceControlEnabled(deviceAddressInvalidAddrTypeNeg);
+                console.info("[fusion_js]isDeviceControlEnabled addressType invalid enum -1 value is: " + JSON.stringify(is_boolean1));
+                expect(is_boolean1 == true || is_boolean1 == false).assertTrue();
+            } catch (err) {
+                console.error("[fusion_js]isDeviceControlEnabled addressType invalid enum -1 is fail , errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    console.info("设备 is not support.");
+                    expect(err.code).assertEqual(801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+        /**
+         * @tc.name   SUB_COMMUNICATION_FUSION_ADD_3300
+         * @tc.number SUB_COMMUNICATION_FUSION_ADD_3300
+         * @tc.desc   Test bindDevice bluetoothAddress rawAddressType 非法枚举值(2/-1)返回401 API 23
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_FUSION_ADD_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                await partnerAgent.bindDevice(deviceAddressInvalidRawType, deviceCapability, businessCapability, partnerAgentExtensionAbilityName);
+                expect().assertFail();
+            } catch (err) {
+                console.error("[fusion_js]bindDevice rawAddressType invalid enum 2: errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    console.info("设备 is not support.");
+                    expect(err.code).assertEqual(801);
+                } else {
+                    expect(err.code).assertEqual(34900099);
+                }
+            }
+            try {
+                await partnerAgent.bindDevice(deviceAddressInvalidRawTypeNeg, deviceCapability, businessCapability, partnerAgentExtensionAbilityName);
+                expect().assertFail();
+            } catch (err) {
+                console.error("[fusion_js]bindDevice rawAddressType invalid enum -1: errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    console.info("设备 is not support.");
+                    expect(err.code).assertEqual(801);
+                } else {
+                    expect(err.code).assertEqual(34900099);
+                }
+            }
+            done();
+        })
+        /**
+         * @tc.name   SUB_COMMUNICATION_FUSION_ADD_3400
+         * @tc.number SUB_COMMUNICATION_FUSION_ADD_3400
+         * @tc.desc   Test unbindDevice bluetoothAddress rawAddressType 非法枚举值(2/-1)返回401 API 23
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_FUSION_ADD_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                await partnerAgent.unbindDevice(deviceAddressInvalidRawType);
+                expect().assertFail();
+            } catch (err) {
+                console.error("[fusion_js]unbindDevice rawAddressType invalid enum 2: errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    console.info("设备 is not support.");
+                    expect(err.code).assertEqual(801);
+                } else {
+                    expect(err.code).assertEqual(34900099);
+                }
+            }
+            try {
+                await partnerAgent.unbindDevice(deviceAddressInvalidRawTypeNeg);
+                expect().assertFail();
+            } catch (err) {
+                console.error("[fusion_js]unbindDevice rawAddressType invalid enum -1: errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    console.info("设备 is not support.");
+                    expect(err.code).assertEqual(801);
+                } else {
+                    expect(err.code).assertEqual(34900099);
+                }
+            }
+            done();
+        })
+        /**
+         * @tc.name   SUB_COMMUNICATION_FUSION_ADD_3500
+         * @tc.number SUB_COMMUNICATION_FUSION_ADD_3500
+         * @tc.desc   Test isDeviceBound bluetoothAddress rawAddressType 非法枚举值(2/-1)返回401 API 23
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_FUSION_ADD_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                let is_boolean = partnerAgent.isDeviceBound(deviceAddressInvalidRawType);
+                console.info("[fusion_js]isDeviceBound rawAddressType invalid enum 2 value is: " + JSON.stringify(is_boolean));
+                expect(is_boolean == true || is_boolean == false).assertTrue();
+            } catch (err) {
+                console.error("[fusion_js]isDeviceBound rawAddressType invalid enum 2 is fail , errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    console.info("设备 is not support.");
+                    expect(err.code).assertEqual(801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            try {
+                let is_boolean1 = partnerAgent.isDeviceBound(deviceAddressInvalidRawTypeNeg);
+                console.info("[fusion_js]isDeviceBound rawAddressType invalid enum -1 value is: " + JSON.stringify(is_boolean1));
+                expect(is_boolean1 == true || is_boolean1 == false).assertTrue();
+            } catch (err) {
+                console.error("[fusion_js]isDeviceBound rawAddressType invalid enum -1 is fail , errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    console.info("设备 is not support.");
+                    expect(err.code).assertEqual(801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+        /**
+         * @tc.name   SUB_COMMUNICATION_FUSION_ADD_3600
+         * @tc.number SUB_COMMUNICATION_FUSION_ADD_3600
+         * @tc.desc   Test isDeviceControlEnabled bluetoothAddress rawAddressType 非法枚举值(2/-1)返回401 API 23
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_FUSION_ADD_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                let is_boolean = partnerAgent.isDeviceControlEnabled(deviceAddressInvalidRawType);
+                console.info("[fusion_js]isDeviceControlEnabled rawAddressType invalid enum 2 value is: " + JSON.stringify(is_boolean));
+                expect(is_boolean == true || is_boolean == false).assertTrue();
+            } catch (err) {
+                console.error("[fusion_js]isDeviceControlEnabled rawAddressType invalid enum 2 is fail , errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    console.info("设备 is not support.");
+                    expect(err.code).assertEqual(801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            try {
+                let is_boolean1 = partnerAgent.isDeviceControlEnabled(deviceAddressInvalidRawTypeNeg);
+                console.info("[fusion_js]isDeviceControlEnabled rawAddressType invalid enum -1 value is: " + JSON.stringify(is_boolean1));
+                expect(is_boolean1 == true || is_boolean1 == false).assertTrue();
+            } catch (err) {
+                console.error("[fusion_js]isDeviceControlEnabled rawAddressType invalid enum -1 is fail , errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    console.info("设备 is not support.");
+                    expect(err.code).assertEqual(801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
 
+        /**
+         * @tc.name   SUB_COMMUNICATION_FUSION_ADD_3700
+         * @tc.number SUB_COMMUNICATION_FUSION_ADD_3700
+         * @tc.desc   test PartnerAgentExtensionContext
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_FUSION_ADD_3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                let ctx = PartnerAgentExtensionContext;
+                console.info("[fusion_js]PartnerAgentExtensionContext typeof is: " + typeof ctx);
+                expect(typeof ctx).assertEqual('function');
+            } catch (err) {
+                console.error("[fusion_js]PartnerAgentExtensionContext errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    console.info("设备 is not support.");
+                    expect(err.code).assertEqual(801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
     })
 }

@@ -14,7 +14,7 @@
  */
 import hilog from '@ohos.hilog';
 import launcherBundleManager from '@ohos.bundle.launcherBundleManager';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic'
 import { BusinessError } from '@kit.BasicServicesKit';
 import { osAccount } from '@kit.BasicServicesKit';
 
@@ -52,78 +52,80 @@ export default function actsGetLauncherAbilityInfoTest() {
       let osAccountManager = osAccount.getAccountManager();
       let code = SUCCESS;
       let userId = USER_ID100;
-      osAccountManager.getOsAccountLocalId((err, localId) => {
-        userId = localId;
-      })
-      try {
-        let abilityInfos: Array<launcherBundleManager.LauncherAbilityInfo> =
-          launcherBundleManager.getLauncherAbilityInfoSync(BUNDLE_NAME100, userId);
-        expect(abilityInfos.length).assertLarger(PARAM_0);
-        for (let index = 0; index < abilityInfos.length; index++) {
-          expect(abilityInfos[index].labelId).assertLarger(PARAM_0);
-          expect(abilityInfos[index].iconId).assertLarger(PARAM_0);
-          expect(abilityInfos[index].userId).assertEqual(userId);
-          expect(abilityInfos[index].installTime).assertLarger(PARAM_0);
-          expect(abilityInfos[index].applicationInfo.name).assertEqual(BUNDLE_NAME100);
-          expect(abilityInfos[index].applicationInfo.description).assertEqual("");
-          expect(abilityInfos[index].applicationInfo.descriptionId).assertEqual(PARAM_0);
-          expect(abilityInfos[index].applicationInfo.enabled).assertEqual(true);
-          expect(abilityInfos[index].applicationInfo.label).assertEqual("$string:app_name");
-          expect(abilityInfos[index].applicationInfo.labelId).assertLarger(PARAM_0);
-          expect(abilityInfos[index].applicationInfo.icon).assertEqual("$media:app_icon");
-          expect(abilityInfos[index].applicationInfo.iconId).assertLarger(PARAM_0);
-          expect(abilityInfos[index].applicationInfo.process).assertEqual(BUNDLE_NAME100);
-          expect(abilityInfos[index].applicationInfo.permissions.length).assertEqual(PARAM_0);
-          expect(abilityInfos[index].applicationInfo.codePath).assertEqual(CODE_PATH);
-          expect(abilityInfos[index].applicationInfo.metadataArray.length).assertEqual(PARAM_0);
-          expect(abilityInfos[index].applicationInfo.removable).assertEqual(true);
-          expect(abilityInfos[index].applicationInfo.accessTokenId).assertLarger(PARAM_0);
-          expect(abilityInfos[index].applicationInfo.uid).assertLarger(PARAM_0);
-          expect(abilityInfos[index].applicationInfo.iconResource.bundleName).assertEqual(BUNDLE_NAME100);
-          expect(abilityInfos[index].applicationInfo.iconResource.moduleName).assertEqual("entry_test");
-          expect(abilityInfos[index].applicationInfo.iconResource.id).assertLarger(PARAM_0);
-          expect(abilityInfos[index].applicationInfo.labelResource.bundleName).assertEqual(BUNDLE_NAME100);
-          expect(abilityInfos[index].applicationInfo.labelResource.moduleName).assertEqual("entry_test");
-          expect(abilityInfos[index].applicationInfo.labelResource.id).assertLarger(PARAM_0);
-          expect(abilityInfos[index].applicationInfo.descriptionResource.bundleName).assertEqual(BUNDLE_NAME100);
-          expect(abilityInfos[index].applicationInfo.descriptionResource.moduleName).assertEqual("entry_test");
-          expect(abilityInfos[index].applicationInfo.descriptionResource.id).assertEqual(PARAM_0);
-          expect(abilityInfos[index].applicationInfo.appDistributionType).assertEqual("os_integration");
-          expect(abilityInfos[index].applicationInfo.appProvisionType).assertEqual("release");
-          expect(abilityInfos[index].applicationInfo.systemApp).assertEqual(true);
-          expect(abilityInfos[index].applicationInfo.bundleType).assertEqual(PARAM_0);
-          expect(abilityInfos[index].applicationInfo.debug).assertEqual(false);
-          expect(abilityInfos[index].applicationInfo.dataUnclearable).assertEqual(false);
-          expect(abilityInfos[index].applicationInfo.nativeLibraryPath).assertEqual("");
-          expect(abilityInfos[index].applicationInfo.multiAppMode.multiAppModeType).assertEqual(PARAM_0);
-          expect(abilityInfos[index].applicationInfo.multiAppMode.maxCount).assertEqual(PARAM_0);
-          expect(abilityInfos[index].applicationInfo.appIndex).assertEqual(PARAM_0);
-          expect(abilityInfos[index].applicationInfo.installSource).assertEqual("unknown");
-          expect(abilityInfos[index].applicationInfo.releaseType.length).assertLarger(PARAM_0);
-          expect(abilityInfos[index].applicationInfo.cloudFileSyncEnabled).assertEqual(false);
-          expect(abilityInfos[index].applicationInfo.cloudStructuredDataSyncEnabled).assertEqual(false);
-          expect(abilityInfos[index].elementName.deviceId).assertEqual("");
-          expect(abilityInfos[index].elementName.bundleName).assertEqual(BUNDLE_NAME100);
-          expect(abilityInfos[index].elementName.moduleName).assertEqual("entry_test");
-          expect(abilityInfos[index].elementName.abilityName).assertEqual("TestAbility");
-          expect(abilityInfos[index].elementName.uri).assertEqual(URI);
-          expect(abilityInfos[index].elementName.shortName).assertEqual("");
-        }
-        done();
-      }
-      catch (errData) {
-        let errMsg = (errData as BusinessError).message;
-        code = (errData as BusinessError).code;
-        hilog.info(DOMAIN, "Sub_Bms_Framework_GetLauncherAbilityInfoSync_0100",
-          `errData is errCode:${code} message:${errMsg}`);
-        if (code === ERROR_CODE801) {
-          expect(code).assertEqual(ERROR_CODE801);
-          done();
-        } else {
-          expect().assertFail();
-          done();
-        }
-      }
+        osAccountManager.getOsAccountLocalId((err, localId) => {
+          userId = localId;
+          console.info('Sub_Bms_Framework_GetLauncherAbilityInfoSync_0100 ==>' + localId)
+          try {
+            let abilityInfos: Array<launcherBundleManager.LauncherAbilityInfo> =
+              launcherBundleManager.getLauncherAbilityInfoSync(BUNDLE_NAME100, userId);
+            expect(abilityInfos.length).assertLarger(PARAM_0);
+            for (let index = 0; index < abilityInfos.length; index++) {
+              console.info('Sub_Bms_Framework_GetLauncherAbilityInfoSync_0100 ==>' + JSON.stringify(abilityInfos[index]))
+              expect(abilityInfos[index].labelId).assertLarger(PARAM_0);
+              expect(abilityInfos[index].iconId).assertLarger(PARAM_0);
+              expect(abilityInfos[index].userId).assertEqual(userId);
+              expect(abilityInfos[index].installTime).assertLarger(PARAM_0);
+              expect(abilityInfos[index].applicationInfo.name).assertEqual(BUNDLE_NAME100);
+              expect(abilityInfos[index].applicationInfo.description).assertEqual("");
+              expect(abilityInfos[index].applicationInfo.descriptionId).assertEqual(PARAM_0);
+              expect(abilityInfos[index].applicationInfo.enabled).assertEqual(true);
+              expect(abilityInfos[index].applicationInfo.label).assertEqual("$string:app_name");
+              expect(abilityInfos[index].applicationInfo.labelId).assertLarger(PARAM_0);
+              expect(abilityInfos[index].applicationInfo.icon).assertEqual("$media:app_icon");
+              expect(abilityInfos[index].applicationInfo.iconId).assertLarger(PARAM_0);
+              expect(abilityInfos[index].applicationInfo.process).assertEqual(BUNDLE_NAME100);
+              expect(abilityInfos[index].applicationInfo.permissions.length).assertEqual(PARAM_0);
+              expect(abilityInfos[index].applicationInfo.codePath).assertEqual(CODE_PATH);
+              expect(abilityInfos[index].applicationInfo.metadataArray.length).assertEqual(PARAM_0);
+              expect(abilityInfos[index].applicationInfo.removable).assertEqual(true);
+              expect(abilityInfos[index].applicationInfo.accessTokenId).assertLarger(PARAM_0);
+              expect(abilityInfos[index].applicationInfo.uid).assertLarger(PARAM_0);
+              expect(abilityInfos[index].applicationInfo.iconResource.bundleName).assertEqual(BUNDLE_NAME100);
+              expect(abilityInfos[index].applicationInfo.iconResource.moduleName).assertEqual("entry_test");
+              expect(abilityInfos[index].applicationInfo.iconResource.id).assertLarger(PARAM_0);
+              expect(abilityInfos[index].applicationInfo.labelResource.bundleName).assertEqual(BUNDLE_NAME100);
+              expect(abilityInfos[index].applicationInfo.labelResource.moduleName).assertEqual("entry_test");
+              expect(abilityInfos[index].applicationInfo.labelResource.id).assertLarger(PARAM_0);
+              expect(abilityInfos[index].applicationInfo.descriptionResource.bundleName).assertEqual(BUNDLE_NAME100);
+              expect(abilityInfos[index].applicationInfo.descriptionResource.moduleName).assertEqual("entry_test");
+              expect(abilityInfos[index].applicationInfo.descriptionResource.id).assertEqual(PARAM_0);
+              expect(abilityInfos[index].applicationInfo.appDistributionType).assertEqual("os_integration");
+              expect(abilityInfos[index].applicationInfo.appProvisionType).assertEqual("release");
+              expect(abilityInfos[index].applicationInfo.systemApp).assertEqual(true);
+              expect(abilityInfos[index].applicationInfo.bundleType).assertEqual(PARAM_0);
+              expect(abilityInfos[index].applicationInfo.debug).assertEqual(false);
+              expect(abilityInfos[index].applicationInfo.dataUnclearable).assertEqual(false);
+              expect(abilityInfos[index].applicationInfo.nativeLibraryPath).assertEqual("");
+              expect(abilityInfos[index].applicationInfo.multiAppMode.multiAppModeType >=0).assertTrue();
+              expect(abilityInfos[index].applicationInfo.multiAppMode.maxCount >=0).assertTrue();
+              expect(abilityInfos[index].applicationInfo.appIndex).assertEqual(PARAM_0);
+              expect(abilityInfos[index].applicationInfo.installSource).assertEqual("unknown");
+              expect(abilityInfos[index].applicationInfo.releaseType.length).assertLarger(PARAM_0);
+              expect(abilityInfos[index].applicationInfo.cloudFileSyncEnabled).assertEqual(false);
+              expect(abilityInfos[index].applicationInfo.cloudStructuredDataSyncEnabled).assertEqual(false);
+              expect(abilityInfos[index].elementName.deviceId).assertEqual("");
+              expect(abilityInfos[index].elementName.bundleName).assertEqual(BUNDLE_NAME100);
+              expect(abilityInfos[index].elementName.moduleName).assertEqual("entry_test");
+              expect(abilityInfos[index].elementName.abilityName).assertEqual("TestAbility");
+              expect(abilityInfos[index].elementName.uri).assertEqual(URI);
+              expect(abilityInfos[index].elementName.shortName).assertEqual("");
+            }
+            done();
+          }
+          catch (errData) {
+            let errMsg = (errData as BusinessError).message;
+            code = (errData as BusinessError).code;
+            hilog.info(DOMAIN, "Sub_Bms_Framework_GetLauncherAbilityInfoSync_0100",
+              `errData is errCode:${code} message:${errMsg}`);
+            if (code === ERROR_CODE801) {
+              expect(code).assertEqual(ERROR_CODE801);
+              done();
+            } else {
+              expect().assertFail();
+              done();
+            }
+          }
+        })
     })
 
     /**

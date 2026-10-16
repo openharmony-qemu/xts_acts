@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium-dynamic";
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import { MessageManager, Callback } from '../../MainAbility/common/MessageManager';
@@ -60,8 +60,8 @@ export default function ColumnsTemplateAndRowsTemplateNoSet() {
       await CommonFunc.sleep(2000);
 
       console.log('get Initial value')
-      let GridItem_01 = CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplateNoSet' + '_GridItem_01');
-      let Grid_1 = CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplateNoSet' + '_Grid_1');
+      let GridItem_01 = CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplateNoSet_GridItem_01');
+      let Grid_1 = CommonFunc.getComponentRect('ColumnsTemplateAndRowsTemplateNoSet_Grid_1');
 
       console.log('assert position')
       expect(GridItem_01.left).assertEqual(Grid_1.left);

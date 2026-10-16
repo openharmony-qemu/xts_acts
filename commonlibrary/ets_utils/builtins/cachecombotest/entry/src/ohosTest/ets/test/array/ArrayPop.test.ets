@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import {
   testEntriesWithPopDuringIteration,
   testEntriesIteratorReflectsPopChanges,

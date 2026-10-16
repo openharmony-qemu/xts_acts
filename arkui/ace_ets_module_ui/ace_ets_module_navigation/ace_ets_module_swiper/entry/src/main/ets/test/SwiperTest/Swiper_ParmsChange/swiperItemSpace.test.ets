@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import CommonFunc, { RectValue } from "../../../MainAbility/common/Common";
 import {
@@ -35,6 +35,8 @@ import {
 
 import abilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 
 export default function swiperItemSpace() {
   describe('swiperItemSpaceTest', () => {
@@ -99,7 +101,7 @@ export default function swiperItemSpace() {
 
       let driver = Driver.create();
       // await CommonFunc.sleep(500);
-      // await driver.swipe(vp2px(180), vp2px(100), vp2px(20), vp2px(100));
+      // await driver.swipeBetween({ x: vp2px(180), y: vp2px(100), displayId: displayID }, { x: vp2px(20), y: vp2px(100), displayId: displayID });
       await CommonFunc.sleep(1000);
 
       let gridRect:RectValue = CommonFunc.getComponentRectOnScreen('itemspacekey')
@@ -180,8 +182,8 @@ export default function swiperItemSpace() {
       // After flipping the page.
       let driver = Driver.create();
      //  await CommonFunc.sleep(500);
-     //  await driver.swipe(vp2px(180), vp2px(100), vp2px(20), vp2px(100));
-     // // await driver.swipe(250, 230, 200, 230);
+     //  await driver.swipeBetween({ x: vp2px(180), y: vp2px(100), displayId: displayID }, { x: vp2px(20), y: vp2px(100), displayId: displayID });
+     // // await driver.swipeBetween({ x: 250, y: 230, displayId: displayID }, { x: 200, y: 230, displayId: displayID });
      //  await CommonFunc.sleep(1000);
       await CommonFunc.sleep(1000);
 

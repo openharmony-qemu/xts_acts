@@ -16,9 +16,11 @@
 import HapNapiLoadTest from './HapNapiLoad.test';
 import HarNapiLoadTest from './HarNapiLoad.test';
 import HspNapiLoadTest from './HspNapiLoad.test';
+import CrossModuleNapiLoadTest from './CrossModuleNapiLoad.test';
 
 export default function testsuite() {
   HapNapiLoadTest();
   HarNapiLoadTest();
   HspNapiLoadTest();
+  CrossModuleNapiLoadTest();
 }

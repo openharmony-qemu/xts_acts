@@ -28,6 +28,10 @@ import LinearGradientTest from "./StyledStringTest/LinearGradient.test"
 import RadialGradientTest from "./StyledStringTest/RadialGradient.test"
 import LineSpacingOptionsTest from "./StyledStringTest/LineSpacingOptions.test"
 import TextLayoutManagerWithEncodingTest from "./TextCommonTest/TextLayoutManagerWithEncoding.test"
+import SetUiDvsyncSwitchTest from "./TextCommonTest/SetUiDvsyncSwitch.test"
+import ImageSpanResizableTest from "./TextCommonTest/ImageSpanResizable.test"
+import ImageAttachmentResizableTest from "./StyledStringTest/ImageAttachmentResizable.test"
+import TextStrokeTest from "./TextCommonTest/TextStroke.test"
 
 export default function testsuite() {
   TextEnumTest();
@@ -46,4 +50,8 @@ export default function testsuite() {
   RadialGradientTest();
   LineSpacingOptionsTest();
   TextLayoutManagerWithEncodingTest();
+  SetUiDvsyncSwitchTest();
+  ImageSpanResizableTest();
+  ImageAttachmentResizableTest();
+  TextStrokeTest();
 }

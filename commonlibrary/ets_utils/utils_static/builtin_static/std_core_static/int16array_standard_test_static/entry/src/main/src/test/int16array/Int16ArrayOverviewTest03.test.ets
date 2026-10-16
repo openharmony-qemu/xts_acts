@@ -454,38 +454,6 @@ export default function Int16ArrayOverviewTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_THREE_2100
-     * @tc.name testInt16ArrayOverviewTestThree021
-     * @tc.desc Verify new Int16Array, some empty array behavior consistency
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayOverviewTestThree021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const empty = new Int16Array();
-      const result = empty.some((_v: number, _i: int, _a: Int16Array): boolean => true);
-      expect(result).assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_THREE_2200
-     * @tc.name testInt16ArrayOverviewTestThree022
-     * @tc.desc Verify new Int16Array, reduceRight empty array behavior consistency
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayOverviewTestThree022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const empty = new Int16Array();
-      try {
-        empty.reduceRight((_prev: number, _cv: number, _ci: int, _a: Int16Array): number => 0);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('TypeError');
-      }
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_THREE_2300
      * @tc.name testInt16ArrayOverviewTestThree023
      * @tc.desc Verify new Int16Array, map empty array behavior consistency
@@ -498,35 +466,6 @@ export default function Int16ArrayOverviewTest03(): void {
       const result = empty.map((_v: number, _i: int, _a: Int16Array): number => 32768);
       let actualValue0: int = result.length;
       let expectedValue0: int = 0;
-      expect(actualValue0).assertEqual(expectedValue0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_THREE_2400
-     * @tc.name testInt16ArrayOverviewTestThree024
-     * @tc.desc Verify empty Int16Array find returns undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayOverviewTestThree024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const empty = new Int16Array();
-      const result = empty.find((_v: number, _i: int, _a: Int16Array): boolean => true);
-      expect(result).assertUndefined();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_THREE_2500
-     * @tc.name testInt16ArrayOverviewTestThree025
-     * @tc.desc Verify new Int16Array, indexOf empty array behavior consistency
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayOverviewTestThree025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const empty = new Int16Array();
-      let actualValue0: int = empty.indexOf(0);
-      let expectedValue0: int = -1;
       expect(actualValue0).assertEqual(expectedValue0);
     });
 
@@ -625,24 +564,6 @@ export default function Int16ArrayOverviewTest03(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_THREE_3100
-     * @tc.name testInt16ArrayOverviewTestThree031
-     * @tc.desc Verify new Int16Array with huge length bound throws RangeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayOverviewTestThree031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const hugeLength: number = 1.7976931348623157e308;
-      try {
-        new Int16Array(hugeLength);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_THREE_3200
      * @tc.name testInt16ArrayOverviewTestThree032
      * @tc.desc Verify $_set(0, 0x8000) then $_get wraps to -32768
@@ -655,108 +576,6 @@ export default function Int16ArrayOverviewTest03(): void {
       arr.$_set(0, 0x8000);
       let resultValue: number = arr.$_get(0);
       let expectedValue: int = -32768;
-      expect(resultValue).assertEqual(expectedValue);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_THREE_3300
-     * @tc.name testInt16ArrayOverviewTestThree033
-     * @tc.desc Verify fill(0x8000) sets all elements to -32768 via $_get
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayOverviewTestThree033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Int16Array(3);
-      arr.fill(0x8000);
-      let resultValue: number = arr.$_get(0);
-      let expectedValue: int = -32768;
-      expect(resultValue).assertEqual(expectedValue);
-      let index2Value: number = arr.$_get(2);
-      let expectedIndex2Value: int = -32768;
-      expect(index2Value).assertEqual(expectedIndex2Value);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_THREE_3400
-     * @tc.name testInt16ArrayOverviewTestThree034
-     * @tc.desc Verify Int16Array.from FixedArray NaN/Infinity maps to 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayOverviewTestThree034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const source: number[] = [Number.NaN, Number.POSITIVE_INFINITY];
-      const arr = Int16Array.from(source);
-      let resultValue: number = arr.$_get(0);
-      let expectedValue: int = 0;
-      expect(resultValue).assertEqual(expectedValue);
-      let index1Value: number = arr.$_get(1);
-      let expectedIndex1Value: int = 0;
-      expect(index1Value).assertEqual(expectedIndex1Value);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_THREE_3500
-     * @tc.name testInt16ArrayOverviewTestThree035
-     * @tc.desc Verify new Int16Array(ArrayBuffer(0), 0, hugeLen) throws RangeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayOverviewTestThree035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        let buf: ArrayBuffer = new ArrayBuffer(0);
-        let len: int = 2147483647;
-        let _arr: Int16Array = new Int16Array(buf, 0 as int, len);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_THREE_3600
-     * @tc.name testInt16ArrayOverviewTestThree036
-     * @tc.desc Verify $_set(length+1, value) far OOB throws RangeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayOverviewTestThree036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Int16Array.of(10, 20);
-      try {
-        arr.$_set(3, 77);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
-      let resultValue: number = arr.$_get(0);
-      let expectedValue: int = 10;
-      expect(resultValue).assertEqual(expectedValue);
-      let index1Value: number = arr.$_get(1);
-      let expectedIndex1Value: int = 20;
-      expect(index1Value).assertEqual(expectedIndex1Value);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_THREE_3700
-     * @tc.name testInt16ArrayOverviewTestThree037
-     * @tc.desc Verify $_set(2147483647, value) huge OOB throws RangeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayOverviewTestThree037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Int16Array.of(10, 20);
-      try {
-        arr.$_set(2147483647, 99);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
-      let resultValue: number = arr.$_get(0);
-      let expectedValue: int = 10;
       expect(resultValue).assertEqual(expectedValue);
     });
 

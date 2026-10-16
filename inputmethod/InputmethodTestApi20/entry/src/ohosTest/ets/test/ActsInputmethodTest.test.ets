@@ -15,9 +15,15 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import testNapi from 'libentry.so'
+import { Driver } from '@ohos.UiTest';
 
 export default function ActsInputmethodTest() {
   describe('ActsInputmethodTest', () => {
+    beforeAll(async (done: Function) => {
+      let driver = Driver.create();
+      await driver.delayMs(2000);
+      done();
+    })
     /**
      * @tc.name   SUB_InputMethod_Imf_SDK_OH_AttachOptions_IsShowKeyboard_0100
      * @tc.number SUB_InputMethod_Imf_SDK_OH_AttachOptions_IsShowKeyboard_0100

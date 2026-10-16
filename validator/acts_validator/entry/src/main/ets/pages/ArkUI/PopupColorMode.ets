@@ -23,7 +23,7 @@ import { BusinessError } from '@ohos.base';
 @Entry
 @Component
 struct popupColorModeDemo {
-  @State name: string = 'popupColorMode';
+  @State name: string = 'PopupColorMode';
   @State stepTips: string = '操作步骤:\n' + '1.点击FOLLOW_SYSTEM和LIGHT按钮,点击粉色button,观察弹出的气泡颜色\n' +
     '2.点击FOLLOW_SYSTEM和DARK按钮,点击粉色button,观察弹出的气泡颜色\n' +
     '3.点击FOLLOW_TARGET和LIGHT按钮,点击粉色button,观察弹出的气泡颜色\n' +

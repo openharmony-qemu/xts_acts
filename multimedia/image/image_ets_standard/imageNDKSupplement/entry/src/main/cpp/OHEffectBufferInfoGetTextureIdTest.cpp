@@ -90,6 +90,9 @@ napi_value OHEffectBufferInfoGetTextureIdTest(napi_env env, napi_callback_info i
         textureId = IMAGE_EFFECT_2;
         code = OH_EffectBufferInfo_GetTextureId(bufferInfo, &dstTex);
         break;
+    case CASE_INDEX_4:
+        code = OH_EffectBufferInfo_GetTextureId(bufferInfo, nullptr);
+        break;
     default:
         break;
     }

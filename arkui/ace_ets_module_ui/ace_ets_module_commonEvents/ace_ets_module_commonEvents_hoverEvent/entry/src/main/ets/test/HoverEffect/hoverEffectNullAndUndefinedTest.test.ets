@@ -14,10 +14,11 @@
  */
 
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "@ohos/hypium"
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "@ohos/hypium-dynamic"
 import { Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common'
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function hoverEffectNullAndUndefined() {
   describe('hoverEffectNullAndUndefined', () => {
     beforeAll(async () => {
@@ -61,7 +62,7 @@ export default function hoverEffectNullAndUndefined() {
       let rect = await button.getBounds();
       let centerX = Math.floor((rect.left + rect.right) / 2);
       let centerY = Math.floor((rect.top + rect.bottom) / 2);
-      await driver.mouseMoveTo({ x: centerX, y: centerY });
+      await driver.mouseMoveTo({ x: centerX, y: centerY, displayId: displayID });
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('resultText');
       let obj: ESObject = JSON.parse(strJson);
@@ -86,7 +87,7 @@ export default function hoverEffectNullAndUndefined() {
       let rect = await button.getBounds();
       let centerX = Math.floor((rect.left + rect.right) / 2);
       let centerY = Math.floor((rect.top + rect.bottom) / 2);
-      await driver.mouseMoveTo({ x: centerX, y: centerY });
+      await driver.mouseMoveTo({ x: centerX, y: centerY, displayId: displayID });
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('resultText');
       let obj: ESObject = JSON.parse(strJson);

@@ -35,6 +35,7 @@ int VideoDecodeSyncSw264Func0010();
 int VideoDecodeSyncSw264Func0020();
 int VideoDecodeSyncSw264Func0040();
 int VideoSwdecodeBlankFrame0010();
+int VideoDecoderS264DmabufSuffix0010();
 
 void InitActsFuncTest();
 

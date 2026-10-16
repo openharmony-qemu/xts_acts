@@ -12,16 +12,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium-dynamic"
 import router from '@ohos.router';
 import events_emitter from '@ohos.events.emitter';
 import { Driver, ON } from '@ohos.UiTest'
 import Utils from './Utils';
 
 export default function saveComponentTest_1() {
-  describe('saveComponentTest_1', ( ) => {
-    beforeAll(async (done:Function) => {
-      let options:router.RouterOptions = {
+  describe('saveComponentTest_1', () => {
+    let driver: Driver;
+    beforeAll(async (done: Function) => {
+      let options: router.RouterOptions = {
         url: 'testability/pages/saveButton_1',
       }
       try {
@@ -37,6 +38,8 @@ export default function saveComponentTest_1() {
       } catch (err) {
         console.error("====>saveComponentTest_1 push page error: " + err);
       }
+      driver = Driver.create();
+      await Utils.sleep(1000);
       done()
     });
 
@@ -53,60 +56,83 @@ export default function saveComponentTest_1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Test_Security_Button_Save_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+    it('Test_Security_Button_Save_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('====>[Test_Security_Button_Save_2300] START====');
+      let authorized = false;
+      let finished = false;
+      const finish = () => {
+        if (!finished) {
+          finished = true;
+          done();
+        }
+      };
       await Utils.sleep(1000);
       let strJsonNew = getInspectorByKey('keySave2');
-      let obj : ESObject = JSON.parse(strJsonNew);
+      await Utils.sleep(3000);
+      console.info(`====>[Test_Security_Button_Save_2300] strJsonNew is: ${strJsonNew}`);
+      let obj: ESObject = JSON.parse(strJsonNew);
       console.info("====>component obj.$attrs.icon:" + obj.$attrs.icon);
       console.info("====>component obj.$attrs.text:" + obj.$attrs.text);
       expect(obj.$attrs.icon).assertEqual(1);
       expect(obj.$attrs.text).assertEqual(1);
       await Utils.sleep(1000);
       try {
-        let clickCallback = (clickData:events_emitter.EventData) => {
-          if(clickData.data !=undefined){
+        let clickCallback = (clickData: events_emitter.EventData) => {
+          if (clickData.data != undefined){
             console.info("====>[Test_Security_Button_Save_2300] get clickEvent result is: " + JSON.stringify(clickEvent));
             console.info("====>[Test_Security_Button_Save_2300] get clickData.data.clickResult is: " + JSON.stringify(clickData.data.clickResult));
             if (clickData.data.clickResult == SaveButtonOnClickResult.SUCCESS) {
               console.info("====>[Test_Security_Button_Save_2300] 设置权限成功");
-              expect(clickData.data.clickResult == SaveButtonOnClickResult.SUCCESS).assertTrue();
+              authorized = true;
               console.info("====>[Test_Security_Button_Save_2300] END====");
-              done();
             } else {
               console.info("====>[Test_Security_Button_Save_2300] 设置权限失败");
-              expect().assertFail()
+              expect(false).assertTrue();
               console.info("====>[Test_Security_Button_Save_2300] END====");
-              done();
             }
           } else {
             console.info("====>[Test_Security_Button_Save_2300] 设置权限失败");
-            expect().assertFail()
+            expect(false).assertTrue();
             console.info("====>[Test_Security_Button_Save_2300] END====");
-            done();
           }
         }
-        let clickEvent:events_emitter.InnerEvent = {
+        let clickEvent: events_emitter.InnerEvent = {
           eventId: 2,
           priority: events_emitter.EventPriority.LOW
         }
         events_emitter.once(clickEvent, clickCallback);
       } catch (err) {
         console.info("====>[Test_Security_Button_Save_2300] once clickEvent err : " + JSON.stringify(err));
+        if (!authorized) {
+          expect(false).assertTrue();
+        }
       }
       try {
-        let driver = Driver.create();
-        let button = await driver.findComponents(ON.type('SaveButton'));
-        await Utils.sleep(500);
+        let button = await driver.findComponent(ON.type('SaveButton'));
+        await Utils.sleep(3000);
         console.info("====>[Test_Security_Button_Save_2300] button is:" + JSON.stringify(button));
-        await button[0].click();
-        await Utils.sleep(1000);
-        let button2 = await driver.findComponents(ON.id('switchButton'));
-        await button2[0].click();
+        if (await button.isEnabled()) {
+          await button.click();
+          await Utils.sleep(1000);
+        } else {
+          console.info(`====>[Test_Security_Button_Save_2300] SaveButton is disabled`);
+          if (!authorized) {
+            expect(false).assertTrue();
+          }
+        }
+        let button2 = await driver.findComponent(ON.id('switchButton'));
+        await Utils.sleep(3000);
+        await button2.click();
         await Utils.sleep(1000);
       } catch (err) {
         console.info("====>[Test_Security_Button_Save_2300] clickSecComponent err : " + JSON.stringify(err));
+        if (!authorized) {
+          expect(false).assertTrue();
+        }
       }
+      expect(authorized).assertTrue();
+      await Utils.sleep(1000);
+      finish();
     });
 
     /**
@@ -117,58 +143,81 @@ export default function saveComponentTest_1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Test_Security_Button_Save_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+    it('Test_Security_Button_Save_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('====>[Test_Security_Button_Save_2400] START====');
+      let authorized = false;
+      let finished = false;
+      const finish = () => {
+        if (!finished) {
+          finished = true;
+          done();
+        }
+      };
       await Utils.sleep(1000);
       let strJsonNew = getInspectorByKey('keySave3');
-      let obj : ESObject = JSON.parse(strJsonNew);
+      await Utils.sleep(3000);
+      console.info(`====>[Test_Security_Button_Save_2400] strJsonNew is: ${strJsonNew}`);
+      let obj: ESObject = JSON.parse(strJsonNew);
       console.info("====>component obj.$attrs.text:" + obj.$attrs.text);
       expect(obj.$attrs.text).assertEqual(2);
       await Utils.sleep(1000);
       try {
-        let clickCallback = (clickData:events_emitter.EventData) => {
-          if(clickData.data !=undefined){
+        let clickCallback = (clickData: events_emitter.EventData) => {
+          if (clickData.data != undefined){
             console.info("====>[Test_Security_Button_Save_2400] get clickEvent result is: " + JSON.stringify(clickEvent));
             console.info("====>[Test_Security_Button_Save_2400] get clickData.data.clickResult is: " + JSON.stringify(clickData.data.clickResult));
             if (clickData.data.clickResult == SaveButtonOnClickResult.SUCCESS) {
               console.info("====>[Test_Security_Button_Save_2400] 设置权限成功");
-              expect(clickData.data.clickResult == SaveButtonOnClickResult.SUCCESS).assertTrue();
+              authorized = true;
               console.info("====>[Test_Security_Button_Save_2400] END====");
-              done();
             } else {
               console.info("====>[Test_Security_Button_Save_2400] 设置权限失败");
-              expect().assertFail()
+              expect(false).assertTrue();
               console.info("====>[Test_Security_Button_Save_2400] END====");
-              done();
             }
           } else {
             console.info("====>[Test_Security_Button_Save_2400] 设置权限失败");
-            expect().assertFail()
+            expect(false).assertTrue();
             console.info("====>[Test_Security_Button_Save_2400] END====");
-            done();
           }
         }
-        let clickEvent:events_emitter.InnerEvent = {
+        let clickEvent: events_emitter.InnerEvent = {
           eventId: 2,
           priority: events_emitter.EventPriority.LOW
         }
         events_emitter.once(clickEvent, clickCallback);
       } catch (err) {
         console.info("====>[Test_Security_Button_Save_2400] once clickEvent err : " + JSON.stringify(err));
+        if (!authorized) {
+          expect(false).assertTrue();
+        }
       }
       try {
-        let driver = Driver.create();
-        let button = await driver.findComponents(ON.type('SaveButton'));
-        await Utils.sleep(500);
+        let button = await driver.findComponent(ON.type('SaveButton'));
+        await Utils.sleep(3000);
         console.info("====>[Test_Security_Button_Save_2400] button is:" + JSON.stringify(button));
-        await button[0].click();
-        await Utils.sleep(1000);
-        let button2 = await driver.findComponents(ON.id('switchButton'));
-        await button2[0].click();
+        if (await button.isEnabled()) {
+          await button.click();
+          await Utils.sleep(1000);
+        } else {
+          console.info(`====>[Test_Security_Button_Save_2400] SaveButton is disabled`);
+          if (!authorized) {
+            expect(false).assertTrue();
+          }
+        }
+        let button2 = await driver.findComponent(ON.id('switchButton'));
+        await Utils.sleep(3000);
+        await button2.click();
         await Utils.sleep(1000);
       } catch (err) {
         console.info("====>[Test_Security_Button_Save_2400] clickSecComponent err : " + JSON.stringify(err));
+        if (!authorized) {
+          expect(false).assertTrue();
+        }
       }
+      expect(authorized).assertTrue();
+      await Utils.sleep(1000);
+      finish();
     });
 
     /**
@@ -179,58 +228,81 @@ export default function saveComponentTest_1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Test_Security_Button_Save_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+    it('Test_Security_Button_Save_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('====>[Test_Security_Button_Save_2500] START====');
+      let authorized = false;
+      let finished = false;
+      const finish = () => {
+        if (!finished) {
+          finished = true;
+          done();
+        }
+      };
       await Utils.sleep(1000);
       let strJsonNew = getInspectorByKey('keySave4');
-      let obj : ESObject = JSON.parse(strJsonNew);
+      await Utils.sleep(3000);
+      console.info(`====>[Test_Security_Button_Save_2500] strJsonNew is: ${strJsonNew}`);
+      let obj: ESObject = JSON.parse(strJsonNew);
       console.info("====>component obj.$attrs.text:" + obj.$attrs.text);
       expect(obj.$attrs.text).assertEqual(3);
       await Utils.sleep(1000);
       try {
-        let clickCallback = (clickData:events_emitter.EventData) => {
-          if(clickData.data !=undefined){
+        let clickCallback = (clickData: events_emitter.EventData) => {
+          if (clickData.data != undefined){
             console.info("====>[Test_Security_Button_Save_2500] get clickEvent result is: " + JSON.stringify(clickEvent));
             console.info("====>[Test_Security_Button_Save_2500] get clickData.data.clickResult is: " + JSON.stringify(clickData.data.clickResult));
             if (clickData.data.clickResult == SaveButtonOnClickResult.SUCCESS) {
               console.info("====>[Test_Security_Button_Save_2500] 设置权限成功");
-              expect(clickData.data.clickResult == SaveButtonOnClickResult.SUCCESS).assertTrue();
+              authorized = true;
               console.info("====>[Test_Security_Button_Save_2500] END====");
-              done();
             } else {
               console.info("====>[Test_Security_Button_Save_2500] 设置权限失败");
-              expect().assertFail()
+              expect(false).assertTrue();
               console.info("====>[Test_Security_Button_Save_2500] END====");
-              done();
             }
           } else {
             console.info("====>[Test_Security_Button_Save_2500] 设置权限失败");
-            expect().assertFail()
+            expect(false).assertTrue();
             console.info("====>[Test_Security_Button_Save_2500] END====");
-            done();
           }
         }
-        let clickEvent:events_emitter.InnerEvent = {
+        let clickEvent: events_emitter.InnerEvent = {
           eventId: 2,
           priority: events_emitter.EventPriority.LOW
         }
         events_emitter.once(clickEvent, clickCallback);
       } catch (err) {
         console.info("====>[Test_Security_Button_Save_2500] once clickEvent err : " + JSON.stringify(err));
+        if (!authorized) {
+          expect(false).assertTrue();
+        }
       }
       try {
-        let driver = Driver.create();
-        let button = await driver.findComponents(ON.type('SaveButton'));
-        await Utils.sleep(500);
+        let button = await driver.findComponent(ON.type('SaveButton'));
+        await Utils.sleep(3000);
         console.info("====>[Test_Security_Button_Save_2500] button is:" + JSON.stringify(button));
-        await button[0].click();
-        await Utils.sleep(1000);
-        let button2 = await driver.findComponents(ON.id('switchButton'));
-        await button2[0].click();
+        if (await button.isEnabled()) {
+          await button.click();
+          await Utils.sleep(1000);
+        } else {
+          console.info(`====>[Test_Security_Button_Save_2500] SaveButton is disabled`);
+          if (!authorized) {
+            expect(false).assertTrue();
+          }
+        }
+        let button2 = await driver.findComponent(ON.id('switchButton'));
+        await Utils.sleep(3000);
+        await button2.click();
         await Utils.sleep(1000);
       } catch (err) {
         console.info("====>[Test_Security_Button_Save_2500] clickSecComponent err : " + JSON.stringify(err));
+        if (!authorized) {
+          expect(false).assertTrue();
+        }
       }
+      expect(authorized).assertTrue();
+      await Utils.sleep(1000);
+      finish();
     });
 
     /**
@@ -241,58 +313,81 @@ export default function saveComponentTest_1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Test_Security_Button_Save_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+    it('Test_Security_Button_Save_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('====>[Test_Security_Button_Save_2600] START====');
+      let authorized = false;
+      let finished = false;
+      const finish = () => {
+        if (!finished) {
+          finished = true;
+          done();
+        }
+      };
       await Utils.sleep(1000);
       let strJsonNew = getInspectorByKey('keySave5');
-      let obj : ESObject = JSON.parse(strJsonNew);
+      await Utils.sleep(3000);
+      console.info(`====>[Test_Security_Button_Save_2600] strJsonNew is: ${strJsonNew}`);
+      let obj: ESObject = JSON.parse(strJsonNew);
       console.info("====>component obj.$attrs.text:" + obj.$attrs.text);
       expect(obj.$attrs.text).assertEqual(4);
       await Utils.sleep(1000);
       try {
-        let clickCallback = (clickData:events_emitter.EventData) => {
-          if(clickData.data !=undefined){
+        let clickCallback = (clickData: events_emitter.EventData) => {
+          if (clickData.data != undefined){
             console.info("====>[Test_Security_Button_Save_2600] get clickEvent result is: " + JSON.stringify(clickEvent));
             console.info("====>[Test_Security_Button_Save_2600] get clickData.data.clickResult is: " + JSON.stringify(clickData.data.clickResult));
             if (clickData.data.clickResult == SaveButtonOnClickResult.SUCCESS) {
               console.info("====>[Test_Security_Button_Save_2600] 设置权限成功");
-              expect(clickData.data.clickResult == SaveButtonOnClickResult.SUCCESS).assertTrue();
+              authorized = true;
               console.info("====>[Test_Security_Button_Save_2600] END====");
-              done();
             } else {
               console.info("====>[Test_Security_Button_Save_2600] 设置权限失败");
-              expect().assertFail()
+              expect(false).assertTrue();
               console.info("====>[Test_Security_Button_Save_2600] END====");
-              done();
             }
           } else {
             console.info("====>[Test_Security_Button_Save_2600] 设置权限失败");
-            expect().assertFail()
+            expect(false).assertTrue();
             console.info("====>[Test_Security_Button_Save_2600] END====");
-            done();
           }
         }
-        let clickEvent:events_emitter.InnerEvent = {
+        let clickEvent: events_emitter.InnerEvent = {
           eventId: 2,
           priority: events_emitter.EventPriority.LOW
         }
         events_emitter.once(clickEvent, clickCallback);
       } catch (err) {
         console.info("====>[Test_Security_Button_Save_2600] once clickEvent err : " + JSON.stringify(err));
+        if (!authorized) {
+          expect(false).assertTrue();
+        }
       }
       try {
-        let driver = Driver.create();
-        let button = await driver.findComponents(ON.type('SaveButton'));
-        await Utils.sleep(500);
+        let button = await driver.findComponent(ON.type('SaveButton'));
+        await Utils.sleep(3000);
         console.info("====>[Test_Security_Button_Save_2600] button is:" + JSON.stringify(button));
-        await button[0].click();
-        await Utils.sleep(1000);
-        let button2 = await driver.findComponents(ON.id('switchButton'));
-        await button2[0].click();
+        if (await button.isEnabled()) {
+          await button.click();
+          await Utils.sleep(1000);
+        } else {
+          console.info(`====>[Test_Security_Button_Save_2600] SaveButton is disabled`);
+          if (!authorized) {
+            expect(false).assertTrue();
+          }
+        }
+        let button2 = await driver.findComponent(ON.id('switchButton'));
+        await Utils.sleep(3000);
+        await button2.click();
         await Utils.sleep(1000);
       } catch (err) {
         console.info("====>[Test_Security_Button_Save_2600] clickSecComponent err : " + JSON.stringify(err));
+        if (!authorized) {
+          expect(false).assertTrue();
+        }
       }
+      expect(authorized).assertTrue();
+      await Utils.sleep(1000);
+      finish();
     });
 
     /**
@@ -303,58 +398,81 @@ export default function saveComponentTest_1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Test_Security_Button_Save_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+    it('Test_Security_Button_Save_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('====>[Test_Security_Button_Save_2700] START====');
+      let authorized = false;
+      let finished = false;
+      const finish = () => {
+        if (!finished) {
+          finished = true;
+          done();
+        }
+      };
       await Utils.sleep(1000);
       let strJsonNew = getInspectorByKey('keySave6');
-      let obj : ESObject = JSON.parse(strJsonNew);
+      await Utils.sleep(3000);
+      console.info(`====>[Test_Security_Button_Save_2700] strJsonNew is: ${strJsonNew}`);
+      let obj: ESObject = JSON.parse(strJsonNew);
       console.info("====>component obj.$attrs.text:" + obj.$attrs.text);
       expect(obj.$attrs.text).assertEqual(5);
       await Utils.sleep(1000);
       try {
-        let clickCallback = (clickData:events_emitter.EventData) => {
-          if(clickData.data !=undefined){
+        let clickCallback = (clickData: events_emitter.EventData) => {
+          if (clickData.data != undefined){
             console.info("====>[Test_Security_Button_Save_2700] get clickEvent result is: " + JSON.stringify(clickEvent));
             console.info("====>[Test_Security_Button_Save_2700] get clickData.data.clickResult is: " + JSON.stringify(clickData.data.clickResult));
             if (clickData.data.clickResult == SaveButtonOnClickResult.SUCCESS) {
               console.info("====>[Test_Security_Button_Save_2700] 设置权限成功");
-              expect(clickData.data.clickResult == SaveButtonOnClickResult.SUCCESS).assertTrue();
+              authorized = true;
               console.info("====>[Test_Security_Button_Save_2700] END====");
-              done();
             } else {
               console.info("====>[Test_Security_Button_Save_2700] 设置权限失败");
-              expect().assertFail()
+              expect(false).assertTrue();
               console.info("====>[Test_Security_Button_Save_2700] END====");
-              done();
             }
           } else {
             console.info("====>[Test_Security_Button_Save_2700] 设置权限失败");
-            expect().assertFail()
+            expect(false).assertTrue();
             console.info("====>[Test_Security_Button_Save_2700] END====");
-            done();
           }
         }
-        let clickEvent:events_emitter.InnerEvent = {
+        let clickEvent: events_emitter.InnerEvent = {
           eventId: 2,
           priority: events_emitter.EventPriority.LOW
         }
         events_emitter.once(clickEvent, clickCallback);
       } catch (err) {
         console.info("====>[Test_Security_Button_Save_2700] once clickEvent err : " + JSON.stringify(err));
+        if (!authorized) {
+          expect(false).assertTrue();
+        }
       }
       try {
-        let driver = Driver.create();
-        let button = await driver.findComponents(ON.type('SaveButton'));
-        await Utils.sleep(500);
+        let button = await driver.findComponent(ON.type('SaveButton'));
+        await Utils.sleep(3000);
         console.info("====>[Test_Security_Button_Save_2700] button is:" + JSON.stringify(button));
-        await button[0].click();
-        await Utils.sleep(1000);
-        let button2 = await driver.findComponents(ON.id('switchButton'));
-        await button2[0].click();
+        if (await button.isEnabled()) {
+          await button.click();
+          await Utils.sleep(1000);
+        } else {
+          console.info(`====>[Test_Security_Button_Save_2700] SaveButton is disabled`);
+          if (!authorized) {
+            expect(false).assertTrue();
+          }
+        }
+        let button2 = await driver.findComponent(ON.id('switchButton'));
+        await Utils.sleep(3000);
+        await button2.click();
         await Utils.sleep(1000);
       } catch (err) {
         console.info("====>[Test_Security_Button_Save_2700] clickSecComponent err : " + JSON.stringify(err));
+        if (!authorized) {
+          expect(false).assertTrue();
+        }
       }
+      expect(authorized).assertTrue();
+      await Utils.sleep(1000);
+      finish();
     });
 
     /**
@@ -365,58 +483,81 @@ export default function saveComponentTest_1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Test_Security_Button_Save_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+    it('Test_Security_Button_Save_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('====>[Test_Security_Button_Save_2800] START====');
+      let authorized = false;
+      let finished = false;
+      const finish = () => {
+        if (!finished) {
+          finished = true;
+          done();
+        }
+      };
       await Utils.sleep(1000);
       let strJsonNew = getInspectorByKey('keySave7');
-      let obj : ESObject = JSON.parse(strJsonNew);
+      await Utils.sleep(3000);
+      console.info(`====>[Test_Security_Button_Save_2800] strJsonNew is: ${strJsonNew}`);
+      let obj: ESObject = JSON.parse(strJsonNew);
       console.info("====>component obj.$attrs.text:" + obj.$attrs.text);
       expect(obj.$attrs.text).assertEqual(6);
       await Utils.sleep(1000);
       try {
-        let clickCallback = (clickData:events_emitter.EventData) => {
-          if(clickData.data !=undefined){
+        let clickCallback = (clickData: events_emitter.EventData) => {
+          if (clickData.data != undefined){
             console.info("====>[Test_Security_Button_Save_2800] get clickEvent result is: " + JSON.stringify(clickEvent));
             console.info("====>[Test_Security_Button_Save_2800] get clickData.data.clickResult is: " + JSON.stringify(clickData.data.clickResult));
             if (clickData.data.clickResult == SaveButtonOnClickResult.SUCCESS) {
               console.info("====>[Test_Security_Button_Save_2800] 设置权限成功");
-              expect(clickData.data.clickResult == SaveButtonOnClickResult.SUCCESS).assertTrue();
+              authorized = true;
               console.info("====>[Test_Security_Button_Save_2800] END====");
-              done();
             } else {
               console.info("====>[Test_Security_Button_Save_2800] 设置权限失败");
-              expect().assertFail()
+              expect(false).assertTrue();
               console.info("====>[Test_Security_Button_Save_2800] END====");
-              done();
             }
           } else {
             console.info("====>[Test_Security_Button_Save_2800] 设置权限失败");
-            expect().assertFail()
+            expect(false).assertTrue();
             console.info("====>[Test_Security_Button_Save_2800] END====");
-            done();
           }
         }
-        let clickEvent:events_emitter.InnerEvent = {
+        let clickEvent: events_emitter.InnerEvent = {
           eventId: 2,
           priority: events_emitter.EventPriority.LOW
         }
         events_emitter.once(clickEvent, clickCallback);
       } catch (err) {
         console.info("====>[Test_Security_Button_Save_2800] once clickEvent err : " + JSON.stringify(err));
+        if (!authorized) {
+          expect(false).assertTrue();
+        }
       }
       try {
-        let driver = Driver.create();
-        let button = await driver.findComponents(ON.type('SaveButton'));
-        await Utils.sleep(500);
+        let button = await driver.findComponent(ON.type('SaveButton'));
+        await Utils.sleep(3000);
         console.info("====>[Test_Security_Button_Save_2800] button is:" + JSON.stringify(button));
-        await button[0].click();
-        await Utils.sleep(1000);
-        let button2 = await driver.findComponents(ON.id('switchButton'));
-        await button2[0].click();
+        if (await button.isEnabled()) {
+          await button.click();
+          await Utils.sleep(1000);
+        } else {
+          console.info(`====>[Test_Security_Button_Save_2800] SaveButton is disabled`);
+          if (!authorized) {
+            expect(false).assertTrue();
+          }
+        }
+        let button2 = await driver.findComponent(ON.id('switchButton'));
+        await Utils.sleep(3000);
+        await button2.click();
         await Utils.sleep(1000);
       } catch (err) {
         console.info("====>[Test_Security_Button_Save_2800] clickSecComponent err : " + JSON.stringify(err));
+        if (!authorized) {
+          expect(false).assertTrue();
+        }
       }
+      expect(authorized).assertTrue();
+      await Utils.sleep(1000);
+      finish();
     });
 
     /**
@@ -427,58 +568,81 @@ export default function saveComponentTest_1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Test_Security_Button_Save_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+    it('Test_Security_Button_Save_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('====>[Test_Security_Button_Save_2900] START====');
+      let authorized = false;
+      let finished = false;
+      const finish = () => {
+        if (!finished) {
+          finished = true;
+          done();
+        }
+      };
       await Utils.sleep(1000);
       let strJsonNew = getInspectorByKey('keySave8');
-      let obj : ESObject = JSON.parse(strJsonNew);
+      await Utils.sleep(3000);
+      console.info(`====>[Test_Security_Button_Save_2900] strJsonNew is: ${strJsonNew}`);
+      let obj: ESObject = JSON.parse(strJsonNew);
       console.info("====>component obj.$attrs.text:" + obj.$attrs.text);
       expect(obj.$attrs.text).assertEqual(7);
       await Utils.sleep(1000);
       try {
-        let clickCallback = (clickData:events_emitter.EventData) => {
-          if(clickData.data !=undefined){
+        let clickCallback = (clickData: events_emitter.EventData) => {
+          if (clickData.data != undefined){
             console.info("====>[Test_Security_Button_Save_2900] get clickEvent result is: " + JSON.stringify(clickEvent));
             console.info("====>[Test_Security_Button_Save_2900] get clickData.data.clickResult is: " + JSON.stringify(clickData.data.clickResult));
             if (clickData.data.clickResult == SaveButtonOnClickResult.SUCCESS) {
               console.info("====>[Test_Security_Button_Save_2900] 设置权限成功");
-              expect(clickData.data.clickResult == SaveButtonOnClickResult.SUCCESS).assertTrue();
+              authorized = true;
               console.info("====>[Test_Security_Button_Save_2900] END====");
-              done();
             } else {
               console.info("====>[Test_Security_Button_Save_2900] 设置权限失败");
-              expect().assertFail()
+              expect(false).assertTrue();
               console.info("====>[Test_Security_Button_Save_2900] END====");
-              done();
             }
           } else {
             console.info("====>[Test_Security_Button_Save_2900] 设置权限失败");
-            expect().assertFail()
+            expect(false).assertTrue();
             console.info("====>[Test_Security_Button_Save_2900] END====");
-            done();
           }
         }
-        let clickEvent:events_emitter.InnerEvent = {
+        let clickEvent: events_emitter.InnerEvent = {
           eventId: 2,
           priority: events_emitter.EventPriority.LOW
         }
         events_emitter.once(clickEvent, clickCallback);
       } catch (err) {
         console.info("====>[Test_Security_Button_Save_2900] once clickEvent err : " + JSON.stringify(err));
+        if (!authorized) {
+          expect(false).assertTrue();
+        }
       }
       try {
-        let driver = Driver.create();
-        let button = await driver.findComponents(ON.type('SaveButton'));
-        await Utils.sleep(500);
+        let button = await driver.findComponent(ON.type('SaveButton'));
+        await Utils.sleep(3000);
         console.info("====>[Test_Security_Button_Save_2900] button is:" + JSON.stringify(button));
-        await button[0].click();
-        await Utils.sleep(1000);
-        let button2 = await driver.findComponents(ON.id('switchButton'));
-        await button2[0].click();
+        if (await button.isEnabled()) {
+          await button.click();
+          await Utils.sleep(1000);
+        } else {
+          console.info(`====>[Test_Security_Button_Save_2900] SaveButton is disabled`);
+          if (!authorized) {
+            expect(false).assertTrue();
+          }
+        }
+        let button2 = await driver.findComponent(ON.id('switchButton'));
+        await Utils.sleep(3000);
+        await button2.click();
         await Utils.sleep(1000);
       } catch (err) {
         console.info("====>[Test_Security_Button_Save_2900] clickSecComponent err : " + JSON.stringify(err));
+        if (!authorized) {
+          expect(false).assertTrue();
+        }
       }
+      expect(authorized).assertTrue();
+      await Utils.sleep(1000);
+      finish();
     });
 
     /**
@@ -489,62 +653,81 @@ export default function saveComponentTest_1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Test_Security_Button_Save_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+    it('Test_Security_Button_Save_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('====>[Test_Security_Button_Save_3000] START====');
+      let authorized = false;
+      let finished = false;
+      const finish = () => {
+        if (!finished) {
+          finished = true;
+          done();
+        }
+      };
       await Utils.sleep(1000);
       let strJsonNew = getInspectorByKey('keySave9');
-      let obj : ESObject = JSON.parse(strJsonNew);
+      await Utils.sleep(3000);
+      console.info(`====>[Test_Security_Button_Save_3000] strJsonNew is: ${strJsonNew}`);
+      let obj: ESObject = JSON.parse(strJsonNew);
       console.info("====>component obj.$attrs.text:" + obj.$attrs.text);
       expect(obj.$attrs.text).assertEqual(8);
       await Utils.sleep(1000);
       try {
-        let clickCallback = (clickData:events_emitter.EventData) => {
-          if(clickData.data !=undefined){
+        let clickCallback = (clickData: events_emitter.EventData) => {
+          if (clickData.data != undefined){
             console.info("====>[Test_Security_Button_Save_3000] get clickEvent result is: " + JSON.stringify(clickEvent));
             console.info("====>[Test_Security_Button_Save_3000] get clickData.data.clickResult is: " + JSON.stringify(clickData.data.clickResult));
             if (clickData.data.clickResult == SaveButtonOnClickResult.SUCCESS) {
               console.info("====>[Test_Security_Button_Save_3000] 设置权限成功");
-              expect(clickData.data.clickResult == SaveButtonOnClickResult.SUCCESS).assertTrue();
+              authorized = true;
               console.info("====>[Test_Security_Button_Save_3000] END====");
-              done();
             } else {
               console.info("====>[Test_Security_Button_Save_3000] 设置权限失败");
               expect(false).assertTrue();
               console.info("====>[Test_Security_Button_Save_3000] END====");
-              done();
             }
           } else {
             console.info("====>[Test_Security_Button_Save_3000] 设置权限失败");
             expect(false).assertTrue();
             console.info("====>[Test_Security_Button_Save_3000] END====");
-            done();
           }
         }
-        let clickEvent:events_emitter.InnerEvent = {
+        let clickEvent: events_emitter.InnerEvent = {
           eventId: 2,
           priority: events_emitter.EventPriority.LOW
         }
         events_emitter.once(clickEvent, clickCallback);
       } catch (err) {
         console.info("====>[Test_Security_Button_Save_3000] once clickEvent err : " + JSON.stringify(err));
-        expect(false).assertTrue();
-        done();
+        if (!authorized) {
+          expect(false).assertTrue();
+        }
       }
       try {
-        let driver = Driver.create();
-        let button = await driver.findComponents(ON.type('SaveButton'));
-        await Utils.sleep(500);
+        let button = await driver.findComponent(ON.type('SaveButton'));
+        await Utils.sleep(3000);
         console.info("====>[Test_Security_Button_Save_3000] button is:" + JSON.stringify(button));
-        await button[0].click();
-        await Utils.sleep(1000);
-        let button2 = await driver.findComponents(ON.id('switchButton'));
-        await button2[0].click();
+        if (await button.isEnabled()) {
+          await button.click();
+          await Utils.sleep(1000);
+        } else {
+          console.info(`====>[Test_Security_Button_Save_3000] SaveButton is disabled`);
+          if (!authorized) {
+            expect(false).assertTrue();
+          }
+        }
+        let button2 = await driver.findComponent(ON.id('switchButton'));
+        await Utils.sleep(3000);
+        await button2.click();
         await Utils.sleep(1000);
       } catch (err) {
         console.info("====>[Test_Security_Button_Save_3000] clickSecComponent err : " + JSON.stringify(err));
-        expect(false).assertTrue();
-        done();
+        if (!authorized) {
+          expect(false).assertTrue();
+        }
       }
+      expect(authorized).assertTrue();
+      await Utils.sleep(1000);
+      finish();
     });
 
     /**
@@ -555,62 +738,81 @@ export default function saveComponentTest_1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Test_Security_Button_Save_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+    it('Test_Security_Button_Save_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('====>[Test_Security_Button_Save_3100] START====');
+      let authorized = false;
+      let finished = false;
+      const finish = () => {
+        if (!finished) {
+          finished = true;
+          done();
+        }
+      };
       await Utils.sleep(1000);
       let strJsonNew = getInspectorByKey('keySave15');
-      let obj : ESObject = JSON.parse(strJsonNew);
+      await Utils.sleep(3000);
+      console.info(`====>[Test_Security_Button_Save_3100] strJsonNew is: ${strJsonNew}`);
+      let obj: ESObject = JSON.parse(strJsonNew);
       console.info("====>component obj.$attrs.text:" + obj.$attrs.text);
       expect(obj.$attrs.text).assertEqual(9);
       await Utils.sleep(1000);
       try {
-        let clickCallback = (clickData:events_emitter.EventData) => {
-          if(clickData.data !=undefined){
+        let clickCallback = (clickData: events_emitter.EventData) => {
+          if (clickData.data != undefined){
             console.info("====>[Test_Security_Button_Save_3100] get clickEvent result is: " + JSON.stringify(clickEvent));
             console.info("====>[Test_Security_Button_Save_3100] get clickData.data.clickResult is: " + JSON.stringify(clickData.data.clickResult));
             if (clickData.data.clickResult == SaveButtonOnClickResult.SUCCESS) {
               console.info("====>[Test_Security_Button_Save_3100] 设置权限成功");
-              expect(clickData.data.clickResult == SaveButtonOnClickResult.SUCCESS).assertTrue();
+              authorized = true;
               console.info("====>[Test_Security_Button_Save_3100] END====");
-              done();
             } else {
               console.info("====>[Test_Security_Button_Save_3100] 设置权限失败");
               expect(false).assertTrue();
               console.info("====>[Test_Security_Button_Save_3100] END====");
-              done();
             }
           } else {
             console.info("====>[Test_Security_Button_Save_3100] 设置权限失败");
             expect(false).assertTrue();
             console.info("====>[Test_Security_Button_Save_3100] END====");
-            done();
           }
         }
-        let clickEvent:events_emitter.InnerEvent = {
+        let clickEvent: events_emitter.InnerEvent = {
           eventId: 2,
           priority: events_emitter.EventPriority.LOW
         }
         events_emitter.once(clickEvent, clickCallback);
       } catch (err) {
         console.info("====>[Test_Security_Button_Save_3100] once clickEvent err : " + JSON.stringify(err));
-        expect(false).assertTrue();
-        done();
+        if (!authorized) {
+          expect(false).assertTrue();
+        }
       }
       try {
-        let driver = Driver.create();
-        let button = await driver.findComponents(ON.type('SaveButton'));
-        await Utils.sleep(500);
+        let button = await driver.findComponent(ON.type('SaveButton'));
+        await Utils.sleep(3000);
         console.info("====>[Test_Security_Button_Save_3100] button is:" + JSON.stringify(button));
-        await button[0].click();
-        await Utils.sleep(1000);
-        let button2 = await driver.findComponents(ON.id('switchButton'));
-        await button2[0].click();
+        if (await button.isEnabled()) {
+          await button.click();
+          await Utils.sleep(1000);
+        } else {
+          console.info(`====>[Test_Security_Button_Save_3100] SaveButton is disabled`);
+          if (!authorized) {
+            expect(false).assertTrue();
+          }
+        }
+        let button2 = await driver.findComponent(ON.id('switchButton'));
+        await Utils.sleep(3000);
+        await button2.click();
         await Utils.sleep(1000);
       } catch (err) {
         console.info("====>[Test_Security_Button_Save_3100] clickSecComponent err : " + JSON.stringify(err));
-        expect(false).assertTrue();
-        done();
+        if (!authorized) {
+          expect(false).assertTrue();
+        }
       }
+      expect(authorized).assertTrue();
+      await Utils.sleep(1000);
+      finish();
     });
 
     /**
@@ -621,62 +823,81 @@ export default function saveComponentTest_1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Test_Security_Button_Save_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+    it('Test_Security_Button_Save_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('====>[Test_Security_Button_Save_3200] START====');
+      let authorized = false;
+      let finished = false;
+      const finish = () => {
+        if (!finished) {
+          finished = true;
+          done();
+        }
+      };
       await Utils.sleep(1000);
       let strJsonNew = getInspectorByKey('keySave16');
-      let obj : ESObject = JSON.parse(strJsonNew);
+      await Utils.sleep(3000);
+      console.info(`====>[Test_Security_Button_Save_3200] strJsonNew is: ${strJsonNew}`);
+      let obj: ESObject = JSON.parse(strJsonNew);
       console.info("====>component obj.$attrs.text:" + obj.$attrs.text);
       expect(obj.$attrs.text).assertEqual(10);
       await Utils.sleep(1000);
       try {
-        let clickCallback = (clickData:events_emitter.EventData) => {
-          if(clickData.data !=undefined){
+        let clickCallback = (clickData: events_emitter.EventData) => {
+          if (clickData.data != undefined){
             console.info("====>[Test_Security_Button_Save_3200] get clickEvent result is: " + JSON.stringify(clickEvent));
             console.info("====>[Test_Security_Button_Save_3200] get clickData.data.clickResult is: " + JSON.stringify(clickData.data.clickResult));
             if (clickData.data.clickResult == SaveButtonOnClickResult.SUCCESS) {
               console.info("====>[Test_Security_Button_Save_3200] 设置权限成功");
-              expect(clickData.data.clickResult == SaveButtonOnClickResult.SUCCESS).assertTrue();
+              authorized = true;
               console.info("====>[Test_Security_Button_Save_3200] END====");
-              done();
             } else {
               console.info("====>[Test_Security_Button_Save_3200] 设置权限失败");
               expect(false).assertTrue();
               console.info("====>[Test_Security_Button_Save_3200] END====");
-              done();
             }
           } else {
             console.info("====>[Test_Security_Button_Save_3200] 设置权限失败");
             expect(false).assertTrue();
             console.info("====>[Test_Security_Button_Save_3200] END====");
-            done();
           }
         }
-        let clickEvent:events_emitter.InnerEvent = {
+        let clickEvent: events_emitter.InnerEvent = {
           eventId: 2,
           priority: events_emitter.EventPriority.LOW
         }
         events_emitter.once(clickEvent, clickCallback);
       } catch (err) {
         console.info("====>[Test_Security_Button_Save_3200] once clickEvent err : " + JSON.stringify(err));
-        expect(false).assertTrue();
-        done();
+        if (!authorized) {
+          expect(false).assertTrue();
+        }
       }
       try {
-        let driver = Driver.create();
-        let button = await driver.findComponents(ON.type('SaveButton'));
-        await Utils.sleep(500);
+        let button = await driver.findComponent(ON.type('SaveButton'));
+        await Utils.sleep(3000);
         console.info("====>[Test_Security_Button_Save_3200] button is:" + JSON.stringify(button));
-        await button[0].click();
-        await Utils.sleep(1000);
-        let button2 = await driver.findComponents(ON.id('switchButton'));
-        await button2[0].click();
+        if (await button.isEnabled()) {
+          await button.click();
+          await Utils.sleep(1000);
+        } else {
+          console.info(`====>[Test_Security_Button_Save_3200] SaveButton is disabled`);
+          if (!authorized) {
+            expect(false).assertTrue();
+          }
+        }
+        let button2 = await driver.findComponent(ON.id('switchButton'));
+        await Utils.sleep(3000);
+        await button2.click();
         await Utils.sleep(1000);
       } catch (err) {
         console.info("====>[Test_Security_Button_Save_3200] clickSecComponent err : " + JSON.stringify(err));
-        expect(false).assertTrue();
-        done();
+        if (!authorized) {
+          expect(false).assertTrue();
+        }
       }
+      expect(authorized).assertTrue();
+      await Utils.sleep(1000);
+      finish();
     });
 	
     /**
@@ -687,62 +908,81 @@ export default function saveComponentTest_1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Test_Security_Button_Save_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+    it('Test_Security_Button_Save_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('====>[Test_Security_Button_Save_3300] START====');
+      let authorized = false;
+      let finished = false;
+      const finish = () => {
+        if (!finished) {
+          finished = true;
+          done();
+        }
+      };
       await Utils.sleep(1000);
       let strJsonNew = getInspectorByKey('keySave17');
-      let obj : ESObject = JSON.parse(strJsonNew);
+      await Utils.sleep(3000);
+      console.info(`====>[Test_Security_Button_Save_3300] strJsonNew is: ${strJsonNew}`);
+      let obj: ESObject = JSON.parse(strJsonNew);
       console.info("====>component obj.$attrs.text:" + obj.$attrs.text);
       expect(obj.$attrs.text).assertEqual(11);
       await Utils.sleep(1000);
       try {
-        let clickCallback = (clickData:events_emitter.EventData) => {
-          if(clickData.data !=undefined){
+        let clickCallback = (clickData: events_emitter.EventData) => {
+          if (clickData.data != undefined){
             console.info("====>[Test_Security_Button_Save_3300] get clickEvent result is: " + JSON.stringify(clickEvent));
             console.info("====>[Test_Security_Button_Save_3300] get clickData.data.clickResult is: " + JSON.stringify(clickData.data.clickResult));
             if (clickData.data.clickResult == SaveButtonOnClickResult.SUCCESS) {
               console.info("====>[Test_Security_Button_Save_3300] 设置权限成功");
-              expect(clickData.data.clickResult == SaveButtonOnClickResult.SUCCESS).assertTrue();
+              authorized = true;
               console.info("====>[Test_Security_Button_Save_3300] END====");
-              done();
             } else {
               console.info("====>[Test_Security_Button_Save_3300] 设置权限失败");
               expect(false).assertTrue();
               console.info("====>[Test_Security_Button_Save_3300] END====");
-              done();
             }
           } else {
             console.info("====>[Test_Security_Button_Save_3300] 设置权限失败");
             expect(false).assertTrue();
             console.info("====>[Test_Security_Button_Save_3300] END====");
-            done();
           }
         }
-        let clickEvent:events_emitter.InnerEvent = {
+        let clickEvent: events_emitter.InnerEvent = {
           eventId: 2,
           priority: events_emitter.EventPriority.LOW
         }
         events_emitter.once(clickEvent, clickCallback);
       } catch (err) {
         console.info("====>[Test_Security_Button_Save_3300] once clickEvent err : " + JSON.stringify(err));
-        expect(false).assertTrue();
-        done();
+        if (!authorized) {
+          expect(false).assertTrue();
+        }
       }
       try {
-        let driver = Driver.create();
-        let button = await driver.findComponents(ON.type('SaveButton'));
-        await Utils.sleep(500);
+        let button = await driver.findComponent(ON.type('SaveButton'));
+        await Utils.sleep(3000);
         console.info("====>[Test_Security_Button_Save_3300] button is:" + JSON.stringify(button));
-        await button[0].click();
-        await Utils.sleep(1000);
-        let button2 = await driver.findComponents(ON.id('switchButton'));
-        await button2[0].click();
+        if (await button.isEnabled()) {
+          await button.click();
+          await Utils.sleep(1000);
+        } else {
+          console.info(`====>[Test_Security_Button_Save_3300] SaveButton is disabled`);
+          if (!authorized) {
+            expect(false).assertTrue();
+          }
+        }
+        let button2 = await driver.findComponent(ON.id('switchButton'));
+        await Utils.sleep(3000);
+        await button2.click();
         await Utils.sleep(1000);
       } catch (err) {
         console.info("====>[Test_Security_Button_Save_3300] clickSecComponent err : " + JSON.stringify(err));
-        expect(false).assertTrue();
-        done();
+        if (!authorized) {
+          expect(false).assertTrue();
+        }
       }
+      expect(authorized).assertTrue();
+      await Utils.sleep(1000);
+      finish();
     });
 
     /**
@@ -753,59 +993,77 @@ export default function saveComponentTest_1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Test_Security_Button_Save_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+    it('Test_Security_Button_Save_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('====>[Test_Security_Button_Save_3400] START====');
+      let authorized = false;
+      let finished = false;
+      const finish = () => {
+        if (!finished) {
+          finished = true;
+          done();
+        }
+      };
       await Utils.sleep(1000);
       let strJsonNew = getInspectorByKey('keySave18');
-      let obj : ESObject = JSON.parse(strJsonNew);
+      await Utils.sleep(3000);
+      console.info(`====>[Test_Security_Button_Save_3400] strJsonNew is: ${strJsonNew}`);
+      let obj: ESObject = JSON.parse(strJsonNew);
       console.info("====>component obj.$attrs.text:" + obj.$attrs.text);
       expect(obj.$attrs.text).assertEqual(12);
       await Utils.sleep(1000);
       try {
-        let clickCallback = (clickData:events_emitter.EventData) => {
-          if(clickData.data !=undefined){
+        let clickCallback = (clickData: events_emitter.EventData) => {
+          if (clickData.data != undefined){
             console.info("====>[Test_Security_Button_Save_3400] get clickEvent result is: " + JSON.stringify(clickEvent));
             console.info("====>[Test_Security_Button_Save_3400] get clickData.data.clickResult is: " + JSON.stringify(clickData.data.clickResult));
             if (clickData.data.clickResult == SaveButtonOnClickResult.SUCCESS) {
               console.info("====>[Test_Security_Button_Save_3400] 设置权限成功");
-              expect(clickData.data.clickResult == SaveButtonOnClickResult.SUCCESS).assertTrue();
+              authorized = true;
               console.info("====>[Test_Security_Button_Save_3400] END====");
-              done();
             } else {
               console.info("====>[Test_Security_Button_Save_3400] 设置权限失败");
               expect(false).assertTrue();
               console.info("====>[Test_Security_Button_Save_3400] END====");
-              done();
             }
           } else {
             console.info("====>[Test_Security_Button_Save_3400] 设置权限失败");
             expect(false).assertTrue();
             console.info("====>[Test_Security_Button_Save_3400] END====");
-            done();
           }
         }
-        let clickEvent:events_emitter.InnerEvent = {
+        let clickEvent: events_emitter.InnerEvent = {
           eventId: 2,
           priority: events_emitter.EventPriority.LOW
         }
         events_emitter.once(clickEvent, clickCallback);
       } catch (err) {
         console.info("====>[Test_Security_Button_Save_3400] once clickEvent err : " + JSON.stringify(err));
-        expect(false).assertTrue();
-        done();
+        if (!authorized) {
+          expect(false).assertTrue();
+        }
       }
       try {
-        let driver = Driver.create();
-        let button = await driver.findComponents(ON.type('SaveButton'));
-        await Utils.sleep(500);
+        let button = await driver.findComponent(ON.type('SaveButton'));
+        await Utils.sleep(3000);
         console.info("====>[Test_Security_Button_Save_3400] button is:" + JSON.stringify(button));
-        await button[0].click();
-        await Utils.sleep(1000);
+        if (await button.isEnabled()) {
+          await button.click();
+          await Utils.sleep(1000);
+        } else {
+          console.info(`====>[Test_Security_Button_Save_3400] SaveButton is disabled`);
+          if (!authorized) {
+            expect(false).assertTrue();
+          }
+        }
       } catch (err) {
         console.info("====>[Test_Security_Button_Save_3400] clickSecComponent err : " + JSON.stringify(err));
-        expect(false).assertTrue();
-        done();
+        if (!authorized) {
+          expect(false).assertTrue();
+        }
       }
+      expect(authorized).assertTrue();
+      await Utils.sleep(1000);
+      finish();
     });
   })
 }

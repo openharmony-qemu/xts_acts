@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import { assertCallCompleted, assertExpectedError, assertUnexpectedError } from '../common/NullUndefinedAssertHelper';
 import { UIUtils } from '@kit.ArkUI';
 
@@ -548,13 +548,9 @@ export default function uiUtilsNullUndefinedTest() {
      */
     it('UIUtils_applySync_task_undefined_001', Level.LEVEL2, () => {
       console.info('[UIUtils_applySync_task_undefined_001] START');
-      try {
+      assertExpectedError(() => {
         UIUtils.applySync<number>(undefined);
-        assertCallCompleted();
-      } catch (err) {
-        console.error('[UIUtils_applySync_task_undefined_001] Error: ' + JSON.stringify(err));
-        assertUnexpectedError();
-      }
+      }, 'UIUtils_applySync_task_undefined_001');
       console.info('[UIUtils_applySync_task_undefined_001] END');
     });
     /**

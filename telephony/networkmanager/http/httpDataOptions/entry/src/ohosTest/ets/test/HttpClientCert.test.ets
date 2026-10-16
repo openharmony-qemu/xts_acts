@@ -13,7 +13,7 @@
  *  limitations under the License.
  */
 
-import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import http from '@ohos.net.http';
 import { BusinessError } from '@ohos.base';
 import connection from '@ohos.net.connection';
@@ -91,7 +91,7 @@ export default function HttpClientCertTest() {
                     done();
                   } else {
                     console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
-                    ExpectTrue(data.responseCode == 200);
+                    ExpectTrue(data.responseCode === 200);
                     httpRequest.destroy();
                     done();
                   }
@@ -144,7 +144,7 @@ export default function HttpClientCertTest() {
               },
             }).then((res: http.HttpResponse) => {
               console.info(`${caseName} request success res: ${JSON.stringify(res)}`);
-              ExpectTrue(res.responseCode == 200);
+              ExpectTrue(res.responseCode === 200);
               httpRequest.destroy();
               done();
             }).catch((err: BusinessError) => {
@@ -203,7 +203,7 @@ export default function HttpClientCertTest() {
               (err: BusinessError, data: http.HttpResponse) => {
                 if (err) {
                   console.info(`${caseName} httpRequest fail ${JSON.stringify(data)}`);
-                  ExpectTrue(err?.code == 2300058);
+                  ExpectTrue(err?.code === 2300058);
                   httpRequest.destroy();
                   done();
                 } else {
@@ -265,7 +265,7 @@ export default function HttpClientCertTest() {
               done();
             }).catch((err: BusinessError) => {
               console.info(`${caseName} httpRequest fail:${JSON.stringify(err)}`);
-              ExpectTrue(err.code == 2300058);
+              ExpectTrue(err.code === 2300058);
               httpRequest.destroy();
               done();
             });
@@ -318,7 +318,7 @@ export default function HttpClientCertTest() {
               (err: BusinessError, data: http.HttpResponse) => {
                 if (err) {
                   console.info(`${caseName} httpRequest fail ${JSON.stringify(err)}`);
-                  ExpectTrue(err.code == 2300058);
+                  ExpectTrue(err.code === 2300058);
                   httpRequest.destroy();
                   done();
                 } else {
@@ -380,7 +380,7 @@ export default function HttpClientCertTest() {
               done();
             }).catch((err: BusinessError) => {
               console.info(`${caseName} httpRequest fail:${JSON.stringify(err)}`);
-              ExpectTrue(err.code == 2300058);
+              ExpectTrue(err.code === 2300058);
               httpRequest.destroy();
               done();
             });
@@ -434,7 +434,7 @@ export default function HttpClientCertTest() {
               (err: BusinessError, data: http.HttpResponse) => {
                 if (err) {
                   console.info(`${caseName} httpRequest fail ${JSON.stringify(err)}`);
-                  ExpectTrue(err.code == 2300058);
+                  ExpectTrue(err.code === 2300058);
                   httpRequest.destroy();
                   done();
                 } else {
@@ -496,7 +496,7 @@ export default function HttpClientCertTest() {
               done();
             }).catch((err: BusinessError) => {
               console.info(`${caseName} httpRequest fail:${JSON.stringify(err)}`);
-              ExpectTrue(err.code == 2300058);
+              ExpectTrue(err.code === 2300058);
               httpRequest.destroy();
               done();
             });
@@ -550,7 +550,7 @@ export default function HttpClientCertTest() {
               (err: BusinessError, data: http.HttpResponse) => {
                 if (err) {
                   console.info(`${caseName} httpRequest fail ${JSON.stringify(err)}`);
-                  ExpectTrue(err.code == 2300058);
+                  ExpectTrue(err.code === 2300058);
                   httpRequest.destroy();
                   done();
                 } else {
@@ -612,7 +612,7 @@ export default function HttpClientCertTest() {
               done();
             }).catch((err: BusinessError) => {
               console.info(`${caseName} httpRequest fail:${JSON.stringify(err)}`);
-              ExpectTrue(err.code == 2300058);
+              ExpectTrue(err.code === 2300058);
               httpRequest.destroy();
               done();
             });
@@ -671,7 +671,7 @@ export default function HttpClientCertTest() {
                   done();
                 } else {
                   console.info(`${caseName} data:${data}`);
-                  ExpectTrue(data == 200);
+                  ExpectTrue(data === 200);
                   httpRequest.destroy();
                   done();
                 }
@@ -724,7 +724,7 @@ export default function HttpClientCertTest() {
               },
             }).then((data: number) => {
               console.info(`${caseName} httpRequest success res:${JSON.stringify(data)}`);
-              ExpectTrue(data == 200);
+              ExpectTrue(data === 200);
               httpRequest.destroy();
               done();
             }).catch((err: BusinessError) => {
@@ -783,7 +783,7 @@ export default function HttpClientCertTest() {
               (err: BusinessError, data: number) => {
                 if (err) {
                   console.info(`${caseName} httpRequest fail ${JSON.stringify(err)}`);
-                  ExpectTrue(err.code == 2300058);
+                  ExpectTrue(err.code === 2300058);
                   httpRequest.destroy();
                   done();
                 } else {
@@ -846,7 +846,7 @@ export default function HttpClientCertTest() {
               done();
             }).catch((err: BusinessError) => {
               console.info(`${caseName} httpRequest fail:${JSON.stringify(err)}`);
-              ExpectTrue(err.code == 2300058);
+              ExpectTrue(err.code === 2300058);
               httpRequest.destroy();
               done();
             });
@@ -900,7 +900,7 @@ export default function HttpClientCertTest() {
               (err: BusinessError, data: number) => {
                 if (err) {
                   console.info(`${caseName} httpRequest fail ${JSON.stringify(err)}`);
-                  ExpectTrue(err.code == 2300058);
+                  ExpectTrue(err.code === 2300058);
                   httpRequest.destroy();
                   done();
                 } else {
@@ -963,7 +963,7 @@ export default function HttpClientCertTest() {
               done();
             }).catch((err: BusinessError) => {
               console.info(`${caseName} httpRequest fail:${JSON.stringify(err)}`);
-              ExpectTrue(err.code == 2300058);
+              ExpectTrue(err.code === 2300058);
               httpRequest.destroy();
               done();
             });
@@ -1017,7 +1017,7 @@ export default function HttpClientCertTest() {
               (err: BusinessError, data: number) => {
                 if (err) {
                   console.info(`${caseName} httpRequest fail ${JSON.stringify(err)}`);
-                  ExpectTrue(err.code == 2300058);
+                  ExpectTrue(err.code === 2300058);
                   httpRequest.destroy();
                   done();
                 } else {
@@ -1080,7 +1080,7 @@ export default function HttpClientCertTest() {
               done();
             }).catch((err: BusinessError) => {
               console.info(`${caseName} httpRequest fail:${JSON.stringify(err)}`);
-              ExpectTrue(err.code == 2300058);
+              ExpectTrue(err.code === 2300058);
               httpRequest.destroy();
               done();
             });
@@ -1134,7 +1134,7 @@ export default function HttpClientCertTest() {
               (err: BusinessError, data: number) => {
                 if (err) {
                   console.info(`${caseName} httpRequest fail ${JSON.stringify(err)}`);
-                  ExpectTrue(err.code == 2300058);
+                  ExpectTrue(err.code === 2300058);
                   httpRequest.destroy();
                   done();
                 } else {
@@ -1197,7 +1197,7 @@ export default function HttpClientCertTest() {
               done();
             }).catch((err: BusinessError) => {
               console.info(`${caseName} httpRequest fail:${JSON.stringify(err)}`);
-              ExpectTrue(err.code == 2300058);
+              ExpectTrue(err.code === 2300058);
               httpRequest.destroy();
               done();
             });

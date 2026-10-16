@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
@@ -61,7 +61,7 @@ export default function onSelectedTabs() {
       let height = bottom -top;
       let width = right - left;
       let driver = await Driver.create()
-      await driver.drag(Math.round(left + width*0.8),Math.round(top + height/2),Math.round(left + width*0.2),Math.round(top + height/2));
+      await driver.dragBetween({ x: Math.round(left + width*0.8), y: Math.round(top + height/2), displayId: 0 }, { x: Math.round(left + width*0.2), y: Math.round(top + height/2), displayId: 0 });
       await CommonFunc.sleep(2000);
       let strJson1 = getInspectorByKey('selectedIndex_tabs_text');
       console.info("[onSelectedTabs_0100] component obj1 is: " + JSON.stringify(JSON.parse(strJson1)));

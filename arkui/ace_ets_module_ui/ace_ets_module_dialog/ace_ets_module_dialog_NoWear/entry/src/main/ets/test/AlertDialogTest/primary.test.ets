@@ -30,6 +30,7 @@ import {
 } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function primary() {
   describe('primary', () => {
 
@@ -68,7 +69,7 @@ export default function primary() {
       let button = await driver.findComponent(ON.id('primary1'));
       await button.click();
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2054);
+      await driver.triggerKey(2054,displayID);
       console.info('primary_0100 Enter');
       await CommonFunc.sleep(1500);
       let button1 = await driver.findComponent(ON.text('按钮1'));
@@ -94,7 +95,7 @@ export default function primary() {
       let button = await driver.findComponent(ON.id('primary2'));
       await button.click();
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2054);
+      await driver.triggerKey(2054,displayID);
       console.info('primary_0200 Enter');
       await CommonFunc.sleep(1500);
       let button1 = await driver.findComponent(ON.text('按钮1'));

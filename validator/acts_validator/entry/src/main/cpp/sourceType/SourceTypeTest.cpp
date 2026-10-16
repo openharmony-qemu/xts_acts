@@ -25,6 +25,8 @@
 namespace ArkUICapiTest {
     ArkUI_NativeDialogHandle globalCustomDialog = nullptr;
     ArkUI_NodeHandle text3 = nullptr;
+    static bool g_isSourceTypeCompleted = false;
+    static int32_t g_lastSourceType = -1;
 
     static auto createChildNode(ArkUI_NativeNodeAPI_1 *nodeAPI, bool enabled)
     {
@@ -102,20 +104,39 @@ namespace ArkUICapiTest {
         if (eventId == PARAM_1) {
             OH_LOG_INFO(LOG_APP, "输入源类型为：%{public}d ", OH_ArkUI_UIInputEvent_GetSourceType(uiInputEvent));
             auto isNum = OH_ArkUI_UIInputEvent_GetSourceType(uiInputEvent);
+            g_lastSourceType = isNum;
             std::string isNumber = std::to_string(isNum);
             const char* isNumber1 = isNumber.c_str();
             ArkUI_AttributeItem contentItem = {.string =  isNumber1};
             nodeAPI->setAttribute(text3, NODE_TEXT_CONTENT, &contentItem);
+            g_isSourceTypeCompleted = true;
         }
     
         if (eventId == PARAM_2) {
             OH_LOG_INFO(LOG_APP, "输入源类型为：%{public}d ", OH_ArkUI_UIInputEvent_GetSourceType(uiInputEvent));
             auto isKey = OH_ArkUI_UIInputEvent_GetSourceType(uiInputEvent);
+            g_lastSourceType = isKey;
             std::string isKey1 = std::to_string(isKey);
             const char* isKey2 = isKey1.c_str();
             ArkUI_AttributeItem contentItem1 = {.string =  isKey2};
             nodeAPI->setAttribute(text3, NODE_TEXT_CONTENT, &contentItem1);
+            g_isSourceTypeCompleted = true;
         }
+    }
+
+    napi_value ButtonSourceTypeTest::IsSourceTypeCompleted(napi_env env, napi_callback_info info)
+    {
+        napi_value result = nullptr;
+        napi_get_boolean(env, g_isSourceTypeCompleted, &result);
+        return result;
+    }
+
+    napi_value ButtonSourceTypeTest::GetLastSourceType(napi_env env, napi_callback_info info)
+    {
+        napi_value result = nullptr;
+        napi_create_int32(env, g_lastSourceType, &result);
+        g_lastSourceType = -1;
+        return result;
     }
 
     napi_value ButtonSourceTypeTest::CreateNativeNode(napi_env env, napi_callback_info info)

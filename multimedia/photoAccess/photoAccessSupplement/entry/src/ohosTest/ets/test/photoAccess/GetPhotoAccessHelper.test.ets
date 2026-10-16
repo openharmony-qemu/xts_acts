@@ -1,5 +1,5 @@
 import { photoAccessHelper } from '@kit.MediaLibraryKit';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium-dynamic';
 import { driveFn, getPermission, isEmpty, sleep } from '../common';
 import { common, ErrorCode } from '@kit.AbilityKit';
 import { dataSharePredicates } from '@kit.ArkData';

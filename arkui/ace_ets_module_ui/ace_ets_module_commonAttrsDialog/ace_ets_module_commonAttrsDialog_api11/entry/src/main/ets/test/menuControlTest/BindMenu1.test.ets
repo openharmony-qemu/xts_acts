@@ -33,6 +33,8 @@ import window from '@ohos.window';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function bindMenu() {
   describe('bindMenu', () => {
     beforeEach(async (done: Function) => {
@@ -84,7 +86,8 @@ export default function bindMenu() {
       expect(properties.type == 1 || properties.type == 0).assertTrue()
 
       await CommonFunc.sleep(1000);
-      await driver.click(Math.round(globalThis.winLeft+20), Math.round(globalThis.winTop+200));
+      await driver.clickAt({ x: Math.round(globalThis.winLeft+20), y: Math.round(globalThis.winTop+200), displayId: displayID });
+      // await driver.click(Math.round(globalThis.winLeft+20), Math.round(globalThis.winTop+200));
       await CommonFunc.sleep(1000);
       console.info('[bindMenu_0100] END');
       done();

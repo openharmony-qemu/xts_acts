@@ -78,7 +78,7 @@ export default function httpRequestProtocolTest() {
                                 done();
                             } else {
                                 hilog.info(domain, tag, '%{public}s', caseName +'httpRequest success: data ->'+JSON.stringify(data));
-                                ExpectTrue(data?.responseCode == 200);
+                                ExpectTrue(data?.responseCode === 200);
                                 httpRequest.destroy();
                                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                                 done();
@@ -120,7 +120,7 @@ export default function httpRequestProtocolTest() {
                             usingProtocol: http.HttpProtocol.HTTP1_1
                         }).then((data: http.HttpResponse) => {
                             hilog.info(domain, tag, '%{public}s', caseName +'httpRequest success: HttpResponse ->'+JSON.stringify(data));
-                            ExpectTrue(data.responseCode == 200);
+                            ExpectTrue(data.responseCode === 200);
                             httpRequest.destroy();
                             done();
                         }).catch((error: Error) => {
@@ -171,7 +171,7 @@ export default function httpRequestProtocolTest() {
                                 done();
                             } else {
                                 hilog.info(domain, tag, '%{public}s', caseName +' httpRequest success : data ->'+JSON.stringify(data));
-                                ExpectTrue(data?.responseCode == 200);
+                                ExpectTrue(data?.responseCode === 200);
                                 httpRequest.destroy();
                                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                                 done();
@@ -212,7 +212,7 @@ export default function httpRequestProtocolTest() {
                             usingProtocol: http.HttpProtocol.HTTP2
                         }).then((data: http.HttpResponse) => {
                             hilog.info(domain, tag, '%{public}s', caseName +'httpRequest success: HttpResponse ->'+JSON.stringify(data));
-                            ExpectTrue(data.responseCode == 200);
+                            ExpectTrue(data.responseCode === 200);
                             httpRequest.destroy();
                             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                             done();
@@ -259,13 +259,13 @@ export default function httpRequestProtocolTest() {
                         }, (err: BusinessError<void>|null, data: http.HttpResponse| undefined) => {
                             if (err?.code != 0) {
                                 hilog.info(domain, tag, '%{public}s', caseName +' httpRequest fail, get error is '+JSON.stringify(err));
-                                ExpectTrue(err?.code == 2300999);//The device does not support HTTP3
+                                ExpectTrue(err?.code === 2300999);//The device does not support HTTP3
                                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                                 done();
                             } else {
                                 hilog.info(domain, tag, '%{public}s', caseName +' httpRequest success : data ->'+JSON.stringify(data));
                                 console.info(`${caseName} ${JSON.stringify(data)}`);
-                                ExpectTrue(data?.responseCode == 200);
+                                ExpectTrue(data?.responseCode === 200);
                                 httpRequest.destroy();
                                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                                 done();
@@ -306,14 +306,14 @@ export default function httpRequestProtocolTest() {
                             usingProtocol: http.HttpProtocol.HTTP3
                         }).then((res: http.HttpResponse) => {
                             hilog.info(domain, tag, '%{public}s', caseName +'  httpRequest success ,HttpResponse is ->'+JSON.stringify(res));
-                            ExpectTrue(res.responseCode == 200);
+                            ExpectTrue(res.responseCode === 200);
                             httpRequest.destroy();
                             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                             done();
                         }).catch((error: Error) => {
                             let err = error as BusinessError;
                             hilog.info(domain, tag, '%{public}s', caseName +'  request fail err '+JSON.stringify(err));
-                            ExpectTrue(err.code == 2300999);//The device does not support HTTP3
+                            ExpectTrue(err.code === 2300999);//The device does not support HTTP3
                             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                             done();
                         });

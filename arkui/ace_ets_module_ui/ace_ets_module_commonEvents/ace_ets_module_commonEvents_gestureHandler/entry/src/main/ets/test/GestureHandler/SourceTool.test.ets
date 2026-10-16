@@ -13,11 +13,12 @@
  * limitations under the License.
  */
 
-import {describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium';
+import {describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-dynamic';
 import {UiComponent, Component, Driver, ON, BY, MouseButton} from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function SourceToolTest() {
 
   describe('SourceToolTest', () => {
@@ -64,7 +65,7 @@ export default function SourceToolTest() {
       
       let point = await button.getBoundsCenter();
       
-      await driver.mouseClick(point,MouseButton.MOUSE_BUTTON_LEFT);
+      await driver.mouseClick({x: point.x, y: point.y, displayId: displayID},MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('sourceTool1_id');
       let obj: ESObject = JSON.parse(strJson);
@@ -90,8 +91,7 @@ export default function SourceToolTest() {
       let bottom = colum.bottom
       let left = colum.left
       let right = colum.right
-      await driver.swipe(Math.round(left + 20), Math.round((top + bottom) / 2),
-        Math.round(right - 20), Math.round((top + bottom) / 2));
+      await driver.swipeBetween({x:Math.round(left + 20),y:Math.round((top + bottom) / 2),displayId:displayID},{x:Math.round(right - 20),y:Math.round((top + bottom) / 2),displayId:displayID});
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('sourceTool1_id');
       let obj: ESObject = JSON.parse(strJson);
@@ -139,12 +139,11 @@ export default function SourceToolTest() {
       let bottom = colum.bottom
       let left = colum.left
       let right = colum.right
-      await driver.swipe(Math.round(left + 20), Math.round((top + bottom) / 2),
-        Math.round(right - 20), Math.round((top + bottom) / 2));
+      await driver.swipeBetween({x:Math.round(left + 20),y:Math.round((top + bottom) / 2),displayId:displayID},{x:Math.round(right - 20),y:Math.round((top + bottom) / 2),displayId:displayID});
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('axisHorizontal_id');
       let obj: ESObject = JSON.parse(strJson);
-      expect(obj.$attrs.label).assertEqual('0');
+      expect(obj.$attrs.label).assertEqual(displayID + '');
       console.info('[axisHorizontal_0040] END');
       done();
     });
@@ -166,12 +165,11 @@ export default function SourceToolTest() {
       let bottom = colum.bottom
       let left = colum.left
       let right = colum.right
-      await driver.swipe(Math.round(left + 20), Math.round((top + bottom) / 2),
-        Math.round(right - 20), Math.round((top + bottom) / 2));
+      await driver.swipeBetween({x:Math.round(left + 20),y:Math.round((top + bottom) / 2),displayId:displayID},{x:Math.round(right - 20),y:Math.round((top + bottom) / 2),displayId:displayID});
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('axisVertical_id');
       let obj: ESObject = JSON.parse(strJson);
-      expect(obj.$attrs.label).assertEqual('0');
+      expect(obj.$attrs.label).assertEqual(displayID + '');
       console.info('[axisVertical_0050] END');
       done();
     });

@@ -69,16 +69,19 @@ struct DisplayModeInSubWindow {
   }
 
   build() {
-    Column({ space: 12 }) {
+    Column() {
       Text('BaseDialogOptions.displayModeInSubWindow').fontSize(16).fontWeight(FontWeight.Bold)
       Text('showInSubWindow=' + this.showInSubWindowValue).id('dialog_subwindow_flag')
-      Button('subWindow true').id('btn_subwindow_true').onClick(() => {
-        this.showInSubWindowValue = true;
-      })
-      Button('subWindow false').id('btn_subwindow_false').onClick(() => {
-        this.showInSubWindowValue = false;
-      })
-      Button('SCREEN_BASED')
+      Row() {
+        Button('subWindow true').id('btn_subwindow_true').onClick(() => {
+          this.showInSubWindowValue = true;
+        })
+        Button('subWindow false').id('btn_subwindow_false').onClick(() => {
+          this.showInSubWindowValue = false;
+        })
+      }
+      Row() {
+        Button('SCREEN_BASED')
         .id('btn_dialog_screen_based')
         .onClick(() => {
           this.openDialog(DialogDisplayMode.SCREEN_BASED, 'SCREEN_BASED');
@@ -88,7 +91,9 @@ struct DisplayModeInSubWindow {
         .onClick(() => {
           this.openDialog(DialogDisplayMode.WINDOW_BASED, 'WINDOW_BASED');
         })
-      Button('SCREEN with sub false')
+      } 
+      Row() {
+        Button('SCREEN with sub false')
         .id('btn_dialog_screen_nosub')
         .onClick(() => {
           this.showInSubWindowValue = false;
@@ -100,6 +105,8 @@ struct DisplayModeInSubWindow {
           this.showInSubWindowValue = true;
           this.openDialog(DialogDisplayMode.WINDOW_BASED, 'WINDOW_SUB');
         })
+      }
+
     }
     .width('100%')
     .height('100%')

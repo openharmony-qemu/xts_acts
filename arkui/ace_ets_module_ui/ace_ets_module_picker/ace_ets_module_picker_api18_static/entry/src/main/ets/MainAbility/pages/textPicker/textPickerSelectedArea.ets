@@ -14,22 +14,52 @@
  * limitations under the License.
  */
 
-import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight, Color, Row, ClickEvent, Margin, ButtonType, AttributeModifier, DatePickerAttribute, DatePicker, TextPicker, HorizontalAlign, TextAlign } from '@ohos.arkui.component';
+import {
+  Entry,
+  Column,
+  Component,
+  Flex,
+  FlexDirection,
+  ItemAlign,
+  FlexAlign,
+  Text,
+  Button,
+  FontWeight,
+  Color,
+  Row,
+  ClickEvent,
+  Margin,
+  ButtonType,
+  AttributeModifier,
+  DatePickerAttribute,
+  DatePicker,
+  TextPicker,
+  HorizontalAlign,
+  TextAlign
+} from '@ohos.arkui.component';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
+
 @Entry
 @Component
 struct TextPickerSelectedAreaExample {
   private select: Int = 1
   private apfruits: string[] = ['apple1', 'apple2', 'apple3', 'apple4']
   @State textFlag: string = ''
+
   build() {
     Column() {
-      Text(this.textFlag).id('textFlag').height('5%').width('90%').margin({ top: 10, bottom: 10 } as Margin).textAlign(TextAlign.Center)
+      Text(this.textFlag)
+        .id('textFlag')
+        .height('5%')
+        .width('90%')
+        .margin({ top: 10, bottom: 10 } as Margin)
+        .textAlign(TextAlign.Center)
       TextPicker({
         range: this.apfruits,
         selected: this.select
-      }).id('textPicker')
+      })
+        .id('textPicker')
         .width('90%')
         .height('80%')
         .onChange((value: string | string[], index: Int | Int[]) => {

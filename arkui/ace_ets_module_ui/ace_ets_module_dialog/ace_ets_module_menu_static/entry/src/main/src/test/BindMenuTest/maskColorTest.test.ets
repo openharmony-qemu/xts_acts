@@ -63,6 +63,7 @@ export default function maskColorTest(): void {
     it('maskColorTest_static_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
+        await Utils.sleep(500);
         let btn = await driver.findComponent(ON.id('maskColorButton1'));
         await (btn?.click() as Promise<void>);
         await Utils.sleep(1000);
@@ -106,6 +107,7 @@ export default function maskColorTest(): void {
     it('maskColorTest_static_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
+        await Utils.sleep(500);
         let btn = await driver.findComponent(ON.id('maskColorButton2'));
         await (btn?.click() as Promise<void>);
         await Utils.sleep(1000);
@@ -148,6 +150,7 @@ export default function maskColorTest(): void {
     it('maskColorTest_static_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
+        await Utils.sleep(500);
         let btn = await driver.findComponent(ON.id('maskColorButton3'));
         await (btn?.click() as Promise<void>);
         await Utils.sleep(1000);
@@ -190,6 +193,7 @@ export default function maskColorTest(): void {
     it('maskColorTest_static_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
+        await Utils.sleep(500);
         let color = inspector.getInspectorByKey('resource1');
         let color4 = JSON.parseJsonElement(color).getElement('$attrs').getString('backgroundColor');
         let btn = await driver.findComponent(ON.id('maskColorButton4'));
@@ -235,6 +239,7 @@ export default function maskColorTest(): void {
     it('maskColorTest_static_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
+        await Utils.sleep(500);
         let color = inspector.getInspectorByKey('resource1');
         let color5 = JSON.parseJsonElement(color).getElement('$attrs').getString('backgroundColor');
         let btn = await driver.findComponent(ON.id('maskColorButton5'));

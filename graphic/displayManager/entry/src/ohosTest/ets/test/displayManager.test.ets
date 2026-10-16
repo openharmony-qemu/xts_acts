@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import hilog from '@ohos.hilog';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from '@ohos/hypium-dynamic'
 import display from '@ohos.display';
 import window from '@ohos.window';
 import screen from '@ohos.screen';
@@ -611,8 +611,9 @@ export default function displayTest() {
         display.makeUnique(screenId).then(() => {
           console.info(msgStr + 'succeeded in destroy virtual screen, data : ');
         }).catch((err: BusinessError) => {
-          console.error(caseName + `Failed to destroy the virtual screen.Code:${err.code},message is ${err.message}`);
-          if (!isSyscapSessionManagerSupported) {
+          console.error(caseName + `Failed to destroy the virtua
+          l screen.Code:${err.code},message is ${err.message}`);
+          if (!isSyscapSessionManagerSupported || deviceType == 'wearable') {
             expect(err.code).assertEqual(801);
             done();
           } else {
@@ -2376,7 +2377,7 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
           y: 100
         };
         let param2: display.RelativePosition = {
-          displayId: 1,
+          displayId: 9999,
           position: position
         }
         display.convertRelativeToGlobalCoordinate(param2);

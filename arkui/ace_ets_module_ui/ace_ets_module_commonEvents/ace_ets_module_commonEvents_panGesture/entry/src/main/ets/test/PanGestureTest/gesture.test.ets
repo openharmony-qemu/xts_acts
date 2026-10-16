@@ -14,7 +14,7 @@
  */
 import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import Utils from '../../MainAbility/common/Utils'
 import config from '@ohos.accessibility.config';
 import accessibility from '@ohos.accessibility';

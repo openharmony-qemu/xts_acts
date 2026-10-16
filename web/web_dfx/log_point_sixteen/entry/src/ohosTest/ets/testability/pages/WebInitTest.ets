@@ -16,7 +16,7 @@
 import Utils from '../../test/Utils.test';
 import events_emitter from '@ohos.events.emitter';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { Hypium } from '@ohos/hypium';
+import { Hypium } from '@ohos/hypium-dynamic';
 import testsuite from '../../test/List.test';
 import web_webview from '@ohos.web.webview';
 import { WebNetErrorList } from '@ohos.web.netErrorList'

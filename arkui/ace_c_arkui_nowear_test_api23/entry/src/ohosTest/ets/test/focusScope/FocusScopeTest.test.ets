@@ -17,6 +17,7 @@ import { beforeAll, describe, expect, it, Level, afterEach } from '@ohos/hypium'
 import Utils from '../common/Utils';
 import { Driver, ON, Component, Rect } from '@ohos.UiTest';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function focusScopeTest() {
 
   describe('focusScopeTest', () => {
@@ -47,11 +48,11 @@ export default function focusScopeTest() {
       let btn2: Component = await driver.findComponent(ON.id('focusScopeTest'));
       await btn2.click();
       await Utils.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await Utils.sleep(200);
-      await driver.triggerKey(2013);
+      await driver.triggerKey(2013, displayID);
       await Utils.sleep(200);
-      await driver.triggerKey(2013);
+      await driver.triggerKey(2013, displayID);
       await Utils.sleep(1000);
       let strJson1 = getInspectorByKey('focusScopeTest');
       let obj1: ESObject = JSON.parse(strJson1);
@@ -82,11 +83,11 @@ export default function focusScopeTest() {
       let btn2: Component = await driver.findComponent(ON.id('focusScopeTest'));
       await btn2.click();
       await Utils.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await Utils.sleep(200);
-      await driver.triggerKey(2013);
+      await driver.triggerKey(2013, displayID);
       await Utils.sleep(200);
-      await driver.triggerKey(2013);
+      await driver.triggerKey(2013, displayID);
       await Utils.sleep(1000);
       let strJson1 = getInspectorByKey('focusScopeTest');
       let obj1: ESObject = JSON.parse(strJson1);
@@ -117,13 +118,13 @@ export default function focusScopeTest() {
       let btn2: Component = await driver.findComponent(ON.id('focusScopeTest'));
       await btn2.click();
       await Utils.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await Utils.sleep(200);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await Utils.sleep(200);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await Utils.sleep(200);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await Utils.sleep(1000);
       let strJson1 = getInspectorByKey('focusScopeTest');
       let obj1: ESObject = JSON.parse(strJson1);
@@ -180,9 +181,9 @@ export default function focusScopeTest() {
       let btn2: Component = await driver.findComponent(ON.id('focusScopeTest'));
       await btn2.click();
       await Utils.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await Utils.sleep(200);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await Utils.sleep(1000);
       let strJson1 = getInspectorByKey('focusScopeTest');
       let obj1: ESObject = JSON.parse(strJson1);
@@ -213,11 +214,11 @@ export default function focusScopeTest() {
       let btn2: Component = await driver.findComponent(ON.id('focusScopeTest'));
       await btn2.click();
       await Utils.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await Utils.sleep(200);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await Utils.sleep(200);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await Utils.sleep(1000);
       let strJson1 = getInspectorByKey('focusScopeTest');
       let obj1: ESObject = JSON.parse(strJson1);
@@ -248,11 +249,11 @@ export default function focusScopeTest() {
       let btn2: Component = await driver.findComponent(ON.id('focusScopeTest'));
       await btn2.click();
       await Utils.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await Utils.sleep(200);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await Utils.sleep(200);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await Utils.sleep(1000);
       let strJson1 = getInspectorByKey('focusScopeTest');
       let obj1: ESObject = JSON.parse(strJson1);

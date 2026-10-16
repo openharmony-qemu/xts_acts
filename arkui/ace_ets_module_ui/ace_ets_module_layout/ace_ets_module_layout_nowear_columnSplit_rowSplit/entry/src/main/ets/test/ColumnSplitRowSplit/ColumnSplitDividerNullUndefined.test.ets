@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeAll, describe, expect, it, Level } from '@ohos/hypium';
+import { afterEach, beforeAll, describe, expect, it, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import CommonFunc, { RectValue } from '../../MainAbility/common/Common';
 

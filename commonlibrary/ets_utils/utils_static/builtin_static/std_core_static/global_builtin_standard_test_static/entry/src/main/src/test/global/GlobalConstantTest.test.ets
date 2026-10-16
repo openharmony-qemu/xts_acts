@@ -54,7 +54,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0100
      * @tc.name testConstant001
      * @tc.desc Verify global NaN value is not strictly equal to itself
      * @tc.size MediumTest
@@ -67,7 +67,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0200
      * @tc.name testConstant002
      * @tc.desc Verify global NaN value is not loosely equal to itself
      * @tc.size MediumTest
@@ -80,7 +80,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0300
      * @tc.name testConstant003
      * @tc.desc Verify global NaN is both NaN and not finite
      * @tc.size MediumTest
@@ -94,7 +94,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0400
      * @tc.name testConstant004
      * @tc.desc Verify isNaN returns true after multiplying global NaN value by 1
      * @tc.size MediumTest
@@ -108,7 +108,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0500
      * @tc.name testConstant005
      * @tc.desc Verify Boolean conversion of global NaN value is false
      * @tc.size MediumTest
@@ -121,7 +121,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0600
      * @tc.name testConstant006
      * @tc.desc Verify global NaN value plus 1 remains NaN
      * @tc.size MediumTest
@@ -134,7 +134,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0700
      * @tc.name testConstant007
      * @tc.desc Verify global NaN value minus 100 remains NaN
      * @tc.size MediumTest
@@ -147,7 +147,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0800
      * @tc.name testConstant008
      * @tc.desc Verify global NaN value greater than 0 is false
      * @tc.size MediumTest
@@ -159,7 +159,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0900
      * @tc.name testConstant009
      * @tc.desc Verify global NaN value greater than positive infinity value is false
      * @tc.size MediumTest
@@ -171,7 +171,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_1000
      * @tc.name testConstant010
      * @tc.desc Verify global NaN value less than negative infinity value is false
      * @tc.size MediumTest
@@ -183,7 +183,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0110
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_1100
      * @tc.name testConstant011
      * @tc.desc Verify bitwise OR between global NaN value and 0 equals 0
      * @tc.size MediumTest
@@ -196,7 +196,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0120
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_1200
      * @tc.name testConstant012
      * @tc.desc Verify bitwise AND between global NaN value and 0 equals 0
      * @tc.size MediumTest
@@ -209,7 +209,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0130
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_1300
      * @tc.name testConstant013
      * @tc.desc Verify isFinite returns false for global NaN value
      * @tc.size MediumTest
@@ -222,7 +222,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0140
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_1400
      * @tc.name testConstant014
      * @tc.desc Verify isFinite returns false after adding 0 to global NaN value
      * @tc.size MediumTest
@@ -236,7 +236,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0150
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_1500
      * @tc.name testConstant015
      * @tc.desc Verify global NaN value can be assigned to number variable
      * @tc.size MediumTest
@@ -249,7 +249,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0160
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_1600
      * @tc.name testConstant016
      * @tc.desc Verify global NaN value can be stored as array element
      * @tc.size MediumTest
@@ -262,7 +262,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0170
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_1700
      * @tc.name testConstant017
      * @tc.desc Verify global NaN value can be stored as object property value
      * @tc.size MediumTest
@@ -276,7 +276,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0180
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_1800
      * @tc.name testConstant018
      * @tc.desc Verify 0 divided by 0 produces NaN
      * @tc.size MediumTest
@@ -289,7 +289,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0190
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_1900
      * @tc.name testConstant019
      * @tc.desc Verify global NaN value toString returns "NaN"
      * @tc.size MediumTest
@@ -302,7 +302,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_2000
      * @tc.name testConstant020
      * @tc.desc Verify String conversion of global NaN value returns "NaN"
      * @tc.size MediumTest
@@ -315,7 +315,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0210
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_2100
      * @tc.name testConstant021
      * @tc.desc Verify positive infinity value is greater than Number.MAX_VALUE
      * @tc.size MediumTest
@@ -328,7 +328,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0220
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_2200
      * @tc.name testConstant022
      * @tc.desc Verify global Infinity equals overflow parsed from exponent string
      * @tc.size MediumTest
@@ -341,7 +341,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0230
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_2300
      * @tc.name testConstant023
      * @tc.desc Verify global Infinity is not NaN and not finite
      * @tc.size MediumTest
@@ -355,7 +355,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0240
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_2400
      * @tc.name testConstant024
      * @tc.desc Verify Boolean conversion of positive infinity value is true
      * @tc.size MediumTest
@@ -368,7 +368,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0250
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_2500
      * @tc.name testConstant025
      * @tc.desc Verify positive infinity value plus itself remains positive infinity
      * @tc.size MediumTest
@@ -381,7 +381,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0260
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_2600
      * @tc.name testConstant026
      * @tc.desc Verify positive infinity value plus 100 remains positive infinity
      * @tc.size MediumTest
@@ -394,7 +394,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0270
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_2700
      * @tc.name testConstant027
      * @tc.desc Verify positive infinity plus negative infinity produces NaN
      * @tc.size MediumTest
@@ -407,7 +407,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0280
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_2800
      * @tc.name testConstant028
      * @tc.desc Verify positive infinity value minus 1000 remains positive infinity
      * @tc.size MediumTest
@@ -420,7 +420,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0290
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_2900
      * @tc.name testConstant029
      * @tc.desc Verify positive infinity value minus itself produces NaN
      * @tc.size MediumTest
@@ -433,7 +433,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_3000
      * @tc.name testConstant030
      * @tc.desc Verify negative infinity value minus itself produces NaN
      * @tc.size MediumTest
@@ -446,7 +446,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0310
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_3100
      * @tc.name testConstant031
      * @tc.desc Verify positive infinity value multiplied by itself remains positive infinity
      * @tc.size MediumTest
@@ -459,7 +459,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0320
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_3200
      * @tc.name testConstant032
      * @tc.desc Verify positive infinity value multiplied by 5 remains positive infinity
      * @tc.size MediumTest
@@ -472,7 +472,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0330
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_3300
      * @tc.name testConstant033
      * @tc.desc Verify positive infinity value multiplied by -5 becomes negative infinity
      * @tc.size MediumTest
@@ -485,7 +485,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0340
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_3400
      * @tc.name testConstant034
      * @tc.desc Verify positive infinity value multiplied by 0 produces NaN
      * @tc.size MediumTest
@@ -498,7 +498,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0350
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_3500
      * @tc.name testConstant035
      * @tc.desc Verify positive infinity value divided by itself produces NaN
      * @tc.size MediumTest
@@ -511,7 +511,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0360
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_3600
      * @tc.name testConstant036
      * @tc.desc Verify positive infinity value divided by 10 remains positive infinity
      * @tc.size MediumTest
@@ -524,7 +524,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0370
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_3700
      * @tc.name testConstant037
      * @tc.desc Verify positive infinity value divided by -10 becomes negative infinity
      * @tc.size MediumTest
@@ -537,7 +537,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0380
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_3800
      * @tc.name testConstant038
      * @tc.desc Verify 100 divided by positive infinity value equals 0
      * @tc.size MediumTest
@@ -550,7 +550,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0390
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_3900
      * @tc.name testConstant039
      * @tc.desc Verify -100 divided by positive infinity value produces negative zero
      * @tc.size MediumTest
@@ -563,7 +563,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_4000
      * @tc.name testConstant040
      * @tc.desc Verify positive infinity value divided by 0 remains positive infinity
      * @tc.size MediumTest
@@ -576,7 +576,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0410
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_4100
      * @tc.name testConstant041
      * @tc.desc Verify positive infinity value modulo 5 produces NaN
      * @tc.size MediumTest
@@ -589,7 +589,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0420
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_4200
      * @tc.name testConstant042
      * @tc.desc Verify 10 modulo positive infinity value returns 10
      * @tc.size MediumTest
@@ -602,7 +602,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0430
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_4300
      * @tc.name testConstant043
      * @tc.desc Verify positive infinity value is greater than 0
      * @tc.size MediumTest
@@ -614,7 +614,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0440
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_4400
      * @tc.name testConstant044
      * @tc.desc Verify positive infinity value is greater than Number.MAX_SAFE_INTEGER
      * @tc.size MediumTest
@@ -626,7 +626,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0450
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_4500
      * @tc.name testConstant045
      * @tc.desc Verify positive infinity value is greater than negative infinity value
      * @tc.size MediumTest
@@ -638,7 +638,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0460
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_4600
      * @tc.name testConstant046
      * @tc.desc Verify isFinite returns false for positive infinity value
      * @tc.size MediumTest
@@ -651,7 +651,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0470
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_4700
      * @tc.name testConstant047
      * @tc.desc Verify isFinite returns false after adding 0 to positive infinity value
      * @tc.size MediumTest
@@ -665,7 +665,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0480
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_4800
      * @tc.name testConstant048
      * @tc.desc Verify isNaN returns false after adding 0 to positive infinity value
      * @tc.size MediumTest
@@ -679,7 +679,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0490
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_4900
      * @tc.name testConstant049
      * @tc.desc Verify positive infinity minus negative infinity remains positive infinity
      * @tc.size MediumTest
@@ -692,7 +692,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_5000
      * @tc.name testConstant050
      * @tc.desc Verify negative infinity value is less than negative Number.MAX_VALUE
      * @tc.size MediumTest
@@ -705,7 +705,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0510
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_5100
      * @tc.name testConstant051
      * @tc.desc Verify negative infinity value is less than 0
      * @tc.size MediumTest
@@ -717,7 +717,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0520
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_5200
      * @tc.name testConstant052
      * @tc.desc Verify global negative Infinity equals negative overflow result
      * @tc.size MediumTest
@@ -730,7 +730,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0530
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_5300
      * @tc.name testConstant053
      * @tc.desc Verify global negative Infinity is not NaN and not finite
      * @tc.size MediumTest
@@ -744,7 +744,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0540
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_5400
      * @tc.name testConstant054
      * @tc.desc Verify isFinite returns false for negative infinity value
      * @tc.size MediumTest
@@ -757,7 +757,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0550
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_5500
      * @tc.name testConstant055
      * @tc.desc Verify isFinite returns false after adding 0 to negative infinity value
      * @tc.size MediumTest
@@ -771,7 +771,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0560
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_5600
      * @tc.name testConstant056
      * @tc.desc Verify 1 divided by 0 produces positive infinity
      * @tc.size MediumTest
@@ -784,7 +784,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0570
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_5700
      * @tc.name testConstant057
      * @tc.desc Verify -1 divided by 0 produces negative infinity
      * @tc.size MediumTest
@@ -797,7 +797,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0580
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_5800
      * @tc.name testConstant058
      * @tc.desc Verify 1e308 multiplied by 10 overflows to positive infinity
      * @tc.size MediumTest
@@ -810,7 +810,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0590
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_5900
      * @tc.name testConstant059
      * @tc.desc Verify positive infinity value can be assigned to number variable
      * @tc.size MediumTest
@@ -823,7 +823,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_6000
      * @tc.name testConstant060
      * @tc.desc Verify positive infinity value can be stored as array element
      * @tc.size MediumTest
@@ -836,7 +836,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0610
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_6100
      * @tc.name testConstant061
      * @tc.desc Verify positive infinity value can be stored as object property value
      * @tc.size MediumTest
@@ -849,7 +849,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0620
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_6200
      * @tc.name testConstant062
      * @tc.desc Verify positive infinity value toString returns "Infinity"
      * @tc.size MediumTest
@@ -862,7 +862,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0630
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_6300
      * @tc.name testConstant063
      * @tc.desc Verify String conversion of positive infinity value returns "Infinity"
      * @tc.size MediumTest
@@ -875,7 +875,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0640
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_6400
      * @tc.name testConstant064
      * @tc.desc Verify negative infinity value toString returns "-Infinity"
      * @tc.size MediumTest
@@ -888,7 +888,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0650
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_6500
      * @tc.name testConstant065
      * @tc.desc Verify global NaN value plus positive infinity produces NaN
      * @tc.size MediumTest
@@ -901,7 +901,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0660
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_6600
      * @tc.name testConstant066
      * @tc.desc Verify global NaN value multiplied by positive infinity produces NaN
      * @tc.size MediumTest
@@ -914,7 +914,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0670
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_6700
      * @tc.name testConstant067
      * @tc.desc Verify parsed NaN value loosely equals positive infinity value is false
      * @tc.size MediumTest
@@ -926,7 +926,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0680
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_6800
      * @tc.name testConstant068
      * @tc.desc Verify parsed NaN value strictly equals positive infinity value is false
      * @tc.size MediumTest
@@ -938,7 +938,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0690
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_6900
      * @tc.name testConstant069
      * @tc.desc Verify parsed NaN value less than positive infinity value is false
      * @tc.size MediumTest
@@ -950,7 +950,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_7000
      * @tc.name testConstant070
      * @tc.desc Verify parsed NaN and parsed Infinity are both accepted by number predicates
      * @tc.size MediumTest
@@ -965,7 +965,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0710
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_7100
      * @tc.name testConstant071
      * @tc.desc Verify negative infinity value minus finite number remains negative infinity
      * @tc.size MediumTest
@@ -978,7 +978,7 @@ export default function GlobalConstantTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_0720
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_CONSTANT_7200
      * @tc.name testConstant072
      * @tc.desc Verify positive infinity value divided by negative number becomes negative infinity
      * @tc.size MediumTest

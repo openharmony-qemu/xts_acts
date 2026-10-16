@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import Queue from '@ohos.util.Queue';
-import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import { test007, test008, test017, test018, test019 } from './QueueResource';
 
 export default function QueueNewTest() {

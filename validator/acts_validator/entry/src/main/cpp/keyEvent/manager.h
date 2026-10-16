@@ -36,6 +36,7 @@ public:
     static napi_value GetContext(napi_env env, napi_callback_info info);
     static napi_value CreateNativeNode(napi_env env, napi_callback_info info);
     static napi_value UpdateNativeNode(napi_env env, napi_callback_info info);
+    static napi_value IsKeyEventCompleted(napi_env env, napi_callback_info info);
 
     void SetNativeXComponent(std::string & id, OH_NativeXComponent * nativeXComponent);
     OH_NativeXComponent *GetNativeXComponent(const std::string &id);
@@ -47,6 +48,7 @@ private:
 
         std::unordered_map<std::string, OH_NativeXComponent *> nativeXComponentMap_;
         std::unordered_map<std::string, Container *> containerMap_;
+        bool isCompleted_ = false;
     };
 } // namespace NativeXComponentSample
 #endif // NATIVE_XCOMPONENT_KEY_EVENT_H

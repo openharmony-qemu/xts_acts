@@ -43,17 +43,6 @@
           }
         ]
       }
-    ],
-    "requestPermissions": [
-      {
-        "name": "ohos.permission.SYSTEM_FLOAT_WINDOW",
-      },
-      {
-        "name": "ohos.permission.CAPTURE_SCREEN",
-      },
-      {
-        "name": "ohos.permission.PRIVACY_WINDOW",
-      }
     ]
   }
 }

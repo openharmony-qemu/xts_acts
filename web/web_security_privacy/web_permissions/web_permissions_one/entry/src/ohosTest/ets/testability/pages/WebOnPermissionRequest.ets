@@ -219,7 +219,7 @@ struct WebOnPermissionRequest {
                     })
 
                     PermissionsUtils.reqPermissionCamera(getContext(this) as common.UIAbilityContext,
-                      (success: boolean) => {
+                      async (success: boolean) => {
                         if (success) {
                           console.info('onPermissionRequest ====> grant')
                           if (this.permissionRequest) {
@@ -232,44 +232,42 @@ struct WebOnPermissionRequest {
                           } else {
                             console.info('permissionRequest is null')
                           }
+                        }else{
+                          await waitForExist(async () => {
+                            try {
+                              const component = await driver.findComponent(ON.text('允许'));
+                              const component2 = await driver.findComponent(ON.text('始终允许'));
+                              return component !== null || component2 !== null;
+                            } catch {
+                              return false;
+                            }
+                          }, "allowButton", true)
+
+                          const component = await driver.findComponent(ON.text('允许'));
+                          const component2 = await driver.findComponent(ON.text('始终允许'));
+                          await component?.click();
+                          await component2?.click();
+
+                          const result = await waitForExist(async () => {
+                            return new Promise<string>((resolve) => {
+                              this.controller.runJavaScript('getResult()', (error, result) => {
+                                if (error) {
+                                  console.info('getResult() return error: ' + error)
+                                  resolve('')
+                                } else if (result) {
+                                  console.info('getResult() return result: ' + result)
+                                  resolve(result)
+                                } else {
+                                  resolve('')
+                                }
+                              })
+                            })
+                          }, "getResult", '"grant"')
+
+                          Utils.emitEvent(result, 160900)
                         }
                       })
 
-
-
-                    await waitForExist(async () => {
-                      try {
-                        const component = await driver.findComponent(ON.text('允许'));
-                        const component2 = await driver.findComponent(ON.text('始终允许'));
-                        return component !== null || component2 !== null;
-                      } catch {
-                        return false;
-                      }
-                    }, "allowButton", true)
-
-                    const component = await driver.findComponent(ON.text('允许'));
-                    const component2 = await driver.findComponent(ON.text('始终允许'));
-                    await component?.click();
-                    await component2?.click();
-
-
-                    const result = await waitForExist(async () => {
-                      return new Promise<string>((resolve) => {
-                        this.controller.runJavaScript('getResult()', (error, result) => {
-                          if (error) {
-                            console.info('getResult() return error: ' + error)
-                            resolve('')
-                          } else if (result) {
-                            console.info('getResult() return result: ' + result)
-                            resolve(result)
-                          } else {
-                            resolve('')
-                          }
-                        })
-                      })
-                    }, "getResult", '"grant"')
-
-                    Utils.emitEvent(result, 160900)
 
                   } catch (error) {
                     console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -302,7 +300,7 @@ struct WebOnPermissionRequest {
                     })
 
                     PermissionsUtils.reqPermissionCamera(getContext(this) as common.UIAbilityContext,
-                      (success: boolean) => {
+                      async (success: boolean) => {
                         if (success) {
                           console.info('onPermissionRequest ====> grant')
                           if (this.permissionRequest) {
@@ -315,43 +313,45 @@ struct WebOnPermissionRequest {
                           } else {
                             console.info('permissionRequest is null')
                           }
+                        }else{
+                          await waitForExist(async () => {
+                            try {
+                              const component = await driver.findComponent(ON.text('允许'));
+                              const component2 = await driver.findComponent(ON.text('始终允许'));
+                              return component !== null || component2 !== null;
+                            } catch {
+                              return false;
+                            }
+                          }, "allowButton", true)
+
+                          const component = await driver.findComponent(ON.text('允许'));
+                          const component2 = await driver.findComponent(ON.text('始终允许'));
+                          await component?.click();
+                          await component2?.click();
+
+
+                          const result = await waitForExist(async () => {
+                            return new Promise<string>((resolve) => {
+                              this.controller.runJavaScript('getResult()', (error, result) => {
+                                if (error) {
+                                  console.info('getResult() return error: ' + error)
+                                  resolve('')
+                                } else if (result) {
+                                  console.info('getResult() return result: ' + result)
+                                  resolve(result)
+                                } else {
+                                  resolve('')
+                                }
+                              })
+                            })
+                          }, "getResult", '"grant"')
+
+                          Utils.emitEvent(result, 160920)
                         }
                       })
 
 
-                    await waitForExist(async () => {
-                      try {
-                        const component = await driver.findComponent(ON.text('允许'));
-                        const component2 = await driver.findComponent(ON.text('始终允许'));
-                        return component !== null || component2 !== null;
-                      } catch {
-                        return false;
-                      }
-                    }, "allowButton", true)
 
-                    const component = await driver.findComponent(ON.text('允许'));
-                    const component2 = await driver.findComponent(ON.text('始终允许'));
-                    await component?.click();
-                    await component2?.click();
-
-
-                    const result = await waitForExist(async () => {
-                      return new Promise<string>((resolve) => {
-                        this.controller.runJavaScript('getResult()', (error, result) => {
-                          if (error) {
-                            console.info('getResult() return error: ' + error)
-                            resolve('')
-                          } else if (result) {
-                            console.info('getResult() return result: ' + result)
-                            resolve(result)
-                          } else {
-                            resolve('')
-                          }
-                        })
-                      })
-                    }, "getResult", '"grant"')
-
-                    Utils.emitEvent(result, 160920)
 
                   } catch (error) {
                     console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -360,6 +360,18 @@ struct WebOnPermissionRequest {
                 } else {
                   Utils.emitEvent('"grant"', 160920)
                 }
+              }
+              case 'emitPermissionRequestConstructor001': {
+                Utils.emitEvent(true, 160950);
+                break;
+              }
+              case 'emitPermissionRequestConstructorReturn001': {
+                Utils.emitEvent(true, 160951);
+                break;
+              }
+              case 'emitPermissionRequestClass001': {
+                Utils.emitEvent(true, 160952);
+                break;
               }
               case 'emitPermissionRequestGrant004': {
                 if (canIUse('SystemCapability.Multimedia.Camera.Core')) {
@@ -384,7 +396,7 @@ struct WebOnPermissionRequest {
                     })
 
                     PermissionsUtils.reqPermissionCamera(getContext(this) as common.UIAbilityContext,
-                      (success: boolean) => {
+                      async (success: boolean) => {
                         if (success) {
                           console.info('onPermissionRequest ====> grant')
                           if (this.permissionRequest) {
@@ -397,43 +409,43 @@ struct WebOnPermissionRequest {
                           } else {
                             console.info('permissionRequest is null')
                           }
+                        }else{
+                          await waitForExist(async () => {
+                            try {
+                              const component = await driver.findComponent(ON.text('允许'));
+                              const component2 = await driver.findComponent(ON.text('始终允许'));
+                              return component !== null || component2 !== null;
+                            } catch {
+                              return false;
+                            }
+                          }, "allowButton", true)
+
+                          const component = await driver.findComponent(ON.text('允许'));
+                          const component2 = await driver.findComponent(ON.text('始终允许'));
+                          await component?.click();
+                          await component2?.click();
+
+
+                          const result = await waitForExist(async () => {
+                            return new Promise<string>((resolve) => {
+                              this.controller.runJavaScript('getResult()', (error, result) => {
+                                if (error) {
+                                  console.info('getResult() return error: ' + error)
+                                  resolve('')
+                                } else if (result) {
+                                  console.info('getResult() return result: ' + result)
+                                  resolve(result)
+                                } else {
+                                  resolve('')
+                                }
+                              })
+                            })
+                          }, "getResult", '"grant"')
+
+                          Utils.emitEvent(result, 160940)
                         }
                       })
 
-
-                    await waitForExist(async () => {
-                      try {
-                        const component = await driver.findComponent(ON.text('允许'));
-                        const component2 = await driver.findComponent(ON.text('始终允许'));
-                        return component !== null || component2 !== null;
-                      } catch {
-                        return false;
-                      }
-                    }, "allowButton", true)
-
-                    const component = await driver.findComponent(ON.text('允许'));
-                    const component2 = await driver.findComponent(ON.text('始终允许'));
-                    await component?.click();
-                    await component2?.click();
-
-
-                    const result = await waitForExist(async () => {
-                      return new Promise<string>((resolve) => {
-                        this.controller.runJavaScript('getResult()', (error, result) => {
-                          if (error) {
-                            console.info('getResult() return error: ' + error)
-                            resolve('')
-                          } else if (result) {
-                            console.info('getResult() return result: ' + result)
-                            resolve(result)
-                          } else {
-                            resolve('')
-                          }
-                        })
-                      })
-                    }, "getResult", '"grant"')
-
-                    Utils.emitEvent(result, 160940)
 
                   } catch (error) {
                     console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);

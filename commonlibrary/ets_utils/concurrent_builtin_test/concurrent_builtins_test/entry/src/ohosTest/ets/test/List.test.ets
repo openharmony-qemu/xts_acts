@@ -3,7 +3,6 @@ import BigIntTest from './BigInt.test';
 import BooleanTest from './Boolean.test';
 import DataViewTest from './DataView.test';
 import ErrorTest from './Error.test';
-import globalTest from './Global.test';
 import IntTest from './Intl.test';
 import StringTest from './String.test';
 import TypedArrayTest from './TypedArray.test';
@@ -20,6 +19,7 @@ import BuiltinsMultilineStringLiteralTest from './BuiltinsMultilineStringLiteral
 import BuiltinsNullLiteralTest from './BuiltinsNullLiteralTest.test';
 import builtinsNumberConstructorTest from './BuiltinsNumberConstructorTest.test';
 import BuiltinsPartialUtilityType from './BuiltinsPartialUtilityType.test';
+import ConcurrentGlobal from './ConcurrentGlobalTest.test'
 
 export default function testsuite() {
   abilityTest();
@@ -27,7 +27,6 @@ export default function testsuite() {
   BooleanTest();
   DataViewTest();
   ErrorTest();
-  globalTest();
   IntTest();
   StringTest();
   TypedArrayTest();
@@ -44,4 +43,5 @@ export default function testsuite() {
   BuiltinsNullLiteralTest();
   builtinsNumberConstructorTest();
   BuiltinsPartialUtilityType();
+  ConcurrentGlobal();
 }

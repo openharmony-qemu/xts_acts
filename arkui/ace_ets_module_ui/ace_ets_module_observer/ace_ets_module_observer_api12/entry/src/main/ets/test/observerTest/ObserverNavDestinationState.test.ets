@@ -14,7 +14,7 @@
  */
 
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '@ohos/hypium-dynamic';
 import CommonFunc from '../../MainAbility/utils/Common';
 import { Driver, ON } from '@ohos.UiTest';
 
@@ -73,7 +73,7 @@ export default function ObserverNavDestinationState() {
       console.info("[ObserverNavDestinationState_0100] btn2");
       await CommonFunc.sleep(1000);
 
-      await driver.pressBack()
+      await driver.pressBack(0)
       await CommonFunc.sleep(2000);
 
       let btn3 = await driver.findComponent(ON.id('ObserverNavDestinationState_get'));

@@ -55,6 +55,7 @@ export default function PromptActionTest(): void {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         const driver = Driver.create();
+        await Utils.sleep(500);
         const getStateButton = await driver.findComponent(ON.id('btnGetState'));
         expect(!!getStateButton).assertEqual(true);
         await (getStateButton?.click() as Promise<void>);
@@ -104,6 +105,7 @@ export default function PromptActionTest(): void {
       console.info('PromptActionTest execute : dialogStateAppearing START');
       try {
         const driver = Driver.create();
+        await Utils.sleep(500);
         const openDialogButton = await driver.findComponent(ON.id('btnOpenDialog'));
         expect(!!openDialogButton).assertEqual(true);
         await (openDialogButton?.click() as Promise<void>);
@@ -140,6 +142,7 @@ export default function PromptActionTest(): void {
       console.info('PromptActionTest execute : dialogStateAppeared START');
       try {
         const driver = Driver.create();
+        await Utils.sleep(500);
         const openDialogButton = await driver.findComponent(ON.id('btnOpenDialog'));
         expect(!!openDialogButton).assertEqual(true);
         await (openDialogButton?.click() as Promise<void>);
@@ -176,6 +179,7 @@ export default function PromptActionTest(): void {
       console.info('PromptActionTest execute : dialogStateDisappearing START');
       try {
         const driver = Driver.create();
+        await Utils.sleep(500);
         const openDialogButton = await driver.findComponent(ON.id('btnOpenDialog'));
         expect(!!openDialogButton).assertEqual(true);
         await (openDialogButton?.click() as Promise<void>);
@@ -213,6 +217,7 @@ export default function PromptActionTest(): void {
       console.info('PromptActionTest execute : dialogStateDisappeared START');
       try {
         const driver = Driver.create();
+        await Utils.sleep(500);
         const openDialogButton = await driver.findComponent(ON.id('btnOpenDialog'));
         expect(!!openDialogButton).assertEqual(true);
         await (openDialogButton?.click() as Promise<void>);
@@ -277,6 +282,7 @@ export default function PromptActionTest(): void {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         const driver = Driver.create();
+        await Utils.sleep(500);
         const showMenuButton = await driver.findComponent(ON.id('btnShowActionMenu'));
         expect(!!showMenuButton).assertEqual(true);
         await (showMenuButton?.click() as Promise<void>);
@@ -309,6 +315,7 @@ export default function PromptActionTest(): void {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         const driver = Driver.create();
+        await Utils.sleep(500);
         const showMenuButton = await driver.findComponent(ON.id('btnShowActionMenu'));
         expect(!!showMenuButton).assertEqual(true);
         await (showMenuButton?.click() as Promise<void>);
@@ -341,6 +348,7 @@ export default function PromptActionTest(): void {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         const driver = Driver.create();
+        await Utils.sleep(500);
         const showMenuButton = await driver.findComponent(ON.id('btnShowActionMenu'));
         expect(!!showMenuButton).assertEqual(true);
         await (showMenuButton?.click() as Promise<void>);
@@ -373,6 +381,7 @@ export default function PromptActionTest(): void {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         const driver = Driver.create();
+        await Utils.sleep(500);
         const showMenuButton = await driver.findComponent(ON.id('btnShowActionMenu'));
         expect(!!showMenuButton).assertEqual(true);
         await (showMenuButton?.click() as Promise<void>);

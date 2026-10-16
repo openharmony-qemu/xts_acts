@@ -1,0 +1,146 @@
+<!--
+Copyright (c) 2026 Huawei Device Co., Ltd.
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<div class="container">
+    <div class="content-title">
+        <text class="title-text">过渡动画基础能力</text>
+        <input type="button" value="?" class="help-button" onclick="help" />
+    </div>
+    <list class="content">
+        <list-item class="case-item">
+            <text class="case-title">001 透明度 0.1到1</text>
+            <div class="stage">
+                <div if="{{rendered001}}"
+                     class="box opacity-box"
+                     style="animation-name:{{playing001 ? 'opacityAnim' : 'none'}}"></div>
+            </div>
+            <input type="button" value="{{playing001 ? '停止' : '开始'}}" class="case-button" onclick="toggle001" />
+        </list-item>
+        <list-item class="case-item">
+            <text class="case-title">002 放大到1.5倍</text>
+            <div class="stage">
+                <div if="{{rendered002}}"
+                     class="box scale-box"
+                     style="animation-name:{{playing002 ? 'scaleAnim' : 'none'}}"></div>
+            </div>
+            <input type="button" value="{{playing002 ? '停止' : '开始'}}" class="case-button" onclick="toggle002" />
+        </list-item>
+        <list-item class="case-item">
+            <text class="case-title">003 旋转90度</text>
+            <div class="stage">
+                <div if="{{rendered003}}"
+                     class="box rotate-box"
+                     style="animation-name:{{playing003 ? 'rotateAnim' : 'none'}}"></div>
+            </div>
+            <input type="button" value="{{playing003 ? '停止' : '开始'}}" class="case-button" onclick="toggle003" />
+        </list-item>
+        <list-item class="case-item">
+            <text class="case-title">004 红色渐变蓝色</text>
+            <div class="stage">
+                <div if="{{rendered004}}"
+                     class="box color-box"
+                     style="animation-name:{{playing004 ? 'colorAnim' : 'none'}}"></div>
+            </div>
+            <input type="button" value="{{playing004 ? '停止' : '开始'}}" class="case-button" onclick="toggle004" />
+        </list-item>
+        <list-item class="case-item">
+            <text class="case-title">005 向右平移</text>
+            <div class="stage">
+                <div if="{{rendered005}}"
+                     class="box translate-box"
+                     style="animation-name:{{playing005 ? 'translateAnim' : 'none'}}"></div>
+            </div>
+            <input type="button" value="{{playing005 ? '停止' : '开始'}}" class="case-button" onclick="toggle005" />
+        </list-item>
+        <list-item class="case-item">
+            <text class="case-title">006 右移并回弹</text>
+            <div class="stage">
+                <div if="{{rendered006}}"
+                     class="box bounce-box"
+                     style="animation-name:{{playing006 ? 'bounceAnim' : 'none'}}"></div>
+            </div>
+            <input type="button" value="{{playing006 ? '停止' : '开始'}}" class="case-button" onclick="toggle006" />
+        </list-item>
+        <list-item class="case-item">
+            <text class="case-title">007 先旋转再平移</text>
+            <div class="stage">
+                <div if="{{rendered007}}"
+                     class="box serial-box"
+                     style="animation-name:{{playing007 ? 'serialAnim' : 'none'}}"></div>
+            </div>
+            <input type="button" value="{{playing007 ? '停止' : '开始'}}" class="case-button" onclick="toggle007" />
+        </list-item>
+        <list-item class="case-item">
+            <text class="case-title">008 旋转平移同步</text>
+            <div class="stage">
+                <div if="{{rendered008}}"
+                     class="box parallel-box"
+                     style="animation-name:{{playing008 ? 'parallelAnim' : 'none'}}"></div>
+            </div>
+            <input type="button" value="{{playing008 ? '停止' : '开始'}}" class="case-button" onclick="toggle008" />
+        </list-item>
+        <list-item class="case-item">
+            <text class="case-title">009 缩小到0.5倍</text>
+            <div class="stage">
+                <div if="{{rendered009}}"
+                     class="box shrink-box"
+                     style="animation-name:{{playing009 ? 'shrinkAnim' : 'none'}}"></div>
+            </div>
+            <input type="button" value="{{playing009 ? '停止' : '开始'}}" class="case-button" onclick="toggle009" />
+        </list-item>
+        <list-item class="case-item">
+            <text class="case-title">010 纵向平移</text>
+            <div class="stage">
+                <div if="{{rendered010}}"
+                     class="box vertical-box"
+                     style="animation-name:{{playing010 ? 'verticalAnim' : 'none'}}"></div>
+            </div>
+            <input type="button" value="{{playing010 ? '停止' : '开始'}}" class="case-button" onclick="toggle010" />
+        </list-item>
+        <list-item class="case-item">
+            <text class="case-title">011 ease-in-out</text>
+            <div class="stage">
+                <div if="{{rendered011}}"
+                     class="box ease-box"
+                     style="animation-name:{{playing011 ? 'easeAnim' : 'none'}}"></div>
+            </div>
+            <input type="button" value="{{playing011 ? '停止' : '开始'}}" class="case-button" onclick="toggle011" />
+        </list-item>
+        <list-item class="case-item">
+            <text class="case-title">012 位移旋转复合</text>
+            <div class="stage">
+                <div if="{{rendered012}}"
+                     class="box composite-box"
+                     style="animation-name:{{playing012 ? 'compositeAnim' : 'none'}}"></div>
+            </div>
+            <input type="button" value="{{playing012 ? '停止' : '开始'}}" class="case-button" onclick="toggle012" />
+        </list-item>
+        <list-item class="case-item">
+            <text class="case-title">013 延迟2秒</text>
+            <div class="stage">
+                <div if="{{rendered013}}"
+                     class="box delay-box"
+                     style="animation-name:{{playing013 ? 'delayAnim' : 'none'}}"></div>
+            </div>
+            <input type="button" value="{{playing013 ? '停止' : '开始'}}" class="case-button" onclick="toggle013" />
+        </list-item>
+        <list-item class="tail-item"></list-item>
+    </list>
+    <div class="bottom-bt">
+        <input type="button" value="pass" class="button" onclick="changeResultPass" />
+        <input type="button" value="fail" class="button" onclick="changeResultFail" />
+        <input type="button" value="返回" class="button" onclick="back" />
+    </div>
+</div>

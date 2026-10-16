@@ -28,7 +28,8 @@ export default class TestAbilityStage extends AbilityStage {
 
   onConfigurationUpdate(config: Configuration) {
     let caseTAG = 'SUB_Ability_AbilityRuntime_setFontSizeAtApp';
-    hilog.info(0x0000, TAG, '[%{public}s] TestAbilityStage onConfigurationUpdate, config:  %{public}s', caseTAG, JSON.stringify(config));
+    hilog.info(0x0000, TAG, '[%{public}s] TestAbilityStage onConfigurationUpdate, config:  %{public}s', caseTAG,
+      JSON.stringify(config));
     let options: commonEventManager.CommonEventPublishData = {
       code: 1,
       parameters: {

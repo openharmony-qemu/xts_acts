@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { beforeAll, describe, expect, it, Level, Size, TestType } from "@ohos/hypium";
+import { beforeAll, describe, expect, it, Level, Size, TestType } from "@ohos/hypium-dynamic";
 import nativexcomponent from 'libnativexcomponent.so';
 
 export default function UiStatesTest() {

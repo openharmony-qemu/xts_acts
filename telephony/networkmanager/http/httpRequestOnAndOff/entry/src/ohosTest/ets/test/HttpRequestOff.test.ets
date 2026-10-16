@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, Level, Size, TestType} from '@ohos/hypium';
+import { describe, expect, it, Level, Size, TestType} from '@ohos/hypium-dynamic';
 import http from '@ohos.net.http';
 import { BusinessError } from '@ohos.base';
 import connection from '@ohos.net.connection';
@@ -74,7 +74,7 @@ export default function HttpRequestOffTest() {
             try {
               httpRequest.on("headersReceive", (header: Object) => {
                 console.info(`${caseName} headersReceive header success: ${JSON.stringify(header)}`);
-                ExpectTrue(header != null);
+                ExpectTrue(header !== undefined);
               });
 
               httpRequest.off("headersReceive", callback);
@@ -144,7 +144,7 @@ export default function HttpRequestOffTest() {
               } else {
                 await sleep(100);
                 console.info(`${caseName} count: ${count}`);
-                ExpectTrue(count == 1);
+                ExpectTrue(count === 1);
                 httpRequest.destroy();
                 done();
               }
@@ -194,7 +194,7 @@ export default function HttpRequestOffTest() {
               } else {
                 await sleep(100);
                 console.info(`${caseName} count: ${count}`);
-                ExpectTrue(count == 1);
+                ExpectTrue(count === 1);
                 httpRequest.destroy();
                 done();
               }
@@ -244,7 +244,7 @@ export default function HttpRequestOffTest() {
               } else {
                 await sleep(100);
                 console.info(`${caseName} count: ${count}`);
-                ExpectTrue(count == 1);
+                ExpectTrue(count === 1);
                 httpRequest.destroy();
                 done();
               }
@@ -294,7 +294,7 @@ export default function HttpRequestOffTest() {
               } else {
                 await sleep(100);
                 console.info(`${caseName} count: ${count}`);
-                ExpectTrue(count == 1);
+                ExpectTrue(count === 1);
                 httpRequest.destroy();
                 done();
               }
@@ -345,7 +345,7 @@ export default function HttpRequestOffTest() {
               } else {
                 await sleep(100);
                 console.info(`${caseName} count: ${count}`);
-                ExpectTrue(count == 1);
+                ExpectTrue(count === 1);
                 httpRequest.destroy();
                 done();
               }
@@ -401,7 +401,7 @@ export default function HttpRequestOffTest() {
               } else {
                 await sleep(100);
                 console.info(`${caseName} count: ${count}`);
-                ExpectTrue(count == 1);
+                ExpectTrue(count === 1);
                 httpRequest.destroy();
                 done();
               }
@@ -458,7 +458,7 @@ export default function HttpRequestOffTest() {
               } else {
                 await sleep(100);
                 console.info(`${caseName} count: ${count}`);
-                ExpectTrue(count == 1);
+                ExpectTrue(count === 1);
                 httpRequest.destroy();
                 done();
               }
@@ -514,7 +514,7 @@ export default function HttpRequestOffTest() {
               } else {
                 await sleep(100);
                 console.info(`${caseName} count: ${count}`);
-                ExpectTrue(count == 1);
+                ExpectTrue(count === 1);
                 httpRequest.destroy();
                 done();
               }
@@ -571,7 +571,7 @@ export default function HttpRequestOffTest() {
               } else {
                 await sleep(100);
                 console.info(`${caseName} count: ${count}`);
-                ExpectTrue(count == 1);
+                ExpectTrue(count === 1);
                 httpRequest.destroy();
                 done();
               }
@@ -622,7 +622,7 @@ export default function HttpRequestOffTest() {
               } else {
                 await sleep(100);
                 console.info(`${caseName} count: ${count}`);
-                ExpectTrue(count == 1);
+                ExpectTrue(count === 1);
                 httpRequest.destroy();
                 done();
               }
@@ -672,7 +672,7 @@ export default function HttpRequestOffTest() {
               } else {
                 await sleep(100);
                 console.info(`${caseName} count: ${count}`);
-                ExpectTrue(count == 1);
+                ExpectTrue(count === 1);
                 httpRequest.destroy();
                 done();
               }
@@ -722,7 +722,7 @@ export default function HttpRequestOffTest() {
               } else {
                 await sleep(100);
                 console.info(`${caseName} count: ${count}`);
-                ExpectTrue(count == 1);
+                ExpectTrue(count === 1);
                 httpRequest.destroy();
                 done();
               }
@@ -772,7 +772,7 @@ export default function HttpRequestOffTest() {
               } else {
                 await sleep(100);
                 console.info(`${caseName} count: ${count}`);
-                ExpectTrue(count == 1);
+                ExpectTrue(count === 1);
                 httpRequest.destroy();
                 done();
               }
@@ -822,7 +822,7 @@ export default function HttpRequestOffTest() {
               } else {
                 await sleep(100);
                 console.info(`${caseName} count: ${count}`);
-                ExpectTrue(count == 1);
+                ExpectTrue(count === 1);
                 httpRequest.destroy();
                 done();
               }
@@ -872,7 +872,7 @@ export default function HttpRequestOffTest() {
               } else {
                 await sleep(100);
                 console.info(`${caseName} count: ${count}`);
-                ExpectTrue(count == 1);
+                ExpectTrue(count === 1);
                 httpRequest.destroy();
                 done();
               }
@@ -930,7 +930,7 @@ export default function HttpRequestOffTest() {
               } else {
                 await sleep(100);
                 console.info(`${caseName} count: ${count}`);
-                ExpectTrue(count == 1);
+                ExpectTrue(count === 1);
                 httpRequest.destroy();
                 done();
               }
@@ -986,7 +986,7 @@ export default function HttpRequestOffTest() {
               } else {
                 await sleep(100);
                 console.info(`${caseName} count: ${count}`);
-                ExpectTrue(count == 1);
+                ExpectTrue(count === 1);
                 httpRequest.destroy();
                 done();
               }
@@ -1037,7 +1037,7 @@ export default function HttpRequestOffTest() {
               } else {
                 await sleep(100);
                 console.info(`${caseName} count: ${count}`);
-                ExpectTrue(count == 2);
+                ExpectTrue(count === 2);
                 httpRequest.destroy();
                 httpRequest.off("headersReceive");
                 done();
@@ -1088,7 +1088,7 @@ export default function HttpRequestOffTest() {
               } else {
                 await sleep(100);
                 console.info(`${caseName} count: ${count}`);
-                ExpectTrue(count == 2);
+                ExpectTrue(count === 2);
                 httpRequest.destroy();
                 httpRequest.off("headersReceive");
                 done();
@@ -1243,7 +1243,7 @@ export default function HttpRequestOffTest() {
               } else {
                 await sleep(100);
                 console.info(`${caseName} count: ${count}`);
-                ExpectTrue(count == 2);
+                ExpectTrue(count === 2);
                 httpRequest.destroy();
                 httpRequest.off("headerReceive");
                 done();
@@ -1294,7 +1294,7 @@ export default function HttpRequestOffTest() {
               } else {
                 await sleep(100);
                 console.info(`${caseName} count: ${count}`);
-                ExpectTrue(count == 2);
+                ExpectTrue(count === 2);
                 httpRequest.destroy();
                 httpRequest.off("headerReceive");
                 done();
@@ -1349,7 +1349,7 @@ export default function HttpRequestOffTest() {
               } else {
                 await sleep(100);
                 console.info(`${caseName} count: ${count}`);
-                ExpectTrue(count == 2);
+                ExpectTrue(count === 2);
                 httpRequest.destroy();
                 httpRequest.off("headerReceive");
                 done();
@@ -1400,7 +1400,7 @@ export default function HttpRequestOffTest() {
               } else {
                 await sleep(100);
                 console.info(`${caseName} count: ${count}`);
-                ExpectTrue(count == 2);
+                ExpectTrue(count === 2);
                 httpRequest.destroy();
                 done();
               }
@@ -1444,7 +1444,7 @@ export default function HttpRequestOffTest() {
             httpRequest.request(XTS_TEST_HTTP_URL).then(async() => {
               await sleep(100);
               console.info(`${caseName} count---${count}`);
-              ExpectTrue(count == 1);
+              ExpectTrue(count === 1);
               httpRequest.destroy();
               done();
             }).catch((err: Error) => {
@@ -1492,7 +1492,7 @@ export default function HttpRequestOffTest() {
             httpRequest.request(XTS_TEST_HTTP_URL).then(async() => {
               await sleep(100);
               console.info(`${caseName} count---${count}`);
-              ExpectTrue(count == 1);
+              ExpectTrue(count === 1);
               httpRequest.destroy();
               done();
             }).catch((err: Error) => {
@@ -1539,7 +1539,7 @@ export default function HttpRequestOffTest() {
             httpRequest.requestInStream(XTS_TEST_STREAM_HTTPS_URL).then(async() => {
               await sleep(100);
               console.info(`${caseName} count---${count}`);
-              ExpectTrue(count == 1);
+              ExpectTrue(count === 1);
               httpRequest.destroy();
               done();
             }).catch((err: Error) => {
@@ -1587,7 +1587,7 @@ export default function HttpRequestOffTest() {
             httpRequest.requestInStream(XTS_TEST_STREAM_HTTPS_URL).then(async() => {
               await sleep(100);
               console.info(`${caseName} count---${count}`);
-              ExpectTrue(count == 1);
+              ExpectTrue(count === 1);
               httpRequest.destroy();
               done();
             }).catch((err: Error) => {
@@ -1640,7 +1640,7 @@ export default function HttpRequestOffTest() {
             httpRequest.request(XTS_TEST_STREAM_HTTPS_URL).then(async() => {
               await sleep(100);
               console.info(`${caseName} count---${count}`);
-              ExpectTrue(count == 1);
+              ExpectTrue(count === 1);
               httpRequest.destroy();
               done();
             }).catch((err: Error) => {
@@ -1694,7 +1694,7 @@ export default function HttpRequestOffTest() {
             httpRequest.requestInStream(XTS_TEST_STREAM_HTTPS_URL).then(async() => {
               await sleep(100);
               console.info(`${caseName} count---${count}`);
-              ExpectTrue(count == 1);
+              ExpectTrue(count === 1);
               httpRequest.destroy();
               done();
             }).catch((err: Error) => {
@@ -1747,7 +1747,7 @@ export default function HttpRequestOffTest() {
             httpRequest.request(XTS_TEST_HTTP_URL).then(async() => {
               await sleep(100);
               console.info(`${caseName} count---${count}`);
-              ExpectTrue(count == 1);
+              ExpectTrue(count === 1);
               httpRequest.destroy();
               done();
             }).catch((err: Error) => {
@@ -1801,7 +1801,7 @@ export default function HttpRequestOffTest() {
             httpRequest.request(XTS_TEST_HTTP_URL).then(async() => {
               await sleep(100);
               console.info(`${caseName} count---${count}`);
-              ExpectTrue(count == 1);
+              ExpectTrue(count === 1);
               httpRequest.destroy();
               done();
             }).catch((err: Error) => {
@@ -1849,7 +1849,7 @@ export default function HttpRequestOffTest() {
             httpRequest.request(XTS_TEST_HTTP_URL).then(async() => {
               await sleep(100);
               console.info(`${caseName} count---${count}`);
-              ExpectTrue(count == 1);
+              ExpectTrue(count === 1);
               httpRequest.destroy();
               done();
             }).catch((err: Error) => {
@@ -1896,7 +1896,7 @@ export default function HttpRequestOffTest() {
             httpRequest.request(XTS_TEST_HTTP_URL).then(async() => {
               await sleep(100);
               console.info(`${caseName} count---${count}`);
-              ExpectTrue(count == 1);
+              ExpectTrue(count === 1);
               httpRequest.destroy();
               done();
             }).catch((err: Error) => {
@@ -1943,7 +1943,7 @@ export default function HttpRequestOffTest() {
             httpRequest.request(XTS_TEST_HTTP_URL).then(async() => {
               await sleep(100);
               console.info(`${caseName} count---${count}`);
-              ExpectTrue(count == 1);
+              ExpectTrue(count === 1);
               httpRequest.destroy();
               done();
             }).catch((err: Error) => {
@@ -1991,7 +1991,7 @@ export default function HttpRequestOffTest() {
             httpRequest.requestInStream(XTS_TEST_STREAM_HTTPS_URL).then(async() => {
               await sleep(100);
               console.info(`${caseName} count---${count}`);
-              ExpectTrue(count == 1);
+              ExpectTrue(count === 1);
               httpRequest.destroy();
               done();
             }).catch((err: Error) => {
@@ -2039,7 +2039,7 @@ export default function HttpRequestOffTest() {
             httpRequest.requestInStream(XTS_TEST_STREAM_HTTPS_URL).then(async() => {
               await sleep(100);
               console.info(`${caseName} count---${count}`);
-              ExpectTrue(count == 1);
+              ExpectTrue(count === 1);
               httpRequest.destroy();
               done();
             }).catch((err: Error) => {
@@ -2086,7 +2086,7 @@ export default function HttpRequestOffTest() {
             httpRequest.requestInStream(XTS_TEST_STREAM_HTTPS_URL).then(async() => {
               await sleep(100);
               console.info(`${caseName} count---${count}`);
-              ExpectTrue(count == 1);
+              ExpectTrue(count === 1);
               httpRequest.destroy();
               done();
             }).catch((err: Error) => {
@@ -2140,7 +2140,7 @@ export default function HttpRequestOffTest() {
             httpRequest.requestInStream(XTS_TEST_STREAM_HTTPS_URL).then(async() => {
               await sleep(100);
               console.info(`${caseName} count---${count}`);
-              ExpectTrue(count == 1);
+              ExpectTrue(count === 1);
               httpRequest.destroy();
               done();
             }).catch((err: Error) => {
@@ -2193,7 +2193,7 @@ export default function HttpRequestOffTest() {
             httpRequest.request(XTS_TEST_HTTP_URL).then(async() => {
               await sleep(100);
               console.info(`${caseName} count---${count}`);
-              ExpectTrue(count == 1);
+              ExpectTrue(count === 1);
               httpRequest.destroy();
               done();
             }).catch((err: Error) => {
@@ -2241,7 +2241,7 @@ export default function HttpRequestOffTest() {
             httpRequest.request(XTS_TEST_HTTP_URL).then(async() => {
               await sleep(100);
               console.info(`${caseName} count---${count}`);
-              ExpectTrue(count == 2);
+              ExpectTrue(count === 2);
               httpRequest.destroy();
               httpRequest.off("headersReceive", callback);
               done();
@@ -2289,7 +2289,7 @@ export default function HttpRequestOffTest() {
             httpRequest.request(XTS_TEST_HTTP_URL).then(async() => {
               await sleep(100);
               console.info(`${caseName} count---${count}`);
-              ExpectTrue(count == 2);
+              ExpectTrue(count === 2);
               httpRequest.destroy();
               httpRequest.off("headersReceive");
               done();
@@ -2436,7 +2436,7 @@ export default function HttpRequestOffTest() {
             httpRequest.request(XTS_TEST_HTTP_URL).then(async() => {
               await sleep(100);
               console.info(`${caseName} count---${count}`);
-              ExpectTrue(count == 2);
+              ExpectTrue(count === 2);
               httpRequest.destroy();
               done();
             }).catch((err: Error) => {
@@ -2485,7 +2485,7 @@ export default function HttpRequestOffTest() {
             httpRequest.request(XTS_TEST_HTTP_URL).then(async() => {
               await sleep(100);
               console.info(`${caseName} count---${count}`);
-              ExpectTrue(count == 2);
+              ExpectTrue(count === 2);
               httpRequest.destroy();
               done();
             }).catch((err: Error) => {
@@ -2538,7 +2538,7 @@ export default function HttpRequestOffTest() {
             httpRequest.request(XTS_TEST_HTTP_URL).then(async() => {
               await sleep(100);
               console.info(`${caseName} count---${count}`);
-              ExpectTrue(count == 2);
+              ExpectTrue(count === 2);
               httpRequest.destroy();
               done();
             }).catch((err: Error) => {
@@ -2587,7 +2587,7 @@ export default function HttpRequestOffTest() {
             httpRequest.request(XTS_TEST_HTTP_URL).then(async() => {
               await sleep(100);
               console.info(`${caseName} count---${count}`);
-              ExpectTrue(count == 2);
+              ExpectTrue(count === 2);
               httpRequest.destroy();
               done();
             }).catch((err: Error) => {
@@ -2636,7 +2636,7 @@ export default function HttpRequestOffTest() {
             httpRequest.requestInStream(XTS_TEST_STREAM_HTTPS_URL).then(async() => {
               await sleep(100);
               console.info(`${caseName} count---${count}`);
-              ExpectTrue(count == 1);
+              ExpectTrue(count === 1);
               httpRequest.destroy();
               done();
             }).catch((err: Error) => {
@@ -2686,7 +2686,7 @@ export default function HttpRequestOffTest() {
             httpRequest.requestInStream(XTS_TEST_STREAM_HTTPS_URL).then(async() => {
               await sleep(100);
               console.info(`${caseName} count---${count}`);
-              ExpectTrue(count == 1);
+              ExpectTrue(count === 1);
               httpRequest.destroy();
               done();
             }).catch((err: Error) => {

@@ -35,9 +35,8 @@ group("concurrency_static") {
       "taskpool_baselib_test_static:ActsTaskpoolBaselibStaticTest",
       "taskpool_builtin_test_static:ActsTaskpoolBuiltinStaticTest",
       "taskpool_sendable_test_static:ActsTaskpoolSendableStaticTest",
-      "taskpool_test_static:ActsTaskpoolStaticTest",
-      "thread_safe_container_test_static:ActsThreadSafeContainerStaticTest",
-      "thread_safe_container2_test_static:ActsThreadSafeContainer2StaticTest",
+      "concurrent_hashmap_test_static:ActsConcurrentHashMapStaticTest",
+      "concurrent_queue_test_static:ActsConcurrentQueueStaticTest",
       "concurrent_set_test_static:ActsConcurrentSetStaticTest",
       "timer_test_static:ActsTimerStaticTest",
       "asyncRunner_test_static:ActsAsyncRunnerStaticTest",
@@ -46,6 +45,7 @@ group("concurrency_static") {
       "atomics3_test_static:ActsAtomics3StaticTest",
       "workerLocal_test_static:ActsWorkerLocalStaticTest",
       "promise_third_test_static:ActsPromiseThirdStaticTest",
+      "promise_fourth_test_static:ActsPromiseFourthStaticTest",
     ]
   }
 }

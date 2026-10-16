@@ -22,6 +22,7 @@ import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function getDisplayId() {
   describe('getDisplayIdTest', () =>{
     beforeEach(async (): Promise<void> => {
@@ -78,7 +79,7 @@ it('getDisplayIdTest_static_0010', Level.LEVEL1, async (done: () => void): Promi
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info('[getDisplayIdTest_static_0010] PreDrag: ' + JSON.stringify(obj));
       console.info('[getDisplayIdTest_static_0010] PreDrag: ' + JSON.stringify(obj1.getElement('$attrs')));
-      expect(obj1.getElement('$attrs').getString('label')).assertEqual('0');
+      expect(obj1.getElement('$attrs').getString('label')).assertEqual(displayID + '');
       console.info('[getDisplayIdTest_static_0010] END');
       done();
     });

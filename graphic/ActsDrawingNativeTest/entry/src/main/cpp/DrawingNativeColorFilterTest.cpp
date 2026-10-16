@@ -17,16 +17,16 @@
 #include "include/OhosCommonTest.h"
 #include <random>
 
-#define DRAWING_NUMBER_10 10
-#define DRAWING_NUMBER_19 19
-#define DRAWING_NUMBER_20 20
-#define DRAWING_NUMBER_21 21
-#define DRAWING_NUMBER_28 28
-#define DRAWING_NUMBER_19937 19937
-#define DRAWING_NUMBER_0X0000FFFF 0x0000FFFF
-#define DRAWING_NUMBER_0X00FFFFFF 0x00FFFFFF
-#define DRAWING_NUMBER_0XFF0000FF 0xFF0000FF
-#define DRAWING_NUMBER_0XFFFFFFFF 0xFFFFFFFF
+#define NUMBER_10 10
+#define NUMBER_19 19
+#define NUMBER_20 20
+#define NUMBER_21 21
+#define NUMBER_28 28
+#define NUMBER_19937 19937
+#define NUMBER_0X0000FFFF 0x0000FFFF
+#define NUMBER_0X00FFFFFF 0x00FFFFFF
+#define NUMBER_0XFF0000FF 0xFF0000FF
+#define NUMBER_0XFFFFFFFF 0xFFFFFFFF
 
 namespace OHOS {
 namespace Rosen {
@@ -61,7 +61,7 @@ int TestColorFilterCreateBlendModeNormal()
         BLEND_MODE_LUMINOSITY
     };
     for (int i = 0; i < sizeof(blendMode) / sizeof(blendMode[0]); i++) {
-        OH_Drawing_ColorFilter *colorFilter = OH_Drawing_ColorFilterCreateBlendMode(DRAWING_NUMBER_0XFF0000FF,
+        OH_Drawing_ColorFilter *colorFilter = OH_Drawing_ColorFilterCreateBlendMode(NUMBER_0XFF0000FF,
             blendMode[i]);
         EXPECT_NE(colorFilter, nullptr);
         // 2. Free memory
@@ -88,7 +88,7 @@ int TestColorFilterCreateBlendModeMultipleCalls()
 {
     DrawingNativeColorFilterTestSetUp();
     // 1. OH_Drawing_ColorFilterCreateBlendMode, random value between 0x00000000 and 0xFFFFFFFF
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         std::random_device rd;
         std::mt19937 gen(rd());
         std::uniform_int_distribution<uint32_t> dis(0x00000000, 0xFFFFFFFF);
@@ -109,13 +109,13 @@ int TestColorFilterCreateBlendModeMultipleCalls()
         BLEND_MODE_MULTIPLY,   BLEND_MODE_HUE,        BLEND_MODE_SATURATION,  BLEND_MODE_COLOR,
         BLEND_MODE_LUMINOSITY
     };
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         std::random_device rd;
         std::mt19937 gen(rd());
-        std::uniform_int_distribution<uint32_t> dis(0, DRAWING_NUMBER_28);
+        std::uniform_int_distribution<uint32_t> dis(0, NUMBER_28);
         uint32_t randomNumber = dis(gen);
         OH_Drawing_ColorFilter *colorFilter =
-            OH_Drawing_ColorFilterCreateBlendMode(DRAWING_NUMBER_0XFF0000FF, blendMode[randomNumber]);
+            OH_Drawing_ColorFilterCreateBlendMode(NUMBER_0XFF0000FF, blendMode[randomNumber]);
         EXPECT_NE(colorFilter, nullptr);
         OH_Drawing_ColorFilterDestroy(colorFilter);
     }
@@ -153,11 +153,11 @@ int TestColorFilterCreateComposeNormal()
 {
     DrawingNativeColorFilterTestSetUp();
     // 1. Call OH_Drawing_ColorFilterCreateBlendMode to create colorFilter1 and colorFilter2
-    OH_Drawing_ColorFilter *colorFilter1 = OH_Drawing_ColorFilterCreateBlendMode(DRAWING_NUMBER_0X00FFFFFF,
+    OH_Drawing_ColorFilter *colorFilter1 = OH_Drawing_ColorFilterCreateBlendMode(NUMBER_0X00FFFFFF,
         BLEND_MODE_CLEAR);
     // add assert
     EXPECT_NE(colorFilter1, nullptr);
-    OH_Drawing_ColorFilter *colorFilter2 = OH_Drawing_ColorFilterCreateBlendMode(DRAWING_NUMBER_0X0000FFFF,
+    OH_Drawing_ColorFilter *colorFilter2 = OH_Drawing_ColorFilterCreateBlendMode(NUMBER_0X0000FFFF,
         BLEND_MODE_CLEAR);
     // add assert
     EXPECT_NE(colorFilter2, nullptr);
@@ -178,7 +178,7 @@ int TestColorFilterCreateComposeNormal()
     // add assert
     EXPECT_NE(colorFilter4, nullptr);
     // 6. Call OH_Drawing_ColorFilterCreateMatrix to create colorFilter5
-    const float matrix[DRAWING_NUMBER_20] = {1.0f, 0, 0, 0, 0, 0, 1.0f, 0, 0, 0, 0, 0, 1.0f, 0, 0, 0, 0, 0, 1.0f, 0};
+    const float matrix[NUMBER_20] = {1.0f, 0, 0, 0, 0, 0, 1.0f, 0, 0, 0, 0, 0, 1.0f, 0, 0, 0, 0, 0, 1.0f, 0};
     OH_Drawing_ColorFilter *colorFilter5 = OH_Drawing_ColorFilterCreateMatrix(matrix);
     // add assert
     EXPECT_NE(colorFilter5, nullptr);
@@ -213,7 +213,7 @@ int TestColorFilterCreateComposeMultipleCalls()
 {
     DrawingNativeColorFilterTestSetUp();
     // 1. OH_Drawing_ColorFilterCreateBlendMode with a random value between 0x00000000 and 0xFFFFFFFF
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         std::random_device rd;
         std::mt19937 gen(rd());
         std::uniform_int_distribution<uint32_t> dis(0x00000000, 0xFFFFFFFF);
@@ -239,17 +239,17 @@ int TestColorFilterCreateComposeMultipleCalls()
         BLEND_MODE_MULTIPLY,   BLEND_MODE_HUE,        BLEND_MODE_SATURATION,  BLEND_MODE_COLOR,
         BLEND_MODE_LUMINOSITY
     };
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         std::random_device rd;
         std::mt19937 gen(rd());
-        std::uniform_int_distribution<uint32_t> dis(0, DRAWING_NUMBER_28);
+        std::uniform_int_distribution<uint32_t> dis(0, NUMBER_28);
         uint32_t randomNumber = dis(gen);
         OH_Drawing_ColorFilter *colorFilter1 =
-            OH_Drawing_ColorFilterCreateBlendMode(DRAWING_NUMBER_0XFF0000FF, blendMode[randomNumber]);
+            OH_Drawing_ColorFilterCreateBlendMode(NUMBER_0XFF0000FF, blendMode[randomNumber]);
         // add assert
         EXPECT_NE(colorFilter1, nullptr);
         OH_Drawing_ColorFilter *colorFilter2 =
-            OH_Drawing_ColorFilterCreateBlendMode(DRAWING_NUMBER_0XFF0000FF, blendMode[randomNumber]);
+            OH_Drawing_ColorFilterCreateBlendMode(NUMBER_0XFF0000FF, blendMode[randomNumber]);
         // add assert
         EXPECT_NE(colorFilter2, nullptr);
         OH_Drawing_ColorFilterCreateCompose(colorFilter1, colorFilter2);
@@ -263,7 +263,7 @@ int TestColorFilterCreateComposeMultipleCalls()
 int TestColorFilterCreateMatrixNormal()
 {
     DrawingNativeColorFilterTestSetUp();
-    const float matrix[DRAWING_NUMBER_20] = {1.0f, 0, 0, 0, 0, 0, 1.0f, 0, 0, 0, 0, 0, 1.0f, 0, 0, 0, 0, 0, 0.5f, 0};
+    const float matrix[NUMBER_20] = {1.0f, 0, 0, 0, 0, 0, 1.0f, 0, 0, 0, 0, 0, 1.0f, 0, 0, 0, 0, 0, 0.5f, 0};
     OH_Drawing_ColorFilter *colorFilter = OH_Drawing_ColorFilterCreateMatrix(matrix);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
@@ -281,7 +281,7 @@ int TestColorFilterCreateMatrixNULL()
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_ErrorCodeReset();
 
-    const float matrix[DRAWING_NUMBER_20] = {};
+    const float matrix[NUMBER_20] = {};
     colorFilter = OH_Drawing_ColorFilterCreateMatrix(matrix);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
 
@@ -293,13 +293,13 @@ int TestColorFilterCreateMatrixNULL()
 int TestColorFilterCreateMatrixAbnormal()
 {
     DrawingNativeColorFilterTestSetUp();
-    const float matrix[DRAWING_NUMBER_19] = {1.0f, 0, 0, 0, 0, 0, 1.0f, 0, 0, 0, 0, 0, 1.0f, 0, 0, 0, 0, 0, 0.5f};
+    const float matrix[NUMBER_19] = {1.0f, 0, 0, 0, 0, 0, 1.0f, 0, 0, 0, 0, 0, 1.0f, 0, 0, 0, 0, 0, 0.5f};
     OH_Drawing_ColorFilter *colorFilter = OH_Drawing_ColorFilterCreateMatrix(matrix);
     // add assert
     EXPECT_NE(colorFilter, nullptr);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
 
-    const float matrix2[DRAWING_NUMBER_21] = {
+    const float matrix2[NUMBER_21] = {
         1.0f, 0, 0, 0, 0, 0, 1.0f, 0, 0, 0, 0, 0, 1.0f, 0, 0, 0, 0, 0, 0.5f, 0, 0};
     OH_Drawing_ColorFilter *colorFilter2 = OH_Drawing_ColorFilterCreateMatrix(matrix2);
     // add assert
@@ -315,14 +315,43 @@ int TestColorFilterCreateMatrixAbnormal()
 int TestColorFilterCreateMatrixMultipleCalls()
 {
     DrawingNativeColorFilterTestSetUp();
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
-        const float matrix[DRAWING_NUMBER_20] = {
+    for (int i = 0; i < NUMBER_10; i++) {
+        const float matrix[NUMBER_20] = {
             1.0f, 0, 0, 0, 0, 0, 1.0f, 0, 0, 0, 0, 0, 1.0f, 0, 0, 0, 0, 0, 0.5f, 0
         };
         OH_Drawing_ColorFilter *colorFilter = OH_Drawing_ColorFilterCreateMatrix(matrix);
         EXPECT_NE(colorFilter, nullptr);
         OH_Drawing_ColorFilterDestroy(colorFilter);
     }
+    DrawingNativeColorFilterTestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+// 补充场景10: ColorFilterCreateMatrix matrix数组边界值测试
+int TestColorFilterCreateMatrixBoundaryValues()
+{
+    DrawingNativeColorFilterTestSetUp();
+    
+    float matrix[20];
+    
+    // 所有元素为0
+    for (int i = 0; i < NUMBER_20; i++) {
+        matrix[i] = 0.0f;
+    }
+    OH_Drawing_ColorFilter *colorFilter = OH_Drawing_ColorFilterCreateMatrix(matrix);
+    EXPECT_NE(colorFilter, nullptr);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    OH_Drawing_ColorFilterDestroy(colorFilter);
+    
+    // 所有元素为极大值
+    for (int i = 0; i < NUMBER_20; i++) {
+        matrix[i] = FLT_MAX;
+    }
+    colorFilter = OH_Drawing_ColorFilterCreateMatrix(matrix);
+    EXPECT_NE(colorFilter, nullptr);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    OH_Drawing_ColorFilterDestroy(colorFilter);
+    
     DrawingNativeColorFilterTestTearDown();
     return OH_DRAWING_SUCCESS;
 }
@@ -345,7 +374,7 @@ int TestColorFilterCreateLinearToSrgbGammaMultipleCalls()
 {
     DrawingNativeColorFilterTestSetUp();
     // 1、OH_Drawing_ColorFilterCreateLinearToSrgbGamma 调用10次
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_ColorFilter *colorFilter = OH_Drawing_ColorFilterCreateLinearToSrgbGamma();
         EXPECT_NE(colorFilter, nullptr);
         OH_Drawing_ColorFilterDestroy(colorFilter);
@@ -371,7 +400,7 @@ int TestColorFilterCreateSrgbGammaToLinearMultipleCalls()
 {
     DrawingNativeColorFilterTestSetUp();
     // 1. Call OH_Drawing_ColorFilterCreateSrgbGammaToLinear 10 times
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_ColorFilter *colorFilter = OH_Drawing_ColorFilterCreateSrgbGammaToLinear();
         EXPECT_NE(colorFilter, nullptr);
         OH_Drawing_ColorFilterDestroy(colorFilter);
@@ -396,7 +425,7 @@ int TestColorFilterCreateLumaMultipleCalls()
 {
     DrawingNativeColorFilterTestSetUp();
     // 1. Call OH_Drawing_ColorFilterCreateLuma 10 times
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_ColorFilter *colorFilter = OH_Drawing_ColorFilterCreateLuma();
         EXPECT_NE(colorFilter, nullptr);
         OH_Drawing_ColorFilterDestroy(colorFilter);
@@ -476,9 +505,9 @@ int TestColorFilterCreateLightingMultipleCalls()
 {
     DrawingNativeColorFilterTestSetUp();
     // 1. OH_Drawing_ColorFilterCreateLighting is called multiple times.
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
-        OH_Drawing_ColorFilter *colorFilter = OH_Drawing_ColorFilterCreateLighting(DRAWING_NUMBER_0XFFFFFFFF,
-            DRAWING_NUMBER_0XFF0000FF);
+    for (int i = 0; i < NUMBER_10; i++) {
+        OH_Drawing_ColorFilter *colorFilter = OH_Drawing_ColorFilterCreateLighting(NUMBER_0XFFFFFFFF,
+            NUMBER_0XFF0000FF);
         EXPECT_NE(colorFilter, nullptr);
         OH_Drawing_ColorFilterDestroy(colorFilter);
     }

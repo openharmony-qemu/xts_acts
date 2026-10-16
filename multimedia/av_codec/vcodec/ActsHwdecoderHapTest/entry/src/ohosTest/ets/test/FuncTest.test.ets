@@ -393,5 +393,44 @@ export default function FuncTest() {
       let result: number = await testNapi.OutputDecsFunc007Test();
       expect(result).assertEqual(0);
     });
+
+    /**
+     * @tc.name   SUB_MUlTIMEDIA_AV_CODEC_VIDEO_DECODE_H264_DMABUF_SUFFIX_0010
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_DECODE_H264_DMABUF_SUFFIX_0010
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_DECODE_H264_DMABUF_SUFFIX_0010', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoDecodeH264DmabufSuffix0010();
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.name   SUB_MUlTIMEDIA_AV_CODEC_VIDEO_DECODE_H265_DMABUF_SUFFIX_0010
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_DECODE_H265_DMABUF_SUFFIX_0010
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_DECODE_H265_DMABUF_SUFFIX_0010', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoDecodeH265DmabufSuffix0010();
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.name   SUB_MUlTIMEDIA_AV_CODEC_VIDEO_DECODE_H266_DMABUF_SUFFIX_0010
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_DECODE_H266_DMABUF_SUFFIX_0010
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_DECODE_H266_DMABUF_SUFFIX_0010', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoDecodeH266DmabufSuffix0010();
+      expect(result).assertEqual(0);
+    });
   })
 }

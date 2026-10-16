@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
@@ -56,12 +56,14 @@ export default function lanesHeaderGroup() {
     it('lanesHeaderGroup_0100', Level.LEVEL3, async (done: Function) => {
       console.info('[lanesHeaderGroup_0100] START');
       await CommonFunc.sleep(1000);
-      let groupHeader = CommonFunc.getComponentRectOnScreen('group_ver_list_head');
-      let listItem = CommonFunc.getComponentRectOnScreen('group_ver_item_head');
+      let driver = Driver.create();
+      let groupHeaderComponent = await driver.findComponent(ON.id('group_ver_list_head'));
+      let groupHeader = await groupHeaderComponent.getBounds();
+      let listItemComponent = await driver.findComponent(ON.id('group_ver_item_head'));
+      let listItem = await listItemComponent.getBounds();
       console.info('[lanesHeaderGroup_0100] groupHeader.bottom: ' + groupHeader.bottom);
       console.info('[lanesHeaderGroup_0100] listItem.top: ' + listItem.top);
       expect(Math.abs(listItem.top - groupHeader.bottom) <= 1).assertTrue();
-      let driver = Driver.create();
       await CommonFunc.sleep(1000);
       let btn: Component = await driver.findComponent(ON.id('itemInGroup_ver_header'));
       await btn.click();

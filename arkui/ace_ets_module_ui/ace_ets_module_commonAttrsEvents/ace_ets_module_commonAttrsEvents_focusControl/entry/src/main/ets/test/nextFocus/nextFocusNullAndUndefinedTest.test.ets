@@ -14,10 +14,11 @@
  */
 
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "@ohos/hypium"
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "@ohos/hypium-dynamic"
 import { Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common'
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function nextFocusNullAndUndefinedTest() {
   describe('nextFocusNullAndUndefinedTest', () => {
     beforeEach(async () => {
@@ -56,7 +57,7 @@ export default function nextFocusNullAndUndefinedTest() {
       console.info('[nextFocusNullV18001] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(500);
       let strJson = getInspectorByKey('focusText');
       let obj: ESObject = JSON.parse(strJson);
@@ -77,7 +78,7 @@ export default function nextFocusNullAndUndefinedTest() {
       console.info('[nextFocusUndefinedV18002] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(500);
       let strJson = getInspectorByKey('focusText');
       let obj: ESObject = JSON.parse(strJson);

@@ -47,7 +47,6 @@ static void InitPushWindow(napi_property_descriptor* desc)
         XL("WindowManagerErrorCodeNoPermission", Window::WindowManagerErrorCodeNoPermission),
         XL("WindowManagerErrorCodeInvalidParam", Window::WindowManagerErrorCodeInvalidParam),
         XL("WindowManagerErrorCodeDeviceNotSupported", Window::WindowManagerErrorCodeDeviceNotSupported),
-        XL("WindowManagerErrorCodeInvalidWindowId", Window::WindowManagerErrorCodeInvalidWindowId),
         XL("WindowManagerErrorCodeStateAbnormal", Window::WindowManagerErrorCodeStateAbnormal),
         XL("WindowManagerErrorCodeSystemAbnormal", Window::WindowManagerErrorCodeSystemAbnormal),
         XL("GetWindowAvoidAreaType", Window::GetWindowAvoidAreaType),
@@ -60,6 +59,13 @@ static void InitPushWindow(napi_property_descriptor* desc)
         XL("RegisterTouchEventFilterInvaildWindowId", Window::RegisterTouchEventFilterInvaildWindowId),
         XL("UnregisterTouchEventFilterOkOrServiceError", Window::UnregisterTouchEventFilterOkOrServiceError),
         XL("UnregisterTouchEventFilterInvaildWindowId", Window::UnregisterTouchEventFilterInvaildWindowId),
+        XL("RegisterKeyEventFilterOkOrServiceError", Window::RegisterKeyEventFilterOkOrServiceError),
+        XL("RegisterKeyEventFilterInvalidWindowId", Window::RegisterKeyEventFilterInvalidWindowId),
+        XL("RegisterKeyEventFilterInvalidParam", Window::RegisterKeyEventFilterInvalidParam),
+        XL("UnregisterKeyEventFilterOkOrServiceError", Window::UnregisterKeyEventFilterOkOrServiceError),
+        XL("UnregisterKeyEventFilterInvalidWindowId", Window::UnregisterKeyEventFilterInvalidWindowId),
+        XL("RegisterMouseEventFilterInvalidParam", Window::RegisterMouseEventFilterInvalidParam),
+        XL("RegisterTouchEventFilterInvalidParam", Window::RegisterTouchEventFilterInvalidParam)
     };
     for (size_t index = 0; index < sizeof(descTemp) / sizeof(descTemp[0]); index++) {
         desc[index] = descTemp[index];
@@ -68,7 +74,7 @@ static void InitPushWindow(napi_property_descriptor* desc)
 
 static void InitPushWindowPip1(napi_property_descriptor* desc)
 {
-    int32_t offset = 34;
+    int32_t offset = 40;
     napi_property_descriptor descTemp[] = {
         XL("CreatePipConfigOk", WindowPip::CreatePipConfigOk),
         XL("CreatePipConfigIncorrectParam", WindowPip::CreatePipConfigIncorrectParam),
@@ -113,7 +119,7 @@ static void InitPushWindowPip1(napi_property_descriptor* desc)
 
 static void InitPushWindowPip2(napi_property_descriptor* desc)
 {
-    int32_t offset = 69;
+    int32_t offset = 75;
     napi_property_descriptor descTemp[] = {
         XL("RegisterStartPipCallbackOkOrDeviceNotSupported", WindowPip::RegisterStartPipCallbackOkOrDeviceNotSupported),
         XL("RegisterStartPipCallbackIncorrectParam", WindowPip::RegisterStartPipCallbackIncorrectParam),
@@ -150,7 +156,7 @@ static void InitPushWindowPip2(napi_property_descriptor* desc)
 
 static void InitPushWindowPip3(napi_property_descriptor* desc)
 {
-    int32_t offset = 90;
+    int32_t offset = 96;
     napi_property_descriptor descTemp[] = {
         XL("UnregisterControlEventListenerOkOrDeviceNotSupported",
            WindowPip::UnregisterControlEventListenerOkOrDeviceNotSupported),
@@ -186,7 +192,7 @@ static void InitPushWindowPip3(napi_property_descriptor* desc)
 
 static void InitPushDisplay(napi_property_descriptor* desc)
 {
-    int32_t offset = 111;
+    int32_t offset = 117;
     napi_property_descriptor descTemp[] = {
         XL("CaptureScreenPixelmapInvalidParamOrDeviceNotSupported",
            Display::CaptureScreenPixelmapInvalidParamOrDeviceNotSupported),
@@ -210,7 +216,7 @@ static void InitPushDisplay(napi_property_descriptor* desc)
 
 static void InitPushWindow2(napi_property_descriptor* desc)
 {
-    int32_t offset = 124;
+    int32_t offset = 130;
     napi_property_descriptor descTemp[] = {
         XL("test_OH_WindowManager_GetAllMainWindowInfo_0200",
             Window::Test_OH_WindowManager_GetAllMainWindowInfo_0200),
@@ -236,7 +242,7 @@ static void InitPushWindow2(napi_property_descriptor* desc)
 
 static void InitPushWindow3(napi_property_descriptor* desc)
 {
-    int32_t offset = 132;
+    int32_t offset = 138;
     napi_property_descriptor descTemp[] = {
         XL("testLockCursorwithOutofRange",
             Window::TestLockCursorwithOutofRange),
@@ -254,7 +260,7 @@ static void InitPushWindow3(napi_property_descriptor* desc)
 
 static void InitPushWindow4(napi_property_descriptor* desc)
 {
-    int32_t offset = 136;
+    int32_t offset = 142;
     napi_property_descriptor descTemp[] = {
         XL("testSetWindowBrightness",
             Window::TestSetWindowBrightness),
@@ -274,7 +280,7 @@ static void InitPushWindow4(napi_property_descriptor* desc)
 
 static void InitPushDisplay2(napi_property_descriptor* desc)
 {
-    int32_t offset = 141;
+    int32_t offset = 147;
     napi_property_descriptor descTemp[] = {
         XL("testCaptureScreenPixelmapBoundaryValue",
             Display::TestCaptureScreenPixelmapBoundaryValue),
@@ -299,7 +305,7 @@ static void InitPushDisplay2(napi_property_descriptor* desc)
 
 static void InitPushWindowPip4(napi_property_descriptor* desc)
 {
-    int32_t offset = 149;
+    int32_t offset = 155;
     napi_property_descriptor descTemp[] = {
         XL("testSetPipMainWindowIdBoundaryValue", WindowPip::TestSetPipMainWindowIdBoundaryValue),
         XL("testSetPipRectBoundaryValue", WindowPip::TestSetPipRectBoundaryValue),
@@ -342,7 +348,7 @@ static napi_value Init(napi_env env, napi_value exports)
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "env or exports is null");
         return nullptr;
     }
-    napi_property_descriptor desc[172] = {};
+    napi_property_descriptor desc[178] = {};
     InitPushWindow(desc);
     InitPushWindowPip1(desc);
     InitPushWindowPip2(desc);

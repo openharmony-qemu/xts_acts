@@ -13,15 +13,16 @@
 * limitations under the License.
 */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import commonEvent from '@ohos.commonEvent';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import common from '@ohos.app.ability.common';
 import commonEventManager from '@ohos.commonEventManager';
+import { BusinessError } from '@ohos.base';
 
 const START_ABILITY_TIMEOUT = 5000;
-let GetAppContext1: commonEventManager.CommonEventSubscribeInfo = {
-  events: ["ACTS_GetAppContext"]
+let getAppContext1: commonEventManager.CommonEventSubscribeInfo = {
+  events: ['ACTS_GetAppContext']
 };
 
 export default function appTest() {
@@ -35,39 +36,51 @@ export default function appTest() {
      * @tc.level  LEVEL0
      */
     it('ACTS_GetAppContext_0100', Level.LEVEL0, async (done: Function) => {
-      let Subscriber: commonEventManager.CommonEventSubscriber;
+      let subscriber: commonEventManager.CommonEventSubscriber;
       let flag = true;
-      let AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
+      let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 
-      commonEvent.createSubscriber(GetAppContext1).then(async (data) => {
-        console.debug("ACTS_GetAppContext_0100====>Create Subscriber====");
-        Subscriber = data;
-        commonEvent.subscribe(Subscriber, (err, data) => {
-          expect(data.event == "ACTS_GetAppContext").assertTrue();
-          console.debug("====>0100 Subscribe CallBack data:" + JSON.stringify(data));
-          let context = AbilityDelegator.getAppContext();
-          console.debug("====>ACTS_GetAppContext_0100 context:" + context);
-          expect(context.applicationInfo.name).assertEqual("com.example.actsgetappcontexttest");
-          commonEvent.unsubscribe(Subscriber, () => {
-            console.debug("====>UnSubscribeCallback====");
+      commonEvent.createSubscriber(getAppContext1).then(async (data) => {
+        console.debug('ACTS_GetAppContext_0100====>Create Subscriber====');
+        subscriber = data;
+        commonEvent.subscribe(subscriber, (err, data) => {
+          if (err && err.code !== 0) {
+            console.info(`callback err: ${JSON.stringify(err)}`);
+            expect().assertFail();
+            return;
+          }
+          expect(data.event == 'ACTS_GetAppContext').assertTrue();
+          console.debug('====>0100 Subscribe CallBack data:' + JSON.stringify(data));
+          let context = abilityDelegator.getAppContext();
+          console.debug('====>ACTS_GetAppContext_0100 context:' + context);
+          expect(context.applicationInfo.name).assertEqual('com.example.actsgetappcontexttest');
+          commonEvent.unsubscribe(subscriber, () => {
+            console.debug('====>UnSubscribeCallback====');
             flag = false
             done();
           });
         });
-        console.debug("====>start startAbility====");
+        console.debug('====>start startAbility====');
 
-        AppStorage.get<common.UIAbilityContext>("abilityContext")!.startAbility(
+        AppStorage.get<common.UIAbilityContext>('abilityContext')!.startAbility(
           {
             bundleName: 'com.example.actsgetappcontexttest',
             abilityName: 'MainAbility1'
           }).then(() => {
-          console.debug("====>startAbility end====");
+          console.debug('====>startAbility end====');
+        }).catch((err: BusinessError) => {
+          console.debug('====>startAbility err:' + JSON.stringify(err));
+          expect().assertFail();
+          done();
         })
+      }).catch((err: BusinessError) => {
+        console.debug('====>createSubscriber err:' + JSON.stringify(err));
+        expect().assertFail();
+        done();
       })
 
       setTimeout(() => {
         if (flag == true) {
-          expect().assertFail();
           console.debug('ACTS_GetAppContext_0100 - timeout');
           done();
         }

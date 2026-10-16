@@ -18,7 +18,7 @@
 #include "NapiInitPart3Test.cpp"
 #include "NapiInitPart4Test.cpp"
 
-#define DRAWING_NUMBER_1 1
+#define NUMBER_1 1
 
 
 // Include the split implementation files
@@ -36,6 +36,7 @@ static const napi_property_descriptor g_drawingNativeDescriptors[] = {
     DECL_NAPI_DESC(DrawingRecordCmdUtilsBeginRecording),
     DECL_NAPI_DESC(DrawingRecordCmdUtilsDestroy),
     DECL_NAPI_DESC(DrawingRecordCmdUtilsFinishRecording),
+    DECL_NAPI_DESC(DrawingRecordCmdUtilsGetHeightOrWidth),
     DECL_NAPI_DESC(DrawingCanvasDrawSingleChaWithFeatures),
     DECL_NAPI_DESC(DrawingMemoryStream),
     DECL_NAPI_DESC(DrawingPointCreate),
@@ -135,6 +136,7 @@ static const napi_property_descriptor g_drawingNativeDescriptors[] = {
     DECL_NAPI_DESC(DrawingFontTextToGlyphs),
     DECL_NAPI_DESC(DrawingFontGetWidths),
     DECL_NAPI_DESC(DrawingFontGetTextPathWithFallback),
+    DECL_NAPI_DESC(DrawingFontWithFallback),
     DECL_NAPI_DESC(DrawingFontSetLinearText),
     DECL_NAPI_DESC(DrawingFontSetTextSkewX),
     DECL_NAPI_DESC(DrawingFontSetFakeBoldText),
@@ -207,6 +209,7 @@ static const napi_property_descriptor g_drawingNativeDescriptors[] = {
     DECL_NAPI_DESC(DrawingTextBlobBuilder),
     DECL_NAPI_DESC(DrawingTextBlobCreate),
     DECL_NAPI_DESC(DrawingTextBlobOther),
+    DECL_NAPI_DESC(DrawingTextBlobWithFallback),
     DECL_NAPI_DESC(DrawingTypefaceCreate),
     // need fixed
     DECL_NAPI_DESC(DrawingRegionAdvancedOperations),
@@ -233,7 +236,7 @@ EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
 EXTERN_C_END
 
 static napi_module drawingNativeModule = {
-    .nm_version = DRAWING_NUMBER_1,
+    .nm_version = NUMBER_1,
     .nm_flags = 0,
     .nm_filename = nullptr,
     .nm_register_func = Init,

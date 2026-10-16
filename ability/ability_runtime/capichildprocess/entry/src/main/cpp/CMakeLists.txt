@@ -14,6 +14,7 @@ add_library(entry SHARED
     IpcStub.cpp
     ChildProcess.cpp
     native_child_demo.cpp
+    ChildProcessInfosNapi.cpp
 )
 
 target_link_libraries(entry PUBLIC
@@ -21,6 +22,7 @@ target_link_libraries(entry PUBLIC
     libhilog_ndk.z.so
     libchild_process.so
     libipc_capi.so
+    libability_runtime.so
 )
 
 add_library(invalidstub SHARED

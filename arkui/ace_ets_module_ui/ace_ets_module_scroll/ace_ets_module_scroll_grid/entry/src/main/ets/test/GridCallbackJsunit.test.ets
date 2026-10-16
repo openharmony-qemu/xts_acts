@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium-dynamic"
 import router from '@ohos.router';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../MainAbility/common/Common';
@@ -54,57 +54,62 @@ export default function GridCallbackJsunit() {
       // Verify Neither rowsTemplate nor columnsTemplate is set
       console.info('[GridCallbackJsunit_1000] START');
 
-      let grid2 = CommonFunc.getComponentRectOnScreen('GridCallbackPage' + '_grid2');
+      let driver = await Driver.create()
+      let grid2Component = await driver.findComponent(ON.id('GridCallbackPage_grid2'));
+      let grid2 = await grid2Component.getBounds();
+      let displayId = await grid2Component.getDisplayId();
       let top = grid2.top
       let bottom = grid2.bottom
       let left = grid2.left
       let right = grid2.right
       let width = right - left
-      let height = bottom -top
-      console.log('[GridCallbackJsunit_1000] grid 2 top:' + top +" bottom:" + bottom + "left: " + left + " right:" + right)
-      let driver = await UiDriver.create()
-      await driver.swipe(Math.round((left + width/2)), Math.round(top + height * 0.6), Math.round((left + width/2)), Math.round(top + height * 0.1));
+      let height = bottom - top
+      console.log('[GridCallbackJsunit_1000] grid 2 top:' + top + " bottom:" + bottom
+        + "left: " + left + " right:" + right + ", displayId = " + displayId)
+      await driver.swipeBetween(
+        { x: Math.round((left + width / 2)), y: Math.round(top + height * 0.6), displayId: displayId },
+        { x: Math.round((left + width / 2)), y: Math.round(top + height * 0.1), displayId: displayId });
       await CommonFunc.sleep(2000);
-      let onReachStartText = await driver.findComponent(BY.key('GridCallbackPage' + '_onReachStartText'));
+      let onReachStartText = await driver.findComponent(ON.id('GridCallbackPage_onReachStartText'));
 
       let text5 = await onReachStartText.getText();
       console.info('[GridCallbackJsunit_1000] onReachStartText' + text5);
       expect(text5).assertEqual('onReachStart:succ');
       await CommonFunc.sleep(200);
 
-      let onScrollText = await driver.findComponent(BY.key('GridCallbackPage' + '_onScrollText'));
+      let onScrollText = await driver.findComponent(ON.id('GridCallbackPage_onScrollText'));
       let text3 = await onScrollText.getText();
       console.info('[GridCallbackJsunit_1000] onScrollText' + text3);
       expect(text3).assertEqual('onScroll:succ');
 
-      let onScrollIndexText = await driver.findComponent(BY.key('GridCallbackPage' + '_onScrollIndexText'));
+      let onScrollIndexText = await driver.findComponent(ON.id('GridCallbackPage_onScrollIndexText'));
       let text2 = await onScrollIndexText.getText();
       console.info('[GridCallbackJsunit_1000] onScrollIndexText' + text2);
       expect(text2).assertEqual('onScrollIndex:succ');
 
-      let onScrollStartText = await driver.findComponent(BY.key('GridCallbackPage' + '_onScrollStartText'));
+      let onScrollStartText = await driver.findComponent(ON.id('GridCallbackPage_onScrollStartText'));
       let text4 = await onScrollStartText.getText();
       console.info('[GridCallbackJsunit_1000] onScrollStartText' + text4);
       expect(text4).assertEqual('onScrollStart:succ');
       await CommonFunc.sleep(200);
 
 
-      let onScrollStopText = await driver.findComponent(BY.key('GridCallbackPage' + '_onScrollStopText'));
+      let onScrollStopText = await driver.findComponent(ON.id('GridCallbackPage_onScrollStopText'));
       let text6 = await onScrollStopText.getText();
       console.info('[GridCallbackJsunit_1000] onScrollStopText' + text6);
       expect(text6).assertEqual('onScrollStop:succ');
       await CommonFunc.sleep(200);
 
-      let onScrollFrameBeginText = await driver.findComponent(BY.key('GridCallbackPage' + '_onScrollFrameBeginText'));
+      let onScrollFrameBeginText = await driver.findComponent(ON.id('GridCallbackPage_onScrollFrameBeginText'));
       let text7 = await onScrollFrameBeginText.getText();
       console.info('[GridCallbackJsunit_1000] nScrollFrameBeginText ' + text7);
       expect(text7).assertEqual('onScrollFrameBegin:succ');
       await CommonFunc.sleep(200);
 
-      let bottomButton = await driver.findComponent(BY.key('bottom'));
+      let bottomButton = await driver.findComponent(ON.id('bottom'));
       await bottomButton.click()
       await CommonFunc.sleep(2000)
-      let onReachEndText = await driver.findComponent(BY.key('GridCallbackPage' + '_onReachEndText'));
+      let onReachEndText = await driver.findComponent(ON.id('GridCallbackPage_onReachEndText'));
       let text9 = await onReachEndText.getText();
       console.info("[GridCallbackJsunit_1000] onReachEndText: " + text9);
 

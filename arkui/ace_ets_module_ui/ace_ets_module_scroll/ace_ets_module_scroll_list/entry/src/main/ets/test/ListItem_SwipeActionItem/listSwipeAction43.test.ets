@@ -69,7 +69,9 @@ export default function listSwipeAction43Jsunit() {
 
       console.info("[SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0430] current component obj is: " + JSON.stringify(JSON.parse(strJson)));
       // swipe the listItem
-      let ListItem_00: RectValue = CommonFunc.getComponentRect('lSwipe43Action0');
+      let swipeComponent = await driver.findComponent(ON.id('lSwipe43Action0'));
+      let ListItem_00 = await swipeComponent.getBounds();
+      let displayId = await swipeComponent.getDisplayId();
       let right: number = ListItem_00.right;
       let left: number = ListItem_00.left;
       let top: number = ListItem_00.top;
@@ -78,9 +80,9 @@ export default function listSwipeAction43Jsunit() {
       let height = bottom -top;
       console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0430 value is" + left + " --" + right + "--" + top + "--" + bottom);
       // swipe the listItem
-      await driver.swipe(
-        Math.round(globalThis.winLeft + left + vp2px(60)), Math.round(globalThis.winTop + top + height/2), Math.round(globalThis.winLeft + left +  vp2px(150)), Math.round(globalThis.winTop  + top + height/2)
-      );
+      await driver.swipeBetween(
+        { x: Math.round(left + vp2px(60)), y: Math.round(top + height / 2), displayId: displayId },
+        { x: Math.round(left + vp2px(150)), y: Math.round(top + height / 2), displayId: displayId });
       await CommonFunc.sleep(5000);
       // trigger the onFinish
       let driver2 = Driver.create();

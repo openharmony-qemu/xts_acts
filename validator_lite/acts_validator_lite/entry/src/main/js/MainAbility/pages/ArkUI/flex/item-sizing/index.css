@@ -1,0 +1,150 @@
+.container {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 24px;
+    background-color: #20242b;
+}
+
+.content-title {
+    width: 90%;
+    height: 60px;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.page-title {
+    width: 260px;
+    height: 50px;
+    color: #ffffff;
+    font-size: 18px;
+    text-align: center;
+}
+
+.help-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 28px;
+}
+
+.case-list {
+    width: 92%;
+    height: 65%;
+    scrollbar: on;
+}
+
+.case {
+    width: 100%;
+    height: 170px;
+    flex-direction: column;
+}
+
+.case-title {
+    width: 100%;
+    height: 32px;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.hint {
+    width: 100%;
+    height: 36px;
+    color: #d6e2f0;
+    font-size: 13px;
+}
+
+.parent {
+    width: 600px;
+    height: 88px;
+    flex-direction: row;
+    background-color: #3d4652;
+}
+
+.boundary {
+    border: 2px solid #ffffff;
+}
+
+.parent text {
+    width: 100%;
+    height: 100%;
+    color: #ffffff;
+    font-size: 14px;
+    text-align: center;
+}
+
+.grow-1 {
+    width: 0px;
+    height: 88px;
+    flex-grow: 1;
+    background-color: #3498db;
+}
+
+.grow-2 {
+    width: 0px;
+    height: 88px;
+    flex-grow: 2;
+    background-color: #e67e22;
+}
+
+.fixed-grow {
+    width: 160px;
+    height: 88px;
+    flex-grow: 0;
+    background-color: #e74c3c;
+}
+
+.fill-grow {
+    width: 0px;
+    height: 88px;
+    flex-grow: 1;
+    background-color: #27ae60;
+}
+
+.no-shrink {
+    width: 700px;
+    height: 88px;
+    flex-shrink: 0;
+    background-color: #e74c3c;
+}
+
+.shrink-equal {
+    width: 260px;
+    height: 88px;
+    flex-shrink: 1;
+    background-color: #8e44ad;
+}
+
+.basis-px {
+    width: 60px;
+    height: 88px;
+    flex-basis: 100px;
+    background-color: #16a085;
+}
+
+.basis-width {
+    width: 60px;
+    height: 88px;
+    background-color: #f1c40f;
+}
+
+.bottom-bt {
+    width: 60%;
+    height: 60px;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.button {
+    width: 31%;
+    height: 50px;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.button:active {
+    background-color: blueviolet;
+}

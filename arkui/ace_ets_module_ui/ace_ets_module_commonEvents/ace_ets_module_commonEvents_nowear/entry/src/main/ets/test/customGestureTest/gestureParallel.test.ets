@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import {
@@ -31,6 +31,7 @@ import {
   PointerMatrix
 } from '@ohos.UiTest';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0;
 export default function gestureParallelTest() {
   describe('gestureParallelTest', () => {
     beforeEach(async (done: Function) => {
@@ -77,8 +78,8 @@ export default function gestureParallelTest() {
         JSON.parse('[' + JSON.parse('[' + JSON.parse(str1).$rect + ']')[0] + ']')[1] + globalThis.winTop;
       console.info("rect_left = " + CommonFunc.rect_left + "CommonFunc.rect_top = " + CommonFunc.rect_top);
       let driver = Driver.create();
-      await driver.longClick(Math.round(CommonFunc.rect_left + vp2px(66.66)), Math.round(CommonFunc.rect_top + vp2px(133.33)));
-      await driver.doubleClick(Math.round(CommonFunc.rect_left + vp2px(66.66)), Math.round(CommonFunc.rect_top + vp2px(133.33)));
+      await driver.longClickAt({x: Math.round(CommonFunc.rect_left + vp2px(66.66)), y: Math.round(CommonFunc.rect_top + vp2px(133.33)), displayId: displayID});
+      await driver.doubleClickAt({x: Math.round(CommonFunc.rect_left + vp2px(66.66)), y: Math.round(CommonFunc.rect_top + vp2px(133.33)), displayId: displayID});
       let strJson1 = getInspectorByKey("longPressMsg");
       await CommonFunc.sleep(200);
       console.info("[gestureParallelTest_001] component obj is: " + JSON.stringify(JSON.parse(strJson1)));

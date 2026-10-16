@@ -119,25 +119,6 @@ export default function Int16ArrayFromTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_0500
-     * @tc.name testInt16ArrayFromTestFour005
-     * @tc.desc Verify Int16Array.from returns independent buffer not a view
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArrayFromTestFour005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src: FixedArray<int> = [1, 2, 3];
-      let result: Int16Array = Int16Array.from(src);
-      let r1: boolean = result.buffer === null;
-      let e1: boolean = false;
-      expect(r1).assertEqual(e1);
-      let r2: int = result.byteLength;
-      let e2: int = 6;
-      expect(r2).assertEqual(e2);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_0600
      * @tc.name testInt16ArrayFromTestFour006
      * @tc.desc Verify Int16Array.from with NaN element does not throw
@@ -194,7 +175,7 @@ export default function Int16ArrayFromTest04(): void {
      * @tc.level Level 2
      */
     it('testInt16ArrayFromTestFour009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src: FixedArray<int> = new FixedArray<int>(1000);
+      let src: FixedArray<int> = new FixedArray<int>(1000, 0);
       for (let i: int = 0; i < 1000; i++) {
         src[i] = 1;
       }
@@ -348,21 +329,6 @@ export default function Int16ArrayFromTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_1700
-     * @tc.name testInt16ArrayFromTestFour017
-     * @tc.desc Verify Int16Array.from ArrayLike length=0, returns Int16Array instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArrayFromTestFour017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(0);
-      let result: Int16Array = Int16Array.from(source);
-      let r1: boolean = result instanceof Int16Array;
-      expect(r1).assertTrue();
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_1800
      * @tc.name testInt16ArrayFromTestFour018
      * @tc.desc Verify Int16Array.from ArrayLike length=0.5
@@ -380,23 +346,6 @@ export default function Int16ArrayFromTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_1900
-     * @tc.name testInt16ArrayFromTestFour019
-     * @tc.desc Verify Int16Array.from ArrayLike length=1, $_get(0) value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArrayFromTestFour019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
-      source[0] = 0;
-      let result: Int16Array = Int16Array.from(source);
-      let r1: number = result.$_get(0);
-      let e1: int = 0;
-      expect(r1).assertEqual(e1);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_2000
      * @tc.name testInt16ArrayFromTestFour020
      * @tc.desc Verify Int16Array.from ArrayLike length=1
@@ -405,147 +354,11 @@ export default function Int16ArrayFromTest04(): void {
      * @tc.level Level 2
      */
     it('testInt16ArrayFromTestFour020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
+      let source: Array<number> = Array.create<number>(1, 0);
       source[0] = 5;
       let result: Int16Array = Int16Array.from(source);
       let r1: int = result.length;
       let e1: int = 1;
-      expect(r1).assertEqual(e1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_2100
-     * @tc.name testInt16ArrayFromTestFour021
-     * @tc.desc Verify Int16Array.from ArrayLike length=1, $_get(0) value, int16 wrap/truncate
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArrayFromTestFour021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
-      source[0] = -32768;
-      let result: Int16Array = Int16Array.from(source);
-      let r1: number = result.$_get(0);
-      let e1: int = -32768;
-      expect(r1).assertEqual(e1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_2200
-     * @tc.name testInt16ArrayFromTestFour022
-     * @tc.desc Verify Int16Array.from ArrayLike length=1, $_get(0) value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArrayFromTestFour022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
-      source[0] = 32767;
-      let result: Int16Array = Int16Array.from(source);
-      let r1: number = result.$_get(0);
-      let e1: int = 32767;
-      expect(r1).assertEqual(e1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_2300
-     * @tc.name testInt16ArrayFromTestFour023
-     * @tc.desc Verify Int16Array.from ArrayLike length=1, $_get(0) value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArrayFromTestFour023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
-      source[0] = -1;
-      let result: Int16Array = Int16Array.from(source);
-      let r1: number = result.$_get(0);
-      let e1: int = -1;
-      expect(r1).assertEqual(e1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_2400
-     * @tc.name testInt16ArrayFromTestFour024
-     * @tc.desc Verify Int16Array.from ArrayLike length=1, $_get(0) value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArrayFromTestFour024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
-      source[0] = 1;
-      let result: Int16Array = Int16Array.from(source);
-      let r1: number = result.$_get(0);
-      let e1: int = 1;
-      expect(r1).assertEqual(e1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_2500
-     * @tc.name testInt16ArrayFromTestFour025
-     * @tc.desc Verify Int16Array.from ArrayLike length=1, $_get(0) value, int16 wrap/truncate
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArrayFromTestFour025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
-      source[0] = -32769;
-      let result: Int16Array = Int16Array.from(source);
-      let r1: number = result.$_get(0);
-      let e1: int = 32767;
-      expect(r1).assertEqual(e1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_2600
-     * @tc.name testInt16ArrayFromTestFour026
-     * @tc.desc Verify Int16Array.from ArrayLike length=1, $_get(0) value, int16 wrap/truncate
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArrayFromTestFour026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
-      source[0] = 32768;
-      let result: Int16Array = Int16Array.from(source);
-      let r1: number = result.$_get(0);
-      let e1: int = -32768;
-      expect(r1).assertEqual(e1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_2700
-     * @tc.name testInt16ArrayFromTestFour027
-     * @tc.desc Verify Int16Array.from ArrayLike length=1, $_get(0) value, int16 wrap/truncate
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArrayFromTestFour027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
-      source[0] = 65535;
-      let result: Int16Array = Int16Array.from(source);
-      let r1: number = result.$_get(0);
-      let e1: int = -1;
-      expect(r1).assertEqual(e1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_2800
-     * @tc.name testInt16ArrayFromTestFour028
-     * @tc.desc Verify Int16Array.from ArrayLike length=1, $_get(0) value, int16 wrap/truncate
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArrayFromTestFour028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
-      source[0] = 65536;
-      let result: Int16Array = Int16Array.from(source);
-      let r1: number = result.$_get(0);
-      let e1: int = 0;
       expect(r1).assertEqual(e1);
     });
 
@@ -558,7 +371,7 @@ export default function Int16ArrayFromTest04(): void {
      * @tc.level Level 2
      */
     it('testInt16ArrayFromTestFour029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
+      let source: Array<number> = Array.create<number>(1, 0);
       source[0] = -65536;
       let result: Int16Array = Int16Array.from(source);
       let r1: number = result.$_get(0);
@@ -575,45 +388,11 @@ export default function Int16ArrayFromTest04(): void {
      * @tc.level Level 2
      */
     it('testInt16ArrayFromTestFour030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
+      let source: Array<number> = Array.create<number>(1, 0);
       source[0] = 100000;
       let result: Int16Array = Int16Array.from(source);
       let r1: number = result.$_get(0);
       let e1: int = -31072;
-      expect(r1).assertEqual(e1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_3100
-     * @tc.name testInt16ArrayFromTestFour031
-     * @tc.desc Verify Int16Array.from ArrayLike length=1, $_get(0) value, float truncation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArrayFromTestFour031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
-      source[0] = 3.7;
-      let result: Int16Array = Int16Array.from(source);
-      let r1: number = result.$_get(0);
-      let e1: int = 3;
-      expect(r1).assertEqual(e1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_3200
-     * @tc.name testInt16ArrayFromTestFour032
-     * @tc.desc Verify Int16Array.from ArrayLike length=1, $_get(0) value, float truncation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArrayFromTestFour032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
-      source[0] = -3.7;
-      let result: Int16Array = Int16Array.from(source);
-      let r1: number = result.$_get(0);
-      let e1: int = -3;
       expect(r1).assertEqual(e1);
     });
 
@@ -626,110 +405,8 @@ export default function Int16ArrayFromTest04(): void {
      * @tc.level Level 2
      */
     it('testInt16ArrayFromTestFour033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
+      let source: Array<number> = Array.create<number>(1, 0);
       source[0] = 0.9;
-      let result: Int16Array = Int16Array.from(source);
-      let r1: number = result.$_get(0);
-      let e1: int = 0;
-      expect(r1).assertEqual(e1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_3400
-     * @tc.name testInt16ArrayFromTestFour034
-     * @tc.desc Verify Int16Array.from ArrayLike length=1, $_get(0) value, float truncation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArrayFromTestFour034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
-      source[0] = 32767.9;
-      let result: Int16Array = Int16Array.from(source);
-      let r1: number = result.$_get(0);
-      let e1: int = 32767;
-      expect(r1).assertEqual(e1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_3500
-     * @tc.name testInt16ArrayFromTestFour035
-     * @tc.desc Verify Int16Array.from ArrayLike length=1, $_get(0) value, int16 wrap/truncate, float truncation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArrayFromTestFour035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
-      source[0] = -32768.9;
-      let result: Int16Array = Int16Array.from(source);
-      let r1: number = result.$_get(0);
-      let e1: int = -32768;
-      expect(r1).assertEqual(e1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_3600
-     * @tc.name testInt16ArrayFromTestFour036
-     * @tc.desc Verify Int16Array.from ArrayLike length=1, NaN coerces to 0, $_get(0) value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArrayFromTestFour036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
-      source[0] = Number.NaN;
-      let result: Int16Array = Int16Array.from(source);
-      let r1: number = result.$_get(0);
-      let e1: int = 0;
-      expect(r1).assertEqual(e1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_3700
-     * @tc.name testInt16ArrayFromTestFour037
-     * @tc.desc Verify Int16Array.from ArrayLike length=1, Infinity coerces to 0, $_get(0) value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArrayFromTestFour037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
-      source[0] = Number.POSITIVE_INFINITY;
-      let result: Int16Array = Int16Array.from(source);
-      let r1: number = result.$_get(0);
-      let e1: int = 0;
-      expect(r1).assertEqual(e1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_3800
-     * @tc.name testInt16ArrayFromTestFour038
-     * @tc.desc Verify Int16Array.from ArrayLike length=1, -Infinity coerces to 0, $_get(0) value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArrayFromTestFour038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
-      source[0] = -Number.POSITIVE_INFINITY;
-      let result: Int16Array = Int16Array.from(source);
-      let r1: number = result.$_get(0);
-      let e1: int = 0;
-      expect(r1).assertEqual(e1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_3900
-     * @tc.name testInt16ArrayFromTestFour039
-     * @tc.desc Verify Int16Array.from ArrayLike length=1, $_get(0) value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArrayFromTestFour039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
-      source[0] = -0;
       let result: Int16Array = Int16Array.from(source);
       let r1: number = result.$_get(0);
       let e1: int = 0;
@@ -809,56 +486,6 @@ export default function Int16ArrayFromTest04(): void {
       expect(r2).assertEqual(e2);
       let r3: number = result.$_get(99);
       let e3: int = 2;
-      expect(r3).assertEqual(e3);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_4300
-     * @tc.name testInt16ArrayFromTestFour043
-     * @tc.desc Verify Int16Array.from ArrayLike length=3, element values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArrayFromTestFour043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = [];
-      source.push(32767);
-      source.push(32767);
-      source.push(32767);
-      let result: Int16Array = Int16Array.from(source);
-      let r1: number = result.$_get(0);
-      let e1: int = 32767;
-      expect(r1).assertEqual(e1);
-      let r2: number = result.$_get(1);
-      let e2: int = 32767;
-      expect(r2).assertEqual(e2);
-      let r3: number = result.$_get(2);
-      let e3: int = 32767;
-      expect(r3).assertEqual(e3);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_4400
-     * @tc.name testInt16ArrayFromTestFour044
-     * @tc.desc Verify Int16Array.from ArrayLike length=3, element values, int16 wrap/truncate
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArrayFromTestFour044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = [];
-      source.push(-32768);
-      source.push(-32768);
-      source.push(-32768);
-      let result: Int16Array = Int16Array.from(source);
-      let r1: number = result.$_get(0);
-      let e1: int = -32768;
-      expect(r1).assertEqual(e1);
-      let r2: number = result.$_get(1);
-      let e2: int = -32768;
-      expect(r2).assertEqual(e2);
-      let r3: number = result.$_get(2);
-      let e3: int = -32768;
       expect(r3).assertEqual(e3);
     });
 
@@ -1047,31 +674,6 @@ export default function Int16ArrayFromTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_5200
-     * @tc.name testInt16ArrayFromTestFour052
-     * @tc.desc Verify Int16Array.from ArrayLike length=3, element values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArrayFromTestFour052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = [];
-      for (let _i: int = 0; _i < 3; _i++) {
-        source.push(0);
-      }
-      let result: Int16Array = Int16Array.from(source);
-      let r1: number = result.$_get(0);
-      let e1: int = 0;
-      expect(r1).assertEqual(e1);
-      let r2: number = result.$_get(1);
-      let e2: int = 0;
-      expect(r2).assertEqual(e2);
-      let r3: number = result.$_get(2);
-      let e3: int = 0;
-      expect(r3).assertEqual(e3);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_5300
      * @tc.name testInt16ArrayFromTestFour053
      * @tc.desc Verify Int16Array.from ArrayLike length=3
@@ -1172,7 +774,7 @@ export default function Int16ArrayFromTest04(): void {
      * @tc.level Level 2
      */
     it('testInt16ArrayFromTestFour057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
+      let source: Array<number> = Array.create<number>(1, 0);
       source[0] = 5;
       let result: Int16Array = Int16Array.from(source);
       let rNull: boolean = result !== null;
@@ -1217,59 +819,6 @@ export default function Int16ArrayFromTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_6000
-     * @tc.name testInt16ArrayFromTestFour060
-     * @tc.desc Verify Int16Array.from ArrayLike length=2, buffer is ArrayBuffer
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArrayFromTestFour060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = [];
-      source.push(1);
-      source.push(2);
-      let result: Int16Array = Int16Array.from(source);
-      let r1: boolean = result.buffer instanceof ArrayBuffer;
-      expect(r1).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_6100
-     * @tc.name testInt16ArrayFromTestFour061
-     * @tc.desc Verify Int16Array.from ArrayLike length=1, BYTES_PER_ELEMENT=2
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArrayFromTestFour061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
-      source[0] = 1;
-      let result: Int16Array = Int16Array.from(source);
-      let r1: int = result.BYTES_PER_ELEMENT;
-      let e1: int = 2;
-      expect(r1).assertEqual(e1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_6200
-     * @tc.name testInt16ArrayFromTestFour062
-     * @tc.desc Verify Int16Array.from ArrayLike length=3, buffer.byteLength equals result.byteLength
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArrayFromTestFour062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = [];
-      source.push(1);
-      source.push(2);
-      source.push(3);
-      let result: Int16Array = Int16Array.from(source);
-      let r1: int = result.buffer.byteLength;
-      let e1: number = result.byteLength;
-      expect(r1).assertEqual(e1);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_6300
      * @tc.name testInt16ArrayFromTestFour063
      * @tc.desc Verify Int16Array.from ArrayLike length=3, element values
@@ -1295,55 +844,6 @@ export default function Int16ArrayFromTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_6400
-     * @tc.name testInt16ArrayFromTestFour064
-     * @tc.desc Verify Int16Array.from ArrayLike length=2, repeated from yields same content, element values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArrayFromTestFour064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = [];
-      source.push(100);
-      source.push(200);
-      let result: Int16Array = Int16Array.from(source);
-      let secondResult: Int16Array = Int16Array.from(source);
-      let r1: number = secondResult.$_get(0);
-      let e1: int = 100;
-      expect(r1).assertEqual(e1);
-      let r2: number = secondResult.$_get(1);
-      let e2: int = 200;
-      expect(r2).assertEqual(e2);
-      let r3: number = result.$_get(0);
-      let e3: int = 100;
-      expect(r3).assertEqual(e3);
-      let r4: number = result.$_get(1);
-      let e4: int = 200;
-      expect(r4).assertEqual(e4);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_6500
-     * @tc.name testInt16ArrayFromTestFour065
-     * @tc.desc Verify Int16Array.from ArrayLike length=2, two calls return distinct instances, repeated from yields same content
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArrayFromTestFour065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let sourceA: Array<number> = [];
-      sourceA.push(1);
-      sourceA.push(2);
-      let sourceB: Array<number> = [];
-      sourceB.push(1);
-      sourceB.push(2);
-      let resultA: Int16Array = Int16Array.from(sourceA);
-      let resultB: Int16Array = Int16Array.from(sourceB);
-      let r1: boolean = resultA === resultB;
-      expect(r1).assertFalse();
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_6600
      * @tc.name testInt16ArrayFromTestFour066
      * @tc.desc Verify Int16Array.from ArrayLike length=2, independent buffers across from calls, $_get(0) value
@@ -1364,179 +864,6 @@ export default function Int16ArrayFromTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_6700
-     * @tc.name testInt16ArrayFromTestFour067
-     * @tc.desc Verify Int16Array.from ArrayLike length=2, independent non-null buffer
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArrayFromTestFour067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = [];
-      source.push(1);
-      source.push(2);
-      let result: Int16Array = Int16Array.from(source);
-      let rBuf: boolean = result.buffer !== null;
-      expect(rBuf).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_6800
-     * @tc.name testInt16ArrayFromTestFour068
-     * @tc.desc Verify Int16Array.from ArrayLike length=3, result usable with fill, element values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArrayFromTestFour068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = [];
-      source.push(1);
-      source.push(2);
-      source.push(3);
-      let result: Int16Array = Int16Array.from(source);
-      result.fill(0);
-      let r1: number = result.$_get(0);
-      let e1: int = 0;
-      expect(r1).assertEqual(e1);
-      let r2: number = result.$_get(1);
-      let e2: int = 0;
-      expect(r2).assertEqual(e2);
-      let r3: number = result.$_get(2);
-      let e3: int = 0;
-      expect(r3).assertEqual(e3);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_6900
-     * @tc.name testInt16ArrayFromTestFour069
-     * @tc.desc Verify Int16Array.from ArrayLike length=3, result usable with reverse, element values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArrayFromTestFour069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = [];
-      source.push(1);
-      source.push(2);
-      source.push(3);
-      let result: Int16Array = Int16Array.from(source);
-      result.reverse();
-      let r1: number = result.$_get(0);
-      let e1: int = 3;
-      expect(r1).assertEqual(e1);
-      let r2: number = result.$_get(2);
-      let e2: int = 1;
-      expect(r2).assertEqual(e2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_7000
-     * @tc.name testInt16ArrayFromTestFour070
-     * @tc.desc Verify Int16Array.from ArrayLike length=2, $_get out-of-range throws RangeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArrayFromTestFour070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = [];
-      source.push(1);
-      source.push(2);
-      let result: Int16Array = Int16Array.from(source);
-      try {
-        result.$_get(2);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_7100
-     * @tc.name testInt16ArrayFromTestFour071
-     * @tc.desc Verify Int16Array.from ArrayLike length=2, $_get(-1) throws RangeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArrayFromTestFour071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = [];
-      source.push(1);
-      source.push(2);
-      let result: Int16Array = Int16Array.from(source);
-      try {
-        result.$_get(-1);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_7200
-     * @tc.name testInt16ArrayFromTestFour072
-     * @tc.desc Verify Int16Array.from ArrayLike constructed with negative length returns non-null result
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArrayFromTestFour072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(-1);
-      let result: Int16Array = Int16Array.from(source);
-      let rNotNull: boolean = result !== null;
-      expect(rNotNull).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_7300
-     * @tc.name testInt16ArrayFromTestFour073
-     * @tc.desc Verify Int16Array.from ArrayLike constructed with overflow length returns non-null result
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArrayFromTestFour073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let lenVal: number = 1e308;
-      let source: Array<number> = new Array<number>(lenVal);
-      let result: Int16Array = Int16Array.from(source);
-      let rNotNull: boolean = result !== null;
-      expect(rNotNull).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_7400
-     * @tc.name testInt16ArrayFromTestFour074
-     * @tc.desc Verify Int16Array.from ArrayLike length=1, $_get(0) value, int16 wrap/truncate
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArrayFromTestFour074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
-      source[0] = 2147483647;
-      let result: Int16Array = Int16Array.from(source);
-      let r1: number = result.$_get(0);
-      let e1: int = -1;
-      expect(r1).assertEqual(e1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_7500
-     * @tc.name testInt16ArrayFromTestFour075
-     * @tc.desc Verify Int16Array.from ArrayLike length=1, $_get(0) value, int16 wrap/truncate
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArrayFromTestFour075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
-      source[0] = -2147483648;
-      let result: Int16Array = Int16Array.from(source);
-      let r1: number = result.$_get(0);
-      let e1: int = 0;
-      expect(r1).assertEqual(e1);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_7600
      * @tc.name testInt16ArrayFromTestFour076
      * @tc.desc Verify Int16Array.from ArrayLike length=1, $_get(0) value, int16 wrap/truncate
@@ -1545,28 +872,11 @@ export default function Int16ArrayFromTest04(): void {
      * @tc.level Level 2
      */
     it('testInt16ArrayFromTestFour076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
+      let source: Array<number> = Array.create<number>(1, 0);
       source[0] = 1000000;
       let result: Int16Array = Int16Array.from(source);
       let r1: number = result.$_get(0);
       let e1: int = 16960;
-      expect(r1).assertEqual(e1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_7700
-     * @tc.name testInt16ArrayFromTestFour077
-     * @tc.desc Verify Int16Array.from ArrayLike length=1, $_get(0) value, int16 wrap/truncate
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArrayFromTestFour077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
-      source[0] = -1000000;
-      let result: Int16Array = Int16Array.from(source);
-      let r1: number = result.$_get(0);
-      let e1: int = -16960;
       expect(r1).assertEqual(e1);
     });
 
@@ -1600,40 +910,6 @@ export default function Int16ArrayFromTest04(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_7900
-     * @tc.name testInt16ArrayFromTestFour079
-     * @tc.desc Verify Int16Array.from ArrayLike length=1, $_get(0) value, int16 wrap/truncate
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArrayFromTestFour079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
-      source[0] = 32768.1;
-      let result: Int16Array = Int16Array.from(source);
-      let r1: number = result.$_get(0);
-      let e1: int = -32768;
-      expect(r1).assertEqual(e1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_8000
-     * @tc.name testInt16ArrayFromTestFour080
-     * @tc.desc Verify Int16Array.from ArrayLike length=1, $_get(0) value, int16 wrap/truncate
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArrayFromTestFour080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
-      source[0] = -32769.1;
-      let result: Int16Array = Int16Array.from(source);
-      let r1: number = result.$_get(0);
-      let e1: int = 32767;
-      expect(r1).assertEqual(e1);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_8100
      * @tc.name testInt16ArrayFromTestFour081
      * @tc.desc Verify Int16Array.from ArrayLike length=2, element values, int16 wrap/truncate
@@ -1652,40 +928,6 @@ export default function Int16ArrayFromTest04(): void {
       let r2: number = result.$_get(1);
       let e2: int = -100;
       expect(r2).assertEqual(e2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_8200
-     * @tc.name testInt16ArrayFromTestFour082
-     * @tc.desc Verify Int16Array.from ArrayLike length=1, $_get(0) value, int16 wrap/truncate
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArrayFromTestFour082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
-      source[0] = 4294967295;
-      let result: Int16Array = Int16Array.from(source);
-      let r1: number = result.$_get(0);
-      let e1: int = -1;
-      expect(r1).assertEqual(e1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_8300
-     * @tc.name testInt16ArrayFromTestFour083
-     * @tc.desc Verify Int16Array.from ArrayLike length=1, $_get(0) value, int16 wrap/truncate
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArrayFromTestFour083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
-      source[0] = 4294901760;
-      let result: Int16Array = Int16Array.from(source);
-      let r1: number = result.$_get(0);
-      let e1: int = 0;
-      expect(r1).assertEqual(e1);
     });
 
     /**

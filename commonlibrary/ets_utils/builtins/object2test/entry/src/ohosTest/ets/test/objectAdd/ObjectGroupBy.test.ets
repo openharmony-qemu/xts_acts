@@ -17,7 +17,7 @@
 import {
   describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach,
   afterAll
-} from '@ohos/hypium';
+} from '@ohos/hypium-dynamic';
 import {
   groupByStringProp001,
   groupByNumberProp002,

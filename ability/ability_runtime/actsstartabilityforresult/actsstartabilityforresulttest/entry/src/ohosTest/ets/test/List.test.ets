@@ -12,10 +12,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import startAbilityForResultTest from './StartAbilityForResultTest.test'
+import StartAbilityForResultTest from './StartAbilityForResultTest.test'
 import startAbilityForResultTwoTest from './StartAbilityForResult.test'
 
 export default function testsuite() {
    startAbilityForResultTwoTest();
-   startAbilityForResultTest();
+   StartAbilityForResultTest();
 }

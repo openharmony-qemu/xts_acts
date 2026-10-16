@@ -14,7 +14,7 @@
  */
 import { BusinessError } from '@ohos.base';
 import http from '@ohos.net.http';
-import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import connection from '@ohos.net.connection';
 
 export const ADDR_TEST_ILLEGAL: string = "abc";
@@ -58,7 +58,7 @@ export default function HttpRequestAndDestroyTest() {
           } else {
             console.info(`${caseName} Network connected`);
             let httpRequest: http.HttpRequest = http.createHttp();
-            ExpectTrue(httpRequest != null);
+            ExpectTrue(httpRequest !== undefined);
             httpRequest.destroy();
             done();
           }
@@ -99,7 +99,7 @@ export default function HttpRequestAndDestroyTest() {
                 done();
               } else {
                 console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
-                ExpectTrue(data.responseCode == 200);
+                ExpectTrue(data.responseCode === 200);
                 httpRequest.destroy();
                 done();
               }
@@ -157,7 +157,7 @@ export default function HttpRequestAndDestroyTest() {
                 done();
               } else {
                 console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
-                ExpectTrue(data.responseCode == 200);
+                ExpectTrue(data.responseCode === 200);
                 httpRequest.destroy();
                 done();
               }
@@ -196,7 +196,7 @@ export default function HttpRequestAndDestroyTest() {
         let httpRequest: http.HttpRequest = http.createHttp();
         httpRequest.request(ADDR_TEST_DOMAIN_HTTPS).then((data: http.HttpResponse) => {
           console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
-          ExpectTrue(data.responseCode == 200);
+          ExpectTrue(data.responseCode === 200);
           httpRequest.destroy();
           done();
         }).catch((err: BusinessError) => {
@@ -252,7 +252,7 @@ export default function HttpRequestAndDestroyTest() {
           ]
         }).then((data: http.HttpResponse) => {
           console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
-          ExpectTrue(data.responseCode == 200);
+          ExpectTrue(data.responseCode === 200);
           httpRequest.destroy();
           done();
         }).catch((err: BusinessError) => {
@@ -292,7 +292,7 @@ export default function HttpRequestAndDestroyTest() {
             httpRequest.request(ADDR_TEST_ILLEGAL, (err: BusinessError, data: http.HttpResponse) => {
               if (err) {
                 console.info(`${caseName} httpRequest fail err: ${JSON.stringify(err)}`);
-                ExpectTrue(err.code == 2300006);
+                ExpectTrue(err.code === 2300006);
                 httpRequest.destroy();
                 done();
               } else {
@@ -339,7 +339,7 @@ export default function HttpRequestAndDestroyTest() {
               done();
             }).catch((err: BusinessError) => {
               console.info(`${caseName} httpRequest fail err: ${JSON.stringify(err)}`);
-              ExpectTrue(err.code == 2300006);
+              ExpectTrue(err.code === 2300006);
               httpRequest.destroy();
               done();
             });
@@ -377,7 +377,7 @@ export default function HttpRequestAndDestroyTest() {
             httpRequest.request(ADDR_TEST_DOMAIN_HTTPS, (err: BusinessError, data: http.HttpResponse) => {
               if (err) {
                 console.info(`${caseName} httpRequest.destory fail ${JSON.stringify(err)}`);
-                ExpectTrue(err.code == 2300023);
+                ExpectTrue(err.code === 2300023);
                 done();
               } else {
                 console.info(`${caseName} httpRequest.destory success ${JSON.stringify(data)}`);
@@ -423,7 +423,7 @@ export default function HttpRequestAndDestroyTest() {
               done();
             }).catch((err: BusinessError) => {
               console.info(`${caseName} httpRequest.destory fail err: ${JSON.stringify(err)}`);
-              ExpectTrue(err.code == 2300999)
+              ExpectTrue(err.code === 2300999)
               done();
             });
           }
@@ -467,7 +467,7 @@ export default function HttpRequestAndDestroyTest() {
                 done();
               } else {
                 console.info(`${caseName} httpRequest.destory fail err:${JSON.stringify(res)}`);
-                ExpectTrue(res.responseCode == 200)
+                ExpectTrue(res.responseCode === 200)
                 httpRequest.destroy();
                 done();
               }
@@ -507,7 +507,7 @@ export default function HttpRequestAndDestroyTest() {
               httpRequest.request(ADDR_TEST_DOMAIN_HTTPS, (err: BusinessError) => {
                 if (err) {
                   console.info(`${caseName} httpRequest.destory fail err:${JSON.stringify(err)}`);
-                  ExpectTrue(err.code == 2300999);
+                  ExpectTrue(err.code === 2300999);
                   httpRequest.destroy();
                   done();
                 } else {
@@ -553,7 +553,7 @@ export default function HttpRequestAndDestroyTest() {
                 done();
               }).catch((err: BusinessError) => {
               console.info(`${caseName} httpRequest.destroy success ${JSON.stringify(err)}`);
-              ExpectTrue(err.code == 2300023);
+              ExpectTrue(err.code === 2300023);
               done();
             });
             httpRequest.destroy()

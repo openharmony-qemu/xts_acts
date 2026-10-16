@@ -46,7 +46,7 @@
       },
       {
         "name": "SecondAbility",
-        "srcEntry": "./ets/secondability/SecondAbility.ts",
+        "srcEntry": "./ets/secondability/SecondAbility.ets",
         "description": "$string:SecondAbility_desc",
         "icon": "$media:icon",
         "label": "$string:SecondAbility_label",
@@ -74,7 +74,7 @@
       },
       {
         "name": "startAbilityForResult01",
-        "srcEntry": "./ets/test/startAbilityForResult/ability01.ts",
+        "srcEntry": "./ets/test/startAbilityForResult/ability01.ets",
         "description": "$string:TestAbility_desc",
         "icon": "$media:icon",
         "label": "$string:TestAbility_label",
@@ -94,7 +94,7 @@
       },
       {
         "name": "startAbilityForResult02",
-        "srcEntry": "./ets/test/startAbilityForResult/ability02.ts",
+        "srcEntry": "./ets/test/startAbilityForResult/ability02.ets",
         "description": "$string:TestAbility_desc",
         "icon": "$media:icon",
         "label": "$string:TestAbility_label",
@@ -114,7 +114,7 @@
       },
       {
         "name": "startAbilityForResult03",
-        "srcEntry": "./ets/test/startAbilityForResult/ability03.ts",
+        "srcEntry": "./ets/test/startAbilityForResult/ability03.ets",
         "description": "$string:TestAbility_desc",
         "icon": "$media:icon",
         "label": "$string:TestAbility_label",

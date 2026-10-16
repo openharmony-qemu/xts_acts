@@ -16,16 +16,16 @@
 import UIAbility from '@ohos.app.ability.UIAbility';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import hilog from '@ohos.hilog';
-import { Hypium } from '@ohos/hypium';
+import { Hypium } from '@ohos/hypium-dynamic';
 import window from '@ohos.window';
-import commonEvent from '@ohos.commonEvent'
+import commonEvent from '@ohos.commonEventManager'
 import CommonEventManager from '@ohos.commonEventManager';
 import Want from '@ohos.app.ability.Want';
 import common from '@ohos.app.ability.common';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import { BusinessError } from '@ohos.base';
 
-const TAG = "launchRule:AssistantTag"
+const TAG = 'launchRule:AssistantTag'
 
 export default class AssistantAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
@@ -35,10 +35,10 @@ export default class AssistantAbility extends UIAbility {
     globalThis.context = this.context;
     let subscriber:CommonEventManager.CommonEventSubscriber;
     let subscribeInfo:CommonEventManager.CommonEventSubscribeInfo = {
-      events: ["event_100001"]
+      events: ['event_100001']
     };
     CommonEventManager.createSubscriber(subscribeInfo).then((commonEventSubscriber:CommonEventManager.CommonEventSubscriber) => {
-      console.log(TAG, "createSubscriber");
+      console.log(TAG, 'createSubscriber');
       subscriber = commonEventSubscriber;
       CommonEventManager.subscribe(subscriber, (err, data) => {
         if (err) {
@@ -56,7 +56,7 @@ export default class AssistantAbility extends UIAbility {
           //2.Assistant Ability registered "terminateAssistantAbility" event, call terminateAbilityWithResult received after the event
           globalThis.context.terminateSelfWithResult(abilityResult, (err:BusinessError) => {
             CommonEventManager.unsubscribe(subscriber, () => {
-              console.log(TAG, "====>UnSubscribe CallBack====>");
+              console.log(TAG, '====>UnSubscribe CallBack====>');
             });
             console.log(TAG, 'terminateSelfWithResult succeed');
           });

@@ -2,6 +2,7 @@
     "src": [
         "MainAbility/pages/index/index",
         "MainAbility/pages/Tabs/systemMaterialBarStyle",
-        "MainAbility/pages/Tabs/TabsBarFloatingStyle"
+        "MainAbility/pages/Tabs/TabsBarFloatingStyle",
+        "MainAbility/pages/Tabs/TabsSidebarDisplayStyle"
     ]
 }

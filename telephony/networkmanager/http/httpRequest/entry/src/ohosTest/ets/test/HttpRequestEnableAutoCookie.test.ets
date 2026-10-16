@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import http from '@ohos.net.http';
 
 const Url1: string = "http://httpbin.moyufangge.com/cookies/set/test_cookie/test_value";

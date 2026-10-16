@@ -1776,6 +1776,175 @@ describe('ActsBundleManagerTest', function () {
             });        
     })
 
+     /**
+     * @tc.name   SUB_BMS_FRAMEWORK_Query_AppInfo_3000
+     * @tc.number SUB_BMS_FRAMEWORK_Query_AppInfo_3000
+     * @tc.desc   getAllBundleInfo with invalid bundleFlag (negative value) and userId callback test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('SUB_BMS_FRAMEWORK_Query_AppInfo_3000', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
+        console.info('testGetAllBundleInfoInvalidFlagCallbackWithUserId start, bundleFlag=-1, userId=' + userId);
+        demo.getAllBundleInfo(-1, userId, (error, data) => {
+            if (error) {
+                console.info('testGetAllBundleInfoInvalidFlagCallbackWithUserId err:' + JSON.stringify(error));
+                expect().assertFail();
+                done();
+                return;
+            }
+            console.info('testGetAllBundleInfoInvalidFlagCallbackWithUserId data.length=' + data.length);
+            expect(typeof data).assertEqual(OBJECT);
+            expect(data.length).assertLarger(0);
+            for (let i = 0; i < data.length; i++) {
+                if (data[i].name == NAME1) {
+                    console.info('testGetAllBundleInfoInvalidFlagCallbackWithUserId found NAME1 at index=' + i);
+                    let targetInfo = data[i];
+                    console.info('testGetAllBundleInfoInvalidFlagCallbackWithUserId targetInfo=' + JSON.stringify(targetInfo));
+                    expect(targetInfo.name).assertEqual(NAME1);
+                    expect(targetInfo.vendor).assertEqual("example");
+                    expect(targetInfo.versionCode).assertEqual(VERSIONCODE1);
+                    expect(targetInfo.versionName).assertEqual("1.0");
+                    expect(targetInfo.entryModuleName).assertEqual("entry");
+                    expect(targetInfo.compatibleVersion).assertEqual(12);
+                    expect(targetInfo.targetVersion).assertLarger(11);
+                    expect(targetInfo.uid).assertLarger(0);
+                    expect(targetInfo.appId).assertContain(NAME1);
+                    expect(targetInfo.installTime).assertLarger(0);
+                    expect(targetInfo.updateTime).assertLarger(0);
+                    console.info('testGetAllBundleInfoInvalidFlagCallbackWithUserId appInfo=' + JSON.stringify(targetInfo.appInfo));
+                    expect(targetInfo.appInfo.name).assertEqual(NAME1);
+                    expect(targetInfo.appInfo.description).assertEqual(APPLICATION_DESCRIPTION);
+                    expect(targetInfo.appInfo.descriptionId >= 0).assertTrue();
+                    expect(targetInfo.appInfo.icon).assertEqual("$media:icon");
+                    expect(targetInfo.appInfo.iconId >= 0).assertTrue();
+                    expect(targetInfo.appInfo.label).assertEqual("$string:app_name");
+                    expect(targetInfo.appInfo.labelId >= 0).assertTrue();
+                    expect(targetInfo.appInfo.systemApp).assertEqual(false);
+                    expect(targetInfo.appInfo.supportedModes).assertEqual(0);
+                    expect(targetInfo.appInfo.enabled).assertEqual(true);
+                    console.info('testGetAllBundleInfoInvalidFlagCallbackWithUserId end');
+
+                    break;
+                }
+            }
+            done();
+        });
+    })
+
+     /**
+     * @tc.name   SUB_BMS_FRAMEWORK_Query_AppInfo_3010
+     * @tc.number SUB_BMS_FRAMEWORK_Query_AppInfo_3010
+     * @tc.desc   getAllBundleInfo with invalid bundleFlag (large out-of-range value) two param callback test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('SUB_BMS_FRAMEWORK_Query_AppInfo_3010', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
+        console.info('testGetAllBundleInfoInvalidFlagLargeCallback start, bundleFlag=999999');
+        demo.getAllBundleInfo(999999, (error, data) => {
+            if (error) {
+                console.info('testGetAllBundleInfoInvalidFlagLargeCallback err:' + JSON.stringify(error));
+                expect().assertFail();
+                done();
+                return;
+            }
+            console.info('testGetAllBundleInfoInvalidFlagLargeCallback data.length=' + data.length);
+            expect(typeof data).assertEqual(OBJECT);
+            expect(data.length).assertLarger(0);
+      
+            for (let i = 0; i < data.length; i++) {
+                if (data[i].name == NAME1) {
+                    console.info('testGetAllBundleInfoInvalidFlagLargeCallback found NAME1 at index=' + i);
+                    let targetInfo = data[i];
+                    console.info('testGetAllBundleInfoInvalidFlagLargeCallback targetInfo=' + JSON.stringify(targetInfo));
+                    expect(targetInfo.name).assertEqual(NAME1);
+                    expect(targetInfo.vendor).assertEqual("example");
+                    expect(targetInfo.versionCode).assertEqual(VERSIONCODE1);
+                    expect(targetInfo.versionName).assertEqual("1.0");
+                    expect(targetInfo.entryModuleName).assertEqual("entry");
+                    expect(targetInfo.compatibleVersion).assertEqual(12);
+                    expect(targetInfo.targetVersion).assertLarger(11);
+                    expect(targetInfo.uid).assertLarger(0);
+                    expect(targetInfo.appId).assertContain(NAME1);
+                    expect(targetInfo.installTime).assertLarger(0);
+                    expect(targetInfo.updateTime).assertLarger(0);
+                    console.info('testGetAllBundleInfoInvalidFlagLargeCallback appInfo=' + JSON.stringify(targetInfo.appInfo));
+                    expect(targetInfo.appInfo.name).assertEqual(NAME1);
+                    expect(targetInfo.appInfo.description).assertEqual(APPLICATION_DESCRIPTION);
+                    expect(targetInfo.appInfo.descriptionId >= 0).assertTrue();
+                    expect(targetInfo.appInfo.icon).assertEqual("$media:icon");
+                    expect(targetInfo.appInfo.iconId >= 0).assertTrue();
+                    expect(targetInfo.appInfo.label).assertEqual("$string:app_name");
+                    expect(targetInfo.appInfo.labelId >= 0).assertTrue();
+                    expect(targetInfo.appInfo.systemApp).assertEqual(false);
+                    expect(targetInfo.appInfo.supportedModes).assertEqual(0);
+                    expect(targetInfo.appInfo.enabled).assertEqual(true);
+                    console.info('testGetAllBundleInfoInvalidFlagLargeCallback end');
+                    break;
+                }
+            }
+        
+            done();
+        });
+    })
+
+     /**
+     * @tc.name   SUB_BMS_FRAMEWORK_Query_AppInfo_3020
+     * @tc.number SUB_BMS_FRAMEWORK_Query_AppInfo_3020
+     * @tc.desc   getAllBundleInfo with invalid bundleFlag (undefined gap value) promise test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('SUB_BMS_FRAMEWORK_Query_AppInfo_3020', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
+        console.info('testGetAllBundleInfoInvalidFlagPromise start, bundleFlag=0x00000400, userId=' + userId);
+        await demo.getAllBundleInfo(0x00000400, userId).then(data => {
+            console.info('testGetAllBundleInfoInvalidFlagPromise data.length=' + data.length);
+            expect(typeof data).assertEqual(OBJECT);
+            expect(data.length).assertLarger(0);
+
+            for (let i = 0; i < data.length; i++) {
+                if (data[i].name == NAME1) {
+                    console.info('testGetAllBundleInfoInvalidFlagPromise found NAME1 at index=' + i);
+                    let targetInfo = data[i];
+                    console.info('testGetAllBundleInfoInvalidFlagPromise targetInfo=' + JSON.stringify(targetInfo));
+                    expect(targetInfo.name).assertEqual(NAME1);
+                    expect(targetInfo.vendor).assertEqual("example");
+                    expect(targetInfo.versionCode).assertEqual(VERSIONCODE1);
+                    expect(targetInfo.versionName).assertEqual("1.0");
+                    expect(targetInfo.entryModuleName).assertEqual("entry");
+                    expect(targetInfo.compatibleVersion).assertEqual(12);
+                    expect(targetInfo.targetVersion).assertLarger(11);
+                    expect(targetInfo.uid).assertLarger(0);
+                    expect(targetInfo.appId).assertContain(NAME1);
+                    expect(targetInfo.installTime).assertLarger(0);
+                    expect(targetInfo.updateTime).assertLarger(0);
+                    console.info('testGetAllBundleInfoInvalidFlagPromise appInfo=' + JSON.stringify(targetInfo.appInfo));
+                    expect(targetInfo.appInfo.name).assertEqual(NAME1);
+                    expect(targetInfo.appInfo.description).assertEqual(APPLICATION_DESCRIPTION);
+                    expect(targetInfo.appInfo.descriptionId >= 0).assertTrue();
+                    expect(targetInfo.appInfo.icon).assertEqual("$media:icon");
+                    expect(targetInfo.appInfo.iconId >= 0).assertTrue();
+                    expect(targetInfo.appInfo.label).assertEqual("$string:app_name");
+                    expect(targetInfo.appInfo.labelId >= 0).assertTrue();
+                    expect(targetInfo.appInfo.systemApp).assertEqual(false);
+                    expect(targetInfo.appInfo.supportedModes).assertEqual(0);
+                    expect(targetInfo.appInfo.enabled).assertEqual(true);
+                    console.info('testGetAllBundleInfoInvalidFlagPromise end');
+                    break;
+                }
+            }
+        
+            done();
+        }).catch((err) => {
+            console.info('testGetAllBundleInfoInvalidFlagPromise err:' + JSON.stringify(err));
+            expect().assertFail();
+            done();
+        });
+    })
+
+
 
     function checkAbilityInfo0500(data) {
         let queryResultCount = 0;

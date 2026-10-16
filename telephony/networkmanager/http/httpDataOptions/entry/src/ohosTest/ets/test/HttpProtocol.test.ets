@@ -14,7 +14,7 @@
  */
 import { BusinessError } from '@ohos.base';
 import http from '@ohos.net.http';
-import { describe, expect, it , Level, Size, TestType} from '@ohos/hypium';
+import { describe, expect, it , Level, Size, TestType} from '@ohos/hypium-dynamic';
 import connection from '@ohos.net.connection';
 
 export const ADDR_TEST_DOMAIN_HTTPS: string = "https://www.baidu.com/";
@@ -66,7 +66,7 @@ export default function HttpHttpProtocolTest() {
                 done();
               } else {
                 console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
-                ExpectTrue(data.responseCode == 200);
+                ExpectTrue(data.responseCode === 200);
                 httpRequest.destroy();
                 done();
               }
@@ -106,7 +106,7 @@ export default function HttpHttpProtocolTest() {
               usingProtocol: http.HttpProtocol.HTTP1_1
             }).then((res: http.HttpResponse) => {
               console.info(`${caseName}  httpRequest success`);
-              ExpectTrue(res.responseCode == 200);
+              ExpectTrue(res.responseCode === 200);
               httpRequest.destroy();
               done();
             }).catch((err: BusinessError) => {
@@ -153,7 +153,7 @@ export default function HttpHttpProtocolTest() {
                 done();
               } else {
                 console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
-                ExpectTrue(data.responseCode == 200);
+                ExpectTrue(data.responseCode === 200);
                 httpRequest.destroy();
                 done();
               }
@@ -193,7 +193,7 @@ export default function HttpHttpProtocolTest() {
               usingProtocol: http.HttpProtocol.HTTP2
             }).then((res: http.HttpResponse) => {
               console.info(`${caseName}  httpRequest success`);
-              ExpectTrue(res.responseCode == 200);
+              ExpectTrue(res.responseCode === 200);
               httpRequest.destroy();
               done();
             }).catch((err: BusinessError) => {
@@ -236,11 +236,11 @@ export default function HttpHttpProtocolTest() {
             }, (err: BusinessError, data: http.HttpResponse) => {
               if (err) {
                 console.info(`${caseName} httpRequest fail ${JSON.stringify(err)}`);
-                ExpectTrue(err.code == 2300999);//The device does not support HTTP3
+                ExpectTrue(err.code === 2300999);//The device does not support HTTP3
                 done();
               } else {
                 console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
-                ExpectTrue(data.responseCode == 200);
+                ExpectTrue(data.responseCode === 200);
                 httpRequest.destroy();
                 done();
               }
@@ -280,12 +280,12 @@ export default function HttpHttpProtocolTest() {
               usingProtocol: http.HttpProtocol.HTTP3
             }).then((res: http.HttpResponse) => {
               console.info(`${caseName}  httpRequest success`);
-              ExpectTrue(res.responseCode == 200);
+              ExpectTrue(res.responseCode === 200);
               httpRequest.destroy();
               done();
             }).catch((err: BusinessError) => {
               console.info(`${caseName} request fail err:${JSON.stringify(err)}`);
-              ExpectTrue(err.code == 2300999);//The device does not support HTTP3
+              ExpectTrue(err.code === 2300999);//The device does not support HTTP3
               httpRequest.destroy();
               done();
             });
@@ -328,7 +328,7 @@ export default function HttpHttpProtocolTest() {
                 done();
               } else {
                 console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
-                ExpectTrue(data == 200);
+                ExpectTrue(data === 200);
                 httpRequest.destroy();
                 done();
               }
@@ -368,7 +368,7 @@ export default function HttpHttpProtocolTest() {
               usingProtocol: http.HttpProtocol.HTTP1_1
             }).then((res: number) => {
               console.info(`${caseName}  httpRequest success`);
-              ExpectTrue(res == 200);
+              ExpectTrue(res === 200);
               httpRequest.destroy();
               done();
             }).catch((err: BusinessError) => {
@@ -415,7 +415,7 @@ export default function HttpHttpProtocolTest() {
                 done();
               } else {
                 console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
-                ExpectTrue(data == 200);
+                ExpectTrue(data === 200);
                 httpRequest.destroy();
                 done();
               }
@@ -455,7 +455,7 @@ export default function HttpHttpProtocolTest() {
               usingProtocol: http.HttpProtocol.HTTP2
             }).then((res: number) => {
               console.info(`${caseName}  httpRequest success`);
-              ExpectTrue(res == 200);
+              ExpectTrue(res === 200);
               httpRequest.destroy();
               done();
             }).catch((err: BusinessError) => {
@@ -498,11 +498,11 @@ export default function HttpHttpProtocolTest() {
             }, (err: BusinessError, data: number) => {
               if (err) {
                 console.info(`${caseName} httpRequest fail ${JSON.stringify(err)}`);
-                ExpectTrue(err.code == 2300999);//The device does not support HTTP3
+                ExpectTrue(err.code === 2300999);//The device does not support HTTP3
                 done();
               } else {
                 console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
-                ExpectTrue(data == 200);
+                ExpectTrue(data === 200);
                 httpRequest.destroy();
                 done();
               }
@@ -542,12 +542,12 @@ export default function HttpHttpProtocolTest() {
               usingProtocol: http.HttpProtocol.HTTP3
             }).then((res: number) => {
               console.info(`${caseName}  httpRequest success`);
-              ExpectTrue(res == 200);
+              ExpectTrue(res === 200);
               httpRequest.destroy();
               done();
             }).catch((err: BusinessError) => {
               console.info(`${caseName} request fail err:${JSON.stringify(err)}`);
-              ExpectTrue(err.code == 2300999);//The device does not support HTTP3
+              ExpectTrue(err.code === 2300999);//The device does not support HTTP3
               httpRequest.destroy();
               done();
             });

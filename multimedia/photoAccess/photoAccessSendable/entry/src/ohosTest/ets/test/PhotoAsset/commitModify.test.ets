@@ -15,7 +15,7 @@
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import sendablePhotoAccessHelper from '@ohos.file.sendablePhotoAccessHelper'
-import { describe, it, expect, beforeAll, Level } from '@ohos/hypium';
+import { describe, it, expect, beforeAll, Level } from '@ohos/hypium-dynamic';
 import { common } from '@kit.AbilityKit';
 import {
   sleep,
@@ -24,7 +24,8 @@ import {
   photoKeys,
   fetchOption,
   photoFetchOption,
-  createResource
+  createResource,
+  checkResourceFile
 } from '../../util/common'
 
 export default function commitModifyTest () {
@@ -37,6 +38,7 @@ export default function commitModifyTest () {
       await getPermission();
       await sleep(10);
       await driveFn();
+      checkResourceFile(globalContext);
     });
 
 

@@ -17,8 +17,8 @@
 #include <random>
 #include "include/OhosCommonTest.h"
 
-#define DRAWING_NUMBER_1 1
-#define DRAWING_NUMBER_10 10
+#define NUMBER_1 1
+#define NUMBER_10 10
 
 
 namespace OHOS {
@@ -48,12 +48,20 @@ int TestRecordCmdUtilsBeginRecordingAbnormal()
     // add assert
     EXPECT_NE(canvas, nullptr);
     OH_Drawing_Canvas** canvass = &canvas;
-    OH_Drawing_ErrorCode drawingErrorCode = OH_DRAWING_SUCCESS;
-    OH_Drawing_RecordCmdUtils* recordcmd1 = OH_Drawing_RecordCmdUtilsCreate();
-    drawingErrorCode = OH_Drawing_RecordCmdUtilsBeginRecording(nullptr, 0, -DRAWING_NUMBER_1, canvass);
-    EXPECT_EQ(drawingErrorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
+    OH_Drawing_RecordCmdUtils* recordCmdUtils = OH_Drawing_RecordCmdUtilsCreate();
+    OH_Drawing_ErrorCode errorCode =
+        OH_Drawing_RecordCmdUtilsBeginRecording(nullptr, NUMBER_1, NUMBER_1, canvass);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
+    errorCode = OH_Drawing_RecordCmdUtilsBeginRecording(recordCmdUtils, 0, NUMBER_1, canvass);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
+    errorCode = OH_Drawing_RecordCmdUtilsBeginRecording(recordCmdUtils, NUMBER_1, 0, canvass);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
+    errorCode = OH_Drawing_RecordCmdUtilsBeginRecording(recordCmdUtils, -NUMBER_1, NUMBER_1, canvass);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
+    errorCode = OH_Drawing_RecordCmdUtilsBeginRecording(recordCmdUtils, NUMBER_1, -NUMBER_1, canvass);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 2. free memory
-    OH_Drawing_RecordCmdUtilsDestroy(recordcmd1);
+    OH_Drawing_RecordCmdUtilsDestroy(recordCmdUtils);
     OH_Drawing_CanvasDestroy(canvas);
     DrawingRecordCmdUtilsBeginRecordingTestTearDown();
     return OH_DRAWING_SUCCESS;
@@ -69,9 +77,9 @@ int TestRecordCmdUtilsBeginRecordingCalls()
     OH_Drawing_Canvas** canvass = &canvas;
     OH_Drawing_RecordCmdUtils* recordcmd1 = OH_Drawing_RecordCmdUtilsCreate();
     OH_Drawing_ErrorCode drawingErrorCode = OH_DRAWING_SUCCESS;
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         drawingErrorCode =
-            OH_Drawing_RecordCmdUtilsBeginRecording(nullptr, DRAWING_NUMBER_1, DRAWING_NUMBER_1, canvass);
+            OH_Drawing_RecordCmdUtilsBeginRecording(nullptr, NUMBER_1, NUMBER_1, canvass);
         EXPECT_EQ(drawingErrorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
     }
     // 2. free memory

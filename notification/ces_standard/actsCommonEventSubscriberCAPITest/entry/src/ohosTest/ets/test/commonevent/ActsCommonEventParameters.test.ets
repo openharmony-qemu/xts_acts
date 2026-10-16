@@ -1,4 +1,4 @@
-import { describe, it, expect, Level } from '@ohos/hypium';
+import { describe, it, expect, Level } from '@ohos/hypium-dynamic';
 import subscribe from 'libsubscribe.so';
 
 export default function ActsCommonEventParametersTest() {

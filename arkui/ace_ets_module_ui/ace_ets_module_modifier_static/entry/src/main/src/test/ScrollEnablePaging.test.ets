@@ -83,12 +83,16 @@ export default function scrollEnablePagingJsunit() {
 it('ArkUI_Stage_scrollEnablePaging_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ArkUI_Stage_scrollEnablePaging_static_01] START');
       await UtilsTest.msSleep(2000)
-      let scrollRect = Utils.getComponentRect('ScrollTest');
-      console.info(`ArkUI_Stage_scrollEnablePaging_static_01 get scrollRect is:` + JSON.stringify(scrollRect));
-      let x = Utils.getRectHorizontalCenterX(scrollRect)
-      let y = Utils.getRectVerticalCenterY(scrollRect)
       let driver = Driver.create();
-      await driver.swipe(Math.floor(x).toInt(), (Math.floor(scrollRect.bottom) - 50).toInt(), Math.floor(x).toInt(), (Math.floor(scrollRect.top) + 50) .toInt());
+      let swipeComp = await driver.findComponent(ON.id('ScrollTest'));
+      let scrollRect = await swipeComp!.getBounds();
+      let displayId = await swipeComp!.getDisplayId();
+      console.info(`ArkUI_Stage_scrollEnablePaging_static_01 get scrollRect is:` + JSON.stringify(scrollRect));
+      let x = (Math.round(scrollRect.left + (scrollRect.right - scrollRect.left) / 2)).toInt();
+      let y = (Math.round(scrollRect.top + (scrollRect.bottom - scrollRect.top) / 2)).toInt();
+      await driver.swipeBetween(
+        { x: x, y: (Math.round(scrollRect.bottom - 50)).toInt(), displayId: displayId },
+        { x: x, y: (Math.round(scrollRect.top + 50)).toInt(), displayId: displayId });
       console.info('[ArkUI_Stage_scrollEnablePaging_static_01] driver.swipe end');
      await UtilsTest.msSleep(2000)
       try {
@@ -111,7 +115,7 @@ it('ArkUI_Stage_scrollEnablePaging_static_01', Level.LEVEL0, async (done: () => 
       } catch (err) {
         console.info(`ArkUI_Stage_scrollEnablePaging_static_01 err:` + JSON.stringify(err));
       }
-      await driver.click(x.toInt() , y.toInt());
+      await driver.clickAt({ x: x, y: y, displayId: displayId });
     });
   })
 }

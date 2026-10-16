@@ -13,10 +13,12 @@
  * limitations under the License.
  */
 
-import {describe, beforeAll, beforeEach, afterEach, it, expect, Level} from '@ohos/hypium'
+import {describe, beforeAll, beforeEach, afterEach, it, expect, Level} from '@ohos/hypium-dynamic'
 import {UiComponent, UiDriver, Component, Driver, ON, BY, } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
+
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 
 export default function textInputObserverTest() {
   describe('textInputObserverTest', () => {
@@ -66,7 +68,11 @@ export default function textInputObserverTest() {
       await textInput.inputText('textInputObserverTest_0010');
 
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
 
       let globalOutputTextInput1: Component = await driver.findComponent(ON.id('globalOutputTextInput'));
@@ -81,7 +87,11 @@ export default function textInputObserverTest() {
       await textInput.inputText('Add');
 
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
 
       let globalOutputTextInput2: Component = await driver.findComponent(ON.id('globalOutputTextInput'));
@@ -114,7 +124,11 @@ export default function textInputObserverTest() {
       await textInput.inputText('textInputObserverTest_0011');
 
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
 
       let localOutputTextInput1: Component = await driver.findComponent(ON.id('localOutputTextInput'));
@@ -129,7 +143,11 @@ export default function textInputObserverTest() {
       await textInput.inputText('Add');
 
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
 
       let localOutputTextInput2: Component = await driver.findComponent(ON.id('localOutputTextInput'));

@@ -1270,8 +1270,16 @@ static napi_value OHHuksFreeKeyAliasSet(napi_env env, napi_callback_info info)
     struct OH_Huks_KeyAliasSet *query_aliases = nullptr;
     struct OH_Huks_Result resultSt = OH_Huks_ListAliases(listAliasedParamSet, &query_aliases);
     int returnValue = SUCCESS;
-    if (resultSt.errorCode != (int32_t)OH_HUKS_SUCCESS || query_aliases == NULL || query_aliases->aliasesCnt == 0) {
+    if (resultSt.errorCode != (int32_t)OH_HUKS_SUCCESS || query_aliases == NULL ||
+        query_aliases->aliasesCnt == 0 || query_aliases->aliases == NULL) {
         returnValue = FAIL;
+    } else {
+        for (uint32_t i = 0; i < query_aliases->aliasesCnt; ++i) {
+            if (query_aliases->aliases[i].size == 0 || query_aliases->aliases[i].data == NULL) {
+                returnValue = FAIL;
+                break;
+            }
+        }
     }
     OH_Huks_FreeParamSet(&paramSet);
     OH_Huks_FreeParamSet(&listAliasedParamSet);

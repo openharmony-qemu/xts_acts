@@ -19,6 +19,7 @@ import CommonFunc from '../../MainAbility/common/Common';
 import {MessageManager,Callback} from '../../MainAbility/common/MessageManager';
 import window from '@ohos.window';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 
 export default function ActionSheet2() {
   describe('ActionSheet2', () => {
@@ -64,7 +65,7 @@ export default function ActionSheet2() {
       await button.click();
       await CommonFunc.sleep(1000);
 
-      await driver.triggerKey(2070);
+      await driver.triggerKey(2070,displayID);
       await CommonFunc.sleep(1000);
 
       let windowClass: window.Window | undefined = undefined;
@@ -76,8 +77,7 @@ export default function ActionSheet2() {
       try {
         let scrollBar: Component = await driver.findComponent(ON.type('Scroll'))
         let button1 = await scrollBar.scrollSearch(ON.text('Confirm'));
-        let buttonC = await driver.findComponent(ON.text('Confirm'));
-        await buttonC.click();
+        await button1.click();
       } catch (error) {
         console.info('====error======='+error)
       }
@@ -110,8 +110,9 @@ export default function ActionSheet2() {
       let button = await driver.findComponent(ON.id('ActionSheet2'));
       await button.click();
       await CommonFunc.sleep(1000);
-
-      await driver.click(Math.round(globalThis.winLeft+20), Math.round(globalThis.winTop+200));
+      // 涉及坐标
+      await driver.clickAt({ x: Math.round(globalThis.winLeft+20), y: Math.round(globalThis.winTop+200), displayId: displayID });
+      // await driver.click(Math.round(globalThis.winLeft+20), Math.round(globalThis.winTop+200));
       await CommonFunc.sleep(1000);
 
       let windowClass: window.Window | undefined = undefined;
@@ -123,8 +124,7 @@ export default function ActionSheet2() {
       try {
         let scrollBar: Component = await driver.findComponent(ON.type('Scroll'))
         let button1 = await scrollBar.scrollSearch(ON.text('Confirm'));
-        let buttonC = await driver.findComponent(ON.text('Confirm'));
-        await buttonC.click();
+        await button1.click();
       } catch (error) {
         console.info('====error======='+error)
       }

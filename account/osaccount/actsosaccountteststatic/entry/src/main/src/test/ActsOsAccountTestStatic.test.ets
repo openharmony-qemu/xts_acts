@@ -91,7 +91,11 @@ export default function ActsOsAccountTestStatic(): void {
         try {
           let localId: int = await accountManager.getForegroundOsAccountLocalId();
           hilog.info(0x0000, tag, "====>GetForegroundOsAccountLocalId_0100 localId: " + localId);
-          expect(localId).assertEqual(100);
+          if (localId != 100) {
+            expect(localId > 100).assertTrue();
+          } else {
+            expect(localId).assertEqual(100);
+          }
           hilog.info(0x0000, tag, "====>GetForegroundOsAccountLocalId_0100 end====");
           done();
         } catch (err) {

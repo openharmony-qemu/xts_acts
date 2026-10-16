@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium-dynamic"
 import router from '@ohos.router';
 import display from '@ohos.display';
 import events_emitter from '@ohos.events.emitter';
@@ -52,7 +52,7 @@ export default function customSaveSetNullTest() {
       console.info(`====>${testname} clickSecComponent function Start====`);
       try {
         let button = await driver.findComponent(ON.type('SaveButton'));
-        await Utils.sleep(500);
+        await Utils.sleep(1000);
         console.info(`====>${testname} button is:` + JSON.stringify(button));
         let buttonText = await button.getText();
         console.info(`====>${testname} buttonText is:` + JSON.stringify(buttonText));
@@ -63,8 +63,10 @@ export default function customSaveSetNullTest() {
         console.info(`====>${testname} titleTx is:` + JSON.stringify(titleTx));
         if (titleTx !== null) {
           await clickAllowBtn(testname, driver);
+          await Utils.sleep(1000);
         }
         let button2 = await driver.findComponent(ON.id('switchButton'))
+        await Utils.sleep(1000);
         console.info(`====>${testname} switchButton is:` + JSON.stringify(button2));
         await button2.click();
         await Utils.sleep(1000);
@@ -101,6 +103,7 @@ export default function customSaveSetNullTest() {
             await Utils.sleep(100);
           }
           let allowBtn = await driver.findComponent(ON.text('允许'));
+          await Utils.sleep(1000);
           console.info(`====>${testname} allowBtn is:` + JSON.stringify(allowBtn));
           console.info(`====>${testname} allowBtnClick START====`);
           await allowBtn.click();
@@ -145,6 +148,7 @@ export default function customSaveSetNullTest() {
       }
       events_emitter.once(clickEvent, clickCallback);
       console.info(`====>${testname} sucCallback function End====`);
+      done();
     }
 
     /**
@@ -160,6 +164,8 @@ export default function customSaveSetNullTest() {
       console.info(`====>${TCNAME} START====`);
       let expectText: string = '自定义保存';
       let strJson = getInspectorByKey('customSave0');
+      await Utils.sleep(3000);
+      console.info(`====>${TCNAME} strJson is: ${strJson}`);
       let obj : ESObject = JSON.parse(strJson);
       expect(obj.$attrs.icon).assertEqual(0);
       expect(obj.$attrs.text).assertEqual(0);
@@ -170,9 +176,9 @@ export default function customSaveSetNullTest() {
       expect(obj.$attrs.iconBorderRadius.bottomLeft).assertEqual('2.00vp');
       expect(obj.$attrs.iconBorderRadius.bottomRight).assertEqual('2.00vp');
       await Utils.sleep(1000);
-      sucCallback(TCNAME, done);
       let driver = Driver.create();
       await clickSecComponent(TCNAME, expectText, driver);
+      sucCallback(TCNAME, done);
     });
 
     /**
@@ -188,6 +194,8 @@ export default function customSaveSetNullTest() {
       console.info(`====>${TCNAME} START====`);
       let expectText: string = '下载';
       let strJson = getInspectorByKey('customSave1');
+      await Utils.sleep(3000);
+      console.info(`====>${TCNAME} strJson is: ${strJson}`);
       let obj : ESObject = JSON.parse(strJson);
       expect(obj.$attrs.icon).assertEqual(0);
       expect(obj.$attrs.text).assertEqual(0);
@@ -198,9 +206,9 @@ export default function customSaveSetNullTest() {
       expect(obj.$attrs.iconBorderRadius.bottomLeft).assertEqual('2.00vp');
       expect(obj.$attrs.iconBorderRadius.bottomRight).assertEqual('2.00vp');
       await Utils.sleep(1000);
-      sucCallback(TCNAME, done);
       let driver = Driver.create();
       await clickSecComponent(TCNAME, expectText, driver);
+      sucCallback(TCNAME, done);
     });
 
     /**
@@ -216,6 +224,8 @@ export default function customSaveSetNullTest() {
       console.info(`====>${TCNAME} START====`);
       let expectText: string = '自定义保存';
       let strJson = getInspectorByKey('customSave2');
+      await Utils.sleep(3000);
+      console.info(`====>${TCNAME} strJson is: ${strJson}`);
       let obj : ESObject = JSON.parse(strJson);
       expect(obj.$attrs.icon).assertEqual(0);
       expect(obj.$attrs.text).assertEqual(0);
@@ -226,9 +236,9 @@ export default function customSaveSetNullTest() {
       expect(obj.$attrs.iconBorderRadius.bottomLeft).assertEqual('2.00vp');
       expect(obj.$attrs.iconBorderRadius.bottomRight).assertEqual('2.00vp');
       await Utils.sleep(1000);
-      sucCallback(TCNAME, done);
       let driver = Driver.create();
       await clickSecComponent(TCNAME, expectText, driver);
+      sucCallback(TCNAME, done);
     });
 
     /**
@@ -244,6 +254,8 @@ export default function customSaveSetNullTest() {
       console.info(`====>${TCNAME} START====`);
       let expectText: string = '自定义保存';
       let strJson = getInspectorByKey('customSave3');
+      await Utils.sleep(3000);
+      console.info(`====>${TCNAME} strJson is: ${strJson}`);
       let obj : ESObject = JSON.parse(strJson);
       expect(obj.$attrs.icon).assertEqual(0);
       expect(obj.$attrs.text).assertEqual(0);
@@ -254,9 +266,9 @@ export default function customSaveSetNullTest() {
       expect(obj.$attrs.iconBorderRadius.bottomLeft).assertEqual('0.00vp');
       expect(obj.$attrs.iconBorderRadius.bottomRight).assertEqual('0.00vp');
       await Utils.sleep(1000);
-      sucCallback(TCNAME, done);
       let driver = Driver.create();
       await clickSecComponent(TCNAME, expectText, driver);
+      sucCallback(TCNAME, done);
     });
 
     /**
@@ -272,6 +284,8 @@ export default function customSaveSetNullTest() {
       console.info(`====>${TCNAME} START====`);
       let expectText: string = '自定义保存';
       let strJson = getInspectorByKey('customSave4');
+      await Utils.sleep(3000);
+      console.info(`====>${TCNAME} strJson is: ${strJson}`);
       let obj : ESObject = JSON.parse(strJson);
       expect(obj.$attrs.icon).assertEqual(0);
       expect(obj.$attrs.text).assertEqual(0);
@@ -280,9 +294,9 @@ export default function customSaveSetNullTest() {
       expect(obj.$attrs.SymbolRenderingStrategy).assertEqual('SymbolRenderingStrategy.SINGLE');
       expect(obj.$attrs.SymbolFontWeight).assertEqual('FontWeight.Normal');
       await Utils.sleep(1000);
-      sucCallback(TCNAME, done);
       let driver = Driver.create();
       await clickSecComponent(TCNAME, expectText, driver);
+      sucCallback(TCNAME, done);
     });
 
     /**
@@ -298,6 +312,8 @@ export default function customSaveSetNullTest() {
       console.info(`====>${TCNAME} START====`);
       let expectText: string = '自定义保存';
       let strJson = getInspectorByKey('customSave5');
+      await Utils.sleep(3000);
+      console.info(`====>${TCNAME} strJson is: ${strJson}`);
       let obj : ESObject = JSON.parse(strJson);
       expect(obj.$attrs.icon).assertEqual(0);
       expect(obj.$attrs.text).assertEqual(0);
@@ -306,9 +322,9 @@ export default function customSaveSetNullTest() {
       expect(obj.$attrs.SymbolRenderingStrategy).assertEqual('SymbolRenderingStrategy.SINGLE');
       expect(obj.$attrs.SymbolFontWeight).assertEqual('FontWeight.Normal');
       await Utils.sleep(1000);
-      sucCallback(TCNAME, done);
       let driver = Driver.create();
       await clickSecComponent(TCNAME, expectText, driver);
+      sucCallback(TCNAME, done);
     });
   })
 }

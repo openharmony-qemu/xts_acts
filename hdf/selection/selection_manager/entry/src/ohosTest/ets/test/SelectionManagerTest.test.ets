@@ -17,7 +17,7 @@ import SelectionExtensionAbility from '@ohos.selectionInput.SelectionExtensionAb
 import SelectionExtensionContext from '@ohos.selectionInput.SelectionExtensionContext';
 import { PanelInfo, PanelType } from '@ohos.selectionInput.SelectionPanel';
 import selectionManager from '@ohos.selectionInput.selectionManager';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level} from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level} from '@ohos/hypium-dynamic';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import common from '@ohos.app.ability.common';
 import Want from '@ohos.app.ability.Want';

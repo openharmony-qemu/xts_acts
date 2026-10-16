@@ -1649,6 +1649,208 @@ export default function geolocationTest_geo8() {
         }
     });
 
+    /**
+     * @tc.name   SUB_Location_Location_addBeaconFence_perm_test_0300
+     * @tc.number SUB_Location_Location_addBeaconFence_perm_test_0300
+     * @tc.desc   Add a beacon fence with identifier of empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Location_Location_addBeaconFence_perm_test_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        let beacon = {
+            'identifier': '',
+            'beaconFenceInfoType': geolocationm.BeaconFenceInfoType.BEACON_MANUFACTURE_DATA,
+            'manufactureData': {
+                'manufactureId': 76,
+                'manufactureData': new Uint8Array([0x02, 0x15, 0x00, 0x01]).buffer,
+                'manufactureDataMask': new Uint8Array([0x02, 0x15, 0x00, 0x01]).buffer
+            }
+        };
+        let fenceRequest = { 'beacon': beacon };
+        try {
+            geolocationm.addBeaconFence(fenceRequest).then((id) => {
+                console.info('[lbs_js] SUB_Location_Location_addBeaconFence_perm_test_0300 success, fence id: ' + id);
+                expect(typeof id).assertEqual('number');
+                geolocationm.removeBeaconFence(beacon).then(() => {
+                    console.info('[lbs_js] SUB_Location_Location_addBeaconFence_perm_test_0300 cleanup success');
+                    done();
+                }).catch((error) => {
+                    console.info('[lbs_js] SUB_Location_Location_addBeaconFence_perm_test_0300 cleanup err: ' + JSON.stringify(error));
+                    done();
+                });
+            }).catch((error) => {
+                console.info('[lbs_js] SUB_Location_Location_addBeaconFence_perm_test_0300 promise err: ' + JSON.stringify(error));
+                if (error.code === '801') {
+                    expect(error.code).assertEqual('801');
+                } else {
+                    expect(error.code).assertEqual('401');
+                }
+                done();
+            });
+        } catch (error) {
+            console.info('[lbs_js] SUB_Location_Location_addBeaconFence_perm_test_0300 try err: ' + JSON.stringify(error));
+            if (error.code === '801') {
+                expect(error.code).assertEqual('801');
+            } else {
+                expect(error.code).assertEqual('401');
+            }
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   SUB_Location_Location_removeBeaconFence_perm_test_0200
+     * @tc.number SUB_Location_Location_removeBeaconFence_perm_test_0200
+     * @tc.desc   Remove a beacon fence with illegal beaconFenceInfoType enum value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Location_Location_removeBeaconFence_perm_test_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        let beacon = {
+            'identifier': 'xts_beaconfence_illegal_0200',
+            'beaconFenceInfoType': 99,
+            'manufactureData': {
+                'manufactureId': 76,
+                'manufactureData': new Uint8Array([0x02, 0x15]).buffer,
+                'manufactureDataMask': new Uint8Array([0x02, 0x15]).buffer
+            }
+        };
+        let fenceRequest = { 'beacon': beacon };
+        try {
+            geolocationm.addBeaconFence(fenceRequest).then((id) => {
+                console.info('[lbs_js] SUB_Location_Location_removeBeaconFence_perm_test_0200 add success, fence id: ' + id);
+                expect(typeof id).assertEqual('number');
+                geolocationm.removeBeaconFence(beacon).then(() => {
+                    console.info('[lbs_js] SUB_Location_Location_removeBeaconFence_perm_test_0200 remove success');
+                    expect(true).assertTrue();
+                    done();
+                }).catch((error) => {
+                    console.info('[lbs_js] SUB_Location_Location_removeBeaconFence_perm_test_0200 promise err: ' + JSON.stringify(error));
+                    if (error.code === '801') {
+                        expect(error.code).assertEqual('801');
+                    } else {
+                        expect(error.code).assertEqual('401');
+                    }
+                    done();
+                });
+            }).catch((error) => {
+                console.info('[lbs_js] SUB_Location_Location_removeBeaconFence_perm_test_0200 add err: ' + JSON.stringify(error));
+                if (error.code === '801') {
+                    expect(error.code).assertEqual('801');
+                } else {
+                    expect(error.code).assertEqual('401');
+                }
+                done();
+            });
+        } catch (error) {
+            console.info('[lbs_js] SUB_Location_Location_removeBeaconFence_perm_test_0200 try err: ' + JSON.stringify(error));
+            if (error.code === '801') {
+                expect(error.code).assertEqual('801');
+            } else {
+                expect(error.code).assertEqual('401');
+            }
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   SUB_Location_Location_isWlanBssidMatched_perm_test_0800
+     * @tc.number SUB_Location_Location_isWlanBssidMatched_perm_test_0800
+     * @tc.desc   Check wlan bssid match with needStartScan of null and undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Location_Location_isWlanBssidMatched_perm_test_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        var isAcessToken = canIUse('SystemCapability.Location.Location.Core');
+        console.info('SUB_Location_Location_isWlanBssidMatched_perm_test_0800: ' + isAcessToken);
+        if (!isAcessToken) {
+            console.info('The device does not support location core');
+            done();
+            return;
+        }
+        let wlanBssidArray = ['AA:BB:CC:DD:EE:FF'];
+        let rssiThreshold = -70;
+        try {
+            geolocationm.isWlanBssidMatched(wlanBssidArray, rssiThreshold, null).then((res) => {
+                console.info('[lbs_js] SUB_Location_Location_isWlanBssidMatched_perm_test_0800 null result: ' + JSON.stringify(res));
+                expect().assertFail();
+            }).catch((error) => {
+                console.info('[lbs_js] SUB_Location_Location_isWlanBssidMatched_perm_test_0800 null promise err: ' + JSON.stringify(error));
+                if (error.code === '801') {
+                    expect(error.code).assertEqual('801');
+                } else {
+                    expect(error.code).assertEqual('401');
+                }
+            });
+        } catch (error) {
+            console.info('[lbs_js] SUB_Location_Location_isWlanBssidMatched_perm_test_0800 null try err: ' + JSON.stringify(error));
+            if (error.code === '801') {
+                expect(error.code).assertEqual('801');
+            } else {
+                expect(error.code).assertEqual('401');
+            }
+        }
+        try {
+            geolocationm.isWlanBssidMatched(wlanBssidArray, rssiThreshold, undefined).then((res) => {
+                console.info('[lbs_js] SUB_Location_Location_isWlanBssidMatched_perm_test_0800 undefined result: ' + JSON.stringify(res));
+                expect().assertFail();
+            }).catch((error) => {
+                console.info('[lbs_js] SUB_Location_Location_isWlanBssidMatched_perm_test_0800 undefined promise err: ' + JSON.stringify(error));
+                if (error.code === '801') {
+                    expect(error.code).assertEqual('801');
+                } else {
+                    expect(error.code).assertEqual('401');
+                }
+            });
+        } catch (error) {
+            console.info('[lbs_js] SUB_Location_Location_isWlanBssidMatched_perm_test_0800 undefined try err: ' + JSON.stringify(error));
+            if (error.code === '801') {
+                expect(error.code).assertEqual('801');
+            } else {
+                expect(error.code).assertEqual('401');
+            }
+        }
+        await sleep(1000);
+        done();
+    });
+
+    /**
+     * @tc.name   SUB_Location_Location_startBluetoothSearch_perm_test_0500
+     * @tc.number SUB_Location_Location_startBluetoothSearch_perm_test_0500
+     * @tc.desc   Start bluetooth search with empty deviceIdArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Location_Location_startBluetoothSearch_perm_test_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+        let requestInfo = {"deviceIdArray":[], "rssiThreshold":-80};
+        let callback = (result) => {
+            console.info('[lbs_js] startBluetoothSearch_perm_test_0500 callback: ' + JSON.stringify(result));
+        };
+        try {
+            geolocationm.startBluetoothSearch(requestInfo, callback);
+            console.info('[lbs_js] startBluetoothSearch_perm_test_0500 subscribe done');
+            try {
+                geolocationm.stopBluetoothSearch(callback);
+                console.info('[lbs_js] startBluetoothSearch_perm_test_0500 cleanup stop done');
+            } catch (e) {
+                console.info('[lbs_js] startBluetoothSearch_perm_test_0500 cleanup stop err: ' + JSON.stringify(e));
+            }
+            done();
+        } catch (err) {
+            console.info('[lbs_js] startBluetoothSearch_perm_test_0500 catch err: ' + JSON.stringify(err));
+            if (err.code === 801) {
+                expect(err.code).assertEqual(801);
+            } else {
+                expect().assertFail();
+            }
+            done();
+        }
+    });
+
     });
 }
 

@@ -18,11 +18,13 @@ group("concurrent_builtin_test") {
   if (is_standard_system) {
     deps = [
       "concurrent_baselib_test:ActsConcurrentBaselibTest",
-      "concurrent_global_test:ActsConcurrentGlobalTest",
       "concurrent_builtins_test:ActsConcurrentBuiltinsTest",
       "builtins_atomics_test:ActsBuiltinsAtomicsTest",
       "builtins_async_test:ActsBuiltinsAsyncTest",
       "builtins_promise_test:ActsBuiltinsPromiseTest",
+      "processtest:ActsProcessTest",
+      "sharedarraybuffertest:ActsSharedArrayBufferTest",
+      "timer_test:ActsTimerTest",
     ]
   }
 }

@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import { common } from '@kit.AbilityKit';
 import { BusinessError, commonEventManager } from '@kit.BasicServicesKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
@@ -78,7 +78,7 @@ export default function startAbilityForResultTwoTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_0500', Level.LEVEL0, (done: Function) => {
-      let tag: string = "SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_0500"
+      let tag: string = 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_0500'
       hilog.info(0x0000, 'testTag', '%{public}s', `${tag} start`);
       let want: Want = {
         deviceId: '',
@@ -109,6 +109,9 @@ export default function startAbilityForResultTwoTest() {
             }, 1000);
           }
           let subscribeCallBack = (err: BusinessError, data: commonEventManager.CommonEventData) => {
+            if (err) {
+              console.error(JSON.stringify(err));
+            }
             hilog.info(0x0000, 'testTag', '%{public}s', `subscribeCallBack success with status: ${data.event}`)
             if (data.event == 'ability01_onCreate') {
               ability01OnCreate = 'ability01OnCreate_success'
@@ -203,7 +206,7 @@ export default function startAbilityForResultTwoTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_5000', Level.LEVEL0, (done: Function) => {
-      let tag: string = "SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_5000"
+      let tag: string = 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_5000'
       hilog.info(0x0000, 'testTag', '%{public}s', `${tag} start`);
       let ability02OnForeground: string = 'ability02OnForeground_fail';
       let ability03OnCreate: string = 'ability03OnCreate_fail';
@@ -238,6 +241,9 @@ export default function startAbilityForResultTwoTest() {
             }, 1000);
           }
           let subscribeCallBack = (err: BusinessError, data: commonEventManager.CommonEventData) => {
+            if (err) {
+              console.error(JSON.stringify(err));
+            }
             hilog.info(0x0000, 'testTag', '%{public}s', `subscribeCallBack success with status: ${data.event}`)
             if (data.event == 'ability03_onCreate') {
               ability03OnCreate = 'ability03OnCreate_success';

@@ -12,10 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import CommonFunc from '../../../MainAbility/common/Common';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 
 export default function swiperWidthTest() {
   describe('swiperWidthTest', () => {
@@ -66,7 +68,7 @@ export default function swiperWidthTest() {
     
       // swipe the component of swiper to right
       let driver = await Driver.create();
-      await driver.swipe( globalThis.winLeft + Math.round(btRight - vp2px(10)), Math.round(btTop - btHeight/2) + globalThis.winTop,  globalThis.winLeft + Math.round(btLeft + vp2px(10)), Math.round(btTop - btHeight/2) + globalThis.winTop);
+      await driver.swipeBetween({ x: globalThis.winLeft + Math.round(btRight - vp2px(10)), y: Math.round(btTop - btHeight/2) + globalThis.winTop, displayId: displayID }, { x: globalThis.winLeft + Math.round(btLeft + vp2px(10)), y: Math.round(btTop - btHeight/2) + globalThis.winTop, displayId: displayID });
       await CommonFunc.sleep(5000);
       // get the component of text_3
       let text3:Component = await driver.findComponent(ON.text('3'));

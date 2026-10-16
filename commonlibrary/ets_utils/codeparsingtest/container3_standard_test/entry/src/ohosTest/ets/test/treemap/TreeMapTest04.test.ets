@@ -10,7 +10,7 @@ import {
   Size,
   Level,
   DEFAULT
-} from '@ohos/hypium';
+} from '@ohos/hypium-dynamic';
 import { PlainArray, TreeMap, util } from '@kit.ArkTS';
 
 interface GeneratedTypeLiteralInterface_2 {
