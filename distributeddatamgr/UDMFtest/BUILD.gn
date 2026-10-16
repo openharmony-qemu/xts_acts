@@ -25,7 +25,7 @@ group("UDMFtest") {
       "UDMFEts_static:ActsUDMFStaticTest",
       "UDMFEtsPermission_static:ActsUDMFPermissionStaticTest",
       "UDMFDragTest:ActsUDMFDragTest",
-      "UDMFDragTestStatic:ActsUDMFDragTestStatic",
+      "UDMFDragTestStatic:ActsUDMFDragStaticTest",
       "UDMFndkDragTest:ActsUDMFNdkDragTest",
     ]
   }
