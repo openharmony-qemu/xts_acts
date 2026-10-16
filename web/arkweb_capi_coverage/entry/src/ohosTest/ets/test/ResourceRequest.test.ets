@@ -42,7 +42,7 @@ export default function resource_requestTest() {
      */
     it('TestArkWebResourceRequest_SetUserData', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-        expect(nativeFunc.TestArkWebResourceRequest_SetUserData()).assertEqual(17100100);
+        expect(nativeFunc.TestArkWebResourceRequest_SetUserData()).assertEqual(17100101);
         done();
       });
 
@@ -410,7 +410,7 @@ export default function resource_requestTest() {
      */
     it('TestArkWebResourceRequest_Destroy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-        expect(nativeFunc.TestArkWebResourceRequest_Destroy()).assertEqual(17100100);
+        expect(nativeFunc.TestArkWebResourceRequest_Destroy()).assertEqual(17100101);
         done();
       });
 
