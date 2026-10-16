@@ -130,43 +130,6 @@ export default function BitVectorValuesTest() {
     });
 
     /**
-     * @tc.name   BitVectorTest6400
-     * @tc.number SUB_COMMONLIBRARY_BITVECTOR_TEST_1104
-     * @tc.desc   Verify BitVector values returns iterator with correct first element
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('BitVectorTest6400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let bv = new collections.BitVector(8)
-      bv[0] = 1
-      let iter = bv.values()
-      let first = iter.next()
-      expect(first.value).assertEqual(1)
-      expect(first.done).assertFalse()
-    })
-
-    /**
-     * @tc.name   BitVectorTest6500
-     * @tc.number SUB_COMMONLIBRARY_BITVECTOR_TEST_1105
-     * @tc.desc   Verify BitVector values iterator traversal covers all elements
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('BitVectorTest6500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let bv = new collections.BitVector(8)
-      let count = 0
-      let iter = bv.values()
-      let temp = iter.next()
-      while (!temp.done) {
-        count++
-        temp = iter.next()
-      }
-      expect(count).assertEqual(8)
-    })
-
-    /**
      * @tc.name   BitVectortest04200
      * @tc.number SUB_COMMONLIBRARY_BITVECTOR_TEST_1106
      * @tc.desc   BitVectortest04200

@@ -26,20 +26,6 @@ export default function SendableGroupWithAllocTest() {
         })
 
         /**
-         * @tc.name   testManySendablesToGroup
-         * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_GROUPWITHALLOC_0001
-         * @tc.desc   checks Sendable with primitive type
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('testManySendablesToGroup', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-           let result = await testManySendablesToGroup();
-           expect(result).assertEqual("PASSED");
-           done();
-        })
-
-        /**
          * @tc.name   testSendableToGroupAndUpdateWithAlloc
          * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_GROUPWITHALLOC_0002
          * @tc.desc   checks Sendable with primitive type

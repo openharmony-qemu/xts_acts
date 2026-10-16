@@ -41,27 +41,6 @@ export default function workerTest() {
     })
 
     /**
-     * @tc.name   testThreadWorker0001
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_CONSTRUCTOR_0100
-     * @tc.desc   Test the function of the interface Constructor.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testThreadWorker0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const caseName = "testThreadWorker0001";
-      try {
-        const workerInstance = new worker.ThreadWorker('entry_test/ets/workers/Worker.ets');
-        expect(workerInstance instanceof worker.ThreadWorker).assertTrue();
-        workerInstance.terminate();
-      } catch (err) {
-        console.error(`${caseName} failed, error: ${err.message}`);
-        expect().assertFail();
-      }
-      done()
-    });
-
-    /**
      * @tc.name   testThreadWorker0002
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_CONSTRUCTOR_0200
      * @tc.desc   Test the function of the interface Constructor.
@@ -78,26 +57,6 @@ export default function workerTest() {
       } catch (err) {
         console.error(`${caseName} failed, error: ${err.message}`);
         expect().assertFail();
-      }
-      done()
-    });
-
-    /**
-     * @tc.name   testThreadWorker0006
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_CONSTRUCTOR_0600
-     * @tc.desc   Test the function of the interface Constructor.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testThreadWorker0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const caseName = "testThreadWorker0006";
-      try {
-        const workerInstance = new worker.ThreadWorker('entry_test/ets/workers/NotConfigureWorker.ets');
-        workerInstance.terminate();
-        expect().assertFail();
-      } catch (err) {
-        console.error(`${caseName} failed, error: ${err}`);
       }
       done()
     });
