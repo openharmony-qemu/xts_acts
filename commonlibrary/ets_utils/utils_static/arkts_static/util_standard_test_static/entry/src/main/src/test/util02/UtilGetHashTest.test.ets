@@ -24,41 +24,82 @@ import {
   it,
   Level,
   Size,
-  TestType
-} from "../../../../hypium/index";
-import util from "@ohos.util";
-import Utils from "../Util.test";
+  TestType,
+} from '../../../../hypium/index';
+import util from '@ohos.util';
+import Utils from '../Util.test';
 
-interface HStr { name: string; }
-interface HByte { b: byte; }
-interface HInt { v: int; }
-interface HDouble { v: double; }
-interface HBig { big: bigint; }
-interface HExtraNull { name: string; extra: string | null; }
-interface HExtraUndef { name: string; extra: string | undefined; }
-interface HBoolStr { flag: boolean; label: string; }
-interface NField { v: int; }
-interface HNestField { o: NField; }
-interface HId { id: int; }
-interface HNameAge { name: string; age: int; }
+interface HStr {
+  name: string;
+}
+interface HByte {
+  b: byte;
+}
+interface HInt {
+  v: int;
+}
+interface HDouble {
+  v: double;
+}
+interface HBig {
+  big: bigint;
+}
+interface HExtraNull {
+  name: string;
+  extra: string | null;
+}
+interface HExtraUndef {
+  name: string;
+  extra: string | undefined;
+}
+interface HBoolStr {
+  flag: boolean;
+  label: string;
+}
+interface NField {
+  v: int;
+}
+interface HNestField {
+  o: NField;
+}
+interface HId {
+  id: int;
+}
+interface HNameAge {
+  name: string;
+  age: int;
+}
 
-class HInner { v: int = 3; }
-class HOuter { o: HInner = new HInner(); }
-class HTags { tags: string[] = ["a", "b"]; }
+class HInner {
+  v: int = 3;
+}
+class HOuter {
+  o: HInner = new HInner();
+}
+class HTags {
+  tags: string[] = ['a', 'b'];
+}
 class HCont {
   m: Map<string, int> = new Map<string, int>();
   s: Set<int> = new Set<int>();
 }
-class HKlass { x: int = 3; y: string = "k"; }
-class HNum { v: int = 1; }
+class HKlass {
+  x: int = 3;
+  y: string = 'k';
+}
+class HNum {
+  v: int = 1;
+}
 
-class RecordData { tag: string = ""; }
+class RecordData {
+  tag: string = '';
+}
 
 export default function utilGetHashTest(): void {
-  describe("UtilGetHashTest", (): void => {
+  describe('UtilGetHashTest', (): void => {
     let detObjs: Object[] = [];
-    detObjs.push({ name: "你好世界" } as HStr);
-    detObjs.push({ name: "y".repeat(2048) } as HStr);
+    detObjs.push({ name: '你好世界' } as HStr);
+    detObjs.push({ name: 'y'.repeat(2048) } as HStr);
     detObjs.push({ big: 9223372036854775807n } as HBig);
     detObjs.push({ b: 127 } as HByte);
     detObjs.push({ v: 2147483647 } as HInt);
@@ -67,25 +108,25 @@ export default function utilGetHashTest(): void {
     detObjs.push({ v: Number.NEGATIVE_INFINITY } as HDouble);
     detObjs.push({ v: -0 } as HDouble);
     detObjs.push({ v: Number.MIN_VALUE } as HDouble);
-    detObjs.push({ name: "x", extra: null } as HExtraNull);
-    detObjs.push({ name: "x", extra: undefined } as HExtraUndef);
-    detObjs.push({ flag: false, label: "hi" } as HBoolStr);
+    detObjs.push({ name: 'x', extra: null } as HExtraNull);
+    detObjs.push({ name: 'x', extra: undefined } as HExtraUndef);
+    detObjs.push({ flag: false, label: 'hi' } as HBoolStr);
     detObjs.push(new HOuter());
     detObjs.push(new HTags());
     let cont: HCont = new HCont();
-    cont.m.set("k", 1);
+    cont.m.set('k', 1);
     cont.s.add(2);
     detObjs.push(cont);
     detObjs.push(new Uint8Array(0));
     detObjs.push(new Uint8Array([255, 255, 255, 255]));
 
     let mapAb: Map<string, int> = new Map<string, int>();
-    mapAb.set("k", 1);
-    mapAb.set("j", 2);
+    mapAb.set('k', 1);
+    mapAb.set('j', 2);
     let mapAx: Map<string, int> = new Map<string, int>();
-    mapAx.set("x", 1);
+    mapAx.set('x', 1);
     let mapBx: Map<string, int> = new Map<string, int>();
-    mapBx.set("x", 1);
+    mapBx.set('x', 1);
     let setA2: Set<int> = new Set<int>();
     setA2.add(2);
     let setB5: Set<int> = new Set<int>();
@@ -95,34 +136,63 @@ export default function utilGetHashTest(): void {
     let numB: HNum = new HNum();
     numB.v = 2;
     let diffA: Object[] = [
-      new Date(86400000), new Date(0), new RegExp("mn*p", "g"), new RegExp("ab+c", "g"),
-      { name: "equal" } as HStr, new Uint8Array([8, 9, 10]), new Uint8Array([3, 3, 3]),
-      new Uint8Array([4, 5, 6]), { v: 2.5 } as HDouble, [1, 2, 3],
-      [1, 2, 4], ["x", "y"], { "n": 1 } as Record<string, int>, { "x": 1 } as Record<string, int>,
-      { "x": 1, "y": 2 } as Record<string, int>, mapAb, mapAx, setA2, setB5,
-      new Int32Array([4, 5, 6]), numA, numB
+      new Date(86400000),
+      new Date(0),
+      new RegExp('mn*p', 'g'),
+      new RegExp('ab+c', 'g'),
+      { name: 'equal' } as HStr,
+      new Uint8Array([8, 9, 10]),
+      new Uint8Array([3, 3, 3]),
+      new Uint8Array([4, 5, 6]),
+      { v: 2.5 } as HDouble,
+      [1, 2, 3],
+      [1, 2, 4],
+      ['x', 'y'],
+      { n: 1 } as Record<string, int>,
+      { x: 1 } as Record<string, int>,
+      { x: 1, y: 2 } as Record<string, int>,
+      mapAb,
+      mapAx,
+      setA2,
+      setB5,
+      new Int32Array([4, 5, 6]),
+      numA,
+      numB,
     ];
     let diffB: Object[] = [
-      new Date(86400000), new Date(1), new RegExp("mn*p", "g"), new RegExp("ab+c", "g"),
-      { name: "equal" } as HStr, new Uint8Array([8, 9, 10]), new Uint8Array([3, 3, 4]),
-      new Uint8Array([4, 5, 6]), { v: 2.5 } as HDouble, [1, 2, 3],
-      [1, 2, 4], ["x", "z"], { "n": 2 } as Record<string, int>, { "y": 1 } as Record<string, int>,
-      { "x": 1, "y": 2 } as Record<string, int>, mapAx, mapBx, setB5, setA2,
-      new Int32Array([4, 5, 7]), numB, new HNum()
+      new Date(86400000),
+      new Date(1),
+      new RegExp('mn*p', 'g'),
+      new RegExp('ab+c', 'g'),
+      { name: 'equal' } as HStr,
+      new Uint8Array([8, 9, 10]),
+      new Uint8Array([3, 3, 4]),
+      new Uint8Array([4, 5, 6]),
+      { v: 2.5 } as HDouble,
+      [1, 2, 3],
+      [1, 2, 4],
+      ['x', 'z'],
+      { n: 2 } as Record<string, int>,
+      { y: 1 } as Record<string, int>,
+      { x: 1, y: 2 } as Record<string, int>,
+      mapAx,
+      mapBx,
+      setB5,
+      setA2,
+      new Int32Array([4, 5, 7]),
+      numB,
+      new HNum(),
     ];
 
-    beforeAll((): void => {
-    });
+    beforeAll((): void => {});
 
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
     });
 
-    afterEach((): void => {
-    });
+    afterEach((): void => {});
 
-    afterAll((): void => {
-    });
+    afterAll((): void => {});
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL_GET_HASH_0100
@@ -132,20 +202,20 @@ export default function utilGetHashTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it("testUtilGetHashTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUtilGetHashTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let nil: RecordData | null = null;
       try {
         util.getHash(nil);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect(e.name).assertEqual('BusinessError');
       }
       let und: RecordData | undefined = undefined;
       try {
         util.getHash(und);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect(e.name).assertEqual('BusinessError');
       }
     });
 
@@ -157,15 +227,15 @@ export default function utilGetHashTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it("testUtilGetHashTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUtilGetHashTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let objs: Object[] = [
         { id: 5 } as HId,
-        { name: "Jack", age: 20 } as HNameAge,
-        { flag: true, label: "hi" } as HBoolStr
+        { name: 'Jack', age: 20 } as HNameAge,
+        { flag: true, label: 'hi' } as HBoolStr,
       ];
       for (let i = 0; i < objs.length; i++) {
         let h = util.getHash(objs[i]);
-        expect(typeof h).assertEqual("long");
+        expect(typeof h).assertEqual('long');
       }
     });
 
@@ -177,9 +247,9 @@ export default function utilGetHashTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it("testUtilGetHashTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUtilGetHashTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       for (let i = 0; i < 10; i++) {
-        let h: bigint = util.getHash(detObjs[i]);
+        let h = util.getHash(detObjs[i]);
         expect(h).assertEqual(util.getHash(detObjs[i]));
       }
     });
@@ -192,9 +262,9 @@ export default function utilGetHashTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it("testUtilGetHashTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUtilGetHashTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       for (let i = 10; i < detObjs.length; i++) {
-        let h: bigint = util.getHash(detObjs[i]);
+        let h = util.getHash(detObjs[i]);
         expect(h).assertEqual(util.getHash(detObjs[i]));
       }
     });
@@ -207,14 +277,14 @@ export default function utilGetHashTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it("testUtilGetHashTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUtilGetHashTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v1: HInt = { v: 1 };
       let v1h1 = util.getHash(v1);
       v1.v = 99;
       expect(v1h1).assertEqual(util.getHash(v1));
-      let v2: HStr = { name: "before" };
+      let v2: HStr = { name: 'before' };
       let v2h1 = util.getHash(v2);
-      v2.name = "after";
+      v2.name = 'after';
       expect(v2h1).assertEqual(util.getHash(v2));
       let arr1: int[] = [1, 2];
       let arr1h1 = util.getHash(arr1);
@@ -225,9 +295,9 @@ export default function utilGetHashTest(): void {
       arr2.splice(0, arr2.length);
       expect(arr2h1).assertEqual(util.getHash(arr2));
       let m: Map<string, int> = new Map<string, int>();
-      m.set("a", 1);
+      m.set('a', 1);
       let mh1 = util.getHash(m);
-      m.set("b", 2);
+      m.set('b', 2);
       expect(mh1).assertEqual(util.getHash(m));
       let s: Set<int> = new Set<int>();
       s.add(1);
@@ -248,18 +318,18 @@ export default function utilGetHashTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it("testUtilGetHashTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let obj: HStr = { name: "alias" };
+    it('testUtilGetHashTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let obj: HStr = { name: 'alias' };
       let alias: HStr = obj;
       expect(util.getHash(obj)).assertEqual(util.getHash(alias));
-      let obj2: HStr = { name: "stored" };
+      let obj2: HStr = { name: 'stored' };
       let arr: HStr[] = [obj2];
       expect(util.getHash(obj2)).assertEqual(util.getHash(arr[0]));
-      let obj3: HStr = { name: "mapped" };
+      let obj3: HStr = { name: 'mapped' };
       let m: Map<string, HStr> = new Map<string, HStr>();
-      m.set("o", obj3);
-      expect(util.getHash(obj3)).assertEqual(util.getHash(m.get("o")));
-      let a: HStr = { name: "first" } as HStr;
+      m.set('o', obj3);
+      expect(util.getHash(obj3)).assertEqual(util.getHash(m.get('o')));
+      let a: HStr = { name: 'first' } as HStr;
       let aRef: HStr = a;
       expect(util.getHash(a)).assertEqual(util.getHash(aRef));
     });
@@ -272,7 +342,7 @@ export default function utilGetHashTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it("testUtilGetHashTest007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUtilGetHashTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       for (let i = 0; i < 10; i++) {
         let distinct: boolean = util.getHash(diffA[i]) !== util.getHash(diffB[i]);
         expect(distinct).assertTrue();
@@ -286,7 +356,7 @@ export default function utilGetHashTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it("testUtilGetHashTest008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUtilGetHashTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       for (let i = 10; i < 20; i++) {
         let distinct: boolean = util.getHash(diffA[i]) !== util.getHash(diffB[i]);
         expect(distinct).assertTrue();
@@ -301,7 +371,7 @@ export default function utilGetHashTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it("testUtilGetHashTest009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUtilGetHashTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       for (let i = 20; i < diffA.length; i++) {
         let distinct: boolean = util.getHash(diffA[i]) !== util.getHash(diffB[i]);
         expect(distinct).assertTrue();
@@ -316,7 +386,7 @@ export default function utilGetHashTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it("testUtilGetHashTest010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUtilGetHashTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: int[] = [];
       expect(util.getHash(arr) !== 0).assertTrue();
       let m: Map<string, int> = new Map<string, int>();
@@ -335,24 +405,24 @@ export default function utilGetHashTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it("testUtilGetHashTest011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUtilGetHashTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let rec: Record<string, int> = {};
       for (let i = 0; i < 1000; i++) {
-        rec["k" + i] = i;
+        rec['k' + i] = i;
       }
-      let recHash: bigint = util.getHash(rec);
+      let recHash = util.getHash(rec);
       expect(recHash).assertEqual(util.getHash(rec));
       let bigArr: int[] = [];
       for (let i = 0; i < 2000; i++) {
         bigArr.push(i);
       }
-      let bigArrHash: bigint = util.getHash(bigArr);
+      let bigArrHash = util.getHash(bigArr);
       expect(bigArrHash).assertEqual(util.getHash(bigArr));
       let bigSet: Set<int> = new Set<int>();
       for (let i = 0; i < 2000; i++) {
         bigSet.add(i);
       }
-      let bigSetHash: bigint = util.getHash(bigSet);
+      let bigSetHash = util.getHash(bigSet);
       expect(bigSetHash).assertEqual(util.getHash(bigSet));
     });
 
@@ -364,18 +434,18 @@ export default function utilGetHashTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it("testUtilGetHashTest012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let p: HStr = { name: "Jack" } as HStr;
+    it('testUtilGetHashTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let p: HStr = { name: 'Jack' } as HStr;
       util.getHash(p);
-      expect((p as HStr).name).assertEqual("Jack");
+      expect((p as HStr).name).assertEqual('Jack');
       let k: HKlass = new HKlass();
       util.getHash(k);
       expect(k.x).assertEqual(3);
-      expect(k.y).assertEqual("k");
-      let lbl: HStr = { name: "keep" } as HStr;
+      expect(k.y).assertEqual('k');
+      let lbl: HStr = { name: 'keep' } as HStr;
       util.getHash(lbl);
-      expect(lbl.name).assertEqual("keep");
-      let flag: HBoolStr = { flag: false, label: "x" };
+      expect(lbl.name).assertEqual('keep');
+      let flag: HBoolStr = { flag: false, label: 'x' };
       util.getHash(flag);
       expect(flag.flag).assertFalse();
       let ratio: HDouble = { v: 2.5 };
@@ -384,9 +454,9 @@ export default function utilGetHashTest(): void {
       let nest: HNestField = { o: { v: 11 } };
       util.getHash(nest);
       expect(nest.o.v).assertEqual(11);
-      let re: RegExp = new RegExp("a*b", "i");
+      let re: RegExp = new RegExp('a*b', 'i');
       util.getHash(re);
-      expect(re.source).assertEqual("a*b");
+      expect(re.source).assertEqual('a*b');
     });
 
     /**
@@ -397,7 +467,7 @@ export default function utilGetHashTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it("testUtilGetHashTest013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUtilGetHashTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: int[] = [7, 8, 9];
       util.getHash(arr);
       expect(arr[0]).assertEqual(7);
@@ -410,14 +480,14 @@ export default function utilGetHashTest(): void {
       expect(negArr[0]).assertEqual(5);
       expect(negArr[2]).assertEqual(-5);
       let m: Map<string, int> = new Map<string, int>();
-      m.set("a", 1);
-      m.set("b", 2);
+      m.set('a', 1);
+      m.set('b', 2);
       util.getHash(m);
       expect(m.size).assertEqual(2);
       let mv: Map<string, int> = new Map<string, int>();
-      mv.set("k", 42);
+      mv.set('k', 42);
       util.getHash(mv);
-      expect(mv.get("k") as int).assertEqual(42);
+      expect(mv.get('k') as int).assertEqual(42);
     });
 
     /**
@@ -428,16 +498,16 @@ export default function utilGetHashTest(): void {
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it("testUtilGetHashTest014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testUtilGetHashTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s: Set<int> = new Set<int>();
       s.add(1);
       s.add(2);
       util.getHash(s);
       expect(s.size).assertEqual(2);
       let ss: Set<string> = new Set<string>();
-      ss.add("z");
+      ss.add('z');
       util.getHash(ss);
-      expect(ss.has("z")).assertTrue();
+      expect(ss.has('z')).assertTrue();
       let d: Date = new Date(86400000);
       util.getHash(d);
       expect(d.getTime()).assertEqual(86400000);
