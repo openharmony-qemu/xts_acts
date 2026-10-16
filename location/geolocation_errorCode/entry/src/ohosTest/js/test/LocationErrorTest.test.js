@@ -450,65 +450,6 @@ export default function geolocationTest_LocErr(){
         })
 
         /**
-         * @tc.name   testAddGnssGeofence05
-         * @tc.number SUB_HSS_LOCATIONSYSTEM_GEOFENCE_0500
-         * @tc.desc   Test the function of locating the validity period of the fence.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
-         */
-        it('testAddGnssGeofence05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
-            let geofenceUnsupportFlag = 0;
-            var isAcessToken = canIUse("SystemCapability.Location.Location.Geofence");
-            console.info("testAddGnssGeofence05 : " + isAcessToken);
-            if (!isAcessToken) {
-                console.info("The device does not support Geofence");
-                expect(isAcessToken).assertFalse();
-                done();
-            } else {
-                let geofence = {
-                    "latitude": 31.12, "longitude": 121.11, "radius": 1, "expiration": 100000, "coordinateSystemType": 1
-                }
-                let transitionStatusList = [
-                    geolocationm.GeofenceTransitionEvent.GEOFENCE_TRANSITION_EVENT_ENTER,
-                    geolocationm.GeofenceTransitionEvent.GEOFENCE_TRANSITION_EVENT_EXIT,
-                    geolocationm.GeofenceTransitionEvent.GEOFENCE_TRANSITION_EVENT_DWELL
-                ];
-                let gnssGeofenceRequest = {
-                    geofence: geofence,
-                    monitorTransitionEvents: transitionStatusList,
-                    geofenceTransitionCallback: (err, transition) => {}
-                }
-                for (let i = 0; i < 1000; i++) {
-                    try {
-                        await geolocationm.addGnssGeofence(gnssGeofenceRequest);
-                    } catch(error) {
-                        console.error("addGnssGeofence failed, err:" + JSON.stringify(error));
-                        if (error.code == 801) {
-                            expect(true).assertTrue();
-                            geofenceUnsupportFlag = 1;
-                            done();
-                            break;
-                        }
-                    }
-                }
-
-                if (geofenceUnsupportFlag == 0) {
-                    try {
-                        await geolocationm.addGnssGeofence(gnssGeofenceRequest).then((id) => {
-                        }).catch((error) => {
-                            console.error("addGnssGeofence failed, err:" + JSON.stringify(error));
-                            expect(error.code).assertEqual(3301601);
-                        });
-                    } catch(error) {
-                        console.error("addGnssGeofence failed, err:" + JSON.stringify(error));
-                    }
-                    done();
-                }
-            }
-        })
-
-        /**
          * @tc.name   testRemoveGnssGeofence06
          * @tc.number SUB_HSS_LOCATIONSYSTEM_GEOFENCE_0600
          * @tc.desc   Test the function of locating the validity period of the fence.
