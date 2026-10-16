@@ -16,7 +16,7 @@
 #include "include/DrawingNativeColorSpaceTest.h"
 #include "include/OhosCommonTest.h"
 
-#define DRAWING_NUMBER_10 10
+#define NUMBER_10 10
 
 namespace OHOS {
 namespace Rosen {
@@ -59,7 +59,7 @@ int TestColorSpaceDestroyNull()
 int TestColorSpaceCreateSrgbMultipleCalls()
 {
     DrawingNativeColorSpaceTestSetUp();
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_ColorSpace *colorSpace = OH_Drawing_ColorSpaceCreateSrgb();
         EXPECT_NE(colorSpace, nullptr);
         OH_Drawing_ColorSpaceDestroy(colorSpace);
@@ -81,7 +81,7 @@ int TestColorSpaceCreateSrgbLinearNormal()
 int TestColorSpaceCreateSrgbLinearMultipleCalls()
 {
     DrawingNativeColorSpaceTestSetUp();
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_ColorSpace *colorSpace = OH_Drawing_ColorSpaceCreateSrgbLinear();
         EXPECT_NE(colorSpace, nullptr);
         OH_Drawing_ColorSpaceDestroy(colorSpace);

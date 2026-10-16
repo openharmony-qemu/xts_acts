@@ -408,22 +408,10 @@ export async function PromiseAnyTest054() {
 }
 
 export async function PromiseRaceTest020() {
-    const start = Date.now();
-
-    const p1 = new Promise(resolve => {
-        const check = () => {
-            const elapsed = Date.now() - start;
-            if (elapsed >= 50) {
-                resolve(1);
-            } else {
-                setTimeout(check, 5);
-            }
-        };
-        setTimeout(check, 5);
-    });
+    const p1 = new Promise(resolve => setTimeout(() => resolve(1), 200));
 
     const p2 = new Promise(resolve =>
-    setTimeout(() => resolve(2), 30)
+    setTimeout(() => resolve(2), 50)
     );
 
     const result = await Promise.race([p1, p2]);
@@ -498,11 +486,11 @@ export async function PromiseAllSettledTest088() {
         new Promise((r) => setTimeout(() => {
             timeLog.push('set1');
             r('set1');
-        }, 20)),
+        }, 350)),
         new Promise((r) => setTimeout(() => {
             timeLog.push('set2');
             r('set2');
-        }, 10))
+        }, 50))
     ]);
 
     function* gen() {
@@ -510,7 +498,7 @@ export async function PromiseAllSettledTest088() {
         yield new Promise((r) => setTimeout(() => {
             timeLog.push('gen1');
             r('gen1');
-        }, 15));
+        }, 200));
     }
 
     const outer = Promise.allSettled(gen());

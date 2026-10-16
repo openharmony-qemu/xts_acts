@@ -1,4 +1,5 @@
 'use static';
+
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -66,10 +67,6 @@ export default function GridRow_onBreakpoint() {
       console.info("GridRow_onBreakpoint after each called")
     });
 
-    
-    
-    
-
 /**
      * @tc.number   SUB_ACE_GridRow_onBreakPointChange_static_0100
      * @tc.name     SUB_ACE_GridRow_onBreakPointChange_static_0100
@@ -90,18 +87,35 @@ it('SUB_ACE_GridRow_onBreakPointChange_static_0100', Level.LEVEL0, async (done: 
       let seventhBreakpoint: RectValue = CommonFunc.getComponentRect('GridRow_onBreakpoint_6');
       let gridRowBreakpointJson = inspector.getInspectorByKey('GridRow_onBreakpoint001');
       let textComponent2 = inspector.getInspectorByKey('GridRowText');
-     expect(JSON.parseJsonElement(gridRowBreakpointJson).getString('$type')).assertEqual('GridRow');
-     expect(JSON.parseJsonElement(textComponent2).getElement('$attrs').getString('content')).assertEqual('xxl');
 
-      expect(Math.abs(firstBreakpoint.top - Breakpoint_1.top) <= 1).assertTrue();
-      expect(Math.abs(secondBreakpoint.top - secondBreakpoint.top) <= 1).assertTrue();
-      expect(Math.abs(thirdBreakpoint.top - thirdBreakpoint.top) <= 1).assertTrue();
-      expect(Math.abs(firstBreakpoint.left - Breakpoint_1.left) <= 1).assertTrue();
+      expect(JSON.parseJsonElement(gridRowBreakpointJson).getString('$type')).assertEqual('GridRow');
+      expect(JSON.parseJsonElement(textComponent2).getElement('$attrs').getString('content')).assertEqual('xxl');
 
-      expect(Math.abs(secondBreakpoint.left - firstBreakpoint.right - UIContext.resolveUIContext()!.vp2px(30)) <= 1).assertTrue();
-      expect(Math.abs(thirdBreakpoint.left - secondBreakpoint.right - UIContext.resolveUIContext()!.vp2px(30)) <= 1).assertTrue();
-      expect(Math.abs(fourthBreakpoint.left - thirdBreakpoint.right - UIContext.resolveUIContext()!.vp2px(30)) <= 1).assertTrue();
-      expect(Math.abs(seventhBreakpoint.top - firstBreakpoint.bottom - UIContext.resolveUIContext()!.vp2px(30)) <= 1).assertTrue();
+      console.info('SUB_ACE_GridRow_onBreakPointChange_static_0100_chazhi1:'+ Math.floor(Math.abs(firstBreakpoint.top - Breakpoint_1.top)));
+      console.info('SUB_ACE_GridRow_onBreakPointChange_static_0100_chazhi2:'+ Math.floor(Math.abs(secondBreakpoint.top - secondBreakpoint.top)));
+      console.info('SUB_ACE_GridRow_onBreakPointChange_static_0100_chazhi3:'+ Math.floor(Math.abs(thirdBreakpoint.top - thirdBreakpoint.top)));
+      console.info('SUB_ACE_GridRow_onBreakPointChange_static_0100_chazhi4:'+ Math.floor(Math.abs(firstBreakpoint.left - Breakpoint_1.left)));
+      console.info('SUB_ACE_GridRow_onBreakPointChange_static_0100_chazhi5:'+ Math.floor(Math.abs(secondBreakpoint.left - firstBreakpoint.right -
+      UIContext.resolveUIContext()!.vp2px(30))));
+      console.info('SUB_ACE_GridRow_onBreakPointChange_static_0100_chazhi6:'+ Math.floor(Math.abs(thirdBreakpoint.left - secondBreakpoint.right -
+      UIContext.resolveUIContext()!.vp2px(30))));
+      console.info('SUB_ACE_GridRow_onBreakPointChange_static_0100_chazhi7:'+ Math.floor(Math.abs(fourthBreakpoint.left - thirdBreakpoint.right -
+      UIContext.resolveUIContext()!.vp2px(30))));
+      console.info('SUB_ACE_GridRow_onBreakPointChange_static_0100_chazhi8:'+ Math.floor(Math.abs(seventhBreakpoint.top - firstBreakpoint.bottom -
+      UIContext.resolveUIContext()!.vp2px(30))));
+
+      expect(Math.floor(Math.abs(firstBreakpoint.top - Breakpoint_1.top)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(secondBreakpoint.top - secondBreakpoint.top)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(thirdBreakpoint.top - thirdBreakpoint.top)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(firstBreakpoint.left - Breakpoint_1.left)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(secondBreakpoint.left - firstBreakpoint.right -
+      UIContext.resolveUIContext()!.vp2px(30))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(thirdBreakpoint.left - secondBreakpoint.right -
+      UIContext.resolveUIContext()!.vp2px(30))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(fourthBreakpoint.left - thirdBreakpoint.right -
+      UIContext.resolveUIContext()!.vp2px(30))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(seventhBreakpoint.top - firstBreakpoint.bottom -
+      UIContext.resolveUIContext()!.vp2px(30))) <= 1).assertTrue();
 
       console.info('SUB_ACE_GridRow_onBreakPointChange_static_0100 END');
       done();

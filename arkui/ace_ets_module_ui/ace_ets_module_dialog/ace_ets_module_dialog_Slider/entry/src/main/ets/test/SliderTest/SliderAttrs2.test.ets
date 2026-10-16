@@ -17,6 +17,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import Utils from '../../MainAbility/common/Utils';
 import { Driver, ON } from '@ohos.UiTest';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0;
 
 export default function SliderAttrs2() {
   describe('SliderAttrs2', () => {
@@ -47,12 +48,14 @@ export default function SliderAttrs2() {
     });
 
 
-   /**
-    * @tc.number      SliderAttrs2_001
-    * @tc.name        SliderAttrs2_001
-    * @tc.desc        Test SliderInteraction.SLIDE_AND_CLICK_UP
-    * @tc.level       Level 2
-    */
+    /**
+     * @tc.name   SliderAttrs2_001
+     * @tc.number SliderAttrs2_001
+     * @tc.desc   Test SliderInteraction.SLIDE_AND_CLICK_UP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SliderAttrs2_001', Level.LEVEL1, async (done: Function) => {
       console.info('[SliderAttrs2_001] START');
       await Utils.sleep(1000);
@@ -61,7 +64,8 @@ export default function SliderAttrs2() {
       await Utils.sleep(1000);
       let slider = await driver.findComponent(ON.id('SliderAttrs2_slider2'));
       let point = await slider.getBoundsCenter();
-      await driver.click(point.x, point.y)
+      // 涉及坐标
+      await driver.clickAt({ x: point.x, y: point.y, displayId: displayID });
       await Utils.sleep(2000);
 
       let strJson1 = getInspectorByKey('SliderAttrs2_text2');

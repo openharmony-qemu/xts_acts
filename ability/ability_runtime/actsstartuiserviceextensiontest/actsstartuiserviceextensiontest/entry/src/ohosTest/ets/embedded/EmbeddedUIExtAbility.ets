@@ -41,7 +41,8 @@ export default class ExampleEmbeddedAbility extends EmbeddedUIExtensionAbility {
           hilog.info(0x0000, tag, '%{public}s', `startUIServiceExtensionAbility failed: ${JSON.stringify(err)}`);
         })
       }catch(err){
-        hilog.error(0x0000, tag, '%{public}s', `startUIServiceExtensionAbility catch failed, code is ${JSON.stringify(err)}`);
+        hilog.error(0x0000, tag, '%{public}s', `startUIServiceExtensionAbility catch failed, code is
+          ${JSON.stringify(err)}`);
         let commonEventData: commonEventManager.CommonEventPublishData = {
           parameters: {
             'result': err?.code,
@@ -73,7 +74,8 @@ export default class ExampleEmbeddedAbility extends EmbeddedUIExtensionAbility {
           hilog.info(0x0000, tag, '%{public}s', `connectUIServiceExtensionAbility failed: ${JSON.stringify(err)}`);
         })
       }catch(err){
-        hilog.error(0x0000, tag, '%{public}s', `connectUIServiceExtensionAbility catch failed, code is ${JSON.stringify(err)}`);
+        hilog.error(0x0000, tag, '%{public}s', `connectUIServiceExtensionAbility catch failed, code is
+          ${JSON.stringify(err)}`);
         let commonEventData: commonEventManager.CommonEventPublishData = {
           parameters: {
             'result': err?.code,
@@ -95,7 +97,8 @@ export default class ExampleEmbeddedAbility extends EmbeddedUIExtensionAbility {
           hilog.error(0x0000, tag, '%{public}s', `disconnectUIServiceExtensionAbility failed: ${JSON.stringify(err)}`);
         });
       }catch(err){
-        hilog.error(0x0000, tag, '%{public}s', `disconnectUIServiceExtensionAbility catch failed, code is ${JSON.stringify(err)}`);
+        hilog.error(0x0000, tag, '%{public}s', `disconnectUIServiceExtensionAbility catch failed, code is
+          ${JSON.stringify(err)}`);
         let commonEventData: commonEventManager.CommonEventPublishData = {
           parameters: {
             'result': err?.code,
@@ -117,7 +120,8 @@ export default class ExampleEmbeddedAbility extends EmbeddedUIExtensionAbility {
           hilog.error(0x0000, tag, '%{public}s', `disconnectUIServiceExtensionAbility failed: ${JSON.stringify(err)}`);
         });
       }catch(err){
-        hilog.error(0x0000, tag, '%{public}s', `disconnectUIServiceExtensionAbility catch failed, code is ${JSON.stringify(err)}`);
+        hilog.error(0x0000, tag, '%{public}s', `disconnectUIServiceExtensionAbility catch failed, code is
+          ${JSON.stringify(err)}`);
         let commonEventData: commonEventManager.CommonEventPublishData = {
           parameters: {
             'result': err?.code,

@@ -119,6 +119,7 @@ export default function WindowLifeCycleTest() {
         let isPCStatus: string = '';
         let isFreeWindowMode:boolean = false;
         let canIUseRes: boolean = false;
+        let isPCMode: boolean = false;
         let windowclassArr:Array<window.Window>;
         let deviceType: string = deviceInfo.deviceType;
         console.info(`deviceType: ${deviceType}`);
@@ -156,6 +157,14 @@ export default function WindowLifeCycleTest() {
             isPCStatus = settings.getValueSync(context!, 'isStatusBarExist', '', settings.domainName.USER_PROPERTY);
             let mainWindowClass:window.Window = windowStage!.getMainWindowSync();
             isFreeWindowMode = mainWindowClass.isInFreeWindowMode();
+            let promiseSnapshot = mainWindowClass.getWindowStateSnapshot();
+            promiseSnapshot.then((data) => {
+                let str = JSON.parseJsonElement(data);
+                isPCMode = str.getBoolean('isPcMode')
+                hilog.info(domain, tag, `beforeAll: Succeeded. data=${data}, isPcMode=${isPCMode}`);
+            }).catch((err: Error):PromiseLike<void>|undefined => {
+                hilog.error(domain, tag, `beforeAll: getWindowStateSnapshot Failed. Cause code: ${err.code}, cancel message: ${err.message}`);
+            });
             //isPCStatus == '' 非PC设备
             //isPCStatus == '1' PC设备状态栏dock未融合
             //isPCStatus == '0' PC设备状态栏dock融合
@@ -5004,6 +5013,140 @@ export default function WindowLifeCycleTest() {
           done();
         };
       })
+
+   /**
+     * @tc.number     SUB_BASIC_WMS_START_ABILITY_MINIMIZE_ON_START_EXCLUDE_FROM_DOCK_RECENT_UNDEFINED_Static_0100
+     * @tc.name       SUB_BASIC_WMS_START_ABILITY_MINIMIZE_ON_START_EXCLUDE_FROM_DOCK_RECENT_UNDEFINED_Static_0100
+     * @tc.desc       SUB_BASIC_WMS_START_ABILITY_MINIMIZE_ON_START_EXCLUDE_FROM_DOCK_RECENT_UNDEFINED_Static_0100
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level0
+     */
+    it('SUB_BASIC_WMS_START_ABILITY_MINIMIZE_ON_START_EXCLUDE_FROM_DOCK_RECENT_UNDEFINED_Static_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName: string =
+          'SUB_BASIC_WMS_START_ABILITY_MINIMIZE_ON_START_EXCLUDE_FROM_DOCK_RECENT_UNDEFINED_Static_0100 ';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(0x0000, '[ANI]', msgStr + 'begin');
+        let startOptions: StartOptions = {
+          windowCreateParams: {
+            minimizeOnStart: undefined,
+            excludeFromDock: undefined,
+            excludeFromRecent: undefined
+          }
+        };
+        try {
+          let windowStageStart: window.WindowStage = await startAbility(caseName, context!, startOptions);
+          let mainWindow = windowStageStart!.getMainWindowSync();
+          await Utils.msSleep(300);
+          let isWindowShowing = mainWindow!.isWindowShowing()
+          let isFocused = mainWindow!.isFocused()
+          console.info(`${msgStr} isWindowShowing:${isWindowShowing}, isFocused:${isFocused}`);
+          expect(isWindowShowing).assertTrue();
+          expect(isFocused).assertTrue();
+          await terminateAbility(caseName);
+          done();
+        } catch (exception) {
+          await terminateAbility(caseName);
+          hilog.error(0x0000, '[ANI]',
+            msgStr +
+              `Failed startAbility windowCreateParams. exception Cause code: ${exception!.code}, message: ${exception!.message}`);
+          expect(false).assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.number     SUB_BASIC_WMS_START_ABILITY_MINIMIZE_ON_START_EXCLUDE_FROM_DOCK_RECENT_FALSE_Static_0100
+     * @tc.name       SUB_BASIC_WMS_START_ABILITY_MINIMIZE_ON_START_EXCLUDE_FROM_DOCK_RECENT_FALSE_Static_0100
+     * @tc.desc       SUB_BASIC_WMS_START_ABILITY_MINIMIZE_ON_START_EXCLUDE_FROM_DOCK_RECENT_FALSE_Static_0100
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level0
+     */
+    it('SUB_BASIC_WMS_START_ABILITY_MINIMIZE_ON_START_EXCLUDE_FROM_DOCK_RECENT_FALSE_Static_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName: string =
+          'SUB_BASIC_WMS_START_ABILITY_MINIMIZE_ON_START_EXCLUDE_FROM_DOCK_RECENT_FALSE_Static_0100 ';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(0x0000, '[ANI]', msgStr + 'begin');
+        let startOptions: StartOptions = {
+          windowCreateParams: {
+            minimizeOnStart: false,
+            excludeFromDock: false,
+            excludeFromRecent: false
+          }
+        };
+        try {
+          let windowStageStart: window.WindowStage = await startAbility(caseName, context!, startOptions);
+          let mainWindow = windowStageStart!.getMainWindowSync();
+          await Utils.msSleep(300);
+          let isWindowShowing = mainWindow!.isWindowShowing()
+          let isFocused = mainWindow!.isFocused()
+          console.info(`${msgStr} isWindowShowing:${isWindowShowing}, isFocused:${isFocused}`);
+          expect(isWindowShowing).assertTrue();
+          expect(isFocused).assertTrue();
+          await terminateAbility(caseName);
+          done();
+        } catch (exception) {
+          await terminateAbility(caseName);
+          hilog.error(0x0000, '[ANI]',
+            msgStr +
+              `Failed startAbility windowCreateParams. exception Cause code: ${exception!.code}, message: ${exception!.message}`);
+          expect(false).assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.number     SUB_BASIC_WMS_START_ABILITY_MINIMIZE_ON_START_EXCLUDE_FROM_DOCK_RECENT_TRUE_Static_0100
+     * @tc.name       SUB_BASIC_WMS_START_ABILITY_MINIMIZE_ON_START_EXCLUDE_FROM_DOCK_RECENT_TRUE_Static_0100
+     * @tc.desc       SUB_BASIC_WMS_START_ABILITY_MINIMIZE_ON_START_EXCLUDE_FROM_DOCK_RECENT_TRUE_Static_0100
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level0
+     */
+    it('SUB_BASIC_WMS_START_ABILITY_MINIMIZE_ON_START_EXCLUDE_FROM_DOCK_RECENT_TRUE_Static_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName: string =
+          'SUB_BASIC_WMS_START_ABILITY_MINIMIZE_ON_START_EXCLUDE_FROM_DOCK_RECENT_TRUE_Static_0100 ';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(0x0000, '[ANI]', msgStr + 'begin');
+        let startOptions: StartOptions = {
+          windowCreateParams: {
+            minimizeOnStart: true,
+            excludeFromDock: true,
+            excludeFromRecent: true
+          }
+        };
+        try {
+          let windowStageStart: window.WindowStage = await startAbility(caseName, context!, startOptions);
+          let mainWindow = windowStageStart!.getMainWindowSync();
+          await Utils.msSleep(300);
+          let isWindowShowing = mainWindow!.isWindowShowing()
+          let isFocused = mainWindow!.isFocused()
+          console.info(`${msgStr} isWindowShowing:${isWindowShowing}, isFocused:${isFocused}`);
+          if (deviceType === '2in1' || isPCMode) {
+            expect(isWindowShowing).assertFalse();
+            expect(isFocused).assertFalse();
+          } else {
+            expect(isWindowShowing).assertTrue();
+            expect(isFocused).assertTrue();
+          }
+          await terminateAbility(caseName);
+          done();
+        } catch (exception) {
+          await terminateAbility(caseName);
+          hilog.error(0x0000, '[ANI]',
+            msgStr +
+              `Failed startAbility windowCreateParams. exception Cause code: ${exception!.code}, message: ${exception!.message}`);
+          expect(false).assertTrue();
+          done();
+        }
+      });
 
     })
 

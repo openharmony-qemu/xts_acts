@@ -67,24 +67,18 @@ it('SUB_ACE_ListItem_Delete_End_Resource_static_0100', Level.LEVEL0, async (done
       console.info('[SUB_ACE_ListItem_Delete_End_Resource_0100] START');
       await CommonFunc.sleep(1000);
       console.log('get Initial value')
-      let ListItem_00: RectValue = CommonFunc.getComponentRect('ListItem_Delete_End_Resource_ListItem_00');
-      let ListItem_01: RectValue = CommonFunc.getComponentRect('ListItem_Delete_End_Resource_ListItem_01');
-      let right: number = ListItem_00.right;
-      let left: number = ListItem_00.left;
-      let top: number = ListItem_00.top;
-      let bottom: number = ListItem_00.bottom;
-      let width = right - left;
-      let height = bottom -top;
-      console.info("SUB_ACE_ListItem_Delete_End_Resource_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
-
-      console.log('slide ')
       let driver = Driver.create();
       await CommonFunc.sleep(500);
-      await driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + right - UIContext.resolveUIContext()!.vp2px(5))).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + height/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(5))).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
+      let swipeComp = await driver.findComponent(ON.id('ListItem_Delete_End_Resource_ListItem_00'));
+      let rect = await swipeComp!.getBounds();
+      let displayId = await swipeComp!.getDisplayId();
+      let width = rect.right - rect.left;
+      let height = rect.bottom - rect.top;
+      await driver.swipeBetween(
+        { x: (Math.round(rect.right - UIContext.resolveUIContext()!.vp2px(5))).toInt(),
+          y: (Math.round(rect.top + (rect.bottom - rect.top) / 2)).toInt(), displayId: displayId },
+        { x: (Math.round(rect.left + UIContext.resolveUIContext()!.vp2px(5))).toInt(),
+          y: (Math.round(rect.top + (rect.bottom - rect.top) / 2)).toInt(), displayId: displayId }
       );
       await CommonFunc.sleep(2000);
 
@@ -122,22 +116,18 @@ it('SUB_ACE_ListItem_Delete_End_Resource_static_0200', Level.LEVEL0, async (done
       await CommonFunc.sleep(2000);
 
       console.log('get Initial value')
-      let ListItem_00: RectValue = CommonFunc.getComponentRect('ListItem_Delete_End_Resource_ListItem_00');
-      let ListItem_01: RectValue = CommonFunc.getComponentRect('ListItem_Delete_End_Resource_ListItem_01');
-      let right: number = ListItem_00.right;
-      let left: number = ListItem_00.left;
-      let top: number = ListItem_00.top;
-      let bottom: number = ListItem_00.bottom;
-      let width = right - left;
-      let height = bottom -top;
-      console.info("SUB_ACE_ListItem_Delete_End_Resource_0200 value is" + left + " --" + right + "--" + top + "--" + bottom);
-
-      console.log('slide ')
-      await driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(100))).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + height/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(30))).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
+      let swipeComp02 = await driver.findComponent(ON.id('ListItem_Delete_End_Resource_ListItem_00'));
+      let rect02 = await swipeComp02!.getBounds();
+      let displayId02 = await swipeComp02!.getDisplayId();
+      let width = rect02.right - rect02.left;
+      let height = rect02.bottom - rect02.top;
+      await driver.swipeBetween(
+        { x: (Math.round(rect02.left + UIContext.resolveUIContext()!.vp2px(100))).toInt(),
+          y: (Math.round(rect02.top + (rect02.bottom - rect02.top) / 2)).toInt(),
+          displayId: displayId02 },
+        { x: (Math.round(rect02.left + UIContext.resolveUIContext()!.vp2px(30))).toInt(),
+          y: (Math.round(rect02.top + (rect02.bottom - rect02.top) / 2)).toInt(),
+          displayId: displayId02 }
       );
       await CommonFunc.sleep(2000);
 

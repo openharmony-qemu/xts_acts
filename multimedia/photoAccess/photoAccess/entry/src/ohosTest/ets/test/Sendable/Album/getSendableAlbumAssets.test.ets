@@ -17,7 +17,6 @@ import photoAccessHelper from '@ohos.file.photoAccessHelper'
 import sendablePhotoAccessHelper from '@ohos.file.sendablePhotoAccessHelper'
 import { describe, it, expect, beforeAll, Level } from '@ohos/hypium-dynamic'
 import common from '@ohos.app.ability.common';
-
 import {
   sleep,
   genRadomStr,
@@ -25,7 +24,8 @@ import {
   albumFetchOption,
   photoKeys,
   getPermission,
-  pushCreateAsset
+  checkResourceFile,
+  createResource
 } from '../../common'
 
 export default function getSendableAlbumAssetsTest () {
@@ -40,7 +40,8 @@ export default function getSendableAlbumAssetsTest () {
       console.info('beforeAll case');
       await getPermission();
       await sleep(1000);
-      await pushCreateAsset(globalContext, fileNameList);
+      checkResourceFile(globalContext);
+      await createResource(globalContext, fileNameList)
     });
 
 

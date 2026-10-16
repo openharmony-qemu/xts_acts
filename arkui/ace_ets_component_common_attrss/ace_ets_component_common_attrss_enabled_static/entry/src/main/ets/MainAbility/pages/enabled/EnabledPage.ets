@@ -512,7 +512,7 @@ struct EnabledPage {
             .viewPort({
               x: -20,
               y: -5,
-              width: 310,
+              width: 200,
               height: 90
             })
             .fill(0x317AF7)
@@ -523,8 +523,6 @@ struct EnabledPage {
             .applyStyles(this.commonStyle)
           }
         }
-        .width('100%')
-        .height('70%')
         .backgroundColor(Color.Gray)
         .focusable(true)
       }

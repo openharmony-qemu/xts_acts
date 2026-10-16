@@ -27,7 +27,8 @@ const TAG: string = 'testTag-TestAbility';
 export default class TestAbility extends UIAbility {
   onConfigurationUpdate(config: Configuration) {
     let caseTAG = 'SUB_Ability_AbilityRuntime_setFontSizeAtApp';
-    hilog.info(0x0000, TAG, '[%{public}s] TestAbility onConfigurationUpdate, config:  %{public}s', caseTAG, JSON.stringify(config));
+    hilog.info(0x0000, TAG, '[%{public}s] TestAbility onConfigurationUpdate, config:  %{public}s', caseTAG,
+      JSON.stringify(config));
     let options: commonEventManager.CommonEventPublishData = {
       code: 1,
       parameters: {
@@ -37,9 +38,9 @@ export default class TestAbility extends UIAbility {
     };
     commonEventManager.publish('TestAbility_onConfigurationUpdate', options, (err: BusinessError) => {
       if (err) {
-        hilog.info(0x0000, TAG, "[%{public}s] PublishCallBack err: %{public}s", TAG, JSON.stringify(err));
+        hilog.info(0x0000, TAG, '[%{public}s] PublishCallBack err: %{public}s', TAG, JSON.stringify(err));
       } else {
-        hilog.info(0x0000, TAG, "[%{public}s] Publish success", TAG);
+        hilog.info(0x0000, TAG, '[%{public}s] Publish success', TAG);
       }
     });
   }

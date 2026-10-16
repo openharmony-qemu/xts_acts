@@ -86,10 +86,10 @@ interface DialogCreationExTestCase {
 async function driveFn() {
   let dr = Driver.create();
   let power1 = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 1000)
-  if (power1 === undefined) {
+  if (power1 === undefined || power1 === null) {
     power1 = await dr?.waitForComponent(ON.text('Allow', MatchPattern.EQUALS), 300)
   }
-  if (power1 === undefined) {
+  if (power1 === undefined || power1 === null) {
     power1 = await dr?.waitForComponent(ON.text('始终允许', MatchPattern.EQUALS), 300);
   }
   await power1?.click();
@@ -250,14 +250,17 @@ async function clickAlbumButton(driver: Driver) {
 }
 
 async function clickBigPicture(driver: Driver) {
-  console.info("testpicker create");
-  let btn = await driver.findComponent(ON.type('Image'));
-  if (btn === null) {
-    console.info('no Image');
+  console.info("testpicker clickBigPicture start");
+  let picker = await driver.findComponent(ON.id('PhotoPickerComponent'));
+  if (picker === null) {
+    console.info('clickBigPicture: PhotoPickerComponent not found');
     return;
   }
-  await btn.click();
-  console.info('testPicker btn click finish');
+  let bounds = await picker.getBounds();
+  let cx = Math.round((bounds.left + bounds.right) / 2);
+  let cy = Math.round((bounds.top + bounds.bottom) / 2);
+  console.info('clickBigPicture: click center (' + cx + ',' + cy + ')');
+  await driver.click(cx, cy);
   await CommonFunc.sleep(1000);
 }
 
@@ -399,10 +402,20 @@ async function closePickerModelWithNoResult(driver: Driver, time ?: number) {
 
 async function savePhoto() {
   console.log('savePhoto start');
-  let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(getContext());
+  const context = getContext();
+  let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
   try {
-    let uri = 'data/storage/el2/base/haps/files/demo.jpg';
-    let fileUriList = [fileUri.getUriFromPath(uri)];
+    const filePath = context.filesDir + '/demo.jpg';
+    const resourcePath = context.resourceDir + '/demo.jpg';
+    if (!fs.accessSync(filePath)) {
+      const srcFile = fs.openSync(resourcePath, fs.OpenMode.READ_ONLY);
+      const dstFile = fs.openSync(filePath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
+      fs.copyFileSync(srcFile.fd, dstFile.fd);
+      fs.closeSync(srcFile);
+      fs.closeSync(dstFile);
+      console.log(`savePhoto copied ${resourcePath} -> ${filePath}`);
+    }
+    let fileUriList = [fileUri.getUriFromPath(filePath)];
     let photoCreationConfig: Array<photoAccessHelper.PhotoCreationConfig> = [
       {
         title: 'showAssetsCreationDialogTest',
@@ -411,19 +424,21 @@ async function savePhoto() {
         subtype: photoAccessHelper.PhotoSubtype.DEFAULT,
       }
     ];
-    let result: string[] = [];
-    phAccessHelper.showAssetsCreationDialog(fileUriList, photoCreationConfig).then((uris)=>{
-      result = uris;
+    let resultUri = '';
+    phAccessHelper.showAssetsCreationDialog(fileUriList, photoCreationConfig).then((uris) => {
+      resultUri = uris[0];
       console.log(`savePhoto result = ${JSON.stringify(uris)}`);
-    })
+    });
     await CommonFunc.sleep(3000);
     await driveFn();
-    readWriteFile(uri, result[0]);
+    await CommonFunc.sleep(1000);
+    readWriteFile(filePath, resultUri);
     console.log('savePhoto success');
   } catch (error) {
-    console.log('savePhoto fail')
+    console.log(`savePhoto fail: ${JSON.stringify(error)}`);
   }
 }
+
 
 function readWriteFile(srcUri: string, dstUri: string) {
   let srcFile: fileIo.File = fs.openSync(srcUri, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
@@ -3480,22 +3495,16 @@ export default function TextPicker() {
 
       for (let i = 0; i < testCases.length; i++) {
         let isInvalidCase = !testCases[i].src || !testCases[i].config;
-        let originalUris = [' '];
+
         if (isInvalidCase) {
           try {
-            photoAccessHelper.getPhotoAccessHelper(getContext()).showAssetsCreationDialog(testCases[i].src, testCases[i].config)
-            .then((result) => {
-              originalUris = result;
-            });
+            await photoAccessHelper.getPhotoAccessHelper(getContext()).showAssetsCreationDialog(testCases[i].src, testCases[i].config);
           } catch (error) {
             expect((error as BusinessError).code).assertEqual(401);
           }
         } else {
           try {
-            photoAccessHelper.getPhotoAccessHelper(getContext()).showAssetsCreationDialog(testCases[i].src, testCases[i].config)
-            .then((result) => {
-              originalUris = result;
-            });
+            photoAccessHelper.getPhotoAccessHelper(getContext()).showAssetsCreationDialog(testCases[i].src, testCases[i].config);
             await driveFn();
 
             let code: number = EventType.SELECT_ITEM_INFO;
@@ -3542,7 +3551,6 @@ export default function TextPicker() {
             }
             router.back();
             events_emitter.off(event.eventId);
-            console.log(`originalUris = ${JSON.stringify(originalUris)}`);
             console.info("testPicker59 valid case finish");
 
           } catch (error) {
@@ -5316,7 +5324,6 @@ export default function TextPicker() {
       await routeToUrl(options);
 
       let checkbox: Component = await driver.findComponent(ON.type('Checkbox'));
-      
       if (checkbox === null) {
         console.info('SUB_PHOTO_PICKER_TEST_0700 no photo found, skipping zoom test');
         router.back();
@@ -5327,10 +5334,9 @@ export default function TextPicker() {
       }
 
       let bounds = await checkbox.getBounds();
-      let targetX = bounds.left - 150;
       let centerY = Math.floor(bounds.top + (bounds.bottom - bounds.top) / 2);
 
-      if (targetX <= 0 || centerY <= 0) {
+      if (centerY <= 0) {
         console.info('SUB_PHOTO_PICKER_TEST_0700 no photo found, skipping zoom test');
         router.back();
         events_emitter.off(event.eventId);
@@ -5338,15 +5344,26 @@ export default function TextPicker() {
         done();
         return;
       }
-      
-      await driver.click(targetX, centerY);
+
+      let checkboxComp: Component = await driver.findComponent(ON.type('Checkbox'));
+      if (checkboxComp !== null) {
+        await checkboxComp.click();
+        console.info('SUB_PHOTO_PICKER_TEST_0700 checkbox clicked');
+        await CommonFunc.sleep(500);
+      }
+
+      let previewBtn: Component = await driver.findComponent(ON.id('previewButton'));
+      if (previewBtn !== null) {
+        await previewBtn.click();
+        console.info('SUB_PHOTO_PICKER_TEST_0700 previewButton clicked');
+        await CommonFunc.sleep(2000);
+      }
 
       let bigImage: Component = await driver.findComponent(ON.type('Image'));
       if (bigImage !== null) {
         try {
-          console.info("SUB_PHOTO_PICKER_TEST_0700 executing pinchOut (Zoom In)...");
           await bigImage.pinchOut(2.0);
-          await CommonFunc.sleep(1500);
+          await CommonFunc.sleep(1000);
         } catch (e) {
           console.error("SUB_PHOTO_PICKER_TEST_0700 pinch execution failed: " + e.message);
         }

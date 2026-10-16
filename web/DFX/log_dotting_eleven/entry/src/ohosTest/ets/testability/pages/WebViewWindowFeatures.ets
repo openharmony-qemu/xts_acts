@@ -20,9 +20,11 @@ import Utils from '../../test/Utils.test';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
-import { Driver, ON, On, MouseButton  } from '@ohos.UiTest';
+import { Driver, ON, On, MouseButton, Point } from '@ohos.UiTest';
 import testNapi from 'libentry.so';
 import web_webview from '@ohos.web.webview'
+import deviceInfo from '@ohos.deviceInfo'
+
 let driver = Driver.create()
 
 @CustomDialog
@@ -54,20 +56,18 @@ struct WebViewWindowFeatures {
   @State scrollResult: boolean = false;
   @State isPageEnd: number = -1;
   @State str: string = "";
-  @State navigationPolicy:number = 5;
-  @State isAlert:boolean = false;
-  @State isUserTrigger:boolean = false;
-  @State handlerNum:number = 1
-  @State targetUrl:string = ''
-  @State WindowHeight:number = 10;
-  @State WindowWidth:number = 10;
-  @State WindowX:number = 100;
-  @State WindowY:number = 100;
+  @State navigationPolicy: number = 5;
+  @State isAlert: boolean = false;
+  @State isUserTrigger: boolean = false;
+  @State handlerNum: number = 1
+  @State targetUrl: string = ''
+  @State WindowHeight: number = 10;
+  @State WindowWidth: number = 10;
+  @State WindowX: number = 100;
+  @State WindowY: number = 100;
   webTag: string = 'ArkWeb1';
   dialogController: CustomDialogController | null = null;
   controller: web_webview.WebviewController = new web_webview.WebviewController(this.webTag);
-
-
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -92,33 +92,43 @@ struct WebViewWindowFeatures {
     }
   }
 
-
   build() {
     Column({ space: 20 }) {
       Button('web click')
         .key('WebViewWindowFeaturesButton')
         .onClick(async () => {
-          await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
-          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+          await Utils.waitForExist(() => this.isReceive, this.str + ' isReceive', 1, 1000);
+          await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
           console.info("key==>" + this.str)
+          const displayId: number =
+            await (await driver.findComponent(ON.id('WebViewWindowFeaturesButton'))).getDisplayId();
+          const isCar: boolean = deviceInfo.deviceType === "car";
           switch (this.str) {
             case 'emitWebViewWindowFeatures001': {
               try {
-                if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
+                if (!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
                   console.log('pbbbnetment');
                   Utils.emitEvent(600, 20260123)
                 } else {
                   this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile("window.open.html"))
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
                   let buttonOne = await driver.findComponent(ON.text('打开新窗口'));
                   await buttonOne.click()
                   let webRect = Utils.getComponentRect('WebViewWindowFeaturesWeb');
                   let downX = Math.round(globalThis.winLeft + webRect.left + 15);
+                  if (isCar) {
+                    downX = Math.round(globalThis.winLeft + webRect.left + 50);
+                  }
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
-                  await driver.click(downX, downY);
-                  Utils.sleep(1000);
-                  await driver.click(downX, downY);
+                  const pointClick: Point = {
+                    x: downX,
+                    y: downY,
+                    displayId: displayId
+                  }
+                  await driver.clickAt(pointClick);
+                  Utils.sleep(2000);
+                  await driver.clickAt(pointClick);
                   setTimeout(() => {
                     Utils.emitEvent(this.WindowHeight, 20260123)
                   }, 4000)
@@ -132,21 +142,29 @@ struct WebViewWindowFeatures {
 
             case 'emitWebViewWindowFeatures002': {
               try {
-                if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
+                if (!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
                   console.log('pbbbnetment');
                   Utils.emitEvent(500, 20260124)
                 } else {
                   this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile("window.open.html"))
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
                   let buttonOne = await driver.findComponent(ON.text('打开新窗口'));
                   await buttonOne.click()
                   let webRect = Utils.getComponentRect('WebViewWindowFeaturesWeb');
                   let downX = Math.round(globalThis.winLeft + webRect.left + 15);
+                  if (isCar) {
+                    downX = Math.round(globalThis.winLeft + webRect.left + 50);
+                  }
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
-                  await driver.click(downX, downY);
-                  Utils.sleep(1000);
-                  await driver.click(downX, downY);
+                  const pointClick: Point = {
+                    x: downX,
+                    y: downY,
+                    displayId: displayId
+                  }
+                  await driver.clickAt(pointClick);
+                  Utils.sleep(2000);
+                  await driver.clickAt(pointClick);
                   setTimeout(() => {
                     Utils.emitEvent(this.WindowWidth, 20260124)
                   }, 4000)
@@ -159,21 +177,29 @@ struct WebViewWindowFeatures {
             }
             case 'emitWebViewWindowFeatures003': {
               try {
-                if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
+                if (!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
                   console.log('pbbbnetment');
                   Utils.emitEvent(10, 20260125)
                 } else {
                   this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile("window.open.html"))
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
                   let buttonOne = await driver.findComponent(ON.text('打开新窗口'));
                   await buttonOne.click()
                   let webRect = Utils.getComponentRect('WebViewWindowFeaturesWeb');
                   let downX = Math.round(globalThis.winLeft + webRect.left + 15);
+                  if (isCar) {
+                    downX = Math.round(globalThis.winLeft + webRect.left + 50);
+                  }
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
-                  await driver.click(downX, downY);
-                  Utils.sleep(1000);
-                  await driver.click(downX, downY);
+                  const pointClick: Point = {
+                    x: downX,
+                    y: downY,
+                    displayId: displayId
+                  }
+                  await driver.clickAt(pointClick);
+                  Utils.sleep(2000);
+                  await driver.clickAt(pointClick);
                   setTimeout(() => {
                     Utils.emitEvent(this.WindowX, 20260125)
                   }, 4000)
@@ -186,21 +212,29 @@ struct WebViewWindowFeatures {
             }
             case 'emitWebViewWindowFeatures004': {
               try {
-                if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
+                if (!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
                   console.log('pbbbnetment');
                   Utils.emitEvent(20, 20260126)
                 } else {
                   this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile("window.open.html"))
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
                   let buttonOne = await driver.findComponent(ON.text('打开新窗口'));
                   await buttonOne.click()
                   let webRect = Utils.getComponentRect('WebViewWindowFeaturesWeb');
                   let downX = Math.round(globalThis.winLeft + webRect.left + 15);
+                  if (isCar) {
+                    downX = Math.round(globalThis.winLeft + webRect.left + 50);
+                  }
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
-                  await driver.click(downX, downY);
-                  Utils.sleep(1000);
-                  await driver.click(downX, downY);
+                  const pointClick: Point = {
+                    x: downX,
+                    y: downY,
+                    displayId: displayId
+                  }
+                  await driver.clickAt(pointClick);
+                  Utils.sleep(2000);
+                  await driver.clickAt(pointClick);
                   setTimeout(() => {
                     Utils.emitEvent(this.WindowY, 20260126)
                   }, 4000)
@@ -213,21 +247,29 @@ struct WebViewWindowFeatures {
             }
             case 'emitWebViewWindowFeatures005': {
               try {
-                if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
+                if (!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
                   console.log('pbbbnetment');
                   Utils.emitEvent(0, 20260127)
                 } else {
                   this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile("window.open.html"))
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
                   let buttonOne = await driver.findComponent(ON.text('打开新标签'));
                   await buttonOne.click()
                   let webRect = Utils.getComponentRect('WebViewWindowFeaturesWeb');
                   let downX = Math.round(globalThis.winLeft + webRect.left + 15);
+                  if (isCar) {
+                    downX = Math.round(globalThis.winLeft + webRect.left + 50);
+                  }
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
-                  await driver.click(downX, downY);
-                  Utils.sleep(1000);
-                  await driver.click(downX, downY);
+                  const pointClick: Point = {
+                    x: downX,
+                    y: downY,
+                    displayId: displayId
+                  }
+                  await driver.clickAt(pointClick);
+                  Utils.sleep(2000);
+                  await driver.clickAt(pointClick);
                   setTimeout(() => {
                     Utils.emitEvent(this.WindowHeight, 20260127)
                   }, 4000)
@@ -241,21 +283,29 @@ struct WebViewWindowFeatures {
 
             case 'emitWebViewWindowFeatures006': {
               try {
-                if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
+                if (!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
                   console.log('pbbbnetment');
                   Utils.emitEvent(0, 20260128)
                 } else {
                   this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile("window.open.html"))
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
                   let buttonOne = await driver.findComponent(ON.text('打开新标签'));
                   await buttonOne.click()
                   let webRect = Utils.getComponentRect('WebViewWindowFeaturesWeb');
                   let downX = Math.round(globalThis.winLeft + webRect.left + 15);
+                  if (isCar) {
+                    downX = Math.round(globalThis.winLeft + webRect.left + 50);
+                  }
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
-                  await driver.click(downX, downY);
-                  Utils.sleep(1000);
-                  await driver.click(downX, downY);
+                  const pointClick: Point = {
+                    x: downX,
+                    y: downY,
+                    displayId: displayId
+                  }
+                  await driver.clickAt(pointClick);
+                  Utils.sleep(2000);
+                  await driver.clickAt(pointClick);
                   setTimeout(() => {
                     Utils.emitEvent(this.WindowWidth, 20260128)
                   }, 4000)
@@ -269,21 +319,29 @@ struct WebViewWindowFeatures {
 
             case 'emitWebViewWindowFeatures007': {
               try {
-                if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
+                if (!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
                   console.log('pbbbnetment');
                   Utils.emitEvent(0, 20260129)
                 } else {
                   this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile("window.open.html"))
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
                   let buttonOne = await driver.findComponent(ON.text('打开新标签'));
                   await buttonOne.click()
                   let webRect = Utils.getComponentRect('WebViewWindowFeaturesWeb');
                   let downX = Math.round(globalThis.winLeft + webRect.left + 15);
+                  if (isCar) {
+                    downX = Math.round(globalThis.winLeft + webRect.left + 50);
+                  }
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
-                  await driver.click(downX, downY);
-                  Utils.sleep(1000);
-                  await driver.click(downX, downY);
+                  const pointClick: Point = {
+                    x: downX,
+                    y: downY,
+                    displayId: displayId
+                  }
+                  await driver.clickAt(pointClick);
+                  Utils.sleep(2000);
+                  await driver.clickAt(pointClick);
                   setTimeout(() => {
                     Utils.emitEvent(this.WindowX, 20260129)
                   }, 4000)
@@ -297,21 +355,29 @@ struct WebViewWindowFeatures {
 
             case 'emitWebViewWindowFeatures008': {
               try {
-                if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
+                if (!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
                   console.log('pbbbnetment');
                   Utils.emitEvent(0, 20260130)
                 } else {
                   this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile("window.open.html"))
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
                   let buttonOne = await driver.findComponent(ON.text('打开新标签'));
                   await buttonOne.click()
                   let webRect = Utils.getComponentRect('WebViewWindowFeaturesWeb');
                   let downX = Math.round(globalThis.winLeft + webRect.left + 15);
+                  if (isCar) {
+                    downX = Math.round(globalThis.winLeft + webRect.left + 50);
+                  }
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
-                  await driver.click(downX, downY);
-                  Utils.sleep(1000);
-                  await driver.click(downX, downY);
+                  const pointClick: Point = {
+                    x: downX,
+                    y: downY,
+                    displayId: displayId
+                  }
+                  await driver.clickAt(pointClick);
+                  Utils.sleep(2000);
+                  await driver.clickAt(pointClick);
                   setTimeout(() => {
                     Utils.emitEvent(this.WindowY, 20260130)
                   }, 4000)
@@ -322,8 +388,6 @@ struct WebViewWindowFeatures {
               }
               break;
             }
-
-
 
 
           }
@@ -403,7 +467,7 @@ struct WebViewWindowFeatures {
             }
             console.log("===== ArkTS onWindowNewExt 结束 =====");
           })
-      }.height('20%')
+      }.height('50%')
     }
     .height('100%')
     .width('100%')

@@ -17,6 +17,7 @@
 import { beforeAll, beforeEach, afterAll, describe, it, expect, TestType, Size, Level } from "../../../hypium/index"
 import { Component, Driver, ON, On, MatchPattern, MouseButton, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation } from '@kit.TestKit'
 import hilog from '@ohos.hilog'
+import display from '@ohos.display';
 import { Utils, startAbility, stopApplication } from './Util.test';
 
 let domain: int = 0x0000;
@@ -79,7 +80,8 @@ export default function uitestOnApi26Test(): void {
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
         await driver.delayMs(waitUiReadyMs);
         let text2 = await driver.findComponent(ON.text('dialog'));
-        await stopApplication('com.uitestScene.acts');
+        let disPlay = display.getDefaultDisplaySync();
+        await driver.pressBack(disPlay.id.toInt());
         await driver.delayMs(waitUiReadyMs);
         if (text2 != null) {
           ON.beforeComponent(text2);
@@ -136,8 +138,8 @@ export default function uitestOnApi26Test(): void {
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
         await driver.delayMs(waitUiReadyMs);
         let text2 = await driver.findComponent(ON.text('dialog'));
-        await driver.delayMs(waitUiReadyMs);
-        await stopApplication('com.uitestScene.acts');
+        let disPlay = display.getDefaultDisplaySync();
+        await driver.pressBack(disPlay.id.toInt());
         await driver.delayMs(waitUiReadyMs);
         if (text2 != null) {
           ON.afterComponent(text2);
@@ -195,8 +197,8 @@ export default function uitestOnApi26Test(): void {
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
         await driver.delayMs(waitUiReadyMs);
         let scroller = await driver.findComponent(ON.type('Scroll'));
-        await driver.delayMs(waitUiReadyMs);
-        await stopApplication('com.uitestScene.acts');
+        let disPlay = display.getDefaultDisplaySync();
+        await driver.pressBack(disPlay.id.toInt());
         await driver.delayMs(waitUiReadyMs);
         if (scroller != null) {
           ON.withinComponent(scroller)

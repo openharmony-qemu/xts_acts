@@ -55,9 +55,11 @@ struct ShareAcquireShareDataIndex {
                 }
               });
             }).catch((err: BusinessError) => {
-              hilog.info(0x0000, TAG, '[%{public}s] killProcessesByBundleName fail, err: %{public}s', TAG, JSON.stringify(err));
+              hilog.info(0x0000, TAG, '[%{public}s] killProcessesByBundleName fail, err: %{public}s', TAG,
+                JSON.stringify(err));
               this.killProcessResult = `killProcessResult. code: ${err.code}, message: ${err.message}`;
-              hilog.info(0x0000, TAG, '[%{public}s] killProcessResult: %{public}s', TAG, JSON.stringify(this.killProcessResult));
+              hilog.info(0x0000, TAG, '[%{public}s] killProcessResult: %{public}s', TAG,
+                JSON.stringify(this.killProcessResult));
               let options: commonEventManager.CommonEventPublishData = {
                 code: 1,
                 parameters: {
@@ -98,9 +100,11 @@ struct ShareAcquireShareDataIndex {
                 }
               });
             }).catch((err: BusinessError) => {
-              hilog.info(0x0000, TAG, '[%{public}s] clearUpApplicationData fail, err: %{public}s', TAG, JSON.stringify(err));
+              hilog.info(0x0000, TAG, '[%{public}s] clearUpApplicationData fail, err: %{public}s', TAG,
+                JSON.stringify(err));
               this.clearUpResult = `clearUpResult. code: ${err.code}, message: ${err.message}`;
-              hilog.info(0x0000, TAG, '[%{public}s] clearUpResult: %{public}s', TAG, JSON.stringify(this.clearUpResult));
+              hilog.info(0x0000, TAG, '[%{public}s] clearUpResult: %{public}s', TAG,
+                JSON.stringify(this.clearUpResult));
               let options: commonEventManager.CommonEventPublishData = {
                 code: 1,
                 parameters: {
@@ -143,7 +147,8 @@ struct ShareAcquireShareDataIndex {
             }).catch((err: BusinessError) => {
               hilog.info(0x0000, TAG, '[%{public}s] acquireShareData fail, err: %{public}s', TAG, JSON.stringify(err));
               this.acquireShareResult = `acquireShareResult. code: ${err.code}, message: ${err.message}`;
-              hilog.info(0x0000, TAG, '[%{public}s] acquireShareResult: %{public}s', TAG, JSON.stringify(this.acquireShareResult));
+              hilog.info(0x0000, TAG, '[%{public}s] acquireShareResult: %{public}s', TAG,
+                JSON.stringify(this.acquireShareResult));
               let options: commonEventManager.CommonEventPublishData = {
                 code: 1,
                 parameters: {

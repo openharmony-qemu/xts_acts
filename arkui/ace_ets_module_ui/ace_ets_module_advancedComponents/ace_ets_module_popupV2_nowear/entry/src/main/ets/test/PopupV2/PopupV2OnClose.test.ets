@@ -31,6 +31,7 @@ import {
 } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 
 export default function PopupV2OnCloseTest() {
   describe('PopupV2OnCloseTest', () => {
@@ -74,8 +75,9 @@ export default function PopupV2OnCloseTest() {
       await CommonFunc.sleep(200);
       console.info('SUB_ACE_ARKUI_POPUPV2ONCLOSE_0100 right：' + right + 'top:' + top);
       let driver = Driver.create();
+      // 涉及坐标
       await driver.mouseClick({
-        x: Math.round(right), y: Math.round(top)
+        x: Math.round(right), y: Math.round(top), displayId: displayID
       }, MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(1000);
       console.info('SUB_ACE_ARKUI_POPUPV2ONCLOSE_0100 click success');

@@ -17,7 +17,7 @@ import commoneventmanager from '@ohos.commonEventManager';
 import subtype from '@ohos.InputMethodSubtype';
 import inputMethod from '@ohos.inputMethod';
 import display from '@ohos.display';
-import { Driver, ON, MatchPattern, Component } from '@ohos.UiTest';
+import { Driver, ON, MatchPattern, Component, On } from '@ohos.UiTest';
 import { BusinessError } from '@ohos.base';
 
 export default function inputMethodEngineHotArea() {
@@ -77,24 +77,25 @@ export default function inputMethodEngineHotArea() {
     })
 
     let touch = async () => {
-      textArea = await driver.findComponent(ON.type('TextArea'));
+      console.info(`====>beforeAll display.id is: ${dis.id}`);
+      textArea = await driver.findComponent(ON.belongingDisplay(dis.id).type('TextArea'));
       console.info(`====>beforeAll textArea is: ${JSON.stringify(textArea)}`);
       await driver.delayMs(100);
       await textArea.click();
       await driver.delayMs(1000);
-      text1 = await driver.findComponent(ON.id('text1'));
+      text1 = await driver.findComponent(ON.belongingDisplay(dis.id).id('text1'));
       console.info(`====>beforeAll text1 is: ${JSON.stringify(text1)}`);
       await text1.click();
       await driver.delayMs(100);
-      text2 = await driver.findComponent(ON.id('text2'));
+      text2 = await driver.findComponent(ON.belongingDisplay(dis.id).id('text2'));
       console.info(`====>beforeAll text2 is: ${JSON.stringify(text2)}`);
       await text2.click();
       await driver.delayMs(100);
-      text3 = await driver.findComponent(ON.id('text3'));
+      text3 = await driver.findComponent(ON.belongingDisplay(dis.id).id('text3'));
       console.info(`====>beforeAll text3 is: ${JSON.stringify(text3)}`);
       await text3.click();
       await driver.delayMs(100);
-      text4 = await driver.findComponent(ON.id('text4'));
+      text4 = await driver.findComponent(ON.belongingDisplay(dis.id).id('text4'));
       console.info(`====>beforeAll text4 is: ${JSON.stringify(text4)}`);
       await text4.click();
       await driver.delayMs(100);

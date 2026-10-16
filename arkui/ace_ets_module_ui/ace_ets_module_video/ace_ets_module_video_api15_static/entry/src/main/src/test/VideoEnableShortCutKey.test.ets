@@ -1,4 +1,5 @@
 'use static';
+
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import { beforeEach, describe, expect, it, Level } from '../../../hypium/index'
 import router from '@ohos.router';
 import {
@@ -24,6 +26,8 @@ import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import { KeyCode } from '@ohos.multimodalInput.keyCode'
+
+let displayID: Int = (AppStorage.get<number>('displayID') ?? 0).toInt();
 
 export default function VideoEnableShortCutKey() {
   describe('VideoEnableShortCutKeyTest', () => {
@@ -49,7 +53,6 @@ export default function VideoEnableShortCutKey() {
       }
     });
 
-
 /**
      * @tc.number   videoEnableShortcutKeyTest_static_0100
      * @tc.name     videoEnableShortcutKeyTest_static_0100
@@ -71,7 +74,7 @@ it('videoEnableShortcutKeyTest_static_0100', Level.LEVEL0, async (done: () => vo
         JSON.stringify(obj_video.getElement('$attrs').getString('enableShortcutKey')));
         expect(obj_video.getElement('$attrs').getString('enableShortcutKey')).assertEqual('true');
 
-        await driver.triggerKey(KeyCode.KEYCODE_SPACE);
+        await driver.triggerKey(KeyCode.KEYCODE_SPACE, displayID);
         await CommonFunc.sleep(2000);
 
         let strJson_text = inspector.getInspectorByKey('videoEnableShortcutKey_text');
@@ -81,7 +84,7 @@ it('videoEnableShortcutKeyTest_static_0100', Level.LEVEL0, async (done: () => vo
         JSON.stringify(obj_text.getElement('$attrs').getString('content')));
         expect(obj_text.getElement('$attrs').getString('content')).assertEqual('onStart');
 
-        await driver.triggerKey(KeyCode.KEYCODE_SPACE);
+        await driver.triggerKey(KeyCode.KEYCODE_SPACE, displayID);
         await CommonFunc.sleep(1000);
 
         strJson_text = inspector.getInspectorByKey('videoEnableShortcutKey_text');
@@ -98,7 +101,7 @@ it('videoEnableShortcutKeyTest_static_0100', Level.LEVEL0, async (done: () => vo
         JSON.stringify(obj_text2.getElement('$attrs').getString('content')));
         let time_1 = Number(obj_text2.getElement('$attrs').getString('content'));
 
-        await driver.triggerKey(KeyCode.KEYCODE_DPAD_RIGHT);
+        await driver.triggerKey(KeyCode.KEYCODE_DPAD_RIGHT, displayID);
         await CommonFunc.sleep(1000);
 
         strJson_text2 = inspector.getInspectorByKey('videoEnableShortcutKey_text2');
@@ -109,7 +112,7 @@ it('videoEnableShortcutKeyTest_static_0100', Level.LEVEL0, async (done: () => vo
         let time_2 = Number(obj_text2.getElement('$attrs').getString('content'));
         expect(time_2).assertEqual(time_1 + 1);
 
-        await driver.triggerKey(KeyCode.KEYCODE_DPAD_LEFT);
+        await driver.triggerKey(KeyCode.KEYCODE_DPAD_LEFT, displayID);
         await CommonFunc.sleep(1000);
 
         strJson_text2 = inspector.getInspectorByKey('videoEnableShortcutKey_text2');
@@ -133,7 +136,7 @@ it('videoEnableShortcutKeyTest_static_0100', Level.LEVEL0, async (done: () => vo
         await (button?.click() as Promise<void>);
         await CommonFunc.sleep(1000);
 
-        await driver.triggerKey(KeyCode.KEYCODE_SPACE);
+        await driver.triggerKey(KeyCode.KEYCODE_SPACE, displayID);
         await CommonFunc.sleep(2000);
 
         strJson_text = inspector.getInspectorByKey('videoEnableShortcutKey_text');
@@ -143,7 +146,7 @@ it('videoEnableShortcutKeyTest_static_0100', Level.LEVEL0, async (done: () => vo
         JSON.stringify(obj_text.getElement('$attrs').getString('content')));
         expect(obj_text.getElement('$attrs').getString('content')).assertEqual('onStart');
 
-        await driver.triggerKey(KeyCode.KEYCODE_SPACE);
+        await driver.triggerKey(KeyCode.KEYCODE_SPACE, displayID);
         await CommonFunc.sleep(1000);
 
         strJson_text = inspector.getInspectorByKey('videoEnableShortcutKey_text');
@@ -160,7 +163,7 @@ it('videoEnableShortcutKeyTest_static_0100', Level.LEVEL0, async (done: () => vo
         JSON.stringify(obj_text2.getElement('$attrs').getString('content')));
         time_1 = Number(obj_text2.getElement('$attrs').getString('content'));
 
-        await driver.triggerKey(KeyCode.KEYCODE_DPAD_RIGHT);
+        await driver.triggerKey(KeyCode.KEYCODE_DPAD_RIGHT, displayID);
         await CommonFunc.sleep(1000);
 
         strJson_text2 = inspector.getInspectorByKey('videoEnableShortcutKey_text2');
@@ -171,7 +174,7 @@ it('videoEnableShortcutKeyTest_static_0100', Level.LEVEL0, async (done: () => vo
         time_2 = Number(obj_text2.getElement('$attrs').getString('content'));
         expect(time_2).assertEqual(time_1 + 1);
 
-        await driver.triggerKey(KeyCode.KEYCODE_DPAD_LEFT);
+        await driver.triggerKey(KeyCode.KEYCODE_DPAD_LEFT, displayID);
         await CommonFunc.sleep(1000);
 
         strJson_text2 = inspector.getInspectorByKey('videoEnableShortcutKey_text2');
@@ -201,7 +204,7 @@ it('videoEnableShortcutKeyTest_static_0100', Level.LEVEL0, async (done: () => vo
         JSON.stringify(obj_video.getElement('$attrs').getString('enableShortcutKey')));
         expect(obj_video.getElement('$attrs').getString('enableShortcutKey')).assertEqual('false');
 
-        await driver.triggerKey(KeyCode.KEYCODE_SPACE);
+        await driver.triggerKey(KeyCode.KEYCODE_SPACE, displayID);
         await CommonFunc.sleep(1000);
 
         strJson_text = inspector.getInspectorByKey('videoEnableShortcutKey_text');
@@ -211,7 +214,7 @@ it('videoEnableShortcutKeyTest_static_0100', Level.LEVEL0, async (done: () => vo
         JSON.stringify(obj_text.getElement('$attrs').getString('content')));
         expect(obj_text.getElement('$attrs').getString('content')).assertEqual('init');
 
-        await driver.triggerKey(KeyCode.KEYCODE_SPACE);
+        await driver.triggerKey(KeyCode.KEYCODE_SPACE, displayID);
         await CommonFunc.sleep(1000);
 
         strJson_text = inspector.getInspectorByKey('videoEnableShortcutKey_text');
@@ -221,7 +224,7 @@ it('videoEnableShortcutKeyTest_static_0100', Level.LEVEL0, async (done: () => vo
         JSON.stringify(obj_text.getElement('$attrs').getString('content')));
         expect(obj_text.getElement('$attrs').getString('content')).assertEqual('init');
 
-        await driver.triggerKey(KeyCode.KEYCODE_DPAD_RIGHT);
+        await driver.triggerKey(KeyCode.KEYCODE_DPAD_RIGHT, displayID);
         await CommonFunc.sleep(1000);
 
         strJson_text2 = inspector.getInspectorByKey('videoEnableShortcutKey_text2');
@@ -231,7 +234,7 @@ it('videoEnableShortcutKeyTest_static_0100', Level.LEVEL0, async (done: () => vo
         JSON.stringify(obj_text2.getElement('$attrs').getString('content')));
         expect(Number(obj_text2.getElement('$attrs').getString('content'))).assertEqual(0);
 
-        await driver.triggerKey(KeyCode.KEYCODE_DPAD_LEFT);
+        await driver.triggerKey(KeyCode.KEYCODE_DPAD_LEFT, displayID);
         await CommonFunc.sleep(1000);
 
         strJson_text2 = inspector.getInspectorByKey('videoEnableShortcutKey_text2');
@@ -252,7 +255,7 @@ it('videoEnableShortcutKeyTest_static_0100', Level.LEVEL0, async (done: () => vo
         await (button?.click() as Promise<void>);
         await CommonFunc.sleep(1000);
 
-        await driver.triggerKey(KeyCode.KEYCODE_SPACE);
+        await driver.triggerKey(KeyCode.KEYCODE_SPACE, displayID);
         await CommonFunc.sleep(1000);
 
         strJson_text = inspector.getInspectorByKey('videoEnableShortcutKey_text');
@@ -262,7 +265,7 @@ it('videoEnableShortcutKeyTest_static_0100', Level.LEVEL0, async (done: () => vo
         JSON.stringify(obj_text.getElement('$attrs').getString('content')));
         expect(obj_text.getElement('$attrs').getString('content')).assertEqual('init');
 
-        await driver.triggerKey(KeyCode.KEYCODE_SPACE);
+        await driver.triggerKey(KeyCode.KEYCODE_SPACE, displayID);
         await CommonFunc.sleep(1000);
 
         strJson_text = inspector.getInspectorByKey('videoEnableShortcutKey_text');
@@ -272,8 +275,7 @@ it('videoEnableShortcutKeyTest_static_0100', Level.LEVEL0, async (done: () => vo
         JSON.stringify(obj_text.getElement('$attrs').getString('content')));
         expect(obj_text.getElement('$attrs').getString('content')).assertEqual('init');
 
-
-        await driver.triggerKey(KeyCode.KEYCODE_DPAD_RIGHT);
+        await driver.triggerKey(KeyCode.KEYCODE_DPAD_RIGHT, displayID);
         await CommonFunc.sleep(1000);
 
         strJson_text2 = inspector.getInspectorByKey('videoEnableShortcutKey_text2');
@@ -283,7 +285,7 @@ it('videoEnableShortcutKeyTest_static_0100', Level.LEVEL0, async (done: () => vo
         JSON.stringify(obj_text2.getElement('$attrs').getString('content')));
         expect(Number(obj_text2.getElement('$attrs').getString('content'))).assertEqual(1);
 
-        await driver.triggerKey(KeyCode.KEYCODE_DPAD_LEFT);
+        await driver.triggerKey(KeyCode.KEYCODE_DPAD_LEFT, displayID);
         await CommonFunc.sleep(1000);
 
         strJson_text2 = inspector.getInspectorByKey('videoEnableShortcutKey_text2');

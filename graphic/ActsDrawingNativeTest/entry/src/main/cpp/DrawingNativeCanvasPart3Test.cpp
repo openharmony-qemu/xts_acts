@@ -16,16 +16,16 @@
 #include "include/DrawingNativeCanvasCommonTest.h"
 #include "include/OhosCommonTest.h"
 
-#define DRAWING_NUMBER_1 1
-#define DRAWING_NUMBER_2 2
-#define DRAWING_NUMBER_10 10
-#define DRAWING_NUMBER_100 100
-#define DRAWING_NUMBER_180 180
-#define DRAWING_NUMBER_200 200
-#define DRAWING_NUMBER_300 300
-#define DRAWING_NUMBER_360 360
-#define DRAWING_NUMBER_370 370
-#define DRAWING_NUMBER_123456 123456
+#define NUMBER_1 1
+#define NUMBER_2 2
+#define NUMBER_10 10
+#define NUMBER_100 100
+#define NUMBER_180 180
+#define NUMBER_200 200
+#define NUMBER_300 300
+#define NUMBER_360 360
+#define NUMBER_370 370
+#define NUMBER_123456 123456
 
 namespace OHOS {
 namespace Rosen {
@@ -54,7 +54,7 @@ int TestCanvasDrawOvalNormal()
     EXPECT_NE(canvas, nullptr);
 
     // 2. Create OH_Drawing_Rect
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect, nullptr);
 
@@ -78,7 +78,7 @@ int TestCanvasDrawOvalNull()
     // add assert
     EXPECT_NE(canvas, nullptr);
     // 2. Create OH_Drawing_Rect
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_200, NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 3. OH_Drawing_CanvasDrawOval with nullptr as the first parameter
@@ -87,19 +87,19 @@ int TestCanvasDrawOvalNull()
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_ErrorCodeReset();
     // 4. OH_Drawing_CanvasDrawOval with OH_Drawing_Rect created with 0 for left, top, right, and bottom
-    OH_Drawing_Rect *rect2 = OH_Drawing_RectCreate(0, DRAWING_NUMBER_200, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    OH_Drawing_Rect *rect2 = OH_Drawing_RectCreate(0, NUMBER_200, NUMBER_200, NUMBER_200);
     // add assert
     EXPECT_NE(rect2, nullptr);
     OH_Drawing_CanvasDrawOval(canvas, rect2);
-    rect2 = OH_Drawing_RectCreate(DRAWING_NUMBER_200, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    rect2 = OH_Drawing_RectCreate(NUMBER_200, 0, NUMBER_200, NUMBER_200);
     // add assert
     EXPECT_NE(rect2, nullptr);
     OH_Drawing_CanvasDrawOval(canvas, rect2);
-    rect2 = OH_Drawing_RectCreate(DRAWING_NUMBER_200, DRAWING_NUMBER_200, 0, DRAWING_NUMBER_200);
+    rect2 = OH_Drawing_RectCreate(NUMBER_200, NUMBER_200, 0, NUMBER_200);
     // add assert
     EXPECT_NE(rect2, nullptr);
     OH_Drawing_CanvasDrawOval(canvas, rect2);
-    rect2 = OH_Drawing_RectCreate(DRAWING_NUMBER_200, DRAWING_NUMBER_200, DRAWING_NUMBER_200, 0);
+    rect2 = OH_Drawing_RectCreate(NUMBER_200, NUMBER_200, NUMBER_200, 0);
     // add assert
     EXPECT_NE(rect2, nullptr);
     OH_Drawing_CanvasDrawOval(canvas, rect2);
@@ -130,42 +130,42 @@ int TestCanvasDrawOvalAbnormal()
     EXPECT_NE(canvas, nullptr);
     // 2. Create OH_Drawing_Rect with left, top, right, and bottom values as negative numbers
     OH_Drawing_Rect *rect =
-        OH_Drawing_RectCreate(-DRAWING_NUMBER_100, DRAWING_NUMBER_100, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+        OH_Drawing_RectCreate(-NUMBER_100, NUMBER_100, NUMBER_200, NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_CanvasDrawOval(canvas, rect);
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_100, -DRAWING_NUMBER_100, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    rect = OH_Drawing_RectCreate(NUMBER_100, -NUMBER_100, NUMBER_200, NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_CanvasDrawOval(canvas, rect);
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100, -DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    rect = OH_Drawing_RectCreate(NUMBER_100, NUMBER_100, -NUMBER_200, NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_CanvasDrawOval(canvas, rect);
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100, DRAWING_NUMBER_200, -DRAWING_NUMBER_200);
+    rect = OH_Drawing_RectCreate(NUMBER_100, NUMBER_100, NUMBER_200, -NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_CanvasDrawOval(canvas, rect);
     // 3. Create OH_Drawing_Rect with the horizontal coordinate of the top-left corner equal to the horizontal
     // coordinate of the bottom-right corner, or the vertical coordinate of the top-left corner equal to the vertical
     // coordinate of the bottom-right corner
-    OH_Drawing_Rect *rect2 = OH_Drawing_RectCreate(DRAWING_NUMBER_100, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect2 = OH_Drawing_RectCreate(NUMBER_100, 0, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect2, nullptr);
     OH_Drawing_CanvasDrawOval(canvas, rect2);
-    OH_Drawing_Rect *rect3 = OH_Drawing_RectCreate(0, DRAWING_NUMBER_100, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect3 = OH_Drawing_RectCreate(0, NUMBER_100, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect3, nullptr);
     OH_Drawing_CanvasDrawOval(canvas, rect3);
     // 4. Create OH_Drawing_Rect with the top-left corner coordinates equal to the bottom-right corner coordinates
     OH_Drawing_Rect *rect4 =
-        OH_Drawing_RectCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+        OH_Drawing_RectCreate(NUMBER_100, NUMBER_100, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect4, nullptr);
     OH_Drawing_CanvasDrawOval(canvas, rect4);
     // 5. Create OH_Drawing_Rect with the top-left corner coordinates greater than the bottom-right corner coordinates
     OH_Drawing_Rect *rect5 =
-        OH_Drawing_RectCreate(DRAWING_NUMBER_200, DRAWING_NUMBER_200, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+        OH_Drawing_RectCreate(NUMBER_200, NUMBER_200, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect5, nullptr);
     OH_Drawing_CanvasDrawOval(canvas, rect5);
@@ -227,7 +227,7 @@ int TestCanvasDrawArcNormal()
     // add assert
     EXPECT_NE(canvas, nullptr);
     // 2. OH_Drawing_RectCreate
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 3. OH_Drawing_CanvasDrawArc with startAngle iterating over 0°, 180°, and 360°
@@ -261,7 +261,7 @@ int TestCanvasDrawArcNull()
     // add assert
     EXPECT_NE(canvas, nullptr);
     // 2. OH_Drawing_RectCreate
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 3. OH_Drawing_CanvasDrawArc with nullptr as the first parameter
@@ -270,13 +270,13 @@ int TestCanvasDrawArcNull()
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_ErrorCodeReset();
     // 4. OH_Drawing_CanvasDrawArc with OH_Drawing_Rect created with 0 for left, top, right, and bottom
-    OH_Drawing_Rect *rect2 = OH_Drawing_RectCreate(0, DRAWING_NUMBER_100, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    OH_Drawing_Rect *rect2 = OH_Drawing_RectCreate(0, NUMBER_100, NUMBER_200, NUMBER_200);
     OH_Drawing_CanvasDrawArc(canvas, rect2, 0.0f, 90.0f);
-    rect2 = OH_Drawing_RectCreate(DRAWING_NUMBER_100, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    rect2 = OH_Drawing_RectCreate(NUMBER_100, 0, NUMBER_200, NUMBER_200);
     OH_Drawing_CanvasDrawArc(canvas, rect2, 0.0f, 90.0f);
-    rect2 = OH_Drawing_RectCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100, 0, DRAWING_NUMBER_200);
+    rect2 = OH_Drawing_RectCreate(NUMBER_100, NUMBER_100, 0, NUMBER_200);
     OH_Drawing_CanvasDrawArc(canvas, rect2, 0.0f, 90.0f);
-    rect2 = OH_Drawing_RectCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100, DRAWING_NUMBER_200, 0);
+    rect2 = OH_Drawing_RectCreate(NUMBER_100, NUMBER_100, NUMBER_200, 0);
     OH_Drawing_CanvasDrawArc(canvas, rect2, 0.0f, 90.0f);
     // 5. OH_Drawing_CanvasDrawArc with OH_Drawing_Rect created with all 0 values
     OH_Drawing_Rect *rect3 = OH_Drawing_RectCreate(0, 0, 0, 0);
@@ -303,48 +303,48 @@ int TestCanvasDrawArcAbnormal()
     EXPECT_NE(canvas, nullptr);
     // 2. OH_Drawing_CanvasDrawArc with OH_Drawing_Rect created with negative values for left, top, right, and bottom
     OH_Drawing_Rect *rect =
-        OH_Drawing_RectCreate(-DRAWING_NUMBER_100, -DRAWING_NUMBER_100, -DRAWING_NUMBER_200, -DRAWING_NUMBER_200);
+        OH_Drawing_RectCreate(-NUMBER_100, -NUMBER_100, -NUMBER_200, -NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_CanvasDrawArc(canvas, rect, 0.0f, 90.0f);
-    rect = OH_Drawing_RectCreate(-DRAWING_NUMBER_100, DRAWING_NUMBER_100, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    rect = OH_Drawing_RectCreate(-NUMBER_100, NUMBER_100, NUMBER_200, NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_CanvasDrawArc(canvas, rect, 0.0f, 90.0f);
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_100, -DRAWING_NUMBER_100, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    rect = OH_Drawing_RectCreate(NUMBER_100, -NUMBER_100, NUMBER_200, NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_CanvasDrawArc(canvas, rect, 0.0f, 90.0f);
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100, -DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    rect = OH_Drawing_RectCreate(NUMBER_100, NUMBER_100, -NUMBER_200, NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_CanvasDrawArc(canvas, rect, 0.0f, 90.0f);
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100, DRAWING_NUMBER_200, -DRAWING_NUMBER_200);
+    rect = OH_Drawing_RectCreate(NUMBER_100, NUMBER_100, NUMBER_200, -NUMBER_200);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_CanvasDrawArc(canvas, rect, 0.0f, 90.0f);
     // 3. OH_Drawing_CanvasDrawArc with OH_Drawing_Rect created with the horizontal coordinate of the top-left corner
     // equal to the horizontal coordinate of the bottom-right corner, or the vertical coordinate of the top-left corner
     // equal to the vertical coordinate of the bottom-right corner
-    OH_Drawing_Rect *rect2 = OH_Drawing_RectCreate(DRAWING_NUMBER_100, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect2 = OH_Drawing_RectCreate(NUMBER_100, 0, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect2, nullptr);
     OH_Drawing_CanvasDrawArc(canvas, rect2, 0.0f, 90.0f);
-    OH_Drawing_Rect *rect3 = OH_Drawing_RectCreate(0, DRAWING_NUMBER_100, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect3 = OH_Drawing_RectCreate(0, NUMBER_100, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect3, nullptr);
     OH_Drawing_CanvasDrawArc(canvas, rect3, 0.0f, 90.0f);
     // 4. OH_Drawing_CanvasDrawArc with OH_Drawing_Rect created with the top-left corner coordinates equal to the
     // bottom-right corner coordinates
     OH_Drawing_Rect *rect4 =
-        OH_Drawing_RectCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+        OH_Drawing_RectCreate(NUMBER_100, NUMBER_100, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect4, nullptr);
     OH_Drawing_CanvasDrawArc(canvas, rect4, 0.0f, 90.0f);
     // 5. OH_Drawing_CanvasDrawArc with OH_Drawing_Rect created with the top-left corner coordinates greater than the
     // bottom-right corner coordinates
     OH_Drawing_Rect *rect5 =
-        OH_Drawing_RectCreate(DRAWING_NUMBER_200, DRAWING_NUMBER_200, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+        OH_Drawing_RectCreate(NUMBER_200, NUMBER_200, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect5, nullptr);
     OH_Drawing_CanvasDrawArc(canvas, rect5, 0.0f, 90.0f);
@@ -397,13 +397,13 @@ int TestCanvasDrawArcMaximum()
     OH_Drawing_CanvasDrawArc(canvas, rect, 0.0f, 90.0f);
     OH_Drawing_RectDestroy(rect);
     // 3. OH_Drawing_CanvasDrawArc with startAngle FLT_MAX
-    rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    rect = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_CanvasDrawArc(canvas, rect, FLT_MAX, 90.0f);
     OH_Drawing_RectDestroy(rect);
     // 4. OH_Drawing_CanvasDrawArc with sweepAngle FLT_MAX
-    rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    rect = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_CanvasDrawArc(canvas, rect, 0.0f, FLT_MAX);
@@ -432,7 +432,7 @@ int TestCanvasDrawRoundRectNormal()
 
     // 2. OH_Drawing_RoundRectCreate
     OH_Drawing_Rect *rect =
-        OH_Drawing_RectCreate(DRAWING_NUMBER_10, DRAWING_NUMBER_100, DRAWING_NUMBER_200, DRAWING_NUMBER_300);
+        OH_Drawing_RectCreate(NUMBER_10, NUMBER_100, NUMBER_200, NUMBER_300);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_RoundRect *roundRect = OH_Drawing_RoundRectCreate(rect, 1.0f, 1.0f);
@@ -455,7 +455,7 @@ int TestCanvasDrawRoundRectNormal()
 void CanvasDrawRoundRectNull(OH_Drawing_Canvas *canvas, OH_Drawing_Rect *rect, OH_Drawing_RoundRect *roundRect)
 {
     // 2. OH_Drawing_RoundRectCreate
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_10, DRAWING_NUMBER_100, DRAWING_NUMBER_200, DRAWING_NUMBER_300);
+    rect = OH_Drawing_RectCreate(NUMBER_10, NUMBER_100, NUMBER_200, NUMBER_300);
     EXPECT_NE(rect, nullptr);
     roundRect = OH_Drawing_RoundRectCreate(rect, 1.0f, 1.0f);
     EXPECT_NE(roundRect, nullptr);
@@ -467,22 +467,22 @@ void CanvasDrawRoundRectNull(OH_Drawing_Canvas *canvas, OH_Drawing_Rect *rect, O
     OH_Drawing_CanvasDrawRoundRect(canvas, nullptr);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 5. OH_Drawing_CanvasDrawRoundRect with the second parameter OH_Drawing_RoundRectCreate created with rect having 0
-    rect = OH_Drawing_RectCreate(0, DRAWING_NUMBER_100, DRAWING_NUMBER_200, DRAWING_NUMBER_300);
+    rect = OH_Drawing_RectCreate(0, NUMBER_100, NUMBER_200, NUMBER_300);
     EXPECT_NE(rect, nullptr);
     roundRect = OH_Drawing_RoundRectCreate(rect, 1.0f, 1.0f);
     EXPECT_NE(roundRect, nullptr);
     OH_Drawing_CanvasDrawRoundRect(canvas, roundRect);
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_10, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_300);
+    rect = OH_Drawing_RectCreate(NUMBER_10, 0, NUMBER_200, NUMBER_300);
     EXPECT_NE(rect, nullptr);
     roundRect = OH_Drawing_RoundRectCreate(rect, 1.0f, 1.0f);
     EXPECT_NE(roundRect, nullptr);
     OH_Drawing_CanvasDrawRoundRect(canvas, roundRect);
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_10, DRAWING_NUMBER_100, 0, DRAWING_NUMBER_300);
+    rect = OH_Drawing_RectCreate(NUMBER_10, NUMBER_100, 0, NUMBER_300);
     EXPECT_NE(rect, nullptr);
     roundRect = OH_Drawing_RoundRectCreate(rect, 1.0f, 1.0f);
     EXPECT_NE(roundRect, nullptr);
     OH_Drawing_CanvasDrawRoundRect(canvas, roundRect);
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_10, DRAWING_NUMBER_100, DRAWING_NUMBER_200, 0);
+    rect = OH_Drawing_RectCreate(NUMBER_10, NUMBER_100, NUMBER_200, 0);
     EXPECT_NE(rect, nullptr);
     roundRect = OH_Drawing_RoundRectCreate(rect, 1.0f, 1.0f);
     EXPECT_NE(roundRect, nullptr);
@@ -494,13 +494,13 @@ void CanvasDrawRoundRectNull(OH_Drawing_Canvas *canvas, OH_Drawing_Rect *rect, O
     EXPECT_NE(roundRect, nullptr);
     OH_Drawing_CanvasDrawRoundRect(canvas, roundRect);
     // 7. OH_Drawing_CanvasDrawRoundRect with the second parameter OH_Drawing_RoundRectCreate created with xRad as 0
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_10, DRAWING_NUMBER_100, DRAWING_NUMBER_200, DRAWING_NUMBER_300);
+    rect = OH_Drawing_RectCreate(NUMBER_10, NUMBER_100, NUMBER_200, NUMBER_300);
     EXPECT_NE(rect, nullptr);
     roundRect = OH_Drawing_RoundRectCreate(rect, 0.0f, 1.0f);
     EXPECT_NE(roundRect, nullptr);
     OH_Drawing_CanvasDrawRoundRect(canvas, roundRect);
     // 8. OH_Drawing_CanvasDrawRoundRect with the second parameter OH_Drawing_RoundRectCreate created with yRad as 0
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_10, DRAWING_NUMBER_100, DRAWING_NUMBER_200, DRAWING_NUMBER_300);
+    rect = OH_Drawing_RectCreate(NUMBER_10, NUMBER_100, NUMBER_200, NUMBER_300);
     EXPECT_NE(rect, nullptr);
     roundRect = OH_Drawing_RoundRectCreate(rect, 1.0f, 0.0f);
     EXPECT_NE(roundRect, nullptr);
@@ -531,54 +531,54 @@ int TestCanvasDrawRoundRectAbnormal()
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
     EXPECT_NE(canvas, nullptr);
     // 2. OH_Drawing_CanvasDrawRoundRect with OH_Drawing_RoundRectCreate creating rect with left, top, right, bottom
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(-10, DRAWING_NUMBER_100, DRAWING_NUMBER_200, DRAWING_NUMBER_300);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(-10, NUMBER_100, NUMBER_200, NUMBER_300);
     EXPECT_NE(rect, nullptr);
     OH_Drawing_RoundRect *roundRect = OH_Drawing_RoundRectCreate(rect, 0.0f, 1.0f);
     OH_Drawing_CanvasDrawRoundRect(canvas, roundRect);
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_10, -DRAWING_NUMBER_100, DRAWING_NUMBER_200, DRAWING_NUMBER_300);
+    rect = OH_Drawing_RectCreate(NUMBER_10, -NUMBER_100, NUMBER_200, NUMBER_300);
     EXPECT_NE(rect, nullptr);
     roundRect = OH_Drawing_RoundRectCreate(rect, 0.0f, 1.0f);
     OH_Drawing_CanvasDrawRoundRect(canvas, roundRect);
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_10, DRAWING_NUMBER_100, -DRAWING_NUMBER_200, DRAWING_NUMBER_300);
+    rect = OH_Drawing_RectCreate(NUMBER_10, NUMBER_100, -NUMBER_200, NUMBER_300);
     EXPECT_NE(rect, nullptr);
     roundRect = OH_Drawing_RoundRectCreate(rect, 0.0f, 1.0f);
     OH_Drawing_CanvasDrawRoundRect(canvas, roundRect);
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_10, DRAWING_NUMBER_100, DRAWING_NUMBER_200, -DRAWING_NUMBER_300);
+    rect = OH_Drawing_RectCreate(NUMBER_10, NUMBER_100, NUMBER_200, -NUMBER_300);
     EXPECT_NE(rect, nullptr);
     roundRect = OH_Drawing_RoundRectCreate(rect, 0.0f, 1.0f);
     OH_Drawing_CanvasDrawRoundRect(canvas, roundRect);
     // 3. OH_Drawing_CanvasDrawRoundRect with OH_Drawing_CanvasDrawRoundRect creating rect with the horizontal
     // coordinate of the top-left corner equal to the horizontal coordinate of the bottom-right corner, or the vertical
     // coordinate of the top-left corner equal to the vertical coordinate of the bottom-right corner
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_100, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    rect = OH_Drawing_RectCreate(NUMBER_100, 0, NUMBER_100, NUMBER_100);
     EXPECT_NE(rect, nullptr);
     roundRect = OH_Drawing_RoundRectCreate(rect, 0.0f, 1.0f);
     OH_Drawing_CanvasDrawRoundRect(canvas, roundRect);
-    rect = OH_Drawing_RectCreate(0, DRAWING_NUMBER_100, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    rect = OH_Drawing_RectCreate(0, NUMBER_100, NUMBER_100, NUMBER_100);
     EXPECT_NE(rect, nullptr);
     roundRect = OH_Drawing_RoundRectCreate(rect, 0.0f, 1.0f);
     OH_Drawing_CanvasDrawRoundRect(canvas, roundRect);
     // 4. OH_Drawing_CanvasDrawRoundRect with OH_Drawing_RoundRectCreate creating rect with the top-left corner
     // coordinates equal to the bottom-right corner coordinates
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    rect = OH_Drawing_RectCreate(NUMBER_100, NUMBER_100, NUMBER_100, NUMBER_100);
     EXPECT_NE(rect, nullptr);
     roundRect = OH_Drawing_RoundRectCreate(rect, 0.0f, 1.0f);
     OH_Drawing_CanvasDrawRoundRect(canvas, roundRect);
     // 5. OH_Drawing_CanvasDrawRoundRect with OH_Drawing_RoundRectCreate creating rect with the top-left corner
     // coordinates greater than the bottom-right corner coordinates
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_200, DRAWING_NUMBER_200, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    rect = OH_Drawing_RectCreate(NUMBER_200, NUMBER_200, NUMBER_100, NUMBER_100);
     EXPECT_NE(rect, nullptr);
     roundRect = OH_Drawing_RoundRectCreate(rect, 0.0f, 1.0f);
     OH_Drawing_CanvasDrawRoundRect(canvas, roundRect);
     // 6. OH_Drawing_CanvasDrawRoundRect with the second parameter OH_Drawing_RoundRectCreate creating roundRect with a
     // negative xRad
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_10, DRAWING_NUMBER_100, DRAWING_NUMBER_200, DRAWING_NUMBER_300);
+    rect = OH_Drawing_RectCreate(NUMBER_10, NUMBER_100, NUMBER_200, NUMBER_300);
     EXPECT_NE(rect, nullptr);
     roundRect = OH_Drawing_RoundRectCreate(rect, -1.0f, 1.0f);
     OH_Drawing_CanvasDrawRoundRect(canvas, roundRect);
     // 7. OH_Drawing_CanvasDrawRoundRect with the second parameter OH_Drawing_RoundRectCreate creating roundRect with a
     // negative yRad
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_10, DRAWING_NUMBER_100, DRAWING_NUMBER_200, DRAWING_NUMBER_300);
+    rect = OH_Drawing_RectCreate(NUMBER_10, NUMBER_100, NUMBER_200, NUMBER_300);
     EXPECT_NE(rect, nullptr);
     roundRect = OH_Drawing_RoundRectCreate(rect, 0.0f, -1.0f);
     OH_Drawing_CanvasDrawRoundRect(canvas, roundRect);
@@ -599,7 +599,7 @@ int TestCanvasDrawRoundRectMaximum()
     EXPECT_NE(canvas, nullptr);
     // 2. OH_Drawing_CanvasDrawRoundRect with OH_Drawing_RoundRectCreate creating rect with left, top, right, bottom
     // being set to FLT_MAX
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(FLT_MAX, DRAWING_NUMBER_100, DRAWING_NUMBER_200, DRAWING_NUMBER_300);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(FLT_MAX, NUMBER_100, NUMBER_200, NUMBER_300);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_RoundRect *roundRect = OH_Drawing_RoundRectCreate(rect, 1.0f, 1.0f);
@@ -607,19 +607,19 @@ int TestCanvasDrawRoundRectMaximum()
     EXPECT_NE(roundRect, nullptr);
     OH_Drawing_CanvasDrawRoundRect(canvas, roundRect);
 
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_10, FLT_MAX, DRAWING_NUMBER_200, DRAWING_NUMBER_300);
+    rect = OH_Drawing_RectCreate(NUMBER_10, FLT_MAX, NUMBER_200, NUMBER_300);
     // add assert
     EXPECT_NE(rect, nullptr);
     roundRect = OH_Drawing_RoundRectCreate(rect, 1.0f, 1.0f);
     OH_Drawing_CanvasDrawRoundRect(canvas, roundRect);
 
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_10, DRAWING_NUMBER_100, FLT_MAX, DRAWING_NUMBER_300);
+    rect = OH_Drawing_RectCreate(NUMBER_10, NUMBER_100, FLT_MAX, NUMBER_300);
     // add assert
     EXPECT_NE(rect, nullptr);
     roundRect = OH_Drawing_RoundRectCreate(rect, 1.0f, 1.0f);
     OH_Drawing_CanvasDrawRoundRect(canvas, roundRect);
 
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_10, DRAWING_NUMBER_100, DRAWING_NUMBER_200, FLT_MAX);
+    rect = OH_Drawing_RectCreate(NUMBER_10, NUMBER_100, NUMBER_200, FLT_MAX);
     // add assert
     EXPECT_NE(rect, nullptr);
     roundRect = OH_Drawing_RoundRectCreate(rect, 1.0f, 1.0f);
@@ -627,7 +627,7 @@ int TestCanvasDrawRoundRectMaximum()
 
     // 3. OH_Drawing_CanvasDrawRoundRect with the second parameter OH_Drawing_RoundRectCreate created with xRad being
     // set to FLT_MAX
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_10, DRAWING_NUMBER_100, DRAWING_NUMBER_200, DRAWING_NUMBER_300);
+    rect = OH_Drawing_RectCreate(NUMBER_10, NUMBER_100, NUMBER_200, NUMBER_300);
     // add assert
     EXPECT_NE(rect, nullptr);
     roundRect = OH_Drawing_RoundRectCreate(rect, FLT_MAX, 1.0f);
@@ -635,7 +635,7 @@ int TestCanvasDrawRoundRectMaximum()
 
     // 4. OH_Drawing_CanvasDrawRoundRect with the second parameter OH_Drawing_RoundRectCreate created with yRad being
     // set to FLT_MAX
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_10, DRAWING_NUMBER_100, DRAWING_NUMBER_200, DRAWING_NUMBER_300);
+    rect = OH_Drawing_RectCreate(NUMBER_10, NUMBER_100, NUMBER_200, NUMBER_300);
     // add assert
     EXPECT_NE(rect, nullptr);
     roundRect = OH_Drawing_RoundRectCreate(rect, 1.0f, FLT_MAX);
@@ -676,7 +676,7 @@ int TestCanvasDrawTextBlobNormal()
     // add assert
     EXPECT_NE(textBlob, nullptr);
     // 3. OH_Drawing_CanvasDrawTextBlob
-    OH_Drawing_CanvasDrawTextBlob(canvas, textBlob, DRAWING_NUMBER_10, DRAWING_NUMBER_10);
+    OH_Drawing_CanvasDrawTextBlob(canvas, textBlob, NUMBER_10, NUMBER_10);
     // 4. Free memory
     OH_Drawing_TextBlobDestroy(textBlob);
 
@@ -703,18 +703,18 @@ int TestCanvasDrawTextBlobNull()
     // add assert
     EXPECT_NE(textBlob, nullptr);
     // 3. OH_Drawing_CanvasDrawTextBlob with the first parameter being nullptr
-    OH_Drawing_CanvasDrawTextBlob(nullptr, textBlob, DRAWING_NUMBER_10, DRAWING_NUMBER_10);
+    OH_Drawing_CanvasDrawTextBlob(nullptr, textBlob, NUMBER_10, NUMBER_10);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_ErrorCodeReset();
     // 4. OH_Drawing_CanvasDrawTextBlob with the second parameter being nullptr
-    OH_Drawing_CanvasDrawTextBlob(canvas, nullptr, DRAWING_NUMBER_10, DRAWING_NUMBER_10);
+    OH_Drawing_CanvasDrawTextBlob(canvas, nullptr, NUMBER_10, NUMBER_10);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 5. OH_Drawing_CanvasDrawTextBlob with the third parameter being 0
-    OH_Drawing_CanvasDrawTextBlob(canvas, textBlob, 0, DRAWING_NUMBER_10);
+    OH_Drawing_CanvasDrawTextBlob(canvas, textBlob, 0, NUMBER_10);
     // 6. OH_Drawing_CanvasDrawTextBlob with the fourth parameter being 0
-    OH_Drawing_CanvasDrawTextBlob(canvas, textBlob, DRAWING_NUMBER_10, 0);
+    OH_Drawing_CanvasDrawTextBlob(canvas, textBlob, NUMBER_10, 0);
     // 7. Free memory
     OH_Drawing_TextBlobDestroy(textBlob);
 
@@ -741,10 +741,10 @@ int TestCanvasDrawTextBlobAbnormal()
     EXPECT_NE(textBlob, nullptr);
     // 3. Draw OH_Drawing_TextBlob on canvas with x-coordinate of the bottom left corner of the text object set to a
     // negative value
-    OH_Drawing_CanvasDrawTextBlob(canvas, textBlob, -DRAWING_NUMBER_10, DRAWING_NUMBER_10);
+    OH_Drawing_CanvasDrawTextBlob(canvas, textBlob, -NUMBER_10, NUMBER_10);
     // 4. Draw OH_Drawing_TextBlob on canvas with y-coordinate of the bottom left corner of the text object set to a
     // negative value
-    OH_Drawing_CanvasDrawTextBlob(canvas, textBlob, DRAWING_NUMBER_10, -DRAWING_NUMBER_10);
+    OH_Drawing_CanvasDrawTextBlob(canvas, textBlob, NUMBER_10, -NUMBER_10);
     // 5. Release memory
     OH_Drawing_TextBlobDestroy(textBlob);
     OH_Drawing_CanvasDestroy(canvas);
@@ -770,10 +770,10 @@ int TestCanvasDrawTextBlobMaximum()
     EXPECT_NE(textBlob, nullptr);
     // 3. Draw OH_Drawing_TextBlob on canvas with x-coordinate of the bottom left corner of the text object set to
     // maximum value
-    OH_Drawing_CanvasDrawTextBlob(canvas, textBlob, FLT_MAX, DRAWING_NUMBER_10);
+    OH_Drawing_CanvasDrawTextBlob(canvas, textBlob, FLT_MAX, NUMBER_10);
     // 4. Draw OH_Drawing_TextBlob on canvas with y-coordinate of the bottom left corner of the text object set to
     // maximum value
-    OH_Drawing_CanvasDrawTextBlob(canvas, textBlob, DRAWING_NUMBER_10, FLT_MAX);
+    OH_Drawing_CanvasDrawTextBlob(canvas, textBlob, NUMBER_10, FLT_MAX);
     // 5. Release memory
     OH_Drawing_TextBlobDestroy(textBlob);
     // 5. Release memory
@@ -799,7 +799,7 @@ int TestCanvasClipRectNormal()
     EXPECT_NE(canvas, nullptr);
     // 2. OH_Drawing_RectCreate
     OH_Drawing_Rect *rect =
-        OH_Drawing_RectCreate(DRAWING_NUMBER_10, DRAWING_NUMBER_10, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+        OH_Drawing_RectCreate(NUMBER_10, NUMBER_10, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 3. OH_Drawing_CanvasClipRect with clipOp and doAntiAlias parameters, iterate through enum values
@@ -828,7 +828,7 @@ int TestCanvasClipRectNull()
     EXPECT_NE(canvas, nullptr);
     // 2. OH_Drawing_RectCreate
     OH_Drawing_Rect *rect =
-        OH_Drawing_RectCreate(DRAWING_NUMBER_10, DRAWING_NUMBER_10, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+        OH_Drawing_RectCreate(NUMBER_10, NUMBER_10, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 3. OH_Drawing_CanvasClipRect with the first parameter being nullptr
@@ -838,19 +838,19 @@ int TestCanvasClipRectNull()
     OH_Drawing_ErrorCodeReset();
     // 4. OH_Drawing_CanvasClipRect with the second parameter OH_Drawing_Rect created with left, top, right, and bottom
     // values being 0
-    OH_Drawing_Rect *rect2 = OH_Drawing_RectCreate(0, DRAWING_NUMBER_10, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect2 = OH_Drawing_RectCreate(0, NUMBER_10, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect2, nullptr);
     OH_Drawing_CanvasClipRect(canvas, rect2, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
-    rect2 = OH_Drawing_RectCreate(DRAWING_NUMBER_10, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    rect2 = OH_Drawing_RectCreate(NUMBER_10, 0, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect2, nullptr);
     OH_Drawing_CanvasClipRect(canvas, rect2, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
-    rect2 = OH_Drawing_RectCreate(DRAWING_NUMBER_10, DRAWING_NUMBER_10, 0, DRAWING_NUMBER_100);
+    rect2 = OH_Drawing_RectCreate(NUMBER_10, NUMBER_10, 0, NUMBER_100);
     // add assert
     EXPECT_NE(rect2, nullptr);
     OH_Drawing_CanvasClipRect(canvas, rect2, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
-    rect2 = OH_Drawing_RectCreate(DRAWING_NUMBER_10, DRAWING_NUMBER_10, DRAWING_NUMBER_100, 0);
+    rect2 = OH_Drawing_RectCreate(NUMBER_10, NUMBER_10, NUMBER_100, 0);
     // add assert
     EXPECT_NE(rect2, nullptr);
     OH_Drawing_CanvasClipRect(canvas, rect2, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
@@ -881,42 +881,42 @@ int TestCanvasClipRectAbnormal()
     EXPECT_NE(canvas, nullptr);
     // 2. OH_Drawing_CanvasClipRect with OH_Drawing_Rect created with negative values for left, top, right, and bottom
     OH_Drawing_Rect *rect =
-        OH_Drawing_RectCreate(-DRAWING_NUMBER_10, DRAWING_NUMBER_10, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+        OH_Drawing_RectCreate(-NUMBER_10, NUMBER_10, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_CanvasClipRect(canvas, rect, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_10, -DRAWING_NUMBER_10, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    rect = OH_Drawing_RectCreate(NUMBER_10, -NUMBER_10, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_CanvasClipRect(canvas, rect, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_10, DRAWING_NUMBER_10, -DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    rect = OH_Drawing_RectCreate(NUMBER_10, NUMBER_10, -NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_CanvasClipRect(canvas, rect, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_10, DRAWING_NUMBER_10, DRAWING_NUMBER_100, -DRAWING_NUMBER_100);
+    rect = OH_Drawing_RectCreate(NUMBER_10, NUMBER_10, NUMBER_100, -NUMBER_100);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_CanvasClipRect(canvas, rect, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
     // 3. OH_Drawing_CanvasClipRect with OH_Drawing_Rect created where the x-coordinate of the top-left corner is equal
     // to the x-coordinate of the bottom-right corner, or the y-coordinate of the top-left corner is equal to the
     // y-coordinate of the bottom-right corner
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_10, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    rect = OH_Drawing_RectCreate(NUMBER_100, NUMBER_10, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_CanvasClipRect(canvas, rect, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_10, DRAWING_NUMBER_100, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    rect = OH_Drawing_RectCreate(NUMBER_10, NUMBER_100, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_CanvasClipRect(canvas, rect, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
     // 4. OH_Drawing_CanvasClipRect with OH_Drawing_Rect created where the top-left corner coordinates are equal to the
     // bottom-right corner coordinates
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    rect = OH_Drawing_RectCreate(NUMBER_100, NUMBER_100, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_CanvasClipRect(canvas, rect, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
     // 5. OH_Drawing_CanvasClipRect with OH_Drawing_Rect created where the top-left corner coordinates are greater than
     // the bottom-right corner coordinates
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_200, DRAWING_NUMBER_200, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    rect = OH_Drawing_RectCreate(NUMBER_200, NUMBER_200, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_CanvasClipRect(canvas, rect, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
@@ -935,19 +935,19 @@ int TestCanvasClipRectMaximum()
     // add assert
     EXPECT_NE(canvas, nullptr);
     // 2. OH_Drawing_CanvasClipRect with OH_Drawing_Rect created with extreme values for left, top, right, and bottom
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(FLT_MAX, DRAWING_NUMBER_10, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(FLT_MAX, NUMBER_10, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_CanvasClipRect(canvas, rect, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_10, FLT_MAX, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    rect = OH_Drawing_RectCreate(NUMBER_10, FLT_MAX, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_CanvasClipRect(canvas, rect, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_10, DRAWING_NUMBER_10, FLT_MAX, DRAWING_NUMBER_100);
+    rect = OH_Drawing_RectCreate(NUMBER_10, NUMBER_10, FLT_MAX, NUMBER_100);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_CanvasClipRect(canvas, rect, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_10, DRAWING_NUMBER_10, DRAWING_NUMBER_100, FLT_MAX);
+    rect = OH_Drawing_RectCreate(NUMBER_10, NUMBER_10, NUMBER_100, FLT_MAX);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_CanvasClipRect(canvas, rect, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
@@ -975,10 +975,10 @@ int TestCanvasClipRoundRectNormal()
     EXPECT_NE(canvas, nullptr);
     // 2. OH_Drawing_RoundRectCreate
     OH_Drawing_Rect *rect =
-        OH_Drawing_RectCreate(DRAWING_NUMBER_10, DRAWING_NUMBER_10, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+        OH_Drawing_RectCreate(NUMBER_10, NUMBER_10, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect, nullptr);
-    OH_Drawing_RoundRect *roundRect = OH_Drawing_RoundRectCreate(rect, DRAWING_NUMBER_10, DRAWING_NUMBER_10);
+    OH_Drawing_RoundRect *roundRect = OH_Drawing_RoundRectCreate(rect, NUMBER_10, NUMBER_10);
     // add assert
     EXPECT_NE(roundRect, nullptr);
     // 3. OH_Drawing_CanvasClipRoundRect with parameters clipOp and doAntiAlias, iterate through the enumeration values
@@ -1002,42 +1002,42 @@ int TestCanvasClipRoundRectNormal()
 void CanvasClipRoundRectNull(OH_Drawing_Canvas *canvas)
 {
     // 5. OH_Drawing_CanvasClipRoundRect with the second parameter OH_Drawing_RoundRectCreate created with rect's left,
-    OH_Drawing_Rect *rect2 = OH_Drawing_RectCreate(0, DRAWING_NUMBER_10, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect2 = OH_Drawing_RectCreate(0, NUMBER_10, NUMBER_100, NUMBER_100);
     EXPECT_NE(rect2, nullptr);
-    OH_Drawing_RoundRect *roundRect2 = OH_Drawing_RoundRectCreate(rect2, DRAWING_NUMBER_10, DRAWING_NUMBER_10);
+    OH_Drawing_RoundRect *roundRect2 = OH_Drawing_RoundRectCreate(rect2, NUMBER_10, NUMBER_10);
     EXPECT_NE(roundRect2, nullptr);
     OH_Drawing_CanvasClipRoundRect(canvas, roundRect2, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
-    rect2 = OH_Drawing_RectCreate(DRAWING_NUMBER_10, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    rect2 = OH_Drawing_RectCreate(NUMBER_10, 0, NUMBER_100, NUMBER_100);
     EXPECT_NE(rect2, nullptr);
-    roundRect2 = OH_Drawing_RoundRectCreate(rect2, DRAWING_NUMBER_10, DRAWING_NUMBER_10);
+    roundRect2 = OH_Drawing_RoundRectCreate(rect2, NUMBER_10, NUMBER_10);
     EXPECT_NE(roundRect2, nullptr);
     OH_Drawing_CanvasClipRoundRect(canvas, roundRect2, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
-    rect2 = OH_Drawing_RectCreate(DRAWING_NUMBER_10, DRAWING_NUMBER_10, 0, DRAWING_NUMBER_100);
+    rect2 = OH_Drawing_RectCreate(NUMBER_10, NUMBER_10, 0, NUMBER_100);
     EXPECT_NE(rect2, nullptr);
-    roundRect2 = OH_Drawing_RoundRectCreate(rect2, DRAWING_NUMBER_10, DRAWING_NUMBER_10);
+    roundRect2 = OH_Drawing_RoundRectCreate(rect2, NUMBER_10, NUMBER_10);
     EXPECT_NE(roundRect2, nullptr);
     OH_Drawing_CanvasClipRoundRect(canvas, roundRect2, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
-    rect2 = OH_Drawing_RectCreate(DRAWING_NUMBER_10, DRAWING_NUMBER_10, DRAWING_NUMBER_100, 0);
+    rect2 = OH_Drawing_RectCreate(NUMBER_10, NUMBER_10, NUMBER_100, 0);
     EXPECT_NE(rect2, nullptr);
-    roundRect2 = OH_Drawing_RoundRectCreate(rect2, DRAWING_NUMBER_10, DRAWING_NUMBER_10);
+    roundRect2 = OH_Drawing_RoundRectCreate(rect2, NUMBER_10, NUMBER_10);
     EXPECT_NE(roundRect2, nullptr);
     OH_Drawing_CanvasClipRoundRect(canvas, roundRect2, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
     // 6. OH_Drawing_CanvasClipRoundRect with the second parameter OH_Drawing_RoundRectCreate created with all rect's
     rect2 = OH_Drawing_RectCreate(0, 0, 0, 0);
     EXPECT_NE(rect2, nullptr);
-    roundRect2 = OH_Drawing_RoundRectCreate(rect2, DRAWING_NUMBER_10, DRAWING_NUMBER_10);
+    roundRect2 = OH_Drawing_RoundRectCreate(rect2, NUMBER_10, NUMBER_10);
     EXPECT_NE(roundRect2, nullptr);
     OH_Drawing_CanvasClipRoundRect(canvas, roundRect2, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
     // 7. OH_Drawing_CanvasClipRoundRect with the second parameter OH_Drawing_RoundRectCreate created with xRad set to 0
-    rect2 = OH_Drawing_RectCreate(DRAWING_NUMBER_10, DRAWING_NUMBER_10, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    rect2 = OH_Drawing_RectCreate(NUMBER_10, NUMBER_10, NUMBER_100, NUMBER_100);
     EXPECT_NE(rect2, nullptr);
-    roundRect2 = OH_Drawing_RoundRectCreate(rect2, 0, DRAWING_NUMBER_10);
+    roundRect2 = OH_Drawing_RoundRectCreate(rect2, 0, NUMBER_10);
     EXPECT_NE(roundRect2, nullptr);
     OH_Drawing_CanvasClipRoundRect(canvas, roundRect2, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
     // 8. OH_Drawing_CanvasClipRoundRect with the second parameter OH_Drawing_RoundRectCreate created with yRad set to 0
-    rect2 = OH_Drawing_RectCreate(DRAWING_NUMBER_10, DRAWING_NUMBER_10, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    rect2 = OH_Drawing_RectCreate(NUMBER_10, NUMBER_10, NUMBER_100, NUMBER_100);
     EXPECT_NE(rect2, nullptr);
-    roundRect2 = OH_Drawing_RoundRectCreate(rect2, DRAWING_NUMBER_10, 0);
+    roundRect2 = OH_Drawing_RoundRectCreate(rect2, NUMBER_10, 0);
     EXPECT_NE(roundRect2, nullptr);
     OH_Drawing_CanvasClipRoundRect(canvas, roundRect2, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
     OH_Drawing_RectDestroy(rect2);
@@ -1052,9 +1052,9 @@ int TestCanvasClipRoundRectNull()
     EXPECT_NE(canvas, nullptr);
     // 2. OH_Drawing_RoundRectCreate
     OH_Drawing_Rect *rect =
-        OH_Drawing_RectCreate(DRAWING_NUMBER_10, DRAWING_NUMBER_10, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+        OH_Drawing_RectCreate(NUMBER_10, NUMBER_10, NUMBER_100, NUMBER_100);
     EXPECT_NE(rect, nullptr);
-    OH_Drawing_RoundRect *roundRect = OH_Drawing_RoundRectCreate(rect, DRAWING_NUMBER_10, DRAWING_NUMBER_10);
+    OH_Drawing_RoundRect *roundRect = OH_Drawing_RoundRectCreate(rect, NUMBER_10, NUMBER_10);
     EXPECT_NE(roundRect, nullptr);
     // 3. OH_Drawing_CanvasClipRoundRect with the first parameter being null
     OH_Drawing_CanvasClipRoundRect(nullptr, roundRect, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
@@ -1075,35 +1075,35 @@ int TestCanvasClipRoundRectNull()
 void CanvasClipRoundRectAbnormal(OH_Drawing_Canvas *canvas, OH_Drawing_Rect *rect, OH_Drawing_RoundRect *roundRect)
 {
     // 2. OH_Drawing_CanvasClipRoundRect, pass negative values for left, top, right, and bottom when creating
-    rect = OH_Drawing_RectCreate(-DRAWING_NUMBER_10, DRAWING_NUMBER_10, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    rect = OH_Drawing_RectCreate(-NUMBER_10, NUMBER_10, NUMBER_100, NUMBER_100);
     EXPECT_NE(rect, nullptr);
-    roundRect = OH_Drawing_RoundRectCreate(rect, DRAWING_NUMBER_10, DRAWING_NUMBER_10);
+    roundRect = OH_Drawing_RoundRectCreate(rect, NUMBER_10, NUMBER_10);
     EXPECT_NE(roundRect, nullptr);
     OH_Drawing_CanvasClipRoundRect(canvas, roundRect, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_10, -DRAWING_NUMBER_10, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    rect = OH_Drawing_RectCreate(NUMBER_10, -NUMBER_10, NUMBER_100, NUMBER_100);
     EXPECT_NE(rect, nullptr);
-    roundRect = OH_Drawing_RoundRectCreate(rect, DRAWING_NUMBER_10, DRAWING_NUMBER_10);
+    roundRect = OH_Drawing_RoundRectCreate(rect, NUMBER_10, NUMBER_10);
     EXPECT_NE(roundRect, nullptr);
     OH_Drawing_CanvasClipRoundRect(canvas, roundRect, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_10, DRAWING_NUMBER_10, -DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    rect = OH_Drawing_RectCreate(NUMBER_10, NUMBER_10, -NUMBER_100, NUMBER_100);
     EXPECT_NE(rect, nullptr);
-    roundRect = OH_Drawing_RoundRectCreate(rect, DRAWING_NUMBER_10, DRAWING_NUMBER_10);
+    roundRect = OH_Drawing_RoundRectCreate(rect, NUMBER_10, NUMBER_10);
     EXPECT_NE(roundRect, nullptr);
     OH_Drawing_CanvasClipRoundRect(canvas, roundRect, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_10, DRAWING_NUMBER_10, DRAWING_NUMBER_100, -DRAWING_NUMBER_100);
+    rect = OH_Drawing_RectCreate(NUMBER_10, NUMBER_10, NUMBER_100, -NUMBER_100);
     EXPECT_NE(rect, nullptr);
-    roundRect = OH_Drawing_RoundRectCreate(rect, DRAWING_NUMBER_10, DRAWING_NUMBER_10);
+    roundRect = OH_Drawing_RoundRectCreate(rect, NUMBER_10, NUMBER_10);
     EXPECT_NE(roundRect, nullptr);
     OH_Drawing_CanvasClipRoundRect(canvas, roundRect, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
     // 3. OH_Drawing_CanvasClipRoundRect, pass OH_Drawing_RoundRect with left-top coordinates equal to right-bottom
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_10, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    rect = OH_Drawing_RectCreate(NUMBER_100, NUMBER_10, NUMBER_100, NUMBER_100);
     EXPECT_NE(rect, nullptr);
-    roundRect = OH_Drawing_RoundRectCreate(rect, DRAWING_NUMBER_10, DRAWING_NUMBER_10);
+    roundRect = OH_Drawing_RoundRectCreate(rect, NUMBER_10, NUMBER_10);
     EXPECT_NE(roundRect, nullptr);
     OH_Drawing_CanvasClipRoundRect(canvas, roundRect, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_10, DRAWING_NUMBER_100, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    rect = OH_Drawing_RectCreate(NUMBER_10, NUMBER_100, NUMBER_100, NUMBER_100);
     EXPECT_NE(rect, nullptr);
-    roundRect = OH_Drawing_RoundRectCreate(rect, DRAWING_NUMBER_10, DRAWING_NUMBER_10);
+    roundRect = OH_Drawing_RoundRectCreate(rect, NUMBER_10, NUMBER_10);
     EXPECT_NE(roundRect, nullptr);
     OH_Drawing_CanvasClipRoundRect(canvas, roundRect, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
 }
@@ -1118,27 +1118,27 @@ int TestCanvasClipRoundRectAbnormal()
     OH_Drawing_RoundRect *roundRect = nullptr;
     CanvasClipRoundRectAbnormal(canvas, rect, roundRect);
     // 4. OH_Drawing_CanvasClipRoundRect, pass OH_Drawing_RoundRect with left-top coordinates equal to right-bottom
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    rect = OH_Drawing_RectCreate(NUMBER_100, NUMBER_100, NUMBER_100, NUMBER_100);
     EXPECT_NE(rect, nullptr);
-    roundRect = OH_Drawing_RoundRectCreate(rect, DRAWING_NUMBER_10, DRAWING_NUMBER_10);
+    roundRect = OH_Drawing_RoundRectCreate(rect, NUMBER_10, NUMBER_10);
     EXPECT_NE(roundRect, nullptr);
     OH_Drawing_CanvasClipRoundRect(canvas, roundRect, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
     // 5. OH_Drawing_CanvasClipRoundRect, pass OH_Drawing_RoundRect with left-top coordinates greater than right-bottom
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_200, DRAWING_NUMBER_200, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    rect = OH_Drawing_RectCreate(NUMBER_200, NUMBER_200, NUMBER_100, NUMBER_100);
     EXPECT_NE(rect, nullptr);
-    roundRect = OH_Drawing_RoundRectCreate(rect, DRAWING_NUMBER_10, DRAWING_NUMBER_10);
+    roundRect = OH_Drawing_RoundRectCreate(rect, NUMBER_10, NUMBER_10);
     EXPECT_NE(roundRect, nullptr);
     OH_Drawing_CanvasClipRoundRect(canvas, roundRect, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
     // 6. OH_Drawing_CanvasClipRoundRect, pass OH_Drawing_RoundRect with negative xRad
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_10, DRAWING_NUMBER_10, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    rect = OH_Drawing_RectCreate(NUMBER_10, NUMBER_10, NUMBER_100, NUMBER_100);
     EXPECT_NE(rect, nullptr);
-    roundRect = OH_Drawing_RoundRectCreate(rect, -DRAWING_NUMBER_10, DRAWING_NUMBER_10);
+    roundRect = OH_Drawing_RoundRectCreate(rect, -NUMBER_10, NUMBER_10);
     EXPECT_NE(roundRect, nullptr);
     OH_Drawing_CanvasClipRoundRect(canvas, roundRect, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
     // 7. OH_Drawing_CanvasClipRoundRect, pass OH_Drawing_RoundRect with negative yRad
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_10, DRAWING_NUMBER_10, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    rect = OH_Drawing_RectCreate(NUMBER_10, NUMBER_10, NUMBER_100, NUMBER_100);
     EXPECT_NE(rect, nullptr);
-    roundRect = OH_Drawing_RoundRectCreate(rect, DRAWING_NUMBER_10, -DRAWING_NUMBER_10);
+    roundRect = OH_Drawing_RoundRectCreate(rect, NUMBER_10, -NUMBER_10);
     EXPECT_NE(roundRect, nullptr);
     OH_Drawing_CanvasClipRoundRect(canvas, roundRect, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
     // 8. Release memory
@@ -1158,47 +1158,47 @@ int TestCanvasClipRoundRectMaximum()
     EXPECT_NE(canvas, nullptr);
     // 2. OH_Drawing_CanvasClipRoundRect, pass extreme values for left, top, right, and bottom when creating
     // OH_Drawing_RoundRect
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(FLT_MAX, DRAWING_NUMBER_10, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(FLT_MAX, NUMBER_10, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect, nullptr);
-    OH_Drawing_RoundRect *roundRect = OH_Drawing_RoundRectCreate(rect, DRAWING_NUMBER_10, DRAWING_NUMBER_10);
+    OH_Drawing_RoundRect *roundRect = OH_Drawing_RoundRectCreate(rect, NUMBER_10, NUMBER_10);
     // add assert
     EXPECT_NE(roundRect, nullptr);
     OH_Drawing_CanvasClipRoundRect(canvas, roundRect, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_10, FLT_MAX, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    rect = OH_Drawing_RectCreate(NUMBER_10, FLT_MAX, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect, nullptr);
-    roundRect = OH_Drawing_RoundRectCreate(rect, DRAWING_NUMBER_10, DRAWING_NUMBER_10);
+    roundRect = OH_Drawing_RoundRectCreate(rect, NUMBER_10, NUMBER_10);
     // add assert
     EXPECT_NE(roundRect, nullptr);
     OH_Drawing_CanvasClipRoundRect(canvas, roundRect, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_10, DRAWING_NUMBER_10, FLT_MAX, DRAWING_NUMBER_100);
+    rect = OH_Drawing_RectCreate(NUMBER_10, NUMBER_10, FLT_MAX, NUMBER_100);
     // add assert
     EXPECT_NE(rect, nullptr);
-    roundRect = OH_Drawing_RoundRectCreate(rect, DRAWING_NUMBER_10, DRAWING_NUMBER_10);
+    roundRect = OH_Drawing_RoundRectCreate(rect, NUMBER_10, NUMBER_10);
     // add assert
     EXPECT_NE(roundRect, nullptr);
     OH_Drawing_CanvasClipRoundRect(canvas, roundRect, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_10, DRAWING_NUMBER_10, DRAWING_NUMBER_100, FLT_MAX);
+    rect = OH_Drawing_RectCreate(NUMBER_10, NUMBER_10, NUMBER_100, FLT_MAX);
     // add assert
     EXPECT_NE(rect, nullptr);
-    roundRect = OH_Drawing_RoundRectCreate(rect, DRAWING_NUMBER_10, DRAWING_NUMBER_10);
+    roundRect = OH_Drawing_RoundRectCreate(rect, NUMBER_10, NUMBER_10);
     // add assert
     EXPECT_NE(roundRect, nullptr);
     OH_Drawing_CanvasClipRoundRect(canvas, roundRect, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
     // 3. OH_Drawing_CanvasClipRoundRect, pass FLT_MAX for xRad when creating OH_Drawing_RoundRect
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_10, DRAWING_NUMBER_10, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    rect = OH_Drawing_RectCreate(NUMBER_10, NUMBER_10, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect, nullptr);
-    roundRect = OH_Drawing_RoundRectCreate(rect, FLT_MAX, DRAWING_NUMBER_10);
+    roundRect = OH_Drawing_RoundRectCreate(rect, FLT_MAX, NUMBER_10);
     // add assert
     EXPECT_NE(roundRect, nullptr);
     OH_Drawing_CanvasClipRoundRect(canvas, roundRect, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
     // 4. OH_Drawing_CanvasClipRoundRect, pass FLT_MAX for yRad when creating OH_Drawing_RoundRect
-    rect = OH_Drawing_RectCreate(DRAWING_NUMBER_10, DRAWING_NUMBER_10, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    rect = OH_Drawing_RectCreate(NUMBER_10, NUMBER_10, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect, nullptr);
-    roundRect = OH_Drawing_RoundRectCreate(rect, DRAWING_NUMBER_10, FLT_MAX);
+    roundRect = OH_Drawing_RoundRectCreate(rect, NUMBER_10, FLT_MAX);
     // add assert
     EXPECT_NE(roundRect, nullptr);
     OH_Drawing_CanvasClipRoundRect(canvas, roundRect, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
@@ -1230,12 +1230,12 @@ int TestCanvasClipPathNormal()
     // add assert
     EXPECT_NE(path, nullptr);
     OH_Drawing_PathMoveTo(path, 0, 0);
-    OH_Drawing_PathLineTo(path, DRAWING_NUMBER_100, 0);
-    OH_Drawing_PathLineTo(path, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
-    OH_Drawing_PathLineTo(path, 0, DRAWING_NUMBER_100);
+    OH_Drawing_PathLineTo(path, NUMBER_100, 0);
+    OH_Drawing_PathLineTo(path, NUMBER_100, NUMBER_100);
+    OH_Drawing_PathLineTo(path, 0, NUMBER_100);
     OH_Drawing_PathClose(path);
     // 3. OH_Drawing_PathAddRect
-    OH_Drawing_PathAddRect(path, DRAWING_NUMBER_10, DRAWING_NUMBER_10, DRAWING_NUMBER_100, DRAWING_NUMBER_100,
+    OH_Drawing_PathAddRect(path, NUMBER_10, NUMBER_10, NUMBER_100, NUMBER_100,
                            OH_Drawing_PathDirection::PATH_DIRECTION_CW);
     // 4. OH_Drawing_CanvasClipPath
     OH_Drawing_CanvasClipOp clipOp[] = {OH_Drawing_CanvasClipOp::DIFFERENCE, OH_Drawing_CanvasClipOp::INTERSECT};
@@ -1267,12 +1267,12 @@ int TestCanvasClipPathNull()
     // add assert
     EXPECT_NE(path, nullptr);
     OH_Drawing_PathMoveTo(path, 0, 0);
-    OH_Drawing_PathLineTo(path, DRAWING_NUMBER_100, 0);
-    OH_Drawing_PathLineTo(path, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
-    OH_Drawing_PathLineTo(path, 0, DRAWING_NUMBER_100);
+    OH_Drawing_PathLineTo(path, NUMBER_100, 0);
+    OH_Drawing_PathLineTo(path, NUMBER_100, NUMBER_100);
+    OH_Drawing_PathLineTo(path, 0, NUMBER_100);
     OH_Drawing_PathClose(path);
     // 3. OH_Drawing_PathAddRect
-    OH_Drawing_PathAddRect(path, DRAWING_NUMBER_10, DRAWING_NUMBER_10, DRAWING_NUMBER_100, DRAWING_NUMBER_100,
+    OH_Drawing_PathAddRect(path, NUMBER_10, NUMBER_10, NUMBER_100, NUMBER_100,
                            OH_Drawing_PathDirection::PATH_DIRECTION_CW);
     // 4. OH_Drawing_CanvasClipPath with the first parameter being null
     OH_Drawing_CanvasClipPath(nullptr, path, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
@@ -1311,17 +1311,17 @@ int TestCanvasRotateNormal()
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
     // add assert
     EXPECT_NE(canvas, nullptr);
-    // 2. OH_Drawing_CanvasRotate, rotate degrees with values 0, DRAWING_NUMBER_180, 360
-    float degrees[] = {0, DRAWING_NUMBER_180, 360};
+    // 2. OH_Drawing_CanvasRotate, rotate degrees with values 0, NUMBER_180, 360
+    float degrees[] = {0, NUMBER_180, 360};
     for (int i = 0; i < sizeof(degrees) / sizeof(degrees[0]); i++) {
         OH_Drawing_ErrorCodeReset();
-        OH_Drawing_CanvasRotate(canvas, degrees[i], DRAWING_NUMBER_10, DRAWING_NUMBER_10);
+        OH_Drawing_CanvasRotate(canvas, degrees[i], NUMBER_10, NUMBER_10);
         // add assert
         EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     }
     // 3. Call drawing class interface to draw a rectangle
     OH_Drawing_Rect *rect =
-        OH_Drawing_RectCreate(DRAWING_NUMBER_10, DRAWING_NUMBER_10, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+        OH_Drawing_RectCreate(NUMBER_10, NUMBER_10, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_CanvasDrawRect(canvas, rect);
@@ -1339,13 +1339,13 @@ int TestCanvasRotateNull()
     // add assert
     EXPECT_NE(canvas, nullptr);
     // 2. OH_Drawing_CanvasRotate with the first parameter being null
-    OH_Drawing_CanvasRotate(nullptr, 0, DRAWING_NUMBER_10, DRAWING_NUMBER_10);
+    OH_Drawing_CanvasRotate(nullptr, 0, NUMBER_10, NUMBER_10);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 3. OH_Drawing_CanvasRotate with the third parameter being 0
-    OH_Drawing_CanvasRotate(canvas, 0, 0, DRAWING_NUMBER_10);
+    OH_Drawing_CanvasRotate(canvas, 0, 0, NUMBER_10);
     // 4. OH_Drawing_CanvasRotate with the fourth parameter being 0
-    OH_Drawing_CanvasRotate(canvas, 0, DRAWING_NUMBER_10, 0);
+    OH_Drawing_CanvasRotate(canvas, 0, NUMBER_10, 0);
     // 5. Free memory
     OH_Drawing_CanvasDestroy(canvas);
     DrawingNativeCanvasPart3TestTearDown();
@@ -1360,13 +1360,13 @@ int TestCanvasRotateAbnormal()
     // add assert
     EXPECT_NE(canvas, nullptr);
     // 2. OH_Drawing_CanvasRotate with negative degrees input
-    OH_Drawing_CanvasRotate(canvas, -DRAWING_NUMBER_180, DRAWING_NUMBER_10, DRAWING_NUMBER_10);
+    OH_Drawing_CanvasRotate(canvas, -NUMBER_180, NUMBER_10, NUMBER_10);
     // 3. OH_Drawing_CanvasRotate with degrees input greater than 360
-    OH_Drawing_CanvasRotate(canvas, DRAWING_NUMBER_370, DRAWING_NUMBER_10, DRAWING_NUMBER_10);
+    OH_Drawing_CanvasRotate(canvas, NUMBER_370, NUMBER_10, NUMBER_10);
     // 4. OH_Drawing_CanvasRotate with negative px input for rotation center
-    OH_Drawing_CanvasRotate(canvas, DRAWING_NUMBER_180, -DRAWING_NUMBER_10, DRAWING_NUMBER_10);
+    OH_Drawing_CanvasRotate(canvas, NUMBER_180, -NUMBER_10, NUMBER_10);
     // 5. OH_Drawing_CanvasRotate with negative py input for rotation center
-    OH_Drawing_CanvasRotate(canvas, DRAWING_NUMBER_180, DRAWING_NUMBER_10, -DRAWING_NUMBER_10);
+    OH_Drawing_CanvasRotate(canvas, NUMBER_180, NUMBER_10, -NUMBER_10);
     // 6. Free memory
     OH_Drawing_CanvasDestroy(canvas);
     DrawingNativeCanvasPart3TestTearDown();
@@ -1381,11 +1381,11 @@ int TestCanvasRotateMaximum()
     // add assert
     EXPECT_NE(canvas, nullptr);
     // 2. OH_Drawing_CanvasRotate with maximum rotation angle degrees input
-    OH_Drawing_CanvasRotate(canvas, FLT_MAX, DRAWING_NUMBER_10, DRAWING_NUMBER_10);
+    OH_Drawing_CanvasRotate(canvas, FLT_MAX, NUMBER_10, NUMBER_10);
     // 3. OH_Drawing_CanvasRotate with maximum x-coordinate px input for rotation center
-    OH_Drawing_CanvasRotate(canvas, DRAWING_NUMBER_180, FLT_MAX, DRAWING_NUMBER_10);
+    OH_Drawing_CanvasRotate(canvas, NUMBER_180, FLT_MAX, NUMBER_10);
     // 4. OH_Drawing_CanvasRotate with maximum y-coordinate py input for rotation center
-    OH_Drawing_CanvasRotate(canvas, DRAWING_NUMBER_180, DRAWING_NUMBER_10, FLT_MAX);
+    OH_Drawing_CanvasRotate(canvas, NUMBER_180, NUMBER_10, FLT_MAX);
     // 5. Free memory
     OH_Drawing_CanvasDestroy(canvas);
     DrawingNativeCanvasPart3TestTearDown();
@@ -1409,11 +1409,11 @@ int TestCanvasRotateMultipleCalls()
     EXPECT_NE(canvas, nullptr);
     // 2. Call OH_Drawing_CanvasRotate 10 times, each time with different rotation angles and rotation center
     // coordinates
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
-        OH_Drawing_CanvasRotate(canvas, i * DRAWING_NUMBER_10, i * DRAWING_NUMBER_10, i * DRAWING_NUMBER_10);
+    for (int i = 0; i < NUMBER_10; i++) {
+        OH_Drawing_CanvasRotate(canvas, i * NUMBER_10, i * NUMBER_10, i * NUMBER_10);
         // 3. Call drawing class interface
         OH_Drawing_Rect *rect =
-            OH_Drawing_RectCreate(DRAWING_NUMBER_10, DRAWING_NUMBER_10, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+            OH_Drawing_RectCreate(NUMBER_10, NUMBER_10, NUMBER_100, NUMBER_100);
         // add assert
         EXPECT_NE(rect, nullptr);
         OH_Drawing_CanvasDrawRect(canvas, rect);
@@ -1433,12 +1433,12 @@ int TestCanvasTranslateNormal()
     // add assert
     EXPECT_NE(canvas, nullptr);
     // 2. OH_Drawing_CanvasTranslate
-    OH_Drawing_CanvasTranslate(canvas, DRAWING_NUMBER_10, DRAWING_NUMBER_10);
+    OH_Drawing_CanvasTranslate(canvas, NUMBER_10, NUMBER_10);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // 3. Call drawing class interface to draw a rectangle
     OH_Drawing_Rect *rect =
-        OH_Drawing_RectCreate(DRAWING_NUMBER_10, DRAWING_NUMBER_10, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+        OH_Drawing_RectCreate(NUMBER_10, NUMBER_10, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_CanvasDrawRect(canvas, rect);
@@ -1457,13 +1457,13 @@ int TestCanvasTranslateNull()
     // add assert
     EXPECT_NE(canvas, nullptr);
     // 2. OH_Drawing_CanvasTranslate with the first parameter being null
-    OH_Drawing_CanvasTranslate(nullptr, DRAWING_NUMBER_10, DRAWING_NUMBER_10);
+    OH_Drawing_CanvasTranslate(nullptr, NUMBER_10, NUMBER_10);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 3. OH_Drawing_CanvasTranslate with the second parameter being 0
-    OH_Drawing_CanvasTranslate(canvas, 0, DRAWING_NUMBER_10);
+    OH_Drawing_CanvasTranslate(canvas, 0, NUMBER_10);
     // 4. OH_Drawing_CanvasTranslate with the third parameter being 0
-    OH_Drawing_CanvasTranslate(canvas, DRAWING_NUMBER_10, 0);
+    OH_Drawing_CanvasTranslate(canvas, NUMBER_10, 0);
     // 5. Free memory
     OH_Drawing_CanvasDestroy(canvas);
     DrawingNativeCanvasPart3TestTearDown();
@@ -1478,9 +1478,9 @@ int TestCanvasTranslateAbnormal()
     // add assert
     EXPECT_NE(canvas, nullptr);
     // 2. OH_Drawing_CanvasTranslate with negative movement distance dx in the x-axis direction
-    OH_Drawing_CanvasTranslate(canvas, -DRAWING_NUMBER_10, DRAWING_NUMBER_10);
+    OH_Drawing_CanvasTranslate(canvas, -NUMBER_10, NUMBER_10);
     // 3. OH_Drawing_CanvasTranslate with negative movement distance dy in the y-axis direction
-    OH_Drawing_CanvasTranslate(canvas, DRAWING_NUMBER_10, -DRAWING_NUMBER_10);
+    OH_Drawing_CanvasTranslate(canvas, NUMBER_10, -NUMBER_10);
     // 4. Free memory
     OH_Drawing_CanvasDestroy(canvas);
     DrawingNativeCanvasPart3TestTearDown();
@@ -1495,9 +1495,9 @@ int TestCanvasTranslateMaximum()
     // add assert
     EXPECT_NE(canvas, nullptr);
     // 2. OH_Drawing_CanvasTranslate with the movement distance dx in the x-axis direction being the maximum value
-    OH_Drawing_CanvasTranslate(canvas, FLT_MAX, DRAWING_NUMBER_10);
+    OH_Drawing_CanvasTranslate(canvas, FLT_MAX, NUMBER_10);
     // 3. OH_Drawing_CanvasTranslate with the movement distance dy in the y-axis direction being the maximum value
-    OH_Drawing_CanvasTranslate(canvas, DRAWING_NUMBER_10, FLT_MAX);
+    OH_Drawing_CanvasTranslate(canvas, NUMBER_10, FLT_MAX);
     // 4. Free memory
     OH_Drawing_CanvasDestroy(canvas);
     DrawingNativeCanvasPart3TestTearDown();
@@ -1520,11 +1520,11 @@ int TestCanvasTranslateMultipleCalls()
     // add assert
     EXPECT_NE(canvas, nullptr);
     // 2. Call OH_Drawing_CanvasTranslate 10 times, each time with different movement distances
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
-        OH_Drawing_CanvasTranslate(canvas, i * DRAWING_NUMBER_10, i * DRAWING_NUMBER_10);
+    for (int i = 0; i < NUMBER_10; i++) {
+        OH_Drawing_CanvasTranslate(canvas, i * NUMBER_10, i * NUMBER_10);
         // 3. Call drawing class interface
         OH_Drawing_Rect *rect =
-            OH_Drawing_RectCreate(DRAWING_NUMBER_10, DRAWING_NUMBER_10, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+            OH_Drawing_RectCreate(NUMBER_10, NUMBER_10, NUMBER_100, NUMBER_100);
         // add assert
         EXPECT_NE(rect, nullptr);
         OH_Drawing_CanvasDrawRect(canvas, rect);
@@ -1549,7 +1549,7 @@ int TestCanvasScaleNormal()
 
     // 3. Call drawing class interface
     OH_Drawing_Rect *rect =
-        OH_Drawing_RectCreate(DRAWING_NUMBER_10, DRAWING_NUMBER_10, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+        OH_Drawing_RectCreate(NUMBER_10, NUMBER_10, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_CanvasDrawRect(canvas, rect);
@@ -1642,12 +1642,12 @@ int TestCanvasScaleMultipleCalls()
     // add assert
     EXPECT_NE(canvas, nullptr);
     // 2. Call OH_Drawing_CanvasScale 10 times, each time with different compression ratios
-    for (int i = DRAWING_NUMBER_1; i <= DRAWING_NUMBER_10; i++) {
+    for (int i = NUMBER_1; i <= NUMBER_10; i++) {
         OH_Drawing_CanvasScale(canvas, i * 1.0f, i * 1.0f);
     }
     // 3. Call drawing class interface
     OH_Drawing_Rect *rect =
-        OH_Drawing_RectCreate(DRAWING_NUMBER_10, DRAWING_NUMBER_10, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+        OH_Drawing_RectCreate(NUMBER_10, NUMBER_10, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect, nullptr);
     OH_Drawing_CanvasDrawRect(canvas, rect);

@@ -44,8 +44,7 @@ export default {
       'Startup': 'pages/Startup/deviceInfo/index',
       'Communication': 'pages/Communication/nfc/index',
       'Sensors': 'pages/Sensors/index/index',
-      'Location': 'pages/Location/index/index',
-      'RouterTransition': 'pages/RouterTransition/index/index'
+      'Location': 'pages/Location/index/index'
     };
     let url = routes[subsystem] || 'pages/index/index';
     router.replace({ uri: url });

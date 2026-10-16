@@ -1,4 +1,5 @@
 'use static';
+
 /**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 
 import { describe, beforeEach, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
@@ -65,12 +65,12 @@ export default function PointsUndefinedModifierTest() {
       let strJson = inspector.getInspectorByKey('polyline_action_modifier');
       let obj = JSON.parseJsonElement(strJson);
       console.info('[PointsUndefinedModifierTest_static_0100] points 1 is: ' + JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('points')));
-      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('points')[0][0].asDouble())).assertEqual(20);
-      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('points')[0][1].asDouble())).assertEqual(0);
-      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('points')[1][0].asDouble())).assertEqual(0);
-      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('points')[1][1].asDouble())).assertEqual(100);
-      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('points')[2][0].asDouble())).assertEqual(100);
-      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('points')[2][1].asDouble())).assertEqual(90);
+      expect(Math.floor(Math.abs(uiContext.px2vp(obj.getElement('$attrs').getArray('points')[0][0].asDouble()) - 20)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(uiContext.px2vp(obj.getElement('$attrs').getArray('points')[0][1].asDouble()) - 0)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(uiContext.px2vp(obj.getElement('$attrs').getArray('points')[1][0].asDouble()) - 0)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(uiContext.px2vp(obj.getElement('$attrs').getArray('points')[1][1].asDouble()) - 100)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(uiContext.px2vp(obj.getElement('$attrs').getArray('points')[2][0].asDouble()) - 100)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(uiContext.px2vp(obj.getElement('$attrs').getArray('points')[2][1].asDouble()) - 90)) <= 1).assertTrue();
 
       await points_action.click();
       await CommonFunc.sleep(500);

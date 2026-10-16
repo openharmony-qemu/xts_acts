@@ -189,9 +189,6 @@ it('ArkUI_List_Delete_static_0500', Level.LEVEL1, async (done: () => void): Prom
 
       let driver: Driver = Driver.create()
       await driver.delayMs(1000)
-      const winLeft: number = AppStorage.get<number>("winLeft") as number
-      const winTop: number = AppStorage.get<number>("winTop") as number
-      console.info("windowRect Left: " + winLeft + ',' + "windowRect Top: " + winTop);
       let baseKey: string = 'MyList5_ListItem0'
       let strJson: string = inspector.getInspectorByKey(baseKey);
 
@@ -200,10 +197,14 @@ it('ArkUI_List_Delete_static_0500', Level.LEVEL1, async (done: () => void): Prom
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('endDeleteAreaDistance'))
         .assertEqual("5.00vp");
 
-      let rectCenter: number[] = getRectCenter(JSON.parseJsonElement(strJson).getString('$rect'))
-      await driver.swipe((Math.round(winLeft + rectCenter[0] + (rectCenter[3] - rectCenter[2]) / 4)).toInt(),
-        (Math.round(winTop + rectCenter[1])).toInt(),
-        0, (Math.round(winTop + rectCenter[1])).toInt())
+      let swipeComponent = await driver.findComponent(ON.id(baseKey));
+      let rect = await swipeComponent!.getBounds();
+      let displayId = await swipeComponent!.getDisplayId();
+      await driver.swipeBetween(
+        { x: (Math.round(rect.left + (rect.right - rect.left) / 4)).toInt(),
+          y: (Math.round(rect.top + (rect.bottom - rect.top) / 2)).toInt(), displayId: displayId },
+        { x: rect.left, y: (Math.round(rect.top + (rect.bottom - rect.top) / 2)).toInt(), displayId: displayId }
+      );
       await sleep(3000);
       let strJson2: string = inspector.getInspectorByKey('MyList5ListItemOnDeleteH');
       expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')).assertEqual("action trigger");

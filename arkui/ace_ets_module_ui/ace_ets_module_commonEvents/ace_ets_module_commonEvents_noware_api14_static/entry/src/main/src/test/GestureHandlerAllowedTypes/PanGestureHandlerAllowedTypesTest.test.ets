@@ -17,11 +17,12 @@
 import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { Driver, ON, Point } from '@ohos.UiTest';
+import { Driver, ON, Point } from '@kit.TestKit';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function PanGestureHandlerAllowedTypesTest() {
   describe('PanGestureHandlerAllowedTypesTest', () => {
     beforeEach(async (): Promise<void> => {
@@ -77,7 +78,7 @@ it('PanGestureHandlerAllowedTypesTest_static_0010', Level.LEVEL0, async (done: (
         // trigger gesture with finger
         let driver = Driver.create();
         await CommonFunc.sleep(1000);
-        await driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(),Math.round(areaObj1.top + areaHeight1/2).toInt(),Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(),Math.round(areaObj1.top + areaHeight1/2).toInt())
+        await driver.swipeBetween({x: Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(), y: Math.round(areaObj1.top + areaHeight1/2).toInt(), displayId: displayID}, {x: Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(), y: Math.round(areaObj1.top + areaHeight1/2).toInt(), displayId: displayID})
         await CommonFunc.sleep(3000);
         let text1 = inspector.getInspectorByKey('PanGestureHandlerAllowedTypes_result');
         let obj1 = JSON.parseJsonElement(text1);
@@ -86,7 +87,7 @@ it('PanGestureHandlerAllowedTypesTest_static_0010', Level.LEVEL0, async (done: (
 
         // trigger gesture with mouse
         await CommonFunc.sleep(1000);
-        await driver.mouseDrag({x: Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(),y: Math.round(areaObj1.top + areaHeight1/2).toInt()} as Point, {x: Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(), y: Math.round(areaObj1.top + areaHeight1/2).toInt()} as Point)
+        await driver.mouseDrag({x: Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(),y: Math.round(areaObj1.top + areaHeight1/2).toInt(), displayId: displayID } as Point, {x: Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(), y: Math.round(areaObj1.top + areaHeight1/2).toInt(), displayId: displayID } as Point)
         await CommonFunc.sleep(3000);
         let text2 = inspector.getInspectorByKey('PanGestureHandlerAllowedTypes_result');
         let obj2 = JSON.parseJsonElement(text2);
@@ -104,7 +105,7 @@ it('PanGestureHandlerAllowedTypesTest_static_0010', Level.LEVEL0, async (done: (
 
         // trigger gesture again with finger
         await CommonFunc.sleep(1000);
-        await driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(),Math.round(areaObj1.top + areaHeight1/2).toInt(),Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(),Math.round(areaObj1.top + areaHeight1/2).toInt())
+        await driver.swipeBetween({x: Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(), y: Math.round(areaObj1.top + areaHeight1/2).toInt(), displayId: displayID}, {x: Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(), y: Math.round(areaObj1.top + areaHeight1/2).toInt(), displayId: displayID})
         await CommonFunc.sleep(3000);
         let text4 = inspector.getInspectorByKey('PanGestureHandlerAllowedTypes_result');
         let obj4 = JSON.parseJsonElement(text4);
@@ -113,7 +114,7 @@ it('PanGestureHandlerAllowedTypesTest_static_0010', Level.LEVEL0, async (done: (
 
         // trigger gesture again with mouse
         await CommonFunc.sleep(1000);
-        await driver.mouseDrag({x: Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(),y: Math.round(areaObj1.top + areaHeight1/2).toInt()} as Point, {x: Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(), y: Math.round(areaObj1.top + areaHeight1/2).toInt()} as Point)
+        await driver.mouseDrag({x: Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(),y: Math.round(areaObj1.top + areaHeight1/2).toInt(), displayId: displayID } as Point, {x: Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(), y: Math.round(areaObj1.top + areaHeight1/2).toInt(), displayId: displayID } as Point)
         await CommonFunc.sleep(3000);
         let text5 = inspector.getInspectorByKey('PanGestureHandlerAllowedTypes_result');
         let obj5 = JSON.parseJsonElement(text5);
@@ -131,7 +132,7 @@ it('PanGestureHandlerAllowedTypesTest_static_0010', Level.LEVEL0, async (done: (
 
         // trigger gesture again with mouse
         await CommonFunc.sleep(1000);
-        await driver.mouseDrag({x: Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(),y: Math.round(areaObj1.top + areaHeight1/2).toInt()} as Point, {x: Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(), y: Math.round(areaObj1.top + areaHeight1/2).toInt()} as Point)
+        await driver.mouseDrag({x: Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(),y: Math.round(areaObj1.top + areaHeight1/2).toInt(), displayId: displayID } as Point, {x: Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(), y: Math.round(areaObj1.top + areaHeight1/2).toInt(), displayId: displayID } as Point)
         await CommonFunc.sleep(3000);
         let text7 = inspector.getInspectorByKey('PanGestureHandlerAllowedTypes_result');
         let obj7 = JSON.parseJsonElement(text7);
@@ -140,7 +141,7 @@ it('PanGestureHandlerAllowedTypesTest_static_0010', Level.LEVEL0, async (done: (
 
         // trigger gesture again with finger
         await CommonFunc.sleep(1000);
-        await driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(),Math.round(areaObj1.top + areaHeight1/2).toInt(),Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(),Math.round(areaObj1.top + areaHeight1/2).toInt())
+        await driver.swipeBetween({x: Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(), y: Math.round(areaObj1.top + areaHeight1/2).toInt(), displayId: displayID}, {x: Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(), y: Math.round(areaObj1.top + areaHeight1/2).toInt(), displayId: displayID})
         await CommonFunc.sleep(3000);
         let text8 = inspector.getInspectorByKey('PanGestureHandlerAllowedTypes_result');
         let obj8 = JSON.parseJsonElement(text8);

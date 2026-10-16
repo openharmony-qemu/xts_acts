@@ -36,5 +36,6 @@ group("web") {
     "web_storage:WebStorage",
     "web_switch_core:ActsWebSwitchCoreTest",
     "web_zoom_access:ActsWebZoomAccessTest",
+    "web_zoom_factor_static:ActsWebZoomFactorStaticTest",
   ]
 }

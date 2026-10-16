@@ -21,6 +21,7 @@ import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function longPressEventTest() {
   describe('longPressEvent', () => {
     beforeEach(async (): Promise<void> => {
@@ -67,7 +68,7 @@ it('LongPressGesture1_static_0100', Level.LEVEL0, async (done: () => void): Prom
       console.info('[LongPressGesture1_static_0100] component obj is: ' + JSON.stringify(obj));
       console.info('[LongPressGesture1_static_0100] title: ' +
       JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('0');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual(displayID + '');
       console.info('[LongPressGesture1_static_0100] END');
       done();
     });

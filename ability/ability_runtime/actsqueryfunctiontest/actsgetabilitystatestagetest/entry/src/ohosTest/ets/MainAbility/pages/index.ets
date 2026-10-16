@@ -15,11 +15,11 @@
 
 import router from '@ohos.router';
 import file from '@system.file';
-import testsuite from "../../test/List.test"
+import testsuite from '../../test/List.test'
 
 @Entry
 @Component
-struct Index {
+struct MainAbilityIndex {
   aboutToAppear() {
   }
 

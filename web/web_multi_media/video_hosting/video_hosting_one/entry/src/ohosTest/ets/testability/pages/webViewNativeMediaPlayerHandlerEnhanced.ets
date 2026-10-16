@@ -191,7 +191,6 @@ class AVPlayerDemo {
     }
     pause() {
         console.info('AVPlayer.pause()');
-        Utils.emitEvent(true, 362100)
         this.avPlayer?.pause()
     }
     release() {
@@ -362,6 +361,7 @@ class NativeMediaPlayerImpl implements webview.NativeMediaPlayerBridge{
     pause() {
         console.log('[BrowserShell] ===gpz=== MediaPlayer.pause');
         this.nativePlayer?.pause();
+        Utils.emitEvent(true, 362100)
     }
     seek(targetTime: number) {
         console.log('[BrowserShell] ===gpz=== MediaPlayer.seek(' + targetTime + ')');
@@ -1147,7 +1147,7 @@ struct WebComponent {
                           this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerSetVolume.html'))
                           await Utils.waitForExist(()=>this.isPageEnd, 'webMediaPlayerHandlerIsPageEnd', 1, 1000);
                           this.controller.runJavaScript('setVolumeNumber(1_1)', (error, result) => {
-                              if (error) {
+                              if (error||result===null||result==='null') {
                                   Utils.emitEvent(true, 362360)
                               }
                               console.log(`The setVolumeNumber() return value is: ${result}`);
@@ -1451,7 +1451,7 @@ struct WebComponent {
                               break;
                           case 'emitWebViewNativeMediaPlayerSetVolume1_1':
                               this.controller.runJavaScript('setVolumeNumber(1_1)', (error, result) => {
-                                  if (error) {
+                                  if (error||result===null||result==='null') {
                                       Utils.emitEvent(true, 362360)
                                   }
                                   console.log(`The setVolumeNumber() return value is: ${result}`);

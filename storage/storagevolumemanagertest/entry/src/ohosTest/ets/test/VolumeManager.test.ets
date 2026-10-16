@@ -32,6 +32,7 @@ export default function volumeManagerTest() {
       try {
         let disks: Array<volumeManager.ExternalDiskInfo> = await volumeManager.getExternalDiskInfos();
         console.info('getExternalDiskInfos successfully:' + JSON.stringify(disks));
+        expect(disks.length).assertEqual(0);
       } catch (error) {
         console.info(`Failed to getExternalDiskInfos. Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}`);
         expect(false).assertTrue();
@@ -50,6 +51,7 @@ export default function volumeManagerTest() {
       try {
         let volumes: Array<volumeManager.ExternalVolumeInfo> = await volumeManager.getExternalVolumeInfos();
         console.info('getExternalVolumeInfos successfully:' + JSON.stringify(volumes));
+        expect(volumes.length).assertEqual(0);
       } catch (error) {
         console.info(`Failed to getExternalVolumeInfos. Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}`);
         expect(false).assertTrue();

@@ -1,4 +1,4 @@
-﻿'use static';
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,13 +14,14 @@
  * limitations under the License.
  */
 import { afterEach, beforeEach, describe, expect, it, Level } from '../../../../../hypium/index';
-import { Component, Driver, ON } from '@ohos.UiTest';
+import { Component, Driver, ON } from '@kit.TestKit';
 import router from '@ohos.router';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function FocusScopeId016() {
   describe('FocusScopeId016', () => {
     beforeEach(async (): Promise<void> => {
@@ -82,7 +83,7 @@ export default function FocusScopeId016() {
       }
       console.info('[FocusScopeId016_static_0100] btnOpen click');
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       try {
         await CommonFunc.sleep(1000);
       } catch (err) {
@@ -94,7 +95,7 @@ export default function FocusScopeId016() {
       expect(btn1_isFocusedValue).assertEqual(true);
       console.info('[FocusScopeId016_static_0100] btn1 isFocused');
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       try {
         await CommonFunc.sleep(1000);
       } catch (err) {

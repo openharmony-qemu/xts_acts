@@ -15,13 +15,15 @@
  */
 
 import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
-import { Driver, ON, Component, MouseButton } from '@ohos.UiTest';
+import { Driver, ON, Component, MouseButton } from '@kit.TestKit';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import RectValue from '../../../ets/MainAbility/common/Rect';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+
 import inspector from '@ohos.arkui.inspector';
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function LongPressGestureAllowedTypesTest() {
   describe('LongPressGestureAllowedTypesTest', () => {
     beforeEach(async (): Promise<void> => {
@@ -70,7 +72,7 @@ it('LongPressGestureAllowedTypesTest_static_0010', Level.LEVEL0, async (done: ()
       // trigger gesture with finger
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      await ((driver.longClick(Math.round(areaObj.left + areaWidth/2).toInt(),Math.round(areaObj.top + areaHeight/2).toInt())) as Promise<void>);
+      await ((driver.longClickAt({x: Math.round(areaObj.left + areaWidth/2).toInt(), y: Math.round(areaObj.top + areaHeight/2).toInt(), displayId: displayID})) as Promise<void>);
       await CommonFunc.sleep(3000);
       let text1 = inspector.getInspectorByKey('LongPressGestureAllowedTypes_result');
       let obj1 = JSON.parseJsonElement(text1);
@@ -79,7 +81,7 @@ it('LongPressGestureAllowedTypesTest_static_0010', Level.LEVEL0, async (done: ()
 
       // trigger gesture with mouse
       await CommonFunc.sleep(1000);
-      await ((driver.mouseLongClick({x: Math.round(areaObj.left + areaWidth/2) .toInt(), y: Math.round(areaObj.top + areaHeight/2).toInt()}, MouseButton.MOUSE_BUTTON_LEFT)) as Promise<void>);
+      await ((driver.mouseLongClick({x: Math.round(areaObj.left + areaWidth/2) .toInt(), y: Math.round(areaObj.top + areaHeight/2).toInt(), displayId: displayID}, MouseButton.MOUSE_BUTTON_LEFT)) as Promise<void>);
       await CommonFunc.sleep(3000);
       let text2 = inspector.getInspectorByKey('LongPressGestureAllowedTypes_result');
       let obj2 = JSON.parseJsonElement(text2);
@@ -97,7 +99,7 @@ it('LongPressGestureAllowedTypesTest_static_0010', Level.LEVEL0, async (done: ()
 
       // trigger gesture again with finger
       await CommonFunc.sleep(1000);
-      await ((driver.longClick(Math.round(areaObj.left + areaWidth/2).toInt(),Math.round(areaObj.top + areaHeight/2).toInt())) as Promise<void>);
+      await ((driver.longClickAt({x: Math.round(areaObj.left + areaWidth/2).toInt(), y: Math.round(areaObj.top + areaHeight/2).toInt(), displayId: displayID})) as Promise<void>);
       await CommonFunc.sleep(3000);
       let text4 = inspector.getInspectorByKey('LongPressGestureAllowedTypes_result');
       let obj4 = JSON.parseJsonElement(text4);
@@ -106,7 +108,7 @@ it('LongPressGestureAllowedTypesTest_static_0010', Level.LEVEL0, async (done: ()
 
       // trigger gesture again with mouse
       await CommonFunc.sleep(1000);
-      await ((driver.mouseLongClick({x: Math.round(areaObj.left + areaWidth/2).toInt(), y: Math.round(areaObj.top + areaHeight/2).toInt()}, MouseButton.MOUSE_BUTTON_LEFT)) as Promise<void>);
+      await ((driver.mouseLongClick({x: Math.round(areaObj.left + areaWidth/2).toInt(), y: Math.round(areaObj.top + areaHeight/2).toInt(), displayId: displayID}, MouseButton.MOUSE_BUTTON_LEFT)) as Promise<void>);
       await CommonFunc.sleep(3000);
       let text5 = inspector.getInspectorByKey('LongPressGestureAllowedTypes_result');
       let obj5 = JSON.parseJsonElement(text5);
@@ -124,7 +126,7 @@ it('LongPressGestureAllowedTypesTest_static_0010', Level.LEVEL0, async (done: ()
 
       // trigger gesture again with mouse
       await CommonFunc.sleep(1000);
-      await ((driver.mouseLongClick({x: Math.round(areaObj.left + areaWidth/2).toInt(), y: Math.round(areaObj.top + areaHeight/2) .toInt()}, MouseButton.MOUSE_BUTTON_LEFT)) as Promise<void>);
+      await ((driver.mouseLongClick({x: Math.round(areaObj.left + areaWidth/2).toInt(), y: Math.round(areaObj.top + areaHeight/2) .toInt(), displayId: displayID}, MouseButton.MOUSE_BUTTON_LEFT)) as Promise<void>);
       await CommonFunc.sleep(3000);
       let text7 = inspector.getInspectorByKey('LongPressGestureAllowedTypes_result');
       let obj7 = JSON.parseJsonElement(text7);
@@ -133,7 +135,7 @@ it('LongPressGestureAllowedTypesTest_static_0010', Level.LEVEL0, async (done: ()
 
       // trigger gesture again with finger
       await CommonFunc.sleep(1000);
-      await ((driver.longClick(Math.round(areaObj.left + areaWidth/2).toInt(),Math.round(areaObj.top + areaHeight/2).toInt())) as Promise<void>);
+      await ((driver.longClickAt({x: Math.round(areaObj.left + areaWidth/2).toInt(), y: Math.round(areaObj.top + areaHeight/2).toInt(), displayId: displayID})) as Promise<void>);
       await CommonFunc.sleep(3000);
       let text8 = inspector.getInspectorByKey('LongPressGestureAllowedTypes_result');
       let obj8 = JSON.parseJsonElement(text8);

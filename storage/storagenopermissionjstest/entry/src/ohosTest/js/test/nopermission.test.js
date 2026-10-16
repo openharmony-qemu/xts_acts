@@ -16,6 +16,7 @@
 import fileShare from '@ohos.fileshare';
 import fileuri from '@ohos.file.fileuri';
 import fs from '@ohos.file.fs';
+import volumeManager from '@ohos.file.volumeManager';
 import { describe, it, expect, Level } from '@ohos/hypium';
 import { FILE_CONTENT, prepareFile, nextFileName } from './Common';
 
@@ -178,5 +179,47 @@ export default function File_Nopermission_test() {
       done();
     }
   });
+
+    /**
+     * @tc.name   VolumeManager_NoPermission_001
+     * @tc.number SUB_BASIC_FM_FileAPI_VolumeManager_NoPermission_0100
+     * @tc.desc   Test getExternalVolumeInfos() interfaces
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('VolumeManager_NoPermission_001', Level.LEVEL3, async function (done) {
+      try {
+        await volumeManager.getExternalVolumeInfos();
+        console.info("VolumeManager_NoPermission_001 successfully");
+        expect(false).assertTrue();
+        done();
+      } catch (err) {
+        console.info("VolumeManager_NoPermission_001 failed with error message: " + err.message + ", error code: " + err.code);
+        expect(err.code === 201).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   VolumeManager_NoPermission_002
+     * @tc.number SUB_BASIC_FM_FileAPI_VolumeManager_NoPermission_0200
+     * @tc.desc   Test getExternalDiskInfos() interfaces
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('VolumeManager_NoPermission_002', Level.LEVEL3, async function (done) {
+      try {
+        await volumeManager.getExternalDiskInfos();
+        console.info("VolumeManager_NoPermission_002 successfully");
+        expect(false).assertTrue();
+        done();
+      } catch (err) {
+        console.info("VolumeManager_NoPermission_002 failed with error message: " + err.message + ", error code: " + err.code);
+        expect(err.code === 201).assertTrue();
+        done();
+      }
+    });
   })
 }

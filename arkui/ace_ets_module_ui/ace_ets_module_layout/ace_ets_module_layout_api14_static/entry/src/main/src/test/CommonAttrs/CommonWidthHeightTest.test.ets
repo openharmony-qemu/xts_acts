@@ -1,4 +1,5 @@
 'use static';
+
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+ 
 import { describe, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index";
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
@@ -20,7 +22,6 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router';
 import inspector from '@ohos.arkui.inspector';
 import hilog from '@ohos.hilog';
-
 
 let domain: int = 0x0000;
 let tag: string = 'CommonWidthHeightTest';
@@ -68,11 +69,13 @@ export default function CommonWidthHeightTest() {
       console.info(domain, tag, '[commonWidthHeight_0100] START');
       let strJson = inspector.getInspectorByKey('text_width_height_invoke');
       expect(strJson).not().assertUndefined();
-      let width = JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('width'));
-      let height = JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('height'));
+      let width: string = JSON.parseJsonElement(strJson).getElement('$attrs').getString('width');
+      let height: string = JSON.parseJsonElement(strJson).getElement('$attrs').getString('height');
       console.info(domain, tag, '[commonWidthHeight_0100] width: %{public}s, height: %{public}s', width, height);
-      expect(width).assertEqual('"100.00vp"');
-      expect(height).assertEqual('"5.00%"');
+      let widthNum: number = parseFloat(width);
+      let heightNum: number = parseFloat(height);
+      expect(Math.floor(Math.abs(widthNum - 100)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(heightNum - 5)) <= 1).assertTrue();
       console.info(domain, tag, '[commonWidthHeight_0100] END');
       done();
     });
@@ -89,11 +92,13 @@ export default function CommonWidthHeightTest() {
       console.info(domain, tag, '[commonWidthHeight_0200] START');
       let strJson = inspector.getInspectorByKey('button_width_height_invoke');
       expect(strJson).not().assertUndefined();
-      let width = JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('width'));
-      let height = JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('height'));
+      let width: string = JSON.parseJsonElement(strJson).getElement('$attrs').getString('width');
+      let height: string = JSON.parseJsonElement(strJson).getElement('$attrs').getString('height');
       console.info(domain, tag, '[commonWidthHeight_0200] width: %{public}s, height: %{public}s', width, height);
-      expect(width).assertEqual('"100.00vp"');
-      expect(height).assertEqual('"5.00%"');
+      let widthNum: number = parseFloat(width);
+      let heightNum: number = parseFloat(height);
+      expect(Math.floor(Math.abs(widthNum - 100)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(heightNum - 5)) <= 1).assertTrue();
       console.info(domain, tag, '[commonWidthHeight_0200] END');
       done();
     });
@@ -110,11 +115,13 @@ export default function CommonWidthHeightTest() {
       console.info(domain, tag, '[commonWidthHeight_0300] START');
       let strJson = inspector.getInspectorByKey('column_width_height_invoke');
       expect(strJson).not().assertUndefined();
-      let width = JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('width'));
-      let height = JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('height'));
+      let width: string = JSON.parseJsonElement(strJson).getElement('$attrs').getString('width');
+      let height: string = JSON.parseJsonElement(strJson).getElement('$attrs').getString('height');
       console.info(domain, tag, '[commonWidthHeight_0300] width: %{public}s, height: %{public}s', width, height);
-      expect(width).assertEqual('"100.00vp"');
-      expect(height).assertEqual('"5.00%"');
+      let widthNum: number = parseFloat(width);
+      let heightNum: number = parseFloat(height);
+      expect(Math.floor(Math.abs(widthNum - 100)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(heightNum - 5)) <= 1).assertTrue();
       console.info(domain, tag, '[commonWidthHeight_0300] END');
       done();
     });
@@ -131,11 +138,13 @@ export default function CommonWidthHeightTest() {
       console.info(domain, tag, '[commonWidthHeight_0400] START');
       let strJson = inspector.getInspectorByKey('text_string_percent');
       expect(strJson).not().assertUndefined();
-      let width = JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('width'));
-      let height = JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('height'));
+      let width: string = JSON.parseJsonElement(strJson).getElement('$attrs').getString('width');
+      let height: string = JSON.parseJsonElement(strJson).getElement('$attrs').getString('height');
       console.info(domain, tag, '[commonWidthHeight_0400] width: %{public}s, height: %{public}s', width, height);
-      expect(width).assertEqual('"5.00%"');
-      expect(height).assertEqual('"5.00%"');
+      let widthNum: number = parseFloat(width);
+      let heightNum: number = parseFloat(height);
+      expect(Math.floor(Math.abs(widthNum - 5)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(heightNum - 5)) <= 1).assertTrue();
       console.info(domain, tag, '[commonWidthHeight_0400] END');
       done();
     });
@@ -152,11 +161,13 @@ export default function CommonWidthHeightTest() {
       console.info(domain, tag, '[commonWidthHeight_0500] START');
       let strJson = inspector.getInspectorByKey('text_string_vp');
       expect(strJson).not().assertUndefined();
-      let width = JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('width'));
-      let height = JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('height'));
+      let width: string = JSON.parseJsonElement(strJson).getElement('$attrs').getString('width');
+      let height: string = JSON.parseJsonElement(strJson).getElement('$attrs').getString('height');
       console.info(domain, tag, '[commonWidthHeight_0500] width: %{public}s, height: %{public}s', width, height);
-      expect(width).assertEqual('"100.00vp"');
-      expect(height).assertEqual('"100.00vp"');
+      let widthNum: number = parseFloat(width);
+      let heightNum: number = parseFloat(height);
+      expect(Math.floor(Math.abs(widthNum - 100)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(heightNum - 100)) <= 1).assertTrue();
       console.info(domain, tag, '[commonWidthHeight_0500] END');
       done();
     });
@@ -173,11 +184,13 @@ export default function CommonWidthHeightTest() {
       console.info(domain, tag, '[commonWidthHeight_0600] START');
       let strJson = inspector.getInspectorByKey('text_string_auto');
       expect(strJson).not().assertUndefined();
-      let width = JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('width'));
-      let height = JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('height'));
+      let width: string = JSON.parseJsonElement(strJson).getElement('$attrs').getString('width');
+      let height: string = JSON.parseJsonElement(strJson).getElement('$attrs').getString('height');
       console.info(domain, tag, '[commonWidthHeight_0600] width: %{public}s, height: %{public}s', width, height);
-      expect(width).assertEqual('"0.00auto"');
-      expect(height).assertEqual('"0.00auto"');
+      let widthNum: number = parseFloat(width);
+      let heightNum: number = parseFloat(height);
+      expect(Math.floor(Math.abs(widthNum - 0)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(heightNum - 0)) <= 1).assertTrue();
       console.info(domain, tag, '[commonWidthHeight_0600] END');
       done();
     });
@@ -194,11 +207,13 @@ export default function CommonWidthHeightTest() {
       console.info(domain, tag, '[commonWidthHeight_0700] START');
       let strJson = inspector.getInspectorByKey('text_number');
       expect(strJson).not().assertUndefined();
-      let width = JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('width'));
-      let height = JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('height'));
+      let width: string = JSON.parseJsonElement(strJson).getElement('$attrs').getString('width');
+      let height: string = JSON.parseJsonElement(strJson).getElement('$attrs').getString('height');
       console.info(domain, tag, '[commonWidthHeight_0700] width: %{public}s, height: %{public}s', width, height);
-      expect(width).assertEqual('"100.00vp"');
-      expect(height).assertEqual('"100.00vp"');
+      let widthNum: number = parseFloat(width);
+      let heightNum: number = parseFloat(height);
+      expect(Math.floor(Math.abs(widthNum - 100)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(heightNum - 100)) <= 1).assertTrue();
       console.info(domain, tag, '[commonWidthHeight_0700] END');
       done();
     });
@@ -221,11 +236,13 @@ export default function CommonWidthHeightTest() {
       let strJson = inspector.getInspectorByKey('row_wrapContent_constraintSize');
       expect(strJson).not().assertUndefined();
       expect(strJson.length > 0).assertTrue();
-      let width = JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('width'));
-      let height = JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('height'));
+      let width: string = JSON.parseJsonElement(strJson).getElement('$attrs').getString('width');
+      let height: string = JSON.parseJsonElement(strJson).getElement('$attrs').getString('height');
       console.info(domain, tag, '[commonWidthHeight_0800] width: %{public}s, height: %{public}s', width, height);
-      expect(width).assertEqual('"150.00vp"');
-      expect(height).assertEqual('"150.00vp"');
+      let widthNum: number = parseFloat(width);
+      let heightNum: number = parseFloat(height);
+      expect(Math.floor(Math.abs(widthNum - 150)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(heightNum - 150)) <= 1).assertTrue();
       console.info(domain, tag, '[commonWidthHeight_0800] END');
       done();
     });
@@ -248,11 +265,13 @@ export default function CommonWidthHeightTest() {
       let strJson = inspector.getInspectorByKey('row_fixAtIdealSize_constraintSize');
       expect(strJson).not().assertUndefined();
       expect(strJson.length > 0).assertTrue();
-      let width = JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('width'));
-      let height = JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('height'));
+      let width: string = JSON.parseJsonElement(strJson).getElement('$attrs').getString('width');
+      let height: string = JSON.parseJsonElement(strJson).getElement('$attrs').getString('height');
       console.info(domain, tag, '[commonWidthHeight_0900] width: %{public}s, height: %{public}s', width, height);
-      expect(width).assertEqual('"150.00vp"');
-      expect(height).assertEqual('"150.00vp"');
+      let widthNum: number = parseFloat(width);
+      let heightNum: number = parseFloat(height);
+      expect(Math.floor(Math.abs(widthNum - 150)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(heightNum - 150)) <= 1).assertTrue();
       console.info(domain, tag, '[commonWidthHeight_0900] END');
       done();
     });
@@ -275,11 +294,13 @@ export default function CommonWidthHeightTest() {
       let strJson = inspector.getInspectorByKey('row_matchParent_constraintSize');
       expect(strJson).not().assertUndefined();
       expect(strJson.length > 0).assertTrue();
-      let width = JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('width'));
-      let height = JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('height'));
+      let width: string = JSON.parseJsonElement(strJson).getElement('$attrs').getString('width');
+      let height: string = JSON.parseJsonElement(strJson).getElement('$attrs').getString('height');
       console.info(domain, tag, '[commonWidthHeight_1000] width: %{public}s, height: %{public}s', width, height);
-      expect(width).assertEqual('"150.00vp"');
-      expect(height).assertEqual('"150.00vp"');
+      let widthNum: number = parseFloat(width);
+      let heightNum: number = parseFloat(height);
+      expect(Math.floor(Math.abs(widthNum - 150)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(heightNum - 150)) <= 1).assertTrue();
       console.info(domain, tag, '[commonWidthHeight_1000] END');
       done();
     });

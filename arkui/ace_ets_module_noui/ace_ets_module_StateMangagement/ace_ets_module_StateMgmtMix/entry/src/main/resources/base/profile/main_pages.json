@@ -1,6 +1,7 @@
 {
   "src": [
     "MainAbility/pages/index/index",
+    "MainAbility/pages/Preset",
     "MainAbility/pages/uiutils/AddMonitor001",
     "MainAbility/pages/uiutils/AddMonitor002",
     "MainAbility/pages/uiutils/MakeBinding001",

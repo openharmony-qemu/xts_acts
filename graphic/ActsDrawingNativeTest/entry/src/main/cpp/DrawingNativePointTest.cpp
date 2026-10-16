@@ -17,11 +17,11 @@
 #include <random>
 #include "include/OhosCommonTest.h"
 
-#define DRAWING_NUMBER_10 10
-#define DRAWING_NUMBER_20 20
-#define DRAWING_NUMBER_60 60
-#define DRAWING_NUMBER_100 100
-#define DRAWING_NUMBER_19937 19937
+#define NUMBER_10 10
+#define NUMBER_20 20
+#define NUMBER_60 60
+#define NUMBER_100 100
+#define NUMBER_19937 19937
 
 namespace OHOS {
 namespace Rosen {
@@ -45,11 +45,11 @@ int TestPointCreateNormal()
 {
     DrawingNativePointTestSetUp();
     // 1. Pass integer values for X and Y coordinates to OH_Drawing_PointCreate interface
-    OH_Drawing_Point *point = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_60);
+    OH_Drawing_Point *point = OH_Drawing_PointCreate(NUMBER_100, NUMBER_60);
     // add assert
     EXPECT_NE(point, nullptr);
     // 2. Pass floating-point values for X and Y coordinates to OH_Drawing_PointCreate interface
-    OH_Drawing_Point *point2 = OH_Drawing_PointCreate(100.5f, DRAWING_NUMBER_60);
+    OH_Drawing_Point *point2 = OH_Drawing_PointCreate(100.5f, NUMBER_60);
     // add assert
     EXPECT_NE(point2, nullptr);
     // 3. Free memory
@@ -63,11 +63,11 @@ int TestPointCreateNull()
 {
     DrawingNativePointTestSetUp();
     // 1. The first parameter of OH_Drawing_PointCreate is empty
-    OH_Drawing_Point *point = OH_Drawing_PointCreate(0, DRAWING_NUMBER_60);
+    OH_Drawing_Point *point = OH_Drawing_PointCreate(0, NUMBER_60);
     // add assert
     EXPECT_NE(point, nullptr);
     // 2. The second parameter of OH_Drawing_PointCreate is empty
-    OH_Drawing_Point *point2 = OH_Drawing_PointCreate(DRAWING_NUMBER_100, 0);
+    OH_Drawing_Point *point2 = OH_Drawing_PointCreate(NUMBER_100, 0);
     // add assert
     EXPECT_NE(point2, nullptr);
     // 3. Free memory
@@ -81,11 +81,11 @@ int TestPointCreateAbnormal()
 {
     DrawingNativePointTestSetUp();
     // 1. The first parameter of OH_Drawing_PointCreate is negative
-    OH_Drawing_Point *point = OH_Drawing_PointCreate(-DRAWING_NUMBER_100, DRAWING_NUMBER_60);
+    OH_Drawing_Point *point = OH_Drawing_PointCreate(-NUMBER_100, NUMBER_60);
     // add assert
     EXPECT_NE(point, nullptr);
     // 2. The second parameter of OH_Drawing_PointCreate is negative
-    OH_Drawing_Point *point2 = OH_Drawing_PointCreate(DRAWING_NUMBER_100, -DRAWING_NUMBER_60);
+    OH_Drawing_Point *point2 = OH_Drawing_PointCreate(NUMBER_100, -NUMBER_60);
     // add assert
     EXPECT_NE(point2, nullptr);
     // 3. Free memory
@@ -99,11 +99,11 @@ int TestPointCreateMaximum()
 {
     DrawingNativePointTestSetUp();
     // 1. The first parameter of OH_Drawing_PointCreate is FLT_MAX
-    OH_Drawing_Point *point = OH_Drawing_PointCreate(FLT_MAX, DRAWING_NUMBER_60);
+    OH_Drawing_Point *point = OH_Drawing_PointCreate(FLT_MAX, NUMBER_60);
     // add assert
     EXPECT_NE(point, nullptr);
     // 2. The second parameter of OH_Drawing_PointCreate is FLT_MAX
-    OH_Drawing_Point *point2 = OH_Drawing_PointCreate(DRAWING_NUMBER_100, FLT_MAX);
+    OH_Drawing_Point *point2 = OH_Drawing_PointCreate(NUMBER_100, FLT_MAX);
     // add assert
     EXPECT_NE(point2, nullptr);
     // 3. Free memory
@@ -119,8 +119,8 @@ int TestPointCreateMultipleCalls()
     // 1. Call OH_Drawing_PointCreate 10 times with random values for X and Y coordinates
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_real_distribution<float> dis(0, DRAWING_NUMBER_100);
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    std::uniform_real_distribution<float> dis(0, NUMBER_100);
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_Point *point = OH_Drawing_PointCreate(dis(gen), dis(gen));
         // add assert
         EXPECT_NE(point, nullptr);
@@ -134,7 +134,7 @@ int TestPointDestroyNormal()
 {
     DrawingNativePointTestSetUp();
     // 1. Call OH_Drawing_PointCreate
-    OH_Drawing_Point *point = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_60);
+    OH_Drawing_Point *point = OH_Drawing_PointCreate(NUMBER_100, NUMBER_60);
     // add assert
     EXPECT_NE(point, nullptr);
     // 2. Call OH_Drawing_PointDestroy
@@ -158,13 +158,13 @@ int TestPointGetXNormal()
 {
     DrawingNativePointTestSetUp();
     //1. Pass integer values to OH_Drawing_PointGetX interface
-    OH_Drawing_Point *point = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_60);
+    OH_Drawing_Point *point = OH_Drawing_PointCreate(NUMBER_100, NUMBER_60);
     // add assert
     EXPECT_NE(point, nullptr);
     float x;
     OH_Drawing_PointGetX(point, &x);
     //2. Pass floating-point values to OH_Drawing_PointGetX interface
-    OH_Drawing_Point *point1 = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_60);
+    OH_Drawing_Point *point1 = OH_Drawing_PointCreate(NUMBER_100, NUMBER_60);
     // add assert
     EXPECT_NE(point1, nullptr);
     OH_Drawing_PointGetX(point1, &x);
@@ -179,7 +179,7 @@ int TestPointGetXNull()
 {
     DrawingNativePointTestSetUp();
     //1. OH_Drawing_PointGetX with the first parameter as null
-    OH_Drawing_Point *point = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_60);
+    OH_Drawing_Point *point = OH_Drawing_PointCreate(NUMBER_100, NUMBER_60);
     // add assert
     EXPECT_NE(point, nullptr);
     float x;
@@ -197,13 +197,13 @@ int TestPointGetXMultipleCalls()
     DrawingNativePointTestSetUp();
     //1. Call OH_Drawing_PointGetX 10 times with random values
     float x;
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
-        OH_Drawing_Point *point = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    for (int i = 0; i < NUMBER_10; i++) {
+        OH_Drawing_Point *point = OH_Drawing_PointCreate(NUMBER_100, NUMBER_100);
         // add assert
         EXPECT_NE(point, nullptr);
         OH_Drawing_ErrorCode errorCode = OH_Drawing_PointGetX(point, &x);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
-        EXPECT_EQ(x, DRAWING_NUMBER_100);
+        EXPECT_EQ(x, NUMBER_100);
         OH_Drawing_PointDestroy(point);
     }
     DrawingNativePointTestTearDown();
@@ -214,20 +214,20 @@ int TestPointGetYNormal()
 {
     DrawingNativePointTestSetUp();
     //1. Pass integer values to OH_Drawing_PointGetY interface
-    OH_Drawing_Point *point = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_60);
+    OH_Drawing_Point *point = OH_Drawing_PointCreate(NUMBER_100, NUMBER_60);
     // add assert
     EXPECT_NE(point, nullptr);
     float y;
     OH_Drawing_ErrorCode errorCode = OH_Drawing_PointGetY(point, &y);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
-    EXPECT_EQ(y, DRAWING_NUMBER_60);
+    EXPECT_EQ(y, NUMBER_60);
     //2. Pass floating-point values to OH_Drawing_PointGetX interface
-    OH_Drawing_Point *point1 = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_60);
+    OH_Drawing_Point *point1 = OH_Drawing_PointCreate(NUMBER_100, NUMBER_60);
     // add assert
     EXPECT_NE(point1, nullptr);
     errorCode = OH_Drawing_PointGetY(point1, &y);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
-    EXPECT_EQ(y, DRAWING_NUMBER_60);
+    EXPECT_EQ(y, NUMBER_60);
     //3. free memory
     OH_Drawing_PointDestroy(point);
     OH_Drawing_PointDestroy(point1);
@@ -239,7 +239,7 @@ int TestPointGetYNull()
 {
     DrawingNativePointTestSetUp();
     //1. OH_Drawing_PointGetY with the first parameter as null
-    OH_Drawing_Point *point = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_60);
+    OH_Drawing_Point *point = OH_Drawing_PointCreate(NUMBER_100, NUMBER_60);
     // add assert
     EXPECT_NE(point, nullptr);
     float y;
@@ -257,13 +257,13 @@ int TestPointGetYMultipleCalls()
     DrawingNativePointTestSetUp();
     //1. Call OH_Drawing_PointGetX 10 times with random values
     float y;
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
-        OH_Drawing_Point *point = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    for (int i = 0; i < NUMBER_10; i++) {
+        OH_Drawing_Point *point = OH_Drawing_PointCreate(NUMBER_100, NUMBER_100);
         // add assert
         EXPECT_NE(point, nullptr);
         OH_Drawing_ErrorCode errorCode = OH_Drawing_PointGetY(point, &y);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
-        EXPECT_EQ(y, DRAWING_NUMBER_100);
+        EXPECT_EQ(y, NUMBER_100);
         OH_Drawing_PointDestroy(point);
     }
     DrawingNativePointTestTearDown();
@@ -274,14 +274,14 @@ int TestPointSetNormal()
 {
     DrawingNativePointTestSetUp();
     //1. Pass integar point values to OH_Drawing_PointSet interface
-    OH_Drawing_Point *point = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_60);
+    OH_Drawing_Point *point = OH_Drawing_PointCreate(NUMBER_100, NUMBER_60);
     // add assert
     EXPECT_NE(point, nullptr);
     // add assert
-    EXPECT_EQ(OH_Drawing_PointSet(point, DRAWING_NUMBER_10, DRAWING_NUMBER_10), OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_PointSet(point, NUMBER_10, NUMBER_10), OH_DRAWING_SUCCESS);
     //2. Pass floating-point values to OH_Drawing_PointSet interface
     // add assert
-    EXPECT_EQ(OH_Drawing_PointSet(point, DRAWING_NUMBER_20, DRAWING_NUMBER_20), OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_PointSet(point, NUMBER_20, NUMBER_20), OH_DRAWING_SUCCESS);
     //3. free memory
     OH_Drawing_PointDestroy(point);
     DrawingNativePointTestTearDown();
@@ -292,14 +292,14 @@ int TestPointSetNull()
 {
     DrawingNativePointTestSetUp();
     //1. OH_Drawing_PointSet with the first parameter as null
-    OH_Drawing_Point *point = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_60);
+    OH_Drawing_Point *point = OH_Drawing_PointCreate(NUMBER_100, NUMBER_60);
     // add assert
     EXPECT_NE(point, nullptr);
-    EXPECT_EQ(OH_Drawing_PointSet(nullptr, DRAWING_NUMBER_10, DRAWING_NUMBER_10), OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(OH_Drawing_PointSet(nullptr, NUMBER_10, NUMBER_10), OH_DRAWING_ERROR_INVALID_PARAMETER);
     //2. OH_Drawing_PointSet with the second parameter as 0
-    EXPECT_EQ(OH_Drawing_PointSet(point, 0, DRAWING_NUMBER_10), OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_PointSet(point, 0, NUMBER_10), OH_DRAWING_SUCCESS);
     //3. OH_Drawing_PointSet with the third parameter as 0
-    EXPECT_EQ(OH_Drawing_PointSet(point, DRAWING_NUMBER_10, 0), OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_PointSet(point, NUMBER_10, 0), OH_DRAWING_SUCCESS);
     //4. free memory
     OH_Drawing_PointDestroy(point);
     DrawingNativePointTestTearDown();
@@ -310,13 +310,13 @@ int TestPointSetMultipleCalls()
 {
     DrawingNativePointTestSetUp();
     //1. Call OH_Drawing_PointSet 10 times with random values
-    OH_Drawing_Point *point = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_60);
+    OH_Drawing_Point *point = OH_Drawing_PointCreate(NUMBER_100, NUMBER_60);
     // add assert
     EXPECT_NE(point, nullptr);
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_real_distribution<float> dis(0, DRAWING_NUMBER_100);
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    std::uniform_real_distribution<float> dis(0, NUMBER_100);
+    for (int i = 0; i < NUMBER_10; i++) {
         // add assert
         EXPECT_EQ(OH_Drawing_PointSet(point, dis(gen), dis(gen)), OH_DRAWING_SUCCESS);
     }
@@ -367,7 +367,7 @@ int TestPointNegateMultipleCalls()
     DrawingNativePointTestSetUp();
     OH_Drawing_Point *point = OH_Drawing_PointCreate(10.0f, 10.0f);
     EXPECT_NE(point, nullptr);
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_ErrorCode errorCode = OH_Drawing_PointNegate(point);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     }
@@ -431,7 +431,7 @@ int TestPointOffsetMultipleCalls()
     EXPECT_NE(point, nullptr);
     float x = 0;
     float y = 0;
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_ErrorCode errorCode = OH_Drawing_PointOffset(point, 10.0f, 10.0f);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
         OH_Drawing_PointGetX(point, &x);

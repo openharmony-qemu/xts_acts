@@ -87,6 +87,7 @@ export default function showAssetsCreationDialogTest() {
         let selectPictureText = await driver?.waitForComponent(ON.text('完成'), 10000);
         if (selectPictureText) {
             console.log(testNum,' select “完成” button');
+            await selectPictureText.click();
             done();
         } else {
           let button: Component | undefined = await driver?.waitForComponent(ON.text(buttonText), 10000);
@@ -151,9 +152,7 @@ export default function showAssetsCreationDialogTest() {
      */
     it("show_asset_create_dialog_001", Level.LEVEL0, async (done: Function) => {
       const testNum = "show_asset_create_dialog_001";
-      let fileUriList: Array<string> = [
-        "file://ohos.acts.multimedia.photoaccess/data/storage/el2/base/haps/entry_test/photos/test_mov_1.jpg"
-      ];
+      let fileUriList: Array<string> = [testContext.filesDir + '/test_mov_1.jpg'];
       let photoCreationConfigs: Array<photoAccessHelper.PhotoCreationConfig> = [
         {
           title: 'showAssetsCreationDialogTest',
@@ -175,9 +174,7 @@ export default function showAssetsCreationDialogTest() {
      */
     it("show_asset_create_dialog_002", Level.LEVEL0, async (done: Function) => {
       const testNum = "show_asset_create_dialog_002";
-      let fileUriList: Array<string> = [
-        "file://ohos.acts.multimedia.photoaccess/data/storage/el2/base/haps/entry_test/photos/test_mov_1.jpg"
-      ];
+      let fileUriList: Array<string> = [testContext.filesDir + '/test_mov_1.jpg'];
       let photoCreationConfigs: Array<photoAccessHelper.PhotoCreationConfig> = [
         {
           title: 'showAssetsCreationDialogTest',

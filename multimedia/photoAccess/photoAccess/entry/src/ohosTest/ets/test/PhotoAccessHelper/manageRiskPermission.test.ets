@@ -23,7 +23,8 @@ import {
   driveFn,
   sleep,
   createSandboxFileUri,
-  pushCreateAsset
+  checkResourceFile,
+  createResource
 } from '../common'
 import common from '@ohos.app.ability.common'
 
@@ -39,10 +40,8 @@ export default function manageRiskPermissionTest() {
       await getPermission();
       await driveFn();
       await sleep(1000);
-      const imageFile = ["riskImageAsset.jpg"];
-      await pushCreateAsset(testContext, imageFile);
-      const videoFile = ["riskVideoAsset.mp4"];
-      await pushCreateAsset(testContext, videoFile);
+      checkResourceFile(testContext);
+      await createResource(testContext, ["riskImageAsset.jpg", "riskVideoAsset.mp4"])
     });
 
     const getAssetsCallbackTest = async (done: Function, testNum: string, fetchOps: photoAccessHelper.FetchOptions, expectCount: number) => {

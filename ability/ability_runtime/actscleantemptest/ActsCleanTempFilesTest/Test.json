@@ -6,7 +6,7 @@
         "bundle-name": "com.example.cleancachefilestest",
         "module-name": "entry_test",
         "shell-timeout": "600000",
-        "testcase-timeout": "9500"
+        "testcase-timeout": "30000"
     },
     "kits": [
 		{

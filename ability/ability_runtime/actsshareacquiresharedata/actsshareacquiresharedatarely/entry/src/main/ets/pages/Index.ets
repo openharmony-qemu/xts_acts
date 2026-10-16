@@ -48,7 +48,8 @@ struct Index {
               appManager.killProcessesByBundleName(bundleName).then((data) => {
                 hilog.info(0x0000, TAG, '[%{public}s] killProcessesByBundleName success.', TAG);
               }).catch((err: BusinessError) => {
-                hilog.info(0x0000, TAG, '[%{public}s] killProcessesByBundleName fail, err: %{public}s', TAG, JSON.stringify(err));
+                hilog.info(0x0000, TAG, '[%{public}s] killProcessesByBundleName fail, err: %{public}s', TAG,
+                  JSON.stringify(err));
               });
             } catch (paramError) {
               let code = (paramError as BusinessError).code;
@@ -68,7 +69,8 @@ struct Index {
               appManager.killProcessesByBundleName(bundleName).then((data) => {
                 hilog.info(0x0000, TAG, '[%{public}s] killProcessesByBundleName success.', TAG);
               }).catch((err: BusinessError) => {
-                hilog.info(0x0000, TAG, '[%{public}s] killProcessesByBundleName fail, err: %{public}s', TAG, JSON.stringify(err));
+                hilog.info(0x0000, TAG, '[%{public}s] killProcessesByBundleName fail, err: %{public}s', TAG,
+                  JSON.stringify(err));
               });
             } catch (paramError) {
               let code = (paramError as BusinessError).code;

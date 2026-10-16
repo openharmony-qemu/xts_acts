@@ -109,7 +109,8 @@ static napi_value GetUsbDeviceListNoDevice(napi_env env, napi_callback_info info
 
 /**
  * @tc.name          SUB_USB_USBMANAGER_0200
- * @tc.desc          Verify OH_UsbManager_FreeUsbDeviceList is a safe no-op for null array and zero count.
+ * @tc.desc          Verify OH_UsbManager_FreeUsbDeviceList is a safe no-op for null array and zero count,
+ *                   plus boundary deviceCount values 255 and 256.
  * @tc.type          Function
  */
 static napi_value FreeUsbDeviceListSafeNoop(napi_env env, napi_callback_info info)
@@ -120,6 +121,8 @@ static napi_value FreeUsbDeviceListSafeNoop(napi_env env, napi_callback_info inf
     OH_UsbManager_FreeUsbDeviceList(devices, deviceCount);
     OH_UsbManager_FreeUsbDeviceList(nullptr, 0);
     OH_UsbManager_FreeUsbDeviceList(nullptr, 1);
+    OH_UsbManager_FreeUsbDeviceList(nullptr, 255);
+    OH_UsbManager_FreeUsbDeviceList(nullptr, 256);
     return CreateInt32(env, static_cast<int32_t>(ret));
 }
 

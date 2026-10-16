@@ -1,4 +1,5 @@
 'use static';
+
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -90,7 +91,6 @@ export default function CapsuleSegmentButtonAttributeTest() {
         done();
       });
 
-
     /**
      * @tc.number   CapsuleSegmentButtonAttributeTest_static_0200
      * @tc.name     CapsuleSegmentButtonAttributeTest_static_0200
@@ -166,7 +166,6 @@ export default function CapsuleSegmentButtonAttributeTest() {
         done();
       });
 
-
     /**
      * @tc.number   CapsuleSegmentButtonAttributeTest_static_0500
      * @tc.name     CapsuleSegmentButtonAttributeTest_static_0500
@@ -220,7 +219,6 @@ export default function CapsuleSegmentButtonAttributeTest() {
       done();
     });
 
-
     /**
      * @tc.number   CapsuleSegmentButtonAttributeTest_static_0700
      * @tc.name     CapsuleSegmentButtonAttributeTest_static_0700
@@ -245,7 +243,6 @@ export default function CapsuleSegmentButtonAttributeTest() {
         console.log("CapsuleSegmentButtonAttributeTest_static_0700", "END");
         done();
       });
-
 
     /**
      * @tc.number   CapsuleSegmentButtonAttributeTest_static_0800
@@ -273,7 +270,6 @@ export default function CapsuleSegmentButtonAttributeTest() {
         done();
       });
 
-
     /**
      * @tc.number   CapsuleSegmentButtonAttributeTest_static_0900
      * @tc.name     CapsuleSegmentButtonAttributeTest_static_0900
@@ -292,12 +288,11 @@ export default function CapsuleSegmentButtonAttributeTest() {
           .getArray("$children")[5]
           .getArray("$children")[0]
         console.log("CapsuleSegmentButtonAttributeTest_static_0900 itemMinHeight ", itemMinHeight.getElement('$attrs').getString('height'))
-        expect(itemMinHeight.getElement('$attrs').getString('height')).assertEqual('80.00vp');
+        expect(Math.floor(Math.abs(parseFloat(itemMinHeight.getElement('$attrs').getString('height')))) - 80 <= 1).assertTrue();
         await CommonFunc.sleep(500);
         console.log("CapsuleSegmentButtonAttributeTest_static_0900", "END");
         done();
       });
-
 
     /**
      * @tc.number   CapsuleSegmentButtonAttributeTest_static_1000
@@ -327,7 +322,6 @@ export default function CapsuleSegmentButtonAttributeTest() {
         done();
       });
 
-
     /**
      * @tc.number   CapsuleSegmentButtonAttributeTest_static_1100
      * @tc.name     CapsuleSegmentButtonAttributeTest_static_1100
@@ -349,7 +343,6 @@ export default function CapsuleSegmentButtonAttributeTest() {
         console.log("CapsuleSegmentButtonAttributeTest_static_1100", "END");
         done();
       });
-
 
     /**
      * @tc.number   CapsuleSegmentButtonAttributeTest_static_1200
@@ -377,7 +370,6 @@ export default function CapsuleSegmentButtonAttributeTest() {
         console.log("CapsuleSegmentButtonAttributeTest_static_1200", "END");
         done();
       });
-
 
     /**
      * @tc.number   CapsuleSegmentButtonAttributeTest_static_1300

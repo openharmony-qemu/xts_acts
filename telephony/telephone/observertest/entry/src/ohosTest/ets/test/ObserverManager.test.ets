@@ -107,14 +107,14 @@ export default function observerManagerTest() {
       console.info(`${caseName} test start `);
       try {
         observer.on('networkStateChange', {
-          slotId: 3
+          slotId: 5
         }, (data: observer.NetworkState) => {
           console.info(`${caseName} data ${JSON.stringify(data)}`);
           ExpectTrue(false);
           done();
         });
       } catch (error) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        console.info(`${caseName} catchError ${JSON.stringify(error)}`);
         ExpectTrue(error.code == 8300001);
         done();
       }
@@ -408,7 +408,9 @@ export default function observerManagerTest() {
           slotId: 3
         }, (value: Value) => {
           console.info(`${caseName} data ${JSON.stringify(value)}}`);
-          ExpectTrue(false);
+          expect(value.state === -1).assertTrue();
+          expect(value.number === '').assertTrue();
+          observer.off('callStateChange');
           done();
         });
       } catch (error) {

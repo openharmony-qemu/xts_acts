@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import { Driver, ON, PointerMatrix, Rect, Component, Point } from '@ohos.UiTest';
+import { Driver, ON, PointerMatrix, Rect, Component, Point } from '@kit.TestKit';
 import inspector from '@ohos.arkui.inspector';
 import systemDateTime from '@ohos.systemDateTime';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
@@ -137,8 +137,9 @@ export default class Utils {
   //   }
   //
   static async triggerKey(id: Int) {
+    let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0;
     let driver = Driver.create();
-    await driver.triggerKey(id);
+    await driver.triggerKey(id, displayID);
   }
 
   //

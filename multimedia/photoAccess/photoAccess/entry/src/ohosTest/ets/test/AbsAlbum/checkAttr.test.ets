@@ -24,9 +24,11 @@ import {
   photoKeys,
   albumKeys,
   fetchAllOption,
-  pushCreateAsset,
   sleep,
-  getPermission
+  getPermission,
+  driveFn,
+  checkResourceFile,
+  createResource
 } from '../common'
 import common from '@ohos.app.ability.common';
 
@@ -34,21 +36,24 @@ export default function checkAlbumAttrTest () {
   describe('checkAlbumAttrTest', () => {
     let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
     const helper:ESObject  = photoAccessHelper.getPhotoAccessHelper(testContext)
-    let fileNameList = ['checkAttr.jpg'];
+    let fileNameList = ['checkAttr.jpg', "albumImageVideoCount01.jpg", "albumImageVideoCount02.jpg", "albumImageVideoCount01.mp4"];
 
     beforeAll(async () => {
       console.info('beforeAll case');
       await getPermission();
+      await driveFn();
       await sleep(1000);
-      await pushCreateAsset(testContext, fileNameList);
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNameList)
     });
 
     let checkAssetAttr =  async(done: Function, testNum: string) => {
       try {
-        const album:ESObject = await helper.createAlbum(testNum);
+        let albumName: string = 'absAlbum_' + Date.now();
+        const album:ESObject = await helper.createAlbum(albumName);
         expect(album.albumType).assertEqual(albumType.USER);
         expect(album.albumSubtype).assertEqual(albumSubtype.USER_GENERIC);
-        expect(album.albumName).assertEqual(testNum);
+        expect(album.albumName).assertEqual(albumName);
         const id = getAlbumId(album.albumUri);
         expect(album.albumUri).assertEqual('file://media/PhotoAlbum/' + id);
         const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, 'checkAttr.jpg');
@@ -102,7 +107,8 @@ export default function checkAlbumAttrTest () {
     it('album_001', Level.LEVEL0, async (done: Function) => {
       const testNum = 'album_001';
       try {
-        let album:ESObject = await helper.createAlbum(testNum);
+        let albumName: string = testNum + '_' + Date.now();
+        let album:ESObject = await helper.createAlbum(albumName);
         const id = getAlbumId(album.albumUri);
         expect(album.albumUri).assertEqual('file://media/PhotoAlbum/' + id);
         let fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, 'albumImageVideoCount01.jpg');

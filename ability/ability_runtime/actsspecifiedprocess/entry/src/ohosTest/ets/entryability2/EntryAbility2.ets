@@ -17,9 +17,10 @@ import { AbilityConstant, UIAbility, application, Want} from '@kit.AbilityKit';
 import common from '@ohos.app.ability.common';
 import hilog from '@ohos.hilog';
 import window from '@ohos.window';
-import { BusinessError } from '@kit.BasicServicesKit';
+import { BusinessError, commonEventManager } from '@kit.BasicServicesKit';
 import { Constant } from '../Common';
-import { commonEventManager } from '@kit.BasicServicesKit';
+
+
 const DOMAIN = 0x0000;
 
 async function publishEvent(err: BusinessError) {

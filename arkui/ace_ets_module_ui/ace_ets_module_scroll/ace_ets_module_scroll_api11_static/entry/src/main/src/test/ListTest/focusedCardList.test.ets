@@ -79,7 +79,9 @@ it('focusedCardList_static_0100', Level.LEVEL1, async (done: () => void): Promis
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
 
-      await driver.triggerKey(2049);
+      let focusComp = await driver.findComponent(ON.id('listItem_focused_card'));
+      let displayId = await focusComp!.getDisplayId();
+      await driver.triggerKey(2049, displayId);
       await CommonFunc.sleep(1000);
 
       let btn: Component = await driver.findComponent(ON.id('listItem_focused_card')) as Component;

@@ -43,7 +43,7 @@ export default function DrawingNativeColorSpaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testColorSpaceCreateSrgbNormal', Level.LEVEL0, () => {
+    it('testColorSpaceCreateSrgbNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingColorSpaceCreateSrgb(0);
       expect(result).assertEqual(0);
     })
@@ -56,7 +56,7 @@ export default function DrawingNativeColorSpaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testColorSpaceDestroyNull', Level.LEVEL3, () => {
+    it('testColorSpaceDestroyNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingColorSpaceDestroy(0);
       expect(result).assertEqual(0);
     })
@@ -69,7 +69,7 @@ export default function DrawingNativeColorSpaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testColorSpaceCreateSrgbMultipleCalls', Level.LEVEL3, () => {
+    it('testColorSpaceCreateSrgbMultipleCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingColorSpaceCreateSrgb(1);
       expect(result).assertEqual(0);
     })
@@ -83,7 +83,7 @@ export default function DrawingNativeColorSpaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testColorSpaceCreateSrgbLinearNormal', Level.LEVEL0, () => {
+    it('testColorSpaceCreateSrgbLinearNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingColorSpaceCreateSrgbLinear(0);
       expect(result).assertEqual(0);
     })
@@ -96,7 +96,7 @@ export default function DrawingNativeColorSpaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testColorSpaceCreateSrgbLinearMultipleCalls', Level.LEVEL3, () => {
+    it('testColorSpaceCreateSrgbLinearMultipleCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingColorSpaceCreateSrgbLinear(1);
       expect(result).assertEqual(0);
     })

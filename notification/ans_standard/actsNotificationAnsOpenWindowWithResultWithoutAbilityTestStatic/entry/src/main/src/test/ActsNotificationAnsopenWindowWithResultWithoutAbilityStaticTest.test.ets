@@ -75,7 +75,7 @@ export default function ActsNotificationAnsopenWindowWithResultWithoutAbilitySta
     beforeEach(async() => {
       console.info(`${TAG} afterEach START`)
       await notificationManager.removeAllSlots()
-      await Utils.msSleep(1000)
+      await Utils.msSleep(3000)
       console.info(`${TAG} afterEach END`)
     })
 
@@ -93,7 +93,6 @@ export default function ActsNotificationAnsopenWindowWithResultWithoutAbilitySta
       let bundle: notificationManager.BundleOption = {
         bundle: bundleName,
       };
-      let driver = Driver.create();
       let deviceTypeInfo: string = deviceInfo.deviceType;
       let testContext: common.UIAbilityContext= AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
       try {
@@ -103,38 +102,28 @@ export default function ActsNotificationAnsopenWindowWithResultWithoutAbilitySta
           expect(data.bannerEnabled).assertEqual(false)
           expect(data.badgeNumberEnabled).assertEqual(true)
           done()
-        }).catch((error: Error) : void => {
-          let err:BusinessError=error as BusinessError
+        }).catch((e: Error) : void => {
+          let err:BusinessError=e as BusinessError
           hilog.error(0x0000, 'testTag', `${testNum}openNotificationSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
-          if (err?.code === 801) {
-            expect(err?.code).assertEqual(801);
-            done();
-          } else {
-            expect(false).assertTrue();
-            done();
-          }
+          expect(err?.code).assertEqual(801);
+          done();
         });
         await Utils.msSleep(2000)
-        await driver.assertComponentExist(ON.text('通知管理'));
+        let driver = Driver.create();
         let buttonOne = await driver.findComponent(ON.text('确定'));
         console.info(`${testNum} button is ${JSON.stringify(buttonOne)}`);
         if (buttonOne !== null) {
           await Utils.msSleep(500)
           await buttonOne.click();
           await Utils.msSleep(500)
-        } else {
-          console.info(`${testNum} null button`);
-          expect(buttonOne).assertContain('确定')
+        }else{
+          expect(buttonOne === null).assertEqual(true)
+          done()
         }
       } catch (err) {
         hilog.error(0x0000, 'testTag', `${testNum}restart failed: ${err.code}, ${err.message},${testNum}`);
-        if (err?.code === 801) {
-          expect(err.code).assertEqual(801);
-          done();
-        } else {
-          expect(false).assertTrue();
-          done();
-        }
+        expect(err.code).assertEqual(801);
+        done();
       }
     })
 
@@ -152,7 +141,6 @@ export default function ActsNotificationAnsopenWindowWithResultWithoutAbilitySta
       let bundle: notificationManager.BundleOption = {
         bundle: bundleName,
       };
-      let driver = Driver.create();
       let deviceTypeInfo: string = deviceInfo.deviceType;
       let buttonName:string[]=['桌面角标','确定']
 
@@ -164,60 +152,46 @@ export default function ActsNotificationAnsopenWindowWithResultWithoutAbilitySta
           expect(data.bannerEnabled).assertEqual(false)
           expect(data.badgeNumberEnabled).assertEqual(false)
           done()
-        }).catch((error: Error) : void => {
-          let err:BusinessError=error as BusinessError
+        }).catch((e: Error) : void => {
+          let err:BusinessError=e as BusinessError
           hilog.error(0x0000, 'testTag', `${testNum}openNotificationSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
-          if (err?.code === 801) {
-            expect(err?.code).assertEqual(801);
-            done();
-          } else {
-            expect(false).assertTrue();
-            done();
-          }
+          expect(err?.code).assertEqual(801);
+          done();
         });
         await Utils.msSleep(2000)
+        let driver = Driver.create();
         let buttonOne = await driver.findComponent(ON.type('Toggle').isAfter(ON.text('允许通知')));
         console.info(`${testNum} button is ${JSON.stringify(buttonOne)}`);
         if (buttonOne !== null) {
           await Utils.msSleep(500)
           await buttonOne.click();
           await Utils.msSleep(500)
-        } else {
-          console.info(`${testNum} null button`);
-          expect(buttonOne).assertContain('允许通知')
         }
-        for (let index = 0; index < buttonName.length; index++) {
+        let scrollBar = await driver.findComponent(ON.text('桌面角标'))
+        console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
+        await scrollBar?.scrollToBottom()
+        await Utils.msSleep(2000)
+        let buttonTwo = await driver.findComponent(ON.text('桌面角标'));
+        console.info(`${testNum} buttonTwo is ${JSON.stringify(buttonTwo)}`);
+        if (buttonTwo !== null) {
+          await Utils.msSleep(1500)
+          await buttonTwo.click();
+          await Utils.msSleep(1500)
+        }
+        let button = await driver.findComponent(ON.text('确定'));
+        console.info(`${testNum} 确定 button is ${JSON.stringify(button)}`);
+        if (button !== null) {
           await Utils.msSleep(500)
-          let name = buttonName[index];
-          if (name === '桌面角标') {
-            let scrollBar = await driver.findComponent(ON.text('桌面角标'))
-            console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
-            expect(scrollBar != null).assertTrue()
-            await scrollBar?.scrollToBottom()
-            await Utils.msSleep(3000)
-          }
-          await Utils.msSleep(1000)
-          let button = await driver.findComponent(ON.text(name));
-          console.info(`${testNum} ${name} button is ${JSON.stringify(button)}`);
-          if (button !== null) {
-            await Utils.msSleep(500)
-            await button.click();
-            await Utils.msSleep(500)
-          } else {
-            console.info(`${testNum} null button`);
-            expect(button).assertContain(name)
-          }
+          await button.click();
           await Utils.msSleep(500)
+        }else{
+          expect(button === null).assertEqual(true)
+          done()
         }
       } catch (err) {
         hilog.error(0x0000, 'testTag', `${testNum}restart failed: ${err.code}, ${err.message},${testNum}`);
-        if (err?.code === 801) {
-          expect(err.code).assertEqual(801);
-          done();
-        } else {
-          expect(false).assertTrue();
-          done();
-        }
+        expect(err.code).assertEqual(801);
+        done();
       }
     })
 
@@ -235,9 +209,7 @@ export default function ActsNotificationAnsopenWindowWithResultWithoutAbilitySta
       let bundle: notificationManager.BundleOption = {
         bundle: bundleName,
       };
-      let driver = Driver.create();
       let buttonName:string[]=['横幅通知','桌面角标','确定']
-      let deviceTypeInfo: string = deviceInfo.deviceType;
       let testContext: common.UIAbilityContext= AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
       try {
         await Utils.msSleep(1000)
@@ -247,8 +219,105 @@ export default function ActsNotificationAnsopenWindowWithResultWithoutAbilitySta
           expect(data?.badgeNumberEnabled).assertEqual(true);
           expect(data?.notificationEnabled).assertEqual(true);
           done()
-        }).catch((error: Error) : void => {
-          let err:BusinessError=error as BusinessError
+        }).catch((e: Error) : void => {
+          let err:BusinessError=e as BusinessError
+          hilog.error(0x0000, 'testTag', `${testNum}openNotificationSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
+          expect(err?.code).assertEqual(801);
+          done();
+        });
+        await Utils.msSleep(3000)
+        let driver = Driver.create();
+        let scrollBar = await driver.findComponent(ON.text('横幅通知'));
+        console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
+        await scrollBar?.scrollToBottom()
+        await Utils.msSleep(500)
+        let buttonTwo = await driver.findComponent(ON.text('桌面角标'));
+        console.info(`${testNum} buttonTwo is ${JSON.stringify(buttonTwo)}`);
+        if (buttonTwo !== null) {
+          await Utils.msSleep(1500)
+          await buttonTwo.click();
+          await Utils.msSleep(1500)
+        }
+        await Utils.msSleep(1500)
+        let buttonThree = await driver.findComponent(ON.text('横幅通知'));
+        console.info(`${testNum} buttonThree is ${JSON.stringify(buttonThree)}`);
+        if (buttonThree !== null) {
+          await Utils.msSleep(1500)
+          await buttonThree.click();
+          await Utils.msSleep(1500)
+        }
+        await Utils.msSleep(1500)
+        let buttonFour = await driver.findComponent(ON.text('确定'));
+        console.info(`${testNum} buttonFour is ${JSON.stringify(buttonFour)}`);
+        if (buttonFour !== null) {
+          await Utils.msSleep(1500)
+          await buttonFour.click();
+          await Utils.msSleep(1500)
+        }else{
+          expect(buttonFour === null).assertEqual(true)
+          done()
+        } 
+      } catch (err) {
+        hilog.error(0x0000, 'testTag', `${testNum}restart failed: ${err.code}, ${err.message},${testNum}`);
+        expect(err.code).assertEqual(801);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Notification_Ans_openWindow_WithResult_Static_0900
+     * @tc.number SUB_Notification_Ans_openWindow_WithResult_Static_0900
+     * @tc.desc   [openNotificationSettingsWithResult] Invoke openNotificationSettingsWithResult, modify the lock screen notification, banner notification, desktop icon, ringing, vibration, and notification enable status, and then disable it. Invoke openNotificationSettingsWithResult again to close the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Notification_Ans_openWindow_WithResult_Static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: () => void): Promise<void> => {
+      const testNum = 'SUB_Notification_Ans_openWindow_WithResult_Static_0900';
+      let num:int=0
+      let bundle: notificationManager.BundleOption = {
+        bundle: bundleName,
+      };
+      let buttonName:string[]=['桌面角标','确定']
+      let deviceTypeInfo: string = deviceInfo.deviceType;
+      let testContext: common.UIAbilityContext= AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
+      try {
+        notificationManager.openNotificationSettingsWithResult(testContext).then((data) => {
+          hilog.info(0x0000, 'testTag', `${testNum}openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
+          expect(data.notificationEnabled).assertEqual(true)
+          expect(data.bannerEnabled).assertEqual(true)
+          expect(data.badgeNumberEnabled).assertEqual(true)
+        }).catch((e: Error) : void => {
+          let err:BusinessError=e as BusinessError
+          hilog.error(0x0000, 'testTag', `${testNum}openNotificationSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
+          expect(err.code).assertEqual(801);
+          done();
+        });
+        await Utils.msSleep(2000)
+        let driver = Driver.create();
+        let scrollBar = await driver.findComponent(ON.text('横幅通知'));
+        console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
+        await scrollBar?.scrollToBottom()
+        await Utils.msSleep(1500)
+        let buttonFour = await driver.findComponent(ON.text('确定'));
+        console.info(`${testNum} buttonFour is ${JSON.stringify(buttonFour)}`);
+        if (buttonFour !== null) {
+          await Utils.msSleep(1500)
+          await buttonFour.click();
+          await Utils.msSleep(1500)
+        }else{
+          expect(buttonFour === null).assertEqual(true)
+          done()
+        } 
+        await Utils.msSleep(2000)
+        notificationManager.openNotificationSettingsWithResult(testContext).then((data) => {
+          hilog.info(0x0000, 'testTag', `${testNum}openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
+          expect(data.notificationEnabled).assertEqual(true)
+          expect(data.bannerEnabled).assertEqual(true)
+          expect(data.badgeNumberEnabled).assertEqual(true)
+          done()
+        }).catch((e: Error) : void => {
+          let err:BusinessError=e as BusinessError
           hilog.error(0x0000, 'testTag', `${testNum}openNotificationSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
           if (err?.code === 801) {
             expect(err?.code).assertEqual(801);
@@ -258,38 +327,97 @@ export default function ActsNotificationAnsopenWindowWithResultWithoutAbilitySta
             done();
           }
         });
-        await Utils.msSleep(3000)
-        for (let index = 0; index < buttonName.length; index++) {
+        await Utils.msSleep(1000)
+        let buttonStack = await driver.findComponent(ON.type("SymbolGlyph"));
+        console.info(`${testNum} buttonStack is ${JSON.stringify(buttonStack)}`);
+        if (buttonStack !== null) {
+          console.info(`${testNum} buttonStack is ${JSON.stringify(buttonStack)}`);
           await Utils.msSleep(500)
-          let name = buttonName[index];
-          if (name === '桌面角标') {
-            let scrollBar = await driver.findComponent(ON.text('桌面角标'))
-            console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
-            expect(scrollBar != null).assertTrue()
-            await scrollBar?.scrollToBottom()
-            await Utils.msSleep(6000)
-          }
-          let button = await driver.findComponent(ON.text(name));
-          console.info(`${testNum} ${name} button is ${JSON.stringify(button)}`);
-          if (button !== null) {
-            await Utils.msSleep(500)
-            await button.click();
-            await Utils.msSleep(500)
-          } else {
-            console.info(`${testNum} null button`);
-            expect(button).assertContain(name)
-          }
+          await buttonStack?.click();
           await Utils.msSleep(500)
+        } else {
+          console.info(`${testNum} null button`);
+          expect(buttonStack === null).assertEqual(true)
+        }
+      } catch (err) {
+        hilog.error(0x0000, 'testTag', `${testNum}restart failed: ${err.code}, ${err.message}`);
+        expect(err.code).assertEqual(801);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Notification_Ans_openWindow_WithResult_Static_1100
+     * @tc.number SUB_Notification_Ans_openWindow_WithResult_Static_1100
+     * @tc.desc   [openNotificationSettingsWithResult] The openNotificationSettingsWithResult method is called, and the lock screen notification, banner notification, app icon badge, ringing, vibration, and notification enabling switches are turned on. Then, a notification is sent to remind the user of the new notification mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Notification_Ans_openWindow_WithResult_Static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: () => void): Promise<void> => {
+      const testNum = 'SUB_Notification_Ans_openWindow_WithResult_Static_1100';
+      let num:int=0
+      let bundle: notificationManager.BundleOption = {
+        bundle: bundleName,
+      };
+      let buttonName:string[]= ['桌面角标','确定']
+      let deviceTypeInfo: string = deviceInfo.deviceType;
+      let notificationRequest: notificationManager.NotificationRequest = {
+        id: 1,
+        notificationSlotType: notificationManager.SlotType.SERVICE_INFORMATION,
+        content: {
+          notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
+          normal: {
+            title: "test_title",
+            text: "test_text",
+            additionalText: "test_additionalText"
+          }
+        },
+      }
+      let testContext: common.UIAbilityContext= AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
+      try {
+        notificationManager.openNotificationSettingsWithResult(testContext).then((data) => {
+          hilog.info(0x0000, 'testTag', `${testNum}openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
+          expect(data?.bannerEnabled).assertEqual(true);
+          expect(data?.badgeNumberEnabled).assertEqual(true);
+          expect(data?.notificationEnabled).assertEqual(true);
+          notificationManager.publish(notificationRequest).then(() => {
+            num++
+            console.info(testNum+"publish success");
+            expect(num).assertEqual(1)
+            done()
+          }).catch((error: Error) : void => {
+            let err:BusinessError=error as BusinessError
+            console.error(`${testNum}publish failed, code is ${err.code}, message is ${err.message}`);
+            if (err?.code === 801) {
+              expect(err.code).assertEqual(801);
+            } else {
+              expect().assertFail();
+              done()
+            }
+          });
+        }).catch((e: Error) : void => {
+          let err:BusinessError=e as BusinessError
+          hilog.error(0x0000, 'testTag', `${testNum}openNotificationSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
+          expect(err?.code).assertEqual(801);
+          done();
+        });
+        await Utils.msSleep(2000)
+        let driver = Driver.create();
+        let buttonFour = await driver.findComponent(ON.text('确定'));
+        console.info(`${testNum} buttonFour is ${JSON.stringify(buttonFour)}`);
+        if (buttonFour !== null) {
+          await Utils.msSleep(1500)
+          await buttonFour.click();
+          await Utils.msSleep(1500)
+        }else{
+          expect(buttonFour === null).assertEqual(true)
+          done()
         }
       } catch (err) {
         hilog.error(0x0000, 'testTag', `${testNum}restart failed: ${err.code}, ${err.message},${testNum}`);
-        if (err?.code === 801) {
-          expect(err.code).assertEqual(801);
-          done();
-        } else {
-          expect(false).assertTrue();
-          done();
-        }
+        expect(err.code).assertEqual(801);
+        done();
       }
     })
 
@@ -316,10 +444,7 @@ export default function ActsNotificationAnsopenWindowWithResultWithoutAbilitySta
         }).catch((e:Error) => {
           let err = e as BusinessError
           console.error(`${testNum}failed to call openSubscriptionSettingsWithResult  ${err.code}, ${err.message}`)
-          if (err?.code === 801) {
-            expect(err?.code).assertEqual(801);
-            done();
-          } else if(err?.code === 201) {
+          if(err?.code === 201) {
             expect(err?.code).assertEqual(201);
             done();
           } else {
@@ -329,213 +454,8 @@ export default function ActsNotificationAnsopenWindowWithResultWithoutAbilitySta
         });
       } catch (err) {
         hilog.error(0x0000, 'testTag', `${testNum}restart failed: ${err.code}, ${err.message}`);
-        if (err?.code === 801) {
-          expect(err.code).assertEqual(801);
-          done();
-        } else {
-          expect(false).assertTrue();
-          done();
-        }
-      }
-    })
-
-    /**
-     * @tc.name   SUB_Notification_Ans_openWindow_WithResult_Static_0900
-     * @tc.number SUB_Notification_Ans_openWindow_WithResult_Static_0900
-     * @tc.desc   [openNotificationSettingsWithResult] Invoke openNotificationSettingsWithResult, modify the lock screen notification, banner notification, desktop icon, ringing, vibration, and notification enable status, and then disable it. Invoke openNotificationSettingsWithResult again to close the interface
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_Notification_Ans_openWindow_WithResult_Static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: () => void): Promise<void> => {
-      const testNum = 'SUB_Notification_Ans_openWindow_WithResult_Static_0900';
-      let num:int=0
-      let bundle: notificationManager.BundleOption = {
-        bundle: bundleName,
-      };
-      let driver = Driver.create();
-      let buttonName:string[]=['桌面角标','确定']
-      let deviceTypeInfo: string = deviceInfo.deviceType;
-      let testContext: common.UIAbilityContext= AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
-      try {
-        notificationManager.openNotificationSettingsWithResult(testContext).then((data) => {
-          hilog.info(0x0000, 'testTag', `${testNum}openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
-          expect(data.notificationEnabled).assertEqual(true)
-          expect(data.bannerEnabled).assertEqual(true)
-          expect(data.badgeNumberEnabled).assertEqual(true)
-        }).catch((error: Error) : void => {
-          let err:BusinessError=error as BusinessError
-          hilog.error(0x0000, 'testTag', `${testNum}openNotificationSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
-          if (err?.code === 801) {
-            expect(err?.code).assertEqual(801);
-            done();
-          } else {
-            expect(false).assertTrue();
-            done();
-          }
-        });
-        await Utils.msSleep(1000)
-        for (let index = 0; index < buttonName.length; index++) {
-          await Utils.msSleep(500)
-          let name = buttonName[index];
-          if (name === '桌面角标') {
-            let scrollBar = await driver.findComponent(ON.text('桌面角标'))
-            console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
-            expect(scrollBar != null).assertTrue()
-            await scrollBar?.scrollToBottom()
-            await Utils.msSleep(3000)
-          }else{
-            let button = await driver.findComponent(ON.text(name));
-            console.info(`${testNum} ${name} button is ${JSON.stringify(button)}`);
-            if (button !== null) {
-              await Utils.msSleep(500)
-              await button.click();
-              await Utils.msSleep(500)
-            } else {
-              console.info(`${testNum} null button`);
-              expect(button).assertContain(name)
-            }
-          }
-          await Utils.msSleep(500)
-        }
-        await Utils.msSleep(2000)
-        notificationManager.openNotificationSettingsWithResult(testContext).then((data) => {
-          hilog.info(0x0000, 'testTag', `${testNum}openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
-          expect(data.notificationEnabled).assertEqual(true)
-          expect(data.bannerEnabled).assertEqual(true)
-          expect(data.badgeNumberEnabled).assertEqual(true)
-          done()
-        }).catch((error: Error) : void => {
-          let err:BusinessError=error as BusinessError
-          hilog.error(0x0000, 'testTag', `${testNum}openNotificationSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
-          if (err?.code === 801) {
-            expect(err?.code).assertEqual(801);
-            done();
-          } else {
-            expect(false).assertTrue();
-            done();
-          }
-        });
-        await Utils.msSleep(1000)
-        let buttonStack = await driver.findComponent(ON.type("SymbolGlyph"));
-        console.info(`${testNum} buttonStack is ${JSON.stringify(buttonStack)}`);
-        if (buttonStack !== null) {
-          console.info(`${testNum} buttonStack is ${JSON.stringify(buttonStack)}`);
-          await Utils.msSleep(500)
-          await buttonStack?.click();
-          await Utils.msSleep(500)
-        } else {
-          console.info(`${testNum} null button`);
-          expect(buttonStack).assertContain('SymbolGlyph')
-        }
-      } catch (err) {
-        hilog.error(0x0000, 'testTag', `${testNum}restart failed: ${err.code}, ${err.message}`);
-        if (err?.code === 801) {
-          expect(err.code).assertEqual(801);
-          done();
-        } else {
-          expect(false).assertTrue();
-          done();
-        }
-      }
-    })
-
-    /**
-     * @tc.name   SUB_Notification_Ans_openWindow_WithResult_Static_1100
-     * @tc.number SUB_Notification_Ans_openWindow_WithResult_Static_1100
-     * @tc.desc   [openNotificationSettingsWithResult] The openNotificationSettingsWithResult method is called, and the lock screen notification, banner notification, app icon badge, ringing, vibration, and notification enabling switches are turned on. Then, a notification is sent to remind the user of the new notification mode
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_Notification_Ans_openWindow_WithResult_Static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: () => void): Promise<void> => {
-      const testNum = 'SUB_Notification_Ans_openWindow_WithResult_Static_1100';
-      let num:int=0
-      let bundle: notificationManager.BundleOption = {
-        bundle: bundleName,
-      };
-      let driver = Driver.create();
-      let buttonName:string[]= ['桌面角标','确定']
-      let deviceTypeInfo: string = deviceInfo.deviceType;
-      let notificationRequest: notificationManager.NotificationRequest = {
-        id: 1,
-        notificationSlotType: notificationManager.SlotType.SERVICE_INFORMATION,
-        content: {
-          notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
-          normal: {
-            title: "test_title",
-            text: "test_text",
-            additionalText: "test_additionalText"
-          }
-        },
-      }
-      let testContext: common.UIAbilityContext= AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
-      try {
-        notificationManager.openNotificationSettingsWithResult(testContext).then((data) => {
-          hilog.info(0x0000, 'testTag', `${testNum}openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
-          expect(data?.bannerEnabled).assertEqual(true);
-          expect(data?.badgeNumberEnabled).assertEqual(true);
-          expect(data?.notificationEnabled).assertEqual(true);
-        }).catch((error: Error) : void => {
-          let err:BusinessError=error as BusinessError
-          hilog.error(0x0000, 'testTag', `${testNum}openNotificationSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
-          if (err?.code === 801) {
-            expect(err?.code).assertEqual(801);
-            done();
-          } else {
-            expect(false).assertTrue();
-            done();
-          }
-        });
-        await Utils.msSleep(1000)
-        for (let index = 0; index < buttonName.length; index++) {
-          await Utils.msSleep(500)
-          let name = buttonName[index];
-          if (name === '桌面角标') {
-            let scrollBar = await driver.findComponent(ON.text('桌面角标'))
-            console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
-            expect(scrollBar != null).assertTrue()
-            await scrollBar?.scrollToBottom()
-            await Utils.msSleep(3000)
-          }else{
-            let button = await driver.findComponent(ON.text(name));
-            console.info(`${testNum} ${name} button is ${JSON.stringify(button)}`);
-            if (button !== null) {
-              await Utils.msSleep(500)
-              await button.click();
-              await Utils.msSleep(500)
-            } else {
-              console.info(`${testNum} null button`);
-              expect(button).assertContain(name)
-            }
-          }
-          await Utils.msSleep(500)
-        }
-        await Utils.msSleep(1000)
-        notificationManager.publish(notificationRequest).then(() => {
-          num++
-          console.info(testNum+"publish success");
-          expect(num).assertEqual(1)
-          done()
-        }).catch((error: Error) : void => {
-          let err:BusinessError=error as BusinessError
-          console.error(`${testNum}publish failed, code is ${err.code}, message is ${err.message}`);
-          if (err?.code === 801) {
-            expect(err.code).assertEqual(801);
-          } else {
-            expect().assertFail();
-            done()
-          }
-        });
-      } catch (err) {
-        hilog.error(0x0000, 'testTag', `${testNum}restart failed: ${err.code}, ${err.message},${testNum}`);
-        if (err?.code === 801) {
-          expect(err.code).assertEqual(801);
-          done();
-        } else {
-          expect(false).assertTrue();
-          done();
-        }
+        expect(err.code).assertEqual(201);
+        done();
       }
     })
 
@@ -553,7 +473,7 @@ export default function ActsNotificationAnsopenWindowWithResultWithoutAbilitySta
       let bundle: notificationManager.BundleOption = {
         bundle: bundleName,
       };
-      let driver = Driver.create();
+      
       let testContext: common.UIAbilityContext= AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
       try {
         await Utils.msSleep(1000)
@@ -571,6 +491,7 @@ export default function ActsNotificationAnsopenWindowWithResultWithoutAbilitySta
               expect(err?.code).assertEqual(1600018);
               if (index === 499) {
                 await Utils.msSleep(2000)
+                let driver = Driver.create();
                 let buttonStack = await driver.findComponent(ON.type("SymbolGlyph"));
                 console.info(`${testNum} buttonStack is ${JSON.stringify(buttonStack)}`);
                 if (buttonStack !== null) {
@@ -580,11 +501,12 @@ export default function ActsNotificationAnsopenWindowWithResultWithoutAbilitySta
                   await Utils.msSleep(500)
                 } else {
                   console.info(`${testNum} null button`);
-                  expect(buttonStack).assertContain('SymbolGlyph')
+                  expect(buttonStack === null).assertEqual(true)
+                  done()
                 }
                 await Utils.msSleep(500)
-                done()
               }
+              done()
             }
           });
         }

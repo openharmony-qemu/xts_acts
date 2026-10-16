@@ -187,11 +187,11 @@ export default function uitestEnumTest(): void {
       }
       if(text != null) {
         let center = await text.getBoundsCenter();
-        await driver!.click(center.x, center.y);
+        await driver!.clickAt(center);
         await driver!.delayMs(waitUiReadyMs);
-        await driver!.triggerCombineKeys(2072, 2017);
+        await driver!.triggerCombineKeys(2072, 2017, 0, disPlay.id.toInt());
         await driver!.delayMs(waitUiReadyMs);
-        await driver!.triggerCombineKeys(2072, 2019, 0);
+        await driver!.triggerCombineKeys(2072, 2019, 0, disPlay.id.toInt());
         await driver!.delayMs(waitUiReadyMs);
       }
       await exitInputMethod();

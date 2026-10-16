@@ -327,7 +327,7 @@ export default function NetworkManagerHttpEnhanceTest() {
             done();
           } else {
             console.log(`${caseName} request success, data: ${JSON.stringify(data)}`);
-            expectTrue(data.responseCode === 200);
+            expectTrue(data.responseCode == 200);
             console.info(`${caseName}---End`);
             done();
           }
@@ -353,8 +353,8 @@ export default function NetworkManagerHttpEnhanceTest() {
       try {
         httpRequest.on("dataSendProgress", (data: http.DataSendProgressInfo) => {
           console.info(`${caseName} dataSendProgress DataSendProgressInfo success:" + ${JSON.stringify(data)}`);
-          expectTrue(data.sendSize !== undefined);
-          expectTrue(data.totalSize !== undefined);
+          expectTrue(data.sendSize != null);
+          expectTrue(data.totalSize != null);
         });
         httpRequest.request(address_post, httpRequestOptions_post, (err, data) => {
           if (err) {
@@ -364,7 +364,7 @@ export default function NetworkManagerHttpEnhanceTest() {
             done();
           } else {
             console.log(`${caseName} on dataSendProgress success, data: ${JSON.stringify(data)}`);
-            expectTrue(data.responseCode === 200);
+            expectTrue(data.responseCode == 200);
             console.info(`${caseName}---End`);
             done();
           }
@@ -395,7 +395,7 @@ export default function NetworkManagerHttpEnhanceTest() {
         done();
       } catch (error) {
         console.log(`${caseName} catch error: ${JSON.stringify(error)}`);
-        expectTrue(error.code !== 401);
+        expectTrue(error.code == 401);
         console.info(`${caseName}---End`);
         done();
       }
@@ -419,7 +419,7 @@ export default function NetworkManagerHttpEnhanceTest() {
         done();
       } catch (error) {
         console.log(`${caseName} catch error: ${JSON.stringify(error)}`);
-        expectTrue(error.code !== 401);
+        expectTrue(error.code == 401);
         console.info(`${caseName}---End`);
         done();
       }
@@ -447,7 +447,7 @@ export default function NetworkManagerHttpEnhanceTest() {
           }
           else {
             console.log(`${caseName} on dataSendProgress success, data: ${JSON.stringify(data)}`);
-            expectTrue(data.responseCode === 200);
+            expectTrue(data.responseCode == 200);
             console.info(`${caseName}---End`);
             done();
           }
@@ -477,7 +477,7 @@ export default function NetworkManagerHttpEnhanceTest() {
         done();
       } catch (error) {
         console.log(`${caseName} catch error: ${JSON.stringify(error)}`);
-        expectTrue(error.code !== 401);
+        expectTrue(error.code == 401);
         console.info(`${caseName}---End`);
         done();
       }
@@ -500,7 +500,7 @@ export default function NetworkManagerHttpEnhanceTest() {
         done();
       } catch (error) {
         console.log(`${caseName} catch error: ${JSON.stringify(error)}`);
-        expectTrue(error.code !== 401);
+        expectTrue(error.code == 401);
         console.info(`${caseName}---End`);
         done();
       }
@@ -525,7 +525,7 @@ export default function NetworkManagerHttpEnhanceTest() {
             done();
           } else {
             console.log(`${caseName} request success, data: ${JSON.stringify(data)}`);
-            expectTrue(data.responseCode === 206);
+            expectTrue(data.responseCode == 206);
             console.info(`${caseName}---End`);
             done();
           }
@@ -558,7 +558,7 @@ export default function NetworkManagerHttpEnhanceTest() {
             done();
           } else {
             console.log(`${caseName} request success, data: ${JSON.stringify(data)}`);
-            expectTrue(data.responseCode === 200);
+            expectTrue(data.responseCode == 200);
             console.info(`${caseName}---End`);
             done();
           }
@@ -624,7 +624,7 @@ export default function NetworkManagerHttpEnhanceTest() {
             done();
           } else {
             console.log(`${caseName} request success, data: ${JSON.stringify(data)}`);
-            expectTrue(data.responseCode === 200);
+            expectTrue(data.responseCode == 200);
             console.info(`${caseName}---End`);
             done();
           }
@@ -657,7 +657,7 @@ export default function NetworkManagerHttpEnhanceTest() {
             done();
           } else {
             console.log(`${caseName} request success, data: ${JSON.stringify(data)}`);
-            expectTrue(data.responseCode === 200);
+            expectTrue(data.responseCode == 200);
             console.info(`${caseName}---End`);
             done();
           }
@@ -756,7 +756,7 @@ export default function NetworkManagerHttpEnhanceTest() {
             done();
           } else {
             console.log(`${caseName} request success, data: ${JSON.stringify(data)}`);
-            expectTrue(data.responseCode === 200);
+            expectTrue(data.responseCode == 200);
             console.info(`${caseName}---End`);
             done();
           }
@@ -789,7 +789,7 @@ export default function NetworkManagerHttpEnhanceTest() {
             done();
           } else {
             console.log(`${caseName} request success, data: ${JSON.stringify(data)}`);
-            expectTrue(data.responseCode === 200);
+            expectTrue(data.responseCode == 200);
             console.info(`${caseName}---End`);
             done();
           }
@@ -822,7 +822,7 @@ export default function NetworkManagerHttpEnhanceTest() {
             done();
           } else {
             console.log(`${caseName} request success, data: ${JSON.stringify(data)}`);
-            expectTrue(data.responseCode === 200);
+            expectTrue(data.responseCode == 200);
             console.info(`${caseName}---End`);
             done();
           }
@@ -855,7 +855,7 @@ export default function NetworkManagerHttpEnhanceTest() {
             done();
           } else {
             console.log(`${caseName} request success, data: ${JSON.stringify(data)}`);
-            expectTrue(data.responseCode === 200);
+            expectTrue(data.responseCode == 200);
             console.info(`${caseName}---End`);
             done();
           }
@@ -888,7 +888,7 @@ export default function NetworkManagerHttpEnhanceTest() {
             done();
           } else {
             console.log(`${caseName} request success, data: ${JSON.stringify(data)}`);
-            expectTrue(data.responseCode === 200);
+            expectTrue(data.responseCode == 200);
             console.info(`${caseName}---End`);
             done();
           }
@@ -951,7 +951,7 @@ export default function NetworkManagerHttpEnhanceTest() {
         const options: http.HttpRequestOptions = httpRequestOptions_dnsOverHttps_emptyStr;
         httpRequest.requestInStream(address_baidu2, options).then(data => {
           console.log(caseName + JSON.stringify(data));
-          expectTrue(data === 200);
+          expectTrue(data == 200);
           console.info(`${caseName}---End`);
           done();
         }).catch((error: BusinessError) => {
@@ -989,7 +989,7 @@ export default function NetworkManagerHttpEnhanceTest() {
             done();
           } else {
             console.log(`${caseName} request success, data: ${JSON.stringify(data)}`);
-            expectTrue(data.responseCode === 200);
+            expectTrue(data.responseCode == 200);
             console.info(`${caseName}---End`);
             done();
           }
@@ -1022,7 +1022,7 @@ export default function NetworkManagerHttpEnhanceTest() {
             done();
           } else {
             console.log(`${caseName} request success, data: ${JSON.stringify(data)}`);
-            expectTrue(data.responseCode === 200);
+            expectTrue(data.responseCode == 200);
             console.info(`${caseName}---End`);
             done();
           }
@@ -1055,7 +1055,7 @@ export default function NetworkManagerHttpEnhanceTest() {
             done();
           } else {
             console.log(`${caseName} request success, data: ${JSON.stringify(data)}`);
-            expectTrue(data.responseCode === 200);
+            expectTrue(data.responseCode == 200);
             console.info(`${caseName}---End`);
             done();
           }
@@ -1088,7 +1088,7 @@ export default function NetworkManagerHttpEnhanceTest() {
             done();
           } else {
             console.log(`${caseName} request success, data: ${JSON.stringify(data)}`);
-            expectTrue(data.responseCode === 200);
+            expectTrue(data.responseCode == 200);
             console.info(`${caseName}---End`);
             done();
           }

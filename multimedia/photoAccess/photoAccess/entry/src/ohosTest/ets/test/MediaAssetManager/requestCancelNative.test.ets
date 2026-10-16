@@ -22,7 +22,7 @@ import fs from '@ohos.file.fs';
 import {
   photoKeys,
   fetchOption,
-  createSandboxFileUri, getPermission, driveFn, sleep,
+  createSandboxFileUri, getPermission, driveFn, sleep, checkResourceFile, createResource
 } from '../common'
 import common from '@ohos.app.ability.common';
 
@@ -35,6 +35,9 @@ export default function requestCancelNativeTest() {
       await getPermission();
       await driveFn();
       await sleep(1000);
+      const fileNames: Array<string> = [ "request_video_native.mp4", "native_request_mpeg.mpeg" ];
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNames);
     });
 
     afterAll(async () => {

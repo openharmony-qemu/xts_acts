@@ -15,7 +15,7 @@
  */
 
 import { describe, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
-import { Driver, ON } from '@ohos.UiTest';
+import { Driver, ON, Component } from '@ohos.UiTest';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
@@ -230,6 +230,9 @@ export default function composeListItemV2OperateOptionsTest() {
       try {
         let driver = Driver.create();
         await driver.delayMs(2000);
+        let scrollBar = await driver.findComponent(ON.type('Scroll'));
+        let searchText = await (scrollBar?.scrollSearch(ON.text('toggle test')) as Promise<Component>);
+        await driver.delayMs(1000);
         let operateText = await driver.findComponent(ON.text('toggle test'));
         expect(operateText !== null).assertTrue();
         await driver.delayMs(1000);

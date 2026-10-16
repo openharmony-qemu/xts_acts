@@ -34,6 +34,7 @@ export default {
       { id: 38, title: 'svgTransform', url: 'pages/ArkUI/svgTransform/index' },
       { id: 39, title: 'svgText', url: 'pages/ArkUI/svgText/index' },
       { id: 40, title: 'svgAnimate', url: 'pages/ArkUI/svgAnimate/index' },
+      { id: 42, title: 'Router Transition', url: 'pages/ArkUI/RouterTransition/index/index' },
       { id: 41, title: '返回首页', url: 'pages/index/index' }
     ]
   },

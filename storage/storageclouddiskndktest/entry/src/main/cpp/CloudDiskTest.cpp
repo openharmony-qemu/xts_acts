@@ -296,6 +296,8 @@ static napi_value Tset_CloudDisk_ErrorCode_ENUM(napi_env env, napi_callback_info
     NAPI_ASSERT(env, errcode == 34400032, "OH_CLOUD_DISK_NO_HYDRATION_IN_PROGRESS is fail.");
     errcode = OH_CLOUD_DISK_INVALID_PLACEHOLDER_STATE;
     NAPI_ASSERT(env, errcode == 34400033, "OH_CLOUD_DISK_INVALID_PLACEHOLDER_STATE is fail.");
+    errcode = OH_CLOUD_DISK_HYDRATION_TASK_LIMIT_REACHED;
+    NAPI_ASSERT(env, errcode == 34400034, "OH_CLOUD_DISK_HYDRATION_TASK_LIMIT_REACHED is fail.");
     napi_value result;
     napi_create_int32(env, 1, &result);
     return result;

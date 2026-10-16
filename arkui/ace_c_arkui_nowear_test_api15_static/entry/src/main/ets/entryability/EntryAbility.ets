@@ -38,6 +38,21 @@ class EntryAbility extends UIAbility {
         return;
       }
       hilog.info(0x0000, 'testTag EntryAbility', 'loadContent ok'+JSON.stringify(this.context));
+      let windowClass: window.Window | undefined = undefined;
+      windowStage.getMainWindow((err: BusinessError<void> | null, data): void => {
+        let errCode: number = err!.code;
+        if (errCode) {
+          console.error('Failed to obtain the main window. Cause: ' + JSON.stringify(err));
+          return;
+        }
+        windowClass = data;
+        try {
+          let properties: window.WindowProperties | undefined = windowClass?.getWindowProperties();
+          AppStorage.setOrCreate<number>('displayID', properties?.displayId ?? 0);
+        } catch (exception) {
+          hilog.error(0x0000, 'testTag', 'Failed to obtain the window properties. Cause: ' + JSON.stringify(exception));
+        }
+      })
       hilog.info(0x0000, 'testTag EntryAbility', 'onWindowStageCreate ok');
     });
   }

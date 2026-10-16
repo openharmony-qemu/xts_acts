@@ -78,6 +78,8 @@ def _run_webpack(ace_loader, src_root, tmp_build, nodejs_bin):
 
 
 def _copy_build_output(tmp_build, out_dir):
+    if os.path.isdir(out_dir):
+        shutil.rmtree(out_dir)
     os.makedirs(out_dir, exist_ok=True)
     for root, _, files in os.walk(tmp_build):
         rel = os.path.relpath(root, tmp_build)

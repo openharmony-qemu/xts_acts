@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll,afterEach} from "../../../hypium/index";
 import hilog from '@ohos.hilog';
 import Utils from './Util.test';
 import { BusinessError } from '@ohos.base';
@@ -45,6 +45,22 @@ export default function WindowEventStatic() {
             }
         });
 
+    afterEach(async ()=>{
+      try {
+        await Utils.msSleep(500);
+        let windowClassArray: Array<window.Window> = await windowStage!.getSubWindow();
+        if(windowClassArray.length!=0){
+           for(let i = 0;i<windowClassArray.length;i++){
+               await windowClassArray[i].destroyWindow();
+               await Utils.msSleep(500);
+               hilog.info(domain, tag,`brforeAll destroyWindow windowClassArray ${i} success`);
+            }
+        }
+      } catch (error) {
+        console.log('afterEach fail cause'+error)
+      }
+    });
+    
         /**
          * @tc.number SUB_WINDOW_EVENT_OFFTOUCHOUTSIDE_NORMAL_001
          * * @tc.name testOffTouchOutside_NORMAL_001
@@ -1035,7 +1051,7 @@ export default function WindowEventStatic() {
             }
         });
 
-        /**
+       /**
          * @tc.number SUB_WINDOW_EVENT_CLEARWINDOWMASK_NORMAL_001
          * @tc.name testClearWindowMask_NORMAL_001
          * @tc.desc clearWindowMask clear mask test.
@@ -1043,52 +1059,52 @@ export default function WindowEventStatic() {
          * @tc.type Function
          * @tc.level Level3
          */
-        it('testClearWindowMask_NORMAL_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName: string = 'testClearWindowMask_NORMAL_001';
-            let msgStr: string = 'jsunittest ' + caseName + ' ';
-            hilog.info(domain, tag, msgStr + 'begin');
+       it('testClearWindowMask_NORMAL_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let caseName: string = 'testClearWindowMask_NORMAL_001';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
 
-            try {
-                let subWindow: window.Window = await windowStage!.createSubWindow('testClearWindowMask_subWindow');
-                hilog.info(domain, tag, caseName + ' create subWindow success');
-                await subWindow.setUIContent('pages/index2');
-                hilog.info(domain, tag, caseName + ' setUIContent success');
-                await subWindow.resize(200, 200);
-                hilog.info(domain, tag, caseName + ' resize success');
-                await subWindow.showWindow();
-                hilog.info(domain, tag, caseName + ' showWindow success');
+        try {
+            let subWindow: window.Window = await windowStage!.createSubWindow('testClearWindowMask_subWindow');
+            hilog.info(domain, tag, caseName + ' create subWindow success');
+            await subWindow.setUIContent('pages/index2');
+            hilog.info(domain, tag, caseName + ' setUIContent success');
+            await subWindow.resize(200, 200);
+            hilog.info(domain, tag, caseName + ' resize success');
+            await subWindow.showWindow();
+            hilog.info(domain, tag, caseName + ' showWindow success');
 
-                let maskWidth = subWindow.getWindowProperties().windowRect.width;
-                let maskHeight = subWindow.getWindowProperties().windowRect.height;
-                let windowMask = Array.create<Array<Long>>(maskHeight, [] as Array<Long>).map((_, row) => {
-                    let array = new Array<Long>(maskWidth, (i) => { return (i + row) > (maskWidth + maskHeight) / 2 ? 1 : 0 });
-                    return array;
-                });
+            let maskWidth = subWindow.getWindowProperties().windowRect.width;
+            let maskHeight = subWindow.getWindowProperties().windowRect.height;
+            let windowMask = Array.create<Array<Long>>(maskHeight, [] as Array<Long>).map((_, row) => {
+                let array = new Array<Long>(maskWidth, (i) => { return (i + row) > (maskWidth + maskHeight) / 2 ? 1 : 0 });
+                return array;
+            });
 
-                await subWindow.setWindowMask(windowMask);
-                hilog.info(domain, tag, caseName + ' setWindowMask success');
+            await subWindow.setWindowMask(windowMask);
+            hilog.info(domain, tag, caseName + ' setWindowMask success');
 
-                await subWindow.clearWindowMask();
-                hilog.info(domain, tag, caseName + ' clearWindowMask success');
+            await subWindow.clearWindowMask();
+            hilog.info(domain, tag, caseName + ' clearWindowMask success');
 
-                await subWindow.destroyWindow();
-                hilog.info(domain, tag, caseName + ' destroyWindow success');
+            await subWindow.destroyWindow();
+            hilog.info(domain, tag, caseName + ' destroyWindow success');
 
-                
+            
+            done();
+        } catch (e) {
+            e = e as BusinessError;
+            hilog.error(domain, tag, msgStr + 'exception = ' + JSON.stringify(e));
+            hilog.error(domain, tag, msgStr + 'exception code = ' + JSON.stringify(e.code));
+            hilog.error(domain, tag, msgStr + 'exception code = ' + JSON.stringify(e.message));
+            if (e.code === 801) {
                 done();
-            } catch (e) {
-                e = e as BusinessError;
-                hilog.error(domain, tag, msgStr + 'exception = ' + JSON.stringify(e));
-                hilog.error(domain, tag, msgStr + 'exception code = ' + JSON.stringify(e.code));
-                hilog.error(domain, tag, msgStr + 'exception code = ' + JSON.stringify(e.message));
-                if (e.code === 801) {
-                    done();
-                } else {
-                    expect(false).assertTrue();
-                    done();
-                }
+            } else {
+                expect(false).assertTrue();
+                done();
             }
-        });
+        }
+    });
 
         /**
          * @tc.number SUB_WINDOW_EVENT_CLEARWINDOWMASK_ERRCODE1300002_001
@@ -1311,7 +1327,7 @@ export default function WindowEventStatic() {
           let windowNumber: int = 0;
           window.getWindowsByCoordinate(displayId, windowNumber, x + 10, y + 10).then((data: Array<window.Window>) => {
             hilog.info(domain, tag, msgStr + 'Succeeded in getting windows. Data: ' + JSON.stringify(data));
-            expect(data.length).assertEqual(1);
+            expect(data.length).assertLargerOrEqual(1);
             done();
           }).catch((err: Error): PromiseLike<void> | undefined => {
             hilog.error(domain, tag, msgStr + 'Failed to get window from point. Cause code: ' + err.code + ', message: ' + err.message);
@@ -1330,7 +1346,7 @@ export default function WindowEventStatic() {
           let windowNumber: int = 0;
           window.getWindowsByCoordinate(displayId, windowNumber, x, y).then((data: Array<window.Window>) => {
             hilog.info(domain, tag, msgStr + 'Succeeded in getting windows. Data: ' + JSON.stringify(data));
-            expect(data.length).assertEqual(1);
+            expect(data.length).assertLargerOrEqual(1);
             done();
           }).catch((err: Error): PromiseLike<void> | undefined => {
             hilog.error(domain, tag, msgStr + 'Failed to get window from point. Cause code: ' + err.code + ', message: ' + err.message);

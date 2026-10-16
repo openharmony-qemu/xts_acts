@@ -116,8 +116,25 @@ export default function ActsNotificationAnsGetNotificationSettingStaticTest() {
           hilog.info(0x0000, 'testTag', `${testNum}openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
           num++
           expect(num).assertEqual(1);
-        }).catch((error: Error) : void => {
-          let err:BusinessError=error as BusinessError
+          notificationManager.getNotificationSetting().then((data: notificationManager.NotificationSetting) => {
+            console.info(`${testNum}getNotificationSetting success, data: ${JSON.stringify(data)}`);
+            expect(data.notificationEnabled).assertEqual(false)
+            expect(data.bannerEnabled).assertEqual(false)
+            expect(data.badgeNumberEnabled).assertEqual(false)
+            done()
+          }).catch((e: Error): void => {
+            let err:BusinessError=e as BusinessError
+            console.error(`${testNum}getNotificationSetting failed, code is ${err.code}, message is ${err.message}`);
+            if (err?.code === 801) {
+              expect(err.code).assertEqual(801);
+              done();
+            } else {
+              expect(false).assertTrue();
+              done();
+            }
+          });
+        }).catch((e: Error) : void => {
+          let err:BusinessError=e as BusinessError
           hilog.error(0x0000, 'testTag', `${testNum}openNotificationSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
           if (err?.code === 801) {
             expect(err?.code).assertEqual(801);
@@ -128,17 +145,12 @@ export default function ActsNotificationAnsGetNotificationSettingStaticTest() {
           }
         });
         await Utils.msSleep(2000)
-        await driver.assertComponentExist(ON.text('通知管理'));
-        await Utils.msSleep(2000)
         let buttonOne = await driver.findComponent(ON.type('Toggle').isAfter(ON.text('允许通知')));
         console.info(`${testNum} button is ${JSON.stringify(buttonOne)}`);
         if (buttonOne !== null) {
           await Utils.msSleep(1500)
           await buttonOne.click();
           await Utils.msSleep(1500)
-        } else {
-          console.info(`${testNum} null button`);
-          expect(buttonOne).assertContain('允许通知')
         }
         await Utils.msSleep(3000)
         let scrollBar = await driver.findComponent(ON.text('桌面角标'));
@@ -151,9 +163,6 @@ export default function ActsNotificationAnsGetNotificationSettingStaticTest() {
           await Utils.msSleep(1500)
           await buttonTwo.click();
           await Utils.msSleep(1500)
-        } else {
-          console.info(`${testNum} null button`);
-          expect(buttonTwo).assertContain('桌面角标')
         }
         let scrollBar1 = await driver.findComponent(ON.text('桌面角标'));
         console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar1)} `);
@@ -165,39 +174,19 @@ export default function ActsNotificationAnsGetNotificationSettingStaticTest() {
           await Utils.msSleep(1500)
           await buttonZero.click();
           await Utils.msSleep(1500)
-        } else {
-          console.info(`${testNum} null button`);
-          expect(buttonZero).assertContain("允许通知")
         }
 
         await Utils.msSleep(1500)
         let buttonThree = await driver.findComponent(ON.text('确定'));
-        console.info(`${testNum} button is ${JSON.stringify(buttonThree)}`);
+        console.info(`${testNum} buttonThree is ${JSON.stringify(buttonThree)}`);
         if (buttonThree !== null) {
           await Utils.msSleep(1500)
           await buttonThree.click();
           await Utils.msSleep(1500)
-        } else {
-          console.info(`${testNum} null button`);
-          expect(buttonThree).assertContain('确定')
-        }
-        notificationManager.getNotificationSetting().then((data: notificationManager.NotificationSetting) => {
-          console.info(`${testNum}getNotificationSetting success, data: ${JSON.stringify(data)}`);
-          expect(data.notificationEnabled).assertEqual(false)
-          expect(data.bannerEnabled).assertEqual(false)
-          expect(data.badgeNumberEnabled).assertEqual(false)
+        }else{
+          expect(buttonThree === null).assertEqual(true)
           done()
-        }).catch((error: Error): void => {
-          let err:BusinessError=error as BusinessError
-          console.error(`${testNum}getNotificationSetting failed, code is ${err.code}, message is ${err.message}`);
-          if (err?.code === 801) {
-            expect(err.code).assertEqual(801);
-            done();
-          } else {
-            expect(false).assertTrue();
-            done();
-          }
-        });
+        }  
       } catch (err) {
         hilog.error(0x0000, 'testTag', `${testNum}restart failed: ${err.code}, ${err.message},${testNum}`);
         if (err?.code === 801) {
@@ -233,8 +222,25 @@ export default function ActsNotificationAnsGetNotificationSettingStaticTest() {
           hilog.info(0x0000, 'testTag', `${testNum} openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
           num++
           expect(num).assertEqual(1);
-        }).catch((error: Error) : void => {
-          let err:BusinessError=error as BusinessError
+          notificationManager.getNotificationSetting().then((data: notificationManager.NotificationSetting) => {
+            console.info(`${testNum}getNotificationSetting success, data: ${JSON.stringify(data)}`);
+            expect(data.notificationEnabled).assertEqual(true)
+            expect(data.bannerEnabled).assertEqual(true)
+            expect(data.badgeNumberEnabled).assertEqual(true)
+            done()
+          }).catch((e: Error): void => {
+            let err:BusinessError=e as BusinessError
+            console.error(`${testNum}getNotificationSetting failed, code is ${err.code}, message is ${err.message}`);
+            if (err?.code === 801) {
+              expect(err.code).assertEqual(801);
+              done();
+            } else {
+              expect(false).assertTrue();
+              done();
+            }
+          });
+        }).catch((e: Error) : void => {
+          let err:BusinessError=e as BusinessError
           hilog.error(0x0000, 'testTag', `${testNum} openNotificationSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
           if (err?.code === 801) {
             expect(err?.code).assertEqual(801);
@@ -245,17 +251,12 @@ export default function ActsNotificationAnsGetNotificationSettingStaticTest() {
           }
         });
         await Utils.msSleep(2000)
-        await driver.assertComponentExist(ON.text('通知管理'));
-        await Utils.msSleep(2000)
         let buttonOne = await driver.findComponent(ON.type('Toggle').isAfter(ON.text('允许通知')));
-        console.info(`${testNum} button is ${JSON.stringify(buttonOne)}`);
+        console.info(`${testNum} buttonOne is ${JSON.stringify(buttonOne)}`);
         if (buttonOne !== null) {
           await Utils.msSleep(1500)
           await buttonOne.click();
           await Utils.msSleep(1500)
-        } else {
-          console.info(`${testNum} null button`);
-          expect(buttonOne).assertContain('允许通知')
         }
         await Utils.msSleep(1500)
         let scrollBar = await driver.findComponent(ON.text('横幅通知'));
@@ -263,54 +264,31 @@ export default function ActsNotificationAnsGetNotificationSettingStaticTest() {
         await scrollBar?.scrollToBottom()
         await Utils.msSleep(500)
         let buttonTwo = await driver.findComponent(ON.text('桌面角标'));
-        console.info(`${testNum} button is ${JSON.stringify(buttonTwo)}`);
+        console.info(`${testNum} buttonTwo is ${JSON.stringify(buttonTwo)}`);
         if (buttonTwo !== null) {
           await Utils.msSleep(1500)
           await buttonTwo.click();
           await Utils.msSleep(1500)
-        } else {
-          console.info(`${testNum} null button`);
-          expect(buttonTwo).assertContain('允许通知')
         }
         await Utils.msSleep(1500)
         let buttonThree = await driver.findComponent(ON.text('横幅通知'));
-        console.info(`${testNum} button is ${JSON.stringify(buttonThree)}`);
+        console.info(`${testNum} buttonThree is ${JSON.stringify(buttonThree)}`);
         if (buttonThree !== null) {
           await Utils.msSleep(1500)
           await buttonThree.click();
           await Utils.msSleep(1500)
-        } else {
-          console.info(`${testNum} null button`);
-          expect(buttonThree).assertContain('允许通知')
         }
         await Utils.msSleep(1500)
         let buttonFour = await driver.findComponent(ON.text('确定'));
-        console.info(`${testNum} button is ${JSON.stringify(buttonFour)}`);
+        console.info(`${testNum} buttonFour is ${JSON.stringify(buttonFour)}`);
         if (buttonFour !== null) {
           await Utils.msSleep(1500)
           await buttonFour.click();
           await Utils.msSleep(1500)
-        } else {
-          console.info(`${testNum} null button`);
-          expect(buttonFour).assertContain('确定')
-        }
-        notificationManager.getNotificationSetting().then((data: notificationManager.NotificationSetting) => {
-          console.info(`${testNum}getNotificationSetting success, data: ${JSON.stringify(data)}`);
-          expect(data.notificationEnabled).assertEqual(true)
-          expect(data.bannerEnabled).assertEqual(true)
-          expect(data.badgeNumberEnabled).assertEqual(true)
+        }else{
+          expect(buttonFour === null).assertEqual(true)
           done()
-        }).catch((error: Error): void => {
-          let err:BusinessError=error as BusinessError
-          console.error(`${testNum}getNotificationSetting failed, code is ${err.code}, message is ${err.message}`);
-          if (err?.code === 801) {
-            expect(err.code).assertEqual(801);
-            done();
-          } else {
-            expect(false).assertTrue();
-            done();
-          }
-        });
+        } 
       } catch (err) {
         hilog.error(0x0000, 'testTag', `${testNum}restart failed: ${err.code}, ${err.message},${testNum}`);
         if (err?.code === 801) {

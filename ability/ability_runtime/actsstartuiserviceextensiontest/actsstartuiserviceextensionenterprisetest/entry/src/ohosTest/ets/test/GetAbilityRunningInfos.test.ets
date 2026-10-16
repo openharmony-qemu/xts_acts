@@ -87,7 +87,7 @@ export default function AbilityManagerGetAbilityRunningInfosTest() {
       console.info('====> [' + tag + '] start');
       try {
         abilityManager.getAbilityRunningInfos((error: BusinessError,
-          abilityRunningInfos: Array<abilityManager.AbilityRunningInfo>) => {
+          abilityRunningInfos: abilityManager.AbilityRunningInfo[]) => {
           if (error) {
             hilog.error(0x0000, 'testTag', `${tag} failed: ${JSON.stringify(error)}`);
             expect().assertFail();

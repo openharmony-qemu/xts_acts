@@ -21,7 +21,8 @@ import {
   sleep,
   driveFn,
   getPermission,
-  pushCreateAsset
+  checkResourceFile,
+  createResource
 } from '../common'
 import { dataSharePredicates } from '@kit.ArkData'
 
@@ -37,7 +38,8 @@ export default function registerPhotoChangeTest () {
       await getPermission();
       await driveFn();
       await sleep(1000);
-      await pushCreateAsset(testContext, fileNameList);
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNameList);
     });
 
     const NOTIFY_CHANGE_UPDATE = photoAccessHelper.NotifyChangeType.NOTIFY_CHANGE_UPDATE;

@@ -67,6 +67,7 @@ export default function richEditorBuilderSpanParamTest(): void {
         'param_get_range_start_neg', 'param_get_range_end_large',
         'param_get_range_start_gt_end',
         'param_get_empty_result', 'param_get_multiple',
+        'param_get_assert_non_empty', 'param_get_assert_empty',
         'param_delete_trigger'
       ];
       for (let i: int = 0; i < keys.length; i++) {
@@ -863,6 +864,58 @@ export default function richEditorBuilderSpanParamTest(): void {
       let countStr: string = result!.split('|')[0];
       expect(Number(countStr) >= 2).assertTrue();
       console.info('[richEditorBuilderSpanParam_get_multiple_4300] END');
+    });
+
+    /**
+     * @tc.name   richEditorBuilderSpanParam_get_non_empty_assert_4400
+     * @tc.number SUB_ARKUI_RICHEDITOR_BUILDERSPANPARAM_GET_ASSERT_0100
+     * @tc.desc   Test getRichEditorBuilderSpans returns non-empty array when BuilderSpan added
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('richEditorBuilderSpanParam_get_non_empty_assert_4400', Level.LEVEL2, async (): Promise<void> => {
+      console.info('[richEditorBuilderSpanParam_get_non_empty_assert_4400] START');
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(SLEEP_TIME);
+      let btn = await driver.findComponent(ON.id('btn_param_get_assert_non_empty'));
+      expect(btn).not().assertUndefined();
+      await (btn?.click() as Promise<void>);
+      await CommonFunc.sleep(SLEEP_TIME);
+      let result: string | undefined = AppStorage.get<string>('param_get_assert_non_empty');
+      expect(result !== undefined).assertTrue();
+      expect(!result!.startsWith('failed')).assertTrue();
+      let parts: string[] = result!.split('|');
+      expect(parts[0]).assertEqual('true');
+      expect(parts[1]).assertEqual('true');
+      expect(Number(parts[2]) > 0).assertTrue();
+      console.info('[richEditorBuilderSpanParam_get_non_empty_assert_4400] END');
+    });
+
+    /**
+     * @tc.name   richEditorBuilderSpanParam_get_empty_assert_4500
+     * @tc.number SUB_ARKUI_RICHEDITOR_BUILDERSPANPARAM_GET_ASSERT_0200
+     * @tc.desc   Test getRichEditorBuilderSpans returns empty array when no BuilderSpan added
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('richEditorBuilderSpanParam_get_empty_assert_4500', Level.LEVEL2, async (): Promise<void> => {
+      console.info('[richEditorBuilderSpanParam_get_empty_assert_4500] START');
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(SLEEP_TIME);
+      let btn = await driver.findComponent(ON.id('btn_param_get_assert_empty'));
+      expect(btn).not().assertUndefined();
+      await (btn?.click() as Promise<void>);
+      await CommonFunc.sleep(SLEEP_TIME);
+      let result: string | undefined = AppStorage.get<string>('param_get_assert_empty');
+      expect(result !== undefined).assertTrue();
+      expect(!result!.startsWith('failed')).assertTrue();
+      let parts: string[] = result!.split('|');
+      expect(parts[0]).assertEqual('true');
+      expect(parts[1]).assertEqual('true');
+      expect(Number(parts[2])).assertEqual(0);
+      console.info('[richEditorBuilderSpanParam_get_empty_assert_4500] END');
     });
   });
 }

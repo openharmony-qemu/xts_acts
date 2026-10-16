@@ -14,3 +14,7 @@ target_link_libraries(clouddisk PUBLIC libace_napi.z.so libace_ndk.z.so libohclo
 add_library(clouddisk1 SHARED CloudDiskTest1.cpp)
 target_link_options(clouddisk1 PRIVATE "-Wl,--unresolved-symbols=ignore-all")
 target_link_libraries(clouddisk1 PUBLIC libace_napi.z.so libace_ndk.z.so libohclouddiskmanager.so libhilog_ndk.z.so)
+
+add_library(clouddisk2 SHARED CloudDiskTest2.cpp)
+target_link_options(clouddisk2 PRIVATE "-Wl,--unresolved-symbols=ignore-all")
+target_link_libraries(clouddisk2 PUBLIC libace_napi.z.so libace_ndk.z.so libohclouddiskmanager.so libhilog_ndk.z.so)

@@ -39,6 +39,10 @@ import {
 export default function saveComponentUserCancelStaticTest() {
   describe('saveComponentUserCancelStaticTest', () => {
     console.info('====>saveComponentUserCancelStaticTest start');
+    let driver: Driver = Driver.create();
+    let authorized: boolean = false;
+    let caseDone: boolean = false;
+
     beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility('com.example.securitycomponent.static', 'EntryAbility')
       await UtilsTest.msSleep(2000);
@@ -101,7 +105,7 @@ export default function saveComponentUserCancelStaticTest() {
             await driver.swipe(startX, startY, endX, endY);
             await UtilsTest.msSleep(100);
           }
-          let userBtn = await driver.findComponent(ON.text('targetBut'));
+          let userBtn = await driver.findComponent(ON.text(targetBut));
           console.info(`====>${testname} userBtn is:` + JSON.stringify(userBtn));
           console.info(`====>${testname} userBtnClick START====`);
           await (userBtn?.click() as Promise<void>);
@@ -110,7 +114,9 @@ export default function saveComponentUserCancelStaticTest() {
       } catch (err) {
         err = err as BusinessError;
         console.error(`====>${testname} clickBtn err : ` + JSON.stringify(err));
-        expect(false).assertTrue();
+        if (!authorized) {
+          expect(false).assertTrue();
+        }
       }
       console.info(`====>${testname} clickBtn function End====`);
     }
@@ -131,12 +137,14 @@ export default function saveComponentUserCancelStaticTest() {
       } catch (err) {
         err = err as BusinessError;
         console.error(`====>${testname} clickSecComponent err : ` + JSON.stringify(err));
-        expect(false).assertTrue();
+        if (!authorized) {
+          expect(false).assertTrue();
+        }
       }
       console.info(`====>${testname} clickSecComponent function End====`);
     }
 
-    let sucCallback = (testname: string, done: () => void) => {
+    let sucCallback = (testname: string) => {
       console.info(`====>${testname} sucCallback function Start====`);
       let clickEvent:events_emitter.InnerEvent = {
         eventId: 2,
@@ -150,33 +158,30 @@ export default function saveComponentUserCancelStaticTest() {
             console.info(`====>${testname} get clickData.data.clickResult is: ` + JSON.stringify(data['clickResult']));
             if (data['clickResult'] == SaveButtonOnClickResult.SUCCESS) {
               console.info(`====>${testname} 设置权限成功`);
-              expect(data['clickResult'] == SaveButtonOnClickResult.SUCCESS).assertTrue();
+              authorized = true;
               console.info(`====>${testname} END====`);
-              done();
             } else {
               console.info(`====>${testname} 设置权限失败`);
-              expect(false).assertTrue();
+              authorized = false;
               console.info(`====>${testname} END====`);
-              done();
             }
           } else {
             console.info(`====>${testname} ERR CASE 失败`);
-            expect(false).assertTrue();
+            authorized = false;
             console.info(`====>${testname} END====`);
-            done();
           }
         } catch (err) {
           err = err as BusinessError;
           console.error(`====>${testname} once clickEvent err : ` + JSON.stringify(err));
-          done();
+          authorized = false;
         }
       }
       events_emitter.once(clickEvent, clickCallback);
       console.info(`====>${testname} sucCallback function End====`);
     }
 
-    let cancelCallback = (testname: string, done: () => void) => {
-      console.info(`====>${testname} sucCallback function Start====`);
+    let cancelCallback = (testname: string) => {
+      console.info(`====>${testname} cancelCallback function Start====`);
       let clickEvent:events_emitter.InnerEvent = {
         eventId: 2,
         priority: events_emitter.EventPriority.LOW
@@ -189,29 +194,26 @@ export default function saveComponentUserCancelStaticTest() {
             console.info(`====>${testname} get clickData.data.clickResult is: ` + JSON.stringify(data['clickResult']));
             if (data['clickResult'] == SaveButtonOnClickResult.CANCELED_BY_USER) {
               console.info(`====>${testname} 取消授权成功`);
-              expect(data['clickResult'] == SaveButtonOnClickResult.CANCELED_BY_USER).assertTrue();
+              authorized = true;
               console.info(`====>${testname} END====`);
-              done();
             } else {
               console.info(`====>${testname} 取消授权失败`);
-              expect(false).assertTrue();
+              authorized = false;
               console.info(`====>${testname} END====`);
-              done();
             }
           } else {
             console.info(`====>${testname} ERR CASE 失败`);
-            expect(false).assertTrue();
+            authorized = false;
             console.info(`====>${testname} END====`);
-            done();
           }
         } catch (err) {
           err = err as BusinessError;
           console.error(`====>${testname} once clickEvent err : ` + JSON.stringify(err));
-          done();
+          authorized = false;
         }
       }
       events_emitter.once(clickEvent, clickCallback);
-      console.info(`====>${testname} sucCallback function End====`);
+      console.info(`====>${testname} cancelCallback function End====`);
     }
 
     /**
@@ -225,6 +227,8 @@ export default function saveComponentUserCancelStaticTest() {
      it('Test_Security_SaveButton_CancelStatic_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const TCNAME: string = 'Test_Security_SaveButton_CancelStatic_0100';
       console.info(`====>${TCNAME} START====`);
+      authorized = false;
+      caseDone = false;
       try {
         let data: Record<string, RecordData> = {
           'userEve': true
@@ -246,10 +250,17 @@ export default function saveComponentUserCancelStaticTest() {
       expect(obj.getElement('$attrs').getInteger('icon')).assertEqual(0);
       expect(obj.getElement('$attrs').getInteger('text')).assertEqual(0);
       await UtilsTest.msSleep(1000);
-      cancelCallback(TCNAME, done);
-      let driver = Driver.create();
+      cancelCallback(TCNAME);
       let targetBut = '取消';
       await clickSecComponent(TCNAME, driver, targetBut);
+      for (let i = 0; i < 25 && !authorized; i++) {
+        await UtilsTest.msSleep(200);
+      }
+      expect(authorized).assertTrue();
+      if (!caseDone) {
+        caseDone = true;
+        done();
+      }
     });
     
     /**
@@ -263,6 +274,8 @@ export default function saveComponentUserCancelStaticTest() {
      it('Test_Security_SaveButton_CancelStatic_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const TCNAME: string = 'Test_Security_SaveButton_CancelStatic_0200';
       console.info(`====>${TCNAME} START====`);
+      authorized = false;
+      caseDone = false;
       try {
         let data: Record<string, RecordData> = {
           'userEve': true
@@ -284,10 +297,17 @@ export default function saveComponentUserCancelStaticTest() {
       expect(obj.getElement('$attrs').getInteger('icon')).assertEqual(0);
       expect(obj.getElement('$attrs').getInteger('text')).assertEqual(0);
       await UtilsTest.msSleep(1000);
-      sucCallback(TCNAME, done);
-      let driver = Driver.create();
+      sucCallback(TCNAME);
       let targetBut = '允许';
       await clickSecComponent(TCNAME, driver, targetBut);
+      for (let i = 0; i < 25 && !authorized; i++) {
+        await UtilsTest.msSleep(200);
+      }
+      expect(authorized).assertTrue();
+      if (!caseDone) {
+        caseDone = true;
+        done();
+      }
     });
 
     /**
@@ -301,6 +321,8 @@ export default function saveComponentUserCancelStaticTest() {
      it('Test_Security_SaveButton_CancelStatic_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const TCNAME: string = 'Test_Security_SaveButton_CancelStatic_0300';
       console.info(`====>${TCNAME} START====`);
+      authorized = false;
+      caseDone = false;
       try {
         let data: Record<string, RecordData> = {
           'userEve': false
@@ -322,10 +344,17 @@ export default function saveComponentUserCancelStaticTest() {
       expect(obj.getElement('$attrs').getInteger('icon')).assertEqual(0);
       expect(obj.getElement('$attrs').getInteger('text')).assertEqual(0);
       await UtilsTest.msSleep(1000);
-      sucCallback(TCNAME, done);
-      let driver = Driver.create();
+      sucCallback(TCNAME);
       let targetBut = '允许';
       await clickSecComponent(TCNAME, driver, targetBut);
+      for (let i = 0; i < 25 && !authorized; i++) {
+        await UtilsTest.msSleep(200);
+      }
+      expect(authorized).assertTrue();
+      if (!caseDone) {
+        caseDone = true;
+        done();
+      }
     });
 
     /**
@@ -339,6 +368,8 @@ export default function saveComponentUserCancelStaticTest() {
      it('Test_Security_SaveButton_CancelStatic_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const TCNAME: string = 'Test_Security_SaveButton_CancelStatic_0400';
       console.info(`====>${TCNAME} START====`);
+      authorized = false;
+      caseDone = false;
       try {
         let data: Record<string, RecordData> = {
           'userEve': undefined
@@ -360,10 +391,17 @@ export default function saveComponentUserCancelStaticTest() {
       expect(obj.getElement('$attrs').getInteger('icon')).assertEqual(0);
       expect(obj.getElement('$attrs').getInteger('text')).assertEqual(0);
       await UtilsTest.msSleep(1000);
-      sucCallback(TCNAME, done);
-      let driver = Driver.create();
+      sucCallback(TCNAME);
       let targetBut = '允许';
       await clickSecComponent(TCNAME, driver, targetBut);
+      for (let i = 0; i < 25 && !authorized; i++) {
+        await UtilsTest.msSleep(200);
+      }
+      expect(authorized).assertTrue();
+      if (!caseDone) {
+        caseDone = true;
+        done();
+      }
     });
   })
 }

@@ -15,7 +15,7 @@
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
 import { describe, it, expect, beforeAll, Level } from '@ohos/hypium-dynamic'
-import { albumType, albumSubtype, genRadomStr, fetchOption, albumKeys, getPermission, driveFn, sleep } from '../common'
+import { albumType, albumSubtype, genRadomStr, fetchOption, albumKeys, getPermission, driveFn, sleep, checkResourceFile, createResource } from '../common'
 import common from '@ohos.app.ability.common'
 import dataSharePredicates from '@ohos.data.dataSharePredicates'
 
@@ -45,6 +45,9 @@ export default function setAlbumNameChangeRequestTest() {
       await getPermission();
       await driveFn();
       await sleep(1000);
+      let fileNameList = ["albumNameTest001.jpg"];
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNameList);
     });
     /**
      * @tc.name   album_name_change_request_000

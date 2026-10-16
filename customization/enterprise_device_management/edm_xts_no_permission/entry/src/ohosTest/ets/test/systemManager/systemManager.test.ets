@@ -729,7 +729,7 @@ function testSetLocalHotaDomain() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
     try {
       const TEST_HOTA_DOMAIN: string = "https://www.hota.com";
-      systemManager.setLocalHotaDomain(SELFWANT, TEST_HOTA_DOMAIN);
+      systemManager.setLocalHotaDomain(TEST_HOTA_DOMAIN);
       expect(false).assertTrue();
     } catch (error) {
       if (error.code === 801) {
@@ -756,7 +756,7 @@ function testGetLocalHotaDomain() {
   it("test_get_local_hota_domain_0100", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
     try {
-      systemManager.getLocalHotaDomain(SELFWANT);
+      systemManager.getLocalHotaDomain();
     } catch (error) {
       expect(error.code === 201).assertTrue();
     } finally {
