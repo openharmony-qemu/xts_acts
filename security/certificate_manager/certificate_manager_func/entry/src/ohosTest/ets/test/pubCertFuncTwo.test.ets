@@ -89,7 +89,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
         expect(false).assertTrue();
       } catch (error) {
         console.error(`SUB_Security_CertManager_PriCertJsApi_Func_0120 Failed to install private certificate. Code: ${error.code}, message: ${error.message}`);
-        expect(error.code).assertEqual(401);
+        expect(error.code).assertEqual(17500003);
       }
       done();
     });
