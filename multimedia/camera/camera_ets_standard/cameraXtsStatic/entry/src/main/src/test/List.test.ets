@@ -11,6 +11,7 @@ import MetadataOutputStaticTest from "./MetadataOutput/MetadataOutput.test";
 import ApertureTest from "./cameraPhotoSession/Aperture.test";
 import ApertureQueryGetSupportedPhysicalAperturesTest
   from "./cameraPhotoSession/ApertureQueryGetSupportedPhysicalApertures.test";
+import PhotoOutputTest from "./CameraOutput/PhotoOutput.test";
 import CameraPhotoSessionMetadata from "./cameraPhotoSession/CameraPhotoSessionMetadata.test";
 import ManualFocusQueryTest from "./Camera/ManualFocusQuery.test";
 import ExposureMeteringModeStaticTest from "./ExposureMeteringMode/AutoExposureMeteringMode.test";
@@ -27,6 +28,7 @@ export default function testsuite() {
   MetadataOutputStaticTest();
   ApertureTest();
   ApertureQueryGetSupportedPhysicalAperturesTest();
+  PhotoOutputTest();
   CameraPhotoSessionMetadata();
   ManualFocusQueryTest();
   ExposureMeteringModeStaticTest();
