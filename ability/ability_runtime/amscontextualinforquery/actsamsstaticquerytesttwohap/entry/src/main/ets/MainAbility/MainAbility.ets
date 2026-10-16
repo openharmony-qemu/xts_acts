@@ -70,8 +70,8 @@ export default class MainAbility extends Ability {
                 abilityName: "com.acts.stinformationmulapp.MainAbility",
                 action: "multiple"
             }, (err: BusinessError) => {
-                console.log('ACTS_getAbilityInfo_0500 MainAbility onForeground - startAbility restart singleton: '
-                + JSON.stringify(err))
+                console.log('ACTS_getAbilityInfo_0500 MainAbility onForeground - startAbility restart singleton: ' +
+                JSON.stringify(err))
             })
             commonEvent.publish("MainAbility_Start_CommonEvent_multi_hap_entryB", {
                 parameters: {
