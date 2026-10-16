@@ -26,7 +26,7 @@ function sleep(time: number): Promise<number> {
 }
 function getDumpCmd(): string {
   let cmd = 'aa dump -a';
-  let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+  let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
   if (user !== undefined) {
     cmd += ' -u ' + user;
   }
