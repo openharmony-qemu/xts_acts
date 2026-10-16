@@ -179,7 +179,8 @@ export default function utilGetHashTest(): void {
      */
     it("testUtilGetHashTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       for (let i = 0; i < 10; i++) {
-        expect(util.getHash(detObjs[i])).assertEqual(util.getHash(detObjs[i]));
+        let h: bigint = util.getHash(detObjs[i]);
+        expect(h).assertEqual(util.getHash(detObjs[i]));
       }
     });
 
@@ -193,7 +194,8 @@ export default function utilGetHashTest(): void {
      */
     it("testUtilGetHashTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       for (let i = 10; i < detObjs.length; i++) {
-        expect(util.getHash(detObjs[i])).assertEqual(util.getHash(detObjs[i]));
+        let h: bigint = util.getHash(detObjs[i]);
+        expect(h).assertEqual(util.getHash(detObjs[i]));
       }
     });
 
@@ -258,7 +260,8 @@ export default function utilGetHashTest(): void {
       m.set("o", obj3);
       expect(util.getHash(obj3)).assertEqual(util.getHash(m.get("o")));
       let a: HStr = { name: "first" } as HStr;
-      expect(util.getHash(a)).assertEqual(util.getHash(a));
+      let aRef: HStr = a;
+      expect(util.getHash(a)).assertEqual(util.getHash(aRef));
     });
 
     /**
