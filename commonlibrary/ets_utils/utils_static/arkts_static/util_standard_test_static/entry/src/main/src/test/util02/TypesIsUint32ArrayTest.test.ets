@@ -257,7 +257,7 @@ export default function typesIsUint32ArrayTest(): void {
       let u32v: Uint32Array = new Uint32Array(ab, 0, 1);
       let dv: DataView = new DataView(ab);
       dv.setUint32(0, 200);
-      expect(u32v.$_get(0)).assertEqual(200);
+      expect(u32v.$_get(0)).assertEqual(3355443200);
       let off: Uint32Array = new Uint32Array(new ArrayBuffer(16), 8, 2);
       type.isUint32Array(off);
       expect(off.buffer.byteLength).assertEqual(16);

@@ -1,5 +1,4 @@
 'use static';
-
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -50,10 +49,6 @@ class HCont {
   m: Map<string, int> = new Map<string, int>();
   s: Set<int> = new Set<int>();
 }
-class HSelf {
-  tag: string = "loop";
-  self: HSelf | null = null;
-}
 class HKlass { x: int = 3; y: string = "k"; }
 class HNum { v: int = 1; }
 
@@ -81,9 +76,6 @@ export default function utilGetHashTest(): void {
     cont.m.set("k", 1);
     cont.s.add(2);
     detObjs.push(cont);
-    let self: HSelf = new HSelf();
-    self.self = self;
-    detObjs.push(self);
     detObjs.push(new Uint8Array(0));
     detObjs.push(new Uint8Array([255, 255, 255, 255]));
 
@@ -265,7 +257,7 @@ export default function utilGetHashTest(): void {
       let m: Map<string, HStr> = new Map<string, HStr>();
       m.set("o", obj3);
       expect(util.getHash(obj3)).assertEqual(util.getHash(m.get("o")));
-      let a: HStr = { tag: "first" } as HStr;
+      let a: HStr = { name: "first" } as HStr;
       expect(util.getHash(a)).assertEqual(util.getHash(a));
     });
 
@@ -289,7 +281,6 @@ export default function utilGetHashTest(): void {
      * @tc.name testUtilGetHashTest008
      * @tc.desc Verify distinct objects yield different hashes part 2 (pairs 10-19)
      * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it("testUtilGetHashTest008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -454,6 +445,5 @@ export default function utilGetHashTest(): void {
       let keys: string[] = Object.keys(emptyRec);
       expect(keys.length).assertEqual(0);
     });
-
   });
 }

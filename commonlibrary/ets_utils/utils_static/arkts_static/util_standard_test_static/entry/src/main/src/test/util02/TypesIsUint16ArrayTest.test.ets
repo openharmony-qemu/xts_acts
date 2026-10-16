@@ -251,7 +251,7 @@ export default function typesIsUint16ArrayTest(): void {
       let u16v: Uint16Array = new Uint16Array(ab, 0, 1);
       let dv: DataView = new DataView(ab);
       dv.setUint16(0, 200);
-      expect(u16v.$_get(0)).assertEqual(200);
+      expect(u16v.$_get(0)).assertEqual(51200);
       let off: Uint16Array = new Uint16Array(new ArrayBuffer(8), 2, 3);
       type.isUint16Array(off);
       expect(off.buffer.byteLength).assertEqual(8);
