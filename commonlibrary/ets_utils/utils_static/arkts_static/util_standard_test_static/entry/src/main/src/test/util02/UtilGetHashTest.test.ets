@@ -337,17 +337,20 @@ export default function utilGetHashTest(): void {
       for (let i = 0; i < 1000; i++) {
         rec["k" + i] = i;
       }
-      expect(util.getHash(rec)).assertEqual(util.getHash(rec));
+      let recHash: bigint = util.getHash(rec);
+      expect(recHash).assertEqual(util.getHash(rec));
       let bigArr: int[] = [];
       for (let i = 0; i < 2000; i++) {
         bigArr.push(i);
       }
-      expect(util.getHash(bigArr)).assertEqual(util.getHash(bigArr));
+      let bigArrHash: bigint = util.getHash(bigArr);
+      expect(bigArrHash).assertEqual(util.getHash(bigArr));
       let bigSet: Set<int> = new Set<int>();
       for (let i = 0; i < 2000; i++) {
         bigSet.add(i);
       }
-      expect(util.getHash(bigSet)).assertEqual(util.getHash(bigSet));
+      let bigSetHash: bigint = util.getHash(bigSet);
+      expect(bigSetHash).assertEqual(util.getHash(bigSet));
     });
 
     /**

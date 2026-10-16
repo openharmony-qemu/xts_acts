@@ -468,10 +468,10 @@ export default function utilFormatTest(): void {
      * @tc.level LEVEL2
      */
     it("testUtilFormatTest016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(util.format("%s-%d", "k", 3)).assertEqual(util.format("%s-%d", "k", 3));
+      expect(util.format("%s-%d", "k", 3)).assertEqual("k-3");
       const jo: Record<string, int> = { "a": 1 };
-      expect(util.format("%j", jo)).assertEqual(util.format("%j", jo));
-      expect(util.format("%i", 7.9)).assertEqual(util.format("%i", 7.9));
+      expect(util.format("%j", jo)).assertEqual('{"a":1}');
+      expect(util.format("%i", 7.9)).assertEqual("7");
     });
 
     /**

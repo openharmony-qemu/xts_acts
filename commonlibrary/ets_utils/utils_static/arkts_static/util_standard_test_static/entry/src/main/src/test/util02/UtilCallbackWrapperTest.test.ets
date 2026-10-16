@@ -650,7 +650,7 @@ export default function utilCallbackWrapperTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL_CALLBACK_WRAPPER_1500
      * @tc.name testUtilCallbackWrapperTest015
-     * @tc.desc Verify a throw inside the callback does not surface synchronously and the async flag is set after the tick
+     * @tc.desc Verify a throw inside the callback is not propagated synchronously and the async flag is set after the tick
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
