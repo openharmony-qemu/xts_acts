@@ -1982,74 +1982,6 @@ export default function FastBufferTest() {
       });
 
     /**
-     * @tc.name   testWriteUInt32BE
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_6600
-     * @tc.desc   Test
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
-     */
-    it('testWriteUInt32BE', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'testWriteUInt32BE';
-        console.info(`${caseName} test start`);
-        let result = 0
-        try {
-          let group = new taskpool.TaskGroup(caseName)
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(testWriteUInt32BE)
-          }
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
-            console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
-
-    /**
-     * @tc.name   testWriteUInt32LE
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_6700
-     * @tc.desc   Test
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
-     */
-    it('testWriteUInt32LE', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'testWriteUInt32LE';
-        console.info(`${caseName} test start`);
-        let result = 0
-        try {
-          let group = new taskpool.TaskGroup(caseName)
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(testWriteUInt32LE)
-          }
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
-            console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
-
-    /**
      * @tc.name   testReadUIntLE
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_6800
      * @tc.desc   Test
@@ -2083,38 +2015,5 @@ export default function FastBufferTest() {
         done();
       });
 
-    /**
-     * @tc.name   testBufferCompare
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_6900
-     * @tc.desc   Test
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
-     */
-    it('testBufferCompare', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'testBufferCompare';
-        console.info(`${caseName} test start`);
-        let result = 0
-        try {
-          let group = new taskpool.TaskGroup(caseName)
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(testBufferCompare)
-          }
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
-            console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
   })
 }

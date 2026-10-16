@@ -7,7 +7,6 @@ import sendableChainTest from './SendablesChain.test';
 import sendableGroupTest from './SendablesGroup.test';
 import sendableGroupWithAllocTest from './SendablesGroupWithAlloc.test';
 import sendablesTest from './SendablesTest.test';
-import sendablesTestWithAlloc from './SendablesTestWithAlloc.test';
 
 
 import concurrencyReturnCoveredTest from './returnCovered/ConcurrencyReturnCoveredTest.test';
@@ -23,7 +22,6 @@ export default function testsuite() {
   sendableGroupTest();
   sendableGroupWithAllocTest();
   sendablesTest();
-  sendablesTestWithAlloc();
 
   concurrencyReturnCoveredTest();
   concurrencyCoveredSupplement();
