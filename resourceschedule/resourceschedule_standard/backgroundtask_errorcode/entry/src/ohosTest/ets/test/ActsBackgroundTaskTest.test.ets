@@ -14,7 +14,7 @@
  */
 
 import { describe, expect, it, Level } from '@ohos/hypium'
-import * as backgroundtaskerror from 'libbackgroundtaskerrorcode.so'
+import backgroundtaskerror from 'libbackgroundtaskerrorcode.so'
 const Success = 0
 export default function ActsBackgroundTaskErrorTest() {
   describe('ActsBackgroundTaskErrorTest', () => {
