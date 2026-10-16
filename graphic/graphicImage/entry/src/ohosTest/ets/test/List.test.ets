@@ -43,6 +43,7 @@ import GraphicImagePixelMapErrorCode from './GraphicImagePixelMapErrorCode.test'
 import GraphicImageGetImageInfoSyncRepeat from './GraphicImageGetImageInfoSyncRepeat.test';
 import GraphicImageGetImageInfoRepeat from './GraphicImageGetImageInfoRepeat.test';
 import GraphicImagePixelMapGetterRepeat from './GraphicImagePixelMapGetterRepeat.test';
+import GraphicImageGetColorSpace from './GraphicImageGetColorSpace.test';
 
 export default function testsuite() {
   imagePixelMapTest()
@@ -76,4 +77,5 @@ export default function testsuite() {
   GraphicImageGetImageInfoSyncRepeat();
   GraphicImageGetImageInfoRepeat();
   GraphicImagePixelMapGetterRepeat();
+  GraphicImageGetColorSpace();
 }
