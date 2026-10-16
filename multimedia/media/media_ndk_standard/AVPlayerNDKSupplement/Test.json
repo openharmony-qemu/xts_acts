@@ -28,11 +28,12 @@
         {
             "type": "PushKit",
             "push": [
-                "./resource/audio/H264_AAC.mp4 -> /data/app/el2/100/base/com.example.avplayerndk/haps/entry_test/files/",
-                "./resource/media/codec/demuxer/srt_3200.srt -> /data/app/el2/100/base/com.example.avplayerndk/haps/entry_test/files/",
-                "./resource/media/AVPlayer/H264_AAC_2audio.mp4 -> /data/app/el2/100/base/com.example.avplayerndk/haps/entry_test/files/",
-                "./resource/media/codec/demuxer/srt_2800.srt -> /data/app/el2/100/base/com.example.avplayerndk/haps/entry_test/files/",
-                "./resource/media/output_hdr10.mp4 -> /data/app/el2/100/base/com.example.avplayerndk/haps/entry_test/files/"
+                "./resource/audio/H264_AAC.mp4 -> /data/local/tmp/",
+                "./resource/media/codec/demuxer/srt_3200.srt -> /data/local/tmp/",
+                "./resource/media/AVPlayer/H264_AAC_2audio.mp4 -> /data/local/tmp/",
+                "./resource/media/codec/demuxer/srt_2800.srt -> /data/local/tmp/",
+                "./resource/media/output_hdr10.mp4 -> /data/local/tmp/",
+                "./resource/media/setup_media_ndk_standard_avplayersupplement_test.sh -> /data/local/tmp/"
             ]
         },
         {
@@ -40,7 +41,9 @@
             "run-command": [
                 "power-shell wakeup",
                 "uinput -T -m 300 2700 280 200",
-                "power-shell setmode 602"
+                "power-shell setmode 602",
+                "chmod 755 /data/local/tmp/",
+                "sh /data/local/tmp/setup_media_ndk_standard_avplayersupplement_test.sh"
             ]
         }
     ]
