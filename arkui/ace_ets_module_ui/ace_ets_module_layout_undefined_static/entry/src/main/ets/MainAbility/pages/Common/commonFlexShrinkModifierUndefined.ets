@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import {TextAlign,FlexDirection,Flex,TextAttribute,AttributeModifier, CommonAttribute, Stack, Row, Alignment,
-  VerticalAlign, HorizontalAlign, RelativeContainer, Entry, Text, Column, Component, Button,
+  VerticalAlign, HorizontalAlign, RelativeContainer, Entry, Text, Column, Component, Button, ColumnOptions,
   ClickEvent } from '@ohos.arkui.component'
 import { State, Observed } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
@@ -33,8 +33,8 @@ struct FlexExample {
   @State modifier: ModifierFlexShrink = new ModifierFlexShrink()
 
   build() {
-    Column() {
-      Text('flexShrink-动态切换').fontSize(20).margin(15).width('90%')
+    Column({space:2} as ColumnOptions) {
+      Text('flexShrink-动态切换').fontSize(20).width('80%')
       Flex({ direction: FlexDirection.Row }) {
         Text('flexShrink(0)')
           .width('50%')
@@ -43,14 +43,14 @@ struct FlexExample {
           .textAlign(TextAlign.Center)
           .attributeModifier(this.modifier)
           .id('common_FlexShrink')
-      }.width('90%').height(60).padding(10).backgroundColor('#ffAFEEEE')
+      }.width('80%').height(60).backgroundColor('#ffAFEEEE')
 
       Column() {
-        Button('flag is' + this.modifier.flag).fontSize(20).id('changeButton')
+        Button('flag is' + this.modifier.flag).height(15).id('changeButton')
           .onClick((e: ClickEvent) => {
             this.modifier.flag = !this.modifier.flag;
           })
-      }.width('100%')
+      }.width('100%').height('100%')
     }
   }
 }
