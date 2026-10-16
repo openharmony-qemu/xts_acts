@@ -36,6 +36,8 @@
 #define BITRATE_900KBPS (900000)
 #define OBJECT_ZERO (0)
 #define OBJECT_NUM_2 (2)
+#define OBJECT_NUM_4 (4)
+#define OBJECT_NUM_6 (6)
 #define OBJECT_NUM_10 (10)
 #define OBJECT_NUM_11 (11)
 #define OBJECT_INVALID (-1)
