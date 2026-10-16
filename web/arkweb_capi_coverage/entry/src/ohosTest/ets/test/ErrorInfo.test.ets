@@ -13,10 +13,27 @@
  * limitations under the License.
  */
 import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
+import { Driver, ON } from '@kit.TestKit';
 import Utils from './Utils.test';
 import nativeFunc from 'libentry.so';
 
 const ARKWEB_INVALID_PARAM = 17100101;
+const ARKWEB_NET_OK = 0;
+const DID_FAIL_RESULT_PENDING = -9999;
+const DID_FAIL_POLL_MAX = 40;
+const DID_FAIL_POLL_MS = 250;
+
+async function waitDidFailLiveResult(): Promise<number> {
+  let result: number = DID_FAIL_RESULT_PENDING;
+  for (let i = 0; i < DID_FAIL_POLL_MAX; i++) {
+    result = nativeFunc.GetDidFailWithErrorInfoLiveResult();
+    if (result !== DID_FAIL_RESULT_PENDING) {
+      return result;
+    }
+    await Utils.sleep(DID_FAIL_POLL_MS);
+  }
+  return result;
+}
 
 export default function errorInfoTest() {
   describe('errorInfoTest', () => {
@@ -168,7 +185,7 @@ export default function errorInfoTest() {
     /**
      * @tc.name TestArkWebResourceHandler_DidFailWithErrorInfo
      * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_ARK_WEB_HANDLER_DID_FAIL_ERROR_INFO_5000
-     * @tc.desc Test OH_ArkWebResourceHandler_DidFailWithErrorInfo
+     * @tc.desc Test OH_ArkWebResourceHandler_DidFailWithErrorInfo invalid param
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
@@ -176,6 +193,29 @@ export default function errorInfoTest() {
     it('TestArkWebResourceHandler_DidFailWithErrorInfo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         expect(nativeFunc.TestArkWebResourceHandler_DidFailWithErrorInfo()).assertEqual(ARKWEB_INVALID_PARAM);
+        done();
+      });
+
+    /**
+     * @tc.name TestArkWebResourceHandler_DidFailWithErrorInfo_NetOk
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_ARK_WEB_HANDLER_DID_FAIL_ERROR_INFO_5010
+     * @tc.desc Test DidFailWithErrorInfo NET_OK via Web+Scheme OnRequestStart
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('TestArkWebResourceHandler_DidFailWithErrorInfo_NetOk',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        await Utils.sleep(1500);
+        nativeFunc.SetupErrorInfoSchemeHandler();
+        nativeFunc.ResetDidFailWithErrorInfoLiveResult();
+        const driver = Driver.create();
+        await driver.waitForComponent(ON.id('TriggerDidFail'), 20000);
+        const btn = await driver.findComponent(ON.id('TriggerDidFail'));
+        await btn.click();
+        const liveRet = await waitDidFailLiveResult();
+        expect(liveRet).assertEqual(ARKWEB_NET_OK);
         done();
       });
   });

@@ -9,6 +9,9 @@ endif()
 include_directories(${NATIVERENDER_ROOT_PATH}
                     ${NATIVERENDER_ROOT_PATH}/include)
 
-add_library(entry SHARED napi_init.cpp arkweb_errorinfo_weak_stubs.cpp)
+add_library(entry SHARED
+    napi_init.cpp
+    errorinfo_runtime_api.cpp
+    errorinfo_scheme_loop.cpp)
 
 target_link_libraries(entry PUBLIC librawfile.z.so libace_napi.z.so libohweb.so)
