@@ -2042,6 +2042,11 @@ export default function requestVideoTest() {
           await sleep(3000);
           let uri = await createVideoBySandBoxUri(testNum, testContext, destUri);
           let flag = await isHdr(testNum, uri);
+          if (flag == -1) {
+            console.info('The device does not support the decoder.');
+            done();
+            return;
+          }
           expect(flag).assertEqual(1);
         }
         expect(count).assertEqual(2);
