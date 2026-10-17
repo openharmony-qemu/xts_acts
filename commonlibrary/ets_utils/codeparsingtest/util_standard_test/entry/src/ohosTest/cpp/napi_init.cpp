@@ -16,9 +16,12 @@
 #include "napi/native_api.h"
 #include <algorithm>
 #include <atomic>
+#include <cstdint>
 #include <map>
 #include <mutex>
 #include <pthread.h>
+#include <sstream>
+#include <string>
 #include <vector>
 
 static napi_env g_mainEnv = nullptr;
@@ -746,6 +749,105 @@ static napi_value DestroyEnv(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_ref g_trackTestRef = nullptr;
+static napi_ref g_trackWeakTestRef = nullptr;
+
+static napi_value CreateTestRef(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    if (status != napi_ok || argc < 1) {
+        napi_value undefined;
+        napi_get_undefined(env, &undefined);
+        return undefined;
+    }
+
+    if (g_trackTestRef != nullptr) {
+        napi_delete_reference(env, g_trackTestRef);
+        g_trackTestRef = nullptr;
+    }
+
+    status = napi_create_reference(env, args[0], 1, &g_trackTestRef);
+    if (status != napi_ok) {
+        napi_value undefined;
+        napi_get_undefined(env, &undefined);
+        return undefined;
+    }
+
+    std::ostringstream addrStream;
+    addrStream << "0x" << std::hex << static_cast<unsigned long>(reinterpret_cast<uintptr_t>(g_trackTestRef));
+    std::string addrStr = addrStream.str();
+
+    napi_value result;
+    status = napi_create_string_utf8(env, addrStr.c_str(), NAPI_AUTO_LENGTH, &result);
+    if (status != napi_ok) {
+        napi_value undefined;
+        napi_get_undefined(env, &undefined);
+        return undefined;
+    }
+    return result;
+}
+
+static napi_value DeleteTestRef(napi_env env, napi_callback_info info)
+{
+    if (g_trackTestRef != nullptr) {
+        napi_delete_reference(env, g_trackTestRef);
+        g_trackTestRef = nullptr;
+    }
+    napi_value undefined;
+    napi_get_undefined(env, &undefined);
+    return undefined;
+}
+
+static napi_value CreateWeakTestRef(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    if (status != napi_ok || argc < 1) {
+        napi_value undefined;
+        napi_get_undefined(env, &undefined);
+        return undefined;
+    }
+
+    if (g_trackWeakTestRef != nullptr) {
+        napi_delete_reference(env, g_trackWeakTestRef);
+        g_trackWeakTestRef = nullptr;
+    }
+
+    status = napi_create_reference(env, args[0], 0, &g_trackWeakTestRef);
+    if (status != napi_ok) {
+        napi_value undefined;
+        napi_get_undefined(env, &undefined);
+        return undefined;
+    }
+
+    std::ostringstream addrStream;
+    addrStream << "0x" << std::hex << static_cast<unsigned long>(reinterpret_cast<uintptr_t>(g_trackWeakTestRef));
+    std::string addrStr = addrStream.str();
+
+    napi_value result;
+    status = napi_create_string_utf8(env, addrStr.c_str(), NAPI_AUTO_LENGTH, &result);
+    if (status != napi_ok) {
+        napi_value undefined;
+        napi_get_undefined(env, &undefined);
+        return undefined;
+    }
+    return result;
+}
+
+static napi_value DeleteWeakTestRef(napi_env env, napi_callback_info info)
+{
+    if (g_trackWeakTestRef != nullptr) {
+        napi_delete_reference(env, g_trackWeakTestRef);
+        g_trackWeakTestRef = nullptr;
+    }
+    napi_value undefined;
+    napi_get_undefined(env, &undefined);
+    return undefined;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -781,6 +883,10 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"getSubRuntimeHandleCount", nullptr, GetSubRuntimeHandleCount,
             nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"createTestRef", nullptr, CreateTestRef, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"deleteTestRef", nullptr, DeleteTestRef, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"createWeakTestRef", nullptr, CreateWeakTestRef, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"deleteWeakTestRef", nullptr, DeleteWeakTestRef, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
