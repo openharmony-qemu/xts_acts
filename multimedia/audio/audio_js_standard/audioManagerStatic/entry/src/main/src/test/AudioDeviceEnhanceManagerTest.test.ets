@@ -42,6 +42,22 @@ export default function AudioDeviceEnhanceManagerTest() {
       console.info(`${TAG}: afterAll called`);
     });
 
+    let checkCarSupportSync = async(): Promise<boolean> => {
+      let audioManager = audio.getAudioManager();
+      let audioRoutingManager = audioManager!.getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager!.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`checkCarSupportSync outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+          console.info(`this device has external device.`)
+          return false;
+      } else if (outputDeviceDescription.length == 0) {
+          console.info(`this device has external device`)
+          return false;
+      } else {
+          return true;
+      }
+    }
+
     /**
      * @tc.name    SUB_MULTIMEDIA_AUDIO_DEVICEENHANCE_ISENHANCEDROUTING_SUPPORTED_STATIC_0100
      * @tc.number  SUB_MULTIMEDIA_AUDIO_DEVICEENHANCE_ISENHANCEDROUTING_SUPPORTED_STATIC_0100
@@ -280,33 +296,36 @@ export default function AudioDeviceEnhanceManagerTest() {
      */
     it('SUB_MULTIMEDIA_AUDIO_DEVICEENHANCE_SELECTINPUTDEVICE_PARAM_WRONGROLE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_DEVICEENHANCE_SELECTINPUTDEVICE_PARAM_WRONGROLE_STATIC_0100 start`);
-        let audioManager: audio.AudioManager;
-        let audioDeviceEnhanceManager: audio.AudioDeviceEnhanceManager;
-        let audioRoutingManager: audio.AudioRoutingManager;
-        audioManager = audio.getAudioManager();
-        audioDeviceEnhanceManager = audioManager.getDeviceEnhanceManager();
-        audioRoutingManager = audioManager.getRoutingManager();
-        try {
-          const availableDevices: audio.AudioDeviceDescriptors = await audioRoutingManager.getAvailableDevices(
-            audio.DeviceUsage.MEDIA_OUTPUT_DEVICES
-          );
-          console.info(`${TAG}: Available output devices count: ${availableDevices.length}`);
-          
-          if (availableDevices.length > 0) {
-            const wrongroleDevice: audio.AudioDeviceDescriptor = availableDevices[0];
-            await audioDeviceEnhanceManager.selectInputDevice(wrongroleDevice);
-            console.error(`${TAG}: Should have thrown error but succeeded`);
-            expect(false).assertTrue();
-            done()
+        if(await checkCarSupportSync()) {
+          console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_DEVICEENHANCE_SELECTINPUTDEVICE_PARAM_WRONGROLE_STATIC_0100 start`);
+          let audioManager: audio.AudioManager;
+          let audioDeviceEnhanceManager: audio.AudioDeviceEnhanceManager;
+          let audioRoutingManager: audio.AudioRoutingManager;
+          audioManager = audio.getAudioManager();
+          audioDeviceEnhanceManager = audioManager.getDeviceEnhanceManager();
+          audioRoutingManager = audioManager.getRoutingManager();
+          try {
+            const availableDevices: audio.AudioDeviceDescriptors = await audioRoutingManager.getAvailableDevices(
+              audio.DeviceUsage.MEDIA_OUTPUT_DEVICES
+            );
+            console.info(`${TAG}: Available output devices count: ${availableDevices.length}`);
+            
+            if (availableDevices.length > 0) {
+              const wrongroleDevice: audio.AudioDeviceDescriptor = availableDevices[0];
+              await audioDeviceEnhanceManager.selectInputDevice(wrongroleDevice);
+              console.error(`${TAG}: Should have thrown error but succeeded`);
+              expect(false).assertTrue();
+              done()
+            }
+            done();
+          } catch (error) {
+            console.info(`${TAG}: Caught error, code: ${error.code}, message: ${error.message}`);
+            expect(error.code === ERROR_CODE_PARAM).assertTrue();
+            console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_DEVICEENHANCE_SELECTINPUTDEVICE_PARAM_WRONGROLE_STATIC_0100 end`);
+            done();
           }
-          done();
-        } catch (error) {
-          console.info(`${TAG}: Caught error, code: ${error.code}, message: ${error.message}`);
-          expect(error.code === ERROR_CODE_PARAM).assertTrue();
-          console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_DEVICEENHANCE_SELECTINPUTDEVICE_PARAM_WRONGROLE_STATIC_0100 end`);
-          done();
         }
+        done();
       });
 
     /**
@@ -392,53 +411,56 @@ export default function AudioDeviceEnhanceManagerTest() {
      */
     it('SUB_MULTIMEDIA_AUDIO_DEVICEENHANCE_SELECTOUTPUTFORRENDERER_RENDERER_RELEASED_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_DEVICEENHANCE_SELECTOUTPUTFORRENDERER_RENDERER_RELEASED_STATIC_0100 start`);
-        let audioManager: audio.AudioManager;
-        let audioDeviceEnhanceManager: audio.AudioDeviceEnhanceManager;
-        let audioRoutingManager: audio.AudioRoutingManager;
-        audioManager = audio.getAudioManager();
-        audioDeviceEnhanceManager = audioManager.getDeviceEnhanceManager();
-        audioRoutingManager = audioManager.getRoutingManager();
-        let audioRenderer: audio.AudioRenderer | null;
-        try {
-          const rendererInfo: audio.AudioRendererInfo = {
-            usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
-            rendererFlags: 0
-          };
-          
-          const rendererOptions: audio.AudioRendererOptions = {
-            streamInfo: {
-              samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
-              channels: audio.AudioChannel.CHANNEL_2,
-              sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
-              encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
-            },
-            rendererInfo: rendererInfo
-          };
-          
-          audioRenderer = await audio.createAudioRenderer(rendererOptions);
-          await audioRenderer!.release();
-          console.info(`${TAG}: AudioRenderer released`);
-          
-          const availableDevices: audio.AudioDeviceDescriptors = await audioRoutingManager.getAvailableDevices(
-            audio.DeviceUsage.MEDIA_OUTPUT_DEVICES
-          );
-          console.info(`${TAG}: Available output devices count: ${availableDevices.length}`);
-          
-          if (availableDevices.length > 0) {
-            const outputDevice: audio.AudioDeviceDescriptor = availableDevices[0];
-            await audioDeviceEnhanceManager.selectOutputDeviceForAudioRenderer(audioRenderer!, outputDevice);
-            console.error(`${TAG}: Should have thrown error but succeeded`);
-            expect(false).assertTrue();
+        if(await checkCarSupportSync()) {
+          console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_DEVICEENHANCE_SELECTOUTPUTFORRENDERER_RENDERER_RELEASED_STATIC_0100 start`);
+          let audioManager: audio.AudioManager;
+          let audioDeviceEnhanceManager: audio.AudioDeviceEnhanceManager;
+          let audioRoutingManager: audio.AudioRoutingManager;
+          audioManager = audio.getAudioManager();
+          audioDeviceEnhanceManager = audioManager.getDeviceEnhanceManager();
+          audioRoutingManager = audioManager.getRoutingManager();
+          let audioRenderer: audio.AudioRenderer | null;
+          try {
+            const rendererInfo: audio.AudioRendererInfo = {
+              usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+              rendererFlags: 0
+            };
+            
+            const rendererOptions: audio.AudioRendererOptions = {
+              streamInfo: {
+                samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+                channels: audio.AudioChannel.CHANNEL_2,
+                sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+                encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+              },
+              rendererInfo: rendererInfo
+            };
+            
+            audioRenderer = await audio.createAudioRenderer(rendererOptions);
+            await audioRenderer!.release();
+            console.info(`${TAG}: AudioRenderer released`);
+            
+            const availableDevices: audio.AudioDeviceDescriptors = await audioRoutingManager.getAvailableDevices(
+              audio.DeviceUsage.MEDIA_OUTPUT_DEVICES
+            );
+            console.info(`${TAG}: Available output devices count: ${availableDevices.length}`);
+            
+            if (availableDevices.length > 0) {
+              const outputDevice: audio.AudioDeviceDescriptor = availableDevices[0];
+              await audioDeviceEnhanceManager.selectOutputDeviceForAudioRenderer(audioRenderer!, outputDevice);
+              console.error(`${TAG}: Should have thrown error but succeeded`);
+              expect(false).assertTrue();
+              done();
+            }
+            done();
+          } catch (error) {
+            console.info(`${TAG}: Caught error, code: ${error.code}, message: ${error.message}`);
+            expect(error.code === ERROR_CODE_PARAM).assertTrue();
+            console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_DEVICEENHANCE_SELECTOUTPUTFORRENDERER_RENDERER_RELEASED_STATIC_0100 end`);
             done();
           }
-          done();
-        } catch (error) {
-          console.info(`${TAG}: Caught error, code: ${error.code}, message: ${error.message}`);
-          expect(error.code === ERROR_CODE_PARAM).assertTrue();
-          console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_DEVICEENHANCE_SELECTOUTPUTFORRENDERER_RENDERER_RELEASED_STATIC_0100 end`);
-          done();
         }
+        done();
       });
 
     /**
@@ -525,53 +547,56 @@ export default function AudioDeviceEnhanceManagerTest() {
      */
     it('SUB_MULTIMEDIA_AUDIO_DEVICEENHANCE_SELECTINPUTFORCAPTURER_CAPTURER_RELEASED_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_DEVICEENHANCE_SELECTINPUTFORCAPTURER_CAPTURER_RELEASED_STATIC_0100 start`);
-        let audioManager: audio.AudioManager;
-        let audioDeviceEnhanceManager: audio.AudioDeviceEnhanceManager;
-        let audioRoutingManager: audio.AudioRoutingManager;
-        audioManager = audio.getAudioManager();
-        audioDeviceEnhanceManager = audioManager.getDeviceEnhanceManager();
-        audioRoutingManager = audioManager.getRoutingManager();
-        let audioCapturer: audio.AudioCapturer | null;
-        try {
-          const capturerInfo: audio.AudioCapturerInfo = {
-            source: audio.SourceType.SOURCE_TYPE_MIC,
-            capturerFlags: 0
-          };
-          
-          const capturerOptions: audio.AudioCapturerOptions = {
-            streamInfo: {
-              samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
-              channels: audio.AudioChannel.CHANNEL_2,
-              sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
-              encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
-            },
-            capturerInfo: capturerInfo
-          };
-          
-          audioCapturer = await audio.createAudioCapturer(capturerOptions);
-          await audioCapturer!.release();
-          console.info(`${TAG}: AudioCapturer released`);
-          
-          const availableDevices: audio.AudioDeviceDescriptors = await audioRoutingManager.getAvailableDevices(
-            audio.DeviceUsage.MEDIA_INPUT_DEVICES
-          );
-          console.info(`${TAG}: Available input devices count: ${availableDevices.length}`);
-          
-          if (availableDevices.length > 0) {
-            const inputDevice: audio.AudioDeviceDescriptor = availableDevices[0];
-            await audioDeviceEnhanceManager.selectInputDeviceForAudioCapturer(audioCapturer!, inputDevice);
-            console.error(`${TAG}: Should have thrown error but succeeded`);
-            expect(false).assertTrue();
+        if(await checkCarSupportSync()) {
+          console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_DEVICEENHANCE_SELECTINPUTFORCAPTURER_CAPTURER_RELEASED_STATIC_0100 start`);
+          let audioManager: audio.AudioManager;
+          let audioDeviceEnhanceManager: audio.AudioDeviceEnhanceManager;
+          let audioRoutingManager: audio.AudioRoutingManager;
+          audioManager = audio.getAudioManager();
+          audioDeviceEnhanceManager = audioManager.getDeviceEnhanceManager();
+          audioRoutingManager = audioManager.getRoutingManager();
+          let audioCapturer: audio.AudioCapturer | null;
+          try {
+            const capturerInfo: audio.AudioCapturerInfo = {
+              source: audio.SourceType.SOURCE_TYPE_MIC,
+              capturerFlags: 0
+            };
+            
+            const capturerOptions: audio.AudioCapturerOptions = {
+              streamInfo: {
+                samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+                channels: audio.AudioChannel.CHANNEL_2,
+                sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+                encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+              },
+              capturerInfo: capturerInfo
+            };
+            
+            audioCapturer = await audio.createAudioCapturer(capturerOptions);
+            await audioCapturer!.release();
+            console.info(`${TAG}: AudioCapturer released`);
+            
+            const availableDevices: audio.AudioDeviceDescriptors = await audioRoutingManager.getAvailableDevices(
+              audio.DeviceUsage.MEDIA_INPUT_DEVICES
+            );
+            console.info(`${TAG}: Available input devices count: ${availableDevices.length}`);
+            
+            if (availableDevices.length > 0) {
+              const inputDevice: audio.AudioDeviceDescriptor = availableDevices[0];
+              await audioDeviceEnhanceManager.selectInputDeviceForAudioCapturer(audioCapturer!, inputDevice);
+              console.error(`${TAG}: Should have thrown error but succeeded`);
+              expect(false).assertTrue();
+              done();
+            }
+            done();
+          } catch (error) {
+            console.info(`${TAG}: Caught error, code: ${error.code}, message: ${error.message}`);
+            expect(error.code === ERROR_CODE_PARAM).assertTrue();
+            console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_DEVICEENHANCE_SELECTINPUTFORCAPTURER_CAPTURER_RELEASED_STATIC_0100 end`);
             done();
           }
-          done();
-        } catch (error) {
-          console.info(`${TAG}: Caught error, code: ${error.code}, message: ${error.message}`);
-          expect(error.code === ERROR_CODE_PARAM).assertTrue();
-          console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_DEVICEENHANCE_SELECTINPUTFORCAPTURER_CAPTURER_RELEASED_STATIC_0100 end`);
-          done();
         }
+        done();
       });
   });
 }

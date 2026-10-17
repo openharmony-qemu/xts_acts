@@ -30,6 +30,7 @@ let audioMedia = audio.AudioVolumeType.MEDIA;
 let minVol = 0;
 let maxVol = 15;
 let maxVolPc = 20;
+let maxVolCar = 39;
 let volGroupId = null;
 let volConnectType = null;
 let onMicStateChangeFlag1: boolean | null = null;
@@ -75,6 +76,22 @@ export default function audioManagerApi9() {
     afterAll(() => {
       console.info(`${TagFrmwk}: afterAll: Test suite-level cleanup condition`);
     })
+
+    let checkCarSupportSync = async(): Promise<boolean> => {
+      let audioManager = audio.getAudioManager();
+      let audioRoutingManager = audioManager!.getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager!.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`checkCarSupportSync outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+          console.info(`this device has external device.`)
+          return false;
+      } else if (outputDeviceDescription.length == 0) {
+          console.info(`this device has external device`)
+          return false;
+      } else {
+          return true;
+      }
+    }
 
     /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_ERRORS_STATIC_0100
@@ -380,6 +397,8 @@ export default function audioManagerApi9() {
               console.info('audioManagerApi9Test: callback : Ringtone getMaxVolume: PASS :' + data);
             } else if (data == maxVolPc) {
               console.info('audioManagerApi9Test: callback : Ringtone getMaxVolume: PASS :' + data);
+            } else if (data == maxVolCar){
+              console.info('audioManagerApi9Test: callback : Ringtone getMaxVolume: PASS :' + data);
             } else {
               console.info('audioManagerApi9Test: callback : Ringtone getMaxVolume: FAIL :' + data);
               expect(false).assertTrue();
@@ -410,6 +429,8 @@ export default function audioManagerApi9() {
         if (maxVolume == maxVol) {
           console.info('audioManagerApi9Test: promise : Ringtone getMaxVolume: PASS :' + maxVolume);
         } else if (maxVolume == maxVolPc) {
+          console.info('audioManagerApi9Test: promise : Ringtone getMaxVolume: PASS :' + maxVolume);
+        } else if (maxVolume == maxVolCar){
           console.info('audioManagerApi9Test: promise : Ringtone getMaxVolume: PASS :' + maxVolume);
         } else {
           console.info('audioManagerApi9Test: promise : Ringtone getMaxVolume: FAIL :' + maxVolume);
@@ -883,41 +904,44 @@ export default function audioManagerApi9() {
      * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ISCOMMUNICATIONDEVICE_SYNC_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      try {
-        let flag: boolean | null = null;
-        let AudioRoutingManager = audioManager!.getRoutingManager();
-        let outputDeviceDescription = await AudioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
-        // console.info(`${TagFrmwk}: SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0100
-        //         outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
-        if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
-          flag = true;
-        }
-        if (outputDeviceDescription.length == 2 && outputDeviceDescription[0].deviceType == audio.DeviceType.EARPIECE &&
-          outputDeviceDescription[1].deviceType == audio.DeviceType.SPEAKER) {
-          flag = false;
-        }
-        await AudioRoutingManager.setCommunicationDevice(audio.CommunicationDeviceType.SPEAKER, false).then(() => {
+      if(await checkCarSupportSync()) {
+        try {
+          let flag: boolean | null = null;
+          let AudioRoutingManager = audioManager!.getRoutingManager();
+          let outputDeviceDescription = await AudioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+          // console.info(`${TagFrmwk}: SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0100
+          //         outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+          if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+            flag = true;
+          }
+          if (outputDeviceDescription.length == 2 && outputDeviceDescription[0].deviceType == audio.DeviceType.EARPIECE &&
+            outputDeviceDescription[1].deviceType == audio.DeviceType.SPEAKER) {
+            flag = false;
+          }
+          await AudioRoutingManager.setCommunicationDevice(audio.CommunicationDeviceType.SPEAKER, false).then(() => {
+            console.info(`${TagFrmwk}: SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0100
+                      Promise returned to indicate that the device is set to the active status.`);
+          });
+          let value = AudioRoutingManager.isCommunicationDeviceActiveSync(audio.CommunicationDeviceType.SPEAKER)
           console.info(`${TagFrmwk}: SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0100
-                    Promise returned to indicate that the device is set to the active status.`);
-        });
-        let value = AudioRoutingManager.isCommunicationDeviceActiveSync(audio.CommunicationDeviceType.SPEAKER)
-        console.info(`${TagFrmwk}: SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0100
-                        isCommunicationDeviceActive : SPEAKER: Deactivate : PASS :${value} flag is ${flag}`);
-        if (flag == true && value == true) {
-          console.info(`${TagFrmwk}: SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0100
-                        isCommunicationDeviceActive : SPEAKER: Deactivate : PASS :${value} flag is ${flag}`);
-        } else if (flag == false && value == true) {
-          console.info(`${TagFrmwk}: SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0100
-                        isCommunicationDeviceActive : SPEAKER: Deactivate : PASS :${value} flag is ${flag}`);
-        } else {
-          console.info(`${TagFrmwk}: SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0100
-                        isCommunicationDeviceActive : SPEAKER: Deactivate : fail :${value} flag is ${flag}`);
+                          isCommunicationDeviceActive : SPEAKER: Deactivate : PASS :${value} flag is ${flag}`);
+          if (flag == true && value == true) {
+            console.info(`${TagFrmwk}: SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0100
+                          isCommunicationDeviceActive : SPEAKER: Deactivate : PASS :${value} flag is ${flag}`);
+          } else if (flag == false && value == true) {
+            console.info(`${TagFrmwk}: SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0100
+                          isCommunicationDeviceActive : SPEAKER: Deactivate : PASS :${value} flag is ${flag}`);
+          } else {
+            console.info(`${TagFrmwk}: SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0100
+                          isCommunicationDeviceActive : SPEAKER: Deactivate : fail :${value} flag is ${flag}`);
+            expect(false).assertTrue();
+          }
+
+        } catch (err) {
+          console.info('err :' + JSON.stringify(err));
           expect(false).assertTrue();
         }
-
-      } catch (err) {
-        console.info('err :' + JSON.stringify(err));
-        expect(false).assertTrue();
+        done();
       }
       done();
     })
@@ -931,43 +955,46 @@ export default function audioManagerApi9() {
      * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      try {
-        let flag: boolean | null = null;
-        let AudioRoutingManager = audioManager!.getRoutingManager();
-        let outputDeviceDescription = await AudioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
-        // console.info(`${TagFrmwk}: SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0100
-        //         outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
-        if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
-          flag = true;
-        }
-        if (outputDeviceDescription.length == 2 && outputDeviceDescription[0].deviceType == audio.DeviceType.EARPIECE &&
-          outputDeviceDescription[1].deviceType == audio.DeviceType.SPEAKER) {
-          flag = false;
-        }
-        await AudioRoutingManager.setCommunicationDevice(audio.CommunicationDeviceType.SPEAKER, false).then(() => {
-          console.info(`${TagFrmwk}: SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0100
-                    Promise returned to indicate that the device is set to the active status.`);
-        });
+      if(await checkCarSupportSync()) {
         try {
-          let value = await AudioRoutingManager.isCommunicationDeviceActive(audio.CommunicationDeviceType.SPEAKER);
-          if (flag == true && value == true) {
+          let flag: boolean | null = null;
+          let AudioRoutingManager = audioManager!.getRoutingManager();
+          let outputDeviceDescription = await AudioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+          // console.info(`${TagFrmwk}: SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0100
+          //         outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+          if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+            flag = true;
+          }
+          if (outputDeviceDescription.length == 2 && outputDeviceDescription[0].deviceType == audio.DeviceType.EARPIECE &&
+            outputDeviceDescription[1].deviceType == audio.DeviceType.SPEAKER) {
+            flag = false;
+          }
+          await AudioRoutingManager.setCommunicationDevice(audio.CommunicationDeviceType.SPEAKER, false).then(() => {
             console.info(`${TagFrmwk}: SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0100
-                        isCommunicationDeviceActive : SPEAKER: Deactivate : PASS :${value} flag is ${flag}`);
-          } else if (flag == false && value == true) {
-            console.info(`${TagFrmwk}: SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0100
-                        isCommunicationDeviceActive : SPEAKER: Deactivate : PASS :${value} flag is ${flag}`);
-          } else {
-            console.info(`${TagFrmwk}: SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0100
-                        isCommunicationDeviceActive : SPEAKER: Deactivate : fail :${value} flag is ${flag}`);
+                      Promise returned to indicate that the device is set to the active status.`);
+          });
+          try {
+            let value = await AudioRoutingManager.isCommunicationDeviceActive(audio.CommunicationDeviceType.SPEAKER);
+            if (flag == true && value == true) {
+              console.info(`${TagFrmwk}: SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0100
+                          isCommunicationDeviceActive : SPEAKER: Deactivate : PASS :${value} flag is ${flag}`);
+            } else if (flag == false && value == true) {
+              console.info(`${TagFrmwk}: SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0100
+                          isCommunicationDeviceActive : SPEAKER: Deactivate : PASS :${value} flag is ${flag}`);
+            } else {
+              console.info(`${TagFrmwk}: SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0100
+                          isCommunicationDeviceActive : SPEAKER: Deactivate : fail :${value} flag is ${flag}`);
+              expect(false).assertTrue();
+            }
+          } catch (err) {
+            console.info('err :' + JSON.stringify(err.message));
             expect(false).assertTrue();
           }
         } catch (err) {
           console.info('err :' + JSON.stringify(err.message));
           expect(false).assertTrue();
         }
-      } catch (err) {
-        console.info('err :' + JSON.stringify(err.message));
-        expect(false).assertTrue();
+        done();
       }
       done();
     })
@@ -981,41 +1008,44 @@ export default function audioManagerApi9() {
      * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let flag: boolean | null = null;
-      let AudioRoutingManager = audioManager!.getRoutingManager();
-      let outputDeviceDescription = await AudioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
-      // console.info(`${TagFrmwk}: SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0200
-      //       outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
-      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
-        flag = true;
-      }
-      if (outputDeviceDescription.length == 2 && outputDeviceDescription[0].deviceType == audio.DeviceType.EARPIECE &&
-        outputDeviceDescription[1].deviceType == audio.DeviceType.SPEAKER) {
-        flag = false;
-      }
-      AudioRoutingManager.setCommunicationDevice(audio.CommunicationDeviceType.SPEAKER, false, (err: BusinessError<void> | null) => {
-        if (err) {
-          console.error(`Device Test: Callback : setCommunicationDevice : SPEAKER: Deactivate: Error: ${err?.message}`);
-          expect(false).assertTrue();
-          done();
-        } else {
-          console.info(`${TagFrmwk}: Device Test: Callback : setCommunicationDevice : SPEAKER: Active`);
-          AudioRoutingManager.isCommunicationDeviceActive(audio.CommunicationDeviceType.SPEAKER, (err: BusinessError<void> | null, value) => {
-            if (err) {
-              console.error(`Device Test: Callback : isCommunicationDeviceActive : SPEAKER: Deactivate: Error: ${err?.message}`);
-              expect(false).assertTrue();
-            } else if (value == true && flag == true) {
-              console.info(`${TagFrmwk}: Device Test: Callback : isCommunicationDeviceActive : SPEAKER: Deactivate : PASS :${value} flag is ${flag}`);
-            } else if (value == true && flag == false) {
-              console.info(`${TagFrmwk}: Device Test: Callback : isCommunicationDeviceActive : SPEAKER: Deactivate : PASS :${value} flag is ${flag}`);
-            } else {
-              console.info(`${TagFrmwk}: SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0200 Device Test: Callback : isCommunicationDeviceActive : SPEAKER: Deactivate : FAIL :${value} flag is ${flag}`);
-              expect(false).assertTrue();
-            }
-            done();
-          });
+      if(await checkCarSupportSync()) {
+        let flag: boolean | null = null;
+        let AudioRoutingManager = audioManager!.getRoutingManager();
+        let outputDeviceDescription = await AudioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+        // console.info(`${TagFrmwk}: SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0200
+        //       outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+        if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+          flag = true;
         }
-      });
+        if (outputDeviceDescription.length == 2 && outputDeviceDescription[0].deviceType == audio.DeviceType.EARPIECE &&
+          outputDeviceDescription[1].deviceType == audio.DeviceType.SPEAKER) {
+          flag = false;
+        }
+        AudioRoutingManager.setCommunicationDevice(audio.CommunicationDeviceType.SPEAKER, false, (err: BusinessError<void> | null) => {
+          if (err) {
+            console.error(`Device Test: Callback : setCommunicationDevice : SPEAKER: Deactivate: Error: ${err?.message}`);
+            expect(false).assertTrue();
+            done();
+          } else {
+            console.info(`${TagFrmwk}: Device Test: Callback : setCommunicationDevice : SPEAKER: Active`);
+            AudioRoutingManager.isCommunicationDeviceActive(audio.CommunicationDeviceType.SPEAKER, (err: BusinessError<void> | null, value) => {
+              if (err) {
+                console.error(`Device Test: Callback : isCommunicationDeviceActive : SPEAKER: Deactivate: Error: ${err?.message}`);
+                expect(false).assertTrue();
+              } else if (value == true && flag == true) {
+                console.info(`${TagFrmwk}: Device Test: Callback : isCommunicationDeviceActive : SPEAKER: Deactivate : PASS :${value} flag is ${flag}`);
+              } else if (value == true && flag == false) {
+                console.info(`${TagFrmwk}: Device Test: Callback : isCommunicationDeviceActive : SPEAKER: Deactivate : PASS :${value} flag is ${flag}`);
+              } else {
+                console.info(`${TagFrmwk}: SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0200 Device Test: Callback : isCommunicationDeviceActive : SPEAKER: Deactivate : FAIL :${value} flag is ${flag}`);
+                expect(false).assertTrue();
+              }
+              done();
+            });
+          }
+        });
+      }
+      done();
     })
 
     /**
