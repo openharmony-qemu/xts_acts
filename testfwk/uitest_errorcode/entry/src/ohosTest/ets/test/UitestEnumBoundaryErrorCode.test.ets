@@ -56,7 +56,7 @@ export default function uitestEnumBoundaryErrorCode() {
         expect(error.code).assertEqual(ErrorCode401);
       }
       console.log(`${TestTag}, testOnTextMatchPatternNegative END`);
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testOnDescriptionMatchPatternNegative
@@ -76,7 +76,7 @@ export default function uitestEnumBoundaryErrorCode() {
         expect(error.code).assertEqual(ErrorCode401);
       }
       console.log(`${TestTag}, testOnDescriptionMatchPatternNegative END`);
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testOnIdMatchPatternNegative
@@ -96,7 +96,7 @@ export default function uitestEnumBoundaryErrorCode() {
         expect(error.code).assertEqual(ErrorCode401);
       }
       console.log(`${TestTag}, testOnIdMatchPatternNegative END`);
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testOnTypeMatchPatternNegative
@@ -116,7 +116,7 @@ export default function uitestEnumBoundaryErrorCode() {
         expect(error.code).assertEqual(ErrorCode401);
       }
       console.log(`${TestTag}, testOnTypeMatchPatternNegative END`);
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testOnHintMatchPatternNegative
@@ -136,7 +136,7 @@ export default function uitestEnumBoundaryErrorCode() {
         expect(error.code).assertEqual(ErrorCode401);
       }
       console.log(`${TestTag}, testOnHintMatchPatternNegative END`);
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testOnOriginalTextMatchPatternNegative
@@ -156,7 +156,7 @@ export default function uitestEnumBoundaryErrorCode() {
         expect(error.code).assertEqual(ParameterErrorCode);
       }
       console.log(`${TestTag}, testOnOriginalTextMatchPatternNegative END`);
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverSetDisplayRotationNegative
@@ -191,7 +191,7 @@ export default function uitestEnumBoundaryErrorCode() {
       }
       console.log(`${TestTag}, testDriverSetDisplayRotationNegative END`);
       done()
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverFlingUiDirectionNegative
@@ -212,7 +212,7 @@ export default function uitestEnumBoundaryErrorCode() {
       }
       console.log(`${TestTag}, testDriverFlingUiDirectionNegative END`);
       done()
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverTouchPadMultiFingerSwipeDirectionNegative
@@ -233,7 +233,7 @@ export default function uitestEnumBoundaryErrorCode() {
       }
       console.log(`${TestTag}, testDriverTouchPadMultiFingerSwipeDirectionNegative END`);
       done()
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverTouchPadMultiFingerSwipeDirectionAboveMax
@@ -254,7 +254,7 @@ export default function uitestEnumBoundaryErrorCode() {
       }
       console.log(`${TestTag}, testDriverTouchPadMultiFingerSwipeDirectionAboveMax END`);
       done()
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverTouchPadTwoFingersScrollDirectionNegative
@@ -276,7 +276,7 @@ export default function uitestEnumBoundaryErrorCode() {
       }
       console.log(`${TestTag}, testDriverTouchPadTwoFingersScrollDirectionNegative END`);
       done()
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverTouchPadTwoFingersScrollDirectionAboveMax
@@ -298,7 +298,7 @@ export default function uitestEnumBoundaryErrorCode() {
       }
       console.log(`${TestTag}, testDriverTouchPadTwoFingersScrollDirectionAboveMax END`);
       done()
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverMouseClickButtonNegative
@@ -320,7 +320,7 @@ export default function uitestEnumBoundaryErrorCode() {
       }
       console.log(`${TestTag}, testDriverMouseClickButtonNegative END`);
       done()
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverMouseDoubleClickButtonNegative
@@ -342,7 +342,7 @@ export default function uitestEnumBoundaryErrorCode() {
       }
       console.log(`${TestTag}, testDriverMouseDoubleClickButtonNegative END`);
       done()
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverMouseLongClickButtonNegative
@@ -364,7 +364,7 @@ export default function uitestEnumBoundaryErrorCode() {
       }
       console.log(`${TestTag}, testDriverMouseLongClickButtonNegative END`);
       done()
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testUiWindowResizeDirectionNegative
@@ -389,7 +389,7 @@ export default function uitestEnumBoundaryErrorCode() {
       }
       console.log(`${TestTag}, testUiWindowResizeDirectionNegative END`);
       done()
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testObserverOnceWindowChangeTypeNegative
@@ -412,7 +412,7 @@ export default function uitestEnumBoundaryErrorCode() {
       }
       console.log(`${TestTag}, testObserverOnceWindowChangeTypeNegative END`);
       done()
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testObserverOnceWindowChangeTypeAboveMax
@@ -435,7 +435,7 @@ export default function uitestEnumBoundaryErrorCode() {
       }
       console.log(`${TestTag}, testObserverOnceWindowChangeTypeAboveMax END`);
       done()
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testObserverOnceComponentEventTypeNegative
@@ -458,7 +458,7 @@ export default function uitestEnumBoundaryErrorCode() {
       }
       console.log(`${TestTag}, testObserverOnceComponentEventTypeNegative END`);
       done()
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testObserverOnceComponentEventTypeAboveMax
@@ -481,6 +481,6 @@ export default function uitestEnumBoundaryErrorCode() {
       }
       console.log(`${TestTag}, testObserverOnceComponentEventTypeAboveMax END`);
       done()
-    });
+    }, undefined, 'emulator');
   });
 }

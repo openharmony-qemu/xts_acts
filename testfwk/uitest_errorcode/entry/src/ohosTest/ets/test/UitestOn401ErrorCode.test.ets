@@ -62,7 +62,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, testApi9_ON_text_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi9_ON_id_401
@@ -89,7 +89,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, testApi9_ON_id_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi9_ON_type_401
@@ -116,7 +116,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, testApi9_ON_type_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi9_ON_isBefore_401
@@ -143,7 +143,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, testApi9_ON_isBefore_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi9_ON_isAfter_401
@@ -170,7 +170,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, testApi9_ON_isAfter_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi9_ON_within_401
@@ -197,7 +197,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, testApi9_ON_within_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi9_ON_inWindow_401
@@ -224,7 +224,7 @@ export default function uitestEnumTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, testApi9_ON_inWindow_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi9_ON_description_401
@@ -277,7 +277,7 @@ export default function uitestEnumTest() {
         expect().assertFail();
       }
       console.log(`${TestTag}, testApi9_ON_description_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi18_ON_id_401
@@ -316,7 +316,7 @@ export default function uitestEnumTest() {
         expect().assertFail();
       }
       console.log(`${TestTag}, testApi18_ON_id_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi18_ON_type_401
@@ -355,7 +355,7 @@ export default function uitestEnumTest() {
         expect().assertFail();
       }
       console.log(`${TestTag}, testApi18_ON_type_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi18_ON_hint_401
@@ -394,7 +394,7 @@ export default function uitestEnumTest() {
         expect().assertFail();
       }
       console.log(`${TestTag}, testApi18_ON_hint_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi20_ON_originalText_17000007
@@ -433,6 +433,6 @@ export default function uitestEnumTest() {
         expect().assertFail();
       }
       console.log(`${TestTag}, testApi20_ON_originalText_17000007 END`);
-    })
+    }, undefined, 'emulator')
   })
 }

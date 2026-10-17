@@ -49,7 +49,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_delayMs_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_findComponent_17000002
@@ -73,7 +73,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 8);
       console.log(`${TestTag}, test_findComponent_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_findComponents_17000002
@@ -97,7 +97,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 8);
       console.log(`${TestTag}, test_findComponents_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_findWindow_17000002
@@ -120,7 +120,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 8);
       console.log(`${TestTag}, test_findWindow_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
 
     /**
@@ -145,7 +145,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 8)
       console.log(`${TestTag}, test_waitForComponent_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_assertComponentExist_17000002
@@ -170,7 +170,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 8);
       console.log(`${TestTag}, test_assertComponentExist_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_assertComponentExist_17000003
@@ -192,7 +192,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(`${TestTag}, test_assertComponentExist_17000003 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_pressBack_17000002
@@ -215,7 +215,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 8);
       console.log(`${TestTag}, test_pressBack_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_triggerKey_17000002
@@ -238,7 +238,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 8);
       console.log(`${TestTag}, test_triggerKey_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_triggerCombineKeys_17000002
@@ -261,7 +261,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 8);
       console.log(`${TestTag}, test_triggerCombineKeys_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
 
     /**
@@ -285,7 +285,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 8);
       console.log(`${TestTag}, test_driver_click_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_doubleClick_17000002
@@ -308,7 +308,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 8);
       console.log(`${TestTag}, test_driver_doubleClick_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_longClick_17000002
@@ -331,7 +331,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 8);
       console.log(`${TestTag}, test_driver_longClick_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
 
     /**
@@ -355,7 +355,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 8);
       console.log(`${TestTag}, test_driver_swipe_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_drag_17000002
@@ -378,7 +378,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 8);
       console.log(`${TestTag}, test_driver_drag_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_screenCap_17000002
@@ -401,7 +401,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 8);
       console.log(`${TestTag}, test_driver_screenCap_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_setDisplayRotation_17000002
@@ -424,7 +424,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_setDisplayRotation_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_getDisplayRotation_17000002
@@ -447,7 +447,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_getDisplayRotation_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
 
     /**
@@ -471,7 +471,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_setDisplayRotationEnabled_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_getDisplaySize_17000002
@@ -494,7 +494,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_getDisplaySize_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_getDisplayDensity_17000002
@@ -517,7 +517,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_getDisplayDensity_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_wakeUpDisplay_17000002
@@ -540,7 +540,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_wakeUpDisplay_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_pressHome_17000002
@@ -563,7 +563,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_pressHome_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_waitForIdle_17000002
@@ -586,7 +586,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_waitForIdle_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_fling_17000002
@@ -609,7 +609,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_fling_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
 
     /**
@@ -644,7 +644,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_injectMultiPointerAction_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_fling_U_17000002
@@ -667,7 +667,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_fling_U_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_screenCapture_17000002
@@ -690,7 +690,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_screenCapture_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_mouseClick_17000002
@@ -713,7 +713,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_mouseClick_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_mouseScroll_17000002
@@ -736,7 +736,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_mouseScroll_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_mouseMoveTo_17000002
@@ -759,7 +759,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_mouseMoveTo_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_createUIEventObserver_17000002
@@ -782,7 +782,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_createUIEventObserver_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_mouseScroll_11_17000002
@@ -805,7 +805,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_mouseScroll_11_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_mouseDoubleClick_11_17000002
@@ -828,7 +828,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_mouseDoubleClick_11_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_mouseLongClick_11_17000002
@@ -851,7 +851,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_mouseLongClick_11_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_mouseMoveWithTrack_11_17000002
@@ -874,7 +874,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_mouseMoveWithTrack_11_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_mouseDrag_11_17000002
@@ -897,7 +897,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_mouseDrag_11_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_inputText_11_17000002
@@ -920,7 +920,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_inputText_11_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_touchPadMultiFingerSwipe_17000002
@@ -943,7 +943,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_touchPadMultiFingerSwipe_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_penClick_17000002
@@ -966,7 +966,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_penClick_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_penLongClick_17000002
@@ -989,7 +989,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_penLongClick_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_penDoubleClick_17000002
@@ -1012,7 +1012,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_penDoubleClick_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_penSwipe_17000002
@@ -1035,7 +1035,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_penSwipe_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_injectPenPointerAction_17000002
@@ -1062,7 +1062,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_injectPenPointerAction_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_UiDriver_assertComponentExist_17000002
@@ -1088,7 +1088,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 8);
       console.log(`${TestTag}, test_UiDriver_assertComponentExist_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_UiDriver_assertComponentExist_17000003
@@ -1111,7 +1111,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(`${TestTag}, test_UiDriver_assertComponentExist_17000003 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_dragBetween_17000002
@@ -1134,7 +1134,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_dragBetween_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_dragBetween_17000007
@@ -1210,7 +1210,7 @@ export default function uitestDriverErrorTest() {
         expect(e.code).assertEqual(ParameterErrorCode);
       }
       console.log(`${TestTag}, test_driver_dragBetween_17000007 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_mouseLongClick_duration_17000002
@@ -1233,7 +1233,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_mouseLongClick_duration_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_mouseLongClick_duration_401
@@ -1267,7 +1267,7 @@ export default function uitestDriverErrorTest() {
         expect(e.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, test_driver_mouseLongClick_duration_401 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_inputTextMode_17000002
@@ -1292,7 +1292,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_inputTextMode_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_inputTextMode_401
@@ -1324,7 +1324,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_inputTextMode_401 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_inputTextMode_801
@@ -1345,7 +1345,7 @@ export default function uitestDriverErrorTest() {
         expect(e.code).assertEqual(CapabilityCode);
       }
       console.log(`${TestTag}, test_driver_inputTextMode_801 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_crownRotate_17000002
@@ -1368,7 +1368,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_crownRotate_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_crownRotate_17000007
@@ -1395,7 +1395,7 @@ export default function uitestDriverErrorTest() {
         expect(e.code).assertEqual(ParameterErrorCode);
       }
       console.log(`${TestTag}, test_driver_crownRotate_17000007 end`);
-    })
+    }, undefined, 'emulator')
 
 
     /**
@@ -1415,7 +1415,7 @@ export default function uitestDriverErrorTest() {
         expect(e.code).assertEqual(CapabilityCode);
       }
       console.log(`${TestTag}, test_driver_crownRotate_801 end`);
-    })
+    }, undefined, 'emulator')
     /**
      * @tc.name   test_driver_longClickAt_17000002
      * @tc.number uitestDriverErrorTest_057
@@ -1437,7 +1437,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_longClickAt_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_longClickAt_17000007
@@ -1510,7 +1510,7 @@ export default function uitestDriverErrorTest() {
         expect(e.code).assertEqual(ParameterErrorCode);
       }
       console.log(`${TestTag}, test_driver_longClickAt_17000007 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_mouseDrag_22_17000002
@@ -1533,7 +1533,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_mouseDrag_22_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_mouseDrag_22_401
@@ -1583,7 +1583,7 @@ export default function uitestDriverErrorTest() {
         expect(e.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, test_driver_mouseDrag_22_401 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_pressBackWithId_17000002
@@ -1606,7 +1606,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_pressBackWithId_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_pressBackWithId_17000007
@@ -1626,7 +1626,7 @@ export default function uitestDriverErrorTest() {
         expect(e.code).assertEqual(ParameterErrorCode);
       }
       console.log(`${TestTag}, test_driver_pressBackWithId_17000007 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_triggerKeyWithId_17000002
@@ -1649,7 +1649,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_triggerKeyWithId_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_triggerCombineKeysWithId_17000002
@@ -1672,7 +1672,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_triggerCombineKeysWithId_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_screenCapWithId_17000002
@@ -1695,7 +1695,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_screenCapWithId_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_getDisplayRotationWithId_17000002
@@ -1718,7 +1718,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_getDisplayRotationWithId_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_getDisplayRotationWithId_17000007
@@ -1738,7 +1738,7 @@ export default function uitestDriverErrorTest() {
         expect(e.code).assertEqual(ParameterErrorCode);
       }
       console.log(`${TestTag}, test_driver_getDisplayRotationWithId_17000007 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_getDisplaySizeWithId_17000002
@@ -1761,7 +1761,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_getDisplaySizeWithId_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_getDisplaySizeWithId_17000007
@@ -1781,7 +1781,7 @@ export default function uitestDriverErrorTest() {
         expect(e.code).assertEqual(ParameterErrorCode);
       }
       console.log(`${TestTag}, test_driver_getDisplaySizeWithId_17000007 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_getDisplayDensityWithId_17000002
@@ -1804,7 +1804,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_getDisplayDensityWithId_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_getDisplayDensityWithId_17000007
@@ -1824,7 +1824,7 @@ export default function uitestDriverErrorTest() {
         expect(e.code).assertEqual(ParameterErrorCode);
       }
       console.log(`${TestTag}, test_driver_getDisplayDensityWithId_17000007 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_pressHomeWithId_17000002
@@ -1847,7 +1847,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_pressHomeWithId_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_pressHomeWithId_17000007
@@ -1867,7 +1867,7 @@ export default function uitestDriverErrorTest() {
         expect(e.code).assertEqual(ParameterErrorCode);
       }
       console.log(`${TestTag}, test_driver_pressHomeWithId_17000007 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_ClickAt_17000002
@@ -1890,7 +1890,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_ClickAt_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_ClickAt_17000007
@@ -1938,7 +1938,7 @@ export default function uitestDriverErrorTest() {
         expect(e.code).assertEqual(ParameterErrorCode);
       }
       console.log(`${TestTag}, test_driver_longClickAt_17000007 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_flingWithId_17000002
@@ -1961,7 +1961,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_flingWithId_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_DoubleClickAt_17000002
@@ -1984,7 +1984,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_DoubleClickAt_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_DoubleClickAt_17000007
@@ -2032,7 +2032,7 @@ export default function uitestDriverErrorTest() {
         expect(e.code).assertEqual(ParameterErrorCode);
       }
       console.log(`${TestTag}, test_driver_DoubleClickAt_17000007 end`);
-    })
+    }, undefined, 'emulator')
 
 
     /**
@@ -2056,7 +2056,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_driver_swipeBetween_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_swipeBetween_17000007
@@ -2153,7 +2153,7 @@ export default function uitestDriverErrorTest() {
         expect(e.code).assertEqual(ParameterErrorCode);
       }
       console.log(`${TestTag}, test_driver_swipeBetween_17000007 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_driver_screenCapWithId_401
@@ -2188,7 +2188,7 @@ export default function uitestDriverErrorTest() {
         console.log(`${TestTag}, test_driver_screenCapWithId_401 displayId = -1 error, ${JSON.stringify(error)} `);
         expect(error.code).assertEqual(ErrorCode)
       }
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testComponentEventOccurOptionsMonitor_17000007
@@ -2256,7 +2256,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(`${TestTag}, testComponentEventOccurOptionsMonitor_17000007 end`);
-    })
+    }, undefined, 'emulator')
 
 
     /**
@@ -2316,7 +2316,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(`${TestTag}, testWindowChangeOptionsMonitor_17000007 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testIsComponentPresentWhenLongClick_17000002
@@ -2340,7 +2340,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 8);
       console.log(`${TestTag}, testIsComponentPresentWhenLongClick_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testIsComponentPresentWhenLongClick_17000007
@@ -2429,7 +2429,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(`${TestTag}, testIsComponentPresentWhenLongClick_17000007 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testIsComponentPresentWhenDrag_17000002
@@ -2453,7 +2453,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 8);
       console.log(`${TestTag}, testIsComponentPresentWhenDrag_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testIsComponentPresentWhenDrag_17000007
@@ -2593,7 +2593,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(`${TestTag}, testIsComponentPresentWhenDrag_17000007 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testIsComponentPresentWhenSwipe_17000002
@@ -2617,7 +2617,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 8);
       console.log(`${TestTag}, testIsComponentPresentWhenSwipe_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testIsComponentPresentWhenSwipe_17000007
@@ -2747,7 +2747,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(`${TestTag}, testIsComponentPresentWhenSwipe_17000007 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testKnuckleKnock_17000002
@@ -2771,7 +2771,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 8);
       console.log(`${TestTag}, testKnuckleKnock_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testKnuckleKnock_17000007
@@ -2833,7 +2833,7 @@ export default function uitestDriverErrorTest() {
         expect(e.code == 17000005||e.code == 17000007).assertTrue();
       }
       console.log(`${TestTag}, testKnuckleKnock_17000007 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testInjectKnucklePointerAction_17000002
@@ -2859,7 +2859,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 8);
       console.log(`${TestTag}, testInjectKnucklePointerAction_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testInjectKnucklePointerAction_17000007
@@ -2895,7 +2895,7 @@ export default function uitestDriverErrorTest() {
         expect(e.code == 17000005||e.code == 17000007).assertTrue();
       }
       console.log(`${TestTag}, testInjectKnucklePointerAction_17000007 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   teTouchPadTwoFingersScroll_17000002
@@ -2919,7 +2919,7 @@ export default function uitestDriverErrorTest() {
       }
       await sleep(waitUiReadyMs * 8);
       console.log(`${TestTag}, teTouchPadTwoFingersScroll_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   teTouchPadTwoFingersScroll_17000007
@@ -2981,6 +2981,6 @@ export default function uitestDriverErrorTest() {
         expect(e.code == 17000005||e.code == 17000007).assertTrue();
       }
       console.log(`${TestTag}, teTouchPadTwoFingersScroll_17000007 end`);
-    })
+    }, undefined, 'emulator')
   })
 }

@@ -908,7 +908,7 @@ export default function UiTest() {
       let button2 = await driver.findComponents(ON.text('bottom'))
       expect(button2 == null).assertTrue()
       await stopApplication('com.uitestScene.acts');
-    })
+    }, undefined, 'emulator')
   })
 
   describe('UiTest_API9', () => {

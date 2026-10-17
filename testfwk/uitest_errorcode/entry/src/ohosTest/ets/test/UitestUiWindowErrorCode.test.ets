@@ -68,7 +68,7 @@ export default function uitestUiWindowErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_UiWindow_getBundleName_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_UiWindow_getBundleName_17000004
@@ -96,7 +96,7 @@ export default function uitestUiWindowErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(`${TestTag}, test_UiWindow_getBundleName_17000004 end`);
-    })
+    }, undefined, 'emulator')
 
 
     /**
@@ -124,7 +124,7 @@ export default function uitestUiWindowErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_UiWindow_getBounds_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_UiWindow_getBounds_17000004
@@ -152,7 +152,7 @@ export default function uitestUiWindowErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(`${TestTag}, test_UiWindow_getBounds_17000004 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_UiWindow_getTitle_17000002
@@ -179,7 +179,7 @@ export default function uitestUiWindowErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_UiWindow_getTitle_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_UiWindow_getTitle_17000004
@@ -207,7 +207,7 @@ export default function uitestUiWindowErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(`${TestTag}, test_UiWindow_getBundleName_17000004 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_UiWindow_getWindowMode_17000002
@@ -234,7 +234,7 @@ export default function uitestUiWindowErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_UiWindow_getWindowMode_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_UiWindow_getWindowMode_17000004
@@ -262,7 +262,7 @@ export default function uitestUiWindowErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(`${TestTag}, test_UiWindow_getWindowMode_17000004 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_UiWindow_isFocused_17000002
@@ -289,7 +289,7 @@ export default function uitestUiWindowErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_UiWindow_isFocused_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_UiWindow_isFocused_17000004
@@ -317,7 +317,7 @@ export default function uitestUiWindowErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(`${TestTag}, test_UiWindow_isFocused_17000004 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_UiWindow_isActive_17000002
@@ -344,7 +344,7 @@ export default function uitestUiWindowErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_UiWindow_isActive_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_UiWindow_isActive_17000004
@@ -372,7 +372,7 @@ export default function uitestUiWindowErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(`${TestTag}, test_UiWindow_isActive_17000004 end`);
-    })
+    }, undefined, 'emulator')
 
 
     /**
@@ -400,7 +400,7 @@ export default function uitestUiWindowErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_UiWindow_isActive_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_UiWindow_isActived_17000004
@@ -428,7 +428,7 @@ export default function uitestUiWindowErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(`${TestTag}, test_UiWindow_isActive_17000004 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_UiWindow_focus_17000002
@@ -455,7 +455,7 @@ export default function uitestUiWindowErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_UiWindow_focus_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_UiWindow_focus_17000004
@@ -483,7 +483,7 @@ export default function uitestUiWindowErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(`${TestTag}, test_UiWindow_focus_17000004 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_UiWindow_moveTo_17000002
@@ -510,7 +510,7 @@ export default function uitestUiWindowErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_UiWindow_moveTo_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_UiWindow_moveTo_17000004
@@ -554,7 +554,7 @@ export default function uitestUiWindowErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(`${TestTag}, test_UiWindow_moveTo_17000004 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_UiWindow_moveTo_17000005
@@ -579,7 +579,7 @@ export default function uitestUiWindowErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(`${TestTag}, test_UiWindow_moveTo_17000005 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_UiWindow_resize_17000002
@@ -606,7 +606,7 @@ export default function uitestUiWindowErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_UiWindow_resize_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_UiWindow_resize_17000004
@@ -652,7 +652,7 @@ export default function uitestUiWindowErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(`${TestTag}, test_UiWindow_resize_17000004 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_UiWindow_resize_17000005
@@ -677,7 +677,7 @@ export default function uitestUiWindowErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(`${TestTag}, test_UiWindow_resize_17000005 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_UiWindow_split_17000002
@@ -704,7 +704,7 @@ export default function uitestUiWindowErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_UiWindow_split_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_UiWindow_split_17000004
@@ -750,7 +750,7 @@ export default function uitestUiWindowErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(`${TestTag}, test_UiWindow_split_17000004 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_UiWindow_split_17000005
@@ -775,7 +775,7 @@ export default function uitestUiWindowErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(`${TestTag}, test_UiWindow_split_17000005 end`);
-    })
+    }, undefined, 'emulator')
 
 
     /**
@@ -803,7 +803,7 @@ export default function uitestUiWindowErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_UiWindow_maximize_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_UiWindow_maximize_17000004
@@ -848,7 +848,7 @@ export default function uitestUiWindowErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(`${TestTag}, test_UiWindow_maximize_17000004 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_UiWindow_maximize_17000005
@@ -873,7 +873,7 @@ export default function uitestUiWindowErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(`${TestTag}, test_UiWindow_maximize_17000005 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_UiWindow_minimize_17000002
@@ -900,7 +900,7 @@ export default function uitestUiWindowErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_UiWindow_minimize_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_UiWindow_minimize_17000004
@@ -944,7 +944,7 @@ export default function uitestUiWindowErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(`${TestTag}, test_UiWindow_minimize_17000004 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_UiWindow_minimize_17000005
@@ -969,7 +969,7 @@ export default function uitestUiWindowErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(`${TestTag}, test_UiWindow_minimize_17000005 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_UiWindow_resume_17000002
@@ -997,7 +997,7 @@ export default function uitestUiWindowErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_UiWindow_resume_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_UiWindow_resume_17000004
@@ -1042,7 +1042,7 @@ export default function uitestUiWindowErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(`${TestTag}, test_UiWindow_resume_17000004 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_UiWindow_resume_17000005
@@ -1067,7 +1067,7 @@ export default function uitestUiWindowErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(`${TestTag}, test_UiWindow_resume_17000005 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_UiWindow_close_17000002
@@ -1094,7 +1094,7 @@ export default function uitestUiWindowErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_UiWindow_close_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_UiWindow_close_17000004
@@ -1140,7 +1140,7 @@ export default function uitestUiWindowErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(`${TestTag}, test_UiWindow_close_17000004 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_UiWindow_close_17000005
@@ -1166,7 +1166,7 @@ export default function uitestUiWindowErrorTest() {
       await stopApplication('com.uitestScene.acts');
       await sleep(waitUiReadyMs);
       console.log(`${TestTag}, test_UiWindow_close_17000005 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_UiWindow_getDisplayId_17000002
@@ -1193,7 +1193,7 @@ export default function uitestUiWindowErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_UiWindow_getDisplayId_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_UiWindow_getDisplayId_17000004
@@ -1221,6 +1221,6 @@ export default function uitestUiWindowErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(`${TestTag}, test_UiWindow_getDisplayId_17000004 end`);
-    })
+    }, undefined, 'emulator')
   })
 }

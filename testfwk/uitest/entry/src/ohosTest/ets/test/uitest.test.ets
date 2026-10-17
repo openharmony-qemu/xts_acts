@@ -510,7 +510,7 @@ export default function UiTest() {
             console.log(`${TestTag}, testComponentEventOccurOptionsTimeOutClickMonitor isCallback, ${JSON.stringify(isCallback)}`);
             expect(isCallback).assertFalse();
             console.log(`${TestTag}, testComponentEventOccurOptionsTimeOutClickMonitor end`);
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   tesIsComponentPresentWhenLongClickTrue
@@ -545,7 +545,7 @@ export default function UiTest() {
             await driver.delayMs(waitUiReadyMs);
             await stopApplication('com.uitestScene.acts')
             console.log(`${TestTag}, tesIsComponentPresentWhenLongClickTrue end`);
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   tesIsComponentPresentWhenLongClickFalse
@@ -586,7 +586,7 @@ export default function UiTest() {
             await driver.delayMs(waitUiReadyMs);
             await stopApplication('com.uitestScene.acts')
             console.log(`${TestTag}, tesIsComponentPresentWhenLongClickNotCom end`);
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   tesIsComponentPresentWhenLongClickDuringNull
@@ -626,7 +626,7 @@ export default function UiTest() {
                 expect().assertFail()
             }
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   tesIsComponentPresentWhenLongClickDuringUndefined
@@ -666,7 +666,7 @@ export default function UiTest() {
             }
             console.log(`${TestTag}, tesIsComponentPresentWhenLongClickDuringUndefined end`);
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   tesIsComponentPresentWhenDragFalse
@@ -711,7 +711,7 @@ export default function UiTest() {
             expect(text != null).assertTrue()
             await stopApplication('com.uitestScene.acts')
             console.log(`${TestTag}, tesIsComponentPresentWhenDragFalse end`);
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   tesIsComponentPresentWhenSwipeTrue
@@ -737,7 +737,7 @@ export default function UiTest() {
             expect(text == null).assertTrue()
             await stopApplication('com.uitestScene.acts')
             console.log(`${TestTag}, tesIsComponentPresentWhenSwipeTrue end`);
-        })
+        }, undefined, 'emulator')
 
 
         /**
@@ -766,7 +766,7 @@ export default function UiTest() {
             expect(text == null).assertTrue()
             await stopApplication('com.uitestScene.acts')
             console.log(`${TestTag}, tesIsComponentPresentWhenSwipeFalse end`);
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   tesIsComponentPresentWhenSwipeDuringNull
@@ -793,7 +793,7 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
             console.log(`${TestTag}, tesIsComponentPresentWhenSwipeDuringNull end`);
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   tesIsComponentPresentWhenSwipeDuringUndefined
@@ -824,7 +824,7 @@ export default function UiTest() {
                 expect().assertFail();
             }
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   tesKnuckleKnockSingle
@@ -857,7 +857,7 @@ export default function UiTest() {
             }
             await driver.delayMs(waitUiReadyMs * 2);
             console.log(`${TestTag}, tesKnuckleKnockSingle end`);
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   tesKnuckleKnockDouble
@@ -891,7 +891,7 @@ export default function UiTest() {
             }
             await driver.delayMs(waitUiReadyMs * 2);
             console.log(`${TestTag}, tesKnuckleKnockDouble end`);
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   tesKnuckleKnockS
@@ -961,7 +961,7 @@ export default function UiTest() {
             }
             await driver.delayMs(waitUiReadyMs * 2);
             console.log(`${TestTag}, tesKnuckleKnockS end`);
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   teTouchPadTwoFingersScrollVer
@@ -995,7 +995,7 @@ export default function UiTest() {
             }
             await stopApplication('com.uitestScene.acts');
             console.log(`${TestTag}, teTouchPadTwoFingersScrollVer end`);
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   teTouchPadTwoFingersScrollHor
@@ -1040,7 +1040,7 @@ export default function UiTest() {
             }
             await stopApplication('com.uitestScene.acts')
             console.log(`${TestTag}, teTouchPadTwoFingersScrollHor end`);
-        })
+        }, undefined, 'emulator')
 
     })
     describe('UiTest_API20', () => {
@@ -1078,7 +1078,7 @@ export default function UiTest() {
             await newButton.click()
             await stopApplication('com.uitestScene.acts')
             console.log(`${TestTag}, testDriverLongClickAt end`);
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testDriverLongClickAtDefault
@@ -1107,7 +1107,7 @@ export default function UiTest() {
                 expect().assertFail();
             }
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testDriverLongClickAtNull
@@ -1136,7 +1136,7 @@ export default function UiTest() {
                 expect().assertFail();
             }
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testDriverLongClickAtUndefined
@@ -1165,7 +1165,7 @@ export default function UiTest() {
                 expect().assertFail()
             }
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testNewMouseLongClick
@@ -1220,7 +1220,7 @@ export default function UiTest() {
             expect(await text1.getText() == 'Hello 123World').assertTrue()
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'testDriverInputText over');
-        })
+        }, undefined, 'emulator')
       
         /**
          * @tc.name   testDriverInputText1
@@ -1319,7 +1319,7 @@ export default function UiTest() {
             expect(await text1.getText() == 'Hello World123').assertTrue()
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'testDriverInputText3 over');
-        })
+        }, undefined, 'emulator')
       
         /**
          * @tc.name   testDriverInputText4
@@ -1566,7 +1566,7 @@ export default function UiTest() {
             }
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'testCrownRotate over');
-        })
+        }, undefined, 'emulator')
       
         /**
          * @tc.name   testCrownRotateSpeed
@@ -1606,7 +1606,7 @@ export default function UiTest() {
             }
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'testCrownRotateSpeed over');
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testCrownRotateSpeedNull
@@ -1647,7 +1647,7 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'testCrownRotateSpeed over');
             done()
-        })
+        }, undefined, 'emulator')
 
 
         /**
@@ -1702,7 +1702,7 @@ export default function UiTest() {
             }
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'testGetDisplayId over');
-        })
+        }, undefined, 'emulator')
       
         /**
          * @tc.name   testPressBackWithId
@@ -1776,7 +1776,7 @@ export default function UiTest() {
             expect(success == true).assertTrue()
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'testScreenCapWithId over');
-        })
+        }, undefined, 'emulator')
       
         /**
          * @tc.name   testGetDisplaySizeWithId
@@ -1797,7 +1797,7 @@ export default function UiTest() {
             expect(s.y != 0).assertTrue()
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'testScreenCapWithId over');
-        })
+        }, undefined, 'emulator')
       
         /**
          * @tc.name   testGetDisplayDensityWithId
@@ -1818,7 +1818,7 @@ export default function UiTest() {
             expect(s.y != 0).assertTrue()
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'testGetDisplayDensityWithId over');
-        })
+        }, undefined, 'emulator')
       
       
         /**
@@ -1842,7 +1842,7 @@ export default function UiTest() {
             expect(text == 'back to index').assertTrue()
             await newButton.click()
             console.log(TestTag, 'testClickAt over');
-        })
+        }, undefined, 'emulator')
       
         /**
          * @tc.name   testDoubleClickAt
@@ -1870,7 +1870,7 @@ export default function UiTest() {
             await button.click()
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'testDoubleClickAt over');
-        })
+        }, undefined, 'emulator')
       
         /**
          * @tc.name   test_swipeBetween
@@ -1899,7 +1899,7 @@ export default function UiTest() {
             expect(text == null).assertTrue()
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'test_swipeBetween over');
-        })
+        }, undefined, 'emulator')
       
         /**
          * @tc.name   test_swipeBetweenspeednull
@@ -1928,7 +1928,7 @@ export default function UiTest() {
             expect(text == null).assertTrue()
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'test_swipeBetween over');
-        })
+        }, undefined, 'emulator')
       
         /**
          * @tc.name   test_swipeBetweenspeedundefined
@@ -1957,7 +1957,7 @@ export default function UiTest() {
             expect(text == null).assertTrue()
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'test_swipeBetween over');
-        })
+        }, undefined, 'emulator')
       
         /**
          * @tc.name   test_swipeBetweenspeed199
@@ -2015,7 +2015,7 @@ export default function UiTest() {
             expect(text == null).assertTrue()
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'test_swipeBetween over');
-        })
+        }, undefined, 'emulator')
       
         /**
          * @tc.name   test_swipeBetweenspeed1000
@@ -2098,7 +2098,7 @@ export default function UiTest() {
             expect(button2 == null).assertTrue()
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'testFlingWithId over');
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testTriggerCombineKeysWithId
@@ -2239,7 +2239,7 @@ export default function UiTest() {
             let isActive = await window.isActive()
             expect(isActive == true).assertTrue()
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
       
         /**
          * @tc.name   testScreenCaptureWithId
@@ -2258,7 +2258,7 @@ export default function UiTest() {
             let success = await driver.screenCapture(savePath, { left: 0, top: 0, right: 100, bottom: 100, displayId: disPlay.id })
             expect(success == true).assertTrue()
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
       })
     describe('UiTest_API16', () => {
         let driver: Driver
@@ -2311,7 +2311,7 @@ export default function UiTest() {
             await driver.delayMs(waitUiReadyMs);
             await stopApplication('com.uitestScene.acts');
             console.log(TestTag, 'test_touchPadMultiFingerSwipe_Up_Down_3 end');
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   test_touchPadMultiFingerSwipe_Up_Down_Stay_3
@@ -2350,7 +2350,7 @@ export default function UiTest() {
             await driver.delayMs(waitUiReadyMs);
             await stopApplication('com.uitestScene.acts');
             console.log(TestTag, 'test_touchPadMultiFingerSwipe_Up_Down_Stay_3 end');
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   test_touchPadMultiFingerSwipe_other
@@ -2379,7 +2379,7 @@ export default function UiTest() {
                 expect(error.code).assertEqual(DeviceErrorCode);
             }
             console.log(TestTag, 'test_touchPadMultiFingerSwipe_other end');
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   test_touchPadMultiFingerSwipe_fingers_verification_401
@@ -2427,7 +2427,7 @@ export default function UiTest() {
                 expect(error.code).assertEqual(ErrorCode);
             }
             console.log(TestTag, 'test_touchPadMultiFingerSwipe_fingers_verification_401 end');
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   test_touchPadMultiFingerSwipe_direction_verification_401
@@ -2475,7 +2475,7 @@ export default function UiTest() {
                 expect(error.code).assertEqual(ErrorCode);
             }
             console.log(TestTag, 'test_touchPadMultiFingerSwipe_direction_verification_401 start');
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   test_touchPadMultiFingerSwipe_option_verification_Up
@@ -2611,7 +2611,7 @@ export default function UiTest() {
             }
             await driver.delayMs(waitUiReadyMs);
             console.log(TestTag, 'test_touchPadMultiFingerSwipe_option_verification_Up end');
-        })
+        }, undefined, 'emulator')
 
 
         /**
@@ -2648,7 +2648,7 @@ export default function UiTest() {
                 await stopApplication('com.uitestScene.acts');
             }
             console.log(TestTag, 'test_penClick_function end');
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   test_penClick_function_401
@@ -2693,7 +2693,7 @@ export default function UiTest() {
                 expect(error.code).assertEqual(ErrorCode);
             }
             console.log(TestTag, 'test_penClick_function_401 end');
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   test_penLongClick_function
@@ -2724,7 +2724,7 @@ export default function UiTest() {
                 await stopApplication('com.uitestScene.acts');
             }
             console.log(TestTag, 'test_penLongClick_function end');
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testPenLongClickPressure
@@ -2756,7 +2756,7 @@ export default function UiTest() {
             }
             console.log(TestTag, 'testPenLongClickPressure end');
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testPenLongClickPressureNull
@@ -2788,7 +2788,7 @@ export default function UiTest() {
             }
             console.log(TestTag, 'testPenLongClickPressureNull end');
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testPenLongClickPressureUndefined
@@ -2820,7 +2820,7 @@ export default function UiTest() {
             }
             console.log(TestTag, 'testPenLongClickPressureUndefined end');
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   test_penLongClick_function_401
@@ -2865,7 +2865,7 @@ export default function UiTest() {
                 expect(error.code).assertEqual(ErrorCode);
             }
             console.log(TestTag, 'test_penLongClick_function_401 end');
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   test_penDoubleClick_function
@@ -2946,7 +2946,7 @@ export default function UiTest() {
                 expect(error.code).assertEqual(ErrorCode);
             }
             console.log(TestTag, 'test_penDoubleClick_function_401 end ');
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   test_penSwipe_function
@@ -2992,7 +2992,7 @@ export default function UiTest() {
                 await stopApplication('com.uitestScene.acts');
             }
             console.log(TestTag, 'test_penSwipe_function end');
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   test_penSwipe_function_pressure
@@ -3028,7 +3028,7 @@ export default function UiTest() {
                 await stopApplication('com.uitestScene.acts');
             }
             console.log(TestTag, 'test_penSwipe_function end');
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   test_penSwipe_function_speed
@@ -3064,7 +3064,7 @@ export default function UiTest() {
                 await stopApplication('com.uitestScene.acts');
             }
             console.log(TestTag, 'test_penSwipe_function_speed end');
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testPenSwipeSpeedNull
@@ -3101,7 +3101,7 @@ export default function UiTest() {
             }
             console.log(TestTag, 'testPenSwipeSpeedNull end');
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testPenSwipeSpeedUndefined
@@ -3138,7 +3138,7 @@ export default function UiTest() {
             }
             console.log(TestTag, 'testPenSwipeSpeedUndefined end');
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testPenSwipeSpeedLowRange
@@ -3175,7 +3175,7 @@ export default function UiTest() {
             }
             console.log(TestTag, 'testPenSwipeSpeedLowRange end');
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testPenSwipeSpeedAboveMax
@@ -3212,7 +3212,7 @@ export default function UiTest() {
             }
             console.log(TestTag, 'testPenSwipeSpeedAboveMax end');
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testPenSwipePressureNull
@@ -3249,7 +3249,7 @@ export default function UiTest() {
             }
             console.log(TestTag, 'testPenSwipePressureNull end');
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testPenSwipePressureUndefined
@@ -3286,7 +3286,7 @@ export default function UiTest() {
             }
             console.log(TestTag, 'testPenSwipePressureUndefined end');
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   test_penSwipe_function_401
@@ -3351,7 +3351,7 @@ export default function UiTest() {
                 expect(error.code).assertEqual(ErrorCode);
             }
             console.log(TestTag, 'test_penSwipe_function_401 end');
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   test_injectPenPointAction_function
@@ -3402,7 +3402,7 @@ export default function UiTest() {
                 await stopApplication('com.uitestScene.acts')
             }
             console.log(TestTag, `test_injectPenPointAction_function end`);
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testInjectPenPointActionDefault
@@ -3566,7 +3566,7 @@ export default function UiTest() {
             }
             console.log(TestTag, `testInjectPenPointActionSpeed end`);
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testInjectPenPointActionSpeedUndefined
@@ -3618,7 +3618,7 @@ export default function UiTest() {
             }
             console.log(TestTag, `testInjectPenPointActionSpeedUndefined end`);
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testInjectPenPointActionPressureNull
@@ -3816,7 +3816,7 @@ export default function UiTest() {
                 expect(error.code).assertEqual(ErrorCode);
             }
 
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testScrollSearchVertical
@@ -3858,7 +3858,7 @@ export default function UiTest() {
             await driver.delayMs(waitUiReadyMs)
             await stopApplication('com.uitestScene.acts');
             console.log(TestTag, 'testScrollSearchVertical end');
-        })
+        }, undefined, 'emulator')
 
 
 
@@ -3913,7 +3913,7 @@ export default function UiTest() {
             }
             await driver.delayMs(waitUiReadyMs);
             await stopApplication('com.uitestScene.acts');
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testMatchPatternIcase
@@ -3971,7 +3971,7 @@ export default function UiTest() {
             await driver.delayMs(waitUiReadyMs);
             expect(text == 'longClick').assertTrue();
             await stopApplication('com.uitestScene.acts');
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testGetHint
@@ -4071,7 +4071,7 @@ export default function UiTest() {
                 expect().assertFail();
             }
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testGetHint1
@@ -4094,7 +4094,7 @@ export default function UiTest() {
             await driver.delayMs(waitUiReadyMs);
             expect(hint == 'welcome').assertTrue();
             await stopApplication('com.uitestScene.acts');
-        })
+        }, undefined, 'emulator')
     })
 
     describe('UiTest_API11', () => {
@@ -4132,7 +4132,7 @@ export default function UiTest() {
             let button = await driver.findComponent(ON.text('doubleClick'))
             let text = await button.getText()
             expect(text == 'doubleClick').assertTrue()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testMouseDoubleClick_1
@@ -4156,7 +4156,7 @@ export default function UiTest() {
             let button = await driver.findComponent(ON.text('doubleClick'))
             let text = await button.getText()
             expect(text == 'doubleClick').assertTrue()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testMouseDoubleClick_2
@@ -4180,7 +4180,7 @@ export default function UiTest() {
             let button = await driver.findComponent(ON.text('doubleClick'))
             let text = await button.getText()
             expect(text == 'doubleClick').assertTrue()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testMouseDoubleClickKey1Null
@@ -4209,7 +4209,7 @@ export default function UiTest() {
                 expect().assertFail();
             }
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testMouseDoubleClickKey1Undefined
@@ -4238,7 +4238,7 @@ export default function UiTest() {
                 expect().assertFail();
             }
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testMouseDoubleClickKey2Null
@@ -4267,7 +4267,7 @@ export default function UiTest() {
                 expect().assertFail();
             }
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testMouseDoubleClickKey2Undefined
@@ -4296,7 +4296,7 @@ export default function UiTest() {
                 expect().assertFail();
             }
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testMouseLongClick
@@ -4316,7 +4316,7 @@ export default function UiTest() {
             let newButton = await driver.findComponent(ON.text('longClick'))
             let text = await newButton.getText()
             expect(text == 'longClick').assertTrue()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testMouseLongClick_1
@@ -4336,7 +4336,7 @@ export default function UiTest() {
             let newButton = await driver.findComponent(ON.text('longClick'))
             let text = await newButton.getText()
             expect(text == 'longClick').assertTrue()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testMouseLongClick_2
@@ -4356,7 +4356,7 @@ export default function UiTest() {
             let newButton = await driver.findComponent(ON.text('longClick'))
             let text = await newButton.getText()
             expect(text == 'longClick').assertTrue()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testMouseLongClickKey1Null
@@ -4406,7 +4406,7 @@ export default function UiTest() {
                 expect().assertFail();
             }
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testMouseLongClickKey2Null
@@ -4456,7 +4456,7 @@ export default function UiTest() {
                 expect().assertFail();
             }
             done()
-        })
+        }, undefined, 'emulator')
 
 
         /**
@@ -4507,7 +4507,7 @@ export default function UiTest() {
                 expect().assertFail()
             }
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testMouseMoveWithTrack
@@ -4539,7 +4539,7 @@ export default function UiTest() {
             await driver.delayMs(waitUiReadyMs)
             let newButton = await driver.findComponent(ON.text('jump'))
             expect(newButton == null).assertTrue()
-        })
+        }, undefined, 'emulator')
 
 
         /**
@@ -4577,7 +4577,7 @@ export default function UiTest() {
                 expect().assertFail();
             }
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testDriverInputTextAdapt001
@@ -4658,7 +4658,7 @@ export default function UiTest() {
             await driver.delayMs(waitUiReadyMs)
             let button1 = await driver.findComponent(ON.text('next page'))
             expect(button1 == null).assertTrue()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testWindowAttr
@@ -4677,7 +4677,7 @@ export default function UiTest() {
             let isActive = await window.isActive()
             expect(isActive == true).assertTrue()
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testDescription
@@ -4728,7 +4728,7 @@ export default function UiTest() {
                 expect().assertFail();
             }
             done()
-        })
+        }, undefined, 'emulator')
     })
 
     describe('UiTest_API10', () => {
@@ -4763,7 +4763,7 @@ export default function UiTest() {
             expect(bounds1.bottom >= bounds2.bottom).assertTrue()
             expect(bounds1.left <= bounds2.right).assertTrue()
             expect(bounds1.right >= bounds2.right).assertTrue()
-        })
+        }, undefined, 'emulator')
 
 
 
@@ -4782,7 +4782,7 @@ export default function UiTest() {
             let success = await driver.screenCapture(savePath, { left: 0, top: 0, right: 100, bottom: 100 })
             expect(success == true).assertTrue()
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testScreenCaptureRectNull
@@ -4804,7 +4804,7 @@ export default function UiTest() {
                 expect().assertFail();
             }
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testScreenCaptureRectUndefined
@@ -4826,7 +4826,7 @@ export default function UiTest() {
                 expect().assertFail();
             }
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testScreenCapture_default
@@ -4843,7 +4843,7 @@ export default function UiTest() {
             let success = await driver.screenCapture(savePath)
             expect(success == true).assertTrue()
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testMouseClick
@@ -4881,7 +4881,7 @@ export default function UiTest() {
                 expect().assertFail();
             }
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testMouseClickKey1Null
@@ -4910,7 +4910,7 @@ export default function UiTest() {
                 expect().assertFail()
             }
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testMouseClickKey1Undefined
@@ -4939,7 +4939,7 @@ export default function UiTest() {
                 expect().assertFail()
             }
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testMouseClickKey2Null
@@ -4968,7 +4968,7 @@ export default function UiTest() {
                 expect().assertFail()
             }
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testMouseClickKey2Undefined
@@ -4997,7 +4997,7 @@ export default function UiTest() {
                 expect().assertFail();
             }
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testMouseMoveTo
@@ -5021,7 +5021,7 @@ export default function UiTest() {
             let newButton = await driver.findComponent(ON.text('hover'))
             expect(newButton != null).assertTrue()
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testMouseScrollAdapt001
@@ -5064,7 +5064,7 @@ export default function UiTest() {
             await driver.delayMs(waitUiReadyMs)
             let button1 = await driver.findComponent(ON.text('next page'))
             expect(button1 == null).assertTrue()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testMouseScrollAdapt001Key1Null
@@ -5092,7 +5092,7 @@ export default function UiTest() {
                 expect().assertFail();
             }
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testMouseScrollAdapt001Key1Undefined
@@ -5120,7 +5120,7 @@ export default function UiTest() {
                 expect().assertFail();
             }
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testMouseScrollAdapt001Key2Null
@@ -5148,7 +5148,7 @@ export default function UiTest() {
                 expect().assertFail();
             }
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testMouseScrollAdapt001Key2Undefined
@@ -5176,7 +5176,7 @@ export default function UiTest() {
                 expect().assertFail();
             }
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testMouseScrollAdapt001SpeedNull
@@ -5204,7 +5204,7 @@ export default function UiTest() {
                 expect().assertFail();
             }
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testMouseScrollAdapt001SpeedUndefined
@@ -5232,7 +5232,7 @@ export default function UiTest() {
                 expect().assertFail();
             }
             done()
-        })
+        }, undefined, 'emulator')
 
 
         /**
@@ -5251,7 +5251,7 @@ export default function UiTest() {
             let btn1 = await driver.findComponent(ON.inWindow('').text('next page'))
             expect(btn1 != null).assertTrue()
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testMonitor1
@@ -5466,7 +5466,7 @@ export default function UiTest() {
                 expect().assertFail();
             }
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testChecked
@@ -5503,7 +5503,7 @@ export default function UiTest() {
                 expect().assertFail();
             }
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testMatchPattern
@@ -5560,7 +5560,7 @@ export default function UiTest() {
             expect(text == 'back to index').assertTrue()
             await newButton.click()
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testDriverDoubleClick
@@ -5586,7 +5586,7 @@ export default function UiTest() {
             expect(text == 'doubleClick').assertTrue()
             await button.click()
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testDriverLongClick
@@ -5608,7 +5608,7 @@ export default function UiTest() {
             expect(text == 'longClick').assertTrue()
             await newButton.click()
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testUiComponentClick
@@ -5629,7 +5629,7 @@ export default function UiTest() {
             expect(text == 'back to index').assertTrue()
             await newButton.click()
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testUiComponentDoubleClick
@@ -5654,7 +5654,7 @@ export default function UiTest() {
             expect(text == 'doubleClick').assertTrue()
             await newButton.click()
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testUiComponentLongClick
@@ -5675,7 +5675,7 @@ export default function UiTest() {
             expect(text == 'longClick').assertTrue()
             await newButton.click()
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testKey
@@ -5785,7 +5785,7 @@ export default function UiTest() {
                 expect().assertFail();
             }
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testClickable
@@ -5819,7 +5819,7 @@ export default function UiTest() {
                 expect().assertFail();
             }
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testLongClickable
@@ -5853,7 +5853,7 @@ export default function UiTest() {
                 expect().assertFail();
             }
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testScrollable
@@ -5892,7 +5892,7 @@ export default function UiTest() {
                 expect().assertFail();
             }
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testEnabled
@@ -6000,7 +6000,7 @@ export default function UiTest() {
                 expect().assertFail();
             }
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testPressBack
@@ -6037,7 +6037,7 @@ export default function UiTest() {
             let buttons = await driver.findComponents(ON.type('Button'))
             expect(await buttons[0].getText() != null).assertTrue()
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testTriggerKey
@@ -6083,7 +6083,7 @@ export default function UiTest() {
             expect(bounds.right).assertLarger(bounds.left)
             expect(bounds.bottom).assertLarger(bounds.top)
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testGetUiComponentBoundsCenter
@@ -6102,7 +6102,7 @@ export default function UiTest() {
             expect(point.x).assertLarger(0)
             expect(point.y).assertLarger(0)
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testWaitForComponent
@@ -6118,7 +6118,7 @@ export default function UiTest() {
             let button = await driver.waitForComponent(ON.text('next page'), waitUiReadyMs)
             expect(button !== null).assertTrue()
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testScreenCap
@@ -6135,7 +6135,7 @@ export default function UiTest() {
             let success = await driver.screenCap(savePath)
             expect(success == true).assertTrue()
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testAssertComponentExist
@@ -6166,7 +6166,7 @@ export default function UiTest() {
             let button = await driver.findComponent(ON.isBefore(ON.text('next page')).type('Button'))
             expect(await button.getType() == 'Button').assertTrue()
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testIsAfter
@@ -6207,7 +6207,7 @@ export default function UiTest() {
             let text = await driver.findComponent(ON.text('toast'))
             expect(text == null).assertTrue()
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testSwipeSpeed
@@ -6237,7 +6237,7 @@ export default function UiTest() {
                 expect().assertFail();
             }
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testSwipeSpeedNull
@@ -6263,7 +6263,7 @@ export default function UiTest() {
             expect(text == null).assertTrue()
             await stopApplication('com.uitestScene.acts')
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testSwipeSpeedUndefined
@@ -6289,7 +6289,7 @@ export default function UiTest() {
             expect(text == null).assertTrue()
             await stopApplication('com.uitestScene.acts')
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testFling
@@ -6314,7 +6314,7 @@ export default function UiTest() {
             let text = await driver.findComponent(ON.text('toast'))
             expect(text == null).assertTrue()
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testScrollSearch
@@ -6351,7 +6351,7 @@ export default function UiTest() {
             let button = await driver.findComponent(ON.text('bottom'))
             expect(await button.getText() == 'bottom').assertTrue()
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testScrollToBottom_speed
@@ -6396,7 +6396,7 @@ export default function UiTest() {
                 expect().assertFail();
             }
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testScrollToBottomSpeedUndefined
@@ -6421,7 +6421,7 @@ export default function UiTest() {
                 expect().assertFail()
             }
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testScrollToTop
@@ -6443,7 +6443,7 @@ export default function UiTest() {
             let button = await driver.findComponent(ON.text('bottom'))
             expect(button == null).assertTrue()
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testScrollToTop_speed
@@ -6465,7 +6465,7 @@ export default function UiTest() {
             let button = await driver.findComponent(ON.text('bottom'))
             expect(button == null).assertTrue()
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testScrollToTopSpeedNull
@@ -6492,7 +6492,7 @@ export default function UiTest() {
                 expect().assertFail()
             }
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testScrollToTopSpeedUndefined
@@ -6519,7 +6519,7 @@ export default function UiTest() {
                 expect().assertFail()
             }
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testPinch
@@ -6552,7 +6552,7 @@ export default function UiTest() {
             expect(bounds3 != bounds2).assertTrue()
             await driver.pressBack()
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testInjectMultiPointerActionDefault
@@ -6598,7 +6598,7 @@ export default function UiTest() {
                 expect().assertFail()
             }
             done()
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testInjectMultiPointerAction
@@ -6639,7 +6639,7 @@ export default function UiTest() {
             expect(bounds2 != bounds1).assertTrue()
             expect(result).assertTrue();
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testGetDisplaySize
@@ -6656,7 +6656,7 @@ export default function UiTest() {
             expect(s.x != 0).assertTrue()
             expect(s.y != 0).assertTrue()
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testGetDisplayDensity
@@ -6673,7 +6673,7 @@ export default function UiTest() {
             expect(s.x != 0).assertTrue()
             expect(s.y != 0).assertTrue()
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testWakeUpDisplay
@@ -6688,7 +6688,7 @@ export default function UiTest() {
             await driver.delayMs(waitUiReadyMs)
             await driver.wakeUpDisplay()
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testWaitForIdle
@@ -6704,7 +6704,7 @@ export default function UiTest() {
             let idled = await driver.waitForIdle(4000, 5000)
             expect(idled == true).assertTrue()
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testWaitForIdleFalse
@@ -6720,7 +6720,7 @@ export default function UiTest() {
             let idled = await driver.waitForIdle(6000, 2000)
             expect(idled == false).assertTrue()
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
 
     })
 
@@ -6838,7 +6838,7 @@ export default function UiTest() {
             expect(text == 'back to index').assertTrue()
             await newButton.click()
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testUiComponentDoubleClickAdapt001
@@ -6863,7 +6863,7 @@ export default function UiTest() {
             expect(text == 'doubleClick').assertTrue()
             await newButton.click()
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testUiComponentLongClickAdapt001
@@ -6884,7 +6884,7 @@ export default function UiTest() {
             expect(text == 'longClick').assertTrue()
             await newButton.click()
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testKeyAdapt001
@@ -6905,7 +6905,7 @@ export default function UiTest() {
             console.log(`${TestTag}, testKey btnkey ${JSON.stringify(btnkey)}`)
             expect(btnkey).assertEqual('')   
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testId
@@ -6943,7 +6943,7 @@ export default function UiTest() {
             console.log(`${TestTag}, testType typeCom,${JSON.stringify(typeCom)}`)
             expect(typeCom).assertNull()     
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testClickableAdapt001
@@ -6966,7 +6966,7 @@ export default function UiTest() {
             let clickable1 = await button1.isClickable()
             expect(clickable1 == true).assertTrue()
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testScrollableAdapt001
@@ -6989,7 +6989,7 @@ export default function UiTest() {
             let scrollable1 = await scrollBar1.isScrollable()
             expect(scrollable1 == false).assertTrue()
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testEnabledAdapt001
@@ -7016,7 +7016,7 @@ export default function UiTest() {
             let enable1 = await button1.isEnabled()
             expect(enable1 == false).assertTrue()
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testFocusedAdapt001
@@ -7039,7 +7039,7 @@ export default function UiTest() {
             let focused1 = await button1.isFocused()
             expect(focused1 == true).assertTrue()
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testSelectedAdapt001
@@ -7066,7 +7066,7 @@ export default function UiTest() {
             let selected1 = await button1.isSelected()
             expect(selected1).assertTrue()
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testPressBackAdapt001
@@ -7105,7 +7105,7 @@ export default function UiTest() {
             let notCCom = await driver.findComponents(BY.text('NotTest'))
             expect(notCCom).assertNull()
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testTriggerKeyAdapt001
@@ -7144,7 +7144,7 @@ export default function UiTest() {
             let success = await driver.screenCap(savePath)
             expect(success == true).assertTrue()
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testAssertComponentExistAdapt001
@@ -7230,7 +7230,7 @@ export default function UiTest() {
             let text = await driver.findComponent(BY.text('toast'))
             expect(text == null).assertTrue()
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testScrollSearchAdapt001
@@ -7270,7 +7270,7 @@ export default function UiTest() {
             expect(text == 'back to index').assertTrue()
             await newButton.click()
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testUiDriverDoubleClick
@@ -7297,7 +7297,7 @@ export default function UiTest() {
             expect(text == 'doubleClick').assertTrue()
             await button.click()
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
 
         /**
          * @tc.name   testUiDriverLongClick
@@ -7320,6 +7320,6 @@ export default function UiTest() {
             expect(text == 'longClick').assertTrue()
             await newButton.click()
             await stopApplication('com.uitestScene.acts')
-        })
+        }, undefined, 'emulator')
     })
 }

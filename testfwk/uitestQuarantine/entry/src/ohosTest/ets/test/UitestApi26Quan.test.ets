@@ -825,7 +825,7 @@ export default function UiTest() {
       let text = await driver.findComponent(ON.text('one').isBefore(ON.text('two')));
       expect(text).assertNull();
       console.log(`${TestTag}, testDriverMouseDragSpeedMinimum end`);
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverMouseDragSpeedMaximum
@@ -848,7 +848,7 @@ export default function UiTest() {
         expect().assertFail();
       }
       console.log(`${TestTag}, testDriverMouseDragSpeedMaximum end`);
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverMouseDragDurationMinimum

@@ -130,7 +130,7 @@ export default function uitestOnApi26Test() {
         expect(error.message).assertContain('Check arg0 failed');
       }
       console.info(`testOnWithinComponentNullInvalid over`);
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testOnWithinComponentUndefinedInvalid
@@ -150,7 +150,7 @@ export default function uitestOnApi26Test() {
         expect(error.code).assertEqual(ParameterErrorCode);
       }
       console.info(`testOnWithinComponentUndefinedInvalid over`);
-    });
+    }, undefined, 'emulator');
 
   })
 }

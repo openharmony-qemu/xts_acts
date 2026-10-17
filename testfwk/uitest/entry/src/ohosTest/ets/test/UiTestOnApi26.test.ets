@@ -152,7 +152,7 @@ export default function uitestOnApi26Test() {
       expect(text3).assertNull();
       await stopApplication('com.uitestScene.acts');
       console.info(TestTag + 'testOnWithinComponentValid over');
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testOnWithinComponentInvalid
@@ -178,6 +178,6 @@ export default function uitestOnApi26Test() {
         expect(error.code).assertEqual(ParameterErrorCode);
       }
       console.info(`testOnWithinComponentInvalid over`);
-    });
+    }, undefined, 'emulator');
   })
 }

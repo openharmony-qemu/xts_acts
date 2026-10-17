@@ -97,6 +97,6 @@ export default function uiTestApi22Test() {
       await stopApplication('com.uitestScene.acts')
       console.log(`${TestTag}, tesIsComponentPresentWhenDragTrue end`);
       done();
-    })
+    }, undefined, 'emulator')
   })
 }

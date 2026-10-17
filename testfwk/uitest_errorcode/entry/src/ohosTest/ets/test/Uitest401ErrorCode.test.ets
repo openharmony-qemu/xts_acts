@@ -73,7 +73,7 @@ export default function abilityTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, test_injectMultiPointerAction_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_PointerMatrix_401
@@ -116,7 +116,7 @@ export default function abilityTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, test_PointerMatrix_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_setPoint_401
@@ -169,7 +169,7 @@ export default function abilityTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, test_setPoint_401 END`);
-    })
+    }, undefined, 'emulator')
     /**
      * @tc.name   test_swipe_401
      * @tc.number UiTest_uitest401_008
@@ -216,7 +216,7 @@ export default function abilityTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, test_swipe_401 END`);
-    })
+    }, undefined, 'emulator')
     /**
      * @tc.name   test_type_401
      * @tc.number UiTest_uitest401_009
@@ -242,6 +242,6 @@ export default function abilityTest() {
         expect(error.code).assertEqual(ErrorCode);
       }
       console.log(`${TestTag}, test_type_401 END`);
-    })
+    }, undefined, 'emulator')
   })
 }

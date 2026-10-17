@@ -141,7 +141,7 @@ export default function PerfTestTest() {
       expect(res1.metric).assertEqual(PerfMetric.PAGE_SWITCH_COMPLETE_TIME)
       await stopApplication('com.perftestScene.acts')
       done()
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testPerfTestListSwipe
@@ -230,7 +230,7 @@ export default function PerfTestTest() {
       expect(res4.average).assertLargerOrEqual(0)
       expect(res5.average).assertLargerOrEqual(0)
       done()
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testPerfTest_Navigationchange
@@ -397,7 +397,7 @@ export default function PerfTestTest() {
       expect(res4.average).assertLargerOrEqual(0)
       expect(res5.average).assertLargerOrEqual(0)
       done()
-    })
+    }, undefined, 'emulator')
 
   })
 }
