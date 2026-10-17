@@ -51,7 +51,7 @@ import util3Test from './util/Util3.test';
 import utilTypeTest from './util/UtilType.test';
 import utilGetGlobalHandleCountTest from './util/GetGlobalHandleCount.test';
 import vmHeapMemoryPressureTest from './util/VMHeapMemoryPressureTest.test';
-import trackGlobalRefTest from './util/trackGlobalRef.test';
+import trackGlobalRefTest from './util/TrackGlobalRef.test';
 
 import util1FPTest from './utilfp/Util1FP.test';
 import util2FPTest from './utilfp/Util2FP.test';
