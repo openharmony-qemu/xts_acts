@@ -29,18 +29,11 @@
 } from '../../../../hypium/index';
 import Context from "application.Context";
 import { BusinessError } from '@ohos.base';
-import Want from '@ohos.app.ability.Want';
-import { sleep, Constant } from './Common';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { Driver, MatchPattern, ON } from '@ohos.UiTest';
+import { Constant } from './Common';
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
-import common from '@ohos.app.ability.common';
-import { getPermission, driveFn } from '../Common.test.ets';
-import hilog from '@ohos.hilog';
+import { getPermission, driveFn, checkResourceFile, createResource } from '../Common.test.ets';
 
-let domain: int= 0x0000;
-let tag: string = 'testTag';
 let phAccessHelper: photoAccessHelper.PhotoAccessHelper | null = null;
 let predicates: dataSharePredicates.DataSharePredicates | null = null;
 
@@ -53,7 +46,9 @@ export default function photoAccessHelperTest() {
       predicates = new dataSharePredicates.DataSharePredicates();
       await getPermission();
       await driveFn();
-      await sleep(1000);
+      checkResourceFile(testContext);
+      let fileNameList = ['testPhoto.jpg.jpg', 'testPhoto.jpg.mp4'];
+      await createResource(testContext, fileNameList);
     })
 
     beforeEach(() => {
@@ -137,7 +132,7 @@ export default function photoAccessHelperTest() {
           expect().assertFail();
           done();
         } catch (err) {
-          err = err as BusinessError;
+         
           console.error(`getAssets failed, error: ${err.code}, ${err.message}`);
           expect(string(err.code)).assertDeepEquals(Constant.ARGS_EORRCODE);
           done();
@@ -164,7 +159,7 @@ export default function photoAccessHelperTest() {
           expect().assertFail();
           done();
         } catch (err) {
-          err = err as BusinessError;
+         
           console.error(`getAssets failed, error: ${err.code}, ${err.message}`);
           expect(string(err.code)).assertDeepEquals(Constant.ARGS_EORRCODE);
           done();
@@ -247,7 +242,7 @@ export default function photoAccessHelperTest() {
           expect().assertFail();
           done();
         } catch (err) {
-          err = err as BusinessError;
+         
           console.error(`createAsset failed, error: ${err.code}, ${err.message}`);
           expect(string(err.code)).assertDeepEquals(Constant.PARAM_EORRCODE);
           done();
@@ -274,7 +269,7 @@ export default function photoAccessHelperTest() {
           expect().assertFail();
           done();
         } catch (err) {
-          err = err as BusinessError;
+         
           console.error(`createAsset failed, error: ${err.code}, ${err.message}`);
           expect(string(err.code)).assertDeepEquals(Constant.ARGS_EORRCODE);
           done();
@@ -356,7 +351,7 @@ export default function photoAccessHelperTest() {
           expect().assertFail();
           done();
         } catch (err) {
-          err = err as BusinessError;
+         
           console.error(`createAsset failed, error: ${err.code}, ${err.message}`);
           expect(string(err.code)).assertDeepEquals(Constant.PARAM_EORRCODE);
           done();
@@ -383,7 +378,7 @@ export default function photoAccessHelperTest() {
           expect().assertFail();
           done();
         } catch (err) {
-          err = err as BusinessError;
+         
           console.error(`createAsset failed, error: ${err.code}, ${err.message}`);
           expect(string(err.code)).assertDeepEquals(Constant.PARAM_EORRCODE);
           done();
@@ -518,7 +513,7 @@ export default function photoAccessHelperTest() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
+         
           console.error(`createAsset failed, error: ${err.code}, ${err.message}`);
           expect(string(err.code)).assertDeepEquals(Constant.PARAM_EORRCODE);
           done();
@@ -546,7 +541,7 @@ export default function photoAccessHelperTest() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
+         
           console.error(`createAsset1 failed, error: ${err.code}, ${err.message}`);
           expect(err.code).assertDeepEquals(Constant.ARGS_EORRCODE);
           done();

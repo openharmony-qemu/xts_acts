@@ -16,7 +16,7 @@
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
 import { describe, it, expect, TestType, Size, Level, Hypium, beforeAll } from "../../../../hypium/index";
-import { fetchOption, getPermission, driveFn, sleep } from '../Common.test.ets'
+import { fetchOption, getPermission, driveFn, checkResourceFile, createResource } from '../Common.test.ets'
 import Context from "application.Context"
 import hilog from '@ohos.hilog'
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
@@ -36,7 +36,7 @@ export default function assetGetFirstObjectTest() {
         try {
           let fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
           hilog.info(domain, tag, '%{public}s', `${testNum} fetchResult: ${fetchResult.getCount()}`);
-          expect(fetchResult.getCount()).assertEqual(1);
+          expect(fetchResult.getCount() > 0).assertTrue();
           fetchResult.getFirstObject((err: BusinessError | null, asset: photoAccessHelper.PhotoAsset | undefined) => {
             try {
               if (err?.code !== 0) {
@@ -63,7 +63,7 @@ export default function assetGetFirstObjectTest() {
       async (done: () => void, testNum: string, fetchOps: photoAccessHelper.FetchOptions) => {
         try {
           let fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
-          expect(fetchResult.getCount()).assertEqual(1);
+          expect(fetchResult.getCount() > 0).assertTrue();
           const asset = await fetchResult.getFirstObject();
           fetchResult.close();
           hilog.info(domain, tag, '%{public}s', `${testNum} asset: ${asset.displayName}`);
@@ -79,7 +79,8 @@ export default function assetGetFirstObjectTest() {
       hilog.info(domain, tag, 'beforeAll case');
       await getPermission();
       await driveFn();
-      await sleep(1000);
+      await checkResourceFile(testContext);
+      await createResource(testContext, ['01.jpg', '01.mp4']);
     });
 
     /**

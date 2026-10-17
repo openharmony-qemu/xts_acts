@@ -16,7 +16,7 @@
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
 import { describe, it, expect, TestType, Size, Level, Hypium, beforeAll } from "../../../../hypium/index";
-import { fetchOption } from '../Common.test.ets'
+import { fetchOption, getPermission, driveFn, checkResourceFile, createResource } from '../Common.test.ets'
 import Context from "application.Context"
 import hilog from '@ohos.hilog'
 
@@ -28,6 +28,13 @@ export default function assetCloseTest() {
 
     let testContext: Context = Hypium.get("context") as Context;
     const helper = photoAccessHelper.getPhotoAccessHelper(testContext);
+
+    beforeAll(async () => {
+      await getPermission();
+      await driveFn();
+      await checkResourceFile(testContext);
+      await createResource(testContext, ['01.jpg', '01.mp4']);
+    });
 
     let closeCallbackTest =
       async (done: () => void, testNum: string, fetchOps: photoAccessHelper.FetchOptions): Promise<void> => {
