@@ -16,7 +16,7 @@
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
 import { describe, it, expect, beforeAll, Hypium, TestType, Size, Level } from '../../../../hypium/index'
-import { genRadomStr, fetchOption, getPermission, driveFn, sleep } from '../Common.test.ets'
+import { genRadomStr, fetchOption, getPermission, driveFn, checkResourceFile, createResource } from '../Common.test.ets'
 import Context from "application.Context"
 
 export default function setAlbumNameChangeRequestTest() {
@@ -28,7 +28,8 @@ export default function setAlbumNameChangeRequestTest() {
       console.info('beforeAll case');
       await getPermission();
       await driveFn();
-      await sleep(1000);
+      await checkResourceFile(testContext);
+      await createResource(testContext, ['01.mp4']);
     });
     /**
      * @tc.name   album_name_change_request_static_000

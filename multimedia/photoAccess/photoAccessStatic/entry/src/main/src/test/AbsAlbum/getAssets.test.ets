@@ -20,7 +20,7 @@ import { describe, it, expect, TestType, Size, Level, Hypium, beforeAll } from '
 import Context from "application.Context"
 import hilog from '@ohos.hilog'
 import { BusinessError } from '@ohos.base'
-import { fetchOption, getPermission, driveFn, sleep } from '../Common.test.ets'
+import { fetchOption, getPermission, driveFn, sleep, checkResourceFile, createResource } from '../Common.test.ets'
 
 let domain: int= 0x0000;
 let tag: string = 'testTag';
@@ -32,7 +32,9 @@ export default function albumGetAssetsTest() {
     beforeAll(async () => {
       await getPermission();
       await driveFn();
-      await sleep(100);
+      checkResourceFile(testContext);
+      let fileNameList = ['albumGetAssetsCb01.mp4', "albumGetAssetsPro01.mp4"];
+      await createResource(testContext, fileNameList);
     })
 
     /**

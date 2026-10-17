@@ -14,18 +14,27 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, Hypium } from "../../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, Hypium, beforeAll } from "../../../../hypium/index";
 import Utils from '../Util.test';
 import hilog from '@ohos.hilog'
 import Context from "application.Context"
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
+import { getPermission, driveFn, checkResourceFile, createResource } from '../Common.test.ets';
 
 let domain: int= 0x0000;
 let tag: string = 'testTag';
 
 export default function getAsset() {
   describe("getAsset", (): void => {
+    let testContext: Context = Hypium.get("context") as Context;
+    beforeAll(async () => {
+      await getPermission();
+      await driveFn();
+      checkResourceFile(testContext);
+      let fileNameList = ['getAssetStatic001.jpg', "getAssetStatic001.mp4"];
+      await createResource(testContext, fileNameList);
+    })
 
     /**
      * @tc.name   get_asset_change_request_static_001

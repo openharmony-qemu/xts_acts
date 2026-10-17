@@ -18,7 +18,7 @@ import photoAccessHelper from '@ohos.file.photoAccessHelper'
 import { describe, it, expect, TestType, Size, Level, Hypium, beforeAll } from "../../../../hypium/index";
 import Context from "application.Context"
 import hilog from '@ohos.hilog'
-import { genRadomStr, fetchOption, sleep, driveFn, getPermission } from '../Common.test.ets'
+import { genRadomStr, fetchOption, driveFn, getPermission, checkResourceFile, createResource } from '../Common.test.ets'
 import { BusinessError } from '@ohos.base';
 
 let domain: int= 0x0000;
@@ -33,7 +33,8 @@ export default function albumCommitModifyTest() {
       hilog.info(domain, tag, 'beforeAll case');
       await getPermission();
       await driveFn();
-      await sleep(1000);
+      await checkResourceFile(testContext);
+      await createResource(testContext, ['01.mp4']);
     });
 
     /**

@@ -18,7 +18,7 @@ import photoAccessHelper from '@ohos.file.photoAccessHelper'
 import hilog from '@ohos.hilog'
 import Context from "application.Context"
 import { BusinessError } from '@ohos.base'
-import { fetchOption, getPermission, driveFn, sleep } from '../Common.test.ets'
+import { fetchOption, getPermission, driveFn, checkResourceFile, createResource } from '../Common.test.ets'
 
 let domain: int= 0x0000;
 let tag: string = 'testTag';
@@ -32,7 +32,9 @@ export default function getAssetsTest() {
       console.info('beforeAll case');
       await getPermission();
       await driveFn();
-      await sleep(1000);
+      checkResourceFile(testContext);
+      let fileNameList = ['getAssetTest666.jpg', 'getAssetTest666.mp4'];
+      await createResource(testContext, fileNameList);
     });
 
     const getAssetsCallbackTest = async (done: () => void, testNum: string, fetchOps: photoAccessHelper.FetchOptions,
@@ -133,14 +135,14 @@ export default function getAssetsTest() {
               expect(false).assertTrue();
             }
           } catch (error) {
-            error = error as BusinessError;
+           
             console.info(`${testNum} getAssets failed; error: ${error},  ${error.code}`);
             expect(error.code).assertEqual('14000011');
           }
           done();
         });
       } catch (error) {
-        error = error as BusinessError;
+       
         console.info(`${testNum} failed; error: ${error},  ${error.code}`);
         expect(error.code).assertEqual('14000011');
         done();
@@ -154,7 +156,7 @@ export default function getAssetsTest() {
         expect(false).assertTrue();
         done();
       } catch (error) {
-        error = error as BusinessError;
+       
         console.info(`${testNum} failed; error: ${error}, ${error.code}`);
         expect(error.code).assertEqual('14000011');
         done();
@@ -174,7 +176,7 @@ export default function getAssetsTest() {
     it('getAssets_callback_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const testNum = 'getAssets_callback_static_000';
-        const fetchOps = fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, 'getAssetTest.jpg');
+        const fetchOps = fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, 'getAssetTest666.jpg');
         const expectCount = 1;
         await getAssetsCallbackTest(done, testNum, fetchOps, expectCount);
       });
@@ -218,7 +220,7 @@ export default function getAssetsTest() {
     it('getAssets_promise_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const testNum = 'getAssets_promise_static_000';
-        const fetchOps = fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, 'getAssetTest.jpg');
+        const fetchOps = fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, 'getAssetTest666.jpg');
         const expectCount = 1;
         await getAssetsPromiseTest(done, testNum, fetchOps, expectCount);
       });
@@ -263,7 +265,7 @@ export default function getAssetsTest() {
     it('getAssets_callback_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const testNum = 'getAssets_callback_static_004';
-        const fetchOps = fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, '01.mp4');
+        const fetchOps = fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, 'getAssetTest666.mp4');
         const expectCount = 1;
         await getAssetsCallbackTest(done, testNum, fetchOps, expectCount);
       });
@@ -279,7 +281,7 @@ export default function getAssetsTest() {
     it('getAssets_promise_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const testNum = 'getAssets_promise_static_004';
-        const fetchOps = fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, '01.mp4');
+        const fetchOps = fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, 'getAssetTest666.mp4');
         const expectCount = 1;
         await getAssetsPromiseTest(done, testNum, fetchOps, expectCount);
       });

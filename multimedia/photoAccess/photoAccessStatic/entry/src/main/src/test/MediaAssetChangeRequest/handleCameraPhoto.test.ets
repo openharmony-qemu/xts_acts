@@ -18,8 +18,7 @@ import photoAccessHelper from '@ohos.file.photoAccessHelper'
 import { describe, it, expect, beforeAll, Hypium, TestType, Size, Level } from '../../../../hypium/index'
 import dataSharePredicates from '@ohos.data.dataSharePredicates'
 import Context from "application.Context"
-import { BusinessError } from '@ohos.base';
-import { sleep, getPermission, fetchOption, pushCreateAsset, driveFn } from '../Common.test.ets'
+import { getPermission, driveFn, checkResourceFile, createResource, pushCreateAsset } from '../Common.test.ets'
 
 export default function handleCameraPhotoTest() {
 
@@ -29,11 +28,9 @@ export default function handleCameraPhotoTest() {
       console.info('beforeAll case');
       await getPermission();
       await driveFn();
-      await sleep(1000);
-      const fileNames: Array<string> = [
-        "testSaveCameraPhoto02.jpg", "testSaveCameraPhoto03.jpg",
-      ];
-      await pushCreateAsset(testContext, fileNames);
+      checkResourceFile(testContext);
+      let fileNameList = ['testSaveCameraPhoto02.jpg', 'testSaveCameraPhoto03.jpg', 'testSaveCameraPhoto.jpg'];
+      await createResource(testContext, fileNameList);
     });
     let helper = photoAccessHelper.getPhotoAccessHelper(testContext);
 

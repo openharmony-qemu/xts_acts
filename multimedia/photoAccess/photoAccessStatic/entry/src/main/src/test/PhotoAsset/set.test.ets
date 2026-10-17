@@ -20,7 +20,7 @@ import Context from "application.Context"
 import { describe, it, expect, TestType, Size, Level, Hypium, beforeAll } from "../../../../hypium/index";
 import { BusinessError } from '@ohos.base'
 import hilog from '@ohos.hilog'
-import { sleep, getPermission, driveFn } from '../Common.test.ets'
+import { getPermission, driveFn, checkResourceFile, createResource } from '../Common.test.ets'
 
 let domain: int= 0x0000;
 let tag: string = 'testTag';
@@ -33,8 +33,9 @@ export default function setTest() {
     beforeAll(async () => {
       console.info('beforeAll case');
       await getPermission();
-      await sleep(1000);
       await driveFn();
+      await checkResourceFile(testContext);
+      await createResource(testContext, ['setTitleTest.jpg']);
     });
 
     const setPhotoAssetTitle = async (done: () => void, testNum: string): Promise<void> => {
@@ -73,7 +74,7 @@ export default function setTest() {
         photoAsset.set(title, 'newTitle');
         done();
       } catch (err) {
-        err = err as BusinessError;
+       
         hilog.error(domain, tag, `${testNum} release failed. error: ${err.code}, ${err.message}`);
         expect(err.code === 14000014).assertTrue();
         done();
