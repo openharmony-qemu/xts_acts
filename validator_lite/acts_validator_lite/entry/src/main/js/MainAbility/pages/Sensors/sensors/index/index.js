@@ -114,10 +114,10 @@ export default {
         getApp().data.helpData = {
             step: '本页合并 7 项传感器测试。进入自动 canIUse 检测；不支持时各测试点显示不支持信息（黄色）。支持时逐项点订阅/取消或短/长振动，观察数值更新，按该框 pass/fail（上下滑动查看）。',
             result: '7 项 pass/fail 分别上报 api_vibrator、api_sensor_step、api_sensor_barometer、api_sensor_heartrate、api_sensor_onbody、api_sensor_accelerometer、api_sensor_gyroscope。',
-            url: 'pages/Sensors/index/index'
+            url: 'pages/Sensors/common/index/index'
         };
         router.replace({ uri: 'pages/common/help/index' });
     },
-    back() { router.replace({ uri: 'pages/index/index' }); },
+    back() { router.replace({ uri: 'pages/Sensors/common/index/index' }); },
     backClicked() { this.back(); }
 };

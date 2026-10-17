@@ -37,14 +37,14 @@ export default {
   },
   navigateTo(subsystem) {
     let routes = {
-      'ArkUI': 'pages/ArkUI/common/index/index',
-                  'PowerManager': 'pages/PowerManager/power/index',
-      'FileManagement': 'pages/FileManagement/file/index',
-      'DistributedData': 'pages/DistributedData/storage/index',
-      'Startup': 'pages/Startup/deviceInfo/index',
-      'Communication': 'pages/Communication/nfc/index',
-      'Sensors': 'pages/Sensors/index/index',
-      'Location': 'pages/Location/index/index'
+		'ArkUI': 'pages/ArkUI/common/index/index',
+		'PowerManager': 'pages/PowerManager/power/index',
+		'FileManagement': 'pages/FileManagement/file/index',
+		'DistributedData': 'pages/DistributedData/storage/index',
+		'Startup': 'pages/Startup/deviceInfo/index',
+		'Communication': 'pages/Communication/nfc/index',
+		'Sensors': 'pages/Sensors/common/index/index',
+		'Location': 'pages/Location/index/index'
     };
     let url = routes[subsystem] || 'pages/index/index';
     router.replace({ uri: url });

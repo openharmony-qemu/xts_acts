@@ -94,7 +94,8 @@ export default {
       'api_sensor_accelerometer': { cat: 'api', status: 'null', help: 'Verify @system.sensor subscribeAccelerometer returns x/y/z (require SystemCapability.Sensors.Sensor.Lite; auto-skip as untested if unsupported)' },
       'api_sensor_gyroscope': { cat: 'api', status: 'null', help: 'Verify @system.sensor subscribeGyroscope returns x/y/z (require SystemCapability.Sensors.Sensor.Lite; auto-skip as untested if unsupported)' },
       'api_location_info': { cat: 'api', status: 'null', help: 'Verify @system.geolocation getLocation/getLocationType/getSupportedCoordTypes (require SystemCapability.Location.Location.Lite; auto-skip as untested if unsupported)' },
-      'api_location_subscribe': { cat: 'api', status: 'null', help: 'Verify @system.geolocation subscribe/unsubscribe (require SystemCapability.Location.Location.Lite; auto-skip as untested if unsupported)' }
+      'api_location_subscribe': { cat: 'api', status: 'null', help: 'Verify @system.geolocation subscribe/unsubscribe (require SystemCapability.Location.Location.Lite; auto-skip as untested if unsupported)' },
+	  'api_oh_workout_sensor': { cat: 'api', status: 'null', help: 'Verify OH_Workout_OpenSensor and OH_Workout_CloseSensor (require WorkoutSensors auto-skip as untested if unsupported)' }
     }
   },
   onCreate() {
