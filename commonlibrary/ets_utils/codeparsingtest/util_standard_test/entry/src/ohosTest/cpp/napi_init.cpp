@@ -16,10 +16,12 @@
 #include "napi/native_api.h"
 #include <algorithm>
 #include <atomic>
-#include <cstdio>
+#include <cstdint>
 #include <map>
 #include <mutex>
 #include <pthread.h>
+#include <sstream>
+#include <string>
 #include <vector>
 
 static napi_env g_mainEnv = nullptr;
@@ -773,11 +775,12 @@ static napi_value CreateTestRef(napi_env env, napi_callback_info info)
         return undefined;
     }
 
-    char addrStr[32];
-    snprintf(addrStr, sizeof(addrStr), "0x%lx", (unsigned long)g_trackTestRef);
+    std::ostringstream addrStream;
+    addrStream << "0x" << std::hex << static_cast<unsigned long>(reinterpret_cast<uintptr_t>(g_trackTestRef));
+    std::string addrStr = addrStream.str();
 
     napi_value result;
-    status = napi_create_string_utf8(env, addrStr, NAPI_AUTO_LENGTH, &result);
+    status = napi_create_string_utf8(env, addrStr.c_str(), NAPI_AUTO_LENGTH, &result);
     if (status != napi_ok) {
         napi_value undefined;
         napi_get_undefined(env, &undefined);
@@ -820,11 +823,12 @@ static napi_value CreateWeakTestRef(napi_env env, napi_callback_info info)
         return undefined;
     }
 
-    char addrStr[32];
-    snprintf(addrStr, sizeof(addrStr), "0x%lx", (unsigned long)g_trackWeakTestRef);
+    std::ostringstream addrStream;
+    addrStream << "0x" << std::hex << static_cast<unsigned long>(reinterpret_cast<uintptr_t>(g_trackWeakTestRef));
+    std::string addrStr = addrStream.str();
 
     napi_value result;
-    status = napi_create_string_utf8(env, addrStr, NAPI_AUTO_LENGTH, &result);
+    status = napi_create_string_utf8(env, addrStr.c_str(), NAPI_AUTO_LENGTH, &result);
     if (status != napi_ok) {
         napi_value undefined;
         napi_get_undefined(env, &undefined);

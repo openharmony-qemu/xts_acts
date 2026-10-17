@@ -340,10 +340,12 @@ export default function trackGlobalRefTest() {
     it('testSetTrackGlobalRefEnable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       const TAG = 'testSetTrackGlobalRefEnable001';
       console.info(`${TAG} START`);
+      let callCompleted = false;
       try {
         util.ArkTSVM.setTrackGlobalRef(true);
         console.info(`${TAG} setTrackGlobalRef(true) succeeded`);
-        expect(true).assertTrue();
+        callCompleted = true;
+        expect(callCompleted).assertTrue();
       } catch (err) {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
@@ -362,10 +364,12 @@ export default function trackGlobalRefTest() {
     it('testSetTrackGlobalRefDisable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       const TAG = 'testSetTrackGlobalRefDisable001';
       console.info(`${TAG} START`);
+      let callCompleted = false;
       try {
         util.ArkTSVM.setTrackGlobalRef(false);
         console.info(`${TAG} setTrackGlobalRef(false) succeeded`);
-        expect(true).assertTrue();
+        callCompleted = true;
+        expect(callCompleted).assertTrue();
       } catch (err) {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
@@ -384,6 +388,7 @@ export default function trackGlobalRefTest() {
     it('testSetTrackGlobalRefCycle001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       const TAG = 'testSetTrackGlobalRefCycle001';
       console.info(`${TAG} START`);
+      let callCompleted = false;
       try {
         util.ArkTSVM.setTrackGlobalRef(true);
         console.info(`${TAG} setTrackGlobalRef(true) succeeded`);
@@ -391,7 +396,8 @@ export default function trackGlobalRefTest() {
         console.info(`${TAG} setTrackGlobalRef(false) succeeded`);
         util.ArkTSVM.setTrackGlobalRef(true);
         console.info(`${TAG} setTrackGlobalRef(true) second time succeeded`);
-        expect(true).assertTrue();
+        callCompleted = true;
+        expect(callCompleted).assertTrue();
       } catch (err) {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
@@ -410,12 +416,14 @@ export default function trackGlobalRefTest() {
     it('testSetTrackGlobalRefRepeatEnable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const TAG = 'testSetTrackGlobalRefRepeatEnable001';
       console.info(`${TAG} START`);
+      let callCompleted = false;
       try {
         util.ArkTSVM.setTrackGlobalRef(true);
         util.ArkTSVM.setTrackGlobalRef(true);
         util.ArkTSVM.setTrackGlobalRef(true);
         console.info(`${TAG} multiple setTrackGlobalRef(true) calls succeeded`);
-        expect(true).assertTrue();
+        callCompleted = true;
+        expect(callCompleted).assertTrue();
       } catch (err) {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
@@ -434,10 +442,12 @@ export default function trackGlobalRefTest() {
     it('testSetTrackGlobalRefDisableNoPrior001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const TAG = 'testSetTrackGlobalRefDisableNoPrior001';
       console.info(`${TAG} START`);
+      let callCompleted = false;
       try {
         util.ArkTSVM.setTrackGlobalRef(false);
         console.info(`${TAG} setTrackGlobalRef(false) without prior enable succeeded`);
-        expect(true).assertTrue();
+        callCompleted = true;
+        expect(callCompleted).assertTrue();
       } catch (err) {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
@@ -456,12 +466,14 @@ export default function trackGlobalRefTest() {
     it('testSetTrackGlobalRefRepeatDisable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const TAG = 'testSetTrackGlobalRefRepeatDisable001';
       console.info(`${TAG} START`);
+      let callCompleted = false;
       try {
         util.ArkTSVM.setTrackGlobalRef(false);
         util.ArkTSVM.setTrackGlobalRef(false);
         util.ArkTSVM.setTrackGlobalRef(false);
         console.info(`${TAG} multiple setTrackGlobalRef(false) calls succeeded`);
-        expect(true).assertTrue();
+        callCompleted = true;
+        expect(callCompleted).assertTrue();
       } catch (err) {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
@@ -962,7 +974,7 @@ export default function trackGlobalRefTest() {
         await sleep(100);
       }
       console.info(`${TAG} worker called setTrackGlobalRef, no crash: PASS`);
-      expect(true).assertTrue();
+      expect(isTerminate).assertTrue();
       done();
     });
 
@@ -994,13 +1006,15 @@ export default function trackGlobalRefTest() {
         newWorker.terminate();
       };
       newWorker.postMessage('concurrentToggle');
+      let toggleCompleted = false;
       try {
         for (let i = 0; i < 50; i++) {
           util.ArkTSVM.setTrackGlobalRef(true);
           util.ArkTSVM.setTrackGlobalRef(false);
         }
         console.info(`${TAG} main thread concurrent toggle completed`);
-        expect(true).assertTrue();
+        toggleCompleted = true;
+        expect(toggleCompleted).assertTrue();
       } catch (err) {
         console.error(`${TAG} main thread failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
@@ -1023,13 +1037,15 @@ export default function trackGlobalRefTest() {
       const TAG = 'testSetTrackGlobalRefRapidToggle001';
       console.info(`${TAG} START`);
       const TOGGLE_TIMES = 100;
+      let completedToggles = 0;
       try {
         for (let i = 0; i < TOGGLE_TIMES; i++) {
           util.ArkTSVM.setTrackGlobalRef(true);
           util.ArkTSVM.setTrackGlobalRef(false);
+          completedToggles++;
         }
         console.info(`${TAG} ${TOGGLE_TIMES} rapid toggles completed without exception`);
-        expect(true).assertTrue();
+        expect(completedToggles).assertEqual(TOGGLE_TIMES);
       } catch (err) {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
