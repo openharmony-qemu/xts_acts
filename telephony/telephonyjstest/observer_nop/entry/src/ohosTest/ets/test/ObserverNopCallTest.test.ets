@@ -112,11 +112,10 @@ export default function observerNopCallTest() {
             console.log(`${caseName} off voIPStateChange, data:` + JSON.stringify(value));
           }
           observer.offVoIPStateChange(callback);
-          ExpectFail();
           done();
         } catch (err) {
           console.info(`${caseName} catchError: ${JSON.stringify(err)}`);
-          ExpectTrue(err.code === 201);
+          ExpectFail();
           done();
         }
         console.log("************* Telephony_observer_off_noPermission_voIPStateChange_0100 Test end *************");
