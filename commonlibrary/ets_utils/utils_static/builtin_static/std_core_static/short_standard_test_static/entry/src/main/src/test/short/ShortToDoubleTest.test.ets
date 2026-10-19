@@ -1500,5 +1500,785 @@ export default function shortToDoubleTest(): void {
       }
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SHORT_TODOUBLE_1100
+     * @tc.name testShortToDouble_merged11
+     * @tc.desc CrossTypeRoundTrip: covers 10 merged test points for Short.toDouble, including type conversion, business scenarios, comparison and ordering, containers and references, and equality consistency.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testShortToDouble_merged11', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let x: short[] = [1 as short, 2 as short, 3 as short, 4 as short, 5 as short];
+        let y: short[] = [2 as short, 4 as short, 6 as short, 8 as short, 10 as short];
+        let count: int = 5;
+        let sumX: double = 0.0;
+        let sumY: double = 0.0;
+        for (let i: int = 0; i < count; i++) {
+          sumX += Short.toDouble(x[i]);
+          sumY += Short.toDouble(y[i]);
+        }
+        let meanX: double = sumX / count;
+        let meanY: double = sumY / count;
+        let cov: double = 0.0;
+        for (let i: int = 0; i < count; i++) {
+          cov += (Short.toDouble(x[i]) - meanX) * (Short.toDouble(y[i]) - meanY);
+        }
+        cov = cov / count;
+        expect(cov).assertEqual(4.0);
+      }
+
+      {
+        let x: short[] = [1 as short, 2 as short, 3 as short, 4 as short, 5 as short];
+        let y: short[] = [2 as short, 4 as short, 6 as short, 8 as short, 10 as short];
+        let count: int = 5;
+        let sumX: double = 0.0;
+        let sumY: double = 0.0;
+        for (let i: int = 0; i < count; i++) {
+          sumX += Short.toDouble(x[i]);
+          sumY += Short.toDouble(y[i]);
+        }
+        let meanX: double = sumX / count;
+        let meanY: double = sumY / count;
+        let cov: double = 0.0;
+        let varX: double = 0.0;
+        let varY: double = 0.0;
+        for (let i: int = 0; i < count; i++) {
+          let dx: double = Short.toDouble(x[i]) - meanX;
+          let dy: double = Short.toDouble(y[i]) - meanY;
+          cov += dx * dy;
+          varX += dx * dx;
+          varY += dy * dy;
+        }
+        let stdX: double = Math.sqrt(varX / count);
+        let stdY: double = Math.sqrt(varY / count);
+        let correlation: double = (cov / count) / (stdX * stdY);
+        expect(Math.abs(correlation - 1.0) < 0.000001).assertTrue();
+      }
+
+      {
+        let x: short[] = [1 as short, 2 as short, 3 as short, 4 as short, 5 as short];
+        let y: short[] = [3 as short, 5 as short, 7 as short, 9 as short, 11 as short];
+        let count: int = 5;
+        let sumX: double = 0.0;
+        let sumY: double = 0.0;
+        let sumXY: double = 0.0;
+        let sumX2: double = 0.0;
+        for (let i: int = 0; i < count; i++) {
+          let xi: double = Short.toDouble(x[i]);
+          let yi: double = Short.toDouble(y[i]);
+          sumX += xi;
+          sumY += yi;
+          sumXY += xi * yi;
+          sumX2 += xi * xi;
+        }
+        let slope: double = (count * sumXY - sumX * sumY) / (count * sumX2 - sumX * sumX);
+        expect(slope).assertEqual(2.0);
+      }
+
+      {
+        let sortedVals: short[] = [10 as short, 20 as short, 30 as short, 40 as short, 50 as short,
+          60 as short, 70 as short, 80 as short, 90 as short, 100 as short];
+        let count: int = 10;
+        let p50Idx: double = 0.5 * (count - 1);
+        let lowerIdx: int = Double.toInt(Math.floor(p50Idx));
+        let upperIdx: int = Double.toInt(Math.ceil(p50Idx));
+        let frac: double = p50Idx - lowerIdx;
+        let p50: double = Short.toDouble(sortedVals[lowerIdx]) * (1.0 - frac) +
+          Short.toDouble(sortedVals[upperIdx]) * frac;
+        expect(p50).assertEqual(55.0);
+      }
+
+      {
+        let oddArr: short[] = [1 as short, 2 as short, 3 as short, 4 as short, 5 as short];
+        let evenArr: short[] = [1 as short, 2 as short, 3 as short, 4 as short, 5 as short, 6 as short];
+        let oddCount: int = 5;
+        let evenCount: int = 6;
+        let medianOdd: double = Short.toDouble(oddArr[(oddCount - 1) / 2]);
+        expect(medianOdd).assertEqual(3.0);
+        let medianEven: double = (Short.toDouble(evenArr[evenCount / 2 - 1]) + Short.toDouble(evenArr[evenCount / 2])) / 2.0;
+        expect(medianEven).assertEqual(3.5);
+      }
+
+      {
+        let mass: Short = new Short(10 as short);
+        let g: double = 9.81;
+        let force: double = mass.toDouble() * g;
+        expect(Math.abs(force - 98.1) < 0.0000001).assertTrue();
+        expect(force).assertEqual(98.10000000000001);
+        let mass2: Short = new Short(50 as short);
+        let force2: double = mass2.toDouble() * g;
+        expect(force2).assertEqual(490.5);
+      }
+
+      {
+        let mass: Short = new Short(2 as short);
+        let velocity: Short = new Short(10 as short);
+        let kinetic: double = 0.5 * mass.toDouble() * velocity.toDouble() * velocity.toDouble();
+        expect(kinetic).assertEqual(100.0);
+        let mass2: Short = new Short(4 as short);
+        let velocity2: Short = new Short(5 as short);
+        let kinetic2: double = 0.5 * mass2.toDouble() * velocity2.toDouble() * velocity2.toDouble();
+        expect(kinetic2).assertEqual(50.0);
+      }
+
+      {
+        let altitude: Short = new Short(400 as short);
+        let earthRadius: double = 6371.0;
+        let gm: double = 398600.0;
+        let r: double = altitude.toDouble() + earthRadius;
+        let semiMajor: double = r;
+        let velocity: double = Math.sqrt(gm * (2.0 / r - 1.0 / semiMajor));
+        expect(Math.abs(velocity - 7.672) < 0.01).assertTrue();
+        let altitude2: Short = new Short(200 as short);
+        let r2: double = altitude2.toDouble() + earthRadius;
+        let velocity2: double = Math.sqrt(gm * (2.0 / r2 - 1.0 / r2));
+        expect(Math.abs(velocity2 - 7.788) < 0.01).assertTrue();
+      }
+
+      {
+        let signal: Short = new Short(1000 as short);
+        let noise: Short = new Short(10 as short);
+        let snr: double = 10.0 * Math.log10(signal.toDouble() / noise.toDouble());
+        expect(snr).assertEqual(20.0);
+        let signal2: Short = new Short(500 as short);
+        let noise2: Short = new Short(5 as short);
+        let snr2: double = 10.0 * Math.log10(signal2.toDouble() / noise2.toDouble());
+        expect(snr2).assertEqual(20.0);
+      }
+
+      {
+        let probabilities: Short[] = [
+          new Short(5000 as short), new Short(2500 as short),
+          new Short(1250 as short), new Short(1250 as short)
+        ];
+        let total: double = 0.0;
+        let probCount: int = 4;
+        for (let i: int = 0; i < probCount; i++) {
+          total += probabilities[i].toDouble();
+        }
+        let entropy: double = 0.0;
+        for (let i: int = 0; i < probCount; i++) {
+          let p: double = probabilities[i].toDouble() / total;
+          if (p > 0.0) {
+            entropy -= p * Math.log2(p);
+          }
+        }
+        expect(entropy > 1.7 && entropy < 1.9).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SHORT_TODOUBLE_1200
+     * @tc.name testShortToDouble_merged12
+     * @tc.desc CrossTypeRoundTrip: covers 10 merged test points for Short.toDouble, including type conversion, business scenarios, and comparison and ordering.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testShortToDouble_merged12', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let incomes: short[] = [10 as short, 20 as short, 30 as short, 40 as short];
+        let count: int = 4;
+        let sumAbsDiff: double = 0.0;
+        for (let i: int = 0; i < count; i++) {
+          for (let j: int = 0; j < count; j++) {
+            sumAbsDiff += Math.abs(Short.toDouble(incomes[i]) - Short.toDouble(incomes[j]));
+          }
+        }
+        let sumIncomes: double = 0.0;
+        for (let i: int = 0; i < count; i++) {
+          sumIncomes += Short.toDouble(incomes[i]);
+        }
+        let gini: double = sumAbsDiff / (2.0 * count * sumIncomes);
+        expect(Math.abs(gini - 0.25) < 0.0001).assertTrue();
+      }
+
+      {
+        let initial: Short = new Short(1000 as short);
+        let lambda: double = 0.1;
+        let t: Short = new Short(10 as short);
+        let decayed: double = initial.toDouble() * Math.exp(-lambda * t.toDouble());
+        expect(Math.abs(decayed - 367.879) < 0.01).assertTrue();
+        let t2: Short = new Short(0 as short);
+        let decayed2: double = initial.toDouble() * Math.exp(-lambda * t2.toDouble());
+        expect(decayed2).assertEqual(1000.0);
+      }
+
+      {
+        let k: double = 1000.0;
+        let n0: Short = new Short(10 as short);
+        let r: double = 0.5;
+        let t: Short = new Short(10 as short);
+        let numerator: double = k;
+        let denominator: double = 1.0 + (k - n0.toDouble()) / n0.toDouble() * Math.exp(-r * t.toDouble());
+        let logistic: double = numerator / denominator;
+        expect(logistic > 550.0 && logistic < 650.0).assertTrue();
+        let t0: Short = new Short(0 as short);
+        let denominator0: double = 1.0 + (k - n0.toDouble()) / n0.toDouble() * Math.exp(-r * t0.toDouble());
+        let logistic0: double = numerator / denominator0;
+        expect(logistic0).assertEqual(10.0);
+      }
+
+      {
+        let r: Short = new Short(128 as short);
+        let g: Short = new Short(64 as short);
+        let b: Short = new Short(255 as short);
+        let rLinear: double = r.toDouble() / 255.0;
+        let gLinear: double = g.toDouble() / 255.0;
+        let bLinear: double = b.toDouble() / 255.0;
+        expect(Math.abs(rLinear * 255.0 - 128.0) < 0.000001).assertTrue();
+        expect(Math.abs(gLinear * 255.0 - 64.0) < 0.000001).assertTrue();
+        expect(bLinear).assertEqual(1.0);
+      }
+
+      {
+        let v0: Short = new Short(0 as short);
+        let v255: Short = new Short(255 as short);
+        let gamma0: double = Math.pow(v0.toDouble() / 255.0, 2.2) * 255.0;
+        expect(gamma0).assertEqual(0.0);
+        let gamma255: double = Math.pow(v255.toDouble() / 255.0, 2.2) * 255.0;
+        expect(gamma255).assertEqual(255.0);
+      }
+
+      {
+        let pressureRef: double = 0.00002;
+        let pressure: Short = new Short(2000 as short);
+        let dbSpl: double = 20.0 * Math.log10(pressure.toDouble() / pressureRef);
+        let expected: double = 20.0 * Math.log10(2000.0 / 0.00002);
+        expect(Math.abs(dbSpl - expected) < 0.000001).assertTrue();
+      }
+
+      {
+        let dN: Short = new Short(1 as short);
+        let dE: Short = new Short(0 as short);
+        let bearing: double = Math.atan2(dN.toDouble(), dE.toDouble()) * 180.0 / Math.PI;
+        expect(bearing).assertEqual(90.0);
+        let dN2: Short = new Short(0 as short);
+        let dE2: Short = new Short(1 as short);
+        let bearing2: double = Math.atan2(dN2.toDouble(), dE2.toDouble()) * 180.0 / Math.PI;
+        expect(bearing2).assertEqual(0.0);
+      }
+
+      {
+        let lat1: Short = new Short(40 as short);
+        let lon1: Short = new Short((-74) as short);
+        let lat2: Short = new Short(34 as short);
+        let lon2: Short = new Short((-118) as short);
+        let earthR: double = 6371.0;
+        let dLatRad: double = (lat2.toDouble() - lat1.toDouble()) * Math.PI / 180.0;
+        let dLonRad: double = (lon2.toDouble() - lon1.toDouble()) * Math.PI / 180.0;
+        let a: double = Math.sin(dLatRad / 2.0) * Math.sin(dLatRad / 2.0) +
+          Math.cos(lat1.toDouble() * Math.PI / 180.0) * Math.cos(lat2.toDouble() * Math.PI / 180.0) *
+          Math.sin(dLonRad / 2.0) * Math.sin(dLonRad / 2.0);
+        let c: double = 2.0 * Math.atan2(Math.sqrt(a), Math.sqrt(1.0 - a));
+        let distance: double = earthR * c;
+        expect(distance > 3900.0 && distance < 4000.0).assertTrue();
+      }
+
+      {
+        let ratePercent: Short = new Short(5 as short);
+        let n: Short = new Short(12 as short);
+        let rate: double = ratePercent.toDouble() / 100.0;
+        let apr: double = Math.pow(1.0 + rate / n.toDouble(), n.toDouble()) - 1.0;
+        expect(Math.abs(apr - 0.05116) < 0.0001).assertTrue();
+        let ratePercent2: Short = new Short(10 as short);
+        let rate2: double = ratePercent2.toDouble() / 100.0;
+        let apr2: double = Math.pow(1.0 + rate2 / n.toDouble(), n.toDouble()) - 1.0;
+        expect(apr2 > 0.10).assertTrue();
+      }
+
+      {
+        let principal: Short = new Short(10000 as short);
+        let annualRate: double = 0.06;
+        let months: Short = new Short(12 as short);
+        let monthlyRate: double = annualRate / 12.0;
+        let factor: double = Math.pow(1.0 + monthlyRate, months.toDouble());
+        let payment: double = principal.toDouble() * monthlyRate * factor / (factor - 1.0);
+        expect(Math.abs(payment - 860.66) < 0.1).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SHORT_TODOUBLE_1300
+     * @tc.name testShortToDouble_merged13
+     * @tc.desc CrossTypeRoundTrip: covers 10 merged test points for Short.toDouble, including type conversion, business scenarios, and saturation and clamping.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testShortToDouble_merged13', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let s: Short = new Short(100 as short);
+        let kVal: Short = new Short(100 as short);
+        let r: double = 0.05;
+        let sigma: double = 0.2;
+        let t: Short = new Short(1 as short);
+        let d1: double = (Math.log(s.toDouble() / kVal.toDouble()) +
+          (r + sigma * sigma / 2.0) * t.toDouble()) / (sigma * Math.sqrt(t.toDouble()));
+        let d2: double = d1 - sigma * Math.sqrt(t.toDouble());
+        expect(Math.abs(d1 - 0.35) < 0.01).assertTrue();
+        expect(Math.abs(d2 - 0.15) < 0.01).assertTrue();
+      }
+
+      {
+        let x: Short = new Short(100 as short);
+        let y: Short = new Short(50 as short);
+        let z: Short = new Short(200 as short);
+        let projX: double = x.toDouble() / z.toDouble();
+        let projY: double = y.toDouble() / z.toDouble();
+        expect(projX).assertEqual(0.5);
+        expect(projY).assertEqual(0.25);
+        let x2: Short = new Short(0 as short);
+        let y2: Short = new Short(0 as short);
+        let z2: Short = new Short(100 as short);
+        let projX2: double = x2.toDouble() / z2.toDouble();
+        let projY2: double = y2.toDouble() / z2.toDouble();
+        expect(projX2).assertEqual(0.0);
+        expect(projY2).assertEqual(0.0);
+      }
+
+      {
+        let colorR: Short = new Short(200 as short);
+        let colorG: Short = new Short(150 as short);
+        let colorB: Short = new Short(100 as short);
+        let attenuation: double = 0.5;
+        let tracedR: double = colorR.toDouble() * attenuation;
+        let tracedG: double = colorG.toDouble() * attenuation;
+        let tracedB: double = colorB.toDouble() * attenuation;
+        expect(tracedR).assertEqual(100.0);
+        expect(tracedG).assertEqual(75.0);
+        expect(tracedB).assertEqual(50.0);
+        let attenuation2: double = 1.0;
+        expect(colorR.toDouble() * attenuation2).assertEqual(200.0);
+      }
+
+      {
+        let inside: Short = new Short(785 as short);
+        let total: Short = new Short(1000 as short);
+        let piEstimate: double = inside.toDouble() / total.toDouble() * 4.0;
+        expect(Math.abs(piEstimate - 3.14) < 0.01).assertTrue();
+        let inside2: Short = new Short(0 as short);
+        let piZero: double = inside2.toDouble() / total.toDouble() * 4.0;
+        expect(piZero).assertEqual(0.0);
+      }
+
+      {
+        let real: Short = new Short(3 as short);
+        let imag: Short = new Short(4 as short);
+        let realD: double = real.toDouble();
+        let imagD: double = imag.toDouble();
+        let magnitude: double = Math.sqrt(realD * realD + imagD * imagD);
+        let phase: double = Math.atan2(imagD, realD);
+        expect(magnitude).assertEqual(5.0);
+        expect(Math.abs(magnitude - 5.0) < 0.0001).assertTrue();
+        expect(phase > 0.0).assertTrue();
+      }
+
+      {
+        let predErr: Short = new Short(4 as short);
+        let measErr: Short = new Short(1 as short);
+        let kalmanGain: double = predErr.toDouble() / (predErr.toDouble() + measErr.toDouble());
+        expect(kalmanGain).assertEqual(0.8);
+        let predErr2: Short = new Short(1 as short);
+        let measErr2: Short = new Short(1 as short);
+        let kalmanGain2: double = predErr2.toDouble() / (predErr2.toDouble() + measErr2.toDouble());
+        expect(kalmanGain2).assertEqual(0.5);
+      }
+
+      {
+        let kp: double = 2.0;
+        let ki: double = 0.5;
+        let kd: double = 1.0;
+        let error: double = 10.0;
+        let integral: Short = new Short(50 as short);
+        let derivative: Short = new Short((-5) as short);
+        let pid: double = kp * error + ki * integral.toDouble() + kd * derivative.toDouble();
+        expect(pid).assertEqual(40.0);
+        let integral2: Short = new Short(0 as short);
+        let derivative2: Short = new Short(0 as short);
+        let pid2: double = kp * error + ki * integral2.toDouble() + kd * derivative2.toDouble();
+        expect(pid2).assertEqual(20.0);
+      }
+
+      {
+        let q1: Short = new Short(1 as short);
+        let q2: Short = new Short(0 as short);
+        let t: double = 0.5;
+        let omega: double = Math.PI / 2.0;
+        let factor1: double = Math.sin((1.0 - t) * omega) / Math.sin(omega);
+        let factor2: double = Math.sin(t * omega) / Math.sin(omega);
+        let slerpResult: double = factor1 * q1.toDouble() + factor2 * q2.toDouble();
+        expect(Math.abs(slerpResult - Math.sin(Math.PI / 4.0)) < 0.000001).assertTrue();
+        let q1b: Short = new Short(10 as short);
+        let q2b: Short = new Short(10 as short);
+        let slerpSame: double = factor1 * q1b.toDouble() + factor2 * q2b.toDouble();
+        expect(Math.abs(slerpSame - 10.0 * Math.sqrt(2.0)) < 0.000001).assertTrue();
+      }
+
+      {
+        let clamp = (v: double, lo: double, hi: double): double => Math.min(hi, Math.max(lo, v));
+        expect(clamp(Short.toDouble(50 as short), 0.0, 100.0)).assertEqual(50.0);
+        expect(clamp(Short.toDouble((-10) as short), 0.0, 100.0)).assertEqual(0.0);
+        expect(clamp(Short.toDouble(200 as short), 0.0, 100.0)).assertEqual(100.0);
+  
+        expect(clamp(Short.toDouble(0 as short), 0.0, 100.0)).assertEqual(0.0);
+        expect(clamp(Short.toDouble(100 as short), 0.0, 100.0)).assertEqual(100.0);
+  
+        expect(clamp(Short.toDouble(Short.MIN_VALUE), -40000.0, 40000.0)).assertEqual(-32768.0);
+        expect(clamp(Short.toDouble(Short.MAX_VALUE), -40000.0, 40000.0)).assertEqual(32767.0);
+      }
+
+      {
+        let m1: Short = new Short(100 as short);
+        let m2: Short = new Short(200 as short);
+        let r: Short = new Short(10 as short);
+        let force: double = 6.674e-11 * m1.toDouble() * m2.toDouble() / (r.toDouble() * r.toDouble());
+        expect(force > 1.3e-8 && force < 1.4e-8).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SHORT_TODOUBLE_1400
+     * @tc.name testShortToDouble_merged14
+     * @tc.desc CrossTypeRoundTrip / RadixConversion: covers 10 merged test points for Short.toDouble, including type conversion, radix conversion, loop accumulation, business scenarios, and boundary values.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testShortToDouble_merged14', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let a: Short = new Short(8 as short);
+        let b: Short = new Short(27 as short);
+        let c: Short = new Short(64 as short);
+        let product: double = a.toDouble() * b.toDouble() * c.toDouble();
+        let geoMean: double = Math.cbrt(product);
+        expect(geoMean).assertEqual(24.0);
+      }
+
+      {
+        let f: Short = new Short(1000);
+        let mel: double = 2595.0 * Math.log10(1.0 + f.toDouble() / 700.0);
+        expect(Math.abs(mel - 1000) < 1.0).assertTrue();
+        expect(mel).assertEqual(999.9855371396244);
+      }
+
+      {
+        let tShort: Short = new Short(500);
+        let t: double = tShort.toDouble() / 1000.0;
+        let B: double = 3 * t * (1 - t) * (1 - t);
+        expect(Math.abs(B - 0.375) < 0.0001).assertTrue();
+        expect(B).assertEqual(0.375);
+      }
+
+      {
+        let prev: double = Short.toDouble((-501) as short);
+        let violations: int = 0;
+        for (let i: int = -500; i <= 500; i++) {
+          let curr: double = Short.toDouble(Int.toShort(i));
+          if (curr <= prev) {
+            violations++;
+          }
+          prev = curr;
+        }
+        expect(violations).assertEqual(0);
+      }
+
+      {
+        let prev: double = Short.toDouble(31999 as short);
+        let violations: int = 0;
+        for (let i: int = 32000; i <= 32767; i++) {
+          let curr: double = Short.toDouble(Int.toShort(i));
+          if (curr <= prev) {
+            violations++;
+          }
+          prev = curr;
+        }
+        expect(violations).assertEqual(0);
+      }
+
+      {
+        let val: int = 1;
+        let i: int = 0;
+        while (val <= 16384 && i < 20) {
+          let s: short = Int.toShort(val);
+          let d: double = Short.toDouble(s);
+          let expected: double = Int.toDouble(val);
+          expect(d).assertEqual(expected);
+          val = val * 2;
+          i++;
+        }
+        expect(Short.toDouble(1 as short)).assertEqual(1.0);
+        expect(Short.toDouble(1024 as short)).assertEqual(1024.0);
+        expect(Short.toDouble(16384 as short)).assertEqual(16384.0);
+      }
+
+      {
+        let acc: Short = new Short(0 as short);
+        let n: int = 1;
+        while (n <= 10) {
+          acc = acc.add(new Short(Int.toShort(n)));
+          let expectedSum: int = n * (n + 1) / 2;
+          expect(acc.toDouble()).assertEqual(Int.toDouble(expectedSum));
+          n++;
+        }
+        expect(acc.toShort()).assertEqual(55 as short);
+        expect(acc.toDouble()).assertEqual(55.0);
+      }
+
+      {
+        expect(Short.toDouble(0x100 as short)).assertEqual(256.0);
+        expect(Short.toDouble(0x0FF as short)).assertEqual(255.0);
+        expect(Short.toDouble(0x200 as short)).assertEqual(512.0);
+        expect(Short.toDouble(0x7FFF as short)).assertEqual(32767.0);
+      }
+
+      {
+        expect(Short.toDouble(0x0000 as short)).assertEqual(0.0);
+        expect(Short.toDouble(0x7FFF as short)).assertEqual(32767.0);
+        expect(Short.toDouble((-0x8000) as short)).assertEqual(-32768.0);
+        expect(Short.toDouble(0x3FFF as short)).assertEqual(16383.0);
+        expect(Short.toDouble((-0x4000) as short)).assertEqual(-16384.0);
+      }
+
+      {
+        let parsedVal: short = Short.parseInt('999', 10);
+        let hexVal: short = 0x3FF as short;
+        let boxedParsed: Short = new Short(parsedVal);
+        let boxedHex: Short = new Short(hexVal);
+        let parsedDouble: double = boxedParsed.toDouble();
+        let hexDouble: double = boxedHex.toDouble();
+        expect(parsedDouble).assertEqual(999.0);
+        expect(hexDouble).assertEqual(1023.0);
+        expect(boxedParsed.toShort()).assertEqual(999 as short);
+        expect(boxedHex.toShort()).assertEqual(1023 as short);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SHORT_TODOUBLE_1500
+     * @tc.name testShortToDouble_merged15
+     * @tc.desc RadixConversion / Idempotent: covers 10 merged test points for Short.toDouble, including type conversion, equality consistency, radix conversion, constructor forms, and business scenarios.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testShortToDouble_merged15', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        expect(Short.toDouble((-0x10) as short)).assertEqual(-16.0);
+        expect(Short.toDouble((-0x64) as short)).assertEqual(-100.0);
+        expect(Short.toDouble((-0x100) as short)).assertEqual(-256.0);
+        expect(Short.toDouble((-0x400) as short)).assertEqual(-1024.0);
+      }
+
+      {
+        let fromHex: short = Short.parseInt('7FFF', 16);
+        let fromBin: short = Short.parseInt('111111111111111', 2);
+        expect(Short.toDouble(fromHex)).assertEqual(32767.0);
+        expect(Short.toDouble(fromBin)).assertEqual(32767.0);
+        let negFromHex: short = Short.parseInt('-8000', 16);
+        expect(Short.toDouble(negFromHex)).assertEqual(-32768.0);
+        let fromOctal: short = Short.parseInt('77777', 8);
+        expect(Short.toDouble(fromOctal)).assertEqual(32767.0);
+      }
+
+      {
+        let fromOctal1: short = Short.parseInt('377', 8);
+        let fromOctal2: short = Short.parseInt('200', 8);
+        let fromOctal3: short = Short.parseInt('77777', 8);
+        let fromOctal4: short = Short.parseInt('-100000', 8);
+        expect(Short.toDouble(fromOctal1)).assertEqual(255.0);
+        expect(Short.toDouble(fromOctal2)).assertEqual(128.0);
+        expect(Short.toDouble(fromOctal3)).assertEqual(32767.0);
+        expect(Short.toDouble(fromOctal4)).assertEqual(-32768.0);
+      }
+
+      {
+        let testVals: short[] = [1 as short, 127 as short, 128 as short, 255 as short, 256 as short, 1024 as short, 2048 as short,
+          (-1) as short, (-128) as short, (-256) as short, (-1024) as short];
+        let count: int = 11;
+        for (let i: int = 0; i < count; i++) {
+          let s: Short = new Short(testVals[i]);
+          let doubleResult: double = s.toDouble();
+          let intResult: int = s.toInt();
+          expect(doubleResult).assertEqual(Int.toDouble(intResult));
+        }
+      }
+
+      {
+        let fromLiteral: Short = new Short(255 as short);
+        let fromParseDec: Short = new Short(Short.parseInt('255', 10));
+        let fromParseHex: Short = new Short(Short.parseInt('FF', 16));
+        let fromIntToShort: Short = new Short(Int.toShort(255));
+        expect(fromLiteral.toDouble()).assertEqual(255.0);
+        expect(fromParseDec.toDouble()).assertEqual(255.0);
+        expect(fromParseHex.toDouble()).assertEqual(255.0);
+        expect(fromIntToShort.toDouble()).assertEqual(255.0);
+        expect(fromLiteral.toShort()).assertEqual(255 as short);
+        expect(fromParseDec.toShort()).assertEqual(255 as short);
+        expect(fromParseHex.toShort()).assertEqual(255 as short);
+        expect(fromIntToShort.toShort()).assertEqual(255 as short);
+      }
+
+      {
+        let testVals: short[] = [1 as short, 2 as short, 4 as short, 8 as short, 16 as short, 32 as short,
+          64 as short, 128 as short, 256 as short, 512 as short, 1024 as short, 2048 as short, 4096 as short, 16384 as short];
+        let count: int = 14;
+        for (let i: int = 0; i < count; i++) {
+          let negVal: short = Int.toShort(-testVals[i]);
+          let posDouble: double = Short.toDouble(testVals[i]);
+          let negDouble: double = Short.toDouble(negVal);
+          expect(-posDouble).assertEqual(negDouble);
+        }
+      }
+
+      {
+        let box1: Short = new Short(500 as short);
+        let box2: Short = new Short(500 as short);
+        let box3: Short = new Short(500 as short);
+        expect(box1.toDouble()).assertEqual(500.0);
+        expect(box2.toDouble()).assertEqual(500.0);
+        expect(box3.toDouble()).assertEqual(500.0);
+        expect(box1.toDouble()).assertEqual(box2.toDouble());
+        expect(box2.toDouble()).assertEqual(box3.toDouble());
+      }
+
+      {
+        let hexVal: short = 0xFF as short;
+        let octVal: short = 0o200 as short;
+        let parsedVal: short = Short.parseInt('512', 10);
+        let dirVal: short = 64 as short;
+        expect(Short.toDouble(hexVal)).assertEqual(255.0);
+        expect(Short.toDouble(octVal)).assertEqual(128.0);
+        expect(Short.toDouble(parsedVal)).assertEqual(512.0);
+        expect(Short.toDouble(dirVal)).assertEqual(64.0);
+      }
+
+      {
+        let base: Short = new Short(2 as short);
+        let multiplier: Short = new Short(3 as short);
+        let r1: Short = base.mul(multiplier);
+        let r2: Short = r1.mul(multiplier);
+        let r3: Short = r2.mul(multiplier);
+        expect(r1.toDouble()).assertEqual(6.0);
+        expect(r2.toDouble()).assertEqual(18.0);
+        expect(r3.toDouble()).assertEqual(54.0);
+      }
+
+      {
+        let base: Short = new Short(1000 as short);
+        let divisor: Short = new Short(2 as short);
+        let r1: Short = base.div(divisor);
+        let r2: Short = r1.div(divisor);
+        let r3: Short = r2.div(divisor);
+        expect(r1.toDouble()).assertEqual(500.0);
+        expect(r2.toDouble()).assertEqual(250.0);
+        expect(r3.toDouble()).assertEqual(125.0);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SHORT_TODOUBLE_1600
+     * @tc.name testShortToDouble_merged16
+     * @tc.desc Idempotent / BusinessScenario: covers 5 merged test points for Short.toDouble, including equality consistency, type conversion, zero values, loop accumulation, and algebraic properties.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testShortToDouble_merged16', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let zeroLiteral: double = Short.toDouble(0 as short);
+        let zeroVar: short = 0 as short;
+        let zeroVarResult: double = Short.toDouble(zeroVar);
+        let zeroBox: Short = new Short(0 as short);
+        let zeroBoxResult: double = zeroBox.toDouble();
+        expect(zeroLiteral).assertEqual(0.0);
+        expect(zeroVarResult).assertEqual(0.0);
+        expect(zeroBoxResult).assertEqual(0.0);
+        expect(zeroLiteral).assertEqual(zeroVarResult);
+        expect(zeroVarResult).assertEqual(zeroBoxResult);
+      }
+
+      {
+        let rawValues: int[] = [100, 200, 300, 400, 500];
+  
+        let shortVals: Short[] = [];
+        let intVals: int[] = [];
+        let doubleVals: double[] = [];
+  
+        for (let v of rawValues) {
+          let s: Short = new Short(Int.toShort(v));
+          shortVals.push(s);
+          intVals.push(s.toInt());
+          doubleVals.push(s.toDouble());
+        }
+  
+        let shortSum: Short = new Short(0 as short);
+        for (let s of shortVals) shortSum = shortSum.add(s);
+  
+        let intSum: int = 0;
+        for (let i of intVals) intSum += i;
+  
+        let doubleSum: double = 0.0;
+        for (let d of doubleVals) doubleSum += d;
+  
+        expect(shortSum.toInt()).assertEqual(1500);
+        expect(shortSum.toInt()).assertEqual(intSum);
+        expect(doubleSum).assertEqual(1500.0);
+  
+        let intMean: double = intSum / intVals.length;
+        let doubleMean: double = doubleSum / doubleVals.length;
+        expect(doubleMean).assertEqual(intMean);
+      }
+
+      {
+        let a: Short = new Short(7 as short);
+        let b: Short = new Short(11 as short);
+        let c: Short = new Short(13 as short);
+        let left: double = a.toDouble() * (b.toDouble() + c.toDouble());
+        let right: double = a.toDouble() * b.toDouble() + a.toDouble() * c.toDouble();
+        expect(left).assertEqual(right);
+        expect(left).assertEqual(168.0);
+        let a2: Short = new Short((-5) as short);
+        let b2: Short = new Short(20 as short);
+        let c2: Short = new Short((-8) as short);
+        let left2: double = a2.toDouble() * (b2.toDouble() + c2.toDouble());
+        let right2: double = a2.toDouble() * b2.toDouble() + a2.toDouble() * c2.toDouble();
+        expect(left2).assertEqual(right2);
+        expect(left2).assertEqual(-60.0);
+      }
+
+      {
+        let x: Short = new Short(0 as short);
+        let mu: Short = new Short(0 as short);
+        let sigma: double = 1.0;
+        let diff: double = x.toDouble() - mu.toDouble();
+        let normalPdf: double = Math.exp(-diff * diff / (2.0 * sigma * sigma)) / (sigma * Math.sqrt(2.0 * Math.PI));
+        expect(Math.abs(normalPdf - 0.3989422804) < 0.0001).assertTrue();
+        let x2: Short = new Short(1 as short);
+        let diff2: double = x2.toDouble() - mu.toDouble();
+        let normalPdf2: double = Math.exp(-diff2 * diff2 / (2.0 * sigma * sigma)) / (sigma * Math.sqrt(2.0 * Math.PI));
+        expect(Math.abs(normalPdf2 - 0.2419707245) < 0.0001).assertTrue();
+      }
+
+      {
+        let signErrors: int = 0;
+        let testVals: short[] = [
+          (-1) as short, (-100) as short, (-1000) as short,
+          (-16384) as short, (-32767) as short, (-32768) as short
+        ];
+        for (let val of testVals) {
+          let d: double = Short.toDouble(val);
+          if (d >= 0.0) {
+            signErrors++;
+          }
+        }
+        expect(signErrors).assertEqual(0);
+        let zeroDouble: double = Short.toDouble(0 as short);
+        expect(zeroDouble >= 0.0).assertTrue();
+      }
+    });
+
   });
 }
