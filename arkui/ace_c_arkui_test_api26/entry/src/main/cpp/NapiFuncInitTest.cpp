@@ -52,6 +52,7 @@
 #include "node/UIAgentGetPageTextTest.cpp"
 #include "node/GetImagesByNodeIdAsyncTest.cpp"
 #include "image/ImageAnimatorInterpolationTest.cpp"
+#include "calendarPicker/CalendarPickerFirstDayOfWeekTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -321,6 +322,14 @@ static napi_value Init(napi_env env, napi_value exports)
         {"testImageAnimatorInterpolation006", nullptr, TestImageAnimatorInterpolation006, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testImageAnimatorInterpolation007", nullptr, TestImageAnimatorInterpolation007, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testImageAnimatorInterpolation008", nullptr, TestImageAnimatorInterpolation008, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testCalendarPickerFirstDayOfWeek001", nullptr, TestCalendarPickerFirstDayOfWeek001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testCalendarPickerFirstDayOfWeek002", nullptr, TestCalendarPickerFirstDayOfWeek002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testCalendarPickerFirstDayOfWeek003", nullptr, TestCalendarPickerFirstDayOfWeek003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testCalendarPickerFirstDayOfWeek004", nullptr, TestCalendarPickerFirstDayOfWeek004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testCalendarPickerFirstDayOfWeek005", nullptr, TestCalendarPickerFirstDayOfWeek005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testCalendarPickerFirstDayOfWeek006", nullptr, TestCalendarPickerFirstDayOfWeek006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testCalendarPickerFirstDayOfWeek007", nullptr, TestCalendarPickerFirstDayOfWeek007, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testCalendarPickerFirstDayOfWeek008", nullptr, TestCalendarPickerFirstDayOfWeek008, nullptr, nullptr, nullptr, napi_default, nullptr},
         };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");

@@ -245,3 +245,12 @@ export const testImageAnimatorInterpolation005: () => number;
 export const testImageAnimatorInterpolation006: () => number;
 export const testImageAnimatorInterpolation007: () => number;
 export const testImageAnimatorInterpolation008: () => number;
+
+export const testCalendarPickerFirstDayOfWeek001: () => number;
+export const testCalendarPickerFirstDayOfWeek002: () => number;
+export const testCalendarPickerFirstDayOfWeek003: () => number;
+export const testCalendarPickerFirstDayOfWeek004: () => number;
+export const testCalendarPickerFirstDayOfWeek005: () => number;
+export const testCalendarPickerFirstDayOfWeek006: () => number;
+export const testCalendarPickerFirstDayOfWeek007: () => number;
+export const testCalendarPickerFirstDayOfWeek008: () => number;
