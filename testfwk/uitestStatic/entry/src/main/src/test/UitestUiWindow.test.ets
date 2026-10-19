@@ -232,7 +232,7 @@ export default function uitestUiWindowTest(): void {
 
     /**
      * @tc.name testFindWindowWithId_static
-     * @tc.number uitestUiWindowTest_0014
+     * @tc.number SUB_testfwk_uitest_UiWindow_0015
      * @tc.desc findWindow with id.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -770,7 +770,7 @@ export default function uitestUiWindowTest(): void {
 
     /**
      * @tc.name testWindowIsFocused_static
-     * @tc.number uitestUiWindowTest_0007
+     * @tc.number SUB_testfwk_uitest_UiWindow_0016
      * @tc.desc testWindowIsFocused.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -807,7 +807,7 @@ export default function uitestUiWindowTest(): void {
 
     /**
      * @tc.name testWindowIsActive_static
-     * @tc.number uitestUiWindowTest_0008
+     * @tc.number SUB_testfwk_uitest_UiWindow_0017
      * @tc.desc testWindowIsFocused.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
