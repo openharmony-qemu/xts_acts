@@ -44,7 +44,7 @@ async function  recursiveChain (depth: int): Promise<number> {
 
 
 
-export default function asyncBoundaryTest() {
+export default function asyncBoundaryTest(): void {
   describe('asyncBoundaryTest', () => {
     afterEach(async () => {
       await sleep(50)

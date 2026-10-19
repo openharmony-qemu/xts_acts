@@ -54,7 +54,7 @@ import {
 } from '../testability/pages/LockTest';
 import { sleep } from '../testability/pages/utils';
 
-export default function LockTest() {
+export default function LockTest(): void {
   let printLog = 'LockTest:';
   describe('LockTest', (): void => {
     afterEach(async (): Promise<void> => {
