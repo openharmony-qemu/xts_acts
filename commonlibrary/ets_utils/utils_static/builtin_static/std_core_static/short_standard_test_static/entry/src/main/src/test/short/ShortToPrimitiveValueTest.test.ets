@@ -1458,5 +1458,736 @@ export default function shortToPrimitiveValueTest(): void {
       }
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SHORT_TOPRIMITIVEVALUE_1100
+     * @tc.name testShortToPrimitiveValue_merged11
+     * @tc.desc CrossTypeRoundTrip / RadixConversion: covers 10 merged test points for Short.toPrimitiveValue, including type conversion, business scenarios, negative values, sign handling, and equality consistency.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testShortToPrimitiveValue_merged11', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let tofRaw: Short = new Short(1500 as short);
+        let distance: double = tofRaw.toFloat() * 0.001;
+        expect(distance).assertEqual(1.5);
+      }
+
+      {
+        let angle0: Short = new Short(0 as short);
+        let pwm0: byte = angle0.toByte();
+        expect(pwm0).assertEqual(0 as byte);
+        let angle90: Short = new Short(90 as short);
+        let pwm90: byte = angle90.toByte();
+        expect(pwm90).assertEqual(90 as byte);
+        let angle180: Short = new Short(Int.toShort(180));
+        let pwm180: byte = angle180.toByte();
+        expect(pwm180).assertEqual(Int.toByte(180));
+      }
+
+      {
+        let rowHi: Short = new Short(Int.toShort(0xFFFF));
+        let rowLo: Short = new Short(Int.toShort(0x0000));
+        let row32: int = (rowHi.toInt() << 16) | (rowLo.toInt() & 0xFFFF);
+        expect(row32).assertEqual(-65536);
+      }
+
+      {
+        let manufacturer: Short = new Short(123 as short);
+        let product: Short = new Short(Int.toShort(456));
+        let upcLong: int = manufacturer.toLong().toInt() * 100000 + product.toLong().toInt();
+        expect(upcLong).assertEqual(12300456);
+      }
+
+      {
+        let bpmNormal: Short = new Short(72 as short);
+        expect(bpmNormal.toByte()).assertEqual(72 as byte);
+        let bpmHigh: Short = new Short(180 as short);
+        expect(bpmHigh.toByte()).assertEqual(Int.toByte(180));
+        let bpmRest: Short = new Short(60 as short);
+        expect(bpmRest.toByte()).assertEqual(60 as byte);
+      }
+
+      {
+        let adcMax: Short = new Short(4095 as short);
+        let percentFull: double = (adcMax.toFloat() / 4095.0) * 100.0;
+        expect(percentFull).assertEqual(100.0);
+        let adcMid: Short = new Short(2048 as short);
+        let percentMid: double = (adcMid.toFloat() / 4095.0) * 100.0;
+        expect(percentMid > 50.0).assertTrue();
+      }
+
+      {
+        let encRaw: Short = new Short((-1000) as short);
+        let position: int = encRaw.toInt();
+        expect(position).assertEqual(-1000);
+        let encZero: Short = new Short(0 as short);
+        expect(encZero.toInt()).assertEqual(0);
+        let encForward: Short = new Short(360 as short);
+        expect(encForward.toInt()).assertEqual(360);
+      }
+
+      {
+        let negShort: Short = new Short((-128) as short);
+        let byteVal: byte = negShort.toByte();
+        let isNegative: boolean = (Byte.toInt(byteVal) & 0x80) !== 0;
+        expect(isNegative).assertTrue();
+      }
+
+      {
+        let testVals: short[] = [
+          0 as short, 65 as short, 127 as short, 255 as short,
+          0x0100 as short, 0x4E00 as short, 0x7FFF as short
+        ];
+        for (let i: int = 0; i < testVals.length; i++) {
+          let s: Short = new Short(testVals[i]);
+          let ch: char = s.toChar();
+          let charCode: int = ('' + ch).charCodeAt(0);
+          let intVal: int = s.toInt() & 0xFFFF;
+          expect(charCode).assertEqual(intVal);
+        }
+      }
+
+      {
+        let inputValues: short[] = [
+          65 as short,
+          97 as short,
+          48 as short,
+          32 as short,
+          33 as short
+        ];
+        let expectedValues: char[] = [
+          c'A',
+          c'a',
+          c'0',
+          c' ',
+          c'!'
+        ];
+        let caseCount: int = 5;
+        for (let caseIndex: int = 0; caseIndex < caseCount; caseIndex++) {
+          let boxedValue: Short = new Short(inputValues[caseIndex]);
+          let actualResult: char = boxedValue.toChar();
+          expect(actualResult).assertEqual(expectedValues[caseIndex]);
+        }
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SHORT_TOPRIMITIVEVALUE_1200
+     * @tc.name testShortToPrimitiveValue_merged12
+     * @tc.desc RadixConversion / Idempotent: covers 10 merged test points for Short.toPrimitiveValue, including type conversion, business scenarios, equality consistency, radix conversion, and constructor forms.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testShortToPrimitiveValue_merged12', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let hexByteMax: short = 0xFF as short;
+        let hexByteMin: short = 0x80 as short;
+        let octValue: short = 0o77 as short;
+        let hexByteMaxInst: Short = new Short(hexByteMax);
+        let hexByteMinInst: Short = new Short(hexByteMin);
+        let octValueInst: Short = new Short(octValue);
+        expect(hexByteMaxInst.toByte()).assertEqual((-1) as byte);
+        expect(hexByteMaxInst.toShort()).assertEqual(255 as short);
+        expect(hexByteMaxInst.toInt()).assertEqual(255);
+        expect(hexByteMaxInst.toFloat()).assertEqual(255.0f);
+        expect(hexByteMaxInst.toDouble()).assertEqual(255.0);
+        expect(hexByteMinInst.toByte()).assertEqual((-128) as byte);
+        expect(hexByteMinInst.toShort()).assertEqual(128 as short);
+        expect(hexByteMinInst.toInt()).assertEqual(128);
+        expect(hexByteMinInst.toFloat()).assertEqual(128.0f);
+        expect(hexByteMinInst.toDouble()).assertEqual(128.0);
+        expect(octValueInst.toByte()).assertEqual(63 as byte);
+        expect(octValueInst.toShort()).assertEqual(63 as short);
+        expect(octValueInst.toInt()).assertEqual(63);
+        expect(octValueInst.toFloat()).assertEqual(63.0f);
+        expect(octValueInst.toDouble()).assertEqual(63.0);
+      }
+
+      {
+        let binVal: short = Short.parseInt('101010', 2);
+        let s: Short = new Short(binVal);
+        expect(s.toInt()).assertEqual(42);
+        expect(s.toByte()).assertEqual(42 as byte);
+        expect(s.toFloat()).assertEqual(42.0f);
+        expect(s.toDouble()).assertEqual(42.0);
+        expect(s.toChar()).assertEqual(c'*');
+        expect(s.toLong().toInt()).assertEqual(42);
+      }
+
+      {
+        let digitName: string[] = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+        let idxThree: int = new Short(3 as short).toInt();
+        let idxSeven: int = new Short(7 as short).toInt();
+        let idxNine: int = new Short(9 as short).toInt();
+        expect(digitName[idxThree]).assertEqual('three');
+        expect(digitName[idxSeven]).assertEqual('seven');
+        expect(digitName[idxNine]).assertEqual('nine');
+        let combinedIndex: int = new Short(4 as short).toInt() + new Short(4 as short).toInt();
+        expect(digitName[combinedIndex]).assertEqual('eight');
+        for (let digit: int = 0; digit < 10; digit++) {
+          let boxedDigit: Short = new Short(Int.toShort(digit));
+          expect(digitName[boxedDigit.toInt()]).assertEqual(digitName[digit]);
+        }
+      }
+
+      {
+        let boxedValue: Short = new Short(42 as short);
+        let firstByteResult: byte = boxedValue.toByte();
+        let secondByteResult: byte = boxedValue.toByte();
+        let thirdByteResult: byte = boxedValue.toByte();
+        let firstShortResult: short = boxedValue.toShort();
+        let secondShortResult: short = boxedValue.toShort();
+        let thirdShortResult: short = boxedValue.toShort();
+        let firstIntResult: int = boxedValue.toInt();
+        let secondIntResult: int = boxedValue.toInt();
+        let thirdIntResult: int = boxedValue.toInt();
+        let firstLongResult: long = boxedValue.toLong();
+        let secondLongResult: long = boxedValue.toLong();
+        let thirdLongResult: long = boxedValue.toLong();
+        let firstFloatResult: float = boxedValue.toFloat();
+        let secondFloatResult: float = boxedValue.toFloat();
+        let thirdFloatResult: float = boxedValue.toFloat();
+        let firstDoubleResult: double = boxedValue.toDouble();
+        let secondDoubleResult: double = boxedValue.toDouble();
+        let thirdDoubleResult: double = boxedValue.toDouble();
+        let firstCharResult: char = boxedValue.toChar();
+        let secondCharResult: char = boxedValue.toChar();
+        let thirdCharResult: char = boxedValue.toChar();
+        expect(firstByteResult).assertEqual(42 as byte);
+        expect(secondByteResult).assertEqual(firstByteResult);
+        expect(thirdByteResult).assertEqual(secondByteResult);
+        expect(firstShortResult).assertEqual(42 as short);
+        expect(secondShortResult).assertEqual(firstShortResult);
+        expect(thirdShortResult).assertEqual(secondShortResult);
+        expect(firstIntResult).assertEqual(42);
+        expect(secondIntResult).assertEqual(firstIntResult);
+        expect(thirdIntResult).assertEqual(secondIntResult);
+        expect(firstLongResult).assertEqual(Long.toLong(42));
+        expect(secondLongResult).assertEqual(firstLongResult);
+        expect(thirdLongResult).assertEqual(secondLongResult);
+        expect(firstFloatResult).assertEqual(42.0f);
+        expect(secondFloatResult).assertEqual(firstFloatResult);
+        expect(thirdFloatResult).assertEqual(secondFloatResult);
+        expect(firstDoubleResult).assertEqual(42.0);
+        expect(secondDoubleResult).assertEqual(firstDoubleResult);
+        expect(thirdDoubleResult).assertEqual(secondDoubleResult);
+        expect(firstCharResult).assertEqual(c'*');
+        expect(secondCharResult).assertEqual(firstCharResult);
+        expect(thirdCharResult).assertEqual(secondCharResult);
+      }
+
+      {
+        let boxedValue: Short = new Short(42 as short);
+        let initialShortValue: short = boxedValue.toShort();
+        let initialIntValue: int = boxedValue.toInt();
+        let initialLongValue: long = boxedValue.toLong();
+        let byteResult: byte = boxedValue.toByte();
+        let intResult: int = boxedValue.toInt();
+        let longResult: long = boxedValue.toLong();
+        let floatResult: float = boxedValue.toFloat();
+        let doubleResult: double = boxedValue.toDouble();
+        let charResult: char = boxedValue.toChar();
+        let finalShortValue: short = boxedValue.toShort();
+        expect(byteResult).assertEqual(42 as byte);
+        expect(intResult).assertEqual(initialIntValue);
+        expect(longResult).assertEqual(initialLongValue);
+        expect(floatResult).assertEqual(42.0f);
+        expect(doubleResult).assertEqual(42.0);
+        expect(charResult).assertEqual(c'*');
+        expect(finalShortValue).assertEqual(initialShortValue);
+        expect(boxedValue.toShort()).assertEqual(42 as short);
+      }
+
+      {
+        let testValues: short[] = [
+          0 as short,
+          1 as short,
+          (-1) as short,
+          100 as short,
+          (-128) as short,
+          Short.MAX_VALUE,
+          Short.MIN_VALUE,
+          32766 as short,
+          (-32767) as short
+        ];
+        let expectedIntValues: int[] = [
+          0,
+          1,
+          -1,
+          100,
+          -128,
+          32767,
+          -32768,
+          32766,
+          -32767
+        ];
+        let expectedLongValues: long[] = [
+          Long.toLong(0),
+          Long.toLong(1),
+          Long.toLong(-1),
+          Long.toLong(100),
+          Long.toLong(-128),
+          Long.toLong(32767),
+          Long.toLong(-32768),
+          Long.toLong(32766),
+          Long.toLong(-32767)
+        ];
+        let expectedFloatValues: float[] = [
+          0.0f,
+          1.0f,
+          (-1.0f),
+          100.0f,
+          (-128.0f),
+          32767.0f,
+          (-32768.0f),
+          32766.0f,
+          (-32767.0f)
+        ];
+        let expectedDoubleValues: double[] = [
+          0.0,
+          1.0,
+          (-1.0),
+          100.0,
+          (-128.0),
+          32767.0,
+          (-32768.0),
+          32766.0,
+          (-32767.0)
+        ];
+        let caseCount: int = 9;
+        for (let caseIndex: int = 0; caseIndex < caseCount; caseIndex++) {
+          let boxedValue: Short = new Short(testValues[caseIndex]);
+          let shortResult: short = boxedValue.toShort();
+          let intResult: int = boxedValue.toInt();
+          let longResult: long = boxedValue.toLong();
+          let floatResult: float = boxedValue.toFloat();
+          let doubleResult: double = boxedValue.toDouble();
+          expect(shortResult).assertEqual(testValues[caseIndex]);
+          expect(intResult).assertEqual(expectedIntValues[caseIndex]);
+          expect(longResult).assertEqual(expectedLongValues[caseIndex]);
+          expect(floatResult).assertEqual(expectedFloatValues[caseIndex]);
+          expect(doubleResult).assertEqual(expectedDoubleValues[caseIndex]);
+        }
+      }
+
+      {
+        let testValues: short[] = [
+          0 as short, 42 as short, (-1) as short, 127 as short,
+          (-128) as short, 1000 as short, (-1000) as short, Short.MAX_VALUE,
+          Short.MIN_VALUE
+        ];
+        let caseCount: int = 9;
+        for (let caseIndex: int = 0; caseIndex < caseCount; caseIndex++) {
+          let boxedValue: Short = new Short(testValues[caseIndex]);
+          let directShortResult: short = boxedValue.toShort();
+          let intResult: int = boxedValue.toInt();
+          let indirectShortResult: short = Int.toShort(intResult);
+          expect(directShortResult).assertEqual(indirectShortResult);
+        }
+      }
+
+      {
+        let testValues: short[] = [
+          65 as short, 66 as short, 97 as short, 48 as short,
+          33 as short, 64 as short
+        ];
+        let caseCount: int = 6;
+        for (let caseIndex: int = 0; caseIndex < caseCount; caseIndex++) {
+          let boxedValue: Short = new Short(testValues[caseIndex]);
+          let originalShort: short = boxedValue.toShort();
+          let charResult: char = boxedValue.toChar();
+          let secondInstance: Short = new Short(originalShort);
+          let secondCharResult: char = secondInstance.toChar();
+          expect(secondCharResult).assertEqual(charResult);
+        }
+      }
+
+      {
+        let testValues: short[] = [
+          (-1000) as short, (-500) as short, (-100) as short, 0 as short,
+          100 as short, 500 as short, 1000 as short, Short.MAX_VALUE, Short.MIN_VALUE
+        ];
+        let expectedLongs: long[] = [
+          Long.toLong(-1000), Long.toLong(-500), Long.toLong(-100), Long.toLong(0),
+          Long.toLong(100), Long.toLong(500), Long.toLong(1000), Long.toLong(32767), Long.toLong(-32768)
+        ];
+        let caseCount: int = 9;
+        for (let caseIndex: int = 0; caseIndex < caseCount; caseIndex++) {
+          let boxedValue: Short = new Short(testValues[caseIndex]);
+          let longResult: long = boxedValue.toLong();
+          let intResult: int = boxedValue.toInt();
+          expect(longResult).assertEqual(expectedLongs[caseIndex]);
+          expect(longResult).assertEqual(Long.toLong(intResult));
+        }
+      }
+
+      {
+        let values: short[] = [1 as short, 42 as short, 100 as short, 1000 as short, 10000 as short, 32767 as short];
+        for (let i: int = 0; i < values.length; i++) {
+          let pos: Short = new Short(values[i]);
+          let neg: Short = new Short(Int.toShort(-Short.toInt(values[i])));
+          expect(pos.toInt() + neg.toInt()).assertEqual(0);
+          expect(pos.toLong().add(neg.toLong()).toInt()).assertEqual(0);
+        }
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SHORT_TOPRIMITIVEVALUE_1300
+     * @tc.name testShortToPrimitiveValue_merged13
+     * @tc.desc Idempotent / ArithmeticBitwise: covers 10 merged test points for Short.toPrimitiveValue, including type conversion, business scenarios, equality consistency, radix conversion, and constructor forms.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testShortToPrimitiveValue_merged13', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let testValues: short[] = [0 as short, 42 as short, (-15) as short, 100 as short, (-256) as short, Short.MAX_VALUE, Short.MIN_VALUE];
+        let caseCount: int = 7;
+        for (let caseIndex: int = 0; caseIndex < caseCount; caseIndex++) {
+          let boxedValue: Short = new Short(testValues[caseIndex]);
+          let floatVal: float = boxedValue.toFloat();
+          let doubleVal: double = boxedValue.toDouble();
+          expect(doubleVal).assertEqual(Float.toDouble(floatVal));
+        }
+      }
+
+      {
+        let v1: Short = new Short(100 as short);
+        let v2: Short = new Short(Int.toShort(100));
+        let v3: Short = new Short(Short.parseInt('100', 10));
+        let v4: Short = new Short((50 + 50) as short);
+        expect(v1.toInt()).assertEqual(v2.toInt());
+        expect(v2.toInt()).assertEqual(v3.toInt());
+        expect(v3.toInt()).assertEqual(v4.toInt());
+        expect(v1.toLong()).assertEqual(v2.toLong());
+        expect(v2.toLong()).assertEqual(v3.toLong());
+        expect(v3.toFloat()).assertEqual(v4.toFloat());
+        expect(v4.toDouble()).assertEqual(v1.toDouble());
+        expect(v1.toByte()).assertEqual(v3.toByte());
+        expect(v2.toChar()).assertEqual(v4.toChar());
+      }
+
+      {
+        let posValues: short[] = [1 as short, 10 as short, 50 as short, 100 as short, 500 as short, 1000 as short];
+        let negValues: short[] = [(-1) as short, (-10) as short, (-50) as short, (-100) as short, (-500) as short, (-1000) as short];
+        let caseCount: int = 6;
+        for (let caseIndex: int = 0; caseIndex < caseCount; caseIndex++) {
+          let posInst: Short = new Short(posValues[caseIndex]);
+          let negInst: Short = new Short(negValues[caseIndex]);
+          expect(posInst.toFloat()).assertEqual(-negInst.toFloat());
+          expect(posInst.toDouble()).assertEqual(-negInst.toDouble());
+        }
+      }
+
+      {
+        let testValues: Short[] = [
+          new Short(0 as short), new Short(255 as short), new Short(-32768 as short), new Short(32767 as short)
+        ];
+  
+        let typeMatrix: Map<int, Map<string, (double | string)>> = new Map<int, Map<string, (double | string)>>();
+  
+        for (let v of testValues) {
+          let row: Map<string, (double | string)> = new Map<string, (double | string)>();
+          row.set('byte', v.toByte());
+          row.set('short', v.toShort());
+          row.set('int', v.toInt());
+          row.set('long', v.toLong().toInt());
+          row.set('float', v.toFloat());
+          row.set('double', v.toDouble());
+          row.set('char', String.fromCharCode(v.toInt()));
+          typeMatrix.set(v.toInt(), row);
+        }
+  
+        let zeroRow: Map<string, (double | string)> = typeMatrix.get(0)!;
+        expect(zeroRow.get('byte')).assertEqual(0);
+        expect(zeroRow.get('int')).assertEqual(0);
+        expect(zeroRow.get('float')).assertEqual(0.0);
+        expect(zeroRow.get('double')).assertEqual(0.0);
+        expect(zeroRow.get('char')).assertEqual(String.fromCharCode(0));
+  
+        let maxRow: Map<string, (double | string)> = typeMatrix.get(32767)!;
+        let maxFloat: double = maxRow.get('float')! as double;
+        let maxDouble: double = maxRow.get('double')! as double;
+        expect(maxFloat).assertEqual(32767.0);
+        expect(maxDouble).assertEqual(32767.0);
+      }
+
+      {
+        let boxedValue: Short = new Short(100 as short);
+        let ownValue: int = boxedValue.toInt();
+        let stepAdd: Short = new Short(Int.toShort(ownValue + 200));
+        let stepSub: Short = new Short(Int.toShort(stepAdd.toInt() - 200));
+        let stepMul: Short = new Short(Int.toShort(stepSub.toInt() * 3));
+        let stepDiv: Short = new Short(Int.toShort(stepMul.toInt() / 3));
+        expect(stepAdd.toInt()).assertEqual(ownValue + 200);
+        expect(stepSub.toInt()).assertEqual(ownValue);
+        expect(stepMul.toInt()).assertEqual(ownValue * 3);
+        expect(stepDiv.toInt()).assertEqual(ownValue);
+        expect(boxedValue.toInt()).assertEqual(ownValue);
+      }
+
+      {
+        let testVals: short[] = [(-1000) as short, 0 as short, 1000 as short, 32767 as short];
+        for (let i: int = 0; i < testVals.length; i++) {
+          let s: Short = new Short(testVals[i]);
+          let floatFromInt: float = Int.toFloat(s.toInt());
+          let doubleFromInt: double = Int.toDouble(s.toInt());
+          let doubleFromFloat: double = Int.toDouble(Float.toInt(s.toFloat()));
+          expect(floatFromInt).assertEqual(s.toFloat());
+          expect(doubleFromInt).assertEqual(s.toDouble());
+          expect(Math.abs(doubleFromFloat - s.toDouble()) < 0.001).assertTrue();
+        }
+      }
+
+      {
+        let parsedPositive: short = Short.parseInt('42', 10);
+        let parsedNegative: short = Short.parseInt('-100', 10);
+        let parsedZero: short = Short.parseInt('0', 10);
+        let posInstance: Short = new Short(parsedPositive);
+        let negInstance: Short = new Short(parsedNegative);
+        let zeroInstance: Short = new Short(parsedZero);
+        expect(posInstance.toByte()).assertEqual(42 as byte);
+        expect(posInstance.toShort()).assertEqual(42 as short);
+        expect(posInstance.toInt()).assertEqual(42);
+        expect(posInstance.toLong()).assertEqual(Long.toLong(42));
+        expect(posInstance.toFloat()).assertEqual(42.0f);
+        expect(posInstance.toDouble()).assertEqual(42.0);
+        expect(posInstance.toChar()).assertEqual(c'*');
+        expect(negInstance.toByte()).assertEqual((-100) as byte);
+        expect(negInstance.toShort()).assertEqual((-100) as short);
+        expect(negInstance.toInt()).assertEqual(-100);
+        expect(negInstance.toLong()).assertEqual(Long.toLong(-100));
+        expect(negInstance.toFloat()).assertEqual((-100.0f));
+        expect(negInstance.toDouble()).assertEqual((-100.0));
+        expect(negInstance.toChar()).assertEqual(c'\uFF9C');
+        expect(zeroInstance.toByte()).assertEqual(0 as byte);
+        expect(zeroInstance.toShort()).assertEqual(0 as short);
+        expect(zeroInstance.toInt()).assertEqual(0);
+        expect(zeroInstance.toLong()).assertEqual(Long.toLong(0));
+        expect(zeroInstance.toFloat()).assertEqual(0.0f);
+        expect(zeroInstance.toDouble()).assertEqual(0.0);
+        expect(zeroInstance.toChar()).assertEqual(c'\u0000');
+        let binPositive: short = Short.parseInt('101010', 2);
+        expect(binPositive).assertEqual(parsedPositive);
+      }
+
+      {
+        let exactValues: short[] = [
+          1 as short, 2 as short, 4 as short, 8 as short,
+          16 as short, 32 as short, 64 as short, 128 as short,
+          256 as short, 512 as short, 1024 as short, 2048 as short,
+          4096 as short, 8192 as short, 16384 as short
+        ];
+        let caseCount: int = 15;
+        for (let caseIndex: int = 0; caseIndex < caseCount; caseIndex++) {
+          let boxedValue: Short = new Short(exactValues[caseIndex]);
+          let shortResult: short = boxedValue.toShort();
+          let floatResult: float = boxedValue.toFloat();
+          let doubleResult: double = boxedValue.toDouble();
+          let floatFromShort: float = Int.toFloat(Short.toInt(shortResult));
+          expect(floatResult).assertEqual(floatFromShort);
+          expect(doubleResult).assertEqual(Short.toDouble(shortResult));
+        }
+      }
+
+      {
+        for (let exp: int = 0; exp <= 14; exp++) {
+          let val: int = 1 << exp;
+          let sv: short = Int.toShort(val);
+          let s: Short = new Short(sv);
+          expect(s.toInt()).assertEqual(val);
+          expect(s.toLong().toInt()).assertEqual(val);
+          expect(s.toFloat()).assertEqual(Int.toFloat(val));
+          expect(s.toDouble()).assertEqual(Int.toDouble(val));
+        }
+      }
+
+      {
+        let s1: Short = new Short(Int.toShort(0x5555));
+        expect(s1.toInt()).assertEqual(21845);
+        expect(s1.toLong().toInt()).assertEqual(21845);
+        expect(s1.toFloat()).assertEqual(21845.0f);
+        expect(s1.toChar()).assertEqual(c'\u5555');
+        let s2: Short = new Short(Int.toShort(0xAAAA));
+        expect(s2.toInt()).assertEqual(-21846);
+        expect(s2.toLong().toInt()).assertEqual(-21846);
+        expect(s2.toFloat()).assertEqual((-21846.0f));
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SHORT_TOPRIMITIVEVALUE_1400
+     * @tc.name testShortToPrimitiveValue_merged14
+     * @tc.desc SortCompare / Other: covers 10 merged test points for Short.toPrimitiveValue, including business scenarios, type conversion, loop accumulation, equality consistency, and constructor forms.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testShortToPrimitiveValue_merged14', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let testVals: short[] = [(-32768) as short, (-1) as short, 0 as short, 127 as short, 255 as short, 32767 as short];
+        for (let i: int = 0; i < testVals.length; i++) {
+          let s: Short = new Short(testVals[i]);
+          expect(s.toInt()).assertEqual(Short.toInt(s.toShort()));
+          expect(s.toLong().toInt()).assertEqual(s.toInt());
+          expect(s.toDouble()).assertEqual(Int.toDouble(s.toInt()));
+          expect(s.toFloat()).assertEqual(Int.toFloat(s.toInt()));
+        }
+      }
+
+      {
+        let firstBoxedValue: Short = new Short(100 as short);
+        let secondBoxedValue: Short = new Short(100 as short);
+        expect(firstBoxedValue.toByte()).assertEqual(secondBoxedValue.toByte());
+        expect(firstBoxedValue.toShort()).assertEqual(secondBoxedValue.toShort());
+        expect(firstBoxedValue.toInt()).assertEqual(secondBoxedValue.toInt());
+        expect(firstBoxedValue.toLong()).assertEqual(secondBoxedValue.toLong());
+        expect(firstBoxedValue.toFloat()).assertEqual(secondBoxedValue.toFloat());
+        expect(firstBoxedValue.toDouble()).assertEqual(secondBoxedValue.toDouble());
+        expect(firstBoxedValue.toChar()).assertEqual(secondBoxedValue.toChar());
+        expect(firstBoxedValue.toByte()).assertEqual(100 as byte);
+        expect(firstBoxedValue.toChar()).assertEqual(c'd');
+      }
+
+      {
+        let v: Short = new Short(12345 as short);
+        let b1: byte = v.toByte();
+        let i1: int = v.toInt();
+        let b2: byte = v.toByte();
+        expect(b1).assertEqual(b2);
+        let s1: short = v.toShort();
+        let f1: float = v.toFloat();
+        let s2: short = v.toShort();
+        expect(s1).assertEqual(s2);
+        let l1: long = v.toLong();
+        let d1: double = v.toDouble();
+        let l2: long = v.toLong();
+        expect(l1).assertEqual(l2);
+        let c1: char = v.toChar();
+        let i2: int = v.toInt();
+        let c2: char = v.toChar();
+        expect(c1).assertEqual(c2);
+        expect(i1).assertEqual(i2);
+        expect(f1).assertEqual(v.toFloat());
+        expect(d1).assertEqual(v.toDouble());
+      }
+
+      {
+        let testVals: short[] = [(-32768) as short, (-1) as short, 0 as short, 1 as short, 32767 as short];
+        for (let i: int = 0; i < testVals.length; i++) {
+          let s1: Short = new Short(testVals[i]);
+          let s2: Short = new Short(testVals[i]);
+          expect(s1.toByte()).assertEqual(s2.toByte());
+          expect(s1.toShort()).assertEqual(s2.toShort());
+          expect(s1.toInt()).assertEqual(s2.toInt());
+          expect(s1.toLong()).assertEqual(s2.toLong());
+          expect(s1.toFloat()).assertEqual(s2.toFloat());
+          expect(s1.toDouble()).assertEqual(s2.toDouble());
+          expect(s1.toChar()).assertEqual(s2.toChar());
+        }
+      }
+
+      {
+        let s: Short = new Short(42 as short);
+        let b: byte = s.toByte();
+        let s2: Short = new Short(Byte.toShort(b));
+        let i: int = s2.toInt();
+        let l: long = Long.toLong(i);
+        let f: float = Int.toFloat(l.toInt());
+        let d: double = Int.toDouble(l.toInt());
+        expect(b).assertEqual(42 as byte);
+        expect(s2.toShort()).assertEqual(42 as short);
+        expect(i).assertEqual(42);
+        expect(l.toInt()).assertEqual(42);
+        expect(f).assertEqual(42.0f);
+        expect(d).assertEqual(42.0);
+      }
+
+      {
+        let s: Short = new Short(42 as short);
+        let d: double = s.toDouble();
+        let f: float = Int.toFloat(Double.toInt(d));
+        let l: long = Long.toLong(Float.toInt(f));
+        let i: int = l.toInt();
+        let s2: Short = new Short(Int.toShort(i));
+        let b: byte = s2.toByte();
+        expect(d).assertEqual(42.0);
+        expect(f).assertEqual(42.0f);
+        expect(l.toInt()).assertEqual(42);
+        expect(i).assertEqual(42);
+        expect(s2.toShort()).assertEqual(42 as short);
+        expect(b).assertEqual(42 as byte);
+      }
+
+      {
+        let testVals: short[] = [(-1000) as short, 0 as short, 1000 as short, 32767 as short];
+        for (let i: int = 0; i < testVals.length; i++) {
+          let a: Short = new Short(testVals[i]);
+          let path1Double: double = Float.toDouble(a.toFloat());
+          let path2Double: double = a.toDouble();
+          expect(Math.abs(path1Double - path2Double) < 0.001).assertTrue();
+          let path1Int: int = a.toLong().toInt();
+          let path2Int: int = a.toInt();
+          expect(path1Int).assertEqual(path2Int);
+        }
+      }
+
+      {
+        let s: Short = new Short(100 as short);
+        let viaIntByte: byte = new Short(Int.toShort(s.toInt())).toByte();
+        expect(viaIntByte).assertEqual(s.toByte());
+        let viaFloatInt: int = Float.toInt(s.toFloat());
+        expect(viaFloatInt).assertEqual(s.toInt());
+        let viaDoubleFloat: float = Int.toFloat(Double.toInt(s.toDouble()));
+        expect(viaDoubleFloat).assertEqual(s.toFloat());
+        let viaLongInt: int = s.toLong().toInt();
+        expect(viaLongInt).assertEqual(s.toInt());
+      }
+
+      {
+        let testVals: short[] = [(-32768) as short, (-1) as short, 0 as short, 127 as short, 32767 as short];
+        for (let i: int = 0; i < testVals.length; i++) {
+          let s: Short = new Short(testVals[i]);
+          let origInt: int = s.toInt();
+          let viaByte: int = Byte.toInt(s.toByte());
+          let viaFloat: int = Float.toInt(s.toFloat());
+          let viaDouble: int = Double.toInt(s.toDouble());
+          expect(viaFloat).assertEqual(origInt);
+          expect(viaDouble).assertEqual(origInt);
+          expect(viaByte == origInt || viaByte == (origInt & 0xFF) - ((origInt & 0x80) !== 0 ? 256 : 0)).assertTrue();
+        }
+      }
+
+      {
+        let testVals: short[] = [(-32768) as short, (-1) as short, 0 as short, 1 as short, 32767 as short];
+        let expectedByte: byte[] = [0 as byte, (-1) as byte, 0 as byte, 1 as byte, (-1) as byte];
+        let expectedShort: short[] = [(-32768) as short, (-1) as short, 0 as short, 1 as short, 32767 as short];
+        let expectedInt: int[] = [-32768, -1, 0, 1, 32767];
+        let expectedFloat: float[] = [-32768.0f, -1.0f, 0.0f, 1.0f, 32767.0f];
+        let expectedDouble: double[] = [-32768.0, -1.0, 0.0, 1.0, 32767.0];
+        for (let i: int = 0; i < testVals.length; i++) {
+          let s: Short = new Short(testVals[i]);
+          let b: byte = s.toByte();
+          expect(b).assertEqual(expectedByte[i]);
+          expect(b >= -128 && b <= 127).assertTrue();
+          let sv: short = s.toShort();
+          expect(sv).assertEqual(expectedShort[i]);
+          expect(sv >= -32768 && sv <= 32767).assertTrue();
+          let iv: int = s.toInt();
+          expect(iv).assertEqual(expectedInt[i]);
+          expect(iv >= -32768 && iv <= 32767).assertTrue();
+          let fv: float = s.toFloat();
+          expect(fv).assertEqual(expectedFloat[i]);
+          expect(fv >= -32768.0 && fv <= 32767.0).assertTrue();
+          let dv: double = s.toDouble();
+          expect(dv).assertEqual(expectedDouble[i]);
+          expect(dv >= -32768.0 && dv <= 32767.0).assertTrue();
+        }
+      }
+    });
+
   });
 }
