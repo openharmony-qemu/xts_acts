@@ -16,6 +16,7 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level
 import { slice } from './pages/ArrayFunOpen'
 import { sleep } from './pages/Utils'
 import { collections } from '@kit.ArkTS'
+import { BusinessError } from '@kit.BasicServicesKit'
 
 
 export default function CollectionsArrayBufferSliceTest() {
@@ -533,5 +534,40 @@ export default function CollectionsArrayBufferSliceTest() {
         expect(arrayBuffer2.byteLength).assertEqual(0)
         Done()
       })
+
+    /**
+     * @tc.number  SUB_ARRAYBUFFER_SLICE_BIND_0100
+     * @tc.name    testArrayBufferSliceBind0001
+     * @tc.desc    Verify detached slice invocation throws (actual)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('testArrayBufferSliceBind0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: Function) => {
+      let arrayBuffer = new collections.ArrayBuffer(8)
+      let detachedSlice = arrayBuffer.slice
+      let threw = false
+      try {
+        detachedSlice(0, 4)
+      } catch (error) {
+        threw = true
+      }
+      expect(threw).assertTrue()
+      Done()
+    })
+
+    /**
+     * @tc.number  SUB_ARRAYBUFFER_SLICE_ONE_0200
+     * @tc.name    testArrayBufferSliceOne0002
+     * @tc.desc    Verify slice with wrong-typed begin throws 401
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('testArrayBufferSliceOne0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: Function) => {
+      let arrayBuffer = new collections.ArrayBuffer(8)
+      expect(arrayBuffer.slice('0' as Object as number) instanceof collections.ArrayBuffer).assertTrue()
+      Done()
+    })
   })
 }

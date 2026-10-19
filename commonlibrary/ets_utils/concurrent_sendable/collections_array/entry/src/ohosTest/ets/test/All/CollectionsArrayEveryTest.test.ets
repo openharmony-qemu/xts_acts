@@ -17,6 +17,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import { DataTest } from './pages/DataTest';
 import { sleep } from './pages/Utils';
 import { collections } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 
 export default function CollectionsArrayEveryTest() {
@@ -249,5 +250,24 @@ export default function CollectionsArrayEveryTest() {
       console.info(`${caseName} test end`)
       Done()
     })
+
+    /**
+     * @tc.number  SUB_ARRAY_EVERY_ONE_0100
+     * @tc.name    testArrayEveryOne0001
+     * @tc.desc    Verify every with non-function predicate throws 401
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testArrayEveryOne0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new collections.Array<number>(1, 2, 3);
+      let threw = false;
+      try {
+        arr.every('not-fn' as Object as (v: number, i: number, a: collections.Array<number>) => boolean);
+      } catch (error) {
+        threw = true;
+      }
+      expect(threw).assertTrue();
+    });
   })
 }

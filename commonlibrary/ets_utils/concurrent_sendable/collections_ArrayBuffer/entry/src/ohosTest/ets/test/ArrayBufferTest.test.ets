@@ -51,6 +51,18 @@ class CustomArrayBuffer extends collections.ArrayBuffer {
   }
 }
 
+
+@Sendable
+class MidBuf001 extends collections.ArrayBuffer {
+  marker: string = 'mid';
+}
+
+@Sendable
+class LeafBuf001 extends MidBuf001 {
+  slice(begin: number, end?: number): collections.ArrayBuffer {
+    return super.slice(begin, end);
+  }
+}
 export default function ArrayBufferTest(): void {
   describe('ArrayBufferTest', (): void => {
     beforeAll((): void => {})
@@ -501,6 +513,24 @@ export default function ArrayBufferTest(): void {
     it('ArrayBufferTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let buffer = new collections.ArrayBuffer(1024)
       expect(typeof buffer).assertEqual('object')
+    })
+
+    /**
+     * @tc.number  SUB_ARRAYBUFFER_SUBCLASS_CHAIN_0100
+     * @tc.name    testArrayBufferSubclassChain0001
+     * @tc.desc    Verify two-level inheritance chain overrides slice
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('testArrayBufferSubclassChain0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let leaf = new LeafBuf001(16);
+      let sliced = leaf.slice(0, 4);
+      expect(leaf.byteLength).assertEqual(16);
+      expect(leaf instanceof MidBuf001).assertTrue();
+      expect(leaf instanceof LeafBuf001).assertTrue();
+      expect(leaf instanceof collections.ArrayBuffer).assertTrue();
+      expect(sliced instanceof collections.ArrayBuffer).assertTrue();
     })
   })
 }

@@ -5680,5 +5680,19 @@ export default function Uint8ArrayAllTest() {
       expect(newMappedUint8[1]).assertEqual(50);
     })
 
+    /**
+     * @tc.number  SUB_TYPEDARRAY_UINT_EIGHT_ALL_ADD_FROM_0100
+     * @tc.name    testTypedArrayAllAddFrom0001
+     * @tc.desc    Verify Uint8Array.from() is added to the All suite
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testTypedArrayAllAddFrom0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let fromArr = collections.Uint8Array.from([1, 2, 3]);
+      expect(fromArr.length).assertEqual(3);
+      expect(fromArr[0]).assertEqual(1);
+    });
+
   })
 }

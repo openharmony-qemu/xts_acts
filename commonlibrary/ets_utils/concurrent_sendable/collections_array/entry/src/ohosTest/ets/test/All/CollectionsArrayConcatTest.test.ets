@@ -17,6 +17,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import { DataTest } from './pages/DataTest';
 import { sleep } from './pages/Utils';
 import { collections } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 
 export default function CollectionsArrayConcatTest() {
@@ -470,5 +471,21 @@ export default function CollectionsArrayConcatTest() {
       Done()
     });
 
+    /**
+     * @tc.number  SUB_ARRAY_CONCAT_INDEP_0100
+     * @tc.name    testArrayConcatIndep0001
+     * @tc.desc    Verify concat returns new array independent from source
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testArrayConcatIndep0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a = collections.Array.from<number>([1, 2]);
+      let b = collections.Array.from<number>([3, 4]);
+      let c = a.concat(b);
+      expect(c === a).assertFalse();
+      a.push(99);
+      expect(c.length).assertEqual(4);
+    });
   })
 }
