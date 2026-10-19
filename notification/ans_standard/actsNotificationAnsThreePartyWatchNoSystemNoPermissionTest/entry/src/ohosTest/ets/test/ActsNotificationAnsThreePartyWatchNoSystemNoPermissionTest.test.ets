@@ -81,16 +81,16 @@ export default function ActsNotificationAnsThreePartyWatchNoSystemNoPermissionTe
     })
 
     /**
-     * @tc.name   Sub_Notification_Ans_ThreePartyWatch_Enhanced_0400
-     * @tc.number Sub_Notification_Ans_ThreePartyWatch_Enhanced_0400
+     * @tc.name   SUB_Notification_Ans_ThreePartyWatch_Enhanced_0400
+     * @tc.number SUB_Notification_Ans_ThreePartyWatch_Enhanced_0400
      * @tc.desc   Calling the `getUserGrantedBundleIcon` interface without including the `ohos.permission.SUBSCRIBE_NOTIFICATION` permission will result in error code 201.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      * @co.authored.by.agent
      */
-    it('Sub_Notification_Ans_ThreePartyWatch_Enhanced_0400', Level.LEVEL0, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_ThreePartyWatch_Enhanced_0400"
+    it('SUB_Notification_Ans_ThreePartyWatch_Enhanced_0400', Level.LEVEL0, async (done: Function) => {
+      let TAG: string = "SUB_Notification_Ans_ThreePartyWatch_Enhanced_0400"
       await notificationExtensionSubscription.getUserGrantedBundleIcon(bundle).then((data: image.PixelMap) => {
         console.info(TAG + `getUserGrantedBundleIcon success`);
         expect(false).assertTrue()
@@ -112,16 +112,16 @@ export default function ActsNotificationAnsThreePartyWatchNoSystemNoPermissionTe
     })
 
     /**
-     * @tc.name   Sub_Notification_Ans_ThreePartyWatch_Enhanced_1400
-     * @tc.number Sub_Notification_Ans_ThreePartyWatch_Enhanced_1400
+     * @tc.name   SUB_Notification_Ans_ThreePartyWatch_Enhanced_1400
+     * @tc.number SUB_Notification_Ans_ThreePartyWatch_Enhanced_1400
      * @tc.desc   Calling the `disableUserGrantedByBundle` interface without including the `ohos.permission.SUBSCRIBE_NOTIFICATION` permission will result in error code 201.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      * @co.authored.by.agent
      */
-    it('Sub_Notification_Ans_ThreePartyWatch_Enhanced_1400', Level.LEVEL0, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_ThreePartyWatch_Enhanced_1400"
+    it('SUB_Notification_Ans_ThreePartyWatch_Enhanced_1400', Level.LEVEL0, async (done: Function) => {
+      let TAG: string = "SUB_Notification_Ans_ThreePartyWatch_Enhanced_1400"
       let info: notificationExtensionSubscription.GrantedBundleInfo = {
         bundleName: bundle,
         appIndex: 0
