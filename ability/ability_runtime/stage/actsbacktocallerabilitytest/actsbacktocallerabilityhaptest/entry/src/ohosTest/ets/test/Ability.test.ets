@@ -19,8 +19,10 @@ import { BusinessError } from '@ohos.base';
 import { contextConstant, Want } from '@kit.AbilityKit';
 import commonEventManager from '@ohos.commonEventManager';
 import { abilityDelegatorRegistry, Driver, MatchPattern, ON } from '@kit.TestKit';
+import display from '@ohos.display';
 
 let delegator = abilityDelegatorRegistry.getAbilityDelegator();
+let currentDisplayId = display.getDefaultDisplaySync().id;
 let textsToMatch: Array<string> = ['打开', '允许', '本次允许', "始终允许打开"];
 
 function log(TAG: string, info: string) {
@@ -37,12 +39,13 @@ function sleep(time: number): Promise<void> {
 
 async function clickDialog(TAG: string) {
   await sleep(2000);
-  let driver = Driver.create();
-  let allowed = await driver.findComponent(ON.text('想要打开', MatchPattern.CONTAINS));
+  let driver = await Driver.create();
+  log(TAG, `driver create success`);
+  let allowed = await driver.findComponent(ON.text('想要打开', MatchPattern.CONTAINS).belongingDisplay(currentDisplayId));
   log(TAG, `no need to click button=allowed== ${allowed}`);
   if (allowed) {
     for (const text of textsToMatch) {
-      let buttons = await driver.findComponents(ON.text(text));
+      let buttons = await driver.findComponents(ON.text(text).belongingDisplay(currentDisplayId));
       if (buttons && buttons.length > 0) {
         buttons[buttons.length - 1].click();
         log(TAG, `click last button success`);

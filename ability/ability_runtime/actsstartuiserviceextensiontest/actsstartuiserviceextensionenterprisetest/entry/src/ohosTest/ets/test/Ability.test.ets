@@ -141,8 +141,13 @@ export default function abilityTest() {
               expect(abilityStateData?.moduleName).assertEqual('entry');
               expect(abilityStateData?.abilityType).assertEqual(1);
               expect(abilityStateData?.isAtomicService).assertFalse();
-              expect(abilityStateData?.appCloneIndex).assertEqual(undefined);
-              expect(abilityStateData?.callerBundleName).assertEqual('com.acts.startuiserviceextensiontestenterprise');
+              let appCloneIndex =  AppStorage.get('appCloneIndex') as boolean;
+              if(!appCloneIndex){
+                expect(abilityStateData?.appCloneIndex).assertEqual(undefined);
+              }else{
+                expect(abilityStateData?.appCloneIndex).assertEqual(0);
+              }
+              expect(abilityStateData?.callerBundleName).assertEqual("com.acts.startuiserviceextensiontestenterprise");
             }catch(e){}
           }
         },

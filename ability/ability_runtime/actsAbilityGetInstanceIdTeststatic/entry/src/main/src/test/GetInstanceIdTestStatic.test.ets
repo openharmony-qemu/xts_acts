@@ -44,7 +44,7 @@ export default function ActsGetInstanceIdStaticTest(): void {
     let context: common.UIAbilityContext | undefined
     beforeAll(async() => {
       try {
-        mpEnable = systemParameterEnhance.getSync('persist.sys.abilityms.multi_process_model');
+        mpEnable = systemParameterEnhance.getSync('persist.sys.abilityms.support_native_ui_ability');
       } catch (err) {
         hilog.error(DOMAIN, 'testTag', 'Get system parameter error: %{public}s', JSON.stringify(err));
         mpEnable = PARAM_FAIL;

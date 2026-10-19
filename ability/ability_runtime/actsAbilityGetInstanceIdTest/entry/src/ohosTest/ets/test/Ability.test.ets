@@ -120,7 +120,7 @@ export default function ActsGetInstanceIdTest() {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       try {
-        mpEnable = systemParameterEnhance.getSync('persist.sys.abilityms.multi_process_model');
+        mpEnable = systemParameterEnhance.getSync('persist.sys.abilityms.support_native_ui_ability');
       } catch (err) {
         hilog.error(DOMAIN, 'testTag', 'Get system parameter error: %{public}s', JSON.stringify(err));
         mpEnable = PARAM_FAIL;

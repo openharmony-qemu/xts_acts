@@ -16,6 +16,7 @@ import { describe, beforeAll, it, expect, beforeEach, afterEach, Level } from '@
 import { BusinessError, commonEventManager, systemParameterEnhance } from '@kit.BasicServicesKit';
 import { appManager, common } from '@kit.AbilityKit';
 import { abilityDelegatorRegistry, Driver, ON, MatchPattern } from '@kit.TestKit';
+import display from '@ohos.display';
 
 function sleep(time: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, time))
@@ -31,6 +32,7 @@ let want: Want = {
   }
 };
 let delegator = abilityDelegatorRegistry.getAbilityDelegator();
+let currentDisplayId = display.getDefaultDisplaySync().id;
 let mpEnable: string
 
 export default function startAbilityOptions() {
@@ -86,7 +88,7 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons = await driver.findComponent(ON.text('startAbilityStartOptions_16000001'));
+          let buttons = await driver.findComponent(ON.text('startAbilityStartOptions_16000001').belongingDisplay(currentDisplayId));
           buttons.click();
         } else {
           console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
@@ -150,7 +152,7 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons = await driver.findComponent(ON.text('startAbilityStartOptions_16000004'));
+          let buttons = await driver.findComponent(ON.text('startAbilityStartOptions_16000004').belongingDisplay(currentDisplayId));
           buttons.click();
         } else {
           console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
@@ -214,7 +216,7 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons1 = await driver.findComponent(ON.text('startAbilityStartOptions_16000019'));
+          let buttons1 = await driver.findComponent(ON.text('startAbilityStartOptions_16000019').belongingDisplay(currentDisplayId));
           buttons1.click();
         } else {
           console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
@@ -233,10 +235,10 @@ export default function startAbilityOptions() {
         } else {
           try {
             expect(data.code).assertEqual(16000019);
-            let allowed = await driver.waitForComponent(ON.text('暂无可用打开方式', MatchPattern.CONTAINS), 1000)
+            let allowed = await driver.waitForComponent(ON.text('暂无可用打开方式', MatchPattern.CONTAINS).belongingDisplay(currentDisplayId), 1000)
             console.log(`startAbilityStartOptions_16000019-is need to click ` + JSON.stringify(allowed));
             if (allowed) {
-              let buttons = await driver.findComponents(ON.text('知道了', MatchPattern.CONTAINS))
+              let buttons = await driver.findComponents(ON.text('知道了', MatchPattern.CONTAINS).belongingDisplay(currentDisplayId))
               if (buttons && buttons.length > 0) {
                 await buttons[buttons.length - 1].click()
               }
@@ -286,7 +288,7 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons = await driver.findComponent(ON.text('startAbilityStartOptions_16000050'));
+          let buttons = await driver.findComponent(ON.text('startAbilityStartOptions_16000050').belongingDisplay(currentDisplayId));
           buttons.click();
         } else {
           console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
@@ -349,7 +351,7 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons = await driver.findComponent(ON.text('startAbilityStartOptions_16000073'));
+          let buttons = await driver.findComponent(ON.text('startAbilityStartOptions_16000073').belongingDisplay(currentDisplayId));
           buttons.click();
         } else {
           console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
@@ -412,7 +414,7 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons = await driver.findComponent(ON.text('openLink_16000004'));
+          let buttons = await driver.findComponent(ON.text('openLink_16000004').belongingDisplay(currentDisplayId));
           buttons.click();
         } else {
           console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
@@ -474,7 +476,7 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons = await driver.findComponent(ON.text('openLink_16000019'));
+          let buttons = await driver.findComponent(ON.text('openLink_16000019').belongingDisplay(currentDisplayId));
           buttons.click();
         } else {
           console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
@@ -493,10 +495,10 @@ export default function startAbilityOptions() {
         } else {
           try {
             expect(data.code).assertEqual(16000019);
-            let allowed = await driver.waitForComponent(ON.text('暂无可用打开方式', MatchPattern.CONTAINS), 1000)
+            let allowed = await driver.waitForComponent(ON.text('暂无可用打开方式', MatchPattern.CONTAINS).belongingDisplay(currentDisplayId), 1000)
             console.log(`startAbilityStartOptions_16000019-is need to click ` + JSON.stringify(allowed));
             if (allowed) {
-              let buttons = await driver.findComponents(ON.text('知道了', MatchPattern.CONTAINS))
+              let buttons = await driver.findComponents(ON.text('知道了', MatchPattern.CONTAINS).belongingDisplay(currentDisplayId))
               if (buttons && buttons.length > 0) {
                 await buttons[buttons.length - 1].click()
               }
@@ -545,7 +547,7 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons = await driver.findComponent(ON.text('startAbilityForResultCallback_16000001'));
+          let buttons = await driver.findComponent(ON.text('startAbilityForResultCallback_16000001').belongingDisplay(currentDisplayId));
           buttons.click();
         } else {
           console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
@@ -608,7 +610,7 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons = await driver.findComponent(ON.text('startAbilityForResultCallback_16000004'));
+          let buttons = await driver.findComponent(ON.text('startAbilityForResultCallback_16000004').belongingDisplay(currentDisplayId));
           buttons.click();
         } else {
           console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
@@ -671,7 +673,7 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons1 = await driver.findComponent(ON.text('startAbilityForResultCallback_16000019'));
+          let buttons1 = await driver.findComponent(ON.text('startAbilityForResultCallback_16000019').belongingDisplay(currentDisplayId));
           buttons1.click();
         } else {
           console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
@@ -690,10 +692,10 @@ export default function startAbilityOptions() {
         } else {
           try {
             expect(data.code).assertEqual(16000019);
-            let allowed = await driver.waitForComponent(ON.text('暂无可用打开方式', MatchPattern.CONTAINS), 1000)
+            let allowed = await driver.waitForComponent(ON.text('暂无可用打开方式', MatchPattern.CONTAINS).belongingDisplay(currentDisplayId), 1000)
             console.log(`startAbilityStartOptions_16000019-is need to click ` + JSON.stringify(allowed));
             if (allowed) {
-              let buttons = await driver.findComponents(ON.text('知道了', MatchPattern.CONTAINS))
+              let buttons = await driver.findComponents(ON.text('知道了', MatchPattern.CONTAINS).belongingDisplay(currentDisplayId))
               if (buttons && buttons.length > 0) {
                 await buttons[buttons.length - 1].click()
               }
@@ -742,7 +744,7 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons = await driver.findComponent(ON.text('startAbilityForResultCallback_16000050'));
+          let buttons = await driver.findComponent(ON.text('startAbilityForResultCallback_16000050').belongingDisplay(currentDisplayId));
           buttons.click();
         } else {
           console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
@@ -805,7 +807,7 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons = await driver.findComponent(ON.text('startAbilityForResultCallback_16000073'));
+          let buttons = await driver.findComponent(ON.text('startAbilityForResultCallback_16000073').belongingDisplay(currentDisplayId));
           buttons.click();
         } else {
           console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
@@ -872,7 +874,7 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons = await driver.findComponent(ON.text('startAbilityForResultOptions_16000001'));
+          let buttons = await driver.findComponent(ON.text('startAbilityForResultOptions_16000001').belongingDisplay(currentDisplayId));
           buttons.click();
         } else {
           console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
@@ -937,7 +939,7 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons = await driver.findComponent(ON.text('startAbilityForResultOptions_16000004'));
+          let buttons = await driver.findComponent(ON.text('startAbilityForResultOptions_16000004').belongingDisplay(currentDisplayId));
           buttons.click();
         } else {
           console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
@@ -1002,7 +1004,7 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons1 = await driver.findComponent(ON.text('startAbilityForResultOptions_16000019'));
+          let buttons1 = await driver.findComponent(ON.text('startAbilityForResultOptions_16000019').belongingDisplay(currentDisplayId));
           buttons1.click();
         } else {
           console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
@@ -1021,10 +1023,10 @@ export default function startAbilityOptions() {
         } else {
           try {
             expect(data.code).assertEqual(16000019);
-            let allowed = await driver.waitForComponent(ON.text('暂无可用打开方式', MatchPattern.CONTAINS), 1000)
+            let allowed = await driver.waitForComponent(ON.text('暂无可用打开方式', MatchPattern.CONTAINS).belongingDisplay(currentDisplayId), 1000)
             console.log(`startAbilityStartOptions_16000019-is need to click ` + JSON.stringify(allowed));
             if (allowed) {
-              let buttons = await driver.findComponents(ON.text('知道了', MatchPattern.CONTAINS))
+              let buttons = await driver.findComponents(ON.text('知道了', MatchPattern.CONTAINS).belongingDisplay(currentDisplayId))
               if (buttons && buttons.length > 0) {
                 await buttons[buttons.length - 1].click()
               }
@@ -1076,7 +1078,7 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons = await driver.findComponent(ON.text('startAbilityForResultOptions_16000050'));
+          let buttons = await driver.findComponent(ON.text('startAbilityForResultOptions_16000050').belongingDisplay(currentDisplayId));
           buttons.click();
         } else {
           console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
@@ -1142,7 +1144,7 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons = await driver.findComponent(ON.text('startAbilityForResultOptions_16000073'));
+          let buttons = await driver.findComponent(ON.text('startAbilityForResultOptions_16000073').belongingDisplay(currentDisplayId));
           buttons.click();
         } else {
           console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
@@ -1209,7 +1211,7 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons = await driver.findComponent(ON.text('startAbilityForResultPromise_16000001'));
+          let buttons = await driver.findComponent(ON.text('startAbilityForResultPromise_16000001').belongingDisplay(currentDisplayId));
           buttons.click();
         } else {
           console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
@@ -1274,7 +1276,7 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons = await driver.findComponent(ON.text('startAbilityForResultPromise_16000004'));
+          let buttons = await driver.findComponent(ON.text('startAbilityForResultPromise_16000004').belongingDisplay(currentDisplayId));
           buttons.click();
         } else {
           console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
@@ -1339,7 +1341,7 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons1 = await driver.findComponent(ON.text('startAbilityForResultPromise_16000019'));
+          let buttons1 = await driver.findComponent(ON.text('startAbilityForResultPromise_16000019').belongingDisplay(currentDisplayId));
           buttons1.click();
         } else {
           console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
@@ -1358,10 +1360,10 @@ export default function startAbilityOptions() {
         } else {
           try {
             expect(data.code).assertEqual(16000019);
-            let allowed = await driver.waitForComponent(ON.text('暂无可用打开方式', MatchPattern.CONTAINS), 1000)
+            let allowed = await driver.waitForComponent(ON.text('暂无可用打开方式', MatchPattern.CONTAINS).belongingDisplay(currentDisplayId), 1000)
             console.log(`startAbilityStartOptions_16000019-is need to click ` + JSON.stringify(allowed));
             if (allowed) {
-              let buttons = await driver.findComponents(ON.text('知道了', MatchPattern.CONTAINS))
+              let buttons = await driver.findComponents(ON.text('知道了', MatchPattern.CONTAINS).belongingDisplay(currentDisplayId))
               if (buttons && buttons.length > 0) {
                 await buttons[buttons.length - 1].click()
               }
@@ -1413,7 +1415,7 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons = await driver.findComponent(ON.text('startAbilityForResultPromise_16000050'));
+          let buttons = await driver.findComponent(ON.text('startAbilityForResultPromise_16000050').belongingDisplay(currentDisplayId));
           buttons.click();
         } else {
           console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
@@ -1479,7 +1481,7 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons = await driver.findComponent(ON.text('startAbilityForResultPromise_16000073'));
+          let buttons = await driver.findComponent(ON.text('startAbilityForResultPromise_16000073').belongingDisplay(currentDisplayId));
           buttons.click();
         } else {
           console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
@@ -1546,7 +1548,7 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons = await driver.findComponent(ON.text('connectServiceExtensionAbilityOptions_16000001'));
+          let buttons = await driver.findComponent(ON.text('connectServiceExtensionAbilityOptions_16000001').belongingDisplay(currentDisplayId));
           buttons.click();
         } else {
           console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
@@ -1613,7 +1615,7 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons = await driver.findComponent(ON.text('disconnectServiceExtensionAbilityCallback_16000050'));
+          let buttons = await driver.findComponent(ON.text('disconnectServiceExtensionAbilityCallback_16000050').belongingDisplay(currentDisplayId));
           buttons.click();
         } else {
           console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
@@ -1680,7 +1682,7 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons = await driver.findComponent(ON.text('disconnectServiceExtensionAbilityPromise_16000050'));
+          let buttons = await driver.findComponent(ON.text('disconnectServiceExtensionAbilityPromise_16000050').belongingDisplay(currentDisplayId));
           buttons.click();
         } else {
           console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
@@ -1748,7 +1750,7 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons = await driver.findComponent(ON.text('startAbilityStartOptions_16000072'));
+          let buttons = await driver.findComponent(ON.text('startAbilityStartOptions_16000072').belongingDisplay(currentDisplayId));
           buttons.click();
         } else {
           console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
@@ -1815,7 +1817,7 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons = await driver.findComponent(ON.text('startAbilityStartOptions_16000076'));
+          let buttons = await driver.findComponent(ON.text('startAbilityStartOptions_16000076').belongingDisplay(currentDisplayId));
           buttons.click();
         } else {
           console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
@@ -1881,12 +1883,12 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons = await driver.findComponent(ON.text('startAbilityStartOptions_16000077'));
+          let buttons = await driver.findComponent(ON.text('startAbilityStartOptions_16000077').belongingDisplay(currentDisplayId));
           buttons.click();
           await sleep(2000)
           delegator.getCurrentTopAbility().then((ability) => {
             delegator.doAbilityBackground(ability).then(async (data) => {
-              let buttons = await driver.findComponent(ON.text('startAbilityStartOptions_16000077'));
+              let buttons = await driver.findComponent(ON.text('startAbilityStartOptions_16000077').belongingDisplay(currentDisplayId));
               buttons.click();
             }).catch((err: BusinessError) => {
             });
@@ -1955,7 +1957,7 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons = await driver.findComponent(ON.text('startAbilityStartOptions_16000078'));
+          let buttons = await driver.findComponent(ON.text('startAbilityStartOptions_16000078').belongingDisplay(currentDisplayId));
           buttons.click();
         } else {
           console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
@@ -2022,7 +2024,7 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons = await driver.findComponent(ON.text('startAbilityStartOptions_16000079'));
+          let buttons = await driver.findComponent(ON.text('startAbilityStartOptions_16000079').belongingDisplay(currentDisplayId));
           buttons.click();
         } else {
           console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
@@ -2088,7 +2090,7 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons = await driver.findComponent(ON.text('startAbilityStartOptions_16000080'));
+          let buttons = await driver.findComponent(ON.text('startAbilityStartOptions_16000080').belongingDisplay(currentDisplayId));
           buttons.click();
         } else {
           console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
@@ -2155,7 +2157,7 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons = await driver.findComponent(ON.text('startAbilityForResultCallback_16000072'));
+          let buttons = await driver.findComponent(ON.text('startAbilityForResultCallback_16000072').belongingDisplay(currentDisplayId));
           buttons.click();
         } else {
           console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
@@ -2222,7 +2224,7 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons = await driver.findComponent(ON.text('startAbilityForResultCallback_16000076'));
+          let buttons = await driver.findComponent(ON.text('startAbilityForResultCallback_16000076').belongingDisplay(currentDisplayId));
           buttons.click();
         } else {
           console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
@@ -2288,12 +2290,12 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons = await driver.findComponent(ON.text('startAbilityForResultCallback_16000077'));
+          let buttons = await driver.findComponent(ON.text('startAbilityForResultCallback_16000077').belongingDisplay(currentDisplayId));
           buttons.click();
           await sleep(2000)
           delegator.getCurrentTopAbility().then((ability) => {
             delegator.doAbilityBackground(ability).then(async (data) => {
-              let buttons = await driver.findComponent(ON.text('startAbilityForResultCallback_16000077'));
+              let buttons = await driver.findComponent(ON.text('startAbilityForResultCallback_16000077').belongingDisplay(currentDisplayId));
               buttons.click();
             }).catch((err: BusinessError) => {
             });
@@ -2362,7 +2364,7 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons = await driver.findComponent(ON.text('startAbilityForResultCallback_16000078'));
+          let buttons = await driver.findComponent(ON.text('startAbilityForResultCallback_16000078').belongingDisplay(currentDisplayId));
           buttons.click();
         } else {
           console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
@@ -2429,7 +2431,7 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons = await driver.findComponent(ON.text('startAbilityForResultCallback_16000079'));
+          let buttons = await driver.findComponent(ON.text('startAbilityForResultCallback_16000079').belongingDisplay(currentDisplayId));
           buttons.click();
         } else {
           console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
@@ -2495,7 +2497,7 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons = await driver.findComponent(ON.text('startAbilityForResultCallback_16000080'));
+          let buttons = await driver.findComponent(ON.text('startAbilityForResultCallback_16000080').belongingDisplay(currentDisplayId));
           buttons.click();
         } else {
           console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
@@ -2562,7 +2564,7 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons = await driver.findComponent(ON.text('startAbilityForResultOptions_16000072'));
+          let buttons = await driver.findComponent(ON.text('startAbilityForResultOptions_16000072').belongingDisplay(currentDisplayId));
           buttons.click();
         } else {
           console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
@@ -2629,7 +2631,7 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons = await driver.findComponent(ON.text('startAbilityForResultOptions_16000076'));
+          let buttons = await driver.findComponent(ON.text('startAbilityForResultOptions_16000076').belongingDisplay(currentDisplayId));
           buttons.click();
         } else {
           console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
@@ -2695,12 +2697,12 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons = await driver.findComponent(ON.text('startAbilityForResultOptions_16000077'));
+          let buttons = await driver.findComponent(ON.text('startAbilityForResultOptions_16000077').belongingDisplay(currentDisplayId));
           buttons.click();
           await sleep(2000)
           delegator.getCurrentTopAbility().then((ability) => {
             delegator.doAbilityBackground(ability).then(async (data) => {
-              let buttons = await driver.findComponent(ON.text('startAbilityForResultOptions_16000077'));
+              let buttons = await driver.findComponent(ON.text('startAbilityForResultOptions_16000077').belongingDisplay(currentDisplayId));
               buttons.click();
             }).catch((err: BusinessError) => {
             });
@@ -2769,7 +2771,7 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons = await driver.findComponent(ON.text('startAbilityForResultOptions_16000078'));
+          let buttons = await driver.findComponent(ON.text('startAbilityForResultOptions_16000078').belongingDisplay(currentDisplayId));
           buttons.click();
         } else {
           console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
@@ -2836,7 +2838,7 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons = await driver.findComponent(ON.text('startAbilityForResultOptions_16000079'));
+          let buttons = await driver.findComponent(ON.text('startAbilityForResultOptions_16000079').belongingDisplay(currentDisplayId));
           buttons.click();
         } else {
           console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
@@ -2902,7 +2904,7 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons = await driver.findComponent(ON.text('startAbilityForResultOptions_16000080'));
+          let buttons = await driver.findComponent(ON.text('startAbilityForResultOptions_16000080').belongingDisplay(currentDisplayId));
           buttons.click();
         } else {
           console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
@@ -2971,7 +2973,7 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons = await driver.findComponent(ON.text('startAbilityForResultPromise_16000072'));
+          let buttons = await driver.findComponent(ON.text('startAbilityForResultPromise_16000072').belongingDisplay(currentDisplayId));
           buttons.click();
         } else {
           console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
@@ -3038,7 +3040,7 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons = await driver.findComponent(ON.text('startAbilityForResultPromise_16000076'));
+          let buttons = await driver.findComponent(ON.text('startAbilityForResultPromise_16000076').belongingDisplay(currentDisplayId));
           buttons.click();
         } else {
           console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
@@ -3104,12 +3106,12 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons = await driver.findComponent(ON.text('startAbilityForResultPromise_16000077'));
+          let buttons = await driver.findComponent(ON.text('startAbilityForResultPromise_16000077').belongingDisplay(currentDisplayId));
           buttons.click();
           await sleep(2000)
           delegator.getCurrentTopAbility().then((ability) => {
             delegator.doAbilityBackground(ability).then(async (data) => {
-              let buttons = await driver.findComponent(ON.text('startAbilityForResultPromise_16000077'));
+              let buttons = await driver.findComponent(ON.text('startAbilityForResultPromise_16000077').belongingDisplay(currentDisplayId));
               buttons.click();
             }).catch((err: BusinessError) => {
             });
@@ -3178,7 +3180,7 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons = await driver.findComponent(ON.text('startAbilityForResultPromise_16000078'));
+          let buttons = await driver.findComponent(ON.text('startAbilityForResultPromise_16000078').belongingDisplay(currentDisplayId));
           buttons.click();
         } else {
           console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
@@ -3245,7 +3247,7 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons = await driver.findComponent(ON.text('startAbilityForResultPromise_16000079'));
+          let buttons = await driver.findComponent(ON.text('startAbilityForResultPromise_16000079').belongingDisplay(currentDisplayId));
           buttons.click();
         } else {
           console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
@@ -3311,7 +3313,7 @@ export default function startAbilityOptions() {
             console.info('startAbility succeed');
           });
           await sleep(2000)
-          let buttons = await driver.findComponent(ON.text('startAbilityForResultPromise_16000080'));
+          let buttons = await driver.findComponent(ON.text('startAbilityForResultPromise_16000080').belongingDisplay(currentDisplayId));
           buttons.click();
         } else {
           console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
