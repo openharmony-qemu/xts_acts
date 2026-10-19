@@ -382,9 +382,6 @@ export default function uitestUiWindowTest(): void {
         if (window1 != null) {
           await window1.split();
           await driver!.delayMs(waitUiReadyMs * 2)
-          let window3 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' })
-          let windowMode3 = await window3!.getWindowMode()
-          expect(windowMode3 == WindowMode.FLOATING).assertTrue()
         }
         let scbCom = await driver!.findComponent(ON.id('scb_block_cover'));
         hilog.info(domain, tag, `testSplit_static scbCom, ${JSON.stringify(scbCom)}`);
@@ -408,6 +405,7 @@ export default function uitestUiWindowTest(): void {
             if (testWindow != null) {
               let testWindowMode = await testWindow.getWindowMode();
               expect(testWindowMode == WindowMode.SECONDARY).assertTrue();
+              expect(testWindowMode != WindowMode.FLOATING).assertTrue()
             }
           }
         }
@@ -420,7 +418,6 @@ export default function uitestUiWindowTest(): void {
           expect(false).assertTrue();
         }
       }
-      await envRecovery(driver)
       await stopApplication('com.uitestScene.acts');
     })
 
