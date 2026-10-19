@@ -29,12 +29,13 @@ import taskpool from '@ohos.taskpool';
 import preferences from '@ohos.data.preferences';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { relationalStore } from '@kit.ArkData'
+import { openStageWorker, openStageWorker1 } from '../common/TestWorker';
 
 let dataPreferences: preferences.Preferences | null = null;
 let store: relationalStore.RdbStore | undefined = undefined;
 
-let abilityWorker: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/Worker');
-let worker1: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/Worker1');
+let abilityWorker: worker.ThreadWorker = openStageWorker();
+let worker1: worker.ThreadWorker = openStageWorker1();
 
 @Concurrent
 function printNormalContext(context: common.UIAbilityContext): boolean {

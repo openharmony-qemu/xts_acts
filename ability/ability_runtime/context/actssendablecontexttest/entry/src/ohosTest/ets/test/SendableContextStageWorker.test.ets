@@ -24,6 +24,7 @@ import taskpool from '@ohos.taskpool';
 import { SendableContextObject, ApplicationContextObject, AbilityStageObject, ContextObject,
   UIAbilityContextObject } from '../common/SendableContextObject'
 import contextConstant from '@ohos.app.ability.contextConstant';
+import { openWorkerTrans, openWorkerTrans2, openWorkerTrans3 } from '../common/TestWorker';
 let sendableContext: sendableContextManager.SendableContext
 
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
@@ -133,7 +134,7 @@ export default function sendableContextTest() {
         return;
       }
       hilog.info(0x0000, 'testTag', '%{public}s', TAG + 'Ability post message uiabilitycontext');
-      let worker1: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans');
+      let worker1: worker.ThreadWorker = openWorkerTrans();
       worker1.onmessage = (event: MessageEvents): void => {
         let key: string = event.data.key;
         if(key == '[WorkerTrans1] fail'){
@@ -153,7 +154,7 @@ export default function sendableContextTest() {
         await sleep(1000); //等待worker1将Context传回主线程
       }
       hilog.info(0x0000, 'testTag', TAG + 'wait for woker1 done ' + isWoker1Done);
-      let worker2: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans2');
+      let worker2: worker.ThreadWorker = openWorkerTrans2();
       hilog.info(0x0000, 'testTag', TAG + '  create worker2 success');
       worker2.onmessage = (event: MessageEvents): void => {
         let key: string = event.data.key;
@@ -210,7 +211,7 @@ export default function sendableContextTest() {
         return;
       }
       hilog.info(0x0000, 'testTag', '%{public}s', TAG + 'Ability post message ApplicationContext');
-      let worker1: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans');
+      let worker1: worker.ThreadWorker = openWorkerTrans();
       worker1.onmessage = (event: MessageEvents): void => {
         let key: string = event.data.key;
         if(key == '[WorkerTrans1] fail'){
@@ -228,7 +229,7 @@ export default function sendableContextTest() {
         await sleep(1000); //等待worker1将Context传回主线程
       }
       worker1.terminate();
-      let worker2: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans2');
+      let worker2: worker.ThreadWorker = openWorkerTrans2();
       worker2.onmessage = (event: MessageEvents): void => {
         let key: string = event.data.key;
         let value: string = event.data.value;
@@ -283,7 +284,7 @@ export default function sendableContextTest() {
         return;
       }
       hilog.info(0x0000, 'testTag', '%{public}s', TAG + 'Ability post message uiabilitycontext');
-      let worker1: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans');
+      let worker1: worker.ThreadWorker = openWorkerTrans();
       worker1.onmessage = (event: MessageEvents): void => {
         let key: string = event.data.key;
         if(key == '[WorkerTrans1] fail'){
@@ -302,7 +303,7 @@ export default function sendableContextTest() {
         await sleep(1000); //等待worker1将Context传回主线程
       }
       worker1.terminate();
-      let worker2: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans2');
+      let worker2: worker.ThreadWorker = openWorkerTrans2();
       worker2.onmessage = (event: MessageEvents): void => {
         let key: string = event.data.key;
         let value: string = event.data.value;
@@ -367,7 +368,7 @@ export default function sendableContextTest() {
         return;
       }
       hilog.info(0x0000, 'testTag', '%{public}s', TAG + 'Ability post message uiabilitycontext');
-      let worker1: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans');
+      let worker1: worker.ThreadWorker = openWorkerTrans();
       worker1.onmessage = (event: MessageEvents): void => {
         let key: string = event.data.key;
         if(key == '[WorkerTrans1] fail'){
@@ -385,7 +386,7 @@ export default function sendableContextTest() {
         await sleep(1000); //等待worker1将Context传回主线程
       }
       worker1.terminate();
-      let worker2: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans2');
+      let worker2: worker.ThreadWorker = openWorkerTrans2();
       worker2.onmessage = (event: MessageEvents): void => {
         let key: string = event.data.key;
         let value: string = event.data.value;
@@ -440,7 +441,7 @@ export default function sendableContextTest() {
         return;
       }
       hilog.info(0x0000, 'testTag', '%{public}s', TAG + 'Ability post message uiabilitycontext');
-      let worker1: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans');
+      let worker1: worker.ThreadWorker = openWorkerTrans();
       worker1.onmessage = (event: MessageEvents): void => {
         let key: string = event.data.key;
         if(key == '[WorkerTrans1] fail'){
@@ -458,7 +459,7 @@ export default function sendableContextTest() {
         await sleep(1000); //等待worker1将Context传回主线程
       }
       worker1.terminate();
-      let worker2: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans2');
+      let worker2: worker.ThreadWorker = openWorkerTrans2();
       worker2.onmessage = (event: MessageEvents): void => {
         let key: string = event.data.key;
         let value: string = event.data.value;
@@ -514,7 +515,7 @@ export default function sendableContextTest() {
         return;
       }
       hilog.info(0x0000, 'testTag', '%{public}s', TAG + 'Ability post message uiabilitycontext');
-      let worker1: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans');
+      let worker1: worker.ThreadWorker = openWorkerTrans();
       worker1.onmessage = (event: MessageEvents): void => {
         let key: string = event.data.key;
         if(key == '[WorkerTrans1] fail'){
@@ -532,7 +533,7 @@ export default function sendableContextTest() {
         await sleep(1000); //等待worker1将Context传回主线程
       }
       worker1.terminate();
-      let worker2: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans2');
+      let worker2: worker.ThreadWorker = openWorkerTrans2();
       worker2.onmessage = (event: MessageEvents): void => {
         let key: string = event.data.key;
         let value: string = event.data.value;
@@ -587,7 +588,7 @@ export default function sendableContextTest() {
         return;
       }
       hilog.info(0x0000, 'testTag', '%{public}s', TAG + 'Ability post message uiabilitycontext');
-      let worker1: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans');
+      let worker1: worker.ThreadWorker = openWorkerTrans();
       worker1.onmessage = (event: MessageEvents): void => {
         let key: string = event.data.key;
         if(key == '[WorkerTrans1] fail'){
@@ -605,7 +606,7 @@ export default function sendableContextTest() {
         await sleep(1000); //等待worker1将Context传回主线程
       }
       worker1.terminate();
-      let worker2: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans2');
+      let worker2: worker.ThreadWorker = openWorkerTrans2();
       worker2.onmessage = (event: MessageEvents): void => {
         let key: string = event.data.key;
         let value: string = event.data.value;
@@ -660,7 +661,7 @@ export default function sendableContextTest() {
         return;
       }
       hilog.info(0x0000, 'testTag', '%{public}s', TAG + 'Ability post message uiabilitycontext');
-      let worker1: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans3');
+      let worker1: worker.ThreadWorker = openWorkerTrans3();
       worker1.onmessage = (event: MessageEvents): void => {
         let key: string = event.data.key;
         if(key == '[WorkerTrans1] fail'){
@@ -681,7 +682,7 @@ export default function sendableContextTest() {
         await sleep(1000); //等待worker1将Context传回主线程
       }
       hilog.info(0x0000, 'testTag', TAG + 'wait for woker1 done ' + isWoker1Done);
-      let worker2: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans2');
+      let worker2: worker.ThreadWorker = openWorkerTrans2();
       hilog.info(0x0000, 'testTag', TAG + '  create worker2 success');
       worker2.onmessage = (event: MessageEvents): void => {
         let key: string = event.data.key;
@@ -735,7 +736,7 @@ export default function sendableContextTest() {
         return;
       }
       hilog.info(0x0000, 'testTag', '%{public}s', TAG + 'Ability post message ApplicationContext');
-      let worker1: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans3');
+      let worker1: worker.ThreadWorker = openWorkerTrans3();
       worker1.onmessage = (event: MessageEvents): void => {
         let key: string = event.data.key;
         if(key == '[WorkerTrans1] fail'){
@@ -753,7 +754,7 @@ export default function sendableContextTest() {
         await sleep(1000); //等待worker1将Context传回主线程
       }
       worker1.terminate();
-      let worker2: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans2');
+      let worker2: worker.ThreadWorker = openWorkerTrans2();
       worker2.onmessage = (event: MessageEvents): void => {
         let key: string = event.data.key;
         let value: string = event.data.value;
@@ -809,7 +810,7 @@ export default function sendableContextTest() {
         return;
       }
       hilog.info(0x0000, 'testTag', '%{public}s', TAG + 'Ability post message testAbilityStageContext');
-      let worker1: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans3');
+      let worker1: worker.ThreadWorker = openWorkerTrans3();
       worker1.onmessage = (event: MessageEvents): void => {
         let key: string = event.data.key;
         if(key == '[WorkerTrans1] fail'){
@@ -829,7 +830,7 @@ export default function sendableContextTest() {
         await sleep(1000); //等待worker1将Context传回主线程
       }
       worker1.terminate();
-      let worker2: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans2');
+      let worker2: worker.ThreadWorker = openWorkerTrans2();
       worker2.onmessage = (event: MessageEvents): void => {
         let key: string = event.data.key;
         let value: string = event.data.value;
@@ -894,7 +895,7 @@ export default function sendableContextTest() {
         return;
       }
       hilog.info(0x0000, 'testTag', '%{public}s', TAG + 'Ability post message uiabilitycontext');
-      let worker1: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans3');
+      let worker1: worker.ThreadWorker = openWorkerTrans3();
       worker1.onmessage = (event: MessageEvents): void => {
         let key: string = event.data.key;
         if(key == '[WorkerTrans1] fail'){
@@ -912,7 +913,7 @@ export default function sendableContextTest() {
         await sleep(1000); //等待worker1将Context传回主线程
       }
       worker1.terminate();
-      let worker2: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans2');
+      let worker2: worker.ThreadWorker = openWorkerTrans2();
       worker2.onmessage = (event: MessageEvents): void => {
         let key: string = event.data.key;
         let value: string = event.data.value;
