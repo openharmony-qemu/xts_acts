@@ -88,7 +88,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc toSorted ascending on [5,6,4], verify sorted order [4,5,6] without mutating original
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted001', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(5, 6, 4);
@@ -104,7 +104,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc Test SparseArray.toSorted, verify method result (sorted[0] equals 3, sorted[1] equals 1)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted002', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(3, 1);
@@ -119,7 +119,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc Test SparseArray.toSorted, verify method result (sorted[0] equals 1, sorted[1] equals 3)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted003', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(3, 1);
@@ -134,7 +134,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc Test SparseArray.toSorted, verify method result (sorted[0] equals 3, sorted[1] equals 1)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted004', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(3, 1, 2);
@@ -150,7 +150,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc Test SparseArray.toSorted, verify method result
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted005', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(5, 2, 8, 1, 9);
@@ -164,7 +164,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc Test SparseArray.toSorted, verify method result
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted006', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(5, 2, 8, 1, 9);
@@ -178,7 +178,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc Test SparseArray.toSorted, verify method result (sorted[0] equals 4)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted007', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(3, 1, 4, 1, 5);
@@ -203,7 +203,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc Test SparseArray.toSorted, verify method result (sorted[0] equals "apple", sorted[2] equals "cherry")
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted008', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<string>("banana", "apple", "cherry");
@@ -218,7 +218,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc Test SparseArray.toSorted, verify method result (s0 != null && s2 != null is true)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted009', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<Person009>(
@@ -240,7 +240,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc Test SparseArray.toSorted, verify method result (sorted[0] equals 1, sorted[1] equals 3)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted010', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(3, 1);
@@ -255,7 +255,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc Test SparseArray.toSorted, verify method result (sorted[0] equals -5, sorted[4] equals 2)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted011', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(-3, 1, -5, 2, 0);
@@ -270,7 +270,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc Test SparseArray.toSorted, verify method result (sorted[0] equals -1, sorted[4] equals 1)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted012', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(0, 1, 0, -1, 0);
@@ -285,7 +285,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc Test SparseArray.toSorted, verify method result (sorted[0] equals 1)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted013', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(2147483647, 1, 100, 2147483647);
@@ -299,7 +299,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc Test SparseArray.toSorted, verify method result (sorted[0] equals -10, sorted[1] equals -1)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted014', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(-10, -1, 0);
@@ -315,7 +315,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc Test SparseArray.toSorted, verify method result
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted015', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(3, 1, 3, 2, 1);
@@ -329,7 +329,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc Test SparseArray.toSorted, verify string sort result with ASCII elements
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted016', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<string>("test", "abc", "123", "local");
@@ -344,7 +344,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc Test SparseArray.toSorted, verify method result (sorted[0] equals "")
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted017', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<string>("", "a", "", "b");
@@ -358,7 +358,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc Test SparseArray.toSorted, verify method result (sorted[0] equals longStr)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted018', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         let longStr = "a".repeat(10000);
@@ -373,7 +373,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc Test SparseArray.toSorted, verify method result (sorted[0] equals "!hello", sorted[2] equals "#test")
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted019', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<string>("!hello", "@world", "#test");
@@ -388,7 +388,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc Test SparseArray.toSorted, verify object id order
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted020', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<Item020>(
@@ -407,7 +407,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc Test SparseArray.toSorted, verify nested object value order
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted021', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<Container021>(
@@ -426,7 +426,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc Test SparseArray.toSorted with nullable object field, verify sorted length
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted022', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<NullableItem022>(
@@ -448,7 +448,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc Test SparseArray.toSorted, verify method result (sorted.length equals 0)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted023', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>();
@@ -462,7 +462,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc toSorted on length-5 sparse array (all holes), undefined-safe comparator, verify sorted.length equals 5
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted024', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(5);
@@ -485,7 +485,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc toSorted on sparse array with holes at [2]=10 [4]=20, undefined-safe comparator, verify sorted order
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted025', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(5);
@@ -509,7 +509,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc Test SparseArray.toSorted, verify method result (arr.length equals originalLength, arr[0] equals originalFirst)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted026', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(3, 1, 4, 1, 5);
@@ -527,7 +527,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc Test SparseArray.toSorted, verify sorted result length and first element
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted027', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(3, 1, 4);
@@ -542,7 +542,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc Test SparseArray.toSorted ascending on [3,1,4,1,5]: full sorted order and sorted.length equals 5
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted028', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(3, 1, 4, 1, 5);
@@ -562,7 +562,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc Test SparseArray.toSorted, verify method result
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted029', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(3, 1, 4, 1, 5);
@@ -577,7 +577,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc Test SparseArray.toSorted, verify first sorted element equals 1
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted030', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(3, 1, 4);
@@ -591,7 +591,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc Test SparseArray.toSorted, verify method result (sorted === arr is false, arr[0] equals 3)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted031', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(3, 1, 4);
@@ -607,7 +607,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc Test SparseArray.toSorted, verify method result (sorted[0] equals 1, sorted[999] equals 1000)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted032', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>();
@@ -625,7 +625,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc Test SparseArray.toSorted, verify method result (sorted[0] equals -100, sorted[4] equals 2147483647)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted033', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(
@@ -654,7 +654,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc Test SparseArray.to Sorted error path, verify expected exception is thrown (assertFail is triggered, error.name equals "Error")
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted034', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         try {
@@ -673,7 +673,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc Test SparseArray.toSorted comparator throws Error, verify error message
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted035', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(3, 1, 4);
@@ -693,7 +693,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc Test SparseArray.toSorted, verify method result
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted036', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr1 = new SparseArray<int>(3, 1, 4);
@@ -711,7 +711,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc Test SparseArray.toSorted returns new sorted array while sort mutates source array
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted037', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr1 = new SparseArray<int>(3, 1, 4);
@@ -730,7 +730,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc Test SparseArray.toSorted keeps stable order for equal comparator values
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted038', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<StableItem038>(
@@ -752,7 +752,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc Test SparseArray.toSorted on deterministic 100 element array
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted039', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>();
@@ -771,7 +771,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc Test SparseArray.toSorted, verify method result
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted040', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(5, 2, 8, 1, 9);
@@ -786,7 +786,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc Test SparseArray.toSorted, verify method result (filtered.length equals 3)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted041', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(5, 2, 8, 1, 9);
@@ -802,7 +802,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc toSorted on SparseArray<float> returns ascending float order without mutating source
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted042', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<float>(3.0f, 1.0f, 2.0f);
@@ -826,7 +826,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc toSorted orders 0x7 0b10 0x3 literals ascending without mutating source
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted043', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(0x7, 0b10, 0x3, 1);
@@ -851,7 +851,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc toSorted on SparseArray<boolean> orders false before true without mutating source
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted044', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<boolean>(true, false, true);
@@ -875,7 +875,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc toSorted on SparseArray<byte> orders byte boundary values ascending
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted045', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<byte>(127 as byte, 0 as byte, (-128 as byte));
@@ -899,7 +899,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc toSorted on SparseArray<short> orders short values ascending
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted046', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<short>(300 as short, 100 as short, 200 as short);
@@ -922,7 +922,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc toSorted on SparseArray<long> orders long values ascending
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted047', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<long>(30000000000 as long, 10000000000 as long, 20000000000 as long);
@@ -946,7 +946,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc toSorted on SparseArray<double> orders double values ascending
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted048', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<double>(3.75, 1.25, 2.5);
@@ -969,7 +969,7 @@ export default function SparseArrayToSortedTest(): void {
      * @tc.desc toSorted on SparseArray<char> orders char elements ascending
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToSorted049', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<char>(c'C', c'A', c'B');
