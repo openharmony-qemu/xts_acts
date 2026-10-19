@@ -19,7 +19,7 @@ import image from '@ohos.multimedia.image';
 import { describe, it, expect, beforeAll, Level } from '@ohos/hypium-dynamic'
 import { common } from '@kit.AbilityKit';
 import fs from '@ohos.file.fs';
-import { getPermission, fetchOption, sleep, driveFn } from '../common';
+import { getPermission, fetchOption, sleep, driveFn, checkResourceFile } from '../common';
 
 const TAG = 'createImageSource';
 const photoKeys = photoAccessHelper.PhotoKeys;
@@ -36,6 +36,7 @@ export default function getThumbnailTest() {
       await getPermission();
       await driveFn();
       await sleep(2000);
+      checkResourceFile(globalContext);
       await createResource(globalContext, fileNameList);
     });
 
@@ -77,8 +78,10 @@ export default function getThumbnailTest() {
     let createResource = async (context: common.UIAbilityContext, fileNameList: Array<string>) => {
       try {
         let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
-        let imageUri = 'file:///data/storage/el2/base/haps/entry_test/files/01.jpg';
-        let videoUri = 'file:///data/storage/el2/base/haps/entry_test/files/01.mp4';
+        let imageUri = context.filesDir + '/01.jpg';
+        console.info("imageUri: " + imageUri);
+        let videoUri = context.filesDir + '/01.mp4';
+        console.info("videoUri: " + imageUri);
         for (let i = 0; i < fileNameList.length; i++) {
           let fileName = fileNameList[i];
           let displayName = fileName.substring(0, fileName.lastIndexOf("."));
@@ -340,7 +343,6 @@ export default function getThumbnailTest() {
         expect(data.height).assertEqual(expectSize.height);
       });
     });
-
 
     /**
      * @tc.name   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_0012

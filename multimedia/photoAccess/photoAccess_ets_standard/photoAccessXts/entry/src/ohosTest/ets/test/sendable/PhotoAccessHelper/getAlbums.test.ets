@@ -15,7 +15,7 @@
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import { describe, it, expect, beforeAll, Level, beforeEach, afterEach, afterAll } from '@ohos/hypium-dynamic';
-import { albumKeys, driveFn, fetchOption, getPermission, LOG_TAG } from '../../common';
+import { albumKeys, driveFn, fetchOption, getPermission, LOG_TAG, checkResourceFile, createResource } from '../../common';
 import { common } from '@kit.AbilityKit';
 import { dataSharePredicates } from '@kit.ArkData';
 import { ErrorCode } from '../../CommonErrorCode';
@@ -172,6 +172,10 @@ export default function sendablePhotoAccessHelperGetAlbumsTest() {
       console.info(TAG, 'beforeAll case.');
       await getPermission();
       await driveFn();
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let fileNameList: Array<string> = [ "01.jpg", "01.mp4" ];
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNameList);
     });
 
     beforeEach(() => {

@@ -19,7 +19,7 @@ import image from '@ohos.multimedia.image';
 import { describe, it, expect, beforeAll, Level } from '@ohos/hypium-dynamic'
 import { common } from '@kit.AbilityKit';
 import fs from '@ohos.file.fs';
-import { getPermission, fetchOption, sleep, driveFn } from '../common';
+import { getPermission, fetchOption, sleep, driveFn, checkResourceFile } from '../common';
 
 const TAG = 'createImageSource';
 const photoKeys = photoAccessHelper.PhotoKeys;
@@ -35,7 +35,35 @@ export default function getThumbnailTestSupp() {
       await getPermission();
       await driveFn();
       await sleep(2000);
+      checkResourceFile(globalContext);
+      await createResource(globalContext, fileNameList);
     });
+
+    let createResource = async (context: common.UIAbilityContext, fileNameList: Array<string>) => {
+      try {
+        let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
+        for (let i = 0; i < fileNameList.length; i++) {
+          let fileName = fileNameList[i];
+          let displayName = fileName.substring(0, fileName.lastIndexOf("."));
+          let fileUri = context.filesDir + '/' + fileName;
+          let ext = fileName.substring(fileName.lastIndexOf(".") + 1);
+          let isVideo = ext === 'mp4' || ext === 'mpeg';
+          let photoType = isVideo ? photoAccessHelper.PhotoType.VIDEO : photoAccessHelper.PhotoType.IMAGE;
+          let resourceType = isVideo
+            ? photoAccessHelper.ResourceType.VIDEO_RESOURCE
+            : photoAccessHelper.ResourceType.IMAGE_RESOURCE;
+          let options: photoAccessHelper.CreateOptions = { title: displayName };
+          let assetChangeRequest = photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(
+            context, photoType, ext, options
+          );
+          assetChangeRequest.addResource(resourceType, fileUri);
+          await phAccessHelper.applyChanges(assetChangeRequest);
+          console.log(`createResource :: applyChange ${fileName} success !`);
+        }
+      } catch (error) {
+        console.log(`createResource :: run failed, message is ${error},code is ${error.code}`);
+      }
+    }
 
     const getThumbnailPromise =
       async (done: Function, testNum: string, fetchOps: photoAccessHelper.FetchOptions, size: image.Size | undefined,
