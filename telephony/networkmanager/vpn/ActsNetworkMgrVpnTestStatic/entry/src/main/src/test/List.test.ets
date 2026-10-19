@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import vpnTest from './Vpn.test';
+import vpnTest from './VpnExtension.test';
 import EmptyTest from './Empty.test';
 
 export default function testsuite() {
