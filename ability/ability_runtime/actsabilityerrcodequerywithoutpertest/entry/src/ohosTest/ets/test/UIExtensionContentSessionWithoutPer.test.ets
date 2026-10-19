@@ -257,6 +257,10 @@ export default function UIExtensionContentSessionWithoutPerTest() {
                 expect(top).assertLarger(0);
                 expect(width).assertLarger(0);
                 expect(height).assertLarger(0);
+                console.log(tag + "subscribeCallBack ACTS_TEST_DESTROY")
+                setTimeout(() => {
+                    commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
+                }, 500);
             }
           }
           commonEventManager.subscribe(subscriber, subscribeCallBack);
