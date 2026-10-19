@@ -332,8 +332,7 @@ export default function decimalRandomTest(): void {
       expect(reparsedFractionDigits).assertLessOrEqual(s4Max);
       let s4Same: boolean = s4Parsed.equals(s4R);
       expect(s4Same).assertTrue();
-
-      // 5. random(10) toFixed(10) has 10 decimal places
+      
       let s5R: Decimal = Decimal.random(10);
       let s5Str: string = s5R.toFixed(10);
       let s5Actual: number = s5Str.length - s5Str.indexOf('.') - 1;
@@ -496,7 +495,6 @@ export default function decimalRandomTest(): void {
       expect(s4Actual).assertEqual(s4Expected);
       Decimal.set({ defaults: true });
 
-      // 5. precision=3 limits default random decimal places
       Decimal.set({ precision: 3 });
       let s5R: Decimal = Decimal.random(10);
       let s5Default: Decimal = Decimal.random();
