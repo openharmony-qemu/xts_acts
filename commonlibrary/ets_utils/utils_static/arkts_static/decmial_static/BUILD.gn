@@ -18,6 +18,7 @@ group("decmial_static") {
   if (is_standard_system) {
     deps = [
       "decimal_standard_static:ActsDecimaStaticTest",
+      "decimal3_standard_static:ActsDecima3StaticTest",
       "decimal001_static:ActsDecimal1StaticTest",
       "decimal002_static:ActsDecimal2StaticTest",
       "decimal003_static:ActsDecimal3StaticTest",
