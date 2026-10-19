@@ -16,7 +16,7 @@ import calendarPickerAttributeModifierTest from './calendarPickerTest/calendarPi
 import calendarPickerStartEndTest from './calendarPickerTest/calendarPickerStartEndTest.test'
 import calendarPickerTextStyleAndEdgeAlignAndHintRadiusTest from './calendarPickerTest/calendarPickerTextStyleAndEdgeAlignAndHintRadius.test'
 import disableDateRangeAndMarkTodayTest from './calendarPickerTest/disableDateRangeAndMarkToday.test'
-import firstDayOfWeekTest from './calendarPickerTest/firstDayOfWeek.test'
+import firstDayOfWeekTest from './calendarPickerTest/FirstDayOfWeek.test'
 
 export default function testsuite() {
     calendarPickerAttributeModifierTest();
