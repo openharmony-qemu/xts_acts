@@ -17,7 +17,7 @@ ohos_js_app_suite("ActsNotificationAnsThreePartyWatchEnhancedTest") {
   test_hap = true
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "actsNotificationAnsThreePartyWatchEnhancedTest"
+  hap_name = "ActsNotificationAnsThreePartyWatchEnhancedTest"
   part_name = "distributed_notification_service"
   subsystem_name = "notification"
 }
