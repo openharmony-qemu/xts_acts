@@ -52,10 +52,12 @@ export default function WebCustomErrorCode() {
         if (data.connState != wifiMg.ConnState.CONNECTED) {
           expect().message('======> WLAN Network error').assertFail();
           done();
+          return;
         }
       } catch (err) {
         throw (err as Error);
         done();
+        return;
       }
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info('enable success');
@@ -151,6 +153,34 @@ export default function WebCustomErrorCode() {
       if (await Utils.waitForExist(() => isReturn, 'testDidFail3Call001_returnCheck', 1, 5000)) {
         done();
       }
+    });
+  });
+
+  describe('WebCustomErrorCodeDidFail3Param', () => {
+    beforeAll(async (done: Function) => {
+      let options: router.RouterOptions = {
+        url: 'testability/pages/WebCustomErrorCode',
+      };
+      try {
+        router.clear();
+        let pages = router.getState();
+        if (!('WebCustomErrorCode' == pages.name)) {
+          await router.pushUrl(options);
+        }
+      } catch (err) {
+        console.error('push WebCustomErrorCode page error: ' + err);
+      }
+      await driver.waitForComponent(ON.id('WebCustomErrorCode'), 10000);
+      done();
+    });
+
+    beforeEach(async (done: Function) => {
+      config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
+        console.info('enable success');
+      }).catch((err: object) => {
+        console.error(`failed to enable, ${err}`);
+      });
+      done();
     });
 
     /**
