@@ -588,15 +588,18 @@ struct webRegisterCustomsComponent {
                             break;
                         }
                                       case 'emitWebResourceRequestConstructor001': {
-                Utils.emitEvent(true, 142793);
+                let request: WebResourceRequest = new WebResourceRequest();
+                Utils.emitEvent(request != null, 142793);
                 break;
               }
                                       case 'emitWebResourceRequestConstructorReturn001': {
-                Utils.emitEvent(true, 142794);
+                let request: WebResourceRequest = new WebResourceRequest();
+                Utils.emitEvent(request instanceof WebResourceRequest, 142794);
                 break;
               }
                                       case 'emitWebResourceRequestClass001': {
-                Utils.emitEvent(true, 142795);
+                let request: WebResourceRequest = new WebResourceRequest();
+                Utils.emitEvent(request instanceof WebResourceRequest, 142795);
                 break;
               }
 

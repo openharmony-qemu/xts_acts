@@ -335,15 +335,18 @@ struct WebViewEnumAndFontLibrary {
               break;
             }
                           case 'emitWebContextMenuParamConstructor001': {
-                Utils.emitEvent(true, 183390);
+                let param: WebContextMenuParam = new WebContextMenuParam();
+                Utils.emitEvent(param != null, 183390);
                 break;
               }
                           case 'emitWebContextMenuParamConstructorReturn001': {
-                Utils.emitEvent(true, 183391);
+                let param: WebContextMenuParam = new WebContextMenuParam();
+                Utils.emitEvent(param instanceof WebContextMenuParam, 183391);
                 break;
               }
                           case 'emitWebContextMenuParamClass001': {
-                Utils.emitEvent(true, 183392);
+                let param: WebContextMenuParam = new WebContextMenuParam();
+                Utils.emitEvent(param instanceof WebContextMenuParam, 183392);
                 break;
               }
 

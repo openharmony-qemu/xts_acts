@@ -362,15 +362,18 @@ struct WebOnPermissionRequest {
                 }
               }
               case 'emitPermissionRequestConstructor001': {
-                Utils.emitEvent(true, 160950);
+                let request: PermissionRequest = new PermissionRequest();
+                Utils.emitEvent(request != null, 160950);
                 break;
               }
               case 'emitPermissionRequestConstructorReturn001': {
-                Utils.emitEvent(true, 160951);
+                let request: PermissionRequest = new PermissionRequest();
+                Utils.emitEvent(request instanceof PermissionRequest, 160951);
                 break;
               }
               case 'emitPermissionRequestClass001': {
-                Utils.emitEvent(true, 160952);
+                let request: PermissionRequest = new PermissionRequest();
+                Utils.emitEvent(request instanceof PermissionRequest, 160952);
                 break;
               }
               case 'emitPermissionRequestGrant004': {

@@ -124,5 +124,42 @@ export default function webResourceError() {
       let component = await driver.findComponent(ON.id("WebResourceErrorButton"));
       await component.click();
     })
+
+    /**
+     * @tc.name   testGetCustomErrorCodeCall001
+     * @tc.number SUB_WEB_WEBRESOURCEERROR_GETCUSTOMERRORCODE_CALL_0100
+     * @tc.desc   test WebResourceError getCustomErrorCode call coverage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testGetCustomErrorCodeCall001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("testGetCustomErrorCodeCall001", 120010)
+      Utils.registerBaseEvent("testGetCustomErrorCodeCall001", 32159, 120025, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      let component = await driver.findComponent(ON.id("WebResourceErrorButton"));
+      await component.click();
+    })
+
+    /**
+     * @tc.name   testGetCustomErrorCodeReturn001
+     * @tc.number SUB_WEB_WEBRESOURCEERROR_GETCUSTOMERRORCODE_RETURN_0100
+     * @tc.desc   test WebResourceError getCustomErrorCode number return
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testGetCustomErrorCodeReturn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("testGetCustomErrorCodeReturn001", 120010)
+      Utils.registerBaseEvent("testGetCustomErrorCodeReturn001", 32159, 120025, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(typeof backData?.data?.ACTION).assertEqual('number');
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      let component = await driver.findComponent(ON.id("WebResourceErrorButton"));
+      await component.click();
+    })
   })
 }
