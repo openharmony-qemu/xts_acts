@@ -73,6 +73,25 @@ import rationalNumberToString02Test from './util01/RationalNumberToString02Test.
 import rationalNumberValueOf01Test from './util01/RationalNumberValueOf01Test.test';
 import rationalNumberValueOf02Test from './util01/RationalNumberValueOf02Test.test';
 
+import typesIsRegExpTest from './util02/TypesIsRegExpTest.test';
+import typesIsSetIteratorTest from './util02/TypesIsSetIteratorTest.test';
+import typesIsSetTest from './util02/TypesIsSetTest.test';
+import typesIsTypedArrayTest from './util02/TypesIsTypedArrayTest.test';
+import typesIsUint16ArrayTest from './util02/TypesIsUint16ArrayTest.test';
+import typesIsUint32ArrayTest from './util02/TypesIsUint32ArrayTest.test';
+import typesIsUint8ArrayTest from './util02/TypesIsUint8ArrayTest.test';
+import typesIsUint8ClampedArrayTest from './util02/TypesIsUint8ClampedArrayTest.test';
+import typesIsWeakMapTest from './util02/TypesIsWeakMapTest.test';
+import typesIsWeakSetTest from './util02/TypesIsWeakSetTest.test';
+import typesOverviewTest from './util02/TypesOverviewTest.test';
+import utilCallbackWrapperTest from './util02/UtilCallbackWrapperTest.test';
+import utilErrnoToStringTest from './util02/UtilErrnoToStringTest.test';
+import utilFormatTest from './util02/UtilFormatTest.test';
+import utilGenerateRandomBinaryUuidTest from './util02/UtilGenerateRandomBinaryUuidTest.test';
+import utilGenerateRandomUuidTest from './util02/UtilGenerateRandomUuidTest.test';
+import utilGetHashTest from './util02/UtilGetHashTest.test';
+import utilGetMainThreadStackTraceTest from './util02/UtilGetMainThreadStackTraceTest.test';
+
 export default function testsuite(): void {
   UtilTest();
   Util2Test();
@@ -132,4 +151,23 @@ export default function testsuite(): void {
   rationalNumberToString02Test();
   rationalNumberValueOf01Test();
   rationalNumberValueOf02Test();
+
+  typesIsRegExpTest();
+  typesIsSetIteratorTest();
+  typesIsSetTest();
+  typesIsTypedArrayTest();
+  typesIsUint16ArrayTest();
+  typesIsUint32ArrayTest();
+  typesIsUint8ArrayTest();
+  typesIsUint8ClampedArrayTest();
+  typesIsWeakMapTest();
+  typesIsWeakSetTest();
+  typesOverviewTest();
+  utilCallbackWrapperTest();
+  utilErrnoToStringTest();
+  utilFormatTest();
+  utilGenerateRandomBinaryUuidTest();
+  utilGenerateRandomUuidTest();
+  utilGetHashTest();
+  utilGetMainThreadStackTraceTest();
 }
