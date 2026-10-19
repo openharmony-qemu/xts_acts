@@ -941,7 +941,7 @@ export default function avMusicTemplateEnumTest() {
           expect().assertFail();
         }
       })
-          /**
+    /**
      * @tc.name   SUB_MULTIMEDIA_AVMUSICTEMPLATE_AV_MUSIC_TEMPLATE_ENUM_0300
      * @tc.number SUB_MULTIMEDIA_AVMUSICTEMPLATE_AV_MUSIC_TEMPLATE_ENUM_0300
      * @tc.desc   Testing av music template enum data
