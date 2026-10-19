@@ -296,7 +296,7 @@ export default function api26CertFuncTestUnit() {
     it('SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0110 start');
       expect(certManagerDialog.AbilityType.UKEY_AUTH_EXTENSION_ABILITY).assertEqual(1);
-      expect(bundle.ExtensionAbility.UKEY_AUTH).assertEqual(40);
+      expect(bundle.ExtensionAbilityType.UKEY_AUTH).assertEqual(40);
       done();
     });
 
