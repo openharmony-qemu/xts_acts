@@ -626,10 +626,85 @@ export default function OhHiAppEventSetEventConfig() {
       done();
     });
 
+    /**
+     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_PublishOnNextLaunch_0100
+     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_PublishOnNextLaunch_0100
+     * @tc.desc   test OH_HiAppEvent_SetEventConfig & OH_APP_CRASH_PARAM_COLLECT_MINIDUMP set error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_DFX_DFT_OH_HIPPEVENT_PublishOnNextLaunch_0100',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        for (let i = 1; i < 13; i++){
+          console.error(`====> SUB_DFX_DFT_OH_HIPPEVENT_PublishOnNextLaunch_0100 i : ==  ${i}`);
+          let result: number = hiappevent.OhHiappEventSetEventConfigPublishOnNextLaunch(i);
+          console.error(`====> SUB_DFX_DFT_OH_HIPPEVENT_PublishOnNextLaunch_0100 i : ==  ${i}, i.result =  ${result}`);
+          expect(result).assertEqual(2);
+        }
+        done();
+      } catch (err) {
+        console.error(`====> SUB_DFX_DFT_OH_HIPPEVENT_PublishOnNextLaunch_0100 catch > error code: ${err.code}, error msg: ${err.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
 
 
-test
+    /**
+     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_PublishOnNextLaunch_0200
+     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_PublishOnNextLaunch_0200
+     * @tc.desc   test OH_HiAppEvent_SetConfigItem & OH_APP_CRASH_PARAM_COLLECT_MINIDUMP set error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_DFX_DFT_OH_HIPPEVENT_PublishOnNextLaunch_0200',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        for (let i = 15; i < 17; i++){
+          console.error(`====> SUB_DFX_DFT_OH_HIPPEVENT_PublishOnNextLaunch_0200 i : ==  ${i}`);
+          let result: number = hiappevent.OhHiappEventSetEventConfigPublishOnNextLaunch(i);
+          console.error(`====> SUB_DFX_DFT_OH_HIPPEVENT_PublishOnNextLaunch_0200 i : ==  ${i}, i.result =  ${result}`);
+          expect(result).assertEqual(-1);
+        }
+        done();
+      } catch (err) {
+        console.error(`====> SUB_DFX_DFT_OH_HIPPEVENT_PublishOnNextLaunch_0200 catch > error code: ${err.code}, error msg: ${err.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
 
+
+    /**
+     * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_PublishOnNextLaunch_0300
+     * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_PublishOnNextLaunch_0300
+     * @tc.desc   test OH_HiAppEvent_SetEventConfig & OH_APP_CRASH_PARAM_COLLECT_MINIDUMP set success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_DFX_DFT_OH_HIPPEVENT_PublishOnNextLaunch_0300',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        for (let i = 13; i < 15; i++){
+          console.error(`====> SUB_DFX_DFT_OH_HIPPEVENT_PublishOnNextLaunch_0300 i : ==  ${i}`);
+          let result: number = hiappevent.OhHiappEventSetEventConfigPublishOnNextLaunch(i);
+          console.error(`====> SUB_DFX_DFT_OH_HIPPEVENT_PublishOnNextLaunch_0300 i : ==  ${i}, i.result =  ${result}`);
+          expect(result).assertEqual(0);
+        }
+        for (let i = 17; i < 23; i++){
+          console.error(`====> SUB_DFX_DFT_OH_HIPPEVENT_PublishOnNextLaunch_0300 i : ==  ${i}`);
+          let result: number = hiappevent.OhHiappEventSetEventConfigPublishOnNextLaunch(i);
+          console.error(`====> SUB_DFX_DFT_OH_HIPPEVENT_PublishOnNextLaunch_0300 i : ==  ${i}, i.result =  ${result}`);
+          expect(result).assertEqual(0);
+        }
+        done();
+      } catch (err) {
+        console.error(`====> SUB_DFX_DFT_OH_HIPPEVENT_PublishOnNextLaunch_0300 catch > error code: ${err.code}, error msg: ${err.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
 
   })
 }
