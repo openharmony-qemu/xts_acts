@@ -1386,5 +1386,488 @@ export default function shortSubTest(): void {
       }
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SHORT_SUB_1000
+     * @tc.name testShortSub_merged10
+     * @tc.desc Idempotent / ArithmeticBitwise: covers 10 merged test points for Short.sub, including sign handling, loop accumulation, equality consistency, zero values, and idempotence.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testShortSub_merged10', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let current: Short = new Short(5000 as short);
+        let decrement: Short = new Short(2000 as short);
+        let steps: int = 0;
+        let crossedZero: boolean = false;
+        for (let i: int = 0; i < 5; i++) {
+          let before: int = current.toInt();
+          current = current.sub(decrement);
+          steps++;
+          if (!crossedZero && before > 0 && current.toInt() <= 0) {
+            crossedZero = true;
+          }
+        }
+        expect(crossedZero).assertTrue();
+        expect(steps).assertEqual(5);
+        expect(current.toShort()).assertEqual((-5000) as short);
+      }
+
+      {
+        let leftOperand: Short = new Short(100 as short);
+        let rightOperand: Short = new Short(30 as short);
+        let difference: Short = leftOperand.sub(rightOperand);
+        expect(difference.toShort()).assertEqual(70 as short);
+        expect(difference.toLong()).assertEqual(Long.toLong(70));
+        expect(leftOperand.toShort()).assertEqual(100 as short);
+        expect(rightOperand.toShort()).assertEqual(30 as short);
+      }
+
+      {
+        let firstOperand: Short = new Short(500 as short);
+        let secondOperand: Short = new Short((-300) as short);
+        let thirdOperand: Short = new Short(100 as short);
+        let intermediate: Short = firstOperand.sub(secondOperand);
+        let finalResult: Short = intermediate.sub(thirdOperand);
+        expect(intermediate.toShort()).assertEqual(800 as short);
+        expect(finalResult.toShort()).assertEqual(700 as short);
+        expect(firstOperand.toShort()).assertEqual(500 as short);
+      }
+
+      {
+        let leftValue: short = Short.parseInt('500', 10);
+        let rightValue: short = Short.parseInt('123', 10);
+        let leftOperand: Short = new Short(leftValue);
+        let rightOperand: Short = new Short(rightValue);
+        let difference: Short = leftOperand.sub(rightOperand);
+        expect(difference.toShort()).assertEqual(377 as short);
+        expect(leftOperand.toShort()).assertEqual(500 as short);
+        expect(rightOperand.toShort()).assertEqual(123 as short);
+      }
+
+      {
+        let a: Short = new Short(800 as short);
+        let b: Short = new Short(200 as short);
+        let c: Short = new Short(150 as short);
+        let d: Short = new Short(50 as short);
+        let sumAB: Short = a.add(b);
+        let sumCD: Short = c.add(d);
+        let result: Short = sumAB.sub(sumCD);
+        expect(sumAB.toShort()).assertEqual(1000 as short);
+        expect(sumCD.toShort()).assertEqual(200 as short);
+        expect(result.toShort()).assertEqual(800 as short);
+        let alternative: Short = a.add(b).sub(c).sub(d);
+        expect(alternative.toShort()).assertEqual(800 as short);
+        expect(result.toShort()).assertEqual(alternative.toShort());
+      }
+
+      {
+        let a: Short = new Short(5000 as short);
+        let b: Short = new Short(3000 as short);
+        let baseDiff: Short = a.sub(b);
+        let periods: int[] = [65536, 2 * 65536, (-65536)];
+        for (let i: int = 0; i < periods.length; i++) {
+          let adjustedA: int = a.toInt() + periods[i];
+          let adjustedAShort: Short = new Short(Int.toShort(adjustedA));
+          let periodicDiff: Short = adjustedAShort.sub(b);
+          expect(periodicDiff.toShort()).assertEqual(baseDiff.toShort());
+        }
+        expect(a.toShort()).assertEqual(5000 as short);
+        expect(b.toShort()).assertEqual(3000 as short);
+      }
+
+      {
+        let balanceStack: Short[] = [];
+        let initialBalance: Short = new Short(10000 as short);
+        balanceStack.push(initialBalance);
+  
+        let txTypes: string[] = ['pay', 'refund', 'pay', 'pay'];
+        let txAmounts: short[] = [2000 as short, 500 as short, 3000 as short, 1500 as short];
+  
+        for (let i: int = 0; i < txTypes.length; i++) {
+          let type: string = txTypes[i];
+          let amount: short = txAmounts[i];
+          let prev: Short = balanceStack[balanceStack.length - 1];
+          let newBalance: Short;
+          if (type === 'pay') {
+            newBalance = prev.sub(new Short(amount));
+          } else {
+            newBalance = prev.add(new Short(amount));
+          }
+          balanceStack.push(newBalance);
+        }
+  
+        expect(balanceStack[0].toInt()).assertEqual(10000);
+        expect(balanceStack[1].toInt()).assertEqual(8000);
+        expect(balanceStack[2].toInt()).assertEqual(8500);
+        expect(balanceStack[3].toInt()).assertEqual(5500);
+        expect(balanceStack[4].toInt()).assertEqual(4000);
+  
+        let totalDeducted: int = 2000 - 500 + 3000 + 1500;
+        expect(initialBalance.toInt() - totalDeducted).assertEqual(4000);
+      }
+
+      {
+        let timestamps: Map<string, Short> = new Map<string, Short>();
+        timestamps.set('event_0', new Short(1000 as short));
+        timestamps.set('event_1', new Short(2500 as short));
+        timestamps.set('event_2', new Short(4200 as short));
+        timestamps.set('event_3', new Short(7300 as short));
+  
+        let intervals: Map<string, int> = new Map<string, int>();
+  
+        let prevTs: Short = timestamps.get('event_0') as Short;
+        for (let i: int = 1; i <= 3; i++) {
+          let currTs: Short = timestamps.get('event_' + i) as Short;
+          let interval: Short = currTs.sub(prevTs);
+          intervals.set('event_' + i, interval.toInt());
+          prevTs = currTs;
+        }
+  
+        expect(intervals.get('event_1')).assertEqual(1500);
+        expect(intervals.get('event_2')).assertEqual(1700);
+        expect(intervals.get('event_3')).assertEqual(3100);
+  
+        let firstTs: Short = timestamps.get('event_0') as Short;
+        let lastTs: Short = timestamps.get('event_3') as Short;
+        let totalDuration: long = lastTs.toLong().sub(firstTs.toLong());
+        expect(totalDuration.toInt()).assertEqual(6300);
+      }
+
+      {
+        let scaledA: Short = new Short(1500 as short);
+        let scaledB: Short = new Short(400 as short);
+        let scaleFactor: int = 100;
+        let scaledDiff: Short = scaledA.sub(scaledB);
+        expect(scaledDiff.toShort()).assertEqual(1100 as short);
+        let actualDiff: float = scaledDiff.toFloat() / scaleFactor;
+        expect(actualDiff).assertEqual(11.0);
+        expect(scaledA.toShort()).assertEqual(1500 as short);
+        expect(scaledB.toShort()).assertEqual(400 as short);
+      }
+
+      {
+        let a: Short = new Short(50 as short);
+        let b: Short = new Short(30 as short);
+        let diffAB: Short = a.sub(b);
+        let sumAB: Short = a.add(b);
+        let product: Short = diffAB.mul(sumAB);
+        let aSquared: Short = a.mul(a);
+        let bSquared: Short = b.mul(b);
+        let diffSquares: Short = aSquared.sub(bSquared);
+        expect(diffAB.toShort()).assertEqual(20 as short);
+        expect(sumAB.toShort()).assertEqual(80 as short);
+        expect(product.toShort()).assertEqual(1600 as short);
+        expect(diffSquares.toShort()).assertEqual(1600 as short);
+        expect(product.toShort()).assertEqual(diffSquares.toShort());
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SHORT_SUB_1100
+     * @tc.name testShortSub_merged11
+     * @tc.desc ArithmeticBitwise / SortCompare / BusinessScenario / Other: covers 10 merged test points for Short.sub, including bitwise operations, algebraic properties, comparison and ordering, equality consistency, and business scenarios.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testShortSub_merged11', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let a: Short = new Short(25 as short);
+        let b: Short = new Short(7 as short);
+        let subResult: Short = a.sub(b);
+        expect(subResult.toShort()).assertEqual(18 as short);
+        let bInt: int = b.toInt();
+        let complement: int = (~bInt) + 1;
+        let complementShort: Short = new Short(Int.toShort(complement));
+        let addResult: Short = a.add(complementShort);
+        expect(addResult.toShort()).assertEqual(subResult.toShort());
+        expect(a.toShort()).assertEqual(25 as short);
+        expect(b.toShort()).assertEqual(7 as short);
+      }
+
+      {
+        let x1: Short = new Short(10 as short);
+        let y1: Short = new Short(20 as short);
+        let x2: Short = new Short(100 as short);
+        let y2: Short = new Short(200 as short);
+        let dx: Short = x2.sub(x1);
+        let dy: Short = y2.sub(y1);
+        expect(dx.toShort()).assertEqual(90 as short);
+        expect(dy.toShort()).assertEqual(180 as short);
+        let slopeInt: int = dy.toInt() / dx.toInt();
+        expect(slopeInt).assertEqual(2);
+        let x3: Short = new Short(0 as short);
+        let y3: Short = new Short(100 as short);
+        let x4: Short = new Short(50 as short);
+        let y4: Short = new Short(50 as short);
+        let dx2: Short = x4.sub(x3);
+        let dy2: Short = y4.sub(y3);
+        expect(dx2.toShort()).assertEqual(50 as short);
+        expect(dy2.toShort()).assertEqual((-50) as short);
+      }
+
+      {
+        let values: Short[] = [
+          new Short(5000 as short),
+          new Short(4000 as short),
+          new Short(3000 as short),
+          new Short(3000 as short),
+          new Short(2000 as short)
+        ];
+        for (let i: int = 1; i < values.length; i++) {
+          let diff: Short = values[i].sub(values[i - 1]);
+          expect(diff.toInt() <= 0).assertTrue();
+        }
+        let first: Short = values[0];
+        let last: Short = values[values.length - 1];
+        let totalDrop: Short = first.sub(last);
+        expect(totalDrop.toShort()).assertEqual(3000 as short);
+      }
+
+      {
+        let a: Short = new Short(100 as short);
+        let b: Short = new Short(60 as short);
+        let c: Short = new Short(25 as short);
+        expect(a.sub(c).isGreaterThan(b.sub(c))).assertTrue();
+        let negC: Short = new Short((-25) as short);
+        expect(a.sub(negC).isGreaterThan(b.sub(negC))).assertTrue();
+      }
+
+      {
+        let a: Short = new Short(500 as short);
+        let b: Short = new Short(200 as short);
+        let diff: Short = a.sub(b);
+        let expected: Short = new Short(300 as short);
+        let smaller: Short = new Short(299 as short);
+        let larger: Short = new Short(301 as short);
+        expect(diff.equals(expected)).assertTrue();
+        expect(diff.compareTo(expected)).assertEqual(0);
+        expect(diff.isGreaterThan(smaller)).assertTrue();
+        expect(diff.isLessThan(larger)).assertTrue();
+        expect(diff.isGreaterEqualThan(expected)).assertTrue();
+        expect(diff.isLessEqualThan(expected)).assertTrue();
+        expect(diff.isGreaterEqualThan(smaller)).assertTrue();
+        expect(diff.isLessEqualThan(larger)).assertTrue();
+        expect(a.toShort()).assertEqual(500 as short);
+        expect(b.toShort()).assertEqual(200 as short);
+      }
+
+      {
+        let data: Short[] = [
+          new Short(1000 as short), new Short(800 as short), new Short(1200 as short),
+          new Short(900 as short), new Short(1100 as short)
+        ];
+        let checksum: Short = new Short(0 as short);
+        for (let i: int = 1; i < data.length; i++) {
+          let delta: Short = data[i].sub(data[i - 1]);
+          checksum = checksum.add(delta);
+        }
+        let first: Short = data[0];
+        let last: Short = data[data.length - 1];
+        let directSpan: Short = last.sub(first);
+        expect(checksum.toShort()).assertEqual(directSpan.toShort());
+        expect(directSpan.toShort()).assertEqual(100 as short);
+        for (let i: int = 0; i < data.length; i++) {
+          expect(data[i].isGreaterEqualThan(new Short(0 as short))).assertTrue();
+        }
+      }
+
+      {
+        let window: Short[] = [
+          new Short(10 as short),
+          new Short(20 as short),
+          new Short(30 as short)
+        ];
+        let sum: Short = new Short(0 as short);
+        for (let i: int = 0; i < window.length; i++) {
+          sum = sum.add(window[i]);
+        }
+        expect(sum.toShort()).assertEqual(60 as short);
+        let oldest: Short = window[0];
+        let newest: Short = new Short(40 as short);
+        let newSum: Short = sum.sub(oldest).add(newest);
+        expect(newSum.toShort()).assertEqual(90 as short);
+      }
+
+      {
+        let leftOperand: Short = new Short(50 as short);
+        let rightOperand: Short = new Short(20 as short);
+        let difference: Short = leftOperand.sub(rightOperand);
+        expect(difference !== leftOperand).assertTrue();
+        expect(difference !== rightOperand).assertTrue();
+        expect(difference.toShort()).assertEqual(30 as short);
+        expect(leftOperand.toShort()).assertEqual(50 as short);
+        expect(rightOperand.toShort()).assertEqual(20 as short);
+      }
+
+      {
+        let leftOperand: Short = new Short(2000 as short);
+        let rightOperand: Short = new Short(750 as short);
+        let difference: Short = leftOperand.sub(rightOperand);
+        let shortResult: short = difference.toShort();
+        let intResult: int = difference.toInt();
+        expect(shortResult).assertEqual(1250 as short);
+        expect(intResult).assertEqual(1250);
+        expect(leftOperand.toShort()).assertEqual(2000 as short);
+        expect(rightOperand.toShort()).assertEqual(750 as short);
+      }
+
+      {
+        let balance: Short = new Short(5000 as short);
+        let payment: Short = new Short(7000 as short);
+  
+        let wouldOverdraft: boolean = payment.isGreaterThan(balance);
+        let newBalance: Short = wouldOverdraft ? balance : balance.sub(payment);
+  
+        expect(wouldOverdraft).assertTrue();
+        expect(newBalance.toInt()).assertEqual(5000);
+  
+        let smallPayment: Short = new Short(2000 as short);
+        let afterPayment: Short = balance.sub(smallPayment);
+        expect(afterPayment.toInt()).assertEqual(3000);
+  
+        let refunded: Short = afterPayment.add(smallPayment);
+        expect(refunded.equals(balance)).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SHORT_SUB_1200
+     * @tc.name testShortSub_merged12
+     * @tc.desc Other: covers 7 merged test points for Short.sub, including containers and references, equality consistency, algebraic properties, and loop accumulation.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testShortSub_merged12', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let countdown: Short = new Short(5 as short);
+        let decrement: Short = new Short(1 as short);
+        let zero: Short = new Short(0 as short);
+  
+        let steps: int[] = [];
+        while (countdown.isGreaterThan(zero)) {
+          steps.push(countdown.toInt());
+          countdown = countdown.sub(decrement);
+        }
+        steps.push(countdown.toInt());
+  
+        expect(steps[0]).assertEqual(5);
+        expect(steps[4]).assertEqual(1);
+        expect(steps[5]).assertEqual(0);
+        expect(countdown.equals(zero)).assertTrue();
+      }
+
+      {
+        let signal: Short[] = [
+          new Short(10 as short), new Short(25 as short), new Short(40 as short)
+        ];
+        let reference: Short = new Short(15 as short);
+        let residuals: short[] = [0 as short, 0 as short, 0 as short];
+        for (let i: int = 0; i < signal.length; i++) {
+          let diff: Short = signal[i].sub(reference);
+          residuals[i] = diff.toShort();
+        }
+        expect(residuals[0]).assertEqual((-5) as short);
+        expect(residuals[1]).assertEqual(10 as short);
+        expect(residuals[2]).assertEqual(25 as short);
+        expect(signal[0].toShort()).assertEqual(10 as short);
+        expect(signal[2].toShort()).assertEqual(40 as short);
+      }
+
+      {
+        let a: Short = new Short(100 as short);
+        let b: Short = new Short(30 as short);
+        let c: Short = new Short(10 as short);
+        let leftResult: Short = a.sub(b).add(c);
+        let rightResult: Short = a.add(c).sub(b);
+        expect(leftResult.toShort()).assertEqual(80 as short);
+        expect(rightResult.toShort()).assertEqual(80 as short);
+        expect(leftResult.toShort()).assertEqual(rightResult.toShort());
+        expect(a.toShort()).assertEqual(100 as short);
+        expect(b.toShort()).assertEqual(30 as short);
+        expect(c.toShort()).assertEqual(10 as short);
+      }
+
+      {
+        let a: Short = new Short(1000 as short);
+        let b: Short = new Short(600 as short);
+        let c: Short = new Short(350 as short);
+        let d: Short = new Short(100 as short);
+        let diff1: Short = a.sub(b);
+        let diff2: Short = b.sub(c);
+        let diff3: Short = c.sub(d);
+        let sumDiffs: Short = diff1.add(diff2).add(diff3);
+        let directDiff: Short = a.sub(d);
+        expect(diff1.toShort()).assertEqual(400 as short);
+        expect(diff2.toShort()).assertEqual(250 as short);
+        expect(diff3.toShort()).assertEqual(250 as short);
+        expect(sumDiffs.toShort()).assertEqual(directDiff.toShort());
+        expect(directDiff.toShort()).assertEqual(900 as short);
+      }
+
+      {
+        let a: Short = new Short(200 as short);
+        let b: Short = new Short(50 as short);
+        let c: Short = new Short(3 as short);
+        let d: Short = new Short(100 as short);
+        let step1: Short = a.sub(b);
+        expect(step1.toShort()).assertEqual(150 as short);
+        let step2: Short = step1.mul(c);
+        expect(step2.toShort()).assertEqual(450 as short);
+        let step3: Short = step2.sub(d);
+        expect(step3.toShort()).assertEqual(350 as short);
+        let wideResult: int = (a.toInt() - b.toInt()) * c.toInt() - d.toInt();
+        expect(step3.toInt()).assertEqual(wideResult);
+        expect(a.toShort()).assertEqual(200 as short);
+        expect(b.toShort()).assertEqual(50 as short);
+      }
+
+      {
+        let a: Short = new Short(1000 as short);
+        let b: Short = new Short(300 as short);
+        let c: Short = new Short(500 as short);
+        let d: Short = new Short(200 as short);
+        let leftDiff: Short = a.sub(b);
+        let rightDiff: Short = c.sub(d);
+        let nestedDiff: Short = leftDiff.sub(rightDiff);
+        expect(leftDiff.toShort()).assertEqual(700 as short);
+        expect(rightDiff.toShort()).assertEqual(300 as short);
+        expect(nestedDiff.toShort()).assertEqual(400 as short);
+        let expanded: int = (a.toInt() - b.toInt()) - (c.toInt() - d.toInt());
+        expect(nestedDiff.toInt()).assertEqual(expanded);
+        let a2: Short = new Short(100 as short);
+        let b2: Short = new Short(200 as short);
+        let c2: Short = new Short(50 as short);
+        let d2: Short = new Short(10 as short);
+        let nested2: Short = a2.sub(b2).sub(c2.sub(d2));
+        let expanded2: int = (a2.toInt() - b2.toInt()) - (c2.toInt() - d2.toInt());
+        expect(nested2.toInt()).assertEqual(expanded2);
+      }
+
+      {
+        let accounts: Map<string, Short> = new Map<string, Short>();
+        accounts.set('A', new Short(10000 as short));
+        accounts.set('B', new Short(8000 as short));
+        accounts.set('C', new Short(5000 as short));
+        let debits: Map<string, short> = new Map<string, short>();
+        debits.set('A', 2000 as short);
+        debits.set('B', 1500 as short);
+        debits.set('C', 500 as short);
+        accounts.forEach((balance, key) => {
+          let debit: short = debits.get(key) as short;
+          let newBalance: Short = balance.sub(new Short(debit));
+          accounts.set(key, newBalance);
+        });
+        expect((accounts.get('A') as Short).toInt()).assertEqual(8000);
+        expect((accounts.get('B') as Short).toInt()).assertEqual(6500);
+        expect((accounts.get('C') as Short).toInt()).assertEqual(4500);
+        let totalAfter: int = 0;
+        accounts.forEach((val) => { totalAfter += val.toInt(); });
+        expect(totalAfter).assertEqual(19000);
+      }
+    });
+
   });
 }
