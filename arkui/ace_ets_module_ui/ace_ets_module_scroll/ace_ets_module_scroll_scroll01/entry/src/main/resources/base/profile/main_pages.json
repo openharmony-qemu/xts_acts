@@ -61,6 +61,7 @@
         "MainAbility/pages/FrameNode/scrollerGetFrameNode",
         "MainAbility/pages/scrollDefault/scrollPropertiesTest",
         "MainAbility/pages/ScrollScrollBarHeight",
-        "MainAbility/pages/ScrollBarHeightModifier"
+        "MainAbility/pages/ScrollBarHeightModifier",
+        "MainAbility/pages/Scroll/scrollGetScrollState"
     ]
 }
