@@ -1297,5 +1297,646 @@ export default function shortToStringTest(): void {
       }
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SHORT_TOSTRING_0900
+     * @tc.name testShortToString_merged9
+     * @tc.desc RadixConversion: covers 10 merged test points for Short.toString, including radix conversion, string conversion, zero values, fractions and rounding, and round-trip conversion.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testShortToString_merged9', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let posInstance: Short = new Short(100 as short);
+        let negInstance: Short = new Short((-100) as short);
+        let zeroInstance: Short = new Short(0 as short);
+        expect(posInstance.toString(3)).assertEqual('10201');
+        expect(negInstance.toString(3)).assertEqual('-10201');
+        expect(zeroInstance.toString(3)).assertEqual('0');
+      }
+
+      {
+        let roundTripValues: short[] = [42 as short, (-42) as short, 255 as short, (-255) as short,
+          1000 as short, (-1000) as short, Short.MAX_VALUE, Short.MIN_VALUE];
+        for (let valueIndex: int = 0; valueIndex < roundTripValues.length; valueIndex++) {
+          let instance: Short = new Short(roundTripValues[valueIndex]);
+          for (let currentRadix: int = 2; currentRadix <= 36; currentRadix++) {
+            let serialized: string = instance.toString(currentRadix);
+            expect(Short.parseInt(serialized, currentRadix)).assertEqual(roundTripValues[valueIndex]);
+          }
+        }
+      }
+
+      {
+        let zeroInstance: Short = new Short(0 as short);
+        for (let currentRadix: int = 2; currentRadix <= 36; currentRadix++) {
+          let result: string = zeroInstance.toString(currentRadix);
+          expect(result).assertEqual('0');
+        }
+      }
+
+      {
+        let testNumbers: short[] = [100 as short, 100 as short, 100 as short, 255 as short, 255 as short, 42 as short, 42 as short];
+        let testRadices: int[] = [2, 8, 16, 2, 16, 3, 7];
+        let pairCount: int = 7;
+        for (let pi: int = 0; pi < pairCount; pi++) {
+          let shortValue: short = testNumbers[pi];
+          let radixVal: int = testRadices[pi];
+          let instance: Short = new Short(shortValue);
+          let stringResult: string = instance.toString(radixVal);
+          let parsedBack: int = Int.parseInt(stringResult, radixVal);
+          let expectedInt: int = shortValue;
+          expect(parsedBack).assertEqual(expectedInt);
+        }
+      }
+
+      {
+        let values: short[] = [0 as short, 1 as short, (-1) as short, 42 as short, (-128) as short, 500 as short, (-500) as short, Short.MAX_VALUE, Short.MIN_VALUE];
+        let caseCount: int = 9;
+        for (let caseIndex: int = 0; caseIndex < caseCount; caseIndex++) {
+          let instance: Short = new Short(values[caseIndex]);
+          let noArgResult: String = instance.toString();
+          let radix10Result: string = instance.toString(10);
+          expect(radix10Result).assertEqual(noArgResult);
+        }
+      }
+
+      {
+        let instance: Short = new Short(42 as short);
+        let expectedResults: string[] = [
+          '101010', '1120', '222', '132', '110', '60', '52', '46',
+          '42', '39', '36', '33', '30', '2c', '2a', '28', '26',
+          '24', '22', '20', '1k', '1j', '1i', '1h', '1g', '1f',
+          '1e', '1d', '1c', '1b', '1a', '19', '18', '17', '16'
+        ];
+        for (let currentRadix: int = 2; currentRadix <= 36; currentRadix++) {
+          let actualResult: string = instance.toString(currentRadix);
+          let expectedIndex: int = currentRadix - 2;
+          expect(actualResult).assertEqual(expectedResults[expectedIndex]);
+        }
+      }
+
+      {
+        let instance: Short = new Short((-42) as short);
+        let expectedResults: string[] = [
+          '-101010', '-1120', '-222', '-132', '-110', '-60', '-52', '-46',
+          '-42', '-39', '-36', '-33', '-30', '-2c', '-2a', '-28', '-26',
+          '-24', '-22', '-20', '-1k', '-1j', '-1i', '-1h', '-1g', '-1f',
+          '-1e', '-1d', '-1c', '-1b', '-1a', '-19', '-18', '-17', '-16'
+        ];
+        for (let currentRadix: int = 2; currentRadix <= 36; currentRadix++) {
+          let actualResult: string = instance.toString(currentRadix);
+          let expectedIndex: int = currentRadix - 2;
+          expect(actualResult).assertEqual(expectedResults[expectedIndex]);
+        }
+      }
+
+      {
+        let posOneInstance: Short = new Short(1 as short);
+        let negOneInstance: Short = new Short((-1) as short);
+        for (let currentRadix: int = 2; currentRadix <= 36; currentRadix++) {
+          expect(posOneInstance.toString(currentRadix)).assertEqual('1');
+          expect(negOneInstance.toString(currentRadix)).assertEqual('-1');
+        }
+      }
+
+      {
+        let noteC4: Short = new Short(60 as short);
+        let noteA4: Short = new Short(69 as short);
+        let velocityMax: Short = new Short(127 as short);
+        let ccVolume: Short = new Short(64 as short);
+        let ccPan: Short = new Short(0x7F as short);
+        let bendMin: Short = new Short((-8192) as short);
+        let bendMax: Short = new Short(8191 as short);
+        expect(noteC4.toString()).assertEqual('60');
+        expect(noteA4.toString()).assertEqual('69');
+        expect(velocityMax.toString()).assertEqual('127');
+        expect(ccVolume.toString(16)).assertEqual('40');
+        expect(ccPan.toString(16)).assertEqual('7f');
+        expect(bendMin.toString()).assertEqual('-8192');
+        expect(bendMax.toString()).assertEqual('8191');
+        expect(bendMax.toString(16)).assertEqual('1fff');
+      }
+
+      {
+        let value: Short = new Short(42 as short);
+        let radixTable: Map<int, string> = new Map<int, string>();
+  
+        for (let radix: int = 2; radix <= 36; radix++) {
+          radixTable.set(radix, value.toString(radix));
+        }
+  
+        expect(radixTable.get(2)).assertEqual('101010');
+        expect(radixTable.get(8)).assertEqual('52');
+        expect(radixTable.get(10)).assertEqual('42');
+        expect(radixTable.get(16)).assertEqual('2a');
+        expect(radixTable.get(36)).assertEqual('16');
+  
+        for (let radix: int = 2; radix <= 36; radix++) {
+          let viaShort: string = radixTable.get(radix) as string;
+          let viaLong: string = value.toLong().toString(radix);
+          expect(viaShort).assertEqual(viaLong);
+        }
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SHORT_TOSTRING_1000
+     * @tc.name testShortToString_merged10
+     * @tc.desc RadixConversion: covers 10 merged test points for Short.toString, including radix conversion, string conversion, fractions and rounding, containers and references, and sign handling.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testShortToString_merged10', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let value: Short = new Short(100 as short);
+  
+        let representations: Set<string> = new Set<string>();
+  
+        let radices: int[] = [2, 4, 8, 10, 16, 20, 32, 36];
+        for (let r of radices) {
+          representations.add(value.toString(r));
+        }
+  
+        expect(representations.size).assertEqual(radices.length);
+  
+        for (let r of radices) {
+          let viaShort: string = value.toString(r);
+          let viaInt: string = (100).toString(r);
+          expect(viaShort).assertEqual(viaInt);
+        }
+      }
+
+      {
+        let validChars: string = '0123456789abcdefghijklmnopqrstuvwxyz';
+        let testValues: short[] = [0 as short, 1 as short, (-1) as short, 255 as short, (-32768) as short, 32767 as short];
+        let testRadices: int[] = [2, 11, 20, 30, 36];
+        for (let v of testValues) {
+          let inst: Short = new Short(v);
+          for (let r of testRadices) {
+            let s: string = inst.toString(r);
+            let startIdx: int = s.startsWith('-') ? 1 : 0;
+            for (let i: int = startIdx; i < s.length; i++) {
+              let ch: string = s.substring(i, i + 1);
+              let allowedSet: string = validChars.substring(0, r);
+              expect(allowedSet.indexOf(ch) >= 0).assertTrue();
+            }
+          }
+        }
+      }
+
+      {
+        let negValues: short[] = [(-1) as short, (-16) as short, (-255) as short, (-4096) as short, Short.MIN_VALUE];
+        for (let v of negValues) {
+          let inst: Short = new Short(v);
+          for (let r: int = 2; r <= 36; r += 3) {
+            let s: string = inst.toString(r);
+            expect(s.startsWith('-')).assertTrue();
+            expect(s.indexOf('-', 1)).assertEqual(-1);
+          }
+        }
+      }
+
+      {
+        let inst: Short = new Short(255 as short);
+        let results: string[] = [];
+        let radices: int[] = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 16, 20, 36];
+        let expectedStrs: string[] = ['11111111', '100110', '3333', '2010', '1103', '513', '377', '313', '255', '212', 'ff', 'cf', '73'];
+        for (let r of radices) {
+          results.push(inst.toString(r));
+        }
+        for (let i: int = 0; i < results.length; i++) {
+          expect(results[i]).assertEqual(expectedStrs[i]);
+          for (let j: int = i + 1; j < results.length; j++) {
+            expect(results[i] !== results[j]).assertTrue();
+          }
+        }
+      }
+
+      {
+        let values: short[] = [0 as short, 15 as short, (-15) as short, 127 as short, (-128) as short, 1000 as short, Short.MAX_VALUE, Short.MIN_VALUE];
+        let radices: int[] = [2, 8, 10, 16, 36];
+        for (let v of values) {
+          let inst: Short = new Short(v);
+          for (let r of radices) {
+            expect(inst.toString(r)).assertEqual(inst.toInt().toString(r));
+          }
+        }
+      }
+
+      {
+        let pairs: [short, short][] = [
+          [1 as short, 9 as short], [10 as short, 99 as short], [100 as short, 999 as short],
+          [1000 as short, 9999 as short], [10000 as short, 32767 as short]
+        ];
+        let expectedSmalls: string[] = ['1', '10', '100', '1000', '10000'];
+        let expectedLarges: string[] = ['9', '99', '999', '9999', '32767'];
+        for (let idx: int = 0; idx < pairs.length; idx++) {
+          let pair: [short, short] = pairs[idx];
+          let smallInst: Short = new Short(pair[0]);
+          let largeInst: Short = new Short(pair[1]);
+          expect(smallInst.toString()).assertEqual(expectedSmalls[idx]);
+          expect(largeInst.toString()).assertEqual(expectedLarges[idx]);
+          expect(smallInst.toString().length <= largeInst.toString().length).assertTrue();
+        }
+      }
+
+      {
+        let perm755: Short = new Short(Int.toShort(0x1ED));
+        expect(perm755.toString(8)).assertEqual('755');
+        let perm644: Short = new Short(Int.toShort(0x1A4));
+        expect(perm644.toString(8)).assertEqual('644');
+        let perm700: Short = new Short(Int.toShort(0x1C0));
+        expect(perm700.toString(8)).assertEqual('700');
+        let perm000: Short = new Short(0 as short);
+        expect(perm000.toString(8)).assertEqual('0');
+      }
+
+      {
+        let octets: Short[] = [
+          new Short(0xDE as short), new Short(0xAD as short), new Short(0xBE as short),
+          new Short(0xEF as short), new Short(0x00 as short), new Short(0xFF as short)
+        ];
+        let hexParts: string[] = [];
+        for (let o of octets) {
+          let hex: string = o.toString(16);
+          if (hex.length === 1) {
+            hex = '0' + hex;
+          }
+          hexParts.push(hex);
+        }
+        expect(hexParts[0]).assertEqual('de');
+        expect(hexParts[5]).assertEqual('ff');
+        let mac: string = hexParts.join(':');
+        expect(mac).assertEqual('de:ad:be:ef:00:ff');
+      }
+
+      {
+        let adc10bitMax: Short = new Short(1023 as short);
+        expect(adc10bitMax.toString()).assertEqual('1023');
+        expect(adc10bitMax.toString(16)).assertEqual('3ff');
+        let adc12bitMax: Short = new Short(4095 as short);
+        expect(adc12bitMax.toString()).assertEqual('4095');
+        expect(adc12bitMax.toString(16)).assertEqual('fff');
+        let adcMid: Short = new Short(512 as short);
+        expect(adcMid.toString()).assertEqual('512');
+        expect(adcMid.toString(2)).assertEqual('1000000000');
+        let adcZero: Short = new Short(0 as short);
+        expect(adcZero.toString(10)).assertEqual('0');
+      }
+
+      {
+        let bcdValue: Short = new Short(Int.toShort(0x59));
+        let hex: string = bcdValue.toString(16);
+        expect(hex).assertEqual('59');
+        let highDigit: string = hex.substring(0, 1);
+        let lowDigit: string = hex.substring(1, 2);
+        expect(highDigit).assertEqual('5');
+        expect(lowDigit).assertEqual('9');
+        let bcdZero: Short = new Short(Int.toShort(0x00));
+        expect(bcdZero.toString(16)).assertEqual('0');
+        let bcdMax: Short = new Short(Int.toShort(0x99));
+        expect(bcdMax.toString(16)).assertEqual('99');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SHORT_TOSTRING_1100
+     * @tc.name testShortToString_merged11
+     * @tc.desc RadixConversion: covers 10 merged test points for Short.toString, including radix conversion, string conversion, negative values, round-trip conversion, and business scenarios.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testShortToString_merged11', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let crc0: Short = new Short(0x3A as short);
+        expect(crc0.toString(16)).assertEqual('3a');
+        let crc1: Short = new Short(0xFF as short);
+        expect(crc1.toString(16)).assertEqual('ff');
+        let crc2: Short = new Short(0x00 as short);
+        expect(crc2.toString(16)).assertEqual('0');
+        let crc3: Short = new Short(0xAB as short);
+        expect(crc3.toString(16)).assertEqual('ab');
+        let crc4: Short = new Short(0xC5 as short);
+        expect(crc4.toString(16)).assertEqual('c5');
+      }
+
+      {
+        let reg7bit: Short = new Short(0x50 as short);
+        expect(reg7bit.toString(16)).assertEqual('50');
+        expect(reg7bit.toString(2)).assertEqual('1010000');
+        let reg8bit: Short = new Short(0xFF as short);
+        expect(reg8bit.toString(16)).assertEqual('ff');
+        expect(reg8bit.toString(2)).assertEqual('11111111');
+        let regZero: Short = new Short(0x00 as short);
+        expect(regZero.toString(16)).assertEqual('0');
+        let regMid: Short = new Short(0x7F as short);
+        expect(regMid.toString(16)).assertEqual('7f');
+      }
+
+      {
+        let small: Short = new Short(127 as short);
+        let smallStr: string = small.toInt() < 256 ? small.toString(16) : small.toString();
+        expect(smallStr).assertEqual('7f');
+        let large: Short = new Short(256 as short);
+        let largeStr: string = large.toInt() < 256 ? large.toString(16) : large.toString();
+        expect(largeStr).assertEqual('256');
+        let boundary: Short = new Short(255 as short);
+        let boundaryStr: string = boundary.toInt() < 256 ? boundary.toString(16) : boundary.toString();
+        expect(boundaryStr).assertEqual('ff');
+      }
+
+      {
+        let nums: Short[] = [
+          new Short(3 as short), new Short(30 as short), new Short(300 as short),
+          new Short(3000 as short), new Short(5 as short), new Short(50 as short),
+          new Short((-35) as short), new Short(32767 as short)
+        ];
+        let filtered: Short[] = [];
+        for (let n of nums) {
+          if (n.toString().startsWith('3')) {
+            filtered.push(n);
+          }
+        }
+        expect(filtered.length).assertEqual(5);
+        expect(filtered[0].toInt()).assertEqual(3);
+        expect(filtered[1].toInt()).assertEqual(30);
+        expect(filtered[2].toInt()).assertEqual(300);
+        expect(filtered[3].toInt()).assertEqual(3000);
+        expect(filtered[4].toInt()).assertEqual(32767);
+      }
+
+      {
+        let formatShort = (val: Short): string => {
+          let n: int = val.toInt();
+          if (n < 0) {
+            return `-0x${val.toString(16).substring(1)}`;
+          }
+          if (n < 8) {
+            return `0b${val.toString(2)}`;
+          }
+          if (n < 256) {
+            return `0x${val.toString(16)}`;
+          }
+          return val.toString(10);
+        };
+        expect(formatShort(new Short(5 as short))).assertEqual('0b101');
+        expect(formatShort(new Short(127 as short))).assertEqual('0x7f');
+        expect(formatShort(new Short(1000 as short))).assertEqual('1000');
+        expect(formatShort(new Short((-42) as short))).assertEqual('-0x2a');
+      }
+
+      {
+        let powers: Short[] = [];
+        let val: short = 1 as short;
+        for (let i: int = 0; i < 15; i++) {
+          powers.push(new Short(val));
+          val = Int.toShort(val << 1);
+        }
+        for (let p of powers) {
+          let bin: string = p.toString(2);
+          expect(bin.startsWith('1')).assertTrue();
+          expect(bin.substring(1).indexOf('1')).assertEqual(-1);
+          expect(!p.toString(4).startsWith('-')).assertTrue();
+          let dec: string = p.toString(10);
+          expect(Int.parseInt(dec, 10) > 0).assertTrue();
+        }
+        expect(powers[0].toString(2)).assertEqual('1');
+        expect(powers[1].toString(2)).assertEqual('10');
+        expect(powers[8].toString(2)).assertEqual('100000000');
+        expect(powers[14].toString(2)).assertEqual('100000000000000');
+      }
+
+      {
+        let mismatch: int = 0;
+        for (let i: int = -32768; i <= 32767; i++) {
+          let inst: Short = new Short(Int.toShort(i));
+          let str: string = inst.toString(10);
+          let parsed: short = Short.parseInt(str, 10);
+          if (parsed !== i) {
+            mismatch++;
+          }
+        }
+        expect(mismatch).assertEqual(0);
+      }
+
+      {
+        let red: Short = new Short(255 as short);
+        let green: Short = new Short(128 as short);
+        let blue: Short = new Short(0 as short);
+        let r: string = red.toString(16);
+        let g: string = green.toString(16);
+        let b: string = blue.toString(16);
+        let hexColor: string = '#' + (r.length == 1 ? '0' + r : r) + (g.length == 1 ? '0' + g : g) + (b.length == 1 ? '0' + b : b);
+        expect(hexColor.length).assertEqual(7);
+        expect(hexColor).assertEqual('#ff8000');
+      }
+
+      {
+        let negVal: Short = new Short((-42) as short);
+        let radices: int[] = [2, 8, 10, 16, 36];
+        for (let r of radices) {
+          expect(negVal.toString(r)).assertEqual(negVal.toLong().toString(r));
+        }
+        let minVal: Short = new Short(Short.MIN_VALUE);
+        expect(minVal.toString(16)).assertEqual(minVal.toLong().toString(16));
+      }
+
+      {
+        let negVal: Short = new Short((-42) as short);
+        let parsed: short = Short.parseInt(negVal.toString(3), 3);
+        expect(new Short(parsed).equals(negVal)).assertTrue();
+        let minVal: Short = new Short(Short.MIN_VALUE);
+        let parsed2: short = Short.parseInt(minVal.toString(16), 16);
+        expect(new Short(parsed2).equals(minVal)).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SHORT_TOSTRING_1200
+     * @tc.name testShortToString_merged12
+     * @tc.desc Idempotent / ArithmeticBitwise: covers 10 merged test points for Short.toString, including string conversion, radix conversion, idempotence, type conversion, and business scenarios.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testShortToString_merged12', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let inputValue: short = 999 as short;
+        let beforeLoopResult: string = Short.toString(inputValue);
+        expect(beforeLoopResult).assertEqual('999');
+        let maxIterations: int = 5;
+        for (let iterationIndex: int = 0; iterationIndex < maxIterations; iterationIndex++) {
+          let currentLoopResult: string = Short.toString(inputValue);
+          expect(currentLoopResult).assertEqual('999');
+          expect(currentLoopResult).assertEqual(beforeLoopResult);
+        }
+        let afterLoopResult: string = Short.toString(inputValue);
+        expect(afterLoopResult).assertEqual('999');
+        expect(afterLoopResult).assertEqual(beforeLoopResult);
+      }
+
+      {
+        let hexValues: short[] = [15 as short, 255 as short, 4095 as short];
+        let hexStrings: string[] = ['f', 'ff', 'fff'];
+        for (let caseIndex: int = 0; caseIndex < hexValues.length; caseIndex++) {
+          expect(new Short(hexValues[caseIndex]).toString(16)).assertEqual(hexStrings[caseIndex]);
+        }
+        let octalValues: short[] = [7 as short, 63 as short, 511 as short, 4095 as short];
+        let octalStrings: string[] = ['7', '77', '777', '7777'];
+        for (let caseIndex: int = 0; caseIndex < octalValues.length; caseIndex++) {
+          expect(new Short(octalValues[caseIndex]).toString(8)).assertEqual(octalStrings[caseIndex]);
+        }
+      }
+
+      {
+        let positiveInstance: Short = new Short(100 as short);
+        let negativeInstance: Short = new Short((-200) as short);
+        let positiveFirstResult: String = positiveInstance.toString();
+        let positiveSecondResult: String = positiveInstance.toString();
+        let positiveThirdResult: String = positiveInstance.toString();
+        let negativeFirstResult: String = negativeInstance.toString();
+        let negativeSecondResult: String = negativeInstance.toString();
+        let negativeThirdResult: String = negativeInstance.toString();
+        expect(positiveFirstResult).assertEqual('100');
+        expect(positiveSecondResult).assertEqual('100');
+        expect(positiveThirdResult).assertEqual('100');
+        expect(negativeFirstResult).assertEqual('-200');
+        expect(negativeSecondResult).assertEqual('-200');
+        expect(negativeThirdResult).assertEqual('-200');
+        expect(positiveSecondResult).assertEqual(positiveFirstResult);
+        expect(positiveThirdResult).assertEqual(positiveSecondResult);
+        expect(negativeSecondResult).assertEqual(negativeFirstResult);
+        expect(negativeThirdResult).assertEqual(negativeSecondResult);
+      }
+
+      {
+        let firstInstance: Short = new Short(321 as short);
+        let secondInstance: Short = new Short(321 as short);
+        let firstInitialResult: String = firstInstance.toString();
+        let firstRepeatedResult: String = firstInstance.toString();
+        let secondResult: String = secondInstance.toString();
+        expect(firstInitialResult).assertEqual('321');
+        expect(firstRepeatedResult).assertEqual('321');
+        expect(secondResult).assertEqual('321');
+        expect(firstRepeatedResult).assertEqual(firstInitialResult);
+        expect(secondResult).assertEqual(firstInitialResult);
+      }
+
+      {
+        let values: short[] = [1200 as short, 1000 as short, 255 as short, 4095 as short, 123 as short, Short.MAX_VALUE];
+        let hexStrings: string[] = ['4b0', '3e8', 'ff', 'fff', '7b', '7fff'];
+        for (let caseIndex: int = 0; caseIndex < values.length; caseIndex++) {
+          let instance: Short = new Short(values[caseIndex]);
+          let hexString: string = instance.toString(16);
+          expect(hexString).assertEqual(hexStrings[caseIndex]);
+          let digitSum: int = 0;
+          for (let charIndex: int = 0; charIndex < hexString.length; charIndex++) {
+            digitSum += Int.parseInt(hexString.substring(charIndex, charIndex + 1), 16);
+          }
+          expect(digitSum % 15).assertEqual(instance.toInt() % 15);
+        }
+      }
+
+      {
+        let radixInstance: Short = new Short(42 as short);
+        let firstBinaryResult: string = radixInstance.toString(2);
+        let secondBinaryResult: string = radixInstance.toString(2);
+        let thirdBinaryResult: string = radixInstance.toString(2);
+        expect(firstBinaryResult).assertEqual('101010');
+        expect(secondBinaryResult).assertEqual('101010');
+        expect(thirdBinaryResult).assertEqual('101010');
+        expect(secondBinaryResult).assertEqual(firstBinaryResult);
+        expect(thirdBinaryResult).assertEqual(secondBinaryResult);
+      }
+
+      {
+        let radixInstance: Short = new Short(42 as short);
+        let storedValueBeforeCalls: short = radixInstance.toShort();
+        let decimalResult: string = radixInstance.toString(10);
+        let hexResult: string = radixInstance.toString(16);
+        let binaryResult: string = radixInstance.toString(2);
+        let octalResult: string = radixInstance.toString(8);
+        let base36Result: string = radixInstance.toString(36);
+        let storedValueAfterCalls: short = radixInstance.toShort();
+        expect(decimalResult).assertEqual('42');
+        expect(hexResult).assertEqual('2a');
+        expect(binaryResult).assertEqual('101010');
+        expect(octalResult).assertEqual('52');
+        expect(base36Result).assertEqual('16');
+        expect(storedValueBeforeCalls).assertEqual(storedValueAfterCalls);
+        expect(storedValueAfterCalls).assertEqual(42 as short);
+      }
+
+      {
+        let inst: Short = new Short(Short.MAX_VALUE);
+        let before: int = inst.toInt();
+        for (let r: int = 2; r <= 36; r++) {
+          inst.toString(r);
+          expect(inst.toInt()).assertEqual(before);
+        }
+  
+        let negInst: Short = new Short(Short.MIN_VALUE);
+        let negBefore: int = negInst.toInt();
+        for (let r: int = 2; r <= 36; r++) {
+          negInst.toString(r);
+          expect(negInst.toInt()).assertEqual(negBefore);
+        }
+      }
+
+      {
+        let viaLiteral: Short = new Short(100 as short);
+        let viaIntToShort: Short = new Short(Int.toShort(100));
+        let viaParseInt: Short = new Short(Int.toShort(Short.parseInt('100', 10)));
+        expect(viaLiteral.toString()).assertEqual(viaIntToShort.toString());
+        expect(viaLiteral.toString()).assertEqual(viaParseInt.toString());
+        expect(viaLiteral.toString(16)).assertEqual(viaIntToShort.toString(16));
+        expect(viaLiteral.toString(2)).assertEqual(viaParseInt.toString(2));
+        expect(viaLiteral.toString(8)).assertEqual(viaIntToShort.toString(8));
+      }
+
+      {
+        let major: Short = new Short(2 as short);
+        let minor: Short = new Short(4 as short);
+        let patch: Short = new Short(99 as short);
+        let version: string = `${major.toString()}.${minor.toString()}.${patch.toString()}`;
+        expect(version).assertEqual('2.4.99');
+        let major0: Short = new Short(0 as short);
+        let minor0: Short = new Short(1 as short);
+        let patch0: Short = new Short(0 as short);
+        let version2: string = `${major0.toString()}.${minor0.toString()}.${patch0.toString()}`;
+        expect(version2).assertEqual('0.1.0');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SHORT_TOSTRING_1300
+     * @tc.name testShortToString_merged13
+     * @tc.desc BusinessScenario: covers 1 merged test points for Short.toString, including fractions and rounding.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testShortToString_merged13', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let httpPort: Short = new Short(80 as short);
+        expect(httpPort.toString()).assertEqual('80');
+        let httpsPort: Short = new Short(443 as short);
+        expect(httpsPort.toString()).assertEqual('443');
+        let altPort: Short = new Short(8080 as short);
+        expect(altPort.toString()).assertEqual('8080');
+        let devPort: Short = new Short(3000 as short);
+        expect(devPort.toString()).assertEqual('3000');
+        let ports: Short[] = [httpPort, httpsPort, altPort, devPort];
+        for (let p of ports) {
+          let portNum: int = Int.parseInt(p.toString(), 10);
+          expect(portNum > 0).assertTrue();
+          expect(portNum <= 65535).assertTrue();
+        }
+      }
+    });
+
   });
 }
