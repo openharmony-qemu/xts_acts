@@ -22,11 +22,11 @@ import { SendableContextObject, NormalContextObject } from '../common/SendableCo
 import common from '@ohos.app.ability.common';
 import taskpool from '@ohos.taskpool';
 
-let abilityStageWorker: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/Worker.ets');
-let worker1: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/Worker1.ets');
+let abilityStageWorker: worker.ThreadWorker = new worker.ThreadWorker('../workers/Worker.ets');
+let worker1: worker.ThreadWorker = new worker.ThreadWorker('../workers/Worker1.ets');
 
 @Concurrent
-function printNormalContext(context: common.Context): boolean {
+function printNormalContext(context: common.UIAbilityContext): boolean {
   hilog.info(0x0000, 'testTag', 'taskpool print: %{public}s ', JSON.stringify(context));
   return true;
 }
@@ -49,15 +49,18 @@ export default class MyAbilityStage extends AbilityStage {
       let context = this.context;
       hilog.info(0x0000, 'testTag', 'AbilityStage context: %{public}s', JSON.stringify(context));
       // 基类
-      hilog.info(0x0000, 'testTag', 'AbilityStage context.resourceManager: %{public}s', JSON.stringify(context.resourceManager));
-      hilog.info(0x0000, 'testTag', 'AbilityStage context.applicationInfo: %{public}s', JSON.stringify(context.applicationInfo));
+      hilog.info(0x0000, 'testTag', 'AbilityStage context.resourceManager: %{public}s',
+        JSON.stringify(context.resourceManager));
+      hilog.info(0x0000, 'testTag', 'AbilityStage context.applicationInfo: %{public}s',
+        JSON.stringify(context.applicationInfo));
       hilog.info(0x0000, 'testTag', 'AbilityStage context.cacheDir: %{public}s', context.cacheDir);
       hilog.info(0x0000, 'testTag', 'AbilityStage context.tempDir: %{public}s', context.tempDir);
       hilog.info(0x0000, 'testTag', 'AbilityStage context.filesDir: %{public}s', context.filesDir);
       hilog.info(0x0000, 'testTag', 'AbilityStage context.databaseDir: %{public}s', context.databaseDir);
       hilog.info(0x0000, 'testTag', 'AbilityStage context.preferencesDir: %{public}s', context.preferencesDir);
       hilog.info(0x0000, 'testTag', 'AbilityStage context.bundleCodeDir: %{public}s', context.bundleCodeDir);
-      hilog.info(0x0000, 'testTag', 'AbilityStage context.distributedFilesDir: %{public}s', context.distributedFilesDir);
+      hilog.info(0x0000, 'testTag', 'AbilityStage context.distributedFilesDir: %{public}s',
+        context.distributedFilesDir);
       hilog.info(0x0000, 'testTag', 'AbilityStage context.resourceDir: %{public}s', context.resourceDir);
       hilog.info(0x0000, 'testTag', 'AbilityStage context.area: %{public}d', context.area);
       // eventhub
@@ -65,7 +68,8 @@ export default class MyAbilityStage extends AbilityStage {
       // other func
       // 独有的属性
       // currentHapModuleInfo
-      hilog.info(0x0000, 'testTag', 'AbilityStage context.currentHapModuleInfo: %{public}s', JSON.stringify(context.currentHapModuleInfo));
+      hilog.info(0x0000, 'testTag', 'AbilityStage context.currentHapModuleInfo: %{public}s',
+        JSON.stringify(context.currentHapModuleInfo));
       // config
       hilog.info(0x0000, 'testTag', 'AbilityStage context.config: %{public}s', JSON.stringify(context.config));
       let sendableContext: sendableContextManager.SendableContext = sendableContextManager.convertFromContext(context);
@@ -102,7 +106,8 @@ export default class MyAbilityStage extends AbilityStage {
       hilog.info(0x0000, 'testTag', 'AbilityStage key: %{public}s, value: %{public}s', key, value);
       AppStorage.setOrCreate(key, value);
 
-      let object: NormalContextObject = new NormalContextObject(contextAfter, 'AbilityStageContext');
+      let object: NormalContextObject = new NormalContextObject(contextAfter as common.UIAbilityContext,
+        'AbilityStageContext');
       hilog.info(0x0000, 'testTag', '%{public}s', 'AbilityStage post message');
       worker1.postMessage(object);
     } catch (error) {
