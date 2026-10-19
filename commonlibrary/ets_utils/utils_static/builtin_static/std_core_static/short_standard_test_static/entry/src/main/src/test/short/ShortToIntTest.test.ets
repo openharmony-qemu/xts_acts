@@ -1465,5 +1465,683 @@ export default function shortToIntTest(): void {
       }
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SHORT_TOINT_1100
+     * @tc.name testShortToInt_merged11
+     * @tc.desc CrossTypeRoundTrip: covers 10 merged test points for Short.toInt, including type conversion, equality consistency, division and modulo, and algebraic properties.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testShortToInt_merged11', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let shortVal: short = 0x0001 as short;
+        let intVal: int = Short.toInt(shortVal);
+        let clz: int = 0;
+        let temp: int = intVal;
+        let bitCount: int = 16;
+        for (let i: int = bitCount - 1; i >= 0; i--) {
+          if (((temp >> i) & 1) === 0) {
+            clz++;
+          } else {
+            break;
+          }
+        }
+        expect(clz).assertEqual(15);
+      }
+
+      {
+        let a: short = 100 as short;
+        let b: short = 200 as short;
+        let intA: int = Short.toInt(a);
+        let intB: int = Short.toInt(b);
+        let product: int = intA * intB;
+        expect(product).assertEqual(20000);
+      }
+
+      {
+        let a: short = 15000 as short;
+        let b: short = 17767 as short;
+        let intA: int = Short.toInt(a);
+        let intB: int = Short.toInt(b);
+        let sum: int = intA + intB;
+        expect(sum).assertEqual(32767);
+      }
+
+      {
+        let a: short = 100 as short;
+        let b: short = (-50) as short;
+        let intA: int = Short.toInt(a);
+        let intB: int = Short.toInt(b);
+        let absDiff: int = Math.abs(intA - intB);
+        expect(absDiff).assertEqual(150);
+      }
+
+      {
+        let a: short = 25 as short;
+        let b: short = 16 as short;
+        let intA: int = Short.toInt(a);
+        let intB: int = Short.toInt(b);
+        let diffSquares: int = intA * intA - intB * intB;
+        let factored: int = (intA - intB) * (intA + intB);
+        expect(diffSquares).assertEqual(369);
+        expect(factored).assertEqual(369);
+        expect(diffSquares).assertEqual(factored);
+        let c: short = 13 as short;
+        let d: short = 7 as short;
+        let intC: int = Short.toInt(c);
+        let intD: int = Short.toInt(d);
+        expect(intC * intC - intD * intD).assertEqual((intC - intD) * (intC + intD));
+        expect(intC * intC - intD * intD).assertEqual(120);
+      }
+
+      {
+        let a: short = 12 as short;
+        let b: short = 18 as short;
+        let intA: int = Short.toInt(a);
+        let intB: int = Short.toInt(b);
+        let x: int = intA;
+        let y: int = intB;
+        while (y !== 0) {
+          let t: int = y;
+          y = x % y;
+          x = t;
+        }
+        let gcd: int = x;
+        let lcm: int = (intA * intB) / gcd;
+        expect(lcm).assertEqual(36);
+      }
+
+      {
+        let n: short = 10 as short;
+        let intN: int = Short.toInt(n);
+        let factorial: int = 1;
+        for (let i: int = 2; i <= intN; i++) {
+          factorial = factorial * i;
+        }
+        expect(factorial).assertEqual(3628800);
+      }
+
+      {
+        let n: short = 10 as short;
+        let k: short = 3 as short;
+        let intN: int = Short.toInt(n);
+        let intK: int = Short.toInt(k);
+        let result: int = 1;
+        for (let i: int = 1; i <= intK; i++) {
+          result = result * (intN - intK + i) / i;
+        }
+        expect(result).assertEqual(120);
+      }
+
+      {
+        let a: short = 5 as short;
+        let b: short = 3 as short;
+        let m: short = 13 as short;
+        let intA: int = Short.toInt(a);
+        let intB: int = Short.toInt(b);
+        let intM: int = Short.toInt(m);
+        let result: int = 1;
+        let base: int = intA % intM;
+        let exp: int = intB;
+        while (exp > 0) {
+          if ((exp & 1) === 1) {
+            result = (result * base) % intM;
+          }
+          exp = exp >> 1;
+          base = (base * base) % intM;
+        }
+        expect(result).assertEqual(8);
+      }
+
+      {
+        let primeShort: short = 97 as short;
+        let intPrime: int = Short.toInt(primeShort);
+        let isPrime: boolean = true;
+        if (intPrime < 2) {
+          isPrime = false;
+        }
+        for (let i: int = 2; i * i <= intPrime; i++) {
+          if (intPrime % i === 0) {
+            isPrime = false;
+          }
+        }
+        expect(isPrime).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SHORT_TOINT_1200
+     * @tc.name testShortToInt_merged12
+     * @tc.desc CrossTypeRoundTrip: covers 10 merged test points for Short.toInt, including type conversion, business scenarios, containers and references, opposite values, and division and modulo.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testShortToInt_merged12', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let a: short = 3 as short;
+        let m: short = 11 as short;
+        let intA: int = Short.toInt(a);
+        let intM: int = Short.toInt(m);
+        let m0: int = intM;
+        let x0: int = 0;
+        let x1: int = 1;
+        let aVal: int = intA;
+        while (aVal > 1) {
+          let q: int = aVal / m0;
+          let t: int = m0;
+          m0 = aVal % m0;
+          aVal = t;
+          t = x0;
+          x0 = x1 - q * x0;
+          x1 = t;
+        }
+        let inverse: int = x1;
+        expect(inverse >= 0).assertTrue();
+        expect((intA * inverse) % intM).assertEqual(1 % intM);
+      }
+
+      {
+        let indexShort: short = 5 as short;
+        let array: string[] = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
+        let intIndex: int = Short.toInt(indexShort);
+        expect(intIndex >= 0 && intIndex < array.length).assertTrue();
+        expect(array[intIndex]).assertEqual('f');
+      }
+
+      {
+        let key: short = 12345 as short;
+        let tableSize: int = 16;
+        let intKey: int = Short.toInt(key);
+        let bucket: int = intKey % tableSize;
+        expect(bucket >= 0 && bucket < tableSize).assertTrue();
+        expect(bucket).assertEqual(12345 % 16);
+      }
+
+      {
+        let nodeId: short = 3 as short;
+        let matrix: int[][] = [
+          [0, 1, 0, 1],
+          [1, 0, 1, 0],
+          [0, 1, 0, 1],
+          [1, 0, 1, 0]
+        ];
+        let intNodeId: int = Short.toInt(nodeId);
+        expect(matrix[intNodeId][1]).assertEqual(0);
+        expect(matrix[intNodeId][0]).assertEqual(1);
+      }
+
+      {
+        let state: short = 7 as short;
+        let memo: int[] = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1];
+        let intState: int = Short.toInt(state);
+        expect(intState).assertEqual(7);
+        memo[intState] = 42;
+        expect(memo[intState]).assertEqual(42);
+        expect(memo[6]).assertEqual(-1);
+        expect(memo[8]).assertEqual(-1);
+      }
+
+      {
+        let priorities: short[] = [5 as short, 1 as short, 10 as short, 3 as short];
+        let intPriorities: int[] = Array.create<int>(priorities.length, 0);
+        for (let i: int = 0; i < priorities.length; i++) {
+          intPriorities[i] = Short.toInt(priorities[i]);
+        }
+        for (let i: int = 0; i < intPriorities.length - 1; i++) {
+          for (let j: int = 0; j < intPriorities.length - i - 1; j++) {
+            if (intPriorities[j] > intPriorities[j + 1]) {
+              let tmp: int = intPriorities[j];
+              intPriorities[j] = intPriorities[j + 1];
+              intPriorities[j + 1] = tmp;
+            }
+          }
+        }
+        expect(intPriorities[0]).assertEqual(1);
+        expect(intPriorities[3]).assertEqual(10);
+      }
+
+      {
+        let runCount: short = 255 as short;
+        let intCount: int = Short.toInt(runCount);
+        let decoded: int[] = Array.create<int>(intCount, 0);
+        for (let i: int = 0; i < intCount; i++) {
+          decoded[i] = 1;
+        }
+        expect(decoded.length).assertEqual(255);
+        expect(decoded[0]).assertEqual(1);
+        expect(decoded[254]).assertEqual(1);
+      }
+
+      {
+        let freq: short = 150 as short;
+        let intFreq: int = Short.toInt(freq);
+        let freqTable: int[] = [intFreq, intFreq + 10, intFreq - 10];
+        expect(freqTable[0]).assertEqual(150);
+        expect(freqTable[1]).assertEqual(160);
+        expect(freqTable[2]).assertEqual(140);
+      }
+
+      {
+        let code: short = 256 as short;
+        let intCode: int = Short.toInt(code);
+        let dict: string[] = Array.create<string>(intCode + 1, '');
+        for (let i: int = 0; i <= intCode; i++) {
+          dict[i] = 'entry_' + i;
+        }
+        expect(dict[intCode]).assertEqual('entry_256');
+        expect(dict[0]).assertEqual('entry_0');
+      }
+
+      {
+        let palette: string[] = [
+          'black', 'white', 'red', 'green', 'blue',
+          'yellow', 'cyan', 'magenta', 'gray', 'orange',
+          'pink', 'purple', 'brown', 'lime', 'navy', 'teal'
+        ];
+        let colorCodes: short[] = [15 as short, 0 as short, 8 as short];
+        let expectedColors: string[] = ['teal', 'black', 'gray'];
+        for (let i: int = 0; i < colorCodes.length; i++) {
+          let idx: int = Short.toInt(colorCodes[i]);
+          expect(idx >= 0 && idx < palette.length).assertTrue();
+          expect(palette[idx]).assertEqual(expectedColors[i]);
+        }
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SHORT_TOINT_1300
+     * @tc.name testShortToInt_merged13
+     * @tc.desc CrossTypeRoundTrip: covers 10 merged test points for Short.toInt, including type conversion, business scenarios, comparison and ordering, and containers and references.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testShortToInt_merged13', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let state: short = 1 as short;
+        let intState: int = Short.toInt(state);
+        let transitions: int[][] = [
+          [0, 1, 2],
+          [1, 0, 3],
+          [2, 3, 0],
+          [3, 2, 1]
+        ];
+        let nextState: int = transitions[intState][0];
+        expect(nextState).assertEqual(1);
+      }
+
+      {
+        let row: short = 5 as short;
+        let col: short = 7 as short;
+        let width: int = 16;
+        let intRow: int = Short.toInt(row);
+        let intCol: int = Short.toInt(col);
+        let pixelIndex: int = intRow * width + intCol;
+        expect(pixelIndex).assertEqual(5 * 16 + 7);
+      }
+
+      {
+        let keyA: short = 500 as short;
+        let keyB: short = 300 as short;
+        let intKeyA: int = Short.toInt(keyA);
+        let intKeyB: int = Short.toInt(keyB);
+        expect(intKeyA > intKeyB).assertTrue();
+        expect(intKeyA - intKeyB).assertEqual(200);
+      }
+
+      {
+        let bucket: short = 4 as short;
+        let intBucket: int = Short.toInt(bucket);
+        let histogram: int[] = [10, 25, 30, 15, 20, 8, 5];
+        histogram[intBucket] = histogram[intBucket] + 1;
+        expect(histogram[intBucket]).assertEqual(21);
+      }
+
+      {
+        let pixel: short = 100 as short;
+        let kernelWeight: int = 3;
+        let intPixel: int = Short.toInt(pixel);
+        let convResult: int = intPixel * kernelWeight;
+        expect(convResult).assertEqual(300);
+      }
+
+      {
+        let tickSamples: short[] = [5000 as short, 250 as short];
+        let expectedMs: int[] = [50000, 2500];
+        let msPerTick: int = 10;
+        for (let i: int = 0; i < tickSamples.length; i++) {
+          expect(Short.toInt(tickSamples[i]) * msPerTick).assertEqual(expectedMs[i]);
+        }
+      }
+
+      {
+        let frameIndex: short = 240 as short;
+        let fps: int = 30;
+        let intFrame: int = Short.toInt(frameIndex);
+        let positionMs: int = (intFrame * 1000) / fps;
+        expect(positionMs).assertEqual(8000);
+      }
+
+      {
+        let line: short = 42 as short;
+        let col: short = 7 as short;
+        let intLine: int = Short.toInt(line);
+        let intCol: int = Short.toInt(col);
+        let lexerPos: int = intLine * 1000 + intCol;
+        expect(lexerPos).assertEqual(42007);
+      }
+
+      {
+        expect(new Short(Short.BIT_SIZE).toInt()).assertEqual(16);
+        expect(new Short(Short.BYTE_SIZE).toInt()).assertEqual(2);
+      }
+
+      {
+        let pA: Short = new Short(500);
+        let lA: Short = new Short(1);
+        let pB: Short = new Short(250);
+        let lB: Short = new Short(2);
+        let pC: Short = new Short(125);
+        let lC: Short = new Short(3);
+        let pD: Short = new Short(125);
+        let lD: Short = new Short(3);
+        let expectedL: int = pA.toInt() * lA.toInt() +
+          pB.toInt() * lB.toInt() +
+          pC.toInt() * lC.toInt() +
+          pD.toInt() * lD.toInt();
+        expect(expectedL).assertEqual(1750);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SHORT_TOINT_1400
+     * @tc.name testShortToInt_merged14
+     * @tc.desc CrossTypeRoundTrip / RadixConversion / Idempotent: covers 10 merged test points for Short.toInt, including type conversion, radix conversion, idempotence, positive values, and round-trip conversion.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testShortToInt_merged14', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let failCount: int = 0;
+        let step: int = 1024;
+        for (let v: int = 0; v <= 32767; v += step) {
+          let sv: short = Int.toShort(v);
+          let intVal: int = Short.toInt(sv);
+          let restored: short = Int.toShort(intVal);
+          if (Short.toInt(restored) !== v) {
+            failCount++;
+          }
+        }
+        expect(failCount).assertEqual(0);
+      }
+
+      {
+        let failCount: int = 0;
+        let step: int = 1024;
+        for (let v: int = -1; v >= -32768; v -= step) {
+          let sv: short = Int.toShort(v);
+          let intVal: int = Short.toInt(sv);
+          expect(intVal).assertEqual(v);
+          let restored: short = Int.toShort(intVal);
+          if (Short.toInt(restored) !== v) {
+            failCount++;
+          }
+        }
+        expect(failCount).assertEqual(0);
+      }
+
+      {
+        let hexValue: int = 0x7FFF;
+        let shortValue: short = Int.toShort(hexValue);
+        let actualResult: int = Short.toInt(shortValue);
+        expect(actualResult).assertEqual(32767);
+      }
+
+      {
+        let decVal: int = Int.parseInt("255", 10);
+        let hexVal: int = Int.parseInt("FF", 16);
+        let binVal: int = Int.parseInt("11111111", 2);
+        let octVal: int = Int.parseInt("377", 8);
+        let shortDec: short = Int.toShort(decVal);
+        let shortHex: short = Int.toShort(hexVal);
+        let shortBin: short = Int.toShort(binVal);
+        let shortOct: short = Int.toShort(octVal);
+        let decResult: int = Short.toInt(shortDec);
+        expect(Short.toInt(shortHex)).assertEqual(decResult);
+        expect(Short.toInt(shortBin)).assertEqual(decResult);
+        expect(Short.toInt(shortOct)).assertEqual(decResult);
+      }
+
+      {
+        let hexStrings: string[] = ["0", "1", "FF", "7FFF", "3FFF"];
+        let expectedVals: int[] = [0, 1, 255, 32767, 16383];
+        for (let i: int = 0; i < hexStrings.length; i++) {
+          let parsed: int = Int.parseInt(hexStrings[i], 16);
+          let shortVal: short = Int.toShort(parsed);
+          let instance: Short = new Short(shortVal);
+          expect(instance.toInt()).assertEqual(expectedVals[i]);
+        }
+      }
+
+      {
+        let testValues: short[] = [
+          0 as short,
+          1 as short,
+          Short.MAX_VALUE,
+          (-1) as short,
+          Short.MIN_VALUE
+        ];
+        let expectedValues: int[] = [
+          0,
+          1,
+          32767,
+          -1,
+          -32768
+        ];
+        let caseCount: int = 5;
+        for (let caseIndex: int = 0; caseIndex < caseCount; caseIndex++) {
+          let inputValue: short = testValues[caseIndex];
+          let expectedResult: int = expectedValues[caseIndex];
+          let firstCallResult: int = Short.toInt(inputValue);
+          let secondCallResult: int = Short.toInt(inputValue);
+          let thirdCallResult: int = Short.toInt(inputValue);
+          expect(firstCallResult).assertEqual(expectedResult);
+          expect(secondCallResult).assertEqual(expectedResult);
+          expect(thirdCallResult).assertEqual(expectedResult);
+          expect(secondCallResult).assertEqual(firstCallResult);
+          expect(thirdCallResult).assertEqual(firstCallResult);
+        }
+      }
+
+      {
+        let inputValue: short = 255 as short;
+        let directResult: int = Short.toInt(inputValue);
+        let functionResult: int = invokeShortToIntInFunction(inputValue);
+        let repeatedDirectResult: int = Short.toInt(inputValue);
+        expect(directResult).assertEqual(255);
+        expect(functionResult).assertEqual(255);
+        expect(repeatedDirectResult).assertEqual(255);
+        expect(functionResult).assertEqual(directResult);
+        expect(repeatedDirectResult).assertEqual(directResult);
+      }
+
+      {
+        let primaryInput: short = 1024 as short;
+        let secondaryInput: short = 2048 as short;
+        let firstPrimaryResult: int = Short.toInt(primaryInput);
+        let secondaryResult: int = Short.toInt(secondaryInput);
+        let secondPrimaryResult: int = Short.toInt(primaryInput);
+        expect(firstPrimaryResult).assertEqual(1024);
+        expect(secondaryResult).assertEqual(2048);
+        expect(secondPrimaryResult).assertEqual(1024);
+        expect(secondPrimaryResult).assertEqual(firstPrimaryResult);
+      }
+
+      {
+        let a1: Short = new Short(48 as short);
+        let b1: Short = new Short(36 as short);
+        let x1: int = a1.toInt();
+        let y1: int = b1.toInt();
+        while (y1 !== 0) {
+          let t1: int = y1;
+          y1 = x1 % y1;
+          x1 = t1;
+        }
+        expect(x1).assertEqual(12);
+        let a2: Short = new Short(100 as short);
+        let b2: Short = new Short(75 as short);
+        let x2: int = a2.toInt();
+        let y2: int = b2.toInt();
+        while (y2 !== 0) {
+          let t2: int = y2;
+          y2 = x2 % y2;
+          x2 = t2;
+        }
+        expect(x2).assertEqual(25);
+        let a3: Short = new Short(17 as short);
+        let b3: Short = new Short(5 as short);
+        let x3: int = a3.toInt();
+        let y3: int = b3.toInt();
+        while (y3 !== 0) {
+          let t3: int = y3;
+          y3 = x3 % y3;
+          x3 = t3;
+        }
+        expect(x3).assertEqual(1);
+        let a4: Short = new Short(Short.MAX_VALUE);
+        let b4: Short = new Short(1 as short);
+        let x4: int = a4.toInt();
+        let y4: int = b4.toInt();
+        while (y4 !== 0) {
+          let t4: int = y4;
+          y4 = x4 % y4;
+          x4 = t4;
+        }
+        expect(x4).assertEqual(1);
+      }
+
+      {
+        let positiveValue: Short = new Short(555 as short);
+        let posFirst: int = positiveValue.toInt();
+        let posSecond: int = positiveValue.toInt();
+        let posThird: int = positiveValue.toInt();
+        expect(posFirst).assertEqual(555);
+        expect(posSecond).assertEqual(555);
+        expect(posThird).assertEqual(555);
+        expect(posFirst).assertEqual(posSecond);
+        expect(posSecond).assertEqual(posThird);
+  
+        let negativeValue: Short = new Short((-666) as short);
+        let negFirst: int = negativeValue.toInt();
+        let negSecond: int = negativeValue.toInt();
+        let negThird: int = negativeValue.toInt();
+        expect(negFirst).assertEqual(-666);
+        expect(negSecond).assertEqual(-666);
+        expect(negThird).assertEqual(-666);
+        expect(negFirst).assertEqual(negSecond);
+        expect(negSecond).assertEqual(negThird);
+  
+        let zeroValue: Short = new Short(0 as short);
+        let zeroFirst: int = zeroValue.toInt();
+        let zeroSecond: int = zeroValue.toInt();
+        let zeroThird: int = zeroValue.toInt();
+        expect(zeroFirst).assertEqual(0);
+        expect(zeroSecond).assertEqual(0);
+        expect(zeroThird).assertEqual(0);
+        expect(zeroFirst).assertEqual(zeroSecond);
+        expect(zeroSecond).assertEqual(zeroThird);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SHORT_TOINT_1500
+     * @tc.name testShortToInt_merged15
+     * @tc.desc Idempotent / BatchSampling / Other: covers 5 merged test points for Short.toInt, including type conversion, equality consistency, positive values, negative values, and comparison and ordering.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testShortToInt_merged15', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let symPairs: short[] = [
+          1 as short, (-1) as short,
+          128 as short, (-128) as short,
+          1024 as short, (-1024) as short,
+          16384 as short, (-16384) as short
+        ];
+        let expectedSym: int[] = [
+          1, -1, 128, -128, 1024, -1024, 16384, -16384
+        ];
+        let symCount: int = symPairs.length;
+        for (let symIndex: int = 0; symIndex < symCount; symIndex++) {
+          let actualResult: int = Short.toInt(symPairs[symIndex]);
+          expect(actualResult).assertEqual(expectedSym[symIndex]);
+        }
+      }
+
+      {
+        let values: short[] = [10 as short, 20 as short, 30 as short, 40 as short];
+        let instances: Short[] = [];
+        for (let i: int = 0; i < values.length; i++) {
+          instances.push(new Short(values[i]));
+        }
+        let results: int[] = [];
+        results.push(instances[0].toInt());
+        results.push(Short.toInt(values[1]));
+        results.push(instances[2].toInt());
+        results.push(Short.toInt(values[3]));
+        results.push(instances[1].toInt());
+        results.push(Short.toInt(values[0]));
+        expect(results[0]).assertEqual(10);
+        expect(results[1]).assertEqual(20);
+        expect(results[2]).assertEqual(30);
+        expect(results[3]).assertEqual(40);
+        expect(results[4]).assertEqual(20);
+        expect(results[5]).assertEqual(10);
+      }
+
+      {
+        let pairs: [short, short][] = [
+          [100 as short, 200 as short],
+          [-50 as short, 50 as short],
+          [0 as short, -1 as short],
+          [Short.MAX_VALUE, 0 as short],
+          [Short.MIN_VALUE, Short.MAX_VALUE]
+        ];
+        for (let i: int = 0; i < pairs.length; i++) {
+          let a: Short = new Short(pairs[i][0]);
+          let b: Short = new Short(pairs[i][1]);
+          expect(a.isGreaterThan(b)).assertEqual(a.toInt() > b.toInt());
+          expect(a.isLessThan(b)).assertEqual(a.toInt() < b.toInt());
+        }
+      }
+
+      {
+        let sampleValues: short[] = [
+          (-2000) as short, (-1500) as short, (-1000) as short, (-500) as short,
+          0 as short, 500 as short, 1000 as short, 1500 as short, 2000 as short,
+          Short.MIN_VALUE, (-16384) as short, 16384 as short, Short.MAX_VALUE
+        ];
+        let resultSet: Set<int> = new Set<int>();
+        for (let i: int = 0; i < sampleValues.length; i++) {
+          let result: int = Short.toInt(sampleValues[i]);
+          expect(resultSet.has(result)).assertFalse();
+          resultSet.add(result);
+        }
+        expect(resultSet.size).assertEqual(sampleValues.length);
+      }
+
+      {
+        for (let i: int = -128; i <= 127; i++) {
+          let shortVal: short = Int.toShort(i);
+          let result: int = Short.toInt(shortVal);
+          expect(result).assertEqual(i);
+        }
+      }
+    });
+
   });
 }
