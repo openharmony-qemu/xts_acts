@@ -297,7 +297,7 @@ export default function PhotoOutputTest(): void {
         done();
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-        expect(error.code == camera.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
+        expect(error.code === camera.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
         await releasePhotoSession();
         done();
       }
@@ -341,7 +341,7 @@ export default function PhotoOutputTest(): void {
         done();
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-        expect(error.code == camera.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
+        expect(error.code === camera.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
         await releasePhotoSession();
         done();
       }
@@ -385,7 +385,7 @@ export default function PhotoOutputTest(): void {
         done();
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-        expect(error.code == camera.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
+        expect(error.code === camera.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
         await releasePhotoSession();
         done();
       }
@@ -429,7 +429,7 @@ export default function PhotoOutputTest(): void {
         done();
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-        expect(error.code == camera.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
+        expect(error.code === camera.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
         await releasePhotoSession();
         done();
       }
@@ -473,7 +473,7 @@ export default function PhotoOutputTest(): void {
         done();
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-        expect(error.code == camera.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
+        expect(error.code === camera.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
         await releasePhotoSession();
         done();
       }
@@ -517,7 +517,7 @@ export default function PhotoOutputTest(): void {
         done();
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-        expect(error.code == camera.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
+        expect(error.code === camera.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
         await releasePhotoSession();
         done();
       }
@@ -558,7 +558,7 @@ export default function PhotoOutputTest(): void {
         done();
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-        expect(error.code == camera.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
+        expect(error.code === camera.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
         await releasePhotoSession();
         done();
       }
@@ -601,7 +601,7 @@ export default function PhotoOutputTest(): void {
         done();
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-        expect(error.code == camera.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
+        expect(error.code === camera.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
         await releasePhotoSession();
         done();
       }
@@ -635,7 +635,7 @@ export default function PhotoOutputTest(): void {
             console.info(TAG, testName + ' capture passed.');
           }).catch(async (error: Error) => {
             console.error(TAG, testName + ' failed to capture, err: ' + error!.code + ', msg: ' + error!.message);
-            expect(error.code == camera.CameraErrorCode.SESSION_NOT_RUNNING).assertTrue();
+            expect(error.code === camera.CameraErrorCode.SESSION_NOT_RUNNING).assertTrue();
             done();
           });
           console.info(TAG, testName + ' capture end.');
@@ -644,7 +644,7 @@ export default function PhotoOutputTest(): void {
         done();
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-        expect(error.code == camera.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
+        expect(error.code === camera.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
         await releasePhotoSession();
         done();
       }
@@ -678,7 +678,7 @@ export default function PhotoOutputTest(): void {
             console.info(TAG, testName + ' capture passed.');
           }).catch(async (error: Error) => {
             console.error(TAG, testName + ' failed to capture, err: ' + error!.code + ', msg: ' + error!.message);
-            expect(error.code == camera.CameraErrorCode.SESSION_NOT_RUNNING).assertTrue();
+            expect(error.code === camera.CameraErrorCode.SESSION_NOT_RUNNING).assertTrue();
             done();
           });
           console.info(TAG, testName + ' capture end.');
@@ -687,7 +687,7 @@ export default function PhotoOutputTest(): void {
         done();
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-        expect(error.code == camera.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
+        expect(error.code === camera.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
         await releasePhotoSession();
         done();
       }
@@ -721,7 +721,7 @@ export default function PhotoOutputTest(): void {
             console.info(TAG, testName + ' capture passed.');
           }).catch(async (error: Error) => {
             console.error(TAG, testName + ' failed to capture, err: ' + error!.code + ', msg: ' + error!.message);
-            expect(error.code == camera.CameraErrorCode.SESSION_NOT_RUNNING).assertTrue();
+            expect(error.code === camera.CameraErrorCode.SESSION_NOT_RUNNING).assertTrue();
             done();
           });
           console.info(TAG, testName + ' capture end.');
@@ -730,7 +730,7 @@ export default function PhotoOutputTest(): void {
         done();
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-        expect(error.code == camera.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
+        expect(error.code === camera.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
         await releasePhotoSession();
         done();
       }
@@ -764,7 +764,7 @@ export default function PhotoOutputTest(): void {
             console.info(TAG, testName + ' capture passed.');
           }).catch(async (error: Error) => {
             console.error(TAG, testName + ' failed to capture, err: ' + error!.code + ', msg: ' + error!.message);
-            expect(error.code == camera.CameraErrorCode.SESSION_NOT_RUNNING).assertTrue();
+            expect(error.code === camera.CameraErrorCode.SESSION_NOT_RUNNING).assertTrue();
             done();
           });
           console.info(TAG, testName + ' capture end.');
@@ -773,7 +773,7 @@ export default function PhotoOutputTest(): void {
         done();
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-        expect(error.code == camera.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
+        expect(error.code === camera.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
         await releasePhotoSession();
         done();
       }
@@ -807,7 +807,7 @@ export default function PhotoOutputTest(): void {
             console.info(TAG, testName + ' capture passed.');
           }).catch(async (error: Error) => {
             console.error(TAG, testName + ' failed to capture, err: ' + error!.code + ', msg: ' + error!.message);
-            expect(error.code == camera.CameraErrorCode.SESSION_NOT_RUNNING).assertTrue();
+            expect(error.code === camera.CameraErrorCode.SESSION_NOT_RUNNING).assertTrue();
             done();
           });
           console.info(TAG, testName + ' capture end.');
@@ -816,7 +816,7 @@ export default function PhotoOutputTest(): void {
         done();
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-        expect(error.code == camera.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
+        expect(error.code === camera.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
         await releasePhotoSession();
         done();
       }
@@ -850,7 +850,7 @@ export default function PhotoOutputTest(): void {
             console.info(TAG, testName + ' capture passed.');
           }).catch(async (error: Error) => {
             console.error(TAG, testName + ' failed to capture, err: ' + error!.code + ', msg: ' + error!.message);
-            expect(error.code == camera.CameraErrorCode.SESSION_NOT_RUNNING).assertTrue();
+            expect(error.code === camera.CameraErrorCode.SESSION_NOT_RUNNING).assertTrue();
             done();
           });
           console.info(TAG, testName + ' capture end.');
@@ -859,7 +859,7 @@ export default function PhotoOutputTest(): void {
         done();
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-        expect(error.code == camera.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
+        expect(error.code === camera.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
         await releasePhotoSession();
         done();
       }
@@ -893,7 +893,7 @@ export default function PhotoOutputTest(): void {
             console.info(TAG, testName + ' capture passed.');
           }).catch(async (error: Error) => {
             console.error(TAG, testName + ' failed to capture, err: ' + error!.code + ', msg: ' + error!.message);
-            expect(error.code == camera.CameraErrorCode.SESSION_NOT_RUNNING).assertTrue();
+            expect(error.code === camera.CameraErrorCode.SESSION_NOT_RUNNING).assertTrue();
             done();
           });
           console.info(TAG, testName + ' capture end.');
@@ -902,7 +902,7 @@ export default function PhotoOutputTest(): void {
         done();
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-        expect(error.code == camera.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
+        expect(error.code === camera.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
         await releasePhotoSession();
         done();
       }
@@ -936,7 +936,7 @@ export default function PhotoOutputTest(): void {
             console.info(TAG, testName + ' capture passed.');
           }).catch(async (error: Error) => {
             console.error(TAG, testName + ' failed to capture, err: ' + error!.code + ', msg: ' + error!.message);
-            expect(error.code == camera.CameraErrorCode.SESSION_NOT_RUNNING).assertTrue();
+            expect(error.code === camera.CameraErrorCode.SESSION_NOT_RUNNING).assertTrue();
             done();
           });
           console.info(TAG, testName + ' capture end.');
@@ -945,7 +945,7 @@ export default function PhotoOutputTest(): void {
         done();
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-        expect(error.code == camera.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
+        expect(error.code === camera.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
         await releasePhotoSession();
         done();
       }
@@ -1201,7 +1201,7 @@ export default function PhotoOutputTest(): void {
             if (error !== undefined && error!.code !== 0) {
               console.error(TAG,
                 testName + ' failed to release photoOutput, err: ' + error!.code + ', msg: ' + error!.message);
-              expect(error!.code == camera.CameraErrorCode.SESSION_NOT_RUNNING).assertTrue();
+              expect(error!.code === camera.CameraErrorCode.SESSION_NOT_RUNNING).assertTrue();
             } else {
               console.info(TAG, testName + ' release passed.');
 
@@ -1285,7 +1285,7 @@ export default function PhotoOutputTest(): void {
             console.info(TAG, testName + ' capture passed.');
           }).catch(async (error: Error) => {
             console.error(TAG, testName + ' failed to capture, err: ' + error!.code + ', msg: ' + error!.message);
-            expect(error.code == camera.CameraErrorCode.SESSION_NOT_RUNNING).assertTrue();
+            expect(error.code === camera.CameraErrorCode.SESSION_NOT_RUNNING).assertTrue();
             done();
           });
           console.info(TAG, testName + ' capture end.');
@@ -1294,7 +1294,7 @@ export default function PhotoOutputTest(): void {
         done();
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-        expect(error.code == camera.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
+        expect(error.code === camera.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
         await releasePhotoSession();
         done();
       }
@@ -1322,7 +1322,7 @@ export default function PhotoOutputTest(): void {
           mPhotoOutput!.capture((error) => {
             if (error !== undefined && error!.code !== 0) {
               console.error(TAG, testName + ' failed to capture, err: ' + error!.code + ', msg: ' + error!.message);
-              expect(error!.code == camera.CameraErrorCode.SESSION_NOT_RUNNING).assertTrue();
+              expect(error!.code === camera.CameraErrorCode.SESSION_NOT_RUNNING).assertTrue();
             } else {
               console.info(TAG, testName + ' capture passed.');
             }
@@ -1361,7 +1361,7 @@ export default function PhotoOutputTest(): void {
             console.info(TAG, testName + ' capture passed.');
           }).catch(async (error: Error) => {
             console.error(TAG, testName + ' failed to capture, err: ' + error!.code + ', msg: ' + error!.message);
-            expect(error.code == camera.CameraErrorCode.SESSION_NOT_RUNNING).assertTrue();
+            expect(error.code === camera.CameraErrorCode.SESSION_NOT_RUNNING).assertTrue();
             done();
           });
           console.info(TAG, testName + ' capture end.');
@@ -1402,7 +1402,7 @@ export default function PhotoOutputTest(): void {
           mPhotoOutput!.capture(settings, (error) => {
             if (error !== undefined && error!.code !== 0) {
               console.error(TAG, testName + ' failed to capture, err: ' + error!.code + ', msg: ' + error!.message);
-              expect(error!.code == camera.CameraErrorCode.SESSION_NOT_RUNNING).assertTrue();
+              expect(error!.code === camera.CameraErrorCode.SESSION_NOT_RUNNING).assertTrue();
             } else {
               console.info(TAG, testName + ' capture passed.');
             }
@@ -1446,7 +1446,7 @@ export default function PhotoOutputTest(): void {
             console.info(TAG, testName + ' capture passed.');
           }).catch(async (error: Error) => {
             console.error(TAG, testName + ' failed to capture, err: ' + error!.code + ', msg: ' + error!.message);
-            expect(error.code == camera.CameraErrorCode.SESSION_NOT_RUNNING).assertTrue();
+            expect(error.code === camera.CameraErrorCode.SESSION_NOT_RUNNING).assertTrue();
             done();
           });
           console.info(TAG, testName + ' capture end.');
