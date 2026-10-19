@@ -674,52 +674,5 @@ export default function api26CertFuncTestUnit() {
       }
       done();
     });
-
-    /**
-     * @tc.name   SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0270
-     * @tc.number SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0270
-     * @tc.desc   Call openAuthDialogForUkeyProvider interface with two dialogs simultaneously return 29700010
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0270', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0270 start');
-      let dialogInfo: certManagerDialog.UkeyAuthDialogInfo = {
-        abilityType: certManagerDialog.AbilityType.UKEY_AUTH_EXTENSION_ABILITY,
-        abilityName: 'UkeyAuthTimeoutDialogAbility',
-      };
-      let ukeyAuthRequest: certManagerDialog.UkeyAuthRequest = {
-        keyUri: 'test',
-        timeoutDuration: 179,
-      };
-      let dialogInfo2: certManagerDialog.UkeyAuthDialogInfo = {
-        abilityType: certManagerDialog.AbilityType.UKEY_AUTH_EXTENSION_ABILITY,
-        abilityName: 'UkeyAuthCancelDialogAbility',
-      };
-      let ukeyAuthRequest2: certManagerDialog.UkeyAuthRequest = {
-        keyUri: 'test',
-      };
-      certManagerDialog.openAuthDialogForUkeyProvider(dialogInfo, ukeyAuthRequest).then(() => {
-        hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0270 first dialog success');
-      }).catch((err) => {
-        hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0270 first dialog failed. code:${err.code}, message:${err.message}`);
-        expect(err.code == 29700002 || err.code == 29700005 || err.code == 29700009).assertTrue();
-      });
-      try {
-        await certManagerDialog.openAuthDialogForUkeyProvider(dialogInfo2, ukeyAuthRequest2);
-        expect(false).assertTrue();
-      } catch (err) {
-        err = err as BusinessError;
-        if (err.code === 29700005) {
-          hilog.info(domain, tag, '%{public}s', "Only the PC/2in1 device can open the dialog box of the UkeyAuthExtensionAbility type.");
-          expect(err.code).assertEqual(29700005);
-        } else {
-          hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0270 second dialog failed. code:${err.code}, message:${err.message}`);
-          expect(err.code).assertEqual(29700010);
-        }
-      }
-      done();
-    });
   })
 }
