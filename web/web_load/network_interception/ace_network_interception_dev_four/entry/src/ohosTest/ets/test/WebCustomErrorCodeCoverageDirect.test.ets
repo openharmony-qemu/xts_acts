@@ -15,6 +15,7 @@
 
 import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import webview from '@ohos.web.webview';
+import { BusinessError } from '@ohos.base';
 
 const CUSTOM_ERROR_CODE = 32159;
 
@@ -49,13 +50,15 @@ export default function WebCustomErrorCodeCoverageDirect() {
         let response: webview.WebSchemeHandlerResponse = new webview.WebSchemeHandlerResponse();
         try {
           response.setCustomErrorCode(null);
+          expect().assertFail();
         } catch (error) {
-          console.info('setCustomErrorCode(null) err=' + JSON.stringify(error));
+          expect(String((error as BusinessError).code)).assertEqual('401');
         }
         try {
           response.setCustomErrorCode(undefined);
+          expect().assertFail();
         } catch (error) {
-          console.info('setCustomErrorCode(undefined) err=' + JSON.stringify(error));
+          expect(String((error as BusinessError).code)).assertEqual('401');
         }
         done();
       })
