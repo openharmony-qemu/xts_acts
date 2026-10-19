@@ -51,6 +51,7 @@
 #include "nativeModule/RuntimeCheckModeTest.cpp"
 #include "node/UIAgentGetPageTextTest.cpp"
 #include "node/GetImagesByNodeIdAsyncTest.cpp"
+#include "image/ImageAnimatorInterpolationTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -311,6 +312,15 @@ static napi_value Init(napi_env env, napi_value exports)
         {"GetImagesByNodeIdAsyncTest006", nullptr, GetImagesByNodeIdAsyncTest006, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetImagesByNodeIdAsyncTest007", nullptr, GetImagesByNodeIdAsyncTest007, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetImagesByNodeIdAsyncTest008", nullptr, GetImagesByNodeIdAsyncTest008, nullptr, nullptr, nullptr, napi_default, nullptr},
+		
+		{"testImageAnimatorInterpolation001", nullptr, TestImageAnimatorInterpolation001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testImageAnimatorInterpolation002", nullptr, TestImageAnimatorInterpolation002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testImageAnimatorInterpolation003", nullptr, TestImageAnimatorInterpolation003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testImageAnimatorInterpolation004", nullptr, TestImageAnimatorInterpolation004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testImageAnimatorInterpolation005", nullptr, TestImageAnimatorInterpolation005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testImageAnimatorInterpolation006", nullptr, TestImageAnimatorInterpolation006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testImageAnimatorInterpolation007", nullptr, TestImageAnimatorInterpolation007, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testImageAnimatorInterpolation008", nullptr, TestImageAnimatorInterpolation008, nullptr, nullptr, nullptr, napi_default, nullptr},
         };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");

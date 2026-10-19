@@ -65,6 +65,7 @@ import GetImagesByNodeIdAsyncTest from './node/GetImagesByNodeIdAsyncTest.test'
 import NativeModuleAnimationTest from './animate/NativeModuleAnimation.test'
 import NativeModuleAnimApi2601Test from './animate/NativeModuleAnimApi2601.test'
 import DragEventSummaryTest from './dragEventSummary/DragEventSummaryTest.test';
+import ImageAnimatorInterpolationTest from './image/ImageAnimatorInterpolationTest.test'
 
 export default function testsuite() {
   SetUiDvsyncSwitchTest() // 此条特殊用例请放在首行，勿动
@@ -117,5 +118,6 @@ export default function testsuite() {
   NativeModuleAnimationTest()
   NativeModuleAnimApi2601Test()
   DragEventSummaryTest()
+  ImageAnimatorInterpolationTest()
   RuntimeCheckModeTest()
 }
