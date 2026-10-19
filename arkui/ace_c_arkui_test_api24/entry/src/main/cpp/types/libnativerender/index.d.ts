@@ -33,3 +33,20 @@ export const CrossLanguageInsertChildBeforeTest: () => void;
 export const CrossLanguageInsertChildAtTest: () => void;
 
 export const CrossLanguageRemoveChildTest: () => void;
+
+export const NodeTransform3D_SetGet001: () => number;
+export const NodeTransform3D_Reset002: () => number;
+export const NodeTransform3D_InvalidSize003: () => number;
+export const NodeTransform3D_NullParam004: () => number;
+export const NodeTransform3D_IdentityMatrix005: () => number;
+export const NodeTransform3D_RotationMatrix006: () => number;
+export const NodeTransform3D_ScaleMatrix007: () => number;
+export const NodeTransform3D_TranslationMatrix008: () => number;
+export const NodeTransform3D_GetDefault009: () => number;
+export const NodeTransform3D_UpdateMatrix010: () => number;
+export const NodeTransform3D_ZeroMatrix011: () => number;
+export const NodeTransform3D_NegativeValues012: () => number;
+export const NodeTransform3D_PerpectiveMatrix013: () => number;
+export const NodeTransform3D_DifferentNodeTypes014: () => number;
+export const NodeTransform3D_LargeValues015: () => number;
+export const NodeTransform3D_AllElementsVerify016: () => number;
