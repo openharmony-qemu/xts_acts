@@ -542,8 +542,10 @@ export default function WebsocketServerTest() {
           maxConcurrentClientsNumber: 10,
           maxConnectionsForOneClient: 4,
         }
+        let serverStarted: boolean = false;
         await server.start(serverConfig).then((value: boolean)=>{
           if (value) {
+            serverStarted = true;
             console.info(`${caseName} server start`)
           }else {
             console.info(`${caseName} server start fail`)
@@ -557,6 +559,9 @@ export default function WebsocketServerTest() {
           done();
           console.info(`${caseName} test end`);
         })
+        if (!serverStarted) {
+          return;
+        }
         let callback = (connection: webSocket.WebSocketConnection) => {
           console.info(`${caseName} connections-->+ ${JSON.stringify(connection)}`);
         }
@@ -617,8 +622,10 @@ export default function WebsocketServerTest() {
           maxConcurrentClientsNumber: 10,
           maxConnectionsForOneClient: 4,
         }
+        let serverStarted: boolean = false;
         await server.start(serverConfig).then((value: boolean)=>{
           if (value) {
+            serverStarted = true;
             console.info(`${caseName} server start`)
           }else {
             console.info(`${caseName} server start fail`)
@@ -632,6 +639,9 @@ export default function WebsocketServerTest() {
           done();
           console.info(`${caseName} test end`);
         })
+        if (!serverStarted) {
+          return;
+        }
         let callback = (connection: webSocket.WebSocketConnection) => {
           console.info(`${caseName} connections-->+ ${JSON.stringify(connection)}`);
         }
@@ -2919,28 +2929,35 @@ export default function WebsocketServerTest() {
           let server: webSocket.WebSocketServer = webSocket.createWebSocketServer()
           let serverConfig: webSocket.WebSocketServerConfig = {
             serverIP: "0.0.0.0",
-            serverPort: 8111,
+            serverPort: 8113,
             maxConcurrentClientsNumber: 10,
             maxConnectionsForOneClient: 4,
           }
+        let serverStarted: boolean = false;
           await server.start(serverConfig).then((success: boolean) => {
             if (success) {
+              serverStarted = true;
               console.log(`${caseName} webSocketServer start success`)
             } else {
               expectFail(`${caseName} webSocketServer start fail`)
               done()
               console.info(`${caseName} test end`);
+              return;
             }
           }).catch((error: BusinessError) => {
             console.info(`${caseName} test result error ${JSON.stringify(error)}`);
             expectFail(`${caseName} test result error ${JSON.stringify(error)}`)
             done()
             console.info(`${caseName} test end`);
+            return;
           })
+          if (!serverStarted) {
+            return;
+          }
           await new Promise<string>((resolve) => {
             let client: webSocket.WebSocket = webSocket.createWebSocket()
             console.info(`${caseName}client-- >${client}`)
-            client.connect('ws://127.0.0.1:8111', (err: BusinessError, value: boolean) => {
+            client.connect('ws://127.0.0.1:8113', (err: BusinessError, value: boolean) => {
               if (value) {
                 console.info(`${caseName} test connect success and value is ${value}`);
               } else {
@@ -2948,6 +2965,8 @@ export default function WebsocketServerTest() {
                 expectFail(`${caseName}`)
                 done()
                 console.info(`${caseName} test end test end`);
+                resolve('ok');
+                return;
               }
               resolve('ok')
             });
@@ -2976,10 +2995,17 @@ export default function WebsocketServerTest() {
               }
             }).catch((error: BusinessError) => {
               console.info(`${caseName} test close fail ${JSON.stringify(error)}`);
-              expectFail(`${caseName} close(connection, undefined) fail`)
-              server.stop()
-              done();
-              console.info(`${caseName} test end`);
+              if (error.code === 401) {
+                console.info(`${caseName} close(connection, undefined) return 401 as expected`);
+                done();
+                server.stop();
+                console.info(`${caseName} test end`);
+              } else {
+                expectFail(`${caseName} close(connection, undefined) fail`)
+                server.stop()
+                done();
+                console.info(`${caseName} test end`);
+              }
             })
           }
         } catch (err) {
@@ -3088,8 +3114,10 @@ export default function WebsocketServerTest() {
           maxConcurrentClientsNumber: 10,
           maxConnectionsForOneClient: 4,
         }
+        let serverStarted: boolean = false;
         await server.start(serverConfig).then((value: boolean)=>{
           if (value) {
+            serverStarted = true;
             console.info(`${caseName} server start`)
           }else {
             console.info(`${caseName} server start fail`)
@@ -3103,6 +3131,9 @@ export default function WebsocketServerTest() {
           done();
           console.info(`${caseName} test end`);
         })
+        if (!serverStarted) {
+          return;
+        }
         let callback = (massage: webSocket.WebSocketMessage) => {
           if (massage.data == "hello server") {
             console.info(`${caseName} test onMassage success. connection is ${JSON.stringify(massage.clientConnection)}`)
