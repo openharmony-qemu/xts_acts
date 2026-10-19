@@ -16,8 +16,6 @@
 import Utils from '../../test/Utils';
 import events_emitter from '@ohos.events.emitter';
 import webview from '@ohos.web.webview';
-import { waitForExist } from '../../test/WaitTest.test';
-
 const EVENT_ID_SET_EMIT_KEY = 138200;
 
 @Entry
@@ -53,9 +51,7 @@ struct WebComponentConstructorCoverage {
         Button('WebComponentConstructorCoverage')
           .id('WebComponentConstructorCoverageButton')
           .onClick(async () => {
-            await waitForExist(() => this.isReceive, 'WebComponentConstructorCoverageIsReceive', 0);
-            await waitForExist(() => this.isPageEnd, 'WebComponentConstructorCoverageIsPageEnd', 0);
-            this.isReceive = -1;
+            console.info('WebComponentConstructorCoverage key==>' + this.str);
             switch (this.str) {
               case 'testPermissionRequestClassCallDirect001': {
                 let request: PermissionRequest = new PermissionRequest();

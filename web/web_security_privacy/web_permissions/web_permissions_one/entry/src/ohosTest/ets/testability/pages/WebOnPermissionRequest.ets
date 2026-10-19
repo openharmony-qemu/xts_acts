@@ -71,10 +71,25 @@ struct WebOnPermissionRequest {
           .onClick(async () => {
             let deviceProductModel: string = deviceInfo.productModel
             console.log('the value of the deviceInfo productModel is : ' + deviceProductModel)
+            console.info('key==>' + this.str)
+            if (this.str === 'emitPermissionRequestConstructor001') {
+              let request: PermissionRequest = new PermissionRequest();
+              Utils.emitEvent(request != null, 160950);
+              return;
+            }
+            if (this.str === 'emitPermissionRequestConstructorReturn001') {
+              let request: PermissionRequest = new PermissionRequest();
+              Utils.emitEvent(request instanceof PermissionRequest, 160951);
+              return;
+            }
+            if (this.str === 'emitPermissionRequestClass001') {
+              let request: PermissionRequest = new PermissionRequest();
+              Utils.emitEvent(request instanceof PermissionRequest, 160952);
+              return;
+            }
             await waitForExist(() => this.isPageEnd, this.str, 0);
             await waitForExist(() => this.isReceive, this.str, 0);
             this.isReceive = -1;
-            console.info('key==>' + this.str)
             switch (this.str) {
               case 'emitPermissionRequestDeny001': {
                 if (canIUse('SystemCapability.Multimedia.Camera.Core')) {
@@ -360,21 +375,6 @@ struct WebOnPermissionRequest {
                 } else {
                   Utils.emitEvent('"grant"', 160920)
                 }
-              }
-              case 'emitPermissionRequestConstructor001': {
-                let request: PermissionRequest = new PermissionRequest();
-                Utils.emitEvent(request != null, 160950);
-                break;
-              }
-              case 'emitPermissionRequestConstructorReturn001': {
-                let request: PermissionRequest = new PermissionRequest();
-                Utils.emitEvent(request instanceof PermissionRequest, 160951);
-                break;
-              }
-              case 'emitPermissionRequestClass001': {
-                let request: PermissionRequest = new PermissionRequest();
-                Utils.emitEvent(request instanceof PermissionRequest, 160952);
-                break;
               }
               case 'emitPermissionRequestGrant004': {
                 if (canIUse('SystemCapability.Multimedia.Camera.Core')) {
