@@ -516,7 +516,7 @@ static napi_value MarkFileAsPlaceholder002(napi_env env, napi_callback_info info
     LOGW("====>OH_CloudDisk_MarkFileAsPlaceholder already start");
     auto ret = OH_CloudDisk_MarkFileAsPlaceholder(BuildRootPath(path), BuildPathInfo(relativePath));
     LOGW("====>OH_CloudDisk_MarkFileAsPlaceholder already ret: %{public}d", ret);
-    bool ok = ret == OH_CLOUD_DISK_IS_A_PLACEHOLDER || ret == CLOUD_DISK_OK ||
+    bool ok = ret == OH_CLOUD_DISK_IS_A_PLACEHOLDER ||
         ret == CLOUD_DISK_NOT_SUPPORTED;
     TryRemoveFile("MarkFileAsPlaceholder002 post-clean", fullPath);
     TeardownDefaultRoot();

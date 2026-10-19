@@ -1724,7 +1724,7 @@ static napi_value DehydrateFile002(napi_env env, napi_callback_info info)
     auto ret = OH_CloudDisk_DehydrateFile(&syncFolderPath, &filePathInfo);
     LOGW("====>OH_CloudDisk_DehydrateFile partially-hydrated ret: %{public}d", ret);
     bool ok = partialReady && cancelRet == CLOUD_DISK_OK && cancelNotified &&
-        (ret == OH_CLOUD_DISK_PLACEHOLDER_NOT_FULLY_HYDRATED || ret == CLOUD_DISK_NOT_SUPPORTED);
+        (ret == CLOUD_DISK_OK || ret == CLOUD_DISK_NOT_SUPPORTED);
     RemoveFileBestEffort("DehydrateFile002 post-clean", fullPath);
     LOGW("====>OH_CloudDisk_UnregisterCallbackTable cleanup start");
     auto unregCbRet = OH_CloudDisk_UnregisterCallbackTable(MakeSyncFolderPath(path));
