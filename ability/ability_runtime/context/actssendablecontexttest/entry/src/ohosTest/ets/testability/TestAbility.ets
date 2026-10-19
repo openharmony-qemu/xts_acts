@@ -33,8 +33,8 @@ import { relationalStore } from '@kit.ArkData'
 let dataPreferences: preferences.Preferences | null = null;
 let store: relationalStore.RdbStore | undefined = undefined;
 
-let abilityWorker: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/Worker.ets');
-let worker1: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/Worker1.ets');
+let abilityWorker: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/Worker');
+let worker1: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/Worker1');
 
 @Concurrent
 function printNormalContext(context: common.UIAbilityContext): boolean {
