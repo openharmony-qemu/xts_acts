@@ -13,14 +13,19 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, Level, beforeAll } from "@ohos/hypium";
+import { describe, it, expect, Level, beforeAll, afterEach } from "@ohos/hypium";
 import clouddisk from "libclouddisk.so";
-import { grantDocumentFolderAccess } from './CommonUtils';
+import { grantDocumentFolderAccess, uSleep } from './CommonUtils';
 
 export default function CloudDiskPlaceholderTest() {
   describe("CloudDiskPlaceholderTest", () => {
     beforeAll(async (done: Function) => {
       await grantDocumentFolderAccess(done);
+    });
+
+    afterEach(async (done: Function) => {
+      await uSleep(200);
+      done();
     });
 
     /**
