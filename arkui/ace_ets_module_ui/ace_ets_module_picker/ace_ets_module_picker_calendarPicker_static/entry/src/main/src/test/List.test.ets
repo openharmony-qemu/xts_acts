@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-import CalendarPickerFirstDayOfWeekTest from './calendarPickerTest/firstDayOfWeek.test'
-import CalendarPickerDialogFirstDayOfWeekTest from './calendarPickerDialogTest/firstDayOfWeek.test'
+import CalendarPickerFirstDayOfWeekTest from './calendarPickerTest/FirstDayOfWeek.test'
+import CalendarPickerDialogFirstDayOfWeekTest from './calendarPickerDialogTest/FirstDayOfWeek.test'
 
 export default function testsuite() {
   CalendarPickerFirstDayOfWeekTest();
