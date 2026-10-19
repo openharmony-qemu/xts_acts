@@ -102,9 +102,9 @@ export default function decimalSignTest(): void {
       let a8: double = Decimal.sign('13');
       let b8: double = Decimal.sign(13);
       let c8: Decimal = new Decimal(13);
-      let d8: double = Decimal.sign(c8);
+      let decimalSign: double = Decimal.sign(c8);
       expect(a8).assertEqual(b8);
-      expect(b8).assertEqual(d8);
+      expect(b8).assertEqual(decimalSign);
 
       // 9. hex string '0x10' sign 1
       let s9: double = Decimal.sign('0x10');

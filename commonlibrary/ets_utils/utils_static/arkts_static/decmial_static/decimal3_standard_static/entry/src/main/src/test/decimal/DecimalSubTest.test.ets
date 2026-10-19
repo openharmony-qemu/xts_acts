@@ -97,10 +97,10 @@ export default function decimalSubTest(): void {
 
       // 8. new Decimal('5').sub(Decimal('-3')) equals '8'
       let m8: Decimal = new Decimal('-3');
-      let d8: Decimal = new Decimal('5').sub(m8);
-      let av8: string = d8.toString();
-      let ev8: string = '8';
-      expect(av8).assertEqual(ev8);
+      let difference: Decimal = new Decimal('5').sub(m8);
+      let actualNegativeOperandDifference: string = difference.toString();
+      let expectedNegativeOperandDifference: string = '8';
+      expect(actualNegativeOperandDifference).assertEqual(expectedNegativeOperandDifference);
 
       // 9. new Decimal(5).sub(-3) equals '8'
       let d9: Decimal = new Decimal(5).sub(-3);
@@ -168,9 +168,9 @@ export default function decimalSubTest(): void {
 
       // 8. Decimal.sub(1, '-5') equals '6'
       let r8: Decimal = Decimal.sub(1, '-5');
-      let av8: string = r8.toString();
-      let ev8: string = '6';
-      expect(av8).assertEqual(ev8);
+      let actualStringOperandDifference: string = r8.toString();
+      let expectedStringOperandDifference: string = '6';
+      expect(actualStringOperandDifference).assertEqual(expectedStringOperandDifference);
 
       // 9. Decimal.sub(1, '0.5') equals '0.5'
       let r9: Decimal = Decimal.sub(1, '0.5');
@@ -236,9 +236,9 @@ export default function decimalSubTest(): void {
 
       // 8. new Decimal(5).sub(-Number.POSITIVE_INFINITY) equals 'Infinity'
       let r8: Decimal = new Decimal(5).sub(-Number.POSITIVE_INFINITY);
-      let av8: string = r8.toString();
-      let ev8: string = 'Infinity';
-      expect(av8).assertEqual(ev8);
+      let actualInfiniteDifference: string = r8.toString();
+      let expectedInfiniteDifference: string = 'Infinity';
+      expect(actualInfiniteDifference).assertEqual(expectedInfiniteDifference);
 
       // 9. new Decimal(Number.POSITIVE_INFINITY).sub(5) equals 'Infinity'
       let r9: Decimal = new Decimal(Number.POSITIVE_INFINITY).sub(5);
@@ -304,9 +304,9 @@ export default function decimalSubTest(): void {
       expect(av7b).assertTrue();
 
       // 8. Decimal.sub(-Infinity,1) equals new Decimal(-Infinity).sub(1)
-      let av8: string = Decimal.sub(-Number.POSITIVE_INFINITY, 1).toString();
-      let ev8: string = new Decimal(-Number.POSITIVE_INFINITY).sub(1).toString();
-      expect(av8).assertEqual(ev8);
+      let staticInfiniteDifference: string = Decimal.sub(-Number.POSITIVE_INFINITY, 1).toString();
+      let instanceInfiniteDifference: string = new Decimal(-Number.POSITIVE_INFINITY).sub(1).toString();
+      expect(staticInfiniteDifference).assertEqual(instanceInfiniteDifference);
 
       // 9. Decimal.sub(Infinity, -Infinity) equals 'Infinity'
       let r9: Decimal = Decimal.sub(Number.POSITIVE_INFINITY, -Number.POSITIVE_INFINITY);
@@ -463,9 +463,9 @@ export default function decimalSubTest(): void {
 
       // 8. Decimal.sub(0.1+0.2, 0.3) equals '4e-17'
       let r8: Decimal = Decimal.sub(0.1 + 0.2, 0.3);
-      let av8: string = r8.toString();
-      let ev8: string = '4e-17';
-      expect(av8).assertEqual(ev8);
+      let actualFloatingPointResidual: string = r8.toString();
+      let expectedFloatingPointResidual: string = '4e-17';
+      expect(actualFloatingPointResidual).assertEqual(expectedFloatingPointResidual);
 
       // 9. Decimal.sub(1, MAX_VALUE) e equals 308 and s equals -1
       let r9: Decimal = Decimal.sub(1, 1.7976931348623157e308);
@@ -539,9 +539,9 @@ export default function decimalSubTest(): void {
 
       // 8. Decimal.sub(src,2).toString() equals src.sub(2).toString()
       let src8: Decimal = new Decimal('-4.5');
-      let av8: string = Decimal.sub(src8, 2).toString();
-      let ev8: string = src8.sub(2).toString();
-      expect(av8).assertEqual(ev8);
+      let staticDifferenceText: string = Decimal.sub(src8, 2).toString();
+      let instanceDifferenceText: string = src8.sub(2).toString();
+      expect(staticDifferenceText).assertEqual(instanceDifferenceText);
 
       // 9. Decimal.sub('5',2) vs Decimal.sub(5,2) comparedTo equals 0
       let a9: Decimal = Decimal.sub('5', 2);
@@ -606,9 +606,9 @@ export default function decimalSubTest(): void {
 
       // 8. Decimal.sub(1, 5) s equals -1
       let r8: Decimal = Decimal.sub(1, 5);
-      let av8: number = r8.s;
-      let ev8: int = -1;
-      expect(av8).assertEqual(ev8);
+      let actualDifferenceSign: number = r8.s;
+      let expectedDifferenceSign: int = -1;
+      expect(actualDifferenceSign).assertEqual(expectedDifferenceSign);
 
       // 9. Decimal.sub(5, 5) Decimal.sign equals 0
       let r9: Decimal = Decimal.sub(5, 5);
@@ -694,12 +694,12 @@ export default function decimalSubTest(): void {
       let b8: Decimal = new Decimal(1);
       Decimal.sub(a8, b8);
       Decimal.sub(a8, b8);
-      let av8a: string = a8.toString();
-      let ev8a: string = '5';
-      expect(av8a).assertEqual(ev8a);
-      let av8b: string = b8.toString();
-      let ev8b: string = '1';
-      expect(av8b).assertEqual(ev8b);
+      let actualMinuendText: string = a8.toString();
+      let expectedMinuendText: string = '5';
+      expect(actualMinuendText).assertEqual(expectedMinuendText);
+      let actualSubtrahendText: string = b8.toString();
+      let expectedSubtrahendText: string = '1';
+      expect(actualSubtrahendText).assertEqual(expectedSubtrahendText);
 
       // 9. Decimal.sub(a,2).sub(1) does not mutate a equals '5'
       let a9: Decimal = new Decimal(5);
@@ -901,9 +901,9 @@ export default function decimalSubTest(): void {
 
       // 8. Decimal.sub(Decimal.add(5,2), 1) equals '6'
       let r8: Decimal = Decimal.sub(Decimal.add(5, 2), 1);
-      let av8: string = r8.toString();
-      let ev8: string = '6';
-      expect(av8).assertEqual(ev8);
+      let actualChainedDifference: string = r8.toString();
+      let expectedChainedDifference: string = '6';
+      expect(actualChainedDifference).assertEqual(expectedChainedDifference);
 
       // 9. Decimal.sub(5,1).add(2) equals '6'
       let r9: Decimal = Decimal.sub(5, 1).add(2);

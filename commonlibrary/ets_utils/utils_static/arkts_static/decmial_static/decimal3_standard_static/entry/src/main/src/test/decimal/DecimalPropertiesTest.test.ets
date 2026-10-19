@@ -419,10 +419,10 @@ export default function decimalPropertiesTest(): void {
       let d7PSelf: number = d7P.s;
       expect(d7PSelf).assertEqual(1);
 
-      // D8. '1e5' sign equals 1
-      let d8Dec: Decimal = new Decimal('1e5');
-      let d8Actual: number = d8Dec.s;
-      expect(d8Actual).assertEqual(1);
+      // Scientific-notation value '1e5' has a positive sign
+      let scientificNotationValue: Decimal = new Decimal('1e5');
+      let scientificNotationSign: number = scientificNotationValue.s;
+      expect(scientificNotationSign).assertEqual(1);
 
       // D9. '-1e5' sign equals -1
       let d9Dec: Decimal = new Decimal('-1e5');

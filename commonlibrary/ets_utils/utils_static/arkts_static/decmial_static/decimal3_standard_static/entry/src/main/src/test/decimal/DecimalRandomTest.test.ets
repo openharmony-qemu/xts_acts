@@ -303,9 +303,9 @@ export default function decimalRandomTest(): void {
       expect(s1Lower).assertTrue();
       let s1Upper: boolean = s1R.lessThan(1);
       expect(s1Upper).assertTrue();
-      let s1Places: double = s1R.decimalPlaces();
-      let s1MaxPlaces: int = 1;
-      expect(s1Places).assertLessOrEqual(s1MaxPlaces);
+      let actualFractionDigits: double = s1R.decimalPlaces();
+      let maximumFractionDigits: int = 1;
+      expect(actualFractionDigits).assertLessOrEqual(maximumFractionDigits);
 
       // 2. random(10) toString round-trip preserves value and toNumber
       let s2R: Decimal = Decimal.random(10);
@@ -325,11 +325,11 @@ export default function decimalRandomTest(): void {
       let s4R: Decimal = Decimal.random(1);
       let s4Str: string = s4R.toString();
       let s4Parsed: Decimal = new Decimal(s4Str);
-      let s4Places: number = s4Parsed.decimalPlaces();
+      let reparsedFractionDigits: number = s4Parsed.decimalPlaces();
       let s4Min: int = 0;
       let s4Max: int = 1;
-      expect(s4Places).assertLargerOrEqual(s4Min);
-      expect(s4Places).assertLessOrEqual(s4Max);
+      expect(reparsedFractionDigits).assertLargerOrEqual(s4Min);
+      expect(reparsedFractionDigits).assertLessOrEqual(s4Max);
       let s4Same: boolean = s4Parsed.equals(s4R);
       expect(s4Same).assertTrue();
 

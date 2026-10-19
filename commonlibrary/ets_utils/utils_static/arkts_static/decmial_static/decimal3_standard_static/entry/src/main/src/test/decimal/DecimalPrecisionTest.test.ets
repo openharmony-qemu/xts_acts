@@ -100,9 +100,9 @@ export default function decimalPrecisionTest(): void {
       expect(p7b).assertEqual(5);
 
       // 8. precision() and toString() consistency
-      let d8: Decimal = new Decimal('123.45');
-      let p8: double = d8.precision();
-      let s8: string = d8.toString();
+      let fractionalValue: Decimal = new Decimal('123.45');
+      let p8: double = fractionalValue.precision();
+      let s8: string = fractionalValue.toString();
       expect(p8).assertEqual(5);
       expect(s8).assertEqual('123.45');
 
@@ -168,8 +168,8 @@ export default function decimalPrecisionTest(): void {
       expect(d7.precision(true)).assertNaN();
 
       // 8. NaN precision(false) is NaN
-      let d8: Decimal = new Decimal(Number.NaN);
-      expect(d8.precision(false)).assertNaN();
+      let nanValue: Decimal = new Decimal(Number.NaN);
+      expect(nanValue.precision(false)).assertNaN();
 
       // 9. NaN precision(1) is NaN
       let d9: Decimal = new Decimal(Number.NaN);
@@ -225,8 +225,8 @@ export default function decimalPrecisionTest(): void {
       expect(p7).assertEqual(5);
 
       // 8. abs() on '-123.45' precision() returns 5
-      let d8: Decimal = new Decimal('-123.45').abs();
-      let p8: double = d8.precision();
+      let absoluteValue: Decimal = new Decimal('-123.45').abs();
+      let p8: double = absoluteValue.precision();
       expect(p8).assertEqual(5);
     });
 
@@ -282,8 +282,8 @@ export default function decimalPrecisionTest(): void {
       expect(actualValue7).assertEqual(expectedValue7);
 
       // 8. precision(false) on 0 returns 1
-      let d8: Decimal = new Decimal(0);
-      let actualValue8: number = d8.precision(false);
+      let zeroValue: Decimal = new Decimal(0);
+      let actualValue8: number = zeroValue.precision(false);
       let expectedValue8: int = 1;
       expect(actualValue8).assertEqual(expectedValue8);
 
@@ -375,8 +375,8 @@ export default function decimalPrecisionTest(): void {
       expect(d7.precision(true)).assertNaN();
 
       // 8. Infinity precision(false) is NaN
-      let d8: Decimal = new Decimal(Number.POSITIVE_INFINITY);
-      expect(d8.precision(false)).assertNaN();
+      let positiveInfinityValue: Decimal = new Decimal(Number.POSITIVE_INFINITY);
+      expect(positiveInfinityValue.precision(false)).assertNaN();
 
       // 9. -Infinity precision(true) is NaN
       let d9: Decimal = new Decimal(-Number.POSITIVE_INFINITY);
@@ -467,10 +467,10 @@ export default function decimalPrecisionTest(): void {
       }
 
       // 8. precision(bad RegExp) rejects with ClassCastError code 0
-      let d8: Decimal = new Decimal('500');
-      let bad8: InvalidDecimalInput = new RegExp('x');
+      let invalidFlagReceiver: Decimal = new Decimal('500');
+      let invalidPrecisionFlag: InvalidDecimalInput = new RegExp('x');
       try {
-        d8.precision(bad8 as boolean);
+        invalidFlagReceiver.precision(invalidPrecisionFlag as boolean);
         expect().assertFail();
       } catch (e8) {
         expect(e8.code).assertEqual(0);

@@ -110,9 +110,9 @@ export default function decimalSinTest(): void {
 
       // 8. sin('π/2').negate() returns "-1"
       let r8: Decimal = Decimal.sin('1.5707963267948966').negate();
-      let av8: string = r8.toString();
-      let ev8: string = '-1';
-      expect(av8).assertEqual(ev8);
+      let actualNegatedSine: string = r8.toString();
+      let expectedNegatedSine: string = '-1';
+      expect(actualNegatedSine).assertEqual(expectedNegatedSine);
 
       // 9. sin('-0.5') returns "-0.47942553860420300027"
       let r9: Decimal = Decimal.sin('-0.5');
@@ -241,8 +241,8 @@ export default function decimalSinTest(): void {
 
       // 8. sin('-0') isZero is true
       let r8: Decimal = Decimal.sin('-0');
-      let av8: boolean = r8.isZero();
-      expect(av8).assertTrue();
+      let isZeroSine: boolean = r8.isZero();
+      expect(isZeroSine).assertTrue();
 
       // 9. sin('-0') isNegative is true
       let r9: Decimal = Decimal.sin('-0');
@@ -332,11 +332,11 @@ export default function decimalSinTest(): void {
       // 8. precision=20 sin('0.5') approximates 0.47942553860420300027
       Decimal.set({ precision: 20 });
       let r8: Decimal = Decimal.sin('0.5');
-      let av8: boolean = r8
+      let isSineWithinTolerance: boolean = r8
         .sub(new Decimal('0.47942553860420300027'))
         .abs()
         .lessThanOrEqualTo(new Decimal('1e-18'));
-      expect(av8).assertTrue();
+      expect(isSineWithinTolerance).assertTrue();
       Decimal.set({ defaults: true });
 
       // 9. precision=30 sin('0.5') d.length equals 5
@@ -450,12 +450,12 @@ export default function decimalSinTest(): void {
       const origSign8: double = src8.s;
       const origExp8: double = src8.e;
       Decimal.sin(src8);
-      let av8a: number = src8.s;
-      let ev8a: number = se8;
-      expect(av8a).assertEqual(ev8a);
-      let av8b: number = src8.e;
-      let ev8b: number = ee8;
-      expect(av8b).assertEqual(ev8b);
+      let actualSourceSign: number = src8.s;
+      let expectedSourceSign: number = se8;
+      expect(actualSourceSign).assertEqual(expectedSourceSign);
+      let actualSourceExponent: number = src8.e;
+      let expectedSourceExponent: number = ee8;
+      expect(actualSourceExponent).assertEqual(expectedSourceExponent);
       const actVal8: string = src8.toString();
       expect(actVal8).assertEqual(expOrigVal8);
       const actDig8: Array<double> = src8.d!;
@@ -556,9 +556,9 @@ export default function decimalSinTest(): void {
       // 8. sin(2x) = 2·sin(x)·cos(x) (double-angle identity)
       let lhs8: Decimal = Decimal.sin('1.2');
       let rhs8: Decimal = Decimal.sin('0.6').mul(2).mul(Decimal.cos('0.6'));
-      let av8: number = lhs8.comparedTo(rhs8);
-      let ev8: int = 0;
-      expect(av8).assertEqual(ev8);
+      let actualDoubleAngleComparison: number = lhs8.comparedTo(rhs8);
+      let expectedDoubleAngleComparison: int = 0;
+      expect(actualDoubleAngleComparison).assertEqual(expectedDoubleAngleComparison);
 
       // 9. sin(-0.4) + sin(0.4) ≈ 0 (odd function)
       let r9: Decimal = Decimal.sin('-0.4').add(Decimal.sin('0.4'));
@@ -631,8 +631,8 @@ export default function decimalSinTest(): void {
 
       // 8. sin('-1e30') isFinite is true
       let r8: Decimal = Decimal.sin('-1e30');
-      let av8: boolean = r8.isFinite();
-      expect(av8).assertTrue();
+      let isLargeNegativeSineFinite: boolean = r8.isFinite();
+      expect(isLargeNegativeSineFinite).assertTrue();
 
       // 9. sin('-1e30') absolute value ≤ 1
       let r9: Decimal = Decimal.sin('-1e30');
@@ -796,9 +796,9 @@ export default function decimalSinTest(): void {
 
       // 8. sin('0').add('0.5') returns "0.5"
       let r8: Decimal = Decimal.sin('0').add('0.5');
-      let av8: string = r8.toString();
-      let ev8: string = '0.5';
-      expect(av8).assertEqual(ev8);
+      let actualOffsetSine: string = r8.toString();
+      let expectedOffsetSine: string = '0.5';
+      expect(actualOffsetSine).assertEqual(expectedOffsetSine);
 
       // 9. sin('0.5').toFixed(2) returns "0.48"
       let r9: string = Decimal.sin('0.5').toFixed(2);
@@ -861,8 +861,8 @@ export default function decimalSinTest(): void {
       expect(av7).assertTrue();
 
       // 8. sin(-1).isNegative() is true
-      let av8: boolean = Decimal.sin(-1).isNegative();
-      expect(av8).assertTrue();
+      let isNegativeInputSineNegative: boolean = Decimal.sin(-1).isNegative();
+      expect(isNegativeInputSineNegative).assertTrue();
 
       // 9. sin(1) comparedTo 0.84147098480789650665 equals 0
       let cmp9: double = Decimal.sin(1).comparedTo(new Decimal('0.84147098480789650665'));
@@ -919,9 +919,9 @@ export default function decimalSinTest(): void {
 
       // 8. new Decimal('0.3').sin() equals Decimal.sin('0.3')
       let r8: Decimal = new Decimal('0.3').sin();
-      let av8: number = r8.comparedTo(Decimal.sin('0.3'));
-      let ev8: int = 0;
-      expect(av8).assertEqual(ev8);
+      let actualSineEquivalence: number = r8.comparedTo(Decimal.sin('0.3'));
+      let expectedSineEquivalence: int = 0;
+      expect(actualSineEquivalence).assertEqual(expectedSineEquivalence);
 
       // 9. new Decimal('-0.7').sin() equals Decimal.sin('-0.7')
       let r9: Decimal = new Decimal('-0.7').sin();

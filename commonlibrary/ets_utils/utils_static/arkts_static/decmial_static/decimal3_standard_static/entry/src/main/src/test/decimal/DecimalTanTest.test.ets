@@ -338,9 +338,9 @@ export default function decimalTanTest(): void {
       expect(n7_1).assertEqual(e7_1);
 
       // 8. tan(pi/2 - 0.9) equals 1/tan(0.9)
-      let d8_1: Decimal = new Decimal('0.6707963267948966').tan();
-      let d8_2: Decimal = new Decimal('1').div(new Decimal('0.9').tan());
-      let n8_1: number = d8_1.sub(d8_2).abs().comparedTo(new Decimal('1e-14'));
+      let complementaryAngleTangent: Decimal = new Decimal('0.6707963267948966').tan();
+      let reciprocalTangent: Decimal = new Decimal('1').div(new Decimal('0.9').tan());
+      let n8_1: number = complementaryAngleTangent.sub(reciprocalTangent).abs().comparedTo(new Decimal('1e-14'));
       let e8_1: int = -1;
       expect(n8_1).assertEqual(e8_1);
 

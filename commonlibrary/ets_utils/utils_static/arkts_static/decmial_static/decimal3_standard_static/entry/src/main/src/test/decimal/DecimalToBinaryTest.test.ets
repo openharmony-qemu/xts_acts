@@ -97,10 +97,10 @@ export default function decimalToBinaryTest(): void {
       expect(s7b).assertEqual('0b1.111p+3');
 
       // 8. 0.25 toBinary(1) and toBinary(1, ROUND_UP) both yield '0b1p-2'
-      let d8: Decimal = new Decimal(0.25);
-      let s8a: string = d8.toBinary(1);
+      let quarterValue: Decimal = new Decimal(0.25);
+      let s8a: string = quarterValue.toBinary(1);
       expect(s8a).assertEqual('0b1p-2');
-      let s8b: string = d8.toBinary(1, Decimal.ROUND_UP);
+      let s8b: string = quarterValue.toBinary(1, Decimal.ROUND_UP);
       expect(s8b).assertEqual('0b1p-2');
 
       // 9. 1.5 toBinary(2) and toBinary(2, ROUND_HALF_UP) both yield '0b1.1p+0'
@@ -733,48 +733,48 @@ export default function decimalToBinaryTest(): void {
       }
 
       // 84. 42 toBinary(20, 9) throws 10200001 then toBinary(20, 4) yields '0b1.0101p+5'
-      let d84: Decimal = new Decimal(42);
+      let integerRoundingSource: Decimal = new Decimal(42);
       try {
-        d84.toBinary(20, 9);
+        integerRoundingSource.toBinary(20, 9);
         expect().assertFail();
       } catch (e84) {
         expect(e84.code).assertEqual(10200001);
       }
-      let s84: string = d84.toBinary(20, 4);
+      let s84: string = integerRoundingSource.toBinary(20, 4);
       expect(s84).assertEqual('0b1.0101p+5');
 
       // 85. 42 toBinary(20, -1) throws 10200001 then comparedTo(42) is 0
-      let d85: Decimal = new Decimal(42);
+      let unchangedIntegerSource: Decimal = new Decimal(42);
       try {
-        d85.toBinary(20, -1);
+        unchangedIntegerSource.toBinary(20, -1);
         expect().assertFail();
       } catch (e85) {
         expect(e85.code).assertEqual(10200001);
       }
-      let actual85: number = d85.comparedTo(new Decimal(42));
-      let expected85: int = 0;
-      expect(actual85).assertEqual(expected85);
+      let actual85: number = unchangedIntegerSource.comparedTo(new Decimal(42));
+      let expectedComparisonResult: int = 0;
+      expect(actual85).assertEqual(expectedComparisonResult);
 
       // 86. 6.25 toBinary(2, -9) throws 10200001 and toString stays '6.25'
-      let d86: Decimal = new Decimal(6.25);
+      let unchangedFractionSource: Decimal = new Decimal(6.25);
       try {
-        d86.toBinary(2, -9);
+        unchangedFractionSource.toBinary(2, -9);
         expect().assertFail();
       } catch (e86) {
         expect(e86.code).assertEqual(10200001);
       }
-      let actual86: string = d86.toString();
+      let actual86: string = unchangedFractionSource.toString();
       expect(actual86).assertEqual('6.25');
 
       // 87. 6.25 toBinary(2, 9) throws 10200001 then toBinary(5, ROUND_UP) yields '0b1.1001p+2'
-      let d87: Decimal = new Decimal(6.25);
+      let fractionRoundingSource: Decimal = new Decimal(6.25);
       try {
-        d87.toBinary(2, 9);
+        fractionRoundingSource.toBinary(2, 9);
         expect().assertFail();
       } catch (e87) {
         expect(e87.code).assertEqual(10200001);
       }
-      let s87: string = d87.toBinary(5, Decimal.ROUND_UP);
+      let s87: string = fractionRoundingSource.toBinary(5, Decimal.ROUND_UP);
       expect(s87).assertEqual('0b1.1001p+2');
     });
 

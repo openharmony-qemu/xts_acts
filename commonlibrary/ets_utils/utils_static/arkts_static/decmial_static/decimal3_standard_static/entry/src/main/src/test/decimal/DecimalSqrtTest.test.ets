@@ -190,8 +190,8 @@ export default function decimalSqrtTest(): void {
       expect(act7).assertEqual(exp7);
 
       // 8. sqrt(4).abs() equals '2'
-      let d8: Decimal = new Decimal(4);
-      let r8: Decimal = d8.sqrt().abs();
+      let positiveInput: Decimal = new Decimal(4);
+      let r8: Decimal = positiveInput.sqrt().abs();
       let act8: string = r8.toString();
       let exp8: string = '2';
       expect(act8).assertEqual(exp8);
@@ -253,8 +253,8 @@ export default function decimalSqrtTest(): void {
       expect(act7).assertEqual(exp7);
 
       // 8. sqrt(4).comparedTo(2) equals 0
-      let d8: Decimal = new Decimal(4);
-      let cmp8: double = d8.sqrt().comparedTo(new Decimal(2));
+      let comparisonInput: Decimal = new Decimal(4);
+      let cmp8: double = comparisonInput.sqrt().comparedTo(new Decimal(2));
       expect(cmp8).assertEqual(0);
 
       // 9. new Decimal(Decimal.sqrt(2).toString()).equals(Decimal.sqrt(2))
@@ -376,8 +376,8 @@ export default function decimalSqrtTest(): void {
       expect(act7).assertTrue();
 
       // 8. sqrt(NaN) isNaN and not isFinite
-      let d8: Decimal = new Decimal(Number.NaN);
-      let r8: Decimal = d8.sqrt();
+      let nanInput: Decimal = new Decimal(Number.NaN);
+      let r8: Decimal = nanInput.sqrt();
       let act8: boolean = r8.isNaN();
       expect(act8).assertTrue();
       let act8B: boolean = r8.isFinite();
@@ -449,8 +449,8 @@ export default function decimalSqrtTest(): void {
       expect(act7).assertFalse();
 
       // 8. sqrt('1e-4001') e -2001 and isFinite
-      let d8: Decimal = new Decimal('1e-4001');
-      let r8: Decimal = d8.sqrt();
+      let tinyPositiveInput: Decimal = new Decimal('1e-4001');
+      let r8: Decimal = tinyPositiveInput.sqrt();
       let act8: number = r8.e;
       let exp8: int = -2001;
       expect(act8).assertEqual(exp8);
@@ -625,8 +625,8 @@ export default function decimalSqrtTest(): void {
 
       // 8. precision 5 sqrt(0.5) equals '0.70711'
       Decimal.set({ precision: 5 });
-      let d8: Decimal = new Decimal(0.5);
-      let act8: string = d8.sqrt().toString();
+      let fractionalInput: Decimal = new Decimal(0.5);
+      let act8: string = fractionalInput.sqrt().toString();
       let exp8: string = '0.70711';
       expect(act8).assertEqual(exp8);
       Decimal.set({ defaults: true });

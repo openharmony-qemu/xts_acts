@@ -255,10 +255,10 @@ export default function decimalPowTest(): void {
       expect(av7).assertEqual(ev7);
 
       // 8. 2.pow(Number.POSITIVE_INFINITY) returns 'Infinity'
-      let d8: Decimal = new Decimal(2).pow(Number.POSITIVE_INFINITY);
-      let av8: string = d8.toString();
-      let ev8: string = 'Infinity';
-      expect(av8).assertEqual(ev8);
+      let positiveInfinitePower: Decimal = new Decimal(2).pow(Number.POSITIVE_INFINITY);
+      let actualInfinitePower: string = positiveInfinitePower.toString();
+      let expectedInfinitePower: string = 'Infinity';
+      expect(actualInfinitePower).assertEqual(expectedInfinitePower);
 
       // 9. 2.pow(-Number.POSITIVE_INFINITY) returns '0'
       let d9: Decimal = new Decimal(2).pow(-Number.POSITIVE_INFINITY);
@@ -455,9 +455,9 @@ export default function decimalPowTest(): void {
       expect(r7).not().assertEqual(e7);
 
       // 8. d.pow(2) not equal to d.pow(3) for d=Decimal(2)
-      let d8: Decimal = new Decimal(2);
-      let r8a: Decimal = d8.pow(2);
-      let r8b: Decimal = d8.pow(3);
+      let sharedBase: Decimal = new Decimal(2);
+      let r8a: Decimal = sharedBase.pow(2);
+      let r8b: Decimal = sharedBase.pow(3);
       expect(r8a).not().assertEqual(r8b);
 
       // 9. 5.pow(-3).toFixed(6) returns '0.008000'
@@ -527,9 +527,9 @@ export default function decimalPowTest(): void {
 
       // 8. 2.pow(3).add(1).toString() returns '9'
       let r8: Decimal = new Decimal(2).pow(3).add(1);
-      let av8: string = r8.toString();
-      let ev8: string = '9';
-      expect(av8).assertEqual(ev8);
+      let actualChainedPower: string = r8.toString();
+      let expectedChainedPower: string = '9';
+      expect(actualChainedPower).assertEqual(expectedChainedPower);
 
       // 9. 2.pow(3).mul(5).toString() returns '40'
       let r9: Decimal = new Decimal(2).pow(3).mul(5);
@@ -599,13 +599,13 @@ export default function decimalPowTest(): void {
       expect(av7).assertEqual(ev7);
 
       // 8. d=Decimal(2), three pow calls, d.toString() returns '2'
-      let d8: Decimal = new Decimal(2);
-      d8.pow(2);
-      d8.pow(3);
-      d8.pow(4);
-      let av8: string = d8.toString();
-      let ev8: string = '2';
-      expect(av8).assertEqual(ev8);
+      let unchangedBase: Decimal = new Decimal(2);
+      unchangedBase.pow(2);
+      unchangedBase.pow(3);
+      unchangedBase.pow(4);
+      let actualBaseAfterPowers: string = unchangedBase.toString();
+      let expectedUnchangedBase: string = '2';
+      expect(actualBaseAfterPowers).assertEqual(expectedUnchangedBase);
 
       // 9. d.pow(3).add(100), d.pow(2).toString() returns '4'
       let d9: Decimal = new Decimal(2);
@@ -752,9 +752,9 @@ export default function decimalPowTest(): void {
       Decimal.set({ precision: 3, rounding: Decimal.ROUND_HALF_UP });
       let r8: Decimal = new Decimal(2).pow(0.5);
       Decimal.set({ defaults: true });
-      let av8: string = r8.toString();
-      let ev8: string = '1.41';
-      expect(av8).assertEqual(ev8);
+      let actualRoundedPower: string = r8.toString();
+      let expectedRoundedPower: string = '1.41';
+      expect(actualRoundedPower).assertEqual(expectedRoundedPower);
 
       // 9. 5.pow(' ') rejects with error code 401
       try {
@@ -916,9 +916,9 @@ export default function decimalPowTest(): void {
 
       // 8. Decimal.pow('0x10',2) returns '256'
       let r8: Decimal = Decimal.pow('0x10', 2);
-      let av8: string = r8.toString();
-      let ev8: string = '256';
-      expect(av8).assertEqual(ev8);
+      let actualHexBasePower: string = r8.toString();
+      let expectedHexBasePower: string = '256';
+      expect(actualHexBasePower).assertEqual(expectedHexBasePower);
 
       // 9. Decimal.pow('0b101',2) returns '25'
       let r9: Decimal = Decimal.pow('0b101', 2);
@@ -1062,9 +1062,9 @@ export default function decimalPowTest(): void {
 
       // 8. Decimal.pow(2,'-1') returns '0.5'
       let r8: Decimal = Decimal.pow(2, '-1');
-      let av8: string = r8.toString();
-      let ev8: string = '0.5';
-      expect(av8).assertEqual(ev8);
+      let actualReciprocalPower: string = r8.toString();
+      let expectedReciprocalPower: string = '0.5';
+      expect(actualReciprocalPower).assertEqual(expectedReciprocalPower);
 
       // 9. Decimal.pow(2,-1) returns '0.5'
       let r9: Decimal = Decimal.pow(2, -1);

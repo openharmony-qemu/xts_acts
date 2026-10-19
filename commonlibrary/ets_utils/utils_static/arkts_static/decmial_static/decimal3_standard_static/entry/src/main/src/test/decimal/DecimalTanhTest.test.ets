@@ -107,8 +107,8 @@ export default function decimalTanhTest(): void {
       expect(a7).assertTrue();
 
       // 8. tanh('0.1') isPositive
-      let d8: Decimal = new Decimal('0.1');
-      let a8: boolean = d8.tanh().isPositive();
+      let smallPositiveInput: Decimal = new Decimal('0.1');
+      let a8: boolean = smallPositiveInput.tanh().isPositive();
       expect(a8).assertTrue();
 
       // 9. tanh(100) isZero is false
@@ -185,8 +185,8 @@ export default function decimalTanhTest(): void {
       expect(a7).assertEqual(e7);
 
       // 8. tanh('0.3').e = -1
-      let d8: Decimal = new Decimal('0.3');
-      let a8: number = d8.tanh().e!;
+      let positiveFractionInput: Decimal = new Decimal('0.3');
+      let a8: number = positiveFractionInput.tanh().e!;
       let e8: int = -1;
       expect(a8).assertEqual(e8);
 
@@ -257,8 +257,8 @@ export default function decimalTanhTest(): void {
       expect(a7).assertEqual(e7);
 
       // 8. tanh(1).negate() = '-0.76159415595576488812'
-      let d8: Decimal = new Decimal(1);
-      let r8: Decimal = d8.tanh().negate();
+      let unitInput: Decimal = new Decimal(1);
+      let r8: Decimal = unitInput.tanh().negate();
       let a8: string = r8.toString();
       let e8: string = '-0.76159415595576488812';
       expect(a8).assertEqual(e8);
@@ -345,8 +345,8 @@ export default function decimalTanhTest(): void {
       expect(a7).assertEqual(e7);
 
       // 8. 'NaN' tanh isNaN
-      let d8: Decimal = new Decimal('NaN');
-      let r8: Decimal = d8.tanh();
+      let nanInput: Decimal = new Decimal('NaN');
+      let r8: Decimal = nanInput.tanh();
       let a8: boolean = r8.isNaN();
       expect(a8).assertTrue();
 
@@ -434,13 +434,13 @@ export default function decimalTanhTest(): void {
 
       // 8. precision 5 vs defaults tanh('0.3')
       Decimal.set({ precision: 5 });
-      let d8: Decimal = new Decimal('0.3');
-      let a8a: string = d8.tanh().toString();
+      let lowPrecisionInput: Decimal = new Decimal('0.3');
+      let a8a: string = lowPrecisionInput.tanh().toString();
       let e8a: string = '0.29131';
       expect(a8a).assertEqual(e8a);
       Decimal.set({ defaults: true });
-      let d8b: Decimal = new Decimal('0.3');
-      let a8b: string = d8b.tanh().toString();
+      let defaultPrecisionInput: Decimal = new Decimal('0.3');
+      let a8b: string = defaultPrecisionInput.tanh().toString();
       let e8b: string = '0.29131261245159090582';
       expect(a8b).assertEqual(e8b);
 
@@ -743,8 +743,8 @@ export default function decimalTanhTest(): void {
       expect(a7).assertEqual(e7);
 
       // 8. Decimal.tanh('1e-10') = '1e-10'
-      let v8: Decimal = Decimal.tanh('1e-10');
-      let a8: string = v8.toString();
+      let tinyInputTanh: Decimal = Decimal.tanh('1e-10');
+      let a8: string = tinyInputTanh.toString();
       let e8: string = '1e-10';
       expect(a8).assertEqual(e8);
 
@@ -812,10 +812,10 @@ export default function decimalTanhTest(): void {
       expect(c7).assertEqual(1);
 
       // 8. Decimal.tanh(2) close to Math.tanh(2) within 0.001
-      let v8: Decimal = Decimal.tanh(2);
+      let tanhForMathComparison: Decimal = Decimal.tanh(2);
       let approx8: number = Math.tanh(2);
-      let d8: Decimal = new Decimal(approx8);
-      let diff8: number = v8.sub(d8).abs().comparedTo(0.001);
+      let approximationValue: Decimal = new Decimal(approx8);
+      let diff8: number = tanhForMathComparison.sub(approximationValue).abs().comparedTo(0.001);
       expect(diff8).assertEqual(-1);
 
       // 9. Decimal.tanh(0.1).toNumber() = 0.09966799462495582
@@ -903,8 +903,8 @@ export default function decimalTanhTest(): void {
       expect(exp7).assertEqual(-10);
 
       // 8. Decimal.tanh(0.5).d.length = 3
-      let v8: Decimal = Decimal.tanh(0.5);
-      let digits8: Array<double> | null = v8.d;
+      let tanhForCoefficientCheck: Decimal = Decimal.tanh(0.5);
+      let digits8: Array<double> | null = tanhForCoefficientCheck.d;
       expect(digits8).not().assertNull();
       let len8: number = digits8!.length;
       expect(len8).assertEqual(3);
