@@ -27,7 +27,8 @@ struct UkeyAuthCancelIndex {
   aboutToAppear() {
     setTimeout(() => {
       this.context?.terminateSelfWithResult({
-        resultCode: 29700002
+        resultCode: 29700002,
+        want: {}
       })
     }, 3000)
   }
@@ -43,7 +44,8 @@ struct UkeyAuthCancelIndex {
         .width('60%')
         .onClick(() => {
           this.context?.terminateSelfWithResult({
-            resultCode: 29700002
+            resultCode: 29700002,
+            want: {}
           })
         })
     }

@@ -20,6 +20,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import { GlobalContext } from '../../../../src/main/ets/pages/HomePage';
 import type common from '@ohos.app.ability.common';
 import { Driver, ON } from '@ohos.UiTest';
+import bundle from '@ohos.bundle.bundleManager';
 
 function generateString(len: number): string {
   let str: string = 'a';
@@ -295,6 +296,7 @@ export default function api26CertFuncTestUnit() {
     it('SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0110 start');
       expect(certManagerDialog.AbilityType.UKEY_AUTH_EXTENSION_ABILITY).assertEqual(1);
+      expect(bundle.ExtensionAbility.UKEY_AUTH).assertEqual(40);
       done();
     });
 

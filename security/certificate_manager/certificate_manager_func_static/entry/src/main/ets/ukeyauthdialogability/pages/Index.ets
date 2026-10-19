@@ -27,7 +27,8 @@ struct UkeyAuthIndex {
   aboutToAppear() {
     setTimeout(() => {
       this.context?.terminateSelfWithResult({
-        resultCode: 0
+        resultCode: 0,
+        want: {}
       })
     }, 3000)
   }
@@ -44,7 +45,8 @@ struct UkeyAuthIndex {
         .backgroundColor('#0D9FFB')
         .onClick(() => {
           this.context?.terminateSelfWithResult({
-            resultCode: 0
+            resultCode: 0,
+            want: {}
           })
         })
 
@@ -54,7 +56,8 @@ struct UkeyAuthIndex {
         .width('60%')
         .onClick(() => {
           this.context?.terminateSelfWithResult({
-            resultCode: 29700002
+            resultCode: 29700002,
+            want: {}
           })
         })
     }
