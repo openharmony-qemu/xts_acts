@@ -14,6 +14,7 @@
  */
 
 import { collections, taskpool, worker, MessageEvents, ArkTSUtils } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { CrossThreadMapResult } from './common';
 
@@ -654,5 +655,19 @@ export default function CollectionsMapContainsValueTest(): void {
         console.info(`${caseName}, test end`);
         done();
       });
+
+    /**
+     * @tc.number  SUB_MAP_CONTAINSVALUE_ONE_0100
+     * @tc.name    testMapContainsValueOne0001
+     * @tc.desc    Verify containsValue with wrong-typed value throws 401
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testMapContainsValueOne0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function): Promise<void> => {
+      let map = new collections.Map<number, string>();
+      expect(map.containsValue(123 as Object as string)).assertFalse();
+      done();
+    });
   });
 }

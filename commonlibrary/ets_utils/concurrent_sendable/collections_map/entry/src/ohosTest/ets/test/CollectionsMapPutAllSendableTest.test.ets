@@ -14,6 +14,7 @@
  */
 
 import { collections, worker, MessageEvents } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 
 
@@ -401,5 +402,24 @@ export default function CollectionsMapPutAllSendableTest(): void {
         }
         console.info(`${caseName}, test end`);
       });
+
+    /**
+     * @tc.number  SUB_MAP_PUTALL_ONE_0100
+     * @tc.name    testMapPutAllOne0001
+     * @tc.desc    Verify putAll with wrong-typed source throws 401
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testMapPutAllOne0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let map = new collections.Map<number, string>();
+      let pin = -1;
+      try {
+        map.putAll('not-a-map' as Object as collections.Map<number, string>);
+      } catch (error) {
+        pin = (error as BusinessError).code;
+      }
+      expect(pin).assertEqual(401);
+    });
   });
 }

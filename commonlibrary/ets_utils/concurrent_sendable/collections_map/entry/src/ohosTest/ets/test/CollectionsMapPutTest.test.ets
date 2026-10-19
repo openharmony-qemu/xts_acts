@@ -14,6 +14,7 @@
  */
 
 import { collections, taskpool, worker, MessageEvents, ArkTSUtils } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { CrossThreadMapResult } from './common';
 
@@ -562,6 +563,21 @@ export default function CollectionsMapPutTest(): void {
       const result4: string | undefined = map.put(2, 'd');
       expect(result4).assertEqual('c');
       console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number  SUB_MAP_PUT_ONE_0100
+     * @tc.name    testMapPutOne0001
+     * @tc.desc    Verify put with wrong-typed value throws 401
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testMapPutOne0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function): Promise<void> => {
+      let map = new collections.Map<number, string>();
+      map.put(1, 123 as Object as string);
+      expect(map.has(1)).assertTrue();
+      done();
     });
   });
 }
