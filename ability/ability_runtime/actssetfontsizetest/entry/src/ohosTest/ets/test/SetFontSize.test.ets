@@ -30,7 +30,7 @@ function sleep(ms: number) {
 export default function abilityTest() {
   describe('ActsAbilityTest', () => {
     beforeAll(async() => {
-      let driver = Driver.create();	
+      driver = Driver.create();	
       try {
         let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0').belongingDisplay(currentDisplayId));
         if (allowed) {
