@@ -17,11 +17,12 @@
 import {
   Entry,
   Component,
-  State,
   Column,
   Text,
   ColumnOptions,
-} from '@kit.ArkUI';
+  CalendarPicker,
+  CalendarFirstDayOfWeek
+} from '@ohos.arkui.component';
 
 @Entry
 @Component
