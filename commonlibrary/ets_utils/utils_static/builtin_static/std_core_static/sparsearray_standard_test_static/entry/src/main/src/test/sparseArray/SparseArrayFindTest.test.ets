@@ -52,7 +52,7 @@ export default function SparseArrayFindTest(): void {
      * @tc.desc Test SparseArray.find, verify method result (length equals 5, found equals 3)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFind001', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(5);
@@ -69,7 +69,7 @@ export default function SparseArrayFindTest(): void {
      * @tc.desc Test SparseArray.find, verify method result (found equals 3)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFind002', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(5);
@@ -90,7 +90,7 @@ export default function SparseArrayFindTest(): void {
      * @tc.desc Test SparseArray.find, verify method result (found equals 3)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFind003', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(5);
@@ -106,7 +106,7 @@ export default function SparseArrayFindTest(): void {
      * @tc.desc Test SparseArray.find, verify method result (found equals 1)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFind004', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(5);
@@ -122,7 +122,7 @@ export default function SparseArrayFindTest(): void {
      * @tc.desc Test SparseArray.find, verify method result (found equals undefined)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFind005', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(5);
@@ -138,7 +138,7 @@ export default function SparseArrayFindTest(): void {
      * @tc.desc Test SparseArray.find error path, verify expected exception is thrown (assertFail is triggered, error.name equals "Error")
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFind006', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         try {
@@ -160,7 +160,7 @@ export default function SparseArrayFindTest(): void {
      * @tc.desc Test SparseArray.find, verify method result (found equals undefined)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFind007', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>();
@@ -175,7 +175,7 @@ export default function SparseArrayFindTest(): void {
      * @tc.desc Test SparseArray.find, verify method result (found equals 0)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFind008', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(5);
@@ -191,7 +191,7 @@ export default function SparseArrayFindTest(): void {
      * @tc.desc Test SparseArray.find, verify method result (found equals undefined)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFind009', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int | undefined>(5);
@@ -207,7 +207,7 @@ export default function SparseArrayFindTest(): void {
      * @tc.desc Test SparseArray.find, verify method result (found equals 3, found equals undefined)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFind010', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(5);
@@ -225,7 +225,7 @@ export default function SparseArrayFindTest(): void {
      * @tc.desc Test SparseArray.find, verify method result (found equals 5)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFind011', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1);
@@ -241,7 +241,7 @@ export default function SparseArrayFindTest(): void {
      * @tc.desc Test SparseArray.find, verify method result (found equals 500)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFind012', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1000);
@@ -259,7 +259,7 @@ export default function SparseArrayFindTest(): void {
      * @tc.desc Test SparseArray.find, verify method result (found equals 3)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFind013', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10);
@@ -275,7 +275,7 @@ export default function SparseArrayFindTest(): void {
      * @tc.desc Test SparseArray.find error path, verify expected exception is thrown (assertFail is triggered, error.name equals "Error")
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFind014', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         try {
@@ -296,7 +296,7 @@ export default function SparseArrayFindTest(): void {
      * @tc.desc Test SparseArray.find error path, verify expected exception is thrown (assertFail is triggered, error.name equals "CustomFindError016")
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFind015', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         try {
@@ -318,7 +318,7 @@ export default function SparseArrayFindTest(): void {
      * @tc.desc Test SparseArray.find, verify method result (found equals 3, length keeps 9)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFind016', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(5);
@@ -335,7 +335,7 @@ export default function SparseArrayFindTest(): void {
      * @tc.desc Test SparseArray.find, verify method result (found equals "banana")
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFind017', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<string>(3);
@@ -351,7 +351,7 @@ export default function SparseArrayFindTest(): void {
      * @tc.desc Test SparseArray.find, verify method result (found equals true)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFind018', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<boolean>(5);
@@ -367,7 +367,7 @@ export default function SparseArrayFindTest(): void {
      * @tc.desc Test SparseArray.find, verify method result (found equals c'C')
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFind019', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<char>(5);
@@ -385,7 +385,7 @@ export default function SparseArrayFindTest(): void {
      * @tc.desc Test SparseArray.find, verify method result (found name equals "Charlie", age equals 35)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFind020', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<Person021>(3);
@@ -404,7 +404,7 @@ export default function SparseArrayFindTest(): void {
      * @tc.desc Test SparseArray.find, verify method result (found equals "hello")
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFind021', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int | string>(5);
@@ -420,7 +420,7 @@ export default function SparseArrayFindTest(): void {
      * @tc.desc Test SparseArray.find, verify method result (found equals 5)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFind022', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int | undefined>(5);
@@ -436,7 +436,7 @@ export default function SparseArrayFindTest(): void {
      * @tc.desc Test SparseArray.find, verify method result (found equals 3)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFind023', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(5);
@@ -455,7 +455,7 @@ export default function SparseArrayFindTest(): void {
      * @tc.desc Test SparseArray.find, verify method result (found equals 3)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFind024', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(5);
@@ -471,7 +471,7 @@ export default function SparseArrayFindTest(): void {
      * @tc.desc Sparse find v>20 returns 30 and callback invoked at most 3 times on sparse array
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFind025', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(6);
@@ -494,7 +494,7 @@ export default function SparseArrayFindTest(): void {
      * @tc.desc Test SparseArray.find, verify method result (calledIndices.length equals 3, calledIndices[0] equals 0)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFind026', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(5);
@@ -519,7 +519,7 @@ export default function SparseArrayFindTest(): void {
      * @tc.desc Test SparseArray.find, verify method result (found equals undefined)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFind027', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(5);
@@ -534,7 +534,7 @@ export default function SparseArrayFindTest(): void {
      * @tc.desc Test SparseArray.find, verify method result (found equals 9999)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFind028', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10000);
@@ -554,7 +554,7 @@ export default function SparseArrayFindTest(): void {
      * @tc.desc Test SparseArray.find, verify method result (found equals 5000)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFind029', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10000);
@@ -572,7 +572,7 @@ export default function SparseArrayFindTest(): void {
      * @tc.desc Test SparseArray.find, verify method result (found equals 3, callCount equals 3)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFind030', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10);
@@ -593,7 +593,7 @@ export default function SparseArrayFindTest(): void {
      * @tc.desc Test SparseArray.find, verify method result (found !== null && found !== undefined is true)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFind031', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(100);
@@ -617,7 +617,7 @@ export default function SparseArrayFindTest(): void {
      * @tc.desc find long element matching large business threshold
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFind032', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<long>(1 as long, 10000000000 as long, 3 as long);
@@ -632,7 +632,7 @@ export default function SparseArrayFindTest(): void {
      * @tc.desc find short element matching threshold in SparseArray<short>
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFind033', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<short>(100 as short, 200 as short, 30000 as short);
@@ -646,7 +646,7 @@ export default function SparseArrayFindTest(): void {
      * @tc.desc find locates null element in SparseArray<int|null>
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFind034', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int | null>(1, null, 3);
@@ -660,7 +660,7 @@ export default function SparseArrayFindTest(): void {
      * @tc.desc find locates XSS script string element
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFind035', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const xss = "<script>alert(1)</script>";
@@ -675,7 +675,7 @@ export default function SparseArrayFindTest(): void {
      * @tc.desc find locates binary literal element 0b111 in SparseArray<int>
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFind036', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 0b111, 3);
