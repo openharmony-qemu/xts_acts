@@ -21,10 +21,9 @@ import { worker, MessageEvents } from '@kit.ArkTS';
 import { SendableContextObject, NormalContextObject } from '../common/SendableContextObject'
 import common from '@ohos.app.ability.common';
 import taskpool from '@ohos.taskpool';
-import { openStageWorker, openStageWorker1 } from '../common/TestWorker';
 
-let abilityStageWorker: worker.ThreadWorker = openStageWorker();
-let worker1: worker.ThreadWorker = openStageWorker1();
+let abilityStageWorker: worker.ThreadWorker = new worker.ThreadWorker('../workers/Worker.ets');
+let worker1: worker.ThreadWorker = new worker.ThreadWorker('../workers/Worker1.ets');
 
 @Concurrent
 function printNormalContext(context: common.UIAbilityContext): boolean {
