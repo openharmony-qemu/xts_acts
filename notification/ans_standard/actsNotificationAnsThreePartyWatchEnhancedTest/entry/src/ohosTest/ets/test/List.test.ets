@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import actsNotificationAnsThreePartyWatchEnhancedTest from './ActsNotificationAnsThreePartyWatchEnhancedTest';
+import actsNotificationAnsThreePartyWatchEnhancedTest from './ActsNotificationAnsThreePartyWatchEnhancedTest.test';
 
 
 export default function testsuite() {
