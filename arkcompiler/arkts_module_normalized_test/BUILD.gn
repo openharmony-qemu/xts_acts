@@ -23,6 +23,7 @@ group("ActsArktsModuleNormalizedTest") {
       "exporttest:module_normalized_export_test",
       "lazy_load:module_normalized_lazy_load_test",
       "napi_load:module_normalized_napi_load_test",
+      "shared_module_load:module_normalized_shared_module_load_test",
       "static_load:module_normalized_static_load_test",
       "worker_path_load:module_normalized_worker_path_load_test",
     ]
