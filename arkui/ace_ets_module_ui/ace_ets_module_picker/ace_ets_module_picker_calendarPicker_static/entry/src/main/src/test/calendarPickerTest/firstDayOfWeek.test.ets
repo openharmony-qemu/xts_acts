@@ -57,7 +57,7 @@ export default function CalendarPickerFirstDayOfWeekTest() {
     })
 
     /**
-     * @tc.number SUB_ARKUI_CALENDARPICKER_FIRSTDAYOFWEEK_0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_CALENDAR_PICKER_FIRST_DAY_OF_WEEK_STATIC_0100
      * @tc.name CalendarPickerFirstDayOfWeek_local_0100
      * @tc.desc Verify CalendarPicker firstDayOfWeek property with CalendarFirstDayOfWeek.LOCAL test.
      * @tc.type FUNCTION
@@ -81,7 +81,7 @@ export default function CalendarPickerFirstDayOfWeekTest() {
     })
 
     /**
-     * @tc.number SUB_ARKUI_CALENDARPICKER_FIRSTDAYOFWEEK_0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_CALENDAR_PICKER_FIRST_DAY_OF_WEEK_STATIC_0200
      * @tc.name CalendarPickerFirstDayOfWeek_mon_0200
      * @tc.desc Verify CalendarPicker firstDayOfWeek property with CalendarFirstDayOfWeek.MON test.
      * @tc.type FUNCTION
@@ -105,7 +105,7 @@ export default function CalendarPickerFirstDayOfWeekTest() {
     })
 
     /**
-     * @tc.number SUB_ARKUI_CALENDARPICKER_FIRSTDAYOFWEEK_0300
+     * @tc.number SUB_ARKUI_ACE_ENGINE_CALENDAR_PICKER_FIRST_DAY_OF_WEEK_STATIC_0300
      * @tc.name CalendarPickerFirstDayOfWeek_tue_0300
      * @tc.desc Verify CalendarPicker firstDayOfWeek property with CalendarFirstDayOfWeek.TUE test.
      * @tc.type FUNCTION
@@ -129,7 +129,7 @@ export default function CalendarPickerFirstDayOfWeekTest() {
     })
 
     /**
-     * @tc.number SUB_ARKUI_CALENDARPICKER_FIRSTDAYOFWEEK_0400
+     * @tc.number SUB_ARKUI_ACE_ENGINE_CALENDAR_PICKER_FIRST_DAY_OF_WEEK_STATIC_0400
      * @tc.name CalendarPickerFirstDayOfWeek_wed_0400
      * @tc.desc Verify CalendarPicker firstDayOfWeek property with CalendarFirstDayOfWeek.WED test.
      * @tc.type FUNCTION
@@ -153,7 +153,7 @@ export default function CalendarPickerFirstDayOfWeekTest() {
     })
 
     /**
-     * @tc.number SUB_ARKUI_CALENDARPICKER_FIRSTDAYOFWEEK_0500
+     * @tc.number SUB_ARKUI_ACE_ENGINE_CALENDAR_PICKER_FIRST_DAY_OF_WEEK_STATIC_0500
      * @tc.name CalendarPickerFirstDayOfWeek_thu_0500
      * @tc.desc Verify CalendarPicker firstDayOfWeek property with CalendarFirstDayOfWeek.THU test.
      * @tc.type FUNCTION
@@ -177,7 +177,7 @@ export default function CalendarPickerFirstDayOfWeekTest() {
     })
 
     /**
-     * @tc.number SUB_ARKUI_CALENDARPICKER_FIRSTDAYOFWEEK_0600
+     * @tc.number SUB_ARKUI_ACE_ENGINE_CALENDAR_PICKER_FIRST_DAY_OF_WEEK_STATIC_0600
      * @tc.name CalendarPickerFirstDayOfWeek_fri_0600
      * @tc.desc Verify CalendarPicker firstDayOfWeek property with CalendarFirstDayOfWeek.FRI test.
      * @tc.type FUNCTION
@@ -201,7 +201,7 @@ export default function CalendarPickerFirstDayOfWeekTest() {
     })
 
     /**
-     * @tc.number SUB_ARKUI_CALENDARPICKER_FIRSTDAYOFWEEK_0700
+     * @tc.number SUB_ARKUI_ACE_ENGINE_CALENDAR_PICKER_FIRST_DAY_OF_WEEK_STATIC_0700
      * @tc.name CalendarPickerFirstDayOfWeek_sat_0700
      * @tc.desc Verify CalendarPicker firstDayOfWeek property with CalendarFirstDayOfWeek.SAT test.
      * @tc.type FUNCTION
@@ -225,7 +225,7 @@ export default function CalendarPickerFirstDayOfWeekTest() {
     })
 
     /**
-     * @tc.number SUB_ARKUI_CALENDARPICKER_FIRSTDAYOFWEEK_0800
+     * @tc.number SUB_ARKUI_ACE_ENGINE_CALENDAR_PICKER_FIRST_DAY_OF_WEEK_STATIC_0800
      * @tc.name CalendarPickerFirstDayOfWeek_sun_0800
      * @tc.desc Verify CalendarPicker firstDayOfWeek property with CalendarFirstDayOfWeek.SUN test.
      * @tc.type FUNCTION

@@ -48,7 +48,7 @@ export default function CalendarPickerDialogFirstDayOfWeekTest() {
     });
 
     /**
-     * @tc.number   CalendarPickerDialogFirstDayOfWeekTest_static_001
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_CALENDAR_PICKER_DIALOG_FIRST_DAY_OF_WEEK_STATIC_0100
      * @tc.name     CalendarPickerDialogFirstDayOfWeekTest_static_001
      * @tc.desc     Verify CalendarPickerDialog firstDayOfWeek property with CalendarFirstDayOfWeek.LOCAL test.
      * @tc.level    Level.LEVEL0
@@ -76,7 +76,7 @@ export default function CalendarPickerDialogFirstDayOfWeekTest() {
     })
 
     /**
-     * @tc.number   CalendarPickerDialogFirstDayOfWeekTest_static_002
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_CALENDAR_PICKER_DIALOG_FIRST_DAY_OF_WEEK_STATIC_0200
      * @tc.name     CalendarPickerDialogFirstDayOfWeekTest_static_002
      * @tc.desc     Verify CalendarPickerDialog firstDayOfWeek property with CalendarFirstDayOfWeek.MON test.
      * @tc.level    Level.LEVEL0
@@ -104,7 +104,7 @@ export default function CalendarPickerDialogFirstDayOfWeekTest() {
     })
 
     /**
-     * @tc.number   CalendarPickerDialogFirstDayOfWeekTest_static_003
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_CALENDAR_PICKER_DIALOG_FIRST_DAY_OF_WEEK_STATIC_0300
      * @tc.name     CalendarPickerDialogFirstDayOfWeekTest_static_003
      * @tc.desc     Verify CalendarPickerDialog firstDayOfWeek property with CalendarFirstDayOfWeek.TUE test.
      * @tc.level    Level.LEVEL0
@@ -132,7 +132,7 @@ export default function CalendarPickerDialogFirstDayOfWeekTest() {
     })
 
     /**
-     * @tc.number   CalendarPickerDialogFirstDayOfWeekTest_static_004
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_CALENDAR_PICKER_DIALOG_FIRST_DAY_OF_WEEK_STATIC_0400
      * @tc.name     CalendarPickerDialogFirstDayOfWeekTest_static_004
      * @tc.desc     Verify CalendarPickerDialog firstDayOfWeek property with CalendarFirstDayOfWeek.WED test.
      * @tc.level    Level.LEVEL0
@@ -160,7 +160,7 @@ export default function CalendarPickerDialogFirstDayOfWeekTest() {
     })
 
     /**
-     * @tc.number   CalendarPickerDialogFirstDayOfWeekTest_static_005
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_CALENDAR_PICKER_DIALOG_FIRST_DAY_OF_WEEK_STATIC_0500
      * @tc.name     CalendarPickerDialogFirstDayOfWeekTest_static_005
      * @tc.desc     Verify CalendarPickerDialog firstDayOfWeek property with CalendarFirstDayOfWeek.THU test.
      * @tc.level    Level.LEVEL0
@@ -188,7 +188,7 @@ export default function CalendarPickerDialogFirstDayOfWeekTest() {
     })
 
     /**
-     * @tc.number   CalendarPickerDialogFirstDayOfWeekTest_static_006
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_CALENDAR_PICKER_DIALOG_FIRST_DAY_OF_WEEK_STATIC_0600
      * @tc.name     CalendarPickerDialogFirstDayOfWeekTest_static_006
      * @tc.desc     Verify CalendarPickerDialog firstDayOfWeek property with CalendarFirstDayOfWeek.FRI test.
      * @tc.level    Level.LEVEL0
@@ -216,7 +216,7 @@ export default function CalendarPickerDialogFirstDayOfWeekTest() {
     })
 
     /**
-     * @tc.number   CalendarPickerDialogFirstDayOfWeekTest_static_007
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_CALENDAR_PICKER_DIALOG_FIRST_DAY_OF_WEEK_STATIC_0700
      * @tc.name     CalendarPickerDialogFirstDayOfWeekTest_static_007
      * @tc.desc     Verify CalendarPickerDialog firstDayOfWeek property with CalendarFirstDayOfWeek.SAT test.
      * @tc.level    Level.LEVEL0
@@ -244,7 +244,7 @@ export default function CalendarPickerDialogFirstDayOfWeekTest() {
     })
 
     /**
-     * @tc.number   CalendarPickerDialogFirstDayOfWeekTest_static_008
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_CALENDAR_PICKER_DIALOG_FIRST_DAY_OF_WEEK_STATIC_0800
      * @tc.name     CalendarPickerDialogFirstDayOfWeekTest_static_008
      * @tc.desc     Verify CalendarPickerDialog firstDayOfWeek property with CalendarFirstDayOfWeek.SUN test.
      * @tc.level    Level.LEVEL0

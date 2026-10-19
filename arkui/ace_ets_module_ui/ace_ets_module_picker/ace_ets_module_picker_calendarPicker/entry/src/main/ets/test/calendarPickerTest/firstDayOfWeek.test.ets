@@ -42,7 +42,7 @@ export default function firstDayOfWeekTest() {
 
     /**
      * @tc.name   FirstDayOfWeekTest_001
-     * @tc.number FirstDayOfWeekTest_001
+     * @tc.number SUB_ARKUI_ACE_ENGINE_CALENDAR_PICKER_FIRST_DAY_OF_WEEK_0100
      * @tc.desc   Test firstDayOfWeek property with CalendarFirstDayOfWeek.LOCAL test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -61,7 +61,7 @@ export default function firstDayOfWeekTest() {
 
     /**
      * @tc.name   FirstDayOfWeekTest_002
-     * @tc.number FirstDayOfWeekTest_002
+     * @tc.number SUB_ARKUI_ACE_ENGINE_CALENDAR_PICKER_FIRST_DAY_OF_WEEK_0200
      * @tc.desc   Test firstDayOfWeek property with CalendarFirstDayOfWeek.MON test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -80,7 +80,7 @@ export default function firstDayOfWeekTest() {
 
     /**
      * @tc.name   FirstDayOfWeekTest_003
-     * @tc.number FirstDayOfWeekTest_003
+     * @tc.number SUB_ARKUI_ACE_ENGINE_CALENDAR_PICKER_FIRST_DAY_OF_WEEK_0300
      * @tc.desc   Test firstDayOfWeek property with CalendarFirstDayOfWeek.TUE test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -99,7 +99,7 @@ export default function firstDayOfWeekTest() {
 
     /**
      * @tc.name   FirstDayOfWeekTest_004
-     * @tc.number FirstDayOfWeekTest_004
+     * @tc.number SUB_ARKUI_ACE_ENGINE_CALENDAR_PICKER_FIRST_DAY_OF_WEEK_0400
      * @tc.desc   Test firstDayOfWeek property with CalendarFirstDayOfWeek.WED test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -118,7 +118,7 @@ export default function firstDayOfWeekTest() {
 
     /**
      * @tc.name   FirstDayOfWeekTest_005
-     * @tc.number FirstDayOfWeekTest_005
+     * @tc.number SUB_ARKUI_ACE_ENGINE_CALENDAR_PICKER_FIRST_DAY_OF_WEEK_0500
      * @tc.desc   Test firstDayOfWeek property with CalendarFirstDayOfWeek.THU test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -137,7 +137,7 @@ export default function firstDayOfWeekTest() {
 
     /**
      * @tc.name   FirstDayOfWeekTest_006
-     * @tc.number FirstDayOfWeekTest_006
+     * @tc.number SUB_ARKUI_ACE_ENGINE_CALENDAR_PICKER_FIRST_DAY_OF_WEEK_0600
      * @tc.desc   Test firstDayOfWeek property with CalendarFirstDayOfWeek.FRI test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -156,7 +156,7 @@ export default function firstDayOfWeekTest() {
 
     /**
      * @tc.name   FirstDayOfWeekTest_007
-     * @tc.number FirstDayOfWeekTest_007
+     * @tc.number SUB_ARKUI_ACE_ENGINE_CALENDAR_PICKER_FIRST_DAY_OF_WEEK_0700
      * @tc.desc   Test firstDayOfWeek property with CalendarFirstDayOfWeek.SAT test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -175,7 +175,7 @@ export default function firstDayOfWeekTest() {
 
     /**
      * @tc.name   FirstDayOfWeekTest_008
-     * @tc.number FirstDayOfWeekTest_008
+     * @tc.number SUB_ARKUI_ACE_ENGINE_CALENDAR_PICKER_FIRST_DAY_OF_WEEK_0800
      * @tc.desc   Test firstDayOfWeek property with CalendarFirstDayOfWeek.SUN test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
