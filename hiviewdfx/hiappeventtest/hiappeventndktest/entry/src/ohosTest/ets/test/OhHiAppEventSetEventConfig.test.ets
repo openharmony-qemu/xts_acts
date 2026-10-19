@@ -616,7 +616,7 @@ export default function OhHiAppEventSetEventConfig() {
      * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_043
      * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_043
      * @tc.desc   test OH_HiAppEvent_Write
-     * @tc.type   FUNCTIONs
+     * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
