@@ -19,7 +19,7 @@ export default function webResourceErrorGetCustomErrorCodeCoverageDirect() {
   describe('webResourceErrorGetCustomErrorCodeCoverageDirect', () => {
     /**
      * @tc.name   testGetCustomErrorCodeCallDirect001
-     * @tc.number SUB_WEB_WEBRESOURCEERROR_GETCUSTOMERRORCODE_CALL_0100
+     * @tc.number SUB_WEB_WEBRESOURCEERROR_GETCUSTOMERRORCODE_CALL_DIRECT_0100
      * @tc.desc   test WebResourceError getCustomErrorCode call coverage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -35,7 +35,7 @@ export default function webResourceErrorGetCustomErrorCodeCoverageDirect() {
 
     /**
      * @tc.name   testGetCustomErrorCodeReturnDirect001
-     * @tc.number SUB_WEB_WEBRESOURCEERROR_GETCUSTOMERRORCODE_RETURN_0100
+     * @tc.number SUB_WEB_WEBRESOURCEERROR_GETCUSTOMERRORCODE_RETURN_DIRECT_0100
      * @tc.desc   test WebResourceError getCustomErrorCode number return
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
