@@ -1,3 +1,4 @@
+'use static';
 import NotificationSubscriberExtensionAbility from '@ohos.application.NotificationSubscriberExtensionAbility';
 import notificationExtensionSubscription from '@ohos.notificationExtensionSubscription';
 
