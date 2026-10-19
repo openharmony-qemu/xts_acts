@@ -36,7 +36,7 @@ export default function SparseArrayReverseTest(): void {
      * @tc.desc Test SparseArray.reverse, verify method result (arr[0] equals 3, arr[1] equals 2)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReverse001', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -52,7 +52,7 @@ export default function SparseArrayReverseTest(): void {
      * @tc.desc Test SparseArray.reverse, verify method result (result equals arr, arr[0] equals 3)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReverse002', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -67,7 +67,7 @@ export default function SparseArrayReverseTest(): void {
      * @tc.desc Test SparseArray.reverse, verify method result (result equals arr, arr.length equals 0)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReverse003', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>();
@@ -82,7 +82,7 @@ export default function SparseArrayReverseTest(): void {
      * @tc.desc Test SparseArray.reverse, verify method result (arr.length equals 42)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReverse004', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(42);
@@ -96,7 +96,7 @@ export default function SparseArrayReverseTest(): void {
      * @tc.desc Test SparseArray.reverse, verify method result (arr[0] equals 3, arr[2] equals 1)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReverse005', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int | undefined>(3);
@@ -114,7 +114,7 @@ export default function SparseArrayReverseTest(): void {
      * @tc.desc Test SparseArray.reverse, verify method result (arr[0] equals 1, arr[3] equals 4)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReverse006', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3, 4);
@@ -129,7 +129,7 @@ export default function SparseArrayReverseTest(): void {
      * @tc.desc Test SparseArray.reverse, verify method result (arr[0] equals 3, arr[3] equals 4)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReverse007', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -145,7 +145,7 @@ export default function SparseArrayReverseTest(): void {
      * @tc.desc Test SparseArray.reverse, verify method result (arr.length equals 1000, arr[0] equals 999)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReverse008', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>();
@@ -164,7 +164,7 @@ export default function SparseArrayReverseTest(): void {
      * @tc.desc Test SparseArray.reverse, verify method result (arr.length equals 5, arr[0] equals 20)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReverse009', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(5);
@@ -182,7 +182,7 @@ export default function SparseArrayReverseTest(): void {
      * @tc.desc Test SparseArray.reverse, verify method result (arr.length equals 3, arr[0] equals 30)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReverse010', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(3);
@@ -200,7 +200,7 @@ export default function SparseArrayReverseTest(): void {
      * @tc.desc Test SparseArray.reverse, verify method result (arr.length equals 10, arr[0] equals 100)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReverse011', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10);
@@ -216,7 +216,7 @@ export default function SparseArrayReverseTest(): void {
      * @tc.desc Test SparseArray.reverse, verify method result (arr[0] equals 5, arr[4] equals 1)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReverse012', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3, 4, 5);
@@ -231,7 +231,7 @@ export default function SparseArrayReverseTest(): void {
      * @tc.desc Test SparseArray.reverse, verify method result (arr[0] equals 3.3, arr[2] equals 1.1)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReverse013', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<number>(1.1, 2.2, 3.3);
@@ -246,7 +246,7 @@ export default function SparseArrayReverseTest(): void {
      * @tc.desc Test SparseArray.reverse, verify method result (arr[0] equals "c", arr[2] equals "a")
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReverse014', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<string>("a", "b", "c");
@@ -261,7 +261,7 @@ export default function SparseArrayReverseTest(): void {
      * @tc.desc Test SparseArray.reverse, verify method result (arr[0] equals true, arr[1] equals false)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReverse015', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<boolean>(true, false, true);
@@ -277,7 +277,7 @@ export default function SparseArrayReverseTest(): void {
      * @tc.desc Test SparseArray.reverse, verify method result (arr[0] equals true, arr[1] equals "a")
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReverse016', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int | string | boolean>(1, "a", true);
@@ -293,7 +293,7 @@ export default function SparseArrayReverseTest(): void {
      * @tc.desc Test SparseArray.reverse, verify method result (arr[0] equals 1, arr[4] equals 5)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReverse017', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3, 4, 5);
@@ -309,7 +309,7 @@ export default function SparseArrayReverseTest(): void {
      * @tc.desc Test SparseArray.reverse, verify method result (arr[0] equals 3, arr[2] equals 1)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReverse018', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -324,7 +324,7 @@ export default function SparseArrayReverseTest(): void {
      * @tc.desc Test SparseArray.reverse, verify method result (arr[0] equals 3, arr[1] equals 2)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReverse019', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -343,7 +343,7 @@ export default function SparseArrayReverseTest(): void {
      * @tc.desc Test SparseArray.reverse, verify method result (arr[0] equals 3, arr[1] equals 2)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReverse020', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -362,7 +362,7 @@ export default function SparseArrayReverseTest(): void {
      * @tc.desc Test SparseArray.reverse, verify method result (arr[0] equals 5, arr[1] equals 99)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReverse021', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3, 4, 5);
@@ -379,7 +379,7 @@ export default function SparseArrayReverseTest(): void {
      * @tc.desc Test SparseArray.reverse, verify method result (arr.length equals 10000, arr[0] equals 42)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReverse022', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10000);
@@ -395,7 +395,7 @@ export default function SparseArrayReverseTest(): void {
      * @tc.desc Test SparseArray.reverse, verify method result (arr[0] equals 2, arr[999] equals 1)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReverse023', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1000);
@@ -412,7 +412,7 @@ export default function SparseArrayReverseTest(): void {
      * @tc.desc Test SparseArray.reverse, verify method result (arr2[0] equals 3, arr2[2] equals 1)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReverse024', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr1 = new SparseArray<int>(1, 2, 3);
@@ -428,7 +428,7 @@ export default function SparseArrayReverseTest(): void {
      * @tc.desc Test SparseArray.reverse, verify method result (reversed equals arr1, arr1[0] equals 3)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReverse025', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr1 = new SparseArray<int>(1, 2, 3);
@@ -448,7 +448,7 @@ export default function SparseArrayReverseTest(): void {
      * @tc.desc Test SparseArray.reverse, verify method result (arr1[0] equals 3, arr2[0] equals 3)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReverse026', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr1 = new SparseArray<int>(1, 2, 3);
@@ -471,7 +471,7 @@ export default function SparseArrayReverseTest(): void {
      * @tc.desc Test SparseArray.reverse, verify method result
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReverse027', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr1 = new SparseArray<int>(1, 2, 3);
@@ -492,7 +492,7 @@ export default function SparseArrayReverseTest(): void {
      * @tc.desc Test SparseArray.reverse, verify method result (arr.toString equals '5,4,3,2,1')
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReverse028', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = SparseArray.from<int>([1, 2, 3, 4, 5]);
@@ -506,7 +506,7 @@ export default function SparseArrayReverseTest(): void {
      * @tc.desc reverse on SparseArray<long> reverses long element order in place
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReverse029', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<long>(1 as long, 10000000000 as long);
@@ -520,7 +520,7 @@ export default function SparseArrayReverseTest(): void {
      * @tc.desc reverse in place orders 0x3 0b10 0o5 literals to 0o5 0b10 0x3
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReverse030', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(0x3, 0b10, 0o5);
@@ -535,7 +535,7 @@ export default function SparseArrayReverseTest(): void {
      * @tc.desc reverse on SparseArray<char> reverses char element order in place
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReverse031', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<char>(c'A', c'B', c'C');
@@ -551,7 +551,7 @@ export default function SparseArrayReverseTest(): void {
      * @tc.desc reverse on SparseArray<boolean> preserves false value after reversal
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReverse032', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<boolean>(true, false, true);
@@ -566,7 +566,7 @@ export default function SparseArrayReverseTest(): void {
      * @tc.desc reverse preserves explicit undefined element in SparseArray<int|undefined>
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReverse033', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int | undefined>(1, undefined, 3);
@@ -582,7 +582,7 @@ export default function SparseArrayReverseTest(): void {
      * @tc.desc reverse moves high sparse assigned value to index 0
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReverse034', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<string>(6);
