@@ -1702,5 +1702,463 @@ export default function shortMulTest(): void {
       }
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SHORT_MUL_1100
+     * @tc.name testShortMul_merged11
+     * @tc.desc BusinessScenario: covers 10 merged test points for Short.mul, including business scenarios, containers and references, equality consistency, opposite values, and type conversion.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testShortMul_merged11', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let period: Short = new Short(255 as short);
+        let dutyPercent: Short = new Short(50 as short);
+        let pulseWidth: Short = period.mul(dutyPercent);
+        expect(pulseWidth.toInt()).assertEqual(12750);
+        let dutyPercent2: Short = new Short(80 as short);
+        let pulseWidth2: Short = period.mul(dutyPercent2);
+        expect(pulseWidth2.toInt()).assertEqual(20400);
+        expect(period.toShort()).assertEqual(255 as short);
+      }
+
+      {
+        let a: Short = new Short(12 as short);
+        let b: Short = new Short(5 as short);
+        let c: Short = new Short(7 as short);
+        let productAB: Short = a.mul(b);
+        let productAC: Short = a.mul(c);
+        let map: Map<Short, string> = new Map<Short, string>();
+        map.set(productAB, "ab");
+        map.set(productAC, "ac");
+        expect(map.get(new Short(60 as short))).assertEqual("ab");
+        expect(map.get(new Short(84 as short))).assertEqual("ac");
+        let notInMap: Short = new Short(99 as short);
+        expect(map.has(notInMap)).assertFalse();
+      }
+
+      {
+        let base: Short = new Short(7 as short);
+        let mulTable: Map<int, Short> = new Map<int, Short>();
+  
+        for (let i: int = 1; i <= 9; i++) {
+          let multiplier: Short = new Short(Int.toShort(i));
+          let product: Short = base.mul(multiplier);
+          mulTable.set(i, product);
+        }
+  
+        expect((mulTable.get(3) as Short).toInt()).assertEqual(21);
+        expect((mulTable.get(7) as Short).toInt()).assertEqual(49);
+        expect((mulTable.get(9) as Short).toInt()).assertEqual(63);
+  
+        for (let i: int = 1; i <= 9; i++) {
+          let product: Short = mulTable.get(i) as Short;
+          let divided: float = product.toFloat() / base.toFloat();
+          expect(divided).assertEqual(Int.toDouble(i));
+        }
+      }
+
+      {
+        let a: Short = new Short(7 as short);
+        let b: Short = new Short(3 as short);
+        let sum: Short = a.add(b);
+        let diff: Short = a.sub(b);
+        let product: Short = sum.mul(diff);
+        let aSquared: Short = a.mul(a);
+        let bSquared: Short = b.mul(b);
+        let expected: Short = aSquared.sub(bSquared);
+        expect(product.equals(expected)).assertTrue();
+        expect(product.toInt()).assertEqual(40);
+      }
+
+      {
+        let meters: Short = new Short(5 as short);
+        let cmPerMeter: Short = new Short(100 as short);
+        let centimeters: Short = meters.mul(cmPerMeter);
+        expect(centimeters.toInt()).assertEqual(500);
+        let kmPerMeter: Short = new Short(1000 as short);
+        let kilometers: Short = meters.mul(kmPerMeter);
+        expect(kilometers.toInt()).assertEqual(5000);
+      }
+
+      {
+        let n: Short = new Short(10 as short);
+        let nPlusOne: Short = n.add(new Short(1 as short));
+        let product: Short = n.mul(nPlusOne);
+        let triangular: Short = product.div(new Short(2 as short));
+        expect(triangular.toInt()).assertEqual(55);
+      }
+
+      {
+        let speed: Short = new Short(60 as short);
+        let time: Short = new Short(3 as short);
+        let distance: Short = speed.mul(time);
+        expect(distance.toInt()).assertEqual(180);
+        expect(speed.toShort()).assertEqual(60 as short);
+        expect(time.toShort()).assertEqual(3 as short);
+      }
+
+      {
+        let unitPrice: Short = new Short(25 as short);
+        let quantity: Short = new Short(4 as short);
+        let cost: Short = new Short(30 as short);
+        let revenue: Short = unitPrice.mul(quantity);
+        let profit: Short = revenue.sub(cost);
+        expect(revenue.toInt()).assertEqual(100);
+        expect(profit.toInt()).assertEqual(70);
+      }
+
+      {
+        let credits: Short[] = [new Short(3 as short), new Short(4 as short), new Short(2 as short)];
+        let gradePoints: Short[] = [new Short(85 as short), new Short(92 as short), new Short(78 as short)];
+        let totalWeighted: Short = new Short(0 as short);
+        let totalCredits: Short = new Short(0 as short);
+        for (let i: int = 0; i < credits.length; i++) {
+          totalWeighted = totalWeighted.add(credits[i].mul(gradePoints[i]));
+          totalCredits = totalCredits.add(credits[i]);
+        }
+        expect(totalWeighted.toInt()).assertEqual(779);
+        expect(totalCredits.toInt()).assertEqual(9);
+      }
+
+      {
+        let original: Short[] = [
+          new Short(1 as short), new Short(3 as short), new Short(5 as short)
+        ];
+        let scale: Short = new Short(2 as short);
+        for (let i: int = 0; i < original.length; i++) {
+          original[i] = original[i].mul(scale);
+        }
+        expect(original[0].toShort()).assertEqual(2 as short);
+        expect(original[1].toShort()).assertEqual(6 as short);
+        expect(original[2].toShort()).assertEqual(10 as short);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SHORT_MUL_1200
+     * @tc.name testShortMul_merged12
+     * @tc.desc BusinessScenario: covers 10 merged test points for Short.mul, including business scenarios, loop accumulation, and containers and references.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testShortMul_merged12', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let base: Short = new Short(7 as short);
+        let two: Short = new Short(2 as short);
+        let three: Short = new Short(3 as short);
+        let four: Short = new Short(4 as short);
+        let twoTimes: Short = base.mul(two);
+        let threeTimes: Short = base.mul(three);
+        let fourTimes: Short = base.mul(four);
+        expect(twoTimes.toShort()).assertEqual(14 as short);
+        expect(threeTimes.toShort()).assertEqual(21 as short);
+        expect(fourTimes.toShort()).assertEqual(28 as short);
+        expect(twoTimes.add(base).equals(threeTimes)).assertTrue();
+      }
+
+      {
+        let sensorReading: Short = new Short(250 as short);
+        let calibrationCoeff: Short = new Short(10 as short);
+        let scaledReading: Short = sensorReading.mul(calibrationCoeff);
+        expect(scaledReading.toInt()).assertEqual(2500);
+        let rawReadings: short[] = [100 as short, 200 as short, 300 as short];
+        for (let i: int = 0; i < rawReadings.length; i++) {
+          let reading: Short = new Short(rawReadings[i]);
+          let scaled: Short = reading.mul(calibrationCoeff);
+          expect(scaled.toInt()).assertEqual(Short.toInt(rawReadings[i]) * 10);
+        }
+      }
+
+      {
+        let length: Short = new Short(10 as short);
+        let width: Short = new Short(8 as short);
+        let height: Short = new Short(5 as short);
+        let baseArea: Short = length.mul(width);
+        let volume: Short = baseArea.mul(height);
+        expect(baseArea.toInt()).assertEqual(80);
+        expect(volume.toInt()).assertEqual(400);
+        let volumeAlt: Short = length.mul(width).mul(height);
+        expect(volumeAlt.toShort()).assertEqual(volume.toShort());
+        expect(volumeAlt.equals(volume)).assertTrue();
+      }
+
+      {
+        let samples: short[] = [10 as short, 20 as short, (-5) as short, 30 as short];
+        let gain: Short = new Short(3 as short);
+        for (let i: int = 0; i < samples.length; i++) {
+          let sample: Short = new Short(samples[i]);
+          let amplified: Short = sample.mul(gain);
+          expect(amplified.toInt()).assertEqual(Short.toInt(samples[i]) * 3);
+        }
+        let maxSample: Short = new Short(32767 as short);
+        let maxAmplified: Short = maxSample.mul(gain);
+        expect(maxAmplified.toInt()).assertEqual(32765);
+      }
+
+      {
+        let pixelX: Short = new Short(100 as short);
+        let pixelY: Short = new Short(150 as short);
+        let scaleFactor: Short = new Short(2 as short);
+        let scaledX: Short = pixelX.mul(scaleFactor);
+        let scaledY: Short = pixelY.mul(scaleFactor);
+        expect(scaledX.toShort()).assertEqual(200 as short);
+        expect(scaledY.toShort()).assertEqual(300 as short);
+        expect(pixelX.toShort()).assertEqual(100 as short);
+        expect(pixelY.toShort()).assertEqual(150 as short);
+        let scaleDown: Short = new Short((-1) as short);
+        let scaledNegX: Short = pixelX.mul(scaleDown);
+        expect(scaledNegX.toInt()).assertEqual(-100);
+      }
+
+      {
+        let data: Short[] = [
+          new Short(7 as short), new Short(11 as short), new Short(13 as short), new Short(17 as short)
+        ];
+        let checksum: Short = new Short(1 as short);
+        for (let i: int = 0; i < data.length; i++) {
+          checksum = checksum.mul(data[i]);
+        }
+        expect(checksum.toInt()).assertEqual(17017);
+        let data2: Short[] = [
+          new Short(2 as short), new Short(3 as short), new Short(5 as short)
+        ];
+        let checksum2: Short = new Short(1 as short);
+        for (let i: int = 0; i < data2.length; i++) {
+          checksum2 = checksum2.mul(data2[i]);
+        }
+        expect(checksum2.toInt()).assertEqual(30);
+      }
+
+      {
+        let x1: Short = new Short(3 as short);
+        let y1: Short = new Short(4 as short);
+        let x2: Short = new Short(5 as short);
+        let y2: Short = new Short(6 as short);
+        let dotProduct: Short = x1.mul(x2).add(y1.mul(y2));
+        expect(dotProduct.toInt()).assertEqual(39);
+        let x3: Short = new Short((-2) as short);
+        let y3: Short = new Short(7 as short);
+        let x4: Short = new Short(10 as short);
+        let y4: Short = new Short(3 as short);
+        let dotProduct2: Short = x3.mul(x4).add(y3.mul(y4));
+        expect(dotProduct2.toInt()).assertEqual(1);
+      }
+
+      {
+        let x1: Short = new Short(2 as short);
+        let y1: Short = new Short(3 as short);
+        let x2: Short = new Short(4 as short);
+        let y2: Short = new Short(5 as short);
+        let crossProduct: Short = x1.mul(y2).sub(y1.mul(x2));
+        expect(crossProduct.toInt()).assertEqual(-2);
+        let a1: Short = new Short(5 as short);
+        let b1: Short = new Short(7 as short);
+        let a2: Short = new Short(3 as short);
+        let b2: Short = new Short(2 as short);
+        let crossProduct2: Short = a1.mul(b2).sub(b1.mul(a2));
+        expect(crossProduct2.toInt()).assertEqual(-11);
+      }
+
+      {
+        let rowCount: Short = new Short(10 as short);
+        let colCount: Short = new Short(5 as short);
+        let rowIndex: Short = new Short(3 as short);
+        let offset: Short = rowIndex.mul(colCount);
+        expect(offset.toShort()).assertEqual(15 as short);
+        let rowIndex2: Short = new Short(7 as short);
+        let offset2: Short = rowIndex2.mul(colCount);
+        expect(offset2.toShort()).assertEqual(35 as short);
+        let totalElements: Short = rowCount.mul(colCount);
+        expect(totalElements.toShort()).assertEqual(50 as short);
+      }
+
+      {
+        let redChannel: Short = new Short(200 as short);
+        let greenChannel: Short = new Short(150 as short);
+        let blueChannel: Short = new Short(100 as short);
+        let alpha: Short = new Short(128 as short);
+        let blendedRed: Short = redChannel.mul(alpha);
+        let blendedGreen: Short = greenChannel.mul(alpha);
+        let blendedBlue: Short = blueChannel.mul(alpha);
+        expect(blendedRed.toInt()).assertEqual(25600);
+        expect(blendedGreen.toInt()).assertEqual(19200);
+        expect(blendedBlue.toInt()).assertEqual(12800);
+        let maxAlpha: Short = new Short(255 as short);
+        let fullBlendRed: Short = redChannel.mul(maxAlpha);
+        expect(fullBlendRed.toInt()).assertEqual(-14536);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SHORT_MUL_1300
+     * @tc.name testShortMul_merged13
+     * @tc.desc BusinessScenario / Other: covers 10 merged test points for Short.mul, including business scenarios, type conversion, algebraic properties, and precision.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testShortMul_merged13', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let dx: Short = new Short(3 as short);
+        let dy: Short = new Short(4 as short);
+        let distSquared: Short = dx.mul(dx).add(dy.mul(dy));
+        expect(distSquared.toInt()).assertEqual(25);
+        let dx2: Short = new Short(100 as short);
+        let dy2: Short = new Short(100 as short);
+        let distSquared2: Short = dx2.mul(dx2).add(dy2.mul(dy2));
+        expect(distSquared2.toInt()).assertEqual(20000);
+        let dx3: Short = new Short(0 as short);
+        let dy3: Short = new Short(5 as short);
+        let distSquared3: Short = dx3.mul(dx3).add(dy3.mul(dy3));
+        expect(distSquared3.toShort()).assertEqual(25 as short);
+      }
+
+      {
+        let one: Short = new Short(1 as short);
+        let two: Short = new Short(2 as short);
+        let three: Short = new Short(3 as short);
+        let four: Short = new Short(4 as short);
+        let five: Short = new Short(5 as short);
+        let fact3: Short = one.mul(two).mul(three);
+        let fact4: Short = fact3.mul(four);
+        let fact5: Short = fact4.mul(five);
+        let kFact: Short = one.mul(two);
+        let nMinusKFact: Short = fact3;
+        let denominator: Short = kFact.mul(nMinusKFact);
+        let c5_2: Short = fact5.div(denominator);
+        expect(c5_2.toShort()).assertEqual(10 as short);
+        let c5_3: Short = fact5.div(fact3.mul(two));
+        expect(c5_3.toShort()).assertEqual(10 as short);
+      }
+
+      {
+        let carriers: Short[] = [new Short(100 as short), new Short(200 as short), new Short((-80) as short)];
+        let modulators: Short[] = [new Short(50 as short), new Short(3 as short), new Short(10 as short)];
+        let expectedProducts: int[] = [5000, 600, -800];
+        for (let i: int = 0; i < carriers.length; i++) {
+          expect(carriers[i].mul(modulators[i]).toInt()).assertEqual(expectedProducts[i]);
+        }
+      }
+
+      {
+        let samples: Short[] = [
+          new Short(10 as short), new Short(20 as short), new Short(30 as short)
+        ];
+        let tapWeights: Short[] = [
+          new Short(1 as short), new Short(2 as short), new Short(1 as short)
+        ];
+        let weightedSum: Short = new Short(0 as short);
+        for (let i: int = 0; i < samples.length; i++) {
+          weightedSum = weightedSum.add(samples[i].mul(tapWeights[i]));
+        }
+        expect(weightedSum.toInt()).assertEqual(80);
+  
+        let samples2: Short[] = [
+          new Short(5 as short), new Short(15 as short)
+        ];
+        let tapWeights2: Short[] = [
+          new Short(3 as short), new Short(1 as short)
+        ];
+        let weightedSum2: Short = new Short(0 as short);
+        for (let i: int = 0; i < samples2.length; i++) {
+          weightedSum2 = weightedSum2.add(samples2[i].mul(tapWeights2[i]));
+        }
+        expect(weightedSum2.toShort()).assertEqual(30 as short);
+      }
+
+      {
+        let xAxis: Short = new Short(30 as short);
+        let yAxis: Short = new Short(40 as short);
+  
+        let distance: short = Double.toShort(Math.sqrt(((xAxis).mul(xAxis)).add((yAxis).mul(yAxis))));
+        expect(distance.toInt()).assertEqual(50);
+      }
+
+      {
+        let valueOperand: Short = new Short(3 as short);
+        let identityOperand: Short = new Short(1 as short);
+        let product: Short = valueOperand.mul(identityOperand);
+        expect(product.compareTo(new Short(3 as short))).assertEqual(0);
+        expect(valueOperand.toShort()).assertEqual(3 as short);
+      }
+
+      {
+        let a: Short = new Short(12 as short);
+        let b: Short = new Short(8 as short);
+        let product: Short = a.mul(b);
+        let intResult: int = product.toInt();
+        expect(intResult).assertEqual(96);
+        expect(product.toShort()).assertEqual(96 as short);
+      }
+
+      {
+        let a: Short = new Short(25 as short);
+        let b: Short = new Short(4 as short);
+        let product: Short = a.mul(b);
+        let longResult: long = product.toLong();
+        expect(longResult).assertEqual(Long.toLong(100));
+      }
+
+      {
+        let a: Short = new Short(6 as short);
+        let b: Short = new Short(7 as short);
+        let product: Short = a.mul(b);
+        let floatResult: float = product.toFloat();
+        expect(floatResult).assertEqual(42.0);
+      }
+
+      {
+        let a: Short = new Short(11 as short);
+        let b: Short = new Short(9 as short);
+        let product: Short = a.mul(b);
+        let doubleResult: double = product.toDouble();
+        expect(doubleResult).assertEqual(99.0);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SHORT_MUL_1400
+     * @tc.name testShortMul_merged14
+     * @tc.desc Other: covers 2 merged test points for Short.mul, including loop accumulation.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testShortMul_merged14', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let a: Short = new Short(6 as short);
+        let b: Short = new Short(50 as short);
+        let c: Short = new Short(30 as short);
+        let leftSide: Short = a.mul(b.sub(c));
+        let rightSide: Short = a.mul(b).sub(a.mul(c));
+        expect(leftSide.toShort()).assertEqual(rightSide.toShort());
+        expect(leftSide.toInt()).assertEqual(120);
+        expect(rightSide.toInt()).assertEqual(120);
+      }
+
+      {
+        let a: Short = new Short(7 as short);
+        let b: Short = new Short(8 as short);
+        let c: Short = new Short(100 as short);
+        let d: Short = new Short(50 as short);
+        let step1: Short = a.mul(b);
+        expect(step1.toShort()).assertEqual(56 as short);
+        let step2: Short = step1.add(c);
+        expect(step2.toShort()).assertEqual(156 as short);
+        let step3: Short = step2.sub(d);
+        expect(step3.toShort()).assertEqual(106 as short);
+        let wideResult: int = a.toInt() * b.toInt() + c.toInt() - d.toInt();
+        expect(step3.toInt()).assertEqual(wideResult);
+        let a2: Short = new Short(100 as short);
+        let b2: Short = new Short(100 as short);
+        let c2: Short = new Short(5000 as short);
+        let d2: Short = new Short(3000 as short);
+        let chained2: Short = a2.mul(b2).add(c2).sub(d2);
+        expect(chained2.toInt()).assertEqual(12000);
+      }
+    });
+
   });
 }
