@@ -27,6 +27,8 @@ export default function HiAppEventConfigTest() {
 
     // ==================== setEventConfig 1.1接口 ====================
 
+test
+
     // setEventConfig 1.1接口 执行成功的场景
     const config_true: Record<string, Record<string, hiAppEvent.ParamType>>[] = [
       // MAIN_THREAD_JANK 成功场景 - 单参数

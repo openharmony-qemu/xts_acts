@@ -49,4 +49,5 @@ export default function testsuite() {
     removeProcessorStrongTest();
     removeWatcherStrongTest();
     setEventConfigStrongTest();
+    test
 }

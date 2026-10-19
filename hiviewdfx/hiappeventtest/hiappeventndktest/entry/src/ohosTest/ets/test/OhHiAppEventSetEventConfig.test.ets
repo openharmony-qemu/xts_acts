@@ -616,7 +616,7 @@ export default function OhHiAppEventSetEventConfig() {
      * @tc.name   SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_043
      * @tc.number SUB_DFX_DFT_OH_HIPPEVENT_SetEventConfig_043
      * @tc.desc   test OH_HiAppEvent_Write
-     * @tc.type   FUNCTION
+     * @tc.type   FUNCTIONs
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
@@ -625,6 +625,10 @@ export default function OhHiAppEventSetEventConfig() {
       expect(result).assertEqual(2);
       done();
     });
+
+
+
+test
 
 
   })

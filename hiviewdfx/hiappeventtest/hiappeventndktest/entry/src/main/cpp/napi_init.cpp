@@ -59,6 +59,9 @@ static void OnTake(const char *const *events, uint32_t eventLen)
 {
 }
 
+
+test
+
 static napi_value OHHiAppEventWrite(napi_env env, napi_callback_info info)
 {
     ParamList list = OH_HiAppEvent_CreateParamList();
