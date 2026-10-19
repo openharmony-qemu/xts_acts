@@ -172,4 +172,4 @@ export const CheckHiAppEventSysEventAddress: () => boolean;
 export const CheckHiAppEventSysEventAppHicollte: () => boolean;
 export const CheckHiAppEventSysEventAppCpuUsageHigh: () => boolean;
 export const CrashLink: (a: number, b: number) => number;
-test
+export const OhHiappEventSetEventConfigPublishOnNextLaunch: (a: number) => number;
