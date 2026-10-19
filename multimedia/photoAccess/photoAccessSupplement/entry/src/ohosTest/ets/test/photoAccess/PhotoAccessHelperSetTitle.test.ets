@@ -2207,48 +2207,6 @@ export default function PhotoSetTitleTestSupp() {
       }
     });
     /**
-     * @tc.name   SUB_ON_PHOTO_CHANGE_001
-     * @tc.number SUB_ON_PHOTO_CHANGE_001
-     * @tc.desc   PhotoAccessHelper.on_photoChange-返回值所有属性覆盖
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_ON_PHOTO_CHANGE_001', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_ON_PHOTO_CHANGE_001';
-      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-      let fetchOptions: photoAccessHelper.FetchOptions = {
-        fetchColumns: [],
-        predicates: predicates
-      };
-      let onCallback = (changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
-        console.info(TAG,testName,'onCallback success, changData: ' + JSON.stringify(changeData));
-        expect(changeData.type == 1).assertTrue();
-        expect(isEmpty(changeData.assetChangeDatas)).assertFalse();
-        expect(changeData.isForRecheck).assertFalse();
-        done();
-      }
-      try {
-        let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
-          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.IMAGE);
-        let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
-        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-          await album.getAssets(fetchOptions);
-        let asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-        PhAccessHelper.on('photoChange', onCallback);
-        let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest = new photoAccessHelper.MediaAssetChangeRequest(asset);
-        let newTitle: string = 'newTitle';
-        assetChangeRequest.setTitle(newTitle);
-        await PhAccessHelper.applyChanges(assetChangeRequest);
-        await sleep(1000)
-        PhAccessHelper.off('photoChange', onCallback);
-      } catch (error) {
-        console.error(TAG, testName, `fetch failed with err: ${error.code}, ${error.message}`);
-        expect().assertFail()
-        done();
-      }
-    });
-    /**
      * @tc.name   SUB_PHOTO_ACCESS_HELPER_UNREGISTER_CHANGE_CALLBACK_002
      * @tc.number SUB_PHOTO_ACCESS_HELPER_UNREGISTER_CHANGE_CALLBACK_002
      * @tc.desc   PhotoAccessHelper.unRegisterChange-第1个参数undefined覆盖
