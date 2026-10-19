@@ -1566,5 +1566,266 @@ export default function shortToLocaleStringTest(): void {
       }
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SHORT_TOLOCALESTRING_1100
+     * @tc.name testShortToLocaleString_merged11
+     * @tc.desc Other: covers 10 merged test points for Short.toLocaleString, including locale handling and fractions and rounding.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testShortToLocaleString_merged11', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let value: Short = new Short(1234 as short);
+        let result: String = value.toLocaleString("en-US", { style: "decimal" });
+        expect(result).assertEqual("1,234");
+      }
+
+      {
+        let value: Short = new Short(12 as short);
+        let result: String = value.toLocaleString("en-US", {
+          style: "percent"
+        });
+        expect(result).assertEqual("1,200%");
+      }
+
+      {
+        let values: short[] = [5 as short, 1234 as short, 32767 as short];
+        let expectedValues: String[] = ["5", "1.234", "32.767"];
+        let caseCount: int = 3;
+        for (let index: int = 0; index < caseCount; index++) {
+          let value: Short = new Short(values[index]);
+          let result: String = value.toLocaleString("it-IT");
+          expect(result).assertEqual(expectedValues[index]);
+          expect(result).assertEqual(
+            new Intl.NumberFormat("it-IT").format(values[index])
+          );
+        }
+      }
+
+      {
+        let value: Short = new Short(1234 as short);
+        let resultEn: String = value.toLocaleString("en-US");
+        let resultDe: String = value.toLocaleString("de-DE");
+        let resultZh: String = value.toLocaleString("zh-CN");
+        expect(resultEn).assertEqual("1,234");
+        expect(resultDe).assertEqual("1.234");
+        expect(resultZh).assertEqual("1,234");
+      }
+
+      {
+        let value: Short = new Short(Int.toShort(1500));
+        let currencyResult: String = value.toLocaleString("en-US", { style: "currency", currency: "EUR" });
+        let expectedCurrencyResult: String = new Intl.NumberFormat(
+          "en-US",
+          { style: "currency", currency: "EUR" }
+        ).format(1500);
+        expect(currencyResult).assertEqual(expectedCurrencyResult);
+      }
+
+      {
+        let locale: string = "ja-JP";
+        let value: Short = new Short(2000 as short);
+        let currencyResult: String = value.toLocaleString(locale, { style: "currency", currency: "JPY" });
+        let expectedCurrencyResult: String = new Intl.NumberFormat(
+          locale,
+          { style: "currency", currency: "JPY" }
+        ).format(2000);
+        expect(currencyResult).assertEqual(expectedCurrencyResult);
+      }
+
+      {
+        let locale: string = "en-GB";
+        let value: Short = new Short(3000 as short);
+        let currencyResult: String = value.toLocaleString(locale, {
+          style: "currency",
+          currency: "GBP"
+        });
+        let expectedCurrencyResult: String = new Intl.NumberFormat(
+          locale,
+          { style: "currency", currency: "GBP" }
+        ).format(3000);
+        expect(currencyResult).assertEqual(expectedCurrencyResult);
+      }
+
+      {
+        let value: Short = new Short(4000 as short);
+        let expectedCurrencyResult: String = new Intl.NumberFormat(
+          "zh-CN",
+          { style: "currency", currency: "CNY" }
+        ).format(4000);
+        expect(value.toLocaleString("zh-CN", { style: "currency", currency: "CNY" })).assertEqual(expectedCurrencyResult);
+      }
+
+      {
+        let value: Short = new Short(500 as short);
+        let symbolResult: String = value.toLocaleString("en-US", {
+          style: "currency",
+          currency: "USD",
+          currencyDisplay: "symbol"
+        });
+        let expectedSymbolResult: String = new Intl.NumberFormat(
+          "en-US",
+          { style: "currency", currency: "USD", currencyDisplay: "symbol" }
+        ).format(500);
+        expect(symbolResult).assertEqual(expectedSymbolResult);
+      }
+
+      {
+        let value: Short = new Short(600 as short);
+        let codeResult: String = value.toLocaleString("en-US", { style: "currency", currency: "USD", currencyDisplay: "code" });
+        let expectedCodeResult: String = new Intl.NumberFormat(
+          "en-US",
+          { style: "currency", currency: "USD", currencyDisplay: "code" }
+        ).format(600);
+        expect(codeResult).assertEqual(expectedCodeResult);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SHORT_TOLOCALESTRING_1200
+     * @tc.name testShortToLocaleString_merged12
+     * @tc.desc Other: covers 10 merged test points for Short.toLocaleString, including locale handling and boundary values.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testShortToLocaleString_merged12', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let locale: string = "en-US";
+        let value: Short = new Short(700 as short);
+        let nameResult: String = value.toLocaleString(locale, {
+          style: "currency",
+          currency: "USD",
+          currencyDisplay: "name"
+        });
+        let expectedNameResult: String = new Intl.NumberFormat(
+          locale,
+          { style: "currency", currency: "USD", currencyDisplay: "name" }
+        ).format(700);
+        expect(nameResult).assertEqual(expectedNameResult);
+      }
+
+      {
+        let value: Short = new Short(12345 as short);
+        let sciResult: String = value.toLocaleString("en-US", { notation: "scientific" });
+        let expectedSciResult: String = new Intl.NumberFormat("en-US", { notation: "scientific" }).format(12345);
+        expect(sciResult).assertEqual(expectedSciResult);
+      }
+
+      {
+        let locale: string = "en-US";
+        let value: Short = new Short(15000 as short);
+        let engResult: String = value.toLocaleString(locale, { notation: "engineering" });
+        let expectedEngResult: String = new Intl.NumberFormat(
+          locale,
+          { notation: "engineering" }
+        ).format(15000);
+        expect(engResult).assertEqual(expectedEngResult);
+      }
+
+      {
+        let value: Short = new Short(1234 as short);
+        let result: String = value.toLocaleString(["fr-FR", "en-US"]);
+        let expectedResult: String = new Intl.NumberFormat("fr-FR").format(1234);
+        expect(result).assertEqual(expectedResult);
+      }
+
+      {
+        let price: Short = new Short(1299 as short);
+  
+        let usPrice: string = price.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+        let dePrice: string = price.toLocaleString('de-DE', { style: 'currency', currency: 'EUR' });
+        let cnPrice: string = price.toLocaleString('zh-CN', { style: 'currency', currency: 'CNY' });
+  
+        expect(usPrice.includes('$')).assertTrue();
+        expect(cnPrice.includes('¥')).assertTrue();
+        expect(dePrice.includes('€')).assertTrue();
+  
+        let ukPrice: string = price.toLocaleString('en-GB', { style: 'currency', currency: 'GBP' });
+        expect(ukPrice.includes('£')).assertTrue();
+        expect(usPrice).assertEqual(new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(1299));
+        expect(cnPrice).assertEqual(new Intl.NumberFormat('zh-CN', { style: 'currency', currency: 'CNY' }).format(1299));
+        expect(dePrice).assertEqual(new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(1299));
+        expect(ukPrice).assertEqual(new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP' }).format(1299));
+      }
+
+      {
+        let value: Short = new Short(12345 as short);
+  
+        let noGroupResult: String = value.toLocaleString("en-US", { useGrouping: false });
+        let withGroupResult: String = value.toLocaleString("en-US", { useGrouping: true });
+  
+        expect(noGroupResult.includes(',')).assertFalse();
+        expect(withGroupResult.includes(',')).assertTrue();
+        expect(noGroupResult).assertEqual(
+          new Intl.NumberFormat("en-US", { useGrouping: false }).format(12345)
+        );
+        expect(withGroupResult).assertEqual(
+          new Intl.NumberFormat("en-US", { useGrouping: true }).format(12345)
+        );
+      }
+
+      {
+        let value: Short = new Short(15000 as short);
+        let result: String = value.toLocaleString("en-US", {
+          style: "unit",
+          unit: "meter",
+          notation: "compact",
+          compactDisplay: "short"
+        });
+        let expected: String = new Intl.NumberFormat("en-US", {
+          style: "unit",
+          unit: "meter",
+          notation: "compact",
+          compactDisplay: "short"
+        }).format(15000);
+        expect(result).assertEqual(expected);
+        expect(result.includes('m')).assertTrue();
+      }
+
+      {
+        let rawValues: short[] = [
+          1 as short, 10 as short, 100 as short, 1000 as short, 5000 as short,
+          10000 as short, 20000 as short, 30000 as short, 32766 as short, Short.MAX_VALUE
+        ];
+        for (let i: int = 0; i < rawValues.length; i++) {
+          let s: Short = new Short(rawValues[i]);
+          let result: String = s.toLocaleString("en-US", {
+            notation: "scientific",
+            minimumSignificantDigits: 2
+          });
+          let expected: String = new Intl.NumberFormat("en-US", {
+            notation: "scientific",
+            minimumSignificantDigits: 2
+          }).format(Short.toInt(rawValues[i]));
+          expect(result).assertEqual(expected);
+          expect(result.includes('E') || result.includes('e')).assertTrue();
+        }
+      }
+
+      {
+        let value: Short = new Short(999 as short);
+        let result: String = value.toLocaleString("en-US", {
+          style: "currency",
+          currency: "USD",
+          currencyDisplay: "narrowSymbol"
+        });
+        let expected: String = new Intl.NumberFormat("en-US", {
+          style: "currency",
+          currency: "USD",
+          currencyDisplay: "narrowSymbol"
+        }).format(999);
+        expect(result).assertEqual(expected);
+      }
+
+      {
+        let value: Short = new Short(120 as short);
+        let result: String = value.toLocaleString("en-US", { style: "unit", unit: "mile", unitDisplay: "short" });
+        let expected: String = new Intl.NumberFormat("en-US", { style: "unit", unit: "mile", unitDisplay: "short" }).format(120);
+        expect(result).assertEqual(expected);
+      }
+    });
+
   });
 }
