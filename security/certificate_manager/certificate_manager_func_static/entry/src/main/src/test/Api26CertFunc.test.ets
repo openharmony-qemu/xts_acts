@@ -18,7 +18,7 @@ import certManagerDialog from '@ohos.security.certManagerDialog';
 import type { BusinessError } from '@ohos.base';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "../../../hypium/index";
 import hilog from '@ohos.hilog';
-import bundle from '@ohos.bundle.bundleManager';
+import bundleManager from '@ohos.bundle.bundleManager';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -181,7 +181,7 @@ export default function api26CertFuncTestUnit() {
     it('SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0110 start');
       expect(certManagerDialog.AbilityType.UKEY_AUTH_EXTENSION_ABILITY).assertEqual(1);
-      expect(bundle.ExtensionAbilityType.UKEY_AUTH).assertEqual(40);
+      expect(bundleManager.ExtensionAbilityType.UKEY_AUTH).assertEqual(40);
       done();
     });
 
