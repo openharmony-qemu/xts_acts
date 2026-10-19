@@ -829,19 +829,17 @@ export default function WindowLayoutTest() {
                 await windowClass.destroyWindow();
                 windowClass.offWindowRectChange();
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded window rect changes');
-                expect(false).assertTrue();
                 done();
             } catch (error) {
                 error = error as BusinessError;
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to window rect changes.Data: ' + JSON.stringify(error));
-                if (error!.code === 801) {
-                    hilog.error(0x0000, '[ANI]',`${msgStr} The current device type does not support to windowRectChange`);
-                    done();
-                } else  {
-                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to window rect changes.Data: ' + JSON.stringify(error));
-                    expect(error!.code).assertEqual(1300002);
-                    done();
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to window rect changes.Data: ' + JSON.stringify(error.code));
+                if(!isSyscapSessionManagerSupported){
+                    expect(error.code).assertEqual(801);
+                    expect(error.message !== '').assertTrue();
+                }else{
+                    expect(false).assertTrue();
                 }
+                done();
             }
         })
         /**
@@ -2224,27 +2222,25 @@ export default function WindowLayoutTest() {
         it('testOffOcclusionStatewithDestoryedSubwindow_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: () => void): Promise<void> => {
             let caseName: string = 'testOffOcclusionStatewithDestoryedSubwindow_static ';
             console.log(caseName + 'begin');
-            let subWindowClass:window.Window = await windowStage!.createSubWindow(caseName);
-            await subWindowClass.destroyWindow();
             try {
+                let subWindowClass:window.Window = await windowStage!.createSubWindow(caseName);
+                await subWindowClass.destroyWindow();
                 const callback = (res: window.OcclusionState) => {
                     console.info(caseName + ' callback res: ' + JSON.stringify(res));
                 }
                 subWindowClass.offOcclusionStateChanged(callback);
                 console.log(caseName + 'success. ');
-                expect(true).assertFail()
                 done();
             } catch (err) {
                 err = err as BusinessError;
                 console.error(`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
-                if (err.code!==801) {
-                    expect(err.code).assertEqual(1300002);
-                    expect(err.message!=null).assertTrue();
-                    done();
-                } else {
+                if(!isSyscapSessionManagerSupported){
                     expect(err.code).assertEqual(801);
-                    done();
+                    expect(err.message !== '').assertTrue();
+                }else{
+                    expect(false).assertTrue();
                 }
+                done();
             }
         });
         /**

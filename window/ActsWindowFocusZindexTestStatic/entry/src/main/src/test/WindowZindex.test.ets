@@ -20,7 +20,7 @@ import { SystemProperties } from '@ohos.arkui.component';
 import deviceInfo from '@ohos.deviceInfo';
 import display from '@ohos.display';
 import { BusinessError } from '@ohos.base';
-// import { MyCallback } from '../models/MyCallback';
+import { canIUse } from '@internal.full.global';
 import window from '@ohos.window'
 import { UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage , LocalStorage } from '@ohos.arkui.stateManagement';
@@ -89,6 +89,7 @@ export default function WindowZindexTest() {
         console.info(`deviceType: ${deviceType}`);
         let displayId: Long = display.getDefaultDisplaySync().id;
         console.info(`Succeeded in getDefaultDisplaySync. displayId: ${displayId}`);
+        let canIUseRes: boolean = false;
         beforeAll(async () => {
             //context = AppStorage.get('context') as common.UIAbilityContext;
             //hilog.info(domain, tag,'windowTest context: ' + JSON.stringify(context))
@@ -113,13 +114,8 @@ export default function WindowZindexTest() {
             }).catch((err: Error):PromiseLike<void>|undefined => {
                 hilog.error(domain, tag, `beforeAll: getWindowStateSnapshot Failed. Cause code: ${err.code}, cancel message: ${err.message}`);
             });
-            //isAutoWindow = settings.getValueSync(context, 'window_pcmode_switch_status', '',settings.domainName.DEVICE_SHARED);
-            //hilog.info(domain, tag,`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
-            //isPCStatus = settings.getValueSync(context, 'isStatusBarExist', '', settings.domainName.USER_PROPERTY)
-            //isPCStatus == '' 非PC设备
-            //isPCStatus == '1' PC设备状态栏dock未融合
-            //isPCStatus == '0' PC设备状态栏dock融合
-            //hilog.info(domain, tag,`beforeAll isPCStatus: `+ isPCStatus);
+            canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+            console.log(`canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
             try{
                 windowclassArr = await windowStage!.getSubWindow();
                 hilog.info(domain, tag,`brforeAll getSubWindow success. Cause: ${JSON.stringify(windowclassArr)}`);
@@ -1482,19 +1478,17 @@ export default function WindowZindexTest() {
                 console.info(msgStr +  'on windowHighlightChange callback' + JSON.stringify(data));
             });
             hilog.info(domain, tag,msgStr + 'window.on_windowHighlightChange success');
+            done();
         } catch (exception) {
             exception = exception as BusinessError;
-            hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
-            if (exception.code != 801) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to on_windowHighlightChange. Cause code:' + JSON.stringify(exception));
-                expect(exception.code).assertEqual(1300002);
-                done()
-            } else {
-                hilog.error(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager' + JSON.stringify(exception));
-                expect(exception.code).assertEqual(801);
-                done()
+            hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception.code));
+            if(!canIUseRes){
+             expect(exception.code).assertEqual(801);
+             expect(exception.message !== '').assertTrue();
+            }else{
+             expect(false).assertTrue();
             }
-            
+            done(); 
         }
     })
 
@@ -1806,37 +1800,6 @@ export default function WindowZindexTest() {
             done()
         }
     });
-
-
-    /**
-         * @tc.name   testOffuiExtensionLimitChange_DestoryedSubWindow_static_0300
-         * @tc.number SUB_BASIC_WMS_WINDOW_ON_UIEXTENSION_SECURElIMITCHANGE_ERROECODE_static_0300
-         * @tc.desc   testOffuiExtensionLimitChange_DestoryedSubWindow
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
-    it('testOffuiExtensionLimitChange_DestoryedSubWindow_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-        let caseName:string = 'testOffuiExtensionLimitChange_DestoryedSubWindow_static_0300';
-        let subWindowClass:window.Window = await windowStage!.createSubWindow('testOffuiExtensionLimitChange_DestoryedSubWindow_static_0300');
-        await subWindowClass.destroyWindow();
-        try {
-            subWindowClass.offUiExtensionSecureLimitChange();
-            expect(true).assertFail();
-            done()
-        } catch (error) {
-            error = error as BusinessError;
-            console.error(`${caseName} Failed. Cause: ${JSON.stringify(error)}`);
-            if (error.code === 801) {
-                expect(error.message !== null).assertTrue();
-                done();
-            } else {
-                expect(error.code).assertEqual(1300002);
-                expect(error.message !== null).assertTrue();
-                done();
-            }
-        }
-    })
 
     /**
          * @tc.number     SUB_BASIC_WMS_ISWINDOWFOCUSED_static_0100

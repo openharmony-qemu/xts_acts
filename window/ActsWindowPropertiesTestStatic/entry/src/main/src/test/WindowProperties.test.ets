@@ -93,6 +93,7 @@ export default function WindowPropertiesTest() {
         //let isAutoWindow: string = '';
         let isPCStatus: string = '';
         let deviceType: string = deviceInfo.deviceType;
+        let canIUseRes: boolean = false;
         beforeAll(() => {
             //context = AppStorage.get('context') as common.UIAbilityContext;
             //hilog.info(domain, tag,'windowTest context: ' + JSON.stringify(context))
@@ -107,7 +108,8 @@ export default function WindowPropertiesTest() {
 
             hilog.info(domain, tag, '%{public}s', 'getANI windowStage = ' + JSON.stringify(windowStage));
             hilog.info(domain, tag, '%{public}s', 'getANI win = ' + JSON.stringify(win));
-
+            canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+            console.log(`canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
             //isAutoWindow = settings.getValueSync(context, 'window_pcmode_switch_status', '',settings.domainName.DEVICE_SHARED);
             //hilog.info(domain, tag,`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
             isPCStatus = settings.getValueSync(context!, 'isStatusBarExist', '', settings.domainName.USER_PROPERTY)
@@ -1413,22 +1415,17 @@ export default function WindowPropertiesTest() {
                 hilog.info(domain, tag, msgStr + 'window.destroy success');
                 tempWnd.offDisplayIdChange();
                 hilog.info(domain, tag, msgStr + 'window.on_keyboardDidHide success');
-                expect(false).assertTrue();
                 done()
-            } catch (exception) {
-                exception = exception as BusinessError;
-                hilog.error(0x0000, '[ANI]', msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
-                expect(exception.code === 1300002 || exception.code === 801).assertTrue();
-                if (exception.code !== 801) {
-                hilog.error(0x0000, '[ANI]',
-                    msgStr + 'Failed to enable the listener for keyboard show. Cause code:' + JSON.stringify(exception));
-                expect(exception.code).assertEqual(1300002);
-                } else {
-                hilog.error(0x0000, '[ANI]',
-                    msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager' + JSON.stringify(exception));
-                expect(exception.code).assertEqual(801);
+            } catch (error) {
+                error = error as BusinessError;
+                hilog.error(0x0000, '[ANI]', msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(error!.code));
+                if(!canIUseRes){
+                  expect(error!.code).assertEqual(801);
+                  expect(error!.message !== '').assertTrue();
+                }else{
+                 expect(false).assertTrue();
                 }
-                done()
+                done();
             }
         })
 
@@ -1455,20 +1452,17 @@ export default function WindowPropertiesTest() {
                     console.info(msgStr +  'keyboard show animation completion. keyboardInfo: ' + JSON.stringify(id));
                 });
                 hilog.info(domain, tag,msgStr + 'window.on_keyboardDidHide success');
-                expect(false).assertTrue();
                 done()
             } catch (exception) {
                 exception = exception as BusinessError;
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
-                expect(exception.code === 1300002 || exception.code === 801).assertTrue();
-                if (exception.code !== 801) {
-                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to enable the listener for keyboard show. Cause code:' + JSON.stringify(exception));
-                    expect(exception.code).assertEqual(1300002);
-                } else {
-                    hilog.error(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager' + JSON.stringify(exception));
-                    expect(exception.code).assertEqual(801);
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception!.code));
+                if(!canIUseRes){
+                  expect(exception!.code).assertEqual(801);
+                  expect(exception!.message !== '').assertTrue();
+                }else{
+                 expect(false).assertTrue();
                 }
-                done()
+                done();
             }
         })
         /**

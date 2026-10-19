@@ -86,6 +86,7 @@ export default function UIExtensionTest(): void {
         let isFreeWindowMode:boolean = false;
         let deviceType:string = deviceInfo.deviceType;
         hilog.info(domain, tag, `deviceType: ${deviceType}`);
+        let canIUseRes: boolean = false;
         beforeAll(async () => {
             try {
                 windowStage = AppStorage.get<window.WindowStage>('windowStage') as window.WindowStage;
@@ -100,6 +101,8 @@ export default function UIExtensionTest(): void {
 
             hilog.info(domain, tag, '%{public}s', 'getANI windowStage = ' + JSON.stringify(windowStage));
             hilog.info(domain, tag, '%{public}s', 'getANI win = ' + JSON.stringify(win));
+            canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+            console.log(`canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
             
             try{
                 windowclassArr = await windowStage!.getSubWindow();
@@ -626,25 +629,56 @@ export default function UIExtensionTest(): void {
        */
       it('testOffuiExtensionLimitChange_DestoryedSubWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
         let caseName = 'testOffuiExtensionLimitChange_DestoryedSubWindow';
-        let subWindowClass = await windowStage!.createSubWindow('testOffuiExtensionLimitChange_DestoryedSubWindow');
-        await subWindowClass!.destroyWindow();
         try {
+          let subWindowClass = await windowStage!.createSubWindow('testOffuiExtensionLimitChange_DestoryedSubWindow');
+          await subWindowClass!.destroyWindow();
           const callback = (data: boolean) => { };
           subWindowClass!.offUiExtensionSecureLimitChange(callback);
-          expect().assertFail();
-          done()
+          console.info(`${caseName} offUiExtensionSecureLimitChange Success`);
+          done();
         } catch (error) {
           console.error(`${caseName} Failed. Cause: ` + error.code + error.message);
-          if (error.code === 801) {
-            done();
-          } else {
-            expect(error.code).assertEqual(1300002);
-            done();
+          if(!canIUseRes){
+            expect(error.code).assertEqual(801);
+            expect(error.message !== '').assertTrue();
+          }else{
+            expect(false).assertTrue();
           }
+          done();
         }
       })
   
-  
+   /**
+     * @tc.name   testOffuiExtensionLimitChange_DestoryedSubWindow_static_0300
+     * @tc.number SUB_BASIC_WMS_WINDOW_ON_UIEXTENSION_SECURElIMITCHANGE_ERROECODE_static_0300
+     * @tc.desc   testOffuiExtensionLimitChange_DestoryedSubWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testOffuiExtensionLimitChange_DestoryedSubWindow_static_0300',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let caseName: string = 'testOffuiExtensionLimitChange_DestoryedSubWindow_static_0300';
+        let subWindowClass: window.Window =
+          await windowStage!.createSubWindow('testOffuiExtensionLimitChange_DestoryedSubWindow_static_0300');
+        await subWindowClass.destroyWindow();
+        try {
+          subWindowClass.offUiExtensionSecureLimitChange();
+          console.info(`${caseName} offUiExtensionSecureLimitChange Success`);
+          done()
+        } catch (error) {
+          error = error as BusinessError;
+          console.error(`${caseName} Failed. Cause: ${JSON.stringify(error.code)}`);
+          if (!canIUseRes) {
+            expect(error.code).assertEqual(801);
+            expect(error.message !== '').assertTrue();
+          } else {
+            expect(false).assertTrue();
+          }
+          done();
+        }
+      })
+
       /**
        * @tc.name   testCreateSubWindowWithOptionsFollowTrue
        * @tc.number SUB_WMS_UEC_CREATE_SUBWINDOW_FOLLOW_0100

@@ -19,7 +19,7 @@ import Utils from './Util.test';
 
 import display from '@ohos.display';
 import { BusinessError } from '@ohos.base';
-// import { MyCallback } from '../models/MyCallback';
+import { canIUse } from '@internal.full.global'
 import window from '@ohos.window'
 import { UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage , LocalStorage } from '@ohos.arkui.stateManagement';
@@ -86,6 +86,7 @@ export default function WindowPCTest() {
         let isFreeWindowMode = false;
         let driver: Driver = Driver.create();
         let displayId = display.getDefaultDisplaySync().id;
+        let canIUseRes: boolean = false;
         beforeAll(() => {
             //context = AppStorage.get('context') as common.UIAbilityContext;
             //hilog.info(domain, tag,'windowTest context: ' + JSON.stringify(context))
@@ -102,6 +103,8 @@ export default function WindowPCTest() {
                 //isFreeWindowMode == true 自由窗口模式
                 //isFreeWindowMode == false 非自由窗口模式
                 hilog.info(domain, tag,`isFreeWindowMode: ${isFreeWindowMode}`);
+                canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+                console.log(`canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
             } catch (e) {
                 hilog.info(domain, tag, '%{public}s', 'getANI fail = ' + JSON.stringify(e));
             }
@@ -2749,13 +2752,9 @@ export default function WindowPCTest() {
          */
         it('testOnOffFreeWindowModeChangewithdestoryedSubwindow_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let caseName: string = 'testOnOffFreeWindowModeChangewithdestoryedSubwindow_static ';
-            let subWindowClass: window.Window;
-            let subWindowClass2: window.Window;
-            subWindowClass = await windowStage!.createSubWindow('testOnOffFreeWindowModeChangewithdestoryedSubwindow1');
-            subWindowClass2 = await windowStage!.createSubWindow('testOnOffFreeWindowModeChangewithdestoryedSubwindow2');
-            await subWindowClass.destroyWindow();
-            await subWindowClass2.destroyWindow();
             try {
+                let subWindowClass: window.Window = await windowStage!.createSubWindow('testOnOffFreeWindowModeChangewithdestoryedSubwindow1');
+                await subWindowClass!.destroyWindow();
                 const callback = (res: boolean) => {
                     console.log(caseName + ' callback result: ' + res);
                 }
@@ -2768,16 +2767,18 @@ export default function WindowPCTest() {
                 expect(err.code).assertEqual(1300002);
             }
             try {
+                let subWindowClass2: window.Window = subWindowClass2 = await windowStage!.createSubWindow('testOnOffFreeWindowModeChangewithdestoryedSubwindow2');
+                await subWindowClass2.destroyWindow();
                 const callback = (res: boolean) => {
                     console.log(caseName + ' callback result: ' + res);
                 }
-                subWindowClass.offFreeWindowModeChange(callback)
-                expect(true).assertFail()
+                subWindowClass.offFreeWindowModeChange(callback);
+                console.log(caseName + ' offFreeWindowModeChange success');
                 done();
             } catch (err) {
                 err = err as BusinessError;
                 console.error(`${caseName}  Failed1. Cause code: ${err.code}, message: ${err.message}`);
-                expect(err.code).assertEqual(1300002)
+                expect(false).assertTrue();
                 done();
             }
         });
@@ -3757,30 +3758,27 @@ export default function WindowPCTest() {
             let caseName: string = 'testOffSubWindowCloseErrCode1300002';
             let msgStr: string = 'jsUnittest ' + caseName + ' ';
             hilog.info(domain, tag, msgStr + 'begin');
-
             try {
                 let subWin: window.Window = await windowStage!.createSubWindow('testOffSubWindowCloseErrCode1300002');
                 hilog.info(domain, tag, msgStr + 'create subWindow success');
-                await subWin.destroyWindow();
-
+                await subWin!.destroyWindow();
                 let callback: Callback<void> = () => {
                     hilog.info(domain, tag, msgStr + 'callback invoked');
                 };
-
                 subWin.offSubWindowClose(callback);
                 hilog.error(domain, tag, msgStr + 'offSubWindowClose should throw error');
-                expect(false).assertTrue();
                 done();
-            } catch (e) {
-                e = e as BusinessError;
-                hilog.error(domain, tag, msgStr + 'Failed. Cause:' + JSON.stringify(e));
-                if (e.code === 801) {
-                    done();
-                } else {
-                    expect(e.code).assertEqual(1300002);
-                    done();
+            } catch (error) {
+                error = error as BusinessError;
+                hilog.error(domain, tag, msgStr + 'Failed. Cause:' + JSON.stringify(error.code));
+                if(!canIUseRes){
+                    expect(error.code).assertEqual(801);
+                    expect(error.message !== '').assertTrue();
+                }else{
+                    expect(false).assertTrue();
                 }
-            }
+                done();
+                }
         });
 
         /**

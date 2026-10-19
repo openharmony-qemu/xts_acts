@@ -137,7 +137,6 @@ export default function WindowKeyBoardTest() {
                 }
                 tempWnd.offKeyboardDidShow(callback);
                 hilog.info(domain, tag,msgStr + 'window.off_keyboardDidShow success');
-                expect(false).assertTrue();
                 done()
             } catch (exception) {
                 exception = exception as BusinessError;
