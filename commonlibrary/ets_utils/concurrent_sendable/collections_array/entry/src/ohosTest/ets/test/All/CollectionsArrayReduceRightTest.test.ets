@@ -15,6 +15,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from '@ohos/hypium';
 import { sleep } from './pages/Utils';
 import { collections } from '@kit.ArkTS'
+import { BusinessError } from '@kit.BasicServicesKit';
 
 export default function CollectionsArrayReduceRightTest() {
   describe('CollectionsArrayReduceRightTest', () => {
@@ -210,5 +211,23 @@ export default function CollectionsArrayReduceRightTest() {
       Done();
     })
 
+    /**
+     * @tc.number  SUB_ARRAY_REDUCERIGHT_BIND_0100
+     * @tc.name    testArrayReduceRightBind0001
+     * @tc.desc    Verify reduceRight detached invocation throws 10200011
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testArrayReduceRightBind0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new collections.Array<number>(1, 2, 3);
+      let fn = arr.reduceRight;
+      try {
+        fn((a: number, b: number): number => a + b, 0);
+        expect().assertFail();
+      } catch (error) {
+        expect((error as BusinessError).code).assertEqual(10200011);
+      }
+    });
   })
 }

@@ -15,6 +15,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from '@ohos/hypium';
 import { sleep } from './pages/Utils';
 import { collections } from '@kit.ArkTS'
+import { BusinessError } from '@kit.BasicServicesKit';
 
 export default function CollectionsArrayReverseTest() {
   describe('CollectionsArrayReverseTest', () => {
@@ -194,5 +195,51 @@ export default function CollectionsArrayReverseTest() {
       expect('["cherry",null,"apple"]').assertEqual(JSON.stringify(revers));
       Done();
     })
+
+    /**
+     * @tc.number  SUB_ARRAY_REVERSE_BIND_0100
+     * @tc.name    testArrayReverseBind0001
+     * @tc.desc    Verify reverse detached invocation throws 10200011
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testArrayReverseBind0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new collections.Array<number>(1, 2, 3);
+      let fn = arr.reverse;
+      try {
+        fn();
+        expect().assertFail();
+      } catch (error) {
+        expect((error as BusinessError).code).assertEqual(10200011);
+      }
+    });
+
+    /**
+     * @tc.number  SUB_ARRAY_REVERSE_ONE_0200
+     * @tc.name    testArrayReverseOne0002
+     * @tc.desc    Verify reverse with no required parameter is not applicable to 401
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testArrayReverseOne0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new collections.Array<number>(1, 2, 3);
+      expect(arr.reverse().length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number  SUB_ARRAY_REVERSE_SAMEREF_0300
+     * @tc.name    testArrayReverseSameRef0003
+     * @tc.desc    Verify reverse returns the same reference
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testArrayReverseSameRef0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = collections.Array.from<number>([1, 2, 3]);
+      let r = arr.reverse();
+      expect(r === arr).assertTrue();
+    });
   })
 }

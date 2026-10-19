@@ -14,6 +14,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { collections } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 export default function BitVectorConstructorTest() {
   describe('BitVectorConstructorTest', () => {
@@ -558,5 +559,55 @@ export default function BitVectorConstructorTest() {
         expect(bitVectorList[1024]).assertEqual(1);
         done()
       });
+
+
+    /**
+     * @tc.number  SUB_BITVECTOR_CTOR_ONE_0200
+     * @tc.name    testBitVectorCtor0002
+     * @tc.desc    Verify constructor with NaN/Infinity/fraction throws 401
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorCtor0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let pinA = -1;
+      try {
+        new collections.BitVector(NaN);
+      } catch (error) {
+        pinA = (error as BusinessError).code;
+      }
+      expect(pinA).assertEqual(401);
+      let pinB = -1;
+      try {
+        new collections.BitVector(Infinity);
+      } catch (error) {
+        pinB = (error as BusinessError).code;
+      }
+      expect(pinB).assertEqual(401);
+      let pinC = -1;
+      try {
+        new collections.BitVector(10.5);
+      } catch (error) {
+        pinC = (error as BusinessError).code;
+      }
+      expect(pinC).assertEqual(401);
+    });
+    /**
+     * @tc.number  SUB_BITVECTOR_CTOR_ONE_0100
+     * @tc.name    testBitVectorCtor0001
+     * @tc.desc    Verify constructor with wrong-typed length throws 401
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorCtor0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let pin = -1;
+      try {
+        new collections.BitVector('x' as Object as number);
+      } catch (error) {
+        pin = (error as BusinessError).code;
+      }
+      expect(pin).assertEqual(401);
+    });
   })
 }

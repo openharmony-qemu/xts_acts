@@ -16,6 +16,7 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level
 import { hilog } from '@kit.PerformanceAnalysisKit'
 import { sleep } from './pages/Utils';
 import { collections } from '@kit.ArkTS'
+import { BusinessError } from '@kit.BasicServicesKit';
 
 interface NumberObj {
   a: number;
@@ -26,6 +27,12 @@ function customStringify(arr: NumberObj[]): string {
 }
 
 
+
+@Sendable
+class SupArrayKv001 {
+  k: number = 0;
+  v: string = '';
+}
 export default function CollectionsArraySortsTest() {
   describe('CollectionsArraySortsTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -229,5 +236,95 @@ export default function CollectionsArraySortsTest() {
     })
 
 
+    /**
+     * @tc.number  SUB_ARRAY_SORT_ONE_0100
+     * @tc.name    testArraySortOne0001
+     * @tc.desc    Verify sort with non-function comparator throws 401
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testArraySortOne0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new collections.Array<number>(3, 1, 2);
+      let threw = false;
+      try {
+        arr.sort('not-fn' as Object as (a: number, b: number) => number);
+      } catch (error) {
+        threw = true;
+      }
+      expect(threw).assertTrue();
+    });
+
+    /**
+     * @tc.number  SUB_ARRAY_SORT_NEWARRAY_0200
+     * @tc.name    testArraySortNewArray0002
+     * @tc.desc    Verify sort sorts the source array in place and returns the same array (actual)
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testArraySortNewArray0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = collections.Array.from<number>([3, 1, 2]);
+      let s = arr.sort();
+      expect(s === arr).assertTrue();
+      expect(arr.toString()).assertEqual('1,2,3');
+    });
+
+    /**
+     * @tc.number  SUB_ARRAY_SORT_STABILITY_0300
+     * @tc.name    testArraySortStability0003
+     * @tc.desc    Verify sort is stable for equal keys
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testArraySortStability0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new collections.Array<SupArrayKv001>();
+      let e1 = new SupArrayKv001(); e1.k = 1; e1.v = 'a';
+      let e2 = new SupArrayKv001(); e2.k = 1; e2.v = 'b';
+      let e3 = new SupArrayKv001(); e3.k = 0; e3.v = 'c';
+      arr.push(e1); arr.push(e2); arr.push(e3);
+      let sorted = arr.sort((a: SupArrayKv001, b: SupArrayKv001): number => a.k - b.k);
+      expect(sorted[1].v).assertEqual('a');
+      expect(sorted[2].v).assertEqual('b');
+    });
+
+    /**
+     * @tc.number  SUB_ARRAY_SORT_CMP_THROW_0400
+     * @tc.name    testArraySortCmpThrow0004
+     * @tc.desc    Verify sort propagates comparator exception
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testArraySortCmpThrow0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = collections.Array.from<number>([3, 1, 2]);
+      let thrown = false;
+      try {
+        arr.sort((a: number, b: number): number => {
+          throw new Error('boom');
+        });
+      } catch (error) {
+        thrown = true;
+        expect((error as Error).message).assertEqual('boom');
+      }
+      expect(thrown).assertTrue();
+    });
+
+    /**
+     * @tc.number  SUB_ARRAY_SORT_CMP_EDGE_0500
+     * @tc.name    testArraySortCmpEdge0005
+     * @tc.desc    Verify sort with Infinity/fraction comparator values
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testArraySortCmpEdge0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = collections.Array.from<number>([3, 1, 2]);
+      arr.sort((a: number, b: number): number => Infinity);
+      arr.sort((a: number, b: number): number => 0.5);
+      arr.sort((a: number, b: number): number => -Infinity);
+      expect(arr.length).assertEqual(3);
+    });
   })
 }

@@ -2545,5 +2545,20 @@ export default function ArrayCompleteTest() {
       }
       console.log(`${caseName} test end `);
     });
+
+    /**
+     * @tc.number  SUB_ARRAY_CTOR_ONE_EVIDENCE_0100
+     * @tc.name    testArrayCtorOneEvidence0001
+     * @tc.desc    Verify normal construction does not throw 10200012
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testArrayCtorOneEvidence0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let arr = new collections.Array<number>();
+      expect(arr.length).assertEqual(0);
+      expect(arr instanceof collections.Array).assertTrue();
+      done()
+    });
   });
 }
