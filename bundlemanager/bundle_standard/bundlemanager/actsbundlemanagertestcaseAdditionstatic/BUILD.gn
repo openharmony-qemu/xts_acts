@@ -19,7 +19,6 @@ ohos_js_app_static_suite("ActsbundlemgrcaseAdditionEtsStaticTest") {
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
   hap_name = "ActsbundlemgrcaseAdditionEtsStaticTest"
-  deps = ["../sceneProject/bmsstagedemoone:bmsStageDemo1"]
   part_name = "bundle_framework"
   subsystem_name = "bundlemanager"
 }
