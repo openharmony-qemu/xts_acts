@@ -16,6 +16,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
 import { sleep } from './SendableLruCacheHelpers';
 import { ArkTSUtils } from '@kit.ArkTS'
+import { BusinessError } from '@kit.BasicServicesKit'
 
 export default function SendableLruCacheConstructorTest() {
   describe('SendableLruCacheConstructorTest', () => {
@@ -109,6 +110,7 @@ export default function SendableLruCacheConstructorTest() {
         expect().assertFail();
         done();
       } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
         // No error code defined in API doc, only verify exception is thrown
         done();
       }
@@ -130,6 +132,7 @@ export default function SendableLruCacheConstructorTest() {
         expect().assertFail();
         done();
       } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
         // No error code defined in API doc, only verify exception is thrown
         done();
       }
@@ -151,6 +154,7 @@ export default function SendableLruCacheConstructorTest() {
         expect().assertFail();
         done();
       } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
         // No error code defined in API doc, only verify exception is thrown
         done();
       }
@@ -172,6 +176,7 @@ export default function SendableLruCacheConstructorTest() {
         expect().assertFail();
         done();
       } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
         // No error code defined in API doc, only verify exception is thrown
         done();
       }
@@ -194,6 +199,7 @@ export default function SendableLruCacheConstructorTest() {
         expect().assertFail();
         done();
       } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
         // No error code defined in API doc, only verify exception is thrown
         done();
       }
@@ -233,6 +239,7 @@ export default function SendableLruCacheConstructorTest() {
         expect().assertFail();
         done();
       } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
         // No error code defined in API doc, only verify exception is thrown
         done();
       }

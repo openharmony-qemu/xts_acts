@@ -14,9 +14,35 @@
  */
 import { beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { ArkTSUtils, MessageEvents, taskpool, worker } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 import { GCFull } from './GCFull';
 import { sleep, threadGC, threadNotify, threadWait } from './ConditionVariableHelpers';
 
+
+@Sendable
+class SupCvShared001 {
+  cv: ArkTSUtils.locks.ConditionVariable = new ArkTSUtils.locks.ConditionVariable();
+}
+
+@Concurrent
+async function supCvWait001(cv: ArkTSUtils.locks.ConditionVariable): Promise<void> {
+  await cv.wait();
+}
+
+@Concurrent
+function supCvNotify001(cv: ArkTSUtils.locks.ConditionVariable): void {
+  cv.notifyAll();
+}
+
+@Sendable
+class SupMyCv001 extends ArkTSUtils.locks.ConditionVariable {
+  notifyCount: number = 0;
+
+  notifyAll(): void {
+    this.notifyCount = this.notifyCount + 1;
+    super.notifyAll();
+  }
+}
 export default function conditionVariableConcurrentTest() {
   describe('ConditionVariableConcurrentTest', () => {
 
@@ -520,5 +546,66 @@ export default function conditionVariableConcurrentTest() {
       done();
     });
 
+    /**
+     * @tc.number  SUB_CONDITIONVAR_CONC_NO_ONE_0100
+     * @tc.name    testCvConcNoOne0001
+     * @tc.desc    Verify concurrent wait/notify does not throw 10200201
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testCvConcNoOne0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let shared = new SupCvShared001();
+      let tasks: taskpool.Task[] = [];
+      for (let t = 0; t < 5; t++) {
+        tasks.push(new taskpool.Task(supCvWait001, shared.cv));
+      }
+      for (let t = 0; t < 5; t++) {
+        tasks.push(new taskpool.Task(supCvNotify001, shared.cv));
+      }
+      let saw10200201 = false;
+      let executions: Promise<Object>[] = [];
+      for (let t = 0; t < tasks.length; t++) {
+        executions.push(taskpool.execute(tasks[t]));
+      }
+      await sleep(100);
+      shared.cv.notifyAll();
+      for (let t = 0; t < executions.length; t++) {
+        try {
+          await executions[t];
+        } catch (error) {
+          let e = error as BusinessError;
+          if (e.code === 10200201) {
+            saw10200201 = true;
+          }
+        }
+      }
+      expect(saw10200201).assertFalse();
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_CONDITIONVAR_INHERIT_ONE_0200
+     * @tc.name    testCvInherit0002
+     * @tc.desc    Verify subclassing native ConditionVariable does not preserve instanceof or notifyAll override (actual)
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testCvInherit0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let myCv = new SupMyCv001();
+      myCv.notifyAll();
+      expect(myCv.notifyCount).assertEqual(0);
+      expect(myCv instanceof ArkTSUtils.locks.ConditionVariable).assertFalse();
+      let waitDone = false;
+      myCv.wait().then(() => {
+        waitDone = true;
+      }).catch(() => { });
+      await sleep(100);
+      myCv.notifyAll();
+      await sleep(100);
+      expect(waitDone).assertTrue();
+      done()
+    })
   });
 }

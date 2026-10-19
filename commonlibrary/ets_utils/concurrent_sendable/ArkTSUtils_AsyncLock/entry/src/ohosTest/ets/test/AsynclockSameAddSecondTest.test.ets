@@ -48,7 +48,7 @@ export default function AsynclockSameAddSecondTest() {
     /**
      * @tc.name   AsynclockSameAddTest5100
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_SAME_ADD_SECOND_0002
-     * @tc.desc   test
+     * @tc.desc   Verify request same lock name in the same instance (add second variant) - AsynclockSameAddTest5100;
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -95,7 +95,7 @@ export default function AsynclockSameAddSecondTest() {
     /**
      * @tc.name   AsynclockSameAddTest5300
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_SAME_ADD_SECOND_0003
-     * @tc.desc   test
+     * @tc.desc   Verify request same lock name in the same instance (add second variant) - AsynclockSameAddTest5300;
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -129,7 +129,7 @@ export default function AsynclockSameAddSecondTest() {
     /**
      * @tc.name   AsynclockSameAddTest5400
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_SAME_ADD_SECOND_0004
-     * @tc.desc   test
+     * @tc.desc   Verify request same lock name in the same instance (add second variant) - AsynclockSameAddTest5400;
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -171,7 +171,7 @@ export default function AsynclockSameAddSecondTest() {
     /**
      * @tc.name   AsynclockSameAddTest5600
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_SAME_ADD_SECOND_0005
-     * @tc.desc   test
+     * @tc.desc   Verify request same lock name in the same instance (add second variant) - AsynclockSameAddTest5600;
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1

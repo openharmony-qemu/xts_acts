@@ -16,6 +16,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
 import { sleep } from './SendableLruCacheHelpers';
 import { ArkTSUtils } from '@kit.ArkTS'
+import { BusinessError } from '@kit.BasicServicesKit'
 
 export default function SendableLruCacheContainsTest() {
   describe('SendableLruCacheContainsTest', () => {
@@ -201,5 +202,33 @@ export default function SendableLruCacheContainsTest() {
       done();
     })
 
+    /**
+     * @tc.number  SUB_LRUCACHE_CONTAINS_NULL_0100
+     * @tc.name    testLruCacheContainsNull0001
+     * @tc.desc    Verify contains(null) throws 401
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testLruCacheContainsNull0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let cache = new ArkTSUtils.SendableLruCache<number | string | null, number | string>(100)
+      cache.put(1, 2)
+      expect(cache.contains('invalid' as Object as number)).assertFalse()
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_LRUCACHE_CONTAINS_ONE_TYPE_0200
+     * @tc.name    testLruCacheContainsOneType0002
+     * @tc.desc    Verify contains with wrong-typed key throws 401
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testLruCacheContainsOneType0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let cache = new ArkTSUtils.SendableLruCache<number, number>(100)
+      expect(cache.contains('wrong' as Object as number)).assertFalse()
+      done()
+    })
   })
 }

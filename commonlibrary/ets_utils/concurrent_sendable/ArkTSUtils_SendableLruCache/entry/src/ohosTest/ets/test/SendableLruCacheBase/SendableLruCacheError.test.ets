@@ -19,6 +19,7 @@
 
 import { describe, it, expect, TestType, Size, Level, beforeEach } from '@ohos/hypium';
 import { ArkTSUtils } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 // // ===== 辅助函数 =====
 // function toKey(value: string | undefined): string {
@@ -41,15 +42,15 @@ export default function sendableLruCacheErrorTest() {
     });
 
     /**
-     * @tc.name   testErrorCode10200201Keys0008
-     * @tc.number SUB_COLLECTIONS_LRU_ERROR_0800
-     * @tc.desc   Verify keys returns snapshot
+     * @tc.name   testSnapshotIndependenceKeys0008
+     * @tc.number SUB_COLLECTIONS_LRU_SNAPSHOT_0800
+     * @tc.desc   Verify keys returns snapshot independent of subsequent cache mutation (no 10200201 contract - SendableLruCache has no concurrent-modification error, unlike collections.Map)
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testErrorCode10200201Keys0008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testErrorCode10200201Keys0008';
+    it('testSnapshotIndependenceKeys0008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testSnapshotIndependenceKeys0008';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<string, string>(10);
       for (let i: number = 0; i < 3; i++) {
@@ -67,15 +68,15 @@ export default function sendableLruCacheErrorTest() {
     });
 
     /**
-     * @tc.name   testErrorCode10200201Values0009
-     * @tc.number SUB_COLLECTIONS_LRU_ERROR_0900
-     * @tc.desc   Verify values returns snapshot
+     * @tc.name   testSnapshotIndependenceValues0009
+     * @tc.number SUB_COLLECTIONS_LRU_SNAPSHOT_0900
+     * @tc.desc   Verify values returns snapshot independent of subsequent cache mutation (no 10200201 contract - SendableLruCache has no concurrent-modification error, unlike collections.Map)
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testErrorCode10200201Values0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testErrorCode10200201Values0009';
+    it('testSnapshotIndependenceValues0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testSnapshotIndependenceValues0009';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<string, string>(10);
       for (let i: number = 0; i < 3; i++) {
@@ -93,15 +94,15 @@ export default function sendableLruCacheErrorTest() {
 
     //get+迭代并发
     /**
-     * @tc.name   testErrorCode10200201Get0010
-     * @tc.number SUB_COLLECTIONS_LRU_ERROR_1000
-     * @tc.desc   Verify get during iteration doesn't affect iterator
+     * @tc.name   testSnapshotIndependenceGet0010
+     * @tc.number SUB_COLLECTIONS_LRU_SNAPSHOT_1000
+     * @tc.desc   Verify get during iteration doesn't affect iterator independent of subsequent cache mutation (no 10200201 contract - SendableLruCache has no concurrent-modification error, unlike collections.Map)
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testErrorCode10200201Get0010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testErrorCode10200201Get0010';
+    it('testSnapshotIndependenceGet0010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testSnapshotIndependenceGet0010';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<string, string>(10);
       for (let i: number = 0; i < 3; i++) {
@@ -122,15 +123,15 @@ export default function sendableLruCacheErrorTest() {
     });
 
     /**
-     * @tc.name   testErrorCode10200201Put0011
-     * @tc.number SUB_COLLECTIONS_LRU_ERROR_1100
-     * @tc.desc   Verify keys snapshot after put
+     * @tc.name   testSnapshotIndependencePut0011
+     * @tc.number SUB_COLLECTIONS_LRU_SNAPSHOT_1100
+     * @tc.desc   Verify keys snapshot after put independent of subsequent cache mutation (no 10200201 contract - SendableLruCache has no concurrent-modification error, unlike collections.Map)
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testErrorCode10200201Put0011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testErrorCode10200201Put0011';
+    it('testSnapshotIndependencePut0011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testSnapshotIndependencePut0011';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<string, string>(10);
       for (let i: number = 0; i < 3; i++) {
@@ -146,15 +147,15 @@ export default function sendableLruCacheErrorTest() {
     });
 
     /**
-     * @tc.name   testErrorCode10200201Remove0012
-     * @tc.number SUB_COLLECTIONS_LRU_ERROR_1200
-     * @tc.desc   Verify values snapshot after remove
+     * @tc.name   testSnapshotIndependenceRemove0012
+     * @tc.number SUB_COLLECTIONS_LRU_SNAPSHOT_1200
+     * @tc.desc   Verify values snapshot after remove independent of subsequent cache mutation (no 10200201 contract - SendableLruCache has no concurrent-modification error, unlike collections.Map)
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testErrorCode10200201Remove0012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testErrorCode10200201Remove0012';
+    it('testSnapshotIndependenceRemove0012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testSnapshotIndependenceRemove0012';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<string, string>(10);
       for (let i: number = 0; i < 3; i++) {
@@ -168,15 +169,15 @@ export default function sendableLruCacheErrorTest() {
     });
 
     /**
-     * @tc.name   testErrorCode10200201Clear0013
-     * @tc.number SUB_COLLECTIONS_LRU_ERROR_1300
-     * @tc.desc   Verify keys snapshot after clear
+     * @tc.name   testSnapshotIndependenceClear0013
+     * @tc.number SUB_COLLECTIONS_LRU_SNAPSHOT_1300
+     * @tc.desc   Verify keys snapshot after clear independent of subsequent cache mutation (no 10200201 contract - SendableLruCache has no concurrent-modification error, unlike collections.Map)
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testErrorCode10200201Clear0013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testErrorCode10200201Clear0013';
+    it('testSnapshotIndependenceClear0013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testSnapshotIndependenceClear0013';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<string, string>(10);
       for (let i: number = 0; i < 3; i++) {
@@ -189,15 +190,15 @@ export default function sendableLruCacheErrorTest() {
     });
 
     /**
-     * @tc.name   testErrorCode10200201Clear0014
-     * @tc.number SUB_COLLECTIONS_LRU_ERROR_1400
-     * @tc.desc   Verify values snapshot after clear
+     * @tc.name   testSnapshotIndependenceClear0014
+     * @tc.number SUB_COLLECTIONS_LRU_SNAPSHOT_1400
+     * @tc.desc   Verify values snapshot after clear independent of subsequent cache mutation (no 10200201 contract - SendableLruCache has no concurrent-modification error, unlike collections.Map)
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testErrorCode10200201Clear0014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
-      const caseName: string = 'testErrorCode10200201Clear0014';
+    it('testSnapshotIndependenceClear0014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (): void => {
+      const caseName: string = 'testSnapshotIndependenceClear0014';
       console.info(`${caseName}, test start`);
       const cache = new ArkTSUtils.SendableLruCache<string, string>(10);
       for (let i: number = 0; i < 3; i++) {
@@ -208,5 +209,33 @@ export default function sendableLruCacheErrorTest() {
       expect(values.length).assertEqual(3);
       console.info(`${caseName}, test end`);
     });
+
+    /**
+     * @tc.number  SUB_LRUCACHE_NO_ONE_0100
+     * @tc.name    testLruCacheNoOne0001
+     * @tc.desc    Verify no 10200201 thrown while mutating during entries iteration
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testLruCacheNoOne0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cache = new ArkTSUtils.SendableLruCache<string, string>(100)
+      cache.put('a', '1')
+      cache.put('b', '2')
+      cache.put('c', '3')
+      let entries = cache.entries()
+      let saw10200201 = false
+      try {
+        for (let e of entries) {
+          cache.put('newKey', 'v')
+        }
+      } catch (error) {
+        let err: BusinessError = error as BusinessError
+        if (err.code === 10200201) {
+          saw10200201 = true
+        }
+      }
+      expect(saw10200201).assertFalse()
+    })
   });
 }
