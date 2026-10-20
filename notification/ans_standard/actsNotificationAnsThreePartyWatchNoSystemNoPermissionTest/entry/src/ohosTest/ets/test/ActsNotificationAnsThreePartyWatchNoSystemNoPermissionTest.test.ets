@@ -15,11 +15,15 @@
 
 import hilog from '@ohos.hilog';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
-import common from '@ohos.app.ability.common';
+import { common, WantAgent, wantAgent } from '@kit.AbilityKit';
 import { BusinessError } from '@ohos.base';
+import { image } from '@kit.ImageKit';
 import { notificationExtensionSubscription, notificationManager } from '@kit.NotificationKit';
 
 let context: common.UIAbilityContext;
+let TAG: string = "actsNotificationAnsThreePartyWatchNoSystemNoPermissionTest"
+const ctx = getContext(this) as common.UIAbilityContext
+let bundle: string = "com.example.actsnotificationansthreepartywatchnosystemnopermissiontest"
 
 export default function ActsNotificationAnsThreePartyWatchNoSystemNoPermissionTest() {
   describe('ActsNotificationAnsThreePartyWatchNoSystemNoPermissionTest', () => {
@@ -74,6 +78,72 @@ export default function ActsNotificationAnsThreePartyWatchNoSystemNoPermissionTe
           done();
         }
       }
+    })
+
+    /**
+     * @tc.name   SUB_Notification_Ans_ThreePartyWatch_Enhanced_0400
+     * @tc.number SUB_Notification_Ans_ThreePartyWatch_Enhanced_0400
+     * @tc.desc   Calling the `getUserGrantedBundleIcon` interface without including the `ohos.permission.SUBSCRIBE_NOTIFICATION` permission will result in error code 201.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     * @co.authored.by.agent
+     */
+    it('SUB_Notification_Ans_ThreePartyWatch_Enhanced_0400', Level.LEVEL0, async (done: Function) => {
+      let TAG: string = "SUB_Notification_Ans_ThreePartyWatch_Enhanced_0400"
+      await notificationExtensionSubscription.getUserGrantedBundleIcon(bundle).then((data: image.PixelMap) => {
+        console.info(TAG + `getUserGrantedBundleIcon success`);
+        expect(false).assertTrue()
+        done()
+      }).catch((err: BusinessError) => {
+        console.error(TAG +
+          `getUserGrantedBundleIcon failed, code is ${err.code}, message is ${err.message}`);
+        if (err.code == 801) {
+          expect(err.code).assertEqual(801)
+          done()
+        } else if (err.code == 201) {
+          expect(err.code).assertEqual(201);
+          done()
+        } else {
+          expect().assertFail();
+          done()
+        }
+      });
+    })
+
+    /**
+     * @tc.name   SUB_Notification_Ans_ThreePartyWatch_Enhanced_1400
+     * @tc.number SUB_Notification_Ans_ThreePartyWatch_Enhanced_1400
+     * @tc.desc   Calling the `disableUserGrantedByBundle` interface without including the `ohos.permission.SUBSCRIBE_NOTIFICATION` permission will result in error code 201.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     * @co.authored.by.agent
+     */
+    it('SUB_Notification_Ans_ThreePartyWatch_Enhanced_1400', Level.LEVEL0, async (done: Function) => {
+      let TAG: string = "SUB_Notification_Ans_ThreePartyWatch_Enhanced_1400"
+      let info: notificationExtensionSubscription.GrantedBundleInfo = {
+        bundleName: bundle,
+        appIndex: 0
+      }
+      await notificationExtensionSubscription.disableUserGrantedByBundle(info).then(() => {
+        console.info(TAG + "disableUserGrantedByBundle success");
+        expect(false).assertTrue()
+        done()
+      }).catch((err: BusinessError) => {
+        console.error(TAG +
+          `disableUserGrantedByBundle failed, code is ${err.code}, message is ${err.message}`);
+        if (err.code == 801) {
+          expect(err.code).assertEqual(801)
+          done()
+        } else if (err.code == 201) {
+          expect(err.code).assertEqual(201);
+          done()
+        } else {
+          expect().assertFail();
+          done()
+        }
+      });
     })
   })
 }
