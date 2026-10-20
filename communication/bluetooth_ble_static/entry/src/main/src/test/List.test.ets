@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -14,10 +14,16 @@
  * limitations under the License.
  */
 
-import bluetoothBleTest from "./BluetoothBleStatic.test";
+import bluetoothBleStaticTest from "./BluetoothBleStatic.test";
 import bluetoothBleCallbackTest from "./BluetoothBleCallbackStatic.test";
+import btBleManagerTest from './BtBleManager.test';
+import bluetoothBleTest from './BluetoothBle.test';
+import btBleServiceTest from './BtBleService.test';
 
-export default function testsuite() {
+export default function testsuite(): void {
+  bluetoothBleStaticTest();
+  btBleManagerTest();
   bluetoothBleTest();
+  btBleServiceTest();
   bluetoothBleCallbackTest();
 }
