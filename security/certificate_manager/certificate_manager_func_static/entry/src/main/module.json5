@@ -44,6 +44,26 @@
         ]
       }
     ],
+    "extensionAbilities": [
+      {
+        "name": "UkeyAuthDialogAbility",
+        "srcEntry": "./ets/ukeyauthdialogability/UkeyAuthDialogAbility.ets",
+        "type": "ukeyAuth",
+        "exported": true
+      },
+      {
+        "name": "UkeyAuthCancelDialogAbility",
+        "srcEntry": "./ets/ukeyauthcanceldialogability/UkeyAuthCancelDialogAbility.ets",
+        "type": "ukeyAuth",
+        "exported": true
+      },
+      {
+        "name": "UkeyAuthTimeoutDialogAbility",
+        "srcEntry": "./ets/ukeyauthtimeoutdialogability/UkeyAuthTimeoutDialogAbility.ets",
+        "type": "ukeyAuth",
+        "exported": true
+      }
+    ],
     "requestPermissions": [
       {
         "name": "ohos.permission.ACCESS_CERT_MANAGER"
@@ -57,6 +77,9 @@
       {
         "name": "ohos.permission.ACCESS_ENTERPRISE_USER_TRUSTED_CERT"
       },
+      {
+        "name": "ohos.permission.CRYPTO_EXTENSION_REGISTER"
+      }
     ]
   }
 }
