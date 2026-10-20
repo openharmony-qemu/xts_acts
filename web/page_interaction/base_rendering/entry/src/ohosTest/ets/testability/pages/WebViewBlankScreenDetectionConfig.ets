@@ -31,6 +31,7 @@ struct webViewController {
   @State isPageEnd: number = -1;
   @State blankScreenReasonArr:DetectedBlankScreenReason[] = [DetectedBlankScreenReason.NO_CONTENTFUL_NODES,DetectedBlankScreenReason.SUB_THRESHOLD_CONTENTFUL_NODES]
   @State flag: number = 1;
+  @State monitoredBlankScreenRegistered: boolean = false;
 
 
 
@@ -107,6 +108,45 @@ struct webViewController {
               break;
             }
 
+            case "emitOnMonitoredBlankScreenCall001": {
+              try {
+                Utils.emitEvent(this.monitoredBlankScreenRegistered, 20261001);
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+
+            case "emitOnMonitoredBlankScreenParam001": {
+              try {
+                let callback: OnMonitorBlankScreenCallback = (event: MonitoredBlankScreenEventInfo) => {
+                  Utils.emitEvent(event.url, 20261010);
+                  Utils.emitEvent(event.reason, 20261011);
+                  Utils.emitEvent(event.extraMsg, 20261012);
+                };
+                callback({
+                  url: 'https://example.com/monitored-blank.html',
+                  reason: BlankScreenReason.MAIN_DOC_EMPTY,
+                  extraMsg: 'main document is empty'
+                });
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+
+            case "emitOnMonitoredBlankScreenReturn001": {
+              try {
+                this.isPageEnd = -1;
+                this.webcontroller.loadUrl($rawfile('1text.html'));
+                await Utils.waitForExist(() => this.isPageEnd, 'emitOnMonitoredBlankScreenReturn001', 1, 1000);
+                Utils.emitEvent(true, 20261020);
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+
           }
         })
       }
@@ -133,6 +173,11 @@ struct webViewController {
           detectionTiming: [2, 4, 6, 8],
           contentfulNodesCountThreshold: 17,
           detectionMethods: [BlankScreenDetectionMethod.DETECTION_CONTENTFUL_NODES_SEVENTEEN]
+        })
+        .enableBlankScreenMonitor(true)
+        .onMonitoredBlankScreen((event: MonitoredBlankScreenEventInfo) => {
+          console.log(`Monitored blank screen on ${event.url}, reason ${event.reason}, extra ${event.extraMsg}`);
+          this.monitoredBlankScreenRegistered = true;
         })
         .width('100%')
         .height('80%')

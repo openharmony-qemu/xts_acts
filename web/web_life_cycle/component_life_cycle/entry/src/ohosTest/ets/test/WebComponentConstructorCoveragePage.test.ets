@@ -16,12 +16,12 @@
 import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from './Utils';
-import { config } from '@kit.AccessibilityKit';
+import { accessibility, config } from '@kit.AccessibilityKit';
 import { Driver, ON } from '@ohos.UiTest';
 
 const EVENT_ID_SET_EMIT_KEY = 138200;
 const driver = Driver.create();
-const CAPACITY = ['retrieve', 'gesture'];
+const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
 export default function webComponentConstructorCoveragePage() {

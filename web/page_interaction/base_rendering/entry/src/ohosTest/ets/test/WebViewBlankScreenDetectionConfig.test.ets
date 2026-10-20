@@ -102,5 +102,47 @@ export default function WebViewBlankScreenDetectionConfigSuite() {
       await Utils.waitAndClickComponent(driver, "WebViewBlankScreenDetectionConfigButton","testDetectedBlankScreenReason02");
     })
 
+    /**
+     * @tc.number     SUB_WEB_ONMONITOREDBLANKSCREEN_CALL_0100
+     * @tc.name       testOnMonitoredBlankScreenCall001
+     * @tc.desc       onMonitoredBlankScreen call coverage
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('testOnMonitoredBlankScreenCall001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitOnMonitoredBlankScreenCall001", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerEvent("testOnMonitoredBlankScreenCall001", true, 20261001, done);
+      await Utils.waitAndClickComponent(driver, "WebViewBlankScreenDetectionConfigButton", "testOnMonitoredBlankScreenCall001");
+    })
+
+    /**
+     * @tc.number     SUB_WEB_ONMONITOREDBLANKSCREEN_PARAM_0100
+     * @tc.name       testOnMonitoredBlankScreenParam001
+     * @tc.desc       onMonitoredBlankScreen callback param coverage
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('testOnMonitoredBlankScreenParam001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitOnMonitoredBlankScreenParam001", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerEvent("testOnMonitoredBlankScreenParam001", 'https://example.com/monitored-blank.html', 20261010, done);
+      await Utils.waitAndClickComponent(driver, "WebViewBlankScreenDetectionConfigButton", "testOnMonitoredBlankScreenParam001");
+    })
+
+    /**
+     * @tc.number     SUB_WEB_ONMONITOREDBLANKSCREEN_RETURN_0100
+     * @tc.name       testOnMonitoredBlankScreenReturn001
+     * @tc.desc       onMonitoredBlankScreen return WebAttribute chain coverage
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('testOnMonitoredBlankScreenReturn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitOnMonitoredBlankScreenReturn001", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerEvent("testOnMonitoredBlankScreenReturn001", true, 20261020, done);
+      await Utils.waitAndClickComponent(driver, "WebViewBlankScreenDetectionConfigButton", "testOnMonitoredBlankScreenReturn001");
+    })
+
   })
 }
