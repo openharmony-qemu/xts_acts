@@ -149,6 +149,28 @@ struct clearPrefetchedResourceTest {
               break;
             }
 
+            case 'testPrefetchResourceNullStatic001': {
+              try {
+                web_webview.WebviewController.prefetchResource(
+                  null as web_webview.RequestInfo, [], 'KeyNullRequest', 500);
+                Utils.emitEvent(true, 41023107);
+              } catch (error) {
+                Utils.emitEvent(error.code, 41023107);
+              }
+              break;
+            }
+
+            case 'testPrefetchResourceUndefinedStatic001': {
+              try {
+                web_webview.WebviewController.prefetchResource(
+                  undefined as web_webview.RequestInfo, [], 'KeyUndefinedRequest', 500);
+                Utils.emitEvent(true, 41023108);
+              } catch (error) {
+                Utils.emitEvent(error.code, 41023108);
+              }
+              break;
+            }
+
             case 'emitonSwitchNextPage': {
               let uiContext: UIContext = this.getUIContext();
               let router: Router = uiContext.getRouter();
