@@ -18,6 +18,7 @@ import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 import { canIUse } from "@internal.full.global";
 import display from '@ohos.display';
+import { BusinessError } from '@ohos.base';
 import { Driver } from '@ohos.UiTest';
 import { ON } from '@ohos.UiTest';
 import window from '@ohos.window';
