@@ -703,6 +703,83 @@ export default function avMusicTemplateEntityTest() {
       })
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_AVMUSICTEMPLATE_SEARCH_PLAY_KARAOKE_ITEM_STATIC_2800
+     * @tc.number SUB_MULTIMEDIA_AVMUSICTEMPLATE_SEARCH_PLAY_KARAOKE_ITEM_STATIC_2800
+     * @tc.desc   Testing search play karaoke item
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVMUSICTEMPLATE_SEARCH_PLAY_KARAOKE_ITEM_STATIC_2800',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        try {
+          const data: avMusicTemplate.SearchPlayKaraokeItem = FakerDataUtil.getSearchPlayKaraokeItem();
+          expect(data.entityId.length).assertLarger(0);
+          expect(data.entityName?.length).assertLarger(0);
+          done();
+        } catch (err) {
+          CommonUtils.logError(TAG, "SEARCH_PLAY_KARAOKE_ITEM_STATIC_2800 catch err: " + CommonUtils.getError(err));
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVMUSICTEMPLATE_SEARCH_PLAY_KARAOKE_INFO_STATIC_2900
+     * @tc.number SUB_MULTIMEDIA_AVMUSICTEMPLATE_SEARCH_PLAY_KARAOKE_INFO_STATIC_2900
+     * @tc.desc   Testing search play karaoke info
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVMUSICTEMPLATE_SEARCH_PLAY_KARAOKE_INFO_STATIC_2900',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        try {
+          const data: avMusicTemplate.SearchPlayKaraokeInfo = FakerDataUtil.getSearchPlayKaraokeInfo();
+          expect(data.songName?.length).assertLarger(0);
+          expect(data.artist?.length).assertLarger(0);
+          expect(data.albumName?.length).assertLarger(0);
+          expect(data.billBoard?.length).assertLarger(0);
+          expect(data.scene?.length).assertLarger(0);
+          expect(data.genre?.length).assertLarger(0);
+          expect(data.instrument?.length).assertLarger(0);
+          expect(data.language?.length).assertLarger(0);
+          expect(data.decade?.length).assertLarger(0);
+          expect(data.mood?.length).assertLarger(0);
+          expect(data.gender?.length).assertLarger(0);
+          expect(data.queryKeyWords?.length).assertLarger(0);
+          expect(data.extra?.length).assertLarger(0);
+          expect(data.items?.length).assertEqual(1);
+          expect(data.items![0].entityId.length).assertLarger(0);
+          expect(data.items![0].entityName?.length).assertLarger(0);
+          done();
+        } catch (err) {
+          CommonUtils.logError(TAG, "SEARCH_PLAY_KARAOKE_INFO_STATIC_2900 catch err: " + CommonUtils.getError(err));
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVMUSICTEMPLATE_SEARCH_PLAY_KARAOKE_STATIC_3000
+     * @tc.number SUB_MULTIMEDIA_AVMUSICTEMPLATE_SEARCH_PLAY_KARAOKE_STATIC_3000
+     * @tc.desc   Testing search play info with karaoke info
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVMUSICTEMPLATE_SEARCH_PLAY_KARAOKE_STATIC_3000',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        try {
+          const data: avMusicTemplate.SearchPlayInfo = FakerDataUtil.getSearchPlayInfo();
+          expect(data.karaokeInfo).not().assertUndefined();
+          expect(data.karaokeInfo?.songName?.length).assertLarger(0);
+          expect(data.karaokeInfo?.queryKeyWords?.length).assertLarger(0);
+          expect(data.karaokeInfo?.items?.length).assertEqual(1);
+          expect(data.karaokeInfo?.items![0].entityId.length).assertLarger(0);
+          done();
+        } catch (err) {
+          CommonUtils.logError(TAG, "SEARCH_PLAY_KARAOKE_STATIC_3000 catch err: " + CommonUtils.getError(err));
+        }
+      })
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_AVMUSICTEMPLATE_QUERY_MEDIA_ENTITY_PARAM_STATIC_0000
      * @tc.number SUB_MULTIMEDIA_AVMUSICTEMPLATE_QUERY_MEDIA_ENTITY_PARAM_STATIC_0000
      * @tc.desc   Testing query media entity param
