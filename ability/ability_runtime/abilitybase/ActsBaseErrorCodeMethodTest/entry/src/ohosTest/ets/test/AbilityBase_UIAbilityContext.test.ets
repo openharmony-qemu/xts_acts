@@ -2387,7 +2387,7 @@ export default function openLinkTest() {
           })
           .catch((err: BusinessError) => {
             console.error(`${tag}, startAbilityByType fail, code is ${err.code}, message is ${err.message}`);
-            expect(code).assertEqual(16000050);
+            expect(err.code).assertEqual(16000050);
             done();
           });
       } catch (err) {
@@ -2426,7 +2426,7 @@ export default function openLinkTest() {
           })
           .catch((err: BusinessError) => {
             console.error(`${tag}, startAbilityByType fail, code is ${err.code}, message is ${err.message}`);
-            expect(code).assertEqual(16000050);
+            expect(err.code).assertEqual(16000050);
             done();
           });
       } catch (err) {
