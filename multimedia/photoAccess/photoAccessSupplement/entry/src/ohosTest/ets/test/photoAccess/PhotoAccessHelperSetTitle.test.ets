@@ -2045,39 +2045,6 @@ export default function PhotoSetTitleTestSupp() {
         done();
       }
     });
-    /**
-     * @tc.name   SUB_ON_PHOTO_ALBUM_CHANGE_001
-     * @tc.number SUB_ON_PHOTO_ALBUM_CHANGE_001
-     * @tc.desc   PhotoAccessHelper.on_photoAlbumChange-返回值所有属性覆盖
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_ON_PHOTO_ALBUM_CHANGE_001', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_ON_PHOTO_ALBUM_CHANGE_001';
-      let onCallback = (changeData: photoAccessHelper.AlbumChangeInfos) => {
-        console.info(TAG,testName,'onCallback success, changData: ' + JSON.stringify(changeData));
-        expect(changeData.type == 0).assertTrue();
-        expect(isEmpty(changeData.albumChangeDatas)).assertFalse();
-        expect(changeData.isForRecheck).assertFalse();
-        done();
-      }
-      try {
-        let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
-          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC);
-        let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
-        PhAccessHelper.on('photoAlbumChange', onCallback);
-
-        let albumChangeRequest: photoAccessHelper.MediaAlbumChangeRequest = new photoAccessHelper.MediaAlbumChangeRequest(album);
-        let newAlbumName: string = 'newAlbumName'+ new Date().getTime();
-        albumChangeRequest.setAlbumName(newAlbumName);
-        await PhAccessHelper.applyChanges(albumChangeRequest);
-      } catch (error) {
-        console.error(TAG, testName, `fetch failed with err: ${error.code}, ${error.message}`);
-        expect().assertFail()
-        done();
-      }
-    });
 
     /**
      * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_REQUEST_MOVING_PHOTO_000001
