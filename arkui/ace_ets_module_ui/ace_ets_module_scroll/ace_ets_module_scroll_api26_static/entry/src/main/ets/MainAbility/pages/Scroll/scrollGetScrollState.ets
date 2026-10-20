@@ -31,21 +31,6 @@ import {
 import { State, AppStorage } from '@ohos.arkui.stateManagement'
 import { BusinessError } from '@kit.BasicServicesKit'
 
-/**
- * getScrollState从API 26.2.0开始支持，当前编译SDK(26.0.x)的d.ts中无该声明。
- * 静态模式不支持as ESObject动态调用，这里通过本地接口声明补齐方法签名后转换调用，
- * 运行时行为与直接调用一致。
- */
-interface ScrollerGetScrollStateApi {
-  getScrollState(): ScrollState;
-}
-
-/**
- * 滚动状态查询页面（参考文档示例14）
- *
- * 通过Scroller.getScrollState()获取当前滚动状态，页面存在时每4ms自动查询一次，
- * 实时展示滚动过程中的状态变化，并记录出现过的全部状态。
- */
 @Entry
 @Component
 struct ScrollGetScrollState {
@@ -88,8 +73,7 @@ struct ScrollGetScrollState {
   // 获取当前滚动状态并记录
   private queryScrollState(): void {
     try {
-      let scrollerApi: ScrollerGetScrollStateApi = this.scroller as ScrollerGetScrollStateApi;
-      let state: ScrollState = scrollerApi.getScrollState();
+      let state: ScrollState = this.scroller.getScrollState();
       this.scrollStateStr = this.scrollStateToStr(state);
       AppStorage.setOrCreate<string>('getScrollState_currentState', this.scrollStateStr);
       this.recordState(this.scrollStateStr);
@@ -123,8 +107,7 @@ struct ScrollGetScrollState {
   // 无参正常调用getScrollState，用于空闲状态断言
   private queryWithNoParam(): void {
     try {
-      let scrollerApi: ScrollerGetScrollStateApi = this.scroller as ScrollerGetScrollStateApi;
-      let state: ScrollState = scrollerApi.getScrollState();
+      let state: ScrollState = this.scroller.getScrollState();
       this.setResult(this.scrollStateToStr(state));
     } catch (error) {
       let err: BusinessError = error as BusinessError;
@@ -135,8 +118,7 @@ struct ScrollGetScrollState {
   // 未绑定组件的控制器调用getScrollState，预期抛出100004错误码
   private queryUnbound(): void {
     try {
-      let unboundApi: ScrollerGetScrollStateApi = this.unboundScroller as ScrollerGetScrollStateApi;
-      unboundApi.getScrollState();
+      let unboundApi: ScrollState = this.unboundScroller.getScrollState();
       this.setResult('no_error');
     } catch (error) {
       let err: BusinessError = error as BusinessError;
@@ -150,21 +132,18 @@ struct ScrollGetScrollState {
       Text('State: ' + this.scrollStateStr)
         .id('getScrollState_currentState')
         .fontColor(Color.Black)
-        .height(30)
         .fontSize(14)
 
       // 展示出现过的全部滚动状态
       Text('Record: ' + this.stateRecord)
         .id('getScrollState_stateRecord')
         .fontColor(Color.Black)
-        .height(30)
         .fontSize(14)
 
       // 展示按钮触发的最近一次调用结果
       Text('Result: ' + this.lastResult)
         .id('getScrollState_result')
         .fontColor(Color.Black)
-        .height(30)
         .fontSize(14)
 
       // ========== query / unbound / animate ==========

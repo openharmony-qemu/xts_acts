@@ -14,14 +14,6 @@
  */
 import { BusinessError } from '@ohos.base';
 
-/**
- * 滚动状态查询页面（参考文档示例14）
- *
- * 通过Scroller.getScrollState()获取当前滚动状态，页面存在时每4ms自动查询一次，
- * 实时展示滚动过程中的状态变化，并记录出现过的全部状态。
- * 注：getScrollState从API 26.2.0开始支持，当前编译SDK(26.0.x)的d.ts中无该声明，
- * 通过(scroller as ESObject)方式调用保证可编译，运行时行为与直接调用一致。
- */
 @Entry
 @Component
 struct ScrollGetScrollState {
@@ -61,8 +53,8 @@ struct ScrollGetScrollState {
   // 获取当前滚动状态并记录
   private queryScrollState(): void {
     try {
-      // getScrollState is added from API 26.2.0, call it through ESObject
-      let state: ESObject = (this.scroller as ESObject).getScrollState();
+      // 通过调用getScrollState函数获取当前滚动状态
+      const state: ScrollState = this.scroller.getScrollState();
       this.scrollStateStr = this.scrollStateToStr(state);
       this.recordState(this.scrollStateStr);
     } catch (error) {
@@ -81,7 +73,7 @@ struct ScrollGetScrollState {
   }
 
   // 将滚动状态枚举转换为可读的文本
-  private scrollStateToStr(state: ESObject): string {
+  private scrollStateToStr(state: ScrollState): string {
     return state === ScrollState.Idle ? 'Idle' :
       state === ScrollState.Scroll ? 'Scroll' : 'Fling';
   }
@@ -95,7 +87,7 @@ struct ScrollGetScrollState {
   // 无参正常调用getScrollState
   private queryWithNoParam(): void {
     try {
-      let state: ESObject = (this.scroller as ESObject).getScrollState();
+      const state: ScrollState = this.scroller.getScrollState();
       this.setResult(this.scrollStateToStr(state));
     } catch (error) {
       let err: BusinessError = error as BusinessError;
@@ -106,7 +98,7 @@ struct ScrollGetScrollState {
   // 未绑定组件的控制器无参调用getScrollState，预期抛出100004错误码
   private queryUnbound(): void {
     try {
-      (this.unboundScroller as ESObject).getScrollState();
+      this.unboundScroller.getScrollState();
       this.setResult('no_error');
     } catch (error) {
       let err: BusinessError = error as BusinessError;
@@ -120,21 +112,18 @@ struct ScrollGetScrollState {
       Text('State: ' + this.scrollStateStr)
         .id('getScrollState_currentState')
         .fontColor(Color.Black)
-        .height(30)
         .fontSize(14)
 
       // 展示出现过的全部滚动状态
       Text('Record: ' + this.stateRecord)
         .id('getScrollState_stateRecord')
         .fontColor(Color.Black)
-        .height(30)
         .fontSize(14)
 
       // 展示按钮触发的最近一次调用结果
       Text('Result: ' + this.lastResult)
         .id('getScrollState_result')
         .fontColor(Color.Black)
-        .height(30)
         .fontSize(14)
 
       // ========== no param / record reset / position reset ==========

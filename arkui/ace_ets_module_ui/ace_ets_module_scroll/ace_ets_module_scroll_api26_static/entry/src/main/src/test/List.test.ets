@@ -47,6 +47,7 @@ import lazyVGridLayoutModifier from './LazyVGridLayout/lazyVGridLayoutModifier.t
 import ColumnsTemplateItemFillPolicy from './LazyVGridLayout/ColumnsTemplateItemFillPolicy.test'
 import ScrollScrollBarHeight from './Scroll/scrollScrollBarHeight.test'
 import ScrollGetScrollStateTest from './Scroll/scrollGetScrollState.test'
+import ScrollWithMouseTest from './Scroll/scrollWithMouse.test'
 import customListLayoutTest from './LazyDynamicLayout/customListLayoutTest.test';
 
 export default function testsuite() {
@@ -77,5 +78,6 @@ export default function testsuite() {
   ColumnsTemplateItemFillPolicy();
   ScrollScrollBarHeight();
   ScrollGetScrollStateTest();
+  ScrollWithMouseTest();
   customListLayoutTest();
 }

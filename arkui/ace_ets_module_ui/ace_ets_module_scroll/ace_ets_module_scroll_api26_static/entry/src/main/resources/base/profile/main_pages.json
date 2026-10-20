@@ -34,6 +34,7 @@
     "MainAbility/pages/LazyVGridLayout/columnsTemplateItemFillPolicy",
     "MainAbility/pages/Scroll/scrollScrollBarHeight",
     "MainAbility/pages/Scroll/scrollGetScrollState",
+    "MainAbility/pages/Scroll/scrollWithMouse",
     "MainAbility/pages/LazyDynamicLayout/customListLayoutTest"
   ]
 }
