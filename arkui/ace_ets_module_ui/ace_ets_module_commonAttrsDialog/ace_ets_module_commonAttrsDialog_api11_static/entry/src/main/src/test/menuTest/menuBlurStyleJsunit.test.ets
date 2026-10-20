@@ -32,8 +32,6 @@ let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
-let displayID: number = AppStorage.get<number>('displayID') ?? 0
-
 export default function menuBlurStyleJsunit() {
   describe('menuBlurStyleJsunit', () => {
     beforeAll(async (): Promise<void> => {
@@ -52,7 +50,7 @@ export default function menuBlurStyleJsunit() {
         console.info("get menuBlurStyleJsunit state pages:" + JSON.stringify(pages));
         if (!("menuBlurStyle" == pages.name)) {
           console.info("get menuBlurStyleJsunit pages.name:" + JSON.stringify(pages.name));
-          // await router 鏈夊凡鐭ラ棶棰橈紝鍏堟敞閲?浣跨敤 routerInstance.pushUrl(options);
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -89,7 +87,7 @@ it('menuBlurStyleJsunit_static_0100', Level.LEVEL0, async (done: () => void): Pr
       console.info("[menuBlurStyleJsunit_0100] menuText is: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual("menuBlurStyle");
       await CommonFunc.sleep(1000);
-       await driver.triggerKey(2070, displayID);
+       await driver.triggerKey(2070, AppStorage.get<number>('displayID')?.toInt() ?? 0);
       await CommonFunc.sleep(1000);
       console.info('[menuBlurStyleJsunit_0100] END');
       done();

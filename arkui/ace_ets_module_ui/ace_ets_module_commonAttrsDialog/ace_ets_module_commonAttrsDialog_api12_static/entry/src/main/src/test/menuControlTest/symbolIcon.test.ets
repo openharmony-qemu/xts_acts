@@ -23,8 +23,6 @@ import inspector from '@ohos.arkui.inspector';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
-let displayID: number = AppStorage.get<number>('displayID') ?? 0
-
 export default function symbolIcon() {
   describe('symbolIcon',  () =>{
     beforeEach(async (): Promise<void> => {
@@ -78,7 +76,7 @@ it('symbolIcon_static_0100', Level.LEVEL0, async (done: () => void): Promise<voi
       console.info("[symbolIcon_0100] title: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual("set symbolIcon success");
       try {
-        await driver.triggerKey(2070, displayID);
+        await driver.triggerKey(2070, AppStorage.get<number>('displayID')?.toInt() ?? 0);
         await CommonFunc.sleep(1000);
       } catch (err) {
         console.info('symbolIcon_0100 err: ' + JSON.stringify(err));

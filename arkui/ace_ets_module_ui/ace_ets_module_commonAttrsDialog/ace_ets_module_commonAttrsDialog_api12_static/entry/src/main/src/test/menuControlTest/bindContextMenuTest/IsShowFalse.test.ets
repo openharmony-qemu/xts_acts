@@ -36,8 +36,6 @@ import common from '@ohos.app.ability.common';
 
 let abilityStage = AppStorage.get<common.BaseContext>("abilityContext")
 
-let displayID: number = AppStorage.get<number>('displayID') ?? 0
-
 export default function IsShowFalse() {
   describe('IsShowFalse', () => {
     beforeEach(async (): Promise<void> => {
@@ -77,7 +75,7 @@ it('IsShowFalse_static_0100', Level.LEVEL0, async (done: () => void): Promise<vo
         await (button?.click() as Promise<void>);
         await CommonFunc.sleep(1000);
 
-        let buttonC = await driver.findComponent(ON.text('鑿滃崟閫夐」'));
+        let buttonC = await driver.findComponent(ON.text('菜单选项'));
         await (buttonC?.click() as Promise<void>);
         await CommonFunc.sleep(1000);
       } catch (err) {
@@ -167,7 +165,7 @@ it('IsShowFalse_0300', Level.LEVEL0, async (done: () => void): Promise<void> => 
       }
       try {
         await CommonFunc.sleep(1000);
-        await driver.triggerKey(2070, displayID);
+        await driver.triggerKey(2070, AppStorage.get<number>('displayID')?.toInt() ?? 0);
         await CommonFunc.sleep(1000);
       } catch (err) {
         console.info('IsShowFalse_0300 err: ' + JSON.stringify(err));
