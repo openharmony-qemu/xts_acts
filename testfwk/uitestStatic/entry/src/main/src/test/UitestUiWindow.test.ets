@@ -231,6 +231,40 @@ export default function uitestUiWindowTest(): void {
     })
 
     /**
+     * @tc.name testFindWindowWithId_static
+     * @tc.number SUB_testfwk_uitest_UiWindow_0015
+     * @tc.desc findWindow with id.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it('testFindWindowWithId_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, "testFindWindowWithId_static start !!!!");
+      try {
+        let disPlay = display.getDefaultDisplaySync();
+        hilog.info(domain, tag, `testFindWindowWithId_static id, ${JSON.stringify(disPlay)}`);
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+        await driver!.delayMs(waitUiReadyMs);
+        let window = await driver!.findWindow({ bundleName: 'com.uitestScene.acts', displayId: disPlay.id.toInt() });
+        hilog.info(domain, tag, `testFindWindowWithId_static window , ${JSON.stringify(window)}`);
+        expect(window != null).assertTrue();
+        if (window != null) {
+          let name = await window.getBundleName();
+          hilog.info(domain, tag, `testFindWindowWithId_static name , ${JSON.stringify(name)}`);
+          expect(name == 'com.uitestScene.acts').assertTrue();
+          let uiId = await window.getDisplayId();
+          hilog.info(domain, tag, `testFindWindowWithId_static uiId , ${JSON.stringify(uiId)}`);
+          expect(uiId).assertEqual(disPlay.id);
+        }
+      } catch (error) {
+        hilog.info(domain, tag, `testFindWindowWithId_static error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      hilog.info(domain, tag, "testFindWindowWithId_static over!!!!");
+      await stopApplication('com.uitestScene.acts');
+    })
+
+    /**
      * @tc.name   testApi9_UiWindow_getBundleName_static
      * @tc.number SUB_testfwk_uitest_UiWindow_0001
      * @tc.desc   get the size of the device display.
@@ -371,6 +405,7 @@ export default function uitestUiWindowTest(): void {
             if (testWindow != null) {
               let testWindowMode = await testWindow.getWindowMode();
               expect(testWindowMode == WindowMode.SECONDARY).assertTrue();
+              expect(testWindowMode != WindowMode.FLOATING).assertTrue()
             }
           }
         }
@@ -731,6 +766,83 @@ export default function uitestUiWindowTest(): void {
           expect(false).assertTrue()
         }
       }
+    })
+
+    /**
+     * @tc.name testWindowIsFocused_static
+     * @tc.number SUB_testfwk_uitest_UiWindow_0016
+     * @tc.desc testWindowIsFocused.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it('testWindowIsFocused_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, `testWindowIsFocused start `);
+      try {
+        const driver = Driver.create();
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+        await driver!.delayMs(waitUiReadyMs)
+        let window = await driver!.findWindow({ bundleName: 'com.uitestScene.acts', focused: true });
+        hilog.info(domain, tag, `testWindowIsFocused window, ${JSON.stringify(window)} `);
+        expect(window != null).assertTrue();
+        if (window != null) {
+          await window.focus();
+          hilog.info(domain, tag, `testWindowIsFocused focus sccessful`);
+          let isFocused = await window.isFocused();
+          hilog.info(domain, tag, `testWindowIsFocused isFocused, ${JSON.stringify(isFocused)} `);
+          expect(isFocused).assertTrue()
+        }
+        let focusedWindow1 = await driver.findWindow({focused: false});
+        if (focusedWindow1 != null) {
+          let falseFocused1 = await focusedWindow1.isFocused();
+          expect(falseFocused1).assertFalse()
+        }
+      } catch (error) {
+        hilog.info(domain, tag, `testWindowIsFocused error, ${JSON.stringify(error)} `);
+        expect().assertFail()
+      }
+      hilog.info(domain, tag, `testWindowIsFocused end `);
+      await stopApplication('com.uitestScene.acts')
+    })
+
+    /**
+     * @tc.name testWindowIsActive_static
+     * @tc.number SUB_testfwk_uitest_UiWindow_0017
+     * @tc.desc testWindowIsFocused.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it('testWindowIsActive_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, `testWindowIsActive start `);
+      try {
+        const driver = Driver.create();
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+        await driver!.delayMs(waitUiReadyMs)
+        let window = await driver!.findWindow({ bundleName: 'com.uitestScene.acts', focused: true, active: true });
+        hilog.info(domain, tag, `testWindowIsActive window, ${JSON.stringify(window)} `);
+        expect(window != null).assertTrue();
+        if (window != null) {
+          await window.focus();
+          hilog.info(domain, tag, `testWindowIsActive focus sccessful`);
+          let isActive = await window.isActive();
+          hilog.info(domain, tag, `testWindowIsActive isActive, ${JSON.stringify(isActive)} `);
+          expect(isActive).assertTrue()
+        }
+        let window1 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts', focused: false, active: false });
+        hilog.info(domain, tag, `testWindowIsActive window1, ${JSON.stringify(window1)} `);
+        expect(window1 == null).assertTrue();
+        let uitestWindow = await driver.findWindow({active: false})
+        if (uitestWindow != null) {
+          let isActive1 = await uitestWindow.isActive()
+          expect(isActive1).assertFalse();
+        }
+      } catch (error) {
+        hilog.info(domain, tag, `testWindowIsActive error, ${JSON.stringify(error)} `);
+        expect().assertFail()
+      }
+      hilog.info(domain, tag, `testWindowIsActive end `);
+      await stopApplication('com.uitestScene.acts')
     })
   })
 }
