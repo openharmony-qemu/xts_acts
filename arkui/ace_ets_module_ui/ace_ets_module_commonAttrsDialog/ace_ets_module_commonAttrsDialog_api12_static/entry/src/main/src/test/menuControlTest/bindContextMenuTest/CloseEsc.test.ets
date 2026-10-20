@@ -73,7 +73,7 @@ it('CloseEsc_static_0100', Level.LEVEL0, async (done: () => void): Promise<void>
         await (Button?.click() as Promise<void>);
         await CommonFunc.sleep(1000);
 
-        await driver.triggerKey(2070);
+        await driver.triggerKey(2070, AppStorage.get<number>('displayID')?.toInt() ?? 0);
         await CommonFunc.sleep(1000);
       } catch (err) {
         console.info('CloseEsc_0100 err: ' + JSON.stringify(err));
