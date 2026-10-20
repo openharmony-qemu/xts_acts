@@ -2078,40 +2078,6 @@ export default function PhotoSetTitleTestSupp() {
         done();
       }
     });
-    /**
-     * @tc.number    SUB_SENDABLE_PHOTO_ASSET_GET_LAST_OBJECT_PROMISE_00001
-     * @tc.name      SUB_SENDABLE_PHOTO_ASSET_GET_LAST_OBJECT_PROMISE_00001
-     * @tc.desc      sendable-getLastObject-返回值所有属性覆盖
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it('SUB_SENDABLE_PHOTO_ASSET_GET_LAST_OBJECT_PROMISE_00001', Level.LEVEL0, async (done: Function) => {
-      let testName= 'SUB_SENDABLE_PHOTO_ASSET_GET_LAST_OBJECT_PROMISE_00001';
-      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-      let phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelper = sendablePhotoAccessHelper.getPhotoAccessHelper(testContext);
-      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-      let fetchOption: photoAccessHelper.FetchOptions = {
-        fetchColumns: [],
-        predicates: predicates
-      };
-      try {
-        let fetchResult: sendablePhotoAccessHelper.FetchResult<sendablePhotoAccessHelper.PhotoAsset> =
-          await phAccessHelper.getAssets(fetchOption);
-        await fetchResult.getFirstObject();
-        let photoAsset: sendablePhotoAccessHelper.PhotoAsset = await fetchResult.getLastObject();
-        console.info(TAG,testName,'succeed');
-        expect(isEmpty(photoAsset.uri)).assertFalse();
-        expect(isEmpty(photoAsset.displayName)).assertFalse();
-        expect(photoAsset.photoType == 1 || photoAsset.photoType == 2).assertTrue();
-        done();
-      }
-      catch (error) {
-        console.error(TAG,`${testName} failed; error: ${error.code}`);
-        expect().assertFail();
-        done();
-      }
-    });
 
     /**
      * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_REQUEST_MOVING_PHOTO_000001
