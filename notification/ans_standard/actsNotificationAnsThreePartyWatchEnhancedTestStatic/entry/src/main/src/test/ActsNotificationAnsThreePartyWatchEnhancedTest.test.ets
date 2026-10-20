@@ -96,17 +96,17 @@ export default function actsNotificationAnsThreePartyWatchEnhancedTest(): void {
     })
 
     /**
-     * @tc.name   Sub_Notification_Ans_ThreePartyWatch_Enhanced_static_0300
-     * @tc.number Sub_Notification_Ans_ThreePartyWatch_Enhanced_static_0300
+     * @tc.name   SUB_Notification_Ans_ThreePartyWatch_Enhanced_static_0300
+     * @tc.number SUB_Notification_Ans_ThreePartyWatch_Enhanced_static_0300
      * @tc.desc   Call the `getUserGrantedBundleIcon` method with a normal value passed as the input parameter. Successfully obtain the application icon.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      * @co.authored.by.agent
      */
-    it('Sub_Notification_Ans_ThreePartyWatch_Enhanced_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SUB_Notification_Ans_ThreePartyWatch_Enhanced_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let TAG: string = "Sub_Notification_Ans_ThreePartyWatch_Enhanced_static_0300"
+        let TAG: string = "SUB_Notification_Ans_ThreePartyWatch_Enhanced_static_0300"
         let pixelMap = await getRawfilePixelMapByPath("2.png", 199, 211)
         let BeforeSize = pixelMap?.getPixelBytesNumber()
         await notificationExtensionSubscription.getUserGrantedBundleIcon(bundle_name).then((data: image.PixelMap) => {
@@ -130,17 +130,17 @@ export default function actsNotificationAnsThreePartyWatchEnhancedTest(): void {
       })
 
     /**
-     * @tc.name   Sub_Notification_Ans_ThreePartyWatch_Enhanced_static_0800
-     * @tc.number Sub_Notification_Ans_ThreePartyWatch_Enhanced_static_0800
+     * @tc.name   SUB_Notification_Ans_ThreePartyWatch_Enhanced_static_0800
+     * @tc.number SUB_Notification_Ans_ThreePartyWatch_Enhanced_static_0800
      * @tc.desc   When calling the `disableUserGrantedByBundle` method, an abnormal value is passed for the `bundleName` parameter, resulting in error code 1600022.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      * @co.authored.by.agent
      */
-    it('Sub_Notification_Ans_ThreePartyWatch_Enhanced_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('SUB_Notification_Ans_ThreePartyWatch_Enhanced_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let TAG: string = "Sub_Notification_Ans_ThreePartyWatch_Enhanced_static_0800"
+        let TAG: string = "SUB_Notification_Ans_ThreePartyWatch_Enhanced_static_0800"
         let Arraybundle = ["", bundle_name, bundle_name, "com.zhuoyi.browser", "com.example.test", bundle_name]
         for (let i = 0; i < 6; i++) {
           let info: notificationExtensionSubscription.GrantedBundleInfo = {
@@ -175,17 +175,17 @@ export default function actsNotificationAnsThreePartyWatchEnhancedTest(): void {
       })
 
     /**
-     * @tc.name   Sub_Notification_Ans_ThreePartyWatch_Enhanced_static_0200
-     * @tc.number Sub_Notification_Ans_ThreePartyWatch_Enhanced_static_0200
+     * @tc.name   SUB_Notification_Ans_ThreePartyWatch_Enhanced_static_0200
+     * @tc.number SUB_Notification_Ans_ThreePartyWatch_Enhanced_static_0200
      * @tc.desc   Pass an abnormal value as an input parameter to the `getUserGrantedBundleIcon` method, resulting in error code 1600022.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      * @co.authored.by.agent
      */
-    it('Sub_Notification_Ans_ThreePartyWatch_Enhanced_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('SUB_Notification_Ans_ThreePartyWatch_Enhanced_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let TAG: string = "Sub_Notification_Ans_ThreePartyWatch_Enhanced_static_0200"
+        let TAG: string = "SUB_Notification_Ans_ThreePartyWatch_Enhanced_static_0200"
         let Arraybundle = ["", bundle_name, "com.zhuoyi.browser", "com.example.test"]
         for (let i = 0; i < 4; i++) {
           await notificationExtensionSubscription.getUserGrantedBundleIcon(Arraybundle[i]).then((data: image.PixelMap) => {
@@ -214,17 +214,17 @@ export default function actsNotificationAnsThreePartyWatchEnhancedTest(): void {
       })
 
     /**
-     * @tc.name   Sub_Notification_Ans_ThreePartyWatch_Enhanced_static_1300
-     * @tc.number Sub_Notification_Ans_ThreePartyWatch_Enhanced_static_1300
+     * @tc.name   SUB_Notification_Ans_ThreePartyWatch_Enhanced_static_1300
+     * @tc.number SUB_Notification_Ans_ThreePartyWatch_Enhanced_static_1300
      * @tc.desc   When an abnormal value is passed for the appName in the call to disableUserGrantedByBundle, the call is successful.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      * @co.authored.by.agent
      */
-    it('Sub_Notification_Ans_ThreePartyWatch_Enhanced_static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('SUB_Notification_Ans_ThreePartyWatch_Enhanced_static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let TAG: string = "Sub_Notification_Ans_ThreePartyWatch_Enhanced_static_1300"
+        let TAG: string = "SUB_Notification_Ans_ThreePartyWatch_Enhanced_static_1300"
         let num: int = 0
         let ArrayName = [undefined, '', "微信", "xxx"]
         let list: notificationExtensionSubscription.GrantedBundleInfo[] = await notificationExtensionSubscription.getUserGrantedEnabledBundles();
