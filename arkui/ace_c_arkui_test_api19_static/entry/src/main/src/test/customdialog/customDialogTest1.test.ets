@@ -20,7 +20,6 @@ import {LibUtil} from '../../../ets/pages/LibUtil'
 import { Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 let libUtil:LibUtil = new LibUtil();
-let displayID: number = AppStorage.get<number>('displayID') ?? 0
 
 export default function customDialogTest1() {
 
@@ -58,7 +57,7 @@ export default function customDialogTest1() {
         console.info("[customDialogTest1_0010] updateDialog");
         await Utils.sleep(1000);
 
-        await driver.triggerKey(2070, displayID)
+        await driver.triggerKey(2070, AppStorage.get<number>('displayID')?.toInt() ?? 0);
         console.info('customDialogTest1_0010  END');
       } catch (err) {
         console.info('customDialogTest1_0010 err: ' + JSON.stringify(err));
