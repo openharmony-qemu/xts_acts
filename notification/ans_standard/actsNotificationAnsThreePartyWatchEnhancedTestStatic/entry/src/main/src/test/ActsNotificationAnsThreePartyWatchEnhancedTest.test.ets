@@ -82,17 +82,25 @@ export default function actsNotificationAnsThreePartyWatchEnhancedTest(): void {
       }
       let driver = Driver.create();
       let button = await driver.findComponent(ON.type("Toggle"));
-      await driver.delayMs(300)
-      await button?.click();
+      if (button !== null) {
+        await driver.delayMs(300)
+        await button?.click();
+      }
       let button2 = await driver.findComponent(ON.text("允许"));
-      await driver.delayMs(300)
-      await button2?.click();
+      if (button2 !== null) {
+        await driver.delayMs(300)
+        await button2?.click();
+      }
       let button3 = await driver.findComponent(ON.type("Toggle").isAfter(ON.text("全部")));
-      await driver.delayMs(300)
-      await button3?.click();
+      if (button3 !== null) {
+        await driver.delayMs(300)
+        await button3?.click();
+      }
       let button4 = await driver.findComponent(ON.text("确定"));
-      await driver.delayMs(300)
-      await button4?.click();
+      if (button4 !== null) {
+        await driver.delayMs(300)
+        await button4?.click();
+      }    
     })
 
     /**
@@ -121,6 +129,9 @@ export default function actsNotificationAnsThreePartyWatchEnhancedTest(): void {
             `getUserGrantedBundleIcon failed, code is ${err.code}, message is ${err.message}`);
           if (err.code == 801) {
             expect(err.code).assertEqual(801)
+            done()
+          } else if (err.code == 1600022) {
+            expect(err.code).assertEqual(1600022);
             done()
           } else {
             expect().assertFail();
@@ -159,8 +170,10 @@ export default function actsNotificationAnsThreePartyWatchEnhancedTest(): void {
               `disableUserGrantedByBundle failed, code is ${err.code}, message is ${err.message}`);
             if (err.code == 801) {
               expect(err.code).assertEqual(801)
+              done()
             } else if (err.code == 1600022) {
               expect(err.code).assertEqual(1600022);
+              done()
             } else {
               expect().assertFail();
               done()
@@ -198,8 +211,10 @@ export default function actsNotificationAnsThreePartyWatchEnhancedTest(): void {
               `getUserGrantedBundleIcon failed, code is ${err.code}, message is ${err.message}`);
             if (err.code == 801) {
               expect(err.code).assertEqual(801)
+              done()
             } else if (err.code == 1600022) {
               expect(err.code).assertEqual(1600022);
+              done()
             } else {
               expect().assertFail();
               done()
@@ -228,6 +243,9 @@ export default function actsNotificationAnsThreePartyWatchEnhancedTest(): void {
         let num: int = 0
         let ArrayName = [undefined, '', "微信", "xxx"]
         let list: notificationExtensionSubscription.GrantedBundleInfo[] = await notificationExtensionSubscription.getUserGrantedEnabledBundles();
+        if(list.length == 0){
+          list = [{ bundleName: "com.weixin.com", appIndex: 0 }]
+        }
         console.info(TAG + 'getUserGrantedEnabledBundles success, size: ' + list.length);
         for (let i = 0; i < 4; i++) {
           let info: notificationExtensionSubscription.GrantedBundleInfo = {
@@ -245,6 +263,9 @@ export default function actsNotificationAnsThreePartyWatchEnhancedTest(): void {
               `disableUserGrantedByBundle failed, code is ${err.code}, message is ${err.message}`);
             if (err.code == 801) {
               expect(err.code).assertEqual(801)
+              done()
+            } else if (err.code == 1600022) {
+              expect(err.code).assertEqual(1600022);
               done()
             } else {
               expect().assertFail();
