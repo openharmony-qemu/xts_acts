@@ -17,12 +17,19 @@ import FormExtension from '@ohos.app.form.FormExtensionAbility';
 import formBindingData from '@ohos.application.formBindingData';
 import formInfo from '@ohos.application.formInfo';
 import Want from '@ohos.app.ability.Want';
+import { BusinessError } from '@ohos.base';
+
+interface FormWeatherData {
+  temperature: string;
+  time: string;
+  area: string;
+}
 
 export default class FormAbility33 extends FormExtension {
   onAddForm(want: Want) {
     // Called to return a FormBindingData object.
     console.info(`FormAbility33 onCreate`);
-    let formData = {
+    let formData: FormWeatherData = {
       temperature: '11°',
       time: '11:00',
       area: 'Shenyang'
@@ -32,10 +39,10 @@ export default class FormAbility33 extends FormExtension {
       bundleName: 'com.example.apicoverhaptest',
       abilityName: 'SecondAbility'
     })
-      .then((data) => {
+      .then((_data: void) => {
         console.info(`FormAbility33 startAbility success`);
       })
-      .catch((err) => {
+      .catch((err: BusinessError) => {
         console.info(`FormAbility33 startAbility failed ${err.code}`);
       });
     console.info(`FormAbility33 onCreate===end=== `);
@@ -51,7 +58,7 @@ export default class FormAbility33 extends FormExtension {
   onUpdateForm(formId) {
     console.info(`FormAbility33 onUpdateForm===end=== ${formId}`);
     // Called to notify the form provider to update a specified form.
-    let formData = {};
+    let formData: Record<string, Object> = {};
     let proxies = [
       {
         'key': 'detail',

@@ -13,50 +13,51 @@
  * limitations under the License.
  */
 
-import AbilityStage from "@ohos.app.ability.AbilityStage";
+import AbilityStage from '@ohos.app.ability.AbilityStage';
 import common from '@ohos.app.ability.common';
 import Want from '@ohos.app.ability.Want';
+import { Configuration } from '@ohos.app.ability.Configuration';
 
 const ONACCEPTWANT_KEY_NOTSET_ID = -1;
 const ONACCEPTWANT_KEY_UNDEFINED_ID = -2;
-let onAcceptWantCalledSeq;
+let onAcceptWantCalledSeq: string;
 
 export default class MyAbilityStage extends AbilityStage {
   onCreate() {
-    console.log("[Demo] MyAbilityStage onCreate");
-    AppStorage.setOrCreate<common.AbilityStageContext>("stageContext", this.context);
+    console.log('[Demo] MyAbilityStage onCreate');
+    AppStorage.setOrCreate<common.AbilityStageContext>('stageContext', this.context);
   }
 
-  onAcceptWant(want: Want) {
-    console.log("AbilityMultiInstanceAppA onAcceptWant called want:" + JSON.stringify(want));
+  onAcceptWant(want: Want): string {
+    console.log('AbilityMultiInstanceAppA onAcceptWant called want:' + JSON.stringify(want));
     if ((want.parameters == undefined) || (want.parameters.startId == undefined)) {
-      console.log("AbilityMultiInstanceAppA specified param err");
-      return;
+      console.log('AbilityMultiInstanceAppA specified param err');
+      return '';
     }
 
-    let abilityId = want.parameters.startId.toString();
-    onAcceptWantCalledSeq = "onAcceptWantCalled";
-    onAcceptWantCalledSeq += "Id";
+    let abilityId: string = want.parameters.startId.toString();
+    onAcceptWantCalledSeq = 'onAcceptWantCalled';
+    onAcceptWantCalledSeq += 'Id';
     onAcceptWantCalledSeq += abilityId;
     globalThis.onAcceptWantCalledSeq = onAcceptWantCalledSeq;
 
     if (want.parameters.startId == ONACCEPTWANT_KEY_NOTSET_ID) {
-      return;
+      return '';
     } else if (want.parameters.startId == ONACCEPTWANT_KEY_UNDEFINED_ID) {
-      return undefined;
+      return '';
     }
 
-    console.log("AbilityMultiInstanceAppA set globalThis result :" + globalThis.onAcceptWantCalledSeq);
+    console.log('AbilityMultiInstanceAppA set globalThis result :' + globalThis.onAcceptWantCalledSeq);
     return abilityId;
   }
 
-  onConfigurationUpdate(config) {
+  onConfigurationUpdate(config: Configuration) {
     console.log('[Demo] AbilityMultiInstanceAppA onConfigurationUpdate: ' + this.context.config.language);
     console.log('[Demo] AbilityMultiInstanceAppA onConfigurationUpdate: ' + config.language);
   }
 
-  onNewProcessRequest(want) {
-    console.log("onNewProcesssRequest called want:" + JSON.stringify(want));
-    return "";
+  onNewProcessRequest(want: Want): string {
+    console.log('onNewProcesssRequest called want:' + JSON.stringify(want));
+    return '';
   }
 }

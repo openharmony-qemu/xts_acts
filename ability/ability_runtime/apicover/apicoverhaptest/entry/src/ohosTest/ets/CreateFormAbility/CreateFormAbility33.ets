@@ -16,36 +16,41 @@
 import Ability from '@ohos.app.ability.UIAbility';
 import Want from '@ohos.app.ability.Want';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
+import common from '@ohos.app.ability.common';
 import window from '@ohos.window';
 
-export default class CreateFormAbility23 extends Ability {
+export default class CreateFormAbility33 extends Ability {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
-    console.log(`[Demo] CreateFormAbility23 onCreate`);
-    AppStorage.setOrCreate('isCreateForm', want.parameters.createForm);
+    console.log(`[Demo] CreateFormAbility33 onCreate`);
+    const params = want.parameters;
+    if (params == undefined) {
+      return;
+    }
+    AppStorage.setOrCreate('isCreateForm', params.createForm);
   }
 
   onDestroy() {
-    console.log(`[Demo] CreateFormAbility23 onDestroy`);
+    console.log(`[Demo] CreateFormAbility33 onDestroy`);
   }
 
   onWindowStageCreate(windowStage: window.WindowStage) {
     // Main window is created, set main page for this ability
-    console.log(`[Demo] CreateFormAbility23 onWindowStageCreate`);
-    windowStage.loadContent('CreateFormAbility/pages/form23_page', null);
+    console.log(`[Demo] CreateFormAbility33 onWindowStageCreate`);
+    windowStage.loadContent('CreateFormAbility/pages/form33_page', null);
   }
 
   onWindowStageDestroy() {
     // Main window is destroyed, release UI related resources
-    console.log(`[Demo] CreateFormAbility23 onWindowStageDestroy`);
+    console.log(`[Demo] CreateFormAbility33 onWindowStageDestroy`);
   }
 
   onForeground() {
     // Ability has brought to foreground
-    console.log(`[Demo] CreateFormAbility23 onForeground`);
+    console.log(`[Demo] CreateFormAbility33 onForeground`);
   }
 
   onBackground() {
     // Ability has back to background
-    console.log(`[Demo] CreateFormAbility23 onBackground`);
+    console.log(`[Demo] CreateFormAbility33 onBackground`);
   }
 }

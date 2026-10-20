@@ -16,7 +16,7 @@
   "module": {
     "name": "module1",
     "type": "feature",
-    "srcEntry": "./ets/Application/AbilityStage.ts",
+    "srcEntry": "./ets/Application/AbilityStage.ets",
     "description": "$string:module1_desc",
     "mainElement": "ModuleAbility",
     "deviceTypes": [],
@@ -27,7 +27,7 @@
     "abilities": [
       {
         "name": "ModuleAbility",
-        "srcEntry": "./ets/ModuleAbility/ModuleAbility.ts",
+        "srcEntry": "./ets/ModuleAbility/ModuleAbility.ets",
         "description": "$string:ModuleAbility_desc",
         "icon": "$media:icon",
         "label": "$string:ModuleAbility_label",
@@ -49,7 +49,7 @@
     "extensionAbilities": [
       {
         "name": "FormAbility2",
-        "srcEntry": "./ets/FormAbility/FormAbility.ts",
+        "srcEntry": "./ets/FormAbility/FormAbility.ets",
         "label": "$string:form_FormAbility_label",
         "description": "$string:form_FormAbility_desc",
         "type": "form",

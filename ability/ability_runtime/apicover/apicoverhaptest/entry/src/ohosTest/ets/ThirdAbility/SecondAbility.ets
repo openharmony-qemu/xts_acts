@@ -15,11 +15,20 @@
 
 import Ability from '@ohos.app.ability.UIAbility';
 import commonEvent from '@ohos.commonEvent';
+import CommonEventManager from '@ohos.commonEventManager';
 import wantConstant from '@ohos.app.ability.wantConstant';
 import common from '@ohos.app.ability.common';
 import Want from '@ohos.app.ability.Want';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import window from '@ohos.window';
+
+interface ShareTitleParam {
+  title: string;
+}
+
+interface ShareUrlParam {
+  uri: string;
+}
 
 export default class SecondAbility extends Ability {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
@@ -46,12 +55,12 @@ export default class SecondAbility extends Ability {
   onForeground() {
     // Ability has brought to foreground
     console.log("[Demo] SecondAbility onForeground");
-    let CommonEventPublishData = {
-      parameters: {
-        "Life": "onForeground"
-      }
-    }
-    commonEvent.publish("Form_StartAbility", CommonEventPublishData, (err) => {
+    const lifeParams: Record<string, Object> = {};
+    lifeParams['Life'] = 'onForeground';
+    const commonEventPublishData: CommonEventManager.CommonEventPublishData = {
+      parameters: lifeParams
+    };
+    commonEvent.publish("Form_StartAbility", commonEventPublishData, (err) => {
       console.info("Form_StartAbility onCreate");
     });
   }
@@ -61,20 +70,22 @@ export default class SecondAbility extends Ability {
     console.log("[Demo] SecondAbility onBackground");
   }
 
-  onDump(Param) {
-    return null;
+  onDump(param: Array<string>): Array<string> {
+    return [];
   }
 
-  onShare(wantParam) {
-    wantParam[wantConstant.Params.CONTENT_TITLE_KEY] = {
-      title: "baidu"
-    },
-    wantParam[wantConstant.Params.SHARE_ABSTRACT_KEY] = {
-      Abstract: "share data"
-    },
-    wantParam[wantConstant.Params.SHARE_URL_KEY] = {
-      uri: "www.baidu.com"
-    }
+  onShare(wantParam: Record<string, Object>): void {
+    const titleObj: ShareTitleParam = {
+      title: 'baidu'
+    };
+    const abstractObj: Record<string, Object> = {};
+    abstractObj['Abstract'] = 'share data';
+    const urlObj: ShareUrlParam = {
+      uri: 'www.baidu.com'
+    };
+    wantParam[wantConstant.Params.CONTENT_TITLE_KEY] = titleObj;
+    wantParam[wantConstant.Params.SHARE_ABSTRACT_KEY] = abstractObj;
+    wantParam[wantConstant.Params.SHARE_URL_KEY] = urlObj;
   }
 
   onPrepareToTerminate() {

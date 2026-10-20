@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2021 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,14 +13,16 @@
  * limitations under the License.
  */
 
-import UIAbility from '@ohos.app.ability.UIAbility';
-import AbilityConstant from '@ohos.app.ability.AbilityConstant';
+import Ability from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
 import Want from '@ohos.app.ability.Want';
+import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import window from '@ohos.window';
 
-export default class ModuleAbility extends UIAbility {
+export default class MainAbility extends Ability {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
     console.log("[Demo] MainAbility onCreate");
+
   }
 
   onDestroy() {
@@ -30,17 +32,16 @@ export default class ModuleAbility extends UIAbility {
   onWindowStageCreate(windowStage: window.WindowStage) {
     // Main window is created, set main page for this ability
     console.log("[Demo] MainAbility onWindowStageCreate");
+    windowStage.loadContent("MainAbility/pages/MainAbility_pages", null);
+  }
 
-    windowStage.loadContent("pages/index", null);
+  onWindowStageRestore(windowStage: window.WindowStage) {
+    console.log("[Demo] MainAbility onWindowStageRestore");
   }
 
   onWindowStageDestroy() {
     // Main window is destroyed, release UI related resources
     console.log("[Demo] MainAbility onWindowStageDestroy");
-  }
-
-  onWindowStageRestore(windowStage) {
-    console.log("[Demo] MainAbility onWindowStageRestore");
   }
 
   onForeground() {
@@ -53,17 +54,12 @@ export default class ModuleAbility extends UIAbility {
     console.log("[Demo] MainAbility onBackground");
   }
 
-  onContinue(wantParam) {
+  onContinue(wantParam: Record<string, Object>): AbilityConstant.OnContinueResult {
     console.log("[Demo] MainAbility onContinue");
     return AbilityConstant.OnContinueResult.AGREE;
   }
 
-  onConfigurationUpdate(configuration) {
-    console.log('[Demo] MainAbility onConfigurationUpdate: ' + JSON.stringify(configuration));
-  }
-
-  onDump(param) {
-    console.log("[Demo] MainAbility onDump: " + JSON.stringify(param));
-    return ["MainAbility"];
+  onBackPressed() {
+    return false;
   }
 }
