@@ -63,11 +63,10 @@ export default function UIPickerOnChangeModifierTest() {
       let right = rect.right;
       let bottom = rect.bottom;
       console.info("rectValue is" + left + " --" + right + "--" + top + "--" + bottom);
-      await driver.swipe(
-        Math.round((left + right) / 2).toInt(),
-        Math.round((top + bottom) / 2).toInt(),
-        Math.round((left + right) / 2).toInt(),
-        Math.round((top + bottom) / 4).toInt(),600
+      let displayId = await picker?.getDisplayId();
+      await driver.swipeBetween(
+        { x: Math.round((left + right) / 2).toInt(), y: Math.round((top + bottom) / 2).toInt(), displayId: displayId },
+        { x: Math.round((left + right) / 2).toInt(), y: Math.round((top + bottom) / 4).toInt(), displayId: displayId }, 600
       );
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('onChangeM');

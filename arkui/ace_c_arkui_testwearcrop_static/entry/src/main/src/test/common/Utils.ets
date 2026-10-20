@@ -19,7 +19,7 @@ import systemDateTime from '@ohos.systemDateTime';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import fs from '@ohos.file.fs';
 import router from '@ohos.router';
-import { Router } from '@ohos.arkui.UIContext';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 
@@ -100,6 +100,17 @@ export default class Utils {
     let driver = Driver.create();
     let component = await driver.findComponent(ON.id(id));
     await (component?.click() as Promise<void>);
+  }
+
+  static async pickerComponent(key: string) {
+    let driver = Driver.create();
+    let Picker = await driver.findComponent(ON.id(key));
+    let displayId = (await (Picker?.getDisplayId() as Promise<number>)).toInt();
+    let rect = await (Picker?.getBounds() as Promise<Rect>);
+    let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
+    let X = Math.round(rect.right - uiContext.vp2px(5)).toInt();
+    let Y = Math.round(rect.bottom - uiContext.vp2px(5)).toInt();
+    await driver.clickAt({ x: X, y: Y, displayId: displayId });
   }
 //
 //   static async doubleClickComponent(id: string) {
