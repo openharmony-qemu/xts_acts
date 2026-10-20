@@ -350,7 +350,6 @@ export default function trackGlobalRefTest() {
       try { deleteTestRef(); } catch (e) { }
       try { deleteWeakTestRef(); } catch (e) { }
       try { testNapi.clearNapiRefs(); } catch (e) { }
-      try { util.ArkTSVM.setTrackGlobalRef(false); } catch (e) { }
       try { cleanupHeapSnapshots(); } catch (e) { }
     })
 
@@ -386,6 +385,8 @@ export default function trackGlobalRefTest() {
       } catch (err) {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
+      } finally {
+        try { util.ArkTSVM.setTrackGlobalRef(false); } catch (e) { }
       }
       done();
     });
@@ -438,6 +439,8 @@ export default function trackGlobalRefTest() {
       } catch (err) {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
+      } finally {
+        try { util.ArkTSVM.setTrackGlobalRef(false); } catch (e) { }
       }
       done();
     });
@@ -464,6 +467,8 @@ export default function trackGlobalRefTest() {
       } catch (err) {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
+      } finally {
+        try { util.ArkTSVM.setTrackGlobalRef(false); } catch (e) { }
       }
       done();
     });
@@ -570,6 +575,8 @@ export default function trackGlobalRefTest() {
       } catch (err) {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
+      } finally {
+        try { util.ArkTSVM.setTrackGlobalRef(false); } catch (e) { }
       }
       done();
     });
@@ -615,6 +622,7 @@ export default function trackGlobalRefTest() {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
       } finally {
+        try { util.ArkTSVM.setTrackGlobalRef(false); } catch (e) { }
         deleteTestRef();
       }
       done();
@@ -659,6 +667,7 @@ export default function trackGlobalRefTest() {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
       } finally {
+        try { util.ArkTSVM.setTrackGlobalRef(false); } catch (e) { }
         deleteTestRef();
       }
       done();
@@ -715,6 +724,7 @@ export default function trackGlobalRefTest() {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
       } finally {
+        try { util.ArkTSVM.setTrackGlobalRef(false); } catch (e) { }
         deleteTestRef();
       }
       done();
@@ -747,6 +757,7 @@ export default function trackGlobalRefTest() {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
       } finally {
+        try { util.ArkTSVM.setTrackGlobalRef(false); } catch (e) { }
         deleteTestRef();
       }
       done();
@@ -795,6 +806,7 @@ export default function trackGlobalRefTest() {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
       } finally {
+        try { util.ArkTSVM.setTrackGlobalRef(false); } catch (e) { }
         deleteTestRef();
       }
       done();
@@ -825,6 +837,7 @@ export default function trackGlobalRefTest() {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
       } finally {
+        try { util.ArkTSVM.setTrackGlobalRef(false); } catch (e) { }
         testNapi.clearNapiRefs();
       }
       done();
@@ -867,6 +880,7 @@ export default function trackGlobalRefTest() {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
       } finally {
+        try { util.ArkTSVM.setTrackGlobalRef(false); } catch (e) { }
         deleteTestRef();
       }
       done();
@@ -900,6 +914,7 @@ export default function trackGlobalRefTest() {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
       } finally {
+        try { util.ArkTSVM.setTrackGlobalRef(false); } catch (e) { }
         testNapi.clearNapiRefs();
       }
       done();
@@ -931,6 +946,7 @@ export default function trackGlobalRefTest() {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
       } finally {
+        try { util.ArkTSVM.setTrackGlobalRef(false); } catch (e) { }
         deleteTestRef();
       }
       done();
@@ -967,18 +983,23 @@ export default function trackGlobalRefTest() {
         newWorker.onmessage = (e: MessageEvents): void => {
           let result: string = e.data as string;
           console.info(`${TAG} worker response: ${result}`);
-          expect(result === 'enabled').assertTrue();
-          try {
-            let obj: TrackRefTestObject = new TrackRefTestObject(1800, OBJ_NAME);
-            useObject(obj);
-            const heapResult: GlobalHandleObjectResult = dumpAndCheckHeap(`${SNAPSHOT_PREFIX}18`);
-            expect(heapResult.found).assertTrue();
-            console.info(`${TAG} main thread heap has GlobalHandleObject after worker enabled: PASS`);
-          } catch (err) {
-            console.error(`${TAG} heap check failed, error code: ${(err as BusinessError).code}`);
+          if (result === 'enabled') {
+            try {
+              let obj: TrackRefTestObject = new TrackRefTestObject(1800, OBJ_NAME);
+              useObject(obj);
+              const heapResult: GlobalHandleObjectResult = dumpAndCheckHeap(`${SNAPSHOT_PREFIX}18`);
+              expect(heapResult.found).assertTrue();
+              console.info(`${TAG} main thread heap has GlobalHandleObject after worker enabled: PASS`);
+            } catch (err) {
+              console.error(`${TAG} heap check failed, error code: ${(err as BusinessError).code}`);
+              expect().assertFail();
+            }
+            try { newWorker.postMessage('disable'); } catch (e) { }
+          } else if (result === 'disabled') {
+            try { newWorker.terminate(); } catch (e) { }
+          } else {
             expect().assertFail();
           }
-          try { newWorker.terminate(); } catch (e) { }
         };
         newWorker.postMessage('enable');
       } catch (err) {
@@ -1038,6 +1059,7 @@ export default function trackGlobalRefTest() {
         done();
         return;
       }
+      try { util.ArkTSVM.setTrackGlobalRef(false); } catch (e) { }
       const terminated: boolean = await awaitWorkerTerminated(termFlag);
       if (!terminated) {
         console.error(`${TAG} worker not terminated within timeout, force terminating`);
@@ -1137,6 +1159,8 @@ export default function trackGlobalRefTest() {
       } catch (err) {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
+      } finally {
+        try { util.ArkTSVM.setTrackGlobalRef(false); } catch (e) { }
       }
       done();
     });
@@ -1166,6 +1190,7 @@ export default function trackGlobalRefTest() {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
       } finally {
+        try { util.ArkTSVM.setTrackGlobalRef(false); } catch (e) { }
         testNapi.clearNapiRefs();
       }
       done();
@@ -1214,6 +1239,7 @@ export default function trackGlobalRefTest() {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
       } finally {
+        try { util.ArkTSVM.setTrackGlobalRef(false); } catch (e) { }
         deleteTestRef();
       }
       done();
@@ -1258,6 +1284,7 @@ export default function trackGlobalRefTest() {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
       } finally {
+        try { util.ArkTSVM.setTrackGlobalRef(false); } catch (e) { }
         deleteTestRef();
       }
       done();
@@ -1305,6 +1332,7 @@ export default function trackGlobalRefTest() {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
       } finally {
+        try { util.ArkTSVM.setTrackGlobalRef(false); } catch (e) { }
         deleteTestRef();
       }
       done();
@@ -1359,6 +1387,7 @@ export default function trackGlobalRefTest() {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
       } finally {
+        try { util.ArkTSVM.setTrackGlobalRef(false); } catch (e) { }
         deleteTestRef();
       }
       done();
@@ -1398,6 +1427,7 @@ export default function trackGlobalRefTest() {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
       } finally {
+        try { util.ArkTSVM.setTrackGlobalRef(false); } catch (e) { }
         deleteTestRef();
       }
       done();
@@ -1445,6 +1475,7 @@ export default function trackGlobalRefTest() {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
       } finally {
+        try { util.ArkTSVM.setTrackGlobalRef(false); } catch (e) { }
         deleteTestRef();
       }
       done();
@@ -1489,6 +1520,7 @@ export default function trackGlobalRefTest() {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
       } finally {
+        try { util.ArkTSVM.setTrackGlobalRef(false); } catch (e) { }
         deleteTestRef();
       }
       done();
@@ -1536,6 +1568,7 @@ export default function trackGlobalRefTest() {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
       } finally {
+        try { util.ArkTSVM.setTrackGlobalRef(false); } catch (e) { }
         deleteTestRef();
       }
       done();
@@ -1572,6 +1605,7 @@ export default function trackGlobalRefTest() {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
       } finally {
+        try { util.ArkTSVM.setTrackGlobalRef(false); } catch (e) { }
         deleteTestRef();
       }
       done();
@@ -1630,6 +1664,7 @@ export default function trackGlobalRefTest() {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
       } finally {
+        try { util.ArkTSVM.setTrackGlobalRef(false); } catch (e) { }
         deleteTestRef();
       }
       done();
@@ -1678,6 +1713,7 @@ export default function trackGlobalRefTest() {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
       } finally {
+        try { util.ArkTSVM.setTrackGlobalRef(false); } catch (e) { }
         deleteTestRef();
       }
       done();
@@ -1715,6 +1751,7 @@ export default function trackGlobalRefTest() {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
       } finally {
+        try { util.ArkTSVM.setTrackGlobalRef(false); } catch (e) { }
         deleteTestRef();
       }
       done();
@@ -1774,6 +1811,7 @@ export default function trackGlobalRefTest() {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
       } finally {
+        try { util.ArkTSVM.setTrackGlobalRef(false); } catch (e) { }
         deleteTestRef();
         deleteWeakTestRef();
       }
@@ -1937,6 +1975,7 @@ export default function trackGlobalRefTest() {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
       } finally {
+        try { util.ArkTSVM.setTrackGlobalRef(false); } catch (e) { }
         deleteTestRef();
       }
       done();
