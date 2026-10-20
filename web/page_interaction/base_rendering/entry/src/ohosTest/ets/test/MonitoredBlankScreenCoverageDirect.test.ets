@@ -392,7 +392,7 @@ export default function monitoredBlankScreenCoverageDirect() {
     it('testMonitoredBlankScreenEventInfoInterfaceDirect001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
         let info: MonitoredBlankScreenEventInfo = {
-          url: 'https://example.com/page.html',
+          url: 'resource://rawfile/kongbai.html',
           reason: BlankScreenReason.SSL_ERROR,
           extraMsg: 'ssl handshake failed'
         };
@@ -411,11 +411,11 @@ export default function monitoredBlankScreenCoverageDirect() {
     it('testMonitoredBlankScreenEventInfoUrlDirect001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
         let info: MonitoredBlankScreenEventInfo = {
-          url: 'https://example.com/blank.html',
+          url: 'resource://rawfile/kongbai.html',
           reason: BlankScreenReason.MAIN_DOC_EMPTY,
           extraMsg: ''
         };
-        expect(info.url).assertEqual('https://example.com/blank.html');
+        expect(info.url).assertEqual('resource://rawfile/kongbai.html');
         done();
       })
 
@@ -430,7 +430,7 @@ export default function monitoredBlankScreenCoverageDirect() {
     it('testMonitoredBlankScreenEventInfoReasonDirect001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
         let info: MonitoredBlankScreenEventInfo = {
-          url: 'https://example.com',
+          url: 'resource://rawfile/1text.html',
           reason: BlankScreenReason.DNS_RESOLVE_FAILED,
           extraMsg: 'dns error'
         };
@@ -449,7 +449,7 @@ export default function monitoredBlankScreenCoverageDirect() {
     it('testMonitoredBlankScreenEventInfoExtraMsgDirect001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
         let info: MonitoredBlankScreenEventInfo = {
-          url: 'https://example.com',
+          url: 'resource://rawfile/1text.html',
           reason: BlankScreenReason.REQUEST_TIMED_OUT,
           extraMsg: 'request timed out after 30s'
         };
@@ -473,7 +473,7 @@ export default function monitoredBlankScreenCoverageDirect() {
           expect(event.extraMsg).assertEqual('cert invalid');
         };
         callback({
-          url: 'https://example.com/cert-error',
+          url: 'resource://rawfile/kongbai.html',
           reason: BlankScreenReason.CERT_ERROR,
           extraMsg: 'cert invalid'
         });

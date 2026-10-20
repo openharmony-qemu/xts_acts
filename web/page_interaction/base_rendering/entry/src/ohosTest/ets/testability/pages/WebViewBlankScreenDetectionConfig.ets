@@ -125,7 +125,7 @@ struct webViewController {
                   Utils.emitEvent(event.extraMsg, 20261012);
                 };
                 callback({
-                  url: 'https://example.com/monitored-blank.html',
+                  url: 'resource://rawfile/kongbai.html',
                   reason: BlankScreenReason.MAIN_DOC_EMPTY,
                   extraMsg: 'main document is empty'
                 });
