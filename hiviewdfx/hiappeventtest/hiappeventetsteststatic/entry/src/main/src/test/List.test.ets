@@ -29,7 +29,8 @@ import hiAppEventStrongTest from "./HiAppEventDFXEx.test";
 import Hiviewdfx_HiAppEventTest from "./HiAppEventStatic.test";
 import removeProcessorStrongTest from "./RemoveProcessorStatic.test";
 import removeWatcherStrongTest from "./RemoveWatcherStatic.test";
-import setEventConfigStrongTest from "./SetEventConfigStatic.test";;
+import setEventConfigStrongTest from "./SetEventConfigStatic.test";
+import HiAppEventExternalLog from './HiAppEventExternalLogSta.test';
 
 export default function testsuite() {
     writeTest();
@@ -49,5 +50,5 @@ export default function testsuite() {
     removeProcessorStrongTest();
     removeWatcherStrongTest();
     setEventConfigStrongTest();
-    test
+    HiAppEventExternalLog();
 }
