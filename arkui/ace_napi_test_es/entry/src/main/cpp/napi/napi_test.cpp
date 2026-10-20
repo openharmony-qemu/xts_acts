@@ -4991,14 +4991,6 @@ static napi_value EmptyLoadModule(napi_env env, napi_callback_info info)
     return ret;
 }
 
-static napi_value EmptyLoadModuleWithInfo(napi_env env, napi_callback_info info)
-{
-    (void)info;
-    napi_value ret = nullptr;
-    napi_get_boolean(env, false, &ret);
-    return ret;
-}
-
 static napi_value EmptyDefineSendableClass(napi_env env, napi_callback_info info)
 {
     (void)info;
@@ -5256,7 +5248,6 @@ static napi_value Init(napi_env env, napi_value exports)
         DECLARE_NAPI_FUNCTION("emptyThrowRangeError", EmptyThrowRangeError),
         DECLARE_NAPI_FUNCTION("emptyRunScriptPath", EmptyRunScriptPath),
         DECLARE_NAPI_FUNCTION("emptyLoadModule", EmptyLoadModule),
-        DECLARE_NAPI_FUNCTION("emptyLoadModuleWithInfo", EmptyLoadModuleWithInfo),
         DECLARE_NAPI_FUNCTION("emptyDefineSendableClass", EmptyDefineSendableClass),
         DECLARE_NAPI_FUNCTION("emptyExternalStringAscii", EmptyExternalStringAscii),
         DECLARE_NAPI_FUNCTION("emptyThrowBusinessError", EmptyThrowBusinessError),

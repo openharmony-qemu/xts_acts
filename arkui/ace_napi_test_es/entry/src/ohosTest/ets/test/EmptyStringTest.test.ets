@@ -205,65 +205,50 @@ export default function emptyStringJsunit() {
     /**
      * @tc.name   aceNapiEmptyStringTest011
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_EMPTY_STRING_1100
-     * @tc.desc   napi_load_module_with_info with empty path and empty module_info causes SIGSEGV crash, cannot be tested
+     * @tc.desc   napi_define_sendable_class with empty name
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('aceNapiEmptyStringTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('aceNapiEmptyStringTest011 START');
-      console.info('aceNapiEmptyStringTest011 napi_load_module_with_info with empty path causes SIGSEGV crash, cannot be tested');
-      expect(true).assertTrue();
+      let value = napitest.emptyDefineSendableClass();
+      console.info('aceNapiEmptyStringTest011 testString result is: ' + value + "--" + JSON.stringify(value));
+      expect(value).assertTrue();
       done();
     });
 
     /**
      * @tc.name   aceNapiEmptyStringTest012
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_EMPTY_STRING_1200
-     * @tc.desc   napi_define_sendable_class with empty name
+     * @tc.desc   napi_create_external_string_ascii with empty string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('aceNapiEmptyStringTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('aceNapiEmptyStringTest012 START');
-      let value = napitest.emptyDefineSendableClass();
+      let value = napitest.emptyExternalStringAscii();
       console.info('aceNapiEmptyStringTest012 testString result is: ' + value + "--" + JSON.stringify(value));
-      expect(value).assertTrue();
+      expect(value).assertEqual('');
       done();
     });
 
     /**
      * @tc.name   aceNapiEmptyStringTest013
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_EMPTY_STRING_1300
-     * @tc.desc   napi_create_external_string_ascii with empty string
+     * @tc.desc   napi_throw_business_error with empty msg
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('aceNapiEmptyStringTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('aceNapiEmptyStringTest013 START');
-      let value = napitest.emptyExternalStringAscii();
-      console.info('aceNapiEmptyStringTest013 testString result is: ' + value + "--" + JSON.stringify(value));
-      expect(value).assertEqual('');
-      done();
-    });
-
-    /**
-     * @tc.name   aceNapiEmptyStringTest014
-     * @tc.number SUB_ACE_BASIC_ETS_NAPI_EMPTY_STRING_1400
-     * @tc.desc   napi_throw_business_error with empty msg
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('aceNapiEmptyStringTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      console.info('aceNapiEmptyStringTest014 START');
       try {
         napitest.emptyThrowBusinessError();
         expect(false).assertTrue();
       } catch (err) {
-        console.info('aceNapiEmptyStringTest014 testString result is err: ' + err + "--" + JSON.stringify(err));
+        console.info('aceNapiEmptyStringTest013 testString result is err: ' + err + "--" + JSON.stringify(err));
         let errStr = JSON.stringify(err);
         expect(errStr !== '').assertTrue();
       }
@@ -271,32 +256,18 @@ export default function emptyStringJsunit() {
     });
 
     /**
-     * @tc.name   aceNapiEmptyStringTest015
-     * @tc.number SUB_ACE_BASIC_ETS_NAPI_EMPTY_STRING_1500
+     * @tc.name   aceNapiEmptyStringTest014
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_EMPTY_STRING_1400
      * @tc.desc   napi_create_object_with_named_properties with empty key
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('aceNapiEmptyStringTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      console.info('aceNapiEmptyStringTest015 START');
+    it('aceNapiEmptyStringTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('aceNapiEmptyStringTest014 START');
       let value = napitest.emptyObjectWithNamedProperties();
-      console.info('aceNapiEmptyStringTest015 testString result is: ' + value + "--" + JSON.stringify(value));
+      console.info('aceNapiEmptyStringTest014 testString result is: ' + value + "--" + JSON.stringify(value));
       expect(value).assertTrue();
-      done();
-    });
-
-    /**
-     * @tc.name   aceNapiEmptyStringTest016
-     * @tc.number SUB_ACE_BASIC_ETS_NAPI_EMPTY_STRING_1600
-     * @tc.desc   napi_fatal_error cannot be tested: it calls abort() and terminates the process
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('aceNapiEmptyStringTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      console.info('aceNapiEmptyStringTest016 START');
-      console.info('aceNapiEmptyStringTest016 napi_fatal_error cannot be tested: it calls abort() and terminates the process');
       done();
     });
   })
