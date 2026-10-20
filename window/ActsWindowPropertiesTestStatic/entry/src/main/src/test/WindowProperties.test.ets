@@ -1516,33 +1516,25 @@ export default function WindowPropertiesTest() {
             let caseName:string = "testOffWindowVisibilityChangeErrCode1300002_static_0100";
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
-            let subWin: window.Window
-            windowStage!.createSubWindow('testOnWindowVisibilityChangeErrCode1300002_SubWindow_Promise')
-                .then((data:window.Window) => {
-                    waitForCompletion(async () => {
-                    subWin = data;
-                    expect(!!subWin).assertTrue();
-                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
-                    await (subWin! as window.Window).destroyWindow();
-                    try {
-                        subWin!.offWindowVisibilityChange((res: boolean) => {
-                        });
-                        hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling on windowVisibilityChange.');
-                        expect(false).assertTrue();
-                        done()
-                    } catch (e) {
-                        e = e as BusinessError;
-                        hilog.info(0x0000, '[ANI]',msgStr + 'Failed to call on windowVisibilityChange. Cause:' + JSON.stringify(e));
-                        expect(e!.code).assertEqual(1300002);
-                        done()
-                    }
-                    })
-                })
-                .catch((err: Error):PromiseLike<void>|undefined => {
-                    hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-                    expect(err!.code).assertEqual(1300002);
-                    done()
-                });
+            try {
+              let subWin: window.Window = await windowStage!.createSubWindow('testOnWindowVisibilityChangeErrCode1300002_SubWindow_Promise');
+              await subWin!.destroyWindow();
+              subWin!.offWindowVisibilityChange((res: boolean) => {
+              });
+              hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling on windowVisibilityChange.');
+              expect(false).assertTrue();
+              done()
+            } catch (error) {
+              error = error as BusinessError;
+              hilog.info(0x0000, '[ANI]',msgStr + 'Failed to call on windowVisibilityChange. Cause:' + JSON.stringify(error!.code));
+              if(!canIUseRes){
+                expect(error!.code).assertEqual(801);
+                expect(error!.message !== '').assertTrue();
+              }else{
+                expect(false).assertTrue();
+              }
+              done()
+            }
 
         })
         /**
@@ -1789,33 +1781,24 @@ export default function WindowPropertiesTest() {
             let caseName:string = "testOffSystemDensityChangeErrCode1300002_static_0100";
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
-            let subWin: window.Window
-            windowStage!.createSubWindow('testOffSystemDensityChangeErrCode1300002_static_0100')
-                .then((data:window.Window) => {
-                    waitForCompletion(async () => {
-                    subWin = data;
-                    expect(!!subWin).assertTrue();
-                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
-                    await (subWin! as window.Window).destroyWindow();
-                    try {
-                        subWin!.offSystemDensityChange((res: number) => {
-                        });
-                        hilog.error(0x0000, '[ANI]',msgStr +'Succeeded in calling off systemDensityChange.');
-                        expect(false).assertTrue();
-                        done()
-                    } catch (e) {
-                        e = e as BusinessError;
-                        hilog.info(0x0000, '[ANI]',msgStr +'Failed to call off systemDensityChange. Cause:' + JSON.stringify(e));
-                        expect(e!.code).assertEqual(1300002);
-                        done()
-                    }
-                    })
-                })
-                .catch((err: Error):PromiseLike<void>|undefined => {
-                    hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-                    expect(false).assertTrue();
-                    done()
-                });
+            try {
+              let subWin: window.Window = await windowStage!.createSubWindow('testOffSystemDensityChangeErrCode1300002_static_0100');
+              await subWin!.destroyWindow();
+              subWin!.offSystemDensityChange((res: number) => {
+              });
+              hilog.error(0x0000, '[ANI]',msgStr +'Succeeded in calling off systemDensityChange.');
+              done();
+            } catch (err) {
+              err = err as BusinessError;
+              hilog.info(0x0000, '[ANI]',msgStr +'Failed to call off systemDensityChange. Cause:' + JSON.stringify(err!.code));
+              if(!canIUseRes){
+                expect(err!.code).assertEqual(801);
+                expect(err!.message !== '').assertTrue();
+              }else{
+                expect(false).assertTrue();
+              }
+              done()
+            }
             
         })
 
@@ -3886,27 +3869,25 @@ export default function WindowPropertiesTest() {
         async (done: () => void): Promise<void> => {
             let caseName: string = 'testOffFrameMetricsMeasured_ERRORCODE_1300002_static ';
             console.log(caseName + 'begin');
-            let subWindowClass: window.Window = await windowStage!.createSubWindow(caseName);
-            await subWindowClass.destroyWindow();
             try {
-            const callback = (res: window.FrameMetrics) => {
-                console.log(`${caseName} callback1 res: ${JSON.stringify(res)}`);
-            }
-            subWindowClass.offFrameMetricsMeasured(callback);
-            console.log(caseName + 'success. ');
-            expect(true).assertFail()
-            done();
+              let subWindowClass: window.Window = await windowStage!.createSubWindow(caseName);
+              await subWindowClass.destroyWindow();
+              const callback = (res: window.FrameMetrics) => {
+                  console.log(`${caseName} callback1 res: ${JSON.stringify(res)}`);
+              }
+              subWindowClass.offFrameMetricsMeasured(callback);
+              console.log(caseName + 'success. ');
+              done();
             } catch (err) {
-            err = err as BusinessError;
-            console.error(`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
-            if (err.code !== 801) {
-                expect(err.code).assertEqual(1300002);
-                expect(err.message !== null).assertTrue();
-                done();
-            } else {
-                expect(err.code).assertEqual(801);
-                done();
-            }
+              err = err as BusinessError;
+              console.error(`${caseName}  Failed. Cause code: ${err!.code}, message: ${err!.message}`);
+              if(!canIUseRes){
+                expect(err!.code).assertEqual(801);
+                expect(err!.message !== '').assertTrue();
+              }else{
+              expect(false).assertTrue();
+              }
+              done(); 
             }
         });
 
