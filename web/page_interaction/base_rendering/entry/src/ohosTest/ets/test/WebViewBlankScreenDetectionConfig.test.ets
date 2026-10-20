@@ -126,7 +126,7 @@ export default function WebViewBlankScreenDetectionConfigSuite() {
      */
     it('testOnMonitoredBlankScreenParam001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitOnMonitoredBlankScreenParam001", EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent("testOnMonitoredBlankScreenParam001", 'resource://rawfile/kongbai.html', 20261010, done);
+      Utils.registerEvent("testOnMonitoredBlankScreenParam001", 'https://example.com/monitored-blank.html', 20261010, done);
       await Utils.waitAndClickComponent(driver, "WebViewBlankScreenDetectionConfigButton", "testOnMonitoredBlankScreenParam001");
     })
 
