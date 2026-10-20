@@ -214,6 +214,23 @@ export default function getBundleInfoForSelf() {
           done();
         })
       })
+
+    /**
+     * @tc.name   SUB_BMS_FRAMEWORK_ENUM__0100
+     * @tc.number SUB_BMS_FRAMEWORK_ENUM__0100
+     * @tc.desc   Test MultiAppModeType.UNSPECIFIED enum value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BMS_FRAMEWORK_ENUM__0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    (done: () => void): void => {
+      hilog.info(domain, tag, 'SUB_BMS_FRAMEWORK_ENUM__0100  ====> start');
+      expect(bundle.MultiAppModeType.UNSPECIFIED).assertEqual(0);
+      hilog.info(domain, tag, 'SUB_BMS_FRAMEWORK_ENUM__0100  ====> end');
+      done();
+    })
+
   })
 }
 

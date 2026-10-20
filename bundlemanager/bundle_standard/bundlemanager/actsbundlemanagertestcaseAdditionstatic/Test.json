@@ -12,8 +12,7 @@
     "kits": [
         {
             "test-file-name": [
-                "ActsbundlemgrcaseAdditionEtsStaticTest.hap",
-                "bmsStageDemo1.hap"
+                "ActsbundlemgrcaseAdditionEtsStaticTest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true
