@@ -15,7 +15,7 @@
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import { describe, it, expect, beforeAll, beforeEach, afterEach, afterAll, Level } from '@ohos/hypium-dynamic';
-import { getPermission, driveFn, LOG_TAG, copyImageToSandbox } from '../../common';
+import { getPermission, driveFn, LOG_TAG, copyImageToSandbox, checkResourceFile, createResource } from '../../common';
 import common from '@ohos.app.ability.common';
 import fs from '@ohos.file.fs';
 import { fileUri } from '@kit.CoreFileKit';
@@ -47,8 +47,8 @@ async function addResourcePromiseTest(done: Function, testName: string, pathUri:
   }
 }
 
-async function addResourceAbnormalPromiseTest(done: Function, testName: string, pathUri: string | undefined, imageType: string,
-  resourceType: photoAccessHelper.ResourceType | null | undefined, errorCode: ErrorCode = ErrorCode.PARAM_ERROR_CODE) {
+async function addResourceAbnormalPromiseTest(testName: string, pathUri: string | undefined, imageType: string,
+  resourceType: photoAccessHelper.ResourceType | null | undefined): Promise<string> {
   let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
   let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
   try {
@@ -67,12 +67,10 @@ async function addResourceAbnormalPromiseTest(done: Function, testName: string, 
     await assetChangeRequest.addResource(resourceType as photoAccessHelper.ResourceType, uri);
     await phAccessHelper.applyChanges(assetChangeRequest);
     console.info('addResourceByFileUri successfully');
-    expect().assertFail();
+    return ''
   } catch (error) {
     console.info(TAG, `failed; error: ${error},${error.code},${error.message}`, testName);
-    expect(error.code).assertEqual(String(errorCode));
-  } finally {
-    done();
+    return error.code
   }
 }
 
@@ -97,7 +95,7 @@ async function addResourceBufferPromiseTest(done: Function, testName: string, im
   }
 }
 
-async function addResourceBufferAbnormalPromiseTest(done: Function, testName: string, imageType: string, size: number, resourceType: photoAccessHelper.ResourceType | null | undefined, errorCode: ErrorCode = ErrorCode.PARAM_ERROR_CODE) {
+async function addResourceBufferAbnormalPromiseTest(testName: string, imageType: string, size: number, resourceType: photoAccessHelper.ResourceType | null | undefined): Promise<string> {
   let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
   let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
   try {
@@ -110,12 +108,10 @@ async function addResourceBufferAbnormalPromiseTest(done: Function, testName: st
     await assetChangeRequest.addResource(resourceType as photoAccessHelper.ResourceType, buffer);
     await phAccessHelper.applyChanges(assetChangeRequest);
     console.info('addResourceByArrayBuffer successfully');
-    expect().assertFail();
+    return ''
   } catch (error) {
     console.info(TAG, `failed; error: ${error},${error.code},${error.message}`, testName);
-    expect(error.code).assertEqual(String(errorCode));
-  } finally {
-    done();
+    return error.code
   }
 }
 
@@ -126,6 +122,10 @@ export default function MediaAssetChangeRequestAddResourceTest() {
       console.info(TAG, 'beforeAll case');
       await getPermission();
       await driveFn();
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let fileNameList: Array<string> = [ "01.jpg" , "01.mp4" ];
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNameList);
     });
 
     beforeEach(() => {
@@ -239,7 +239,9 @@ export default function MediaAssetChangeRequestAddResourceTest() {
       const path = 'test6.gif';
       const imageType = 'gif';
       await copyImageToSandbox(fileName, path);
-      await addResourceAbnormalPromiseTest(done, testName, path, imageType, null);
+      const code: string = await addResourceAbnormalPromiseTest(testName, path, imageType, null);
+      expect(code).assertEqual(String(ErrorCode.PARAM_ERROR_CODE))
+      done()
     })
 
     /**
@@ -256,7 +258,9 @@ export default function MediaAssetChangeRequestAddResourceTest() {
       const path = 'test6.gif';
       const imageType = 'gif';
       await copyImageToSandbox(fileName, path);
-      await addResourceAbnormalPromiseTest(done, testName, path, imageType, undefined);
+      const code: string = await addResourceAbnormalPromiseTest(testName, path, imageType, undefined);
+      expect(code).assertEqual(String(ErrorCode.PARAM_ERROR_CODE))
+      done()
     })
 
     /**
@@ -273,13 +277,15 @@ export default function MediaAssetChangeRequestAddResourceTest() {
       const path = 'test6.gif';
       const imageType = 'gif';
       await copyImageToSandbox(fileName, path);
-      await addResourceAbnormalPromiseTest(done, testName, '', imageType, photoAccessHelper.ResourceType.IMAGE_RESOURCE, ErrorCode.UNEXIST_DIR_OR_FILE_ERROR_CODE);
+      const code: string = await addResourceAbnormalPromiseTest(testName, '', imageType, photoAccessHelper.ResourceType.IMAGE_RESOURCE);
+      expect(code).assertEqual(String(ErrorCode.UNEXIST_DIR_OR_FILE_ERROR_CODE))
+      done()
     })
 
     /**
      * @tc.name   SUB_MediaAssetChangeRequest_addResource_promise_0009
      * @tc.number SUB_MediaAssetChangeRequest_addResource_promise_0009
-     * @tc.desc   addResource
+     * @tc.desc   addResource set second param is undefined, and get error code 202
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -290,7 +296,9 @@ export default function MediaAssetChangeRequestAddResourceTest() {
       const path = 'test6.gif';
       const imageType = 'gif';
       await copyImageToSandbox(fileName, path);
-      await addResourceAbnormalPromiseTest(done, testName, undefined, imageType, photoAccessHelper.ResourceType.IMAGE_RESOURCE, 202);
+      const code: string = await addResourceAbnormalPromiseTest(testName, undefined, imageType, photoAccessHelper.ResourceType.IMAGE_RESOURCE);
+      expect(code).assertEqual('202')
+      done()
     })
 
     /**
@@ -350,7 +358,9 @@ export default function MediaAssetChangeRequestAddResourceTest() {
       const testName = 'SUB_MediaAssetChangeRequest_addResource_buffer_promise_0004';
       const imageType = 'jpeg';
       const size = 1;
-      await addResourceBufferAbnormalPromiseTest(done, testName, imageType, size, null);
+      const code: string = await addResourceBufferAbnormalPromiseTest(testName, imageType, size, null);
+      expect(code).assertEqual(String(ErrorCode.PARAM_ERROR_CODE))
+      done()
     })
 
     /**
@@ -365,7 +375,9 @@ export default function MediaAssetChangeRequestAddResourceTest() {
       const testName = 'SUB_MediaAssetChangeRequest_addResource_buffer_promise_0005';
       const imageType = 'jpeg';
       const size = 1;
-      await addResourceBufferAbnormalPromiseTest(done, testName, imageType, size, undefined);
+      const code: string = await addResourceBufferAbnormalPromiseTest(testName, imageType, size, undefined);
+      expect(code).assertEqual(String(ErrorCode.PARAM_ERROR_CODE))
+      done()
     })
   })
 }

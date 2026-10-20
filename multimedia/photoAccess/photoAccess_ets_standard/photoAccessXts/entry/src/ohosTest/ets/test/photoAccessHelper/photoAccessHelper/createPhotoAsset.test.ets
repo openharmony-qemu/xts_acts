@@ -15,7 +15,7 @@
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import { describe, it, expect, beforeAll, Level, beforeEach, afterEach, afterAll } from '@ohos/hypium-dynamic';
-import { driveFn, getPermission, LOG_TAG, photoType, copyImageToSandbox } from '../../common';
+import { driveFn, getPermission, LOG_TAG, photoType, copyImageToSandbox, checkResourceFile, createResource } from '../../common';
 import { common } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { ErrorCode } from '../../CommonErrorCode';
@@ -31,6 +31,10 @@ export default function createPhotoAssetTest() {
       console.info(TAG, 'beforeAll case.');
       await getPermission();
       await driveFn();
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let fileNameList: Array<string> = [ "01.jpg" , "01.mp4" ];
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNameList);
     });
 
     beforeEach(() => {

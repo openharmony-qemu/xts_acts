@@ -17,7 +17,7 @@ import { describe, beforeAll, it, expect, Level, beforeEach, afterEach, afterAll
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import systemDateTime from '@ohos.systemDateTime';
 import common from '@ohos.app.ability.common';
-import { photoKeys, fetchOption, getFileAsset, getPermission, pushCreateAsset, driveFn, LOG_TAG } from '../../common';
+import { photoKeys, fetchOption, getFileAsset, getPermission, pushCreateAsset, driveFn, LOG_TAG, checkResourceFile, createResource } from '../../common';
 
 const TAG = LOG_TAG + 'getThumbnail';
 const IMAGE_TEST_FILE = 'cloneTest.jpg';
@@ -32,7 +32,10 @@ export default function cloneAssetTest() {
       console.info(TAG, 'beforeAll case');
       await getPermission();
       await driveFn();
-      await pushCreateAsset(context, fileNameList);
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let fileNameList: Array<string> = [ IMAGE_TEST_FILE, VIDEO_TEST_FILE ];
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNameList);
     })
 
     beforeEach(() => {

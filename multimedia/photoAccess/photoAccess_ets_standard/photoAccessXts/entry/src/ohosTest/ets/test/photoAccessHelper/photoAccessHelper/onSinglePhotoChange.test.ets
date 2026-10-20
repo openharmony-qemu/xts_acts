@@ -26,6 +26,8 @@ import {
   driveFn,
   sleep,
   fetchAllOption,
+  checkResourceFile,
+  createResource
 } from '../../common'
 
 export default function onSinglePhotoChangeTest() {
@@ -39,6 +41,10 @@ export default function onSinglePhotoChangeTest() {
       await getPermission();
       await driveFn();
       await sleep(2000);
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let fileNameList: Array<string> = [ "01.jpg" , "01.mp4" ];
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNameList);
     });
 
     afterAll(async () => {
@@ -58,8 +64,7 @@ export default function onSinglePhotoChangeTest() {
 
     let createImageAsset = async (done: Function, title: string) => {
       try {
-        let fileUri: string =
-          `file://ohos.acts.multimedia.photoaccess.xts/data/storage/el2/base/haps/entry_test/photos/cloneTest.jpg`;
+        let fileUri: string = testContext.filesDir + '/cloneTest.jpg';
         let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
         let extension: string = 'jpg';
         let options: photoAccessHelper.CreateOptions = {
@@ -79,8 +84,7 @@ export default function onSinglePhotoChangeTest() {
     }
     let createVideoAsset = async (done: Function, title: string) => {
       try {
-        let fileUri: string =
-          `file://ohos.acts.multimedia.photoaccess.xts/data/storage/el2/base/haps/entry_test/photos/cloneTest.mp4`;
+        let fileUri: string = testContext.filesDir + '/cloneTest.mp4';
         let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.VIDEO;
         let extension: string = 'mp4';
         let options: photoAccessHelper.CreateOptions = {

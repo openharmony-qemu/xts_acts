@@ -15,7 +15,7 @@
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import { describe, it, expect, beforeAll, beforeEach, afterEach, afterAll, Level } from '@ohos/hypium-dynamic';
-import { getPermission, driveFn, LOG_TAG, fetchAllOption } from '../../common';
+import { getPermission, driveFn, LOG_TAG, fetchAllOption, checkResourceFile, createResource } from '../../common';
 import common from '@ohos.app.ability.common';
 import { ErrorCode } from '../../CommonErrorCode';
 
@@ -46,8 +46,8 @@ async function saveCameraPhotoPromiseTest(done: Function, testName: string,
   }
 }
 
-async function saveCameraPhotoAbnormalPromiseTest(done: Function, testName: string,
-  imageType: photoAccessHelper.ImageFileType | null | undefined) {
+async function saveCameraPhotoAbnormalPromiseTest(testName: string,
+  imageType: photoAccessHelper.ImageFileType | null | undefined): Promise<string> {
   let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
   let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
   let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchAllOption());
@@ -58,13 +58,12 @@ async function saveCameraPhotoAbnormalPromiseTest(done: Function, testName: stri
     await assetChangeRequest.saveCameraPhoto(imageType as photoAccessHelper.ImageFileType);
     await phAccessHelper.applyChanges(assetChangeRequest);
     console.info('apply saveCameraPhoto successfully');
-    expect().assertFail();
+    if(fetchResult) fetchResult.close();
+    return ''
   } catch (error) {
     console.info(TAG, `failed; error: ${error},${error.code},${error.message}`, testName);
-    expect(error.code).assertEqual(String(ErrorCode.ARGUMENT_INVALID_ERROR_CODE));
-  } finally {
     if(fetchResult) fetchResult.close();
-    done();
+    return error.code
   }
 }
 
@@ -75,6 +74,10 @@ export default function MediaAssetChangeRequestSaveCameraPhotoTest() {
       console.info(TAG, 'beforeAll case');
       await getPermission();
       await driveFn();
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let fileNameList: Array<string> = [ "01.jpg" , "01.mp4" ];
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNameList);
     });
 
     beforeEach(() => {
@@ -141,7 +144,9 @@ export default function MediaAssetChangeRequestSaveCameraPhotoTest() {
      */
     it('SUB_MediaAssetChangeRequest_saveCameraPhoto_promise_0004', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MediaAssetChangeRequest_saveCameraPhoto_promise_0004';
-      await saveCameraPhotoAbnormalPromiseTest(done, testName, null);
+      const code: string = await saveCameraPhotoAbnormalPromiseTest(testName, null);
+      expect(code).assertEqual(String(ErrorCode.ARGUMENT_INVALID_ERROR_CODE))
+      done()
     })
 
     /**
@@ -154,7 +159,9 @@ export default function MediaAssetChangeRequestSaveCameraPhotoTest() {
      */
     it('SUB_MediaAssetChangeRequest_saveCameraPhoto_promise_0005', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MediaAssetChangeRequest_saveCameraPhoto_promise_0005';
-      await saveCameraPhotoAbnormalPromiseTest(done, testName, undefined);
+      const code: string = await saveCameraPhotoAbnormalPromiseTest(testName, undefined);
+      expect(code).assertEqual(String(ErrorCode.ARGUMENT_INVALID_ERROR_CODE))
+      done()
     })
   })
 }

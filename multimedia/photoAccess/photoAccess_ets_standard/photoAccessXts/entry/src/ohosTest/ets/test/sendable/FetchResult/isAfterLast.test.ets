@@ -17,7 +17,7 @@ import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import { describe, it, expect, beforeAll, beforeEach, afterEach, afterAll, Level } from '@ohos/hypium-dynamic';
 import sendablePhotoAccessHelper from '@ohos.file.sendablePhotoAccessHelper';
 import { common } from '@kit.AbilityKit';
-import { driveFn, getPermission, fetchAllOption, fetchOption, photoKeys, LOG_TAG } from '../../common';
+import { driveFn, getPermission, fetchAllOption, fetchOption, photoKeys, LOG_TAG, checkResourceFile, createResource } from '../../common';
 
 const TAG = LOG_TAG + 'isAfterLast';
 
@@ -53,6 +53,10 @@ export default function sendableIsAfterLastTest() {
       console.info(TAG, 'beforeAll case');
       await getPermission();
       await driveFn();
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let fileNameList: Array<string> = [ "01.jpg", "01.mp4" ];
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNameList);
     });
 
     beforeEach(() => {

@@ -15,7 +15,7 @@
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import { describe, it, expect, beforeAll, beforeEach, afterEach, afterAll, Level } from '@ohos/hypium-dynamic';
-import { getPermission, driveFn, LOG_TAG } from '../../common';
+import { getPermission, driveFn, LOG_TAG, checkResourceFile, createResource } from '../../common';
 import common from '@ohos.app.ability.common';
 import { fileIo } from '@kit.CoreFileKit';
 
@@ -48,6 +48,10 @@ export default function MediaAssetChangeRequestGetWriteCacheHandlerTest() {
       console.info(TAG, 'beforeAll case');
       await getPermission();
       await driveFn();
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let fileNameList: Array<string> = [ "01.jpg" , "01.mp4" ];
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNameList);
     });
 
     beforeEach(() => {
