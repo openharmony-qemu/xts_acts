@@ -51,6 +51,7 @@ const int STOP_LOOP_BEFORE_RUN = 3;
 const int STOP_LOOP_AFTER_RUN = 4;
 const int NAMED_PROPERTY_TEST_VALUE = 42;
 const int BUSINESS_ERROR_CODE = 100;
+const int NAMED_PROPERTY_COUNT = 1;
 static int g_delCount = 0;
 static int g_cleanupHookCount = 0;
 static napi_env g_sharedEnv = nullptr;
@@ -5033,7 +5034,7 @@ static napi_value EmptyObjectWithNamedProperties(napi_env env, napi_callback_inf
     const char *keys[] = {""};
     const napi_value values[] = {val};
     napi_value obj = nullptr;
-    napi_status status = napi_create_object_with_named_properties(env, &obj, 1, keys, values);
+    napi_status status = napi_create_object_with_named_properties(env, &obj, NAMED_PROPERTY_COUNT, keys, values);
 
     napi_value getResult = nullptr;
     napi_get_named_property(env, obj, "", &getResult);
