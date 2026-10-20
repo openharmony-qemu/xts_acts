@@ -88,6 +88,7 @@ export const OH_AVScreenCapture_SetPrivacyProtectCallback0100: () => number;
 export const OH_AVScreenCapture_SetPrivacyProtectCallback0101: () => number;
 export const normalAVScreenCaptureStrategyForPauseFalse: () => number;
 export const normalAVScreenCaptureStrategyForPauseTrue: () => number;
+export const normalAVScreenCaptureStrategyForMicAEC: () => number;
 export const normalAVScreenCapturePauseResumeTest: () => number;
 export const normalAVScreenCapturePauseResumeTestStop: () => number;
 export const normalAVScreenCapturePauseScreenCaptureErr: () => number;
