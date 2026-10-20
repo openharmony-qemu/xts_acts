@@ -3620,5 +3620,51 @@ export default function bluetoothBleTest() {
             bluetooth.off("BLEDeviceFind", onReceiveEvent);
             done();
         })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0800
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0800
+         * @tc.desc   Test startScan 2900009 Fails to start scan as it is out of hardware resources.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            let caseName = 'SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0800';
+            let bleScanner: bluetooth.BleScanner = bluetooth.createBleScanner();
+            let scanFilters: bluetooth.ScanFilter[] = [];
+            for (let i = 0; i < 30; i++) {
+                let hex = i.toString(16);
+                if (hex.length < 2) {
+                    hex = "0" + hex;
+                }
+                let scanFilter: bluetooth.ScanFilter = {
+                    deviceId: "00:11:22:33:44:" + hex,
+                    name: "test" + i,
+                    serviceUuid: "00001888-0000-1000-8000-00805f9b34" + hex
+                };
+                scanFilters.push(scanFilter);
+            }
+            try {
+                await bleScanner.startScan(scanFilters).then(() => {
+                    console.info(`${caseName} startScan success`);
+                });
+                console.info(`${caseName} hardware filter resources are not exhausted`);
+                expect(true).assertTrue();
+                await bleScanner.stopScan().then(() => {
+                    console.info(`${caseName} stopScan success`);
+                });
+            } catch (err) {
+                console.error(`${caseName} startScan failed, errCode: ${err.code}, errMessage: ${err.message}`);
+                if (Number(err.code) == 801) {
+                    console.info(`${caseName} startScan is not support`);
+                    expect(true).assertTrue();
+                } else {
+                    console.info(`${caseName} hardware resources are exhausted`);
+                    expect(Number(err.code)).assertEqual(2900009);
+                }
+            }
+            done();
+        })
     })
 }
