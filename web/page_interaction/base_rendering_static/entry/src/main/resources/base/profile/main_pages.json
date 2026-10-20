@@ -1,6 +1,7 @@
 {
   "src": [
     "pages/WebBlankScreenDetectionMethod",
-    "pages/WebViewAISessionType"
+    "pages/WebViewAISessionType",
+    "pages/WebMonitoredBlankScreen"
   ]
 }
