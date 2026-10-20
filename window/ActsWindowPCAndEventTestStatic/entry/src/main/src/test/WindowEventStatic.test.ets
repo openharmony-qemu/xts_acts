@@ -487,7 +487,7 @@ export default function WindowEventStatic() {
                 subWindow.offNoInteractionDetected();
                 hilog.info(domain, tag, caseName + ' offNoInteractionDetected success');
                 done();
-            } catch exception) {
+            } catch (exception) {
                 exception= exception as BusinessError;
                 hilog.error(domain, tag, msgStr + 'exception = ' + JSON.stringify(exception.code));
                 if (!canIUseRes) {
