@@ -2767,12 +2767,12 @@ export default function WindowPCTest() {
                 expect(err.code).assertEqual(1300002);
             }
             try {
-                let subWindowClass2: window.Window = subWindowClass2 = await windowStage!.createSubWindow('testOnOffFreeWindowModeChangewithdestoryedSubwindow2');
+                let subWindowClass2: window.Window = await windowStage!.createSubWindow('testOnOffFreeWindowModeChangewithdestoryedSubwindow2');
                 await subWindowClass2.destroyWindow();
                 const callback = (res: boolean) => {
                     console.log(caseName + ' callback result: ' + res);
                 }
-                subWindowClass.offFreeWindowModeChange(callback);
+                subWindowClass2.offFreeWindowModeChange(callback);
                 console.log(caseName + ' offFreeWindowModeChange success');
                 done();
             } catch (err) {
