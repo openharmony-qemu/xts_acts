@@ -49,6 +49,8 @@ const int STOP_LOOP_IN_MAIN_THREAD = 1;
 const int STOP_LOOP_IN_WORKER_THREAD = 2;
 const int STOP_LOOP_BEFORE_RUN = 3;
 const int STOP_LOOP_AFTER_RUN = 4;
+const int NAMED_PROPERTY_TEST_VALUE = 42;
+const int BUSINESS_ERROR_CODE = 100;
 static int g_delCount = 0;
 static int g_cleanupHookCount = 0;
 static napi_env g_sharedEnv = nullptr;
@@ -4871,7 +4873,7 @@ static napi_value EmptySetNamedProperty(napi_env env, napi_callback_info info)
     napi_value obj = nullptr;
     napi_create_object(env, &obj);
     napi_value val = nullptr;
-    napi_create_int32(env, 42, &val);
+    napi_create_int32(env, NAMED_PROPERTY_TEST_VALUE, &val);
     napi_status status = napi_set_named_property(env, obj, "", val);
 
     napi_value getResult = nullptr;
@@ -4880,7 +4882,7 @@ static napi_value EmptySetNamedProperty(napi_env env, napi_callback_info info)
     napi_get_value_int32(env, getResult, &resultVal);
 
     napi_value ret = nullptr;
-    napi_get_boolean(env, status == napi_ok && resultVal == 42, &ret);
+    napi_get_boolean(env, status == napi_ok && resultVal == NAMED_PROPERTY_TEST_VALUE, &ret);
     return ret;
 }
 
@@ -4890,7 +4892,7 @@ static napi_value EmptyHasNamedProperty(napi_env env, napi_callback_info info)
     napi_value obj = nullptr;
     napi_create_object(env, &obj);
     napi_value val = nullptr;
-    napi_create_int32(env, 42, &val);
+    napi_create_int32(env, NAMED_PROPERTY_TEST_VALUE, &val);
     napi_set_named_property(env, obj, "", val);
 
     bool has = false;
@@ -4907,7 +4909,7 @@ static napi_value EmptyGetNamedProperty(napi_env env, napi_callback_info info)
     napi_value obj = nullptr;
     napi_create_object(env, &obj);
     napi_value val = nullptr;
-    napi_create_int32(env, 42, &val);
+    napi_create_int32(env, NAMED_PROPERTY_TEST_VALUE, &val);
     napi_set_named_property(env, obj, "", val);
 
     napi_value result = nullptr;
@@ -5026,7 +5028,7 @@ static napi_value EmptyExternalStringAscii(napi_env env, napi_callback_info info
 static napi_value EmptyThrowBusinessError(napi_env env, napi_callback_info info)
 {
     (void)info;
-    napi_throw_business_error(env, 100, "");
+    napi_throw_business_error(env, BUSINESS_ERROR_CODE, "");
     return nullptr;
 }
 
@@ -5034,7 +5036,7 @@ static napi_value EmptyObjectWithNamedProperties(napi_env env, napi_callback_inf
 {
     (void)info;
     napi_value val = nullptr;
-    napi_create_int32(env, 42, &val);
+    napi_create_int32(env, NAMED_PROPERTY_TEST_VALUE, &val);
 
     const char *keys[] = {""};
     const napi_value values[] = {val};
@@ -5047,7 +5049,7 @@ static napi_value EmptyObjectWithNamedProperties(napi_env env, napi_callback_inf
     napi_get_value_int32(env, getResult, &resultVal);
 
     napi_value ret = nullptr;
-    napi_get_boolean(env, status == napi_ok && resultVal == 42, &ret);
+    napi_get_boolean(env, status == napi_ok && resultVal == NAMED_PROPERTY_TEST_VALUE, &ret);
     return ret;
 }
 

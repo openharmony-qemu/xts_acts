@@ -297,7 +297,6 @@ export default function emptyStringJsunit() {
     it('aceNapiEmptyStringTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('aceNapiEmptyStringTest016 START');
       console.info('aceNapiEmptyStringTest016 napi_fatal_error cannot be tested: it calls abort() and terminates the process');
-      expect(true).assertTrue();
       done();
     });
   })
