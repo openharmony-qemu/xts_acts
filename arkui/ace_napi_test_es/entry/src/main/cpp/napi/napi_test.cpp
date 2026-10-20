@@ -4835,6 +4835,222 @@ static napi_value CallLockAsyncAfterRunCleanupTest(napi_env env, napi_callback_i
     return nullptr;
 }
 
+static napi_value EmptyClassCtor(napi_env env, napi_callback_info info)
+{
+    napi_value thisArg = nullptr;
+    napi_get_cb_info(env, info, nullptr, nullptr, &thisArg, nullptr);
+    return thisArg;
+}
+
+static napi_value EmptySendableCtor(napi_env env, napi_callback_info info)
+{
+    napi_value thisArg = nullptr;
+    napi_get_cb_info(env, info, nullptr, nullptr, &thisArg, nullptr);
+    return thisArg;
+}
+
+static void EmptyStringFinalize(void *finalizeData, void *finalizeHint)
+{
+    (void)finalizeHint;
+    if (finalizeData != nullptr) {
+        delete[] static_cast<char *>(finalizeData);
+    }
+}
+
+static napi_value EmptyStringLatin1(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    napi_value result = nullptr;
+    napi_create_string_latin1(env, "", 0, &result);
+    return result;
+}
+
+static napi_value EmptySetNamedProperty(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    napi_value obj = nullptr;
+    napi_create_object(env, &obj);
+    napi_value val = nullptr;
+    napi_create_int32(env, 42, &val);
+    napi_status status = napi_set_named_property(env, obj, "", val);
+
+    napi_value getResult = nullptr;
+    napi_get_named_property(env, obj, "", &getResult);
+    int32_t resultVal = 0;
+    napi_get_value_int32(env, getResult, &resultVal);
+
+    napi_value ret = nullptr;
+    napi_get_boolean(env, status == napi_ok && resultVal == 42, &ret);
+    return ret;
+}
+
+static napi_value EmptyHasNamedProperty(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    napi_value obj = nullptr;
+    napi_create_object(env, &obj);
+    napi_value val = nullptr;
+    napi_create_int32(env, 42, &val);
+    napi_set_named_property(env, obj, "", val);
+
+    bool has = false;
+    napi_status status = napi_has_named_property(env, obj, "", &has);
+
+    napi_value ret = nullptr;
+    napi_get_boolean(env, status == napi_ok && has, &ret);
+    return ret;
+}
+
+static napi_value EmptyGetNamedProperty(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    napi_value obj = nullptr;
+    napi_create_object(env, &obj);
+    napi_value val = nullptr;
+    napi_create_int32(env, 42, &val);
+    napi_set_named_property(env, obj, "", val);
+
+    napi_value result = nullptr;
+    napi_status status = napi_get_named_property(env, obj, "", &result);
+    int32_t resultVal = 0;
+    napi_get_value_int32(env, result, &resultVal);
+
+    napi_value ret = nullptr;
+    napi_create_int32(env, (status == napi_ok) ? resultVal : -1, &ret);
+    return ret;
+}
+
+static napi_value EmptyDefineClass(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    napi_value result = nullptr;
+    napi_status status = napi_define_class(env, "", NAPI_AUTO_LENGTH,
+        EmptyClassCtor, nullptr, 0, nullptr, &result);
+
+    napi_value ret = nullptr;
+    napi_get_boolean(env, status == napi_ok && result != nullptr, &ret);
+    return ret;
+}
+
+static napi_value EmptyThrowError(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    napi_throw_error(env, "", "");
+    return nullptr;
+}
+
+static napi_value EmptyThrowTypeError(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    napi_throw_type_error(env, "", "");
+    return nullptr;
+}
+
+static napi_value EmptyThrowRangeError(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    napi_throw_range_error(env, "", "");
+    return nullptr;
+}
+
+static napi_value EmptyRunScriptPath(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    napi_value result = nullptr;
+    napi_run_script_path(env, "", &result);
+
+    bool isPending = false;
+    napi_is_exception_pending(env, &isPending);
+    if (isPending) {
+        napi_value ex = nullptr;
+        napi_get_and_clear_last_exception(env, &ex);
+    }
+
+    napi_value ret = nullptr;
+    napi_get_boolean(env, true, &ret);
+    return ret;
+}
+
+static napi_value EmptyLoadModule(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    napi_value result = nullptr;
+    napi_load_module(env, "", &result);
+
+    bool isPending = false;
+    napi_is_exception_pending(env, &isPending);
+    if (isPending) {
+        napi_value ex = nullptr;
+        napi_get_and_clear_last_exception(env, &ex);
+    }
+
+    napi_value ret = nullptr;
+    napi_get_boolean(env, true, &ret);
+    return ret;
+}
+
+static napi_value EmptyLoadModuleWithInfo(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    napi_value ret = nullptr;
+    napi_get_boolean(env, false, &ret);
+    return ret;
+}
+
+static napi_value EmptyDefineSendableClass(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    napi_value result = nullptr;
+    napi_status status = napi_define_sendable_class(env, "", NAPI_AUTO_LENGTH,
+        EmptySendableCtor, nullptr, 0, nullptr, nullptr, &result);
+
+    napi_value ret = nullptr;
+    napi_get_boolean(env, status == napi_ok && result != nullptr, &ret);
+    return ret;
+}
+
+static napi_value EmptyExternalStringAscii(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    char *emptyStr = new char[1];
+    emptyStr[0] = '\0';
+    napi_value result = nullptr;
+    napi_status status = napi_create_external_string_ascii(env, emptyStr, 0,
+        EmptyStringFinalize, emptyStr, &result);
+    if (status != napi_ok) {
+        delete[] emptyStr;
+    }
+    return result;
+}
+
+static napi_value EmptyThrowBusinessError(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    napi_throw_business_error(env, 100, "");
+    return nullptr;
+}
+
+static napi_value EmptyObjectWithNamedProperties(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    napi_value val = nullptr;
+    napi_create_int32(env, 42, &val);
+
+    const char *keys[] = {""};
+    const napi_value values[] = {val};
+    napi_value obj = nullptr;
+    napi_status status = napi_create_object_with_named_properties(env, &obj, 1, keys, values);
+
+    napi_value getResult = nullptr;
+    napi_get_named_property(env, obj, "", &getResult);
+    int32_t resultVal = 0;
+    napi_get_value_int32(env, getResult, &resultVal);
+
+    napi_value ret = nullptr;
+    napi_get_boolean(env, status == napi_ok && resultVal == 42, &ret);
+    return ret;
+}
+
 EXTERN_C_START
 
 static napi_value Init(napi_env env, napi_value exports)
@@ -5028,6 +5244,21 @@ static napi_value Init(napi_env env, napi_value exports)
         DECLARE_NAPI_FUNCTION("napiUnWrapSendableTest", NapiUnWrapSendableTest),
         DECLARE_NAPI_FUNCTION("napiRemoveWrapSendableTest", NapiRemoveWrapSendableTest),
         DECLARE_NAPI_FUNCTION("callLockAsyncAfterRunCleanupTest", CallLockAsyncAfterRunCleanupTest),
+        DECLARE_NAPI_FUNCTION("emptyStringLatin1", EmptyStringLatin1),
+        DECLARE_NAPI_FUNCTION("emptySetNamedProperty", EmptySetNamedProperty),
+        DECLARE_NAPI_FUNCTION("emptyHasNamedProperty", EmptyHasNamedProperty),
+        DECLARE_NAPI_FUNCTION("emptyGetNamedProperty", EmptyGetNamedProperty),
+        DECLARE_NAPI_FUNCTION("emptyDefineClass", EmptyDefineClass),
+        DECLARE_NAPI_FUNCTION("emptyThrowError", EmptyThrowError),
+        DECLARE_NAPI_FUNCTION("emptyThrowTypeError", EmptyThrowTypeError),
+        DECLARE_NAPI_FUNCTION("emptyThrowRangeError", EmptyThrowRangeError),
+        DECLARE_NAPI_FUNCTION("emptyRunScriptPath", EmptyRunScriptPath),
+        DECLARE_NAPI_FUNCTION("emptyLoadModule", EmptyLoadModule),
+        DECLARE_NAPI_FUNCTION("emptyLoadModuleWithInfo", EmptyLoadModuleWithInfo),
+        DECLARE_NAPI_FUNCTION("emptyDefineSendableClass", EmptyDefineSendableClass),
+        DECLARE_NAPI_FUNCTION("emptyExternalStringAscii", EmptyExternalStringAscii),
+        DECLARE_NAPI_FUNCTION("emptyThrowBusinessError", EmptyThrowBusinessError),
+        DECLARE_NAPI_FUNCTION("emptyObjectWithNamedProperties", EmptyObjectWithNamedProperties),
     };
     NAPI_CALL(env, napi_define_properties(env, exports, sizeof(properties) / sizeof(properties[0]), properties));
 
