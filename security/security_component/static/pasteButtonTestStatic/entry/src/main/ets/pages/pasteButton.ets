@@ -265,29 +265,31 @@ struct pasteButton {
     events_emitter.off(1);
   }
 
+  handlePasteButtonClick: PasteButtonCallback = (event: ClickEvent, result: PasteButtonOnClickResult) => {
+    try {
+      let clickData:events_emitter.EventData = {
+        data: {
+          'clickResult': result,
+        } as Record<string, RecordData>
+      }
+      let clickEvent:events_emitter.InnerEvent = {
+        eventId: 2,
+        priority: events_emitter.EventPriority.LOW
+      }
+      console.info('====>page_pasteButton onclick result: ' + JSON.stringify(result))
+      events_emitter.emit(clickEvent, clickData)
+    } catch (err) {
+      err = err as BusinessError
+      console.info('====>page_pasteButton emit action state err: ' + JSON.stringify(err.message))
+    }
+  }
+
   build() {
     Row() {
       Column() {
         Row() {
           PasteButton({ icon: PasteIconStyle.LINES, text: PasteDescription.PASTE, buttonType: this.bgType })
-            .onClick((event: ClickEvent, result: PasteButtonOnClickResult) => {
-              try {
-                let clickData:events_emitter.EventData = {
-                  data: {
-                    'clickResult': result,
-                  } as Record<string, RecordData>
-                }
-                let clickEvent:events_emitter.InnerEvent = {
-                  eventId: 2,
-                  priority: events_emitter.EventPriority.LOW
-                }
-                console.info('====>page_pasteButton onclick result: ' + JSON.stringify(result))
-                events_emitter.emit(clickEvent, clickData)
-              } catch (err) {
-                err = err as BusinessError
-                console.info('====>page_pasteButton emit action state err: ' + JSON.stringify(err.message))
-              }
-            })
+            .onClick((this.handlePasteButtonClick))
             .fallbackLineSpacing(this.backLineSpacingEnable)
             .accessibilityRole(this.accessibilityRoleValue)
             .accessibilityDescription(this.accessibilityDescriptionValue)
