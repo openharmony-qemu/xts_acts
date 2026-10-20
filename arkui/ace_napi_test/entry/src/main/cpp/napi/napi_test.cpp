@@ -73,6 +73,7 @@ static constexpr size_t SENDABLE_ARRAYBUFFER_LENGTH = 1024;
 static constexpr size_t SENDABLE_TYPEDARRAY_OFFSET = 0;
 static constexpr size_t SENDABLE_WRAP_STRING_LENGTH = 256;
 static constexpr size_t SENDABLE_NATIVE_BINDING_SIZE = 1024;
+static constexpr int32_t FIFO_COUNT = 5;
 
 
 struct CallbackData {
@@ -20377,6 +20378,525 @@ static napi_value NapiMicrotaskScopeDefaultDrain(napi_env env, napi_callback_inf
     return result;
 }
 
+static napi_value NapiMicrotaskScopeDrainResumes(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    bool reactionCalled = false;
+
+    napi_value callback = nullptr;
+    napi_create_function(env, "onFulfilled", NAPI_AUTO_LENGTH,
+        MicrotaskScopeSetFlagCallback, &reactionCalled, &callback);
+
+    napi_microtask_scope scope = nullptr;
+    napi_status status = napi_open_microtask_scope(env, &scope);
+    if (status != napi_ok) {
+        napi_get_boolean(env, false, &result);
+        return result;
+    }
+    napi_close_microtask_scope(env, scope);
+
+    napi_deferred deferred = nullptr;
+    napi_value promise = nullptr;
+    napi_create_promise(env, &deferred, &promise);
+    napi_value key = nullptr;
+    napi_create_string_utf8(env, "then", NAPI_AUTO_LENGTH, &key);
+    napi_value thenFn = nullptr;
+    napi_get_property(env, promise, key, &thenFn);
+    napi_value callResult = nullptr;
+    napi_call_function(env, promise, thenFn, 1, &callback, &callResult);
+    napi_value resolution = nullptr;
+    napi_create_int32(env, 1, &resolution);
+    napi_resolve_deferred(env, deferred, resolution);
+
+    napi_get_boolean(env, reactionCalled, &result);
+    return result;
+}
+
+struct MicrotaskScopeCascadingData {
+    bool* firstCalled;
+    bool* secondCalled;
+};
+
+static napi_value MicrotaskScopeCascadingFirst(napi_env env, napi_callback_info info)
+{
+    void* data = nullptr;
+    size_t argc = 0;
+    napi_get_cb_info(env, info, &argc, nullptr, nullptr, &data);
+    if (data == nullptr) {
+        return nullptr;
+    }
+    MicrotaskScopeCascadingData* cd = static_cast<MicrotaskScopeCascadingData*>(data);
+    *(cd->firstCalled) = true;
+
+    napi_deferred deferred = nullptr;
+    napi_value promise = nullptr;
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    napi_value key = nullptr;
+    napi_create_string_utf8(env, "then", NAPI_AUTO_LENGTH, &key);
+    napi_value thenFn = nullptr;
+    napi_get_property(env, promise, key, &thenFn);
+    napi_value cb = nullptr;
+    napi_create_function(env, "onFulfilled", NAPI_AUTO_LENGTH,
+        MicrotaskScopeSetFlagCallback, cd->secondCalled, &cb);
+    napi_value callResult = nullptr;
+    status = napi_call_function(env, promise, thenFn, 1, &cb, &callResult);
+    napi_value resolution = nullptr;
+    napi_create_int32(env, 1, &resolution);
+    status = napi_resolve_deferred(env, deferred, resolution);
+    return nullptr;
+}
+
+static napi_value NapiMicrotaskScopeCascading(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    bool firstCalled = false;
+    bool secondCalled = false;
+    MicrotaskScopeCascadingData cData { &firstCalled, &secondCalled };
+
+    napi_value firstCallback = nullptr;
+    napi_create_function(env, "onFirst", NAPI_AUTO_LENGTH,
+        MicrotaskScopeCascadingFirst, &cData, &firstCallback);
+
+    napi_microtask_scope scope = nullptr;
+    napi_status status = napi_open_microtask_scope(env, &scope);
+    if (status != napi_ok) {
+        napi_get_boolean(env, false, &result);
+        return result;
+    }
+
+    napi_deferred deferred = nullptr;
+    napi_value promise = nullptr;
+    napi_create_promise(env, &deferred, &promise);
+    napi_value key = nullptr;
+    napi_create_string_utf8(env, "then", NAPI_AUTO_LENGTH, &key);
+    napi_value thenFn = nullptr;
+    napi_get_property(env, promise, key, &thenFn);
+    napi_value callResult = nullptr;
+    napi_call_function(env, promise, thenFn, 1, &firstCallback, &callResult);
+    napi_value resolution = nullptr;
+    napi_create_int32(env, 1, &resolution);
+    napi_resolve_deferred(env, deferred, resolution);
+
+    if (firstCalled || secondCalled) {
+        napi_close_microtask_scope(env, scope);
+        napi_get_boolean(env, false, &result);
+        return result;
+    }
+
+    status = napi_close_microtask_scope(env, scope);
+    if (status != napi_ok) {
+        napi_get_boolean(env, false, &result);
+        return result;
+    }
+
+    napi_get_boolean(env, firstCalled && secondCalled, &result);
+    return result;
+}
+
+static napi_value NapiMicrotaskScopeRepeatedLoop(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+
+    for (int32_t i = 0; i < 1000; i++) {
+        bool flag = false;
+        napi_value callback = nullptr;
+        napi_create_function(env, "onFulfilled", NAPI_AUTO_LENGTH,
+            MicrotaskScopeSetFlagCallback, &flag, &callback);
+
+        napi_microtask_scope scope = nullptr;
+        napi_status status = napi_open_microtask_scope(env, &scope);
+        if (status != napi_ok) {
+            napi_get_boolean(env, false, &result);
+            return result;
+        }
+
+        napi_deferred deferred = nullptr;
+        napi_value promise = nullptr;
+        napi_create_promise(env, &deferred, &promise);
+        napi_value key = nullptr;
+        napi_create_string_utf8(env, "then", NAPI_AUTO_LENGTH, &key);
+        napi_value thenFn = nullptr;
+        napi_get_property(env, promise, key, &thenFn);
+        napi_value callResult = nullptr;
+        napi_call_function(env, promise, thenFn, 1, &callback, &callResult);
+        napi_value resolution = nullptr;
+        napi_create_int32(env, 1, &resolution);
+        napi_resolve_deferred(env, deferred, resolution);
+
+        if (flag) {
+            napi_close_microtask_scope(env, scope);
+            napi_get_boolean(env, false, &result);
+            return result;
+        }
+
+        status = napi_close_microtask_scope(env, scope);
+        if (status != napi_ok || !flag) {
+            napi_get_boolean(env, false, &result);
+            return result;
+        }
+    }
+
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+static napi_value NapiMicrotaskScopeSuppressReject(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    bool reactionCalled = false;
+
+    napi_deferred deferred = nullptr;
+    napi_value promise = nullptr;
+    napi_create_promise(env, &deferred, &promise);
+
+    napi_value callback = nullptr;
+    napi_create_function(env, "onRejected", NAPI_AUTO_LENGTH,
+        MicrotaskScopeSetFlagCallback, &reactionCalled, &callback);
+    napi_value catchKey = nullptr;
+    napi_create_string_utf8(env, "catch", NAPI_AUTO_LENGTH, &catchKey);
+    napi_value catchFn = nullptr;
+    napi_get_property(env, promise, catchKey, &catchFn);
+    napi_value callResult = nullptr;
+    napi_call_function(env, promise, catchFn, 1, &callback, &callResult);
+
+    napi_microtask_scope scope = nullptr;
+    napi_status status = napi_open_microtask_scope(env, &scope);
+    if (status != napi_ok) {
+        napi_get_boolean(env, false, &result);
+        return result;
+    }
+
+    napi_value rejection = nullptr;
+    napi_create_string_utf8(env, "error", NAPI_AUTO_LENGTH, &rejection);
+    napi_reject_deferred(env, deferred, rejection);
+
+    if (reactionCalled) {
+        napi_close_microtask_scope(env, scope);
+        napi_get_boolean(env, false, &result);
+        return result;
+    }
+
+    status = napi_close_microtask_scope(env, scope);
+    if (status != napi_ok) {
+        napi_get_boolean(env, false, &result);
+        return result;
+    }
+
+    napi_get_boolean(env, reactionCalled, &result);
+    return result;
+}
+
+struct MicrotaskScopeFifoData {
+    int32_t* order;
+    int32_t* count;
+    int32_t index;
+};
+
+static napi_value MicrotaskScopeFifoCallback(napi_env env, napi_callback_info info)
+{
+    void* data = nullptr;
+    size_t argc = 0;
+    napi_get_cb_info(env, info, &argc, nullptr, nullptr, &data);
+    if (data != nullptr) {
+        MicrotaskScopeFifoData* fifoData = static_cast<MicrotaskScopeFifoData*>(data);
+        fifoData->order[*(fifoData->count)] = fifoData->index;
+        (*fifoData->count)++;
+    }
+    return nullptr;
+}
+
+static void MicrotaskScopeEnqueueFifo(napi_env env, napi_callback cb, void* data)
+{
+    napi_deferred deferred = nullptr;
+    napi_value promise = nullptr;
+    napi_create_promise(env, &deferred, &promise);
+    napi_value key = nullptr;
+    napi_create_string_utf8(env, "then", NAPI_AUTO_LENGTH, &key);
+    napi_value thenFn = nullptr;
+    napi_get_property(env, promise, key, &thenFn);
+    napi_value callback = nullptr;
+    napi_create_function(env, "onFulfilled", NAPI_AUTO_LENGTH, cb, data, &callback);
+    napi_value callResult = nullptr;
+    napi_call_function(env, promise, thenFn, 1, &callback, &callResult);
+    napi_value resolution = nullptr;
+    napi_create_int32(env, 1, &resolution);
+    napi_resolve_deferred(env, deferred, resolution);
+}
+
+static napi_value NapiMicrotaskScopeFifoOrder(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int32_t order[FIFO_COUNT] = {0};
+    int32_t count = 0;
+    MicrotaskScopeFifoData fifoData[FIFO_COUNT];
+    for (int32_t i = 0; i < FIFO_COUNT; i++) {
+        fifoData[i].order = order;
+        fifoData[i].count = &count;
+        fifoData[i].index = i;
+    }
+
+    napi_microtask_scope scope = nullptr;
+    napi_status status = napi_open_microtask_scope(env, &scope);
+    if (status != napi_ok) {
+        napi_get_boolean(env, false, &result);
+        return result;
+    }
+
+    for (int32_t i = 0; i < FIFO_COUNT; i++) {
+        MicrotaskScopeEnqueueFifo(env, MicrotaskScopeFifoCallback, &fifoData[i]);
+    }
+
+    if (count != 0) {
+        napi_close_microtask_scope(env, scope);
+        napi_get_boolean(env, false, &result);
+        return result;
+    }
+
+    status = napi_close_microtask_scope(env, scope);
+    if (status != napi_ok || count != FIFO_COUNT) {
+        napi_get_boolean(env, false, &result);
+        return result;
+    }
+
+    bool bRet = true;
+    for (int32_t i = 0; i < FIFO_COUNT; i++) {
+        if (order[i] != i) {
+            bRet = false;
+            break;
+        }
+    }
+    napi_get_boolean(env, bRet, &result);
+    return result;
+}
+
+static void MicrotaskScopeEnqueueResolve(napi_env env, bool* flag)
+{
+    napi_deferred deferred = nullptr;
+    napi_value promise = nullptr;
+    napi_create_promise(env, &deferred, &promise);
+    napi_value key = nullptr;
+    napi_create_string_utf8(env, "then", NAPI_AUTO_LENGTH, &key);
+    napi_value thenFn = nullptr;
+    napi_get_property(env, promise, key, &thenFn);
+    napi_value cb = nullptr;
+    napi_create_function(env, "onFulfilled", NAPI_AUTO_LENGTH,
+        MicrotaskScopeSetFlagCallback, flag, &cb);
+    napi_value callResult = nullptr;
+    napi_call_function(env, promise, thenFn, 1, &cb, &callResult);
+    napi_value resolution = nullptr;
+    napi_create_int32(env, 1, &resolution);
+    napi_resolve_deferred(env, deferred, resolution);
+}
+
+static napi_value NapiMicrotaskScopeCloseStaleHandle(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    bool flag = false;
+
+    napi_microtask_scope scope1 = nullptr;
+    napi_status status = napi_open_microtask_scope(env, &scope1);
+    if (status != napi_ok) {
+        napi_get_boolean(env, false, &result);
+        return result;
+    }
+    MicrotaskScopeEnqueueResolve(env, &flag);
+    status = napi_close_microtask_scope(env, scope1);
+    if (status != napi_ok || !flag) {
+        napi_get_boolean(env, false, &result);
+        return result;
+    }
+
+    status = napi_close_microtask_scope(env, scope1);
+    if (status != napi_invalid_arg) {
+        napi_get_boolean(env, false, &result);
+        return result;
+    }
+
+    flag = false;
+    napi_microtask_scope scope2 = nullptr;
+    status = napi_open_microtask_scope(env, &scope2);
+    if (status != napi_ok) {
+        napi_get_boolean(env, false, &result);
+        return result;
+    }
+    MicrotaskScopeEnqueueResolve(env, &flag);
+    status = napi_close_microtask_scope(env, scope2);
+    if (status != napi_ok || !flag) {
+        napi_get_boolean(env, false, &result);
+        return result;
+    }
+
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+static napi_value NapiMicrotaskScopeCloseNullFull(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    bool flag = false;
+
+    napi_microtask_scope scope = nullptr;
+    napi_status status = napi_open_microtask_scope(env, &scope);
+    if (status != napi_ok) {
+        napi_get_boolean(env, false, &result);
+        return result;
+    }
+    MicrotaskScopeEnqueueResolve(env, &flag);
+    status = napi_close_microtask_scope(env, nullptr);
+    if (status != napi_invalid_arg || flag) {
+        napi_close_microtask_scope(env, scope);
+        napi_get_boolean(env, false, &result);
+        return result;
+    }
+    status = napi_close_microtask_scope(env, scope);
+    if (status != napi_ok || !flag) {
+        napi_get_boolean(env, false, &result);
+        return result;
+    }
+
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+static napi_value NapiMicrotaskScopeCloseMismatchFull(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    bool flag = false;
+
+    napi_microtask_scope scope1 = nullptr;
+    napi_status status = napi_open_microtask_scope(env, &scope1);
+    if (status != napi_ok) {
+        napi_get_boolean(env, false, &result);
+        return result;
+    }
+    MicrotaskScopeEnqueueResolve(env, &flag);
+    napi_microtask_scope scope2 = nullptr;
+    status = napi_open_microtask_scope(env, &scope2);
+    if (status != napi_invalid_arg) {
+        napi_close_microtask_scope(env, scope1);
+        napi_get_boolean(env, false, &result);
+        return result;
+    }
+    status = napi_close_microtask_scope(env, nullptr);
+    if (status != napi_invalid_arg || flag) {
+        napi_close_microtask_scope(env, scope1);
+        napi_get_boolean(env, false, &result);
+        return result;
+    }
+    status = napi_close_microtask_scope(env, scope1);
+    if (status != napi_ok || !flag) {
+        napi_get_boolean(env, false, &result);
+        return result;
+    }
+
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+static napi_value NapiMicrotaskScopePendingExceptionSkip(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    bool flag = false;
+
+    napi_microtask_scope scope = nullptr;
+    napi_status status = napi_open_microtask_scope(env, &scope);
+    if (status != napi_ok) {
+        napi_get_boolean(env, false, &result);
+        return result;
+    }
+    MicrotaskScopeEnqueueResolve(env, &flag);
+    napi_throw_error(env, nullptr, "test pending exception");
+    status = napi_close_microtask_scope(env, scope);
+    if (flag) {
+        napi_get_boolean(env, false, &result);
+        return result;
+    }
+    napi_value exc = nullptr;
+    napi_get_and_clear_last_exception(env, &exc);
+    MicrotaskScopeEnqueueResolve(env, &flag);
+    napi_get_boolean(env, flag, &result);
+    return result;
+}
+
+static napi_value NapiMicrotaskScopeNullDeferred(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    bool flag = false;
+
+    napi_microtask_scope scope = nullptr;
+    napi_status status = napi_open_microtask_scope(env, &scope);
+    if (status != napi_ok) {
+        napi_get_boolean(env, false, &result);
+        return result;
+    }
+
+    napi_deferred deferred = nullptr;
+    napi_value promise = nullptr;
+    napi_create_promise(env, &deferred, &promise);
+    napi_value key = nullptr;
+    napi_create_string_utf8(env, "then", NAPI_AUTO_LENGTH, &key);
+    napi_value thenFn = nullptr;
+    napi_get_property(env, promise, key, &thenFn);
+    napi_value cb = nullptr;
+    napi_create_function(env, "onFulfilled", NAPI_AUTO_LENGTH,
+        MicrotaskScopeSetFlagCallback, &flag, &cb);
+    napi_value callResult = nullptr;
+    napi_call_function(env, promise, thenFn, 1, &cb, &callResult);
+    napi_value resolution = nullptr;
+    napi_create_int32(env, 1, &resolution);
+    status = napi_resolve_deferred(env, nullptr, resolution);
+    if (status != napi_invalid_arg) {
+        napi_close_microtask_scope(env, scope);
+        napi_get_boolean(env, false, &result);
+        return result;
+    }
+
+    status = napi_close_microtask_scope(env, scope);
+    if (status != napi_ok || flag) {
+        napi_get_boolean(env, false, &result);
+        return result;
+    }
+
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+static napi_value NapiMicrotaskScopeNestedThenDrain(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    bool flag = false;
+
+    napi_microtask_scope scope1 = nullptr;
+    napi_status status = napi_open_microtask_scope(env, &scope1);
+    if (status != napi_ok) {
+        napi_get_boolean(env, false, &result);
+        return result;
+    }
+    MicrotaskScopeEnqueueResolve(env, &flag);
+    napi_microtask_scope scope2 = nullptr;
+    status = napi_open_microtask_scope(env, &scope2);
+    if (status != napi_invalid_arg) {
+        napi_close_microtask_scope(env, scope1);
+        napi_get_boolean(env, false, &result);
+        return result;
+    }
+    status = napi_close_microtask_scope(env, scope1);
+    if (status != napi_ok || !flag) {
+        napi_get_boolean(env, false, &result);
+        return result;
+    }
+
+    napi_microtask_scope scope3 = nullptr;
+    status = napi_open_microtask_scope(env, &scope3);
+    if (status != napi_ok) {
+        napi_get_boolean(env, false, &result);
+        return result;
+    }
+    napi_close_microtask_scope(env, scope3);
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
 EXTERN_C_START
 
 static napi_value Init(napi_env env, napi_value exports)
@@ -21227,7 +21747,18 @@ static napi_value Init(napi_env env, napi_value exports)
         DECLARE_NAPI_FUNCTION("NapiMicrotaskScopeSuppressCallFunction", NapiMicrotaskScopeSuppressCallFunction),
         DECLARE_NAPI_FUNCTION("NapiMicrotaskScopeSuppressNewInstance", NapiMicrotaskScopeSuppressNewInstance),
         DECLARE_NAPI_FUNCTION("NapiMicrotaskScopeSuppressResolve", NapiMicrotaskScopeSuppressResolve),
+        DECLARE_NAPI_FUNCTION("NapiMicrotaskScopeDrainResumes", NapiMicrotaskScopeDrainResumes),
+        DECLARE_NAPI_FUNCTION("NapiMicrotaskScopeCascading", NapiMicrotaskScopeCascading),
+        DECLARE_NAPI_FUNCTION("NapiMicrotaskScopeRepeatedLoop", NapiMicrotaskScopeRepeatedLoop),
+        DECLARE_NAPI_FUNCTION("NapiMicrotaskScopeSuppressReject", NapiMicrotaskScopeSuppressReject),
+        DECLARE_NAPI_FUNCTION("NapiMicrotaskScopeFifoOrder", NapiMicrotaskScopeFifoOrder),
         DECLARE_NAPI_FUNCTION("NapiMicrotaskScopeDefaultDrain", NapiMicrotaskScopeDefaultDrain),
+        DECLARE_NAPI_FUNCTION("NapiMicrotaskScopeCloseStaleHandle", NapiMicrotaskScopeCloseStaleHandle),
+        DECLARE_NAPI_FUNCTION("NapiMicrotaskScopeCloseNullFull", NapiMicrotaskScopeCloseNullFull),
+        DECLARE_NAPI_FUNCTION("NapiMicrotaskScopeCloseMismatchFull", NapiMicrotaskScopeCloseMismatchFull),
+        DECLARE_NAPI_FUNCTION("NapiMicrotaskScopePendingExceptionSkip", NapiMicrotaskScopePendingExceptionSkip),
+        DECLARE_NAPI_FUNCTION("NapiMicrotaskScopeNullDeferred", NapiMicrotaskScopeNullDeferred),
+        DECLARE_NAPI_FUNCTION("NapiMicrotaskScopeNestedThenDrain", NapiMicrotaskScopeNestedThenDrain),
     };
     NAPI_CALL(env, napi_define_properties(env, exports, sizeof(properties) / sizeof(properties[0]), properties));
 

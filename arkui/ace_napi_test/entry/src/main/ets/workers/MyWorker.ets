@@ -513,6 +513,56 @@ workerPort.onmessage = (e: MessageEvents) => {
       workerPort.postMessage(value);
       break;
     }
+    case 'napiMicrotaskScopeDrainResumes': {
+      let value = napitest.NapiMicrotaskScopeDrainResumes();
+      workerPort.postMessage(value);
+      break;
+    }
+    case 'napiMicrotaskScopeCascading': {
+      let value = napitest.NapiMicrotaskScopeCascading();
+      workerPort.postMessage(value);
+      break;
+    }
+    case 'napiMicrotaskScopeRepeatedLoop': {
+      let value = napitest.NapiMicrotaskScopeRepeatedLoop();
+      workerPort.postMessage(value);
+      break;
+    }
+    case 'napiMicrotaskScopeSuppressReject': {
+      let value = napitest.NapiMicrotaskScopeSuppressReject();
+      workerPort.postMessage(value);
+      break;
+    }
+    case 'napiMicrotaskScopeFifoOrder': {
+      let value = napitest.NapiMicrotaskScopeFifoOrder();
+      workerPort.postMessage(value);
+      break;
+    }
+    case 'napiMicrotaskScopeCloseStaleHandle': {
+      let value = napitest.NapiMicrotaskScopeCloseStaleHandle();
+      workerPort.postMessage(value);
+      break;
+    }
+    case 'napiMicrotaskScopeCloseNullFull': {
+      let value = napitest.NapiMicrotaskScopeCloseNullFull();
+      workerPort.postMessage(value);
+      break;
+    }
+    case 'napiMicrotaskScopeCloseMismatchFull': {
+      let value = napitest.NapiMicrotaskScopeCloseMismatchFull();
+      workerPort.postMessage(value);
+      break;
+    }
+    case 'napiMicrotaskScopePendingExceptionSkip': {
+      let value = napitest.NapiMicrotaskScopePendingExceptionSkip();
+      workerPort.postMessage(value);
+      break;
+    }
+    case 'napiMicrotaskScopeNestedThenDrain': {
+      let value = napitest.NapiMicrotaskScopeNestedThenDrain();
+      workerPort.postMessage(value);
+      break;
+    }
     default:
       break;
   }
