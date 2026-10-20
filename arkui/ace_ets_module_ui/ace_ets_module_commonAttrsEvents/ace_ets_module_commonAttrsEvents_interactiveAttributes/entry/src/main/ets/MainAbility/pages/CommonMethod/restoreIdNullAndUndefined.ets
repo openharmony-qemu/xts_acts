@@ -23,7 +23,7 @@ struct RestoreIdNullAndUndefined {
       Text(this.restoreIdText)
         .id('restoreIdText')
         .width('100%')
-        .height('10%')
+        .height('5%')
 
       List({ space: '1%' }) {
         ForEach([0, 1, 2, 3, 4], (item: number) => {
@@ -37,7 +37,7 @@ struct RestoreIdNullAndUndefined {
       }
       .id('listRestoreIdNull')
       .width('100%')
-      .height('20%')
+      .height('15%')
       .restoreId(null)
 
       List({ space: '1%' }) {
@@ -52,13 +52,13 @@ struct RestoreIdNullAndUndefined {
       }
       .id('listRestoreIdUndefined')
       .width('100%')
-      .height('20%')
+      .height('15%')
       .restoreId(undefined)
 
       Button('Test restoreId null')
         .id('btnRestoreIdNull')
         .width('100%')
-        .height('45%')
+        .height('8%')
         .onClick(() => {
           this.restoreIdText = 'null';
         })
@@ -66,12 +66,13 @@ struct RestoreIdNullAndUndefined {
       Button('Test restoreId undefined')
         .id('btnRestoreIdUndefined')
         .width('100%')
-        .height('45%')
+        .height('8%')
         .onClick(() => {
           this.restoreIdText = 'undefined';
         })
     }
     .width('100%')
-    .height('100%')
+    .height('80%')
+    .justifyContent(FlexAlign.Center)
   }
 }
