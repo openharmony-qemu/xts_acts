@@ -2387,14 +2387,14 @@ export default function openLinkTest() {
           })
           .catch((err: BusinessError) => {
             console.error(`${tag}, startAbilityByType fail, code is ${err.code}, message is ${err.message}`);
-            expect().assertFail();
+            expect(code).assertEqual(16000050);
             done();
           });
       } catch (err) {
         let code = (err as BusinessError).code;
         let message = (err as BusinessError).message;
         console.error(`${tag} startAbilityByType failed, code is ${code}, message is ${message}`);
-        expect(code).assertEqual(16000050);
+        expect().assertFail();
         done();
       }
     });
@@ -2426,14 +2426,14 @@ export default function openLinkTest() {
           })
           .catch((err: BusinessError) => {
             console.error(`${tag}, startAbilityByType fail, code is ${err.code}, message is ${err.message}`);
-            expect().assertFail();
+            expect(code).assertEqual(16000050);
             done();
           });
       } catch (err) {
         let code = (err as BusinessError).code;
         let message = (err as BusinessError).message;
         console.error(`${tag} startAbilityByType failed, code is ${code}, message is ${message}`);
-        expect(code).assertEqual(16000050);
+        expect().assertFail();
         done();
       }
     });
