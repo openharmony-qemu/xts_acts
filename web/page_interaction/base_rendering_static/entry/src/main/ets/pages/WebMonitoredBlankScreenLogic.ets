@@ -12,78 +12,78 @@ import { runMonitoredBlankScreenCasePart6 } from './WebMonitoredBlankScreenLogic
 
 export function runMonitoredBlankScreenCase(action: string): void {
   switch (action) {
-              case "testOnMonitoredBlankScreenStatic001": {
-                try {
-                  Utils.emitEvent('onMonitoredBlankScreen', 20260450)
-                } catch (error) {
-                  error = error as BusinessError;
-                  Utils.emitEvent(error.code, 20260450)
-                }
-                break;
-              }
-              case "testMonitoredBlankScreenEventInfoUrl": {
-                try {
-                  Utils.emitEvent('probe:url', 20260451)
-                } catch (error) {
-                  error = error as BusinessError;
-                  Utils.emitEvent(error.code, 20260451)
-                }
-                break;
-              }
-              case "testMonitoredBlankScreenEventInfoReason": {
-                try {
-                  Utils.emitEvent(BlankScreenReason.DNS_RESOLVE_FAILED, 20260452)
-                } catch (error) {
-                  error = error as BusinessError;
-                  Utils.emitEvent(error.code, 20260452)
-                }
-                break;
-              }
-              case "testMonitoredBlankScreenEventInfoExtraMsg": {
-                try {
-                  Utils.emitEvent('probe-extra', 20260453)
-                } catch (error) {
-                  error = error as BusinessError;
-                  Utils.emitEvent(error.code, 20260453)
-                }
-                break;
-              }
-              case "testOnMonitoredBlankScreenUndefined": {
-                try {
-                  Utils.emitEvent(true, 20260455)
-                } catch (error) {
-                  error = error as BusinessError;
-                  Utils.emitEvent(error.code, 20260455)
-                }
-                break;
-              }
-              case "testOnMonitoredBlankScreenChaining": {
-                try {
-                  Utils.emitEvent('chain-ok', 20260458)
-                } catch (error) {
-                  error = error as BusinessError;
-                  Utils.emitEvent(error.code, 20260458)
-                }
-                break;
-              }
-              case "testEnableBlankScreenMonitorTrue": {
-                try {
-                  Utils.emitEvent(true, 20260456)
-                } catch (error) {
-                  error = error as BusinessError;
-                  Utils.emitEvent(error.code, 20260456)
-                }
-                break;
-              }
-              case "testEnableBlankScreenMonitorFalse": {
-                try {
-                  Utils.emitEvent(false, 20260457)
-                } catch (error) {
-                  error = error as BusinessError;
-                  Utils.emitEvent(error.code, 20260457)
-                }
-                break;
-              }
+    case "testOnMonitoredBlankScreenStatic001": {
+      try {
+        Utils.emitEvent('onMonitoredBlankScreen', 20260450)
+      } catch (error) {
+        error = error as BusinessError;
+        Utils.emitEvent(error.code, 20260450)
+      }
+      break;
+    }
+    case "testMonitoredBlankScreenEventInfoUrl": {
+      try {
+        Utils.emitEvent('probe:url', 20260451)
+      } catch (error) {
+        error = error as BusinessError;
+        Utils.emitEvent(error.code, 20260451)
+      }
+      break;
+    }
+    case "testMonitoredBlankScreenEventInfoReason": {
+      try {
+        Utils.emitEvent(BlankScreenReason.DNS_RESOLVE_FAILED, 20260452)
+      } catch (error) {
+        error = error as BusinessError;
+        Utils.emitEvent(error.code, 20260452)
+      }
+      break;
+    }
+    case "testMonitoredBlankScreenEventInfoExtraMsg": {
+      try {
+        Utils.emitEvent('probe-extra', 20260453)
+      } catch (error) {
+        error = error as BusinessError;
+        Utils.emitEvent(error.code, 20260453)
+      }
+      break;
+    }
+    case "testOnMonitoredBlankScreenUndefined": {
+      try {
+        Utils.emitEvent(true, 20260455)
+      } catch (error) {
+        error = error as BusinessError;
+        Utils.emitEvent(error.code, 20260455)
+      }
+      break;
+    }
+    case "testOnMonitoredBlankScreenChaining": {
+      try {
+        Utils.emitEvent('chain-ok', 20260458)
+      } catch (error) {
+        error = error as BusinessError;
+        Utils.emitEvent(error.code, 20260458)
+      }
+      break;
+    }
+    case "testEnableBlankScreenMonitorTrue": {
+      try {
+        Utils.emitEvent(true, 20260456)
+      } catch (error) {
+        error = error as BusinessError;
+        Utils.emitEvent(error.code, 20260456)
+      }
+      break;
+    }
+    case "testEnableBlankScreenMonitorFalse": {
+      try {
+        Utils.emitEvent(false, 20260457)
+      } catch (error) {
+        error = error as BusinessError;
+        Utils.emitEvent(error.code, 20260457)
+      }
+      break;
+    }
     default:
       break;
   }
