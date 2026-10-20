@@ -43,7 +43,7 @@ export default function SparseArrayConstructorNoArgTest(): void {
      * @tc.desc Test SparseArray default constructor, verify empty array (arr instanceof SparseArray is true, arr.length equals 0)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructorNoArg001', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>();
@@ -58,7 +58,7 @@ export default function SparseArrayConstructorNoArgTest(): void {
      * @tc.desc Test SparseArray default constructor, verify instance isolation (arr2[0] is undefined, arr1.length equals 1)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructorNoArg002', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr1 = new SparseArray<int>();
@@ -76,7 +76,7 @@ export default function SparseArrayConstructorNoArgTest(): void {
      * @tc.desc Test SparseArray default constructor with object generic, verify assigned element is non-null
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructorNoArg003', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<MyObject003>();
@@ -93,7 +93,7 @@ export default function SparseArrayConstructorNoArgTest(): void {
      * @tc.desc Test SparseArray default constructor with union generic, verify int and string assignment
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructorNoArg004', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int | string>();
@@ -110,7 +110,7 @@ export default function SparseArrayConstructorNoArgTest(): void {
      * @tc.desc Test SparseArray default constructor, verify unassigned indices return undefined
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructorNoArg005', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>();
@@ -125,7 +125,7 @@ export default function SparseArrayConstructorNoArgTest(): void {
      * @tc.desc Test SparseArray constructor, verify sparse hole after index assignment (arr.length equals 6, arr[0] is undefined)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructorNoArg006', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>();
@@ -141,7 +141,7 @@ export default function SparseArrayConstructorNoArgTest(): void {
      * @tc.desc Test SparseArray default constructor, verify $_get on empty array returns undefined
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructorNoArg007', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>();
@@ -156,7 +156,7 @@ export default function SparseArrayConstructorNoArgTest(): void {
      * @tc.desc Test SparseArray default constructor, verify $_set stores value at index 0
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructorNoArg008', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>();
@@ -171,7 +171,7 @@ export default function SparseArrayConstructorNoArgTest(): void {
      * @tc.desc Test SparseArray default constructor, verify large index assignment updates length and value
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructorNoArg009', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>();
@@ -187,7 +187,7 @@ export default function SparseArrayConstructorNoArgTest(): void {
      * @tc.desc Verify negative index access via bracket and $_get returns undefined without changing length
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructorNoArg010', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>();
@@ -204,7 +204,7 @@ export default function SparseArrayConstructorNoArgTest(): void {
      * @tc.desc default constructor $_set at index 0x2 stores binary literal 0b11
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructorNoArg011', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>();
@@ -218,7 +218,7 @@ export default function SparseArrayConstructorNoArgTest(): void {
      * @tc.desc default constructor SparseArray<boolean> stores boolean values by index
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructorNoArg012', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<boolean>();
@@ -235,7 +235,7 @@ export default function SparseArrayConstructorNoArgTest(): void {
      * @tc.desc default constructor SparseArray<char> stores char value at index 0
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructorNoArg013', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<char>();
@@ -249,7 +249,7 @@ export default function SparseArrayConstructorNoArgTest(): void {
      * @tc.desc default constructor SparseArray<long> stores long value at sparse index
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructorNoArg014', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<long>();
@@ -264,7 +264,7 @@ export default function SparseArrayConstructorNoArgTest(): void {
      * @tc.desc default constructor SparseArray<int|null> stores null element explicitly
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructorNoArg015', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int | null>();

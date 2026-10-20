@@ -36,7 +36,7 @@ export default function SparseArrayLengthSetterTest(): void {
      * @tc.desc Extend length to 5 on [7,5,4], verify length grows while existing values preserved
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayLengthSetter001', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
@@ -54,7 +54,7 @@ export default function SparseArrayLengthSetterTest(): void {
      * @tc.desc Set length to 1 on [3,4,5], verify only first element remains accessible
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayLengthSetter002', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(3, 4, 5);
@@ -68,7 +68,7 @@ export default function SparseArrayLengthSetterTest(): void {
      * @tc.desc Test SparseArray constructor with (1, 2, 3), verify length and elements (arr.length equals 0)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayLengthSetter003', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -82,7 +82,7 @@ export default function SparseArrayLengthSetterTest(): void {
      * @tc.desc Test SparseArray.length Setter error path, verify expected exception is thrown (assertFail is triggered, error.name equals "RangeError")
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayLengthSetter004', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -101,7 +101,7 @@ export default function SparseArrayLengthSetterTest(): void {
      * @tc.desc Test SparseArray default constructor, verify empty array (arr.length equals 10000)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayLengthSetter005', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>();
@@ -115,7 +115,7 @@ export default function SparseArrayLengthSetterTest(): void {
      * @tc.desc Test SparseArray default constructor, verify empty array (arr.length equals 2147483647)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayLengthSetter006', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>();
@@ -129,7 +129,7 @@ export default function SparseArrayLengthSetterTest(): void {
      * @tc.desc Test SparseArray.length Setter error path, verify expected exception is thrown (assertFail is triggered, error.name equals "RangeError")
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayLengthSetter007', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>();
@@ -146,7 +146,7 @@ export default function SparseArrayLengthSetterTest(): void {
      * @tc.desc INT_MIN minus 1 wraps to INT_MAX; do not assign wrapped value to length on device
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayLengthSetter008', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>();
@@ -161,7 +161,7 @@ export default function SparseArrayLengthSetterTest(): void {
      * @tc.desc Test SparseArray.length Setter error path, verify expected exception is thrown (assertFail is triggered, error.name equals "ClassCastError")
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayLengthSetter009', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>();
@@ -178,7 +178,7 @@ export default function SparseArrayLengthSetterTest(): void {
      * @tc.desc Set length to 2 on [2,2,3], verify length shrinks and trailing elements removed
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayLengthSetter010', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(2, 2, 3);
@@ -193,7 +193,7 @@ export default function SparseArrayLengthSetterTest(): void {
      * @tc.desc Test SparseArray constructor with elements (1, 2, 3), verify length and element values (arr.length equals 10, arr[0] equals 1)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayLengthSetter011', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -208,7 +208,7 @@ export default function SparseArrayLengthSetterTest(): void {
      * @tc.desc Test SparseArray constructor with (1, 2, 3), verify length and elements (result equals 5)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayLengthSetter012', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -222,7 +222,7 @@ export default function SparseArrayLengthSetterTest(): void {
      * @tc.desc Test SparseArray constructor with (1, 2, 3), verify length and elements (arr.length equals 5, arr.length equals 2)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayLengthSetter013', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -240,7 +240,7 @@ export default function SparseArrayLengthSetterTest(): void {
      * @tc.desc Test SparseArray constructor with (1, 2, 3), verify length and elements (arr.length equals 10, arr.length equals 5)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayLengthSetter014', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -256,7 +256,7 @@ export default function SparseArrayLengthSetterTest(): void {
      * @tc.desc Test SparseArray constructor with length 5, verify sparse length and undefined slots (arr.length equals 3, arr[0] equals 1)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayLengthSetter015', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(5);
@@ -275,7 +275,7 @@ export default function SparseArrayLengthSetterTest(): void {
      * @tc.desc Test SparseArray constructor with length 2, verify sparse length and undefined slots (arr.length equals 5, arr[0] equals 1)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayLengthSetter016', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(2);
@@ -292,7 +292,7 @@ export default function SparseArrayLengthSetterTest(): void {
      * @tc.desc Test SparseArray constructor with (1, 2, 3), verify length and elements (intArr.length equals 5, stringArr.length equals 10)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayLengthSetter017', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const intArr = new SparseArray<int>(1, 2, 3);
@@ -315,7 +315,7 @@ export default function SparseArrayLengthSetterTest(): void {
      * @tc.desc length setter on SparseArray<byte> extends sparse slots
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayLengthSetter018', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<byte>(10 as byte, 20 as byte);
@@ -332,7 +332,7 @@ export default function SparseArrayLengthSetterTest(): void {
      * @tc.desc length setter accepts octal 0o12 and binary 0b101 literals
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayLengthSetter019', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -349,7 +349,7 @@ export default function SparseArrayLengthSetterTest(): void {
      * @tc.desc length 0o10 preserves null element at index 0x3
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayLengthSetter020', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int | null>(1, 2, 3, null, 5);
@@ -365,7 +365,7 @@ export default function SparseArrayLengthSetterTest(): void {
      * @tc.desc length shrink preserves whitespace-only string elements
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayLengthSetter021', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<string>(" ", "\t", "x");
@@ -380,7 +380,7 @@ export default function SparseArrayLengthSetterTest(): void {
      * @tc.desc length setter truncates char elements beyond new length
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayLengthSetter022', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<char>(c'A', c'B', c'C');
@@ -396,7 +396,7 @@ export default function SparseArrayLengthSetterTest(): void {
      * @tc.desc length setter extends SparseArray<boolean> and preserves existing false value
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayLengthSetter023', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<boolean>(false);
@@ -412,7 +412,7 @@ export default function SparseArrayLengthSetterTest(): void {
      * @tc.desc length setter to zero clears assigned sparse elements
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayLengthSetter024', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(5);
@@ -429,7 +429,7 @@ export default function SparseArrayLengthSetterTest(): void {
      * @tc.desc length setter shrink removes high sparse string index
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayLengthSetter025', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<string>();

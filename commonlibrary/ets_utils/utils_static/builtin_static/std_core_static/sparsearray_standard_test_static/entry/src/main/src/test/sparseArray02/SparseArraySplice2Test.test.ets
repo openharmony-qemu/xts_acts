@@ -36,7 +36,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.desc Test SparseArray.splice, verify method result (arr.length equals 1)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySplice001', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10, 20, 30)
@@ -49,7 +49,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.desc splice(0) on [10,20,30], verify all deleted, arr empty, return type is object
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySplice002', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
@@ -68,7 +68,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.desc Test SparseArray.splice, verify method result (arr instanceof SparseArray is true, deleted.length equals 2)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySplice003', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10, 20, 30, 40, 50)
@@ -84,7 +84,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.desc Test SparseArray.splice, verify method result (arr instanceof SparseArray is true, deleted.length equals 0)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySplice004', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10, 20, 30)
@@ -99,7 +99,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.desc Test SparseArray.splice, verify method result (deleted.length equals 0, arr.length equals 3)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySplice005', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10, 20, 30)
@@ -113,7 +113,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.desc Test SparseArray.splice error path, verify expected exception is thrown (assertFail is triggered, error.name equals "ClassCastError")
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySplice006', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10, 20, 30)
@@ -130,7 +130,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.desc Test SparseArray.splice, verify method result (arr instanceof SparseArray is true, deleted instanceof SparseArray is true)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySplice007', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10, 20, 30)
@@ -150,7 +150,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.desc Test SparseArray.splice, verify method result (arr instanceof SparseArray is true, deleted instanceof SparseArray is true)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySplice008', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10, 20, 30)
@@ -167,7 +167,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.desc Test SparseArray.splice, verify deleted.length equals 0
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySplice009', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10, 20, 30);
@@ -181,7 +181,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.desc Test SparseArray.splice, verify method result (deleted.length equals 0, deleted instanceof SparseArray is true)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySplice010', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10, 20, 30)
@@ -195,7 +195,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.desc Test SparseArray.splice, verify method result (arr instanceof SparseArray is true, deleted.length equals 5)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySplice011', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(6)
@@ -213,7 +213,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.desc Test SparseArray.splice, verify method result (deleted[0] equals "banana", deleted[1] equals "cherry")
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySplice012', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<string>("apple", "banana", "cherry")
@@ -227,7 +227,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.desc Test SparseArray.splice, verify method result (finallyExecuted is true)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySplice013', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10, 20, 30)
@@ -245,7 +245,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.desc Test SparseArray.splice, verify method result (deleted.length equals 0, arr.length equals 0)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySplice014', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>()
@@ -259,7 +259,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.desc Test SparseArray.splice, verify method result (arr instanceof SparseArray is true, deleted.length equals 3)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySplice015', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(6)
@@ -278,7 +278,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.desc splice(1) on [10,20,30], verify deleted [20,30] and return type is object
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySplice016', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
@@ -296,7 +296,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.desc Test SparseArray.splice, verify method result (deleted[0] equals inner)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySplice017', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<SparseArray<int>>()
@@ -311,7 +311,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.desc Test SparseArray.splice, verify method result (arr instanceof SparseArray is true, deleted.length equals 3)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySplice018', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10, 20, 30)
@@ -329,7 +329,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.desc Test SparseArray.splice, verify method result (deleted1.length equals 3, deleted2.length equals 2)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySplice019', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10, 20, 30, 40, 50)
@@ -346,7 +346,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.desc Test SparseArray.splice, verify method result (deleted === arr is false)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySplice020', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10, 20, 30, 40, 50)
@@ -359,7 +359,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.desc Test SparseArray.splice, verify method result (arr.length equals 5, deleted.length equals 5)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySplice021', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
@@ -373,7 +373,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.desc Test SparseArray.splice, verify method result (arr.length equals 2, deleted.length equals 1)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySplice022', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10, 20, 30)
@@ -388,7 +388,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.desc splice from index on SparseArray<short> returns deleted short elements
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySplice023', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<short>(10 as short, 20 as short, 30 as short);
@@ -403,7 +403,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.desc splice at 0x0 removing 0b1 element uses hex and binary index literals
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySplice024', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10, 20, 30);
@@ -419,7 +419,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.desc splice from index on SparseArray<boolean> keeps false in deleted array
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySplice025', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<boolean>(true, false, true);
@@ -436,7 +436,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.desc splice from index on SparseArray<byte> returns byte boundary tail
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySplice026', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<byte>(0 as byte, (-128 as byte), 127 as byte);
@@ -452,7 +452,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.desc splice from index on SparseArray<long> returns long tail
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySplice027', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<long>(1 as long, 10000000000 as long, 20000000000 as long);
@@ -468,7 +468,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.desc splice from index on SparseArray<float> returns float tail
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySplice028', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<float>(1.0f, 2.5f, 3.0f);
@@ -484,7 +484,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.desc splice from index on SparseArray<double> returns double tail
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySplice029', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<double>(1.25, 2.5, 3.75);
@@ -500,7 +500,7 @@ export default function SparseArraySplice2Test(): void {
      * @tc.desc splice from index on SparseArray<char> returns char tail
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySplice030', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<char>(c'A', c'B', c'C');

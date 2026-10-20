@@ -48,7 +48,7 @@ export default function SparseArrayFlatTest(): void {
      * @tc.desc Test SparseArray.flat, verify method result (res instanceof SparseArray is true)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFlat001', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = makeNestedArr();
@@ -63,7 +63,7 @@ export default function SparseArrayFlatTest(): void {
      * @tc.desc Test SparseArray.flat(2), verify result type and flattened values with optional depth:int
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFlat002', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = makeNestedArr();
@@ -78,7 +78,7 @@ export default function SparseArrayFlatTest(): void {
      * @tc.desc Test SparseArray.flat, verify method result (arr.length equals 5, res0.length equals 4)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFlat003', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = makeNestedArr();
@@ -97,7 +97,7 @@ export default function SparseArrayFlatTest(): void {
      * @tc.desc Test SparseArray.flat error path, verify expected exception is thrown (assertFail is triggered, error.name equals "ClassCastError")
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFlat004', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = makeNestedArr();
@@ -114,7 +114,7 @@ export default function SparseArrayFlatTest(): void {
      * @tc.desc Test SparseArray.flat, verify method result
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFlat005', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = makeNestedArr();
@@ -128,7 +128,7 @@ export default function SparseArrayFlatTest(): void {
      * @tc.desc Test SparseArray.flat error path, verify expected exception is thrown (assertFail is triggered, error.name equals "ClassCastError")
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFlat006', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = makeNestedArr();
@@ -145,7 +145,7 @@ export default function SparseArrayFlatTest(): void {
      * @tc.desc Test SparseArray.flat error path, verify expected exception is thrown (assertFail is triggered, error.name equals "ClassCastError")
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFlat007', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = makeNestedArr();
@@ -162,7 +162,7 @@ export default function SparseArrayFlatTest(): void {
      * @tc.desc Test SparseArray.flat error path, verify expected exception is thrown (assertFail is triggered, error.name equals "ClassCastError")
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFlat008', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = makeNestedArr();
@@ -179,7 +179,7 @@ export default function SparseArrayFlatTest(): void {
      * @tc.desc Test SparseArray.flat error path, verify expected exception is thrown (assertFail is triggered, error.name equals "ClassCastError")
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFlat009', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = makeNestedArr();
@@ -196,7 +196,7 @@ export default function SparseArrayFlatTest(): void {
      * @tc.desc Test SparseArray.flat error path, verify expected exception is thrown (assertFail is triggered, error.name equals "ClassCastError")
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFlat010', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = makeNestedArr();
@@ -213,7 +213,7 @@ export default function SparseArrayFlatTest(): void {
      * @tc.desc Test SparseArray.flat error path, verify expected exception is thrown (assertFail is triggered, error.name equals "ClassCastError")
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFlat011', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = makeNestedArr();
@@ -231,7 +231,7 @@ export default function SparseArrayFlatTest(): void {
      * @tc.desc Test SparseArray.flat error path, verify expected exception is thrown (assertFail is triggered, error.name equals "ClassCastError")
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFlat012', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = makeNestedArr();
@@ -248,7 +248,7 @@ export default function SparseArrayFlatTest(): void {
      * @tc.desc Test SparseArray.flat error path, verify expected exception is thrown (assertFail is triggered, error.name equals "ClassCastError")
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFlat013', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = makeNestedArr();
@@ -265,7 +265,7 @@ export default function SparseArrayFlatTest(): void {
      * @tc.desc Test SparseArray.flat, verify method result
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFlat014', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const inner2 = new SparseArray<int>(7, 8, 9);
@@ -290,7 +290,7 @@ export default function SparseArrayFlatTest(): void {
      * @tc.desc Test SparseArray constructor with (44, 55, 66), verify length and elements
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFlat015', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int | SparseArray<int>>(5);
@@ -308,7 +308,7 @@ export default function SparseArrayFlatTest(): void {
      * @tc.desc Test SparseArray.flat, verify method result (res.length equals 0)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFlat016', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int | SparseArray<int>>();
@@ -322,7 +322,7 @@ export default function SparseArrayFlatTest(): void {
      * @tc.desc Test SparseArray.flat, verify method result
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFlat017', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3, 4, 5);
@@ -336,7 +336,7 @@ export default function SparseArrayFlatTest(): void {
      * @tc.desc Test SparseArray.flat, verify method result
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFlat018', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = makeNestedArr();
@@ -350,7 +350,7 @@ export default function SparseArrayFlatTest(): void {
      * @tc.desc Test SparseArray.flat, verify method result (arr.length equals 5)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFlat019', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = makeNestedArr();
@@ -367,7 +367,7 @@ export default function SparseArrayFlatTest(): void {
      * @tc.desc Test SparseArray.flat, verify method result
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFlat020', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const inner3 = new SparseArray<int>(7, 8, 9);
@@ -392,7 +392,7 @@ export default function SparseArrayFlatTest(): void {
      * @tc.desc Test SparseArray.flat, verify method result (res.length equals 5)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFlat021', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const inner = new SparseArray<int>(44, 55, 66);
@@ -410,7 +410,7 @@ export default function SparseArrayFlatTest(): void {
      * @tc.desc Test SparseArray.flat, verify method result (res instanceof SparseArray is true, res.length equals res0.length)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFlat022', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = makeNestedArr();
@@ -427,7 +427,7 @@ export default function SparseArrayFlatTest(): void {
      * @tc.desc Test SparseArray.flat error path, verify expected exception is thrown (res !== null && res !== undefined is true, assertFail is triggered)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFlat023', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = makeNestedArr();
@@ -444,7 +444,7 @@ export default function SparseArrayFlatTest(): void {
      * @tc.desc Test SparseArray.flat, verify method result
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFlat024', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const inner = new SparseArray<string>('a', 'b', 'c');
@@ -461,7 +461,7 @@ export default function SparseArrayFlatTest(): void {
      * @tc.desc Test SparseArray.flat, verify method result (res.length equals 1000)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFlat025', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const inner = new SparseArray<int>();
@@ -482,7 +482,7 @@ export default function SparseArrayFlatTest(): void {
      * @tc.desc Test SparseArray.flat, verify method result (res instanceof SparseArray is true)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFlat026', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int | SparseArray<int>>();
@@ -503,7 +503,7 @@ export default function SparseArrayFlatTest(): void {
      * @tc.desc flat depth 1 flattens nested SparseArray<float> into float elements
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFlat027', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const inner = new SparseArray<float>(1.0f, 2.5f);
@@ -520,7 +520,7 @@ export default function SparseArrayFlatTest(): void {
      * @tc.desc flat depth 1 on nested array containing null inner SparseArray slot
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFlat028', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const inner = new SparseArray<int>(1, 2);
@@ -538,7 +538,7 @@ export default function SparseArrayFlatTest(): void {
      * @tc.desc flat empty nested SparseArray<int> yields zero-length result
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFlat029', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const emptyInner = new SparseArray<int>();
@@ -553,7 +553,7 @@ export default function SparseArrayFlatTest(): void {
      * @tc.desc flat depth 1 flattens 2x2 nested SparseArray<int> matrix to four ints
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFlat030', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const row0 = new SparseArray<int>(1, 2);
@@ -573,7 +573,7 @@ export default function SparseArrayFlatTest(): void {
      * @tc.desc flat depth 1 flattens nested row with 0xA and 0b101 literals
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFlat031', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const row = new SparseArray<int>(0xA, 0b101);
@@ -591,7 +591,7 @@ export default function SparseArrayFlatTest(): void {
      * @tc.desc flat depth 1 flattens nested SparseArray<char> into char elements
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFlat032', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const row = new SparseArray<char>(c'A', c'B');
@@ -609,7 +609,7 @@ export default function SparseArrayFlatTest(): void {
      * @tc.desc flat depth 0 keeps nested SparseArray<boolean> as element
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFlat033', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const row = new SparseArray<boolean>(true, false);
@@ -628,7 +628,7 @@ export default function SparseArrayFlatTest(): void {
      * @tc.desc flat depth 1 skips sparse holes inside nested row
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFlat034', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const row = new SparseArray<string>(4);
@@ -646,7 +646,7 @@ export default function SparseArrayFlatTest(): void {
      * @tc.desc flat depth 1 skips explicitly stored undefined in nested row
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFlat035', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const row = new SparseArray<int | undefined>(undefined, 5);
