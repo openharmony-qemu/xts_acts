@@ -1906,5 +1906,1875 @@ export default function lruCacheAfterRemovalTest(): void {
       }
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE_AFTER_REMOVAL_0250
+     * @tc.name testLruCacheAfterRemoval025
+     * @tc.desc Merged batch (5 tests): [1] Verify overwriting a key in a <bigint,bigint> cache captures the old bigint value 10n in afterRemoval | [2] Verify captured value size equals one for Map key Set value c...
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLruCacheAfterRemoval025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify overwriting a key in a <bigint,bigint> cache captures the old bigint value 10n in afterRemoval ---
+      {
+        let oldBig: bigint = 0n;
+        let cache: RemovalProbe<bigint, bigint> = new RemovalProbe<bigint, bigint>(
+          (self: util.LRUCache<bigint, bigint>, isEvict: boolean, key: bigint, value: bigint, newValue: bigint | undefined) => {
+            oldBig = value;
+          });
+        cache.put(1n, 10n);
+        cache.put(1n, 20n);
+        expect(oldBig).assertEqual(10n);
+      }
+
+      // --- [2] Verify captured value size equals one for Map key Set value combo ---
+      {
+        let mk: Map<string, int> = new Map<string, int>();
+        mk.set('x', 1);
+        let sv: Set<int> = new Set<int>();
+        sv.add(7);
+        let setSize: int = -1;
+        let cache: RemovalProbe<Map<string, int>, Set<int>> = new RemovalProbe<Map<string, int>, Set<int>>(
+          (self: util.LRUCache<Map<string, int>, Set<int>>, isEvict: boolean, key: Map<string, int>, value: Set<int>, newValue: Set<int> | undefined) => {
+            setSize = value.size;
+          });
+        cache.put(mk, sv);
+        cache.remove(mk);
+        expect(setSize).assertEqual(1);
+      }
+
+      // --- [3] Verify captured value equals 3.75 for string double floating value combo ---
+      {
+        let numVal: double = 0;
+        let cache: RemovalProbe<string, double> = new RemovalProbe<string, double>(
+          (self: util.LRUCache<string, double>, isEvict: boolean, key: string, value: double, newValue: double | undefined) => {
+            numVal = value;
+          });
+        cache.put('pk', 3.75);
+        cache.remove('pk');
+        expect(numVal).assertEqual(3.75);
+      }
+
+      // --- [4] Verify two same-millisecond Date keys stay distinct and captured key timestamp is preserved ---
+      {
+        let da: Date = new Date(1700000000000);
+        let db: Date = new Date(1700000000000);
+        let deadTime: long = 0;
+        let cache: RemovalProbe<Date, int> = new RemovalProbe<Date, int>(
+          (self: util.LRUCache<Date, int>, isEvict: boolean, key: Date, value: int, newValue: int | undefined) => {
+            deadTime = key.getTime();
+          }, undefined, 1);
+        cache.put(da, 1);
+        cache.put(db, 2);
+        expect(deadTime).assertEqual(1700000000000);
+      }
+
+      // --- [5] Verify content-equal distinct object keys stay separate so the second put evicts the first and afterRemoval captures id 5 ---
+      {
+        let pa: KeyObj = { id: 5 };
+        let pb: KeyObj = { id: 5 };
+        let cache: KeyUnmodCache = new KeyUnmodCache(1);
+        cache.put(pa, 1);
+        cache.put(pb, 2);
+        expect(cache.seenId).assertEqual(5);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE_AFTER_REMOVAL_0260
+     * @tc.name testLruCacheAfterRemoval026
+     * @tc.desc Merged batch (5 tests): [1] Verify callback not invoked when updateCapacity enlarges capacity | [2] Verify callback not invoked when get hits existing key | [3] Verify callback not invoked when put...
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLruCacheAfterRemoval026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify callback not invoked when updateCapacity enlarges capacity ---
+      {
+        let cache: ReuseCache = new ReuseCache(2);
+        cache.put(1, 10);
+        cache.updateCapacity(8);
+        expect(cache.count).assertEqual(0);
+        expect(cache.getCapacity()).assertEqual(8);
+      }
+
+      // --- [2] Verify callback not invoked when get hits existing key ---
+      {
+        let cache: ReuseCache = new ReuseCache();
+        cache.put(1, 10);
+        cache.get(1);
+        expect(cache.count).assertEqual(0);
+      }
+
+      // --- [3] Verify callback not invoked when put adds key below capacity ---
+      {
+        let cache: ReuseCache = new ReuseCache(4);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        expect(cache.count).assertEqual(0);
+      }
+
+      // --- [4] Verify callback not invoked when remove misses existing key ---
+      {
+        let cache: ReuseCache = new ReuseCache();
+        cache.put(1, 10);
+        cache.remove(99);
+        expect(cache.count).assertEqual(0);
+        expect(cache.length).assertEqual(1);
+      }
+
+      // --- [5] Verify remove null key throw keeps entry readable and afterRemoval not invoked ---
+      {
+        let cache: NoCallOnNullRemove = new NoCallOnNullRemove();
+        cache.put('a', 1);
+        try {
+          cache.remove(null);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('BusinessError');
+          expect(e.code).assertEqual(401);
+        }
+        expect(cache.get('a')).assertEqual(1);
+        expect(cache.count).assertEqual(0);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE_AFTER_REMOVAL_0270
+     * @tc.name testLruCacheAfterRemoval027
+     * @tc.desc Merged batch (5 tests): [1] Verify remove undefined key throw keeps entry readable and afterRemoval not invoked | [2] Verify updateCapacity zero throws exception and afterRemoval is not invoked | [...
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLruCacheAfterRemoval027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify remove undefined key throw keeps entry readable and afterRemoval not invoked ---
+      {
+        let cache: NoCallOnUndefRemove = new NoCallOnUndefRemove();
+        cache.put(1, 10);
+        try {
+          cache.remove(undefined);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('BusinessError');
+          expect(e.code).assertEqual(401);
+        }
+        expect(cache.get(1)).assertEqual(10);
+        expect(cache.count).assertEqual(0);
+      }
+
+      // --- [2] Verify updateCapacity zero throws exception and afterRemoval is not invoked ---
+      {
+        let cache: ReuseCache = new ReuseCache(2);
+        cache.put(1, 10);
+        try {
+          cache.updateCapacity(0);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('BusinessError');
+          expect(e.code).assertEqual(401);
+        }
+        expect(cache.count).assertEqual(0);
+      }
+
+      // --- [3] Verify updateCapacity negative value throws exception and afterRemoval is not invoked ---
+      {
+        let cache: ReuseCache = new ReuseCache();
+        cache.put(1, 10);
+        cache.put(2, 20);
+        try {
+          cache.updateCapacity(-1);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('BusinessError');
+          expect(e.code).assertEqual(401);
+        }
+        expect(cache.count).assertEqual(0);
+      }
+
+      // --- [4] Verify updateCapacity int minimum throws exception and afterRemoval is not invoked ---
+      {
+        let cache: ReuseCache = new ReuseCache();
+        cache.put(1, 10);
+        try {
+          cache.updateCapacity(-2147483648);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('BusinessError');
+          expect(e.code).assertEqual(401);
+        }
+        expect(cache.length).assertEqual(1);
+        expect(cache.count).assertEqual(0);
+      }
+
+      // --- [5] Verify updateCapacity int maximum executes without callback invocation ---
+      {
+        let cache: ReuseCache = new ReuseCache(1);
+        cache.put(1, 10);
+        cache.updateCapacity(2147483647);
+        let calls: int = cache.count;
+        expect(calls).assertEqual(0);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE_AFTER_REMOVAL_0280
+     * @tc.name testLruCacheAfterRemoval028
+     * @tc.desc Merged batch (5 tests): [1] Verify cache recovers after invalid updateCapacity and eviction callback still fires once | [2] Verify remove on empty cache miss keeps length zero and callback not invo...
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLruCacheAfterRemoval028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify cache recovers after invalid updateCapacity and eviction callback still fires once ---
+      {
+        let cache: ReuseCache = new ReuseCache(1);
+        try {
+          cache.updateCapacity(0);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('BusinessError');
+          expect(e.code).assertEqual(401);
+        }
+        cache.put(1, 10);
+        cache.put(2, 20);
+        expect(cache.count).assertEqual(1);
+      }
+
+      // --- [2] Verify remove on empty cache miss keeps length zero and callback not invoked ---
+      {
+        let cache: ReuseCache = new ReuseCache();
+        cache.remove(5);
+        expect(cache.count).assertEqual(0);
+        expect(cache.length).assertEqual(0);
+      }
+
+      // --- [3] Verify clear on empty cache does not invoke callback ---
+      {
+        let cache: ReuseCache = new ReuseCache();
+        cache.clear();
+        expect(cache.count).assertEqual(0);
+      }
+
+      // --- [4] Verify updateCapacity shrink on empty cache does not invoke callback ---
+      {
+        let cache: ReuseCache = new ReuseCache(5);
+        cache.updateCapacity(1);
+        expect(cache.count).assertEqual(0);
+      }
+
+      // --- [5] Verify get miss createDefault returning undefined does not invoke callback and get returns undefined ---
+      {
+        let count: int = 0;
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {
+            count = count + 1;
+          }, (key: int) => undefined);
+        let got: int | undefined = cache.get(7);
+        expect(got).assertEqual(undefined);
+        expect(count).assertEqual(0);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE_AFTER_REMOVAL_0290
+     * @tc.name testLruCacheAfterRemoval029
+     * @tc.desc Merged batch (5 tests): [1] Verify three consecutive remove misses on empty cache keep callback count zero | [2] Verify contains miss on empty cache does not invoke callback | [3] Verify remove emp...
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLruCacheAfterRemoval029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify three consecutive remove misses on empty cache keep callback count zero ---
+      {
+        let cache: ReuseCache = new ReuseCache();
+        cache.remove(1);
+        cache.remove(2);
+        cache.remove(3);
+        expect(cache.count).assertEqual(0);
+      }
+
+      // --- [2] Verify contains miss on empty cache does not invoke callback ---
+      {
+        let cache: ReuseCache = new ReuseCache();
+        let present: boolean = cache.contains(9);
+        expect(present).assertFalse();
+        expect(cache.count).assertEqual(0);
+      }
+
+      // --- [3] Verify remove empty string key miss does not invoke callback ---
+      {
+        let count: int = 0;
+        let cache: RemovalProbe<string, int> = new RemovalProbe<string, int>(
+          (self: util.LRUCache<string, int>, isEvict: boolean, key: string, value: int, newValue: int | undefined) => {
+            count = count + 1;
+          });
+        cache.remove('');
+        expect(count).assertEqual(0);
+      }
+
+      // --- [4] Verify clear then refill then clear invokes callback for total removal events twice ---
+      {
+        let cache: ReuseCache = new ReuseCache(1);
+        cache.clear();
+        cache.put(1, 10);
+        cache.put(2, 20);
+        cache.clear();
+        expect(cache.count).assertEqual(2);
+      }
+
+      // --- [5] Verify single element remove invokes callback once and subsequent remove miss keeps count ---
+      {
+        let cache: ReuseCache = new ReuseCache();
+        cache.put(1, 10);
+        cache.remove(1);
+        expect(cache.count).assertEqual(1);
+        expect(cache.length).assertEqual(0);
+        cache.remove(1);
+        expect(cache.count).assertEqual(1);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE_AFTER_REMOVAL_0300
+     * @tc.name testLruCacheAfterRemoval030
+     * @tc.desc Merged batch (5 tests): [1] Verify updateCapacity equal to element count does not invoke callback | [2] Verify single element updateCapacity zero throw keeps capacity and callback not invoked | [3]...
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLruCacheAfterRemoval030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify updateCapacity equal to element count does not invoke callback ---
+      {
+        let cache: ReuseCache = new ReuseCache(2);
+        cache.put(1, 10);
+        cache.updateCapacity(1);
+        expect(cache.count).assertEqual(0);
+        expect(cache.length).assertEqual(1);
+      }
+
+      // --- [2] Verify single element updateCapacity zero throw keeps capacity and callback not invoked ---
+      {
+        let cache: ReuseCache = new ReuseCache(1);
+        cache.put(1, 10);
+        try {
+          cache.updateCapacity(0);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('BusinessError');
+          expect(e.code).assertEqual(401);
+        }
+        expect(cache.getCapacity()).assertEqual(1);
+        expect(cache.count).assertEqual(0);
+      }
+
+      // --- [3] Verify two element updateCapacity grow does not invoke callback ---
+      {
+        let cache: ReuseCache = new ReuseCache(2);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        cache.updateCapacity(3);
+        expect(cache.count).assertEqual(0);
+      }
+
+      // --- [4] Verify three element shrink to two invokes callback exactly once ---
+      {
+        let cache: ReuseCache = new ReuseCache(3);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        cache.put(3, 30);
+        cache.updateCapacity(2);
+        expect(cache.count).assertEqual(1);
+        expect(cache.length).assertEqual(2);
+      }
+
+      // --- [5] Verify shrink after cache emptied by single remove keeps callback count unchanged ---
+      {
+        let cache: ReuseCache = new ReuseCache(2);
+        cache.put(1, 10);
+        cache.remove(1);
+        expect(cache.count).assertEqual(1);
+        cache.updateCapacity(1);
+        expect(cache.count).assertEqual(1);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE_AFTER_REMOVAL_0310
+     * @tc.name testLruCacheAfterRemoval031
+     * @tc.desc Merged batch (5 tests): [1] Verify multiple evictions capture identical value for same valued entries | [2] Verify overwrite with identical old and new value still invokes callback with both equal ...
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLruCacheAfterRemoval031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify multiple evictions capture identical value for same valued entries ---
+      {
+        let cache: ValRecCache<int, int> = new ValRecCache<int, int>(1);
+        cache.put(1, 7);
+        cache.put(2, 7);
+        cache.put(3, 7);
+        expect(cache.valueRec.length).assertEqual(2);
+        expect(cache.valueRec[0]).assertEqual(7);
+        expect(cache.valueRec[1]).assertEqual(7);
+      }
+
+      // --- [2] Verify overwrite with identical old and new value still invokes callback with both equal ---
+      {
+        let oldV: int = -1;
+        let newV: int = -1;
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {
+            oldV = value;
+            if (newValue !== undefined) {
+              newV = newValue;
+            }
+          });
+        cache.put(1, 7);
+        cache.put(1, 7);
+        expect(oldV).assertEqual(7);
+        expect(newV).assertEqual(7);
+      }
+
+      // --- [3] Verify capacity one same valued inserts invoke callback for each eviction ---
+      {
+        let cache: ReuseCache = new ReuseCache(1);
+        for (let i: int = 0; i < 5; i++) {
+          cache.put(i, 9);
+        }
+        expect(cache.count).assertEqual(4);
+      }
+
+      // --- [4] Verify callback throw during put eviction aborts it, keeping the old key ---
+      {
+        let cache: ThrowPropagatePut = new ThrowPropagatePut(2);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        try {
+          cache.put(3, 30);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('Error');
+          expect(e.code).assertEqual(0);
+        }
+        expect(cache.get(1)).assertEqual(10);
+        expect(cache.get(3)).assertEqual(30);
+      }
+
+      // --- [5] Verify surviving key remains readable after callback throw during put eviction ---
+      {
+        let cache: ThrowPropagatePut = new ThrowPropagatePut(2);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        try {
+          cache.put(3, 30);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('Error');
+          expect(e.code).assertEqual(0);
+        }
+        expect(cache.get(2)).assertEqual(20);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE_AFTER_REMOVAL_0320
+     * @tc.name testLruCacheAfterRemoval032
+     * @tc.desc Merged batch (5 tests): [1] Verify aborted eviction from callback throw leaves length 3 (over capacity) | [2] Verify remove completes and length decreases despite callback throw | [3] Verify clear ...
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLruCacheAfterRemoval032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify aborted eviction from callback throw leaves length 3 (over capacity) ---
+      {
+        let cache: ThrowPropagatePut = new ThrowPropagatePut(2);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        try {
+          cache.put(3, 30);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('Error');
+          expect(e.code).assertEqual(0);
+        }
+        expect(cache.length).assertEqual(3);
+      }
+
+      // --- [2] Verify remove completes and length decreases despite callback throw ---
+      {
+        let cache: ThrowPropagatePut = new ThrowPropagatePut(2);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        try {
+          cache.remove(1);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('Error');
+          expect(e.code).assertEqual(0);
+        }
+        expect(cache.length).assertEqual(1);
+        expect(cache.get(1)).assertEqual(undefined);
+      }
+
+      // --- [3] Verify clear aborted by callback throw leaves length 2 (entries retained) ---
+      {
+        let cache: ThrowPropagatePut = new ThrowPropagatePut(2);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        try {
+          cache.clear();
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('Error');
+          expect(e.code).assertEqual(0);
+        }
+        expect(cache.length).assertEqual(2);
+      }
+
+      // --- [4] Verify shrink aborted by callback throw keeps length 3 ---
+      {
+        let cache: ThrowPropagatePut = new ThrowPropagatePut(3);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        cache.put(3, 30);
+        try {
+          cache.updateCapacity(2);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('Error');
+          expect(e.code).assertEqual(0);
+        }
+        expect(cache.length).assertEqual(3);
+      }
+
+      // --- [5] Verify cache recovers after single callback throw and later key readable ---
+      {
+        let cache: RecoverAfterThrow = new RecoverAfterThrow(1);
+        cache.put(1, 10);
+        try {
+          cache.put(2, 20);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('Error');
+          expect(e.code).assertEqual(0);
+        }
+        cache.put(3, 30);
+        expect(cache.get(3)).assertEqual(30);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE_AFTER_REMOVAL_0330
+     * @tc.name testLruCacheAfterRemoval033
+     * @tc.desc Merged batch (5 tests): [1] Verify consecutive callback throws abort each eviction and retain both keys | [2] Verify callback swallowing inner throw lets put complete normally | [3] Verify createDe...
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLruCacheAfterRemoval033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify consecutive callback throws abort each eviction and retain both keys ---
+      {
+        let cache: ThrowPropagatePut = new ThrowPropagatePut(2);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        try {
+          cache.put(3, 30);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('Error');
+          expect(e.code).assertEqual(0);
+        }
+
+        try {
+          cache.put(4, 40);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('Error');
+          expect(e.code).assertEqual(0);
+        }
+        expect(cache.get(1)).assertEqual(10);
+        expect(cache.get(2)).assertEqual(20);
+      }
+
+      // --- [2] Verify callback swallowing inner throw lets put complete normally ---
+      {
+        let count: int = 0;
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {
+            count = count + 1;
+            try {
+              throw new Error('inner');
+              expect().assertFail();
+            } catch (e) {
+              expect(e.name).assertEqual('Error');
+              expect(e.code).assertEqual(0);
+            }
+          }, undefined, 1);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        expect(cache.get(2)).assertEqual(20);
+        expect(count).assertEqual(1);
+      }
+
+      // --- [3] Verify createDefault insertion remains detectable despite callback throw on get ---
+      {
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {
+            throw new Error('cb-throw');
+          }, (key: int) => key * 2, 1);
+
+        cache.put(1, 10);
+        try {
+          cache.get(5);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('Error');
+          expect(e.code).assertEqual(0);
+        }
+        expect(cache.contains(5)).assertTrue();
+      }
+
+      // --- [4] Verify aborted eviction from callback throw leaves removal count at 0 ---
+      {
+        let cache: ThrowPropagatePut = new ThrowPropagatePut(2);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        try {
+          cache.put(3, 30);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('Error');
+          expect(e.code).assertEqual(0);
+        }
+        expect(cache.getRemovalCount()).assertEqual(0);
+      }
+
+      // --- [5] Verify LRU key order preserved after callback throw on put eviction ---
+      {
+        let cache: ThrowPropagatePut = new ThrowPropagatePut(2);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        try {
+          cache.put(3, 30);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('Error');
+          expect(e.code).assertEqual(0);
+        }
+        let klist: int[] = cache.keys();
+        expect(klist.length).assertEqual(3);
+        expect(klist[0]).assertEqual(1);
+        expect(klist[1]).assertEqual(2);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE_AFTER_REMOVAL_0340
+     * @tc.name testLruCacheAfterRemoval034
+     * @tc.desc Merged batch (5 tests): [1] Verify overwrite aborted by callback throw removes the key (get returns undefined) | [2] Verify key and value parameters captured correctly before callback throw | [3] V...
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLruCacheAfterRemoval034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify overwrite aborted by callback throw removes the key (get returns undefined) ---
+      {
+        let cache: ThrowPropagatePut = new ThrowPropagatePut();
+        cache.put(1, 10);
+        try {
+          cache.put(1, 20);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('Error');
+          expect(e.code).assertEqual(0);
+        }
+        expect(cache.get(1)).assertEqual(undefined);
+      }
+
+      // --- [2] Verify key and value parameters captured correctly before callback throw ---
+      {
+        let seenKey: int = -1;
+        let seenVal: int = -1;
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {
+            seenKey = key;
+            seenVal = value;
+            throw new Error('cb-throw');
+          }, undefined, 1);
+        cache.put(1, 10);
+
+        try {
+          cache.put(2, 20);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('Error');
+          expect(e.code).assertEqual(0);
+        }
+        expect(seenKey).assertEqual(1);
+        expect(seenVal).assertEqual(10);
+      }
+
+      // --- [3] Verify cache recovers after first clear callback throw and later clear completes ---
+      {
+        let cache: RecoverAfterThrow = new RecoverAfterThrow(2);
+        cache.put(1, 10);
+        try {
+          cache.clear();
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('Error');
+          expect(e.code).assertEqual(0);
+        }
+
+        cache.put(2, 20);
+        cache.put(3, 30);
+        cache.clear();
+        expect(cache.count).assertEqual(4);
+        expect(cache.length).assertEqual(0);
+      }
+
+      // --- [4] Verify createDefault throw does not invoke afterRemoval callback ---
+      {
+        let called: int = 0;
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {
+            called = called + 1;
+          }, (key: int) => {
+            throw new Error('boom');
+          });
+
+        try {
+          cache.get(7);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('Error');
+          expect(e.code).assertEqual(0);
+        }
+        expect(called).assertEqual(0);
+      }
+
+      // --- [5] Verify empty callback clear empties cache and callback invoked per cleared element ---
+      {
+        let cache: ReuseCache = new ReuseCache(2);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        cache.clear();
+        expect(cache.length).assertEqual(0);
+        expect(cache.count).assertEqual(2);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE_AFTER_REMOVAL_0350
+     * @tc.name testLruCacheAfterRemoval035
+     * @tc.desc Merged batch (5 tests): [1] Verify empty callback shrink applies and callback invoked once per removed element | [2] Verify empty callback get miss createDefault returns created value | [3] Verify ...
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLruCacheAfterRemoval035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify empty callback shrink applies and callback invoked once per removed element ---
+      {
+        let cache: ReuseCache = new ReuseCache(3);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        cache.updateCapacity(1);
+        expect(cache.length).assertEqual(1);
+        expect(cache.count).assertEqual(1);
+      }
+
+      // --- [2] Verify empty callback get miss createDefault returns created value ---
+      {
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {}, (key: int) => key + 100);
+        let got: int | undefined = cache.get(4);
+        expect(got).assertEqual(104);
+      }
+
+      // --- [3] Verify evicted NaN value detected as NaN by callback ---
+      {
+        let nanFlag: boolean = false;
+        let cache: RemovalProbe<int, double> = new RemovalProbe<int, double>(
+          (self: util.LRUCache<int, double>, isEvict: boolean, key: int, value: double, newValue: double | undefined) => {
+            if (isNaN(value)) {
+              nanFlag = true;
+            }
+          }, undefined, 1);
+        cache.put(1, Double.NaN);
+        cache.put(2, 3);
+        expect(nanFlag).assertTrue();
+      }
+
+      // --- [4] Verify evicted Infinity value captured as Infinity ---
+      {
+        let cache: ValCapCache<int, double> = new ValCapCache<int, double>(1);
+        cache.put(1, Double.POSITIVE_INFINITY);
+        cache.put(2, 3);
+        expect(cache.cap).assertEqual(Double.POSITIVE_INFINITY);
+      }
+
+      // --- [5] Verify evicted negative Infinity value captured as negative Infinity ---
+      {
+        let cache: ValCapCache<int, double> = new ValCapCache<int, double>(1);
+        cache.put(1, Double.NEGATIVE_INFINITY);
+        cache.put(2, 3);
+        expect(cache.cap).assertEqual(Double.NEGATIVE_INFINITY);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE_AFTER_REMOVAL_0360
+     * @tc.name testLruCacheAfterRemoval036
+     * @tc.desc Merged batch (5 tests): [1] Verify evicted Number.MAX_VALUE captured without precision loss | [2] Verify evicted Number.MIN_VALUE captured as smallest positive double | [3] Verify evicted Number.MA...
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLruCacheAfterRemoval036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify evicted Number.MAX_VALUE captured without precision loss ---
+      {
+        let cache: ValCapCache<int, double> = new ValCapCache<int, double>(1);
+        cache.put(1, Number.MAX_VALUE);
+        cache.put(2, 3);
+        expect(cache.cap).assertEqual(Number.MAX_VALUE);
+        expect(cache.length).assertEqual(1);
+      }
+
+      // --- [2] Verify evicted Number.MIN_VALUE captured as smallest positive double ---
+      {
+        let cache: ValCapCache<int, double> = new ValCapCache<int, double>(1);
+        cache.put(1, Number.MIN_VALUE);
+        cache.put(2, 3);
+        let captured: double | undefined = cache.cap;
+        expect(captured).assertEqual(Number.MIN_VALUE);
+      }
+
+      // --- [3] Verify evicted Number.MAX_SAFE_INTEGER captured without precision loss ---
+      {
+        let cache: ValCapCache<int, double> = new ValCapCache<int, double>(1);
+        cache.put(1, Number.MAX_SAFE_INTEGER);
+        cache.put(2, 3);
+        expect(cache.cap).assertEqual(Number.MAX_SAFE_INTEGER);
+      }
+
+      // --- [4] Verify evicted negative zero value preserves its sign in callback ---
+      {
+        let inv: double = 0;
+        let cache: RemovalProbe<int, double> = new RemovalProbe<int, double>(
+          (self: util.LRUCache<int, double>, isEvict: boolean, key: int, value: double, newValue: double | undefined) => {
+            inv = 1 / value;
+          }, undefined, 1);
+        cache.put(1, -0.0);
+        cache.put(2, 3);
+        expect(inv).assertEqual(Double.NEGATIVE_INFINITY);
+      }
+
+      // --- [5] Verify evicted large precision number 1e19 captured untruncated ---
+      {
+        let cache: ValCapCache<int, double> = new ValCapCache<int, double>(1);
+        cache.put(1, 1e19);
+        cache.put(2, 3);
+        expect(cache.cap).assertEqual(1e19);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE_AFTER_REMOVAL_0370
+     * @tc.name testLruCacheAfterRemoval037
+     * @tc.desc Merged batch (5 tests): [1] Verify evicted long maximum value captured intact | [2] Verify evicted Chinese char value captured as same character | [3] Verify put overwrite increments getPutCount an...
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLruCacheAfterRemoval037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify evicted long maximum value captured intact ---
+      {
+        let cache: ValCapCache<int, long> = new ValCapCache<int, long>(1);
+        cache.put(1, 9223372036854775807);
+        cache.put(2, 3);
+        expect(cache.cap).assertEqual(9223372036854775807);
+      }
+
+      // --- [2] Verify evicted Chinese char value captured as same character ---
+      {
+        let cap: string = '';
+        let cache: RemovalProbe<int, string> = new RemovalProbe<int, string>(
+          (self: util.LRUCache<int, string>, isEvict: boolean, key: int, value: string, newValue: string | undefined) => {
+            cap = String(value);
+          }, undefined, 1);
+        cache.put(1, '中');
+        cache.put(2, 'b');
+        expect(cap).assertEqual('中');
+      }
+
+      // --- [3] Verify put overwrite increments getPutCount and callback observes updated count ---
+      {
+        let countInCall: int = -1;
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {
+            countInCall = Long.toInt(self.getPutCount());
+          });
+        cache.put(1, 10);
+        expect(cache.getPutCount()).assertEqual(1);
+        cache.put(1, 20);
+        expect(cache.getPutCount()).assertEqual(2);
+        expect(countInCall).assertEqual(2);
+      }
+
+      // --- [4] Verify remove invokes callback while removal count stays 0 (remove never counted) ---
+      {
+        let cache: SdRmCount = new SdRmCount();
+        cache.put(1, 10);
+        expect(cache.getRemovalCount()).assertEqual(0);
+        cache.remove(1);
+        expect(cache.countInCall).assertEqual(0);
+        expect(cache.getRemovalCount()).assertEqual(0);
+      }
+
+      // --- [5] Verify clear invokes callbacks while removal count stays 0 (clear never counted) ---
+      {
+        let cache: SdRmCount = new SdRmCount();
+        cache.put(1, 10);
+        cache.put(2, 20);
+        cache.put(3, 30);
+        expect(cache.getRemovalCount()).assertEqual(0);
+        cache.clear();
+        expect(cache.countInCall).assertEqual(0);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE_AFTER_REMOVAL_0380
+     * @tc.name testLruCacheAfterRemoval038
+     * @tc.desc Merged batch (5 tests): [1] Verify eviction callback observes removal count before increment (still 0) | [2] Verify createDefault insertion fires no afterRemoval (miss-count probe stays sentinel) |...
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLruCacheAfterRemoval038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify eviction callback observes removal count before increment (still 0) ---
+      {
+        let cache: SdRmCount = new SdRmCount(2);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        cache.put(3, 30);
+        expect(cache.countInCall).assertEqual(0);
+        expect(Long.toInt(cache.getRemovalCount())).assertEqual(1);
+      }
+
+      // --- [2] Verify createDefault insertion fires no afterRemoval (miss-count probe stays sentinel) ---
+      {
+        let missInCall: int = -1;
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {
+            missInCall = Long.toInt(self.getMissCount());
+          }, (key: int) => 55);
+        expect(cache.getMissCount()).assertEqual(0);
+        let v: int | undefined = cache.get(7);
+        expect(v).assertEqual(55);
+        expect(missInCall).assertEqual(-1);
+      }
+
+      // --- [3] Verify createDefault insertion fires no afterRemoval (create-count probe stays sentinel) ---
+      {
+        let createIn: int = -1;
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {
+            createIn = Long.toInt(self.getCreateCount());
+          }, (key: int) => 66);
+        let v: int | undefined = cache.get(3);
+        expect(v).assertEqual(66);
+        expect(createIn).assertEqual(-1);
+      }
+
+      // --- [4] Verify eviction does not change capacity read inside callback ---
+      {
+        let cache: SdCapStable = new SdCapStable(3);
+        expect(cache.getCapacity()).assertEqual(3);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        cache.put(3, 30);
+        cache.put(4, 40);
+        expect(cache.capInCall).assertEqual(3);
+      }
+
+      // --- [5] Verify put overwrite does not change capacity read inside callback ---
+      {
+        let cache: SdCapStable = new SdCapStable(5);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        cache.put(1, 11);
+        expect(cache.capInCall).assertEqual(5);
+        expect(cache.getCapacity()).assertEqual(5);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE_AFTER_REMOVAL_0390
+     * @tc.name testLruCacheAfterRemoval039
+     * @tc.desc Merged batch (5 tests): [1] Verify eviction of a key holding a nested LRUCache value passes that instance to the callback with its inner entry readable | [2] Verify removed key no longer contained ...
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLruCacheAfterRemoval039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify eviction of a key holding a nested LRUCache value passes that instance to the callback with its inner entry readable ---
+      {
+        let innerA: util.LRUCache<int, string> = new util.LRUCache<int, string>(2);
+        let innerB: util.LRUCache<int, string> = new util.LRUCache<int, string>(2);
+        innerA.put(1, 'one');
+        innerB.put(2, 'two');
+        let cache: NestedValEvict = new NestedValEvict(2);
+        cache.put(1, innerA);
+        cache.put(2, innerB);
+        cache.put(3, innerA);
+        expect(cache.evictedLen).assertEqual(1);
+        expect(cache.evictedInner).assertEqual('one');
+        expect(cache.get(2)).assertEqual(innerB);
+        expect(innerA.get(1)).assertEqual('one');
+      }
+
+      // --- [2] Verify removed key no longer contained inside remove callback ---
+      {
+        let stillThere: boolean = true;
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {
+            stillThere = self.contains(key);
+          });
+        cache.put(1, 10);
+        expect(cache.contains(1)).assertTrue();
+        cache.remove(1);
+        expect(stillThere).assertFalse();
+      }
+
+      // --- [3] Verify evicted key is still present in keys read inside eviction callback ---
+      {
+        let dropped: boolean = false;
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {
+            let ks: int[] = self.keys();
+            for (let i: int = 0; i < ks.length; i++) {
+              if (ks[i] === key) {
+                dropped = true;
+              }
+            }
+          }, undefined, 2);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        cache.put(3, 30);
+        expect(dropped).assertTrue();
+      }
+
+      // --- [4] Verify clear callback observes non-empty state (isEmpty false before removal) ---
+      {
+        let emptyInCall: boolean = false;
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {
+            emptyInCall = self.isEmpty();
+          });
+        cache.put(1, 10);
+        cache.put(2, 20);
+        expect(cache.isEmpty()).assertFalse();
+        cache.clear();
+        expect(emptyInCall).assertFalse();
+      }
+
+      // --- [5] Verify shrink callback observes pre-removal length 3 during trim 4 to 2 ---
+      {
+        let cache: LenEvictCache = new LenEvictCache(4);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        cache.put(3, 30);
+        cache.put(4, 40);
+        expect(cache.length).assertEqual(4);
+        cache.updateCapacity(2);
+        expect(cache.lenAfter).assertEqual(3);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE_AFTER_REMOVAL_0400
+     * @tc.name testLruCacheAfterRemoval040
+     * @tc.desc Merged batch (5 tests): [1] Verify callback accumulates evicted values into external static sum | [2] Verify callback records evicted key order into external array | [3] Verify callback records onl...
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLruCacheAfterRemoval040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify callback accumulates evicted values into external static sum ---
+      {
+        let total: int = 0;
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {
+            total = total + value;
+          }, undefined, 1);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        cache.put(3, 30);
+        expect(total).assertEqual(30);
+      }
+
+      // --- [2] Verify callback records evicted key order into external array ---
+      {
+        let keys: int[] = [];
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {
+            keys.push(key);
+          }, undefined, 2);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        cache.put(3, 30);
+        cache.put(4, 40);
+        expect(keys.length).assertEqual(2);
+        expect(keys[0]).assertEqual(1);
+        expect(keys[1]).assertEqual(2);
+      }
+
+      // --- [3] Verify callback records only when external gate is enabled ---
+      {
+        let gateRec: boolean = false;
+        let recorded: int = 0;
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {
+            if (gateRec) {
+              recorded = recorded + 1;
+            }
+          }, undefined, 2);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        cache.put(3, 30);
+        expect(recorded).assertEqual(0);
+        gateRec = true;
+        cache.put(4, 40);
+        expect(recorded).assertEqual(1);
+      }
+
+      // --- [4] Verify callback writes removed key value pair into external map ---
+      {
+        let m: Map<int, int> = new Map<int, int>();
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {
+            m.set(key, value);
+          }, undefined, 2);
+        cache.put(1, 100);
+        cache.put(2, 200);
+        cache.put(3, 300);
+        expect(m.size).assertEqual(1);
+        expect(m.get(1)).assertEqual(100);
+      }
+
+      // --- [5] Verify callback appends evicted key sequence to external string ---
+      {
+        let seq: string = '';
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {
+            seq = seq + key.toString() + ',';
+          }, undefined, 2);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        cache.put(3, 30);
+        cache.put(4, 40);
+        expect(seq).assertEqual('1,2,');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE_AFTER_REMOVAL_0410
+     * @tc.name testLruCacheAfterRemoval041
+     * @tc.desc Merged batch (5 tests): [1] Verify callback writes then reads back external counter value | [2] Verify external step counter increments on each eviction callback | [3] Verify callback branch based ...
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLruCacheAfterRemoval041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify callback writes then reads back external counter value ---
+      {
+        let n: int = 0;
+        let seen: int = -1;
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {
+            n = n + 1;
+            seen = n;
+          }, undefined, 3);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        cache.put(3, 30);
+        cache.put(4, 40);
+        cache.put(5, 50);
+        expect(n).assertEqual(2);
+        expect(seen).assertEqual(2);
+      }
+
+      // --- [2] Verify external step counter increments on each eviction callback ---
+      {
+        let stepRec: int = 0;
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {
+            stepRec = stepRec + 1;
+          }, undefined, 1);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        expect(stepRec).assertEqual(1);
+        cache.put(3, 30);
+        expect(stepRec).assertEqual(2);
+      }
+
+      // --- [3] Verify callback branch based on external array length records only first key ---
+      {
+        let seen: int[] = [];
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {
+            if (seen.length === 0) {
+              seen.push(key);
+            }
+          }, undefined, 2);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        cache.put(3, 30);
+        cache.put(4, 40);
+        expect(seen.length).assertEqual(1);
+        expect(seen[0]).assertEqual(1);
+      }
+
+      // --- [4] Verify callback records evicted keys and values into external arrays ---
+      {
+        let keysRec: int[] = [];
+        let vals: int[] = [];
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {
+            keysRec.push(key);
+            vals.push(value);
+          }, undefined, 1);
+        cache.put(1, 5);
+        cache.put(2, 6);
+        cache.put(3, 7);
+        expect(keysRec[0]).assertEqual(1);
+        expect(vals[0]).assertEqual(5);
+        expect(keysRec[1]).assertEqual(2);
+        expect(vals[1]).assertEqual(6);
+      }
+
+      // --- [5] Verify callback writes then reads back external flag ---
+      {
+        let fired: boolean = false;
+        let readBack: boolean = false;
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {
+            fired = true;
+            readBack = fired;
+          }, undefined, 1);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        expect(fired).assertTrue();
+        expect(readBack).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE_AFTER_REMOVAL_0420
+     * @tc.name testLruCacheAfterRemoval042
+     * @tc.desc Merged batch (5 tests): [1] Verify callback writes increasing sequence index to external array | [2] Verify callback updates external max with largest evicted key | [3] Verify nested put inside evi...
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLruCacheAfterRemoval042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify callback writes increasing sequence index to external array ---
+      {
+        let idx: int = 0;
+        let seq: int[] = [];
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {
+            idx = idx + 1;
+            seq.push(idx);
+          }, undefined, 1);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        cache.put(3, 30);
+        cache.put(4, 40);
+        expect(seq.length).assertEqual(3);
+        expect(seq[0]).assertEqual(1);
+        expect(seq[2]).assertEqual(3);
+      }
+
+      // --- [2] Verify callback updates external max with largest evicted key ---
+      {
+        let maxRec: int = -1;
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {
+            if (key > maxRec) {
+              maxRec = key;
+            }
+          }, undefined, 1);
+        cache.put(5, 10);
+        cache.put(3, 20);
+        cache.put(8, 30);
+        expect(maxRec).assertEqual(5);
+      }
+
+      // --- [3] Verify nested put inside eviction callback triggers second eviction callback ---
+      {
+        let calls: int = 0;
+        let keyRec: int[] = [];
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {
+            calls = calls + 1;
+            keyRec.push(key);
+            if (calls === 1) {
+              self.put(4, 40);
+            }
+          }, undefined, 2);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        cache.put(3, 30);
+        expect(calls).assertEqual(3);
+        expect(keyRec[0]).assertEqual(1);
+        expect(keyRec[1]).assertEqual(1);
+        expect(keyRec[2]).assertEqual(2);
+      }
+
+      // --- [4] Verify nested clear inside callback clears remaining entries with per-key callbacks ---
+      {
+        let calls: int = 0;
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {
+            calls = calls + 1;
+            if (calls === 1) {
+              self.clear();
+            }
+          }, undefined, 2);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        cache.put(3, 30);
+        expect(calls).assertEqual(4);
+      }
+
+      // --- [5] Verify nested remove inside callback removes the targeted key ---
+      {
+        let calls: int = 0;
+        let keyRec: int[] = [];
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {
+            calls = calls + 1;
+            keyRec.push(key);
+            if (calls === 1) {
+              self.remove(2);
+            }
+          }, undefined, 3);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        cache.put(3, 30);
+        cache.put(4, 40);
+        expect(calls).assertEqual(2);
+        expect(keyRec[1]).assertEqual(2);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE_AFTER_REMOVAL_0430
+     * @tc.name testLruCacheAfterRemoval043
+     * @tc.desc Merged batch (5 tests): [1] Verify nested shrink inside callback triggers per-key callbacks | [2] Verify callback re-put during eviction is evicted again in the same operation leaving key absent | ...
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLruCacheAfterRemoval043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify nested shrink inside callback triggers per-key callbacks ---
+      {
+        let calls: int = 0;
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {
+            calls = calls + 1;
+            if (calls === 1) {
+              self.updateCapacity(2);
+            }
+          }, undefined, 4);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        cache.put(3, 30);
+        cache.put(4, 40);
+        cache.put(5, 50);
+        expect(calls).assertEqual(4);
+      }
+
+      // --- [2] Verify callback re-put during eviction is evicted again in the same operation leaving key absent ---
+      {
+        let calls: int = 0;
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {
+            calls = calls + 1;
+            if (calls === 1) {
+              self.put(1, 100);
+            }
+          }, undefined, 1);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        expect(calls).assertEqual(3);
+        expect(cache.get(1)).assertEqual(undefined);
+      }
+
+      // --- [3] Verify callback get then put compound operation keeps both reads consistent ---
+      {
+        let calls: int = 0;
+        let got: int = -1;
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {
+            calls = calls + 1;
+            if (calls === 1) {
+              got = self.get(2)!;
+              self.put(9, 99);
+            }
+          }, undefined, 2);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        cache.put(3, 30);
+        expect(got).assertEqual(20);
+        expect(cache.get(9)).assertEqual(99);
+      }
+
+      // --- [4] Verify toString read inside callback triggers no extra callback ---
+      {
+        let calls: int = 0;
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {
+            calls = calls + 1;
+            self.toString();
+          }, undefined, 1);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        expect(calls).assertEqual(1);
+        expect(cache.get(2)).assertEqual(20);
+      }
+
+      // --- [5] Verify read-only capacity query inside callback keeps call count at one ---
+      {
+        let calls: int = 0;
+        let cap: int = 0;
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {
+            calls = calls + 1;
+            cap = self.getCapacity();
+          }, undefined, 2);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        cache.put(3, 30);
+        expect(calls).assertEqual(1);
+        expect(cap).assertEqual(2);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE_AFTER_REMOVAL_0440
+     * @tc.name testLruCacheAfterRemoval044
+     * @tc.desc Merged batch (5 tests): [1] Verify keys length and isEmpty combined read inside callback reflect state | [2] Verify combined overflow overwrite remove clear records key and isEvict sequence | [3] V...
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLruCacheAfterRemoval044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify keys length and isEmpty combined read inside callback reflect state ---
+      {
+        let keyLen: int = -1;
+        let empty: boolean = true;
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {
+            keyLen = self.keys().length;
+            empty = self.isEmpty();
+          }, undefined, 2);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        cache.put(3, 30);
+        expect(keyLen).assertEqual(3);
+        expect(empty).assertFalse();
+      }
+
+      // --- [2] Verify combined overflow overwrite remove clear records key and isEvict sequence ---
+      {
+        let keyRec: int[] = [];
+        let flags: boolean[] = [];
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {
+            keyRec.push(key);
+            flags.push(isEvict);
+          }, undefined, 2);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        cache.put(3, 30);
+        cache.put(2, 200);
+        cache.remove(3);
+        cache.clear();
+        expect(keyRec.length).assertEqual(4);
+        expect(keyRec[0]).assertEqual(1);
+        expect(flags[0]).assertTrue();
+        expect(keyRec[3]).assertEqual(2);
+      }
+
+      // --- [3] Verify evictions are recorded while get-miss createDefault records no afterRemoval event ---
+      {
+        let evictKeys: int[] = [];
+        let defaultKeys: int[] = [];
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {
+            if (isEvict) {
+              evictKeys.push(key);
+            } else {
+              defaultKeys.push(key);
+            }
+          }, (key: int) => 88, 2);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        cache.put(3, 30);
+        cache.get(7);
+        expect(evictKeys.length).assertEqual(2);
+        expect(evictKeys[0]).assertEqual(1);
+        expect(evictKeys[1]).assertEqual(2);
+        expect(defaultKeys.length).assertEqual(0);
+        expect(cache.get(7)).assertEqual(88);
+      }
+
+      // --- [4] Verify nested overwrite inside eviction callback records the overwrite newValue ---
+      {
+        let calls: int = 0;
+        let newRec: int[] = [];
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {
+            calls = calls + 1;
+            if (newValue !== undefined) {
+              newRec.push(newValue);
+            }
+            if (calls === 1) {
+              self.put(2, 222);
+            }
+          }, undefined, 2);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        cache.put(3, 30);
+        expect(calls).assertEqual(3);
+        expect(newRec.length).assertEqual(1);
+        expect(newRec[0]).assertEqual(222);
+        expect(cache.get(2)).assertEqual(222);
+      }
+
+      // --- [5] Verify cleared then refilled cache re-accumulates eviction sequence externally ---
+      {
+        let seq: int[] = [];
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {
+            seq.push(key);
+          }, undefined, 2);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        cache.put(3, 30);
+        cache.clear();
+        seq = [];
+        cache.put(4, 40);
+        cache.put(5, 50);
+        cache.put(6, 60);
+        cache.put(7, 70);
+        expect(seq.length).assertEqual(2);
+        expect(seq[0]).assertEqual(4);
+        expect(seq[1]).assertEqual(5);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE_AFTER_REMOVAL_0450
+     * @tc.name testLruCacheAfterRemoval045
+     * @tc.desc Merged batch (5 tests): [1] Verify nested put then remove compound operation updates key visibility | [2] Verify nested shrink then grow restores capacity and keeps truncated key set | [3] Verify n...
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLruCacheAfterRemoval045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify nested put then remove compound operation updates key visibility ---
+      {
+        let calls: int = 0;
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {
+            calls = calls + 1;
+            if (calls === 1) {
+              self.put(8, 88);
+              self.remove(3);
+            }
+          }, undefined, 2);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        cache.put(3, 30);
+        expect(cache.get(8)).assertEqual(88);
+        expect(cache.get(3)).assertEqual(undefined);
+      }
+
+      // --- [2] Verify nested shrink then grow restores capacity and keeps truncated key set ---
+      {
+        let calls: int = 0;
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {
+            calls = calls + 1;
+            if (calls === 1) {
+              self.updateCapacity(1);
+              self.updateCapacity(4);
+            }
+          }, undefined, 4);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        cache.put(3, 30);
+        cache.put(4, 40);
+        cache.put(5, 50);
+        expect(cache.getCapacity()).assertEqual(4);
+        expect(cache.length).assertEqual(1);
+      }
+
+      // --- [3] Verify nested get-miss inside callback triggers createDefault second callback ---
+      {
+        let calls: int = 0;
+        let defaultKeys: int[] = [];
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {
+            calls = calls + 1;
+            if (calls === 1) {
+              self.get(6);
+            } else {
+              defaultKeys.push(key);
+            }
+          }, (key: int) => 77, 2);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        cache.put(3, 30);
+        expect(calls).assertEqual(3);
+        expect(defaultKeys[0]).assertEqual(1);
+        expect(defaultKeys[1]).assertEqual(2);
+      }
+
+      // --- [4] Verify external last key written by callback is visible immediately after eviction ---
+      {
+        let lastKey: int = -1;
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {
+            lastKey = key;
+          }, undefined, 2);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        cache.put(3, 30);
+        expect(lastKey).assertEqual(1);
+      }
+
+      // --- [5] Verify int overwrite callbacks capture both old values in order ---
+      {
+        let cache: ValRecCache<int, int> = new ValRecCache<int, int>();
+        cache.put(1, 10);
+        cache.put(1, 20);
+        cache.put(1, 30);
+        expect(cache.valueRec.length).assertEqual(2);
+        expect(cache.valueRec[0]).assertEqual(10);
+        expect(cache.valueRec[1]).assertEqual(20);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE_AFTER_REMOVAL_0460
+     * @tc.name testLruCacheAfterRemoval046
+     * @tc.desc Merged batch (5 tests): [1] Verify length equals keys count after eviction callback | [2] Verify overwritten old value is absent from values read inside callback | [3] Verify removed key is absent ...
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLruCacheAfterRemoval046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify length equals keys count after eviction callback ---
+      {
+        let lenIn: int = -1;
+        let keysIn: int = -1;
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {
+            lenIn = self.length;
+            keysIn = self.keys().length;
+          }, undefined, 3);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        cache.put(3, 30);
+        cache.put(4, 40);
+        expect(lenIn).assertEqual(4);
+        expect(keysIn).assertEqual(4);
+      }
+
+      // --- [2] Verify overwritten old value is absent from values read inside callback ---
+      {
+        let oldGone: boolean = true;
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {
+            let vs: int[] = self.values();
+            for (let i: int = 0; i < vs.length; i++) {
+              if (vs[i] === 10) {
+                oldGone = false;
+              }
+            }
+          });
+        cache.put(1, 10);
+        cache.put(2, 20);
+        cache.put(1, 30);
+        expect(oldGone).assertTrue();
+      }
+
+      // --- [3] Verify removed key is absent from keys read inside callback ---
+      {
+        let gone: boolean = false;
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {
+            let ks: int[] = self.keys();
+            for (let i: int = 0; i < ks.length; i++) {
+              if (ks[i] === 1) {
+                gone = true;
+              }
+            }
+          });
+        cache.put(1, 10);
+        cache.put(2, 20);
+        cache.remove(1);
+        expect(gone).assertFalse();
+      }
+
+      // --- [4] Verify overflow evicts only the oldest key and length stays at capacity ---
+      {
+        let cache: KeyRecCache<int, int> = new KeyRecCache<int, int>(3);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        cache.put(3, 30);
+        cache.put(4, 40);
+        expect(cache.length).assertEqual(3);
+        expect(cache.keyRec.length).assertEqual(1);
+        expect(cache.keyRec[0]).assertEqual(1);
+      }
+
+      // --- [5] Verify shrink to one truncates all but one entry with one callback per removed key ---
+      {
+        let cache: ReuseCache = new ReuseCache(4);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        cache.put(3, 30);
+        cache.put(4, 40);
+        cache.updateCapacity(1);
+        expect(cache.count).assertEqual(3);
+        expect(cache.length).assertEqual(1);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE_AFTER_REMOVAL_0470
+     * @tc.name testLruCacheAfterRemoval047
+     * @tc.desc Merged batch (5 tests): [1] Verify post-shrink overflow evictions report isEvict true | [2] Verify shrunk capacity is enforced for later overflow evictions | [3] Verify values read inside overflow ...
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLruCacheAfterRemoval047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify post-shrink overflow evictions report isEvict true ---
+      {
+        let cache: EvictFlagRecCache<int, int> = new EvictFlagRecCache<int, int>(4);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        cache.put(3, 30);
+        cache.put(4, 40);
+        cache.updateCapacity(1);
+        cache.put(5, 50);
+        cache.put(6, 60);
+        expect(cache.isEvictRec.length).assertEqual(5);
+        expect(cache.isEvictRec[3]).assertTrue();
+        expect(cache.isEvictRec[4]).assertTrue();
+      }
+
+      // --- [2] Verify shrunk capacity is enforced for later overflow evictions ---
+      {
+        let capIn: int = 0;
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {
+            capIn = self.getCapacity();
+          }, undefined, 4);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        cache.put(3, 30);
+        cache.put(4, 40);
+        cache.updateCapacity(2);
+        cache.put(5, 50);
+        cache.put(6, 60);
+        expect(cache.getCapacity()).assertEqual(2);
+        expect(cache.length).assertEqual(2);
+        expect(capIn).assertEqual(2);
+      }
+
+      // --- [3] Verify values read inside overflow callback already contain the new key value ---
+      {
+        let hasNew: boolean = false;
+        let cache: RemovalProbe<int, int> = new RemovalProbe<int, int>(
+          (self: util.LRUCache<int, int>, isEvict: boolean, key: int, value: int, newValue: int | undefined) => {
+            let vs: int[] = self.values();
+            for (let i: int = 0; i < vs.length; i++) {
+              if (vs[i] === 30) {
+                hasNew = true;
+              }
+            }
+          }, undefined, 2);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        cache.put(3, 30);
+        expect(hasNew).assertTrue();
+      }
+
+      // --- [4] Verify capacity one records the key and value of the zero width space then byte order mark eviction ---
+      {
+        let cache: KeyValRecCache<string, int> = new KeyValRecCache<string, int>(1);
+        cache.put('\u200B', 11);
+        cache.put('\uFEFF', 22);
+        cache.put('third', 33);
+        expect(cache.keyRec.length).assertEqual(2);
+        expect(cache.keyRec[0]).assertEqual('\u200B');
+        expect(cache.keyRec[1]).assertEqual('\uFEFF');
+        expect(cache.valueRec[0]).assertEqual(11);
+        expect(cache.valueRec[1]).assertEqual(22);
+      }
+
+      // --- [5] Verify an evicted emoji value reaches the removal callback with the high and low surrogate units intact ---
+      {
+        let seen: string = '';
+        let seenEvict: boolean = false;
+        let cache: RemovalProbe<int, string> = new RemovalProbe<int, string>(
+          (self: util.LRUCache<int, string>, isEvict: boolean, key: int, value: string, newValue: string | undefined) => {
+            seen = value;
+            seenEvict = isEvict;
+          }, undefined, 1);
+        cache.put(1, '😀');
+        cache.put(2, 'b');
+        expect(seenEvict).assertTrue();
+        expect(seen.length).assertEqual(2);
+        expect(seen.charCodeAt(0)).assertEqual(0xD83D);
+        expect(seen.charCodeAt(1)).assertEqual(0xDE00);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE_AFTER_REMOVAL_0480
+     * @tc.name testLruCacheAfterRemoval048
+     * @tc.desc Merged batch (1 tests): [1] Verify the eviction callback receives the minimum long value together with the evicted key
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLruCacheAfterRemoval048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify the eviction callback receives the minimum long value together with the evicted key ---
+      {
+        let minLong: long = -9223372036854775807 - 1;
+        let seen: long = 0;
+        let seenKey: int = 0;
+        let cache: RemovalProbe<int, long> = new RemovalProbe<int, long>(
+          (self: util.LRUCache<int, long>, isEvict: boolean, key: int, value: long, newValue: long | undefined) => {
+            seen = value;
+            seenKey = key;
+          }, undefined, 1);
+        cache.put(1, minLong);
+        cache.put(2, 7);
+        expect(seenKey).assertEqual(1);
+        expect(seen).assertEqual(minLong);
+      }
+    });
+
   });
 }
