@@ -29,7 +29,7 @@ import {
   specialKeyData,
   upperCaseKeyData
 } from '../../test/Constants';
-import { Driver, MouseButton ,ON} from '@kit.TestKit';
+import { Driver, MouseButton, ON } from '@kit.TestKit';
 
 const EVENT_ID_SET_SUITE_KEY = 180501;
 let driver = Driver.create();
@@ -49,23 +49,23 @@ struct WebViewMenuInputFieldType {
   @State isOnInterceptKeyboardAttachEnd: number = -1;
   webKeyboardController: WebKeyboardController = new WebKeyboardController()
   inputAttributeMap: Map<string, number> = new Map([
-      ['UNSPECIFIED', inputMethodEngine.ENTER_KEY_TYPE_UNSPECIFIED],
-      ['GO', inputMethodEngine.ENTER_KEY_TYPE_GO],
-      ['SEARCH', inputMethodEngine.ENTER_KEY_TYPE_SEARCH],
-      ['SEND', inputMethodEngine.ENTER_KEY_TYPE_SEND],
-      ['NEXT', inputMethodEngine.ENTER_KEY_TYPE_NEXT],
-      ['DONE', inputMethodEngine.ENTER_KEY_TYPE_DONE],
-      ['PREVIOUS', inputMethodEngine.ENTER_KEY_TYPE_PREVIOUS]
-    ])
+    ['UNSPECIFIED', inputMethodEngine.ENTER_KEY_TYPE_UNSPECIFIED],
+    ['GO', inputMethodEngine.ENTER_KEY_TYPE_GO],
+    ['SEARCH', inputMethodEngine.ENTER_KEY_TYPE_SEARCH],
+    ['SEND', inputMethodEngine.ENTER_KEY_TYPE_SEND],
+    ['NEXT', inputMethodEngine.ENTER_KEY_TYPE_NEXT],
+    ['DONE', inputMethodEngine.ENTER_KEY_TYPE_DONE],
+    ['PREVIOUS', inputMethodEngine.ENTER_KEY_TYPE_PREVIOUS]
+  ])
 
-    onKeyboardEvent(item: IKeyAttribute) {
+  onKeyboardEvent(item: IKeyAttribute) {
     switch (item.type) {
-    // 输入类型，更新输入内容
+      // 输入类型，更新输入内容
       case EKeyType.INPUT:
         console.log("WebCustomKeyboard text input : " + item.value);
         this.webKeyboardController.insertText(item.value);
         break;
-    // 删除一个已输入的末尾字符
+      // 删除一个已输入的末尾字符
       case EKeyType.DELETE:
         this.webKeyboardController.deleteForward(1);
         break;
@@ -76,22 +76,22 @@ struct WebViewMenuInputFieldType {
         this.webKeyboardController.sendFunctionKey(1);
         break;
       default:
-    // logger.info('Sorry, we are out of input type.')
+      // logger.info('Sorry, we are out of input type.')
     }
   }
 
-    /**
-     * 自定义键盘组件Builder
-     */
-    @Builder
-    customKeyboardBuilder() {
+  /**
+   * 自定义键盘组件Builder
+   */
+  @Builder
+  customKeyboardBuilder() {
     CustomKeyboard({
       items: this.items,
       curKeyboardType: this.curKeyboardType,
       onKeyboardEvent: this.onKeyboardEvent,
       webKeyboardController: this.webKeyboardController,
     })
-      .onAppear(()=> {
+      .onAppear(() => {
         console.log('WebCustomKeyboard custom keyboard appear');
       })
       .onDisAppear(() => {
@@ -99,6 +99,7 @@ struct WebViewMenuInputFieldType {
       })
 
   }
+
   controller: webView.WebviewController = new webView.WebviewController();
 
   onPageShow() {
@@ -129,10 +130,9 @@ struct WebViewMenuInputFieldType {
       Row() {
         Button('WebViewMenuInputFieldTypeTestButton').key('WebViewMenuInputFieldTypeTestButton').onClick(async () => {
           console.info("key==>" + this.str)
-          await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
-          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
-          const displayId: number =
-            await (await driver.findComponent(ON.id('WebViewMenuInputFieldTypeTestButton'))).getDisplayId();
+          await Utils.waitForExist(() => this.isReceive, this.str + ' isReceive', 1, 1000);
+          await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000, 5);
+
           switch (this.str) {
             case "onInterceptKeyboardAttach0100": {
               this.ResultKey = 1
@@ -143,12 +143,14 @@ struct WebViewMenuInputFieldType {
               } else {
                 this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/onInterceptKeyboardAttach.html")
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
+                await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000, 5);
               }
               let webRect = Utils.getComponentRect('WebViewMenuInputFieldTypeTestWebView');
               let X = Utils.getRectHorizontalCenterX(webRect)
               let Y = Utils.getRectVerticalCenterY(webRect)
-              await driver.mouseClick({ x: X, y: Y ,displayId:displayId}, MouseButton.MOUSE_BUTTON_LEFT);
+              const displayId: number =
+                await (await driver.findComponent(ON.id('WebViewMenuInputFieldTypeTestButton'))).getDisplayId();
+              await driver.mouseClick({ x: X, y: Y, displayId: displayId }, MouseButton.MOUSE_BUTTON_LEFT);
               break;
             }
             case "onInterceptKeyboardAttach0200": {
@@ -160,13 +162,15 @@ struct WebViewMenuInputFieldType {
               } else {
                 this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/onInterceptKeyboardAttachDefault.html")
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
+                await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000, 5);
               }
               let webRect = Utils.getComponentRect('WebViewMenuInputFieldTypeTestWebView');
               let X = Utils.getRectHorizontalCenterX(webRect)
               let Y = Utils.getRectVerticalCenterY(webRect)
               this.isOnInterceptKeyboardAttachEnd = -1;
-              await driver.mouseClick({ x: X, y: Y ,displayId:displayId}, MouseButton.MOUSE_BUTTON_LEFT);
+              const displayId: number =
+                await (await driver.findComponent(ON.id('WebViewMenuInputFieldTypeTestButton'))).getDisplayId();
+              await driver.mouseClick({ x: X, y: Y, displayId: displayId }, MouseButton.MOUSE_BUTTON_LEFT);
               break;
             }
             case "onInterceptKeyboardAttach0300": {
@@ -178,12 +182,14 @@ struct WebViewMenuInputFieldType {
               } else {
                 this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/onInterceptKeyboardAttach_DONE.html")
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
+                await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000, 5);
               }
               let webRect = Utils.getComponentRect('WebViewMenuInputFieldTypeTestWebView');
               let X = Utils.getRectHorizontalCenterX(webRect)
               let Y = Utils.getRectVerticalCenterY(webRect)
-              await driver.mouseClick({ x: X, y: Y ,displayId:displayId}, MouseButton.MOUSE_BUTTON_LEFT);
+              const displayId: number =
+                await (await driver.findComponent(ON.id('WebViewMenuInputFieldTypeTestButton'))).getDisplayId();
+              await driver.mouseClick({ x: X, y: Y, displayId: displayId }, MouseButton.MOUSE_BUTTON_LEFT);
               break;
             }
             case "onInterceptKeyboardAttach0400": {
@@ -195,12 +201,14 @@ struct WebViewMenuInputFieldType {
               } else {
                 this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/onInterceptKeyboardAttach_GO.html")
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
+                await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000, 5);
               }
               let webRect = Utils.getComponentRect('WebViewMenuInputFieldTypeTestWebView');
               let X = Utils.getRectHorizontalCenterX(webRect)
               let Y = Utils.getRectVerticalCenterY(webRect)
-              await driver.mouseClick({ x: X, y: Y ,displayId:displayId}, MouseButton.MOUSE_BUTTON_LEFT);
+              const displayId: number =
+                await (await driver.findComponent(ON.id('WebViewMenuInputFieldTypeTestButton'))).getDisplayId();
+              await driver.mouseClick({ x: X, y: Y, displayId: displayId }, MouseButton.MOUSE_BUTTON_LEFT);
               break;
             }
             case "onInterceptKeyboardAttach0500": {
@@ -212,12 +220,14 @@ struct WebViewMenuInputFieldType {
               } else {
                 this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/onInterceptKeyboardAttach_NEXT.html")
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
+                await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000, 5);
               }
               let webRect = Utils.getComponentRect('WebViewMenuInputFieldTypeTestWebView');
               let X = Utils.getRectHorizontalCenterX(webRect)
               let Y = Utils.getRectVerticalCenterY(webRect)
-              await driver.mouseClick({ x: X, y: Y ,displayId:displayId}, MouseButton.MOUSE_BUTTON_LEFT);
+              const displayId: number =
+                await (await driver.findComponent(ON.id('WebViewMenuInputFieldTypeTestButton'))).getDisplayId();
+              await driver.mouseClick({ x: X, y: Y, displayId: displayId }, MouseButton.MOUSE_BUTTON_LEFT);
               break;
             }
             case "onInterceptKeyboardAttach0600": {
@@ -229,12 +239,14 @@ struct WebViewMenuInputFieldType {
               } else {
                 this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/onInterceptKeyboardAttach_PREVIOUS.html")
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
+                await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000, 5);
               }
               let webRect = Utils.getComponentRect('WebViewMenuInputFieldTypeTestWebView');
               let X = Utils.getRectHorizontalCenterX(webRect)
               let Y = Utils.getRectVerticalCenterY(webRect)
-              await driver.mouseClick({ x: X, y: Y ,displayId:displayId}, MouseButton.MOUSE_BUTTON_LEFT);
+              const displayId: number =
+                await (await driver.findComponent(ON.id('WebViewMenuInputFieldTypeTestButton'))).getDisplayId();
+              await driver.mouseClick({ x: X, y: Y, displayId: displayId }, MouseButton.MOUSE_BUTTON_LEFT);
               break;
             }
             case "onInterceptKeyboardAttach0700": {
@@ -246,12 +258,14 @@ struct WebViewMenuInputFieldType {
               } else {
                 this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/onInterceptKeyboardAttach_SEARCH.html")
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
+                await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000, 5);
               }
               let webRect = Utils.getComponentRect('WebViewMenuInputFieldTypeTestWebView');
               let X = Utils.getRectHorizontalCenterX(webRect)
               let Y = Utils.getRectVerticalCenterY(webRect)
-              await driver.mouseClick({ x: X, y: Y ,displayId:displayId}, MouseButton.MOUSE_BUTTON_LEFT);
+              const displayId: number =
+                await (await driver.findComponent(ON.id('WebViewMenuInputFieldTypeTestButton'))).getDisplayId();
+              await driver.mouseClick({ x: X, y: Y, displayId: displayId }, MouseButton.MOUSE_BUTTON_LEFT);
               break;
             }
             case "onInterceptKeyboardAttach0800": {
@@ -263,12 +277,14 @@ struct WebViewMenuInputFieldType {
               } else {
                 this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/onInterceptKeyboardAttach_SEND.html")
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
+                await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000, 5);
               }
               let webRect = Utils.getComponentRect('WebViewMenuInputFieldTypeTestWebView');
               let X = Utils.getRectHorizontalCenterX(webRect)
               let Y = Utils.getRectVerticalCenterY(webRect)
-              await driver.mouseClick({ x: X, y: Y ,displayId:displayId}, MouseButton.MOUSE_BUTTON_LEFT);
+              const displayId: number =
+                await (await driver.findComponent(ON.id('WebViewMenuInputFieldTypeTestButton'))).getDisplayId();
+              await driver.mouseClick({ x: X, y: Y, displayId: displayId }, MouseButton.MOUSE_BUTTON_LEFT);
               break;
             }
             case "onInterceptKeyboardAttach0900": {
@@ -280,12 +296,14 @@ struct WebViewMenuInputFieldType {
               } else {
                 this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/onInterceptKeyboardAttach_UNSPECIFIED.html")
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
+                await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000, 5);
               }
               let webRect = Utils.getComponentRect('WebViewMenuInputFieldTypeTestWebView');
               let X = Utils.getRectHorizontalCenterX(webRect)
               let Y = Utils.getRectVerticalCenterY(webRect)
-              await driver.mouseClick({ x: X, y: Y ,displayId:displayId}, MouseButton.MOUSE_BUTTON_LEFT);
+              const displayId: number =
+                await (await driver.findComponent(ON.id('WebViewMenuInputFieldTypeTestButton'))).getDisplayId();
+              await driver.mouseClick({ x: X, y: Y, displayId: displayId }, MouseButton.MOUSE_BUTTON_LEFT);
               break;
             }
             case "onInterceptKeyboardAttach1000": {
@@ -297,15 +315,18 @@ struct WebViewMenuInputFieldType {
               } else {
                 this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/onInterceptKeyboardAttach.html")
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5)
+                await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000, 5)
               }
               let webRect = Utils.getComponentRect('WebViewMenuInputFieldTypeTestWebView');
               let X = Utils.getRectHorizontalCenterX(webRect)
               let Y = Utils.getRectVerticalCenterY(webRect)
               this.isOnInterceptKeyboardAttachEnd = -1
-              await driver.mouseClick({ x: X, y: Y ,displayId:displayId}, MouseButton.MOUSE_BUTTON_LEFT);
+              const displayId: number =
+                await (await driver.findComponent(ON.id('WebViewMenuInputFieldTypeTestButton'))).getDisplayId();
+              await driver.mouseClick({ x: X, y: Y, displayId: displayId }, MouseButton.MOUSE_BUTTON_LEFT);
               console.log("==>after first click")
-              await Utils.waitForExist(()=>this.isOnInterceptKeyboardAttachEnd, this.str+' isOnInterceptKeyboardAttachEnd', 1, 1000);
+              await Utils.waitForExist(() => this.isOnInterceptKeyboardAttachEnd,
+                this.str + ' isOnInterceptKeyboardAttachEnd', 1, 1000);
               Utils.emitEvent(this.i, 180600)
               break;
             }
@@ -320,78 +341,78 @@ struct WebViewMenuInputFieldType {
           this.isPageEnd = 1;
         })
         .onInterceptKeyboardAttach((KeyboardCallbackInfo) => {
-        if(this.ResultKey == 10){
-          this.i=this.i + 1;
-          console.log('count'+this.i)
-        }
-        let option: WebKeyboardOptions = {
-          useSystemKeyboard: true,
-        };
-        if (!KeyboardCallbackInfo) {
+          if (this.ResultKey == 10) {
+            this.i = this.i + 1;
+            console.log('count' + this.i)
+          }
+          let option: WebKeyboardOptions = {
+            useSystemKeyboard: true,
+          };
+          if (!KeyboardCallbackInfo) {
+            this.isOnInterceptKeyboardAttachEnd = 1
+            return option;
+          }
+
+          this.webKeyboardController = KeyboardCallbackInfo.controller
+          let attributes: Record<string, string> = KeyboardCallbackInfo.attributes
+          // 遍历attributes
+          let attributeKeys = Object.keys(attributes)
+          for (let i = 0; i < attributeKeys.length; i++) {
+            console.log('WebCustomKeyboard key = ' + attributeKeys[i] + ', value = ' + attributes[attributeKeys[i]])
+          }
+
+          if (attributes) {
+            if (attributes['data-keyboard'] == 'customKeyboard') {
+              console.log('WebCustomKeyboard use custom keyboard')
+              option.useSystemKeyboard = false;
+              option.customKeyboard = () => {
+                this.customKeyboardBuilder()
+              }
+              if (this.ResultKey == 1) {
+                Utils.emitEvent(true, 180510)
+              }
+              this.isOnInterceptKeyboardAttachEnd = 1
+              return option;
+            }
+
+            if (attributes['keyboard-return'] != undefined) {
+              option.useSystemKeyboard = true;
+              let enterKeyType: number | undefined = this.inputAttributeMap.get(attributes['keyboard-return'])
+              console.log('keyboard-return' + enterKeyType)
+              if (enterKeyType != undefined) {
+                option.enterKeyType = enterKeyType
+              }
+              if (this.ResultKey == 3) {
+                Utils.emitEvent(enterKeyType + "", 180530)
+              }
+              if (this.ResultKey == 4) {
+                Utils.emitEvent(enterKeyType + "", 180540)
+              }
+              if (this.ResultKey == 5) {
+                Utils.emitEvent(enterKeyType + "", 180550)
+              }
+              if (this.ResultKey == 6) {
+                Utils.emitEvent(enterKeyType + "", 180560)
+              }
+              if (this.ResultKey == 7) {
+                Utils.emitEvent(enterKeyType + "", 180570)
+              }
+              if (this.ResultKey == 8) {
+                Utils.emitEvent(enterKeyType + "", 180580)
+              }
+              if (this.ResultKey == 9) {
+                Utils.emitEvent(enterKeyType + "", 180590)
+              }
+              this.isOnInterceptKeyboardAttachEnd = 1
+              return option;
+            }
+          }
+          if (this.ResultKey == 2) {
+            Utils.emitEvent(true, 180520)
+          }
           this.isOnInterceptKeyboardAttachEnd = 1
           return option;
-        }
-
-        this.webKeyboardController = KeyboardCallbackInfo.controller
-        let attributes: Record<string, string> = KeyboardCallbackInfo.attributes
-        // 遍历attributes
-        let attributeKeys = Object.keys(attributes)
-        for (let i = 0; i < attributeKeys.length; i++) {
-          console.log('WebCustomKeyboard key = ' + attributeKeys[i] + ', value = ' + attributes[attributeKeys[i]])
-        }
-
-        if (attributes) {
-          if (attributes['data-keyboard'] == 'customKeyboard') {
-            console.log('WebCustomKeyboard use custom keyboard')
-            option.useSystemKeyboard = false;
-            option.customKeyboard = () => {
-              this.customKeyboardBuilder()
-            }
-            if(this.ResultKey == 1){
-              Utils.emitEvent(true, 180510)
-            }
-            this.isOnInterceptKeyboardAttachEnd = 1
-            return option;
-          }
-
-          if (attributes['keyboard-return'] != undefined) {
-            option.useSystemKeyboard = true;
-            let enterKeyType: number | undefined = this.inputAttributeMap.get(attributes['keyboard-return'])
-            console.log('keyboard-return'+enterKeyType)
-            if (enterKeyType != undefined) {
-              option.enterKeyType = enterKeyType
-            }
-            if(this.ResultKey == 3){
-              Utils.emitEvent(enterKeyType+"", 180530)
-            }
-            if(this.ResultKey == 4){
-              Utils.emitEvent(enterKeyType+"", 180540)
-            }
-            if(this.ResultKey == 5){
-              Utils.emitEvent(enterKeyType+"", 180550)
-            }
-            if(this.ResultKey == 6){
-              Utils.emitEvent(enterKeyType+"", 180560)
-            }
-            if(this.ResultKey == 7){
-              Utils.emitEvent(enterKeyType+"", 180570)
-            }
-            if(this.ResultKey == 8){
-              Utils.emitEvent(enterKeyType+"", 180580)
-            }
-            if(this.ResultKey == 9){
-              Utils.emitEvent(enterKeyType+"", 180590)
-            }
-            this.isOnInterceptKeyboardAttachEnd = 1
-            return option;
-          }
-        }
-        if(this.ResultKey == 2){
-          Utils.emitEvent(true, 180520)
-        }
-        this.isOnInterceptKeyboardAttachEnd = 1
-        return option;
-      })
+        })
     }
   }
 }

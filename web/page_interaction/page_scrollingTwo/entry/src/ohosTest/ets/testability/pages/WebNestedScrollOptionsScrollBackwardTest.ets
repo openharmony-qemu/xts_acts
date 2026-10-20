@@ -79,10 +79,7 @@ struct WebNestedScrollOptionsTest {
           let webRect = Utils.getComponentRect('ColumnSize');
           let X = Utils.getRectHorizontalCenterX(webRect)
           let Y = Utils.getRectVerticalCenterY(webRect)
-          const displayId: number =
-            await (await driver.findComponent(ON.id('NestedScrollOptionsScrollBackwardTestButton'))).getDisplayId();
           switch (this.str) {
-
             case "testNestedScrollOptionsScrollBackward001": {
               try {
                 this.userAgentPC = this.controller.getUserAgent();
@@ -102,6 +99,9 @@ struct WebNestedScrollOptionsTest {
                 if ((this.userAgentPC).includes("PC")) {
                   await driver.swipe(X, Y - 60, X, Y + 60);
                 } else {
+                  const displayId: number =
+                    await (await driver.findComponent(
+                      ON.id('NestedScrollOptionsScrollBackwardTestButton'))).getDisplayId();
                   const pointStart: Point = {
                     x: X,
                     y: Y - 100,
@@ -140,6 +140,9 @@ struct WebNestedScrollOptionsTest {
                 if ((this.userAgentPC).includes("PC")) {
                   await driver.swipe(X, Y - 60, X, Y + 60);
                 } else {
+                  const displayId: number =
+                    await (await driver.findComponent(
+                      ON.id('NestedScrollOptionsScrollBackwardTestButton'))).getDisplayId();
                   const pointStart: Point = {
                     x: X,
                     y: Y - 100,
@@ -178,6 +181,9 @@ struct WebNestedScrollOptionsTest {
                 if ((this.userAgentPC).includes("PC")) {
                   await driver.swipe(X, Y - 60, X, Y + 60);
                 } else {
+                  const displayId: number =
+                    await (await driver.findComponent(
+                      ON.id('NestedScrollOptionsScrollBackwardTestButton'))).getDisplayId();
                   const pointStart: Point = {
                     x: X,
                     y: Y - 100,
@@ -217,6 +223,9 @@ struct WebNestedScrollOptionsTest {
                 if ((this.userAgentPC).includes("PC")) {
                   await driver.swipe(X, Y - 60, X, Y + 60);
                 } else {
+                  const displayId: number =
+                    await (await driver.findComponent(
+                      ON.id('NestedScrollOptionsScrollBackwardTestButton'))).getDisplayId();
                   const pointStart: Point = {
                     x: X,
                     y: Y - 100,
@@ -251,6 +260,9 @@ struct WebNestedScrollOptionsTest {
                 if ((this.userAgentPC).includes("PC")) {
                   await driver.swipe(X, Y - 60, X, Y + 60);
                 } else {
+                  const displayId: number =
+                    await (await driver.findComponent(
+                      ON.id('NestedScrollOptionsScrollBackwardTestButton'))).getDisplayId();
                   const pointStart: Point = {
                     x: X,
                     y: Y - 100,
@@ -290,6 +302,9 @@ struct WebNestedScrollOptionsTest {
                 if ((this.userAgentPC).includes("PC")) {
                   await driver.swipe(X, Y - 60, X, Y + 60);
                 } else {
+                  const displayId: number =
+                    await (await driver.findComponent(
+                      ON.id('NestedScrollOptionsScrollBackwardTestButton'))).getDisplayId();
                   const pointStart: Point = {
                     x: X,
                     y: Y - 100,
@@ -329,6 +344,9 @@ struct WebNestedScrollOptionsTest {
                 if ((this.userAgentPC).includes("PC")) {
                   await driver.swipe(X, Y - 60, X, Y + 60);
                 } else {
+                  const displayId: number =
+                    await (await driver.findComponent(
+                      ON.id('NestedScrollOptionsScrollBackwardTestButton'))).getDisplayId();
                   const pointStart: Point = {
                     x: X,
                     y: Y - 100,
@@ -368,6 +386,9 @@ struct WebNestedScrollOptionsTest {
                 if ((this.userAgentPC).includes("PC")) {
                   await driver.swipe(X, Y - 60, X, Y + 60);
                 } else {
+                  const displayId: number =
+                    await (await driver.findComponent(
+                      ON.id('NestedScrollOptionsScrollBackwardTestButton'))).getDisplayId();
                   const pointStart: Point = {
                     x: X,
                     y: Y - 100,
@@ -402,6 +423,9 @@ struct WebNestedScrollOptionsTest {
                 if ((this.userAgentPC).includes("PC")) {
                   await driver.swipe(X, Y - 60, X, Y + 60);
                 } else {
+                  const displayId: number =
+                    await (await driver.findComponent(
+                      ON.id('NestedScrollOptionsScrollBackwardTestButton'))).getDisplayId();
                   const pointStart: Point = {
                     x: X,
                     y: Y - 100,
@@ -441,6 +465,9 @@ struct WebNestedScrollOptionsTest {
                 if ((this.userAgentPC).includes("PC")) {
                   await driver.swipe(X, Y - 60, X, Y + 60);
                 } else {
+                  const displayId: number =
+                    await (await driver.findComponent(
+                      ON.id('NestedScrollOptionsScrollBackwardTestButton'))).getDisplayId();
                   const pointStart: Point = {
                     x: X,
                     y: Y - 100,
@@ -480,6 +507,9 @@ struct WebNestedScrollOptionsTest {
                 if ((this.userAgentPC).includes("PC")) {
                   await driver.swipe(X, Y - 60, X, Y + 60);
                 } else {
+                  const displayId: number =
+                    await (await driver.findComponent(
+                      ON.id('NestedScrollOptionsScrollBackwardTestButton'))).getDisplayId();
                   const pointStart: Point = {
                     x: X,
                     y: Y - 100,
@@ -519,6 +549,9 @@ struct WebNestedScrollOptionsTest {
                 if ((this.userAgentPC).includes("PC")) {
                   await driver.swipe(X, Y - 60, X, Y + 60);
                 } else {
+                  const displayId: number =
+                    await (await driver.findComponent(
+                      ON.id('NestedScrollOptionsScrollBackwardTestButton'))).getDisplayId();
                   const pointStart: Point = {
                     x: X,
                     y: Y - 100,
@@ -553,6 +586,9 @@ struct WebNestedScrollOptionsTest {
                 if ((this.userAgentPC).includes("PC")) {
                   await driver.swipe(X, Y - 60, X, Y + 60);
                 } else {
+                  const displayId: number =
+                    await (await driver.findComponent(
+                      ON.id('NestedScrollOptionsScrollBackwardTestButton'))).getDisplayId();
                   const pointStart: Point = {
                     x: X,
                     y: Y - 100,
@@ -592,6 +628,9 @@ struct WebNestedScrollOptionsTest {
                 if ((this.userAgentPC).includes("PC")) {
                   await driver.swipe(X, Y - 60, X, Y + 60);
                 } else {
+                  const displayId: number =
+                    await (await driver.findComponent(
+                      ON.id('NestedScrollOptionsScrollBackwardTestButton'))).getDisplayId();
                   const pointStart: Point = {
                     x: X,
                     y: Y - 100,
@@ -631,6 +670,9 @@ struct WebNestedScrollOptionsTest {
                 if ((this.userAgentPC).includes("PC")) {
                   await driver.swipe(X, Y - 60, X, Y + 60);
                 } else {
+                  const displayId: number =
+                    await (await driver.findComponent(
+                      ON.id('NestedScrollOptionsScrollBackwardTestButton'))).getDisplayId();
                   const pointStart: Point = {
                     x: X,
                     y: Y - 100,
@@ -670,6 +712,9 @@ struct WebNestedScrollOptionsTest {
                 if ((this.userAgentPC).includes("PC")) {
                   await driver.swipe(X, Y - 60, X, Y + 60);
                 } else {
+                  const displayId: number =
+                    await (await driver.findComponent(
+                      ON.id('NestedScrollOptionsScrollBackwardTestButton'))).getDisplayId();
                   const pointStart: Point = {
                     x: X,
                     y: Y - 100,

@@ -69,8 +69,6 @@ struct WebNestedScrollOptionsScrollForwardHorizontalTest {
           let webRect = Utils.getComponentRect('ForwardRowSize');
           let X = Utils.getRectHorizontalCenterX(webRect)
           let Y = Utils.getRectVerticalCenterY(webRect)
-          const displayId: number = await (await driver.findComponent(
-            ON.id('NestedScrollOptionsScrollForwardHorizontalTestButton'))).getDisplayId();
           switch (this.str) {
             case "testNestedScrollOptionsScrollForwardHorizontal001": {
               try {
@@ -84,6 +82,8 @@ struct WebNestedScrollOptionsScrollForwardHorizontalTest {
                 await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
+                const displayId: number = await (await driver.findComponent(
+                  ON.id('NestedScrollOptionsScrollForwardHorizontalTestButton'))).getDisplayId();
                 const pointStart: Point = {
                   x: X + 100, y: Y, displayId: displayId
                 }
@@ -110,6 +110,8 @@ struct WebNestedScrollOptionsScrollForwardHorizontalTest {
                 await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
+                const displayId: number = await (await driver.findComponent(
+                  ON.id('NestedScrollOptionsScrollForwardHorizontalTestButton'))).getDisplayId();
                 const pointStart: Point = {
                   x: X + 100, y: Y, displayId: displayId
                 }
@@ -136,6 +138,8 @@ struct WebNestedScrollOptionsScrollForwardHorizontalTest {
                 this.parentScrollTime = 0
                 this.scroller.scrollBy(-40, 0)
                 await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
+                const displayId: number = await (await driver.findComponent(
+                  ON.id('NestedScrollOptionsScrollForwardHorizontalTestButton'))).getDisplayId();
                 const pointStart: Point = {
                   x: X + 100, y: Y, displayId: displayId
                 }
@@ -160,6 +164,8 @@ struct WebNestedScrollOptionsScrollForwardHorizontalTest {
                 await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
+                const displayId: number = await (await driver.findComponent(
+                  ON.id('NestedScrollOptionsScrollForwardHorizontalTestButton'))).getDisplayId();
                 const pointStart: Point = {
                   x: X + 100, y: Y, displayId: displayId
                 }
@@ -187,6 +193,8 @@ struct WebNestedScrollOptionsScrollForwardHorizontalTest {
                 await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
+                const displayId: number = await (await driver.findComponent(
+                  ON.id('NestedScrollOptionsScrollForwardHorizontalTestButton'))).getDisplayId();
                 const pointStart: Point = {
                   x: X + 100, y: Y, displayId: displayId
                 }
@@ -215,6 +223,8 @@ struct WebNestedScrollOptionsScrollForwardHorizontalTest {
                 await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
+                const displayId: number = await (await driver.findComponent(
+                  ON.id('NestedScrollOptionsScrollForwardHorizontalTestButton'))).getDisplayId();
                 const pointStart: Point = {
                   x: X + 100, y: Y, displayId: displayId
                 }
@@ -243,6 +253,8 @@ struct WebNestedScrollOptionsScrollForwardHorizontalTest {
                 this.scroller.scrollBy(-40, 0)
                 await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
                 await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
+                const displayId: number = await (await driver.findComponent(
+                  ON.id('NestedScrollOptionsScrollForwardHorizontalTestButton'))).getDisplayId();
                 const pointStart: Point = {
                   x: X + 100, y: Y, displayId: displayId
                 }
@@ -268,6 +280,8 @@ struct WebNestedScrollOptionsScrollForwardHorizontalTest {
                 await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
+                const displayId: number = await (await driver.findComponent(
+                  ON.id('NestedScrollOptionsScrollForwardHorizontalTestButton'))).getDisplayId();
                 const pointStart: Point = {
                   x: X + 100, y: Y, displayId: displayId
                 }
@@ -297,6 +311,8 @@ struct WebNestedScrollOptionsScrollForwardHorizontalTest {
                 await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
+                const displayId: number = await (await driver.findComponent(
+                  ON.id('NestedScrollOptionsScrollForwardHorizontalTestButton'))).getDisplayId();
                 const pointStart: Point = {
                   x: X + 100, y: Y, displayId: displayId
                 }
@@ -325,6 +341,8 @@ struct WebNestedScrollOptionsScrollForwardHorizontalTest {
                 await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
+                const displayId: number = await (await driver.findComponent(
+                  ON.id('NestedScrollOptionsScrollForwardHorizontalTestButton'))).getDisplayId();
                 const pointStart: Point = {
                   x: X + 100, y: Y, displayId: displayId
                 }
@@ -353,6 +371,8 @@ struct WebNestedScrollOptionsScrollForwardHorizontalTest {
                 this.scroller.scrollBy(-40, 0)
                 await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
+                const displayId: number = await (await driver.findComponent(
+                  ON.id('NestedScrollOptionsScrollForwardHorizontalTestButton'))).getDisplayId();
                 const pointStart: Point = {
                   x: X + 100, y: Y, displayId: displayId
                 }
@@ -378,6 +398,8 @@ struct WebNestedScrollOptionsScrollForwardHorizontalTest {
                 await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
+                const displayId: number = await (await driver.findComponent(
+                  ON.id('NestedScrollOptionsScrollForwardHorizontalTestButton'))).getDisplayId();
                 const pointStart: Point = {
                   x: X + 100, y: Y, displayId: displayId
                 }
@@ -406,6 +428,8 @@ struct WebNestedScrollOptionsScrollForwardHorizontalTest {
                 await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
+                const displayId: number = await (await driver.findComponent(
+                  ON.id('NestedScrollOptionsScrollForwardHorizontalTestButton'))).getDisplayId();
                 const pointStart: Point = {
                   x: X + 100, y: Y, displayId: displayId
                 }
@@ -434,6 +458,8 @@ struct WebNestedScrollOptionsScrollForwardHorizontalTest {
                 await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
+                const displayId: number = await (await driver.findComponent(
+                  ON.id('NestedScrollOptionsScrollForwardHorizontalTestButton'))).getDisplayId();
                 const pointStart: Point = {
                   x: X + 100, y: Y, displayId: displayId
                 }
@@ -462,6 +488,8 @@ struct WebNestedScrollOptionsScrollForwardHorizontalTest {
                 this.scroller.scrollBy(-40, 0)
                 await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
                 await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
+                const displayId: number = await (await driver.findComponent(
+                  ON.id('NestedScrollOptionsScrollForwardHorizontalTestButton'))).getDisplayId();
                 const pointStart: Point = {
                   x: X + 100, y: Y, displayId: displayId
                 }
@@ -487,6 +515,8 @@ struct WebNestedScrollOptionsScrollForwardHorizontalTest {
                 await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
+                const displayId: number = await (await driver.findComponent(
+                  ON.id('NestedScrollOptionsScrollForwardHorizontalTestButton'))).getDisplayId();
                 const pointStart: Point = {
                   x: X + 100, y: Y, displayId: displayId
                 }

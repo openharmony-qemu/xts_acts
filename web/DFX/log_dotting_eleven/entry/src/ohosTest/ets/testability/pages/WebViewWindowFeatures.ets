@@ -100,8 +100,6 @@ struct WebViewWindowFeatures {
           await Utils.waitForExist(() => this.isReceive, this.str + ' isReceive', 1, 1000);
           await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
           console.info("key==>" + this.str)
-          const displayId: number =
-            await (await driver.findComponent(ON.id('WebViewWindowFeaturesButton'))).getDisplayId();
           const isCar: boolean = deviceInfo.deviceType === "car";
           switch (this.str) {
             case 'emitWebViewWindowFeatures001': {
@@ -121,6 +119,8 @@ struct WebViewWindowFeatures {
                     downX = Math.round(globalThis.winLeft + webRect.left + 50);
                   }
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
+                  const displayId: number =
+                    await (await driver.findComponent(ON.id('WebViewWindowFeaturesButton'))).getDisplayId();
                   const pointClick: Point = {
                     x: downX,
                     y: downY,
@@ -157,6 +157,8 @@ struct WebViewWindowFeatures {
                     downX = Math.round(globalThis.winLeft + webRect.left + 50);
                   }
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
+                  const displayId: number =
+                    await (await driver.findComponent(ON.id('WebViewWindowFeaturesButton'))).getDisplayId();
                   const pointClick: Point = {
                     x: downX,
                     y: downY,
@@ -192,6 +194,8 @@ struct WebViewWindowFeatures {
                     downX = Math.round(globalThis.winLeft + webRect.left + 50);
                   }
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
+                  const displayId: number =
+                    await (await driver.findComponent(ON.id('WebViewWindowFeaturesButton'))).getDisplayId();
                   const pointClick: Point = {
                     x: downX,
                     y: downY,
@@ -227,6 +231,8 @@ struct WebViewWindowFeatures {
                     downX = Math.round(globalThis.winLeft + webRect.left + 50);
                   }
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
+                  const displayId: number =
+                    await (await driver.findComponent(ON.id('WebViewWindowFeaturesButton'))).getDisplayId();
                   const pointClick: Point = {
                     x: downX,
                     y: downY,
@@ -262,6 +268,8 @@ struct WebViewWindowFeatures {
                     downX = Math.round(globalThis.winLeft + webRect.left + 50);
                   }
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
+                  const displayId: number =
+                    await (await driver.findComponent(ON.id('WebViewWindowFeaturesButton'))).getDisplayId();
                   const pointClick: Point = {
                     x: downX,
                     y: downY,
@@ -298,6 +306,8 @@ struct WebViewWindowFeatures {
                     downX = Math.round(globalThis.winLeft + webRect.left + 50);
                   }
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
+                  const displayId: number =
+                    await (await driver.findComponent(ON.id('WebViewWindowFeaturesButton'))).getDisplayId();
                   const pointClick: Point = {
                     x: downX,
                     y: downY,
@@ -334,6 +344,8 @@ struct WebViewWindowFeatures {
                     downX = Math.round(globalThis.winLeft + webRect.left + 50);
                   }
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
+                  const displayId: number =
+                    await (await driver.findComponent(ON.id('WebViewWindowFeaturesButton'))).getDisplayId();
                   const pointClick: Point = {
                     x: downX,
                     y: downY,
@@ -370,6 +382,8 @@ struct WebViewWindowFeatures {
                     downX = Math.round(globalThis.winLeft + webRect.left + 50);
                   }
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
+                  const displayId: number =
+                    await (await driver.findComponent(ON.id('WebViewWindowFeaturesButton'))).getDisplayId();
                   const pointClick: Point = {
                     x: downX,
                     y: downY,

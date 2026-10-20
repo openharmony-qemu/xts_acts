@@ -93,8 +93,6 @@ struct webViewScrollable {
           console.info("key==>" + this.str)
           await Utils.waitForExist(() => this.isReceive, this.str + ' isReceive', 1, 1000);
           await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000, 5);
-          let driver: Driver = Driver.create();
-          const displayId: number = await (await driver.findComponent(ON.id('WebBackToTopButton'))).getDisplayId();
           switch (this.str) {
             case "emitBackToTop001": {
               try {
@@ -104,6 +102,8 @@ struct webViewScrollable {
                 let downY = Math.round(globalThis.winTop + webRect.top + 5);
                 this.isPageEnd = -1;
                 this.controller.pageDown(true);
+                const displayId: number =
+                  await (await driver.findComponent(ON.id('WebBackToTopButton'))).getDisplayId();
                 await driver.mouseScroll({ x: downX, y: downY, displayId: displayId }, true, 30, 2072)
                 await Utils.waitForExist(() => this.isPageEnd, this.str, 1);
                 setTimeout(() => {
@@ -128,6 +128,8 @@ struct webViewScrollable {
                 let downY = Math.round(globalThis.winTop + webRect.top + 5);
                 this.isPageEnd = -1;
                 this.controller.pageDown(true);
+                const displayId: number =
+                  await (await driver.findComponent(ON.id('WebBackToTopButton'))).getDisplayId();
                 await driver.mouseScroll({ x: downX, y: downY, displayId: displayId }, false, 30, 2072)
                 await Utils.waitForExist(() => this.isPageEnd, this.str, 1);
                 setTimeout(() => {

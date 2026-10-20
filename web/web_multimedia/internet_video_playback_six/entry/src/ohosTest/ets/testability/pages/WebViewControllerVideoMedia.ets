@@ -64,8 +64,6 @@ struct WebViewControllerVideoMedia {
           console.info('key==>' + this.str)
           await waitForExist(() => this.isPageEnd, this.str, 0);
           await waitForExist(() => this.isReceive, this.str, 0);
-          const displayId: number =
-            await (await driver.findComponent(ON.id('WebViewControllerVideoMedia'))).getDisplayId();
           this.isReceive = -1;
           switch (this.str) {
             case "GetMediaPlaybackState0100": {
@@ -78,7 +76,8 @@ struct WebViewControllerVideoMedia {
                   this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile("video1.html"))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
-
+                  const displayId: number =
+                    await (await driver.findComponent(ON.id('WebViewControllerVideoMedia'))).getDisplayId();
                   let size = await driver.getDisplaySize(displayId);
                   console.log("size x:" + size.x)
                   console.log("size y:" + size.y)
@@ -110,7 +109,8 @@ struct WebViewControllerVideoMedia {
                   this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile("video1.html"))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
-
+                  const displayId: number =
+                    await (await driver.findComponent(ON.id('WebViewControllerVideoMedia'))).getDisplayId();
                   let size = await driver.getDisplaySize(displayId);
                   console.log("size x:" + size.x)
                   console.log("size y:" + size.y)
@@ -144,7 +144,8 @@ struct WebViewControllerVideoMedia {
                   this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile("video1.html"))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
-
+                  const displayId: number =
+                    await (await driver.findComponent(ON.id('WebViewControllerVideoMedia'))).getDisplayId();
                   let size = await driver.getDisplaySize(displayId);
                   console.log("size x:" + size.x)
                   console.log("size y:" + size.y)
@@ -180,7 +181,8 @@ struct WebViewControllerVideoMedia {
                   this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile("video1.html"))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
-
+                  const displayId: number =
+                    await (await driver.findComponent(ON.id('WebViewControllerVideoMedia'))).getDisplayId();
                   let size = await driver.getDisplaySize(displayId);
                   console.log("size x:" + size.x)
                   console.log("size y:" + size.y)
@@ -216,7 +218,8 @@ struct WebViewControllerVideoMedia {
                   this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile("video1.html"))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
-
+                  const displayId: number =
+                    await (await driver.findComponent(ON.id('WebViewControllerVideoMedia'))).getDisplayId();
                   let size = await driver.getDisplaySize(displayId);
                   console.log("size x:" + size.x)
                   console.log("size y:" + size.y)
@@ -255,7 +258,8 @@ struct WebViewControllerVideoMedia {
                     this.isPageEnd = -1;
                     this.controller.loadUrl($rawfile("video1.html"))
                     await waitForExist(() => this.isPageEnd, this.str, 0);
-
+                    const displayId: number =
+                      await (await driver.findComponent(ON.id('WebViewControllerVideoMedia'))).getDisplayId();
                     let size = await driver.getDisplaySize(displayId);
                     console.log("size x:" + size.x)
                     console.log("size y:" + size.y)
@@ -305,7 +309,8 @@ struct WebViewControllerVideoMedia {
                   this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile("video2.html"))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
-
+                  const displayId: number =
+                    await (await driver.findComponent(ON.id('WebViewControllerVideoMedia'))).getDisplayId();
                   let size = await driver.getDisplaySize(displayId);
                   console.log("size x:" + size.x)
                   console.log("size y:" + size.y)
@@ -337,7 +342,8 @@ struct WebViewControllerVideoMedia {
                   this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile("video2.html"))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
-
+                  const displayId: number =
+                    await (await driver.findComponent(ON.id('WebViewControllerVideoMedia'))).getDisplayId();
                   let size = await driver.getDisplaySize(displayId);
                   console.log("size x:" + size.x)
                   console.log("size y:" + size.y)
@@ -371,7 +377,8 @@ struct WebViewControllerVideoMedia {
                   this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile("video2.html"))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
-
+                  const displayId: number =
+                    await (await driver.findComponent(ON.id('WebViewControllerVideoMedia'))).getDisplayId();
                   let size = await driver.getDisplaySize(displayId);
                   console.log("size x:" + size.x)
                   console.log("size y:" + size.y)
@@ -406,7 +413,8 @@ struct WebViewControllerVideoMedia {
                   this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile("video2.html"))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
-
+                  const displayId: number =
+                    await (await driver.findComponent(ON.id('WebViewControllerVideoMedia'))).getDisplayId();
                   let size = await driver.getDisplaySize(displayId);
                   console.log("size x:" + size.x)
                   console.log("size y:" + size.y)
@@ -443,7 +451,8 @@ struct WebViewControllerVideoMedia {
                   this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile("video2.html"))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
-
+                  const displayId: number =
+                    await (await driver.findComponent(ON.id('WebViewControllerVideoMedia'))).getDisplayId();
                   let size = await driver.getDisplaySize(displayId);
                   console.log("size x:" + size.x)
                   console.log("size y:" + size.y)
@@ -481,7 +490,8 @@ struct WebViewControllerVideoMedia {
                   this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile("video2.html"))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
-
+                  const displayId: number =
+                    await (await driver.findComponent(ON.id('WebViewControllerVideoMedia'))).getDisplayId();
                   let size = await driver.getDisplaySize(displayId);
                   console.log("size x:" + size.x)
                   console.log("size y:" + size.y)

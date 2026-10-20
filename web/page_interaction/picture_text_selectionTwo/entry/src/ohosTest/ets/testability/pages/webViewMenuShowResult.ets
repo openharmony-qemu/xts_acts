@@ -67,8 +67,6 @@ struct WebViewMenuShowResult {
           console.info("key==>" + this.str)
           await Utils.waitForExist(() => this.isReceive, this.str + ' isReceive', 1, 1000);
           await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
-          const displayId: number =
-            await (await driver.findComponent(ON.id('WebViewMenuShowResultTestButton'))).getDisplayId();
           switch (this.str) {
             case "emitCloseContextMenu": {
               this.menuShowState = 'CloseContextMenu'
@@ -76,6 +74,8 @@ struct WebViewMenuShowResult {
               let X = Utils.getRectHorizontalCenterX(webRect)
               let Y = Utils.getRectVerticalCenterY(webRect)
               await Utils.sleep(2000);
+              const displayId: number =
+                await (await driver.findComponent(ON.id('WebViewMenuShowResultTestButton'))).getDisplayId();
               await driver.mouseClick({ x: X, y: Y - 80, displayId: displayId }, MouseButton.MOUSE_BUTTON_RIGHT);
               setTimeout(async () => {
                 await driver.mouseClick({ x: X, y: Y - 80, displayId: displayId }, MouseButton.MOUSE_BUTTON_RIGHT);
@@ -98,6 +98,8 @@ struct WebViewMenuShowResult {
               let webRect = Utils.getComponentRect('WebViewMenuShowResultTestWebView');
               let X = Utils.getRectHorizontalCenterX(webRect)
               let Y = Utils.getRectVerticalCenterY(webRect)
+              const displayId: number =
+                await (await driver.findComponent(ON.id('WebViewMenuShowResultTestButton'))).getDisplayId();
               if ((this.userAgentPC).includes("PC")) {
                 //点击第二个input框copy聚焦
                 await driver.mouseClick({ x: X, y: Y, displayId: displayId }, MouseButton.MOUSE_BUTTON_RIGHT);
@@ -169,6 +171,8 @@ struct WebViewMenuShowResult {
               let webRect = Utils.getComponentRect('WebViewMenuShowResultTestWebView');
               let X = Utils.getRectHorizontalCenterX(webRect)
               let Y = Utils.getRectVerticalCenterY(webRect)
+              const displayId: number =
+                await (await driver.findComponent(ON.id('WebViewMenuShowResultTestButton'))).getDisplayId();
               if ((this.userAgentPC).includes("PC")) {
                 await driver.mouseClick({ x: X, y: Y, displayId: displayId }, MouseButton.MOUSE_BUTTON_RIGHT);
               } else {
@@ -238,6 +242,8 @@ struct WebViewMenuShowResult {
               let webRect = Utils.getComponentRect('WebViewMenuShowResultTestWebView');
               let X = Utils.getRectHorizontalCenterX(webRect)
               let Y = Utils.getRectVerticalCenterY(webRect)
+              const displayId: number =
+                await (await driver.findComponent(ON.id('WebViewMenuShowResultTestButton'))).getDisplayId();
               if ((this.userAgentPC).includes("PC")) {
                 await driver.mouseClick({ x: X, y: Y, displayId: displayId }, MouseButton.MOUSE_BUTTON_RIGHT);
               } else {

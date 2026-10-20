@@ -147,8 +147,6 @@ struct WebComponent {
             await waitForExist(() => this.isReceive, this.str, 0);
             await waitForExist(() => this.isPageEnd, this.str, 0);
             this.isReceive = -1;
-            const displayId: number =
-              await (await driver.findComponent(ON.id('webviewUndoingRedoButton'))).getDisplayId();
             console.info('start case execute')
             switch (this.str) {
               case "emitWebviewUndoingRedo": {
@@ -158,6 +156,8 @@ struct WebComponent {
                     Utils.emitEvent(true, 130710)
                   } else {
                     console.log('pbbbnetment333');
+                    const displayId: number =
+                      await (await driver.findComponent(ON.id('webviewUndoingRedoButton'))).getDisplayId();
                     let webRect = Utils.getComponentRect('webviewundoingredokey');
                     let RedoButton = await waitForComponent("webviewundoingredokey", 10000);
                     await RedoButton.click();
@@ -198,6 +198,8 @@ struct WebComponent {
                     let webRect = Utils.getComponentRect('webviewundoingredokey');
                     let RedoButton = await waitForComponent("webviewundoingredokey", 10000);
                     await RedoButton.click();
+                    const displayId: number =
+                      await (await driver.findComponent(ON.id('webviewUndoingRedoButton'))).getDisplayId();
                     await driver.triggerKey(2001, displayId);
                     let softKeyBoard = await driver.waitForComponent(ON.type('Canvas'), 10000);
                     if (softKeyBoard != null) {
