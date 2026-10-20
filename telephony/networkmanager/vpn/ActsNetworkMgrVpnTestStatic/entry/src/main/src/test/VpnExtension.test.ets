@@ -17,13 +17,12 @@ import { describe, it, expect, TestType, Size, Level, beforeAll } from "@ohos/hy
 import { BusinessError } from '@ohos.base';
 import vpnExtension from '@ohos.net.vpnExtension';
 import VpnExtensionAbility from '@ohos.app.ability.VpnExtensionAbility';
-import type VpnExtensionContext from 'application/VpnExtensionContext';
 import hilog from '@ohos.hilog';
 
 let domain: int = 0x0000;
 let tag: string = 'vpnTestTag';
 
-type OptionalVpnExtensionContext = VpnExtensionContext | undefined;
+type OptionalVpnExtensionContext = vpnExtension.VpnExtensionContext | undefined;
 
 function getAbsentVpnExtensionContext(): OptionalVpnExtensionContext {
   return undefined;
