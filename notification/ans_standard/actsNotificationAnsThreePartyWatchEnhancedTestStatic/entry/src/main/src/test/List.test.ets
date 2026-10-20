@@ -1,6 +1,6 @@
 'use static';
 
-import actsNotificationAnsThreePartyWatchEnhancedTest from './actsNotificationAnsThreePartyWatchEnhancedTest';
+import actsNotificationAnsThreePartyWatchEnhancedTest from './ActsNotificationAnsThreePartyWatchEnhancedTest.test';
 export default function testsuite() {
   actsNotificationAnsThreePartyWatchEnhancedTest();
 }
