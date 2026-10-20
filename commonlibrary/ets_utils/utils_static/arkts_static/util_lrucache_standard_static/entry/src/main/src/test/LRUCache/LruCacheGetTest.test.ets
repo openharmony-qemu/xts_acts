@@ -1586,5 +1586,699 @@ export default function lruCacheGetTest(): void {
       }
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE_GET_0280
+     * @tc.name testLruCacheGet028
+     * @tc.desc Merged batch (5 tests): [1] Verify get with null key throws BusinessError after numeric key 5 stored in null union key cache (null not queryable) | [2] Verify stored single character string key k q...
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLruCacheGet028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify get with null key throws BusinessError after numeric key 5 stored in null union key cache (null not queryable) ---
+      {
+        let cache: util.LRUCache<string | int | null, int> = new util.LRUCache<string | int | null, int>();
+        cache.put(5, 56);
+        try {
+          cache.get(null);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('BusinessError');
+          expect(e.code).assertEqual(401);
+        }
+      }
+
+      // --- [2] Verify stored single character string key k queried by string k returns the stored value ---
+      {
+        let cache: util.LRUCache<string | string, int> = new util.LRUCache<string | string, int>();
+        cache.put('k', 7);
+        expect(cache.get('k')).assertEqual(7);
+      }
+
+      // --- [3] Verify Date key stored in Date string union queried by string returns undefined ---
+      {
+        let d: Date = new Date(0);
+        let cache: util.LRUCache<Date | string, int> = new util.LRUCache<Date | string, int>();
+        cache.put(d, 30);
+        expect(cache.get('x')).assertEqual(undefined);
+      }
+
+      // --- [4] Verify string key stored in Date string union queried by Date returns undefined ---
+      {
+        let cache: util.LRUCache<Date | string, int> = new util.LRUCache<Date | string, int>();
+        cache.put('x', 31);
+        let q: Date = new Date(0);
+        expect(cache.get(q)).assertEqual(undefined);
+      }
+
+      // --- [5] Verify int array key stored in array string union queried by string returns undefined ---
+      {
+        let arr: int[] = [1];
+        let cache: util.LRUCache<int[] | string, int> = new util.LRUCache<int[] | string, int>();
+        cache.put(arr, 32);
+        expect(cache.get('x')).assertEqual(undefined);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE_GET_0290
+     * @tc.name testLruCacheGet029
+     * @tc.desc Merged batch (5 tests): [1] Verify stored double key 1.5 queried by NaN returns undefined | [2] Verify stored NaN key queried by double key 1.5 returns undefined | [3] Verify stored double key 0.1 ...
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLruCacheGet029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify stored double key 1.5 queried by NaN returns undefined ---
+      {
+        let cache: util.LRUCache<double, int> = new util.LRUCache<double, int>();
+        cache.put(1.5, 15);
+        expect(cache.get(Double.NaN)).assertEqual(undefined);
+      }
+
+      // --- [2] Verify stored NaN key queried by double key 1.5 returns undefined ---
+      {
+        let cache: util.LRUCache<double, int> = new util.LRUCache<double, int>();
+        cache.put(Double.NaN, 16);
+        expect(cache.get(1.5)).assertEqual(undefined);
+      }
+
+      // --- [3] Verify stored double key 0.1 queried by numerically same 0.10000000000000001 hits ---
+      {
+        let cache: util.LRUCache<double, int> = new util.LRUCache<double, int>();
+        let stored: double = 0.1;
+        cache.put(stored, 17);
+        expect(cache.get(0.1)).assertEqual(17);
+        expect(cache.get(0.10000000000000001)).assertEqual(17);
+      }
+
+      // --- [4] Verify stored long key 9007199254740993 just above the double safe integer limit queried by neighbor 9007199254740992 returns undefined ---
+      {
+        let cache: util.LRUCache<long, int> = new util.LRUCache<long, int>();
+        let near: long = 9007199254740993;
+        cache.put(near, 18);
+        expect(cache.get(9007199254740992)).assertEqual(undefined);
+      }
+
+      // --- [5] Verify stored long key 9007199254740993 just above the double safe integer limit queried by the same key hits ---
+      {
+        let cache: util.LRUCache<long, int> = new util.LRUCache<long, int>();
+        let near: long = 9007199254740993;
+        cache.put(near, 19);
+        expect(cache.get(9007199254740993)).assertEqual(19);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE_GET_0300
+     * @tc.name testLruCacheGet030
+     * @tc.desc Merged batch (5 tests): [1] Verify get on former key in cache emptied by clear returns undefined | [2] Verify single element cache of capacity 1 get unique key hits | [3] Verify single element cach...
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLruCacheGet030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify get on former key in cache emptied by clear returns undefined ---
+      {
+        let cache: util.LRUCache<int, int> = new util.LRUCache<int, int>();
+        cache.put(9, 99);
+        cache.clear();
+        expect(cache.get(9)).assertEqual(undefined);
+      }
+
+      // --- [2] Verify single element cache of capacity 1 get unique key hits ---
+      {
+        let cache: util.LRUCache<int, int> = new util.LRUCache<int, int>(1);
+        cache.put(1, 10);
+        expect(cache.get(1)).assertEqual(10);
+      }
+
+      // --- [3] Verify single element cache of capacity 1 get other key returns undefined ---
+      {
+        let cache: util.LRUCache<int, int> = new util.LRUCache<int, int>(1);
+        cache.put(1, 10);
+        expect(cache.get(2)).assertEqual(undefined);
+      }
+
+      // --- [4] Verify multiple keys mapping to same value get middle key returns shared value ---
+      {
+        let cache: util.LRUCache<string, int> = new util.LRUCache<string, int>();
+        cache.put('a', 5);
+        cache.put('b', 5);
+        cache.put('c', 5);
+        expect(cache.get('b')).assertEqual(5);
+      }
+
+      // --- [5] Verify get after multiple put overwrites on same key returns last written value ---
+      {
+        let cache: util.LRUCache<int, int> = new util.LRUCache<int, int>();
+        cache.put(1, 10);
+        cache.put(1, 11);
+        cache.put(1, 12);
+        expect(cache.get(1)).assertEqual(12);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE_GET_0310
+     * @tc.name testLruCacheGet031
+     * @tc.desc Merged batch (5 tests): [1] Verify repeated consecutive get hits on same key return stable value | [2] Verify multiple keys sharing one reference value get returns shared instance field | [3] Verif...
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLruCacheGet031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify repeated consecutive get hits on same key return stable value ---
+      {
+        let cache: util.LRUCache<string, int> = new util.LRUCache<string, int>();
+        cache.put('r', 42);
+        cache.get('r');
+        cache.get('r');
+        cache.get('r');
+        expect(cache.get('r')).assertEqual(42);
+      }
+
+      // --- [2] Verify multiple keys sharing one reference value get returns shared instance field ---
+      {
+        let shared: TagObj = { tag: 's' };
+        let cache: util.LRUCache<string, TagObj> = new util.LRUCache<string, TagObj>();
+        cache.put('x', shared);
+        cache.put('y', shared);
+        let got: TagObj = cache.get('y')!;
+        expect(got.tag).assertEqual('s');
+      }
+
+      // --- [3] Verify evicted key after re put get restores hit with new value ---
+      {
+        let cache: util.LRUCache<int, int> = new util.LRUCache<int, int>(2);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        cache.put(3, 30);
+        expect(cache.get(1)).assertEqual(undefined);
+        cache.put(1, 40);
+        expect(cache.get(1)).assertEqual(40);
+      }
+
+      // --- [4] Verify Uint8Array reference key get hits returning associated value ---
+      {
+        let ta: Uint8Array = new Uint8Array([1, 2, 3]);
+        let cache: util.LRUCache<Uint8Array, int> = new util.LRUCache<Uint8Array, int>();
+        cache.put(ta, 21);
+        expect(cache.get(ta)).assertEqual(21);
+      }
+
+      // --- [5] Verify get resolves a WeakMap reference key to its stored value ---
+      {
+        let wm: WeakMap<object, int> = new WeakMap<object, int>();
+        let cache: util.LRUCache<WeakMap<object, int>, int> = new util.LRUCache<WeakMap<object, int>, int>();
+        let stored: int = 22;
+        cache.put(wm, stored);
+        let value: int | undefined = cache.get(wm);
+        expect(value).assertEqual(stored);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE_GET_0320
+     * @tc.name testLruCacheGet032
+     * @tc.desc Merged batch (5 tests): [1] Verify get resolves a Record reference key to its stored value | [2] Verify two content same different reference Map keys treated distinct get miss | [3] Verify two cont...
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLruCacheGet032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify get resolves a Record reference key to its stored value ---
+      {
+        let rec: Record<string, int> = { 'a': 1 };
+        let cache: util.LRUCache<Record<string, int>, int> = new util.LRUCache<Record<string, int>, int>();
+        let stored: int = 24;
+        cache.put(rec, stored);
+        let value: int | undefined = cache.get(rec);
+        expect(value).assertEqual(stored);
+      }
+
+      // --- [2] Verify two content same different reference Map keys treated distinct get miss ---
+      {
+        let firstMap: Map<string, int> = new Map<string, int>();
+        firstMap.set('a', 1);
+        let secondMap: Map<string, int> = new Map<string, int>();
+        secondMap.set('a', 1);
+        let cache: util.LRUCache<Map<string, int>, int> = new util.LRUCache<Map<string, int>, int>();
+        cache.put(firstMap, 25);
+        expect(cache.get(secondMap)).assertEqual(undefined);
+      }
+
+      // --- [3] Verify two content same different reference Set keys treated distinct get miss ---
+      {
+        let firstSet: Set<int> = new Set<int>();
+        firstSet.add(1);
+        let secondSet: Set<int> = new Set<int>();
+        secondSet.add(1);
+        let cache: util.LRUCache<Set<int>, int> = new util.LRUCache<Set<int>, int>();
+        cache.put(firstSet, 26);
+        expect(cache.get(secondSet)).assertEqual(undefined);
+      }
+
+      // --- [4] Verify stored Date key same reference mutated time get still hits by reference ---
+      {
+        let d: Date = new Date(1000);
+        let cache: util.LRUCache<Date, int> = new util.LRUCache<Date, int>();
+        cache.put(d, 27);
+        d.setTime(2000);
+        expect(cache.get(d)).assertEqual(27);
+      }
+
+      // --- [5] Verify capacity 2 cache with 4 keys after two round eviction get second key returns undefined ---
+      {
+        let cache: util.LRUCache<int, int> = new util.LRUCache<int, int>(2);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        cache.put(3, 30);
+        cache.put(4, 40);
+        expect(cache.get(2)).assertEqual(undefined);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE_GET_0330
+     * @tc.name testLruCacheGet033
+     * @tc.desc Merged batch (5 tests): [1] Verify capacity 2 cache with 4 keys after two round eviction get newest key hits | [2] Verify get hit returns long extreme value without precision loss | [3] Verify get ...
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLruCacheGet033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify capacity 2 cache with 4 keys after two round eviction get newest key hits ---
+      {
+        let cache: util.LRUCache<int, int> = new util.LRUCache<int, int>(2);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        cache.put(3, 30);
+        cache.put(4, 40);
+        expect(cache.get(4)).assertEqual(40);
+      }
+
+      // --- [2] Verify get hit returns long extreme value without precision loss ---
+      {
+        let cache: util.LRUCache<string, long> = new util.LRUCache<string, long>();
+        let big: long = 9223372036854775807;
+        cache.put('m', big);
+        expect(cache.get('m')).assertEqual(big);
+      }
+
+      // --- [3] Verify get hit returns double float operation result preserving precision ---
+      {
+        let cache: util.LRUCache<string, double> = new util.LRUCache<string, double>();
+        let sum: double = 0.1 + 0.2;
+        cache.put('d', sum);
+        expect(cache.get('d')).assertEqual(0.30000000000000004);
+      }
+
+      // --- [4] Verify get hit reference type value is same instance mutation synchronized ---
+      {
+        let p: Item = new Item(9);
+        let cache: util.LRUCache<string, Item> = new util.LRUCache<string, Item>();
+        cache.put('p', p);
+        p.id = 10;
+        expect(cache.get('p')!.id).assertEqual(10);
+      }
+
+      // --- [5] Verify get hit returns byte extreme value keeping numeric value ---
+      {
+        let cache: util.LRUCache<string, byte> = new util.LRUCache<string, byte>();
+        cache.put('b', 127 as byte);
+        expect(cache.get('b')).assertEqual(127);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE_GET_0340
+     * @tc.name testLruCacheGet034
+     * @tc.desc Merged batch (5 tests): [1] Verify get retrieves the huge bigint value stored under string key z | [2] Verify get retrieves boolean value true stored under string key t | [3] Verify subclass create...
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLruCacheGet034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify get retrieves the huge bigint value stored under string key z ---
+      {
+        let cache: util.LRUCache<string, bigint> = new util.LRUCache<string, bigint>();
+        let stored: bigint = 999999999999999999999999999999n;
+        cache.put('z', stored);
+        let value: bigint | undefined = cache.get('z');
+        expect(value).assertEqual(stored);
+      }
+
+      // --- [2] Verify get retrieves boolean value true stored under string key t ---
+      {
+        let cache: util.LRUCache<string, boolean> = new util.LRUCache<string, boolean>();
+        let stored: boolean = true;
+        cache.put('t', stored);
+        let value: boolean | undefined = cache.get('t');
+        expect(value).assertTrue();
+      }
+
+      // --- [3] Verify subclass createDefault explicitly returning undefined get miss returns undefined ---
+      {
+        let cache: GetDefCache<int, int | undefined> = new GetDefCache<int, int | undefined>((key: int): int | undefined => { return undefined; });
+        expect(cache.get(5)).assertEqual(undefined);
+      }
+
+      // --- [4] Verify overridden createDefault does not affect get on existing key which still hits ---
+      {
+        let cache: GetDefCache<int, int | undefined> = new GetDefCache<int, int | undefined>((key: int): int | undefined => { return undefined; });
+        cache.put(1, 10);
+        expect(cache.get(1)).assertEqual(10);
+      }
+
+      // --- [5] Verify subclass createDefault throwing get miss propagates exception ---
+      {
+        let cache: GetDefCache<int, int> = new GetDefCache<int, int>((key: int): int => { throw new Error('createDefault-boom'); });
+        try {
+          cache.get(5);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.message).assertEqual('createDefault-boom');
+          expect(e.name).assertEqual('Error');
+          expect(e.code).assertEqual(0);
+        }
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE_GET_0350
+     * @tc.name testLruCacheGet035
+     * @tc.desc Merged batch (5 tests): [1] Verify subclass createDefault throwing get hit on existing key still returns stored value | [2] Verify createDefault first call throws and second call returns default in...
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLruCacheGet035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify subclass createDefault throwing get hit on existing key still returns stored value ---
+      {
+        let cache: GetDefCache<int, int> = new GetDefCache<int, int>((key: int): int => { throw new Error('boom2'); });
+        cache.put(1, 10);
+        expect(cache.get(1)).assertEqual(10);
+      }
+
+      // --- [2] Verify createDefault first call throws and second call returns default independently ---
+      {
+        let flipCalls: int = 0;
+        let cache: GetDefCache<int, int> = new GetDefCache<int, int>((key: int): int => {
+          flipCalls = flipCalls + 1;
+          if (flipCalls === 1) {
+            throw new Error('first-boom');
+          }
+          return key + 1000;
+        });
+        try {
+          cache.get(7);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.message).assertEqual('first-boom');
+          expect(e.name).assertEqual('Error');
+          expect(e.code).assertEqual(0);
+        }
+        expect(cache.get(7)).assertEqual(1007);
+      }
+
+      // --- [3] Verify subclass createDefault returning key derived value get miss returns derived value ---
+      {
+        let cache: GetDefCache<string, string> = new GetDefCache<string, string>((key: string): string => { return 'default-' + key; });
+        expect(cache.get('k1')).assertEqual('default-k1');
+      }
+
+      // --- [4] Verify subclass createDefault returning undefined get miss does not change cache length ---
+      {
+        let cache: GetDefCache<int, int | undefined> = new GetDefCache<int, int | undefined>((key: int): int | undefined => { return undefined; });
+        cache.get(3);
+        expect(cache.length).assertEqual(0);
+      }
+
+      // --- [5] Verify subclass createDefault non undefined value is returned then reused by the repeat get ---
+      {
+        let cache: GetDefCache<int, Date> = new GetDefCache<int, Date>((key: int): Date => { return new Date(1); });
+        let firstDate: Date = cache.get(1)!;
+        let secondDate: Date = cache.get(1)!;
+        expect(firstDate.getTime()).assertEqual(1);
+        expect(secondDate.getTime()).assertEqual(1);
+        expect(cache.getCreateCount()).assertEqual(1);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE_GET_0360
+     * @tc.name testLruCacheGet036
+     * @tc.desc Merged batch (5 tests): [1] Verify cache without createDefault override get miss does not trigger afterRemoval | [2] Verify subclass createDefault non undefined get miss does not trigger afterRemov...
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLruCacheGet036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify cache without createDefault override get miss does not trigger afterRemoval ---
+      {
+        let cache: RemovalWatchCache = new RemovalWatchCache();
+        cache.get(1);
+        expect(cache.removalHits).assertEqual(0);
+      }
+
+      // --- [2] Verify subclass createDefault non undefined get miss does not trigger afterRemoval (removalHits stays 0) ---
+      {
+        let cache: DftRemovalCache = new DftRemovalCache();
+        cache.get(3);
+        expect(cache.removalHits).assertEqual(0);
+      }
+
+      // --- [3] Verify overridden createDefault not called when get hits existing key ---
+      {
+        let spyCalls: int = 0;
+        let cache: GetDefCache<int, int> = new GetDefCache<int, int>((key: int): int => {
+          spyCalls = spyCalls + 1;
+          return key;
+        });
+        cache.put(1, 10);
+        cache.get(1);
+        expect(spyCalls).assertEqual(0);
+      }
+
+      // --- [4] Verify get hit on key 1 promotes it to most recently used so later put evicts older key 2 instead and key 1 survives ---
+      {
+        let cache: util.LRUCache<int, int> = new util.LRUCache<int, int>(2);
+        cache.put(1, 10);
+        cache.put(2, 20);
+        expect(cache.get(1)).assertEqual(10);
+        cache.put(3, 30);
+        expect(cache.get(1)).assertEqual(10);
+        expect(cache.get(2)).assertEqual(undefined);
+      }
+
+      // --- [5] Verify loop of 1000 put then 1000 get on contiguous keys every get hits with stored value (stable repeated get) ---
+      {
+        let cache: util.LRUCache<int, int> = new util.LRUCache<int, int>(2000);
+        for (let i: int = 0; i < 1000; i++) {
+          cache.put(i, i + 1);
+        }
+        for (let i: int = 0; i < 1000; i++) {
+          expect(cache.get(i)).assertEqual(i + 1);
+        }
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE_GET_0370
+     * @tc.name testLruCacheGet037
+     * @tc.desc Merged batch (5 tests): [1] Verify self-referential Map value get returns same instance with cycle intact | [2] Verify self-referential Set object key get hits returning associated value | [3] Veri...
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLruCacheGet037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify self-referential Map value get returns same instance with cycle intact ---
+      {
+        let m: Map<string, object> = new Map<string, object>();
+        m.set('self', m);
+        let cache: util.LRUCache<int, Map<string, object>> = new util.LRUCache<int, Map<string, object>>();
+        cache.put(1, m);
+        let got: Map<string, object> = cache.get(1)!;
+        expect(got.has('self')).assertTrue();
+        expect(got.size).assertEqual(1);
+        m.set('extra', m);
+        expect(got.size).assertEqual(2);
+        expect(got.has('extra')).assertTrue();
+      }
+
+      // --- [2] Verify self-referential Set object key get hits returning associated value ---
+      {
+        let s: Set<object> = new Set<object>();
+        s.add(s);
+        let cache: util.LRUCache<Set<object>, int> = new util.LRUCache<Set<object>, int>();
+        cache.put(s, 77);
+        expect(cache.get(s)).assertEqual(77);
+        expect(s.has(s)).assertTrue();
+      }
+
+      // --- [3] Verify an int key computed by 32-bit overflow (INT_MIN - 1) aliases the literal INT_MAX key so a later get through the wrapped key returns the overwriting value ---
+      {
+        let cache: util.LRUCache<int, int> = new util.LRUCache<int, int>(4);
+        let mn: int = -2147483648;
+        let wrappedDown: int = mn - 1;
+        cache.put(2147483647, 11);
+        cache.put(wrappedDown, 22);
+        expect(cache.length).assertEqual(1);
+        expect(cache.get(2147483647)).assertEqual(22);
+      }
+
+      // --- [4] Verify object key entry stays reachable through its reference after a field change while a content-equal fresh object misses ---
+      {
+        let k: Item = new Item(5);
+        let cache: util.LRUCache<Item, int> = new util.LRUCache<Item, int>(4);
+        cache.put(k, 50);
+        k.id = 500;
+        expect(cache.get(new Item(5))).assertEqual(undefined);
+        expect(cache.get(k)).assertEqual(50);
+      }
+
+      // --- [5] Verify while loop driven by length lets repeated get misses insert createDefault values until length four ---
+      {
+        let cache: GetDefCache<int, int> = new GetDefCache<int, int>((key: int): int => { return key * 100; });
+        let nextKey: int = 0;
+        let createdSum: int = 0;
+        while (cache.length < 4) {
+          let created: int | undefined = cache.get(nextKey);
+          if (created !== undefined) {
+            createdSum = createdSum + created;
+          }
+          nextKey++;
+        }
+        expect(nextKey).assertEqual(4);
+        expect(createdSum).assertEqual(600);
+        expect(cache.length).assertEqual(4);
+        expect(cache.getCreateCount()).assertEqual(4);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE_GET_0380
+     * @tc.name testLruCacheGet038
+     * @tc.desc Merged batch (5 tests): [1] Verify get retrieves the value stored under the minimum long key | [2] Verify get retrieves each stored enum member value and misses the absent member | [3] Verify a get...
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLruCacheGet038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify get retrieves the value stored under the minimum long key ---
+      {
+        let cache: util.LRUCache<long, int> = new util.LRUCache<long, int>();
+        let minLong: long = -9223372036854775807 - 1;
+        cache.put(minLong, 42);
+        expect(cache.get(minLong)).assertEqual(42);
+        expect(cache.get(minLong + 1)).assertEqual(undefined);
+      }
+
+      // --- [2] Verify get retrieves each stored enum member value and misses the absent member ---
+      {
+        let cache: util.LRUCache<GetRank, int> = new util.LRUCache<GetRank, int>(2);
+        cache.put(GetRank.Low, 7);
+        cache.put(GetRank.High, 9);
+        expect(cache.get(GetRank.Low)).assertEqual(7);
+        expect(cache.get(GetRank.High)).assertEqual(9);
+        expect(cache.get(GetRank.Mid)).assertEqual(undefined);
+      }
+
+      // --- [3] Verify a get hit on the NUL key promotes it so the zero width space key is the one evicted at capacity two ---
+      {
+        let cache: util.LRUCache<string, int> = new util.LRUCache<string, int>(2);
+        cache.put('\u0000', 5);
+        cache.put('\u200B', 6);
+        expect(cache.get('\u0000')).assertEqual(5);
+        cache.put('\uFEFF', 7);
+        expect(cache.get('\u200B')).assertEqual(undefined);
+        expect(cache.get('\u0000')).assertEqual(5);
+        expect(cache.get('\uFEFF')).assertEqual(7);
+      }
+
+      // --- [4] Verify get returns the same LRUCache instance stored as value and returns undefined for an absent key ---
+      {
+        let inner: util.LRUCache<int, int> = new util.LRUCache<int, int>(6);
+        inner.put(11, 111);
+        let outer: util.LRUCache<string, util.LRUCache<int, int>> = new util.LRUCache<string, util.LRUCache<int, int>>(3);
+        outer.put('slot', inner);
+        let fetched: util.LRUCache<int, int> | undefined = outer.get('slot');
+        expect(fetched).assertEqual(inner);
+        expect(outer.get('absent')).assertEqual(undefined);
+        outer.put('other', new util.LRUCache<int, int>(1));
+        expect(outer.get('slot')).assertEqual(inner);
+      }
+
+      // --- [5] Verify chained get on a stored LRUCache value reads the inner entry ---
+      {
+        let a: util.LRUCache<int, string> = new util.LRUCache<int, string>(2);
+        a.put(1, 'alpha');
+        a.put(2, 'beta');
+        let outer: util.LRUCache<string, util.LRUCache<int, string>> = new util.LRUCache<string, util.LRUCache<int, string>>(2);
+        outer.put('node', a);
+        expect(outer.get('node')!.get(2)).assertEqual('beta');
+        expect(outer.get('node')!.get(1)).assertEqual('alpha');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE_GET_0390
+     * @tc.name testLruCacheGet039
+     * @tc.desc Merged batch (3 tests): [1] Verify get resolves each cache instance key to its own string value and misses an unregistered instance | [2] Verify chained get through three nested cache levels reads ...
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLruCacheGet039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify get resolves each cache instance key to its own string value and misses an unregistered instance ---
+      {
+        let primaryKey: util.LRUCache<int, int> = new util.LRUCache<int, int>(2);
+        primaryKey.put(1, 11);
+        let secondaryKey: util.LRUCache<int, int> = new util.LRUCache<int, int>(5);
+        secondaryKey.put(2, 22);
+        let catalog: util.LRUCache<util.LRUCache<int, int>, string> =
+          new util.LRUCache<util.LRUCache<int, int>, string>(3);
+        catalog.put(primaryKey, 'first');
+        catalog.put(secondaryKey, 'second');
+        expect(catalog.get(primaryKey)).assertEqual('first');
+        expect(catalog.get(secondaryKey)).assertEqual('second');
+        let missingKey: util.LRUCache<int, int> = new util.LRUCache<int, int>(2);
+        expect(catalog.get(missingKey)).assertEqual(undefined);
+        expect(catalog.getMissCount()).assertEqual(1);
+      }
+
+      // --- [2] Verify chained get through three nested cache levels reads the innermost entry ---
+      {
+        let level1: util.LRUCache<int, int> = new util.LRUCache<int, int>(2);
+        level1.put(1, 111);
+        level1.put(2, 222);
+        let level2: util.LRUCache<string, util.LRUCache<int, int>> =
+          new util.LRUCache<string, util.LRUCache<int, int>>(2);
+        level2.put('mid', level1);
+        let level3: util.LRUCache<int, util.LRUCache<string, util.LRUCache<int, int>>> =
+          new util.LRUCache<int, util.LRUCache<string, util.LRUCache<int, int>>>(1);
+        level3.put(9, level2);
+        expect(level3.get(9)!.get('mid')!.get(1)).assertEqual(111);
+        expect(level3.get(9)!.get('mid')!.get(2)).assertEqual(222);
+      }
+
+      // --- [3] Verify a reference read before eviction stays usable after its entry leaves the outer cache ---
+      {
+        let tracked: util.LRUCache<int, int> = new util.LRUCache<int, int>(4);
+        tracked.put(1, 100);
+        let holder: util.LRUCache<int, util.LRUCache<int, int>> =
+          new util.LRUCache<int, util.LRUCache<int, int>>(2);
+        holder.put(1, tracked);
+        let held: util.LRUCache<int, int> | undefined = holder.get(1);
+        holder.put(2, new util.LRUCache<int, int>(2));
+        holder.put(3, new util.LRUCache<int, int>(2));
+        expect(holder.get(1)).assertEqual(undefined);
+        expect(holder.length).assertEqual(2);
+        expect(held!.get(1)).assertEqual(100);
+        expect(held!.length).assertEqual(1);
+      }
+    });
+
   });
 }
