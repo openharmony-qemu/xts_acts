@@ -2091,6 +2091,8 @@ export default function configEventPolicyTest() {
       hilog.info(domain, tag, `SUB_DFX_DFT_HiviewKit_HiAppEvent_configEventPolicySuccessStatic_8300 end`);
     })
 
+test
+
   })
   hilog.info(domain, tag, 'configureTest end');
 }
