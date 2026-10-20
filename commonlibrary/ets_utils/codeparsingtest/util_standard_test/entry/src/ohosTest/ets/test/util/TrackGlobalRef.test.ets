@@ -121,6 +121,41 @@ function sleep(ms: number): Promise<void> {
   return new Promise<void>((resolve: Function) => setTimeout(resolve, ms));
 }
 
+const WORKER_WAIT_TIMEOUT_MS = 5000;
+
+let g_activeWorkers: worker.ThreadWorker[] = [];
+
+interface TerminationFlag { done: boolean; }
+
+function registerWorker(w: worker.ThreadWorker): void {
+  g_activeWorkers.push(w);
+}
+
+function unregisterWorker(w: worker.ThreadWorker): void {
+  const idx = g_activeWorkers.indexOf(w);
+  if (idx >= 0) {
+    g_activeWorkers.splice(idx, 1);
+  }
+}
+
+function forceTerminateWorkers(): void {
+  for (const w of g_activeWorkers) {
+    try { w.terminate(); } catch (e) { }
+  }
+  g_activeWorkers.length = 0;
+}
+
+async function awaitWorkerTerminated(flag: TerminationFlag, timeoutMs: number = WORKER_WAIT_TIMEOUT_MS): Promise<boolean> {
+  const start: number = Date.now();
+  while (!flag.done) {
+    if (Date.now() - start >= timeoutMs) {
+      return false;
+    }
+    await sleep(100);
+  }
+  return true;
+}
+
 function parseHeapSnapshot(content: string): ParsedSnapshot {
   const data: Record<string, Object> = JSON.parse(content) as Record<string, Object>;
   const snapshotObj: Record<string, Object> = data['snapshot'] as Record<string, Object>;
@@ -311,6 +346,7 @@ export default function trackGlobalRefTest() {
 
     beforeEach(async () => {
       await sleep(50);
+      try { forceTerminateWorkers(); } catch (e) { }
       try { deleteTestRef(); } catch (e) { }
       try { deleteWeakTestRef(); } catch (e) { }
       try { testNapi.clearNapiRefs(); } catch (e) { }
@@ -319,6 +355,7 @@ export default function trackGlobalRefTest() {
     })
 
     afterEach(() => {
+      try { forceTerminateWorkers(); } catch (e) { }
       try { deleteTestRef(); } catch (e) { }
       try { deleteWeakTestRef(); } catch (e) { }
       try { testNapi.clearNapiRefs(); } catch (e) { }
@@ -911,36 +948,53 @@ export default function trackGlobalRefTest() {
       const TAG = 'testSetTrackGlobalRefWorkerAffectsMain001';
       const OBJ_NAME = 'TrackRefObj_1800';
       console.info(`${TAG} START`);
-      let isTerminate = false;
-      let newWorker = new worker.ThreadWorker('./TrackGlobalRefWorker.ets');
-      newWorker.onexit = () => {
-        isTerminate = true;
-      };
-      newWorker.onerror = (err: ErrorEvent) => {
-        console.error(`${TAG} worker error: ${err.message}`);
-        expect().assertFail();
-        newWorker.terminate();
-      };
-      newWorker.onmessage = (e: MessageEvents): void => {
-        let result: string = e.data as string;
-        console.info(`${TAG} worker response: ${result}`);
-        expect(result === 'enabled').assertTrue();
-        try {
-          let obj: TrackRefTestObject = new TrackRefTestObject(1800, OBJ_NAME);
-          useObject(obj);
-          const heapResult: GlobalHandleObjectResult = dumpAndCheckHeap(`${SNAPSHOT_PREFIX}18`);
-          expect(heapResult.found).assertTrue();
-          console.info(`${TAG} main thread heap has GlobalHandleObject after worker enabled: PASS`);
-        } catch (err) {
-          console.error(`${TAG} heap check failed, error code: ${(err as BusinessError).code}`);
+      const termFlag: TerminationFlag = { done: false };
+      let newWorker: worker.ThreadWorker;
+      try {
+        newWorker = new worker.ThreadWorker('./TrackGlobalRefWorker.ets');
+        registerWorker(newWorker);
+        newWorker.onexit = () => {
+          termFlag.done = true;
+          unregisterWorker(newWorker);
+        };
+        newWorker.onerror = (err: ErrorEvent) => {
+          console.error(`${TAG} worker error: ${err.message}`);
+          termFlag.done = true;
           expect().assertFail();
-        }
-        newWorker.terminate();
-      };
-      newWorker.postMessage('enable');
-      while (!isTerminate) {
-        await sleep(100);
+          try { newWorker.terminate(); } catch (e) { }
+          unregisterWorker(newWorker);
+        };
+        newWorker.onmessage = (e: MessageEvents): void => {
+          let result: string = e.data as string;
+          console.info(`${TAG} worker response: ${result}`);
+          expect(result === 'enabled').assertTrue();
+          try {
+            let obj: TrackRefTestObject = new TrackRefTestObject(1800, OBJ_NAME);
+            useObject(obj);
+            const heapResult: GlobalHandleObjectResult = dumpAndCheckHeap(`${SNAPSHOT_PREFIX}18`);
+            expect(heapResult.found).assertTrue();
+            console.info(`${TAG} main thread heap has GlobalHandleObject after worker enabled: PASS`);
+          } catch (err) {
+            console.error(`${TAG} heap check failed, error code: ${(err as BusinessError).code}`);
+            expect().assertFail();
+          }
+          try { newWorker.terminate(); } catch (e) { }
+        };
+        newWorker.postMessage('enable');
+      } catch (err) {
+        console.error(`${TAG} worker setup failed: ${(err as BusinessError).message}`);
+        expect().assertFail();
+        forceTerminateWorkers();
+        done();
+        return;
       }
+      const terminated: boolean = await awaitWorkerTerminated(termFlag);
+      if (!terminated) {
+        console.error(`${TAG} worker not terminated within timeout, force terminating`);
+        try { newWorker.terminate(); } catch (e) { }
+        unregisterWorker(newWorker);
+      }
+      expect(terminated).assertTrue();
       done();
     });
 
@@ -956,25 +1010,42 @@ export default function trackGlobalRefTest() {
       const TAG = 'testSetTrackGlobalRefMainAffectsWorker001';
       console.info(`${TAG} START`);
       util.ArkTSVM.setTrackGlobalRef(true);
-      let isTerminate = false;
-      let newWorker = new worker.ThreadWorker('./TrackGlobalRefWorker.ets');
-      newWorker.onexit = () => {
-        isTerminate = true;
-      };
-      newWorker.onerror = (err: ErrorEvent) => {
-        console.error(`${TAG} worker error: ${err.message}`);
-        newWorker.terminate();
-      };
-      newWorker.onmessage = (e: MessageEvents): void => {
-        console.info(`${TAG} worker response: ${e.data}`);
-        newWorker.terminate();
-      };
-      newWorker.postMessage('disable');
-      while (!isTerminate) {
-        await sleep(100);
+      const termFlag: TerminationFlag = { done: false };
+      let newWorker: worker.ThreadWorker;
+      try {
+        newWorker = new worker.ThreadWorker('./TrackGlobalRefWorker.ets');
+        registerWorker(newWorker);
+        newWorker.onexit = () => {
+          termFlag.done = true;
+          unregisterWorker(newWorker);
+        };
+        newWorker.onerror = (err: ErrorEvent) => {
+          console.error(`${TAG} worker error: ${err.message}`);
+          termFlag.done = true;
+          expect().assertFail();
+          try { newWorker.terminate(); } catch (e) { }
+          unregisterWorker(newWorker);
+        };
+        newWorker.onmessage = (e: MessageEvents): void => {
+          console.info(`${TAG} worker response: ${e.data}`);
+          try { newWorker.terminate(); } catch (e) { }
+        };
+        newWorker.postMessage('disable');
+      } catch (err) {
+        console.error(`${TAG} worker setup failed: ${(err as BusinessError).message}`);
+        expect().assertFail();
+        forceTerminateWorkers();
+        done();
+        return;
       }
-      console.info(`${TAG} worker called setTrackGlobalRef, no crash: PASS`);
-      expect(isTerminate).assertTrue();
+      const terminated: boolean = await awaitWorkerTerminated(termFlag);
+      if (!terminated) {
+        console.error(`${TAG} worker not terminated within timeout, force terminating`);
+        try { newWorker.terminate(); } catch (e) { }
+        unregisterWorker(newWorker);
+      }
+      console.info(`${TAG} worker called setTrackGlobalRef, terminated within timeout: ${terminated}`);
+      expect(terminated).assertTrue();
       done();
     });
 
@@ -989,23 +1060,36 @@ export default function trackGlobalRefTest() {
     it('testSetTrackGlobalRefConcurrentSafety001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const TAG = 'testSetTrackGlobalRefConcurrentSafety001';
       console.info(`${TAG} START`);
-      let isTerminate = false;
-      let newWorker = new worker.ThreadWorker('./TrackGlobalRefWorker.ets');
-      newWorker.onexit = () => {
-        isTerminate = true;
-      };
-      newWorker.onerror = (err: ErrorEvent) => {
-        console.error(`${TAG} worker error: ${err.message}`);
+      const termFlag: TerminationFlag = { done: false };
+      let newWorker: worker.ThreadWorker;
+      try {
+        newWorker = new worker.ThreadWorker('./TrackGlobalRefWorker.ets');
+        registerWorker(newWorker);
+        newWorker.onexit = () => {
+          termFlag.done = true;
+          unregisterWorker(newWorker);
+        };
+        newWorker.onerror = (err: ErrorEvent) => {
+          console.error(`${TAG} worker error: ${err.message}`);
+          termFlag.done = true;
+          expect().assertFail();
+          try { newWorker.terminate(); } catch (e) { }
+          unregisterWorker(newWorker);
+        };
+        newWorker.onmessage = (e: MessageEvents): void => {
+          let result: string = e.data as string;
+          console.info(`${TAG} worker concurrent result: ${result}`);
+          expect(result === 'concurrentDone').assertTrue();
+          try { newWorker.terminate(); } catch (e) { }
+        };
+        newWorker.postMessage('concurrentToggle');
+      } catch (err) {
+        console.error(`${TAG} worker setup failed: ${(err as BusinessError).message}`);
         expect().assertFail();
-        newWorker.terminate();
-      };
-      newWorker.onmessage = (e: MessageEvents): void => {
-        let result: string = e.data as string;
-        console.info(`${TAG} worker concurrent result: ${result}`);
-        expect(result === 'concurrentDone').assertTrue();
-        newWorker.terminate();
-      };
-      newWorker.postMessage('concurrentToggle');
+        forceTerminateWorkers();
+        done();
+        return;
+      }
       let toggleCompleted = false;
       try {
         for (let i = 0; i < 50; i++) {
@@ -1019,9 +1103,13 @@ export default function trackGlobalRefTest() {
         console.error(`${TAG} main thread failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
       }
-      while (!isTerminate) {
-        await sleep(100);
+      const terminated: boolean = await awaitWorkerTerminated(termFlag);
+      if (!terminated) {
+        console.error(`${TAG} worker not terminated within timeout, force terminating`);
+        try { newWorker.terminate(); } catch (e) { }
+        unregisterWorker(newWorker);
       }
+      expect(terminated).assertTrue();
       done();
     });
 
