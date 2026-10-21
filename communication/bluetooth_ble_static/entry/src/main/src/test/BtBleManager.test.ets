@@ -2660,5 +2660,38 @@ export default function btBleManagerTest(): void {
         done();
       })
 
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTDISCONNECTREASON_static_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTDISCONNECTREASON_0100
+     * @tc.desc   Test GattDisconnectReason EnumValue api20.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTDISCONNECTREASON_static_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        try {
+          let CONN_TIMEOUT = bluetoothBle.GattDisconnectReason.CONN_TIMEOUT;
+          hilog.info(domain, tag, 'GattDisconnectReason CONN_TIMEOUT: ' + CONN_TIMEOUT);
+          expect(CONN_TIMEOUT).assertEqual(1);
+
+          let CONN_TERMINATE_PEER_USER = bluetoothBle.GattDisconnectReason.CONN_TERMINATE_PEER_USER;
+          hilog.info(domain, tag, 'GattDisconnectReason CONN_TERMINATE_PEER_USER: ' + CONN_TERMINATE_PEER_USER);
+          expect(CONN_TERMINATE_PEER_USER).assertEqual(2);
+
+          let CONN_TERMINATE_LOCAL_HOST = bluetoothBle.GattDisconnectReason.CONN_TERMINATE_LOCAL_HOST;
+          hilog.info(domain, tag, 'GattDisconnectReason CONN_TERMINATE_LOCAL_HOST: ' + CONN_TERMINATE_LOCAL_HOST);
+          expect(CONN_TERMINATE_LOCAL_HOST).assertEqual(3);
+
+          let CONN_UNKNOWN = bluetoothBle.GattDisconnectReason.CONN_UNKNOWN;
+          hilog.info(domain, tag, 'GattDisconnectReason CONN_UNKNOWN: ' + CONN_UNKNOWN);
+          expect(CONN_UNKNOWN).assertEqual(4);
+        } catch (err) {
+          hilog.error(domain, tag, "GattDisconnectReason errCode:" + err.code + ",errMessage:" + err.message);
+          expect().assertFail();
+        }
+        done();
+      })
+
   })
 }

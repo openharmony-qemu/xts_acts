@@ -19,6 +19,7 @@ import hilog from '@ohos.hilog';
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
 import connection from '@ohos.bluetooth.connection';
+import btCommon from '@ohos.bluetooth.common';
 import abilityAccessCtrl from '@ohos.abilityAccessCtrl';
 import common from '@ohos.app.ability.common';
 import { Permissions } from 'permissions';
@@ -2516,5 +2517,109 @@ export default function bluetoothConnectionTest(): void {
       }
       done();
     });
+
+    /**
+     * @tc.number  SUB_COMMUNICATION_BP_TESTBLUETOOTHTRANSPORTADD_0100
+     * @tc.name    testBluetoothTransportAdd
+     * @tc.desc    Test testBluetoothTransportAdd API functionality
+     * @tc.level   Level 0
+     * @tc.type    Function
+     * @tc.size    MEDIUMTEST
+     */
+    it("testBluetoothTransportAdd", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let TRANSPORT_DUAL = connection.BluetoothTransport.TRANSPORT_DUAL;
+          hilog.info(domain, tag, "BluetoothTransport TRANSPORT_DUAL: " + TRANSPORT_DUAL);
+          expect(TRANSPORT_DUAL).assertEqual(2);
+
+          let TRANSPORT_UNKNOWN = connection.BluetoothTransport.TRANSPORT_UNKNOWN;
+          hilog.info(domain, tag, "BluetoothTransport TRANSPORT_UNKNOWN: " + TRANSPORT_UNKNOWN);
+          expect(TRANSPORT_UNKNOWN).assertEqual(3);
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+          hilog.info(domain, tag, "testBluetoothTransportAdd errCode:" + err.code + ",errMessage:" + err.message);
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.number  SUB_COMMUNICATION_BP_TESTACLSTATE_0100
+     * @tc.name    testAclState
+     * @tc.desc    Test testAclState API functionality
+     * @tc.level   Level 0
+     * @tc.type    Function
+     * @tc.size    MEDIUMTEST
+     */
+    it("testAclState", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let STATE_CONNECTED = connection.AclState.STATE_CONNECTED;
+          hilog.info(domain, tag, "AclState STATE_CONNECTED: " + STATE_CONNECTED);
+          expect(STATE_CONNECTED).assertEqual(0);
+
+          let STATE_DISCONNECTED = connection.AclState.STATE_DISCONNECTED;
+          hilog.info(domain, tag, "AclState STATE_DISCONNECTED: " + STATE_DISCONNECTED);
+          expect(STATE_DISCONNECTED).assertEqual(1);
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+          hilog.info(domain, tag, "testAclState errCode:" + err.code + ",errMessage:" + err.message);
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.number  SUB_COMMUNICATION_BP_TESTBLUETOOTHADDRESSTYPE_0100
+     * @tc.name    testBluetoothAddressType
+     * @tc.desc    Test testBluetoothAddressType API functionality
+     * @tc.level   Level 0
+     * @tc.type    Function
+     * @tc.size    MEDIUMTEST
+     */
+    it("testBluetoothAddressType", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let VIRTUAL = btCommon.BluetoothAddressType.VIRTUAL;
+          hilog.info(domain, tag, "BluetoothAddressType VIRTUAL: " + VIRTUAL);
+          expect(VIRTUAL).assertEqual(1);
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+          hilog.info(domain, tag, "testBluetoothAddressType errCode:" + err.code + ",errMessage:" + err.message);
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.number  SUB_COMMUNICATION_BP_TESTBLUETOOTHRAWADDRESSTYPE_0100
+     * @tc.name    testBluetoothRawAddressType
+     * @tc.desc    Test testBluetoothRawAddressType API functionality
+     * @tc.level   Level 0
+     * @tc.type    Function
+     * @tc.size    MEDIUMTEST
+     */
+    it("testBluetoothRawAddressType", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let PUBLIC = btCommon.BluetoothRawAddressType.PUBLIC;
+          hilog.info(domain, tag, "BluetoothRawAddressType PUBLIC: " + PUBLIC);
+          expect(PUBLIC).assertEqual(0);
+
+          let RANDOM = btCommon.BluetoothRawAddressType.RANDOM;
+          hilog.info(domain, tag, "BluetoothRawAddressType RANDOM: " + RANDOM);
+          expect(RANDOM).assertEqual(1);
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+          hilog.info(domain, tag, "testBluetoothRawAddressType errCode:" + err.code + ",errMessage:" + err.message);
+          expect().assertFail();
+        }
+        done();
+      })
   })
 }

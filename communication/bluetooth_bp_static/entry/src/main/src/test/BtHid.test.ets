@@ -1698,5 +1698,108 @@ export default function btHidTest(): void {
         done();
       })
 
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASEHIDPROFILE_SUBCLASS_static_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASEHIDPROFILESUBCLASS_0100
+     * @tc.desc   Test hid Subclass EnumValue api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_BASEHIDPROFILE_SUBCLASS_static_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        try {
+          let SUBCLASS_UNCATEGORIZED = hid.Subclass.SUBCLASS_UNCATEGORIZED;
+          hilog.info(domain, tag, 'hid Subclass SUBCLASS_UNCATEGORIZED: ' + SUBCLASS_UNCATEGORIZED);
+          expect(SUBCLASS_UNCATEGORIZED).assertEqual(0);
+
+          let SUBCLASS_JOYSTICK = hid.Subclass.SUBCLASS_JOYSTICK;
+          hilog.info(domain, tag, 'hid Subclass SUBCLASS_JOYSTICK: ' + SUBCLASS_JOYSTICK);
+          expect(SUBCLASS_JOYSTICK).assertEqual(1);
+
+          let SUBCLASS_GAMEPAD = hid.Subclass.SUBCLASS_GAMEPAD;
+          hilog.info(domain, tag, 'hid Subclass SUBCLASS_GAMEPAD: ' + SUBCLASS_GAMEPAD);
+          expect(SUBCLASS_GAMEPAD).assertEqual(2);
+
+          let SUBCLASS_REMOTE_CONTROL = hid.Subclass.SUBCLASS_REMOTE_CONTROL;
+          hilog.info(domain, tag, 'hid Subclass SUBCLASS_REMOTE_CONTROL: ' + SUBCLASS_REMOTE_CONTROL);
+          expect(SUBCLASS_REMOTE_CONTROL).assertEqual(3);
+
+          let SUBCLASS_SENSING_DEVICE = hid.Subclass.SUBCLASS_SENSING_DEVICE;
+          hilog.info(domain, tag, 'hid Subclass SUBCLASS_SENSING_DEVICE: ' + SUBCLASS_SENSING_DEVICE);
+          expect(SUBCLASS_SENSING_DEVICE).assertEqual(4);
+
+          let SUBCLASS_DIGITIZER_TABLET = hid.Subclass.SUBCLASS_DIGITIZER_TABLET;
+          hilog.info(domain, tag, 'hid Subclass SUBCLASS_DIGITIZER_TABLET: ' + SUBCLASS_DIGITIZER_TABLET);
+          expect(SUBCLASS_DIGITIZER_TABLET).assertEqual(5);
+
+          let SUBCLASS_CARD_READER = hid.Subclass.SUBCLASS_CARD_READER;
+          hilog.info(domain, tag, 'hid Subclass SUBCLASS_CARD_READER: ' + SUBCLASS_CARD_READER);
+          expect(SUBCLASS_CARD_READER).assertEqual(6);
+
+          let SUBCLASS_MOUSE = hid.Subclass.SUBCLASS_MOUSE;
+          hilog.info(domain, tag, 'hid Subclass SUBCLASS_MOUSE: ' + SUBCLASS_MOUSE);
+          expect(SUBCLASS_MOUSE).assertEqual(128);
+
+          let SUBCLASS_COMBO = hid.Subclass.SUBCLASS_COMBO;
+          hilog.info(domain, tag, 'hid Subclass SUBCLASS_COMBO: ' + SUBCLASS_COMBO);
+          expect(SUBCLASS_COMBO).assertEqual(192);
+        } catch (err) {
+          hilog.error(domain, tag, "hid Subclass errCode:" + err.code + ",errMessage:" + err.message);
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASEHIDPROFILE_SERVICETYPE_static_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASEHIDPROFILESERVICETYPE_0100
+     * @tc.desc   Test hid ServiceType EnumValue api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_BASEHIDPROFILE_SERVICETYPE_static_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        try {
+          let SERVICE_NO_TRAFFIC = hid.ServiceType.SERVICE_NO_TRAFFIC;
+          hilog.info(domain, tag, 'hid ServiceType SERVICE_NO_TRAFFIC: ' + SERVICE_NO_TRAFFIC);
+          expect(SERVICE_NO_TRAFFIC).assertEqual(0);
+
+          let SERVICE_GUARANTEED = hid.ServiceType.SERVICE_GUARANTEED;
+          hilog.info(domain, tag, 'hid ServiceType SERVICE_GUARANTEED: ' + SERVICE_GUARANTEED);
+          expect(SERVICE_GUARANTEED).assertEqual(2);
+        } catch (err) {
+          hilog.error(domain, tag, "hid ServiceType errCode:" + err.code + ",errMessage:" + err.message);
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASEHIDPROFILE_PROTOCOLTYPE_static_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASEHIDPROFILEPROTOCOLTYPE_0100
+     * @tc.desc   Test hid ProtocolType EnumValue api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_BASEHIDPROFILE_PROTOCOLTYPE_static_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        try {
+          let PROTOCOL_BOOT_MODE = hid.ProtocolType.PROTOCOL_BOOT_MODE;
+          hilog.info(domain, tag, 'hid ProtocolType PROTOCOL_BOOT_MODE: ' + PROTOCOL_BOOT_MODE);
+          expect(PROTOCOL_BOOT_MODE).assertEqual(0);
+
+          let PROTOCOL_REPORT_MODE = hid.ProtocolType.PROTOCOL_REPORT_MODE;
+          hilog.info(domain, tag, 'hid ProtocolType PROTOCOL_REPORT_MODE: ' + PROTOCOL_REPORT_MODE);
+          expect(PROTOCOL_REPORT_MODE).assertEqual(1);
+        } catch (err) {
+          hilog.error(domain, tag, "hid ProtocolType errCode:" + err.code + ",errMessage:" + err.message);
+          expect().assertFail();
+        }
+        done();
+      })
+
   })
 }
