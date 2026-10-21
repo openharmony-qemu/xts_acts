@@ -1544,5 +1544,986 @@ export default function typesIsNativeErrorTest(): void {
       }
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_NATIVE_ERROR_2100
+     * @tc.name testTypesIsNativeError021
+     * @tc.desc Merged batch (5 tests): Non-target object rejection: rejects a Date instance; Maps and WeakMaps with one entry and Sets and WeakSets with one member are all rejected; rejects an ArrayBuffer of eight bytes; rejects a DataView built over a four byte buffer; rejects Uint8Array, Uint8ClampedArray, Uint32Array, Int32Array, Float32Array and Float64Array views.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsNativeError021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify isNativeError returns false for a Date instance ---
+      {
+        let checker: util.types = new util.types();
+        let stamp: Date = new Date(1704067200000);
+        expect(checker.isNativeError(stamp)).assertFalse();
+      }
+
+      // --- [2] Verify Maps and WeakMaps with one entry and Sets and WeakSets with one member are all rejected ---
+      {
+        let checker: util.types = new util.types();
+        let store: Map<string, int> = new Map<string, int>();
+        store.set('k', 1);
+        let key: PlainBox = new PlainBox();
+        let weakStore: WeakMap<PlainBox, int> = new WeakMap<PlainBox, int>();
+        weakStore.set(key, 1);
+        expect(checker.isNativeError(store)).assertFalse();
+        expect(checker.isNativeError(weakStore)).assertFalse();
+        let pool: Set<int> = new Set<int>();
+        pool.add(1);
+        let key_2: PlainBox = new PlainBox();
+        let weakPool: WeakSet<PlainBox> = new WeakSet<PlainBox>();
+        weakPool.add(key_2);
+        expect(checker.isNativeError(pool)).assertFalse();
+        expect(checker.isNativeError(weakPool)).assertFalse();
+      }
+
+      // --- [3] Verify isNativeError returns false for an ArrayBuffer of eight bytes ---
+      {
+        let checker: util.types = new util.types();
+        let buffer: ArrayBuffer = new ArrayBuffer(8);
+        expect(buffer.byteLength).assertEqual(8);
+        expect(checker.isNativeError(buffer)).assertFalse();
+      }
+
+      // --- [4] Verify isNativeError returns false for a DataView built over a four byte buffer ---
+      {
+        let checker: util.types = new util.types();
+        let view: DataView = new DataView(new ArrayBuffer(4));
+        expect(checker.isNativeError(view)).assertFalse();
+      }
+
+      // --- [5] Verify isNativeError returns false for Uint8Array, Uint8ClampedArray, Uint32Array, Int32Array, Float32Array and Float64Array views ---
+      {
+        let checker: util.types = new util.types();
+        let unsigned: Uint8Array = new Uint8Array(4);
+        let clamped: Uint8ClampedArray = new Uint8ClampedArray(4);
+        expect(checker.isNativeError(unsigned)).assertFalse();
+        expect(checker.isNativeError(clamped)).assertFalse();
+        let unsigned32: Uint32Array = new Uint32Array(4);
+        let signed32: Int32Array = new Int32Array(4);
+        expect(checker.isNativeError(unsigned32)).assertFalse();
+        expect(checker.isNativeError(signed32)).assertFalse();
+        let float32: Float32Array = new Float32Array(4);
+        let float64: Float64Array = new Float64Array(4);
+        expect(checker.isNativeError(float32)).assertFalse();
+        expect(checker.isNativeError(float64)).assertFalse();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_NATIVE_ERROR_2200
+     * @tc.name testTypesIsNativeError022
+     * @tc.desc Merged batch (5 tests): Non-target object rejection: rejects Int8Array, Uint16Array and Int16Array instances; sibling views of one buffer share written data and two view kinds give the same false verdict; a renamed user Error subclass is reported as a native error; an isNativeError check made before a throw does not disturb the thrown TypeError subclass whose name stays TypeError; rejects a Map used as an Error cause is untouched and not native and the checker instance itself.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsNativeError022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify isNativeError returns false for Int8Array, Uint16Array and Int16Array instances ---
+      {
+        let checker: util.types = new util.types();
+        let octetView: Int8Array = new Int8Array(4);
+        let unsigned16: Uint16Array = new Uint16Array(4);
+        let signed16: Int16Array = new Int16Array(4);
+        expect(checker.isNativeError(octetView)).assertFalse();
+        expect(checker.isNativeError(unsigned16)).assertFalse();
+        expect(checker.isNativeError(signed16)).assertFalse();
+      }
+
+      // --- [2] Verify sibling views of one buffer share written data and two view kinds give the same false verdict ---
+      {
+        let checker: util.types = new util.types();
+        let buffer: ArrayBuffer = new ArrayBuffer(4);
+        let writer: Uint8Array = new Uint8Array(buffer);
+        let int32View: Int32Array = new Int32Array(buffer);
+        let float32View: Float32Array = new Float32Array(buffer);
+        let view: DataView = new DataView(buffer, 0, 2);
+        writer.$_set(0, 7);
+        checker.isNativeError(int32View);
+        expect(view.getUint8(0)).assertEqual(7);
+        expect(checker.isNativeError(int32View)).assertEqual(checker.isNativeError(float32View));
+        expect(view.byteLength).assertEqual(2);
+      }
+
+      // --- [3] Verify a renamed user Error subclass is reported as a native error while its message is kept and the RegExp verdict stays false ---
+      {
+        let checker: util.types = new util.types();
+        let renamed: NamedOverrideError = new NamedOverrideError('agree');
+        expect(checker.isNativeError(renamed)).assertTrue();
+        expect(renamed.message).assertEqual('agree');
+        expect(checker.isRegExp(renamed)).assertFalse();
+      }
+
+      // --- [4] Verify an isNativeError check made before a throw does not disturb the thrown TypeError subclass whose name stays TypeError ---
+      {
+        let checker: util.types = new util.types();
+        let firstNative: boolean = checker.isNativeError(new Error('before-catch'));
+        try {
+          raiseTypeSub();
+          expect().assertFail();
+        } catch (err) {
+          expect(err.name).assertEqual('TypeError');
+        }
+        expect(firstNative).assertTrue();
+      }
+
+      // --- [5] Verify a Map used as an Error cause is untouched and not native and the checker instance itself is rejected ---
+      {
+        let checker: util.types = new util.types();
+        let group: CauseCarrierError = new CauseCarrierError('field-map', new Map<string, int>());
+        let backMap: Map<string, int> = group.causeRef as Map<string, int>;
+        backMap.set('n', 1);
+        checker.isNativeError(group);
+        expect(backMap.size).assertEqual(1);
+        expect(checker.isNativeError(group.causeRef)).assertFalse();
+        expect(checker.isNativeError(checker)).assertFalse();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_NATIVE_ERROR_2300
+     * @tc.name testTypesIsNativeError023
+     * @tc.desc Merged batch (5 tests): Non-target object rejection: a base Error is reported native while the Set, WeakMap and WeakSet probes on it are all false; an Error subclass is reported native while every ArrayBuffer probe on that same object is false; an Error subclass is reported native while the Promise and typed array probes on that same object are false; an Error subclass is native while isMap, isDate and isRegExp all reject that same object; a Map and a WeakMap are each confirmed by their own probe while isNativeError reports false for both.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsNativeError023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify a base Error is reported native while the Set, WeakMap and WeakSet probes on it are all false ---
+      {
+        let checker: util.types = new util.types();
+        let error: Error = new Error('cross-collection');
+        expect(checker.isNativeError(error)).assertTrue();
+        expect(checker.isSet(error)).assertFalse();
+        expect(checker.isWeakMap(error)).assertFalse();
+        expect(checker.isWeakSet(error)).assertFalse();
+      }
+
+      // --- [2] Verify an Error subclass is reported native while every ArrayBuffer probe on that same object is false ---
+      {
+        let checker: util.types = new util.types();
+        let error: Error = new RefSubError('cross-buffer');
+        expect(checker.isNativeError(error)).assertTrue();
+        expect(checker.isArrayBuffer(error)).assertFalse();
+        expect(checker.isAnyArrayBuffer(error)).assertFalse();
+        expect(checker.isArrayBufferView(error)).assertFalse();
+      }
+
+      // --- [3] Verify an Error subclass is reported native while the Promise and typed array probes on that same object are false ---
+      {
+        let checker: util.types = new util.types();
+        let error: Error = new EvalSubError('cross-promise');
+        expect(checker.isNativeError(error)).assertTrue();
+        expect(checker.isPromise(error)).assertFalse();
+        expect(checker.isTypedArray(error)).assertFalse();
+      }
+
+      // --- [4] Verify an Error subclass is native while isMap, isDate and isRegExp all reject that same object ---
+      {
+        let checker: util.types = new util.types();
+        let error: Error = new TaggedError('cross-map');
+        expect(checker.isNativeError(error)).assertTrue();
+        expect(checker.isMap(error)).assertFalse();
+        let error_2: Error = new UriSubError('cross-date');
+        expect(checker.isNativeError(error_2)).assertTrue();
+        expect(checker.isDate(error_2)).assertFalse();
+        expect(checker.isRegExp(error_2)).assertFalse();
+      }
+
+      // --- [5] Verify a Map and a WeakMap are each confirmed by their own probe while isNativeError reports false for both ---
+      {
+        let checker: util.types = new util.types();
+        let store: Map<string, int> = new Map<string, int>();
+        let weak: WeakMap<PlainBox, int> = new WeakMap<PlainBox, int>();
+        expect(checker.isNativeError(store)).assertFalse();
+        expect(checker.isMap(store)).assertTrue();
+        expect(checker.isWeakMap(weak)).assertTrue();
+        expect(checker.isNativeError(weak)).assertFalse();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_NATIVE_ERROR_2400
+     * @tc.name testTypesIsNativeError024
+     * @tc.desc Merged batch (3 tests): Non-target object rejection: a Uint8Array is a typed array view while isNativeError reports false for the same typed array; a Date and a RegExp each report their own predicate while isNativeError rejects that same object; a plain class instance is rejected by the native error, Map, Date and RegExp probes alike.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsNativeError024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify a Uint8Array is a typed array view while isNativeError reports false for the same typed array ---
+      {
+        let checker: util.types = new util.types();
+        let bytes: Uint8Array = new Uint8Array(4);
+        expect(checker.isNativeError(bytes)).assertFalse();
+        expect(checker.isTypedArray(bytes)).assertTrue();
+        expect(checker.isArrayBufferView(bytes)).assertTrue();
+      }
+
+      // --- [2] Verify a Date and a RegExp each report their own predicate while isNativeError rejects that same object ---
+      {
+        let checker: util.types = new util.types();
+        let stamp: Date = new Date(0);
+        expect(checker.isNativeError(stamp)).assertFalse();
+        expect(checker.isDate(stamp)).assertTrue();
+        let pattern: RegExp = new RegExp('cross');
+        expect(checker.isNativeError(pattern)).assertFalse();
+        expect(checker.isRegExp(pattern)).assertTrue();
+      }
+
+      // --- [3] Verify a plain class instance is rejected by the native error, Map, Date and RegExp probes alike ---
+      {
+        let checker: util.types = new util.types();
+        let plain: PlainBox = new PlainBox();
+        expect(checker.isNativeError(plain)).assertFalse();
+        expect(checker.isMap(plain)).assertFalse();
+        expect(checker.isDate(plain)).assertFalse();
+        expect(checker.isRegExp(plain)).assertFalse();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_NATIVE_ERROR_2500
+     * @tc.name testTypesIsNativeError025
+     * @tc.desc Merged batch (4 tests): Non-target object rejection: verifies rejection of unrelated objects, covering loop and iterator traversal including Promise, Map and Set.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsNativeError025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+      // --- [1] Verify a plain Error renamed to TypeError is still a native error while its TypeError identity remains false ---
+      {
+        let checker: util.types = new util.types();
+        let error: Error = new Error('misnamed');
+        error.name = 'TypeError';
+        expect(checker.isNativeError(error)).assertTrue();
+        expect(error instanceof TypeError).assertFalse();
+      }
+
+      // --- [2] Verify isNativeError returns false for a Promise that already resolved to the value one ---
+      {
+        let checker: util.types = new util.types();
+        let promise: Promise<int> = Promise.resolve<int>(1);
+        expect(checker.isNativeError(promise)).assertFalse();
+      }
+
+      // --- [3] Verify isNativeError returns false for the keys, values and entries iterators of a Map and values, keys and entries iterators of a Set ---
+      {
+        let checker: util.types = new util.types();
+        let source: Map<string, int> = new Map<string, int>();
+        source.set('k', 1);
+        let keys: IterableIterator<string> = source.keys();
+        let values: IterableIterator<int> = source.values();
+        let entries: Object = source.entries();
+        expect(checker.isNativeError(keys)).assertFalse();
+        expect(checker.isNativeError(values)).assertFalse();
+        expect(checker.isNativeError(entries)).assertFalse();
+        let source_2: Set<int> = new Set<int>();
+        source_2.add(1);
+        let values_2: IterableIterator<int> = source_2.values();
+        let keys_2: IterableIterator<int> = source_2.keys();
+        let entries_2: Object = source_2.entries();
+        expect(checker.isNativeError(values_2)).assertFalse();
+        expect(checker.isNativeError(keys_2)).assertFalse();
+        expect(checker.isNativeError(entries_2)).assertFalse();
+      }
+
+      // --- [4] Verify Errors that arrive as the rejection reasons of rejected promises stay native and the TypeError name survives ---
+      {
+        let checker: util.types = new util.types();
+        let plainArrived: Object = await captureRejectionReason(new Error('rejected-plain'));
+        let typedArrived: Object = await captureRejectionReason(new TypeError('rejected-type'));
+        let typedCaught: Error = typedArrived as Error;
+        expect(checker.isNativeError(plainArrived)).assertTrue();
+        expect(checker.isNativeError(typedArrived)).assertTrue();
+        expect(typedCaught.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_NATIVE_ERROR_2600
+     * @tc.name testTypesIsNativeError026
+     * @tc.desc Merged batch (5 tests): State preservation and aliasing: an Error whose name was reassigned after construction stays a native error and reports the new name; a plain object stays foreign after its field was changed following an isNativeError call; toString reflects a reassigned message while the verdict stays true and moving one message into the other keeps both verdicts true; an Error kept in a Map value and in a Set member stays readable after isNativeError ran on both; one Error aliased into two Maps is native through both lookup paths and its message reads as the text that built it.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsNativeError026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify an Error whose name was reassigned after construction stays a native error and reports the new name ---
+      {
+        let checker: util.types = new util.types();
+        let error: Error = new Error('named');
+        error.name = 'RenamedError';
+        expect(error.name).assertEqual('RenamedError');
+        expect(checker.isNativeError(error)).assertTrue();
+      }
+
+      // --- [2] Verify a plain object stays foreign after its field was changed following an isNativeError call ---
+      {
+        let checker: util.types = new util.types();
+        let plain: PlainBox = new PlainBox();
+        let isNative: boolean = checker.isNativeError(plain);
+        plain.tag = 99;
+        expect(isNative).assertFalse();
+        expect(plain.tag).assertEqual(99);
+        expect(checker.isNativeError(plain)).assertFalse();
+      }
+
+      // --- [3] Verify toString reflects a reassigned message while the verdict stays true and moving one message into the other keeps both verdicts true ---
+      {
+        let checker: util.types = new util.types();
+        let error: Error = new Error('original');
+        error.message = 'changed';
+        expect(checker.isNativeError(error)).assertTrue();
+        expect(error.toString()).assertEqual('Error: changed');
+        let first: Error = new Error('m-one');
+        let second: Error = new Error('m-two');
+        first.message = 'm-two';
+        expect(checker.isNativeError(first)).assertEqual(checker.isNativeError(second));
+        expect(first.message).assertEqual(second.message);
+      }
+
+      // --- [4] Verify an Error kept in a Map value and in a Set member stays readable after isNativeError ran on both ---
+      {
+        let checker: util.types = new util.types();
+        let member: Error = new Error('member-msg');
+        let store: Map<string, Error> = new Map<string, Error>();
+        store.set('k', member);
+        let pool: Set<Error> = new Set<Error>();
+        pool.add(member);
+        checker.isNativeError(store);
+        checker.isNativeError(pool);
+        expect(store.get('k')!.message).assertEqual('member-msg');
+        expect(pool.has(member)).assertTrue();
+      }
+
+      // --- [5] Verify one Error aliased into two Maps is native through both lookup paths and its message reads as the text that built it ---
+      {
+        let checker: util.types = new util.types();
+        let shared: Error = new TaggedError('shared-instance');
+        let firstStore: Map<string, Error> = new Map<string, Error>();
+        firstStore.set('s', shared);
+        let secondStore: Map<string, Error> = new Map<string, Error>();
+        secondStore.set('t', shared);
+        let firstBack: Error = firstStore.get('s')!;
+        let secondBack: Error = secondStore.get('t')!;
+        expect(checker.isNativeError(firstBack)).assertTrue();
+        expect(checker.isNativeError(secondBack)).assertTrue();
+        expect(firstBack).assertEqual(secondBack);
+        let error: Error = new Error('state-probe');
+        let flag: boolean = checker.isNativeError(error);
+        expect(flag).assertTrue();
+        expect(error.message).assertEqual('state-probe');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_NATIVE_ERROR_2700
+     * @tc.name testTypesIsNativeError027
+     * @tc.desc Merged batch (5 tests): State preservation and aliasing: an Error as a Map key and a subclass Error as a WeakMap key both report as native errors and resolve their values; both payloads of an array of two interface literals are native errors and the second keeps its built-in name; a TypeError keeps its name and a SyntaxError keeps its message while both are native errors; a byte written through a DataView survives an isNativeError call on the view and its buffer; a user class extending RangeError keeps its message while isNativeError reports true.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsNativeError027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify an Error as a Map key and a subclass Error as a WeakMap key both report as native errors and resolve their values ---
+      {
+        let checker: util.types = new util.types();
+        let key: Error = new TypeError('map-key');
+        let mapStore: Map<Error, string> = new Map<Error, string>();
+        mapStore.set(key, 'value');
+        let weakKey: Error = new RefSubError('weak-key');
+        let weakStore: WeakMap<Error, string> = new WeakMap<Error, string>();
+        weakStore.set(weakKey, 'weak-key-value');
+        expect(checker.isNativeError(key)).assertTrue();
+        expect(mapStore.get(key)).assertEqual('value');
+        expect(checker.isNativeError(weakKey)).assertTrue();
+        expect(weakStore.get(weakKey)).assertEqual('weak-key-value');
+      }
+
+      // --- [2] Verify both payloads of an array of two interface literals are native errors and the second keeps its built-in name ---
+      {
+        let checker: util.types = new util.types();
+        let carriers: ErrorCarrier[] = [
+          { payload: new Error('carrier-a') },
+          { payload: new RangeError('carrier-b') }
+        ];
+        expect(checker.isNativeError(carriers[0].payload)).assertTrue();
+        expect((carriers[1].payload as Error).name).assertEqual('RangeError');
+        expect(checker.isNativeError(carriers[1].payload)).assertTrue();
+      }
+
+      // --- [3] Verify a TypeError keeps its name and a SyntaxError keeps its message while both are native errors ---
+      {
+        let checker: util.types = new util.types();
+        let typed: TypeError = new TypeError('t');
+        let syntax: SyntaxError = new SyntaxError('syntax');
+        expect(checker.isNativeError(typed)).assertTrue();
+        expect(typed.name).assertEqual('TypeError');
+        expect(checker.isNativeError(syntax)).assertTrue();
+        expect(syntax.message).assertEqual('syntax');
+      }
+
+      // --- [4] Verify a byte written through a DataView survives an isNativeError call on the view and its buffer ---
+      {
+        let checker: util.types = new util.types();
+        let buffer: ArrayBuffer = new ArrayBuffer(4);
+        let view: DataView = new DataView(buffer);
+        view.setUint8(0, 99);
+        checker.isNativeError(view);
+        checker.isNativeError(buffer);
+        expect(view.getUint8(0)).assertEqual(99);
+        expect(buffer.byteLength).assertEqual(4);
+      }
+
+      // --- [5] Verify a user class extending RangeError keeps its message while isNativeError reports true ---
+      {
+        let checker: util.types = new util.types();
+        let deep: DeepRangeError = new DeepRangeError('deep-msg');
+        let flag: boolean = checker.isNativeError(deep);
+        expect(flag).assertTrue();
+        expect(deep.message).assertEqual('deep-msg');
+        expect(deep.note).assertEqual('deep');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_NATIVE_ERROR_2800
+     * @tc.name testTypesIsNativeError028
+     * @tc.desc Merged batch (5 tests): State preservation and aliasing: the name, message and stack of an Error are unchanged after isNativeError inspected it; the two bytes stored in a Uint8Array and the lastIndex and source of a RegExp are unchanged after isNativeError inspected it; the size of a Map, the size of a Set and the byte length of a Uint8Array survive an isNativeError call; accepts a four level user Error chain and every field inherited along that chain stays readable; the field of an interface literal and of a class instance is unchanged after an isNativeError call.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsNativeError028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify the name, message and stack of an Error are unchanged after isNativeError inspected it ---
+      {
+        let checker: util.types = new util.types();
+        let error: Error = new Error('immutable');
+        let name: string = error.name;
+        let message: string = error.message;
+        let stack: string | undefined = error.stack;
+        checker.isNativeError(error);
+        expect(error.name).assertEqual(name);
+        expect(error.message).assertEqual(message);
+        expect(error.stack).assertEqual(stack);
+      }
+
+      // --- [2] Verify the two bytes stored in a Uint8Array and the lastIndex and source of a RegExp are unchanged after isNativeError inspected it ---
+      {
+        let checker: util.types = new util.types();
+        let bytes: Uint8Array = new Uint8Array(3);
+        bytes.$_set(0, 10);
+        bytes.$_set(1, 20);
+        checker.isNativeError(bytes);
+        expect(bytes.$_get(0)).assertEqual(10);
+        expect(bytes.$_get(1)).assertEqual(20);
+        let pattern: RegExp = new RegExp('ab', 'g');
+        pattern.lastIndex = 3;
+        let source: string = pattern.source;
+        checker.isNativeError(pattern);
+        expect(pattern.lastIndex).assertEqual(3);
+        expect(pattern.source).assertEqual(source);
+      }
+
+      // --- [3] Verify the size of a Map, the size of a Set and the byte length of a Uint8Array survive an isNativeError call ---
+      {
+        let checker: util.types = new util.types();
+        let store: Map<string, int> = new Map<string, int>();
+        store.set('a', 1);
+        store.set('b', 2);
+        let pool: Set<string> = new Set<string>();
+        pool.add('x');
+        pool.add('y');
+        let bytes: Uint8Array = new Uint8Array(16);
+        checker.isNativeError(store);
+        checker.isNativeError(pool);
+        checker.isNativeError(bytes);
+        expect(store.size).assertEqual(2);
+        expect(pool.size).assertEqual(2);
+        expect(bytes.byteLength).assertEqual(16);
+      }
+
+      // --- [4] Verify isNativeError returns true for a four level user Error chain and every field inherited along that chain stays readable ---
+      {
+        let checker: util.types = new util.types();
+        let deeper: FourthLevelError = new FourthLevelError('lvl4-msg');
+        expect(checker.isNativeError(deeper)).assertTrue();
+        expect(deeper.depth).assertEqual(3);
+        expect(deeper.depth4).assertEqual(4);
+        expect(deeper.extra).assertEqual('second');
+        expect(deeper.tagCode).assertEqual(100);
+      }
+
+      // --- [5] Verify the field of an interface literal and of a class instance is unchanged after an isNativeError call ---
+      {
+        let checker: util.types = new util.types();
+        let literal: TagLike = { tag: 9 };
+        let plain: PlainBox = new PlainBox();
+        checker.isNativeError(literal);
+        checker.isNativeError(plain);
+        expect(literal.tag).assertEqual(9);
+        expect(plain.tag).assertEqual(7);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_NATIVE_ERROR_2900
+     * @tc.name testTypesIsNativeError029
+     * @tc.desc Merged batch (5 tests): State preservation and aliasing: a RangeError captured from a throw keeps its thrown message and is a native error; inspecting both the key and the value of a Map entry leaves the entry count and the stored Error intact; swapping the Error in a single slot array keeps the native verdict true and the length unchanged; a filter over an ArrayBuffer and a TypeError keeps only the error; filtering a mixed Object array with an isNativeError predicate keeps exactly the two Error entries.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsNativeError029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify a RangeError captured from a throw keeps its thrown message and is a native error ---
+      {
+        let checker: util.types = new util.types();
+        let ranged: Object = captureThrownRangeError();
+        expect((ranged as Error).message).assertEqual('thrown-range');
+        expect(checker.isNativeError(ranged)).assertTrue();
+      }
+
+      // --- [2] Verify inspecting both the key and the value of a Map entry leaves the entry count and the stored Error intact ---
+      {
+        let checker: util.types = new util.types();
+        let key: Error = new RefSubError('map-intact');
+        let store: Map<Error, Error> = new Map<Error, Error>();
+        store.set(key, new UriSubError('map-intact-value'));
+        let sizeBefore: int = store.size;
+        checker.isNativeError(key);
+        checker.isNativeError(store.get(key)!);
+        expect(store.size).assertEqual(sizeBefore);
+        expect((store.get(key) as Error).name).assertEqual('URIError');
+      }
+
+      // --- [3] Verify swapping the Error in a single slot array keeps the native verdict true and the length unchanged ---
+      {
+        let checker: util.types = new util.types();
+        let items: Object[] = [new Error('swap-old')];
+        let before: boolean = checker.isNativeError(items[0]);
+        items[0] = new UriSubError('swap-new');
+        let after: boolean = checker.isNativeError(items[0]);
+        expect(before).assertEqual(after);
+        expect(after).assertTrue();
+        expect(items.length).assertEqual(1);
+      }
+
+      // --- [4] Verify a filter over an ArrayBuffer and a TypeError keeps only the error while the buffer stays an ArrayBuffer ---
+      {
+        let checker: util.types = new util.types();
+        let buffer: ArrayBuffer = new ArrayBuffer(8);
+        let suspects: Object[] = [buffer, new TypeError('tagged')];
+        let errors: Object[] = suspects.filter((suspect: Object): boolean => checker.isNativeError(suspect));
+        expect(errors.length).assertEqual(1);
+        expect(checker.isArrayBuffer(buffer)).assertTrue();
+      }
+
+      // --- [5] Verify filtering a mixed Object array with an isNativeError predicate keeps exactly the two Error entries ---
+      {
+        let checker: util.types = new util.types();
+        let mixed: Object[] = [new Error('f-a'), 'text', new RefSubError('f-b'), new PlainBox()];
+        let natives: Object[] = filterNativeErrors(mixed);
+        expect(natives.length).assertEqual(2);
+        expect(checker.isNativeError(natives[1])).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_NATIVE_ERROR_3000
+     * @tc.name testTypesIsNativeError030
+     * @tc.desc Merged batch (5 tests): Container and field storage: two nullable holders carrying an Error and a Date respectively are judged by what their fields actually hold; an Error field whose own cause reference is another Error is native through both levels of the holder; accepts Error values read from an array field, a class field and a Map entry; an Error stored in the field of an interface object literal is reported as a native error; an Error held as the cause reference of another Error is itself a native error and both verdicts are true.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsNativeError030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify two nullable holders carrying an Error and a Date respectively are judged by what their fields actually hold ---
+      {
+        let checker: util.types = new util.types();
+        let nullBox: NullFieldBox = new NullFieldBox();
+        let undefinedBox: UndefinedFieldBox = new UndefinedFieldBox();
+        nullBox.value = new Error('assigned');
+        undefinedBox.value = new Date(0);
+        expect(checker.isNativeError(nullBox.value as Object)).assertTrue();
+        expect(checker.isNativeError(undefinedBox.value as Object)).assertFalse();
+      }
+
+      // --- [2] Verify an Error field whose own cause reference is another Error is native through both levels of the holder ---
+      {
+        let checker: util.types = new util.types();
+        let holder: SlotHolder = new SlotHolder(new CauseCarrierError('outer-holder', new Error('inner-holder')));
+        let inner: Object = (holder.slot as CauseCarrierError).causeRef;
+        expect(checker.isNativeError(holder.slot)).assertTrue();
+        expect(checker.isNativeError(inner)).assertTrue();
+      }
+
+      // --- [3] Verify isNativeError returns true for Error values read from an array field, a class field and a Map entry ---
+      {
+        let checker: util.types = new util.types();
+        let shelf: ErrorShelf = new ErrorShelf();
+        let holder: ErrorHolder = new ErrorHolder();
+        let store: Map<string, Object> = new Map<string, Object>();
+        store.set('err', new Error('map-value'));
+        let fromMap: Object | undefined = store.get('err');
+        expect(checker.isNativeError(shelf.items[0])).assertTrue();
+        expect(checker.isNativeError(holder.err)).assertTrue();
+        expect(checker.isNativeError(fromMap!)).assertTrue();
+      }
+
+      // --- [4] Verify an Error stored in the field of an interface object literal is reported as a native error ---
+      {
+        let checker: util.types = new util.types();
+        let carrier: ErrorCarrier = { payload: new Error('in-literal') };
+        expect(checker.isNativeError(carrier.payload)).assertTrue();
+      }
+
+      // --- [5] Verify an Error held as the cause reference of another Error is itself a native error and both verdicts are true ---
+      {
+        let checker: util.types = new util.types();
+        let inner: Error = new TaggedError('cause-inner');
+        let outer: CauseCarrierError = new CauseCarrierError('cause-outer', inner);
+        expect(checker.isNativeError(outer)).assertTrue();
+        expect(checker.isNativeError(outer.causeRef)).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_NATIVE_ERROR_3100
+     * @tc.name testTypesIsNativeError031
+     * @tc.desc Merged batch (5 tests): Container and field storage: accepts an instance three classes below Error and the message reaches the deepest class field; a SyntaxError kept as a WeakMap value is reported as a native error after being read back; repeated isNativeError calls on a Map key add no duplicate entry and the value can still be swapped; all one hundred Error instances pushed into an array are reported as native errors; a Record holding an Error under one key and plain text under another yields opposite verdicts.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsNativeError031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify isNativeError returns true for an instance three classes below Error and the message reaches the deepest class field ---
+      {
+        let checker: util.types = new util.types();
+        let deep: ThirdLevelError = new ThirdLevelError('lvl3-msg');
+        let verdict: boolean = checker.isNativeError(deep);
+        expect(verdict).assertTrue();
+        expect(deep.message).assertEqual('lvl3-msg');
+        expect(deep.depth).assertEqual(3);
+      }
+
+      // --- [2] Verify a SyntaxError kept as a WeakMap value is reported as a native error after being read back ---
+      {
+        let checker: util.types = new util.types();
+        let key: PlainBox = new PlainBox();
+        let store: WeakMap<PlainBox, Error> = new WeakMap<PlainBox, Error>();
+        store.set(key, new SyntaxError('weak-value'));
+        let value: Error | undefined = store.get(key);
+        expect(checker.isNativeError(value!)).assertTrue();
+      }
+
+      // --- [3] Verify repeated isNativeError calls on a Map key add no duplicate entry and the value can still be swapped ---
+      {
+        let checker: util.types = new util.types();
+        let key: Error = new Error('dup-guard');
+        let store: Map<Error, string> = new Map<Error, string>();
+        store.set(key, 'first');
+        checker.isNativeError(key);
+        store.set(key, 'second');
+        expect(store.size).assertEqual(1);
+        expect(store.get(key)).assertEqual('second');
+      }
+
+      // --- [4] Verify all one hundred Error instances pushed into an array are reported as native errors ---
+      {
+        let checker: util.types = new util.types();
+        let bulk: Object[] = [];
+        for (let index: int = 0; index < 100; index++) {
+          bulk.push(new Error('bulk'));
+        }
+        let allNative: boolean = true;
+        for (const entry of bulk) {
+          if (!checker.isNativeError(entry)) {
+            allNative = false;
+          }
+        }
+        expect(bulk.length).assertEqual(100);
+        expect(allNative).assertTrue();
+      }
+
+      // --- [5] Verify a Record holding an Error under one key and plain text under another yields opposite verdicts ---
+      {
+        let checker: util.types = new util.types();
+        let record: Record<string, Object> = { 'err': new Error('record-err'), 'text': 'plain' };
+        expect(checker.isNativeError(record['err']!)).assertTrue();
+        expect(checker.isNativeError(record['text']!)).assertFalse();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_NATIVE_ERROR_3200
+     * @tc.name testTypesIsNativeError032
+     * @tc.desc Merged batch (1 test): Container and field storage: isNativeError reports an AggregateError and every nested error it carries as native.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsNativeError032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify isNativeError reports an AggregateError and every nested error it carries as native ---
+      {
+        let checker: util.types = new util.types();
+        let first: Error = new Error('agg-a');
+        let second: TypeError = new TypeError('agg-b');
+        let grouped: AggregateError = new AggregateError([first, second], 'many-failed');
+        let nested: int = 0;
+        let payload: Error[] = grouped.errors;
+        for (const item of payload) {
+          if (checker.isNativeError(item)) {
+            nested++;
+          }
+        }
+        expect(checker.isNativeError(grouped)).assertTrue();
+        expect(nested).assertEqual(payload.length);
+        expect(grouped.message).assertEqual('many-failed');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_NATIVE_ERROR_3300
+     * @tc.name testTypesIsNativeError033
+     * @tc.desc Merged batch (5 tests): API call consistency: three calls on one TypeError agree and a repeated call on one text value stays false; isNativeError reports true for an Error and false for the very message text stored in it; accepts an Error while a Date stays rejected and a RangeError while a Map stays rejected; the verdict follows values drained from an Object array: the int is rejected and the RangeError accepted; two separate checker instances give the same true verdict for one shared RangeError object.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsNativeError033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify three calls on one TypeError agree and a repeated call on one text value stays false ---
+      {
+        let checker: util.types = new util.types();
+        let typed: TypeError = new TypeError('three');
+        let r1: boolean = checker.isNativeError(typed);
+        let r2: boolean = checker.isNativeError(typed);
+        let r3: boolean = checker.isNativeError(typed);
+        expect(r1).assertEqual(r2);
+        expect(r2).assertEqual(r3);
+        expect(checker.isNativeError('three')).assertFalse();
+      }
+
+      // --- [2] Verify isNativeError reports true for an Error and false for the very message text stored in it ---
+      {
+        let checker: util.types = new util.types();
+        let error: Error = new Error('message-text');
+        expect(checker.isNativeError(error)).assertTrue();
+        expect(checker.isNativeError(error.message)).assertFalse();
+      }
+
+      // --- [3] Verify isNativeError returns true for an Error while a Date stays rejected and a RangeError while a Map stays rejected ---
+      {
+        let checker: util.types = new util.types();
+        expect(checker.isNativeError(new Error('fallback'))).assertTrue();
+        expect(checker.isNativeError(new Date(0))).assertFalse();
+        expect(checker.isNativeError(new RangeError('range'))).assertTrue();
+        expect(checker.isNativeError(new Map<string, int>())).assertFalse();
+      }
+
+      // --- [4] Verify the verdict follows values drained from an Object array: the int is rejected and the RangeError accepted ---
+      {
+        let checker: util.types = new util.types();
+        let stack: Object[] = [new RangeError('stacked-first'), 42];
+        let drained: Object = stack.pop()!;
+        let kept: Object = stack.pop()!;
+        expect(checker.isNativeError(drained)).assertFalse();
+        expect(checker.isNativeError(kept)).assertTrue();
+      }
+
+      // --- [5] Verify two separate checker instances give the same true verdict for one shared RangeError object ---
+      {
+        let first: util.types = new util.types();
+        let second: util.types = new util.types();
+        let error: Error = new RangeError('shared');
+        expect(first.isNativeError(error)).assertEqual(second.isNativeError(error));
+        expect(first.isNativeError(error)).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_NATIVE_ERROR_3400
+     * @tc.name testTypesIsNativeError034
+     * @tc.desc Merged batch (3 tests): API call consistency: the isNativeError verdict produced inside a holder class method is true for an Error subclass and false for text; isNativeError is false for a Map keys iterator that isMapIterator reports true and true for an Error; two checker instances interleaved on one Error and one text value never mix up their verdicts.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsNativeError034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify the isNativeError verdict produced inside a holder class method is true for an Error subclass and false for text ---
+      {
+        let inspector: NativeErrorInspector = new NativeErrorInspector();
+        expect(inspector.inspect(new UriSubError('ctx-b'))).assertTrue();
+        expect(inspector.inspect('text-ctx')).assertFalse();
+      }
+
+      // --- [2] Verify isNativeError is false for a Map keys iterator that isMapIterator reports true and true for an Error ---
+      {
+        let checker: util.types = new util.types();
+        let store: Map<string, int> = new Map<string, int>();
+        store.set('k', 1);
+        let keys: IterableIterator<string> = store.keys();
+        let error: Error = new Error('cross-iter');
+        expect(checker.isNativeError(error)).assertTrue();
+        expect(checker.isMapIterator(keys)).assertTrue();
+        expect(checker.isNativeError(keys)).assertFalse();
+      }
+
+      // --- [3] Verify two checker instances interleaved on one Error and one text value never mix up their verdicts ---
+      {
+        let first: util.types = new util.types();
+        let second: util.types = new util.types();
+        let error: Error = new TaggedError('leak-a');
+        let text: string = 'leak-b';
+        let r1: boolean = first.isNativeError(error);
+        let r2: boolean = second.isNativeError(text);
+        let r3: boolean = first.isNativeError(text);
+        let r4: boolean = second.isNativeError(error);
+        expect(r1).assertTrue();
+        expect(r2).assertFalse();
+        expect(r3).assertFalse();
+        expect(r4).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_NATIVE_ERROR_3500
+     * @tc.name testTypesIsNativeError035
+     * @tc.desc Merged batch (4 tests): Program integration: checks use through program paths, covering Object widening and related program paths.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsNativeError035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+      // --- [1] Verify isNativeError returns true for an Error captured from a thrown generic Error by a helper ---
+      {
+        let checker: util.types = new util.types();
+        let caught: Object = captureGenericError();
+        expect(checker.isNativeError(caught)).assertTrue();
+      }
+
+      // --- [2] Verify a TypeError returned from a helper as Object is reported as a native error ---
+      {
+        let checker: util.types = new util.types();
+        expect(checker.isNativeError(wrapTypeError())).assertTrue();
+      }
+
+      // --- [3] Verify an Error routed through a resolved Promise is still reported as a native error ---
+      {
+        let checker: util.types = new util.types();
+        let settled: Object = await Promise.resolve<Object>(new TaggedError('resolved'));
+        expect(checker.isNativeError(settled)).assertTrue();
+      }
+
+      // --- [4] Verify the first native error helper falls back to its Error argument when every list element is foreign ---
+      {
+        let checker: util.types = new util.types();
+        let mixed: Object[] = ['a', 42, new PlainBox()];
+        let fallback: Object = new Error('fallback-all');
+        let found: Object = firstNativeOrDefault(mixed, fallback);
+        expect(found).assertEqual(fallback);
+        expect(checker.isNativeError(found)).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_NATIVE_ERROR_3600
+     * @tc.name testTypesIsNativeError036
+     * @tc.desc Merged batch (5 tests): Program integration: isNativeError results combine with logical and into true and with logical or into true; accepts an Error relayed through a helper that forwards its argument; accepts an Error picked by a conditional expression and one returned by a helper; isNativeError inside a loop counts exactly the two errors of a mixed four element Object array; a ternary driven directly by an isNativeError call on a RangeError selects the native label.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsNativeError036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify isNativeError results combine with logical and into true and with logical or into true ---
+      {
+        let checker: util.types = new util.types();
+        let both: boolean = checker.isNativeError(new Error('a')) && checker.isNativeError(new TypeError('b'));
+        let either: boolean = checker.isNativeError(new Error('a')) || checker.isNativeError('text');
+        expect(both).assertTrue();
+        expect(either).assertTrue();
+      }
+
+      // --- [2] Verify isNativeError returns true for an Error relayed through a helper that forwards its argument ---
+      {
+        expect(probeNativeError(new Error('relayed'))).assertTrue();
+      }
+
+      // --- [3] Verify isNativeError returns true for an Error picked by a conditional expression and one returned by a helper ---
+      {
+        let checker: util.types = new util.types();
+        let flag: boolean = false;
+        let first: Error = new Error('branch-a');
+        let second: TypeError = new TypeError('branch-b');
+        let target: Object = flag ? first : second;
+        expect(checker.isNativeError(target)).assertTrue();
+        expect(checker.isNativeError(wrapError())).assertTrue();
+      }
+
+      // --- [4] Verify isNativeError inside a loop counts exactly the two errors of a mixed four element Object array ---
+      {
+        let checker: util.types = new util.types();
+        let mixed: Object[] = [new Error('m1'), new TypeError('m2'), 'plain-text', new PlainBox()];
+        let nativeCount: int = 0;
+        for (const entry of mixed) {
+          if (checker.isNativeError(entry)) {
+            nativeCount++;
+          }
+        }
+        expect(nativeCount).assertEqual(2);
+        expect(checker.isNativeError(mixed[2])).assertFalse();
+      }
+
+      // --- [5] Verify a ternary driven directly by an isNativeError call on a RangeError selects the native label ---
+      {
+        let checker: util.types = new util.types();
+        let label: string = checker.isNativeError(new RangeError('ctx-f')) ? 'native' : 'foreign';
+        expect(label).assertEqual('native');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_NATIVE_ERROR_3700
+     * @tc.name testTypesIsNativeError037
+     * @tc.desc Merged batch (2 tests): Program integration: an isNativeError verdict steers an if branch whose result is then consumed by a switch statement; a while loop whose condition calls isNativeError stops at the first non error element after counting two.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsNativeError037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify an isNativeError verdict steers an if branch whose result is then consumed by a switch statement ---
+      {
+        let checker: util.types = new util.types();
+        let code: int = 0;
+        if (checker.isNativeError(new TaggedError('ctx-g'))) {
+          code = 7;
+        }
+        switch (code) {
+          case 7:
+            code = 8;
+            break;
+          default:
+            break;
+        }
+        expect(code).assertEqual(8);
+      }
+
+      // --- [2] Verify a while loop whose condition calls isNativeError stops at the first non error element after counting two ---
+      {
+        let checker: util.types = new util.types();
+        let items: Object[] = [new Error('w-a'), new RefSubError('w-b'), 'plain-stop', new Error('w-c')];
+        let index: int = 0;
+        let nativeRun: int = 0;
+        while (index < items.length && checker.isNativeError(items[index])) {
+          nativeRun++;
+          index++;
+        }
+        expect(nativeRun).assertEqual(2);
+        expect(index).assertEqual(2);
+      }
+    });
+
   });
 }
