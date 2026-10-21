@@ -1737,5 +1737,502 @@ export default function typesConstructorTest(): void {
       }
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_CONSTRUCTOR_2700
+     * @tc.name testTypesConstructor027
+     * @tc.desc Merged batch (5 tests): Container and field storage: every element of a three element checker array classifies a Set during traversal; a checker read out of a Map before the clear still classifies after the Map was emptied; a checker that is the only member of a Set reports that Set as a Set; one checker stored under two Map keys is visited twice by value traversal; a checker stored under another checker's verdict key is returned by that key and one inside the array it probes still rejects it.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesConstructor027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify every element of a three element checker array classifies a Set during traversal ---
+      {
+        let instances: Array<util.types> = [new util.types(), new util.types(), new util.types()];
+        let accepted: int = 0;
+        for (const instance of instances) {
+          if (instance.isSet(new Set<string>())) {
+            accepted = accepted + 1;
+          }
+        }
+        expect(accepted).assertEqual(3);
+      }
+
+      // --- [2] Verify a checker read out of a Map before the clear still classifies after the Map was emptied ---
+      {
+        let checker: util.types = new util.types();
+        let store: Map<string, util.types> = new Map<string, util.types>();
+        store.set('slot', checker);
+        let held: util.types = store.get('slot') as util.types;
+        store.clear();
+        expect(store.size).assertEqual(0);
+        expect(held.isMap(new Map<string, int>())).assertTrue();
+      }
+
+      // --- [3] Verify a checker that is the only member of a Set reports that Set as a Set ---
+      {
+        let checker: util.types = new util.types();
+        let pool: Set<object> = new Set<object>();
+        pool.add(checker);
+        expect(checker.isSet(pool)).assertTrue();
+        expect(pool.size).assertEqual(1);
+      }
+
+      // --- [4] Verify one checker stored under two Map keys is visited twice by value traversal ---
+      {
+        let checker: util.types = new util.types();
+        let store: Map<string, util.types> = new Map<string, util.types>();
+        store.set('first', checker);
+        store.set('second', checker);
+        let hits: int = 0;
+        for (const item of store.values()) {
+          if (item.isSet(new Set<int>())) {
+            hits = hits + 1;
+          }
+        }
+        expect(hits).assertEqual(2);
+        expect(store.size).assertEqual(2);
+      }
+
+      // --- [5] Verify a checker stored under another checker's verdict key is returned by that key and one inside the array it probes still rejects it ---
+      {
+        let recorder: util.types = new util.types();
+        let stored: util.types = new util.types();
+        let store: Map<boolean, util.types> = new Map<boolean, util.types>();
+        store.set(recorder.isMap(new Map<string, int>()), stored);
+        let held: util.types = store.get(true) as util.types;
+        expect(held).assertEqual(stored);
+        expect(held.isSet(new Set<int>())).assertTrue();
+        let checker: util.types = new util.types();
+        let list: Array<Object> = [checker];
+        expect(checker.isMap(list)).assertFalse();
+        expect(list.length).assertEqual(1);
+        let stored_2: util.types = list[0] as util.types;
+        expect(stored_2).assertEqual(checker);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_CONSTRUCTOR_2800
+     * @tc.name testTypesConstructor028
+     * @tc.desc Merged batch (5 tests): Container and field storage: counting Map verdicts over a list containing the checker itself accepts only the Map entry; a checker reached through a Map value and then a holder field still classifies; holders traversed from an array each expose a checker that classifies a Set; a checker reached through two nested Map layers is the original instance and classifies; two verdicts of one checker recorded in an array hold exactly one true value.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesConstructor028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify counting Map verdicts over a list containing the checker itself accepts only the Map entry ---
+      {
+        let checker: util.types = new util.types();
+        let probes: Array<Object> = [checker, new Map<string, int>()];
+        expect(countMapChecks(checker, probes)).assertEqual(1);
+        expect(checker.isSet(new Set<int>())).assertTrue();
+      }
+
+      // --- [2] Verify a checker reached through a Map value and then a holder field still classifies ---
+      {
+        let holder: CheckerHolder = new CheckerHolder();
+        let registry: Map<string, CheckerHolder> = new Map<string, CheckerHolder>();
+        registry.set('slot', holder);
+        let fetched: CheckerHolder = registry.get('slot') as CheckerHolder;
+        expect(fetched).assertEqual(holder);
+        expect(fetched.checker.isMap(new Map<string, int>())).assertTrue();
+      }
+
+      // --- [3] Verify holders traversed from an array each expose a checker that classifies a Set ---
+      {
+        let holders: Array<CheckerHolder> = [new CheckerHolder(), new CheckerHolder()];
+        let accepted: int = 0;
+        for (const holder of holders) {
+          if (holder.checker.isSet(new Set<int>())) {
+            accepted = accepted + 1;
+          }
+        }
+        expect(accepted).assertEqual(2);
+      }
+
+      // --- [4] Verify a checker reached through two nested Map layers is the original instance and classifies ---
+      {
+        let checker: util.types = new util.types();
+        let inner: Map<string, util.types> = new Map<string, util.types>();
+        inner.set('slot', checker);
+        let outer: Map<string, Map<string, util.types>> = new Map<string, Map<string, util.types>>();
+        outer.set('layer', inner);
+        let fetched: Map<string, util.types> = outer.get('layer') as Map<string, util.types>;
+        let held: util.types = fetched.get('slot') as util.types;
+        expect(held).assertEqual(checker);
+        expect(held.isMap(new Map<string, int>())).assertTrue();
+      }
+
+      // --- [5] Verify two verdicts of one checker recorded in an array hold exactly one true value ---
+      {
+        let checker: util.types = new util.types();
+        let verdicts: Array<boolean> = [checker.isMap(new Map<string, int>()), checker.isMap(new Set<int>())];
+        let accepted: int = 0;
+        for (const verdict of verdicts) {
+          if (verdict) {
+            accepted = accepted + 1;
+          }
+        }
+        expect(accepted).assertEqual(1);
+        expect(verdicts.length).assertEqual(2);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_CONSTRUCTOR_2900
+     * @tc.name testTypesConstructor029
+     * @tc.desc Merged batch (5 tests): Container and field storage: a checker held by a Map inside an array element is recovered through both layers; stored in a Record that is itself a Map value is recovered and classifies a Date; stored as a Map value reports the Map that holds it as a Map; reports the values iterator of the Set that contains it as a set iterator; taken from a holder field is itself usable as a Map key.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesConstructor029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify a checker held by a Map inside an array element is recovered through both layers ---
+      {
+        let checker: util.types = new util.types();
+        let cell: Map<string, util.types> = new Map<string, util.types>();
+        cell.set('slot', checker);
+        let row: Array<Map<string, util.types>> = [cell];
+        let held: util.types = row[0].get('slot') as util.types;
+        expect(held).assertEqual(checker);
+        expect(held.isTypedArray(new Int16Array(2))).assertTrue();
+      }
+
+      // --- [2] Verify a checker stored in a Record that is itself a Map value is recovered and classifies a Date ---
+      {
+        let checker: util.types = new util.types();
+        let table: Record<string, util.types> = { 'slot': checker };
+        let store: Map<string, Record<string, util.types>> = new Map<string, Record<string, util.types>>();
+        store.set('table', table);
+        let fetched: Record<string, util.types> = store.get('table') as Record<string, util.types>;
+        let held: util.types = fetched['slot']!;
+        expect(held).assertEqual(checker);
+        expect(held.isDate(new Date(0))).assertTrue();
+      }
+
+      // --- [3] Verify a checker stored as a Map value reports the Map that holds it as a Map ---
+      {
+        let checker: util.types = new util.types();
+        let store: Map<string, util.types> = new Map<string, util.types>();
+        store.set('slot', checker);
+        expect(checker.isMap(store)).assertTrue();
+        let held: util.types = store.get('slot') as util.types;
+        expect(held).assertEqual(checker);
+      }
+
+      // --- [4] Verify a checker reports the values iterator of the Set that contains it as a set iterator ---
+      {
+        let checker: util.types = new util.types();
+        let pool: Set<object> = new Set<object>();
+        pool.add(checker);
+        let iterator: IterableIterator<object> = pool.values();
+        expect(checker.isSetIterator(iterator)).assertTrue();
+        expect(checker.isSet(pool)).assertTrue();
+      }
+
+      // --- [5] Verify a checker taken from a holder field is itself usable as a Map key ---
+      {
+        let holder: CheckerHolder = new CheckerHolder();
+        let registry: Map<util.types, string> = new Map<util.types, string>();
+        registry.set(holder.checker, 'held');
+        let value: string = registry.get(holder.checker) as string;
+        expect(value).assertEqual('held');
+        expect(holder.checker.isSet(new Set<int>())).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_CONSTRUCTOR_3000
+     * @tc.name testTypesConstructor030
+     * @tc.desc Merged batch (2 tests): Container and field storage: the value iterator of a checker valued Map yields the checker and is a map iterator; a checker held in an array that is a Map value is recovered through both layers.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesConstructor030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify the value iterator of a checker valued Map yields the checker and is a map iterator ---
+      {
+        let checker: util.types = new util.types();
+        let store: Map<string, util.types> = new Map<string, util.types>();
+        store.set('slot', checker);
+        let iterator: IterableIterator<util.types> = store.values();
+        let held: util.types = iterator.next().value as util.types;
+        expect(held).assertEqual(checker);
+        expect(checker.isMapIterator(iterator)).assertTrue();
+      }
+
+      // --- [2] Verify a checker held in an array that is a Map value is recovered through both layers ---
+      {
+        let checker: util.types = new util.types();
+        let grouped: Map<int, Array<util.types>> = new Map<int, Array<util.types>>();
+        grouped.set(1, [checker]);
+        let list: Array<util.types> = grouped.get(1) as Array<util.types>;
+        expect(list[0]).assertEqual(checker);
+        expect(list[0].isMap(new Map<string, int>())).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_CONSTRUCTOR_3100
+     * @tc.name testTypesConstructor031
+     * @tc.desc Merged batch (4 tests): Classification paths and subclass probes: verifies checker verdicts, covering subclass instances, ECMA timestamp limits and branch selection.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesConstructor031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify an instance of a class extending util.types passes both instanceof checks and classifies a Map ---
+      {
+        let built: Object = new DerivedChecker();
+        expect(built instanceof util.types).assertTrue();
+        expect(built instanceof DerivedChecker).assertTrue();
+        let derived: util.types = built as util.types;
+        expect(derived.isMap(new Map<string, int>())).assertTrue();
+      }
+
+      // --- [2] Verify the checker reports the ECMA timestamp limit 8.64e15 and one millisecond past it as Dates while a Map check rejects the latter ---
+      {
+        let checker: util.types = new util.types();
+        let limit: Date = new Date(8640000000000000);
+        let beyond: Date = new Date(8640000000000001);
+        expect(checker.isDate(limit)).assertTrue();
+        expect(checker.isDate(beyond)).assertTrue();
+        expect(checker.isMap(beyond)).assertFalse();
+      }
+
+      // --- [3] Verify a subclass instance is rejected as Map, Set and Date while an array fails as Map and a quoted key Record still reports Map ---
+      {
+        let receiver: util.types = new util.types();
+        let derived: util.types = new DerivedChecker();
+        expect(receiver.isMap(derived)).assertFalse();
+        expect(receiver.isSet(derived)).assertFalse();
+        expect(receiver.isDate(derived)).assertFalse();
+        let checker: util.types = new util.types();
+        let list: Array<int> = [1, 2];
+        let table: Record<string, int> = { 'k': 3 };
+        expect(checker.isMap(list)).assertFalse();
+        expect(checker.isMap(table)).assertTrue();
+        expect(list.length).assertEqual(2);
+        expect(table['k']).assertEqual(3);
+      }
+
+      // --- [4] Verify one checker takes the Set branch for a Set and rejects the very same probe as a Map ---
+      {
+        let checker: util.types = new util.types();
+        let probe: Set<int> = new Set<int>();
+        let verdict: string = 'none';
+        switch (checker.isSet(probe)) {
+          case true:
+            verdict = checker.isMap(probe) ? 'both' : 'set only';
+            break;
+          default:
+            verdict = 'rejected';
+            break;
+        }
+        expect(verdict).assertEqual('set only');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_CONSTRUCTOR_3200
+     * @tc.name testTypesConstructor032
+     * @tc.desc Merged batch (4 tests): Typed array recognition: verifies verdicts for the full typed array family, covering bigint keyed Maps, signed and unsigned limits and single precision values.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesConstructor032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify the checker reports a Map declared with bigint keys as a Map ---
+      {
+        let checker: util.types = new util.types();
+        let probe: Map<bigint, int> = new Map<bigint, int>();
+        expect(checker.isMap(probe)).assertTrue();
+      }
+
+      // --- [2] Verify the checker reports all eleven typed array kinds as typed arrays ---
+      {
+        let checker: util.types = new util.types();
+        let all: boolean = checker.isTypedArray(new Uint8Array(2)) && checker.isTypedArray(new Int8Array(2)) &&
+          checker.isTypedArray(new Uint16Array(2)) && checker.isTypedArray(new Int16Array(2)) &&
+          checker.isTypedArray(new Uint32Array(2)) && checker.isTypedArray(new Int32Array(2)) &&
+          checker.isTypedArray(new Float32Array(2)) && checker.isTypedArray(new Float64Array(2)) &&
+          checker.isTypedArray(new Uint8ClampedArray(2)) &&
+          checker.isTypedArray(new BigInt64Array(new ArrayBuffer(16))) &&
+          checker.isTypedArray(new BigUint64Array(new ArrayBuffer(16)));
+        expect(all).assertTrue();
+      }
+
+      // --- [3] Verify a Float32Array holding the exact single precision value 3.5 is reported as a Float32Array ---
+      {
+        let checker: util.types = new util.types();
+        let probe: Float32Array = new Float32Array([3.5]);
+        let recognized: boolean = checker.isFloat32Array(probe);
+        expect(recognized).assertTrue();
+        expect(probe.length).assertEqual(1);
+        expect(probe.byteLength).assertEqual(4);
+      }
+
+      // --- [4] Verify typed array boundaries -128, -32768, 65535, 255 and 2147483647 and zero element bigint arrays report their own predicates ---
+      {
+        let checker: util.types = new util.types();
+        let int8: Int8Array = new Int8Array([-128]);
+        let int16: Int16Array = new Int16Array([-32768]);
+        let uint16: Uint16Array = new Uint16Array([65535]);
+        let int32: Int32Array = new Int32Array([2147483647]);
+        let uint32: Uint32Array = new Uint32Array([2147483647]);
+        let clamped: Uint8ClampedArray = new Uint8ClampedArray([255]);
+        let values: double[] = [int8.$_get(0), int16.$_get(0), uint16.$_get(0), int32.$_get(0), uint32.$_get(0), clamped.$_get(0)];
+        let expected: double[] = [-128.0, -32768.0, 65535.0, 2147483647.0, 2147483647.0, 255.0];
+        for (let k: int = 0; k < values.length; k++) {
+          expect(values[k]).assertEqual(expected[k]);
+        }
+        let verdicts: boolean[] = [
+          checker.isInt8Array(int8) && checker.isInt8Array(new Int8Array(2)),
+          checker.isInt16Array(int16) && checker.isInt16Array(new Int16Array(2)),
+          checker.isUint16Array(uint16) && checker.isUint16Array(new Uint16Array(2)),
+          checker.isInt32Array(int32) && checker.isInt32Array(new Int32Array(2)),
+          checker.isUint32Array(uint32) && checker.isUint32Array(new Uint32Array(2)),
+          checker.isUint8ClampedArray(clamped) && checker.isUint8ClampedArray(new Uint8ClampedArray(4))
+        ];
+        let allReported: boolean = true;
+        for (const verdict of verdicts) {
+          allReported = allReported && verdict;
+        }
+        expect(allReported).assertTrue();
+        let big: BigInt64Array = new BigInt64Array(new ArrayBuffer(0));
+        let ubig: BigUint64Array = new BigUint64Array(new ArrayBuffer(0));
+        expect(big.length).assertEqual(0);
+        expect(big.byteLength).assertEqual(0);
+        expect(checker.isBigInt64Array(big)).assertTrue();
+        expect(ubig.length).assertEqual(0);
+        expect(ubig.byteLength).assertEqual(0);
+        expect(checker.isBigUint64Array(ubig)).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_CONSTRUCTOR_3300
+     * @tc.name testTypesConstructor033
+     * @tc.desc Merged batch (4 tests): Mixed classification batches: verifies mixed batches of candidate values, covering conversion and subclass paths.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesConstructor033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify a checker widened to object and cast back to util.types still classifies an Error ---
+      {
+        let base: object = new util.types();
+        let checker: util.types = base as util.types;
+        expect(checker.isNativeError(new Error('e'))).assertTrue();
+      }
+
+      // --- [2] Verify one checker matches exactly eleven values: Map, Set, Date, RegExp, Promise, typed array, ArrayBuffer, DataView, Error, WeakMap and WeakSet ---
+      {
+        let checker: util.types = new util.types();
+        let matched: int = 0;
+        if (checker.isMap(new Map<string, int>())) {
+          matched = matched + 1;
+        }
+        if (checker.isSet(new Set<int>())) {
+          matched = matched + 1;
+        }
+        if (checker.isDate(new Date(0))) {
+          matched = matched + 1;
+        }
+        if (checker.isRegExp(new RegExp('a'))) {
+          matched = matched + 1;
+        }
+        if (checker.isPromise(Promise.resolve<int>(0))) {
+          matched = matched + 1;
+        }
+        if (checker.isTypedArray(new Uint8Array(1))) {
+          matched = matched + 1;
+        }
+        if (checker.isArrayBuffer(new ArrayBuffer(1))) {
+          matched = matched + 1;
+        }
+        if (checker.isDataView(new DataView(new ArrayBuffer(1)))) {
+          matched = matched + 1;
+        }
+        if (checker.isNativeError(new Error('e'))) {
+          matched = matched + 1;
+        }
+        if (checker.isWeakMap(new WeakMap<WeakKeyBox, int>())) {
+          matched = matched + 1;
+        }
+        if (checker.isWeakSet(new WeakSet<WeakKeyBox>())) {
+          matched = matched + 1;
+        }
+        expect(matched).assertEqual(11);
+      }
+
+      // --- [3] Verify a checker reached through two nested interface literals classifies a Promise ---
+      {
+        let envelope: CheckerEnvelope = { inner: { checker: new util.types(), label: 'deep' }, tag: 'top' };
+        expect(envelope.inner.label).assertEqual('deep');
+        expect(envelope.inner.checker.isPromise(Promise.resolve<int>(1))).assertTrue();
+      }
+
+      // --- [4] Verify the checker classifies an empty pattern, a global flag and an ignore case pattern RegExp as RegExp ---
+      {
+        let checker: util.types = new util.types();
+        let emptyPattern: RegExp = new RegExp('');
+        let globalFlag: RegExp = new RegExp('a', 'g');
+        let ignoreCase: RegExp = new RegExp('abc', 'i');
+        expect(checker.isRegExp(emptyPattern)).assertTrue();
+        expect(checker.isRegExp(globalFlag)).assertTrue();
+        expect(checker.isRegExp(ignoreCase)).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_CONSTRUCTOR_3400
+     * @tc.name testTypesConstructor034
+     * @tc.desc Merged batch (4 tests): Miscellaneous checks: verifies remaining edge cases, covering RegExp patterns and related edge cases.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesConstructor034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+      // --- [1] Verify two isRegExp calls on the same RegExp by one checker return the same result ---
+      {
+        let checker: util.types = new util.types();
+        let probe: RegExp = new RegExp('x');
+        let first: boolean = checker.isRegExp(probe);
+        let second: boolean = checker.isRegExp(probe);
+        expect(first).assertEqual(second);
+        expect(first).assertTrue();
+      }
+
+      // --- [2] Verify classifying a Promise still lets it resolve to the value five ---
+      {
+        let checker: util.types = new util.types();
+        let probe: Promise<int> = Promise.resolve<int>(5);
+        let result: boolean = checker.isPromise(probe);
+        let settled: int = await probe;
+        expect(result).assertTrue();
+        expect(settled).assertEqual(5);
+      }
+
+      // --- [3] Verify an instance built by the no-argument constructor is recognised as an instance of util.types ---
+      {
+        let checker: util.types = new util.types();
+        let asObject: Object = checker;
+        expect(asObject instanceof util.types).assertTrue();
+      }
+
+      // --- [4] Verify a byte written through one view of a shared buffer is visible in the sibling view ---
+      {
+        let checker: util.types = new util.types();
+        let buffer: ArrayBuffer = new ArrayBuffer(4);
+        let writer: Uint8Array = new Uint8Array(buffer);
+        let reader: Uint8Array = new Uint8Array(buffer);
+        writer.$_set(0, 42);
+        expect(reader.$_get(0)).assertEqual(42);
+        expect(checker.isUint8Array(reader)).assertTrue();
+      }
+    });
+
   });
 }
