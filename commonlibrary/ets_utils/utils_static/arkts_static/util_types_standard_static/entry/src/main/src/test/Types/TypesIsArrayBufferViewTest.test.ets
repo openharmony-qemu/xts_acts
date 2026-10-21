@@ -1420,5 +1420,761 @@ export default function typesIsArrayBufferViewTest(): void {
       }
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_ARRAY_BUFFER_VIEW_2100
+     * @tc.name testTypesIsArrayBufferView021
+     * @tc.desc Merged batch (5 tests): State preservation and aliasing: a view reached through a reassigned alias is accepted and the predicate filters an array down to exactly its two view elements; a view retrieved from a Map value keeps its byteOffset 3 after being judged; mutating a Uint8Array element between two predicate calls keeps the two results identical; length, byteLength and byteOffset of a view are unchanged after the predicate runs; the last 0xFF byte and a clamped 255 byte survive the predicate call.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsArrayBufferView021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify a view reached through a reassigned alias is accepted and the predicate filters an array down to exactly its two view elements ---
+      {
+        let viewProbe: util.types = new util.types();
+        let alias: Uint8Array = new Uint8Array(1);
+        let other: Uint8Array = new Uint8Array(3);
+        alias = other;
+        expect(viewProbe.isArrayBufferView(alias)).assertTrue();
+        expect(alias.length).assertEqual(3);
+        let viewProbe_2: util.types = new util.types();
+        let mixed: Array<Object> = [new Date(0), new Uint8Array(1), new DataView(new ArrayBuffer(2)),
+          new Map<string, int>()];
+        let views: Array<Object> = mixed.filter((value: Object): boolean => viewProbe_2.isArrayBufferView(value));
+        expect(views.length).assertEqual(2);
+        expect(mixed.length).assertEqual(4);
+      }
+
+      // --- [2] Verify a view retrieved from a Map value keeps its byteOffset 3 after being judged ---
+      {
+        let viewProbe: util.types = new util.types();
+        let ab: ArrayBuffer = new ArrayBuffer(8);
+        let win: Uint8Array = new Uint8Array(ab, 3, 2);
+        let m: Map<string, Uint8Array> = new Map<string, Uint8Array>();
+        m.set('w', win);
+        let got: Uint8Array = m.get('w')!;
+        expect(viewProbe.isArrayBufferView(got)).assertTrue();
+        expect(got.byteOffset).assertEqual(3);
+      }
+
+      // --- [3] Verify mutating a Uint8Array element between two predicate calls keeps the two results identical ---
+      {
+        let viewProbe: util.types = new util.types();
+        let uint8View: Uint8Array = new Uint8Array([1]);
+        let before: boolean = viewProbe.isArrayBufferView(uint8View);
+        uint8View.$_set(0, 2);
+        let after: boolean = viewProbe.isArrayBufferView(uint8View);
+        expect(before).assertEqual(after);
+        expect(uint8View.$_get(0)).assertEqual(2);
+      }
+
+      // --- [4] Verify length, byteLength and byteOffset of a view are unchanged after the predicate runs ---
+      {
+        let viewProbe: util.types = new util.types();
+        let uint8View: Uint8Array = new Uint8Array([9, 8, 7]);
+        let int16View: Int16Array = new Int16Array([1, 2, 3]);
+        let base: Uint8Array = new Uint8Array(16);
+        let sub: Uint8Array = base.subarray(4, 9);
+        viewProbe.isArrayBufferView(uint8View);
+        viewProbe.isArrayBufferView(int16View);
+        viewProbe.isArrayBufferView(sub);
+        expect(uint8View.length).assertEqual(3);
+        expect(int16View.byteLength).assertEqual(6);
+        expect(sub.byteOffset).assertEqual(4);
+        expect(sub.byteLength).assertEqual(5);
+      }
+
+      // --- [5] Verify the last 0xFF byte and a clamped 255 byte survive the predicate call ---
+      {
+        let viewProbe: util.types = new util.types();
+        let uint8View: Uint8Array = new Uint8Array(16);
+        for (let i: int = 0; i < 16; i++) {
+          uint8View.$_set(i, 255);
+        }
+        let c: Uint8ClampedArray = new Uint8ClampedArray(1);
+        c.$_set(0, 300);
+        viewProbe.isArrayBufferView(uint8View);
+        viewProbe.isArrayBufferView(c);
+        expect(uint8View.$_get(15)).assertEqual(255);
+        expect(c.$_get(0)).assertEqual(255);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_ARRAY_BUFFER_VIEW_2200
+     * @tc.name testTypesIsArrayBufferView022
+     * @tc.desc Merged batch (5 tests): State preservation and aliasing: a 256 byte view keeps all of its zero content after the predicate runs; the buffer of an offset Float32Array keeps the original 32 byte length; view content is unchanged after the predicate runs and a view returned through an identity helper stays accepted with its length; a judged DataView window keeps its constructor byteOffset, its byteLength and the full buffer length; the source elements of a copy constructed Float64Array are unchanged after the copy is judged.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsArrayBufferView022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify a 256 byte view keeps all of its zero content after the predicate runs ---
+      {
+        let viewProbe: util.types = new util.types();
+        let uint8View: Uint8Array = new Uint8Array(256);
+        viewProbe.isArrayBufferView(uint8View);
+        let allZero: boolean = true;
+        for (let i: int = 0; i < 256; i++) {
+          if (uint8View.$_get(i) !== 0) {
+            allZero = false;
+          }
+        }
+        expect(allZero).assertTrue();
+      }
+
+      // --- [2] Verify the buffer of an offset Float32Array keeps the original 32 byte length ---
+      {
+        let viewProbe: util.types = new util.types();
+        let ab: ArrayBuffer = new ArrayBuffer(32);
+        let float32View: Float32Array = new Float32Array(ab, 8, 4);
+        viewProbe.isArrayBufferView(float32View);
+        expect(float32View.buffer.byteLength).assertEqual(32);
+        expect(float32View.byteLength).assertEqual(16);
+      }
+
+      // --- [3] Verify view content is unchanged after the predicate runs and a view returned through an identity helper stays accepted with its length ---
+      {
+        let viewProbe: util.types = new util.types();
+        let uint8View: Uint8Array = new Uint8Array([3]);
+        let float32View: Float32Array = new Float32Array([0.5, -0.5]);
+        viewProbe.isArrayBufferView(uint8View);
+        viewProbe.isArrayBufferView(float32View);
+        expect(uint8View.$_get(0)).assertEqual(3);
+        expect(float32View.$_get(1)).assertEqual(-0.5);
+        let viewProbe_2: util.types = new util.types();
+        let uint8View_2: Uint8Array = new Uint8Array(5);
+        let back: Uint8Array = identityView(uint8View_2);
+        expect(viewProbe_2.isArrayBufferView(back)).assertTrue();
+        expect(back.length).assertEqual(uint8View_2.length);
+      }
+
+      // --- [4] Verify a judged DataView window keeps its constructor byteOffset, its byteLength and the full buffer length ---
+      {
+        let viewProbe: util.types = new util.types();
+        let ab: ArrayBuffer = new ArrayBuffer(12);
+        let dv: DataView = new DataView(ab, 4, 6);
+        let before: int = dv.byteLength;
+        viewProbe.isArrayBufferView(dv);
+        expect(dv.byteOffset).assertEqual(4);
+        expect(dv.byteLength).assertEqual(before);
+        expect(dv.buffer.byteLength).assertEqual(12);
+      }
+
+      // --- [5] Verify the source elements of a copy constructed Float64Array are unchanged after the copy is judged ---
+      {
+        let viewProbe: util.types = new util.types();
+        let src: Float64Array = new Float64Array([1.25, 2.5]);
+        let copy: Float64Array = new Float64Array(src);
+        viewProbe.isArrayBufferView(copy);
+        expect(src.$_get(0)).assertEqual(1.25);
+        expect(src.length).assertEqual(2);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_ARRAY_BUFFER_VIEW_2300
+     * @tc.name testTypesIsArrayBufferView023
+     * @tc.desc Merged batch (2 tests): State preservation and aliasing: the shared buffer of two judged views keeps its byteLength and a BigInt64Array element stays unchanged after the predicate; accepts the view handed back by a class method with its length preserved.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsArrayBufferView023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify the shared buffer of two judged views keeps its byteLength and a BigInt64Array element stays unchanged after the predicate ---
+      {
+        let viewProbe: util.types = new util.types();
+        let ab: ArrayBuffer = new ArrayBuffer(64);
+        let a: Uint8Array = new Uint8Array(ab, 0, 8);
+        let b: Int32Array = new Int32Array(ab, 8, 4);
+        viewProbe.isArrayBufferView(a);
+        viewProbe.isArrayBufferView(b);
+        expect(a.buffer.byteLength).assertEqual(64);
+        expect(b.buffer.byteLength).assertEqual(64);
+        let viewProbe_2: util.types = new util.types();
+        let bigInt64View: BigInt64Array = new BigInt64Array(1);
+        bigInt64View.$_set(0, 7);
+        viewProbe_2.isArrayBufferView(bigInt64View);
+        let held: bigint = bigInt64View.$_get(0);
+        expect(viewProbe_2.isArrayBufferView(bigInt64View)).assertTrue();
+        expect(held.toString()).assertEqual('7');
+      }
+
+      // --- [2] Verify isArrayBufferView returns true for the view handed back by a class method with its length preserved ---
+      {
+        let viewProbe: util.types = new util.types();
+        let keeper: ViewKeeper = new ViewKeeper();
+        keeper.store(new Uint8Array(7));
+        let back: Uint8Array = keeper.take();
+        expect(viewProbe.isArrayBufferView(back)).assertTrue();
+        expect(back.length).assertEqual(7);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_ARRAY_BUFFER_VIEW_2400
+     * @tc.name testTypesIsArrayBufferView024
+     * @tc.desc Merged batch (3 tests): Element boundary recognition: verifies isArrayBufferView stays true for views holding the int8, byte and maximum signed or unsigned element bounds.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsArrayBufferView024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify isArrayBufferView accepts an Int8Array at the int8 bounds and a Float32Array holding 3.5 and -2.25 ---
+      {
+        let viewProbe: util.types = new util.types();
+        let int8View: Int8Array = new Int8Array([-128, 127]);
+        let float32View: Float32Array = new Float32Array([3.5, -2.25]);
+        expect(viewProbe.isArrayBufferView(int8View)).assertTrue();
+        expect(viewProbe.isArrayBufferView(float32View)).assertTrue();
+        expect(int8View.$_get(0)).assertEqual(-128);
+        expect(float32View.$_get(1)).assertEqual(-2.25);
+      }
+
+      // --- [2] Verify isArrayBufferView returns true for a Uint8Array holding both byte bounds 0 and 255 ---
+      {
+        let viewProbe: util.types = new util.types();
+        let uint8View: Uint8Array = new Uint8Array([0, 255]);
+        expect(viewProbe.isArrayBufferView(uint8View)).assertTrue();
+        expect(uint8View.$_get(0)).assertEqual(0);
+        expect(uint8View.$_get(1)).assertEqual(255);
+      }
+
+      // --- [3] Verify isArrayBufferView returns true for Int16Array, Int32Array and Uint16Array views holding their maximum element ---
+      {
+        let viewProbe: util.types = new util.types();
+        let int16View: Int16Array = new Int16Array([32767]);
+        expect(viewProbe.isArrayBufferView(int16View)).assertTrue();
+        expect(int16View.$_get(0)).assertEqual(32767);
+        let int32View: Int32Array = new Int32Array([2147483647]);
+        expect(viewProbe.isArrayBufferView(int32View)).assertTrue();
+        expect(int32View.$_get(0)).assertEqual(2147483647);
+        let uint16View: Uint16Array = new Uint16Array([65535]);
+        expect(viewProbe.isArrayBufferView(uint16View)).assertTrue();
+        expect(uint16View.$_get(0)).assertEqual(65535);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_ARRAY_BUFFER_VIEW_2500
+     * @tc.name testTypesIsArrayBufferView025
+     * @tc.desc Merged batch (5 tests): Container and field storage: a nullable Uint8Array field holding a view is recognized as an array buffer view and reports its length; accepts a Uint32Array holding the uint32 maximum element 4294967295; accepts a Float64Array holding the special values NaN and positive infinity; isArrayBufferView is true only for the leaf view of a two dimensional array of views; accepts each element of an interface field that holds a list of views.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsArrayBufferView025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify a nullable Uint8Array field holding a view is recognized as an array buffer view and reports its length ---
+      {
+        let viewProbe: util.types = new util.types();
+        let holder: NullableView = new NullableView();
+        holder.view = new Uint8Array(4);
+        expect(viewProbe.isArrayBufferView(holder.view as Object)).assertTrue();
+        expect((holder.view as Uint8Array).length).assertEqual(4);
+      }
+
+      // --- [2] Verify isArrayBufferView returns true for a Uint32Array holding the uint32 maximum element 4294967295 ---
+      {
+        let viewProbe: util.types = new util.types();
+        let uint32View: Uint32Array = new Uint32Array([4294967295]);
+        expect(viewProbe.isArrayBufferView(uint32View)).assertTrue();
+        expect(uint32View.$_get(0)).assertEqual(4294967295);
+      }
+
+      // --- [3] Verify isArrayBufferView returns true for a Float64Array holding the special values NaN and positive infinity ---
+      {
+        let viewProbe: util.types = new util.types();
+        let float64View: Float64Array = new Float64Array([Double.NaN, Double.POSITIVE_INFINITY]);
+        expect(viewProbe.isArrayBufferView(float64View)).assertTrue();
+        expect(float64View.length).assertEqual(2);
+      }
+
+      // --- [4] Verify isArrayBufferView is true only for the leaf view of a two dimensional array of views ---
+      {
+        let viewChecker: util.types = new util.types();
+        let grid: Array<Array<Uint8Array>> = [[new Uint8Array(1)], [new Uint8Array(2)]];
+        expect(viewChecker.isArrayBufferView(grid)).assertFalse();
+        expect(viewChecker.isArrayBufferView(grid[0])).assertFalse();
+        expect(viewChecker.isArrayBufferView(grid[1][0])).assertTrue();
+      }
+
+      // --- [5] Verify isArrayBufferView returns true for each element of an interface field that holds a list of views ---
+      {
+        let viewChecker: util.types = new util.types();
+        let list: ViewList = { views: [new Uint8Array(1), new Uint8Array(2)] };
+        expect(viewChecker.isArrayBufferView(list)).assertFalse();
+        expect(viewChecker.isArrayBufferView(list.views[0])).assertTrue();
+        expect(viewChecker.isArrayBufferView(list.views[1])).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_ARRAY_BUFFER_VIEW_2600
+     * @tc.name testTypesIsArrayBufferView026
+     * @tc.desc Merged batch (2 tests): Container and field storage: isArrayBufferView holds for views read from two separate holder instances; the predicate result selects a nested branch label for a DataView and a typed array together.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsArrayBufferView026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify isArrayBufferView holds for views read from two separate holder instances ---
+      {
+        let viewProbe: util.types = new util.types();
+        let first: ViewHolder = new ViewHolder();
+        let second: ViewHolder = new ViewHolder();
+
+        let hits: int = 0;
+        if (viewProbe.isArrayBufferView(first.data)) {
+          hits++;
+        }
+        if (viewProbe.isArrayBufferView(second.data)) {
+          hits++;
+        }
+        expect(hits).assertEqual(2);
+      }
+
+      // --- [2] Verify the predicate result selects a nested branch label for a DataView and a typed array together ---
+      {
+        let viewProbe: util.types = new util.types();
+        let dv: DataView = new DataView(new ArrayBuffer(4));
+        let uint8View: Uint8Array = new Uint8Array(2);
+
+        let label: string = '';
+        if (viewProbe.isArrayBufferView(dv)) {
+          if (viewProbe.isArrayBufferView(uint8View)) {
+            label = 'both';
+          } else {
+            label = 'dataonly';
+          }
+        }
+        expect(label).assertEqual('both');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_ARRAY_BUFFER_VIEW_2700
+     * @tc.name testTypesIsArrayBufferView027
+     * @tc.desc Merged batch (5 tests): API call consistency: isArrayBufferView accepts a typed array subarray; accepts a Uint8Array window opened over another view buffer while that buffer is false; a Uint8Array is accepted while plain text is rejected, and a DataView over a buffer slice is accepted while the slice is not; rejects a holder instance while its view field returns true; accepts a Uint8Array kept under a quoted Record key while the Record returns false.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsArrayBufferView027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify isArrayBufferView accepts a typed array subarray while rejecting the buffer slice that has the same byte length ---
+      {
+        let viewProbe: util.types = new util.types();
+        let source: ArrayBuffer = new ArrayBuffer(8);
+        let window: ArrayBuffer = source.slice(2, 6);
+        let typed: Uint8Array = new Uint8Array(source);
+        let sub: Uint8Array = typed.subarray(2, 6);
+        expect(viewProbe.isArrayBufferView(window)).assertFalse();
+        expect(viewProbe.isArrayBufferView(sub)).assertTrue();
+        expect(window.byteLength).assertEqual(sub.byteLength);
+      }
+
+      // --- [2] Verify isArrayBufferView returns true for a Uint8Array window opened over another view buffer while that buffer is false ---
+      {
+        let viewProbe: util.types = new util.types();
+        let ab: ArrayBuffer = new ArrayBuffer(8);
+        let holder: Uint8Array = new Uint8Array(ab, 0, 4);
+        let inner: Uint8Array = new Uint8Array(holder.buffer, 4, 2);
+        expect(viewProbe.isArrayBufferView(inner)).assertTrue();
+        expect(viewProbe.isArrayBufferView(holder.buffer)).assertFalse();
+        expect(inner.byteOffset).assertEqual(4);
+      }
+
+      // --- [3] Verify a Uint8Array is accepted while plain text is rejected, and a DataView over a buffer slice is accepted while the slice is not ---
+      {
+        let viewProbe: util.types = new util.types();
+        expect(viewProbe.isArrayBufferView(new Uint8Array(2))).assertTrue();
+        expect(viewProbe.isArrayBufferView('txt')).assertFalse();
+        let viewChecker: util.types = new util.types();
+        let big: ArrayBuffer = new ArrayBuffer(8);
+        let part: ArrayBuffer = big.slice(0, 4);
+        let dv: DataView = new DataView(part);
+        expect(viewChecker.isArrayBufferView(dv)).assertTrue();
+        expect(viewChecker.isArrayBufferView(part)).assertFalse();
+      }
+
+      // --- [4] Verify isArrayBufferView returns false for a holder instance while its view field returns true ---
+      {
+        let viewProbe: util.types = new util.types();
+        let holder: ViewHolder = new ViewHolder();
+        expect(viewProbe.isArrayBufferView(holder)).assertFalse();
+        expect(viewProbe.isArrayBufferView(holder.data)).assertTrue();
+        expect(holder.id).assertEqual(1);
+      }
+
+      // --- [5] Verify isArrayBufferView returns true for a Uint8Array kept under a quoted Record key while the Record returns false ---
+      {
+        let viewChecker: util.types = new util.types();
+        let rec: Record<string, Uint8Array> = { 'slot': new Uint8Array(2) };
+        let stored: Uint8Array = rec['slot']!;
+        expect(viewChecker.isArrayBufferView(rec)).assertFalse();
+        expect(viewChecker.isArrayBufferView(stored)).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_ARRAY_BUFFER_VIEW_2800
+     * @tc.name testTypesIsArrayBufferView028
+     * @tc.desc Merged batch (5 tests): API call consistency: accepts a Map key and value that are views while the Map itself returns false; accepts an Int16Array held inside a Set while the Set itself returns false; Uint8Array stored as a WeakMap value while the WeakMap returns false; view assigned to a field after construction while the holder stays false; isArrayBufferView is true for a view read from a Record field of an interface.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsArrayBufferView028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify isArrayBufferView returns true for a Map key and value that are views while the Map itself returns false ---
+      {
+        let viewChecker: util.types = new util.types();
+        let key: Uint8Array = new Uint8Array(1);
+        let val: Uint8Array = new Uint8Array(2);
+        let m: Map<Uint8Array, Uint8Array> = new Map<Uint8Array, Uint8Array>();
+        m.set(key, val);
+        let back: Uint8Array = m.get(key)!;
+        expect(viewChecker.isArrayBufferView(m)).assertFalse();
+        expect(viewChecker.isArrayBufferView(key)).assertTrue();
+        expect(viewChecker.isArrayBufferView(val)).assertTrue();
+        expect(viewChecker.isArrayBufferView(back)).assertTrue();
+      }
+
+      // --- [2] Verify isArrayBufferView returns true for an Int16Array held inside a Set while the Set itself returns false ---
+      {
+        let viewProbe: util.types = new util.types();
+        let int16View: Int16Array = new Int16Array(2);
+        let s: Set<Int16Array> = new Set<Int16Array>();
+        s.add(int16View);
+        expect(viewProbe.isArrayBufferView(s)).assertFalse();
+        expect(viewProbe.isArrayBufferView(int16View)).assertTrue();
+        expect(s.size).assertEqual(1);
+      }
+
+      // --- [3] Verify isArrayBufferView returns true for a Uint8Array stored as a WeakMap value while the WeakMap returns false ---
+      {
+        let viewChecker: util.types = new util.types();
+        let k: SlotKey = new SlotKey();
+        let uint8View: Uint8Array = new Uint8Array(3);
+        let wm: WeakMap<SlotKey, Uint8Array> = new WeakMap<SlotKey, Uint8Array>();
+        wm.set(k, uint8View);
+        let got: Uint8Array = wm.get(k)!;
+        expect(viewChecker.isArrayBufferView(wm)).assertFalse();
+        expect(viewChecker.isArrayBufferView(got)).assertTrue();
+      }
+
+      // --- [4] Verify isArrayBufferView returns true for a view assigned to a field after construction while the holder stays false ---
+      {
+        let viewProbe: util.types = new util.types();
+        let env: ViewEnvelope = { data: new Uint8Array(1) };
+        env.data = new Uint8Array(6);
+        expect(viewProbe.isArrayBufferView(env)).assertFalse();
+        expect(viewProbe.isArrayBufferView(env.data)).assertTrue();
+        expect(env.data.length).assertEqual(6);
+      }
+
+      // --- [5] Verify isArrayBufferView is true for a view read from a Record field of an interface while the enclosing objects are false ---
+      {
+        let viewProbe: util.types = new util.types();
+        let box: RecordBox = { slot: { 'v': new Uint8Array(3) } };
+        let got: Uint8Array = box.slot['v']!;
+        expect(viewProbe.isArrayBufferView(box)).assertFalse();
+        expect(viewProbe.isArrayBufferView(box.slot)).assertFalse();
+        expect(viewProbe.isArrayBufferView(got)).assertTrue();
+        expect(got.length).assertEqual(3);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_ARRAY_BUFFER_VIEW_2900
+     * @tc.name testTypesIsArrayBufferView029
+     * @tc.desc Merged batch (5 tests): API call consistency: accepts a view nested two interfaces deep while both enclosing objects return false; accepts both view fields of a class instance while the instance itself returns false; accepts a view and false for an ArrayBuffer; two independent util.types instances agree on the same Uint8Array input; isArrayBufferView is true for a Uint8Array while isAnyArrayBuffer and isArrayBuffer are false.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsArrayBufferView029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify isArrayBufferView returns true for a view nested two interfaces deep while both enclosing objects return false ---
+      {
+        let viewChecker: util.types = new util.types();
+        let env: ViewEnvelope = { data: new Uint8Array(2) };
+        let box: NestedEnvelope = { inner: env };
+        expect(viewChecker.isArrayBufferView(box)).assertFalse();
+        expect(viewChecker.isArrayBufferView(box.inner)).assertFalse();
+        expect(viewChecker.isArrayBufferView(box.inner.data)).assertTrue();
+      }
+
+      // --- [2] Verify isArrayBufferView returns true for both view fields of a class instance while the instance itself returns false ---
+      {
+        let viewChecker: util.types = new util.types();
+        let pair: ViewPair = new ViewPair();
+        let bytesLabel: string = verdictOf(viewChecker, pair.bytes);
+        let wordsLabel: string = verdictOf(viewChecker, pair.words);
+        expect(bytesLabel).assertEqual('view');
+        expect(wordsLabel).assertEqual('view');
+        expect(viewChecker.isArrayBufferView(pair)).assertFalse();
+      }
+
+      // --- [3] Verify isArrayBufferView executed through a class method returns true for a view and false for an ArrayBuffer ---
+      {
+        let engine: ViewEngine = new ViewEngine();
+        let uint8View: Uint8Array = new Uint8Array(2);
+        let ab: ArrayBuffer = new ArrayBuffer(4);
+        expect(engine.engine.isArrayBufferView(uint8View)).assertTrue();
+        expect(engine.judge(uint8View)).assertTrue();
+        expect(engine.judge(ab)).assertFalse();
+      }
+
+      // --- [4] Verify two independent util.types instances agree on the same Uint8Array input ---
+      {
+        let viewCheckerA: util.types = new util.types();
+        let viewCheckerB: util.types = new util.types();
+        let uint8View: Uint8Array = new Uint8Array(2);
+        let r1: boolean = viewCheckerA.isArrayBufferView(uint8View);
+        let r2: boolean = viewCheckerB.isArrayBufferView(uint8View);
+        expect(r1).assertEqual(r2);
+        expect(r1).assertTrue();
+      }
+
+      // --- [5] Verify isArrayBufferView is true for a Uint8Array while isAnyArrayBuffer and isArrayBuffer are false ---
+      {
+        let viewChecker: util.types = new util.types();
+        let byteStore: ArrayBuffer = new ArrayBuffer(3);
+        let uint8View: Uint8Array = new Uint8Array(byteStore);
+        expect(viewChecker.isArrayBufferView(uint8View)).assertTrue();
+        expect(viewChecker.isAnyArrayBuffer(uint8View)).assertFalse();
+        expect(viewChecker.isArrayBuffer(uint8View)).assertFalse();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_ARRAY_BUFFER_VIEW_3000
+     * @tc.name testTypesIsArrayBufferView030
+     * @tc.desc Merged batch (5 tests): API call consistency: a module helper judgement matches the direct call for a view and both report false for a Set; isArrayBufferView interleaved with isDate and isRegExp on one instance gives three independent results; ArrayBuffer.isView agrees with isArrayBufferView across a DataView, a typed array and a plain buffer; negation of a true view result is false and negation of a false int array result is true; a conjunction of two view judgements is true while a conjunction mixing a Map is false.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsArrayBufferView030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify a module helper judgement matches the direct call for a view and both report false for a Set ---
+      {
+        let viewProbe: util.types = new util.types();
+        let uint8View: Uint8Array = new Uint8Array(1);
+        let s: Set<int> = new Set<int>();
+        let viaHelper: boolean = judgeThroughHelper(viewProbe, uint8View);
+        let direct: boolean = viewProbe.isArrayBufferView(uint8View);
+        expect(viaHelper).assertEqual(direct);
+        expect(viaHelper).assertTrue();
+        expect(judgeThroughHelper(viewProbe, s)).assertFalse();
+      }
+
+      // --- [2] Verify isArrayBufferView interleaved with isDate and isRegExp on one instance gives three independent results ---
+      {
+        let viewChecker: util.types = new util.types();
+        let d: Date = new Date(0);
+        let re: RegExp = new RegExp('z');
+        let uint8View: Uint8Array = new Uint8Array(1);
+        expect(viewChecker.isDate(d)).assertTrue();
+        expect(viewChecker.isArrayBufferView(uint8View)).assertTrue();
+        expect(viewChecker.isRegExp(re)).assertTrue();
+        expect(viewChecker.isArrayBufferView(d)).assertFalse();
+        expect(viewChecker.isArrayBufferView(re)).assertFalse();
+      }
+
+      // --- [3] Verify ArrayBuffer.isView agrees with isArrayBufferView across a DataView, a typed array and a plain buffer ---
+      {
+        let viewProbe: util.types = new util.types();
+        let dv: DataView = new DataView(new ArrayBuffer(4));
+        let f32: Float32Array = new Float32Array(2);
+        let raw: ArrayBuffer = new ArrayBuffer(4);
+        expect(ArrayBuffer.isView(dv)).assertTrue();
+        expect(ArrayBuffer.isView(f32)).assertTrue();
+        expect(ArrayBuffer.isView(raw)).assertFalse();
+        expect(viewProbe.isArrayBufferView(dv)).assertTrue();
+        expect(viewProbe.isArrayBufferView(f32)).assertTrue();
+        expect(viewProbe.isArrayBufferView(raw)).assertFalse();
+      }
+
+      // --- [4] Verify negation of a true view result is false and negation of a false int array result is true ---
+      {
+        let viewProbe: util.types = new util.types();
+        let uint8View: Uint8Array = new Uint8Array(1);
+        let arr: int[] = [1];
+        expect(!viewProbe.isArrayBufferView(uint8View)).assertFalse();
+        expect(!viewProbe.isArrayBufferView(arr)).assertTrue();
+      }
+
+      // --- [5] Verify a conjunction of two view judgements is true while a conjunction mixing a Map is false ---
+      {
+        let viewChecker: util.types = new util.types();
+        let a: Uint8Array = new Uint8Array(1);
+        let b: Int32Array = new Int32Array(1);
+        let m: Map<string, int> = new Map<string, int>();
+        expect(viewChecker.isArrayBufferView(a) && viewChecker.isArrayBufferView(b)).assertTrue();
+        expect(viewChecker.isArrayBufferView(a) || viewChecker.isArrayBufferView(m)).assertTrue();
+        expect(viewChecker.isArrayBufferView(m) && viewChecker.isArrayBufferView(b)).assertFalse();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_ARRAY_BUFFER_VIEW_3100
+     * @tc.name testTypesIsArrayBufferView031
+     * @tc.desc Merged batch (5 tests): Program integration: accepts a three byte Uint8Array passed as the single argument; the predicate result drives an if branch for a view and is skipped for a Set; an early return helper labels a view as a view and a plain string as other; isArrayBufferView drives a ternary expression that selects the view branch for a typed array; isArrayBufferView drives a do while walk over two candidates yielding exactly one view.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsArrayBufferView031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify isArrayBufferView returns true for a three byte Uint8Array passed as the single argument ---
+      {
+        let viewChecker: util.types = new util.types();
+        let uint8View: Uint8Array = new Uint8Array(3);
+        expect(viewChecker.isArrayBufferView(uint8View)).assertTrue();
+      }
+
+      // --- [2] Verify the predicate result drives an if branch for a view and is skipped for a Set ---
+      {
+        let viewProbe: util.types = new util.types();
+        let uint8View: Uint8Array = new Uint8Array(1);
+        let s: Set<int> = new Set<int>();
+        let hit: string = '';
+        if (viewProbe.isArrayBufferView(uint8View)) {
+          hit = 'view';
+        }
+        if (viewProbe.isArrayBufferView(s) && true) {
+          hit = 'bad';
+        }
+        expect(hit).assertEqual('view');
+      }
+
+      // --- [3] Verify an early return helper labels a view as a view and a plain string as other ---
+      {
+        let viewProbe: util.types = new util.types();
+        let uint8View: Uint8Array = new Uint8Array(1);
+        expect(viewProbe.isArrayBufferView(uint8View)).assertTrue();
+        expect(verdictOf(viewProbe, uint8View)).assertEqual('view');
+        expect(verdictOf(viewProbe, 'text')).assertEqual('other');
+      }
+
+      // --- [4] Verify isArrayBufferView drives a ternary expression that selects the view branch for a typed array ---
+      {
+        let viewProbe: util.types = new util.types();
+        let uint8View: Uint8Array = new Uint8Array(1);
+        let label: string = viewProbe.isArrayBufferView(uint8View) ? 'view' : 'plain';
+        expect(label).assertEqual('view');
+        expect(viewProbe.isArrayBufferView(new RegExp('a'))).assertFalse();
+      }
+
+      // --- [5] Verify isArrayBufferView drives a do while walk over two candidates yielding exactly one view ---
+      {
+        let viewProbe: util.types = new util.types();
+        let items: Array<Object> = [new Uint8Array(1), new Set<int>()];
+        let idx: int = 0;
+        let hits: int = 0;
+
+        do {
+          if (viewProbe.isArrayBufferView(items[idx])) {
+            hits++;
+          }
+          idx++;
+        } while (idx < items.length);
+        expect(hits).assertEqual(1);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_ARRAY_BUFFER_VIEW_3200
+     * @tc.name testTypesIsArrayBufferView032
+     * @tc.desc Merged batch (3 tests): Program integration: a switch over a kind string derived from the predicate maps a view to one code and an object to another; isArrayBufferView counts views inside a while loop over a candidate array; isArrayBufferView counted inside a for of loop over mixed candidates returns exactly two views.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsArrayBufferView032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify a switch over a kind string derived from the predicate maps a view to one code and an object to another ---
+      {
+        let viewProbe: util.types = new util.types();
+        let uint8View: Uint8Array = new Uint8Array(1);
+        let cfg: Point2 = { x: 0, y: 0 };
+
+        let kind: string = viewProbe.isArrayBufferView(uint8View) ? 'view' : 'other';
+        let code: int = 0;
+        switch (kind) {
+          case 'view':
+            code = 1;
+            break;
+          default:
+            code = -1;
+            break;
+        }
+        expect(code).assertEqual(1);
+        expect(viewProbe.isArrayBufferView(cfg)).assertFalse();
+      }
+
+      // --- [2] Verify isArrayBufferView counts views inside a while loop over a candidate array ---
+      {
+        let viewProbe: util.types = new util.types();
+        let candidates: Array<Object> = [new Uint8Array(1), new ArrayBuffer(2), new Int16Array(1), 'x'];
+
+        let hits: int = 0;
+        let i: int = 0;
+        while (i < candidates.length) {
+          if (viewProbe.isArrayBufferView(candidates[i])) {
+            hits++;
+          }
+          i++;
+        }
+        expect(hits).assertEqual(2);
+      }
+
+      // --- [3] Verify isArrayBufferView counted inside a for of loop over mixed candidates returns exactly two views ---
+      {
+        let viewProbe: util.types = new util.types();
+        let items: Array<Object> = [new Uint16Array(1), 'text', new DataView(new ArrayBuffer(2)), 7 as Object];
+        let hits: int = 0;
+
+        for (const item of items) {
+          if (viewProbe.isArrayBufferView(item)) {
+            hits++;
+          }
+        }
+        expect(hits).assertEqual(2);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_ARRAY_BUFFER_VIEW_3300
+     * @tc.name testTypesIsArrayBufferView033
+     * @tc.desc Merged batch (3 tests): Miscellaneous checks: verifies remaining edge cases, covering buffer windows and subarrays and related edge cases.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsArrayBufferView033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify isArrayBufferView returns true for a Float32Array copied from a subarray window that owns its own buffer ---
+      {
+        let viewProbe: util.types = new util.types();
+        let src: Float32Array = new Float32Array([1.5, 2.5, 3.5]);
+        let win: Float32Array = src.subarray(1, 3);
+        let clone: Float32Array = new Float32Array(win);
+        expect(viewProbe.isArrayBufferView(clone)).assertTrue();
+        expect(clone.length).assertEqual(2);
+        expect(clone.buffer === src.buffer).assertFalse();
+      }
+
+      // --- [2] Verify isArrayBufferView returns false for Double.MAX_VALUE and the subnormal positive double 5e-324 ---
+      {
+        let viewChecker: util.types = new util.types();
+        expect(viewChecker.isArrayBufferView(Double.MAX_VALUE)).assertFalse();
+        expect(viewChecker.isArrayBufferView(5e-324)).assertFalse();
+      }
+
+      // --- [3] Verify isArrayBufferView returns false for int 2147483647 and the safe integer bound 9007199254740991 ---
+      {
+        let viewChecker: util.types = new util.types();
+        expect(viewChecker.isArrayBufferView(2147483647)).assertFalse();
+        let bound: long = 9007199254740991;
+        expect(viewChecker.isArrayBufferView(bound)).assertFalse();
+      }
+    });
+
   });
 }
