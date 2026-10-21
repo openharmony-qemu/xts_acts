@@ -30,7 +30,7 @@ import {
 } from '@ohos.arkui.component'
 import { State, AppStorage } from '@ohos.arkui.stateManagement'
 import { BusinessError } from '@kit.BasicServicesKit'
-
+ 
 @Entry
 @Component
 struct ScrollGetScrollState {
@@ -45,10 +45,10 @@ struct ScrollGetScrollState {
   // 未绑定任何组件的控制器，用于错误码测试
   unboundScroller: Scroller = new Scroller();
   // 定时器ID，页面销毁时清除
-  private timerId: number = -1;
+  private timerId: int = -1;
   // 列表数据
   private numbers: string[] = [];
-
+ 
   aboutToAppear() {
     for (let i = 1; i <= 30; i++) {
       this.numbers.push(i.toString());
@@ -61,7 +61,7 @@ struct ScrollGetScrollState {
       this.queryScrollState();
     }, 4);
   }
-
+ 
   aboutToDisappear() {
     // 页面销毁时清除定时器，避免资源泄漏
     if (this.timerId !== -1) {
@@ -69,7 +69,7 @@ struct ScrollGetScrollState {
       this.timerId = -1;
     }
   }
-
+ 
   // 获取当前滚动状态并记录
   private queryScrollState(): void {
     try {
@@ -83,7 +83,7 @@ struct ScrollGetScrollState {
       console.error('Failed to get scrollState. Code: ' + err.code + ', message: ' + err.message);
     }
   }
-
+ 
   // 记录出现过的状态（去重）
   private recordState(name: string): void {
     if (!this.stateRecord.includes(name)) {
@@ -91,19 +91,19 @@ struct ScrollGetScrollState {
       AppStorage.setOrCreate<string>('getScrollState_stateRecord', this.stateRecord);
     }
   }
-
+ 
   // 将滚动状态枚举转换为可读的文本
   private scrollStateToStr(state: ScrollState): string {
     return state === ScrollState.Idle ? 'Idle' :
       state === ScrollState.Scroll ? 'Scroll' : 'Fling';
   }
-
+ 
   // 保存按钮触发的最近一次调用结果
   private setResult(result: string): void {
     this.lastResult = result;
     AppStorage.setOrCreate<string>('getScrollState_lastResult', result);
   }
-
+ 
   // 无参正常调用getScrollState，用于空闲状态断言
   private queryWithNoParam(): void {
     try {
@@ -114,7 +114,7 @@ struct ScrollGetScrollState {
       this.setResult('crash:' + err.code);
     }
   }
-
+ 
   // 未绑定组件的控制器调用getScrollState，预期抛出100004错误码
   private queryUnbound(): void {
     try {
@@ -125,7 +125,7 @@ struct ScrollGetScrollState {
       this.setResult('' + err.code);
     }
   }
-
+ 
   build() {
     Column() {
       // 实时展示getScrollState获取到的滚动状态
@@ -133,35 +133,35 @@ struct ScrollGetScrollState {
         .id('getScrollState_currentState')
         .fontColor(Color.Black)
         .fontSize(14)
-
+ 
       // 展示出现过的全部滚动状态
       Text('Record: ' + this.stateRecord)
         .id('getScrollState_stateRecord')
         .fontColor(Color.Black)
         .fontSize(14)
-
+ 
       // 展示按钮触发的最近一次调用结果
       Text('Result: ' + this.lastResult)
         .id('getScrollState_result')
         .fontColor(Color.Black)
         .fontSize(14)
-
+ 
       // ========== query / unbound / animate ==========
       Row() {
         Button('query')
-          .id('getScrollState_query')
+          .id('getScrollState_default')
           .fontSize(14)
           .onClick(() => {
             this.queryWithNoParam();
           })
-
+ 
         Button('unbound')
           .id('getScrollState_unbound')
           .fontSize(14)
           .onClick(() => {
             this.queryUnbound();
           })
-
+ 
         // 控制器带动画滚动，动画期间滚动状态为Fling
         Button('animate')
           .id('getScrollState_animate')
@@ -170,7 +170,7 @@ struct ScrollGetScrollState {
             this.scroller.scrollTo({ xOffset: 0, yOffset: 500, animation: { duration: 800 } });
           })
       }.height('5%')
-
+ 
       // ========== resetRecord / reset ==========
       Row() {
         Button('resetRecord')
@@ -180,7 +180,7 @@ struct ScrollGetScrollState {
             this.stateRecord = '';
             AppStorage.setOrCreate<string>('getScrollState_stateRecord', '');
           })
-
+ 
         Button('reset')
           .id('getScrollState_reset')
           .fontSize(14)
@@ -188,7 +188,7 @@ struct ScrollGetScrollState {
             this.scroller.scrollTo({ xOffset: 0, yOffset: 0 });
           })
       }.height('5%')
-
+ 
       Scroll(this.scroller) {
         Column() {
           ForEach(this.numbers, (item: string) => {

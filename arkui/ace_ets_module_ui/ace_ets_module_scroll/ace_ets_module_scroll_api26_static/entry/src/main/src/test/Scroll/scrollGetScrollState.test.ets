@@ -54,17 +54,7 @@ export default function ScrollGetScrollStateTest() {
       AppStorage.delete('getScrollState_stateRecord');
       console.info('ScrollGetScrollStateTest afterEach called');
     });
-
-    // 在滚动组件中心由下至上滑动，触发拖拽滚动（静态模式不允许嵌套函数声明，使用箭头函数）
-    let swipeScroll = async (driver: Driver): Promise<void> => {
-      let scrollComp = await driver.findComponent(ON.id('scrollGetScrollState_scroll'));
-      let rect: Rect = await (scrollComp?.getBounds() as Promise<Rect>);
-      let centerX: number = Math.round((rect.left + rect.right) / 2);
-      let startY: number = Math.round(rect.top + (rect.bottom - rect.top) * 0.7);
-      let endY: number = Math.round(rect.top + (rect.bottom - rect.top) * 0.3);
-      await driver.swipe(centerX, startY, centerX, endY, 600);
-    };
-
+ 
     /**
      * @tc.number   SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0100
      * @tc.name     SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0100
@@ -77,7 +67,7 @@ export default function ScrollGetScrollStateTest() {
         console.info('[SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0100] START');
         let driver = Driver.create();
         await Utils.sleep(1000);
-        let btn = await driver.findComponent(ON.id('getScrollState_query'));
+        let btn = await driver.findComponent(ON.id('getScrollState_default'));
         await (btn?.click() as Promise<void>);
         await Utils.sleep(500);
         let result = AppStorage.get<string>('getScrollState_lastResult');
@@ -86,7 +76,7 @@ export default function ScrollGetScrollStateTest() {
         console.info('[SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0100] END');
         done();
       });
-
+ 
     /**
      * @tc.number   SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0200
      * @tc.name     SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0200
@@ -101,16 +91,28 @@ export default function ScrollGetScrollStateTest() {
         await Utils.sleep(1000);
         let resetRecordBtn = await driver.findComponent(ON.id('getScrollState_resetRecord'));
         await (resetRecordBtn?.click() as Promise<void>);
-        await Utils.sleep(300);
-        await swipeScroll(driver);
-        await Utils.sleep(500);
+        await Utils.sleep(1000);
+
+        let scrollComp = await driver.findComponent(ON.id('scrollGetScrollState_scroll'));
+        let rect: Rect = await (scrollComp?.getBounds() as Promise<Rect>);
+        let displayId = await scrollComp!.getDisplayId();
+        let centerX: number = Math.round((rect.left + rect.right) / 2);
+        let startY: number = Math.round(rect.top + (rect.bottom - rect.top) * 0.8);
+        let endY: number = Math.round(rect.top + (rect.bottom - rect.top) * 0.2);
+        await driver.swipeBetween(
+          { x: centerX.toInt(),
+            y: startY.toInt(), displayId: displayId },
+          { x: centerX.toInt(),
+            y: endY.toInt(), displayId: displayId }
+        );
+        await Utils.sleep(2000);
         let record: string = `${AppStorage.get<string>('getScrollState_stateRecord')}`;
         console.info('[SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0200] stateRecord: ' + record);
         expect(record.includes('Scroll')).assertTrue();
         console.info('[SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0200] END');
         done();
       });
-
+ 
     /**
      * @tc.number   SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0300
      * @tc.name     SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0300
@@ -135,7 +137,7 @@ export default function ScrollGetScrollStateTest() {
         console.info('[SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0300] END');
         done();
       });
-
+ 
     /**
      * @tc.number   SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0400
      * @tc.name     SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0400
@@ -148,18 +150,30 @@ export default function ScrollGetScrollStateTest() {
         console.info('[SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0400] START');
         let driver = Driver.create();
         await Utils.sleep(1000);
-        await swipeScroll(driver);
-        await Utils.sleep(3000);
-        let btn = await driver.findComponent(ON.id('getScrollState_query'));
+
+        let scrollComp = await driver.findComponent(ON.id('scrollGetScrollState_scroll'));
+        let rect: Rect = await (scrollComp?.getBounds() as Promise<Rect>);
+        let displayId = await scrollComp!.getDisplayId();
+        let centerX: number = Math.round((rect.left + rect.right) / 2);
+        let startY: number = Math.round(rect.top + (rect.bottom - rect.top) * 0.8);
+        let endY: number = Math.round(rect.top + (rect.bottom - rect.top) * 0.2);
+        await driver.swipeBetween(
+          { x: centerX.toInt(),
+            y: startY.toInt(), displayId: displayId },
+          { x: centerX.toInt(),
+            y: endY.toInt(), displayId: displayId }
+        );
+        await Utils.sleep(2000);
+        let btn = await driver.findComponent(ON.id('getScrollState_default'));
         await (btn?.click() as Promise<void>);
-        await Utils.sleep(500);
+        await Utils.sleep(2000);
         let result = AppStorage.get<string>('getScrollState_lastResult');
         console.info('[SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0400] result: ' + result);
         expect(result).assertEqual('Idle');
         console.info('[SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0400] END');
         done();
       });
-
+ 
     /**
      * @tc.number   SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0500
      * @tc.name     SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0500

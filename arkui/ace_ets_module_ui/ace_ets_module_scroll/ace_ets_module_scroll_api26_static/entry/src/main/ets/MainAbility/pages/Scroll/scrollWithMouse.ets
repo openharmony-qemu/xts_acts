@@ -13,12 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+ 
 import {
   Entry,
   Component,
   Column,
+  ColumnOptions,
   Row,
+  RowOptions,
   Text,
   Button,
   Scroll,
@@ -31,19 +33,19 @@ import { State } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct scrollHorizontalWithMouseIndex {
-  private readonly ten: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+  private readonly ten: int[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
   // enableScrollWithMouse属性值：undefined表示使用默认值
   @State horizontalMouseScroll: boolean | undefined = undefined;
   @State hsOff: string = '0';
   private hsScroller: Scroller = new Scroller();
-
+ 
   build() {
     Column() {
       Text(`enableScrollWithMouse: ${this.horizontalMouseScroll}`)
         .id('H_SCROLL_STATE')
         .fontSize(12)
         .fontColor('#666666')
-
+ 
       Row() {
         Button('default')
           .id('H_SCROLL_DEFAULT')
@@ -51,21 +53,7 @@ struct scrollHorizontalWithMouseIndex {
           .onClick(() => {
             this.horizontalMouseScroll = undefined;
           })
-
-        Button('true')
-          .id('H_SCROLL_TRUE')
-          .fontSize(14)
-          .onClick(() => {
-            this.horizontalMouseScroll = true;
-          })
-
-        Button('false')
-          .id('H_SCROLL_FALSE')
-          .fontSize(14)
-          .onClick(() => {
-            this.horizontalMouseScroll = false;
-          })
-
+ 
         Button('reset')
           .id('H_SCROLL_RESET')
           .fontSize(14)
@@ -73,14 +61,31 @@ struct scrollHorizontalWithMouseIndex {
             this.hsScroller.scrollTo({ xOffset: 0, yOffset: 0 });
           })
       }
-      .height('8%')
-
+      .height('5%')
+ 
+      Row() {
+        Button('true')
+          .id('H_SCROLL_TRUE')
+          .fontSize(14)
+          .onClick(() => {
+            this.horizontalMouseScroll = true;
+          })
+ 
+        Button('false')
+          .id('H_SCROLL_FALSE')
+          .fontSize(14)
+          .onClick(() => {
+            this.horizontalMouseScroll = false;
+          })
+      }
+      .height('5%')
+ 
       Text(`offset=${this.hsOff}`).id('H_SCROLL_OFFSET').fontSize(10)
-      Column({ space: 2 }) {
+      Column() {
         Text('Scroll').fontSize(10).fontColor('#666666')
         Scroll(this.hsScroller) {
-          Row({ space: 3 }) {
-            ForEach(this.ten, (i: number) => {
+          Row({ space: 3 } as RowOptions) {
+            ForEach(this.ten, (i: int) => {
               Text(`${i}`)
                 .width('30%')
                 .height('100%')
@@ -88,7 +93,7 @@ struct scrollHorizontalWithMouseIndex {
                 .fontSize(12)
                 .backgroundColor('#FFFFFF')
                 .borderRadius(6)
-            }, (i: number) => `hs_${i}`)
+            }, (i: int) => `hs_${i}`)
           }
         }
         .id('H_SCROLL')
@@ -99,7 +104,8 @@ struct scrollHorizontalWithMouseIndex {
         .width('100%')
         .height('40%')
         .onDidScroll(() => {
-          this.hsOff = `${Math.round(this.hsScroller.currentOffset().xOffset)}`;
+          let xOffset: number = this.hsScroller.currentOffset()?.xOffset!
+          this.hsOff = '' + Math.round(xOffset)
         })
       }
       .layoutWeight(1)

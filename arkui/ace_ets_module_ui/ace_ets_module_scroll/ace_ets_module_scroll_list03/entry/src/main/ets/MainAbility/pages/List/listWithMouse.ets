@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+ 
 /**
  * List组件enableScrollWithMouse从API 26.0.0开始新增，属性值设置为undefined表示使用默认值：
  * API版本26.2.0之前默认为false；从API版本26.2.0开始，水平滚动组件默认为true。
@@ -25,14 +25,14 @@ struct ListHorizontalWithMouse {
   @State horizontalMouseScroll: boolean | undefined = undefined;
   @State hlOff: string = '0';
   private hlScroller: Scroller = new Scroller();
-
+ 
   build() {
     Column() {
       Text(`enableScrollWithMouse: ${this.horizontalMouseScroll}`)
         .id('H_LIST_STATE')
         .fontSize(12)
         .fontColor('#666666')
-
+ 
       Row() {
         Button('default')
           .id('H_LIST_DEFAULT')
@@ -40,21 +40,7 @@ struct ListHorizontalWithMouse {
           .onClick(() => {
             this.horizontalMouseScroll = undefined;
           })
-
-        Button('true')
-          .id('H_LIST_TRUE')
-          .fontSize(14)
-          .onClick(() => {
-            this.horizontalMouseScroll = true;
-          })
-
-        Button('false')
-          .id('H_LIST_FALSE')
-          .fontSize(14)
-          .onClick(() => {
-            this.horizontalMouseScroll = false;
-          })
-
+ 
         Button('reset')
           .id('H_LIST_RESET')
           .fontSize(14)
@@ -62,8 +48,25 @@ struct ListHorizontalWithMouse {
             this.hlScroller.scrollTo({ xOffset: 0, yOffset: 0 });
           })
       }
-      .height('8%')
-
+      .height('5%')
+ 
+      Row() {
+        Button('true')
+          .id('H_LIST_TRUE')
+          .fontSize(14)
+          .onClick(() => {
+            this.horizontalMouseScroll = true;
+          })
+ 
+        Button('false')
+          .id('H_LIST_FALSE')
+          .fontSize(14)
+          .onClick(() => {
+            this.horizontalMouseScroll = false;
+          })
+      }
+      .height('5%')
+ 
       Text(`offset=${this.hlOff}`).id('H_LIST_OFFSET').fontSize(10)
       Column({ space: 2 }) {
         Text('List').fontSize(10).fontColor('#666666')
@@ -81,7 +84,7 @@ struct ListHorizontalWithMouse {
           }, (i: number) => `hl_${i}`)
         }
         .id('H_LIST')
-        .listDirection(ListDirection.Horizontal)
+        .listDirection(Axis.Horizontal)
         .enableScrollWithMouse(this.horizontalMouseScroll)
         .backgroundColor('#E3E8F0')
         .borderRadius(6)

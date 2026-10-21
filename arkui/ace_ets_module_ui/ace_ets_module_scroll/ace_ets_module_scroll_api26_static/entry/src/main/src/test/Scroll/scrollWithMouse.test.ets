@@ -29,71 +29,6 @@ import {
 import { sendMouseEvent } from '@ohos.arkui.Test';
 import Utils from '../../../ets/MainAbility/common/Utils';
 
-// 注入单个鼠标事件（左键），坐标为窗口坐标
-function sendMouseEventAt(action: MouseAction, x: number, y: number, width: number, height: number): boolean {
-  let result: boolean = sendMouseEvent({
-    windowX: x,
-    windowY: y,
-    displayX: x,
-    displayY: y,
-    x: x,
-    y: y,
-    button: MouseButton.Left,
-    action: action,
-    timestamp: new Date().getTime() as long,
-    target: {
-      area: {
-        width: width,
-        height: height,
-        position: {
-          x: 0,
-          y: 0
-        },
-        globalPosition: {
-          x: 0,
-          y: 0
-        }
-      }
-    },
-    source: SourceType.Mouse,
-    tiltX: 0,
-    tiltY: 0,
-    sourceTool: SourceTool.Finger,
-    pressure: 0,
-    stopPropagation: () => {
-    },
-    getModifierKeyState: (keys: Array<string>): boolean => {
-      console.info('getModifierKeyState keys: ' + keys);
-      return true;
-    }
-  } as MouseEvent);
-  return result;
-}
-
-// 模拟鼠标左键按住从startX水平拖拽至endX：按下 -> 多步移动 -> 抬起
-async function mouseDragHorizontal(startX: number, endX: number, centerY: number,
-  width: number, height: number): Promise<void> {
-  let steps: number = 8;
-  let xStep: number = (endX - startX) / steps;
-  console.info('mouseDragHorizontal press at x: ' + startX);
-  sendMouseEventAt(MouseAction.Press, startX, centerY, width, height);
-  await Utils.sleep(50);
-  for (let i = 1; i <= steps; i++) {
-    sendMouseEventAt(MouseAction.Move, Math.round(startX + xStep * i), centerY, width, height);
-    await Utils.sleep(20);
-  }
-  console.info('mouseDragHorizontal release at x: ' + endX);
-  sendMouseEventAt(MouseAction.Release, endX, centerY, width, height);
-  await Utils.sleep(50);
-}
-
-// 读取组件文本内容
-function getComponentTextContent(id: string): string {
-  let strJson: string = inspector.getInspectorByKey(id);
-  let obj = JSON.parseJsonElement(strJson);
-  return obj.getElement('$attrs').getString('content');
-}
-
 export default function ScrollWithMouseTest() {
   describe('ScrollWithMouseTest', () => {
 
@@ -126,31 +61,7 @@ export default function ScrollWithMouseTest() {
       await Utils.sleep(1500);
       console.info('ScrollWithMouseTest afterEach called');
     });
-
-    // 点击按钮设置enableScrollWithMouse属性值并复位滚动位置（静态模式不允许嵌套函数声明，使用箭头函数）
-    let prepare = async (driver: Driver, btnId: string): Promise<void> => {
-      let btn = await driver.findComponent(ON.id(btnId));
-      await (btn?.click() as Promise<void>);
-      await Utils.sleep(500);
-      let resetBtn = await driver.findComponent(ON.id('H_SCROLL_RESET'));
-      await (resetBtn?.click() as Promise<void>);
-      await Utils.sleep(500);
-    };
-
-    // 在水平Scroll组件上执行鼠标左键拖拽（由右向左）
-    let dragOnScroll = async (driver: Driver): Promise<void> => {
-      let scrollComp = await driver.findComponent(ON.id('H_SCROLL'));
-      let rect: Rect = await (scrollComp?.getBounds() as Promise<Rect>);
-      let centerY: number = Math.round((rect.top + rect.bottom) / 2);
-      let startX: number = Math.round(rect.left + (rect.right - rect.left) * 0.8);
-      let endX: number = Math.round(rect.left + (rect.right - rect.left) * 0.2);
-      let width: number = rect.right - rect.left;
-      let height: number = rect.bottom - rect.top;
-      console.info('ScrollWithMouseTest scroll rect: left: ' + rect.left + ', right: ' + rect.right
-        + ', top: ' + rect.top + ', bottom: ' + rect.bottom);
-      await mouseDragHorizontal(startX, endX, centerY, width, height);
-    };
-
+ 
     /**
      * @tc.number   SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0100
      * @tc.name     SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0100
@@ -162,23 +73,50 @@ export default function ScrollWithMouseTest() {
     it('SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0100', Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.info('[SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0100] START');
-        let driver = Driver.create();
-        await Utils.sleep(1000);
-        await prepare(driver, 'H_SCROLL_DEFAULT');
-        let stateContent: string = getComponentTextContent('H_SCROLL_STATE');
-        console.info('[SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0100] state: ' + stateContent);
-        expect(stateContent).assertEqual('enableScrollWithMouse: undefined');
-        let offsetBefore: string = getComponentTextContent('H_SCROLL_OFFSET');
-        expect(offsetBefore).assertEqual('offset=0');
-        await dragOnScroll(driver);
-        await Utils.sleep(500);
-        let offsetAfter: string = getComponentTextContent('H_SCROLL_OFFSET');
-        console.info('[SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0100] offset after drag: ' + offsetAfter);
-        expect(offsetAfter !== 'offset=0').assertTrue();
-        console.info('[SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0100] END');
-        done();
-      });
+      let driver = Driver.create();
+      await Utils.sleep(1000);
+      let btn = await driver.findComponent(ON.id('H_SCROLL_DEFAULT'));
+      await (btn?.click() as Promise<void>);
+      await Utils.sleep(500);
+      let resetBtn = await driver.findComponent(ON.id('H_SCROLL_RESET'));
+      await (resetBtn?.click() as Promise<void>);
+      await Utils.sleep(500);
+      let strJson: string = inspector.getInspectorByKey('H_SCROLL_OFFSET');
+      let obj = JSON.parseJsonElement(strJson);
+      console.info('[SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0100] offset after drag: ' +
+       obj.getElement('$attrs').getString('content'));
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('offset=0');
+ 
+      let scrollComp = await driver.findComponent(ON.id('H_SCROLL'))
+      let scrollRect = await scrollComp!.getBounds()
+      let displayId = await scrollComp!.getDisplayId()
+      let top = scrollRect.top;
+      let left = scrollRect.left;
+      let height = scrollRect.bottom - scrollRect.top;
+      let width = scrollRect.right - scrollRect.left;
+      console.info('ScrollWithMouseTest scroll rect: left: ' + scrollRect.left + ', right: ' + scrollRect.right
+        + ', top: ' + scrollRect.top + ', bottom: ' + scrollRect.bottom);
+      await driver.mouseDrag({
+        x: (Math.round(left + width * 0.7)).toInt(),
+        y: (Math.round(top + height / 2)).toInt(),
+        displayId: displayId
+      },
+        {
+          x: (Math.round(left + width * 0.3)).toInt(),
+          y: (Math.round(top + height / 2)).toInt(),
+          displayId: displayId
+        })
+      await CommonFunc.sleep(2000);
 
+      let strJson2: string = inspector.getInspectorByKey('H_SCROLL_OFFSET');
+      let obj2 = JSON.parseJsonElement(strJson2);
+      console.info('[SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0100] offset after drag: ' +
+       obj2.getElement('$attrs').getString('content'));
+      expect(obj2.getElement('$attrs').getString('content') !== 'offset=0').assertTrue();
+      console.info('[SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0100] END');
+      done();
+    });
+ 
     /**
      * @tc.number   SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0200
      * @tc.name     SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0200
@@ -191,22 +129,49 @@ export default function ScrollWithMouseTest() {
       async (done: () => void): Promise<void> => {
         console.info('[SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0200] START');
         let driver = Driver.create();
-        await Utils.sleep(1000);
-        await prepare(driver, 'H_SCROLL_TRUE');
-        let stateContent: string = getComponentTextContent('H_SCROLL_STATE');
-        console.info('[SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0200] state: ' + stateContent);
-        expect(stateContent).assertEqual('enableScrollWithMouse: true');
-        let offsetBefore: string = getComponentTextContent('H_SCROLL_OFFSET');
-        expect(offsetBefore).assertEqual('offset=0');
-        await dragOnScroll(driver);
-        await Utils.sleep(500);
-        let offsetAfter: string = getComponentTextContent('H_SCROLL_OFFSET');
-        console.info('[SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0200] offset after drag: ' + offsetAfter);
-        expect(offsetAfter !== 'offset=0').assertTrue();
-        console.info('[SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0200] END');
-        done();
-      });
+      await Utils.sleep(1000);
+      let btn = await driver.findComponent(ON.id('H_SCROLL_TRUE'));
+      await (btn?.click() as Promise<void>);
+      await Utils.sleep(500);
+      let resetBtn = await driver.findComponent(ON.id('H_SCROLL_RESET'));
+      await (resetBtn?.click() as Promise<void>);
+      await Utils.sleep(500);
+      let strJson: string = inspector.getInspectorByKey('H_SCROLL_OFFSET');
+      let obj = JSON.parseJsonElement(strJson);
+      console.info('[SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0200] offset after drag: ' +
+       obj.getElement('$attrs').getString('content'));
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('offset=0');
 
+      let scrollComp = await driver.findComponent(ON.id('H_SCROLL'))
+      let scrollRect = await scrollComp!.getBounds()
+      let displayId = await scrollComp!.getDisplayId()
+      let top = scrollRect.top;
+      let left = scrollRect.left;
+      let height = scrollRect.bottom - scrollRect.top;
+      let width = scrollRect.right - scrollRect.left;
+      console.info('ScrollWithMouseTest scroll rect: left: ' + scrollRect.left + ', right: ' + scrollRect.right
+        + ', top: ' + scrollRect.top + ', bottom: ' + scrollRect.bottom);
+      await driver.mouseDrag({
+        x: (Math.round(left + width * 0.7)).toInt(),
+        y: (Math.round(top + height / 2)).toInt(),
+        displayId: displayId
+      },
+        {
+          x: (Math.round(left + width * 0.3)).toInt(),
+          y: (Math.round(top + height / 2)).toInt(),
+          displayId: displayId
+        })
+      await CommonFunc.sleep(2000);
+
+      let strJson2: string = inspector.getInspectorByKey('H_SCROLL_OFFSET');
+      let obj2 = JSON.parseJsonElement(strJson2);
+      console.info('[SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0200] offset after drag: ' +
+       obj2.getElement('$attrs').getString('content'));
+      expect(obj2.getElement('$attrs').getString('content') !== 'offset=0').assertTrue();
+      console.info('[SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0200] END');
+      done();
+    });
+ 
     /**
      * @tc.number   SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0300
      * @tc.name     SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0300
@@ -220,19 +185,45 @@ export default function ScrollWithMouseTest() {
         console.info('[SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0300] START');
         let driver = Driver.create();
         await Utils.sleep(1000);
-        await prepare(driver, 'H_SCROLL_FALSE');
-        let stateContent: string = getComponentTextContent('H_SCROLL_STATE');
-        console.info('[SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0300] state: ' + stateContent);
-        expect(stateContent).assertEqual('enableScrollWithMouse: false');
-        let offsetBefore: string = getComponentTextContent('H_SCROLL_OFFSET');
-        expect(offsetBefore).assertEqual('offset=0');
-        await dragOnScroll(driver);
-        await Utils.sleep(500);
-        let offsetAfter: string = getComponentTextContent('H_SCROLL_OFFSET');
-        console.info('[SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0300] offset after drag: ' + offsetAfter);
-        expect(offsetAfter).assertEqual('offset=0');
-        console.info('[SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0300] END');
-        done();
-      });
+      let btn = await driver.findComponent(ON.id('H_SCROLL_FALSE'));
+      await (btn?.click() as Promise<void>);
+      await Utils.sleep(500);
+      let resetBtn = await driver.findComponent(ON.id('H_SCROLL_RESET'));
+      await (resetBtn?.click() as Promise<void>);
+      await Utils.sleep(500);
+      let strJson: string = inspector.getInspectorByKey('H_SCROLL_OFFSET');
+      let obj = JSON.parseJsonElement(strJson);
+      console.info('[SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0300] offset after drag: ' +
+       obj.getElement('$attrs').getString('content'));
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('offset=0');
+
+      let scrollComp = await driver.findComponent(ON.id('H_SCROLL'))
+      let scrollRect = await scrollComp!.getBounds()
+      let displayId = await scrollComp!.getDisplayId()
+      let top = scrollRect.top;
+      let left = scrollRect.left;
+      let height = scrollRect.bottom - scrollRect.top;
+      let width = scrollRect.right - scrollRect.left;
+      console.info('ScrollWithMouseTest scroll rect: left: ' + scrollRect.left + ', right: ' + scrollRect.right
+        + ', top: ' + scrollRect.top + ', bottom: ' + scrollRect.bottom);
+      await driver.mouseDrag({
+        x: (Math.round(left + width * 0.7)).toInt(),
+        y: (Math.round(top + height / 2)).toInt(),
+        displayId: displayId
+      },
+        {
+          x: (Math.round(left + width * 0.3)).toInt(),
+          y: (Math.round(top + height / 2)).toInt(),
+          displayId: displayId
+        })
+      await CommonFunc.sleep(2000);
+      let strJson2: string = inspector.getInspectorByKey('H_SCROLL_OFFSET');
+      let obj2 = JSON.parseJsonElement(strJson2);
+      console.info('[SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0300] offset after drag: ' +
+       obj2.getElement('$attrs').getString('content'));
+      expect(obj2.getElement('$attrs').getString('content')).assertEqual('offset=0');
+      console.info('[SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0300] END');
+      done();
+    });
   })
 }

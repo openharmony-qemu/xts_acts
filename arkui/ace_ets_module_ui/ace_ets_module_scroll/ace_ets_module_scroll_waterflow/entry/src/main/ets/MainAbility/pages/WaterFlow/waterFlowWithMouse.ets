@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+ 
 /**
  * enableScrollWithMouse从API 26.0.0开始新增，属性值设置为undefined表示使用默认值：
  * API版本26.2.0之前默认为false；从API版本26.2.0开始，水平滚动组件默认为true。
@@ -25,14 +25,14 @@ struct WaterFlowWithMouse {
   @State horizontalMouseScroll: boolean | undefined = undefined;
   @State wfOff: string = '0';
   private wfScroller: Scroller = new Scroller();
-
+ 
   build() {
     Column() {
       Text(`enableScrollWithMouse: ${this.horizontalMouseScroll}`)
         .id('WF_MOUSE_STATE')
         .fontSize(12)
         .fontColor('#666666')
-
+ 
       Row() {
         Button('default')
           .id('WF_MOUSE_DEFAULT')
@@ -40,21 +40,7 @@ struct WaterFlowWithMouse {
           .onClick(() => {
             this.horizontalMouseScroll = undefined;
           })
-
-        Button('true')
-          .id('WF_MOUSE_TRUE')
-          .fontSize(14)
-          .onClick(() => {
-            this.horizontalMouseScroll = true;
-          })
-
-        Button('false')
-          .id('WF_MOUSE_FALSE')
-          .fontSize(14)
-          .onClick(() => {
-            this.horizontalMouseScroll = false;
-          })
-
+ 
         Button('reset')
           .id('WF_MOUSE_RESET')
           .fontSize(14)
@@ -62,8 +48,32 @@ struct WaterFlowWithMouse {
             this.wfScroller.scrollTo({ xOffset: 0, yOffset: 0 });
           })
       }
-      .height('8%')
-
+      .height('5%')
+ 
+      Row() {
+        Button('true')
+          .id('WF_MOUSE_TRUE')
+          .fontSize(14)
+          .onClick(() => {
+            this.horizontalMouseScroll = true;
+          })
+ 
+        Button('false')
+          .id('WF_MOUSE_FALSE')
+          .fontSize(14)
+          .onClick(() => {
+            this.horizontalMouseScroll = false;
+          })
+ 
+        Button('reset')
+          .id('WF_MOUSE_RESET')
+          .fontSize(14)
+          .onClick(() => {
+            this.wfScroller.scrollTo({ xOffset: 0, yOffset: 0 });
+          })
+      }
+      .height('5%')
+ 
       Text(`offset=${this.wfOff}`).id('WF_MOUSE_OFFSET').fontSize(10)
       Column({ space: 2 }) {
         Text('WaterFlow').fontSize(10).fontColor('#666666')
@@ -85,6 +95,7 @@ struct WaterFlowWithMouse {
         .id('WF_MOUSE_FLOW')
         .rowsTemplate('1fr')
         .columnsGap(3)
+        .layoutDirection(FlexDirection.Row)
         .enableScrollWithMouse(this.horizontalMouseScroll)
         .backgroundColor('#E3E8F0')
         .borderRadius(6)
