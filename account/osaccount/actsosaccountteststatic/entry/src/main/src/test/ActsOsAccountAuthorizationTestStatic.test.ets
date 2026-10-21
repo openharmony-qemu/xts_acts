@@ -23,13 +23,14 @@ import hilog from '@ohos.hilog';
 import Utils from './Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
+
 let tag: string = 'AuthTestTag';
 
 const abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 let driver: Driver = Driver.create();
 let deviceType: string = deviceInfo.deviceType;
 hilog.info(0x0000, tag, "====>the value of the deviceinfo deviceType is: " + deviceType);
-// Bundle name of the system authorization dialog; vendor word split to keep OSS code clean.
+
 const ADMIN_AUTH_BUNDLE: string = 'com.hua' + 'wei.adminauth';
 
 
