@@ -545,7 +545,7 @@ export default function ActsDisplayNdkApi14Test() {
     let errcode = testNapi.getDisplayCaptureMax();
     console.log(`${caseName} result: ${JSON.stringify(errcode)}`);
     if(deviceType === 'car' || deviceType === 'wearable'){
-      except(errcode).assertEqual(801);
+      expect(errcode).assertEqual(801);
       done();
     }else{
       expect(errcode).assertEqual(1400003);
