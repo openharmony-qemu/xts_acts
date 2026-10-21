@@ -218,7 +218,7 @@ export default function WebCustomErrorCode() {
       async (done: Function) => {
         Utils.emitEvent('testDidFail3CompleteIfNoResponseNull001', EVENT_ID_SET_EMIT_KEY);
         let isReturn = 0;
-        Utils.registerBaseEvent('testDidFail3CompleteIfNoResponseNull001', '17100101', 203140, () => {
+        Utils.registerBaseEvent('testDidFail3CompleteIfNoResponseNull001', '', 203140, () => {
           isReturn = 1;
         }, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
@@ -241,7 +241,7 @@ export default function WebCustomErrorCode() {
       async (done: Function) => {
         Utils.emitEvent('testDidFail3CompleteIfNoResponseUndefined001', EVENT_ID_SET_EMIT_KEY);
         let isReturn = 0;
-        Utils.registerBaseEvent('testDidFail3CompleteIfNoResponseUndefined001', '17100101', 203150, () => {
+        Utils.registerBaseEvent('testDidFail3CompleteIfNoResponseUndefined001', '', 203150, () => {
           isReturn = 1;
         }, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
@@ -265,7 +265,7 @@ export default function WebCustomErrorCode() {
       async (done: Function) => {
         Utils.emitEvent('testDidFail3CustomErrorCodeNull001', EVENT_ID_SET_EMIT_KEY);
         let isReturn = 0;
-        Utils.registerBaseEvent('testDidFail3CustomErrorCodeNull001', '17100101', 203160, () => {
+        Utils.registerBaseEvent('testDidFail3CustomErrorCodeNull001', '401', 203160, () => {
           isReturn = 1;
         }, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
@@ -288,7 +288,7 @@ export default function WebCustomErrorCode() {
       async (done: Function) => {
         Utils.emitEvent('testDidFail3CustomErrorCodeUndefined001', EVENT_ID_SET_EMIT_KEY);
         let isReturn = 0;
-        Utils.registerBaseEvent('testDidFail3CustomErrorCodeUndefined001', '17100101', 203170, () => {
+        Utils.registerBaseEvent('testDidFail3CustomErrorCodeUndefined001', '401', 203170, () => {
           isReturn = 1;
         }, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);

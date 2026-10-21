@@ -17,6 +17,34 @@ import { beforeAll, describe, it, TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from './Utils.test';
 import { Driver, ON } from '@kit.TestKit';
+import {
+  REASON_DNS_RESOLVE_FAILED,
+  REASON_REQUEST_TIMED_OUT,
+  REASON_CONNECTION_REFUSED,
+  REASON_CONNECTION_RESET,
+  REASON_SSL_ERROR,
+  REASON_CERT_ERROR,
+  REASON_INTERNET_DISCONNECTED,
+  REASON_REDIRECT_LOOP,
+  REASON_PROXY_ERROR,
+  REASON_OTHER_NETWORK_ERROR,
+  REASON_MAIN_DOC_EMPTY,
+  REASON_HTTP_4XX_ERROR,
+  REASON_HTTP_5XX_ERROR,
+  REASON_JS_GLOBAL_BUNDLE_LOAD_FAILED,
+  REASON_CSS_LOAD_FAILED,
+  REASON_MULTI_RESOURCE_LOAD_FAILED,
+  REASON_CORS_BLOCKED,
+  REASON_CSP_BLOCKED,
+  REASON_MIXED_CONTENT_BLOCKED,
+  REASON_JS_RUNTIME_ERROR,
+  REASON_NO_FIRST_CONTENTFUL_PAINT,
+  REASON_RENDERER_CRASHED,
+  REASON_RENDERER_KILLED,
+  REASON_GPU_PROCESS_CRASHED,
+  REASON_GPU_PROCESS_WATCHDOG_TIMEOUT,
+  REASON_WEB_VIEW_ZERO_SIZE
+} from './BlankScreenReasonValues';
 
 const EVENT_ID_SET_SUITE_KEY = 183117;
 const driver = Driver.create();
@@ -50,7 +78,7 @@ export default function monitoredBlankScreenCoveragePage() {
      */
     it('testBlankScreenReasonDnsResolveFailedPage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitBlankScreenReasonDnsResolveFailed001', EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent('testBlankScreenReasonDnsResolveFailedPage001', 101, 20261101, done);
+      Utils.registerEvent('testBlankScreenReasonDnsResolveFailedPage001', REASON_DNS_RESOLVE_FAILED, 20261101, done);
       await Utils.waitAndClickComponent(driver, 'WebViewBlankScreenDetectionConfigButton', 'testBlankScreenReasonDnsResolveFailedPage001');
     })
 
@@ -64,7 +92,7 @@ export default function monitoredBlankScreenCoveragePage() {
      */
     it('testBlankScreenReasonRequestTimedOutPage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitBlankScreenReasonRequestTimedOut001', EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent('testBlankScreenReasonRequestTimedOutPage001', 102, 20261102, done);
+      Utils.registerEvent('testBlankScreenReasonRequestTimedOutPage001', REASON_REQUEST_TIMED_OUT, 20261102, done);
       await Utils.waitAndClickComponent(driver, 'WebViewBlankScreenDetectionConfigButton', 'testBlankScreenReasonRequestTimedOutPage001');
     })
 
@@ -78,7 +106,7 @@ export default function monitoredBlankScreenCoveragePage() {
      */
     it('testBlankScreenReasonConnectionRefusedPage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitBlankScreenReasonConnectionRefused001', EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent('testBlankScreenReasonConnectionRefusedPage001', 103, 20261103, done);
+      Utils.registerEvent('testBlankScreenReasonConnectionRefusedPage001', REASON_CONNECTION_REFUSED, 20261103, done);
       await Utils.waitAndClickComponent(driver, 'WebViewBlankScreenDetectionConfigButton', 'testBlankScreenReasonConnectionRefusedPage001');
     })
 
@@ -92,7 +120,7 @@ export default function monitoredBlankScreenCoveragePage() {
      */
     it('testBlankScreenReasonConnectionResetPage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitBlankScreenReasonConnectionReset001', EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent('testBlankScreenReasonConnectionResetPage001', 104, 20261104, done);
+      Utils.registerEvent('testBlankScreenReasonConnectionResetPage001', REASON_CONNECTION_RESET, 20261104, done);
       await Utils.waitAndClickComponent(driver, 'WebViewBlankScreenDetectionConfigButton', 'testBlankScreenReasonConnectionResetPage001');
     })
 
@@ -106,7 +134,7 @@ export default function monitoredBlankScreenCoveragePage() {
      */
     it('testBlankScreenReasonSslErrorPage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitBlankScreenReasonSslError001', EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent('testBlankScreenReasonSslErrorPage001', 105, 20261105, done);
+      Utils.registerEvent('testBlankScreenReasonSslErrorPage001', REASON_SSL_ERROR, 20261105, done);
       await Utils.waitAndClickComponent(driver, 'WebViewBlankScreenDetectionConfigButton', 'testBlankScreenReasonSslErrorPage001');
     })
 
@@ -120,7 +148,7 @@ export default function monitoredBlankScreenCoveragePage() {
      */
     it('testBlankScreenReasonCertErrorPage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitBlankScreenReasonCertError001', EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent('testBlankScreenReasonCertErrorPage001', 106, 20261106, done);
+      Utils.registerEvent('testBlankScreenReasonCertErrorPage001', REASON_CERT_ERROR, 20261106, done);
       await Utils.waitAndClickComponent(driver, 'WebViewBlankScreenDetectionConfigButton', 'testBlankScreenReasonCertErrorPage001');
     })
 
@@ -134,7 +162,7 @@ export default function monitoredBlankScreenCoveragePage() {
      */
     it('testBlankScreenReasonInternetDisconnectedPage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitBlankScreenReasonInternetDisconnected001', EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent('testBlankScreenReasonInternetDisconnectedPage001', 107, 20261107, done);
+      Utils.registerEvent('testBlankScreenReasonInternetDisconnectedPage001', REASON_INTERNET_DISCONNECTED, 20261107, done);
       await Utils.waitAndClickComponent(driver, 'WebViewBlankScreenDetectionConfigButton', 'testBlankScreenReasonInternetDisconnectedPage001');
     })
 
@@ -148,7 +176,7 @@ export default function monitoredBlankScreenCoveragePage() {
      */
     it('testBlankScreenReasonRedirectLoopPage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitBlankScreenReasonRedirectLoop001', EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent('testBlankScreenReasonRedirectLoopPage001', 108, 20261108, done);
+      Utils.registerEvent('testBlankScreenReasonRedirectLoopPage001', REASON_REDIRECT_LOOP, 20261108, done);
       await Utils.waitAndClickComponent(driver, 'WebViewBlankScreenDetectionConfigButton', 'testBlankScreenReasonRedirectLoopPage001');
     })
 
@@ -162,7 +190,7 @@ export default function monitoredBlankScreenCoveragePage() {
      */
     it('testBlankScreenReasonProxyErrorPage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitBlankScreenReasonProxyError001', EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent('testBlankScreenReasonProxyErrorPage001', 109, 20261109, done);
+      Utils.registerEvent('testBlankScreenReasonProxyErrorPage001', REASON_PROXY_ERROR, 20261109, done);
       await Utils.waitAndClickComponent(driver, 'WebViewBlankScreenDetectionConfigButton', 'testBlankScreenReasonProxyErrorPage001');
     })
 
@@ -176,7 +204,7 @@ export default function monitoredBlankScreenCoveragePage() {
      */
     it('testBlankScreenReasonOtherNetworkErrorPage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitBlankScreenReasonOtherNetworkError001', EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent('testBlankScreenReasonOtherNetworkErrorPage001', 199, 20261110, done);
+      Utils.registerEvent('testBlankScreenReasonOtherNetworkErrorPage001', REASON_OTHER_NETWORK_ERROR, 20261110, done);
       await Utils.waitAndClickComponent(driver, 'WebViewBlankScreenDetectionConfigButton', 'testBlankScreenReasonOtherNetworkErrorPage001');
     })
 
@@ -190,7 +218,7 @@ export default function monitoredBlankScreenCoveragePage() {
      */
     it('testBlankScreenReasonMainDocEmptyPage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitBlankScreenReasonMainDocEmpty001', EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent('testBlankScreenReasonMainDocEmptyPage001', 201, 20261111, done);
+      Utils.registerEvent('testBlankScreenReasonMainDocEmptyPage001', REASON_MAIN_DOC_EMPTY, 20261111, done);
       await Utils.waitAndClickComponent(driver, 'WebViewBlankScreenDetectionConfigButton', 'testBlankScreenReasonMainDocEmptyPage001');
     })
 
@@ -204,7 +232,7 @@ export default function monitoredBlankScreenCoveragePage() {
      */
     it('testBlankScreenReasonHttp4xxErrorPage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitBlankScreenReasonHttp4xxError001', EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent('testBlankScreenReasonHttp4xxErrorPage001', 202, 20261112, done);
+      Utils.registerEvent('testBlankScreenReasonHttp4xxErrorPage001', REASON_HTTP_4XX_ERROR, 20261112, done);
       await Utils.waitAndClickComponent(driver, 'WebViewBlankScreenDetectionConfigButton', 'testBlankScreenReasonHttp4xxErrorPage001');
     })
 
@@ -218,7 +246,7 @@ export default function monitoredBlankScreenCoveragePage() {
      */
     it('testBlankScreenReasonHttp5xxErrorPage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitBlankScreenReasonHttp5xxError001', EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent('testBlankScreenReasonHttp5xxErrorPage001', 203, 20261113, done);
+      Utils.registerEvent('testBlankScreenReasonHttp5xxErrorPage001', REASON_HTTP_5XX_ERROR, 20261113, done);
       await Utils.waitAndClickComponent(driver, 'WebViewBlankScreenDetectionConfigButton', 'testBlankScreenReasonHttp5xxErrorPage001');
     })
 
@@ -232,7 +260,7 @@ export default function monitoredBlankScreenCoveragePage() {
      */
     it('testBlankScreenReasonJsGlobalBundleLoadFailedPage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitBlankScreenReasonJsGlobalBundleLoadFailed001', EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent('testBlankScreenReasonJsGlobalBundleLoadFailedPage001', 210, 20261114, done);
+      Utils.registerEvent('testBlankScreenReasonJsGlobalBundleLoadFailedPage001', REASON_JS_GLOBAL_BUNDLE_LOAD_FAILED, 20261114, done);
       await Utils.waitAndClickComponent(driver, 'WebViewBlankScreenDetectionConfigButton', 'testBlankScreenReasonJsGlobalBundleLoadFailedPage001');
     })
 
@@ -246,7 +274,7 @@ export default function monitoredBlankScreenCoveragePage() {
      */
     it('testBlankScreenReasonCssLoadFailedPage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitBlankScreenReasonCssLoadFailed001', EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent('testBlankScreenReasonCssLoadFailedPage001', 211, 20261115, done);
+      Utils.registerEvent('testBlankScreenReasonCssLoadFailedPage001', REASON_CSS_LOAD_FAILED, 20261115, done);
       await Utils.waitAndClickComponent(driver, 'WebViewBlankScreenDetectionConfigButton', 'testBlankScreenReasonCssLoadFailedPage001');
     })
 
@@ -260,7 +288,7 @@ export default function monitoredBlankScreenCoveragePage() {
      */
     it('testBlankScreenReasonMultiResourceLoadFailedPage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitBlankScreenReasonMultiResourceLoadFailed001', EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent('testBlankScreenReasonMultiResourceLoadFailedPage001', 212, 20261116, done);
+      Utils.registerEvent('testBlankScreenReasonMultiResourceLoadFailedPage001', REASON_MULTI_RESOURCE_LOAD_FAILED, 20261116, done);
       await Utils.waitAndClickComponent(driver, 'WebViewBlankScreenDetectionConfigButton', 'testBlankScreenReasonMultiResourceLoadFailedPage001');
     })
 
@@ -274,7 +302,7 @@ export default function monitoredBlankScreenCoveragePage() {
      */
     it('testBlankScreenReasonCorsBlockedPage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitBlankScreenReasonCorsBlocked001', EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent('testBlankScreenReasonCorsBlockedPage001', 213, 20261117, done);
+      Utils.registerEvent('testBlankScreenReasonCorsBlockedPage001', REASON_CORS_BLOCKED, 20261117, done);
       await Utils.waitAndClickComponent(driver, 'WebViewBlankScreenDetectionConfigButton', 'testBlankScreenReasonCorsBlockedPage001');
     })
 
@@ -288,7 +316,7 @@ export default function monitoredBlankScreenCoveragePage() {
      */
     it('testBlankScreenReasonCspBlockedPage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitBlankScreenReasonCspBlocked001', EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent('testBlankScreenReasonCspBlockedPage001', 214, 20261118, done);
+      Utils.registerEvent('testBlankScreenReasonCspBlockedPage001', REASON_CSP_BLOCKED, 20261118, done);
       await Utils.waitAndClickComponent(driver, 'WebViewBlankScreenDetectionConfigButton', 'testBlankScreenReasonCspBlockedPage001');
     })
 
@@ -302,7 +330,7 @@ export default function monitoredBlankScreenCoveragePage() {
      */
     it('testBlankScreenReasonMixedContentBlockedPage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitBlankScreenReasonMixedContentBlocked001', EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent('testBlankScreenReasonMixedContentBlockedPage001', 215, 20261119, done);
+      Utils.registerEvent('testBlankScreenReasonMixedContentBlockedPage001', REASON_MIXED_CONTENT_BLOCKED, 20261119, done);
       await Utils.waitAndClickComponent(driver, 'WebViewBlankScreenDetectionConfigButton', 'testBlankScreenReasonMixedContentBlockedPage001');
     })
 
@@ -316,7 +344,7 @@ export default function monitoredBlankScreenCoveragePage() {
      */
     it('testBlankScreenReasonJsRuntimeErrorPage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitBlankScreenReasonJsRuntimeError001', EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent('testBlankScreenReasonJsRuntimeErrorPage001', 301, 20261120, done);
+      Utils.registerEvent('testBlankScreenReasonJsRuntimeErrorPage001', REASON_JS_RUNTIME_ERROR, 20261120, done);
       await Utils.waitAndClickComponent(driver, 'WebViewBlankScreenDetectionConfigButton', 'testBlankScreenReasonJsRuntimeErrorPage001');
     })
 
@@ -330,7 +358,7 @@ export default function monitoredBlankScreenCoveragePage() {
      */
     it('testBlankScreenReasonNoFirstContentfulPaintPage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitBlankScreenReasonNoFirstContentfulPaint001', EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent('testBlankScreenReasonNoFirstContentfulPaintPage001', 312, 20261121, done);
+      Utils.registerEvent('testBlankScreenReasonNoFirstContentfulPaintPage001', REASON_NO_FIRST_CONTENTFUL_PAINT, 20261121, done);
       await Utils.waitAndClickComponent(driver, 'WebViewBlankScreenDetectionConfigButton', 'testBlankScreenReasonNoFirstContentfulPaintPage001');
     })
 
@@ -344,7 +372,7 @@ export default function monitoredBlankScreenCoveragePage() {
      */
     it('testBlankScreenReasonRendererCrashedPage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitBlankScreenReasonRendererCrashed001', EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent('testBlankScreenReasonRendererCrashedPage001', 401, 20261122, done);
+      Utils.registerEvent('testBlankScreenReasonRendererCrashedPage001', REASON_RENDERER_CRASHED, 20261122, done);
       await Utils.waitAndClickComponent(driver, 'WebViewBlankScreenDetectionConfigButton', 'testBlankScreenReasonRendererCrashedPage001');
     })
 
@@ -358,7 +386,7 @@ export default function monitoredBlankScreenCoveragePage() {
      */
     it('testBlankScreenReasonRendererKilledPage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitBlankScreenReasonRendererKilled001', EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent('testBlankScreenReasonRendererKilledPage001', 402, 20261123, done);
+      Utils.registerEvent('testBlankScreenReasonRendererKilledPage001', REASON_RENDERER_KILLED, 20261123, done);
       await Utils.waitAndClickComponent(driver, 'WebViewBlankScreenDetectionConfigButton', 'testBlankScreenReasonRendererKilledPage001');
     })
 
@@ -372,7 +400,7 @@ export default function monitoredBlankScreenCoveragePage() {
      */
     it('testBlankScreenReasonGpuProcessCrashedPage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitBlankScreenReasonGpuProcessCrashed001', EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent('testBlankScreenReasonGpuProcessCrashedPage001', 403, 20261124, done);
+      Utils.registerEvent('testBlankScreenReasonGpuProcessCrashedPage001', REASON_GPU_PROCESS_CRASHED, 20261124, done);
       await Utils.waitAndClickComponent(driver, 'WebViewBlankScreenDetectionConfigButton', 'testBlankScreenReasonGpuProcessCrashedPage001');
     })
 
@@ -386,7 +414,7 @@ export default function monitoredBlankScreenCoveragePage() {
      */
     it('testBlankScreenReasonGpuProcessWatchdogTimeoutPage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitBlankScreenReasonGpuProcessWatchdogTimeout001', EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent('testBlankScreenReasonGpuProcessWatchdogTimeoutPage001', 404, 20261125, done);
+      Utils.registerEvent('testBlankScreenReasonGpuProcessWatchdogTimeoutPage001', REASON_GPU_PROCESS_WATCHDOG_TIMEOUT, 20261125, done);
       await Utils.waitAndClickComponent(driver, 'WebViewBlankScreenDetectionConfigButton', 'testBlankScreenReasonGpuProcessWatchdogTimeoutPage001');
     })
 
@@ -400,7 +428,7 @@ export default function monitoredBlankScreenCoveragePage() {
      */
     it('testBlankScreenReasonWebViewZeroSizePage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitBlankScreenReasonWebViewZeroSize001', EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent('testBlankScreenReasonWebViewZeroSizePage001', 501, 20261126, done);
+      Utils.registerEvent('testBlankScreenReasonWebViewZeroSizePage001', REASON_WEB_VIEW_ZERO_SIZE, 20261126, done);
       await Utils.waitAndClickComponent(driver, 'WebViewBlankScreenDetectionConfigButton', 'testBlankScreenReasonWebViewZeroSizePage001');
     })
 
@@ -442,7 +470,7 @@ export default function monitoredBlankScreenCoveragePage() {
      */
     it('testMonitoredBlankScreenEventInfoReasonPage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitMonitoredBlankScreenEventInfoReason001', EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent('testMonitoredBlankScreenEventInfoReasonPage001', 101, 20261203, done);
+      Utils.registerEvent('testMonitoredBlankScreenEventInfoReasonPage001', REASON_DNS_RESOLVE_FAILED, 20261203, done);
       await Utils.waitAndClickComponent(driver, 'WebViewBlankScreenDetectionConfigButton', 'testMonitoredBlankScreenEventInfoReasonPage001');
     })
 
@@ -456,7 +484,7 @@ export default function monitoredBlankScreenCoveragePage() {
      */
     it('testMonitoredBlankScreenEventInfoExtraMsgPage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitMonitoredBlankScreenEventInfoExtraMsg001', EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent('testMonitoredBlankScreenEventInfoExtraMsgPage001', 'main document is empty', 20261204, done);
+      Utils.registerEvent('testMonitoredBlankScreenEventInfoExtraMsgPage001', 'request timed out after 30s', 20261204, done);
       await Utils.waitAndClickComponent(driver, 'WebViewBlankScreenDetectionConfigButton', 'testMonitoredBlankScreenEventInfoExtraMsgPage001');
     })
 

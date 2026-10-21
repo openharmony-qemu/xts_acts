@@ -19,6 +19,7 @@ import Utils from './Utils.test';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { Driver, ON } from '@kit.TestKit';
 import { waitForExist} from './WaitTest.test';
+import { REASON_MAIN_DOC_EMPTY } from './BlankScreenReasonValues';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -126,7 +127,9 @@ export default function WebViewBlankScreenDetectionConfigSuite() {
      */
     it('testOnMonitoredBlankScreenParam001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitOnMonitoredBlankScreenParam001", EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent("testOnMonitoredBlankScreenParam001", 'resource://rawfile/kongbai.html', 20261010, done);
+      Utils.registerEvent("testOnMonitoredBlankScreenParam001", 'resource://rawfile/kongbai.html', 20261010, () => {});
+      Utils.registerEvent("testOnMonitoredBlankScreenParam001", REASON_MAIN_DOC_EMPTY, 20261011, () => {});
+      Utils.registerEvent("testOnMonitoredBlankScreenParam001", 'main document is empty', 20261012, done);
       await Utils.waitAndClickComponent(driver, "WebViewBlankScreenDetectionConfigButton", "testOnMonitoredBlankScreenParam001");
     })
 

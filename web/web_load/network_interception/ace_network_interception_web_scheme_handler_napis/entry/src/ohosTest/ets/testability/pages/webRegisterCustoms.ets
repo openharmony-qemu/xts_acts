@@ -84,7 +84,7 @@ struct webRegisterCustomsComponent {
                     if (this.str != 'emitGetNativeAPI' && this.str != 'emitWebResourceRequestConstructor001' &&
                       this.str != 'emitWebResourceRequestConstructorReturn001' &&
                       this.str != 'emitWebResourceRequestClass001') {
-                        await Utils.waitForExist(()=>testNapi.getRequestValue(), this.str, 1);
+                        await Utils.waitForExist((): number => testNapi.getRequestValue(), this.str, 1);
                     }
                     console.info("key==>" + this.str)
                     this.isReceive = -1;
