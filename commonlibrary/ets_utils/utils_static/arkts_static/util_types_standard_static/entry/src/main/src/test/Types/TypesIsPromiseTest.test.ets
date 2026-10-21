@@ -1435,5 +1435,1128 @@ export default function typesIsPromiseTest(): void {
       }
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_PROMISE_2100
+     * @tc.name testTypesIsPromise021
+     * @tc.desc Merged batch (5 tests): Non-target object rejection: rejects a WeakMap keyed by a class instance; WeakSet that holds a class instance; Date instance created from the current time and RegExp built from the pattern probe; rejects the values iterator of a Set; isPromise rejects a labelled class instance and an Error instance, each keeping its own name.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsPromise021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify isPromise returns false for a WeakMap keyed by a class instance ---
+      {
+        let promiseProbe: util.types = new util.types();
+        let weak: WeakMap<ProbeStore, ProbeStore> = new WeakMap<ProbeStore, ProbeStore>();
+        let key: ProbeStore = new ProbeStore();
+        weak.set(key, key);
+        expect(weak.has(key)).assertTrue();
+        expect(promiseProbe.isPromise(weak)).assertFalse();
+      }
+
+      // --- [2] Verify isPromise returns false for a WeakSet that holds a class instance ---
+      {
+        let promiseProbe: util.types = new util.types();
+        let weak: WeakSet<ProbeStore> = new WeakSet<ProbeStore>();
+        let member: ProbeStore = new ProbeStore();
+        weak.add(member);
+        expect(weak.has(member)).assertTrue();
+        expect(promiseProbe.isPromise(weak)).assertFalse();
+      }
+
+      // --- [3] Verify isPromise returns false for a Date instance created from the current time and RegExp built from the pattern probe ---
+      {
+        let promiseChecker: util.types = new util.types();
+        let stamp: Date = new Date();
+        expect(promiseChecker.isPromise(stamp)).assertFalse();
+        let promiseProbe: util.types = new util.types();
+        let pattern: RegExp = new RegExp('probe');
+        expect(pattern.source).assertEqual('probe');
+        expect(promiseProbe.isPromise(pattern)).assertFalse();
+      }
+
+      // --- [4] Verify isPromise returns false for the values iterator of a Set ---
+      {
+        let promiseChecker: util.types = new util.types();
+        let pool: Set<string> = new Set<string>();
+        pool.add('probe');
+        let walker: IterableIterator<string> = pool.values();
+        expect(promiseChecker.isPromise(walker)).assertFalse();
+      }
+
+      // --- [5] Verify isPromise rejects a labelled class instance and an Error instance, each keeping its own name ---
+      {
+        let promiseProbe: util.types = new util.types();
+        let entity: LabelledEntity = new LabelledEntity();
+        let failure: Error = new Error('probe');
+        expect(entity.name).assertEqual('entity');
+        expect(failure.name).assertEqual('Error');
+        expect(promiseProbe.isPromise(entity)).assertFalse();
+        expect(promiseProbe.isPromise(failure)).assertFalse();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_PROMISE_2200
+     * @tc.name testTypesIsPromise022
+     * @tc.desc Merged batch (5 tests): Non-target object rejection: rejects an object literal typed by an interface with name and value members; a TypeError carried in a typed Map slot is still rejected by isPromise and keeps the name TypeError; an ArrayBuffer and a Map are rejected by isPromise while their own predicates accept them; reading a Uint8Array at index 5 of a two element array raises RangeError; a partial thenable is rejected by its internal brand, not member names, even after its methods are invoked.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsPromise022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify isPromise returns false for an object literal typed by an interface with name and value members ---
+      {
+        let promiseProbe: util.types = new util.types();
+        let record: LabelledRecord = { name: 'entry', value: 3 };
+        expect(record.name).assertEqual('entry');
+        expect(promiseProbe.isPromise(record)).assertFalse();
+      }
+
+      // --- [2] Verify a TypeError carried in a typed Map slot is still rejected by isPromise and keeps the name TypeError ---
+      {
+        let promiseProbe: util.types = new util.types();
+        let failure: Error = new TypeError('bad type');
+        let slots: Map<string, Object> = new Map<string, Object>();
+        slots.set('typed', failure);
+        expect(failure.name).assertEqual('TypeError');
+        let got: Object | undefined = slots.get('typed');
+        expect(promiseProbe.isPromise(got as Object)).assertFalse();
+      }
+
+      // --- [3] Verify an ArrayBuffer and a Map are rejected by isPromise while their own predicates accept them ---
+      {
+        let promiseChecker: util.types = new util.types();
+        let buffer: ArrayBuffer = new ArrayBuffer(4);
+        expect(promiseChecker.isPromise(buffer)).assertFalse();
+        expect(promiseChecker.isArrayBuffer(buffer)).assertTrue();
+        let table: Map<string, string> = new Map<string, string>();
+        expect(promiseChecker.isPromise(table)).assertFalse();
+        expect(promiseChecker.isMap(table)).assertTrue();
+      }
+
+      // --- [4] Verify reading a Uint8Array at index 5 of a two element array raises RangeError while isPromise still rejects that array ---
+      {
+        let promiseProbe: util.types = new util.types();
+        let small: Uint8Array = new Uint8Array([1, 2]);
+        try {
+          small.$_get(5);
+          expect().assertFail();
+        } catch (err) {
+          expect(err.name).assertEqual('RangeError');
+        }
+        expect(promiseProbe.isPromise(small)).assertFalse();
+      }
+
+      // --- [5] Verify a partial thenable is rejected by its internal brand, not member names, even after its methods are invoked ---
+      {
+        let promiseChecker: util.types = new util.types();
+        let fake: PartialThenableBox = new PartialThenableBox();
+        expect(promiseChecker.isPromise(fake)).assertFalse();
+        exercisePartialThenable(fake);
+        expect(promiseChecker.isPromise(fake)).assertFalse();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_PROMISE_2300
+     * @tc.name testTypesIsPromise023
+     * @tc.desc Merged batch (4 tests): Non-target object rejection: verifies rejection of unrelated objects, covering repeated calls and other unrelated kinds.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsPromise023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify repeated detection of a thenable does not mutate its label field ---
+      {
+        let promiseProbe: util.types = new util.types();
+        let mutable: MutableView = new MutableView();
+        let first: boolean = promiseProbe.isPromise(mutable);
+        let labelAfterFirst: string = mutable.label;
+        let second: boolean = promiseProbe.isPromise(mutable);
+        expect(first).assertFalse();
+        expect(second).assertFalse();
+        expect(mutable.label).assertEqual(labelAfterFirst);
+        expect(labelAfterFirst).assertEqual('mutable');
+      }
+
+      // --- [2] Verify a user defined Error subclass keeps the base name Error and its own message while isPromise rejects it ---
+      {
+        let promiseProbe: util.types = new util.types();
+        let failure: Error = new SubError('sub class probe');
+        expect(failure.message).assertEqual('sub class probe');
+        let verdict: boolean = promiseProbe.isPromise(failure);
+        expect(verdict).assertFalse();
+        expect(failure.name).assertEqual('Error');
+      }
+
+      // --- [3] Verify three consecutive detections of the same thenable on one instance all return false ---
+      {
+        let promiseChecker: util.types = new util.types();
+        let source: Object = new ThenableBox();
+        let first: boolean = promiseChecker.isPromise(source);
+        let second: boolean = promiseChecker.isPromise(source);
+        let third: boolean = promiseChecker.isPromise(source);
+        expect(first).assertFalse();
+        expect(second).assertFalse();
+        expect(third).assertFalse();
+      }
+
+      // --- [4] Verify isPromise returns false for the Int8Array, Int16Array and Uint32Array kinds over one ArrayBuffer ---
+      {
+        let promiseChecker: util.types = new util.types();
+        let buffer: ArrayBuffer = new ArrayBuffer(4);
+        let signedBytes: Int8Array = new Int8Array(buffer);
+        let halfWords: Int16Array = new Int16Array(buffer);
+        let words: Uint32Array = new Uint32Array(buffer);
+        expect(promiseChecker.isPromise(signedBytes)).assertFalse();
+        expect(promiseChecker.isPromise(halfWords)).assertFalse();
+        expect(promiseChecker.isPromise(words)).assertFalse();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_PROMISE_2400
+     * @tc.name testTypesIsPromise024
+     * @tc.desc Merged batch (4 tests): State preservation and aliasing: checks that later reads still see the original state, covering Object widening.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsPromise024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify promises read from an array, a Map and a class field stay accepted, and a then continuation of the field promise is accepted ---
+      {
+        let promiseChecker: util.types = new util.types();
+        let source: Object = Promise.resolve<int>(3);
+        let row: Object[] = [source];
+        let slots: Map<string, Object> = new Map<string, Object>();
+        slots.set('s', source);
+        let holder: PromiseFieldHolder = new PromiseFieldHolder();
+        let fromRow: boolean = promiseChecker.isPromise(row[0]);
+        let fromMap: boolean = promiseChecker.isPromise(slots.get('s') as Object);
+        let fromField: boolean = promiseChecker.isPromise(holder.single);
+        expect(fromRow).assertTrue();
+        expect(fromMap).assertTrue();
+        expect(fromField).assertTrue();
+        let promiseChecker_2: util.types = new util.types();
+        let holder_2: PromiseFieldHolder = new PromiseFieldHolder();
+        let follower: Object = attachScaledThen(holder_2.single, 2);
+        expect(promiseChecker_2.isPromise(follower)).assertTrue();
+        expect(promiseChecker_2.isPromise(holder_2.single)).assertTrue();
+      }
+
+      // --- [2] Verify detection leaves the then field of a thenable object pointing at the same function ---
+      {
+        let promiseProbe: util.types = new util.types();
+        let mutable: MutableView = new MutableView();
+        let before: () => void = mutable.then;
+        let hit: boolean = promiseProbe.isPromise(mutable);
+        let after: () => void = mutable.then;
+        expect(hit).assertFalse();
+        expect(before).assertEqual(after);
+      }
+
+      // --- [3] Verify isPromise returns true for a promise reached through an Object variable and through a second alias of it ---
+      {
+        let promiseChecker: util.types = new util.types();
+        let carried: Object = Promise.resolve<int>(5);
+        let alias: Object = carried;
+        expect(promiseChecker.isPromise(carried)).assertTrue();
+        expect(promiseChecker.isPromise(alias)).assertTrue();
+      }
+
+      // --- [4] Verify a promise used as a WeakSet member is accepted and remains a member after the detection ---
+      {
+        let promiseProbe: util.types = new util.types();
+        let weak: WeakSet<Promise<int>> = new WeakSet<Promise<int>>();
+        let carried: Promise<int> = Promise.resolve<int>(4);
+        weak.add(carried);
+        expect(promiseProbe.isPromise(carried)).assertTrue();
+        expect(weak.has(carried)).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_PROMISE_2500
+     * @tc.name testTypesIsPromise025
+     * @tc.desc Merged batch (5 tests): Container and field storage: accepts promises read back from the two elements of an Object array; the promise held in the element slot of a byte typed promise array is recognized as one; a promise of the short type stored in a typed Map slot is recognized through the key; accepts a promise used as a Map key and read back through the keys iterator; accepts promises held in three class fields of int, class instance and nested promise shape.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsPromise025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify isPromise returns true for promises read back from the two elements of an Object array ---
+      {
+        let promiseChecker: util.types = new util.types();
+        let row: Object[] = [Promise.resolve<int>(1), declareAsyncValue()];
+        expect(promiseChecker.isPromise(row[0])).assertTrue();
+        expect(promiseChecker.isPromise(row[1])).assertTrue();
+      }
+
+      // --- [2] Verify the promise held in the element slot of a byte typed promise array is recognized as one ---
+      {
+        let promiseProbe: util.types = new util.types();
+        let queue: Promise<byte>[] = [declareAsyncByte()];
+        let head: Object = queue[0];
+        expect(promiseProbe.isPromise(head)).assertTrue();
+      }
+
+      // --- [3] Verify a promise of the short type stored in a typed Map slot is recognized through the key ---
+      {
+        let promiseProbe: util.types = new util.types();
+        let slots: Map<string, Promise<short>> = new Map<string, Promise<short>>();
+        slots.set('narrow', declareAsyncShort());
+        expect(slots.size).assertEqual(1);
+        expect(promiseProbe.isPromise(slots.get('narrow')!)).assertTrue();
+      }
+
+      // --- [4] Verify isPromise returns true for a promise used as a Map key and read back through the keys iterator ---
+      {
+        let promiseChecker: util.types = new util.types();
+        let keyed: Map<Object, string> = new Map<Object, string>();
+        keyed.set(Promise.resolve<int>(3), 'carrier');
+        let walker: IterableIterator<Object> = keyed.keys();
+        let first: Object | undefined = walker.next().value;
+        expect(promiseChecker.isPromise(first as Object)).assertTrue();
+      }
+
+      // --- [5] Verify isPromise returns true for promises held in three class fields of int, class instance and nested promise shape ---
+      {
+        let promiseChecker: util.types = new util.types();
+        let holder: PromiseFieldHolder = new PromiseFieldHolder();
+        expect(promiseChecker.isPromise(holder.single)).assertTrue();
+        expect(promiseChecker.isPromise(holder.payload)).assertTrue();
+        expect(promiseChecker.isPromise(holder.nested)).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_PROMISE_2600
+     * @tc.name testTypesIsPromise026
+     * @tc.desc Merged batch (5 tests): Container and field storage: two nullable holders carrying a promise and a Date respectively are judged by what their fields actually hold; isPromise reports true only for the promise element of an array that also holds a string and an int; a promise used as a Map key is still accepted with its entry reachable and its attached continuation is accepted too; detection of a Set member leaves the Set size and both members reachable; a promise in the inner Map of a two level map and one in the field of a store held as a Map value are accepted through two lookups.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsPromise026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify two nullable holders carrying a promise and a Date respectively are judged by what their fields actually hold ---
+      {
+        let promiseChecker: util.types = new util.types();
+        let holder: NullablePromiseHolder = new NullablePromiseHolder();
+        holder.nullField = Promise.resolve<int>(2);
+        holder.undefinedField = new Date(0);
+        expect(promiseChecker.isPromise(holder.nullField as Object)).assertTrue();
+        expect(promiseChecker.isPromise(holder.undefinedField as Object)).assertFalse();
+      }
+
+      // --- [2] Verify isPromise reports true only for the promise element of an array that also holds a string and an int ---
+      {
+        let promiseChecker: util.types = new util.types();
+        let mixed: Object[] = [Promise.resolve<int>(1), 'text', 3];
+        expect(promiseChecker.isPromise(mixed[0])).assertTrue();
+        expect(promiseChecker.isPromise(mixed[1])).assertFalse();
+        expect(promiseChecker.isPromise(mixed[2])).assertFalse();
+      }
+
+      // --- [3] Verify a promise used as a Map key is still accepted with its entry reachable and its attached continuation is accepted too ---
+      {
+        let promiseProbe: util.types = new util.types();
+        let keyed: Map<Object, string> = new Map<Object, string>();
+        let key: Object = Promise.resolve<int>(4);
+        keyed.set(key, 'stored');
+        expect(promiseProbe.isPromise(key)).assertTrue();
+        expect(keyed.get(key)).assertEqual('stored');
+        let promiseChecker: util.types = new util.types();
+        let slots: Map<string, Object> = new Map<string, Object>();
+        slots.set('base', Promise.resolve<int>(2));
+        let base: Object | undefined = slots.get('base');
+        let followed: Object = attachThen(base as Promise<int>, 5);
+        expect(promiseChecker.isPromise(base as Object)).assertTrue();
+        expect(promiseChecker.isPromise(followed)).assertTrue();
+      }
+
+      // --- [4] Verify detection of a Set member leaves the Set size and both members reachable ---
+      {
+        let promiseProbe: util.types = new util.types();
+        let carried: Promise<int> = Promise.resolve<int>(6);
+        let pool: Set<Object> = new Set<Object>();
+        pool.add(carried);
+        pool.add('a');
+        expect(promiseProbe.isPromise(carried)).assertTrue();
+        expect(pool.size).assertEqual(2);
+        expect(pool.has(carried)).assertTrue();
+        expect(pool.has('a')).assertTrue();
+      }
+
+      // --- [5] Verify a promise in the inner Map of a two level map and one in the field of a store held as a Map value are accepted through two lookups ---
+      {
+        let promiseChecker: util.types = new util.types();
+        let nested: Map<string, Map<string, Object>> = new Map<string, Map<string, Object>>();
+        let inner: Map<string, Object> = new Map<string, Object>();
+        inner.set('p', Promise.resolve<int>(5));
+        nested.set('outer', inner);
+        let fetched: Map<string, Object> = nested.get('outer')!;
+        expect(promiseChecker.isPromise(fetched.get('p') as Object)).assertTrue();
+        let promiseChecker_2: util.types = new util.types();
+        let seats: Map<string, ProbeStore> = new Map<string, ProbeStore>();
+        let store: ProbeStore = new ProbeStore();
+        store.put('queued', Promise.resolve<int>(3));
+        seats.set('store', store);
+        let reached: ProbeStore = seats.get('store')!;
+        expect(promiseChecker_2.isPromise(reached.fetch('queued') as Object)).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_PROMISE_2700
+     * @tc.name testTypesIsPromise027
+     * @tc.desc Merged batch (2 tests): Container and field storage: one promise instance stored in two array slots is accepted from both slots; isPromise accepts the promise indexOf locates at its own slot.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsPromise027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify one promise instance stored in two array slots is accepted from both slots ---
+      {
+        let promiseProbe: util.types = new util.types();
+        let carried: Promise<int> = Promise.resolve<int>(3);
+        let row: Object[] = [carried, carried];
+        expect(promiseProbe.isPromise(row[0])).assertTrue();
+        expect(promiseProbe.isPromise(row[1])).assertTrue();
+        expect(row[0]).assertEqual(row[1]);
+      }
+
+      // --- [2] Verify isPromise accepts the promise indexOf locates at its own slot while a same valued twin is missed with minus one ---
+      {
+        let promiseChecker: util.types = new util.types();
+        let target: Promise<int> = Promise.resolve<int>(4);
+        let twin: Promise<int> = Promise.resolve<int>(4);
+        let pool: Promise<int>[] = [Promise.resolve<int>(3), target, Promise.resolve<int>(5)];
+        let at: int = pool.indexOf(target);
+        let miss: int = pool.indexOf(twin);
+        expect(at).assertEqual(1);
+        expect(miss).assertEqual(-1);
+        expect(promiseChecker.isPromise(pool[at])).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_PROMISE_2800
+     * @tc.name testTypesIsPromise028
+     * @tc.desc Merged batch (5 tests): Container and field storage: accepts a combinator nested inside another combinator; an async method invoked on a class instance fetched from a Map slot produces a promise; promise pushed into an array after construction and one held as a WeakMap value under a class key; promise held in the field of an interface typed object literal; accepts the promise returned by an async arrow stored in a class field, and the sibling field promise.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsPromise028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+      // --- [1] Verify isPromise returns true for a combinator nested inside another combinator ---
+      {
+        let promiseProbe: util.types = new util.types();
+        let inner: Promise<int> = Promise.resolve<int>(1);
+        let outer: Promise<int> = Promise.resolve<int>(2);
+        let raced: Promise<int> = Promise.race<int>([inner, outer]);
+        let all: Promise<int[]> = Promise.all<int>([raced, inner]);
+        expect(promiseProbe.isPromise(raced)).assertTrue();
+        expect(promiseProbe.isPromise(all)).assertTrue();
+        let values: int[] = await all;
+        expect(values.length).assertEqual(2);
+      }
+
+      // --- [2] Verify an async method invoked on a class instance fetched from a Map slot produces a promise ---
+      {
+        let promiseChecker: util.types = new util.types();
+        let seats: Map<string, AsyncTaskRunner> = new Map<string, AsyncTaskRunner>();
+        seats.set('runner', new AsyncTaskRunner());
+        let runner: AsyncTaskRunner = seats.get('runner')!;
+        expect(promiseChecker.isPromise(runner.run())).assertTrue();
+      }
+
+      // --- [3] Verify a promise pushed into an array after construction and one held as a WeakMap value under a class key are accepted ---
+      {
+        let promiseProbe: util.types = new util.types();
+        let row: Object[] = [];
+        row.push(Promise.resolve<int>(7));
+        expect(promiseProbe.isPromise(row[0])).assertTrue();
+        expect(row.length).assertEqual(1);
+        let promiseChecker: util.types = new util.types();
+        let weak: WeakMap<ProbeStore, Promise<int>> = new WeakMap<ProbeStore, Promise<int>>();
+        let key: ProbeStore = new ProbeStore();
+        weak.set(key, Promise.resolve<int>(3));
+        let carried: Promise<int> | undefined = weak.get(key);
+        expect(promiseChecker.isPromise(carried as Object)).assertTrue();
+      }
+
+      // --- [4] Verify a promise held in the field of an interface typed object literal is accepted ---
+      {
+        let promiseProbe: util.types = new util.types();
+        let carrier: PromiseCarrier = { carried: Promise.resolve<int>(5), tag: 'carrier' };
+        expect(promiseProbe.isPromise(carrier.carried)).assertTrue();
+        expect(carrier.tag).assertEqual('carrier');
+      }
+
+      // --- [5] Verify the promise returned by an async arrow stored in a class field, and the sibling field promise, are both accepted ---
+      {
+        let promiseProbe: util.types = new util.types();
+        let seat: AsyncSeat = new AsyncSeat();
+        let produced: Object = seat.produce();
+        expect(promiseProbe.isPromise(produced)).assertTrue();
+        let value: int = await (produced as Promise<int>);
+        expect(value).assertEqual(21);
+        expect(promiseProbe.isPromise(seat.settled)).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_PROMISE_2900
+     * @tc.name testTypesIsPromise029
+     * @tc.desc Merged batch (5 tests): Container and field storage: one slot reports promise true then error true after the promise is swapped for an Error instance; a filter helper that runs detection collects exactly the two promise elements of a mixed array; no element of a bigint array is accepted, counting zero hits over the positive one and the signed 64 bit minimum; accepts the promise returned by invoking an async arrow that is stored in a variable; a promise of the long type is counted in a loop and its slot still awaits to the long value.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsPromise029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+      // --- [1] Verify one slot reports promise true then error true after the promise is swapped for an Error instance ---
+      {
+        let promiseChecker: util.types = new util.types();
+        let slot: Object = Promise.resolve<int>(1);
+        let asPromise: boolean = promiseChecker.isPromise(slot);
+        let asErrorBefore: boolean = promiseChecker.isNativeError(slot);
+        slot = new SubError('probe');
+        let asErrorAfter: boolean = promiseChecker.isNativeError(slot);
+        let asPromiseAfter: boolean = promiseChecker.isPromise(slot);
+        expect(asPromise).assertTrue();
+        expect(asErrorBefore).assertFalse();
+        expect(asErrorAfter).assertTrue();
+        expect(asPromiseAfter).assertFalse();
+      }
+
+      // --- [2] Verify a filter helper that runs detection collects exactly the two promise elements of a mixed array ---
+      {
+        let row: Object[] = [Promise.resolve<int>(1), 'x', declareAsyncValue(), new Map<string, string>()];
+        let hits: Object[] = collectPromises(row);
+        expect(hits.length).assertEqual(2);
+      }
+
+      // --- [3] Verify no element of a bigint array is accepted, counting zero hits over the positive one and the signed 64 bit minimum ---
+      {
+        let promiseChecker: util.types = new util.types();
+        let bigs: bigint[] = [BigInt(1), BigInt('-9223372036854775808')];
+        let accepted: int = 0;
+        for (let i: int = 0; i < bigs.length; i++) {
+          if (promiseChecker.isPromise(bigs[i])) {
+            accepted = accepted + 1;
+          }
+        }
+        expect(accepted).assertEqual(0);
+      }
+
+      // --- [4] Verify isPromise returns true for the promise returned by invoking an async arrow that is stored in a variable ---
+      {
+        let promiseChecker: util.types = new util.types();
+        let produce: () => Promise<int> = async (): Promise<int> => { return 3; };
+        let produced: Object = produce();
+        expect(promiseChecker.isPromise(produced)).assertTrue();
+      }
+
+      // --- [5] Verify a promise of the long type is counted in a loop and its slot still awaits to the long value ---
+      {
+        let promiseProbe: util.types = new util.types();
+        let list: Promise<long>[] = [declareAsyncLong()];
+        let accepted: int = 0;
+        for (const pending of list) {
+          if (promiseProbe.isPromise(pending)) {
+            accepted = accepted + 1;
+          }
+        }
+        expect(accepted).assertEqual(1);
+        let expected: long = 5000;
+        let value: long = await list[0];
+        expect(value).assertEqual(expected);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_PROMISE_3000
+     * @tc.name testTypesIsPromise030
+     * @tc.desc Merged batch (2 tests): Container and field storage: the promise returned by an async arrow stored in an interface typed object field; awaiting a promise read from a Map slot yields the stored value.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsPromise030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+      // --- [1] Verify the promise returned by an async arrow stored in an interface typed object field ---
+      {
+        let promiseProbe: util.types = new util.types();
+        let slot: AsyncSlot = { spawn: async (): Promise<string> => { return 'spawned'; } };
+        let produced: Object = slot.spawn();
+        expect(promiseProbe.isPromise(produced)).assertTrue();
+        let text: string = await (produced as Promise<string>);
+        expect(text).assertEqual('spawned');
+      }
+
+      // --- [2] Verify awaiting a promise read from a Map slot yields the stored value while the slot still holds an accepted promise ---
+      {
+        let promiseProbe: util.types = new util.types();
+        let slots: Map<string, Object> = new Map<string, Object>();
+        slots.set('p', Promise.resolve<int>(7));
+        let held: Object = slots.get('p')!;
+        let value: int = await (held as Promise<int>);
+        expect(value).assertEqual(7);
+        expect(promiseProbe.isPromise(slots.get('p') as Object)).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_PROMISE_3100
+     * @tc.name testTypesIsPromise031
+     * @tc.desc Merged batch (5 tests): API call consistency: the same Object variable reports true while it holds a promise and false after it is reassigned to a string; accepts a resolved int promise while a Map stays rejected and string promise; rejects Promise.all over two resolved promises yields a promise that isPromise accepts; a variable declared Object or null is recognized as a promise when it holds one and rejected when it holds a Date; two independent then continuations attached to the same async result are both reported as promises.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsPromise031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify the same Object variable reports true while it holds a promise and false after it is reassigned to a string ---
+      {
+        let promiseChecker: util.types = new util.types();
+        let slot: Object = Promise.resolve<int>(4);
+        let whilePromise: boolean = promiseChecker.isPromise(slot);
+        slot = 'not a promise';
+        let whileText: boolean = promiseChecker.isPromise(slot);
+        expect(whilePromise).assertTrue();
+        expect(whileText).assertFalse();
+      }
+
+      // --- [2] Verify isPromise returns true for a resolved int promise while a Map stays rejected and string promise while a Date stays rejected ---
+      {
+        let promiseProbe: util.types = new util.types();
+        expect(promiseProbe.isPromise(Promise.resolve<int>(1))).assertTrue();
+        expect(promiseProbe.isPromise(new Map<string, int>())).assertFalse();
+        let promiseProbe_2: util.types = new util.types();
+        expect(promiseProbe_2.isPromise(Promise.resolve('ok'))).assertTrue();
+        expect(promiseProbe_2.isPromise(new Date(0))).assertFalse();
+      }
+
+      // --- [3] Verify Promise.all over two resolved promises yields a promise that isPromise accepts while the source array is rejected ---
+      {
+        let promiseProbe: util.types = new util.types();
+        let first: Promise<int> = Promise.resolve<int>(1);
+        let second: Promise<int> = Promise.resolve<int>(2);
+        let joined: Promise<Array<int>> = Promise.all<int>([first, second]);
+        expect(promiseProbe.isPromise(joined)).assertTrue();
+        expect(promiseProbe.isPromise([first, second])).assertFalse();
+      }
+
+      // --- [4] Verify a variable declared Object or null is recognized as a promise when it holds one and rejected when it holds a Date ---
+      {
+        let promiseChecker: util.types = new util.types();
+        let given: Object | null = Promise.resolve<int>(1);
+        expect(promiseChecker.isPromise(given as Object)).assertTrue();
+        let other: Object | null = new Date(0);
+        expect(promiseChecker.isPromise(other as Object)).assertFalse();
+      }
+
+      // --- [5] Verify two independent then continuations attached to the same async result are both reported as promises ---
+      {
+        let promiseChecker: util.types = new util.types();
+        let start: Promise<int> = declareAsyncValue();
+        let firstStep: Object = attachThen(start, 1);
+        let secondStep: Object = attachThen(start, 2);
+        expect(promiseChecker.isPromise(firstStep)).assertTrue();
+        expect(promiseChecker.isPromise(secondStep)).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_PROMISE_3200
+     * @tc.name testTypesIsPromise032
+     * @tc.desc Merged batch (5 tests): API call consistency: two separate util.types instances both report true for the same promise instance; the probe helper agrees with a direct call for a promise and for the int 7; a promise is accepted only by isPromise while four other predicates reject it, and a Record promise slot passes beside an int slot; one types instance interleaves map iterator detection with promise detection without cross contamination; one types instance distinguishes a typed array view from a promise and from a bare buffer.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsPromise032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify two separate util.types instances both report true for the same promise instance ---
+      {
+        let first: util.types = new util.types();
+        let second: util.types = new util.types();
+        let source: Object = Promise.resolve<int>(8);
+        let firstHit: boolean = first.isPromise(source);
+        let secondHit: boolean = second.isPromise(source);
+        expect(firstHit).assertTrue();
+        expect(secondHit).assertTrue();
+        expect(firstHit).assertEqual(secondHit);
+      }
+
+      // --- [2] Verify the probe helper agrees with a direct call for a promise and for the int 7 ---
+      {
+        let promiseProbe: util.types = new util.types();
+        let source: Object = makeResolvedPromise();
+        let direct: boolean = promiseProbe.isPromise(source);
+        let viaHelper: boolean = probePromise(source);
+        expect(direct).assertEqual(viaHelper);
+        expect(direct).assertTrue();
+        expect(probePromise(7)).assertEqual(promiseProbe.isPromise(7));
+        expect(probePromise(7)).assertFalse();
+      }
+
+      // --- [3] Verify a promise is accepted only by isPromise while four other predicates reject it, and a Record promise slot passes beside an int slot ---
+      {
+        let promiseChecker: util.types = new util.types();
+        let source: Promise<int> = Promise.resolve<int>(7);
+        expect(promiseChecker.isPromise(source)).assertTrue();
+        expect(promiseChecker.isArrayBuffer(source)).assertFalse();
+        expect(promiseChecker.isMap(source)).assertFalse();
+        expect(promiseChecker.isDate(source)).assertFalse();
+        expect(promiseChecker.isNativeError(source)).assertFalse();
+        let promiseChecker_2: util.types = new util.types();
+        let table: Record<string, Object> = { 'p': Promise.resolve<int>(1), 'n': 2 };
+        expect(promiseChecker_2.isPromise(table['p']!)).assertTrue();
+        expect(promiseChecker_2.isPromise(table['n']!)).assertFalse();
+      }
+
+      // --- [4] Verify one types instance interleaves map iterator detection with promise detection without cross contamination ---
+      {
+        let promiseChecker: util.types = new util.types();
+        let table: Map<string, string> = new Map<string, string>();
+        table.set('k', 'v');
+        let walker: IterableIterator<string> = table.keys();
+        let carried: Object = Promise.resolve<int>(1);
+        expect(promiseChecker.isMapIterator(walker)).assertTrue();
+        expect(promiseChecker.isPromise(walker)).assertFalse();
+        expect(promiseChecker.isPromise(carried)).assertTrue();
+        expect(promiseChecker.isMapIterator(carried)).assertFalse();
+      }
+
+      // --- [5] Verify one types instance distinguishes a typed array view from a promise and from a bare buffer ---
+      {
+        let promiseChecker: util.types = new util.types();
+        let buffer: ArrayBuffer = new ArrayBuffer(8);
+        let view: Uint8Array = new Uint8Array(buffer);
+        let carried: Object = Promise.resolve<int>(1);
+        expect(promiseChecker.isPromise(view)).assertFalse();
+        expect(promiseChecker.isArrayBufferView(view)).assertTrue();
+        expect(promiseChecker.isTypedArray(view)).assertTrue();
+        expect(promiseChecker.isArrayBuffer(view)).assertFalse();
+        expect(promiseChecker.isPromise(carried)).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_PROMISE_3300
+     * @tc.name testTypesIsPromise033
+     * @tc.desc Merged batch (5 tests): API call consistency: a promise is accepted by isPromise while set, regular expression and weak map detection all reject it; an async method reference and an async arrow object are both accepted by isAsyncFunction and both rejected by isPromise; a Set holding a promise stays a Set while its promise member is accepted and its iterator is not a map iterator; the promise produced by a then continuation is accepted; a DataView is accepted as a buffer view but rejected by isPromise and by typed array detection.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsPromise033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify a promise is accepted by isPromise while set, regular expression and weak map detection all reject it ---
+      {
+        let promiseChecker: util.types = new util.types();
+        let carried: Object = Promise.resolve<int>(1);
+        expect(promiseChecker.isPromise(carried)).assertTrue();
+        expect(promiseChecker.isSet(carried)).assertFalse();
+        expect(promiseChecker.isRegExp(carried)).assertFalse();
+        expect(promiseChecker.isWeakMap(carried)).assertFalse();
+      }
+
+      // --- [2] Verify an async method reference and an async arrow object are both accepted by isAsyncFunction and both rejected by isPromise ---
+      {
+        let promiseChecker: util.types = new util.types();
+        let runner: AsyncTaskRunner = new AsyncTaskRunner();
+        let methodRef: Object = runner.run;
+        let arrowRef: Function = async (): Promise<int> => { return 1; };
+        expect(promiseChecker.isAsyncFunction(methodRef)).assertTrue();
+        expect(promiseChecker.isPromise(methodRef)).assertFalse();
+        expect(promiseChecker.isAsyncFunction(arrowRef)).assertTrue();
+        expect(promiseChecker.isPromise(arrowRef)).assertFalse();
+      }
+
+      // --- [3] Verify a Set holding a promise stays a Set while its promise member is accepted and its iterator is not a map iterator ---
+      {
+        let promiseChecker: util.types = new util.types();
+        let carried: Promise<int> = Promise.resolve<int>(1);
+        let pool: Set<Object> = new Set<Object>();
+        pool.add(carried);
+        let walker: IterableIterator<Object> = pool.values();
+        expect(promiseChecker.isPromise(walker.next().value as Object)).assertTrue();
+        expect(promiseChecker.isSet(pool)).assertTrue();
+        expect(promiseChecker.isPromise(pool)).assertFalse();
+        expect(promiseChecker.isMapIterator(walker)).assertFalse();
+      }
+
+      // --- [4] Verify the promise produced by a then continuation is accepted while set iterator, async function and date detection reject it ---
+      {
+        let promiseChecker: util.types = new util.types();
+        let contiguous: Object = attachThen(Promise.resolve<int>(1), 1);
+        expect(promiseChecker.isPromise(contiguous)).assertTrue();
+        expect(promiseChecker.isSetIterator(contiguous)).assertFalse();
+        expect(promiseChecker.isAsyncFunction(contiguous)).assertFalse();
+        expect(promiseChecker.isDate(contiguous)).assertFalse();
+      }
+
+      // --- [5] Verify a DataView is accepted as a buffer view but rejected by isPromise and by typed array detection ---
+      {
+        let promiseChecker: util.types = new util.types();
+        let view: DataView = new DataView(new ArrayBuffer(8));
+        let carried: Object = Promise.resolve<int>(1);
+        expect(promiseChecker.isPromise(view)).assertFalse();
+        expect(promiseChecker.isArrayBufferView(view)).assertTrue();
+        expect(promiseChecker.isTypedArray(view)).assertFalse();
+        expect(promiseChecker.isPromise(carried)).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_PROMISE_3400
+     * @tc.name testTypesIsPromise034
+     * @tc.desc Merged batch (1 test): API call consistency: an async function reference held in a Record slot is rejected by isPromise and accepted by isAsyncFunction.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsPromise034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify an async function reference held in a Record slot is rejected by isPromise and accepted by isAsyncFunction ---
+      {
+        let promiseChecker: util.types = new util.types();
+        let table: Record<string, Object> = { 'fn': declareAsyncValue };
+        let stored: Object = table['fn']!;
+        expect(promiseChecker.isPromise(stored)).assertFalse();
+        expect(promiseChecker.isAsyncFunction(stored)).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_PROMISE_3500
+     * @tc.name testTypesIsPromise035
+     * @tc.desc Merged batch (5 tests): API call consistency: rejects a promise kept in a class static field is recognized; finally on a rejected promise keeps the rejection and its chained promise is still accepted; a promise Set member is accepted while the int member is rejected and a holder's promise field passes while its thenable field fails; the promise and the int read in order from a Map values iterator are accepted and rejected respectively; accepts a promise selected by a boolean conditional expression whose condition is false.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsPromise035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+      // --- [1] Verify a promise kept in a class static field is recognized while the static numeric field beside it is rejected ---
+      {
+        let promiseChecker: util.types = new util.types();
+        let throughField: boolean = promiseChecker.isPromise(PromiseStaticStore.promiseSlot);
+        let throughNumber: boolean = promiseChecker.isPromise(PromiseStaticStore.intSlot);
+        expect(throughField).assertTrue();
+        expect(throughNumber).assertFalse();
+      }
+
+      // --- [2] Verify finally on a rejected promise keeps the rejection and its chained promise is still accepted ---
+      {
+        let promiseProbe: util.types = new util.types();
+        let bad: Promise<int> = Promise.reject<int>(new Error('kept'));
+        let closed: Promise<int> = attachFinally(bad);
+        let recovered: int = await attachGuardedThen(closed, -1);
+        expect(recovered).assertEqual(-1);
+        expect(promiseProbe.isPromise(closed)).assertTrue();
+      }
+
+      // --- [3] Verify a promise Set member is accepted while the int member is rejected and a holder's promise field passes while its thenable field fails ---
+      {
+        let promiseChecker: util.types = new util.types();
+        let pool: Set<Object> = new Set<Object>();
+        let carried: Promise<int> = Promise.resolve<int>(5);
+        pool.add(carried);
+        pool.add(6);
+        let walker: IterableIterator<Object> = pool.values();
+        expect(promiseChecker.isPromise(walker.next().value as Object)).assertTrue();
+        expect(promiseChecker.isPromise(walker.next().value as Object)).assertFalse();
+        let promiseChecker_2: util.types = new util.types();
+        let holder: MixedSlotHolder = new MixedSlotHolder();
+        expect(promiseChecker_2.isPromise(holder.held)).assertTrue();
+        expect(promiseChecker_2.isPromise(holder.fake)).assertFalse();
+      }
+
+      // --- [4] Verify the promise and the int read in order from a Map values iterator are accepted and rejected respectively ---
+      {
+        let promiseChecker: util.types = new util.types();
+        let slots: Map<string, Object> = new Map<string, Object>();
+        slots.set('p', Promise.resolve<int>(1));
+        slots.set('n', 2);
+        let walker: IterableIterator<Object> = slots.values();
+        expect(promiseChecker.isPromise(walker.next().value as Object)).assertTrue();
+        expect(promiseChecker.isPromise(walker.next().value as Object)).assertFalse();
+      }
+
+      // --- [5] Verify isPromise returns true for a promise selected by a boolean conditional expression whose condition is false ---
+      {
+        let promiseChecker: util.types = new util.types();
+        let flag: boolean = false;
+        let left: Object = Promise.resolve<int>(6);
+        let right: Object = declareAsyncValue();
+        let chosen: Object = flag ? left : right;
+        expect(promiseChecker.isPromise(chosen)).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_PROMISE_3600
+     * @tc.name testTypesIsPromise036
+     * @tc.desc Merged batch (5 tests): API call consistency: a conditional expression reports true when it picks a promise and false when the condition is inverted to pick a Map; the promise whose type argument is the double type is the branch a false condition selects, and it is recognized and awaits to 2.5; a combinator promise is accepted by isPromise; a rejected promise and its catch result are both accepted while awaiting the catch value yields -1; rejects detection of a promise reports true both before and after its await while the awaited int.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsPromise036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+      // --- [1] Verify a conditional expression reports true when it picks a promise and false when the condition is inverted to pick a Map ---
+      {
+        let promiseChecker: util.types = new util.types();
+        let flag: boolean = true;
+        let left: Object = Promise.resolve<int>(5);
+        let right: Object = new Map<string, string>();
+        let chosen: Object = flag ? left : right;
+        let flipped: Object = !flag ? left : right;
+        expect(promiseChecker.isPromise(chosen)).assertTrue();
+        expect(promiseChecker.isPromise(flipped)).assertFalse();
+      }
+
+      // --- [2] Verify the promise whose type argument is the double type is the branch a false condition selects, and it is recognized and awaits to 2.5 ---
+      {
+        let promiseProbe: util.types = new util.types();
+        let pick: boolean = false;
+        let chosen: Promise<double> = pick ? Promise.resolve<double>(1.5) : declareAsyncDouble();
+        expect(promiseProbe.isPromise(chosen)).assertTrue();
+        let value: double = await chosen;
+        expect(value).assertEqual(2.5);
+      }
+
+      // --- [3] Verify a combinator promise is accepted by isPromise while buffer, buffer view and map iterator detection reject it ---
+      {
+        let promiseChecker: util.types = new util.types();
+        let members: Promise<int>[] = [Promise.resolve<int>(1), Promise.resolve<int>(2)];
+        let all: Object = Promise.all<int>(members);
+        expect(promiseChecker.isPromise(all)).assertTrue();
+        expect(promiseChecker.isAnyArrayBuffer(all)).assertFalse();
+        expect(promiseChecker.isArrayBufferView(all)).assertFalse();
+        expect(promiseChecker.isMapIterator(all)).assertFalse();
+      }
+
+      // --- [4] Verify a rejected promise and its catch result are both accepted while awaiting the catch value yields -1 ---
+      {
+        let promiseProbe: util.types = new util.types();
+        let bad: Promise<int> = Promise.reject<int>(new Error('nope'));
+        let caught: Promise<int> = attachCatch(bad, -1);
+        let fallback: int = await caught;
+        expect(fallback).assertEqual(-1);
+        expect(promiseProbe.isPromise(caught)).assertTrue();
+        expect(promiseProbe.isPromise(bad)).assertTrue();
+      }
+
+      // --- [5] Verify detection of a promise reports true both before and after its await while the awaited int is rejected ---
+      {
+        let promiseChecker: util.types = new util.types();
+        let ready: Promise<int> = Promise.resolve<int>(9);
+        let before: boolean = promiseChecker.isPromise(ready);
+        let value: int = await ready;
+        let after: boolean = promiseChecker.isPromise(ready);
+        expect(before).assertTrue();
+        expect(after).assertTrue();
+        expect(promiseChecker.isPromise(value)).assertFalse();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_PROMISE_3700
+     * @tc.name testTypesIsPromise037
+     * @tc.desc Merged batch (2 tests): API call consistency: rejects re-wrapping an awaited int with Promise.resolve yields an accepted promise while the raw int; accepts the int array produced by awaiting a Promise.all is not a promise.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsPromise037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+      // --- [1] Verify re-wrapping an awaited int with Promise.resolve yields an accepted promise while the raw int is rejected ---
+      {
+        let promiseProbe: util.types = new util.types();
+        let source: Promise<int> = Promise.resolve<int>(8);
+        let value: int = await source;
+        let rewrapped: Promise<int> = Promise.resolve<int>(value);
+        expect(promiseProbe.isPromise(rewrapped)).assertTrue();
+        expect(promiseProbe.isPromise(value)).assertFalse();
+        expect(value).assertEqual(8);
+      }
+
+      // --- [2] Verify the int array produced by awaiting a Promise.all is not a promise while the combinator itself is accepted ---
+      {
+        let promiseChecker: util.types = new util.types();
+        let members: Promise<int>[] = [Promise.resolve<int>(1), Promise.resolve<int>(2)];
+        let all: Promise<int[]> = Promise.all<int>(members);
+        expect(promiseChecker.isPromise(all)).assertTrue();
+        let values: int[] = await all;
+        expect(promiseChecker.isPromise(values)).assertFalse();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_PROMISE_3800
+     * @tc.name testTypesIsPromise038
+     * @tc.desc Merged batch (5 tests): Program integration: one shared member array drives both Promise.all and Promise.race and both combinators are promises; invoking an async function passed as an argument to another function returns a promise; the label helper classifies the detection outcome of a promise as promise and of a class instance as plain; a class method that holds its own types instance classifies a promise and a Map for a ternary label; a class method that holds its own types instance drives a switch that labels an async call result.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsPromise038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+      // --- [1] Verify one shared member array drives both Promise.all and Promise.race and both combinators are promises ---
+      {
+        let promiseProbe: util.types = new util.types();
+        let members: Promise<int>[] = [Promise.resolve<int>(1), Promise.resolve<int>(2)];
+        let all: Promise<int[]> = Promise.all<int>(members);
+        let raced: Promise<int> = Promise.race<int>(members);
+        expect(promiseProbe.isPromise(all)).assertTrue();
+        expect(promiseProbe.isPromise(raced)).assertTrue();
+        let values: int[] = await all;
+        expect(values.length).assertEqual(2);
+      }
+
+      // --- [2] Verify invoking an async function passed as an argument to another function returns a promise ---
+      {
+        let promiseProbe: util.types = new util.types();
+        let produced: Object = invokeProducer(async (): Promise<int> => { return 2; });
+        expect(promiseProbe.isPromise(produced)).assertTrue();
+        let value: int = await (produced as Promise<int>);
+        expect(value).assertEqual(2);
+      }
+
+      // --- [3] Verify the label helper classifies the detection outcome of a promise as promise and of a class instance as plain ---
+      {
+        let promiseProbe: util.types = new util.types();
+        let promiseLabel: string = labelForPromise(promiseProbe.isPromise(makeResolvedPromise()));
+        let objectLabel: string = labelForPromise(promiseProbe.isPromise(new LabelledEntity()));
+        expect(promiseLabel).assertEqual('promise');
+        expect(objectLabel).assertEqual('plain');
+      }
+
+      // --- [4] Verify a class method that holds its own types instance classifies a promise and a Map for a ternary label ---
+      {
+        let keeper: VerdictKeeper = new VerdictKeeper();
+        let label: string = keeper.classify(Promise.resolve<int>(1)) ? 'promise' : 'plain';
+        expect(label).assertEqual('promise');
+        let other: string = keeper.classify(new Map<string, string>()) ? 'promise' : 'plain';
+        expect(other).assertEqual('plain');
+      }
+
+      // --- [5] Verify a class method that holds its own types instance drives a switch that labels an async call result ---
+      {
+        let keeper: VerdictKeeper = new VerdictKeeper();
+        let label: string = 'pending';
+        switch (keeper.classify(declareAsyncValue())) {
+          case true:
+            label = 'async-result';
+            break;
+          default:
+            label = 'plain';
+            break;
+        }
+        expect(label).assertEqual('async-result');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_PROMISE_3900
+     * @tc.name testTypesIsPromise039
+     * @tc.desc Merged batch (5 tests): Program integration: a scanning helper reports the index of the first non promise and minus one when every element is a promise; a promise whose type argument is the boolean type is recognized and its awaited flag drives a text label; accepts an unawaited async result and the label helper maps the verdict to 'promise'; an async helper that awaits inside a loop returns a promise whose awaited value is the accumulated sum; a promise passed through an echo helper is still accepted and still awaits to its original value.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsPromise039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+      // --- [1] Verify a scanning helper reports the index of the first non promise and minus one when every element is a promise ---
+      {
+        let mixed: Object[] = [Promise.resolve<int>(1), Promise.resolve<int>(2), 'stop', Promise.resolve<int>(4)];
+        expect(firstNonPromiseAt(mixed)).assertEqual(2);
+        let allPromises: Object[] = [Promise.resolve<int>(1), Promise.resolve<int>(2)];
+        expect(firstNonPromiseAt(allPromises)).assertEqual(-1);
+      }
+
+      // --- [2] Verify a promise whose type argument is the boolean type is recognized and its awaited flag drives a text label ---
+      {
+        let promiseProbe: util.types = new util.types();
+        let pending: Promise<boolean> = declareAsyncFlag();
+        expect(promiseProbe.isPromise(pending)).assertTrue();
+        let raised: boolean = await pending;
+        let verdict: string = raised ? 'raised' : 'lowered';
+        expect(verdict).assertEqual('raised');
+      }
+
+      // --- [3] Verify isPromise returns true for an unawaited async result and the label helper maps the verdict to 'promise' ---
+      {
+        let promiseProbe: util.types = new util.types();
+        let pending: Object = declareAsyncValue();
+        let hit: boolean = promiseProbe.isPromise(pending);
+        expect(hit).assertTrue();
+        expect(labelForPromise(hit)).assertEqual('promise');
+      }
+
+      // --- [4] Verify an async helper that awaits inside a loop returns a promise whose awaited value is the accumulated sum ---
+      {
+        let promiseProbe: util.types = new util.types();
+        let one: Promise<int> = Promise.resolve<int>(1);
+        let two: Promise<int> = Promise.resolve<int>(2);
+        let produced: Object = sumAwaiting([one, two]);
+        expect(promiseProbe.isPromise(produced)).assertTrue();
+        let total: int = await (produced as Promise<int>);
+        expect(total).assertEqual(3);
+      }
+
+      // --- [5] Verify a promise passed through an echo helper is still accepted and still awaits to its original value ---
+      {
+        let promiseProbe: util.types = new util.types();
+        let source: Object = declareAsyncValue();
+        let passed: Object = echoObject(source);
+        expect(promiseProbe.isPromise(passed)).assertTrue();
+        let value: int = await (passed as Promise<int>);
+        expect(value).assertEqual(11);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_PROMISE_4000
+     * @tc.name testTypesIsPromise040
+     * @tc.desc Merged batch (1 test): Program integration: a wrapper returning an async call result is accepted as a promise and awaits to the relayed value.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsPromise040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+      // --- [1] Verify a wrapper returning an async call result is accepted as a promise and awaits to the relayed value ---
+      {
+        let promiseProbe: util.types = new util.types();
+        let inner: Object = declareAsyncValue();
+        let relayed: Object = relayAsync();
+        let relayVerdict: boolean = promiseProbe.isPromise(relayed);
+        let innerVerdict: boolean = promiseProbe.isPromise(inner);
+        expect(relayVerdict).assertTrue();
+        expect(innerVerdict).assertTrue();
+        let value: int = await (relayed as Promise<int>);
+        expect(value).assertEqual(11);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_PROMISE_4100
+     * @tc.name testTypesIsPromise041
+     * @tc.desc Merged batch (1 test): Miscellaneous checks: verifies remaining edge cases, covering buffer windows and subarrays and related edge cases.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsPromise041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify an out of range DataView over a four byte buffer raises RangeError while isPromise still rejects a valid view ---
+      {
+        let promiseProbe: util.types = new util.types();
+        let buffer: ArrayBuffer = new ArrayBuffer(4);
+        try {
+          new DataView(buffer, 8, 2);
+          expect().assertFail();
+        } catch (err) {
+          expect(err.name).assertEqual('RangeError');
+        }
+        let view: DataView = new DataView(buffer, 0, 4);
+        expect(promiseProbe.isPromise(view)).assertFalse();
+      }
+    });
+
   });
 }
