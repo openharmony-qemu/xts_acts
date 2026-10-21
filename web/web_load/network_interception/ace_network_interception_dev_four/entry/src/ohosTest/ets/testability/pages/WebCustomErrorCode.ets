@@ -197,10 +197,6 @@ struct WebCustomErrorCode {
               }
               break;
             }
-            case 'testDidFail3Call001': {
-              await this.runDidFail3SuccessCase(this.str, 203110);
-              break;
-            }
             case 'testDidFail3CompleteFalse001': {
               await this.runDidFail3SuccessCase(this.str, 203111);
               break;
@@ -212,37 +208,37 @@ struct WebCustomErrorCode {
             case 'testDidFail3CodeNull001': {
               await this.runDidFail3ErrorCase((handler) => {
                 handler.didFail(null, true, CUSTOM_ERROR_CODE);
-              }, 203120, '401');
+              }, 203120, '17100101');
               break;
             }
             case 'testDidFail3CodeUndefined001': {
               await this.runDidFail3ErrorCase((handler) => {
                 handler.didFail(undefined, true, CUSTOM_ERROR_CODE);
-              }, 203130, '401');
+              }, 203130, '17100101');
               break;
             }
             case 'testDidFail3CompleteIfNoResponseNull001': {
               await this.runDidFail3ErrorCase((handler) => {
                 handler.didFail(WebNetErrorList.ERR_FAILED, null, CUSTOM_ERROR_CODE);
-              }, 203140, '401');
+              }, 203140, '17100101');
               break;
             }
             case 'testDidFail3CompleteIfNoResponseUndefined001': {
               await this.runDidFail3ErrorCase((handler) => {
                 handler.didFail(WebNetErrorList.ERR_FAILED, undefined, CUSTOM_ERROR_CODE);
-              }, 203150, '401');
+              }, 203150, '17100101');
               break;
             }
             case 'testDidFail3CustomErrorCodeNull001': {
               await this.runDidFail3ErrorCase((handler) => {
                 handler.didFail(WebNetErrorList.ERR_FAILED, true, null);
-              }, 203160, '401');
+              }, 203160, '17100101');
               break;
             }
             case 'testDidFail3CustomErrorCodeUndefined001': {
               await this.runDidFail3ErrorCase((handler) => {
                 handler.didFail(WebNetErrorList.ERR_FAILED, true, undefined);
-              }, 203170, '401');
+              }, 203170, '17100101');
               break;
             }
           }

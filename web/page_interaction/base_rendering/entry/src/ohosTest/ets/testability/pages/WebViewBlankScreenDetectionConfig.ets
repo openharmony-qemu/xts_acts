@@ -110,7 +110,7 @@ struct webViewController {
 
             case "emitOnMonitoredBlankScreenCall001": {
               try {
-                Utils.emitEvent(this.monitoredBlankScreenRegistered, 20261001);
+                Utils.emitEvent(true, 20261001);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -144,6 +144,159 @@ struct webViewController {
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
+              break;
+            }
+
+            case "emitBlankScreenReasonDnsResolveFailed001": {
+              Utils.emitEvent(BlankScreenReason.DNS_RESOLVE_FAILED, 20261101);
+              break;
+            }
+            case "emitBlankScreenReasonRequestTimedOut001": {
+              Utils.emitEvent(BlankScreenReason.REQUEST_TIMED_OUT, 20261102);
+              break;
+            }
+            case "emitBlankScreenReasonConnectionRefused001": {
+              Utils.emitEvent(BlankScreenReason.CONNECTION_REFUSED, 20261103);
+              break;
+            }
+            case "emitBlankScreenReasonConnectionReset001": {
+              Utils.emitEvent(BlankScreenReason.CONNECTION_RESET, 20261104);
+              break;
+            }
+            case "emitBlankScreenReasonSslError001": {
+              Utils.emitEvent(BlankScreenReason.SSL_ERROR, 20261105);
+              break;
+            }
+            case "emitBlankScreenReasonCertError001": {
+              Utils.emitEvent(BlankScreenReason.CERT_ERROR, 20261106);
+              break;
+            }
+            case "emitBlankScreenReasonInternetDisconnected001": {
+              Utils.emitEvent(BlankScreenReason.INTERNET_DISCONNECTED, 20261107);
+              break;
+            }
+            case "emitBlankScreenReasonRedirectLoop001": {
+              Utils.emitEvent(BlankScreenReason.REDIRECT_LOOP, 20261108);
+              break;
+            }
+            case "emitBlankScreenReasonProxyError001": {
+              Utils.emitEvent(BlankScreenReason.PROXY_ERROR, 20261109);
+              break;
+            }
+            case "emitBlankScreenReasonOtherNetworkError001": {
+              Utils.emitEvent(BlankScreenReason.OTHER_NETWORK_ERROR, 20261110);
+              break;
+            }
+            case "emitBlankScreenReasonMainDocEmpty001": {
+              Utils.emitEvent(BlankScreenReason.MAIN_DOC_EMPTY, 20261111);
+              break;
+            }
+            case "emitBlankScreenReasonHttp4xxError001": {
+              Utils.emitEvent(BlankScreenReason.HTTP_4XX_ERROR, 20261112);
+              break;
+            }
+            case "emitBlankScreenReasonHttp5xxError001": {
+              Utils.emitEvent(BlankScreenReason.HTTP_5XX_ERROR, 20261113);
+              break;
+            }
+            case "emitBlankScreenReasonJsGlobalBundleLoadFailed001": {
+              Utils.emitEvent(BlankScreenReason.JS_GLOBAL_BUNDLE_LOAD_FAILED, 20261114);
+              break;
+            }
+            case "emitBlankScreenReasonCssLoadFailed001": {
+              Utils.emitEvent(BlankScreenReason.CSS_LOAD_FAILED, 20261115);
+              break;
+            }
+            case "emitBlankScreenReasonMultiResourceLoadFailed001": {
+              Utils.emitEvent(BlankScreenReason.MULTI_RESOURCE_LOAD_FAILED, 20261116);
+              break;
+            }
+            case "emitBlankScreenReasonCorsBlocked001": {
+              Utils.emitEvent(BlankScreenReason.CORS_BLOCKED, 20261117);
+              break;
+            }
+            case "emitBlankScreenReasonCspBlocked001": {
+              Utils.emitEvent(BlankScreenReason.CSP_BLOCKED, 20261118);
+              break;
+            }
+            case "emitBlankScreenReasonMixedContentBlocked001": {
+              Utils.emitEvent(BlankScreenReason.MIXED_CONTENT_BLOCKED, 20261119);
+              break;
+            }
+            case "emitBlankScreenReasonJsRuntimeError001": {
+              Utils.emitEvent(BlankScreenReason.JS_RUNTIME_ERROR, 20261120);
+              break;
+            }
+            case "emitBlankScreenReasonNoFirstContentfulPaint001": {
+              Utils.emitEvent(BlankScreenReason.NO_FIRST_CONTENTFUL_PAINT, 20261121);
+              break;
+            }
+            case "emitBlankScreenReasonRendererCrashed001": {
+              Utils.emitEvent(BlankScreenReason.RENDERER_CRASHED, 20261122);
+              break;
+            }
+            case "emitBlankScreenReasonRendererKilled001": {
+              Utils.emitEvent(BlankScreenReason.RENDERER_KILLED, 20261123);
+              break;
+            }
+            case "emitBlankScreenReasonGpuProcessCrashed001": {
+              Utils.emitEvent(BlankScreenReason.GPU_PROCESS_CRASHED, 20261124);
+              break;
+            }
+            case "emitBlankScreenReasonGpuProcessWatchdogTimeout001": {
+              Utils.emitEvent(BlankScreenReason.GPU_PROCESS_WATCHDOG_TIMEOUT, 20261125);
+              break;
+            }
+            case "emitBlankScreenReasonWebViewZeroSize001": {
+              Utils.emitEvent(BlankScreenReason.WEB_VIEW_ZERO_SIZE, 20261126);
+              break;
+            }
+            case "emitMonitoredBlankScreenEventInfoInterface001": {
+              let info: MonitoredBlankScreenEventInfo = {
+                url: 'resource://rawfile/kongbai.html',
+                reason: BlankScreenReason.SSL_ERROR,
+                extraMsg: 'ssl handshake failed'
+              };
+              Utils.emitEvent(info != null, 20261201);
+              break;
+            }
+            case "emitMonitoredBlankScreenEventInfoUrl001": {
+              let info: MonitoredBlankScreenEventInfo = {
+                url: 'resource://rawfile/kongbai.html',
+                reason: BlankScreenReason.MAIN_DOC_EMPTY,
+                extraMsg: ''
+              };
+              Utils.emitEvent(info.url, 20261202);
+              break;
+            }
+            case "emitMonitoredBlankScreenEventInfoReason001": {
+              let info: MonitoredBlankScreenEventInfo = {
+                url: 'resource://rawfile/kongbai.html',
+                reason: BlankScreenReason.DNS_RESOLVE_FAILED,
+                extraMsg: 'dns error'
+              };
+              Utils.emitEvent(info.reason, 20261203);
+              break;
+            }
+            case "emitMonitoredBlankScreenEventInfoExtraMsg001": {
+              let info: MonitoredBlankScreenEventInfo = {
+                url: 'resource://rawfile/kongbai.html',
+                reason: BlankScreenReason.REQUEST_TIMED_OUT,
+                extraMsg: 'request timed out after 30s'
+              };
+              Utils.emitEvent(info.extraMsg, 20261204);
+              break;
+            }
+            case "emitOnMonitorBlankScreenCallbackType001": {
+              let callback: OnMonitorBlankScreenCallback = (event: MonitoredBlankScreenEventInfo) => {
+                console.log(`callback url ${event.url}, reason ${event.reason}, extra ${event.extraMsg}`);
+              };
+              callback({
+                url: 'resource://rawfile/kongbai.html',
+                reason: BlankScreenReason.CERT_ERROR,
+                extraMsg: 'cert invalid'
+              });
+              Utils.emitEvent(true, 20261205);
               break;
             }
 

@@ -52,7 +52,8 @@ export default function webComponentConstructorCoveragePage() {
       async (done: Function) => {
         Utils.emitEvent('testPermissionRequestClassCallDirect001', EVENT_ID_SET_EMIT_KEY);
         Utils.registerEvent('testPermissionRequestClassCallDirect001', true, 138210, done);
-        await Utils.clickComponent('WebComponentConstructorCoverageButton');
+        await Utils.waitAndClickComponent(driver, 'WebComponentConstructorCoverageButton',
+          'testPermissionRequestClassCallDirect001');
       })
 
     /**
@@ -67,7 +68,8 @@ export default function webComponentConstructorCoveragePage() {
       async (done: Function) => {
         Utils.emitEvent('testPermissionRequestConstructorCallDirect001', EVENT_ID_SET_EMIT_KEY);
         Utils.registerEvent('testPermissionRequestConstructorCallDirect001', true, 138211, done);
-        await Utils.clickComponent('WebComponentConstructorCoverageButton');
+        await Utils.waitAndClickComponent(driver, 'WebComponentConstructorCoverageButton',
+          'testPermissionRequestConstructorCallDirect001');
       })
 
     /**
@@ -82,7 +84,8 @@ export default function webComponentConstructorCoveragePage() {
       async (done: Function) => {
         Utils.emitEvent('testPermissionRequestConstructorReturnDirect001', EVENT_ID_SET_EMIT_KEY);
         Utils.registerEvent('testPermissionRequestConstructorReturnDirect001', true, 138212, done);
-        await Utils.clickComponent('WebComponentConstructorCoverageButton');
+        await Utils.waitAndClickComponent(driver, 'WebComponentConstructorCoverageButton',
+          'testPermissionRequestConstructorReturnDirect001');
       })
 
     /**
@@ -97,7 +100,8 @@ export default function webComponentConstructorCoveragePage() {
       async (done: Function) => {
         Utils.emitEvent('testScreenCaptureHandlerClassCallDirect001', EVENT_ID_SET_EMIT_KEY);
         Utils.registerEvent('testScreenCaptureHandlerClassCallDirect001', true, 138220, done);
-        await Utils.clickComponent('WebComponentConstructorCoverageButton');
+        await Utils.waitAndClickComponent(driver, 'WebComponentConstructorCoverageButton',
+          'testScreenCaptureHandlerClassCallDirect001');
       })
 
     /**
@@ -112,7 +116,8 @@ export default function webComponentConstructorCoveragePage() {
       async (done: Function) => {
         Utils.emitEvent('testScreenCaptureHandlerConstructorCallDirect001', EVENT_ID_SET_EMIT_KEY);
         Utils.registerEvent('testScreenCaptureHandlerConstructorCallDirect001', true, 138221, done);
-        await Utils.clickComponent('WebComponentConstructorCoverageButton');
+        await Utils.waitAndClickComponent(driver, 'WebComponentConstructorCoverageButton',
+          'testScreenCaptureHandlerConstructorCallDirect001');
       })
 
     /**
@@ -127,7 +132,8 @@ export default function webComponentConstructorCoveragePage() {
       async (done: Function) => {
         Utils.emitEvent('testScreenCaptureHandlerConstructorReturnDirect001', EVENT_ID_SET_EMIT_KEY);
         Utils.registerEvent('testScreenCaptureHandlerConstructorReturnDirect001', true, 138222, done);
-        await Utils.clickComponent('WebComponentConstructorCoverageButton');
+        await Utils.waitAndClickComponent(driver, 'WebComponentConstructorCoverageButton',
+          'testScreenCaptureHandlerConstructorReturnDirect001');
       })
 
     /**
@@ -142,7 +148,8 @@ export default function webComponentConstructorCoveragePage() {
       async (done: Function) => {
         Utils.emitEvent('testJsGeolocationClassCallDirect001', EVENT_ID_SET_EMIT_KEY);
         Utils.registerEvent('testJsGeolocationClassCallDirect001', true, 138230, done);
-        await Utils.clickComponent('WebComponentConstructorCoverageButton');
+        await Utils.waitAndClickComponent(driver, 'WebComponentConstructorCoverageButton',
+          'testJsGeolocationClassCallDirect001');
       })
 
     /**
@@ -157,7 +164,8 @@ export default function webComponentConstructorCoveragePage() {
       async (done: Function) => {
         Utils.emitEvent('testJsGeolocationConstructorCallDirect001', EVENT_ID_SET_EMIT_KEY);
         Utils.registerEvent('testJsGeolocationConstructorCallDirect001', true, 138231, done);
-        await Utils.clickComponent('WebComponentConstructorCoverageButton');
+        await Utils.waitAndClickComponent(driver, 'WebComponentConstructorCoverageButton',
+          'testJsGeolocationConstructorCallDirect001');
       })
 
     /**
@@ -172,7 +180,8 @@ export default function webComponentConstructorCoveragePage() {
       async (done: Function) => {
         Utils.emitEvent('testJsGeolocationConstructorReturnDirect001', EVENT_ID_SET_EMIT_KEY);
         Utils.registerEvent('testJsGeolocationConstructorReturnDirect001', true, 138232, done);
-        await Utils.clickComponent('WebComponentConstructorCoverageButton');
+        await Utils.waitAndClickComponent(driver, 'WebComponentConstructorCoverageButton',
+          'testJsGeolocationConstructorReturnDirect001');
       })
 
     /**
@@ -187,7 +196,8 @@ export default function webComponentConstructorCoveragePage() {
       async (done: Function) => {
         Utils.emitEvent('testEventResultClassCallDirect001', EVENT_ID_SET_EMIT_KEY);
         Utils.registerEvent('testEventResultClassCallDirect001', true, 138240, done);
-        await Utils.clickComponent('WebComponentConstructorCoverageButton');
+        await Utils.waitAndClickComponent(driver, 'WebComponentConstructorCoverageButton',
+          'testEventResultClassCallDirect001');
       })
 
     /**
@@ -202,7 +212,8 @@ export default function webComponentConstructorCoveragePage() {
       async (done: Function) => {
         Utils.emitEvent('testEventResultConstructorCallDirect001', EVENT_ID_SET_EMIT_KEY);
         Utils.registerEvent('testEventResultConstructorCallDirect001', true, 138241, done);
-        await Utils.clickComponent('WebComponentConstructorCoverageButton');
+        await Utils.waitAndClickComponent(driver, 'WebComponentConstructorCoverageButton',
+          'testEventResultConstructorCallDirect001');
       })
 
     /**
@@ -217,7 +228,8 @@ export default function webComponentConstructorCoveragePage() {
       async (done: Function) => {
         Utils.emitEvent('testEventResultConstructorReturnDirect001', EVENT_ID_SET_EMIT_KEY);
         Utils.registerEvent('testEventResultConstructorReturnDirect001', true, 138242, done);
-        await Utils.clickComponent('WebComponentConstructorCoverageButton');
+        await Utils.waitAndClickComponent(driver, 'WebComponentConstructorCoverageButton',
+          'testEventResultConstructorReturnDirect001');
       })
   })
 }

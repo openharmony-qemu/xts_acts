@@ -16,10 +16,10 @@
 import WebViewBlankScreenDetectionConfig from './WebViewBlankScreenDetectionConfig.test'
 import WebViewAISessionType from './WebViewAISessionType.test'
 import WebViewAISessionTypeNullUndefined from './WebViewAISessionTypeNullUndefined.test'
-import monitoredBlankScreenCoverageDirect from './MonitoredBlankScreenCoverageDirect.test'
+import monitoredBlankScreenCoveragePage from './MonitoredBlankScreenCoveragePage.test'
 export default function testsuite() {
   WebViewBlankScreenDetectionConfig()
-  monitoredBlankScreenCoverageDirect()
+  monitoredBlankScreenCoveragePage()
   WebViewAISessionType()
   WebViewAISessionTypeNullUndefined()
 }
