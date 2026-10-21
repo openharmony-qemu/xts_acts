@@ -1464,5 +1464,1159 @@ export default function typesIsMapTest(): void {
       }
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_MAP_2100
+     * @tc.name testTypesIsMap021
+     * @tc.desc Merged batch (5 tests): State preservation and aliasing: a boolean variable receives the isMap result for a Map and a copy of that variable stays true; isMap accepts a Map whose NaN key set twice keeps a size of one under SameValueZero; an overwritten key keeps size one with the newer value and overwriting the first of three keys preserves insertion order; isMap keeps returning true after an extra key is inserted and the new size is reported; accepts a Map holding an int array value whose length and element survive the check.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsMap021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify a boolean variable receives the isMap result for a Map and a copy of that variable stays true ---
+      {
+        let mapProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        let flag: boolean = mapProbe.isMap(m);
+        let copy: boolean = flag;
+        expect(flag).assertTrue();
+        expect(copy).assertTrue();
+      }
+
+      // --- [2] Verify isMap accepts a Map whose NaN key set twice keeps a size of one under SameValueZero ---
+      {
+        let mapProbe: util.types = new util.types();
+        let m: Map<double, int> = new Map<double, int>();
+        m.set(Double.NaN, 1);
+        m.set(Double.NaN, 2);
+        let r: boolean = mapProbe.isMap(m);
+        expect(r).assertTrue();
+        expect(m.size).assertEqual(1);
+      }
+
+      // --- [3] Verify an overwritten key keeps size one with the newer value and overwriting the first of three keys preserves insertion order ---
+      {
+        let mapProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('slot', 10);
+        let before: boolean = mapProbe.isMap(m);
+        m.set('slot', 20);
+        let after: boolean = mapProbe.isMap(m);
+        expect(before).assertTrue();
+        expect(after).assertTrue();
+        expect(m.size).assertEqual(1);
+        expect(m.get('slot')).assertEqual(20);
+        let mapProbe_2: util.types = new util.types();
+        let m_2: Map<string, int> = new Map<string, int>();
+        m_2.set('first', 1);
+        m_2.set('second', 2);
+        m_2.set('third', 3);
+        m_2.set('first', 11);
+        let ok: boolean = mapProbe_2.isMap(m_2);
+        let order: string[] = collectOrderedKeys(m_2);
+        expect(ok).assertTrue();
+        expect(order[0]).assertEqual('first');
+        expect(order[2]).assertEqual('third');
+        expect(m_2.get('first')).assertEqual(11);
+      }
+
+      // --- [4] Verify isMap keeps returning true after an extra key is inserted and the new size is reported ---
+      {
+        let mapProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 1);
+        let before: boolean = mapProbe.isMap(m);
+        m.set('b', 2);
+        let after: boolean = mapProbe.isMap(m);
+        expect(before).assertTrue();
+        expect(after).assertTrue();
+        expect(m.size).assertEqual(2);
+      }
+
+      // --- [5] Verify isMap returns true for a Map holding an int array value whose length and element survive the check ---
+      {
+        let mapProbe: util.types = new util.types();
+        let arr: int[] = [3, 4];
+        let m: Map<string, int[]> = new Map<string, int[]>();
+        m.set('a', arr);
+        expect(mapProbe.isMap(m)).assertTrue();
+        expect(arr.length).assertEqual(2);
+        expect(arr[1]).assertEqual(4);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_MAP_2200
+     * @tc.name testTypesIsMap022
+     * @tc.desc Merged batch (5 tests): State preservation and aliasing: accepts a Map whose stored value object was mutated after insertion and the mutation is visible; where setting the NaN key twice keeps size one and get returns the newest value; Map.set returns the same instance so a chained call stays accepted and accumulates, and a stored value object keeps its field; that is cleared while already empty so the size stays zero; accepts an outer Map and the nested inner Map keeps its two entries.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsMap022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify isMap returns true for a Map whose stored value object was mutated after insertion and the mutation is visible ---
+      {
+        let mapProbe: util.types = new util.types();
+        let box: PlainBox = new PlainBox();
+        let m: Map<string, PlainBox> = new Map<string, PlainBox>();
+        m.set('b', box);
+        box.count = 42;
+        let ok: boolean = mapProbe.isMap(m);
+        expect(ok).assertTrue();
+        expect(box.count).assertEqual(42);
+        expect(m.size).assertEqual(1);
+      }
+
+      // --- [2] Verify isMap returns true for a Map where setting the NaN key twice keeps size one and get returns the newest value ---
+      {
+        let mapProbe: util.types = new util.types();
+        let m: Map<double, string> = new Map<double, string>();
+        m.set(Double.NaN, 'first');
+        m.set(Double.NaN, 'second');
+        let ok: boolean = mapProbe.isMap(m);
+        expect(ok).assertTrue();
+        expect(m.size).assertEqual(1);
+        expect(m.get(Double.NaN)).assertEqual('second');
+      }
+
+      // --- [3] Verify Map.set returns the same instance so a chained call stays accepted and accumulates, and a stored value object keeps its field ---
+      {
+        let mapProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        let chained: Map<string, int> = m.set('k', 1).set('j', 2);
+        expect(mapProbe.isMap(chained)).assertTrue();
+        expect(chained.size).assertEqual(2);
+        expect(chained.get('j')).assertEqual(2);
+        expect(mapProbe.isMap(m)).assertTrue();
+        let mapProbe_2: util.types = new util.types();
+        let box: PlainBox = new PlainBox();
+        box.count = 3;
+        let m_2: Map<string, PlainBox> = new Map<string, PlainBox>();
+        m_2.set('b', box);
+        let ok: boolean = mapProbe_2.isMap(m_2);
+        expect(ok).assertTrue();
+        expect(box.count).assertEqual(3);
+      }
+
+      // --- [4] Verify isMap returns true for a Map that is cleared while already empty so the size stays zero ---
+      {
+        let mapProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        let accepted: int = 0;
+        if (mapProbe.isMap(m)) {
+          accepted += 1;
+        }
+        m.clear();
+        if (mapProbe.isMap(m)) {
+          accepted += 1;
+        }
+        expect(accepted).assertEqual(2);
+        expect(m.size).assertEqual(0);
+        expect(m.has('a')).assertFalse();
+      }
+
+      // --- [5] Verify isMap returns true for an outer Map and the nested inner Map keeps its two entries ---
+      {
+        let mapProbe: util.types = new util.types();
+        let inner: Map<string, int> = new Map<string, int>();
+        inner.set('x', 1);
+        inner.set('y', 2);
+        let outer: Map<string, Map<string, int>> = new Map<string, Map<string, int>>();
+        outer.set('in', inner);
+        expect(mapProbe.isMap(outer)).assertTrue();
+        expect(inner.size).assertEqual(2);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_MAP_2300
+     * @tc.name testTypesIsMap023
+     * @tc.desc Merged batch (5 tests): State preservation and aliasing: accepts a Map read back out of a class field and the field caption is unchanged; a Map in an interface typed field and one stored in an Object array are accepted with label and length unchanged; isMap accepts a Map used as the key of another Map; the isMap result stored as a Map value and read back through the value iterator stays true; accepts a Map keyed by an ArrayBuffer and isMap returns true for a Map valued by a DataView whose byteLength is preserved.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsMap023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify isMap returns true for a Map read back out of a class field and the field caption is unchanged ---
+      {
+        let mapProbe: util.types = new util.types();
+        let holder: MapHolder = new MapHolder();
+        holder.store.set('h', 1);
+        let ok: boolean = mapProbe.isMap(holder.store);
+        expect(ok).assertTrue();
+        expect(holder.caption).assertEqual('holder');
+        expect(holder.store.size).assertEqual(1);
+      }
+
+      // --- [2] Verify a Map in an interface typed field and one stored in an Object array are accepted with label and length unchanged ---
+      {
+        let mapProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('s', 1);
+        let slot: MapSlot = { slot: m, label: 'slotted' };
+        let ok: boolean = mapProbe.isMap(slot.slot);
+        expect(ok).assertTrue();
+        expect(slot.label).assertEqual('slotted');
+        expect(slot.slot.size).assertEqual(1);
+        let mapProbe_2: util.types = new util.types();
+        let m_2: Map<string, int> = new Map<string, int>();
+        m_2.set('e', 1);
+        let bag: Object[] = [];
+        bag.push(m_2);
+        let ok_2: boolean = mapProbe_2.isMap(bag[0]);
+        expect(ok_2).assertTrue();
+        expect(bag.length).assertEqual(1);
+        expect(m_2.size).assertEqual(1);
+      }
+
+      // --- [3] Verify isMap accepts a Map used as the key of another Map while the inner key Map stays accepted and the outer size is one ---
+      {
+        let mapProbe: util.types = new util.types();
+        let inner: Map<string, int> = new Map<string, int>();
+        inner.set('k', 1);
+        let outer: Map<Map<string, int>, string> = new Map<Map<string, int>, string>();
+        outer.set(inner, 'outer');
+        expect(mapProbe.isMap(outer)).assertTrue();
+        expect(mapProbe.isMap(inner)).assertTrue();
+        expect(outer.size).assertEqual(1);
+      }
+
+      // --- [4] Verify the isMap result stored as a Map value and read back through the value iterator stays true ---
+      {
+        let mapProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('k', 1);
+        let store: Map<string, boolean> = new Map<string, boolean>();
+        store.set('judged', mapProbe.isMap(m));
+        let collected: boolean[] = [];
+        for (const flag of store.values()) {
+          collected.push(flag);
+        }
+        expect(collected[0]).assertTrue();
+        expect(collected.length).assertEqual(1);
+      }
+
+      // --- [5] Verify isMap returns true for a Map keyed by an ArrayBuffer and isMap returns true for a Map valued by a DataView whose byteLength is preserved ---
+      {
+        let mapProbe: util.types = new util.types();
+        let buf: ArrayBuffer = new ArrayBuffer(16);
+        let m: Map<ArrayBuffer, int> = new Map<ArrayBuffer, int>();
+        m.set(buf, 1);
+        let ok: boolean = mapProbe.isMap(m);
+        expect(ok).assertTrue();
+        expect(m.has(buf)).assertTrue();
+        expect(buf.byteLength).assertEqual(16);
+        let mapProbe_2: util.types = new util.types();
+        let buf_2: ArrayBuffer = new ArrayBuffer(8);
+        let view: DataView = new DataView(buf_2);
+        let m_2: Map<string, DataView> = new Map<string, DataView>();
+        m_2.set('v', view);
+        let ok_2: boolean = mapProbe_2.isMap(m_2);
+        expect(ok_2).assertTrue();
+        expect(m_2.has('v')).assertTrue();
+        expect(view.byteLength).assertEqual(8);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_MAP_2400
+     * @tc.name testTypesIsMap024
+     * @tc.desc Merged batch (5 tests): State preservation and aliasing: accepts a Map that swapped the field of a holder class so only the new entries remain; Map.forEach visits every value so a running total reaches the sum; accepts the verdict stays true after a key is deleted with the reduced size reported and a Map returned by an identity helper; a keys iterator is accepted by isMapIterator while its Map is accepted by isMap and keeps size 1; an array filter driven by isMap keeps only the Map out of a mixed Object array.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsMap024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify isMap returns true for a Map that swapped the field of a holder class so only the new entries remain ---
+      {
+        let mapProbe: util.types = new util.types();
+        let holder: MapHolder = new MapHolder();
+        holder.store.set('first', 1);
+        holder.assign(new Map<string, int>());
+        holder.store.set('second', 2);
+        let ok: boolean = mapProbe.isMap(holder.store);
+        expect(ok).assertTrue();
+        expect(holder.store.size).assertEqual(1);
+        expect(holder.store.has('second')).assertTrue();
+        expect(holder.caption).assertEqual('holder');
+      }
+
+      // --- [2] Verify Map.forEach visits every value so a running total reaches the sum while the visited map keeps its verdict ---
+      {
+        let mapProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 3);
+        m.set('b', 4);
+        let total: int = 0;
+        m.forEach((v: int, k: string, source: Map<string, int>) => { total = total + v; });
+        expect(total).assertEqual(7);
+        expect(mapProbe.isMap(m)).assertTrue();
+      }
+
+      // --- [3] Verify the verdict stays true after a key is deleted with the reduced size reported and a Map returned by an identity helper is accepted ---
+      {
+        let mapProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 1);
+        m.set('b', 2);
+        let before: boolean = mapProbe.isMap(m);
+        m.delete('a');
+        let after: boolean = mapProbe.isMap(m);
+        expect(before).assertTrue();
+        expect(after).assertTrue();
+        expect(m.size).assertEqual(1);
+        let mapProbe_2: util.types = new util.types();
+        let m_2: Map<string, int> = new Map<string, int>();
+        m_2.set('p', 1);
+        let returned: Object = passThrough(m_2);
+        let ok: boolean = mapProbe_2.isMap(returned);
+        expect(ok).assertTrue();
+        expect(m_2.size).assertEqual(1);
+      }
+
+      // --- [4] Verify a keys iterator is accepted by isMapIterator while its Map is accepted by isMap and keeps size 1 ---
+      {
+        let mapProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 1);
+        m.set('b', 2);
+        m.delete('b');
+        let cursor: IterableIterator<string> = m.keys();
+        expect(mapProbe.isMapIterator(cursor as Object)).assertTrue();
+        expect(mapProbe.isMap(m)).assertTrue();
+        expect(m.size).assertEqual(1);
+      }
+
+      // --- [5] Verify an array filter driven by isMap keeps only the Map out of a mixed Object array ---
+      {
+        let mapProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('x', 1);
+        m.set('y', 2);
+        let mixed: Object[] = [m, new Set<string>(), 'text'];
+        let onlyMaps: Object[] = mixed.filter((v: Object): boolean => mapProbe.isMap(v));
+        expect(onlyMaps.length).assertEqual(1);
+        expect(m.size).assertEqual(2);
+        expect(mixed.length).assertEqual(3);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_MAP_2500
+     * @tc.name testTypesIsMap025
+     * @tc.desc Merged batch (5 tests): Container and field storage: accepts a Map assembled from a value read back out of a source Map; added as a member of a Set and the Set still reports it present; three values read back by get after the isMap check equal the values written before it; keyed by a class instance whose has lookup still succeeds; stored as the value of a WeakMap and the WeakMap still holds its class key.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsMap025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify isMap returns true for a Map assembled from a value read back out of a source Map ---
+      {
+        let mapProbe: util.types = new util.types();
+        let src: Map<string, Object> = new Map<string, Object>();
+        src.set('a', new PlainBox());
+        let got: Object | undefined = src.get('a');
+        let present: boolean = got !== undefined;
+        expect(present).assertTrue();
+        let built: Map<string, Object> = new Map<string, Object>();
+        built.set('copy', got as Object);
+        expect(mapProbe.isMap(built)).assertTrue();
+        expect(built.size).assertEqual(1);
+      }
+
+      // --- [2] Verify isMap returns true for a Map added as a member of a Set and the Set still reports it present ---
+      {
+        let mapProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('m', 1);
+        let s: Set<Object> = new Set<Object>();
+        s.add(m);
+        let ok: boolean = mapProbe.isMap(m);
+        expect(ok).assertTrue();
+        expect(s.has(m)).assertTrue();
+        expect(s.size).assertEqual(1);
+      }
+
+      // --- [3] Verify three values read back by get after the isMap check equal the values written before it ---
+      {
+        let mapProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('one', 1);
+        m.set('two', 2);
+        m.set('three', 3);
+        let before: int[] = [m.get('one')!, m.get('two')!, m.get('three')!];
+        let ok: boolean = mapProbe.isMap(m);
+        let after: int[] = [m.get('one')!, m.get('two')!, m.get('three')!];
+        expect(ok).assertTrue();
+        expect(after[0]).assertEqual(before[0]);
+        expect(after[1]).assertEqual(before[1]);
+        expect(after[2]).assertEqual(3);
+      }
+
+      // --- [4] Verify isMap returns true for a Map keyed by a class instance whose has lookup still succeeds ---
+      {
+        let mapProbe: util.types = new util.types();
+        let key: KeyTag = new KeyTag();
+        let m: Map<KeyTag, int> = new Map<KeyTag, int>();
+        m.set(key, 1);
+        expect(mapProbe.isMap(m)).assertTrue();
+        expect(m.has(key)).assertTrue();
+      }
+
+      // --- [5] Verify isMap returns true for a Map stored as the value of a WeakMap and the WeakMap still holds its class key ---
+      {
+        let mapProbe: util.types = new util.types();
+        let key: KeyTag = new KeyTag();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('w', 1);
+        let wm: WeakMap<KeyTag, Map<string, int>> = new WeakMap<KeyTag, Map<string, int>>();
+        wm.set(key, m);
+        let ok: boolean = mapProbe.isMap(m);
+        expect(ok).assertTrue();
+        expect(wm.has(key)).assertTrue();
+        expect(m.size).assertEqual(1);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_MAP_2600
+     * @tc.name testTypesIsMap026
+     * @tc.desc Merged batch (5 tests): Container and field storage: accepts a Map keyed by positive infinity and negative infinity; the int maximum value 2147483647; accepts a Map valued by two class instances and one keyed by an emoji of length two as a surrogate pair; a keys iterator while the source Map is also accepted; the same object instance stored as a Map value is returned by get after the isMap check.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsMap026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify isMap returns true for a Map keyed by positive infinity and negative infinity ---
+      {
+        let mapProbe: util.types = new util.types();
+        let m: Map<double, int> = new Map<double, int>();
+        m.set(Double.POSITIVE_INFINITY, 1);
+        expect(mapProbe.isMap(m)).assertTrue();
+        expect(m.size).assertEqual(1);
+        let mapProbe_2: util.types = new util.types();
+        let m_2: Map<double, int> = new Map<double, int>();
+        m_2.set(Double.NEGATIVE_INFINITY, 1);
+        expect(m_2.size).assertEqual(1);
+        expect(mapProbe_2.isMap(m_2)).assertTrue();
+      }
+
+      // --- [2] Verify isMap returns true for a Map keyed by the int maximum value 2147483647 ---
+      {
+        let mapProbe: util.types = new util.types();
+        let m: Map<int, int> = new Map<int, int>();
+        m.set(2147483647, 1);
+        expect(mapProbe.isMap(m)).assertTrue();
+        expect(m.get(2147483647)).assertEqual(1);
+      }
+
+      // --- [3] Verify a Map valued by two class instances and one keyed by an emoji of length two as a surrogate pair are accepted ---
+      {
+        let mapProbe: util.types = new util.types();
+        let boxes: PlainBox[] = [new PlainBox(), new PlainBox()];
+        let m: Map<string, PlainBox[]> = new Map<string, PlainBox[]>();
+        m.set('boxes', boxes);
+        let ok: boolean = mapProbe.isMap(m);
+        expect(ok).assertTrue();
+        let got: PlainBox[] | undefined = m.get('boxes');
+        let present: boolean = got !== undefined;
+        expect(present).assertTrue();
+        expect(boxes.length).assertEqual(2);
+        let mapProbe_2: util.types = new util.types();
+        let m_2: Map<string, int> = new Map<string, int>();
+        m_2.set('\u{1F600}', 1);
+        let ok_2: boolean = mapProbe_2.isMap(m_2);
+        let keys: string[] = collectOrderedKeys(m_2);
+        expect(ok_2).assertTrue();
+        expect(keys[0].length).assertEqual(2);
+        expect(m_2.size).assertEqual(1);
+      }
+
+      // --- [4] Verify isMap returns true for a Map keyed by a keys iterator while the source Map is also accepted ---
+      {
+        let mapProbe: util.types = new util.types();
+        let source: Map<string, int> = new Map<string, int>();
+        source.set('seed', 1);
+        let cursor: IterableIterator<string> = source.keys();
+        let holder: Map<IterableIterator<string>, int> = new Map<IterableIterator<string>, int>();
+        holder.set(cursor, 2);
+        expect(mapProbe.isMap(holder)).assertTrue();
+        expect(holder.size).assertEqual(1);
+        expect(mapProbe.isMap(source)).assertTrue();
+      }
+
+      // --- [5] Verify the same object instance stored as a Map value is returned by get after the isMap check ---
+      {
+        let mapProbe: util.types = new util.types();
+        let box: PlainBox = new PlainBox();
+        let m: Map<string, PlainBox> = new Map<string, PlainBox>();
+        m.set('b', box);
+        let ok: boolean = mapProbe.isMap(m);
+        let got: PlainBox | undefined = m.get('b');
+        let same: boolean = got === box;
+        expect(ok).assertTrue();
+        expect(same).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_MAP_2700
+     * @tc.name testTypesIsMap027
+     * @tc.desc Merged batch (5 tests): Container and field storage: accepts a Map retrieved from a Record field through a non null assertion; isMap accepts a Map fetched back out of a WeakMap value with its size intact; isMap accepts three levels of nested Maps from the outer wrapper down to the innermost store; accepts a Map handed back by a class method that returns its own field; isMap still accepts a Map that travels through a class field an array element and an identity helper.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsMap027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify isMap returns true for a Map retrieved from a Record field through a non null assertion ---
+      {
+        let mapProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('r', 1);
+        let rec: Record<string, Object> = { 'store': m };
+        let got: Object = rec['store']!;
+        let ok: boolean = mapProbe.isMap(got);
+        expect(ok).assertTrue();
+        expect(m.size).assertEqual(1);
+      }
+
+      // --- [2] Verify isMap accepts a Map fetched back out of a WeakMap value with its size intact ---
+      {
+        let mapProbe: util.types = new util.types();
+        let key: KeyTag = new KeyTag();
+        let inner: Map<string, int> = new Map<string, int>();
+        inner.set('deep', 1);
+        let wm: WeakMap<KeyTag, Map<string, int>> = new WeakMap<KeyTag, Map<string, int>>();
+        wm.set(key, inner);
+        let fetched: Map<string, int> | undefined = wm.get(key);
+        let ok: boolean = mapProbe.isMap(fetched as Object);
+        expect(ok).assertTrue();
+        expect(inner.size).assertEqual(1);
+      }
+
+      // --- [3] Verify isMap accepts three levels of nested Maps from the outer wrapper down to the innermost store ---
+      {
+        let mapProbe: util.types = new util.types();
+        let innermost: Map<string, int> = new Map<string, int>();
+        innermost.set('deep', 1);
+        let middle: Map<string, Map<string, int>> = new Map<string, Map<string, int>>();
+        middle.set('m', innermost);
+        let outer: Map<string, Map<string, Map<string, int>>> = new Map<string, Map<string, Map<string, int>>>();
+        outer.set('o', middle);
+        expect(mapProbe.isMap(outer)).assertTrue();
+        expect(mapProbe.isMap(middle)).assertTrue();
+        expect(mapProbe.isMap(innermost)).assertTrue();
+        expect(innermost.size).assertEqual(1);
+      }
+
+      // --- [4] Verify isMap returns true for a Map handed back by a class method that returns its own field ---
+      {
+        let mapProbe: util.types = new util.types();
+        let holder: MapHolder = new MapHolder();
+        holder.store.set('k', 5);
+        let fetched: Map<string, int> = holder.readStore();
+        let ok: boolean = mapProbe.isMap(fetched);
+        expect(ok).assertTrue();
+        expect(fetched.size).assertEqual(1);
+        expect(holder.store.get('k')).assertEqual(5);
+      }
+
+      // --- [5] Verify isMap still accepts a Map that travels through a class field an array element and an identity helper ---
+      {
+        let mapProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 1);
+        m.set('b', 2);
+        let holder: MapHolder = new MapHolder();
+        holder.assign(m);
+        let bag: Object[] = [];
+        bag.push(holder.store);
+        let returned: Object = passThrough(bag[0]);
+        let ok: boolean = mapProbe.isMap(returned);
+        expect(ok).assertTrue();
+        expect(m.size).assertEqual(2);
+        expect(holder.store.size).assertEqual(2);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_MAP_2800
+     * @tc.name testTypesIsMap028
+     * @tc.desc Merged batch (4 tests): Container and field storage: verifies verdicts for values carried through intermediate holders, covering cross-check agreement.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsMap028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify isMap returns true for a Map keyed and valued by util.types instances ---
+      {
+        let mapProbe: util.types = new util.types();
+        let typeKey: util.types = new util.types();
+        let typeValue: util.types = new util.types();
+        let m: Map<util.types, util.types> = new Map<util.types, util.types>();
+
+        m.set(typeKey, typeValue);
+        let ok: boolean = mapProbe.isMap(m);
+        expect(ok).assertTrue();
+        expect(m.has(typeKey)).assertTrue();
+      }
+
+      // --- [2] Verify isMap returns true for a Map keyed by two distinct class instances with equal fields because keys compare by reference ---
+      {
+        let mapProbe: util.types = new util.types();
+        let first: PlainBox = new PlainBox();
+        let second: PlainBox = new PlainBox();
+        first.count = 5;
+        second.count = 5;
+        let m: Map<PlainBox, int> = new Map<PlainBox, int>();
+        m.set(first, 1);
+        m.set(second, 2);
+        let ok: boolean = mapProbe.isMap(m);
+        expect(ok).assertTrue();
+        expect(m.size).assertEqual(2);
+        expect(m.get(second)).assertEqual(2);
+      }
+
+      // --- [3] Verify a class method that applies isMap to its own Map field reports the field size ---
+      {
+        let mapProbe: util.types = new util.types();
+        let inspector: MapInspector = new MapInspector();
+        inspector.subject.set('a', 1);
+        inspector.subject.set('b', 2);
+        let counted: int = inspector.countWhenMap();
+        expect(mapProbe.isMap(inspector.subject)).assertTrue();
+        expect(counted).assertEqual(2);
+      }
+
+      // --- [4] Verify isMap returns true for a Map valued by a WeakSet while isWeakSet accepts that nested WeakSet ---
+      {
+        let mapProbe: util.types = new util.types();
+        let key: KeyTag = new KeyTag();
+        let ws: WeakSet<KeyTag> = new WeakSet<KeyTag>();
+        ws.add(key);
+        let m: Map<string, WeakSet<KeyTag>> = new Map<string, WeakSet<KeyTag>>();
+        m.set('w', ws);
+        expect(mapProbe.isMap(m)).assertTrue();
+        expect(mapProbe.isWeakSet(ws)).assertTrue();
+        expect(ws.has(key)).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_MAP_2900
+     * @tc.name testTypesIsMap029
+     * @tc.desc Merged batch (5 tests): API call consistency: a Map reachable through two variables is accepted by isMap through both and both report size two; delete reports true for a stored key and false for one never inserted, and an interface literal value fails isMap while its Map passes; rejects a nullable Object field holding a Map is recognized while the same field holding a Date; accepts a Map keyed by a Map and valued by a Set while the nested Set fails isMap; two consecutive isMap calls on the same Map return the same true value.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsMap029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify a Map reachable through two variables is accepted by isMap through both and both report size two ---
+      {
+        let mapProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 1);
+        m.set('b', 2);
+        let alias: Map<string, int> = m;
+        let direct: boolean = mapProbe.isMap(m);
+        let indirect: boolean = mapProbe.isMap(alias);
+        expect(direct).assertTrue();
+        expect(indirect).assertTrue();
+        expect(alias.size).assertEqual(m.size);
+        expect(m.size).assertEqual(2);
+      }
+
+      // --- [2] Verify delete reports true for a stored key and false for one never inserted, and an interface literal value fails isMap while its Map passes ---
+      {
+        let mapProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('live', 1);
+        m.set('house', 2);
+        m.set('livehouse', 3);
+        let removed: boolean = m.delete('live');
+        let absent: boolean = m.delete('never');
+        let ok: boolean = mapProbe.isMap(m);
+        expect(removed).assertTrue();
+        expect(absent).assertFalse();
+        expect(ok).assertTrue();
+        let mapProbe_2: util.types = new util.types();
+        let pair: NamedPair = { name: 'pair', size: 7 };
+        let m_2: Map<string, NamedPair> = new Map<string, NamedPair>();
+        m_2.set('n', pair);
+        expect(mapProbe_2.isMap(m_2)).assertTrue();
+        let back: NamedPair | undefined = m_2.get('n');
+        expect(mapProbe_2.isMap(back as Object)).assertFalse();
+        expect(pair.size).assertEqual(7);
+      }
+
+      // --- [3] Verify a nullable Object field holding a Map is recognized while the same field holding a Date is rejected ---
+      {
+        let mapChecker: util.types = new util.types();
+        let slot: NullableSlot = new NullableSlot();
+        slot.value = new Map<string, int>();
+        expect(mapChecker.isMap(slot.value as Object)).assertTrue();
+        slot.value = new Date(0);
+        expect(mapChecker.isMap(slot.value as Object)).assertFalse();
+      }
+
+      // --- [4] Verify isMap returns true for a Map keyed by a Map and valued by a Set while the nested Set fails isMap ---
+      {
+        let mapProbe: util.types = new util.types();
+        let innerKey: Map<string, int> = new Map<string, int>();
+        innerKey.set('ik', 1);
+        let innerValue: Set<int> = new Set<int>();
+        innerValue.add(9);
+        let outer: Map<Map<string, int>, Set<int>> = new Map<Map<string, int>, Set<int>>();
+        outer.set(innerKey, innerValue);
+        expect(mapProbe.isMap(outer)).assertTrue();
+        expect(mapProbe.isMap(innerKey)).assertTrue();
+        expect(mapProbe.isMap(innerValue)).assertFalse();
+        expect(outer.size).assertEqual(1);
+      }
+
+      // --- [5] Verify two consecutive isMap calls on the same Map return the same true value ---
+      {
+        let mapChecker: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        let first: boolean = mapChecker.isMap(m);
+        let second: boolean = mapChecker.isMap(m);
+        expect(first).assertTrue();
+        expect(second).assertEqual(first);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_MAP_3000
+     * @tc.name testTypesIsMap030
+     * @tc.desc Merged batch (5 tests): API call consistency: accepts two independently created empty Maps; Maps valued by a WeakMap or a Set are accepted; accepts a Map valued by a function reference while that function fails isMap; two separately constructed util.types instances give the same true result for one Map; accepts a Map and false for a Set.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsMap030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify isMap returns true for two independently created empty Maps ---
+      {
+        let mapChecker: util.types = new util.types();
+        let one: Map<string, int> = new Map<string, int>();
+        let two: Map<string, int> = new Map<string, int>();
+        expect(mapChecker.isMap(one)).assertTrue();
+        expect(mapChecker.isMap(two)).assertTrue();
+      }
+
+      // --- [2] Verify Maps valued by a WeakMap or a Set are accepted while the nested containers fail and keep their key or two members ---
+      {
+        let mapProbe: util.types = new util.types();
+        let key: KeyTag = new KeyTag();
+        let inner: WeakMap<KeyTag, int> = new WeakMap<KeyTag, int>();
+        inner.set(key, 1);
+        let m: Map<string, WeakMap<KeyTag, int>> = new Map<string, WeakMap<KeyTag, int>>();
+        m.set('w', inner);
+        let ok: boolean = mapProbe.isMap(m);
+        expect(ok).assertTrue();
+        expect(mapProbe.isMap(inner)).assertFalse();
+        expect(inner.has(key)).assertTrue();
+        let mapProbe_2: util.types = new util.types();
+        let inner_2: Set<int> = new Set<int>();
+        inner_2.add(1);
+        inner_2.add(2);
+        let m_2: Map<string, Set<int>> = new Map<string, Set<int>>();
+        m_2.set('s', inner_2);
+        let ok_2: boolean = mapProbe_2.isMap(m_2);
+        expect(ok_2).assertTrue();
+        expect(inner_2.size).assertEqual(2);
+        expect(mapProbe_2.isMap(inner_2)).assertFalse();
+      }
+
+      // --- [3] Verify isMap returns true for a Map valued by a function reference while that function fails isMap ---
+      {
+        let mapProbe: util.types = new util.types();
+        let m: Map<string, Function> = new Map<string, Function>();
+        m.set('fn', plainFn);
+        let ok: boolean = mapProbe.isMap(m);
+        expect(ok).assertTrue();
+        expect(mapProbe.isMap(plainFn)).assertFalse();
+        expect(m.size).assertEqual(1);
+      }
+
+      // --- [4] Verify two separately constructed util.types instances give the same true result for one Map ---
+      {
+        let first: util.types = new util.types();
+        let second: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('k', 7);
+        expect(first.isMap(m)).assertTrue();
+        expect(second.isMap(m)).assertTrue();
+        expect(m.has('k')).assertTrue();
+      }
+
+      // --- [5] Verify a helper function that applies isMap to its argument returns true for a Map and false for a Set ---
+      {
+        let mapProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('i', 1);
+        let s: Set<string> = new Set<string>();
+        expect(judgeIsMap(m)).assertTrue();
+        expect(judgeIsMap(s)).assertFalse();
+        expect(mapProbe.isMap(m)).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_MAP_3100
+     * @tc.name testTypesIsMap031
+     * @tc.desc Merged batch (5 tests): API call consistency: accepts a Map while its own key iterator stays rejected; accepts an Object keyed Map while a Date stays rejected and int keyed Map; accepts a Map and false for a WeakMap inside the same case; a missing Map lookup yields undefined while isMap accepts that Map and rejects a WeakMap; isMap rejects the Object typed WeakMap that the instanceof WeakMap operator still accepts.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsMap031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify isMap returns true for a Map while its own key iterator stays rejected ---
+      {
+        let mapProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        expect(mapProbe.isMap(m)).assertTrue();
+        expect(mapProbe.isMap(m.keys())).assertFalse();
+      }
+
+      // --- [2] Verify isMap returns true for an Object keyed Map while a Date stays rejected and int keyed Map while a Uint8Array stays rejected ---
+      {
+        let mapProbe: util.types = new util.types();
+        expect(mapProbe.isMap(new Map<Object, Object>())).assertTrue();
+        expect(mapProbe.isMap(new Date(0))).assertFalse();
+        let mapProbe_2: util.types = new util.types();
+        expect(mapProbe_2.isMap(new Map<int, string>())).assertTrue();
+        expect(mapProbe_2.isMap(new Uint8Array(4))).assertFalse();
+      }
+
+      // --- [3] Verify isMap returns true for a Map and false for a WeakMap inside the same case ---
+      {
+        let mapChecker: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        let wm: WeakMap<KeyTag, KeyTag> = new WeakMap<KeyTag, KeyTag>();
+        let mapResult: boolean = mapChecker.isMap(m);
+        let weakResult: boolean = mapChecker.isMap(wm);
+        expect(mapResult).assertTrue();
+        expect(weakResult).assertFalse();
+      }
+
+      // --- [4] Verify a missing Map lookup yields undefined while isMap accepts that Map and rejects a WeakMap ---
+      {
+        let mapProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        let miss: int | undefined = m.get('absent');
+        let absent: boolean = miss === undefined;
+        expect(absent).assertTrue();
+        expect(mapProbe.isMap(m)).assertTrue();
+        expect(mapProbe.isMap(new WeakMap<KeyTag, int>())).assertFalse();
+      }
+
+      // --- [5] Verify isMap rejects the Object typed WeakMap that the instanceof WeakMap operator still accepts ---
+      {
+        let mapProbe: util.types = new util.types();
+        let wm: WeakMap<KeyTag, KeyTag> = new WeakMap<KeyTag, KeyTag>();
+        let boxed: Object = wm;
+        let fromApi: boolean = mapProbe.isMap(boxed);
+        let fromOperator: boolean = boxed instanceof WeakMap;
+        expect(fromApi).assertFalse();
+        expect(fromOperator).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_MAP_3200
+     * @tc.name testTypesIsMap032
+     * @tc.desc Merged batch (5 tests): API call consistency: isMap rejects the Object typed Set that the instanceof Set operator still accepts and Date that the instanceof Date operator still accepts; accepts a Map and false for a Set inside the same case and; accepts a Map valued by a resolved Promise while isPromise accepts that value; rejects the very same Set value; rejects the entries iterator produced by Map.entries while the originating Map itself returns true.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsMap032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify isMap rejects the Object typed Set that the instanceof Set operator still accepts and Date that the instanceof Date operator still accepts ---
+      {
+        let mapProbe: util.types = new util.types();
+        let s: Set<string> = new Set<string>();
+        let boxed: Object = s;
+        let fromApi: boolean = mapProbe.isMap(boxed);
+        let fromOperator: boolean = boxed instanceof Set;
+        expect(fromApi).assertFalse();
+        expect(fromOperator).assertTrue();
+        let mapProbe_2: util.types = new util.types();
+        let d: Date = new Date(0);
+        let boxed_2: Object = d;
+        let fromApi_2: boolean = mapProbe_2.isMap(boxed_2);
+        let fromOperator_2: boolean = boxed_2 instanceof Date;
+        expect(fromApi_2).assertFalse();
+        expect(fromOperator_2).assertTrue();
+      }
+
+      // --- [2] Verify isMap returns true for a Map and false for a Set inside the same case and while the Date used as its key gives false ---
+      {
+        let mapChecker: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        let s: Set<string> = new Set<string>();
+        expect(mapChecker.isMap(m)).assertTrue();
+        expect(mapChecker.isMap(s)).assertFalse();
+        let mapChecker_2: util.types = new util.types();
+        let key: Date = new Date(0);
+        let m_2: Map<Date, int> = new Map<Date, int>();
+        m_2.set(key, 1);
+        let mapResult: boolean = mapChecker_2.isMap(m_2);
+        let keyResult: boolean = mapChecker_2.isMap(key);
+        expect(mapResult).assertTrue();
+        expect(keyResult).assertFalse();
+      }
+
+      // --- [3] Verify isMap returns true for a Map valued by a resolved Promise while isPromise accepts that value ---
+      {
+        let mapProbe: util.types = new util.types();
+        let pending: Promise<int> = Promise.resolve<int>(5);
+        let m: Map<string, Promise<int>> = new Map<string, Promise<int>>();
+        m.set('p', pending);
+        let ok: boolean = mapProbe.isMap(m);
+        expect(ok).assertTrue();
+        expect(mapProbe.isPromise(pending)).assertTrue();
+        expect(m.size).assertEqual(1);
+      }
+
+      // --- [4] Verify isSet returns true and isMap returns false for the very same Set value ---
+      {
+        let mapChecker: util.types = new util.types();
+        let s: Set<string> = new Set<string>();
+        s.add('a');
+        expect(mapChecker.isSet(s)).assertTrue();
+        expect(mapChecker.isMap(s)).assertFalse();
+      }
+
+      // --- [5] Verify isMap returns false for the entries iterator produced by Map.entries while the originating Map itself returns true ---
+      {
+        let mapChecker: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('k', 1);
+        let raw: Object = m.entries();
+        expect(mapChecker.isMap(raw)).assertFalse();
+        expect(mapChecker.isMap(m)).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_MAP_3300
+     * @tc.name testTypesIsMap033
+     * @tc.desc Merged batch (4 tests): API call consistency: checks agreement between related calls, covering buffer capacity and related cross-checks.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsMap033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify isMap accepts a Map while isDate accepts the Date used as its key ---
+      {
+        let mapProbe: util.types = new util.types();
+        let keyDate: Date = new Date(0);
+        let m: Map<Date, int> = new Map<Date, int>();
+        m.set(keyDate, 1);
+        expect(mapProbe.isMap(m)).assertTrue();
+        expect(mapProbe.isDate(keyDate)).assertTrue();
+        expect(m.get(keyDate)).assertEqual(1);
+      }
+
+      // --- [2] Verify isMap accepts a Map whose value view is accepted by isTypedArray with the byteLength intact ---
+      {
+        let mapProbe: util.types = new util.types();
+        let bytes: Uint8Array = new Uint8Array(4);
+        let m: Map<string, Uint8Array> = new Map<string, Uint8Array>();
+        m.set('u', bytes);
+        expect(mapProbe.isMap(m)).assertTrue();
+        expect(mapProbe.isTypedArray(bytes)).assertTrue();
+        expect(bytes.byteLength).assertEqual(4);
+      }
+
+      // --- [3] Verify isMap accepts a Map while isSet and isWeakMap both reject that very same value ---
+      {
+        let mapProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 1);
+        expect(mapProbe.isMap(m)).assertTrue();
+        expect(mapProbe.isSet(m)).assertFalse();
+        expect(mapProbe.isWeakMap(m)).assertFalse();
+        expect(m.size).assertEqual(1);
+      }
+
+      // --- [4] Verify keySet returns a Set of the keys that isSet accepts and isMap rejects while the map keeps its own verdict ---
+      {
+        let mapProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('alpha', 1);
+        m.set('beta', 2);
+        let ks: Set<string> = m.keySet();
+        expect(mapProbe.isSet(ks)).assertTrue();
+        expect(mapProbe.isMap(ks)).assertFalse();
+        expect(ks.size).assertEqual(2);
+        expect(ks.has('alpha')).assertTrue();
+        expect(mapProbe.isMap(m)).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_MAP_3400
+     * @tc.name testTypesIsMap034
+     * @tc.desc Merged batch (5 tests): Program integration: the disjunction of an isMap result for a Set and an isMap result for a Map is true; accepts a Map filled by a loop with five distinct string keys and reports size five; accepts a Map populated through a helper that inserts one key value pair and produced by a module level helper factory; a ternary driven by isMap on a Map selects the branch that labels the value as a map; the isMap result used as an index into a two element label array selects the map label.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsMap034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify the disjunction of an isMap result for a Set and an isMap result for a Map is true ---
+      {
+        let mapChecker: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        let s: Set<string> = new Set<string>();
+        let either: boolean = mapChecker.isMap(s) || mapChecker.isMap(m);
+        expect(either).assertTrue();
+        expect(mapChecker.isMap(s)).assertFalse();
+      }
+
+      // --- [2] Verify isMap returns true for a Map filled by a loop with five distinct string keys and reports size five ---
+      {
+        let mapProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        for (let i: int = 0; i < 5; i++) {
+          m.set('key' + i, i);
+        }
+        let r: boolean = mapProbe.isMap(m);
+        expect(r).assertTrue();
+        expect(m.size).assertEqual(5);
+      }
+
+      // --- [3] Verify isMap returns true for a Map populated through a helper that inserts one key value pair and produced by a module level helper factory ---
+      {
+        let mapProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        fillPair(m, 'inserted', 7);
+        let ok: boolean = mapProbe.isMap(m);
+        expect(ok).assertTrue();
+        expect(m.size).assertEqual(1);
+        expect(m.get('inserted')).assertEqual(7);
+        let mapProbe_2: util.types = new util.types();
+        let made: Map<string, int> = makeMap();
+        let r: boolean = mapProbe_2.isMap(made);
+        expect(r).assertTrue();
+        expect(made.size).assertEqual(1);
+      }
+
+      // --- [4] Verify a ternary driven by isMap on a Map selects the branch that labels the value as a map ---
+      {
+        let mapProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        let label: string = mapProbe.isMap(m) ? 'is-map' : 'not-map';
+        expect(label).assertEqual('is-map');
+      }
+
+      // --- [5] Verify the isMap result used as an index into a two element label array selects the map label ---
+      {
+        let mapProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        let labels: string[] = ['not-map', 'map'];
+        let index: int = mapProbe.isMap(m) ? 1 : 0;
+        expect(labels[index]).assertEqual('map');
+        expect(mapProbe.isMap(new Set<string>())).assertFalse();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_MAP_3500
+     * @tc.name testTypesIsMap035
+     * @tc.desc Merged batch (3 tests): Program integration: a while loop over the keys iterator judges the Map true on every step and runs once per key; an early return helper that applies isMap labels a Map as map and a Set as not-map; a switch on the boolean isMap result selects the map branch for a Map and the default branch for a Set.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsMap035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify a while loop over the keys iterator judges the Map true on every step and runs once per key ---
+      {
+        let mapProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 1);
+        m.set('b', 2);
+        m.set('c', 3);
+        let cursor: IterableIterator<string> = m.keys();
+        let step: IteratorResult<string> = cursor.next();
+        let judged: int = 0;
+        let allTrue: boolean = true;
+        while (!step.done) {
+          if (!mapProbe.isMap(m)) {
+            allTrue = false;
+          }
+          judged++;
+          step = cursor.next();
+        }
+        expect(allTrue).assertTrue();
+        expect(judged).assertEqual(m.size);
+        expect(m.size).assertEqual(3);
+      }
+
+      // --- [2] Verify an early return helper that applies isMap labels a Map as map and a Set as not-map ---
+      {
+        let mapProbe: util.types = new util.types();
+        let s: Set<string> = new Set<string>();
+        s.add('x');
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('x', 1);
+        expect(classifyCollection(m)).assertEqual('map');
+        expect(classifyCollection(s)).assertEqual('not-map');
+        expect(mapProbe.isMap(m)).assertTrue();
+      }
+
+      // --- [3] Verify a switch on the boolean isMap result selects the map branch for a Map and the default branch for a Set ---
+      {
+        let mapProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        let s: Set<string> = new Set<string>();
+        let mapLabel: string = '';
+        switch (mapProbe.isMap(m)) {
+          case true:
+            mapLabel = 'map';
+            break;
+          default:
+            mapLabel = 'other';
+            break;
+        }
+        let setLabel: string = '';
+        switch (mapProbe.isMap(s)) {
+          case true:
+            setLabel = 'map';
+            break;
+          default:
+            setLabel = 'other';
+            break;
+        }
+        expect(mapLabel).assertEqual('map');
+        expect(setLabel).assertEqual('other');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_MAP_3600
+     * @tc.name testTypesIsMap036
+     * @tc.desc Merged batch (1 tests): Miscellaneous checks: checks remaining edge cases, covering numeric scalars and related edge cases.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsMap036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify isMap returns false for a batch of extreme doubles: Number.MAX_VALUE, Number.MIN_VALUE, NaN and both infinities ---
+      {
+        let mapProbe: util.types = new util.types();
+        let probes: double[] = [Number.MAX_VALUE, Number.MIN_VALUE, Double.NaN,
+          Double.POSITIVE_INFINITY, Double.NEGATIVE_INFINITY];
+        let allFalse: boolean = true;
+        for (let i: int = 0; i < probes.length; i++) {
+          if (mapProbe.isMap(probes[i])) {
+            allFalse = false;
+          }
+        }
+        expect(allFalse).assertTrue();
+        expect(probes.length).assertEqual(5);
+      }
+    });
+
   });
 }
