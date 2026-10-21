@@ -7,13 +7,25 @@
 import { beforeAll, describe, it, expect, TestType, Size, Level } from '../../../hypium/index';
 import Utils from './Util.test';
 import inspector from '@ohos.arkui.inspector';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+
+const BUNDLE = 'com.pageScrollingTwo.test.static';
 
 export default function WebFlingSpeedLimitTest(): void {
   describe('WebFlingSpeedLimitTest', () => {
     beforeAll(async (): Promise<void> => {
+      let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator =
+        abilityDelegatorRegistry.getAbilityDelegator();
+      let cmd: string = 'aa start -a EntryAbility -b ' + BUNDLE;
+      let user = abilityDelegatorRegistry.getArguments().parameters['-u'];
+      if (user !== undefined) {
+        cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd);
+      await Utils.msSleep(3000);
       Utils.emitEvent('emitSwitchToWebFlingSpeedLimitPage', 10);
       await Utils.msSleep(1000);
-      inspector.sendEventByKey('WebScrollDirectionalLockButton', 10, '');
+      inspector.sendEventByKey('ScrollbarLayoutPolicyButton', 10, '');
       await Utils.msSleep(2000);
     });
 
@@ -37,6 +49,7 @@ export default function WebFlingSpeedLimitTest(): void {
         });
         inspector.sendEventByKey('FlingSpeedLimitButton', 10, '');
         await Utils.msSleep(1500);
+        done();
       })
 
     /**
@@ -59,6 +72,7 @@ export default function WebFlingSpeedLimitTest(): void {
         });
         inspector.sendEventByKey('FlingSpeedLimitButton', 10, '');
         await Utils.msSleep(1500);
+        done();
       })
 
     /**
@@ -81,6 +95,7 @@ export default function WebFlingSpeedLimitTest(): void {
         });
         inspector.sendEventByKey('FlingSpeedLimitButton', 10, '');
         await Utils.msSleep(1500);
+        done();
       })
 
     /**
@@ -103,6 +118,7 @@ export default function WebFlingSpeedLimitTest(): void {
         });
         inspector.sendEventByKey('FlingSpeedLimitButton', 10, '');
         await Utils.msSleep(1500);
+        done();
       })
 
     /**
@@ -125,6 +141,7 @@ export default function WebFlingSpeedLimitTest(): void {
         });
         inspector.sendEventByKey('FlingSpeedLimitButton', 10, '');
         await Utils.msSleep(1500);
+        done();
       })
   })
 }
