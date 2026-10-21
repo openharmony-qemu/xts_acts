@@ -1463,5 +1463,718 @@ export default function typesIsBigInt64ArrayTest(): void {
       }
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_BIG_INT64_ARRAY_2100
+     * @tc.name testTypesIsBigInt64Array021
+     * @tc.desc Merged batch (5 tests): State preservation and aliasing: a filter over four mixed candidates keeps only the two BigInt64Array entries in order; accepts the BigInt64Array built by from from a two member Set of bigint; the buffer byteLength of a BigInt64Array is unchanged after the judgement; the two bigint elements of a BigInt64Array and length and byteLength of a BigUint64Array are unchanged after the judgement; the byteLength of an ArrayBuffer is unchanged after the judgement.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsBigInt64Array021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify a filter over four mixed candidates keeps only the two BigInt64Array entries in order ---
+      {
+        let bigInt64Probe: util.types = new util.types();
+        let candidates: Object[] = [new BigUint64Array(1), new BigInt64Array(3), new ArrayBuffer(8), new BigInt64Array(1)];
+        let kept: Object[] = candidates.filter((candidate: Object): boolean => bigInt64Probe.isBigInt64Array(candidate));
+        expect(kept.length).assertEqual(2);
+        expect(bigInt64Probe.isBigInt64Array(kept[0])).assertTrue();
+        expect(bigInt64Probe.isBigInt64Array(kept[1])).assertTrue();
+      }
+
+      // --- [2] Verify isBigInt64Array returns true for the BigInt64Array built by from from a two member Set of bigint while the Set keeps both members ---
+      {
+        let bigInt64Probe: util.types = new util.types();
+        let store: Set<bigint> = new Set<bigint>();
+        store.add(BigInt(5));
+        store.add(BigInt(6));
+        let built: BigInt64Array = BigInt64Array.from(store);
+        expect(built.length).assertEqual(2);
+        expect(store.size).assertEqual(2);
+        expect(bigInt64Probe.isBigInt64Array(built)).assertTrue();
+      }
+
+      // --- [3] Verify the buffer byteLength of a BigInt64Array is unchanged after the judgement ---
+      {
+        let bigInt64Probe: util.types = new util.types();
+        let ab: ArrayBuffer = new ArrayBuffer(24);
+        let bigInt64View: BigInt64Array = new BigInt64Array(ab);
+        bigInt64Probe.isBigInt64Array(bigInt64View);
+        expect(bigInt64View.buffer.byteLength).assertEqual(24);
+      }
+
+      // --- [4] Verify the two bigint elements of a BigInt64Array and length and byteLength of a BigUint64Array are unchanged after the judgement ---
+      {
+        let bigInt64Probe: util.types = new util.types();
+        let bigInt64View: BigInt64Array = new BigInt64Array(2);
+        bigInt64View.$_set(0, BigInt(6));
+        bigInt64View.$_set(1, BigInt(8));
+        bigInt64Probe.isBigInt64Array(bigInt64View);
+        expect(bigInt64View.$_get(0)).assertEqual(BigInt(6));
+        expect(bigInt64View.$_get(1)).assertEqual(BigInt(8));
+        let bigInt64Probe_2: util.types = new util.types();
+        let bu: BigUint64Array = new BigUint64Array(3);
+        bigInt64Probe_2.isBigInt64Array(bu);
+        expect(bu.length).assertEqual(3);
+        expect(bu.byteLength).assertEqual(24);
+      }
+
+      // --- [5] Verify the byteLength of an ArrayBuffer is unchanged after the judgement ---
+      {
+        let bigInt64Probe: util.types = new util.types();
+        let ab: ArrayBuffer = new ArrayBuffer(16);
+        bigInt64Probe.isBigInt64Array(ab);
+        expect(ab.byteLength).assertEqual(16);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_BIG_INT64_ARRAY_2200
+     * @tc.name testTypesIsBigInt64Array022
+     * @tc.desc Merged batch (5 tests): State preservation and aliasing: the size of a Map and of a Set are unchanged after the judgement; the time value of a Date and the source of a RegExp are unchanged after the judgement; the tag and size fields of a class instance are unchanged after the judgement; accepts a two element BigInt64Array whose element one stays zero after element zero is written with 7; the source element 5 is unchanged after the copy of a BigInt64Array is written with 6 and both arrays stay true.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsBigInt64Array022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify the size of a Map and of a Set are unchanged after the judgement ---
+      {
+        let bigInt64Probe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 1);
+        let s: Set<int> = new Set<int>();
+        s.add(1);
+        bigInt64Probe.isBigInt64Array(m);
+        bigInt64Probe.isBigInt64Array(s);
+        expect(m.size).assertEqual(1);
+        expect(s.size).assertEqual(1);
+      }
+
+      // --- [2] Verify the time value of a Date and the source of a RegExp are unchanged after the judgement ---
+      {
+        let bigInt64Probe: util.types = new util.types();
+        let d: Date = new Date(1700000000000);
+        bigInt64Probe.isBigInt64Array(d);
+        expect(d.getTime()).assertEqual(1700000000000);
+        let bigInt64Probe_2: util.types = new util.types();
+        let re: RegExp = new RegExp('big');
+        bigInt64Probe_2.isBigInt64Array(re);
+        expect(re.source).assertEqual('big');
+      }
+
+      // --- [3] Verify the tag and size fields of a class instance are unchanged after the judgement ---
+      {
+        let bigInt64Probe: util.types = new util.types();
+        let slot: TaggedSlot = new TaggedSlot();
+        bigInt64Probe.isBigInt64Array(slot);
+        expect(slot.tag).assertEqual('slot');
+        expect(slot.size).assertEqual(2);
+      }
+
+      // --- [4] Verify isBigInt64Array returns true for a two element BigInt64Array whose element one stays zero after element zero is written with 7 ---
+      {
+        let bigInt64Probe: util.types = new util.types();
+        let bigInt64View: BigInt64Array = new BigInt64Array(2);
+        bigInt64View.$_set(0, BigInt(7));
+        let neighbour: bigint = bigInt64View.$_get(1);
+        expect(neighbour.toString()).assertEqual('0');
+        let written: bigint = bigInt64View.$_get(0);
+        expect(written.toString()).assertEqual('7');
+        expect(bigInt64Probe.isBigInt64Array(bigInt64View)).assertTrue();
+      }
+
+      // --- [5] Verify the source element 5 is unchanged after the copy of a BigInt64Array is written with 6 and both arrays stay true ---
+      {
+        let bigInt64Probe: util.types = new util.types();
+        let source: BigInt64Array = new BigInt64Array(1);
+        source.$_set(0, BigInt(5));
+        let copy: BigInt64Array = new BigInt64Array(source);
+        copy.$_set(0, BigInt(6));
+        let sourceSeen: bigint = source.$_get(0);
+        let copySeen: bigint = copy.$_get(0);
+        expect(sourceSeen.toString()).assertEqual('5');
+        expect(copySeen.toString()).assertEqual('6');
+        expect(bigInt64Probe.isBigInt64Array(source)).assertTrue();
+        expect(bigInt64Probe.isBigInt64Array(copy)).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_BIG_INT64_ARRAY_2300
+     * @tc.name testTypesIsBigInt64Array023
+     * @tc.desc Merged batch (2 tests): State preservation and aliasing: toReversed keeps the element type while reversing and with keeps type and length; copyWithin copies the middle two elements over the front of the receiver, which keeps length four and stays recognized.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsBigInt64Array023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify toReversed keeps the element type while reversing and with keeps type and length while the source stays unchanged ---
+      {
+        let bigInt64Probe: util.types = new util.types();
+        let source: BigInt64Array = new BigInt64Array([7n, 8n, 9n]);
+        let flipped: BigInt64Array = source.toReversed();
+        expect(bigInt64Probe.isBigInt64Array(flipped)).assertTrue();
+        expect(flipped[0]).assertEqual(9n);
+        expect(source[0]).assertEqual(7n);
+        let bigInt64Probe_2: util.types = new util.types();
+        let source_2: BigInt64Array = new BigInt64Array([1n, 2n, 3n]);
+        let patched: BigInt64Array = source_2.with(1, 20n);
+        expect(bigInt64Probe_2.isBigInt64Array(patched)).assertTrue();
+        expect(patched.length).assertEqual(3);
+        expect(patched[0] + patched[2]).assertEqual(4n);
+        expect(source_2[1]).assertEqual(2n);
+      }
+
+      // --- [2] Verify copyWithin copies the middle two elements over the front of the receiver, which keeps length four and stays recognized ---
+      {
+        let bigInt64Probe: util.types = new util.types();
+        let lane: BigInt64Array = new BigInt64Array([10n, 20n, 30n, 40n]);
+        lane.copyWithin(0, 1, 3);
+        expect(lane.$_get(0).toString()).assertEqual('20');
+        expect(lane.$_get(1).toString()).assertEqual('30');
+        expect(lane.$_get(3).toString()).assertEqual('40');
+        expect(lane.length).assertEqual(4);
+        expect(bigInt64Probe.isBigInt64Array(lane)).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_BIG_INT64_ARRAY_2400
+     * @tc.name testTypesIsBigInt64Array024
+     * @tc.desc Merged batch (5 tests): Container and field storage: accepts the BigInt64Array built by from from an array of the two bigint seeds 11 and 12; accepts the two element BigInt64Array field of a holder class instance whose id is 1; accepts a BigInt64Array nested inside the buffer of another BigInt64Array at a computed offset; accepts a BigInt64Array held by a class whose write method stores 314 that the read method returns; accepts a BigInt64Array stored as a Map value and retrieved by cast.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsBigInt64Array024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify isBigInt64Array returns true for the BigInt64Array built by from from an array of the two bigint seeds 11 and 12 ---
+      {
+        let bigInt64Probe: util.types = new util.types();
+        let seeds: Array<bigint> = [BigInt(11), BigInt(12)];
+        let built: BigInt64Array = BigInt64Array.from(seeds);
+        expect(built.length).assertEqual(2);
+        let second: bigint = built.$_get(1);
+        expect(second.toString()).assertEqual('12');
+        expect(bigInt64Probe.isBigInt64Array(built)).assertTrue();
+      }
+
+      // --- [2] Verify isBigInt64Array returns true for the two element BigInt64Array field of a holder class instance whose id is 1 ---
+      {
+        let bigInt64Probe: util.types = new util.types();
+        let holder: ViewHolder = new ViewHolder();
+        expect(bigInt64Probe.isBigInt64Array(holder.data)).assertTrue();
+        expect(holder.data.length).assertEqual(2);
+        expect(holder.id).assertEqual(1);
+      }
+
+      // --- [3] Verify isBigInt64Array returns true for a BigInt64Array nested inside the buffer of another BigInt64Array at a computed offset ---
+      {
+        let bigInt64Probe: util.types = new util.types();
+        let ab: ArrayBuffer = new ArrayBuffer(32);
+        let base: BigInt64Array = new BigInt64Array(ab, 8, 2);
+        let nested: BigInt64Array = new BigInt64Array(base.buffer, base.byteOffset + 8, 1);
+        expect(bigInt64Probe.isBigInt64Array(nested)).assertTrue();
+        expect(nested.byteOffset).assertEqual(16);
+      }
+
+      // --- [4] Verify isBigInt64Array returns true for a BigInt64Array held by a class whose write method stores 314 that the read method returns ---
+      {
+        let bigInt64Probe: util.types = new util.types();
+        let store: WordStore = new WordStore();
+        store.write(BigInt(314));
+        let out: bigint = store.read();
+        expect(out.toString()).assertEqual('314');
+        expect(bigInt64Probe.isBigInt64Array(store.slot)).assertTrue();
+      }
+
+      // --- [5] Verify isBigInt64Array returns true for a BigInt64Array stored as a Map value and retrieved by cast ---
+      {
+        let bigInt64Checker: util.types = new util.types();
+        let store: Map<string, BigInt64Array> = new Map<string, BigInt64Array>();
+        store.set('v', new BigInt64Array(2));
+        let got: BigInt64Array = store.get('v') as BigInt64Array;
+        expect(bigInt64Checker.isBigInt64Array(got)).assertTrue();
+        expect(bigInt64Checker.isBigInt64Array(store)).assertFalse();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_BIG_INT64_ARRAY_2500
+     * @tc.name testTypesIsBigInt64Array025
+     * @tc.desc Merged batch (1 test): Container and field storage: a judgement stored in a Record under the quoted key hit reads back true through the non-null assertion.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsBigInt64Array025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify a judgement stored in a Record under the quoted key hit reads back true through the non-null assertion ---
+      {
+        let bigInt64Probe: util.types = new util.types();
+        let bigInt64View: BigInt64Array = new BigInt64Array(1);
+        let rec: Record<string, boolean> = { 'hit': bigInt64Probe.isBigInt64Array(bigInt64View) };
+        let stored: boolean = rec['hit']!;
+        expect(stored).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_BIG_INT64_ARRAY_2600
+     * @tc.name testTypesIsBigInt64Array026
+     * @tc.desc Merged batch (5 tests): API call consistency: accepts a BigInt64Array holding zero and the int minimum and false for the bigint element read back; the stringified judgement results for an accepted BigInt64Array and a rejected Uint8Array are the true and false tokens; rejects a WeakRef wrapper around a BigInt64Array while the target itself is true; isBigInt64Array rejects the 7 and -7 elements of a BigInt64Array while the view itself is true; accepts the BigInt64Array field of an interface object literal and false for the literal itself.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsBigInt64Array026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify isBigInt64Array returns true for a BigInt64Array holding zero and the int minimum and false for the bigint element read back ---
+      {
+        let bigInt64Checker: util.types = new util.types();
+        let bigInt64View: BigInt64Array = new BigInt64Array(2);
+        bigInt64View.$_set(0, 0);
+        bigInt64View.$_set(1, -2147483648);
+        expect(bigInt64Checker.isBigInt64Array(bigInt64View)).assertTrue();
+        let zero: bigint = bigInt64View.$_get(0);
+        expect(bigInt64Checker.isBigInt64Array(zero)).assertFalse();
+      }
+
+      // --- [2] Verify the stringified judgement results for an accepted BigInt64Array and a rejected Uint8Array are the true and false tokens ---
+      {
+        let bigInt64Probe: util.types = new util.types();
+        let acceptedView: BigInt64Array = new BigInt64Array(1);
+        let rejectedView: Uint8Array = new Uint8Array(1);
+        let values: Object[] = [acceptedView, rejectedView];
+        let tokens: string[] = [];
+        for (let i: int = 0; i < values.length; i++) {
+          let outcome: boolean | string = bigInt64Probe.isBigInt64Array(values[i]);
+          tokens.push(JSON.stringify(outcome));
+        }
+        expect(tokens.join(',')).assertEqual('true,false');
+      }
+
+      // --- [3] Verify isBigInt64Array returns false for a WeakRef wrapper around a BigInt64Array while the target itself is true ---
+      {
+        let bigInt64Checker: util.types = new util.types();
+        let bigInt64View: BigInt64Array = new BigInt64Array(1);
+        let wr: WeakRef<BigInt64Array> = new WeakRef<BigInt64Array>(bigInt64View);
+        expect(bigInt64Checker.isBigInt64Array(wr)).assertFalse();
+        expect(bigInt64Checker.isBigInt64Array(bigInt64View)).assertTrue();
+      }
+
+      // --- [4] Verify isBigInt64Array rejects the 7 and -7 elements of a BigInt64Array while the view itself is true ---
+      {
+        let bigInt64Probe: util.types = new util.types();
+        let bigInt64View: BigInt64Array = new BigInt64Array(2);
+        bigInt64View.$_set(0, 7);
+        bigInt64View.$_set(1, -7);
+        let up: bigint = bigInt64View.$_get(0);
+        let down: bigint = bigInt64View.$_get(1);
+        expect(up.toString()).assertEqual('7');
+        expect(down.toString()).assertEqual('-7');
+        expect(bigInt64Probe.isBigInt64Array(up)).assertFalse();
+        expect(bigInt64Probe.isBigInt64Array(down)).assertFalse();
+        expect(bigInt64Probe.isBigInt64Array(bigInt64View)).assertTrue();
+      }
+
+      // --- [5] Verify isBigInt64Array returns true for the BigInt64Array field of an interface object literal and false for the literal itself ---
+      {
+        let bigInt64Checker: util.types = new util.types();
+        let env: ViewEnvelope = { data: new BigInt64Array(1) };
+        expect(bigInt64Checker.isBigInt64Array(env)).assertFalse();
+        expect(bigInt64Checker.isBigInt64Array(env.data)).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_BIG_INT64_ARRAY_2700
+     * @tc.name testTypesIsBigInt64Array027
+     * @tc.desc Merged batch (5 tests): API call consistency: a nested Object array holding one BigInt64Array is false while its element is true; a verdict stored in an interface literal's ok field is true for a BigInt64Array and false for a Uint8Array; isBigInt64Array returns true through a helper that forwards its Object argument, and false for a Uint8Array sent the same way; two independent util.types instances return the same true boolean for one BigInt64Array; two consecutive calls on the same BigInt64Array return equal true booleans.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsBigInt64Array027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify a nested Object array holding one BigInt64Array is false while its element is true ---
+      {
+        let bigInt64Checker: util.types = new util.types();
+        let inner: Array<Object> = [new BigInt64Array(1)];
+        let outer: Array<Object> = [inner];
+        expect(bigInt64Checker.isBigInt64Array(inner[0])).assertTrue();
+        expect(bigInt64Checker.isBigInt64Array(inner)).assertFalse();
+        expect(bigInt64Checker.isBigInt64Array(outer)).assertFalse();
+      }
+
+      // --- [2] Verify a verdict stored in an interface literal's ok field is true for a BigInt64Array and false for a Uint8Array ---
+      {
+        let bigInt64Probe: util.types = new util.types();
+        let signedBag: VerdictBag = { ok: bigInt64Probe.isBigInt64Array(new BigInt64Array(1)) };
+        let otherBag: VerdictBag = { ok: bigInt64Probe.isBigInt64Array(new Uint8Array(1)) };
+        expect(signedBag.ok).assertTrue();
+        expect(otherBag.ok).assertFalse();
+      }
+
+      // --- [3] Verify isBigInt64Array returns true through a helper that forwards its Object argument, and false for a Uint8Array sent the same way ---
+      {
+        let bigInt64Probe: util.types = new util.types();
+        let bigInt64View: BigInt64Array = new BigInt64Array(1);
+        let hit: boolean = probeBigInt64(bigInt64Probe, bigInt64View);
+        let miss: boolean = probeBigInt64(bigInt64Probe, new Uint8Array(1));
+        expect(hit).assertTrue();
+        expect(miss).assertFalse();
+      }
+
+      // --- [4] Verify two independent util.types instances return the same true boolean for one BigInt64Array ---
+      {
+        let checkers: Array<util.types> = [new util.types(), new util.types()];
+        let bigInt64View: BigInt64Array = new BigInt64Array(1);
+        let r1: boolean = checkers[0].isBigInt64Array(bigInt64View);
+        let r2: boolean = checkers[1].isBigInt64Array(bigInt64View);
+        expect(r1).assertEqual(r2);
+        expect(r2).assertTrue();
+      }
+
+      // --- [5] Verify two consecutive calls on the same BigInt64Array return equal true booleans ---
+      {
+        let bigInt64Checker: util.types = new util.types();
+        let bigInt64View: BigInt64Array = new BigInt64Array(2);
+        let first: boolean = bigInt64Checker.isBigInt64Array(bigInt64View);
+        let second: boolean = bigInt64Checker.isBigInt64Array(bigInt64View);
+        expect(first).assertTrue();
+        expect(second).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_BIG_INT64_ARRAY_2800
+     * @tc.name testTypesIsBigInt64Array028
+     * @tc.desc Merged batch (5 tests): API call consistency: isBigInt64Array is stateless: a string and a plain object read false, a view true, and a fresh instance agrees; five consecutive calls on one BigInt64Array all stay true inside a loop; a BigInt64Array and a BigUint64Array carved out of one sliced buffer are true and false; isBigInt64Array accepts a copy from a BigUint64Array holding the uint64 maximum, reading -1; accepts a BigInt64Array while a Float64Array is still rejected.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsBigInt64Array028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify isBigInt64Array is stateless: a string and a plain object read false, a view true, and a fresh instance agrees ---
+      {
+        let bigInt64Checker: util.types = new util.types();
+        let bigInt64View: BigInt64Array = new BigInt64Array(1);
+        let noise: SlotKey = new SlotKey();
+        let onString: boolean = bigInt64Checker.isBigInt64Array('noise');
+        let onView: boolean = bigInt64Checker.isBigInt64Array(bigInt64View);
+        let onNoise: boolean = bigInt64Checker.isBigInt64Array(noise);
+        let onViewAgain: boolean = bigInt64Checker.isBigInt64Array(bigInt64View);
+        let fresh: util.types = new util.types();
+        expect(onString).assertFalse();
+        expect(onView).assertTrue();
+        expect(onNoise).assertFalse();
+        expect(onViewAgain).assertTrue();
+        expect(onString).assertEqual(fresh.isBigInt64Array('noise'));
+        expect(onView).assertEqual(fresh.isBigInt64Array(bigInt64View));
+        expect(onNoise).assertEqual(fresh.isBigInt64Array(noise));
+      }
+
+      // --- [2] Verify five consecutive calls on one BigInt64Array all stay true inside a loop ---
+      {
+        let bigInt64Probe: util.types = new util.types();
+        let bigInt64View: BigInt64Array = new BigInt64Array(2);
+        let all: boolean = true;
+        for (let i: int = 0; i < 5; i++) {
+          if (!bigInt64Probe.isBigInt64Array(bigInt64View)) {
+            all = false;
+          }
+        }
+        expect(all).assertTrue();
+      }
+
+      // --- [3] Verify a BigInt64Array and a BigUint64Array carved out of one sliced buffer are true and false ---
+      {
+        let bigInt64Probe: util.types = new util.types();
+        let part: ArrayBuffer = new ArrayBuffer(16).slice(0, 16);
+        let bigInt64View: BigInt64Array = new BigInt64Array(part, 0, 1);
+        let bu: BigUint64Array = new BigUint64Array(part, 8, 1);
+        expect(bigInt64Probe.isBigInt64Array(bigInt64View)).assertTrue();
+        expect(bigInt64Probe.isBigInt64Array(bu)).assertFalse();
+        expect(part.byteLength).assertEqual(16);
+      }
+
+      // --- [4] Verify isBigInt64Array accepts a copy from a BigUint64Array holding the uint64 maximum, reading -1, while the source is false ---
+      {
+        let bigInt64Probe: util.types = new util.types();
+        let source: BigUint64Array = new BigUint64Array(1);
+        source.$_set(0, BigInt('18446744073709551615'));
+        let cross: BigInt64Array = new BigInt64Array(source);
+        let signed: bigint = cross.$_get(0);
+        expect(signed.toString()).assertEqual('-1');
+        expect(bigInt64Probe.isBigInt64Array(cross)).assertTrue();
+        expect(bigInt64Probe.isBigInt64Array(source)).assertFalse();
+      }
+
+      // --- [5] Verify isBigInt64Array returns true for a BigInt64Array while a Float64Array is still rejected ---
+      {
+        let bigInt64Probe: util.types = new util.types();
+        expect(bigInt64Probe.isBigInt64Array(new BigInt64Array(1))).assertTrue();
+        expect(bigInt64Probe.isBigInt64Array(new Float64Array(1))).assertFalse();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_BIG_INT64_ARRAY_2900
+     * @tc.name testTypesIsBigInt64Array029
+     * @tc.desc Merged batch (5 tests): API call consistency: accepts a BigInt64Array while the unsigned BigUint64Array is still rejected; the conjunction of isBigInt64Array with isArrayBufferView is true for a BigInt64Array and false for a Uint8Array; isBigInt64Array accepts a view reading a value written through an Int32Array sibling, which stays false; the disjunction of two judgements is true when only the second candidate is a BigInt64Array; an offset BigInt64Array passes isBigInt64Array, isArrayBufferView and isTypedArray.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsBigInt64Array029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify isBigInt64Array returns true for a BigInt64Array while the unsigned BigUint64Array is still rejected ---
+      {
+        let bigInt64Probe: util.types = new util.types();
+        let unsigned: BigUint64Array = new BigUint64Array(1);
+        let rejected: boolean = bigInt64Probe.isBigInt64Array(unsigned);
+        expect(rejected).assertFalse();
+        expect(bigInt64Probe.isBigInt64Array(new BigInt64Array(2))).assertTrue();
+      }
+
+      // --- [2] Verify the conjunction of isBigInt64Array with isArrayBufferView is true for a BigInt64Array and false for a Uint8Array ---
+      {
+        let bigInt64Checker: util.types = new util.types();
+        let bigInt64View: BigInt64Array = new BigInt64Array(1);
+        let uint8View: Uint8Array = new Uint8Array(1);
+        let both: boolean = bigInt64Checker.isBigInt64Array(bigInt64View) && bigInt64Checker.isArrayBufferView(bigInt64View);
+        expect(both).assertTrue();
+        let miss: boolean = bigInt64Checker.isBigInt64Array(uint8View) && bigInt64Checker.isArrayBufferView(uint8View);
+        expect(miss).assertFalse();
+      }
+
+      // --- [3] Verify isBigInt64Array accepts a view reading a value written through an Int32Array sibling, which stays false ---
+      {
+        let bigInt64Probe: util.types = new util.types();
+        let host: ArrayBuffer = new ArrayBuffer(16);
+        let bigInt64View: BigInt64Array = new BigInt64Array(host);
+        let int32View: Int32Array = new Int32Array(host);
+        int32View.$_set(0, 5);
+        let observed: bigint = bigInt64View.$_get(0);
+        expect(observed.toString()).assertEqual('5');
+        expect(bigInt64Probe.isBigInt64Array(bigInt64View)).assertTrue();
+        expect(bigInt64Probe.isBigInt64Array(int32View)).assertFalse();
+      }
+
+      // --- [4] Verify the disjunction of two judgements is true when only the second candidate is a BigInt64Array while their conjunction is false ---
+      {
+        let bigInt64Checker: util.types = new util.types();
+        let bigInt64View: BigInt64Array = new BigInt64Array(1);
+        let uint8View: Uint8Array = new Uint8Array(1);
+        let either: boolean = bigInt64Checker.isBigInt64Array(uint8View) || bigInt64Checker.isBigInt64Array(bigInt64View);
+        expect(either).assertTrue();
+        let both: boolean = bigInt64Checker.isBigInt64Array(uint8View) && bigInt64Checker.isBigInt64Array(bigInt64View);
+        expect(both).assertFalse();
+      }
+
+      // --- [5] Verify an offset BigInt64Array passes isBigInt64Array, isArrayBufferView and isTypedArray but fails isBigUint64Array and both buffer checks ---
+      {
+        let bigInt64Checker: util.types = new util.types();
+        let seed: BigInt64Array = new BigInt64Array(4);
+        let bigInt64View: BigInt64Array = new BigInt64Array(seed.buffer, 8, 1);
+        expect(bigInt64Checker.isBigInt64Array(bigInt64View)).assertTrue();
+        expect(bigInt64Checker.isArrayBufferView(bigInt64View)).assertTrue();
+        expect(bigInt64Checker.isTypedArray(bigInt64View)).assertTrue();
+        expect(bigInt64Checker.isBigUint64Array(bigInt64View)).assertFalse();
+        expect(bigInt64Checker.isArrayBuffer(bigInt64View)).assertFalse();
+        expect(bigInt64Checker.isAnyArrayBuffer(bigInt64View)).assertFalse();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_BIG_INT64_ARRAY_3000
+     * @tc.name testTypesIsBigInt64Array030
+     * @tc.desc Merged batch (4 tests): Cross-check agreement: verifies isBigInt64Array agrees with DataView, Object widening, static class fields and array element access.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsBigInt64Array030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify a BigInt64Array sharing a buffer with a DataView or an Int8Array is true while the DataView and the Int8Array are false ---
+      {
+        let bigInt64Checker: util.types = new util.types();
+        let bufferForDataView: ArrayBuffer = new ArrayBuffer(16);
+        let bigInt64ViewForDataView: BigInt64Array = new BigInt64Array(bufferForDataView, 0, 1);
+        let dv: DataView = new DataView(bufferForDataView, 8, 8);
+        expect(bigInt64Checker.isBigInt64Array(bigInt64ViewForDataView)).assertTrue();
+        expect(bigInt64Checker.isBigInt64Array(dv)).assertFalse();
+        let bufferForInt8: ArrayBuffer = new ArrayBuffer(16);
+        let bigInt64ViewForInt8: BigInt64Array = new BigInt64Array(bufferForInt8, 0, 1);
+        let int8View: Int8Array = new Int8Array(bufferForInt8, 8, 8);
+        expect(bigInt64Checker.isBigInt64Array(bigInt64ViewForInt8)).assertTrue();
+        expect(bigInt64Checker.isBigInt64Array(int8View)).assertFalse();
+      }
+
+      // --- [2] Verify isBigInt64Array returns true for a BigInt64Array element pulled out of an Object array and false for the array itself ---
+      {
+        let bigInt64Checker: util.types = new util.types();
+        let pool: Array<Object> = [new BigInt64Array(1)];
+        let got: BigInt64Array = pool[0] as BigInt64Array;
+        expect(bigInt64Checker.isBigInt64Array(got)).assertTrue();
+        expect(bigInt64Checker.isBigInt64Array(pool)).assertFalse();
+      }
+
+      // --- [3] Verify isBigInt64Array returns true for a BigInt64Array held in an Object typed variable and false for a BigUint64Array held the same way ---
+      {
+        let bigInt64Checker: util.types = new util.types();
+        let asBig: Object = new BigInt64Array(2);
+        let asUnsigned: Object = new BigUint64Array(2);
+        expect(bigInt64Checker.isBigInt64Array(asBig)).assertTrue();
+        expect(bigInt64Checker.isBigInt64Array(asUnsigned)).assertFalse();
+      }
+
+      // --- [4] Verify isBigInt64Array returns true for the static BigInt64Array field of a class and false for an instance of that class ---
+      {
+        let bigInt64Checker: util.types = new util.types();
+        let box: StaticView = new StaticView();
+        expect(bigInt64Checker.isBigInt64Array(StaticView.data)).assertTrue();
+        expect(bigInt64Checker.isBigInt64Array(box)).assertFalse();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_BIG_INT64_ARRAY_3100
+     * @tc.name testTypesIsBigInt64Array031
+     * @tc.desc Merged batch (5 tests): Program integration: the judgement drives a ternary that yields Y for a BigInt64Array and N for a Uint8Array; accepts a BigInt64Array returned by a helper function that builds a three element array; accepts a BigInt64Array filled with minus three by a helper before the caller reads the element back; a three entry pool scanned by a while loop yields exactly two BigInt64Array hits; a stored true judgement result gates a branch that increments a counter exactly once.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsBigInt64Array031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify the judgement drives a ternary that yields Y for a BigInt64Array and N for a Uint8Array ---
+      {
+        let bigInt64Probe: util.types = new util.types();
+        let bigInt64View: BigInt64Array = new BigInt64Array(1);
+        let uint8View: Uint8Array = new Uint8Array(1);
+        let yes: string = bigInt64Probe.isBigInt64Array(bigInt64View) ? 'Y' : 'N';
+        let no: string = bigInt64Probe.isBigInt64Array(uint8View) ? 'Y' : 'N';
+        expect(yes).assertEqual('Y');
+        expect(no).assertEqual('N');
+      }
+
+      // --- [2] Verify isBigInt64Array returns true for a BigInt64Array returned by a helper function that builds a three element array ---
+      {
+        let bigInt64Probe: util.types = new util.types();
+        let built: BigInt64Array = buildBigInt64Array();
+        expect(bigInt64Probe.isBigInt64Array(built)).assertTrue();
+        expect(built.length).assertEqual(3);
+      }
+
+      // --- [3] Verify isBigInt64Array returns true for a BigInt64Array filled with minus three by a helper before the caller reads the element back ---
+      {
+        let bigInt64Probe: util.types = new util.types();
+        let target: BigInt64Array = new BigInt64Array(1);
+        seedIntoArray(target, BigInt(-3));
+        let seen: bigint = target.$_get(0);
+        expect(seen.toString()).assertEqual('-3');
+        expect(bigInt64Probe.isBigInt64Array(target)).assertTrue();
+      }
+
+      // --- [4] Verify a three entry pool scanned by a while loop yields exactly two BigInt64Array hits ---
+      {
+        let bigInt64Probe: util.types = new util.types();
+        let pool: Array<Object> = [new BigInt64Array(2), new BigUint64Array(2), new BigInt64Array(1)];
+        let hits: int = 0;
+        let i: int = 0;
+        while (i < pool.length) {
+          if (bigInt64Probe.isBigInt64Array(pool[i])) {
+            hits++;
+          }
+          i++;
+        }
+        expect(hits).assertEqual(2);
+      }
+
+      // --- [5] Verify a stored true judgement result gates a branch that increments a counter exactly once ---
+      {
+        let bigInt64Probe: util.types = new util.types();
+        let bigInt64View: BigInt64Array = new BigInt64Array(1);
+        let flag: boolean = bigInt64Probe.isBigInt64Array(bigInt64View);
+        let count: int = 0;
+        if (flag) {
+          count = count + 1;
+        }
+        expect(count).assertEqual(1);
+        expect(flag).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_BIG_INT64_ARRAY_3200
+     * @tc.name testTypesIsBigInt64Array032
+     * @tc.desc Merged batch (3 tests): Program integration: a three entry table judged in a loop produces the mark string with the BigInt64Array in the middle; the judgement result passed to a label helper yields signed64 for a BigInt64Array and other for a Uint8Array; a for loop that breaks on the first hit stops at index two, the position of the only BigInt64Array among three candidates.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsBigInt64Array032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify a three entry table judged in a loop produces the mark string with the BigInt64Array in the middle ---
+      {
+        let bigInt64Probe: util.types = new util.types();
+        let table: Array<Object> = [new Int8Array(1), new BigInt64Array(1), new Float64Array(1)];
+        let marks: string = '';
+        for (let i: int = 0; i < table.length; i++) {
+          if (bigInt64Probe.isBigInt64Array(table[i])) {
+            marks = marks + 'B';
+          } else {
+            marks = marks + '.';
+          }
+        }
+        expect(marks).assertEqual('.B.');
+      }
+
+      // --- [2] Verify the judgement result passed to a label helper yields signed64 for a BigInt64Array and other for a Uint8Array ---
+      {
+        let bigInt64Probe: util.types = new util.types();
+        let verdict: boolean = bigInt64Probe.isBigInt64Array(new BigInt64Array(1));
+        expect(labelForBigInt64(verdict)).assertEqual('signed64');
+        expect(labelForBigInt64(bigInt64Probe.isBigInt64Array(new Uint8Array(1)))).assertEqual('other');
+      }
+
+      // --- [3] Verify a for loop that breaks on the first hit stops at index two, the position of the only BigInt64Array among three candidates ---
+      {
+        let bigInt64Probe: util.types = new util.types();
+        let pool: Array<Object> = [new Int8Array(1), new Float64Array(1), new BigInt64Array(1)];
+        let found: int = -1;
+        for (let i: int = 0; i < pool.length; i++) {
+          if (bigInt64Probe.isBigInt64Array(pool[i])) {
+            found = i;
+            break;
+          }
+        }
+        expect(found).assertEqual(2);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_BIG_INT64_ARRAY_3300
+     * @tc.name testTypesIsBigInt64Array033
+     * @tc.desc Merged batch (2 tests): Miscellaneous checks: verifies remaining edge cases, covering typed array views and related edge cases.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsBigInt64Array033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify isBigInt64Array returns true for a BigInt64Array produced by the copy constructor from another BigInt64Array ---
+      {
+        let bigInt64Probe: util.types = new util.types();
+        let src: BigInt64Array = new BigInt64Array(2);
+        src.$_set(0, 5);
+        let copy: BigInt64Array = new BigInt64Array(src);
+        expect(bigInt64Probe.isBigInt64Array(copy)).assertTrue();
+        expect(copy.length).assertEqual(2);
+      }
+
+      // --- [2] Verify isBigInt64Array returns false for the int values 2147483647 and -2147483648 ---
+      {
+        let bigInt64Checker: util.types = new util.types();
+        let high: int = 2147483647;
+        let low: int = -2147483648;
+        expect(bigInt64Checker.isBigInt64Array(high)).assertFalse();
+        expect(bigInt64Checker.isBigInt64Array(low)).assertFalse();
+      }
+    });
+
   });
 }
