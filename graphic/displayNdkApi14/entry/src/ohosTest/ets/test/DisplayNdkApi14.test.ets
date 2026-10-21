@@ -119,7 +119,8 @@ export default function ActsDisplayNdkApi14Test() {
           console.log('jsUnittest getDisplayCapability failed');
         }
       }
-      try {
+      if(deviceType !== 'car'){
+       try {
           let driver = Driver.create();
           let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
           console.log('findComponent allowed: ' + JSON.stringify(allowed));
@@ -128,7 +129,9 @@ export default function ActsDisplayNdkApi14Test() {
           }
         } catch (err) {
           console.error('findComponent allowed failed: ' + JSON.stringify(err));
-        }
+        } 
+      }
+      
       await getPermision();
       await sleep(300);
       await ClickButtonDriver();
@@ -541,8 +544,14 @@ export default function ActsDisplayNdkApi14Test() {
     try{
     let errcode = testNapi.getDisplayCaptureMax();
     console.log(`${caseName} result: ${JSON.stringify(errcode)}`);
-    expect(errcode).assertEqual(1400003);
-    done();
+    if(deviceType === 'car' || deviceType === 'wearable'){
+      except(errcode).assertEqual(801);
+      done();
+    }else{
+      expect(errcode).assertEqual(1400003);
+      done();
+    }
+    
     } catch (err) {
     console.log(caseName + ': fail:'+ err + ' '+err.code);
     expect(false).assertTrue();
