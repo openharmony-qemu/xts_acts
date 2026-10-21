@@ -20,7 +20,7 @@ import router from '@ohos.router';
 import { config } from '@kit.AccessibilityKit';
 import { waitForComponent } from './WaitTest.test';
 
-const CAPACITY: string[] = ['retrieve', 'gesture'];
+const CAPACITY: ('retrieve' | 'gesture')[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 const EVENT_ID_SET_SUITE_KEY = 130800;
 let emitKey = '';
