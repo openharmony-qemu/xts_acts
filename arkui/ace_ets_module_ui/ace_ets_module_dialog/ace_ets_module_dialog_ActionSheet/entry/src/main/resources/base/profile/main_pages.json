@@ -13,6 +13,7 @@
     "MainAbility/pages/actionSheet/ActionSheet3",
     "MainAbility/pages/actionSheet/actionSheetMode",
     "MainAbility/pages/actionSheet/showActionSheetMode",
-    "MainAbility/pages/dialogLife/ActionSheetLife"
+    "MainAbility/pages/dialogLife/ActionSheetLife",
+    "MainAbility/pages/coverage/Dialogcover"
   ]
 }

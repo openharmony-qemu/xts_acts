@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 /*
  * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -62,11 +62,11 @@ struct CoverageStaticIndex {
     }
   };
   private filterParam: FilterParams[] = [{
-    name: '类别',
-    options: ['全部', 'A', 'B']
+    name: '绫诲埆',
+    options: ['鍏ㄩ儴', 'A', 'B']
   }];
   private additionParam: FilterParams = {
-    name: '更多',
+    name: '鏇村',
     options: ['X', 'Y']
   };
   private filterCb: OnFilterChangedCallback = (results: FilterResult[]): void => {
@@ -165,13 +165,13 @@ struct CoverageStaticIndex {
     AlertDialogV2({
       content: 'popover content',
       primaryButton: new AdvancedDialogV2Button({
-        content: '取消',
+        content: '鍙栨秷',
         action: (): void => {
           this.isShow = false;
         }
       }),
       secondaryButton: new AdvancedDialogV2Button({
-        content: '确认',
+        content: '纭',
         action: (): void => {
           this.isShow = false;
         }
@@ -181,7 +181,7 @@ struct CoverageStaticIndex {
 
   @Builder
   targetBuilder(): void {
-    Button('打开PopoverDialogV2')
+    Button('鎵撳紑PopoverDialogV2')
       .id('popoverTarget')
       .onClick((): void => {
         this.isShow = true;

@@ -56,7 +56,6 @@
     "MainAbility/pages/promptAction/ShowDialogOptions",
     "MainAbility/pages/promptAction/showDialogTrue",
     "MainAbility/pages/promptAction/stagePrompt",
-    "MainAbility/pages/promptAction/ToastShowMode",
-    "MainAbility/pages/coverage/Dialogcover"
+    "MainAbility/pages/promptAction/ToastShowMode"
   ]
 }
