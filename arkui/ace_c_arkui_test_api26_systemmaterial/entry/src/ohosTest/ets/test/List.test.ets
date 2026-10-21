@@ -17,6 +17,7 @@ import NullPointerApisTest from './systemMaterial/NullPointerApisTest.test';
 import CustomDialogSystemMaterialTest from './systemMaterial/CustomDialogSystemMaterialTest.test';
 import CustomDialogDisplayModeTest from './systemMaterial/CustomDialogDisplayModeTest.test';
 import CustomDialogOpenCallbackTest from './systemMaterial/CustomDialogOpenCallbackTest.test';
+import LinearGradientBlurOptionsTest from './systemMaterial/LinearGradientBlurOptionsTest.test';
 
 export default function testsuite() {
   ImmersiveMaterialTest();
@@ -24,4 +25,5 @@ export default function testsuite() {
   CustomDialogSystemMaterialTest();
   CustomDialogDisplayModeTest();
   CustomDialogOpenCallbackTest();
+  LinearGradientBlurOptionsTest();
 }
