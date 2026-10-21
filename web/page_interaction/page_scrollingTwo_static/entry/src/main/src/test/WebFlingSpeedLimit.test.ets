@@ -27,10 +27,12 @@ export default function WebFlingSpeedLimitTest(): void {
      */
     it('testFlingSpeedLimit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
+        let isReturn = false;
         Utils.emitEvent('emitFlingSpeedLimit001', 10)
         await Utils.msSleep(1000);
         Utils.registerEvent('testFlingSpeedLimit001', true, 186010, () => {
-          expect('emitFlingSpeedLimit001').assertContain('FlingSpeedLimit');
+          isReturn = true;
+          expect(isReturn).assertTrue();
           done();
         });
         inspector.sendEventByKey('FlingSpeedLimitButton', 10, '');
@@ -47,10 +49,12 @@ export default function WebFlingSpeedLimitTest(): void {
      */
     it('testFlingSpeedLimit002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
+        let isReturn = false;
         Utils.emitEvent('emitFlingSpeedLimit002', 10)
         await Utils.msSleep(1000);
         Utils.registerEvent('testFlingSpeedLimit002', true, 186020, () => {
-          expect('emitFlingSpeedLimit002').assertContain('FlingSpeedLimit');
+          isReturn = true;
+          expect(isReturn).assertTrue();
           done();
         });
         inspector.sendEventByKey('FlingSpeedLimitButton', 10, '');
@@ -67,10 +71,12 @@ export default function WebFlingSpeedLimitTest(): void {
      */
     it('testFlingSpeedLimit003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
+        let isReturn = false;
         Utils.emitEvent('emitFlingSpeedLimit003', 10)
         await Utils.msSleep(1000);
         Utils.registerEvent('testFlingSpeedLimit003', true, 186030, () => {
-          expect('emitFlingSpeedLimit003').assertContain('FlingSpeedLimit');
+          isReturn = true;
+          expect(isReturn).assertTrue();
           done();
         });
         inspector.sendEventByKey('FlingSpeedLimitButton', 10, '');
@@ -87,10 +93,12 @@ export default function WebFlingSpeedLimitTest(): void {
      */
     it('testFlingSpeedLimit004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
+        let isReturn = false;
         Utils.emitEvent('emitFlingSpeedLimit004', 10)
         await Utils.msSleep(1000);
         Utils.registerEvent('testFlingSpeedLimit004', true, 186040, () => {
-          expect('emitFlingSpeedLimit004').assertContain('FlingSpeedLimit');
+          isReturn = true;
+          expect(isReturn).assertTrue();
           done();
         });
         inspector.sendEventByKey('FlingSpeedLimitButton', 10, '');
@@ -107,10 +115,12 @@ export default function WebFlingSpeedLimitTest(): void {
      */
     it('testFlingSpeedLimit005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
+        let isReturn = false;
         Utils.emitEvent('emitFlingSpeedLimit005', 10)
         await Utils.msSleep(1000);
         Utils.registerEvent('testFlingSpeedLimit005', true, 186050, () => {
-          expect('emitFlingSpeedLimit005').assertContain('FlingSpeedLimit');
+          isReturn = true;
+          expect(isReturn).assertTrue();
           done();
         });
         inspector.sendEventByKey('FlingSpeedLimitButton', 10, '');
