@@ -1027,7 +1027,7 @@ static napi_value GetFileDescriptorFlow(napi_env env, napi_callback_info info)
  *                   (state isolation): connect, close, then query the fd. When the device is
  *                   still present the service maps the driver "no device handle" error to a
  *                   service error, so the documented CAPI contract returns
- *                   OH_USBMANAGER_ERROR_SERVICE_EXCEPTION (see ohusb_manager.cpp
+ *                   ERR_CODE_SERVICE_EXCEPTION (see ohusb_manager.cpp
  *                   ConvertErrCodeForGetFd); NO_DEVICE is reserved for a detached device.
  * @tc.type          Function
  */

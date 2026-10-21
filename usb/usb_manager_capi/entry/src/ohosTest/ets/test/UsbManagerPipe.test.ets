@@ -304,8 +304,8 @@ export default function usbManagerPipeTest() {
      * @tc.number        SUB_USB_USBMANAGER_CAPI_TEST_4400
      * @tc.name          SUB_USB_USBMANAGER_CAPI_TEST_4400
      * @tc.desc          Verify OH_UsbManager_GetFileDescriptor on a pipe that was already closed
-     *                   fails with OH_USBMANAGER_ERROR_SERVICE_EXCEPTION while the device is
-     *                   still present, enforcing state isolation after OH_UsbManager_ClosePipe.
+     *                   fails with ERR_CODE_SERVICE_EXCEPTION while the device is
+     *                   still present, enforcing state isolation after ClosePipe.
      *                   NO_DEVICE is only expected when the device has detached. Skips
      *                   (precondition not met) when no peripheral is attached, no permission
      *                   is granted, or the device detaches mid-run.
