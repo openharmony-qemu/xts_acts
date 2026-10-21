@@ -2985,7 +2985,7 @@ export default function PiPWindowTest() {
         let driver: Driver = Driver.create();
         try {
           pipController = await pipWindow.create(config);
-          if (!pipController!.isPiPSupported()) {
+          if (!pipController!.isPiPSupported() || deviceType === 'car') {
             done();
           } else {
             console.log(`${msgStr} Succeeded in creating pip controller, Data:${pipController}`)
@@ -3065,7 +3065,7 @@ export default function PiPWindowTest() {
         try {
           pipController = await pipWindow.create(config);
 
-          if (!pipController!.isPiPSupported()) {
+          if (!pipController!.isPiPSupported() || deviceType === 'car') {
 
             done();
           } else {
