@@ -13,13 +13,13 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeAll, beforeEach, describe, it, TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import Utils from './Utils';
 import router from '@ohos.router';
-import { accessibility, config } from '@kit.AccessibilityKit';
+import { config } from '@kit.AccessibilityKit';
 import { Driver, ON } from '@kit.TestKit';
 
-const CAPABILITY: accessibility.Capability[] = ['retrieve', 'gesture'];
+const CAPABILITY: string[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 const EVENT_ID_SET_SUITE_KEY = 186001;
 let driver = Driver.create();
@@ -56,7 +56,7 @@ export default function WebFlingSpeedLimitTest() {
 
     /**
      * @tc.name   testFlingSpeedLimit001
-     * @tc.number SUB_WEB_FLINGSPEEDLIMIT_0100
+     * @tc.number SUB_WEB_WEBATTRIBUTE_FLINGSPEEDLIMIT_0100
      * @tc.desc   flingSpeedLimit 9000 vp/s
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -73,12 +73,13 @@ export default function WebFlingSpeedLimitTest() {
         });
         Utils.waitAndClickComponent(driver, 'FlingSpeedLimitButton', tcName);
         await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+        expect(isReturn).assertTrue();
         done();
       })
 
     /**
      * @tc.name   testFlingSpeedLimit002
-     * @tc.number SUB_WEB_FLINGSPEEDLIMIT_0200
+     * @tc.number SUB_WEB_WEBATTRIBUTE_FLINGSPEEDLIMIT_0200
      * @tc.desc   flingSpeedLimit 17000 vp/s
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -95,12 +96,13 @@ export default function WebFlingSpeedLimitTest() {
         });
         Utils.waitAndClickComponent(driver, 'FlingSpeedLimitButton', tcName);
         await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+        expect(isReturn).assertTrue();
         done();
       })
 
     /**
      * @tc.name   testFlingSpeedLimit003
-     * @tc.number SUB_WEB_FLINGSPEEDLIMIT_0300
+     * @tc.number SUB_WEB_WEBATTRIBUTE_FLINGSPEEDLIMIT_0300
      * @tc.desc   flingSpeedLimit 0 uses default
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -117,12 +119,13 @@ export default function WebFlingSpeedLimitTest() {
         });
         Utils.waitAndClickComponent(driver, 'FlingSpeedLimitButton', tcName);
         await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+        expect(isReturn).assertTrue();
         done();
       })
 
     /**
      * @tc.name   testFlingSpeedLimit004
-     * @tc.number SUB_WEB_FLINGSPEEDLIMIT_0400
+     * @tc.number SUB_WEB_WEBATTRIBUTE_FLINGSPEEDLIMIT_0400
      * @tc.desc   flingSpeedLimit negative uses default
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -139,12 +142,13 @@ export default function WebFlingSpeedLimitTest() {
         });
         Utils.waitAndClickComponent(driver, 'FlingSpeedLimitButton', tcName);
         await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+        expect(isReturn).assertTrue();
         done();
       })
 
     /**
      * @tc.name   testFlingSpeedLimit005
-     * @tc.number SUB_WEB_FLINGSPEEDLIMIT_0500
+     * @tc.number SUB_WEB_WEBATTRIBUTE_FLINGSPEEDLIMIT_0500
      * @tc.desc   flingSpeedLimit switch 9000 then 17000
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -161,6 +165,7 @@ export default function WebFlingSpeedLimitTest() {
         });
         Utils.waitAndClickComponent(driver, 'FlingSpeedLimitButton', tcName);
         await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+        expect(isReturn).assertTrue();
         done();
       })
   })

@@ -13,14 +13,14 @@
  * limitations under the License.
  */
 
-import { beforeAll, afterEach, beforeEach, describe, it, TestType, Size, Level } from '@ohos/hypium-dynamic';
+import { beforeAll, afterEach, beforeEach, describe, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils.test';
 import router from '@ohos.router';
-import { accessibility, config } from '@kit.AccessibilityKit';
+import { config } from '@kit.AccessibilityKit';
 import { waitForComponent } from './WaitTest.test';
 
-const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
+const CAPACITY: string[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 const EVENT_ID_SET_SUITE_KEY = 130800;
 let emitKey = '';
@@ -83,7 +83,10 @@ export default function ActsWebTextFragment() {
       async (done: Function) => {
         emitKey = 'emitShouldOfferLinkToText';
         Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY);
-        Utils.registerEvent('testShouldOfferLinkToText', true, 130810, done);
+        Utils.registerEvent('testShouldOfferLinkToText', true, 130810, () => {
+          expect(emitKey).assertEqual('emitShouldOfferLinkToText');
+          done();
+        });
         sendEventByKey('webTextFragmentButton', 10, '');
       })
 
@@ -99,7 +102,10 @@ export default function ActsWebTextFragment() {
       async (done: Function) => {
         emitKey = 'emitGetTextFragmentGeneratedLink';
         Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY);
-        Utils.registerEvent('testGetTextFragmentGeneratedLink', true, 130820, done);
+        Utils.registerEvent('testGetTextFragmentGeneratedLink', true, 130820, () => {
+          expect(emitKey).assertEqual('emitGetTextFragmentGeneratedLink');
+          done();
+        });
         sendEventByKey('webTextFragmentButton', 10, '');
       })
 
@@ -115,7 +121,10 @@ export default function ActsWebTextFragment() {
       async (done: Function) => {
         emitKey = 'emitIsOverTextFragment';
         Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY);
-        Utils.registerEvent('testIsOverTextFragment', true, 130830, done);
+        Utils.registerEvent('testIsOverTextFragment', true, 130830, () => {
+          expect(emitKey).assertEqual('emitIsOverTextFragment');
+          done();
+        });
         sendEventByKey('webTextFragmentButton', 10, '');
       })
 
@@ -131,7 +140,10 @@ export default function ActsWebTextFragment() {
       async (done: Function) => {
         emitKey = 'emitCopyLinkToTextMenu';
         Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY);
-        Utils.registerEvent('testCopyLinkToTextMenu', true, 130840, done);
+        Utils.registerEvent('testCopyLinkToTextMenu', true, 130840, () => {
+          expect(emitKey).assertEqual('emitCopyLinkToTextMenu');
+          done();
+        });
         sendEventByKey('webTextFragmentButton', 10, '');
       })
 
@@ -147,7 +159,10 @@ export default function ActsWebTextFragment() {
       async (done: Function) => {
         emitKey = 'emitRemoveFragments';
         Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY);
-        Utils.registerEvent('testRemoveFragments', true, 130850, done);
+        Utils.registerEvent('testRemoveFragments', true, 130850, () => {
+          expect(emitKey).assertEqual('emitRemoveFragments');
+          done();
+        });
         sendEventByKey('webTextFragmentButton', 10, '');
       })
 
@@ -163,7 +178,10 @@ export default function ActsWebTextFragment() {
       async (done: Function) => {
         emitKey = 'emitOnContextMenuUpdate';
         Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY);
-        Utils.registerEvent('testOnContextMenuUpdate', true, 130860, done);
+        Utils.registerEvent('testOnContextMenuUpdate', true, 130860, () => {
+          expect(emitKey).assertEqual('emitOnContextMenuUpdate');
+          done();
+        });
         sendEventByKey('webTextFragmentButton', 10, '');
       })
   })

@@ -19,10 +19,10 @@
 <p id="target">OpenHarmony Text Fragment coverage sample paragraph for link generation.</p>
 <script>
     function selectTargetText() {
-        var el = document.getElementById('target');
-        var range = document.createRange();
+        const el = document.getElementById('target');
+        const range = document.createRange();
         range.selectNodeContents(el);
-        var sel = window.getSelection();
+        const sel = window.getSelection();
         sel.removeAllRanges();
         sel.addRange(range);
         return sel.toString().length > 0;
