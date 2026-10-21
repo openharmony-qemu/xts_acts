@@ -3444,6 +3444,7 @@ export default function UiTest() {
                 await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
                 await driver.delayMs(waitUiReadyMs)
                 let scroll = await driver.findComponent(ON.type('Scroll'))
+                let disPlayId = await scroll.getDisplayId();
                 let scrollRect = await scroll.getBounds()
                 let screenWidth = scrollRect.right - scrollRect.left;
                 let screenHeight = scrollRect.bottom - scrollRect.top;
@@ -3455,7 +3456,7 @@ export default function UiTest() {
                 for (let step = 0; step < 8; step++) {
                     let startY = Math.floor((screenHeight / 2 + screenHeight / 4) - stepLength * step);
                     console.log(TestTag, `startX is, ${startX}, startY is, ${startY}`);
-                    pointer.setPoint(0, step, { x: startX, y: startY });
+                    pointer.setPoint(0, step, { x: startX, y: startY, displayId: disPlayId });
                 }
                 await driver.injectPenPointerAction(pointer);
                 await driver.delayMs(waitUiReadyMs * 2);
@@ -4669,6 +4670,7 @@ export default function UiTest() {
             await btn.click()
             await driver.delayMs(waitUiReadyMs)
             let img1 = await driver.findComponent(ON.id('test_pict'))
+            let disPlayId = await img1.getDisplayId()
             let bounds1 = await img1.getBounds()
             let center1 = await img1.getBoundsCenter()
             await driver.mouseScroll(center1, false, 5, 2072, 0, 20)
@@ -4677,7 +4679,7 @@ export default function UiTest() {
             let bounds2 = await img2.getBounds()
             expect(bounds1 != bounds2).assertTrue()
 
-            await driver.pressBack()
+            await driver.pressBack(disPlayId)
             await driver.delayMs(waitUiReadyMs)
             let btn2 = await driver.findComponent(ON.text('1'))
             if (btn2 == null) {
@@ -5078,9 +5080,10 @@ export default function UiTest() {
             await btn.click()
             await driver.delayMs(waitUiReadyMs)
             let img1 = await driver.findComponent(ON.type('Image').inWindow('com.uitestScene.acts'))
+            let disPlayId = await img1.getDisplayId()
             let bounds1 = await img1.getBounds()
             let center1 = await img1.getBoundsCenter()
-            await driver.click(center1.x, center1.y)
+            await img1.click()
             await driver.delayMs(waitUiReadyMs)
             await driver.mouseScroll(center1, false, 5, 2072, 0)
             await driver.delayMs(waitUiReadyMs)
@@ -5088,7 +5091,7 @@ export default function UiTest() {
             let bounds2 = await img2.getBounds()
             expect(bounds1 != bounds2).assertTrue()
 
-            await driver.pressBack()
+            await driver.pressBack(disPlayId)
             await driver.delayMs(waitUiReadyMs)
             let btn2 = await driver.findComponent(ON.text('1'))
             if (btn2 == null) {
