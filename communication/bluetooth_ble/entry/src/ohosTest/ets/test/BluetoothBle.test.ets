@@ -3646,22 +3646,20 @@ export default function bluetoothBleTest() {
                 scanFilters.push(scanFilter);
             }
             try {
-                await bleScanner.startScan(scanFilters).then(() => {
-                    console.info(`${caseName} startScan success`);
-                });
+                await bleScanner.startScan(scanFilters);
+                console.info(`${caseName} startScan success`);
                 console.info(`${caseName} hardware filter resources are not exhausted`);
-                expect(true).assertTrue();
-                await bleScanner.stopScan().then(() => {
-                    console.info(`${caseName} stopScan success`);
-                });
+                await sleep(200);
+                await bleScanner.stopScan();
+                console.info(`${caseName} stopScan success`);
             } catch (err) {
                 console.error(`${caseName} startScan failed, errCode: ${err.code}, errMessage: ${err.message}`);
-                if (Number(err.code) == 801) {
+                if (err.code === 801) {
                     console.info(`${caseName} startScan is not support`);
-                    expect(true).assertTrue();
+                    expect(err.code).assertEqual(801);
                 } else {
                     console.info(`${caseName} hardware resources are exhausted`);
-                    expect(Number(err.code)).assertEqual(2900009);
+                    expect(err.code).assertEqual(2900009);
                 }
             }
             done();
