@@ -15,7 +15,7 @@
  */
 
 import {
-  Entry, Component, Column, Text, Scroll, Tabs, TabContent, Color, TabBarOptions, BottomTabBarStyle, TabBarBadgeStyle
+  Entry, Component, Column, Text, Scroll, Tabs, TabContent, Color, TabBarOptions, BottomTabBarStyle, TabBarBadgeStyle,$r
 } from '@ohos.arkui.component';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { Router } from '@ohos.arkui.UIContext';
