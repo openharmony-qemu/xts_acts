@@ -19,8 +19,6 @@ import Utils from '../common/Utils';
 import router from '@ohos.router';
 import nativeRender from 'libnativerender.so';
 
-let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
-
 export default function gesturecancelTest() {
 
   describe('gesturecancelTest', () => {
@@ -43,7 +41,7 @@ export default function gesturecancelTest() {
       } catch (err) {
         console.error("push gestureCancel page error:" + err);
       }
-      console.info("gestureCancel beforeEach end");
+      console.info("gesturecancelTest beforeEach end");
       done();
     });
 
@@ -69,11 +67,12 @@ export default function gesturecancelTest() {
       let displayId = await innerComponent.getDisplayId();
       let x = Math.round(Utils.getRectHorizontalCenterX(rect));
       // the visual list height is vp2px(200)
-      let y = Math.round(rect.top + vp2px(100));
-      console.info("testGestureCancelTest001  x= " +  x  + ", y = " + y);
+      let yStart = Math.round(rect.top + vp2px(200));
+      let yEnd = Math.round(rect.top + vp2px(50));
+      console.info("testGestureCancelTest001  x= " +  x  + ", yStart = " + yStart + ", yEnd = " + yEnd);
       await driver.swipeBetween(
-        { x: x, y: y, displayId: displayId },
-        { x: x, y: Math.round(y - vp2px(200)), displayId: displayId });
+        { x: x, y: yStart, displayId: displayId },
+        { x: x, y: yEnd, displayId: displayId });
       await Utils.sleep(2000);
        // test the callbackData;
       let object1:ESObject = nativeRender.GetTouchEventData();
@@ -86,4 +85,4 @@ export default function gesturecancelTest() {
     });
 
   })
-}
+}   
