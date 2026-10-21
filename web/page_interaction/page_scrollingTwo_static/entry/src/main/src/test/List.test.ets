@@ -6,8 +6,10 @@
 
 import WebScrollbarLayoutPolicyTest from './WebScrollbarLayoutPolicy.test'
 import WebScrollDirectionalLockTest from './WebScrollDirectionalLock.test'
+import WebFlingSpeedLimitTest from './WebFlingSpeedLimit.test'
 
 export default function testsuite(): void {
   WebScrollbarLayoutPolicyTest();
   WebScrollDirectionalLockTest();
+  WebFlingSpeedLimitTest();
 }

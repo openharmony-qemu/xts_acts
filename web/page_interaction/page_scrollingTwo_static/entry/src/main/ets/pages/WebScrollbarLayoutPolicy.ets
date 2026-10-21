@@ -69,6 +69,12 @@ struct WebScrollbarLayoutPolicy {
               router.pushUrl({ url: 'pages/WebScrollDirectionalLock' })
               break;
             }
+            case "emitSwitchToWebFlingSpeedLimitPage": {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/WebFlingSpeedLimit' })
+              break;
+            }
             default:
               break;
           }
