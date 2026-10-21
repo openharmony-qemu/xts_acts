@@ -200,6 +200,48 @@ struct TabBarOptionsCoverage {
         }
         .id('tabs_tabBar_default')
         .width('100%').height(120)
+
+        Text('TabBarBadgeStyle value ResourceStr').fontSize(12)
+        Tabs() {
+          TabContent() {
+            Column().width('100%').height(40).backgroundColor(Color.Blue)
+          }
+          .id('tabBarOptions_badgeValue_resourceStr')
+          .tabBar({ text: 'Home', badge: { value: $r('app.string.tab_bar_badge_value'), maxCount: 99 } } as TabBarOptions)
+          TabContent() {
+            Column().width('100%').height(40).backgroundColor(Color.Green)
+          }.tabBar('B')
+        }
+        .id('tabs_tabBarOptions_badgeValue_resourceStr')
+        .width('100%').height(120)
+
+        Text('TabBarBadgeStyle maxCount zero').fontSize(12)
+        Tabs() {
+          TabContent() {
+            Column().width('100%').height(40).backgroundColor(Color.Blue)
+          }
+          .id('tabBarOptions_badgeMax_zero')
+          .tabBar({ text: 'Home', badge: { value: 8, maxCount: 0 } } as TabBarOptions)
+          TabContent() {
+            Column().width('100%').height(40).backgroundColor(Color.Green)
+          }.tabBar('B')
+        }
+        .id('tabs_tabBarOptions_badgeMax_zero')
+        .width('100%').height(120)
+
+        Text('TabBarBadgeStyle value greater than maxCount').fontSize(12)
+        Tabs() {
+          TabContent() {
+            Column().width('100%').height(40).backgroundColor(Color.Blue)
+          }
+          .id('tabBarOptions_badgeValue_gt_maxCount')
+          .tabBar({ text: 'Home', badge: { value: 200, maxCount: 99 } } as TabBarOptions)
+          TabContent() {
+            Column().width('100%').height(40).backgroundColor(Color.Green)
+          }.tabBar('B')
+        }
+        .id('tabs_tabBarOptions_badgeValue_gt_maxCount')
+        .width('100%').height(120)
       }
       .width('100%')
       .padding(8)
