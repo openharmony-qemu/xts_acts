@@ -1666,5 +1666,1313 @@ export default function typesIsMapIteratorTest(): void {
       }
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_MAP_ITERATOR_2500
+     * @tc.name testTypesIsMapIterator025
+     * @tc.desc Merged batch (5 tests): State preservation and aliasing: a keys iterator used as a key of another Map is recognized and remains a retrievable key; added as a Set member is recognized and the Set keeps reporting has true for it; keys iterators over a function key and a util.types instance key are recognized and both key entries stay present; a values iterator of a Map whose single value is undefined is recognized and the entry count stays one; of a Map stored as a WeakMap value is recognized and the WeakMap key stays held.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsMapIterator025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify a keys iterator used as a key of another Map is recognized and remains a retrievable key ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let inner: Map<string, int> = new Map<string, int>();
+        inner.set('a', 1);
+        let key: IterableIterator<string> = inner.keys();
+        let outer: Map<Object, string> = new Map<Object, string>();
+        outer.set(key, 'tagged');
+        expect(iteratorProbe.isMapIterator(key)).assertTrue();
+        expect(outer.has(key)).assertTrue();
+        expect(outer.size).assertEqual(1);
+      }
+
+      // --- [2] Verify a keys iterator added as a Set member is recognized and the Set keeps reporting has true for it ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 1);
+        let it: IterableIterator<string> = m.keys();
+        let s: Set<Object> = new Set<Object>();
+        s.add(it);
+        expect(iteratorProbe.isMapIterator(it)).assertTrue();
+        expect(s.has(it)).assertTrue();
+        expect(s.size).assertEqual(1);
+      }
+
+      // --- [3] Verify keys iterators over a function key and a util.types instance key are recognized and both key entries stay present ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let fn: Function = plainRankFn;
+        let m: Map<Function, int> = new Map<Function, int>();
+        m.set(fn, 1);
+        let it: IterableIterator<Function> = m.keys();
+        expect(iteratorProbe.isMapIterator(it)).assertTrue();
+        expect(m.has(fn)).assertTrue();
+        let iteratorProbe_2: util.types = new util.types();
+        let owner: util.types = new util.types();
+        let m_2: Map<util.types, int> = new Map<util.types, int>();
+        m_2.set(owner, 1);
+        let it_2: IterableIterator<util.types> = m_2.keys();
+        expect(iteratorProbe_2.isMapIterator(it_2)).assertTrue();
+        expect(m_2.has(owner)).assertTrue();
+      }
+
+      // --- [4] Verify a values iterator of a Map whose single value is undefined is recognized and the entry count stays one ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let m: Map<string, int | undefined> = new Map<string, int | undefined>();
+        m.set('unset', undefined);
+        let it: IterableIterator<int | undefined> = m.values();
+        expect(iteratorProbe.isMapIterator(it)).assertTrue();
+        expect(m.size).assertEqual(1);
+      }
+
+      // --- [5] Verify a keys iterator of a Map stored as a WeakMap value is recognized and the WeakMap key stays held ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let owner: IteratorKeyBox = new IteratorKeyBox();
+        let inner: Map<string, int> = new Map<string, int>();
+        inner.set('w', 1);
+        let wm: WeakMap<IteratorKeyBox, Map<string, int>> = new WeakMap<IteratorKeyBox, Map<string, int>>();
+        wm.set(owner, inner);
+        expect(iteratorProbe.isMapIterator(inner.keys())).assertTrue();
+        expect(wm.has(owner)).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_MAP_ITERATOR_2600
+     * @tc.name testTypesIsMapIterator026
+     * @tc.desc Merged batch (5 tests): State preservation and aliasing: a keys iterator of a Map keyed by Double.NaN is recognized and the NaN key stays retrievable; a keys iterator over an Object array key and a values iterator over a null value are recognized with keys and entries intact; iteratorForEach walks a whole key iterator accumulating each key; a values iterator of a Map holding a Uint8Array subarray is recognized and the subarray keeps its byte length; a Map keeps its entry count when a keys iterator is passed to the check.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsMapIterator026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify a keys iterator of a Map keyed by Double.NaN is recognized and the NaN key stays retrievable ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let m: Map<double, string> = new Map<double, string>();
+        m.set(Double.NaN, 'notANumber');
+        let it: IterableIterator<double> = m.keys();
+        expect(iteratorProbe.isMapIterator(it)).assertTrue();
+        expect(m.has(Double.NaN)).assertTrue();
+        expect(m.size).assertEqual(1);
+      }
+
+      // --- [2] Verify a keys iterator over an Object array key and a values iterator over a null value are recognized with keys and entries intact ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let objKey: Object[] = [new IteratorKeyBox()];
+        let m: Map<Object[], int> = new Map<Object[], int>();
+        m.set(objKey, 1);
+        let it: IterableIterator<Object[]> = m.keys();
+        expect(iteratorProbe.isMapIterator(it)).assertTrue();
+        expect(m.has(objKey)).assertTrue();
+        let iteratorProbe_2: util.types = new util.types();
+        let m_2: Map<string, Object | null> = new Map<string, Object | null>();
+        m_2.set('empty', null);
+        let it_2: IterableIterator<Object | null> = m_2.values();
+        expect(iteratorProbe_2.isMapIterator(it_2)).assertTrue();
+        expect(m_2.size).assertEqual(1);
+      }
+
+      // --- [3] Verify iteratorForEach walks a whole key iterator accumulating each key while the consumed iterator stays valid ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('x', 1);
+        m.set('y', 2);
+        let it: IterableIterator<string> = m.keys();
+        let seen: string = '';
+        iteratorForEach(it, (k: string) => { seen = seen + k; });
+        expect(seen).assertEqual('xy');
+        expect(iteratorProbe.isMapIterator(it)).assertTrue();
+      }
+
+      // --- [4] Verify a values iterator of a Map holding a Uint8Array subarray is recognized and the subarray keeps its byte length ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let base: ArrayBuffer = new ArrayBuffer(4);
+        let view: Uint8Array = new Uint8Array(base);
+        let slice: Uint8Array = view.subarray(1, 3);
+        let m: Map<string, Uint8Array> = new Map<string, Uint8Array>();
+        m.set('slice', slice);
+        let it: IterableIterator<Uint8Array> = m.values();
+        expect(iteratorProbe.isMapIterator(it)).assertTrue();
+        expect(slice.byteLength).assertEqual(2);
+        expect(m.size).assertEqual(1);
+      }
+
+      // --- [5] Verify a Map keeps its entry count when a keys iterator is passed to the check ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 1);
+        m.set('b', 2);
+        let before: int = m.size;
+        iteratorProbe.isMapIterator(m.keys());
+        expect(m.size).assertEqual(before);
+        expect(before).assertEqual(2);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_MAP_ITERATOR_2700
+     * @tc.name testTypesIsMapIterator027
+     * @tc.desc Merged batch (5 tests): State preservation and aliasing: a Set still reports has true for its member after the Set itself was passed to the check; the check leaves the insertion order of a Map intact so z is still visited before a; a Map keeps the value stored under a key when an entries and a Set keeps its member count when its keys iterator is passed to the check; an int array keeps its length when the array itself is passed to the check; a values iterator taken before Map.clear stays recognized and yields no element after the clear.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsMapIterator027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify a Set still reports has true for its member after the Set itself was passed to the check ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let s: Set<int> = new Set<int>();
+        s.add(9);
+        iteratorProbe.isMapIterator(s);
+        expect(s.has(9)).assertTrue();
+        expect(s.has(8)).assertFalse();
+      }
+
+      // --- [2] Verify the check leaves the insertion order of a Map intact so z is still visited before a ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('z', 1);
+        m.set('a', 2);
+        iteratorProbe.isMapIterator(m.keys());
+        let order: string = '';
+        for (const key of m.keys()) {
+          order += key;
+        }
+        expect(order).assertEqual('za');
+      }
+
+      // --- [3] Verify a Map keeps the value stored under a key when an entries and a Set keeps its member count when its keys iterator is passed to the check ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 7);
+        iteratorProbe.isMapIterator(m.entries());
+        let got: int | undefined = m.get('a');
+        expect(got).assertEqual(7);
+        expect(m.size).assertEqual(1);
+        let iteratorProbe_2: util.types = new util.types();
+        let s: Set<string> = new Set<string>();
+        s.add('a');
+        s.add('b');
+        let before: int = s.size;
+        iteratorProbe_2.isMapIterator(s.keys());
+        expect(s.size).assertEqual(before);
+        expect(before).assertEqual(2);
+      }
+
+      // --- [4] Verify an int array keeps its length when the array itself is passed to the check ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let arr: int[] = [1, 2, 3];
+        iteratorProbe.isMapIterator(arr);
+        expect(arr.length).assertEqual(3);
+        expect(arr[0]).assertEqual(1);
+      }
+
+      // --- [5] Verify a values iterator taken before Map.clear stays recognized and yields no element after the clear ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 1);
+        m.set('b', 2);
+        let it: IterableIterator<int> = m.values();
+        m.clear();
+        expect(iteratorProbe.isMapIterator(it)).assertTrue();
+        let count: int = 0;
+        for (const value of it) {
+          count += 1;
+        }
+        expect(count).assertEqual(0);
+        expect(m.size).assertEqual(0);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_MAP_ITERATOR_2800
+     * @tc.name testTypesIsMapIterator028
+     * @tc.desc Merged batch (5 tests): State preservation and aliasing: a keys iterator stays recognized after next reports done and still yields its original keys after its owner is reassigned; a Map keeps a nested Map value reachable and unchanged after its keys iterator was checked; a keys iterator that consumed two of four entries stays recognized and its remaining two keys keep the original order; the result stays true when a new entry is inserted between two detections of the same keys iterator; the iterator check stays true at every step of a for of traversal over the same keys iterator.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsMapIterator028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify a keys iterator stays recognized after next reports done and still yields its original keys after its owner is reassigned ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('only', 1);
+        let it: IterableIterator<string> = m.keys();
+        it.next();
+        it.next();
+        expect(iteratorProbe.isMapIterator(it)).assertTrue();
+        let count: int = 0;
+        for (const key of it) {
+          count += 1;
+        }
+        expect(count).assertEqual(0);
+        let iteratorProbe_2: util.types = new util.types();
+        let m_2: Map<string, int> = new Map<string, int>();
+        m_2.set('keep', 1);
+        let it_2: IterableIterator<string> = m_2.keys();
+        m_2 = new Map<string, int>();
+        m_2.set('fresh', 2);
+        expect(iteratorProbe_2.isMapIterator(it_2)).assertTrue();
+        let seen: string = '';
+        for (const key_2 of it_2) {
+          seen += key_2;
+        }
+        expect(seen).assertEqual('keep');
+      }
+
+      // --- [2] Verify a Map keeps a nested Map value reachable and unchanged after its keys iterator was checked ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let inner: Map<string, int> = new Map<string, int>();
+        inner.set('n', 4);
+        let outer: Map<string, Map<string, int>> = new Map<string, Map<string, int>>();
+        outer.set('o', inner);
+        let hit: boolean = iteratorProbe.isMapIterator(outer.keys());
+        expect(hit).assertTrue();
+        let kept: Map<string, int> | undefined = outer.get('o');
+        expect(kept).assertEqual(inner);
+        expect(inner.get('n')).assertEqual(4);
+      }
+
+      // --- [3] Verify a keys iterator that consumed two of four entries stays recognized and its remaining two keys keep the original order ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 1);
+        m.set('b', 2);
+        m.set('c', 3);
+        m.set('d', 4);
+        let it: IterableIterator<string> = m.keys();
+        it.next();
+        it.next();
+        expect(iteratorProbe.isMapIterator(it)).assertTrue();
+        let tail: string = '';
+        for (const key of it) {
+          tail += key;
+        }
+        expect(tail).assertEqual('cd');
+      }
+
+      // --- [4] Verify the result stays true when a new entry is inserted between two detections of the same keys iterator ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 1);
+        let it: IterableIterator<string> = m.keys();
+        let before: boolean = iteratorProbe.isMapIterator(it);
+        m.set('b', 2);
+        expect(probeIteratorThroughObject(it)).assertEqual(before);
+        expect(before).assertTrue();
+        expect(m.size).assertEqual(2);
+      }
+
+      // --- [5] Verify the iterator check stays true at every step of a for of traversal over the same keys iterator ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 1);
+        m.set('b', 2);
+        let it: IterableIterator<string> = m.keys();
+        let allHit: boolean = true;
+        for (const key of it) {
+          allHit = allHit && iteratorProbe.isMapIterator(it);
+        }
+        expect(allHit).assertTrue();
+        expect(m.size).assertEqual(2);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_MAP_ITERATOR_2900
+     * @tc.name testTypesIsMapIterator029
+     * @tc.desc Merged batch (5 tests): State preservation and aliasing: a keys iterator produced by a helper that takes a Map parameter is recognized and the passed Map keeps its size; keys iterators widened to Object, directly or through a helper, are recognized and leave the Map size unchanged; skips a key deleted from the Map after the iterator was created; yields an entry appended to the Map after the iterator was created; stays recognized when an already present key is overwritten between two detections while size stays one.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsMapIterator029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify a keys iterator produced by a helper that takes a Map parameter is recognized and the passed Map keeps its size ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 3);
+        let it: IterableIterator<string> = iteratorOfMap(m);
+        expect(iteratorProbe.isMapIterator(it)).assertTrue();
+        expect(m.size).assertEqual(1);
+      }
+
+      // --- [2] Verify keys iterators widened to Object, directly or through a helper, are recognized and leave the Map size unchanged ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 1);
+        let fromHelper: Object = objectOfMapIterator(m);
+        let direct: Object = m.keys();
+        expect(iteratorProbe.isMapIterator(fromHelper)).assertTrue();
+        expect(iteratorProbe.isMapIterator(direct)).assertTrue();
+        expect(m.size).assertEqual(1);
+      }
+
+      // --- [3] Verify a keys iterator skips a key deleted from the Map after the iterator was created while the check stays true ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 1);
+        m.set('b', 2);
+        m.set('c', 3);
+        let it: IterableIterator<string> = m.keys();
+        m.delete('b');
+        expect(iteratorProbe.isMapIterator(it)).assertTrue();
+        let seen: string = '';
+        for (const key of it) {
+          seen += key;
+        }
+        expect(seen).assertEqual('ac');
+        expect(m.size).assertEqual(2);
+      }
+
+      // --- [4] Verify a keys iterator yields an entry appended to the Map after the iterator was created while the check stays true ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 1);
+        let it: IterableIterator<string> = m.keys();
+        m.set('z', 9);
+        expect(iteratorProbe.isMapIterator(it)).assertTrue();
+        let seen: string = '';
+        for (const key of it) {
+          seen += key;
+        }
+        expect(seen).assertEqual('az');
+      }
+
+      // --- [5] Verify a keys iterator stays recognized when an already present key is overwritten between two detections while size stays one ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 1);
+        let it: IterableIterator<string> = m.keys();
+        let firstHit: boolean = iteratorProbe.isMapIterator(it);
+        m.set('a', 9);
+        let secondHit: boolean = iteratorProbe.isMapIterator(it);
+        expect(firstHit).assertTrue();
+        expect(secondHit).assertTrue();
+        expect(m.size).assertEqual(1);
+        expect(m.get('a')).assertEqual(9);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_MAP_ITERATOR_3000
+     * @tc.name testTypesIsMapIterator030
+     * @tc.desc Merged batch (5 tests): State preservation and aliasing: a keys iterator bound to a second variable is recognized through that alias and shares the same consumption position; stays recognized when a key is deleted and re-inserted between two detections and size returns to two; stays recognized when the class instance key's field changes between two detections and the key stays present; filtering an Object array of two Map keys iterators and one Set values iterator keeps only the two Map iterators; a while loop conditioned on the check keeps its iterator recognized and stops when the loop bound is reached.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsMapIterator030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify a keys iterator bound to a second variable is recognized through that alias and shares the same consumption position ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 1);
+        m.set('b', 2);
+        let primary: IterableIterator<string> = m.keys();
+        let alias: IterableIterator<string> = primary;
+        primary.next();
+        expect(iteratorProbe.isMapIterator(alias)).assertTrue();
+        let rest: string = '';
+        for (const key of alias) {
+          rest += key;
+        }
+        expect(rest).assertEqual('b');
+      }
+
+      // --- [2] Verify a keys iterator stays recognized when a key is deleted and re-inserted between two detections and size returns to two ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 1);
+        m.set('b', 2);
+        let it: IterableIterator<string> = m.keys();
+        m.delete('a');
+        m.set('a', 5);
+        expect(iteratorProbe.isMapIterator(it)).assertTrue();
+        expect(m.size).assertEqual(2);
+        expect(m.has('a')).assertTrue();
+      }
+
+      // --- [3] Verify a keys iterator stays recognized when the class instance key's field changes between two detections and the key stays present ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let key: IteratorKeyBox = new IteratorKeyBox();
+        let m: Map<IteratorKeyBox, int> = new Map<IteratorKeyBox, int>();
+        m.set(key, 1);
+        let it: IterableIterator<IteratorKeyBox> = m.keys();
+        let firstHit: boolean = iteratorProbe.isMapIterator(it);
+        key.tag = 'changed';
+        let secondHit: boolean = iteratorProbe.isMapIterator(it);
+        expect(firstHit).assertTrue();
+        expect(secondHit).assertTrue();
+        expect(key.tag).assertEqual('changed');
+        expect(m.has(key)).assertTrue();
+      }
+
+      // --- [4] Verify filtering an Object array of two Map keys iterators and one Set values iterator keeps only the two Map iterators ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let first: Map<string, int> = new Map<string, int>();
+        first.set('a', 1);
+        let second: Map<string, int> = new Map<string, int>();
+        second.set('b', 2);
+        let s: Set<int> = new Set<int>();
+        s.add(3);
+        let items: Object[] = [first.keys(), second.keys(), s.values()];
+        let accepted: Object[] = items.filter((item: Object): boolean => iteratorProbe.isMapIterator(item));
+        expect(accepted.length).assertEqual(2);
+        expect(iteratorProbe.isMapIterator(items[2])).assertFalse();
+      }
+
+      // --- [5] Verify a while loop conditioned on the check keeps its iterator recognized and stops when the loop bound is reached ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 1);
+        let it: IterableIterator<string> = m.keys();
+        let rounds: int = 0;
+        while (iteratorProbe.isMapIterator(it) && rounds < 3) {
+          rounds += 1;
+          if (rounds === 2) {
+            break;
+          }
+        }
+        expect(rounds).assertEqual(2);
+        expect(iteratorProbe.isMapIterator(it)).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_MAP_ITERATOR_3100
+     * @tc.name testTypesIsMapIterator031
+     * @tc.desc Merged batch (5 tests): Container and field storage: isMapIterator accepts keys iterators of Maps keyed by Date objects and by Error objects; accepts a char keyed Map keys iterator whose value is a bare Object instance; accepts a long keyed Map keys iterator whose value is a float; accepts a RegExp keyed Map keys iterator; accepts a Map whose key is a string array held in a typed variable.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsMapIterator031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify isMapIterator accepts keys iterators of Maps keyed by Date objects and by Error objects ---
+      {
+        let iteratorChecker: util.types = new util.types();
+        let dateMap: Map<Date, Object> = new Map<Date, Object>();
+        dateMap.set(new Date(0), new Object());
+        let dateIt: IterableIterator<Date> = dateMap.keys();
+        let errorMap: Map<Error, Object> = new Map<Error, Object>();
+        errorMap.set(new Error('k'), new Object());
+        let errorIt: IterableIterator<Error> = errorMap.keys();
+        expect(iteratorChecker.isMapIterator(dateIt)).assertTrue();
+        expect(iteratorChecker.isMapIterator(errorIt)).assertTrue();
+      }
+
+      // --- [2] Verify isMapIterator returns true for a char keyed Map keys iterator whose value is a bare Object instance ---
+      {
+        let iteratorChecker: util.types = new util.types();
+        let m: Map<char, Object> = new Map<char, Object>();
+        m.set(c'a', new Object());
+        let it: IterableIterator<char> = m.keys();
+        expect(iteratorChecker.isMapIterator(it)).assertTrue();
+      }
+
+      // --- [3] Verify isMapIterator returns true for a long keyed Map keys iterator whose value is a float ---
+      {
+        let iteratorChecker: util.types = new util.types();
+        let m: Map<long, float> = new Map<long, float>();
+        let key: long = 99;
+        let val: float = 2.5f;
+        m.set(key, val);
+        let it: IterableIterator<long> = m.keys();
+        expect(iteratorChecker.isMapIterator(it)).assertTrue();
+      }
+
+      // --- [4] Verify isMapIterator returns true for a RegExp keyed Map keys iterator ---
+      {
+        let iteratorChecker: util.types = new util.types();
+        let m: Map<RegExp, int> = new Map<RegExp, int>();
+        m.set(new RegExp('a'), 1);
+        let it: IterableIterator<RegExp> = m.keys();
+        expect(iteratorChecker.isMapIterator(it)).assertTrue();
+      }
+
+      // --- [5] Verify isMapIterator returns true for a Map whose key is a string array held in a typed variable ---
+      {
+        let iteratorChecker: util.types = new util.types();
+        let m: Map<Array<string>, int> = new Map<Array<string>, int>();
+        let key: Array<string> = ['a'];
+        m.set(key, 1);
+        let it: IterableIterator<Array<string>> = m.keys();
+        expect(iteratorChecker.isMapIterator(it)).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_MAP_ITERATOR_3200
+     * @tc.name testTypesIsMapIterator032
+     * @tc.desc Merged batch (5 tests): Container and field storage: accepts an Object keyed Map keys iterator holding a string key and an int key; accepts a values iterator whose single value is a nested Map; accepts a values iterator whose single value is a nested Set; accepts the entries iterator of a Map whose single value is a nested Map; a keys iterator of a Map keyed by a bigint value built with BigInt is recognized.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsMapIterator032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify isMapIterator returns true for an Object keyed Map keys iterator holding a string key and an int key ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let m: Map<Object, int> = new Map<Object, int>();
+        m.set('text', 1);
+        m.set(2, 2);
+        let it: IterableIterator<Object> = m.keys();
+        expect(iteratorProbe.isMapIterator(it)).assertTrue();
+        expect(m.size).assertEqual(2);
+      }
+
+      // --- [2] Verify isMapIterator returns true for a values iterator whose single value is a nested Map ---
+      {
+        let iteratorChecker: util.types = new util.types();
+        let inner: Map<int, string> = new Map<int, string>();
+        inner.set(1, 'a');
+        let m: Map<string, Map<int, string>> = new Map<string, Map<int, string>>();
+        m.set('i', inner);
+        let it: IterableIterator<Map<int, string>> = m.values();
+        expect(iteratorChecker.isMapIterator(it)).assertTrue();
+      }
+
+      // --- [3] Verify isMapIterator returns true for a values iterator whose single value is a nested Set ---
+      {
+        let iteratorChecker: util.types = new util.types();
+        let inner: Set<string> = new Set<string>();
+        inner.add('a');
+        let m: Map<string, Set<string>> = new Map<string, Set<string>>();
+        m.set('s', inner);
+        let it: IterableIterator<Set<string>> = m.values();
+        expect(iteratorChecker.isMapIterator(it)).assertTrue();
+      }
+
+      // --- [4] Verify isMapIterator returns true for the entries iterator of a Map whose single value is a nested Map ---
+      {
+        let iteratorChecker: util.types = new util.types();
+        let inner: Map<int, int> = new Map<int, int>();
+        let outer: Map<string, Map<int, int>> = new Map<string, Map<int, int>>();
+        outer.set('o', inner);
+        let it: IterableIterator<[string, Map<int, int>]> = outer.entries();
+        expect(iteratorChecker.isMapIterator(it)).assertTrue();
+      }
+
+      // --- [5] Verify a keys iterator of a Map keyed by a bigint value built with BigInt is recognized ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let m: Map<bigint, int> = new Map<bigint, int>();
+        m.set(BigInt(7), 1);
+        expect(iteratorProbe.isMapIterator(m.keys())).assertTrue();
+        expect(m.size).assertEqual(1);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_MAP_ITERATOR_3300
+     * @tc.name testTypesIsMapIterator033
+     * @tc.desc Merged batch (5 tests): Container and field storage: the keys iterator of an inner Map that is stored as an outer Map value is recognized alongside the outer keys iterator; a keys iterator nested in an Object array held as a Map value is recognized when read back; the check on an entries iterator leaves the boxed value object and its field untouched; a keys iterator returned by a holder class method is recognized and still walks the held Map in order; a two key Map keys iterator records opposite isMap and isMapIterator verdicts in one record.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsMapIterator033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify the keys iterator of an inner Map that is stored as an outer Map value is recognized alongside the outer keys iterator ---
+      {
+        let iteratorChecker: util.types = new util.types();
+        let inner: Map<string, int> = new Map<string, int>();
+        inner.set('i', 1);
+        let outer: Map<string, Map<string, int>> = new Map<string, Map<string, int>>();
+        outer.set('o', inner);
+        let innerIt: IterableIterator<string> = inner.keys();
+        let outerIt: IterableIterator<string> = outer.keys();
+        expect(iteratorChecker.isMapIterator(outerIt)).assertTrue();
+        expect(iteratorChecker.isMapIterator(innerIt)).assertTrue();
+      }
+
+      // --- [2] Verify a keys iterator nested in an Object array held as a Map value is recognized when read back ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let inner: Map<string, int> = new Map<string, int>();
+        inner.set('n', 1);
+        let holder: Object[] = [inner.keys()];
+        let m: Map<string, Object> = new Map<string, Object>();
+        m.set('row', holder);
+        expect(iteratorProbe.isMapIterator(holder[0])).assertTrue();
+        expect(m.size).assertEqual(1);
+      }
+
+      // --- [3] Verify the check on an entries iterator leaves the boxed value object and its field untouched ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let box: IteratorKeyBox = new IteratorKeyBox();
+        let m: Map<string, IteratorKeyBox> = new Map<string, IteratorKeyBox>();
+        m.set('k', box);
+        expect(iteratorProbe.isMapIterator(m.entries())).assertTrue();
+        expect(box.tag).assertEqual('key');
+        expect(m.size).assertEqual(1);
+      }
+
+      // --- [4] Verify a keys iterator returned by a holder class method is recognized and still walks the held Map in order ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let holder: IteratorQueueHolder = new IteratorQueueHolder();
+        holder.store.set('q', 4);
+        holder.store.set('r', 5);
+        let it: IterableIterator<string> = holder.keysIterator();
+        expect(iteratorProbe.isMapIterator(it)).assertTrue();
+        let seen: string = '';
+        for (const key of it) {
+          seen += key;
+        }
+        expect(seen).assertEqual('qr');
+        expect(holder.store.size).assertEqual(2);
+      }
+
+      // --- [5] Verify a two key Map keys iterator records opposite isMap and isMapIterator verdicts in one record ---
+      {
+        let iteratorChecker: util.types = new util.types();
+        let source: Map<string, int> = new Map<string, int>();
+        source.set('left', 3);
+        source.set('right', 4);
+        let cursor: IterableIterator<string> = source.keys();
+        let verdicts: Record<string, boolean> = {
+          'asMap': iteratorChecker.isMap(cursor),
+          'asIterator': iteratorChecker.isMapIterator(cursor)
+        };
+        expect(verdicts['asMap']!).assertFalse();
+        expect(verdicts['asIterator']!).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_MAP_ITERATOR_3400
+     * @tc.name testTypesIsMapIterator034
+     * @tc.desc Merged batch (1 test): Container and field storage: only the Map keys iterator is accepted among Map, Set and array iterators held in one array.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsMapIterator034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify only the Map keys iterator is accepted among Map, Set and array iterators held in one array ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 1);
+        let s: Set<int> = new Set<int>();
+        s.add(7);
+        let arr: int[] = [1, 2];
+        let items: Object[] = [m.keys(), s.values(), arr.values()];
+        expect(countAcceptedIterators(items, iteratorProbe)).assertEqual(1);
+        expect(iteratorProbe.isMapIterator(items[0])).assertTrue();
+        expect(arr.length).assertEqual(2);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_MAP_ITERATOR_3500
+     * @tc.name testTypesIsMapIterator035
+     * @tc.desc Merged batch (5 tests): API call consistency: a primitive three letter string and a boxed String wrapper holding the same text are both reported false; the empty string literal and a second one cut past the end of abc by substring are both reported false; the key an iterator yields is a plain number that fails the check; rejects a Map entries iterator and a Map keys iterator are accepted; rejects all three Map iterator kinds are recognized while the Map body itself.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsMapIterator035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify a primitive three letter string and a boxed String wrapper holding the same text are both reported false ---
+      {
+        let iteratorChecker: util.types = new util.types();
+        let primitive: string = 'abc';
+        let boxed: String = new String('abc');
+        expect(iteratorChecker.isMapIterator(primitive)).assertFalse();
+        expect(iteratorChecker.isMapIterator(boxed)).assertFalse();
+      }
+
+      // --- [2] Verify the empty string literal and a second one cut past the end of abc by substring are both reported false ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let emptyText: string = '';
+        let cutText: string = 'abc'.substring(3);
+        expect(iteratorProbe.isMapIterator(emptyText)).assertFalse();
+        expect(iteratorProbe.isMapIterator(cutText)).assertFalse();
+      }
+
+      // --- [3] Verify the key an iterator yields is a plain number that fails the check while the keys iterator itself is recognized ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let body: Map<Object, int> = new Map<Object, int>();
+        body.set(7, 1);
+        let walked: IterableIterator<Object> = body.keys();
+        let yielded: Object | undefined = walked.next().value;
+        expect(iteratorProbe.isMapIterator(yielded as Object)).assertFalse();
+        expect(iteratorProbe.isMapIterator(walked)).assertTrue();
+      }
+
+      // --- [4] Verify a Map entries iterator and a Map keys iterator are accepted while a Set entries iterator and an int array are rejected ---
+      {
+        let iteratorChecker: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 1);
+        let s: Set<int> = new Set<int>();
+        s.add(1);
+        expect(iteratorChecker.isMapIterator(m.entries())).assertTrue();
+        expect(iteratorChecker.isMapIterator(s.entries())).assertFalse();
+        let iteratorChecker_2: util.types = new util.types();
+        let m_2: Map<string, int> = new Map<string, int>();
+        m_2.set('a', 1);
+        let arr: int[] = [1, 2];
+        expect(iteratorChecker_2.isMapIterator(m_2.keys())).assertTrue();
+        expect(iteratorChecker_2.isMapIterator(arr)).assertFalse();
+      }
+
+      // --- [5] Verify all three Map iterator kinds are recognized while the Map body itself is rejected ---
+      {
+        let iteratorChecker: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 1);
+        let keysHit: boolean = iteratorChecker.isMapIterator(m.keys());
+        let valuesHit: boolean = iteratorChecker.isMapIterator(m.values());
+        let entriesHit: boolean = iteratorChecker.isMapIterator(m.entries());
+        let bodyHit: boolean = iteratorChecker.isMapIterator(m);
+        expect(keysHit).assertTrue();
+        expect(valuesHit).assertTrue();
+        expect(entriesHit).assertTrue();
+        expect(bodyHit).assertFalse();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_MAP_ITERATOR_3600
+     * @tc.name testTypesIsMapIterator036
+     * @tc.desc Merged batch (5 tests): API call consistency: a DataView is rejected by the iterator check while a Map entries iterator is recognized; a resolved Promise is rejected by the iterator check while a Map keys iterator is recognized; a plain function value is rejected by the iterator check while a Map keys iterator is recognized; accepts a primitive string and an ArrayBuffer are rejected; an interface shaped object literal is rejected while a Map keys iterator is recognized.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsMapIterator036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify a DataView is rejected by the iterator check while a Map entries iterator is recognized ---
+      {
+        let iteratorChecker: util.types = new util.types();
+        let buf: ArrayBuffer = new ArrayBuffer(8);
+        let dv: DataView = new DataView(buf);
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 1);
+        expect(iteratorChecker.isMapIterator(dv)).assertFalse();
+        expect(iteratorChecker.isMapIterator(m.entries())).assertTrue();
+      }
+
+      // --- [2] Verify a resolved Promise is rejected by the iterator check while a Map keys iterator is recognized ---
+      {
+        let iteratorChecker: util.types = new util.types();
+        let pending: Object = Promise.resolve<int>(1);
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 1);
+        expect(iteratorChecker.isMapIterator(pending)).assertFalse();
+        expect(iteratorChecker.isMapIterator(m.keys())).assertTrue();
+      }
+
+      // --- [3] Verify a plain function value is rejected by the iterator check while a Map keys iterator is recognized ---
+      {
+        let iteratorChecker: util.types = new util.types();
+        let fn: Function = plainRankFn;
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 1);
+        expect(iteratorChecker.isMapIterator(fn)).assertFalse();
+        expect(iteratorChecker.isMapIterator(m.keys())).assertTrue();
+      }
+
+      // --- [4] Verify a primitive string and an ArrayBuffer are rejected while the Map keys and entries iterators beside them are accepted ---
+      {
+        let iteratorChecker: util.types = new util.types();
+        let text: string = 'probe';
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 1);
+        expect(iteratorChecker.isMapIterator(text)).assertFalse();
+        expect(iteratorChecker.isMapIterator(m.keys())).assertTrue();
+        let iteratorChecker_2: util.types = new util.types();
+        let buf: ArrayBuffer = new ArrayBuffer(8);
+        let m_2: Map<string, int> = new Map<string, int>();
+        m_2.set('a', 1);
+        expect(iteratorChecker_2.isMapIterator(buf)).assertFalse();
+        expect(iteratorChecker_2.isMapIterator(m_2.entries())).assertTrue();
+      }
+
+      // --- [5] Verify an interface shaped object literal is rejected while a Map keys iterator is recognized ---
+      {
+        let iteratorChecker: util.types = new util.types();
+        let label: IteratorLabel = { label: 'probe' };
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 1);
+        expect(iteratorChecker.isMapIterator(label)).assertFalse();
+        expect(iteratorChecker.isMapIterator(m.keys())).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_MAP_ITERATOR_3700
+     * @tc.name testTypesIsMapIterator037
+     * @tc.desc Merged batch (5 tests): API call consistency: accepts a Record string to int object literal is rejected while a Map keys iterator; rejects the pairs iterator yielded by Map.$_iterator is accepted by isMapIterator; a keys iterator stored as an element of an object array is recognized; rejects a nullable Object slot holding a Map iterator is recognized; accepts a Map values iterator built by a helper while a Uint8Array stays rejected.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsMapIterator037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify a Record string to int object literal is rejected while a Map keys iterator is accepted ---
+      {
+        let iteratorChecker: util.types = new util.types();
+        let config: Record<string, int> = { 'first': 1, 'second': 2 };
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 1);
+        expect(iteratorChecker.isMapIterator(config)).assertFalse();
+        expect(iteratorChecker.isMapIterator(m.keys())).assertTrue();
+      }
+
+      // --- [2] Verify the pairs iterator yielded by Map.$_iterator is accepted by isMapIterator while the map itself is rejected ---
+      {
+        let iteratorChecker: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('u', 1);
+        let it: IterableIterator<[string, int]> = m.$_iterator();
+        expect(iteratorChecker.isMapIterator(it)).assertTrue();
+        expect(iteratorChecker.isMap(it)).assertFalse();
+      }
+
+      // --- [3] Verify a keys iterator stored as an element of an object array is recognized while the Map body next to it is not ---
+      {
+        let iteratorChecker: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 1);
+        let pool: Array<Object> = [m.keys() as Object, m as Object];
+        expect(iteratorChecker.isMapIterator(pool[0])).assertTrue();
+        expect(iteratorChecker.isMapIterator(pool[1])).assertFalse();
+      }
+
+      // --- [4] Verify a nullable Object slot holding a Map iterator is recognized while the same slot holding the Map itself is rejected ---
+      {
+        let iteratorChecker: util.types = new util.types();
+        let holder: IteratorNullSlot = new IteratorNullSlot();
+        let m: Map<string, int> = new Map<string, int>();
+        holder.slot = m.keys();
+        expect(iteratorChecker.isMapIterator(holder.slot as Object)).assertTrue();
+        holder.slot = m;
+        expect(iteratorChecker.isMapIterator(holder.slot as Object)).assertFalse();
+      }
+
+      // --- [5] Verify isMapIterator returns true for a Map values iterator built by a helper while a Uint8Array stays rejected ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        expect(iteratorProbe.isMapIterator(makeMapValuesIterator())).assertTrue();
+        expect(iteratorProbe.isMapIterator(new Uint8Array(4))).assertFalse();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_MAP_ITERATOR_3800
+     * @tc.name testTypesIsMapIterator038
+     * @tc.desc Merged batch (5 tests): API call consistency: rejects a keys iterator read from a class field or an interface field is recognized; three repeated checks on one keys iterator all hit while the iterator still yields both keys; the keys iterator of a Map keyed by a Uint8Array is recognized; the check run inside a holder class method accepts a keys iterator and rejects the Map body; accepts a Map entries iterator while a Set value iterator stays rejected.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsMapIterator038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify a keys iterator read from a class field or an interface field is recognized while the carrying object itself is rejected ---
+      {
+        let iteratorChecker: util.types = new util.types();
+        let holder: IteratorFieldHolder = new IteratorFieldHolder();
+        expect(iteratorChecker.isMapIterator(holder.handle)).assertTrue();
+        expect(iteratorChecker.isMapIterator(holder)).assertFalse();
+        let iteratorChecker_2: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 1);
+        let carrier: IteratorHandleCarrier = { handle: m.keys() };
+        expect(iteratorChecker_2.isMapIterator(carrier.handle)).assertTrue();
+        expect(iteratorChecker_2.isMapIterator(carrier)).assertFalse();
+      }
+
+      // --- [2] Verify three repeated checks on one keys iterator all hit while the iterator still yields both keys ---
+      {
+        let iteratorChecker: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 1);
+        m.set('b', 2);
+        let it: IterableIterator<string> = m.keys();
+        let hits: int = 0;
+        for (let round: int = 0; round < 3; round++) {
+          if (iteratorChecker.isMapIterator(it)) {
+            hits += 1;
+          }
+        }
+        expect(hits).assertEqual(3);
+        let left: int = 0;
+        for (const key of it) {
+          left += 1;
+        }
+        expect(left).assertEqual(2);
+      }
+
+      // --- [3] Verify the keys iterator of a Map keyed by a Uint8Array is recognized while the very same array is rejected when passed directly ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let keyArray: Uint8Array = new Uint8Array([1, 2]);
+        let m: Map<Uint8Array, int> = new Map<Uint8Array, int>();
+        m.set(keyArray, 1);
+        expect(iteratorProbe.isMapIterator(m.keys())).assertTrue();
+        expect(probeIteratorThroughObject(keyArray)).assertFalse();
+        expect(m.has(keyArray)).assertTrue();
+      }
+
+      // --- [4] Verify the check run inside a holder class method accepts a keys iterator and rejects the Map body ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let holder: IteratorProbeHolder = new IteratorProbeHolder();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 1);
+        expect(iteratorProbe.isMapIterator(m.keys())).assertTrue();
+        expect(holder.accepts(m.keys())).assertTrue();
+        expect(holder.accepts(m)).assertFalse();
+        expect(m.size).assertEqual(1);
+      }
+
+      // --- [5] Verify isMapIterator returns true for a Map entries iterator while a Set value iterator stays rejected ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        expect(iteratorProbe.isMapIterator(m.entries())).assertTrue();
+        expect(iteratorProbe.isMapIterator(new Set<int>().values())).assertFalse();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_MAP_ITERATOR_3900
+     * @tc.name testTypesIsMapIterator039
+     * @tc.desc Merged batch (4 tests): API call consistency: checks agreement between related calls, covering Date values and related cross-checks.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsMapIterator039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify isDate probes on a Date and on the keys iterator interleaved between two isMapIterator detections leave both detections true ---
+      {
+        let iteratorChecker: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 1);
+        let it: IterableIterator<string> = m.keys();
+        let dateHit: boolean = iteratorChecker.isDate(new Date(0));
+        let iterHit: boolean = iteratorChecker.isMapIterator(it);
+        let dateMiss: boolean = iteratorChecker.isDate(it);
+        let finalHit: boolean = iteratorChecker.isMapIterator(it);
+        expect(dateHit).assertTrue();
+        expect(iterHit).assertTrue();
+        expect(dateMiss).assertFalse();
+        expect(finalHit).assertTrue();
+      }
+
+      // --- [2] Verify isMapIterator returns true for a Map values iterator while a Date stays rejected ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        expect(iteratorProbe.isMapIterator(m.values())).assertTrue();
+        expect(iteratorProbe.isMapIterator(new Date(0))).assertFalse();
+      }
+
+      // --- [3] Verify a Set values iterator is accepted by isSetIterator while the iterator check rejects it ---
+      {
+        let iteratorChecker: util.types = new util.types();
+        let s: Set<int> = new Set<int>();
+        s.add(1);
+        let it: IterableIterator<int> = s.values();
+        expect(iteratorChecker.isSetIterator(it)).assertTrue();
+        expect(iteratorChecker.isMapIterator(it)).assertFalse();
+      }
+
+      // --- [4] Verify a named async function fails isMapIterator while isAsyncFunction accepts it and a keys iterator passes ---
+      {
+        let iteratorChecker: util.types = new util.types();
+        let worker: Function = asyncRankTask;
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 1);
+        expect(iteratorChecker.isMapIterator(worker)).assertFalse();
+        expect(iteratorChecker.isAsyncFunction(worker)).assertTrue();
+        expect(iteratorChecker.isMapIterator(m.keys())).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_MAP_ITERATOR_4000
+     * @tc.name testTypesIsMapIterator040
+     * @tc.desc Merged batch (4 tests): API call consistency: checks agreement between related calls, covering awaited results and related cross-checks.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsMapIterator040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+      // --- [1] Verify a two entry Map entries iterator collects three false rejections while the iterator check accepts it ---
+      {
+        let iteratorChecker: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('left', 3);
+        m.set('right', 4);
+        let it: IterableIterator<[string, int]> = m.entries();
+        let rejections: boolean[] = [iteratorChecker.isArrayBufferView(it), iteratorChecker.isDataView(it), iteratorChecker.isNativeError(it)];
+        expect(rejections).assertDeepEquals([false, false, false]);
+        expect(iteratorChecker.isMapIterator(it)).assertTrue();
+      }
+
+      // --- [2] Verify a mapping over a keys iterator and its Map separates the iterator label from the body label ---
+      {
+        let iteratorChecker: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 1);
+        let it: IterableIterator<string> = m.keys();
+        let labels: string[] = [it, m].map((probe: Object): string => iteratorChecker.isMapIterator(probe) ? 'iterator' : 'body');
+        expect(labels[0]).assertEqual('iterator');
+        expect(labels[1]).assertEqual('body');
+        expect(iteratorChecker.isTypedArray(it)).assertFalse();
+        expect(iteratorChecker.isArrayBuffer(it)).assertFalse();
+      }
+
+      // --- [3] Verify an awaited async helper that runs the check reports true for a two entry keys iterator and false for the Map ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 1);
+        m.set('b', 2);
+        let it: IterableIterator<string> = m.keys();
+        expect(iteratorProbe.isMapIterator(it)).assertTrue();
+        expect(await asyncIteratorCheck(it)).assertTrue();
+        expect(await asyncIteratorCheck(m)).assertFalse();
+        expect(m.size).assertEqual(2);
+      }
+
+      // --- [4] Verify a Map values iterator is accepted by the iterator check while isMap, isDate and isPromise all reject it ---
+      {
+        let iteratorChecker: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 1);
+        let it: IterableIterator<int> = m.values();
+        expect(iteratorChecker.isMapIterator(it)).assertTrue();
+        expect(iteratorChecker.isMap(it)).assertFalse();
+        expect(iteratorChecker.isDate(it)).assertFalse();
+        expect(iteratorChecker.isPromise(it)).assertFalse();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_MAP_ITERATOR_4100
+     * @tc.name testTypesIsMapIterator041
+     * @tc.desc Merged batch (5 tests): Program integration: accepts a keys iterator handed back by a helper and one over a Map filled with 100 int entries by a loop; isMapIterator returns true when a Map values iterator travels through an Object typed helper parameter; a keys iterator produced by a helper function is recognized and still yields its stored key; accepts the keys iterator of an empty int keyed Map passed as the single argument; a values iterator produced by a helper function is recognized and still yields its stored value.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsMapIterator041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify a keys iterator handed back by a helper and one over a Map filled with 100 int entries by a loop are both accepted ---
+      {
+        let iteratorChecker: util.types = new util.types();
+        let made: IterableIterator<string> = makeMapKeysIterator();
+        expect(iteratorChecker.isMapIterator(made)).assertTrue();
+        let iteratorProbe: util.types = new util.types();
+        let m: Map<int, int> = new Map<int, int>();
+        for (let i: int = 0; i < 100; i++) {
+          m.set(i, i * 2);
+        }
+        expect(m.size).assertEqual(100);
+        expect(iteratorProbe.isMapIterator(m.keys())).assertTrue();
+      }
+
+      // --- [2] Verify isMapIterator returns true when a Map values iterator travels through an Object typed helper parameter ---
+      {
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('v', 4);
+        expect(probeIteratorThroughObject(m.values())).assertTrue();
+      }
+
+      // --- [3] Verify a keys iterator produced by a helper function is recognized and still yields its stored key ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let it: IterableIterator<string> = makeMapKeysIterator();
+        let order: string = '';
+        for (const key of it) {
+          order += key;
+        }
+        let recognized: boolean = iteratorProbe.isMapIterator(it);
+        expect(recognized).assertTrue();
+        expect(order).assertEqual('made');
+      }
+
+      // --- [4] Verify isMapIterator returns true for the keys iterator of an empty int keyed Map passed as the single argument ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let m: Map<int, int> = new Map<int, int>();
+        expect(iteratorProbe.isMapIterator(m.keys())).assertTrue();
+        expect(m.size).assertEqual(0);
+      }
+
+      // --- [5] Verify a values iterator produced by a helper function is recognized and still yields its stored value ---
+      {
+        let it: IterableIterator<int> = makeMapValuesIterator();
+        let recognized: boolean = probeIteratorThroughObject(it);
+        let sum: int = 0;
+        for (const value of it) {
+          sum += value;
+        }
+        expect(recognized).assertTrue();
+        expect(sum).assertEqual(9);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_MAP_ITERATOR_4200
+     * @tc.name testTypesIsMapIterator042
+     * @tc.desc Merged batch (5 tests): Program integration: an entries iterator produced by a helper function is recognized and still yields a single pair; a helper forwarding an Object parameter accepts a keys iterator; the iterator check result drives a ternary that selects the recognized branch for a keys iterator; negating the failed Map body check yields a true boolean expression; the iterator check result selects the true branch of an if else for a values iterator.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsMapIterator042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify an entries iterator produced by a helper function is recognized and still yields a single pair ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let it: IterableIterator<[string, int]> = makeMapEntriesIterator();
+        let count: int = 0;
+        for (const pair of it) {
+          count += 1;
+        }
+        expect(iteratorProbe.isMapIterator(it)).assertTrue();
+        expect(count).assertEqual(1);
+      }
+
+      // --- [2] Verify a helper forwarding an Object parameter accepts a keys iterator while a scan over two populated Map bodies finds none ---
+      {
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 1);
+        expect(probeIteratorThroughObject(m.keys())).assertTrue();
+        expect(m.size).assertEqual(1);
+        let iteratorProbe: util.types = new util.types();
+        let first: Map<string, int> = new Map<string, int>();
+        first.set('a', 1);
+        let second: Map<string, int> = new Map<string, int>();
+        second.set('b', 2);
+        let bodies: Object[] = [first, second];
+        expect(bodies.some((probe: Object): boolean => iteratorProbe.isMapIterator(probe))).assertFalse();
+        expect(bodies.length).assertEqual(2);
+      }
+
+      // --- [3] Verify the iterator check result drives a ternary that selects the recognized branch for a keys iterator ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 1);
+        let it: IterableIterator<string> = m.keys();
+        let hit: boolean = iteratorProbe.isMapIterator(it);
+        let label: string = hit ? 'recognized' : 'rejected';
+        expect(label).assertEqual('recognized');
+        expect(m.size).assertEqual(1);
+      }
+
+      // --- [4] Verify negating the failed Map body check yields a true boolean expression ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 1);
+        let hit: boolean = iteratorProbe.isMapIterator(m);
+        expect(!hit).assertTrue();
+        expect(m.size).assertEqual(1);
+      }
+
+      // --- [5] Verify the iterator check result selects the true branch of an if else for a values iterator ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 1);
+        let it: IterableIterator<int> = m.values();
+        let hit: boolean = iteratorProbe.isMapIterator(it);
+        let label: string = '';
+        if (hit) {
+          label = 'iterator';
+        } else {
+          label = 'other';
+        }
+        expect(label).assertEqual('iterator');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_MAP_ITERATOR_4300
+     * @tc.name testTypesIsMapIterator043
+     * @tc.desc Merged batch (2 tests): Program integration: combining key and value iterator verdicts with and yields true and a failed body check or a passing iterator check yields true; the boolean check result drives a switch statement that labels a keys iterator as accepted and the Map body as not.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsMapIterator043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify combining key and value iterator verdicts with and yields true and a failed body check or a passing iterator check yields true ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 1);
+        let keysHit: boolean = iteratorProbe.isMapIterator(m.keys());
+        let valuesHit: boolean = iteratorProbe.isMapIterator(m.values());
+        expect(keysHit && valuesHit).assertTrue();
+        expect(m.size).assertEqual(1);
+        let iteratorProbe_2: util.types = new util.types();
+        let m_2: Map<string, int> = new Map<string, int>();
+        m_2.set('a', 1);
+        let bodyHit: boolean = iteratorProbe_2.isMapIterator(m_2);
+        let keysHit_2: boolean = iteratorProbe_2.isMapIterator(m_2.keys());
+        expect(bodyHit || keysHit_2).assertTrue();
+        expect(bodyHit).assertFalse();
+      }
+
+      // --- [2] Verify the boolean check result drives a switch statement that labels a keys iterator as accepted and the Map body as not ---
+      {
+        let iteratorProbe: util.types = new util.types();
+        let m: Map<string, int> = new Map<string, int>();
+        m.set('a', 1);
+        let it: IterableIterator<string> = m.keys();
+        let kind: string = '';
+        switch (iteratorProbe.isMapIterator(it)) {
+          case true:
+            kind = 'iterator';
+            break;
+          default:
+            kind = 'other';
+            break;
+        }
+        let bodyKind: string = '';
+        switch (iteratorProbe.isMapIterator(m)) {
+          case true:
+            bodyKind = 'iterator';
+            break;
+          default:
+            bodyKind = 'other';
+            break;
+        }
+        expect(kind).assertEqual('iterator');
+        expect(bodyKind).assertEqual('other');
+      }
+    });
+
   });
 }
