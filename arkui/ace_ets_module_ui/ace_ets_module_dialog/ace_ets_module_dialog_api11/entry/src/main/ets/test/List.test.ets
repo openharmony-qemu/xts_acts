@@ -71,6 +71,7 @@ import muneRadiusTest from './MenuTest/muneRadiusTest.test.ets'
 
 import SelectStatusTest from './checkbox/SelectStatus.test'
 import showActionMenuError from './promptActionTest/showActionMenuError.test'
+import coverageTypesTest from './coverage/Dialogcover.test'
 
 export default function testsuite() {
   responseRegionJsunit();
@@ -131,4 +132,5 @@ export default function testsuite() {
   muneRadiusTest()
   SelectStatusTest()
   showActionMenuError()
+  coverageTypesTest()
 }

@@ -72,6 +72,8 @@ import showToast from './promptActionTest/showToast.test';
 import stagePromptTest from './promptActionTest/stagePrompt.test';
 import ToastShowMode from './promptActionTest/ToastShowMode.test';
 
+import CoverageStaticTest from './CoverageTest/Dialogcover.test';
+
 export default function testsuite() {
   openCustomDialog()
   CustomDialogMaskTest()
@@ -125,4 +127,5 @@ export default function testsuite() {
   ResponseRegionJsunit()
   responseTypeJsunit()
   alertDialogCenterStartJsunit()
+  CoverageStaticTest()
 }

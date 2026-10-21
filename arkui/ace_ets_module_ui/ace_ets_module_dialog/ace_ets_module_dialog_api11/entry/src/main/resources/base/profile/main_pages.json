@@ -59,7 +59,8 @@
     "MainAbility/pages/Menu/menuradius",
 
     "MainAbility/pages/checkbox/SelectStatus",
-    "MainAbility/pages/promptAction/showActionMenuError"
+    "MainAbility/pages/promptAction/showActionMenuError",
+    "MainAbility/pages/coverage/Dialogcover"
 
   ]
 }
