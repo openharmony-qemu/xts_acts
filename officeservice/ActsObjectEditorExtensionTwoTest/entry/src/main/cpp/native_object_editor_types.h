@@ -25,10 +25,6 @@
 #include <AbilityKit/ability_runtime/extension_ability.h>
 #include <ContentEmbedKit/content_embed/content_embed_extension.h>
 
-using ErrCode = int32_t;
-constexpr ErrCode ERR_OK = 0;
-constexpr ErrCode ERR_INVALID_VALUE = -1;
-
 struct Context {
 };
 
@@ -67,52 +63,10 @@ struct ContentEmbed_ExtensionInstance : public AbilityRuntime_ExtensionInstance 
     std::unordered_map<std::string, std::shared_ptr<ContentEmbed_Object>> objects;
 };
 
-class RefBase {
-public:
-    virtual ~RefBase() = default;
-    void IncStrongRef(const void *) { ++refCount_; }
-    void DecStrongRef(const void *) { if (--refCount_ == 0) delete this; }
-private:
-    int refCount_ = 0;
-};
-
-template<typename T>
-class sptr {
-public:
-    sptr() : ptr_(nullptr) {}
-    sptr(T *other) : ptr_(other) { if (ptr_) ptr_->IncStrongRef(this); }
-    sptr(const sptr<T> &other) : ptr_(other.ptr_) { if (ptr_) ptr_->IncStrongRef(this); }
-    ~sptr() { if (ptr_) ptr_->DecStrongRef(this); }
-    sptr<T>& operator=(const sptr<T> &other) {
-        if (this != &other) {
-            if (ptr_) ptr_->DecStrongRef(this);
-            ptr_ = other.ptr_;
-            if (ptr_) ptr_->IncStrongRef(this);
-        }
-        return *this;
-    }
-    T* operator->() const { return ptr_; }
-    T& operator*() const { return *ptr_; }
-    explicit operator bool() const { return ptr_ != nullptr; }
-    bool operator==(std::nullptr_t) const { return ptr_ == nullptr; }
-    bool operator!=(std::nullptr_t) const { return ptr_ != nullptr; }
-    T* GetRefPtr() const { return ptr_; }
-private:
-    T *ptr_;
-};
-
-class IObjectEditorClientCallback : public RefBase {
-public:
-    virtual ErrCode OnUpdate(std::unique_ptr<ObjectEditorDocument> &document) = 0;
-    virtual ErrCode OnError(ContentEmbed_ErrorCode error) = 0;
-    virtual ErrCode OnStopEdit(bool dataModified) = 0;
-    virtual ErrCode OnExtensionStopped() = 0;
-};
-
 struct ContentEmbed_Object {
     std::shared_ptr<ContentEmbed_ExtensionInstance> ceInstance = nullptr;
     ContentEmbed_Document *document = nullptr;
-    sptr<IObjectEditorClientCallback> clientCb = nullptr;
+    void* clientCb = nullptr;
     OH_ContentEmbed_Extension_OnWriteToDataStreamFunc onWriteToDataStreamFunc = nullptr;
     OH_ContentEmbed_Extension_OnGetSnapshotFunc onGetSnapshotFunc = nullptr;
     OH_ContentEmbed_Extension_OnDoEditFunc onDoEditFunc = nullptr;

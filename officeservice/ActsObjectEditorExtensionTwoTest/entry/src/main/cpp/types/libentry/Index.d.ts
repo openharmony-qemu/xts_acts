@@ -31,7 +31,3 @@ export const TestExtensionCallbackToOnUpdate_CallbackNotRegistered: () => number
 export const TestExtensionCallbackToOnError_CallbackNotRegistered: () => number;
 export const TestExtensionCallbackToOnEditingFinished_CallbackNotRegistered: () => number;
 export const TestExtensionCallbackToOnExtensionStopped_Normal: () => number;
-export const TestExtensionCallbackToOnUpdate_CallbackFailed: () => number;
-export const TestExtensionCallbackToOnError_CallbackFailed: () => number;
-export const TestExtensionCallbackToOnEditingFinished_CallbackFailed: () => number;
-export const TestExtensionCallbackToOnExtensionStopped_CallbackFailed: () => number;

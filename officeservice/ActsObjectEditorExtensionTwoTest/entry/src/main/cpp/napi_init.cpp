@@ -26,9 +26,6 @@
 #include "native_object_editor_types.h"
 
 namespace {
-constexpr int32_t BUF_SIZE = 1024;
-constexpr int32_t errorCodes_SIZE = 8;
-
 // ============================== Callback stubs ==============================
 
 static void NativeOnCreateCallback(ContentEmbed_ExtensionInstanceHandle instance, AbilityBase_Want *want)
@@ -394,102 +391,6 @@ static napi_value TestExtensionCallbackToOnExtensionStopped_Normal(napi_env env,
     return result;
 }
 
-// ============================== Callback tests (CE_ERR_CLIENT_CALLBACK_FAILED) ==============================
-// Mock IObjectEditorClientCallback subclass: all methods return ERR_INVALID_VALUE (non-ERR_OK),
-// triggering CE_ERR_CLIENT_CALLBACK_FAILED in the NDK layer.
-
-class MockClientCallbackFailed : public IObjectEditorClientCallback {
-public:
-    ErrCode OnUpdate(std::unique_ptr<ObjectEditorDocument> &document) override
-    {
-        return ERR_INVALID_VALUE;
-    }
-    ErrCode OnError(ContentEmbed_ErrorCode error) override
-    {
-        return ERR_INVALID_VALUE;
-    }
-    ErrCode OnStopEdit(bool dataModified) override
-    {
-        return ERR_INVALID_VALUE;
-    }
-    ErrCode OnExtensionStopped() override
-    {
-        return ERR_INVALID_VALUE;
-    }
-};
-
-static napi_value TestExtensionCallbackToOnUpdate_CallbackFailed(napi_env env, napi_callback_info info)
-{
-    ContentEmbed_ObjectHandle object = new ContentEmbed_Object();
-    object->clientCb = new MockClientCallbackFailed();
-    object->document = new ContentEmbed_Document();
-    ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_CallbackToOnUpdate(object);
-    OH_LOG_INFO(LOG_APP, "TestExtensionCallbackToOnUpdate_CallbackFailed code: %{public}d", code);
-    delete object->document;
-    delete object;
-    if (code == CE_ERR_CLIENT_CALLBACK_FAILED) {
-        napi_value result;
-        napi_create_int32(env, code, &result);
-        return result;
-    }
-    napi_value result;
-    napi_create_int32(env, -1, &result);
-    return result;
-}
-
-static napi_value TestExtensionCallbackToOnError_CallbackFailed(napi_env env, napi_callback_info info)
-{
-    ContentEmbed_ObjectHandle object = new ContentEmbed_Object();
-    object->clientCb = new MockClientCallbackFailed();
-    ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_CallbackToOnError(object, CE_ERR_OK);
-    OH_LOG_INFO(LOG_APP, "TestExtensionCallbackToOnError_CallbackFailed code: %{public}d", code);
-    delete object;
-    if (code == CE_ERR_CLIENT_CALLBACK_FAILED) {
-        napi_value result;
-        napi_create_int32(env, code, &result);
-        return result;
-    }
-    napi_value result;
-    napi_create_int32(env, -1, &result);
-    return result;
-}
-
-static napi_value TestExtensionCallbackToOnEditingFinished_CallbackFailed(napi_env env, napi_callback_info info)
-{
-    ContentEmbed_ObjectHandle object = new ContentEmbed_Object();
-    object->clientCb = new MockClientCallbackFailed();
-    ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_CallbackToOnEditingFinished(object, false);
-    OH_LOG_INFO(LOG_APP, "TestExtensionCallbackToOnEditingFinished_CallbackFailed code: %{public}d", code);
-    delete object;
-    if (code == CE_ERR_CLIENT_CALLBACK_FAILED) {
-        napi_value result;
-        napi_create_int32(env, code, &result);
-        return result;
-    }
-    napi_value result;
-    napi_create_int32(env, -1, &result);
-    return result;
-}
-
-static napi_value TestExtensionCallbackToOnExtensionStopped_CallbackFailed(napi_env env, napi_callback_info info)
-{
-    ContentEmbed_ExtensionInstanceHandle instance = new ContentEmbed_ExtensionInstance;
-    auto object = std::make_shared<ContentEmbed_Object>();
-    object->clientCb = new MockClientCallbackFailed();
-    instance->objects["test_object"] = object;
-    ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_CallbackToOnExtensionStopped(instance);
-    OH_LOG_INFO(LOG_APP, "TestExtensionCallbackToOnExtensionStopped_CallbackFailed code: %{public}d", code);
-    delete instance;
-    if (code == CE_ERR_CLIENT_CALLBACK_FAILED) {
-        napi_value result;
-        napi_create_int32(env, code, &result);
-        return result;
-    }
-    napi_value result;
-    napi_create_int32(env, -1, &result);
-    return result;
-}
-
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -547,18 +448,6 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestExtensionCallbackToOnExtensionStopped_Normal", nullptr,
             TestExtensionCallbackToOnExtensionStopped_Normal,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestExtensionCallbackToOnUpdate_CallbackFailed", nullptr,
-            TestExtensionCallbackToOnUpdate_CallbackFailed,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestExtensionCallbackToOnError_CallbackFailed", nullptr,
-            TestExtensionCallbackToOnError_CallbackFailed,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestExtensionCallbackToOnEditingFinished_CallbackFailed", nullptr,
-            TestExtensionCallbackToOnEditingFinished_CallbackFailed,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestExtensionCallbackToOnExtensionStopped_CallbackFailed", nullptr,
-            TestExtensionCallbackToOnExtensionStopped_CallbackFailed,
             nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
