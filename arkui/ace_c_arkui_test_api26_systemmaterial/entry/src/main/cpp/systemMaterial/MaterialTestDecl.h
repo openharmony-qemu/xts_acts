@@ -93,6 +93,26 @@ napi_value TestLineSpacingStyleDestroyNull001(napi_env env, napi_callback_info i
 napi_value TestFontConfigsGetFontWeightConfigsNull001(napi_env env, napi_callback_info info);
 napi_value TestTextControllerDestroyNull001(napi_env env, napi_callback_info info);
 
+napi_value TestLinearGradientBlurCreateDestroy001(napi_env env, napi_callback_info info);
+napi_value TestLinearGradientBlurDestroyNull002(napi_env env, napi_callback_info info);
+napi_value TestLinearGradientBlurSetGetRadius003(napi_env env, napi_callback_info info);
+napi_value TestLinearGradientBlurGetRadiusDefault004(napi_env env, napi_callback_info info);
+napi_value TestLinearGradientBlurSetRadiusZero005(napi_env env, napi_callback_info info);
+napi_value TestLinearGradientBlurSetRadiusLarge006(napi_env env, napi_callback_info info);
+napi_value TestLinearGradientBlurSetRadiusNull007(napi_env env, napi_callback_info info);
+napi_value TestLinearGradientBlurGetRadiusNull008(napi_env env, napi_callback_info info);
+napi_value TestLinearGradientBlurSetGetFractionStops009(napi_env env, napi_callback_info info);
+napi_value TestLinearGradientBlurSetFractionStopsCustom010(napi_env env, napi_callback_info info);
+napi_value TestLinearGradientBlurSetFractionStopsNull011(napi_env env, napi_callback_info info);
+napi_value TestLinearGradientBlurGetFractionStopsNull012(napi_env env, napi_callback_info info);
+napi_value TestLinearGradientBlurSetGetDirection013(napi_env env, napi_callback_info info);
+napi_value TestLinearGradientBlurDirectionEnum014(napi_env env, napi_callback_info info);
+napi_value TestLinearGradientBlurSetDirectionNull015(napi_env env, napi_callback_info info);
+napi_value TestLinearGradientBlurGetDirectionNull016(napi_env env, napi_callback_info info);
+napi_value TestLinearGradientBlurGetDefaultDirection017(napi_env env, napi_callback_info info);
+napi_value TestLinearGradientBlurGetDefaultFractionStops018(napi_env env, napi_callback_info info);
+napi_value TestLinearGradientBlurUpdateAllParams019(napi_env env, napi_callback_info info);
+
 } // namespace ArkUICapiTest
 
 #endif

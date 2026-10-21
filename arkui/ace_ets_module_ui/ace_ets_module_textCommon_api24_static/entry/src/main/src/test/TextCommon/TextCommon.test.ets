@@ -175,6 +175,7 @@ export default function TextCommonTest(): void {
     it('SUB_ArkUI_TextCommon_Text_Content_Align_TOP_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
+        await Utils.sleep(500);
         await findAndClickById(d, `${PFX}_btn_enum_TEXT_CONTENT_ALIGN_TOP`);
         await Utils.sleep(SLEEP);
         expect(AppStorage.get<string>(`${PFX}_enum_TEXT_CONTENT_ALIGN_TOP`)).assertEqual('true');
@@ -197,6 +198,7 @@ export default function TextCommonTest(): void {
     it('SUB_ArkUI_TextCommon_Text_Content_Align_CENTER_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
+        await Utils.sleep(500);
         await findAndClickById(d, `${PFX}_btn_enum_TEXT_CONTENT_ALIGN_CENTER`);
         await Utils.sleep(SLEEP);
         expect(AppStorage.get<string>(`${PFX}_enum_TEXT_CONTENT_ALIGN_CENTER`)).assertEqual('true');
@@ -219,6 +221,7 @@ export default function TextCommonTest(): void {
     it('SUB_ArkUI_TextCommon_Text_Content_Align_BOTTOM_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
+        await Utils.sleep(500);
         await findAndClickById(d, `${PFX}_btn_enum_TEXT_CONTENT_ALIGN_BOTTOM`);
         await Utils.sleep(SLEEP);
         expect(AppStorage.get<string>(`${PFX}_enum_TEXT_CONTENT_ALIGN_BOTTOM`)).assertEqual('true');
@@ -241,6 +244,7 @@ export default function TextCommonTest(): void {
     it('SUB_ArkUI_TextCommon_Flip_Direction_DOWN_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
+        await Utils.sleep(500);
         await findAndClickById(d, `${PFX}_btn_enum_FLIP_DIRECTION_DOWN`);
         await Utils.sleep(SLEEP);
         expect(AppStorage.get<string>(`${PFX}_enum_FLIP_DIRECTION_DOWN`)).assertEqual('true');
@@ -263,6 +267,7 @@ export default function TextCommonTest(): void {
     it('SUB_ArkUI_TextCommon_Flip_Direction_UP_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
+        await Utils.sleep(500);
         await findAndClickById(d, `${PFX}_btn_enum_FLIP_DIRECTION_UP`);
         await Utils.sleep(SLEEP);
         expect(AppStorage.get<string>(`${PFX}_enum_FLIP_DIRECTION_UP`)).assertEqual('true');
@@ -285,6 +290,7 @@ export default function TextCommonTest(): void {
     it('SUB_ArkUI_TextCommon_Superscript_Style_NORMAL_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
+        await Utils.sleep(500);
         await findAndClickById(d, `${PFX}_btn_enum_SUPERSCRIPT_STYLE_NORMAL`);
         await Utils.sleep(SLEEP);
         expect(AppStorage.get<string>(`${PFX}_enum_SUPERSCRIPT_STYLE_NORMAL`)).assertEqual('true');
@@ -307,6 +313,7 @@ export default function TextCommonTest(): void {
     it('SUB_ArkUI_TextCommon_Superscript_Style_SUPERSCRIPT_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
+        await Utils.sleep(500);
         await findAndClickById(d, `${PFX}_btn_enum_SUPERSCRIPT_STYLE_SUPERSCRIPT`);
         await Utils.sleep(SLEEP);
         expect(AppStorage.get<string>(`${PFX}_enum_SUPERSCRIPT_STYLE_SUPERSCRIPT`)).assertEqual('true');
@@ -329,6 +336,7 @@ export default function TextCommonTest(): void {
     it('SUB_ArkUI_TextCommon_Superscript_Style_SUBSCRIPT_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
+        await Utils.sleep(500);
         await findAndClickById(d, `${PFX}_btn_enum_SUPERSCRIPT_STYLE_SUBSCRIPT`);
         await Utils.sleep(SLEEP);
         expect(AppStorage.get<string>(`${PFX}_enum_SUPERSCRIPT_STYLE_SUBSCRIPT`)).assertEqual('true');
@@ -351,6 +359,7 @@ export default function TextCommonTest(): void {
     it('SUB_ArkUI_TextCommon_Text_Vertical_Align_BASELINE_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
+        await Utils.sleep(500);
         await findAndClickById(d, `${PFX}_btn_enum_TEXT_VERTICAL_ALIGN_BASELINE`);
         await Utils.sleep(SLEEP);
         expect(AppStorage.get<string>(`${PFX}_enum_TEXT_VERTICAL_ALIGN_BASELINE`)).assertEqual('true');
@@ -373,6 +382,7 @@ export default function TextCommonTest(): void {
     it('SUB_ArkUI_TextCommon_Text_Vertical_Align_BOTTOM_1000', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
+        await Utils.sleep(500);
         await findAndClickById(d, `${PFX}_btn_enum_TEXT_VERTICAL_ALIGN_BOTTOM`);
         await Utils.sleep(SLEEP);
         expect(AppStorage.get<string>(`${PFX}_enum_TEXT_VERTICAL_ALIGN_BOTTOM`)).assertEqual('true');
@@ -395,6 +405,7 @@ export default function TextCommonTest(): void {
     it('SUB_ArkUI_TextCommon_Text_Vertical_Align_CENTER_1100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
+        await Utils.sleep(500);
         await findAndClickById(d, `${PFX}_btn_enum_TEXT_VERTICAL_ALIGN_CENTER`);
         await Utils.sleep(SLEEP);
         expect(AppStorage.get<string>(`${PFX}_enum_TEXT_VERTICAL_ALIGN_CENTER`)).assertEqual('true');
@@ -417,6 +428,7 @@ export default function TextCommonTest(): void {
     it('SUB_ArkUI_TextCommon_Text_Vertical_Align_TOP_1200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
+        await Utils.sleep(500);
         await findAndClickById(d, `${PFX}_btn_enum_TEXT_VERTICAL_ALIGN_TOP`);
         await Utils.sleep(SLEEP);
         expect(AppStorage.get<string>(`${PFX}_enum_TEXT_VERTICAL_ALIGN_TOP`)).assertEqual('true');
@@ -439,6 +451,7 @@ export default function TextCommonTest(): void {
     it('SUB_ArkUI_TextCommon_Text_Data_Detector_Config_Enable_Preview_Menu_1300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
+        await Utils.sleep(500);
         await findAndClickById(d, `${PFX}_btn_enablePreviewMenu`);
         await Utils.sleep(SLEEP);
         expect(AppStorage.get<string>(`${PFX}_enablePreviewMenu_ok`)).assertEqual('true');
@@ -461,6 +474,7 @@ export default function TextCommonTest(): void {
     it('SUB_ArkUI_TextCommon_Layout_Manager_Get_Character_Position_At_Coordinate_1400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
+        await Utils.sleep(500);
         await findAndClickById(d, `${PFX}_btn_m_getCharacterPositionAtCoordinate`);
         await Utils.sleep(SLEEP);
         await Utils.sleep(SLEEP);
@@ -485,6 +499,7 @@ export default function TextCommonTest(): void {
     it('SUB_ArkUI_TextCommon_Layout_Manager_Get_Glyph_Range_For_Character_Range_1500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
+        await Utils.sleep(500);
         await findAndClickById(d, `${PFX}_btn_m_getGlyphRangeForCharacterRange`);
         await Utils.sleep(SLEEP);
         await Utils.sleep(SLEEP);
@@ -509,6 +524,7 @@ export default function TextCommonTest(): void {
     it('SUB_ArkUI_TextCommon_Layout_Manager_Get_Character_Range_For_Glyph_Range_1600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
+        await Utils.sleep(500);
         await findAndClickById(d, `${PFX}_btn_m_getCharacterRangeForGlyphRange`);
         await Utils.sleep(SLEEP);
         await Utils.sleep(SLEEP);
@@ -533,6 +549,7 @@ export default function TextCommonTest(): void {
     it('SUB_ArkUI_TextCommon_Edit_Menu_Options_On_Prepare_Menu_1700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
+        await Utils.sleep(500);
         await findAndClickById(d, `${PFX}_btn_onPrepareMenu_invoke`);
         await Utils.sleep(SLEEP);
         expect(AppStorage.get<string>(`${PFX}_onPrepareMenu_ok`)).assertEqual('true');
@@ -555,6 +572,7 @@ export default function TextCommonTest(): void {
     it('SUB_ArkUI_TextCommon_Decoration_Style_Result_Thickness_Scale_1800', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
+        await Utils.sleep(500);
         await findAndClickById(d, `${PFX}_btn_decoration_thicknessScale`);
         await Utils.sleep(SLEEP);
         const v = AppStorage.get<string>(`${PFX}_decoration_thicknessScale`);
@@ -578,6 +596,7 @@ export default function TextCommonTest(): void {
     it('SUB_ArkUI_TextCommon_Linear_Gradient_Options_Colors_1900', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
+        await Utils.sleep(500);
         await findAndClickById(d, `${PFX}_btn_linear_gradient_options`);
         await Utils.sleep(SLEEP);
         expect(AppStorage.get<string>(`${PFX}_linear_gradient_options_ok`)).assertEqual('true');
@@ -600,6 +619,7 @@ export default function TextCommonTest(): void {
     it('SUB_ArkUI_TextCommon_Radial_Gradient_Options_Radius_2000', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
+        await Utils.sleep(500);
         await findAndClickById(d, `${PFX}_btn_radial_gradient_options`);
         await Utils.sleep(SLEEP);
         expect(AppStorage.get<string>(`${PFX}_radial_gradient_options_ok`)).assertEqual('true');
@@ -622,6 +642,7 @@ export default function TextCommonTest(): void {
     it('SUB_ArkUI_TextCommon_Numeric_Text_Transition_Options_Flip_And_Blur_2100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
+        await Utils.sleep(500);
         await findAndClickById(d, `${PFX}_btn_numeric_transition_options`);
         await Utils.sleep(SLEEP);
         expect(AppStorage.get<string>(`${PFX}_numeric_transition_options_ok`)).assertEqual('true');
@@ -644,6 +665,7 @@ export default function TextCommonTest(): void {
     it('SUB_ArkUI_TextCommon_Numeric_Text_Transition_Options_Flip_Direction_2200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
+        await Utils.sleep(500);
         await findAndClickById(d, `${PFX}_btn_nto_flip`);
         await Utils.sleep(SLEEP);
         expect(AppStorage.get<string>(`${PFX}_nto_flip_ok`)).assertEqual('true');
@@ -666,6 +688,7 @@ export default function TextCommonTest(): void {
     it('SUB_ArkUI_TextCommon_Numeric_Text_Transition_Options_Enable_Blur_2300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
+        await Utils.sleep(500);
         await findAndClickById(d, `${PFX}_btn_nto_blur`);
         await Utils.sleep(SLEEP);
         expect(AppStorage.get<string>(`${PFX}_nto_blur_ok`)).assertEqual('true');
@@ -688,6 +711,7 @@ export default function TextCommonTest(): void {
     it('SUB_ArkUI_TextCommon_Numeric_Text_Transition_Flip_Direction_2400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
+        await Utils.sleep(500);
         await findAndClickById(d, `${PFX}_btn_nt_inst_flip`);
         await Utils.sleep(SLEEP);
         expect(AppStorage.get<string>(`${PFX}_nt_inst_flip_ok`)).assertEqual('true');
@@ -710,6 +734,7 @@ export default function TextCommonTest(): void {
     it('SUB_ArkUI_TextCommon_Numeric_Text_Transition_Enable_Blur_2500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
+        await Utils.sleep(500);
         await findAndClickById(d, `${PFX}_btn_nt_inst_blur`);
         await Utils.sleep(SLEEP);
         expect(AppStorage.get<string>(`${PFX}_nt_inst_blur_ok`)).assertEqual('true');
@@ -733,6 +758,7 @@ export default function TextCommonTest(): void {
     it('SUB_ArkUI_TextCommon_Text_Layout_Options_Constraint_Width_2600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
+        await Utils.sleep(500);
         await findAndClickById(d, `${PFX}_btn_text_layout_options`);
         await Utils.sleep(SLEEP);
         expect(AppStorage.get<string>(`${PFX}_text_layout_options_ok`)).assertEqual('true');
@@ -755,6 +781,7 @@ export default function TextCommonTest(): void {
     it('SUB_ArkUI_TextCommon_IME_Client_Node_Id_2700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
+        await Utils.sleep(500);
         await findAndClickById(d, `${PFX}_textinput_ime`);
         await Utils.sleep(IME_ATTACH_WAIT_MS);
         const nodeId = AppStorage.get<string>(`${PFX}_ime_nodeId`);
@@ -782,6 +809,7 @@ export default function TextCommonTest(): void {
     it('SUB_ArkUI_TextCommon_IME_Client_Set_Extra_Config_2800', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
+        await Utils.sleep(500);
         await findAndClickById(d, `${PFX}_textinput_ime`);
         await Utils.sleep(IME_ATTACH_WAIT_MS);
         expect(AppStorage.get<string>(`${PFX}_ime_cfg_ok`)).assertEqual('true');
@@ -805,6 +833,7 @@ export default function TextCommonTest(): void {
     it('SUB_ArkUI_TextCommon_ColorSHaderStyle_Color_2900', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
+        await Utils.sleep(500);
         await findAndClickById(d, `${PFX}_btn_color_shader_color`);
         await Utils.sleep(SLEEP);
         const v = AppStorage.get<string>(`${PFX}_color_shader_color_ok`);

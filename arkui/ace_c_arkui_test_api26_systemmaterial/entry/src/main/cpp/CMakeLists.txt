@@ -21,6 +21,7 @@ add_library(nativefunc SHARED
     systemMaterial/CustomDialogDisplayModeTest.cpp
     systemMaterial/CustomDialogOpenCallbackTest.cpp
     systemMaterial/NodeSystemMaterialTest.cpp
+    systemMaterial/LinearGradientBlurOptionsTest.cpp
 )
 
 set(_OHOS_NATIVE_TAG_PART_A "nd")

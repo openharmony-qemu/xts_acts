@@ -20,6 +20,7 @@ import api16CertFuncTestUnit from './api16CertFunc.test';
 import api16CertFuncTestTwoUnit from './api16CertFuncTwo.test';
 import certManagerPubCertJsAPIFunctionTestUnitTwo from './pubCertFuncTwo.test';
 import certManagerPubCertJsAPIFunctionTestUnitThree from './pubCertFuncThree.test';
+import api26CertFuncTestUnit from './Api26CertFunc.test';
 
 export default function testsuite() {
   certManagerPubCertJsAPIFunctionTestUnitThree();
@@ -29,4 +30,5 @@ export default function testsuite() {
   api16CertFuncTestTwoUnit();
   api16CertFuncTestUnit();
   certManagerPubCertJsAPIFunctionTestUnitTwo();
+  api26CertFuncTestUnit();
 }

@@ -432,13 +432,13 @@ export default function getGlobalHandleCountTest() {
         let refed: boolean = testNapi.refNapiRefs(WEAK_NAPI_REF_COUNT);
         expect(refed).assertTrue();
         let afterRef: number = util.ArkTSVM.getGlobalHandleCount();
-        console.info(`${TAG} afterRef: ${afterRef}`);
-        expect(afterRef - before >= WEAK_NAPI_REF_COUNT).assertTrue();
+        console.info(`${TAG} afterWeakCreate: ${afterWeakCreate}, afterRef: ${afterRef}`);
+        expect(afterRef - afterWeakCreate >= WEAK_NAPI_REF_COUNT).assertTrue();
         let unrefed: boolean = testNapi.unrefNapiRefs(WEAK_NAPI_REF_COUNT);
         expect(unrefed).assertTrue();
         let afterUnref: number = util.ArkTSVM.getGlobalHandleCount();
-        console.info(`${TAG} afterUnref: ${afterUnref}`);
-        expect(afterUnref - before < WEAK_NAPI_REF_COUNT).assertTrue();
+        console.info(`${TAG} afterRef: ${afterRef}, afterUnref: ${afterUnref}`);
+        expect(afterUnref < afterRef).assertTrue();
         let deleted: boolean = testNapi.deleteNapiRefs(WEAK_NAPI_REF_COUNT);
         expect(deleted).assertTrue();
       } catch (err) {

@@ -38,7 +38,7 @@ export default function SparseArrayFindIndexTest(): void {
      * @tc.desc Test SparseArray.findIndex, verify method result (index equals 0)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFindIndex001', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(6);
@@ -54,7 +54,7 @@ export default function SparseArrayFindIndexTest(): void {
      * @tc.desc Test SparseArray.findIndex, verify method result (index equals 1)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFindIndex002', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(4, 5, 3);
@@ -69,7 +69,7 @@ export default function SparseArrayFindIndexTest(): void {
      * @tc.desc Test SparseArray.findIndex, verify method result (index equals -1)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFindIndex003', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(6);
@@ -87,7 +87,7 @@ export default function SparseArrayFindIndexTest(): void {
      * @tc.desc Test SparseArray.findIndex, verify method result (index equals -1)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFindIndex004', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>();
@@ -102,7 +102,7 @@ export default function SparseArrayFindIndexTest(): void {
      * @tc.desc Test SparseArray.find Index error path, verify expected exception is thrown (assertFail is triggered, error.name equals "Error")
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFindIndex005', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         try {
@@ -126,7 +126,7 @@ export default function SparseArrayFindIndexTest(): void {
      * @tc.desc Test SparseArray.findIndex, verify method result (index equals 0)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFindIndex006', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(6);
@@ -143,7 +143,7 @@ export default function SparseArrayFindIndexTest(): void {
      * @tc.desc Test SparseArray.findIndex, verify method result (index equals 4)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFindIndex007', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(6);
@@ -161,7 +161,7 @@ export default function SparseArrayFindIndexTest(): void {
      * @tc.desc Test SparseArray.findIndex, verify method result (index equals 0)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFindIndex008', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(6);
@@ -179,7 +179,7 @@ export default function SparseArrayFindIndexTest(): void {
      * @tc.desc Test SparseArray.findIndex, verify method result (index equals 1)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFindIndex009', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<string>(4);
@@ -197,7 +197,7 @@ export default function SparseArrayFindIndexTest(): void {
      * @tc.desc Test SparseArray.findIndex, verify method result (index equals 0)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFindIndex010', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(4);
@@ -215,7 +215,7 @@ export default function SparseArrayFindIndexTest(): void {
      * @tc.desc Test SparseArray.findIndex, verify method result (index equals 1)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFindIndex011', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(4);
@@ -233,7 +233,7 @@ export default function SparseArrayFindIndexTest(): void {
      * @tc.desc Test SparseArray.findIndex, verify method result (index equals 0)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFindIndex012', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(4);
@@ -251,7 +251,7 @@ export default function SparseArrayFindIndexTest(): void {
      * @tc.desc Test SparseArray.findIndex, verify method result (index equals 2)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFindIndex013', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(4);
@@ -269,7 +269,7 @@ export default function SparseArrayFindIndexTest(): void {
      * @tc.desc Test SparseArray.findIndex, verify method result (index equals 0)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFindIndex014', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(4);
@@ -287,7 +287,7 @@ export default function SparseArrayFindIndexTest(): void {
      * @tc.desc Sparse findIndex v>20 returns index 2 and callback invoked twice before match
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFindIndex015', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(6);
@@ -310,7 +310,7 @@ export default function SparseArrayFindIndexTest(): void {
      * @tc.desc Test SparseArray.findIndex, verify method result (index equals 2)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFindIndex016', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(2, 4, 4);
@@ -325,7 +325,7 @@ export default function SparseArrayFindIndexTest(): void {
      * @tc.desc Test SparseArray.findIndex, verify method result (index equals 9)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFindIndex017', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10);
@@ -342,7 +342,7 @@ export default function SparseArrayFindIndexTest(): void {
      * @tc.desc findIndex on SparseArray<long> finds index of element above threshold
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFindIndex018', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<long>(1 as long, 10000000000 as long, 3 as long);
@@ -357,7 +357,7 @@ export default function SparseArrayFindIndexTest(): void {
      * @tc.desc findIndex locates null element in SparseArray<int|null>
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFindIndex019', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int | null>(1, null, 3);
@@ -371,7 +371,7 @@ export default function SparseArrayFindIndexTest(): void {
      * @tc.desc findIndex locates undefined element in SparseArray<int|undefined>
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFindIndex020', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int | undefined>(1, undefined, 3);
@@ -385,7 +385,7 @@ export default function SparseArrayFindIndexTest(): void {
      * @tc.desc findIndex locates XSS script string element
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFindIndex021', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const xss = "<script>alert(1)</script>";
@@ -400,7 +400,7 @@ export default function SparseArrayFindIndexTest(): void {
      * @tc.desc findIndex locates binary literal element 0b1010
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFindIndex022', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 0b1010, 3);
@@ -414,7 +414,7 @@ export default function SparseArrayFindIndexTest(): void {
      * @tc.desc Test SparseArray.findIndex error path, verify expected exception is thrown (assertFail is triggered, error.name equals "ClassCastError")
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFindIndex023', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -432,7 +432,7 @@ export default function SparseArrayFindIndexTest(): void {
      * @tc.desc Test SparseArray.findIndex error path, verify expected exception is thrown (assertFail is triggered, error.name equals "ClassCastError")
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFindIndex024', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -450,7 +450,7 @@ export default function SparseArrayFindIndexTest(): void {
      * @tc.desc findIndex locates false element in sparse SparseArray<boolean>
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFindIndex025', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<boolean>(5);
@@ -466,7 +466,7 @@ export default function SparseArrayFindIndexTest(): void {
      * @tc.desc findIndex locates char element after sparse hole
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFindIndex026', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<char>(4);
@@ -482,7 +482,7 @@ export default function SparseArrayFindIndexTest(): void {
      * @tc.desc findIndex callback receives updated sparse array length for high index
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFindIndex027', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<string>();
@@ -500,7 +500,7 @@ export default function SparseArrayFindIndexTest(): void {
      * @tc.desc findIndex skips holes and only invokes predicate for assigned sparse slots
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayFindIndex028', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(8);

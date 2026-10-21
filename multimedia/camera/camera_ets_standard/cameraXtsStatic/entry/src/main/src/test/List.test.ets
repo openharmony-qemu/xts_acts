@@ -14,6 +14,7 @@ import ApertureQueryGetSupportedPhysicalAperturesTest
 import PhotoOutputTest from "./CameraOutput/PhotoOutput.test";
 import CameraPhotoSessionMetadata from "./cameraPhotoSession/CameraPhotoSessionMetadata.test";
 import ManualFocusQueryTest from "./Camera/ManualFocusQuery.test";
+import { cameraPickerTest } from "./ExposureMeteringMode/CameraPicker.test";
 import ExposureMeteringModeStaticTest from "./ExposureMeteringMode/AutoExposureMeteringMode.test";
 
 export default function testsuite() {
@@ -31,5 +32,6 @@ export default function testsuite() {
   PhotoOutputTest();
   CameraPhotoSessionMetadata();
   ManualFocusQueryTest();
+  cameraPickerTest();
   ExposureMeteringModeStaticTest();
 }

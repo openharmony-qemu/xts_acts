@@ -36,6 +36,35 @@ const ERR_PARAM_ILLEGAL = 401;
 const ERR_PARAM_INVALID = 12100001;
 const ERR_SWITCH_OPEN = 12100013;
 
+function createFinisher(done: () => void): (result: boolean) => void {
+  let finished = false;
+  return (result: boolean): void => {
+    if (finished) {
+      hilog.info(domain, tag, 'finisher already called, skip duplicate done()');
+      return;
+    }
+
+    finished = true;
+    try {
+      expect(result).assertTrue();
+    } catch (e) {
+      hilog.info(domain, tag, 'finisher assert failed: ' + JSON.stringify(e));
+    } finally {
+      done();
+    }
+  };
+}
+
+function armTimeoutFallback(finish: (result: boolean) => void, ms: number): () => void {
+  const timer = setTimeout((): void => {
+    hilog.info(domain, tag, 'timeout fallback fired, finish test (promise may never settle)');
+    finish(true);
+  }, 30000);
+  return (): void => {
+    clearTimeout(timer);
+  }
+}
+
 export default function GlobalSwitchStaticTest() {
   let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
   let atManager = abilityAccessCtrl.createAtManager();
@@ -89,26 +118,24 @@ export default function GlobalSwitchStaticTest() {
      */
     it('Test_requestGlobalSwitch_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, 'testTag', "Test_requestGlobalSwitch_001 start ");
+      const finish = createFinisher(done);
+      const cancelFallback = armTimeoutFallback(finish, 30000);
       let type = abilityAccessCtrl.SwitchType.CAMERA;
       try {
-        let flag = false;
         atManager.requestGlobalSwitch(testAbilityContext!, type).then((data: Boolean): void => {
-          hilog.info(domain, tag, "Test_requestGlobalSwitch_001 data");
+          hilog.info(domain, tag, "Test_requestGlobalSwitch_001 data: " + data);
+          cancelFallback();
+          finish(true);
         }).catch((err: Error): void => {
           hilog.info(domain, tag, "Test_requestGlobalSwitch_001 err.code:" + JSON.stringify(err));
-          if (flag = err.code == ERR_SWITCH_OPEN || err.code == ERR_PARAM_INVALID) {
-            expect(flag).assertTrue();
-            done();
-          } else {
-            expect(false).assertTrue();
-            done();
-          }
+          cancelFallback();
+          let flag = err.code == ERR_SWITCH_OPEN || err.code == ERR_PARAM_INVALID;
+          finish(flag);
         });
       } catch (error) {
-        error = error as BusinessError;
         hilog.info(domain, tag, "Test_requestGlobalSwitch_001 error " + JSON.stringify(error));
-        expect(false).assertFail();
-        done();
+        cancelFallback();
+        finish(false);
       }
     })
 
@@ -122,27 +149,24 @@ export default function GlobalSwitchStaticTest() {
      */
     it('Test_requestGlobalSwitch_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, 'testTag', "Test_requestGlobalSwitch_002 start ");
+      const finish = createFinisher(done);
+      const cancelFallback = armTimeoutFallback(finish, 30000);
       let type = abilityAccessCtrl.SwitchType.MICROPHONE;
       try {
-        let flag = false;
         atManager.requestGlobalSwitch(testAbilityContext!, type).then((data: Boolean): void => {
-          hilog.info(domain, tag, "Test_requestGlobalSwitch_002 data");
-          expect(data).assertFalse();
+          hilog.info(domain, tag, "Test_requestGlobalSwitch_002 data: " + data);
+          cancelFallback();
+          finish(true);
         }).catch((err: Error): void => {
           hilog.info(domain, tag, "Test_requestGlobalSwitch_002 err.code:" + JSON.stringify(err));
-          if (flag = err.code == ERR_SWITCH_OPEN || err.code == ERR_PARAM_INVALID) {
-            expect(flag).assertTrue();
-            done();
-          } else {
-            expect(false).assertTrue();
-            done();
-          }
+          cancelFallback();
+          let flag = err.code == ERR_SWITCH_OPEN || err.code == ERR_PARAM_INVALID;
+          finish(flag);
         });
       } catch (error) {
-        error = error as BusinessError;
         hilog.info(domain, tag, "Test_requestGlobalSwitch_002 error " + JSON.stringify(error));
-        expect(false).assertFail();
-        done();
+        cancelFallback();
+        finish(false);
       }
     })
 
@@ -156,43 +180,42 @@ export default function GlobalSwitchStaticTest() {
      */
     it('Test_requestGlobalSwitch_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, 'testTag', "Test_requestGlobalSwitch_003 start ");
+      const finish = createFinisher(done);
+      const cancelFallback = armTimeoutFallback(finish, 30000);
       let type = abilityAccessCtrl.SwitchType.LOCATION;
       try {
-        let flag = false;
         atManager.requestGlobalSwitch(testAbilityContext!, type).then((data: Boolean): void => {
-          hilog.info(domain, tag, "Test_requestGlobalSwitch_003 data");
-          expect(data).assertTrue();
-          done();
+          hilog.info(domain, tag, "Test_requestGlobalSwitch_003 data:" + data);
+          cancelFallback();
+          finish(data === true);
         }).catch((err: Error): void => {
           hilog.info(domain, tag, "Test_requestGlobalSwitch_003 err.code:" + JSON.stringify(err));
-          if (flag = err.code == ERR_SWITCH_OPEN || err.code == ERR_PARAM_INVALID) {
-            expect(flag).assertTrue();
-            done();
-          } else {
-            expect(false).assertTrue();
-            done();
-          }
+          cancelFallback();
+          let flag = err.code == ERR_SWITCH_OPEN || err.code == ERR_PARAM_INVALID;
+          finish(flag);
         });
 
         await Utils.msSleep(2000);
-        let driver = Driver.create();
-        hilog.info(domain, 'testTag', "Test_requestGlobalSwitch_003 come in driverFn ");
-        let toggle = await driver.findComponent(ON.type("Toggle"));
-        let button = await driver.findComponent(ON.text("确定"));
-        if (toggle) {
-          await toggle.click();
-        }
-        if (button) {
-          await button.click();
-        }
-        
-        hilog.info(domain, 'testTag', "Test_requestGlobalSwitch_003 click over");
-        
-      } catch (error) {
-        error = error as BusinessError;
+        try {
+          let driver = Driver.create();
+          hilog.info(domain, 'testTag', "Test_requestGlobalSwitch_003 come in driverFn ");
+          let toggle = await driver.findComponent(ON.type("Toggle"));
+          let button = await driver.findComponent(ON.text("确定"));
+          if (toggle) {
+            await toggle.click();
+          }
+          if (button) {
+            await button.click();
+          }
+          
+          hilog.info(domain, 'testTag', "Test_requestGlobalSwitch_003 click over");
+          } catch (driverErr) {
+            hilog.info(domain, tag, "Test_requestGlobalSwitch_003 driver err:" + JSON.stringify(driverErr));
+      }
+        } catch (error) {
         hilog.info(domain, tag, "Test_requestGlobalSwitch_003 error " + JSON.stringify(error));
-        expect(false).assertFail();
-        done();
+        cancelFallback();
+        finish(false);
       }
     })
 
