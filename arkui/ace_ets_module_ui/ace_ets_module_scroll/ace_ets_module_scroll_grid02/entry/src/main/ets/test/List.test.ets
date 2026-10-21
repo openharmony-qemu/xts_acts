@@ -32,7 +32,7 @@ import setGridEvent from './Grid/setGridEvent.test';
 import LazyVGridLayout from './LazyVGridLayout/LazyVGridLayout.test';
 import barMarginGrid from './Grid/barMarginGrid.test';
 import canOverGrid from './Grid/canOverGrid.test';
-import gridScrollWithMouse from './Grid/gridScrollWithMouse.test';
+import gridScrollWithMouse from './Grid/GridScrollWithMouse.test';
 import gridStopDrag from './Grid/gridStopDrag.test';
 import syncLoadGrid from './Grid/syncLoadGrid.test';
 import ModifierDraggingFling from './Grid/ModifierDraggingFling.test';
