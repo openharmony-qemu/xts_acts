@@ -1356,5 +1356,798 @@ export default function typesIsDateTest(): void {
       }
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_DATE_2100
+     * @tc.name testTypesIsDate021
+     * @tc.desc Merged batch (5 tests): State preservation and aliasing: the timestamp change produced by setTime equals the requested delta in milliseconds; a copied Date keeps its own timestamp after mutation while an alias mirrors the source change; a Date kept in a variable stays a Date after its array slot is overwritten with a number; repeated evaluation of the same isDate expression stays stable across three rounds; a Date element of an array keeps its timestamp after isDate returns true.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsDate021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify the timestamp change produced by setTime equals the requested delta in milliseconds ---
+      {
+        let dateProbe: util.types = new util.types();
+        let d: Date = new Date(0);
+        let before: double = d.getTime();
+        d.setTime(2500);
+        expect(dateProbe.isDate(d)).assertTrue();
+        expect(d.getTime() - before).assertEqual(2500);
+      }
+
+      // --- [2] Verify a copied Date keeps its own timestamp after mutation while an alias mirrors the source change ---
+      {
+        let dateProbe: util.types = new util.types();
+        let source: Date = new Date(1000);
+        let copy: Date = copyDate(source);
+        let alias: Date = source;
+        copy.setTime(9000);
+        alias.setTime(42);
+        expect(dateProbe.isDate(copy)).assertTrue();
+        expect(dateProbe.isDate(alias)).assertTrue();
+        expect(copy.getTime()).assertEqual(9000);
+        expect(source.getTime()).assertEqual(42);
+        expect(alias.getTime()).assertEqual(42);
+      }
+
+      // --- [3] Verify a Date kept in a variable stays a Date after its array slot is overwritten with a number ---
+      {
+        let dateProbe: util.types = new util.types();
+        let cells: Object[] = [new Date(0)];
+        let kept: Object = cells[0];
+        cells[0] = 5;
+        expect(dateProbe.isDate(kept)).assertTrue();
+        expect(dateProbe.isDate(cells[0])).assertFalse();
+        expect(cells.length).assertEqual(1);
+      }
+
+      // --- [4] Verify repeated evaluation of the same isDate expression stays stable across three rounds ---
+      {
+        let dateProbe: util.types = new util.types();
+        let d: Date = new Date(0);
+        let confirmations: int = 0;
+        for (let round: int = 0; round < 3; round++) {
+          if (dateProbe.isDate(d)) {
+            confirmations = confirmations + 1;
+          }
+        }
+        expect(confirmations).assertEqual(3);
+        expect(dateProbe.isDate(d)).assertTrue();
+      }
+
+      // --- [5] Verify a Date element of an array keeps its timestamp after isDate returns true ---
+      {
+        let dateProbe: util.types = new util.types();
+        let list: Date[] = [new Date(0), new Date(1)];
+        expect(dateProbe.isDate(list[1])).assertTrue();
+        expect(list[1].getTime()).assertEqual(1);
+        expect(list.length).assertEqual(2);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_DATE_2200
+     * @tc.name testTypesIsDate022
+     * @tc.desc Merged batch (5 tests): State preservation and aliasing: a Set keeps all three of its Date members after isDate inspects one of them; a Map keyed by a Date keeps its entry after isDate inspects that key; and a Date keeps its timestamp after isDate returns true; isDate stays true for both Dates retained after their Set is cleared; isDate leaves the aliased byte of a subarray view and its backing buffer intact; an array filter driven by isDate keeps exactly the two Date elements.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsDate022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify a Set keeps all three of its Date members after isDate inspects one of them ---
+      {
+        let dateProbe: util.types = new util.types();
+        let marks: Set<Date> = new Set<Date>();
+        marks.add(new Date(0));
+        marks.add(new Date(1));
+        let member: Date = new Date(2);
+        marks.add(member);
+        expect(dateProbe.isDate(member)).assertTrue();
+        expect(marks.size).assertEqual(3);
+      }
+
+      // --- [2] Verify a Map keyed by a Date keeps its entry after isDate inspects that key; and a Date keeps its timestamp after isDate returns true ---
+      {
+        let dateProbe: util.types = new util.types();
+        let key: Date = new Date(0);
+        let bag: Map<Date, string> = new Map<Date, string>();
+        bag.set(key, 'epoch');
+        expect(dateProbe.isDate(key)).assertTrue();
+        expect(bag.size).assertEqual(1);
+        expect(bag.has(key)).assertTrue();
+        let dateProbe_2: util.types = new util.types();
+        let d: Date = new Date(123456789);
+        let before: double = d.getTime();
+        expect(dateProbe_2.isDate(d)).assertTrue();
+        expect(d.getTime()).assertEqual(before);
+        expect(d.getTime()).assertEqual(123456789);
+      }
+
+      // --- [3] Verify isDate stays true for both Dates retained after their Set is cleared ---
+      {
+        let dateProbe: util.types = new util.types();
+        let first: Date = new Date(0);
+        let second: Date = new Date(1);
+        let marks: Set<Date> = new Set<Date>();
+        marks.add(first);
+        marks.add(second);
+        marks.clear();
+        expect(marks.size).assertEqual(0);
+        expect(dateProbe.isDate(first)).assertTrue();
+        expect(dateProbe.isDate(second)).assertTrue();
+      }
+
+      // --- [4] Verify isDate leaves the aliased byte of a subarray view and its backing buffer intact ---
+      {
+        let dateProbe: util.types = new util.types();
+        let base: Uint8Array = new Uint8Array(8);
+        let view: Uint8Array = base.subarray(2, 6);
+        base.$_set(2, 7);
+        expect(dateProbe.isDate(view)).assertFalse();
+        expect(view.$_get(0)).assertEqual(7);
+        expect(base.$_get(2)).assertEqual(7);
+      }
+
+      // --- [5] Verify an array filter driven by isDate keeps exactly the two Date elements ---
+      {
+        let dateProbe: util.types = new util.types();
+        let mixed: Object[] = [new Date(0), 'x', 3, new Date(1)];
+        let stamps: Object[] = mixed.filter((item: Object): boolean => dateProbe.isDate(item));
+        expect(stamps.length).assertEqual(2);
+        expect(dateProbe.isDate(stamps[0])).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_DATE_2300
+     * @tc.name testTypesIsDate023
+     * @tc.desc Merged batch (1 test): State preservation and aliasing: an isDate outcome stored in a class field keeps its value on later reads.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsDate023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify an isDate outcome stored in a class field keeps its value on later reads ---
+      {
+        let dateProbe: util.types = new util.types();
+        let inspector: DateInspector = new DateInspector();
+        let first: boolean = inspector.inspect(new Date(0));
+        inspector.lastResult = first;
+        expect(inspector.lastResult).assertTrue();
+        expect(inspector.inspect(9)).assertFalse();
+        expect(dateProbe.isDate(new Date(0))).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_DATE_2400
+     * @tc.name testTypesIsDate024
+     * @tc.desc Merged batch (5 tests): Container and field storage: isDate classifies each element of a mixed Object array element by element; isDate returns true when the Date is held in a variable declared as Object; accepts a Date stored as an element of an Object array; accepts a Date exposed as a field of a holder class and an interface shaped object; a Date reused as a Map key is still a Date after that key is deleted.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsDate024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify isDate classifies each element of a mixed Object array element by element ---
+      {
+        let dateProbe: util.types = new util.types();
+        let mixed: Object[] = [new Date(0), 'x', 1, true];
+        expect(dateProbe.isDate(mixed[0])).assertTrue();
+        expect(dateProbe.isDate(mixed[1])).assertFalse();
+        expect(dateProbe.isDate(mixed[2])).assertFalse();
+        expect(dateProbe.isDate(mixed[3])).assertFalse();
+        expect(mixed.length).assertEqual(4);
+      }
+
+      // --- [2] Verify isDate returns true when the Date is held in a variable declared as Object ---
+      {
+        let dateProbe: util.types = new util.types();
+        let held: Object = new Date(0);
+        expect(dateProbe.isDate(held)).assertTrue();
+        expect(held instanceof Date).assertTrue();
+      }
+
+      // --- [3] Verify isDate returns true for a Date stored as an element of an Object array ---
+      {
+        let dateProbe: util.types = new util.types();
+        let box: Object[] = [new Date(0)];
+        expect(dateProbe.isDate(box[0])).assertTrue();
+        expect(box.length).assertEqual(1);
+      }
+
+      // --- [4] Verify isDate returns true for a Date exposed as a field of a holder class and an interface shaped object ---
+      {
+        let dateProbe: util.types = new util.types();
+        let holder: StampHolder = new StampHolder();
+        expect(dateProbe.isDate(holder.stamp)).assertTrue();
+        expect(holder.stamp.getTime()).assertEqual(86400000);
+        let dateProbe_2: util.types = new util.types();
+        let pair: StampPair = { when: new Date(0) };
+        expect(dateProbe_2.isDate(pair.when)).assertTrue();
+        expect(pair.when.getTime()).assertEqual(0);
+      }
+
+      // --- [5] Verify a Date reused as a Map key is still a Date after that key is deleted ---
+      {
+        let dateProbe: util.types = new util.types();
+        let key: Date = new Date(0);
+        let bag: Map<Date, int> = new Map<Date, int>();
+        bag.set(key, 1);
+        expect(bag.delete(key)).assertTrue();
+        expect(bag.size).assertEqual(0);
+        expect(dateProbe.isDate(key)).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_DATE_2500
+     * @tc.name testTypesIsDate025
+     * @tc.desc Merged batch (5 tests): Container and field storage: accepts a Date held as an Object value in a Map; accepts a Date used as a Map key and yielded by the key iterator; accepts Dates read from arrays stored as Map values and a Date stored inside a nested Date array; isDate selects exactly the Date member of a Set that also holds a number; isDate as a while condition stops at the first non-Date element of a mixed array.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsDate025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify isDate returns true for a Date held as an Object value in a Map ---
+      {
+        let dateProbe: util.types = new util.types();
+        let bag: Map<string, Object> = new Map<string, Object>();
+        bag.set('stamp', new Date(0));
+        let total: int = 0;
+        for (const item of bag.values()) {
+          expect(dateProbe.isDate(item)).assertTrue();
+          total = total + 1;
+        }
+        expect(total).assertEqual(1);
+      }
+
+      // --- [2] Verify isDate returns true for a Date used as a Map key and yielded by the key iterator ---
+      {
+        let dateProbe: util.types = new util.types();
+        let when: Date = new Date(0);
+        let bag: Map<Date, string> = new Map<Date, string>();
+        bag.set(when, 'epoch');
+        let seen: int = 0;
+        for (const key of bag.keys()) {
+          expect(dateProbe.isDate(key)).assertTrue();
+          seen = seen + 1;
+        }
+        expect(seen).assertEqual(1);
+        expect(bag.size).assertEqual(1);
+      }
+
+      // --- [3] Verify isDate returns true for Dates read from arrays stored as Map values and a Date stored inside a nested Date array ---
+      {
+        let dateProbe: util.types = new util.types();
+        let rows: Map<string, Date[]> = new Map<string, Date[]>();
+        rows.set('a', [new Date(0), new Date(1)]);
+        let total: int = 0;
+        for (const group of rows.values()) {
+          for (const item of group) {
+            expect(dateProbe.isDate(item)).assertTrue();
+            total = total + 1;
+          }
+        }
+        expect(total).assertEqual(2);
+        let dateProbe_2: util.types = new util.types();
+        let grid: Date[][] = [[new Date(0)], [new Date(1), new Date(2)]];
+        expect(dateProbe_2.isDate(grid[1][0])).assertTrue();
+        expect(grid[1].length).assertEqual(2);
+      }
+
+      // --- [4] Verify isDate selects exactly the Date member of a Set that also holds a number ---
+      {
+        let dateProbe: util.types = new util.types();
+        let marks: Set<Object> = new Set<Object>();
+        marks.add(new Date(0));
+        marks.add(7);
+        let hits: int = 0;
+        for (const item of marks) {
+          if (dateProbe.isDate(item)) {
+            hits = hits + 1;
+          }
+        }
+        expect(hits).assertEqual(1);
+        expect(marks.size).assertEqual(2);
+      }
+
+      // --- [5] Verify isDate as a while condition stops at the first non-Date element of a mixed array ---
+      {
+        let dateProbe: util.types = new util.types();
+        let queue: Object[] = [new Date(0), new Date(1), 5];
+        let index: int = 0;
+        let stamps: int = 0;
+        while (index < queue.length && dateProbe.isDate(queue[index])) {
+          stamps = stamps + 1;
+          index = index + 1;
+        }
+        expect(stamps).assertEqual(2);
+        expect(index).assertEqual(2);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_DATE_2600
+     * @tc.name testTypesIsDate026
+     * @tc.desc Merged batch (2 tests): Container and field storage: isDate finds a Date nested inside a Map that is itself a Map value; nested ternaries over isDate on a Date and on its own timestamp select the mixed outcome.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsDate026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify isDate finds a Date nested inside a Map that is itself a Map value ---
+      {
+        let dateProbe: util.types = new util.types();
+        let outer: Map<string, Map<string, Date>> = new Map<string, Map<string, Date>>();
+        let inner: Map<string, Date> = new Map<string, Date>();
+        inner.set('when', new Date(0));
+        outer.set('day', inner);
+        let hits: int = 0;
+        for (const group of outer.values()) {
+          for (const item of group.values()) {
+            if (dateProbe.isDate(item)) {
+              hits = hits + 1;
+            }
+          }
+        }
+        expect(hits).assertEqual(1);
+      }
+
+      // --- [2] Verify nested ternaries over isDate on a Date and on its own timestamp select the mixed outcome ---
+      {
+        let dateProbe: util.types = new util.types();
+        let d: Date = new Date(0);
+        let score: int = dateProbe.isDate(d) ? (dateProbe.isDate(d.getTime()) ? 2 : 1) : 0;
+        expect(score).assertEqual(1);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_DATE_2700
+     * @tc.name testTypesIsDate027
+     * @tc.desc Merged batch (5 tests): API call consistency: accepts isDate rejects the second based long 1684566000; isDate accepts a real Date but rejects a primitive wrapper carrying the same millisecond value; rejects isDate accepts a UTC midnight Date while the weekday number it reports; rejects a Date rewritten by setYear or a calendar setter is accepted; rejects isDate accepts a Date rewritten by the UTC calendar setters while the UTC month number.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsDate027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify isDate rejects the second based long 1684566000 while the Date of that value times one thousand is accepted ---
+      {
+        let dateProbe: util.types = new util.types();
+        let seconds: long = 1684566000;
+        let millis: long = seconds * 1000;
+        expect(dateProbe.isDate(seconds)).assertFalse();
+        expect(dateProbe.isDate(new Date(millis))).assertTrue();
+      }
+
+      // --- [2] Verify isDate accepts a real Date but rejects a primitive wrapper carrying the same millisecond value ---
+      {
+        let dateProbe: util.types = new util.types();
+        let stamp: long = 1727000000000;
+        let real: Date = new Date(stamp);
+        let wrapped: Number = new Number(stamp);
+        expect(real.getTime()).assertEqual(stamp);
+        expect(wrapped.valueOf()).assertEqual(stamp);
+        expect(dateProbe.isDate(real)).assertTrue();
+        expect(dateProbe.isDate(wrapped)).assertFalse();
+        expect(dateProbe.isDate(new String('2023'))).assertFalse();
+        expect(dateProbe.isDate(new Boolean(true))).assertFalse();
+      }
+
+      // --- [3] Verify isDate accepts a UTC midnight Date while the weekday number it reports is rejected ---
+      {
+        let dateProbe: util.types = new util.types();
+        let monday: Date = new Date(2026, 8, 21);
+        let tuesday: Date = new Date(2026, 8, 22);
+        expect(tuesday.getDay()).assertEqual(monday.getDay() + 1);
+        let utcMonday: Date = new Date(Date.UTC(2026, 8, 21));
+        expect(dateProbe.isDate(utcMonday)).assertTrue();
+        expect(dateProbe.isDate(monday.getUTCDay())).assertFalse();
+      }
+
+      // --- [4] Verify a Date rewritten by setYear or a calendar setter is accepted while the getYear and day of month numbers are rejected ---
+      {
+        let dateProbe: util.types = new util.types();
+        let d: Date = new Date(2026, 0, 15);
+        d.setYear(1998);
+        expect(d.getFullYear()).assertEqual(1998);
+        expect(dateProbe.isDate(d)).assertTrue();
+        expect(dateProbe.isDate(d.getYear())).assertFalse();
+        let dateProbe_2: util.types = new util.types();
+        let d_2: Date = new Date(2026, 0, 10);
+        d_2.setFullYear(2027, 2, 20);
+        d_2.setMonth(6, 5);
+        d_2.setDate(31);
+        expect(d_2.getFullYear()).assertEqual(2027);
+        expect(d_2.getMonth()).assertEqual(6);
+        expect(d_2.getDate()).assertEqual(31);
+        expect(dateProbe_2.isDate(d_2)).assertTrue();
+        expect(dateProbe_2.isDate(d_2.getDate())).assertFalse();
+      }
+
+      // --- [5] Verify isDate accepts a Date rewritten by the UTC calendar setters while the UTC month number is rejected ---
+      {
+        let dateProbe: util.types = new util.types();
+        let d: Date = new Date(Date.UTC(2026, 8, 21, 12));
+        expect(d.getUTCMonth()).assertEqual(8);
+        d.setUTCMonth(11, 25);
+        d.setUTCDate(3);
+        d.setUTCFullYear(2025);
+        expect(d.getUTCMonth()).assertEqual(11);
+        expect(d.getUTCFullYear()).assertEqual(2025);
+        expect(dateProbe.isDate(d)).assertTrue();
+        expect(dateProbe.isDate(d.getUTCMonth())).assertFalse();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_DATE_2800
+     * @tc.name testTypesIsDate028
+     * @tc.desc Merged batch (5 tests): API call consistency: rejects Dates rewritten by local and UTC time setters are accepted while the plain hour numbers; accepts an array holding a Date is itself rejected by isDate while its element; a Date built from an unparseable string is rejected with a FormatError; three consecutive isDate calls on one Date all return true; accepts a Date through both a class method and a direct call, and false for a number through the class method.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsDate028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify Dates rewritten by local and UTC time setters are accepted while the plain hour numbers are rejected ---
+      {
+        let dateProbe: util.types = new util.types();
+        let d: Date = new Date(2026, 8, 21);
+        let shifted: long = d.setHours(6, 30, 45, 500);
+        expect(shifted).assertEqual(d.getTime());
+        d.setMinutes(15, 30, 250);
+        d.setSeconds(1, 2);
+        d.setMilliseconds(7);
+        expect(d.getHours()).assertEqual(6);
+        expect(d.getMilliseconds()).assertEqual(7);
+        expect(dateProbe.isDate(d)).assertTrue();
+        expect(dateProbe.isDate(d.getHours())).assertFalse();
+        let dateProbe_2: util.types = new util.types();
+        let mark: long = Date.UTC(2026, 8, 21, 5, 15, 25, 125);
+        let d_2: Date = new Date(mark);
+        expect(d_2.getUTCHours()).assertEqual(5);
+        d_2.setUTCHours(7, 45);
+        d_2.setUTCMinutes(10, 20, 300);
+        d_2.setUTCSeconds(40, 400);
+        d_2.setUTCMilliseconds(900);
+        expect(d_2.getUTCMilliseconds()).assertEqual(900);
+        expect(dateProbe_2.isDate(d_2)).assertTrue();
+        expect(dateProbe_2.isDate(d_2.getUTCHours())).assertFalse();
+      }
+
+      // --- [2] Verify an array holding a Date is itself rejected by isDate while its element is accepted ---
+      {
+        let dateProbe: util.types = new util.types();
+        let cell: Object[] = [];
+        let stamp: Date = new Date(0);
+        cell.push(stamp);
+        expect(dateProbe.isDate(cell)).assertFalse();
+        expect(dateProbe.isDate(stamp)).assertTrue();
+        expect(cell.length).assertEqual(1);
+      }
+
+      // --- [3] Verify a Date built from an unparseable string is rejected with a FormatError while a millisecond built Date is still accepted ---
+      {
+        let dateProbe: util.types = new util.types();
+        try {
+          new Date('not-a-date');
+          expect().assertFail();
+        } catch (err) {
+          expect(err.name).assertEqual('FormatError');
+        }
+        expect(dateProbe.isDate(new Date(0))).assertTrue();
+      }
+
+      // --- [4] Verify three consecutive isDate calls on one Date all return true ---
+      {
+        let dateProbe: util.types = new util.types();
+        let d: Date = new Date(999);
+        let hits: int = 0;
+        if (dateProbe.isDate(d)) {
+          hits = hits + 1;
+        }
+        if (dateProbe.isDate(d)) {
+          hits = hits + 1;
+        }
+        if (dateProbe.isDate(d)) {
+          hits = hits + 1;
+        }
+        expect(hits).assertEqual(3);
+        expect(d.getTime()).assertEqual(999);
+      }
+
+      // --- [5] Verify isDate returns true for a Date through both a class method and a direct call, and false for a number through the class method ---
+      {
+        let dateProbe: util.types = new util.types();
+        let inspector: DateInspector = new DateInspector();
+        expect(inspector.inspect(new Date(0))).assertTrue();
+        expect(inspector.inspect(2023)).assertFalse();
+        expect(dateProbe.isDate(new Date(0))).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_DATE_2900
+     * @tc.name testTypesIsDate029
+     * @tc.desc Merged batch (5 tests): API call consistency: preceding isMap and isArrayBuffer calls do not disturb a following isDate call; accepts a Date while a Map is rejected and at the maximum range value 8640000000000000; two independent util.types instances agree on the same Date; a Uint8Array fails isDate while isTypedArray accepts it; and a Promise resolved with a Date fails isDate while isPromise accepts it; a WeakMap fails isDate while isWeakMap accepts it.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsDate029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify preceding isMap and isArrayBuffer calls do not disturb a following isDate call ---
+      {
+        let dateChecker: util.types = new util.types();
+        let bag: Map<string, string> = new Map<string, string>();
+        let buf: ArrayBuffer = new ArrayBuffer(8);
+        expect(dateChecker.isMap(bag)).assertTrue();
+        expect(dateChecker.isDate(bag)).assertFalse();
+        expect(dateChecker.isArrayBuffer(buf)).assertTrue();
+        expect(dateChecker.isDate(buf)).assertFalse();
+        expect(dateChecker.isDate(new Date(0))).assertTrue();
+      }
+
+      // --- [2] Verify isDate returns true for a Date while a Map is rejected and at the maximum range value 8640000000000000 while the int 0 is rejected ---
+      {
+        let dateProbe: util.types = new util.types();
+        expect(dateProbe.isDate(new Date(0))).assertTrue();
+        expect(dateProbe.isDate(new Map<string, int>())).assertFalse();
+        let dateProbe_2: util.types = new util.types();
+        expect(dateProbe_2.isDate(new Date(8640000000000000))).assertTrue();
+        expect(dateProbe_2.isDate(0)).assertFalse();
+      }
+
+      // --- [3] Verify two independent util.types instances agree on the same Date ---
+      {
+        let first: util.types = new util.types();
+        let second: util.types = new util.types();
+        let d: Date = new Date(0);
+        expect(first.isDate(d)).assertTrue();
+        expect(second.isDate(d)).assertTrue();
+        expect(first.isDate(2023)).assertFalse();
+        expect(second.isDate(2023)).assertFalse();
+      }
+
+      // --- [4] Verify a Uint8Array fails isDate while isTypedArray accepts it; and a Promise resolved with a Date fails isDate while isPromise accepts it ---
+      {
+        let dateProbe: util.types = new util.types();
+        let arr: Uint8Array = new Uint8Array(4);
+        expect(dateProbe.isDate(arr)).assertFalse();
+        expect(dateProbe.isTypedArray(arr)).assertTrue();
+        expect(arr.byteLength).assertEqual(4);
+        let dateChecker: util.types = new util.types();
+        let p: Promise<Date> = Promise.resolve<Date>(new Date(0));
+        expect(dateChecker.isDate(p)).assertFalse();
+        expect(dateChecker.isPromise(p)).assertTrue();
+      }
+
+      // --- [5] Verify a WeakMap fails isDate while isWeakMap accepts it ---
+      {
+        let dateChecker: util.types = new util.types();
+        let wm: WeakMap<WeakKey, WeakKey> = new WeakMap<WeakKey, WeakKey>();
+        expect(dateChecker.isDate(wm)).assertFalse();
+        expect(dateChecker.isWeakMap(wm)).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_DATE_3000
+     * @tc.name testTypesIsDate030
+     * @tc.desc Merged batch (5 tests): API call consistency: an async class method reference fails isDate while isAsyncFunction accepts it; interleaved isDate and isArrayBuffer calls on two util.types instances do not interfere; a BigInt64Array and a plain buffer both fail isDate while isBigInt64Array accepts the array; the Promise returned by an async helper fails isDate while isPromise accepts it; a two entry Map keys iterator is rejected by a scan for dates yet accepted by isMapIterator.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsDate030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify an async class method reference fails isDate while isAsyncFunction accepts it ---
+      {
+        let dateChecker: util.types = new util.types();
+        expect(dateChecker.isDate(new AsyncHolder().asyncMethod)).assertFalse();
+        expect(dateChecker.isAsyncFunction(new AsyncHolder().asyncMethod)).assertTrue();
+      }
+
+      // --- [2] Verify interleaved isDate and isArrayBuffer calls on two util.types instances do not interfere ---
+      {
+        let dateProbe: util.types = new util.types();
+        let other: util.types = new util.types();
+        let d: Date = new Date(0);
+        let buf: ArrayBuffer = new ArrayBuffer(4);
+        expect(dateProbe.isDate(d)).assertTrue();
+        expect(other.isArrayBuffer(buf)).assertTrue();
+        expect(other.isDate(d)).assertTrue();
+        expect(dateProbe.isDate(buf)).assertFalse();
+      }
+
+      // --- [3] Verify a BigInt64Array and a plain buffer both fail isDate while isBigInt64Array accepts the array ---
+      {
+        let dateChecker: util.types = new util.types();
+        let arr: BigInt64Array = new BigInt64Array(2);
+        let probes: Object[] = [arr, new ArrayBuffer(16)];
+        expect(probes.every((probe: Object): boolean => dateChecker.isDate(probe))).assertFalse();
+        expect(dateChecker.isBigInt64Array(arr)).assertTrue();
+      }
+
+      // --- [4] Verify the Promise returned by an async helper fails isDate while isPromise accepts it ---
+      {
+        let dateChecker: util.types = new util.types();
+        let pending: Promise<int> = asyncNumberTask();
+        expect(dateChecker.isDate(pending)).assertFalse();
+        expect(dateChecker.isPromise(pending)).assertTrue();
+      }
+
+      // --- [5] Verify a two entry Map keys iterator is rejected by a scan for dates yet accepted by isMapIterator ---
+      {
+        let dateChecker: util.types = new util.types();
+        let bag: Map<string, string> = new Map<string, string>();
+        bag.set('k', 'v');
+        bag.set('k2', 'v2');
+        let iter: IterableIterator<string> = bag.keys();
+        let probes: Object[] = [iter, bag];
+        expect(probes.some((probe: Object): boolean => dateChecker.isDate(probe))).assertFalse();
+        expect(dateChecker.isMapIterator(iter)).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_DATE_3100
+     * @tc.name testTypesIsDate031
+     * @tc.desc Merged batch (5 tests): Program integration: accepts every Date visited by a forEach callback and a Date forwarded through an adapter function; negating the isDate result flips it for a Date and for a number; isDate combines with a logical and expression as expected; accepts a Date produced by a factory method of a helper class; isDate combines with a logical or expression as expected.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsDate031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify isDate returns true for every Date visited by a forEach callback and a Date forwarded through an adapter function ---
+      {
+        let dateProbe: util.types = new util.types();
+        let list: Date[] = [new Date(0), new Date(1)];
+        list.forEach((item: Date): void => {
+          expect(dateProbe.isDate(item)).assertTrue();
+        });
+        expect(list.length).assertEqual(2);
+        expect(probeDateArgument(new Date(0))).assertTrue();
+        expect(probeDateArgument(2023)).assertFalse();
+      }
+
+      // --- [2] Verify negating the isDate result flips it for a Date and for a number ---
+      {
+        let dateProbe: util.types = new util.types();
+        expect(!dateProbe.isDate(new Date(0))).assertFalse();
+        expect(!dateProbe.isDate(2023)).assertTrue();
+      }
+
+      // --- [3] Verify isDate combines with a logical and expression as expected ---
+      {
+        let dateChecker: util.types = new util.types();
+        let stamp: Date = new Date(0);
+        expect(dateChecker.isDate(stamp) && stamp.getTime() === 0.0).assertTrue();
+        expect(dateChecker.isDate(stamp) && stamp.getTime() === 1.0).assertFalse();
+      }
+
+      // --- [4] Verify isDate returns true for a Date produced by a factory method of a helper class ---
+      {
+        let dateProbe: util.types = new util.types();
+        let made: Date = new DateFactory().build(86400000);
+        expect(dateProbe.isDate(made)).assertTrue();
+        expect(made.getTime()).assertEqual(86400000);
+      }
+
+      // --- [5] Verify isDate combines with a logical or expression as expected ---
+      {
+        let dateChecker: util.types = new util.types();
+        expect(dateChecker.isDate(2023) || dateChecker.isDate(new Date(0))).assertTrue();
+        expect(dateChecker.isDate(2023) || dateChecker.isDate(0)).assertFalse();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_DATE_3200
+     * @tc.name testTypesIsDate032
+     * @tc.desc Merged batch (5 tests): Program integration: isDate drives a conditional expression for both branches; isDate drives an if branch for both branches; a loop over a five element mixed Object array counts exactly two Dates; a negated isDate guard terminates a scan at the first non-Date element; a helper that returns early on a positive isDate result scores a Date as 1 and text as 0.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsDate032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify isDate drives a conditional expression for both branches ---
+      {
+        let dateProbe: util.types = new util.types();
+        let stampLabel: string = dateProbe.isDate(new Date(0)) ? 'stamp' : 'other';
+        let numberLabel: string = dateProbe.isDate(2023) ? 'stamp' : 'other';
+        expect(stampLabel).assertEqual('stamp');
+        expect(numberLabel).assertEqual('other');
+      }
+
+      // --- [2] Verify isDate drives an if branch for both branches ---
+      {
+        let dateProbe: util.types = new util.types();
+        let hits: int = 0;
+        if (dateProbe.isDate(new Date(0))) {
+          hits = hits + 1;
+        }
+        if (dateProbe.isDate(2023)) {
+          hits = hits + 1;
+        }
+        expect(hits).assertEqual(1);
+      }
+
+      // --- [3] Verify a loop over a five element mixed Object array counts exactly two Dates ---
+      {
+        let dateProbe: util.types = new util.types();
+        let mixed: Object[] = [new Date(0), 'x', 1, true, new SubDate()];
+        let hits: int = 0;
+        for (const item of mixed) {
+          if (dateProbe.isDate(item)) {
+            hits = hits + 1;
+          }
+        }
+        expect(hits).assertEqual(2);
+        expect(mixed.length).assertEqual(5);
+      }
+
+      // --- [4] Verify a negated isDate guard terminates a scan at the first non-Date element ---
+      {
+        let dateProbe: util.types = new util.types();
+        let queue: Object[] = [new Date(0), new Date(1), 'stop'];
+        let index: int = 0;
+        while (index < queue.length) {
+          if (!dateProbe.isDate(queue[index])) {
+            break;
+          }
+          index = index + 1;
+        }
+        expect(index).assertEqual(2);
+      }
+
+      // --- [5] Verify a helper that returns early on a positive isDate result scores a Date as 1 and text as 0 ---
+      {
+        let dateProbe: util.types = new util.types();
+        expect(classifyAsDate(new Date(0))).assertEqual(1);
+        expect(classifyAsDate('2024-01-01')).assertEqual(0);
+        expect(dateProbe.isDate(0)).assertFalse();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_DATE_3300
+     * @tc.name testTypesIsDate033
+     * @tc.desc Merged batch (2 tests): Program integration: isDate feeding a switch selector routes a Date to the stamp branch; isDate evaluated inside a do while loop counts every Date of an array.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsDate033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify isDate feeding a switch selector routes a Date to the stamp branch ---
+      {
+        let dateProbe: util.types = new util.types();
+        let code: int = dateProbe.isDate(new Date(0)) ? 1 : 0;
+        let label: string = 'none';
+        switch (code) {
+          case 1:
+            label = 'stamp';
+            break;
+          default:
+            label = 'other';
+            break;
+        }
+        expect(label).assertEqual('stamp');
+      }
+
+      // --- [2] Verify isDate evaluated inside a do while loop counts every Date of an array ---
+      {
+        let dateProbe: util.types = new util.types();
+        let marks: Date[] = [new Date(0), new Date(1)];
+        let index: int = 0;
+        let stamps: int = 0;
+        do {
+          if (dateProbe.isDate(marks[index])) {
+            stamps = stamps + 1;
+          }
+          index = index + 1;
+        } while (index < marks.length);
+        expect(stamps).assertEqual(2);
+      }
+    });
+
   });
 }
