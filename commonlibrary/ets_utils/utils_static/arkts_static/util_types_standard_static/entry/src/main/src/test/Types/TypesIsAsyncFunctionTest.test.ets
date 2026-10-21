@@ -1322,5 +1322,821 @@ export default function typesIsAsyncFunctionTest(): void {
       }
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_ASYNC_FUNCTION_2100
+     * @tc.name testTypesIsAsyncFunction021
+     * @tc.desc Merged batch (4 tests): State preservation and aliasing: verifies that later reads still see the original state, covering boolean scalars.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsAsyncFunction021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify isAsyncFunction returns true for both Object aliases of the same async arrow ---
+      {
+        let asyncChecker: util.types = new util.types();
+        let base: Object = async (): Promise<int> => { return 1; };
+        let firstAlias: Object = base;
+        let secondAlias: Object = base;
+        expect(asyncChecker.isAsyncFunction(firstAlias)).assertTrue();
+        expect(asyncChecker.isAsyncFunction(secondAlias)).assertTrue();
+      }
+
+      // --- [2] Verify detection stays true and the holder array grows by one when the async arrow is pushed afterwards ---
+      {
+        let asyncProbe: util.types = new util.types();
+        let row: Object[] = [];
+        let fn: Object = makeAsyncFunction();
+        let before: boolean = asyncProbe.isAsyncFunction(fn);
+        row.push(fn);
+        let after: boolean = asyncProbe.isAsyncFunction(row[0]);
+        expect(before).assertTrue();
+        expect(after).assertTrue();
+        expect(row.length).assertEqual(1);
+      }
+
+      // --- [3] Verify swapping an array element from async to plain flips its result while the original reference stays true ---
+      {
+        let asyncChecker: util.types = new util.types();
+        let original: Object = makeAsyncFunction();
+        let plain: Object = declarePlainFunction;
+        let row: Object[] = [original];
+        let before: boolean = asyncChecker.isAsyncFunction(row[0]);
+        row[0] = plain;
+        let after: boolean = asyncChecker.isAsyncFunction(row[0]);
+        expect(before).assertTrue();
+        expect(after).assertFalse();
+        expect(asyncChecker.isAsyncFunction(original)).assertTrue();
+      }
+
+      // --- [4] Verify a filter keeps only the async function from an async function and a number, and a true verdict survives a boolean and expression ---
+      {
+        let asyncChecker: util.types = new util.types();
+        let fn: Object = makeAsyncFunction();
+        let candidates: Object[] = [(): void => { }, fn];
+        let asyncOnly: Object[] = candidates.filter((candidate: Object): boolean => asyncChecker.isAsyncFunction(candidate));
+        expect(asyncOnly.length).assertEqual(1);
+        expect(asyncChecker.isPromise(fn)).assertFalse();
+        expect(asyncChecker.isNativeError(fn)).assertFalse();
+        let asyncChecker_2: util.types = new util.types();
+        let combined: boolean = asyncChecker_2.isAsyncFunction(makeAsyncFunction()) && true;
+        expect(combined).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_ASYNC_FUNCTION_2200
+     * @tc.name testTypesIsAsyncFunction022
+     * @tc.desc Merged batch (4 tests): State preservation and aliasing: verifies that later reads still see the original state, covering helper and factory relays including Set.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsAsyncFunction022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+      // --- [1] Verify a method reference stays async after the method itself has been invoked once ---
+      {
+        let asyncProbe: util.types = new util.types();
+        let host: CountingAsyncHost = new CountingAsyncHost();
+        let ref: Object = host.tick;
+        let first: boolean = asyncProbe.isAsyncFunction(ref);
+        let produced: int = await host.tick();
+        let second: boolean = asyncProbe.isAsyncFunction(ref);
+        expect(first).assertTrue();
+        expect(produced).assertEqual(1);
+        expect(second).assertTrue();
+      }
+
+      // --- [2] Verify a method reference stays async after an unrelated host field changes and an async arrow stays accepted after its Set is cleared ---
+      {
+        let asyncProbe: util.types = new util.types();
+        let host: BoundMethodHost = new BoundMethodHost();
+        let ref: Object = host.work;
+        let before: boolean = asyncProbe.isAsyncFunction(ref);
+        host.label = 'changed';
+        let after: boolean = asyncProbe.isAsyncFunction(ref);
+        expect(before).assertTrue();
+        expect(after).assertTrue();
+        expect(host.label).assertEqual('changed');
+        let asyncProbe_2: util.types = new util.types();
+        let pool: Set<Object> = new Set<Object>();
+        let fn: Object = makeAsyncFunction();
+        pool.add(fn);
+        pool.clear();
+        expect(pool.size).assertEqual(0);
+        expect(asyncProbe_2.isAsyncFunction(fn)).assertTrue();
+      }
+
+      // --- [3] Verify detection leaves the length and the element identity of the holding array unchanged ---
+      {
+        let asyncProbe: util.types = new util.types();
+        let fn: Object = makeAsyncFunction();
+        let row: Object[] = [fn];
+        let hit: boolean = asyncProbe.isAsyncFunction(row[0]);
+        expect(hit).assertTrue();
+        expect(row.length).assertEqual(1);
+        expect(row[0]).assertEqual(fn);
+      }
+
+      // --- [4] Verify the detection result keeps its value when forwarded through an assignment chain ---
+      {
+        let asyncProbe: util.types = new util.types();
+        let first: boolean = asyncProbe.isAsyncFunction(declareAsyncReturn);
+        let second: boolean = first;
+        let plain: boolean = asyncProbe.isAsyncFunction(declarePlainFunction);
+        let plainCopy: boolean = plain;
+        expect(second).assertTrue();
+        expect(plainCopy).assertFalse();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_ASYNC_FUNCTION_2300
+     * @tc.name testTypesIsAsyncFunction023
+     * @tc.desc Merged batch (5 tests): Container and field storage: one async and one synchronous element of an array are classified with two hits; accepts an async arrow read from a Map value and held in a class field; accepts an async arrow nested inside the array held by a Map value; isAsyncFunction makes some return true and every return false over a mixed array of a plain arrow and an async function; accepts an async arrow reached through a Record entry that holds a Map, then read at its string key.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsAsyncFunction023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify one async and one synchronous element of an array are classified with two hits ---
+      {
+        let asyncProbe: util.types = new util.types();
+        let fns: Object[] = [async (): Promise<int> => { return 3; }, (): void => { }];
+        let hits: int = 0;
+        if (asyncProbe.isAsyncFunction(fns[0])) {
+          hits = hits + 1;
+        }
+        if (!asyncProbe.isAsyncFunction(fns[1])) {
+          hits = hits + 1;
+        }
+        expect(hits).assertEqual(2);
+      }
+
+      // --- [2] Verify isAsyncFunction returns true for an async arrow read from a Map value and held in a class field ---
+      {
+        let asyncChecker: util.types = new util.types();
+        let m: Map<string, Object> = new Map<string, Object>();
+        m.set('f', async (): Promise<void> => { });
+        let got: Object | undefined = m.get('f');
+        expect(asyncChecker.isAsyncFunction(got as Object)).assertTrue();
+        let asyncChecker_2: util.types = new util.types();
+        let holder: FunctionFieldHolder = new FunctionFieldHolder();
+        expect(asyncChecker_2.isAsyncFunction(holder.asyncField)).assertTrue();
+      }
+
+      // --- [3] Verify isAsyncFunction returns true for an async arrow nested inside the array held by a Map value ---
+      {
+        let asyncChecker: util.types = new util.types();
+        let inner: Object[] = [async (): Promise<int> => { return 1; }];
+        let deep: Map<string, Object[]> = new Map<string, Object[]>();
+        deep.set('deep', inner);
+        let row: Object[] = deep.get('deep') as Object[];
+        expect(asyncChecker.isAsyncFunction(row[0])).assertTrue();
+      }
+
+      // --- [4] Verify isAsyncFunction makes some return true and every return false over a mixed array of a plain arrow and an async function ---
+      {
+        let asyncChecker: util.types = new util.types();
+        let mixed: Object[] = [(): void => { }, makeAsyncFunction()];
+        let anyAsync: boolean = mixed.some((item: Object): boolean => asyncChecker.isAsyncFunction(item));
+        let allAsync: boolean = mixed.every((item: Object): boolean => asyncChecker.isAsyncFunction(item));
+        expect(anyAsync).assertTrue();
+        expect(allAsync).assertFalse();
+      }
+
+      // --- [5] Verify an async arrow reached through a Record entry that holds a Map, then read at its string key, is accepted ---
+      {
+        let asyncChecker: util.types = new util.types();
+        let fn: Object = makeAsyncFunction();
+        let inner: Map<string, Object> = new Map<string, Object>();
+        inner.set('leaf', fn);
+        let slots: Record<string, Map<string, Object>> = { 'outer': inner };
+        let picked: Map<string, Object> = slots['outer']!;
+        let leaf: Object | undefined = picked.get('leaf');
+        expect(asyncChecker.isAsyncFunction(leaf as Object)).assertTrue();
+        expect(picked.size).assertEqual(1);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_ASYNC_FUNCTION_2400
+     * @tc.name testTypesIsAsyncFunction024
+     * @tc.desc Merged batch (5 tests): Container and field storage: one async function is classified as true through an array, a Set iterator and a Map value; accepts an async arrow under a quoted key and a handler field constrained by an interface; accepts an async arrow read from a Record entry; an array holding two async and one plain method reference yields exactly two async hits; accepts an async arrow element of an array typed as promise returning functions.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsAsyncFunction024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify one async function is classified as true through an array, a Set iterator and a Map value ---
+      {
+        let asyncChecker: util.types = new util.types();
+        let fn: Object = makeAsyncFunction();
+        let row: Object[] = [fn, fn];
+        let pool: Set<Object> = new Set<Object>();
+        pool.add(fn);
+        pool.add(fn);
+        let iter: IterableIterator<Object> = pool.values();
+        let picked: Object | undefined = iter.next().value;
+        let byKey: Map<string, Object> = new Map<string, Object>();
+        byKey.set('k', fn);
+        let fromMap: Object | undefined = byKey.get('k');
+        expect(asyncChecker.isAsyncFunction(row[0])).assertTrue();
+        expect(asyncChecker.isAsyncFunction(row[1])).assertTrue();
+        expect(asyncChecker.isAsyncFunction(picked as Object)).assertTrue();
+        expect(asyncChecker.isAsyncFunction(fromMap as Object)).assertTrue();
+      }
+
+      // --- [2] Verify an async arrow under a quoted key and a handler field constrained by an interface are both accepted ---
+      {
+        let asyncChecker: util.types = new util.types();
+        let bundle: Record<string, Object> = { 'go': async (): Promise<int> => { return 1; } };
+        let picked: Object = bundle['go']!;
+        expect(asyncChecker.isAsyncFunction(picked)).assertTrue();
+        let asyncChecker_2: util.types = new util.types();
+        let literal: AsyncHandlerContract = { 'handler': async (): Promise<int> => { return 3; } };
+        expect(asyncChecker_2.isAsyncFunction(literal.handler)).assertTrue();
+      }
+
+      // --- [3] Verify isAsyncFunction returns true for an async arrow read from a Record entry ---
+      {
+        let asyncChecker: util.types = new util.types();
+        let table: Record<string, Object> = { 'run': makeAsyncFunction() };
+        let entry: Object = table['run']!;
+        expect(asyncChecker.isAsyncFunction(entry)).assertTrue();
+      }
+
+      // --- [4] Verify an array holding two async and one plain method reference yields exactly two async hits ---
+      {
+        let asyncProbe: util.types = new util.types();
+        let host: MixedMethodHost = new MixedMethodHost();
+        let refs: Object[] = [host.alpha, host.beta, host.plain];
+        let hits: int = 0;
+        for (let i: int = 0; i < refs.length; i++) {
+          if (asyncProbe.isAsyncFunction(refs[i])) {
+            hits = hits + 1;
+          }
+        }
+        expect(hits).assertEqual(2);
+      }
+
+      // --- [5] Verify isAsyncFunction returns true for an async arrow element of an array typed as promise returning functions ---
+      {
+        let asyncChecker: util.types = new util.types();
+        let handlers: (() => Promise<int>)[] = [async (): Promise<int> => { return 5; }];
+        expect(asyncChecker.isAsyncFunction(handlers[0])).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_ASYNC_FUNCTION_2500
+     * @tc.name testTypesIsAsyncFunction025
+     * @tc.desc Merged batch (5 tests): Container and field storage: accepts an async function Map key read through the keys iterator and an async arrow under an int Map key; arrow kept in a Set that is the value of a Map; a heterogeneous collection with exactly one async member yields one async hit; arrow stored as the value of a WeakMap entry; reassigning a class field from an async arrow to a plain function flips its result.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsAsyncFunction025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify an async function Map key read through the keys iterator and an async arrow under an int Map key are both accepted ---
+      {
+        let asyncChecker: util.types = new util.types();
+        let fn: Object = makeAsyncFunction();
+        let keyed: Map<Object, string> = new Map<Object, string>();
+        keyed.set(fn, 'handler');
+        let keys: IterableIterator<Object> = keyed.keys();
+        let firstKey: Object | undefined = keys.next().value;
+        expect(asyncChecker.isAsyncFunction(firstKey as Object)).assertTrue();
+        let asyncChecker_2: util.types = new util.types();
+        let byNumber: Map<int, Object> = new Map<int, Object>();
+        byNumber.set(7, async (): Promise<int> => { return 7; });
+        let got: Object | undefined = byNumber.get(7);
+        expect(asyncChecker_2.isAsyncFunction(got as Object)).assertTrue();
+      }
+
+      // --- [2] Verify isAsyncFunction returns true for an async arrow kept in a Set that is the value of a Map ---
+      {
+        let asyncChecker: util.types = new util.types();
+        let inner: Set<Object> = new Set<Object>();
+        inner.add(async (): Promise<int> => { return 2; });
+        let outer: Map<string, Set<Object>> = new Map<string, Set<Object>>();
+        outer.set('bag', inner);
+        let bag: Set<Object> | undefined = outer.get('bag');
+        let members: IterableIterator<Object> = (bag as Set<Object>).values();
+        let picked: Object | undefined = members.next().value;
+        expect(asyncChecker.isAsyncFunction(picked as Object)).assertTrue();
+      }
+
+      // --- [3] Verify a heterogeneous collection with exactly one async member yields one async hit ---
+      {
+        let asyncProbe: util.types = new util.types();
+        let items: Object[] = [0, 'text', true, makeAsyncFunction(), new PlainRecord(), new Date(0)];
+        let hits: int = 0;
+        for (let i: int = 0; i < items.length; i++) {
+          if (asyncProbe.isAsyncFunction(items[i])) {
+            hits = hits + 1;
+          }
+        }
+        expect(hits).assertEqual(1);
+      }
+
+      // --- [4] Verify isAsyncFunction returns true for an async arrow stored as the value of a WeakMap entry ---
+      {
+        let asyncChecker: util.types = new util.types();
+        let weak: WeakMap<PlainRecord, Object> = new WeakMap<PlainRecord, Object>();
+        let key: PlainRecord = new PlainRecord();
+        weak.set(key, async (): Promise<int> => { return 3; });
+        let stored: Object | undefined = weak.get(key);
+        expect(asyncChecker.isAsyncFunction(stored as Object)).assertTrue();
+      }
+
+      // --- [5] Verify reassigning a class field from an async arrow to a plain function flips its result ---
+      {
+        let asyncChecker: util.types = new util.types();
+        let holder: FunctionFieldHolder = new FunctionFieldHolder();
+        let before: boolean = asyncChecker.isAsyncFunction(holder.asyncField);
+        holder.asyncField = holder.syncField;
+        let after: boolean = asyncChecker.isAsyncFunction(holder.asyncField);
+        expect(before).assertTrue();
+        expect(after).assertFalse();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_ASYNC_FUNCTION_2600
+     * @tc.name testTypesIsAsyncFunction026
+     * @tc.desc Merged batch (1 test): Container and field storage: an async method reference read from a Map value is accepted and the check follows the branch a conditional expression selects.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsAsyncFunction026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify an async method reference read from a Map value is accepted and the check follows the branch a conditional expression selects ---
+      {
+        let asyncChecker: util.types = new util.types();
+        let host: MixedMethodHost = new MixedMethodHost();
+        let byKey: Map<string, Object> = new Map<string, Object>();
+        byKey.set('alpha', host.alpha);
+        let got: Object | undefined = byKey.get('alpha');
+        expect(asyncChecker.isAsyncFunction(got as Object)).assertTrue();
+        let asyncChecker_2: util.types = new util.types();
+        let flag: boolean = true;
+        let first: Object = flag ? makeAsyncFunction() : new PlainRecord();
+        expect(asyncChecker_2.isAsyncFunction(first)).assertTrue();
+        flag = false;
+        let second: Object = flag ? makeAsyncFunction() : new PlainRecord();
+        expect(asyncChecker_2.isAsyncFunction(second)).assertFalse();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_ASYNC_FUNCTION_2700
+     * @tc.name testTypesIsAsyncFunction027
+     * @tc.desc Merged batch (5 tests): API call consistency: accepts an inherited async method of a subclass that does not override it; async function while a Map stays rejected and method reference while a Set stays rejected; async function while a plain record stays rejected; accepts a bound async method while a Date stays rejected; accepts a wrapper and a plain arrow that return an async function are rejected.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsAsyncFunction027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify isAsyncFunction returns true for an inherited async method of a subclass that does not override it ---
+      {
+        let asyncChecker: util.types = new util.types();
+        let child: InheritRunner = new InheritRunner();
+        let verdict: boolean = asyncChecker.isAsyncFunction(child.run);
+        expect(verdict).assertTrue();
+      }
+
+      // --- [2] Verify isAsyncFunction returns true for an async function while a Map stays rejected and method reference while a Set stays rejected ---
+      {
+        let asyncProbe: util.types = new util.types();
+        expect(asyncProbe.isAsyncFunction(makeAsyncFunction())).assertTrue();
+        expect(asyncProbe.isAsyncFunction(new Map<string, int>())).assertFalse();
+        let asyncProbe_2: util.types = new util.types();
+        let host: AsyncTaskRunner = new AsyncTaskRunner();
+        expect(asyncProbe_2.isAsyncFunction(host.run)).assertTrue();
+        expect(asyncProbe_2.isAsyncFunction(new Set<int>())).assertFalse();
+      }
+
+      // --- [3] Verify isAsyncFunction returns true for an async function while a plain record stays rejected ---
+      {
+        let asyncProbe: util.types = new util.types();
+        expect(asyncProbe.isAsyncFunction(makeAsyncFunction())).assertTrue();
+        expect(asyncProbe.isAsyncFunction(new PlainRecord())).assertFalse();
+      }
+
+      // --- [4] Verify isAsyncFunction returns true for a bound async method while a Date stays rejected ---
+      {
+        let asyncProbe: util.types = new util.types();
+        let host: AsyncTaskRunner = new AsyncTaskRunner();
+        let bound: Object = host.run;
+        expect(asyncProbe.isAsyncFunction(bound)).assertTrue();
+        expect(asyncProbe.isAsyncFunction(new Date(0))).assertFalse();
+      }
+
+      // --- [5] Verify a wrapper and a plain arrow that return an async function are rejected while the returned async function is accepted ---
+      {
+        let asyncChecker: util.types = new util.types();
+        let inner: Object = makeAsyncFunction();
+        let wrapper: () => Object = wrapInPlainArrow(inner);
+        expect(asyncChecker.isAsyncFunction(wrapper)).assertFalse();
+        expect(asyncChecker.isAsyncFunction(inner)).assertTrue();
+        let asyncChecker_2: util.types = new util.types();
+        let factory: () => Object = (): Object => async (): Promise<int> => { return 1; };
+        expect(asyncChecker_2.isAsyncFunction(factory)).assertFalse();
+        expect(asyncChecker_2.isAsyncFunction(factory())).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_ASYNC_FUNCTION_2800
+     * @tc.name testTypesIsAsyncFunction028
+     * @tc.desc Merged batch (5 tests): API call consistency: rejects an async method named then is accepted while the object literal carrying it; a synchronous promise returning arrow is rejected while an async arrow is accepted in the same pass; rejects an async arrow held in a variable declared Object or undefined is accepted; three consecutive detections on one instance stay true for both an async function and a promise; the probe helper agrees with a direct call for an async and for a synchronous function.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsAsyncFunction028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify an async method named then is accepted while the object literal carrying it is rejected ---
+      {
+        let asyncChecker: util.types = new util.types();
+        let awaitable: AwaitableLike = { 'then': async (): Promise<int> => { return 1; } };
+        expect(asyncChecker.isAsyncFunction(awaitable.then)).assertTrue();
+        expect(asyncChecker.isAsyncFunction(awaitable)).assertFalse();
+      }
+
+      // --- [2] Verify a synchronous promise returning arrow is rejected while an async arrow is accepted in the same pass ---
+      {
+        let asyncChecker: util.types = new util.types();
+        let plainPromise: () => Promise<int> = (): Promise<int> => Promise.resolve<int>(1);
+        let asyncPromise: () => Promise<int> = async (): Promise<int> => { return 1; };
+        let verdicts: Array<boolean> = [];
+        verdicts.push(asyncChecker.isAsyncFunction(plainPromise));
+        verdicts.push(asyncChecker.isAsyncFunction(asyncPromise));
+        expect(verdicts[0]).assertFalse();
+        expect(verdicts[1]).assertTrue();
+      }
+
+      // --- [3] Verify an async arrow held in a variable declared Object or undefined is accepted while a plain record in the same declaration is rejected ---
+      {
+        let asyncChecker: util.types = new util.types();
+        let provided: Object | undefined = async (): Promise<int> => { return 5; };
+        expect(asyncChecker.isAsyncFunction(provided as Object)).assertTrue();
+        let plain: Object | undefined = new PlainRecord();
+        expect(asyncChecker.isAsyncFunction(plain as Object)).assertFalse();
+      }
+
+      // --- [4] Verify three consecutive detections on one instance stay true for both an async function and a promise ---
+      {
+        let checker: util.types = new util.types();
+        let fn: Object = makeAsyncFunction();
+        let source: Object = Promise.resolve<int>(1);
+        let firstAsync: boolean = checker.isAsyncFunction(fn);
+        let secondAsync: boolean = checker.isAsyncFunction(fn);
+        let thirdAsync: boolean = checker.isAsyncFunction(fn);
+        expect(firstAsync).assertTrue();
+        expect(secondAsync).assertTrue();
+        expect(thirdAsync).assertTrue();
+        let firstPromise: boolean = checker.isPromise(source);
+        let secondPromise: boolean = checker.isPromise(source);
+        let thirdPromise: boolean = checker.isPromise(source);
+        expect(firstPromise).assertTrue();
+        expect(secondPromise).assertTrue();
+        expect(thirdPromise).assertTrue();
+      }
+
+      // --- [5] Verify the probe helper agrees with a direct call for an async and for a synchronous function ---
+      {
+        let asyncProbe: util.types = new util.types();
+        let fn: Object = makeAsyncFunction();
+        let directAsync: boolean = asyncProbe.isAsyncFunction(fn);
+        let helperAsync: boolean = probeAsyncFunction(fn);
+        let directPlain: boolean = asyncProbe.isAsyncFunction(declarePlainFunction);
+        let helperPlain: boolean = probeAsyncFunction(declarePlainFunction);
+        expect(directAsync).assertEqual(helperAsync);
+        expect(directPlain).assertEqual(helperPlain);
+        expect(directAsync).assertTrue();
+        expect(directPlain).assertFalse();
+        expect(probeAsyncFunction(async (): Promise<int> => { return 3; })).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_ASYNC_FUNCTION_2900
+     * @tc.name testTypesIsAsyncFunction029
+     * @tc.desc Merged batch (2 tests): API call consistency: rejects an async method taken from a mixed host and held in a variable declared Object or null is accepted while a Map; rejects async functions held in Map and Record entries are accepted, a lookup miss is undefined and the containers.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsAsyncFunction029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify an async method taken from a mixed host and held in a variable declared Object or null is accepted while a Map is rejected ---
+      {
+        let asyncChecker: util.types = new util.types();
+        let host: MixedMethodHost = new MixedMethodHost();
+        let held: Object | null = host.alpha;
+        expect(asyncChecker.isAsyncFunction(held as Object)).assertTrue();
+        let other: Object | null = new Map<string, int>();
+        expect(asyncChecker.isAsyncFunction(other as Object)).assertFalse();
+      }
+
+      // --- [2] Verify async functions held in Map and Record entries are accepted, a lookup miss is undefined and the containers are rejected ---
+      {
+        let asyncProbe: util.types = new util.types();
+        let m: Map<string, Object> = new Map<string, Object>();
+        m.set('fn', makeAsyncFunction());
+        let held: Object | undefined = m.get('fn');
+        let missing: Object | undefined = m.get('absent');
+        let absent: boolean = missing === undefined;
+        expect(absent).assertTrue();
+        expect(asyncProbe.isAsyncFunction(held as Object)).assertTrue();
+        expect(asyncProbe.isAsyncFunction(m)).assertFalse();
+        let asyncChecker: util.types = new util.types();
+        let host: MixedMethodHost = new MixedMethodHost();
+        let refs: Record<string, Object> = { 'task': host.alpha, 'plainTask': host.plain };
+        let asyncRef: Object = refs['task']!;
+        let plainRef: Object = refs['plainTask']!;
+        expect(asyncChecker.isAsyncFunction(asyncRef)).assertTrue();
+        expect(asyncChecker.isAsyncFunction(plainRef)).assertFalse();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_ASYNC_FUNCTION_3000
+     * @tc.name testTypesIsAsyncFunction030
+     * @tc.desc Merged batch (5 tests): API call consistency: interleaved detections of an async function, a number and a string stay independent; two detections separated by an await still both return true; an async arrow and an async function inside a class method are accepted; rejects a class method factory yields an async arrow that is accepted while its plain twin; an accepted async method reference is not async after invocation.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsAsyncFunction030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+      // --- [1] Verify interleaved detections of an async function, a number and a string stay independent ---
+      {
+        let asyncChecker: util.types = new util.types();
+        let fn: Object = makeAsyncFunction();
+        let first: boolean = asyncChecker.isAsyncFunction(fn);
+        let second: boolean = asyncChecker.isAsyncFunction(42);
+        let third: boolean = asyncChecker.isAsyncFunction(fn);
+        let fourth: boolean = asyncChecker.isAsyncFunction('str');
+        expect(first).assertTrue();
+        expect(second).assertFalse();
+        expect(third).assertTrue();
+        expect(fourth).assertFalse();
+      }
+
+      // --- [2] Verify two detections separated by an await still both return true ---
+      {
+        let asyncChecker: util.types = new util.types();
+        let fn: Object = makeAsyncFunction();
+        let first: boolean = asyncChecker.isAsyncFunction(fn);
+        await Utils.msSleep(1);
+        let second: boolean = asyncChecker.isAsyncFunction(fn);
+        expect(first).assertTrue();
+        expect(second).assertTrue();
+      }
+
+      // --- [3] Verify an async arrow and an async function inside a class method are accepted while plain functions are rejected by two instances ---
+      {
+        let asyncChecker: util.types = new util.types();
+        let fn: Object = makeAsyncFunction();
+        let asyncHit: boolean = asyncChecker.isAsyncFunction(fn);
+        let plainHit: boolean = asyncChecker.isAsyncFunction(declarePlainFunction);
+        let fresh: util.types = new util.types();
+        expect(asyncHit).assertTrue();
+        expect(plainHit).assertFalse();
+        expect(asyncHit).assertEqual(fresh.isAsyncFunction(fn));
+        expect(plainHit).assertEqual(fresh.isAsyncFunction(declarePlainFunction));
+        let host: DetectionHost = new DetectionHost();
+        expect(host.probe(makeAsyncFunction())).assertTrue();
+        expect(host.probe(declarePlainFunction)).assertFalse();
+      }
+
+      // --- [4] Verify a class method factory yields an async arrow that is accepted while its plain twin is rejected ---
+      {
+        let asyncChecker: util.types = new util.types();
+        let provider: MethodProvider = new MethodProvider();
+        expect(asyncChecker.isAsyncFunction(provider.make())).assertTrue();
+        expect(asyncChecker.isAsyncFunction(provider.makePlain())).assertFalse();
+      }
+
+      // --- [5] Verify an accepted async method reference is not async after invocation while isPromise accepts its call result ---
+      {
+        let asyncChecker: util.types = new util.types();
+        let host: AsyncTaskRunner = new AsyncTaskRunner();
+        let ref: Object = host.run;
+        expect(asyncChecker.isAsyncFunction(ref)).assertTrue();
+        let produced: Object = host.run();
+        expect(asyncChecker.isAsyncFunction(produced)).assertFalse();
+        expect(asyncChecker.isPromise(produced)).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_ASYNC_FUNCTION_3100
+     * @tc.name testTypesIsAsyncFunction031
+     * @tc.desc Merged batch (3 tests): API call consistency: an async function is accepted while isMap and isSet reject the same value; accepts a synchronous promise returning base method is rejected while its async override; one instance separates an async function from a RegExp and a Date, and isPromise rejects the function while accepting its call result.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsAsyncFunction031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+      // --- [1] Verify an async function is accepted while isMap and isSet reject the same value ---
+      {
+        let asyncChecker: util.types = new util.types();
+        let fn: Object = makeAsyncFunction();
+        expect(asyncChecker.isAsyncFunction(fn)).assertTrue();
+        expect(asyncChecker.isMap(fn)).assertFalse();
+        expect(asyncChecker.isSet(fn)).assertFalse();
+      }
+
+      // --- [2] Verify a synchronous promise returning base method is rejected while its async override is accepted ---
+      {
+        let asyncChecker: util.types = new util.types();
+        let base: PromiseMethodBase = new PromiseMethodBase();
+        let child: AsyncOverrideChild = new AsyncOverrideChild();
+        let baseHit: boolean = asyncChecker.isAsyncFunction(base.fetch);
+        let childHit: boolean = asyncChecker.isAsyncFunction(child.fetch);
+        expect(baseHit).assertFalse();
+        expect(childHit).assertTrue();
+      }
+
+      // --- [3] Verify one instance separates an async function from a RegExp and a Date, and isPromise rejects the function while accepting its call result ---
+      {
+        let asyncChecker: util.types = new util.types();
+        let pattern: RegExp = new RegExp('r');
+        let stamp: Date = new Date(1);
+        expect(asyncChecker.isAsyncFunction(makeAsyncFunction())).assertTrue();
+        expect(asyncChecker.isAsyncFunction(pattern)).assertFalse();
+        expect(asyncChecker.isAsyncFunction(stamp)).assertFalse();
+        expect(asyncChecker.isRegExp(pattern)).assertTrue();
+        let asyncProbe: util.types = new util.types();
+        let task: () => Promise<int> = async (): Promise<int> => { return 2; };
+        let pending: Promise<int> = task();
+        expect(asyncProbe.isAsyncFunction(pending)).assertFalse();
+        expect(asyncProbe.isPromise(pending)).assertTrue();
+        expect(asyncProbe.isAsyncFunction(task)).assertTrue();
+        expect(asyncProbe.isPromise(task)).assertFalse();
+        expect(await pending).assertEqual(2);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_ASYNC_FUNCTION_3200
+     * @tc.name testTypesIsAsyncFunction032
+     * @tc.desc Merged batch (5 tests): Program integration: accepts an async arrow that takes a callback parameter; an async function passed as a callback argument is accepted and the sink array grows to one; isAsyncFunction returns true when the argument is routed through an Object typed probe helper; routed through an identity function; selected by a conditional expression.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsAsyncFunction032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify isAsyncFunction returns true for an async arrow that takes a callback parameter ---
+      {
+        let asyncChecker: util.types = new util.types();
+        let invoke: (cb: (x: int) => int) => Promise<int> = async (cb: (x: int) => int): Promise<int> => {
+          return cb(1);
+        };
+        expect(asyncChecker.isAsyncFunction(invoke)).assertTrue();
+      }
+
+      // --- [2] Verify an async function passed as a callback argument is accepted and the sink array grows to one ---
+      {
+        let asyncProbe: util.types = new util.types();
+        let sink: Object[] = [];
+        let consume: (cb: Object) => Object = (cb: Object): Object => {
+          sink.push(cb);
+          return cb;
+        };
+        let fn: Object = makeAsyncFunction();
+        expect(asyncProbe.isAsyncFunction(consume(fn))).assertTrue();
+        expect(sink.length).assertEqual(1);
+      }
+
+      // --- [3] Verify isAsyncFunction returns true when the argument is routed through an Object typed probe helper ---
+      {
+        expect(probeAsyncFunction(async (): Promise<int> => { return 1; })).assertTrue();
+      }
+
+      // --- [4] Verify isAsyncFunction returns true for an async arrow routed through an identity function ---
+      {
+        let asyncChecker: util.types = new util.types();
+        let fn: Object = makeAsyncFunction();
+        expect(asyncChecker.isAsyncFunction(passThrough(fn))).assertTrue();
+      }
+
+      // --- [5] Verify isAsyncFunction returns true for an async arrow selected by a conditional expression ---
+      {
+        let asyncChecker: util.types = new util.types();
+        let flag: boolean = false;
+        let first: () => Promise<int> = async (): Promise<int> => { return 1; };
+        let second: () => Promise<int> = async (): Promise<int> => { return 2; };
+        let target: () => Promise<int> = flag ? first : second;
+        expect(asyncChecker.isAsyncFunction(target)).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_ASYNC_FUNCTION_3300
+     * @tc.name testTypesIsAsyncFunction033
+     * @tc.desc Merged batch (5 tests): Program integration: the detection result maps to the labels async and plain through a ternary expression; maps to the numbers 1 and 0 through a ternary expression; a conditional expression choosing between two distinct async producers is reported async for both branch selections; a helper that returns early classifies an async function as async and a plain one as other; drives a while loop that iterates exactly three times.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsAsyncFunction033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify the detection result maps to the labels async and plain through a ternary expression ---
+      {
+        let asyncProbe: util.types = new util.types();
+        let positive: boolean = asyncProbe.isAsyncFunction(declareAsyncReturn);
+        let negative: boolean = asyncProbe.isAsyncFunction(declarePlainFunction);
+        let positiveLabel: string = positive ? 'async' : 'plain';
+        let negativeLabel: string = negative ? 'async' : 'plain';
+        expect(positiveLabel).assertEqual('async');
+        expect(negativeLabel).assertEqual('plain');
+      }
+
+      // --- [2] Verify the detection result maps to the numbers 1 and 0 through a ternary expression ---
+      {
+        let asyncProbe: util.types = new util.types();
+        let positive: boolean = asyncProbe.isAsyncFunction(declareAsyncReturn);
+        let negative: boolean = asyncProbe.isAsyncFunction(declarePlainFunction);
+        let positiveCode: int = positive ? 1 : 0;
+        let negativeCode: int = negative ? 1 : 0;
+        expect(positiveCode).assertEqual(1);
+        expect(negativeCode).assertEqual(0);
+      }
+
+      // --- [3] Verify a conditional expression choosing between two distinct async producers is reported async for both branch selections ---
+      {
+        let asyncChecker: util.types = new util.types();
+        let host: AsyncTaskRunner = new AsyncTaskRunner();
+        let flag: boolean = false;
+        let first: Object = flag ? makeAsyncFunction() : host.run;
+        expect(asyncChecker.isAsyncFunction(first)).assertTrue();
+        flag = true;
+        let second: Object = flag ? makeAsyncFunction() : host.run;
+        expect(asyncChecker.isAsyncFunction(second)).assertTrue();
+      }
+
+      // --- [4] Verify a helper that returns early classifies an async function as async and a plain one as other ---
+      {
+        expect(classifyWithEarlyReturn(makeAsyncFunction())).assertEqual('async');
+        expect(classifyWithEarlyReturn(declarePlainFunction)).assertEqual('other');
+      }
+
+      // --- [5] Verify the detection result drives a while loop that iterates exactly three times ---
+      {
+        let asyncProbe: util.types = new util.types();
+        let fn: Object = makeAsyncFunction();
+        let rounds: int = 0;
+        while (asyncProbe.isAsyncFunction(fn) && rounds < 3) {
+          rounds = rounds + 1;
+        }
+        expect(rounds).assertEqual(3);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_ASYNC_FUNCTION_3400
+     * @tc.name testTypesIsAsyncFunction034
+     * @tc.desc Merged batch (1 test): Program integration: the detection result ends a loop at the first async member after scanning two items.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsAsyncFunction034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify the detection result ends a loop at the first async member after scanning two items ---
+      {
+        let asyncProbe: util.types = new util.types();
+        let candidates: Object[] = [declarePlainFunction, makeAsyncFunction(), declarePlainFunction];
+        let scanned: int = 0;
+        for (let i: int = 0; i < candidates.length; i++) {
+          scanned = scanned + 1;
+          if (asyncProbe.isAsyncFunction(candidates[i])) {
+            break;
+          }
+        }
+        expect(scanned).assertEqual(2);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TYPES_IS_ASYNC_FUNCTION_3500
+     * @tc.name testTypesIsAsyncFunction035
+     * @tc.desc Merged batch (1 tests): Miscellaneous checks: verifies remaining edge cases, covering empty inputs and related edge cases.
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testTypesIsAsyncFunction035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // --- [1] Verify isAsyncFunction rejects the empty string, the keyword function and the type name AsyncFunction in one pass ---
+      {
+        let asyncProbe: util.types = new util.types();
+        let candidates: string[] = ['', 'function', 'AsyncFunction'];
+        let accepted: int = 0;
+        for (let i: int = 0; i < candidates.length; i++) {
+          if (asyncProbe.isAsyncFunction(candidates[i])) {
+            accepted = accepted + 1;
+          }
+        }
+        expect(accepted).assertEqual(0);
+      }
+    });
+
   });
 }
