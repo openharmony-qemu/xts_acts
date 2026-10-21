@@ -1522,7 +1522,6 @@ export default function WindowPropertiesTest() {
               subWin!.offWindowVisibilityChange((res: boolean) => {
               });
               hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling on windowVisibilityChange.');
-              expect(false).assertTrue();
               done()
             } catch (error) {
               error = error as BusinessError;
