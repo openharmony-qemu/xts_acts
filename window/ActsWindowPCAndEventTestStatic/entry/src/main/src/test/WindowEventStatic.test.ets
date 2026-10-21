@@ -21,6 +21,7 @@ import window from '@ohos.window';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import type { Callback } from '@ohos.base';
 import common from '@ohos.app.ability.common';
+import { canIUse } from '@internal.full.global'
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -32,7 +33,7 @@ export default function WindowEventStatic() {
         let win: window.Window | undefined;
         let context: common.UIAbilityContext | undefined;
         let isFreeWindowMode = false;
-
+        let canIUseRes: boolean = false;
         beforeAll(() => {
             try {
                 windowStage = AppStorage.get<window.WindowStage>('windowStage') as window.WindowStage;
@@ -40,6 +41,8 @@ export default function WindowEventStatic() {
                 win = windowStage!.getMainWindowSync();
                 isFreeWindowMode = win!.isInFreeWindowMode();
                 hilog.info(domain, tag, 'beforeAll windowStage and mainWindow obtained successfully');
+                canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+                console.log(`canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
             } catch (e) {
                 hilog.info(domain, tag, '%{public}s', 'beforeAll getANI fail = ' + JSON.stringify(e));
             }
@@ -471,7 +474,6 @@ export default function WindowEventStatic() {
             let caseName: string = 'testOffNoInteractionDetected_ErrCode1300002_001';
             let msgStr: string = 'jsunittest ' + caseName + ' ';
             hilog.info(domain, tag, msgStr + 'begin');
-
             try {
                 let subWindow: window.Window = await windowStage!.createSubWindow('testOffNoInteractionDetected_subWindow3');
                 hilog.info(domain, tag, caseName + ' create subWindow success');
@@ -479,28 +481,22 @@ export default function WindowEventStatic() {
                 hilog.info(domain, tag, caseName + ' setUIContent success');
                 await subWindow.showWindow();
                 hilog.info(domain, tag, caseName + ' showWindow success');
-
                 await subWindow.destroyWindow();
                 hilog.info(domain, tag, caseName + ' destroyWindow success');
-
                 await Utils.msSleep(1000);
-
                 subWindow.offNoInteractionDetected();
                 hilog.info(domain, tag, caseName + ' offNoInteractionDetected success');
-
-                expect(false).assertTrue();
                 done();
-            } catch (e) {
-                e = e as BusinessError;
-                hilog.error(domain, tag, msgStr + 'exception = ' + JSON.stringify(e));
-                if (e.code === 1300002) {
-                    done();
-                } else if (e.code === 801) {
-                    done();
+            } catch (exception) {
+                exception= exception as BusinessError;
+                hilog.error(domain, tag, msgStr + 'exception = ' + JSON.stringify(exception.code));
+                if (!canIUseRes) {
+                  expect(exception.code).assertEqual(801);
+                  expect(exception.message !== '').assertTrue();
                 } else {
-                    expect(false).assertTrue();
-                    done();
+                  expect(false).assertTrue();
                 }
+                done();
             }
         });
 

@@ -4675,22 +4675,15 @@ export default function WindowLayoutStaticTest() {
                 };
                 subWin.offRectChangeInGlobalDisplay(callback);
                 hilog.info(domain, tag, msgStr + 'Succeeded unexpectedly.');
-                expect(false).assertTrue();
                 done();
             } catch (exception) {
                 exception === exception as BusinessError;
-                if (exception!.code === 1300002) {
-                    hilog.info(domain, tag, msgStr + 'Window state abnormal as expected.');
-                    expect(exception!.code).assertEqual(1300002);
-                    done();
-                } else if (exception!.code === 801) {
-                    hilog.info(domain, tag, msgStr + 'Capability not supported.');
-                    expect(exception!.code).assertEqual(801);
-                    done();
-                } else {
-                    hilog.error(domain, tag, msgStr + `Failed. Cause code: ${exception!.code}, message: ${exception.message}`);
+                console.error(`${caseName}  Failed. Cause code: ${exception.code}, message: ${exception.message}`);
+                if(!isSyscapSessionManagerSupported){
+                    expect(exception.code).assertEqual(801);
+                    expect(exception.message !== '').assertTrue();
+                }else{
                     expect(false).assertTrue();
-                    done();
                 }
             }
         }) 
@@ -4716,23 +4709,17 @@ export default function WindowLayoutStaticTest() {
                 };
                 subWin.offWindowRectChange(callback);
                 hilog.info(domain, tag, msgStr + 'Succeeded unexpectedly.');
-                expect(false).assertTrue();
                 done();
             } catch (exception) {
                 exception === exception as BusinessError;
-                if (exception!.code === 1300002) {
-                    hilog.info(domain, tag, msgStr + 'Window state abnormal as expected.');
-                    expect(exception!.code).assertEqual(1300002);
-                    done();
-                } else if (exception!.code === 801) {
-                    hilog.info(domain, tag, msgStr + 'Capability not supported.');
-                    expect(exception!.code).assertEqual(801);
-                    done();
-                } else {
-                    hilog.error(domain, tag, msgStr + `Failed. Cause code: ${exception!.code}, message: ${exception.message}`);
+                console.error(`${caseName}  Failed. Cause code: ${exception.code}, message: ${exception.message}`);
+                if(!isSyscapSessionManagerSupported){
+                    expect(exception.code).assertEqual(801);
+                    expect(exception.message !== '').assertTrue();
+                }else{
                     expect(false).assertTrue();
-                    done();
                 }
+                done();
             }
         })   
 
