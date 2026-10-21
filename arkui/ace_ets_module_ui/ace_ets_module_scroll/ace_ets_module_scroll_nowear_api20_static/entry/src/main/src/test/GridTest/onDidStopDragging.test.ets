@@ -51,7 +51,7 @@ export default function onDidStopDraggingTest() {
         await CommonFunc.sleep(500);
         let driver = Driver.create()
         await CommonFunc.sleep(1000);
-        let dragScroll = await driver.findComponent(ON.id('grid_dragging'));
+        let dragScroll = await driver.findComponent(ON.id('Grid_onDidStopDragging_grid_dragging'));
         const rect = await (dragScroll?.getBounds() as Promise<Rect>);
         let displayId = await dragScroll!.getDisplayId();
         let top = rect.top;

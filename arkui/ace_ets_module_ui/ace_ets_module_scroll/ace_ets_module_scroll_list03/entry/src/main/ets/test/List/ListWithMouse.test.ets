@@ -61,7 +61,7 @@ export default function listWithMouse() {
 
     /**
      * @tc.name   listWithMouse_0100
-     * @tc.number listWithMouse_0100
+     * @tc.number SUB_ARKUI_LIST_SCROLLWITHMOUSE_TEST_0100
      * @tc.desc   Test horizontal List supports mouse left button drag scrolling
      *            with default enableScrollWithMouse value
      * @tc.type   FUNCTION
@@ -98,8 +98,8 @@ export default function listWithMouse() {
     })
 
     /**
-     * @tc.name   listWithMouse_0200
-     * @tc.number listWithMouse_0200
+      * @tc.name   listWithMouse_0200
+      * @tc.number SUB_ARKUI_LIST_SCROLLWITHMOUSE_TEST_0200
      * @tc.desc   Test horizontal List supports mouse left button drag scrolling
      *            when enableScrollWithMouse is set to true
      * @tc.type   FUNCTION
@@ -136,8 +136,8 @@ export default function listWithMouse() {
     })
 
     /**
-     * @tc.name   listWithMouse_0300
-     * @tc.number listWithMouse_0300
+      * @tc.name   listWithMouse_0300
+      * @tc.number SUB_ARKUI_LIST_SCROLLWITHMOUSE_TEST_0300
      * @tc.desc   Test horizontal List does not scroll with mouse left button drag
      *            when enableScrollWithMouse is set to false
      * @tc.type   FUNCTION

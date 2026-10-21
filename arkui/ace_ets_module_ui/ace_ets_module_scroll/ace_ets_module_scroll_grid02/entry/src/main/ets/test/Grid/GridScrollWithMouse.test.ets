@@ -61,7 +61,7 @@ export default function gridScrollWithMouse() {
 
     /**
      * @tc.name   gridScrollWithMouse_0100
-     * @tc.number gridScrollWithMouse_0100
+     * @tc.number SUB_ARKUI_GRID_SCROLLWITHMOUSE_TEST_0100
      * @tc.desc   Test horizontal Grid supports mouse left button drag scrolling
      *            with default enableScrollWithMouse value
      * @tc.type   FUNCTION
@@ -98,8 +98,8 @@ export default function gridScrollWithMouse() {
     })
 
     /**
-     * @tc.name   gridScrollWithMouse_0200
-     * @tc.number gridScrollWithMouse_0200
+      * @tc.name   gridScrollWithMouse_0200
+      * @tc.number SUB_ARKUI_GRID_SCROLLWITHMOUSE_TEST_0200
      * @tc.desc   Test horizontal Grid supports mouse left button drag scrolling
      *            when enableScrollWithMouse is set to true
      * @tc.type   FUNCTION
@@ -136,8 +136,8 @@ export default function gridScrollWithMouse() {
     })
 
     /**
-     * @tc.name   gridScrollWithMouse_0300
-     * @tc.number gridScrollWithMouse_0300
+      * @tc.name   gridScrollWithMouse_0300
+      * @tc.number SUB_ARKUI_GRID_SCROLLWITHMOUSE_TEST_0300
      * @tc.desc   Test horizontal Grid does not scroll with mouse left button drag
      *            when enableScrollWithMouse is set to false
      * @tc.type   FUNCTION

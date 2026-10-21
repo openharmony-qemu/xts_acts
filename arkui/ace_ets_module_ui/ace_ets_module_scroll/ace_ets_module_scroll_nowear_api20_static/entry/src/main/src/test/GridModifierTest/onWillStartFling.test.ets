@@ -51,7 +51,7 @@ export default function onWillStartFlingModifierTest() {
         await CommonFunc.sleep(500);
         let driver = Driver.create()
         await CommonFunc.sleep(1000);
-        let dragScroll = await driver.findComponent(ON.id('grid_dragging_fling'));
+        let dragScroll = await driver.findComponent(ON.id('GridModifier_onWillStartFling_grid_dragging_fling'));
         const rect = await (dragScroll?.getBounds() as Promise<Rect>);
         let displayId = await dragScroll!.getDisplayId();
         let top = rect.top;

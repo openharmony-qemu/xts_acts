@@ -61,7 +61,7 @@ export default function waterFlowWithMouse() {
 
     /**
      * @tc.name   waterFlowWithMouse_0100
-     * @tc.number waterFlowWithMouse_0100
+     * @tc.number SUB_ARKUI_WATERFLOW_SCROLLWITHMOUSE_TEST_0100
      * @tc.desc   Test horizontal WaterFlow supports mouse left button drag scrolling
      *            with default enableScrollWithMouse value
      * @tc.type   FUNCTION
@@ -98,8 +98,8 @@ export default function waterFlowWithMouse() {
     })
 
     /**
-     * @tc.name   waterFlowWithMouse_0200
-     * @tc.number waterFlowWithMouse_0200
+      * @tc.name   waterFlowWithMouse_0200
+      * @tc.number SUB_ARKUI_WATERFLOW_SCROLLWITHMOUSE_TEST_0200
      * @tc.desc   Test horizontal WaterFlow supports mouse left button drag scrolling
      *            when enableScrollWithMouse is set to true
      * @tc.type   FUNCTION
@@ -136,8 +136,8 @@ export default function waterFlowWithMouse() {
     })
 
     /**
-     * @tc.name   waterFlowWithMouse_0300
-     * @tc.number waterFlowWithMouse_0300
+      * @tc.name   waterFlowWithMouse_0300
+      * @tc.number SUB_ARKUI_WATERFLOW_SCROLLWITHMOUSE_TEST_0300
      * @tc.desc   Test horizontal WaterFlow does not scroll with mouse left button drag
      *            when enableScrollWithMouse is set to false
      * @tc.type   FUNCTION

@@ -56,37 +56,37 @@ export default function ScrollGetScrollStateTest() {
     });
  
     /**
-     * @tc.number   SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0100
-     * @tc.name     SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0100
+     * @tc.number   SUB_ARKUI_SCROLL_GETSCROLLSTATE_STATIC_0100
+     * @tc.name     scrollGetScrollState_static_0100
      * @tc.desc     Test Scroller getScrollState returns Idle when the container is not scrolling.
      * @tc.size     MEDIUMTEST
      * @tc.level    Level.LEVEL0
      */
-    it('SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0100', Level.LEVEL0,
+    it('scrollGetScrollState_static_0100', Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.info('[SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0100] START');
+        console.info('[scrollGetScrollState_static_0100] START');
         let driver = Driver.create();
         await Utils.sleep(1000);
         let btn = await driver.findComponent(ON.id('getScrollState_default'));
         await (btn?.click() as Promise<void>);
         await Utils.sleep(500);
         let result = AppStorage.get<string>('getScrollState_lastResult');
-        console.info('[SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0100] result: ' + result);
+        console.info('[scrollGetScrollState_static_0100] result: ' + result);
         expect(result).assertEqual('Idle');
-        console.info('[SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0100] END');
+        console.info('[scrollGetScrollState_static_0100] END');
         done();
       });
  
     /**
-     * @tc.number   SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0200
-     * @tc.name     SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0200
+     * @tc.number   SUB_ARKUI_SCROLL_GETSCROLLSTATE_STATIC_0200
+     * @tc.name     scrollGetScrollState_static_0200
      * @tc.desc     Test Scroller getScrollState returns Scroll while dragging the container.
      * @tc.size     MEDIUMTEST
      * @tc.level    Level.LEVEL0
      */
-    it('SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0200', Level.LEVEL0,
+    it('scrollGetScrollState_static_0200', Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.info('[SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0200] START');
+        console.info('[scrollGetScrollState_static_0200] START');
         let driver = Driver.create();
         await Utils.sleep(1000);
         let resetRecordBtn = await driver.findComponent(ON.id('getScrollState_resetRecord'));
@@ -107,22 +107,22 @@ export default function ScrollGetScrollStateTest() {
         );
         await Utils.sleep(2000);
         let record: string = `${AppStorage.get<string>('getScrollState_stateRecord')}`;
-        console.info('[SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0200] stateRecord: ' + record);
+        console.info('[scrollGetScrollState_static_0200] stateRecord: ' + record);
         expect(record.includes('Scroll')).assertTrue();
-        console.info('[SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0200] END');
+        console.info('[scrollGetScrollState_static_0200] END');
         done();
       });
  
     /**
-     * @tc.number   SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0300
-     * @tc.name     SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0300
+     * @tc.number   SUB_ARKUI_SCROLL_GETSCROLLSTATE_STATIC_0300
+     * @tc.name     scrollGetScrollState_static_0300
      * @tc.desc     Test Scroller getScrollState returns Fling during animated scrolling.
      * @tc.size     MEDIUMTEST
      * @tc.level    Level.LEVEL0
      */
-    it('SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0300', Level.LEVEL0,
+    it('scrollGetScrollState_static_0300', Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.info('[SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0300] START');
+        console.info('[scrollGetScrollState_static_0300] START');
         let driver = Driver.create();
         await Utils.sleep(1000);
         let resetRecordBtn = await driver.findComponent(ON.id('getScrollState_resetRecord'));
@@ -132,22 +132,22 @@ export default function ScrollGetScrollStateTest() {
         await (animateBtn?.click() as Promise<void>);
         await Utils.sleep(1500);
         let record: string = `${AppStorage.get<string>('getScrollState_stateRecord')}`;
-        console.info('[SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0300] stateRecord: ' + record);
+        console.info('[scrollGetScrollState_static_0300] stateRecord: ' + record);
         expect(record.includes('Fling')).assertTrue();
-        console.info('[SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0300] END');
+        console.info('[scrollGetScrollState_static_0300] END');
         done();
       });
  
     /**
-     * @tc.number   SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0400
-     * @tc.name     SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0400
+     * @tc.number   SUB_ARKUI_SCROLL_GETSCROLLSTATE_STATIC_0400
+     * @tc.name     scrollGetScrollState_static_0400
      * @tc.desc     Test Scroller getScrollState returns Idle after the scrolling stops.
      * @tc.size     MEDIUMTEST
      * @tc.level    Level.LEVEL0
      */
-    it('SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0400', Level.LEVEL0,
+    it('scrollGetScrollState_static_0400', Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.info('[SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0400] START');
+        console.info('[scrollGetScrollState_static_0400] START');
         let driver = Driver.create();
         await Utils.sleep(1000);
 
@@ -168,31 +168,31 @@ export default function ScrollGetScrollStateTest() {
         await (btn?.click() as Promise<void>);
         await Utils.sleep(2000);
         let result = AppStorage.get<string>('getScrollState_lastResult');
-        console.info('[SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0400] result: ' + result);
+        console.info('[scrollGetScrollState_static_0400] result: ' + result);
         expect(result).assertEqual('Idle');
-        console.info('[SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0400] END');
+        console.info('[scrollGetScrollState_static_0400] END');
         done();
       });
  
     /**
-     * @tc.number   SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0500
-     * @tc.name     SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0500
+     * @tc.number   SUB_ARKUI_SCROLL_GETSCROLLSTATE_STATIC_0500
+     * @tc.name     scrollGetScrollState_static_0500
      * @tc.desc     Test Scroller getScrollState throws error 100004 when scroller is not bound to a component.
      * @tc.size     MEDIUMTEST
      * @tc.level    Level.LEVEL0
      */
-    it('SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0500', Level.LEVEL0,
+    it('scrollGetScrollState_static_0500', Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.info('[SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0500] START');
+        console.info('[scrollGetScrollState_static_0500] START');
         let driver = Driver.create();
         await Utils.sleep(1000);
         let unboundBtn = await driver.findComponent(ON.id('getScrollState_unbound'));
         await (unboundBtn?.click() as Promise<void>);
         await Utils.sleep(500);
         let result = AppStorage.get<string>('getScrollState_lastResult');
-        console.info('[SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0500] result: ' + result);
+        console.info('[scrollGetScrollState_static_0500] result: ' + result);
         expect(result).assertEqual('100004');
-        console.info('[SUB_ARKUI_SCROLLGETSCROLLSTATE_STATICTEST_0500] END');
+        console.info('[scrollGetScrollState_static_0500] END');
         done();
       });
   })

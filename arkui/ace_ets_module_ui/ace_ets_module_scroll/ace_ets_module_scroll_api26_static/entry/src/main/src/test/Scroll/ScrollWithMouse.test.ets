@@ -63,16 +63,16 @@ export default function ScrollWithMouseTest() {
     });
  
     /**
-     * @tc.number   SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0100
-     * @tc.name     SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0100
+     * @tc.number   SUB_ARKUI_SCROLLWITHMOUSE_STATIC_0100
+     * @tc.name     scrollWithMouse_static_0100
      * @tc.desc     Horizontal Scroll with enableScrollWithMouse set to undefined (default)
      *               supports mouse left-button drag scrolling by default since API 26.2.0.
      * @tc.size     MEDIUMTEST
      * @tc.level    Level.LEVEL0
      */
-    it('SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0100', Level.LEVEL0,
+    it('scrollWithMouse_static_0100', Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.info('[SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0100] START');
+        console.info('[scrollWithMouse_static_0100] START');
       let driver = Driver.create();
       await Utils.sleep(1000);
       let btn = await driver.findComponent(ON.id('H_SCROLL_DEFAULT'));
@@ -83,7 +83,7 @@ export default function ScrollWithMouseTest() {
       await Utils.sleep(500);
       let strJson: string = inspector.getInspectorByKey('H_SCROLL_OFFSET');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('[SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0100] offset after drag: ' +
+      console.info('[scrollWithMouse_static_0100] offset after drag: ' +
        obj.getElement('$attrs').getString('content'));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('offset=0');
  
@@ -110,24 +110,24 @@ export default function ScrollWithMouseTest() {
 
       let strJson2: string = inspector.getInspectorByKey('H_SCROLL_OFFSET');
       let obj2 = JSON.parseJsonElement(strJson2);
-      console.info('[SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0100] offset after drag: ' +
+      console.info('[scrollWithMouse_static_0100] offset after drag: ' +
        obj2.getElement('$attrs').getString('content'));
       expect(obj2.getElement('$attrs').getString('content') !== 'offset=0').assertTrue();
-      console.info('[SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0100] END');
+      console.info('[scrollWithMouse_static_0100] END');
       done();
     });
  
     /**
-     * @tc.number   SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0200
-     * @tc.name     SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0200
+     * @tc.number   SUB_ARKUI_SCROLLWITHMOUSE_STATIC_0200
+     * @tc.name     scrollWithMouse_static_0200
      * @tc.desc     Horizontal Scroll with enableScrollWithMouse set to true
      *               supports mouse left-button drag scrolling.
      * @tc.size     MEDIUMTEST
      * @tc.level    Level.LEVEL0
      */
-    it('SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0200', Level.LEVEL0,
+    it('scrollWithMouse_static_0200', Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.info('[SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0200] START');
+        console.info('[scrollWithMouse_static_0200] START');
         let driver = Driver.create();
       await Utils.sleep(1000);
       let btn = await driver.findComponent(ON.id('H_SCROLL_TRUE'));
@@ -138,7 +138,7 @@ export default function ScrollWithMouseTest() {
       await Utils.sleep(500);
       let strJson: string = inspector.getInspectorByKey('H_SCROLL_OFFSET');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('[SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0200] offset after drag: ' +
+      console.info('[scrollWithMouse_static_0200] offset after drag: ' +
        obj.getElement('$attrs').getString('content'));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('offset=0');
 
@@ -165,24 +165,24 @@ export default function ScrollWithMouseTest() {
 
       let strJson2: string = inspector.getInspectorByKey('H_SCROLL_OFFSET');
       let obj2 = JSON.parseJsonElement(strJson2);
-      console.info('[SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0200] offset after drag: ' +
+      console.info('[scrollWithMouse_static_0200] offset after drag: ' +
        obj2.getElement('$attrs').getString('content'));
       expect(obj2.getElement('$attrs').getString('content') !== 'offset=0').assertTrue();
-      console.info('[SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0200] END');
+      console.info('[scrollWithMouse_static_0200] END');
       done();
     });
  
     /**
-     * @tc.number   SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0300
-     * @tc.name     SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0300
+     * @tc.number   SUB_ARKUI_SCROLLWITHMOUSE_STATIC_0300
+     * @tc.name     scrollWithMouse_static_0300
      * @tc.desc     Horizontal Scroll with enableScrollWithMouse set to false
      *               does not respond to mouse left-button drag scrolling.
      * @tc.size     MEDIUMTEST
      * @tc.level    Level.LEVEL0
      */
-    it('SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0300', Level.LEVEL0,
+    it('scrollWithMouse_static_0300', Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.info('[SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0300] START');
+        console.info('[scrollWithMouse_static_0300] START');
         let driver = Driver.create();
         await Utils.sleep(1000);
       let btn = await driver.findComponent(ON.id('H_SCROLL_FALSE'));
@@ -193,7 +193,7 @@ export default function ScrollWithMouseTest() {
       await Utils.sleep(500);
       let strJson: string = inspector.getInspectorByKey('H_SCROLL_OFFSET');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('[SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0300] offset after drag: ' +
+      console.info('[scrollWithMouse_static_0300] offset after drag: ' +
        obj.getElement('$attrs').getString('content'));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('offset=0');
 
@@ -219,10 +219,10 @@ export default function ScrollWithMouseTest() {
       await CommonFunc.sleep(2000);
       let strJson2: string = inspector.getInspectorByKey('H_SCROLL_OFFSET');
       let obj2 = JSON.parseJsonElement(strJson2);
-      console.info('[SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0300] offset after drag: ' +
+      console.info('[scrollWithMouse_static_0300] offset after drag: ' +
        obj2.getElement('$attrs').getString('content'));
       expect(obj2.getElement('$attrs').getString('content')).assertEqual('offset=0');
-      console.info('[SUB_ARKUI_SCROLLWITHMOUSE_STATICTEST_0300] END');
+      console.info('[scrollWithMouse_static_0300] END');
       done();
     });
   })
