@@ -14,7 +14,9 @@
  */
  
 import WebViewUndoingRedo from './WebViewUndoingRedo.test';
+import ActsWebTextFragment from './WebTextFragment.test';
 
 export default function testsuite() {
   WebViewUndoingRedo()
+  ActsWebTextFragment()
 }
