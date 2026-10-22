@@ -95,5 +95,72 @@ export default function formBindingDataTest() {
             done();
             hilog.info(DOMAIN, TAG, 'FormBindingDataStaticTest002 end');
         })
+
+        /**
+         * @tc.name   FormBindingDataExStaticTest001
+         * @tc.number FormBindingDataExStaticTest001
+         * @tc.desc   check createFormBindingDataEx with object parameter
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("FormBindingDataExStaticTest001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            await Utils.msSleep(1000);
+            hilog.info(DOMAIN, TAG, 'FormBindingDataExStaticTest001 start');
+
+            let dataObj: Record<string, string> = {
+                'temperature': '11c',
+                'time': '11:00'
+            };
+            let formBinding = formBindingData.createFormBindingDataEx(dataObj);
+            expect(formBinding.data + '').assertEqual('temperature,11c,time,11:00');
+            expect(formBinding.isSupportMoreImages).assertTrue();
+
+            done();
+            hilog.info(DOMAIN, TAG, 'FormBindingDataExStaticTest001 end');
+        })
+
+        /**
+         * @tc.name   FormBindingDataExStaticTest002
+         * @tc.number FormBindingDataExStaticTest002
+         * @tc.desc   check createFormBindingDataEx with number parameter should throw 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("FormBindingDataExStaticTest002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            await Utils.msSleep(1000);
+            hilog.info(DOMAIN, TAG, 'FormBindingDataExStaticTest002 start');
+
+            try {
+                let formBinding = formBindingData.createFormBindingDataEx(123);
+                expect().assertFail();
+            } catch (error) {
+                expect(error.code).assertEqual(401);
+            }
+
+            done();
+            hilog.info(DOMAIN, TAG, 'FormBindingDataExStaticTest002 end');
+        })
+
+        /**
+         * @tc.name   FormBindingDataExStaticTest003
+         * @tc.number FormBindingDataExStaticTest003
+         * @tc.desc   check createFormBindingDataEx with undefined parameter
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("FormBindingDataExStaticTest003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            await Utils.msSleep(1000);
+            hilog.info(DOMAIN, TAG, 'FormBindingDataExStaticTest003 start');
+
+            let formBinding = formBindingData.createFormBindingDataEx();
+            expect(formBinding.data + '').assertEqual('');
+            expect(formBinding.isSupportMoreImages).assertTrue();
+
+            done();
+            hilog.info(DOMAIN, TAG, 'FormBindingDataExStaticTest003 end');
+        })
     })
 }
