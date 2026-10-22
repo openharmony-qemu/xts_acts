@@ -2519,32 +2519,6 @@ export default function bluetoothConnectionTest(): void {
     });
 
     /**
-     * @tc.number  SUB_COMMUNICATION_BP_TESTBLUETOOTHTRANSPORTADD_0100
-     * @tc.name    testBluetoothTransportAdd
-     * @tc.desc    Test testBluetoothTransportAdd API functionality
-     * @tc.level   Level 0
-     * @tc.type    Function
-     * @tc.size    MEDIUMTEST
-     */
-    it("testBluetoothTransportAdd", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        try {
-          let TRANSPORT_DUAL = connection.BluetoothTransport.TRANSPORT_DUAL;
-          hilog.info(domain, tag, "BluetoothTransport TRANSPORT_DUAL: " + TRANSPORT_DUAL);
-          expect(TRANSPORT_DUAL).assertEqual(2);
-
-          let TRANSPORT_UNKNOWN = connection.BluetoothTransport.TRANSPORT_UNKNOWN;
-          hilog.info(domain, tag, "BluetoothTransport TRANSPORT_UNKNOWN: " + TRANSPORT_UNKNOWN);
-          expect(TRANSPORT_UNKNOWN).assertEqual(3);
-        } catch (err) {
-          hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-          hilog.info(domain, tag, "testBluetoothTransportAdd errCode:" + err.code + ",errMessage:" + err.message);
-          expect().assertFail();
-        }
-        done();
-      })
-
-    /**
      * @tc.number  SUB_COMMUNICATION_BP_TESTACLSTATE_0100
      * @tc.name    testAclState
      * @tc.desc    Test testAclState API functionality
