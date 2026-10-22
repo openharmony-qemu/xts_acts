@@ -40,6 +40,17 @@ export default function abilityTest() {
       if (allowed) {
         await allowed.click();
       }
+      if(deviceSupport === 'false'){
+        let appCloneSupport = AppStorage.get('appCloneSupport') as boolean;
+        if(appCloneSupport){
+          //current application has appClone
+          deviceSupport = 'true';
+        }else{
+          deviceSupport = 'false';
+        }
+        console.info('beforeAll.appCloneSupport: ' + appCloneSupport);
+      }
+      console.info('beforeAll.deviceSupport: ' + deviceSupport);
     })
 
     /**

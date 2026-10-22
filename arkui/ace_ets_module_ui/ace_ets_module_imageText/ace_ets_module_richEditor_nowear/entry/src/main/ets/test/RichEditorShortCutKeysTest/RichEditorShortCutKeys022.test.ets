@@ -70,7 +70,7 @@ export default function RichEditorShortCutKeys022() {
       let driver = Driver.create();
       let rich = await driver.findComponent(ON.id('RichEditorShortCutKeys022'));
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
       await CommonFunc.sleep(500);
       let setSelect = await driver.findComponent(ON.id('setSelect'));
       await setSelect.click();

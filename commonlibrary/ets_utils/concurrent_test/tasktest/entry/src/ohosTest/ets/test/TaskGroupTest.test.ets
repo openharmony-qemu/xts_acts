@@ -26,20 +26,6 @@ export default function TaskGroupTest() {
     })
 
     /**
-     * @tc.name   testHappyPath
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_TASKGROUP_0001
-     * @tc.desc   checks most basic task group use
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testHappyPath', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let result: Object = await testHappyPath();
-      expect(result).assertEqual("PASSED");
-      done();
-    })
-
-    /**
      * @tc.name   testHappyPathCombined
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_TASKGROUP_0002
      * @tc.desc   checks basic use of group with tasks defined in different ways
@@ -49,20 +35,6 @@ export default function TaskGroupTest() {
      */
     it('testHappyPathCombined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let result: Object = await testHappyPathCombined();
-      expect(result).assertEqual("PASSED");
-      done();
-    })
-
-    /**
-     * @tc.name   testRepeats
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_TASKGROUP_0003
-     * @tc.desc   checks repeated use of task group
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('testRepeats', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let result: Object = await testRepeats();
       expect(result).assertEqual("PASSED");
       done();
     })

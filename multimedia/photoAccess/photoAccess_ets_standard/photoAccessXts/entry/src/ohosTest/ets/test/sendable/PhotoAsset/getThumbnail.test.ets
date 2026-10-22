@@ -22,18 +22,19 @@ import {
   driveFn,
   pushCreateAsset,
   LOG_TAG,
-  getSendableFileAsset
+  getSendableFileAsset,
+  checkResourceFile,
+  createResource
 } from '../../common';
 import common from '@ohos.app.ability.common';
 import { photoAccessHelper, sendablePhotoAccessHelper } from '@kit.MediaLibraryKit';
 
 const TAG = LOG_TAG + 'sendableGetThumbnailTest';
-const IMAGE_TEST_FILE = 'getThumb.jpg';
-const VIDEO_TEST_FILE = 'getThumb.mp4';
+const IMAGE_TEST_FILE = 'getThumb1.jpg';
+const VIDEO_TEST_FILE = 'getThumb1.mp4';
 
 export default function sendableGetThumbnailTest() {
   describe('sendableGetThumbnailTest', () => {
-    const fileNameList = [IMAGE_TEST_FILE, VIDEO_TEST_FILE];
     let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
     let getThumbnailPromise1 = async (done: Function, testName: string, fetchOps: photoAccessHelper.FetchOptions) => {
       try {
@@ -103,7 +104,10 @@ export default function sendableGetThumbnailTest() {
       console.info(TAG, 'beforeAll case');
       await getPermission();
       await driveFn();
-      await pushCreateAsset(testContext, fileNameList);
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let fileNameList: Array<string> = [ IMAGE_TEST_FILE, VIDEO_TEST_FILE ];
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNameList);
     });
 
     beforeEach(() => {

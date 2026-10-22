@@ -19,7 +19,7 @@ import image from '@ohos.multimedia.image';
 import { describe, it, expect, TestType, Size, Level, Hypium, beforeAll } from '../../../../hypium/index'
 import Context from "application.Context"
 import hilog from '@ohos.hilog'
-import { fetchOption, getFileAsset, getPermission, driveFn, sleep, pushCreateAsset } from '../Common.test.ets'
+import { fetchOption, getFileAsset, getPermission, driveFn, checkResourceFile, createResource } from '../Common.test.ets'
 import { BusinessError } from '@ohos.base'
 
 let domain: int= 0x0000;
@@ -29,6 +29,7 @@ export default function getThumbnailTest() {
 
   const fileNameList = ["getThumb.jpg", "getThumb.mp4"];
   describe('getThumbnailTest', (): void => {
+    let testContext: Context = Hypium.get("context") as Context;
 
     let getThumbnailCallback1 = async (done: () => void, testNum: string,
       fetchOps: photoAccessHelper.FetchOptions): Promise<void> => {
@@ -195,11 +196,10 @@ export default function getThumbnailTest() {
 
     beforeAll(async () => {
       console.info('beforeAll case');
-      let testContext: Context = Hypium.get("context") as Context;
       await getPermission();
       await driveFn();
-      await sleep(1000);
-      await pushCreateAsset(testContext, fileNameList);
+      await checkResourceFile(testContext);
+      await createResource(testContext, fileNameList);
     });
 
     /**

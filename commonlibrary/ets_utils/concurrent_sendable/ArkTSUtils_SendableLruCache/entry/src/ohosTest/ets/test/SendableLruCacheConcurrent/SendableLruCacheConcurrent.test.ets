@@ -425,6 +425,25 @@ async function putNestedCache(
   });
 }
 
+
+@Sendable
+class SupLruCacheShared001 {
+  cache: ArkTSUtils.SendableLruCache<number, number> = new ArkTSUtils.SendableLruCache<number, number>(2000);
+}
+
+@Concurrent
+function supLruWriteTask001(cache: ArkTSUtils.SendableLruCache<number, number>, base: number): void {
+  for (let i = 0; i < 200; i++) {
+    cache.put(base + i, (base + i) * 2);
+  }
+}
+
+@Concurrent
+function supLruRemoveTask001(cache: ArkTSUtils.SendableLruCache<number, number>, base: number): void {
+  for (let i = 0; i < 200; i++) {
+    cache.remove(base + i);
+  }
+}
 export default function SendableLruCacheConcurrentSubTest(): void {
   describe('SendableLruCacheConcurrentSubTest', () => {
     afterAll(async () => {
@@ -2538,6 +2557,57 @@ export default function SendableLruCacheConcurrentSubTest(): void {
       console.info(`${caseName}, test end`);
       done();
     });
+
+    /**
+     * @tc.number  SUB_LRUCACHE_CONC_DISTINCT_KEYS_0100
+     * @tc.name    testLruCacheConcDistinctKeys0001
+     * @tc.desc    Verify concurrent writes of distinct keys keep all values correct
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testLruCacheConcDistinctKeys0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let shared = new SupLruCacheShared001()
+      let tasks: taskpool.Task[] = []
+      for (let t = 0; t < 5; t++) {
+        tasks.push(new taskpool.Task(supLruWriteTask001, shared.cache, t * 200))
+      }
+      for (let t = 0; t < tasks.length; t++) {
+        await taskpool.execute(tasks[t])
+      }
+      expect(shared.cache.length).assertEqual(1000)
+      for (let i = 0; i < 1000; i++) {
+        expect(shared.cache.get(i)).assertEqual(i * 2)
+      }
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_LRUCACHE_CONC_REMOVE_VERIFY_0200
+     * @tc.name    testLruCacheConcRemoveVerify0002
+     * @tc.desc    Verify concurrent remove leaves no ghost keys
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testLruCacheConcRemoveVerify0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let shared = new SupLruCacheShared001()
+      for (let i = 0; i < 1000; i++) {
+        shared.cache.put(i, i)
+      }
+      let tasks: taskpool.Task[] = []
+      for (let t = 0; t < 5; t++) {
+        tasks.push(new taskpool.Task(supLruRemoveTask001, shared.cache, t * 200))
+      }
+      for (let t = 0; t < tasks.length; t++) {
+        await taskpool.execute(tasks[t])
+      }
+      for (let i = 0; i < 1000; i++) {
+        expect(shared.cache.contains(i)).assertFalse()
+      }
+      done()
+    })
+
   });
 }
 

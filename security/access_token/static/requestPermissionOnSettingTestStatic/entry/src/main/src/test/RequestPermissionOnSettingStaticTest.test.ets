@@ -42,22 +42,27 @@ const ERR_PERM_NOT_REVOKE_BY_USER = 12100012;
 
 function clickRequest(driver: Driver, name: string): boolean {
   waitForCompletion(() => Utils.msSleep(2000))
-  try {
-    hilog.error(domain, tag, ` 11111111111111111111111 error, ${ JSON.stringify(name) }`);
-    return waitForCompletion<boolean>(async (): Promise<boolean> => {
-      let button = await driver.findComponent(ON.text(name));
-      await Utils.msSleep(1000);
-      if (button !== null) {
-        hilog.error(domain, tag, ` 2222222222222222 error, ${ JSON.stringify(name) }`);
-        await button.click();
-        return true;
-      }
-      return false;
-    })
-  } catch (error) {
-    hilog.error(domain, tag, ` findcomponent error, ${ JSON.stringify(error) }`);
-    return false;
+  for (let retry = 0; retry < 4; retry++) {
+    try {
+      hilog.error(domain, tag, ` 11111111111111111111111 error, ${JSON.stringify(name)}`);
+      return waitForCompletion<boolean>(async (): Promise<boolean> => {
+        let button = await driver.findComponent(ON.text(name));
+        await Utils.msSleep(1000);
+        if (button !== null) {
+          hilog.error(domain, tag, ` 2222222222222222 error, ${JSON.stringify(name)}`);
+          await button.click();
+          return true;
+        }
+        return false;
+      })
+    } catch (error) {
+      hilog.error(domain, tag, ` findcomponent error, ${JSON.stringify(error)}`);
+      waitForCompletion(async () => {
+        await Utils.msSleep(1000);
+      })
+    }
   }
+  return false;
 }
 
 export default function requestPermissionOnSettingStaticTest() {
@@ -342,9 +347,16 @@ export default function requestPermissionOnSettingStaticTest() {
                     });
                   });
                   waitForCompletion(() => Utils.msSleep(2000))
+                  // 先尝试手机UX:下拉菜单(允许/禁止)——>仅此应用日程 ——>确定
+                  // 再尝试车机UX:单选按钮(允许写入)——>确定
                   if (clickRequest(driver3, '允许') || clickRequest(driver3, '禁止')) {
-                    if (clickRequest(driver3, '仅此应用日程'))
-                    clickRequest(driver3, '确定');
+                    if (clickRequest(driver3, '仅此应用日程')) {
+                      clickRequest(driver3, '确定');
+                    }
+                  } else {
+                    if (clickRequest(driver3, '允许写入')) {
+                      clickRequest(driver3, '确定');
+                    }
                   }
                 });
                 waitForCompletion(() => Utils.msSleep(2000))
@@ -544,65 +556,65 @@ export default function requestPermissionOnSettingStaticTest() {
     it('Test_requestPermissionOnSetting_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, tag, "Test_requestPermissionOnSetting_011 start");
       let permissionList: Array<Permissions> = new Array<Permissions>('ohos.permission.MICROPHONE', 'ohos.permission.ACCESS_BLUETOOTH');
-      let firstCallback: boolean = false;
-      let secondCallback: boolean = false;
       if (testAbilityContext) {
         try {
           let driver1: Driver = Driver.create();
           await Utils.msSleep(1000);
           // 1. 申请权限弹框，并选择禁止
-          atManager.requestPermissionsFromUser(testAbilityContext!, permissionList).then((data: PermissionRequestResult): void => {
-            hilog.info(domain, tag, "requestPermissionsFromUser data ");
+          let promiseFromUser = atManager.requestPermissionsFromUser(testAbilityContext!, permissionList);
+          waitForCompletion(async () => {
+            await Utils.msSleep(2000);
+          })
+          if (!clickRequest(driver1, '禁止')) {
+            if (!clickRequest(driver1, '不允许')) {
+              clickRequest(driver1, '取消');
+            }
+          }
+          waitForCompletion(async () => {
+            await Utils.msSleep(2000);
+          })
+          if (!clickRequest(driver1, '禁止')) {
+            if (!clickRequest(driver1, '不允许')) {
+              clickRequest(driver1, '取消');
+            }
+          }
+          let dataFromUser = await promiseFromUser;
+          hilog.info(domain, tag, "requestPermissionsFromUser data ");
 
-            let driver2: Driver = Driver.create();
-            waitForCompletion(() => Utils.msSleep(1000))
-            let permissionList1: Array<Permissions> = new Array<Permissions>('ohos.permission.MICROPHONE');
-            atManager.requestPermissionOnSetting(testAbilityContext!, permissionList1).then((data: Array<abilityAccessCtrl.GrantStatus>): void => {
-              // hilog.info(domain, tag, "Test_requestPermissionOnSetting_010 data1 " + JSON.stringify(data));
-              firstCallback = true;
-              if (firstCallback && secondCallback) {
-                done();
-              }
-            });
-            let permissionList2: Array<Permissions> = new Array<Permissions>('ohos.permission.ACCESS_BLUETOOTH');
-            atManager.requestPermissionOnSetting(testAbilityContext!, permissionList2).then((data: Array<abilityAccessCtrl.GrantStatus>): void => {
-              // hilog.info(domain, tag, "Test_requestPermissionOnSetting_010 data2 " + JSON.stringify(data));
-              secondCallback = true;
-              if (firstCallback && secondCallback) {
-                done();
-              }
-            });
-            waitForCompletion(() => Utils.msSleep(3000))
-            if(!clickRequest(driver1, '允许')) {
-              if(clickRequest(driver1, '始终允许')) {
-                clickRequest(driver1, '确定');
-               }
-               } else {
-                   clickRequest(driver1, '确定');
-               }
-            waitForCompletion(() => Utils.msSleep(3000))
-            if(!clickRequest(driver1, '允许')) {
-              if(clickRequest(driver1, '始终允许')) {
-                clickRequest(driver1, '确定');
-               }
-               } else {
-                   clickRequest(driver1, '确定');
-               }
-          });
-          await Utils.msSleep(2000);
-          if(!clickRequest(driver1, '禁止')) {
-            if(!clickRequest(driver1, '不允许')) {
-              clickRequest(driver1, '取消');
+          // 2. 第一个 requestPermissionOnSetting（MICROPHONE）
+          let permissionList1: Array<Permissions> = new Array<Permissions>('ohos.permission.MICROPHONE');
+          let promiseOnSetting1 = atManager.requestPermissionOnSetting(testAbilityContext!, permissionList1);
+          waitForCompletion(async () => {
+            await Utils.msSleep(3000);
+          })
+          if (!clickRequest(driver1, '允许')) {
+            if (clickRequest(driver1, '始终允许')) {
+              clickRequest(driver1, '确定');
             }
+          } else {
+            clickRequest(driver1, '确定');
           }
-          await Utils.msSleep(2000);
-          if(!clickRequest(driver1, '禁止')) {
-            if(!clickRequest(driver1, '不允许')) {
-              clickRequest(driver1, '取消');
+          await promiseOnSetting1;
+          hilog.info(domain, tag, "Test_requestPermissionOnSetting_011 firstCallback done");
+
+          // 3.第二个 requestPermissionOnSetting（ACCESS_BLUETOOTH）
+          let permissionList2: Array<Permissions> = new Array<Permissions>('ohos.permission.ACCESS_BLUETOOTH');
+          let promiseOnSetting2 = atManager.requestPermissionOnSetting(testAbilityContext!, permissionList2)
+          waitForCompletion(async () => {
+            await Utils.msSleep(3000);
+          })
+          if (!clickRequest(driver1, '允许')) {
+            if (clickRequest(driver1, '始终允许')) {
+              clickRequest(driver1, '确定');
             }
+          } else {
+            clickRequest(driver1, '确定');
           }
+          await promiseOnSetting2;
+          hilog.info(domain, tag, "Test_requestPermissionOnSetting_011 secondCallback done");
+          done();
         } catch (error) {
-          hilog.info(domain, tag, "Test_requestPermissionOnSetting_010 catch err" + JSON.stringify(error));
+          hilog.info(domain, tag, "Test_requestPermissionOnSetting_011 catch err" + JSON.stringify(error));
           expect(false).assertFail();
           done();
         }

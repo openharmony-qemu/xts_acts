@@ -17,7 +17,7 @@ async function  asyncRecursion  (n: int): Promise<int>  {
 
 
 
-export default function asyncPerformanceTest() {
+export default function asyncPerformanceTest(): void {
   describe('asyncPerformanceTest', () => {
     afterEach(async () => {
       await sleep(50)

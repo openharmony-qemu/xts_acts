@@ -227,3 +227,30 @@ export const UIAgentGetPageTextTest002: () => number;
 export const UIAgentGetPageTextTest003: () => number;
 export const UIAgentGetPageTextTest004: () => number;
 export const UIAgentGetPageTextTest005: () => number;
+
+export const GetImagesByNodeIdAsyncTest001: () => number;
+export const GetImagesByNodeIdAsyncTest002: () => number;
+export const GetImagesByNodeIdAsyncTest003: () => number;
+export const GetImagesByNodeIdAsyncTest004: () => number;
+export const GetImagesByNodeIdAsyncTest005: () => number;
+export const GetImagesByNodeIdAsyncTest006: () => number;
+export const GetImagesByNodeIdAsyncTest007: () => number;
+export const GetImagesByNodeIdAsyncTest008: () => number;
+
+export const testImageAnimatorInterpolation001: () => number;
+export const testImageAnimatorInterpolation002: () => number;
+export const testImageAnimatorInterpolation003: () => number;
+export const testImageAnimatorInterpolation004: () => number;
+export const testImageAnimatorInterpolation005: () => number;
+export const testImageAnimatorInterpolation006: () => number;
+export const testImageAnimatorInterpolation007: () => number;
+export const testImageAnimatorInterpolation008: () => number;
+
+export const testCalendarPickerFirstDayOfWeek001: () => number;
+export const testCalendarPickerFirstDayOfWeek002: () => number;
+export const testCalendarPickerFirstDayOfWeek003: () => number;
+export const testCalendarPickerFirstDayOfWeek004: () => number;
+export const testCalendarPickerFirstDayOfWeek005: () => number;
+export const testCalendarPickerFirstDayOfWeek006: () => number;
+export const testCalendarPickerFirstDayOfWeek007: () => number;
+export const testCalendarPickerFirstDayOfWeek008: () => number;

@@ -16,6 +16,7 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level
 import { hilog } from "@kit.PerformanceAnalysisKit"
 import { sleep } from "./pages/Utils"
 import { collections } from '@kit.ArkTS'
+import { BusinessError } from '@kit.BasicServicesKit';
 
 export default function CollectionsArraySplicesTest() {
   describe('CollectionsArraySplicesTest', () => {
@@ -417,5 +418,34 @@ export default function CollectionsArraySplicesTest() {
       expect(c.toString()).assertEqual('');
       Done()
     })
+
+    /**
+     * @tc.number  SUB_ARRAY_SPLICE_ONE_0100
+     * @tc.name    testArraySpliceOne0001
+     * @tc.desc    Verify splice with wrong-typed start throws 401
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testArraySpliceOne0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new collections.Array<number>(1, 2, 3);
+      let removed = arr.splice('x' as Object as number);
+      expect(removed.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number  SUB_ARRAY_SPLICE_RETURN_INDEP_0200
+     * @tc.name    testArraySpliceReturnIndep0002
+     * @tc.desc    Verify splice return array is independent from source
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testArraySpliceReturnIndep0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = collections.Array.from<number>([1, 2, 3, 4, 5]);
+      let c = arr.splice(2, 2);
+      c.push(99);
+      expect(arr.length).assertEqual(3);
+    });
   })
 }

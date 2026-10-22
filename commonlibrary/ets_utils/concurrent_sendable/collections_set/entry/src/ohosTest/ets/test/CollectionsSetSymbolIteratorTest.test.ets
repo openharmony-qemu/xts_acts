@@ -686,5 +686,31 @@ export default function CollectionsSetSymbolIteratorTest() {
       console.info(`${caseName}, test end`);
     });
 
+
+    /**
+     * @tc.number  SUB_SET_SYMBOL_ITER_ONE_0100
+     * @tc.name    testSetIter0001
+     * @tc.desc    Verify Set Symbol.iterator for...of traversal order matches values
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('testSetIter0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let setIter001 = new collections.Set<number>();
+      setIter001.add(1);
+      setIter001.add(2);
+      setIter001.add(3);
+      let collected001: number[] = [];
+      for (let item of setIter001) {
+        collected001.push(item);
+      }
+      let valuesArr001 = Array.from(setIter001.values());
+      expect(collected001.length).assertEqual(valuesArr001.length);
+      for (let i = 0; i < valuesArr001.length; i++) {
+        expect(collected001[i]).assertEqual(valuesArr001[i]);
+      }
+    })
+
+
   });
 }

@@ -16,6 +16,14 @@ import picker from '@ohos.file.picker';
 import fileShare from '@ohos.fileshare';
 import { Driver, ON, Component } from '@ohos.UiTest';
 
+export async function uSleep(ms: number): Promise<void> {
+  return new Promise<void>((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, ms);
+  });
+}
+
 export async function grantDocumentFolderAccess(done: Function): Promise<void> {
   try {
     console.info("====>CloudDiskPlaceholderTest beforeAll start====");
@@ -29,16 +37,16 @@ export async function grantDocumentFolderAccess(done: Function): Promise<void> {
     await driver.delayMs(3000);
     let inputComp: Component = await driver.findComponent(ON.text("文档"));
     if (inputComp == null || inputComp == undefined) {
+      await driver.delayMs(1000);
+      inputComp = await driver.findComponent(ON.text("文档"));
+    }
+    if (inputComp == null || inputComp == undefined) {
       console.error("====>beforeAll input box not found, press back to cancel picker");
       await driver.pressBack();
       done();
       return;
     }
     await inputComp.click();
-    inputComp = await driver.findComponent(ON.type("TextInput"));
-    await inputComp.click();
-    await inputComp.inputText("/storage/Users/currentUser/Documents/");
-    console.info("====>beforeAll inputText success");
     await driver.delayMs(1000);
     let selectBtn: Component = await driver.findComponent(ON.text("选择"));
     if (selectBtn == null || selectBtn == undefined) {

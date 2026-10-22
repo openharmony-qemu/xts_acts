@@ -20,10 +20,10 @@ import {
   fetchOption,
   getPermission,
   driveFn,
-  sleep,
   photoFetchOption,
   getFileAsset,
-  pushCreateAsset
+  checkResourceFile,
+  createResource
 } from '../Common.test.ets'
 import Context from "application.Context"
 import { BusinessError } from '@ohos.base';
@@ -38,8 +38,8 @@ export default function setTitleChangeRequestTest() {
       console.info('beforeAll case');
       await getPermission();
       await driveFn();
-      await sleep(1000);
-      await pushCreateAsset(testContext, fileNames);
+      await checkResourceFile(testContext);
+      await createResource(testContext, fileNames);
     });
 
     /**
@@ -62,7 +62,7 @@ export default function setTitleChangeRequestTest() {
           expect(false).assertTrue();
           done();
         } catch (error) {
-          error = error as BusinessError;
+         
           console.error(`${testNum} failed; error: ${error}`);
           expect(error.code).assertEqual(401);
           done();

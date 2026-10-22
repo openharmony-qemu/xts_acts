@@ -3382,7 +3382,7 @@ export default function actsWifiManagerFunctionsTest() {
     /**
      * @tc.number SUB_Communication_WifiManager_connectToCandidateConfigWithUserAction_0079
      * @tc.name SUB_Communication_WifiManager_connectToCandidateConfigWithUserAction_0079
-     * @tc.desc Test addCandidateConfig with 预期401
+     * @tc.desc Test connectToCandidateConfigWithUserAction with networkId -1 预期2501007
      * @tc.level Level 0
      * @tc.type Function
      * @tc.size MEDIUMTEST
@@ -3401,7 +3401,7 @@ export default function actsWifiManagerFunctionsTest() {
           hilog.info(domain, tag, `${caseName} api is not support`);
           expect(err.code).assertEqual(801);
         } else {
-          expect(err.code).assertEqual(401);
+          expect(err.code).assertEqual(2501007);
         }
       }
       hilog.info(domain, tag, `${caseName} test end`);
@@ -3898,6 +3898,37 @@ export default function actsWifiManagerFunctionsTest() {
           expect(err.code).assertEqual(801);
         } else {
           expect(err.code).assertEqual(2501005);
+        }
+      }
+      hilog.info(domain, tag, `${caseName} test end`);
+      done();
+    });
+    /**
+     * @tc.number SUB_Communication_WifiManager_connectToCandidateConfig_settings_0092
+     * @tc.name SUB_Communication_WifiManager_connectToCandidateConfig_settings_0092
+     * @tc.desc Test connectToCandidateConfig with withUserAction true and networkId -1 预期2501007
+     * @tc.level Level 0
+     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     */
+    it("SUB_Communication_WifiManager_connectToCandidateConfig_settings_0092", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName = "LOG_SUB_Communication_WifiManager_connectToCandidateConfig_settings_0092";
+      hilog.info(domain, tag, `${caseName} test start`);
+      let settings: wifiManager.ConnectSettings = {
+        networkId: -1,
+        withUserAction: true
+      };
+      try {
+        await wifiManager.connectToCandidateConfig(settings);
+        hilog.error(domain, tag, `${caseName} connectToCandidateConfig success`);
+        expect().assertFail();
+      } catch (err) {
+        hilog.error(domain, tag, `${caseName} catch errCode:` + err.code + `,errMessage:` + err.message);
+        if (err.code === 801) {
+          hilog.info(domain, tag, `${caseName} api is not support`);
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(2501007);
         }
       }
       hilog.info(domain, tag, `${caseName} test end`);

@@ -14,6 +14,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { collections } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 export default function BitVectorSetAllBitsTest() {
   describe('BitVectorSetAllBitsTest', () => {
@@ -646,5 +647,20 @@ export default function BitVectorSetAllBitsTest() {
         expect(bitVectorList[127]).assertEqual(1);
         done()
       });
+
+    /**
+     * @tc.number  SUB_BITVECTOR_SETALL_ONE_0100
+     * @tc.name    testBitVectorSetAll0001
+     * @tc.desc    Verify setAllBits with wrong-typed value does not throw 401 and sets bits (actual)
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorSetAll0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let bv = new collections.BitVector(0);
+      bv.push(1);
+      bv.setAllBits('x' as Object as number);
+      expect(bv.has(1, 0, bv.length)).assertTrue();
+    });
   });
 }

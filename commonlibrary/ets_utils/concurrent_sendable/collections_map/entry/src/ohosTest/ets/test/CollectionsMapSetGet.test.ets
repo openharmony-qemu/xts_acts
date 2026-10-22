@@ -22,6 +22,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { collections, ArkTSUtils } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 function sleep(time: number): Promise<void> {
   return new Promise<void>((resolve) => setTimeout(resolve, time));
@@ -1470,5 +1471,56 @@ export default function CollectionsMapSetGetTest() {
       console.info(caseName + ', test end');
     });
 
+    /**
+     * @tc.number  SUB_MAP_SET_BIND_0100
+     * @tc.name    testMapSetBind0001
+     * @tc.desc    Verify set detached invocation throws 10200011
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testMapSetBind0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let map = new collections.Map<number, string>();
+      let fn = map.set;
+      try {
+        fn(1, 'a');
+        expect().assertFail();
+      } catch (error) {
+        expect((error as BusinessError).code).assertEqual(10200011);
+      }
+    });
+
+    /**
+     * @tc.number  SUB_MAP_SET_ONE_0200
+     * @tc.name    testMapSetOne0002
+     * @tc.desc    Verify set with wrong-typed value throws 401
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testMapSetOne0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let map = new collections.Map<number, string>();
+      map.set(1, 'x' as Object as string);
+      expect(map.get(1)).assertEqual('x');
+    });
+
+    /**
+     * @tc.number  SUB_MAP_SET_CHAIN_REF_0300
+     * @tc.name    testMapSetChainRef0003
+     * @tc.desc    Verify chained set returns same Map instance
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testMapSetChainRef0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let map = new collections.Map<string, number>();
+      let r1 = map.set('a', 1);
+      let r2 = r1.set('b', 2);
+      let r3 = r2.set('c', 3);
+      expect(r1 === map).assertTrue();
+      expect(r2 === map).assertTrue();
+      expect(r3 === map).assertTrue();
+      expect(map.size).assertEqual(3);
+    });
   });
 }

@@ -112,8 +112,6 @@ struct Index {
           await Utils.waitForExist(() => this.isReceive, this.str + ' isReceive', 1, 1000);
           await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
           console.info("key==>" + this.str)
-          const displayId: number =
-            await (await driver.findComponent(ON.id('WebViewNavigationPolicyButton'))).getDisplayId();
           const isCar: boolean = deviceInfo.deviceType === "car";
           switch (this.str) {
             case 'emitWebViewNavigationPolicy001': {
@@ -122,7 +120,7 @@ struct Index {
                   console.log('pbbbnetment');
                   Utils.emitEvent(0, 20260113)
                 } else {
-                  Utils.sleep(1000);
+                  await Utils.sleep(1000);
                   let buttonOne = await driver.findComponent(ON.text('打开新窗口'));
                   let point = await buttonOne.getBoundsCenter();
                   await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_LEFT, 2047);
@@ -132,13 +130,15 @@ struct Index {
                     downX = Math.round(globalThis.winLeft + webRect.left + 50);
                   }
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
+                  const displayId: number =
+                    await (await driver.findComponent(ON.id('WebViewNavigationPolicyButton'))).getDisplayId();
                   const pointClick: Point = {
                     x: downX,
                     y: downY,
                     displayId: displayId
                   }
                   await driver.clickAt(pointClick);
-                  Utils.sleep(2000);
+                  await Utils.sleep(2000);
                   await driver.clickAt(pointClick);
                   setTimeout(() => {
                     Utils.emitEvent(this.navigationPolicyArr[this.navigationPolicy], 20260113)
@@ -165,20 +165,22 @@ struct Index {
                   console.log('ppbb' + buttonOne)
                   let point = await buttonOne.getBoundsCenter();
                   await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_LEFT, 2047);
-                  Utils.sleep(1000);
+                  await Utils.sleep(1000);
                   let webRect = Utils.getComponentRect('WebViewNavigationPolicyWeb');
                   let downX = Math.round(globalThis.winLeft + webRect.left + 15);
                   if (isCar) {
                     downX = Math.round(globalThis.winLeft + webRect.left + 50);
                   }
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
+                  const displayId: number =
+                    await (await driver.findComponent(ON.id('WebViewNavigationPolicyButton'))).getDisplayId();
                   const pointClick: Point = {
                     x: downX,
                     y: downY,
                     displayId: displayId
                   }
                   await driver.clickAt(pointClick);
-                  Utils.sleep(2000);
+                  await Utils.sleep(2000);
                   await driver.clickAt(pointClick);
                   setTimeout(() => {
                     Utils.emitEvent(this.navigationPolicyArr[this.navigationPolicy], 20260114)
@@ -198,24 +200,26 @@ struct Index {
                   console.log('pbbbnetment');
                   Utils.emitEvent(2, 20260115)
                 } else {
-                  Utils.sleep(1000);
+                  await Utils.sleep(1000);
                   let buttonOne = await driver.findComponent(ON.text('打开新窗口'));
                   let point = await buttonOne.getBoundsCenter();
                   await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_LEFT, 2072);
-                  Utils.sleep(1000);
+                  await Utils.sleep(1000);
                   let webRect = Utils.getComponentRect('WebViewNavigationPolicyWeb');
                   let downX = Math.round(globalThis.winLeft + webRect.left + 15);
                   if (isCar) {
                     downX = Math.round(globalThis.winLeft + webRect.left + 50);
                   }
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
+                  const displayId: number =
+                    await (await driver.findComponent(ON.id('WebViewNavigationPolicyButton'))).getDisplayId();
                   const pointClick: Point = {
                     x: downX,
                     y: downY,
                     displayId: displayId
                   }
                   await driver.clickAt(pointClick);
-                  Utils.sleep(2000);
+                  await Utils.sleep(2000);
                   await driver.clickAt(pointClick);
                   setTimeout(() => {
                     Utils.emitEvent(this.navigationPolicyArr[this.navigationPolicy], 20260115)
@@ -241,20 +245,22 @@ struct Index {
                   let buttonOne = await driver.findComponent(ON.text('打开新标签'));
                   let point = await buttonOne.getBoundsCenter();
                   await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_LEFT, 2072);
-                  Utils.sleep(1000);
+                  await Utils.sleep(1000);
                   let webRect = Utils.getComponentRect('WebViewNavigationPolicyWeb');
                   let downX = Math.round(globalThis.winLeft + webRect.left + 15);
                   if (isCar) {
                     downX = Math.round(globalThis.winLeft + webRect.left + 50);
                   }
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
+                  const displayId: number =
+                    await (await driver.findComponent(ON.id('WebViewNavigationPolicyButton'))).getDisplayId();
                   const pointClick: Point = {
                     x: downX,
                     y: downY,
                     displayId: displayId
                   }
                   await driver.clickAt(pointClick);
-                  Utils.sleep(2000);
+                  await Utils.sleep(2000);
                   await driver.clickAt(pointClick);
                   setTimeout(() => {
                     Utils.emitEvent(this.navigationPolicyArr[this.navigationPolicy], 20260116)
@@ -280,20 +286,22 @@ struct Index {
                   let buttonOne = await driver.findComponent(ON.text('打开新标签'));
                   let point = await buttonOne.getBoundsCenter();
                   await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_LEFT);
-                  Utils.sleep(1000);
+                  await Utils.sleep(1000);
                   let webRect = Utils.getComponentRect('WebViewNavigationPolicyWeb');
                   let downX = Math.round(globalThis.winLeft + webRect.left + 15);
                   if (isCar) {
                     downX = Math.round(globalThis.winLeft + webRect.left + 50);
                   }
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
+                  const displayId: number =
+                    await (await driver.findComponent(ON.id('WebViewNavigationPolicyButton'))).getDisplayId();
                   const pointClick: Point = {
                     x: downX,
                     y: downY,
                     displayId: displayId
                   }
                   await driver.clickAt(pointClick);
-                  Utils.sleep(2000);
+                  await Utils.sleep(2000);
                   await driver.clickAt(pointClick);
                   setTimeout(() => {
                     Utils.emitEvent(this.navigationPolicyArr[this.navigationPolicy], 20260117)

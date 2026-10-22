@@ -41,6 +41,22 @@ export default function audioRoutingManager() {
       console.info(TAG + 'afterEach called')
     })
 
+    let checkCarSupportSync = async(): Promise<boolean> => {
+      let audioManager = audio.getAudioManager();
+      let audioRoutingManager = audioManager!.getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager!.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`checkCarSupportSync outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+          console.info(`this device has external device.`)
+          return false;
+      } else if (outputDeviceDescription.length == 0) {
+          console.info(`this device has external device`)
+          return false;
+      } else {
+          return true;
+      }
+    }
+
     /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_STATIC_0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_STATIC_0100
@@ -272,21 +288,24 @@ export default function audioRoutingManager() {
      * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_AUDIO_GETPREFEROUTUTDEVICEFORRENDERERINFOTEST_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
-        rendererFlags: 0
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+          rendererFlags: 0
+        }
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        try {
+          let data = await routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo);
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0100 SUCCESS` +
+          JSON.stringify(data));
+          done();
+        } catch (e) {
+          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0100 ERROR: ${e.message}`);
+          expect().assertFail();
+          done();
+        }
       }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      try {
-        let data = await routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0100 SUCCESS` +
-        JSON.stringify(data));
-        done();
-      } catch (e) {
-        console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0100 ERROR: ${e.message}`);
-        expect().assertFail();
-        done();
-      }
+      done();
     })
 
     /**
@@ -298,20 +317,23 @@ export default function audioRoutingManager() {
      * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
-        rendererFlags: 0
-      }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo, (e: BusinessError<void> | null, data: audio.AudioDeviceDescriptors | undefined) => {
-        if (e?.code) {
-          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0500 ERROR: ${e?.message}`);
-          expect(false).assertTrue();
-          done();
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+          rendererFlags: 0
         }
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0500 SUCCESS`);
-        done();
-      });
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo, (e: BusinessError<void> | null, data: audio.AudioDeviceDescriptors | undefined) => {
+          if (e?.code) {
+            console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0500 ERROR: ${e?.message}`);
+            expect(false).assertTrue();
+            done();
+          }
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0500 SUCCESS`);
+          done();
+        });
+      }
+      done();
     })
 
     /**
@@ -366,26 +388,29 @@ export default function audioRoutingManager() {
      * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
-        rendererFlags: 0
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+          rendererFlags: 0
+        }
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        try {
+          let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0100 SUCCESS` +
+          JSON.stringify(AudioDeviceDescriptors));
+          console.log(`get device descriptor success: ` + JSON.stringify(AudioDeviceDescriptors));
+          let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
+          expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
+          expect(data[0].deviceType).assertEqual(audio.DeviceType.SPEAKER);
+          expect(data[0].networkId).assertEqual("LocalDevice");
+          done();
+        } catch (e) {
+          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0100 ERROR: ${e.message}`);
+          expect().assertFail();
+          done();
+        }
       }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      try {
-        let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0100 SUCCESS` +
-        JSON.stringify(AudioDeviceDescriptors));
-        console.log(`get device descriptor success: ` + JSON.stringify(AudioDeviceDescriptors));
-        let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
-        expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
-        expect(data[0].deviceType).assertEqual(audio.DeviceType.SPEAKER);
-        expect(data[0].networkId).assertEqual("LocalDevice");
-        done();
-      } catch (e) {
-        console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0100 ERROR: ${e.message}`);
-        expect().assertFail();
-        done();
-      }
+      done();
     })
 
     /**
@@ -397,26 +422,29 @@ export default function audioRoutingManager() {
      * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_GAME,
-        rendererFlags: 0
+      if(await checkCarSupportSync()) {
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_GAME,
+          rendererFlags: 0
+        }
+        try {
+          let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0500 SUCCESS` +
+          JSON.stringify(AudioDeviceDescriptors));
+          console.log(`get device descriptor success: ` + JSON.stringify(AudioDeviceDescriptors));
+          let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
+          expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
+          expect(data[0].deviceType).assertEqual(audio.DeviceType.SPEAKER);
+          expect(data[0].networkId).assertEqual("LocalDevice");
+          done();
+        } catch (e) {
+          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0500 ERROR: ${e.message},ErrorCode:${e.code}`);
+          expect(false).assertTrue();
+          done();
+        }
       }
-      try {
-        let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0500 SUCCESS` +
-        JSON.stringify(AudioDeviceDescriptors));
-        console.log(`get device descriptor success: ` + JSON.stringify(AudioDeviceDescriptors));
-        let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
-        expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
-        expect(data[0].deviceType).assertEqual(audio.DeviceType.SPEAKER);
-        expect(data[0].networkId).assertEqual("LocalDevice");
-        done();
-      } catch (e) {
-        console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0500 ERROR: ${e.message},ErrorCode:${e.code}`);
-        expect(false).assertTrue();
-        done();
-      }
+      done();
     })
     /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOSYNC_STATIC_0100
@@ -457,20 +485,23 @@ export default function audioRoutingManager() {
     * @tc.level  LEVEL0
     */
     it("SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_UNKNOWN,
-        rendererFlags: 0
-      }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo, (e: BusinessError<void> | null, data: audio.AudioDeviceDescriptors | undefined) => {
-        if (e?.code) {
-          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0001 ERROR: ${e?.message}`);
-          expect(false).assertTrue();
-          done();
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_UNKNOWN,
+          rendererFlags: 0
         }
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0001 SUCCESS`);
-        done();
-      });
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo, (e: BusinessError<void> | null, data: audio.AudioDeviceDescriptors | undefined) => {
+          if (e?.code) {
+            console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0001 ERROR: ${e?.message}`);
+            expect(false).assertTrue();
+            done();
+          }
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0001 SUCCESS`);
+          done();
+        });
+      }
+      done();
     })
 
     /**
@@ -482,20 +513,23 @@ export default function audioRoutingManager() {
     * @tc.level  LEVEL0
     */
     it("SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION,
-        rendererFlags: 0
-      }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo, (e: BusinessError<void> | null, data: audio.AudioDeviceDescriptors | undefined) => {
-        if (e?.code) {
-          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0002 ERROR: ${e?.message}`);
-          expect(false).assertTrue();
-          done();
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION,
+          rendererFlags: 0
         }
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0002 SUCCESS`);
-        done();
-      });
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo, (e: BusinessError<void> | null, data: audio.AudioDeviceDescriptors | undefined) => {
+          if (e?.code) {
+            console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0002 ERROR: ${e?.message}`);
+            expect(false).assertTrue();
+            done();
+          }
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0002 SUCCESS`);
+          done();
+        });
+      }
+      done();
     })
 
     /**
@@ -507,20 +541,23 @@ export default function audioRoutingManager() {
     * @tc.level  LEVEL0
     */
     it("SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT,
-        rendererFlags: 0
-      }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo, (e: BusinessError<void> | null, data: audio.AudioDeviceDescriptors | undefined) => {
-        if (e?.code) {
-          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0003 ERROR: ${e?.message}`);
-          expect(false).assertTrue();
-          done();
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT,
+          rendererFlags: 0
         }
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0003 SUCCESS`);
-        done();
-      });
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo, (e: BusinessError<void> | null, data: audio.AudioDeviceDescriptors | undefined) => {
+          if (e?.code) {
+            console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0003 ERROR: ${e?.message}`);
+            expect(false).assertTrue();
+            done();
+          }
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0003 SUCCESS`);
+          done();
+        });
+      }
+      done();
     })
 
 
@@ -533,20 +570,23 @@ export default function audioRoutingManager() {
     * @tc.level  LEVEL0
     */
     it("SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_ALARM,
-        rendererFlags: 0
-      }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo, (e: BusinessError<void> | null, data: audio.AudioDeviceDescriptors | undefined) => {
-        if (e?.code) {
-          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0004 ERROR: ${e?.message}`);
-          expect(false).assertTrue();
-          done();
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_ALARM,
+          rendererFlags: 0
         }
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0004 SUCCESS`);
-        done();
-      });
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo, (e: BusinessError<void> | null, data: audio.AudioDeviceDescriptors | undefined) => {
+          if (e?.code) {
+            console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0004 ERROR: ${e?.message}`);
+            expect(false).assertTrue();
+            done();
+          }
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0004 SUCCESS`);
+          done();
+        });
+      }
+      done();
     })
 
 
@@ -559,20 +599,23 @@ export default function audioRoutingManager() {
     * @tc.level  LEVEL0
     */
     it("SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE,
-        rendererFlags: 0
-      }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo, (e: BusinessError<void> | null, data: audio.AudioDeviceDescriptors | undefined) => {
-        if (e?.code) {
-          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0005 ERROR: ${e?.message}`);
-          expect(false).assertTrue();
-          done();
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE,
+          rendererFlags: 0
         }
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0005 SUCCESS`);
-        done();
-      });
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo, (e: BusinessError<void> | null, data: audio.AudioDeviceDescriptors | undefined) => {
+          if (e?.code) {
+            console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0005 ERROR: ${e?.message}`);
+            expect(false).assertTrue();
+            done();
+          }
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0005 SUCCESS`);
+          done();
+        });
+      }
+      done();
     })
 
 
@@ -585,20 +628,23 @@ export default function audioRoutingManager() {
     * @tc.level  LEVEL0
     */
     it("SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_RINGTONE,
-        rendererFlags: 0
-      }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo, (e: BusinessError<void> | null, data: audio.AudioDeviceDescriptors | undefined) => {
-        if (e?.code) {
-          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0006 ERROR: ${e?.message}`);
-          expect(false).assertTrue();
-          done();
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_RINGTONE,
+          rendererFlags: 0
         }
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0006 SUCCESS`);
-        done();
-      });
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo, (e: BusinessError<void> | null, data: audio.AudioDeviceDescriptors | undefined) => {
+          if (e?.code) {
+            console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0006 ERROR: ${e?.message}`);
+            expect(false).assertTrue();
+            done();
+          }
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0006 SUCCESS`);
+          done();
+        });
+      }
+      done();
     })
 
 
@@ -611,20 +657,23 @@ export default function audioRoutingManager() {
     * @tc.level  LEVEL0
     */
     it("SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_NOTIFICATION,
-        rendererFlags: 0
-      }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo, (e: BusinessError<void> | null, data: audio.AudioDeviceDescriptors | undefined) => {
-        if (e?.code) {
-          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0007 ERROR: ${e?.message}`);
-          expect(false).assertTrue();
-          done();
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_NOTIFICATION,
+          rendererFlags: 0
         }
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0007 SUCCESS`);
-        done();
-      });
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo, (e: BusinessError<void> | null, data: audio.AudioDeviceDescriptors | undefined) => {
+          if (e?.code) {
+            console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0007 ERROR: ${e?.message}`);
+            expect(false).assertTrue();
+            done();
+          }
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0007 SUCCESS`);
+          done();
+        });
+      }
+      done();
     })
 
 
@@ -637,20 +686,23 @@ export default function audioRoutingManager() {
     * @tc.level  LEVEL0
     */
     it("SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY,
-        rendererFlags: 0
-      }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo, (e: BusinessError<void> | null, data: audio.AudioDeviceDescriptors | undefined) => {
-        if (e?.code) {
-          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0008 ERROR: ${e?.message}`);
-          expect(false).assertTrue();
-          done();
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY,
+          rendererFlags: 0
         }
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0008 SUCCESS`);
-        done();
-      });
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo, (e: BusinessError<void> | null, data: audio.AudioDeviceDescriptors | undefined) => {
+          if (e?.code) {
+            console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0008 ERROR: ${e?.message}`);
+            expect(false).assertTrue();
+            done();
+          }
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0008 SUCCESS`);
+          done();
+        });
+      }
+      done();
     })
 
     /**
@@ -662,20 +714,23 @@ export default function audioRoutingManager() {
     * @tc.level  LEVEL0
     */
     it("SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_MOVIE,
-        rendererFlags: 0
-      }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo, (e: BusinessError<void> | null, data: audio.AudioDeviceDescriptors | undefined) => {
-        if (e?.code) {
-          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0009 ERROR: ${e?.message}`);
-          expect(false).assertTrue();
-          done();
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_MOVIE,
+          rendererFlags: 0
         }
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0009 SUCCESS`);
-        done();
-      });
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo, (e: BusinessError<void> | null, data: audio.AudioDeviceDescriptors | undefined) => {
+          if (e?.code) {
+            console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0009 ERROR: ${e?.message}`);
+            expect(false).assertTrue();
+            done();
+          }
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0009 SUCCESS`);
+          done();
+        });
+      }
+      done();
     })
 
     /**
@@ -687,20 +742,23 @@ export default function audioRoutingManager() {
     * @tc.level  LEVEL0
     */
     it("SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_GAME,
-        rendererFlags: 0
-      }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo, (e: BusinessError<void> | null, data: audio.AudioDeviceDescriptors | undefined) => {
-        if (e?.code) {
-          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0010 ERROR: ${e?.message}`);
-          expect(false).assertTrue();
-          done();
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_GAME,
+          rendererFlags: 0
         }
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0010 SUCCESS`);
-        done();
-      });
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo, (e: BusinessError<void> | null, data: audio.AudioDeviceDescriptors | undefined) => {
+          if (e?.code) {
+            console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0010 ERROR: ${e?.message}`);
+            expect(false).assertTrue();
+            done();
+          }
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0010 SUCCESS`);
+          done();
+        });
+      }
+      done();
     })
 
 
@@ -713,20 +771,23 @@ export default function audioRoutingManager() {
     * @tc.level  LEVEL0
     */
     it("SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_AUDIOBOOK,
-        rendererFlags: 0
-      }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo, (e: BusinessError<void> | null, data: audio.AudioDeviceDescriptors | undefined) => {
-        if (e?.code) {
-          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0011 ERROR: ${e?.message}`);
-          expect(false).assertTrue();
-          done();
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_AUDIOBOOK,
+          rendererFlags: 0
         }
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0011 SUCCESS`);
-        done();
-      });
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo, (e: BusinessError<void> | null, data: audio.AudioDeviceDescriptors | undefined) => {
+          if (e?.code) {
+            console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0011 ERROR: ${e?.message}`);
+            expect(false).assertTrue();
+            done();
+          }
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0011 SUCCESS`);
+          done();
+        });
+      }
+      done();
     })
 
     /**
@@ -738,20 +799,23 @@ export default function audioRoutingManager() {
     * @tc.level  LEVEL0
     */
     it("SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_NAVIGATION,
-        rendererFlags: 0
-      }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo, (e: BusinessError<void> | null, data: audio.AudioDeviceDescriptors | undefined) => {
-        if (e?.code) {
-          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0012 ERROR: ${e?.message}`);
-          expect(false).assertTrue();
-          done();
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_NAVIGATION,
+          rendererFlags: 0
         }
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0012 SUCCESS`);
-        done();
-      });
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo, (e: BusinessError<void> | null, data: audio.AudioDeviceDescriptors | undefined) => {
+          if (e?.code) {
+            console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0012 ERROR: ${e?.message}`);
+            expect(false).assertTrue();
+            done();
+          }
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0012 SUCCESS`);
+          done();
+        });
+      }
+      done();
     })
 
 
@@ -764,20 +828,23 @@ export default function audioRoutingManager() {
     * @tc.level  LEVEL0
     */
     it("SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
-        rendererFlags: 0
-      }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo, (e: BusinessError<void> | null, data: audio.AudioDeviceDescriptors | undefined) => {
-        if (e?.code) {
-          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0013 ERROR: ${e?.message}`);
-          expect(false).assertTrue();
-          done();
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+          rendererFlags: 0
         }
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0013 SUCCESS`);
-        done();
-      });
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo, (e: BusinessError<void> | null, data: audio.AudioDeviceDescriptors | undefined) => {
+          if (e?.code) {
+            console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0013 ERROR: ${e?.message}`);
+            expect(false).assertTrue();
+            done();
+          }
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0013 SUCCESS`);
+          done();
+        });
+      }
+      done();
     })
 
     /**
@@ -789,21 +856,24 @@ export default function audioRoutingManager() {
     * @tc.level  LEVEL0
     */
     it("SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
-        rendererFlags: 0,
-        volumeMode: audio.AudioVolumeMode.SYSTEM_GLOBAL
-      }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo, (e: BusinessError<void> | null, data: audio.AudioDeviceDescriptors | undefined) => {
-        if (e?.code) {
-          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0014 ERROR: ${e?.message}`);
-          expect(false).assertTrue();
-          done();
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+          rendererFlags: 0,
+          volumeMode: audio.AudioVolumeMode.SYSTEM_GLOBAL
         }
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0014 SUCCESS`);
-        done();
-      });
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo, (e: BusinessError<void> | null, data: audio.AudioDeviceDescriptors | undefined) => {
+          if (e?.code) {
+            console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0014 ERROR: ${e?.message}`);
+            expect(false).assertTrue();
+            done();
+          }
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0014 SUCCESS`);
+          done();
+        });
+      }
+      done();
     })
 
 
@@ -816,23 +886,25 @@ export default function audioRoutingManager() {
     * @tc.level  LEVEL0
     */
     it("SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
-        rendererFlags: 0,
-        volumeMode: audio.AudioVolumeMode.APP_INDIVIDUAL
-      }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo, (e: BusinessError<void> | null, data: audio.AudioDeviceDescriptors | undefined) => {
-        if (e?.code) {
-          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0015 ERROR: ${e?.message}`);
-          expect(false).assertTrue();
-          done();
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+          rendererFlags: 0,
+          volumeMode: audio.AudioVolumeMode.APP_INDIVIDUAL
         }
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0015 SUCCESS`);
-        done();
-      });
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo, (e: BusinessError<void> | null, data: audio.AudioDeviceDescriptors | undefined) => {
+          if (e?.code) {
+            console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0015 ERROR: ${e?.message}`);
+            expect(false).assertTrue();
+            done();
+          }
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0015 SUCCESS`);
+          done();
+        });
+      }
+      done();
     })
-
 
     /**
     * @tc.name   SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0016
@@ -843,20 +915,23 @@ export default function audioRoutingManager() {
     * @tc.level  LEVEL0
     */
     it("SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_UNKNOWN,
-        rendererFlags: 0
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_UNKNOWN,
+          rendererFlags: 0
+        }
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        try {
+          let data = await routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo);
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0016 SUCCESS`);
+          done();
+        } catch (e) {
+          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0016 ERROR: ${e?.message}`);
+          expect().assertFail();
+          done();
+        }
       }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      try {
-        let data = await routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0016 SUCCESS`);
-        done();
-      } catch (e) {
-        console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0016 ERROR: ${e?.message}`);
-        expect().assertFail();
-        done();
-      }
+      done();
     })
 
     /**
@@ -868,20 +943,23 @@ export default function audioRoutingManager() {
     * @tc.level  LEVEL0
     */
     it("SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION,
-        rendererFlags: 0
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION,
+          rendererFlags: 0
+        }
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        try {
+          let data = await routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo);
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0017 SUCCESS`);
+          done();
+        } catch (e) {
+          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0017 ERROR: ${e?.message}`);
+          expect().assertFail();
+          done();
+        }
       }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      try {
-        let data = await routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0017 SUCCESS`);
-        done();
-      } catch (e) {
-        console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0017 ERROR: ${e?.message}`);
-        expect().assertFail();
-        done();
-      }
+      done();
     })
 
     /**
@@ -893,20 +971,23 @@ export default function audioRoutingManager() {
     * @tc.level  LEVEL0
     */
     it("SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT,
-        rendererFlags: 0
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT,
+          rendererFlags: 0
+        }
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        try {
+          let data = await routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo);
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0018 SUCCESS`);
+          done();
+        } catch (e) {
+          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0018 ERROR: ${e?.message}`);
+          expect().assertFail();
+          done();
+        }
       }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      try {
-        let data = await routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0018 SUCCESS`);
-        done();
-      } catch (e) {
-        console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0018 ERROR: ${e?.message}`);
-        expect().assertFail();
-        done();
-      }
+      done();
     })
 
 
@@ -919,20 +1000,23 @@ export default function audioRoutingManager() {
     * @tc.level  LEVEL0
     */
     it("SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_ALARM,
-        rendererFlags: 0
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_ALARM,
+          rendererFlags: 0
+        }
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        try {
+          let data = await routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo);
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0019 SUCCESS`);
+          done();
+        } catch (e) {
+          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0019 ERROR: ${e?.message}`);
+          expect().assertFail();
+          done();
+        }
       }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      try {
-        let data = await routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0019 SUCCESS`);
-        done();
-      } catch (e) {
-        console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0019 ERROR: ${e?.message}`);
-        expect().assertFail();
-        done();
-      }
+      done();
     })
 
 
@@ -945,20 +1029,23 @@ export default function audioRoutingManager() {
     * @tc.level  LEVEL0
     */
     it("SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE,
-        rendererFlags: 0
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE,
+          rendererFlags: 0
+        }
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        try {
+          let data = await routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo);
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0020 SUCCESS`);
+          done();
+        } catch (e) {
+          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0020 ERROR: ${e?.message}`);
+          expect().assertFail();
+          done();
+        }
       }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      try {
-        let data = await routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0020 SUCCESS`);
-        done();
-      } catch (e) {
-        console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0020 ERROR: ${e?.message}`);
-        expect().assertFail();
-        done();
-      }
+      done();
     })
 
 
@@ -971,20 +1058,23 @@ export default function audioRoutingManager() {
     * @tc.level  LEVEL0
     */
     it("SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_RINGTONE,
-        rendererFlags: 0
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_RINGTONE,
+          rendererFlags: 0
+        }
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        try {
+          let data = await routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo);
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0021 SUCCESS`);
+          done();
+        } catch (e) {
+          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0021 ERROR: ${e?.message}`);
+          expect().assertFail();
+          done();
+        }
       }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      try {
-        let data = await routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0021 SUCCESS`);
-        done();
-      } catch (e) {
-        console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0021 ERROR: ${e?.message}`);
-        expect().assertFail();
-        done();
-      }
+      done();
     })
 
 
@@ -997,20 +1087,23 @@ export default function audioRoutingManager() {
     * @tc.level  LEVEL0
     */
     it("SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_NOTIFICATION,
-        rendererFlags: 0
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_NOTIFICATION,
+          rendererFlags: 0
+        }
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        try {
+          let data = await routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo);
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0022 SUCCESS`);
+          done();
+        } catch (e) {
+          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0022 ERROR: ${e?.message}`);
+          expect().assertFail();
+          done();
+        }
       }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      try {
-        let data = await routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0022 SUCCESS`);
-        done();
-      } catch (e) {
-        console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0022 ERROR: ${e?.message}`);
-        expect().assertFail();
-        done();
-      }
+      done();
     })
 
 
@@ -1023,20 +1116,23 @@ export default function audioRoutingManager() {
     * @tc.level  LEVEL0
     */
     it("SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY,
-        rendererFlags: 0
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY,
+          rendererFlags: 0
+        }
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        try {
+          let data = await routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo);
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0023 SUCCESS`);
+          done();
+        } catch (e) {
+          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0023 ERROR: ${e?.message}`);
+          expect().assertFail();
+          done();
+        }
       }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      try {
-        let data = await routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0023 SUCCESS`);
-        done();
-      } catch (e) {
-        console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0023 ERROR: ${e?.message}`);
-        expect().assertFail();
-        done();
-      }
+      done();
     })
 
     /**
@@ -1048,20 +1144,23 @@ export default function audioRoutingManager() {
     * @tc.level  LEVEL0
     */
     it("SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_MOVIE,
-        rendererFlags: 0
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_MOVIE,
+          rendererFlags: 0
+        }
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        try {
+          let data = await routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo);
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0024 SUCCESS`);
+          done();
+        } catch (e) {
+          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0024 ERROR: ${e?.message}`);
+          expect().assertFail();
+          done();
+        }
       }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      try {
-        let data = await routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0024 SUCCESS`);
-        done();
-      } catch (e) {
-        console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0024 ERROR: ${e?.message}`);
-        expect().assertFail();
-        done();
-      }
+      done();
     })
 
     /**
@@ -1073,20 +1172,23 @@ export default function audioRoutingManager() {
     * @tc.level  LEVEL0
     */
     it("SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_GAME,
-        rendererFlags: 0
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_GAME,
+          rendererFlags: 0
+        }
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        try {
+          let data = await routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo);
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0025 SUCCESS`);
+          done();
+        } catch (e) {
+          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0025 ERROR: ${e?.message}`);
+          expect().assertFail();
+          done();
+        }
       }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      try {
-        let data = await routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0025 SUCCESS`);
-        done();
-      } catch (e) {
-        console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0025 ERROR: ${e?.message}`);
-        expect().assertFail();
-        done();
-      }
+      done();
     })
 
 
@@ -1099,20 +1201,23 @@ export default function audioRoutingManager() {
     * @tc.level  LEVEL0
     */
     it("SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_AUDIOBOOK,
-        rendererFlags: 0
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_AUDIOBOOK,
+          rendererFlags: 0
+        }
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        try {
+          let data = await routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo);
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0016 SUCCESS`);
+          done();
+        } catch (e) {
+          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0016 ERROR: ${e?.message}`);
+          expect().assertFail();
+          done();
+        }
       }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      try {
-        let data = await routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0016 SUCCESS`);
-        done();
-      } catch (e) {
-        console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0016 ERROR: ${e?.message}`);
-        expect().assertFail();
-        done();
-      }
+      done();
     })
 
     /**
@@ -1124,20 +1229,23 @@ export default function audioRoutingManager() {
     * @tc.level  LEVEL0
     */
     it("SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_NAVIGATION,
-        rendererFlags: 0
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_NAVIGATION,
+          rendererFlags: 0
+        }
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        try {
+          let data = await routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo);
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0016 SUCCESS`);
+          done();
+        } catch (e) {
+          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0016 ERROR: ${e?.message}`);
+          expect().assertFail();
+          done();
+        }
       }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      try {
-        let data = await routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0016 SUCCESS`);
-        done();
-      } catch (e) {
-        console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0016 ERROR: ${e?.message}`);
-        expect().assertFail();
-        done();
-      }
+      done();
     })
 
 
@@ -1150,20 +1258,23 @@ export default function audioRoutingManager() {
     * @tc.level  LEVEL0
     */
     it("SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
-        rendererFlags: 0
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+          rendererFlags: 0
+        }
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        try {
+          let data = await routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo);
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0028 SUCCESS`);
+          done();
+        } catch (e) {
+          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0028 ERROR: ${e?.message}`);
+          expect().assertFail();
+          done();
+        }
       }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      try {
-        let data = await routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0028 SUCCESS`);
-        done();
-      } catch (e) {
-        console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0028 ERROR: ${e?.message}`);
-        expect().assertFail();
-        done();
-      }
+      done();
     })
 
     /**
@@ -1175,21 +1286,24 @@ export default function audioRoutingManager() {
     * @tc.level  LEVEL0
     */
     it("SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
-        rendererFlags: 0,
-        volumeMode: audio.AudioVolumeMode.SYSTEM_GLOBAL
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+          rendererFlags: 0,
+          volumeMode: audio.AudioVolumeMode.SYSTEM_GLOBAL
+        }
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        try {
+          let data = await routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo);
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0029 SUCCESS`);
+          done();
+        } catch (e) {
+          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0029 ERROR: ${e?.message}`);
+          expect().assertFail();
+          done();
+        }
       }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      try {
-        let data = await routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0029 SUCCESS`);
-        done();
-      } catch (e) {
-        console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0029 ERROR: ${e?.message}`);
-        expect().assertFail();
-        done();
-      }
+      done();
     })
 
 
@@ -1202,21 +1316,24 @@ export default function audioRoutingManager() {
     * @tc.level  LEVEL0
     */
     it("SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
-        rendererFlags: 0,
-        volumeMode: audio.AudioVolumeMode.APP_INDIVIDUAL
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+          rendererFlags: 0,
+          volumeMode: audio.AudioVolumeMode.APP_INDIVIDUAL
+        }
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        try {
+          let data = await routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo);
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0030 SUCCESS`);
+          done();
+        } catch (e) {
+          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0030 ERROR: ${e?.message}`);
+          expect().assertFail();
+          done();
+        }
       }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      try {
-        let data = await routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0030 SUCCESS`);
-        done();
-      } catch (e) {
-        console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0030 ERROR: ${e?.message}`);
-        expect().assertFail();
-        done();
-      }
+      done();
     })
 
     /**
@@ -1602,25 +1719,28 @@ export default function audioRoutingManager() {
     * @tc.level  LEVEL0
     */
     it("SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_UNKNOWN,
-        rendererFlags: 0
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_UNKNOWN,
+          rendererFlags: 0
+        }
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        try {
+          let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0001 SUCCESS`);
+          console.log(`get device descriptor success: `);
+          let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
+          expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
+          expect(data[0].deviceType).assertEqual(audio.DeviceType.SPEAKER);
+          expect(data[0].networkId).assertEqual("LocalDevice");
+          done();
+        } catch (e) {
+          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0001 ERROR: ${e?.message}`);
+          expect().assertFail();
+          done();
+        }
       }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      try {
-        let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0001 SUCCESS`);
-        console.log(`get device descriptor success: `);
-        let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
-        expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
-        expect(data[0].deviceType).assertEqual(audio.DeviceType.SPEAKER);
-        expect(data[0].networkId).assertEqual("LocalDevice");
-        done();
-      } catch (e) {
-        console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0001 ERROR: ${e?.message}`);
-        expect().assertFail();
-        done();
-      }
+      done();
     })
 
 
@@ -1634,21 +1754,24 @@ export default function audioRoutingManager() {
     * @tc.level  LEVEL0
     */
     it("SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION,
-        rendererFlags: 0
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION,
+          rendererFlags: 0
+        }
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        try {
+          let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0002 SUCCESS`);
+          console.log(`get device descriptor success: `);
+          done();
+        } catch (e) {
+          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0002 ERROR: ${e?.message}`);
+          expect().assertFail();
+          done();
+        }
       }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      try {
-        let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0002 SUCCESS`);
-        console.log(`get device descriptor success: `);
-        done();
-      } catch (e) {
-        console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0002 ERROR: ${e?.message}`);
-        expect().assertFail();
-        done();
-      }
+      done();
     })
 
 
@@ -1661,25 +1784,28 @@ export default function audioRoutingManager() {
     * @tc.level  LEVEL0
     */
     it("SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT,
-        rendererFlags: 0
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT,
+          rendererFlags: 0
+        }
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        try {
+          let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0003 SUCCESS`);
+          console.log(`get device descriptor success: `);
+          let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
+          expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
+          expect(data[0].deviceType).assertEqual(audio.DeviceType.SPEAKER);
+          expect(data[0].networkId).assertEqual("LocalDevice");
+          done();
+        } catch (e) {
+          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0003 ERROR: ${e?.message}`);
+          expect().assertFail();
+          done();
+        }
       }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      try {
-        let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0003 SUCCESS`);
-        console.log(`get device descriptor success: `);
-        let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
-        expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
-        expect(data[0].deviceType).assertEqual(audio.DeviceType.SPEAKER);
-        expect(data[0].networkId).assertEqual("LocalDevice");
-        done();
-      } catch (e) {
-        console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0003 ERROR: ${e?.message}`);
-        expect().assertFail();
-        done();
-      }
+      done();
     })
 
 
@@ -1692,25 +1818,28 @@ export default function audioRoutingManager() {
     * @tc.level  LEVEL0
     */
     it("SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_ALARM,
-        rendererFlags: 0
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_ALARM,
+          rendererFlags: 0
+        }
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        try {
+          let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0004 SUCCESS`);
+          console.log(`get device descriptor success: `);
+          let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
+          expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
+          expect(data[0].deviceType).assertEqual(audio.DeviceType.SPEAKER);
+          expect(data[0].networkId).assertEqual("LocalDevice");
+          done();
+        } catch (e) {
+          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0004 ERROR: ${e?.message}`);
+          expect().assertFail();
+          done();
+        }
       }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      try {
-        let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0004 SUCCESS`);
-        console.log(`get device descriptor success: `);
-        let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
-        expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
-        expect(data[0].deviceType).assertEqual(audio.DeviceType.SPEAKER);
-        expect(data[0].networkId).assertEqual("LocalDevice");
-        done();
-      } catch (e) {
-        console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0004 ERROR: ${e?.message}`);
-        expect().assertFail();
-        done();
-      }
+      done();
     })
 
 
@@ -1723,25 +1852,28 @@ export default function audioRoutingManager() {
     * @tc.level  LEVEL0
     */
     it("SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE,
-        rendererFlags: 0
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE,
+          rendererFlags: 0
+        }
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        try {
+          let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0005 SUCCESS`);
+          console.log(`get device descriptor success: `);
+          let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
+          expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
+          expect(data[0].deviceType).assertEqual(audio.DeviceType.SPEAKER);
+          expect(data[0].networkId).assertEqual("LocalDevice");
+          done();
+        } catch (e) {
+          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0005 ERROR: ${e?.message}`);
+          expect().assertFail();
+          done();
+        }
       }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      try {
-        let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0005 SUCCESS`);
-        console.log(`get device descriptor success: `);
-        let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
-        expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
-        expect(data[0].deviceType).assertEqual(audio.DeviceType.SPEAKER);
-        expect(data[0].networkId).assertEqual("LocalDevice");
-        done();
-      } catch (e) {
-        console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0005 ERROR: ${e?.message}`);
-        expect().assertFail();
-        done();
-      }
+      done();
     })
 
 
@@ -1754,25 +1886,28 @@ export default function audioRoutingManager() {
     * @tc.level  LEVEL0
     */
     it("SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_RINGTONE,
-        rendererFlags: 0
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_RINGTONE,
+          rendererFlags: 0
+        }
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        try {
+          let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0006 SUCCESS`);
+          console.log(`get device descriptor success: `);
+          let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
+          expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
+          expect(data[0].deviceType).assertEqual(audio.DeviceType.SPEAKER);
+          expect(data[0].networkId).assertEqual("LocalDevice");
+          done();
+        } catch (e) {
+          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0006 ERROR: ${e?.message}`);
+          expect().assertFail();
+          done();
+        }
       }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      try {
-        let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0006 SUCCESS`);
-        console.log(`get device descriptor success: `);
-        let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
-        expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
-        expect(data[0].deviceType).assertEqual(audio.DeviceType.SPEAKER);
-        expect(data[0].networkId).assertEqual("LocalDevice");
-        done();
-      } catch (e) {
-        console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0006 ERROR: ${e?.message}`);
-        expect().assertFail();
-        done();
-      }
+      done();
     })
 
     /**
@@ -1784,25 +1919,28 @@ export default function audioRoutingManager() {
     * @tc.level  LEVEL0
     */
     it("SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_NOTIFICATION,
-        rendererFlags: 0
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_NOTIFICATION,
+          rendererFlags: 0
+        }
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        try {
+          let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0007 SUCCESS`);
+          console.log(`get device descriptor success: `);
+          let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
+          expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
+          expect(data[0].deviceType).assertEqual(audio.DeviceType.SPEAKER);
+          expect(data[0].networkId).assertEqual("LocalDevice");
+          done();
+        } catch (e) {
+          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0007 ERROR: ${e?.message}`);
+          expect().assertFail();
+          done();
+        }
       }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      try {
-        let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0007 SUCCESS`);
-        console.log(`get device descriptor success: `);
-        let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
-        expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
-        expect(data[0].deviceType).assertEqual(audio.DeviceType.SPEAKER);
-        expect(data[0].networkId).assertEqual("LocalDevice");
-        done();
-      } catch (e) {
-        console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0007 ERROR: ${e?.message}`);
-        expect().assertFail();
-        done();
-      }
+      done();
     })
 
 
@@ -1815,25 +1953,28 @@ export default function audioRoutingManager() {
     * @tc.level  LEVEL0
     */
     it("SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY,
-        rendererFlags: 0
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY,
+          rendererFlags: 0
+        }
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        try {
+          let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0008 SUCCESS`);
+          console.log(`get device descriptor success: `);
+          let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
+          expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
+          expect(data[0].deviceType).assertEqual(audio.DeviceType.SPEAKER);
+          expect(data[0].networkId).assertEqual("LocalDevice");
+          done();
+        } catch (e) {
+          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0008 ERROR: ${e?.message}`);
+          expect().assertFail();
+          done();
+        }
       }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      try {
-        let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0008 SUCCESS`);
-        console.log(`get device descriptor success: `);
-        let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
-        expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
-        expect(data[0].deviceType).assertEqual(audio.DeviceType.SPEAKER);
-        expect(data[0].networkId).assertEqual("LocalDevice");
-        done();
-      } catch (e) {
-        console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0008 ERROR: ${e?.message}`);
-        expect().assertFail();
-        done();
-      }
+      done();
     })
 
 
@@ -1846,25 +1987,28 @@ export default function audioRoutingManager() {
     * @tc.level  LEVEL0
     */
     it("SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_MOVIE,
-        rendererFlags: 0
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_MOVIE,
+          rendererFlags: 0
+        }
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        try {
+          let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0009 SUCCESS`);
+          console.log(`get device descriptor success: `);
+          let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
+          expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
+          expect(data[0].deviceType).assertEqual(audio.DeviceType.SPEAKER);
+          expect(data[0].networkId).assertEqual("LocalDevice");
+          done();
+        } catch (e) {
+          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0009 ERROR: ${e?.message}`);
+          expect().assertFail();
+          done();
+        }
       }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      try {
-        let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0009 SUCCESS`);
-        console.log(`get device descriptor success: `);
-        let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
-        expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
-        expect(data[0].deviceType).assertEqual(audio.DeviceType.SPEAKER);
-        expect(data[0].networkId).assertEqual("LocalDevice");
-        done();
-      } catch (e) {
-        console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0009 ERROR: ${e?.message}`);
-        expect().assertFail();
-        done();
-      }
+      done();
     })
 
     /**
@@ -1876,25 +2020,28 @@ export default function audioRoutingManager() {
     * @tc.level  LEVEL0
     */
     it("SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_AUDIOBOOK,
-        rendererFlags: 0
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_AUDIOBOOK,
+          rendererFlags: 0
+        }
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        try {
+          let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0010 SUCCESS`);
+          console.log(`get device descriptor success: `);
+          let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
+          expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
+          expect(data[0].deviceType).assertEqual(audio.DeviceType.SPEAKER);
+          expect(data[0].networkId).assertEqual("LocalDevice");
+          done();
+        } catch (e) {
+          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0010 ERROR: ${e?.message}`);
+          expect().assertFail();
+          done();
+        }
       }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      try {
-        let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0010 SUCCESS`);
-        console.log(`get device descriptor success: `);
-        let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
-        expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
-        expect(data[0].deviceType).assertEqual(audio.DeviceType.SPEAKER);
-        expect(data[0].networkId).assertEqual("LocalDevice");
-        done();
-      } catch (e) {
-        console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0010 ERROR: ${e?.message}`);
-        expect().assertFail();
-        done();
-      }
+      done();
     })
 
     /**
@@ -1906,25 +2053,28 @@ export default function audioRoutingManager() {
     * @tc.level  LEVEL0
     */
     it("SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_NAVIGATION,
-        rendererFlags: 0
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_NAVIGATION,
+          rendererFlags: 0
+        }
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        try {
+          let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0011 SUCCESS`);
+          console.log(`get device descriptor success: `);
+          let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
+          expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
+          expect(data[0].deviceType).assertEqual(audio.DeviceType.SPEAKER);
+          expect(data[0].networkId).assertEqual("LocalDevice");
+          done();
+        } catch (e) {
+          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0011 ERROR: ${e?.message}`);
+          expect().assertFail();
+          done();
+        }
       }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      try {
-        let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0011 SUCCESS`);
-        console.log(`get device descriptor success: `);
-        let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
-        expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
-        expect(data[0].deviceType).assertEqual(audio.DeviceType.SPEAKER);
-        expect(data[0].networkId).assertEqual("LocalDevice");
-        done();
-      } catch (e) {
-        console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0011 ERROR: ${e?.message}`);
-        expect().assertFail();
-        done();
-      }
+      done();
     })
 
 
@@ -1937,25 +2087,28 @@ export default function audioRoutingManager() {
     * @tc.level  LEVEL0
     */
     it("SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
-        rendererFlags: 0
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+          rendererFlags: 0
+        }
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        try {
+          let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0012 SUCCESS`);
+          console.log(`get device descriptor success: `);
+          let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
+          expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
+          expect(data[0].deviceType).assertEqual(audio.DeviceType.SPEAKER);
+          expect(data[0].networkId).assertEqual("LocalDevice");
+          done();
+        } catch (e) {
+          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0012 ERROR: ${e?.message}`);
+          expect().assertFail();
+          done();
+        }
       }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      try {
-        let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0012 SUCCESS`);
-        console.log(`get device descriptor success: `);
-        let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
-        expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
-        expect(data[0].deviceType).assertEqual(audio.DeviceType.SPEAKER);
-        expect(data[0].networkId).assertEqual("LocalDevice");
-        done();
-      } catch (e) {
-        console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0012 ERROR: ${e?.message}`);
-        expect().assertFail();
-        done();
-      }
+      done();
     })
 
     /**
@@ -1967,26 +2120,29 @@ export default function audioRoutingManager() {
     * @tc.level  LEVEL0
     */
     it("SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
-        rendererFlags: 0,
-        volumeMode: audio.AudioVolumeMode.SYSTEM_GLOBAL
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+          rendererFlags: 0,
+          volumeMode: audio.AudioVolumeMode.SYSTEM_GLOBAL
+        }
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        try {
+          let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0013 SUCCESS`);
+          console.log(`get device descriptor success: `);
+          let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
+          expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
+          expect(data[0].deviceType).assertEqual(audio.DeviceType.SPEAKER);
+          expect(data[0].networkId).assertEqual("LocalDevice");
+          done();
+        } catch (e) {
+          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0013 ERROR: ${e?.message}`);
+          expect().assertFail();
+          done();
+        }
       }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      try {
-        let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0013 SUCCESS`);
-        console.log(`get device descriptor success: `);
-        let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
-        expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
-        expect(data[0].deviceType).assertEqual(audio.DeviceType.SPEAKER);
-        expect(data[0].networkId).assertEqual("LocalDevice");
-        done();
-      } catch (e) {
-        console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0013 ERROR: ${e?.message}`);
-        expect().assertFail();
-        done();
-      }
+      done();
     })
 
     /**
@@ -1998,26 +2154,29 @@ export default function audioRoutingManager() {
     * @tc.level  LEVEL0
     */
     it("SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let rendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
-        rendererFlags: 0,
-        volumeMode: audio.AudioVolumeMode.APP_INDIVIDUAL
+      if(await checkCarSupportSync()) {
+        let rendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+          rendererFlags: 0,
+          volumeMode: audio.AudioVolumeMode.APP_INDIVIDUAL
+        }
+        let routingManager = audio.getAudioManager().getRoutingManager();
+        try {
+          let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0014 SUCCESS`);
+          console.log(`get device descriptor success: `);
+          let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
+          expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
+          expect(data[0].deviceType).assertEqual(audio.DeviceType.SPEAKER);
+          expect(data[0].networkId).assertEqual("LocalDevice");
+          done();
+        } catch (e) {
+          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0014 ERROR: ${e?.message}`);
+          expect().assertFail();
+          done();
+        }
       }
-      let routingManager = audio.getAudioManager().getRoutingManager();
-      try {
-        let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0014 SUCCESS`);
-        console.log(`get device descriptor success: `);
-        let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
-        expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
-        expect(data[0].deviceType).assertEqual(audio.DeviceType.SPEAKER);
-        expect(data[0].networkId).assertEqual("LocalDevice");
-        done();
-      } catch (e) {
-        console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0014 ERROR: ${e?.message}`);
-        expect().assertFail();
-        done();
-      }
+      done();
     })
     
     /**

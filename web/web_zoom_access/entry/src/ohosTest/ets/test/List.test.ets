@@ -14,7 +14,9 @@
  */
 
 import webZoomAccessTest from './WebZoomAccessTest.test';
+import webZoomFactorTest from './WebZoomFactorTest.test';
 
 export default function ListTest() {
   webZoomAccessTest();
+  webZoomFactorTest();
 }

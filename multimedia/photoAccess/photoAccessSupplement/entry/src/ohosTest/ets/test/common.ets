@@ -162,6 +162,21 @@ export async function closeFd(fdNumber: number) {
   }
 }
 
+export function checkResourceFile(context: Context) {
+  try {
+    const sandboxPath = context.filesDir;
+    let resourcePath = context.resourceDir;
+    let resourcePathArray = fs.listFileSync(resourcePath);
+    for (let index = 0; index < resourcePathArray.length; index++) {
+      fs.copyFileSync((resourcePath + '/' + resourcePathArray[index]), (sandboxPath + '/' + resourcePathArray[index]));
+    }
+    let sandboxFileArray = fs.listFileSync(sandboxPath)
+    console.log(`sandbox fileList ==> ${sandboxFileArray}`)
+  } catch (error) {
+    console.error(`checkResourceFile failed, err is ${error}`);
+  }
+}
+
 export async function createMovingPhoto(testNum: string, context: Context, titleName: string) {
   let photoAsset: photoAccessHelper.PhotoAsset | undefined = undefined;
   try {

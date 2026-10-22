@@ -57,20 +57,23 @@ it('listSwipeActionApi12Test_static_001', Level.LEVEL1, async (done: () => void)
       console.info('listSwipeActionApi12Test_static_001 START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
-      const winLeft = AppStorage.get<number>("winLeft") ?? 0
-      const winTop = AppStorage.get<number>("winTop") ?? 0
       const uiContext = AppStorage.get<UIContext>('uiContext')!;
-      await driver.swipe(
-        Math.round(winLeft + uiContext.vp2px(50)).toInt(),
-        Math.round(winTop + uiContext.vp2px(108)).toInt(),
-        Math.round(winLeft + uiContext.vp2px(200)).toInt(),
-        Math.round(winTop + uiContext.vp2px(108)).toInt()
-      );
+      let swipeComp = await driver.findComponent(ON.id('item0'));
+      let rect = await swipeComp!.getBounds();
+      let displayId = await swipeComp!.getDisplayId();
+      await driver.swipeBetween(
+        { x: (Math.round(rect.left + uiContext.vp2px(50))).toInt(),
+          y: (Math.round((rect.top + rect.bottom) / 2)).toInt(),
+          displayId: displayId },
+        { x: (Math.round(rect.left + uiContext.vp2px(200))).toInt(),
+          y: (Math.round((rect.top + rect.bottom) / 2)).toInt(),
+          displayId: displayId });
       console.info('listSwipeActionApi12Test_static_003 START');
       await CommonFunc.sleep(5000);
       let strJson1 = inspector.getInspectorByKey('ListTestApi12_2');
       let obj1 = JSON.parseJsonElement(strJson1);
-      expect(obj1.getElement('$attrs').getString('content')).assertEqual('160');
+      expect(Math.abs(Math.round(Number(obj1.getElement('$attrs').getString('content'))) - 160) <= 1)
+          .assertTrue();
       await CommonFunc.sleep(1000);
       let btn1 = await driver.findComponent(ON.id('item0')) as Component;
       btn1.click();

@@ -189,7 +189,7 @@ struct BindGridController {
   aboutToAppear() {
     this.rootNode = typeNode.createGridNode(this.getUIContext())
     this.gridAttribute = typeNode.getGridAttribute(this.rootNode!)
-    this!.gridAttribute!.size({ width: '100%', height: '80%' })
+    this!.gridAttribute!.size({ width: '100%', height: '70%' })
       .rowsTemplate('1fr 1fr 1fr 1fr')
       .columnsGap(10)
       .rowsGap(5)
@@ -233,6 +233,8 @@ struct BindGridController {
           .onClick((e: ClickEvent) => {
             this.scroller.scrollBy(150, 150);
           })
+      }
+      Row() {
         Button('setOn')
           .id('setOn')
           .onClick((e: ClickEvent) => {

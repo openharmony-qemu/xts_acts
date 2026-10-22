@@ -16,7 +16,7 @@
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
 import { describe, it, expect, beforeAll, Hypium, TestType, Size, Level } from '../../../../hypium/index'
-import { fetchOption, getPermission, driveFn, sleep } from '../Common.test.ets'
+import { fetchOption, getPermission, driveFn, checkResourceFile, createResource } from '../Common.test.ets'
 import Context from "application.Context"
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base'
@@ -78,7 +78,8 @@ export default function assetGetLastObjectTest() {
       console.info('beforeAll case');
       await getPermission();
       await driveFn();
-      await sleep(1000);
+      await checkResourceFile(testContext);
+      await createResource(testContext, ['01.jpg', '01.mp4']);
     });
 
     //image

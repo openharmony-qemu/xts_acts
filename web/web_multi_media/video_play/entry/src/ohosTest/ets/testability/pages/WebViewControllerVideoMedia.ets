@@ -63,8 +63,6 @@ struct WebViewControllerVideoMedia {
           await Utils.waitForExist(() => this.isReceive, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
           await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
           this.isReceive = -1;
-          const displayId: number =
-            await (await driver.findComponent(ON.id('WebViewControllerVideoMedia'))).getDisplayId();
           switch (this.str) {
             case "StopAllMedia0100": {
               let res: webView.MediaPlaybackState;
@@ -644,6 +642,8 @@ struct WebViewControllerVideoMedia {
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(true, 350310)
                 } else {
+                  const displayId: number =
+                    await (await driver.findComponent(ON.id('WebViewControllerVideoMedia'))).getDisplayId();
                   await driver.triggerKey(KeyCode.KEYCODE_ENTER, displayId);
                   await Utils.sleep(2000);
                   this.controller.runJavaScript("enterFullScreen()");
@@ -683,6 +683,8 @@ struct WebViewControllerVideoMedia {
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(true, 350320)
                 } else {
+                  const displayId: number =
+                    await (await driver.findComponent(ON.id('WebViewControllerVideoMedia'))).getDisplayId();
                   await driver.triggerKey(KeyCode.KEYCODE_ENTER, displayId);
                   await Utils.sleep(2000);
                   this.controller.runJavaScript("enterFullScreen()");
@@ -720,6 +722,8 @@ struct WebViewControllerVideoMedia {
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(true, 350330)
                 } else {
+                  const displayId: number =
+                    await (await driver.findComponent(ON.id('WebViewControllerVideoMedia'))).getDisplayId();
                   await driver.triggerKey(KeyCode.KEYCODE_ENTER, displayId);
                   await Utils.sleep(2000);
                   this.controller.runJavaScript("enterFullScreen()");
@@ -758,6 +762,8 @@ struct WebViewControllerVideoMedia {
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(true, 350340)
                 } else {
+                  const displayId: number =
+                    await (await driver.findComponent(ON.id('WebViewControllerVideoMedia'))).getDisplayId();
                   await driver.triggerKey(KeyCode.KEYCODE_ENTER, displayId);
                   await Utils.sleep(2000);
                   this.controller.runJavaScript("enterFullScreen()");
@@ -796,6 +802,8 @@ struct WebViewControllerVideoMedia {
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(true, 350350)
                 } else {
+                  const displayId: number =
+                    await (await driver.findComponent(ON.id('WebViewControllerVideoMedia'))).getDisplayId();
                   await driver.triggerKey(KeyCode.KEYCODE_ENTER, displayId);
                   await Utils.sleep(2000);
                   this.controller.runJavaScript("enterFullScreen()");
@@ -948,6 +956,8 @@ struct WebViewControllerVideoMedia {
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(true, 350410)
                 } else {
+                  const displayId: number =
+                    await (await driver.findComponent(ON.id('WebViewControllerVideoMedia'))).getDisplayId();
                   await driver.triggerKey(KeyCode.KEYCODE_ENTER, displayId);
                   await Utils.sleep(2000);
                   this.controller.runJavaScript("enterFullScreen()");

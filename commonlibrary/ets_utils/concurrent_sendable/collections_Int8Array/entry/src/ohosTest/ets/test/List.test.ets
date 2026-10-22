@@ -14,6 +14,8 @@
  */
 
 import Int8ArrayBasicTest from './Int8ArrayBasic.test';
+import Int8ArrayFromTest from './Int8ArrayFrom.test';
+import TypedArray401Test from './TypedArray401.test';
 import Int8ArrayConcurrentTest from './Int8ArrayConcurrent.test';
 import Int8ArrayAllTest from './All/Int8ArrayAll.test';
 import Int8ArrayConcurrentTestConcurrent from './Concurrent/Int8ArrayConcurrent.test';
@@ -23,6 +25,8 @@ import Int8ArrayTaskPoolTest from './TaskPool/Int8ArrayTaskPool.test';
 import IntByteArrayTest from './intArray/IntByteArrayTest.test'
 export default function testsuite() {
   Int8ArrayBasicTest();
+  Int8ArrayFromTest();
+  TypedArray401Test();
   Int8ArrayConcurrentTest();
   Int8ArrayAllTest();
   Int8ArrayConcurrentTestConcurrent();

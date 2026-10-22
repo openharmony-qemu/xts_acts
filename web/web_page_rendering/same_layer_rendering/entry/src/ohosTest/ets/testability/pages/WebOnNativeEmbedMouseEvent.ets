@@ -199,8 +199,6 @@ struct WebIndex {
           await waitForExist(() => this.isReceive, this.str, 0);
           await waitForExist(() => this.isComplete, this.str, 0);
           let driver: Driver = Driver.create();
-          const displayId: number =
-            await (await driver.findComponent(ON.id('WebOnNativeEmbedMouseButton'))).getDisplayId();
           this.isReceive = -1;
           switch (this.str) {
             case "emitOnNativeEmbedMouseEvent001": {
@@ -210,6 +208,8 @@ struct WebIndex {
                 await Utils.sleep(2000);
                 let downX = Math.round(globalThis.winLeft + webRect.left + (webRect.right - webRect.left) / 2);
                 let downY = Math.round(globalThis.winTop + webRect.top + (webRect.bottom - webRect.top) / 2);
+                const displayId: number =
+                  await (await driver.findComponent(ON.id('WebOnNativeEmbedMouseButton'))).getDisplayId();
                 await driver.mouseClick({ x: downX, y: downY, displayId: displayId }, MouseButton.MOUSE_BUTTON_LEFT);
               } catch (error) {
                 console.error(

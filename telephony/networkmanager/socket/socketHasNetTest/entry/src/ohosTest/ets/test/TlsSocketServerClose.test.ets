@@ -775,8 +775,7 @@ export default function TlsSocketServerCloseTest() {
         let port: number = Math.round(1024 + Math.random() * 5000 + Math.random() * 4000);
         let netAddress: socket.NetAddress = {
           address: '127.0.0.1',
-          port: port,
-          family: 1
+          port: port
         };
         let tlsConnectOptions: socket.TLSConnectOptions = {
           address: netAddress,
@@ -1000,8 +999,9 @@ export default function TlsSocketServerCloseTest() {
       try {
         let port: number = Math.round(1024 + Math.random() * 5000 + Math.random() * 4000);
         let netAddress: socket.NetAddress = {
-          address: '127.0.0.1',
-          port: port
+          address: '::1',
+          port: port,
+          family: 2
         };
         let tlsConnectOptions: socket.TLSConnectOptions = {
           address: netAddress,
@@ -1098,98 +1098,133 @@ export default function TlsSocketServerCloseTest() {
      * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerClose1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let caseName: string = 'testNetworkMgrSocketTLSSocketServerClose1000';
+      let caseName: string = 'testNetworkMgrSocketTLSSocketServerClose0100';
       console.info(`${caseName} test start`);
-      try {
+      // 请求的随机端口被前序用例占用时，listen会静默回退到随机端口（框架日志"distribute a random port"）且Promise正常返回，
+      // 客户端仍连原端口会报2303501(Connection refused/SSL is null)，此处检测到该错误后更换端口重建server/client重试
+      const MAX_RETRY: number = 3;
+      let retryCount: number = 0;
+      let finished: boolean = false;
+      const finishOnce = (isSuccess: boolean) => {
+        if (finished) {
+          return;
+        }
+        finished = true;
+        if (isSuccess) {
+          ExpectTrue(true);
+        } else {
+          ExpectFail();
+        }
+        console.info(`${caseName}---End`);
+        done();
+      };
+      const cleanupAndRebuild = async () => {
+        try {
+          tlsServer.off('connect');
+        } catch (e) {
+          console.info(`${caseName} tlsServer off connect failed`);
+        }
+        try {
+          await tlsServer.close();
+        } catch (e) {
+          console.info(`${caseName} tlsServer close failed: ` + JSON.stringify(e));
+        }
+        try {
+          await tlsClient.close();
+        } catch (e) {
+          console.info(`${caseName} tlsClient close failed: ` + JSON.stringify(e));
+        }
+        tlsServer = socket.constructTLSSocketServerInstance();
+        tlsClient = socket.constructTLSSocketInstance();
+      };
+      const doTest = async () => {
         let port: number = Math.round(1024 + Math.random() * 5000 + Math.random() * 4000);
         let netAddress: socket.NetAddress = {
-          address: '::1',
-          port: port,
-          family: 2
+          address: '127.0.0.1',
+          port: port
         };
         let tlsConnectOptions: socket.TLSConnectOptions = {
           address: netAddress,
           secureOptions: tlsSecureOptions,
           ALPNProtocols: ["http/1.1"]
         };
-        
         try {
           await tlsServer.listen(tlsConnectOptions);
           console.log(`${caseName} tlsServer listen success`);
-          
-          tlsServer.on('connect', async (client: socket.TLSSocketConnection) => {
-            console.log(`${caseName} ======= tlsServer on connect success client is: ` + JSON.stringify(client));
-            await sleep(500);
-            
-            try {
-              await tlsServer.close();
-              console.log(`${caseName} tlsServer close success`);
-              ExpectTrue(true);
-              tlsServer.off('connect');
-              console.info(`${caseName}---End`);
-              done();
-            } catch (err) {
-              console.log(`${caseName} tlsServer close failed err is: ` + JSON.stringify(err));
-              ExpectFail();
-              console.info(`${caseName}---End`);
-              done();
-            }
-          });
         } catch (err) {
           console.log(`${caseName} tlsServer listen failed: ` + JSON.stringify(err));
-          ExpectFail();
-          console.info(`${caseName}---End`);
-          done();
+          finishOnce(false);
+          return;
         }
-        
-        await tlsClient.bind(netAddress, async (err: BusinessError) => {
-          if (err) {
-            console.info(`${caseName} tlsClient bind failed err is: ` + JSON.stringify(err));
-            ExpectFail();
-            console.info(`${caseName}---End`);
-            done();
-          } else {
-            console.info(`${caseName} tlsClient bind success`);
-            let tlsTwoWaySecureOption: socket.TLSSecureOptions = {
-              ca: ca_c,
-              cert: cert_c,
-              password: password,
-              key: key,
-              protocols: [socket.Protocol.TLSv13],
-              signatureAlgorithms: "rsa_pss_rsae_sha256:rsa_pss_rsae_sha384:ecdsa_secp256r1_sha256:ecdsa_secp384r1_sha384:ed25519"
-            };
-            let tlsTwoWayConnectOptions: socket.TLSConnectOptions = {
-              address: netAddress,
-              secureOptions: tlsTwoWaySecureOption
-            };
-            console.log("--- connection -- start ---");
-            
-            try {
-              await tlsClient.connect(tlsTwoWayConnectOptions);
-              console.log(`${caseName} tlsClient connect success`);
-              
-              try {
-                await tlsClient.close();
-                console.log(`${caseName} tlsClient close success`);
-              } catch (err) {
-                console.log(`${caseName} tlsClient close failed` + JSON.stringify(err));
-                ExpectFail();
-                console.info(`${caseName}---End`);
-                done();
-              }
-            } catch (err) {
-              console.info(`${caseName} tlsClient connect get err is ` + JSON.stringify(err));
-              ExpectFail();
-              console.info(`${caseName}---End`);
-              done();
-            }
+        tlsServer.on('connect', async (client: socket.TLSSocketConnection) => {
+          console.log(`${caseName} ======= tlsServer on connect success client is: ` + JSON.stringify(client));
+          await sleep(500);
+          try {
+            await tlsServer.close();
+            console.log(`${caseName} tlsServer close success`);
+            tlsServer.off('connect');
+            finishOnce(true);
+          } catch (err) {
+            console.log(`${caseName} tlsServer close failed err is: ` + JSON.stringify(err));
+            finishOnce(false);
           }
         });
+        try {
+          await tlsClient.bind(netAddress);
+          console.info(`${caseName} tlsClient bind success`);
+        } catch (err) {
+          console.info(`${caseName} tlsClient bind failed err is ` + JSON.stringify(err));
+          if (retryCount < MAX_RETRY) {
+            retryCount++;
+            console.info(`${caseName} bind port may be occupied, retry ${retryCount}/${MAX_RETRY} with new port`);
+            await cleanupAndRebuild();
+            await doTest();
+            return;
+          }
+          finishOnce(false);
+          return;
+        }
+        let tlsTwoWaySecureOption: socket.TLSSecureOptions = {
+          ca: ca_c,
+          cert: cert_c,
+          password: password,
+          key: key,
+          protocols: [socket.Protocol.TLSv13],
+          signatureAlgorithms: "rsa_pss_rsae_sha256:rsa_pss_rsae_sha384:ecdsa_secp256r1_sha256:ecdsa_secp384r1_sha384:ed25519"
+        };
+        let tlsTwoWayConnectOptions: socket.TLSConnectOptions = {
+          address: netAddress,
+          secureOptions: tlsTwoWaySecureOption
+        };
+        console.log("--- connection start --");
+        try {
+          await tlsClient.connect(tlsTwoWayConnectOptions);
+          console.log(`${caseName} tlsClient connect success`);
+          try {
+            await tlsClient.close();
+            console.log(`${caseName} tlsClient close success`);
+          } catch (err) {
+            console.log(`${caseName} tlsClient close failed` + JSON.stringify(err));
+            finishOnce(false);
+          }
+        } catch (err) {
+          const connectErr = err as BusinessError;
+          console.info(`${caseName} tlsClient connect failed err is ` + JSON.stringify(err));
+          if (connectErr.code === 2303501 && retryCount < MAX_RETRY) {
+            retryCount++;
+            console.info(`${caseName} port may be reused by framework, retry ${retryCount}/${MAX_RETRY} with new port`);
+            await cleanupAndRebuild();
+            await doTest();
+            return;
+          }
+          finishOnce(false);
+        }
+      };
+      try {
+        await doTest();
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
-        ExpectFail();
-        console.info(`${caseName} test end`);
-        done();
+        finishOnce(false);
       }
     });
 

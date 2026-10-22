@@ -94,11 +94,12 @@ export default function webOnFirstContentfulPaint() {
       Utils.emitEvent('emitOnFirstContentfulPaint002', 10)
       await Utils.msSleep(2000);
       Utils.registerEvent('testOnFirstContentfulPaintStatic002', true, 522, done);
+      await Utils.msSleep(2000);
       inspector.sendEventByKey('WebOnFirstContentfulPaintButton', 10, '');
-      await Utils.msSleep(5000);
+      await Utils.msSleep(20000);
       setTimeout(() => {
         done();
-      }, 10000);
+      }, 20000);
     })
 
     /**

@@ -537,6 +537,31 @@ struct RichEditorBuilderSpanParam {
     }
   }
 
+  private onGetAssertNonEmpty(): void {
+    this.resetEditor();
+    try {
+      this.controller.addRichEditorBuilderSpan(this.makeFullSpan(), { id: 'span_ne', offset: 0 });
+      let infos: BuilderSpanInfo[] | undefined = this.controller.getRichEditorBuilderSpans();
+      let isDefined: boolean = infos !== undefined && infos !== null;
+      let isNonEmpty: boolean = isDefined && infos!.length > 0;
+      AppStorage.setOrCreate('param_get_assert_non_empty', `${isDefined}|${isNonEmpty}|${infos!.length}`);
+    } catch (err) {
+      AppStorage.setOrCreate('param_get_assert_non_empty', 'failed:' + String(err));
+    }
+  }
+
+  private onGetAssertEmpty(): void {
+    this.resetEditor();
+    try {
+      let infos: BuilderSpanInfo[] | undefined = this.controller.getRichEditorBuilderSpans();
+      let isDefined: boolean = infos !== undefined && infos !== null;
+      let isEmpty: boolean = isDefined && infos!.length === 0;
+      AppStorage.setOrCreate('param_get_assert_empty', `${isDefined}|${isEmpty}|${infos === undefined ? -1 : infos.length}`);
+    } catch (err) {
+      AppStorage.setOrCreate('param_get_assert_empty', 'failed:' + String(err));
+    }
+  }
+
   /* ===================== Delete triggers onDetach ===================== */
 
   private onAddThenDelete(): void {
@@ -793,6 +818,20 @@ struct RichEditorBuilderSpanParam {
     }.width('100%').height('5%')
   }
 
+  @Builder
+  getButtonsBlock6(): void {
+    Row() {
+      Button('GetAssertNonEmpty')
+        .id('btn_param_get_assert_non_empty')
+        .onClick(() => { this.onGetAssertNonEmpty(); })
+        .width('45%')
+      Button('GetAssertEmpty')
+        .id('btn_param_get_assert_empty')
+        .onClick(() => { this.onGetAssertEmpty(); })
+        .width('45%')
+    }.width('100%').height('5%')
+  }
+
   build() {
     Scroll() {
       Column() {
@@ -812,6 +851,7 @@ struct RichEditorBuilderSpanParam {
         this.getButtonsBlock3()
         this.getButtonsBlock4()
         this.getButtonsBlock5()
+        this.getButtonsBlock6()
       }
       .width('100%')
       .padding(5)

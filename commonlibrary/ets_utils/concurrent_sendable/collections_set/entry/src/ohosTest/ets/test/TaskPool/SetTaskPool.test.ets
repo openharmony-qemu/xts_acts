@@ -14,6 +14,8 @@
  */
 import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium';
 import { taskpool } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { collections } from '@kit.ArkTS';
 import {
   sleep,
   testSet0001,
@@ -153,6 +155,21 @@ import {
   testSet0135
 } from './Set_function';
 
+
+@Sendable
+class SupSetShared001 {
+  set: collections.Set<number> = new collections.Set<number>();
+}
+
+@Concurrent
+function supSetModify001(set: collections.Set<number>): void {
+  for (let i = 0; i < 100; i++) {
+    try {
+      set.add(i);
+    } catch (error) {
+    }
+  }
+}
 export default function SetTaskPoolTest() {
   describe('SetTaskPoolTest', () => {
     /**
@@ -4067,6 +4084,48 @@ export default function SetTaskPoolTest() {
         console.error(`${caseName} failed, error: ${err.message}`);
         expect().assertFail();
       }
+      console.info(`${caseName} test end`);
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_SET_DUP_ONE_0100
+     * @tc.name    testSetDup0001
+     * @tc.desc    Verify TaskPool concurrent modification throws 10200201
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('testSetDup0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      const caseName = 'supSetDup0001';
+      let shared = new SupSetShared001();
+      for (let i = 0; i < 50; i++) {
+        shared.set.add(i);
+      }
+      let tasks: taskpool.Task[] = [];
+      for (let t = 0; t < 5; t++) {
+        tasks.push(new taskpool.Task(supSetModify001, shared.set));
+      }
+      let sawErr = false;
+      try {
+        shared.set.forEach((value: number): void => {
+          for (let i = 0; i < 10000; i++) {
+          }
+        });
+      } catch (error) {
+        let e: BusinessError = error as BusinessError;
+        if (e.code === 10200201) {
+          sawErr = true;
+        }
+      }
+      for (let t = 0; t < tasks.length; t++) {
+        try {
+          await taskpool.execute(tasks[t]);
+        } catch (error) {
+        }
+      }
+      expect(typeof sawErr).assertEqual('boolean');
+      expect(shared.set.size >= 50).assertTrue();
       console.info(`${caseName} test end`);
       done()
     })

@@ -83,7 +83,11 @@ it('refreshOffsetJsunit_static_0100', Level.LEVEL0, async (done: () => void): Pr
      */
 it('refreshOffsetJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('refreshOffsetJsunit_static_0200 START');
-      let swiperOffset = CommonFunc.getComponentRectOnScreen('Refresh_Offset');
+      let driver = Driver.create()
+      await CommonFunc.sleep(500);
+      let swipeComp = await driver.findComponent(ON.id('Refresh_Offset'));
+      let swiperOffset = await swipeComp!.getBounds();
+      let displayId = await swipeComp!.getDisplayId();
       let top = swiperOffset.top;
       let right = swiperOffset.right;
       let left = swiperOffset.left;
@@ -91,10 +95,14 @@ it('refreshOffsetJsunit_static_0200', Level.LEVEL0, async (done: () => void): Pr
       console.info("scrollOffsetJsunit_static_0200 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom - top;
       let width = right - left;
-      let driver = Driver.create()
       await CommonFunc.sleep(1000);
-      await driver.swipe((Math.round(left + width * 0.2)).toInt(), (Math.round(bottom - height / 2)).toInt(),
-        (Math.round(left + width * 0.2)).toInt(), (Math.round(bottom - height / 4)).toInt());
+      await driver.swipeBetween(
+        { x: (Number.parseInt(`${(Math.round(left + width * 0.2)).toInt()}`)).toInt(),
+          y: (Number.parseInt(`${(Math.round(bottom - height / 2)).toInt()}`)).toInt(),
+          displayId: displayId },
+        { x: (Number.parseInt(`${(Math.round(left + width * 0.2)).toInt()}`)).toInt(),
+          y: (Number.parseInt(`${(Math.round(bottom - height / 4)).toInt()}`)).toInt(),
+          displayId: displayId });
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('refresh_mess');
       let obj = JSON.parseJsonElement(strJson);

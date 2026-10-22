@@ -17,6 +17,7 @@ import { describe, it, expect, TestType, Size, Level, beforeEach } from '@ohos/h
 import { ArkTSUtils, collections } from '@kit.ArkTS';
 import { lang } from '@kit.ArkTS';
 import { taskpool } from '@kit.ArkTS';
+import { SupLruChildA001, SupLruChildB001 } from './SendableLruCacheSpecialModels';
 
 @Concurrent
 function concurrentTest(): boolean {
@@ -75,6 +76,11 @@ class DefaultStringCache extends ArkTSUtils.SendableLruCache<string, string> {
 // 0. 包装类定义 - 用于测试空值场景
 // ============================================================
 
+
+@Concurrent
+function supLruCheckInstanceof001(c: ArkTSUtils.SendableLruCache<number, number>): boolean {
+  return c instanceof SupLruChildA001 && c instanceof ArkTSUtils.SendableLruCache;
+}
 export default function sendableLruCacheSpecialTest() {
   describe('sendableLruCacheSpecialTest', () => {
 
@@ -1622,5 +1628,21 @@ export default function sendableLruCacheSpecialTest() {
       expect(cache.get('key3')).assertEqual('value3');
       console.info(`${caseName}, test end`);
     });
+
+    /**
+     * @tc.number  SUB_LRUCACHE_SECONDARY_INHERIT_0100
+     * @tc.name    testLruCacheSecondaryInherit0001
+     * @tc.desc    Verify two-level inheritance chain instanceof is not preserved across thread (actual)
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testLruCacheSecondaryInherit0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let childB = new SupLruChildB001(10)
+      expect(childB instanceof SupLruChildA001).assertTrue()
+      expect(childB instanceof ArkTSUtils.SendableLruCache).assertTrue()
+      let stillChild = await taskpool.execute(new taskpool.Task(supLruCheckInstanceof001, childB)) as boolean
+      expect(stillChild).assertFalse()
+    })
   });
 }

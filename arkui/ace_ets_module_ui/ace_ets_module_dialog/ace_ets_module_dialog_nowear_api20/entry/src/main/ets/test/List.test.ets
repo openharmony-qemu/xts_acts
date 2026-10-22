@@ -12,12 +12,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import PresetTest from './Preset.test';
 import showDefaultSelectedIconTest from './selectTest/showDefaultSelectedIcon.test.ets';
 import showInSubWindowValueTest from './selectTest/showInSubWindow.test.ets';
 import showAtAnchorTest from './hoverTipsTest/showAtAnchor.test.ets';
 import bindSheetKeyboardAvoidMode from './SheetTypeTest/bindSheetKeyboardAvoidMode.test';
 
 export default function testsuite() {
+  PresetTest();
   showDefaultSelectedIconTest();
   showInSubWindowValueTest();
   showAtAnchorTest();

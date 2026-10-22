@@ -61,7 +61,8 @@ export default function bindWaterFlowController() {
       let driver = Driver.create();
       await Utils.sleep(1000);
       let contentSlot = await (driver.findComponent(ON.id('ContentSlot')) as Promise<Component>);
-      let rectContentSlot = await contentSlot.getBounds();
+      let rectContentSlot = await contentSlot!.getBounds();
+      let displayId = await contentSlot!.getDisplayId();
       let left = rectContentSlot.left
       let top = rectContentSlot.top
       let right = rectContentSlot.right
@@ -69,7 +70,13 @@ export default function bindWaterFlowController() {
       let width: Int = right - left;
       let height: Int = bottom -top;
       console.log(`bindWaterFlowController_static_001  left : ${left} top : ${top} right : ${right} bottom : ${bottom}`)
-      await driver.swipe(Math.round(left + width*0.5).toInt(),Math.round(bottom - height/4).toInt(),Math.round(left + width*0.5).toInt(),Math.round(bottom - height/2).toInt());
+      let centerX = (Math.round(left + width * 0.5)).toInt();
+      let startY = (Math.round(bottom - height / 4)).toInt();
+      let endY = (Math.round(bottom - height / 2)).toInt();
+      await driver.swipeBetween(
+        { x: centerX, y: startY, displayId: displayId },
+        { x: centerX, y: endY, displayId: displayId }
+      );
       await CommonFunc.sleep(1000);
       let strJson1 = inspector.getInspectorByKey('setOnDidScroll');
       let obj1 = JSON.parseJsonElement(strJson1);

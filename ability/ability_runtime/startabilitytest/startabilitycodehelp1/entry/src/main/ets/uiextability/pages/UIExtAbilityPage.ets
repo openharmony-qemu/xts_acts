@@ -136,7 +136,7 @@ struct UIExtAbilityPage {
                 bundleName: 'com.example.startabilityerrorcode1',
                 abilityName: 'EntryAbility1',
                 parameters: {
-                  [wantConstant.Params.APP_CLONE_INDEX_KEY]: invalidAppCloneIndex
+                  [wantConstant.Params.APP_CLONE_INDEX_KEY]: 10000
                 }
               };
               let options: StartOptions = {

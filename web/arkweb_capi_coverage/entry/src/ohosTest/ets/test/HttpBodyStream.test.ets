@@ -49,7 +49,7 @@ export default function http_body_streamTest() {
      */
     it('TestArkWebHttpBodyStream_SetUserData', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-        expect(nativeFunc.TestArkWebHttpBodyStream_SetUserData()).assertEqual(17100100);
+        expect(nativeFunc.TestArkWebHttpBodyStream_SetUserData()).assertEqual(17100101);
         done();
       });
 
@@ -63,7 +63,7 @@ export default function http_body_streamTest() {
      */
     it('TestArkWebHttpBodyStream_SetReadCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-        expect(nativeFunc.TestArkWebHttpBodyStream_SetReadCallback()).assertEqual(17100100);
+        expect(nativeFunc.TestArkWebHttpBodyStream_SetReadCallback()).assertEqual(17100101);
         done();
       });
 
@@ -77,7 +77,7 @@ export default function http_body_streamTest() {
      */
     it('TestArkWebHttpBodyStream_SetAsyncReadCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-        expect(nativeFunc.TestArkWebHttpBodyStream_SetAsyncReadCallback()).assertEqual(17100100);
+        expect(nativeFunc.TestArkWebHttpBodyStream_SetAsyncReadCallback()).assertEqual(17100101);
         done();
       });
 
@@ -91,7 +91,7 @@ export default function http_body_streamTest() {
      */
     it('TestArkWebHttpBodyStream_Init', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-        expect(nativeFunc.TestArkWebHttpBodyStream_Init()).assertEqual(17100100);
+        expect(nativeFunc.TestArkWebHttpBodyStream_Init()).assertEqual(17100101);
         done();
       });
 

@@ -1234,7 +1234,7 @@ describe('ActsFeatureAbilityTest', function () {
         expect(data.orientation).assertEqual(0);
         expect(data.launchMode).assertEqual(0);
 
-        expect(data.permissions[0]).assertEqual("ohos.permission.ACCELEROMETER");
+        expect(data.permissions[0]).assertEqual("ohos.permission.START_ABILITIES_FROM_BACKGROUND");
         expect(data.deviceTypes.length).assertEqual(0);
         expect(data.deviceCapabilities[0]).assertEqual("SystemCapability.Ability.AbilityBase");
 

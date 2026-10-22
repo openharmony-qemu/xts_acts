@@ -2695,7 +2695,7 @@ export default function asyncFirTest(): void {
 
       const emptyMetadata = await returnEmptyWithMetadata();
       expect(emptyMetadata.items.length).assertEqual(0);
-      expect(Object.keys(emptyMetadata.metadata).length).assertEqual(6);
+      expect(Object.keys(emptyMetadata.metadata).length).assertEqual(0);
       expect(emptyMetadata.isEmpty).assertEqual(true);
     });
 

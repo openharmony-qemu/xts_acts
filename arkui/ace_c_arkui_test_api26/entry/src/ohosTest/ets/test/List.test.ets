@@ -21,8 +21,10 @@ import ListEnableEditModeTest from './list/listEnableEditModeTest.test';
 import ListEditModeOptionsTest from './list/listEditModeOptionsTest.test';
 import GridEnableEditModeTest from './grid/gridEnableEditModeTest.test';
 import GridEditModeOptionsTest from './grid/gridEditModeOptionsTest.test';
-import RegisterCommonAreaApproximateChangeEventTest from './onAreaChange/RegisterCommonAreaApproximateChangeEventTest.test'
-import UnregisterCommonAreaApproximateChangeEventTest from './onAreaChange/UnregisterCommonAreaApproximateChangeEventTest.test'
+import RegisterCommonAreaApproximateChangeEventTest from
+  './onAreaChange/RegisterCommonAreaApproximateChangeEventTest.test'
+import UnregisterCommonAreaApproximateChangeEventTest from
+  './onAreaChange/UnregisterCommonAreaApproximateChangeEventTest.test'
 import OrphanCharOptimizationTest from './orphanCharOptimization/orphanCharOptimizationTest.test'
 import GestureInterceptTest from './gestureIntercept/GestureInterceptTest.test'
 import gestureErrorCodeTest from './gestureIntercept/GestureErrorCodeTest.test'
@@ -59,12 +61,17 @@ import ArcAlphabetIndexerEventCallbackTest from './arcAlphabetIndexer/ArcAlphabe
 import SetUiDvsyncSwitchTest from './node/SetUiDvsyncSwitchTest.test'
 import RuntimeCheckModeTest from './nativeModule/RuntimeCheckModeTest.test'
 import UIAgentGetPageTextTest from './node/UIAgentGetPageTextTest.test'
+import GetImagesByNodeIdAsyncTest from './node/GetImagesByNodeIdAsyncTest.test'
 import NativeModuleAnimationTest from './animate/NativeModuleAnimation.test'
+import NativeModuleAnimApi2601Test from './animate/NativeModuleAnimApi2601.test'
 import DragEventSummaryTest from './dragEventSummary/DragEventSummaryTest.test';
+import ImageAnimatorInterpolationTest from './image/ImageAnimatorInterpolationTest.test'
+import CalendarPickerFirstDayOfWeekTest from './calendarPicker/CalendarPickerFirstDayOfWeekTest.test'
 
 export default function testsuite() {
   SetUiDvsyncSwitchTest() // 此条特殊用例请放在首行，勿动
   UIAgentGetPageTextTest()
+  GetImagesByNodeIdAsyncTest()
   RegisterCommonAreaApproximateChangeEventTest();
   UnregisterCommonAreaApproximateChangeEventTest();
   AreaChangeErrorCodeTest();
@@ -110,6 +117,9 @@ export default function testsuite() {
   ArcSwiperEventCallbackTest()
   ArcAlphabetIndexerEventCallbackTest()
   NativeModuleAnimationTest()
+  NativeModuleAnimApi2601Test()
   DragEventSummaryTest()
+  ImageAnimatorInterpolationTest()
+  CalendarPickerFirstDayOfWeekTest()
   RuntimeCheckModeTest()
 }

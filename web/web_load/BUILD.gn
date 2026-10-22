@@ -15,6 +15,8 @@ group("WebLoad") {
   testonly = true
   if (is_standard_system) {
     deps = [
+      "ace_web_embed_options_dev_one:ActsWebEmbedOptionsDevOneTest",
+      "ace_web_webview_dynamic_dev_one:ActsWebWebviewDynamicDevOneTest",
       "custom_dns:ActsWebCustomDnsTest",
       "leather_candy_cache:ActsWebLeatherCandyCacheTest",
       "load_metric:ActsWebLoadMetricTest",

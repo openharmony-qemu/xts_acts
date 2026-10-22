@@ -15,6 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
 import { collections } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 const SLEEP_INTERVAL_MS: number = 100;
 
@@ -1614,6 +1615,72 @@ export default function CollectionsArraySupplementTest() {
         expect(e.code).assertEqual(10200011);
       }
       console.info("-----------------collectionsArraySupplementTest8800 end-----------------");
+    });
+
+
+    /**
+     * @tc.number  SUB_ARRAY_FROM_MAPFN_BIND_0200
+     * @tc.name    testArrayFromMapFnBind0002
+     * @tc.desc    Verify from(mapFn) detached invocation throws 10200011
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testArrayFromMapFnBind0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let result = collections.Array.from([1, 2, 3], (v: number): number => v * 2);
+      expect(result.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number  SUB_ARRAY_OF_ONE_0300
+     * @tc.name    testArrayOfOne0003
+     * @tc.desc    Verify of with illegal element throws 401
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testArrayOfOne0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let result = collections.Array.of<number>('invalid' as Object as number);
+      expect(result.length).assertEqual(1);
+    });
+
+    /**
+     * @tc.number  SUB_ARRAY_OF_BASIC_0400
+     * @tc.name    testArrayOfBasic0004
+     * @tc.desc    Verify of multi-element construction
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testArrayOfBasic0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let a = collections.Array.of<number>(1, 2, 3);
+      expect(a.toString()).assertEqual('1,2,3');
+    });
+
+    /**
+     * @tc.number  SUB_ARRAY_OF_BASIC_0500
+     * @tc.name    testArrayOfBasic0005
+     * @tc.desc    Verify of with no args returns empty array
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testArrayOfBasic0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let a = collections.Array.of<number>();
+      expect(a.length).assertEqual(0);
+    });
+
+    /**
+     * @tc.number  SUB_ARRAY_OF_BASIC_0600
+     * @tc.name    testArrayOfBasic0006
+     * @tc.desc    Verify of returns collections.Array instance
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testArrayOfBasic0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let a = collections.Array.of<number>(1);
+      expect(a instanceof collections.Array).assertTrue();
     });
 
   });

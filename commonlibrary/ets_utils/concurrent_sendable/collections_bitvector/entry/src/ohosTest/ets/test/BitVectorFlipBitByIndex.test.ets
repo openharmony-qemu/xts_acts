@@ -898,5 +898,24 @@ export default function BitVectorFlipBitByIndexTest() {
         done()
       });
 
+    /**
+     * @tc.number  SUB_BITVECTOR_FLIPIDX_ONE_0100
+     * @tc.name    testBitVectorFlipIdx0001
+     * @tc.desc    Verify flipBitByIndex with wrong-typed index throws 401
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorFlipIdx0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let bv = new collections.BitVector(0);
+      bv.push(1);
+      let pin = -1;
+      try {
+        bv.flipBitByIndex('x' as Object as number);
+      } catch (error) {
+        pin = (error as BusinessError).code;
+      }
+      expect(pin).assertEqual(401);
+    });
   })
 }

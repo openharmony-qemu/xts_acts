@@ -19,7 +19,7 @@ import { describe, it, expect, beforeAll, Level } from '@ohos/hypium-dynamic'
 import {
   photoKeys,
   fetchOption,
-  getFileAsset, getPermission, driveFn, sleep,
+  getFileAsset, getPermission, driveFn, sleep, checkResourceFile, createResource
 } from '../common'
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
@@ -139,6 +139,10 @@ export default function closeTest () {
       await getPermission();
       await driveFn();
       await sleep(1000);
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      const fileNames: Array<string> = [ "01.jpg", "01.mp4" ];
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNames)
     });
     /**
      * @tc.name   photoAsset_close_callback_000

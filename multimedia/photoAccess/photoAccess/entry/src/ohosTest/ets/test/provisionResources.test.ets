@@ -36,6 +36,7 @@ export default function provisionResourcesTest() {
             await getPermission();
             await driveFn();
             await sleep(1000)
+            assetCount = await getAssetsCount('provisionResourcesTest');
         });
         beforeEach(async ()=>{
             await sleep(300);

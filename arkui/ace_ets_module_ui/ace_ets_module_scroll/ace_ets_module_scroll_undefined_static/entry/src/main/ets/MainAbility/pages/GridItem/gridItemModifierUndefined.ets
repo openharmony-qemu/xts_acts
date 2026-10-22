@@ -86,47 +86,55 @@ struct GridItemEventPage {
         .width('90%')
         .height('50%')
 
-        Blank().height('5vp')
+        Blank().height(2)
         Button('resetText')
           .id('GridItemM_resetText')
           .onClick((e: ClickEvent) => {
             this.modifier.message = 'Hello World';
           })
-        Button('isRowEnd: ' + this.modifier.isRowEnd)
-          .id('GridItemM_rowEnd')
-          .onClick((e: ClickEvent) => {
-            this.modifier.isRowEnd = !this.modifier.isRowEnd
-          })
-        Button('isRowStart: ' + this.modifier.isRowStart)
-          .id('GridItemM_rowStart')
-          .onClick((e: ClickEvent) => {
-            this.modifier.isRowStart = !this.modifier.isRowStart
-          })
-        Button('isColumnStart: ' + this.modifier.isColumnStart)
-          .id('GridItemM_columnStart')
-          .onClick((e: ClickEvent) => {
-            this.modifier.isColumnStart = !this.modifier.isColumnStart
-          })
-        Button('isColumnEnd: ' + this.modifier.isColumnEnd)
-          .id('GridItemM_columnEnd')
-          .onClick((e: ClickEvent) => {
-            this.modifier.isColumnEnd = !this.modifier.isColumnEnd
-          })
-        Button('isSelected: ' + this.modifier.isSelected)
-          .id('GridItemM_selected')
-          .onClick((e: ClickEvent) => {
-            this.modifier.isSelected = !this.modifier.isSelected
-          })
-        Button('isSelectable: ' + this.modifier.isSelectable)
-          .id('GridItemM_selectable')
-          .onClick((e: ClickEvent) => {
-            this.modifier.isSelectable = !this.modifier.isSelectable
-          })
+          .height('5%')
+        Row() {
+          Button('isRowEnd: ' + this.modifier.isRowEnd)
+            .id('GridItemM_rowEnd')
+            .onClick((e: ClickEvent) => {
+              this.modifier.isRowEnd = !this.modifier.isRowEnd
+            })
+          Button('isRowStart: ' + this.modifier.isRowStart)
+            .id('GridItemM_rowStart')
+            .onClick((e: ClickEvent) => {
+              this.modifier.isRowStart = !this.modifier.isRowStart
+            })
+        }.height('5%')
+        Row() {
+          Button('isColumnStart: ' + this.modifier.isColumnStart)
+            .id('GridItemM_columnStart')
+            .onClick((e: ClickEvent) => {
+              this.modifier.isColumnStart = !this.modifier.isColumnStart
+            })
+          Button('isColumnEnd: ' + this.modifier.isColumnEnd)
+            .id('GridItemM_columnEnd')
+            .onClick((e: ClickEvent) => {
+              this.modifier.isColumnEnd = !this.modifier.isColumnEnd
+            })
+        }.height('5%')
+        Row() {
+          Button('isSelected: ' + this.modifier.isSelected)
+            .id('GridItemM_selected')
+            .onClick((e: ClickEvent) => {
+              this.modifier.isSelected = !this.modifier.isSelected
+            })
+          Button('isSelectable: ' + this.modifier.isSelectable)
+            .id('GridItemM_selectable')
+            .onClick((e: ClickEvent) => {
+              this.modifier.isSelectable = !this.modifier.isSelectable
+            })
+        }.height('5%')
         Button('isOnSelect: ' + this.modifier.isOnSelect)
           .id('GridItemM_onSelect')
           .onClick((e: ClickEvent) => {
             this.modifier.isOnSelect = !this.modifier.isOnSelect
           })
+          .height('5%')
       }
 
     }

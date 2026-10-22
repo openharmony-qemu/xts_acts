@@ -25,6 +25,7 @@ import ActionSheet3 from './actionSheetTest/ActionSheet3.test.ets';
 import actionSheetMode from './actionSheet/actionSheetMode.test'
 import showActionSheetMode from './actionSheet/showActionSheetMode.test'
 import ActionSheetLifeTest from './dialogLifeTest/ActionSheetLife.test'
+import Dialogcover from './coverage/Dialogcover.test.ets'
 
 export default function testsuite() {
   ActionsheetDialogAJsunit();
@@ -39,6 +40,7 @@ export default function testsuite() {
   actionSheetMode();
   showActionSheetMode();
   ActionSheetLifeTest();
+  Dialogcover();
 
 
 

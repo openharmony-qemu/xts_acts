@@ -62,7 +62,7 @@ export default function SparseArrayConstructorVariadicTest(): void {
      * @tc.desc Variadic string constructor, verify instanceof SparseArray and length 3
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructorVariadic001', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
@@ -78,7 +78,7 @@ export default function SparseArrayConstructorVariadicTest(): void {
      * @tc.desc Nested SparseArray variadic constructor, verify instanceof and element access
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructorVariadic002', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const inner1 = new SparseArray<int>(1, 2, 3);
@@ -99,7 +99,7 @@ export default function SparseArrayConstructorVariadicTest(): void {
      * @tc.desc Enum variadic constructor, verify instanceof SparseArray
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructorVariadic003', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<Color003>(Color003.Red, Color003.Green, Color003.Blue);
@@ -114,7 +114,7 @@ export default function SparseArrayConstructorVariadicTest(): void {
      * @tc.desc Variadic ClassCastError when null passed as string element
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructorVariadic004', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         try {
@@ -131,7 +131,7 @@ export default function SparseArrayConstructorVariadicTest(): void {
      * @tc.desc Variadic ClassCastError when number passed as string element
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructorVariadic005', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         try {
@@ -148,7 +148,7 @@ export default function SparseArrayConstructorVariadicTest(): void {
      * @tc.desc Variadic constructor with very long string element
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructorVariadic006', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         let longStr = "a".repeat(10000);
@@ -166,7 +166,7 @@ export default function SparseArrayConstructorVariadicTest(): void {
      * @tc.desc SparseArray.isArray on variadic instance and length
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructorVariadic007', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<string>("a", "b", "c");
@@ -181,7 +181,7 @@ export default function SparseArrayConstructorVariadicTest(): void {
      * @tc.desc Variadic int elements, verify indexed values
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructorVariadic008', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10, 20, 30);
@@ -197,7 +197,7 @@ export default function SparseArrayConstructorVariadicTest(): void {
      * @tc.desc Variadic constructor with null element in middle
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructorVariadic009', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<number | null>(1, null, 3);
@@ -211,7 +211,7 @@ export default function SparseArrayConstructorVariadicTest(): void {
      * @tc.desc Variadic constructor with undefined element in middle
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructorVariadic010', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<number | undefined>(1, undefined, 3);
@@ -225,7 +225,7 @@ export default function SparseArrayConstructorVariadicTest(): void {
      * @tc.desc Variadic constructor with zero elements at ends
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructorVariadic011', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(0, 1, 0);
@@ -240,7 +240,7 @@ export default function SparseArrayConstructorVariadicTest(): void {
      * @tc.desc Variadic boolean constructor, verify first element
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructorVariadic012', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<boolean>(false, true, false);
@@ -254,7 +254,7 @@ export default function SparseArrayConstructorVariadicTest(): void {
      * @tc.desc Variadic empty string elements
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructorVariadic013', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<string>("", "hello", "");
@@ -268,7 +268,7 @@ export default function SparseArrayConstructorVariadicTest(): void {
      * @tc.desc Variadic custom class element, verify field values
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructorVariadic014', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<Point014>(new Point014(1, 2));
@@ -285,7 +285,7 @@ export default function SparseArrayConstructorVariadicTest(): void {
      * @tc.desc Zero-argument variadic constructor yields empty SparseArray
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructorVariadic015', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<string>();
@@ -300,7 +300,7 @@ export default function SparseArrayConstructorVariadicTest(): void {
      * @tc.desc Single numeric arg is length allocation not one element (OH semantics)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructorVariadic016', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(42);
@@ -315,7 +315,7 @@ export default function SparseArrayConstructorVariadicTest(): void {
      * @tc.desc Variadic spread from large Array, verify length and boundary indices
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructorVariadic017', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const hugeArray: Array<int> = [];
@@ -335,7 +335,7 @@ export default function SparseArrayConstructorVariadicTest(): void {
      * @tc.desc Variadic constructor with byte elements, verify length and indexed values
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructorVariadic018', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<byte>(10 as byte, 127 as byte, (-128 as byte));
@@ -351,7 +351,7 @@ export default function SparseArrayConstructorVariadicTest(): void {
      * @tc.desc Variadic constructor with short boundary elements, verify indexed values
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructorVariadic019', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<short>(32767 as short, (-32768 as short));
@@ -366,7 +366,7 @@ export default function SparseArrayConstructorVariadicTest(): void {
      * @tc.desc Variadic constructor with long large integer elements, verify indexed values
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructorVariadic020', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const a: long = 10000000000 as long;
@@ -383,7 +383,7 @@ export default function SparseArrayConstructorVariadicTest(): void {
      * @tc.desc variadic constructor stores POJO with all-null fields
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructorVariadic021', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const user = new NullFieldUser021();
@@ -399,7 +399,7 @@ export default function SparseArrayConstructorVariadicTest(): void {
      * @tc.desc variadic constructor stores decimal-format hex string element "0x123"
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructorVariadic022', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const token = "0x123";
@@ -413,7 +413,7 @@ export default function SparseArrayConstructorVariadicTest(): void {
      * @tc.desc variadic constructor stores Japanese Korean Arabic mixed-language strings
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructorVariadic023', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<string>("\u65e5\u672c", "\ud55c\uad6d", "\u0627\u0644\u0639\u0631\u0628\u064a\u0629");
@@ -428,7 +428,7 @@ export default function SparseArrayConstructorVariadicTest(): void {
      * @tc.desc variadic constructor stores POJO with long name and invalid email
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructorVariadic024', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const user = new AbnormalUser024();
@@ -443,7 +443,7 @@ export default function SparseArrayConstructorVariadicTest(): void {
      * @tc.desc variadic constructor with mixed int string boolean elements
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructorVariadic025', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int | string | boolean>(42, "mix", true);
@@ -459,7 +459,7 @@ export default function SparseArrayConstructorVariadicTest(): void {
      * @tc.desc variadic constructor stores literal "0b1010" as string element
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructorVariadic026', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const token = "0b1010";
@@ -474,7 +474,7 @@ export default function SparseArrayConstructorVariadicTest(): void {
      * @tc.desc variadic constructor stores zero-width \u200B string element
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructorVariadic027', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const zw = "\u200B";
@@ -489,7 +489,7 @@ export default function SparseArrayConstructorVariadicTest(): void {
      * @tc.desc Variadic int constructor with (1, 2, 3), verify first element equals 1
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructorVariadic028', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -502,7 +502,7 @@ export default function SparseArrayConstructorVariadicTest(): void {
      * @tc.desc Variadic int constructor with (1, 2, 3), verify typed element access
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructorVariadic029', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);

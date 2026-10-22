@@ -1006,6 +1006,7 @@ export default function ASONParseRoundTripTest() {
         ArkTSUtils.ASON.parse(invalidAson);
       } catch (error) {
         hasError = error instanceof SyntaxError;
+        expect(error instanceof SyntaxError).assertTrue();
       }
 
       expect(hasError).assertEqual(true);
@@ -1067,6 +1068,7 @@ export default function ASONParseRoundTripTest() {
         const parsedStr: string = parsedResult.toString();
       } catch (error) {
         hasError = error instanceof SyntaxError;
+        expect(error instanceof SyntaxError).assertTrue();
       }
       expect(hasError).assertEqual(true);
     });
@@ -1211,6 +1213,7 @@ export default function ASONParseRoundTripTest() {
         ArkTSUtils.ASON.parse(invalidAson);
       } catch (error) {
         hasError = error instanceof SyntaxError;
+        expect(error instanceof SyntaxError).assertTrue();
       }
       expect(hasError).assertEqual(true);
     });
@@ -1270,6 +1273,7 @@ export default function ASONParseRoundTripTest() {
         ArkTSUtils.ASON.parse(invalidAson);
       } catch (error) {
         hasError = error instanceof SyntaxError;
+        expect(error instanceof SyntaxError).assertTrue();
       }
       expect(hasError).assertEqual(true);
     });
@@ -1337,6 +1341,7 @@ export default function ASONParseRoundTripTest() {
         ArkTSUtils.ASON.parse(invalidAson);
       } catch (error) {
         hasError = error instanceof SyntaxError;
+        expect(error instanceof SyntaxError).assertTrue();
       }
 
       expect(hasError).assertEqual(true);
@@ -1474,6 +1479,7 @@ export default function ASONParseRoundTripTest() {
         ArkTSUtils.ASON.parse(invalidAson);
       } catch (error) {
         hasError = error instanceof SyntaxError;
+        expect(error instanceof SyntaxError).assertTrue();
       }
       expect(hasError).assertEqual(true);
     });
@@ -1562,6 +1568,7 @@ export default function ASONParseRoundTripTest() {
         ArkTSUtils.ASON.parse(invalidAson);
       } catch (error) {
         hasError = error instanceof SyntaxError;
+        expect(error instanceof SyntaxError).assertTrue();
       }
 
       expect(hasError).assertEqual(true);

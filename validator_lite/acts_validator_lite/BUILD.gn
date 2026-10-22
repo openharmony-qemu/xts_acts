@@ -26,9 +26,11 @@ _pages = [
   "pages/FileManagement/file/index",
   "pages/PowerManager/power/index",
   "pages/Startup/deviceInfo/index",
-  "pages/Sensors/index/index",
+  "pages/Sensors/sensors/index/index",
   "pages/Location/index/index",
   "pages/common/help/index",
+  "pages/Sensors/common/index/index",
+  "pages/Sensors/workoutSensors/index/index",
 ]
 
 # Capability-gated pages. With a switch off the render step drops these routes from

@@ -16,6 +16,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import { FlatObj } from './pages/DataFlg';
 import { sleep } from './pages/Utils';
 import { collections } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 export default function CollectionsArrayForEachTest() {
   describe('CollectionsArrayForEachTest', () => {
@@ -138,5 +139,88 @@ export default function CollectionsArrayForEachTest() {
       expect(logs).assertDeepEquals(arr);
     });
 
+    /**
+     * @tc.number  SUB_ARRAY_FOREACH_MOD_PUSH_0100
+     * @tc.name    testArrayForeachModPush0001
+     * @tc.desc    Verify push inside forEach throws 10200201
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testArrayForeachModPush0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = collections.Array.from<number>([1, 2, 3]);
+      let code = 0;
+      try {
+        arr.forEach((v: number): void => {
+          arr.push(4);
+        });
+      } catch (error) {
+        code = (error as BusinessError).code;
+      }
+      expect(code).assertEqual(10200201);
+    });
+
+    /**
+     * @tc.number  SUB_ARRAY_FOREACH_MOD_SPLICE_0200
+     * @tc.name    testArrayForeachModSplice0002
+     * @tc.desc    Verify splice inside forEach throws 10200201
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testArrayForeachModSplice0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = collections.Array.from<number>([1, 2, 3]);
+      let code = 0;
+      try {
+        arr.forEach((v: number): void => {
+          arr.splice(0, 1);
+        });
+      } catch (error) {
+        code = (error as BusinessError).code;
+      }
+      expect(code).assertEqual(10200201);
+    });
+
+    /**
+     * @tc.number  SUB_ARRAY_FOREACH_MOD_POP_0300
+     * @tc.name    testArrayForeachModPop0003
+     * @tc.desc    Verify pop inside forEach throws 10200201
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testArrayForeachModPop0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = collections.Array.from<number>([1, 2, 3]);
+      let code = 0;
+      try {
+        arr.forEach((v: number): void => {
+          arr.pop();
+        });
+      } catch (error) {
+        code = (error as BusinessError).code;
+      }
+      expect(code).assertEqual(10200201);
+    });
+
+    /**
+     * @tc.number  SUB_ARRAY_FOREACH_MOD_SHIFT_0400
+     * @tc.name    testArrayForeachModShift0004
+     * @tc.desc    Verify shift inside forEach throws 10200201
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testArrayForeachModShift0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = collections.Array.from<number>([1, 2, 3]);
+      let code = 0;
+      try {
+        arr.forEach((v: number): void => {
+          arr.shift();
+        });
+      } catch (error) {
+        code = (error as BusinessError).code;
+      }
+      expect(code).assertEqual(10200201);
+    });
   });
 }

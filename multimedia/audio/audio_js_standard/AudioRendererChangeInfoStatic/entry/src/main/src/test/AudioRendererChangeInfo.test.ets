@@ -17,14 +17,6 @@ import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, aft
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
 import audio from '@ohos.multimedia.audio';
-import common from '@ohos.app.ability.common';
-import abilityAccessCtrl from '@ohos.abilityAccessCtrl';
-import { PermissionRequestResult } from '@ohos.abilityAccessCtrl';
-import { Permissions }  from 'permissions';
-import { Driver, ON, MatchPattern } from '@ohos.UiTest'
-import { AppStorage } from '@ohos.arkui.stateManagement'
-
-let g_context: common.UIAbilityContext;
 
 export default function audioCapturerChange() {
   describe('audioRendererChange', () => {
@@ -34,40 +26,15 @@ export default function audioCapturerChange() {
     let Tag = "AFRenLog";
     const AUDIOMANAGER = audio.getAudioManager();
     console.info(`${Tag} : Create AudioManger Object JS Framework`);
-    let testAbilityContext: common.UIAbilityContext;
-    let domain: int = 0x0000;
 
-    beforeAll(async (): Promise<void> => {
+    beforeAll(() => {
       try {
         console.info('beforeAll start');
-        g_context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
-        let atManager = abilityAccessCtrl.createAtManager();
-        let arr: Array<Permissions> = new Array<Permissions>();
-        arr.push('ohos.permission.MICROPHONE')
-        atManager.requestPermissionsFromUser(g_context, arr,
-          (err: BusinessError<void> | null, data: PermissionRequestResult | undefined) => {
-            console.info("request success permissions" + JSON.stringify(data));
-            console.info("getPermissionRequestResult err" + JSON.stringify(err));
-          });
-        await Utils.msSleep(1000);
-        let driver = Driver.create();
-        console.info('driver start');
-        await Utils.msSleep(1000);
-        let permissionButton = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 1000);
-        let permissionButton2 = await driver.waitForComponent(ON.text('始终允许', MatchPattern.EQUALS), 500);
-        if (permissionButton != null) {
-          await permissionButton.click();
-          console.info('permissionButton start');
-        }
-        if (permissionButton2 != null) {
-          await permissionButton2.click();
-          console.info('permissionButton2 start');
-        }
+        audioStreamManager = AUDIOMANAGER.getStreamManager();
+        audioStreamManagerCB = AUDIOMANAGER.getStreamManager();
       } catch (err) {
         console.error('beforeAll failed, err: ' + err);
       }
-      audioStreamManager = AUDIOMANAGER.getStreamManager();
-      audioStreamManagerCB = AUDIOMANAGER.getStreamManager();
     })
 
     beforeEach(async () => {
@@ -1927,6 +1894,20 @@ export default function audioCapturerChange() {
      * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioManager = audio.getAudioManager();
+      let audioRoutingManager = audioManager!.getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager!.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0500 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+        console.info(`this device has external device.`)
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 0) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       let audioRenderer: audio.AudioRenderer | null = null;
       let AudioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
@@ -2429,6 +2410,20 @@ export default function audioCapturerChange() {
      * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioManager = audio.getAudioManager();
+      let audioRoutingManager = audioManager!.getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager!.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0500 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+        console.info(`this device has external device.`)
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 0) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       let audioRenderer: audio.AudioRenderer | null = null;
       let AudioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,

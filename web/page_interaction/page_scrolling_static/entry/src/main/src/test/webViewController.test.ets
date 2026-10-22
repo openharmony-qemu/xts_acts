@@ -23,7 +23,7 @@ import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import events_emitter from '@ohos.events.emitter';
-import { Driver, ON } from '@ohos.UiTest';
+import { Driver, ON, Point } from '@ohos.UiTest';
 
 let testAbilityContext: common.UIAbilityContext;
 let emitKey = 'webViewController01';
@@ -75,9 +75,15 @@ export default function webViewController() {
      */
     it('testOnOverScrollStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
+      let driver:Driver=Driver.create();
+      await Utils.msSleep(1000);
+      let displayId:number=0;
+      const componentWebView=await driver.findComponent(ON.id('WebViewControllerButton'));
+      if(componentWebView!=null){
+        displayId=await componentWebView.getDisplayId();
+      }
       await Utils.msSleep(3000);
       Utils.emitEvent('testOnOverScroll001', 10);
-      let driver: Driver = Driver.create();
       await Utils.msSleep(1000);
       let userAgentPC = '';
       const isPC: boolean = userAgentPC.includes('PC');
@@ -86,7 +92,17 @@ export default function webViewController() {
         await driver.swipe(1200, 600, 1200, 1400);
       }else{
         console.info("isPhone")
-        await driver.swipe(100, 300, 400, 300, 600);
+        const pointStart:Point={
+          x:100,
+          y:300,
+          displayId:displayId.toInt()
+        }
+        const pointEnd:Point={
+          x:400,
+          y:300,
+          displayId:displayId.toInt()
+        }
+        await driver.swipeBetween(pointStart,pointEnd, 600);
       }
       await Utils.msSleep(3000);
       Utils.registerEvent('testOnOverScroll001', true, 31038, done);
@@ -110,6 +126,12 @@ export default function webViewController() {
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testOnOverScroll002', 10)
         let driver: Driver = Driver.create();
+        await Utils.msSleep(1000);
+        let displayId:number=0;
+        const componentWebView=await driver.findComponent(ON.id('WebViewControllerButton'));
+        if(componentWebView!=null){
+          displayId=await componentWebView.getDisplayId();
+        }
         await Utils.msSleep(3000);
         let userAgentPC = ''
         const isPC: boolean = userAgentPC.includes('PC');
@@ -118,7 +140,17 @@ export default function webViewController() {
           await driver.swipe(1200, 600, 1200, 1400);
         }else{
           console.info("isPhone")
-          await driver.swipe(100, 300, 400, 300, 600);
+          const pointStart:Point={
+            x:100,
+            y:300,
+            displayId:displayId.toInt()
+          }
+          const pointEnd:Point={
+            x:400,
+            y:300,
+            displayId:displayId.toInt()
+          }
+          await driver.swipeBetween(pointStart,pointEnd, 600);
         }
         await Utils.msSleep(3000);
         Utils.registerEvent('testOnOverScroll002', true, 100034, done);
@@ -143,6 +175,12 @@ export default function webViewController() {
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testOnOverScroll003', 10)
         let driver: Driver = Driver.create();
+        await Utils.msSleep(1000);
+        let displayId:number=0;
+        const componentWebView=await driver.findComponent(ON.id('WebViewControllerButton'));
+        if(componentWebView!=null){
+          displayId=await componentWebView.getDisplayId();
+        }
         await Utils.msSleep(3000)
         let userAgentPC = ''
         const isPC: boolean = userAgentPC.includes('PC');
@@ -151,7 +189,17 @@ export default function webViewController() {
           await driver.swipe(1200, 600, 1200, 1400);
         }else{
           console.info("isPhone")
-          await driver.swipe(100, 300, 400, 300, 600);
+          const pointStart:Point={
+            x:100,
+            y:300,
+            displayId:displayId.toInt()
+          }
+          const pointEnd:Point={
+            x:400,
+            y:300,
+            displayId:displayId.toInt()
+          }
+          await driver.swipeBetween(pointStart,pointEnd, 600);
         }
         await Utils.msSleep(3000);
         Utils.registerEvent('testOnOverScroll003', true, 100035, done);
@@ -175,6 +223,12 @@ export default function webViewController() {
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testOnOverScroll004', 10)
         let driver: Driver = Driver.create();
+        await Utils.msSleep(1000);
+        let displayId:number=0;
+        const componentWebView=await driver.findComponent(ON.id('WebViewControllerButton'));
+        if(componentWebView!=null){
+          displayId=await componentWebView.getDisplayId();
+        }
         await Utils.msSleep(3000)
         let userAgentPC = ''
         const isPC: boolean = userAgentPC.includes('PC');
@@ -183,7 +237,17 @@ export default function webViewController() {
           await driver.swipe(1200, 600, 1200, 1400);
         }else{
           console.info("isPhone")
-          await driver.swipe(100, 300, 400, 300, 600);
+          const pointStart:Point={
+            x:100,
+            y:300,
+            displayId:displayId.toInt()
+          }
+          const pointEnd:Point={
+            x:400,
+            y:300,
+            displayId:displayId.toInt()
+          }
+          await driver.swipeBetween(pointStart,pointEnd, 600);
         }
         await Utils.msSleep(3000);
         Utils.registerEvent('testOnOverScroll004', true, 100036, done);
@@ -209,6 +273,11 @@ export default function webViewController() {
         await Utils.msSleep(3000);
         Utils.emitEvent('testOnOverScroll005', 10);
         let driver: Driver = Driver.create();
+        let displayId:number=0;
+        const componentWebView=await driver.findComponent(ON.id('WebViewControllerButton'));
+        if(componentWebView!=null){
+          displayId=await componentWebView.getDisplayId();
+        }
         await Utils.msSleep(1000);
         let userAgentPC = '';
         const isPC: boolean = userAgentPC.includes('PC');
@@ -217,7 +286,17 @@ export default function webViewController() {
           await driver.swipe(1200, 600, 1400, 1400);
         }else{
           console.info("isPhone")
-          await driver.swipe(100, 300, 400, 300, 600);
+          const pointStart:Point={
+            x:100,
+            y:300,
+            displayId:displayId.toInt()
+          }
+          const pointEnd:Point={
+            x:400,
+            y:300,
+            displayId:displayId.toInt()
+          }
+          await driver.swipeBetween(pointStart,pointEnd, 600);
         }
         await Utils.msSleep(2000);
         Utils.registerEvent('testOnOverScroll005', false, 310383192, done);

@@ -21,4 +21,37 @@ export default class Utils{
       }, count)
     })
   }
+
+  /**
+   * Read BusinessError.code from a catch payload without ESObject / BusinessError casts
+   * (static ArkTS rejects (e as ESObject).code with ESE0087).
+   * Use substring(i,i+1) not charAt: CI static charAt returns Char (ESE0105/ESE0318).
+   */
+  static errorCode(e: Object): number {
+    let text: string = JSON.stringify(e);
+    let key: string = '"code":';
+    let at: int = text.indexOf(key);
+    if (at < 0) {
+      return 0;
+    }
+    let i: int = at + key.length;
+    while (i < text.length && text.substring(i, i + 1) === ' ') {
+      i++;
+    }
+    let code: number = 0;
+    let hasDigit: boolean = false;
+    while (i < text.length) {
+      let ch: string = text.substring(i, i + 1);
+      if (ch < '0' || ch > '9') {
+        break;
+      }
+      hasDigit = true;
+      code = code * 10 + Number(ch);
+      i++;
+    }
+    if (!hasDigit) {
+      return 0;
+    }
+    return code;
+  }
 }

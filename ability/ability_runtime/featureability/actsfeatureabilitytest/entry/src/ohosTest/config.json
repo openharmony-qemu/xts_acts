@@ -49,7 +49,7 @@
         "visible": true,
         "launchType": "singleton",
         "permissions": [
-          "ohos.permission.ACCELEROMETER"
+          "ohos.permission.START_ABILITIES_FROM_BACKGROUND"
         ],
         "deviceCapability": [
           "SystemCapability.Ability.AbilityBase"
@@ -71,10 +71,6 @@
           ],
           "when": "always"
         }
-      },
-      {
-        "name": "ohos.permission.ACCELEROMETER",
-        "reason": "need use ohos.permission.ACCELEROMETER"
       },
       {
         "name": "ohos.permission.KEEP_BACKGROUND_RUNNING"

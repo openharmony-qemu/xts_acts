@@ -354,6 +354,47 @@ static void RegisterAnimProps08(napi_env env, napi_value exports)
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
 }
 
+static void RegisterAnimApi2601(napi_env env, napi_value exports)
+{
+    napi_property_descriptor desc[] = {
+        {"NativeAnimApi2601ErrSameCtx001", nullptr,
+            NativeAnimApi2601ErrSameCtx001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"NativeAnimApi2601Transform3D002", nullptr,
+            NativeAnimApi2601Transform3D002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"NativeAnimApi2601TransX003", nullptr,
+            NativeAnimApi2601TransX003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"NativeAnimApi2601TransY004", nullptr,
+            NativeAnimApi2601TransY004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"NativeAnimApi2601TransZ005", nullptr,
+            NativeAnimApi2601TransZ005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"NativeAnimApi2601Scale006", nullptr,
+            NativeAnimApi2601Scale006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"NativeAnimApi2601ScaleX007", nullptr,
+            NativeAnimApi2601ScaleX007, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"NativeAnimApi2601ScaleY008", nullptr,
+            NativeAnimApi2601ScaleY008, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"NativeAnimApi2601Rot009", nullptr,
+            NativeAnimApi2601Rot009, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"NativeAnimApi2601RotX010", nullptr,
+            NativeAnimApi2601RotX010, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"NativeAnimApi2601RotY011", nullptr,
+            NativeAnimApi2601RotY011, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"NativeAnimApi2601RotZ012", nullptr,
+            NativeAnimApi2601RotZ012, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"NativeAnimApi2601Bounds013", nullptr,
+            NativeAnimApi2601Bounds013, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"NativeAnimApi2601BoundsX014", nullptr,
+            NativeAnimApi2601BoundsX014, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"NativeAnimApi2601BoundsY015", nullptr,
+            NativeAnimApi2601BoundsY015, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"NativeAnimApi2601BoundsW016", nullptr,
+            NativeAnimApi2601BoundsW016, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"NativeAnimApi2601BoundsH017", nullptr,
+            NativeAnimApi2601BoundsH017, nullptr, nullptr, nullptr, napi_default, nullptr},
+    };
+    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -366,6 +407,7 @@ static napi_value Init(napi_env env, napi_value exports)
     RegisterAnimProps06(env, exports);
     RegisterAnimProps07(env, exports);
     RegisterAnimProps08(env, exports);
+    RegisterAnimApi2601(env, exports);
     return exports;
 }
 EXTERN_C_END

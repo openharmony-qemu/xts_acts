@@ -17,24 +17,19 @@
         "cleanup-apps": true
     },
     {
-        "type": "ShellKit",
-        "run-command": [
-            "remount",
-            "mkdir /data/app/el2/100/base/com.example.avplayeraudiondk/files",
-            "chmod 777 -R /data/app/el2/100/base/com.example.avplayeraudiondk/files"
-        ]
-    },
-    {
         "type": "PushKit",
         "push": [
-            "./resource/audio/01.mp3 -> /data/app/el2/100/base/com.example.avplayeraudiondk/files/"
+            "./resource/audio/01.mp3 -> /data/local/tmp/",
+            "./resource/media/setup_media_js_standard_avplayeraudio_test.sh -> /data/local/tmp/"
         ]
     },
     {
         "type": "ShellKit",
         "run-command": [
             "scanner",
-            "param set persist.ace.testmode.enabled 1"
+            "param set persist.ace.testmode.enabled 1",
+            "chmod 755 /data/local/tmp/",
+            "sh /data/local/tmp/setup_media_js_standard_avplayeraudio_test.sh"
         ]
     }]
 }

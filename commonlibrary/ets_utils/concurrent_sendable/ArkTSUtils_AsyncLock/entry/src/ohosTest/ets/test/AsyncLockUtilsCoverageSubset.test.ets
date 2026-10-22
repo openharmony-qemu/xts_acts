@@ -147,5 +147,20 @@ export default function AsyncLockUtilsCoverageSubsetTest() {
       }
       done()
     })
+
+    /**
+     * @tc.number  SUB_ASYNCLOCK_NAME_READONLY_0100
+     * @tc.name    testAsyncLockNameReadonly0001
+     * @tc.desc    Verify name is read-only and stable
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testAsyncLockNameReadonly0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let lockName = await ArkTSUtils.locks.AsyncLock.request('readonlyName001');
+      expect(lockName.name).assertEqual('readonlyName001');
+      expect(lockName.name).assertEqual('readonlyName001');
+      done()
+    })
   });
 }

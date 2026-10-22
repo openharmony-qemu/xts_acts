@@ -424,7 +424,7 @@ export default function CollectionsSetAddTest() {
       console.info(`${caseName}, test start`);
       const set: collections.Set<string> = new collections.Set<string>();
       const result = set.add('test');
-      expect(result).assertDeepEquals(set);
+      expect(result === set).assertTrue();
       expect(set.has('test')).assertEqual(true);
       console.info(`${caseName}, test end`);
     });
@@ -1101,6 +1101,27 @@ export default function CollectionsSetAddTest() {
       expect(set1.has(commonElement) && set2.has(commonElement)).assertEqual(true);
       console.info(`${caseName}, test end`);
     });
+
+
+    /**
+     * @tc.number  SUB_SET_ADD_ONE_0100
+     * @tc.name    testSetAdd0001
+     * @tc.desc    Verify add returns the same Set reference and chain end stays same instance
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('testSetAdd0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let setAdd001 = new collections.Set<number>();
+      let r1Add001 = setAdd001.add(1);
+      let r2Add001 = setAdd001.add(2);
+      expect(r1Add001 === setAdd001).assertTrue();
+      expect(r2Add001 === setAdd001).assertTrue();
+      expect(r2Add001 === r1Add001).assertTrue();
+      let chainEnd001 = setAdd001.add(3).add(4).add(5);
+      expect(chainEnd001 === setAdd001).assertTrue();
+      expect(setAdd001.size).assertEqual(5);
+    })
 
   });
 }

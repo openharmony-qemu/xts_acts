@@ -69,7 +69,7 @@ export default function RichEditorOnWillChange006() {
       let driver = Driver.create();
       let rich = await driver.findComponent(ON.id('rich_struct'));
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
       await CommonFunc.sleep(1000);
 
       try {
@@ -99,7 +99,7 @@ export default function RichEditorOnWillChange006() {
       expect(replaceText).assertEqual('replacedSpans_callback:true');
       expect(didText).assertEqual('onDidChange_callback:true');
 
-      await driver.click(pointCenter.x, pointCenter.y);
+      await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
       await CommonFunc.sleep(1000);
 
       let selectAll = await driver.findComponent(ON.text('全选'))

@@ -1267,8 +1267,8 @@ function verifySendableAllPropsAfterTransfer(obj: SendableClassOver1024, enumVal
   return true;
 }
 
-export default function SendableExpand1024Test() {
-  describe('SendableExpand1024Test', () => {
+export default function sendableObjectExpand1024Test() {
+  describe('sendableObjectExpand1024Test', () => {
     beforeEach(async () => {
       await Utils.msSleep(30);
     });

@@ -118,12 +118,12 @@ export default function pinchGestureTest() {
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
       let pointers: PointerMatrix = PointerMatrix.create(3,2);
-      pointers.setPoint(0,0,{x: Math.round(areaObj1.left + areaWidth1 * 0.3),y: Math.round(areaObj1.top + areaHeight1 * 0.5) , displayId: displayID});
-      pointers.setPoint(0,1,{x: Math.round(areaObj1.left + areaWidth1 * 0.1),y: Math.round(areaObj1.top + areaHeight1 * 0.5) , displayId: displayID});
-      pointers.setPoint(1,0,{x: Math.round(areaObj1.right - areaWidth1 * 0.3),y: Math.round(areaObj1.top + areaHeight1 * 0.5) , displayId: displayID});
-      pointers.setPoint(1,1,{x: Math.round(areaObj1.right - areaWidth1 * 0.1),y: Math.round(areaObj1.top + areaHeight1 * 0.5) , displayId: displayID});
-      pointers.setPoint(2,0,{x: Math.round(areaObj1.right - areaWidth1 * 0.3),y: Math.round(areaObj1.top + areaHeight1 * 0.5) , displayId: displayID});
-      pointers.setPoint(2,1,{x: Math.round(areaObj1.right - areaWidth1 * 0.2),y: Math.round(areaObj1.top + areaHeight1 * 0.5) , displayId: displayID});
+      pointers.setPoint(0,0,{x: Math.round(areaObj1.left + areaWidth1 * 0.5),y: Math.round(areaObj1.top + areaHeight1 * 0.3) , displayId: displayID});
+      pointers.setPoint(0,1,{x: Math.round(areaObj1.left + areaWidth1 * 0.5),y: Math.round(areaObj1.top + areaHeight1 * 0.1) , displayId: displayID});
+      pointers.setPoint(1,0,{x: Math.round(areaObj1.left + areaWidth1 * 0.5),y: Math.round(areaObj1.bottom - areaHeight1 * 0.3) , displayId: displayID});
+      pointers.setPoint(1,1,{x: Math.round(areaObj1.left + areaWidth1 * 0.5),y: Math.round(areaObj1.bottom - areaHeight1 * 0.1) , displayId: displayID});
+      pointers.setPoint(2,0,{x: Math.round(areaObj1.left + areaWidth1 * 0.5),y: Math.round(areaObj1.bottom - areaHeight1 * 0.3) , displayId: displayID});
+      pointers.setPoint(2,1,{x: Math.round(areaObj1.left + areaWidth1 * 0.5),y: Math.round(areaObj1.bottom - areaHeight1 * 0.2) , displayId: displayID});
       await driver.injectMultiPointerAction(pointers);
       await CommonFunc.sleep(4000);
       let strJson = getInspectorByKey('PinchGesture');
@@ -131,6 +131,18 @@ export default function pinchGestureTest() {
       console.info('[PinchGesture1_0200] component obj is: ' + JSON.stringify(obj));
       console.info('[PinchGesture1_0200] title: ' + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('');
+      // reset finger state to avoid ghost finger residual caused by Operation canceled
+      try {
+        await CommonFunc.sleep(500);
+        let resetDriver = await Driver.create();
+        let resetBtn = await resetDriver.findComponent(ON.id('clear'));
+        if (resetBtn) {
+          await resetBtn.click();
+          await CommonFunc.sleep(500);
+        }
+      } catch (e) {
+        console.error('[PinchGesture1_0200] reset finger state error: ' + e);
+      }
       console.info('[PinchGesture1_0200] END');
       done();
     });

@@ -30,6 +30,8 @@ import {
 import CommonFunc from '../../MainAbility/common/Common';
 import { KeyCode } from '@kit.InputKit';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RichEditorOnSelectionChange008() {
   describe('RichEditorOnSelectionChange008', () => {
     beforeEach(async (done: Function) => {
@@ -67,9 +69,9 @@ export default function RichEditorOnSelectionChange008() {
       let driver = Driver.create();
       let rich = await driver.findComponent(ON.id('rich_struct'));
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
       await CommonFunc.sleep(1000);
-      await driver.longClick(pointCenter.x, pointCenter.y);
+      await driver.longClickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
       await CommonFunc.sleep(1000);
       let onSelectCallBack = await driver.findComponent(ON.id('onSelectCallBack'));
       let onSelectCallBackText = await onSelectCallBack.getText();
@@ -83,7 +85,7 @@ export default function RichEditorOnSelectionChange008() {
       let set1 = await driver.findComponent(ON.id('set1'))
       await set1?.click();
       await CommonFunc.sleep(1000);
-      await driver.click(pointCenter.x, pointCenter.y);
+      await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
       await CommonFunc.sleep(1000);
       onSelectCallBackText = await onSelectCallBack.getText();
       await CommonFunc.sleep(500);

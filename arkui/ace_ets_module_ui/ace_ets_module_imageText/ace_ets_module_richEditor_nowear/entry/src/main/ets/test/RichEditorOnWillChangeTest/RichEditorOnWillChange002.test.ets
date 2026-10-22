@@ -130,7 +130,7 @@ export default function RichEditorOnWillChange002() {
       let int_callback_status = await driver.findComponent(ON.id('int_callback_status'));
 
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
       await CommonFunc.sleep(500);
 
       //KEYCODE_DEL delete builder

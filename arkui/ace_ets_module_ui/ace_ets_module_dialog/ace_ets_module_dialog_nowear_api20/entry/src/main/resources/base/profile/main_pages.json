@@ -1,6 +1,7 @@
 {
   "src": [
     "MainAbility/pages/index/index",
+    "MainAbility/pages/Preset",
     "MainAbility/pages/select/showDefaultSelectedIcon",
     "MainAbility/pages/select/showInSubWindow",
     "MainAbility/pages/tips/showAtAnchor",

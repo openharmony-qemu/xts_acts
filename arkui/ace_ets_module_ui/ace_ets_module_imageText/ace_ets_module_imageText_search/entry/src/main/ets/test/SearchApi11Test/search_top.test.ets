@@ -19,6 +19,8 @@ import CommonFunc from '../../MainAbility/common/Common';
 import { MessageManager, Callback } from '../../MainAbility/common/MessageManager';
 
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function search_top() {
   describe('search_top', () => {
     beforeEach(async (done: Function) => {
@@ -71,7 +73,7 @@ export default function search_top() {
 
         let driver = await Driver.create();
         await CommonFunc.sleep(500);
-        await driver.click(Math.round(vp2px(200)),Math.round(vp2px(20)));
+        await driver.clickAt({ x: Math.round(vp2px(200)), y: Math.round(vp2px(20)), displayId: displayID });
         await CommonFunc.sleep(1000);
 
         expect(search_01.top).assertEqual(Column_1.top);

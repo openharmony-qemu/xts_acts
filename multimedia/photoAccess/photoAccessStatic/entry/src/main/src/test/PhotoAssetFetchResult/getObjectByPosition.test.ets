@@ -20,7 +20,7 @@ import dataSharePredicates from '@ohos.data.dataSharePredicates';
 import Context from "application.Context"
 import hilog from '@ohos.hilog'
 import { BusinessError } from '@ohos.base'
-import { fetchOption, getPermission, driveFn, sleep } from '../Common.test.ets'
+import { fetchOption, getPermission, driveFn, checkResourceFile, createResource } from '../Common.test.ets'
 
 let domain: int= 0x0000;
 let tag: string = 'testTag';
@@ -82,7 +82,8 @@ export default function assetGetPositionObjectTest() {
       console.info('beforeAll case');
       await getPermission();
       await driveFn();
-      await sleep(1000);
+      await checkResourceFile(appContext);
+      await createResource(appContext, ['01.jpg', '01.mp4']);
     });
 
     //image

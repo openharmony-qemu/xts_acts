@@ -21,7 +21,8 @@ import {
   driveFn,
   getPermission,
   fetchOption,
-  pushCreateAsset
+  checkResourceFile,
+  createResource
 } from '../common'
 import { dataSharePredicates } from '@kit.ArkData'
 
@@ -36,7 +37,8 @@ export default function positionTypeTest () {
       await getPermission();
       await driveFn();
       await sleep(1000);
-      await pushCreateAsset(testContext, fileNameList);
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNameList);
     });
 
     /**

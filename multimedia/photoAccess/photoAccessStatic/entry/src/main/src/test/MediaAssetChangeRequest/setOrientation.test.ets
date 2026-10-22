@@ -15,10 +15,10 @@
  */
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
-import { describe, it, expect, Hypium, TestType, Size, Level } from '../../../../hypium/index';
+import { describe, it, expect, beforeAll, Hypium, TestType, Size, Level } from '../../../../hypium/index';
 import Context from "application.Context"
 import dataSharePredicates from '@ohos.data.dataSharePredicates'
-import { sleep } from '../Common.test.ets';
+import { getPermission, driveFn, checkResourceFile, createResource } from '../Common.test.ets';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog'
 
@@ -29,6 +29,13 @@ export default function setOrientationChangeRequestTest() {
     let testContext: Context = Hypium.get("context") as Context;
     let helper = photoAccessHelper.getPhotoAccessHelper(testContext);
     let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+
+    beforeAll(async () => {
+      await getPermission();
+      await driveFn();
+      await checkResourceFile(testContext);
+      await createResource(testContext, ['01.jpg', '01.mp4']);
+    });
 
     const isEqual =
       async (assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest, photoAsset: photoAccessHelper.PhotoAsset,

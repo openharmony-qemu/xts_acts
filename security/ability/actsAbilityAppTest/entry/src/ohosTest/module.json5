@@ -72,6 +72,12 @@
       },
       {
         "name": "ohos.permission.CAMERA"
+      },
+      {
+        "name": "ohos.permission.EXEC_PUBLIC_CLI_TOOL"
+      },
+      {
+        "name": "ohos.permission.POWER_MANAGER"
       }
     ]
   }

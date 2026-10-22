@@ -18,6 +18,7 @@ import { Driver, ON, } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 import events_emitter from '@ohos.events.emitter';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 
 export default function CalendarDialogCallback() {
   describe('CalendarDialogCallback', () => {
@@ -101,7 +102,7 @@ export default function CalendarDialogCallback() {
       events_emitter.on(event3, callback3);
       console.info('CalendarPickerDialogCallback_0100 START');
       await CommonFunc.sleep(3000);
-      await driver1.pressBack();
+      await driver1.pressBack(displayID);
 
     });
   })

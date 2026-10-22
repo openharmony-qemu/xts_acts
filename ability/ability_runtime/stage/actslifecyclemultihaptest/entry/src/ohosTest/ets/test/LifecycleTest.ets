@@ -65,6 +65,18 @@ export default function abilityTest() {
     console.info("-----------------LifecycleTest is start----------------")
 
     beforeAll(()=>{
+      console.info(TAG + ' beforeAll. deviceSupport: ' + deviceSupport);
+      if(deviceSupport === 'false'){
+        let appCloneSupport = AppStorage.get('appCloneSupport') as boolean;
+        if(appCloneSupport){
+          //current application has appClone
+          deviceSupport = 'true';
+        }else{
+          deviceSupport = 'false';
+        }
+        console.info(TAG + ' beforeAll. appCloneSupport: ' + appCloneSupport);
+      }
+      console.info(TAG + ' beforeAll. deviceSupport end: ' + deviceSupport);
       let actsEvents = [
         'Hap2MainAbility10onForeground',
         'Hap3MainAbility3onForeground',
@@ -696,10 +708,10 @@ export default function abilityTest() {
                 ",data: " + JSON.stringify(data));
                 expect(error.code).assertEqual(0);
                 globalThis.ApplicationContext4
-                  .unregisterAbilityLifecycleCallback(globalThis.mainAbility4CallBackId,(error:base.BusinessError, data:ESObject) => {
-                    console.log(TAG + ": second unregisterAbilityLifecycleCallback, err: " + JSON.stringify(error) +
+                  .unregisterAbilityLifecycleCallback(globalThis.mainAbility4CallBackId,(err:base.BusinessError, data:ESObject) => {
+                    console.log(TAG + ": second unregisterAbilityLifecycleCallback, err: " + JSON.stringify(err) +
                     ",data: " + JSON.stringify(data));
-                    expect(error.code).assertEqual(1);
+                    expect(err.code).assertEqual(1);
                     done()
                   });
               });

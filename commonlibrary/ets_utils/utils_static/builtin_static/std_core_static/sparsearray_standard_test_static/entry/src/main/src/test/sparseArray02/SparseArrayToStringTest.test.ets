@@ -36,7 +36,7 @@ export default function SparseArrayToStringTest(): void {
      * @tc.desc Test SparseArray.toString, verify method result (typeof result equals 'string')
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToString001', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>()
@@ -49,7 +49,7 @@ export default function SparseArrayToStringTest(): void {
      * @tc.desc Test SparseArray.toString, verify method result
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToString002', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>()
@@ -61,7 +61,7 @@ export default function SparseArrayToStringTest(): void {
      * @tc.desc Test SparseArray.toString, verify method result (result equals '')
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToString003', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>()
@@ -74,7 +74,7 @@ export default function SparseArrayToStringTest(): void {
      * @tc.desc Test SparseArray.toString, verify method result (result equals '1,2,3')
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToString004', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3)
@@ -87,7 +87,7 @@ export default function SparseArrayToStringTest(): void {
      * @tc.desc Test SparseArray.toString, verify method result (result equals ',1,2,3')
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToString005', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1)
@@ -101,7 +101,7 @@ export default function SparseArrayToStringTest(): void {
      * @tc.desc Test SparseArray.toString, verify method result (result equals ',10,,30,')
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToString006', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(5)
@@ -116,7 +116,7 @@ export default function SparseArrayToStringTest(): void {
      * @tc.desc Test SparseArray.toString, verify method result (result equals 'a,b,c')
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToString007', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<string>('a', 'b', 'c')
@@ -129,7 +129,7 @@ export default function SparseArrayToStringTest(): void {
      * @tc.desc Test SparseArray.toString, verify method result (result equals '100,,200')
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToString008', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(3)
@@ -144,7 +144,7 @@ export default function SparseArrayToStringTest(): void {
      * @tc.desc Test SparseArray.toString, verify method result (result equals '1,,,,,,,,,10')
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToString009', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10)
@@ -159,7 +159,7 @@ export default function SparseArrayToStringTest(): void {
      * @tc.desc Test SparseArray.toString, verify method result (result equals '42')
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToString010', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>()
@@ -173,7 +173,7 @@ export default function SparseArrayToStringTest(): void {
      * @tc.desc Test SparseArray.toString, verify method result (result equals '1,2,undefined')
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToString011', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int | undefined>(1, 2, undefined)
@@ -186,7 +186,7 @@ export default function SparseArrayToStringTest(): void {
      * @tc.desc Test SparseArray.toString, verify method result (result equals 'null,1,null')
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToString012', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int | null>(null, 1, null)
@@ -199,7 +199,7 @@ export default function SparseArrayToStringTest(): void {
      * @tc.desc Test SparseArray.toString, verify method result (result equals '0,1,0')
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToString013', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(0, 1, 0)
@@ -212,7 +212,7 @@ export default function SparseArrayToStringTest(): void {
      * @tc.desc Test SparseArray.toString, verify method result (result equals '-1,-2,3')
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToString014', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(-1, -2, 3)
@@ -225,7 +225,7 @@ export default function SparseArrayToStringTest(): void {
      * @tc.desc Test SparseArray.toString, verify method result (result equals ',hello,')
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToString015', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<string>('', 'hello', '')
@@ -238,7 +238,7 @@ export default function SparseArrayToStringTest(): void {
      * @tc.desc Test SparseArray.toString, verify method result (result equals ',,test,a,b')
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToString016', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<string>(',', 'test', 'a,b')
@@ -251,7 +251,7 @@ export default function SparseArrayToStringTest(): void {
      * @tc.desc Test SparseArray.toString, verify method result (typeof result equals 'string')
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToString017', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3)
@@ -264,7 +264,7 @@ export default function SparseArrayToStringTest(): void {
      * @tc.desc Test SparseArray.toString, verify method result
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToString018', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3)
@@ -278,7 +278,7 @@ export default function SparseArrayToStringTest(): void {
      * @tc.desc Test SparseArray.toString, verify method result
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToString019', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1000)
@@ -294,7 +294,7 @@ export default function SparseArrayToStringTest(): void {
      * @tc.desc Test SparseArray.toString, verify method result
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToString020', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(16)
@@ -308,7 +308,7 @@ export default function SparseArrayToStringTest(): void {
      * @tc.desc Test SparseArray.toString, verify method result (result equals ',,,,,,,,,')
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToString021', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10)
@@ -321,7 +321,7 @@ export default function SparseArrayToStringTest(): void {
      * @tc.desc Test SparseArray.toString, verify method result (arr.length equals 0, result equals '')
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToString022', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>()
@@ -335,7 +335,7 @@ export default function SparseArrayToStringTest(): void {
      * @tc.desc toString on [3,5,5], verify comma-separated representation
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToString023', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(3, 5, 5);
@@ -348,7 +348,7 @@ export default function SparseArrayToStringTest(): void {
      * @tc.desc toString on [6,3,5], verify comma-separated representation
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToString024', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(6, 3, 5);
@@ -361,7 +361,7 @@ export default function SparseArrayToStringTest(): void {
      * @tc.desc toString on [7,4,3], verify comma-separated representation
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToString025', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(7, 4, 3);
@@ -374,7 +374,7 @@ export default function SparseArrayToStringTest(): void {
      * @tc.desc toString on [1,5,4], verify comma-separated representation
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToString026', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 5, 4);
@@ -387,7 +387,7 @@ export default function SparseArrayToStringTest(): void {
      * @tc.desc Test SparseArray.toString, verify method result
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToString027', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1)
@@ -400,7 +400,7 @@ export default function SparseArrayToStringTest(): void {
      * @tc.desc Test SparseArray.toString, verify method result (debugStr equals '10,,20,,40')
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToString028', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(5)
@@ -416,7 +416,7 @@ export default function SparseArrayToStringTest(): void {
      * @tc.desc Test SparseArray.toString, verify method result (values.length equals 5)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToString029', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3, 4, 5)
@@ -430,7 +430,7 @@ export default function SparseArrayToStringTest(): void {
      * @tc.desc Test SparseArray.toString, verify method result (serialized equals '10,20,30')
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToString030', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10, 20, 30)
@@ -443,7 +443,7 @@ export default function SparseArrayToStringTest(): void {
      * @tc.desc Test SparseArray.toString, verify method result
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToString031', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10000)
@@ -461,7 +461,7 @@ export default function SparseArrayToStringTest(): void {
      * @tc.desc Test SparseArray.toString, verify method result
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToString032', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1000)
@@ -477,7 +477,7 @@ export default function SparseArrayToStringTest(): void {
      * @tc.desc Test SparseArray.toString, verify method result (result equals '1.5,2.5,3.5')
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToString033', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<number>(1.5, 2.5, 3.5)
@@ -490,7 +490,7 @@ export default function SparseArrayToStringTest(): void {
      * @tc.desc Test SparseArray.toString, verify method result (result equals 'true,false,true')
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToString034', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<boolean>(true, false, true)
@@ -503,7 +503,7 @@ export default function SparseArrayToStringTest(): void {
      * @tc.desc Test SparseArray.toString, verify method result (result equals '1,2,3')
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToString035', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<bigint>(1n, 2n, 3n)
@@ -516,7 +516,7 @@ export default function SparseArrayToStringTest(): void {
      * @tc.desc Test SparseArray.toString, verify method result (result equals '1,two,true')
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToString036', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int | string | boolean>(1, 'two', true)
@@ -529,7 +529,7 @@ export default function SparseArrayToStringTest(): void {
      * @tc.desc toString on SparseArray<byte> joins byte values as comma-separated string
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToString037', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<byte>(10 as byte, 127 as byte, 20 as byte);
@@ -542,7 +542,7 @@ export default function SparseArrayToStringTest(): void {
      * @tc.desc toString on SparseArray<short> joins short values as comma-separated string
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToString038', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<short>(100 as short, 200 as short, 300 as short);
@@ -554,7 +554,7 @@ export default function SparseArrayToStringTest(): void {
      * @tc.desc toString on SparseArray with 65535-char string element
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToString039', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const longElem = "y".repeat(65535);
@@ -568,7 +568,7 @@ export default function SparseArrayToStringTest(): void {
      * @tc.desc toString on SparseArray with 32768-char string element
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToString040', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const chunk = "m".repeat(32768);
@@ -581,7 +581,7 @@ export default function SparseArrayToStringTest(): void {
      * @tc.desc toString on SparseArray with 65536-char string element
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToString041', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const chunk = "t".repeat(65536);
@@ -594,7 +594,7 @@ export default function SparseArrayToStringTest(): void {
      * @tc.desc toString on SparseArray with hex literal 0xFF element
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToString042', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>();
@@ -608,7 +608,7 @@ export default function SparseArrayToStringTest(): void {
      * @tc.desc toString on SparseArray<long> joins long values
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToString043', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<long>(1 as long, 10000000000 as long);
@@ -621,7 +621,7 @@ export default function SparseArrayToStringTest(): void {
      * @tc.desc toString on SparseArray<float> joins float values
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToString044', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<float>(1.0f, 2.5f);
@@ -634,7 +634,7 @@ export default function SparseArrayToStringTest(): void {
      * @tc.desc toString on SparseArray<double> joins double values
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToString045', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<double>(1.25, 2.5);
@@ -647,7 +647,7 @@ export default function SparseArrayToStringTest(): void {
      * @tc.desc toString on SparseArray<char> joins char values
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayToString046', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<char>(c'A', c'B');

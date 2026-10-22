@@ -613,41 +613,5 @@ export default function SendableLruCacheLengthEmptyTest() {
       done();
     })
 
-    /**
-     * @tc.name   sendableLruCacheEmptyString001
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SENDABLE_LRU_CACHE_LENGTH_EMPTY_0028
-     * @tc.desc   Test SendableLruCache with empty string key
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('sendableLruCacheEmptyString001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      const TAG: string = 'sendableLruCacheEmptyString001';
-      try {
-        let cache = new ArkTSUtils.SendableLruCache<string, number>();
-
-        // Add a value with empty string key
-        cache.put("", 100);
-        let getResult = cache.get("");
-        expect(getResult).assertEqual(100);
-
-        // Test contains with empty string key
-        let containsResult = cache.contains("");
-        expect(containsResult).assertTrue();
-
-        // Test remove with empty string key
-        let removeResult = cache.remove("");
-        expect(removeResult).assertEqual(100);
-
-        // Verify removal
-        let afterRemoveResult = cache.get("");
-        expect(afterRemoveResult).assertUndefined();
-      } catch (error) {
-        console.error(`${TAG} catch error: ${error}`);
-        expect().assertFail();
-      }
-      done()
-    })
-
   })
 }

@@ -27,8 +27,8 @@ import {
   getBurstKey,
   getPermission,
   driveFn,
-  sleep,
-  pushCreateAsset,
+  checkResourceFile,
+  createResource,
   waitForLcdSizePopulated
 } from '../Common.test.ets'
 import { BusinessError } from '@ohos.base'
@@ -100,9 +100,9 @@ export default function getTest() {
     beforeAll(async () => {
       hilog.info(domain, tag, 'beforeAll case');
       await getPermission();
-      await sleep(1000);
       await driveFn();
-      await pushCreateAsset(testContext, fileNameList);
+      await checkResourceFile(testContext);
+      await createResource(testContext, fileNameList);
       for (let i = 0; i < fileNameList.length; i++) {
         let fileName = fileNameList[i];
         if (fileName.endsWith('.jpg')) {

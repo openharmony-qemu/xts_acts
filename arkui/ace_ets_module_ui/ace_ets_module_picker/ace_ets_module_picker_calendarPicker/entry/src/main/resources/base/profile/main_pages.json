@@ -5,6 +5,7 @@
     "MainAbility/pages/calendarPicker/calendarPickerAttributeModifier",
     "MainAbility/pages/calendarPicker/calendarPickerStartEndTest",
     "MainAbility/pages/calendarPicker/calendarPickerTextStyleAndEdgeAlignAndHintRadius",
-    "MainAbility/pages/calendarPicker/disableDateRangeAndMarkToday"
+    "MainAbility/pages/calendarPicker/disableDateRangeAndMarkToday",
+    "MainAbility/pages/calendarPicker/firstDayOfWeek"
   ]
 }

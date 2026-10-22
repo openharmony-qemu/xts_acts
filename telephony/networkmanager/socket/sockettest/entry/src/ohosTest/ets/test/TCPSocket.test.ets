@@ -9430,8 +9430,6 @@ export default function TCPSocketTest() {
                 };
                 let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
                 expect(tcp).assertInstanceOf('Object');
-                // 前序用例残留的socket对象被GC回收时，finalize可能关闭已被系统复用的fd（fd复用竞态），
-                // 导致setExtraOptions偶发返回2301009(Bad file descriptor)，此处重建socket重试
                 let retryCount: number = 0;
                 const MAX_RETRY: number = 3;
                 let doSetExtraOptions = async () => {
@@ -9443,14 +9441,17 @@ export default function TCPSocketTest() {
                             console.info(`${caseName} fail err:${JSON.stringify(err)}`);
                             if (err.code === 2301009 && retryCount < MAX_RETRY) {
                                 retryCount++;
-                                await tcp.close().catch((err:BusinessError) => {
-                                    console.info('fail to close' + err.code.toString());
-                                });
                                 tcp = socket.constructTCPSocketInstance();
                                 await doSetExtraOptions();
                                 return;
                             }
                             expectFail();
+                            if (err.code === 2301009) {
+                                console.info(`${caseName} skip close to avoid fdsan abort`);
+                                console.info(`${caseName} test end`);
+                                done();
+                                return;
+                            }
                         } else {
                             console.info(`${caseName} success`);
                             expectSuccess();

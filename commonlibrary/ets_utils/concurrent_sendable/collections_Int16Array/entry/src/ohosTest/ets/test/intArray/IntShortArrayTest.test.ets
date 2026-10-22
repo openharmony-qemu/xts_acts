@@ -1079,5 +1079,19 @@ export default function IntShortArrayTest(): void {
       expect(arr2.length).assertEqual(5)
       expect(arr2.byteOffset).assertEqual(10)
     })
+
+    /**
+     * @tc.number  SUB_TYPEDARRAY_OVERFLOW_INT16_0100
+     * @tc.name    testTypedArrayOverflowInt160001
+     * @tc.desc    Verify Int16Array assignment wraps around
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testTypedArrayOverflowInt160001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let ov = new collections.Int16Array(1);
+      ov[0] = 32768;
+      expect(ov[0]).assertEqual(-32768);
+    });
   })
 }

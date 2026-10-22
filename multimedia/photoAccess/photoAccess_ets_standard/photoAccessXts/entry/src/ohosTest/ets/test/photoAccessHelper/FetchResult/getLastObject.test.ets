@@ -22,7 +22,9 @@ import {
   fetchOption,
   photoKeys,
   photoType,
-  LOG_TAG
+  LOG_TAG,
+  checkResourceFile,
+  createResource
 } from '../../common';
 import common from '@ohos.app.ability.common';
 
@@ -93,6 +95,10 @@ export default function getLastObjectTest() {
       console.info('beforeAll case');
       await getPermission();
       await driveFn();
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let fileNameList: Array<string> = [ "01.jpg", "01.mp4" ];
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNameList);
     });
 
     beforeEach(() => {

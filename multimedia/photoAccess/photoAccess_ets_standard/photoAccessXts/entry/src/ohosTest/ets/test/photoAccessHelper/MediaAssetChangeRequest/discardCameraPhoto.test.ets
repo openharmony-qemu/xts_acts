@@ -15,7 +15,7 @@
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import { describe, it, expect, beforeAll, beforeEach, afterEach, afterAll, Level } from '@ohos/hypium-dynamic';
-import { getPermission, driveFn, LOG_TAG, fetchAllOption, genRandomStr } from '../../common';
+import { getPermission, driveFn, LOG_TAG, fetchAllOption, genRandomStr, checkResourceFile, createResource } from '../../common';
 import common from '@ohos.app.ability.common';
 
 const TAG = LOG_TAG + 'discardCameraPhoto';
@@ -48,6 +48,10 @@ export default function MediaAssetChangeRequestDiscardCameraPhotoTest() {
       console.info(TAG, 'beforeAll case');
       await getPermission();
       await driveFn();
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let fileNameList: Array<string> = [ "01.jpg" , "01.mp4" ];
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNameList);
     });
 
     beforeEach(() => {

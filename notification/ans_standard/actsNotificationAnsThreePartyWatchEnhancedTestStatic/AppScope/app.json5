@@ -1,0 +1,10 @@
+{
+  "app": {
+    "bundleName": "com.example.actsnotificationansthreepartywatchenhancedtest.static",
+    "vendor": "example",
+    "versionCode": 1000001,
+    "versionName": "1.0.1",
+    "icon": "$media:2",
+    "label": "$string:app_name",
+  }
+}

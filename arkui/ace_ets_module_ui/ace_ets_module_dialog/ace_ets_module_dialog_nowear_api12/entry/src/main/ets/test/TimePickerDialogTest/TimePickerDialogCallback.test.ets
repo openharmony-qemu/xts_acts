@@ -18,6 +18,8 @@ import { Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 import events_emitter from '@ohos.events.emitter';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function TimePickerDialogCallback() {
   describe('TimePickerDialogCallback', () => {
     beforeEach(async (done: Function) => {
@@ -98,7 +100,7 @@ export default function TimePickerDialogCallback() {
         priority: events_emitter.EventPriority.LOW
       }
       events_emitter.on(event3, callback3);
-      await driver1.pressBack();
+      await driver1.pressBack(displayID);
 
     });
   })

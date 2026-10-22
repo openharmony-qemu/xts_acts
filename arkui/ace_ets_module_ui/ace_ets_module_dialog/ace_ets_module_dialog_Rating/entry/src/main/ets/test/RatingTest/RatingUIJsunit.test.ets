@@ -18,6 +18,7 @@ import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern
 import CommonFunc from '../../MainAbility/utils/Common';
 import {MessageManager,Callback} from '../../MainAbility/utils/MessageManager';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 
 export default function RatingUIJsunit() {
   describe('RatingUIJsunit', () => {
@@ -42,13 +43,13 @@ export default function RatingUIJsunit() {
       }
       done();
     });
-   /**
-     * @tc.number    RatingUIJsunit_0100
-     * @tc.name      RatingUIJsunit_0100
-     * @tc.desc      api
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   RatingUIJsunit_0100
+     * @tc.number RatingUIJsunit_0100
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RatingUIJsunit_0100', Level.LEVEL1, async (done: Function) => {
       // Get the information of the Rating component
@@ -66,13 +67,13 @@ export default function RatingUIJsunit() {
       done();
     });
 
-   /**
-     * @tc.number    RatingUIJsunit_0200
-     * @tc.name      RatingUIJsunit_0200
-     * @tc.desc      api
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   RatingUIJsunit_0200
+     * @tc.number RatingUIJsunit_0200
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RatingUIJsunit_0200', Level.LEVEL1, async (done: Function) => {
       // Modify the rating value of the Rating component
@@ -89,13 +90,13 @@ export default function RatingUIJsunit() {
       done();
     });
 
-   /**
-     * @tc.number    RatingUIJsunit_0300
-     * @tc.name      RatingUIJsunit_0300
-     * @tc.desc      api
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   RatingUIJsunit_0300
+     * @tc.number RatingUIJsunit_0300
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RatingUIJsunit_0300', Level.LEVEL1, async (done: Function) => {
       // Modify the indicator value of the Rating component
@@ -115,7 +116,9 @@ export default function RatingUIJsunit() {
       console.info(`rating ` + JSON.stringify(rating))
       let rect = await rating.getBounds();
       console.info(`rect is: ` + JSON.stringify(rect))
-      await driver.click(rect.left+Math.round((rect.right-rect.left)/2)-1,Math.round((rect.top+rect.bottom)/2))
+      // 涉及坐标
+      await driver.clickAt({ x: rect.left+Math.round((rect.right-rect.left)/2)-1, y: Math.round((rect.top+rect.bottom)/2), displayId: displayID });
+      // await driver.click(rect.left+Math.round((rect.right-rect.left)/2)-1,Math.round((rect.top+rect.bottom)/2))
       console.info(`click is: `,rect.left+Math.round((rect.right-rect.left)/2)-1,Math.round((rect.top+rect.bottom)/2))
       await CommonFunc.sleep(1000);
       // Verify the rating value of the Rating component
@@ -127,13 +130,13 @@ export default function RatingUIJsunit() {
       done();
     });
 
-   /**
-     * @tc.number    RatingUIJsunit_0400
-     * @tc.name      RatingUIJsunit_0400
-     * @tc.desc      api
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   RatingUIJsunit_0400
+     * @tc.number RatingUIJsunit_0400
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RatingUIJsunit_0400', Level.LEVEL1, async (done: Function) => {
       // Modify the stars value of the Rating component
@@ -150,13 +153,13 @@ export default function RatingUIJsunit() {
       done();
     });
 
-   /**
-     * @tc.number    RatingUIJsunit_0500
-     * @tc.name      RatingUIJsunit_0500
-     * @tc.desc      api
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   RatingUIJsunit_0500
+     * @tc.number RatingUIJsunit_0500
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RatingUIJsunit_0500', Level.LEVEL1, async (done: Function) => {
       // Modify the stepSize value of the Rating component
@@ -173,13 +176,13 @@ export default function RatingUIJsunit() {
       done();
     });
 
-   /**
-     * @tc.number    RatingUIJsunit_0600
-     * @tc.name      RatingUIJsunit_0600
-     * @tc.desc      api
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   RatingUIJsunit_0600
+     * @tc.number RatingUIJsunit_0600
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RatingUIJsunit_0600', Level.LEVEL1, async (done: Function) => {
       // Verify onChange event of the Rating component
@@ -223,13 +226,13 @@ export default function RatingUIJsunit() {
       done();
     });
 
-   /**
-     * @tc.number    RatingUIJsunit_0700
-     * @tc.name      RatingUIJsunit_0700
-     * @tc.desc      api
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   RatingUIJsunit_0700
+     * @tc.number RatingUIJsunit_0700
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RatingUIJsunit_0700', Level.LEVEL1, async (done: Function) => {
       // Get the default value of the Rating component

@@ -18,6 +18,7 @@ import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern
 import CommonFunc from '../../MainAbility/common/Common';
 import {MessageManager,Callback} from '../../MainAbility/common/MessageManager';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 
 export default function ActionSheetJsunit() {
   describe('ActionSheetJsunit', () => {
@@ -43,6 +44,7 @@ export default function ActionSheetJsunit() {
       done()
     });
 
+
     /**
      * @tc.name    ActionSheetJsunit_0100
      * @tc.number  SUB_ACE_ActionSheetJsunit_0100
@@ -53,16 +55,16 @@ export default function ActionSheetJsunit() {
      */
     it('ActionSheetJsunit_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ActionSheetJsunit_0100 START');
-	    let driver = await UiDriver.create()
-      let button = await driver.findComponent(BY.key('ActionSheetOptions' + '_ActionSheet'));
+	    let driver = await Driver.create()
+      let button = await driver.findComponent(ON.id('ActionSheet'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('ActionSheetOptions' + '_ActionSheet');
+      let strJson = getInspectorByKey('ActionSheet');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[ActionSheetJsunit_0100] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.label).assertEqual("Click to Show ActionSheet");
       console.info('[ActionSheetJsunit_0100] END');
-	  await driver.pressBack();
+	    await driver.pressBack(displayID);
       done();
     });
 

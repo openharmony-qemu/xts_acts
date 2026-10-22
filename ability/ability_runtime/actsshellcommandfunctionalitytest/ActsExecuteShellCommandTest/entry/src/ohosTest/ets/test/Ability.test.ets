@@ -217,10 +217,14 @@ export default function abilityTest() {
                 }
                 done();
             }, 3000)
-            code = globalThis.abilityDelegator.executeShellCommand(cmd,null,() => {
-                console.log('ACTS_ExecuteShellCommand_Callback_0700 fail:')
-                expect().assertFail();
-            })
+            try {
+                code = globalThis.abilityDelegator.executeShellCommand(cmd,null,() => {
+                    console.log('ACTS_ExecuteShellCommand_Callback_0700 fail:')
+                    expect().assertFail();
+                })
+            } catch (err) {
+                console.log('ACTS_ExecuteShellCommand_Callback_0700 sync err:'+JSON.stringify(err))
+            }
         })
 
         /**
@@ -370,7 +374,7 @@ export default function abilityTest() {
             },(data:BusinessError) => {
                 console.log('ACTS_ExecuteShellCommand_Promise_0600 -2 executeShellCommand: start ')
                 console.log('ACTS_ExecuteShellCommand_Promise_0600 -2 executeShellCommand:data'+JSON.stringify(data))
-                expect(data.code).assertEqual(-1);
+                expect(data.code).assertEqual(16000100);
                 console.log('ACTS_ExecuteShellCommand_Callback_0600 -2 executeShellCommand: end')
                 flag=false;
                 done();
@@ -398,7 +402,11 @@ export default function abilityTest() {
             console.log("ACTS_ExecuteShellCommand_Promise_0700 --- start")
             let cmd = 'aa help'
             let code = null
-            code = globalThis.abilityDelegator.executeShellCommand(cmd, null)
+            try {
+                code = globalThis.abilityDelegator.executeShellCommand(cmd, null)
+            } catch (err) {
+                console.log('ACTS_ExecuteShellCommand_Promise_0700 sync err:'+JSON.stringify(err))
+            }
             setTimeout(() => {
                 console.log('ACTS_ExecuteShellCommand_Callback_0700 code:'+JSON.stringify(code))
                 if(code!=undefined){

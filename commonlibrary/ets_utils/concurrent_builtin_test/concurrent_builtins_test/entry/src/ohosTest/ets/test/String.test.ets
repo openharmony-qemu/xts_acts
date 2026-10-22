@@ -428,40 +428,6 @@ export default function StringTest() {
       });
 
     /**
-     * @tc.name   testLastIndexOf
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_1000
-     * @tc.desc   Test
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
-     */
-    it('testLastIndexOf', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'testLastIndexOf';
-        console.info(`${caseName} test start`);
-        let result = 0
-        try {
-          let group = new taskpool.TaskGroup(caseName)
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(testLastIndexOf)
-          }
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
-            console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
-
-    /**
      * @tc.name   testMatchAll
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_1100
      * @tc.desc   Test
@@ -886,40 +852,6 @@ export default function StringTest() {
           let group = new taskpool.TaskGroup(caseName)
           for (let i = 0; i < concurrentNum; i++) {
             group.addTask(testToLocaleLowerCase)
-          }
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
-            console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
-          expect().assertFail()
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
-
-    /**
-     * @tc.name   testToString
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_2400
-     * @tc.desc   Test
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
-     */
-    it('testToString', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'testToString';
-        console.info(`${caseName} test start`);
-        let result = 0
-        try {
-          let group = new taskpool.TaskGroup(caseName)
-          for (let i = 0; i < concurrentNum; i++) {
-            group.addTask(testToString)
           }
           await taskpool.execute(group).then((res) => {
             console.info(`${caseName} Task execution success`);

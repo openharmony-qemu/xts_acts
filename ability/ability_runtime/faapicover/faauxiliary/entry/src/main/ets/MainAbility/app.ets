@@ -33,7 +33,6 @@ class Test {
   }
   onActive() {
     console.info(printLog1 + 'onActive');
-
     ability_featureAbility.hasWindowFocus().then((data) => {
       console.info(printLog1 + "hasWindowFocus data = " + data);
       let CommonEventPublishData: CommonEventManager.CommonEventPublishData = {
@@ -44,7 +43,7 @@ class Test {
       commonEvent.publish(listPush1 + "HasWindowFocus", CommonEventPublishData, (err) => {
         console.info(printLog1 + listPush1 + "HasWindowFocus");
       });
-
+ 
       setTimeout(()=>{
         ability_featureAbility.terminateSelf().then((data) => {
           console.info(printLog1 + "terminateSelf data = " + JSON.stringify(data));

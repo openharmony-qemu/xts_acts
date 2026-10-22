@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TextFragment</title>
+    <style>
+        body { background-color: #f5f5f5; padding: 24px; }
+        #target {
+            font-size: 28px;
+            line-height: 1.6;
+            color: #222;
+            user-select: text;
+            -webkit-user-select: text;
+        }
+    </style>
+</head>
+<body>
+<p id="target">OpenHarmony Text Fragment coverage sample paragraph for link generation.</p>
+<script>
+    function selectTargetText() {
+        const el = document.getElementById('target');
+        const range = document.createRange();
+        range.selectNodeContents(el);
+        const sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+        return sel.toString().length > 0;
+    }
+</script>
+</body>
+</html>

@@ -19,6 +19,7 @@ import { State } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../src/test/Util.test';
 import web_webview from '@ohos.web.webview';
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { Callback, RecordData } from '@ohos.base';
 
 @Entry
@@ -63,6 +64,12 @@ struct WebScrollDirectionalLock {
               this.lockEnabled = true;
               this.lockType = ScrollDirectionalLockType.NESTED_SCROLL;
               Utils.emitEvent(true, 185020);
+              break;
+            }
+            case "emitSwitchToWebFlingSpeedLimitPage": {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/WebFlingSpeedLimit' })
               break;
             }
             default:

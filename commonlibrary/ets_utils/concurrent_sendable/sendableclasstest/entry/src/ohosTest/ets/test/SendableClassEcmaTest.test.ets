@@ -2500,6 +2500,8 @@ export default function SendableClassEcmaTest() {
         expect(StaticPass002Child.value).assertEqual(2);
         done();
       });
+
+
   })
 }
 

@@ -16,6 +16,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import router from '@ohos.router';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 
 export default function RichEditor1() {
   describe('RichEditor1', () => {
@@ -66,7 +67,7 @@ export default function RichEditor1() {
       let RichEditor_caretColor = await driver.findComponent(ON.id("RichEditor_caretColor"));
       const caretColorPoint = await RichEditor_caretColor.getBoundsCenter()
 
-      await driver.drag(textPoint.x,textPoint.y,caretColorPoint.x,caretColorPoint.y);
+      await driver.dragBetween({ x: textPoint.x, y: textPoint.y, displayId: displayID }, { x: caretColorPoint.x, y: caretColorPoint.y, displayId: displayID });
       await driver.delayMs(3000)
       let text = await RichEditor_caretColor.getText();
 

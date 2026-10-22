@@ -590,6 +590,7 @@ export default function SecurityHuksApiTest() {
       expect(huks.HuksTag.HUKS_TAG_KEY_SECURITY_LEVEL).assertEqual(536871438);
       expect(huks.HuksTag.HUKS_TAG_AAD).assertEqual(1342177807);
       expect(huks.HuksTag.HUKS_TAG_CONTEXT).assertEqual(1342177808);
+      expect(huks.HuksTag.HUKS_TAG_TIMEOUT).assertEqual(536871441);
       expect(huks.HuksTag.HUKS_TAG_IS_KEY_ALIAS).assertEqual(1073742825);
       expect(huks.HuksTag.HUKS_TAG_KEY_STORAGE_FLAG).assertEqual(536871914);
       expect(huks.HuksTag.HUKS_TAG_IS_ALLOWED_WRAP).assertEqual(1073742827);
@@ -662,6 +663,7 @@ export default function SecurityHuksApiTest() {
         expect(huksExternalCrypto.HuksExternalCryptoTag.HUKS_EXT_CRYPTO_TAG_EXTRA_DATA).assertEqual(1342377283);
         expect(huksExternalCrypto.HuksExternalCryptoTag.HUKS_EXT_CRYPTO_TAG_UID).assertEqual(268635460);
         expect(huksExternalCrypto.HuksExternalCryptoTag.HUKS_EXT_CRYPTO_TAG_PURPOSE).assertEqual(268635461);
+        expect(huksExternalCrypto.HuksExternalCryptoTag.HUKS_EXT_CRYPTO_TAG_TIMEOUT).assertEqual(537070918);
         expect(huksExternalCrypto.HuksExternalCryptoTag.HUKS_EXT_CRYPTO_TAG_RESOURCE_INFO).assertEqual(1342377287);
         expect(huksExternalCrypto.HuksExternalCryptoTag.HUKS_EXT_CRYPTO_TAG_ABILITY_INFO).assertEqual(1342377288);
         expect(huksExternalCrypto.HuksExternalCryptoTag.HUKS_EXT_CRYPTO_TAG_BUNDLE_NAME).assertEqual(1342377289);

@@ -19,6 +19,8 @@ import CommonFunc from '../../MainAbility/common/Common';
 import { MessageManager, Callback } from '../../MainAbility/common/MessageManager';
 
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function search_center() {
   describe('search_center', () => {
     beforeEach(async (done: Function) => {
@@ -63,9 +65,7 @@ export default function search_center() {
 
         let driver = await Driver.create();
         await CommonFunc.sleep(500);
-        await driver.click(
-          (Math.round(search_01.left + (search_01.right - search_01.left) /2)),(Math.round(search_01.top + (search_01.bottom - search_01.top) /2))
-        );
+        await driver.clickAt({ x: (Math.round(search_01.left + (search_01.right - search_01.left) /2)), y: (Math.round(search_01.top + (search_01.bottom - search_01.top) /2)), displayId: displayID });
         await CommonFunc.sleep(1000);
 
         let search_02 = CommonFunc.getComponentRect('search_center' + '_search_01');

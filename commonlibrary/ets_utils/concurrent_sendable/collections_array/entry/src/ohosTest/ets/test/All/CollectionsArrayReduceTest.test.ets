@@ -17,6 +17,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import { myNull } from './pages/Data'
 import { sleep } from './pages/Utils';
 import { collections } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 export default function CollectionsArrayReduceTest() {
   describe('CollectionsArrayReduceTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -211,5 +212,24 @@ export default function CollectionsArrayReduceTest() {
       Done();
     })
 
+    /**
+     * @tc.number  SUB_ARRAY_REDUCE_EMPTY_NOINIT_0100
+     * @tc.name    testArrayReduceEmptyNoInit0001
+     * @tc.desc    Verify reduce on empty array without initial value throws
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testArrayReduceEmptyNoInit0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = collections.Array.from<number>([]);
+      let threw = false;
+      try {
+        arr.reduce((a: number, b: number): number => a + b);
+      } catch (error) {
+        threw = true;
+        expect(error instanceof Error).assertTrue();
+      }
+      expect(threw).assertTrue();
+    });
   })
 }

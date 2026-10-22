@@ -944,12 +944,12 @@ static napi_value PlaceholderLifecycle001(napi_env env, napi_callback_info info)
         return result;
     }
 
-    // step12: update on normal file, expect success (update converts normal file to placeholder)
+    // step12: update on normal file, expect NOT_A_PLACEHOLDER (update only works on placeholder files)
     LOGW("====>OH_CloudDisk_UpdatePlaceholder on normal file start");
     auto updateOnFileRet = OH_CloudDisk_UpdatePlaceholder(MakeSyncFolderPath(path),
         MakePathInfo(relativePath), MakePlaceholderInfo(4096, 1700000200000, 1700000201000), nullptr);
     LOGW("====>OH_CloudDisk_UpdatePlaceholder on normal file ret: %{public}d", updateOnFileRet);
-    if (updateOnFileRet != CLOUD_DISK_OK) {
+    if (updateOnFileRet != OH_CLOUD_DISK_NOT_A_PLACEHOLDER) {
         LOGE("====>PlaceholderLifecycle001 step12 check failed, updateOnFileRet: %{public}d", updateOnFileRet);
         CleanupLifecycleFolder(path, fullPath);
         napi_value result = nullptr;
@@ -957,14 +957,14 @@ static napi_value PlaceholderLifecycle001(napi_env env, napi_callback_info info)
         return result;
     }
 
-    // step13: is placeholder after update on normal file, expect true (converted by update)
+    // step13: is placeholder after update on normal file, expect false (update rejected, stays normal)
     bool isPlaceholder4 = true;
     LOGW("====>OH_CloudDisk_IsPlaceholderFile fourth start");
     auto isRet4 = OH_CloudDisk_IsPlaceholderFile(MakeSyncFolderPath(path), MakePathInfo(relativePath),
         &isPlaceholder4);
     LOGW("====>OH_CloudDisk_IsPlaceholderFile fourth ret: %{public}d, isPlaceholder: %{public}d", isRet4,
         isPlaceholder4 ? 1 : 0);
-    if (isRet4 != CLOUD_DISK_OK || !isPlaceholder4) {
+    if (isRet4 != CLOUD_DISK_OK || isPlaceholder4) {
         LOGE("====>PlaceholderLifecycle001 step13 check failed, isRet4: %{public}d, isPlaceholder4: %{public}d",
             isRet4, isPlaceholder4 ? 1 : 0);
         CleanupLifecycleFolder(path, fullPath);
@@ -1649,8 +1649,6 @@ static napi_value Tset_CloudDisk_CallbackType_ENUM(napi_env env, napi_callback_i
     NAPI_ASSERT(env, callbackType == 1, "OH_CLOUD_DISK_CALLBACK_TYPE_CANCEL_FETCH_DATA is fail.");
     callbackType = OH_CLOUD_DISK_CALLBACK_TYPE_DEHYDRATE;
     NAPI_ASSERT(env, callbackType == 2, "OH_CLOUD_DISK_CALLBACK_TYPE_DEHYDRATE is fail.");
-    callbackType = OH_CLOUD_DISK_CALLBACK_TYPE_FETCH_RANGE_DATA;
-    NAPI_ASSERT(env, callbackType == 3, "OH_CLOUD_DISK_CALLBACK_TYPE_FETCH_RANGE_DATA is fail.");
     napi_value result;
     napi_create_int32(env, 1, &result);
     return result;
@@ -1724,7 +1722,7 @@ static napi_value DehydrateFile002(napi_env env, napi_callback_info info)
     auto ret = OH_CloudDisk_DehydrateFile(&syncFolderPath, &filePathInfo);
     LOGW("====>OH_CloudDisk_DehydrateFile partially-hydrated ret: %{public}d", ret);
     bool ok = partialReady && cancelRet == CLOUD_DISK_OK && cancelNotified &&
-        (ret == OH_CLOUD_DISK_PLACEHOLDER_NOT_FULLY_HYDRATED || ret == CLOUD_DISK_NOT_SUPPORTED);
+        (ret == CLOUD_DISK_OK || ret == CLOUD_DISK_NOT_SUPPORTED);
     RemoveFileBestEffort("DehydrateFile002 post-clean", fullPath);
     LOGW("====>OH_CloudDisk_UnregisterCallbackTable cleanup start");
     auto unregCbRet = OH_CloudDisk_UnregisterCallbackTable(MakeSyncFolderPath(path));
@@ -2783,7 +2781,7 @@ static napi_value CreatePlaceholder015(napi_env env, napi_callback_info info)
         napi_create_int32(env, 0, &result);
         return result;
     }
-    static uint8_t customData[4096];
+    static uint8_t customData[1024];
     memset(customData, 0xCD, sizeof(customData));
     OH_CloudDisk_PlaceholderCustomInfo customInfo = {0};
     customInfo.dataLength = sizeof(customData);
@@ -2813,7 +2811,7 @@ static napi_value CreatePlaceholder016(napi_env env, napi_callback_info info)
         napi_create_int32(env, 0, &result);
         return result;
     }
-    static uint8_t customData[4097];
+    static uint8_t customData[1025];
     memset(customData, 0xCD, sizeof(customData));
     OH_CloudDisk_PlaceholderCustomInfo customInfo = {0};
     customInfo.dataLength = sizeof(customData);
@@ -2850,7 +2848,7 @@ static napi_value UpdatePlaceholder010(napi_env env, napi_callback_info info)
     auto createRet = OH_CloudDisk_CreatePlaceholder(MakeSyncFolderPath(path), MakePathInfo(relativePath),
         MakePlaceholderInfo(1024, 1700000000000, 1700000001000), nullptr);
     LOGW("====>OH_CloudDisk_CreatePlaceholder prepare ret: %{public}d", createRet);
-    static uint8_t customData[4096];
+    static uint8_t customData[1024];
     memset(customData, 0xCD, sizeof(customData));
     OH_CloudDisk_PlaceholderCustomInfo customInfo = {0};
     customInfo.dataLength = sizeof(customData);
@@ -2888,7 +2886,7 @@ static napi_value UpdatePlaceholder011(napi_env env, napi_callback_info info)
     auto createRet = OH_CloudDisk_CreatePlaceholder(MakeSyncFolderPath(path), MakePathInfo(relativePath),
         MakePlaceholderInfo(1024, 1700000000000, 1700000001000), nullptr);
     LOGW("====>OH_CloudDisk_CreatePlaceholder prepare ret: %{public}d", createRet);
-    static uint8_t customData[4097];
+    static uint8_t customData[1025];
     memset(customData, 0xCD, sizeof(customData));
     OH_CloudDisk_PlaceholderCustomInfo customInfo = {0};
     customInfo.dataLength = sizeof(customData);

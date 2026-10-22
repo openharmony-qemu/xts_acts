@@ -18,6 +18,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 
 import { BusinessError } from '@ohos.base';
 import audio from '@ohos.multimedia.audio';
+import Utils from "./Util.test";
 
 let sessionManager: audio.AudioSessionManager | undefined;
 let audioManager: audio.AudioManager;
@@ -124,11 +125,12 @@ export default function audioSessionManagerTest() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
+    beforeEach(async() => {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      getSessionManager();
+      await getSessionManager();
+      await Utils.msSleep(500);
       sessionManager!.onAudioSessionDeactivated(sessionDeactivatedEvent);
     })
     afterEach(() => {
@@ -151,13 +153,13 @@ export default function audioSessionManagerTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      await deactivateAudioSession(done, !isDone);
-      isAudioSessionActivatedFalse(done, !isDone);
       let strategy: audio.AudioSessionStrategy = {
         concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_DEFAULT
       }
       await activateAudioSession(strategy, done, !isDone);
       isAudioSessionActivatedTrue(done, isDone);
+      await deactivateAudioSession(done, !isDone);
+      isAudioSessionActivatedFalse(done, !isDone);
     })
 
     /**

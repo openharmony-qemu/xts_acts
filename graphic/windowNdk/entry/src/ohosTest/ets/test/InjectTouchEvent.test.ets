@@ -20,6 +20,7 @@ import { BusinessError } from '@ohos.base';
 import { image } from '@kit.ImageKit';
 import settings from '@ohos.settings';
 import { Driver, ON } from '@kit.TestKit';
+import display from '@ohos.display';
 
 function sleep(ms: number): Promise<string> {
   return new Promise((resolve) => {
@@ -38,6 +39,7 @@ export default function InjectTouchEvent() {
     let context : common.UIAbilityContext;
     let isAutoWindow:string = '';
     let isPCStatus: string = '';
+    let currentDisplayId = display.getDefaultDisplaySync().id;
     beforeAll(async() => {
       windowStage = AppStorage.get("windowStage") as window.WindowStage;
       console.log(`${Tag}:beforeAll start... `);
@@ -304,7 +306,7 @@ export default function InjectTouchEvent() {
       await sleep(200);
       try {
         let driver = Driver.create();
-        let btn = await driver.findComponent(ON.id('buttonId'));
+        let btn = await driver.findComponent(ON.id('buttonId').belongingDisplay(currentDisplayId));
         console.info(`${Tag}: ${caseName} btn: ${btn}`);
         // 获取button的位置
         let point = await btn.getBoundsCenter();
@@ -377,7 +379,7 @@ export default function InjectTouchEvent() {
       await sleep(200);
       try {
         let driver = Driver.create();
-        let btn = await driver.findComponent(ON.id('buttonId'));
+        let btn = await driver.findComponent(ON.id('buttonId').belongingDisplay(currentDisplayId));
         console.info(`${Tag}: ${caseName} btn: ${btn}`);
         let point = await btn.getBoundsCenter();
         console.info(`${Tag}: ${caseName} point: ${JSON.stringify(point)}`);
@@ -425,7 +427,7 @@ export default function InjectTouchEvent() {
       await sleep(200);
       try {
         let driver = Driver.create();
-        let btn = await driver.findComponent(ON.id('buttonId'));
+        let btn = await driver.findComponent(ON.id('buttonId').belongingDisplay(currentDisplayId));
         console.info(`${Tag}: ${caseName} btn: ${btn}`);
         let point = await btn.getBoundsCenter();
         console.info(`${Tag}: ${caseName} point: ${JSON.stringify(point)}`);
@@ -474,7 +476,7 @@ export default function InjectTouchEvent() {
       await sleep(200);
       try {
         let driver = Driver.create();
-        let btn = await driver.findComponent(ON.id('buttonId'));
+        let btn = await driver.findComponent(ON.id('buttonId').belongingDisplay(currentDisplayId));
         console.info(`${Tag}: ${caseName} btn: ${btn}`);
         let point = await btn.getBoundsCenter();
         console.info(`${Tag}: ${caseName} point: ${JSON.stringify(point)}`);
@@ -490,7 +492,7 @@ export default function InjectTouchEvent() {
           done()
         }else{
           expect(result).assertEqual(0);
-          let sliderText = await driver.findComponent(ON.id('sliderTextId'));
+          let sliderText = await driver.findComponent(ON.id('sliderTextId').belongingDisplay(currentDisplayId));
           console.info(`${Tag}: ${caseName} sliderText: ${sliderText}`);
           await sleep(500);
           let newText = await sliderText.getText();
@@ -534,13 +536,13 @@ export default function InjectTouchEvent() {
       await sleep(200);
       try {
         let driver = Driver.create();
-        let btn = await driver.findComponent(ON.id('buttonId'));
+        let btn = await driver.findComponent(ON.id('buttonId').belongingDisplay(currentDisplayId));
         console.info(`${Tag}: ${caseName} btn: ${btn}`);
         let point = await btn.getBoundsCenter();
         console.info(`${Tag}: ${caseName} point: ${JSON.stringify(point)}`);
         let x = point.x
         let y = point.y
-        await sleep(200);
+        await sleep(500);
         let subWindowId = subWindowClass.getWindowProperties().id;
         console.info(`${Tag}: ${caseName} subWindowId: ${subWindowId}`);
         let result = injectTouchEvent.testInjectTouchEventwithTouchActionUp(subWindowId, x, y);
@@ -583,7 +585,7 @@ export default function InjectTouchEvent() {
       await sleep(200);
       try {
         let driver = Driver.create();
-        let btn = await driver.findComponent(ON.id('buttonId'));
+        let btn = await driver.findComponent(ON.id('buttonId').belongingDisplay(currentDisplayId));
         console.info(`${Tag}: ${caseName} btn: ${btn}`);
         let point = await btn.getBoundsCenter();
         console.info(`${Tag}: ${caseName} point: ${JSON.stringify(point)}`);
@@ -633,7 +635,7 @@ export default function InjectTouchEvent() {
       await sleep(200);
       try {
         let driver = Driver.create();
-        let btn = await driver.findComponent(ON.id('buttonId'));
+        let btn = await driver.findComponent(ON.id('buttonId').belongingDisplay(currentDisplayId));
         console.info(`${Tag}: ${caseName} btn: ${btn}`);
         let point = await btn.getBoundsCenter();
         console.info(`${Tag}: ${caseName} point: ${JSON.stringify(point)}`);
@@ -688,7 +690,7 @@ export default function InjectTouchEvent() {
       await sleep(200);
       try {
         let driver = Driver.create();
-        let btn = await driver.findComponent(ON.id('buttonId'));
+        let btn = await driver.findComponent(ON.id('buttonId').belongingDisplay(currentDisplayId));
         console.info(`${Tag}: ${caseName} btn: ${btn}`);
         let point = await btn.getBoundsCenter();
         console.info(`${Tag}: ${caseName} point: ${JSON.stringify(point)}`);
@@ -738,7 +740,7 @@ export default function InjectTouchEvent() {
       await sleep(200);
       try {
         let driver = Driver.create();
-        let slider = await driver.findComponent(ON.id('sliderId'));
+        let slider = await driver.findComponent(ON.id('sliderId').belongingDisplay(currentDisplayId));
         console.info(`${Tag}: ${caseName} slider: ${slider}`);
         let point = await slider.getBoundsCenter();
         console.info(`${Tag}: ${caseName} point: ${JSON.stringify(point)}`);
@@ -754,7 +756,7 @@ export default function InjectTouchEvent() {
           done()
         }else{
           expect(result).assertEqual(0);
-          let sliderText = await driver.findComponent(ON.id('sliderTextId'));
+          let sliderText = await driver.findComponent(ON.id('sliderTextId').belongingDisplay(currentDisplayId));
           console.info(`${Tag}: ${caseName} sliderText: ${sliderText}`);
           await sleep(500);
           let newText = await sliderText.getText();
@@ -858,7 +860,7 @@ export default function InjectTouchEvent() {
       await sleep(200);
       try {
         let driver = Driver.create();
-        let btn = await driver.findComponent(ON.id('buttonId'));
+        let btn = await driver.findComponent(ON.id('buttonId').belongingDisplay(currentDisplayId));
         console.info(`${Tag}: ${caseName} btn: ${btn}`);
         let point = await btn.getBoundsCenter();
         console.info(`${Tag}: ${caseName} point: ${JSON.stringify(point)}`);
@@ -907,7 +909,7 @@ export default function InjectTouchEvent() {
       await sleep(200);
       try {
         let driver = Driver.create();
-        let slider = await driver.findComponent(ON.id('sliderId'));
+        let slider = await driver.findComponent(ON.id('sliderId').belongingDisplay(currentDisplayId));
         console.info(`${Tag}: ${caseName} slider: ${slider}`);
         let rect = await slider.getBounds();
         console.info(`${Tag}: ${caseName} rect: ${JSON.stringify(rect)}`);
@@ -923,7 +925,7 @@ export default function InjectTouchEvent() {
           done()
         }else{
           expect(result).assertEqual(0);
-          let sliderText = await driver.findComponent(ON.id('sliderTextId'));
+          let sliderText = await driver.findComponent(ON.id('sliderTextId').belongingDisplay(currentDisplayId));
           await sleep(500);
           let newText = await sliderText.getText();
           await sleep(200);

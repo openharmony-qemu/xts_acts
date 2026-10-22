@@ -49,10 +49,9 @@ import requestImageDataTest from "./MediaAssetManager/requestImageData.test.ets"
 import requestVideoTest from "./MediaAssetManager/requestVideo.test.ets"
 import getAlbumsTest from "./PhotoAccessHelper/getAlbums.test.ets"
 import getBurstAssetsTest from "./PhotoAccessHelper/getBurstAssets.test.ets"
-import getMovingPhotoTest from "./PhotoAccessHelper/getMovingPhoto.test.ets"
 import getSupportedPhotoFormatsTest from "./PhotoAccessHelper/getSupportedPhotoFormats.ets"
 import unRegisterChangeTest from "./PhotoAccessHelper/unRegisterChange.test.ets"
-import PhotoAccessHelperTest from "./PhotoAccessHelperCases/PhotoAccessHelperTest.test.ets"
+import PhotoAccessHelperCaseTest from "./PhotoAccessHelperCases/PhotoAccessHelperTest.test.ets"
 import photoAccessHelperTest from "./photoAccessHelperTest/PhotoAccessHelper.test.ets"
 import checkAttrTest from "./PhotoAsset/checkAttr.test.ets"
 import assetGetAllObjectTest from "./PhotoAssetFetchResult/getAllObjects.test.ets"
@@ -61,7 +60,6 @@ import assetGetNextObjectTest from "./PhotoAssetFetchResult/getNextObject.test.e
 import assetGetPositionObjectTest from "./PhotoAssetFetchResult/getObjectByPosition.test.ets"
 import assetIsAfterLastTest from "./PhotoAssetFetchResult/isAfterLast.test.ets"
 import GetPhotoAccessHelper from "./GetPhotoAccessHelper.test.ets"
-import provisionResourcesTest from "./ProvisionResources.test.ets"
 import PhotoAccessHelperStaticTest from "./PhotoAccessHelper.test.ets"
 import addAssetsTest from "./Album/addAssets.test.ets"
 import albumCommitModifyTest from "./Album/commitModify.test.ets"
@@ -73,7 +71,6 @@ import setAssetCompatibleCapabilityTest from "./PhotoAccessHelper/setAssetCompat
 import quickRequestImageTest from "./MediaAssetManager/quickRequestImage.test.ets"
 
 export default function testsuite() {
-  provisionResourcesTest();
   GetPhotoAccessHelper();
   PhotoAccessHelperStaticTest();
   albumGetAssetsTest();
@@ -102,7 +99,7 @@ export default function testsuite() {
   getAssetsTest();
   unRegisterChangeTest();
   releaseTest();
-  PhotoAccessHelperTest();
+  PhotoAccessHelperCaseTest();
   photoAccessHelperTest();
   checkAttrTest();
   commitModifyTest();
@@ -119,7 +116,6 @@ export default function testsuite() {
   setTitleChangeRequestTest();
   setOrientationChangeRequestTest();
   cloneAssetTest();
-  // getMovingPhotoTest();
   getSupportedPhotoFormatsTest();
   setTest();
   addAssetsTest();

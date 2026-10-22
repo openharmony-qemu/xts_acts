@@ -17,6 +17,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit'
 import { testMap as mapTimer2 } from './pages/ArrayFunOpen'
 import { sleep } from './pages/Utils'
 import { collections } from '@kit.ArkTS'
+import { BusinessError } from '@kit.BasicServicesKit';
 
 export default function CollectionsArrayMapTest() {
   describe('CollectionsArrayMapTest', () => {
@@ -110,5 +111,20 @@ export default function CollectionsArrayMapTest() {
     })
 
 
+    /**
+     * @tc.number  SUB_ARRAY_MAP_INDEP_0100
+     * @tc.name    testArrayMapIndep0001
+     * @tc.desc    Verify map returns new array independent from source
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testArrayMapIndep0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = collections.Array.from<number>([1, 2, 3]);
+      let m = arr.map((x: number): number => x * 2);
+      expect(m === arr).assertFalse();
+      arr.push(4);
+      expect(m.length).assertEqual(3);
+    });
   })
 }

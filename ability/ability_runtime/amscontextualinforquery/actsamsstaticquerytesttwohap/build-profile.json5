@@ -24,12 +24,18 @@
         "compileSdkVersion": "26.0.1",
         "compatibleSdkVersion": 12,
         "runtimeOS": "OpenHarmony",
+        "buildOption": {
+          "strictMode": {
+            "caseSensitiveCheck": true,
+            "useNormalizedOHMUrl": true
+          }
+        },
       }
     ]
   },
   "modules": [
     {
-      "name": "com.example.staticquerytesttwo",
+      "name": "entry",
       "srcPath": "./entry",
       "targets": [
         {

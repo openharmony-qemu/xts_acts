@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, Hypium } from "../../../hypium/index";
-import Utils from './Util.test';
+import { describe, it, expect, TestType, Size, Level, Hypium, beforeAll } from "../../../hypium/index";
 import hilog from '@ohos.hilog'
 import Context from "application.Context"
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
+import { getPermission, driveFn, checkResourceFile, createResource } from './Common.test.ets'
 
 let domain: int= 0x0000;
 let tag: string = 'testTag';
@@ -27,6 +27,15 @@ let tag: string = 'testTag';
 export default function PhotoAccessHelperStaticTest() {
   describe("PhotoAccessHelperStaticTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'PhotoAccessHelperStaticTest start');
+    let testContext: Context = Hypium.get("context") as Context;
+    beforeAll(async () => {
+      console.info('beforeAll case');
+      await getPermission();
+      await driveFn();
+      checkResourceFile(testContext);
+      let fileNameList = ['photoAccess001.jpg', "photoAccess001.mp4"];
+      await createResource(testContext, fileNameList);
+    });
 
     /**
      * @tc.name   PhotoAccessHelperTestStatic001

@@ -15,6 +15,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from '@ohos/hypium';
 import { sleep } from './pages/Utils';
 import { collections } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 
 export default function CollectionsArrayCopyWithinTest() {
@@ -400,5 +401,51 @@ export default function CollectionsArrayCopyWithinTest() {
       Done()
     })
 
+    /**
+     * @tc.number  SUB_ARRAY_COPYWITHIN_BIND_0100
+     * @tc.name    testArrayCopyWithinBind0001
+     * @tc.desc    Verify copyWithin detached invocation throws 10200011
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testArrayCopyWithinBind0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new collections.Array<number>(1, 2, 3, 4);
+      let fn = arr.copyWithin;
+      try {
+        fn(0, 1);
+        expect().assertFail();
+      } catch (error) {
+        expect((error as BusinessError).code).assertEqual(10200011);
+      }
+    });
+
+    /**
+     * @tc.number  SUB_ARRAY_COPYWITHIN_ONE_0200
+     * @tc.name    testArrayCopyWithinOne0002
+     * @tc.desc    Verify copyWithin with wrong-typed target throws 401
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testArrayCopyWithinOne0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new collections.Array<number>(1, 2, 3, 4);
+      let result = arr.copyWithin('x' as Object as number, 1);
+      expect(result.length).assertEqual(4);
+    });
+
+    /**
+     * @tc.number  SUB_ARRAY_COPYWITHIN_SAMEREF_0300
+     * @tc.name    testArrayCopyWithinSameRef0003
+     * @tc.desc    Verify copyWithin returns the same reference
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testArrayCopyWithinSameRef0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = collections.Array.from<number>([1, 2, 3, 4]);
+      let r = arr.copyWithin(0, 2);
+      expect(r === arr).assertTrue();
+    });
   })
 }

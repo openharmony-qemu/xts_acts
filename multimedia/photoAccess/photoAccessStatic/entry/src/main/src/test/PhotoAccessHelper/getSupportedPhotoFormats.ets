@@ -18,7 +18,7 @@ import photoAccessHelper from '@ohos.file.photoAccessHelper'
 import { describe, it, expect, beforeAll, Hypium, TestType, Size, Level } from '../../../../hypium/index'
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
 import { BusinessError } from '@ohos.base'
-import { sleep, getPermission, getBurstKey, photoFetchOption, fetchAllOption, driveFn } from '../Common.test.ets'
+import { getPermission, getBurstKey, photoFetchOption, fetchAllOption, driveFn } from '../Common.test.ets'
 import Context from "application.Context"
 
 export default function getSupportedPhotoFormatsTest() {
@@ -39,7 +39,6 @@ export default function getSupportedPhotoFormatsTest() {
       console.info('beforeAll case');
       await getPermission();
       await driveFn();
-      await sleep(1000);
     });
 
     /**

@@ -70,6 +70,58 @@ export default function WebCustomErrorCode() {
       })
 
     /**
+     * @tc.name        testSetCustomErrorCodeStatic002
+     * @tc.number      SUB_WEB_CUSTOMERRORCODE_STATIC_0110
+     * @tc.desc        test WebSchemeHandlerResponse setCustomErrorCode(int)入参32159
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       LEVEL0
+     */
+    it('testSetCustomErrorCodeStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000)
+        Utils.emitEvent('SwitchBackToWebSchemeHandlerResponse', 10)
+        await Utils.msSleep(2000)
+        inspector.sendEventByKey('webSchemeHandlerRequest', 10, '');
+        await Utils.msSleep(4000)
+        Utils.emitEvent('WebSchemeHandlerResponse_setCustomErrorCode_only', 10)
+        await Utils.msSleep(2000)
+        Utils.registerBaseEvent('WebSchemeHandlerResponse_setCustomErrorCode_only', true, 8827, done,
+          (backData: events_emitter.EventData, expected: Object) => {
+            const data = backData?.data as Record<string, Object>;
+            expect(data['ACTION']).assertEqual(expected);
+          });
+        await Utils.msSleep(2000)
+        inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      })
+
+    /**
+     * @tc.name        testGetCustomErrorCodeSchemeStatic002
+     * @tc.number      SUB_WEB_CUSTOMERRORCODE_STATIC_0120
+     * @tc.desc        test WebSchemeHandlerResponse getCustomErrorCode返回值int 32159
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       LEVEL0
+     */
+    it('testGetCustomErrorCodeSchemeStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000)
+        Utils.emitEvent('SwitchBackToWebSchemeHandlerResponse', 10)
+        await Utils.msSleep(2000)
+        inspector.sendEventByKey('webSchemeHandlerRequest', 10, '');
+        await Utils.msSleep(4000)
+        Utils.emitEvent('WebSchemeHandlerResponse_getCustomErrorCode_only', 10)
+        await Utils.msSleep(2000)
+        Utils.registerBaseEvent('WebSchemeHandlerResponse_getCustomErrorCode_only', CUSTOM_ERROR_CODE, 8828, done,
+          (backData: events_emitter.EventData, expected: Object) => {
+            const data = backData?.data as Record<string, Object>;
+            expect(data['ACTION']).assertEqual(expected);
+          });
+        await Utils.msSleep(2000)
+        inspector.sendEventByKey('WebSchemeHandlerResponse', 10, '');
+      })
+
+    /**
      * @tc.name        testDidFailCustomErrorCodeStatic001
      * @tc.number      SUB_WEB_CUSTOMERRORCODE_STATIC_0200
      * @tc.desc        test WebResourceHandler didFail with customErrorCode

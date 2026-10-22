@@ -55,6 +55,8 @@
         "MainAbility/pages/CommonCustom/UIContextApplyDefaultImmersiveStrategyNoParam",
         "MainAbility/pages/CommonCustom/UIContextApplyDefaultImmersiveStrategyTwoParam",
         "MainAbility/pages/CommonCustom/UIContextApplyDefaultImmersiveStrategyNull",
-        "MainAbility/pages/CommonCustom/UIContextApplyDefaultImmersiveStrategyUndefined"
+        "MainAbility/pages/CommonCustom/UIContextApplyDefaultImmersiveStrategyUndefined",
+        "MainAbility/pages/CommonCustom/UIContextApplyDefaultImmersiveStrategyEmptyArray",
+        "MainAbility/pages/CommonCustom/UIContextApplyDefaultImmersiveStrategyNonEmptyArray"
     ]
 }

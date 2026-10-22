@@ -1,4 +1,5 @@
 'use static';
+
 /**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +16,7 @@
  */
 
 import {  ItemAlign,  GridCol,  ForEach,  GridRowDirection,  BreakpointsReference,
-  GridRow,  Color,  Stack,  Row,  Alignment,  VerticalAlign,
+  GridRow,  Color,  Stack,  Row,  Alignment,  VerticalAlign, ColumnOptions,
   HorizontalAlign,  RelativeContainer,  Entry,  Text,  Column,
   Component,  Button,  ClickEvent,  AttributeModifier,  GridRowAttribute } from '@ohos.arkui.component'
 import { State, Observed } from '@ohos.arkui.stateManagement'
@@ -48,14 +49,14 @@ export class MyModifier2 implements AttributeModifier<GridRowAttribute> {
 @Component
 struct GridColExample {
   @State bgColors: Color[] = [Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Pink,
-   Color.Grey, Color.Blue, Color.Brown]
+    Color.Grey, Color.Blue, Color.Brown]
   @State myModifier1: MyModifier1 = new MyModifier1();
   @State myModifier2: MyModifier2 = new MyModifier2();
   @State widthArray: string[] = ['100vp', '300vp', '500vp', '650vp'];
   @State widthIndex: int = 0
 
   build() {
-    Column() {
+    Column({space:2} as ColumnOptions) {
       Column() {
         GridRow({
           columns: 5,
@@ -85,14 +86,14 @@ struct GridColExample {
           this.myModifier2.currentBp = breakpoint
         })
         .attributeModifier(this.myModifier1)
-      }.width('80%').margin(10).height(200)
+      }.width('80%').height('35%')
       .border({ color: '#880606', width: 2 })
       Column() {
         Button('isAlignItems = ' + this.myModifier1.isAlignItems)
           .onClick(() => {
             this.myModifier1.isAlignItems = !this.myModifier1.isAlignItems;
           })
-          .height(30)
+          .height('3%')
           .id('GridRowModifier_AlignItems')
       }
 
@@ -162,13 +163,14 @@ struct GridColExample {
         }.width(this.widthArray[this.widthIndex])
         .attributeModifier(this.myModifier2)
 
-      }.width('100%').margin(10).height(200)
+      }.width('100%').height('35%')
       .border({ color: '#880606', width: 2 })
 
       Button('22、onBreakpointChange:' + this.myModifier2.isDef).onClick((e: ClickEvent) => {
         this.myModifier2.isDef = !this.myModifier2.isDef
       })
         .id('GridRow_onBreakpointChange')
+        .height('3%')
 
       Button('02, changeWidth=' + this.widthArray[this.widthIndex] + ',index=' + this.widthIndex)
         .onClick((event: ClickEvent) => {
@@ -179,6 +181,7 @@ struct GridColExample {
           }
         })
         .id('ChangeBreakpoint')
-    }
+        .height('3%')
+    }.width('100%').height('100%')
   }
 }

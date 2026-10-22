@@ -16,6 +16,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from '@ohos/hypium';
 import { sleep } from './pages/Utils';
 import { collections } from '@kit.ArkTS'
+import { BusinessError } from '@kit.BasicServicesKit';
 
 export default function CollectionsArrayPop() {
   describe('CollectionsArrayPop', () => {
@@ -237,5 +238,24 @@ export default function CollectionsArrayPop() {
       done();
       console.info(`${caseName} test end`);
     })
+
+    /**
+     * @tc.number  SUB_ARRAY_POP_BIND_0100
+     * @tc.name    testArrayPopBind0001
+     * @tc.desc    Verify pop detached invocation throws 10200011
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testArrayPopBind0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new collections.Array<number>(1, 2, 3);
+      let fn = arr.pop;
+      try {
+        fn();
+        expect().assertFail();
+      } catch (error) {
+        expect((error as BusinessError).code).assertEqual(10200011);
+      }
+    });
   })
 }

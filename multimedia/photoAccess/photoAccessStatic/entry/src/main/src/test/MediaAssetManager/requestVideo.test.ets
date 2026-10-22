@@ -19,38 +19,20 @@ import { describe, it, expect, beforeAll, Hypium, TestType, Size, Level } from '
 import media from '@ohos.multimedia.media';
 import Context from "application.Context"
 import fs from "@ohos.file.fs"
-import { BusinessError } from '@ohos.base';
 import {
   fetchOption,
   createSandboxFileUri,
   getPermission,
   driveFn,
   sleep,
-  createVideoBySandBoxUri
+  createVideoBySandBoxUri,
+  checkResourceFile,
+  createResource
 } from '../Common.test.ets'
-import hilog from '@ohos.hilog'
-import hdrCapability from '@ohos.graphics.hdrCapability';
 
 class TestHandler implements photoAccessHelper.MediaAssetProgressHandler {
   onProgress(progress: int): void {
     console.info(`on video request onProgress: ${progress}`);
-  }
-}
-
-let globalDone: () => void;
-
-class MediaHandler implements photoAccessHelper.MediaAssetDataHandler<Boolean> {
-  onDataPrepared(data: Boolean | undefined, map: Map<String, String> | undefined) {
-    console.info(`MediaHandler succeed`);
-    expect(data).assertTrue();
-    globalDone();
-  }
-}
-
-class FMediaHandler implements photoAccessHelper.MediaAssetDataHandler<Boolean> {
-  onDataPrepared(data: Boolean | undefined, map: Map<String, String> | undefined) {
-    console.info(` failed`);
-    expect(data).assertTrue();
   }
 }
 
@@ -89,69 +71,17 @@ class CMediaHandler implements photoAccessHelper.MediaAssetDataHandler<Boolean> 
 export default function requestVideoTest() {
   describe('requestVideoTest', (): void => {
 
-    let AVFileDescriptor: media.AVFileDescriptor;
     let testContext: Context = Hypium.get('context') as Context;
     let helper = photoAccessHelper.getPhotoAccessHelper(testContext);
-    let hdrVideoUri =
-      "file://ohos.acts.multimedia.photoaccess.Static/data/storage/el2/base/haps/entry/photos/test_hdr_1.mp4";
 
     beforeAll(async () => {
       console.info('beforeAll case');
       await getPermission();
       await driveFn();
-      await sleep(1000);
-      await createVideoBySandBoxUri('createHdr001', testContext, hdrVideoUri);
+      checkResourceFile(testContext);
+      let fileNameList = ['request_video.mp4', 'request_image.jpg'];
+      await createResource(testContext, fileNameList);
     });
-
-    const createMovingPhoto = async (done: () => void, testNum: string): Promise<void> => {
-      try {
-        let displayName: string = "hdr_moving_photo.jpeg";
-        let createOption: photoAccessHelper.PhotoCreateOptions = {
-          subtype: photoAccessHelper.PhotoSubtype.MOVING_PHOTO
-        };
-        let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest | null =
-          photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, displayName, createOption);
-        let photoUri =
-          "file://ohos.acts.multimedia.photoaccess.Static/data/storage/el2/base/haps/entry/photos/test_mov_1.jpg";
-        let videoUri =
-          "file://ohos.acts.multimedia.photoaccess.Static/data/storage/el2/base/haps/entry/photos/test_mov_1.mp4";
-        (assetChangeRequest as photoAccessHelper.MediaAssetChangeRequest).addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, photoUri);
-        (assetChangeRequest as photoAccessHelper.MediaAssetChangeRequest).addResource(photoAccessHelper.ResourceType.VIDEO_RESOURCE, videoUri);
-        await (helper as photoAccessHelper.PhotoAccessHelper).applyChanges((assetChangeRequest as photoAccessHelper.MediaAssetChangeRequest));
-        let assertUri: string = ((assetChangeRequest as photoAccessHelper.MediaAssetChangeRequest).getAsset() as photoAccessHelper.PhotoAsset).uri;
-        if (assertUri == undefined || assertUri == "") {
-          console.error(`${testNum}::createMovingPhoto :: failed to create moving Photo !`);
-          expect(false).assertTrue();
-          done();
-        }
-        done();
-      } catch (err) {
-        console.error(`getMovingPhotoTest::${testNum}:: failed to createMovingPhoto::${err.code}, ${err.message} !`);
-        expect(false).assertTrue();
-        done();
-      }
-    };
-
-    const requestVideoRequestOptions =
-      async (testNum: string, done: () => void, requestOptions: photoAccessHelper.RequestOptions): Promise<void> => {
-        try {
-          let fetchOps: photoAccessHelper.FetchOptions =
-            fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, "request_video.mp4");
-          let fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
-          let photoAsset = await fetchResult.getFirstObject();
-          let destUri: string = createSandboxFileUri(testContext, 'mp4');
-
-          hilog.info(0x0000, 'testTag', '%{public}s', `INIT MediaHandler START !`);
-          globalDone = done;
-          const handler = new MediaHandler();
-          await photoAccessHelper.MediaAssetManager.requestVideoFile(testContext, photoAsset, requestOptions, destUri,
-            handler);
-        } catch (error) {
-          console.error(`${testNum} failed; error: ${error.code}  ${error.message}`);
-          expect(false).assertTrue();
-          done();
-        }
-      }
 
     const isHdr = async (testNum: string, fileUri: string): Promise<number | media.HdrType | undefined> => {
       let flag: number | media.HdrType | undefined = -1;
@@ -169,141 +99,6 @@ export default function requestVideoTest() {
       return flag;
     }
 
-    const requestVideoRequestOptionsHdr =
-      async (testNum: string, done: () => void, requestOptions: photoAccessHelper.RequestOptions): Promise<void> => {
-        try {
-          let fetchOps: photoAccessHelper.FetchOptions =
-            fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, "request_video.mp4");
-          let fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
-          let photoAsset = await fetchResult.getFirstObject();
-          let destUri: string = createSandboxFileUri(testContext, 'mp4');
-
-          const handler = new MediaHandler();
-          await photoAccessHelper.MediaAssetManager.requestVideoFile(testContext, photoAsset, requestOptions, destUri,
-            handler);
-          let uri: string = await createVideoBySandBoxUri(testNum, testContext, destUri);
-          let flag = await isHdr(testNum, uri)
-          expect(flag).assertEqual(0);
-          done();
-        } catch (error) {
-          console.error(`${testNum} failed; error: ${error.code}  ${error.message}`);
-          expect(false).assertTrue();
-          done();
-        }
-      }
-
-    const requestVideoRequestOptionsError =
-      async (testNum: string, done: () => void, requestOptions: photoAccessHelper.RequestOptions): Promise<void> => {
-        try {
-          let fetchOps: photoAccessHelper.FetchOptions =
-            fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, "request_video.mp4");
-          let fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
-          let photoAsset = await fetchResult.getFirstObject();
-          let destUri: string = createSandboxFileUri(testContext, 'mp4');
-
-          const handler = new MediaHandler();
-          await photoAccessHelper.MediaAssetManager.requestVideoFile(testContext, photoAsset, requestOptions, destUri,
-            handler);
-        } catch (error) {
-          error = error as BusinessError;
-          console.error(`${testNum} failed; error: ${error.code}  ${error.message}`);
-          expect(error.code).assertEqual('401');
-          done();
-        }
-      }
-
-    const requestVideoRequestOptionsErrorHdr =
-      async (testNum: string, done: () => void, requestOptions: photoAccessHelper.RequestOptions): Promise<void> => {
-        try {
-          let fetchOps: photoAccessHelper.FetchOptions =
-            fetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, "request_video.mp4");
-          let fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
-          let photoAsset = await fetchResult.getFirstObject();
-          let destUri: string = createSandboxFileUri(testContext, 'mp4');
-
-          const handler = new MediaHandler();
-          await photoAccessHelper.MediaAssetManager.requestVideoFile(testContext, photoAsset, requestOptions, destUri,
-            handler);
-          let uri: string = await createVideoBySandBoxUri(testNum, testContext, destUri);
-          let flag = await isHdr(testNum, uri);
-          expect(flag).assertEqual(0);
-        } catch (error) {
-          error = error as BusinessError;
-          console.error(`${testNum} failed; error: ${error.code}  ${error.message}`);
-          expect(error.code).assertEqual('401');
-          done();
-        }
-      }
-
-    const requestVideoPhotoAssetError =
-      async (testNum: string, done: () => void, photoAsset: photoAccessHelper.PhotoAsset): Promise<void> => {
-        try {
-          let destUri: string = createSandboxFileUri(testContext, 'mp4');
-
-          let requestOptions: photoAccessHelper.RequestOptions = {
-            deliveryMode: photoAccessHelper.DeliveryMode.FAST_MODE,
-            sourceMode: photoAccessHelper.SourceMode.ORIGINAL_MODE,
-          };
-          const handler = new EMediaHandler();
-          await photoAccessHelper.MediaAssetManager.requestVideoFile(testContext, photoAsset, requestOptions, destUri,
-            handler);
-        } catch (error) {
-          error = error as BusinessError;
-          console.error(`${testNum} failed; error: ${error.code} ${error.message}`);
-          expect(error.code).assertEqual('401');
-          done();
-        }
-      }
-
-    const requestVideoPhotoAssetErrorCompatible =
-      async (testNum: string, done: () => void, photoAsset: photoAccessHelper.PhotoAsset): Promise<void> => {
-        try {
-          let destUri: string = createSandboxFileUri(testContext, 'mp4');
-
-          let requestOptions: photoAccessHelper.RequestOptions = {
-            deliveryMode: photoAccessHelper.DeliveryMode.FAST_MODE,
-            sourceMode: photoAccessHelper.SourceMode.ORIGINAL_MODE,
-            compatibleMode: photoAccessHelper.CompatibleMode.COMPATIBLE_FORMAT_MODE,
-          };
-          const handler = new EMediaHandler();
-          await photoAccessHelper.MediaAssetManager.requestVideoFile(testContext, photoAsset, requestOptions, destUri,
-            handler);
-          let uri: string = await createVideoBySandBoxUri(testNum, testContext, destUri);
-          let flag = await isHdr(testNum, uri);
-          expect(flag).assertEqual(0);
-        } catch (error) {
-          error = error as BusinessError;
-          console.error(`${testNum} failed; error: ${error.code} ${error.message}`);
-          expect(error.code).assertEqual('401');
-          done();
-        }
-      }
-
-    const requestVideoPhotoAssetErrorCompatibleOnprogress =
-      async (testNum: string, done: () => void, photoAsset: photoAccessHelper.PhotoAsset): Promise<void> => {
-        try {
-          let destUri: string = createSandboxFileUri(testContext, 'mp4');
-
-          let requestOptions: photoAccessHelper.RequestOptions = {
-            deliveryMode: photoAccessHelper.DeliveryMode.FAST_MODE,
-            sourceMode: photoAccessHelper.SourceMode.ORIGINAL_MODE,
-            compatibleMode: photoAccessHelper.CompatibleMode.COMPATIBLE_FORMAT_MODE,
-            mediaAssetProgressHandler: new TestHandler(),
-          };
-          const handler = new EMediaHandler();
-          await photoAccessHelper.MediaAssetManager.requestVideoFile(testContext, photoAsset, requestOptions, destUri,
-            handler);
-          let uri: string = await createVideoBySandBoxUri(testNum, testContext, destUri);
-          let flag = await isHdr(testNum, uri);
-          expect(flag).assertEqual(0);
-        } catch (error) {
-          error = error as BusinessError;
-          console.error(`${testNum} failed; error: ${error.code} ${error.message}`);
-          expect(error.code).assertEqual('401');
-          done();
-        }
-      }
-
     const requestVideoDestUriError =
       async (testNum: string, done: () => void, destUri: string, errCode: string): Promise<void> => {
         try {
@@ -320,7 +115,6 @@ export default function requestVideoTest() {
           await photoAccessHelper.MediaAssetManager.requestVideoFile(testContext, photoAsset, requestOptions, destUri,
             handler);
         } catch (error) {
-          error = error as BusinessError;
           console.error(`${testNum} failed; error: ${error.code} ${error.message}`);
           console.error(`Type of error.code: ${typeof error.code}`);
           console.error(`Type of errCode: ${typeof errCode}`);
@@ -409,7 +203,6 @@ export default function requestVideoTest() {
           await photoAccessHelper.MediaAssetManager.requestVideoFile(testContext, photoAsset, requestOptions, destUri,
             handler)
         } catch (error) {
-          error = error as BusinessError;
           console.error(`${testNum} failed; error: ${error.code}  ${error.message}`);
           expect(error.code).assertEqual(401);
           done();
@@ -441,7 +234,6 @@ export default function requestVideoTest() {
           await photoAccessHelper.MediaAssetManager.requestVideoFile(testContext, photoAsset, requestOptions, destUri,
             handler)
         } catch (error) {
-          error = error as BusinessError;
           console.error(`${testNum} failed; error: ${error.code}  ${error.message}`);
           expect(error.code).assertEqual(401);
           done();
@@ -474,7 +266,6 @@ export default function requestVideoTest() {
           await photoAccessHelper.MediaAssetManager.requestVideoFile(testContext, photoAsset, requestOptions, destUri,
             handler)
         } catch (error) {
-          error = error as BusinessError;
           console.error(`${testNum} failed; error: ${error.code}  ${error.message}`);
           expect(error.code).assertEqual(401);
           done();

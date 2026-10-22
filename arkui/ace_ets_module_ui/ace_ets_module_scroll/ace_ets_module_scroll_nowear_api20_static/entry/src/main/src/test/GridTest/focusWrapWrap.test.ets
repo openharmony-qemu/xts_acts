@@ -68,13 +68,13 @@ it('focusWrapWrap_static_0100', Level.LEVEL0, async (done: () => void): Promise<
 
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, AppStorage.get<number>('displayID')?.toInt() ?? 0);
       await CommonFunc.sleep(1000);
 
       //await driver.triggerKey(KeyCode.KEYCODE_DPAD_RIGHT);
-      await driver.triggerKey(2015);
+      await driver.triggerKey(2015, AppStorage.get<number>('displayID')?.toInt() ?? 0);
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2015);
+      await driver.triggerKey(2015, AppStorage.get<number>('displayID')?.toInt() ?? 0);
       await CommonFunc.sleep(1000);
 
       let btn = await driver.findComponent(ON.id('wrap_focused_c'));

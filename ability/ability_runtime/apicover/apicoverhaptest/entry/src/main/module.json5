@@ -16,7 +16,7 @@
   "module": {
     "name": "entry",
     "type": "entry",
-    "srcEntry": "./ets/Application/AbilityStage.ts",
+    "srcEntry": "./ets/Application/AbilityStage.ets",
     "description": "$string:phone_entry_dsc",
     "mainElement": "MainAbility",
     "deviceTypes": [],
@@ -27,7 +27,7 @@
     "abilities": [
       {
         "name": "com.example.apicoverhaptest.MainAbility",
-        "srcEntry": "./ets/MainAbility/MainAbility.ts",
+        "srcEntry": "./ets/MainAbility/MainAbility.ets",
         "description": "$string:phone_entry_main",
         "icon": "$media:icon",
         "label": "$string:entry_label",
@@ -50,7 +50,7 @@
     "extensionAbilities": [
       {
         "name": "FormAbility",
-        "srcEntrance": "./ets/FormAbility/FormAbility.ts",
+        "srcEntrance": "./ets/FormAbility/FormAbility.ets",
         "label": "$string:MainAbility_label",
         "description": "$string:MainAbility_desc",
         "type": "form",

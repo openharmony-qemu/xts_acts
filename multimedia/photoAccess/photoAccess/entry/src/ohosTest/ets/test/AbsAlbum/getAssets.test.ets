@@ -14,7 +14,7 @@
  */
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
-import { describe, it, expect, Level } from '@ohos/hypium-dynamic'
+import { describe, it, expect, beforeAll, Level } from '@ohos/hypium-dynamic'
 import {
   albumType,
   albumSubtype,
@@ -23,7 +23,12 @@ import {
   pushCreateAsset,
   getFileAsset,
   createMovingPhoto,
-  createShootingModeAssetBatch
+  createShootingModeAssetBatch,
+  getPermission,
+  sleep,
+  driveFn,
+  checkResourceFile,
+  createResource
 } from '../common'
 import common from '@ohos.app.ability.common'
 import { dataSharePredicates } from '@kit.ArkData'
@@ -32,6 +37,27 @@ export default function albumGetAssetsTest () {
   describe('albumGetAssetsTest', () => {
     let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
     const helper = photoAccessHelper.getPhotoAccessHelper(testContext)
+    const ts = `_${Date.now()}`;
+    const cb00Name = `albumGetAssetsCb00${ts}.mp4`;
+    const cb01Name = `albumGetAssetsCb01${ts}.mp4`;
+    const cb03Name = `album_getAssets_callback_03${ts}.jpg`;
+    const cb04Name = `album_getAssets_callback_04${ts}.jpg`;
+    const cb05Name = `album_getAssets_callback_05${ts}.jpg`;
+    const cb06Name = `album_getAssets_callback_06${ts}.jpg`;
+    const cb07Name = `album_getAssets_callback_07${ts}.jpg`;
+    const cb08Name = `album_getAssets_callback_08${ts}.jpg`;
+    const cb09Name = `album_getAssets_callback_09${ts}.jpg`;
+    const pro01Name = `albumGetAssetsPro01${ts}.mp4`;
+
+    beforeAll(async () => {
+      let fileNameList = [cb00Name, cb01Name, cb03Name, cb04Name, cb05Name, cb06Name, cb07Name, cb08Name, cb09Name, pro01Name];
+      await getPermission();
+      await sleep(1000);
+      await driveFn();
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNameList);
+    })
+    
     let getAlbum = async (testNum: string, type: photoAccessHelper.AlbumType, subtype: photoAccessHelper.AlbumSubtype, key: string = '', value: string | number = '') => {
       let predicatesAlbum: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
       if (key == '' && value == '') {
@@ -68,7 +94,7 @@ export default function albumGetAssetsTest () {
         const fetchResult = await helper.getAlbums(albumType.SYSTEM, albumSubtype.VIDEO);
         const album = await fetchResult.getFirstObject();
         fetchResult.close();
-        const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, 'albumGetAssetsCb01.mp4');
+        const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, cb00Name);
         album.getAssets(fetchOps, async (err, fetchResult) => {
           try {
             if (err) {
@@ -156,7 +182,7 @@ export default function albumGetAssetsTest () {
       const testNum = 'album_getAssets_callback_003';
       try {
         let assetNames: Array<string> = [
-          'album_getAssets_callback_03.jpg'
+          cb03Name
         ]
         await pushCreateAsset(testContext, assetNames);
         const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, assetNames[0]);
@@ -206,7 +232,7 @@ export default function albumGetAssetsTest () {
       const testNum = 'album_getAssets_callback_004';
       try {
         let assetNames: Array<string> = [
-          'album_getAssets_callback_04.jpg'
+          cb04Name
         ]
         await pushCreateAsset(testContext, assetNames);
         const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, assetNames[0]);
@@ -258,7 +284,7 @@ export default function albumGetAssetsTest () {
         let album: photoAccessHelper.Album = await fetchResult.getLastObject();
         fetchResult.close();
         let assetNames: Array<string> = [
-          'album_getAssets_callback_05.jpg'
+          cb05Name
         ]
         await pushCreateAsset(testContext, assetNames);
         const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, assetNames[0]);
@@ -306,9 +332,8 @@ export default function albumGetAssetsTest () {
       const testNum = 'album_getAssets_callback_006';
       try {
         let assetNames: Array<string> = [
-          'album_getAssets_callback_06.jpg'
+          cb06Name
         ]
-        await pushCreateAsset(testContext, assetNames);
         const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, assetNames[0]);
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
         predicates.equalTo('display_name', assetNames[0])
@@ -353,9 +378,8 @@ export default function albumGetAssetsTest () {
       try {
         const album = await helper.createAlbum(testNum);
         let assetNames: Array<string> = [
-          'album_getAssets_callback_07.jpg'
+          cb07Name
         ]
-        await pushCreateAsset(testContext, assetNames);
         const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, assetNames[0]);
         let asset: photoAccessHelper.PhotoAsset = await getFileAsset(testContext, testNum, fetchOps);
         await album.addAssets([asset]);
@@ -400,9 +424,8 @@ export default function albumGetAssetsTest () {
       const testNum = 'album_getAssets_callback_008';
       try {
         let assetNames: Array<string> = [
-          'album_getAssets_callback_08.jpg'
+          cb08Name
         ]
-        await pushCreateAsset(testContext, assetNames);
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
         predicates.equalTo('display_name', assetNames[0])
         .in('subtype', [0,10]);
@@ -445,7 +468,7 @@ export default function albumGetAssetsTest () {
       const testNum = 'album_getAssets_callback_009';
       try {
         let assetNames: Array<string> = [
-          'album_getAssets_callback_09'
+          `album_getAssets_callback_09${ts}`
         ]
         let displayName: string = assetNames[0] + '.jpg'
         await createMovingPhoto(testNum, testContext, assetNames[0]);
@@ -490,13 +513,13 @@ export default function albumGetAssetsTest () {
       const testNum = 'album_getAssets_callback_010';
       try {
         let assetNames: Array<string> = [
-          'album_getAssets_callback_101.jpg',
-          'album_getAssets_callback_102.jpg',
-          'album_getAssets_callback_103.jpg',
-          'album_getAssets_callback_104.jpg',
-          'album_getAssets_callback_105.jpg',
-          'album_getAssets_callback_106.jpg',
-          'album_getAssets_callback_107.dng',
+          `album_getAssets_callback_101${ts}.jpg`,
+          `album_getAssets_callback_102${ts}.jpg`,
+          `album_getAssets_callback_103${ts}.jpg`,
+          `album_getAssets_callback_104${ts}.jpg`,
+          `album_getAssets_callback_105${ts}.jpg`,
+          `album_getAssets_callback_106${ts}.jpg`,
+          `album_getAssets_callback_107${ts}.dng`,
         ];
         let shootingModeAssets: Array<string> = [
           'stm_renxiang.jpg', 'stm_daguangquan.jpg', 'stm_yejing.jpg',
@@ -623,7 +646,7 @@ export default function albumGetAssetsTest () {
         const fetchResult = await helper.getAlbums(albumType.SYSTEM, albumSubtype.VIDEO);
         const album = await fetchResult.getFirstObject();
         fetchResult.close();
-        const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, 'albumGetAssetsPro01.mp4');
+        const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, pro01Name);
         const curFetchResult = await album.getAssets(fetchOps);
         expect(curFetchResult.getCount()).assertEqual(1);
         curFetchResult.close();

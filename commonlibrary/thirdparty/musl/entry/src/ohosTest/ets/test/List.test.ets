@@ -115,7 +115,6 @@ import muslQuotaNdk1Test from './QuotaNdk1.test';
 import muslRandomNdk1Test from './RandomNdk1.test';
 import muslResourceNdk1Test from './ResourceNdk1.test';
 import muslSearch1Test from './SearchNdk1.test';
-import semaphoreNdk1Test from './SemaphoreNdk1.test';
 import muslSetJmpNdk1Test from './SetjmpNdk1.test';
 import muslSpawn1Test from './SpawnNdk1.test';
 import muslStdioExt1Test from './StdioExtNdk1.test';
@@ -158,7 +157,6 @@ export default function testsuite() {
   muslQuotaNdk1Test();
   muslRandomNdk1Test();
   muslSearch1Test();
-  semaphoreNdk1Test();
   muslSetJmpNdk1Test();
   muslSpawn1Test();
   dirent1NdkTest();

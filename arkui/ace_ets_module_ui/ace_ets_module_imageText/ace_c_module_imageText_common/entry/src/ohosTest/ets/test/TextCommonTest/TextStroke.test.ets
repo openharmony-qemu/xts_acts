@@ -442,5 +442,117 @@ export default function TextStrokeTest() {
       expect(nativeFunc.TextStrokeTest_030()).assertEqual(0)
       console.info('SUB_ARKUI_NODE_TEXT_STROKE_JOIN_STYLE_1000 END');
     });
+
+    /**
+     * @tc.name   SUB_ARKUI_NODE_TEXT_STROKE_JOIN_STYLE_1100
+     * @tc.number SUB_ARKUI_NODE_TEXT_STROKE_JOIN_STYLE_1100
+     * @tc.desc   Test NODE_TEXT_STROKE_JOIN_STYLE setAttribute with OH_ARKUI_STROKE_JOIN_STYLE_MITER_JOIN enum constant
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_NODE_TEXT_STROKE_JOIN_STYLE_1100', Level.LEVEL1, async () => {
+      console.info('SUB_ARKUI_NODE_TEXT_STROKE_JOIN_STYLE_1100 START');
+      expect(nativeFunc.TextStrokeTest_031()).assertEqual(0)
+      console.info('SUB_ARKUI_NODE_TEXT_STROKE_JOIN_STYLE_1100 END');
+    });
+
+    /**
+     * @tc.name   SUB_ARKUI_NODE_TEXT_STROKE_JOIN_STYLE_1200
+     * @tc.number SUB_ARKUI_NODE_TEXT_STROKE_JOIN_STYLE_1200
+     * @tc.desc   Test NODE_TEXT_STROKE_JOIN_STYLE setAttribute with OH_ARKUI_STROKE_JOIN_STYLE_ROUND_JOIN enum constant
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_NODE_TEXT_STROKE_JOIN_STYLE_1200', Level.LEVEL1, async () => {
+      console.info('SUB_ARKUI_NODE_TEXT_STROKE_JOIN_STYLE_1200 START');
+      expect(nativeFunc.TextStrokeTest_032()).assertEqual(0)
+      console.info('SUB_ARKUI_NODE_TEXT_STROKE_JOIN_STYLE_1200 END');
+    });
+
+    /**
+     * @tc.name   SUB_ARKUI_NODE_TEXT_STROKE_JOIN_STYLE_1300
+     * @tc.number SUB_ARKUI_NODE_TEXT_STROKE_JOIN_STYLE_1300
+     * @tc.desc   Test NODE_TEXT_STROKE_JOIN_STYLE setAttribute with OH_ARKUI_STROKE_JOIN_STYLE_BEVEL_JOIN enum constant
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_NODE_TEXT_STROKE_JOIN_STYLE_1300', Level.LEVEL1, async () => {
+      console.info('SUB_ARKUI_NODE_TEXT_STROKE_JOIN_STYLE_1300 START');
+      expect(nativeFunc.TextStrokeTest_033()).assertEqual(0)
+      console.info('SUB_ARKUI_NODE_TEXT_STROKE_JOIN_STYLE_1300 END');
+    });
+
+    /**
+     * @tc.name   SUB_ARKUI_NODE_TEXT_STROKE_JOIN_STYLE_1400
+     * @tc.number SUB_ARKUI_NODE_TEXT_STROKE_JOIN_STYLE_1400
+     * @tc.desc   Test NODE_TEXT_STROKE_JOIN_STYLE setAttribute MITER_JOIN then change to ROUND_JOIN
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_ARKUI_NODE_TEXT_STROKE_JOIN_STYLE_1400', Level.LEVEL2, async () => {
+      console.info('SUB_ARKUI_NODE_TEXT_STROKE_JOIN_STYLE_1400 START');
+      expect(nativeFunc.TextStrokeTest_034()).assertEqual(0)
+      console.info('SUB_ARKUI_NODE_TEXT_STROKE_JOIN_STYLE_1400 END');
+    });
+
+    /**
+     * @tc.name   SUB_ARKUI_NODE_TEXT_STROKE_JOIN_STYLE_1500
+     * @tc.number SUB_ARKUI_NODE_TEXT_STROKE_JOIN_STYLE_1500
+     * @tc.desc   Test NODE_TEXT_STROKE_JOIN_STYLE setAttribute ROUND_JOIN then change to BEVEL_JOIN
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_ARKUI_NODE_TEXT_STROKE_JOIN_STYLE_1500', Level.LEVEL2, async () => {
+      console.info('SUB_ARKUI_NODE_TEXT_STROKE_JOIN_STYLE_1500 START');
+      expect(nativeFunc.TextStrokeTest_035()).assertEqual(0)
+      console.info('SUB_ARKUI_NODE_TEXT_STROKE_JOIN_STYLE_1500 END');
+    });
+
+    /**
+     * @tc.name   SUB_ARKUI_NODE_TEXT_STROKE_JOIN_STYLE_1600
+     * @tc.number SUB_ARKUI_NODE_TEXT_STROKE_JOIN_STYLE_1600
+     * @tc.desc   Test NODE_TEXT_STROKE_JOIN_STYLE setAttribute BEVEL_JOIN then change to MITER_JOIN
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_ARKUI_NODE_TEXT_STROKE_JOIN_STYLE_1600', Level.LEVEL2, async () => {
+      console.info('SUB_ARKUI_NODE_TEXT_STROKE_JOIN_STYLE_1600 START');
+      expect(nativeFunc.TextStrokeTest_036()).assertEqual(0)
+      console.info('SUB_ARKUI_NODE_TEXT_STROKE_JOIN_STYLE_1600 END');
+    });
+
+    /**
+     * @tc.name   SUB_ARKUI_NODE_TEXT_STROKE_JOIN_STYLE_1700
+     * @tc.number SUB_ARKUI_NODE_TEXT_STROKE_JOIN_STYLE_1700
+     * @tc.desc   Test NODE_TEXT_STROKE_JOIN_STYLE setAttribute MITER_JOIN twice and verify value unchanged
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_ARKUI_NODE_TEXT_STROKE_JOIN_STYLE_1700', Level.LEVEL2, async () => {
+      console.info('SUB_ARKUI_NODE_TEXT_STROKE_JOIN_STYLE_1700 START');
+      expect(nativeFunc.TextStrokeTest_037()).assertEqual(0)
+      console.info('SUB_ARKUI_NODE_TEXT_STROKE_JOIN_STYLE_1700 END');
+    });
+
+    /**
+     * @tc.name   SUB_ARKUI_NODE_TEXT_STROKE_JOIN_STYLE_1800
+     * @tc.number SUB_ARKUI_NODE_TEXT_STROKE_JOIN_STYLE_1800
+     * @tc.desc   Test NODE_TEXT_STROKE_JOIN_STYLE setAttribute cycling through all three enum values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_ARKUI_NODE_TEXT_STROKE_JOIN_STYLE_1800', Level.LEVEL3, async () => {
+      console.info('SUB_ARKUI_NODE_TEXT_STROKE_JOIN_STYLE_1800 START');
+      expect(nativeFunc.TextStrokeTest_038()).assertEqual(0)
+      console.info('SUB_ARKUI_NODE_TEXT_STROKE_JOIN_STYLE_1800 END');
+    });
   });
 }
