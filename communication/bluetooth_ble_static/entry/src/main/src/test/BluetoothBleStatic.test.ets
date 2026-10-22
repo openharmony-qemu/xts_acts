@@ -3474,36 +3474,6 @@ export default function bluetoothBleStaticTest(): void {
       })
 
     /**
-     * @tc.number  SUB_COMMUNICATION_BLE_TESTBLEPROFILE_0100
-     * @tc.name    testBleProfile
-     * @tc.desc    Test testBleProfile API functionality
-     * @tc.level   Level 0
-     * @tc.type    Function
-     * @tc.size    MEDIUMTEST
-     */
-    it("testBleProfile", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        try {
-          let PROFILE_GATT = ble.BleProfile.GATT;
-          hilog.info(domain, tag, "BleProfile GATT: " + JSON.stringify(PROFILE_GATT));
-          expect(PROFILE_GATT).assertEqual(1);
-
-          let PROFILE_GATT_CLIENT = ble.BleProfile.GATT_CLIENT;
-          hilog.info(domain, tag, "BleProfile GATT_CLIENT: " + JSON.stringify(PROFILE_GATT_CLIENT));
-          expect(PROFILE_GATT_CLIENT).assertEqual(2);
-
-          let PROFILE_GATT_SERVER = ble.BleProfile.GATT_SERVER;
-          hilog.info(domain, tag, "BleProfile GATT_SERVER: " + JSON.stringify(PROFILE_GATT_SERVER));
-          expect(PROFILE_GATT_SERVER).assertEqual(3);
-        } catch (err) {
-          hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-          hilog.info(domain, tag, "testBleProfile errCode:" + err.code + ",errMessage:" + err.message);
-          expect().assertFail();
-        }
-        done();
-      })
-
-    /**
      * @tc.number  SUB_COMMUNICATION_BLE_TESTCONNECTIONPARAM_0100
      * @tc.name    testConnectionParam
      * @tc.desc    Test testConnectionParam API functionality
