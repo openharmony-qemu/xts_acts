@@ -37,6 +37,24 @@ export default function abilityTest() {
         })
 
         /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ENUM_ERR_CODE_ERR_CODE_SERVICE_NOT_RUNNING_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ENUM_ERR_CODE_ERR_CODE_SERVICE_NOT_RUNNING_STATIC_0100
+         * @tc.desc   Testing get error code
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+         it('SUB_MULTIMEDIA_AVSESSION_ENUM_ERR_CODE_ERR_CODE_SERVICE_NOT_RUNNING_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let err_code: avSession.AVSessionErrorCode =
+                avSession.AVSessionErrorCode.ERR_CODE_SERVICE_NOT_RUNNING
+            if (err_code != 6700101) {
+                console.info("ERR_CODE_SERVICE_NOT_RUNNING", err_code);
+                expect(false).assertTrue();
+            }
+            done();
+         })
+
+        /**
          * @tc.name   SUB_MULTIMEDIA_AVSESSION_CONNECTION_STATE_ENUM_STATIC_0100
          * @tc.number SUB_MULTIMEDIA_AVSESSION_CONNECTION_STATE_ENUM_STATIC_0100
          * @tc.desc   compare all value in ConnectionState to number value
