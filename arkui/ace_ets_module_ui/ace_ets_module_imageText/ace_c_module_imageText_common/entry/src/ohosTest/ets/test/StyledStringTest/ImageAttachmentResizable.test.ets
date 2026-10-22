@@ -118,5 +118,41 @@ export default function ImageAttachmentResizableTest() {
     it('SUB_ARKUI_OH_ArkUI_ImageAttachment_SetResizableLattice_0900', Level.LEVEL2, async () => {
       expect(nativeFunc.ImageAttachmentResizableTest_009()).assertEqual(0)
     });
+
+    /**
+     * @tc.name   SUB_ARKUI_OH_ArkUI_ImageAttachment_GetResizableLattice_1000
+     * @tc.number SUB_ARKUI_OH_ArkUI_ImageAttachment_GetResizableLattice_1000
+     * @tc.desc   Test GetResizableLattice via Set->Get->Set->Get round-trip returns NO_ERROR and lattice non-null
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_OH_ArkUI_ImageAttachment_GetResizableLattice_1000', Level.LEVEL1, async () => {
+      expect(nativeFunc.ImageAttachmentResizableTest_010()).assertEqual(0)
+    });
+
+    /**
+     * @tc.name   SUB_ARKUI_OH_ArkUI_ImageAttachment_GetResizableLattice_1100
+     * @tc.number SUB_ARKUI_OH_ArkUI_ImageAttachment_GetResizableLattice_1100
+     * @tc.desc   Test GetResizableLattice nullptr attachment returns PARAM_INVALID
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_ARKUI_OH_ArkUI_ImageAttachment_GetResizableLattice_1100', Level.LEVEL2, async () => {
+      expect(nativeFunc.ImageAttachmentResizableTest_011()).assertEqual(0)
+    });
+
+    /**
+     * @tc.name   SUB_ARKUI_OH_ArkUI_ImageAttachment_GetResizableLattice_1200
+     * @tc.number SUB_ARKUI_OH_ArkUI_ImageAttachment_GetResizableLattice_1200
+     * @tc.desc   Test GetResizableLattice nullptr lattice returns PARAM_INVALID
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_ARKUI_OH_ArkUI_ImageAttachment_GetResizableLattice_1200', Level.LEVEL2, async () => {
+      expect(nativeFunc.ImageAttachmentResizableTest_012()).assertEqual(0)
+    });
   });
 }
