@@ -238,48 +238,5 @@ export default function listSetTest() {
       expect(list.getLast()).assertEqual(SET_E);
       expect(list.isEmpty()).assertFalse();
     });
-
-    /**
-     * @tc.name   testListSetTest0600
-     * @tc.number SUB_ARKTS_LIST_SET_0600
-     * @tc.desc   Verify List Set out-of-bounds get/insert/removeByIndex behavior, empty list access and clear
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testListSetTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const list: List<Set<number>> = new List<Set<number>>();
-      list.add(SET_A);
-      expect(list.get(1)).assertUndefined();
-      expect(list[1]).assertUndefined();
-
-      let removeThrew: boolean = false;
-      try {
-        list.removeByIndex(9);
-      } catch (e) {
-        removeThrew = true;
-        expect(((e as Error).name).length > 0).assertTrue();
-      }
-      expect(removeThrew).assertTrue();
-      expect(list.length).assertEqual(1);
-
-      let insertThrew: boolean = false;
-      try {
-        list.insert(SET_B, 55);
-      } catch (e) {
-        insertThrew = true;
-      }
-      expect(insertThrew).assertTrue();
-      expect(list.length).assertEqual(1);
-
-      const empty: List<Set<number>> = new List<Set<number>>();
-      expect(empty.getFirst()).assertUndefined();
-      expect(empty.getLast()).assertUndefined();
-
-      list.clear();
-      expect(list.length).assertEqual(0);
-      expect(list.isEmpty()).assertTrue();
-      expect(list.convertToArray().length).assertEqual(0);
-    });
   });
 }

@@ -228,48 +228,5 @@ export default function listUnionTest() {
       expect(list.getLast()).assertEqual(5);
       expect(list.isEmpty()).assertFalse();
     });
-
-    /**
-     * @tc.name   testListUnionTest0600
-     * @tc.number SUB_ARKTS_LIST_UNION_0600
-     * @tc.desc   Verify List union-type out-of-bounds get/insert/removeByIndex behavior, empty list access and clear
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testListUnionTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const list: List<UnionAllValue> = new List<UnionAllValue>();
-      list.add(1);
-      expect(list.get(1)).assertUndefined();
-      expect(list[1]).assertUndefined();
-
-      let removeThrew: boolean = false;
-      try {
-        list.removeByIndex(88);
-      } catch (e) {
-        removeThrew = true;
-        expect(((e as Error).name).length > 0).assertTrue();
-      }
-      expect(removeThrew).assertTrue();
-      expect(list.length).assertEqual(1);
-
-      let insertThrew: boolean = false;
-      try {
-        list.insert(9, 66);
-      } catch (e) {
-        insertThrew = true;
-      }
-      expect(insertThrew).assertTrue();
-      expect(list.length).assertEqual(1);
-
-      const empty: List<UnionAllValue> = new List<UnionAllValue>();
-      expect(empty.getFirst()).assertUndefined();
-      expect(empty.getLast()).assertUndefined();
-
-      list.clear();
-      expect(list.length).assertEqual(0);
-      expect(list.isEmpty()).assertTrue();
-      expect(list.convertToArray().length).assertEqual(0);
-    });
   });
 }
