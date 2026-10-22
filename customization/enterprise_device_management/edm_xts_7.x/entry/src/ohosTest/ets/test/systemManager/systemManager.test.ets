@@ -41,6 +41,8 @@ export default function systemManagerTest() {
     testStartExactTimer();
     testStopExactTimer();
     testDestroyExactTimer();
+    testSetVolumeDegree();
+    testGetVolumeDegree();
   })
 }
 
@@ -3682,6 +3684,364 @@ function testDestroyExactTimer() {
           console.info('destroyExactTimer failed: ' + JSON.stringify(e));
         }
       }
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+}
+
+function testSetVolumeDegree() {
+  /**
+   * @tc.name   test_set_volume_degree_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_VOLUME_DEGREE_JS_0001
+   * @tc.desc   test systemManager setVolumeDegree without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_volume_degree_0001", Level.LEVEL2, async (done: Function) => {
+    try {
+      systemManager.setVolumeDegree(systemManager.AudioVolumeType.STREAM_MUSIC, 50);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 9200001).assertTrue();
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_volume_degree_0002
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_VOLUME_DEGREE_JS_0002
+   * @tc.desc   test systemManager setVolumeDegree with normal admin without permission
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_volume_degree_0002", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      systemManager.setVolumeDegree(systemManager.AudioVolumeType.STREAM_MUSIC, 50);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 9200002).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_volume_degree_0003
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_VOLUME_DEGREE_JS_0003
+   * @tc.desc   test systemManager setVolumeDegree with invalid volumeType 0
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_volume_degree_0003", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      systemManager.setVolumeDegree(0, 50);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 9200012).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_volume_degree_0004
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_VOLUME_DEGREE_JS_0004
+   * @tc.desc   test systemManager setVolumeDegree with invalid volumeType 2
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_volume_degree_0004", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      systemManager.setVolumeDegree(2, 50);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 9200012).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_volume_degree_0005
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_VOLUME_DEGREE_JS_0005
+   * @tc.desc   test systemManager setVolumeDegree with invalid degree -1
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_volume_degree_0005", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      systemManager.setVolumeDegree(systemManager.AudioVolumeType.STREAM_MUSIC, -1);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 9200012).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_volume_degree_0006
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_VOLUME_DEGREE_JS_0006
+   * @tc.desc   test systemManager setVolumeDegree with invalid degree 101
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_volume_degree_0006", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      systemManager.setVolumeDegree(systemManager.AudioVolumeType.STREAM_MUSIC, 101);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 9200012).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_volume_degree_0007
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_VOLUME_DEGREE_JS_0007
+   * @tc.desc   test systemManager setVolumeDegree success
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_volume_degree_0007", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let degree: number = 50;
+      systemManager.setVolumeDegree(systemManager.AudioVolumeType.STREAM_MUSIC, degree);
+      let result: number = systemManager.getVolumeDegree(systemManager.AudioVolumeType.STREAM_MUSIC);
+      expect(result === degree).assertTrue();
+    } catch (error) {
+      expect(false).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_volume_degree_0008
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_VOLUME_DEGREE_JS_0008
+   * @tc.desc   test systemManager setVolumeDegree with null volumeType
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_volume_degree_0008", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      systemManager.setVolumeDegree(null, 50);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_volume_degree_0009
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_VOLUME_DEGREE_JS_0009
+   * @tc.desc   test systemManager setVolumeDegree with undefined volumeType
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_volume_degree_0009", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      systemManager.setVolumeDegree(undefined, 50);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_volume_degree_0010
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_VOLUME_DEGREE_JS_0010
+   * @tc.desc   test systemManager setVolumeDegree with null degree
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_volume_degree_0010", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      systemManager.setVolumeDegree(systemManager.AudioVolumeType.STREAM_MUSIC, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_volume_degree_0011
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_VOLUME_DEGREE_JS_0011
+   * @tc.desc   test systemManager setVolumeDegree with undefined degree
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_volume_degree_0011", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      systemManager.setVolumeDegree(systemManager.AudioVolumeType.STREAM_MUSIC, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+}
+
+function testGetVolumeDegree() {
+  /**
+   * @tc.name   test_get_volume_degree_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_VOLUME_DEGREE_JS_0001
+   * @tc.desc   test systemManager getVolumeDegree without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_volume_degree_0001", Level.LEVEL2, async (done: Function) => {
+    try {
+      systemManager.getVolumeDegree(systemManager.AudioVolumeType.STREAM_MUSIC);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 9200001).assertTrue();
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_volume_degree_0002
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_VOLUME_DEGREE_JS_0002
+   * @tc.desc   test systemManager getVolumeDegree with normal admin without permission
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_volume_degree_0002", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      systemManager.getVolumeDegree(systemManager.AudioVolumeType.STREAM_MUSIC);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 9200002).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_volume_degree_0003
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_VOLUME_DEGREE_JS_0003
+   * @tc.desc   test systemManager getVolumeDegree with invalid volumeType 0
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_volume_degree_0003", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      systemManager.getVolumeDegree(0);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 9200012).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_volume_degree_0004
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_VOLUME_DEGREE_JS_0004
+   * @tc.desc   test systemManager getVolumeDegree success
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_volume_degree_0004", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let result: number = systemManager.getVolumeDegree(systemManager.AudioVolumeType.STREAM_MUSIC);
+      expect(typeof result).assertEqual('number');
+      expect(result >= 0 && result <= 100).assertTrue();
+    } catch (error) {
+      expect(false).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_volume_degree_0005
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_VOLUME_DEGREE_JS_0005
+   * @tc.desc   test systemManager getVolumeDegree with null volumeType
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_volume_degree_0005", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      systemManager.getVolumeDegree(null);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_volume_degree_0006
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_VOLUME_DEGREE_JS_0006
+   * @tc.desc   test systemManager getVolumeDegree with undefined volumeType
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_volume_degree_0006", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      systemManager.getVolumeDegree(undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 401).assertTrue();
+    } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
     done();
