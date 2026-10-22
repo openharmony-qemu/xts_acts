@@ -2944,5 +2944,60 @@ export default function atomicsCompareExchangeTest() {
       expect(cleanupRan).assertEqual(true); // Cleanup executed
     });
 
+    /**
+     * @tc.name   testAtomicsCompareExchange0101
+     * @tc.number SUB_BUILTINS_Atomics_compareExchange_TEST_0100
+     * @tc.desc   Test compareExchange BigInt64Array and BigUint64Array bigint overload
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testAtomicsCompareExchange0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const sab64 = new SharedArrayBuffer(16);
+      const i64 = new BigInt64Array(sab64);
+      i64[0] = BigInt(5);
+      const old1 = Atomics.compareExchange(i64, 0, BigInt(5), BigInt(10));
+      expect(old1).assertEqual(BigInt(5));
+      expect(i64[0]).assertEqual(BigInt(10));
+      const old2 = Atomics.compareExchange(i64, 0, BigInt(5), BigInt(20));
+      expect(old2).assertEqual(BigInt(10));
+      expect(i64[0]).assertEqual(BigInt(10));
+      expect(typeof old1).assertEqual('bigint');
+
+      const sabU64 = new SharedArrayBuffer(8);
+      const u64 = new BigUint64Array(sabU64);
+      u64[0] = BigInt(100);
+      const old3 = Atomics.compareExchange(u64, 0, BigInt(100), BigInt(200));
+      expect(old3).assertEqual(BigInt(100));
+      expect(u64[0]).assertEqual(BigInt(200));
+    });
+
+    /**
+     * @tc.name   testAtomicsCompareExchange0102
+     * @tc.number SUB_BUILTINS_Atomics_compareExchange_TEST_0200
+     * @tc.desc   Test compareExchange NaN expected and replacement are converted to 0 for Int32Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testAtomicsCompareExchange0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const sab = new SharedArrayBuffer(4);
+      const ia = new Int32Array(sab);
+      ia[0] = 42;
+      const r1 = Atomics.compareExchange(ia, 0, NaN, 1);
+      expect(r1).assertEqual(42);
+      expect(ia[0]).assertEqual(42);
+
+      ia[0] = 0;
+      const r2 = Atomics.compareExchange(ia, 0, NaN, 7);
+      expect(r2).assertEqual(0);
+      expect(ia[0]).assertEqual(7);
+
+      ia[0] = 0;
+      const r3 = Atomics.compareExchange(ia, 0, 0, NaN);
+      expect(r3).assertEqual(0);
+      expect(ia[0]).assertEqual(0);
+    });
+
   })
 }

@@ -58,7 +58,7 @@ export default function ProcessBoundaryTest() {
           expect().assertFail();
         } catch (error) {
           console.info(`${caseName}, expected error with null: ${error.message}`);
-          // error code 401 expect(error.code).assertEqual(401);
+          expect(error.code).assertEqual(401);
         }
         console.info(`${caseName}, test end`);
         Done();
@@ -82,7 +82,7 @@ export default function ProcessBoundaryTest() {
           expect().assertFail();
         } catch (error) {
           console.info(`${caseName}, expected error with undefined: ${error.message}`);
-          // error code 401 expect(error.code).assertEqual(401);
+          expect(error.code).assertEqual(401);
         }
         console.info(`${caseName}, test end`);
         Done();
@@ -133,7 +133,7 @@ export default function ProcessBoundaryTest() {
           expect().assertFail();
         } catch (error) {
           console.info(`${caseName}, expected error with null: ${error.message}`);
-          // error code 401 expect(error.code).assertEqual(401);
+          expect(error.code).assertEqual(401);
         }
         console.info(`${caseName}, test end`);
         Done();
@@ -157,7 +157,7 @@ export default function ProcessBoundaryTest() {
           expect().assertFail();
         } catch (error) {
           console.info(`${caseName}, expected error with undefined: ${error.message}`);
-          // error code 401 expect(error.code).assertEqual(401);
+          expect(error.code).assertEqual(401);
         }
         console.info(`${caseName}, test end`);
         Done();
@@ -183,7 +183,7 @@ export default function ProcessBoundaryTest() {
           expect().assertFail();
         } catch (error) {
           console.info(`${caseName}, expected error with null: ${error.message}`);
-          // error code 401 expect(error.code).assertEqual(401);
+          expect(error.code).assertEqual(401);
         }
         console.info(`${caseName}, test end`);
         Done();
@@ -207,7 +207,7 @@ export default function ProcessBoundaryTest() {
           expect().assertFail();
         } catch (error) {
           console.info(`${caseName}, expected error with undefined: ${error.message}`);
-          // error code 401 expect(error.code).assertEqual(401);
+          expect(error.code).assertEqual(401);
         }
         console.info(`${caseName}, test end`);
         Done();
@@ -233,7 +233,7 @@ export default function ProcessBoundaryTest() {
           expect().assertFail();
         } catch (error) {
           console.info(`${caseName}, expected error with null: ${error.message}`);
-          // error code 401 expect(error.code).assertEqual(401);
+          expect(error.code).assertEqual(401);
         }
         console.info(`${caseName}, test end`);
         Done();
@@ -257,7 +257,7 @@ export default function ProcessBoundaryTest() {
           expect().assertFail();
         } catch (error) {
           console.info(`${caseName}, expected error with undefined: ${error.message}`);
-          // error code 401 expect(error.code).assertEqual(401);
+          expect(error.code).assertEqual(401);
         }
         console.info(`${caseName}, test end`);
         Done();
@@ -309,7 +309,7 @@ export default function ProcessBoundaryTest() {
           expect().assertFail();
         } catch (error) {
           console.info(`${caseName}, expected error with null: ${error.message}`);
-          // error code 401 expect(error.code).assertEqual(401);
+          expect(error.code).assertEqual(401);
         }
         console.info(`${caseName}, test end`);
         Done();
@@ -333,7 +333,7 @@ export default function ProcessBoundaryTest() {
           expect().assertFail();
         } catch (error) {
           console.info(`${caseName}, expected error with undefined: ${error.message}`);
-          // error code 401 expect(error.code).assertEqual(401);
+          expect(error.code).assertEqual(401);
         }
         console.info(`${caseName}, test end`);
         Done();
@@ -383,7 +383,7 @@ export default function ProcessBoundaryTest() {
         expect().assertFail();
       } catch (error) {
         console.info(`${caseName}, error with undefined: ${error.message}`);
-        // error code 401 // error code 401 expect(error.code).assertEqual(401);
+        expect(error.code).assertEqual(401);
       }
       console.info(`${caseName}, test end`);
       Done();
@@ -992,16 +992,16 @@ export default function ProcessBoundaryTest() {
       });
 
     /**
-     * @tc.name   ProcessBoundaryTest_kill_006
+     * @tc.name   ProcessBoundaryTest_ProcessManager_kill_006
      * @tc.number SUB_PROCESS_BOUNDARY_TEST_KILL_0006
-     * @tc.desc   process.kill with signal boundary values 0,1,64,65 (range 1-64).
+     * @tc.desc   process.ProcessManager.kill with signal boundary values 0,1,64,65 (range 1-64).
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
-    it('ProcessBoundaryTest_kill_006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+    it('ProcessBoundaryTest_ProcessManager_kill_006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
-        const caseName = 'ProcessBoundaryTest_kill_006';
+        const caseName = 'ProcessBoundaryTest_ProcessManager_kill_006';
         console.info(`${caseName}, test start`);
         const signals: number[] = [0, 1, 64, 65];
         for (const sig of signals) {

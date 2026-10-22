@@ -217,5 +217,30 @@ export default function TimerSetIntervalTest() {
       Done();
     });
 
+    /**
+     * @tc.name   testTimerSetInterval0900
+     * @tc.number SUB_TIMER_SETINTERVAL_TEST_0900
+     * @tc.desc   test setInterval without required delay throws 401
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTimerSetInterval0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
+      const caseName = 'testTimerSetInterval0900';
+      console.info(`${caseName} test start`);
+      let code = 0;
+      const intervalFn = setInterval as (handler: Function) => number;
+      try {
+        intervalFn(() => {
+        });
+      } catch (err) {
+        code = err.code;
+        console.info(`${caseName} error code: ${code}, message: ${err.message}`);
+      }
+      expect(code).assertEqual(401);
+      console.info(`${caseName} test end`);
+      Done();
+    });
+
   })
 }
