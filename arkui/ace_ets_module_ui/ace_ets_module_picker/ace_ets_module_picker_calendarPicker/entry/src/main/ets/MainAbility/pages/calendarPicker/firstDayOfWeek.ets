@@ -68,6 +68,30 @@ struct CalendarPickerFirstDayOfWeekExample {
           .textStyle({ color: '#ff182431', font: { size: 20, weight: FontWeight.Normal } })
           .margin(10)
           .id('firstDayOfWeek008')
+
+        CalendarPicker({ hintRadius: 10, selected: this.selectedDate })
+          .firstDayOfWeek((-1) as ESObject as CalendarFirstDayOfWeek)
+          .textStyle({ color: '#ff182431', font: { size: 20, weight: FontWeight.Normal } })
+          .margin(10)
+          .id('firstDayOfWeek009')
+
+        CalendarPicker({ hintRadius: 10, selected: this.selectedDate })
+          .firstDayOfWeek(8 as ESObject as CalendarFirstDayOfWeek)
+          .textStyle({ color: '#ff182431', font: { size: 20, weight: FontWeight.Normal } })
+          .margin(10)
+          .id('firstDayOfWeek010')
+
+        CalendarPicker({ hintRadius: 10, selected: this.selectedDate })
+          .firstDayOfWeek(undefined as ESObject as CalendarFirstDayOfWeek)
+          .textStyle({ color: '#ff182431', font: { size: 20, weight: FontWeight.Normal } })
+          .margin(10)
+          .id('firstDayOfWeek011')
+
+        CalendarPicker({ hintRadius: 10, selected: this.selectedDate })
+          .firstDayOfWeek(null as ESObject as CalendarFirstDayOfWeek)
+          .textStyle({ color: '#ff182431', font: { size: 20, weight: FontWeight.Normal } })
+          .margin(10)
+          .id('firstDayOfWeek012')
       }.alignItems(HorizontalAlign.Center).width('100%')
     }.width('100%').margin({ top: 100 })
   }

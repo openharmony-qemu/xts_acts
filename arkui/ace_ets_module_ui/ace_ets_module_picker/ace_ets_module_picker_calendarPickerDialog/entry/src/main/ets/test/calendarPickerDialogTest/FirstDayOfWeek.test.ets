@@ -261,5 +261,113 @@ export default function calendarPickerDialogFirstDayOfWeekTest() {
         console.info('[CalendarPickerDialogFirstDayOfWeek_008] END');
         done();
       });
+
+    /**
+     * @tc.name   CalendarPickerDialogFirstDayOfWeek_009
+     * @tc.number SUB_ARKUI_ACE_ENGINE_CALENDAR_PICKER_DIALOG_FIRST_DAY_OF_WEEK_0900
+     * @tc.desc   Test firstDayOfWeek property with invalid value -1 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('CalendarPickerDialogFirstDayOfWeek_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        console.info('[CalendarPickerDialogFirstDayOfWeek_009] START');
+        let driver: Driver = Driver.create();
+        let button: Component = await driver.findComponent(ON.id('firstDayOfWeek009'));
+        await CommonFunc.sleep(300);
+        await button?.click();
+        await CommonFunc.sleep(2000);
+        let obj1: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
+        let obj: ESObject = obj1.$children[1].$children[0].$children[0];
+        console.info('[CalendarPickerDialogFirstDayOfWeek_009] firstDayOfWeek:' + obj.$attrs.firstDayOfWeek);
+        expect(obj.$attrs.firstDayOfWeek).assertEqual('CalendarFirstDayOfWeek.LOCAL');
+        let cancelButton: Component = await driver.findComponent(ON.text('取消'));
+        await CommonFunc.sleep(300);
+        await cancelButton?.click();
+        console.info('[CalendarPickerDialogFirstDayOfWeek_009] END');
+        done();
+      });
+
+    /**
+     * @tc.name   CalendarPickerDialogFirstDayOfWeek_010
+     * @tc.number SUB_ARKUI_ACE_ENGINE_CALENDAR_PICKER_DIALOG_FIRST_DAY_OF_WEEK_1000
+     * @tc.desc   Test firstDayOfWeek property with invalid value 8 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('CalendarPickerDialogFirstDayOfWeek_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        console.info('[CalendarPickerDialogFirstDayOfWeek_010] START');
+        let driver: Driver = Driver.create();
+        let button: Component = await driver.findComponent(ON.id('firstDayOfWeek010'));
+        await CommonFunc.sleep(300);
+        await button?.click();
+        await CommonFunc.sleep(2000);
+        let obj1: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
+        let obj: ESObject = obj1.$children[1].$children[0].$children[0];
+        console.info('[CalendarPickerDialogFirstDayOfWeek_010] firstDayOfWeek:' + obj.$attrs.firstDayOfWeek);
+        expect(obj.$attrs.firstDayOfWeek).assertEqual('CalendarFirstDayOfWeek.LOCAL');
+        let cancelButton: Component = await driver.findComponent(ON.text('取消'));
+        await CommonFunc.sleep(300);
+        await cancelButton?.click();
+        console.info('[CalendarPickerDialogFirstDayOfWeek_010] END');
+        done();
+      });
+
+    /**
+     * @tc.name   CalendarPickerDialogFirstDayOfWeek_011
+     * @tc.number SUB_ARKUI_ACE_ENGINE_CALENDAR_PICKER_DIALOG_FIRST_DAY_OF_WEEK_1100
+     * @tc.desc   Test firstDayOfWeek property with undefined value test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('CalendarPickerDialogFirstDayOfWeek_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        console.info('[CalendarPickerDialogFirstDayOfWeek_011] START');
+        let driver: Driver = Driver.create();
+        let button: Component = await driver.findComponent(ON.id('firstDayOfWeek011'));
+        await CommonFunc.sleep(300);
+        await button?.click();
+        await CommonFunc.sleep(2000);
+        let obj1: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
+        let obj: ESObject = obj1.$children[1].$children[0].$children[0];
+        console.info('[CalendarPickerDialogFirstDayOfWeek_011] firstDayOfWeek:' + obj.$attrs.firstDayOfWeek);
+        expect(obj.$attrs.firstDayOfWeek).assertEqual('CalendarFirstDayOfWeek.LOCAL');
+        let cancelButton: Component = await driver.findComponent(ON.text('取消'));
+        await CommonFunc.sleep(300);
+        await cancelButton?.click();
+        console.info('[CalendarPickerDialogFirstDayOfWeek_011] END');
+        done();
+      });
+
+    /**
+     * @tc.name   CalendarPickerDialogFirstDayOfWeek_012
+     * @tc.number SUB_ARKUI_ACE_ENGINE_CALENDAR_PICKER_DIALOG_FIRST_DAY_OF_WEEK_1200
+     * @tc.desc   Test firstDayOfWeek property with null value test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('CalendarPickerDialogFirstDayOfWeek_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        console.info('[CalendarPickerDialogFirstDayOfWeek_012] START');
+        let driver: Driver = Driver.create();
+        let button: Component = await driver.findComponent(ON.id('firstDayOfWeek012'));
+        await CommonFunc.sleep(300);
+        await button?.click();
+        await CommonFunc.sleep(2000);
+        let obj1: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
+        let obj: ESObject = obj1.$children[1].$children[0].$children[0];
+        console.info('[CalendarPickerDialogFirstDayOfWeek_012] firstDayOfWeek:' + obj.$attrs.firstDayOfWeek);
+        expect(obj.$attrs.firstDayOfWeek).assertEqual('CalendarFirstDayOfWeek.LOCAL');
+        let cancelButton: Component = await driver.findComponent(ON.text('取消'));
+        await CommonFunc.sleep(300);
+        await cancelButton?.click();
+        console.info('[CalendarPickerDialogFirstDayOfWeek_012] END');
+        done();
+      });
   })
 }

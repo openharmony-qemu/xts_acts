@@ -74,6 +74,21 @@ struct CalendarPickerFirstDayOfWeek {
         .firstDayOfWeek(CalendarFirstDayOfWeek.SUN)
         .margin(10)
         .id('calendarPicker008')
+
+      CalendarPicker({ hintRadius: 10, selected: this.selectedDate })
+        .firstDayOfWeek((-1) as ESObject as CalendarFirstDayOfWeek)
+        .margin(10)
+        .id('calendarPicker009')
+
+      CalendarPicker({ hintRadius: 10, selected: this.selectedDate })
+        .firstDayOfWeek(8 as ESObject as CalendarFirstDayOfWeek)
+        .margin(10)
+        .id('calendarPicker010')
+
+      CalendarPicker({ hintRadius: 10, selected: this.selectedDate })
+        .firstDayOfWeek(undefined as ESObject as CalendarFirstDayOfWeek)
+        .margin(10)
+        .id('calendarPicker011')
     }
     .width('100%')
     .height('100%')

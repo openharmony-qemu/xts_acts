@@ -191,5 +191,81 @@ export default function firstDayOfWeekTest() {
       console.info('[FirstDayOfWeekTest_008] END');
       done();
     });
+
+    /**
+     * @tc.name   FirstDayOfWeekTest_009
+     * @tc.number SUB_ARKUI_ACE_ENGINE_CALENDAR_PICKER_FIRST_DAY_OF_WEEK_0900
+     * @tc.desc   Test firstDayOfWeek property with invalid value -1 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('FirstDayOfWeekTest_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('[FirstDayOfWeekTest_009] START');
+      await Utils.sleep(1000);
+      let strJson = getInspectorByKey('firstDayOfWeek009');
+      let obj: ESObject = JSON.parse(strJson);
+      console.info('[FirstDayOfWeekTest_009] firstDayOfWeek:' + obj.$attrs.firstDayOfWeek);
+      expect(obj.$attrs.firstDayOfWeek).assertEqual('CalendarFirstDayOfWeek.LOCAL');
+      console.info('[FirstDayOfWeekTest_009] END');
+      done();
+    });
+
+    /**
+     * @tc.name   FirstDayOfWeekTest_010
+     * @tc.number SUB_ARKUI_ACE_ENGINE_CALENDAR_PICKER_FIRST_DAY_OF_WEEK_1000
+     * @tc.desc   Test firstDayOfWeek property with invalid value 8 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('FirstDayOfWeekTest_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('[FirstDayOfWeekTest_010] START');
+      await Utils.sleep(1000);
+      let strJson = getInspectorByKey('firstDayOfWeek010');
+      let obj: ESObject = JSON.parse(strJson);
+      console.info('[FirstDayOfWeekTest_010] firstDayOfWeek:' + obj.$attrs.firstDayOfWeek);
+      expect(obj.$attrs.firstDayOfWeek).assertEqual('CalendarFirstDayOfWeek.LOCAL');
+      console.info('[FirstDayOfWeekTest_010] END');
+      done();
+    });
+
+    /**
+     * @tc.name   FirstDayOfWeekTest_011
+     * @tc.number SUB_ARKUI_ACE_ENGINE_CALENDAR_PICKER_FIRST_DAY_OF_WEEK_1100
+     * @tc.desc   Test firstDayOfWeek property with undefined value test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('FirstDayOfWeekTest_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('[FirstDayOfWeekTest_011] START');
+      await Utils.sleep(1000);
+      let strJson = getInspectorByKey('firstDayOfWeek011');
+      let obj: ESObject = JSON.parse(strJson);
+      console.info('[FirstDayOfWeekTest_011] firstDayOfWeek:' + obj.$attrs.firstDayOfWeek);
+      expect(obj.$attrs.firstDayOfWeek).assertEqual('CalendarFirstDayOfWeek.LOCAL');
+      console.info('[FirstDayOfWeekTest_011] END');
+      done();
+    });
+
+    /**
+     * @tc.name   FirstDayOfWeekTest_012
+     * @tc.number SUB_ARKUI_ACE_ENGINE_CALENDAR_PICKER_FIRST_DAY_OF_WEEK_1200
+     * @tc.desc   Test firstDayOfWeek property with null value test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('FirstDayOfWeekTest_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('[FirstDayOfWeekTest_012] START');
+      await Utils.sleep(1000);
+      let strJson = getInspectorByKey('firstDayOfWeek012');
+      let obj: ESObject = JSON.parse(strJson);
+      console.info('[FirstDayOfWeekTest_012] firstDayOfWeek:' + obj.$attrs.firstDayOfWeek);
+      expect(obj.$attrs.firstDayOfWeek).assertEqual('CalendarFirstDayOfWeek.LOCAL');
+      console.info('[FirstDayOfWeekTest_012] END');
+      done();
+    });
   })
 }
