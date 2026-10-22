@@ -67,11 +67,14 @@ async function dumpAndCheckMtEvent(
     testNapi.saveMainEnv();
     testNapi.createSubEnv();
     testNapi.add(2, 3);
-    testNapi.destroyEnv();
-    await sleep(4000);
+    const deadline: number = Date.now() + 5000;
+    while (matchedEvents.length === 0 && Date.now() < deadline) {
+      await sleep(200);
+    }
     expect(matchedEvents.length).assertLarger(0);
     return matchedEvents;
   } finally {
+    try { testNapi.destroyEnv(); } catch (e) { }
     hiAppEvent.removeWatcher(watcher);
   }
 }
@@ -3579,8 +3582,11 @@ export default function utilTest() {
         interval: 0
       };
       util.ArkTSVM.setMultithreadingDetectionEnabled(true, options);
-      await dumpAndCheckMtEvent('testSetMultithreadingDetectionEnabled0002', 'ARKTS_ENVSAN');
-      util.ArkTSVM.setMultithreadingDetectionEnabled(false);
+      try {
+        await dumpAndCheckMtEvent('testSetMultithreadingDetectionEnabled0002', 'ARKTS_ENVSAN');
+      } finally {
+        util.ArkTSVM.setMultithreadingDetectionEnabled(false);
+      }
       done();
     });
 

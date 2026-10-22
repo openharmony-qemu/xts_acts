@@ -38,9 +38,9 @@
            bundle.getInstalledBundleList(bundleFlags).then((data: Array<bundle.BundleInfo>) => {
              console.info('getInstalledBundleList successfully. Data: ' + JSON.stringify(data));
              expect(data.length).assertLarger(0);
-             let target:bundle.BundleInfo | undefined = data.find((item) => item.name === "com.acts.bundle.stage");
+             let target:bundle.BundleInfo | undefined = data.find((item) => item.name === "ohos.acts.bundlemanagererrcode.test.static");
              console.info('getInstalledBundleList target ===>' + JSON.stringify(target));
-             expect(target?.name).assertEqual("com.acts.bundle.stage");
+             expect(target?.name).assertEqual("ohos.acts.bundlemanagererrcode.test.static");
              expect(target?.versionCode).assertLarger(0);
              expect(target?.versionName?.length).assertLarger(0);
              expect(target?.vendor).assertEqual("example");
@@ -93,9 +93,9 @@
            bundle.getInstalledBundleList(bundleFlags).then((data: Array<bundle.BundleInfo>) => {
              console.info('getInstalledBundleList2 successfully. Data: ' + JSON.stringify(data));
              expect(data.length).assertLarger(0);
-             let target:bundle.BundleInfo|undefined = data.find((item) => item.name === "com.acts.bundle.stage");
+             let target:bundle.BundleInfo|undefined = data.find((item) => item.name === "ohos.acts.bundlemanagererrcode.test.static");
              console.info('getInstalledBundleList2 target ===>' + JSON.stringify(target));
-             expect(target?.name).assertEqual("com.acts.bundle.stage");
+             expect(target?.name).assertEqual("ohos.acts.bundlemanagererrcode.test.static");
              expect(target?.versionCode).assertLarger(0);
              expect(target?.versionName?.length).assertLarger(0);
              expect(target?.buildVersion).assertEqual("");
@@ -112,7 +112,7 @@
              expect(target?.appIndex).assertEqual(0);
              expect(target?.vendor).assertEqual("example");
              let appInfo:bundle.ApplicationInfo | undefined | null = target?.appInfo
-             expect(appInfo?.name).assertEqual('com.acts.bundle.stage');
+             expect(appInfo?.name).assertEqual('ohos.acts.bundlemanagererrcode.test.static');
              expect(appInfo?.bundleType).assertEqual(bundle.BundleType.APP);
              expect(appInfo?.debug).assertFalse();
              expect(appInfo?.description).assertEqual("$string:description_application");
@@ -120,18 +120,18 @@
              expect(appInfo?.enabled).assertEqual(true);
              expect(appInfo?.label).assertEqual('$string:app_name');
              expect(appInfo?.labelId).assertLarger(0);
-             expect(appInfo?.process).assertEqual("com.acts.bundle.stage");
+             expect(appInfo?.process).assertEqual("ohos.acts.bundlemanagererrcode.test.static");
              expect((appInfo?.permissions as Array<string>).length == 0).assertTrue();
-             expect(appInfo?.codePath).assertEqual("/data/app/el1/bundle/public/com.acts.bundle.stage");
+             expect(appInfo?.codePath).assertEqual("/data/app/el1/bundle/public/ohos.acts.bundlemanagererrcode.test.static");
              expect((appInfo?.metadataArray as Array<bundle.ModuleMetadata>).length == 0).assertTrue();
              expect(appInfo?.removable).assertTrue();
              expect(appInfo?.accessTokenId).assertLarger(0);
              expect(appInfo?.uid).assertLarger(0);
-             expect(appInfo?.iconResource?.bundleName).assertEqual('com.acts.bundle.stage');
+             expect(appInfo?.iconResource?.bundleName).assertEqual('ohos.acts.bundlemanagererrcode.test.static');
              expect(appInfo?.iconResource?.moduleName).assertEqual('phone');
              expect(appInfo?.iconResource?.id).assertLarger(0);
              expect(appInfo?.labelResource?.id).assertLarger(0);
-             expect(appInfo?.labelResource?.bundleName).assertEqual('com.acts.bundle.stage');
+             expect(appInfo?.labelResource?.bundleName).assertEqual('ohos.acts.bundlemanagererrcode.test.static');
              expect(appInfo?.labelResource?.moduleName).assertEqual('phone');
              expect(appInfo?.appDistributionType).assertEqual('os_integration');
              expect(appInfo?.appProvisionType).assertEqual('release');

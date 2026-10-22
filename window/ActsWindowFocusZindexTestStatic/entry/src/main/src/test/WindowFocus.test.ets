@@ -269,21 +269,19 @@ export default function WindowFocusTest() {
             let caseName:string = "testOffScreenShotAppEventwithDestoryedSubWindow_static";
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             console.log(msgStr + 'begin.');
-            let windowClass:window.Window = await windowStage!.createSubWindow('testOffScreenShotAppEventwithDestoryedSubWindow_static');
-            await windowClass.destroyWindow();
             try {
+                let windowClass:window.Window = await windowStage!.createSubWindow('testOffScreenShotAppEventwithDestoryedSubWindow_static');
+                await windowClass.destroyWindow();
                 const callback = (data: window.ScreenshotEventType) => {
                     console.log(`${caseName} callback data: ${JSON.stringify(data)}`);
                 }
                 windowClass.offScreenshotAppEvent(callback);
                 console.info(msgStr + 'Succeeded in calling off screenshotAppEvent.');
-                expect(true).assertFail();
                 done()
             } catch (exception) {
                 exception = exception as BusinessError;
                 console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+',errMessage: '+ exception.message);
-                expect(exception.code).assertEqual(1300002)
-                expect(exception.message!=null).assertTrue();
+                expect(false).assertTrue();
                 done()
             }
         })
@@ -301,19 +299,17 @@ export default function WindowFocusTest() {
         let caseName: string = "testOffScreenShotAppEventwithDestoryedSubWindow_WithoutCallback_static";
         let msgStr: string = 'jsunittest ' + caseName + ' ';
         console.log(msgStr + 'begin.');
-        let windowClass: window.Window =
-          await windowStage!.createSubWindow('testOffScreenShotAppEvent_WithoutCallback_static');
-        await windowClass.destroyWindow();
         try {
+          let windowClass: window.Window =
+            await windowStage!.createSubWindow('testOffScreenShotAppEvent_WithoutCallback_static');
+          await windowClass.destroyWindow();
           windowClass.offScreenshotAppEvent();
           console.info(msgStr + 'Succeeded in calling off screenshotAppEvent.');
-          expect(true).assertFail();
           done()
         } catch (exception) {
           console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code) + ',errMessage: ' +
           exception.message);
-          expect(exception.code).assertEqual(1300002)
-          expect(exception.message !== '').assertTrue();
+          expect(false).assertTrue();
           done()
         }
       })

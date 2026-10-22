@@ -35,7 +35,7 @@ export default function SparseArrayCopyWithinTest(): void {
      * @tc.desc Test SparseArray.copyWithin, verify method result (arr instanceof SparseArray is true, arr.length equals 5)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayCopyWithin001', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3, 4, 5)
@@ -55,7 +55,7 @@ export default function SparseArrayCopyWithinTest(): void {
      * @tc.desc copyWithin(2,0,2) on [3,4,5], verify index 2 receives value from index 0
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayCopyWithin002', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(3, 4, 5);
@@ -70,7 +70,7 @@ export default function SparseArrayCopyWithinTest(): void {
      * @tc.desc Test SparseArray.copyWithin, verify method result (arr instanceof SparseArray is true, arr[0] equals 3)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayCopyWithin003', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3, 4, 5)
@@ -87,7 +87,7 @@ export default function SparseArrayCopyWithinTest(): void {
      * @tc.desc copyWithin(0,3,4) on [1,2,3,4,5], verify returns this, length unchanged, arr[0]=4
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayCopyWithin004', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
@@ -110,7 +110,7 @@ export default function SparseArrayCopyWithinTest(): void {
      * @tc.desc copyWithin on empty array: (0) and (0, MAX_INT) leave length 0
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayCopyWithin005', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>()
@@ -128,7 +128,7 @@ export default function SparseArrayCopyWithinTest(): void {
      * @tc.desc copyWithin(1,0,1) on [4,2,4], verify index 1 receives value from index 0
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayCopyWithin006', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(4, 2, 4);
@@ -143,7 +143,7 @@ export default function SparseArrayCopyWithinTest(): void {
      * @tc.desc copyWithin(0,1,2) on [2,2,3], verify index 0 receives value from index 1
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayCopyWithin007', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(2, 2, 3);
@@ -158,7 +158,7 @@ export default function SparseArrayCopyWithinTest(): void {
      * @tc.desc Test SparseArray.copyWithin, verify method result (arr instanceof SparseArray is true, arr[0] equals 4)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayCopyWithin008', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3, 4, 5)
@@ -177,7 +177,7 @@ export default function SparseArrayCopyWithinTest(): void {
      * @tc.desc Test SparseArray.copyWithin, verify method result (arr instanceof SparseArray is true, arr[0] equals 1)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayCopyWithin009', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3, 4, 5)
@@ -196,7 +196,7 @@ export default function SparseArrayCopyWithinTest(): void {
      * @tc.desc Test SparseArray.copyWithin, verify method result (arr instanceof SparseArray is true, arr[0] equals 1)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayCopyWithin010', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3, 4, 5)
@@ -215,7 +215,7 @@ export default function SparseArrayCopyWithinTest(): void {
      * @tc.desc Test SparseArray.copyWithin, verify method result (arr instanceof SparseArray is true, arr[0] equals 3)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayCopyWithin011', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(5)
@@ -237,7 +237,7 @@ export default function SparseArrayCopyWithinTest(): void {
      * @tc.desc Test SparseArray.copyWithin, verify method result (arr instanceof SparseArray is true, arr[0] equals 2)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayCopyWithin012', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3, 4, 5)
@@ -256,7 +256,7 @@ export default function SparseArrayCopyWithinTest(): void {
      * @tc.desc Test SparseArray.copyWithin, verify method result (arr instanceof SparseArray is true, arr[0] equals 1)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayCopyWithin013', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3, 4, 5)
@@ -275,7 +275,7 @@ export default function SparseArrayCopyWithinTest(): void {
      * @tc.desc OOB target/start/end/MAX/MIN on [1,2,3], verify array unchanged
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayCopyWithin014', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
@@ -318,7 +318,7 @@ export default function SparseArrayCopyWithinTest(): void {
      * @tc.desc Test SparseArray.copyWithin, verify method result (result === arr is true)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayCopyWithin015', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3, 4, 5)
@@ -331,7 +331,7 @@ export default function SparseArrayCopyWithinTest(): void {
      * @tc.desc Test SparseArray.copyWithin, verify method result (result === arr is true, result.length === 42 is true)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayCopyWithin016', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(42)
@@ -345,7 +345,7 @@ export default function SparseArrayCopyWithinTest(): void {
      * @tc.desc Test SparseArray.copyWithin, verify method result (arr instanceof SparseArray is true, arr.length equals 10000)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayCopyWithin017', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10000)
@@ -360,7 +360,7 @@ export default function SparseArrayCopyWithinTest(): void {
      * @tc.desc Test SparseArray.copy Within error path, verify expected exception is thrown (assertFail is triggered, error.name equals "ClassCastError")
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayCopyWithin018', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3, 4, 5)
@@ -377,7 +377,7 @@ export default function SparseArrayCopyWithinTest(): void {
      * @tc.desc Test SparseArray.copyWithin, verify method result (arr[0] === 3 is true, arr[1] === 4 is true)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayCopyWithin019', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3, 4, 5, 6, 7)
@@ -392,7 +392,7 @@ export default function SparseArrayCopyWithinTest(): void {
      * @tc.desc Test SparseArray.copyWithin, verify method result (arr[2] === 1 is true, arr[3] === 2 is true)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayCopyWithin020', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3, 4, 5)
@@ -406,7 +406,7 @@ export default function SparseArrayCopyWithinTest(): void {
      * @tc.desc Test SparseArray.copyWithin, verify method result (arr[0] === 1 is true, arr[2] === 3 is true)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayCopyWithin021', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(5)
@@ -424,7 +424,7 @@ export default function SparseArrayCopyWithinTest(): void {
      * @tc.desc Test SparseArray.copyWithin, verify method result (arr[2] === 4 is true)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayCopyWithin022', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3, 4, 5)
@@ -438,7 +438,7 @@ export default function SparseArrayCopyWithinTest(): void {
      * @tc.desc Test SparseArray.copyWithin, verify method result (arr[0] === "d" is true)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayCopyWithin023', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<string>("a", "b", "c", "d", "e")
@@ -451,7 +451,7 @@ export default function SparseArrayCopyWithinTest(): void {
      * @tc.desc Test SparseArray.copyWithin, verify method result (arr[0] === true is true, arr[1] === false is true)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayCopyWithin024', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<boolean>(true, false, true, false)
@@ -465,7 +465,7 @@ export default function SparseArrayCopyWithinTest(): void {
      * @tc.desc Test SparseArray.copyWithin, verify method result
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayCopyWithin025', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3, 4, 5)
@@ -479,7 +479,7 @@ export default function SparseArrayCopyWithinTest(): void {
      * @tc.desc Test SparseArray.copyWithin, verify method result (arr[4] === 1 is true)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayCopyWithin026', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3, 4, 5)
@@ -492,7 +492,7 @@ export default function SparseArrayCopyWithinTest(): void {
      * @tc.desc copyWithin on SparseArray<float> copies float range to target index
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayCopyWithin027', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<float>(1.0f, 2.0f, 3.0f, 4.0f);
@@ -506,7 +506,7 @@ export default function SparseArrayCopyWithinTest(): void {
      * @tc.desc copyWithin on SparseArray<byte> copies byte range to target index
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayCopyWithin028', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<byte>(10 as byte, 20 as byte, 30 as byte, 40 as byte);
@@ -520,7 +520,7 @@ export default function SparseArrayCopyWithinTest(): void {
      * @tc.desc copyWithin with 0x2 target and byte -128 as start index literal
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
     */
     it('testSparseArrayCopyWithin029', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<byte>(130 as int);
@@ -536,7 +536,7 @@ export default function SparseArrayCopyWithinTest(): void {
      * @tc.desc copyWithin uses 0x7F and 0x80 as int start/end index literals
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayCopyWithin030', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3, 4, 5, 6, 7, 8);
@@ -550,7 +550,7 @@ export default function SparseArrayCopyWithinTest(): void {
      * @tc.desc copyWithin with target index -1 copies from start index 0
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayCopyWithin031', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10, 20, 30);
@@ -563,7 +563,7 @@ export default function SparseArrayCopyWithinTest(): void {
      * @tc.desc copyWithin throws ClassCastError when target is undefined
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayCopyWithin032', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -580,7 +580,7 @@ export default function SparseArrayCopyWithinTest(): void {
      * @tc.desc copyWithin throws ClassCastError when target is string
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayCopyWithin033', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -597,7 +597,7 @@ export default function SparseArrayCopyWithinTest(): void {
      * @tc.desc copyWithin throws ClassCastError when start is null
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayCopyWithin034', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -614,7 +614,7 @@ export default function SparseArrayCopyWithinTest(): void {
      * @tc.desc copyWithin throws ClassCastError when start is undefined
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayCopyWithin035', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -631,7 +631,7 @@ export default function SparseArrayCopyWithinTest(): void {
      * @tc.desc copyWithin throws ClassCastError when end is null
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayCopyWithin036', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -648,7 +648,7 @@ export default function SparseArrayCopyWithinTest(): void {
      * @tc.desc copyWithin throws ClassCastError when end is string
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayCopyWithin037', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);

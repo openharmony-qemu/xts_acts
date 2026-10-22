@@ -20,7 +20,7 @@ class MergedUser {
 
 type State = 'idle' | 'loading' | 'success' | 'error';
 
-export default function asyncRealWorldTest() {
+export default function asyncRealWorldTest(): void {
   describe('asyncRealWorldTest', () => {
     afterEach(async () => {
       await sleep(50)

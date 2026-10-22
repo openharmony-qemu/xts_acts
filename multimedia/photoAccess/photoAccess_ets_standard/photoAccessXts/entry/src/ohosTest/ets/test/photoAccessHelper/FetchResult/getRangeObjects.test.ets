@@ -15,7 +15,7 @@
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import { describe, it, expect, beforeAll, beforeEach, afterEach, afterAll, Level } from '@ohos/hypium-dynamic';
-import { fetchAllOption, getPermission, driveFn, fetchOption, photoKeys, photoType, LOG_TAG, sleep } from '../../common';
+import { fetchAllOption, getPermission, driveFn, fetchOption, photoKeys, photoType, LOG_TAG, sleep, checkResourceFile, createResource } from '../../common';
 import common from '@ohos.app.ability.common';
 
 const TAG = LOG_TAG + 'getRangeObjects';
@@ -27,6 +27,10 @@ export default function getRangeObjectsTest() {
       console.info(TAG, 'beforeAll case');
       await getPermission();
       await driveFn();
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let fileNameList: Array<string> = [ "01.jpg" , "01.mp4" ];
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNameList);
     });
 
     beforeEach(() => {
@@ -58,8 +62,8 @@ export default function getRangeObjectsTest() {
     }
     let createAsset = async (done:Function, title: string, extension: string) => {
       try {
-        let fileUri: string =
-          `file://ohos.acts.multimedia.photoaccess.xts/data/storage/el2/base/haps/entry_test/photos/cloneTest.${extension}`;
+        let fileUri: string = testContext.filesDir + '/cloneTest.' + extension;
+          // `file://ohos.acts.multimedia.photoaccess.xts/data/storage/el2/base/haps/entry_test/photos/cloneTest.${extension}`;
         let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
         let resourceType: photoAccessHelper.ResourceType = photoAccessHelper.ResourceType.IMAGE_RESOURCE
         if(extension !== 'jpg') {

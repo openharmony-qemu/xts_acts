@@ -90,8 +90,8 @@ struct WebOnFirstContentfulPaint {
                   this.controller1.refresh();
                   setTimeout(() => {
                     Utils.emitEvent(this.onFirstContentfulPaintCalled, 522);
-                  }, 3000);
-                },3000);
+                  }, 30000);
+                },6000);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }

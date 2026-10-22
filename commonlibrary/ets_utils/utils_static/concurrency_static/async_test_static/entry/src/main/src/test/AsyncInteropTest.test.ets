@@ -51,7 +51,7 @@ class TestData {
 }
 
 
-export default function asyncInteropTest() {
+export default function asyncInteropTest(): void {
   describe('asyncInteropTest', () => {
     afterEach(async () => {
       await sleep(50)

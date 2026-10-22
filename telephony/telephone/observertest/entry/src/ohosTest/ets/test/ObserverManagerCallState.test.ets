@@ -1188,5 +1188,94 @@ export default function observerManagerCallStateTest() {
       console.log("************* Telephony_observer_off_cCallStateInfo_0200 Test end *************");
     })
 
+    /**
+      * @tc.name   testTelephonyObserverVoIPStateChangeOn0200
+      * @tc.number SUB_Telephony_Observer_VoIPStateChangeOn_0200
+      * @tc.desc   Verify VoIPCallType and VoIPCallState enumeration values.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
+    it('testTelephonyObserverVoIPStateChangeOn0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testTelephonyObserverVoIPStateChangeOn0200';
+      console.info(`${caseName} test start `);
+      try {
+        console.info(`${caseName} VoIPCallType.VOICE is ${observer.VoIPCallType.VOICE}`);
+        ExpectTrue(observer.VoIPCallType.VOICE === 0);
+        console.info(`${caseName} VoIPCallType.VIDEO is ${observer.VoIPCallType.VIDEO}`);
+        ExpectTrue(observer.VoIPCallType.VIDEO === 1);
+        console.info(`${caseName} VoIPCallState.IDLE is ${observer.VoIPCallState.IDLE}`);
+        ExpectTrue(observer.VoIPCallState.IDLE === 0);
+        console.info(`${caseName} VoIPCallState.INCOMING is ${observer.VoIPCallState.INCOMING}`);
+        ExpectTrue(observer.VoIPCallState.INCOMING === 1);
+        console.info(`${caseName} VoIPCallState.OUTGOING is ${observer.VoIPCallState.OUTGOING}`);
+        ExpectTrue(observer.VoIPCallState.OUTGOING === 2);
+        console.info(`${caseName} VoIPCallState.DIALING is ${observer.VoIPCallState.DIALING}`);
+        ExpectTrue(observer.VoIPCallState.DIALING === 3);
+        console.info(`${caseName} VoIPCallState.ANSWERED is ${observer.VoIPCallState.ANSWERED}`);
+        ExpectTrue(observer.VoIPCallState.ANSWERED === 4);
+        console.info(`${caseName} VoIPCallState.ACTIVE is ${observer.VoIPCallState.ACTIVE}`);
+        ExpectTrue(observer.VoIPCallState.ACTIVE === 5);
+        console.info(`${caseName} VoIPCallState.HOLDING is ${observer.VoIPCallState.HOLDING}`);
+        ExpectTrue(observer.VoIPCallState.HOLDING === 6);
+        console.info(`${caseName} VoIPCallState.DISCONNECTING is ${observer.VoIPCallState.DISCONNECTING}`);
+        ExpectTrue(observer.VoIPCallState.DISCONNECTING === 7);
+        console.info(`${caseName} VoIPCallState.DISCONNECTED is ${observer.VoIPCallState.DISCONNECTED}`);
+        ExpectTrue(observer.VoIPCallState.DISCONNECTED === 8);
+        done();
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}`);
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    });
+
+    /**
+      * @tc.name   testTelephonyObserverVoIPStateChangeOn0300
+      * @tc.number SUB_Telephony_Observer_VoIPStateChangeOn_0300
+      * @tc.desc   Subscribe to VoIP call state change event with null callback.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
+    it('testTelephonyObserverVoIPStateChangeOn0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testTelephonyObserverVoIPStateChangeOn0300';
+      console.info(`${caseName} test start `);
+      try {
+        observer.onVoIPStateChange(null);
+        ExpectTrue(false);
+        done();
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}`);
+        ExpectTrue(error.code == 401);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    });
+
+    /**
+      * @tc.name   testTelephonyObserverVoIPStateChangeOn0400
+      * @tc.number SUB_Telephony_Observer_VoIPStateChangeOn_0400
+      * @tc.desc   Subscribe to VoIP call state change event with undefined callback.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
+    it('testTelephonyObserverVoIPStateChangeOn0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testTelephonyObserverVoIPStateChangeOn0400';
+      console.info(`${caseName} test start `);
+      try {
+        observer.onVoIPStateChange(undefined);
+        ExpectTrue(false);
+        done();
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}`);
+        ExpectTrue(error.code == 401);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    });
+
   });
 }

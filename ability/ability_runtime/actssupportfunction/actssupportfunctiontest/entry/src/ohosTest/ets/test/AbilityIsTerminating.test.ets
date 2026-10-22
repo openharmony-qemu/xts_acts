@@ -20,6 +20,7 @@ import { BusinessError } from '@ohos.base';
 import Want from '@ohos.app.ability.Want';
 import common from '@ohos.app.ability.common';
 import { Driver, ON } from '@ohos.UiTest';
+import display from '@ohos.display';
 
 export default function AbilityIsTerminatingTest() {
 
@@ -195,6 +196,11 @@ export default function AbilityIsTerminatingTest() {
       let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
         events: [onCreate, onDestroy]
       }
+      let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
+      let abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
+      let user = abilityDelegatorArguments.parameters["-u"];
+      let currentDisplayId = display.getDefaultDisplaySync().id;
+      console.log(TAG + `${TAG}  ========= ` + currentDisplayId);
       await commonEventManager.createSubscriber(subscribeInfo).then(async (data) => {
         console.log(TAG + "createSubscriber data : " + JSON.stringify(data));
         subscriber = data;
@@ -206,7 +212,10 @@ export default function AbilityIsTerminatingTest() {
             setTimeout(async () => {
               let abilitydelegator = AbilityDelegatorRegistry.getAbilityDelegator();
                 let cmd = "uinput -K -d 2 -u 2";
-                await abilitydelegator.executeShellCommand(cmd).then((data) => {
+                if(user !== undefined){
+                  cmd += ' -D ' + currentDisplayId;
+                }
+                await abilityDelegator.executeShellCommand(cmd).then((data) => {
                   console.log(TAG + "executeShellCommand : data : " + data.stdResult);
                   console.log(TAG + "executeShellCommand : data : " + data.exitCode);
                 }).catch((error: BusinessError) => {

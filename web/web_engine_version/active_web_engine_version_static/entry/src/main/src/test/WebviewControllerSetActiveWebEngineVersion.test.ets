@@ -22,7 +22,6 @@ import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Driver, ON } from '@ohos.UiTest';
-const driver = Driver.create();
 let testAbilityContext:common.UIAbilityContext;
 
 export default function WebviewControllerSetActiveWebEngineVersionTest() {
@@ -68,6 +67,8 @@ export default function WebviewControllerSetActiveWebEngineVersionTest() {
      */
     it('testSetActiveWebEngineVersionArkwebEvergreenStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
+        const driver = Driver.create();
+        await Utils.msSleep(3000);
         Utils.emitEvent('testSetActiveWebEngineVersionArkwebEvergreen', 10)
         await Utils.msSleep(3000);
         Utils.registerEvent("testSetActiveWebEngineVersionArkwebEvergreen", "success", 20260255, done);

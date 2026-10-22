@@ -2381,13 +2381,13 @@ export default function openLinkTest() {
           .then((data) => {
             console.info(`${tag}, startAbilityByType succeed`);
             try{
-              expect(data).assertEqual(undefined);
+              expect().assertFail();
             }catch(e){}
             done();
           })
           .catch((err: BusinessError) => {
-            console.error(`${tag}, startAbilityByType failed, code is ${err.code}, message is ${err.message}`);
-            expect().assertFail();
+            console.error(`${tag}, startAbilityByType fail, code is ${err.code}, message is ${err.message}`);
+            expect(err.code).assertEqual(16000050);
             done();
           });
       } catch (err) {
@@ -2420,13 +2420,13 @@ export default function openLinkTest() {
           .then((data) => {
             console.info(`${tag}, startAbilityByType succeed`);
             try{
-              expect(data).assertEqual(undefined);
+              expect().assertFail();
             }catch(e){}
             done();
           })
           .catch((err: BusinessError) => {
-            console.error(`${tag}, startAbilityByType failed, code is ${err.code}, message is ${err.message}`);
-            expect().assertFail();
+            console.error(`${tag}, startAbilityByType fail, code is ${err.code}, message is ${err.message}`);
+            expect(err.code).assertEqual(16000050);
             done();
           });
       } catch (err) {

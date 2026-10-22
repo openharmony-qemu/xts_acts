@@ -14,7 +14,7 @@
  */
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import { describe, it, expect, beforeAll, beforeEach, afterEach, afterAll, Level } from '@ohos/hypium-dynamic';
-import { getPermission, driveFn, LOG_TAG, fetchAllOption, sleep, isEmpty, copyImageToSandbox } from '../common';
+import { getPermission, driveFn, LOG_TAG, fetchAllOption, sleep, isEmpty, copyImageToSandbox, checkResourceFile } from '../common';
 import common from '@ohos.app.ability.common';
 import { image } from '@kit.ImageKit';
 import { JSON } from '@kit.ArkTS';
@@ -94,12 +94,15 @@ export default function MediaAssetManagerRequestImageTest() {
     let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
     let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
     const fetchOptions = fetchAllOption();
+    let fileNameList: Array<string> = ['01.jpg', "01.mp4"];
 
     beforeAll(async () => {
       console.info(TAG, 'beforeAll case');
       await getPermission();
       await driveFn();
       await sleep(500);
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNameList);
     });
 
     beforeEach(() => {
@@ -114,6 +117,47 @@ export default function MediaAssetManagerRequestImageTest() {
       console.info(TAG, 'afterAll case.');
       AppStorage.delete('key');
     });
+
+    let createResource = async (context: common.UIAbilityContext, fileNameList: Array<string>) => {
+      try {
+        let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
+        let imageUri = context.filesDir + '/01.jpg';
+        console.info("imageUri: " + imageUri);
+        let videoUri = context.filesDir + '/01.mp4';
+        console.info("videoUri: " + imageUri);
+        for (let i = 0; i < fileNameList.length; i++) {
+          let fileName = fileNameList[i];
+          let displayName = fileName.substring(0, fileName.lastIndexOf("."));
+          console.log(`createResource :: displayName is ${displayName}`);
+          if (fileName.endsWith(".jpg")) {
+            let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
+            let extension: string = 'jpg';
+            let options: photoAccessHelper.CreateOptions = {
+              title: displayName
+            }
+            let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
+              photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(context, photoType, extension, options);
+            assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, imageUri);
+            await phAccessHelper.applyChanges(assetChangeRequest);
+            console.log(`createResource :: applyChange ${fileName} success !`);
+          }
+          if (fileName.endsWith(".mp4")) {
+            let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.VIDEO;
+            let extension: string = 'mp4';
+            let options: photoAccessHelper.CreateOptions = {
+              title: displayName
+            }
+            let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
+              photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(context, photoType, extension, options);
+            assetChangeRequest.addResource(photoAccessHelper.ResourceType.VIDEO_RESOURCE, videoUri);
+            await phAccessHelper.applyChanges(assetChangeRequest);
+            console.log(`createResource :: applyChange ${fileName} success !`);
+          }
+        }
+      } catch (error) {
+        console.log(`createResource :: run failed, message is ${error},code is ${error.code}`);
+      }
+    }
 
     /**
      * @tc.name   MEDIA_ASSET_MANAGER_REQUEST_ERROR_001

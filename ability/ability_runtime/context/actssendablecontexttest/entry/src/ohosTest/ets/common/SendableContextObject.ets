@@ -48,12 +48,12 @@ export class AbilityStageObject {
 }
 
 export class ContextObject {
-  constructor(sendableContext: common.Context, contextName: string) {
+  constructor(sendableContext: common.UIAbilityContext, contextName: string) {
     this.sendableContext = sendableContext;
     this.contextName = contextName;
   }
 
-  public sendableContext: common.Context;
+  public sendableContext: common.UIAbilityContext;
   public contextName: string;
 }
 
@@ -69,7 +69,7 @@ export class UIAbilityContextObject {
 
 export class NormalContextObject {
   constructor(context: common.Context, contextName: string) {
-    this.normalContext = context;
+    this.normalContext = context as ESObject as common.UIAbilityContext;
     this.contextName = contextName;
   }
 

@@ -40,7 +40,7 @@ export default function SparseArrayConstructorTest(): void {
      * @tc.desc Constructor with valid lengths and overflow bounds, verify length and instanceof
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructor001', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
@@ -62,7 +62,7 @@ export default function SparseArrayConstructorTest(): void {
      * @tc.desc Constructor with hex and binary numeric literals, verify length
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructor002', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arrHex = new SparseArray<int>(0x1234);
@@ -77,7 +77,7 @@ export default function SparseArrayConstructorTest(): void {
      * @tc.desc Test SparseArray constructor with (-2147483648), verify length and elements (arr.length equals 0)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructor003', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(-2147483648);
@@ -90,7 +90,7 @@ export default function SparseArrayConstructorTest(): void {
      * @tc.desc Test SparseArray.constructor rejects invalid length types with ClassCastError
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructor004', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         try {
@@ -124,7 +124,7 @@ export default function SparseArrayConstructorTest(): void {
      * @tc.desc Constructor with 0 and -1, verify length coerced to 0
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructor005', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
@@ -140,7 +140,7 @@ export default function SparseArrayConstructorTest(): void {
      * @tc.desc Constructor length 5, verify instance metadata and undefined sparse slots
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructor006', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
@@ -160,7 +160,7 @@ export default function SparseArrayConstructorTest(): void {
      * @tc.desc Test SparseArray constructor with length 10, verify sparse length and slot assignment
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructor007', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10);
@@ -175,7 +175,7 @@ export default function SparseArrayConstructorTest(): void {
      * @tc.desc Test SparseArray constructor with different generic types, verify length equals 5
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructor008', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect(new SparseArray<int>(5).length).assertEqual(5);
@@ -189,7 +189,7 @@ export default function SparseArrayConstructorTest(): void {
      * @tc.desc Test SparseArray constructor with (2147483647), verify length and elements (arr.length equals 2147483647)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructor009', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(2147483647);
@@ -203,7 +203,7 @@ export default function SparseArrayConstructorTest(): void {
      * @tc.desc length constructor SparseArray<float> stores float elements by index
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructor010', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<float>(2);
@@ -220,7 +220,7 @@ export default function SparseArrayConstructorTest(): void {
      * @tc.desc constructor length 0o10 creates SparseArray with length 8
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructor011', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(0o10);
@@ -234,7 +234,7 @@ export default function SparseArrayConstructorTest(): void {
      * @tc.desc constructor length 3 SparseArray<boolean> stores false and true values
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructor012', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<boolean>(3);
@@ -251,7 +251,7 @@ export default function SparseArrayConstructorTest(): void {
      * @tc.desc constructor length 2 SparseArray<char> stores char values
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructor013', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<char>(2);
@@ -267,7 +267,7 @@ export default function SparseArrayConstructorTest(): void {
      * @tc.desc constructor length 2 SparseArray<int|null> stores null and int values
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructor014', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int | null>(2);
@@ -283,7 +283,7 @@ export default function SparseArrayConstructorTest(): void {
      * @tc.desc constructor length 4 keeps unassigned slots undefined after sparse assignment
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayConstructor015', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<string>(4);

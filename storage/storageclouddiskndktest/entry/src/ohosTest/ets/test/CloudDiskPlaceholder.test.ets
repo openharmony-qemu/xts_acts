@@ -13,14 +13,19 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, Level, beforeAll } from "@ohos/hypium";
+import { describe, it, expect, Level, beforeAll, afterEach } from "@ohos/hypium";
 import clouddisk from "libclouddisk.so";
-import { grantDocumentFolderAccess } from './CommonUtils';
+import { grantDocumentFolderAccess, uSleep } from './CommonUtils';
 
 export default function CloudDiskPlaceholderTest() {
   describe("CloudDiskPlaceholderTest", () => {
     beforeAll(async (done: Function) => {
       await grantDocumentFolderAccess(done);
+    });
+
+    afterEach(async (done: Function) => {
+      await uSleep(200);
+      done();
     });
 
     /**
@@ -349,7 +354,7 @@ export default function CloudDiskPlaceholderTest() {
     /**
      * @tc.number SUB_BASIC_FM_CloudDisk_CreatePlaceholder_1500
      * @tc.name CloudDisk_CreatePlaceholder_015
-     * @tc.desc Test CreatePlaceholder with max length 4096 custom info
+     * @tc.desc Test CreatePlaceholder with max length 1024 custom info
      * @tc.size MEDIUM
      * @tc.type Function
      * @tc.level Level 0
@@ -372,7 +377,7 @@ export default function CloudDiskPlaceholderTest() {
     /**
      * @tc.number SUB_BASIC_FM_CloudDisk_CreatePlaceholder_1600
      * @tc.name CloudDisk_CreatePlaceholder_016
-     * @tc.desc Test CreatePlaceholder with over max length 4097 custom info
+     * @tc.desc Test CreatePlaceholder with over max length 1025 custom info
      * @tc.size MEDIUM
      * @tc.type Function
      * @tc.level Level 0
@@ -878,7 +883,7 @@ export default function CloudDiskPlaceholderTest() {
     /**
      * @tc.number SUB_BASIC_FM_CloudDisk_UpdatePlaceholder_1000
      * @tc.name CloudDisk_UpdatePlaceholder_010
-     * @tc.desc Test UpdatePlaceholder with max length 4096 custom info
+     * @tc.desc Test UpdatePlaceholder with max length 1024 custom info
      * @tc.size MEDIUM
      * @tc.type Function
      * @tc.level Level 0
@@ -901,7 +906,7 @@ export default function CloudDiskPlaceholderTest() {
     /**
      * @tc.number SUB_BASIC_FM_CloudDisk_UpdatePlaceholder_1100
      * @tc.name CloudDisk_UpdatePlaceholder_011
-     * @tc.desc Test UpdatePlaceholder with over max length 4097 custom info
+     * @tc.desc Test UpdatePlaceholder with over max length 1025 custom info
      * @tc.size MEDIUM
      * @tc.type Function
      * @tc.level Level 0

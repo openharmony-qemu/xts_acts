@@ -83,8 +83,10 @@ it('TextPicker_OnChange_Modifier_static_001', Level.LEVEL1, async (done: () => v
         let right = datePicker.right
         let middle = (bottom-top) / 2 + top
         let left =datePicker.left
-        await driver.swipe(Math.round( 0 +(right-left)/2+left).toInt(), Math.round( 0 +middle).toInt(),
-          Math.round( 0 +(right-left)/2+left).toInt(), Math.round(0).toInt());
+        let displayId = await switchButton?.getDisplayId();
+        await driver.swipeBetween(
+          { x: Math.round( 0 +(right-left)/2+left).toInt(), y: Math.round( 0 +middle).toInt(), displayId: displayId },
+          { x: Math.round( 0 +(right-left)/2+left).toInt(), y: Math.round(0).toInt(), displayId: displayId });
         await Utils.sleep(5000);
         let strJsonNew:string = inspector.getInspectorByKey('textPickerOnChangeModifier_onChangeOff');
         console.info("TextPicker_OnChange_Modifier_static_001 component  is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)
@@ -117,8 +119,10 @@ it('TextPicker_OnChange_Modifier_static_002', Level.LEVEL1, async (done: () => v
         let right = datePicker.right
         let middle = (bottom-top) / 2 + top
         let left =datePicker.left
-        await driver.swipe(Math.round(0 +(right-left)/2+left).toInt(), Math.round(0 +middle).toInt(),
-          Math.round(0 +(right-left)/2+left).toInt(), Math.round(0).toInt());
+        let displayId = await switchButton?.getDisplayId();
+        await driver.swipeBetween(
+          { x: Math.round(0 +(right-left)/2+left).toInt(), y: Math.round(0 +middle).toInt(), displayId: displayId },
+          { x: Math.round(0 +(right-left)/2+left).toInt(), y: Math.round(0).toInt(), displayId: displayId });
         await Utils.sleep(5000);
         let strJsonNew:string = inspector.getInspectorByKey('onScrollStopOff');
         console.info("TextPicker_OnChange_Modifier_static_002 component  is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)

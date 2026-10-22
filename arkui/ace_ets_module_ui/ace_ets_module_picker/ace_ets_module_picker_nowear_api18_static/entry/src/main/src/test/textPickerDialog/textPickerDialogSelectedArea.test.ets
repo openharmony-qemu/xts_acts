@@ -67,12 +67,10 @@ it('textPickerDialogSelectedAreaTest_static_001', Level.LEVEL0, async (done: () 
       let bottom = rect.bottom;
       let middle = (top + bottom) / 2
 
-      await driver.swipe(
-        Math.round(left + (right - left) / 2).toInt(),
-        Math.round(top + (bottom - top) / 2).toInt(),
-        Math.round(left + (right - left) / 2).toInt(),
-        Math.round(top).toInt()
-      );
+      let displayId = await textPickerDialog!.getDisplayId();
+      await driver.swipeBetween(
+        { x: Math.round(left + (right - left) / 2).toInt(), y: Math.round(top + (bottom - top) / 2).toInt(), displayId: displayId },
+        { x: Math.round(left + (right - left) / 2).toInt(), y: Math.round(top).toInt(), displayId: displayId });
       await Utils.sleep(6000);
 
       let btn1 = await driver.findComponent(ON.text('确定')) as Component;

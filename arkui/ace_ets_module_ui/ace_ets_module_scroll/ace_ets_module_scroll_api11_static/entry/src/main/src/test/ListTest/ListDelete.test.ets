@@ -201,7 +201,7 @@ it('ArkUI_List_Delete_static_0500', Level.LEVEL1, async (done: () => void): Prom
       let rect = await swipeComponent!.getBounds();
       let displayId = await swipeComponent!.getDisplayId();
       await driver.swipeBetween(
-        { x: (Math.round(rect.left + (rect.right - rect.left) / 4)).toInt(),
+        { x: (Math.round(rect.right - (rect.right - rect.left) / 6)).toInt(),
           y: (Math.round(rect.top + (rect.bottom - rect.top) / 2)).toInt(), displayId: displayId },
         { x: rect.left, y: (Math.round(rect.top + (rect.bottom - rect.top) / 2)).toInt(), displayId: displayId }
       );

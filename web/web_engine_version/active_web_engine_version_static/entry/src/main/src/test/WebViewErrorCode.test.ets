@@ -22,7 +22,6 @@ import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Driver, ON } from '@ohos.UiTest';
-const driver = Driver.create();
 let testAbilityContext:common.UIAbilityContext;
 
 
@@ -47,6 +46,8 @@ export default function webViewWebViewErrorCode() {
      */
     it('emitGetPageOffsetErrorCodeStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
+      const driver = Driver.create();
+      await Utils.msSleep(2000);
       Utils.emitEvent("emitGetPageOffsetErrorCode", 10);
       await Utils.msSleep(2000);
       Utils.registerEvent("emitGetPageOffsetErrorCode", "801", 20250907, done);
@@ -54,7 +55,7 @@ export default function webViewWebViewErrorCode() {
       Utils.registerEvent("emitGetPageOffsetErrorCode", "Capability not supported", 20250908, done);
       let button = await driver.findComponent(ON.id('webViewOthersErrorCode'));
       await Utils.msSleep(2000);
-      button?.click();
+      await button?.click();
       await Utils.msSleep(2000);
       done()
     })
@@ -68,6 +69,8 @@ export default function webViewWebViewErrorCode() {
      */
     it('emitAvoidVisibleViewportBottomErrorCodeStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
+      const driver = Driver.create();
+      await Utils.msSleep(2000);
       Utils.emitEvent("emitAvoidVisibleViewportBottomErrorCode", 10);
       await Utils.msSleep(2000);
       Utils.registerEvent("emitAvoidVisibleViewportBottomErrorCode", "801", 20250910, done);
@@ -75,7 +78,7 @@ export default function webViewWebViewErrorCode() {
       Utils.registerEvent("emitAvoidVisibleViewportBottomErrorCode", "Capability not supported", 20250911, done);
       let button = await driver.findComponent(ON.id('webViewOthersErrorCode'));
       await Utils.msSleep(2000);
-      button?.click();
+      await button?.click();
       await Utils.msSleep(2000);
       done()
     })
@@ -89,11 +92,14 @@ export default function webViewWebViewErrorCode() {
      */
     it('emitIsActiveWebEngineEvergreenStatic009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-      Utils.emitEvent('emitIsActiveWebEngineEvergreen009', 10)
+      const driver = Driver.create();
+      await Utils.msSleep(2000);
+      Utils.emitEvent('emitIsActiveWebEngineEvergreen009', 10);
+      await Utils.msSleep(2000);
       Utils.registerEvent('emitIsActiveWebEngineEvergreen009', true, 20251226, done);
         let button = await driver.findComponent(ON.id('webViewOthersErrorCode'));
         await Utils.msSleep(2000);
-        button?.click();
+        await button?.click();
         await Utils.msSleep(2000);
         done()
     })

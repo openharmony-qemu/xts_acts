@@ -87,42 +87,40 @@ export default function ActsNotificationAnsopenWindowWithResultWithoutAbilitySta
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Notification_Ans_openWindow_WithResult_Static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: () => void): Promise<void> => {
+    it('SUB_Notification_Ans_openWindow_WithResult_Static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const testNum = 'SUB_Notification_Ans_openWindow_WithResult_Static_0700';
-      let num:int=0
-      let bundle: notificationManager.BundleOption = {
-        bundle: bundleName,
-      };
-      let deviceTypeInfo: string = deviceInfo.deviceType;
-      let testContext: common.UIAbilityContext= AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
+      let testContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
+
       try {
-        notificationManager.openNotificationSettingsWithResult(testContext).then((data) => {
-          hilog.info(0x0000, 'testTag', `${testNum}openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
-          expect(data.notificationEnabled).assertEqual(false)
-          expect(data.bannerEnabled).assertEqual(false)
-          expect(data.badgeNumberEnabled).assertEqual(true)
-          done()
-        }).catch((e: Error) : void => {
-          let err:BusinessError=e as BusinessError
-          hilog.error(0x0000, 'testTag', `${testNum}openNotificationSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
-          expect(err?.code).assertEqual(801);
-          done();
-        });
-        await Utils.msSleep(2000)
+        // 1. 先发起接口，不 await（Promise 要等从设置页返回才 resolve）
+        const settingPromise = notificationManager.openNotificationSettingsWithResult(testContext);
+    
+        // 2. 等待设置页出现并返回
+        await Utils.msSleep(1000);
         let driver = Driver.create();
-        let buttonOne = await driver.findComponent(ON.text('确定'));
-        console.info(`${testNum} button is ${JSON.stringify(buttonOne)}`);
-        if (buttonOne !== null) {
-          await Utils.msSleep(500)
-          await buttonOne.click();
-          await Utils.msSleep(500)
-        }else{
-          expect(buttonOne === null).assertEqual(true)
-          done()
+        let confirmBtn = await driver.findComponent(ON.text('确定'));
+        if (confirmBtn !== null) {
+          await confirmBtn.click();
         }
+        await Utils.msSleep(1000);
+    
+        // 3. 等接口返回设置结果
+        const result = await settingPromise;
+        console.info(`${testNum} openNotificationSettingsWithResult success, data: ${JSON.stringify(result)}`);
+    
+        // 4. 断言：打开设置页后应返回一个 NotificationSetting，字段应存在
+        expect(result.notificationEnabled).assertEqual(false);
+        expect(result.bannerEnabled).assertEqual(false);
+        expect(result.badgeNumberEnabled).assertEqual(true)
+        done();
       } catch (err) {
-        hilog.error(0x0000, 'testTag', `${testNum}restart failed: ${err.code}, ${err.message},${testNum}`);
-        expect(err.code).assertEqual(801);
+        let e : BusinessError = err as BusinessError;
+        hilog.error(0x0000, 'testTag', `${testNum} failed, code: ${e.code}, message: ${e.message}`);
+        if (e?.code === 801) {
+          expect(e.code).assertEqual(801);
+        } else {
+          expect(false).assertTrue();
+        }
         done();
       }
     })
@@ -135,62 +133,54 @@ export default function ActsNotificationAnsopenWindowWithResultWithoutAbilitySta
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Notification_Ans_openWindow_WithResult_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,  async (done: () => void): Promise<void> => {
+    it('SUB_Notification_Ans_openWindow_WithResult_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testNum = 'SUB_Notification_Ans_openWindow_WithResult_Static_0100';
-      let num:int=0
-      let bundle: notificationManager.BundleOption = {
-        bundle: bundleName,
-      };
-      let deviceTypeInfo: string = deviceInfo.deviceType;
-      let buttonName:string[]=['桌面角标','确定']
+      let testContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
 
-      let testContext: common.UIAbilityContext= AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
       try {
-        notificationManager.openNotificationSettingsWithResult(testContext).then((data) => {
-          hilog.info(0x0000, 'testTag', `${testNum}openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
-          expect(data.notificationEnabled).assertEqual(true)
-          expect(data.bannerEnabled).assertEqual(false)
-          expect(data.badgeNumberEnabled).assertEqual(false)
-          done()
-        }).catch((e: Error) : void => {
-          let err:BusinessError=e as BusinessError
-          hilog.error(0x0000, 'testTag', `${testNum}openNotificationSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
-          expect(err?.code).assertEqual(801);
-          done();
-        });
-        await Utils.msSleep(2000)
+        // 1. 打开设置页。不 await——Promise 要等从设置页返回后才 resolve
+        const settingPromise = notificationManager.openNotificationSettingsWithResult(testContext);
+    
+        // 2. 确定性关闭「允许通知」：当前为开才点击
+        await Utils.msSleep(1000);
         let driver = Driver.create();
-        let buttonOne = await driver.findComponent(ON.type('Toggle').isAfter(ON.text('允许通知')));
-        console.info(`${testNum} button is ${JSON.stringify(buttonOne)}`);
-        if (buttonOne !== null) {
-          await Utils.msSleep(500)
-          await buttonOne.click();
-          await Utils.msSleep(500)
+        let allowToggle = await driver.findComponent(ON.type('Toggle').isAfter(ON.text('允许通知')));
+        if (allowToggle !== null) {
+          await allowToggle.click();
+          await Utils.msSleep(500);
         }
-        let scrollBar = await driver.findComponent(ON.text('桌面角标'))
-        console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
-        await scrollBar?.scrollToBottom()
-        await Utils.msSleep(2000)
-        let buttonTwo = await driver.findComponent(ON.text('桌面角标'));
-        console.info(`${testNum} buttonTwo is ${JSON.stringify(buttonTwo)}`);
-        if (buttonTwo !== null) {
-          await Utils.msSleep(1500)
-          await buttonTwo.click();
-          await Utils.msSleep(1500)
+    
+        // 3. 滚动到「桌面角标」，进入其设置
+        let badgeItem = await driver.findComponent(ON.text('桌面角标'));
+        await badgeItem?.scrollToBottom();
+        if (badgeItem !== null) {
+          await Utils.msSleep(1000);
+          await badgeItem.click();
+          await Utils.msSleep(1000);
         }
-        let button = await driver.findComponent(ON.text('确定'));
-        console.info(`${testNum} 确定 button is ${JSON.stringify(button)}`);
-        if (button !== null) {
-          await Utils.msSleep(500)
-          await button.click();
-          await Utils.msSleep(500)
-        }else{
-          expect(button === null).assertEqual(true)
-          done()
+    
+        // 4. 返回应用：优先「确定」，否则按返回键，确保 Promise 能 resolve
+        let confirmBtn = await driver.findComponent(ON.text('确定'));
+        if (confirmBtn !== null) {
+          await confirmBtn.click();
         }
+        await Utils.msSleep(1000);
+    
+        // 5. 等接口返回设置结果并断言（与操作一致：允许通知已关闭）
+        const result = await settingPromise;
+        console.info(`${testNum} openNotificationSettingsWithResult success, data: ${JSON.stringify(result)}`);
+        expect(result.notificationEnabled).assertEqual(true);
+        expect(result.bannerEnabled).assertEqual(false);
+        expect(result.badgeNumberEnabled).assertEqual(false);
+        done();
       } catch (err) {
-        hilog.error(0x0000, 'testTag', `${testNum}restart failed: ${err.code}, ${err.message},${testNum}`);
-        expect(err.code).assertEqual(801);
+        let e : BusinessError = err as BusinessError;
+        hilog.error(0x0000, 'testTag', `${testNum} failed, code: ${e.code}, message: ${e.message}`);
+        if (e?.code === 801) {
+          expect(e.code).assertEqual(801);
+        } else {
+          expect(false).assertTrue();
+        }
         done();
       }
     })
@@ -203,63 +193,63 @@ export default function ActsNotificationAnsopenWindowWithResultWithoutAbilitySta
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Notification_Ans_openWindow_WithResult_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,  async (done: () => void): Promise<void> => {
+    it('SUB_Notification_Ans_openWindow_WithResult_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testNum = 'SUB_Notification_Ans_openWindow_WithResult_Static_0200';
-      let num:int=0
-      let bundle: notificationManager.BundleOption = {
-        bundle: bundleName,
-      };
-      let buttonName:string[]=['横幅通知','桌面角标','确定']
-      let testContext: common.UIAbilityContext= AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
+      let testContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
+      
+    
       try {
-        await Utils.msSleep(1000)
-        notificationManager.openNotificationSettingsWithResult(testContext).then((data) => {
-          hilog.info(0x0000, 'testTag', `${testNum}openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
-          expect(data?.bannerEnabled).assertEqual(true);
-          expect(data?.badgeNumberEnabled).assertEqual(true);
-          expect(data?.notificationEnabled).assertEqual(true);
-          done()
-        }).catch((e: Error) : void => {
-          let err:BusinessError=e as BusinessError
-          hilog.error(0x0000, 'testTag', `${testNum}openNotificationSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
-          expect(err?.code).assertEqual(801);
-          done();
-        });
-        await Utils.msSleep(3000)
+        // 1. 记录初始状态（便于调试与后续恢复）
+        let initSetting: notificationManager.NotificationSetting = await notificationManager.getNotificationSetting();
+        console.info(`${testNum} init setting: ${JSON.stringify(initSetting)}`);
+    
+        // 2. 打开设置页。不 await——Promise 要等从设置页返回后才 resolve
+        const settingPromise = notificationManager.openNotificationSettingsWithResult(testContext);
+    
+        // 3. 等待设置页出现
+        await Utils.msSleep(1000);
         let driver = Driver.create();
-        let scrollBar = await driver.findComponent(ON.text('横幅通知'));
-        console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
-        await scrollBar?.scrollToBottom()
-        await Utils.msSleep(500)
-        let buttonTwo = await driver.findComponent(ON.text('桌面角标'));
-        console.info(`${testNum} buttonTwo is ${JSON.stringify(buttonTwo)}`);
-        if (buttonTwo !== null) {
-          await Utils.msSleep(1500)
-          await buttonTwo.click();
-          await Utils.msSleep(1500)
+
+        // 4. 滚动到「横幅通知」并确定性开启
+        let bannerItem = await driver.findComponent(ON.text('横幅通知'));
+        await bannerItem?.scrollToBottom();
+        await Utils.msSleep(500);
+        let bannerToggle = await driver.findComponent(ON.text('横幅通知'));
+        if (bannerToggle !== null) {
+          await bannerToggle.click();
+          await Utils.msSleep(500);
         }
-        await Utils.msSleep(1500)
-        let buttonThree = await driver.findComponent(ON.text('横幅通知'));
-        console.info(`${testNum} buttonThree is ${JSON.stringify(buttonThree)}`);
-        if (buttonThree !== null) {
-          await Utils.msSleep(1500)
-          await buttonThree.click();
-          await Utils.msSleep(1500)
+    
+        // 5. 「桌面角标」确定性开启
+        let badgeToggle = await driver.findComponent(ON.text('桌面角标'));
+        if (badgeToggle !== null) {
+          await badgeToggle.click();
+          await Utils.msSleep(500);
         }
-        await Utils.msSleep(1500)
-        let buttonFour = await driver.findComponent(ON.text('确定'));
-        console.info(`${testNum} buttonFour is ${JSON.stringify(buttonFour)}`);
-        if (buttonFour !== null) {
-          await Utils.msSleep(1500)
-          await buttonFour.click();
-          await Utils.msSleep(1500)
-        }else{
-          expect(buttonFour === null).assertEqual(true)
-          done()
-        } 
+    
+        // 7. 返回应用：优先「确定」，否则按返回键，确保 Promise resolve
+        let confirmBtn = await driver.findComponent(ON.text('确定'));
+        if (confirmBtn !== null) {
+          await confirmBtn.click();
+        }
+        await Utils.msSleep(1000);
+    
+        // 8. 等接口返回并断言全部为「开」
+        const result = await settingPromise;
+        console.info(`${testNum} openNotificationSettingsWithResult success, data: ${JSON.stringify(result)}`);
+        expect(result.notificationEnabled).assertEqual(true);
+        expect(result.bannerEnabled).assertEqual(true);
+        expect(result.badgeNumberEnabled).assertEqual(true);
+    
+        done();
       } catch (err) {
-        hilog.error(0x0000, 'testTag', `${testNum}restart failed: ${err.code}, ${err.message},${testNum}`);
-        expect(err.code).assertEqual(801);
+        let e = err as BusinessError;
+        hilog.error(0x0000, 'testTag', `${testNum} failed, code: ${e.code}, message: ${e.message}`);
+        if (e?.code === 801) {
+          expect(e.code).assertEqual(801);
+        } else {
+          expect(false).assertTrue();
+        }
         done();
       }
     })
@@ -272,76 +262,55 @@ export default function ActsNotificationAnsopenWindowWithResultWithoutAbilitySta
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Notification_Ans_openWindow_WithResult_Static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: () => void): Promise<void> => {
+    it('SUB_Notification_Ans_openWindow_WithResult_Static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const testNum = 'SUB_Notification_Ans_openWindow_WithResult_Static_0900';
-      let num:int=0
-      let bundle: notificationManager.BundleOption = {
-        bundle: bundleName,
-      };
-      let buttonName:string[]=['桌面角标','确定']
-      let deviceTypeInfo: string = deviceInfo.deviceType;
-      let testContext: common.UIAbilityContext= AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
+      let testContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
       try {
-        notificationManager.openNotificationSettingsWithResult(testContext).then((data) => {
-          hilog.info(0x0000, 'testTag', `${testNum}openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
-          expect(data.notificationEnabled).assertEqual(true)
-          expect(data.bannerEnabled).assertEqual(true)
-          expect(data.badgeNumberEnabled).assertEqual(true)
-        }).catch((e: Error) : void => {
-          let err:BusinessError=e as BusinessError
-          hilog.error(0x0000, 'testTag', `${testNum}openNotificationSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
-          expect(err.code).assertEqual(801);
-          done();
-        });
-        await Utils.msSleep(2000)
+        // 0. 记录初始状态（作为预期基准）
+        let initSetting: notificationManager.NotificationSetting = await notificationManager.getNotificationSetting();
+        console.info(`${testNum} init setting: ${JSON.stringify(initSetting)}`);
+    
+        // ============ 第一次打开设置页并返回 ============
+        let promise1 = notificationManager.openNotificationSettingsWithResult(testContext);
+        await Utils.msSleep(500);
         let driver = Driver.create();
-        let scrollBar = await driver.findComponent(ON.text('横幅通知'));
-        console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
-        await scrollBar?.scrollToBottom()
-        await Utils.msSleep(1500)
-        let buttonFour = await driver.findComponent(ON.text('确定'));
-        console.info(`${testNum} buttonFour is ${JSON.stringify(buttonFour)}`);
-        if (buttonFour !== null) {
-          await Utils.msSleep(1500)
-          await buttonFour.click();
-          await Utils.msSleep(1500)
-        }else{
-          expect(buttonFour === null).assertEqual(true)
-          done()
-        } 
-        await Utils.msSleep(2000)
-        notificationManager.openNotificationSettingsWithResult(testContext).then((data) => {
-          hilog.info(0x0000, 'testTag', `${testNum}openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
-          expect(data.notificationEnabled).assertEqual(true)
-          expect(data.bannerEnabled).assertEqual(true)
-          expect(data.badgeNumberEnabled).assertEqual(true)
-          done()
-        }).catch((e: Error) : void => {
-          let err:BusinessError=e as BusinessError
-          hilog.error(0x0000, 'testTag', `${testNum}openNotificationSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
-          if (err?.code === 801) {
-            expect(err?.code).assertEqual(801);
-            done();
-          } else {
-            expect(false).assertTrue();
-            done();
-          }
-        });
-        await Utils.msSleep(1000)
-        let buttonStack = await driver.findComponent(ON.type("SymbolGlyph"));
-        console.info(`${testNum} buttonStack is ${JSON.stringify(buttonStack)}`);
-        if (buttonStack !== null) {
-          console.info(`${testNum} buttonStack is ${JSON.stringify(buttonStack)}`);
-          await Utils.msSleep(500)
-          await buttonStack?.click();
-          await Utils.msSleep(500)
-        } else {
-          console.info(`${testNum} null button`);
-          expect(buttonStack === null).assertEqual(true)
+        let confirm1 = await driver.findComponent(ON.text('确定'));
+        if (confirm1 !== null) {
+          await confirm1.click();
         }
+        await Utils.msSleep(1000);
+        let result1 = await promise1;
+        console.info(`${testNum} 1st open success, data: ${JSON.stringify(result1)}`);
+        expect(result1.notificationEnabled).assertEqual(initSetting.notificationEnabled);
+        expect(result1.bannerEnabled).assertEqual(initSetting.bannerEnabled);
+        expect(result1.badgeNumberEnabled).assertEqual(initSetting.badgeNumberEnabled);
+    
+        // ============ 第二次打开设置页，用返回图标退出 ============
+        let promise2 = notificationManager.openNotificationSettingsWithResult(testContext);
+        await Utils.msSleep(500);
+        let backIcon = await driver.findComponent(ON.type('SymbolGlyph'));
+        console.info(`${testNum} backIcon: ${JSON.stringify(backIcon)}`);
+        if (backIcon !== null) {
+          await backIcon.click();
+        }
+        await Utils.msSleep(1000);
+        let result2 = await promise2;
+        console.info(`${testNum} 2nd open success, data: ${JSON.stringify(result2)}`);
+    
+        // 核心断言：两次调用返回的结果一致（连续调用稳定性）
+        expect(result2.notificationEnabled).assertEqual(result1.notificationEnabled);
+        expect(result2.bannerEnabled).assertEqual(result1.bannerEnabled);
+        expect(result2.badgeNumberEnabled).assertEqual(result1.badgeNumberEnabled);
+    
+        done();
       } catch (err) {
-        hilog.error(0x0000, 'testTag', `${testNum}restart failed: ${err.code}, ${err.message}`);
-        expect(err.code).assertEqual(801);
+        let e = err as BusinessError;
+        hilog.error(0x0000, 'testTag', `${testNum} failed, code: ${e.code}, message: ${e.message}`);
+        if (e?.code === 801) {
+          expect(e.code).assertEqual(801);
+        } else {
+          expect(false).assertTrue();
+        }
         done();
       }
     })
@@ -354,14 +323,10 @@ export default function ActsNotificationAnsopenWindowWithResultWithoutAbilitySta
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Notification_Ans_openWindow_WithResult_Static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: () => void): Promise<void> => {
+    it('SUB_Notification_Ans_openWindow_WithResult_Static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const testNum = 'SUB_Notification_Ans_openWindow_WithResult_Static_1100';
-      let num:int=0
-      let bundle: notificationManager.BundleOption = {
-        bundle: bundleName,
-      };
-      let buttonName:string[]= ['桌面角标','确定']
-      let deviceTypeInfo: string = deviceInfo.deviceType;
+      let testContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
+      
       let notificationRequest: notificationManager.NotificationRequest = {
         id: 1,
         notificationSlotType: notificationManager.SlotType.SERVICE_INFORMATION,
@@ -374,49 +339,61 @@ export default function ActsNotificationAnsopenWindowWithResultWithoutAbilitySta
           }
         },
       }
-      let testContext: common.UIAbilityContext= AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
+    
       try {
-        notificationManager.openNotificationSettingsWithResult(testContext).then((data) => {
-          hilog.info(0x0000, 'testTag', `${testNum}openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
-          expect(data?.bannerEnabled).assertEqual(true);
-          expect(data?.badgeNumberEnabled).assertEqual(true);
-          expect(data?.notificationEnabled).assertEqual(true);
-          notificationManager.publish(notificationRequest).then(() => {
-            num++
-            console.info(testNum+"publish success");
-            expect(num).assertEqual(1)
-            done()
-          }).catch((error: Error) : void => {
-            let err:BusinessError=error as BusinessError
-            console.error(`${testNum}publish failed, code is ${err.code}, message is ${err.message}`);
-            if (err?.code === 801) {
-              expect(err.code).assertEqual(801);
-            } else {
-              expect().assertFail();
-              done()
-            }
-          });
-        }).catch((e: Error) : void => {
-          let err:BusinessError=e as BusinessError
-          hilog.error(0x0000, 'testTag', `${testNum}openNotificationSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
-          expect(err?.code).assertEqual(801);
-          done();
-        });
-        await Utils.msSleep(2000)
+        // 0. 记录初始状态
+        let initSetting: notificationManager.NotificationSetting = await notificationManager.getNotificationSetting();
+        console.info(`${testNum} init setting: ${JSON.stringify(initSetting)}`);
+    
+        // 1. 打开设置页，不 await（Promise 要等从设置页返回才 resolve）
+        const settingPromise = notificationManager.openNotificationSettingsWithResult(testContext);
+    
+        // 2. 等待设置页出现
+        await Utils.msSleep(500);
         let driver = Driver.create();
-        let buttonFour = await driver.findComponent(ON.text('确定'));
-        console.info(`${testNum} buttonFour is ${JSON.stringify(buttonFour)}`);
-        if (buttonFour !== null) {
-          await Utils.msSleep(1500)
-          await buttonFour.click();
-          await Utils.msSleep(1500)
-        }else{
-          expect(buttonFour === null).assertEqual(true)
-          done()
+    
+        // 3. 返回应用：优先「确定」，否则按返回键
+        let confirmBtn = await driver.findComponent(ON.text('确定'));
+        if (confirmBtn !== null) {
+          await confirmBtn.click();
         }
+        await Utils.msSleep(1000);
+    
+        // 4. 等接口返回，断言通知已开启
+        const result = await settingPromise;
+        console.info(`${testNum} openNotificationSettingsWithResult success, data: ${JSON.stringify(result)}`);
+        expect(result.notificationEnabled).assertEqual(true);
+        expect(result.bannerEnabled).assertEqual(true);
+          expect(result.badgeNumberEnabled).assertEqual(true);
+        // 5. 发布通知，验证通知开启状态下 publish 成功
+        try {
+          await notificationManager.publish(notificationRequest);
+          console.info(`${testNum} publish success`);
+        } catch (err) {
+          let e : BusinessError = err as BusinessError;
+          console.error(`${testNum} publish failed, code: ${e.code}, message: ${e.message}`);
+          if (e?.code === 801) {
+            expect(e.code).assertEqual(801);
+          } else {
+            expect(false).assertTrue();
+          }
+        }
+    
+        // 6. 清理：取消已发布通知，避免影响后续用例
+        try {
+          await notificationManager.cancel(1);
+        } catch (e) {
+          console.info(`${testNum} cancel ignored`);
+        }
+        done();
       } catch (err) {
-        hilog.error(0x0000, 'testTag', `${testNum}restart failed: ${err.code}, ${err.message},${testNum}`);
-        expect(err.code).assertEqual(801);
+        let e :BusinessError = err as BusinessError;
+        hilog.error(0x0000, 'testTag', `${testNum} failed, code: ${e.code}, message: ${e.message}`);
+        if (e?.code === 801) {
+          expect(e.code).assertEqual(801);
+        } else {
+          expect(false).assertTrue();
+        }
         done();
       }
     })
@@ -429,33 +406,32 @@ export default function ActsNotificationAnsopenWindowWithResultWithoutAbilitySta
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Notification_Ans_openWindow_WithResult_Static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: () => void): Promise<void> => {
+    it('SUB_Notification_Ans_openWindow_WithResult_Static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const testNum = 'SUB_Notification_Ans_openWindow_WithResult_Static_0400';
-      let num:int=0
-      let bundle: notificationManager.BundleOption = {
-        bundle: bundleName,
-      };
-      let testContext: common.UIAbilityContext= AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
+      let testContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
+    
       try {
-        notificationExtensionSubscription.openSubscriptionSettingsWithResult(testContext).then((data) => {
-          console.info(`${testNum}openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data)}`);
+        // 预期：应用无订阅权限，调用应失败并返回 201（PERMISSION_DENIED）
+        await notificationExtensionSubscription.openSubscriptionSettingsWithResult(testContext);
+        // 如果走到这里 = 意外成功 → 断言失败暴露问题
+        console.error(`${testNum} unexpectedly succeeded`);
+        expect(false).assertTrue();
+        done();
+      } catch (err) {
+        let e : BusinessError = err as BusinessError;
+        console.error(`${testNum} failed, code: ${e.code}, message: ${e.message}`);
+        // 只接受预期错误码 201；其他一律视为失败
+        if (e?.code === 201) {
+          expect(e.code).assertEqual(201);
+          done();
+        } else if (e?.code === 1600023) {
+          expect(e?.code).assertEqual(1600023);
+          done();
+        } else {
+          console.error(`${testNum} unexpected error code: ${e.code}`);
           expect(false).assertTrue();
           done();
-        }).catch((e:Error) => {
-          let err = e as BusinessError
-          console.error(`${testNum}failed to call openSubscriptionSettingsWithResult  ${err.code}, ${err.message}`)
-          if(err?.code === 201) {
-            expect(err?.code).assertEqual(201);
-            done();
-          } else {
-            expect(err?.code).assertEqual(1600023);
-            done();
-          }
-        });
-      } catch (err) {
-        hilog.error(0x0000, 'testTag', `${testNum}restart failed: ${err.code}, ${err.message}`);
-        expect(err.code).assertEqual(201);
-        done();
+        }
       }
     })
 
@@ -470,10 +446,6 @@ export default function ActsNotificationAnsopenWindowWithResultWithoutAbilitySta
     it('SUB_Notification_Ans_openWindow_WithResult_Static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: () => void): Promise<void> => {
       const testNum = 'SUB_Notification_Ans_openWindow_WithResult_Static_1200';
       let num:int=0
-      let bundle: notificationManager.BundleOption = {
-        bundle: bundleName,
-      };
-      
       let testContext: common.UIAbilityContext= AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
       try {
         await Utils.msSleep(1000)

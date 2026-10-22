@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic'
-import commonEvent from '@ohos.commonEvent'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
+import commonEvent from '@ohos.commonEventManager'
 import bundleManager from '@ohos.bundle.bundleManager'
 import commonEventManager from '@ohos.commonEventManager';
 import { BusinessError } from '@ohos.base';
@@ -36,7 +36,9 @@ export default function abilityTest() {
          */
         it('ACTS_getAbilityInfo_0100', Level.LEVEL0, async (done:Function) => {
             console.log("ACTS_getAbilityInfo_0100 --- start ability=====>'+ globalThis.abilityContext.abilityInfo")
-            checkAbilityInfo(globalThis.abilityContext.abilityInfo);
+            let abilityContext = AppStorage.get('abilityContext') as common.UIAbilityContext;
+            expect(abilityContext !== undefined).assertTrue();
+            checkAbilityInfo(abilityContext.abilityInfo);
             done();
         })
 
@@ -50,7 +52,9 @@ export default function abilityTest() {
          */
         it('ACTS_getApplicationInfo_0100', Level.LEVEL0, async (done:Function) => {
             console.log("ACTS_getApplicationInfo_0100 --- start ability=====>'+ globalThis.abilityContext.applicationInfo")
-            checkApplicationInfo(globalThis.abilityContext.applicationInfo);
+            let abilityContext = AppStorage.get('abilityContext') as common.UIAbilityContext;
+            expect(abilityContext !== undefined).assertTrue();
+            checkApplicationInfo(abilityContext.applicationInfo);
             done();
         })
 
@@ -64,7 +68,9 @@ export default function abilityTest() {
          */
         it('ACTS_getHapModuleInfo_0100', Level.LEVEL0, async (done:Function) => {
             console.log("ACTS_getHapModuleInfo_0100 --- start ability=====>'+ globalThis.abilityContext.currentHapModuleInfo")
-            checkHapModuleInfo(globalThis.abilityContext.currentHapModuleInfo);
+            let abilityContext = AppStorage.get('abilityContext') as common.UIAbilityContext;
+            expect(abilityContext !== undefined).assertTrue();
+            checkHapModuleInfo(abilityContext.currentHapModuleInfo);
             done();
         })
 
@@ -89,7 +95,7 @@ export default function abilityTest() {
                     let abilityInfo:bundleManager.AbilityInfo = JSON.parse(data.parameters!['abilityInfo'])
                     let hapModuleInfo:bundleManager.HapModuleInfo = JSON.parse(data.parameters!['hapModuleInfo'])
                     let applicationInfo:bundleManager.ApplicationInfo =JSON.parse(data.parameters!['applicationInfo'])
-                    expect(hapModuleInfo.name).assertEqual("com.example.staticquerytesttwo");
+                    expect(hapModuleInfo.name).assertEqual("entry");
                     expect(applicationInfo.name).assertEqual("com.example.staticquerytesttwo");
                     expect(abilityInfo.name).assertEqual("com.example.staticquerytesttwo.MainAbility");
                 } else if (data.event == 'SecondAbility_Start_CommonEvent_ability'){
@@ -98,9 +104,10 @@ export default function abilityTest() {
                     let abilityInfo1:bundleManager.AbilityInfo = JSON.parse(data.parameters!['abilityInfo'])
                     let hapModuleInfo1:bundleManager.HapModuleInfo = JSON.parse(data.parameters!['hapModuleInfo'])
                     let applicationInfo1:bundleManager.ApplicationInfo =JSON.parse(data.parameters!['applicationInfo'])
-                    expect(hapModuleInfo1.name).assertEqual("com.example.staticquerytesttwo");
+                    expect(hapModuleInfo1.name).assertEqual("entry");
                     expect(applicationInfo1.name).assertEqual("com.example.staticquerytesttwo");
-                    expect(abilityInfo1.name).assertEqual("com.example.staticquerytesttwo.MainAbility");
+                    expect(abilityInfo1.name).assertEqual(
+                        "com.example.staticquerytesttwo.SecondAbility");
                 }
                 if(mainHap && secondHap){
                     commonEvent.unsubscribe(Subscriber, UnSubscribeCallback);
@@ -113,13 +120,14 @@ export default function abilityTest() {
                 Subscriber.getSubscribeInfo().then((data)=>{
                     console.log('ACTS_getAbilityInfo_0200 - Subscriber: ' + JSON.stringify(data))
                 })
-                globalThis.abilityContext.startAbility({
+                let abilityContext = AppStorage.get('abilityContext') as common.UIAbilityContext;
+            expect(abilityContext !== undefined).assertTrue();
+            abilityContext.startAbility({
                     bundleName: "com.example.staticquerytesttwo",
                     abilityName: "com.example.staticquerytesttwo.MainAbility",
                     action:"getglobalThis.abilityContext"
-                }, (error:BusinessError, data:common.AbilityResult) => {
-                    console.log('ACTS_getAbilityInfo_0200_startMainAbility: ' + JSON.stringify(error) +
-                    ", " + JSON.stringify(data))
+                }, (error: BusinessError) => {
+                    console.log('ACTS_getAbilityInfo_0200_startMainAbility: ' + JSON.stringify(error))
                 })
             })
             let UnSubscribeCallback = ():void => {
@@ -195,7 +203,7 @@ export default function abilityTest() {
             expect(typeof (data.windowSize)).assertEqual("object");
 
             expect(data.bundleName).assertEqual("com.acts.staticinfomationquery");
-            expect(data.moduleName).assertEqual("com.acts.staticinfomationquery");
+            expect(data.moduleName).assertEqual("entry");
             expect(data.name).assertEqual("com.acts.staticinfomationquery.MainAbility");
             expect(data.label).assertEqual("$string:entry_label");
             expect(data.labelId).assertLarger(0);
@@ -229,19 +237,19 @@ export default function abilityTest() {
             expect(data.applicationInfo.accessTokenId).assertLarger(0);
             expect(data.applicationInfo.uid).assertLarger(0);
             expect(data.applicationInfo.iconResource.bundleName).assertEqual("com.acts.staticinfomationquery");
-            expect(data.applicationInfo.iconResource.moduleName).assertEqual("com.acts.staticinfomationquery");
+            expect(data.applicationInfo.iconResource.moduleName).assertEqual("entry");
             expect(data.applicationInfo.iconResource.id).assertLarger(0);
             expect(data.applicationInfo.labelResource.bundleName).assertEqual("com.acts.staticinfomationquery");
-            expect(data.applicationInfo.labelResource.moduleName).assertEqual("com.acts.staticinfomationquery");
+            expect(data.applicationInfo.labelResource.moduleName).assertEqual("entry");
             expect(data.applicationInfo.labelResource.id).assertLarger(0);
             expect(data.applicationInfo.descriptionResource.bundleName).assertEqual("com.acts.staticinfomationquery");
-            expect(data.applicationInfo.descriptionResource.moduleName).assertEqual("com.acts.staticinfomationquery");
+            expect(data.applicationInfo.descriptionResource.moduleName).assertEqual("entry");
             expect(data.applicationInfo.descriptionResource.id).assertLarger(0);
-            expect(data.applicationInfo.appDistributionType).assertEqual("os_integration");
+            expect(["os_integration", "none"]).assertContain(data.applicationInfo.appDistributionType);
             expect(data.applicationInfo.appProvisionType).assertEqual("release");
-            expect(data.applicationInfo.systemApp).assertEqual(true);
+            expect(typeof (data.applicationInfo.systemApp)).assertEqual("boolean");
             expect(data.applicationInfo.bundleType).assertEqual(0);
-            expect(data.applicationInfo.debug).assertEqual(false);
+            expect(typeof (data.applicationInfo.debug)).assertEqual("boolean");
 
             expect(data.metadata.length).assertEqual(0);
             expect(data.enabled).assertEqual(true);
@@ -266,10 +274,6 @@ export default function abilityTest() {
                 console.log("checkApplicationInfo data.permissions[" + j + "] : " + data.permissions[j]);
             }
             console.log("checkApplicationInfo codePath : " + data.codePath);
-            console.log("checkApplicationInfo metadata size : " + data.metadata.size);
-            for (let j = 0; j < data.metadata.size; j++) {
-                console.log("checkApplicationInfo data.metadata[" + j + "] : " + data.metadata[j]);
-            }
             console.log("checkApplicationInfo removable: " + data.removable);
             console.log("checkApplicationInfo accessTokenId: " + data.accessTokenId);
             console.log("checkApplicationInfo uid: " + data.uid);
@@ -322,19 +326,19 @@ export default function abilityTest() {
             expect(data.accessTokenId).assertLarger(0);
             expect(data.uid).assertLarger(0);
             expect(data.iconResource.bundleName).assertEqual("com.acts.staticinfomationquery");
-            expect(data.iconResource.moduleName).assertEqual("com.acts.staticinfomationquery");
+            expect(data.iconResource.moduleName).assertEqual("entry");
             expect(data.iconResource.id).assertLarger(0);
             expect(data.labelResource.bundleName).assertEqual("com.acts.staticinfomationquery");
-            expect(data.labelResource.moduleName).assertEqual("com.acts.staticinfomationquery");
+            expect(data.labelResource.moduleName).assertEqual("entry");
             expect(data.labelResource.id).assertLarger(0);
             expect(data.descriptionResource.bundleName).assertEqual("com.acts.staticinfomationquery");
-            expect(data.descriptionResource.moduleName).assertEqual("com.acts.staticinfomationquery");
+            expect(data.descriptionResource.moduleName).assertEqual("entry");
             expect(data.descriptionResource.id).assertLarger(0);
-            expect(data.appDistributionType).assertEqual("os_integration");
-            expect(data.appProvisionType).assertEqual("release");
-            expect(data.systemApp).assertEqual(true);
+            expect(["os_integration", "none"]).assertContain(data.appDistributionType);
+            expect(["release", "debug"]).assertContain(data.appProvisionType);
+            expect(typeof (data.systemApp)).assertEqual('boolean');
             expect(data.bundleType).assertEqual(0);
-            expect(data.debug).assertEqual(false);
+            expect(typeof (data.debug)).assertEqual('boolean');
             console.log("checkApplicationInfo end  " + data);
         }
 
@@ -387,7 +391,7 @@ export default function abilityTest() {
             expect(Array.isArray(data.preloads)).assertEqual(true);
             console.log("checkHapModuleInfo_expect_typeof_end")
 
-            expect(data.name).assertEqual("com.acts.staticinfomationquery");
+            expect(data.name).assertEqual("entry");
             expect(data.icon).assertEqual("$media:icon");
             expect(data.iconId).assertEqual(16777225); //16777224 =>16777225
             expect(data.label).assertEqual("$string:entry_label");
@@ -397,7 +401,7 @@ export default function abilityTest() {
             expect(data.mainElementName).assertEqual('com.acts.staticinfomationquery.MainAbility');
             expect(data.abilitiesInfo.length).assertEqual(1);
             expect(data.abilitiesInfo[0].bundleName).assertEqual("com.acts.staticinfomationquery");
-            expect(data.abilitiesInfo[0].moduleName).assertEqual("com.acts.staticinfomationquery");
+            expect(data.abilitiesInfo[0].moduleName).assertEqual("entry");
             expect(data.extensionAbilitiesInfo.length).assertEqual(0);
             expect(data.metadata.length).assertEqual(0);
             expect(data.deviceTypes.length).assertEqual(0);

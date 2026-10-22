@@ -12,6 +12,7 @@
     "MainAbility/pages/calendarPickerDialog/CalendarPickerDialog",
     "MainAbility/pages/calendarPickerDialog/CalendarPickerDialogButtonStyle",
     "MainAbility/pages/calendarPickerDialog/calendarPickerDialogBackgroundEffect",
-    "MainAbility/pages/calendarPickerDialog/calendarPickerDialogBlurStyleOptions"
+    "MainAbility/pages/calendarPickerDialog/calendarPickerDialogBlurStyleOptions",
+    "MainAbility/pages/calendarPickerDialog/firstDayOfWeek"
   ]
 }

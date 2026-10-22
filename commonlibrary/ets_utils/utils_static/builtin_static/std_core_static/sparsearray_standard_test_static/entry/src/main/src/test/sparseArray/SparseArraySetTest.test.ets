@@ -60,7 +60,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify SparseArray $_set with index and value parameters
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet001', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>()
@@ -73,7 +73,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify SparseArray $_set when value parameter is missing
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet002', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int | undefined>()
@@ -87,7 +87,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify $_set throws when index is undefined cast (cannot pass missing index)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet003', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         try {
@@ -104,7 +104,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify SparseArray $_set with positive index in valid range
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet004', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>()
@@ -117,7 +117,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify SparseArray $_set at index zero
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet005', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>()
@@ -130,7 +130,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify $_set at int max index does not store (length would overflow); $_get returns undefined
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet006', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>()
@@ -144,7 +144,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify $_set with minimum int negative index does not write slot 0
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet007', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>()
@@ -158,7 +158,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify $_set(-1) does not write slot 0
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet008', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>()
@@ -172,7 +172,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify $_set(-100) does not write slot 0
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet009', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>()
@@ -186,7 +186,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify SparseArray $_set throws ClassCastError when index is null
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet010', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>()
@@ -204,7 +204,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify SparseArray $_set throws ClassCastError when index is undefined
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet011', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>()
@@ -222,7 +222,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify SparseArray $_set throws ClassCastError when index is a floating-point number
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet012', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>()
@@ -240,7 +240,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify SparseArray $_set throws ClassCastError when index is a string
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet013', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>()
@@ -258,7 +258,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc $_set(1, 7) on [2,2,3], verify index 1 updated
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet014', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(2, 2, 3)
@@ -273,7 +273,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify SparseArray $_set with a positive value
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet015', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>()
@@ -286,7 +286,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify SparseArray $_set with a negative value
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet016', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>()
@@ -299,7 +299,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify SparseArray $_set with zero value
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet017', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>()
@@ -312,7 +312,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify SparseArray $_set with int boundary values
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet018', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>()
@@ -327,7 +327,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify SparseArray $_set with a normal string value
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet019', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<string>()
@@ -340,7 +340,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify SparseArray $_set with an empty string
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet020', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<string>()
@@ -353,7 +353,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify SparseArray $_set with Unicode string
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet021', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<string>()
@@ -366,7 +366,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify SparseArray $_set with special characters in string
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet022', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<string>()
@@ -379,7 +379,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify SparseArray $_set with boolean true
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet023', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<boolean>()
@@ -392,7 +392,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify SparseArray $_set with boolean false
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet024', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<boolean>()
@@ -405,7 +405,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify SparseArray $_set with a plain object value
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet025', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<Person025>()
@@ -419,7 +419,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify SparseArray $_set with a nested object value
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet026', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<Nested026>()
@@ -434,7 +434,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify SparseArray $_set with an array value
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet027', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<Array<int>>()
@@ -447,7 +447,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify SparseArray $_set with an empty array value
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet028', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<Array<int>>()
@@ -460,7 +460,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify SparseArray $_set with null value
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet029', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int | null>()
@@ -473,7 +473,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify SparseArray $_set stores XSS-like string as literal
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet030', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<string>()
@@ -486,7 +486,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify SparseArray $_set with a very long string
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet031', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<string>()
@@ -500,7 +500,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify SparseArray $_set with zero-width space string
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet032', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<string>()
@@ -513,7 +513,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify SparseArray $_set on consecutive indices
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet033', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>()
@@ -528,7 +528,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify SparseArray $_set on sparse non-contiguous indices
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet034', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>()
@@ -544,7 +544,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify SparseArray $_set overwrites existing index
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet035', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>()
@@ -558,7 +558,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify SparseArray $_set returns void and updates storage
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet036', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>()
@@ -572,7 +572,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc $_set(1, 14) on [5,6,3], verify index 1 updated
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet037', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(5, 6, 3)
@@ -587,7 +587,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc $_set(1, 12) on [6,2,4], verify index 1 updated
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet038', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(6, 2, 4)
@@ -602,7 +602,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify $_set with negative index (-999) does not write slot 0
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet039', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>()
@@ -616,7 +616,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify $_set(-1) on populated array keeps existing slots unchanged
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet040', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>()
@@ -633,7 +633,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify SparseArray $_set when index is not int type
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet041', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>()
@@ -650,7 +650,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify SparseArray $_set on an empty SparseArray
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet042', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>()
@@ -664,7 +664,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify SparseArray $_set on pre-sized SparseArray
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet043', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10)
@@ -677,7 +677,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify SparseArray $_set on initialized SparseArray
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet044', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3)
@@ -691,7 +691,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify sparse holes remain undefined between set indices
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet045', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>()
@@ -710,7 +710,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify many consecutive SparseArray $_set operations
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet046', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>()
@@ -726,7 +726,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify many sparse SparseArray $_set operations
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet047', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>()
@@ -743,7 +743,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify SparseArray $_set with a large index
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet048', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>()
@@ -756,7 +756,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify SparseArray $_set with complex nested object
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet049', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<Complex049>()
@@ -771,7 +771,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify $_get reads value after $_set
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet050', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>()
@@ -784,7 +784,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify SparseArray length after $_set
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet051', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>()
@@ -798,7 +798,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc Verify mixing push and $_set on SparseArray
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet052', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>()
@@ -813,7 +813,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc $_set and $_get byte boundary elements at indices 0 and 1
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet053', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<byte>()
@@ -828,7 +828,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc $_set stores replacement char and malformed UTF-8-like string literals
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet054', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<string>()
@@ -843,7 +843,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc $_set stores enum via numeric literal 1 cast to ColorSet055
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet055', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<ColorSet055>()
@@ -856,7 +856,7 @@ export default function SparseArraySetTest(): void {
      * @tc.desc $_set at index 0x2 stores null element
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArraySet056', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int | null>()

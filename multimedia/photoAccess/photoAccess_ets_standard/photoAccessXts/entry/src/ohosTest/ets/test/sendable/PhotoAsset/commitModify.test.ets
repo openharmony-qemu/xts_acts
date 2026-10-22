@@ -24,6 +24,8 @@ import {
   driveFn,
   LOG_TAG,
   getSendableFileAsset,
+  checkResourceFile,
+  createResource
 } from '../../common';
 import common from '@ohos.app.ability.common';
 import { photoAccessHelper, sendablePhotoAccessHelper } from '@kit.MediaLibraryKit';
@@ -77,6 +79,13 @@ export default function sendableCommitModifyPhotoAssetTest() {
       console.info(TAG, 'beforeAll case');
       await getPermission();
       await driveFn();
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let fileNameList: Array<string> = [
+        "modifyPro01.jpg", "modifyPro02.jpg", "modifyPro03.jpg", "modifyPro04.jpg", "modifyPro05.jpg", "modifyPro06.jpg", "modifyPro07.jpg",
+        "modifyPro01.mp4", "modifyPro02.mp4", "modifyPro03.mp4", "modifyPro04.mp4", "modifyPro05.mp4", "modifyPro06.mp4", "modifyPro07.mp4",
+       ];
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNameList);
     });
 
     beforeEach(() => {

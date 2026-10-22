@@ -12,7 +12,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-
+ 
 import Ability from '@ohos.app.ability.UIAbility'
 import AbilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry'
 import { Hypium, Level } from '@ohos/hypium-dynamic'
@@ -25,32 +25,44 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 
 export default class MainAbility extends Ability {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
-    console.log('MainAbility onCreate')
+    console.log('test MainAbility onCreate')
+    try{
+        console.log('test MainAbility getCurrentAppCloneIndex start')
+        let appIndex = this.context.getApplicationContext().getCurrentAppCloneIndex();
+        console.log('MainAbility appIndex ' + appIndex)
+        if(appIndex === 0){
+            AppStorage.setOrCreate('appCloneSupport', true);
+        }
+    }catch(e){
+        console.log('MainAbility getCurrentAppCloneIndex catch ' + e.code + ' ' + e.message)
+        AppStorage.setOrCreate('appCloneSupport', false);
+    }
+    console.log('test MainAbility getCurrentAppCloneIndex end')
     let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
     let abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
-    console.info('start run testcase!!!')
+    console.info('test start run testcase!!!')
     Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite)
   }
-
+ 
   onDestroy() {
     console.log('MainAbility onDestroy')
   }
-
+ 
   onWindowStageCreate(windowStage: window.WindowStage) {
     console.log('MainAbility onWindowStageCreate')
     windowStage.loadContent('MainAbility/pages/index', null)
     globalThis.abilityContext = this.context;
   }
-
+ 
   onWindowStageDestroy() {
-    console.log('MainAbility onWindowStageDestroy')
+    console.log('test MainAbility onWindowStageDestroy')
   }
-
+ 
   onForeground() {
-    console.log('MainAbility onForeground')
+    console.log('test MainAbility onForeground')
   }
-
+ 
   onBackground() {
-    console.log('MainAbility onBackground')
+    console.log('test MainAbility onBackground')
   }
 };

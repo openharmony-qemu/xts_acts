@@ -15,7 +15,7 @@
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import { describe, it, expect, beforeAll, beforeEach, afterEach, afterAll, Level } from '@ohos/hypium-dynamic';
-import { getPermission, driveFn, LOG_TAG, copyImageToSandbox, getFileNameArray } from '../../common';
+import { getPermission, driveFn, LOG_TAG, copyImageToSandbox, getFileNameArray, checkResourceFile, createResource } from '../../common';
 import common from '@ohos.app.ability.common';
 import { dataSharePredicates } from '@kit.ArkData';
 import { fileUri } from '@kit.CoreFileKit';
@@ -91,6 +91,10 @@ export default function MovingPhotoRequestContentTest() {
       console.info(TAG, 'beforeAll case');
       await getPermission();
       await driveFn();
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let fileNameList: Array<string> = [ "01.jpg" , "01.mp4" ];
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNameList);
     });
 
     beforeEach(() => {
@@ -133,7 +137,7 @@ export default function MovingPhotoRequestContentTest() {
     /**
      * @tc.name   SUB_MovingPhoto_requestContent_promise_0002
      * @tc.number SUB_MovingPhoto_requestContent_promise_0002
-     * @tc.desc   MovingPhoto_requestContent ResourceType - null
+     * @tc.desc   MovingPhoto_requestContent ResourceType - null - 14000011
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -159,7 +163,7 @@ export default function MovingPhotoRequestContentTest() {
     /**
      * @tc.name   SUB_MovingPhoto_requestContent_promise_0003
      * @tc.number SUB_MovingPhoto_requestContent_promise_0003
-     * @tc.desc   MovingPhoto_requestContent ResourceType - undefined
+     * @tc.desc   MovingPhoto_requestContent ResourceType - undefined - 14000011
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -185,7 +189,7 @@ export default function MovingPhotoRequestContentTest() {
     /**
      * @tc.name   SUB_MovingPhoto_requestContent_promise_0004
      * @tc.number SUB_MovingPhoto_requestContent_promise_0004
-     * @tc.desc   MovingPhoto_requestContent ResourceType - OTHER_RESOURCE
+     * @tc.desc   MovingPhoto_requestContent ResourceType - OTHER_RESOURCE - 14000011
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0

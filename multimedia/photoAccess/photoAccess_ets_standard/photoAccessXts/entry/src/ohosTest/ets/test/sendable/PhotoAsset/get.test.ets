@@ -27,7 +27,9 @@ import {
   getPermission,
   driveFn,
   LOG_TAG,
-  getSendableFileAsset
+  getSendableFileAsset,
+  checkResourceFile,
+  createResource
 } from '../../common';
 import common from '@ohos.app.ability.common';
 import { ErrorCode } from '../../CommonErrorCode';
@@ -38,7 +40,6 @@ export default function sendableGetTest() {
 
     let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
     const phAccessHelper = sendablePhotoAccessHelper.getPhotoAccessHelper(testContext);
-    const fileNameList = ["getTest.jpg", "getTest.mp4"];
 
     const checkProvisionAsset = async (done: Function, testName: string, displayName: string) => {
       try {
@@ -140,7 +141,10 @@ export default function sendableGetTest() {
       console.info(TAG, 'beforeAll case');
       await getPermission();
       await driveFn();
-      await pushCreateAsset(testContext, fileNameList);
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let fileNameList: Array<string> = [ "getTest.jpg", "getTest.mp4" ];
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNameList);
     });
 
     beforeEach(() => {

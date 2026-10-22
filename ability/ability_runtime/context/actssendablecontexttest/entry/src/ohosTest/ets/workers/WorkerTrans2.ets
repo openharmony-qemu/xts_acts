@@ -20,7 +20,8 @@ import sendableContextManager from '@ohos.app.ability.sendableContextManager';
 import contextConstant from '@ohos.app.ability.contextConstant';
 import hilog from '@ohos.hilog';
 import resourceManager from '@ohos.resourceManager';
-import { SendableContextObject, NormalContextObject, ApplicationContextObject, AbilityStageObject, ContextObject, UIAbilityContextObject } from '../common/SendableContextObject'
+import { SendableContextObject, NormalContextObject, ApplicationContextObject, AbilityStageObject, ContextObject,
+  UIAbilityContextObject } from '../common/SendableContextObject'
 
 const workerPort: ThreadWorkerGlobalScope = worker.workerPort;
 
@@ -28,7 +29,8 @@ workerPort.onmessage = (e: MessageEvents) => {
   let object: UIAbilityContextObject | ContextObject | AbilityStageObject | ApplicationContextObject = e.data;
   if (object.contextName === 'SUB_Ability_AbilityRuntime_Worker_Stage_1100') {
     let context: common.UIAbilityContext = object.sendableContext as common.UIAbilityContext ;
-    hilog.info(0x0000, 'testTag', '%{public}s', object.contextName + '[WorkerTrans1] uiability context convert to uiability context.');
+    hilog.info(0x0000, 'testTag', '%{public}s', object.contextName +
+      '[WorkerTrans1] uiability context convert to uiability context.');
     try {
       hilog.info(0x0000, 'testTag', '[WorkerTrans2] Worker uiability context.cacheDir: %{public}s', context.cacheDir);
       workerPort.postMessage({'key': '[WorkerTrans2] success', 'value': context.cacheDir});
@@ -41,7 +43,8 @@ workerPort.onmessage = (e: MessageEvents) => {
 
   if (object.contextName === 'SUB_Ability_AbilityRuntime_Worker_Stage_1900') {
     let context: common.UIAbilityContext = object.sendableContext as common.UIAbilityContext ;
-    hilog.info(0x0000, 'testTag', '%{public}s', object.contextName + '[WorkerTrans1] uiability context convert to uiability context.');
+    hilog.info(0x0000, 'testTag', '%{public}s', object.contextName +
+      '[WorkerTrans1] uiability context convert to uiability context.');
     try {
       hilog.info(0x0000, 'testTag', '[WorkerTrans2] Worker uiability context.cacheDir: %{public}s', context.cacheDir);
       workerPort.postMessage({'key': '[WorkerTrans2] success', 'value': context.cacheDir});
@@ -54,7 +57,8 @@ workerPort.onmessage = (e: MessageEvents) => {
 
   if (object.contextName === 'SUB_Ability_AbilityRuntime_Worker_Stage_1200') {
     let context: common.ApplicationContext = object.sendableContext as common.ApplicationContext;
-    hilog.info(0x0000, 'testTag', '%{public}s', object.contextName + '[WorkerTrans1] uiability context convert to uiability context.');
+    hilog.info(0x0000, 'testTag', '%{public}s', object.contextName +
+      '[WorkerTrans1] uiability context convert to uiability context.');
     try {
       hilog.info(0x0000, 'testTag', '[WorkerTrans2] Worker uiability context.cacheDir: %{public}s', context.cacheDir);
       workerPort.postMessage({'key': '[WorkerTrans2] success', 'value': context.cacheDir});
@@ -68,7 +72,8 @@ workerPort.onmessage = (e: MessageEvents) => {
   
   if (object.contextName === 'SUB_Ability_AbilityRuntime_Worker_Stage_2000') {
     let context: common.ApplicationContext = object.sendableContext as common.ApplicationContext;
-    hilog.info(0x0000, 'testTag', '%{public}s', object.contextName + '[WorkerTrans1] uiability context convert to uiability context.');
+    hilog.info(0x0000, 'testTag', '%{public}s', object.contextName +
+      '[WorkerTrans1] uiability context convert to uiability context.');
     try {
       hilog.info(0x0000, 'testTag', '[WorkerTrans2] Worker uiability context.cacheDir: %{public}s', context.cacheDir);
       workerPort.postMessage({'key': '[WorkerTrans2] success', 'value': context.cacheDir});
@@ -81,7 +86,8 @@ workerPort.onmessage = (e: MessageEvents) => {
 
   if (object.contextName === 'SUB_Ability_AbilityRuntime_Worker_Stage_1300') {
     let context: common.AbilityStageContext = object.sendableContext as common.AbilityStageContext;
-    hilog.info(0x0000, 'testTag', '%{public}s', object.contextName + '[WorkerTrans1] uiability context convert to uiability context.');
+    hilog.info(0x0000, 'testTag', '%{public}s', object.contextName +
+      '[WorkerTrans1] uiability context convert to uiability context.');
     try {
       hilog.info(0x0000, 'testTag', '[WorkerTrans2] Worker uiability context.cacheDir: %{public}s', context.cacheDir);
       workerPort.postMessage({'key': '[WorkerTrans2] success', 'value': context.cacheDir});
@@ -94,7 +100,8 @@ workerPort.onmessage = (e: MessageEvents) => {
 
   if (object.contextName === 'SUB_Ability_AbilityRuntime_Worker_Stage_2700') {
     let context: common.AbilityStageContext = object.sendableContext as common.AbilityStageContext;
-    hilog.info(0x0000, 'testTag', '%{public}s', object.contextName + '[WorkerTrans1] uiability context convert to uiability context.');
+    hilog.info(0x0000, 'testTag', '%{public}s', object.contextName +
+      '[WorkerTrans1] uiability context convert to uiability context.');
     try {
       hilog.info(0x0000, 'testTag', '[WorkerTrans2] Worker uiability context.cacheDir: %{public}s', context.cacheDir);
       workerPort.postMessage({'key': '[WorkerTrans2] success', 'value': context.cacheDir});
@@ -106,8 +113,9 @@ workerPort.onmessage = (e: MessageEvents) => {
   }
 
   if (object.contextName === 'SUB_Ability_AbilityRuntime_Worker_Stage_1400') {
-    let context: common.Context = object.sendableContext;
-    hilog.info(0x0000, 'testTag', '%{public}s', object.contextName + '[WorkerTrans1] uiability context convert to uiability context.');
+    let context: common.Context = object.sendableContext as common.Context;
+    hilog.info(0x0000, 'testTag', '%{public}s', object.contextName +
+      '[WorkerTrans1] uiability context convert to uiability context.');
     try {
       hilog.info(0x0000, 'testTag', '[WorkerTrans2] Worker uiability context.cacheDir: %{public}s', context.cacheDir);
       workerPort.postMessage({'key': '[WorkerTrans2] success', 'value': context.cacheDir});
@@ -119,8 +127,9 @@ workerPort.onmessage = (e: MessageEvents) => {
   }
 
   if (object.contextName === 'SUB_Ability_AbilityRuntime_Worker_Stage_2100') {
-    let context: common.Context = object.sendableContext;
-    hilog.info(0x0000, 'testTag', '%{public}s', object.contextName + '[WorkerTrans1] uiability context convert to uiability context.');
+    let context: common.Context = object.sendableContext as common.Context;
+    hilog.info(0x0000, 'testTag', '%{public}s', object.contextName +
+      '[WorkerTrans1] uiability context convert to uiability context.');
     try {
       hilog.info(0x0000, 'testTag', '[WorkerTrans2] Worker uiability context.cacheDir: %{public}s', context.cacheDir);
       workerPort.postMessage({'key': '[WorkerTrans2] success', 'value': context.cacheDir});
@@ -133,7 +142,8 @@ workerPort.onmessage = (e: MessageEvents) => {
 
   if (object.contextName === 'SUB_Ability_AbilityRuntime_Worker_Stage_1500') {
     let context: common.Context = object.sendableContext as common.Context;
-    hilog.info(0x0000, 'testTag', '%{public}s', object.contextName + '[WorkerTrans1] uiability context convert to uiability context.');
+    hilog.info(0x0000, 'testTag', '%{public}s', object.contextName +
+      '[WorkerTrans1] uiability context convert to uiability context.');
     try {
       hilog.info(0x0000, 'testTag', '[WorkerTrans2] Worker uiability context.cacheDir: %{public}s', context.cacheDir);
       workerPort.postMessage({'key': '[WorkerTrans2] success', 'value': context.cacheDir});
@@ -146,7 +156,8 @@ workerPort.onmessage = (e: MessageEvents) => {
 
   if (object.contextName === 'SUB_Ability_AbilityRuntime_Worker_Stage_1700') {
     let context: common.Context = object.sendableContext as common.Context;
-    hilog.info(0x0000, 'testTag', '%{public}s', object.contextName + '[WorkerTrans1] uiability context convert to uiability context.');
+    hilog.info(0x0000, 'testTag', '%{public}s', object.contextName +
+      '[WorkerTrans1] uiability context convert to uiability context.');
     try {
       hilog.info(0x0000, 'testTag', '[WorkerTrans2] Worker uiability context.cacheDir: %{public}s', context.cacheDir);
       workerPort.postMessage({'key': '[WorkerTrans2] success', 'value': context.cacheDir});
@@ -159,7 +170,8 @@ workerPort.onmessage = (e: MessageEvents) => {
 
   if (object.contextName === 'SUB_Ability_AbilityRuntime_Worker_Stage_1800') {
     let context: common.Context = object.sendableContext as common.Context;
-    hilog.info(0x0000, 'testTag', '%{public}s', object.contextName + '[WorkerTrans1] uiability context convert to uiability context.');
+    hilog.info(0x0000, 'testTag', '%{public}s', object.contextName +
+      '[WorkerTrans1] uiability context convert to uiability context.');
     try {
       hilog.info(0x0000, 'testTag', '[WorkerTrans2] Worker uiability context.cacheDir: %{public}s', context.cacheDir);
       workerPort.postMessage({'key': '[WorkerTrans2] success', 'value': context.cacheDir});

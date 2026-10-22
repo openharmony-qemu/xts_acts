@@ -12,8 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, Level, beforeAll } from '@ohos/hypium';
-import { grantDocumentFolderAccess } from './CommonUtils';
+import { describe, it, expect, Level, beforeAll, afterEach } from '@ohos/hypium';
+import { grantDocumentFolderAccess, uSleep } from './CommonUtils';
 
 import clouddisk2 from 'libclouddisk2.so';
 import picker from '@ohos.file.picker';
@@ -22,6 +22,11 @@ export default function CloudDiskPlaceholderStateTest() {
   describe('CloudDiskPlaceholderStateTest', () => {
     beforeAll(async (done: Function) => {
       await grantDocumentFolderAccess(done);
+    });
+
+    afterEach(async (done: Function) => {
+      await uSleep(200);
+      done();
     });
 
     /**

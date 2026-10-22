@@ -138,11 +138,13 @@ workerPort.onmessage = (e: MessageEvents) => {
       }).catch((err: BusinessError) => {
         hilog.error(0x0000, 'testTag', 'Get RdbStore failed %{public}s.', JSON.stringify(err));
       })
-      workerPort.postMessage({'key': '[sendableUIAbilityContext] UIAbilityContext convert to UIAbilityContext', 'value': 'succeed'});
+      workerPort.postMessage({'key': '[sendableUIAbilityContext] UIAbilityContext convert to UIAbilityContext',
+        'value': 'succeed'});
     } catch (error) {
       hilog.error(0x0000, 'testTag', 'uiability context convert to uiability context failed %{public}s',
         JSON.stringify(error));
-      workerPort.postMessage({'key': '[sendableUIAbilityContext] UIAbilityContext convert to UIAbilityContext', 'value': 'failed'});
+      workerPort.postMessage({'key': '[sendableUIAbilityContext] UIAbilityContext convert to UIAbilityContext',
+        'value': 'failed'});
     }
 
     // case2: test convert to ability stage context
@@ -152,11 +154,13 @@ workerPort.onmessage = (e: MessageEvents) => {
       // 获取context后获取沙箱路径
       hilog.info(0x0000, 'testTag', 'uiability context convert to abilitystage context: %{public}s',
         JSON.stringify(context));
-      workerPort.postMessage({'key': '[sendableUIAbilityContext] UIAbilityContext convert to AbilityStageContext', 'value': 'failed'});
+      workerPort.postMessage({'key': '[sendableUIAbilityContext] UIAbilityContext convert to AbilityStageContext',
+        'value': 'failed'});
     } catch (error) {
       hilog.error(0x0000, 'testTag', 'uiability context convert to abilitystage context failed %{public}s',
         JSON.stringify(error));
-      workerPort.postMessage({'key': '[sendableUIAbilityContext] UIAbilityContext convert to AbilityStageContext', 'value': 'failed'});
+      workerPort.postMessage({'key': '[sendableUIAbilityContext] UIAbilityContext convert to AbilityStageContext',
+        'value': 'failed'});
     }
 
     // case3: test convert to application context
@@ -166,11 +170,13 @@ workerPort.onmessage = (e: MessageEvents) => {
       // 获取context后获取沙箱路径
       hilog.info(0x0000, 'testTag', 'uiability context convert to application context: %{public}s',
         JSON.stringify(context));
-      workerPort.postMessage({'key': '[sendableUIAbilityContext] UIAbilityContext convert to ApplicationContext', 'value': 'succeed'});
+      workerPort.postMessage({'key': '[sendableUIAbilityContext] UIAbilityContext convert to ApplicationContext',
+        'value': 'succeed'});
     } catch (error) {
       hilog.error(0x0000, 'testTag', 'uiability context convert to application context failed %{public}s',
         JSON.stringify(error));
-      workerPort.postMessage({'key': '[sendableUIAbilityContext] UIAbilityContext convert to ApplicationContext', 'value': 'failed'});
+      workerPort.postMessage({'key': '[sendableUIAbilityContext] UIAbilityContext convert to ApplicationContext',
+        'value': 'failed'});
     }
 
     // case4: test convert to base context
@@ -179,10 +185,12 @@ workerPort.onmessage = (e: MessageEvents) => {
       let context: common.Context = sendableContextManager.convertToContext(sendableContext);
       // 获取context后获取沙箱路径
       hilog.info(0x0000, 'testTag', 'uiability context convert to base context: %{public}s', JSON.stringify(context));
-      workerPort.postMessage({'key': '[sendableUIAbilityContext] UIAbilityContext convert to Context', 'value': 'succeed'});
+      workerPort.postMessage({'key': '[sendableUIAbilityContext] UIAbilityContext convert to Context',
+        'value': 'succeed'});
     } catch (error) {
       hilog.error(0x0000, 'testTag', 'uiability context convert to context failed %{public}s', JSON.stringify(error));
-      workerPort.postMessage({'key': '[sendableUIAbilityContext] UIAbilityContext convert to Context', 'value': 'failed'});
+      workerPort.postMessage({'key': '[sendableUIAbilityContext] UIAbilityContext convert to Context',
+        'value': 'failed'});
     }
   }
 
@@ -289,11 +297,13 @@ workerPort.onmessage = (e: MessageEvents) => {
         JSON.stringify(context.currentHapModuleInfo));
       // config
       hilog.info(0x0000, 'testTag', 'Worker AbilityStage context.config: %{public}s', JSON.stringify(context.config));
-      workerPort.postMessage({'key': '[sendableAbilityStageContext] AbilityStageContext convert to AbilityStageContext', 'value': 'succeed'});
+      workerPort.postMessage({'key': '[sendableAbilityStageContext] AbilityStageContext convert to' +
+        'AbilityStageContext', 'value': 'succeed'});
     } catch (error) {
       hilog.error(0x0000, 'testTag', 'Worker abilitystage context convert to abilitystage context failed %{public}s',
         JSON.stringify(error));
-      workerPort.postMessage({'key': '[sendableAbilityStageContext] AbilityStageContext convert to AbilityStageContext', 'value': 'failed'});
+      workerPort.postMessage({'key': '[sendableAbilityStageContext] AbilityStageContext convert to' +
+        'AbilityStageContext', 'value': 'failed'});
     }
 
     // case2: test convert to uiability context
@@ -303,11 +313,13 @@ workerPort.onmessage = (e: MessageEvents) => {
       // 获取context后获取沙箱路径
       hilog.info(0x0000, 'testTag', 'abilitystage context convert to uiability context: %{public}s',
         JSON.stringify(context));
-      workerPort.postMessage({'key': '[sendableAbilityStageContext] AbilityStageContext convert to UIAbilityContext', 'value': 'succeed'});
+      workerPort.postMessage({'key': '[sendableAbilityStageContext] AbilityStageContext convert to UIAbilityContext',
+        'value': 'succeed'});
     } catch (error) {
       hilog.error(0x0000, 'testTag', 'abilitystage context convert to uiability context failed %{public}s',
         JSON.stringify(error));
-      workerPort.postMessage({'key': '[sendableAbilityStageContext] AbilityStageContext convert to UIAbilityContext', 'value': 'failed'});
+      workerPort.postMessage({'key': '[sendableAbilityStageContext] AbilityStageContext convert to UIAbilityContext',
+        'value': 'failed'});
     }
 
     // case3: test convert to application context
@@ -317,11 +329,13 @@ workerPort.onmessage = (e: MessageEvents) => {
       // 获取context后获取沙箱路径
       hilog.info(0x0000, 'testTag', 'abilitystage context convert to application context: %{public}s',
         JSON.stringify(context));
-      workerPort.postMessage({'key': '[sendableAbilityStageContext] AbilityStageContext convert to ApplicationContext', 'value': 'succeed'});
+      workerPort.postMessage({'key': '[sendableAbilityStageContext] AbilityStageContext convert to ApplicationContext',
+        'value': 'succeed'});
     } catch (error) {
       hilog.error(0x0000, 'testTag', 'abilitystage context convert to application context failed %{public}s',
         JSON.stringify(error));
-      workerPort.postMessage({'key': '[sendableAbilityStageContext] AbilityStageContext convert to ApplicationContext', 'value': 'failed'});
+      workerPort.postMessage({'key': '[sendableAbilityStageContext] AbilityStageContext convert to ApplicationContext',
+        'value': 'failed'});
     }
 
     // case4: test convert to base context
@@ -331,11 +345,13 @@ workerPort.onmessage = (e: MessageEvents) => {
       // 获取context后获取沙箱路径
       hilog.info(0x0000, 'testTag', 'abilitystage context convert to base context: %{public}s',
         JSON.stringify(context));
-      workerPort.postMessage({'key': '[sendableAbilityStageContext] AbilityStageContext convert to Context', 'value': 'succeed'});
+      workerPort.postMessage({'key': '[sendableAbilityStageContext] AbilityStageContext convert to Context',
+        'value': 'succeed'});
     } catch (error) {
       hilog.error(0x0000, 'testTag', 'abilitystage context convert to base context failed %{public}s',
         JSON.stringify(error));
-      workerPort.postMessage({'key': '[sendableAbilityStageContext] AbilityStageContext convert to Context', 'value': 'failed'});
+      workerPort.postMessage({'key': '[sendableAbilityStageContext] AbilityStageContext convert to Context',
+        'value': 'failed'});
     }
   }
 
@@ -441,11 +457,13 @@ workerPort.onmessage = (e: MessageEvents) => {
       });
 
       // 独有的方法
-      workerPort.postMessage({'key': '[sendableApplicationContext] ApplicationContext convert to ApplicationContext', 'value': 'succeed'});
+      workerPort.postMessage({'key': '[sendableApplicationContext] ApplicationContext convert to ApplicationContext',
+        'value': 'succeed'});
     } catch (error) {
       hilog.error(0x0000, 'testTag', 'application context convert to application context failed %{public}s',
         JSON.stringify(error));
-      workerPort.postMessage({'key': '[sendableApplicationContext] ApplicationContext convert to ApplicationContext', 'value': 'failed'});
+      workerPort.postMessage({'key': '[sendableApplicationContext] ApplicationContext convert to ApplicationContext',
+        'value': 'failed'});
     }
 
 
@@ -456,11 +474,13 @@ workerPort.onmessage = (e: MessageEvents) => {
       // 获取context后获取沙箱路径
       hilog.info(0x0000, 'testTag', 'application context convert to uiability context: %{public}s',
         JSON.stringify(context));
-      workerPort.postMessage({'key': '[sendableApplicationContext] ApplicationContext convert to UIAbilityContext', 'value': 'succeed'});
+      workerPort.postMessage({'key': '[sendableApplicationContext] ApplicationContext convert to UIAbilityContext',
+        'value': 'succeed'});
     } catch (error) {
       hilog.error(0x0000, 'testTag', 'application context convert to uiability context failed %{public}s',
         JSON.stringify(error));
-      workerPort.postMessage({'key': '[sendableApplicationContext] ApplicationContext convert to UIAbilityContext', 'value': 'failed'});
+      workerPort.postMessage({'key': '[sendableApplicationContext] ApplicationContext convert to UIAbilityContext',
+        'value': 'failed'});
     }
 
     // case3: test convert to abilitystage context
@@ -470,11 +490,13 @@ workerPort.onmessage = (e: MessageEvents) => {
       // 获取context后获取沙箱路径
       hilog.info(0x0000, 'testTag', 'application context convert to abilitystage context: %{public}s',
         JSON.stringify(context));
-      workerPort.postMessage({'key': '[sendableApplicationContext] ApplicationContext convert to AbilityStageContext', 'value': 'succeed'});
+      workerPort.postMessage({'key': '[sendableApplicationContext] ApplicationContext convert to AbilityStageContext',
+        'value': 'succeed'});
     } catch (error) {
       hilog.error(0x0000, 'testTag', 'application context convert to abilitystage context failed %{public}s',
         JSON.stringify(error));
-      workerPort.postMessage({'key': '[sendableApplicationContext] ApplicationContext convert to AbilityStageContext', 'value': 'failed'});
+      workerPort.postMessage({'key': '[sendableApplicationContext] ApplicationContext convert to AbilityStageContext',
+        'value': 'failed'});
     }
 
     // case4: test convert to base context
@@ -483,11 +505,13 @@ workerPort.onmessage = (e: MessageEvents) => {
       let context: common.Context = sendableContextManager.convertToContext(sendableContext);
       // 获取context后获取沙箱路径
       hilog.info(0x0000, 'testTag', 'application context convert to base context: %{public}s', JSON.stringify(context));
-      workerPort.postMessage({'key': '[sendableApplicationContext] ApplicationContext convert to Context', 'value': 'succeed'});
+      workerPort.postMessage({'key': '[sendableApplicationContext] ApplicationContext convert to Context',
+        'value': 'succeed'});
     } catch (error) {
       hilog.error(0x0000, 'testTag', 'application context convert to base context failed %{public}s',
         JSON.stringify(error));
-      workerPort.postMessage({'key': '[sendableApplicationContext] ApplicationContext convert to Context', 'value': 'failed'});
+      workerPort.postMessage({'key': '[sendableApplicationContext] ApplicationContext convert to Context',
+        'value': 'failed'});
     }
   }
 

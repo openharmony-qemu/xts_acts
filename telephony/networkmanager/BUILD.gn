@@ -30,6 +30,7 @@ group("networkmanager") {
     "noPermission:noPermission",
     "socket:socket",
     "statistics:statistics",
+    "vpn:vpn",
     "websocket:websocket",
   ]
 }

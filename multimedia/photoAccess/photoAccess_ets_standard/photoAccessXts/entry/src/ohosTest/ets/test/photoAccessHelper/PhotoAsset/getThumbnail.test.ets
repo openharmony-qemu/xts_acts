@@ -16,7 +16,7 @@
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import image from '@ohos.multimedia.image';
 import { describe, it, expect, beforeAll, Level, beforeEach, afterEach, afterAll } from '@ohos/hypium-dynamic';
-import { photoKeys, fetchOption, getFileAsset, getPermission, driveFn, pushCreateAsset, LOG_TAG } from '../../common';
+import { photoKeys, fetchOption, getFileAsset, getPermission, driveFn, pushCreateAsset, LOG_TAG, checkResourceFile, createResource } from '../../common';
 import common from '@ohos.app.ability.common';
 import { JSON } from '@kit.ArkTS';
 
@@ -183,7 +183,10 @@ export default function getThumbnailTest() {
       console.info(TAG, 'beforeAll case');
       await getPermission();
       await driveFn();
-      await pushCreateAsset(testContext, fileNameList);
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let fileNameList: Array<string> = [ IMAGE_TEST_FILE , VIDEO_TEST_FILE ];
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNameList);
     });
 
     beforeEach(() => {

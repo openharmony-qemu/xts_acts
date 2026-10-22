@@ -23,7 +23,17 @@ import Utils from './Utils'
 import { BusinessError } from '@ohos.base';
 import Want from '@ohos.app.ability.Want';
 
+function getDumpCmd(): string {
+  let cmd = 'aa dump -e';
+  let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+  if (user !== undefined) {
+    cmd += ' -u ' + user;
+  }
+  return cmd;
+}
+
 export default function abilityTest() {
+
 
   describe('ACTS_UIExtension', () => {
     let context = getContext() as common.UIAbilityContext;
@@ -74,7 +84,8 @@ export default function abilityTest() {
 
           if (data.event == appearEvent) {
             let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
-            await abilityDelegator.executeShellCommand('aa dump -e').then((data) => {
+            let cmd = getDumpCmd();
+            await abilityDelegator.executeShellCommand(cmd).then((data) => {
               console.info(TAG + 'data: ' + JSON.stringify(data.stdResult));
               let firstString = data.stdResult.split("entry/UIExtAbility");
               let result = firstString[1].split("uri");

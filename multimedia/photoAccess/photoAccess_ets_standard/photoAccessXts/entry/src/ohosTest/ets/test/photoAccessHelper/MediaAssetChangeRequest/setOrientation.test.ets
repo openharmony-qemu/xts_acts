@@ -15,7 +15,7 @@
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import { describe, it, expect, beforeAll, beforeEach, afterEach, afterAll, Level } from '@ohos/hypium-dynamic';
-import { getPermission, driveFn, LOG_TAG, fetchAllOption, createUserAlbum, genRandomStr, fetchOption } from '../../common';
+import { getPermission, driveFn, LOG_TAG, checkResourceFile, createResource } from '../../common';
 import common from '@ohos.app.ability.common';
 import { ErrorCode } from '../../CommonErrorCode';
 
@@ -44,7 +44,7 @@ async function setOrientationPromiseTest(done: Function, testName: string, orien
   }
 }
 
-async function setOrientationAbnormalPromiseTest(done: Function, testName: string, orientation: number | undefined) {
+async function setOrientationAbnormalPromiseTest(testName: string, orientation: number | undefined): Promise<string> {
   let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
   try {
     let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
@@ -59,12 +59,10 @@ async function setOrientationAbnormalPromiseTest(done: Function, testName: strin
     await assetChangeRequest.setOrientation(orientation);
     await phAccessHelper.applyChanges(assetChangeRequest);
     console.info('apply setOrientation  successfully');
-    expect().assertFail();
-    done();
+    return ''
   } catch (error) {
     console.info(TAG, `failed; error: ${error},${error.code},${error.message}`, testName);
-    expect(error.code).assertEqual(String(ErrorCode.PARAM_ERROR_CODE));
-    done();
+    return error.code
   }
 }
 
@@ -75,6 +73,10 @@ export default function MediaAssetChangeRequestSetOrientationTest() {
       console.info(TAG, 'beforeAll case');
       await getPermission();
       await driveFn();
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let fileNameList: Array<string> = [ "01.jpg"];
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNameList);
     });
 
     beforeEach(() => {
@@ -155,7 +157,9 @@ export default function MediaAssetChangeRequestSetOrientationTest() {
      */
     it('SUB_MediaAssetChangeRequest_setOrientation_Abnormal_promise_0001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MediaAssetChangeRequest_setOrientation_Abnormal_promise_0001';
-      await setOrientationAbnormalPromiseTest(done, testName, undefined);
+      const code: string = await setOrientationAbnormalPromiseTest(testName, undefined);
+      expect(code).assertEqual(String(ErrorCode.PARAM_ERROR_CODE))
+      done()
     })
   })
 }

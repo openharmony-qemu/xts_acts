@@ -54,6 +54,9 @@
       },
       {
         "name": "ohos.permission.ACCESS_CERT_MANAGER_INTERNAL"
+      },
+      {
+        "name": "ohos.permission.CRYPTO_EXTENSION_REGISTER"
       }
     ]
   }

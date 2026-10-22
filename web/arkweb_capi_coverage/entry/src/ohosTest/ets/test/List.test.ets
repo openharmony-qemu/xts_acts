@@ -5,6 +5,7 @@ import httpBodyStreamTest from './HttpBodyStream.test';
 import schemeHandlerTest from './SchemeHandler.test';
 import responseTest from './Response.test';
 import resourceHandlerTest from './ResourceHandler.test';
+import errorInfoTest from './ErrorInfo.test';
 import releaseTest from './Release.test';
 import nativeJsTest from './NativeJs.test';
 import nativeProxyTest from './NativeProxy.test';
@@ -24,6 +25,7 @@ export default function testsuite() {
   schemeHandlerTest();
   responseTest();
   resourceHandlerTest();
+  errorInfoTest();
   releaseTest();
   nativeJsTest();
   nativeProxyTest();

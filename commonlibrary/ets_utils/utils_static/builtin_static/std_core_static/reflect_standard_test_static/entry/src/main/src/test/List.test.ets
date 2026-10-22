@@ -153,6 +153,19 @@ import ConstructorIsPrivateTest2Part2 from './constructor/ConstructorIsPrivateTe
 import ConstructorIsProtectedTest2Part1 from './constructor/ConstructorIsProtectedTest2Part1.test';
 import ConstructorIsPublicTest2Part1 from './constructor/ConstructorIsPublicTest2Part1.test';
 
+import staticFieldEqualsTest2 from './StaticField/StaticFieldEqualsTest2.test';
+import staticFieldGetNameTest2 from './StaticField/StaticFieldGetNameTest2.test';
+import staticFieldMutualExclusionTest2 from './StaticField/StaticFieldMutualExclusionTest2.test';
+import staticFieldGetValueTest2 from './StaticField/StaticFieldGetValueTest2.test';
+import staticFieldGetOwnerTest2 from './StaticField/StaticFieldGetOwnerTest2.test';
+import staticFieldGetTypeTest2 from './StaticField/StaticFieldGetTypeTest2.test';
+import staticFieldIsPrivateTest2 from './StaticField/StaticFieldIsPrivateTest2.test';
+import staticFieldIsProtectedTest2 from './StaticField/StaticFieldIsProtectedTest2.test';
+import staticFieldIsPublicTest2 from './StaticField/StaticFieldIsPublicTest2.test';
+import staticFieldIsReadonlyTest2 from './StaticField/StaticFieldIsReadonlyTest2.test';
+import staticFieldOverviewTest2 from './StaticField/StaticFieldOverviewTest2.test';
+import staticFieldSetValueTest2 from './StaticField/StaticFieldSetValueTest2.test';
+
 
 export default function testsuite(): void {
   ClassCreateInstanceTest();
@@ -292,4 +305,17 @@ export default function testsuite(): void {
   ConstructorIsPrivateTest2Part2();
   ConstructorIsProtectedTest2Part1();
   ConstructorIsPublicTest2Part1();
+
+  staticFieldEqualsTest2();
+  staticFieldGetNameTest2();
+  staticFieldGetOwnerTest2();
+  staticFieldGetTypeTest2();
+  staticFieldGetValueTest2();
+  staticFieldIsPrivateTest2();
+  staticFieldIsProtectedTest2();
+  staticFieldIsPublicTest2();
+  staticFieldIsReadonlyTest2();
+  staticFieldOverviewTest2();
+  staticFieldSetValueTest2();
+  staticFieldMutualExclusionTest2();
 }

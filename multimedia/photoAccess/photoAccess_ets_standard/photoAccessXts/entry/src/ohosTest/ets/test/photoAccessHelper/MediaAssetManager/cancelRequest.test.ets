@@ -15,7 +15,7 @@
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import { describe, it, expect, beforeAll, beforeEach, afterEach, afterAll, Level } from '@ohos/hypium-dynamic';
-import { getPermission, driveFn, LOG_TAG, fetchAllOption } from '../../common';
+import { getPermission, driveFn, LOG_TAG, fetchAllOption, checkResourceFile, createResource } from '../../common';
 import common from '@ohos.app.ability.common';
 import { image } from '@kit.ImageKit';
 
@@ -78,6 +78,10 @@ export default function MediaAssetManagerCancelRequestTest() {
       console.info(TAG, 'beforeAll case');
       await getPermission();
       await driveFn();
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let fileNameList: Array<string> = [ "01.jpg" , "01.mp4" ];
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNameList);
     });
 
     beforeEach(() => {
@@ -143,64 +147,5 @@ export default function MediaAssetManagerCancelRequestTest() {
       await cancelRequestPromiseTest(done, testName, fetchOptions, requestOptions);
     })
 
-    /**
-     * @tc.name   MediaAssetManager_cancelRequest_abnormal_promise_001
-     * @tc.number MEDIA_ASSET_MANAGER_CANCEL_REQUEST_004
-     * @tc.desc   cancelRequest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    /*it('MediaAssetManager_cancelRequest_abnormal_promise_001', Level.LEVEL0, async (done: Function) => {
-      const testName = 'MediaAssetManager_cancelRequest_abnormal_promise_001';
-      const fetchOptions = fetchAllOption();
-      let requestId = '';
-      await cancelRequestAbnormalPromiseTest(done, testName, fetchOptions, requestId);
-    })*/
-
-    /**
-     * @tc.name   MediaAssetManager_cancelRequest_abnormal_promise_002
-     * @tc.number MEDIA_ASSET_MANAGER_CANCEL_REQUEST_005
-     * @tc.desc   cancelRequest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    /*it('MediaAssetManager_cancelRequest_abnormal_promise_002', Level.LEVEL0, async (done: Function) => {
-      const testName = 'MediaAssetManager_cancelRequest_abnormal_promise_002';
-      const fetchOptions = fetchAllOption();
-      let requestId = '123';
-      await cancelRequestAbnormalPromiseTest(done, testName, fetchOptions, requestId);
-    })*/
-
-    /**
-     * @tc.name   MediaAssetManager_cancelRequest_abnormal_promise_003
-     * @tc.number MEDIA_ASSET_MANAGER_CANCEL_REQUEST_006
-     * @tc.desc   cancelRequest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    /*it('MediaAssetManager_cancelRequest_abnormal_promise_003', Level.LEVEL0, async (done: Function) => {
-      const testName = 'MediaAssetManager_cancelRequest_abnormal_promise_003';
-      const fetchOptions = fetchAllOption();
-      let requestId = genRandomStr(256);
-      await cancelRequestAbnormalPromiseTest(done, testName, fetchOptions, requestId);
-    })*/
-
-    /**
-     * @tc.name   MediaAssetManager_cancelRequest_abnormal_promise_004
-     * @tc.number MEDIA_ASSET_MANAGER_CANCEL_REQUEST_007
-     * @tc.desc   cancelRequest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    /*it('MediaAssetManager_cancelRequest_abnormal_promise_004', Level.LEVEL0, async (done: Function) => {
-      const testName = 'MediaAssetManager_cancelRequest_abnormal_promise_004';
-      const fetchOptions = fetchAllOption();
-      let requestId = genRandomStr(999);
-      await cancelRequestAbnormalPromiseTest(done, testName, fetchOptions, requestId);
-    })*/
   })
 }
