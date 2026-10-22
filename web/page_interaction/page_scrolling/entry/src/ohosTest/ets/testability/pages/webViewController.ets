@@ -90,7 +90,6 @@ struct webViewController {
           let webRect = Utils.getComponentRect('RowSize');
           let X = Utils.getRectHorizontalCenterX(webRect)
           let Y = Utils.getRectVerticalCenterY(webRect)
-          const displayId:number=await (await driver.findComponent(ON.id('WebViewControllerButton'))).getDisplayId()
           switch (this.str) {
 
             case "testOnScroll001": {
@@ -142,6 +141,7 @@ struct webViewController {
                 this.controller.loadUrl(this.mServer.getAssetUrl('overScroll.html'));
                 await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 this.onOverScrollCallBack = false;
+                const displayId:number=await (await driver.findComponent(ON.id('WebViewControllerButton'))).getDisplayId()
                 const pointStart:Point={
                   x:X,y:Y-60,displayId:displayId
                 }
@@ -164,6 +164,7 @@ struct webViewController {
                 this.controller.loadUrl(this.mServer.getAssetUrl('overScroll.html'));
                 await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 this.onOverScrollCallBack = false
+                const displayId:number=await (await driver.findComponent(ON.id('WebViewControllerButton'))).getDisplayId()
                 const pointStart:Point={
                   x:X,y:Y+ 230,displayId:displayId
                 }
@@ -186,6 +187,7 @@ struct webViewController {
                 this.controller.loadUrl(this.mServer.getAssetUrl('overScroll.html'));
                 await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 this.onOverScrollCallBack = false
+                const displayId:number=await (await driver.findComponent(ON.id('WebViewControllerButton'))).getDisplayId()
                 const pointStart:Point={
                   x:X,y:Y+60,displayId:displayId
                 }
@@ -207,6 +209,7 @@ struct webViewController {
                 this.controller.loadUrl(this.mServer.getAssetUrl('overScroll.html'));
                 await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 this.onOverScrollCallBack = false
+                const displayId:number=await (await driver.findComponent(ON.id('WebViewControllerButton'))).getDisplayId()
                 const pointStart:Point={
                   x:X,y:Y-60,displayId:displayId
                 }
