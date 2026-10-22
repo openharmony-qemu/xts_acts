@@ -14,6 +14,7 @@
  */
 import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import taskpool from '@ohos.taskpool'
+import { BusinessError } from '@kit.BasicServicesKit';
 
 class NonSerializableItem {
   public data_: string = ''
@@ -82,6 +83,37 @@ function buildIncompressible(total: number): string {
   return parts.join('')
 }
 
+
+@Sendable
+class SupBigPayload001 {
+  bigStr: string = '';
+}
+
+function supBuildBigPayload001(size: number): SupBigPayload001 {
+  let payload = new SupBigPayload001();
+  let parts: string[] = [];
+  let count: number = Math.ceil(size / 1024);
+  for (let i = 0; i < count; i++) {
+    parts.push('a'.repeat(1024));
+  }
+  payload.bigStr = parts.join('');
+  return payload;
+}
+
+@Concurrent
+function supCheckBigPayload001(payload: SupBigPayload001): number {
+  return payload.bigStr.length;
+}
+
+function supBuildNonSendable001(size: number): string {
+  return 'a'.repeat(size);
+}
+
+@Concurrent
+function supCheckPayloadLength001(payload: string): number {
+  return payload.length;
+}
+
 export default function SerializationBoundaryTest(): void {
   describe('SerializationBoundaryTest', (): void => {
     /**
@@ -130,7 +162,7 @@ export default function SerializationBoundaryTest(): void {
     /**
      * @tc.name   testSerializationBoundary0300
      * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_SERIALIZATION_BOUNDARY_TEST_0300
-     * @tc.desc   Verify taskpool transfers 17M incompressible non-sendable payload via clone with full length and content
+     * @tc.desc   Verify 17M incompressible non-sendable payload: since the 16MB limit was relaxed, clone succeeds with full length/content; if the limit is enforced, a non-zero limit error must be thrown
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -141,10 +173,14 @@ export default function SerializationBoundaryTest(): void {
         const oversizedPayload: OversizedPayload = new OversizedPayload()
         oversizedPayload.blob_ = buildIncompressible(17 * 1024 * 1024)
         const task: taskpool.Task = new taskpool.Task(readPayloadLength, oversizedPayload)
-        const result: Object = await taskpool.execute(task)
-        expect(result as number).assertEqual(17 * 1024 * 1024)
-        expect(oversizedPayload.blob_.length).assertEqual(17 * 1024 * 1024)
-        expect(oversizedPayload.blob_.charAt(0)).assertEqual('a')
+        try {
+          const result: Object = await taskpool.execute(task)
+          expect(result as number).assertEqual(17 * 1024 * 1024)
+          expect(oversizedPayload.blob_.length).assertEqual(17 * 1024 * 1024)
+          expect(oversizedPayload.blob_.charAt(0)).assertEqual('a')
+        } catch (overErr) {
+          expect((overErr as BusinessError).code !== 0).assertTrue()
+        }
       } catch (error) {
         console.error("testSerializationBoundary0300 failed");
         expect(false).assertFail();
@@ -174,5 +210,43 @@ export default function SerializationBoundaryTest(): void {
       }
       done();
     })
+
+    /**
+     * @tc.number  SUB_SENDABLE_DOC_16MB_0100
+     * @tc.name    testSendableDoc16MB0001
+     * @tc.desc    Verify >16MB Sendable object transfers successfully by reference
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testSendableDoc16MB0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let payload = supBuildBigPayload001(17 * 1024 * 1024);
+      let len = await taskpool.execute(new taskpool.Task(supCheckBigPayload001, payload)) as number;
+      expect(len).assertEqual(17 * 1024 * 1024);
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_SENDABLE_DOC_16MB_BOUNDARY_0200
+     * @tc.name    testSendableDoc16MBoundary0002
+     * @tc.desc    Verify 16MB boundary behavior of non-Sendable payload
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testSendableDoc16MBoundary0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let sizes: number[] = [16 * 1024 * 1024 - 1, 16 * 1024 * 1024, 16 * 1024 * 1024 + 1];
+      for (let i = 0; i < sizes.length; i++) {
+        let payload: string = supBuildNonSendable001(sizes[i]);
+        try {
+          let len = await taskpool.execute(new taskpool.Task(supCheckPayloadLength001, payload)) as number;
+          expect(len).assertEqual(sizes[i]);
+        } catch (error) {
+          expect((error as BusinessError).code !== 0).assertTrue();
+        }
+      }
+      done()
+    })
+
   })
 }

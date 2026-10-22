@@ -15,6 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size} from '@ohos/hypium';
 import { collections } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 import Utils from './Util.test';
 
 @Sendable
@@ -751,6 +752,69 @@ export default function CollectionsMapForeachTest() {
       expect(isFinite(results[1])).assertEqual(false);
     });
 
+    /**
+     * @tc.number  SUB_MAP_FOREACH_MOD_PUT_0100
+     * @tc.name    testMapForeachModPut0001
+     * @tc.desc    Verify put inside forEach throws 10200201
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testMapForeachModPut0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let map = new collections.Map<string, number>([['a', 1], ['b', 2]]);
+      let caught = 0;
+      try {
+        map.forEach((value: number, key: string): void => {
+          map.put('c', 3);
+        });
+      } catch (error) {
+        caught = (error as BusinessError).code;
+      }
+      expect(caught).assertEqual(10200201);
+    });
+
+    /**
+     * @tc.number  SUB_MAP_FOREACH_MOD_REMOVE_0200
+     * @tc.name    testMapForeachModRemove0002
+     * @tc.desc    Verify remove inside forEach throws 10200201
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testMapForeachModRemove0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let map = new collections.Map<string, number>([['a', 1], ['b', 2]]);
+      let caught = 0;
+      try {
+        map.forEach((value: number, key: string): void => {
+          map.remove(key);
+        });
+      } catch (error) {
+        caught = (error as BusinessError).code;
+      }
+      expect(caught).assertEqual(10200201);
+    });
+
+    /**
+     * @tc.number  SUB_MAP_FOREACH_MOD_PUTALL_BUILTIN_0300
+     * @tc.name    testMapForeachModPutAllBuiltin0003
+     * @tc.desc    Verify putAll(builtin) inside forEach throws 10200201
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testMapForeachModPutAllBuiltin0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let map = new collections.Map<string, number>([['a', 1], ['b', 2]]);
+      let builtinSrc = new Map<string, number>([['x', 9]]);
+      let caught = 0;
+      try {
+        map.forEach((value: number, key: string): void => {
+          map.putAll(builtinSrc);
+        });
+      } catch (error) {
+        caught = (error as BusinessError).code;
+      }
+      expect(caught).assertEqual(10200201);
+    });
   })
 }
 

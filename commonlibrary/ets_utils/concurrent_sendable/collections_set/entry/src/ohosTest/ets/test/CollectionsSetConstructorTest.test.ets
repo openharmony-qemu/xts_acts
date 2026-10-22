@@ -441,5 +441,22 @@ export default function CollectionsSetConstructorTest() {
       console.info(`${caseName}, test end`);
     });
 
+
+    /**
+     * @tc.number  SUB_SET_CTOR_ONE_0100
+     * @tc.name    testSetCtor0001
+     * @tc.desc    Verify constructor accepts generic Iterable source
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testSetCtor0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: collections.Array<number> = collections.Array.from<number>([1, 2, 3]);
+      let setCtor001 = new collections.Set<number>(src);
+      expect(setCtor001.size).assertEqual(3);
+      expect(setCtor001.has(1)).assertTrue();
+      expect(setCtor001.has(2)).assertTrue();
+      expect(setCtor001.has(3)).assertTrue();
+    });
   });
 }

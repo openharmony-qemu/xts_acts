@@ -560,6 +560,21 @@ export default function CollectionsMapEntriesTest() {
       expect(entries[0][1].length).assertEqual(10000);
     });
 
+    /**
+     * @tc.number  SUB_MAP_SYMBOL_ITER_0100
+     * @tc.name    testMapSymbolIter0001
+     * @tc.desc    Verify Symbol.iterator unavailable in .ets and entries matches Array.from
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testMapSymbolIter0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let map = new collections.Map<string, number>([['a', 1], ['b', 2]]);
+      let iterArr = Array.from(map.entries());
+      expect(iterArr.length).assertEqual(2);
+      expect(iterArr[0][0]).assertEqual('a');
+      expect(iterArr[1][1]).assertEqual(2);
+    });
   })
 }
 

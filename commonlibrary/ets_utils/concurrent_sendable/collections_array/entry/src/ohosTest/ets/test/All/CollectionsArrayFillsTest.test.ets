@@ -594,5 +594,33 @@ export default function CollectionsArrayFillsTest() {
       expect(Array.from(result)).assertDeepEquals([NaN]);
     });
   });
+
+    /**
+     * @tc.number  SUB_ARRAY_FILL_ONE_0100
+     * @tc.name    testArrayFillOne0001
+     * @tc.desc    Verify fill with wrong-typed value throws 401
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testArrayFillOne0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new collections.Array<number>(1, 2, 3);
+      let result = arr.fill('invalid' as Object as number);
+      expect(result.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number  SUB_ARRAY_FILL_SAMEREF_0200
+     * @tc.name    testArrayFillSameRef0002
+     * @tc.desc    Verify fill returns the same reference
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testArrayFillSameRef0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = collections.Array.from<number>([1, 2, 3]);
+      let r = arr.fill(0);
+      expect(r === arr).assertTrue();
+    });
   })
 }

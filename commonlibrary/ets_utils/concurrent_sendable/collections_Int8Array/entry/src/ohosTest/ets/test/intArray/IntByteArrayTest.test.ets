@@ -1069,5 +1069,21 @@ export default function IntByteArrayTest(): void {
       expect(arr2.length).assertEqual(10)
       expect(arr2.byteOffset).assertEqual(5)
     })
+
+    /**
+     * @tc.number  SUB_TYPEDARRAY_OVERFLOW_INT8_0100
+     * @tc.name    testTypedArrayOverflowInt80001
+     * @tc.desc    Verify Int8Array assignment wraps around
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testTypedArrayOverflowInt80001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let ov = new collections.Int8Array(1);
+      ov[0] = 200;
+      expect(ov[0]).assertEqual(-56);
+      ov[0] = 128;
+      expect(ov[0]).assertEqual(-128);
+    });
   })
 }

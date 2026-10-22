@@ -17,6 +17,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { collections, ArkTSUtils } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 function sleep(time: number): Promise<void> {
   return new Promise<void>((resolve) => setTimeout(resolve, time));
@@ -1658,5 +1659,38 @@ export default function CollectionsMapNewApiTypeTest() {
       console.info(caseName + ', test end');
     });
 
+    /**
+     * @tc.number  SUB_MAP_NEWAPI_PUTALL_OVERWRITE_0100
+     * @tc.name    testMapNewApiPutAllOverwrite0001
+     * @tc.desc    Verify putAll overwrites existing key without size growth
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testMapNewApiPutAllOverwrite0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let map = new collections.Map<number, string>();
+      map.put(1, 'v1');
+      let src = new collections.Map<number, string>();
+      src.put(1, 'v2');
+      map.putAll(src);
+      expect(map.get(1)).assertEqual('v2');
+      expect(map.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.number  SUB_MAP_NEWAPI_PUTALL_EMPTYSRC_0200
+     * @tc.name    testMapNewApiPutAllEmptySrc0002
+     * @tc.desc    Verify putAll with empty source is a no-op
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testMapNewApiPutAllEmptySrc0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let map = new collections.Map<number, string>();
+      map.put(1, 'v');
+      map.putAll(new collections.Map<number, string>());
+      expect(map.size).assertEqual(1);
+      expect(map.get(1)).assertEqual('v');
+    });
   });
 }

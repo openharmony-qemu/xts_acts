@@ -14,7 +14,14 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { collections } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { taskpool } from '@kit.ArkTS';
 
+
+@Concurrent
+function supBvPopTask001(bv: collections.BitVector): void {
+  bv.pop();
+}
 export default function BitVectorPopTest() {
   describe('BitVectorPopTest', () => {
     beforeAll(() => {})
@@ -653,5 +660,53 @@ export default function BitVectorPopTest() {
         expect(bitVectorList.length).assertEqual(0);
         done()
       });
+
+    /**
+     * @tc.number  SUB_BITVECTOR_POP_ONE_0100
+     * @tc.name    testBitVectorPop0016
+     * @tc.desc    Verify concurrent pop across thread does not throw 10200201 (actual)
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorPop0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let bv = new collections.BitVector(0);
+      for (let i = 0; i < 5; i++) {
+        bv.push(1);
+      }
+      let saw = false;
+      let p = taskpool.execute(new taskpool.Task(supBvPopTask001, bv));
+      try {
+        for (let i = 0; i < 100; i++) {
+          bv.pop();
+        }
+      } catch (error) {
+        if ((error as BusinessError).code === 10200201) {
+          saw = true;
+        }
+      }
+      try {
+        await p;
+      } catch (error) {
+        if ((error as BusinessError).code === 10200201) {
+          saw = true;
+        }
+      }
+      expect(saw).assertFalse();
+    });
+
+    /**
+     * @tc.number  SUB_BITVECTOR_POP_ONE_0200
+     * @tc.name    testBitVectorPop0017
+     * @tc.desc    Verify empty BitVector pop returns undefined
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorPop0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let bv = new collections.BitVector(0);
+      let r = bv.pop();
+      expect(r === undefined).assertTrue();
+    });
   })
 }

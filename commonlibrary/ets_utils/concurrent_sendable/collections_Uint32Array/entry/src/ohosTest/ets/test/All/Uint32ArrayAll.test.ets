@@ -2479,5 +2479,19 @@ export default function Uint32ArrayAllTest() {
         expect(arr.byteLength).assertEqual(0);
         expect(arr.buffer).assertEqual(buffer);
       })
+    /**
+     * @tc.number  SUB_TYPEDARRAY_UINT_THIRTYTWO_ALL_ADD_FROM_0100
+     * @tc.name    testTypedArrayAllAddFrom0001
+     * @tc.desc    Verify Uint32Array.from() is added to the All suite
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testTypedArrayAllAddFrom0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let fromArr = collections.Uint32Array.from([1, 2, 3]);
+      expect(fromArr.length).assertEqual(3);
+      expect(fromArr[0]).assertEqual(1);
+    });
+
   })
 }

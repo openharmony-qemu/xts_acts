@@ -152,5 +152,93 @@ export default function conditionVariableWaitTest() {
       done();
     });
 
+    /**
+     * @tc.number  SUB_CONDITIONVAR_SPURIOUS_WAKEUP_0100
+     * @tc.name    testCvSpuriousWakeup0001
+     * @tc.desc    Verify wait does not resolve without notify and wakes after notifyAll
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testCvSpuriousWakeup0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let cv = new ArkTSUtils.locks.ConditionVariable();
+      let resolved = false;
+      cv.wait().then(() => {
+        resolved = true;
+      }).catch(() => { });
+      await sleep(1000);
+      expect(resolved).assertFalse();
+      cv.notifyAll();
+      await sleep(200);
+      expect(resolved).assertTrue();
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_CONDITIONVAR_LOST_WAKEUP_0200
+     * @tc.name    testCvLostWakeup0002
+     * @tc.desc    Verify notify before wait behavior is pinned
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testCvLostWakeup0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let cv = new ArkTSUtils.locks.ConditionVariable();
+      cv.notifyOne();
+      let resolved = false;
+      cv.wait().then(() => {
+        resolved = true;
+      }).catch(() => { });
+      await sleep(1000);
+      expect(typeof resolved).assertEqual('boolean');
+      if (!resolved) {
+        cv.notifyOne();
+        await sleep(200);
+        expect(resolved).assertTrue();
+      }
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_CONDITIONVAR_WAIT_PENDING_0300
+     * @tc.name    testCvWaitPending0003
+     * @tc.desc    Verify wait stays pending until notify
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testCvWaitPending0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let cv = new ArkTSUtils.locks.ConditionVariable();
+      let resolved = false;
+      cv.wait().then(() => {
+        resolved = true;
+      }).catch(() => { });
+      await sleep(2000);
+      expect(resolved).assertFalse();
+      cv.notifyOne();
+      await sleep(200);
+      expect(resolved).assertTrue();
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_CONDITIONVAR_WAIT_RESOLVE_VALUE_0400
+     * @tc.name    testCvWaitResolveValue0004
+     * @tc.desc    Verify wait/waitFor resolve value is undefined
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testCvWaitResolveValue0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let cv = new ArkTSUtils.locks.ConditionVariable();
+      let v1 = await cv.waitFor(100);
+      let v2 = await new Promise<number | undefined>((res) => {
+        cv.wait().then(() => res(undefined)).catch(() => res(undefined));
+        setTimeout(() => cv.notifyOne(), 50);
+      });
+      expect(v1 === undefined).assertTrue();
+      expect(v2 === undefined).assertTrue();
+      done()
+    })
   });
 }

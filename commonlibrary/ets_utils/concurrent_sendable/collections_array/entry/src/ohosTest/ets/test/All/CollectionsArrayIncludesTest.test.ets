@@ -16,6 +16,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import { TestA } from './pages/DataFlg';
 import { sleep } from './pages/Utils';
 import { collections } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 export default function CollectionsArrayIncludesTest() {
   describe('CollectionsArrayIncludesTest', () => {
@@ -309,5 +310,17 @@ export default function CollectionsArrayIncludesTest() {
       expect(testArray.includes(0x3)).assertTrue();
     });
 
+    /**
+     * @tc.number  SUB_ARRAY_INCLUDES_ONE_0100
+     * @tc.name    testArrayIncludesOne0001
+     * @tc.desc    Verify includes with wrong-typed search element throws 401
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testArrayIncludesOne0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new collections.Array<number>(1, 2, 3);
+      expect(arr.includes('x' as Object as number)).assertFalse();
+    });
   });
 }

@@ -64,7 +64,7 @@ export default function AsynclockDifferentForthTest() {
     /**
      * @tc.name   AsynclockDifferentThirdTest3800
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_DIFFERENT_FORTH_0001
-     * @tc.desc   test
+     * @tc.desc   Verify request different lock names across different instances (fourth variant) - AsynclockDifferentThirdTest3800;
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -118,7 +118,7 @@ export default function AsynclockDifferentForthTest() {
     /**
      * @tc.name   AsynclockDifferentThirdTest3900
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_DIFFERENT_FORTH_0002
-     * @tc.desc   test
+     * @tc.desc   Verify request different lock names across different instances (fourth variant) - AsynclockDifferentThirdTest3900;
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -150,7 +150,7 @@ export default function AsynclockDifferentForthTest() {
     /**
      * @tc.name   AsynclockDifferentThirdTest4000
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_DIFFERENT_FORTH_0003
-     * @tc.desc   test
+     * @tc.desc   Verify request different lock names across different instances (fourth variant) - AsynclockDifferentThirdTest4000;
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -188,7 +188,7 @@ export default function AsynclockDifferentForthTest() {
     /**
      * @tc.name   AsynclockDifferentThirdTest4100
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_DIFFERENT_FORTH_0004
-     * @tc.desc   test
+     * @tc.desc   Verify request different lock names across different instances (fourth variant) - AsynclockDifferentThirdTest4100;
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -239,7 +239,7 @@ export default function AsynclockDifferentForthTest() {
     /**
      * @tc.name   AsynclockDifferentThirdTest4200
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_DIFFERENT_FORTH_0005
-     * @tc.desc   test
+     * @tc.desc   Verify request different lock names across different instances (fourth variant) - AsynclockDifferentThirdTest4200;
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -271,7 +271,7 @@ export default function AsynclockDifferentForthTest() {
     /**
      * @tc.name   AsynclockDifferentThirdTest4300
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_DIFFERENT_FORTH_0006
-     * @tc.desc   test
+     * @tc.desc   Verify request different lock names across different instances (fourth variant) - AsynclockDifferentThirdTest4300;
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -327,7 +327,7 @@ export default function AsynclockDifferentForthTest() {
     /**
      * @tc.name   AsynclockDifferentThirdTest4400
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_DIFFERENT_FORTH_0007
-     * @tc.desc   test
+     * @tc.desc   Verify request different lock names across different instances (fourth variant) - AsynclockDifferentThirdTest4400;
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -357,7 +357,7 @@ export default function AsynclockDifferentForthTest() {
     /**
      * @tc.name   AsynclockDifferentThirdTest4500
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_DIFFERENT_FORTH_0008
-     * @tc.desc   test
+     * @tc.desc   Verify request different lock names across different instances (fourth variant) - AsynclockDifferentThirdTest4500;
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -411,7 +411,7 @@ export default function AsynclockDifferentForthTest() {
     /**
      * @tc.name   AsynclockDifferentThirdTest4600
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_DIFFERENT_FORTH_0009
-     * @tc.desc   test
+     * @tc.desc   Verify request different lock names across different instances (fourth variant) - AsynclockDifferentThirdTest4600;
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -441,7 +441,7 @@ export default function AsynclockDifferentForthTest() {
     /**
      * @tc.name   AsynclockDifferentThirdTest4700
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_DIFFERENT_FORTH_0010
-     * @tc.desc   test
+     * @tc.desc   Verify request different lock names across different instances (fourth variant) - AsynclockDifferentThirdTest4700;
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -473,7 +473,7 @@ export default function AsynclockDifferentForthTest() {
     /**
      * @tc.name   AsynclockDifferentThirdTest4800
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_DIFFERENT_FORTH_0011
-     * @tc.desc   test
+     * @tc.desc   Verify request different lock names across different instances (fourth variant) - AsynclockDifferentThirdTest4800;
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -531,7 +531,7 @@ export default function AsynclockDifferentForthTest() {
     /**
      * @tc.name   AsynclockDifferentThirdTest4900
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_DIFFERENT_FORTH_0012
-     * @tc.desc   test
+     * @tc.desc   Verify request different lock names across different instances (fourth variant) - AsynclockDifferentThirdTest4900;
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -561,7 +561,7 @@ export default function AsynclockDifferentForthTest() {
     /**
      * @tc.name   AsynclockDifferentThirdTest5000
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_DIFFERENT_FORTH_0013
-     * @tc.desc   test
+     * @tc.desc   Verify request different lock names across different instances (fourth variant) - AsynclockDifferentThirdTest5000;
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1

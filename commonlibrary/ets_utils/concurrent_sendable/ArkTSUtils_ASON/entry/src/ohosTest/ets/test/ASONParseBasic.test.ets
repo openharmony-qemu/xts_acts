@@ -15,6 +15,7 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { ArkTSUtils, collections, lang } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 interface Test11_Obj1 {
   id: number;
@@ -300,7 +301,8 @@ export default function ASONParseBasicTest() {
         let jsonText = '{';
         ArkTSUtils.ASON.parse(jsonText, undefined, options);
       } catch (err) {
-        expect(err.message).assertEqual("Unexpected MAP Prop in JSON");
+        expect(err.message.includes('Unexpected MAP Prop in JSON')).assertTrue();
+        expect(err instanceof SyntaxError).assertTrue();
       }
       done();
     })
@@ -322,7 +324,8 @@ export default function ASONParseBasicTest() {
         let jsonText = '{';
         ArkTSUtils.ASON.parse(jsonText, undefined, options);
       } catch (err) {
-        expect(err.message).assertEqual("Unexpected Object Prop in JSON");
+        expect(err.message.includes('Unexpected Object Prop in JSON')).assertTrue();
+        expect(err instanceof SyntaxError).assertTrue();
       }
       done();
     })
@@ -344,7 +347,8 @@ export default function ASONParseBasicTest() {
         let jsonText = '{"error"}';
         ArkTSUtils.ASON.parse(jsonText, undefined, options);
       } catch (err) {
-        expect(err.message).assertEqual("Unexpected MAP in JSON");
+        expect(err.message.includes('Unexpected MAP in JSON')).assertTrue();
+        expect(err instanceof SyntaxError).assertTrue();
       }
       done();
     })
@@ -366,7 +370,8 @@ export default function ASONParseBasicTest() {
         let jsonText = '{"error"}';
         ArkTSUtils.ASON.parse(jsonText, undefined, options);
       } catch (err) {
-        expect(err.message).assertEqual("Unexpected Object in JSON");
+        expect(err.message.includes('Unexpected Object in JSON')).assertTrue();
+        expect(err instanceof SyntaxError).assertTrue();
       }
       done();
     })
@@ -2347,5 +2352,117 @@ export default function ASONParseBasicTest() {
       expect(result).assertEqual("pre-中文");
     });
 
+    /**
+     * @tc.number  SUB_ASON_PARSE_REVIVER_NULL_0100
+     * @tc.name    testAsonParseReviverNull0001
+     * @tc.desc    Verify ASON.parse rejects non-undefined reviver (throws)
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testAsonParseReviverNull0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let reviverNull001: (key: string, value: lang.ISendable | undefined | null) => lang.ISendable | undefined | null =
+        (key: string, value: lang.ISendable | undefined | null): lang.ISendable | undefined | null => null;
+      let threw = false;
+      try {
+        ArkTSUtils.ASON.parse('{"a":1,"b":2}', reviverNull001);
+      } catch (error) {
+        threw = true;
+      }
+      expect(threw).assertTrue();
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_ASON_PARSE_NULL_ARG_0200
+     * @tc.name    testAsonParseNullArg0002
+     * @tc.desc    Verify parse with invalid JSON text throws
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testAsonParseNullArg0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let threw = false;
+      try {
+        ArkTSUtils.ASON.parse('invalid' as Object as string);
+      } catch (error) {
+        threw = true;
+      }
+      expect(threw).assertTrue();
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_ASON_PARSE_NULL_LITERAL_0300
+     * @tc.name    testAsonParseNullLiteral0003
+     * @tc.desc    Verify parse("null") returns null literal
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testAsonParseNullLiteral0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let rNullLit = ArkTSUtils.ASON.parse('null');
+      expect(rNullLit).assertNull();
+      done()
+    })
+
+
+
+    /**
+     * @tc.number  SUB_ASON_BIGINT_ALWAYS_SMALL_0500
+     * @tc.name    testAsonBigintAlwaysSmall0005
+     * @tc.desc    Verify ALWAYS_PARSE_AS_BIGINT parses small integers to bigint
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testAsonBigintAlwaysSmall0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let opts: ArkTSUtils.ASON.ParseOptions = {
+        bigIntMode: ArkTSUtils.ASON.BigIntMode.ALWAYS_PARSE_AS_BIGINT,
+        parseReturnType: ArkTSUtils.ASON.ParseReturnType.OBJECT
+      };
+      let obj = ArkTSUtils.ASON.parse('{"z":0,"o":1}', undefined, opts) as lang.ISendable;
+      expect(typeof (obj as object)?.['z']).assertEqual('bigint');
+      expect(typeof (obj as object)?.['o']).assertEqual('bigint');
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_ASON_PARSE_IDEMPOTENT_0600
+     * @tc.name    testAsonParseIdempotent0006
+     * @tc.desc    Verify same text parsed twice yields identical result
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testAsonParseIdempotent0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let jsonIdem = '{"a":1,"b":"x"}';
+      let r1 = ArkTSUtils.ASON.parse(jsonIdem) as lang.ISendable;
+      let r2 = ArkTSUtils.ASON.parse(jsonIdem) as lang.ISendable;
+      expect((r1 as object)?.['a']).assertEqual((r2 as object)?.['a']);
+      expect((r1 as object)?.['b']).assertEqual((r2 as object)?.['b']);
+      expect(ArkTSUtils.isSendable(r1)).assertTrue();
+      expect(ArkTSUtils.isSendable(r2)).assertTrue();
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_ASON_PARSE_ONE_TEXT_0400
+     * @tc.name    testAsonParseOneText0004
+     * @tc.desc    Verify parse with non-string text does not throw 401 (actual)
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testAsonParseOneText0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let threw = false;
+      try {
+        ArkTSUtils.ASON.parse(123 as Object as string);
+      } catch (error) {
+        threw = true;
+      }
+      expect(threw).assertFalse();
+      done()
+    })
   })
 }

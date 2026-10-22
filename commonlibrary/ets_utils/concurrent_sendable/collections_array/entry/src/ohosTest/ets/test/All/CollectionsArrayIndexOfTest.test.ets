@@ -2,6 +2,7 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level
 import { hilog } from "@kit.PerformanceAnalysisKit";
 import { sleep } from "./pages/Utils";
 import { collections } from '@kit.ArkTS'
+import { BusinessError } from '@kit.BasicServicesKit';
 
 
 export default function CollectionsArrayIndexOfTest() {
@@ -549,5 +550,37 @@ export default function CollectionsArrayIndexOfTest() {
       expect(res).assertEqual(2)
       Done()
     })
+
+    /**
+     * @tc.number  SUB_ARRAY_INDEXOF_BIND_0100
+     * @tc.name    testArrayIndexOfBind0001
+     * @tc.desc    Verify indexOf detached invocation throws 10200011
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testArrayIndexOfBind0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new collections.Array<number>(1, 2, 3);
+      let fn = arr.indexOf;
+      try {
+        fn(1);
+        expect().assertFail();
+      } catch (error) {
+        expect((error as BusinessError).code).assertEqual(10200011);
+      }
+    });
+
+    /**
+     * @tc.number  SUB_ARRAY_INDEXOF_ONE_0200
+     * @tc.name    testArrayIndexOfOne0002
+     * @tc.desc    Verify indexOf with wrong-typed search element throws 401
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testArrayIndexOfOne0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new collections.Array<number>(1, 2, 3);
+      expect(arr.indexOf('x' as Object as number)).assertEqual(-1);
+    });
   })
 }

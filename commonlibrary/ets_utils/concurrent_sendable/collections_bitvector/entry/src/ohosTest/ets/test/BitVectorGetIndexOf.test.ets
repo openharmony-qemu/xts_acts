@@ -15,6 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
 import { collections } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 const SLEEP_INTERVAL_MS: number = 100;
 
@@ -1105,5 +1106,25 @@ export default function BitVectorGetIndexOfTest() {
         }
         done()
       });
+
+    /**
+     * @tc.number  SUB_BITVECTOR_INDEXOF_ONE_0100
+     * @tc.name    testBitVectorIndexOf0001
+     * @tc.desc    Verify getIndexOf with wrong-typed value throws 10200001 (out of range)
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorIndexOf0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let bv = new collections.BitVector(0);
+      bv.push(1);
+      let pin = -1;
+      try {
+        bv.getIndexOf('x' as Object as number, 0, 5);
+      } catch (error) {
+        pin = (error as BusinessError).code;
+      }
+      expect(pin).assertEqual(10200001);
+    });
   })
 }

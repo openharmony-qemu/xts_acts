@@ -16,6 +16,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size} from '@ohos/hypium';
 import Utils from './Util.test';
 import { collections } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 @Sendable
 class Person {
@@ -666,6 +667,38 @@ export default function CollectionsMapGetTest() {
         }
       }
       expect(map.get(specialKey)).assertEqual(`value${specialKey}`);
+    });
+
+    /**
+     * @tc.number  SUB_MAP_GET_BIND_0100
+     * @tc.name    testMapGetBind0001
+     * @tc.desc    Verify get detached invocation throws 10200011
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testMapGetBind0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let map = new collections.Map<number, string>([[1, 'a']]);
+      let fn = map.get;
+      try {
+        fn(1);
+        expect().assertFail();
+      } catch (error) {
+        expect((error as BusinessError).code).assertEqual(10200011);
+      }
+    });
+
+    /**
+     * @tc.number  SUB_MAP_GET_ONE_0200
+     * @tc.name    testMapGetOne0002
+     * @tc.desc    Verify get with wrong-typed key throws 401
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testMapGetOne0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let map = new collections.Map<number, string>();
+      expect(map.get('wrong' as Object as number)).assertUndefined();
     });
   })
 }

@@ -16,6 +16,7 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, TestType, Size } from '@ohos/hypium';
 import { sleep } from './pages/Utils';
 import { collections } from '@kit.ArkTS'
+import { BusinessError } from '@kit.BasicServicesKit';
 
 export default function CollectionsArrayPush() {
   describe('CollectionsArrayPush', () => {
@@ -630,5 +631,37 @@ export default function CollectionsArrayPush() {
       done();
       console.info(`${caseName} test end`);
     })
+
+    /**
+     * @tc.number  SUB_ARRAY_PUSH_BIND_0100
+     * @tc.name    testArrayPushBind0001
+     * @tc.desc    Verify push detached invocation throws 10200011
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testArrayPushBind0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new collections.Array<number>(1, 2, 3);
+      let fn = arr.push;
+      try {
+        fn(4);
+        expect().assertFail();
+      } catch (error) {
+        expect((error as BusinessError).code).assertEqual(10200011);
+      }
+    });
+
+    /**
+     * @tc.number  SUB_ARRAY_PUSH_ONE_0200
+     * @tc.name    testArrayPushOne0002
+     * @tc.desc    Verify push with wrong-typed value throws 401
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testArrayPushOne0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new collections.Array<number>(1, 2, 3);
+      expect(arr.push('invalid' as Object as number)).assertEqual(4);
+    });
   })
 }

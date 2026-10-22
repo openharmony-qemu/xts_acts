@@ -15,6 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size} from '@ohos/hypium';
 import { collections } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 import Utils from './Util.test';
 
 @Sendable
@@ -805,6 +806,37 @@ export default function CollectionsMapDeleteTest() {
       expect(result).assertEqual(true);
     });
 
+    /**
+     * @tc.number  SUB_MAP_DELETE_BIND_0100
+     * @tc.name    testMapDeleteBind0001
+     * @tc.desc    Verify delete detached invocation throws 10200011
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testMapDeleteBind0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let map = new collections.Map<number, string>([[1, 'a']]);
+      let fn = map.delete;
+      try {
+        fn(1);
+        expect().assertFail();
+      } catch (error) {
+        expect((error as BusinessError).code).assertEqual(10200011);
+      }
+    });
+
+    /**
+     * @tc.number  SUB_MAP_DELETE_ONE_0200
+     * @tc.name    testMapDeleteOne0002
+     * @tc.desc    Verify delete with wrong-typed key throws 401
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testMapDeleteOne0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let map = new collections.Map<number, string>();
+      expect(map.delete('wrong' as Object as number)).assertFalse();
+    });
   })
 }
 

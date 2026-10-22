@@ -263,5 +263,23 @@ export default function CollectionsArrayFindsTest() {
       expect(result).assertEqual(expectedResult);
     });
 
+    /**
+     * @tc.number  SUB_ARRAY_FIND_ONE_0100
+     * @tc.name    testArrayFindOne0001
+     * @tc.desc    Verify find with non-function predicate throws 401
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testArrayFindOne0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new collections.Array<number>(1, 2, 3);
+      let threw = false;
+      try {
+        arr.find('not-fn' as Object as (v: number, i: number, a: collections.Array<number>) => boolean);
+      } catch (error) {
+        threw = true;
+      }
+      expect(threw).assertTrue();
+    });
   })
 }

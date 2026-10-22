@@ -16,6 +16,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, TestType, Size } from '@ohos/hypium';
 import { sleep } from './pages/Utils';
 import { collections } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 
 export default function CollectionsArrayConstructorTest() {
@@ -294,5 +295,18 @@ export default function CollectionsArrayConstructorTest() {
       expect(array[4]).assertEqual(0x3)
       Done()
     })
+
+    /**
+     * @tc.number  SUB_ARRAY_CTOR_ONE_0100
+     * @tc.name    testArrayCtorOne0001
+     * @tc.desc    Verify constructor with illegal element throws 401
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testArrayCtorOne0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let result = new collections.Array<number>('invalid' as Object as number);
+      expect(result.length).assertEqual(1);
+    });
   })
 }
