@@ -118,12 +118,12 @@ export default function pinchGestureTest() {
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
       let pointers: PointerMatrix = PointerMatrix.create(3,2);
-      pointers.setPoint(0,0,{x: Math.round(areaObj1.top + areaHeight1 * 0.3),y: Math.round(areaObj1.left + areaWidth1 * 0.5) , displayId: displayID});
-      pointers.setPoint(0,1,{x: Math.round(areaObj1.top + areaHeight1 * 0.1),y: Math.round(areaObj1.left + areaWidth1 * 0.5) , displayId: displayID});
-      pointers.setPoint(1,0,{x: Math.round(areaObj1.bottom - areaHeight1 * 0.3),y: Math.round(areaObj1.left + areaWidth1 * 0.5) , displayId: displayID});
-      pointers.setPoint(1,1,{x: Math.round(areaObj1.bottom - areaHeight1 * 0.1),y: Math.round(areaObj1.left + areaWidth1 * 0.5) , displayId: displayID});
-      pointers.setPoint(2,0,{x: Math.round(areaObj1.bottom - areaHeight1 * 0.3),y: Math.round(areaObj1.left + areaWidth1 * 0.5) , displayId: displayID});
-      pointers.setPoint(2,1,{x: Math.round(areaObj1.bottom - areaHeight1 * 0.2),y: Math.round(areaObj1.left + areaWidth1 * 0.5) , displayId: displayID});
+      pointers.setPoint(0,0,{x: Math.round(areaObj1.left + areaWidth1 * 0.5),y: Math.round(areaObj1.top + areaHeight1 * 0.3) , displayId: displayID});
+      pointers.setPoint(0,1,{x: Math.round(areaObj1.left + areaWidth1 * 0.5),y: Math.round(areaObj1.top + areaHeight1 * 0.1) , displayId: displayID});
+      pointers.setPoint(1,0,{x: Math.round(areaObj1.left + areaWidth1 * 0.5),y: Math.round(areaObj1.bottom - areaHeight1 * 0.3) , displayId: displayID});
+      pointers.setPoint(1,1,{x: Math.round(areaObj1.left + areaWidth1 * 0.5),y: Math.round(areaObj1.bottom - areaHeight1 * 0.1) , displayId: displayID});
+      pointers.setPoint(2,0,{x: Math.round(areaObj1.left + areaWidth1 * 0.5),y: Math.round(areaObj1.bottom - areaHeight1 * 0.3) , displayId: displayID});
+      pointers.setPoint(2,1,{x: Math.round(areaObj1.left + areaWidth1 * 0.5),y: Math.round(areaObj1.bottom - areaHeight1 * 0.2) , displayId: displayID});
       await driver.injectMultiPointerAction(pointers);
       await CommonFunc.sleep(4000);
       let strJson = getInspectorByKey('PinchGesture');

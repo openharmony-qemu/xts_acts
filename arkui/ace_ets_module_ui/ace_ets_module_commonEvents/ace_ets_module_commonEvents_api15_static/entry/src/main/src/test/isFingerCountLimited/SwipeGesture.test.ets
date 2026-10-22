@@ -45,7 +45,7 @@ export default function swipeGestureTest() {
       }
     });
 
-    
+
 /**
      * @tc.number   SwipeGesture1_static_0100
      * @tc.name     SwipeGesture1_static_0100
@@ -70,7 +70,7 @@ it('SwipeGesture1_static_0100', Level.LEVEL0, async (done: () => void): Promise<
       let driver = Driver.create();
       let speed = Math.floor(areaWidth1 * 0.6 / 0.016 / 1000) * 1000
       await CommonFunc.sleep(1000);
-      await (driver.swipeBetween({x: Math.round(areaObj1.left + areaWidth1 / 2).toInt(), y: Math.round(areaObj1.bottom - areaHeight1 / 4).toInt(), displayId: displayID}, {x: Math.round(areaObj1.left + areaWidth1 / 2).toInt(), y: Math.round(areaObj1.top).toInt(), displayId: displayID}, 800) as Promise<void>)
+      await (driver.swipeBetween({x: Math.round(areaObj1.left + areaWidth1 / 2).toInt(), y: Math.round(areaObj1.bottom - areaHeight1 / 4).toInt(), displayId: displayID}, {x: Math.round(areaObj1.left + areaWidth1 / 2).toInt(), y: Math.round(areaObj1.top + areaHeight1 / 4).toInt(), displayId: displayID}, 800) as Promise<void>)
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('SwipeGesture');
       let obj = JSON.parseJsonElement(strJson);
@@ -82,8 +82,8 @@ it('SwipeGesture1_static_0100', Level.LEVEL0, async (done: () => void): Promise<
       done();
     });
 
-    
-    
+
+
 /**
      * @tc.number   SwipeGesture1_static_0200
      * @tc.name     SwipeGesture1_static_0200
@@ -101,14 +101,14 @@ it('SwipeGesture1_static_0200', Level.LEVEL0, async (done: () => void): Promise<
       let areaHeight2 = areaObj2.bottom - areaObj2.top
       let areaWidth2 = areaObj2.right - areaObj2.left
       console.log('SwipeGesture1_static_0200 areaObj2', areaObj2.left, areaObj2.top, areaObj2.right, areaObj2.bottom)
-      console.log('SwipeGesture1_static_0200 areaObj2 clicked start', Math.round(areaObj2.left + areaWidth2 * 0.2),
-        Math.round(areaObj2.top + areaObj2.top + areaHeight2 / 2))
-      console.log('SwipeGesture1_static_0200 areaObj2 clicked end', Math.round(areaObj2.left + areaWidth2 * 0.8),
-        Math.round(areaObj2.top + areaObj2.top + areaHeight2 / 2))
+      console.log('SwipeGesture1_static_0200 areaObj2 clicked start', Math.round(areaObj2.left + areaWidth2 * 0.8),
+        Math.round(areaObj2.top + areaHeight2 / 2))
+      console.log('SwipeGesture1_static_0200 areaObj2 clicked end', Math.round(areaObj2.left + areaWidth2 * 0.2),
+        Math.round(areaObj2.top + areaHeight2 / 2))
       let driver = Driver.create();
       let speed = (Math.floor(areaWidth2 * 0.6 / 0.016 / 1000) * 1000).toInt()
       await CommonFunc.sleep(1000);
-      await ((driver.swipeBetween({x: Math.round(areaObj2.left + areaWidth2 * 0.8).toInt(), y: Math.round(areaObj2.top + areaObj2.top + areaHeight2 / 2).toInt(), displayId: displayID}, {x: Math.round(areaObj2.left + areaWidth2 * 0.2).toInt(), y: Math.round(areaObj2.top + areaObj2.top + areaHeight2 / 2).toInt(), displayId: displayID}, speed)) as Promise<void>)
+      await ((driver.swipeBetween({x: Math.round(areaObj2.left + areaWidth2 * 0.8).toInt(), y: Math.round(areaObj2.top + areaHeight2 / 2).toInt(), displayId: displayID}, {x: Math.round(areaObj2.left + areaWidth2 * 0.2).toInt(), y: Math.round(areaObj2.top + areaHeight2 / 2).toInt(), displayId: displayID}, speed)) as Promise<void>)
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('SwipeGesture2');
       let obj = JSON.parseJsonElement(strJson);
