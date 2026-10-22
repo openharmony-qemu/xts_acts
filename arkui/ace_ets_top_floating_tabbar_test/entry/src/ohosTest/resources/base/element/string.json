@@ -1,0 +1,16 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "Top Floating Tab Bar Test"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "Top Floating Tab Bar Test entry"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "TopFloatingTabBarTest"
+    }
+  ]
+}

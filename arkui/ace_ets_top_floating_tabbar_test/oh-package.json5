@@ -1,0 +1,13 @@
+{
+  "license": "",
+  "devDependencies": {
+    "@ohos/hypium": "1.0.26"
+  },
+  "author": "",
+  "modelVersion": "26.0.0",
+  "name": "ace_ets_top_floating_tabbar",
+  "description": "ArkUI top floating tab bar XTS test",
+  "main": "",
+  "version": "1.0.0",
+  "dependencies": {}
+}

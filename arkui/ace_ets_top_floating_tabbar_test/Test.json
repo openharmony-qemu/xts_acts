@@ -1,0 +1,27 @@
+{
+    "description": "Configuration for arkui top floating tab bar tests",
+    "driver": {
+        "type": "OHJSUnitTest",
+        "test-timeout": "600000",
+        "shell-timeout": "600000",
+        "bundle-name": "com.open.harmony.ace_ets_top_floating_tabbar",
+        "testcase-timeout": "180000",
+        "module-name": "entry_test"
+    },
+    "kits": [
+        {
+            "test-file-name": [
+                "ActsAceEtsTopFloatingTabBarTest.hap",
+                "ActsAceEtsTopFloatingTabBar.hap"
+            ],
+            "type": "AppInstallKit",
+            "cleanup-apps": true
+        },{
+            "type": "ShellKit",
+            "run-command": [
+                "power-shell wakeup",
+                "power-shell setmode 602"
+            ]
+        }
+    ]
+}

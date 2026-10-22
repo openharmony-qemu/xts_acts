@@ -1,0 +1,8 @@
+{
+  "src": [
+    "MainAbility/pages/TopFloatingBarIndex",
+    "MainAbility/pages/tabs/TopFloatingBarStyle",
+    "MainAbility/pages/tabs/TopFloatingBarInvalid",
+    "MainAbility/pages/tabs/TopFloatingBarLegacy"
+  ]
+}
