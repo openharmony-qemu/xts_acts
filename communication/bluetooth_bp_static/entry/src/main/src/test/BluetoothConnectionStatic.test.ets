@@ -2537,7 +2537,6 @@ export default function bluetoothConnectionTest(): void {
           hilog.info(domain, tag, "BluetoothTransport TRANSPORT_UNKNOWN: " + TRANSPORT_UNKNOWN);
           expect(TRANSPORT_UNKNOWN).assertEqual(3);
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(domain, tag, "get error:" + JSON.stringify(err));
           hilog.info(domain, tag, "testBluetoothTransportAdd errCode:" + err.code + ",errMessage:" + err.message);
           expect().assertFail();
