@@ -22,6 +22,7 @@ import {
   skipCase,
   ERR_CODE_SUCCESS,
   ERR_CODE_PERMISSION_DENIED,
+  ERR_CODE_SERVICE_EXCEPTION,
   ERR_CODE_NO_DEVICE,
   ERR_CODE_IO_ERROR,
   ERR_CODE_INVALID_PARAMETER
@@ -303,10 +304,11 @@ export default function usbManagerPipeTest() {
      * @tc.number        SUB_USB_USBMANAGER_CAPI_TEST_4400
      * @tc.name          SUB_USB_USBMANAGER_CAPI_TEST_4400
      * @tc.desc          Verify OH_UsbManager_GetFileDescriptor on a pipe that was already closed
-     *                   fails with OH_USBMANAGER_ERROR_NO_DEVICE (no device handle), enforcing
-     *                   state isolation after OH_UsbManager_ClosePipe. Skips (precondition not
-     *                   met) when no peripheral is attached, no permission is granted, or the
-     *                   device detaches mid-run.
+     *                   fails with ERR_CODE_SERVICE_EXCEPTION while the device is
+     *                   still present, enforcing state isolation after ClosePipe.
+     *                   NO_DEVICE is only expected when the device has detached. Skips
+     *                   (precondition not met) when no peripheral is attached, no permission
+     *                   is granted, or the device detaches mid-run.
      * @tc.size          MediumTest
      * @tc.type          Function
      * @tc.level         Level2
@@ -335,7 +337,7 @@ export default function usbManagerPipeTest() {
           }
           expect(res.ret).assertEqual(ERR_CODE_SUCCESS);
           expect(res.closeRet).assertEqual(ERR_CODE_SUCCESS);
-          expect(res.fdRet).assertEqual(ERR_CODE_NO_DEVICE);
+          expect(res.fdRet).assertEqual(ERR_CODE_SERVICE_EXCEPTION);
         } catch (err) {
           let errMsg = (err as BusinessError).message;
           hilog.error(DOMAIN, TAG, 'SUB_USB_USBMANAGER_CAPI_TEST_4400 failed: ' + errMsg);
