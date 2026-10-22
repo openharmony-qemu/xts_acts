@@ -1490,12 +1490,12 @@ export default function abilityTest() {
           cliCmdName: 'ohos-aa',
           subCliCmdName: 'start'
         }];
-        let ticketOpions: abilityToolAccessCtrl.TicketOpions = {
+        let ticketParams: abilityToolAccessCtrl.TicketParams = {
           ticketExpireTimeMs: 30000
         };
         try {
           let data: abilityToolAccessCtrl.TicketQueryResult =
-            await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketOpions);
+            await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketParams);
           console.info(`SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0010 success, ticket: ${data.ticket}`);
           expect(data !== null).assertTrue();
           expect(data.permissionResults !== null).assertTrue();
@@ -1541,12 +1541,12 @@ export default function abilityTest() {
           cliCmdName: 'ohos-aa',
           subCliCmdName: 'force-stop'
         }];
-        let ticketOpions: abilityToolAccessCtrl.TicketOpions = {
+        let ticketParams: abilityToolAccessCtrl.TicketParams = {
           ticketExpireTimeMs: 30000
         };
         try {
           let data: abilityToolAccessCtrl.TicketQueryResult =
-            await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketOpions);
+            await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketParams);
           console.info(`SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0020 success, ticket: ${data.ticket}`);
           expect(data !== null).assertTrue();
           expect(data.permissionResults !== null).assertTrue();
@@ -1593,12 +1593,12 @@ export default function abilityTest() {
           cliCmdName: 'ohos-bm',
           subCliCmdName: 'uninstall'
         }];
-        let ticketOpions: abilityToolAccessCtrl.TicketOpions = {
+        let ticketParams: abilityToolAccessCtrl.TicketParams = {
           ticketExpireTimeMs: 30000
         };
         try {
           let data: abilityToolAccessCtrl.TicketQueryResult =
-            await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketOpions);
+            await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketParams);
           console.info(`SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0030 success, ticket: ${data.ticket}`);
           console.info(`SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0030 permissionResults ` + JSON.stringify(data.permissionResults));
           expect(data.permissionResults.length === 1).assertTrue();
@@ -1636,12 +1636,12 @@ export default function abilityTest() {
           cliCmdName: 'ohos-bm',
           subCliCmdName: 'uninstall'
         }];
-        let ticketOpions: abilityToolAccessCtrl.TicketOpions = {
+        let ticketParams: abilityToolAccessCtrl.TicketParams = {
           ticketExpireTimeMs: 30000
         };
         try {
           let data: abilityToolAccessCtrl.TicketQueryResult =
-            await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketOpions);
+            await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketParams);
           console.info(`SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0040 success, ticket: ${data.ticket}`);
           console.info(`SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0040 permissionResults ` + JSON.stringify(data.permissionResults));
           expect(data !== null).assertTrue();
@@ -1672,11 +1672,11 @@ export default function abilityTest() {
     it('SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         console.info("SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0050 requestToolTicket with cliCmdInfos null");
-        let ticketOpions: abilityToolAccessCtrl.TicketOpions = {
+        let ticketParams: abilityToolAccessCtrl.TicketParams = {
           ticketExpireTimeMs: 30000
         };
         try {
-          await abilityToolAccessCtrl.requestToolTicket(null, ticketOpions);
+          await abilityToolAccessCtrl.requestToolTicket(null, ticketParams);
           expect(false).assertTrue();
         } catch (error) {
           console.error(
@@ -1701,11 +1701,11 @@ export default function abilityTest() {
     it('SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         console.info("SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0060 requestToolTicket with cliCmdInfos undefined");
-        let ticketOpions: abilityToolAccessCtrl.TicketOpions = {
+        let ticketParams: abilityToolAccessCtrl.TicketParams = {
           ticketExpireTimeMs: 30000
         };
         try {
-          await abilityToolAccessCtrl.requestToolTicket(undefined, ticketOpions);
+          await abilityToolAccessCtrl.requestToolTicket(undefined, ticketParams);
           expect(false).assertTrue();
         } catch (error) {
           console.error(
@@ -1722,14 +1722,14 @@ export default function abilityTest() {
     /**
      * @tc.name   SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0070
      * @tc.number SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0070
-     * @tc.desc   ticketOpions is null, call requestToolTicket normally
+     * @tc.desc   ticketParams is null, call requestToolTicket normally
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        console.info("SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0070 requestToolTicket with ticketOpions null");
+        console.info("SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0070 requestToolTicket with ticketParams null");
         let cliCmdInfos: Array<abilityToolAccessCtrl.CliCmdInfo> = [{
           cliCmdName: 'ohos-aa',
           subCliCmdName: 'start'
@@ -1757,14 +1757,14 @@ export default function abilityTest() {
     /**
      * @tc.name   SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0080
      * @tc.number SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0080
-     * @tc.desc   ticketOpions is undefined, call requestToolTicket normally
+     * @tc.desc   ticketParams is undefined, call requestToolTicket normally
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        console.info("SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0080 requestToolTicket with ticketOpions undefined");
+        console.info("SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0080 requestToolTicket with ticketParams undefined");
         let cliCmdInfos: Array<abilityToolAccessCtrl.CliCmdInfo> = [{
           cliCmdName: 'ohos-aa',
           subCliCmdName: 'start'
@@ -1804,11 +1804,11 @@ export default function abilityTest() {
           cliCmdName: 'ohos-xxx',
           subCliCmdName: 'test'
         }];
-        let ticketOpions: abilityToolAccessCtrl.TicketOpions = {
+        let ticketParams: abilityToolAccessCtrl.TicketParams = {
           ticketExpireTimeMs: 30000
         };
         try {
-          await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketOpions);
+          await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketParams);
           expect(false).assertTrue();
         } catch (error) {
           console.error(
@@ -1833,10 +1833,10 @@ export default function abilityTest() {
           cliCmdName: 'ohos-aa',
           subCliCmdName: 'start'
         }];
-        let ticketOpions: abilityToolAccessCtrl.TicketOpions = {};
+        let ticketParams: abilityToolAccessCtrl.TicketParams = {};
         try {
           let data: abilityToolAccessCtrl.TicketQueryResult =
-            await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketOpions);
+            await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketParams);
           console.info(`SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0100 success, ticket: ${data.ticket}`);
           let ticketObj: TicketObj = JSON.parse(data.ticket);
           let messageObj: MessageObj = JSON.parse(ticketObj.message);
@@ -1866,11 +1866,11 @@ export default function abilityTest() {
       async (done: Function) => {
         console.info("SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0110 requestToolTicket with empty cliCmdInfos");
         let cliCmdInfos: Array<abilityToolAccessCtrl.CliCmdInfo> = [];
-        let ticketOpions: abilityToolAccessCtrl.TicketOpions = {
+        let ticketParams: abilityToolAccessCtrl.TicketParams = {
           ticketExpireTimeMs: 30000
         };
         try {
-          await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketOpions);
+          await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketParams);
           expect(false).assertTrue();
         } catch (error) {
           console.error(
@@ -1895,12 +1895,12 @@ export default function abilityTest() {
           cliCmdName: 'ohos-aa',
           subCliCmdName: ''
         }];
-        let ticketOpions: abilityToolAccessCtrl.TicketOpions = {
+        let ticketParams: abilityToolAccessCtrl.TicketParams = {
           ticketExpireTimeMs: 30000
         };
         try {
           let data: abilityToolAccessCtrl.TicketQueryResult =
-            await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketOpions);
+            await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketParams);
           console.info(`SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0120 success, ticket: ${data.ticket}`);
           let ticketObj: TicketObj = JSON.parse(data.ticket);
           let messageObj: MessageObj = JSON.parse(ticketObj.message);
@@ -1936,12 +1936,12 @@ export default function abilityTest() {
           cliCmdName: 'ohos-aa',
           subCliCmdName: 'start'
         }];
-        let ticketOpions: abilityToolAccessCtrl.TicketOpions = {
+        let ticketParams: abilityToolAccessCtrl.TicketParams = {
           ticketExpireTimeMs: 60000
         };
         try {
           let data: abilityToolAccessCtrl.TicketQueryResult =
-            await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketOpions);
+            await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketParams);
           console.info(`SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0130 success, ticket: ${data.ticket}`);
           expect(data !== null).assertTrue();
           expect(data.ticket != null && data.ticket.length > 0).assertTrue();
@@ -1976,11 +1976,11 @@ export default function abilityTest() {
           cliCmdName: 'ohos-aa',
           subCliCmdName: 'start'
         }];
-        let ticketOpions: abilityToolAccessCtrl.TicketOpions = {
+        let ticketParams: abilityToolAccessCtrl.TicketParams = {
           ticketExpireTimeMs: 60001
         };
         try {
-          await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketOpions);
+          await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketParams);
           expect(false).assertTrue();
         } catch (error) {
           console.error(
@@ -2005,11 +2005,11 @@ export default function abilityTest() {
           cliCmdName: 'ohos-aa',
           subCliCmdName: 'start'
         }];
-        let ticketOpions: abilityToolAccessCtrl.TicketOpions = {
+        let ticketParams: abilityToolAccessCtrl.TicketParams = {
           ticketExpireTimeMs: -1
         };
         try {
-          await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketOpions);
+          await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketParams);
           expect(false).assertTrue();
         } catch (error) {
           console.error(
@@ -2034,12 +2034,12 @@ export default function abilityTest() {
           cliCmdName: 'ohos-aa',
           subCliCmdName: 'start'
         }];
-        let ticketOpions: abilityToolAccessCtrl.TicketOpions = {
+        let ticketParams: abilityToolAccessCtrl.TicketParams = {
           ticketExpireTimeMs: 0
         };
         try {
           let data: abilityToolAccessCtrl.TicketQueryResult =
-            await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketOpions);
+            await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketParams);
           console.info(`SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0160 success, ticket: ${data.ticket}`);
           let ticketObj: TicketObj = JSON.parse(data.ticket);
           let messageObj: MessageObj = JSON.parse(ticketObj.message);
@@ -2075,12 +2075,12 @@ export default function abilityTest() {
           cliCmdName: 'ohos-aa',
           subCliCmdName: 'start'
         }];
-        let ticketOpions: abilityToolAccessCtrl.TicketOpions = {
+        let ticketParams: abilityToolAccessCtrl.TicketParams = {
           ticketExpireTimeMs: 30000
         };
         try {
           let data: abilityToolAccessCtrl.TicketQueryResult =
-            await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketOpions);
+            await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketParams);
           console.info(`SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0170 success, ticket: ${data.ticket}`);
           let ticketObj: TicketObj = JSON.parse(data.ticket);
           let messageObj: MessageObj = JSON.parse(ticketObj.message);
@@ -2118,14 +2118,14 @@ export default function abilityTest() {
           cliCmdName: 'ohos-aa',
           subCliCmdName: 'start'
         }];
-        let ticketOpions: abilityToolAccessCtrl.TicketOpions = {
+        let ticketParams: abilityToolAccessCtrl.TicketParams = {
           ticketExpireTimeMs: 10000
         };
         let successCount: number = 0;
         for (let i = 0; i < 1000; i++) {
           try {
             let data: abilityToolAccessCtrl.TicketQueryResult =
-              await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketOpions);
+              await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketParams);
             expect(data !== null).assertTrue();
             console.info("SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0180: success in call requestToolTicket, times: " + successCount);
             successCount ++ ;
@@ -2143,7 +2143,7 @@ export default function abilityTest() {
         for (let i = 1000; i < 2000; i++) {
           try {
             let data: abilityToolAccessCtrl.TicketQueryResult =
-              await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketOpions);
+              await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketParams);
             expect(data !== null).assertTrue();
             console.info("SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0180: success in call requestToolTicket, times: " + successCount);
             successCount ++ ;
@@ -2160,7 +2160,7 @@ export default function abilityTest() {
         for (let i = 2000; i < 3000; i++) {
           try {
             let data: abilityToolAccessCtrl.TicketQueryResult =
-              await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketOpions);
+              await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketParams);
             expect(data !== null).assertTrue();
             console.info("SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0180: success in call requestToolTicket, times: " + successCount);
             successCount ++ ;
