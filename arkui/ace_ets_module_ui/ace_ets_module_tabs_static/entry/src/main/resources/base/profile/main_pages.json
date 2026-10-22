@@ -5,6 +5,9 @@
     "MainAbility/pages/Tabs/tabsBarFloatingStyle",
     "MainAbility/pages/Tabs/systemMaterialBarStyle",
     "MainAbility/pages/Tabs/TabsSidebarStyle",
-    "MainAbility/pages/Tabs/TabsSidebarDisplayStyle"
+    "MainAbility/pages/Tabs/TabsSidebarDisplayStyle",
+    "MainAbility/pages/Tabs/TopFloatingBarStyle",
+    "MainAbility/pages/Tabs/TopFloatingBarInvalid",
+    "MainAbility/pages/Tabs/TopFloatingBarLegacy"
   ]
 }
