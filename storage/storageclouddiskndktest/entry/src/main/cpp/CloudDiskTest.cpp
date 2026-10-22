@@ -1649,8 +1649,6 @@ static napi_value Tset_CloudDisk_CallbackType_ENUM(napi_env env, napi_callback_i
     NAPI_ASSERT(env, callbackType == 1, "OH_CLOUD_DISK_CALLBACK_TYPE_CANCEL_FETCH_DATA is fail.");
     callbackType = OH_CLOUD_DISK_CALLBACK_TYPE_DEHYDRATE;
     NAPI_ASSERT(env, callbackType == 2, "OH_CLOUD_DISK_CALLBACK_TYPE_DEHYDRATE is fail.");
-    callbackType = OH_CLOUD_DISK_CALLBACK_TYPE_FETCH_RANGE_DATA;
-    NAPI_ASSERT(env, callbackType == 3, "OH_CLOUD_DISK_CALLBACK_TYPE_FETCH_RANGE_DATA is fail.");
     napi_value result;
     napi_create_int32(env, 1, &result);
     return result;
