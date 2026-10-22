@@ -58,7 +58,11 @@ export default function ListScrollTest1() {
      */
 it('ListScrollTest1_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ListScrollTest_0100 START');
-      let swiperAnimation = CommonFunc.getComponentRectOnScreen('listScroll_4');
+      let driver = Driver.create()
+      await CommonFunc.sleep(500);
+      let swipeComp = await driver.findComponent(ON.id('listScroll_4'));
+      let swiperAnimation = await swipeComp!.getBounds();
+      let displayId = await swipeComp!.getDisplayId();
       let top = swiperAnimation.top;
       let right = swiperAnimation.right;
       let left = swiperAnimation.left;
@@ -66,9 +70,14 @@ it('ListScrollTest1_0100', Level.LEVEL0, async (done: () => void): Promise<void>
       console.info("ListScrollTest_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom - top;
       let width = right - left;
-      let driver = Driver.create()
       await CommonFunc.sleep(1000);
-      await driver.swipe((Math.round(left + width*0.2)).toInt(),(Math.round(bottom - height/4)).toInt(),(Math.round(left + width*0.2)).toInt(),(Math.round(bottom - height/2)).toInt());
+      await driver.swipeBetween(
+        { x: (Number.parseInt(`${(Math.round(left + width*0.2)).toInt()}`)).toInt(),
+          y: (Number.parseInt(`${(Math.round(bottom - height/4)).toInt()}`)).toInt(),
+          displayId: displayId },
+        { x: (Number.parseInt(`${(Math.round(left + width*0.2)).toInt()}`)).toInt(),
+          y: (Number.parseInt(`${(Math.round(bottom - height/2)).toInt()}`)).toInt(),
+          displayId: displayId });
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('listScroll_1');
       let strJson1 = inspector.getInspectorByKey('listScroll_2');

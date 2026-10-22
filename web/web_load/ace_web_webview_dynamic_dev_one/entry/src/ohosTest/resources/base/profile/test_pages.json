@@ -1,0 +1,8 @@
+{
+  "src": [
+    "testability/pages/Index",
+    "testability/pages/WebCookieManagerDynamic",
+    "testability/pages/WebMessageExtDynamic",
+    "testability/pages/WebviewControllerDynamic"
+  ]
+}

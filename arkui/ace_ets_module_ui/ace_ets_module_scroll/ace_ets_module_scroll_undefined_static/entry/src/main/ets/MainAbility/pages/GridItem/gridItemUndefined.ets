@@ -74,47 +74,55 @@ struct GridItemEventPage {
         .width('90%')
         .height('50%')
 
-        Blank().height('5vp')
+        Blank().height(2)
         Button('resetText')
           .id('GridItem_resetText')
           .onClick((e: ClickEvent) => {
             this.message = 'Hello World';
           })
-        Button('isRowEnd: ' + this.isRowEnd)
-          .id('GridItem_rowEnd')
-          .onClick((e: ClickEvent) => {
-            this.isRowEnd = !this.isRowEnd
-          })
-        Button('isRowStart: ' + this.isRowStart)
-          .id('GridItem_rowStart')
-          .onClick((e: ClickEvent) => {
-            this.isRowStart = !this.isRowStart
-          })
-        Button('isColumnStart: ' + this.isColumnStart)
-          .id('GridItem_columnStart')
-          .onClick((e: ClickEvent) => {
-            this.isColumnStart = !this.isColumnStart
-          })
-        Button('isColumnEnd: ' + this.isColumnEnd)
-          .id('GridItem_columnEnd')
-          .onClick((e: ClickEvent) => {
-            this.isColumnEnd = !this.isColumnEnd
-          })
-        Button('isSelected: ' + this.isSelected)
-          .id('GridItem_selected')
-          .onClick((e: ClickEvent) => {
-            this.isSelected = !this.isSelected
-          })
-        Button('isSelectable: ' + this.isSelectable)
-          .id('GridItem_selectable')
-          .onClick((e: ClickEvent) => {
-            this.isSelectable = !this.isSelectable
-          })
+          .height('5%')
+        Row() {
+          Button('isRowEnd: ' + this.isRowEnd)
+            .id('GridItem_rowEnd')
+            .onClick((e: ClickEvent) => {
+              this.isRowEnd = !this.isRowEnd
+            })
+          Button('isRowStart: ' + this.isRowStart)
+            .id('GridItem_rowStart')
+            .onClick((e: ClickEvent) => {
+              this.isRowStart = !this.isRowStart
+            })
+        }.height('5%')
+        Row() {
+          Button('isColumnStart: ' + this.isColumnStart)
+            .id('GridItem_columnStart')
+            .onClick((e: ClickEvent) => {
+              this.isColumnStart = !this.isColumnStart
+            })
+          Button('isColumnEnd: ' + this.isColumnEnd)
+            .id('GridItem_columnEnd')
+            .onClick((e: ClickEvent) => {
+              this.isColumnEnd = !this.isColumnEnd
+            })
+        }.height('5%')
+        Row() {
+          Button('isSelected: ' + this.isSelected)
+            .id('GridItem_selected')
+            .onClick((e: ClickEvent) => {
+              this.isSelected = !this.isSelected
+            })
+          Button('isSelectable: ' + this.isSelectable)
+            .id('GridItem_selectable')
+            .onClick((e: ClickEvent) => {
+              this.isSelectable = !this.isSelectable
+            })
+        }.height('5%')
         Button('isOnSelect: ' + this.isOnSelect)
           .id('GridItem_onSelect')
           .onClick((e: ClickEvent) => {
             this.isOnSelect = !this.isOnSelect
           })
+          .height('5%')
       }
 
     }

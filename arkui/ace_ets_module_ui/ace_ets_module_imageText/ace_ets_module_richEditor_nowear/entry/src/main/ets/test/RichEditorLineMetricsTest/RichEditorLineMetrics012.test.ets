@@ -69,7 +69,7 @@ export default function RichEditorLineMetrics012() {
       let driver = Driver.create();
       let rich = await driver.findComponent(ON.id('RichEditorLineMetrics012'));
       let pointCenter = await rich.getBoundsCenter();
-      await driver.longClick(pointCenter.x, pointCenter.y);
+      await driver.longClickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
       await CommonFunc.sleep(1000);
       driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A, 0, displayID);
       await CommonFunc.sleep(500);
@@ -87,7 +87,7 @@ export default function RichEditorLineMetrics012() {
       await CommonFunc.sleep(500);
       expect(lineMetrics2Text).assertEqual('lineMetrics(1):undefined');
       let pointCenter1 = await rich.getBoundsCenter();
-      await driver.longClick(pointCenter1.x, pointCenter1.y);
+      await driver.longClickAt({ x: pointCenter1.x, y: pointCenter1.y, displayId: displayID });
       await CommonFunc.sleep(1000);
       driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V, 0, displayID);
       await CommonFunc.sleep(500);

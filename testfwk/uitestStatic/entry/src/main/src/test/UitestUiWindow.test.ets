@@ -36,8 +36,10 @@ import { Utils, startAbility, stopApplication } from './Util.test';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'uitestTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
+const TestTag = 'uitestUiWindowTest';
 const waitUiReadyMs: int = 1000;
 const DeviceErrorCode = 17000005;
+const WindowsErrorCode = 17000005;
 
 async function exitInputMethod() {
   let driver = Driver.create()
@@ -108,6 +110,97 @@ async function maxUiWindow(driver: Driver, window: UiWindow | null): Promise<boo
   }
 }
 
+async function setFull(driver: Driver| undefined) {
+  let window = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' })
+  console.log(`${TestTag}, setFull findWindow, ${JSON.stringify(window)}`);
+  let windowMode = await window!.getWindowMode()
+  console.log(`${TestTag}, setFull getWindowMode, ${JSON.stringify(windowMode)}`);
+  if (windowMode != WindowMode.FULLSCREEN) {
+    await window!.resume()
+    console.log(`${TestTag}, setFloat resume success`);
+  }
+}
+
+async function setFloat(driver: Driver| undefined) {
+  let window = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' })
+  console.log(`${tag}, setFloat findWindow, ${JSON.stringify(window)}`);
+  let windowMode = await window!.getWindowMode()
+  console.log(`${tag}, setFloat getWindowMode, ${JSON.stringify(windowMode)}`);
+  if (windowMode != WindowMode.FLOATING) {
+    await window!.resume()
+    console.log(`${tag}, setFloat resume success`);
+  }
+}
+
+async function setSplit(driver: Driver| undefined) {
+  let window = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' })
+  console.log(`${TestTag}, setSplit window,${JSON.stringify(window)}`);
+  await window!.split()
+  await driver!.delayMs(waitUiReadyMs * 2)
+  let scbCom = await driver!.findComponent(ON.id('scb_block_cover'))
+  console.log(`${TestTag}, setSplit scbCom,${JSON.stringify(scbCom)}`);
+  if (scbCom != null) {
+    await startAbility('com.uitest.acts', 'EntryAbility')
+    await driver!.delayMs(waitUiReadyMs * 2)
+    let btn0 = await driver!.findComponent(ON.text('稍后提示'))
+    console.log(`${TestTag}, setSplit scbCom,${JSON.stringify(btn0)}`);
+    if (btn0 != null) {
+      await btn0!.click()
+      await driver!.delayMs(waitUiReadyMs * 7)
+    }
+    let btn = await driver!.findComponent(ON.text('下一步'))
+    if (btn != null) {
+      await btn!.click()
+      await driver!.delayMs(waitUiReadyMs * 3)
+      let btn1 = await driver!.findComponent(ON.text('完成'))
+      if (btn1 != null) {
+        await btn1!.click()
+        await driver!.delayMs(waitUiReadyMs * 7)
+      }
+    }
+    let btn3 = await driver!.findComponent(ON.text('下一步'))
+    if (btn3 != null) {
+      await btn3!.click()
+      await driver!.delayMs(waitUiReadyMs * 3)
+      let btn1 = await driver!.findComponent(ON.text('完成'))
+      if (btn1 != null) {
+        await btn1!.click()
+        await driver!.delayMs(waitUiReadyMs * 7)
+      }
+    }
+    let btn1 = await driver!.findComponent(ON.text('完成'))
+    if (btn1 != null) {
+      await btn1!.click()
+      await driver!.delayMs(waitUiReadyMs * 7)
+    }
+    let btn2 = await driver!.findComponent(ON.text('点击显示操作按钮'))
+    if (btn2 != null) {
+      await driver!.delayMs(waitUiReadyMs * 7)
+    }
+  } else {
+    let testLabel = await driver!.findComponent(ON.text('test label'));
+    await driver!.delayMs(waitUiReadyMs * 2)
+    await testLabel!.click()
+  }
+}
+
+async function envRecovery(driver: Driver| undefined) {
+  try {
+    let scbCom = await driver!.findComponent(ON.id('scb_block_cover'))
+    if (scbCom != null) {
+      await driver!.pressBack()
+      await driver!.delayMs(waitUiReadyMs * 3)
+    }
+    let resumeWindow = await driver!.findWindow({ bundleName: 'com.uitest.acts' })
+    if (resumeWindow != null) {
+      await resumeWindow!.resume()
+    }
+  } catch (error) {
+    console.log('envRecovery error is ' + error)
+    expect(error.code === WindowsErrorCode).assertTrue()
+  }
+}
+
 export default function uitestUiWindowTest(): void {
   describe('uitestUiWindowTest', (): void => {
     let driver: Driver | undefined;
@@ -139,7 +232,7 @@ export default function uitestUiWindowTest(): void {
 
     /**
      * @tc.name testFindWindowWithId_static
-     * @tc.number uitestUiWindowTest_0014
+     * @tc.number SUB_testfwk_uitest_UiWindow_0015
      * @tc.desc findWindow with id.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -172,14 +265,115 @@ export default function uitestUiWindowTest(): void {
     })
 
     /**
-     * @tc.name testSplit_static
-     * @tc.number uitestUiWindowTest_0001
-     * @tc.desc change this UiWindow into split screen mode
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL3
+     * @tc.name   testApi9_UiWindow_getBundleName_static
+     * @tc.number SUB_testfwk_uitest_UiWindow_0001
+     * @tc.desc   get the size of the device display.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
-    it('testSplit_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('testApi9_UiWindow_getBundleName_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, "testFindWindowBundleName start !!!!");
+      try {
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+        await driver!.delayMs(waitUiReadyMs);
+        let window = await driver!.findWindow({bundleName:'com.uitestScene.acts'});
+        hilog.info(domain, tag, `testFindWindowBundleName window , ${ JSON.stringify(window) }`);
+        expect(window != null).assertTrue();
+        if (window != null) {
+          let name = await window.getBundleName();
+          hilog.info(domain, tag, `testFindWindowBundleName name , ${ name }`);
+          expect(name == 'com.uitestScene.acts').assertTrue();
+        }
+      } catch(error) {
+        hilog.info(domain, tag, `testFindWindowBundleName error, ${ JSON.stringify(error) }`);
+        expect().assertFail();
+      }
+      hilog.info(domain, tag, "testFindWindow over!!!!");
+      await stopApplication('com.uitestScene.acts');
+    })
+
+    /**
+     * @tc.name   testApi9_UiWindow_getTitle_static
+     * @tc.number SUB_testfwk_uitest_UiWindow_0002
+     * @tc.desc   get the title of this UiWindow.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testApi9_UiWindow_getTitle_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+      await driver!.delayMs(waitUiReadyMs)
+      let window = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' })
+      let title = await window!.getTitle()
+      expect(title == '').assertTrue()
+      await stopApplication('com.uitestScene.acts')
+    })
+
+    /**
+     * @tc.name   testFindWindowActive_static
+     * @tc.number SUB_testfwk_uitest_UiWindow_0003
+     * @tc.desc   get the size of the device display.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testFindWindowActive_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, "testFindWindowActive start !!!!");
+      try {
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+        await driver!.delayMs(waitUiReadyMs);
+        let window = await driver!.findWindow({active: true});
+        hilog.info(domain, tag, `testFindWindowActive window , ${ JSON.stringify(window) }`);
+        expect(window != null).assertTrue();
+        if (window != null) {
+          let isActive = await window.isActive();
+          hilog.info(domain, tag, `testFindWindowActive isActive , ${ isActive }`);
+          expect(isActive).assertTrue();
+        }
+      } catch(error) {
+        hilog.info(domain, tag, `testFindWindowActive error, ${ JSON.stringify(error) }`);
+        expect().assertFail();
+      }
+      hilog.info(domain, tag, "testFindWindowActive over!!!!");
+      await stopApplication('com.uitestScene.acts');
+    })
+
+    /**
+     * @tc.name   testApi9_UiWindow_Attr_static
+     * @tc.number SUB_testfwk_uitest_UiWindow_0004
+     * @tc.desc   set the focused status of this UiWindow.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testApi9_UiWindow_Attr_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+      await driver!.delayMs(waitUiReadyMs)
+      let window = await driver!.findWindow({
+        bundleName: 'com.uitestScene.acts',
+        focused: true,
+        active: true,
+        title: ''
+      })
+      await window!.focus()
+      await driver!.delayMs(waitUiReadyMs)
+      let isFocused = await window!.isFocused()
+      let isActive = await window!.isActive()
+      expect(isFocused == true).assertTrue()
+      expect(isActive == true).assertTrue()
+      await stopApplication('com.uitestScene.acts')
+    })
+
+    /**
+     * @tc.name   testWindowResume_split_static
+     * @tc.number SUB_testfwk_uitest_UiWindow_0005
+     * @tc.desc   Call the resume interface in split-1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testWindowResume_split_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver!.delayMs(waitUiReadyMs);
       let window1 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
@@ -211,6 +405,7 @@ export default function uitestUiWindowTest(): void {
             if (testWindow != null) {
               let testWindowMode = await testWindow.getWindowMode();
               expect(testWindowMode == WindowMode.SECONDARY).assertTrue();
+              expect(testWindowMode != WindowMode.FLOATING).assertTrue()
             }
           }
         }
@@ -227,253 +422,253 @@ export default function uitestUiWindowTest(): void {
     })
 
     /**
-     * @tc.name testResume_static
-     * @tc.number uitestUiWindowTest_0002
-     * @tc.desc change this UiWindow into split screen mode
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL3
-     */
-    it('testResume_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      hilog.info(domain, tag, `testResume_static start `);
-      const driver = Driver.create();
-      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
-      await driver!.delayMs(waitUiReadyMs);
-      let window = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
-      expect(window != null).assertTrue();
-      try {
-        if (window != null) {
-          await window.resume();
-          await driver!.delayMs(waitUiReadyMs * 8);
-        }
-      } catch (err) {
-        err = err as BusinessError;
-        hilog.info(domain, tag, `testResume_static resume error, ${JSON.stringify(err)}`);
-        if (err.message == 'this device can not support this action') {
-          expect(window != null).assertTrue();
-          expect(err.code).assertEqual(DeviceErrorCode);
-        } else {
-          expect(false).assertTrue()
-        }
-      }
-      hilog.info(domain, tag, `testResume end `);
-      await stopApplication('com.uitestScene.acts')
-    })
-
-    /**
-     * @tc.name testWindowResizeA_static
-     * @tc.number uitestUiWindowTest_0003
-     * @tc.desc resize this UiWindow to the specified size for the specified direction.
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL3
-     */
-    it('testWindowResizeA_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      hilog.info(domain, tag, `testWindowResizeA_static start `);
-      const driver = Driver.create();
-      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver!.delayMs(waitUiReadyMs * 5)
-      let window = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
-      hilog.info(domain, tag, `testWindowResizeA_static  window , ${JSON.stringify(window)}`);
-      expect(window != null).assertTrue();
-      try {
-        if (window != null) {
-          let windowMode = await window.getWindowMode();
-          if (windowMode != WindowMode.FLOATING) {
-            await window.resume();
-          }
-          await driver!.delayMs(1000);
-          let window1 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
-          hilog.info(domain, tag, `testWindowResizeA_static  window1 , ${JSON.stringify(window1)}`);
-          expect(window1 != null).assertTrue();
-          if (window1 != null) {
-            let bounds1 = await window1.getBounds();
-            hilog.info(domain, tag, `testWindowResizeA_static bounds1, ${JSON.stringify(bounds1)} `);
-            await window1.resize(600, 600, ResizeDirection.RIGHT_DOWN);
-            let window2 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
-            hilog.info(domain, tag, `testWindowResizeA_static  window2 , ${JSON.stringify(window2)}`);
-            expect(window2 != null).assertTrue();
-            if (window2 != null) {
-              let bounds2 = await window2.getBounds();
-              hilog.info(domain, tag, `testWindowResizeA_static bounds2, ${JSON.stringify(bounds2)} `);
-              expect(bounds2 != bounds1).assertTrue();
-              await window2.resize(400, 400, ResizeDirection.RIGHT_UP);
-              let window3 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
-              hilog.info(domain, tag, `testWindowResizeA_static  window3 , ${JSON.stringify(window3)}`);
-              expect(window3 != null).assertTrue();
-              if (window3 != null) {
-                let bounds3 = await window3.getBounds();
-                hilog.info(domain, tag, `testWindowResizeA_static bounds3, ${JSON.stringify(bounds3)} `);
-                expect(bounds3 != bounds2).assertTrue();
-                await window3.resize(300, 300, ResizeDirection.LEFT_DOWN);
-                let window4 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
-                hilog.info(domain, tag, `testWindowResizeA_static  window4 , ${JSON.stringify(window4)}`);
-                expect(window4 != null).assertTrue();
-                if (window4 != null) {
-                  let bounds4 = await window4.getBounds();
-                  hilog.info(domain, tag, `testWindowResizeA_static bounds4, ${JSON.stringify(bounds4)} `);
-                  expect(bounds4 != bounds3).assertTrue();
-                  await window4.resize(500, 500, ResizeDirection.LEFT_UP);
-                  let window5 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
-                  hilog.info(domain, tag, `testWindowResizeA_static  window5 , ${JSON.stringify(window5)}`);
-                  expect(window5 != null).assertTrue();
-                  if (window5 != null) {
-                    let bounds5 = await window5.getBounds();
-                    hilog.info(domain, tag, `testWindowResizeA_static bounds5, ${JSON.stringify(bounds5)} `);
-                    expect(bounds5 != bounds4).assertTrue();
-                  }
-
-                }
-
-                let window6 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
-                hilog.info(domain, tag, `testWindowResizeA_static  window6 , ${JSON.stringify(window6)}`);
-                expect(window6 != null).assertTrue();
-                if (window6 != null) {
-                  let bounds6 = await window6.getBounds();
-                  hilog.info(domain, tag, `testWindowResizeA_static bounds6, ${JSON.stringify(bounds6)} `);
-                  await window6.resize(500, 500, ResizeDirection.UP);
-                  let window7 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
-                  hilog.info(domain, tag, `testWindowResizeA_static  window7 , ${JSON.stringify(window7)}`);
-                  expect(window7 != null).assertTrue();
-                  if (window7 != null) {
-                    let bounds7 = await window7.getBounds();
-                    hilog.info(domain, tag, `testWindowResizeA_static bounds7, ${JSON.stringify(bounds7)} `);
-                    expect(bounds7 != bounds6).assertTrue();
-                  }
-                }
-
-                let window8 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
-                hilog.info(domain, tag, `testWindowResizeA_static  window8 , ${JSON.stringify(window8)}`);
-                expect(window8 != null).assertTrue();
-                if (window8 != null) {
-                  let bounds8 = await window8.getBounds();
-                  hilog.info(domain, tag, `testWindowResizeA_static bounds8, ${JSON.stringify(bounds8)} `);
-                  await window8.resize(500, 500, ResizeDirection.DOWN);
-                  let window9 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
-                  hilog.info(domain, tag, `testWindowResizeA_static  window9 , ${JSON.stringify(window9)}`);
-                  expect(window9 != null).assertTrue();
-                  if (window9 != null) {
-                    let bounds9 = await window9.getBounds();
-                    hilog.info(domain, tag, `testWindowResizeA_static bounds9, ${JSON.stringify(bounds9)} `);
-                    expect(bounds9 != bounds8).assertTrue();
-                  }
-                }
-
-                let window10 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
-                hilog.info(domain, tag, `testWindowResizeA_static  window10 , ${JSON.stringify(window10)}`);
-                expect(window10 != null).assertTrue();
-                if (window10 != null) {
-                  let bounds10 = await window10.getBounds();
-                  hilog.info(domain, tag, `testWindowResizeA_static bounds10, ${JSON.stringify(bounds10)} `);
-                  await window10.resize(500, 500, ResizeDirection.RIGHT);
-                  let window11 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
-                  hilog.info(domain, tag, `testWindowResizeA_static  window11 , ${JSON.stringify(window11)}`);
-                  expect(window11 != null).assertTrue();
-                  if (window11 != null) {
-                    let bounds11 = await window11.getBounds();
-                    hilog.info(domain, tag, `testWindowResizeA_static bounds11, ${JSON.stringify(bounds11)} `);
-                    expect(bounds11 != bounds10).assertTrue();
-                  }
-                }
-
-              }
-            }
-          }
-        }
-      } catch (err) {
-        err = err as BusinessError;
-        hilog.info(domain, tag, `testWindowResizeA_static error, ${JSON.stringify(err)} `);
-        expect(err.code).assertEqual(DeviceErrorCode);
-      }
-      hilog.info(domain, tag, `testWindowResizeA_static end `);
-      await stopApplication('com.uitestScene.acts')
-    })
-
-    /**
-     * @tc.name testWindowMoveTo_static
-     * @tc.number uitestUiWindowTest_0004
+     * @tc.name testWindowMoveTo_float_static
+     * @tc.number SUB_testfwk_uitest_UiWindow_0007
      * @tc.desc move this UiWindow to the specified points.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL3
      */
-    it('testWindowMoveTo_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      hilog.info(domain, tag, `testWindowMoveTo_static start `);
+    it('testWindowMoveTo_float_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, `testWindowMoveTo_float_static start `);
       const driver = Driver.create();
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver!.delayMs(waitUiReadyMs * 5)
-      let window = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
-      hilog.info(domain, tag, `testWindowMoveTo_static window, ${JSON.stringify(window)} `);
-      expect(window != null).assertTrue();
+      await driver!.delayMs(waitUiReadyMs)
       try {
-        if (window != null) {
-          let windowMode = await window.getWindowMode();
-          if (windowMode != WindowMode.FLOATING) {
-            await window.resume();
-          }
-        }
-        let window1 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
-        hilog.info(domain, tag, `testWindowMoveTo_static window1, ${JSON.stringify(window1)} `);
-        expect(window1 != null).assertTrue();
-        if (window1 != null) {
-          let bounds1 = await window1.getBounds();
-          hilog.info(domain, tag, `testWindowMoveTo_static bounds1, ${JSON.stringify(bounds1)} `);
-          await window1.moveTo(100, 100);
-          let window2 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
-          hilog.info(domain, tag, `testWindowMoveTo_static window2, ${JSON.stringify(window2)} `);
-          expect(window2 != null).assertTrue();
-          if (window2 != null) {
-            let bounds2 = await window2.getBounds();
-            hilog.info(domain, tag, `testWindowMoveTo_static bounds2, ${JSON.stringify(bounds2)} `);
-            expect(bounds1 != bounds2).assertTrue();
-            expect(bounds1.left != bounds2.left).assertTrue();
-            expect(bounds1.top != bounds2.top).assertTrue();
-            expect(bounds1.right != bounds2.right).assertTrue();
-            expect(bounds1.bottom != bounds2.bottom).assertTrue();
-            expect(bounds1.displayId == bounds2.displayId).assertTrue();
-          }
-        }
+        await setFloat(driver)
+        await driver!.delayMs(waitUiReadyMs)
+        let windowFloat = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
+        let bounds1 = await windowFloat!.getBounds()
+        await windowFloat!.moveTo(100, 100)
+        await driver.delayMs(waitUiReadyMs)
+        let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let bounds2 = await window2!.getBounds()
+        expect(bounds1.left != bounds2.left).assertTrue()
+        await window2!.moveTo(bounds1.left, bounds1.top)
       } catch (err) {
         err = err as BusinessError;
         hilog.info(domain, tag, `testWindowMoveTo_static error, ${JSON.stringify(err)} `);
-        if (err.message == 'this device can not support this action') {
-          expect(err.code).assertEqual(DeviceErrorCode);
-          expect(window != null).assertTrue();
-        } else {
-          expect(false).assertTrue()
-        }
+        expect(err.code).assertEqual(17000005);
       }
-      hilog.info(domain, tag, `testWindowMoveTo_static end `);
+      hilog.info(domain, tag, `testWindowMoveTo_float_static end `);
       await stopApplication('com.uitestScene.acts')
     })
 
     /**
-     * @tc.name testWindowMinimize_static
-     * @tc.number uitestUiWindowTest_0005
+     * @tc.name   testWindowResizeA_float_static
+     * @tc.number SUB_testfwk_uitest_UiWindow_0008
+     * @tc.desc   Call the resize interface in float.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testWindowResizeA_float_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+      await driver!.delayMs(waitUiReadyMs)
+      try {
+        await setFloat(driver)
+        await driver!.delayMs(waitUiReadyMs)
+        let windowFloat = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let bounds1 = await windowFloat!.getBounds()
+        let bounds1x = Math.floor(bounds1.right - bounds1.left).toInt()
+        let bounds1y = Math.floor(bounds1.bottom - bounds1.top).toInt()
+        let resizex = Math.floor(bounds1x / 2).toInt()
+        let resizey = Math.floor(bounds1y / 2).toInt()
+        await windowFloat!.resize(resizex, resizey, ResizeDirection.RIGHT_DOWN)
+        console.log(`${TestTag}, testWindowResizeA_float_static windowFloat.resize success `);
+        await driver!.delayMs(waitUiReadyMs)
+        let window2 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' })
+        console.log(`${TestTag}, testWindowResizeA_float_static findWindow2 success, ${JSON.stringify(window2)}`);
+        let bounds2 = await window2!.getBounds()
+        console.log(`${TestTag}, testWindowResizeA_float_static getBounds2 success, ${JSON.stringify(bounds2)}`);
+        expect(bounds2.right != bounds1.right).assertTrue()
+        await window2!.resize(bounds1x, bounds1y, ResizeDirection.RIGHT_DOWN)
+
+        let window3 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let bounds3 = await window2!.getBounds()
+        await window3!.resize(resizex, resizey, ResizeDirection.LEFT_DOWN)
+        await driver!.delayMs(waitUiReadyMs)
+        let window4 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' })
+        console.log(`${TestTag}, testWindowResizeA_float_static findWindow4 success, ${JSON.stringify(window4)}`);
+        let bounds4 = await window4!.getBounds()
+        console.log(`${TestTag}, testWindowResizeA_float_static getBounds4 success, ${JSON.stringify(bounds4)}`);
+        expect(bounds3.bottom != bounds4.bottom).assertTrue()
+        await window4!.resize(bounds1x, bounds1y, ResizeDirection.LEFT_DOWN)
+      } catch (error) {
+        console.log('testWindowResizeA_float_static error is ' + error)
+        expect(error.code === WindowsErrorCode).assertTrue()
+      }
+    })
+
+    /**
+     * @tc.name   testWindowResizeA_UP_float_static
+     * @tc.number SUB_testfwk_uitest_UiWindow_0009
+     * @tc.desc   in a float state, Call the resize interface to adjust the window size from the top of the window.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testWindowResizeA_UP_float_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+      await driver!.delayMs(waitUiReadyMs)
+      try {
+        await setFloat(driver)
+        await driver!.delayMs(waitUiReadyMs)
+        let floatbtn = await driver!.findComponent(ON.id('floatingButtonMaximize'))
+        if (floatbtn == null) {
+          let window1 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' })
+          let bounds1 = await window1!.getBounds()
+          let bounds1x = Math.floor(bounds1.right - bounds1.left).toInt()
+          let bounds1y = Math.floor(bounds1.bottom - bounds1.top).toInt()
+          let resizex = Math.floor(bounds1x / 2).toInt()
+          let resizey = Math.floor(bounds1y / 2).toInt()
+          await window1!.resize(resizex, resizey, ResizeDirection.RIGHT_UP)
+          await driver!.delayMs(waitUiReadyMs)
+          let window2 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' })
+          console.log(`${TestTag}, testWindowResizeA_UP_float_static findWindow2 success, ${JSON.stringify(window2)}`);
+          let bounds2 = await window2!.getBounds()
+          console.log(`${TestTag}, testWindowResizeA_UP_float_static getBounds2 success, ${JSON.stringify(bounds2)}`);
+          expect(bounds2.top != bounds1.top).assertTrue()
+          await window2!.resize(bounds1x, bounds1y, ResizeDirection.RIGHT_UP)
+
+          let window3 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' })
+          let bounds3 = await window3!.getBounds()
+          await window3!.resize(resizex, resizey, ResizeDirection.LEFT_UP)
+          await driver!.delayMs(waitUiReadyMs)
+          let window4 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' })
+          console.log(`${TestTag}, testWindowResizeA_UP_float_static findWindow4 success, ${JSON.stringify(window4)}`);
+          let bounds4 = await window4!.getBounds()
+          console.log(`${TestTag}, testWindowResizeA_UP_float_static getBounds4 success, ${JSON.stringify(bounds4)}`);
+          expect(bounds4.top != bounds3.top).assertTrue()
+          await window4!.resize(bounds1x, bounds1y, ResizeDirection.LEFT_UP)
+        }
+      } catch (error) {
+        console.log('testWindowResizeA_UP_float_static error is ' + error)
+        expect(error.code === WindowsErrorCode).assertTrue()
+      }
+    })
+
+    /**
+     * @tc.name   testWindowResizeB_float_static
+     * @tc.number SUB_testfwk_uitest_UiWindow_0010
+     * @tc.desc   in a float state, Call the resize interface to adjust the window size from the down/right/left of the window.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testWindowResizeB_float_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+      await driver!.delayMs(waitUiReadyMs)
+      try {
+        await setFloat(driver)
+        await driver!.delayMs(waitUiReadyMs)
+        let windowFloat = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let bounds1 = await windowFloat!.getBounds()
+        let bounds1x = Math.floor(bounds1.right - bounds1.left).toInt()
+        let bounds1y = Math.floor(bounds1.bottom - bounds1.top).toInt()
+        let resizex = Math.floor(bounds1x / 2).toInt()
+        let resizey = Math.floor(bounds1y / 2).toInt()
+        await windowFloat!.resize(bounds1x, resizey, ResizeDirection.DOWN)
+        await driver!.delayMs(waitUiReadyMs)
+        let window2 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' })
+        console.log(`${TestTag}, testWindowResizeB_float_static findWindow2 success, ${JSON.stringify(window2)}`);
+        let bounds2 = await window2!.getBounds()
+        console.log(`${TestTag}, testWindowResizeB_float_static getBounds2 success, ${JSON.stringify(bounds2)}`);
+        expect(bounds2.bottom != bounds1.bottom).assertTrue()
+        await window2!.resize(bounds1x, bounds1y, ResizeDirection.DOWN)
+
+        let window6 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let bounds6 = await window6!.getBounds()
+        await window6!.resize(resizex, bounds1y, ResizeDirection.RIGHT)
+        await driver!.delayMs(waitUiReadyMs)
+        let window7 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' })
+        console.log(`${TestTag}, testWindowResizeB_float_static findWindow7 success, ${JSON.stringify(window7)}`);
+        let bounds7 = await window7!.getBounds()
+        console.log(`${TestTag}, testWindowResizeB_float_static getBounds7 success, ${JSON.stringify(bounds7)}`);
+        expect(bounds7.right != bounds6.right).assertTrue()
+        await window7!.resize(bounds1x, bounds1y, ResizeDirection.RIGHT)
+
+        let window8 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let bounds8 = await window8!.getBounds()
+        await window8!.resize(resizex, bounds1y, ResizeDirection.LEFT)
+        await driver!.delayMs(waitUiReadyMs)
+        let window9 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' })
+        console.log(`${TestTag}, testWindowResizeB_float_static findWindow9 success, ${JSON.stringify(window9)}`);
+        let bounds9 = await window9!.getBounds()
+        console.log(`${TestTag}, testWindowResizeB_float_static getBounds9 success, ${JSON.stringify(bounds9)}`);
+        expect(bounds8.left != bounds9.left).assertTrue()
+        await window9!.resize(bounds1x, bounds1y, ResizeDirection.LEFT)
+      } catch (error) {
+        error = error as BusinessError;
+        console.log('testWindowResizeB_float_static error is ' + JSON.stringify(error))
+        expect((error as BusinessError).code === WindowsErrorCode).assertTrue()
+      }
+    })
+
+    /**
+     * @tc.name   testWindowResizeB_UP_float_static
+     * @tc.number SUB_testfwk_uitest_UiWindow_0011
+     * @tc.desc   in a float state, Call the resize interface to adjust the window size from the UP of the window.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testWindowResizeB_UP_float_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+      await driver!.delayMs(waitUiReadyMs)
+      try {
+        await setFloat(driver)
+        await driver!.delayMs(waitUiReadyMs)
+        let floatbtn = await driver!.findComponent(ON.id('floatingButtonMaximize'))
+        if (floatbtn == null) {
+          let window1 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' })
+          let bounds1 = await window1!.getBounds()
+          let bounds1x = Math.floor(bounds1.right - bounds1.left).toInt()
+          let bounds1y = Math.floor(bounds1.bottom - bounds1.top).toInt()
+          let resizey = Math.floor(bounds1y / 2).toInt()
+          await window1!.resize(bounds1x, resizey, ResizeDirection.UP)
+          await driver!.delayMs(waitUiReadyMs)
+          let window6 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' })
+          console.log(`${TestTag}, testWindowResizeB_UP_float_static findWindow6 success, ${JSON.stringify(window6)}`);
+          let bounds6 = await window6!.getBounds()
+          console.log(`${TestTag}, testWindowResizeB_UP_float_static getBounds6 success, ${JSON.stringify(bounds6)}`);
+          expect(bounds6.top != bounds1.top).assertTrue()
+          await window6!.resize(bounds1x, bounds1y, ResizeDirection.UP)
+        }
+      } catch (error) {
+        error = error as BusinessError;
+        console.log('testWindowResizeB_UP_float_static error is ' + JSON.stringify(error))
+        expect((error as BusinessError).code === WindowsErrorCode).assertTrue()
+      }
+    })
+
+    /**
+     * @tc.name testWindowMinimize_float_static
+     * @tc.number SUB_testfwk_uitest_UiWindow_0012
      * @tc.desc minimize this UiWindow.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL3
      */
-    it('testWindowMinimize_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      hilog.info(domain, tag, `testWindowMinimize_static start `);
+    it('testWindowMinimize_float_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, `testWindowMinimize_float_static start `);
       const driver = Driver.create();
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver!.delayMs(waitUiReadyMs)
       let window = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' })
-      hilog.info(domain, tag, `testWindowMinimize_static window, ${JSON.stringify(window)} `);
+      hilog.info(domain, tag, `testWindowMinimize_float_static window, ${JSON.stringify(window)} `);
       expect(window != null).assertTrue();
       try {
         if (window != null) {
           await window.minimize();
           await driver!.delayMs(waitUiReadyMs)
           let window1 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
-          hilog.info(domain, tag, `testWindowMinimize_static window1, ${JSON.stringify(window1)} `);
+          hilog.info(domain, tag, `testWindowMinimize_float_static window1, ${JSON.stringify(window1)} `);
           expect(window1 == null).assertTrue();
         }
       } catch (err) {
         err = err as BusinessError;
-        hilog.info(domain, tag, `testWindowMinimize_static error, ${JSON.stringify(err)} `);
+        hilog.info(domain, tag, `testWindowMinimize_float_static error, ${JSON.stringify(err)} `);
         if (err.message == 'this device can not support this action') {
           expect(window != null).assertTrue();
           expect(err.code).assertEqual(DeviceErrorCode);
@@ -486,14 +681,52 @@ export default function uitestUiWindowTest(): void {
     })
 
     /**
-     * @tc.name testWindowMaximize_static
-     * @tc.number uitestUiWindowTest_0006
+     * @tc.name testWindowClose_float_static
+     * @tc.number SUB_testfwk_uitest_UiWindow_0013
+     * @tc.desc close this UiWindow.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it('testWindowClose_float_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, `testWindowClose_static start `);
+      const driver = Driver.create();
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+      await driver!.delayMs(waitUiReadyMs)
+      let window = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
+      hilog.info(domain, tag, `testWindowClose_static window, ${JSON.stringify(window)} `);
+      expect(window != null).assertTrue();
+      try {
+        if (window != null) {
+          await window.close();
+          hilog.info(domain, tag, `testWindowClose_static close sccessful`);
+        }
+        let window1 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
+        hilog.info(domain, tag, `testWindowClose_static window1, ${JSON.stringify(window1)} `);
+        expect(window1 == null).assertTrue()
+      } catch (err) {
+        err = err as BusinessError;
+        hilog.info(domain, tag, `testWindowClose_static error, ${JSON.stringify(err)} `);
+        if (err.message == 'this device can not support this action') {
+          expect(window != null).assertTrue();
+          expect(err.code).assertEqual(DeviceErrorCode);
+        } else {
+          expect(false).assertTrue();
+        }
+      }
+      hilog.info(domain, tag, `testWindowClose_static end `);
+      await stopApplication('com.uitestScene.acts');
+    })
+
+    /**
+     * @tc.name testWindowMaximize_float_static
+     * @tc.number SUB_testfwk_uitest_UiWindow_0014
      * @tc.desc maximize this UiWindow.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL3
      */
-    it('testWindowMaximize_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('testWindowMaximize_float_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testWindowMaximize_static start `);
       const driver = Driver.create();
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -536,14 +769,14 @@ export default function uitestUiWindowTest(): void {
     })
 
     /**
-     * @tc.name testWindowIsFocused
-     * @tc.number uitestUiWindowTest_0007
+     * @tc.name testWindowIsFocused_static
+     * @tc.number SUB_testfwk_uitest_UiWindow_0016
      * @tc.desc testWindowIsFocused.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL3
      */
-    it('testWindowIsFocused', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('testWindowIsFocused_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testWindowIsFocused start `);
       try {
         const driver = Driver.create();
@@ -573,14 +806,14 @@ export default function uitestUiWindowTest(): void {
     })
 
     /**
-     * @tc.name testWindowIsActive
-     * @tc.number uitestUiWindowTest_0008
+     * @tc.name testWindowIsActive_static
+     * @tc.number SUB_testfwk_uitest_UiWindow_0017
      * @tc.desc testWindowIsFocused.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL3
      */
-    it('testWindowIsActive', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+    it('testWindowIsActive_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testWindowIsActive start `);
       try {
         const driver = Driver.create();
@@ -610,205 +843,6 @@ export default function uitestUiWindowTest(): void {
       }
       hilog.info(domain, tag, `testWindowIsActive end `);
       await stopApplication('com.uitestScene.acts')
-    })
-
-    /**
-     * @tc.name testWindowBundleName
-     * @tc.number uitestUiWindowTest_0009
-     * @tc.desc testWindowBundleName.
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL3
-     */
-    it('testWindowBundleName', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      hilog.info(domain, tag, `testWindowBundleName start `);
-      try {
-        const driver = Driver.create();
-        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-        await driver!.delayMs(waitUiReadyMs)
-        let window = await driver!.findWindow({
-          bundleName: 'com.uitestScene.acts',
-          focused: true,
-          active: true,
-          title: ''
-        });
-        hilog.info(domain, tag, `testWindowBundleName window, ${JSON.stringify(window)} `);
-        expect(window != null).assertTrue();
-        if (window != null) {
-          await window.focus();
-          hilog.info(domain, tag, `testWindowBundleName focus sccessful`);
-          let bundleName = await window.getBundleName();
-          hilog.info(domain, tag, `testWindowBundleName bundleName, ${JSON.stringify(bundleName)} `);
-          expect(bundleName).assertEqual('com.uitestScene.acts')
-        }
-      } catch (error) {
-        hilog.info(domain, tag, `testWindowBundleName error, ${JSON.stringify(error)} `);
-        expect().assertFail()
-      }
-      hilog.info(domain, tag, `testWindowBundleName end `);
-      await stopApplication('com.uitestScene.acts')
-    })
-
-    /**
-     * @tc.name testWindowBounds
-     * @tc.number uitestUiWindowTest_0010
-     * @tc.desc getBounds test.
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL3
-     */
-    it('testWindowBounds', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      hilog.info(domain, tag, `testWindowBounds start `);
-      try {
-        const driver = Driver.create();
-        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-        await driver!.delayMs(waitUiReadyMs)
-        let window = await driver!.findWindow({
-          bundleName: 'com.uitestScene.acts',
-          focused: true,
-          active: true,
-          title: ''
-        });
-        hilog.info(domain, tag, `testWindowBounds window, ${JSON.stringify(window)} `);
-        expect(window != null).assertTrue();
-        if (window != null) {
-          await window.focus();
-          hilog.info(domain, tag, `testWindowBounds focus sccessful`);
-          let bounds = await window.getBounds();
-          hilog.info(domain, tag, `testWindowBounds bounds, ${JSON.stringify(bounds)} `);
-          expect(bounds != null).assertTrue()
-        }
-      } catch (error) {
-        hilog.info(domain, tag, `testWindowBounds error, ${JSON.stringify(error)} `);
-        expect().assertFail()
-      }
-      hilog.info(domain, tag, `testWindowBounds end `);
-      await stopApplication('com.uitestScene.acts')
-    })
-
-    /**
-     * @tc.name testGetWindowMode_static
-     * @tc.number uitestUiWindowTest_0011
-     * @tc.desc get the window mode of this UiWindow.
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL3
-     */
-    it('testGetWindowMode_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      hilog.info(domain, tag, `testGetWindowMode_static start `);
-      const driver = Driver.create();
-      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver!.delayMs(waitUiReadyMs)
-      let window1 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
-      hilog.info(domain, tag, `testGetWindowMode window1, ${JSON.stringify(window1)} `);
-      expect(window1 != null).assertTrue();
-      try {
-        if (window1 != null) {
-          let mode1 = await window1.getWindowMode();
-          hilog.info(domain, tag, `testGetWindowMode_static mode1, ${JSON.stringify(mode1)} `);
-          await window1.resume();
-          hilog.info(domain, tag, `testGetWindowMode_static resume `);
-          let window2 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
-          hilog.info(domain, tag, `testGetWindowMode_static window2, ${JSON.stringify(window2)} `);
-          expect(window2 != null).assertTrue();
-          if (window2 != null) {
-            let mode2 = await window2.getWindowMode();
-            hilog.info(domain, tag, `testGetWindowMode_static mode2, ${JSON.stringify(mode2)} `);
-            if (mode1 == WindowMode.FULLSCREEN) {
-              expect(mode2 == WindowMode.FLOATING).assertTrue()
-              expect(mode2 != WindowMode.SECONDARY).assertTrue()
-              expect(mode2 != WindowMode.PRIMARY).assertTrue()
-            } else {
-              expect(mode2 == WindowMode.FULLSCREEN).assertTrue()
-            }
-          }
-        }
-      } catch (err) {
-        err = err as BusinessError;
-        hilog.info(domain, tag, `testGetWindowMode_static error, ${JSON.stringify(err)} `);
-        if (err.message == 'this device can not support this action') {
-          expect(window1 != null).assertTrue()
-        } else {
-          expect(false).assertTrue()
-        }
-      }
-      hilog.info(domain, tag, `testGetWindowMode_static end `);
-      await stopApplication('com.uitestScene.acts')
-    })
-
-    /**
-     * @tc.name testWindowTitle
-     * @tc.number uitestUiWindowTest_0012
-     * @tc.desc get the window title of this UiWindow.
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL3
-     */
-    it('testWindowTitle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      hilog.info(domain, tag, `testWindowTitle start `);
-      try {
-        const driver = Driver.create();
-        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-        await driver!.delayMs(waitUiReadyMs)
-        let window = await driver!.findWindow({
-          bundleName: 'com.uitestScene.acts',
-          focused: true,
-          active: true,
-          title: ''
-        });
-        hilog.info(domain, tag, `testWindowTitle window, ${JSON.stringify(window)} `);
-        expect(window != null).assertTrue();
-        if (window != null) {
-          await window.focus();
-          hilog.info(domain, tag, `testWindowTitle focus sccessful`);
-          let title = await window.getTitle();
-          hilog.info(domain, tag, `testWindowTitle title, ${JSON.stringify(title)} `);
-          expect(title).assertEqual('')
-        }
-      } catch (error) {
-        hilog.info(domain, tag, `testWindowTitle error, ${JSON.stringify(error)} `);
-        expect().assertFail()
-      }
-      hilog.info(domain, tag, `testWindowTitle end `);
-      await stopApplication('com.uitestScene.acts')
-    })
-
-    /**
-     * @tc.name testWindowClose_static
-     * @tc.number uitestUiWindowTest_0013
-     * @tc.desc close this UiWindow.
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL3
-     */
-    it('testWindowClose_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      hilog.info(domain, tag, `testWindowClose_static start `);
-      const driver = Driver.create();
-      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver!.delayMs(waitUiReadyMs)
-      let window = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
-      hilog.info(domain, tag, `testWindowClose_static window, ${JSON.stringify(window)} `);
-      expect(window != null).assertTrue();
-      try {
-        if (window != null) {
-          await window.close();
-          hilog.info(domain, tag, `testWindowClose_static close sccessful`);
-        }
-        let window1 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' });
-        hilog.info(domain, tag, `testWindowClose_static window1, ${JSON.stringify(window1)} `);
-        expect(window1 == null).assertTrue()
-      } catch (err) {
-        err = err as BusinessError;
-        hilog.info(domain, tag, `testWindowClose_static error, ${JSON.stringify(err)} `);
-        if (err.message == 'this device can not support this action') {
-          expect(window != null).assertTrue();
-          expect(err.code).assertEqual(DeviceErrorCode);
-        } else {
-          expect(false).assertTrue();
-        }
-      }
-      hilog.info(domain, tag, `testWindowClose_static end `);
-      await stopApplication('com.uitestScene.acts');
     })
   })
 }

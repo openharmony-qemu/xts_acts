@@ -171,6 +171,47 @@ export async function getPermission(name = 'ohos.acts.multimedia.photoaccess.xts
   }
 }
 
+export function checkResourceFile(context: Context) {
+  try {
+    const sandboxPath = context.filesDir;
+    let resourcePath = context.resourceDir;
+    let resourcePathArray = fs.listFileSync(resourcePath);
+    for (let index = 0; index < resourcePathArray.length; index++) {
+      fs.copyFileSync((resourcePath + '/' + resourcePathArray[index]), (sandboxPath + '/' + resourcePathArray[index]));
+    }
+    let sandboxFileArray = fs.listFileSync(sandboxPath)
+    console.log(`sandbox fileList ==> ${sandboxFileArray}`)
+  } catch (error) {
+    console.error(`checkResourceFile failed, err is ${error}`);
+  }
+}
+
+export async function createResource(context: common.UIAbilityContext, fileNameList: Array<string>) {
+  try {
+    let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
+    for (let i = 0; i < fileNameList.length; i++) {
+      let fileName = fileNameList[i];
+      let displayName = fileName.substring(0, fileName.lastIndexOf("."));
+      let fileUri = context.filesDir + '/' + fileName;
+      let ext = fileName.substring(fileName.lastIndexOf(".") + 1);
+      let isVideo = ext === 'mp4';
+      let photoType = isVideo ? photoAccessHelper.PhotoType.VIDEO : photoAccessHelper.PhotoType.IMAGE;
+      let resourceType = isVideo
+        ? photoAccessHelper.ResourceType.VIDEO_RESOURCE
+        : photoAccessHelper.ResourceType.IMAGE_RESOURCE;
+      let options: photoAccessHelper.CreateOptions = { title: displayName };
+      let assetChangeRequest = photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(
+        context, photoType, ext, options
+      );
+      assetChangeRequest.addResource(resourceType, fileUri);
+      await phAccessHelper.applyChanges(assetChangeRequest);
+      console.log(`createResource :: applyChange ${fileName} success !`);
+    }
+  } catch (error) {
+    console.log(`createResource :: run failed, message is ${error},code is ${error.code}`);
+  }
+}
+
 export function isNum(value: photoAccessHelper.MemberType): boolean {
   return typeof value === 'number' && !isNaN(value);
 }

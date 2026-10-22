@@ -16,7 +16,7 @@
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
 import { describe, it, expect, TestType, Size, Level, Hypium, beforeAll } from "../../../../hypium/index";
-import { fetchOption, sleep, genRadomStr } from '../Common.test.ets'
+import { sleep, getPermission, driveFn, checkResourceFile, createResource } from '../Common.test.ets'
 import Context from "application.Context"
 import hilog from '@ohos.hilog'
 import { BusinessError } from '@ohos.base';
@@ -28,6 +28,13 @@ export default function albumGetAllObjectTest() {
   describe('albumGetAllObjectTest', (): void => {
     let testContext: Context = Hypium.get("context") as Context;
     const helper = photoAccessHelper.getPhotoAccessHelper(testContext);
+    beforeAll(async () => {
+      await getPermission();
+      await driveFn();
+      checkResourceFile(testContext);
+      let fileNameList = ['getAllObjects001.jpg', "getAllObjects001.mp4"];
+      await createResource(testContext, fileNameList);
+    })
 
     /**
      * @tc.name   album_getAllObjects_callback_static_000

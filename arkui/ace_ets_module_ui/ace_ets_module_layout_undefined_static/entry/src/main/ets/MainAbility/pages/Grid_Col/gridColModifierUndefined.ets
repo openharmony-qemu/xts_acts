@@ -1,4 +1,5 @@
 'use static';
+
 /**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +16,7 @@
  */
 
 import {  GridCol,  ForEach,  GridRowDirection,  BreakpointsReference,  GridRow,
-  Color,  Stack,  Row,  Alignment,  VerticalAlign,
+  Color,  Stack,  Row,  Alignment,  VerticalAlign, ColumnOptions,
   HorizontalAlign,  RelativeContainer,  Entry,  Text,  Column,
   Component,  Button,  ClickEvent,  AttributeModifier,  GridColAttribute } from '@ohos.arkui.component'
 import { State, Observed } from '@ohos.arkui.stateManagement'
@@ -51,7 +52,7 @@ struct GridColExample {
   @State myModifier2: MyModifier2 = new MyModifier2();
 
   build() {
-    Column() {
+    Column({space:2} as ColumnOptions) {
       Column() {
         GridRow({
           columns: 5,
@@ -107,14 +108,14 @@ struct GridColExample {
         .onBreakpointChange((breakpoint) => {
           this.currentBp = breakpoint
         })
-      }.width('80%').margin(10).height(200)
+      }.width('80%').height('35%')
       .border({ color: '#880606', width: 2 })
       Column() {
         Button('isSpan = ' + this.myModifier1.isSpan)
           .onClick(() => {
             this.myModifier1.isSpan = !this.myModifier1.isSpan;
           })
-          .height(30)
+          .height('3%')
           .id('GridColModifier_Span')
       }
 
@@ -179,14 +180,14 @@ struct GridColExample {
         .onBreakpointChange((breakpoint) => {
           this.currentBp = breakpoint
         })
-      }.width('80%').margin(10).height(200)
+      }.width('80%').height('35%')
       .border({ color: '#880606', width: 2 })
       Column() {
         Button('isOrder = ' + this.myModifier2.isOrder)
           .onClick(() => {
             this.myModifier2.isOrder = !this.myModifier2.isOrder;
           })
-          .height(30)
+          .height('3%')
           .id('GridCol_Order')
       }
       Column() {
@@ -194,9 +195,9 @@ struct GridColExample {
           .onClick(() => {
             this.myModifier2.isOffset = !this.myModifier2.isOffset;
           })
-          .height(30)
+          .height('3%')
           .id('GridCol_Offset')
       }
-    }
+    }.width('100%').height('100%')
   }
 }

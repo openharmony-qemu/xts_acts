@@ -24,7 +24,9 @@ import {
   notifyType,
   photoFetchOption,
   photoKeys,
-  sleep
+  sleep,
+  checkResourceFile,
+  createResource
 } from '../../common';
 import { photoAccessHelper } from '@kit.MediaLibraryKit';
 import { common } from '@kit.AbilityKit';
@@ -174,6 +176,10 @@ export default function registerChangeTest() {
       console.info(TAG, 'beforeAll case');
       await getPermission();
       await driveFn();
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let fileNameList: Array<string> = [ "01.jpg" ];
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNameList);
     });
 
     beforeEach(() => {

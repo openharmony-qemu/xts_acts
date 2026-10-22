@@ -1,4 +1,4 @@
-﻿'use static';
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,6 +21,7 @@ import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 const uiContext = new UIContext();
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 
 
 export default function RotationGestureTemplateTest() {
@@ -83,10 +84,10 @@ it('RotationGestureTemplateTest_static_0010', Level.LEVEL0, async (done: () => v
       let pointersSize = 120;
       let pointers = PointerMatrix.create(2, pointersSize);
       for (let step = 0; step < pointersSize; step++) {
-        pointers.setPoint(0, step, {x: Math.round(areaObj1.left * (pointersSize - step)/pointersSize+ areaObj1.right * (0 + step)/pointersSize).toInt(),y: Math.round(areaObj1.top).toInt()} as Point)
+        pointers.setPoint(0, step, {x: Math.round(areaObj1.left * (pointersSize - step)/pointersSize+ areaObj1.right * (0 + step)/pointersSize).toInt(),y: Math.round(areaObj1.top).toInt(), displayId: displayID } as Point)
       }
       for (let step = 0; step < pointersSize; step++) {
-        pointers.setPoint(1, step, {x: Math.round(areaObj1.left * (0 + step)/pointersSize+ areaObj1.right * (pointersSize - step)/pointersSize).toInt(),y: Math.round(areaObj1.bottom).toInt()} as Point)
+        pointers.setPoint(1, step, {x: Math.round(areaObj1.left * (0 + step)/pointersSize+ areaObj1.right * (pointersSize - step)/pointersSize).toInt(),y: Math.round(areaObj1.bottom).toInt(), displayId: displayID } as Point)
       }
       await driver.injectMultiPointerAction(pointers);
       await CommonFunc.sleep(4000);

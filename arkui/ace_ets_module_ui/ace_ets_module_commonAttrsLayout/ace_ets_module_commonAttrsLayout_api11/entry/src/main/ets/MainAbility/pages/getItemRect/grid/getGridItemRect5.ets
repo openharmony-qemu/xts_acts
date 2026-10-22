@@ -46,7 +46,7 @@ struct getGridItemRect5 {
   }
 
   build() {
-    Column({ space: 5 }) {
+    Column({ space: 2 }) {
       Button('点击获取信息').onClick((event: ClickEvent) => {
         this.x = this.scroller.getItemRect(this.index).x
         this.y = this.scroller.getItemRect(this.index).y
@@ -59,28 +59,27 @@ struct getGridItemRect5 {
       Text('' + this.height1).key('getGridItemRect5_text4')
 
       Grid(this.scroller) {
-        ForEach(this.arr, (item: number) => {
-          ForEach(this.arr, (item: number) => {
+        ForEach(this.arr, (row: number) => {
+          ForEach(this.arr, (col: number) => {
             GridItem() {
-              Text('' + item)
+              Text('' + (row * this.arr.length + col))
                 .fontSize(16)
-                .backgroundColor(0xF9CF93)
+                .backgroundColor(this.index == (row * this.arr.length + col) ? 0xfff000 : 0xF9CF93)
                 .width('100%')
                 .height('100%')
                 .textAlign(TextAlign.Center)
             }
             .width(60)
             .height(100)
-            .border({ width: 1 })
 
-          }, (item: string) => item)
-        }, (item: string) => item)
+          }, (col: string) => col.toString())
+        }, (row: string) => row.toString())
       }
       .columnsGap(this.columnsGap1)
       .rowsGap(this.rowsGap1)
-      .width(300)
+      .width(320)
       .backgroundColor(0xFAEEE0)
-      .height(500)
+      .height(550)
       .layoutDirection(this.layoutDirection1)
 
 

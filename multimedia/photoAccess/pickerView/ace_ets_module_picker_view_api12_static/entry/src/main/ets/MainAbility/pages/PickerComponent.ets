@@ -71,6 +71,7 @@ struct PickerComponent {
   @State isShowAlbum: boolean = false;
   private isBlock: boolean = false;
   private isPickerIndexSet: boolean = false;
+  private isOnItemClickedSet: boolean = true;
   private isOnItemClickedNotifySet: boolean = false;
   @State isPhotoPickerShow: boolean = true;
   @State fontColor: string = '#182431222';
@@ -339,6 +340,7 @@ struct PickerComponent {
     this.albumOptions = parameter?.albumOptions ?? new AlbumPickerOptions();
     this.isPickerIndexSet = this.pickerOptions.pickerIndex !== undefined && this.pickerOptions.pickerIndex !== -1;
     this.selectedUrisWithPickerIndex = this.pickerOptions.preselectedInfos ?? [];
+    this.isOnItemClickedSet = parameter?.isOnItemClickedSet ?? false;
     this.isOnItemClickedNotifySet = parameter?.isOnItemClickedNotifySet ?? false;
     console.info('eventId=' + this.eventId);
   }
@@ -453,10 +455,10 @@ struct PickerComponent {
         pickerOptions: this.pickerOptions,
         onSelect: (uri: string): void => this.onSelect(uri),
         onDeselect: (uri: string): void => this.onDeselect(uri),
-        onItemClicked: (itemInfo: ItemInfo, clickType: ClickType): boolean =>
-        this.onItemClicked(itemInfo, clickType),
-        onItemClickedNotify: (itemInfo: ItemInfo, clickType: ClickType): void =>
-        this.onItemClickedNotify(itemInfo, clickType),
+        onItemClicked: this.isOnItemClickedSet ? (itemInfo: ItemInfo, clickType: ClickType): boolean =>
+          this.onItemClicked(itemInfo, clickType) : undefined,
+        onItemClickedNotify: this.isOnItemClickedNotifySet ? (itemInfo: ItemInfo, clickType: ClickType): void =>
+          this.onItemClickedNotify(itemInfo, clickType) : undefined,
         onEnterPhotoBrowser: (photoBrowserInfo: PhotoBrowserInfo): boolean =>
         this.onEnterPhotoBrowser(photoBrowserInfo),
         onExitPhotoBrowser: (photoBrowserInfo: PhotoBrowserInfo): boolean =>

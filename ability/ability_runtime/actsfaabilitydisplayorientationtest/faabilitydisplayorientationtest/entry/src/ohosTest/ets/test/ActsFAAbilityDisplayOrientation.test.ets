@@ -23,23 +23,23 @@ import { Driver, ON, Component } from '@ohos.UiTest';
 const domain = 0x0000;
 const TAG = 'ActsFAAbilityDisplayOrientationTest';
 const TEST_SUITE_NAME = 'ActsFAAbilityDisplayOrientationTest';
-const Event_FA_DisplayOrientation_0100 = 'Event_FA_DisplayOrientation_0100';
-const Event_FA_DisplayOrientation_0100_LifeCircle = 'Event_FA_DisplayOrientation_0100_LifeCircle';
-const Event_FA_DisplayOrientation_0200 = 'Event_FA_DisplayOrientation_0200';
-const Event_FA_DisplayOrientation_0200_LifeCircle = 'Event_FA_DisplayOrientation_0200_LifeCircle';
-const Event_FA_DisplayOrientation_0300 = 'Event_FA_DisplayOrientation_0300';
-const Event_FA_DisplayOrientation_0300_LifeCircle = 'Event_FA_DisplayOrientation_0300_LifeCircle';
-const Event_FA_DisplayOrientation_0400 = 'Event_FA_DisplayOrientation_0400';
-const Event_FA_DisplayOrientation_0400_LifeCircle = 'Event_FA_DisplayOrientation_0400_LifeCircle';
-const Event_FA_DisplayOrientation_0500 = 'Event_FA_DisplayOrientation_0500';
-const Event_FA_DisplayOrientation_0500_LifeCircle = 'Event_FA_DisplayOrientation_0500_LifeCircle';
-const Event_FA_DisplayOrientation_0600 = 'Event_FA_DisplayOrientation_0600';
-const Event_FA_DisplayOrientation_0600_LifeCircle = 'Event_FA_DisplayOrientation_0600_LifeCircle';
-const Event_FA_DisplayOrientation_0700 = 'Event_FA_DisplayOrientation_0700';
-const Event_FA_DisplayOrientation_0800 = 'Event_FA_DisplayOrientation_0800';
-const Event_FA_DisplayOrientation_0900 = 'Event_FA_DisplayOrientation_0900';
-const Event_FA_DisplayOrientation_1000 = 'Event_FA_DisplayOrientation_1000';
-const Data_LifeCircle = ['onCreate', 'onActive'];
+const eventFaDisplayOrientation0100 = 'Event_FA_DisplayOrientation_0100';
+const eventFaDisplayOrientation0100LifeCircle = 'Event_FA_DisplayOrientation_0100_LifeCircle';
+const eventFaDisplayOrientation0200 = 'Event_FA_DisplayOrientation_0200';
+const eventFaDisplayOrientation0200LifeCircle = 'Event_FA_DisplayOrientation_0200_LifeCircle';
+const eventFaDisplayOrientation0300 = 'Event_FA_DisplayOrientation_0300';
+const eventFaDisplayOrientation0300LifeCircle = 'Event_FA_DisplayOrientation_0300_LifeCircle';
+const eventFaDisplayOrientation0400 = 'Event_FA_DisplayOrientation_0400';
+const eventFaDisplayOrientation0400LifeCircle = 'Event_FA_DisplayOrientation_0400_LifeCircle';
+const eventFaDisplayOrientation0500 = 'Event_FA_DisplayOrientation_0500';
+const eventFaDisplayOrientation0500LifeCircle = 'Event_FA_DisplayOrientation_0500_LifeCircle';
+const eventFaDisplayOrientation0600 = 'Event_FA_DisplayOrientation_0600';
+const eventFaDisplayOrientation0600LifeCircle = 'Event_FA_DisplayOrientation_0600_LifeCircle';
+const eventFaDisplayOrientation0700 = 'Event_FA_DisplayOrientation_0700';
+const eventFaDisplayOrientation0800 = 'Event_FA_DisplayOrientation_0800';
+const eventFaDisplayOrientation0900 = 'Event_FA_DisplayOrientation_0900';
+const eventFaDisplayOrientation1000 = 'Event_FA_DisplayOrientation_1000';
+const dataLifecircle = ['onCreate', 'onActive'];
 function sleep(time: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, time));
 }
@@ -71,12 +71,12 @@ export default function actsFAAbilityDisplayOrientationTest() {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0200';
       try {
         let commonEventSubscribeInfo: commonEvent.CommonEventSubscribeInfo = {
-          events: [Event_FA_DisplayOrientation_0200]
+          events: [eventFaDisplayOrientation0200]
         }
         await commonEvent.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           commonEvent.subscribe(subscriber, (err, commonEventData) => {
             console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} subscribe sunccess : ${JSON.stringify(commonEventData)},err: ${JSON.stringify(err)}`);
-            let result: ESObject = commonEventData.parameters?.data as ESObject;
+            let result: boolean = commonEventData.parameters?.data as boolean;
             expect(result).assertTrue()
             commonEvent.unsubscribe(subscriber, (err, data) => {
               done();
@@ -114,12 +114,12 @@ export default function actsFAAbilityDisplayOrientationTest() {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0400';
       try {
         let commonEventSubscribeInfo: commonEvent.CommonEventSubscribeInfo = {
-          events: [Event_FA_DisplayOrientation_0400]
+          events: [eventFaDisplayOrientation0400]
         }
         await commonEvent.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           commonEvent.subscribe(subscriber, (err, commonEventData) => {
             console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} subscribe sunccess : ${JSON.stringify(commonEventData)},err: ${JSON.stringify(err)}`);
-            let result: ESObject = commonEventData.parameters?.data as ESObject;
+            let result: boolean = commonEventData.parameters?.data as boolean;
             expect(result).assertTrue()
             commonEvent.unsubscribe(subscriber, (err, data) => {
               done();
@@ -158,12 +158,12 @@ export default function actsFAAbilityDisplayOrientationTest() {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0500';
       try {
         let commonEventSubscribeInfo: commonEvent.CommonEventSubscribeInfo = {
-          events: [Event_FA_DisplayOrientation_0500]
+          events: [eventFaDisplayOrientation0500]
         }
         await commonEvent.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           commonEvent.subscribe(subscriber, (err, commonEventData) => {
             console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} subscribe sunccess : ${JSON.stringify(commonEventData)},err: ${JSON.stringify(err)}`);
-            let result: ESObject = commonEventData.parameters?.data as ESObject;
+            let result: boolean = commonEventData.parameters?.data as boolean;
             expect(result).assertTrue()
             commonEvent.unsubscribe(subscriber, (err, data) => {
               done();
@@ -201,12 +201,12 @@ export default function actsFAAbilityDisplayOrientationTest() {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0100';
       try {
         let commonEventSubscribeInfo: commonEvent.CommonEventSubscribeInfo = {
-          events: [Event_FA_DisplayOrientation_0100]
+          events: [eventFaDisplayOrientation0100]
         }
         await commonEvent.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           commonEvent.subscribe(subscriber, (err, commonEventData) => {
             console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} subscribe sunccess : ${JSON.stringify(commonEventData)},err: ${JSON.stringify(err)}`);
-            let result: ESObject = commonEventData.parameters?.data as ESObject;
+            let result: boolean = commonEventData.parameters?.data as boolean;
             expect(result).assertTrue()
             commonEvent.unsubscribe(subscriber, (err, data) => {
               done();
@@ -245,12 +245,12 @@ export default function actsFAAbilityDisplayOrientationTest() {
       try {
         await sleep(1000);
         let commonEventSubscribeInfo: commonEvent.CommonEventSubscribeInfo = {
-          events: [Event_FA_DisplayOrientation_0300]
+          events: [eventFaDisplayOrientation0300]
         }
         await commonEvent.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           commonEvent.subscribe(subscriber, (err, commonEventData) => {
             console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} subscribe sunccess : ${JSON.stringify(commonEventData)},err: ${JSON.stringify(err)}`);
-            let result: ESObject = commonEventData.parameters?.data as ESObject;
+            let result: boolean = commonEventData.parameters?.data as boolean;
             expect(result).assertTrue()
             commonEvent.unsubscribe(subscriber, (err, data) => {
               done();
@@ -289,12 +289,12 @@ export default function actsFAAbilityDisplayOrientationTest() {
       try {
         await sleep(1000);
         let commonEventSubscribeInfo: commonEvent.CommonEventSubscribeInfo = {
-          events: [Event_FA_DisplayOrientation_0600]
+          events: [eventFaDisplayOrientation0600]
         }
         await commonEvent.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           commonEvent.subscribe(subscriber, (err, commonEventData) => {
             console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} subscribe sunccess : ${JSON.stringify(commonEventData)},err: ${JSON.stringify(err)}`);
-            let result: ESObject = commonEventData.parameters?.data as ESObject;
+            let result: boolean = commonEventData.parameters?.data as boolean;
             expect(result).assertTrue()
             commonEvent.unsubscribe(subscriber, (err, data) => {
               done();
@@ -322,7 +322,7 @@ export default function actsFAAbilityDisplayOrientationTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0700
      * @tc.number SUB_Ability_AbilityRuntime_StartAndTerminate_FA_DisplayOrientation_0700
-     * @tc.desc   Start FA ability to obtain the enumerated values of UNSPECIFIED, LANDSCAPE, PORTRAIT, and FOLLOW_RECENT
+     * @tc.desc : Start FA ability to obtain enumerated values of UNSPECIFIED, LANDSCAPE, PORTRAIT, and FOLLOW_RECENT
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -332,12 +332,12 @@ export default function actsFAAbilityDisplayOrientationTest() {
       try {
         await sleep(1000);
         let commonEventSubscribeInfo: commonEvent.CommonEventSubscribeInfo = {
-          events: [Event_FA_DisplayOrientation_0700]
+          events: [eventFaDisplayOrientation0700]
         }
         await commonEvent.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           commonEvent.subscribe(subscriber, (err, commonEventData) => {
             console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} subscribe sunccess : ${JSON.stringify(commonEventData)},err: ${JSON.stringify(err)}`);
-            let result: ESObject = commonEventData.parameters?.data as ESObject;
+            let result: boolean = commonEventData.parameters?.data as boolean;
             expect(result).assertTrue()
             commonEvent.unsubscribe(subscriber, (err, data) => {
               done();
@@ -375,12 +375,12 @@ export default function actsFAAbilityDisplayOrientationTest() {
       try {
         await sleep(1000);
         let commonEventSubscribeInfo: commonEvent.CommonEventSubscribeInfo = {
-          events: [Event_FA_DisplayOrientation_0800]
+          events: [eventFaDisplayOrientation0800]
         }
         await commonEvent.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           commonEvent.subscribe(subscriber, (err, commonEventData) => {
             console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} subscribe sunccess : ${JSON.stringify(commonEventData)},err: ${JSON.stringify(err)}`);
-            let result: ESObject = commonEventData.parameters?.data as ESObject;
+            let result: boolean = commonEventData.parameters?.data as boolean;
             expect(result).assertTrue()
             commonEvent.unsubscribe(subscriber, (err, data) => {
               done();
@@ -418,12 +418,12 @@ export default function actsFAAbilityDisplayOrientationTest() {
       try {
         await sleep(1000);
         let commonEventSubscribeInfo: commonEvent.CommonEventSubscribeInfo = {
-          events: [Event_FA_DisplayOrientation_0900]
+          events: [eventFaDisplayOrientation0900]
         }
         await commonEvent.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           commonEvent.subscribe(subscriber, (err, commonEventData) => {
             console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} subscribe sunccess : ${JSON.stringify(commonEventData)},err: ${JSON.stringify(err)}`);
-            let result: ESObject = commonEventData.parameters?.data as ESObject;
+            let result: boolean = commonEventData.parameters?.data as boolean;
             expect(result).assertTrue()
             commonEvent.unsubscribe(subscriber, (err, data) => {
               done();
@@ -461,12 +461,12 @@ export default function actsFAAbilityDisplayOrientationTest() {
       try {
         await sleep(1000);
         let commonEventSubscribeInfo: commonEvent.CommonEventSubscribeInfo = {
-          events: [Event_FA_DisplayOrientation_1000]
+          events: [eventFaDisplayOrientation1000]
         }
         await commonEvent.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
           commonEvent.subscribe(subscriber, (err, commonEventData) => {
             console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} subscribe sunccess : ${JSON.stringify(commonEventData)},err: ${JSON.stringify(err)}`);
-            let result: ESObject = commonEventData.parameters?.data as ESObject;
+            let result: boolean = commonEventData.parameters?.data as boolean;
             expect(result).assertTrue()
             commonEvent.unsubscribe(subscriber, (err, data) => {
               done();

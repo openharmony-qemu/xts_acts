@@ -62,14 +62,18 @@ export default function StartAndEnd() {
      */
 it('StartAndEnd_static_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[StartAndEnd_0001] START');
-      let gridRect: RectValue = CommonFunc.getComponentRectOnScreen('StartAndEnd')
       let driver = Driver.create()
+      let gridRectComp = await driver.findComponent(ON.id('StartAndEnd'))
+      let gridRect = await gridRectComp!.getBounds()
+      let displayId = await gridRectComp!.getDisplayId()
       await CommonFunc.sleep(1000);
-      await driver.swipe(
-        (Number.parseInt(`${`${`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`}`}`)).toInt(),
-        (Number.parseInt(`${`${`${(gridRect.bottom - gridRect.top) * 0.9 + gridRect.top}`}`}`)).toInt(),
-        (Number.parseInt(`${`${`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`}`}`)).toInt(),
-        (Number.parseInt(`${`${(gridRect.bottom - gridRect.top) * 0.1 + gridRect.top}`}`)).toInt(),
+      await driver.swipeBetween(
+        { x: (Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`)).toInt(),
+          y: (Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.9 + gridRect.top}`)).toInt(),
+          displayId: displayId },
+        { x: (Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`)).toInt(),
+          y: (Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.1 + gridRect.top}`)).toInt(),
+          displayId: displayId },
         1000);
       await CommonFunc.sleep(2000);
 
@@ -78,11 +82,13 @@ it('StartAndEnd_static_0001', Level.LEVEL0, async (done: () => void): Promise<vo
       console.info("[StartAndEnd_0001] component obj1 is: " + JSON.stringify(JSON.parseJsonElement(strJson1)))
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content')).assertEqual('onReachEnd');
 
-      await driver.swipe(
-        (Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`)).toInt(),
-        (Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.1 + gridRect.top}`)).toInt(),
-        (Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`)).toInt(),
-        (Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.9 + gridRect.top}`)).toInt(),
+      await driver.swipeBetween(
+        { x: (Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`)).toInt(),
+          y: (Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.1 + gridRect.top}`)).toInt(),
+          displayId: displayId },
+        { x: (Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`)).toInt(),
+          y: (Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.9 + gridRect.top}`)).toInt(),
+          displayId: displayId },
         1000);
       await CommonFunc.sleep(2000);
 

@@ -184,7 +184,7 @@ struct BindWaterFlowController {
   aboutToAppear() {
     this.rootNode = typeNode.createWaterFlowNode(this.getUIContext())
     this.waterFlowAttribute = typeNode.getWaterFlowAttribute(this.rootNode!)
-    this!.waterFlowAttribute!.size({ width: '100%', height: '80%' })
+    this!.waterFlowAttribute!.size({ width: '100%', height: '70%' })
       .id('WaterFlowAttribute')
       .rowsTemplate('1fr 1fr')
       .columnsGap(10)
@@ -215,7 +215,7 @@ struct BindWaterFlowController {
       }
 
 
-      Column() {
+      Row() {
         Text(this.scrollOffset + '')
           .id('scrollOffset')
         Button('bindWaterFlowController')
@@ -223,6 +223,8 @@ struct BindWaterFlowController {
           .onClick((e: ClickEvent) => {
             typeNode.bindWaterFlowController(this.rootNode as FrameNode, this.scroller)
           })
+      }
+      Row() {
         Button('scrollerBy 150')
           .id('scrollerBy')
           .onClick((e: ClickEvent) => {

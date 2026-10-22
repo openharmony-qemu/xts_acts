@@ -141,6 +141,7 @@ export default function windowLayoutTest() {
     let driver: Driver;
     let displayWidth: number;
     let displayHeight: number;
+    let displayID: number;
     beforeAll(() => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context));
@@ -173,7 +174,8 @@ export default function windowLayoutTest() {
       driver = Driver.create();
       displayWidth = display.getDefaultDisplaySync().width;
       displayHeight = display.getDefaultDisplaySync().height;
-      console.info(`beforeAll:displayWidth = ${JSON.stringify(displayWidth)},displayHeight = ${JSON.stringify(displayHeight)}`)
+      displayID = display.getDefaultDisplaySync().id;
+      console.info(`beforeAll:displayWidth = ${JSON.stringify(displayWidth)},displayHeight = ${JSON.stringify(displayHeight)},displayID = ${JSON.stringify(displayID)}`)
     });
     beforeEach(() => {
     });
@@ -767,11 +769,12 @@ export default function windowLayoutTest() {
         let blank = await driver.findComponent(ON.id('startMoving'))
         await sleep(1000)
         let point = await blank.getBoundsCenter();
-        await driver.drag(point.x, point.y, point.x - 50, point.y - 50, 200);
+        await driver.dragBetween({x:point.x,y:point.y,displayId:displayID}, {x:point.x - 50, y:point.y - 50,displayId:displayID}, 200);
         await sleep(1000)
         let text = await driver.findComponent(ON.id('startMovingText'));
         await sleep(1000)
         let textDragged = await text.getText()
+        console.info(`${message} textDragged = ${JSON.stringify(textDragged)}`)
         if (isFreeWindowMode) {
           if (textDragged == 'startMoving success') {
             let windowPointDragged = await windowClass.getWindowProperties().windowRect
@@ -839,7 +842,7 @@ export default function windowLayoutTest() {
         await sleep(1000)
         let point = await blank.getBoundsCenter();
         console.info(`${message} point = ${JSON.stringify(point.x)},y = ${JSON.stringify(point.y)}`)
-        await driver.drag(point.x, point.y, point.x + 100, point.y + 100, 200);
+        await driver.dragBetween({x:point.x,y:point.y,displayId:displayID}, {x:point.x + 100, y:point.y + 100,displayId:displayID}, 200);
         await sleep(1000)
         let rectNow = windowClass.getWindowProperties().windowRect
         console.info(`${message} rectNow = ${JSON.stringify(rectNow.left)},y = ${JSON.stringify(rectNow.top)}`)
@@ -891,7 +894,7 @@ export default function windowLayoutTest() {
             let blank = await driver.findComponent(ON.id('startMoving'));
             await sleep(1000)
             let point = await blank.getBoundsCenter();
-            await driver.drag(point.x, point.y, point.x + 100, point.y + 100, 200);
+            await driver.dragBetween({x:point.x,y:point.y,displayId:displayID}, {x:point.x + 100, y:point.y + 100,displayId:displayID}, 200);
             let text = await driver.findComponent(ON.id('startMovingText'));
             await sleep(1000)
             let textDragged = await text.getText()
@@ -958,7 +961,7 @@ export default function windowLayoutTest() {
             console.info(`${message} windowPoint = ${JSON.stringify(windowPoint)}`)
             await driver.mouseMoveTo({ x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top })
             await sleep(2000)
-            await driver.mouseDrag({ x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top }, { x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top + 100 }, 2000)
+            await driver.mouseDrag({ x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top, displayId: displayID }, { x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top + 100, displayId: displayID }, 2000)
             await sleep(1000)
             let windowPointDragged = await windowClass.getWindowProperties().windowRect
             console.info(`${message} windowPointDraged = ${JSON.stringify(windowPointDragged)}`)
@@ -2623,7 +2626,7 @@ export default function windowLayoutTest() {
                 let pointHeight = windowRect.top + windowRect.height / 2;
                 console.log(caseName +
                   `pointWidth:${JSON.stringify(pointWidth)}, pointHeight: ${JSON.stringify(pointHeight)}`)
-                await driver.mouseDrag({ x: pointWidth, y: pointHeight }, { x: pointWidth + 50, y: pointHeight }, 200);
+                await driver.mouseDrag({ x: pointWidth, y: pointHeight, displayId: displayID }, { x: pointWidth + 50, y: pointHeight, displayId: displayID }, 200);
                 await sleep(300);
                 let windowRect2 = windowClass.getWindowProperties().windowRect;
                 console.log(caseName + `windowRect2:${JSON.stringify(windowRect2)}`);
@@ -2690,7 +2693,7 @@ export default function windowLayoutTest() {
                 let pointWidth = windowRect.left;
                 let pointHeight = windowRect.top + windowRect.height / 2;
                 console.log(caseName + `pointWidth:${JSON.stringify(pointWidth)}, pointHeight: ${JSON.stringify(pointHeight)}`)
-                await driver.mouseDrag({ x: pointWidth, y: pointHeight }, { x: pointWidth + 50, y: pointHeight }, 200);
+                await driver.mouseDrag({ x: pointWidth, y: pointHeight, displayId: displayID }, { x: pointWidth + 50, y: pointHeight, displayId: displayID }, 200);
                 await sleep(300);
                 let windowRect2 = windowClass.getWindowProperties().windowRect;
                 console.log(caseName + `windowRect2:${JSON.stringify(windowRect2)}`);
@@ -2764,7 +2767,7 @@ export default function windowLayoutTest() {
                 let pointWidth = windowRect.left;
                 let pointHeight = windowRect.top + windowRect.height / 2;
                 console.log(caseName + `pointWidth:${JSON.stringify(pointWidth)}, pointHeight: ${JSON.stringify(pointHeight)}`)
-                await driver.mouseDrag({ x: pointWidth, y: pointHeight }, { x: pointWidth - 50, y: pointHeight }, 200);
+                await driver.mouseDrag({ x: pointWidth, y: pointHeight, displayId: displayID }, { x: pointWidth - 50, y: pointHeight, displayId: displayID }, 200);
                 await sleep(300);
                 let windowRect2 = windowClass.getWindowProperties().windowRect;
                 console.log(caseName + `windowRect2:${JSON.stringify(windowRect2)}`);
@@ -2834,7 +2837,7 @@ export default function windowLayoutTest() {
                 let pointWidth = windowRect.left;
                 let pointHeight = windowRect.top + windowRect.height / 2;
                 console.log(caseName + `pointWidth:${JSON.stringify(pointWidth)}, pointHeight: ${JSON.stringify(pointHeight)}`)
-                await driver.mouseDrag({ x: pointWidth, y: pointHeight }, { x: pointWidth - 50, y: pointHeight }, 200);
+                await driver.mouseDrag({ x: pointWidth, y: pointHeight, displayId: displayID }, { x: pointWidth - 50, y: pointHeight, displayId: displayID }, 200);
                 await sleep(300);
                 let windowRect2 = windowClass.getWindowProperties().windowRect;
                 console.log(caseName + `windowRect2:${JSON.stringify(windowRect2)}`);
@@ -2911,7 +2914,7 @@ export default function windowLayoutTest() {
         console.info(`${caseName} blank = ${JSON.stringify(blank)}`);
         let point = await blank.getBoundsCenter();
         console.info(`${caseName} point = ${JSON.stringify(point)}`);
-        await driver.drag(point.x, point.y, point.x + 50, point.y + 50, 200);
+        await driver.dragBetween({x:point.x,y:point.y,displayId:displayID}, {x:point.x + 50, y:point.y + 50,displayId:displayID}, 200);
         await sleep(1000);
         let text = await driver.findComponent(ON.id('startMovingText'));
         await sleep(1000)
@@ -4872,7 +4875,7 @@ export default function windowLayoutTest() {
                 let pointWidth = windowRect.left;
                 let pointHeight = windowRect.top + windowRect.height / 2;
                 console.log(caseName + `pointWidth:${JSON.stringify(pointWidth)}, pointHeight: ${JSON.stringify(pointHeight)}`)
-                await driver.mouseDrag({ x: pointWidth, y: pointHeight }, { x: pointWidth - 50, y: pointHeight }, 200);
+                await driver.mouseDrag({ x: pointWidth, y: pointHeight, displayId: displayID }, { x: pointWidth - 50, y: pointHeight, displayId: displayID }, 200);
                 await sleep(1000);
               }).catch(async (err: BusinessError) => {
                 console.error(caseName + `Failed to set window draggable. Cause code: ${err.code}, message: ${err.message}`);
@@ -5383,7 +5386,7 @@ export default function windowLayoutTest() {
           console.info(`${caseName} windowPoint = ${JSON.stringify(windowPoint)}`)
           await driver.mouseMoveTo({ x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top })
           await sleep(2000)
-          await driver.mouseDrag({ x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top }, { x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top + 100 }, 2000)
+          await driver.mouseDrag({ x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top, displayId: displayID }, { x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top + 100, displayId: displayID }, 2000)
           await sleep(1000)
           let drawableRect4 = windowClass.getWindowProperties().drawableRect;
           console.log(caseName + ' drawableRect4: ' + JSON.stringify(drawableRect4));
@@ -5428,8 +5431,8 @@ export default function windowLayoutTest() {
           console.info(`${caseName} windowPoint = ${JSON.stringify(windowPoint)}`)
           await driver.mouseMoveTo({ x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top })
           await sleep(2000)
-          await driver.mouseDrag({ x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top },
-            { x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top + 100 }, 2000)
+          await driver.mouseDrag({ x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top, displayId: displayID },
+            { x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top + 100, displayId: displayID }, 2000)
           await sleep(1000)
           let drawableRect1 = windowClass.getWindowProperties().drawableRect;
           console.log(caseName + ' drawableRect1: ' + JSON.stringify(drawableRect1));
@@ -5453,8 +5456,8 @@ export default function windowLayoutTest() {
           console.info(`${caseName} windowPoint = ${JSON.stringify(windowPoint2)}`)
           await driver.mouseMoveTo({ x: windowPoint2.left + Math.ceil(windowPoint2.width / 2), y: windowPoint2.top })
           await sleep(2000)
-          await driver.mouseDrag({ x: windowPoint2.left + Math.ceil(windowPoint2.width / 2), y: windowPoint2.top },
-            { x: windowPoint2.left + Math.ceil(windowPoint2.width / 2), y: windowPoint2.top + 100 }, 2000)
+          await driver.mouseDrag({ x: windowPoint2.left + Math.ceil(windowPoint2.width / 2), y: windowPoint2.top, displayId: displayID },
+            { x: windowPoint2.left + Math.ceil(windowPoint2.width / 2), y: windowPoint2.top + 100, displayId: displayID }, 2000)
           await sleep(1000)
 
           let drawableRect4 = windowClass.getWindowProperties().drawableRect;
@@ -6212,7 +6215,7 @@ export default function windowLayoutTest() {
         console.info(`${caseName} blank = ${JSON.stringify(blank)}`);
         let point = await blank.getBoundsCenter();
         console.info(`${caseName} point = ${JSON.stringify(point)}`);
-        await driver.drag(point.x, point.y, point.x + 50, point.y + 50, 200);
+        await driver.dragBetween({x:point.x,y:point.y,displayId:displayID}, {x:point.x + 50, y:point.y + 50,displayId:displayID}, 200);
         await sleep(1000);
         let text = await driver.findComponent(ON.id('startMovingText'));
         await sleep(1000)
@@ -6285,7 +6288,7 @@ export default function windowLayoutTest() {
         console.info(`${caseName} blank = ${JSON.stringify(blank)}`);
         let point = await blank.getBoundsCenter();
         console.info(`${caseName} point = ${JSON.stringify(point)}`);
-        await driver.drag(point.x, point.y, point.x + 50, point.y + 50, 200);
+        await driver.dragBetween({x:point.x,y:point.y,displayId:displayID}, {x:point.x + 50, y:point.y + 50,displayId:displayID}, 200);
         await sleep(1000);
         let num = AppStorage.get('num') as number;
         console.info(`${caseName} num = ${JSON.stringify(num)}`);

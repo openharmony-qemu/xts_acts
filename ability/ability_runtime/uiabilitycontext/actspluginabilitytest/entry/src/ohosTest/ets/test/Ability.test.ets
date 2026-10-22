@@ -39,8 +39,7 @@ export default function abilityTest() {
       }
 
       try {
-        const ability = await abilityDelegatorRegistry.getAbilityDelegator().getCurrentTopAbility()
-        testContext = ability.context;
+        testContext = AppStorage.get("abilityContext") as common.UIAbilityContext
       } catch (err) {
         hilog.info(DOMAIN, LOG_TAG, "get context failed: " + JSON.stringify(err))
         try { expect().assertFail(); } catch (err) {}

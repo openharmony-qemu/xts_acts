@@ -93,7 +93,7 @@ export default function webBlankScreenDetectionMethodJsunit() {
       await Utils.msSleep(2000)
       Utils.emitEvent("testWebBlankScreenDetectionMethod01", 10)
       await Utils.msSleep(2000)
-      Utils.registerEvent("testWebBlankScreenDetectionMethod01",'https://www.example.com/',20260311,done);
+      Utils.registerEvent("testWebBlankScreenDetectionMethod01",'https://mse.360.cn/m/blank.html',20260311,done);
       await Utils.msSleep(2000)
       inspector.sendEventByKey('WebBlankScreenDetectionMethodButton',10,'');
       console.info(`testWebBlankScreenDetectionMethod01 finish`);

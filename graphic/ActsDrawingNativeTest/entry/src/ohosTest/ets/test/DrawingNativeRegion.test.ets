@@ -43,7 +43,7 @@ export default function DrawingNativeRegionTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testRegionCreateNormal', Level.LEVEL0, () => {
+    it('testRegionCreateNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingRegionBasicOperations(0);
       expect(result).assertEqual(0);
     })
@@ -54,9 +54,9 @@ export default function DrawingNativeRegionTest() {
      * @tc.desc   test for testRegionCreateMoreTimes.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL3
      */
-    it('testRegionCreateMoreTimes', Level.LEVEL1, () => {
+    it('testRegionCreateMoreTimes', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRegionBasicOperations(1);
       expect(result).assertEqual(0);
     })
@@ -69,7 +69,7 @@ export default function DrawingNativeRegionTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testRegionDestroyNormal', Level.LEVEL0, () => {
+    it('testRegionDestroyNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingRegionBasicOperations(2);
       expect(result).assertEqual(0);
     })
@@ -80,9 +80,9 @@ export default function DrawingNativeRegionTest() {
      * @tc.desc   test for testRegionDestroyNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL3
      */
-    it('testRegionDestroyNull', Level.LEVEL1, () => {
+    it('testRegionDestroyNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRegionBasicOperations(3);
       expect(result).assertEqual(0);
     })
@@ -93,9 +93,9 @@ export default function DrawingNativeRegionTest() {
      * @tc.desc   test for testRegionSetRectResultTrue.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL3
      */
-    it('testRegionSetRectResultTrue', Level.LEVEL0, () => {
+    it('testRegionSetRectResultTrue', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRegionBasicOperations(4);
       expect(result).assertEqual(0);
     })
@@ -106,9 +106,9 @@ export default function DrawingNativeRegionTest() {
      * @tc.desc   test for testRegionSetRectResultFalse.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL3
      */
-    it('testRegionSetRectResultFalse', Level.LEVEL0, () => {
+    it('testRegionSetRectResultFalse', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRegionBasicOperations(5);
       expect(result).assertEqual(0);
     })
@@ -119,9 +119,9 @@ export default function DrawingNativeRegionTest() {
      * @tc.desc   test for testRegionSetRectRegionNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL3
      */
-    it('testRegionSetRectRegionNull', Level.LEVEL1, () => {
+    it('testRegionSetRectRegionNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRegionBasicOperations(6);
       expect(result).assertEqual(0);
     })
@@ -132,9 +132,9 @@ export default function DrawingNativeRegionTest() {
      * @tc.desc   test for testRegionSetRectRectNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL3
      */
-    it('testRegionSetRectRectNull', Level.LEVEL1, () => {
+    it('testRegionSetRectRectNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRegionBasicOperations(7);
       expect(result).assertEqual(0);
     })
@@ -145,9 +145,9 @@ export default function DrawingNativeRegionTest() {
      * @tc.desc   test for testRegionSetPathResultTrue.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL3
      */
-    it('testRegionSetPathResultTrue', Level.LEVEL0, () => {
+    it('testRegionSetPathResultTrue', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRegionBasicOperations(8);
       expect(result).assertEqual(0);
     })
@@ -158,9 +158,9 @@ export default function DrawingNativeRegionTest() {
      * @tc.desc   test for testRegionSetPathRegionNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL3
      */
-    it('testRegionSetPathRegionNull', Level.LEVEL1, () => {
+    it('testRegionSetPathRegionNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRegionBasicOperations(9);
       expect(result).assertEqual(0);
     })
@@ -171,9 +171,9 @@ export default function DrawingNativeRegionTest() {
      * @tc.desc   test for testRegionSetPathResultFalse.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL3
      */
-    it('testRegionSetPathResultFalse', Level.LEVEL1, () => {
+    it('testRegionSetPathResultFalse', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRegionBasicOperations(10);
       expect(result).assertEqual(0);
     })
@@ -186,7 +186,7 @@ export default function DrawingNativeRegionTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testRegionCopyNormal', Level.LEVEL0, () => {
+    it('testRegionCopyNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingRegionBasicOperations(11);
       expect(result).assertEqual(0);
     })
@@ -199,7 +199,7 @@ export default function DrawingNativeRegionTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testRegionCopyNull', Level.LEVEL3, () => {
+    it('testRegionCopyNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRegionBasicOperations(12);
       expect(result).assertEqual(0);
     })
@@ -212,7 +212,7 @@ export default function DrawingNativeRegionTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testRegionCopyAbnormal', Level.LEVEL3, () => {
+    it('testRegionCopyAbnormal', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRegionBasicOperations(13);
       expect(result).assertEqual(0);
     })
@@ -223,9 +223,9 @@ export default function DrawingNativeRegionTest() {
      * @tc.desc   test for testRegionCopyMultipleCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL3
      */
-    it('testRegionCopyMultipleCalls', Level.LEVEL0, () => {
+    it('testRegionCopyMultipleCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRegionBasicOperations(14);
       expect(result).assertEqual(0);
     })
@@ -238,7 +238,7 @@ export default function DrawingNativeRegionTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testRegionOpNormal', Level.LEVEL0, () => {
+    it('testRegionOpNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingRegionBasicOperations(15);
       expect(result).assertEqual(0);
     })
@@ -251,7 +251,7 @@ export default function DrawingNativeRegionTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testRegionOpRegionNull', Level.LEVEL3, () => {
+    it('testRegionOpRegionNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRegionBasicOperations(16);
       expect(result).assertEqual(0);
     })
@@ -264,7 +264,7 @@ export default function DrawingNativeRegionTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testRegionOpMultipleCalls', Level.LEVEL3, () => {
+    it('testRegionOpMultipleCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRegionBasicOperations(17);
       expect(result).assertEqual(0);
     })
@@ -275,9 +275,9 @@ export default function DrawingNativeRegionTest() {
      * @tc.desc   test for testRegionContainsBoundary.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL3
      */
-    it('testRegionContainsBoundary', Level.LEVEL0, () => {
+    it('testRegionContainsBoundary', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRegionQueryOperations(0);
       expect(result).assertEqual(0);
     })
@@ -288,9 +288,9 @@ export default function DrawingNativeRegionTest() {
      * @tc.desc   test for testRegionContainsInRange.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL3
      */
-    it('testRegionContainsInRange', Level.LEVEL0, () => {
+    it('testRegionContainsInRange', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRegionQueryOperations(1);
       expect(result).assertEqual(0);
     })
@@ -301,9 +301,9 @@ export default function DrawingNativeRegionTest() {
      * @tc.desc   test for testRegionContainsXvalueNotInRange.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL3
      */
-    it('testRegionContainsXvalueNotInRange', Level.LEVEL1, () => {
+    it('testRegionContainsXvalueNotInRange', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRegionQueryOperations(2);
       expect(result).assertEqual(0);
     })
@@ -314,9 +314,9 @@ export default function DrawingNativeRegionTest() {
      * @tc.desc   test for testRegionContainsYvalueNotInRange.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL3
      */
-    it('testRegionContainsYvalueNotInRange', Level.LEVEL1, () => {
+    it('testRegionContainsYvalueNotInRange', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRegionQueryOperations(3);
       expect(result).assertEqual(0);
     })
@@ -327,9 +327,9 @@ export default function DrawingNativeRegionTest() {
      * @tc.desc   test for testRegionContainsAllNotInRange.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL3
      */
-    it('testRegionContainsAllNotInRange', Level.LEVEL1, () => {
+    it('testRegionContainsAllNotInRange', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRegionQueryOperations(4);
       expect(result).assertEqual(0);
     })
@@ -340,9 +340,9 @@ export default function DrawingNativeRegionTest() {
      * @tc.desc   test for testRegionContainsRegionNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL3
      */
-    it('testRegionContainsRegionNull', Level.LEVEL1, () => {
+    it('testRegionContainsRegionNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRegionQueryOperations(5);
       expect(result).assertEqual(0);
     })
@@ -355,7 +355,7 @@ export default function DrawingNativeRegionTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testRegionEmptyNormal', Level.LEVEL0, () => {
+    it('testRegionEmptyNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingRegionPart2QueryOperations(0);
       expect(result).assertEqual(0);
     })
@@ -368,7 +368,7 @@ export default function DrawingNativeRegionTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testRegionEmptyNull', Level.LEVEL3, () => {
+    it('testRegionEmptyNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRegionPart2QueryOperations(1);
       expect(result).assertEqual(0);
     })
@@ -381,7 +381,7 @@ export default function DrawingNativeRegionTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testRegionEmptyCalls', Level.LEVEL3, () => {
+    it('testRegionEmptyCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRegionPart2QueryOperations(2);
       expect(result).assertEqual(0);
     })
@@ -394,7 +394,7 @@ export default function DrawingNativeRegionTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testRegionGetBoundaryNormal', Level.LEVEL0, () => {
+    it('testRegionGetBoundaryNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingRegionPart2QueryOperations(3);
       expect(result).assertEqual(0);
     })
@@ -407,7 +407,7 @@ export default function DrawingNativeRegionTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testRegionGetBoundaryNull', Level.LEVEL3, () => {
+    it('testRegionGetBoundaryNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRegionPart2QueryOperations(4);
       expect(result).assertEqual(0);
     })
@@ -420,7 +420,7 @@ export default function DrawingNativeRegionTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testRegionGetBoundaryMultipleCalls', Level.LEVEL3, () => {
+    it('testRegionGetBoundaryMultipleCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRegionPart2QueryOperations(5);
       expect(result).assertEqual(0);
     })
@@ -433,7 +433,7 @@ export default function DrawingNativeRegionTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testRegionGetBoundsNormal', Level.LEVEL0, () => {
+    it('testRegionGetBoundsNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingRegionPart2QueryOperations(6);
       expect(result).assertEqual(0);
     })
@@ -446,7 +446,7 @@ export default function DrawingNativeRegionTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testRegionGetBoundsNull', Level.LEVEL3, () => {
+    it('testRegionGetBoundsNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRegionPart2QueryOperations(7);
       expect(result).assertEqual(0);
     })
@@ -459,7 +459,7 @@ export default function DrawingNativeRegionTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testRegionGetBoundsMultipleCalls', Level.LEVEL3, () => {
+    it('testRegionGetBoundsMultipleCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRegionPart2QueryOperations(8);
       expect(result).assertEqual(0);
     })
@@ -472,7 +472,7 @@ export default function DrawingNativeRegionTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testRegionIsComplexNormal', Level.LEVEL0, () => {
+    it('testRegionIsComplexNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingRegionPart2QueryOperations(9);
       expect(result).assertEqual(0);
     })
@@ -485,7 +485,7 @@ export default function DrawingNativeRegionTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testRegionIsComplexNull', Level.LEVEL3, () => {
+    it('testRegionIsComplexNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRegionPart2QueryOperations(10);
       expect(result).assertEqual(0);
     })
@@ -498,7 +498,7 @@ export default function DrawingNativeRegionTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testRegionIsComplexMultipleCalls', Level.LEVEL3, () => {
+    it('testRegionIsComplexMultipleCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRegionPart2QueryOperations(11);
       expect(result).assertEqual(0);
     })
@@ -511,7 +511,7 @@ export default function DrawingNativeRegionTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testRegionIsEmptyNormal', Level.LEVEL0, () => {
+    it('testRegionIsEmptyNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingRegionPart2QueryOperations(12);
       expect(result).assertEqual(0);
     })
@@ -524,7 +524,7 @@ export default function DrawingNativeRegionTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testRegionIsEmptyNull', Level.LEVEL3, () => {
+    it('testRegionIsEmptyNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRegionPart2QueryOperations(13);
       expect(result).assertEqual(0);
     })
@@ -537,7 +537,7 @@ export default function DrawingNativeRegionTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testRegionIsEmptyMultipleCalls', Level.LEVEL3, () => {
+    it('testRegionIsEmptyMultipleCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRegionPart2QueryOperations(14);
       expect(result).assertEqual(0);
     })
@@ -550,7 +550,7 @@ export default function DrawingNativeRegionTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testRegionIsRectNormal', Level.LEVEL0, () => {
+    it('testRegionIsRectNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingRegionPart2QueryOperations(15);
       expect(result).assertEqual(0);
     })
@@ -561,9 +561,9 @@ export default function DrawingNativeRegionTest() {
      * @tc.desc   test for testRegionIsRectNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL3
      */
-    it('testRegionIsRectNull', Level.LEVEL0, () => {
+    it('testRegionIsRectNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRegionPart2QueryOperations(16);
       expect(result).assertEqual(0);
     })
@@ -576,7 +576,7 @@ export default function DrawingNativeRegionTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testRegionIsRectMultipleCalls', Level.LEVEL3, () => {
+    it('testRegionIsRectMultipleCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRegionPart2QueryOperations(17);
       expect(result).assertEqual(0);
     })
@@ -589,7 +589,7 @@ export default function DrawingNativeRegionTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testRegionQuickContainsNormal', Level.LEVEL0, () => {
+    it('testRegionQuickContainsNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingRegionAdvancedOperations(0);
       expect(result).assertEqual(0);
     })
@@ -602,7 +602,7 @@ export default function DrawingNativeRegionTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testRegionQuickContainsNull', Level.LEVEL3, () => {
+    it('testRegionQuickContainsNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRegionAdvancedOperations(1);
       expect(result).assertEqual(0);
     })
@@ -613,9 +613,9 @@ export default function DrawingNativeRegionTest() {
      * @tc.desc   test for testRegionQuickContainsAbnormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL3
      */
-    it('testRegionQuickContainsAbnormal', Level.LEVEL0, () => {
+    it('testRegionQuickContainsAbnormal', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRegionAdvancedOperations(2);
       expect(result).assertEqual(0);
     })
@@ -628,7 +628,7 @@ export default function DrawingNativeRegionTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testRegionQuickContainsMultipleCalls', Level.LEVEL3, () => {
+    it('testRegionQuickContainsMultipleCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRegionAdvancedOperations(3);
       expect(result).assertEqual(0);
     })
@@ -641,7 +641,7 @@ export default function DrawingNativeRegionTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testRegionQuickRejectNormal', Level.LEVEL0, () => {
+    it('testRegionQuickRejectNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingRegionAdvancedOperations(4);
       expect(result).assertEqual(0);
     })
@@ -654,7 +654,7 @@ export default function DrawingNativeRegionTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testRegionQuickRejectNull', Level.LEVEL3, () => {
+    it('testRegionQuickRejectNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRegionAdvancedOperations(5);
       expect(result).assertEqual(0);
     })
@@ -665,9 +665,9 @@ export default function DrawingNativeRegionTest() {
      * @tc.desc   test for testRegionQuickRejectAbnormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL3
      */
-    it('testRegionQuickRejectAbnormal', Level.LEVEL0, () => {
+    it('testRegionQuickRejectAbnormal', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRegionAdvancedOperations(6);
       expect(result).assertEqual(0);
     })
@@ -680,7 +680,7 @@ export default function DrawingNativeRegionTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testRegionQuickRejectMultipleCalls', Level.LEVEL3, () => {
+    it('testRegionQuickRejectMultipleCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRegionAdvancedOperations(7);
       expect(result).assertEqual(0);
     })
@@ -693,7 +693,7 @@ export default function DrawingNativeRegionTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testRegionTranslateNormal', Level.LEVEL0, () => {
+    it('testRegionTranslateNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingRegionAdvancedOperations(8);
       expect(result).assertEqual(0);
     })
@@ -705,7 +705,7 @@ export default function DrawingNativeRegionTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testRegionTranslateNull', Level.LEVEL3, () => {
+    it('testRegionTranslateNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRegionAdvancedOperations(9);
       expect(result).assertEqual(0);
     })
@@ -717,7 +717,7 @@ export default function DrawingNativeRegionTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testRegionTranslateMultipleCalls', Level.LEVEL3, () => {
+    it('testRegionTranslateMultipleCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRegionAdvancedOperations(10);
       expect(result).assertEqual(0);
     })

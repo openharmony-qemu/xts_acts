@@ -69,7 +69,8 @@ export default function usbManagerCapiTest() {
     /**
      * @tc.number        SUB_USB_USBMANAGER_CAPI_TEST_0200
      * @tc.name          SUB_USB_USBMANAGER_CAPI_TEST_0200
-     * @tc.desc          Verify OH_UsbManager_FreeUsbDeviceList is a safe no-op for a null array.
+     * @tc.desc          Verify OH_UsbManager_FreeUsbDeviceList is a safe no-op for a null array,
+     *                   including boundary deviceCount values 255 and 256.
      * @tc.size          MediumTest
      * @tc.type          Function
      * @tc.level         Level0

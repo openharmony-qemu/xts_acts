@@ -55,23 +55,23 @@ struct layoutModeWaterFlow {
         Text('yOffset: ' + Math.round(this.num))
           .id('layoutMode_yOffset')
 
-        Button('layoutMode_ALWAYS')
+        Button('layoutMode_ALWAYS').height('8%')
           .id('layoutMode_1')
           .onClick((e: ClickEvent) => {
             this.layoutMode1 = WaterFlowLayoutMode.ALWAYS_TOP_DOWN
           })
-        Button('layoutMode_SLIDING')
+        Button('layoutMode_SLIDING').height('8%')
           .id('layoutMode_2')
           .onClick((e: ClickEvent) => {
             this.layoutMode1 = WaterFlowLayoutMode.SLIDING_WINDOW
           })
-        Button('scroll 100')
+        Button('scroll 100').height('8%')
           .id('layout_scroll')
           .onClick((e: ClickEvent) => {
             this.scroller.scrollTo({ xOffset: 0, yOffset: 100 })
             this.num = this.scroller.currentOffset()?.yOffset!
           })
-      }.height('20%')
+      }
 
       WaterFlow({scroller: this.scroller, layoutMode: this.layoutMode1 }) {
         LazyForEach(this.dataSource, (item: number) => {

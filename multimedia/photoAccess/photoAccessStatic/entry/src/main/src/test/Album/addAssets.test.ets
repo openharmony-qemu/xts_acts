@@ -18,7 +18,7 @@ import dataSharePredicates from '@ohos.data.dataSharePredicates';
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
 import { describe, it, expect, beforeAll, Hypium, TestType, Size, Level } from '../../../../hypium/index'
 import Context from "application.Context"
-import { fetchOption, fetchAllOption, getFileAsset, sleep, getPermission, driveFn } from '../Common.test.ets'
+import { fetchOption, fetchAllOption, getFileAsset, getPermission, driveFn, checkResourceFile, createResource } from '../Common.test.ets'
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog'
 
@@ -29,7 +29,8 @@ export default function addAssetsTest() {
       console.info('beforeAll case');
       await getPermission();
       await driveFn();
-      await sleep(1000);
+      await checkResourceFile(testContext);
+      await createResource(testContext, ['01.mp4']);
     });
 
     const helper = photoAccessHelper.getPhotoAccessHelper(testContext)

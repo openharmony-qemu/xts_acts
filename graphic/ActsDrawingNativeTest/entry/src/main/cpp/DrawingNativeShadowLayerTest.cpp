@@ -19,11 +19,11 @@
 #include <random>
 #include "include/OhosCommonTest.h"
 
-#define DRAWING_NUMBER_3 3
-#define DRAWING_NUMBER_10 10
-#define DRAWING_NUMBER_100 100
-#define DRAWING_NUMBER_19937 19937
-#define DRAWING_NUMBER_0XFF00FF00 0xFF00FF00
+#define NUMBER_3 3
+#define NUMBER_10 10
+#define NUMBER_100 100
+#define NUMBER_19937 19937
+#define NUMBER_0XFF00FF00 0xFF00FF00
 
 namespace OHOS {
 namespace Rosen {
@@ -47,13 +47,13 @@ int TestShadowLayerCreateNormal()
 {
     DrawingNativeShadowLayerTestSetUp();
     // 1. Call OH_Drawing_ShadowLayerCreate with integer values for blurRadius, x, and y
-    OH_Drawing_ShadowLayer *shadow = OH_Drawing_ShadowLayerCreate(DRAWING_NUMBER_3, -DRAWING_NUMBER_3, DRAWING_NUMBER_3,
-        DRAWING_NUMBER_0XFF00FF00);
+    OH_Drawing_ShadowLayer *shadow = OH_Drawing_ShadowLayerCreate(NUMBER_3, -NUMBER_3, NUMBER_3,
+        NUMBER_0XFF00FF00);
     EXPECT_NE(shadow, nullptr);
     OH_Drawing_ShadowLayerDestroy(shadow);
     // 2. Call OH_Drawing_ShadowLayerCreate with floating-point values for blurRadius, x, and y
-    OH_Drawing_ShadowLayer *shadow2 = OH_Drawing_ShadowLayerCreate(DRAWING_NUMBER_3, -DRAWING_NUMBER_3,
-        DRAWING_NUMBER_3, DRAWING_NUMBER_0XFF00FF00);
+    OH_Drawing_ShadowLayer *shadow2 = OH_Drawing_ShadowLayerCreate(NUMBER_3, -NUMBER_3,
+        NUMBER_3, NUMBER_0XFF00FF00);
     EXPECT_NE(shadow2, nullptr);
     OH_Drawing_ShadowLayerDestroy(shadow2);
     DrawingNativeShadowLayerTestTearDown();
@@ -65,20 +65,20 @@ int TestShadowLayerCreateNull()
     DrawingNativeShadowLayerTestSetUp();
     // 1. OH_Drawing_ShadowLayerCreate with the first parameter being empty, check the error code using
     // OH_Drawing_ErrorCodeGet
-    OH_Drawing_ShadowLayer *shadow = OH_Drawing_ShadowLayerCreate(0, -DRAWING_NUMBER_3, DRAWING_NUMBER_3,
-        DRAWING_NUMBER_0XFF00FF00);
+    OH_Drawing_ShadowLayer *shadow = OH_Drawing_ShadowLayerCreate(0, -NUMBER_3, NUMBER_3,
+        NUMBER_0XFF00FF00);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
     // 2. OH_Drawing_ShadowLayerCreate with the second parameter being empty
-    OH_Drawing_ShadowLayer *shadow2 = OH_Drawing_ShadowLayerCreate(DRAWING_NUMBER_3, 0, DRAWING_NUMBER_3,
-        DRAWING_NUMBER_0XFF00FF00);
+    OH_Drawing_ShadowLayer *shadow2 = OH_Drawing_ShadowLayerCreate(NUMBER_3, 0, NUMBER_3,
+        NUMBER_0XFF00FF00);
     EXPECT_NE(shadow2, nullptr);
     // 3. OH_Drawing_ShadowLayerCreate with the third parameter being empty
-    OH_Drawing_ShadowLayer *shadow3 = OH_Drawing_ShadowLayerCreate(DRAWING_NUMBER_3, -DRAWING_NUMBER_3, 0,
-        DRAWING_NUMBER_0XFF00FF00);
+    OH_Drawing_ShadowLayer *shadow3 = OH_Drawing_ShadowLayerCreate(NUMBER_3, -NUMBER_3, 0,
+        NUMBER_0XFF00FF00);
     EXPECT_NE(shadow3, nullptr);
     // 4. OH_Drawing_ShadowLayerCreate with the fourth parameter being empty
-    OH_Drawing_ShadowLayer *shadow4 = OH_Drawing_ShadowLayerCreate(DRAWING_NUMBER_3, -DRAWING_NUMBER_3,
-        DRAWING_NUMBER_3, 0);
+    OH_Drawing_ShadowLayer *shadow4 = OH_Drawing_ShadowLayerCreate(NUMBER_3, -NUMBER_3,
+        NUMBER_3, 0);
     EXPECT_NE(shadow4, nullptr);
     // 5. Free memory
     OH_Drawing_ShadowLayerDestroy(shadow);
@@ -94,20 +94,20 @@ int TestShadowLayerCreateAbnormal()
     DrawingNativeShadowLayerTestSetUp();
     // 1. OH_Drawing_ShadowLayerCreate with the first parameter as a negative number, check the error code using
     // OH_Drawing_ErrorCodeGet
-    OH_Drawing_ShadowLayer *shadow = OH_Drawing_ShadowLayerCreate(-DRAWING_NUMBER_3, DRAWING_NUMBER_3, DRAWING_NUMBER_3,
-        DRAWING_NUMBER_0XFF00FF00);
+    OH_Drawing_ShadowLayer *shadow = OH_Drawing_ShadowLayerCreate(-NUMBER_3, NUMBER_3, NUMBER_3,
+        NUMBER_0XFF00FF00);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
     // 2. OH_Drawing_ShadowLayerCreate with the second parameter as a negative number
-    OH_Drawing_ShadowLayer *shadow2 = OH_Drawing_ShadowLayerCreate(DRAWING_NUMBER_3, -DRAWING_NUMBER_3,
-        DRAWING_NUMBER_3, DRAWING_NUMBER_0XFF00FF00);
+    OH_Drawing_ShadowLayer *shadow2 = OH_Drawing_ShadowLayerCreate(NUMBER_3, -NUMBER_3,
+        NUMBER_3, NUMBER_0XFF00FF00);
     EXPECT_NE(shadow2, nullptr);
     // 3. OH_Drawing_ShadowLayerCreate with the third parameter as a negative number
-    OH_Drawing_ShadowLayer *shadow3 = OH_Drawing_ShadowLayerCreate(DRAWING_NUMBER_3, DRAWING_NUMBER_3,
-        -DRAWING_NUMBER_3, DRAWING_NUMBER_0XFF00FF00);
+    OH_Drawing_ShadowLayer *shadow3 = OH_Drawing_ShadowLayerCreate(NUMBER_3, NUMBER_3,
+        -NUMBER_3, NUMBER_0XFF00FF00);
     EXPECT_NE(shadow3, nullptr);
     // 4. OH_Drawing_ShadowLayerCreate with the fourth parameter as a negative number
-    OH_Drawing_ShadowLayer *shadow4 = OH_Drawing_ShadowLayerCreate(DRAWING_NUMBER_3, DRAWING_NUMBER_3, DRAWING_NUMBER_3,
-        -DRAWING_NUMBER_0XFF00FF00);
+    OH_Drawing_ShadowLayer *shadow4 = OH_Drawing_ShadowLayerCreate(NUMBER_3, NUMBER_3, NUMBER_3,
+        -NUMBER_0XFF00FF00);
     EXPECT_NE(shadow4, nullptr);
     // 5. Free memory
     OH_Drawing_ShadowLayerDestroy(shadow);
@@ -122,19 +122,19 @@ int TestShadowLayerCreateMaximum()
 {
     DrawingNativeShadowLayerTestSetUp();
     // 1. Call OH_Drawing_ShadowLayerCreate with the first parameter as the maximum value
-    OH_Drawing_ShadowLayer *shadow = OH_Drawing_ShadowLayerCreate(FLT_MAX, DRAWING_NUMBER_3, DRAWING_NUMBER_3,
-        DRAWING_NUMBER_0XFF00FF00);
+    OH_Drawing_ShadowLayer *shadow = OH_Drawing_ShadowLayerCreate(FLT_MAX, NUMBER_3, NUMBER_3,
+        NUMBER_0XFF00FF00);
     EXPECT_NE(shadow, nullptr);
     // 2. Call OH_Drawing_ShadowLayerCreate with the second parameter as the maximum value
-    OH_Drawing_ShadowLayer *shadow2 = OH_Drawing_ShadowLayerCreate(DRAWING_NUMBER_3, FLT_MAX, DRAWING_NUMBER_3,
-        DRAWING_NUMBER_0XFF00FF00);
+    OH_Drawing_ShadowLayer *shadow2 = OH_Drawing_ShadowLayerCreate(NUMBER_3, FLT_MAX, NUMBER_3,
+        NUMBER_0XFF00FF00);
     EXPECT_NE(shadow2, nullptr);
     // 3. Call OH_Drawing_ShadowLayerCreate with the third parameter as the maximum value
-    OH_Drawing_ShadowLayer *shadow3 = OH_Drawing_ShadowLayerCreate(DRAWING_NUMBER_3, DRAWING_NUMBER_3, FLT_MAX,
-        DRAWING_NUMBER_0XFF00FF00);
+    OH_Drawing_ShadowLayer *shadow3 = OH_Drawing_ShadowLayerCreate(NUMBER_3, NUMBER_3, FLT_MAX,
+        NUMBER_0XFF00FF00);
     EXPECT_NE(shadow3, nullptr);
     // 4. Call OH_Drawing_ShadowLayerCreate with the fourth parameter as the maximum value
-    OH_Drawing_ShadowLayer *shadow4 = OH_Drawing_ShadowLayerCreate(DRAWING_NUMBER_3, DRAWING_NUMBER_3, DRAWING_NUMBER_3,
+    OH_Drawing_ShadowLayer *shadow4 = OH_Drawing_ShadowLayerCreate(NUMBER_3, NUMBER_3, NUMBER_3,
         UINT32_MAX);
     EXPECT_NE(shadow4, nullptr);
     // 5. Free memory
@@ -152,8 +152,8 @@ int TestShadowLayerCreateMultipleCalls()
     // 1. Call OH_Drawing_ShadowLayerCreate 10 times with random values for blurRadius, x, y, and different colors
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_real_distribution<float> dis(0, DRAWING_NUMBER_100);
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    std::uniform_real_distribution<float> dis(0, NUMBER_100);
+    for (int i = 0; i < NUMBER_10; i++) {
         float blurRadius = dis(gen);
         float x = dis(gen);
         float y = dis(gen);
@@ -170,8 +170,8 @@ int TestShadowLayerDestroyNormal()
 {
     DrawingNativeShadowLayerTestSetUp();
     // 1. Call OH_Drawing_ShadowLayerCreate
-    OH_Drawing_ShadowLayer *shadow = OH_Drawing_ShadowLayerCreate(DRAWING_NUMBER_3, DRAWING_NUMBER_3, DRAWING_NUMBER_3,
-        DRAWING_NUMBER_0XFF00FF00);
+    OH_Drawing_ShadowLayer *shadow = OH_Drawing_ShadowLayerCreate(NUMBER_3, NUMBER_3, NUMBER_3,
+        NUMBER_0XFF00FF00);
     // add assert
     EXPECT_NE(shadow, nullptr);
     // 2. Call OH_Drawing_ShadowLayerDestroy

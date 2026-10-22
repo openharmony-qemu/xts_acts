@@ -206,6 +206,31 @@ struct WebSchemeHandlerResponse {
                 break;
               }
 
+              case "WebSchemeHandlerResponse_setCustomErrorCode_only": {
+                try {
+                  response.setCustomErrorCode(32159)
+                  Utils.emitEvent(true, 8827)
+                } catch (error) {
+                  error = error as BusinessError;
+                  console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                  Utils.emitEvent(false, 8827)
+                }
+                break;
+              }
+
+              case "WebSchemeHandlerResponse_getCustomErrorCode_only": {
+                try {
+                  response.setCustomErrorCode(32159)
+                  let code: int = response.getCustomErrorCode()
+                  Utils.emitEvent(code, 8828)
+                } catch (error) {
+                  error = error as BusinessError;
+                  console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                  Utils.emitEvent(-1, 8828)
+                }
+                break;
+              }
+
           }
         })
 

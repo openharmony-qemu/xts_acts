@@ -17,6 +17,11 @@
         "startWindowBackground": "$color:start_window_background"
       }
     ],
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.INTERNET"
+      }
+    ],
     "testRunner": {
       "name": "OpenHarmonyTestRunner",
       "srcPath": "testrunner"

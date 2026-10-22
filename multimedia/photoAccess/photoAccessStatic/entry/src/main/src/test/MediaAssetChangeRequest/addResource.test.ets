@@ -14,20 +14,28 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, Hypium } from "../../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, Hypium, beforeAll } from "../../../../hypium/index";
 import { BusinessError } from '@ohos.base';
 import Utils from '../Util.test';
 import hilog from '@ohos.hilog'
 import Context from "application.Context"
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
-import { fetchOption } from '../Common.test.ets';
+import { fetchOption, getPermission, driveFn, checkResourceFile, createResource } from '../Common.test.ets';
 
 let domain: int= 0x0000;
 let tag: string = 'testTag';
 
 export default function addResource() {
   describe("addResource", (): void => {
+    let testContext: Context = Hypium.get("context") as Context;
+    beforeAll(async () => {
+      await getPermission();
+      await driveFn();
+      checkResourceFile(testContext);
+      let fileNameList = ['addResourceStatic001.jpg', "addResourceStatic001.mp4"];
+      await createResource(testContext, fileNameList);
+    })
 
     /**
      * @tc.name   add_resource_change_request_static_000
@@ -120,7 +128,7 @@ export default function addResource() {
           expect(false).assertTrue();
           done();
         } catch (error) {
-          error = error as BusinessError;
+         
           console.error(`${testNum} failed; error: ${error}, ${error.code}`);
           expect(error.code == 13900002 || error.code == 401).assertTrue();
           done();

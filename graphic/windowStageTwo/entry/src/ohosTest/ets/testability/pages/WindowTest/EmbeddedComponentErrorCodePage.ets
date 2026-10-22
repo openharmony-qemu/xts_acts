@@ -33,7 +33,7 @@ struct EmbeddedComponentErrorCodePage {
       Column() {
         Text(this.message).fontSize(30)
         EmbeddedComponent(this.want, EmbeddedType.EMBEDDED_UI_EXTENSION)
-          .width('500px')
+          .width('100%')
           .height(1200)
           .onTerminated((info)=>{
             this.message = 'Termination: code = ' + info.code + ', want = ' + JSON.stringify(info.want);

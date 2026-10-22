@@ -31,7 +31,7 @@ class EntryAbility extends UIAbility {
   onWindowStageCreate(windowStage: window.WindowStage): void {
     hilog.info(0x0000, 'testTag sjd EntryAbility', 'EntryAbility onWindowStageCreate');
     try {
-      windowStage.loadContent('MainAbility/pages/index/index', (err: BusinessError<void> | null): void => {
+    windowStage.loadContent('MainAbility/pages/index/index', (err: BusinessError<void> | null): void => {
         hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent entering');
         MyCallback.runCasesOfCallback();
         if (err?.code) {
@@ -52,6 +52,7 @@ class EntryAbility extends UIAbility {
             let wRect: window.Rect | undefined = properties?.windowRect;
             AppStorage.setOrCreate<number>('winLeft', wRect?.left ?? 0);
             AppStorage.setOrCreate<number>('winTop', wRect?.top ?? 0);
+            AppStorage.setOrCreate<number>('displayID', properties?.displayId ?? 0);
             hilog.info(0x0000, 'testTag', 'Succeeded get winLeft:' + wRect?.left + ',winTop:' + wRect?.top);
           } catch (exception) {
             hilog.error(0x0000, 'testTag',

@@ -62,7 +62,9 @@ it('listOffsetJsunit_001', Level.LEVEL1, async (done: () => void): Promise<void>
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
       await CommonFunc.sleep(500);
-      let swiperScroll = CommonFunc.getComponentRectOnScreen('offset_list');
+      let swipeComp = await driver.findComponent(ON.id('offset_list'));
+      let swiperScroll = await swipeComp!.getBounds();
+      let displayId = await swipeComp!.getDisplayId();
       let top = swiperScroll.top;
       let right = swiperScroll.right;
       let left = swiperScroll.left;
@@ -71,11 +73,13 @@ it('listOffsetJsunit_001', Level.LEVEL1, async (done: () => void): Promise<void>
       let height = bottom - top;
       let width = right - left;
       await CommonFunc.sleep(1000);
-      await driver.swipe(
-        (Math.round(left + width / 2)).toInt(),
-        (Math.round(top + height * 0.7)).toInt(),
-        (Math.round(left + width / 2)).toInt(),
-        (Math.round(top + height * 0.2)).toInt());
+      await driver.swipeBetween(
+        { x: (Number.parseInt(`${(Math.round(left + width / 2)).toInt()}`)).toInt(),
+          y: (Number.parseInt(`${(Math.round(top + height * 0.7)).toInt()}`)).toInt(),
+          displayId: displayId },
+        { x: (Number.parseInt(`${(Math.round(left + width / 2)).toInt()}`)).toInt(),
+          y: (Number.parseInt(`${(Math.round(top + height * 0.2)).toInt()}`)).toInt(),
+          displayId: displayId });
       await CommonFunc.sleep(2000);
 
       let strJson = inspector.getInspectorByKey('list_offset');

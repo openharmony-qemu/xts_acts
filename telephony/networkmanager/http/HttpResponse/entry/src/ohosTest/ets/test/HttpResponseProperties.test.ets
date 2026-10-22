@@ -103,7 +103,7 @@ export default function HttpResponsePropertiesTest() {
               httpRequest.request(ADDR_TEST_DOMAIN_HTTPS).then((res: http.HttpResponse) => {
                 resultType = res.resultType;
                 console.info(`${caseName} res.resultType:${res.resultType} res.result:${JSON.stringify(res.result)}`);
-                ExpectTrue(resultType == http.HttpDataType.STRING);
+                ExpectTrue(resultType === http.HttpDataType.STRING);
                 httpRequest.destroy();
                 done();
               }).catch((error: BusinessError) => {
@@ -156,7 +156,7 @@ export default function HttpResponsePropertiesTest() {
               }).then((res: http.HttpResponse) => {
                 resultType = res.resultType;
                 console.info(`${caseName} res.resultType:${res.resultType}  res.result:${JSON.stringify(res.result)}`);
-                ExpectTrue(resultType == expectDataType);
+                ExpectTrue(resultType === expectDataType);
                 httpRequest.destroy();
                 done();
               }).catch((error: BusinessError) => {
@@ -263,7 +263,7 @@ export default function HttpResponsePropertiesTest() {
               }).then((res: http.HttpResponse) => {
                 resultType = res.resultType;
                 console.info(`${caseName} res.resultType:${res.resultType}  res.result:${JSON.stringify(res.result)}`);
-                ExpectTrue(resultType == expectDataType);
+                ExpectTrue(resultType === expectDataType);
                 httpRequest.destroy();
                 done();
               }).catch((error: BusinessError) => {
@@ -315,7 +315,7 @@ export default function HttpResponsePropertiesTest() {
               }).then((res: http.HttpResponse) => {
                 resultType = res.resultType;
                 console.info(`${caseName} res.resultType:${res.resultType}  res.result:${JSON.stringify(res.result)}`);
-                ExpectTrue(resultType == http.HttpDataType.STRING);
+                ExpectTrue(resultType === http.HttpDataType.STRING);
                 httpRequest.destroy();
                 done();
               }).catch((error: BusinessError) => {
@@ -368,7 +368,7 @@ export default function HttpResponsePropertiesTest() {
               }).then((res: http.HttpResponse) => {
                 resultType = res.resultType;
                 console.info(`${caseName} res.resultType:${res.resultType}  res.result:${JSON.stringify(res.result)}`);
-                ExpectTrue(resultType == http.HttpDataType.STRING);
+                ExpectTrue(resultType === http.HttpDataType.STRING);
                 httpRequest.destroy();
                 done();
               }).catch((error: BusinessError) => {
@@ -421,7 +421,7 @@ export default function HttpResponsePropertiesTest() {
               }).then((res: http.HttpResponse) => {
                 resultType = res.resultType;
                 console.info(`${caseName} res.resultType:${res.resultType}  res.result:${JSON.stringify(res.result)}`);
-                ExpectTrue(resultType == http.HttpDataType.ARRAY_BUFFER);
+                ExpectTrue(resultType === http.HttpDataType.ARRAY_BUFFER);
                 httpRequest.destroy();
                 done();
               }).catch((error: BusinessError) => {
@@ -474,7 +474,7 @@ export default function HttpResponsePropertiesTest() {
               }).then((res: http.HttpResponse) => {
                 resultType = res.resultType;
                 console.info(`${caseName}  res.resultType:${res.resultType}  res.result:${JSON.stringify(res.result)}`);
-                ExpectTrue(resultType == http.HttpDataType.ARRAY_BUFFER);
+                ExpectTrue(resultType === http.HttpDataType.ARRAY_BUFFER);
                 httpRequest.destroy();
                 done();
               }).catch((error: BusinessError) => {
@@ -528,7 +528,7 @@ export default function HttpResponsePropertiesTest() {
               }).then((res: http.HttpResponse) => {
                 resultType = res.resultType;
                 console.info(`${caseName} res.resultType:${res.resultType}  res.result:${JSON.stringify(res.result)}`);
-                ExpectTrue(resultType == http.HttpDataType.STRING);
+                ExpectTrue(resultType === http.HttpDataType.STRING);
                 httpRequest.destroy();
                 done();
               }).catch((error: BusinessError) => {
@@ -584,7 +584,7 @@ export default function HttpResponsePropertiesTest() {
                 } else {
                   console.info(`${caseName} request data -->:${JSON.stringify(data)}`);
                   resultType = res.resultType;
-                  ExpectTrue(resultType == http.HttpDataType.STRING);
+                  ExpectTrue(resultType === http.HttpDataType.STRING);
                   httpRequest.destroy();
                   done();
                 }
@@ -639,7 +639,7 @@ export default function HttpResponsePropertiesTest() {
                 } else {
                   console.info(`${caseName} request data -->:${JSON.stringify(data)}`);
                   resultType = res.resultType;
-                  ExpectTrue(resultType == expectDataType);
+                  ExpectTrue(resultType === expectDataType);
                   httpRequest.destroy();
                   done();
                 }
@@ -750,7 +750,7 @@ export default function HttpResponsePropertiesTest() {
                 } else {
                   console.info(`${caseName} request data -->:${JSON.stringify(data)}`);
                   resultType = res.resultType;
-                  ExpectTrue(resultType == expectDataType);
+                  ExpectTrue(resultType === expectDataType);
                   httpRequest.destroy();
                   done();
                 }
@@ -804,7 +804,7 @@ export default function HttpResponsePropertiesTest() {
                 } else {
                   console.info(`${caseName} request data -->:${JSON.stringify(data)}`);
                   resultType = res.resultType;
-                  ExpectTrue(resultType == http.HttpDataType.STRING);
+                  ExpectTrue(resultType === http.HttpDataType.STRING);
                   httpRequest.destroy();
                   done();
                 }
@@ -859,7 +859,7 @@ export default function HttpResponsePropertiesTest() {
                 } else {
                   console.info(`${caseName} request data -->:${JSON.stringify(data)}`);
                   resultType = res.resultType;
-                  ExpectTrue(resultType == http.HttpDataType.STRING);
+                  ExpectTrue(resultType === http.HttpDataType.STRING);
                   httpRequest.destroy();
                   done();
                 }
@@ -915,7 +915,7 @@ export default function HttpResponsePropertiesTest() {
                 } else {
                   console.info(`${caseName} request data -->:${JSON.stringify(data)}`);
                   resultType = res.resultType;
-                  ExpectTrue(resultType == http.HttpDataType.ARRAY_BUFFER);
+                  ExpectTrue(resultType === http.HttpDataType.ARRAY_BUFFER);
                   httpRequest.destroy();
                   done();
                 }
@@ -970,7 +970,7 @@ export default function HttpResponsePropertiesTest() {
                 } else {
                   console.info(`${caseName} request data -->:${JSON.stringify(data)}`);
                   resultType = res.resultType;
-                  ExpectTrue(resultType == http.HttpDataType.ARRAY_BUFFER);
+                  ExpectTrue(resultType === http.HttpDataType.ARRAY_BUFFER);
                   httpRequest.destroy();
                   done();
                 }
@@ -1025,7 +1025,7 @@ export default function HttpResponsePropertiesTest() {
                 } else {
                   console.info(`${caseName} request data -->:${JSON.stringify(data)}`);
                   resultType = res.resultType;
-                  ExpectTrue(resultType == http.HttpDataType.STRING);
+                  ExpectTrue(resultType === http.HttpDataType.STRING);
                   httpRequest.destroy();
                   done();
                 }
@@ -1072,7 +1072,7 @@ export default function HttpResponsePropertiesTest() {
               }).then((res: http.HttpResponse) => {
                 console.info(`${caseName} res.resultType:${res.resultType}  res.result:${JSON.stringify(res.result)}`);
                 const type: string = typeof res?.result;
-                ExpectTrue(type == 'string');
+                ExpectTrue(type === 'string');
                 httpRequest.destroy();
                 done();
               }).catch((error: BusinessError) => {
@@ -1276,7 +1276,7 @@ export default function HttpResponsePropertiesTest() {
               }).then((res: http.HttpResponse) => {
                 console.info(`${caseName} res.resultType:${res.resultType}  res.result:${JSON.stringify(res.result)}`);
                 const type: string = typeof res?.result;
-                ExpectTrue(type == 'string');
+                ExpectTrue(type === 'string');
                 httpRequest.destroy();
                 done();
               }).catch((error: BusinessError) => {
@@ -1431,7 +1431,7 @@ export default function HttpResponsePropertiesTest() {
                 }
               }).then((res: http.HttpResponse) => {
                 console.info(`${caseName} res.resultType:${res.resultType}  res.result:${JSON.stringify(res.result)}`);
-                ExpectTrue(typeof res?.result == 'string');
+                ExpectTrue(typeof res?.result === 'string');
                 httpRequest.destroy();
                 done();
               }).catch((error: BusinessError) => {
@@ -1487,7 +1487,7 @@ export default function HttpResponsePropertiesTest() {
                   done();
                 } else {
                   console.info(`${caseName} request data-->:${JSON.stringify(res)}`);
-                  ExpectTrue(typeof res?.result == 'string');
+                  ExpectTrue(typeof res?.result === 'string');
                   httpRequest.destroy();
                   done();
                 }
@@ -1642,7 +1642,7 @@ export default function HttpResponsePropertiesTest() {
                   done();
                 } else {
                   console.info(`${caseName} request data-->:${JSON.stringify(res)}`);
-                  ExpectTrue(typeof res?.result == 'string');
+                  ExpectTrue(typeof res?.result === 'string');
                   httpRequest.destroy();
                   done();
                 }
@@ -1696,7 +1696,7 @@ export default function HttpResponsePropertiesTest() {
                   done();
                 } else {
                   console.info(`${caseName} request data-->:${JSON.stringify(res)}`);
-                  ExpectTrue(typeof res?.result == 'string');
+                  ExpectTrue(typeof res?.result === 'string');
                   httpRequest.destroy();
                   done();
                 }
@@ -1857,7 +1857,7 @@ export default function HttpResponsePropertiesTest() {
                   done();
                 } else {
                   console.info(`${caseName} request data-->:${JSON.stringify(res)}`);
-                  ExpectTrue(typeof res?.result == 'string');
+                  ExpectTrue(typeof res?.result === 'string');
                   httpRequest.destroy();
                   done();
                 }
@@ -1954,7 +1954,7 @@ export default function HttpResponsePropertiesTest() {
               }).catch((error: BusinessError) => {
                 console.info(`${caseName} request fail, error code: ${error.code}, msg: ${error.message}`);
                 httpRequest.destroy();
-                ExpectTrue(error.code == 2300006);
+                ExpectTrue(error.code === 2300006);
                 done();
               })
             }
@@ -2046,7 +2046,7 @@ export default function HttpResponsePropertiesTest() {
               httpRequest.request("abc", (err: BusinessError, res: http.HttpResponse) => {
                 if (err) {
                   console.info(`${caseName} request error code: ${err.code}, msg: ${err.message}`);
-                  ExpectTrue(err.code == 2300006);
+                  ExpectTrue(err.code === 2300006);
                   httpRequest.destroy();
                   done();
                 } else {
@@ -2193,7 +2193,7 @@ export default function HttpResponsePropertiesTest() {
               const httpRequest: http.HttpRequest = http.createHttp();
               httpRequest.request(ADDR_TEST_DOMAIN_HTTPS).then((res: http.HttpResponse) => {
                 console.info(`${caseName} res.cookies:${JSON.stringify(res.cookies)}`);
-                ExpectTrue(typeof res?.cookies == 'string');
+                ExpectTrue(typeof res?.cookies === 'string');
                 httpRequest.destroy();
                 done();
               }).catch((error: BusinessError) => {
@@ -2247,7 +2247,7 @@ export default function HttpResponsePropertiesTest() {
                   done();
                 } else {
                   console.info(`${caseName} request data-->:${JSON.stringify(res)}`);
-                  ExpectTrue(typeof res?.cookies == 'string');
+                  ExpectTrue(typeof res?.cookies === 'string');
                   httpRequest.destroy();
                   done();
                 }
@@ -2419,7 +2419,7 @@ export default function HttpResponsePropertiesTest() {
                   done();
                 } else {
                   console.info(`${caseName} request data-->:${JSON.stringify(res)}`);
-                  ExpectTrue(typeof res?.result == 'string');
+                  ExpectTrue(typeof res?.result === 'string');
                   httpRequest.destroy();
                   done();
                 }
@@ -2584,7 +2584,7 @@ export default function HttpResponsePropertiesTest() {
                   done();
                 } else {
                   console.info(`${caseName} request data-->:${JSON.stringify(res)}`);
-                  ExpectTrue(typeof res?.result == 'string');
+                  ExpectTrue(typeof res?.result === 'string');
                   httpRequest.destroy();
                   done();
                 }
@@ -2743,7 +2743,7 @@ export default function HttpResponsePropertiesTest() {
                 }
               }).then((res: http.HttpResponse) => {
                 console.info(`${caseName} res.resultType:${res.resultType}  res.result:${JSON.stringify(res.result)}`);
-                ExpectTrue(typeof res?.result == 'string');
+                ExpectTrue(typeof res?.result === 'string');
                 httpRequest.destroy();
                 done();
               }).catch((error: BusinessError) => {
@@ -2902,7 +2902,7 @@ export default function HttpResponsePropertiesTest() {
                 }
               }).then((res: http.HttpResponse) => {
                 console.info(`${caseName} res.resultType:${res.resultType}  res.result:${JSON.stringify(res.result)}`);
-                ExpectTrue(typeof res?.result == 'string')
+                ExpectTrue(typeof res?.result === 'string')
                 httpRequest.destroy();
                 done();
               }).catch((error: BusinessError) => {
@@ -3172,7 +3172,7 @@ export default function HttpResponsePropertiesTest() {
                 } else {
                   console.info(`${caseName} requestInStream success, response code: ${responseCode}`);
                   resultType = expectDataType;
-                  ExpectTrue(resultType == expectDataType);
+                  ExpectTrue(resultType === expectDataType);
                   httpRequest.destroy();
                   done();
                 }

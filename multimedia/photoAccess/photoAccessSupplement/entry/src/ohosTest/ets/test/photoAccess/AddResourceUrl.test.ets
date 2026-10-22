@@ -14,7 +14,7 @@
  */
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
 import { describe, it, expect, beforeAll, Level, afterAll } from '@ohos/hypium-dynamic'
-import { driveFn, getPermission, sleep, copyImageToSandbox, isEmpty } from '../common'
+import { driveFn, getPermission, sleep, copyImageToSandbox, isEmpty, checkResourceFile } from '../common'
 import common from '@ohos.app.ability.common'
 import { JSON } from '@kit.ArkTS';
 
@@ -39,6 +39,7 @@ export default function AddResourceChangeRequestUrlSuppTest() {
       await getPermission();
       await driveFn();
       await sleep(1000);
+      checkResourceFile(testContext);
     });
     afterAll(async () => {
       AppStorage.delete('testNumber');

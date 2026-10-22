@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -14,9 +14,17 @@
  */
 import EmptyTest from './Empty.test'
 import CloudDiskNdkTest from './CloudDiskNdk.test'
+import CloudDiskPlaceholderTest from './CloudDiskPlaceholder.test'
+import CloudDiskCallbackTest from './CloudDiskCallback.test'
+import CloudDiskSyncFolderExTest from './CloudDiskSyncFolderEx.test'
+import CloudDiskPlaceholderStateTest from './CloudDiskPlaceholderState.test'
 export default function testsuite() {
   if (canIUse("SystemCapability.FileManagement.CloudDiskManager")){
     CloudDiskNdkTest()
+    CloudDiskPlaceholderTest()
+    CloudDiskCallbackTest()
+    CloudDiskSyncFolderExTest()
+    CloudDiskPlaceholderStateTest()
   }else{
     EmptyTest()
   }

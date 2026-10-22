@@ -26,6 +26,7 @@ import Want from '@ohos.app.ability.Want';
 import bundleManager from '@ohos.bundle.bundleManager';
 import launcherBundleManager from '@ohos.bundle.launcherBundleManager';
 import { LauncherAbilityInfo } from 'bundleManager.LauncherAbilityInfo';
+import osAccount from '@ohos.account.osAccount';
 
 let domain: int = 0x0000;
 let tag: string = 'testtag';
@@ -51,13 +52,16 @@ export default function actsGetLauncherAbilityInfoTest() {
       const TEST_CASE_NAME = 'Sub_Bms_Framework_GetLauncherAbilityInfoSync_static_0100';
       try {
         hilog.info(0x0000, `${tag}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}`+'test case start');
-        let data = launcherBundleManager.getLauncherAbilityInfoSync(BUNDLE_NAME2, 100);
+        let accountManager = osAccount.getAccountManager();
+        let userId: int = await accountManager.getOsAccountLocalId();
+        hilog.info(0x0000, `${tag}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}`+' getOsAccountLocalId: ' + userId);
+        let data = launcherBundleManager.getLauncherAbilityInfoSync(BUNDLE_NAME2, userId);
         // hilog.info(0x0000, `${tag}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}`+' getLauncherAbilityInfoSync success, result is: %{public}s', JSON.stringify(data));
         console.log('getLauncherAbilityInfoSync success');
         expect(data.length>0).assertTrue();
         expect(data[0].labelId).assertLarger(0.0);
         expect(data[0].iconId).assertLarger(0.0);
-        expect(data[0].userId).assertEqual(100);
+        expect(data[0].userId).assertEqual(userId);
         expect(data[0].installTime).assertLarger(0.0);
         expect(data[0].applicationInfo.cloudStructuredDataSyncEnabled).assertEqual(false);
         expect(data[0].elementName.deviceId).assertEqual("");

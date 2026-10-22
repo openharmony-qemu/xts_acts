@@ -61,7 +61,8 @@ it('waterFlowFling2_static_0100', Level.LEVEL1, async (done: () => void): Promis
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
       let btn = await driver.findComponent(ON.id('fling_scroll_2'));
-      await (btn?.click() as Promise<void>);
+      console.info("[waterFlowFling2_static_0100] btn is: " + btn);
+      await btn!.click();
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('water_fling_2');
       console.info("[waterFlowFling2_static_0100] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));

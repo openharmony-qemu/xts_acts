@@ -16,7 +16,7 @@
 
 import { beforeEach, describe, expect, it,  Level } from '../../../../hypium/index';
 import Utils from '../common/Utils';
-import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
+import { Driver, ON, PointerMatrix, Rect } from '@kit.TestKit';
 import inspector from '@ohos.arkui.inspector';
 import { LibUtil } from '../../../ets/pages/LibUtil';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -51,11 +51,11 @@ export default function setKeyProcessingMode01(){
         let driver = Driver.create();
         await Utils.sleep(500);
 
-        await driver.triggerKey(2049);
+        await driver.triggerKey(2049, AppStorage.get<number>('displayID')?.toInt() ?? 0);
         await Utils.sleep(500);
-        await driver.triggerKey(2049);
+        await driver.triggerKey(2049, AppStorage.get<number>('displayID')?.toInt() ?? 0);
         await Utils.sleep(500);
-        await driver.triggerKey(2049);
+        await driver.triggerKey(2049, AppStorage.get<number>('displayID')?.toInt() ?? 0);
         await Utils.sleep(500);
         let strJson = inspector.getInspectorByKey('text21');
         await Utils.sleep(200);

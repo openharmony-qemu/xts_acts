@@ -56,9 +56,14 @@ async function maxUiWindow(driver: Driver, window: UiWindow | null): Promise<boo
 export default function uitestDriverTest(): void {
   describe('uitestDriverTest', (): void => {
     let driver: Driver | undefined;
+    let displayId: int = 0;
+    let primaryId: int = 0;
     beforeAll(async () : Promise<void> => {
       hilog.info(domain, tag, "uitestDriverTest loadup start!!!!!");
       driver = Driver.create();
+      displayId = display.getDefaultDisplaySync().id.toInt();
+      primaryId = display.getPrimaryDisplaySync().id.toInt();
+      hilog.info(domain, tag, `uitestDriverTest displayId: ${displayId}, primaryId: ${primaryId}`);
       await Utils.msSleep(1000);
       hilog.info(domain, tag, "uitestDriverTest loadup over!!!!!");
     })
@@ -119,25 +124,27 @@ export default function uitestDriverTest(): void {
      * @tc.level  LEVEL3
      */
     it('testPressBack_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      hilog.info(domain, tag, "testPressBack_static Start!!!");
-      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
-      await driver!.delayMs(waitUiReadyMs);
-      let button = await driver!.findComponent(ON.text('next page'));
-      if (button != null) {
-        await button.click();
-      }
-      await driver!.delayMs(waitUiReadyMs);
-      await driver!.pressBack();
-      await driver!.delayMs(waitUiReadyMs);
-      let button_ori = await driver!.findComponent(ON.text('next page'));
-      expect(button_ori != null).assertTrue();
-      if (button_ori != null) {
-        let btnMsg = await button_ori.getText();
-        expect(btnMsg == 'next page').assertTrue();
-      }
+      if (displayId === primaryId) { // 此用例不支持车机副屏执行
+        hilog.info(domain, tag, "testPressBack_static Start!!!");
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+        await driver!.delayMs(waitUiReadyMs);
+        let button = await driver!.findComponent(ON.text('next page'));
+        if (button != null) {
+          await button.click();
+        }
+        await driver!.delayMs(waitUiReadyMs);
+        await driver!.pressBack();
+        await driver!.delayMs(waitUiReadyMs);
+        let button_ori = await driver!.findComponent(ON.text('next page'));
+        expect(button_ori != null).assertTrue();
+        if (button_ori != null) {
+          let btnMsg = await button_ori.getText();
+          expect(btnMsg == 'next page').assertTrue();
+        }
 
-      hilog.info(domain, tag, "testPressBack_static over!!!!!!!!!!!!!");
-      await stopApplication('com.uitestScene.acts');
+        hilog.info(domain, tag, "testPressBack_static over!!!!!!!!!!!!!");
+        await stopApplication('com.uitestScene.acts');
+      }
     })
 
     /**
@@ -588,25 +595,27 @@ export default function uitestDriverTest(): void {
      * @tc.level  LEVEL3
      */
     it('testDriverClick_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      hilog.info(domain, tag, "testDriverClick_static start!!!!")
-      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver!.delayMs(waitUiReadyMs)
-      let Button = await driver!.findComponent(ON.text('next page'))
-      expect(Button != null).assertTrue();
-      if (Button != null) {
-        let center = await Button.getBoundsCenter()
-        await driver!.click(center.x, center.y)
+      if (displayId === primaryId) { // 此用例不支持车机副屏执行
+        hilog.info(domain, tag, "testDriverClick_static start!!!!")
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
         await driver!.delayMs(waitUiReadyMs)
+        let Button = await driver!.findComponent(ON.text('next page'))
+        expect(Button != null).assertTrue();
+        if (Button != null) {
+          let center = await Button.getBoundsCenter()
+          await driver!.click(center.x, center.y)
+          await driver!.delayMs(waitUiReadyMs)
+        }
+        let newButton = await driver!.findComponent(ON.text('back to index'))
+        expect(newButton != null).assertTrue();
+        if (newButton != null) {
+          let text = await newButton.getText()
+          expect(text == 'back to index').assertTrue()
+          await newButton.click()
+        }
+        await stopApplication('com.uitestScene.acts')
+        hilog.info(domain, tag, "testDriverClick_static end!!!!")
       }
-      let newButton = await driver!.findComponent(ON.text('back to index'))
-      expect(newButton != null).assertTrue();
-      if (newButton != null) {
-        let text = await newButton.getText()
-        expect(text == 'back to index').assertTrue()
-        await newButton.click()
-      }
-      await stopApplication('com.uitestScene.acts')
-      hilog.info(domain, tag, "testDriverClick_static end!!!!")
     })
 
     /**
@@ -618,30 +627,32 @@ export default function uitestDriverTest(): void {
      * @tc.level  LEVEL3
      */
     it('testUiDriverDoubleClick_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver!.delayMs(waitUiReadyMs)
-      let button = await driver!.findComponent(ON.text('Click twice'))
-      if (button == null) {
-        let scorll = await driver!.findComponent(ON.type('Scroll'))
-        if (scorll != null) {
-          button = await scorll.scrollSearch(ON.text('Click twice'))
-        }
-      }
-      expect(button != null).assertTrue();
-      if (button != null) {
-        let center = await button.getBoundsCenter()
-        await driver!.doubleClick(center.x, center.y)
+      if (displayId === primaryId) { // 此用例不支持车机副屏执行
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
         await driver!.delayMs(waitUiReadyMs)
-      }
+        let button = await driver!.findComponent(ON.text('Click twice'))
+        if (button == null) {
+          let scorll = await driver!.findComponent(ON.type('Scroll'))
+          if (scorll != null) {
+            button = await scorll.scrollSearch(ON.text('Click twice'))
+          }
+        }
+        expect(button != null).assertTrue();
+        if (button != null) {
+          let center = await button.getBoundsCenter()
+          await driver!.doubleClick(center.x, center.y)
+          await driver!.delayMs(waitUiReadyMs)
+        }
 
-      let button1 = await driver!.findComponent(ON.text('doubleClick'))
-      expect(button1 != null).assertTrue();
-      if (button1 != null) {
-        let text = await button1.getText()
-        expect(text == 'doubleClick').assertTrue()
-        await button1.click()
+        let button1 = await driver!.findComponent(ON.text('doubleClick'))
+        expect(button1 != null).assertTrue();
+        if (button1 != null) {
+          let text = await button1.getText()
+          expect(text == 'doubleClick').assertTrue()
+          await button1.click()
+        }
+        await stopApplication('com.uitestScene.acts')
       }
-      await stopApplication('com.uitestScene.acts')
     })
 
     /**
@@ -653,24 +664,26 @@ export default function uitestDriverTest(): void {
      * @tc.level  LEVEL3
      */
     it('testUiDriverLongClick_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
-      await driver!.delayMs(waitUiReadyMs);
-      let button = await driver!.findComponent(ON.text('next page'));
-      expect(button != null).assertTrue();
-      if (button != null) {
-        let center = await button.getBoundsCenter();
-        await driver!.longClick(center.x, center.y)
+      if (displayId === primaryId) { // 此用例不支持车机副屏执行
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
         await driver!.delayMs(waitUiReadyMs);
-        let newButton = await driver!.findComponent(ON.text('longClick'));
-        expect(newButton != null).assertTrue();
-        if (newButton != null) {
-          let text = await newButton.getText();
-          expect(text == 'longClick').assertTrue();
-          await newButton.click();
+        let button = await driver!.findComponent(ON.text('next page'));
+        expect(button != null).assertTrue();
+        if (button != null) {
+          let center = await button.getBoundsCenter();
+          await driver!.longClick(center.x, center.y)
+          await driver!.delayMs(waitUiReadyMs);
+          let newButton = await driver!.findComponent(ON.text('longClick'));
+          expect(newButton != null).assertTrue();
+          if (newButton != null) {
+            let text = await newButton.getText();
+            expect(text == 'longClick').assertTrue();
+            await newButton.click();
+          }
         }
+        hilog.info(domain, tag, "testUiDriverLongClick_static over!!!!");
+        await stopApplication('com.uitestScene.acts');
       }
-      hilog.info(domain, tag, "testUiDriverLongClick_static over!!!!");
-      await stopApplication('com.uitestScene.acts');
     })
 
     /**
@@ -699,7 +712,7 @@ export default function uitestDriverTest(): void {
         expect(button != null).assertTrue();
         if (button != null) {
           let center = await button.getBoundsCenter();
-          await driver!.mouseClick({x:center.x, y:center.y}, MouseButton.MOUSE_BUTTON_RIGHT);
+          await driver!.mouseClick({x:center.x, y:center.y, displayId: displayId}, MouseButton.MOUSE_BUTTON_RIGHT);
           await driver!.delayMs(waitUiReadyMs);
         }
         await driver!.delayMs(waitUiReadyMs);
@@ -732,7 +745,7 @@ export default function uitestDriverTest(): void {
         expect(button != null).assertTrue();
         if (button != null) {
           let center = await button.getBoundsCenter();
-          await driver!.mouseClick({x:center.x, y:center.y}, MouseButton.MOUSE_BUTTON_MIDDLE,2072,2045);
+          await driver!.mouseClick({x:center.x, y:center.y, displayId: displayId}, MouseButton.MOUSE_BUTTON_MIDDLE,2072,2045);
           await driver!.delayMs(waitUiReadyMs);
           let button2 = await driver!.findComponent(ON.text('middle'));
           hilog.info(domain, tag, `testMouseClick_MIDDLE button2, ${ JSON.stringify(button2)}`);
@@ -765,7 +778,7 @@ export default function uitestDriverTest(): void {
         expect(button != null).assertTrue();
         if (button != null) {
           let center = await button.getBoundsCenter();
-          await driver!.mouseClick({x:center.x, y:center.y}, MouseButton.MOUSE_BUTTON_LEFT, 2072);
+            await driver!.mouseClick({x:center.x, y:center.y, displayId: displayId}, MouseButton.MOUSE_BUTTON_LEFT, 2072);
           await driver!.delayMs(waitUiReadyMs * 3);
           let Button3 = await driver!.findComponent(ON.id('jump'));
           hilog.info(domain, tag, `testMouseClick_LEFT Button3, ${ JSON.stringify(Button3)}`);
@@ -1144,8 +1157,8 @@ export default function uitestDriverTest(): void {
           let scrollRect = await scroll.getBounds()
           let screenWidth = scrollRect.right - scrollRect.left;
           let screenHeight = scrollRect.bottom - scrollRect.top;
-          await driver!.penSwipe({x: Math.floor(screenWidth / 2).toInt(), y: Math.floor(screenHeight / 2 + screenHeight / 4).toInt()},
-            {x: Math.floor(screenWidth / 2).toInt(), y: Math.floor(screenHeight / 2 - screenHeight / 4).toInt() },600, 0.5);
+          await driver!.penSwipe({x: Math.floor(screenWidth / 2).toInt(), y: Math.floor(screenHeight / 2 + screenHeight / 4).toInt(), displayId: displayId},
+            {x: Math.floor(screenWidth / 2).toInt(), y: Math.floor(screenHeight / 2 - screenHeight / 4).toInt(), displayId: displayId },600, 0.5);
           let text = await driver!.findComponent(ON.text('toast'));
           await driver!.delayMs(waitUiReadyMs);
           expect(text == null).assertTrue();
@@ -1190,8 +1203,8 @@ export default function uitestDriverTest(): void {
           let scrollRect = await scroll.getBounds()
           let screenWidth = scrollRect.right - scrollRect.left;
           let screenHeight = scrollRect.bottom - scrollRect.top;
-          await driver!.penSwipe({x: Math.floor(screenWidth / 2).toInt(), y: Math.floor(screenHeight / 2 + screenHeight / 4).toInt()},
-            {x: Math.floor(screenWidth / 2).toInt(), y: Math.floor(screenHeight / 2 - screenHeight / 4).toInt() },600);
+          await driver!.penSwipe({x: Math.floor(screenWidth / 2).toInt(), y: Math.floor(screenHeight / 2 + screenHeight / 4).toInt(), displayId: displayId},
+            {x: Math.floor(screenWidth / 2).toInt(), y: Math.floor(screenHeight / 2 - screenHeight / 4).toInt(), displayId: displayId },600);
           let text = await driver!.findComponent(ON.text('toast'));
           await driver!.delayMs(waitUiReadyMs);
           expect(text == null).assertTrue();
@@ -1227,8 +1240,8 @@ export default function uitestDriverTest(): void {
           let scrollRect = await scroll.getBounds()
           let screenWidth = scrollRect.right - scrollRect.left;
           let screenHeight = scrollRect.bottom - scrollRect.top;
-          await driver!.penSwipe({x: Math.floor(screenWidth / 2).toInt(), y: Math.floor(screenHeight / 2 + screenHeight / 4).toInt()},
-            {x: Math.floor(screenWidth / 2).toInt(), y: Math.floor(screenHeight / 2 - screenHeight / 4).toInt() });
+          await driver!.penSwipe({x: Math.floor(screenWidth / 2).toInt(), y: Math.floor(screenHeight / 2 + screenHeight / 4).toInt(), displayId: displayId},
+            {x: Math.floor(screenWidth / 2).toInt(), y: Math.floor(screenHeight / 2 - screenHeight / 4).toInt(), displayId: displayId });
           let text = await driver!.findComponent(ON.text('toast'));
           await driver!.delayMs(waitUiReadyMs);
           expect(text == null).assertTrue();
@@ -1264,8 +1277,8 @@ export default function uitestDriverTest(): void {
         if (scroll != null) {
           let rect = await scroll.getBounds();
           let center = await scroll.getBoundsCenter();
-          await driver!.fling({x: center.x, y:Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt()},
-            {x: center.x, y:Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt()}, 20, 600);
+          await driver!.fling({x: center.x, y:Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt(), displayId: displayId},
+            {x: center.x, y:Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt(), displayId: displayId}, 20, 600);
           await driver!.delayMs(waitUiReadyMs);
           let text = await driver!.findComponent(ON.text('toast'));
           expect(text == null).assertTrue();
@@ -1718,7 +1731,7 @@ export default function uitestDriverTest(): void {
           let pointer = PointerMatrix.create(1,8);
           for (let step = 0; step < 8; step++) {
             let startY = Math.floor((screenHeight / 2 + screenHeight / 4) - stepLength * step).toInt();
-            pointer.setPoint(0, step, {x: startX, y: startY });
+            pointer.setPoint(0, step, {x: startX, y: startY, displayId: displayId });
           }
           await driver!.injectPenPointerAction(pointer, 600, 0.5);
           await driver!.delayMs(2000);
@@ -1767,7 +1780,7 @@ export default function uitestDriverTest(): void {
           let pointer = PointerMatrix.create(1,8);
           for (let step = 0; step < 8; step++) {
             let startY = Math.floor((screenHeight / 2 + screenHeight / 4) - stepLength * step).toInt();
-            pointer.setPoint(0, step, {x: startX, y: startY });
+            pointer.setPoint(0, step, {x: startX, y: startY, displayId: displayId });
           }
           await driver!.injectPenPointerAction(pointer, 600);
           await driver!.delayMs(2000);
@@ -1807,7 +1820,7 @@ export default function uitestDriverTest(): void {
           let pointer = PointerMatrix.create(1,8);
           for (let step = 0; step < 8; step++) {
             let startY = Math.floor((screenHeight / 2 + screenHeight / 4) - stepLength * step).toInt();
-            pointer.setPoint(0, step, {x: startX, y: startY });
+            pointer.setPoint(0, step, {x: startX, y: startY, displayId: displayId });
           }
           await driver!.injectPenPointerAction(pointer);
           await driver!.delayMs(2000);
@@ -1853,23 +1866,25 @@ export default function uitestDriverTest(): void {
      * @tc.level  LEVEL3
      */
     it('testTriggerKey_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      hilog.info(domain, tag, "testTriggerKey_static start !!!!")
-      try {
-        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
-        await driver!.delayMs(1000);
-        // 点击进入next page
-        let keyBack = 2;
-        await driver!.triggerKey(keyBack);
-        await driver!.delayMs(1000);
-        let button = await driver!.findComponent(ON.text('next page'));
-        hilog.info(domain, tag, `testTriggerKey_static button, ${ JSON.stringify(button) }`);
-        expect(button == null).assertTrue();
-      } catch(error) {
-        hilog.info(domain, tag, `testTriggerKey_static error, ${ JSON.stringify(error) }`);
-        expect().assertFail();
+      if (displayId === primaryId) { // 此用例不支持车机副屏执行
+        hilog.info(domain, tag, "testTriggerKey_static start !!!!")
+        try {
+          await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+          await driver!.delayMs(1000);
+          // 点击进入next page
+          let keyBack = 2;
+          await driver!.triggerKey(keyBack);
+          await driver!.delayMs(1000);
+          let button = await driver!.findComponent(ON.text('next page'));
+          hilog.info(domain, tag, `testTriggerKey_static button, ${ JSON.stringify(button) }`);
+          expect(button == null).assertTrue();
+        } catch(error) {
+          hilog.info(domain, tag, `testTriggerKey_static error, ${ JSON.stringify(error) }`);
+          expect().assertFail();
+        }
+        hilog.info(domain, tag, "testTriggerKey_static over!!!!");
+        await stopApplication('com.uitestScene.acts');
       }
-      hilog.info(domain, tag, "testTriggerKey_static over!!!!");
-      await stopApplication('com.uitestScene.acts');
     })
 
     /**
@@ -1968,8 +1983,8 @@ export default function uitestDriverTest(): void {
         if (scroll != null ) {
           let rect = await scroll.getBounds();
           let center = await scroll.getBoundsCenter();
-          await driver!.swipe(center.x, Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt(),
-            center.x, Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt())
+          await driver!.swipeBetween({x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt(), displayId: displayId},
+            {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt(), displayId: displayId})
           await driver!.delayMs(1000);
           let text = await driver!.findComponent(ON.text('toast'));
           expect(text == null).assertTrue();
@@ -2005,8 +2020,8 @@ export default function uitestDriverTest(): void {
         if (scroll != null ) {
           let rect = await scroll.getBounds();
           let center = await scroll.getBoundsCenter();
-          await driver!.swipe(center.x, Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt(),
-            center.x, Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt(), 3000)
+          await driver!.swipeBetween({x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt(), displayId: displayId},
+            {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt(), displayId: displayId}, 3000)
           await driver!.delayMs(1000);
           let text = await driver!.findComponent(ON.text('toast'));
           expect(text == null).assertTrue();

@@ -23,7 +23,8 @@ import {
   photoKeys,
   fetchOption,
   getPermission,
-  createResource
+  createResource,
+  checkResourceFile
 } from '../../util/common'
 
 export default function getAllObjectTest () {
@@ -39,6 +40,7 @@ export default function getAllObjectTest () {
       await getPermission();
       await sleep(10);
       await driveFn();
+      checkResourceFile(globalContext);
       await createResource(globalContext, fileNameList);
     });
 

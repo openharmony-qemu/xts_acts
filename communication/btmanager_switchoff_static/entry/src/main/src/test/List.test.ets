@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,6 +15,13 @@
  */
 
 import btManagerError003Test from "./BtManagerSwitchOff003Static.test";
-export default function testsuite() {
+import btManagerSwitchOff003 from './BtManagerSwitchOff003.test';
+import btHidoff003Test from './BtHidOff003.test';
+import btConnection from './BtConnectionTest.test'
+
+export default function testsuite(): void {
   btManagerError003Test();
+  btManagerSwitchOff003();
+  btHidoff003Test();
+  btConnection();
 }

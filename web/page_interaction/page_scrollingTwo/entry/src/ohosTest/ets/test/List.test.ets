@@ -19,11 +19,13 @@ import WebViewGetPageOffSet from './WebViewGetPageOffSet.test'
 import WebBackToTop from './WebBackToTop.test'
 import WebScrollbarLayoutPolicy from './WebScrollbarLayoutPolicy.test'
 import WebScrollDirectionalLock from './WebScrollDirectionalLock.test'
+import WebFlingSpeedLimit from './WebFlingSpeedLimit.test'
 export default function testsuite() {
   webNestedScrollOptionsScrollBackwardTest()
   webViewSrollableJsunit()
   WebViewGetPageOffSet()
-  WebBackToTop()
   WebScrollbarLayoutPolicy()
   WebScrollDirectionalLock()
+  WebBackToTop()
+  WebFlingSpeedLimit()
 }

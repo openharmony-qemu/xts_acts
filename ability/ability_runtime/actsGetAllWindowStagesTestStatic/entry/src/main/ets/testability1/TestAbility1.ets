@@ -48,7 +48,8 @@ export default class TestAbility1 extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'TestAbility1 onCreate');
     AppStorage.setOrCreate<common.UIAbilityContext>('TestAbility1_UIAbilityContext', this.context);
-    // 静态运行时窗口阶段注册较慢，延迟录制保证 onCreate 阶段齐全
+    // the window stage of the static runtime is registered with a delay, so the snapshot of
+    // onCreate is recorded later to contain every stage that is up at that point
     setTimeout(() => {
       recordStages(this.context, 'onCreate_WindowStage', 'onCreate');
     }, 500);

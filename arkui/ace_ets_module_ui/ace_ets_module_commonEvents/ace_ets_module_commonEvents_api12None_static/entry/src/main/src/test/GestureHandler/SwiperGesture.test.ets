@@ -16,12 +16,13 @@
 
 import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
-import {Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+import {Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@kit.TestKit';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import {MessageManager,Callback} from '../../../ets/MainAbility/common/MessageManager';
 import inspector from '@ohos.arkui.inspector';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function SwiperGestureHandlerTest() {
 
   describe('SwiperGestureHandlerTest', () => {
@@ -74,8 +75,8 @@ it('SwiperGestureHandler_static_0010', Level.LEVEL0, async (done: () => void): P
       let bottom = colum.bottom
       let left = colum.left
       let right = colum.right
-       await driver.swipe(Math.round(top + 10).toInt(), Math.round((top + bottom) / 2).toInt(),
-        Math.round(bottom - 10).toInt(), Math.round((left + right) / 2).toInt());
+       await driver.swipeBetween({x: Math.round(top + 10).toInt(), y: Math.round((top + bottom) / 2).toInt(), displayId: displayID},
+        {x: Math.round(bottom - 10).toInt(), y: Math.round((left + right) / 2).toInt(), displayId: displayID});
       
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('SwiperGestureHandler1');

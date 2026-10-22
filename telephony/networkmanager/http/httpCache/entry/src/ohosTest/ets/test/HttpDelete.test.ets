@@ -166,7 +166,7 @@ export default function HttpDeleteTest() {
                           } else {
                             console.info(`${caseName} secondResponse performanceTiming ${JSON.stringify(data.performanceTiming)}`);
                             console.info(`${caseName} secondResponse tcpTiming ${data.performanceTiming.tcpTiming}`);
-                            ExpectTrue(data.performanceTiming.tcpTiming == 0);
+                            ExpectTrue(data.performanceTiming.tcpTiming === 0);
                             httpRequest.destroy();
                             done();
                           }
@@ -244,7 +244,7 @@ export default function HttpDeleteTest() {
                               } else {
                                 console.info(`${caseName} thirdResponse performanceTiming ${JSON.stringify(data.performanceTiming)}`);
                                 console.info(`${caseName} thirdResponse tcpTiming ${data.performanceTiming.tcpTiming}`);
-                                ExpectTrue(data.performanceTiming.tcpTiming == 0);
+                                ExpectTrue(data.performanceTiming.tcpTiming === 0);
                                 httpRequest.destroy();
                                 done();
                               }

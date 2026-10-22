@@ -35,7 +35,7 @@ struct MyStateSample {
         })
       Text(this.stateVar).fontSize(20)
       Child({stateVar: this.stateVar} as __Options_Child)
-    }
+    }.id('mainWindow')
   }
 }
 

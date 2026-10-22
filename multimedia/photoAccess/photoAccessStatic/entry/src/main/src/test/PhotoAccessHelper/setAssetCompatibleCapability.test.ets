@@ -19,7 +19,7 @@ import hilog from '@ohos.hilog'
 import Context from "application.Context"
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import { BusinessError } from '@ohos.base'
-import { getPermission, driveFn, sleep } from '../Common.test.ets';
+import { getPermission, driveFn } from '../Common.test.ets';
 
 let domain: int= 0x0000;
 let tag: string = 'testTag';
@@ -34,7 +34,6 @@ export default function setAssetCompatibleCapabilityTest() {
       console.info('beforeAll case');
       await getPermission();
       await driveFn();
-      await sleep(1000);
     });
     /**
      * @tc.name   SUB_PHOTOACCESS_SETASSETCOMPATIBLECAPABILITY_STATIC_0100
@@ -463,6 +462,32 @@ export default function setAssetCompatibleCapabilityTest() {
           hilog.info(domain, tag,
             testNum + ' failed' + ", error.name:" + error.name + ", error.message:" + error.message);
           expect(false).assertTrue();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_PHOTOACCESS_SETASSETCOMPATIBLECAPABILITY_STATIC_1700
+     * @tc.number SUB_PHOTOACCESS_SETASSETCOMPATIBLECAPABILITY_STATIC_1700
+     * @tc.desc   supportedHighResolution is false, supportedMimeType is ['   '], error code 23800151
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_PHOTOACCESS_SETASSETCOMPATIBLECAPABILITY_STATIC_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let testNum = 'SUB_PHOTOACCESS_SETASSETCOMPATIBLECAPABILITY_STATIC_1700';
+        try {
+          let cfg : photoAccessHelper.AssetCompatibleCapability = {
+            supportedHighResolution: false,
+            supportedMimeType : ['   ']
+          };
+          await (helper as photoAccessHelper.PhotoAccessHelper).setAssetCompatibleCapability(cfg);
+          expect(false).assertTrue();
+          done();
+        } catch (error) {
+          hilog.info(domain, tag, testNum + "failed; error.name: " + error.name + ", error.code: " + error.code + ", error.message: " + error.message);
+          expect(error.code).assertEqual(23800151);
           done();
         }
       })

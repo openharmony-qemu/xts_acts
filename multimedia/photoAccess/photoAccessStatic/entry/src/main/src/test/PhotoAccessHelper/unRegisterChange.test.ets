@@ -18,7 +18,7 @@ import photoAccessHelper from '@ohos.file.photoAccessHelper'
 import { describe, it, expect, beforeAll, Hypium, TestType, Size, Level } from '../../../../hypium/index'
 import Context from "application.Context"
 import hilog from '@ohos.hilog'
-import { sleep, fetchOption, getFileAsset, photoFetchOption, getPermission, driveFn, } from '../Common.test.ets'
+import { sleep, fetchOption, getFileAsset, photoFetchOption, getPermission, driveFn, checkResourceFile, createResource } from '../Common.test.ets'
 import common from '@ohos.app.ability.common'
 
 let domain: int= 0x0000;
@@ -35,7 +35,9 @@ export default function unRegisterChangeTest() {
       console.info('beforeAll case');
       await getPermission();
       await driveFn();
-      await sleep(1000);
+      checkResourceFile(testContext);
+      let fileNameList = ['off01.jpg', 'off15.jpg', 'offCb01.jpg'];
+      await createResource(testContext, fileNameList);
     });
     /**
      * @tc.name   unRegisterChange_static_001

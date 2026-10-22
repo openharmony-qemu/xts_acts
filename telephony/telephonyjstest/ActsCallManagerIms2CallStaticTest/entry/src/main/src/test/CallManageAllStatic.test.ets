@@ -60,21 +60,21 @@ export default function callManagerAllTestStatic() {
         call.getCallState((err: BusinessError<void>|null, data: call.CallState|undefined) => {
           if (err?.code) {
             hilog.info(domain, tag, `${caseName} getCallState, err: ${JSON.stringify(err)}`);
-            expect().assertFail();
+            ExpectFail();
             done();
           } else {
             hilog.info(domain, tag, `${caseName} getCallState success, data: ${data}`);
-            expect(call.CallState.CALL_STATE_UNKNOWN).assertEqual(-1);
-            expect(call.CallState.CALL_STATE_IDLE).assertEqual(0);
-            expect(call.CallState.CALL_STATE_RINGING).assertEqual(1);
-            expect(call.CallState.CALL_STATE_OFFHOOK).assertEqual(2);
-            expect(call.CallState.CALL_STATE_ANSWERED).assertEqual(3);
+            ExpectTrue(call.CallState.CALL_STATE_UNKNOWN === -1);
+            ExpectTrue(call.CallState.CALL_STATE_IDLE === 0);
+            ExpectTrue(call.CallState.CALL_STATE_RINGING === 1);
+            ExpectTrue(call.CallState.CALL_STATE_OFFHOOK === 2);
+            ExpectTrue(call.CallState.CALL_STATE_ANSWERED === 3);
             done();
           }
         });
       } catch(error) {
         hilog.error(domain, tag, `${caseName} fail, err->${JSON.stringify(error)}`);
-        expect().assertFail();
+        ExpectFail();
       }
       done();
     });
@@ -93,16 +93,16 @@ export default function callManagerAllTestStatic() {
         let promise = call.getCallState();
         promise.then(data => {
           hilog.info(domain, tag, `${caseName} getCallState success, data: ${data}`);
-          ExpectTrue(true);
+          ExpectTrue(data === call.CallState.CALL_STATE_IDLE);
           done();
         }).catch(err => {
           hilog.error(domain, tag, `${caseName} getCallState fail, err: ${err}`);
-          expect().assertFail();
+          ExpectFail();
           done();
         });
       } catch(error) {
         hilog.error(domain, tag, `${caseName} fail, error: ${JSON.stringify(error)}`);
-        expect().assertFail();
+        ExpectFail();
       }
       done();
     });
@@ -121,7 +121,7 @@ export default function callManagerAllTestStatic() {
         call.hasCall((err: BusinessError<void>|null, data: boolean|undefined) => {
           if (err?.code) {
             hilog.error(domain, tag, `${caseName} hasCall fail, err = ${JSON.stringify(err)}`);
-            expect().assertFail();
+            ExpectFail();
             done();
           } else {
             hilog.info(domain, tag, `${caseName} hasCall success, data = ${data}`);
@@ -131,7 +131,7 @@ export default function callManagerAllTestStatic() {
         });
       } catch(error) {
         hilog.error(domain, tag, `${caseName} fail, error: ${JSON.stringify(error)}`);
-        expect().assertFail();
+        ExpectFail();
       }
       done();
     });
@@ -149,11 +149,11 @@ export default function callManagerAllTestStatic() {
       try {
         let data = await call.hasCall();
         hilog.info(domain, tag, `${caseName} hasCall success, data:${data}`);
-        ExpectTrue(true);
+        ExpectTrue(data === false);
         done();
       } catch(error) {
         hilog.error(domain, tag, `${caseName} fail, error: ${JSON.stringify(error)}`);
-        expect().assertFail();
+        ExpectFail();
         done();
       }
     });
@@ -172,17 +172,17 @@ export default function callManagerAllTestStatic() {
         call.formatPhoneNumberToE164('010-0000-0000', "CN", (err: BusinessError<void>|null, data: string|undefined) => {
           if (err?.code) {
             hilog.error(domain, tag, `${caseName} formatPhoneNumberToE164 fail, err = ${JSON.stringify(err)}`);
-            expect().assertFail();
+            ExpectFail();
             done();
           } else {
             hilog.info(domain, tag, `${caseName} formatPhoneNumberToE164 success, data = ${JSON.stringify(data)}`);
-            expect(data === '+861000000000').assertTrue();
+            ExpectTrue(data === '+861000000000');
             done();
           }
         });
       } catch(error) {
         hilog.error(domain, tag, `${caseName} fail, error: ${JSON.stringify(error)}`);
-        expect().assertFail();
+        ExpectFail();
       }
       done();
     });
@@ -200,16 +200,16 @@ export default function callManagerAllTestStatic() {
       try {
         call.formatPhoneNumberToE164('52300000000', "CN").then((data) => {
           hilog.info(domain, tag, `${caseName} formatPhoneNumberToE164 finish, data = ${data}`);
-          expect(data === '+8652300000000').assertTrue();
+          ExpectTrue(data === '+8652300000000');
           done();
         }).catch((err: Error) => {
           hilog.info(domain, tag, `${caseName} formatPhoneNumberToE164 fail, err = ${JSON.stringify(err)}`);
-          expect().assertFail();
+          ExpectFail();
           done();
         })
       } catch(error) {
         hilog.error(domain, tag, `${caseName} fail, error: ${JSON.stringify(error)}`);
-        expect().assertFail();
+        ExpectFail();
         done();
       }
     });
@@ -228,7 +228,7 @@ export default function callManagerAllTestStatic() {
         let options: call.EmergencyNumberOptions = {slotId: ERR_SLOT_ID};
         await call.isEmergencyPhoneNumber('120', options)
         hilog.info(domain, tag, `${caseName} isEmergencyPhoneNumber fail`);
-        expect().assertFail();
+        ExpectFail();
         done();
       } catch(error) {
         hilog.error(domain, tag, `${caseName} finish, error: ${JSON.stringify(error)}`);
@@ -251,7 +251,7 @@ export default function callManagerAllTestStatic() {
         call.isEmergencyPhoneNumber('110', (err: BusinessError<void>|null, data: boolean|undefined) => {
           if (err?.code) {
             hilog.error(domain, tag, `${caseName} isEmergencyPhoneNumber fail, err = ${JSON.stringify(err)}`);
-            expect().assertFail();
+            ExpectFail();
             done();
           } else {
             hilog.info(domain, tag, `${caseName} isEmergencyPhoneNumber success, data = ${JSON.stringify(data)}`);
@@ -261,7 +261,7 @@ export default function callManagerAllTestStatic() {
         });
       } catch(error) {
         hilog.error(domain, tag, `${caseName} fail, error: ${JSON.stringify(error)}`);
-        expect().assertFail();
+        ExpectFail();
       }
       done();
     });
@@ -283,7 +283,7 @@ export default function callManagerAllTestStatic() {
         done();
       } catch(error) {
         hilog.error(domain, tag, `${caseName} fail, error: ${JSON.stringify(error)}`);
-        expect().assertFail();
+        ExpectFail();
       }
       done();
     });
@@ -306,7 +306,7 @@ export default function callManagerAllTestStatic() {
         });
       } catch(error) {
         hilog.error(domain, tag, `${caseName} fail, error: ${JSON.stringify(error)}`);
-        expect().assertFail();
+        ExpectFail();
       }
       done();
     });
@@ -330,13 +330,13 @@ export default function callManagerAllTestStatic() {
             done();
           } else {
             hilog.info(domain, tag, `${caseName} isEmergencyPhoneNumber success, data = ${JSON.stringify(data)}`);
-            expect().assertFail();
+            ExpectFail();
             done();
           }
         });
       } catch(error) {
         hilog.error(domain, tag, `${caseName} fail, error: ${JSON.stringify(error)}`);
-        expect().assertFail();
+        ExpectFail();
       }
       done();
     });

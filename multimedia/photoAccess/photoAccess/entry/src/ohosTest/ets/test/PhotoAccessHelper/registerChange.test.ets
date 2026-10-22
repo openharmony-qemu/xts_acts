@@ -23,18 +23,27 @@ import {
   fetchAllOption,
   sleep,
   getPermission,
-  driveFn
+  driveFn,
+  checkResourceFile,
+  createResource
 } from '../common'
 import common from '@ohos.app.ability.common'
 
 export default function registerChangeTest () {
   describe('registerChangeTest', () => {
+    const ts = `_${Date.now()}`;
+    const on01Name = `on01${ts}.jpg`;
+    const on11Name = `on11${ts}.jpg`;
+    const on17Name = `on17${ts}.jpg`;
 
     beforeAll(async () => {
       console.info('beforeAll case');
       await getPermission();
       await driveFn();
       await sleep(1000);
+      const fileNames: Array<string> = [ on01Name, on11Name, on17Name];
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNames);
     });
 
     let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -59,7 +68,7 @@ export default function registerChangeTest () {
     it('registerChange_callback_001', Level.LEVEL0, async (done: Function) => {
       const testNum = 'registerChange_callback_001';
       try {
-        let fetchOps = photoFetchOption(testNum, photoKeys.DISPLAY_NAME, 'on01.jpg');
+        let fetchOps = photoFetchOption(testNum, photoKeys.DISPLAY_NAME, on01Name);
         const asset = await getFileAsset(testContext, testNum, fetchOps);
         let count = 0;
         await sleep(550);
@@ -169,7 +178,7 @@ export default function registerChangeTest () {
       try {
         let albumName = 'testAlbum' + Date.now();
         let album:ESObject = await helper.createAlbum(albumName);
-        const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, 'on11.jpg');
+        const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, on11Name);
         const asset = await getFileAsset(testContext, testNum, fetchOps);
         let count = 0;
         await sleep(550);
@@ -209,7 +218,7 @@ export default function registerChangeTest () {
       try {
         let albumName = 'testAlbum' + Date.now();
         let album:ESObject = await helper.createAlbum(albumName);
-        const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, 'on17.jpg');
+        const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, on17Name);
         const asset = await getFileAsset(testContext, testNum, fetchOps);
         let count = 0;
         await album.addAssets([asset]);
@@ -279,6 +288,29 @@ export default function registerChangeTest () {
         expect(error.code === '13900020' || error.code === '401').assertTrue();
         done();
       }
+    });
+
+    /**
+     * @tc.name   registerChange_callback_015
+     * @tc.number SUB_PHOTOACCESS_HELPER_REGISTERCHANGE_CALLBACK_1500
+     * @tc.desc   listening album removeAssets, type NOTIFY_ALBUM_REMOVE_ASSET,error code 13900020
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('registerChange_callback_015', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'registerChange_callback_015';
+      try {
+        let albumUri:ESObject = undefined;
+        helper.registerChange(albumUri, false, async (changeData) => {
+          expect(false).assertTrue();
+        });
+        done();
+      } catch (error) {
+        console.log(`${testNum}: tryError: ${error}`);
+        expect(error.code === '13900020').assertTrue();
+        done();
+      } 
     });
   })
 }

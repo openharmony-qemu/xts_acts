@@ -19,7 +19,9 @@ import { describe, it, expect, beforeAll, Level } from "@ohos/hypium-dynamic";
 import {
   sleep,
   getPermission,
-  driveFn
+  driveFn,
+  checkResourceFile,
+  createResource
 } from '../common'
 import common from '@ohos.app.ability.common';
 
@@ -33,6 +35,9 @@ export default function setTest() {
         await getPermission();
         await sleep(1000);
         await driveFn();
+        const fileNameList = [ "setTest001.jpg" ];
+        checkResourceFile(testContext);
+        await createResource(testContext, fileNameList);
     });
 
     const setPhotoAssetTitle = async(done: Function, testNum:string) => {

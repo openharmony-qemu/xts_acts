@@ -15,9 +15,9 @@
 
 {
   "module": {
-    "name": "entry",
+    "name": "entry_test",
     "type": "feature",
-    "srcEntry": "./ets/Application/AbilityStage.ts",
+    "srcEntry": "./ets/Application/AbilityStage.ets",
     "description": "$string:entry_desc",
     "mainElement": "MainAbility",
     "deviceTypes": [],
@@ -47,7 +47,7 @@
       },
       {
         "name": "MainAbility2",
-        "srcEntry": "./ets/MainAbility2/MainAbility2.ts",
+        "srcEntry": "./ets/MainAbility2/MainAbility2.ets",
         "description": "$string:MainAbility2_desc",
         "icon": "$media:icon",
         "label": "$string:MainAbility2_label",
@@ -56,7 +56,7 @@
       },
       {
         "name": "MainAbility3",
-        "srcEntry": "./ets/MainAbility3/MainAbility3.ts",
+        "srcEntry": "./ets/MainAbility3/MainAbility3.ets",
         "description": "$string:MainAbility3_desc",
         "icon": "$media:icon",
         "label": "$string:MainAbility3_label",
@@ -65,7 +65,7 @@
       },
       {
         "name": "MainAbility4",
-        "srcEntry": "./ets/MainAbility4/MainAbility4.ts",
+        "srcEntry": "./ets/MainAbility4/MainAbility4.ets",
         "description": "$string:MainAbility4_desc",
         "icon": "$media:icon",
         "label": "$string:MainAbility4_label",

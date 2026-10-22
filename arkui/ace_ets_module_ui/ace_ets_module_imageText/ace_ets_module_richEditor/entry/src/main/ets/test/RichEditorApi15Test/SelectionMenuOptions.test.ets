@@ -18,6 +18,8 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import { Driver, ON, MouseButton } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common'
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function SelectionMenuOptionsTest() {
   describe('SelectionMenuOptionsTest', () => {
     beforeEach(async (done: Function) => {
@@ -66,7 +68,7 @@ export default function SelectionMenuOptionsTest() {
       await CommonFunc.sleep(500);
       let point = await richEditor.getBoundsCenter();
       await CommonFunc.sleep(500);
-      await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT);
+      await driver.mouseClick({ x: point.x, y: point.y, displayId: displayID }, MouseButton.MOUSE_BUTTON_RIGHT);
       await CommonFunc.sleep(500);
       await driver.assertComponentExist(ON.text('自定义菜单'));
       await CommonFunc.sleep(500);
@@ -133,7 +135,7 @@ export default function SelectionMenuOptionsTest() {
       await CommonFunc.sleep(500);
       let point = await image.getBoundsCenter();
       await CommonFunc.sleep(500);
-      await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT);
+      await driver.mouseClick({ x: point.x, y: point.y, displayId: displayID }, MouseButton.MOUSE_BUTTON_RIGHT);
       await CommonFunc.sleep(500);
       await driver.assertComponentExist(ON.text('自定义菜单'));
       await CommonFunc.sleep(500);
@@ -199,7 +201,7 @@ export default function SelectionMenuOptionsTest() {
       await CommonFunc.sleep(500);
       let point = await mixed.getBoundsCenter();
       await CommonFunc.sleep(500);
-      await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT);
+      await driver.mouseClick({ x: point.x, y: point.y, displayId: displayID }, MouseButton.MOUSE_BUTTON_RIGHT);
       await CommonFunc.sleep(500);
       await driver.assertComponentExist(ON.text('自定义菜单'));
       await CommonFunc.sleep(500);

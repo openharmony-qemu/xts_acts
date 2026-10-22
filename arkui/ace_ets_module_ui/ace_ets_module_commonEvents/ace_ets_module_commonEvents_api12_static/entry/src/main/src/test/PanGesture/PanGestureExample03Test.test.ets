@@ -1,4 +1,4 @@
-﻿'use static';
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -31,6 +31,7 @@ import {
 import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 
 
 
@@ -104,23 +105,27 @@ it('PanGestureExample03Test_static_0010', Level.LEVEL0, async (done: () => void)
       let pointers: PointerMatrix = PointerMatrix.create(2, 2);
       pointers.setPoint(0, 0, {
         x: Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(),
-        y: Math.round(areaObj1.top + areaHeight1 / 2).toInt()
+        y: Math.round(areaObj1.top + areaHeight1 / 2).toInt(),
+      displayId: displayID
       } as Point);
       await CommonFunc.sleep(1000);
       pointers.setPoint(0, 1, {
         x: Math.round(areaObj1.left + areaWidth1 * 0.7).toInt(),
-        y: Math.round(areaObj1.top + areaHeight1 / 2).toInt()
+        y: Math.round(areaObj1.top + areaHeight1 / 2).toInt(),
+      displayId: displayID
       } as Point);
 
       await CommonFunc.sleep(1000);
       pointers.setPoint(1, 0, {
         x: Math.round(areaObj1.left + areaWidth1 * 0.3).toInt(),
-        y: Math.round(areaObj1.top + areaHeight1 / 2).toInt()
+        y: Math.round(areaObj1.top + areaHeight1 / 2).toInt(),
+      displayId: displayID
       } as Point);
       await CommonFunc.sleep(1000);
       pointers.setPoint(1, 1, {
         x: Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(),
-        y: Math.round(areaObj1.top + areaHeight1 / 2).toInt()
+        y: Math.round(areaObj1.top + areaHeight1 / 2).toInt(),
+      displayId: displayID
       } as Point);
       await CommonFunc.sleep(1000);
       await driver.injectMultiPointerAction(pointers);

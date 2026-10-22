@@ -1,6 +1,7 @@
 {
     "src": [
         "MainAbility/pages/index/index",
-        "MainAbility/pages/second/second"
+        "MainAbility/pages/second/second",
+        "TestAbility/pages/index"
     ]
 }

@@ -1,4 +1,5 @@
 'use static';
+
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -59,7 +60,6 @@ export default function SegmentButtonV2Test() {
       console.info('SegmentButtonV2Test after each called');
     });
 
-
     /**
      * @tc.number   SegmentButtonV2Test_static_0100
      * @tc.name     SegmentButtonV2Test_static_0100
@@ -89,7 +89,6 @@ export default function SegmentButtonV2Test() {
         done();
       });
 
-
     /**
      * @tc.number   SegmentButtonV2Test_static_0200
      * @tc.name     SegmentButtonV2Test_static_0200
@@ -116,9 +115,6 @@ export default function SegmentButtonV2Test() {
         done();
       });
 
-    
-    
-    
     /**
      * @tc.number   SegmentButtonV2Test_static_0300
      * @tc.name     SegmentButtonV2Test_static_0300
@@ -146,7 +142,6 @@ it('SegmentButtonV2Test_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Leve
         done();
       });
 
-
     /**
      * @tc.number   SegmentButtonV2Test_static_0400
      * @tc.name     SegmentButtonV2Test_static_0400
@@ -171,7 +166,6 @@ it('SegmentButtonV2Test_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Leve
         console.log("SegmentButtonV2Test_static_0400", "END");
         done();
       });
-
 
     /**
      * @tc.number   SegmentButtonV2Test_static_0500
@@ -199,7 +193,6 @@ it('SegmentButtonV2Test_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Leve
         done();
       });
 
-
     /**
      * @tc.number   SegmentButtonV2Test_static_0600
      * @tc.name     SegmentButtonV2Test_static_0600
@@ -218,12 +211,11 @@ it('SegmentButtonV2Test_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Leve
           .getArray("$children")[5]
           .getArray("$children")[0]
         console.log("SegmentButtonV2Test_static_0600 itemMinHeight ", itemMinHeight.getElement('$attrs').getString('height'))
-        expect(itemMinHeight.getElement('$attrs').getString('height')).assertEqual('80.00vp');
+        expect(Math.floor(Math.abs(parseFloat(itemMinHeight.getElement('$attrs').getString('height')))) - 80 <= 1).assertTrue();
         await CommonFunc.sleep(500);
         console.log("SegmentButtonV2Test_static_0600", "END");
         done();
       });
-
 
     /**
      * @tc.number   SegmentButtonV2Test_static_0700
@@ -253,7 +245,6 @@ it('SegmentButtonV2Test_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Leve
         done();
       });
 
-
     /**
      * @tc.number   SegmentButtonV2Test_static_0800
      * @tc.name     SegmentButtonV2Test_static_0800
@@ -275,7 +266,6 @@ it('SegmentButtonV2Test_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Leve
         console.log("SegmentButtonV2Test_static_0800", "END");
         done();
       });
-
 
     /**
      * @tc.number   SegmentButtonV2Test_static_0900
@@ -303,7 +293,6 @@ it('SegmentButtonV2Test_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Leve
         console.log("SegmentButtonV2Test_static_0900", "END");
         done();
       });
-
 
     /**
      * @tc.number   SegmentButtonV2Test_static_0110

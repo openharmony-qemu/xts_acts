@@ -26,7 +26,8 @@ import {
   fetchOption,
   getPermission,
   fetchAllOption,
-  getFileAsset
+  getFileAsset,
+  checkResourceFile
 } from '../common';
 
 export default function createAssetWithShortTermPermissionTest() {
@@ -46,6 +47,7 @@ export default function createAssetWithShortTermPermissionTest() {
       await sleep(1000);
       isSupportFileManagement = canIUse('SystemCapability.FileManagement.PhotoAccessHelper.Core');
       console.info('isSupportFileManagement is ' + isSupportFileManagement);
+      checkResourceFile(context);
     })
 
     const writeBuffToAsset = async (testNum: string, sourceFileUri: string, targetFileUri: string) => {

@@ -25,7 +25,7 @@ export class MyCallback {
     callback(be);
   }
 
-  static runCasesOfCallback() {
+  static runCasesOfCallback(): void {
     MyCallback.myCallback((data: string) => {
       hilog.info(0x0000, 'testTag', 'MyCallback' + data);
     })

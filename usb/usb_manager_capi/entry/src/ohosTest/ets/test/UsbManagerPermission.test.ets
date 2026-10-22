@@ -390,6 +390,37 @@ export default function usbManagerPermissionTest() {
       })
 
     /**
+     * @tc.number        SUB_USB_USBMANAGER_CAPI_TEST_5800
+     * @tc.name          SUB_USB_USBMANAGER_CAPI_TEST_5800
+     * @tc.desc          Verify OH_UsbManager_RequestPermission accepts an empty string deviceName:
+     *                   the call returns SUCCESS synchronously and the callback reports
+     *                   OH_USBMANAGER_ERROR_SERVICE_EXCEPTION with result=false (the service
+     *                   fails the name lookup before any dialog can appear). A callback wait
+     *                   timeout is an environment issue and the case skips.
+     * @tc.size          MediumTest
+     * @tc.type          Function
+     * @tc.level         Level2
+     */
+    it('SUB_USB_USBMANAGER_CAPI_TEST_5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        try {
+          let res = testNapi.requestPermissionWithCallback('');
+          hilog.info(DOMAIN, TAG, 'requestPermissionWithCallback 5800: ' + JSON.stringify(res));
+          expect(res.ret).assertEqual(ERR_CODE_SUCCESS);
+          if (!res.cbFired) {
+            skipCase('SUB_USB_USBMANAGER_CAPI_TEST_5800', 'permission callback timeout', done);
+            return;
+          }
+          expect(res.cbErrCode).assertEqual(ERR_CODE_SERVICE_EXCEPTION);
+          expect(res.cbResult).assertEqual(false);
+        } catch (err) {
+          let errMsg = (err as BusinessError).message;
+          hilog.error(DOMAIN, TAG, 'SUB_USB_USBMANAGER_CAPI_TEST_5800 failed: ' + errMsg);
+          expect().assertFail();
+        }
+        done();
+      })
+    /**
      * @tc.number        SUB_USB_USBMANAGER_CAPI_TEST_3900
      * @tc.name          SUB_USB_USBMANAGER_CAPI_TEST_3900
      * @tc.desc          Verify OH_UsbManager_RequestPermission delivers result=false with

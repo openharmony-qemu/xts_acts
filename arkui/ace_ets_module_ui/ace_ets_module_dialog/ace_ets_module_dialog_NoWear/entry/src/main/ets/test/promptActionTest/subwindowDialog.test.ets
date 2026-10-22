@@ -14,16 +14,14 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import router from '@ohos.router';
-import {UiComponent, Driver, Component, UiWindow, ON, BY, UiDriver, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 import {MessageManager,Callback} from '../../MainAbility/common/MessageManager';
 import window from '@ohos.window';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
 
-const SUBWINDOW_PREFIX = 'subwindowDialog_';
-const KEY_LONG_CLICK_MENU = SUBWINDOW_PREFIX + 'longClickMenu';
-const KEY_CLICK_CLOSE = SUBWINDOW_PREFIX + 'clickClose';
+let displayID : number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 
 export default function subwindowDialog() {
   describe('subwindowDialog', () => {
@@ -33,12 +31,12 @@ export default function subwindowDialog() {
         url: 'MainAbility/pages/promptAction/subwindowDialog',
       }
       try {
+        router.clear();
         let pages = router.getState();
         console.info("get subwindowDialog state pages: " + JSON.stringify(pages));
-        if (pages.name !== 'subwindowDialog') {
-          router.clear();
+        if (!("subwindowDialog" == pages.name)) {
           console.info("get subwindowDialog state pages.name: " + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options);
+          let result = await router.push(options);
           await CommonFunc.sleep(2000);
           console.info("push subwindowDialog success: " + JSON.stringify(result));
         }
@@ -50,29 +48,32 @@ export default function subwindowDialog() {
     });
 
     /**
-     * @tc.number    SUB_ACE_subwindowDialog_0100
-     * @tc.name      subwindowDialog_0100
-     * @tc.desc      set api
-     * @tc.level     Level 2
-     * @tc.type      FUNCTION
-     * @tc.size      MEDIUMTEST
+     * @tc.name   subwindowDialog_0100
+     * @tc.number SUB_ACE_subwindowDialog_0100
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('subwindowDialog_0100', Level.LEVEL2, async (done: Function) => {
       console.info('subwindowDialog_0100 START');
+      let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      expect(sendEventByKey('subwindowDialog_clickFalse', 10, '')).assertTrue();
+      let buttonSubwindowFalse = await driver.findComponent(ON.id('subwindowDialogClickFalse'));
+      let buttonOpenDialog = await driver.findComponent(ON.id('subwindowDialogClickOpen'));
+      await buttonSubwindowFalse.click();
       await CommonFunc.sleep(1000);
-      expect(sendEventByKey('subwindowDialog_clickOpen', 10, '')).assertTrue();
-      await CommonFunc.sleep(1500);
+      await buttonOpenDialog.click();
+      await CommonFunc.sleep(1000);
 
       let windowClassFirst: window.Window | undefined = undefined;
       windowClassFirst = await window.getLastWindow(globalThis.abilityContext);
       let propertiesFirst: window.WindowProperties = windowClassFirst.getWindowProperties();
-      expect(propertiesFirst.type).assertEqual(1)
+      console.info("[subwindowDialog_0100] title: " + JSON.stringify(propertiesFirst.type));
+      expect(propertiesFirst.type).assertEqual(1)//1表示系统告警窗口TYPE_SYSTEM_ALERT
+      
+      let buttonSubwindowMenu = await driver.findComponent(ON.id('subwindowDialogLongClickMenu'));
 
-      let uiDriver = await UiDriver.create();
-      let buttonSubwindowMenu = await uiDriver.findComponent(BY.key(KEY_LONG_CLICK_MENU));
-      expect(!!buttonSubwindowMenu).assertTrue();
       await buttonSubwindowMenu.longClick();
       await CommonFunc.sleep(1000);
 
@@ -84,9 +85,11 @@ export default function subwindowDialog() {
       expect(propertiesSecond.type).assertEqual(0)//0表示应用子窗口TYPE_APP
 
       await CommonFunc.sleep(1000);
-      await uiDriver.click(Math.round(globalThis.winLeft + vp2px(100)), Math.round(globalThis.winTop + vp2px(100)));
+      // 涉及坐标
+      await driver.clickAt({ x: Math.round(globalThis.winLeft+vp2px(100)), y: Math.round(globalThis.winTop+vp2px(100)), displayId: displayID });
+      // await driver.click(Math.round(globalThis.winLeft + vp2px(100)),Math.round(globalThis.winTop + vp2px(100)));
       await CommonFunc.sleep(1000);
-      let buttonCloseDialog = await uiDriver.findComponent(BY.key(KEY_CLICK_CLOSE));
+      let buttonCloseDialog = await driver.findComponent(ON.id('subwindowDialogClickClose'));
       if (buttonCloseDialog) {
         await buttonCloseDialog.click();
         await CommonFunc.sleep(1000);
@@ -96,42 +99,42 @@ export default function subwindowDialog() {
     });
 
     /**
-     * @tc.number    SUB_ACE_subwindowDialog_0200
-     * @tc.name      subwindowDialog_0200
-     * @tc.desc      set api
-     * @tc.level     Level 2
-     * @tc.type      FUNCTION
-     * @tc.size      MEDIUMTEST
+     * @tc.name   subwindowDialog_0200
+     * @tc.number SUB_ACE_subwindowDialog_0200
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('subwindowDialog_0200', Level.LEVEL2, async (done: Function) => {
       console.info('subwindowDialog_0200 START');
+      let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      expect(sendEventByKey('subwindowDialog_clickTrue', 10, '')).assertTrue();
+      let buttonSubwindowTrue = await driver.findComponent(ON.id('subwindowDialogClickTrue'));
+      let buttonOpenDialog = await driver.findComponent(ON.id('subwindowDialogClickOpen'));
+      await buttonSubwindowTrue.click();
       await CommonFunc.sleep(1000);
-      expect(sendEventByKey('subwindowDialog_clickOpen', 10, '')).assertTrue();
-      await CommonFunc.sleep(1500);
+      await buttonOpenDialog.click();
+      await CommonFunc.sleep(1000);
 
       let windowClass: window.Window | undefined = undefined;
       windowClass = await window.getLastWindow(globalThis.abilityContext);
       let properties: window.WindowProperties = windowClass.getWindowProperties();
-      expect(properties.type).assertEqual(0)
+      console.info("[subwindowDialog_0200] title: " + JSON.stringify(properties));
+      console.info("[subwindowDialog_0200] title: " + JSON.stringify(properties.type));
+      expect(properties.type).assertEqual(0)//0表示应用子窗口TYPE_APP
+      
+      let buttonSubwindowMenu = await driver.findComponent(ON.id('subwindowDialogLongClickMenu'));
+      let buttonCloseDialog = await driver.findComponent(ON.id('subwindowDialogClickClose'));
 
-      let uiDriver = await UiDriver.create();
-      let buttonSubwindowMenu = await uiDriver.findComponent(BY.key(KEY_LONG_CLICK_MENU));
-      expect(!!buttonSubwindowMenu).assertTrue();
       await buttonSubwindowMenu.longClick();
       await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
       let menuBtn = await driver.findComponent(ON.text('菜单选项'));
       await CommonFunc.sleep(1000);
       await menuBtn.click();
+      
       await CommonFunc.sleep(2000);
-
-      let buttonCloseDialog = await uiDriver.findComponent(BY.key(KEY_CLICK_CLOSE));
-      if (buttonCloseDialog) {
-        await buttonCloseDialog.click();
-        await CommonFunc.sleep(1000);
-      }
+      await buttonCloseDialog.click();
       console.info('[subwindowDialog_0200] END');
       done();
     });

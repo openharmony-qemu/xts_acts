@@ -62,6 +62,14 @@ import DynamicLayoutRowTest from './CommonCustom/DynamicLayoutRowTest.test';
 import DynamicLayoutStackTest from './CommonCustom/DynamicLayoutStackTest.test';
 import DynamicLayoutGridTest from './CommonCustom/DynamicLayoutGridTest.test';
 import DynamicLayoutCustomTest from './CommonCustom/DynamicLayoutCustomTest.test';
+import UIContextApplyDefaultImmersiveStrategyTest from './CommonCustom/UIContextApplyDefaultImmersiveStrategyTest.test.ets';
+import UIContextApplyDefaultImmersiveStrategyOtherTest from './CommonCustom/UIContextApplyDefaultImmersiveStrategyOtherTest.test.ets';
+import UIContextApplyDefaultImmersiveStrategyNoParamTest from './CommonCustom/UIContextApplyDefaultImmersiveStrategyNoParamTest.test.ets';
+import UIContextApplyDefaultImmersiveStrategyTwoParamTest from './CommonCustom/UIContextApplyDefaultImmersiveStrategyTwoParamTest.test.ets';
+import UIContextApplyDefaultImmersiveStrategyNullTest from './CommonCustom/UIContextApplyDefaultImmersiveStrategyNullTest.test.ets';
+import UIContextApplyDefaultImmersiveStrategyUndefinedTest from './CommonCustom/UIContextApplyDefaultImmersiveStrategyUndefinedTest.test.ets';
+import UIContextApplyDefaultImmersiveStrategyEmptyArrayTest from './CommonCustom/UIContextApplyDefaultImmersiveStrategyEmptyArrayTest.test.ets';
+import UIContextApplyDefaultImmersiveStrategyNonEmptyArrayTest from './CommonCustom/UIContextApplyDefaultImmersiveStrategyNonEmptyArrayTest.test.ets';
 
 export default function testsuite() {
   Calc01();
@@ -113,4 +121,12 @@ export default function testsuite() {
   DynamicLayoutStackTest();
   DynamicLayoutGridTest();
   DynamicLayoutCustomTest();
+  UIContextApplyDefaultImmersiveStrategyTest();
+  UIContextApplyDefaultImmersiveStrategyOtherTest();
+  UIContextApplyDefaultImmersiveStrategyNoParamTest();
+  UIContextApplyDefaultImmersiveStrategyTwoParamTest();
+  UIContextApplyDefaultImmersiveStrategyNullTest();
+  UIContextApplyDefaultImmersiveStrategyUndefinedTest();
+  UIContextApplyDefaultImmersiveStrategyEmptyArrayTest();
+  UIContextApplyDefaultImmersiveStrategyNonEmptyArrayTest();
 }

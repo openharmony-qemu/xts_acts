@@ -17,6 +17,8 @@ import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, MouseButton } from '@ohos.UiTest';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RelativeChain4 () {
   describe('RelativeChain4', () => {
     beforeEach(async (done: Function) => {
@@ -57,7 +59,7 @@ export default function RelativeChain4 () {
       await CommonFunc.sleep(1000);
       let rel = CommonFunc.getComponentRect('RelativeChain4');
       let driver: Driver = Driver.create();
-      await driver.mouseClick({x: Math.round(rel.left + vp2px(50)), y: Math.round(rel.top + vp2px(80))}, MouseButton.MOUSE_BUTTON_LEFT);
+      await driver.mouseClick({x: Math.round(rel.left + vp2px(50)), y: Math.round(rel.top + vp2px(80)), displayId: displayID}, MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('RelativeChainText');
       await CommonFunc.sleep(200);
@@ -85,7 +87,7 @@ export default function RelativeChain4 () {
       await CommonFunc.sleep(1000);
       let rel = CommonFunc.getComponentRect('RelativeChain42');
       let driver: Driver = Driver.create();
-      await driver.mouseClick({x: Math.round(rel.left + vp2px(50)), y: Math.round(rel.top + vp2px(80))}, MouseButton.MOUSE_BUTTON_LEFT);
+      await driver.mouseClick({x: Math.round(rel.left + vp2px(50)), y: Math.round(rel.top + vp2px(80)), displayId: displayID}, MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('RelativeChainText');
       await CommonFunc.sleep(200);

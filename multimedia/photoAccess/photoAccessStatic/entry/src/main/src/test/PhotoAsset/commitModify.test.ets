@@ -16,9 +16,10 @@
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
 import { describe, it, expect, TestType, Size, Level, Hypium, beforeAll } from "../../../../hypium/index";
+import Context from "application.Context"
 
 import hilog from '@ohos.hilog'
-import { fetchOption, getFileAsset, photoFetchOption, getPermission, driveFn, sleep } from '../Common.test.ets'
+import { fetchOption, getFileAsset, photoFetchOption, getPermission, driveFn, checkResourceFile, createResource } from '../Common.test.ets'
 import { BusinessError } from '@ohos.base';
 
 let domain: int= 0x0000;
@@ -123,12 +124,14 @@ async function commitModifyAbnormalPromise(done: () => void, testNum: string, fe
 
 export default function commitModifyTest() {
   describe('commitModifyTest', (): void => {
+    let testContext: Context = Hypium.get("context") as Context;
 
     beforeAll(async () => {
       hilog.info(domain, tag, 'beforeAll case');
       await getPermission();
       await driveFn();
-      await sleep(1000);
+      await checkResourceFile(testContext);
+      await createResource(testContext, ['modifyCb01.jpg', 'modifyCb02.jpg', 'modifyCb03.jpg', 'modifyCb04.jpg', 'modifyCb05.jpg', 'modifyCb06.jpg', 'modifyCb07.jpg', 'modifyCb01.mp4', 'modifyCb02.mp4', 'modifyCb03.mp4', 'modifyCb04.mp4', 'modifyCb05.mp4', 'modifyCb06.mp4', 'modifyCb07.mp4', 'modifyPro01.jpg', 'modifyPro02.jpg', 'modifyPro03.jpg', 'modifyPro04.jpg', 'modifyPro05.jpg', 'modifyPro06.jpg', 'modifyPro07.jpg', 'modifyPro01.mp4', 'modifyPro02.mp4', 'modifyPro03.mp4', 'modifyPro04.mp4', 'modifyPro05.mp4', 'modifyPro06.mp4', 'modifyPro07.mp4']);
     });
 
     /**

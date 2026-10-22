@@ -17,7 +17,7 @@
   "module": {
     "name": "entry",
     "type": "feature",
-    "srcEntry": "./ets/Application/AbilityStage.ts",
+    "srcEntry": "./ets/Application/AbilityStage.ets",
     "description": "$string:entry_desc",
     "mainElement": "MainAbility",
     "deviceTypes": [],

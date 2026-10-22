@@ -15,7 +15,7 @@
 
 import router from '@ohos.router';
 import { describe, beforeEach, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
-import { Driver, ON } from '@ohos.UiTest';
+import { Driver, ON, Component } from '@ohos.UiTest';
 import Utils from '../../MainAbility/common/Utils';
 
 const PAGE_URL = 'MainAbility/pages/bindContextMenuByIsShow/BindContextMenuByIsShowBlurMask';
@@ -24,16 +24,26 @@ const PAGE_NAME = 'BindContextMenuByIsShowBlurMaskIndex';
 const SLEEP_MS = 1500;
 const DISMISS_SLEEP_MS = 2000;
 const MENU_ITEM_TEXT = '菜单选项1';
+const FIND_RETRY = 3;
+const RETRY_SLEEP_MS = 1000;
 
 async function clickShowAndDismiss(btnId: string): Promise<void> {
   let driver = Driver.create();
-  let btn = await driver.findComponent(ON.id(btnId));
+  let btn: Component | undefined = undefined;
+  for (let r = 0; r < FIND_RETRY && !btn; r++) {
+    if (r > 0) await Utils.sleep(RETRY_SLEEP_MS);
+    btn = await driver.findComponent(ON.id(btnId));
+  }
   expect(!!btn).assertTrue();
   if (btn) {
     await btn.click();
   }
   await Utils.sleep(DISMISS_SLEEP_MS);
-  let menuItem = await driver.findComponent(ON.text(MENU_ITEM_TEXT));
+  let menuItem: Component | undefined = undefined;
+  for (let r = 0; r < FIND_RETRY && !menuItem; r++) {
+    if (r > 0) await Utils.sleep(RETRY_SLEEP_MS);
+    menuItem = await driver.findComponent(ON.text(MENU_ITEM_TEXT));
+  }
   expect(menuItem !== undefined).assertTrue();
   if (menuItem) {
     await menuItem.click();
@@ -47,7 +57,11 @@ async function clickShowAndDismissMenu(btnId: string): Promise<void> {
 
 async function assertTextId(textId: string, expected: string): Promise<void> {
   let driver = Driver.create();
-  let textComp = await driver.findComponent(ON.id(textId));
+  let textComp: Component | undefined = undefined;
+  for (let r = 0; r < FIND_RETRY && !textComp; r++) {
+    if (r > 0) await Utils.sleep(RETRY_SLEEP_MS);
+    textComp = await driver.findComponent(ON.id(textId));
+  }
   expect(!!textComp).assertTrue();
   if (textComp) {
     let actual = await textComp.getText();
@@ -57,7 +71,11 @@ async function assertTextId(textId: string, expected: string): Promise<void> {
 
 async function assertTextIdContains(textId: string, fragment: string): Promise<void> {
   let driver = Driver.create();
-  let textComp = await driver.findComponent(ON.id(textId));
+  let textComp: Component | undefined = undefined;
+  for (let r = 0; r < FIND_RETRY && !textComp; r++) {
+    if (r > 0) await Utils.sleep(RETRY_SLEEP_MS);
+    textComp = await driver.findComponent(ON.id(textId));
+  }
   expect(!!textComp).assertTrue();
   if (textComp) {
     let actual = await textComp.getText();
@@ -91,9 +109,8 @@ async function pushPage(): Promise<void> {
   let options: router.RouterOptions = { url: PAGE_URL };
   router.clear();
   let pages = router.getState();
-  if (pages.name !== PAGE_NAME) {
-    await router.pushUrl(options);
-  }
+  console.info('pushPage current page: ' + JSON.stringify(pages));
+  await router.pushUrl(options);
   await Utils.sleep(SLEEP_MS);
 }
 
@@ -110,15 +127,14 @@ export default function BindContextMenuByIsShowBlurMaskTest(): void {
     /**
      * @tc.name   SUB_ARKUI_MENU_BCMByIsShow_backgroundBlurStyle_all_0100
      * @tc.number SUB_ARKUI_MENU_BCMByIsShow_backgroundBlurStyle_all_0100
-     * @tc.desc   bindContextMenuByIsShow backgroundBlurStyle all enum values
+     * @tc.desc   bindContextMenuByIsShow backgroundBlurStyle all enum values (part 1)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('SUB_ARKUI_MENU_BCMByIsShow_backgroundBlurStyle_all_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       await pushPage();
-      let ids = ['Thin', 'Regular', 'Thick', 'BGThin', 'BGReg', 'BGThick', 'BGUltra',
-        'None', 'CUltraThin', 'CThin', 'CReg', 'CThick', 'CUltraThick'];
+      let ids = ['Thin', 'Regular', 'Thick', 'BGThin', 'BGReg', 'BGThick', 'BGUltra'];
       for (let i = 0; i < ids.length; i++) {
         await clickShowAndDismiss(bgBlurBtnId(i));
         await assertTextId(bgBlurTxtId(i), ids[i]);
@@ -127,20 +143,55 @@ export default function BindContextMenuByIsShowBlurMaskTest(): void {
     });
 
     /**
+     * @tc.name   SUB_ARKUI_MENU_BCMByIsShow_backgroundBlurStyle_all_0101
+     * @tc.number SUB_ARKUI_MENU_BCMByIsShow_backgroundBlurStyle_all_0101
+     * @tc.desc   bindContextMenuByIsShow backgroundBlurStyle all enum values (part 2)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_MENU_BCMByIsShow_backgroundBlurStyle_all_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      await pushPage();
+      let ids = ['None', 'CUltraThin', 'CThin', 'CReg', 'CThick', 'CUltraThick'];
+      for (let i = 0; i < ids.length; i++) {
+        await clickShowAndDismiss(bgBlurBtnId(i + 7));
+        await assertTextId(bgBlurTxtId(i + 7), ids[i]);
+      }
+      done();
+    });
+
+    /**
      * @tc.name   SUB_ARKUI_MENU_BCMByIsShow_mask_backgroundBlurStyle_all_0200
      * @tc.number SUB_ARKUI_MENU_BCMByIsShow_mask_backgroundBlurStyle_all_0200
-     * @tc.desc   bindContextMenuByIsShow mask.backgroundBlurStyle all enum values
+     * @tc.desc   bindContextMenuByIsShow mask.backgroundBlurStyle all enum values (part 1)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('SUB_ARKUI_MENU_BCMByIsShow_mask_backgroundBlurStyle_all_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       await pushPage();
-      let ids = ['Thin', 'Regular', 'Thick', 'BGThin', 'BGReg', 'BGThick', 'BGUltra',
-        'None', 'CUltraThin', 'CThin', 'CReg', 'CThick', 'CUltraThick'];
+      let ids = ['Thin', 'Regular', 'Thick', 'BGThin', 'BGReg', 'BGThick', 'BGUltra'];
       for (let i = 0; i < ids.length; i++) {
         await clickShowAndDismiss(maskBlurBtnId(i));
         await assertTextId(maskBlurTxtId(i), ids[i]);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_ARKUI_MENU_BCMByIsShow_mask_backgroundBlurStyle_all_0201
+     * @tc.number SUB_ARKUI_MENU_BCMByIsShow_mask_backgroundBlurStyle_all_0201
+     * @tc.desc   bindContextMenuByIsShow mask.backgroundBlurStyle all enum values (part 2)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_MENU_BCMByIsShow_mask_backgroundBlurStyle_all_0201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      await pushPage();
+      let ids = ['None', 'CUltraThin', 'CThin', 'CReg', 'CThick', 'CUltraThick'];
+      for (let i = 0; i < ids.length; i++) {
+        await clickShowAndDismiss(maskBlurBtnId(i + 7));
+        await assertTextId(maskBlurTxtId(i + 7), ids[i]);
       }
       done();
     });

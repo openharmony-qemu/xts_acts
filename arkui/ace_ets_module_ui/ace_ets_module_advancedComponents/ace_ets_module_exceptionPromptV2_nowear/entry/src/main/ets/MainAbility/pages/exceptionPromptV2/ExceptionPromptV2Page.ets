@@ -39,7 +39,7 @@ struct ExceptionPromptV2Example {
   build() {
     Column() {
       Scroll() {
-        Column({ space: 12 }) {
+        Column() {
           Text('ExceptionPromptV2 测试页面')
             .fontSize(16)
             .fontWeight(FontWeight.Bold)

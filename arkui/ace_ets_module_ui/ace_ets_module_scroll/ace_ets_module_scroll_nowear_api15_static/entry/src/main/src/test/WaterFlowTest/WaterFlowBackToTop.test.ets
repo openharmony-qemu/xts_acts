@@ -66,48 +66,60 @@ it('WaterFlowScrollTest1_static_0100', Level.LEVEL0, async (done: () => void): P
         let height = bottom - top;
         let width = right - left;
         // driver create
-        let driverTop = Driver.create();
-        await CommonFunc.sleep(1000);
-        let topButton = await driverTop.findComponent(ON.id('Top'));
-        let driverSwitch = Driver.create();
-        let switchButton = await driverSwitch.findComponent(ON.id('Switch'))
+        let topButton = await driverWaterFlow.findComponent(ON.id('Top'));
+        let switchButton = await driverWaterFlow.findComponent(ON.id('Switch'))
         await sleep(1000);
         // apply the swipe action to the WaterFlow component
-        await driverWaterFlow.swipe(
-          Math.round(left + width * 0.2).toInt(),
-          Math.round(bottom - height / 4).toInt(),
-          Math.round(left + width * 0.2).toInt(),
-          Math.round(bottom - height / 2).toInt()
-        );
+        await driverWaterFlow.swipeBetween(
+          {
+            x: Math.round(left + width * 0.2).toInt(),
+            y: Math.round(bottom - height / 4).toInt(),
+            displayId: AppStorage.get<number>('displayID')?.toInt() ?? 0
+          },
+          {
+            x: Math.round(left + width * 0.2).toInt(),
+            y: Math.round(bottom - height / 2).toInt(),
+            displayId: AppStorage.get<number>('displayID')?.toInt() ?? 0
+          });
         await sleep(2000);  // wait for the scroll to complete
         await (topButton?.click() as Promise<void>);
         await sleep(1500)
         let stopJson = inspector.getInspectorByKey('waterFlowBackToTop');
         expect(JSON.parseJsonElement(stopJson).getElement('$attrs').getString('content') !== 'onDidWaterFlowBackToTop').assertTrue();
-      
+
         await (switchButton?.click() as Promise<void>);
         await sleep(500)
         await (topButton?.click() as Promise<void>);
         await sleep(1500)
 
-        await driverWaterFlow.swipe(
-          Math.round(left + width * 0.2).toInt(),
-          Math.round(bottom - height / 4).toInt(),
-          Math.round(left + width * 0.2).toInt(),
-          Math.round(bottom - height / 2).toInt()
-        );
+        await driverWaterFlow.swipeBetween(
+          {
+            x: Math.round(left + width * 0.2).toInt(),
+            y: Math.round(bottom - height / 4).toInt(),
+            displayId: AppStorage.get<number>('displayID')?.toInt() ?? 0
+          },
+          {
+            x: Math.round(left + width * 0.2).toInt(),
+            y: Math.round(bottom - height / 2).toInt(),
+            displayId: AppStorage.get<number>('displayID')?.toInt() ?? 0
+          });
         await sleep(2000);
         await (switchButton?.click() as Promise<void>);
         await sleep(500)
         await (topButton?.click() as Promise<void>);
         await sleep(1500)
-      
-        await driverWaterFlow.swipe(
-          Math.round(left + width * 0.2).toInt(),
-          Math.round(bottom - height / 4).toInt(),
-          Math.round(left + width * 0.2).toInt(),
-          Math.round(bottom - height / 2).toInt()
-        );
+
+        await driverWaterFlow.swipeBetween(
+          {
+            x: Math.round(left + width * 0.2).toInt(),
+            y: Math.round(bottom - height / 4).toInt(),
+            displayId: AppStorage.get<number>('displayID')?.toInt() ?? 0
+          },
+          {
+            x: Math.round(left + width * 0.2).toInt(),
+            y: Math.round(bottom - height / 2).toInt(),
+            displayId: AppStorage.get<number>('displayID')?.toInt() ?? 0
+          });
         await sleep(2000);
         await (switchButton?.click() as Promise<void>);
         await sleep(500)

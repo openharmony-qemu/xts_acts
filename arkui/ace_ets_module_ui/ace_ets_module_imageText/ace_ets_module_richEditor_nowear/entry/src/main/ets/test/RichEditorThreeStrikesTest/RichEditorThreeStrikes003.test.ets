@@ -31,6 +31,8 @@ import {
 import CommonFunc from '../../MainAbility/common/Common';
 
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RichEditorThreeStrikes003() {
   describe('RichEditorThreeStrikes003', () => {
     beforeEach(async (done: Function) => {
@@ -69,15 +71,15 @@ export default function RichEditorThreeStrikes003() {
       let rich = await driver.findComponent(ON.id('RichEditorThreeStrikes003'));
       let getBounds = await rich.getBounds();
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.left + 50, getBounds.top + 30);
+      await driver.clickAt({ x: getBounds.left + 50, y: getBounds.top + 30, displayId: displayID });
       await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 50, getBounds.top + 30);
+      await driver.clickAt({ x: getBounds.left + 50, y: getBounds.top + 30, displayId: displayID });
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.left + 55, getBounds.top + 30);
+      await driver.clickAt({ x: getBounds.left + 55, y: getBounds.top + 30, displayId: displayID });
       await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 55, getBounds.top + 30);
+      await driver.clickAt({ x: getBounds.left + 55, y: getBounds.top + 30, displayId: displayID });
       await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 55, getBounds.top + 30);
+      await driver.clickAt({ x: getBounds.left + 55, y: getBounds.top + 30, displayId: displayID });
       await CommonFunc.sleep(500);
       let message = await driver.findComponent(ON.id('message'));
       let messageText = await message.getText();
@@ -101,15 +103,15 @@ export default function RichEditorThreeStrikes003() {
       let rich = await driver.findComponent(ON.id('RichEditorThreeStrikes003'));
       let getBounds = await rich.getBounds();
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.left + 50, getBounds.top + 30);
+      await driver.clickAt({ x: getBounds.left + 50, y: getBounds.top + 30, displayId: displayID });
       await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 50, getBounds.top + 30);
+      await driver.clickAt({ x: getBounds.left + 50, y: getBounds.top + 30, displayId: displayID });
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.left + 100, getBounds.top + 30);
+      await driver.clickAt({ x: getBounds.left + 100, y: getBounds.top + 30, displayId: displayID });
       await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 100, getBounds.top + 30);
+      await driver.clickAt({ x: getBounds.left + 100, y: getBounds.top + 30, displayId: displayID });
       await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 100, getBounds.top + 30);
+      await driver.clickAt({ x: getBounds.left + 100, y: getBounds.top + 30, displayId: displayID });
       await CommonFunc.sleep(500);
       let message = await driver.findComponent(ON.id('message'));
       let messageText = await message.getText();

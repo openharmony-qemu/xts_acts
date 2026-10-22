@@ -17,7 +17,7 @@
 import events_emitter from '@ohos.events.emitter';
 import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, Point } from '@ohos.UiTest';
+import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, Point } from '@kit.TestKit';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -27,6 +27,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function keyEventModifierUndefined() {
   describe('keyEventModifierUndefined', () => {
 
@@ -64,7 +65,7 @@ export default function keyEventModifierUndefined() {
     it('keyEventModifierUndefined_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[keyEventModifierUndefined_static_0001] START');
       let driver: Driver = Driver.create();
-      await (driver.triggerKey(2049) as Promise<void>);
+      await (driver.triggerKey(2049, displayID) as Promise<void>);
       await CommonFunc.sleep(500);
       let strJson = inspector.getInspectorByKey('keventM_btn1');
       let res = JSON.parseJsonElement(strJson).getElement('$attrs').getString('label');
@@ -73,7 +74,7 @@ export default function keyEventModifierUndefined() {
       let changeBtn = await driver.findComponent(ON.id('keventM_btn2'));
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(500);
-      await (driver.triggerKey(2049) as Promise<void>);
+      await (driver.triggerKey(2049, displayID) as Promise<void>);
       await CommonFunc.sleep(1000);
       
       strJson = inspector.getInspectorByKey('keventM_btn1');
@@ -82,7 +83,7 @@ export default function keyEventModifierUndefined() {
 
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(500);
-      await (driver.triggerKey(2049) as Promise<void>);
+      await (driver.triggerKey(2049, displayID) as Promise<void>);
       await CommonFunc.sleep(1000);
 
       strJson = inspector.getInspectorByKey('keventM_btn1');

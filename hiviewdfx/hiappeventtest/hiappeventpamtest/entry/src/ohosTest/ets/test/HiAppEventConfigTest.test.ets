@@ -415,7 +415,21 @@ export default function HiAppEventConfigTest() {
         appCrashPolicy: {pageSwitchLogEnable: true, extendPcLrPrinting: true, simplifyVmaPrinting: true, logFileCutoffSzBytes: 1024, collectMinidump: true},
         appFreezePolicy: {pageSwitchLogEnable: true},
         resourceOverlimitPolicy: {pageSwitchLogEnable: true, jsHeapLogtype: "event"},
-        addressSanitizerPolicy: {pageSwitchLogEnable: true} }
+        addressSanitizerPolicy: {pageSwitchLogEnable: true} },
+      {mainThreadJankPolicy: {logType: 1, sampleInterval: 100, ignoreStartupTime: 11, sampleCount: 21, reportTimesPerApp: 3, autoStopSampling: false},
+        cpuUsageHighPolicy: {foregroundLoadThreshold: 11, backgroundLoadThreshold: 22, threadLoadThreshold:33, perfLogCaptureCount: 44, threadLoadInterval:55},
+        appCrashPolicy: {pageSwitchLogEnable: true, extendPcLrPrinting: true, simplifyVmaPrinting: true, logFileCutoffSzBytes: 1024},
+        appFreezePolicy: {pageSwitchLogEnable: true},
+        resourceOverlimitPolicy: {pageSwitchLogEnable: true, jsHeapLogtype: "event"},
+        addressSanitizerPolicy: {pageSwitchLogEnable: true}},
+      {appCrashPolicy: {pageSwitchLogEnable: false, extendPcLrPrinting: true, logFileCutoffSzBytes: 5242880, simplifyVmaPrinting: false, publishOnNextLaunch: false}},
+      {appCrashPolicy: {extendPcLrPrinting: true, simplifyVmaPrinting: true, publishOnNextLaunch: true}},
+      {appCrashPolicy: {pageSwitchLogEnable: true, logFileCutoffSzBytes: 1024, publishOnNextLaunch: false}},
+      {appCrashPolicy: {pageSwitchLogEnable: true, publishOnNextLaunch: true}},
+      {appCrashPolicy: {extendPcLrPrinting: true, publishOnNextLaunch: false}},
+      {appCrashPolicy: {logFileCutoffSzBytes: 1024, publishOnNextLaunch: false}},
+      {appCrashPolicy: {publishOnNextLaunch: true}},
+      {appCrashPolicy: {publishOnNextLaunch: false}}
     ];
 
     // configEventPolicy 1.1接口 返回401场景（参数为undefined）
@@ -654,6 +668,18 @@ export default function HiAppEventConfigTest() {
       {mainThreadJankPolicy: {logType: undefined}, cpuUsageHighPolicy: {}, appCrashPolicy: {}, appFreezePolicy: {}, resourceOverlimitPolicy: {}, addressSanitizerPolicy: {}},
       {mainThreadJankPolicy: {}, cpuUsageHighPolicy: {foregroundLoadThreshold: undefined}, appCrashPolicy: {}, appFreezePolicy: {}, resourceOverlimitPolicy: {}, addressSanitizerPolicy: {}},
       {mainThreadJankPolicy: {}, cpuUsageHighPolicy: {}, appCrashPolicy: {pageSwitchLogEnable: undefined}, appFreezePolicy: {}, resourceOverlimitPolicy: {}, addressSanitizerPolicy: {}},
+      {appCrashPolicy: {publishOnNextLaunch: undefined}},
+      {appCrashPolicy: {pageSwitchLogEnable: undefined, publishOnNextLaunch: undefined}},
+      {appCrashPolicy: {pageSwitchLogEnable: true, publishOnNextLaunch: undefined}},
+      {appCrashPolicy: {publishOnNextLaunch: undefined, extendPcLrPrinting: undefined}},
+      {appCrashPolicy: {publishOnNextLaunch: undefined, extendPcLrPrinting: true}},
+      {appCrashPolicy: {publishOnNextLaunch: undefined, simplifyVmaPrinting: false}},
+      {appCrashPolicy: {publishOnNextLaunch: undefined, simplifyVmaPrinting: undefined}},
+      {appCrashPolicy: {publishOnNextLaunch: undefined, logFileCutoffSzBytes: 5242880}},
+      {appCrashPolicy: {publishOnNextLaunch: undefined, logFileCutoffSzBytes: undefined}},
+      {appCrashPolicy: {pageSwitchLogEnable: undefined, extendPcLrPrinting: undefined, logFileCutoffSzBytes: undefined, simplifyVmaPrinting: undefined, publishOnNextLaunch: undefined}},
+      {appCrashPolicy: {pageSwitchLogEnable: undefined, extendPcLrPrinting: undefined, logFileCutoffSzBytes: undefined, publishOnNextLaunch: undefined}},
+      {appCrashPolicy: {pageSwitchLogEnable: undefined, extendPcLrPrinting: undefined, publishOnNextLaunch: undefined}}  
     ];
 
     // configEventPolicy 1.1接口 调用失败走失败分支打印hilog

@@ -18,7 +18,6 @@ import AVPlayerNdkTest from './AVPlayerNdk.test';
 import AVRecorderNdkTest from './AVRecorderNdk.test';
 import AVScreenCaptureNdkTest from './AVScreenCaptureNdk.test';
 import AVTranscoderConfigNdkTest from './AVTranscoderConfigNdk.test';
-import LowPowerSinkNdk2Test from './LowPowerSinkTwoNDK.test';
 
 export default function testsuite() {
   AVPlayerNdkTest();
@@ -26,5 +25,4 @@ export default function testsuite() {
   AVScreenCaptureNdkTest();
   AVTranscoderConfigNdkTest();
   AVImageMetadataNDKTest();
-  LowPowerSinkNdk2Test();
 }

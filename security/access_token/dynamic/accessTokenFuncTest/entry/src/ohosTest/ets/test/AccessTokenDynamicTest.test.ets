@@ -18,6 +18,7 @@ import bundleManager from '@ohos.bundle.bundleManager';
 import { abilityAccessCtrl, Permissions } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
+const ERR_PARAM_ILLEGAL = 401;
 const ERR_PARAM_INVALID = 12100001;
 const ERR_NOT_USE_TOGETHER = 12100004;
 const ERR_REGISTERS_EXCEED_LIMITATION = 12100005;
@@ -1252,6 +1253,174 @@ export default function AccessTokenDynamicTest() {
       console.info("SUB_accessctrl_accesstoken_getSelfPermissionStatus_1000 result: " + result);
       expect(result).assertEqual(3);
       done();
+    })
+
+    /**
+     * @tc.name   SUB_accessctrl_accesstoken_isPermissionSupported_0100
+     * @tc.number SUB_accessctrl_accesstoken_isPermissionSupported_0100
+     * @tc.desc   Test isPermissionSupported, system_grant permission is supported on the device.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_accessctrl_accesstoken_isPermissionSupported_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
+      console.info("SUB_accessctrl_accesstoken_isPermissionSupported_0100 start");
+      let atManager = abilityAccessCtrl.createAtManager();
+      try {
+        let result = atManager.isPermissionSupported(permissionNameSystem);
+        console.info("SUB_accessctrl_accesstoken_isPermissionSupported_0100 result: " + result);
+        expect(result).assertTrue();
+        expect(typeof result === 'boolean').assertTrue();
+        done();
+      } catch (error) {
+        error = error as BusinessError;
+        console.error("SUB_accessctrl_accesstoken_isPermissionSupported_0100 error " + JSON.stringify(error));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_accessctrl_accesstoken_isPermissionSupported_0200
+     * @tc.number SUB_accessctrl_accesstoken_isPermissionSupported_0200
+     * @tc.desc   Test isPermissionSupported, user_grant permission is supported on the device.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_accessctrl_accesstoken_isPermissionSupported_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
+      console.info("SUB_accessctrl_accesstoken_isPermissionSupported_0200 start");
+      let atManager = abilityAccessCtrl.createAtManager();
+      try {
+        let result = atManager.isPermissionSupported(permissionNameUser);
+        console.info("SUB_accessctrl_accesstoken_isPermissionSupported_0200 result: " + result);
+        expect(result).assertTrue();
+        done();
+      } catch (error) {
+        error = error as BusinessError;
+        console.error("SUB_accessctrl_accesstoken_isPermissionSupported_0200 error " + JSON.stringify(error));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_accessctrl_accesstoken_isPermissionSupported_0300
+     * @tc.number SUB_accessctrl_accesstoken_isPermissionSupported_0300
+     * @tc.desc   Test isPermissionSupported, permissionName is empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_accessctrl_accesstoken_isPermissionSupported_0300", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
+      console.info("SUB_accessctrl_accesstoken_isPermissionSupported_0300 start");
+      let atManager = abilityAccessCtrl.createAtManager();
+      let permissionName: Permissions = "" as Permissions;
+      try {
+        atManager.isPermissionSupported(permissionName);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        error = error as BusinessError;
+        console.error("SUB_accessctrl_accesstoken_isPermissionSupported_0300 error " + JSON.stringify(error));
+        expect(error.code).assertEqual(ERR_PARAM_INVALID);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_accessctrl_accesstoken_isPermissionSupported_0400
+     * @tc.number SUB_accessctrl_accesstoken_isPermissionSupported_0400
+     * @tc.desc   Test isPermissionSupported, permissionName exceeds 256 characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_accessctrl_accesstoken_isPermissionSupported_0400", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
+      console.info("SUB_accessctrl_accesstoken_isPermissionSupported_0400 start");
+      let atManager = abilityAccessCtrl.createAtManager();
+      let permissionName = 'a'.repeat(257) as Permissions;
+      try {
+        atManager.isPermissionSupported(permissionName);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        error = error as BusinessError;
+        console.error("SUB_accessctrl_accesstoken_isPermissionSupported_0400 error " + JSON.stringify(error));
+        expect(error.code).assertEqual(ERR_PARAM_INVALID);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_accessctrl_accesstoken_isPermissionSupported_0500
+     * @tc.number SUB_accessctrl_accesstoken_isPermissionSupported_0500
+     * @tc.desc   Test isPermissionSupported, non-existent permission is not supported.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_accessctrl_accesstoken_isPermissionSupported_0500", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
+      console.info("SUB_accessctrl_accesstoken_isPermissionSupported_0500 start");
+      let atManager = abilityAccessCtrl.createAtManager();
+      let permissionName: Permissions = "ohos.permission.INVALID_PERM" as Permissions;
+      try {
+        let result = atManager.isPermissionSupported(permissionName);
+        console.info("SUB_accessctrl_accesstoken_isPermissionSupported_0500 result: " + result);
+        expect(result).assertFalse();
+        done();
+      } catch (error) {
+        error = error as BusinessError;
+        console.error("SUB_accessctrl_accesstoken_isPermissionSupported_0500 error " + JSON.stringify(error));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_accessctrl_accesstoken_isPermissionSupported_0600
+     * @tc.number SUB_accessctrl_accesstoken_isPermissionSupported_0600
+     * @tc.desc   Test isPermissionSupported, permissionName is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_accessctrl_accesstoken_isPermissionSupported_0600", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_accessctrl_accesstoken_isPermissionSupported_0600 start");
+      let atManager = abilityAccessCtrl.createAtManager();
+      try {
+        let result = atManager.isPermissionSupported(null);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        error = error as BusinessError;
+        console.error("SUB_accessctrl_accesstoken_isPermissionSupported_0600 error " + JSON.stringify(error));
+        expect(error.code).assertEqual(ERR_PARAM_ILLEGAL);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_accessctrl_accesstoken_isPermissionSupported_0700
+     * @tc.number SUB_accessctrl_accesstoken_isPermissionSupported_0700
+     * @tc.desc   Test isPermissionSupported, permissionName is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_accessctrl_accesstoken_isPermissionSupported_0700", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_accessctrl_accesstoken_isPermissionSupported_0700 start");
+      let atManager = abilityAccessCtrl.createAtManager();
+      try {
+        let result = atManager.isPermissionSupported(undefined);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        error = error as BusinessError;
+        console.error("SUB_accessctrl_accesstoken_isPermissionSupported_0700 error " + JSON.stringify(error));
+        expect(error.code).assertEqual(ERR_PARAM_ILLEGAL);
+        done();
+      }
     })
   })
   console.info('AccessTokenDynamicTest end');

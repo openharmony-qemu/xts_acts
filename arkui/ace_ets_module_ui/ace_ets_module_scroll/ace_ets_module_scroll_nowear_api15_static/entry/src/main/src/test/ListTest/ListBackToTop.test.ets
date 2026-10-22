@@ -66,47 +66,59 @@ it('ListBackToTop_static_0100', Level.LEVEL0, async (done: () => void): Promise<
         let height = bottom - top;
         let width = right - left;
         // create driver
-        let driverTop = Driver.create();
-        await CommonFunc.sleep(1000);
-        let topButton = await driverTop.findComponent(ON.id('Top'));
-        let driverSwitch = Driver.create();
-        let switchButton = await driverSwitch.findComponent(ON.id('Switch'))
+        let topButton = await driverList.findComponent(ON.id('Top'));
+        let switchButton = await driverList.findComponent(ON.id('Switch'))
         await sleep(1000);
-        await driverList.swipe(
-          Math.round(left + width * 0.2).toInt(),
-          Math.round(bottom - height / 4).toInt(),
-          Math.round(left + width * 0.2).toInt(),
-          Math.round(bottom - height / 2).toInt()
-        );
+        await driverList.swipeBetween(
+          {
+            x: Math.round(left + width * 0.2).toInt(),
+            y: Math.round(bottom - height / 4).toInt(),
+            displayId: AppStorage.get<number>('displayID')?.toInt() ?? 0
+          },
+          {
+            x: Math.round(left + width * 0.2).toInt(),
+            y: Math.round(bottom - height / 2).toInt(),
+            displayId: AppStorage.get<number>('displayID')?.toInt() ?? 0
+          });
         await sleep(2000);
         await (topButton?.click() as Promise<void>);
         await sleep(1500)
         let stopJson = inspector.getInspectorByKey('listBackToTop');
         expect(JSON.parseJsonElement(stopJson).getElement('$attrs').getString('content') !== 'onDidListBackToTop').assertTrue();
-      
+
         await (switchButton?.click() as Promise<void>);
         await sleep(500)
         await (topButton?.click() as Promise<void>);
         await sleep(1500)
 
-        await driverList.swipe(
-          Math.round(left + width * 0.2).toInt(),
-          Math.round(bottom - height / 4).toInt(),
-          Math.round(left + width * 0.2).toInt(),
-          Math.round(bottom - height / 2).toInt()
-        );
+        await driverList.swipeBetween(
+          {
+            x: Math.round(left + width * 0.2).toInt(),
+            y: Math.round(bottom - height / 4).toInt(),
+            displayId: AppStorage.get<number>('displayID')?.toInt() ?? 0
+          },
+          {
+            x: Math.round(left + width * 0.2).toInt(),
+            y: Math.round(bottom - height / 2).toInt(),
+            displayId: AppStorage.get<number>('displayID')?.toInt() ?? 0
+          });
         await sleep(2000);
         await (switchButton?.click() as Promise<void>);
         await sleep(500)
         await (topButton?.click() as Promise<void>);
         await sleep(1500)
 
-        await driverList.swipe(
-          Math.round(left + width * 0.2).toInt(),
-          Math.round(bottom - height / 4).toInt(),
-          Math.round(left + width * 0.2).toInt(),
-          Math.round(bottom - height / 2).toInt()
-        );
+        await driverList.swipeBetween(
+          {
+            x: Math.round(left + width * 0.2).toInt(),
+            y: Math.round(bottom - height / 4).toInt(),
+            displayId: AppStorage.get<number>('displayID')?.toInt() ?? 0
+          },
+          {
+            x: Math.round(left + width * 0.2).toInt(),
+            y: Math.round(bottom - height / 2).toInt(),
+            displayId: AppStorage.get<number>('displayID')?.toInt() ?? 0
+          });
         await sleep(2000);
         await (switchButton?.click() as Promise<void>);
         await sleep(500)

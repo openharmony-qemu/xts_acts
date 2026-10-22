@@ -87,7 +87,7 @@ it('menuBlurStyleJsunit_static_0100', Level.LEVEL0, async (done: () => void): Pr
       console.info("[menuBlurStyleJsunit_0100] menuText is: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual("menuBlurStyle");
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2070);
+       await driver.triggerKey(2070, AppStorage.get<number>('displayID')?.toInt() ?? 0);
       await CommonFunc.sleep(1000);
       console.info('[menuBlurStyleJsunit_0100] END');
       done();

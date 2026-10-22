@@ -62,11 +62,63 @@ export default function observerNopCallTest() {
           }
           observer.onCCallStateChange(callback);
         } catch (err) {
-          console.info(`${caseName} catchError: ${JSON.stringify(err)}}`+err);
+          console.info(`${caseName} catchError: ${JSON.stringify(err)}`+err);
           ExpectTrue(err.code === 201);
           done();
         }
         console.log("************* Telephony_observer_on_noPermission_cCallStateInfo_0100 Test end *************");
+      })
+
+    /**
+      * @tc.name   Telephony_observer_on_noPermission_voIPStateChange_0100
+      * @tc.number SUB_Telephony_Observer_VoIPStateChangeOn_NoP_0100
+      * @tc.desc   call the on method of voIPStateChange without permission
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('Telephony_observer_on_noPermission_voIPStateChange_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+        let caseName: string = 'Telephony_observer_on_noPermission_voIPStateChange_0100';
+        console.log("************* Telephony_observer_on_noPermission_voIPStateChange_0100 Test start *************");
+        try {
+          let callback = (value: observer.VoIPCallStateInfo) => {
+            console.log(`${caseName} on voIPStateChange, data:` + JSON.stringify(value));
+            ExpectFail();
+            observer.offVoIPStateChange();
+            done();
+          }
+          observer.onVoIPStateChange(callback);
+        } catch (err) {
+          console.info(`${caseName} catchError: ${JSON.stringify(err)}`);
+          ExpectTrue(err.code === 201);
+          done();
+        }
+        console.log("************* Telephony_observer_on_noPermission_voIPStateChange_0100 Test end *************");
+      })
+
+    /**
+      * @tc.name   Telephony_observer_off_noPermission_voIPStateChange_0100
+      * @tc.number SUB_Telephony_Observer_VoIPStateChangeOff_NoP_0100
+      * @tc.desc   call the off method of voIPStateChange without permission
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('Telephony_observer_off_noPermission_voIPStateChange_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+        let caseName: string = 'Telephony_observer_off_noPermission_voIPStateChange_0100';
+        console.log("************* Telephony_observer_off_noPermission_voIPStateChange_0100 Test start *************");
+        try {
+          let callback = (value: observer.VoIPCallStateInfo) => {
+            console.log(`${caseName} off voIPStateChange, data:` + JSON.stringify(value));
+          }
+          observer.offVoIPStateChange(callback);
+          done();
+        } catch (err) {
+          console.info(`${caseName} catchError: ${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        }
+        console.log("************* Telephony_observer_off_noPermission_voIPStateChange_0100 Test end *************");
       })
 
   });

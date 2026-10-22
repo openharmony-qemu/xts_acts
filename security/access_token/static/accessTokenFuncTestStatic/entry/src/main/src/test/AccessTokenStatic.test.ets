@@ -1313,6 +1313,122 @@ export default function AccessTokenStaticTest() {
       done();
     })
 
+    /**
+     * @tc.name   SUB_accessctrl_accesstoken_isPermissionSupported_0100
+     * @tc.number SUB_accessctrl_accesstoken_isPermissionSupported_0100
+     * @tc.desc   Test isPermissionSupported, system_grant permission is supported on the device.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_accessctrl_accesstoken_isPermissionSupported_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "SUB_accessctrl_accesstoken_isPermissionSupported_0100 start");
+      try {
+        let result = atManager.isPermissionSupported(permissionNameSystem);
+        hilog.info(domain, tag, "SUB_accessctrl_accesstoken_isPermissionSupported_0100 result: " + result);
+        expect(result).assertTrue();
+        done();
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.error(domain, tag, `SUB_accessctrl_accesstoken_isPermissionSupported_0100 error ${error.code}  ${error.message}`);
+        expect(false).assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_accessctrl_accesstoken_isPermissionSupported_0200
+     * @tc.number SUB_accessctrl_accesstoken_isPermissionSupported_0200
+     * @tc.desc   Test isPermissionSupported, user_grant permission is supported on the device.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_accessctrl_accesstoken_isPermissionSupported_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "SUB_accessctrl_accesstoken_isPermissionSupported_0200 start");
+      try {
+        let result = atManager.isPermissionSupported(permissionNameUser);
+        hilog.info(domain, tag, "SUB_accessctrl_accesstoken_isPermissionSupported_0200 result: " + result);
+        expect(result).assertTrue();
+        done();
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.error(domain, tag, `SUB_accessctrl_accesstoken_isPermissionSupported_0200 error ${error.code}  ${error.message}`);
+        expect(false).assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_accessctrl_accesstoken_isPermissionSupported_0300
+     * @tc.number SUB_accessctrl_accesstoken_isPermissionSupported_0300
+     * @tc.desc   Test isPermissionSupported, permissionName is empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_accessctrl_accesstoken_isPermissionSupported_0300", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "SUB_accessctrl_accesstoken_isPermissionSupported_0300 start");
+      let permissionName: Permissions = "" as Permissions;
+      try {
+        atManager.isPermissionSupported(permissionName);
+        expect(false).assertFail();
+        done();
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.error(domain, tag, `SUB_accessctrl_accesstoken_isPermissionSupported_0300 error ${error.code}  ${error.message}`);
+        expect(error.code).assertEqual(ERR_PARAM_INVALID);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_accessctrl_accesstoken_isPermissionSupported_0400
+     * @tc.number SUB_accessctrl_accesstoken_isPermissionSupported_0400
+     * @tc.desc   Test isPermissionSupported, permissionName exceeds 256 characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_accessctrl_accesstoken_isPermissionSupported_0400", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "SUB_accessctrl_accesstoken_isPermissionSupported_0400 start");
+      let permissionName = 'a'.repeat(257) as Permissions;
+      try {
+        atManager.isPermissionSupported(permissionName);
+        expect(false).assertFail();
+        done();
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.error(domain, tag, `SUB_accessctrl_accesstoken_isPermissionSupported_0400 error ${error.code}  ${error.message}`);
+        expect(error.code).assertEqual(ERR_PARAM_INVALID);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_accessctrl_accesstoken_isPermissionSupported_0500
+     * @tc.number SUB_accessctrl_accesstoken_isPermissionSupported_0500
+     * @tc.desc   Test isPermissionSupported, non-existent permission is not supported.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_accessctrl_accesstoken_isPermissionSupported_0500", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "SUB_accessctrl_accesstoken_isPermissionSupported_0500 start");
+      let permissionName: Permissions = "ohos.permission.INVALID_PERM" as Permissions;
+      try {
+        let result = atManager.isPermissionSupported(permissionName);
+        hilog.info(domain, tag, "SUB_accessctrl_accesstoken_isPermissionSupported_0500 result: " + result);
+        expect(result).assertFalse();
+        done();
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.error(domain, tag, `SUB_accessctrl_accesstoken_isPermissionSupported_0500 error ${error.code}  ${error.message}`);
+        expect(false).assertFail();
+        done();
+      }
+    })
+
   })
   hilog.info(domain, tag, '%{public}s', 'abilityTest end');
 

@@ -82,7 +82,7 @@ it('ArkUI_List_Scroll_To_Item_In_Group_static_0001', Level.LEVEL1, async (done: 
       let btn: Component = await driver.findComponent(ON.id('Btn_0_0')) as Component;
       await btn.click();
       await CommonFunc.sleep(1500);
-      let List: RectValue = CommonFunc.getComponentRect('ListScrollToItemInGroup' + '_MyList1');
+      let List: RectValue = CommonFunc.getComponentRect('ListScrollToItemInGroup_MyList1');
       let ListItem: RectValue = CommonFunc.getComponentRect('ListItem_Group0_Index0');
       console.info('[ArkUI_List_Scroll_To_Item_In_Group_0001] List' + JSON.stringify(List));
       console.info('[ArkUI_List_Scroll_To_Item_In_Group_0001] ListItem' + JSON.stringify(ListItem));
@@ -104,7 +104,7 @@ it('ArkUI_List_Scroll_To_Item_In_Group_static_0100', Level.LEVEL1, async (done: 
       let btn: Component = await driver.findComponent(ON.id('Btn_0_1')) as Component;
       await btn.click();
       await CommonFunc.sleep(2000);
-      let List: RectValue = CommonFunc.getComponentRect('ListScrollToItemInGroup' + '_MyList1');
+      let List: RectValue = CommonFunc.getComponentRect('ListScrollToItemInGroup_MyList1');
       let ListItem: RectValue = CommonFunc.getComponentRect('ListItem_Group0_Index1');
       expect(Math.abs(ListItem.top - List.top) <= 1).assertEqual(true); // 1 px error is alllowed
       console.info('[ArkUI_List_Scroll_To_Item_In_Group_static_0100] END');
@@ -148,7 +148,7 @@ it('ArkUI_List_Scroll_To_Item_In_Group_static_0300', Level.LEVEL1, async (done: 
       let btn: Component = await driver.findComponent(ON.id('Btn_2_2')) as Component;
       await btn.click();
       await CommonFunc.sleep(2000);
-      let List: RectValue = CommonFunc.getComponentRect('ListScrollToItemInGroup' + '_MyList1');
+      let List: RectValue = CommonFunc.getComponentRect('ListScrollToItemInGroup_MyList1');
       let ListItem: RectValue = CommonFunc.getComponentRect('ListItem_Group2_Index2');
       console.info("ListItem.top: " + ListItem.top + " " + "ListItem.bottom: " + ListItem.bottom);
       expect(Math.abs(List.bottom - ListItem.bottom) <= 1).assertEqual(true); // 1 px error is alllowed
@@ -169,7 +169,7 @@ it('ArkUI_List_Scroll_To_Item_In_Group_static_0400', Level.LEVEL1, async (done: 
       let btn: Component = await driver.findComponent(ON.id('Btn_3_1')) as Component;
       await btn.click();
       await CommonFunc.sleep(2000);
-      let List: RectValue = CommonFunc.getComponentRect('ListScrollToItemInGroup' + '_MyList1');
+      let List: RectValue = CommonFunc.getComponentRect('ListScrollToItemInGroup_MyList1');
       let ListItem: RectValue = CommonFunc.getComponentRect('ListItem_Group3_Index1');
       expect(Math.abs(ListItem.bottom - List.bottom) <= 1).assertEqual(true); // 1 px error is alllowed
       console.info('[ArkUI_List_Scroll_To_Item_In_Group_static_0400] END');
@@ -189,7 +189,7 @@ it('ArkUI_List_Scroll_To_Item_In_Group_static_0500', Level.LEVEL1, async (done: 
       let btn: Component = await driver.findComponent(ON.id('Btn_3_11')) as Component;
       await btn.click();
       await CommonFunc.sleep(2000);
-      let List: RectValue = CommonFunc.getComponentRect('ListScrollToItemInGroup' + '_MyList1');
+      let List: RectValue = CommonFunc.getComponentRect('ListScrollToItemInGroup_MyList1');
       let ListItem: RectValue = CommonFunc.getComponentRect('ListItem_Group3_Index11');
       expect(Math.abs(ListItem.bottom - List.bottom) <= 1).assertEqual(true); // 1 px error is alllowed
       done();

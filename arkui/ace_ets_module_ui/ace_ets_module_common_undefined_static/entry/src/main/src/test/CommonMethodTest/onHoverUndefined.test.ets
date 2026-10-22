@@ -28,6 +28,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { KeyCode } from '@ohos.multimodalInput.keyCode';
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function onHoverUndefined() {
   describe('onHoverUndefined', () => {
 
@@ -71,9 +72,9 @@ export default function onHoverUndefined() {
 
       let changeBtn = await driver.findComponent(ON.id('hover_btn2'));
       let point1: Point = await (changeBtn?.getBoundsCenter() as Promise<Point>);
-      await driver.mouseMoveTo(point);
+      await driver.mouseMoveTo({x: point.x, y: point.y, displayId: displayID});
       await CommonFunc.sleep(500);
-      await driver.mouseMoveTo(point1);
+      await driver.mouseMoveTo({x: point1.x, y: point1.y, displayId: displayID});
       await CommonFunc.sleep(500);
       let strJson = inspector.getInspectorByKey('hover_btn1');
       let res = JSON.parseJsonElement(strJson).getElement('$attrs').getString('label');
@@ -81,9 +82,9 @@ export default function onHoverUndefined() {
 
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(500);
-      await driver.mouseMoveTo(point);
+      await driver.mouseMoveTo({x: point.x, y: point.y, displayId: displayID});
       await CommonFunc.sleep(500);
-      await driver.mouseMoveTo(point1);
+      await driver.mouseMoveTo({x: point1.x, y: point1.y, displayId: displayID});
       await CommonFunc.sleep(500);
 
       strJson = inspector.getInspectorByKey('hover_btn1');
@@ -92,7 +93,7 @@ export default function onHoverUndefined() {
 
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(500);
-      await driver.mouseMoveTo(point);
+      await driver.mouseMoveTo({x: point.x, y: point.y, displayId: displayID});
       await CommonFunc.sleep(500);
       strJson = inspector.getInspectorByKey('hover_btn1');
       res = JSON.parseJsonElement(strJson).getElement('$attrs').getString('label');

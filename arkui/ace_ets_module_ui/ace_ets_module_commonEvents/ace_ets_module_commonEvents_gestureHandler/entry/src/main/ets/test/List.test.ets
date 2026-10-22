@@ -77,8 +77,8 @@ export default function testsuite() {
   panGestureTest();
   pinchGestureTest();
   rotationGestureTest();
-  swipeGestureTest();
   tapGestureTest();
+  swipeGestureTest();
   UIObserverEvent();
   distanceThresholdTest();
   uIObserverClickNullUndefinedTest();

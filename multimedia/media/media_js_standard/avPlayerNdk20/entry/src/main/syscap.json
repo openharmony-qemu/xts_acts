@@ -18,7 +18,6 @@
                     "SystemCapability.Multimedia.Media.VideoRecorder",
                     "SystemCapability.Multimedia.Media.AVPlayer",
                     "SystemCapability.Multimedia.Media.AVRecorder",
-                    "SystemCapability.Multimedia.Media.LowPowerAVSink",
                     "SystemCapability.Multimedia.Media.AVMetadataExtractor",
                     "SystemCapability.Multimedia.VideoProcessingEngine",
                     "SystemCapability.Ability.AbilityRuntime.Core",

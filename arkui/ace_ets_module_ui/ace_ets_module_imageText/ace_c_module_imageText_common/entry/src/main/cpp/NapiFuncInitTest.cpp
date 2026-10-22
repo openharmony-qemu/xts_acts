@@ -32,6 +32,7 @@
 #include "TextCommon/TextLayoutManagerWithEncodingTest.cpp"
 #include "TextCommon/SetUiDvsyncSwitchTest.cpp"
 #include "TextCommon/ImageSpanResizableTest.cpp"
+#include "TextCommon/TextStrokeTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -285,6 +286,45 @@ static napi_value Init(napi_env env, napi_value exports)
             ImageAttachmentResizableTest_008, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"ImageAttachmentResizableTest_009", nullptr,
             ImageAttachmentResizableTest_009, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"TextStrokeTest_001", nullptr, TextStrokeTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextStrokeTest_002", nullptr, TextStrokeTest_002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextStrokeTest_003", nullptr, TextStrokeTest_003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextStrokeTest_004", nullptr, TextStrokeTest_004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextStrokeTest_005", nullptr, TextStrokeTest_005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextStrokeTest_006", nullptr, TextStrokeTest_006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextStrokeTest_007", nullptr, TextStrokeTest_007, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextStrokeTest_008", nullptr, TextStrokeTest_008, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextStrokeTest_009", nullptr, TextStrokeTest_009, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextStrokeTest_010", nullptr, TextStrokeTest_010, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextStrokeTest_011", nullptr, TextStrokeTest_011, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextStrokeTest_012", nullptr, TextStrokeTest_012, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextStrokeTest_013", nullptr, TextStrokeTest_013, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextStrokeTest_014", nullptr, TextStrokeTest_014, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextStrokeTest_015", nullptr, TextStrokeTest_015, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextStrokeTest_016", nullptr, TextStrokeTest_016, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextStrokeTest_017", nullptr, TextStrokeTest_017, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextStrokeTest_018", nullptr, TextStrokeTest_018, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextStrokeTest_019", nullptr, TextStrokeTest_019, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextStrokeTest_020", nullptr, TextStrokeTest_020, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextStrokeTest_021", nullptr, TextStrokeTest_021, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextStrokeTest_022", nullptr, TextStrokeTest_022, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextStrokeTest_023", nullptr, TextStrokeTest_023, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextStrokeTest_024", nullptr, TextStrokeTest_024, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextStrokeTest_025", nullptr, TextStrokeTest_025, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextStrokeTest_026", nullptr, TextStrokeTest_026, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextStrokeTest_027", nullptr, TextStrokeTest_027, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextStrokeTest_028", nullptr, TextStrokeTest_028, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextStrokeTest_029", nullptr, TextStrokeTest_029, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextStrokeTest_030", nullptr, TextStrokeTest_030, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextStrokeTest_031", nullptr, TextStrokeTest_031, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextStrokeTest_032", nullptr, TextStrokeTest_032, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextStrokeTest_033", nullptr, TextStrokeTest_033, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextStrokeTest_034", nullptr, TextStrokeTest_034, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextStrokeTest_035", nullptr, TextStrokeTest_035, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextStrokeTest_036", nullptr, TextStrokeTest_036, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextStrokeTest_037", nullptr, TextStrokeTest_037, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextStrokeTest_038", nullptr, TextStrokeTest_038, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");

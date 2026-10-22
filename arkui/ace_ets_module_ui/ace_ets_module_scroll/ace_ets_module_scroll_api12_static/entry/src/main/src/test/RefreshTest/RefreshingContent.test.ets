@@ -63,7 +63,9 @@ it('RefreshingContent_static_0100', Level.LEVEL0, async (done: () => void): Prom
       await CommonFunc.sleep(1000);
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
-      let swiperOffset = CommonFunc.getComponentRectOnScreen('refresh_content');
+      let swipeComp = await driver.findComponent(ON.id('refresh_content'));
+      let swiperOffset = await swipeComp!.getBounds();
+      let displayId = await swipeComp!.getDisplayId();
       let top = swiperOffset.top;
       let right = swiperOffset.right;
       let left = swiperOffset.left;
@@ -72,8 +74,13 @@ it('RefreshingContent_static_0100', Level.LEVEL0, async (done: () => void): Prom
       let height = bottom - top;
       let width = right - left;
       await CommonFunc.sleep(1000);
-      await driver.swipe((Math.round(left + width * 0.2)).toInt(), (Math.round(top + height / 10)).toInt(),
-        (Math.round(left + width * 0.2)).toInt(), (Math.round(bottom - height / 10)).toInt());
+      await driver.swipeBetween(
+        { x: (Number.parseInt(`${(Math.round(left + width * 0.2)).toInt()}`)).toInt(),
+          y: (Number.parseInt(`${(Math.round(top + height / 10)).toInt()}`)).toInt(),
+          displayId: displayId },
+        { x: (Number.parseInt(`${(Math.round(left + width * 0.2)).toInt()}`)).toInt(),
+          y: (Number.parseInt(`${(Math.round(bottom - height / 10)).toInt()}`)).toInt(),
+          displayId: displayId });
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('RefreshingContent');
       let obj = JSON.parseJsonElement(strJson);

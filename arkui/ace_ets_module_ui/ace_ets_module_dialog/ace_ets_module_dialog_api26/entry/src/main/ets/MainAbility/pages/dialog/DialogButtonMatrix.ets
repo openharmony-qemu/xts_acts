@@ -26,10 +26,11 @@ struct DialogButtonMatrix {
 
   build() {
     Scroll() {
-      Column({ space: 8 }) {
+      Column() {
         Text('DialogButton property matrix').fontSize(18).fontWeight(FontWeight.Bold)
         Text('action=' + this.lastAction).id('btn_matrix_action')
-        Button('value only')
+        Row() {
+          Button('value only')
           .id('btn_matrix_value')
           .onClick(async () => {
             await this.presenter().present({
@@ -54,7 +55,9 @@ struct DialogButtonMatrix {
               }]
             });
           })
-        Button('backgroundColor')
+        }
+        Row() {
+          Button('backgroundColor')
           .id('btn_matrix_bg')
           .onClick(async () => {
             await this.presenter().present({
@@ -80,7 +83,9 @@ struct DialogButtonMatrix {
               }]
             });
           })
-        Button('primary true')
+        }
+        Row() {
+          Button('primary true')
           .id('btn_matrix_primary')
           .onClick(async () => {
             await this.presenter().present({
@@ -106,7 +111,9 @@ struct DialogButtonMatrix {
               }]
             });
           })
-        Button('style HIGHLIGHT')
+        }
+        Row() {
+          Button('style HIGHLIGHT')
           .id('btn_matrix_style_hi')
           .onClick(async () => {
             await this.presenter().present({
@@ -146,6 +153,8 @@ struct DialogButtonMatrix {
               ]
             });
           })
+        }
+
         Button('action callback')
           .id('btn_matrix_action_cb')
           .onClick(async () => {

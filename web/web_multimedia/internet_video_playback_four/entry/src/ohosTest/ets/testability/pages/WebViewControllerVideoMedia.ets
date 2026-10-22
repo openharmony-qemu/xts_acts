@@ -18,8 +18,8 @@ import Utils from '../../test/Utils.test';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import { Driver, ON } from '@ohos.UiTest';
-import { UiDriver } from '@kit.TestKit';
 import { KeyCode } from '@kit.InputKit';
+
 const driver = Driver.create();
 const EVENT_ID_SET_EMIT_KEY = 350000;
 
@@ -27,10 +27,11 @@ const EVENT_ID_SET_EMIT_KEY = 350000;
 @Component
 struct WebViewControllerVideoMedia {
   @State str: string = ""
-  @State userAgentPC:string = "";
-  @State isPageEnd:number = -1;
+  @State userAgentPC: string = "";
+  @State isPageEnd: number = -1;
   @State isReceive: number = -1;
   controller: webView.WebviewController = new webView.WebviewController();
+
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
       eventId: EVENT_ID_SET_EMIT_KEY,
@@ -59,8 +60,8 @@ struct WebViewControllerVideoMedia {
       Row() {
         Button("WebViewControllerVideoMedia").id('WebViewControllerVideoMedia').onClick(async () => {
           console.info("key==>" + this.str)
-          await Utils.waitForExist(()=>this.isReceive, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
-          await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+          await Utils.waitForExist(() => this.isReceive, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+          await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
           this.isReceive = -1;
           switch (this.str) {
             case "StopAllMedia0100": {
@@ -68,11 +69,11 @@ struct WebViewControllerVideoMedia {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video1.html"))
-                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(3, 350010)
-                }else{
+                } else {
                   this.controller.runJavaScript("playVideo()");
                   await Utils.sleep(5000);
                   this.controller.stopAllMedia();
@@ -91,11 +92,11 @@ struct WebViewControllerVideoMedia {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video1.html"))
-                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(0, 350020)
-                }else{
+                } else {
                   this.controller.stopAllMedia();
                   await Utils.sleep(2000);
                   res = this.controller.getMediaPlaybackState();
@@ -112,12 +113,12 @@ struct WebViewControllerVideoMedia {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video1.html"))
-                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.userAgentPC = this.controller.getUserAgent();
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(3, 350030)
-                }else{
+                } else {
                   this.controller.runJavaScript("playVideo()");
                   await Utils.sleep(3000);
                   this.controller.stopAllMedia();
@@ -138,11 +139,11 @@ struct WebViewControllerVideoMedia {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video1.html"))
-                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(2, 350040)
-                }else{
+                } else {
                   this.controller.runJavaScript("playVideo()");
                   await Utils.sleep(5000);
                   this.controller.runJavaScript("pauseVideo()");
@@ -163,11 +164,11 @@ struct WebViewControllerVideoMedia {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video1.html"))
-                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(2, 350050)
-                }else{
+                } else {
                   this.controller.runJavaScript("playVideo()");
                   await Utils.sleep(5000);
                   this.controller.pauseAllMedia();
@@ -188,11 +189,11 @@ struct WebViewControllerVideoMedia {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video2.html"))
-                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(3, 350060)
-                }else{
+                } else {
                   this.controller.runJavaScript("playVideo1()");
                   this.controller.runJavaScript("playVideo2()");
                   await Utils.sleep(3000);
@@ -212,11 +213,11 @@ struct WebViewControllerVideoMedia {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video2.html"))
-                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(3, 350070)
-                }else{
+                } else {
                   this.controller.runJavaScript("playVideo1()");
                   this.controller.runJavaScript("playVideo2()");
                   await Utils.sleep(3000);
@@ -238,11 +239,11 @@ struct WebViewControllerVideoMedia {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video3.html"))
-                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(3, 350080)
-                }else{
+                } else {
                   this.controller.runJavaScript("playVideo1()");
                   this.controller.runJavaScript("playVideo2()");
                   this.controller.runJavaScript("playAudio()");
@@ -263,11 +264,11 @@ struct WebViewControllerVideoMedia {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video1.html"))
-                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(1, 350100)
-                }else{
+                } else {
                   this.controller.runJavaScript("playVideo()");
                   await Utils.sleep(2000);
                   this.controller.pauseAllMedia();
@@ -288,11 +289,11 @@ struct WebViewControllerVideoMedia {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video1.html"))
-                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(0, 350120)
-                }else{
+                } else {
                   this.controller.resumeAllMedia();
                   await Utils.sleep(2000);
                   res = this.controller.getMediaPlaybackState();
@@ -309,11 +310,11 @@ struct WebViewControllerVideoMedia {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video1.html"))
-                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(1, 350130)
-                }else{
+                } else {
                   this.controller.runJavaScript("playVideo()");
                   await Utils.sleep(5000);
                   this.controller.resumeAllMedia();
@@ -332,11 +333,11 @@ struct WebViewControllerVideoMedia {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video1.html"))
-                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(2, 350140)
-                }else{
+                } else {
                   this.controller.runJavaScript("playVideo()");
                   await Utils.sleep(3000);
                   this.controller.runJavaScript("pauseVideo()");
@@ -358,14 +359,14 @@ struct WebViewControllerVideoMedia {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video1.html"))
-                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.userAgentPC = this.controller.getUserAgent();
                 this.isPageEnd = -1;
                 this.controller.refresh();
-                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(3, 350150)
-                }else{
+                } else {
                   this.controller.runJavaScript("playVideo()");
                   await Utils.sleep(5000);
                   this.controller.stopAllMedia();
@@ -386,11 +387,11 @@ struct WebViewControllerVideoMedia {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video2.html"))
-                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(1, 350160)
-                }else{
+                } else {
                   this.controller.runJavaScript("playVideo1()");
                   this.controller.runJavaScript("playVideo2()");
                   await Utils.sleep(2000);
@@ -412,11 +413,11 @@ struct WebViewControllerVideoMedia {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video3.html"))
-                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(1, 350170)
-                }else{
+                } else {
                   this.controller.runJavaScript("playVideo1()");
                   this.controller.runJavaScript("playVideo2()");
                   this.controller.runJavaScript("playAudio()");
@@ -439,11 +440,11 @@ struct WebViewControllerVideoMedia {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video1.html"))
-                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(2, 350210)
-                }else{
+                } else {
                   this.controller.runJavaScript("playVideo()");
                   await Utils.sleep(2000);
                   this.controller.pauseAllMedia();
@@ -462,11 +463,11 @@ struct WebViewControllerVideoMedia {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video1.html"))
-                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(2, 350220)
-                }else{
+                } else {
                   this.controller.pauseAllMedia();
                   await Utils.sleep(2000);
                   res = this.controller.getMediaPlaybackState();
@@ -483,11 +484,11 @@ struct WebViewControllerVideoMedia {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video1.html"))
-                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(2, 350230)
-                }else{
+                } else {
                   this.controller.runJavaScript("playVideo()");
                   await Utils.sleep(2000);
                   this.controller.stopAllMedia();
@@ -508,11 +509,11 @@ struct WebViewControllerVideoMedia {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video1.html"))
-                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(2, 350240)
-                }else{
+                } else {
                   this.controller.runJavaScript("playVideo()");
                   await Utils.sleep(2000);
                   this.controller.runJavaScript("pauseVideo()");
@@ -533,11 +534,11 @@ struct WebViewControllerVideoMedia {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video1.html"))
-                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(2, 350250)
-                }else{
+                } else {
                   this.controller.runJavaScript("playVideo()");
                   await Utils.sleep(2000);
                   this.controller.pauseAllMedia();
@@ -558,11 +559,11 @@ struct WebViewControllerVideoMedia {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video2.html"))
-                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(2, 350260)
-                }else{
+                } else {
                   this.controller.runJavaScript("playVideo1()");
                   this.controller.runJavaScript("playVideo2()");
                   await Utils.sleep(2000);
@@ -582,11 +583,11 @@ struct WebViewControllerVideoMedia {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video2.html"))
-                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(2, 350270)
-                }else{
+                } else {
                   this.controller.runJavaScript("playVideo1()");
                   this.controller.runJavaScript("playVideo2()");
                   await Utils.sleep(2000);
@@ -608,11 +609,11 @@ struct WebViewControllerVideoMedia {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video3.html"))
-                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(2, 350280)
-                }else{
+                } else {
                   this.controller.runJavaScript("playVideo1()");
                   this.controller.runJavaScript("playVideo2()");
                   this.controller.runJavaScript("playAudio()");
@@ -635,13 +636,14 @@ struct WebViewControllerVideoMedia {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video1.html"))
-                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(true, 350310)
-                }else{
-                  let driver: UiDriver = UiDriver.create();
-                  await driver.triggerKey(KeyCode.KEYCODE_ENTER);
+                } else {
+                  const displayId: number =
+                    await (await driver.findComponent(ON.id('WebViewControllerVideoMedia'))).getDisplayId();
+                  await driver.triggerKey(KeyCode.KEYCODE_ENTER, displayId);
                   await Utils.sleep(2000);
                   this.controller.runJavaScript("enterFullScreen()");
                   await Utils.sleep(2000);
@@ -655,7 +657,7 @@ struct WebViewControllerVideoMedia {
                     console.info("key==>isFull 1:" + isFull)
                     this.isPageEnd = 3;
                   })
-                  await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 3, 1000);
+                  await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 3, 1000);
                   res = this.controller.getMediaPlaybackState();
                   console.log("CloseAllMediaPresentations0100 res: " + res);
                   if ((num1 == 0) && (res == 3)) {
@@ -675,13 +677,14 @@ struct WebViewControllerVideoMedia {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video1.html"))
-                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(true, 350320)
-                }else{
-                  let driver: UiDriver = UiDriver.create();
-                  await driver.triggerKey(KeyCode.KEYCODE_ENTER);
+                } else {
+                  const displayId: number =
+                    await (await driver.findComponent(ON.id('WebViewControllerVideoMedia'))).getDisplayId();
+                  await driver.triggerKey(KeyCode.KEYCODE_ENTER, displayId);
                   await Utils.sleep(2000);
                   this.controller.runJavaScript("enterFullScreen()");
                   await Utils.sleep(2000);
@@ -693,7 +696,7 @@ struct WebViewControllerVideoMedia {
                     console.info("key==>isFull 2:" + isFull)
                     this.isPageEnd = 3;
                   })
-                  await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 3, 1000);
+                  await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 3, 1000);
                   res = this.controller.getMediaPlaybackState();
                   console.log("CloseAllMediaPresentations0200 res: " + res);
                   if ((num1 == 0) && (res == 0)) {
@@ -713,13 +716,14 @@ struct WebViewControllerVideoMedia {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video1.html"))
-                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(true, 350330)
-                }else{
-                  let driver: UiDriver = UiDriver.create();
-                  await driver.triggerKey(KeyCode.KEYCODE_ENTER);
+                } else {
+                  const displayId: number =
+                    await (await driver.findComponent(ON.id('WebViewControllerVideoMedia'))).getDisplayId();
+                  await driver.triggerKey(KeyCode.KEYCODE_ENTER, displayId);
                   await Utils.sleep(2000);
                   this.controller.runJavaScript("enterFullScreen()");
                   await Utils.sleep(2000);
@@ -752,13 +756,14 @@ struct WebViewControllerVideoMedia {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video1.html"))
-                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(true, 350340)
-                }else{
-                  let driver: UiDriver = UiDriver.create();
-                  await driver.triggerKey(KeyCode.KEYCODE_ENTER);
+                } else {
+                  const displayId: number =
+                    await (await driver.findComponent(ON.id('WebViewControllerVideoMedia'))).getDisplayId();
+                  await driver.triggerKey(KeyCode.KEYCODE_ENTER, displayId);
                   await Utils.sleep(2000);
                   this.controller.runJavaScript("enterFullScreen()");
                   await Utils.sleep(2000);
@@ -791,13 +796,14 @@ struct WebViewControllerVideoMedia {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video1.html"))
-                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(true, 350350)
-                }else{
-                  let driver: UiDriver = UiDriver.create();
-                  await driver.triggerKey(KeyCode.KEYCODE_ENTER);
+                } else {
+                  const displayId: number =
+                    await (await driver.findComponent(ON.id('WebViewControllerVideoMedia'))).getDisplayId();
+                  await driver.triggerKey(KeyCode.KEYCODE_ENTER, displayId);
                   await Utils.sleep(2000);
                   this.controller.runJavaScript("enterFullScreen()");
                   await Utils.sleep(2000);
@@ -829,12 +835,12 @@ struct WebViewControllerVideoMedia {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video1.html"))
-                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
 
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(0, 350360)
-                }else{
+                } else {
                   res = this.controller.getMediaPlaybackState();
                   console.log("GetMediaPlaybackState0100 res: " + res);
                   Utils.emitEvent(res, 350360)
@@ -850,11 +856,11 @@ struct WebViewControllerVideoMedia {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video1.html"))
-                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(1, 350370)
-                }else{
+                } else {
                   this.controller.runJavaScript("playVideo()");
                   await Utils.sleep(3000);
                   res = this.controller.getMediaPlaybackState();
@@ -871,11 +877,11 @@ struct WebViewControllerVideoMedia {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video1.html"))
-                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(2, 350380)
-                }else{
+                } else {
                   this.controller.runJavaScript("playVideo()");
                   await Utils.sleep(2000);
                   this.controller.pauseAllMedia()
@@ -895,11 +901,11 @@ struct WebViewControllerVideoMedia {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video1.html"))
-                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(2, 350390)
-                }else{
+                } else {
                   this.controller.runJavaScript("playVideo()");
                   await Utils.sleep(2000);
                   this.controller.runJavaScript("pauseVideo()");
@@ -919,11 +925,11 @@ struct WebViewControllerVideoMedia {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video1.html"))
-                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(3, 350400)
-                }else{
+                } else {
                   this.controller.runJavaScript("playVideo()");
                   await Utils.sleep(2000);
                   this.controller.stopAllMedia();
@@ -944,13 +950,14 @@ struct WebViewControllerVideoMedia {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video1.html"))
-                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(true, 350410)
-                }else{
-                  let driver: UiDriver = UiDriver.create();
-                  await driver.triggerKey(KeyCode.KEYCODE_ENTER);
+                } else {
+                  const displayId: number =
+                    await (await driver.findComponent(ON.id('WebViewControllerVideoMedia'))).getDisplayId();
+                  await driver.triggerKey(KeyCode.KEYCODE_ENTER, displayId);
                   await Utils.sleep(2000);
                   this.controller.runJavaScript("enterFullScreen()");
                   await Utils.sleep(2000);
@@ -969,7 +976,7 @@ struct WebViewControllerVideoMedia {
                       this.isPageEnd = 3;
                     }
                   })
-                  await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 3, 1000);
+                  await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 3, 1000);
                   Utils.emitEvent(back_res, 350410)
                 }
               } catch (error) {
@@ -982,11 +989,11 @@ struct WebViewControllerVideoMedia {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video2.html"))
-                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(0, 350420)
-                }else{
+                } else {
                   res = this.controller.getMediaPlaybackState();
                   console.log("GetMediaPlaybackState0700 res: " + res);
                   Utils.emitEvent(res, 350420)
@@ -1001,11 +1008,11 @@ struct WebViewControllerVideoMedia {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video2.html"))
-                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(1, 350430)
-                }else{
+                } else {
                   this.controller.runJavaScript("playVideo1()");
                   await Utils.sleep(6000);
                   res = this.controller.getMediaPlaybackState();
@@ -1022,11 +1029,11 @@ struct WebViewControllerVideoMedia {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video2.html"))
-                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(1, 350440)
-                }else{
+                } else {
                   this.controller.runJavaScript("playVideo1()");
                   this.controller.runJavaScript("playVideo2()");
                   await Utils.sleep(2000);
@@ -1044,11 +1051,11 @@ struct WebViewControllerVideoMedia {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video2.html"))
-                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(1, 350450)
-                }else{
+                } else {
                   this.controller.runJavaScript("playVideo1()");
                   this.controller.runJavaScript("playVideo2()");
                   await Utils.sleep(2000);
@@ -1068,11 +1075,11 @@ struct WebViewControllerVideoMedia {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video2.html"))
-                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(2, 350460)
-                }else{
+                } else {
                   this.controller.runJavaScript("playVideo1()");
                   this.controller.runJavaScript("playVideo2()");
                   await Utils.sleep(3000);
@@ -1093,12 +1100,12 @@ struct WebViewControllerVideoMedia {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video2.html"))
-                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
 
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(2, 350470)
-                }else{
+                } else {
                   this.controller.runJavaScript("playVideo1()");
                   this.controller.runJavaScript("playVideo2()");
                   await Utils.sleep(2000);
@@ -1118,11 +1125,11 @@ struct WebViewControllerVideoMedia {
               try {
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile("video2.html"))
-                await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
+                await Utils.waitForExist(() => this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   Utils.emitEvent(1, 350480)
-                }else{
+                } else {
                   this.controller.runJavaScript("playVideo1()");
                   this.controller.runJavaScript("playVideo2()");
                   await Utils.sleep(3000);

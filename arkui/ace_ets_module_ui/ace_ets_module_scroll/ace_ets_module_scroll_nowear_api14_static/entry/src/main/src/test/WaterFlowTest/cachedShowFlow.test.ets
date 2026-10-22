@@ -66,7 +66,8 @@ it('cachedShowFlow_static_0100', Level.LEVEL1, async (done: () => void): Promise
       await CommonFunc.sleep(1000);
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('WaterFlow');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('cachedCount')).assertEqual(6);
-      driver.assertComponentExist(ON.text('N9'));
+      let n9Comp = await driver.findComponent(ON.id('show_flow_9'));
+      expect(n9Comp !== null).assertTrue();
       console.info('[cachedShowFlow_static_0100] END');
       done();
     });
@@ -190,7 +191,8 @@ it('cachedShowFlow_static_0400', Level.LEVEL1, async (done: () => void): Promise
         let text = onText?.getText();
         await CommonFunc.sleep(1000);
         console.info("[cachedShowFlow_static_0400'] text is: " + text);
-        driver.assertComponentExist(ON.text('N9'));
+        let n9Comp2 = await driver.findComponent(ON.id('show_flow_9'));
+        expect(n9Comp2 !== null).assertTrue();
         console.info('[cachedShowFlow_static_0400] END');
         done();
       } catch (error) {

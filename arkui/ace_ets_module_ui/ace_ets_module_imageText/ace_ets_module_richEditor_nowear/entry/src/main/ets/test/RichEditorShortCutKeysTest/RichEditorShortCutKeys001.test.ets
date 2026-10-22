@@ -70,7 +70,7 @@ export default function RichEditorShortCutKeys001() {
 
       let richEditor = await driver.findComponent(ON.id('RichEditor'));
       let pointCenter1 = await richEditor.getBoundsCenter();
-      await driver.click(pointCenter1.x, pointCenter1.y);
+      await driver.clickAt({ x: pointCenter1.x, y: pointCenter1.y, displayId: displayID });
       await CommonFunc.sleep(1000);
 
       let select = await driver.findComponent(ON.id('select'))
@@ -82,10 +82,10 @@ export default function RichEditorShortCutKeys001() {
 
       let rich = await driver.findComponent(ON.id('RichEditorShortCutKeys001'));
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
       await CommonFunc.sleep(1000);
 
-      await driver.longClick(pointCenter.x, pointCenter.y);
+      await driver.longClickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
       await CommonFunc.sleep(1000);
 
       driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V, 0, displayID);

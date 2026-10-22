@@ -52,6 +52,7 @@ import genericSpecTypeCheckingEnhancementTest from "./GenericSpecTypeCheckingEnh
 import classPropertyMappingNormalizationTest from "./ClassPropertyMappingNormalization/ClassPropertyMappingNormalization.test";	 
 import symbolAndSyntaxDisambiguationTest from "./SymbolAndSyntaxDisambiguation/SymbolAndSyntaxDisambiguation.test";
 import ImpliciteExportTest from "./ImplicitExport/ImplicitExportTest.test";
+import compilerFixE2ETest from "./CompilerFixE2E/CompilerFixE2E.test.ets";
 
 export default function testsuite() {
   builtinsBlockTest();
@@ -108,4 +109,5 @@ export default function testsuite() {
   classPropertyMappingNormalizationTest();	 
   symbolAndSyntaxDisambiguationTest();
   ImpliciteExportTest()
+  compilerFixE2ETest();
 }

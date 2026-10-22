@@ -1986,6 +1986,183 @@ napi_value OhHiappEventSetEventConfig43(napi_env env, napi_callback_info info)
     return result;
 }
 
+napi_value OhHiappEventSetEventConfigPublishOnNextLaunch(napi_env env, napi_callback_info info) {
+    HiAppEvent_Config *config = OH_HiAppEvent_CreateConfig();
+
+    size_t argc = 2;
+    napi_value args[2] = {nullptr};
+
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_valuetype valuetype0;
+    napi_typeof(env, args[0], &valuetype0);
+    napi_valuetype valuetype1;
+    napi_typeof(env, args[1], &valuetype1);
+    int32_t value0;
+    napi_get_value_int32(env, args[0], &value0);
+    int32_t value1;
+    napi_get_value_int32(env, args[1], &value1);
+
+    int returnValue = -1;
+
+    switch ((int)value0) {
+    case 1: {
+        OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_PUBLISH_ON_NEXT_LAUNCH, "111111");
+        returnValue = OH_HiAppEvent_SetEventConfig(EVENT_APP_CRASH, config);
+        break;
+    }
+
+    case 2: {
+        OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_PUBLISH_ON_NEXT_LAUNCH, "hahaaa");
+        returnValue = OH_HiAppEvent_SetEventConfig(EVENT_APP_CRASH, config);
+        break;
+    }
+
+    case 3: {
+        OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_PUBLISH_ON_NEXT_LAUNCH, 0);
+        returnValue = OH_HiAppEvent_SetEventConfig(EVENT_APP_CRASH, config);
+        break;
+    }
+
+    case 4: {
+        OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_PUBLISH_ON_NEXT_LAUNCH, "0");
+        returnValue = OH_HiAppEvent_SetEventConfig(EVENT_APP_CRASH, config);
+        break;
+    }
+
+    case 5: {
+        OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_PUBLISH_ON_NEXT_LAUNCH, "5242880");
+        returnValue = OH_HiAppEvent_SetEventConfig(EVENT_APP_CRASH, config);
+        break;
+    }
+
+    case 6: {
+        OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_PUBLISH_ON_NEXT_LAUNCH, "-1");
+        returnValue = OH_HiAppEvent_SetEventConfig(EVENT_APP_CRASH, config);
+        break;
+    }
+
+    case 7: {
+        OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_PUBLISH_ON_NEXT_LAUNCH, "1aa1111");
+        returnValue = OH_HiAppEvent_SetEventConfig(EVENT_APP_CRASH, config);
+        break;
+    }
+
+    case 8: {
+        OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_PUBLISH_ON_NEXT_LAUNCH, "");
+        returnValue = OH_HiAppEvent_SetEventConfig(EVENT_APP_CRASH, config);
+        break;
+    }
+
+    case 9: {
+        OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_PUBLISH_ON_NEXT_LAUNCH,
+                                    "sajd;lsjad\\ks!!@@#$%%^%^&&*");
+        returnValue = OH_HiAppEvent_SetEventConfig(EVENT_APP_CRASH, config);
+        break;
+    }
+
+    case 10: {
+        OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_PUBLISH_ON_NEXT_LAUNCH, nullptr);
+        returnValue = OH_HiAppEvent_SetEventConfig(EVENT_APP_CRASH, config);
+        break;
+    }
+
+    case 11: {
+        OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_PUBLISH_ON_NEXT_LAUNCH, NULL);
+        returnValue = OH_HiAppEvent_SetEventConfig(EVENT_APP_CRASH, config);
+        break;
+    }
+
+    case 12: {
+        OH_HiAppEvent_SetConfigItem(
+            config, OH_APP_CRASH_PARAM_PUBLISH_ON_NEXT_LAUNCH,
+            "11111111116546546546165198919861998198191851561115615615615115115611515159669198189181");
+        returnValue = OH_HiAppEvent_SetEventConfig(EVENT_APP_CRASH, config);
+        break;
+    }
+
+    case 13: {
+        OH_HiAppEvent_SetConfigItem(
+            nullptr, OH_APP_CRASH_PARAM_PUBLISH_ON_NEXT_LAUNCH,
+            "11111111116546546546165198919861998198191851561115615615615115115611515159669198189181");
+        returnValue = OH_HiAppEvent_SetEventConfig(EVENT_APP_CRASH, config);
+        break;
+    }
+
+    case 14: {
+        OH_HiAppEvent_SetConfigItem(NULL, OH_APP_CRASH_PARAM_PUBLISH_ON_NEXT_LAUNCH, "true");
+        returnValue = OH_HiAppEvent_SetEventConfig(EVENT_APP_CRASH, config);
+        break;
+    }
+
+    case 15: {
+        returnValue = OH_HiAppEvent_SetConfigItem(
+            nullptr, OH_APP_CRASH_PARAM_PUBLISH_ON_NEXT_LAUNCH,
+            "11111111116546546546165198919861998198191851561115615615615115115611515159669198189181");
+        break;
+    }
+
+    case 16: {
+        returnValue = OH_HiAppEvent_SetConfigItem(
+            NULL, OH_APP_CRASH_PARAM_PUBLISH_ON_NEXT_LAUNCH, "true");
+        break;
+    }
+
+    case 17: {
+        returnValue = OH_HiAppEvent_SetConfigItem(
+            config, OH_APP_CRASH_PARAM_PUBLISH_ON_NEXT_LAUNCH,
+            "11111111116546546546165198919861998198191851561115615615615115115611515159669198189181");
+        break;
+    }
+
+    case 18: {
+        OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_EXTEND_PC_LR_PRINTING, "true");
+        OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_LOG_FILE_CUTOFF_SZ_BYTES, "5242880");
+        OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_SIMPLIFY_VMA_PRINTING, "true");
+        OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_PUBLISH_ON_NEXT_LAUNCH, "true");
+        returnValue = OH_HiAppEvent_SetEventConfig(EVENT_APP_CRASH, config);
+        break;
+    }
+    case 19: {
+        returnValue = OH_HiAppEvent_SetConfigItem(
+            config, OH_APP_CRASH_PARAM_PUBLISH_ON_NEXT_LAUNCH, "true");
+        break;
+    }
+
+    case 20: {
+        returnValue = OH_HiAppEvent_SetConfigItem(
+            config, OH_APP_CRASH_PARAM_PUBLISH_ON_NEXT_LAUNCH, "false");
+        break;
+    }
+    case 21: {
+        OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_PUBLISH_ON_NEXT_LAUNCH, "true");
+        returnValue = OH_HiAppEvent_SetEventConfig(EVENT_APP_CRASH, config);
+        break;
+    }
+    case 22: {
+        OH_HiAppEvent_SetConfigItem(config, OH_APP_CRASH_PARAM_PUBLISH_ON_NEXT_LAUNCH, "false");
+        returnValue = OH_HiAppEvent_SetEventConfig(EVENT_APP_CRASH, config);
+        break;
+    }
+    }
+
+    int ret = -1;
+
+    OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.%{public}d, ", returnValue);
+    if (returnValue == HIAPPEVENT_SUCCESS) {
+        ret = 0;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.");
+    } else if (returnValue == HIAPPEVENT_INVALID_PARAM_VALUE) {
+        ret = 2;
+    } else {
+        ret = -1;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value fail %{public}d", ret);
+    }
+    OH_HiAppEvent_DestroyConfig(config);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
 
 napi_value OhHiappEventSetEventConfigMinidump(napi_env env, napi_callback_info info) {
     HiAppEvent_Config *config = OH_HiAppEvent_CreateConfig();
@@ -2880,6 +3057,7 @@ static napi_value Init(napi_env env, napi_value exports)
         { "CheckHiAppEventSysEventAppHicollte", nullptr, CheckHiAppEventSysEventAppHicollte, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "CheckHiAppEventSysEventAppCpuUsageHigh", nullptr, CheckHiAppEventSysEventAppCpuUsageHigh, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "CrashLink", nullptr, CrashLink, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiappEventSetEventConfigPublishOnNextLaunch", nullptr, OhHiappEventSetEventConfigPublishOnNextLaunch, nullptr, nullptr, nullptr, napi_default, nullptr },
 };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

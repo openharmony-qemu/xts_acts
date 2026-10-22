@@ -18,7 +18,7 @@ import { describe, it, expect, beforeAll, Level } from '@ohos/hypium-dynamic'
 import {
   photoKeys,
   fetchOption,
-  getFileAsset, getPermission, driveFn, sleep,
+  getFileAsset, getPermission, driveFn, sleep, checkResourceFile, createResource
 } from '../common'
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import common from '@ohos.app.ability.common';
@@ -72,6 +72,10 @@ export default function getReadOnlyFdTest () {
       await getPermission();
       await driveFn();
       await sleep(1000);
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      const fileNames: Array<string> = [ "01.jpg", "01.mp4" ];
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNames);
     });
 
     /**

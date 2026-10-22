@@ -55,12 +55,12 @@ export default function WebViewEnableDefaultContextMenuJsunit() {
      */
     it('EnableDefaultContextMenuStatic01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
+        let driver = Driver.create();
         await Utils.msSleep(1000);
         Utils.emitEvent("EnableDefaultContextMenuStatic01", EVENT_ID_SET_SUITE_KEY);
-        await Utils.msSleep(1000);
-        Utils.registerEvent("EnableDefaultContextMenuStatic01", true, 20260325, done);
-        let driver = Driver.create();
         await Utils.msSleep(2000);
+        Utils.registerEvent("EnableDefaultContextMenuStatic01", true, 20260325, done);
+        await Utils.msSleep(1000);
         let buttonThree = await driver.findComponent(ON.id('webEnableDefaultContextMenu'));
         await Utils.msSleep(1000);
         if(buttonThree) {
@@ -92,11 +92,12 @@ export default function WebViewEnableDefaultContextMenuJsunit() {
      */
     it('EnableDefaultContextMenuStatic02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        await Utils.msSleep(1000);
+        await Utils.msSleep(30000);
+        let driver = Driver.create();
+        await Utils.msSleep(5000);
         Utils.emitEvent("EnableDefaultContextMenuStatic02", EVENT_ID_SET_SUITE_KEY);
         await Utils.msSleep(1000);
         Utils.registerEvent("EnableDefaultContextMenuStatic02", true, 20260326, done);
-        let driver = Driver.create();
         await Utils.msSleep(2000);
         let buttonThree = await driver.findComponent(ON.id('webEnableDefaultContextMenu'));
         await Utils.msSleep(1000);
@@ -129,11 +130,12 @@ export default function WebViewEnableDefaultContextMenuJsunit() {
      */
     it('EnableDefaultContextMenuStatic03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        await Utils.msSleep(1000);
+        await Utils.msSleep(30000);
+        let driver = Driver.create();
+        await Utils.msSleep(5000);
         Utils.emitEvent("EnableDefaultContextMenuStatic03", EVENT_ID_SET_SUITE_KEY);
         await Utils.msSleep(1000);
         Utils.registerEvent("EnableDefaultContextMenuStatic03", true, 20260327, done);
-        let driver = Driver.create();
         await Utils.msSleep(2000);
         let buttonThree = await driver.findComponent(ON.id('webEnableDefaultContextMenu'));
         await Utils.msSleep(1000);
@@ -166,11 +168,12 @@ export default function WebViewEnableDefaultContextMenuJsunit() {
      */
     it('EnableDefaultContextMenuStatic04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        await Utils.msSleep(1000);
+        await Utils.msSleep(30000);
+        let driver = Driver.create();
+        await Utils.msSleep(5000);
         Utils.emitEvent("EnableDefaultContextMenuStatic04", EVENT_ID_SET_SUITE_KEY);
         await Utils.msSleep(1000);
         Utils.registerEvent("EnableDefaultContextMenuStatic04", true, 20260328, done);
-        let driver = Driver.create();
         await Utils.msSleep(2000);
         let buttonThree = await driver.findComponent(ON.id('webEnableDefaultContextMenu'));
         await Utils.msSleep(1000);

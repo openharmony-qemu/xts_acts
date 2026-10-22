@@ -15,8 +15,9 @@
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import { describe, it, expect, beforeAll, beforeEach, afterEach, afterAll, Level } from '@ohos/hypium-dynamic';
-import { getPermission, driveFn, LOG_TAG, fetchAllOption } from '../../common';
+import { getPermission, driveFn, LOG_TAG, fetchAllOption, checkResourceFile, createResource } from '../../common';
 import common from '@ohos.app.ability.common';
+import dataSharePredicates from '@ohos.data.dataSharePredicates';
 
 const TAG = LOG_TAG + 'constructor';
 
@@ -44,6 +45,10 @@ export default function MediaAssetChangeRequestConstructorTest() {
       console.info(TAG, 'beforeAll case');
       await getPermission();
       await driveFn();
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let fileNameList: Array<string> = [ "01.jpg" , "01.mp4" ];
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNameList);
     });
 
     beforeEach(() => {
@@ -70,6 +75,38 @@ export default function MediaAssetChangeRequestConstructorTest() {
       const testName = 'MediaAssetChangeRequest_constructor_promise_001';
       const fetchOptions = fetchAllOption();
       await constructorPromiseTest(done, testName, fetchOptions);
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_LIBRARY_CONSTRUCTOR_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_LIBRARY_CONSTRUCTOR_0200
+     * @tc.desc   constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_LIBRARY_CONSTRUCTOR_0200', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_LIBRARY_CONSTRUCTOR_0200';
+      try {
+        let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+        let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+        let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+        predicates.equalTo(photoAccessHelper.PhotoKeys.DISPLAY_NAME, '');
+        let fetchOptions: photoAccessHelper.FetchOptions = {
+          fetchColumns: [],
+          predicates: predicates
+        };
+        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOptions);
+        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+        let albumChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
+          new photoAccessHelper.MediaAssetChangeRequest(photoAsset);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(`${testName} :: error, err is ${error} ${error.code}`);
+        expect(error.code).assertEqual('14000011');
+        done();
+      }
     })
   })
 }

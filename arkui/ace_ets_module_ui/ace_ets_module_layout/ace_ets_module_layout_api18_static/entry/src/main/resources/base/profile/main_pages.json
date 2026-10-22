@@ -25,6 +25,12 @@
     "MainAbility/pages/TypeNode/TypeNodeGetRadioAttribute",
     "MainAbility/pages/TypeNode/TypeNodeGetSliderAttribute",
     "MainAbility/pages/TypeNode/TypeNodeGetToggleAttribute",
-    "MainAbility/pages/Stack/StackSyncLoadStatic"
+    "MainAbility/pages/Stack/StackSyncLoadStatic",
+    "MainAbility/pages/CustomLayout/UIContextApplyDefaultImmersiveStrategy",
+    "MainAbility/pages/CustomLayout/UIContextApplyDefaultImmersiveStrategyOther",
+    "MainAbility/pages/CustomLayout/UIContextApplyDefaultImmersiveStrategyNoParam",
+    "MainAbility/pages/CustomLayout/UIContextApplyDefaultImmersiveStrategyTwoParam",
+    "MainAbility/pages/CustomLayout/UIContextApplyDefaultImmersiveStrategyEmptyArray",
+    "MainAbility/pages/CustomLayout/UIContextApplyDefaultImmersiveStrategyNonEmptyArray"
   ]
 }

@@ -21,7 +21,7 @@ export default function scheme_handlerTest() {
      */
     it('TestArkWebSchemeHandler_SetUserData', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-        expect(nativeFunc.TestArkWebSchemeHandler_SetUserData()).assertEqual(17100100);
+        expect(nativeFunc.TestArkWebSchemeHandler_SetUserData()).assertEqual(17100101);
         done();
       });
 

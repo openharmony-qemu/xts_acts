@@ -23,7 +23,7 @@ import fs from '@ohos.file.fs';
 import {
   photoKeys,
   fetchOption,
-  createSandboxFileUri, getPermission, driveFn, sleep,
+  createSandboxFileUri, getPermission, driveFn, sleep, checkResourceFile, createResource
 } from '../common'
 import common from '@ohos.app.ability.common';
 
@@ -36,6 +36,11 @@ export default function requestImageNativeTest() {
       await getPermission();
       await driveFn();
       await sleep(1000);
+      const fileNames: Array<string> = [
+        "request_image_native.jpg", "native_request_gif.gif", "native_request_png.png",
+        "request_video_native.mp4", "native_request_error_jpg.jpg"];
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNames);
     });
 
     afterAll(async () => {

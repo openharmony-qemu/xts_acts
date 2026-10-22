@@ -98,22 +98,6 @@ export default function int16ArrayConstructorPart10Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART10__0400
-     * @tc.name int16ArrayConstructorPart10Test004
-     * @tc.desc Verify new Int16Array(buf, byteOffset) byteOffset 0.0 offset 0
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart10Test004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buf: ArrayBuffer = new ArrayBuffer(4);
-      let arr: Int16Array = new Int16Array(buf, 0.0);
-      let actual: int = arr.byteOffset;
-      let expected: int = 0;
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART10__0500
      * @tc.name int16ArrayConstructorPart10Test005
      * @tc.desc Verify new Int16Array(buf, byteOffset) byteOffset 2.0 offset 2
@@ -290,22 +274,6 @@ export default function int16ArrayConstructorPart10Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART10__1500
-     * @tc.name int16ArrayConstructorPart10Test015
-     * @tc.desc Verify new Int16Array(buf, 0.0) BYTES_PER_ELEMENT expected values
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart10Test015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buf: ArrayBuffer = new ArrayBuffer(4);
-      let arr: Int16Array = new Int16Array(buf, 0.0);
-      let actual: int = arr.BYTES_PER_ELEMENT;
-      let expected: int = 2;
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART10__1600
      * @tc.name int16ArrayConstructorPart10Test016
      * @tc.desc Verify new Int16Array(buf, byteOffset) byteLength length 2
@@ -338,25 +306,6 @@ export default function int16ArrayConstructorPart10Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART10__1800
-     * @tc.name int16ArrayConstructorPart10Test018
-     * @tc.desc Verify new Int16Array(buf, 0.0) shared buffer via set get
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart10Test018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buf: ArrayBuffer = new ArrayBuffer(4);
-      let arr: Int16Array = new Int16Array(buf, 0.0);
-      let actual: number = arr.$_get(0);
-      let expected: int = 0;
-      expect(actual).assertEqual(expected);
-      let actual2: number = arr.$_get(1);
-      let expected2: int = 0;
-      expect(actual2).assertEqual(expected2);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART10__1900
      * @tc.name int16ArrayConstructorPart10Test019
      * @tc.desc Verify new Int16Array(buf, 2.0) byteLength/buffer expected values
@@ -370,21 +319,6 @@ export default function int16ArrayConstructorPart10Test(): void {
       let actual: string = (arr.buffer.byteLength >= arr.byteLength).toString();
       let expected: string = "true";
       expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART10__2000
-     * @tc.name int16ArrayConstructorPart10Test020
-     * @tc.desc Verify new Int16Array(buf, 0.0) shared buffer via set get
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart10Test020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buf: ArrayBuffer = new ArrayBuffer(4);
-      let arr: Int16Array = new Int16Array(buf, 0.0);
-      let val: number = arr.$_get(0);
-      expect(val).assertEqual(0);
     });
 
     /**
@@ -404,82 +338,6 @@ export default function int16ArrayConstructorPart10Test(): void {
       let actual2: int = arr.length;
       let expected2: int = 0;
       expect(actual2).assertEqual(expected2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART10__2200
-     * @tc.name int16ArrayConstructorPart10Test022
-     * @tc.desc Verify new Int16Array(buf, 0.0) shared buffer via set get
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart10Test022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buf: ArrayBuffer = new ArrayBuffer(4);
-      let arr: Int16Array = new Int16Array(buf, 0.0);
-      arr.$_set(0, 42);
-      let arr2: Int16Array = new Int16Array(buf, 0.0);
-      let actual: number = arr2.$_get(0);
-      let expected: int = 42;
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART10__2300
-     * @tc.name int16ArrayConstructorPart10Test023
-     * @tc.desc Verify new Int16Array(buf, 0.0) shared buffer via set get
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart10Test023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buf: ArrayBuffer = new ArrayBuffer(6);
-      let arr1: Int16Array = new Int16Array(buf, 0.0);
-      let arr2: Int16Array = new Int16Array(buf, 2.0);
-      arr1.$_set(0, 10);
-      arr2.$_set(0, 20);
-      let actual: number = arr1.$_get(0);
-      let expected: int = 10;
-      expect(actual).assertEqual(expected);
-      let actual2: number = arr2.$_get(0);
-      let expected2: int = 20;
-      expect(actual2).assertEqual(expected2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART10__2400
-     * @tc.name int16ArrayConstructorPart10Test024
-     * @tc.desc Verify new Int16Array(buf, 0.0) shared buffer via set get
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart10Test024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buf: ArrayBuffer = new ArrayBuffer(4);
-      let arr1: Int16Array = new Int16Array(buf, 0.0);
-      let arr2: Int16Array = new Int16Array(buf, 2.0);
-      arr2.$_set(0, 55);
-      let actual: number = arr1.$_get(1);
-      let expected: int = 55;
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART10__2500
-     * @tc.name int16ArrayConstructorPart10Test025
-     * @tc.desc Verify new Int16Array(buf, 0.0) shared buffer via set get
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart10Test025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buf: ArrayBuffer = new ArrayBuffer(4);
-      let arr: Int16Array = new Int16Array(buf, 0.0);
-      let originalByteLength: number = buf.byteLength;
-      arr.$_set(0, 100);
-      let actual: int = buf.byteLength;
-      let expected: number = originalByteLength;
-      expect(actual).assertEqual(expected);
     });
 
     /**

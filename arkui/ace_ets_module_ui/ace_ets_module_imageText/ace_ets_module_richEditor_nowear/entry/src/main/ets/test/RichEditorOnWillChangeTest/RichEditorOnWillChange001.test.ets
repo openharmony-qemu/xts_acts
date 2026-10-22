@@ -98,7 +98,7 @@ export default function RichEditorOnWillChange001() {
       expect(length).assertEqual('rangeAfter_emoji:{"start":0,"end":2}');
 
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
       await CommonFunc.sleep(500);
 
       //KEYCODE_DEL

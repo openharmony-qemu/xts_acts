@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,8 +17,13 @@
 import bluetoothConnectionTest from "./BluetoothConnectionStatic.test";
 import bluetoothProfilesTest from "./BluetoothProfilesStatic.test";
 import bluetoothA2dpTest from "./BluetoothA2dpStatic.test"
-export default function testsuite() {
+import btBaseProfileTest from './BtBaseProfile.test';
+import btHidTest from './BtHid.test';
+
+export default function testsuite(): void {
   bluetoothA2dpTest();
   bluetoothConnectionTest();
   bluetoothProfilesTest();
+  btBaseProfileTest();
+  btHidTest();
 }

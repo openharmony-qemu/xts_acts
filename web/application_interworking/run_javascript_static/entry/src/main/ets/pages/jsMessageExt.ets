@@ -805,6 +805,15 @@ struct jsMessageExt {
               let router: Router = uiContext.getRouter();
               router.pushUrl({ url: 'pages/web' })
               console.log('push URL success')
+              break;
+            }
+
+            case 'GoSetResponseBodyPageStatic': {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/webResourceResponseSetResponseBodyParam' })
+              console.log('push setResponseBody page success')
+              break;
             }
 
           }

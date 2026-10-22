@@ -17,8 +17,8 @@ import { describe, beforeAll, it, expect, Level } from '@ohos/hypium-dynamic'
 import { getPermission, sleep, driveFn } from './common'
 import common from '@ohos.app.ability.common';
 
-export default function getPhotoAccessHelper() {
-  describe('getPhotoAccessHelper', () => {
+export default function getPhotoAccessHelperTest() {
+  describe('getPhotoAccessHelperTest', () => {
     let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
     beforeAll(async () => {
       console.info('beforeAll case')

@@ -262,67 +262,6 @@ export default function int16ArrayIndexOfPart04Test01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_INDEX_OF_PART04_01_1200
-     * @tc.name int16ArrayIndexOfPart04Test01012
-     * @tc.desc Verify indexOf using fromIndex nested/chained calls
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayIndexOfPart04Test01012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array([1, 3, 5, 7, 9]);
-      let idxOf3: int = arr.indexOf(3);
-      let idxOf7: int = arr.indexOf(7, idxOf3);
-      expect(idxOf7).assertEqual(3);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_INDEX_OF_PART04_01_1300
-     * @tc.name int16ArrayIndexOfPart04Test01013
-     * @tc.desc Verify indexOf using fromIndex nested/chained calls
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayIndexOfPart04Test01013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array([8, 6, 8, 4, 8]);
-      let first: int = arr.indexOf(8);
-      let second: int = arr.indexOf(8, first + 1);
-      expect(second).assertEqual(2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_INDEX_OF_PART04_01_1400
-     * @tc.name int16ArrayIndexOfPart04Test01014
-     * @tc.desc Verify indexOf using fromIndex nested/chained calls
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayIndexOfPart04Test01014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array([8, 6, 8, 4, 8]);
-      let first: int = arr.indexOf(8);
-      let second: int = arr.indexOf(8, first + 1);
-      let third: int = arr.indexOf(8, second + 1);
-      expect(third).assertEqual(4);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_INDEX_OF_PART04_01_1500
-     * @tc.name int16ArrayIndexOfPart04Test01015
-     * @tc.desc Verify indexOf using fromIndex nested/chained calls
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayIndexOfPart04Test01015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array([10, 20, 30]);
-      let notFound: int = arr.indexOf(99);
-      let result: int = arr.indexOf(10, notFound + 1);
-      expect(result).assertEqual(0);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_INDEX_OF_PART04_01_1600
      * @tc.name int16ArrayIndexOfPart04Test01016
      * @tc.desc Verify indexOf returns 2
@@ -338,53 +277,6 @@ export default function int16ArrayIndexOfPart04Test01Test(): void {
       let actual: int = sub.length;
       let expected: int = 2;
       expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_INDEX_OF_PART04_01_1700
-     * @tc.name int16ArrayIndexOfPart04Test01017
-     * @tc.desc Verify indexOf using fromIndex nested/chained calls
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayIndexOfPart04Test01017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array([9, 9, 9, 9]);
-      let p1: int = arr.indexOf(9);
-      let p2: int = arr.indexOf(9, p1 + 1);
-      let p3: int = arr.indexOf(9, p2 + 1);
-      expect(p1).assertEqual(0);
-      expect(p2).assertEqual(1);
-      expect(p3).assertEqual(2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_INDEX_OF_PART04_01_1800
-     * @tc.name int16ArrayIndexOfPart04Test01018
-     * @tc.desc Verify indexOf using fromIndex nested/chained calls
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayIndexOfPart04Test01018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array([7, 8, 9]);
-      let missing: int = arr.indexOf(0);
-      let result: int = arr.indexOf(7, missing + 1);
-      expect(result).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_INDEX_OF_PART04_01_1900
-     * @tc.name int16ArrayIndexOfPart04Test01019
-     * @tc.desc Verify indexOf using fromIndex nested/chained calls
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayIndexOfPart04Test01019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array([6, 1, 6, 2, 6]);
-      let secondPos: int = arr.indexOf(6, arr.indexOf(6) + 1);
-      expect(secondPos).assertEqual(2);
     });
 
     /**

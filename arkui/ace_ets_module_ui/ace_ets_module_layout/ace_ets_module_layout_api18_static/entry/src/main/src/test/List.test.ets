@@ -1,4 +1,5 @@
 'use static';
+
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+ 
 import ColumnSpaceResourceTest from './Column/ColumnSpaceResourceTest.test';
 import FlexSpaceResourceTest from './Flex/FlexSpaceResourceTest.test';
 import RowSpaceResourceTest from './Row/RowSpaceResourceTest.test';
@@ -38,6 +40,13 @@ import TypeNodeGetRadioAttribute from './TypeNode/TypeNodeGetRadioAttribute.test
 import TypeNodeGetSliderAttribute from './TypeNode/TypeNodeGetSliderAttribute.test';
 import TypeNodeGetToggleAttribute from './TypeNode/TypeNodeGetToggleAttribute.test';
 import StackSyncLoadStaticTest from './Stack/StackSyncLoadStaticTest.test';
+import UIContextApplyDefaultImmersiveStrategyTest from './CustomLayout/UIContextApplyDefaultImmersiveStrategyTest.test';
+import UIContextApplyDefaultImmersiveStrategyOtherTest from './CustomLayout/UIContextApplyDefaultImmersiveStrategyOtherTest.test';
+import UIContextApplyDefaultImmersiveStrategyNoParamTest from './CustomLayout/UIContextApplyDefaultImmersiveStrategyNoParamTest.test';
+import UIContextApplyDefaultImmersiveStrategyTwoParamTest from './CustomLayout/UIContextApplyDefaultImmersiveStrategyTwoParamTest.test';
+import UIContextApplyDefaultImmersiveStrategyEmptyArrayTest from './CustomLayout/UIContextApplyDefaultImmersiveStrategyEmptyArrayTest.test';
+import UIContextApplyDefaultImmersiveStrategyNonEmptyArrayTest from './CustomLayout/UIContextApplyDefaultImmersiveStrategyNonEmptyArrayTest.test';
+
 export default function testsuite() {
   ColumnSpaceResourceTest();
   FlexSpaceResourceTest();
@@ -65,4 +74,10 @@ export default function testsuite() {
   TypeNodeGetSliderAttribute();
   TypeNodeGetToggleAttribute();
   StackSyncLoadStaticTest();
+  UIContextApplyDefaultImmersiveStrategyTest();
+  UIContextApplyDefaultImmersiveStrategyOtherTest();
+  UIContextApplyDefaultImmersiveStrategyNoParamTest();
+  UIContextApplyDefaultImmersiveStrategyTwoParamTest();
+  UIContextApplyDefaultImmersiveStrategyEmptyArrayTest();
+  UIContextApplyDefaultImmersiveStrategyNonEmptyArrayTest();
 }

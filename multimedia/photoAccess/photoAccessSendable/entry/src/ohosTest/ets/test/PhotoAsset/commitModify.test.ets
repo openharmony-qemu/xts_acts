@@ -24,7 +24,8 @@ import {
   photoKeys,
   fetchOption,
   photoFetchOption,
-  createResource
+  createResource,
+  checkResourceFile
 } from '../../util/common'
 
 export default function commitModifyTest () {
@@ -37,6 +38,7 @@ export default function commitModifyTest () {
       await getPermission();
       await sleep(10);
       await driveFn();
+      checkResourceFile(globalContext);
     });
 
 

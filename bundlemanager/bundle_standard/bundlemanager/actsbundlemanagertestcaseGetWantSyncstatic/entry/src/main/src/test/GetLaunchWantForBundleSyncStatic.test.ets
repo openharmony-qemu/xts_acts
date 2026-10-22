@@ -17,6 +17,7 @@
 import { describe, it, expect, TestType, Size, Level } from "../../../hypium/index";
 import bundleManager from '@ohos.bundle.bundleManager';
 import { BusinessError } from '@ohos.base';
+import osAccount from '@ohos.account.osAccount';
 
 const NAME1 = "ohos.acts.bundlemanagergetwant.test.static";
 const ABILITYNAME_1 = "EntryAbility";
@@ -44,7 +45,10 @@ export default function GetLaunchWantForBundleSyncStatic() {
       const TEST_CASE_NAME = 'GetLaunchWantForBundleSyncStatic_0100';
       console.info(TAG + `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'test case start');
       try {
-        let res = bundleManager.getLaunchWantForBundleSync(NAME1, 100);
+        let accountManager = osAccount.getAccountManager();
+        let userId: int = await accountManager.getOsAccountLocalId();
+        console.info(TAG + `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' getOsAccountLocalId: ' + userId);
+        let res = bundleManager.getLaunchWantForBundleSync(NAME1, userId);
         expect(res.bundleName).assertEqual(NAME1);
         expect(res.deviceId).assertEqual('');
         expect(res.abilityName).assertEqual(ABILITYNAME_1);

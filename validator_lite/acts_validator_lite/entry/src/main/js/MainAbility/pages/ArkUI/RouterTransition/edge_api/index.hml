@@ -1,0 +1,90 @@
+<!--
+  Copyright (c) 2026 Huawei Device Co., Ltd.
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<div class="container">
+    <div class="content-title">
+        <text class="title">Router Transition · API and parameters (6)</text>
+    </div>
+    <list class="scroll-area">
+        <list-item class="litem" style="height:205px;">
+            <text class="box-title">edge：不传 animation</text>
+            <text class="tip">不传 animation 成员：应瞬间切换、无动效，导航必须正常</text>
+            <div class="op-row">
+                <input class="opBtn" type="button" value="播放" onclick="play('router_edge_no_anim')" />
+            </div>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{naPassColor}};" type="button" value="pass" onclick="togglePass('router_edge_no_anim')" />
+                <input class="pfBtn" style="background-color:{{naFailColor}};" type="button" value="fail" onclick="toggleFail('router_edge_no_anim')" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:205px;">
+            <text class="box-title">edge：animation 传 null</text>
+            <text class="tip">animation=null：非对象，应降级为无动效、瞬间切换</text>
+            <div class="op-row">
+                <input class="opBtn" type="button" value="播放" onclick="play('router_edge_anim_null')" />
+            </div>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{anPassColor}};" type="button" value="pass" onclick="togglePass('router_edge_anim_null')" />
+                <input class="pfBtn" style="background-color:{{anFailColor}};" type="button" value="fail" onclick="toggleFail('router_edge_anim_null')" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:205px;">
+            <text class="box-title">edge：animation 非对象</text>
+            <text class="tip">animation='fade'（字符串）：应降级为无动效、瞬间切换</text>
+            <div class="op-row">
+                <input class="opBtn" type="button" value="播放" onclick="play('router_edge_anim_not_object')" />
+            </div>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{noPassColor}};" type="button" value="pass" onclick="togglePass('router_edge_anim_not_object')" />
+                <input class="pfBtn" style="background-color:{{noFailColor}};" type="button" value="fail" onclick="toggleFail('router_edge_anim_not_object')" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:205px;">
+            <text class="box-title">edge：type 非法</text>
+            <text class="tip">type="fade_x"：应降级为无动效（引擎打 WARN），导航必须正常</text>
+            <div class="op-row">
+                <input class="opBtn" type="button" value="播放" onclick="play('router_edge_bad_type')" />
+            </div>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{btPassColor}};" type="button" value="pass" onclick="togglePass('router_edge_bad_type')" />
+                <input class="pfBtn" style="background-color:{{btFailColor}};" type="button" value="fail" onclick="toggleFail('router_edge_bad_type')" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:205px;">
+            <text class="box-title">edge：type 缺省</text>
+            <text class="tip">有 duration 但没有 type 成员：应降级为无动效、瞬间切换</text>
+            <div class="op-row">
+                <input class="opBtn" type="button" value="播放" onclick="play('router_edge_type_missing')" />
+            </div>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{tmPassColor}};" type="button" value="pass" onclick="togglePass('router_edge_type_missing')" />
+                <input class="pfBtn" style="background-color:{{tmFailColor}};" type="button" value="fail" onclick="toggleFail('router_edge_type_missing')" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:205px;">
+            <text class="box-title">edge：router.replaceUrl</text>
+            <text class="tip">改用 replaceUrl 触发 scale 动效：表现应与 replace 一致（约 800ms）</text>
+            <div class="op-row">
+                <input class="opBtn" type="button" value="播放" onclick="play('router_edge_replace_url')" />
+            </div>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{ruPassColor}};" type="button" value="pass" onclick="togglePass('router_edge_replace_url')" />
+                <input class="pfBtn" style="background-color:{{ruFailColor}};" type="button" value="fail" onclick="toggleFail('router_edge_replace_url')" />
+            </div>
+        </list-item>
+    </list>
+    <div class="bottom-bt">
+        <input type="button" value="back" class="button" onclick="backClicked" />
+    </div>
+</div>

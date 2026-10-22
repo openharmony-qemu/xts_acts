@@ -42,9 +42,9 @@ export default function HttpBasicTest() {
      * @tc.desc   Function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testTelephonyNETSTACKHttpTestUserAgent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) =>{
+    it('testTelephonyNETSTACKHttpTestUserAgent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) =>{
       let caseName = 'testTelephonyNETSTACKHttpTestUserAgent0100';
       console.info(`${caseName}---start`);
       try {
@@ -53,9 +53,9 @@ export default function HttpBasicTest() {
           console.info(`${caseName} get data.responseCode is: `+ JSON.stringify(data.responseCode));
           console.info(`${caseName} get data.result is: `+ JSON.stringify(data));
           http.destroy();
-          ExpectTrue(data.responseCode == 200);
+          ExpectTrue(data.responseCode === 200);
           if (data.responseCode == 200) {
-            ExpectTrue(data.result.toString().search("user-agent") != -1 && data.result.toString().search("libcurl-agent/1.0") != -1);
+            ExpectTrue(data.result.toString().search("user-agent") !== -1 && data.result.toString().search("libcurl-agent/1.0") !== -1);
           }
           done();
           console.info(`${caseName}---end`);
@@ -74,9 +74,9 @@ export default function HttpBasicTest() {
      * @tc.desc   Function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testTelephonyNETSTACKHttpTestHeader0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) =>{
+    it('testTelephonyNETSTACKHttpTestHeader0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) =>{
       let caseName = 'testTelephonyNETSTACKHttpTestHeader0100';
       console.info(`${caseName}---start`);
       try {
@@ -87,11 +87,11 @@ export default function HttpBasicTest() {
           header: { 'Content-Type': 'application/json' }
         }).then((data)=> {
           http.destroy();
-          ExpectTrue(data.responseCode == 200);
+          ExpectTrue(data.responseCode === 200);
           console.info(`${caseName} get data is: ` + JSON.stringify(data));
           if (data.responseCode == 200) {
-            ExpectTrue(data.result.toString().search("Content-Type") != -1);
-            ExpectTrue(data.result.toString().search("application/json") != -1);
+            ExpectTrue(data.result.toString().search("Content-Type") !== -1);
+            ExpectTrue(data.result.toString().search("application/json") !== -1);
           }
           done();
           console.info(`${caseName}---end`);
@@ -109,15 +109,15 @@ export default function HttpBasicTest() {
     });
 
     /**
-     * @tc.name   testTelephonyNETSTACKHttpTestPost
-     * @tc.number SUB_Telephony_NETSTACK_HttpTestPost
+     * @tc.name   testTelephonyNETSTACKHttpTestPost0100
+     * @tc.number SUB_Telephony_NETSTACK_HttpTestPost_0100
      * @tc.desc   Function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testTelephonyNETSTACKHttpTestPost', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) =>{
-      let caseName = 'testTelephonyNETSTACKHttpTestPost';
+    it('testTelephonyNETSTACKHttpTestPost0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) =>{
+      let caseName = 'testTelephonyNETSTACKHttpTestPost0100';
       console.info(`${caseName}---start`);
       try {
         let http = netHttp.createHttp();
@@ -126,9 +126,9 @@ export default function HttpBasicTest() {
           extraData: "MineMine"
         }).then((data) =>{
           http.destroy();
-          ExpectTrue(data.responseCode == 200);
+          ExpectTrue(data.responseCode === 200);
           if (data.responseCode == 200) {
-            ExpectTrue(data.result.toString().search("MineMine") != -1);
+            ExpectTrue(data.result.toString().search("MineMine") !== -1);
           }
           console.info(`${caseName}---end`);
           done();
@@ -142,15 +142,15 @@ export default function HttpBasicTest() {
     });
 
     /**
-     * @tc.name   testTelephonyNETSTACKHttpTestPUT
-     * @tc.number SUB_Telephony_NETSTACK_HttpTestPUT
+     * @tc.name   testTelephonyNETSTACKHttpTestPUT0100
+     * @tc.number SUB_Telephony_NETSTACK_HttpTestPUT_0100
      * @tc.desc   Function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testTelephonyNETSTACKHttpTestPUT', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) =>{
-      let caseName = 'testTelephonyNETSTACKHttpTestPUT';
+    it('testTelephonyNETSTACKHttpTestPUT0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) =>{
+      let caseName = 'testTelephonyNETSTACKHttpTestPUT0100';
       console.info(`${caseName}---start`);
       try {
         let http = netHttp.createHttp();
@@ -159,9 +159,9 @@ export default function HttpBasicTest() {
           extraData: "MineMine"
         }).then((data) => {
           http.destroy();
-          ExpectTrue(data.responseCode == 200);
+          ExpectTrue(data.responseCode === 200);
           if (data.responseCode == 200) {
-            ExpectTrue(data.result.toString().search("MineMine") != -1);
+            ExpectTrue(data.result.toString().search("MineMine") !== -1);
           }
           done();
         });
@@ -174,22 +174,22 @@ export default function HttpBasicTest() {
     });
 
     /**
-     * @tc.name   testTelephonyNETSTACKHttpTestCookies
-     * @tc.number SUB_Telephony_NETSTACK_HttpTestCookies
+     * @tc.name   testTelephonyNETSTACKHttpTestCookies0100
+     * @tc.number SUB_Telephony_NETSTACK_HttpTestCookies_0100
      * @tc.desc   Function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testTelephonyNETSTACKHttpTestCookies', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) =>{
-      let caseName = 'testTelephonyNETSTACKHttpTestCookies';
+    it('testTelephonyNETSTACKHttpTestCookies0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) =>{
+      let caseName = 'testTelephonyNETSTACKHttpTestCookies0100';
       console.info(`${caseName}---start`);
       try {
         let http = netHttp.createHttp();
         http.request("https://httpbin.org/cookies/set/name/value").then( (data) =>{
           console.info(`${caseName} request get data is: `+ JSON.stringify(data));
           http.destroy();
-          ExpectTrue(data.responseCode == 200);
+          ExpectTrue(data.responseCode === 200);
           if (data.responseCode == 200) {
             ExpectTrue(data.cookies !== "");
           }
@@ -205,15 +205,15 @@ export default function HttpBasicTest() {
     });
 
     /**
-     * @tc.name   testTelephonyNETSTACKHttpTestEncode
-     * @tc.number SUB_Telephony_NETSTACK_HttpTestEncode
+     * @tc.name   testTelephonyNETSTACKHttpTestEncode0100
+     * @tc.number SUB_Telephony_NETSTACK_HttpTestEncode_0100
      * @tc.desc   Function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testTelephonyNETSTACKHttpTestEncode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) =>{
-      let caseName = 'testTelephonyNETSTACKHttpTestEncode';
+    it('testTelephonyNETSTACKHttpTestEncode0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) =>{
+      let caseName = 'testTelephonyNETSTACKHttpTestEncode0100';
       console.info(`${caseName}---start`);
       try {
         let http = netHttp.createHttp();
@@ -224,16 +224,16 @@ export default function HttpBasicTest() {
           }
         }).then( (data) => {
           http.destroy();
-          ExpectTrue(data.responseCode == 200 || data.responseCode > 500);
+          ExpectTrue(data.responseCode === 200 || data.responseCode > 500);
           if (data.responseCode == 200) {
-            ExpectTrue(data.result.toString().search("key1") != -1);
-            ExpectTrue(data.result.toString().search("val1") != -1);
-            ExpectTrue(data.result.toString().search("key2") != -1);
-            ExpectTrue(data.result.toString().search("val2") != -1);
-            ExpectTrue(data.result.toString().search("name1") != -1);
-            ExpectTrue(data.result.toString().search("mine1") != -1);
-            ExpectTrue(data.result.toString().search("name2") != -1);
-            ExpectTrue(data.result.toString().search("mine2") != -1);
+            ExpectTrue(data.result.toString().search("key1") !== -1);
+            ExpectTrue(data.result.toString().search("val1") !== -1);
+            ExpectTrue(data.result.toString().search("key2") !== -1);
+            ExpectTrue(data.result.toString().search("val2") !== -1);
+            ExpectTrue(data.result.toString().search("name1") !== -1);
+            ExpectTrue(data.result.toString().search("mine1") !== -1);
+            ExpectTrue(data.result.toString().search("name2") !== -1);
+            ExpectTrue(data.result.toString().search("mine2") !== -1);
           }
           console.info(`${caseName}---end`);
           done();

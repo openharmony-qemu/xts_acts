@@ -70,7 +70,7 @@ export default function RichEditorSetStyledString015() {
       let rich = await driver.findComponent(ON.id('RichEditorSetStyledString015'));
       let getBounds = await rich.getBoundsCenter();
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.x, getBounds.y);
+      await driver.clickAt({ x: getBounds.x, y: getBounds.y, displayId: displayID });
       await CommonFunc.sleep(500);
       let image_top = await driver.findComponent(ON.id('image_top'));
       await image_top.click();
@@ -174,7 +174,7 @@ export default function RichEditorSetStyledString015() {
       let rich = await driver.findComponent(ON.id('RichEditorSetStyledString015'));
       let getBounds = await rich.getBoundsCenter();
       await CommonFunc.sleep(500);
-      await driver.longClick(getBounds.x, getBounds.y);
+      await driver.longClickAt({ x: getBounds.x, y: getBounds.y, displayId: displayID });
       await CommonFunc.sleep(500);
       let close_menu = await driver.findComponent(ON.id('close_menu'));
       await close_menu.click();

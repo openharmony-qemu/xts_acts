@@ -69,7 +69,7 @@ export default function scrollByError() {
       Utils.emitEvent("testScrollByDeltaXNull", EVENT_ID_SET_SUITE_KEY)
       let isReturn = 0;
       Utils.registerEvent("testScrollByDeltaXNull", "401", 179561, ()=> {isReturn = 1});
-      await Utils.waitAndClickComponent(driver, "scrollByErrorButton","testScrollByDeltaXNull");
+      Utils.waitAndClickComponent(driver, "scrollByErrorButton","testScrollByDeltaXNull");
       await Utils.waitForExist(()=>isReturn, "testScrollByDeltaXNull", 1, 1000);
       done();
     })

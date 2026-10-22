@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 import { GridCol, ForEach, GridRowDirection, BreakpointsReference, GridRow,  Color, Stack, Row, Alignment,
-  VerticalAlign,  HorizontalAlign, RelativeContainer, Entry, Text, Column,  Component, Button,
+  VerticalAlign,  HorizontalAlign, RelativeContainer, Entry, Text, Column,  Component, Button, ColumnOptions,
   ClickEvent } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
@@ -32,7 +32,7 @@ struct GridColExample {
   @State isOffset: boolean = true;
 
   build() {
-    Column() {
+    Column({space:2} as ColumnOptions) {
       Column() {
         GridRow({
           columns: 5,
@@ -89,14 +89,14 @@ struct GridColExample {
         .onBreakpointChange((breakpoint) => {
           this.currentBp = breakpoint
         })
-      }.width('80%').margin(10).height(200)
+      }.width('80%').height('35%')
       .border({ color: '#880606', width: 2 })
       Column() {
         Button('isSpan = ' + this.isSpan)
           .onClick(() => {
             this.isSpan = !this.isSpan;
           })
-          .height(30)
+          .height('3%')
           .id('GridCol_Span')
       }
 
@@ -163,14 +163,14 @@ struct GridColExample {
         .onBreakpointChange((breakpoint) => {
           this.currentBp = breakpoint
         })
-      }.width('80%').margin(10).height(200)
+      }.width('80%').height('35%')
       .border({ color: '#880606', width: 2 })
       Column() {
         Button('isOrder = ' + this.isOrder)
           .onClick(() => {
             this.isOrder = !this.isOrder;
           })
-          .height(30)
+          .height('3%')
           .id('GridCol_Order')
       }
       Column() {
@@ -178,9 +178,9 @@ struct GridColExample {
           .onClick(() => {
             this.isOffset = !this.isOffset;
           })
-          .height(30)
+          .height('3%')
           .id('GridCol_Offset')
       }
-    }
+    }.width('100%').height('100%')
   }
 }

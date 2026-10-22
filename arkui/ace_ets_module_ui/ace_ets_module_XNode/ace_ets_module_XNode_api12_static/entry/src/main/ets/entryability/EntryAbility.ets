@@ -22,16 +22,13 @@ import hilog from '@ohos.hilog';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from "@ohos.app.ability.common";
 import { UIContext } from '@ohos.arkui.UIContext';
+import display from '@ohos.display';
 
 export default class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
     AppStorage.setOrCreate<Want>('abilityWant', want);
   }
-
-  // onDestroy() {
-  //   hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
-  // }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
     // Main window is created, set main page for this ability
@@ -57,8 +54,17 @@ export default class EntryAbility extends UIAbility {
           AppStorage.setOrCreate<number>('winLeft', wRect?.left ?? 0);
           AppStorage.setOrCreate<number>('winTop', wRect?.top ?? 0);
           hilog.info(0x0000, 'testTag', 'Succeeded get winLeft:' + wRect?.left + ',winTop:' + wRect?.top);
+          AppStorage.setOrCreate<number>('displayID', properties?.displayId ?? 0);
+          try {
+              let displayInfo: display.Display = display.getDefaultDisplaySync();
+              AppStorage.setOrCreate<number>('displayID', displayInfo.id);
+              console.info('当前屏幕ID:' + displayInfo.id.toString());
+              } catch (e) {
+              hilog.error(0x0000, 'testTag', 'Failed to get display. Cause: %{public}s', JSON.stringify(e));
+              }
+              
         } catch (exception) {
-          hilog.error(0x0000, 'testTag', 'Failed to obtain the window properties. Cause: ' + JSON.stringify(exception));
+            hilog.error(0x0000, 'testTag', 'Failed to obtain the window properties. Cause: ' + JSON.stringify(exception));
         }
         // Obtain a UIContext instance.
         if (windowClass !== null) {

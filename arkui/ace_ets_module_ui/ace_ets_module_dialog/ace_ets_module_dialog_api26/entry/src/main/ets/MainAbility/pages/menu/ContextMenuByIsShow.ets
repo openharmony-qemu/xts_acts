@@ -58,7 +58,7 @@ struct ContextMenuByIsShow {
   }
 
   build() {
-    Column({ space: 16 }) {
+    Column() {
       Text('bindContextMenuByIsShow').fontSize(18).fontWeight(FontWeight.Bold)
       Text('last=' + this.lastAction).id('isshow_last_action')
       Button('toggle MenuElement')

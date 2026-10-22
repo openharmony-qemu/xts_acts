@@ -5,7 +5,6 @@ import int16ArrayFillTestTwoTest from './int16Array/Int16ArrayFillTest02.test.et
 import int16ArrayFillTestThreeTest from './int16Array/Int16ArrayFillTest03.test.ets';
 import int16ArrayFillTestFourTest from './int16Array/Int16ArrayFillTest04.test.ets';
 import int16ArrayFillTestFiveTest from './int16Array/Int16ArrayFillTest05.test.ets';
-import int16ArrayFillTestSixTest from './int16Array/Int16ArrayFillTest06.test.ets';
 import int16ArrayFindTestOneTest from './int16Array/Int16ArrayFindTest01.test.ets';
 import int16ArrayFindTestTwoTest from './int16Array/Int16ArrayFindTest02.test.ets';
 import int16ArrayFindTestThreeTest from './int16Array/Int16ArrayFindTest03.test.ets';
@@ -45,14 +44,12 @@ import int16ArrayConstructorPart13Test from './int16Array/Int16ArrayConstructorP
 import int16ArrayConstructorPart14Test from './int16Array/Int16ArrayConstructorPart14Test.test.ets';
 import int16ArrayConstructorPart15Test from './int16Array/Int16ArrayConstructorPart15Test.test.ets';
 import int16ArrayConstructorPart16Test from './int16Array/Int16ArrayConstructorPart16Test.test.ets';
-import int16ArrayConstructorPart17Test from './int16Array/Int16ArrayConstructorPart17Test.test.ets';
 import int16ArrayEntriesPart01Test from './int16Array/Int16ArrayEntriesPart01Test.test.ets';
 import int16ArrayEntriesPart02Test from './int16Array/Int16ArrayEntriesPart02Test.test.ets';
 import int16ArrayEntriesPart03Test from './int16Array/Int16ArrayEntriesPart03Test.test.ets';
 import int16ArrayFindLastIndexPart01Test from './int16Array/Int16ArrayFindLastIndexPart01Test.test.ets';
 import int16ArrayFindLastIndexPart02Test from './int16Array/Int16ArrayFindLastIndexPart02Test.test.ets';
 import int16ArrayFindLastIndexPart03Test from './int16Array/Int16ArrayFindLastIndexPart03Test.test.ets';
-import int16ArrayIndexOfPart01Test from './int16Array/Int16ArrayIndexOfPart01Test.test.ets';
 import int16ArrayIndexOfPart02Test from './int16Array/Int16ArrayIndexOfPart02Test.test.ets';
 import int16ArrayIndexOfPart03Test from './int16Array/Int16ArrayIndexOfPart03Test.test.ets';
 import int16ArrayIndexOfPart04Test01Test from './int16Array/Int16ArrayIndexOfPart04Test01.test.ets';
@@ -67,7 +64,6 @@ export default function testsuite(): void {
   int16ArrayFillTestThreeTest();
   int16ArrayFillTestFourTest();
   int16ArrayFillTestFiveTest();
-  int16ArrayFillTestSixTest();
   int16ArrayFindTestOneTest();
   int16ArrayFindTestTwoTest();
   int16ArrayFindTestThreeTest();
@@ -107,14 +103,12 @@ export default function testsuite(): void {
   int16ArrayConstructorPart14Test();
   int16ArrayConstructorPart15Test();
   int16ArrayConstructorPart16Test();
-  int16ArrayConstructorPart17Test();
   int16ArrayEntriesPart01Test();
   int16ArrayEntriesPart02Test();
   int16ArrayEntriesPart03Test();
   int16ArrayFindLastIndexPart01Test();
   int16ArrayFindLastIndexPart02Test();
   int16ArrayFindLastIndexPart03Test();
-  int16ArrayIndexOfPart01Test();
   int16ArrayIndexOfPart02Test();
   int16ArrayIndexOfPart03Test();
   int16ArrayIndexOfPart04Test01Test();

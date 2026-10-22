@@ -163,7 +163,7 @@ export default function HttpRequestGmssl() {
                     }
                     else {
                         console.info(`${caseName} res.performanceTiming:${JSON.stringify(res.performanceTiming)}`);
-                        ExpectTrue(res.responseCode == 200);
+                        ExpectTrue(res.responseCode === 200);
                         httpRequest.destroy();
                         done();
                     }
@@ -222,7 +222,7 @@ export default function HttpRequestGmssl() {
                     }
                     else {
                         console.info(`${caseName} res.performanceTiming:${JSON.stringify(res.performanceTiming)}`);
-                        ExpectTrue(res.responseCode == 200);
+                        ExpectTrue(res.responseCode === 200);
                         httpRequest.destroy();
                         done();
                     }
@@ -276,12 +276,12 @@ export default function HttpRequestGmssl() {
                     if (err) {
                         console.info(`${caseName} request fail, error code: ${err.code}, msg: ${err.message}`);
                         httpRequest.destroy();
-                        ExpectTrue(err.code == 2300999);
+                        ExpectTrue(err.code === 2300999);
                         done();
                     }
                     else {
                         console.info(`${caseName} res.performanceTiming:${JSON.stringify(res.performanceTiming)}`);
-                        ExpectTrue(res.responseCode == 200);
+                        ExpectTrue(res.responseCode === 200);
                         httpRequest.destroy();
                         done();
                     }
@@ -335,13 +335,13 @@ export default function HttpRequestGmssl() {
                     if (err) {
                         console.info(`${caseName} request fail, error code: ${err.code}, msg: ${err.message}`);
                         httpRequest.destroy();
-                        ExpectTrue(err.code == 2300999);
+                        ExpectTrue(err.code === 2300999);
                         done();
                     }
                     else {
                         console.info(`${caseName} res.performanceTiming:${JSON.stringify(res.performanceTiming)}`);
                         console.info(`${caseName} res.responseCode:${res.responseCode}`);
-                        ExpectTrue(res.responseCode == 200);
+                        ExpectTrue(res.responseCode === 200);
                         httpRequest.destroy();
                         done();
                     }
@@ -395,13 +395,13 @@ export default function HttpRequestGmssl() {
                     if (err) {
                         console.info(`${caseName} request fail, error code: ${err.code}, msg: ${err.message}`);
                         httpRequest.destroy();
-                        ExpectTrue(err.code == 2300999);
+                        ExpectTrue(err.code === 2300999);
                         done();
                     }
                     else {
                         console.info(`${caseName} res.performanceTiming:${JSON.stringify(res.performanceTiming)}`);
                         console.info(`${caseName} res.responseCode:${res.responseCode}`);
-                        ExpectTrue(res.responseCode == 200);
+                        ExpectTrue(res.responseCode === 200);
                         httpRequest.destroy();
                         done();
                     }
@@ -455,12 +455,12 @@ export default function HttpRequestGmssl() {
                     if (err) {
                         console.info(`${caseName} request fail, error code: ${err.code}, msg: ${err.message}`);
                         httpRequest.destroy();
-                        ExpectTrue(err.code == 2300058);
+                        ExpectTrue(err.code === 2300058);
                         done();
                     }
                     else {
                         console.info(`${caseName} res.performanceTiming:${JSON.stringify(res.performanceTiming)}`);
-                        ExpectTrue(res.responseCode == 200);
+                        ExpectTrue(res.responseCode === 200);
                         httpRequest.destroy();
                         done();
                     }

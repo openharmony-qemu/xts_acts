@@ -29,7 +29,9 @@ import {
   getPermission,
   createMovingPhoto,
   driveFn,
-  waitForLcdSizePopulated
+  waitForLcdSizePopulated,
+  checkResourceFile,
+  createResource
 } from '../common'
 import common from '@ohos.app.ability.common';
 
@@ -96,7 +98,8 @@ export default function getTest() {
       await getPermission();
       await sleep(1000);
       await driveFn();
-      await pushCreateAsset(testContext, fileNameList);
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNameList)
       for (let i = 0; i < fileNameList.length; i++) {
         let fileName = fileNameList[i];
         if (fileName.endsWith('.jpg')) {

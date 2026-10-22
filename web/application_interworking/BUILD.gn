@@ -15,6 +15,7 @@ group("ActsApplicationInterworkingTest") {
   testonly = true
   if (is_standard_system) {
     deps = [
+      "ace_web_handler_constructors_dev_one:ActsWebHandlerConstructorsDevOneTest",
       "inject_javascript:ActsWebInjectJavascriptTest",
       "run_javascript:ActsWebRunJavascriptTest",
       "run_javascript_static:ActsWebRunJavascriptStaticTest",

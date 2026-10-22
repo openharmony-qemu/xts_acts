@@ -31,6 +31,8 @@ import {
 import CommonFunc from '../../MainAbility/common/Common';
 
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RichEditorDoubleClick006() {
   describe('RichEditorDoubleClick006', () => {
     beforeEach(async (done: Function) => {
@@ -69,11 +71,11 @@ export default function RichEditorDoubleClick006() {
       let rich = await driver.findComponent(ON.id('RichEditorDoubleClick006'));
       let getBounds = await rich.getBounds();
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.left + 30, getBounds.top + 20);
+      await driver.clickAt({ x: getBounds.left + 30, y: getBounds.top + 20, displayId: displayID });
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.left + 110, getBounds.top + 20);
+      await driver.clickAt({ x: getBounds.left + 110, y: getBounds.top + 20, displayId: displayID });
       await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 110, getBounds.top + 20);
+      await driver.clickAt({ x: getBounds.left + 110, y: getBounds.top + 20, displayId: displayID });
       await CommonFunc.sleep(100);
       let message = await driver.findComponent(ON.id('message'));
       let messageText = await message.getText();

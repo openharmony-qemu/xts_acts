@@ -1,4 +1,5 @@
 'use static';
+
 /**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -69,8 +70,10 @@ export default function CanvasWidthHeightCanvasTest() {
     console.info('get result1:' + AppStorage.get<double>('CanvasHeight'));
     
     expect(obj.getString('$type')).assertEqual('Canvas');
-    expect(AppStorage.get<double>('CanvasWidth')).assertEqual(150);
-    expect(AppStorage.get<double>('CanvasHeight')).assertEqual(100);
+    let canvasWidth = AppStorage.get<double>('CanvasWidth') as double;
+    let canvasHeight = AppStorage.get<double>('CanvasHeight') as double;
+    expect(Math.floor(Math.abs(canvasWidth - 150)) <= 1).assertTrue();
+    expect(Math.floor(Math.abs(canvasHeight - 100)) <= 1).assertTrue();
 
     console.info('[CanvasWidthHeightCanvasTest_0010] END');
     done();

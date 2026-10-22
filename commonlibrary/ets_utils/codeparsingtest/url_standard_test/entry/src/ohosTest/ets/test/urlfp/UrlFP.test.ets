@@ -5609,4 +5609,186 @@ describe('UrlFPTest',  () => {
         expect(params.toString()).assertEqual('aa=a%DC%80%DC%9Fb');
         expect(params.get('aa')).assertEqual('a܀ܟb');
     })
+
+    /**
+     * @tc.name   testUrlUtilToString001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_3670
+     * @tc.desc   URLUtil.toString serializes %20 input without rewriting it to '+'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUrlUtilToString001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+        let params = new Url.URLParams('detailAddress=a%20b');
+        expect(Url.URLUtil.toString(params)).assertEqual('detailAddress=a%20b');
+    })
+
+    /**
+     * @tc.name   testUrlUtilToString002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_3680
+     * @tc.desc   URLUtil.toString returns an empty string for an empty URLParams.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testUrlUtilToString002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let params = new Url.URLParams();
+        expect(Url.URLUtil.toString(params)).assertEqual('');
+    })
+
+    /**
+     * @tc.name   testUrlUtilToString003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_3690
+     * @tc.desc   URLUtil.toString encodes a space appended by append() as %20.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUrlUtilToString003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+        let params = new Url.URLParams();
+        params.append('key', 'a b');
+        expect(Url.URLUtil.toString(params)).assertEqual('key=a%20b');
+    })
+
+    /**
+     * @tc.name   testUrlUtilToString004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_3700
+     * @tc.desc   URLUtil.toString output differs from URLParams.toString only in space encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUrlUtilToString004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+        let params = new Url.URLParams();
+        params.append('k&y', 'v=l');
+        params.append('p%t', '中');
+        params.append('a b', 'c d');
+        let expectedNew = 'k%26y=v%3Dl&p%25t=%E4%B8%AD&a%20b=c%20d';
+        let expectedOld = 'k%26y=v%3Dl&p%25t=%E4%B8%AD&a+b=c+d';
+        expect(Url.URLUtil.toString(params)).assertEqual(expectedNew);
+        expect(params.toString()).assertEqual(expectedOld);
+    })
+
+    /**
+     * @tc.name   testUrlUtilToString005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_3710
+     * @tc.desc   URLUtil.toString accepts the URLParams instance of a URL object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testUrlUtilToString005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let that = new Url.URL('http://example.com/path?a=b c');
+        expect(Url.URLUtil.toString(that.params)).assertEqual('a=b%20c');
+    })
+
+    /**
+     * @tc.name   testUrlUtilToString006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_3720
+     * @tc.desc   URLUtil.toString does not modify the input URLParams or its parent URL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUrlUtilToString006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+        let that = new Url.URL('http://example.com/path?a=b+c');
+        let params = that.params;
+        let oldHref = that.href;
+        let oldToString = params.toString();
+        expect(oldToString).assertEqual('a=b+c');
+        expect(Url.URLUtil.toString(params)).assertEqual('a=b%20c');
+        expect(params.toString()).assertEqual('a=b+c');
+        expect(params.toString()).assertEqual(oldToString);
+        expect(that.href).assertEqual(oldHref);
+    })
+
+    /**
+     * @tc.name   testUrlUtilToString007
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_3730
+     * @tc.desc   URLUtil.toString throws 401 for invalid parameter types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUrlUtilToString007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+        let plainObj: Record<string, string> = { 'key': 'value' };
+        let invalidInputs: Array<ESObject> = [null, undefined, 'str', plainObj, new Url.URLSearchParams(),
+            new Url.URL('http://example.com/path?a=b')];
+        for (let i = 0; i < invalidInputs.length; i++) {
+            try {
+                Url.URLUtil.toString(invalidInputs[i] as Url.URLParams);
+                expect().assertFail();
+            } catch (err) {
+                expect(err.code).assertEqual(401);
+                expect(err.message).assertContain('Parameter error');
+            }
+        }
+    })
+
+    /**
+     * @tc.name   testUrlUtilToString008
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_3740
+     * @tc.desc   URLUtil.toString throws 401 when the argument is missing (passed as undefined).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUrlUtilToString008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+        try {
+            Url.URLUtil.toString(undefined as ESObject as Url.URLParams);
+            expect().assertFail();
+        } catch (err) {
+            expect(err.code).assertEqual(401);
+            expect(err.message).assertContain('Parameter error');
+        }
+    })
+
+    /**
+     * @tc.name   testUrlUtilToString009
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_3750
+     * @tc.desc   URLUtil.toString encodes !'()~ identically to URLParams.toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUrlUtilToString009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+        let params = new Url.URLParams();
+        params.append('special', "!'()~");
+        expect(Url.URLUtil.toString(params)).assertEqual('special=%21%27%28%29%7E');
+        expect(params.toString()).assertEqual('special=%21%27%28%29%7E');
+    })
+
+    /**
+     * @tc.name   testUrlUtilToString010
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_3760
+     * @tc.desc   URLUtil.toString outputs %20 for a '+' input which is decoded to a space on construction.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUrlUtilToString010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+        let params = new Url.URLParams('detailAddress=a+b');
+        expect(Url.URLUtil.toString(params)).assertEqual('detailAddress=a%20b');
+    })
+
+    /**
+     * @tc.name   testUrlUtilToString011
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_3770
+     * @tc.desc   URLUtil.toString does not modify a standalone URLParams instance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUrlUtilToString011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+        let params = new Url.URLParams('k=a%20b&c=d+e');
+        let oldToString = params.toString();
+        expect(oldToString).assertEqual('k=a+b&c=d+e');
+        expect(Url.URLUtil.toString(params)).assertEqual('k=a%20b&c=d%20e');
+        expect(params.toString()).assertEqual('k=a+b&c=d+e');
+        expect(params.toString()).assertEqual(oldToString);
+        expect(params.get('k')).assertEqual('a b');
+        expect(params.get('c')).assertEqual('d e');
+        expect(params.getAll('k').length).assertEqual(1);
+        expect(params.getAll('k')[0]).assertEqual('a b');
+    })
 })}

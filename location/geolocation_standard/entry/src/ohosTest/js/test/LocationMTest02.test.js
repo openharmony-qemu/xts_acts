@@ -1851,6 +1851,96 @@ export default function geolocationTest_geo8() {
         }
     });
 
+    /**
+     * @tc.name   SUB_Location_Location_isLocationEnabled_perm_test_0100
+     * @tc.number SUB_Location_Location_isLocationEnabled_perm_test_0100
+     * @tc.desc   Test isLocationEnabled returns true when location switch is enabled.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Location_Location_isLocationEnabled_perm_test_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        var isAcessToken = canIUse('SystemCapability.Location.Location.Core');
+        console.info('SUB_Location_Location_isLocationEnabled_perm_test_0100: ' + isAcessToken);
+        if (!isAcessToken) {
+            console.info('The device does not support location core');
+            done();
+            return;
+        }
+        try {
+            await geolocationm.enableLocation();
+            console.info('[lbs_js] isLocationEnabled_perm_test_0100 enableLocation success');
+        } catch (error) {
+            console.info('[lbs_js] isLocationEnabled_perm_test_0100 enableLocation err: ' + JSON.stringify(error));
+            expect().assertFail();
+            done();
+            return;
+        }
+        await sleep(1000);
+        try {
+            let state = geolocationm.isLocationEnabled();
+            console.info('[lbs_js] isLocationEnabled_perm_test_0100 result: ' + JSON.stringify(state));
+            expect(typeof state).assertEqual('boolean');
+            expect(state).assertTrue();
+        } catch (error) {
+            console.info('[lbs_js] isLocationEnabled_perm_test_0100 try err: ' + JSON.stringify(error));
+            if (error.code === 801) {
+                expect(error.code === 801).assertTrue();
+            } else {
+                expect().assertFail();
+            }
+        }
+        done();
+    });
+
+    /**
+     * @tc.name   SUB_Location_Location_isLocationEnabled_perm_test_0200
+     * @tc.number SUB_Location_Location_isLocationEnabled_perm_test_0200
+     * @tc.desc   Test isLocationEnabled returns false when location switch is disabled.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Location_Location_isLocationEnabled_perm_test_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        var isAcessToken = canIUse('SystemCapability.Location.Location.Core');
+        console.info('SUB_Location_Location_isLocationEnabled_perm_test_0200: ' + isAcessToken);
+        if (!isAcessToken) {
+            console.info('The device does not support location core');
+            done();
+            return;
+        }
+        try {
+            await geolocationm.disableLocation();
+            console.info('[lbs_js] isLocationEnabled_perm_test_0200 disableLocation success');
+        } catch (error) {
+            console.info('[lbs_js] isLocationEnabled_perm_test_0200 disableLocation err: ' + JSON.stringify(error));
+            expect().assertFail();
+            done();
+            return;
+        }
+        await sleep(1000);
+        try {
+            let state = geolocationm.isLocationEnabled();
+            console.info('[lbs_js] isLocationEnabled_perm_test_0200 result: ' + JSON.stringify(state));
+            expect(typeof state).assertEqual('boolean');
+            expect(state).assertFalse();
+        } catch (error) {
+            console.info('[lbs_js] isLocationEnabled_perm_test_0200 try err: ' + JSON.stringify(error));
+            if (error.code === 801) {
+                expect(error.code === 801).assertTrue();
+            } else {
+                expect().assertFail();
+            }
+        }
+        try {
+            geolocationm.enableLocation();
+            console.info('[lbs_js] isLocationEnabled_perm_test_0200 restore switch on done');
+        } catch (e) {
+            console.info('[lbs_js] isLocationEnabled_perm_test_0200 restore switch err: ' + JSON.stringify(e));
+        }
+        done();
+    });
+
     });
 }
 

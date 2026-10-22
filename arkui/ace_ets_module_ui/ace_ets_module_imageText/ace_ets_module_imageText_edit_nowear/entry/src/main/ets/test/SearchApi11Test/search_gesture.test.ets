@@ -23,6 +23,8 @@ const searchIconRightSpace = 9;
 const defaultSearchIconWidth = 18;
 const relativeContentRectLeftWidth = parseInt(vp2px(searchIconLeftSpace + searchIconRightSpace + defaultSearchIconWidth).toFixed(2));
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function search_gesture() {
   describe('search_gesture', () => {
     beforeEach(async (done: Function) => {
@@ -80,7 +82,7 @@ export default function search_gesture() {
         let searchRect = CommonFunc.getComponentRectOnScreen('SearchGesture');
         let clickX = Math.round(searchRect.left + caretRelativeX + relativeContentRectLeftWidth+vp2px(10));
         let clickY =  Math.round((searchRect.bottom + searchRect.top)/2);
-        await driver.click(clickX, clickY);
+        await driver.clickAt({ x: clickX, y: clickY, displayId: displayID });
         await CommonFunc.sleep(1000);
 
         //check the text selection menu appearing
@@ -130,7 +132,7 @@ export default function search_gesture() {
         let searchRect = CommonFunc.getComponentRectOnScreen('SearchGesture');
         let clickX = Math.round(searchRect.left + caretRelativeX + relativeContentRectLeftWidth - vp2px(10));
         let clickY =  Math.round((searchRect.bottom + searchRect.top)/2);
-        await driver.longClick(clickX, clickY);
+        await driver.longClickAt({ x: clickX, y: clickY, displayId: displayID });
         await CommonFunc.sleep(1000);
         let selectAllButton1 = await driver.findComponent(ON.text('全选'));
         expect(selectAllButton1 ? '1':'0').assertEqual('1');
@@ -145,7 +147,7 @@ export default function search_gesture() {
 
         //second step: longClick on an empty space and check
         let clickX2 = Math.round(searchRect.left + caretRelativeX + relativeContentRectLeftWidth + vp2px(2));
-        await driver.longClick(clickX2, clickY);
+        await driver.longClickAt({ x: clickX2, y: clickY, displayId: displayID });
         await CommonFunc.sleep(1000);
         let strJson3 = getInspectorByKey('SearchGesture');
         let obj3: ESObject = JSON.parse(strJson3);
@@ -161,7 +163,7 @@ export default function search_gesture() {
         expect(obj2.$attrs.value).assertEqual('');
         let point = await search.getBoundsCenter();
         await CommonFunc.sleep(500);
-        await driver.longClick(point.x, point.y);
+        await driver.longClickAt({ x: point.x, y: point.y, displayId: displayID });
         await CommonFunc.sleep(500);
         let strJson4 = getInspectorByKey('SearchGesture');
         let obj4: ESObject = JSON.parse(strJson4);
@@ -226,13 +228,13 @@ export default function search_gesture() {
       await CommonFunc.sleep(300);
 
       //second step: move mouse on searchComponent and check mouse state
-      await driver.mouseMoveTo(point);
+      await driver.mouseMoveTo({ x: point.x, y: point.y, displayId: displayID });
       await CommonFunc.sleep(300);
       let focusState = await searchComponent.isFocused();
       expect(focusState).assertEqual(true);
       //third step: move mouse out searchComponent and check mouse state
       let searchRect = await searchComponent.getBounds();
-      await driver.mouseMoveTo({x:point.x, y:Math.round(searchRect.bottom+vp2px(2))});
+      await driver.mouseMoveTo({x:point.x, y:Math.round(searchRect.bottom+vp2px(2)), displayId: displayID});
       await CommonFunc.sleep(300);
       let focusState2 = await searchComponent.isFocused();
       expect(focusState2).assertEqual(true);
@@ -263,8 +265,8 @@ export default function search_gesture() {
       let searchRect = await searchComponent.getBounds();
       let clickX = Math.round(searchRect.left);
       let clickY = Math.round((searchRect.top + searchRect.bottom)/2);
-      await driver.click(clickX, clickY)
-      let button = await driver.findComponent(ON.id('GetCaret'));
+        await driver.clickAt({ x: clickX, y: clickY, displayId: displayID })
+        let button = await driver.findComponent(ON.id('GetCaret'));
       await button.click();
       await CommonFunc.sleep(500);
       let strJson1 = getInspectorByKey('SearchCaretIndexText');

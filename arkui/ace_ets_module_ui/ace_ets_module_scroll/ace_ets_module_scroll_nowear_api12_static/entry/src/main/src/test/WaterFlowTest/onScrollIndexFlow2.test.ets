@@ -59,18 +59,25 @@ export default function onScrollIndexFlow2() {
 it('onScrollIndexFlow2_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         console.info('[onScrollIndexFlow2_static_0100] START');
-        let waterRect = CommonFunc.getComponentRectOnScreen('water_onIndex');
         let driver = Driver.create();
         await CommonFunc.sleep(1000);
-        let top = waterRect.top;
-        let right = waterRect.right;
-        let left = waterRect.left;
-        let bottom = waterRect.bottom;
-        console.info("onScrollIndexFlow2_static_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
-        let height = bottom -top;
-        let width = right - left;
+        let swipeComp = await driver.findComponent(ON.id('water_onIndex'));
+        let rect = await swipeComp!.getBounds();
+        let displayId = await swipeComp!.getDisplayId();
+        let height = rect.bottom - rect.top;
+        let width = rect.right - rect.left;
+        let centerX = (Math.round(rect.left + width / 2)).toInt();
+        let startY = (Math.round(rect.top + height * 0.7)).toInt();
+        let endY = (Math.round(rect.top + height * 0.2)).toInt();
+        console.info("[onScrollIndexFlow2_static_0100] rect left=" + rect.left + " right=" + rect.right +
+          " top=" + rect.top + " bottom=" + rect.bottom + " displayId=" + displayId);
+        console.info("[onScrollIndexFlow2_static_0100] swipe from (" + centerX + "," + startY +
+          ") to (" + centerX + "," + endY + ") displayId=" + displayId);
         await CommonFunc.sleep(1000);
-        await driver.swipe(Math.round(left + width/2).toInt(),Math.round(top + height*0.7).toInt(),Math.round(left + width/2).toInt(),Math.round(top + height*0.2).toInt());
+        await driver.swipeBetween(
+          { x: centerX, y: startY, displayId: displayId },
+          { x: centerX, y: endY, displayId: displayId }
+        );
         await CommonFunc.sleep(2000);
 
         let strJson = inspector.getInspectorByKey('onScrollIndex_flow');

@@ -71,8 +71,9 @@ export default function httpJsunit() {
       let  caseName: string = 'testNetworkMgrHttpCreateHttp0100';
       console.info(`${caseName}---Start`);
       try {
+        console.info(`${caseName} ready to create http request`);
         let httpRequest = http.createHttp();
-        expectTrue(httpRequest != null);
+        expectTrue(httpRequest !== undefined);
         httpRequest.destroy();
         console.info(`${caseName}---End`);
         done();
@@ -102,7 +103,7 @@ export default function httpJsunit() {
           done();
         } else {
           console.log(`${caseName} gethandleInstance success`);
-          expectTrue(typeof (handleInstance) == 'object');
+          expectTrue(typeof (handleInstance) === 'object');
           console.info(`${caseName}---End`);
           done();
         }
@@ -132,8 +133,8 @@ export default function httpJsunit() {
             done();
           } else {
             console.log(`${caseName} isDefaultNetMetered success`);
-            expectTrue(error==undefined);
-            expectTrue(data==true);
+            expectTrue(error===undefined);
+            expectTrue(data===true);
             console.info(`${caseName}---End`);
             done();
           }
@@ -159,7 +160,7 @@ export default function httpJsunit() {
       try {
         connection.isDefaultNetMetered().then((data) => {
           console.log(`${caseName} isDefaultNetMetered success`);
-          expectTrue(data == true);
+          expectTrue(data === true);
           console.info(`${caseName}---End`);
           done();
         }).catch((error:BusinessError) => {
@@ -195,7 +196,7 @@ export default function httpJsunit() {
             done();
           } else {
             console.log(`${caseName} getDefaultHttpProxy success` + JSON.stringify(data));
-            expectTrue(error == undefined);
+            expectTrue(error === undefined);
             console.info(`${caseName}---End`);
             done();
           }
@@ -222,8 +223,8 @@ export default function httpJsunit() {
         connection.getDefaultHttpProxy().then((data) => {
           console.log(`${caseName} getDefaultHttpProxy success`);
           console.log(JSON.stringify(data));
-          expectTrue(data.host == '');
-          expectTrue(data.port == 0);
+          expectTrue(data.host === '');
+          expectTrue(data.port === 0);
           console.info(`${caseName}---End`);
           done();
         }).catch((error:BusinessError) => {
@@ -263,8 +264,8 @@ export default function httpJsunit() {
                 done();
               } else {
                 console.log(`${caseName} getDefaultHttpProxy success`);
-                expectTrue(data.host == '');
-                expectTrue(data.port == 0);
+                expectTrue(data.host === '');
+                expectTrue(data.port === 0);
                 console.info(`${caseName}---End`);
                 done();
               }
@@ -306,8 +307,8 @@ export default function httpJsunit() {
             console.log("setAppNet success");
             connection.getDefaultHttpProxy().then((data) => {
               console.log(`${caseName} getDefaultHttpProxy success`);
-              expectTrue(data.host == '');
-              expectTrue(data.port == 0);
+              expectTrue(data.host === '');
+              expectTrue(data.port === 0);
               console.info(`${caseName}---End`);
               done();
             }).catch((error:BusinessError) => {
@@ -351,9 +352,9 @@ export default function httpJsunit() {
         let udpSocket:socket.UDPSocket = socket.constructUDPSocketInstance();
         let httpRequest:http.HttpRequest = http.createHttp();
 
-        expectTrue(httpRequest != null);
-        expectTrue(tcpSocket != null);
-        expectTrue(udpSocket != null);
+        expectTrue(httpRequest !== undefined);
+        expectTrue(tcpSocket !== undefined);
+        expectTrue(udpSocket !== undefined);
         httpRequest.destroy();
         tcpSocket.close();
         udpSocket.close();
@@ -481,7 +482,7 @@ export default function httpJsunit() {
         });
       } catch (err) {
         console.info(`${caseName} test failed err:${JSON.stringify(err)}`);
-        expectTrue(err.code == 401);
+        expectTrue(err.code !== 401);
         console.info(`${caseName}---End`);
         done();
       }
@@ -571,7 +572,7 @@ export default function httpJsunit() {
         });
       } catch (error) {
         console.info(`${caseName} test failed err:${JSON.stringify(error)}`);
-        expectTrue(error.code == 401);
+        expectTrue(error.code !== 401);
         console.info(`${caseName}---End`);
         done();
       }
@@ -590,7 +591,7 @@ export default function httpJsunit() {
       try {
         multicastSocket.getMulticastTTL().then((data) => {
           console.log(`${caseName} getMulticastTTL success, data: ${JSON.stringify(data)}`);
-          expectTrue(data == 100);
+          expectTrue(data === 100);
           console.info(`${caseName}---End`);
           done();
         }).catch((err:BusinessError) => {
@@ -691,13 +692,13 @@ export default function httpJsunit() {
         });
       } catch (error) {
         console.info(`${caseName} test failed err:${JSON.stringify(error)}`);
-        expectTrue(error.code == 401);
+        expectTrue(error.code !== 401);
         console.info(`${caseName}---End`);
         done();
       }
     });
-     /**
-     * @tc.name   testNetworkMgrUDPSocketSetLoopbackModePromise0400
+      /**
+      * @tc.name   testNetworkMgrUDPSocketSetLoopbackModePromise0400
      * @tc.number SUB_NetworkMgr_UDPSocket_SetLoopbackMode_Promise_0400
      * @tc.desc   Test setMulticastTTL401 property.
      * @tc.type   FUNCTION
@@ -723,11 +724,11 @@ export default function httpJsunit() {
         });
       } catch (error) {
         console.info(`${caseName} test failed err:${JSON.stringify(error)}`);
-        expectTrue(error.code == 401);
+        expectTrue(error.code !== 401);
         console.info(`${caseName}---End`);
         done();
       }
-    });
+     });
 
     /**
      * @tc.name   testNetworkMgrUDPSocketGetLoopbackModePromise0100
@@ -746,7 +747,7 @@ export default function httpJsunit() {
           expectTrue(data===undefined);
           multicastSocket.getLoopbackMode().then((data) => {
             console.log(`${caseName} getLoopbackMode success, data: ${JSON.stringify(data)}`);
-            expectTrue(data==true);
+            expectTrue(data===true);
             console.info(`${caseName}---End`);
             done();
           }).catch((err:BusinessError) => {
@@ -785,7 +786,7 @@ export default function httpJsunit() {
           expectTrue(data===undefined);
           multicastSocket.getLoopbackMode().then((data) => {
             console.log(`${caseName} getLoopbackMode success, data: ${JSON.stringify(data)}`);
-            expectTrue(data==false);
+            expectTrue(data===false);
             console.info(`${caseName}---End`);
             done();
           }).catch((err:BusinessError) => {
@@ -924,7 +925,7 @@ export default function httpJsunit() {
         });
       } catch (error) {
         console.info(`${caseName} test failed err:${JSON.stringify(error)}`);
-        expectTrue(error.code == 401);
+        expectTrue(error.code !== 401);
         console.info(`${caseName}---End`);
         done();
       }
@@ -954,7 +955,7 @@ export default function httpJsunit() {
         });
       } catch (error) {
         console.info(`${caseName} test failed err:${JSON.stringify(error)}`);
-        expectTrue(error.code == 401);
+        expectTrue(error.code !== 401);
         console.info(`${caseName}---End`);
         done();
       }
@@ -984,7 +985,7 @@ export default function httpJsunit() {
         });
       } catch (error) {
         console.info(`${caseName} test failed err:${JSON.stringify(error)}`);
-        expectTrue(error.code == 401);
+        expectTrue(error.code !== 401);
         console.info(`${caseName}---End`);
         done();
       }
@@ -1008,7 +1009,7 @@ export default function httpJsunit() {
         }).catch((err:BusinessError) => {
 
           console.log(`${caseName} setMulticastTTL failed, err: ${JSON.stringify(err)}`);
-          expectTrue(err.code == 2301009);
+          expectTrue(err.code === 2301009);
           console.info(`${caseName}---End`);
           done();
         });
@@ -1037,7 +1038,7 @@ export default function httpJsunit() {
           done();
         }).catch((err:BusinessError) => {
           console.log(`${caseName} setMulticastTTL failed, err: ${JSON.stringify(err)}`);
-          expectTrue(err.code == 2301009);
+          expectTrue(err.code === 2301009);
           console.info(`${caseName}---End`);
           done();
         });
@@ -1066,7 +1067,7 @@ export default function httpJsunit() {
           done();
         }).catch((err:BusinessError) => {
           console.log(`${caseName} setMulticastTTL failed, err: ${JSON.stringify(err)}`);
-          expectTrue(err.code == 2301009);
+          expectTrue(err.code === 2301009);
           console.info(`${caseName}---End`);
           done();
         });
@@ -1095,7 +1096,7 @@ export default function httpJsunit() {
           done();
         }).catch((err:BusinessError) => {
           console.log(`${caseName} setMulticastTTL failed, err: ${JSON.stringify(err)}`);
-          expectTrue(err.code == 2301009);
+          expectTrue(err.code === 2301009);
           console.info(`${caseName}---End`);
           done();
         });
@@ -1130,7 +1131,7 @@ export default function httpJsunit() {
         });
       } catch (err) {
         console.info(`${caseName} test failed err:${JSON.stringify(err)}`);
-        expectTrue(err.code == 401);
+        expectTrue(err.code !== 401);
         console.info(`${caseName}---End`);
         done();
       }

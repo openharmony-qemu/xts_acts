@@ -57,7 +57,7 @@ export default function HttpCreateHttpResponseCacheTest() {
             try {
                 let cacheSize: int = 10;
                 let httpResponseCache: http.HttpResponseCache = http.createHttpResponseCache(cacheSize);
-                ExpectTrue(typeof httpResponseCache == 'object');
+                ExpectTrue(typeof httpResponseCache === 'object');
                 done();
             } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
@@ -81,7 +81,7 @@ export default function HttpCreateHttpResponseCacheTest() {
             try {
                 let cacheSize: int = 11;
                 let httpResponseCache: http.HttpResponseCache = http.createHttpResponseCache(cacheSize);
-                ExpectTrue(typeof httpResponseCache == 'object');
+                ExpectTrue(typeof httpResponseCache === 'object');
                 done();
             } catch (err) {
                 hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
@@ -105,7 +105,7 @@ export default function HttpCreateHttpResponseCacheTest() {
         hilog.info(domain, tag, '%{public}s', caseName + ' start');
         try {
           let httpRequest = http.createHttp();
-          ExpectTrue(typeof httpRequest == 'object');
+          ExpectTrue(typeof httpRequest === 'object');
           done();
         } catch (err) {
           hilog.info(domain, tag, '%{public}s', caseName + '  get error is ' + JSON.stringify(err));

@@ -1,7 +1,136 @@
 import("//build/lite/config/hap_pack.gni")
+import("//test/xts/tools/lite/build/xts_gated_js_suite.gni")
 
-_suite_dir = "$root_out_dir/suites/acts_validator_lite/testcases/acts_validator_lite"
+# Capability switches for the engine features these cases exercise. All six are
+# declared together in foundation/arkui/ace_engine_lite/ace_lite.gni (each default
+# false) and turned on per product through the component "features" in
+# vendor <product>/config.json. Importing the engine's own declaration keeps every
+# gate below and the engine reading the same source; a case whose capability is
+# compiled out cannot pass, so it is dropped from the suite instead of shipping.
+import("//foundation/arkui/ace_engine_lite/ace_lite.gni")
+_suite_dir =
+    "$root_out_dir/suites/acts_validator_lite/testcases/acts_validator_lite"
 _tools_dir = "$root_out_dir/suites/acts_validator_lite/testcases/tools"
+
+# Pages that every product builds; pages needing an engine capability are appended
+# below, each inside the matching switch.
+_pages = [
+  "pages/index/index",
+  "pages/ArkUI/chart/line/index",
+  "pages/ArkUI/common/index/index",
+  "pages/ArkUI/marquee/index",
+  "pages/ArkUI/ui_advanced/index",
+  "pages/ArkUI/ui_basic/index",
+  "pages/Communication/nfc/index",
+  "pages/DistributedData/storage/index",
+  "pages/FileManagement/file/index",
+  "pages/PowerManager/power/index",
+  "pages/Startup/deviceInfo/index",
+  "pages/Sensors/sensors/index/index",
+  "pages/Location/index/index",
+  "pages/common/help/index",
+  "pages/Sensors/common/index/index",
+  "pages/Sensors/workoutSensors/index/index",
+]
+
+# Capability-gated pages. With a switch off the render step drops these routes from
+# the generated manifest.json / config.json and removes the pages, their app.js
+# report items, the home button, the navigateTo route and the submenu row; a
+# dangling reference fails the build instead of silently shipping.
+if (ace_engine_lite_enable_flex_layout_config) {
+  _pages += [
+    "pages/ArkUI/flex/aspect-ratio/index",
+    "pages/ArkUI/flex/item-sizing/index",
+    "pages/ArkUI/flex/align-self/index",
+    "pages/ArkUI/flex/size-constraints/index",
+    "pages/ArkUI/flex/align-content/index",
+    "pages/ArkUI/flex/flexDirection/index",
+    "pages/ArkUI/flex/justifyContent/index",
+    "pages/ArkUI/flex/alignItems/index",
+    "pages/ArkUI/flex/flexWrap/index",
+    "pages/ArkUI/flex/flex-gap/index",
+    "pages/ArkUI/flex/flex-margin-left/index",
+    "pages/ArkUI/flex/flex-overflow/index",
+    "pages/ArkUI/flex/flex-position/index",
+  ]
+}
+
+if (ace_engine_lite_enable_gradient_capability) {
+  _pages += [
+    "pages/ArkUI/gradient_angle/index",
+    "pages/ArkUI/gradient_button/index",
+    "pages/ArkUI/gradient_direction/index",
+    "pages/ArkUI/gradient_list/index",
+  ]
+}
+
+if (ace_engine_lite_enable_svg_component_config) {
+  _pages += [
+    "pages/ArkUI/svgShape/index",
+    "pages/ArkUI/svgPath/index",
+    "pages/ArkUI/svgPaint/index",
+    "pages/ArkUI/svgTransform/index",
+    "pages/ArkUI/svgText/index",
+    "pages/ArkUI/svgAnimate/index",
+  ]
+}
+
+if (ace_engine_lite_enable_animation_capability) {
+  _pages += [
+    "pages/ArkUI/pathAnimator/index",
+    "pages/ArkUI/transition_basic/index",
+  ]
+}
+
+if (ace_engine_lite_enable_element_transition_capability) {
+  _pages += [ "pages/ArkUI/element-transition/index" ]
+}
+
+if (ace_engine_lite_feature_page_transition_effect) {
+  _pages += [
+    "pages/ArkUI/RouterTransition/index/index",
+    "pages/ArkUI/RouterTransition/normal/index",
+    "pages/ArkUI/RouterTransition/edge_api/index",
+    "pages/ArkUI/RouterTransition/edge_duration/index",
+    "pages/ArkUI/RouterTransition/target/index",
+  ]
+}
+
+_extra_js = [
+  "common/js/event.js",
+  "common/js/general.js",
+
+  # Only imported by the three gated RouterTransition group pages.
+  "common/js/router_transition.js",
+  "common/js/swiper.js",
+
+  # Image assets referenced by ui_basic (opacity) and ui_advanced (image / image-animator).
+  "common/icon.png",
+  "common/A094_051.png",
+  "common/A094_052.png",
+  "common/A094_053.png",
+  "common/A094_054.png",
+  "common/A094_055.png",
+  "common/A094_056.png",
+  "common/A094_057.png",
+  "common/A094_058.png",
+  "common/A094_059.png",
+  "common/A094_060.png",
+  "common/A094_061.png",
+  "common/A094_062.png",
+  "common/A094_063.png",
+  "common/A094_064.png",
+  "common/A094_065.png",
+  "common/A094_066.png",
+  "common/A094_067.png",
+]
+
+xts_gated_js_suite("validator_src") {
+  src_root = "entry/src/main/js/MainAbility"
+  config_json = "entry/src/main/config.json"
+  pages = _pages
+  extra_sources = _extra_js
+}
 
 action("acts_validator_lite_ace_loader_build") {
   script = "pre_build.py"
@@ -12,152 +141,12 @@ action("acts_validator_lite_ace_loader_build") {
 action("acts_validator_lite_js_bundle") {
   deps = [
     ":acts_validator_lite_ace_loader_build",
-    
+    ":validator_src_render",
   ]
   script = "acts_validator_lite_build_js.py"
   sources = [
-    "entry/src/main/js/MainAbility/app.js",
-    "entry/src/main/js/MainAbility/manifest.json",
-    "entry/src/main/js/MainAbility/common/js/event.js",
-    "entry/src/main/js/MainAbility/common/js/general.js",
-    "entry/src/main/js/MainAbility/common/js/router_transition.js",
-    "entry/src/main/js/MainAbility/common/js/swiper.js",
-    "entry/src/main/js/MainAbility/pages/index/index.css",
-    "entry/src/main/js/MainAbility/pages/index/index.hml",
-    "entry/src/main/js/MainAbility/pages/index/index.js",
-    "entry/src/main/js/MainAbility/pages/common/help/index.css",
-    "entry/src/main/js/MainAbility/pages/common/help/index.hml",
-    "entry/src/main/js/MainAbility/pages/common/help/index.js",
-    "entry/src/main/js/MainAbility/pages/ArkUI/common/index/index.css",
-    "entry/src/main/js/MainAbility/pages/ArkUI/common/index/index.hml",
-    "entry/src/main/js/MainAbility/pages/ArkUI/common/index/index.js",
-    "entry/src/main/js/MainAbility/pages/ArkUI/marquee/index.css",
-    "entry/src/main/js/MainAbility/pages/ArkUI/marquee/index.hml",
-    "entry/src/main/js/MainAbility/pages/ArkUI/marquee/index.js",
-    "entry/src/main/js/MainAbility/pages/ArkUI/ui_advanced/index.css",
-    "entry/src/main/js/MainAbility/pages/ArkUI/ui_advanced/index.hml",
-    "entry/src/main/js/MainAbility/pages/ArkUI/ui_advanced/index.js",
-    "entry/src/main/js/MainAbility/pages/ArkUI/ui_basic/index.css",
-    "entry/src/main/js/MainAbility/pages/ArkUI/ui_basic/index.hml",
-    "entry/src/main/js/MainAbility/pages/ArkUI/ui_basic/index.js",
-    "entry/src/main/js/MainAbility/pages/ArkUI/chart/line/index.css",
-    "entry/src/main/js/MainAbility/pages/ArkUI/chart/line/index.hml",
-    "entry/src/main/js/MainAbility/pages/ArkUI/chart/line/index.js",
-    "entry/src/main/js/MainAbility/pages/FileManagement/file/index.css",
-    "entry/src/main/js/MainAbility/pages/FileManagement/file/index.hml",
-    "entry/src/main/js/MainAbility/pages/FileManagement/file/index.js",
-    "entry/src/main/js/MainAbility/pages/PowerManager/power/index.css",
-    "entry/src/main/js/MainAbility/pages/PowerManager/power/index.hml",
-    "entry/src/main/js/MainAbility/pages/PowerManager/power/index.js",
-    "entry/src/main/js/MainAbility/pages/DistributedData/storage/index.css",
-    "entry/src/main/js/MainAbility/pages/DistributedData/storage/index.hml",
-    "entry/src/main/js/MainAbility/pages/DistributedData/storage/index.js",
-    "entry/src/main/js/MainAbility/pages/Startup/deviceInfo/index.css",
-    "entry/src/main/js/MainAbility/pages/Startup/deviceInfo/index.hml",
-    "entry/src/main/js/MainAbility/pages/Startup/deviceInfo/index.js",
-    "entry/src/main/js/MainAbility/pages/Sensors/index/index.css",
-    "entry/src/main/js/MainAbility/pages/Sensors/index/index.hml",
-    "entry/src/main/js/MainAbility/pages/Sensors/index/index.js",
-    "entry/src/main/js/MainAbility/pages/Location/index/index.css",
-    "entry/src/main/js/MainAbility/pages/Location/index/index.hml",
-    "entry/src/main/js/MainAbility/pages/Location/index/index.js",
-    "entry/src/main/js/MainAbility/pages/Communication/nfc/index.css",
-    "entry/src/main/js/MainAbility/pages/Communication/nfc/index.hml",
-    "entry/src/main/js/MainAbility/pages/Communication/nfc/index.js",
-    "entry/src/main/js/MainAbility/pages/RouterTransition/index/index.css",
-    "entry/src/main/js/MainAbility/pages/RouterTransition/index/index.hml",
-    "entry/src/main/js/MainAbility/pages/RouterTransition/index/index.js",
-    "entry/src/main/js/MainAbility/pages/RouterTransition/normal/index.css",
-    "entry/src/main/js/MainAbility/pages/RouterTransition/normal/index.hml",
-    "entry/src/main/js/MainAbility/pages/RouterTransition/normal/index.js",
-    "entry/src/main/js/MainAbility/pages/RouterTransition/edge_api/index.css",
-    "entry/src/main/js/MainAbility/pages/RouterTransition/edge_api/index.hml",
-    "entry/src/main/js/MainAbility/pages/RouterTransition/edge_api/index.js",
-    "entry/src/main/js/MainAbility/pages/RouterTransition/edge_duration/index.css",
-    "entry/src/main/js/MainAbility/pages/RouterTransition/edge_duration/index.hml",
-    "entry/src/main/js/MainAbility/pages/RouterTransition/edge_duration/index.js",
-    "entry/src/main/js/MainAbility/pages/RouterTransition/target/index.css",
-    "entry/src/main/js/MainAbility/pages/RouterTransition/target/index.hml",
-    "entry/src/main/js/MainAbility/pages/RouterTransition/target/index.js",
-    "entry/src/main/js/MainAbility/pages/ArkUI/flex/aspect-ratio/index.css",
-    "entry/src/main/js/MainAbility/pages/ArkUI/flex/aspect-ratio/index.hml",
-    "entry/src/main/js/MainAbility/pages/ArkUI/flex/aspect-ratio/index.js",
-    "entry/src/main/js/MainAbility/pages/ArkUI/flex/item-sizing/index.css",
-    "entry/src/main/js/MainAbility/pages/ArkUI/flex/item-sizing/index.hml",
-    "entry/src/main/js/MainAbility/pages/ArkUI/flex/item-sizing/index.js",
-    "entry/src/main/js/MainAbility/pages/ArkUI/flex/align-self/index.css",
-    "entry/src/main/js/MainAbility/pages/ArkUI/flex/align-self/index.hml",
-    "entry/src/main/js/MainAbility/pages/ArkUI/flex/align-self/index.js",
-    "entry/src/main/js/MainAbility/pages/ArkUI/flex/size-constraints/index.css",
-    "entry/src/main/js/MainAbility/pages/ArkUI/flex/size-constraints/index.hml",
-    "entry/src/main/js/MainAbility/pages/ArkUI/flex/size-constraints/index.js",
-    "entry/src/main/js/MainAbility/pages/ArkUI/flex/align-content/index.css",
-    "entry/src/main/js/MainAbility/pages/ArkUI/flex/align-content/index.hml",
-    "entry/src/main/js/MainAbility/pages/ArkUI/flex/align-content/index.js",
-    "entry/src/main/js/MainAbility/pages/ArkUI/flex/flexDirection/index.css",
-    "entry/src/main/js/MainAbility/pages/ArkUI/flex/flexDirection/index.hml",
-    "entry/src/main/js/MainAbility/pages/ArkUI/flex/flexDirection/index.js",
-    "entry/src/main/js/MainAbility/pages/ArkUI/flex/justifyContent/index.css",
-    "entry/src/main/js/MainAbility/pages/ArkUI/flex/justifyContent/index.hml",
-    "entry/src/main/js/MainAbility/pages/ArkUI/flex/justifyContent/index.js",
-    "entry/src/main/js/MainAbility/pages/ArkUI/flex/alignItems/index.css",
-    "entry/src/main/js/MainAbility/pages/ArkUI/flex/alignItems/index.hml",
-    "entry/src/main/js/MainAbility/pages/ArkUI/flex/alignItems/index.js",
-    "entry/src/main/js/MainAbility/pages/ArkUI/flex/flexWrap/index.css",
-    "entry/src/main/js/MainAbility/pages/ArkUI/flex/flexWrap/index.hml",
-    "entry/src/main/js/MainAbility/pages/ArkUI/flex/flexWrap/index.js",
-    "entry/src/main/js/MainAbility/pages/ArkUI/flex/flex-gap/index.css",
-    "entry/src/main/js/MainAbility/pages/ArkUI/flex/flex-gap/index.hml",
-    "entry/src/main/js/MainAbility/pages/ArkUI/flex/flex-gap/index.js",
-    "entry/src/main/js/MainAbility/pages/ArkUI/flex/flex-margin-left/index.css",
-    "entry/src/main/js/MainAbility/pages/ArkUI/flex/flex-margin-left/index.hml",
-    "entry/src/main/js/MainAbility/pages/ArkUI/flex/flex-margin-left/index.js",
-    "entry/src/main/js/MainAbility/pages/ArkUI/flex/flex-overflow/index.css",
-    "entry/src/main/js/MainAbility/pages/ArkUI/flex/flex-overflow/index.hml",
-    "entry/src/main/js/MainAbility/pages/ArkUI/flex/flex-overflow/index.js",
-    "entry/src/main/js/MainAbility/pages/ArkUI/flex/flex-position/index.css",
-    "entry/src/main/js/MainAbility/pages/ArkUI/flex/flex-position/index.hml",
-    "entry/src/main/js/MainAbility/pages/ArkUI/flex/flex-position/index.js",
-    "entry/src/main/js/MainAbility/pages/ArkUI/gradient_angle/index.css",
-    "entry/src/main/js/MainAbility/pages/ArkUI/gradient_angle/index.hml",
-    "entry/src/main/js/MainAbility/pages/ArkUI/gradient_angle/index.js",
-    "entry/src/main/js/MainAbility/pages/ArkUI/gradient_button/index.css",
-    "entry/src/main/js/MainAbility/pages/ArkUI/gradient_button/index.hml",
-    "entry/src/main/js/MainAbility/pages/ArkUI/gradient_button/index.js",
-    "entry/src/main/js/MainAbility/pages/ArkUI/gradient_direction/index.css",
-    "entry/src/main/js/MainAbility/pages/ArkUI/gradient_direction/index.hml",
-    "entry/src/main/js/MainAbility/pages/ArkUI/gradient_direction/index.js",
-    "entry/src/main/js/MainAbility/pages/ArkUI/gradient_list/index.css",
-    "entry/src/main/js/MainAbility/pages/ArkUI/gradient_list/index.hml",
-    "entry/src/main/js/MainAbility/pages/ArkUI/gradient_list/index.js",
-    "entry/src/main/js/MainAbility/pages/ArkUI/pathAnimator/index.css",
-    "entry/src/main/js/MainAbility/pages/ArkUI/pathAnimator/index.hml",
-    "entry/src/main/js/MainAbility/pages/ArkUI/pathAnimator/index.js",
-    "entry/src/main/js/MainAbility/pages/ArkUI/svgShape/index.css",
-    "entry/src/main/js/MainAbility/pages/ArkUI/svgShape/index.hml",
-    "entry/src/main/js/MainAbility/pages/ArkUI/svgShape/index.js",
-    "entry/src/main/js/MainAbility/pages/ArkUI/svgPath/index.css",
-    "entry/src/main/js/MainAbility/pages/ArkUI/svgPath/index.hml",
-    "entry/src/main/js/MainAbility/pages/ArkUI/svgPath/index.js",
-    "entry/src/main/js/MainAbility/pages/ArkUI/svgPaint/index.css",
-    "entry/src/main/js/MainAbility/pages/ArkUI/svgPaint/index.hml",
-    "entry/src/main/js/MainAbility/pages/ArkUI/svgPaint/index.js",
-    "entry/src/main/js/MainAbility/pages/ArkUI/svgTransform/index.css",
-    "entry/src/main/js/MainAbility/pages/ArkUI/svgTransform/index.hml",
-    "entry/src/main/js/MainAbility/pages/ArkUI/svgTransform/index.js",
-    "entry/src/main/js/MainAbility/pages/ArkUI/svgText/index.css",
-    "entry/src/main/js/MainAbility/pages/ArkUI/svgText/index.hml",
-    "entry/src/main/js/MainAbility/pages/ArkUI/svgText/index.js",
-    "entry/src/main/js/MainAbility/pages/ArkUI/svgAnimate/index.css",
-    "entry/src/main/js/MainAbility/pages/ArkUI/svgAnimate/index.hml",
-    "entry/src/main/js/MainAbility/pages/ArkUI/svgAnimate/index.js",
-    "entry/src/main/js/MainAbility/pages/ArkUI/element-transition/index.css",
-    "entry/src/main/js/MainAbility/pages/ArkUI/element-transition/index.hml",
-    "entry/src/main/js/MainAbility/pages/ArkUI/element-transition/index.js",
-    "entry/src/main/js/MainAbility/pages/ArkUI/transition_basic/index.css",
-    "entry/src/main/js/MainAbility/pages/ArkUI/transition_basic/index.hml",
-    "entry/src/main/js/MainAbility/pages/ArkUI/transition_basic/index.js",
-    "acts_validator_lite_build_js.py",
+    "$root_out_dir/validator_src/config.json",
+    "$root_out_dir/validator_src/main/manifest.json",
   ]
   outputs = [
     "$root_out_dir/acts_validator_lite/assets/js/default/app.js",
@@ -165,7 +154,7 @@ action("acts_validator_lite_js_bundle") {
     "$root_out_dir/acts_validator_lite/assets/js/default/pages/index/index.js",
   ]
   args = [
-    rebase_path("entry/src/main/js/MainAbility"),
+    rebase_path("$root_out_dir/validator_src/main"),
     rebase_path("$root_out_dir/acts_validator_lite/assets/js/default"),
   ]
 }
@@ -175,11 +164,9 @@ group("acts_validator_lite_js_assets") {
 }
 
 hap_pack("acts_validator_lite_hap") {
-  deps = [
-    ":acts_validator_lite_js_assets",
-  ]
+  deps = [ ":acts_validator_lite_js_assets" ]
   mode = "hap"
-  json_path = "entry/src/main/config.json"
+  json_path = "$root_out_dir/validator_src/config.json"
   assets_path = "$root_out_dir/acts_validator_lite/assets"
   force = "true"
   cert_profile = "cert/openharmony_sx.p7b"
@@ -216,6 +203,8 @@ action("acts_validator_lite_deploy") {
     rebase_path("$root_out_dir/dev_tools/bin/aa"),
     "--tools-out",
     rebase_path(_tools_dir),
+    "--kernel-type",
+    "${ohos_kernel_type}",
   ]
 }
 
@@ -227,15 +216,15 @@ action("acts_validator_lite_copy_bm") {
     "--method_name",
     "copy_file",
     "--arguments",
-    "output=" + rebase_path(_tools_dir) +
-    "#sources=" + rebase_path("$root_out_dir/dev_tools/bin/bm") + "#to_dir=True",
+    "output=" + rebase_path(_tools_dir) + "#sources=" +
+        rebase_path("$root_out_dir/dev_tools/bin/bm") + "#to_dir=True",
   ]
 }
 
 action("acts_validator_lite_remove_from_rootfs") {
   deps = [
-    ":acts_validator_lite_deploy",
     ":acts_validator_lite_copy_bm",
+    ":acts_validator_lite_deploy",
   ]
   script = "rm_from_rootfs.py"
   outputs = [ "$target_gen_dir/rm_acts_validator_lite.stamp" ]

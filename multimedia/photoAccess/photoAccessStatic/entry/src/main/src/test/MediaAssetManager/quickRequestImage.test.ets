@@ -19,7 +19,7 @@ import image from '@ohos.multimedia.image'
 import { describe, it, expect, TestType, Size, Level, Hypium, beforeAll } from '../../../../hypium/index'
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import hilog from '@ohos.hilog'
-import { fetchOption, getPermission, driveFn, sleep, pushCreateAsset } from '../Common.test.ets';
+import { fetchOption, getPermission, driveFn, pushCreateAsset } from '../Common.test.ets';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -44,7 +44,6 @@ export default function quickRequestImageTest() {
       hilog.info(domain, tag, 'beforeAll case');
       await getPermission();
       await driveFn();
-      await sleep(1000);
     });
 
     /**

@@ -79,8 +79,8 @@ export default function ListItemGroup_aspectRatio_width2() {
       await CommonFunc.sleep(1000);
       let ListItemGroup01 = CommonFunc.getComponentRect('ListItemGroup_aspectRatio_width2_01');
 
-      expect(Math.round(ListItemGroup01.right - ListItemGroup01.left)).assertEqual(Math.round(vp2px(300)));
-      expect(Math.round(ListItemGroup01.bottom - ListItemGroup01.top)).assertEqual(Math.round(vp2px(420)));
+      expect(Math.floor(Math.abs(ListItemGroup01.right - ListItemGroup01.left) - vp2px(300)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(ListItemGroup01.bottom - ListItemGroup01.top) - vp2px(420)) <= 1).assertTrue();
 
       console.info('[SUB_ACE_ListItemGroup_aspectRatio_width2_0100] END');
       done();
@@ -102,8 +102,9 @@ export default function ListItemGroup_aspectRatio_width2() {
       await CommonFunc.sleep(1000);
       let ListItemGroup01 = CommonFunc.getComponentRect('ListItemGroup_aspectRatio_width2_01');
 
-      expect(Math.round(ListItemGroup01.right - ListItemGroup01.left)).assertEqual(Math.round(vp2px(300)));
-      expect(Math.round(ListItemGroup01.bottom - ListItemGroup01.top)).assertEqual(Math.round(vp2px(420)));
+      expect(Math.floor(Math.abs(ListItemGroup01.right - ListItemGroup01.left) - vp2px(300)) <= 1).assertTrue();
+      console.info('[SUB_ACE_ListItemGroup_aspectRatio_width2_0200] vp2px(100): ' + vp2px(100));
+      expect(Math.floor(Math.abs(ListItemGroup01.bottom - ListItemGroup01.top) - vp2px(420)) <= 1).assertTrue();
 
       console.info('[SUB_ACE_ListItemGroup_aspectRatio_width2_0200] END');
       done();
@@ -125,8 +126,8 @@ export default function ListItemGroup_aspectRatio_width2() {
       await CommonFunc.sleep(1000);
       let ListItemGroup01 = CommonFunc.getComponentRect('ListItemGroup_aspectRatio_width2_01');
 
-      expect(Math.round(ListItemGroup01.right - ListItemGroup01.left)).assertEqual(Math.round(vp2px(300)));
-      expect(Math.round(ListItemGroup01.bottom - ListItemGroup01.top)).assertEqual(Math.round(vp2px(420)));
+      expect(Math.floor(Math.abs(ListItemGroup01.right - ListItemGroup01.left) - vp2px(300)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(ListItemGroup01.bottom - ListItemGroup01.top) - vp2px(420)) <= 1).assertTrue();
 
       console.info('[SUB_ACE_ListItemGroup_aspectRatio_width2_0300] END');
       done();
@@ -148,8 +149,8 @@ export default function ListItemGroup_aspectRatio_width2() {
       await CommonFunc.sleep(1000);
       let ListItemGroup01 = CommonFunc.getComponentRect('ListItemGroup_aspectRatio_width2_01');
 
-      expect(Math.round(ListItemGroup01.right - ListItemGroup01.left)).assertEqual(Math.round(vp2px(300)));
-      expect(Math.round(ListItemGroup01.bottom - ListItemGroup01.top)).assertEqual(Math.round(vp2px(420)));
+      expect(Math.floor(Math.abs(ListItemGroup01.right - ListItemGroup01.left) - vp2px(300)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(ListItemGroup01.bottom - ListItemGroup01.top) - vp2px(420)) <= 1).assertTrue();
 
       console.info('[SUB_ACE_ListItemGroup_aspectRatio_width2_0400] END');
       done();

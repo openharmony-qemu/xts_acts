@@ -21,7 +21,7 @@ import {
   photoKeys,
   getFileAsset,
   photoFetchOption, getPermission,
-  driveFn,
+  driveFn, checkResourceFile, createResource
 } from '../common'
 import common from '@ohos.app.ability.common'
 
@@ -37,6 +37,9 @@ export default function unRegisterChangeTest () {
       await getPermission();
       await driveFn();
       await sleep(1000);
+      const fileNames: Array<string> = [ "off01.jpg", "off10.jpg", "off11.jpg", "off12.jpg", "off15.jpg", "offCb01.jpg"];
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNames);
     });
     /**
      * @tc.name   unRegisterChange_001

@@ -17,6 +17,7 @@
 #include <arkui/native_node.h>
 #include <arkui/native_interface.h>
 
+
 namespace ArkUICapiTest {
 
 static napi_value SetUiDvsyncSwitchTest001(napi_env env, napi_callback_info info)

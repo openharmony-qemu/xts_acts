@@ -46,7 +46,7 @@
       },
       {
         "name": "setFontSizeAbility001",
-        "srcEntry": "./ets/setFontSizeAbility/setFontSizeAbility001.ts",
+        "srcEntry": "./ets/setFontSizeAbility/setFontSizeAbility001.ets",
         "description": "$string:TestAbility_desc",
         "icon": "$media:icon",
         "label": "$string:TestAbility_label",
@@ -67,7 +67,7 @@
       },
       {
         "name": "setFontSizeAbility002",
-        "srcEntry": "./ets/setFontSizeAbility/setFontSizeAbility002.ts",
+        "srcEntry": "./ets/setFontSizeAbility/setFontSizeAbility002.ets",
         "description": "$string:TestAbility_desc",
         "icon": "$media:icon",
         "label": "$string:TestAbility_label",
@@ -88,7 +88,7 @@
       },
       {
         "name": "setFontSizeAbility003",
-        "srcEntry": "./ets/setFontSizeAbility/setFontSizeAbility003.ts",
+        "srcEntry": "./ets/setFontSizeAbility/setFontSizeAbility003.ets",
         "description": "$string:TestAbility_desc",
         "icon": "$media:icon",
         "label": "$string:TestAbility_label",
@@ -109,7 +109,7 @@
       },
       {
         "name": "setFontSizeAbility004",
-        "srcEntry": "./ets/setFontSizeAbility/setFontSizeAbility004.ts",
+        "srcEntry": "./ets/setFontSizeAbility/setFontSizeAbility004.ets",
         "description": "$string:TestAbility_desc",
         "icon": "$media:icon",
         "label": "$string:TestAbility_label",
@@ -130,7 +130,7 @@
       },
       {
         "name": "setFontSizeAbility005",
-        "srcEntry": "./ets/setFontSizeAbility/setFontSizeAbility005.ts",
+        "srcEntry": "./ets/setFontSizeAbility/setFontSizeAbility005.ets",
         "description": "$string:TestAbility_desc",
         "icon": "$media:icon",
         "label": "$string:TestAbility_label",
@@ -151,7 +151,7 @@
       },
       {
         "name": "setFontSizeAbility006",
-        "srcEntry": "./ets/setFontSizeAbility/setFontSizeAbility006.ts",
+        "srcEntry": "./ets/setFontSizeAbility/setFontSizeAbility006.ets",
         "description": "$string:TestAbility_desc",
         "icon": "$media:icon",
         "label": "$string:TestAbility_label",
@@ -172,7 +172,7 @@
       },
       {
         "name": "setFontSizeAbility007",
-        "srcEntry": "./ets/setFontSizeAbility/setFontSizeAbility007.ts",
+        "srcEntry": "./ets/setFontSizeAbility/setFontSizeAbility007.ets",
         "description": "$string:TestAbility_desc",
         "icon": "$media:icon",
         "label": "$string:TestAbility_label",
@@ -193,7 +193,7 @@
       },
       {
         "name": "setFontSizeAbility008",
-        "srcEntry": "./ets/setFontSizeAbility/setFontSizeAbility008.ts",
+        "srcEntry": "./ets/setFontSizeAbility/setFontSizeAbility008.ets",
         "description": "$string:TestAbility_desc",
         "icon": "$media:icon",
         "label": "$string:TestAbility_label",
@@ -214,7 +214,7 @@
       },
       {
         "name": "setFontSizeAbility009",
-        "srcEntry": "./ets/setFontSizeAbility/setFontSizeAbility009.ts",
+        "srcEntry": "./ets/setFontSizeAbility/setFontSizeAbility009.ets",
         "description": "$string:TestAbility_desc",
         "icon": "$media:icon",
         "label": "$string:TestAbility_label",
@@ -235,7 +235,7 @@
       },
       {
         "name": "setFontSizeAbility010",
-        "srcEntry": "./ets/setFontSizeAbility/setFontSizeAbility010.ts",
+        "srcEntry": "./ets/setFontSizeAbility/setFontSizeAbility010.ets",
         "description": "$string:TestAbility_desc",
         "icon": "$media:icon",
         "label": "$string:TestAbility_label",
@@ -256,7 +256,7 @@
       },
       {
         "name": "setFontSizeAbility011",
-        "srcEntry": "./ets/setFontSizeAbility/setFontSizeAbility011.ts",
+        "srcEntry": "./ets/setFontSizeAbility/setFontSizeAbility011.ets",
         "description": "$string:TestAbility_desc",
         "icon": "$media:icon",
         "label": "$string:TestAbility_label",
@@ -277,7 +277,7 @@
       },
       {
         "name": "setFontSizeAbility012",
-        "srcEntry": "./ets/setFontSizeAbility/setFontSizeAbility012.ts",
+        "srcEntry": "./ets/setFontSizeAbility/setFontSizeAbility012.ets",
         "description": "$string:TestAbility_desc",
         "icon": "$media:icon",
         "label": "$string:TestAbility_label",

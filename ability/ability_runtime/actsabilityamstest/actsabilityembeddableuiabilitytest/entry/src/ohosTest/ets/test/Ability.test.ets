@@ -22,6 +22,7 @@ import { Driver, ON ,Component } from '@kit.TestKit';
 import startability from '../../../main/ets/startability/startAbility';
 import abilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry'
 import eventBus from '../lib/EventBus';
+import display from '@ohos.display';
 
 const DOMAIN_NUMBER: number = 0xFF00;
 
@@ -448,13 +449,15 @@ export default function abilityTest() {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_EmbeddableUIAbility_2700';
       console.info('enter into test');
       hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME}  =========`);
+      let currentDisplayId = display.getDefaultDisplaySync().id;
+      console.info('currentDisplayId: ' + currentDisplayId);
       let want: Want = {
         deviceId: '',
         bundleName: 'com.example.appa',
         abilityName: 'terminateSelfWithResult',
       }
       let options: StartOptions = {
-        displayId: 0
+        displayId: currentDisplayId
       };
       console.log('success want');
       try {
@@ -635,8 +638,10 @@ export default function abilityTest() {
           'wantConstant.Params.SHOW_MODE_KEY':wantConstant.ShowMode.EMBEDDED_FULL
         }
       }
+      let currentDisplayId = display.getDefaultDisplaySync().id;
+      console.info(TEST_CASE_NAME + 'currentDisplayId: ' + currentDisplayId);
       let options: StartOptions = {
-        displayId: 0
+        displayId: currentDisplayId
       };
       console.log('success want');
       try {

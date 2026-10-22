@@ -62,15 +62,15 @@ export default function bindGridControllerSetOnTest() {
         await CommonFunc.sleep(200);
         await (oriBtn2?.click() as Promise<void>);
         await CommonFunc.sleep(1000);
-        expect(JSON.parseJsonElement(inspector.getInspectorByKey('bindGridController' + '_str6'))
+        expect(JSON.parseJsonElement(inspector.getInspectorByKey('bindGridController_str6'))
             .getElement('$attrs')
             .getString('content'))
             .assertEqual('OnWillScroll start');
-        expect(JSON.parseJsonElement(inspector.getInspectorByKey('bindGridController' + '_str'))
+        expect(JSON.parseJsonElement(inspector.getInspectorByKey('bindGridController_str'))
             .getElement('$attrs')
             .getString('content'))
             .assertEqual('OnDidScroll start');
-        expect(JSON.parseJsonElement(inspector.getInspectorByKey('bindGridController' + '_str4'))
+        expect(JSON.parseJsonElement(inspector.getInspectorByKey('bindGridController_str4'))
             .getElement('$attrs')
             .getString('content'))
             .assertEqual('onScrollIndex start');
@@ -99,18 +99,22 @@ export default function bindGridControllerSetOnTest() {
         let oriBtn1 = await driver.findComponent(ON.id('set'));
         await (oriBtn1?.click() as Promise<void>);
         await CommonFunc.sleep(200);
-        let dragScroll = await driver.findComponent(ON.id('bindGridController' + '_grid_dragging_fling'));
+        let dragScroll = await driver.findComponent(ON.id('bindGridController_grid_dragging_fling'));
         const rect = await (dragScroll?.getBounds() as Promise<Rect>);
+        let displayId = await dragScroll!.getDisplayId();
         let top = rect.top;
         let right = rect.right;
         let left = rect.left;
         let bottom = rect.bottom;
-        let height = bottom -top;
+        let height = bottom - top;
         let width = right - left;
-        await driver.swipe(Math.round(left + width * 0.9).toInt(),        // 起点 X：左侧 10% 处（避免贴边）
-            Math.round(top + height / 2).toInt(),          // 起点 Y：垂直中线
-            Math.round(left + width * 0.5).toInt(),        // 终点 X：右侧 90% 处（避免贴边）
-            Math.round(top + height / 2).toInt() );
+        let startX = (Math.round(left + width * 0.9)).toInt();
+        let endX = (Math.round(left + width * 0.5)).toInt();
+        let centerY = (Math.round(top + height / 2)).toInt();
+        await driver.swipeBetween(
+          { x: startX, y: centerY, displayId: displayId },
+          { x: endX, y: centerY, displayId: displayId }
+        );
         await CommonFunc.sleep(1000);
         expect(JSON.parseJsonElement(inspector.getInspectorByKey('str3'))
             .getElement('$attrs')
@@ -124,12 +128,14 @@ export default function bindGridControllerSetOnTest() {
             .getElement('$attrs')
             .getString('content'))
             .assertEqual('OnScrollStop start');
-        await driver.swipe(Math.round(left + width * 0.1).toInt(),        // 起点 X：左侧 10% 处（避免贴边）
-            Math.round(top + height / 2).toInt(),          // 起点 Y：垂直中线
-            Math.round(left + width * 0.9).toInt(),        // 终点 X：右侧 90% 处（避免贴边）
-            Math.round(top + height / 2).toInt() );
+        let startX2 = (Math.round(left + width * 0.1)).toInt();
+        let endX2 = (Math.round(left + width * 0.9)).toInt();
+        await driver.swipeBetween(
+          { x: startX2, y: centerY, displayId: displayId },
+          { x: endX2, y: centerY, displayId: displayId }
+        );
         await CommonFunc.sleep(200);
-        expect(JSON.parseJsonElement(inspector.getInspectorByKey('bindGridController' + '_str7'))
+        expect(JSON.parseJsonElement(inspector.getInspectorByKey('bindGridController_str7'))
             .getElement('$attrs')
             .getString('content'))
             .assertEqual('OnReachStart start');

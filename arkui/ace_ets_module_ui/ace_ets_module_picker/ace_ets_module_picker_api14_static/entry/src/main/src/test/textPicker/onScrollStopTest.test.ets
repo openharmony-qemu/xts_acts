@@ -71,8 +71,9 @@ it('onScrollStopTest_static_0100', Level.LEVEL3, async (done: () => void): Promi
       let btn1 = await driver.findComponent(ON.id('myTextPicker'));
       let rect = await btn1!.getBounds();
       console.info(`rect is: ` + JSON.stringify(rect))
-      await driver.swipe(Math.round((rect.left+rect.right)/2).toInt(),Math.round((rect.top+rect.bottom)/2).toInt(),
-        Math.round((rect.left+rect.right)/2).toInt(),Math.round((rect.top+rect.bottom)/4).toInt(),600);
+      let displayId = await btn1!.getDisplayId();
+      await driver.swipeBetween({ x: Math.round((rect.left+rect.right)/2).toInt(), y: Math.round((rect.top+rect.bottom)/2).toInt(), displayId: displayId },
+        { x: Math.round((rect.left+rect.right)/2).toInt(), y: Math.round((rect.top+rect.bottom)/4).toInt(), displayId: displayId }, 600);
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('text');
       console.info('[onScrollStopTest_static_0100] onScrollStopTest JSON.parseJsonElement(strJson) is: ' + JSON.stringify(strJson));

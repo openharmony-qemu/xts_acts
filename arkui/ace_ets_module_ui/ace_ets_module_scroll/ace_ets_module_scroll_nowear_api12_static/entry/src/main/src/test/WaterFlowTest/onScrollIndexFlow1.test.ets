@@ -61,16 +61,20 @@ it('onScrollIndexFlow1_static_0100', Level.LEVEL1, async (done: () => void): Pro
         console.info('[onScrollIndexFlow1_static_0100] START');
         let driver = Driver.create();
         await CommonFunc.sleep(1000);
-        let swiperScroll = CommonFunc.getComponentRectOnScreen('onScrollIndexFlow1');
-        let top = swiperScroll.top;
-        let right = swiperScroll.right;
-        let left = swiperScroll.left;
-        let bottom = swiperScroll.bottom;
-        console.info("onScrollIndexFlow1_static_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
-        let height = bottom -top;
-        let width = right - left;
+        let swipeComp = await driver.findComponent(ON.id('onScrollIndexFlow1'));
+        let rect = await swipeComp!.getBounds();
+        let displayId = await swipeComp!.getDisplayId();
+        let height = rect.bottom - rect.top;
+        let width = rect.right - rect.left;
+        let centerX = (Math.round(rect.left + width / 2)).toInt();
+        let scrollY = (Math.round(rect.top + height * 0.3)).toInt();
+        console.info("[onScrollIndexFlow1_static_0100] rect left=" + rect.left + " right=" + rect.right +
+          " top=" + rect.top + " bottom=" + rect.bottom + " displayId=" + displayId);
+        console.info("[onScrollIndexFlow1_static_0100] mouseScroll at (" + centerX + "," +
+          scrollY + ") displayId=" + displayId);
         await CommonFunc.sleep(1000);
-        await driver.mouseScroll({x:Math.round(left + width/2).toInt(), y: Math.round(top + height*0.3).toInt()}, true ,20)
+        await driver.mouseScroll(
+          { x: centerX, y: scrollY, displayId: displayId }, true, 20)
         await CommonFunc.sleep(2000);
 
         let strJson = inspector.getInspectorByKey('onScrollIndex_flow');

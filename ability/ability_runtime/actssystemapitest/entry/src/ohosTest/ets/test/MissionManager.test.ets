@@ -14,7 +14,8 @@
  */
 
 import { describe, it, expect, Level } from '@ohos/hypium-dynamic'
-import missionManager from "@ohos.app.ability.missionManager"
+import missionManager from '@ohos.app.ability.missionManager'
+
 import { BusinessError } from '@ohos.base';
 
 let ERROR_CODE = 202;
@@ -34,32 +35,32 @@ export default function missionManagerTest() {
       let TAG = 'System_API_Test_Mission_Manager_0100';
       let listener: missionManager.MissionListener = {
         onMissionCreated: (mission) => {
-          console.log("--------onMissionCreated-------")
+          console.log('--------onMissionCreated-------')
         },
         onMissionDestroyed: (mission) => {
-          console.log("--------onMissionDestroyed-------")
+          console.log('--------onMissionDestroyed-------')
         },
         onMissionSnapshotChanged: (mission) => {
-          console.log("--------onMissionSnapshotChanged-------")
+          console.log('--------onMissionSnapshotChanged-------')
         },
         onMissionLabelUpdated: (mission) => {
-          console.log("--------onMissionLabelUpdated-------")
+          console.log('--------onMissionLabelUpdated-------')
         },
         onMissionMovedToFront: (mission) => {
-          console.log("--------onMissionMovedToFront-------")
+          console.log('--------onMissionMovedToFront-------')
         },
         onMissionIconUpdated: (mission, icon) => {
-          console.log("--------onMissionIconUpdated-------")
+          console.log('--------onMissionIconUpdated-------')
         },
         onMissionClosed: (mission) => {
-          console.log("--------onMissionClosed-------")
+          console.log('--------onMissionClosed-------')
         }
       };
       try {
-        const observerCode = missionManager.on("mission", listener);
+        const observerCode = missionManager.on('mission', listener);
         console.log('-------- observerCode: ---------', observerCode);
       } catch (err) {
-        console.log(TAG + "  err.code: " + err.code);
+        console.log(TAG + '  err.code: ' + err.code);
         expect(err.code).assertEqual(ERROR_CODE);
         done();
       }
@@ -75,10 +76,10 @@ export default function missionManagerTest() {
      */
     it('System_API_Test_Mission_Manager_0200', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Mission_Manager_0200';
-      let deviceId: string = "deviceId";
+      let deviceId: string = 'deviceId';
       let missionId = 0;
       missionManager.getMissionInfo(deviceId, missionId, (err) => {
-        console.log(TAG + "  err.code: " + err.code);
+        console.log(TAG + '  err.code: ' + err.code);
         expect(err.code).assertEqual(ERROR_CODE);
         done();
       });
@@ -94,7 +95,7 @@ export default function missionManagerTest() {
      */
     it('System_API_Test_Mission_Manager_0300', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Mission_Manager_0300';
-      let deviceId: string = "deviceId";
+      let deviceId: string = 'deviceId';
       let missionId: number = 0;
       missionManager.getMissionInfo(deviceId, missionId)
         .then(err => {
@@ -103,7 +104,7 @@ export default function missionManagerTest() {
           done();
         })
         .catch((err: BusinessError) => {
-          console.log(TAG + "  err.code: " + err.code);
+          console.log(TAG + '  err.code: ' + err.code);
           expect(err.code).assertEqual(ERROR_CODE);
           done();
         })
@@ -119,10 +120,10 @@ export default function missionManagerTest() {
      */
     it('System_API_Test_Mission_Manager_0400', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Mission_Manager_0400';
-      let deviceId: string = "deviceId";
+      let deviceId: string = 'deviceId';
       let numMax: number = 10;
       missionManager.getMissionInfos(deviceId, numMax, (err) => {
-        console.log(TAG + "  err.code: " + err.code);
+        console.log(TAG + '  err.code: ' + err.code);
         expect(err.code).assertEqual(ERROR_CODE);
         done();
       });
@@ -138,7 +139,7 @@ export default function missionManagerTest() {
      */
     it('System_API_Test_Mission_Manager_0500', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Mission_Manager_0500';
-      let deviceId: string = "deviceId";
+      let deviceId: string = 'deviceId';
       let numMax: number = 10;
       missionManager.getMissionInfos(deviceId, numMax)
         .then(err => {
@@ -147,7 +148,7 @@ export default function missionManagerTest() {
           done();
         })
         .catch((err: BusinessError) => {
-          console.log(TAG + "  err.code: " + err.code);
+          console.log(TAG + '  err.code: ' + err.code);
           expect(err.code).assertEqual(ERROR_CODE);
           done();
         })
@@ -163,10 +164,10 @@ export default function missionManagerTest() {
      */
     it('System_API_Test_Mission_Manager_0600', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Mission_Manager_0600';
-      let deviceId: string = "deviceId";
+      let deviceId: string = 'deviceId';
       let missionId: number = 0;
       missionManager.getMissionSnapShot(deviceId, missionId, (err) => {
-        console.log(TAG + "  err.code: " + err.code);
+        console.log(TAG + '  err.code: ' + err.code);
         expect(err.code).assertEqual(ERROR_CODE);
         done();
       });
@@ -182,7 +183,7 @@ export default function missionManagerTest() {
      */
     it('System_API_Test_Mission_Manager_0700', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Mission_Manager_0700';
-      let deviceId: string = "deviceId";
+      let deviceId: string = 'deviceId';
       let missionId: number = 0;
       missionManager.getMissionSnapShot(deviceId, missionId)
         .then(err => {
@@ -191,7 +192,7 @@ export default function missionManagerTest() {
           done();
         })
         .catch((err: BusinessError) => {
-          console.log(TAG + "  err.code: " + err.code);
+          console.log(TAG + '  err.code: ' + err.code);
           expect(err.code).assertEqual(ERROR_CODE);
           done();
         })
@@ -207,10 +208,10 @@ export default function missionManagerTest() {
      */
     it('System_API_Test_Mission_Manager_0800', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Mission_Manager_0800';
-      let deviceId: string = "deviceId";
+      let deviceId: string = 'deviceId';
       let missionId = 0;
       missionManager.getLowResolutionMissionSnapShot(deviceId, missionId, (err) => {
-        console.log(TAG + "  err.code: " + err.code);
+        console.log(TAG + '  err.code: ' + err.code);
         expect(err.code).assertEqual(ERROR_CODE);
         done();
       });
@@ -226,7 +227,7 @@ export default function missionManagerTest() {
      */
     it('System_API_Test_Mission_Manager_0900', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Mission_Manager_0900';
-      let deviceId: string = "deviceId";
+      let deviceId: string = 'deviceId';
       let missionId = 0;
       missionManager.getLowResolutionMissionSnapShot(deviceId, missionId)
         .then(err => {
@@ -235,7 +236,7 @@ export default function missionManagerTest() {
           done();
         })
         .catch((err: BusinessError) => {
-          console.log(TAG + "  err.code: " + err.code);
+          console.log(TAG + '  err.code: ' + err.code);
           expect(err.code).assertEqual(ERROR_CODE);
           done();
         })
@@ -253,7 +254,7 @@ export default function missionManagerTest() {
       let TAG = 'System_API_Test_Mission_Manager_1000';
       let missionId: number = 0;
       missionManager.lockMission(missionId, (err) => {
-        console.log(TAG + "  err.code: " + err.code);
+        console.log(TAG + '  err.code: ' + err.code);
         expect(err.code).assertEqual(ERROR_CODE);
         done();
       });
@@ -277,7 +278,7 @@ export default function missionManagerTest() {
           done();
         })
         .catch((err: BusinessError) => {
-          console.log(TAG + "  err.code: " + err.code);
+          console.log(TAG + '  err.code: ' + err.code);
           expect(err.code).assertEqual(ERROR_CODE);
           done();
         })
@@ -295,7 +296,7 @@ export default function missionManagerTest() {
       let TAG = 'System_API_Test_Mission_Manager_1200';
       let missionId: number = 0;
       missionManager.unlockMission(missionId, (err) => {
-        console.log(TAG + "  err.code: " + err.code);
+        console.log(TAG + '  err.code: ' + err.code);
         expect(err.code).assertEqual(ERROR_CODE);
         done();
       });
@@ -319,7 +320,7 @@ export default function missionManagerTest() {
           done();
         })
         .catch((err: BusinessError) => {
-          console.log(TAG + "  err.code: " + err.code);
+          console.log(TAG + '  err.code: ' + err.code);
           expect(err.code).assertEqual(ERROR_CODE);
           done();
         })
@@ -337,7 +338,7 @@ export default function missionManagerTest() {
       let TAG = 'System_API_Test_Mission_Manager_1400';
       let missionId: number = 0;
       missionManager.clearMission(missionId, (err) => {
-        console.log(TAG + "  err.code: " + err.code);
+        console.log(TAG + '  err.code: ' + err.code);
         expect(err.code).assertEqual(ERROR_CODE);
         done();
       });
@@ -361,7 +362,7 @@ export default function missionManagerTest() {
           done();
         })
         .catch((err: BusinessError) => {
-          console.log(TAG + "  err.code: " + err.code);
+          console.log(TAG + '  err.code: ' + err.code);
           expect(err.code).assertEqual(ERROR_CODE);
           done();
         })
@@ -378,7 +379,7 @@ export default function missionManagerTest() {
     it('System_API_Test_Mission_Manager_1600', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Mission_Manager_1600';
       missionManager.clearAllMissions((err) => {
-        console.log(TAG + "  err.code: " + err.code);
+        console.log(TAG + '  err.code: ' + err.code);
         expect(err.code).assertEqual(ERROR_CODE);
         done();
       });
@@ -401,7 +402,7 @@ export default function missionManagerTest() {
           done();
         })
         .catch((err: BusinessError) => {
-          console.log(TAG + "  err.code: " + err.code);
+          console.log(TAG + '  err.code: ' + err.code);
           expect(err.code).assertEqual(ERROR_CODE);
           done();
         })
@@ -419,7 +420,7 @@ export default function missionManagerTest() {
       let TAG = 'System_API_Test_Mission_Manager_1800';
       let missionId: number = 0;
       missionManager.moveMissionToFront(missionId, (err) => {
-        console.log(TAG + "  err.code: " + err.code);
+        console.log(TAG + '  err.code: ' + err.code);
         expect(err.code).assertEqual(ERROR_CODE);
         done();
       });
@@ -443,7 +444,7 @@ export default function missionManagerTest() {
           done();
         })
         .catch((err: BusinessError) => {
-          console.log(TAG + "  err.code: " + err.code);
+          console.log(TAG + '  err.code: ' + err.code);
           expect(err.code).assertEqual(ERROR_CODE);
           done();
         })
@@ -463,7 +464,7 @@ export default function missionManagerTest() {
       missionManager.moveMissionToFront(missionId, {
         windowMode: 101
       }, (err) => {
-        console.log(TAG + "  err.code: " + err.code);
+        console.log(TAG + '  err.code: ' + err.code);
         expect(err.code).assertEqual(ERROR_CODE);
         done();
       });
@@ -489,7 +490,7 @@ export default function missionManagerTest() {
           done();
         })
         .catch((err: BusinessError) => {
-          console.log(TAG + "  err.code: " + err.code);
+          console.log(TAG + '  err.code: ' + err.code);
           expect(err.code).assertEqual(ERROR_CODE);
           done();
         })
@@ -507,7 +508,7 @@ export default function missionManagerTest() {
       let TAG = 'System_API_Test_Mission_Manager_2200';
       let missionIds: number[] = [1, 2, 3];
       missionManager.moveMissionsToForeground(missionIds, (err) => {
-        console.log(TAG + "  err.code: " + err.code);
+        console.log(TAG + '  err.code: ' + err.code);
         expect(err.code).assertEqual(ERROR_CODE);
         done();
       });
@@ -531,7 +532,7 @@ export default function missionManagerTest() {
           done();
         })
         .catch((err: BusinessError) => {
-          console.log(TAG + "  err.code: " + err.code);
+          console.log(TAG + '  err.code: ' + err.code);
           expect(err.code).assertEqual(ERROR_CODE);
           done();
         })
@@ -550,7 +551,7 @@ export default function missionManagerTest() {
       let missionIds: number[] = [1, 2, 3];
       let topMission: number = 2;
       missionManager.moveMissionsToForeground(missionIds, topMission, (err) => {
-        console.log(TAG + "  err.code: " + err.code);
+        console.log(TAG + '  err.code: ' + err.code);
         expect(err.code).assertEqual(ERROR_CODE);
         done();
       });
@@ -575,7 +576,7 @@ export default function missionManagerTest() {
           done();
         })
         .catch((err: BusinessError) => {
-          console.log(TAG + "  err.code: " + err.code);
+          console.log(TAG + '  err.code: ' + err.code);
           expect(err.code).assertEqual(ERROR_CODE);
           done();
         })
@@ -593,7 +594,7 @@ export default function missionManagerTest() {
       let TAG = 'System_API_Test_Mission_Manager_2600';
       let missionIds: number[] = [1, 2, 3];
       missionManager.moveMissionsToBackground(missionIds, (err) => {
-        console.log(TAG + "  err.code: " + err.code);
+        console.log(TAG + '  err.code: ' + err.code);
         expect(err.code).assertEqual(ERROR_CODE);
         done();
       });
@@ -617,7 +618,7 @@ export default function missionManagerTest() {
           done();
         })
         .catch((err: BusinessError) => {
-          console.log(TAG + "  err.code: " + err.code);
+          console.log(TAG + '  err.code: ' + err.code);
           expect(err.code).assertEqual(ERROR_CODE);
           done();
         })

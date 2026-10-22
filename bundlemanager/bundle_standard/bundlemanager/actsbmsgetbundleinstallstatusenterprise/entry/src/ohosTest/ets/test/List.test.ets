@@ -13,7 +13,9 @@
  * limitations under the License.
  */
 import getBundleInstallStatusTest from './GetBundleInstallStatus.test.ets';
+import getInstalledBundleListTest from './GetInstalledBundleList.test.ets';
 
 export default function testsuite() {
   getBundleInstallStatusTest();
+  getInstalledBundleListTest();
 }

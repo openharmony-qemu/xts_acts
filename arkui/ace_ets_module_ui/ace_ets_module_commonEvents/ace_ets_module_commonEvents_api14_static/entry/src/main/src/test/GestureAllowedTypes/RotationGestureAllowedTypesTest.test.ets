@@ -20,7 +20,9 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import RectValue from '../../../ets/MainAbility/common/Rect';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+
 import inspector from '@ohos.arkui.inspector';
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function RotationGestureAllowedTypesTest() {
   describe('RotationGestureAllowedTypesTest', () => {
     beforeEach(async (): Promise<void> => {
@@ -74,10 +76,10 @@ it('RotationGestureAllowedTypesTest_static_0010', Level.LEVEL0, async (done: () 
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
       let pointers: PointerMatrix = PointerMatrix.create(2,2);
-      pointers.setPoint(0,0,{x: Math.round(areaObj1.left).toInt(),y: Math.round(areaObj1.top).toInt() });
-      pointers.setPoint(0,1,{x: Math.round(areaObj1.right).toInt(),y: Math.round(areaObj1.top).toInt() });
-      pointers.setPoint(1,0,{x: Math.round(areaObj1.right).toInt(),y: Math.round(areaObj1.bottom).toInt() });
-      pointers.setPoint(1,1,{x: Math.round(areaObj1.left).toInt(),y: Math.round(areaObj1.bottom).toInt() });
+      pointers.setPoint(0,0,{x: Math.round(areaObj1.left).toInt(),y: Math.round(areaObj1.top).toInt(), displayId: displayID });
+      pointers.setPoint(0,1,{x: Math.round(areaObj1.right).toInt(),y: Math.round(areaObj1.top).toInt(), displayId: displayID });
+      pointers.setPoint(1,0,{x: Math.round(areaObj1.right).toInt(),y: Math.round(areaObj1.bottom).toInt(), displayId: displayID });
+      pointers.setPoint(1,1,{x: Math.round(areaObj1.left).toInt(),y: Math.round(areaObj1.bottom).toInt(), displayId: displayID });
       await driver.injectMultiPointerAction(pointers);
       await CommonFunc.sleep(4000);
 

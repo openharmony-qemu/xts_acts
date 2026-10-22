@@ -17,7 +17,7 @@ import router from '@ohos.router';
 
 @Entry
 @Component
-struct Index {
+struct TestAbilityIndex {
   @State message: string = 'Hello World';
 
   aboutToAppear() {

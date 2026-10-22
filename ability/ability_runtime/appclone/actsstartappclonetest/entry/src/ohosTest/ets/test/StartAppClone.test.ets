@@ -79,9 +79,9 @@ export default function startAppCloneTest() {
       }
       try {
         AppStorage.get<common.UIAbilityContext>("testAbilityContext").startAbility(want).then(() => {
-          console.info('startAbility succeed');
+          console.info(tag + 'startAbility succeed');
         }).catch((err: BusinessError) => {
-          console.error(`startAbility failed, cause: ${JSON.stringify(err)}`);
+          console.error(`${tag},startAbility failed, cause: ${JSON.stringify(err)}`);
           expect().assertFail();
           done();
         });
@@ -138,9 +138,9 @@ export default function startAppCloneTest() {
       }
       try {
         AppStorage.get<common.UIAbilityContext>("testAbilityContext").startAbility(want).then(() => {
-          console.info('startAbility succeed');
+          console.info(tag + 'startAbility succeed');
         }).catch((err: BusinessError) => {
-          console.error(`startAbility failed, cause: ${JSON.stringify(err)}`);
+          console.error(`${tag},startAbility failed, cause: ${JSON.stringify(err)}`);
           expect().assertFail();
           done();
         });
@@ -174,11 +174,11 @@ export default function startAppCloneTest() {
       }
       try {
         AppStorage.get<common.UIAbilityContext>("testAbilityContext").startAbility(want).then(() => {
-          console.info('startAbility succeed');
+          console.info(tag + 'startAbility succeed');
           expect().assertFail();
           done();
         }).catch((err: BusinessError) => {
-          console.error(`startAbility failed, cause: ${JSON.stringify(err)}`);
+          console.error(`${tag},startAbility failed, cause: ${JSON.stringify(err)}`);
           let expectErrCode = 16000001;
           expect(err.code).assertEqual(expectErrCode);
           done();
@@ -212,11 +212,11 @@ export default function startAppCloneTest() {
       }
       try {
         AppStorage.get<common.UIAbilityContext>("testAbilityContext").startAbility(want).then(() => {
-          console.info('startAbility succeed');
+          console.info(tag + 'startAbility succeed');
           expect().assertFail();
           done();
         }).catch((err: BusinessError) => {
-          console.error(`startAbility failed, cause: ${JSON.stringify(err)}`);
+          console.error(`${tag},startAbility failed, cause: ${JSON.stringify(err)}`);
           let expectErrCode = 16000073;
           expect(err.code).assertEqual(expectErrCode);
           done();
@@ -250,11 +250,11 @@ export default function startAppCloneTest() {
       }
       try {
         AppStorage.get<common.UIAbilityContext>("testAbilityContext").startAbility(want).then(() => {
-          console.info('startAbility succeed');
+          console.info(tag + 'startAbility succeed');
           expect().assertFail();
           done();
         }).catch((err: BusinessError) => {
-          console.error(`startAbility failed, cause: ${JSON.stringify(err)}`);
+          console.error(`${tag},startAbility failed, cause: ${JSON.stringify(err)}`);
           let expectErrCode = 16000073;
           expect(err.code).assertEqual(expectErrCode);
           done();
@@ -307,9 +307,9 @@ export default function startAppCloneTest() {
       }
       try {
         AppStorage.get<common.UIAbilityContext>("testAbilityContext").startAbility(want).then(() => {
-          console.info('startAbility succeed');
+          console.info(tag + 'startAbility succeed');
         }).catch((err: BusinessError) => {
-          console.error(`startAbility failed, cause: ${JSON.stringify(err)}`);
+          console.error(`${tag},startAbility failed, cause: ${JSON.stringify(err)}`);
           expect().assertFail();
           done();
         });
@@ -366,9 +366,9 @@ export default function startAppCloneTest() {
       }
       try {
         AppStorage.get<common.UIAbilityContext>("testAbilityContext").startAbilityAsCaller(want).then(() => {
-          console.info('startAbilityAsCaller succeed');
+          console.info(tag + 'startAbilityAsCaller succeed');
         }).catch((err: BusinessError) => {
-          console.error(`startAbilityAsCaller failed, cause: ${JSON.stringify(err)}`);
+          console.error(`${tag},startAbilityAsCaller failed, cause: ${JSON.stringify(err)}`);
           expect().assertFail();
           done();
         });
@@ -402,11 +402,11 @@ export default function startAppCloneTest() {
       }
       try {
         AppStorage.get<common.UIAbilityContext>("testAbilityContext").startAbilityAsCaller(want).then(() => {
-          console.info('startAbilityAsCaller succeed');
+          console.info(tag + 'startAbilityAsCaller succeed');
           expect().assertFail();
           done();
         }).catch((err: BusinessError) => {
-          console.error(`startAbilityAsCaller failed, cause: ${JSON.stringify(err)}`);
+          console.error(`${tag},startAbilityAsCaller failed, cause: ${JSON.stringify(err)}`);
           let expectErrCode = 16000001;
           expect(err.code).assertEqual(expectErrCode);
           done();
@@ -464,9 +464,9 @@ export default function startAppCloneTest() {
       }
       try {
         AppStorage.get<common.UIAbilityContext>("testAbilityContext").startAbilityByCall(want).then((caller) => {
-          console.info('startAbilityByCall succeed');
+          console.info(tag + 'startAbilityByCall succeed');
         }).catch((err: BusinessError) => {
-          console.error(`startAbilityByCall failed, cause: ${JSON.stringify(err)}`);
+          console.error(`${tag},startAbilityByCall failed, cause: ${JSON.stringify(err)}`);
         });
       } catch (err) {
         console.error(`${tag} error, errorCode: ${JSON.stringify(err)}`);
@@ -498,11 +498,11 @@ export default function startAppCloneTest() {
       }
       try {
         AppStorage.get<common.UIAbilityContext>("testAbilityContext").startAbilityByCall(want).then((caller) => {
-          console.info('startAbilityByCall succeed');
+          console.info(tag + 'startAbilityByCall succeed');
           expect().assertFail();
           done();
         }).catch((err: BusinessError) => {
-          console.error(`startAbilityByCall failed, cause: ${JSON.stringify(err)}`);
+          console.error(`${tag},startAbilityByCall failed, cause: ${JSON.stringify(err)}`);
           let expectErrCode = 16000001;
           expect(err.code).assertEqual(expectErrCode);
           done();
@@ -594,11 +594,11 @@ export default function startAppCloneTest() {
       }
       try {
         AppStorage.get<common.UIAbilityContext>("testAbilityContext").startAbilityByCallWithAccount(want, 100).then(() => {
-          console.info('startAbilityByCallWithAccount succeed');
+          console.info(tag + 'startAbilityByCallWithAccount succeed');
           expect().assertFail();
           done();
         }).catch((err: BusinessError) => {
-          console.error(`startAbilityByCallWithAccount failed, cause: ${JSON.stringify(err)}`);
+          console.error(`${tag},startAbilityByCallWithAccount failed, cause: ${JSON.stringify(err)}`);
           let expectErrCode = 16000001;
           expect(err.code).assertEqual(expectErrCode);
           done();
@@ -656,9 +656,9 @@ export default function startAppCloneTest() {
       }
       try {
         AppStorage.get<common.UIAbilityContext>("testAbilityContext").startAbilityWithAccount(want, 100).then((caller) => {
-          console.info('startAbilityWithAccount succeed');
+          console.info(tag + 'startAbilityWithAccount succeed');
         }).catch((err: BusinessError) => {
-          console.error(`startAbilityWithAccount failed, cause: ${JSON.stringify(err)}`);
+          console.error(`${tag},startAbilityWithAccount failed, cause: ${JSON.stringify(err)}`);
           expect().assertFail();
           done();
         });
@@ -692,11 +692,11 @@ export default function startAppCloneTest() {
       }
       try {
         AppStorage.get<common.UIAbilityContext>("testAbilityContext").startAbilityWithAccount(want, 100).then(() => {
-          console.info('startAbilityWithAccount succeed');
+          console.info(tag + 'startAbilityWithAccount succeed');
           expect().assertFail();
           done();
         }).catch((err: BusinessError) => {
-          console.error(`startAbilityWithAccount failed, cause: ${JSON.stringify(err)}`);
+          console.error(`${tag},startAbilityWithAccount failed, cause: ${JSON.stringify(err)}`);
           let expectErrCode = 16000001;
           expect(err.code).assertEqual(expectErrCode);
           done();
@@ -754,9 +754,9 @@ export default function startAppCloneTest() {
       }
       try {
         AppStorage.get<common.UIAbilityContext>("testAbilityContext").startAbilityForResult(want).then((data) => {
-          console.info('startAbilityForResult succeed');
+          console.info(tag + 'startAbilityForResult succeed');
         }).catch((err: BusinessError) => {
-          console.error(`startAbilityForResult failed, cause: ${JSON.stringify(err)}`);
+          console.error(`${tag},startAbilityForResult failed, cause: ${JSON.stringify(err)}`);
           expect().assertFail();
           done();
         });
@@ -790,11 +790,11 @@ export default function startAppCloneTest() {
       }
       try {
         AppStorage.get<common.UIAbilityContext>("testAbilityContext").startAbilityForResult(want).then((data) => {
-          console.info('startAbilityForResult succeed');
+          console.info(tag + 'startAbilityForResult succeed');
           expect().assertFail();
           done();
         }).catch((err: BusinessError) => {
-          console.error(`startAbilityForResult failed, cause: ${JSON.stringify(err)}`);
+          console.error(`${tag},startAbilityForResult failed, cause: ${JSON.stringify(err)}`);
           let expectErrCode = 16000001;
           expect(err.code).assertEqual(expectErrCode);
           done();
@@ -852,9 +852,9 @@ export default function startAppCloneTest() {
       }
       try {
         AppStorage.get<common.UIAbilityContext>("testAbilityContext").startAbilityForResultWithAccount(want, 100).then((data) => {
-          console.info('startAbilityForResultWithAccount succeed');
+          console.info(tag + 'startAbilityForResultWithAccount succeed');
         }).catch((err: BusinessError) => {
-          console.error(`startAbilityForResultWithAccount failed, cause: ${JSON.stringify(err)}`);
+          console.error(`${tag},startAbilityForResultWithAccount failed, cause: ${JSON.stringify(err)}`);
           expect().assertFail();
           done();
         });
@@ -888,11 +888,11 @@ export default function startAppCloneTest() {
       }
       try {
         AppStorage.get<common.UIAbilityContext>("testAbilityContext").startAbilityForResultWithAccount(want, 100).then(() => {
-          console.info('startAbilityForResultWithAccount succeed');
+          console.info(tag + 'startAbilityForResultWithAccount succeed');
           expect().assertFail();
           done();
         }).catch((err: BusinessError) => {
-          console.error(`startAbilityForResultWithAccount failed, cause: ${JSON.stringify(err)}`);
+          console.error(`${tag},startAbilityForResultWithAccount failed, cause: ${JSON.stringify(err)}`);
           let expectErrCode = 16000001;
           expect(err.code).assertEqual(expectErrCode);
           done();
@@ -950,9 +950,9 @@ export default function startAppCloneTest() {
       }
       try {
         AppStorage.get<common.UIAbilityContext>("testAbilityContext").startRecentAbility(want).then((data) => {
-          console.info('startRecentAbility succeed');
+          console.info(tag + 'startRecentAbility succeed');
         }).catch((err: BusinessError) => {
-          console.error(`startRecentAbility failed, cause: ${JSON.stringify(err)}`);
+          console.error(`${tag},startRecentAbility failed, cause: ${JSON.stringify(err)}`);
           expect().assertFail();
           done();
         });
@@ -986,11 +986,11 @@ export default function startAppCloneTest() {
       }
       try {
         AppStorage.get<common.UIAbilityContext>("testAbilityContext").startRecentAbility(want).then(() => {
-          console.info('startRecentAbility succeed');
+          console.info(tag + 'startRecentAbility succeed');
           expect().assertFail();
           done();
         }).catch((err: BusinessError) => {
-          console.error(`startRecentAbility failed, cause: ${JSON.stringify(err)}`);
+          console.error(`${tag},startRecentAbility failed, cause: ${JSON.stringify(err)}`);
           let expectErrCode = 16000001;
           expect(err.code).assertEqual(expectErrCode);
           done();
@@ -1046,9 +1046,9 @@ export default function startAppCloneTest() {
       }
       try {
         AppStorage.get<common.UIAbilityContext>("testAbilityContext").startAbility(want).then(() => {
-          console.info('startAbility succeed');
+          console.info(tag + 'startAbility succeed');
         }).catch((err: BusinessError) => {
-          console.error(`startRecentAbility failed, cause: ${JSON.stringify(err)}`);
+          console.error(`${tag},startRecentAbility failed, cause: ${JSON.stringify(err)}`);
           expect().assertFail();
           done();
         });

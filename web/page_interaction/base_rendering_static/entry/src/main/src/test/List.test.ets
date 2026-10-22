@@ -16,8 +16,10 @@
 
 import webBlankScreenDetectionMethodJsunit from './WebBlankScreenDetectionMethod.test'
 import webViewAISessionTypeJsunit from './WebViewAISessionType.test'
+import webMonitoredBlankScreenJsunit from './WebMonitoredBlankScreen.test'
 
-export default function testsuite() {
+export default function testsuite(): void {
     webBlankScreenDetectionMethodJsunit();
     webViewAISessionTypeJsunit();
+    webMonitoredBlankScreenJsunit();
 }

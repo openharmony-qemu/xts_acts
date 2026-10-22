@@ -71,8 +71,8 @@ export default function timePickerOnChangeModifierTest() {
         let centerX = rect.left + (rect.right - rect.left) / 2;
         let centerY = rect.top + (rect.bottom - rect.top) / 2;
         await driver.swipeBetween(
-          { x: centerX, y: centerY, displayId: displayId },
-          { x: centerX, y: 0, displayId: displayId }
+          { x: Math.round(centerX), y: Math.round(centerY), displayId: displayId },
+          { x: Math.round(centerX), y: 0, displayId: displayId }
         );
         await Utils.sleep(5000);
         let strJsonNew:string = getInspectorByKey('onChangeOff');

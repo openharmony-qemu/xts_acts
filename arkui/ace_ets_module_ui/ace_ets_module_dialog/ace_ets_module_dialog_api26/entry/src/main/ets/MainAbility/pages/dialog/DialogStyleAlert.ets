@@ -36,203 +36,211 @@ struct DialogStyleAlert {
 
   build() {
     Scroll() {
-      Column({ space: 10 }) {
+      Column() {
         Text('DialogStyleOptions alert').fontSize(18).fontWeight(FontWeight.Bold)
         Text('action=' + this.lastAction).id('style_alert_action')
         Text('dialogId=' + this.lastDialogId).id('style_alert_dialog_id')
         Text('life=' + this.lifeLog).id('style_alert_life')
-        Button('basic title message buttons')
-          .id('btn_style_alert_basic')
-          .onClick(async () => {
-            this.lifeLog = '';
-            let result: DialogResult = await this.presenter().present({
-              title: 'AlertTitle',
-              subtitle: 'AlertSub',
-              message: { content: 'AlertMessage', wordBreak: WordBreak.BREAK_WORD },
-              buttons: [
-                {
-                  value: 'AlertCancel',
-                  fontColor: Color.Gray,
-                  backgroundColor: Color.White,
-                  enabled: true,
-                  primary: false,
-                  style: DialogButtonStyle.DEFAULT,
-                  action: () => {
-                    this.lastAction = 'AlertCancel';
+        Row() {
+          Button('basic title message buttons')
+            .id('btn_style_alert_basic')
+            .onClick(async () => {
+              this.lifeLog = '';
+              let result: DialogResult = await this.presenter().present({
+                title: 'AlertTitle',
+                subtitle: 'AlertSub',
+                message: { content: 'AlertMessage', wordBreak: WordBreak.BREAK_WORD },
+                buttons: [
+                  {
+                    value: 'AlertCancel',
+                    fontColor: Color.Gray,
+                    backgroundColor: Color.White,
+                    enabled: true,
+                    primary: false,
+                    style: DialogButtonStyle.DEFAULT,
+                    action: () => {
+                      this.lastAction = 'AlertCancel';
+                    }
+                  },
+                  {
+                    value: 'AlertOK',
+                    fontColor: Color.White,
+                    backgroundColor: Color.Blue,
+                    enabled: true,
+                    primary: true,
+                    style: DialogButtonStyle.HIGHLIGHT,
+                    action: () => {
+                      this.lastAction = 'AlertOK';
+                    }
                   }
+                ],
+                buttonDirection: DialogButtonOrientation.HORIZONTAL,
+                onWillAppear: () => {
+                  this.appendLife('willAppear');
                 },
-                {
-                  value: 'AlertOK',
-                  fontColor: Color.White,
-                  backgroundColor: Color.Blue,
-                  enabled: true,
-                  primary: true,
-                  style: DialogButtonStyle.HIGHLIGHT,
-                  action: () => {
-                    this.lastAction = 'AlertOK';
-                  }
-                }
-              ],
-              buttonDirection: DialogButtonOrientation.HORIZONTAL,
-              onWillAppear: () => {
-                this.appendLife('willAppear');
-              },
-              onDidAppear: () => {
-                this.appendLife('didAppear');
-              },
-              onWillDisappear: () => {
-                this.appendLife('willDisappear');
-              },
-              onDidDisappear: () => {
-                this.appendLife('didDisappear');
-              }
-            });
-            this.lastDialogId = result.dialogId;
-          })
-        Button('vertical buttons')
-          .id('btn_style_alert_vertical')
-          .onClick(async () => {
-            await this.presenter().present({
-              title: 'VerticalTitle',
-              message: { content: 'VerticalMessage' },
-              buttonDirection: DialogButtonOrientation.VERTICAL,
-              buttons: [
-                {
-                  value: 'VertA',
-                  action: () => {
-                    this.lastAction = 'VertA';
-                  }
+                onDidAppear: () => {
+                  this.appendLife('didAppear');
                 },
-                {
-                  value: 'VertB',
-                  action: () => {
-                    this.lastAction = 'VertB';
-                  }
+                onWillDisappear: () => {
+                  this.appendLife('willDisappear');
                 },
-                {
-                  value: 'VertC',
-                  action: () => {
-                    this.lastAction = 'VertC';
-                  }
+                onDidDisappear: () => {
+                  this.appendLife('didDisappear');
                 }
-              ]
-            });
-          })
-        Button('auto orientation')
-          .id('btn_style_alert_auto')
-          .onClick(async () => {
-            await this.presenter().present({
-              title: 'AutoTitle',
-              message: { content: 'AutoMessage' },
-              buttonDirection: DialogButtonOrientation.AUTO,
-              buttons: [
-                {
-                  value: 'AutoOK',
-                  enabled: true,
-                  action: () => {
-                    this.lastAction = 'AutoOK';
+              });
+              this.lastDialogId = result.dialogId;
+            })
+          Button('vertical buttons')
+            .id('btn_style_alert_vertical')
+            .onClick(async () => {
+              await this.presenter().present({
+                title: 'VerticalTitle',
+                message: { content: 'VerticalMessage' },
+                buttonDirection: DialogButtonOrientation.VERTICAL,
+                buttons: [
+                  {
+                    value: 'VertA',
+                    action: () => {
+                      this.lastAction = 'VertA';
+                    }
+                  },
+                  {
+                    value: 'VertB',
+                    action: () => {
+                      this.lastAction = 'VertB';
+                    }
+                  },
+                  {
+                    value: 'VertC',
+                    action: () => {
+                      this.lastAction = 'VertC';
+                    }
                   }
-                }
-              ]
-            });
-          })
-        Button('disabled button')
-          .id('btn_style_alert_disabled')
-          .onClick(async () => {
-            await this.presenter().present({
-              title: 'DisableTitle',
-              message: { content: 'DisableMessage' },
-              buttons: [
-                {
-                  value: 'DisabledBtn',
-                  enabled: false,
-                  action: () => {
-                    this.lastAction = 'DisabledBtn';
+                ]
+              });
+            })
+        }
+        Row() {
+          Button('auto orientation')
+            .id('btn_style_alert_auto')
+            .onClick(async () => {
+              await this.presenter().present({
+                title: 'AutoTitle',
+                message: { content: 'AutoMessage' },
+                buttonDirection: DialogButtonOrientation.AUTO,
+                buttons: [
+                  {
+                    value: 'AutoOK',
+                    enabled: true,
+                    action: () => {
+                      this.lastAction = 'AutoOK';
+                    }
                   }
+                ]
+              });
+            })
+          Button('disabled button')
+            .id('btn_style_alert_disabled')
+            .onClick(async () => {
+              await this.presenter().present({
+                title: 'DisableTitle',
+                message: { content: 'DisableMessage' },
+                buttons: [
+                  {
+                    value: 'DisabledBtn',
+                    enabled: false,
+                    action: () => {
+                      this.lastAction = 'DisabledBtn';
+                    }
+                  },
+                  {
+                    value: 'EnableOK',
+                    enabled: true,
+                    action: () => {
+                      this.lastAction = 'EnableOK';
+                    }
+                  }
+                ]
+              });
+            })
+        }
+        Row() {
+          Button('wordBreak NORMAL')
+            .id('btn_style_alert_wordbreak')
+            .onClick(async () => {
+              await this.presenter().present({
+                title: 'WordBreakTitle',
+                message: {
+                  content: 'WordBreakNormalMessageContentLong',
+                  wordBreak: WordBreak.NORMAL
                 },
-                {
-                  value: 'EnableOK',
-                  enabled: true,
-                  action: () => {
-                    this.lastAction = 'EnableOK';
+                buttons: [
+                  {
+                    value: 'WBClose',
+                    action: () => {
+                      this.lastAction = 'WBClose';
+                    }
                   }
-                }
-              ]
-            });
-          })
-        Button('wordBreak NORMAL')
-          .id('btn_style_alert_wordbreak')
-          .onClick(async () => {
-            await this.presenter().present({
-              title: 'WordBreakTitle',
-              message: {
-                content: 'WordBreakNormalMessageContentLong',
-                wordBreak: WordBreak.NORMAL
-              },
-              buttons: [
-                {
-                  value: 'WBClose',
-                  action: () => {
-                    this.lastAction = 'WBClose';
+                ]
+              });
+            })
+          Button('wordBreak BREAK_ALL')
+            .id('btn_style_alert_wb_all')
+            .onClick(async () => {
+              await this.presenter().present({
+                title: 'WBAllTitle',
+                message: {
+                  content: 'WBAllLongMessageContentForBreak',
+                  wordBreak: WordBreak.BREAK_ALL
+                },
+                buttons: [
+                  {
+                    value: 'WBAllOK',
+                    action: () => {
+                      this.lastAction = 'WBAllOK';
+                    }
                   }
-                }
-              ]
-            });
-          })
-        Button('wordBreak BREAK_ALL')
-          .id('btn_style_alert_wb_all')
-          .onClick(async () => {
-            await this.presenter().present({
-              title: 'WBAllTitle',
-              message: {
-                content: 'WBAllLongMessageContentForBreak',
-                wordBreak: WordBreak.BREAK_ALL
-              },
-              buttons: [
-                {
-                  value: 'WBAllOK',
-                  action: () => {
-                    this.lastAction = 'WBAllOK';
+                ]
+              });
+            })
+        }
+        Row() {
+          Button('subtitle field')
+            .id('btn_style_alert_subtitle')
+            .onClick(async () => {
+              await this.presenter().present({
+                title: 'SubTitleMain',
+                subtitle: 'SubTitleValue',
+                message: { content: 'SubTitleMsg' },
+                buttons: [
+                  {
+                    value: 'SubTitleOK',
+                    action: () => {
+                      this.lastAction = 'SubTitleOK';
+                    }
                   }
-                }
-              ]
-            });
-          })
-        Button('subtitle field')
-          .id('btn_style_alert_subtitle')
-          .onClick(async () => {
-            await this.presenter().present({
-              title: 'SubTitleMain',
-              subtitle: 'SubTitleValue',
-              message: { content: 'SubTitleMsg' },
-              buttons: [
-                {
-                  value: 'SubTitleOK',
-                  action: () => {
-                    this.lastAction = 'SubTitleOK';
+                ]
+              });
+            })
+          Button('dialogId result')
+            .id('btn_style_alert_dialogid')
+            .onClick(async () => {
+              let result: DialogResult = await this.presenter().present({
+                title: 'DialogIdTitle',
+                message: { content: 'DialogIdMsg' },
+                buttons: [
+                  {
+                    value: 'DialogIdOK',
+                    action: () => {
+                      this.lastAction = 'DialogIdOK';
+                    }
                   }
-                }
-              ]
-            });
-          })
-        Button('dialogId result')
-          .id('btn_style_alert_dialogid')
-          .onClick(async () => {
-            let result: DialogResult = await this.presenter().present({
-              title: 'DialogIdTitle',
-              message: { content: 'DialogIdMsg' },
-              buttons: [
-                {
-                  value: 'DialogIdOK',
-                  action: () => {
-                    this.lastAction = 'DialogIdOK';
-                  }
-                }
-              ]
-            });
-            this.lastDialogId = result.dialogId;
-            this.lastAction = 'dialogId=' + result.dialogId;
-          })
+                ]
+              });
+              this.lastDialogId = result.dialogId;
+              this.lastAction = 'dialogId=' + result.dialogId;
+            })
+        }
       }
       .width('100%')
       .padding(16)

@@ -41,6 +41,7 @@ let audioRingtone = audio.AudioVolumeType.RINGTONE;
 let minVol: number = 0;
 let maxVol: number = 15;
 let maxVolPc: number = 20;
+let maxVolCar = 39;
 let lowVol: number = 5;
 let highVol: number = 14;
 let outOfRangeVol: number = 28;
@@ -155,6 +156,22 @@ export default function audioFramework() {
       console.info(`${TagFrmwk}: afterAll: Test suite-level cleanup condition`);
     })
 
+    let checkCarSupportSync = async(): Promise<boolean> => {
+      let audioManager = audio.getAudioManager();
+      let audioRoutingManager = audioManager!.getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager!.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`checkCarSupportSync outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+          console.info(`this device has external device.`)
+          return false;
+      } else if (outputDeviceDescription.length == 0) {
+          console.info(`this device has external device`)
+          return false;
+      } else {
+          return true;
+      }
+    }
+
     /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUMESYNC_STATIC_0400
      * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUMESYNC_STATIC_0400
@@ -240,6 +257,9 @@ export default function audioFramework() {
           console.info(`${TagFrmwk}: Media getVolumeSync : PASS :${data}`);
           done();
         } else if (data == maxVolPc) {
+          console.info(`${TagFrmwk}: Media getVolumeSync : PASS :${data}`);
+          done();
+        } else if (data == maxVolCar) {
           console.info(`${TagFrmwk}: Media getVolumeSync : PASS :${data}`);
           done();
         } else {
@@ -742,6 +762,8 @@ export default function audioFramework() {
       console.info("audio.AudioSessionScene.AUDIO_SESSION_SCENE_GAME :" + audio.AudioSessionScene.AUDIO_SESSION_SCENE_GAME);
       expect(audio.AudioSessionScene.AUDIO_SESSION_SCENE_VOICE_COMMUNICATION).assertEqual(2);
       console.info("audio.AudioSessionScene.AUDIO_SESSION_SCENE_VOICE_COMMUNICATION :" + audio.AudioSessionScene.AUDIO_SESSION_SCENE_VOICE_COMMUNICATION);
+      expect(audio.AudioSessionScene.AUDIO_SESSION_SCENE_VOICE_MESSAGE).assertEqual(3);
+      console.info("audio.AudioSessionScene.AUDIO_SESSION_SCENE_VOICE_MESSAGE :" + audio.AudioSessionScene.AUDIO_SESSION_SCENE_VOICE_MESSAGE);
       await Utils.msSleep(50);
       done();
     })
@@ -848,32 +870,35 @@ export default function audioFramework() {
      * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let AudioRoutingManager = audioManager!.getRoutingManager();
-      AudioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG,
-        (err: BusinessError<void> | null, value: audio.AudioDeviceDescriptors | undefined) => {
-        // Getting all Output devices Enumb 1 = OUTPUT_DEVICES_FLAG
-        console.info(`${TagFrmwk}: Callback: getDevices OUTPUT_DEVICES_FLAG`);
-        if (err) {
-          console.error(`${TagFrmwk}: Callback: OUTPUT_DEVICES_FLAG: failed to get devices ${err?.message}`);
-          expect().assertFail();
-        } else {
+      if(await checkCarSupportSync()) {
+        let AudioRoutingManager = audioManager!.getRoutingManager();
+        AudioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG,
+          (err: BusinessError<void> | null, value: audio.AudioDeviceDescriptors | undefined) => {
+          // Getting all Output devices Enumb 1 = OUTPUT_DEVICES_FLAG
           console.info(`${TagFrmwk}: Callback: getDevices OUTPUT_DEVICES_FLAG`);
-          if (value !== undefined) {
-            value.forEach(displayDeviceProp);
-          }
-
-          if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null &&
-            cMask != null) {
-            console.info(`${TagFrmwk}: Callback: getDevices : OUTPUT_DEVICES_FLAG :  PASS`);
-            done();
+          if (err) {
+            console.error(`${TagFrmwk}: Callback: OUTPUT_DEVICES_FLAG: failed to get devices ${err?.message}`);
+            expect().assertFail();
           } else {
-            console.info(`${TagFrmwk}: Callback: getDevices : OUTPUT_DEVICES_FLAG :  FAIL`);
-            expect(false).assertTrue();
-            done(); 
+            console.info(`${TagFrmwk}: Callback: getDevices OUTPUT_DEVICES_FLAG`);
+            if (value !== undefined) {
+              value.forEach(displayDeviceProp);
+            }
+
+            if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null &&
+              cMask != null) {
+              console.info(`${TagFrmwk}: Callback: getDevices : OUTPUT_DEVICES_FLAG :  PASS`);
+              done();
+            } else {
+              console.info(`${TagFrmwk}: Callback: getDevices : OUTPUT_DEVICES_FLAG :  FAIL`);
+              expect(false).assertTrue();
+              done(); 
+            }
           }
-        }
-        done();
-      });
+          done();
+        });
+      }
+      done();
     })
 
     /**

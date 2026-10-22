@@ -21,7 +21,41 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { Driver, ON } from '@kit.TestKit';
 import settings from '@ohos.settings';
 import deviceInfo from '@ohos.deviceInfo';
+import {Want, StartOptions } from '@kit.AbilityKit';
 
+let sleep = (sleepMs: number) => new Promise < string > (resolve => setTimeout(resolve, sleepMs));
+async function startAbility(caseName: string, context: common.UIAbilityContext, options?: StartOptions) {
+  let want: Want = {
+    bundleName: AppStorage.get('bundleName'),
+    abilityName: 'StartTestAbility'
+  };
+  if (options) {
+    await context.startAbility(want, options).then(() => {
+      console.info(`${caseName} Succeeded in starting ability.`);
+    }).catch((err: BusinessError) => {
+      console.info(`${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+    });
+  } else {
+    await context.startAbility(want).then(() => {
+      console.info(`${caseName} Succeeded in starting ability.`);
+    }).catch((err: BusinessError) => {
+      console.info(`${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+    });
+  }
+  await sleep(1000)
+  let windowStageStart = AppStorage.get('windowStageStartTest') as window.WindowStage;
+  return windowStageStart
+}
+
+async function terminateAbility(caseName: string) {
+  let pageContext = AppStorage.get('contextTest') as common.UIAbilityContext
+  await pageContext.terminateSelf().then(() => {
+    console.log(`${caseName} terminateSelf success`);
+  }).catch((err: BusinessError) => {
+    console.error(`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
+  });
+  await sleep(1000)
+}
 export default function windowZindexTest() {
   describe('windowZindexTest', async () => {
     let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
@@ -31,6 +65,7 @@ export default function windowZindexTest() {
     let isPCStatus: string = '';
     let isFreeWindowMode = false;
     let canIUseRes: boolean = false;
+    let isPCMode: boolean = false;
     let driver: Driver;
     let deviceType: string = deviceInfo.deviceType;
     console.info(`deviceType: ${deviceType}`);
@@ -57,6 +92,17 @@ export default function windowZindexTest() {
       //isFreeWindowMode == true 自由窗口模式
       //isFreeWindowMode == false 非自由窗口模式
       console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
+      let promise = windowClass.getWindowStateSnapshot();
+      promise.then((data) => {
+        let jsonObj: object = JSON.parse(data);
+        console.info(
+          `beforeAll: Succeeded. data=${data}, isPcMod=${jsonObj["isPcMode"]},isSupportFreeWindowMode=${jsonObj["isSupportFreeWindowMode"]}`);
+        isPCMode = jsonObj["isPcMode"];
+      }).catch((err: BusinessError) => {
+        console.error(
+          `beforeAll: getWindowStateSnapshot Failed. Cause code: ${err.code}, cancel message: ${err.message}`);
+      });
+      console.info(`beforeAll: isPCMode=${isPCMode}`);
       driver = Driver.create();
     });
     beforeEach(() => {
@@ -2735,6 +2781,669 @@ export default function windowZindexTest() {
           } else {
             expect().assertFail();
           }
+          done();
+        }
+      });
+
+ /**
+     * @tc.name   SUB_BASIC_WMS_setWindowPosition_null_0100
+     * @tc.number SUB_BASIC_WMS_setWindowPosition_null_0100
+     * @tc.desc   SUB_BASIC_WMS_setWindowPosition_null_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_WMS_setWindowPosition_null_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let caseName: string = 'SUB_BASIC_WMS_setWindowPosition_null_0100';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        console.log(msgStr + 'begin');
+        try {
+          await window.setWindowPosition(null);
+          expect(false).assertTrue();
+          done();
+        } catch (exception) {
+          expect(exception.code).assertEqual(401);
+          expect(exception.message !== '').assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   SUB_BASIC_WMS_setWindowPosition_undefined_0100
+     * @tc.number SUB_BASIC_WMS_setWindowPosition_undefined_0100
+     * @tc.desc   SUB_BASIC_WMS_setWindowPosition_undefined_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_WMS_setWindowPosition_undefined_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let caseName: string = 'SUB_BASIC_WMS_setWindowPosition_undefined_0100';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        console.log(msgStr + 'begin');
+        try {
+          await window.setWindowPosition(undefined);
+          expect(false).assertTrue();
+          done();
+        } catch (exception) {
+          expect(exception.code).assertEqual(401);
+          expect(exception.message !== '').assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   SUB_BASIC_WMS_setWindowPosition_Empty_Array_0100
+     * @tc.number SUB_BASIC_WMS_setWindowPosition_Empty_Array_0100
+     * @tc.desc   SUB_BASIC_WMS_setWindowPosition_Empty_Array_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_WMS_setWindowPosition_Empty_Array_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let caseName: string = 'SUB_BASIC_WMS_setWindowPosition_Empty_Array_0100';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        console.log(msgStr + 'begin');
+        try {
+          await window.setWindowPosition([]);
+          expect(false).assertTrue();
+          done();
+        } catch (exception) {
+          console.error(`${msgStr} Failed. Cause code: ${exception.code},message: ${exception.message}`);
+          expect(exception.code).assertEqual(401);
+          expect(exception.message !== '').assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   SUB_BASIC_WMS_setWindowPosition_undefined_Array_0100
+     * @tc.number SUB_BASIC_WMS_setWindowPosition_undefined_Array_0100
+     * @tc.desc   SUB_BASIC_WMS_setWindowPosition_undefined_Array_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_WMS_setWindowPosition_undefined_Array_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let caseName: string = 'SUB_BASIC_WMS_setWindowPosition_undefined_Array_0100';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        console.log(msgStr + 'begin');
+        try {
+          await window.setWindowPosition([undefined]);
+          expect(false).assertTrue();
+          done();
+        } catch (exception) {
+          console.error(`${msgStr} Failed. Cause code: ${exception.code},message: ${exception.message}`);
+          expect(exception.code).assertEqual(401);
+          expect(exception.message !== '').assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   SUB_BASIC_WMS_setWindowPosition_null_Array_0100
+     * @tc.number SUB_BASIC_WMS_setWindowPosition_null_Array_0100
+     * @tc.desc   SUB_BASIC_WMS_setWindowPosition_null_Array_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_WMS_setWindowPosition_null_Array_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let caseName: string = 'SUB_BASIC_WMS_setWindowPosition_null_Array_0100';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        console.log(msgStr + 'begin');
+        try {
+          await window.setWindowPosition([null]);
+          expect(false).assertTrue();
+          done();
+        } catch (exception) {
+          console.error(`${msgStr} Failed. Cause code: ${exception.code},message: ${exception.message}`);
+          expect(exception.code).assertEqual(401);
+          expect(exception.message !== '').assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   SUB_BASIC_WMS_setWindowPosition_notExist_WindowId_0100
+     * @tc.number SUB_BASIC_WMS_setWindowPosition_notExist_WindowId_0100
+     * @tc.desc   SUB_BASIC_WMS_setWindowPosition_notExist_WindowId_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_WMS_setWindowPosition_notExist_WindowId_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let caseName: string = 'SUB_BASIC_WMS_setWindowPosition_notExist_WindowId_0100';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        console.log(msgStr + 'begin');
+        let windowPositionParamsArray: Array<window.WindowPositionParams> = [];
+        let windowPositionParams: window.WindowPositionParams = {
+          windowId: 0,
+          insertAfter: -4
+        };
+        windowPositionParamsArray.push(windowPositionParams)
+        try {
+          await window.setWindowPosition(windowPositionParamsArray);
+          expect(false).assertTrue();
+          done();
+        } catch (exception) {
+          console.error(`${msgStr} Failed. Cause code: ${exception.code},message: ${exception.message}`);
+          expect(exception.code).assertEqual(401);
+          expect(exception.message !== '').assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   SUB_BASIC_WMS_setWindowPosition_destroyed_WindowId_0100
+     * @tc.number SUB_BASIC_WMS_setWindowPosition_destroyed_WindowId_0100
+     * @tc.desc   SUB_BASIC_WMS_setWindowPosition_destroyed_WindowId_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_WMS_setWindowPosition_destroyed_WindowId_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let caseName: string = 'SUB_BASIC_WMS_setWindowPosition_destroyed_WindowId_0100 ';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        console.log(msgStr + 'begin');
+        try {
+          let windowStageStart: window.WindowStage = await startAbility(caseName, context!);
+          let mainWindow = windowStage.getMainWindowSync();
+          let newMainWindow = windowStageStart.getMainWindowSync();
+          let windowId = mainWindow.getWindowProperties().id;
+          let newWindowId = newMainWindow.getWindowProperties().id;
+          console.info(`${msgStr} windowId: ${windowId}, newWindowId:${newWindowId}`);
+          await terminateAbility(caseName);
+          await sleep(500);
+          let windowPositionParamsArray: Array<window.WindowPositionParams> = [];
+          let windowPositionParams: window.WindowPositionParams = {
+            windowId: newWindowId,
+            insertAfter: windowId
+          };
+          windowPositionParamsArray.push(windowPositionParams)
+          window.setWindowPosition(windowPositionParamsArray).then(() => {
+            console.info(`${msgStr} Succeeded in setWindowPosition. windowPositionParamsArray: ${JSON.stringify(
+              windowPositionParamsArray)}`);
+            expect(false).assertTrue();
+            done()
+          }).catch((err: BusinessError) => {
+            console.error(`${msgStr} Failed to setWindowPosition. Cause code: ${err.code},message:${err.message}`);
+            expect(err.code).assertEqual(1300002);
+            expect(err.message !== '').assertTrue();
+            done();
+          });
+        } catch (exception) {
+          console.error(`${msgStr} Failed. Cause code: ${exception.code},message: ${exception.message}`);
+          expect(false).assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   SUB_BASIC_WMS_setWindowPosition_destroyed_insertAfter_0100
+     * @tc.number SUB_BASIC_WMS_setWindowPosition_destroyed_insertAfter_0100
+     * @tc.desc   SUB_BASIC_WMS_setWindowPosition_destroyed_insertAfter_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_WMS_setWindowPosition_destroyed_insertAfter_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let caseName: string = 'SUB_BASIC_WMS_setWindowPosition_destroyed_insertAfter_0100 ';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        console.log(msgStr + 'begin');
+        try {
+          let windowStageStart: window.WindowStage = await startAbility(caseName, context!);
+          let mainWindow = windowStage.getMainWindowSync();
+          let newMainWindow = windowStageStart.getMainWindowSync();
+          let windowId = mainWindow.getWindowProperties().id;
+          let newWindowId = newMainWindow.getWindowProperties().id;
+          console.info(`${msgStr} windowId: ${windowId}, newWindowId:${newWindowId}`);
+          await terminateAbility(caseName);
+          await sleep(500);
+          let windowPositionParamsArray: Array<window.WindowPositionParams> = [];
+          let windowPositionParams: window.WindowPositionParams = {
+            windowId: windowId,
+            insertAfter: newWindowId
+          };
+          windowPositionParamsArray.push(windowPositionParams)
+          window.setWindowPosition(windowPositionParamsArray).then(() => {
+            console.info(`${msgStr} Succeeded in setWindowPosition. windowPositionParamsArray: ${JSON.stringify(
+              windowPositionParamsArray)}`);
+            expect(false).assertTrue();
+            done();
+          }).catch((err: BusinessError) => {
+            console.error(`${msgStr} Failed to setWindowPosition. Cause code: ${err.code},message:${err.message}`);
+            if (deviceType === '2in1' || isPCMode) {
+              expect(err.code).assertEqual(1300002);
+            } else {
+              expect(err.code).assertEqual(801);
+            }
+            expect(err.message !== '').assertTrue();
+            done();
+          });
+        } catch (exception) {
+          console.error(`${msgStr} Failed. Cause code: ${exception.code},message: ${exception.message}`);
+          expect(false).assertTrue();
+          done();
+        }
+      });
+
+
+    /**
+     * @tc.name   SUB_BASIC_WMS_setWindowPosition_subWindow_insertAfter_0100
+     * @tc.number SUB_BASIC_WMS_setWindowPosition_subWindow_insertAfter_0100
+     * @tc.desc   SUB_BASIC_WMS_setWindowPosition_subWindow_insertAfter_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_WMS_setWindowPosition_subWindow_insertAfter_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let caseName: string = 'SUB_BASIC_WMS_setWindowPosition_subWindow_insertAfter_0100 ';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        console.log(msgStr + 'begin');
+        let subWindow: window.Window | undefined;
+        try {
+          subWindow = await windowStage.createSubWindow('setWindowPosition_0100');
+          let mainWindow = windowStage.getMainWindowSync();
+          let windowId = mainWindow.getWindowProperties().id;
+          let subWindowId = subWindow?.getWindowProperties().id;
+          console.info(`${msgStr} windowId: ${windowId}, subWindowId:${subWindowId}`);
+          await sleep(500);
+          let windowPositionParamsArray: Array<window.WindowPositionParams> = [];
+          let windowPositionParams: window.WindowPositionParams = {
+            windowId: windowId,
+            insertAfter: subWindowId
+          };
+          windowPositionParamsArray.push(windowPositionParams)
+          window.setWindowPosition(windowPositionParamsArray).then(async () => {
+            console.info(`${msgStr} Succeeded in setWindowPosition. windowPositionParamsArray: ${JSON.stringify(
+              windowPositionParamsArray)}`);
+            await subWindow?.destroyWindow()
+            expect(false).assertTrue();
+            done();
+          }).catch(async (err: BusinessError) => {
+            console.error(`${msgStr} Failed to setWindowPosition. Cause code: ${err.code},message:${err.message}`);
+            await subWindow?.destroyWindow();
+            if (deviceType === '2in1' || isPCMode) {
+              expect(err.code).assertEqual(1300004);
+            } else {
+              expect(err.code).assertEqual(801);
+            }
+            expect(err.message !== '').assertTrue();
+            done();
+          });
+        } catch (exception) {
+          console.error(`${msgStr} Failed. Cause code: ${exception.code},message: ${exception.message}`);
+          expect(false).assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   SUB_BASIC_WMS_setWindowPosition_dialogWindow_windowId_0100
+     * @tc.number SUB_BASIC_WMS_setWindowPosition_dialogWindow_windowId_0100
+     * @tc.desc   SUB_BASIC_WMS_setWindowPosition_dialogWindow_windowId_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_WMS_setWindowPosition_dialogWindow_windowId_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let caseName: string = 'SUB_BASIC_WMS_setWindowPosition_dialogWindow_windowId_0100 ';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        console.log(msgStr + 'begin');
+        let subWindow: window.Window | undefined;
+        let config: window.Configuration = {
+          name: "setWindowPosition_0200",
+          windowType: window.WindowType.TYPE_DIALOG,
+          ctx: context
+        };
+        try {
+          subWindow = await window.createWindow(config);
+          let mainWindow = windowStage.getMainWindowSync();
+          let windowId = mainWindow.getWindowProperties().id;
+          let subWindowId = subWindow.getWindowProperties().id;
+          console.info(`${msgStr} windowId: ${windowId}, subWindowId:${subWindowId}`);
+          await sleep(500);
+          let windowPositionParamsArray: Array<window.WindowPositionParams> = [];
+          let windowPositionParams: window.WindowPositionParams = {
+            windowId: subWindowId,
+            insertAfter: windowId
+          };
+          windowPositionParamsArray.push(windowPositionParams)
+          window.setWindowPosition(windowPositionParamsArray).then(async () => {
+            console.info(`${msgStr} Succeeded in setWindowPosition. windowPositionParamsArray: ${JSON.stringify(
+              windowPositionParamsArray)}`);
+            await subWindow?.destroyWindow()
+            expect(false).assertTrue();
+            done();
+          }).catch(async (err: BusinessError) => {
+            console.error(`${msgStr} Failed to setWindowPosition. Cause code: ${err.code},message:${err.message}`);
+            await subWindow?.destroyWindow();
+            if (deviceType === '2in1' || isPCMode) {
+              expect(err.code).assertEqual(1300004);
+            } else {
+              expect(err.code).assertEqual(801);
+            }
+            expect(err.message !== '').assertTrue();
+            done();
+          });
+        } catch (exception) {
+          console.error(`${msgStr} Failed. Cause code: ${exception.code},message: ${exception.message}`);
+          expect(false).assertTrue();
+          done();
+        }
+      });
+
+
+    /**
+     * @tc.name   SUB_BASIC_WMS_setWindowPosition_insertAfter_another_windowId_normal_0100
+     * @tc.number SUB_BASIC_WMS_setWindowPosition_insertAfter_another_windowId_normal_0100
+     * @tc.desc   SUB_BASIC_WMS_setWindowPosition_insertAfter_another_windowId_normal_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_WMS_setWindowPosition_insertAfter_another_windowId_normal_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let caseName: string = 'SUB_BASIC_WMS_setWindowPosition_insertAfter_another_windowId_normal_0100 ';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        console.log(msgStr + 'begin');
+        try {
+          let windowStageStart: window.WindowStage = await startAbility(caseName, context!);
+          let mainWindow = windowStage.getMainWindowSync();
+          let newMainWindow = windowStageStart.getMainWindowSync();
+          let windowId = mainWindow.getWindowProperties().id;
+          let newWindowId = newMainWindow.getWindowProperties().id;
+          console.info(`${msgStr} windowId: ${windowId}, newWindowId:${newWindowId}`);
+          await sleep(500);
+          let windowPositionParamsArray: Array<window.WindowPositionParams> = [];
+          let windowPositionParams: window.WindowPositionParams = {
+            windowId: newWindowId,
+            insertAfter: windowId
+          };
+          windowPositionParamsArray.push(windowPositionParams)
+          window.setWindowPosition(windowPositionParamsArray).then(async () => {
+            await sleep(300);
+            let windowArray: Array<window.Window> = await window.getWindowsByCoordinate(displayId);
+            console.info(`${msgStr} Succeeded in getWindowsByCoordinate. windowArray: ${JSON.stringify(
+              windowArray.length)}`);
+            if (windowArray.length > 0) {
+              let topWindow = windowArray[0];
+              let topWindowId = topWindow.getWindowProperties().id;
+              console.info(`${msgStr} Succeeded in setWindowPosition. windowPositionParamsArray: ${JSON.stringify(
+                windowPositionParamsArray)},topWindowId:${topWindowId}`);
+              expect(topWindowId).assertEqual(windowId);
+            }
+            await terminateAbility(caseName);
+            done();
+          }).catch(async (err: BusinessError) => {
+            console.error(`${msgStr} Failed to setWindowPosition. Cause code: ${err.code},message:${err.message}`);
+            await terminateAbility(caseName);
+            if (!(deviceType === '2in1' || isPCMode)) {
+              expect(err.code).assertEqual(801);
+              expect(err.message !== '').assertTrue();
+            } else {
+              expect(false).assertTrue();
+            }
+            done();
+          });
+        } catch (exception) {
+          console.error(`${msgStr} Failed. Cause code: ${exception.code},message: ${exception.message}`);
+          await terminateAbility(caseName);
+          expect(false).assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   SUB_BASIC_WMS_setWindowPosition_insertAfter_another_windowId_normal_0200
+     * @tc.number SUB_BASIC_WMS_setWindowPosition_insertAfter_another_windowId_normal_0200
+     * @tc.desc   SUB_BASIC_WMS_setWindowPosition_insertAfter_another_windowId_normal_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_WMS_setWindowPosition_insertAfter_another_windowId_normal_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let caseName: string = 'SUB_BASIC_WMS_setWindowPosition_insertAfter_another_windowId_normal_0200 ';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        console.log(msgStr + 'begin');
+        try {
+          let windowStageStart: window.WindowStage = await startAbility(caseName, context!);
+          let mainWindow = windowStage.getMainWindowSync();
+          let newMainWindow = windowStageStart.getMainWindowSync();
+          let windowId = mainWindow.getWindowProperties().id;
+          let newWindowId = newMainWindow.getWindowProperties().id;
+          console.info(`${msgStr} windowId: ${windowId}, newWindowId:${newWindowId}`);
+          await sleep(500);
+          let windowPositionParamsArray: Array<window.WindowPositionParams> = [{
+            windowId: windowId,
+            insertAfter: newWindowId
+          }, {
+            windowId: newWindowId,
+            insertAfter: windowId
+          }];
+          await window.setWindowPosition(windowPositionParamsArray)
+          await sleep(500);
+          let windowArray = await window.getWindowsByCoordinate(displayId);
+          let topWindow = windowArray[0];
+          let topWindowId = topWindow.getWindowProperties().id;
+          console.info(`${msgStr} Succeeded in setWindowPosition. windowPositionParamsArray: ${JSON.stringify(
+            windowPositionParamsArray)},topWindowId:${topWindowId}`);
+          expect(topWindowId).assertEqual(windowId);
+          let windowPositionParamsArray2: Array<window.WindowPositionParams> = [{
+            windowId: newWindowId,
+            insertAfter: windowId
+          }, {
+            windowId: windowId,
+            insertAfter: newWindowId
+          }];
+          await window.setWindowPosition(windowPositionParamsArray2)
+          await sleep(500);
+          let windowArray2 = await window.getWindowsByCoordinate(displayId);
+          let topWindow2 = windowArray2[0];
+          let topWindowId2 = topWindow2.getWindowProperties().id;
+          console.info(`${msgStr} Succeeded in setWindowPosition. windowPositionParamsArray2: ${JSON.stringify(
+            windowPositionParamsArray2)},topWindowId2:${topWindowId2}`);
+          expect(topWindowId2).assertEqual(newWindowId);
+          await terminateAbility(caseName);
+          done();
+        } catch (exception) {
+          console.error(`${msgStr} Failed. Cause code: ${exception.code},message: ${exception.message}`);
+          await terminateAbility(caseName);
+          if (!(deviceType === '2in1' || isPCMode)) {
+            expect(exception.code).assertEqual(801);
+            expect(exception.message !== '').assertTrue();
+          } else {
+            expect(false).assertTrue();
+          }
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   SUB_BASIC_WMS_setWindowPosition_insertAfter_WindowPosition_normal_0100
+     * @tc.number SUB_BASIC_WMS_setWindowPosition_insertAfter_WindowPosition_normal_0100
+     * @tc.desc   SUB_BASIC_WMS_setWindowPosition_insertAfter_WindowPosition_normal_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_WMS_setWindowPosition_insertAfter_WindowPosition_normal_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let caseName: string = 'SUB_BASIC_WMS_setWindowPosition_insertAfter_WindowPosition_normal_0100 ';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        console.log(msgStr + 'begin');
+        try {
+          let windowStageStart: window.WindowStage = await startAbility(caseName, context!);
+          let mainWindow = windowStage.getMainWindowSync();
+          let newMainWindow = windowStageStart.getMainWindowSync();
+          let windowId = mainWindow.getWindowProperties().id;
+          let newWindowId = newMainWindow.getWindowProperties().id;
+          console.info(`${msgStr} windowId: ${windowId}, newWindowId:${newWindowId}`);
+          await sleep(500);
+          let windowPositionParamsArray: Array<window.WindowPositionParams> = [{
+            windowId: windowId,
+            insertAfter: window.WindowPosition.BOTTOM
+          }, {
+            windowId: windowId,
+            insertAfter: window.WindowPosition.TOP
+          }];
+          await window.setWindowPosition(windowPositionParamsArray)
+          await sleep(500);
+          let windowArray = await window.getWindowsByCoordinate(displayId);
+          let topWindow = windowArray[0];
+          let topWindowId = topWindow.getWindowProperties().id;
+          console.info(`${msgStr} Succeeded in setWindowPosition. windowPositionParamsArray: ${JSON.stringify(
+            windowPositionParamsArray)},topWindowId:${topWindowId}`);
+          expect(topWindowId).assertEqual(windowId);
+          let windowPositionParamsArray2: Array<window.WindowPositionParams> = [{
+            windowId: windowId,
+            insertAfter: window.WindowPosition.TOP
+          }, {
+            windowId: windowId,
+            insertAfter: window.WindowPosition.BOTTOM
+          }];
+          await window.setWindowPosition(windowPositionParamsArray2)
+          await sleep(500);
+          let windowArray2 = await window.getWindowsByCoordinate(displayId);
+          let topWindow2 = windowArray2[0];
+          let topWindowId2 = topWindow2.getWindowProperties().id;
+          console.info(`${msgStr} Succeeded in setWindowPosition. windowPositionParamsArray2: ${JSON.stringify(
+            windowPositionParamsArray2)},topWindowId2:${topWindowId2}`);
+          expect(topWindowId2).assertEqual(newWindowId);
+          await terminateAbility(caseName);
+          done();
+        } catch (exception) {
+          console.error(`${msgStr} Failed. Cause code: ${exception.code},message: ${exception.message}`);
+          await terminateAbility(caseName);
+          if (!(deviceType === '2in1' || isPCMode)) {
+            expect(exception.code).assertEqual(801);
+            expect(exception.message !== '').assertTrue();
+          } else {
+            expect(false).assertTrue();
+          }
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   SUB_BASIC_WMS_setWindowPosition_insertAfter_WindowPosition_normal_0200
+     * @tc.number SUB_BASIC_WMS_setWindowPosition_insertAfter_WindowPosition_normal_0200
+     * @tc.desc   SUB_BASIC_WMS_setWindowPosition_insertAfter_WindowPosition_normal_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_WMS_setWindowPosition_insertAfter_WindowPosition_normal_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let caseName: string = 'SUB_BASIC_WMS_setWindowPosition_insertAfter_WindowPosition_normal_0200 ';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        console.log(msgStr + 'begin');
+        try {
+          let windowStageStart: window.WindowStage = await startAbility(caseName, context!);
+          let mainWindow: window.Window = windowStage.getMainWindowSync();
+          let newMainWindow: window.Window = windowStageStart.getMainWindowSync();
+          let windowId = mainWindow.getWindowProperties().id;
+          let newWindowId = newMainWindow.getWindowProperties().id;
+          console.info(`${msgStr} windowId: ${windowId}, newWindowId:${newWindowId}`);
+          await sleep(500);
+          let windowPositionParamsArray: Array<window.WindowPositionParams> = [{
+            windowId: windowId,
+            insertAfter: window.WindowPosition.TOPMOST
+          }];
+          await window.setWindowPosition(windowPositionParamsArray)
+          await sleep(500);
+          let windowArray = await window.getWindowsByCoordinate(displayId);
+          let topWindow = windowArray[0];
+          let topWindowId = topWindow.getWindowProperties().id;
+          console.info(`${msgStr} Succeeded in setWindowPosition. windowPositionParamsArray: ${JSON.stringify(
+            windowPositionParamsArray)},topWindowId:${topWindowId}`);
+          // 验证置顶生效
+          expect(topWindowId).assertEqual(windowId);
+          // 验证retore另一窗口后,保持当前窗口置顶
+          await newMainWindow.restore()
+          await sleep(500);
+          let windowArray2 = await window.getWindowsByCoordinate(displayId);
+          let topWindow2 = windowArray2[0];
+          let topWindowId2 = topWindow2.getWindowProperties().id;
+          console.info(`${msgStr} topWindowId2:${topWindowId}`);
+          // 验证置顶生效
+          expect(topWindowId2).assertEqual(windowId);
+          let windowPositionParamsArray2: Array<window.WindowPositionParams> = [{
+            windowId: windowId,
+            insertAfter: window.WindowPosition.NOT_TOPMOST
+          }];
+          await window.setWindowPosition(windowPositionParamsArray2)
+          await sleep(500);
+          await newMainWindow.restore()
+          await sleep(500);
+          let windowArray3 = await window.getWindowsByCoordinate(displayId);
+          let topWindow3 = windowArray3[0];
+          let topWindowId3 = topWindow3.getWindowProperties().id;
+          console.info(`${msgStr} Succeeded in setWindowPosition. windowPositionParamsArray2: ${JSON.stringify(
+            windowPositionParamsArray2)},topWindowId3:${topWindowId3}`);
+          expect(topWindowId3).assertEqual(newWindowId);
+          await terminateAbility(caseName);
+          done();
+        } catch (exception) {
+          console.error(`${msgStr} Failed. Cause code: ${exception.code},message: ${exception.message}`);
+          await terminateAbility(caseName);
+          if (!(deviceType === '2in1' || isPCMode)) {
+            expect(exception.code).assertEqual(801);
+            expect(exception.message !== '').assertTrue();
+          } else {
+            expect(false).assertTrue();
+          }
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   SUB_BASIC_WMS_setWindowPosition_Exceed_Max_Array_0100
+     * @tc.number SUB_BASIC_WMS_setWindowPosition_Exceed_Max_Array_0100
+     * @tc.desc   SUB_BASIC_WMS_setWindowPosition_Exceed_Max_Array_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_WMS_setWindowPosition_Exceed_Max_Array_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let caseName: string = 'SUB_BASIC_WMS_setWindowPosition_Exceed_Max_Array_0100 ';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        console.log(msgStr + 'begin');
+        let windowPositionParamsArray: Array<window.WindowPositionParams> = [];
+        try {
+          let mainWindow = windowStage.getMainWindowSync();
+          let windowId = mainWindow.getWindowProperties().id;
+          console.info(`${msgStr} windowId: ${windowId}`);
+          await sleep(500);
+          let windowPositionParams: window.WindowPositionParams = {
+            windowId: windowId,
+            insertAfter: windowId
+          };
+          for (let i = 0; i < 51; i++) {
+            windowPositionParamsArray.push(windowPositionParams)
+          }
+          await window.setWindowPosition(windowPositionParamsArray);
+        } catch (exception) {
+          console.error(`${msgStr} Failed. Cause code: ${exception.code},message: ${exception.message}`);
+          windowPositionParamsArray.length = 0;
+          expect(exception.code).assertEqual(1300016);
+          expect(exception.message !== '').assertTrue();
           done();
         }
       });

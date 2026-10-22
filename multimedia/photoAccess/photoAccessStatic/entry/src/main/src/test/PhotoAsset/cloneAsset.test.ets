@@ -26,7 +26,8 @@ import {
   getFileAsset,
   getPermission,
   createMovingPhoto,
-  pushCreateAsset
+  checkResourceFile,
+  createResource
 } from '../Common.test.ets'
 
 let domain: int= 0x0000;
@@ -42,8 +43,8 @@ export default function cloneAssetTest() {
 
     beforeAll(async () => {
       await getPermission();
-      await sleep(10);
-      await pushCreateAsset(context, fileNameList);
+      await checkResourceFile(context);
+      await createResource(context, fileNameList);
       await sleep(3500);
     })
 
@@ -262,7 +263,7 @@ export default function cloneAssetTest() {
           done();
         }
       } catch (error) {
-        error = error as BusinessError;
+       
         hilog.error(domain, tag, `${testNum} :: test failed ,errorCode is ${error.code}`);
         hilog.error(domain, tag, `${testNum} :: test failed ,error is ${error}`);
         expect(error.code).assertEqual(401);
@@ -299,7 +300,7 @@ export default function cloneAssetTest() {
             done();
           }
         } catch (error) {
-          error = error as BusinessError;
+         
           hilog.error(domain, tag, `${testNum} :: test failed ,errorCode is ${error.code}`);
           hilog.error(domain, tag, `${testNum} :: test failed ,error is ${error}`);
           expect(error.code).assertEqual(401);
@@ -337,7 +338,7 @@ export default function cloneAssetTest() {
               try {
                 await photoAsset.clone(title);
               } catch (error) {
-                error = error as BusinessError;
+               
                 hilog.info(domain, tag, `${testNum} :: illegal titile , errCode is ${error.code}`);
                 expect(error.code).assertEqual(401);
                 count++;
@@ -384,7 +385,7 @@ export default function cloneAssetTest() {
             done();
           }
         } catch (error) {
-          error = error as BusinessError;
+         
           hilog.error(domain, tag, `${testNum} :: test failed ,errorCode is ${error.code}`);
           hilog.error(domain, tag, `${testNum} :: test failed ,error is ${error}`);
           expect(error.code).assertEqual(401);

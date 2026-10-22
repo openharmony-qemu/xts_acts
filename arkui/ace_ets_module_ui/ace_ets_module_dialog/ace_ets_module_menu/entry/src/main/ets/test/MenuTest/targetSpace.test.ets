@@ -18,6 +18,8 @@ import router from '@ohos.router';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function targetSpaceTest() {
 describe('targetSpaceTest', () => {
     beforeAll(async () => {
@@ -33,12 +35,9 @@ describe('targetSpaceTest', () => {
             router.clear();
             let pages = router.getState();
             console.info('get targetSpaceTest state pages:' + JSON.stringify(pages));
-            if (pages.name !== 'targetSpace') { 
-            console.info('get targetSpaceTest pages.name:' + JSON.stringify(pages.name));
             let result = await router.pushUrl(options);
             await CommonFunc.sleep(2000);
             console.info('push targetSpaceTest page result:' + JSON.stringify(result));
-            }
         } catch (err) {
             console.error('push targetSpaceTest page error:' + JSON.stringify(err));
         }
@@ -49,7 +48,8 @@ describe('targetSpaceTest', () => {
         afterEach(async () => {
         await CommonFunc.sleep(1000);
         let driver: Driver = Driver.create();
-        await driver.pressBack();
+        await driver.pressBack(displayID);
+        await CommonFunc.sleep(2000);
         console.info('targetSpaceTest after each called');
         });
 

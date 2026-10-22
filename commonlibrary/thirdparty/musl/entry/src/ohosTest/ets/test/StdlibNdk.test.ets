@@ -16,6 +16,7 @@
 import { beforeEach, describe, expect, it , TestType, Size, Level } from "@ohos/hypium-dynamic"
 import Utils from './Utils'
 import stdlib from 'libstdlibndk.so'
+import qsorttest from 'libqsorttest.so'
 import fs from '@ohos.file.fs';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
@@ -2420,6 +2421,636 @@ export default function stdlibNdkTest() {
       let data: number = stdlib.qsort(1);
       console.info("Test NAPI data = \"" + data + "\"");
       expect(data).assertEqual(2);
+      done();
+    });
+
+    /**
+     * @tc.name   testMuslStdlibQsort002
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_NORMAL_0100
+     * @tc.desc   Test int array ascending sort
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('testMuslStdlibQsort002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = qsorttest.qsortNormalInt();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testMuslStdlibQsort003
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_NORMAL_0200
+     * @tc.desc   Test string array dictionary sort
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('testMuslStdlibQsort003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = qsorttest.qsortNormalString();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testMuslStdlibQsort004
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_NORMAL_0300
+     * @tc.desc   Test char array sort (empty to full permutation)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('testMuslStdlibQsort004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = qsorttest.qsortNormalChar();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testMuslStdlibQsort005
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_NORMAL_0400
+     * @tc.desc   Test double array ascending sort
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testMuslStdlibQsort005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      let result: number = qsorttest.qsortNormalDouble();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testMuslStdlibQsort006
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_NORMAL_0500
+     * @tc.desc   Test uint64 array random sort
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testMuslStdlibQsort006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let result: number = qsorttest.qsortNormalUint64();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testMuslStdlibQsort007
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_NORMAL_0600
+     * @tc.desc   Test long array Leonardo size sort
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testMuslStdlibQsort007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let result: number = qsorttest.qsortNormalLong();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testMuslStdlibQsort008
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_NORMAL_0700
+     * @tc.desc   Test struct array sort by member
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('testMuslStdlibQsort008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      let result: number = qsorttest.qsortNormalStruct();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testMuslStdlibQsort009
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_BOUNDARY_0100
+     * @tc.desc   Test zero elements sort does not crash
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('testMuslStdlibQsort009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = qsorttest.qsortBoundaryEmpty();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testMuslStdlibQsort010
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_BOUNDARY_0200
+     * @tc.desc   Test single element sort unchanged
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('testMuslStdlibQsort010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = qsorttest.qsortBoundarySingle();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testMuslStdlibQsort011
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_BOUNDARY_0300
+     * @tc.desc   Test two sorted elements remain unchanged
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('testMuslStdlibQsort011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = qsorttest.qsortBoundaryTwoSorted();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testMuslStdlibQsort012
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_BOUNDARY_0400
+     * @tc.desc   Test two reverse elements correctly swapped
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('testMuslStdlibQsort012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = qsorttest.qsortBoundaryTwoReverse();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testMuslStdlibQsort013
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_BOUNDARY_0500
+     * @tc.desc   Test two equal elements remain unchanged
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testMuslStdlibQsort013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      let result: number = qsorttest.qsortBoundaryTwoEqual();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testMuslStdlibQsort014
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_BOUNDARY_0600
+     * @tc.desc   Test width=1 single byte sort
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testMuslStdlibQsort014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      let result: number = qsorttest.qsortBoundaryWidthOne();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testMuslStdlibQsort015
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_BOUNDARY_0700
+     * @tc.desc   Test width=0 does not crash
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('testMuslStdlibQsort015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      let result: number = qsorttest.qsortBoundaryWidthZero();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testMuslStdlibQsort016
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_PATTERN_0100
+     * @tc.desc   Test already sorted input remains ordered
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testMuslStdlibQsort016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = qsorttest.qsortPatternSorted();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testMuslStdlibQsort017
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_PATTERN_0200
+     * @tc.desc   Test reverse sorted input correctly sorted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testMuslStdlibQsort017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = qsorttest.qsortPatternReverse();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testMuslStdlibQsort018
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_PATTERN_0300
+     * @tc.desc   Test all duplicate elements sort unchanged
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testMuslStdlibQsort018', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      let result: number = qsorttest.qsortPatternAllDup();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testMuslStdlibQsort019
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_PATTERN_0400
+     * @tc.desc   Test partial duplicate elements correctly sorted
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testMuslStdlibQsort019', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      let result: number = qsorttest.qsortPatternPartialDup();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testMuslStdlibQsort020
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_PATTERN_0500
+     * @tc.desc   Test sawtooth pattern correctly sorted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testMuslStdlibQsort020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let result: number = qsorttest.qsortPatternSawtooth();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testMuslStdlibQsort021
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_PATTERN_0600
+     * @tc.desc   Test cyclic shifted input correctly sorted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testMuslStdlibQsort021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let result: number = qsorttest.qsortPatternCyclic();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testMuslStdlibQsort022
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_PATTERN_0700
+     * @tc.desc   Test near-sorted input correctly sorted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testMuslStdlibQsort022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result: number = qsorttest.qsortPatternNearSorted();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testMuslStdlibQsort023
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_PATTERN_0800
+     * @tc.desc   Test bitonic sequence correctly sorted
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('testMuslStdlibQsort023', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      let result: number = qsorttest.qsortPatternBitonic();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testMuslStdlibQsort024
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_CVE_0100
+     * @tc.desc   CVE-2026-40200 regression: Leonardo sizes reverse sorted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testMuslStdlibQsort024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = qsorttest.qsortCveLeoReverse();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testMuslStdlibQsort025
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_CVE_0200
+     * @tc.desc   CVE-2026-40200 regression: Leonardo sizes already sorted (trusty path)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testMuslStdlibQsort025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = qsorttest.qsortCveLeoSorted();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testMuslStdlibQsort026
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_CVE_0300
+     * @tc.desc   CVE-2026-40200 regression: pow2-1 boundary sizes reverse sorted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testMuslStdlibQsort026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = qsorttest.qsortCvePow2Minus1();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testMuslStdlibQsort027
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_CVE_0400
+     * @tc.desc   CVE-2026-40200 regression: Leonardo boundary ±2 sizes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testMuslStdlibQsort027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = qsorttest.qsortCveLeoBoundary();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testMuslStdlibQsort028
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_CVE_0500
+     * @tc.desc   CVE-2026-40200 regression: Leonardo cumulative sums
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testMuslStdlibQsort028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let result: number = qsorttest.qsortCveLeoSum();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testMuslStdlibQsort029
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_CVE_0600
+     * @tc.desc   CVE-2026-40200 regression: Leonardo sizes with char width
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testMuslStdlibQsort029', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      let result: number = qsorttest.qsortCveLeoChar();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testMuslStdlibQsort030
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_CVE_0700
+     * @tc.desc   CVE-2026-40200 regression: Leonardo sizes with long width
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testMuslStdlibQsort030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let result: number = qsorttest.qsortCveLeoLong();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testMuslStdlibQsort031
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_CVE_0800
+     * @tc.desc   CVE-2026-40200 regression: Leonardo sizes with double width
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testMuslStdlibQsort031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let result: number = qsorttest.qsortCveLeoDouble();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testMuslStdlibQsort032
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_SCALE_0100
+     * @tc.desc   Test 10K elements reverse sort
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
+     */
+    it('testMuslStdlibQsort032', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = qsorttest.qsortScale10K();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testMuslStdlibQsort033
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_SCALE_0200
+     * @tc.desc   Test 50K elements reverse sort
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL1
+     */
+    it('testMuslStdlibQsort033', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, async (done: Function) => {
+      let result: number = qsorttest.qsortScale50K();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testMuslStdlibQsort034
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_SCALE_0300
+     * @tc.desc   Test 100K elements reverse sort
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL1
+     */
+    it('testMuslStdlibQsort034', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, async (done: Function) => {
+      let result: number = qsorttest.qsortScale100K();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testMuslStdlibQsort035
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_SCALE_0400
+     * @tc.desc   Test 10K random elements sort with reference comparison
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL1
+     */
+    it('testMuslStdlibQsort035', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, async (done: Function) => {
+      let result: number = qsorttest.qsortScale10KRand();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testMuslStdlibQsort036
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_CONCURRENT_0100
+     * @tc.desc   Test 2 threads concurrent sort
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testMuslStdlibQsort036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let result: number = qsorttest.qsortConcurrent2();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testMuslStdlibQsort037
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_CONCURRENT_0200
+     * @tc.desc   Test 4 threads concurrent sort
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testMuslStdlibQsort037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result: number = qsorttest.qsortConcurrent4();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testMuslStdlibQsort038
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_ABNORMAL_0200
+     * @tc.desc   Test NULL base with nel=0 does not crash
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testMuslStdlibQsort038', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      let result: number = qsorttest.qsortAbnormalNullBase();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testMuslStdlibQsort039
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_WIDTH_0100
+     * @tc.desc   Test width=1(char) sort at Leonardo sizes
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testMuslStdlibQsort039', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      let result: number = qsorttest.qsortWidthChar();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testMuslStdlibQsort040
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_WIDTH_0200
+     * @tc.desc   Test width=2(short) sort
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('testMuslStdlibQsort040', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      let result: number = qsorttest.qsortWidthShort();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testMuslStdlibQsort041
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_WIDTH_0300
+     * @tc.desc   Test width=4(int) sort at Leonardo sizes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testMuslStdlibQsort041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let result: number = qsorttest.qsortWidthInt();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testMuslStdlibQsort042
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_WIDTH_0400
+     * @tc.desc   Test width=8(long) sort at Leonardo sizes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testMuslStdlibQsort042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let result: number = qsorttest.qsortWidthLong();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testMuslStdlibQsort043
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_WIDTH_0500
+     * @tc.desc   Test width=16(struct) sort
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('testMuslStdlibQsort043', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      let result: number = qsorttest.qsortWidthStruct();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testMuslStdlibQsort044
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_WIDTH_0600
+     * @tc.desc   Test width=256(cycle buffer boundary) sort
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('testMuslStdlibQsort044', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      let result: number = qsorttest.qsortWidth256();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testMuslStdlibQsort045
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_WIDTH_0700
+     * @tc.desc   Test width=257(exceeds cycle buffer) sort
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('testMuslStdlibQsort045', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      let result: number = qsorttest.qsortWidth257();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testMuslStdlibQsort046
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_ABNORMAL_0100
+     * @tc.desc   Test NULL comparator does not crash parent process (fork isolation)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('testMuslStdlibQsort046', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      let result: number = qsorttest.qsortAbnormalNullCmp();
+      expect(result).assertEqual(0);
       done();
     });
     /**

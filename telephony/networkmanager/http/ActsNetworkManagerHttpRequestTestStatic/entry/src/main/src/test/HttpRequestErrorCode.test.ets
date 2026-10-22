@@ -759,7 +759,7 @@ export default function httpRequestErrorCodeTest() {
               });
               promise.then((data: http.HttpResponse) => {
                 hilog.info(domain, tag, '%{public}s', caseName + ': HttpResponse ->' + JSON.stringify(data));
-                ExpectTrue(data != null);
+                ExpectTrue(data !== undefined);
                 httpRequest.destroy();
                 done();
               }).catch((error: Error) => {
@@ -815,7 +815,7 @@ export default function httpRequestErrorCodeTest() {
               let promise = httpRequest.request('http://baidu.com', httpRequestOptions);
               promise.then((data: http.HttpResponse) => {
                 hilog.info(domain, tag, '%{public}s', caseName + ': HttpResponse ->' + JSON.stringify(data));
-                ExpectTrue(data != null);
+                ExpectTrue(data !== undefined);
                 httpRequest.destroy();
                 done();
               }).catch((error: Error) => {

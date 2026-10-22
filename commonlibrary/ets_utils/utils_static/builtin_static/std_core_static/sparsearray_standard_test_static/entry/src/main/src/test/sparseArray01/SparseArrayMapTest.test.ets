@@ -63,7 +63,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc Test SparseArray.map, verify method result
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap001', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -76,7 +76,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc Test SparseArray.map, verify method result (result![0] equals 2)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap002', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -89,7 +89,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc Test SparseArray.map, verify method result (result![1] equals 4)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap003', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -102,7 +102,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc Test SparseArray.map, verify method result (result![0] equals 1, result![1] equals 3)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap004', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -117,7 +117,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc Test SparseArray.map, verify method result (result![0] equals "0:1")
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap005', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -130,7 +130,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc Test SparseArray.map, verify method result (arr instanceof SparseArray is true, ok!.length equals 3)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap006', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -144,7 +144,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc map with index on [2,5,5], verify v+k mapping
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap007', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(2, 5, 5);
@@ -159,7 +159,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc map double transform on [3,6,3], verify mapped values [6,12,6]
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap008', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(3, 6, 3);
@@ -174,7 +174,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc map identity on [4,2,4], verify elements unchanged
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap009', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(4, 2, 4);
@@ -189,7 +189,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc map with index on [5,3,5], verify v+k mapping
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap010', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(5, 3, 5);
@@ -204,7 +204,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc Test SparseArray.map error path, verify expected exception is thrown (assertFail is triggered, error.name equals "Error")
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap011', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         try {
@@ -223,7 +223,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc map identity on [7,5,4], verify elements unchanged
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap012', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(7, 5, 4);
@@ -238,7 +238,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc map with index on [1,6,5], verify v+k mapping
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap013', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 6, 5);
@@ -253,7 +253,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc Test SparseArray.map, verify method result (first.value equals 1)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap014', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -271,7 +271,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc Test SparseArray.map, verify method result (result!.length equals 1, result![0] equals 2)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap015', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>();
@@ -286,7 +286,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc Test SparseArray.map, verify method result (result!.length equals 3)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap016', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -300,7 +300,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc Test SparseArray.map, verify method result (result![0] equals "1", typeof result![0] equals "string")
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap017', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -314,7 +314,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc Test SparseArray.map, verify method result (result![0] equals 1, typeof result![0] equals "number")
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap018', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<string>("1", "2", "3");
@@ -328,7 +328,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc Test SparseArray.map, verify method result (first.original equals 1, first.doubled equals 2)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap019', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -348,7 +348,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc Test SparseArray.map, verify method result (result![0] equals 2, result![1] equals 0)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap020', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int | null>(1, null, 3);
@@ -363,7 +363,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc Test SparseArray.map, verify method result (result![0] equals 2, result![1] equals 0)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap021', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int | undefined>(3);
@@ -381,7 +381,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc Test SparseArray.map, verify method result (result![0] equals -2147483648)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap022', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>();
@@ -395,7 +395,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc Test SparseArray.map, verify method result (result![0] equals 2147483647)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap023', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>();
@@ -409,7 +409,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc Test SparseArray.map, verify method result (result![0] equals 1)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap024', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(0, 1, 2);
@@ -422,7 +422,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc Test SparseArray.map, verify method result (result![0] equals 1, result![1] equals 2)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap025', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(-1, -2, -3);
@@ -437,7 +437,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc Test SparseArray.map, verify method result (result instanceof SparseArray is true)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap026', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -450,7 +450,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc Test SparseArray.map, verify method result (typeof result![0] equals "string")
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap027', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -463,7 +463,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc Test SparseArray.map, verify method result (result !== arr is true)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap028', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -476,7 +476,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc Test SparseArray.map, verify method result (arr[0] equals 1, arr[1] equals 2)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap029', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -491,7 +491,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc Test SparseArray.map, verify method result (result!.length equals arr.length)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap030', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -504,7 +504,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc Test SparseArray.map, verify method result (result![0] equals 0, result![1] equals 1)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap031', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -519,7 +519,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc Test SparseArray.map, verify method result (result!.length equals 0, result instanceof SparseArray is true)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap032', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>();
@@ -533,7 +533,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc Test SparseArray.map, verify method result (result!.length equals 1000)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap033', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1000);
@@ -546,7 +546,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc Test SparseArray.map, verify method result (result2![0] equals 3, result2![1] equals 5)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap034', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -562,7 +562,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc map with index on [4,5,5], verify v+k mapping
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap035', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(4, 5, 5);
@@ -577,7 +577,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc map double transform on [5,6,3], verify mapped values [10,12,6]
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap036', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(5, 6, 3);
@@ -592,7 +592,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc map identity on [6,2,4], verify elements unchanged
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap037', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(6, 2, 4);
@@ -607,7 +607,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc Test SparseArray.map, verify method result (result![0] equals null)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap038', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -620,7 +620,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc Test SparseArray.map, verify method result (typeof result![0] equals "number")
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap039', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -633,7 +633,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc Test SparseArray.map, verify method result (typeof result![0] equals "string")
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap040', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -646,7 +646,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc Test SparseArray.map, verify method result (result![0] equals false, result![1] equals false)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap041', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 0, 3);
@@ -661,7 +661,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc Test SparseArray.map, verify method result (first.value equals 1, first.index equals 0)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap042', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -682,7 +682,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc Test SparseArray.map, verify method result (result![0]![0] equals 1, result![0]![1] equals 2)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap043', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -701,7 +701,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc Test SparseArray.map, verify method result (result![0] equals 1, result![1] equals "even")
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap044', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -715,7 +715,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc Test SparseArray.map, verify method result (result![0] equals arr[0])
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap045', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -728,7 +728,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc Test SparseArray.map, verify method result (result![0] equals "value:1")
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap046', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -741,7 +741,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc Test SparseArray.map, verify method result (result![0] equals 2, result![2] equals 6)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap047', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(5);
@@ -761,7 +761,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc Test SparseArray.map, verify method result (result![0] equals 11, result![5] equals 12)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap048', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10);
@@ -779,7 +779,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc map with index on [5,5,5], verify v+k mapping
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap049', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(5, 5, 5);
@@ -794,7 +794,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc Test SparseArray.map, verify method result (result![0] equals "1", result![1] equals "2")
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap050', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int | string>(1, "2", 3);
@@ -809,7 +809,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc Test SparseArray.map, verify method result (result![0] equals 10, result![1] equals 120)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap051', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10, 20, 30);
@@ -824,7 +824,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc Test SparseArray.map, verify method result (result![0] equals 4, result![1] equals 5)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap052', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -839,7 +839,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc Test SparseArray.map, verify method result (result![0] equals undefined, result![1] equals undefined)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap053', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -854,7 +854,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc Test SparseArray.map, verify method result (result![0] equals null, result![1] equals null)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap054', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -869,7 +869,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc map float elements doubling values, verify float result
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap055', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<float>(1.0f, 2.5f, 3.0f);
@@ -883,7 +883,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc map byte elements increment by one, verify byte result
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap056', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<byte>(10 as byte, 20 as byte);
@@ -897,7 +897,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc map returns label from POJO with null nested list field
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap057', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const holder = new NestedNullHolder041();
@@ -918,7 +918,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc map labels null element as NULL string
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap058', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int | null>(1, null, 3);
@@ -936,7 +936,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc map doubles element at index 0x1 with binary literal 0b11
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap059', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 0b11, 3);
@@ -955,7 +955,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc map char elements to next char marker string
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap060', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<char>(c'A', c'B');
@@ -975,7 +975,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc map boolean elements to inverted boolean values
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap061', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<boolean>(true, false);
@@ -990,7 +990,7 @@ export default function SparseArrayMapTest(): void {
      * @tc.desc map skips sparse holes while preserving sparse array length
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayMap062', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<string>(6);

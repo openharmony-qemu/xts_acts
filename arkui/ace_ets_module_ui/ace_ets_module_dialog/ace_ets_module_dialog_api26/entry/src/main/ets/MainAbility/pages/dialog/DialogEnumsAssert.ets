@@ -29,7 +29,7 @@ struct DialogEnumsAssert {
   }
 
   build() {
-    Column({ space: 6 }) {
+    Column() {
       Text('dialog enums part1').fontSize(16).fontWeight(FontWeight.Bold)
       Text(this.resultText).id('enums_result').fontSize(14)
       Row(){

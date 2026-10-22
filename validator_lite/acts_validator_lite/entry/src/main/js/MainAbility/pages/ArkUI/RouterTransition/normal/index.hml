@@ -1,0 +1,134 @@
+<!--
+  Copyright (c) 2026 Huawei Device Co., Ltd.
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<div class="container">
+    <div class="content-title">
+        <text class="title">Router Transition · Normal animation types (10)</text>
+    </div>
+    <list class="scroll-area">
+        <list-item class="litem" style="height:205px;">
+            <text class="box-title">fade</text>
+            <text class="tip">点“播放”，观察本页切换到 target 页时的 fade 动效是否平滑完整</text>
+            <div class="op-row">
+                <input class="opBtn" type="button" value="播放" onclick="play('router_fade')" />
+            </div>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{fPassColor}};" type="button" value="pass" onclick="togglePass('router_fade')" />
+                <input class="pfBtn" style="background-color:{{fFailColor}};" type="button" value="fail" onclick="toggleFail('router_fade')" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:205px;">
+            <text class="box-title">scale</text>
+            <text class="tip">点“播放”，观察本页切换到 target 页时的 scale 动效是否平滑完整</text>
+            <div class="op-row">
+                <input class="opBtn" type="button" value="播放" onclick="play('router_scale')" />
+            </div>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{sPassColor}};" type="button" value="pass" onclick="togglePass('router_scale')" />
+                <input class="pfBtn" style="background-color:{{sFailColor}};" type="button" value="fail" onclick="toggleFail('router_scale')" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:205px;">
+            <text class="box-title">slide_left</text>
+            <text class="tip">点“播放”，观察本页切换到 target 页时的 slide_left 动效是否平滑完整</text>
+            <div class="op-row">
+                <input class="opBtn" type="button" value="播放" onclick="play('router_slide_left')" />
+            </div>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{slPassColor}};" type="button" value="pass" onclick="togglePass('router_slide_left')" />
+                <input class="pfBtn" style="background-color:{{slFailColor}};" type="button" value="fail" onclick="toggleFail('router_slide_left')" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:205px;">
+            <text class="box-title">slide_right</text>
+            <text class="tip">点“播放”，观察本页切换到 target 页时的 slide_right 动效是否平滑完整</text>
+            <div class="op-row">
+                <input class="opBtn" type="button" value="播放" onclick="play('router_slide_right')" />
+            </div>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{srPassColor}};" type="button" value="pass" onclick="togglePass('router_slide_right')" />
+                <input class="pfBtn" style="background-color:{{srFailColor}};" type="button" value="fail" onclick="toggleFail('router_slide_right')" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:205px;">
+            <text class="box-title">slide_up</text>
+            <text class="tip">点“播放”，观察本页切换到 target 页时的 slide_up 动效是否平滑完整</text>
+            <div class="op-row">
+                <input class="opBtn" type="button" value="播放" onclick="play('router_slide_up')" />
+            </div>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{suPassColor}};" type="button" value="pass" onclick="togglePass('router_slide_up')" />
+                <input class="pfBtn" style="background-color:{{suFailColor}};" type="button" value="fail" onclick="toggleFail('router_slide_up')" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:205px;">
+            <text class="box-title">slide_down</text>
+            <text class="tip">点“播放”，观察本页切换到 target 页时的 slide_down 动效是否平滑完整</text>
+            <div class="op-row">
+                <input class="opBtn" type="button" value="播放" onclick="play('router_slide_down')" />
+            </div>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{sdPassColor}};" type="button" value="pass" onclick="togglePass('router_slide_down')" />
+                <input class="pfBtn" style="background-color:{{sdFailColor}};" type="button" value="fail" onclick="toggleFail('router_slide_down')" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:205px;">
+            <text class="box-title">slide_over_left</text>
+            <text class="tip">点“播放”，观察本页切换到 target 页时的 slide_over_left 动效是否平滑完整</text>
+            <div class="op-row">
+                <input class="opBtn" type="button" value="播放" onclick="play('router_slide_over_left')" />
+            </div>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{olPassColor}};" type="button" value="pass" onclick="togglePass('router_slide_over_left')" />
+                <input class="pfBtn" style="background-color:{{olFailColor}};" type="button" value="fail" onclick="toggleFail('router_slide_over_left')" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:205px;">
+            <text class="box-title">slide_over_right</text>
+            <text class="tip">点“播放”，观察本页切换到 target 页时的 slide_over_right 动效是否平滑完整</text>
+            <div class="op-row">
+                <input class="opBtn" type="button" value="播放" onclick="play('router_slide_over_right')" />
+            </div>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{orPassColor}};" type="button" value="pass" onclick="togglePass('router_slide_over_right')" />
+                <input class="pfBtn" style="background-color:{{orFailColor}};" type="button" value="fail" onclick="toggleFail('router_slide_over_right')" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:205px;">
+            <text class="box-title">slide_over_up</text>
+            <text class="tip">点“播放”，观察本页切换到 target 页时的 slide_over_up 动效是否平滑完整</text>
+            <div class="op-row">
+                <input class="opBtn" type="button" value="播放" onclick="play('router_slide_over_up')" />
+            </div>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{ouPassColor}};" type="button" value="pass" onclick="togglePass('router_slide_over_up')" />
+                <input class="pfBtn" style="background-color:{{ouFailColor}};" type="button" value="fail" onclick="toggleFail('router_slide_over_up')" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:205px;">
+            <text class="box-title">slide_over_down</text>
+            <text class="tip">点“播放”，观察本页切换到 target 页时的 slide_over_down 动效是否平滑完整</text>
+            <div class="op-row">
+                <input class="opBtn" type="button" value="播放" onclick="play('router_slide_over_down')" />
+            </div>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{odPassColor}};" type="button" value="pass" onclick="togglePass('router_slide_over_down')" />
+                <input class="pfBtn" style="background-color:{{odFailColor}};" type="button" value="fail" onclick="toggleFail('router_slide_over_down')" />
+            </div>
+        </list-item>
+    </list>
+    <div class="bottom-bt">
+        <input type="button" value="back" class="button" onclick="backClicked" />
+    </div>
+</div>

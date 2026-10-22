@@ -25,6 +25,7 @@
 #include "arcList/ArcListEventCallbackTest.h"
 #include "arcSwiper/ArcSwiperEventCallbackTest.h"
 #include "arcAlphabetIndexer/ArcAlphabetIndexerEventCallbackTest.h"
+#include "dragEventSummary/DragEventSummaryTest.h"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -57,6 +58,8 @@ static napi_value Init(napi_env env, napi_value exports)
         {"ArcSwiperEventCallbackTest", nullptr, ArcSwiperEventCallbackTest::CreateNativeNode, 
                 nullptr, nullptr, nullptr, napi_default, nullptr},
         {"ArcAlphabetIndexerEventCallbackTest", nullptr, ArcAlphabetIndexerEventCallbackTest::CreateNativeNode, 
+                nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"DragEventSummaryTest", nullptr, DragEventSummaryTest::CreateNativeNode,
                 nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {

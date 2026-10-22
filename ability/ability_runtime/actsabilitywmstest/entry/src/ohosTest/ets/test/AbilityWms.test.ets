@@ -28,7 +28,7 @@ export default function abilityWMSTest() {
   describe('abilityWMSTest', () => {
 
     beforeAll(async() => {
-      let driver = Driver.create();	
+      let driver = await Driver.create();	
       try {
         let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
         if (allowed) {

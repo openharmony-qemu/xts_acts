@@ -179,6 +179,9 @@ export default function ComposeListItemPage() {
       try {
         let driver = Driver.create();
         await CommonFunc.sleep(1000);
+        let scrollBar = await driver.findComponent(ON.type('List'));
+        let searchText = await (scrollBar?.scrollSearch(ON.text('Toggle7')) as Promise<Component>);
+        await CommonFunc.sleep(1000);
         let checkbox = await driver.findComponent(ON.text('Checkbox6'));
         expect(checkbox !== null).assertTrue();
         console.info('[ComposeListItemOperateItem_static_0600] END');

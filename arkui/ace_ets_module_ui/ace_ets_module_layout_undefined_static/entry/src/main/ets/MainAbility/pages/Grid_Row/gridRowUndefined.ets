@@ -1,4 +1,5 @@
 'use static';
+
 /**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +16,7 @@
  */
 
 import { ItemAlign, GridCol, ForEach, GridRowDirection, BreakpointsReference, GridRow, Color, Stack, Row, Alignment,
-  VerticalAlign, HorizontalAlign, RelativeContainer, Entry, Text, Column, Component, Button,
+  VerticalAlign, HorizontalAlign, RelativeContainer, Entry, Text, Column, Component, Button, ColumnOptions,
   ClickEvent } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
@@ -24,7 +25,7 @@ import hilog from '@ohos.hilog'
 @Component
 struct GridColExample {
   @State bgColors: Color[] = [Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Pink, Color.Grey,
-         Color.Blue, Color.Brown];
+    Color.Blue, Color.Brown];
   @State currentBp: string = 'unknown';
   @State isAlignItems: boolean = true;
 
@@ -33,7 +34,7 @@ struct GridColExample {
   @State widthIndex: int = 0;
 
   build() {
-    Column() {
+    Column({space:2} as ColumnOptions) {
       Column() {
         GridRow({
           columns: 5,
@@ -63,14 +64,14 @@ struct GridColExample {
           this.currentBp = breakpoint
         })
         .alignItems(this.isAlignItems ? ItemAlign.End : undefined)
-      }.width('80%').margin(10).height(200)
+      }.width('80%').height('35%')
       .border({ color: '#880606', width: 2 })
       Column() {
         Button('isAlignItems = ' + this.isAlignItems)
           .onClick(() => {
             this.isAlignItems = !this.isAlignItems;
           })
-          .height(30)
+          .height('3%')
           .id('GridRow_AlignItems')
       }
 
@@ -143,12 +144,13 @@ struct GridColExample {
           this.currentBp = breakpoint
         } : undefined)
 
-      }.width('100%').margin(10).height(200)
+      }.width('100%').height('35%')
       .border({ color: '#880606', width: 2 })
 
       Button('22、onBreakpointChange:' + this.isDef).onClick((e: ClickEvent) => {
         this.isDef = !this.isDef
       })
+        .height('3%')
         .id('GridRow_onBreakpointChange')
 
       Button('02, changeWidth=' + this.widthArray[this.widthIndex] + ',index=' + this.widthIndex)
@@ -159,7 +161,8 @@ struct GridColExample {
             this.widthIndex = this.widthIndex + 1;
           }
         })
+        .height('3%')
         .id('ChangeBreakpoint')
-    }
+    }.width('100%').height('100%')
   }
 }

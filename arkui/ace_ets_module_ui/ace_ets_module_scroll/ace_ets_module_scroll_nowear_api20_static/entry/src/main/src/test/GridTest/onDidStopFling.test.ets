@@ -57,11 +57,17 @@ export default function onDidStopFlingModifierTest() {
         let right = rect.right;
         let left = rect.left;
         let bottom = rect.bottom;
-        let height = bottom -top;
+        let height = bottom - top;
         let width = right - left;
-        await driver.swipe(Math.round(left + width/2).toInt(), Math.round(top + height*0.8).toInt(), Math.round(left + width/2).toInt(),Math.round(top + height*0.2).toInt(), 1000);
+        let centerX = (Math.round(left + width / 2)).toInt();
+        let startY = (Math.round(top + height * 0.8)).toInt();
+        let endY = (Math.round(top + height * 0.2)).toInt();
+        await driver.swipeBetween(
+          { x: centerX, y: startY, displayId: AppStorage.get<number>('displayID')?.toInt() ?? 0 },
+          { x: centerX, y: endY, displayId: AppStorage.get<number>('displayID')?.toInt() ?? 0 }
+        );
         await CommonFunc.sleep(2000);
-        expect(JSON.parseJsonElement(inspector.getInspectorByKey('Grid_onDidStopFling' + '_onDidStopFling'))
+        expect(JSON.parseJsonElement(inspector.getInspectorByKey('Grid_onDidStopFling_onDidStopFling'))
             .getElement('$attrs')
             .getString('content'))
             .assertEqual('第1次Fling停止');
