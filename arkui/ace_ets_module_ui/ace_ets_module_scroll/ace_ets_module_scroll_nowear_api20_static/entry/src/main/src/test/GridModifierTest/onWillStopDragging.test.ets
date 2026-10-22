@@ -51,7 +51,7 @@ export default function onWillStopDraggingModifierTest() {
         await CommonFunc.sleep(500);
         let driver = Driver.create()
         await CommonFunc.sleep(1000);
-        let dragScroll = await driver.findComponent(ON.id('grid_dragging'));
+        let dragScroll = await driver.findComponent(ON.id('GridModifier_onWillStopDragging_grid_dragging'));
         const rect = await (dragScroll?.getBounds() as Promise<Rect>);
         let top = rect.top;
         let right = rect.right;

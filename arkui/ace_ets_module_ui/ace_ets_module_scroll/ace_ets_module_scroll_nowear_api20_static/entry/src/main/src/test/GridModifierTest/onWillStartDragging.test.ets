@@ -22,7 +22,7 @@ export default function onWillStartDraggingModifierTest() {
     beforeEach(async (): Promise<void> => {
       console.info('TextLineSpacingTest beforeEach start');
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/Grid/Grid_onWillStartDragging',
+        url: 'MainAbility/pages/GridModifier/GridModifier_onWillStartDragging',
       }
       try {
         const routerInstance = AppStorage.get<Router>('router') as Router
@@ -51,7 +51,7 @@ export default function onWillStartDraggingModifierTest() {
         await CommonFunc.sleep(500);
         let driver = Driver.create()
         await CommonFunc.sleep(1000);
-        let dragScroll = await driver.findComponent(ON.id('grid_dragging'));
+        let dragScroll = await driver.findComponent(ON.id('GridModifier_onWillStartDragging_grid_dragging'));
         const rect = await (dragScroll?.getBounds() as Promise<Rect>);
         let top = rect.top;
         let right = rect.right;
@@ -67,7 +67,7 @@ export default function onWillStartDraggingModifierTest() {
           { x: centerX, y: endY, displayId: AppStorage.get<number>('displayID')?.toInt() ?? 0 }
         );
         await CommonFunc.sleep(2000);
-        expect(JSON.parseJsonElement(inspector.getInspectorByKey('Grid_onWillStartDragging_onWillStartDragging'))
+        expect(JSON.parseJsonElement(inspector.getInspectorByKey('GridModifier_onWillStartDragging_onWillStartDragging'))
             .getElement('$attrs')
             .getString('content'))
             .assertEqual('第1次拖拽开始');
