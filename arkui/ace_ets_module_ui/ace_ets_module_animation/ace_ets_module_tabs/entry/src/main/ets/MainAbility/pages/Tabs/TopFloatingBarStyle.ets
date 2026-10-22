@@ -2,12 +2,15 @@
  * TopFloatingBarStyle Test Page
  * Test topBarFloatingStyle with valid parameters when barStyle(TOP)
  */
+
 @Entry
 @Component
 struct TopFloatingBarStyle {
   build() {
     Scroll() {
       Column({ space: 10 }) {
+        Text('TopFloatingBarStyle').id('topFloatingBarStyleTitle').fontSize(16)
+
         // AC-1.1: barStyle(TOP) + topBarFloatingStyle({barWidth, maskColor, maskHeight})
         Tabs() {
           TabContent() {
@@ -114,7 +117,7 @@ struct TopFloatingBarStyle {
         .height('20%')
         .width('100%')
 
-        // AC-3.1: topBarFloatingStyle({barWidth: '50%'}) percentage value
+        // AC-3.1 percent: topBarFloatingStyle({barWidth: '50%'})
         Tabs() {
           TabContent() {
             Column().width('100%').height('100%').backgroundColor(Color.Pink)
@@ -130,7 +133,7 @@ struct TopFloatingBarStyle {
         .height('20%')
         .width('100%')
 
-        // AC-3.2: topBarFloatingStyle({maskHeight: '20%'}) percentage value
+        // AC-3.2 percent: topBarFloatingStyle({maskHeight: '20%'})
         Tabs() {
           TabContent() {
             Column().width('100%').height('100%').backgroundColor(Color.Pink)
@@ -146,7 +149,7 @@ struct TopFloatingBarStyle {
         .height('20%')
         .width('100%')
 
-        // AC-3.4: topBarFloatingStyle({maxWidth: '80%'}) percentage value
+        // AC-3.4 percent: topBarFloatingStyle({maxWidth: '80%'})
         Tabs() {
           TabContent() {
             Column().width('100%').height('100%').backgroundColor(Color.Pink)
@@ -162,7 +165,7 @@ struct TopFloatingBarStyle {
         .height('20%')
         .width('100%')
 
-        // AC-3.7: topBarFloatingStyle({barSideMargin: '5%', barTopMargin: '2%'}) percentage values
+        // AC-3.7 percent: topBarFloatingStyle({barSideMargin: '5%', barTopMargin: '2%'})
         Tabs() {
           TabContent() {
             Column().width('100%').height('100%').backgroundColor(Color.Pink)

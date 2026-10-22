@@ -2,12 +2,15 @@
  * TopFloatingBarInvalid Test Page
  * Test topBarFloatingStyle with invalid parameters (negative, NaN)
  */
+
 @Entry
 @Component
 struct TopFloatingBarInvalid {
   build() {
     Scroll() {
       Column({ space: 10 }) {
+        Text('TopFloatingBarInvalid').id('topFloatingBarInvalidTitle').fontSize(16)
+
         // AC-1.6: barWidth negative (-100) ignored, fallback to default
         Tabs() {
           TabContent() {

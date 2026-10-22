@@ -1,33 +1,25 @@
-/*
- * Copyright (c) 2026 Huawei Device Co., Ltd.
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+import router from '@ohos.router';
+import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-dynamic';
+import CommonFunc from '../../MainAbility/common/Common';
 
-import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium';
-import Utils from '../common/Utils';
-
-const SLEEP_TIME: number = 1000;
-
-export default function TopFloatingBarLegacyTest() {
+export default function topFloatingBarLegacyTest() {
   describe('TopFloatingBarLegacyTest', () => {
     beforeEach(async (done: Function) => {
-      await Utils.pushPage('tabs/TopFloatingBarLegacy');
-      await Utils.sleep(SLEEP_TIME);
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/Tabs/TopFloatingBarLegacy',
+      };
+      try {
+        router.clear();
+        await router.pushUrl(options);
+        await CommonFunc.sleep(1500);
+      } catch (err) {
+        console.info('[TopFloatingBarLegacyTest] push:' + err);
+      }
       done();
     });
 
     afterEach(async () => {
-      await Utils.sleep(200);
+      await CommonFunc.sleep(200);
     });
 
     /**
@@ -40,7 +32,7 @@ export default function TopFloatingBarLegacyTest() {
      */
     it('testTopFloatingBarLegacy001', Level.LEVEL1, async (done: Function) => {
       console.info('[testTopFloatingBarLegacy001] START');
-      let strJson: string = getInspectorByKey('tabs_legacy_bottom');
+      let strJson = getInspectorByKey('tabs_legacy_bottom');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[testTopFloatingBarLegacy001] attrs: ' + JSON.stringify(obj.$attrs));
       expect(obj.$attrs !== undefined).assertTrue();
@@ -58,7 +50,7 @@ export default function TopFloatingBarLegacyTest() {
      */
     it('testTopFloatingBarLegacy002', Level.LEVEL1, async (done: Function) => {
       console.info('[testTopFloatingBarLegacy002] START');
-      let strJson: string = getInspectorByKey('tabs_legacy_sidebar');
+      let strJson = getInspectorByKey('tabs_legacy_sidebar');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[testTopFloatingBarLegacy002] attrs: ' + JSON.stringify(obj.$attrs));
       expect(obj.$attrs !== undefined).assertTrue();
@@ -76,7 +68,7 @@ export default function TopFloatingBarLegacyTest() {
      */
     it('testTopFloatingBarLegacy003', Level.LEVEL1, async (done: Function) => {
       console.info('[testTopFloatingBarLegacy003] START');
-      let strJson: string = getInspectorByKey('tabs_legacy_bottom_ignores_top_floating');
+      let strJson = getInspectorByKey('tabs_legacy_bottom_ignores_top_floating');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[testTopFloatingBarLegacy003] attrs: ' + JSON.stringify(obj.$attrs));
       expect(obj.$attrs !== undefined).assertTrue();

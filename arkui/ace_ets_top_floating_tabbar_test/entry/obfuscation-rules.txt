@@ -1,2 +1,0 @@
-# Define project specific obfuscation rules.
--disable-obfuscation

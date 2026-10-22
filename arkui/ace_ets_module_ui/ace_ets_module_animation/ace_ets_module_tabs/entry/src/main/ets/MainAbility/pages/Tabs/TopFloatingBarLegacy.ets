@@ -2,11 +2,14 @@
  * TopFloatingBarLegacy Test Page
  * Test legacy styles (BOTTOM/SIDEBAR) no regression and BOTTOM ignores topBarFloatingStyle
  */
+
 @Entry
 @Component
 struct TopFloatingBarLegacy {
   build() {
     Column({ space: 10 }) {
+      Text('TopFloatingBarLegacy').id('topFloatingBarLegacyTitle').fontSize(16)
+
       // AC-2.2: barStyle(BOTTOM) no regression
       Tabs() {
         TabContent() {

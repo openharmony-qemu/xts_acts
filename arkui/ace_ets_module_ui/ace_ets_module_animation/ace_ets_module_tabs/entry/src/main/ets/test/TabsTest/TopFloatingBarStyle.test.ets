@@ -1,33 +1,25 @@
-/*
- * Copyright (c) 2026 Huawei Device Co., Ltd.
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+import router from '@ohos.router';
+import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-dynamic';
+import CommonFunc from '../../MainAbility/common/Common';
 
-import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium';
-import Utils from '../common/Utils';
-
-const SLEEP_TIME: number = 1000;
-
-export default function TopFloatingBarStyleTest() {
+export default function topFloatingBarStyleTest() {
   describe('TopFloatingBarStyleTest', () => {
     beforeEach(async (done: Function) => {
-      await Utils.pushPage('tabs/TopFloatingBarStyle');
-      await Utils.sleep(SLEEP_TIME);
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/Tabs/TopFloatingBarStyle',
+      };
+      try {
+        router.clear();
+        await router.pushUrl(options);
+        await CommonFunc.sleep(1500);
+      } catch (err) {
+        console.info('[TopFloatingBarStyleTest] push:' + err);
+      }
       done();
     });
 
     afterEach(async () => {
-      await Utils.sleep(200);
+      await CommonFunc.sleep(200);
     });
 
     /**
@@ -40,7 +32,7 @@ export default function TopFloatingBarStyleTest() {
      */
     it('testTopFloatingBarStyle001', Level.LEVEL1, async (done: Function) => {
       console.info('[testTopFloatingBarStyle001] START');
-      let strJson: string = getInspectorByKey('tabs_top_basic');
+      let strJson = getInspectorByKey('tabs_top_basic');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[testTopFloatingBarStyle001] attrs: ' + JSON.stringify(obj.$attrs));
       expect(obj.$attrs !== undefined).assertTrue();
@@ -58,7 +50,7 @@ export default function TopFloatingBarStyleTest() {
      */
     it('testTopFloatingBarStyle002', Level.LEVEL1, async (done: Function) => {
       console.info('[testTopFloatingBarStyle002] START');
-      let strJson: string = getInspectorByKey('tabs_top_barWidth');
+      let strJson = getInspectorByKey('tabs_top_barWidth');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[testTopFloatingBarStyle002] attrs: ' + JSON.stringify(obj.$attrs));
       expect(obj.$attrs !== undefined).assertTrue();
@@ -76,7 +68,7 @@ export default function TopFloatingBarStyleTest() {
      */
     it('testTopFloatingBarStyle003', Level.LEVEL1, async (done: Function) => {
       console.info('[testTopFloatingBarStyle003] START');
-      let strJson: string = getInspectorByKey('tabs_top_mask');
+      let strJson = getInspectorByKey('tabs_top_mask');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[testTopFloatingBarStyle003] attrs: ' + JSON.stringify(obj.$attrs));
       expect(obj.$attrs !== undefined).assertTrue();
@@ -94,7 +86,7 @@ export default function TopFloatingBarStyleTest() {
      */
     it('testTopFloatingBarStyle004', Level.LEVEL1, async (done: Function) => {
       console.info('[testTopFloatingBarStyle004] START');
-      let strJson: string = getInspectorByKey('tabs_top_maxWidth');
+      let strJson = getInspectorByKey('tabs_top_maxWidth');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[testTopFloatingBarStyle004] attrs: ' + JSON.stringify(obj.$attrs));
       expect(obj.$attrs !== undefined).assertTrue();
@@ -112,7 +104,7 @@ export default function TopFloatingBarStyleTest() {
      */
     it('testTopFloatingBarStyle005', Level.LEVEL1, async (done: Function) => {
       console.info('[testTopFloatingBarStyle005] START');
-      let strJson: string = getInspectorByKey('tabs_top_offset');
+      let strJson = getInspectorByKey('tabs_top_offset');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[testTopFloatingBarStyle005] attrs: ' + JSON.stringify(obj.$attrs));
       expect(obj.$attrs !== undefined).assertTrue();
@@ -130,7 +122,7 @@ export default function TopFloatingBarStyleTest() {
      */
     it('testTopFloatingBarStyle006', Level.LEVEL1, async (done: Function) => {
       console.info('[testTopFloatingBarStyle006] START');
-      let strJson: string = getInspectorByKey('tabs_top_margin');
+      let strJson = getInspectorByKey('tabs_top_margin');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[testTopFloatingBarStyle006] attrs: ' + JSON.stringify(obj.$attrs));
       expect(obj.$attrs !== undefined).assertTrue();
@@ -148,7 +140,7 @@ export default function TopFloatingBarStyleTest() {
      */
     it('testTopFloatingBarStyle007', Level.LEVEL1, async (done: Function) => {
       console.info('[testTopFloatingBarStyle007] START');
-      let strJson: string = getInspectorByKey('tabs_top_barPosition_ignored');
+      let strJson = getInspectorByKey('tabs_top_barPosition_ignored');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[testTopFloatingBarStyle007] attrs: ' + JSON.stringify(obj.$attrs));
       expect(obj.$attrs !== undefined).assertTrue();
@@ -166,7 +158,7 @@ export default function TopFloatingBarStyleTest() {
      */
     it('testTopFloatingBarStyle008', Level.LEVEL1, async (done: Function) => {
       console.info('[testTopFloatingBarStyle008] START');
-      let strJson: string = getInspectorByKey('tabs_top_barWidth_percent');
+      let strJson = getInspectorByKey('tabs_top_barWidth_percent');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[testTopFloatingBarStyle008] attrs: ' + JSON.stringify(obj.$attrs));
       expect(obj.$attrs !== undefined).assertTrue();
@@ -184,7 +176,7 @@ export default function TopFloatingBarStyleTest() {
      */
     it('testTopFloatingBarStyle009', Level.LEVEL1, async (done: Function) => {
       console.info('[testTopFloatingBarStyle009] START');
-      let strJson: string = getInspectorByKey('tabs_top_maskHeight_percent');
+      let strJson = getInspectorByKey('tabs_top_maskHeight_percent');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[testTopFloatingBarStyle009] attrs: ' + JSON.stringify(obj.$attrs));
       expect(obj.$attrs !== undefined).assertTrue();
@@ -202,7 +194,7 @@ export default function TopFloatingBarStyleTest() {
      */
     it('testTopFloatingBarStyle010', Level.LEVEL1, async (done: Function) => {
       console.info('[testTopFloatingBarStyle010] START');
-      let strJson: string = getInspectorByKey('tabs_top_maxWidth_percent');
+      let strJson = getInspectorByKey('tabs_top_maxWidth_percent');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[testTopFloatingBarStyle010] attrs: ' + JSON.stringify(obj.$attrs));
       expect(obj.$attrs !== undefined).assertTrue();
@@ -220,7 +212,7 @@ export default function TopFloatingBarStyleTest() {
      */
     it('testTopFloatingBarStyle011', Level.LEVEL1, async (done: Function) => {
       console.info('[testTopFloatingBarStyle011] START');
-      let strJson: string = getInspectorByKey('tabs_top_margin_percent');
+      let strJson = getInspectorByKey('tabs_top_margin_percent');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[testTopFloatingBarStyle011] attrs: ' + JSON.stringify(obj.$attrs));
       expect(obj.$attrs !== undefined).assertTrue();
