@@ -1924,7 +1924,7 @@ export default function AVScreenCaptureRecorderTest() {
    /**
     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0200
     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0200
-    * @tc.desc   setCaptureArea with negative left -> 5400108
+    * @tc.desc   setCaptureArea with negative left - 5400108
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL0
@@ -1963,7 +1963,7 @@ export default function AVScreenCaptureRecorderTest() {
    /**
     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0300
     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0300
-    * @tc.desc   setCaptureArea with negative top -> 5400108
+    * @tc.desc   setCaptureArea with negative top - 5400108
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL0
@@ -2002,7 +2002,7 @@ export default function AVScreenCaptureRecorderTest() {
    /**
     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0400
     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0400
-    * @tc.desc   setCaptureArea with negative width -> 5400108
+    * @tc.desc   setCaptureArea with negative width - 5400108
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL0
@@ -2041,7 +2041,7 @@ export default function AVScreenCaptureRecorderTest() {
    /**
     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0500
     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0500
-    * @tc.desc   setCaptureArea with negative height -> 5400108
+    * @tc.desc   setCaptureArea with negative height - 5400108
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL0
@@ -2080,7 +2080,7 @@ export default function AVScreenCaptureRecorderTest() {
    /**
     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0600
     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0600
-    * @tc.desc   setCaptureArea with negative top and height -> 5400108
+    * @tc.desc   setCaptureArea with negative top and height - 5400108
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL0
@@ -2119,7 +2119,7 @@ export default function AVScreenCaptureRecorderTest() {
    /**
     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0700
     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0700
-    * @tc.desc   setCaptureArea with area out of screen range -> 5400108
+    * @tc.desc   setCaptureArea with area out of screen range - 5400108
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL0
@@ -2158,7 +2158,7 @@ export default function AVScreenCaptureRecorderTest() {
    /**
     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0800
     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0800
-    * @tc.desc   setCaptureArea after release -> 5400102
+    * @tc.desc   setCaptureArea after release - 5400102
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL0
@@ -2218,8 +2218,8 @@ export default function AVScreenCaptureRecorderTest() {
         audioSampleRate: 48000,
         audioChannelCount: 1,
         audioBitrate: 96000,
-        preset: media.AVScreenCaptureRecordPreset.SCREEN_RECORD_PRESET_H265_AAC_MP4,
-      }
+        preset: media.AVScreenCaptureRecordPreset.SCREEN_RECORD_PRESET_H264_AAC_MP4,
+      };
       try {
         await captureRecorder!.init(avConfig);
         console.info('avScreenCaptureRecorder init success');
@@ -2232,7 +2232,7 @@ export default function AVScreenCaptureRecorderTest() {
         await captureRecorder!.setCaptureArea(area).then(() => {
           console.info('avScreenCaptureRecorder setCaptureArea success during recording');
         }).catch((err: Error) => {
-          console.error('avScreenCaptureRecorder setCaptureArea failed, error code: ' + err.message);
+          console.error('avScreenCaptureRecorder setCaptureArea failed, error: ' + err.message);
           expect().assertFail();
         });
       } catch (err) {

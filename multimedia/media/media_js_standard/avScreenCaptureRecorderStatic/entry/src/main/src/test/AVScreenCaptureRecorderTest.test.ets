@@ -1072,7 +1072,7 @@ export default function AVScreenCaptureRecorderTest() {
         expect().assertFail();
       }
       try {
-        left area: media.RectangleRegion = {
+        let area: media.RectangleRegion = {
           left: 0,
           top: 0,
           width: 320,
@@ -1096,7 +1096,7 @@ export default function AVScreenCaptureRecorderTest() {
    /**
     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_static_0200
     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_static_0200
-    * @tc.desc   setCaptureArea with negative left -> 5400108
+    * @tc.desc   setCaptureArea with negative left - 5400108
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL0
@@ -1110,7 +1110,7 @@ export default function AVScreenCaptureRecorderTest() {
         expect().assertFail();
       }
       try {
-        left area: media.RectangleRegion = {
+        let area: media.RectangleRegion = {
           left: -1,
           top: 0,
           width: 320,
@@ -1135,7 +1135,7 @@ export default function AVScreenCaptureRecorderTest() {
    /**
     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_static_0300
     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_static_0300
-    * @tc.desc   setCaptureArea with negative width -> 5400108
+    * @tc.desc   setCaptureArea with negative width - 5400108
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL0
@@ -1149,7 +1149,7 @@ export default function AVScreenCaptureRecorderTest() {
         expect().assertFail();
       }
       try {
-        left area: media.RectangleRegion = {
+        let area: media.RectangleRegion = {
           left: 0,
           top: 0,
           width: -100,
@@ -1174,7 +1174,7 @@ export default function AVScreenCaptureRecorderTest() {
    /**
     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_static_0400
     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_static_0400
-    * @tc.desc   setCaptureArea with negative top and height -> 5400108
+    * @tc.desc   setCaptureArea with negative top and height - 5400108
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL0
@@ -1188,7 +1188,7 @@ export default function AVScreenCaptureRecorderTest() {
         expect().assertFail();
       }
       try {
-        left area: media.RectangleRegion = {
+        let area: media.RectangleRegion = {
           left: 0,
           top: -1,
           width: 320,
@@ -1213,7 +1213,7 @@ export default function AVScreenCaptureRecorderTest() {
    /**
     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_static_0500
     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_static_0500
-    * @tc.desc   setCaptureArea with area out of screen range -> 5400108
+    * @tc.desc   setCaptureArea with area out of screen range - 5400108
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL0
@@ -1227,7 +1227,7 @@ export default function AVScreenCaptureRecorderTest() {
         expect().assertFail();
       }
       try {
-        left area: media.RectangleRegion = {
+        let area: media.RectangleRegion = {
           left: 2147483647,
           top: 2147483647,
           width: 720,
@@ -1252,7 +1252,7 @@ export default function AVScreenCaptureRecorderTest() {
    /**
     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_static_0600
     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_static_0600
-    * @tc.desc   setCaptureArea after release -> 5400102
+    * @tc.desc   setCaptureArea after release - 5400102
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL0
@@ -1267,7 +1267,7 @@ export default function AVScreenCaptureRecorderTest() {
       }
       await captureRecorder!.release();
       try {
-        left area: media.RectangleRegion = {
+        let area: media.RectangleRegion = {
           left: 0,
           top: 0,
           width: 320,
@@ -1286,6 +1286,7 @@ export default function AVScreenCaptureRecorderTest() {
       }
       console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_static_0600 end');
       done();
+    })
 
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_STRATEGY_0100
