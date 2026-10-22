@@ -967,5 +967,68 @@ export default function ActsSetCheckDataSyncEnabledStatic(): void {
         }
         done();
       });
+
+    /**
+    * @tc.number   SUB_account_appaccount_check_permission_0300
+    * @tc.name     SUB_account_appaccount_check_permission_0300
+    * @tc.desc     check getOsAccountDistributedInfo interface meeting ohos.permission.DISTRIBUTED_DATASYNC
+    * @tc.type     FUNCTION
+    * @tc.size     MEDIUMTEST
+    * @tc.level    LEVEL2
+    */
+    it('SUB_account_appaccount_check_permission_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        hilog.info(0x0000, tag, "====>SUB_account_appaccount_check_permission_0300 start====");
+        try {
+          let accountAbility: daccount.DistributedAccountAbility = daccount.getDistributedAccountAbility();
+          let data: daccount.DistributedInfo = await accountAbility.getOsAccountDistributedInfo();
+          hilog.info(0x0000, tag, "====>SUB_account_appaccount_check_permission_0300 data: " + JSON.stringify(data));
+          expect(data.name).assertEqual('ohosAnonymousName');
+          expect(data.id).assertEqual('ohosAnonymousUid');
+          hilog.info(0x0000, tag, "====>SUB_account_appaccount_check_permission_0300 end====");
+        } catch (err) {
+          hilog.info(0x0000, tag, '====>SUB_account_appaccount_check_permission_0300 err: ' + JSON.stringify(err));
+          expect().assertFail();
+        }
+        done();
+      });
+
+    /**
+    * @tc.number   ActsDaAccountPermissionCheck_0400
+    * @tc.name     ActsDaAccountPermissionCheck_0400
+    * @tc.desc     check getOsAccountDistributedInfo interface meeting ohos.permission.DISTRIBUTED_DATASYNC
+    * @tc.type     FUNCTION
+    * @tc.size     MEDIUMTEST
+    * @tc.level    LEVEL2
+    */
+    it('ActsDaAccountPermissionCheck_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        hilog.info(0x0000, tag, "====>ActsDaAccountPermissionCheck_0400 start====");
+        try {
+          let accountAbility: daccount.DistributedAccountAbility = daccount.getDistributedAccountAbility();
+          accountAbility.getOsAccountDistributedInfo((err: BusinessError<void> | null,
+            data: daccount.DistributedInfo | undefined): void => {
+            hilog.info(0x0000, tag, "====>err: " + JSON.stringify(err));
+            hilog.info(0x0000, tag, "====>data: " + JSON.stringify(data));
+            try {
+              if (err) {
+                hilog.info(0x0000, tag, "====>run err");
+                expect().assertFail();
+              } else {
+                expect(data?.name).assertEqual('ohosAnonymousName');
+                expect(data?.id).assertEqual('ohosAnonymousUid');
+              }
+            } catch (err) {
+              hilog.info(0x0000, tag, '====>Assert Fail, err: ' + JSON.stringify(err));
+            }
+            hilog.info(0x0000, tag, "====>ActsDaAccountPermissionCheck_0400 end====");
+            done();
+          });
+        } catch (err) {
+          hilog.info(0x0000, tag, '====>ActsDaAccountPermissionCheck_0400 err: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      });
   });
 }

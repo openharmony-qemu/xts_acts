@@ -218,14 +218,84 @@ export default function ActsDAGetSetTestStatic(): void {
       });
 
     /**
-     * @tc.number    setOsAccountDistributedInfo_test004
-     * @tc.name      setOsAccountDistributedInfo_test004
+     * @tc.number    SUB_account_osaccount_set_distributed_info_token_invalid_0300
+     * @tc.name      SUB_account_osaccount_set_distributed_info_token_invalid_0300
+     * @tc.desc      Test setOsAccountDistributedInfo 12300003 errcode by callback.
+     * @tc.type      FUNCTION
+     * @tc.size      MEDIUMTEST
+     * @tc.level     LEVEL0
+     */
+    it('SUB_account_osaccount_set_distributed_info_token_invalid_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(0x0000, tag, "====>SUB_account_osaccount_set_distributed_info_token_invalid_0300 start====");
+        let accountAbility: account.DistributedAccountAbility = account.getDistributedAccountAbility();
+        let tokenInvalidInfo: account.DistributedInfo = {
+          name: 'ZhangSan',
+          id: '12345',
+          event: "Ohos.account.event.TOKEN_INVALID"
+        };
+        try {
+          accountAbility.setOsAccountDistributedInfo(tokenInvalidInfo, (err: BusinessError<void> | null): void => {
+            hilog.info(0x0000, tag, "====>SUB_account_osaccount_set_distributed_info_token_invalid_0300 err: " + JSON.stringify(err));
+            try {
+              if (err) {
+                expect(err?.code).assertEqual(12300003);
+              } else {
+                hilog.info(0x0000, tag, "====>run err");
+                expect().assertFail();
+              }
+            } catch (err) {
+              hilog.info(0x0000, tag, '====>Assert err: ' + JSON.stringify(err));
+            }
+            hilog.info(0x0000, tag, "====>SUB_account_osaccount_set_distributed_info_token_invalid_0300 end====");
+            done();
+          });
+        } catch (err) {
+          hilog.info(0x0000, tag, "====>SUB_account_osaccount_set_distributed_info_token_invalid_0300 catch exception: " + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      });
+
+    /**
+     * @tc.number    SUB_account_osaccount_set_distributed_info_token_invalid_0400
+     * @tc.name      SUB_account_osaccount_set_distributed_info_token_invalid_0400
+     * @tc.desc      Test setOsAccountDistributedInfo 12300003 errcode by promise.
+     * @tc.type      FUNCTION
+     * @tc.size      MEDIUMTEST
+     * @tc.level     LEVEL0
+     */
+    it('SUB_account_osaccount_set_distributed_info_token_invalid_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(0x0000, tag, "====>SUB_account_osaccount_set_distributed_info_token_invalid_0400 start====");
+        let accountAbility: account.DistributedAccountAbility = account.getDistributedAccountAbility();
+        let tokenInvalidInfo: account.DistributedInfo = {
+          name: 'ZhangSan',
+          id: '12345',
+          event: "Ohos.account.event.TOKEN_INVALID"
+        };
+        try {
+          await accountAbility.setOsAccountDistributedInfo(tokenInvalidInfo);
+          hilog.info(0x0000, tag, "====>SUB_account_osaccount_set_distributed_info_token_invalid_0400 run err");
+          expect().assertFail();
+          done();
+        } catch (err) {
+          hilog.info(0x0000, tag, "====>SUB_account_osaccount_set_distributed_info_token_invalid_0400 err: " + JSON.stringify(err));
+          expect((err as BusinessError).code).assertEqual(12300003);
+          hilog.info(0x0000, tag, "====>SUB_account_osaccount_set_distributed_info_token_invalid_0400 end====");
+          done();
+        }
+      });
+
+    /**
+     * @tc.number    SUB_account_osaccount_set_distributed_info_callback_0500
+     * @tc.name      SUB_account_osaccount_set_distributed_info_callback_0500
      * @tc.desc      Test distributedAccount.setOsAccountDistributedInfo API functionality by callback.
      * @tc.type      FUNCTION
      * @tc.size      MEDIUMTEST
      * @tc.level     LEVEL0
      */
-    it('setOsAccountDistributedInfo_test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SUB_account_osaccount_set_distributed_info_callback_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let accountAbility: account.DistributedAccountAbility = account.getDistributedAccountAbility();
         let obj: account.DistributedInfo = {
