@@ -63,15 +63,17 @@ it('SwipeGesture1_static_0100', Level.LEVEL0, async (done: () => void): Promise<
       await CommonFunc.sleep(1000);
       let top = colum.top
       let left = colum.left
+      let areaWidth = colum.right - colum.left
+      let areaHeight = colum.bottom - colum.top
       console.log('test start get data is:' + colum.top + '[]' + colum.left)
-      console.log('test start get data is:' + Math.round(AppStorage.get<number>("winLeft")! + 100) +
-        '[]' + Math.round(top + 100) + '[]' +
-      Math.round(AppStorage.get<number>("winLeft")! + 500) + '[]' + Math.round(top + 500) + '[]' + 600)
+      console.log('test start get data is:' + Math.round(left + areaWidth * 0.2) +
+        '[]' + Math.round(top + areaHeight * 0.2) + '[]' +
+      Math.round(left + areaWidth * 0.8) + '[]' + Math.round(top + areaHeight * 0.8) + '[]' + 600)
 
-      await driver.swipeBetween({x: Math.round(AppStorage.get<number>("winLeft")! + 100).toInt(), y: Math.round(top + 100).toInt(), displayId: displayID}, {x: Math.round(AppStorage.get<number>("winLeft")! + 500).toInt(), y: Math.round(top + 500).toInt(), displayId: displayID}, 600 as Int)
+      await driver.swipeBetween({x: Math.round(left + areaWidth * 0.2).toInt(), y: Math.round(top + areaHeight * 0.2).toInt(), displayId: displayID}, {x: Math.round(left + areaWidth * 0.8).toInt(), y: Math.round(top + areaHeight * 0.8).toInt(), displayId: displayID}, 600 as Int)
 
       await CommonFunc.sleep(5000);
-      let strJson = inspector.getInspectorByKey('SwipeGesture' + '_value');
+      let strJson = inspector.getInspectorByKey('value');
       await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(strJson);
       console.info('[SwipeGesture1_static_0100] component obj is: ' + JSON.stringify(obj));
