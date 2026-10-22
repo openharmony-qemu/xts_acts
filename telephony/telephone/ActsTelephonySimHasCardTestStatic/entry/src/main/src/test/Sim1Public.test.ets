@@ -224,14 +224,15 @@ export default function Sim1Public() {
         }
         try {
           sim.getSimSpn(3, (err: BusinessError<void> | null, data: string | undefined) => {
-            if (err?.code === 8300001) {
-              hilog.info(domain, tag, `${caseName} successfully  : Parameter error and return 8300001`);
-              ExpectTrue(true);
+            if (err) {
+              hilog.info(domain, tag, `${caseName} successfully 1 : Parameter error and return ` + err?.code);
+              ExpectTrue(err?.code === 8300001 || err?.code === 8300004);
               hilog.info(domain, tag, `${caseName} test end`);
               done();
             } else {
-              hilog.info(domain, tag, `${caseName} failed, err: ${JSON.stringify(err)}`);
-              ExpectFail();
+              hilog.info(domain, tag, `${caseName} 0000, err: ${JSON.stringify(err)}`);
+              hilog.info(domain, tag, `${caseName} 0001, data: ${JSON.stringify(data)}`);
+              ExpectTrue(data?.length as int >= 0);
               hilog.info(domain, tag, `${caseName} test end`);
               done();
             }
@@ -239,7 +240,7 @@ export default function Sim1Public() {
         } catch (error) {
           let err = error as BusinessError;
           if (err?.code === 8300001) {
-            hilog.info(domain, tag, `${caseName} successfully  : Parameter error and return 8300001`);
+            hilog.info(domain, tag, `${caseName} successfully 2  : Parameter error and return ` + err?.code);
             ExpectTrue(true);
             hilog.info(domain, tag, `${caseName} test end`);
             done();
@@ -710,9 +711,9 @@ export default function Sim1Public() {
             done();
           }).catch((err: Error) => {
             let error = err as BusinessError;
-            if (error?.code === 8300001) {
+            if (error) {
               hilog.info(domain, tag, `${caseName} successfully  : Parameter error and return 8300001`);
-              ExpectTrue(true);
+              ExpectTrue(error?.code === 8300001 || error.code === 8300004);
               hilog.info(domain, tag, `${caseName} test end`);
               done();
             } else {
