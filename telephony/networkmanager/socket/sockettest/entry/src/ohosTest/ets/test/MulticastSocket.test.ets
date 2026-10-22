@@ -2776,6 +2776,39 @@ export default function MulticastSocket() {
     });
 
     /**
+     * @tc.name   testNetworkMgrSocketMulticastSocketAddMembership0402
+     * @tc.number SUB_NetworkMgr_Socket_MulticastSocket_AddMembership_0402
+     * @tc.desc   AddMembership with null address parameter (promise), expected error code 401 (Parameter error)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketMulticastSocketAddMembership0402', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketMulticastSocketAddMembership0402';
+      console.info(`${caseName} test start`);
+      try {
+        let paramNull = null;
+        expect(paramNull === null).assertTrue();
+        let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
+        multicast.addMembership(paramNull).then(() => {
+          console.info(`${caseName} unexpected success`);
+          expect().assertFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} promise catch err: ${JSON.stringify(err)}`);
+          expect(err.code).assertEqual(401);
+          console.info(`${caseName} test end`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} sync err: ${JSON.stringify(err)}`);
+        expect(err.code !== 401).assertTrue();
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
      * @tc.name   testNetworkMgrSocketMulticastSocketDropMembership0401
      * @tc.number SUB_NetworkMgr_Socket_MulticastSocket_DropMembership_0401
      * @tc.desc   DropMembership with null address parameter (callback), expected error code 401 (Parameter error)
