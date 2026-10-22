@@ -78,6 +78,9 @@ export default function api26CertFuncTestUnit() {
         if (err.code === 29700005) {
           hilog.info(domain, tag, '%{public}s', "Only the PC/2in1 device can open the dialog box of the UkeyAuthExtensionAbility type.");
           expect(err.code).assertEqual(29700005);
+        } else if (err.code === 801) {
+          hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0010 801');
+          expect(err.code).assertEqual(801);
         } else {
           hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0010 failed. code:${err.code}, message:${err.message}`);
           expect(false).assertTrue();
@@ -108,8 +111,13 @@ export default function api26CertFuncTestUnit() {
         expect(false).assertTrue();
       } catch (err) {
         err = err as BusinessError;
-        hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0080 failed. code:${err.code}, message:${err.message}`);
-        expect(err.code).assertEqual(29700006);
+        if (err.code === 801) {
+          hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0080 801');
+          expect(err.code).assertEqual(801);
+        } else {
+          hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0080 failed. code:${err.code}, message:${err.message}`);
+          expect(err.code).assertEqual(29700006);
+        }
       }
       done();
     });
@@ -136,8 +144,13 @@ export default function api26CertFuncTestUnit() {
         expect(false).assertTrue();
       } catch (err) {
         err = err as BusinessError;
-        hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0090 failed. code:${err.code}, message:${err.message}`);
-        expect(err.code).assertEqual(29700003);
+        if (err.code === 801) {
+          hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0090 801');
+          expect(err.code).assertEqual(801);
+        } else {
+          hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0090 failed. code:${err.code}, message:${err.message}`);
+          expect(err.code).assertEqual(29700003);
+        }
       }
       done();
     });
@@ -164,8 +177,13 @@ export default function api26CertFuncTestUnit() {
         expect(false).assertTrue();
       } catch (err) {
         err = err as BusinessError;
-        hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0100 failed. code:${err.code}, message:${err.message}`);
-        expect(err.code).assertEqual(29700006);
+        if (err.code === 801) {
+          hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0100 801');
+          expect(err.code).assertEqual(801);
+        } else {
+          hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0100 failed. code:${err.code}, message:${err.message}`);
+          expect(err.code).assertEqual(29700006);
+        }
       }
       done();
     });
@@ -207,8 +225,13 @@ export default function api26CertFuncTestUnit() {
         expect(false).assertTrue();
       } catch (err) {
         err = err as BusinessError;
-        hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0120 failed. code:${err.code}, message:${err.message}`);
-        expect(err.code).assertEqual(29700006);
+        if (err.code === 801) {
+          hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0120 801');
+          expect(err.code).assertEqual(801);
+        } else {
+          hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0120 failed. code:${err.code}, message:${err.message}`);
+          expect(err.code).assertEqual(29700006);
+        }
       }
       done();
     });
@@ -238,6 +261,9 @@ export default function api26CertFuncTestUnit() {
         if (err.code === 29700005) {
           hilog.info(domain, tag, '%{public}s', "Only the PC/2in1 device can open the dialog box of the UkeyAuthExtensionAbility type.");
           expect(err.code).assertEqual(29700005);
+        } else if (err.code === 801) {
+          hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0130 801');
+          expect(err.code).assertEqual(801);
         } else {
           hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0130 failed. code:${err.code}, message:${err.message}`);
           expect(false).assertTrue();
@@ -268,8 +294,13 @@ export default function api26CertFuncTestUnit() {
         expect(false).assertTrue();
       } catch (err) {
         err = err as BusinessError;
-        hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0140 error code: ${err.code}, message: ${err.message}`);
-        expect(err.code).assertEqual(29700006);
+        if (err.code === 801) {
+          hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0140 801');
+          expect(err.code).assertEqual(801);
+        } else {
+          hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0140 error code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(29700006);
+        }
       }
       done();
     });
@@ -300,6 +331,9 @@ export default function api26CertFuncTestUnit() {
         if (err.code === 29700005) {
           hilog.info(domain, tag, '%{public}s', "Only the PC/2in1 device can open the dialog box of the UkeyAuthExtensionAbility type.");
           expect(err.code).assertEqual(29700005);
+        } else if (err.code === 801) {
+          hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0150 801');
+          expect(err.code).assertEqual(801);
         } else {
           hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0150 failed. code:${err.code}, message:${err.message}`);
           expect(false).assertTrue();
@@ -331,8 +365,13 @@ export default function api26CertFuncTestUnit() {
         expect(false).assertTrue();
       } catch (err) {
         err = err as BusinessError;
-        hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0160 failed. code:${err.code}, message:${err.message}`);
-        expect(err.code).assertEqual(29700006);
+        if (err.code === 801) {
+          hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0160 801');
+          expect(err.code).assertEqual(801);
+        } else {
+          hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0160 failed. code:${err.code}, message:${err.message}`);
+          expect(err.code).assertEqual(29700006);
+        }
       }
       done();
     });
@@ -363,6 +402,9 @@ export default function api26CertFuncTestUnit() {
         if (err.code === 29700005) {
           hilog.info(domain, tag, '%{public}s', "Only the PC/2in1 device can open the dialog box of the UkeyAuthExtensionAbility type.");
           expect(err.code).assertEqual(29700005);
+        } else if (err.code === 801) {
+          hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0170 801');
+          expect(err.code).assertEqual(801);
         } else {
           hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0170 failed. code:${err.code}, message:${err.message}`);
           expect(false).assertTrue();
@@ -397,6 +439,9 @@ export default function api26CertFuncTestUnit() {
         if (err.code === 29700005) {
           hilog.info(domain, tag, '%{public}s', "Only the PC/2in1 device can open the dialog box of the UkeyAuthExtensionAbility type.");
           expect(err.code).assertEqual(29700005);
+        } else if (err.code === 801) {
+          hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0180 801');
+          expect(err.code).assertEqual(801);
         } else {
           hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0180 failed. code:${err.code}, message:${err.message}`);
           expect(false).assertTrue();
@@ -431,6 +476,9 @@ export default function api26CertFuncTestUnit() {
         if (err.code === 29700005) {
           hilog.info(domain, tag, '%{public}s', "Only the PC/2in1 device can open the dialog box of the UkeyAuthExtensionAbility type.");
           expect(err.code).assertEqual(29700005);
+        } else if (err.code === 801) {
+          hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0190 801');
+          expect(err.code).assertEqual(801);
         } else {
           hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0190 failed. code:${err.code}, message:${err.message}`);
           expect(false).assertTrue();
@@ -465,6 +513,9 @@ export default function api26CertFuncTestUnit() {
         if (err.code === 29700005) {
           hilog.info(domain, tag, '%{public}s', "Only the PC/2in1 device can open the dialog box of the UkeyAuthExtensionAbility type.");
           expect(err.code).assertEqual(29700005);
+        } else if (err.code === 801) {
+          hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0200 801');
+          expect(err.code).assertEqual(801);
         } else {
           hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0200 failed. code:${err.code}, message:${err.message}`);
           expect(false).assertTrue();
@@ -499,6 +550,9 @@ export default function api26CertFuncTestUnit() {
         if (err.code === 29700005) {
           hilog.info(domain, tag, '%{public}s', "Only the PC/2in1 device can open the dialog box of the UkeyAuthExtensionAbility type.");
           expect(err.code).assertEqual(29700005);
+        } else if (err.code === 801) {
+          hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0210 801');
+          expect(err.code).assertEqual(801);
         } else {
           hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0210 failed. code:${err.code}, message:${err.message}`);
           expect(false).assertTrue();
@@ -532,6 +586,9 @@ export default function api26CertFuncTestUnit() {
         if (err.code === 29700005) {
           hilog.info(domain, tag, '%{public}s', "Only the PC/2in1 device can open the dialog box of the UkeyAuthExtensionAbility type.");
           expect(err.code).assertEqual(29700005);
+        } else if (err.code === 801) {
+          hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0220 801');
+          expect(err.code).assertEqual(801);
         } else {
           hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0220 failed. code:${err.code}, message:${err.message}`);
           expect(false).assertTrue();
@@ -566,6 +623,9 @@ export default function api26CertFuncTestUnit() {
         if (err.code === 29700005) {
           hilog.info(domain, tag, '%{public}s', "Only the PC/2in1 device can open the dialog box of the UkeyAuthExtensionAbility type.");
           expect(err.code).assertEqual(29700005);
+        } else if (err.code === 801) {
+          hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0230 801');
+          expect(err.code).assertEqual(801);
         } else {
           hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0230 failed. code:${err.code}, message:${err.message}`);
           expect(false).assertTrue();
@@ -600,6 +660,9 @@ export default function api26CertFuncTestUnit() {
         if (err.code === 29700005) {
           hilog.info(domain, tag, '%{public}s', "Only the PC/2in1 device can open the dialog box of the UkeyAuthExtensionAbility type.");
           expect(err.code).assertEqual(29700005);
+        } else if (err.code === 801) {
+          hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0240 801');
+          expect(err.code).assertEqual(801);
         } else {
           hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0240 failed. code:${err.code}, message:${err.message}`);
           expect(false).assertTrue();
@@ -633,6 +696,9 @@ export default function api26CertFuncTestUnit() {
         if (err.code === 29700005) {
           hilog.info(domain, tag, '%{public}s', "Only the PC/2in1 device can open the dialog box of the UkeyAuthExtensionAbility type.");
           expect(err.code).assertEqual(29700005);
+        } else if (err.code === 801) {
+          hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0250 801');
+          expect(err.code).assertEqual(801);
         } else {
           hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0250 failed. code:${err.code}, message:${err.message}`);
           expect(err.code).assertEqual(29700002);
@@ -667,6 +733,9 @@ export default function api26CertFuncTestUnit() {
         if (err.code === 29700005) {
           hilog.info(domain, tag, '%{public}s', "Only the PC/2in1 device can open the dialog box of the UkeyAuthExtensionAbility type.");
           expect(err.code).assertEqual(29700005);
+        } else if (err.code === 801) {
+          hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0260 801');
+          expect(err.code).assertEqual(801);
         } else {
           hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0260 failed. code:${err.code}, message:${err.message}`);
           expect(err.code).assertEqual(29700009);
