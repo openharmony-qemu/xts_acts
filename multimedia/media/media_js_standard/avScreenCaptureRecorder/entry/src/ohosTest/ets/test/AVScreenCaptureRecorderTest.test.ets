@@ -1847,7 +1847,7 @@ export default function AVScreenCaptureRecorderTest() {
         expect().assertFail();
       }
       try {
-        left area: media.RectangleRegion = {
+        let area: media.RectangleRegion = {
           left: 0,
           top: 0,
           width: 320,
@@ -1885,7 +1885,7 @@ export default function AVScreenCaptureRecorderTest() {
         expect().assertFail();
       }
       try {
-        left area: media.RectangleRegion = {
+        let area: media.RectangleRegion = {
           left: -1,
           top: 0,
           width: 320,
@@ -1924,7 +1924,7 @@ export default function AVScreenCaptureRecorderTest() {
         expect().assertFail();
       }
       try {
-        left area: media.RectangleRegion = {
+        let area: media.RectangleRegion = {
           left: 0,
           top: -1,
           width: 320,
@@ -1963,7 +1963,7 @@ export default function AVScreenCaptureRecorderTest() {
         expect().assertFail();
       }
       try {
-        left area: media.RectangleRegion = {
+        let area: media.RectangleRegion = {
           left: 0,
           top: 0,
           width: -100,
@@ -2002,7 +2002,7 @@ export default function AVScreenCaptureRecorderTest() {
         expect().assertFail();
       }
       try {
-        left area: media.RectangleRegion = {
+        let area: media.RectangleRegion = {
           left: 0,
           top: 0,
           width: 320,
@@ -2041,7 +2041,7 @@ export default function AVScreenCaptureRecorderTest() {
         expect().assertFail();
       }
       try {
-        left area: media.RectangleRegion = {
+        let area: media.RectangleRegion = {
           left: 0,
           top: -1,
           width: 320,
@@ -2080,7 +2080,7 @@ export default function AVScreenCaptureRecorderTest() {
         expect().assertFail();
       }
       try {
-        left area: media.RectangleRegion = {
+        let area: media.RectangleRegion = {
           left: 2147483647,
           top: 2147483647,
           width: 720,
@@ -2120,7 +2120,7 @@ export default function AVScreenCaptureRecorderTest() {
       }
       await captureRecorder!.release();
       try {
-        left area: media.RectangleRegion = {
+        let area: media.RectangleRegion = {
           left: 0,
           top: 0,
           width: 320,
@@ -2170,7 +2170,7 @@ export default function AVScreenCaptureRecorderTest() {
       try {
         await captureRecorder!.init(avConfig);
         console.info('avScreenCaptureRecorder init success');
-        left area: media.RectangleRegion = {
+        let area: media.RectangleRegion = {
           left: 0,
           top: 0,
           width: 320,
