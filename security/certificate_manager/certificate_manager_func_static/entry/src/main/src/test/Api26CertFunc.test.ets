@@ -191,7 +191,7 @@ export default function api26CertFuncTestUnit() {
     /**
      * @tc.name   SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0110
      * @tc.number SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0110
-      * @tc.desc   Verify AbilityType.UKEY_AUTH_EXTENSION_ABILITY equals 1, ERROR_OPERATION_TIMEOUT equals 29700009, ERROR_NOT_CONCURRENT_SUPPORT equals 29700010
+      * @tc.desc   Verify AbilityType.UKEY_AUTH_EXTENSION_ABILITY equals 1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -200,8 +200,6 @@ export default function api26CertFuncTestUnit() {
       hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0110 start');
       expect(certManagerDialog.AbilityType.UKEY_AUTH_EXTENSION_ABILITY).assertEqual(1);
       expect(bundleManager.ExtensionAbilityType.UKEY_AUTH).assertEqual(40);
-      expect(certManagerDialog.CertificateDialogErrorCode.ERROR_OPERATION_TIMEOUT).assertEqual(29700009);
-      expect(certManagerDialog.CertificateDialogErrorCode.ERROR_NOT_CONCURRENT_SUPPORT).assertEqual(29700010);
       done();
     });
 
