@@ -23,6 +23,15 @@ function simpleFunc(arg: number): number {
   return arg * 2;
 }
 
+class PlainCloneItem {
+  public x: number = 1;
+}
+
+@Concurrent
+function readCloneItems(items: Array<Object>): number {
+  return items.length;
+}
+
 @Concurrent
 function simpleFuncNull(arg: number | null | undefined): number | null | undefined {
   return arg;
@@ -2395,6 +2404,36 @@ export default function taskPoolCoverageTest() {
       async (done: Function) => {
         const result = await taskpool.execute(noArgFunc, []);
         expect(result).assertEqual(42);
+        done();
+      });
+
+    /**
+     * @tc.name   testSetCloneListWithNonSendableObject0001
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_CLONELIST_0100
+     * @tc.desc   setCloneList with a non-Sendable plain object throws an exception
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testSetCloneListWithNonSendableObject0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        const caseName = 'testSetCloneListWithNonSendableObject0001';
+        const plain = new PlainCloneItem();
+        const items: Array<Object> = [];
+        items.push(plain);
+        const task = new taskpool.Task(readCloneItems, items);
+        let caught = false;
+        let code = 0;
+        try {
+          task.setCloneList(items);
+          await taskpool.execute(task);
+        } catch (e) {
+          caught = true;
+          code = e.code;
+          console.info(`${caseName} measured error code: ${code}, message: ${e.message}`);
+        }
+        expect(caught).assertTrue();
+        console.info(`${caseName} test end, code: ${code}`);
         done();
       });
   });

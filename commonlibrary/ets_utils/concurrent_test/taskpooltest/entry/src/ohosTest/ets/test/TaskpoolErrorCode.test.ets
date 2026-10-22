@@ -1782,6 +1782,29 @@ export default function TaskPoolErrorCodeTest() {
       done();
     });
 
+    /**
+     * @tc.name   testTaskErrorCode0068
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_TASK_ERROR_CODE_6800
+     * @tc.desc   taskpool execute/SequenceRunner.execute normal path; 10200003 worker initialization failure is
+     *            system-level and cannot be triggered by an application, this case fixes the contract evidence
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testTaskErrorCode0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      const caseName = 'testTaskErrorCode0068';
+      console.info(`${caseName} test start`);
+      const task: taskpool.Task = new taskpool.Task(printArgs, 100);
+      const result = await taskpool.execute(task);
+      expect(result as number).assertEqual(100);
+
+      const runner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
+      const sequenceTask: taskpool.Task = new taskpool.Task(printArgs, 200);
+      const sequenceResult = await runner.execute(sequenceTask);
+      expect(sequenceResult as number).assertEqual(200);
+      console.info(`${caseName} test end`);
+      done();
+    });
 
   });
 }

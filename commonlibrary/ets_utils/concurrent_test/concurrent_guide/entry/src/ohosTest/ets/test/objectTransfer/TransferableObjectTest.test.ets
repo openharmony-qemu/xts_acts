@@ -314,5 +314,27 @@ export default function TransferableObjectTest(): void {
       }
       expect(elapsed >= 0).assertTrue()
     })
+
+    /**
+     * @tc.name   testTransferableObject1300
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TRANSFERABLE_OBJECT_TEST_1300
+     * @tc.desc   Verify setCloneList copies the ArrayBuffer: the worker modifies the copy only and the
+     *            original buffer content is unchanged
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTransferableObject1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      let size: number = 8
+      let buffer: ArrayBuffer = new ArrayBuffer(size)
+      let original: Uint8Array = new Uint8Array(buffer)
+      original[0] = 7
+      let task: taskpool.Task = new taskpool.Task(modifyTransferredBuffer, buffer)
+      task.setCloneList([buffer])
+      let length = await taskpool.execute(task) as number
+      expect(length).assertEqual(size)
+      let after: Uint8Array = new Uint8Array(buffer)
+      expect(after[0]).assertEqual(7)
+    })
   })
 }
