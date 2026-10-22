@@ -125,11 +125,11 @@ export default function permissionTest() {
         cliCmdName: 'ohos-aa',
         subCliCmdName: 'start'
       }];
-      let ticketOpions: abilityToolAccessCtrl.TicketOpions = {
+      let ticketParams: abilityToolAccessCtrl.TicketParams = {
         ticketExpireTimeMs: 30000
       };
       try {
-        await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketOpions);
+        await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketParams);
         expect(false).assertTrue();
       } catch (error) {
         if (checkDeviceIsDevBoard()) {
