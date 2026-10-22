@@ -774,5 +774,20 @@ export default function api26CertFuncTestUnit() {
       }
       done();
     });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0270
+     * @tc.number SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0270
+     * @tc.desc   verify enum ERROR_OPERATION_TIMEOUT = 29700009, ERROR_NOT_CONCURRENT_SUPPORT = 29700010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0270', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0270 start');
+      expect(certManagerDialog.ERROR_OPERATION_TIMEOUT).assertEqual(29700009);
+      expect(certManagerDialog.ERROR_NOT_CONCURRENT_SUPPORT).assertEqual(29700010);
+      done();
+    });
   })
 }
