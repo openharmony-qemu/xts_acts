@@ -239,6 +239,9 @@ export const ImageAttachmentResizableTest_005: () => number;
 export const ImageAttachmentResizableTest_006: () => number;
 export const ImageAttachmentResizableTest_008: () => number;
 export const ImageAttachmentResizableTest_009: () => number;
+export const ImageAttachmentResizableTest_010: () => number;
+export const ImageAttachmentResizableTest_011: () => number;
+export const ImageAttachmentResizableTest_012: () => number;
 
 export const TextStrokeTest_001: () => number;
 export const TextStrokeTest_002: () => number;

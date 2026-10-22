@@ -286,6 +286,12 @@ static napi_value Init(napi_env env, napi_value exports)
             ImageAttachmentResizableTest_008, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"ImageAttachmentResizableTest_009", nullptr,
             ImageAttachmentResizableTest_009, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ImageAttachmentResizableTest_010", nullptr,
+            ImageAttachmentResizableTest_010, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ImageAttachmentResizableTest_011", nullptr,
+            ImageAttachmentResizableTest_011, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ImageAttachmentResizableTest_012", nullptr,
+            ImageAttachmentResizableTest_012, nullptr, nullptr, nullptr, napi_default, nullptr},
 
         {"TextStrokeTest_001", nullptr, TextStrokeTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TextStrokeTest_002", nullptr, TextStrokeTest_002, nullptr, nullptr, nullptr, napi_default, nullptr},
