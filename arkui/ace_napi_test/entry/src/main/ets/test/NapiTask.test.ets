@@ -532,6 +532,66 @@ function napiMicrotaskScopeSuppressNewInstance(): boolean {
   return value;
 }
 
+@Concurrent
+function napiMicrotaskScopeDrainResumes(): boolean {
+  let value = napitest.NapiMicrotaskScopeDrainResumes();
+  return value;
+}
+
+@Concurrent
+function napiMicrotaskScopeCascading(): boolean {
+  let value = napitest.NapiMicrotaskScopeCascading();
+  return value;
+}
+
+@Concurrent
+function napiMicrotaskScopeRepeatedLoop(): boolean {
+  let value = napitest.NapiMicrotaskScopeRepeatedLoop();
+  return value;
+}
+
+@Concurrent
+function napiMicrotaskScopeSuppressReject(): boolean {
+  let value = napitest.NapiMicrotaskScopeSuppressReject();
+  return value;
+}
+
+@Concurrent
+function napiMicrotaskScopeFifoOrder(): boolean {
+  let value = napitest.NapiMicrotaskScopeFifoOrder();
+  return value;
+}
+
+@Concurrent
+function napiMicrotaskScopeCloseStaleHandle(): boolean {
+  let value = napitest.NapiMicrotaskScopeCloseStaleHandle();
+  return value;
+}
+
+@Concurrent
+function napiMicrotaskScopeCloseNullFull(): boolean {
+  let value = napitest.NapiMicrotaskScopeCloseNullFull();
+  return value;
+}
+
+@Concurrent
+function napiMicrotaskScopeCloseMismatchFull(): boolean {
+  let value = napitest.NapiMicrotaskScopeCloseMismatchFull();
+  return value;
+}
+
+@Concurrent
+function napiMicrotaskScopePendingExceptionSkip(): boolean {
+  let value = napitest.NapiMicrotaskScopePendingExceptionSkip();
+  return value;
+}
+
+@Concurrent
+function napiMicrotaskScopeNestedThenDrain(): boolean {
+  let value = napitest.NapiMicrotaskScopeNestedThenDrain();
+  return value;
+}
+
 export default function NapiTaskTest() {
 
   describe('napiTaskTest', () => {
@@ -2618,5 +2678,266 @@ export default function NapiTaskTest() {
       }
       console.info(`${caseName} test end`);
     })
+    /**
+     * @tc.name   testNapiMicrotaskScopeTask0006
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_MICROTASKSCOPE_TASK_0600
+     * @tc.desc   NapiTaskTest NapiMicrotaskScopeDrainResumes in taskpool thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testNapiMicrotaskScopeTask0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      const caseName: string = 'testNapiMicrotaskScopeTask0006';
+      console.info(`${caseName} test start`);
+      try {
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(napiMicrotaskScopeDrainResumes));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertTrue();
+        }
+      } catch (error) {
+        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+    })
+    /**
+     * @tc.name   testNapiMicrotaskScopeTask0007
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_MICROTASKSCOPE_TASK_0700
+     * @tc.desc   NapiTaskTest NapiMicrotaskScopeCascading in taskpool thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testNapiMicrotaskScopeTask0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      const caseName: string = 'testNapiMicrotaskScopeTask0007';
+      console.info(`${caseName} test start`);
+      try {
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(napiMicrotaskScopeCascading));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertTrue();
+        }
+      } catch (error) {
+        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+    })
+    /**
+     * @tc.name   testNapiMicrotaskScopeTask0008
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_MICROTASKSCOPE_TASK_0800
+     * @tc.desc   NapiTaskTest NapiMicrotaskScopeRepeatedLoop in taskpool thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testNapiMicrotaskScopeTask0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      const caseName: string = 'testNapiMicrotaskScopeTask0008';
+      console.info(`${caseName} test start`);
+      try {
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(napiMicrotaskScopeRepeatedLoop));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertTrue();
+        }
+      } catch (error) {
+        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+    })
+    /**
+     * @tc.name   testNapiMicrotaskScopeTask0009
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_MICROTASKSCOPE_TASK_0900
+     * @tc.desc   NapiTaskTest NapiMicrotaskScopeSuppressReject in taskpool thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testNapiMicrotaskScopeTask0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      const caseName: string = 'testNapiMicrotaskScopeTask0009';
+      console.info(`${caseName} test start`);
+      try {
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(napiMicrotaskScopeSuppressReject));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertTrue();
+        }
+      } catch (error) {
+        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+    })
+    /**
+     * @tc.name   testNapiMicrotaskScopeTask0010
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_MICROTASKSCOPE_TASK_1000
+     * @tc.desc   NapiTaskTest NapiMicrotaskScopeFifoOrder in taskpool thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testNapiMicrotaskScopeTask0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      const caseName: string = 'testNapiMicrotaskScopeTask0010';
+      console.info(`${caseName} test start`);
+      try {
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(napiMicrotaskScopeFifoOrder));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertTrue();
+        }
+      } catch (error) {
+        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+    })
+    /**
+     * @tc.name   testNapiMicrotaskScopeTask0011
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_MICROTASKSCOPE_TASK_1100
+     * @tc.desc   NapiTaskTest NapiMicrotaskScopeCloseStaleHandle in taskpool thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testNapiMicrotaskScopeTask0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      const caseName: string = 'testNapiMicrotaskScopeTask0011';
+      console.info(`${caseName} test start`);
+      try {
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(napiMicrotaskScopeCloseStaleHandle));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertTrue();
+        }
+      } catch (error) {
+        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+    })
+    /**
+     * @tc.name   testNapiMicrotaskScopeTask0012
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_MICROTASKSCOPE_TASK_1200
+     * @tc.desc   NapiTaskTest NapiMicrotaskScopeCloseNullFull in taskpool thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testNapiMicrotaskScopeTask0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      const caseName: string = 'testNapiMicrotaskScopeTask0012';
+      console.info(`${caseName} test start`);
+      try {
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(napiMicrotaskScopeCloseNullFull));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertTrue();
+        }
+      } catch (error) {
+        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+    })
+    /**
+     * @tc.name   testNapiMicrotaskScopeTask0013
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_MICROTASKSCOPE_TASK_1300
+     * @tc.desc   NapiTaskTest NapiMicrotaskScopeCloseMismatchFull in taskpool thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testNapiMicrotaskScopeTask0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      const caseName: string = 'testNapiMicrotaskScopeTask0013';
+      console.info(`${caseName} test start`);
+      try {
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(napiMicrotaskScopeCloseMismatchFull));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertTrue();
+        }
+      } catch (error) {
+        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+    })
+    /**
+     * @tc.name   testNapiMicrotaskScopeTask0014
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_MICROTASKSCOPE_TASK_1400
+     * @tc.desc   NapiTaskTest NapiMicrotaskScopePendingExceptionSkip in taskpool thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testNapiMicrotaskScopeTask0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      const caseName: string = 'testNapiMicrotaskScopeTask0014';
+      console.info(`${caseName} test start`);
+      try {
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(napiMicrotaskScopePendingExceptionSkip));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertTrue();
+        }
+      } catch (error) {
+        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+    })
+    /**
+     * @tc.name   testNapiMicrotaskScopeTask0015
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_MICROTASKSCOPE_TASK_1500
+     * @tc.desc   NapiTaskTest NapiMicrotaskScopeNestedThenDrain in taskpool thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('testNapiMicrotaskScopeTask0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      const caseName: string = 'testNapiMicrotaskScopeTask0015';
+      console.info(`${caseName} test start`);
+      try {
+        const promises: Promise<object>[] = [];
+        for (let i = 0; i < TASK_COUNT; i++) {
+          promises.push(taskpool.execute(napiMicrotaskScopeNestedThenDrain));
+        }
+        const results = await Promise.all(promises);
+        for (const value of results) {
+          expect(value).assertTrue();
+        }
+      } catch (error) {
+        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+    })
   })
 }
+

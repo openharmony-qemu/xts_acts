@@ -18,10 +18,12 @@ import priCertJsAPINoPermissionTestUnit from './PriCertNoPermission.test';
 import pubCertJsAPINoPermissionTestUnit from './PubCertNoPermission.test';
 import userAndSysCertNoPermissionJsTestUnit from './UserAndSysCertNoPermission.test';
 import api16CertNoPermissionTestUnit from './Api16CertNoPermission.test';
+import api26CertFuncTestUnit from './Api26CertFunc.test';
 
 export default function testsuite() {
   priCertJsAPINoPermissionTestUnit();
   userAndSysCertNoPermissionJsTestUnit();
   pubCertJsAPINoPermissionTestUnit();
   api16CertNoPermissionTestUnit();
+  api26CertFuncTestUnit();
 }

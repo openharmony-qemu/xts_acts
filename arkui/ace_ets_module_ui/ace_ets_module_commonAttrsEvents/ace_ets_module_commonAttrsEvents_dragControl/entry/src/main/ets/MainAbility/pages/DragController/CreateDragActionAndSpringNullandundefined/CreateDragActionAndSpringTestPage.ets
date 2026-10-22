@@ -54,24 +54,24 @@ struct CreateDragActionAndSpringTestPage {
   build() {
     Column() {
       Text(this.message)
-        .fontSize(20)
+        .fontSize(16)
         .fontWeight(FontWeight.Bold)
         .width('90%')
-        .height('5%')
-        .margin({ top: '2%', bottom: '2%' })
+        .height('3%')
+        .margin({ top: '1%', bottom: '1%' })
 
       // createDragAction tests
       Text('createDragAction Tests')
-        .fontSize(18)
+        .fontSize(14)
         .width('90%')
-        .height('4%')
+        .height('3%')
         .margin({ top: '1%', bottom: '1%' })
         .fontWeight(FontWeight.Bold)
 
       Button('Test createDragAction with null array')
         .id('btn_create_action_null_array')
         .width('90%')
-        .height('5%')
+        .height('4%')
         .margin({ top: '1%' })
         .onClick(() => {
           this.testCreateDragActionNullArray();
@@ -80,7 +80,7 @@ struct CreateDragActionAndSpringTestPage {
       Button('Test createDragAction with undefined array')
         .id('btn_create_action_undefined_array')
         .width('90%')
-        .height('5%')
+        .height('4%')
         .margin({ top: '1%' })
         .onClick(() => {
           this.testCreateDragActionUndefinedArray();
@@ -89,7 +89,7 @@ struct CreateDragActionAndSpringTestPage {
       Button('Test createDragAction with empty array')
         .id('btn_create_action_empty_array')
         .width('90%')
-        .height('5%')
+        .height('4%')
         .margin({ top: '1%' })
         .onClick(() => {
           this.testCreateDragActionEmptyArray();
@@ -98,7 +98,7 @@ struct CreateDragActionAndSpringTestPage {
       Button('Test createDragAction with null dragInfo')
         .id('btn_create_action_null_draginfo')
         .width('90%')
-        .height('5%')
+        .height('4%')
         .margin({ top: '1%' })
         .onClick(() => {
           this.testCreateDragActionNullDragInfo();
@@ -107,7 +107,7 @@ struct CreateDragActionAndSpringTestPage {
       Button('Test createDragAction with undefined dragInfo')
         .id('btn_create_action_undefined_draginfo')
         .width('90%')
-        .height('5%')
+        .height('4%')
         .margin({ top: '1%' })
         .onClick(() => {
           this.testCreateDragActionUndefinedDragInfo();
@@ -115,24 +115,18 @@ struct CreateDragActionAndSpringTestPage {
 
       // SpringLoadingContext.updateConfiguration tests
       Text('SpringLoadingContext.updateConfiguration Tests')
-        .fontSize(18)
-        .width('90%')
-        .height('4%')
-        .margin({ top: '2%', bottom: '1%' })
-        .fontWeight(FontWeight.Bold)
-
-      Text('Drag image to button below to test')
         .fontSize(14)
         .width('90%')
-        .height('4%')
+        .height('3%')
         .margin({ top: '1%', bottom: '1%' })
+        .fontWeight(FontWeight.Bold)
 
       // Test area with draggable image and target button
       Row() {
         Image($r('app.media.icon'))
           .id('drag_image')
-          .width('30%')
-          .height('30%')
+          .width('25%')
+          .height('60%')
           .draggable(true)
           .onDragStart((event: DragEvent) => {
             console.log('Drag Start Image')
@@ -141,8 +135,8 @@ struct CreateDragActionAndSpringTestPage {
 
         Button('Target Area')
           .id('target_button')
-          .width('30%')
-          .height('15%')
+          .width('25%')
+          .height('50%')
           .type(ButtonType.Normal)
           .backgroundColor(Color.Pink)
           .onDrop((event) => {
@@ -181,7 +175,7 @@ struct CreateDragActionAndSpringTestPage {
           })
       }
       .width('90%')
-      .height('20%')
+      .height('15%')
       .margin({ top: '1%' })
       .justifyContent(FlexAlign.Center)
 
@@ -189,8 +183,8 @@ struct CreateDragActionAndSpringTestPage {
         Button('Test null config')
           .id('btn_set_test_null')
           .width('45%')
-          .height('5%')
-          .margin({ top: '1%', right: '1%' })
+          .height('100%')
+          .margin({ right: '1%' })
           .onClick(() => {
             this.testUpdateNull = true;
             this.testUpdateUndefined = false;
@@ -200,8 +194,7 @@ struct CreateDragActionAndSpringTestPage {
         Button('Test undefined config')
           .id('btn_set_test_undefined')
           .width('45%')
-          .height('5%')
-          .margin({ top: '1%' })
+          .height('100%')
           .onClick(() => {
             this.testUpdateNull = false;
             this.testUpdateUndefined = true;
@@ -209,24 +202,26 @@ struct CreateDragActionAndSpringTestPage {
           })
       }
       .width('90%')
+      .height('5%')
+      .margin({ top: '1%' })
       .justifyContent(FlexAlign.SpaceBetween)
 
-      // Display error codes
+      // Display error codes (compact)
       Row() {
         Text(`null arr: ${this.error1}`)
           .id('error_1')
           .width('48%')
           .height('100%')
-          .fontSize(12)
+          .fontSize(10)
         Text(`und arr: ${this.error2}`)
           .id('error_2')
           .width('48%')
           .height('100%')
-          .fontSize(12)
+          .fontSize(10)
       }
       .width('90%')
-      .height('5%')
-      .margin({ top: '2%', bottom: '1%' })
+      .height('3%')
+      .margin({ top: '1%' })
       .justifyContent(FlexAlign.SpaceBetween)
 
       Row() {
@@ -234,16 +229,16 @@ struct CreateDragActionAndSpringTestPage {
           .id('error_3')
           .width('48%')
           .height('100%')
-          .fontSize(12)
+          .fontSize(10)
         Text(`null info: ${this.error4}`)
           .id('error_4')
           .width('48%')
           .height('100%')
-          .fontSize(12)
+          .fontSize(10)
       }
       .width('90%')
-      .height('5%')
-      .margin('1%')
+      .height('3%')
+      .margin({ top: '1%' })
       .justifyContent(FlexAlign.SpaceBetween)
 
       Row() {
@@ -251,16 +246,16 @@ struct CreateDragActionAndSpringTestPage {
           .id('error_5')
           .width('48%')
           .height('100%')
-          .fontSize(12)
+          .fontSize(10)
         Text(`null cfg: ${this.error6}`)
           .id('error_6')
           .width('48%')
           .height('100%')
-          .fontSize(12)
+          .fontSize(10)
       }
       .width('90%')
-      .height('5%')
-      .margin('1%')
+      .height('3%')
+      .margin({ top: '1%' })
       .justifyContent(FlexAlign.SpaceBetween)
 
       Row() {
@@ -268,23 +263,25 @@ struct CreateDragActionAndSpringTestPage {
           .id('error_7')
           .width('48%')
           .height('100%')
-          .fontSize(12)
+          .fontSize(10)
       }
       .width('90%')
-      .height('5%')
-      .margin('1%')
+      .height('3%')
+      .margin({ top: '1%' })
+
+      Blank()
 
       Button('Back')
         .id('btn_back')
         .width('50%')
-        .height('5%')
-        .margin({ top: '2%' })
+        .height('4%')
+        .margin({ top: '1%', bottom: '1%' })
         .onClick(() => {
           router.back();
         })
     }
     .width('100%')
-    .height('80%')
+    .height('100%')
     .padding('2%')
   }
 

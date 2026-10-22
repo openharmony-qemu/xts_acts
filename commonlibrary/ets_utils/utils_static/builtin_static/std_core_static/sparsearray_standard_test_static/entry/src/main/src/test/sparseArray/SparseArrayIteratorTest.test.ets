@@ -41,7 +41,7 @@ export default function SparseArrayIteratorTest(): void {
      * @tc.desc Verify SparseArray $_iterator on empty array
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayIterator001', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<string>();
@@ -57,7 +57,7 @@ export default function SparseArrayIteratorTest(): void {
      * @tc.desc Verify SparseArray $_iterator on array with holes
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayIterator002', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(5);
@@ -82,7 +82,7 @@ export default function SparseArrayIteratorTest(): void {
      * @tc.desc Verify SparseArray $_iterator for string element type
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayIterator003', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<string>("apple", "banana");
@@ -98,7 +98,7 @@ export default function SparseArrayIteratorTest(): void {
      * @tc.desc Verify SparseArray $_iterator for int element type
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayIterator004', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -114,7 +114,7 @@ export default function SparseArrayIteratorTest(): void {
      * @tc.desc Verify SparseArray $_iterator for number element type
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayIterator005', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<number>(1.5, 2.5);
@@ -130,7 +130,7 @@ export default function SparseArrayIteratorTest(): void {
      * @tc.desc Verify SparseArray $_iterator for boolean element type
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayIterator006', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<boolean>(true, false, true);
@@ -146,7 +146,7 @@ export default function SparseArrayIteratorTest(): void {
      * @tc.desc Verify SparseArray $_iterator for custom object type
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayIterator007', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<Person007>();
@@ -163,7 +163,7 @@ export default function SparseArrayIteratorTest(): void {
      * @tc.desc Verify SparseArray $_iterator full traversal via next
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayIterator008', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<string>("a", "b", "c");
@@ -188,7 +188,7 @@ export default function SparseArrayIteratorTest(): void {
      * @tc.desc Verify iterator exposes next function
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayIterator009', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1);
@@ -203,7 +203,7 @@ export default function SparseArrayIteratorTest(): void {
      * @tc.desc Verify SparseArray $_iterator on single-element array
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayIterator010', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>();
@@ -222,7 +222,7 @@ export default function SparseArrayIteratorTest(): void {
      * @tc.desc Verify SparseArray $_iterator counts many elements
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayIterator011', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>();
@@ -246,7 +246,7 @@ export default function SparseArrayIteratorTest(): void {
      * @tc.desc Verify SparseArray $_iterator on all-hole array
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayIterator012', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10);
@@ -262,7 +262,7 @@ export default function SparseArrayIteratorTest(): void {
      * @tc.desc Verify iterator supports for-of iteration
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayIterator013', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<string>("x", "y", "z");
@@ -281,7 +281,7 @@ export default function SparseArrayIteratorTest(): void {
      * @tc.desc Verify iterator behavior when array mutated during iteration
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayIterator014', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -303,7 +303,7 @@ export default function SparseArrayIteratorTest(): void {
      * @tc.desc Verify $_get sees $_set(undefined); iterator skips undefined slots like holes
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayIterator015', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int | undefined>(3);
@@ -327,7 +327,7 @@ export default function SparseArrayIteratorTest(): void {
      * @tc.desc Verify $_iterator matches values() iteration
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayIterator016', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<string>("a", "b");
@@ -345,7 +345,7 @@ export default function SparseArrayIteratorTest(): void {
      * @tc.desc Verify $_iterator matches forEach order
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayIterator017', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -374,7 +374,7 @@ export default function SparseArrayIteratorTest(): void {
      * @tc.desc Verify large-array iteration completes in reasonable time
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayIterator018', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>();
@@ -400,7 +400,7 @@ export default function SparseArrayIteratorTest(): void {
      * @tc.desc Verify concurrent iterators do not interfere
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayIterator019', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -427,7 +427,7 @@ export default function SparseArrayIteratorTest(): void {
      * @tc.desc iterator on SparseArray<long> yields long elements in order
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayIterator020', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<long>(100 as long, 200 as long);
@@ -443,7 +443,7 @@ export default function SparseArrayIteratorTest(): void {
      * @tc.desc $_iterator yields null element in SparseArray<int|null>
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayIterator021', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int | null>(1, null, 3);
@@ -460,7 +460,7 @@ export default function SparseArrayIteratorTest(): void {
      * @tc.desc $_iterator yields hex 0xA then binary 0b101 elements
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayIterator022', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(0xA, 0b101);
@@ -474,7 +474,7 @@ export default function SparseArrayIteratorTest(): void {
      * @tc.desc $_iterator yields char elements in insertion index order
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayIterator023', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<char>(c'A', c'B');
@@ -489,7 +489,7 @@ export default function SparseArrayIteratorTest(): void {
      * @tc.desc $_iterator skips holes and yields high sparse index value
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayIterator024', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<string>(8);

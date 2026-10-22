@@ -1335,7 +1335,7 @@ export default function CameraSessionSetWhiteBalanceModeTest() {
             }
             catch (err) {
               console.info(TAG, testName, `enableAutoDeviceSwitch error, code: ${err.code}, message: ${err.message}`);
-              expect(err.code).assertEqual(camera.CameraErrorCode.INVALID_ARGUMENT)
+              expect(err.code).assertEqual("7400101")
             }
           } else {
             console.info(TAG, testName, ' 该设备不支持');
@@ -1374,7 +1374,7 @@ export default function CameraSessionSetWhiteBalanceModeTest() {
             }
             catch (err) {
               console.info(TAG, testName, `enableAutoDeviceSwitch error, code: ${err.code}, message: ${err.message}`);
-              expect(err.code).assertEqual(camera.CameraErrorCode.INVALID_ARGUMENT)
+              expect(err.code).assertEqual("7400101")
             }
           } else {
             console.info(TAG, testName, ' 该设备不支持');

@@ -48,7 +48,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc reduceRightIntSum on dense array and instance check
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight001', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<int>(1, 2, 3);
@@ -62,7 +62,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc without initialValue reduceRight callback indices are 1 and 0
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight002', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<int>(1, 2, 3);
@@ -83,7 +83,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc reduceRight sums four elements to 10
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight003', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<int>(1, 2, 3, 4);
@@ -97,7 +97,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc string reduceRight concatenates in reverse order
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight004', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<string>("a", "b", "c");
@@ -111,7 +111,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc string reduceRight with empty initialValue yields zyx
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight005', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<string>("x", "y", "z");
@@ -125,7 +125,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc reduceRight on sparse holes sums present elements to 6
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight006', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<int>(5);
@@ -142,7 +142,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc reduceRight sums mixed positive and negative ints to 2
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight007', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<int>(-1, 2, -3, 4);
@@ -156,7 +156,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc boolean reduceRight short-circuits to false
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight008', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<boolean>(true, true, false);
@@ -170,7 +170,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc reduceRight propagates Error from callback
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight009', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
@@ -189,7 +189,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc reduceRight without initialValue uses first element 10 as acc and sums to 16
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight010', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<int>(10, 1, 2, 3);
@@ -203,7 +203,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc number reduceRight sums fractional values
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight011', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<number>(1.5, 2.5, 3.5);
@@ -217,7 +217,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc reduceRight on empty array throws
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight012', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<int>();
@@ -234,7 +234,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc single pushed element reduceRight returns that element
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight013', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<int>();
@@ -249,7 +249,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc reduceRight sums five elements to 15
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight014', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<int>(1, 2, 3, 4, 5);
@@ -263,7 +263,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc reduceRightIntSum on three-element array yields 60
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight015', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<int>(10, 20, 30);
@@ -276,7 +276,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc reduceRight without initialValue returns minimum element
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight016', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<int>(3, 1, 4, 2);
@@ -290,7 +290,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc reduceRight records callback indices right-to-left on dense array
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight017', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<int>(1, 2, 3, 4);
@@ -311,7 +311,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc four-char string reduceRight yields dcba
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight018', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<string>("a", "b", "c", "d");
@@ -325,7 +325,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc reduceRight without initialValue sums three elements to 6
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight019', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<int>(1, 2, 3);
@@ -339,7 +339,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc reduceRight without initialValue multiplies four elements
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight020', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<int>(1, 2, 3, 4);
@@ -353,7 +353,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc three-part string reduceRight inserts spaces in reverse
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight021', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<string>("Hello", " ", "World");
@@ -367,7 +367,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc reduceRight callback receives same array reference as receiver
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight022', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<int>(1, 2, 3);
@@ -384,7 +384,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc reduceRight without initialValue multiplies four elements to 24
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight023', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<int>(1, 2, 3, 4);
@@ -398,7 +398,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc at index 0 accumulator is left neighbor before adding curr
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight024', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<int>(1, 2, 3);
@@ -418,7 +418,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc without initialValue curr sequence is 20 then 10
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight025', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<int>(10, 20, 30);
@@ -438,7 +438,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc reduceRight without initialValue returns maximum element
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight026', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<int>(3, 1, 4, 2);
@@ -452,7 +452,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc reduceRight callback sees receiver length on array param
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight027', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<int>(1, 2, 3);
@@ -469,7 +469,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc reduceRight sums 100 pushed integers (smoke, not huge loop)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight028', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<int>();
@@ -486,7 +486,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc reduceRight sums dense array including zero values to 6
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight029', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<int>(1, 0, 2, 0, 3);
@@ -500,7 +500,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc reduceRight sums alternating-sign array to 3
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight030', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<int>(1, -2, 3, -4, 5);
@@ -514,7 +514,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc reduceRight sums two large ints
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight031', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<int>(1000, 2000);
@@ -528,7 +528,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc reduceRight concatenates digits into string 321
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight032', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<int>(1, 2, 3);
@@ -542,7 +542,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc reduceRight propagates custom Error subclass name
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight033', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
@@ -561,7 +561,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc reduceRight weighted by index on four elements
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight034', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<int>(1, 2, 3, 4);
@@ -576,7 +576,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc reduceRight without initialValue multiplies three elements to 24
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight035', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<int>(2, 3, 4);
@@ -590,7 +590,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc sparse reduceRight records indices 2 and 0 only
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight036', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<int>(5);
@@ -613,7 +613,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc reduceRight sum times two on four elements
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight037', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<int>(1, 2, 3, 4);
@@ -627,7 +627,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc reduceRight accumulates long elements sum in reverse order
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight038', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<long>(10000000000 as long, 20000000000 as long, 30000000000 as long);
@@ -640,7 +640,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc reduceRight accumulates float elements product in reverse order
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight039', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<float>(2.0f, 3.0f, 4.0f);
@@ -653,7 +653,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc reduceRight skips null elements when summing int|null array
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight040', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int | null>(1, null, 3, null, 5);
@@ -672,7 +672,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc reduceRight on int|undefined treats undefined slot as skip in accumulator
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight041', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int | undefined>(2, undefined, 4);
@@ -691,7 +691,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc reduceRight on single undefined slot uses callback skip logic
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight042', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int | undefined>(4, undefined, 6);
@@ -710,7 +710,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc map null slots to zero then reduceRight sum on int|null array
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight043', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int | null>(1, null, 4);
@@ -727,7 +727,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc reduceRight sums hex 0x1 binary 0b10 octal 0o3 literals
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight044', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(0x1, 0b10, 0o3);
@@ -740,7 +740,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc reduceRight without initialValue sums three int elements to 60
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight045', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10, 20, 30);
@@ -753,7 +753,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc reduceRight on single undefined element without initialValue (API single-arg)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight046', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int | undefined>(undefined);
@@ -768,7 +768,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc reduceRight single-arg API: numeric sum uses last element as implicit acc
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight047', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<int>(2, 3, 4);
@@ -788,7 +788,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc reduceRight single-arg API: string concat uses last element as implicit acc
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight048', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<string>("pre-", "fix", "-end");
@@ -801,7 +801,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc reduceRight on empty array throws TypeError (API has no initialValue overload)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight049', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<int>();
@@ -819,7 +819,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc reduceRight boolean values with logical or operation
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight050', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<boolean>(false, false, true);
@@ -833,7 +833,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc reduceRight char values returns highest char value
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight051', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<char>(c'A', c'C', c'B');
@@ -852,7 +852,7 @@ export default function SparseArrayReduceRightTest(): void {
      * @tc.desc reduceRight skips sparse holes when summing assigned values
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayReduceRight052', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<int>(6);

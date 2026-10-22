@@ -45,40 +45,40 @@ struct DragEventSetData {
   }
 
   build() {
-    Column({ space: 20 }) {
+    Column({ space: 8 }) {
       Text('DragEvent setData Test')
-        .fontSize(24)
+        .fontSize(18)
         .fontWeight(FontWeight.Bold)
-        .margin({ top: 20 })
+        .margin({ top: 8 })
 
       // 测试正常设置结果
       Row() {
-        Text('Set Data Result:').width('30%').fontSize(16)
-        Text(this.setDataResult).width('20%').fontSize(16)
+        Text('Set Data Result:').width('30%').fontSize(14)
+        Text(this.setDataResult).width('20%').fontSize(14)
       }
       .width('90%')
-      .height('10%')
+      .height('5%')
       .justifyContent(FlexAlign.SpaceBetween)
       .key('setResult')
-      .margin({ top: 10 })
+      .margin({ top: 4 })
 
       // 测试null参数结果
       Row() {
-        Text('Null Result:').width('30%').fontSize(16)
-        Text(this.setDataNullResult).width('20%').fontSize(16)
+        Text('Null Result:').width('30%').fontSize(14)
+        Text(this.setDataNullResult).width('20%').fontSize(14)
       }
       .width('90%')
-      .height('10%')
+      .height('5%')
       .justifyContent(FlexAlign.SpaceBetween)
       .key('nullResult')
 
       // 测试undefined参数结果
       Row() {
-        Text('Undefined Result:').width('30%').fontSize(16)
-        Text(this.setDataUndefinedResult).width('20%').fontSize(16)
+        Text('Undefined Result:').width('30%').fontSize(14)
+        Text(this.setDataUndefinedResult).width('20%').fontSize(14)
       }
       .width('90%')
-      .height('10%')
+      .height('5%')
       .justifyContent(FlexAlign.SpaceBetween)
       .key('undefinedResult')
 
@@ -86,8 +86,8 @@ struct DragEventSetData {
       Flex({ direction: FlexDirection.Row, alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceAround }) {
         Image($r('app.media.icon'))
           .id('image1')
-          .width('25%')
-          .height('25%')
+          .width('20%')
+          .height('70%')
           .border({ width: 1 })
           .draggable(true)
           .dragPreview(this.previewData)
@@ -104,16 +104,16 @@ struct DragEventSetData {
             }
           })
       }
-      .height('30%')
+      .height('20%')
       .width('90%')
-      .margin({ top: 20 })
+      .margin({ top: 8 })
 
       // 测试按钮
       Button('Test Null Data')
         .width('90%')
-        .height('8%')
-        .fontSize(16)
-        .key('setDataNullAndUndefined_testNull')
+        .height('6%')
+        .fontSize(14)
+        .key('testNull')
         .onClick(() => {
           this.resetStates();
         })
@@ -130,9 +130,9 @@ struct DragEventSetData {
 
       Button('Test Undefined Data')
         .width('90%')
-        .height('8%')
-        .fontSize(16)
-        .key('setDataNullAndUndefined_testUndefined')
+        .height('6%')
+        .fontSize(14)
+        .key('testUndefined')
         .onClick(() => {
           this.resetStates();
         })
@@ -149,16 +149,16 @@ struct DragEventSetData {
 
       Button('Reset States')
         .width('90%')
-        .height('8%')
-        .fontSize(16)
-        .key('setDataNullAndUndefined_resetStates')
+        .height('6%')
+        .fontSize(14)
+        .key('resetStates')
         .onClick(() => {
           this.resetStates();
         })
     }
     .width('100%')
-    .height('80%')
-    .padding(20)
+    .height('100%')
+    .padding(12)
   }
 
   private resetStates(): void {
