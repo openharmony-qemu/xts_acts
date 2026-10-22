@@ -713,7 +713,7 @@ export default function Sim1Public() {
             let error = err as BusinessError;
             if (error) {
               hilog.info(domain, tag, `${caseName} successfully  : Parameter error and return 8300001`);
-              ExpectTrue(error?.code === 8300001 || error.code === 8300004);
+              ExpectTrue(error?.code === 8300001 || error?.code === 8300004);
               hilog.info(domain, tag, `${caseName} test end`);
               done();
             } else {
