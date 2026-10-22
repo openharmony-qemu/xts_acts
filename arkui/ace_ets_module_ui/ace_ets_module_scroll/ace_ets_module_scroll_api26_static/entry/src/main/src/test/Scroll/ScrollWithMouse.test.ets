@@ -106,7 +106,7 @@ export default function ScrollWithMouseTest() {
           y: (Math.round(top + height / 2)).toInt(),
           displayId: displayId
         })
-      await CommonFunc.sleep(2000);
+      await Utils.sleep(2000);
 
       let strJson2: string = inspector.getInspectorByKey('H_SCROLL_OFFSET');
       let obj2 = JSON.parseJsonElement(strJson2);
@@ -161,7 +161,7 @@ export default function ScrollWithMouseTest() {
           y: (Math.round(top + height / 2)).toInt(),
           displayId: displayId
         })
-      await CommonFunc.sleep(2000);
+      await Utils.sleep(2000);
 
       let strJson2: string = inspector.getInspectorByKey('H_SCROLL_OFFSET');
       let obj2 = JSON.parseJsonElement(strJson2);
@@ -216,7 +216,7 @@ export default function ScrollWithMouseTest() {
           y: (Math.round(top + height / 2)).toInt(),
           displayId: displayId
         })
-      await CommonFunc.sleep(2000);
+      await Utils.sleep(2000);
       let strJson2: string = inspector.getInspectorByKey('H_SCROLL_OFFSET');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info('[scrollWithMouse_static_0300] offset after drag: ' +
