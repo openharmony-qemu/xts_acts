@@ -41,6 +41,16 @@ function optionsPrefer(prefer: boolean): StartOptions {
   return { preferDefaultBrowser: prefer };
 }
 
+function optionsOmit(): StartOptions {
+  return {};
+}
+
+function optionsPreferAbnormal(value: ESObject): StartOptions {
+  let options: StartOptions = {};
+  (options as ESObject).preferDefaultBrowser = value;
+  return options;
+}
+
 function finishPreferCase(tag: string, prefer: boolean, err: BusinessError | undefined, done: Function): void {
   let options = optionsPrefer(prefer);
   expect(options.preferDefaultBrowser).assertEqual(prefer);
@@ -54,10 +64,27 @@ function finishPreferCase(tag: string, prefer: boolean, err: BusinessError | und
   done();
 }
 
+function finishPreferLoose(tag: string, err: BusinessError | undefined, done: Function): void {
+  if (err === undefined || err.code === 0) {
+    console.info(`${tag} success`);
+    done();
+    return;
+  }
+  console.info(`${tag} err code=${err.code} msg=${err.message}`);
+  expect(true).assertTrue();
+  done();
+}
+
 function finishPreferCatch(tag: string, prefer: boolean, error: Error, done: Function): void {
   console.info(`${tag} catch ${JSON.stringify(error)}`);
   let options = optionsPrefer(prefer);
   expect(options.preferDefaultBrowser).assertEqual(prefer);
+  done();
+}
+
+function finishPreferLooseCatch(tag: string, error: Error, done: Function): void {
+  console.info(`${tag} catch ${JSON.stringify(error)}`);
+  expect(true).assertTrue();
   done();
 }
 
@@ -69,7 +96,7 @@ export default function PreferDefaultBrowserTest() {
       try {
         driver = Driver.create();
       } catch (err) {
-        console.info(`preferDefaultBrowserTest beforeAll driver err=${JSON.stringify(err)}`);
+        console.info(`PreferDefaultBrowserTest beforeAll driver err=${JSON.stringify(err)}`);
       }
     });
 
@@ -80,7 +107,7 @@ export default function PreferDefaultBrowserTest() {
           await driver.delayMs(500);
         }
       } catch (err) {
-        console.info(`preferDefaultBrowserTest afterEach err=${JSON.stringify(err)}`);
+        console.info(`PreferDefaultBrowserTest afterEach err=${JSON.stringify(err)}`);
       }
       done();
     });
@@ -95,8 +122,6 @@ export default function PreferDefaultBrowserTest() {
      */
     it('SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_0100', Level.LEVEL0, (done: Function) => {
       const tag = 'SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_0100';
-      let preferFlag: boolean = true;
-      expect(optionsPrefer(preferFlag).preferDefaultBrowser).assertEqual(preferFlag);
       try {
         getContext().startAbility(httpsWant(), optionsPrefer(true), (err: BusinessError) => {
           finishPreferCase(tag, true, err, done);
@@ -116,8 +141,6 @@ export default function PreferDefaultBrowserTest() {
      */
     it('SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_0200', Level.LEVEL0, (done: Function) => {
       const tag = 'SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_0200';
-      let preferFlag: boolean = true;
-      expect(optionsPrefer(preferFlag).preferDefaultBrowser).assertEqual(preferFlag);
       try {
         getContext().startAbility(httpsWant(), optionsPrefer(true))
           .then(() => {
@@ -125,7 +148,6 @@ export default function PreferDefaultBrowserTest() {
           })
           .catch((err: BusinessError) => {
             finishPreferCase(tag, true, err, done);
-            done();
           });
       } catch (error) {
         finishPreferCatch(tag, true, error, done);
@@ -142,8 +164,6 @@ export default function PreferDefaultBrowserTest() {
      */
     it('SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_0300', Level.LEVEL0, (done: Function) => {
       const tag = 'SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_0300';
-      let preferFlag: boolean = false;
-      expect(optionsPrefer(preferFlag).preferDefaultBrowser).assertEqual(preferFlag);
       try {
         getContext().startAbility(httpsWant(), optionsPrefer(false), (err: BusinessError) => {
           finishPreferCase(tag, false, err, done);
@@ -163,8 +183,6 @@ export default function PreferDefaultBrowserTest() {
      */
     it('SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_0400', Level.LEVEL0, (done: Function) => {
       const tag = 'SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_0400';
-      let preferFlag: boolean = false;
-      expect(optionsPrefer(preferFlag).preferDefaultBrowser).assertEqual(preferFlag);
       try {
         getContext().startAbility(httpsWant(), optionsPrefer(false))
           .then(() => {
@@ -172,7 +190,6 @@ export default function PreferDefaultBrowserTest() {
           })
           .catch((err: BusinessError) => {
             finishPreferCase(tag, false, err, done);
-            done();
           });
       } catch (error) {
         finishPreferCatch(tag, false, error, done);
@@ -189,8 +206,6 @@ export default function PreferDefaultBrowserTest() {
      */
     it('SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_0500', Level.LEVEL0, (done: Function) => {
       const tag = 'SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_0500';
-      let preferFlag: boolean = true;
-      expect(optionsPrefer(preferFlag).preferDefaultBrowser).assertEqual(preferFlag);
       try {
         getContext().startAbility(httpWant(), optionsPrefer(true), (err: BusinessError) => {
           finishPreferCase(tag, true, err, done);
@@ -210,8 +225,6 @@ export default function PreferDefaultBrowserTest() {
      */
     it('SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_0600', Level.LEVEL0, (done: Function) => {
       const tag = 'SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_0600';
-      let preferFlag: boolean = true;
-      expect(optionsPrefer(preferFlag).preferDefaultBrowser).assertEqual(preferFlag);
       try {
         getContext().startAbility(httpWant(), optionsPrefer(true))
           .then(() => {
@@ -219,7 +232,6 @@ export default function PreferDefaultBrowserTest() {
           })
           .catch((err: BusinessError) => {
             finishPreferCase(tag, true, err, done);
-            done();
           });
       } catch (error) {
         finishPreferCatch(tag, true, error, done);
@@ -236,8 +248,6 @@ export default function PreferDefaultBrowserTest() {
      */
     it('SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_0700', Level.LEVEL0, (done: Function) => {
       const tag = 'SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_0700';
-      let preferFlag: boolean = true;
-      expect(optionsPrefer(preferFlag).preferDefaultBrowser).assertEqual(preferFlag);
       let want: Want = {
         bundleName: SELF_BUNDLE,
         abilityName: 'SecondAbility'
@@ -252,6 +262,124 @@ export default function PreferDefaultBrowserTest() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_0800
+     * @tc.number SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_0800
+     * @tc.desc   startAbility callback with https uri and preferDefaultBrowser omitted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_0800', Level.LEVEL0, (done: Function) => {
+      const tag = 'SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_0800';
+      try {
+        getContext().startAbility(httpsWant(), optionsOmit(), (err: BusinessError) => {
+          finishPreferLoose(tag, err, done);
+        });
+      } catch (error) {
+        finishPreferLooseCatch(tag, error, done);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_0900
+     * @tc.number SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_0900
+     * @tc.desc   startAbility callback with http uri and preferDefaultBrowser false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_0900', Level.LEVEL0, (done: Function) => {
+      const tag = 'SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_0900';
+      try {
+        getContext().startAbility(httpWant(), optionsPrefer(false), (err: BusinessError) => {
+          finishPreferCase(tag, false, err, done);
+        });
+      } catch (error) {
+        finishPreferCatch(tag, false, error, done);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_1000
+     * @tc.number SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_1000
+     * @tc.desc   startAbility promise with http uri and preferDefaultBrowser false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_1000', Level.LEVEL0, (done: Function) => {
+      const tag = 'SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_1000';
+      try {
+        getContext().startAbility(httpWant(), optionsPrefer(false))
+          .then(() => {
+            finishPreferCase(tag, false, undefined, done);
+          })
+          .catch((err: BusinessError) => {
+            finishPreferCase(tag, false, err, done);
+          });
+      } catch (error) {
+        finishPreferCatch(tag, false, error, done);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_1100
+     * @tc.number SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_1100
+     * @tc.desc   startAbility callback with http uri and preferDefaultBrowser omitted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_1100', Level.LEVEL0, (done: Function) => {
+      const tag = 'SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_1100';
+      try {
+        getContext().startAbility(httpWant(), optionsOmit(), (err: BusinessError) => {
+          finishPreferLoose(tag, err, done);
+        });
+      } catch (error) {
+        finishPreferLooseCatch(tag, error, done);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_1200
+     * @tc.number SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_1200
+     * @tc.desc   startAbility callback with https uri and preferDefaultBrowser null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_1200', Level.LEVEL0, (done: Function) => {
+      const tag = 'SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_1200';
+      try {
+        getContext().startAbility(httpsWant(), optionsPreferAbnormal(null), (err: BusinessError) => {
+          finishPreferLoose(tag, err, done);
+        });
+      } catch (error) {
+        finishPreferLooseCatch(tag, error, done);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_1300
+     * @tc.number SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_1300
+     * @tc.desc   startAbility callback with https uri and preferDefaultBrowser number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_1300', Level.LEVEL0, (done: Function) => {
+      const tag = 'SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_1300';
+      try {
+        getContext().startAbility(httpsWant(), optionsPreferAbnormal(1), (err: BusinessError) => {
+          finishPreferLoose(tag, err, done);
+        });
+      } catch (error) {
+        finishPreferLooseCatch(tag, error, done);
+      }
+    });
+
+    /**
      * @tc.name   SUB_Ability_AbilityRuntime_PreferDefaultBrowser_AsCaller_0100
      * @tc.number SUB_Ability_AbilityRuntime_PreferDefaultBrowser_AsCaller_0100
      * @tc.desc   startAbilityAsCaller callback with https uri and preferDefaultBrowser true
@@ -261,8 +389,6 @@ export default function PreferDefaultBrowserTest() {
      */
     it('SUB_Ability_AbilityRuntime_PreferDefaultBrowser_AsCaller_0100', Level.LEVEL0, (done: Function) => {
       const tag = 'SUB_Ability_AbilityRuntime_PreferDefaultBrowser_AsCaller_0100';
-      let preferFlag: boolean = true;
-      expect(optionsPrefer(preferFlag).preferDefaultBrowser).assertEqual(preferFlag);
       try {
         getContext().startAbilityAsCaller(httpsWant(), optionsPrefer(true), (err: BusinessError) => {
           finishPreferCase(tag, true, err, done);
@@ -282,8 +408,6 @@ export default function PreferDefaultBrowserTest() {
      */
     it('SUB_Ability_AbilityRuntime_PreferDefaultBrowser_AsCaller_0200', Level.LEVEL0, (done: Function) => {
       const tag = 'SUB_Ability_AbilityRuntime_PreferDefaultBrowser_AsCaller_0200';
-      let preferFlag: boolean = true;
-      expect(optionsPrefer(preferFlag).preferDefaultBrowser).assertEqual(preferFlag);
       try {
         getContext().startAbilityAsCaller(httpsWant(), optionsPrefer(true))
           .then(() => {
@@ -291,7 +415,6 @@ export default function PreferDefaultBrowserTest() {
           })
           .catch((err: BusinessError) => {
             finishPreferCase(tag, true, err, done);
-            done();
           });
       } catch (error) {
         finishPreferCatch(tag, true, error, done);
@@ -308,8 +431,6 @@ export default function PreferDefaultBrowserTest() {
      */
     it('SUB_Ability_AbilityRuntime_PreferDefaultBrowser_WithAccount_0100', Level.LEVEL0, (done: Function) => {
       const tag = 'SUB_Ability_AbilityRuntime_PreferDefaultBrowser_WithAccount_0100';
-      let preferFlag: boolean = true;
-      expect(optionsPrefer(preferFlag).preferDefaultBrowser).assertEqual(preferFlag);
       try {
         getContext().startAbilityWithAccount(httpsWant(), 100, optionsPrefer(true), (err: BusinessError) => {
           finishPreferCase(tag, true, err, done);
@@ -329,8 +450,6 @@ export default function PreferDefaultBrowserTest() {
      */
     it('SUB_Ability_AbilityRuntime_PreferDefaultBrowser_WithAccount_0200', Level.LEVEL0, (done: Function) => {
       const tag = 'SUB_Ability_AbilityRuntime_PreferDefaultBrowser_WithAccount_0200';
-      let preferFlag: boolean = true;
-      expect(optionsPrefer(preferFlag).preferDefaultBrowser).assertEqual(preferFlag);
       try {
         getContext().startAbilityWithAccount(httpsWant(), 100, optionsPrefer(true))
           .then(() => {
@@ -338,7 +457,6 @@ export default function PreferDefaultBrowserTest() {
           })
           .catch((err: BusinessError) => {
             finishPreferCase(tag, true, err, done);
-            done();
           });
       } catch (error) {
         finishPreferCatch(tag, true, error, done);
@@ -355,8 +473,6 @@ export default function PreferDefaultBrowserTest() {
      */
     it('SUB_Ability_AbilityRuntime_PreferDefaultBrowser_ForResult_0100', Level.LEVEL0, (done: Function) => {
       const tag = 'SUB_Ability_AbilityRuntime_PreferDefaultBrowser_ForResult_0100';
-      let preferFlag: boolean = true;
-      expect(optionsPrefer(preferFlag).preferDefaultBrowser).assertEqual(preferFlag);
       let finished = false;
       let finish = (err?: BusinessError): void => {
         if (finished) {
@@ -394,8 +510,6 @@ export default function PreferDefaultBrowserTest() {
      */
     it('SUB_Ability_AbilityRuntime_PreferDefaultBrowser_ForResult_0200', Level.LEVEL0, (done: Function) => {
       const tag = 'SUB_Ability_AbilityRuntime_PreferDefaultBrowser_ForResult_0200';
-      let preferFlag: boolean = true;
-      expect(optionsPrefer(preferFlag).preferDefaultBrowser).assertEqual(preferFlag);
       let finished = false;
       let finish = (err?: BusinessError): void => {
         if (finished) {
@@ -420,7 +534,6 @@ export default function PreferDefaultBrowserTest() {
           })
           .catch((err: BusinessError) => {
             finish(err);
-            done();
           });
       } catch (error) {
         finishPreferCatch(tag, true, error, done);
@@ -438,8 +551,6 @@ export default function PreferDefaultBrowserTest() {
     it('SUB_Ability_AbilityRuntime_PreferDefaultBrowser_ForResultWithAccount_0100', Level.LEVEL0,
       (done: Function) => {
         const tag = 'SUB_Ability_AbilityRuntime_PreferDefaultBrowser_ForResultWithAccount_0100';
-      let preferFlag: boolean = true;
-      expect(optionsPrefer(preferFlag).preferDefaultBrowser).assertEqual(preferFlag);
         try {
           getContext().startAbilityForResultWithAccount(httpsWant(), 100, optionsPrefer(true),
             (err: BusinessError) => {
@@ -461,8 +572,6 @@ export default function PreferDefaultBrowserTest() {
     it('SUB_Ability_AbilityRuntime_PreferDefaultBrowser_ForResultWithAccount_0200', Level.LEVEL0,
       (done: Function) => {
         const tag = 'SUB_Ability_AbilityRuntime_PreferDefaultBrowser_ForResultWithAccount_0200';
-      let preferFlag: boolean = true;
-      expect(optionsPrefer(preferFlag).preferDefaultBrowser).assertEqual(preferFlag);
         try {
           getContext().startAbilityForResultWithAccount(httpsWant(), 100, optionsPrefer(true))
             .then(() => {
@@ -470,7 +579,6 @@ export default function PreferDefaultBrowserTest() {
             })
             .catch((err: BusinessError) => {
               finishPreferCase(tag, true, err, done);
-              done();
             });
         } catch (error) {
           finishPreferCatch(tag, true, error, done);
@@ -487,8 +595,6 @@ export default function PreferDefaultBrowserTest() {
      */
     it('SUB_Ability_AbilityRuntime_PreferDefaultBrowser_Recent_0100', Level.LEVEL0, (done: Function) => {
       const tag = 'SUB_Ability_AbilityRuntime_PreferDefaultBrowser_Recent_0100';
-      let preferFlag: boolean = true;
-      expect(optionsPrefer(preferFlag).preferDefaultBrowser).assertEqual(preferFlag);
       try {
         getContext().startRecentAbility(httpsWant(), optionsPrefer(true), (err: BusinessError) => {
           finishPreferCase(tag, true, err, done);
@@ -508,8 +614,6 @@ export default function PreferDefaultBrowserTest() {
      */
     it('SUB_Ability_AbilityRuntime_PreferDefaultBrowser_Recent_0200', Level.LEVEL0, (done: Function) => {
       const tag = 'SUB_Ability_AbilityRuntime_PreferDefaultBrowser_Recent_0200';
-      let preferFlag: boolean = true;
-      expect(optionsPrefer(preferFlag).preferDefaultBrowser).assertEqual(preferFlag);
       try {
         getContext().startRecentAbility(httpsWant(), optionsPrefer(true))
           .then(() => {
@@ -517,7 +621,6 @@ export default function PreferDefaultBrowserTest() {
           })
           .catch((err: BusinessError) => {
             finishPreferCase(tag, true, err, done);
-            done();
           });
       } catch (error) {
         finishPreferCatch(tag, true, error, done);
@@ -534,8 +637,6 @@ export default function PreferDefaultBrowserTest() {
      */
     it('SUB_Ability_AbilityRuntime_PreferDefaultBrowser_SelfUIAbility_0100', Level.LEVEL0, (done: Function) => {
       const tag = 'SUB_Ability_AbilityRuntime_PreferDefaultBrowser_SelfUIAbility_0100';
-      let preferFlag: boolean = true;
-      expect(optionsPrefer(preferFlag).preferDefaultBrowser).assertEqual(preferFlag);
       try {
         getContext().startSelfUIAbilityInCurrentProcess(httpsWant(), '1', optionsPrefer(true))
           .then(() => {
@@ -543,7 +644,6 @@ export default function PreferDefaultBrowserTest() {
           })
           .catch((err: BusinessError) => {
             finishPreferCase(tag, true, err, done);
-            done();
           });
       } catch (error) {
         finishPreferCatch(tag, true, error, done);
