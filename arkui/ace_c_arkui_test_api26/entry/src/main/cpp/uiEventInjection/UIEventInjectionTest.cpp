@@ -75,13 +75,13 @@ static napi_value UIEventInjectCompositeCommandTest001(napi_env env, napi_callba
     NAPI_START(column, ARKUI_NODE_COLUMN);
     auto context = OH_ArkUI_GetContextByNode(column);
     ASSERT_EQ(context != nullptr, true);
-    uint32_t uniqueId = 0;
+    int32_t uniqueId = 0;
     auto getIdRet = OH_ArkUI_NodeUtils_GetNodeUniqueId(column, &uniqueId);
     ASSERT_EQ(getIdRet, ARKUI_ERROR_CODE_NO_ERROR);
     auto command = CreateValidCommand();
     ASSERT_EQ(command != nullptr, true);
     auto ret = OH_ArkUI_NativeModule_UIEventInjectCompositeCommand(
-        context, uniqueId, command, TestInjectionCallback, nullptr);
+        context, static_cast<uint32_t>(uniqueId), command, TestInjectionCallback, nullptr);
     auto errorRet = ErrCodeAnyOfFailed(env, static_cast<int32_t>(ret),
         { ARKUI_ERROR_CODE_NO_ERROR, ARKUI_ERROR_CODE_COMMAND_UNFINISHED });
     if (errorRet) {
@@ -148,13 +148,13 @@ static napi_value UIEventInjectCompositeCommandTest006(napi_env env, napi_callba
     NAPI_START(column, ARKUI_NODE_COLUMN);
     auto context = OH_ArkUI_GetContextByNode(column);
     ASSERT_EQ(context != nullptr, true);
-    uint32_t uniqueId = 0;
+    int32_t uniqueId = 0;
     auto getIdRet = OH_ArkUI_NodeUtils_GetNodeUniqueId(column, &uniqueId);
     ASSERT_EQ(getIdRet, ARKUI_ERROR_CODE_NO_ERROR);
     auto command = CreateValidCommand();
     ASSERT_EQ(command != nullptr, true);
     auto ret = OH_ArkUI_NativeModule_UIEventInjectCompositeCommand(
-        context, uniqueId, command, TestInjectionCallback, nullptr);
+        context, static_cast<uint32_t>(uniqueId), command, TestInjectionCallback, nullptr);
     auto errorRet = ErrCodeAnyOfFailed(env, static_cast<int32_t>(ret),
         { ARKUI_ERROR_CODE_NO_ERROR, ARKUI_ERROR_CODE_COMMAND_UNFINISHED });
     if (errorRet) {
@@ -209,11 +209,11 @@ static napi_value UIEventInjectCompositeCommandTest009(napi_env env, napi_callba
     NAPI_START(column, ARKUI_NODE_COLUMN);
     auto context = OH_ArkUI_GetContextByNode(column);
     ASSERT_EQ(context != nullptr, true);
-    uint32_t uniqueId = 0;
+    int32_t uniqueId = 0;
     auto getIdRet = OH_ArkUI_NodeUtils_GetNodeUniqueId(column, &uniqueId);
     ASSERT_EQ(getIdRet, ARKUI_ERROR_CODE_NO_ERROR);
     auto ret = OH_ArkUI_NativeModule_UIEventInjectCompositeCommand(
-        context, uniqueId, nullptr, nullptr, nullptr);
+        context, static_cast<uint32_t>(uniqueId), nullptr, nullptr, nullptr);
     ASSERT_EQ(static_cast<int32_t>(ret), ARKUI_ERROR_CODE_PARAM_INVALID);
     NAPI_END;
 }
@@ -223,14 +223,14 @@ static napi_value UIEventInjectCompositeCommandTest010(napi_env env, napi_callba
     NAPI_START(column, ARKUI_NODE_COLUMN);
     auto context = OH_ArkUI_GetContextByNode(column);
     ASSERT_EQ(context != nullptr, true);
-    uint32_t uniqueId = 0;
+    int32_t uniqueId = 0;
     auto getIdRet = OH_ArkUI_NodeUtils_GetNodeUniqueId(column, &uniqueId);
     ASSERT_EQ(getIdRet, ARKUI_ERROR_CODE_NO_ERROR);
     auto command = CreateValidCommand();
     ASSERT_EQ(command != nullptr, true);
     int32_t userDataValue = PARAM_100;
     auto ret = OH_ArkUI_NativeModule_UIEventInjectCompositeCommand(
-        context, uniqueId, command, TestInjectionCallback, &userDataValue);
+        context, static_cast<uint32_t>(uniqueId), command, TestInjectionCallback, &userDataValue);
     auto errorRet = ErrCodeAnyOfFailed(env, static_cast<int32_t>(ret),
         { ARKUI_ERROR_CODE_NO_ERROR, ARKUI_ERROR_CODE_COMMAND_UNFINISHED });
     if (errorRet) {
@@ -246,12 +246,12 @@ static napi_value UIEventInjectCompositeCommandTest011(napi_env env, napi_callba
     NAPI_START(column, ARKUI_NODE_COLUMN);
     auto context = OH_ArkUI_GetContextByNode(column);
     ASSERT_EQ(context != nullptr, true);
-    uint32_t uniqueId = 0;
+    int32_t uniqueId = 0;
     ASSERT_EQ(OH_ArkUI_NodeUtils_GetNodeUniqueId(column, &uniqueId), ARKUI_ERROR_CODE_NO_ERROR);
     auto command = CreateValidCommand();
     ASSERT_EQ(command != nullptr, true);
     auto ret1 = OH_ArkUI_NativeModule_UIEventInjectCompositeCommand(
-        context, uniqueId, command, TestInjectionCallback, nullptr);
+        context, static_cast<uint32_t>(uniqueId), command, TestInjectionCallback, nullptr);
     auto errorRet1 = ErrCodeAnyOfFailed(env, static_cast<int32_t>(ret1),
         { ARKUI_ERROR_CODE_NO_ERROR, ARKUI_ERROR_CODE_COMMAND_UNFINISHED });
     if (errorRet1) {
@@ -259,7 +259,7 @@ static napi_value UIEventInjectCompositeCommandTest011(napi_env env, napi_callba
         return errorRet1;
     }
     auto ret2 = OH_ArkUI_NativeModule_UIEventInjectCompositeCommand(
-        context, uniqueId, command, TestInjectionCallback, nullptr);
+        context, static_cast<uint32_t>(uniqueId), command, TestInjectionCallback, nullptr);
     auto errorRet2 = ErrCodeAnyOfFailed(env, static_cast<int32_t>(ret2),
         { ARKUI_ERROR_CODE_NO_ERROR, ARKUI_ERROR_CODE_COMMAND_UNFINISHED });
     if (errorRet2) {
