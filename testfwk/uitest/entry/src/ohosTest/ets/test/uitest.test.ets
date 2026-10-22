@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic'
-import abilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry';
+import abilityDelegatorRegistry from '@ohos.opapplication.abilityDelegatorRegistry';
 import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver, Point, ComponentEventType, On, WindowChangeType } from '@kit.TestKit'
 import ability_featureAbility from '@ohos.ability.featureAbility';
 import { BusinessError } from '@ohos.base';
@@ -1677,7 +1677,7 @@ export default function UiTest() {
         it('testBelongingDisplay', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, 'testBelongingDisplay start');
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(1000);
+            await driver.delayMs(5000);
             let disPlay = display.getDefaultDisplaySync();
             console.log(`${TestTag}, testBelongingDisplay disPlay is: ${JSON.stringify(disPlay)}`);
             try {
@@ -1704,7 +1704,7 @@ export default function UiTest() {
         it('testGetDisplayId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, 'testGetDisplayId start');
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(1000);
+            await driver.delayMs(5000);
             let disPlay = display.getDefaultDisplaySync();
             console.log(`${TestTag}, testGetDisplayId disPlay is: ${JSON.stringify(disPlay)}`);
             try {
@@ -1731,7 +1731,7 @@ export default function UiTest() {
         it('testPressBackWithId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, 'testPressBackWithId start');
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(waitUiReadyMs)
+            await driver.delayMs(5000)
             let disPlay = display.getDefaultDisplaySync();
             console.log(`${TestTag}, testPressBackWithId disPlay is: ${JSON.stringify(disPlay)}`);
             let button = await driver.findComponent(ON.belongingDisplay(disPlay.id).text('next page'))
@@ -1756,7 +1756,7 @@ export default function UiTest() {
         it('testTriggerKeyWithId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, 'testTriggerKeyWithId start');
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(waitUiReadyMs)
+            await driver.delayMs(5000)
             let disPlay = display.getDefaultDisplaySync();
             console.log(`${TestTag}, testTriggerKeyWithId disPlay is: ${JSON.stringify(disPlay)}`);
             await driver.delayMs(waitUiReadyMs)
@@ -2073,7 +2073,7 @@ export default function UiTest() {
         it('testFlingWithId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, 'testFlingWithId start');
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(waitUiReadyMs)
+            await driver.delayMs(5000)
             let allDisplayIds = await display.getAllDisplay()
             for (let d of allDisplayIds) {
                 if (d.id == 999) {
@@ -2127,7 +2127,7 @@ export default function UiTest() {
         it('testTriggerCombineKeysWithId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(TestTag, 'testTriggerCombineKeysWithId start');
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(waitUiReadyMs)
+            await driver.delayMs(5000)
             let disPlay = display.getDefaultDisplaySync();
             console.log(`${TestTag}, testTriggerCombineKeysWithId disPlay is: ${JSON.stringify(disPlay)}`);
             await driver.delayMs(1000);
