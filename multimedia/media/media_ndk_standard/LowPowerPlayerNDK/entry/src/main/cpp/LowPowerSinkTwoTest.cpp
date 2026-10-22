@@ -1111,7 +1111,7 @@ static napi_value OH_LowPowerVideoSink_SetPlaybackSpeed0200(napi_env env, napi_c
     test = OH_LowPowerVideoSink_Prepare(VideoSink);
     test = OH_LowPowerVideoSink_StartDecoder(VideoSink);
     test = OH_LowPowerVideoSink_StartRenderer(VideoSink);
-    OH_AVErrCode errcode = OH_LowPowerVideoSink_SetPlaybackSpeed(VideoSink, 0.5);
+    OH_AVErrCode errcode = OH_LowPowerVideoSink_SetPlaybackSpeed(VideoSink, 0.25);
     int32_t res = 1;
     if (errcode == AV_ERR_OK) {
         res = 0;
