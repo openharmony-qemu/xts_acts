@@ -143,7 +143,10 @@
     {
       "name": "indicatorValue",
       "value": "5.00vp"
+    },
+    {
+      "name": "tab_bar_badge_value",
+      "value": "99+"
     }
-    
   ]
 }
