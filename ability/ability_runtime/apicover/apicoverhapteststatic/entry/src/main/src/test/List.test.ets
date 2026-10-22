@@ -18,10 +18,12 @@ import ApiCoverStaticTest from './ApiCoverAbilityStatic.test';
 import EnumerationStaticTest from './EnumerationStatic.test';
 import verificationStaticTest from './VerificationTestStatic.test';
 import contextEnvironmentStaticTest from './ContextEnvironmentTestStatic.test';
+import PreferDefaultBrowserStaticTest from './PreferDefaultBrowserStatic.test';
 
 export default function testsuite() {
     contextEnvironmentStaticTest();
     ApiCoverStaticTest();
     EnumerationStaticTest();
     verificationStaticTest();
+    PreferDefaultBrowserStaticTest();
 }
