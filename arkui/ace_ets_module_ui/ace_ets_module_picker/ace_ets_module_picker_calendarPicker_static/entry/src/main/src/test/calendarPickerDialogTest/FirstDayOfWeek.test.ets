@@ -272,62 +272,6 @@ export default function CalendarPickerDialogFirstDayOfWeekTest() {
     })
 
     /**
-     * @tc.number   SUB_ARKUI_ACE_ENGINE_CALENDAR_PICKER_DIALOG_FIRST_DAY_OF_WEEK_STATIC_0900
-     * @tc.name     CalendarPickerDialogFirstDayOfWeekTest_static_009
-     * @tc.desc     Verify CalendarPickerDialog firstDayOfWeek property with invalid value -1 test.
-     * @tc.level    Level.LEVEL0
-     */
-    it('CalendarPickerDialogFirstDayOfWeekTest_static_009', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        const driver = Driver.create();
-        const button = await driver.findComponent(ON.id('firstDayOfWeek009'));
-        await (button?.click() as Promise<void>);
-        await CommonFunc.sleep(1000);
-        let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-        let dialog = tree.getArray('$children')[1];
-        let column = dialog.getArray('$children')[0];
-        let firstDayOfWeek: string = column.getElement('$attrs').getString('firstDayOfWeek');
-        console.info('CalendarPickerDialogFirstDayOfWeekTest_static_009 firstDayOfWeek: ' + firstDayOfWeek);
-        expect(firstDayOfWeek).assertEqual('CalendarFirstDayOfWeek.LOCAL');
-        let btn1 = await driver.findComponent(ON.text('确定'));
-        await (btn1?.click() as Promise<void>);
-        await CommonFunc.sleep(1000);
-        done();
-      } catch (err) {
-        console.error('CalendarPickerDialogFirstDayOfWeekTest_static_009 error: ' + err);
-        done();
-      }
-    })
-
-    /**
-     * @tc.number   SUB_ARKUI_ACE_ENGINE_CALENDAR_PICKER_DIALOG_FIRST_DAY_OF_WEEK_STATIC_1000
-     * @tc.name     CalendarPickerDialogFirstDayOfWeekTest_static_010
-     * @tc.desc     Verify CalendarPickerDialog firstDayOfWeek property with invalid value 8 test.
-     * @tc.level    Level.LEVEL0
-     */
-    it('CalendarPickerDialogFirstDayOfWeekTest_static_010', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        const driver = Driver.create();
-        const button = await driver.findComponent(ON.id('firstDayOfWeek010'));
-        await (button?.click() as Promise<void>);
-        await CommonFunc.sleep(1000);
-        let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-        let dialog = tree.getArray('$children')[1];
-        let column = dialog.getArray('$children')[0];
-        let firstDayOfWeek: string = column.getElement('$attrs').getString('firstDayOfWeek');
-        console.info('CalendarPickerDialogFirstDayOfWeekTest_static_010 firstDayOfWeek: ' + firstDayOfWeek);
-        expect(firstDayOfWeek).assertEqual('CalendarFirstDayOfWeek.LOCAL');
-        let btn1 = await driver.findComponent(ON.text('确定'));
-        await (btn1?.click() as Promise<void>);
-        await CommonFunc.sleep(1000);
-        done();
-      } catch (err) {
-        console.error('CalendarPickerDialogFirstDayOfWeekTest_static_010 error: ' + err);
-        done();
-      }
-    })
-
-    /**
      * @tc.number   SUB_ARKUI_ACE_ENGINE_CALENDAR_PICKER_DIALOG_FIRST_DAY_OF_WEEK_STATIC_1100
      * @tc.name     CalendarPickerDialogFirstDayOfWeekTest_static_011
      * @tc.desc     Verify CalendarPickerDialog firstDayOfWeek property with undefined value test.

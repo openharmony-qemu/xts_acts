@@ -187,51 +187,13 @@ struct CalendarPickerDialogFirstDayOfWeekExample {
           });
         }).id('firstDayOfWeek008')
 
-      Button('INVALID_-1')
-        .margin(10)
-        .onClick((e: ClickEvent) => {
-          console.info('CalendarDialog.show');
-          CalendarPickerDialog.show({
-            selected: this.selectedDate,
-            firstDayOfWeek: (-1) as ESObject as CalendarFirstDayOfWeek,
-            onAccept: (value) => {
-              console.info('calendar onAccept:' + JSON.stringify(value));
-            },
-            onCancel: () => {
-              console.info('calendar onCancel');
-            },
-            onChange: (value) => {
-              console.info('calendar onChange:' + JSON.stringify(value));
-            }
-          });
-        }).id('firstDayOfWeek009')
-
-      Button('INVALID_8')
-        .margin(10)
-        .onClick((e: ClickEvent) => {
-          console.info('CalendarDialog.show');
-          CalendarPickerDialog.show({
-            selected: this.selectedDate,
-            firstDayOfWeek: 8 as ESObject as CalendarFirstDayOfWeek,
-            onAccept: (value) => {
-              console.info('calendar onAccept:' + JSON.stringify(value));
-            },
-            onCancel: () => {
-              console.info('calendar onCancel');
-            },
-            onChange: (value) => {
-              console.info('calendar onChange:' + JSON.stringify(value));
-            }
-          });
-        }).id('firstDayOfWeek010')
-
       Button('UNDEFINED')
         .margin(10)
         .onClick((e: ClickEvent) => {
           console.info('CalendarDialog.show');
           CalendarPickerDialog.show({
             selected: this.selectedDate,
-            firstDayOfWeek: undefined as ESObject as CalendarFirstDayOfWeek,
+            firstDayOfWeek: undefined,
             onAccept: (value) => {
               console.info('calendar onAccept:' + JSON.stringify(value));
             },

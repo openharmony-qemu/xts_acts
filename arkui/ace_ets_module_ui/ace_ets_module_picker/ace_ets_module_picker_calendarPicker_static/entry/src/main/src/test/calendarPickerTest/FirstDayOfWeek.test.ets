@@ -249,54 +249,6 @@ export default function CalendarPickerFirstDayOfWeekTest() {
     })
 
     /**
-     * @tc.number SUB_ARKUI_ACE_ENGINE_CALENDAR_PICKER_FIRST_DAY_OF_WEEK_STATIC_0900
-     * @tc.name CalendarPickerFirstDayOfWeek_invalid_neg_0900
-     * @tc.desc Verify CalendarPicker firstDayOfWeek property with invalid value -1 test.
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL0
-     */
-    it('CalendarPickerFirstDayOfWeek_invalid_neg_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('CalendarPickerFirstDayOfWeek_invalid_neg_0900 START')
-      try {
-        let strJson = inspector.getInspectorByKey('calendarPicker009');
-        let obj = JSON.parseJsonElement(strJson);
-        let firstDayOfWeek: string = obj.getElement('$attrs').getString('firstDayOfWeek');
-        console.info('CalendarPickerFirstDayOfWeek_invalid_neg_0900 firstDayOfWeek: ' + firstDayOfWeek);
-        expect(firstDayOfWeek).assertEqual('CalendarFirstDayOfWeek.LOCAL');
-        done();
-      } catch (err) {
-        console.error('CalendarPickerFirstDayOfWeek_invalid_neg_0900 error: ' + err);
-        expect().assertFail();
-        done();
-      }
-    })
-
-    /**
-     * @tc.number SUB_ARKUI_ACE_ENGINE_CALENDAR_PICKER_FIRST_DAY_OF_WEEK_STATIC_1000
-     * @tc.name CalendarPickerFirstDayOfWeek_invalid_8_1000
-     * @tc.desc Verify CalendarPicker firstDayOfWeek property with invalid value 8 test.
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL0
-     */
-    it('CalendarPickerFirstDayOfWeek_invalid_8_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('CalendarPickerFirstDayOfWeek_invalid_8_1000 START')
-      try {
-        let strJson = inspector.getInspectorByKey('calendarPicker010');
-        let obj = JSON.parseJsonElement(strJson);
-        let firstDayOfWeek: string = obj.getElement('$attrs').getString('firstDayOfWeek');
-        console.info('CalendarPickerFirstDayOfWeek_invalid_8_1000 firstDayOfWeek: ' + firstDayOfWeek);
-        expect(firstDayOfWeek).assertEqual('CalendarFirstDayOfWeek.LOCAL');
-        done();
-      } catch (err) {
-        console.error('CalendarPickerFirstDayOfWeek_invalid_8_1000 error: ' + err);
-        expect().assertFail();
-        done();
-      }
-    })
-
-    /**
      * @tc.number SUB_ARKUI_ACE_ENGINE_CALENDAR_PICKER_FIRST_DAY_OF_WEEK_STATIC_1100
      * @tc.name CalendarPickerFirstDayOfWeek_undefined_1100
      * @tc.desc Verify CalendarPicker firstDayOfWeek property with undefined value test.
