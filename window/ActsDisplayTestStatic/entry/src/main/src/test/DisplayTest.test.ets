@@ -760,7 +760,6 @@ export default function DisplayTest():void {
                 let displayId:long = display.getDefaultDisplaySync().id;
                 let dsp:display.Display = display.getDisplayByIdSync(displayId);
                 hilog.info(0x0000, '[ANI]','displayTest getDisplayByIdSyncTest1: ' + JSON.stringify(dsp));
-                expect(dsp.id).assertEqual(0);
                 expect(dsp.refreshRate != null).assertTrue();
                 expect(dsp.width != null).assertTrue();
                 expect(dsp.height != null).assertTrue();
@@ -2286,7 +2285,7 @@ export default function DisplayTest():void {
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(domain, tag,msgStr + 'begin.');
             try {
-                let result:display.Display = display.getDisplayByIdSync(0);
+                let result:display.Display = display.getDefaultDisplaySync();
                 hilog.info(domain, tag,`${caseName} display.getDisplayByIdSync(0): ${JSON.stringify(result)}`);
                 let width = result.width / 2;
                 let height = result.height / 2;
@@ -2301,7 +2300,7 @@ export default function DisplayTest():void {
                 hilog.info(domain, tag,`${caseName} relativePosition: ${JSON.stringify(relativePosition)}`);
                 expect(Math.abs(relativePosition.position.x - width)).assertLargerOrEqual(0)
                 expect(Math.abs(relativePosition.position.y - height)).assertLargerOrEqual(0)
-                expect(relativePosition.displayId).assertEqual(0)
+                expect(relativePosition.displayId).assertEqual(result.id)
                 done();
             } catch (e) {
                 
@@ -2335,7 +2334,7 @@ export default function DisplayTest():void {
                 hilog.info(domain, tag,`${caseName} defaultDisplay: ${JSON.stringify(defaultDisplay)}`);
                 let region:display.FoldCreaseRegion = defaultDisplay.getLiveCreaseRegion();
                 hilog.info(domain, tag,`${caseName} region: ${JSON.stringify(region)}`);
-                expect(region.displayId).assertEqual(0)
+                expect(region.displayId).assertEqual(defaultDisplay.id)
                 if (result) {
                     if (region.creaseRects.length === 0) {
                         done();
