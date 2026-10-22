@@ -21,6 +21,7 @@ import UIContextWindowStageTest from './UIContextWindowStage.test';
 import Enumeration from './Enumeration.test';
 import apiCoverAbility from './ApiCoverAbility.test';
 import formDimensionMultiDeviceTest from './FormDimensionMultiDevice.test';
+import PreferDefaultBrowserTest from './PreferDefaultBrowser.test';
 
 export default function List() {
   apiCoverAbility();
@@ -30,4 +31,5 @@ export default function List() {
   UIContextWindowStageTest();
   Enumeration();
   formDimensionMultiDeviceTest();
+  PreferDefaultBrowserTest();
 }
