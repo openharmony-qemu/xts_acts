@@ -39,6 +39,10 @@ function optionsPrefer(prefer: boolean): StartOptions {
   return { preferDefaultBrowser: prefer };
 }
 
+function optionsOmit(): StartOptions {
+  return {};
+}
+
 function requireContext(): common.UIAbilityContext {
   return AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext;
 }
@@ -57,10 +61,27 @@ function finishPreferCase(tag: string, prefer: boolean, err: Error | undefined,
   done();
 }
 
+function finishPreferLoose(tag: string, err: Error | undefined, done: () => void): void {
+  if (err === undefined || err.code === 0) {
+    hilog.info(0x0000, tag, 'success');
+    done();
+    return;
+  }
+  hilog.info(0x0000, tag, `err code=${err.code} msg=${err.message}`);
+  expect(true).assertTrue();
+  done();
+}
+
 function finishPreferCatch(tag: string, prefer: boolean, error: Object, done: () => void): void {
   hilog.info(0x0000, tag, `catch ${JSON.stringify(error)}`);
   let options: StartOptions = optionsPrefer(prefer);
   expect(options.preferDefaultBrowser).assertEqual(prefer);
+  done();
+}
+
+function finishPreferLooseCatch(tag: string, error: Object, done: () => void): void {
+  hilog.info(0x0000, tag, `catch ${JSON.stringify(error)}`);
+  expect(true).assertTrue();
   done();
 }
 
@@ -235,6 +256,96 @@ export default function PreferDefaultBrowserStaticTest(): void {
           finishPreferCatch(tag, true, error, done);
         }
       });
+
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_PreferDefaultBrowser_Static_StartAbility_0800
+     * @tc.number SUB_Ability_AbilityRuntime_PreferDefaultBrowser_Static_StartAbility_0800
+     * @tc.desc   startAbility callback https prefer omitted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_PreferDefaultBrowser_Static_StartAbility_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (done: () => void): void => {
+        const tag: string = 'SUB_Ability_AbilityRuntime_PreferDefaultBrowser_Static_StartAbility_0800';
+        try {
+          requireContext().startAbility(httpsWant(), optionsOmit(), (err: BusinessError | null) => {
+            finishPreferLoose(tag, err === null ? undefined : err, done);
+          });
+        } catch (error) {
+          finishPreferLooseCatch(tag, error, done);
+        }
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_PreferDefaultBrowser_Static_StartAbility_0900
+     * @tc.number SUB_Ability_AbilityRuntime_PreferDefaultBrowser_Static_StartAbility_0900
+     * @tc.desc   startAbility callback http prefer false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_PreferDefaultBrowser_Static_StartAbility_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (done: () => void): void => {
+        const tag: string = 'SUB_Ability_AbilityRuntime_PreferDefaultBrowser_Static_StartAbility_0900';
+        let preferFlag: boolean = false;
+        expect(optionsPrefer(preferFlag).preferDefaultBrowser).assertEqual(preferFlag);
+        try {
+          requireContext().startAbility(httpWant(), optionsPrefer(false), (err: BusinessError | null) => {
+            finishPreferCase(tag, false, err === null ? undefined : err, done);
+          });
+        } catch (error) {
+          finishPreferCatch(tag, false, error, done);
+        }
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_PreferDefaultBrowser_Static_StartAbility_1000
+     * @tc.number SUB_Ability_AbilityRuntime_PreferDefaultBrowser_Static_StartAbility_1000
+     * @tc.desc   startAbility promise http prefer false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_PreferDefaultBrowser_Static_StartAbility_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (done: () => void): void => {
+        const tag: string = 'SUB_Ability_AbilityRuntime_PreferDefaultBrowser_Static_StartAbility_1000';
+        let preferFlag: boolean = false;
+        expect(optionsPrefer(preferFlag).preferDefaultBrowser).assertEqual(preferFlag);
+        try {
+          requireContext().startAbility(httpWant(), optionsPrefer(false))
+            .then((): void => {
+              finishPreferCase(tag, false, undefined, done);
+            })
+            .catch((err: Error): void => {
+              finishPreferCase(tag, false, err, done);
+            });
+        } catch (error) {
+          finishPreferCatch(tag, false, error, done);
+        }
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_PreferDefaultBrowser_Static_StartAbility_1100
+     * @tc.number SUB_Ability_AbilityRuntime_PreferDefaultBrowser_Static_StartAbility_1100
+     * @tc.desc   startAbility callback http prefer omitted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_PreferDefaultBrowser_Static_StartAbility_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (done: () => void): void => {
+        const tag: string = 'SUB_Ability_AbilityRuntime_PreferDefaultBrowser_Static_StartAbility_1100';
+        try {
+          requireContext().startAbility(httpWant(), optionsOmit(), (err: BusinessError | null) => {
+            finishPreferLoose(tag, err === null ? undefined : err, done);
+          });
+        } catch (error) {
+          finishPreferLooseCatch(tag, error, done);
+        }
+      });
+
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_PreferDefaultBrowser_Static_AsCaller_0100

@@ -20,7 +20,7 @@ import verificationStaticTest from './VerificationTestStatic.test';
 import contextEnvironmentStaticTest from './ContextEnvironmentTestStatic.test';
 import PreferDefaultBrowserStaticTest from './PreferDefaultBrowserStatic.test';
 
-export default function testsuite() {
+export default function testsuite(): void {
     contextEnvironmentStaticTest();
     ApiCoverStaticTest();
     EnumerationStaticTest();

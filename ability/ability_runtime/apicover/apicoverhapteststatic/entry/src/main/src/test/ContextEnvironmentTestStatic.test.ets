@@ -43,7 +43,7 @@ class CustomEnvironmentCallback implements EnvironmentCallback {
   }
 }
 
-export default function ContextEnvironmentStaticTest() {
+export default function ContextEnvironmentStaticTest(): void {
   const BUNDLE_NAME: string = 'com.example.apicoverhaptest.static';
 
   describe('ContextEnvironmentStaticTest', () => {

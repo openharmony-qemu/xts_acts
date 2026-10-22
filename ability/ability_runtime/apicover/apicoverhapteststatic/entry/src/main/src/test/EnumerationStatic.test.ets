@@ -30,7 +30,7 @@ import insightIntent from '@ohos.app.ability.insightIntent';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 
-export default function EnumerationStaticTest() {
+export default function EnumerationStaticTest(): void {
   describe('EnumerationStaticTest', () => {
     beforeAll(async () => {
       let driver = Driver.create();	
