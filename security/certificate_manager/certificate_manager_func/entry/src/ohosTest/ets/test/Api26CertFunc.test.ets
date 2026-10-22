@@ -340,8 +340,8 @@ export default function api26CertFuncTestUnit() {
       console.info('SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0110 start');
       expect(certManagerDialog.AbilityType.UKEY_AUTH_EXTENSION_ABILITY).assertEqual(1);
       expect(bundleManager.ExtensionAbilityType.UKEY_AUTH).assertEqual(40);
-      expect(certManagerDialog.ERROR_OPERATION_TIMEOUT).assertEqual(29700009);
-      expect(certManagerDialog.ERROR_NOT_CONCURRENT_SUPPORT).assertEqual(29700010);
+      expect(certManagerDialog.CertificateDialogErrorCode.ERROR_OPERATION_TIMEOUT).assertEqual(29700009);
+      expect(certManagerDialog.CertificateDialogErrorCode.ERROR_NOT_CONCURRENT_SUPPORT).assertEqual(29700010);
       done();
     });
 
