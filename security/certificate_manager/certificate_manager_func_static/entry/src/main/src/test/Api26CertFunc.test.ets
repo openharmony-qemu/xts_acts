@@ -191,7 +191,7 @@ export default function api26CertFuncTestUnit() {
     /**
      * @tc.name   SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0110
      * @tc.number SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0110
-     * @tc.desc   Verify AbilityType.UKEY_AUTH_EXTENSION_ABILITY equals 1
+      * @tc.desc   Verify AbilityType.UKEY_AUTH_EXTENSION_ABILITY equals 1, ERROR_OPERATION_TIMEOUT equals 29700009, ERROR_NOT_CONCURRENT_SUPPORT equals 29700010
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -200,6 +200,8 @@ export default function api26CertFuncTestUnit() {
       hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0110 start');
       expect(certManagerDialog.AbilityType.UKEY_AUTH_EXTENSION_ABILITY).assertEqual(1);
       expect(bundleManager.ExtensionAbilityType.UKEY_AUTH).assertEqual(40);
+      expect(certManagerDialog.ERROR_OPERATION_TIMEOUT).assertEqual(29700009);
+      expect(certManagerDialog.ERROR_NOT_CONCURRENT_SUPPORT).assertEqual(29700010);
       done();
     });
 
@@ -744,19 +746,5 @@ export default function api26CertFuncTestUnit() {
       done();
     });
 
-    /**
-     * @tc.name   SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0270
-     * @tc.number SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0270
-     * @tc.desc   verify enum ERROR_OPERATION_TIMEOUT = 29700009, ERROR_NOT_CONCURRENT_SUPPORT = 29700010
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0270', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      console.info('SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_Static_0270 start');
-      expect(certManagerDialog.ERROR_OPERATION_TIMEOUT).assertEqual(29700009);
-      expect(certManagerDialog.ERROR_NOT_CONCURRENT_SUPPORT).assertEqual(29700010);
-      done();
-    });
   })
 }
