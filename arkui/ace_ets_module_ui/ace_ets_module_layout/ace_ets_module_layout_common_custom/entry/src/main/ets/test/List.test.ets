@@ -68,6 +68,8 @@ import UIContextApplyDefaultImmersiveStrategyNoParamTest from './CommonCustom/UI
 import UIContextApplyDefaultImmersiveStrategyTwoParamTest from './CommonCustom/UIContextApplyDefaultImmersiveStrategyTwoParamTest.test.ets';
 import UIContextApplyDefaultImmersiveStrategyNullTest from './CommonCustom/UIContextApplyDefaultImmersiveStrategyNullTest.test.ets';
 import UIContextApplyDefaultImmersiveStrategyUndefinedTest from './CommonCustom/UIContextApplyDefaultImmersiveStrategyUndefinedTest.test.ets';
+import UIContextApplyDefaultImmersiveStrategyEmptyArrayTest from './CommonCustom/UIContextApplyDefaultImmersiveStrategyEmptyArrayTest.test.ets';
+import UIContextApplyDefaultImmersiveStrategyNonEmptyArrayTest from './CommonCustom/UIContextApplyDefaultImmersiveStrategyNonEmptyArrayTest.test.ets';
 
 export default function testsuite() {
   Calc01();
@@ -125,4 +127,6 @@ export default function testsuite() {
   UIContextApplyDefaultImmersiveStrategyTwoParamTest();
   UIContextApplyDefaultImmersiveStrategyNullTest();
   UIContextApplyDefaultImmersiveStrategyUndefinedTest();
+  UIContextApplyDefaultImmersiveStrategyEmptyArrayTest();
+  UIContextApplyDefaultImmersiveStrategyNonEmptyArrayTest();
 }
