@@ -52,8 +52,11 @@
         "MainAbility/pages/LazyVGridLayout/headerFooterStickyGrid",
         "MainAbility/pages/LazyVGridLayout/columnsTemplateAuto",
         "MainAbility/pages/LazyVGridLayout/columnsTemplateItemFillPolicy",
+        "MainAbility/pages/LazyVGridLayout/ColumnsTemplateItemFillPolicyModifier",
         "MainAbility/pages/gridOptions/gridEnableEditMode",
         "MainAbility/pages/gridOptions/gridEditModeOptions",
-        "MainAbility/pages/gridOptions/gridEditModeChange"
+        "MainAbility/pages/gridOptions/gridEditModeChange",
+        "MainAbility/pages/gridOptions/GridScrollSnapStrategy",
+        "MainAbility/pages/gridOptions/GridSnapStrategyModifier"
     ]
 }

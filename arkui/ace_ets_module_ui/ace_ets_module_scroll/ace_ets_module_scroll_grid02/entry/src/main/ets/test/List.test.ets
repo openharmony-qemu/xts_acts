@@ -64,9 +64,12 @@ import onVisibleIndexesChangeTest from './LazyVGridLayout/onVisibleIndexesChange
 import headerFooterStickyGrid from './LazyVGridLayout/headerFooterStickyGrid.test';
 import ColumnsTemplateAutoTest from './LazyVGridLayout/ColumnsTemplateAuto.test';
 import ColumnsTemplateItemFillPolicyTest from './LazyVGridLayout/ColumnsTemplateItemFillPolicy.test';
+import ColumnsTemplateItemFillPolicyModifier from './LazyVGridLayout/ColumnsTemplateItemFillPolicyModifier.test';
 import gridEnableEditMode from './gridOptions/gridEnableEditMode.test';
 import gridEditModeOptions from './gridOptions/gridEditModeOptions.test';
 import gridEditModeChange from './gridOptions/gridEditModeChange.test';
+import gridScrollSnapStrategy from './gridOptions/GridScrollSnapStrategy.test';
+import gridSnapStrategyModifier from './gridOptions/GridSnapStrategyModifier.test';
 
 export default function testsuite() {
   GridReboundTest()
@@ -120,7 +123,10 @@ export default function testsuite() {
   headerFooterStickyGrid()
   ColumnsTemplateAutoTest()
   ColumnsTemplateItemFillPolicyTest()
+  ColumnsTemplateItemFillPolicyModifier()
   gridEnableEditMode()
   gridEditModeOptions()
   gridEditModeChange()
+  gridScrollSnapStrategy()
+  gridSnapStrategyModifier()
 }
