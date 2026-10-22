@@ -76,7 +76,12 @@ async function startAbility(bundleName: string, abilityName: string) {
 }
 
 async function stopApplication(bundleName: string) {
-    await delegator.executeShellCommand(`aa force-stop ${bundleName} `).then(result => {
+    let cmd = `aa force-stop ${bundleName}`;
+    let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
+    await delegator.executeShellCommand(cmd).then(result => {
         console.info(`UiTestCase, stop application finished: ${result}`)
     }).catch((err: BusinessError) => {
         console.error(`UiTestCase,stop application failed: ${err}`)
@@ -102,16 +107,17 @@ async function maxUiWindow(driver: Driver, window: UiWindow | null) {
 
 async function exitInputMethod() {
     let driver = Driver.create()
+    let disPlay = display.getDefaultDisplaySync();
     let softKeyBoard = await driver.findComponent(ON.type('Canvas'))
     console.log(`${TestTag},softKeyBoard: ${JSON.stringify(softKeyBoard)}`);
     if (softKeyBoard != null) {
-        await driver.pressBack()
+        await driver.pressBack(disPlay.id)
     }
     await driver.delayMs(2000)
     let keyCanvasKeyboard = await driver.findComponent(ON.id('KeyCanvasKeyboard'))
     console.log(`${TestTag},keyCanvasKeyboard: ${JSON.stringify(keyCanvasKeyboard)}`);
     if (keyCanvasKeyboard != null) {
-        await driver.pressBack()
+        await driver.pressBack(disPlay.id)
     }
 }
 
@@ -355,10 +361,11 @@ export default function UiTest() {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
             let scrollBar = await driver.findComponent(ON.type('Scroll').id('parentScroll'))
+            let disPlayId = await scrollBar.getDisplayId()
             let rect = await scrollBar.getBounds()
             let center = await scrollBar.getBoundsCenter()
-            await driver.swipeBetween({ x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4) },
-                { x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4) })
+            await driver.swipeBetween({ x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4), displayId: disPlayId },
+                { x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4), displayId: disPlayId })
             await driver.delayMs(5000);
             await stopApplication('com.uitestScene.acts');
             expect(isCallBack).assertTrue();
@@ -402,10 +409,11 @@ export default function UiTest() {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
             let scrollBar = await driver.findComponent(ON.type('Scroll').id('parentScroll'))
+            let disPlayId = await scrollBar.getDisplayId()
             let rect = await scrollBar.getBounds()
             let center = await scrollBar.getBoundsCenter()
-            await driver.swipeBetween({ x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4) },
-                { x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4) })
+            await driver.swipeBetween({ x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4), displayId: disPlayId },
+                { x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4), displayId: disPlayId })
             await driver.delayMs(5000);
             await stopApplication('com.uitestScene.acts');
             expect(isCallBack).assertTrue();
@@ -534,9 +542,10 @@ export default function UiTest() {
             await driver.delayMs(waitUiReadyMs);
             let longClickBtn = await driver.findComponent(ON.id('longClickBtn'));
             await driver.delayMs(waitUiReadyMs);
+            let disPlayId = await longClickBtn.getDisplayId();
             let center = await longClickBtn.getBoundsCenter();
             await driver.delayMs(waitUiReadyMs);
-            let result = await driver.isComponentPresentWhenLongClick(ON.text('ShowLongEventText'), center, 2500)
+            let result = await driver.isComponentPresentWhenLongClick(ON.belongingDisplay(disPlayId).text('ShowLongEventText'), center, 2500)
             expect(result).assertTrue();
             await driver.delayMs(waitUiReadyMs);
             let longClickTextResultBtn = await driver.findComponent(ON.id('longClickTextResult'));
@@ -611,9 +620,10 @@ export default function UiTest() {
                 await driver.delayMs(waitUiReadyMs);
                 let longClickBtn = await driver.findComponent(ON.id('longClickBtn'));
                 await driver.delayMs(waitUiReadyMs);
+                let disPlayId = await longClickBtn.getDisplayId();
                 let center = await longClickBtn.getBoundsCenter();
                 await driver.delayMs(waitUiReadyMs);
-                let result = await driver.isComponentPresentWhenLongClick(ON.text('ShowLongEventTextNot'), center, null)
+                let result = await driver.isComponentPresentWhenLongClick(ON.belongingDisplay(disPlayId).text('ShowLongEventTextNot'), center, null)
                 expect(result).assertFalse();
                 await driver.delayMs(waitUiReadyMs);
                 let longClickTextResultBtn = await driver.findComponent(ON.id('longClickTextResult'));
@@ -651,9 +661,10 @@ export default function UiTest() {
                 await driver.delayMs(waitUiReadyMs);
                 let longClickBtn = await driver.findComponent(ON.id('longClickBtn'));
                 await driver.delayMs(waitUiReadyMs);
+                let disPlayId = await longClickBtn.getDisplayId();
                 let center = await longClickBtn.getBoundsCenter();
                 await driver.delayMs(waitUiReadyMs);
-                let result = await driver.isComponentPresentWhenLongClick(ON.text('ShowLongEventTextNot'), center, undefined)
+                let result = await driver.isComponentPresentWhenLongClick(ON.belongingDisplay(disPlayId).text('ShowLongEventTextNot'), center, undefined)
                 expect(result).assertFalse();
                 await driver.delayMs(waitUiReadyMs);
                 let longClickTextResultBtn = await driver.findComponent(ON.id('longClickTextResult'));
@@ -726,11 +737,12 @@ export default function UiTest() {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
             await driver.delayMs(waitUiReadyMs)
             let scrollBar = await driver.findComponent(ON.type('Scroll').id('parentScroll'))
+            let disPlayId = await scrollBar.getDisplayId()
             let rect = await scrollBar.getBounds()
             let center = await scrollBar.getBoundsCenter()
-            let result = await driver.isComponentPresentWhenSwipe(ON.text('ShowSwipeEventCom'),
-                { x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4) },
-                { x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4) }, 200)
+            let result = await driver.isComponentPresentWhenSwipe(ON.belongingDisplay(disPlayId).text('ShowSwipeEventCom'),
+                { x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4), displayId: disPlayId },
+                { x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4), displayId: disPlayId }, 200)
             console.log(`${TestTag}, tesIsComponentPresentWhenSwipeTrue result, ${JSON.stringify(result)}`);
             expect(result).assertTrue();
             let text = await driver.findComponent(ON.text('toast'))
@@ -781,11 +793,12 @@ export default function UiTest() {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
             await driver.delayMs(waitUiReadyMs)
             let scrollBar = await driver.findComponent(ON.type('Scroll').id('parentScroll'))
+            let disPlayId = await scrollBar.getDisplayId()
             let rect = await scrollBar.getBounds()
             let center = await scrollBar.getBoundsCenter()
-            let result = await driver.isComponentPresentWhenSwipe(ON.text('ShowSwipeEventComNot'),
-                { x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4) },
-                { x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4) }, null)
+            let result = await driver.isComponentPresentWhenSwipe(ON.belongingDisplay(disPlayId).text('ShowSwipeEventComNot'),
+                { x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4), displayId: disPlayId },
+                { x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4), displayId: disPlayId }, null)
             console.log(`${TestTag}, tesIsComponentPresentWhenSwipeDuringNull result, ${JSON.stringify(result)}`);
             expect(result).assertFalse();
             let text = await driver.findComponent(ON.text('toast'))
@@ -809,11 +822,12 @@ export default function UiTest() {
                 await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
                 await driver.delayMs(waitUiReadyMs)
                 let scrollBar = await driver.findComponent(ON.type('Scroll').id('parentScroll'))
+                let disPlayId = await scrollBar.getDisplayId()
                 let rect = await scrollBar.getBounds()
                 let center = await scrollBar.getBoundsCenter()
-                let result = await driver.isComponentPresentWhenSwipe(ON.text('ShowSwipeEventComNot'),
-                    { x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4) },
-                    { x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4) }, undefined)
+                let result = await driver.isComponentPresentWhenSwipe(ON.belongingDisplay(disPlayId).text('ShowSwipeEventComNot'),
+                    { x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4), displayId: disPlayId },
+                    { x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4), displayId: disPlayId }, undefined)
                 console.log(`${TestTag}, tesIsComponentPresentWhenSwipeDuringUndefined result, ${JSON.stringify(result)}`);
                 expect(result).assertFalse();
                 let text = await driver.findComponent(ON.text('toast'))
@@ -922,19 +936,19 @@ export default function UiTest() {
                 let play = display.getDefaultDisplaySync();
                 let centerX = play.width / 2;
                 let centY = play.height / 2;
-                let fivePoint: Point = { x: centerX - 40, y: centY - 80 };
-                let sixPoint: Point = { x: centerX - 40, y: centY - 60 };
-                let sevPoint: Point = { x: centerX - 40, y: centY - 40 };
-                let eigPoint: Point = { x: centerX - 40, y: centY - 20 };
-                let niePoint: Point = { x: centerX - 40, y: centY };
-                let tenPoint: Point = { x: centerX - 20, y: centY };
-                let ten1Point: Point = { x: centerX, y: centY };
-                let ten2Point: Point = { x: centerX + 20, y: centY };
-                let ten3Point: Point = { x: centerX + 40, y: centY };
-                let ten4Point: Point = { x: centerX + 40, y: centY + 20 };
-                let ten5Point: Point = { x: centerX + 40, y: centY + 40 };
-                let ten6Point: Point = { x: centerX + 40, y: centY + 60 };
-                let ten7Point: Point = { x: centerX + 40, y: centY + 80 };
+                let fivePoint: Point = { x: centerX - 40, y: centY - 80, displayId: play.id };
+                let sixPoint: Point = { x: centerX - 40, y: centY - 60, displayId: play.id };
+                let sevPoint: Point = { x: centerX - 40, y: centY - 40, displayId: play.id };
+                let eigPoint: Point = { x: centerX - 40, y: centY - 20, displayId: play.id };
+                let niePoint: Point = { x: centerX - 40, y: centY, displayId: play.id };
+                let tenPoint: Point = { x: centerX - 20, y: centY, displayId: play.id };
+                let ten1Point: Point = { x: centerX, y: centY, displayId: play.id };
+                let ten2Point: Point = { x: centerX + 20, y: centY, displayId: play.id };
+                let ten3Point: Point = { x: centerX + 40, y: centY, displayId: play.id };
+                let ten4Point: Point = { x: centerX + 40, y: centY + 20, displayId: play.id };
+                let ten5Point: Point = { x: centerX + 40, y: centY + 40, displayId: play.id };
+                let ten6Point: Point = { x: centerX + 40, y: centY + 60, displayId: play.id };
+                let ten7Point: Point = { x: centerX + 40, y: centY + 80, displayId: play.id };
                 let pointers = PointerMatrix.create(1, 13);
                 pointers.setPoint(0, 0, fivePoint);
                 pointers.setPoint(0, 1, sixPoint);
@@ -953,7 +967,7 @@ export default function UiTest() {
                 await driver.delayMs(waitUiReadyMs * 5);
                 let screenPng = await driver.findComponent(ON.id('ScrollHandWriteBoxStack'));
                 expect(screenPng != null).assertTrue();
-                await driver.pressBack();
+                await driver.pressBack(play.id);
                 await driver.delayMs(waitUiReadyMs * 2);
             } catch (error) {
                 console.log(`${TestTag}, tesKnuckleKnockS error, ${JSON.stringify(error)}`);
@@ -978,14 +992,15 @@ export default function UiTest() {
                 await driver.delayMs(waitUiReadyMs);
                 let scrollBar = await driver.findComponent(ON.type('Scroll').id('parentScroll'));
                 await driver.delayMs(waitUiReadyMs);
+                let disPlayId = await scrollBar.getDisplayId();
                 let center = await scrollBar.getBoundsCenter();
                 await driver.delayMs(waitUiReadyMs);
-                await driver.touchPadTwoFingersScroll({ x: center.x, y: center.y }, UiDirection.UP, 300);
+                await driver.touchPadTwoFingersScroll({ x: center.x, y: center.y, displayId: disPlayId }, UiDirection.UP, 300);
                 await driver.delayMs(waitUiReadyMs);
                 let text = await driver.findComponent(ON.text('toast'));
                 await driver.delayMs(waitUiReadyMs);
                 expect(text == null).assertTrue()
-                await driver.touchPadTwoFingersScroll({ x: center.x, y: center.y }, UiDirection.DOWN, 400, 20);
+                await driver.touchPadTwoFingersScroll({ x: center.x, y: center.y, displayId: disPlayId }, UiDirection.DOWN, 400, 20);
                 let text1 = await driver.findComponent(ON.text('toast'));
                 await driver.delayMs(waitUiReadyMs);
                 expect(text1 != null).assertTrue()
@@ -1020,16 +1035,17 @@ export default function UiTest() {
                 await driver.delayMs(waitUiReadyMs);
                 let scrollBar = await driver.findComponent(ON.type('Scroll').id('horizontalScroll'))
                 await driver.delayMs(waitUiReadyMs);
+                let disPlayId = await scrollBar.getDisplayId();
                 let center = await scrollBar.getBoundsCenter();
                 await driver.delayMs(waitUiReadyMs);
-                await driver.touchPadTwoFingersScroll({ x: center.x, y: center.y },
+                await driver.touchPadTwoFingersScroll({ x: center.x, y: center.y, displayId: disPlayId },
                     UiDirection.LEFT, 600, null);
                 await driver.delayMs(waitUiReadyMs);
                 let scroll11 = await driver.findComponent(ON.text('1_hor'));
                 await driver.delayMs(waitUiReadyMs);
                 expect(scroll11 == null).assertTrue();
                 await driver.delayMs(waitUiReadyMs);
-                await driver.touchPadTwoFingersScroll({ x: center.x, y: center.y },
+                await driver.touchPadTwoFingersScroll({ x: center.x, y: center.y, displayId: disPlayId },
                     UiDirection.RIGHT, 800, undefined);
                 let scroll22 = await driver.findComponent(ON.text('1_hor'));
                 await driver.delayMs(waitUiReadyMs);
@@ -2133,7 +2149,7 @@ export default function UiTest() {
                 text = await scorll.scrollSearch(ON.belongingDisplay(disPlay.id).type('TextInput'))
             }
             let center = await text.getBoundsCenter()
-            await driver.click(center.x, center.y)
+            await text.click();
             await driver.delayMs(waitUiReadyMs)
             await driver.triggerCombineKeys(2072, 2017, 0, disPlay.id)
             await driver.delayMs(waitUiReadyMs)
@@ -2965,12 +2981,13 @@ export default function UiTest() {
                 // 垂直滑动
                 await driver.delayMs(waitUiReadyMs);
                 let scroll = await driver.findComponent(ON.type('Scroll'))
+                let disPlayId = await scroll.getDisplayId();
                 let scrollRect = await scroll.getBounds()
                 let screenWidth = scrollRect.right - scrollRect.left;
                 let screenHeight = scrollRect.bottom - scrollRect.top;
                 console.log(TestTag, 'screenWidth:' + screenWidth + ', screenHeight:' + screenHeight);
-                await driver.penSwipe({ x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 + screenHeight / 4) },
-                    { x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 - screenHeight / 4) }, 600, 0.5);
+                await driver.penSwipe({ x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 + screenHeight / 4), displayId: disPlayId },
+                    { x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 - screenHeight / 4), displayId: disPlayId }, 600, 0.5);
                 await driver.delayMs(waitUiReadyMs);
                 let text = await driver.findComponent(ON.text('toast'));
                 await driver.delayMs(waitUiReadyMs);
@@ -3011,12 +3028,13 @@ export default function UiTest() {
                 // 垂直滑动
                 await driver.delayMs(waitUiReadyMs);
                 let scroll = await driver.findComponent(ON.type('Scroll'))
+                let disPlayId = await scroll.getDisplayId();
                 let scrollRect = await scroll.getBounds()
                 let screenWidth = scrollRect.right - scrollRect.left;
                 let screenHeight = scrollRect.bottom - scrollRect.top;
                 console.log(TestTag, 'screenWidth:' + screenWidth + ', screenHeight:' + screenHeight);
-                await driver.penSwipe({ x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 + screenHeight / 4) },
-                    { x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 - screenHeight / 4) }, 600);
+                await driver.penSwipe({ x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 + screenHeight / 4), displayId: disPlayId },
+                    { x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 - screenHeight / 4), displayId: disPlayId }, 600);
                 await driver.delayMs(waitUiReadyMs);
                 let text = await driver.findComponent(ON.text('toast'));
                 await driver.delayMs(waitUiReadyMs);
@@ -3047,12 +3065,13 @@ export default function UiTest() {
                 // 垂直滑动
                 await driver.delayMs(waitUiReadyMs);
                 let scroll = await driver.findComponent(ON.type('Scroll'))
+                let disPlayId = await scroll.getDisplayId();
                 let scrollRect = await scroll.getBounds()
                 let screenWidth = scrollRect.right - scrollRect.left;
                 let screenHeight = scrollRect.bottom - scrollRect.top;
                 console.log(TestTag, 'screenWidth:' + screenWidth + ', screenHeight:' + screenHeight);
-                await driver.penSwipe({ x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 + screenHeight / 4) },
-                    { x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 - screenHeight / 4) });
+                await driver.penSwipe({ x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 + screenHeight / 4), displayId: disPlayId },
+                    { x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 - screenHeight / 4), displayId: disPlayId });
                 await driver.delayMs(waitUiReadyMs);
                 let text = await driver.findComponent(ON.text('toast'));
                 await driver.delayMs(waitUiReadyMs);
@@ -3083,12 +3102,13 @@ export default function UiTest() {
                 // 垂直滑动
                 await driver.delayMs(waitUiReadyMs);
                 let scroll = await driver.findComponent(ON.type('Scroll'))
+                let disPlayId = await scroll.getDisplayId();
                 let scrollRect = await scroll.getBounds()
                 let screenWidth = scrollRect.right - scrollRect.left;
                 let screenHeight = scrollRect.bottom - scrollRect.top;
                 console.log(TestTag, 'screenWidth:' + screenWidth + ', screenHeight:' + screenHeight);
-                await driver.penSwipe({ x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 + screenHeight / 4) },
-                    { x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 - screenHeight / 4) }, null);
+                await driver.penSwipe({ x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 + screenHeight / 4), displayId: disPlayId },
+                    { x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 - screenHeight / 4), displayId: disPlayId }, null);
                 await driver.delayMs(waitUiReadyMs);
                 let text = await driver.findComponent(ON.text('toast'));
                 await driver.delayMs(waitUiReadyMs);
@@ -3120,12 +3140,13 @@ export default function UiTest() {
                 // 垂直滑动
                 await driver.delayMs(waitUiReadyMs);
                 let scroll = await driver.findComponent(ON.type('Scroll'))
+                let disPlayId = await scroll.getDisplayId();
                 let scrollRect = await scroll.getBounds()
                 let screenWidth = scrollRect.right - scrollRect.left;
                 let screenHeight = scrollRect.bottom - scrollRect.top;
                 console.log(TestTag, 'screenWidth:' + screenWidth + ', screenHeight:' + screenHeight);
-                await driver.penSwipe({ x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 + screenHeight / 4) },
-                    { x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 - screenHeight / 4) }, undefined);
+                await driver.penSwipe({ x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 + screenHeight / 4), displayId: disPlayId },
+                    { x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 - screenHeight / 4), displayId: disPlayId }, undefined);
                 await driver.delayMs(waitUiReadyMs);
                 let text = await driver.findComponent(ON.text('toast'));
                 await driver.delayMs(waitUiReadyMs);
@@ -3157,12 +3178,13 @@ export default function UiTest() {
                 // 垂直滑动
                 await driver.delayMs(waitUiReadyMs);
                 let scroll = await driver.findComponent(ON.type('Scroll'))
+                let disPlayId = await scroll.getDisplayId();
                 let scrollRect = await scroll.getBounds()
                 let screenWidth = scrollRect.right - scrollRect.left;
                 let screenHeight = scrollRect.bottom - scrollRect.top;
                 console.log(TestTag, 'screenWidth:' + screenWidth + ', screenHeight:' + screenHeight);
-                await driver.penSwipe({ x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 + screenHeight / 4) },
-                    { x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 - screenHeight / 4) }, 199);
+                await driver.penSwipe({ x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 + screenHeight / 4), displayId: disPlayId },
+                    { x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 - screenHeight / 4), displayId: disPlayId }, 199);
                 await driver.delayMs(waitUiReadyMs);
                 let text = await driver.findComponent(ON.text('toast'));
                 await driver.delayMs(waitUiReadyMs);
@@ -3194,12 +3216,13 @@ export default function UiTest() {
                 // 垂直滑动
                 await driver.delayMs(waitUiReadyMs);
                 let scroll = await driver.findComponent(ON.type('Scroll'))
+                let disPlayId = await scroll.getDisplayId();
                 let scrollRect = await scroll.getBounds()
                 let screenWidth = scrollRect.right - scrollRect.left;
                 let screenHeight = scrollRect.bottom - scrollRect.top;
                 console.log(TestTag, 'screenWidth:' + screenWidth + ', screenHeight:' + screenHeight);
-                await driver.penSwipe({ x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 + screenHeight / 4) },
-                    { x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 - screenHeight / 4) }, 40001);
+                await driver.penSwipe({ x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 + screenHeight / 4), displayId: disPlayId },
+                    { x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 - screenHeight / 4), displayId: disPlayId }, 40001);
                 await driver.delayMs(waitUiReadyMs);
                 let text = await driver.findComponent(ON.text('toast'));
                 await driver.delayMs(waitUiReadyMs);
@@ -3231,12 +3254,13 @@ export default function UiTest() {
                 // 垂直滑动
                 await driver.delayMs(waitUiReadyMs);
                 let scroll = await driver.findComponent(ON.type('Scroll'))
+                let disPlayId = await scroll.getDisplayId();
                 let scrollRect = await scroll.getBounds()
                 let screenWidth = scrollRect.right - scrollRect.left;
                 let screenHeight = scrollRect.bottom - scrollRect.top;
                 console.log(TestTag, 'screenWidth:' + screenWidth + ', screenHeight:' + screenHeight);
-                await driver.penSwipe({ x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 + screenHeight / 4) },
-                    { x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 - screenHeight / 4) }, 600, null);
+                await driver.penSwipe({ x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 + screenHeight / 4), displayId: disPlayId },
+                    { x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 - screenHeight / 4), displayId: disPlayId }, 600, null);
                 await driver.delayMs(waitUiReadyMs);
                 let text = await driver.findComponent(ON.text('toast'));
                 await driver.delayMs(waitUiReadyMs);
@@ -3268,12 +3292,13 @@ export default function UiTest() {
                 // 垂直滑动
                 await driver.delayMs(waitUiReadyMs);
                 let scroll = await driver.findComponent(ON.type('Scroll'))
+                let disPlayId = await scroll.getDisplayId();
                 let scrollRect = await scroll.getBounds()
                 let screenWidth = scrollRect.right - scrollRect.left;
                 let screenHeight = scrollRect.bottom - scrollRect.top;
                 console.log(TestTag, 'screenWidth:' + screenWidth + ', screenHeight:' + screenHeight);
-                await driver.penSwipe({ x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 + screenHeight / 4) },
-                    { x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 - screenHeight / 4) }, 600, undefined);
+                await driver.penSwipe({ x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 + screenHeight / 4), displayId: disPlayId },
+                    { x: Math.floor(screenWidth / 2), y: Math.floor(screenHeight / 2 - screenHeight / 4), displayId: disPlayId }, 600, undefined);
                 await driver.delayMs(waitUiReadyMs);
                 let text = await driver.findComponent(ON.text('toast'));
                 await driver.delayMs(waitUiReadyMs);
@@ -3366,6 +3391,7 @@ export default function UiTest() {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
             await driver.delayMs(waitUiReadyMs)
             let scroll = await driver.findComponent(ON.type('Scroll'))
+            let disPlayId = await scroll.getDisplayId();
             let scrollRect = await scroll.getBounds()
             let screenWidth = scrollRect.right - scrollRect.left;
             let screenHeight = scrollRect.bottom - scrollRect.top;
@@ -3377,7 +3403,7 @@ export default function UiTest() {
             for (let step = 0; step < 8; step++) {
                 let startY = Math.floor((screenHeight / 2 + screenHeight / 4) - stepLength * step);
                 console.log(TestTag, `startX is, ${startX}, startY is, ${startY}`);
-                pointer.setPoint(0, step, { x: startX, y: startY });
+                pointer.setPoint(0, step, { x: startX, y: startY, displayId: disPlayId });
             }
             try {
                 await driver.injectPenPointerAction(pointer, 600, 0.5);
@@ -3418,6 +3444,7 @@ export default function UiTest() {
                 await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
                 await driver.delayMs(waitUiReadyMs)
                 let scroll = await driver.findComponent(ON.type('Scroll'))
+                let disPlayId = await scroll.getDisplayId();
                 let scrollRect = await scroll.getBounds()
                 let screenWidth = scrollRect.right - scrollRect.left;
                 let screenHeight = scrollRect.bottom - scrollRect.top;
@@ -3429,7 +3456,7 @@ export default function UiTest() {
                 for (let step = 0; step < 8; step++) {
                     let startY = Math.floor((screenHeight / 2 + screenHeight / 4) - stepLength * step);
                     console.log(TestTag, `startX is, ${startX}, startY is, ${startY}`);
-                    pointer.setPoint(0, step, { x: startX, y: startY });
+                    pointer.setPoint(0, step, { x: startX, y: startY, displayId: disPlayId });
                 }
                 await driver.injectPenPointerAction(pointer);
                 await driver.delayMs(waitUiReadyMs * 2);
@@ -3470,6 +3497,7 @@ export default function UiTest() {
                 await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
                 await driver.delayMs(waitUiReadyMs)
                 let scroll = await driver.findComponent(ON.type('Scroll'))
+                let disPlayId = await scroll.getDisplayId();
                 let scrollRect = await scroll.getBounds()
                 let screenWidth = scrollRect.right - scrollRect.left;
                 let screenHeight = scrollRect.bottom - scrollRect.top;
@@ -3481,7 +3509,7 @@ export default function UiTest() {
                 for (let step = 0; step < 8; step++) {
                     let startY = Math.floor((screenHeight / 2 + screenHeight / 4) - stepLength * step);
                     console.log(TestTag, `startX is, ${startX}, startY is, ${startY}`);
-                    pointer.setPoint(0, step, { x: startX, y: startY });
+                    pointer.setPoint(0, step, { x: startX, y: startY, displayId: disPlayId });
                 }
                 await driver.injectPenPointerAction(pointer, 800);
                 await driver.delayMs(waitUiReadyMs * 2);
@@ -3529,6 +3557,7 @@ export default function UiTest() {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
             await driver.delayMs(waitUiReadyMs)
             let scroll = await driver.findComponent(ON.type('Scroll'))
+            let disPlayId = await scroll.getDisplayId();
             let scrollRect = await scroll.getBounds()
             let screenWidth = scrollRect.right - scrollRect.left;
             let screenHeight = scrollRect.bottom - scrollRect.top;
@@ -3540,7 +3569,7 @@ export default function UiTest() {
             for (let step = 0; step < 8; step++) {
                 let startY = Math.floor((screenHeight / 2 + screenHeight / 4) - stepLength * step);
                 console.log(TestTag, `startX is, ${startX}, startY is, ${startY}`);
-                pointer.setPoint(0, step, { x: startX, y: startY });
+                pointer.setPoint(0, step, { x: startX, y: startY, displayId: disPlayId });
             }
             try {
                 await driver.injectPenPointerAction(pointer, null);
@@ -3582,6 +3611,7 @@ export default function UiTest() {
                 await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
                 await driver.delayMs(waitUiReadyMs)
                 let scroll = await driver.findComponent(ON.type('Scroll'))
+                let disPlayId = await scroll.getDisplayId();
                 let scrollRect = await scroll.getBounds()
                 let screenWidth = scrollRect.right - scrollRect.left;
                 let screenHeight = scrollRect.bottom - scrollRect.top;
@@ -3593,7 +3623,7 @@ export default function UiTest() {
                 for (let step = 0; step < 8; step++) {
                     let startY = Math.floor((screenHeight / 2 + screenHeight / 4) - stepLength * step);
                     console.log(TestTag, `startX is, ${startX}, startY is, ${startY}`);
-                    pointer.setPoint(0, step, { x: startX, y: startY });
+                    pointer.setPoint(0, step, { x: startX, y: startY, displayId: disPlayId });
                 }
                 await driver.injectPenPointerAction(pointer, undefined);
                 await driver.delayMs(waitUiReadyMs * 2);
@@ -3633,6 +3663,7 @@ export default function UiTest() {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
             await driver.delayMs(waitUiReadyMs)
             let scroll = await driver.findComponent(ON.type('Scroll'))
+            let disPlayId = await scroll.getDisplayId();
             let scrollRect = await scroll.getBounds()
             let screenWidth = scrollRect.right - scrollRect.left;
             let screenHeight = scrollRect.bottom - scrollRect.top;
@@ -3644,7 +3675,7 @@ export default function UiTest() {
             for (let step = 0; step < 8; step++) {
                 let startY = Math.floor((screenHeight / 2 + screenHeight / 4) - stepLength * step);
                 console.log(TestTag, `startX is, ${startX}, startY is, ${startY}`);
-                pointer.setPoint(0, step, { x: startX, y: startY });
+                pointer.setPoint(0, step, { x: startX, y: startY, displayId: disPlayId });
             }
             try {
                 await driver.injectPenPointerAction(pointer, 600, null);
@@ -3685,6 +3716,7 @@ export default function UiTest() {
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
             await driver.delayMs(waitUiReadyMs)
             let scroll = await driver.findComponent(ON.type('Scroll'))
+            let disPlayId = await scroll.getDisplayId();
             let scrollRect = await scroll.getBounds()
             let screenWidth = scrollRect.right - scrollRect.left;
             let screenHeight = scrollRect.bottom - scrollRect.top;
@@ -3696,7 +3728,7 @@ export default function UiTest() {
             for (let step = 0; step < 8; step++) {
                 let startY = Math.floor((screenHeight / 2 + screenHeight / 4) - stepLength * step);
                 console.log(TestTag, `startX is, ${startX}, startY is, ${startY}`);
-                pointer.setPoint(0, step, { x: startX, y: startY });
+                pointer.setPoint(0, step, { x: startX, y: startY, displayId: disPlayId });
             }
             try {
                 await driver.injectPenPointerAction(pointer, 600, undefined);
@@ -4638,6 +4670,7 @@ export default function UiTest() {
             await btn.click()
             await driver.delayMs(waitUiReadyMs)
             let img1 = await driver.findComponent(ON.id('test_pict'))
+            let disPlayId = await img1.getDisplayId()
             let bounds1 = await img1.getBounds()
             let center1 = await img1.getBoundsCenter()
             await driver.mouseScroll(center1, false, 5, 2072, 0, 20)
@@ -4646,7 +4679,7 @@ export default function UiTest() {
             let bounds2 = await img2.getBounds()
             expect(bounds1 != bounds2).assertTrue()
 
-            await driver.pressBack()
+            await driver.pressBack(disPlayId)
             await driver.delayMs(waitUiReadyMs)
             let btn2 = await driver.findComponent(ON.text('1'))
             if (btn2 == null) {
@@ -4863,15 +4896,16 @@ export default function UiTest() {
                     Button = await scorll.scrollSearch(ON.id('jump'))
                 }
                 let center = await Button.getBoundsCenter()
-                await driver.mouseClick({ x: center.x, y: center.y }, MouseButton.MOUSE_BUTTON_RIGHT)
+                let disPlayId = await Button.getDisplayId()
+                await driver.mouseClick({ x: center.x, y: center.y, displayId: disPlayId }, MouseButton.MOUSE_BUTTON_RIGHT)
                 await driver.delayMs(waitUiReadyMs)
                 let Button1 = await driver.findComponent(ON.text('right'))
                 expect(Button1 != null).assertTrue()
-                await driver.mouseClick({ x: center.x, y: center.y }, MouseButton.MOUSE_BUTTON_MIDDLE, 2072, 2045)
+                await driver.mouseClick({ x: center.x, y: center.y, displayId: disPlayId }, MouseButton.MOUSE_BUTTON_MIDDLE, 2072, 2045)
                 await driver.delayMs(waitUiReadyMs)
                 let Button2 = await driver.findComponent(ON.text('middle'))
                 expect(Button2 != null).assertTrue()
-                await driver.mouseClick({ x: center.x, y: center.y }, MouseButton.MOUSE_BUTTON_LEFT, 0)
+                await driver.mouseClick({ x: center.x, y: center.y, displayId: disPlayId }, MouseButton.MOUSE_BUTTON_LEFT, 0)
                 await driver.delayMs(waitUiReadyMs)
                 let Button3 = await driver.findComponent(ON.id('jump'))
                 expect(Button3 == null).assertTrue()
@@ -4901,7 +4935,8 @@ export default function UiTest() {
                     Button = await scorll.scrollSearch(ON.id('jump'))
                 }
                 let center = await Button.getBoundsCenter()
-                await driver.mouseClick({ x: center.x, y: center.y }, MouseButton.MOUSE_BUTTON_RIGHT, null)
+                let disPlayId = await Button.getDisplayId()
+                await driver.mouseClick({ x: center.x, y: center.y, displayId: disPlayId }, MouseButton.MOUSE_BUTTON_RIGHT, null)
                 await driver.delayMs(waitUiReadyMs)
                 let Button1 = await driver.findComponent(ON.text('right'))
                 expect(Button1 != null).assertTrue()
@@ -4930,7 +4965,8 @@ export default function UiTest() {
                     Button = await scorll.scrollSearch(ON.id('jump'))
                 }
                 let center = await Button.getBoundsCenter()
-                await driver.mouseClick({ x: center.x, y: center.y }, MouseButton.MOUSE_BUTTON_RIGHT, undefined)
+                let disPlayId = await Button.getDisplayId()
+                await driver.mouseClick({ x: center.x, y: center.y, displayId: disPlayId }, MouseButton.MOUSE_BUTTON_RIGHT, undefined)
                 await driver.delayMs(waitUiReadyMs)
                 let Button1 = await driver.findComponent(ON.text('right'))
                 expect(Button1 != null).assertTrue()
@@ -4959,7 +4995,8 @@ export default function UiTest() {
                     Button = await scorll.scrollSearch(ON.id('jump'))
                 }
                 let center = await Button.getBoundsCenter()
-                await driver.mouseClick({ x: center.x, y: center.y }, MouseButton.MOUSE_BUTTON_RIGHT, 0, null)
+                let disPlayId = await Button.getDisplayId()
+                await driver.mouseClick({ x: center.x, y: center.y, displayId: disPlayId }, MouseButton.MOUSE_BUTTON_RIGHT, 0, null)
                 await driver.delayMs(waitUiReadyMs)
                 let Button1 = await driver.findComponent(ON.text('right'))
                 expect(Button1 != null).assertTrue()
@@ -4988,7 +5025,8 @@ export default function UiTest() {
                     Button = await scorll.scrollSearch(ON.id('jump'))
                 }
                 let center = await Button.getBoundsCenter()
-                await driver.mouseClick({ x: center.x, y: center.y }, MouseButton.MOUSE_BUTTON_RIGHT, 0, undefined)
+                let disPlayId = await Button.getDisplayId()
+                await driver.mouseClick({ x: center.x, y: center.y, displayId: disPlayId }, MouseButton.MOUSE_BUTTON_RIGHT, 0, undefined)
                 await driver.delayMs(waitUiReadyMs)
                 let Button1 = await driver.findComponent(ON.text('right'))
                 expect(Button1 != null).assertTrue()
@@ -5042,9 +5080,10 @@ export default function UiTest() {
             await btn.click()
             await driver.delayMs(waitUiReadyMs)
             let img1 = await driver.findComponent(ON.type('Image').inWindow('com.uitestScene.acts'))
+            let disPlayId = await img1.getDisplayId()
             let bounds1 = await img1.getBounds()
             let center1 = await img1.getBoundsCenter()
-            await driver.click(center1.x, center1.y)
+            await img1.click()
             await driver.delayMs(waitUiReadyMs)
             await driver.mouseScroll(center1, false, 5, 2072, 0)
             await driver.delayMs(waitUiReadyMs)
@@ -5052,7 +5091,7 @@ export default function UiTest() {
             let bounds2 = await img2.getBounds()
             expect(bounds1 != bounds2).assertTrue()
 
-            await driver.pressBack()
+            await driver.pressBack(disPlayId)
             await driver.delayMs(waitUiReadyMs)
             let btn2 = await driver.findComponent(ON.text('1'))
             if (btn2 == null) {
@@ -5332,8 +5371,12 @@ export default function UiTest() {
 
     describe('UiTest_API9', () => {
         let driver: Driver
+        let displayId: number = 0;
+        let primaryId: number = 0;
         beforeAll(async (done: Function) => {
             driver = Driver.create()
+            displayId = display.getDefaultDisplaySync().id;
+            primaryId = display.getPrimaryDisplaySync().id;
             await driver.delayMs(1000)
             await getInputMethodPermission()
             done()
@@ -5549,17 +5592,19 @@ export default function UiTest() {
          * @tc.level  LEVEL3
          */
         it('testDriverClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(waitUiReadyMs)
-            let Button = await driver.findComponent(ON.text('next page'))
-            let center = await Button.getBoundsCenter()
-            await driver.click(center.x, center.y)
-            await driver.delayMs(waitUiReadyMs)
-            let newButton = await driver.findComponent(ON.text('back to index'))
-            let text = await newButton.getText()
-            expect(text == 'back to index').assertTrue()
-            await newButton.click()
-            await stopApplication('com.uitestScene.acts')
+            if (displayId === primaryId) { // 此用例不支持车机副屏执行
+                await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+                await driver.delayMs(waitUiReadyMs)
+                let Button = await driver.findComponent(ON.text('next page'))
+                let center = await Button.getBoundsCenter()
+                await driver.click(center.x, center.y)
+                await driver.delayMs(waitUiReadyMs)
+                let newButton = await driver.findComponent(ON.text('back to index'))
+                let text = await newButton.getText()
+                expect(text == 'back to index').assertTrue()
+                await newButton.click()
+                await stopApplication('com.uitestScene.acts')
+            }
         })
 
         /**
@@ -5571,21 +5616,23 @@ export default function UiTest() {
          * @tc.level  LEVEL3
          */
         it('testDriverDoubleClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(waitUiReadyMs)
-            let Button = await driver.findComponent(ON.text('Click twice'))
-            if (Button == null) {
-                let scorll = await driver.findComponent(ON.type('Scroll'))
-                Button = await scorll.scrollSearch(ON.text('Click twice'))
+            if (displayId === primaryId) { // 此用例不支持车机副屏执行
+                await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+                await driver.delayMs(waitUiReadyMs)
+                let Button = await driver.findComponent(ON.text('Click twice'))
+                if (Button == null) {
+                    let scorll = await driver.findComponent(ON.type('Scroll'))
+                    Button = await scorll.scrollSearch(ON.text('Click twice'))
+                }
+                let center = await Button.getBoundsCenter()
+                await driver.doubleClick(center.x, center.y)
+                await driver.delayMs(waitUiReadyMs)
+                let button = await driver.findComponent(ON.text('doubleClick'))
+                let text = await button.getText()
+                expect(text == 'doubleClick').assertTrue()
+                await button.click()
+                await stopApplication('com.uitestScene.acts')
             }
-            let center = await Button.getBoundsCenter()
-            await driver.doubleClick(center.x, center.y)
-            await driver.delayMs(waitUiReadyMs)
-            let button = await driver.findComponent(ON.text('doubleClick'))
-            let text = await button.getText()
-            expect(text == 'doubleClick').assertTrue()
-            await button.click()
-            await stopApplication('com.uitestScene.acts')
         })
 
         /**
@@ -5597,17 +5644,19 @@ export default function UiTest() {
          * @tc.level  LEVEL3
          */
         it('testDriverLongClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(waitUiReadyMs)
-            let Button = await driver.findComponent(ON.text('next page'))
-            let center = await Button.getBoundsCenter()
-            await driver.longClick(center.x, center.y)
-            await driver.delayMs(waitUiReadyMs)
-            let newButton = await driver.findComponent(ON.text('longClick'))
-            let text = await newButton.getText()
-            expect(text == 'longClick').assertTrue()
-            await newButton.click()
-            await stopApplication('com.uitestScene.acts')
+            if (displayId === primaryId) { // 此用例不支持车机副屏执行
+                await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+                await driver.delayMs(waitUiReadyMs)
+                let Button = await driver.findComponent(ON.text('next page'))
+                let center = await Button.getBoundsCenter()
+                await driver.longClick(center.x, center.y)
+                await driver.delayMs(waitUiReadyMs)
+                let newButton = await driver.findComponent(ON.text('longClick'))
+                let text = await newButton.getText()
+                expect(text == 'longClick').assertTrue()
+                await newButton.click()
+                await stopApplication('com.uitestScene.acts')
+            }
         })
 
         /**
@@ -6011,16 +6060,18 @@ export default function UiTest() {
          * @tc.level  LEVEL3
          */
         it('testPressBack', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(waitUiReadyMs)
-            let button = await driver.findComponent(ON.text('next page'))
-            await button.click()
-            await driver.delayMs(waitUiReadyMs)
-            await driver.pressBack()
-            await driver.delayMs(waitUiReadyMs)
-            let button_ori = await driver.findComponent(ON.text('next page'))
-            expect(await button_ori.getText() == 'next page').assertTrue()
-            await stopApplication('com.uitestScene.acts')
+            if (displayId === primaryId) { // 此用例不支持车机副屏执行
+                await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+                await driver.delayMs(waitUiReadyMs)
+                let button = await driver.findComponent(ON.text('next page'))
+                await button.click()
+                await driver.delayMs(waitUiReadyMs)
+                await driver.pressBack()
+                await driver.delayMs(waitUiReadyMs)
+                let button_ori = await driver.findComponent(ON.text('next page'))
+                expect(await button_ori.getText() == 'next page').assertTrue()
+                await stopApplication('com.uitestScene.acts')
+            }
         })
 
         /**
@@ -6048,17 +6099,19 @@ export default function UiTest() {
          * @tc.level  LEVEL3
          */
         it('testTriggerKey', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(waitUiReadyMs)
-            let button = await driver.findComponent(ON.text('next page'))
-            await button.click()
-            await driver.delayMs(waitUiReadyMs)
-            let keyBack = 2
-            await driver.triggerKey(keyBack)
-            await driver.delayMs(waitUiReadyMs)
-            let button_ori = await driver.findComponent(ON.text('next page'))
-            expect(await button_ori.getText() == 'next page').assertTrue()
-            await stopApplication('com.uitestScene.acts')
+            if (displayId === primaryId) { // 此用例不支持车机副屏执行
+                await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+                await driver.delayMs(waitUiReadyMs)
+                let button = await driver.findComponent(ON.text('next page'))
+                await button.click()
+                await driver.delayMs(waitUiReadyMs)
+                let keyBack = 2
+                await driver.triggerKey(keyBack)
+                await driver.delayMs(waitUiReadyMs)
+                let button_ori = await driver.findComponent(ON.text('next page'))
+                expect(await button_ori.getText() == 'next page').assertTrue()
+                await stopApplication('com.uitestScene.acts')
+            }
         })
 
 
@@ -6193,20 +6246,22 @@ export default function UiTest() {
          * @tc.level  LEVEL3
          */
         it('testSwipe', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(waitUiReadyMs);
-            let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
-            await driver.delayMs(waitUiReadyMs);
-            await maxUiWindow(driver, window);
-            let scoll = await driver.findComponent(ON.type('Scroll'))
-            let rect = await scoll.getBounds()
-            let center = await scoll.getBoundsCenter()
-            await driver.swipe(center.x, Math.floor(center.y + (rect.bottom - rect.top) / 4),
-                center.x, Math.floor(center.y - (rect.bottom - rect.top) / 4))
-            await driver.delayMs(waitUiReadyMs)
-            let text = await driver.findComponent(ON.text('toast'))
-            expect(text == null).assertTrue()
-            await stopApplication('com.uitestScene.acts')
+            if (displayId === primaryId) { // 此用例不支持车机副屏执行
+                await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+                await driver.delayMs(waitUiReadyMs);
+                let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
+                await driver.delayMs(waitUiReadyMs);
+                await maxUiWindow(driver, window);
+                let scoll = await driver.findComponent(ON.type('Scroll'))
+                let rect = await scoll.getBounds()
+                let center = await scoll.getBoundsCenter()
+                await driver.swipe(center.x, Math.floor(center.y + (rect.bottom - rect.top) / 4),
+                    center.x, Math.floor(center.y - (rect.bottom - rect.top) / 4))
+                await driver.delayMs(waitUiReadyMs)
+                let text = await driver.findComponent(ON.text('toast'))
+                expect(text == null).assertTrue()
+                await stopApplication('com.uitestScene.acts')
+            }
         })
 
         /**
@@ -6218,23 +6273,25 @@ export default function UiTest() {
          * @tc.level  LEVEL3
          */
         it('testSwipeSpeed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-            try {
-                await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-                await driver.delayMs(waitUiReadyMs);
-                let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
-                await driver.delayMs(waitUiReadyMs);
-                await maxUiWindow(driver, window);
-                let scoll = await driver.findComponent(ON.type('Scroll'))
-                let rect = await scoll.getBounds()
-                let center = await scoll.getBoundsCenter()
-                await driver.swipe(center.x, Math.floor(center.y + (rect.bottom - rect.top) / 4),
-                    center.x, Math.floor(center.y - (rect.bottom - rect.top) / 4), 600)
-                await driver.delayMs(waitUiReadyMs)
-                let text = await driver.findComponent(ON.text('toast'))
-                expect(text == null).assertTrue()
-                await stopApplication('com.uitestScene.acts')
-            } catch (error) {
-                expect().assertFail();
+            if (displayId === primaryId) { // 此用例不支持车机副屏执行
+                try {
+                    await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+                    await driver.delayMs(waitUiReadyMs);
+                    let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
+                    await driver.delayMs(waitUiReadyMs);
+                    await maxUiWindow(driver, window);
+                    let scoll = await driver.findComponent(ON.type('Scroll'))
+                    let rect = await scoll.getBounds()
+                    let center = await scoll.getBoundsCenter()
+                    await driver.swipe(center.x, Math.floor(center.y + (rect.bottom - rect.top) / 4),
+                        center.x, Math.floor(center.y - (rect.bottom - rect.top) / 4), 600)
+                    await driver.delayMs(waitUiReadyMs)
+                    let text = await driver.findComponent(ON.text('toast'))
+                    expect(text == null).assertTrue()
+                    await stopApplication('com.uitestScene.acts')
+                } catch (error) {
+                    expect().assertFail();
+                }
             }
             done()
         })
@@ -6248,20 +6305,22 @@ export default function UiTest() {
          * @tc.level  LEVEL3
          */
         it('testSwipeSpeedNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(waitUiReadyMs);
-            let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
-            await driver.delayMs(waitUiReadyMs);
-            await maxUiWindow(driver, window);
-            let scoll = await driver.findComponent(ON.type('Scroll'))
-            let rect = await scoll.getBounds()
-            let center = await scoll.getBoundsCenter()
-            await driver.swipe(center.x, Math.floor(center.y + (rect.bottom - rect.top) / 4),
-                center.x, Math.floor(center.y - (rect.bottom - rect.top) / 4), null)
-            await driver.delayMs(waitUiReadyMs)
-            let text = await driver.findComponent(ON.text('toast'))
-            expect(text == null).assertTrue()
-            await stopApplication('com.uitestScene.acts')
+            if (displayId === primaryId) { // 此用例不支持车机副屏执行
+                await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+                await driver.delayMs(waitUiReadyMs);
+                let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
+                await driver.delayMs(waitUiReadyMs);
+                await maxUiWindow(driver, window);
+                let scoll = await driver.findComponent(ON.type('Scroll'))
+                let rect = await scoll.getBounds()
+                let center = await scoll.getBoundsCenter()
+                await driver.swipe(center.x, Math.floor(center.y + (rect.bottom - rect.top) / 4),
+                    center.x, Math.floor(center.y - (rect.bottom - rect.top) / 4), null)
+                await driver.delayMs(waitUiReadyMs)
+                let text = await driver.findComponent(ON.text('toast'))
+                expect(text == null).assertTrue()
+                await stopApplication('com.uitestScene.acts')
+            }
             done()
         })
 
@@ -6274,20 +6333,22 @@ export default function UiTest() {
          * @tc.level  LEVEL3
          */
         it('testSwipeSpeedUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(waitUiReadyMs);
-            let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
-            await driver.delayMs(waitUiReadyMs);
-            await maxUiWindow(driver, window);
-            let scoll = await driver.findComponent(ON.type('Scroll'))
-            let rect = await scoll.getBounds()
-            let center = await scoll.getBoundsCenter()
-            await driver.swipe(center.x, Math.floor(center.y + (rect.bottom - rect.top) / 4),
-                center.x, Math.floor(center.y - (rect.bottom - rect.top) / 4), undefined)
-            await driver.delayMs(waitUiReadyMs)
-            let text = await driver.findComponent(ON.text('toast'))
-            expect(text == null).assertTrue()
-            await stopApplication('com.uitestScene.acts')
+            if (displayId === primaryId) { // 此用例不支持车机副屏执行
+                await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+                await driver.delayMs(waitUiReadyMs);
+                let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
+                await driver.delayMs(waitUiReadyMs);
+                await maxUiWindow(driver, window);
+                let scoll = await driver.findComponent(ON.type('Scroll'))
+                let rect = await scoll.getBounds()
+                let center = await scoll.getBoundsCenter()
+                await driver.swipe(center.x, Math.floor(center.y + (rect.bottom - rect.top) / 4),
+                    center.x, Math.floor(center.y - (rect.bottom - rect.top) / 4), undefined)
+                await driver.delayMs(waitUiReadyMs)
+                let text = await driver.findComponent(ON.text('toast'))
+                expect(text == null).assertTrue()
+                await stopApplication('com.uitestScene.acts')
+            }
             done()
         })
 
@@ -6306,10 +6367,11 @@ export default function UiTest() {
             await driver.delayMs(waitUiReadyMs);
             await maxUiWindow(driver, window);
             let scoll = await driver.findComponent(ON.type('Scroll'))
+            let disPlayId = await scoll.getDisplayId()
             let rect = await scoll.getBounds()
             let center = await scoll.getBoundsCenter()
-            await driver.fling({ x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4) },
-                { x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4) }, 20, 600)
+            await driver.fling({ x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4), displayId: disPlayId },
+                { x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4), displayId: disPlayId }, 20, 600)
             await driver.delayMs(1000)
             let text = await driver.findComponent(ON.text('toast'))
             expect(text == null).assertTrue()
@@ -6574,6 +6636,7 @@ export default function UiTest() {
                 await button.click()
                 await driver.delayMs(waitUiReadyMs)
                 let image1 = await driver.findComponent(ON.id('test_pict'))
+                let disPlayId = await image1.getDisplayId()
                 let bounds1 = await image1.getBounds()
                 let left = bounds1.left
                 let right = bounds1.right
@@ -6582,10 +6645,10 @@ export default function UiTest() {
                 let pointer = PointerMatrix.create(2, 11)
                 await driver.delayMs(300)
                 for (let step = 0; step < 11; step++) {
-                    pointer.setPoint(0, step, { x: Math.floor(left + width - (step + 1) * (width / 10)), y: centerY })
+                    pointer.setPoint(0, step, { x: Math.floor(left + width - (step + 1) * (width / 10)), y: centerY, displayId: disPlayId })
                 }
                 for (let step = 0; step < 11; step++) {
-                    pointer.setPoint(1, step, { x: Math.floor(right - width + (step + 1) * (width / 10)), y: centerY })
+                    pointer.setPoint(1, step, { x: Math.floor(right - width + (step + 1) * (width / 10)), y: centerY, displayId: disPlayId })
                 }
                 let result = await driver.injectMultiPointerAction(pointer)
                 await driver.delayMs(3000)
@@ -6619,6 +6682,7 @@ export default function UiTest() {
             await button.click()
             await driver.delayMs(waitUiReadyMs)
             let image1 = await driver.findComponent(ON.id('test_pict'))
+            let disPlayId = await image1.getDisplayId()
             let bounds1 = await image1.getBounds()
             let left = bounds1.left
             let right = bounds1.right
@@ -6627,10 +6691,10 @@ export default function UiTest() {
             let pointer = PointerMatrix.create(2, 11)
             await driver.delayMs(300)
             for (let step = 0; step < 11; step++) {
-                pointer.setPoint(0, step, { x: Math.floor(left + width - (step + 1) * (width / 10)), y: centerY })
+                pointer.setPoint(0, step, { x: Math.floor(left + width - (step + 1) * (width / 10)), y: centerY, displayId: disPlayId })
             }
             for (let step = 0; step < 11; step++) {
-                pointer.setPoint(1, step, { x: Math.floor(right - width + (step + 1) * (width / 10)), y: centerY })
+                pointer.setPoint(1, step, { x: Math.floor(right - width + (step + 1) * (width / 10)), y: centerY, displayId: disPlayId })
             }
             let result = await driver.injectMultiPointerAction(pointer, 400)
             await driver.delayMs(3000)
@@ -6726,8 +6790,12 @@ export default function UiTest() {
 
     describe('UiTest_API8', () => {
         let driver: UiDriver
+        let displayId: number = 0;
+        let primaryId: number = 0;
         beforeAll(async (done: Function) => {
             driver = UiDriver.create()
+            displayId = display.getDefaultDisplaySync().id;
+            primaryId = display.getPrimaryDisplaySync().id;
             await driver.delayMs(1000)
             await getInputMethodPermission()
             done()
@@ -7077,16 +7145,18 @@ export default function UiTest() {
          * @tc.level  LEVEL3
          */
         it('testPressBackAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(waitUiReadyMs)
-            let button = await driver.findComponent(BY.text('next page'))
-            await button.click()
-            await driver.delayMs(waitUiReadyMs)
-            await driver.pressBack()
-            await driver.delayMs(waitUiReadyMs)
-            let button_ori = await driver.findComponent(BY.text('next page'))
-            expect(await button_ori.getText() == 'next page').assertTrue()
-            await stopApplication('com.uitestScene.acts')
+            if (displayId === primaryId) { // 此用例不支持车机副屏执行
+                await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+                await driver.delayMs(waitUiReadyMs)
+                let button = await driver.findComponent(BY.text('next page'))
+                await button.click()
+                await driver.delayMs(waitUiReadyMs)
+                await driver.pressBack()
+                await driver.delayMs(waitUiReadyMs)
+                let button_ori = await driver.findComponent(BY.text('next page'))
+                expect(await button_ori.getText() == 'next page').assertTrue()
+                await stopApplication('com.uitestScene.acts')
+            }
         })
 
         /**
@@ -7116,17 +7186,19 @@ export default function UiTest() {
          * @tc.level  LEVEL3
          */
         it('testTriggerKeyAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(waitUiReadyMs)
-            let button = await driver.findComponent(BY.text('next page'))
-            await button.click()
-            await driver.delayMs(waitUiReadyMs)
-            let keyBack = 2
-            await driver.triggerKey(keyBack)
-            await driver.delayMs(waitUiReadyMs)
-            let button_ori = await driver.findComponent(BY.text('next page'))
-            expect(await button_ori.getText() == 'next page').assertTrue()
-            await stopApplication('com.uitestScene.acts')
+            if (displayId === primaryId) { // 此用例不支持车机副屏执行
+                await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+                await driver.delayMs(waitUiReadyMs)
+                let button = await driver.findComponent(BY.text('next page'))
+                await button.click()
+                await driver.delayMs(waitUiReadyMs)
+                let keyBack = 2
+                await driver.triggerKey(keyBack)
+                await driver.delayMs(waitUiReadyMs)
+                let button_ori = await driver.findComponent(BY.text('next page'))
+                expect(await button_ori.getText() == 'next page').assertTrue()
+                await stopApplication('com.uitestScene.acts')
+            }
         })
 
         /**
@@ -7202,34 +7274,36 @@ export default function UiTest() {
          * @tc.level  LEVEL3
          */
         it('testSwipeAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
-            let driver1 = Driver.create();
-            await driver.delayMs(waitUiReadyMs);
-            let window = await driver1.findWindow({ bundleName: 'com.uitestScene.acts' });
-            console.log(`${TestTag}, testSwipe window,${JSON.stringify(window)}`);
-            if (window != null) {
-                try {
-                    let windowMode = await window.getWindowMode();
-                    if (windowMode != WindowMode.FLOATING) {
-                        await window.resume();
-                        await driver.delayMs(8000);
+            if (displayId === primaryId) { // 此用例不支持车机副屏执行
+                await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+                let driver1 = Driver.create();
+                await driver.delayMs(waitUiReadyMs);
+                let window = await driver1.findWindow({ bundleName: 'com.uitestScene.acts' });
+                console.log(`${TestTag}, testSwipe window,${JSON.stringify(window)}`);
+                if (window != null) {
+                    try {
+                        let windowMode = await window.getWindowMode();
+                        if (windowMode != WindowMode.FLOATING) {
+                            await window.resume();
+                            await driver.delayMs(8000);
+                        }
+                        await window.maximize();
+                    } catch (error) {
+                        console.log(`${TestTag}, testSwipe maximize error,${JSON.stringify(error)}`);
                     }
-                    await window.maximize();
-                } catch (error) {
-                    console.log(`${TestTag}, testSwipe maximize error,${JSON.stringify(error)}`);
                 }
+                await driver.delayMs(waitUiReadyMs)
+                let displayClass = await display.getDefaultDisplay();
+                let screenWidth = displayClass.width
+                let screenHeight = displayClass.height
+                console.info('screenWidth:' + screenWidth + ', screenHeight:' + screenHeight)
+                await driver.swipe(Math.floor(screenWidth / 2), Math.floor(screenHeight / 2 + screenHeight / 8),
+                    Math.floor(screenWidth / 2), Math.floor(screenHeight / 2 - screenHeight / 8))
+                await driver.delayMs(waitUiReadyMs)
+                let text = await driver.findComponent(BY.text('toast'))
+                expect(text == null).assertTrue()
+                await stopApplication('com.uitestScene.acts')
             }
-            await driver.delayMs(waitUiReadyMs)
-            let displayClass = await display.getDefaultDisplay();
-            let screenWidth = displayClass.width
-            let screenHeight = displayClass.height
-            console.info('screenWidth:' + screenWidth + ', screenHeight:' + screenHeight)
-            await driver.swipe(Math.floor(screenWidth / 2), Math.floor(screenHeight / 2 + screenHeight / 8),
-                Math.floor(screenWidth / 2), Math.floor(screenHeight / 2 - screenHeight / 8))
-            await driver.delayMs(waitUiReadyMs)
-            let text = await driver.findComponent(BY.text('toast'))
-            expect(text == null).assertTrue()
-            await stopApplication('com.uitestScene.acts')
         })
 
         /**
@@ -7258,18 +7332,20 @@ export default function UiTest() {
          * @tc.level  LEVEL3
          */
         it('testUiDriverClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            const driver1 = Driver.create();
-            await driver1.delayMs(waitUiReadyMs)
-            let button = await driver1.findComponent(ON.text('next page'))
-            let center = await button.getBoundsCenter();
-            await driver.click(center.x, center.y)
-            await driver1.delayMs(waitUiReadyMs)
-            let newButton = await driver1.findComponent(ON.text('back to index'))
-            let text = await newButton.getText()
-            expect(text == 'back to index').assertTrue()
-            await newButton.click()
-            await stopApplication('com.uitestScene.acts')
+            if (displayId === primaryId) { // 此用例不支持车机副屏执行
+                await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+                const driver1 = Driver.create();
+                await driver1.delayMs(waitUiReadyMs)
+                let button = await driver1.findComponent(ON.text('next page'))
+                let center = await button.getBoundsCenter();
+                await driver.click(center.x, center.y)
+                await driver1.delayMs(waitUiReadyMs)
+                let newButton = await driver1.findComponent(ON.text('back to index'))
+                let text = await newButton.getText()
+                expect(text == 'back to index').assertTrue()
+                await newButton.click()
+                await stopApplication('com.uitestScene.acts')
+            }
         })
 
         /**
@@ -7281,22 +7357,24 @@ export default function UiTest() {
          * @tc.level  LEVEL3
          */
         it('testUiDriverDoubleClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            const driver1 = Driver.create();
-            await driver1.delayMs(waitUiReadyMs)
-            let Button = await driver1.findComponent(ON.text('Click twice'))
-            if (Button == null) {
-                let scorll = await driver1.findComponent(ON.type('Scroll'))
-                Button = await scorll.scrollSearch(ON.text('Click twice'))
+            if (displayId === primaryId) { // 此用例不支持车机副屏执行
+                await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+                const driver1 = Driver.create();
+                await driver1.delayMs(waitUiReadyMs)
+                let Button = await driver1.findComponent(ON.text('Click twice'))
+                if (Button == null) {
+                    let scorll = await driver1.findComponent(ON.type('Scroll'))
+                    Button = await scorll.scrollSearch(ON.text('Click twice'))
+                }
+                let center = await Button.getBoundsCenter()
+                await driver.doubleClick(center.x, center.y)
+                await driver.delayMs(waitUiReadyMs)
+                let button = await driver1.findComponent(ON.text('doubleClick'))
+                let text = await button.getText()
+                expect(text == 'doubleClick').assertTrue()
+                await button.click()
+                await stopApplication('com.uitestScene.acts')
             }
-            let center = await Button.getBoundsCenter()
-            await driver.doubleClick(center.x, center.y)
-            await driver.delayMs(waitUiReadyMs)
-            let button = await driver1.findComponent(ON.text('doubleClick'))
-            let text = await button.getText()
-            expect(text == 'doubleClick').assertTrue()
-            await button.click()
-            await stopApplication('com.uitestScene.acts')
         })
 
         /**
@@ -7308,18 +7386,20 @@ export default function UiTest() {
          * @tc.level  LEVEL3
          */
         it('testUiDriverLongClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            const driver1 = Driver.create();
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(waitUiReadyMs)
-            let Button = await driver1.findComponent(ON.text('next page'))
-            let center = await Button.getBoundsCenter()
-            await driver.longClick(center.x, center.y)
-            await driver.delayMs(waitUiReadyMs)
-            let newButton = await driver1.findComponent(ON.text('longClick'))
-            let text = await newButton.getText()
-            expect(text == 'longClick').assertTrue()
-            await newButton.click()
-            await stopApplication('com.uitestScene.acts')
+            if (displayId === primaryId) { // 此用例不支持车机副屏执行
+                const driver1 = Driver.create();
+                await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+                await driver.delayMs(waitUiReadyMs)
+                let Button = await driver1.findComponent(ON.text('next page'))
+                let center = await Button.getBoundsCenter()
+                await driver.longClick(center.x, center.y)
+                await driver.delayMs(waitUiReadyMs)
+                let newButton = await driver1.findComponent(ON.text('longClick'))
+                let text = await newButton.getText()
+                expect(text == 'longClick').assertTrue()
+                await newButton.click()
+                await stopApplication('com.uitestScene.acts')
+            }
         })
     })
 }
