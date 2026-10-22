@@ -3450,5 +3450,97 @@ export default function bluetoothBleStaticTest(): void {
         hilog.info(domain, tag, 'stopstop bleScanner stopScan success');
         done();
       })
+
+    /**
+     * @tc.number  SUB_COMMUNICATION_BLE_TESTSCANREPORTTYPEADD_0100
+     * @tc.name    testScanReportTypeAdd
+     * @tc.desc    Test testScanReportTypeAdd API functionality
+     * @tc.level   Level 0
+     * @tc.type    Function
+     * @tc.size    MEDIUMTEST
+     */
+    it("testScanReportTypeAdd", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let ON_BATCH = ble.ScanReportType.ON_BATCH;
+          hilog.info(domain, tag, "ScanReportType ON_BATCH: " + JSON.stringify(ON_BATCH));
+          expect(ON_BATCH).assertEqual(3);
+        } catch (err) {
+          hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+          hilog.info(domain, tag, "testScanReportTypeAdd errCode:" + err.code + ",errMessage:" + err.message);
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.number  SUB_COMMUNICATION_BLE_TESTCONNECTIONPARAM_0100
+     * @tc.name    testConnectionParam
+     * @tc.desc    Test testConnectionParam API functionality
+     * @tc.level   Level 0
+     * @tc.type    Function
+     * @tc.size    MEDIUMTEST
+     */
+    it("testConnectionParam", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let BALANCED = ble.ConnectionParam.BALANCED;
+          hilog.info(domain, tag, "ConnectionParam BALANCED: " + JSON.stringify(BALANCED));
+          expect(BALANCED).assertEqual(2);
+
+          let HIGH = ble.ConnectionParam.HIGH;
+          hilog.info(domain, tag, "ConnectionParam HIGH: " + JSON.stringify(HIGH));
+          expect(HIGH).assertEqual(3);
+        } catch (err) {
+          hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+          hilog.info(domain, tag, "testConnectionParam errCode:" + err.code + ",errMessage:" + err.message);
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.number  SUB_COMMUNICATION_BLE_TESTBLEPHY_0100
+     * @tc.name    testBlePhy
+     * @tc.desc    Test testBlePhy API functionality
+     * @tc.level   Level 0
+     * @tc.type    Function
+     * @tc.size    MEDIUMTEST
+     */
+    it("testBlePhy", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let BLE_PHY_CODED = ble.BlePhy.BLE_PHY_CODED;
+          hilog.info(domain, tag, "BlePhy BLE_PHY_CODED: " + JSON.stringify(BLE_PHY_CODED));
+          expect(BLE_PHY_CODED).assertEqual(3);
+        } catch (err) {
+          hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+          hilog.info(domain, tag, "testBlePhy errCode:" + err.code + ",errMessage:" + err.message);
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.number  SUB_COMMUNICATION_BLE_TESTCODEDPHYMODE_0100
+     * @tc.name    testCodedPhyMode
+     * @tc.desc    Test testCodedPhyMode API functionality
+     * @tc.level   Level 0
+     * @tc.type    Function
+     * @tc.size    MEDIUMTEST
+     */
+    it("testCodedPhyMode", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let BLE_PHY_CODED_S8 = ble.CodedPhyMode.BLE_PHY_CODED_S8;
+          hilog.info(domain, tag, "CodedPhyMode BLE_PHY_CODED_S8: " + JSON.stringify(BLE_PHY_CODED_S8));
+          expect(BLE_PHY_CODED_S8).assertEqual(2);
+        } catch (err) {
+          hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+          hilog.info(domain, tag, "testCodedPhyMode errCode:" + err.code + ",errMessage:" + err.message);
+          expect().assertFail();
+        }
+        done();
+      })
   })
 }
