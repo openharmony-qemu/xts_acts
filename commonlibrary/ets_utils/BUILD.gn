@@ -16,7 +16,7 @@ group("ets_utils") {
   testonly = true
   if (is_standard_system) {
     deps = [
-      "codeparsingtest:codeparsingtest",
+      "arkts:arkts",
       "concurrent_builtin_test:concurrent_builtin_test",
       "concurrent_sendable:concurrent_sendable",
       "concurrent_test:concurrent_test",
