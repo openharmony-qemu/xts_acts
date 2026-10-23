@@ -34,8 +34,6 @@ export default function DecimalToDecimalPlacesTest() {
     afterEach(() => { common.resetDecimalConfig(Decimal); });
     afterAll(() => {});
 
-    // === From Part01 ===
-
     /**
      * @tc.name testDecimalToDecimalPlacesPart01Test001
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_DP_PART01_TEST_0010
@@ -44,7 +42,6 @@ export default function DecimalToDecimalPlacesTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _0010, _0020, _0030, _0040, _0050, _0060, _0070, _0080, _0090, _0100, _0110, _0120 (12 tests merged)
     it('testDecimalToDecimalPlacesPart01Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let dec: Decimal = new Decimal(12.34567);
       expect(dec.toDecimalPlaces().toString()).assertEqual('12.34567');
@@ -73,7 +70,6 @@ export default function DecimalToDecimalPlacesTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _0130, _0140, _0150, _0160, _0170, _0180, _0190 (7 tests merged)
     it('testDecimalToDecimalPlacesPart01Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let nanOut: Decimal = new Decimal(NaN).toDecimalPlaces();
       expect(nanOut.isNaN()).assertTrue();
@@ -95,7 +91,6 @@ export default function DecimalToDecimalPlacesTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _0200, _0210, _0220, _0230, _0240, _0250, _0260, _0270, _0280, _0290, _0300, _0310, _0320 (13 tests merged)
     it('testDecimalToDecimalPlacesPart01Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new Decimal(9e15).toDecimalPlaces().toString()).assertEqual('9000000000000000');
       expect(new Decimal(-9e15).toDecimalPlaces().toString()).assertEqual('-9000000000000000');
@@ -125,7 +120,6 @@ export default function DecimalToDecimalPlacesTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _0330, _0340, _0350, _0360, _0370, _0380, _0390, _0400, _0410, _0420, _0430, _0440, _0450, _0460, _0470, _0480, _0490, _0500 (18 tests merged)
     it('testDecimalToDecimalPlacesPart01Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let data: Decimal = new Decimal(9876.54321);
       expect(data.toDecimalPlaces(1, Decimal.ROUND_UP).toString()).assertEqual('9876.6');
@@ -163,7 +157,6 @@ export default function DecimalToDecimalPlacesTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _0510, _0520, _0530, _0540, _0550, _0560, _0570, _0580, _0590, _0600, _0610, _0620, _0630 (13 tests merged)
     it('testDecimalToDecimalPlacesPart01Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let probeThrows = (dp: ESObject, data: Decimal): void => {
         let errCode: number = -1;
@@ -205,7 +198,6 @@ export default function DecimalToDecimalPlacesTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _0640, _0650, _0660, _0670, _0680, _0690, _0700, _0710, _0720, _0730 (10 tests merged)
     it('testDecimalToDecimalPlacesPart01Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new Decimal(2.5).toDecimalPlaces(0, Decimal.ROUND_UP).toString()).assertEqual('3');
       expect(new Decimal(2.5).toDecimalPlaces(0, Decimal.ROUND_DOWN).toString()).assertEqual('2');
@@ -227,7 +219,6 @@ export default function DecimalToDecimalPlacesTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _0740, _0750, _0760, _0770, _0780, _0790, _0800, _0810, _0820, _0830, _0840, _0850, _0860, _0870 (14 tests merged)
     it('testDecimalToDecimalPlacesPart01Test074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let upPos: string = new Decimal(2.5).toDecimalPlaces(0, Decimal.ROUND_UP).toString();
       let upNeg: string = new Decimal(-2.5).toDecimalPlaces(0, Decimal.ROUND_UP).toString();
@@ -277,7 +268,6 @@ export default function DecimalToDecimalPlacesTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _0880, _0890, _0900, _0910, _0920, _0930, _0940, _0950, _0960, _0970, _0980, _0990 (12 tests merged)
     it('testDecimalToDecimalPlacesPart01Test088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let dec: Decimal = new Decimal(9876.54321);
       let before: string = dec.toString();
@@ -347,7 +337,6 @@ export default function DecimalToDecimalPlacesTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _1000, _1010, _1020, _1030, _1040, _1050, _1060, _1070, _1080 (9 tests merged)
     it('testDecimalToDecimalPlacesPart01Test100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new Decimal(9e15).toDecimalPlaces(0, Decimal.ROUND_DOWN).toString()).assertEqual('9000000000000000');
       expect(new Decimal(-9e15).toDecimalPlaces(0, Decimal.ROUND_DOWN).toString()).assertEqual('-9000000000000000');
@@ -366,8 +355,6 @@ export default function DecimalToDecimalPlacesTest() {
       expect(new Decimal(1e9).toDecimalPlaces(0, Decimal.ROUND_DOWN).toString()).assertEqual('1000000000');
     });
 
-    // === From Part02 ===
-
     /**
      * @tc.name testDecimalToDecimalPlacesPart02Test001
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_DP_PART02_TEST_0100
@@ -376,7 +363,6 @@ export default function DecimalToDecimalPlacesTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _0100, _0200, _0300, _0400, _0500, _0600, _0700, _0800, _0900, _1000 (10 tests merged)
     it('testDecimalToDecimalPlacesPart02Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let data: Decimal = new Decimal(9876.54321);
       expect(data.toDecimalPlaces(1).toString()).assertEqual('9876.5');
@@ -408,7 +394,6 @@ export default function DecimalToDecimalPlacesTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _1100, _1200, _1300, _1400, _1500, _1600, _1700, _1800 (8 tests merged)
     it('testDecimalToDecimalPlacesPart02Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new Decimal(0.5).toDecimalPlaces(0).toString()).assertEqual('1');
       expect(new Decimal(-0.5).toDecimalPlaces(0).toString()).assertEqual('-1');
@@ -431,7 +416,6 @@ export default function DecimalToDecimalPlacesTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _1900, _2000, _2100, _2200, _2300, _2400, _2500 (7 tests merged)
     it('testDecimalToDecimalPlacesPart02Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let probeThrows = (dp: ESObject, data: Decimal): void => {
         let errCode: number = -1;
@@ -467,7 +451,6 @@ export default function DecimalToDecimalPlacesTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _2600, _2700, _2800, _2900, _3000, _3100, _3200, _3300, _3400 (9 tests merged)
     it('testDecimalToDecimalPlacesPart02Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let probeThrows = (dp: ESObject, data: Decimal): void => {
         let errCode: number = -1;
@@ -505,7 +488,6 @@ export default function DecimalToDecimalPlacesTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _3500, _3600, _3700, _3800, _3900, _4000 (6 tests merged)
     it('testDecimalToDecimalPlacesPart02Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let nullData: Decimal = new Decimal(1.5);
       let nullErr: number = -1;
@@ -566,7 +548,6 @@ export default function DecimalToDecimalPlacesTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _4100, _4200, _4300, _4400, _4500, _4600, _4700, _4800 (8 tests merged)
     it('testDecimalToDecimalPlacesPart02Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       Decimal.set({ rounding: 0 });
       try {
@@ -630,7 +611,6 @@ export default function DecimalToDecimalPlacesTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _4900, _5000, _5100, _5200, _5300, _5400, _5500, _5600, _5700, _5800, _5900, _6000 (12 tests merged)
     it('testDecimalToDecimalPlacesPart02Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let thrown: boolean = false;
       let cfg: ESObject = { rounding: 99 };
@@ -689,7 +669,6 @@ export default function DecimalToDecimalPlacesTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _6100, _6200, _6300, _6400, _6500, _6600, _6700, _6800, _6900, _7000, _7100, _7200, _7300, _7400 (14 tests merged)
     it('testDecimalToDecimalPlacesPart02Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let thrown: boolean = false;
       let cfg: ESObject = { rounding: -1 };
@@ -725,8 +704,6 @@ export default function DecimalToDecimalPlacesTest() {
       expect(new Decimal(1e9).toDecimalPlaces(0).toString()).assertEqual('1000000000');
     });
 
-    // === From Part03 ===
-
     /**
      * @tc.name testDecimalToDecimalPlacesPart03Test001
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_DP_PART03_TEST_0100
@@ -735,7 +712,6 @@ export default function DecimalToDecimalPlacesTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _0100, _0200, _0300, _0400, _0500, _0600, _0700, _0800, _0900, _1000, _1100 (11 tests merged)
     it('testDecimalToDecimalPlacesPart03Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let dec: Decimal = new Decimal(12.34567);
       let keep: string = dec.toDecimalPlaces().toString();
@@ -798,7 +774,6 @@ export default function DecimalToDecimalPlacesTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _1200, _1300, _1400, _1500, _1600, _1700, _1800, _1900, _2000, _2100, _2200 (11 tests merged)
     it('testDecimalToDecimalPlacesPart03Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let decStrRm: Decimal = new Decimal(12.34567);
       let ok: string = decStrRm.toDecimalPlaces(2, 4).toString();
@@ -907,7 +882,6 @@ export default function DecimalToDecimalPlacesTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _2300, _2400, _2500, _2600, _2700, _2800, _2900, _3000, _3100, _3200, _3300, _3400 (12 tests merged)
     it('testDecimalToDecimalPlacesPart03Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let dec: Decimal = new Decimal(12.34567);
       let prev: Decimal = dec.toDecimalPlaces(2, Decimal.ROUND_DOWN);
@@ -1035,7 +1009,6 @@ export default function DecimalToDecimalPlacesTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _3500, _3600, _3700, _3800, _3900, _4000, _4100, _4200, _4300, _4400, _4500, _4600, _4700, _4800 (14 tests merged)
     it('testDecimalToDecimalPlacesPart03Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let dec: Decimal = new Decimal(12.34567);
       let out: Decimal = dec.toDecimalPlaces(2, Decimal.ROUND_HALF_UP);
@@ -1117,7 +1090,6 @@ export default function DecimalToDecimalPlacesTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _4900, _5000, _5100, _5200, _5300, _5400, _5500, _5600, _5700 (9 tests merged)
     it('testDecimalToDecimalPlacesPart03Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let dec: Decimal = new Decimal(12.345);
       let def: string = dec.toDecimalPlaces(2).toString();
@@ -1144,7 +1116,6 @@ export default function DecimalToDecimalPlacesTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _5800, _5900, _6000, _6100, _6200, _6300, _6400, _6500, _6600, _6700, _6800, _6900 (12 tests merged)
     it('testDecimalToDecimalPlacesPart03Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let dec: Decimal = new Decimal(12.345);
       let up: string = dec.toDecimalPlaces(2, 0).toString();
@@ -1219,7 +1190,6 @@ export default function DecimalToDecimalPlacesTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _7000, _7100, _7200, _7300, _7400, _7500 (6 tests merged)
     it('testDecimalToDecimalPlacesPart03Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let dec: Decimal = new Decimal(12.34);
       let up: string = dec.toDecimalPlaces(3, Decimal.ROUND_UP).toString();
