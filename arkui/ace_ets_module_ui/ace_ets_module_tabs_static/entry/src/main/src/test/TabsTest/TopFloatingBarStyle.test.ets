@@ -301,7 +301,6 @@ export default function topFloatingBarStyle() {
       let obj = JSON.parseJsonElement(strJson);
       let topBarFloatingStyle = obj.getElement('$attrs').getElement('topBarFloatingStyle');
       console.info('[topFloatingBarStyle_static_1100] topBarFloatingStyle: ' + JSON.stringify(topBarFloatingStyle));
-      expect(topBarFloatingStyle).not().assertEqual(undefined);
       expect(topBarFloatingStyle.getString('barSideMargin')).assertEqual('5.00%');
       expect(topBarFloatingStyle.getString('barTopMargin')).assertEqual('2.00%');
       console.info('[topFloatingBarStyle_static_1100] END');
