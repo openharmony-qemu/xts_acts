@@ -47,7 +47,8 @@ async function stopApplication(bundleName: string) {
 }
 
 async function setFloat(driver: Driver) {
-  let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
+  let disId = display.getDefaultDisplaySync().id;
+  let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: disId })
   console.log(`${TestTag}, setFloat findWindow, ${JSON.stringify(window)}`);
   let windowMode = await window.getWindowMode()
   console.log(`${TestTag}, setFloat getWindowMode, ${JSON.stringify(windowMode)}`);
@@ -58,7 +59,8 @@ async function setFloat(driver: Driver) {
 }
 
 async function setFull(driver: Driver) {
-  let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
+  let disId = display.getDefaultDisplaySync().id;
+  let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: disId })
   console.log(`${TestTag}, setFull findWindow, ${JSON.stringify(window)}`);
   let windowMode = await window.getWindowMode()
   console.log(`${TestTag}, setFull getWindowMode, ${JSON.stringify(windowMode)}`);
@@ -71,7 +73,8 @@ async function setFull(driver: Driver) {
 async function firstSplit(driver: Driver) {
   await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
   await driver.delayMs(3000);
-  let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId });
+  let disId = display.getDefaultDisplaySync().id;
+  let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: disId })
   console.log(`${TestTag}, firstSplit window,${JSON.stringify(window)}`);
   if (window != null) {
     try {
@@ -88,7 +91,8 @@ async function firstSplit(driver: Driver) {
 }
 
 async function setSplit(driver: Driver) {
-  let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
+  let disId = display.getDefaultDisplaySync().id;
+  let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: disId })
   console.log(`${TestTag}, setSplit window,${JSON.stringify(window)}`);
   await window.split()
   await driver.delayMs(waitUiReadyMs * 2)
@@ -146,7 +150,8 @@ async function envRecovery(driver: Driver) {
       await driver.pressBack()
       await driver.delayMs(waitUiReadyMs * 3)
     }
-    let resumeWindow = await driver.findWindow({ bundleName: 'com.uitest.acts', displayId: defaultDisplayId })
+    let disId = display.getDefaultDisplaySync().id;
+    let resumeWindow = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: disId })
     if (resumeWindow != null) {
       await resumeWindow.resume()
     }
