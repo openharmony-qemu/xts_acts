@@ -17,6 +17,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import { taskpool, collections } from '@kit.ArkTS';
 import { relationalStore } from '@kit.ArkData';
 import { abilityDelegatorRegistry } from '@kit.TestKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 interface IValueBucket {
   id: number
@@ -706,7 +707,7 @@ export default function BatchDatabaseOpsTest(): void {
         let task = new taskpool.Task(insertInTaskPool, context, DB_NAME, TABLE_NAME, names, ages, salaries)
         settled.push(taskpool.execute(task).then((value) => {
           successRows += value as number
-        }).catch((err) => {
+        }).catch((err: BusinessError) => {
           conflictCode = err.code
           console.info(`testBatchDatabaseOps2600 insert conflict: code => ${conflictCode} message => ${err.message}`)
         }))

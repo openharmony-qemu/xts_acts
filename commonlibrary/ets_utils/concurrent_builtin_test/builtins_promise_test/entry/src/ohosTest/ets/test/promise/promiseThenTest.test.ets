@@ -2487,7 +2487,7 @@ export default function promiseThenTest() {
       const promise = Promise.resolve(1);
       promise.then(() => {
         log.push('micro');
-      }).catch((err) => {
+      }).catch((err: Error) => {
         console.info(`testPromiseThen0101 then chain error: ${err}`);
       });
       log.push('sync');
