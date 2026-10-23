@@ -71,6 +71,11 @@ export default function TipsOptionsSystemMaterialTest(): void {
        }
     });
 
+    /**
+     * @tc.name TipsOptionsSystemMaterial_0100
+     * @tc.number TipsOptionsSystemMaterial_0100
+     * @tc.desc Test TipsOptions with undefined parameter
+     */
     it('TipsOptionsSystemMaterial_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let driver: Driver = Driver.create();
        try {
@@ -88,6 +93,11 @@ export default function TipsOptionsSystemMaterialTest(): void {
       done();
     });
 
+    /**
+     * @tc.name TipsOptionsSystemMaterial_0200
+     * @tc.number TipsOptionsSystemMaterial_0200
+     * @tc.desc Test TipsOptions with HDS THICK parameter
+     */
     it('TipsOptionsSystemMaterial_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         let driver: Driver = Driver.create();
@@ -115,6 +125,11 @@ export default function TipsOptionsSystemMaterialTest(): void {
       }
     });
 
+    /**
+     * @tc.name TipsOptionsSystemMaterial_0300
+     * @tc.number TipsOptionsSystemMaterial_0300
+     * @tc.desc Test TipsOptions with SEMI_TRANSPARENT parameter
+     */
     it('TipsOptionsSystemMaterial_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let driver: Driver = Driver.create();
        try {
@@ -142,6 +157,11 @@ export default function TipsOptionsSystemMaterialTest(): void {
       done();
     });
 
+    /**
+     * @tc.name TipsOptionsSystemMaterial_0400
+     * @tc.number TipsOptionsSystemMaterial_0400
+     * @tc.desc Test TipsOptions with Immersive THICK parameter
+     */
     it('TipsOptionsSystemMaterial_0400', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let driver: Driver = Driver.create();
        try {
@@ -169,6 +189,11 @@ export default function TipsOptionsSystemMaterialTest(): void {
       done();
     });
 
+    /**
+     * @tc.name TipsOptionsSystemMaterial_0500
+     * @tc.number TipsOptionsSystemMaterial_0500
+     * @tc.desc Test TipsOptions with Immersive ULTRA_THIN parameter
+     */
     it('TipsOptionsSystemMaterial_0500', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let driver: Driver = Driver.create();
        try {
@@ -196,6 +221,11 @@ export default function TipsOptionsSystemMaterialTest(): void {
       done();
     });
 
+    /**
+     * @tc.name TipsOptionsSystemMaterial_0600
+     * @tc.number TipsOptionsSystemMaterial_0600
+     * @tc.desc Test TipsOptions with NONE parameter
+     */
     it('TipsOptionsSystemMaterial_0600', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let driver: Driver = Driver.create();
        try {

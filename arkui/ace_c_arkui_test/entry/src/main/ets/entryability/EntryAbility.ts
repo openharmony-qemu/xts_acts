@@ -19,19 +19,19 @@ import { window } from '@kit.ArkUI';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 export default class EntryAbility extends UIAbility {
-  private para:Record<string, number> = { 'propAM': 42 ,'propBM':40};
+  private para: Record<string, number> = { 'propAM': 42, 'propBM': 40 };
   private storage: LocalStorage = new LocalStorage(this.para);
 
-  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam){
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
     globalThis.abilityWant = want;
   }
 
-  onDestroy(){
+  onDestroy() {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
   }
   
-  onWindowStageCreate(windowStage: window.WindowStage):void{
+  onWindowStageCreate(windowStage: window.WindowStage): void {
     // Main window is created, set main page for this ability
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
@@ -41,7 +41,7 @@ export default class EntryAbility extends UIAbility {
     let promise1 = mainWindow.getProperties();
     promise1.then((data) => {
       console.info('当前屏幕ID' + data.displayId);
-      AppStorage.setOrCreate('displayID',data.displayId);
+      AppStorage.setOrCreate('displayID', data.displayId);
     }).catch((err: BusinessError) => {
     });
 
@@ -65,17 +65,17 @@ export default class EntryAbility extends UIAbility {
     AppStorage.setOrCreate('windowStage', windowStage);
   }
 
-  onWindowStageDestroy():void{
+  onWindowStageDestroy(): void {
     // Main window is destroyed, release UI related resources
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageDestroy');
   }
 
-  onForeground():void{
+  onForeground(): void {
     // Ability has brought to foreground
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onForeground');
   }
 
-  onBackground():void{
+  onBackground(): void {
     // Ability has back to background
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onBackground');
   }
