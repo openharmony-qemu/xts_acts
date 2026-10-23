@@ -73,7 +73,6 @@ export default function topFloatingBarStyle() {
       let obj = JSON.parseJsonElement(strJson);
       let topBarFloatingStyle = obj.getElement('$attrs').getElement('topBarFloatingStyle');
       console.info('[topFloatingBarStyle_static_0100] topBarFloatingStyle: ' + JSON.stringify(topBarFloatingStyle));
-      expect(topBarFloatingStyle).not().assertEqual(undefined);
       expect(obj.getElement('$attrs').getString('barStyle')).assertEqual('TabBarStyle.TOP');
       console.info('[topFloatingBarStyle_static_0100] END');
       done();
@@ -96,7 +95,6 @@ export default function topFloatingBarStyle() {
       let obj = JSON.parseJsonElement(strJson);
       let topBarFloatingStyle = obj.getElement('$attrs').getElement('topBarFloatingStyle');
       console.info('[topFloatingBarStyle_static_0200] topBarFloatingStyle: ' + JSON.stringify(topBarFloatingStyle));
-      expect(topBarFloatingStyle).not().assertEqual(undefined);
       expect(topBarFloatingStyle.getString('barWidth')).assertEqual('400.00vp');
       console.info('[topFloatingBarStyle_static_0200] END');
       done();
@@ -119,7 +117,6 @@ export default function topFloatingBarStyle() {
       let obj = JSON.parseJsonElement(strJson);
       let topBarFloatingStyle = obj.getElement('$attrs').getElement('topBarFloatingStyle');
       console.info('[topFloatingBarStyle_static_0300] topBarFloatingStyle: ' + JSON.stringify(topBarFloatingStyle));
-      expect(topBarFloatingStyle).not().assertEqual(undefined);
       expect(topBarFloatingStyle.getString('maskColor')).assertEqual('#33000000');
       expect(topBarFloatingStyle.getString('maskHeight')).assertEqual('200.00vp');
       console.info('[topFloatingBarStyle_static_0300] END');
@@ -143,7 +140,6 @@ export default function topFloatingBarStyle() {
       let obj = JSON.parseJsonElement(strJson);
       let topBarFloatingStyle = obj.getElement('$attrs').getElement('topBarFloatingStyle');
       console.info('[topFloatingBarStyle_static_0400] topBarFloatingStyle: ' + JSON.stringify(topBarFloatingStyle));
-      expect(topBarFloatingStyle).not().assertEqual(undefined);
       expect(topBarFloatingStyle.getString('maxWidth')).assertEqual('500.00vp');
       console.info('[topFloatingBarStyle_static_0400] END');
       done();
@@ -166,7 +162,6 @@ export default function topFloatingBarStyle() {
       let obj = JSON.parseJsonElement(strJson);
       let topBarFloatingStyle = obj.getElement('$attrs').getElement('topBarFloatingStyle');
       console.info('[topFloatingBarStyle_static_0500] topBarFloatingStyle: ' + JSON.stringify(topBarFloatingStyle));
-      expect(topBarFloatingStyle).not().assertEqual(undefined);
       console.info('[topFloatingBarStyle_static_0500] END');
       done();
     });
@@ -188,7 +183,6 @@ export default function topFloatingBarStyle() {
       let obj = JSON.parseJsonElement(strJson);
       let topBarFloatingStyle = obj.getElement('$attrs').getElement('topBarFloatingStyle');
       console.info('[topFloatingBarStyle_static_0600] topBarFloatingStyle: ' + JSON.stringify(topBarFloatingStyle));
-      expect(topBarFloatingStyle).not().assertEqual(undefined);
       expect(topBarFloatingStyle.getString('barSideMargin')).assertEqual('16.00vp');
       expect(topBarFloatingStyle.getString('barTopMargin')).assertEqual('8.00vp');
       console.info('[topFloatingBarStyle_static_0600] END');
@@ -232,7 +226,6 @@ export default function topFloatingBarStyle() {
       let obj = JSON.parseJsonElement(strJson);
       let topBarFloatingStyle = obj.getElement('$attrs').getElement('topBarFloatingStyle');
       console.info('[topFloatingBarStyle_static_0800] topBarFloatingStyle: ' + JSON.stringify(topBarFloatingStyle));
-      expect(topBarFloatingStyle).not().assertEqual(undefined);
       expect(topBarFloatingStyle.getString('barWidth')).assertEqual('50.00%');
       console.info('[topFloatingBarStyle_static_0800] END');
       done();
@@ -255,7 +248,6 @@ export default function topFloatingBarStyle() {
       let obj = JSON.parseJsonElement(strJson);
       let topBarFloatingStyle = obj.getElement('$attrs').getElement('topBarFloatingStyle');
       console.info('[topFloatingBarStyle_static_0900] topBarFloatingStyle: ' + JSON.stringify(topBarFloatingStyle));
-      expect(topBarFloatingStyle).not().assertEqual(undefined);
       expect(topBarFloatingStyle.getString('maskHeight')).assertEqual('20.00%');
       console.info('[topFloatingBarStyle_static_0900] END');
       done();
@@ -278,7 +270,6 @@ export default function topFloatingBarStyle() {
       let obj = JSON.parseJsonElement(strJson);
       let topBarFloatingStyle = obj.getElement('$attrs').getElement('topBarFloatingStyle');
       console.info('[topFloatingBarStyle_static_1000] topBarFloatingStyle: ' + JSON.stringify(topBarFloatingStyle));
-      expect(topBarFloatingStyle).not().assertEqual(undefined);
       expect(topBarFloatingStyle.getString('maxWidth')).assertEqual('80.00%');
       console.info('[topFloatingBarStyle_static_1000] END');
       done();
