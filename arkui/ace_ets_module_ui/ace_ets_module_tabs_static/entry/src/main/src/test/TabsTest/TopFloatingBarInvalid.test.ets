@@ -71,7 +71,7 @@ export default function topFloatingBarInvalid(): void {
       console.info('[topFloatingBarInvalid_static_0100] inspector: ' + strJson);
       expect(strJson.length > 2).assertTrue();
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$attrs').getString('barStyle')).assertEqual('top');
+      expect(obj.getElement('$attrs').getString('barStyle')).assertEqual('TabBarStyle.TOP');
       console.info('[topFloatingBarInvalid_static_0100] END');
       done();
     });
@@ -91,7 +91,7 @@ export default function topFloatingBarInvalid(): void {
       console.info('[topFloatingBarInvalid_static_0200] inspector: ' + strJson);
       expect(strJson.length > 2).assertTrue();
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$attrs').getString('barStyle')).assertEqual('top');
+      expect(obj.getElement('$attrs').getString('barStyle')).assertEqual('TabBarStyle.TOP');
       console.info('[topFloatingBarInvalid_static_0200] END');
       done();
     });
@@ -111,7 +111,7 @@ export default function topFloatingBarInvalid(): void {
       console.info('[topFloatingBarInvalid_static_0300] inspector: ' + strJson);
       expect(strJson.length > 2).assertTrue();
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$attrs').getString('barStyle')).assertEqual('top');
+      expect(obj.getElement('$attrs').getString('barStyle')).assertEqual('TabBarStyle.TOP');
       console.info('[topFloatingBarInvalid_static_0300] END');
       done();
     });
@@ -131,7 +131,7 @@ export default function topFloatingBarInvalid(): void {
       console.info('[topFloatingBarInvalid_static_0400] inspector: ' + strJson);
       expect(strJson.length > 2).assertTrue();
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$attrs').getString('barStyle')).assertEqual('top');
+      expect(obj.getElement('$attrs').getString('barStyle')).assertEqual('TabBarStyle.TOP');
       console.info('[topFloatingBarInvalid_static_0400] END');
       done();
     });
@@ -151,7 +151,7 @@ export default function topFloatingBarInvalid(): void {
       console.info('[topFloatingBarInvalid_static_0500] inspector: ' + strJson);
       expect(strJson.length > 2).assertTrue();
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$attrs').getString('barStyle')).assertEqual('top');
+      expect(obj.getElement('$attrs').getString('barStyle')).assertEqual('TabBarStyle.TOP');
       console.info('[topFloatingBarInvalid_static_0500] END');
       done();
     });

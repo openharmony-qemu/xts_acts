@@ -71,7 +71,7 @@ export default function topFloatingBarLegacy(): void {
       console.info('[topFloatingBarLegacy_static_0100] inspector: ' + strJson);
       expect(strJson.length > 2).assertTrue();
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$attrs').getString('barStyle')).assertEqual('bottom');
+      expect(obj.getElement('$attrs').getString('barStyle')).assertEqual('TabBarStyle.BOTTOM');
       console.info('[topFloatingBarLegacy_static_0100] END');
       done();
     });
@@ -91,7 +91,7 @@ export default function topFloatingBarLegacy(): void {
       console.info('[topFloatingBarLegacy_static_0200] inspector: ' + strJson);
       expect(strJson.length > 2).assertTrue();
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$attrs').getString('barStyle')).assertEqual('sidebar');
+      expect(obj.getElement('$attrs').getString('barStyle')).assertEqual('TabBarStyle.SIDEBAR');
       console.info('[topFloatingBarLegacy_static_0200] END');
       done();
     });
@@ -111,7 +111,7 @@ export default function topFloatingBarLegacy(): void {
       console.info('[topFloatingBarLegacy_static_0300] inspector: ' + strJson);
       expect(strJson.length > 2).assertTrue();
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$attrs').getString('barStyle')).assertEqual('bottom');
+      expect(obj.getElement('$attrs').getString('barStyle')).assertEqual('TabBarStyle.BOTTOM');
       console.info('[topFloatingBarLegacy_static_0300] END');
       done();
     });
