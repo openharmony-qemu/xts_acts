@@ -23,7 +23,6 @@ import {
   TabContent,
   Color,
   BarMode,
-  TabBarStyle,
   BarPosition
 } from '@ohos.arkui.component'
 
@@ -42,7 +41,7 @@ struct TopFloatingBarStyle {
           }.tabBar('Green')
         }
         .id('tabs_top_basic')
-        .barStyle(TabBarStyle.TOP)
+        .barStyle('top')
         .topBarFloatingStyle({
           barWidth: 400,
           maskColor: '#33000000',
@@ -61,7 +60,7 @@ struct TopFloatingBarStyle {
           }.tabBar('Green')
         }
         .id('tabs_top_barWidth')
-        .barStyle(TabBarStyle.TOP)
+        .barStyle('top')
         .topBarFloatingStyle({ barWidth: 400 })
         .barMode(BarMode.Scrollable)
         .height('20%')
@@ -76,7 +75,7 @@ struct TopFloatingBarStyle {
           }.tabBar('Green')
         }
         .id('tabs_top_mask')
-        .barStyle(TabBarStyle.TOP)
+        .barStyle('top')
         .topBarFloatingStyle({
           maskColor: '#33000000',
           maskHeight: 200
@@ -94,7 +93,7 @@ struct TopFloatingBarStyle {
           }.tabBar('Green')
         }
         .id('tabs_top_maxWidth')
-        .barStyle(TabBarStyle.TOP)
+        .barStyle('top')
         .topBarFloatingStyle({ maxWidth: 500 })
         .barMode(BarMode.Scrollable)
         .height('20%')
@@ -109,7 +108,7 @@ struct TopFloatingBarStyle {
           }.tabBar('Green')
         }
         .id('tabs_top_offset')
-        .barStyle(TabBarStyle.TOP)
+        .barStyle('top')
         .topBarFloatingStyle({ offset: { x: 20, y: 0 } })
         .barMode(BarMode.Scrollable)
         .height('20%')
@@ -124,7 +123,7 @@ struct TopFloatingBarStyle {
           }.tabBar('Green')
         }
         .id('tabs_top_margin')
-        .barStyle(TabBarStyle.TOP)
+        .barStyle('top')
         .topBarFloatingStyle({
           barSideMargin: 16,
           barTopMargin: 8
@@ -142,7 +141,7 @@ struct TopFloatingBarStyle {
           }.tabBar('Green')
         }
         .id('tabs_top_barWidth_percent')
-        .barStyle(TabBarStyle.TOP)
+        .barStyle('top')
         .topBarFloatingStyle({ barWidth: '50%' })
         .barMode(BarMode.Scrollable)
         .height('20%')
@@ -157,7 +156,7 @@ struct TopFloatingBarStyle {
           }.tabBar('Green')
         }
         .id('tabs_top_maskHeight_percent')
-        .barStyle(TabBarStyle.TOP)
+        .barStyle('top')
         .topBarFloatingStyle({ maskHeight: '20%' })
         .barMode(BarMode.Scrollable)
         .height('20%')
@@ -172,7 +171,7 @@ struct TopFloatingBarStyle {
           }.tabBar('Green')
         }
         .id('tabs_top_maxWidth_percent')
-        .barStyle(TabBarStyle.TOP)
+        .barStyle('top')
         .topBarFloatingStyle({ maxWidth: '80%' })
         .barMode(BarMode.Scrollable)
         .height('20%')
@@ -187,7 +186,7 @@ struct TopFloatingBarStyle {
           }.tabBar('Green')
         }
         .id('tabs_top_margin_percent')
-        .barStyle(TabBarStyle.TOP)
+        .barStyle('top')
         .topBarFloatingStyle({
           barSideMargin: '5%',
           barTopMargin: '2%'
@@ -205,7 +204,7 @@ struct TopFloatingBarStyle {
           }.tabBar('Green')
         }
         .id('tabs_top_barPosition_ignored')
-        .barStyle(TabBarStyle.TOP)
+        .barStyle('top')
         .topBarFloatingStyle({ barWidth: 400 })
         .barMode(BarMode.Scrollable)
         .height('20%')

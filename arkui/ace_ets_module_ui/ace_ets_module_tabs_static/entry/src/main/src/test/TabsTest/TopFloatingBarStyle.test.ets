@@ -73,7 +73,7 @@ export default function topFloatingBarStyle(): void {
       let obj = JSON.parseJsonElement(strJson);
       let topBarFloatingStyle = obj.getElement('$attrs').getElement('topBarFloatingStyle');
       console.info('[topFloatingBarStyle_static_0100] topBarFloatingStyle: ' + JSON.stringify(topBarFloatingStyle));
-      expect(obj.getElement('$attrs').getString('barStyle')).assertEqual('TabBarStyle.TOP');
+      expect(obj.getElement('$attrs').getString('barStyle')).assertEqual('top');
       console.info('[topFloatingBarStyle_static_0100] END');
       done();
     });
@@ -204,7 +204,7 @@ export default function topFloatingBarStyle(): void {
       console.info('[topFloatingBarStyle_static_0700] inspector: ' + strJson);
       expect(strJson.length > 2).assertTrue();
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$attrs').getString('barStyle')).assertEqual('TabBarStyle.TOP');
+      expect(obj.getElement('$attrs').getString('barStyle')).assertEqual('top');
       console.info('[topFloatingBarStyle_static_0700] END');
       done();
     });

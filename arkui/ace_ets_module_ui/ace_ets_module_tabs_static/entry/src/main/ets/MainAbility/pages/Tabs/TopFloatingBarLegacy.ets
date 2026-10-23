@@ -21,8 +21,7 @@ import {
   Tabs,
   TabContent,
   Color,
-  BarMode,
-  TabBarStyle
+  BarMode
 } from '@ohos.arkui.component'
 
 @Entry
@@ -39,7 +38,7 @@ struct TopFloatingBarLegacy {
         }.tabBar('Green')
       }
       .id('tabs_legacy_bottom')
-      .barStyle(TabBarStyle.BOTTOM)
+      .barStyle('bottom')
       .barMode(BarMode.Scrollable)
       .height('25%')
       .width('100%')
@@ -53,7 +52,7 @@ struct TopFloatingBarLegacy {
         }.tabBar('Green')
       }
       .id('tabs_legacy_sidebar')
-      .barStyle(TabBarStyle.SIDEBAR)
+      .barStyle('sidebar')
       .barMode(BarMode.Scrollable)
       .height('25%')
       .width('100%')
@@ -67,7 +66,7 @@ struct TopFloatingBarLegacy {
         }.tabBar('Green')
       }
       .id('tabs_legacy_bottom_ignores_top_floating')
-      .barStyle(TabBarStyle.BOTTOM)
+      .barStyle('bottom')
       .topBarFloatingStyle({
         barWidth: 400,
         maskColor: '#33000000',

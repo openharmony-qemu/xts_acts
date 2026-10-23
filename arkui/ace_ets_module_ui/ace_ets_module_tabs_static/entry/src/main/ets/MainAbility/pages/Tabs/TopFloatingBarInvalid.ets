@@ -22,8 +22,7 @@ import {
   Tabs,
   TabContent,
   Color,
-  BarMode,
-  TabBarStyle
+  BarMode
 } from '@ohos.arkui.component'
 
 @Entry
@@ -41,7 +40,7 @@ struct TopFloatingBarInvalid {
           }.tabBar('Green')
         }
         .id('tabs_top_barWidth_negative')
-        .barStyle(TabBarStyle.TOP)
+        .barStyle('top')
         .topBarFloatingStyle({ barWidth: -100 })
         .barMode(BarMode.Scrollable)
         .height('20%')
@@ -56,7 +55,7 @@ struct TopFloatingBarInvalid {
           }.tabBar('Green')
         }
         .id('tabs_top_barWidth_nan')
-        .barStyle(TabBarStyle.TOP)
+        .barStyle('top')
         .topBarFloatingStyle({ barWidth: NaN })
         .barMode(BarMode.Scrollable)
         .height('20%')
@@ -71,7 +70,7 @@ struct TopFloatingBarInvalid {
           }.tabBar('Green')
         }
         .id('tabs_top_sideMargin_negative')
-        .barStyle(TabBarStyle.TOP)
+        .barStyle('top')
         .topBarFloatingStyle({ barSideMargin: -16 })
         .barMode(BarMode.Scrollable)
         .height('20%')
@@ -86,7 +85,7 @@ struct TopFloatingBarInvalid {
           }.tabBar('Green')
         }
         .id('tabs_top_topMargin_negative')
-        .barStyle(TabBarStyle.TOP)
+        .barStyle('top')
         .topBarFloatingStyle({ barTopMargin: -8 })
         .barMode(BarMode.Scrollable)
         .height('20%')
@@ -101,7 +100,7 @@ struct TopFloatingBarInvalid {
           }.tabBar('Green')
         }
         .id('tabs_top_maxWidth_negative')
-        .barStyle(TabBarStyle.TOP)
+        .barStyle('top')
         .topBarFloatingStyle({ maxWidth: -1 })
         .barMode(BarMode.Scrollable)
         .height('20%')
