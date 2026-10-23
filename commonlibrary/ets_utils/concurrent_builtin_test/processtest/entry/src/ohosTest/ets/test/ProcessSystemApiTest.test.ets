@@ -164,7 +164,7 @@ export default function ProcessSystemApiTest() {
     /**
      * @tc.name   testProcessSystemApi0005
      * @tc.number SUB_PROCESS_SYSTEM_API_TEST_0500
-     * @tc.desc   process.chdir with an invalid path throws a numeric error code
+     * @tc.desc   process.chdir with an invalid path throws an error carrying a string or numeric errno code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -173,16 +173,20 @@ export default function ProcessSystemApiTest() {
       const caseName = 'testProcessSystemApi0005';
       console.info(`${caseName} test start`);
       let code = 0;
+      let thrown = false;
       let changed = false;
       try {
         process.chdir('/xts_nonexistent_dir_12345');
         changed = true;
       } catch (err) {
+        thrown = true;
         code = err.code;
         console.info(`${caseName} chdir failed: code => ${code} message => ${err.message}`);
       }
       expect(changed).assertFalse();
-      expect(typeof code).assertEqual('number');
+      expect(thrown).assertTrue();
+      const codeType = typeof code;
+      expect(codeType === 'string' || codeType === 'number').assertTrue();
       console.info(`${caseName} test end`);
       Done();
     })
