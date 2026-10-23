@@ -927,7 +927,7 @@ export default function atomicsWaitTest() {
 
     /**
      * @tc.name   testAtomicsWaitNotifyError0024
-     * @tc.number SUB_BUILTINS_Atomics_wait_TEST_0024
+     * @tc.number SUB_BUILTINS_ATOMICS_WAIT_TEST_0100
      * @tc.desc   Test Atomics.notify typedArray/index validation error paths
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

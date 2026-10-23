@@ -1592,7 +1592,7 @@ export default function workerErrorCodeTest() {
 
     /**
      * @tc.name   testThreadWorkerErrorCode0049
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_Error_Code_4900
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_ERROR_CODE_4900
      * @tc.desc   Host ThreadWorker API called in worker thread throws 10200005
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1635,7 +1635,7 @@ export default function workerErrorCodeTest() {
 
     /**
      * @tc.name   testThreadWorkerErrorCode0050
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_Error_Code_5000
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_ERROR_CODE_5000
      * @tc.desc   callGlobalCallObjectMethod timeout boundary 0/negative/non-integer/overflow
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1658,7 +1658,7 @@ export default function workerErrorCodeTest() {
 
     /**
      * @tc.name   testThreadWorkerErrorCode0051
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_Error_Code_5100
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_ERROR_CODE_5100
      * @tc.desc   unregisterGlobalCallObject with unmatched name does not throw
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1697,7 +1697,7 @@ export default function workerErrorCodeTest() {
 
     /**
      * @tc.name   testThreadWorkerErrorCode0052
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_Error_Code_5200
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_ERROR_CODE_5200
      * @tc.desc   100 concurrent postMessage round trips are all delivered
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1741,7 +1741,7 @@ export default function workerErrorCodeTest() {
 
     /**
      * @tc.name   testThreadWorkerErrorCode0053
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_Error_Code_5300
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_ERROR_CODE_5300
      * @tc.desc   Second terminate is either idempotent (no throw) or throws 10200004
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1777,7 +1777,7 @@ export default function workerErrorCodeTest() {
 
     /**
      * @tc.name   testThreadWorkerErrorCode0054
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_Error_Code_5400
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_ERROR_CODE_5400
      * @tc.desc   WorkerOptions.shared true is either ignored (worker usable) or rejected with a BusinessError code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

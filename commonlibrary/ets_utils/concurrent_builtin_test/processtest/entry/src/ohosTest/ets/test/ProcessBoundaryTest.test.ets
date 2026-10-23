@@ -993,7 +993,7 @@ export default function ProcessBoundaryTest() {
 
     /**
      * @tc.name   ProcessBoundaryTest_ProcessManager_kill_006
-     * @tc.number SUB_PROCESS_BOUNDARY_TEST_KILL_0006
+     * @tc.number SUB_PROCESS_BOUNDARY_TEST_PROCESSMANAGER_KILL_0100
      * @tc.desc   process.ProcessManager.kill with signal boundary values 0,1,64,65 (range 1-64).
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST

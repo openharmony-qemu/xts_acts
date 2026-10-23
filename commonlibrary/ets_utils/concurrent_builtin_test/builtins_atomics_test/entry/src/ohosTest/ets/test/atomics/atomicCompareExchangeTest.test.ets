@@ -2946,7 +2946,7 @@ export default function atomicsCompareExchangeTest() {
 
     /**
      * @tc.name   testAtomicsCompareExchange0101
-     * @tc.number SUB_BUILTINS_Atomics_compareExchange_TEST_0100
+     * @tc.number SUB_BUILTINS_ATOMICS_COMPAREEXCHANGE_TEST_0100
      * @tc.desc   Test compareExchange BigInt64Array and BigUint64Array bigint overload
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2974,7 +2974,7 @@ export default function atomicsCompareExchangeTest() {
 
     /**
      * @tc.name   testAtomicsCompareExchange0102
-     * @tc.number SUB_BUILTINS_Atomics_compareExchange_TEST_0200
+     * @tc.number SUB_BUILTINS_ATOMICS_COMPAREEXCHANGE_TEST_0200
      * @tc.desc   Test compareExchange NaN expected and replacement are converted to 0 for Int32Array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
