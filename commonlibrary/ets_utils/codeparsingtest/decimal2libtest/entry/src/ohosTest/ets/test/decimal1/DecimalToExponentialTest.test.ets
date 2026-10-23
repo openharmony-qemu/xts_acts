@@ -40,8 +40,6 @@ export default function DecimalToExponentialTest() {
     afterAll(() => {
     });
 
-    // === From Part01 ===
-
     /**
      * @tc.name testDecimalToExponentialPart01Test001
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART01_TEST_0100
@@ -50,7 +48,6 @@ export default function DecimalToExponentialTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _0100, _0200, _0300, _0400, _0500, _0600, _0700, _0800, _0900, _1000, _1100, _1200, _1300, _1400 (14 tests merged)
     it('testDecimalToExponentialPart01Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new Decimal(8.88).toExponential()).assertEqual('8.88e+0');
       expect(new Decimal(8.88).toExponential(1, Decimal.ROUND_HALF_UP)).assertEqual('8.9e+0');
@@ -76,7 +73,6 @@ export default function DecimalToExponentialTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _1500, _1600, _1700, _1800, _1900, _2000, _2100, _2200, _2300, _2400, _2500, _2600, _2700 (13 tests merged)
     it('testDecimalToExponentialPart01Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new Decimal(NaN).toExponential()).assertEqual('NaN');
       expect(new Decimal(Infinity).toExponential()).assertEqual('Infinity');
@@ -103,7 +99,6 @@ export default function DecimalToExponentialTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _2800, _2900, _3000, _3100, _3200, _3300, _4700, _4800, _4900, _5000, _5100, _5200 (12 tests merged)
     it('testDecimalToExponentialPart01Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let dec: Decimal = new Decimal(45.6);
       expect(dec.toExponential(0, Decimal.ROUND_HALF_UP)).assertEqual('5e+1');
@@ -128,7 +123,6 @@ export default function DecimalToExponentialTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _3400, _3500, _3600, _3700, _3800, _3900, _4000, _4100, _4200, _4300, _4400, _4500, _4600 (13 tests merged)
     it('testDecimalToExponentialPart01Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new Decimal(123.456).toExponential(0, Decimal.ROUND_HALF_UP)).assertEqual('1e+2');
       expect(new Decimal(123.456).toExponential(2, Decimal.ROUND_HALF_UP)).assertEqual('1.23e+2');
@@ -153,7 +147,6 @@ export default function DecimalToExponentialTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _5300, _5400, _5500, _5600, _5700, _5800, _5900, _6000, _6100, _6200, _6300, _6400 (12 tests merged)
     it('testDecimalToExponentialPart01Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new Decimal(2.5).toExponential(0, Decimal.ROUND_HALF_UP)).assertEqual('3e+0');
       expect(new Decimal(2.5).toExponential(0, Decimal.ROUND_HALF_DOWN)).assertEqual('2e+0');
@@ -177,7 +170,6 @@ export default function DecimalToExponentialTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _6500, _6600, _6700, _6800, _6900, _7000, _7100, _7200, _7300 (9 tests merged)
     it('testDecimalToExponentialPart01Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: string = new Decimal(12.34).toExponential();
       let b: string = new Decimal(12.34).toExponential(4, Decimal.ROUND_HALF_UP);
@@ -211,7 +203,6 @@ export default function DecimalToExponentialTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _7400, _7500, _7600, _7700, _7800, _7900, _8000, _8100 (8 tests merged)
     it('testDecimalToExponentialPart01Test074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let probeThrows = (dp: ESObject): void => {
         let dec: Decimal = new Decimal(45.6);
@@ -249,7 +240,6 @@ export default function DecimalToExponentialTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _8200, _8300, _8400, _8500, _8600, _8700, _8800, _8900, _9000 (9 tests merged)
     it('testDecimalToExponentialPart01Test082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let probeRoundingThrows = (rm: ESObject): void => {
         let dec: Decimal = new Decimal(45.6);
@@ -292,8 +282,6 @@ export default function DecimalToExponentialTest() {
       expect(decCarry.toExponential(2, Decimal.ROUND_HALF_UP)).assertEqual('1.00e+1');
     });
 
-    // === From Part02 ===
-
     /**
      * @tc.name testDecimalToExponentialPart02Test001
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART02_TEST_0100
@@ -302,7 +290,6 @@ export default function DecimalToExponentialTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _0100, _0200, _0300, _3400 (4 tests merged)
     it('testDecimalToExponentialPart02Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let dec: Decimal = new Decimal(45.6);
       let s2: string = dec.toExponential(2);
@@ -326,7 +313,6 @@ export default function DecimalToExponentialTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _0400, _0500, _0600, _0700, _0800, _0900, _1000, _1100, _1200, _1300, _1400, _1500 (12 tests merged)
     it('testDecimalToExponentialPart02Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let dec: Decimal = new Decimal(45.6);
       let u: ESObject = undefined;
@@ -391,7 +377,6 @@ export default function DecimalToExponentialTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _1600, _1700, _1800, _1900, _2000, _2100, _2200, _2300, _2400, _2500, _2600, _2700 (12 tests merged)
     it('testDecimalToExponentialPart02Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let dec: Decimal = new Decimal(45.6);
       try {
@@ -480,7 +465,6 @@ export default function DecimalToExponentialTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _2800, _2900, _3000, _3100, _3200, _3300 (6 tests merged)
     it('testDecimalToExponentialPart02Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let probeThrows = (val: ESObject): void => {
         let dec: Decimal = new Decimal(45.6);
@@ -508,7 +492,6 @@ export default function DecimalToExponentialTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _3500, _3600, _3700, _3800, _3900, _4000, _4100, _4200, _4300, _4400, _4500 (11 tests merged)
     it('testDecimalToExponentialPart02Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let dec45: Decimal = new Decimal(45.6);
       expect(dec45.toExponential(1)).assertEqual('4.6e+1');
@@ -562,7 +545,6 @@ export default function DecimalToExponentialTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _4600, _4700, _4800, _4900, _5000 (5 tests merged)
     it('testDecimalToExponentialPart02Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cfg1: ESObject = { rounding: 9 };
       try {
@@ -608,7 +590,6 @@ export default function DecimalToExponentialTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _5100, _5200, _5300, _5400, _5500, _5600, _5700, _5800, _5900, _6000, _6100, _6200, _6300, _6400 (14 tests merged)
     it('testDecimalToExponentialPart02Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new Decimal(999999).toExponential(0)).assertEqual('1e+6');
       expect(new Decimal(45.6).toExponential(3)).assertEqual('4.560e+1');
@@ -640,7 +621,6 @@ export default function DecimalToExponentialTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _6500, _6600, _6700, _6800, _6900, _7000, _7100, _7200, _7300, _7400, _7500 (11 tests merged)
     it('testDecimalToExponentialPart02Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let probeThrows = (dp: ESObject): void => {
         let dec: Decimal = new Decimal(45.6);
@@ -665,8 +645,6 @@ export default function DecimalToExponentialTest() {
       probeThrows(Number.MAX_VALUE);
     });
 
-    // === From Part03 ===
-
     /**
      * @tc.name testDecimalToExponentialPart03Test001
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART03_TEST_0100
@@ -675,7 +653,6 @@ export default function DecimalToExponentialTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _0100, _0200, _0300, _0400, _0500, _0600, _0700, _0800, _0900, _1000, _1100, _1200, _1300 (13 tests merged)
     it('testDecimalToExponentialPart03Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal('123.456');
       let undef: ESObject = undefined;
@@ -722,7 +699,6 @@ export default function DecimalToExponentialTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _1400, _1500, _1600, _1700, _1800, _1900, _2000, _2100, _2200, _2300, _2400, _2500, _2600 (13 tests merged)
     it('testDecimalToExponentialPart03Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal('123.45');
       expect(d.toExponential(-0)).assertEqual('1e+2');
@@ -775,7 +751,6 @@ export default function DecimalToExponentialTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _2700, _2800, _2900, _3000, _3100, _3200, _3300, _3400, _3500, _3600 (10 tests merged)
     it('testDecimalToExponentialPart03Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal('123.45');
       try {
@@ -887,7 +862,6 @@ export default function DecimalToExponentialTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _3700, _3800, _3900, _4000 (4 tests merged)
     it('testDecimalToExponentialPart03Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal('123.45');
       try {
@@ -933,7 +907,6 @@ export default function DecimalToExponentialTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _4100, _4200, _4300, _4400, _4500, _4600, _4700, _4800, _4900, _5000, _5100 (11 tests merged)
     it('testDecimalToExponentialPart03Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal('123.45');
       expect(typeof d.toExponential()).assertEqual('string');
@@ -994,7 +967,6 @@ export default function DecimalToExponentialTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _5200, _5300, _5400, _5500, _5600, _5700, _5800, _5900, _6000, _6100, _6200, _6300, _6400 (13 tests merged)
     it('testDecimalToExponentialPart03Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new Decimal(-0).toExponential()).assertEqual('0e+0');
       let pos: Decimal = new Decimal('123.45');
@@ -1067,7 +1039,6 @@ export default function DecimalToExponentialTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _6500, _6600, _6700, _6800, _6900, _7000, _7100, _7200 (8 tests merged)
     it('testDecimalToExponentialPart03Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Decimal.ROUND_UP).assertEqual(0);
       expect(Decimal.ROUND_HALF_UP).assertEqual(4);
@@ -1097,7 +1068,6 @@ export default function DecimalToExponentialTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _7300, _7400, _7500, _7600, _7700, _7800, _7900, _8000 (8 tests merged)
     it('testDecimalToExponentialPart03Test073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal('1.235');
       expect(d.toExponential(2, Decimal.ROUND_HALF_CEILING)).assertEqual('1.24e+0');

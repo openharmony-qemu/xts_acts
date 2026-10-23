@@ -44,8 +44,6 @@ export default function DecimalToBinaryTest(): void {
     afterEach(() => { common.resetDecimalConfig(Decimal); });
     afterAll(() => {});
 
-    // === From Part01 ===
-
     /**
      * @tc.name testDecimalToBinaryPart01Test001
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_BINARY_PART01_TEST_0100
@@ -54,7 +52,6 @@ export default function DecimalToBinaryTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _0100, _0200, _2500, _2600, _2700, _2800, _2900, _3400, _5300, _5400, _5500, _5600, _8100, _8200 (14 tests merged)
     it('testDecimalToBinaryPart01Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let dec256: Decimal = new Decimal(256);
       expect(dec256.toBinary()).assertEqual('0b100000000');
@@ -92,7 +89,6 @@ export default function DecimalToBinaryTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _0400, _0500, _0600, _0700, _0800, _0900, _7800, _7900, _8000 (9 tests merged)
     it('testDecimalToBinaryPart01Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new Decimal(256).toBinary(1, Decimal.ROUND_DOWN)).assertEqual('0b1p+8');
       expect(new Decimal(3).toBinary(2, Decimal.ROUND_DOWN)).assertEqual('0b1.1p+1');
@@ -116,7 +112,6 @@ export default function DecimalToBinaryTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _0300, _1100, _1200, _1300, _1400, _1500, _1600, _1700, _1800, _1900, _2000, _2100, _2200, _2300, _2400 (15 tests merged)
     it('testDecimalToBinaryPart01Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let dec3: Decimal = new Decimal(3);
       let base: string = dec3.toBinary(1, Decimal.ROUND_DOWN);
@@ -146,7 +141,6 @@ export default function DecimalToBinaryTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _4400, _4500, _4600, _4700, _4800, _4900, _5000, _5100, _5200 (9 tests merged)
     it('testDecimalToBinaryPart01Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new Decimal(NaN).toBinary()).assertEqual('NaN');
       expect(new Decimal(Infinity).toBinary()).assertEqual('Infinity');
@@ -167,7 +161,6 @@ export default function DecimalToBinaryTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _3000, _3100, _3200, _3300, _3500, _6900, _7000, _7100, _7200, _7300, _7500, _7600 (12 tests merged)
     it('testDecimalToBinaryPart01Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new Decimal(0.5).toBinary()).assertEqual('0b0.1');
       expect(new Decimal(1.5).toBinary()).assertEqual('0b1.1');
@@ -192,7 +185,6 @@ export default function DecimalToBinaryTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _1000, _3600, _3700, _3800, _3900, _4000, _4100, _4200, _4300 (9 tests merged)
     it('testDecimalToBinaryPart01Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         new Decimal(3).toBinary(1.9, Decimal.ROUND_DOWN);
@@ -271,7 +263,6 @@ export default function DecimalToBinaryTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _5700, _5800, _5900, _6000, _6100, _6200, _6300, _6400, _6500, _6600, _6700, _6800, _7400, _7700 (14 tests merged)
     it('testDecimalToBinaryPart01Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let maxValOut: string = new Decimal(Number.MAX_VALUE).toBinary();
       expect(maxValOut.indexOf('0b1') === 0).assertTrue();
@@ -292,8 +283,6 @@ export default function DecimalToBinaryTest(): void {
       expect(new Decimal(v).toBinary()).assertEqual(pow53Exp);
     });
 
-    // === From Part02 ===
-
     /**
      * @tc.name testDecimalToBinaryPart02Test001
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_BINARY_PART02_TEST_0100
@@ -302,7 +291,6 @@ export default function DecimalToBinaryTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _0100, _0200, _0300, _0400, _0500, _0600, _0700, _0800, _0900, _1000, _1100, _1200, _1300, _1400, _1500 (15 tests merged)
     it('testDecimalToBinaryPart02Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new Decimal(256).toBinary(1)).assertEqual('0b1p+8');
       let a: ESObject = new Decimal(256);
@@ -369,7 +357,6 @@ export default function DecimalToBinaryTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _1600, _1700, _1800, _1900, _2000, _2100, _2200, _2300, _2400 (9 tests merged)
     it('testDecimalToBinaryPart02Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new Decimal(0.5).toBinary(1)).assertEqual('0b1p-1');
       expect(new Decimal(0.75).toBinary(2)).assertEqual('0b1.1p-1');
@@ -391,7 +378,6 @@ export default function DecimalToBinaryTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _2500, _2600, _2700, _2800, _2900, _3000, _3100, _3200 (8 tests merged)
     it('testDecimalToBinaryPart02Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new Decimal(31).toBinary(5)).assertEqual('0b1.1111p+4');
       expect(new Decimal(100).toBinary(5)).assertEqual('0b1.1001p+6');
@@ -411,7 +397,6 @@ export default function DecimalToBinaryTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _3300, _3400, _3500, _3600, _3700, _3800, _3900, _4000, _4100, _4200, _4300 (11 tests merged)
     it('testDecimalToBinaryPart02Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r1: string = new Decimal(256).toBinary(1);
       expect(typeof r1).assertEqual('string');
@@ -445,7 +430,6 @@ export default function DecimalToBinaryTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _4400, _4500, _4600, _4700, _4800, _4900 (6 tests merged)
     it('testDecimalToBinaryPart02Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s1: string = new Decimal(5).toBinary(1);
       let s2: string = new Decimal(5).toBinary(5);
@@ -465,7 +449,6 @@ export default function DecimalToBinaryTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _5000, _5100, _5200, _5300, _5400, _5500, _5600, _5700, _5800, _5900, _6000, _6100, _6200, _6300 (14 tests merged)
     it('testDecimalToBinaryPart02Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let probeThrows = (sd: ESObject): void => {
         try {
@@ -499,7 +482,6 @@ export default function DecimalToBinaryTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _6400, _6500, _6600, _6700, _6800, _6900, _7000, _7100, _7200, _7300, _7400, _7500, _7600, _7700 (14 tests merged)
     it('testDecimalToBinaryPart02Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       Decimal.set({ defaults: true });
       expect(new Decimal(2.75).toBinary(3)).assertEqual('0b1.1p+1');
@@ -548,8 +530,6 @@ export default function DecimalToBinaryTest(): void {
       Decimal.set({ defaults: true });
     });
 
-    // === From Part03 ===
-
     /**
      * @tc.name testDecimalToBinaryPart03Test001
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_BINARY_PART03_TEST_0100
@@ -558,7 +538,6 @@ export default function DecimalToBinaryTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _0100, _0200, _0300, _0400, _0500, _0600, _0700, _0800 (8 tests merged)
     it('testDecimalToBinaryPart03Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let dec256: Decimal = new Decimal(256);
       expect(dec256.toBinary()).assertEqual('0b100000000');
@@ -605,7 +584,6 @@ export default function DecimalToBinaryTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _0900, _1000, _1100, _1200, _1300, _1400 (6 tests merged)
     it('testDecimalToBinaryPart03Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let dec3: Decimal = new Decimal(3);
       Decimal.set({ rounding: Decimal.ROUND_DOWN });
@@ -649,7 +627,6 @@ export default function DecimalToBinaryTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _1500, _1600, _1700, _1800, _1900, _2000, _2100, _2200, _2300, _2400, _2500, _2600, _2700 (13 tests merged)
     it('testDecimalToBinaryPart03Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let dec: Decimal = new Decimal('1e-7');
       let full: string = dec.toBinary();
@@ -707,7 +684,6 @@ export default function DecimalToBinaryTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _2800, _2900, _3000, _3100, _3200, _3300, _3400, _3500, _3600, _3700, _3800, _3900, _4000 (13 tests merged)
     it('testDecimalToBinaryPart03Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let dec255: Decimal = new Decimal(255);
       let s1: string = dec255.toBinary(4);
@@ -769,7 +745,6 @@ export default function DecimalToBinaryTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _4100, _4200, _4300, _4400, _4500, _4600, _4700, _4800, _4900, _5000, _5100, _5200, _5300 (13 tests merged)
     it('testDecimalToBinaryPart03Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let dec3: Decimal = new Decimal(3);
       let errCode: number = -1;
@@ -905,7 +880,6 @@ export default function DecimalToBinaryTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _5400, _5500, _5600, _5700, _5800, _5900, _6000, _6100, _6200, _6300 (10 tests merged)
     it('testDecimalToBinaryPart03Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let dec3: Decimal = new Decimal(3);
       dec3.toBinary(1, Decimal.ROUND_DOWN);
@@ -955,7 +929,6 @@ export default function DecimalToBinaryTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: _6400, _6500, _6600, _6700, _6800, _6900, _7000, _7100, _7200, _7300, _7400, _7500 (12 tests merged)
     it('testDecimalToBinaryPart03Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let dec3: Decimal = new Decimal(3);
       let errCode: number = -1;

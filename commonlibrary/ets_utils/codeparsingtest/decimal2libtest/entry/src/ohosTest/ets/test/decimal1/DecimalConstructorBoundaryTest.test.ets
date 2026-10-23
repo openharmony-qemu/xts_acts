@@ -46,23 +46,19 @@ export default function DecimalConstructorBoundaryTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: testDecimalConstructorBoundaryTest001, 002, 003 (3 merged)
     it('testDecimalConstructorBoundaryTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // test001: null throws 401
       {
         expect(common.getThrownCode(() => {
           let v: ESObject = null;
           new Decimal(v as Value);
         })).assertEqual(401);
       }
-      // test002: undefined throws 401
       {
         expect(common.getThrownCode(() => {
           let v: ESObject = undefined;
           new Decimal(v as Value);
         })).assertEqual(401);
       }
-      // test003: missing argument throws 401
       {
         expect(common.getThrownCode(() => {
           let missing: ESObject = undefined;
@@ -79,30 +75,25 @@ export default function DecimalConstructorBoundaryTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: testDecimalConstructorBoundaryTest004, 005, 006, 007 (4 merged)
     it('testDecimalConstructorBoundaryTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // test004: boolean true throws 401
       {
         expect(common.getThrownCode(() => {
           let v: ESObject = true;
           new Decimal(v as Value);
         })).assertEqual(401);
       }
-      // test005: boolean false throws 401
       {
         expect(common.getThrownCode(() => {
           let v: ESObject = false;
           new Decimal(v as Value);
         })).assertEqual(401);
       }
-      // test006: plain object { a: 1 } throws 401
       {
         expect(common.getThrownCode(() => {
           let v: ESObject = { a: 1 };
           new Decimal(v as Value);
         })).assertEqual(401);
       }
-      // test007: array [1, 2, 3] throws 401
       {
         expect(common.getThrownCode(() => {
           let v: ESObject = [1, 2, 3];
@@ -119,25 +110,19 @@ export default function DecimalConstructorBoundaryTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: testDecimalConstructorBoundaryTest008, 009, 010, 011, 012 (5 merged)
     it('testDecimalConstructorBoundaryTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // test008: empty string throws 401
       {
         expect(common.getThrownCode(() => new Decimal(''))).assertEqual(401);
       }
-      // test009: invalid string 'abc' throws 401
       {
         expect(common.getThrownCode(() => new Decimal('abc'))).assertEqual(401);
       }
-      // test010: malformed numeric string '1.2.3' throws 401
       {
         expect(common.getThrownCode(() => new Decimal('1.2.3'))).assertEqual(401);
       }
-      // test011: zero-width space string throws 401
       {
         expect(common.getThrownCode(() => new Decimal('\u200B'))).assertEqual(401);
       }
-      // test012: string with surrounding spaces throws 401
       {
         expect(common.getThrownCode(() => new Decimal('  5.7  '))).assertEqual(401);
       }
@@ -151,44 +136,37 @@ export default function DecimalConstructorBoundaryTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    // Consolidated: testDecimalConstructorBoundaryTest013, 014, 015, 016, 017, 018, 019 (7 merged)
     it('testDecimalConstructorBoundaryTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // test013: Map instance throws 401
       {
         expect(common.getThrownCode(() => {
           let v: ESObject = new Map<string, number>();
           new Decimal(v as Value);
         })).assertEqual(401);
       }
-      // test014: Set instance throws 401
       {
         expect(common.getThrownCode(() => {
           let v: ESObject = new Set<number>();
           new Decimal(v as Value);
         })).assertEqual(401);
       }
-      // test015: Date instance throws 401
       {
         expect(common.getThrownCode(() => {
           let v: ESObject = new Date(0);
           new Decimal(v as Value);
         })).assertEqual(401);
       }
-      // test016: RegExp instance throws 401
       {
         expect(common.getThrownCode(() => {
           let v: ESObject = new RegExp('a+');
           new Decimal(v as Value);
         })).assertEqual(401);
       }
-      // test017: function value throws 401
       {
         expect(common.getThrownCode(() => {
           let v: ESObject = returnZero;
           new Decimal(v as Value);
         })).assertEqual(401);
       }
-      // test018: BigInt value 100n throws 401
       {
         expect(common.getThrownCode(() => {
           let v: ESObject = common.createBigInt(100);
