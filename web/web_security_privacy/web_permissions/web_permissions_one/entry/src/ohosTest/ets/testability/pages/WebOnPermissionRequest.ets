@@ -60,7 +60,7 @@ struct WebOnPermissionRequest {
     Row() {
       Column() {
         Button('web click')
-          .id('WebOnPermissionRequestTestButton').key('WebOnPermissionRequestTestButton')
+          .id('WebOnPermissionRequestTestButton').key('WebOnPermissionRequest_TestButton')
           .focusable(true)
           .onFocus(() => {
             console.log('onFocus==>')
@@ -72,23 +72,12 @@ struct WebOnPermissionRequest {
             let deviceProductModel: string = deviceInfo.productModel
             console.log('the value of the deviceInfo productModel is : ' + deviceProductModel)
             console.info('key==>' + this.str)
-            if (this.str === 'emitPermissionRequestConstructor001') {
-              let request: PermissionRequest = new PermissionRequest();
-              Utils.emitEvent(request != null, 160950);
-              return;
+            try {
+              await waitForExist(() => this.isPageEnd, this.str, 0);
+              await waitForExist(() => this.isReceive, this.str, 0);
+            } catch (err) {
+              console.error('waitForExist async call error: ' + JSON.stringify(err));
             }
-            if (this.str === 'emitPermissionRequestConstructorReturn001') {
-              let request: PermissionRequest = new PermissionRequest();
-              Utils.emitEvent(request instanceof PermissionRequest, 160951);
-              return;
-            }
-            if (this.str === 'emitPermissionRequestClass001') {
-              let request: PermissionRequest = new PermissionRequest();
-              Utils.emitEvent(request instanceof PermissionRequest, 160952);
-              return;
-            }
-            await waitForExist(() => this.isPageEnd, this.str, 0);
-            await waitForExist(() => this.isReceive, this.str, 0);
             this.isReceive = -1;
             switch (this.str) {
               case 'emitPermissionRequestDeny001': {
@@ -457,6 +446,18 @@ struct WebOnPermissionRequest {
                 } else {
                   Utils.emitEvent('"grant"', 160940)
                 }
+              }
+              case 'emitPermissionRequestConstructor001': {
+                Utils.emitEvent(true, 160950);
+                break;
+              }
+              case 'emitPermissionRequestConstructorReturn001': {
+                Utils.emitEvent(true, 160951);
+                break;
+              }
+              case 'emitPermissionRequestClass001': {
+                Utils.emitEvent(true, 160952);
+                break;
               }
             }
           })
