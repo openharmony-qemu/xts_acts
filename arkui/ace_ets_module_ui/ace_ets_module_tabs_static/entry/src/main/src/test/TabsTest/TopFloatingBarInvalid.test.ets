@@ -21,7 +21,7 @@ import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 
-export default function topFloatingBarInvalid() {
+export default function topFloatingBarInvalid(): void {
   describe('topFloatingBarInvalid', () => {
 
     beforeAll(async (): Promise<void> => {

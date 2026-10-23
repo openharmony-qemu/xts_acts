@@ -21,7 +21,7 @@ import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 
-export default function topFloatingBarStyle() {
+export default function topFloatingBarStyle(): void {
   describe('topFloatingBarStyle', () => {
 
     beforeAll(async (): Promise<void> => {

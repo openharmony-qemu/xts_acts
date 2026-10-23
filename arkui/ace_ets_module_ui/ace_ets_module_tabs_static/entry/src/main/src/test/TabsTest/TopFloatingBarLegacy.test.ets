@@ -21,7 +21,7 @@ import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 
-export default function topFloatingBarLegacy() {
+export default function topFloatingBarLegacy(): void {
   describe('topFloatingBarLegacy', () => {
 
     beforeAll(async (): Promise<void> => {
