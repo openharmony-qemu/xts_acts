@@ -52,23 +52,15 @@ struct WebOnPermissionRequest {
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
         this.isReceive = 0;
+        setTimeout(() => {
+          this.runPermissionRequestAction();
+        }, 0);
       }
     }
   }
 
-  build() {
-    Row() {
-      Column() {
-        Button('web click')
-          .id('WebOnPermissionRequestTestButton').key('WebOnPermissionRequest_TestButton')
-          .focusable(true)
-          .onFocus(() => {
-            console.log('onFocus==>')
-          })
-          .onBlur(() => {
-            console.log('onBlur==>')
-          })
-          .onClick(async () => {
+  private async runPermissionRequestAction(): Promise<void> {
+
             let deviceProductModel: string = deviceInfo.productModel
             console.log('the value of the deviceInfo productModel is : ' + deviceProductModel)
             console.info('key==>' + this.str)
@@ -460,8 +452,24 @@ struct WebOnPermissionRequest {
                 break;
               }
             }
-          })
+  }
 
+  build() {
+    Row() {
+      Column() {
+        Button('web click')
+          .id('WebOnPermissionRequestTestButton').key('WebOnPermissionRequest_TestButton')
+          .focusable(true)
+          .defaultFocus(true)
+          .onFocus(() => {
+            console.log('onFocus==>')
+          })
+          .onBlur(() => {
+            console.log('onBlur==>')
+          })
+          .onClick(async () => {
+            await this.runPermissionRequestAction();
+          })
         Web({ src: $rawfile('permissionRequestTest.html'), controller: this.controller })
           .height('50%')
           .width('100%')
