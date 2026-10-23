@@ -70,7 +70,7 @@ async function setFull(driver: Driver) {
 
 async function firstSplit(driver: Driver) {
   await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
-  await driver.delayMs(5000);
+  await driver.delayMs(3000);
   let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId });
   console.log(`${TestTag}, firstSplit window,${JSON.stringify(window)}`);
   if (window != null) {
@@ -96,7 +96,7 @@ async function setSplit(driver: Driver) {
   console.log(`${TestTag}, setSplit scbCom,${JSON.stringify(scbCom)}`);
   if (scbCom != null) {
     await startAbility('com.uitest.acts', 'EntryAbility')
-    await driver.delayMs(5000)
+    await driver.delayMs(3000)
     let btn0 = await driver.findComponent(ON.text('稍后提示'))
     console.log(`${TestTag}, setSplit scbCom,${JSON.stringify(btn0)}`);
     if (btn0 != null) {
@@ -174,7 +174,7 @@ export default function uiUiWindowTest() {
     afterAll(async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
       const driver = Driver.create();
-      await driver.delayMs(5000);
+      await driver.delayMs(3000);
       let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId });
       console.log(`${TestTag}, afterAll window,${JSON.stringify(window)}`);
       if (window != null) {
@@ -202,7 +202,7 @@ export default function uiUiWindowTest() {
      */
     it('testApi9_UiWindow_getBundleName', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(5000)
+      await driver.delayMs(3000)
       let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
       let name = await window.getBundleName()
       expect(name == 'com.uitestScene.acts').assertTrue()
@@ -219,7 +219,7 @@ export default function uiUiWindowTest() {
      */
     it('testApi9_UiWindow_getTitle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(5000)
+      await driver.delayMs(3000)
       let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
       let title = await window.getTitle()
       expect(title == '').assertTrue()
@@ -236,7 +236,7 @@ export default function uiUiWindowTest() {
      */
     it('testApi9_UiWindow_Attr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(5000)
+      await driver.delayMs(3000)
       let window = await driver.findWindow({
         bundleName: 'com.uitestScene.acts',
         focused: true,
@@ -263,7 +263,7 @@ export default function uiUiWindowTest() {
      */
     it('testWindowResume_split', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(5000)
+      await driver.delayMs(3000)
       try {
         await setSplit(driver)
         await driver.delayMs(waitUiReadyMs)
@@ -306,7 +306,7 @@ export default function uiUiWindowTest() {
      */
     it('testSplit_split1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(5000)
+      await driver.delayMs(3000)
       try {
         await setFull(driver)
         await driver.delayMs(waitUiReadyMs)
@@ -349,7 +349,7 @@ export default function uiUiWindowTest() {
         await btn1.click()
         await driver.delayMs(waitUiReadyMs * 7)
       }
-      await driver.delayMs(5000);
+      await driver.delayMs(3000);
       try {
         await setFloat(driver)
         await driver.delayMs(waitUiReadyMs)
@@ -392,7 +392,7 @@ export default function uiUiWindowTest() {
      */
     it('testWindowMoveTo_full', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(5000)
+      await driver.delayMs(3000)
       try {
         await setFull(driver)
         await driver.delayMs(waitUiReadyMs)
@@ -414,7 +414,7 @@ export default function uiUiWindowTest() {
      */
     it('testWindowMoveTo_float', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(5000)
+      await driver.delayMs(3000)
       try {
         await setFloat(driver)
         await driver.delayMs(waitUiReadyMs)
@@ -444,7 +444,7 @@ export default function uiUiWindowTest() {
      */
     it('testWindowMoveTo_split', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(5000)
+      await driver.delayMs(3000)
       try {
         await setSplit(driver)
         await driver.delayMs(waitUiReadyMs)
@@ -467,7 +467,7 @@ export default function uiUiWindowTest() {
      */
     it('testWindowResize_full', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(5000)
+      await driver.delayMs(3000)
       try {
         await setFull(driver)
         await driver.delayMs(waitUiReadyMs)
@@ -490,7 +490,7 @@ export default function uiUiWindowTest() {
      */
     it('testWindowResizeA_float', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(5000)
+      await driver.delayMs(3000)
       try {
         await setFloat(driver)
         await driver.delayMs(waitUiReadyMs)
@@ -538,7 +538,7 @@ export default function uiUiWindowTest() {
      */
     it('testWindowResizeA_UP_float', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(5000)
+      await driver.delayMs(3000)
       try {
         await setFloat(driver)
         await driver.delayMs(waitUiReadyMs)
@@ -588,7 +588,7 @@ export default function uiUiWindowTest() {
      */
     it('testWindowResizeB_float', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(5000)
+      await driver.delayMs(3000)
       try {
         await setFloat(driver)
         await driver.delayMs(waitUiReadyMs)
@@ -647,7 +647,7 @@ export default function uiUiWindowTest() {
      */
     it('testWindowResizeB_UP_float', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(5000)
+      await driver.delayMs(3000)
       try {
         await setFloat(driver)
         await driver.delayMs(waitUiReadyMs)
@@ -684,7 +684,7 @@ export default function uiUiWindowTest() {
      */
     it('testWindowResizeB_split1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(5000)
+      await driver.delayMs(3000)
       try {
         await setSplit(driver)
         await driver.delayMs(waitUiReadyMs)
@@ -758,7 +758,7 @@ export default function uiUiWindowTest() {
      */
     it('testWindowMinimize_full', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(5000)
+      await driver.delayMs(3000)
       try {
         await setFull(driver)
         await driver.delayMs(waitUiReadyMs)
@@ -784,7 +784,7 @@ export default function uiUiWindowTest() {
      */
     it('testWindowMinimize_float', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(5000)
+      await driver.delayMs(3000)
       try {
         await setFloat(driver)
         await driver.delayMs(waitUiReadyMs)
@@ -810,7 +810,7 @@ export default function uiUiWindowTest() {
      */
     it('testWindowMinimize_split', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(5000)
+      await driver.delayMs(3000)
       try {
         await setSplit(driver)
         await driver.delayMs(waitUiReadyMs)
@@ -837,7 +837,7 @@ export default function uiUiWindowTest() {
      */
     it('testWindowClose_full', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(5000)
+      await driver.delayMs(3000)
       try {
         await setFull(driver)
         await driver.delayMs(waitUiReadyMs)
@@ -863,7 +863,7 @@ export default function uiUiWindowTest() {
      */
     it('testWindowClose_float', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(5000)
+      await driver.delayMs(3000)
       try {
         await setFloat(driver)
         await driver.delayMs(waitUiReadyMs)
@@ -889,7 +889,7 @@ export default function uiUiWindowTest() {
      */
     it('testWindowClose_split', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(5000)
+      await driver.delayMs(3000)
       try {
         await setSplit(driver)
         await driver.delayMs(waitUiReadyMs)
@@ -917,7 +917,7 @@ export default function uiUiWindowTest() {
      */
     it('testWindowMaximize_full', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(5000)
+      await driver.delayMs(3000)
       try {
         await setFull(driver)
         await driver.delayMs(waitUiReadyMs)
@@ -939,7 +939,7 @@ export default function uiUiWindowTest() {
      */
     it('testWindowMaximize_float', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(5000)
+      await driver.delayMs(3000)
       try {
         await setFloat(driver)
         await driver.delayMs(waitUiReadyMs)
@@ -967,7 +967,7 @@ export default function uiUiWindowTest() {
      */
     it('testWindowMaximize_split', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(5000)
+      await driver.delayMs(3000)
       try {
         await setSplit(driver)
         await driver.delayMs(waitUiReadyMs)
