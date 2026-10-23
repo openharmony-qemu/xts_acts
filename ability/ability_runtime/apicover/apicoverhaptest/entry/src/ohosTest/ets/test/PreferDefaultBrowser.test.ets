@@ -447,6 +447,25 @@ export default function PreferDefaultBrowserTest() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_1250
+     * @tc.number SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_1250
+     * @tc.desc   startAbility callback with https uri and preferDefaultBrowser undefined; must error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_1250', Level.LEVEL0, (done: Function) => {
+      const tag = 'SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_1250';
+      try {
+        getContext().startAbility(httpsWant(), optionsPreferAbnormal(undefined), (err: BusinessError) => {
+          finishPreferAbnormal(tag, err, done);
+        });
+      } catch (error) {
+        finishPreferAbnormalCatch(tag, error, done);
+      }
+    });
+
+    /**
      * @tc.name   SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_1300
      * @tc.number SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_1300
      * @tc.desc   startAbility callback with https uri and preferDefaultBrowser number; must error
