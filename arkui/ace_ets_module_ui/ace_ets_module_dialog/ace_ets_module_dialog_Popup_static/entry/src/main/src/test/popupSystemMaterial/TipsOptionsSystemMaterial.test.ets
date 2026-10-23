@@ -68,7 +68,7 @@ export default function TipsOptionsSystemMaterialTest(): void {
        }
     });
 
-    it('TipsOptionsSystemMaterial_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let driver: Driver = Driver.create();
        try {
          await CommonFunc.sleep(SLEEP_TIME);
@@ -85,7 +85,7 @@ export default function TipsOptionsSystemMaterialTest(): void {
       done();
     });
 
-    it('TipsOptionsSystemMaterial_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         let driver: Driver = Driver.create();
         await CommonFunc.sleep(1000);
@@ -102,13 +102,13 @@ export default function TipsOptionsSystemMaterialTest(): void {
         await CommonFunc.sleep(500);
         done();
       } catch (err) {
-        console.error('TipsOptionsSystemMaterial_0200 error: ' + err);
+        console.error('SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0200 error: ' + err);
         expect().assertFail();
         done();
       }
     });
 
-    it('TipsOptionsSystemMaterial_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let driver: Driver = Driver.create();
        try {
          await CommonFunc.sleep(SLEEP_TIME);
@@ -133,7 +133,7 @@ export default function TipsOptionsSystemMaterialTest(): void {
       done();
     });
 
-    it('TipsOptionsSystemMaterial_0400', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0400', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let driver: Driver = Driver.create();
        try {
          await CommonFunc.sleep(SLEEP_TIME);
@@ -158,7 +158,7 @@ export default function TipsOptionsSystemMaterialTest(): void {
       done();
     });
 
-    it('TipsOptionsSystemMaterial_0500', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0500', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let driver: Driver = Driver.create();
        try {
          await CommonFunc.sleep(SLEEP_TIME);
@@ -183,7 +183,7 @@ export default function TipsOptionsSystemMaterialTest(): void {
       done();
     });
 
-    it('TipsOptionsSystemMaterial_0600', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0600', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let driver: Driver = Driver.create();
        try {
          await CommonFunc.sleep(SLEEP_TIME);

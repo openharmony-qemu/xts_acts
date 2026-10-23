@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,16 +49,16 @@ export default function TipsOptionsSystemMaterial() {
     });
 
     /**
-     * @tc.name   TipsOptionsSystemMaterial_0100
-     * @tc.number SUB_ARKUI_API_TipsOptionsSystemMaterial_0100
+     * @tc.name   SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0100
+     * @tc.number SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0100
      * @tc.desc   To test TipsOptions systemMaterial property with undefined parameter
      * @tc.desc   ArkUIAPI 
 	   * @tc.type   FUNCTION 
 	   * @tc.size   MEDIUMTEST 
      * @tc.level  LEVEL2
      */
-    it('TipsOptionsSystemMaterial_0100', Level.LEVEL2, async (done: Function) => {
-      console.info('TipsOptionsSystemMaterial_0100 START');
+    it('SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0100', Level.LEVEL2, async (done: Function) => {
+      console.info('SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
 
@@ -70,7 +70,7 @@ export default function TipsOptionsSystemMaterial() {
       let centerY = Math.floor((bounds.top + bounds.bottom) / 2);
       await driver.mouseMoveTo({ x: centerX, y: centerY });
       
-      console.info('TipsOptionsSystemMaterial_0100 Button with undefined systemMaterial exists');
+      console.info('SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0100 Button with undefined systemMaterial exists');
       
       let popupText = await driver.findComponent(ON.text('TipsOptions Undefined Test'));
 
@@ -84,21 +84,21 @@ export default function TipsOptionsSystemMaterial() {
       await CommonFunc.sleep(1500);
       await driver.mouseMoveTo({ x: 1, y: 1 });
       await CommonFunc.sleep(1500);
-      console.info('TipsOptionsSystemMaterial_0100 END');
+      console.info('SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0100 END');
       done();
     });
 
     /**
-     * @tc.name   TipsOptionsSystemMaterial_0200
-     * @tc.number SUB_ARKUI_API_TipsOptionsSystemMaterial_0200
+     * @tc.name   SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0200
+     * @tc.number SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0200
      * @tc.desc   To test TipsOptions systemMaterial property with hdsMaterial.Material THICK
      * @tc.desc   ArkUIAPI 
 	   * @tc.type   FUNCTION 
 	   * @tc.size   MEDIUMTEST 
      * @tc.level  LEVEL2
      */
-    it('TipsOptionsSystemMaterial_0200', Level.LEVEL2, async (done: Function) => {
-      console.info('TipsOptionsSystemMaterial_0200 START');
+    it('SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0200', Level.LEVEL2, async (done: Function) => {
+      console.info('SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0200 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
 
@@ -108,7 +108,7 @@ export default function TipsOptionsSystemMaterial() {
       let centerX = Math.floor((bounds.left + bounds.right) / 2);
       let centerY = Math.floor((bounds.top + bounds.bottom) / 2);
       await driver.mouseMoveTo({ x: centerX, y: centerY });
-      console.info('TipsOptionsSystemMaterial_0200 Button with hdsMaterial THICK systemMaterial exists');
+      console.info('SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0200 Button with hdsMaterial THICK systemMaterial exists');
       
       let popupText = await driver.findComponent(ON.text('TipsOptions HDS THICK Test'));
       expect(popupText).not().assertUndefined();
@@ -117,21 +117,21 @@ export default function TipsOptionsSystemMaterial() {
       await driver.mouseMoveTo({ x: 1, y: 1 });
 
       await CommonFunc.sleep(1500);
-      console.info('TipsOptionsSystemMaterial_0200 END');
+      console.info('SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0200 END');
       done();
     });
 
     /**
-     * @tc.name   TipsOptionsSystemMaterial_0300
-     * @tc.number SUB_ARKUI_API_TipsOptionsSystemMaterial_0300
+     * @tc.name   SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0300
+     * @tc.number SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0300
      * @tc.desc   To test TipsOptions systemMaterial property with uiMaterial.Material SEMI_TRANSPARENT
      * @tc.desc   ArkUIAPI 
 	   * @tc.type   FUNCTION 
 	   * @tc.size   MEDIUMTEST 
      * @tc.level  LEVEL2
      */
-    it('TipsOptionsSystemMaterial_0300', Level.LEVEL2, async (done: Function) => {
-      console.info('TipsOptionsSystemMaterial_0300 START');
+    it('SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0300', Level.LEVEL2, async (done: Function) => {
+      console.info('SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0300 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
 
@@ -141,7 +141,7 @@ export default function TipsOptionsSystemMaterial() {
       let centerX = Math.floor((bounds.left + bounds.right) / 2);
       let centerY = Math.floor((bounds.top + bounds.bottom) / 2);
       await driver.mouseMoveTo({ x: centerX, y: centerY });
-      console.info('TipsOptionsSystemMaterial_0300 Button with SEMI_TRANSPARENT systemMaterial exists');
+      console.info('SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0300 Button with SEMI_TRANSPARENT systemMaterial exists');
       let popupText = await driver.findComponent(ON.text('TipsOptions SEMI_TRANSPARENT Test'));
 
       expect(popupText).not().assertUndefined();
@@ -149,21 +149,21 @@ export default function TipsOptionsSystemMaterial() {
       await driver.mouseMoveTo({ x: 1, y: 1 });
 
       await CommonFunc.sleep(1500);
-      console.info('TipsOptionsSystemMaterial_0300 END');
+      console.info('SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0300 END');
       done();
     });
 
     /**
-     * @tc.name   TipsOptionsSystemMaterial_0400
-     * @tc.number SUB_ARKUI_API_TipsOptionsSystemMaterial_0400
+     * @tc.name   SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0400
+     * @tc.number SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0400
      * @tc.desc   To test TipsOptions systemMaterial property with uiMaterial.ImmersiveMaterial THICK
      * @tc.desc   ArkUIAPI 
 	   * @tc.type   FUNCTION 
 	   * @tc.size   MEDIUMTEST 
      * @tc.level  LEVEL2
      */
-    it('TipsOptionsSystemMaterial_0400', Level.LEVEL2, async (done: Function) => {
-      console.info('TipsOptionsSystemMaterial_0400 START');
+    it('SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0400', Level.LEVEL2, async (done: Function) => {
+      console.info('SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0400 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
 
@@ -173,7 +173,7 @@ export default function TipsOptionsSystemMaterial() {
       let centerX = Math.floor((bounds.left + bounds.right) / 2);
       let centerY = Math.floor((bounds.top + bounds.bottom) / 2);
       await driver.mouseMoveTo({ x: centerX, y: centerY });
-      console.info('TipsOptionsSystemMaterial_0400 Button with Immersive THICK systemMaterial exists');
+      console.info('SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0400 Button with Immersive THICK systemMaterial exists');
       let popupText = await driver.findComponent(ON.text('TipsOptions Immersive THICK Test'));
       
       expect(popupText).not().assertUndefined();
@@ -182,21 +182,21 @@ export default function TipsOptionsSystemMaterial() {
       await driver.mouseMoveTo({ x: 1, y: 1 });
 
       await CommonFunc.sleep(1500);
-      console.info('TipsOptionsSystemMaterial_0400 END');
+      console.info('SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0400 END');
       done();
     });
 
     /**
-     * @tc.name   TipsOptionsSystemMaterial_0500
-     * @tc.number SUB_ARKUI_API_TipsOptionsSystemMaterial_0500
+     * @tc.name   SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0500
+     * @tc.number SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0500
      * @tc.desc   To test TipsOptions systemMaterial property with uiMaterial.ImmersiveMaterial ULTRA_THIN
      * @tc.desc   ArkUIAPI 
 	   * @tc.type   FUNCTION 
 	   * @tc.size   MEDIUMTEST 
      * @tc.level  LEVEL2
      */
-    it('TipsOptionsSystemMaterial_0500', Level.LEVEL2, async (done: Function) => {
-      console.info('TipsOptionsSystemMaterial_0500 START');
+    it('SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0500', Level.LEVEL2, async (done: Function) => {
+      console.info('SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0500 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
 
@@ -206,7 +206,7 @@ export default function TipsOptionsSystemMaterial() {
       let centerX = Math.floor((bounds.left + bounds.right) / 2);
       let centerY = Math.floor((bounds.top + bounds.bottom) / 2);
       await driver.mouseMoveTo({ x: centerX, y: centerY });
-      console.info('TipsOptionsSystemMaterial_0500 Button with Immersive ULTRA_THIN systemMaterial exists');
+      console.info('SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0500 Button with Immersive ULTRA_THIN systemMaterial exists');
       let popupText = await driver.findComponent(ON.text('TipsOptions Immersive ULTRA_THIN Test'));
 
       expect(popupText).not().assertUndefined();
@@ -215,21 +215,21 @@ export default function TipsOptionsSystemMaterial() {
       await driver.mouseMoveTo({ x: 1, y: 1 });
 
       await CommonFunc.sleep(1500);
-      console.info('TipsOptionsSystemMaterial_0500 END');
+      console.info('SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0500 END');
       done();
     });
 
     /**
-     * @tc.name   TipsOptionsSystemMaterial_0600
-     * @tc.number SUB_ARKUI_API_TipsOptionsSystemMaterial_0600
+     * @tc.name   SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0600
+     * @tc.number SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0600
      * @tc.desc   To test TipsOptions systemMaterial property with uiMaterial.Material NONE
      * @tc.desc   ArkUIAPI 
 	   * @tc.type   FUNCTION 
 	   * @tc.size   MEDIUMTEST 
      * @tc.level  LEVEL2
      */
-    it('TipsOptionsSystemMaterial_0600', Level.LEVEL2, async (done: Function) => {
-      console.info('TipsOptionsSystemMaterial_0600 START');
+    it('SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0600', Level.LEVEL2, async (done: Function) => {
+      console.info('SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0600 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
 
@@ -239,7 +239,7 @@ export default function TipsOptionsSystemMaterial() {
       let centerX = Math.floor((bounds.left + bounds.right) / 2);
       let centerY = Math.floor((bounds.top + bounds.bottom) / 2);
       await driver.mouseMoveTo({ x: centerX, y: centerY });
-      console.info('TipsOptionsSystemMaterial_0600 Button with NONE systemMaterial exists');
+      console.info('SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0600 Button with NONE systemMaterial exists');
       let popupText = await driver.findComponent(ON.text('TipsOptions NONE Test'));
  
       expect(popupText).not().assertUndefined();
@@ -247,7 +247,7 @@ export default function TipsOptionsSystemMaterial() {
       await CommonFunc.sleep(1500);
       await driver.mouseMoveTo({ x: 1, y: 1 });
       await CommonFunc.sleep(1500);
-      console.info('TipsOptionsSystemMaterial_0600 END');
+      console.info('SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0600 END');
       done();
     });
 
