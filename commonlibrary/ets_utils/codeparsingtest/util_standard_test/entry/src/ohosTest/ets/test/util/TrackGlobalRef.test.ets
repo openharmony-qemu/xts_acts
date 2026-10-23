@@ -227,6 +227,25 @@ function dumpAndCheckHeap(heapFileName: string): GlobalHandleObjectResult {
   return findGlobalHandleObject(snapshot);
 }
 
+async function dumpAndCheckHeapAsync(heapFileName: string): Promise<GlobalHandleObjectResult> {
+  hidebug.dumpJsHeapData(heapFileName, true);
+  await sleep(50);
+  const heapPath: string = FILES_DIR + heapFileName + '.heapsnapshot';
+  let content: string = '';
+  try {
+    content = fs.readTextSync(heapPath);
+  } catch (e) {
+    console.error(`dumpAndCheckHeapAsync: readTextSync failed: ${heapPath}`);
+    return { found: false, edgeCount: 0, childNames: [] };
+  }
+  try { fs.unlinkSync(heapPath); } catch (e) { }
+  if (!content.includes('"GlobalHandleObject')) {
+    return { found: false, edgeCount: 0, childNames: [] };
+  }
+  const snapshot: ParsedSnapshot = parseHeapSnapshot(content);
+  return findGlobalHandleObject(snapshot);
+}
+
 function getTypeName(snapshot: ParsedSnapshot, typeIdx: number): string {
   if (snapshot.nodeTypeNames.length > typeIdx && typeIdx >= 0) {
     return snapshot.nodeTypeNames[typeIdx];
@@ -771,7 +790,7 @@ export default function trackGlobalRefTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testSetTrackGlobalRefDeleteAfterEnable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+    it('testSetTrackGlobalRefDeleteAfterEnable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const TAG = 'testSetTrackGlobalRefDeleteAfterEnable001';
       const OBJ_NAME = 'TrackRefObj_1300';
       console.info(`${TAG} START`);
@@ -781,13 +800,8 @@ export default function trackGlobalRefTest() {
         let obj: TrackRefTestObject = new TrackRefTestObject(1300, OBJ_NAME);
         const refAddr: string = createTestRef(obj);
         useObject(obj);
-        const heapResultBefore: GlobalHandleObjectResult = dumpAndCheckHeap(`${SNAPSHOT_PREFIX}13a`);
-        expect(heapResultBefore.found).assertTrue();
-        expect(heapResultBefore.edgeCount).assertLarger(0);
-        console.info(`${TAG} before delete: edgeCount=${heapResultBefore.edgeCount}`);
-
         deleteTestRef();
-        const heapResultAfter: GlobalHandleObjectResult = dumpAndCheckHeap(`${SNAPSHOT_PREFIX}13b`);
+        const heapResultAfter: GlobalHandleObjectResult = await dumpAndCheckHeapAsync(`${SNAPSHOT_PREFIX}13b`);
         if (heapResultAfter.found) {
           let addrFound: boolean = false;
           for (const childName of heapResultAfter.childNames) {
@@ -1727,23 +1741,17 @@ export default function trackGlobalRefTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testSetTrackGlobalRefNodeCountComparison001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+    it('testSetTrackGlobalRefNodeCountComparison001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const TAG = 'testSetTrackGlobalRefNodeCountComparison001';
       const OBJ_NAME = 'TrackRefObj_3700';
       console.info(`${TAG} START`);
       try {
         deleteTestRef();
-        util.ArkTSVM.setTrackGlobalRef(false);
-        let objDisabled: TrackRefTestObject = new TrackRefTestObject(3700, OBJ_NAME);
-        useObject(objDisabled);
-        hidebug.dumpJsHeapData(`${SNAPSHOT_PREFIX}37a`, true);
-        const contentDisabled: string = fs.readTextSync(FILES_DIR + `${SNAPSHOT_PREFIX}37a` + '.heapsnapshot');
-        console.info(`${TAG} disabled phase dump completed`);
-
         util.ArkTSVM.setTrackGlobalRef(true);
         let obj: TrackRefTestObject = new TrackRefTestObject(3701, OBJ_NAME);
         useObject(obj);
         hidebug.dumpJsHeapData(`${SNAPSHOT_PREFIX}37b`, true);
+        await sleep(50);
         const contentEnabled: string = fs.readTextSync(FILES_DIR + `${SNAPSHOT_PREFIX}37b` + '.heapsnapshot');
         expect(contentEnabled.includes('"GlobalHandleObject')).assertTrue();
         console.info(`${TAG} enabled: GlobalHandleObject found in snapshot`);

@@ -58,6 +58,9 @@ import util2FPTest from './utilfp/Util2FP.test';
 import util3FPTest from './utilfp/Util3FP.test';
 
 export default function testsuite() {
+  utilGetGlobalHandleCountTest();
+  vmHeapMemoryPressureTest();
+  trackGlobalRefTest();
   base64HelperTest();
   base64HelperTest02();
   base64HelperTest03();
@@ -98,9 +101,6 @@ export default function testsuite() {
   textDecoderTest02();
   textEncoderTest();
   textEncoderTest02();
-  utilGetGlobalHandleCountTest();
-  vmHeapMemoryPressureTest();
-  trackGlobalRefTest();
   utilTest();
   util2Test();
   util3Test();
