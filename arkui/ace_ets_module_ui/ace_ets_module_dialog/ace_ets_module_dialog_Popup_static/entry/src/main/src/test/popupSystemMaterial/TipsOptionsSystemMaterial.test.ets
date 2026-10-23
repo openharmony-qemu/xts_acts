@@ -68,6 +68,11 @@ export default function TipsOptionsSystemMaterialTest(): void {
        }
     });
 
+    /**
+     * @tc.name SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0100
+     * @tc.number SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0100
+     * @tc.desc Test TipsOptions with undefined parameter
+     */
     it('SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let driver: Driver = Driver.create();
        try {
@@ -85,6 +90,11 @@ export default function TipsOptionsSystemMaterialTest(): void {
       done();
     });
 
+    /**
+     * @tc.name SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0200
+     * @tc.number SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0200
+     * @tc.desc Test TipsOptions with HDS THICK parameter
+     */
     it('SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         let driver: Driver = Driver.create();
@@ -108,6 +118,11 @@ export default function TipsOptionsSystemMaterialTest(): void {
       }
     });
 
+    /**
+     * @tc.name SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0300
+     * @tc.number SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0300
+     * @tc.desc Test TipsOptions with SEMI_TRANSPARENT parameter
+     */
     it('SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let driver: Driver = Driver.create();
        try {
@@ -133,6 +148,11 @@ export default function TipsOptionsSystemMaterialTest(): void {
       done();
     });
 
+    /**
+     * @tc.name SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0400
+     * @tc.number SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0400
+     * @tc.desc Test TipsOptions with Immersive THICK parameter
+     */
     it('SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0400', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let driver: Driver = Driver.create();
        try {
@@ -158,6 +178,11 @@ export default function TipsOptionsSystemMaterialTest(): void {
       done();
     });
 
+    /**
+     * @tc.name SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0500
+     * @tc.number SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0500
+     * @tc.desc Test TipsOptions with Immersive ULTRA_THIN parameter
+     */
     it('SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0500', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let driver: Driver = Driver.create();
        try {
@@ -183,6 +208,11 @@ export default function TipsOptionsSystemMaterialTest(): void {
       done();
     });
 
+    /**
+     * @tc.name SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0600
+     * @tc.number SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0600
+     * @tc.desc Test TipsOptions with NONE parameter
+     */
     it('SUB_ARKUI_ARKUI_TIPS_OPTIONS_SYSTEM_MATERIAL_0600', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let driver: Driver = Driver.create();
        try {
