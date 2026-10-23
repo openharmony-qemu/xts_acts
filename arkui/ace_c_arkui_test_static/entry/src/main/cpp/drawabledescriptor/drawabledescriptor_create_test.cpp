@@ -135,7 +135,7 @@ static ani_double TestDrawableDescriptorCreate003(ani_env* env, ani_object info)
     ani_object args = nullptr;
 
     ASSERT_EQ(OH_ArkUI_NativeModule_GetDrawableDescriptorFromAniValue(env, args, &drawable), ARKUI_ERROR_CODE_PARAM_INVALID);
-    ASSERT_EQ(OH_ArkUI_NativeModule_GetDrawableDescriptorFromResourceAniValue(env, args, &drawable), ARKUI_ERROR_CODE_NO_ERROR);
+    ASSERT_EQ(OH_ArkUI_NativeModule_GetDrawableDescriptorFromResourceAniValue(env, args, &drawable), ARKUI_ERROR_CODE_PARAM_INVALID);
 
     NAPI_END;
 }
