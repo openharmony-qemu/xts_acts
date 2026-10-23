@@ -61,14 +61,14 @@ function finishPreferCase(tag: string, prefer: boolean, err: Error | undefined,
   done();
 }
 
-function finishPreferLoose(tag: string, err: Error | undefined, done: () => void): void {
+function finishPreferOmit(tag: string, err: Error | undefined, done: () => void): void {
   if (err === undefined || err.code === 0) {
     hilog.info(0x0000, tag, 'success');
     done();
     return;
   }
   hilog.info(0x0000, tag, `err code=${err.code} msg=${err.message}`);
-  expect(true).assertTrue();
+  expect(err.code === INVALID_PARAM_ERR).assertFalse();
   done();
 }
 
@@ -79,9 +79,9 @@ function finishPreferCatch(tag: string, prefer: boolean, error: Object, done: ()
   done();
 }
 
-function finishPreferLooseCatch(tag: string, error: Object, done: () => void): void {
+function finishPreferOmitCatch(tag: string, error: Object, done: () => void): void {
   hilog.info(0x0000, tag, `catch ${JSON.stringify(error)}`);
-  expect(true).assertTrue();
+  expect(error !== undefined).assertTrue();
   done();
 }
 
@@ -271,10 +271,10 @@ export default function PreferDefaultBrowserStaticTest(): void {
         const tag: string = 'SUB_Ability_AbilityRuntime_PreferDefaultBrowser_Static_StartAbility_0800';
         try {
           requireContext().startAbility(httpsWant(), optionsOmit(), (err: BusinessError | null) => {
-            finishPreferLoose(tag, err === null ? undefined : err, done);
+            finishPreferOmit(tag, err === null ? undefined : err, done);
           });
         } catch (error) {
-          finishPreferLooseCatch(tag, error, done);
+          finishPreferOmitCatch(tag, error, done);
         }
       });
 
@@ -339,10 +339,10 @@ export default function PreferDefaultBrowserStaticTest(): void {
         const tag: string = 'SUB_Ability_AbilityRuntime_PreferDefaultBrowser_Static_StartAbility_1100';
         try {
           requireContext().startAbility(httpWant(), optionsOmit(), (err: BusinessError | null) => {
-            finishPreferLoose(tag, err === null ? undefined : err, done);
+            finishPreferOmit(tag, err === null ? undefined : err, done);
           });
         } catch (error) {
-          finishPreferLooseCatch(tag, error, done);
+          finishPreferOmitCatch(tag, error, done);
         }
       });
 
