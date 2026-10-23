@@ -114,6 +114,10 @@
     "MainAbility/pages/ChipV2/ChipV2Page",
     "MainAbility/pages/ChipV2/ChipV2PrefixIconTest",
     "MainAbility/pages/ChipV2/ChipV2SizeTest",
-    "MainAbility/pages/index/index"
+    "MainAbility/pages/index/index",
+    "MainAbility/pages/ChipGroup/ChipGroupOnItemsChange",
+    "MainAbility/pages/ChipGroup/abnormal/ChipGroupOnItemsChangeAbnormal",
+    "MainAbility/pages/ChipGroupV2/ChipGroupV2OnItemsChange",
+    "MainAbility/pages/ChipGroupV2/ChipGroupV2OnItemsChangeAbnormal"
   ]
 }
