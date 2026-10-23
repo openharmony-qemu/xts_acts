@@ -74,6 +74,11 @@ struct CalendarPickerFirstDayOfWeek {
         .firstDayOfWeek(CalendarFirstDayOfWeek.SUN)
         .margin(10)
         .id('calendarPicker008')
+
+      CalendarPicker({ hintRadius: 10, selected: this.selectedDate })
+        .firstDayOfWeek(undefined)
+        .margin(10)
+        .id('calendarPicker011')
     }
     .width('100%')
     .height('100%')
