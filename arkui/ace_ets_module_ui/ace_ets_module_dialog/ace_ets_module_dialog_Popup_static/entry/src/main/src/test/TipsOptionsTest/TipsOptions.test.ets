@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import { Driver, ON } from '@kit.TestKit';
 import router from '@ohos.router';
@@ -22,119 +21,206 @@ import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import inspector from '@ohos.arkui.inspector';
+import { uiMaterial } from '@kit.ArkUI';
 
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 const SLEEP_TIME = 1000;
-const LOG_CHUNK_SIZE = 500;
+const PAGE_URL = 'MainAbility/pages/popupSystemMaterial/TipsOptionsSystemMaterial';
 
-function logLongString(tag: string, longStr: string): void {
-  let len = longStr.length;
-  let part = 1;
-  for (let i = 0; i < len; i += LOG_CHUNK_SIZE) {
-    let end = i + LOG_CHUNK_SIZE;
-    if (end > len) {
-      end = len;
-    }
-    console.info(`${tag} [${part}] ${longStr.substring(i, end)}`);
-    part++;
-  }
+async function hoverButtonAndFindTips(
+  driver: Driver,
+  buttonId: string,
+  tipsText: string
+): Promise<void> {
+  let button = await driver.findComponent(ON.id(buttonId));
+  let bounds = await button?.getBounds();
+  let centerX: int = Math.floor(((bounds?.left ?? 0) + (bounds?.right ?? 0)) / 2).toInt();
+  let centerY: int = Math.floor(((bounds?.top ?? 0) + (bounds?.bottom ?? 0)) / 2).toInt();
+  // 涉及坐标
+  await driver.mouseMoveTo({x: centerX, y: centerY, displayId: displayID});
+  
+  await CommonFunc.sleep(1000);
+  let popupText = await driver.findComponent(ON.text(tipsText));
+  expect(!!popupText).assertEqual(true);
 }
 
-export default function TipsOptionsTest(): void {
-  describe('TipsOptionsTest', () => {
+export default function TipsOptionsSystemMaterialTest(): void {
+  describe('TipsOptionsSystemMaterial', (): void => {
 
-    beforeEach(async () => {
-
-      console.info("TipsOptionsTest beforeEach start");
-      let options: router.RouterOptions = {
-        url: 'MainAbility/pages/TipsOptions/TipsOptions',
-      };
+    beforeEach(async (): Promise<void> => {
+      let options: router.RouterOptions = { url: PAGE_URL };
       try {
-        const routerInstance = AppStorage.get<Router>("router") as Router;
+        const routerInstance = AppStorage.get<Router>('router') as Router;
         routerInstance.clear();
         let pages = routerInstance.getState();
-        console.info("TipsOptionsTest state pages: " + JSON.stringify(pages));
-        console.info("TipsOptionsTest state pages.name: " + pages.name);
-        if (pages.name !== "TipsExample") {
+        if (pages.name !== 'TipsOptionsSystemMaterial') {
           routerInstance.replaceUrl(options);
+          await CommonFunc.sleep(2000);
         }
-        // Wait for page to load
-        await Utils.sleep(500);
       } catch (err) {
-        console.error("TipsOptionsTest replaceUrl error: " + err);
+        console.error('replace TipsOptionsSystemMaterial page error: ' + err);
         expect().assertFail();
       }
     });
 
-    afterEach(async () => {
+    afterEach(async (): Promise<void> => {
        try {
          await Utils.sleep(SLEEP_TIME);
        } catch (err) {
          console.info('sleep err: ' + JSON.stringify(err));
        }
-      console.info("TipsOptionsTest after each called");
     });
 
-    /**
-     * @tc.number TipsOptionsTest_001
-     * @tc.name tipsOptionsShowAtAnchor1
-     * @tc.desc Test TipsOptions showAtAnchor property for tips1 button, read from component and print component tree
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('tipsOptionsShowAtAnchor1', Level.LEVEL1, async () => {
+    it('TipsOptionsSystemMaterial_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let driver: Driver = Driver.create();
+       try {
+         await CommonFunc.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await hoverButtonAndFindTips(driver, 'undefined', 'TipsOptions Undefined Test');
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+      expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
+      expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
+      done();
+    });
 
-      console.info('TipsOptionsTest execute: tipsOptionsShowAtAnchor1 START');
+    it('TipsOptionsSystemMaterial_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        const driver = Driver.create();
+        let driver: Driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        let button = await driver.findComponent(ON.id('hds_thick'));
+        let bounds = await button?.getBounds();
+        let centerX: int = Math.floor(((bounds?.left ?? 0) + (bounds?.right ?? 0)) / 2).toInt();
+        let centerY: int = Math.floor(((bounds?.top ?? 0) + (bounds?.bottom ?? 0)) / 2).toInt();
+        // 涉及坐标
+        await driver.mouseMoveTo({x: centerX, y: centerY, displayId: displayID});
         
-        const button = await driver.findComponent(ON.id('tips1'));
-        console.info('TipsOptionsTest: tipsOptionsShowAtAnchor1 - found tips1 button component');
-        expect(!!button).assertEqual(true);
+        await CommonFunc.sleep(1000);
+        let popupText = await driver.findComponent(ON.text('TipsOptions HDS THICK Test'));
+        expect(popupText).not().assertUndefined();
+        await CommonFunc.sleep(500);
+        // 涉及坐标
+        await driver.mouseMoveTo({x: 1, y: 1, displayId: displayID});
         
-        let node = JSON.parseJsonElement(inspector.getInspectorByKey('tips1'));
-        console.info('TipsOptionsTest: tipsOptionsShowAtAnchor1 - got node from inspector');
-        logLongString('TipsOptionsTest: tipsOptionsShowAtAnchor1 node =', JSON.stringifyJsonElement(node));
-        expect(node != null).assertTrue();
-        
-        console.info('TipsOptionsTest execute: tipsOptionsShowAtAnchor1 END');
-      } catch (error) {
-        console.error('TipsOptionsTest execute: tipsOptionsShowAtAnchor1 error:' + error);
+        await CommonFunc.sleep(500);
+        done();
+      } catch (err) {
+        console.error('TipsOptionsSystemMaterial_0200 error: ' + err);
         expect().assertFail();
+        done();
       }
     });
 
-    /**
-     * @tc.number TipsOptionsTest_002
-     * @tc.name tipsOptionsShowAtAnchor2
-     * @tc.desc Test TipsOptions showAtAnchor property for tips2 button, read from component and print component tree
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('tipsOptionsShowAtAnchor2', Level.LEVEL1, async () => {
+    it('TipsOptionsSystemMaterial_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let driver: Driver = Driver.create();
+       try {
+         await CommonFunc.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await hoverButtonAndFindTips(driver, 'semi_transparent', 'TipsOptions SEMI_TRANSPARENT Test');
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+       // 涉及坐标
+        await driver.mouseMoveTo({x: 1, y: 1, displayId: displayID});
+         
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await CommonFunc.sleep(500);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+      done();
+    });
 
-      console.info('TipsOptionsTest execute: tipsOptionsShowAtAnchor2 START');
-      try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        const driver = Driver.create();
-        
-        const button = await driver.findComponent(ON.id('tips2'));
-        console.info('TipsOptionsTest: tipsOptionsShowAtAnchor2 - found tips2 button component');
-        expect(!!button).assertEqual(true);
-        
-        let node = JSON.parseJsonElement(inspector.getInspectorByKey('tips2'));
-        console.info('TipsOptionsTest: tipsOptionsShowAtAnchor2 - got node from inspector');
-        logLongString('TipsOptionsTest: tipsOptionsShowAtAnchor2 node =', JSON.stringifyJsonElement(node));
-        expect(node != null).assertTrue();
-        
-        console.info('TipsOptionsTest execute: tipsOptionsShowAtAnchor2 END');
-      } catch (error) {
-        console.error('TipsOptionsTest execute: tipsOptionsShowAtAnchor2 error:' + error);
-        expect().assertFail();
-      }
+    it('TipsOptionsSystemMaterial_0400', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let driver: Driver = Driver.create();
+       try {
+         await CommonFunc.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await hoverButtonAndFindTips(driver, 'immersive_thick', 'TipsOptions Immersive THICK Test');
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+       // 涉及坐标
+        await driver.mouseMoveTo({x: 1, y: 1, displayId: displayID});
+         
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await CommonFunc.sleep(500);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+      done();
+    });
+
+    it('TipsOptionsSystemMaterial_0500', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let driver: Driver = Driver.create();
+       try {
+         await CommonFunc.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await hoverButtonAndFindTips(driver, 'immersive_ultra_thin', 'TipsOptions Immersive ULTRA_THIN Test');
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+       // 涉及坐标
+       await driver.mouseMoveTo({x: 1, y: 1, displayId: displayID});
+         
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await CommonFunc.sleep(500);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+      done();
+    });
+
+    it('TipsOptionsSystemMaterial_0600', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let driver: Driver = Driver.create();
+       try {
+         await CommonFunc.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await hoverButtonAndFindTips(driver, 'none', 'TipsOptions NONE Test');
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+       // 涉及坐标
+       await driver.mouseMoveTo({x: 1, y: 1, displayId: displayID});
+         
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await CommonFunc.sleep(500);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+      done();
     });
   });
 }
