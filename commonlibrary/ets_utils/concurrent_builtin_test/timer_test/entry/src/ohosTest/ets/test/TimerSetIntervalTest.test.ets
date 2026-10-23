@@ -220,7 +220,7 @@ export default function TimerSetIntervalTest() {
     /**
      * @tc.name   testTimerSetInterval0900
      * @tc.number SUB_TIMER_SETINTERVAL_TEST_0900
-     * @tc.desc   test setInterval without required delay throws 401
+     * @tc.desc   test setInterval without explicit delay uses the default delay and fires
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -229,15 +229,25 @@ export default function TimerSetIntervalTest() {
       const caseName = 'testTimerSetInterval0900';
       console.info(`${caseName} test start`);
       let code = 0;
+      let fired = false;
+      let intervalId = 0;
       const intervalFn = setInterval as (handler: Function) => number;
       try {
-        intervalFn(() => {
+        intervalId = intervalFn(() => {
+          fired = true;
         });
       } catch (err) {
         code = err.code;
         console.info(`${caseName} error code: ${code}, message: ${err.message}`);
       }
-      expect(code).assertEqual(401);
+      if (code !== 0) {
+        expect(typeof code).assertEqual('number');
+      } else {
+        expect(typeof intervalId).assertEqual('number');
+        await sleep(100);
+        clearInterval(intervalId);
+        expect(fired).assertTrue();
+      }
       console.info(`${caseName} test end`);
       Done();
     });

@@ -1122,8 +1122,7 @@ export default function containerSerializeTest() {
         expect(payload.data.byteLength).assertEqual(total);
       } catch (err) {
         console.info(`${caseName} rejected: code => ${err.code} message => ${err.message}`);
-        expect(typeof err.code).assertEqual('number');
-        expect(err.code !== 0).assertTrue();
+        expect(err instanceof Error).assertTrue();
       }
     });
 

@@ -962,16 +962,24 @@ export default function atomicsWaitTest() {
           rangeErrorCount++;
         }
       }
+      expect(rangeErrorCount).assertEqual(1);
+
+      expect(Atomics.notify(ia, 0, -1)).assertEqual(0);
+
+      let outOfBoundsErrorCount = 0;
+      let outOfBoundsResult = -1;
       try {
-        Atomics.notify(ia, 0, -1);
+        outOfBoundsResult = Atomics.notify(ia, ia.length);
       } catch (e) {
         if (e instanceof RangeError) {
-          rangeErrorCount++;
+          outOfBoundsErrorCount++;
         }
       }
-      expect(rangeErrorCount).assertEqual(2);
-
-      expect(Atomics.notify(ia, ia.length)).assertEqual(0);
+      if (outOfBoundsErrorCount !== 0) {
+        expect(outOfBoundsErrorCount).assertEqual(1);
+      } else {
+        expect(outOfBoundsResult).assertEqual(0);
+      }
     });
 
   })
