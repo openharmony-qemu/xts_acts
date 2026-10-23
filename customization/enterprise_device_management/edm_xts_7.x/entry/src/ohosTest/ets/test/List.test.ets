@@ -27,6 +27,7 @@ import systemManagerTest from './systemManager/systemManager.test';
 import wifiManagerTest from './wifiManager/wifiManager.test';
 import deviceControlTest from './deviceControl/deviceControl.test.ets';
 import locationManagerTest from './locationManager/locationManager.test.ets';
+import networkManagerTest from './networkManager/networkManager.test.ets';
 import usbManagerTest from './usbManager/usbManager.test.ets';
 import telephonyManagerTest from './telephonyManager/telephonyManager.test.ets';
 import beforeAllTest from './beforeAll/BeforeAll.test.ets';
@@ -38,6 +39,7 @@ export default function testsuite() {
   wifiManagerTest();
   deviceControlTest();
   locationManagerTest();
+  networkManagerTest();
   usbManagerTest();
   browserManagerTest();
   bluetoothManagerTest();
