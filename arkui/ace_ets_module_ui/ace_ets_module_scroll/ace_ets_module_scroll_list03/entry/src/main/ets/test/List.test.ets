@@ -51,6 +51,7 @@ import listScrollbarColor from './ListItemGroup/listScrollbarColor.test';
 import ListContentSize from './List/ListContentSize.test';
 import ListFillPolicy from './List/ListFillPolicy.test';
 import listNoMakeObserved from './List/listNoMakeObserved.test';
+import SpliceDeleteMin from './List/SpliceDeleteMin.test';
 import listCacheCount from './List/listCacheCount.test';
 import listLazyTrue from './emptyBranch/listLazyTrue.test';
 import listLazyFalse from './emptyBranch/listLazyFalse.test';
@@ -107,6 +108,7 @@ export default function testsuite() {
   ListContentSize()
   ListFillPolicy()
   listNoMakeObserved()
+  SpliceDeleteMin()
   listCacheCount()
   listLazyTrue()
   listLazyFalse()

@@ -14,6 +14,8 @@
  */
 
 import GridMaxCountJsunit from './GridMaxCount.test';
+import MaxCountMin from './MaxCountMin.test';
+import MinCountMin from './MinCountMin.test';
 import GridItemOnSelectJsunit from './GridItemOnSelect.test';
 import GridAddJsunit from './GridAddJsunit.test';
 import GridRows1 from './GridRows1.test';
@@ -105,6 +107,8 @@ import grid3Jsunit from './Grid3Jsunit.test.ets';
 export default function testsuite() {
   GridScrollBarWidth()
   GridMaxCountJsunit()
+  MaxCountMin()
+  MinCountMin()
   GridItemOnSelectJsunit()
   GridAddJsunit()
   GridRows2();
