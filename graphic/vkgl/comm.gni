@@ -54,7 +54,7 @@ common_include = [
   "//third_party/vk-gl-cts/build/external/vulkancts/framework/vulkan",
   "//third_party/vk-gl-cts/framework/referencerenderer",
   "//third_party/vk-gl-cts/modules/glshared",
-  "//third_party/vk-gl-cts/framework/platform/ohos/rosen_context",
+  "//third_party/vk-gl-cts/framework/platform/ohos/rosen_context"
 ]
 
 common_depends_gles2 = [
@@ -76,7 +76,7 @@ common_depends_gles2 = [
   "//third_party/vk-gl-cts/modules/glshared:libdeqp-gl-shared",
   "//third_party/vk-gl-cts/external/openglcts/modules:libdeqp_glcts",
 
-  "//third_party/vk-gl-cts/framework/platform/ohos/rosen_context:rosen_context",
+  "//third_party/vk-gl-cts/framework/platform/ohos/rosen_context:rosen_context"
 ]
 
 common_depends_gles3 = [
@@ -97,7 +97,7 @@ common_depends_gles3 = [
   "//third_party/vk-gl-cts/modules/glshared:libdeqp-gl-shared",
   "//third_party/vk-gl-cts/external/openglcts/modules:libdeqp_glcts",
 
-  "//third_party/vk-gl-cts/framework/platform/ohos/rosen_context:rosen_context",
+  "//third_party/vk-gl-cts/framework/platform/ohos/rosen_context:rosen_context"
 ]
 
 common_depends_gles31 = [
@@ -118,7 +118,7 @@ common_depends_gles31 = [
   "//third_party/vk-gl-cts/modules/glshared:libdeqp-gl-shared",
   "//third_party/vk-gl-cts/external/openglcts/modules:libdeqp_glcts",
 
-  "//third_party/vk-gl-cts/framework/platform/ohos/rosen_context:rosen_context",
+  "//third_party/vk-gl-cts/framework/platform/ohos/rosen_context:rosen_context"
 ]
 
 common_depends_glesext = [
@@ -138,7 +138,7 @@ common_depends_glesext = [
   "//third_party/vk-gl-cts/modules/glshared:libdeqp-gl-shared",
   "//third_party/vk-gl-cts/external/openglcts/modules:libdeqp_glcts",
 
-  "//third_party/vk-gl-cts/framework/platform/ohos/rosen_context:rosen_context",
+  "//third_party/vk-gl-cts/framework/platform/ohos/rosen_context:rosen_context"
 ]
 
 common_depends_egl = [
@@ -166,7 +166,6 @@ common_depends_egl = [
 
   "//third_party/glslang/OGLCompilersDLL:libdeqp_OGLCompiler",
   "//third_party/glslang/SPIRV:libdeqp_spirv",
-  "//third_party/glslang/SPIRV:libdeqp_spvremapper",
   "//third_party/glslang/glslang:libdeqp_GenericCodeGen",
   "//third_party/glslang/glslang:libdeqp_MachineIndependent",
   "//third_party/glslang/glslang:libdeqp_OSDependent",
@@ -225,7 +224,7 @@ common_depends_egl = [
   "//third_party/vk-gl-cts/external/vulkancts/modules/vulkan/ycbcr:libdeqp_vk_ycbcr",
 
   "//third_party/vk-gl-cts/external/vulkancts/modules/vulkan:libdeqp_vk_package",
-  "//third_party/vk-gl-cts/framework/platform:libdeqp_ohos_platform",
+  "//third_party/vk-gl-cts/framework/platform:libdeqp_ohos_platform"
 ]
 
 common_src = [
@@ -242,7 +241,7 @@ common_src = [
 
   "//third_party/vk-gl-cts/framework/platform/ohos/tcuOhosPlatform.cpp",
   "logdefine.cpp",
-  "../../ActsApp.cpp",
+  "../../ActsApp.cpp"
 ]
 
 import("//foundation/graphic/graphic_2d/graphic_config.gni")
