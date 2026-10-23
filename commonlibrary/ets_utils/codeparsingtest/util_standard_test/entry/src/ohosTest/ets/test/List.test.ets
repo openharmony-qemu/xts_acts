@@ -98,13 +98,13 @@ export default function testsuite() {
   textDecoderTest02();
   textEncoderTest();
   textEncoderTest02();
+  utilGetGlobalHandleCountTest();
+  vmHeapMemoryPressureTest();
+  trackGlobalRefTest();
   utilTest();
   util2Test();
   util3Test();
   utilTypeTest();
-  utilGetGlobalHandleCountTest();
-  vmHeapMemoryPressureTest();
-  trackGlobalRefTest();
   util1FPTest();
   util2FPTest();
   util3FPTest();
