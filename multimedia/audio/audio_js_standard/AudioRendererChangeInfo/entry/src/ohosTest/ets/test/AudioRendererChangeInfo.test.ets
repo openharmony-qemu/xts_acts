@@ -4200,5 +4200,28 @@ export default function audioRendererChange() {
       expect(flag).assertTrue();
       done();
     })
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_ERRORS_ENUM_0100
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_ERRORS_ENUM_0100
+     * @tc.desc    ERROR_SERVICE_DIED-ERROR_NETWORK_CONDITION_NOT_MET-ERROR_STORAGE_NOT_ENOUGH
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_ERRORS_ENUM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        expect(audio.AudioErrors.ERROR_SERVICE_DIED).assertEqual(6800302);
+        console.info(`SUB_MULTIMEDIA_AUDIO_ERRORS_ENUM_0100 ERROR_SERVICE_DIED: ${audio.AudioErrors.ERROR_SERVICE_DIED}`);
+        expect(audio.AudioErrors.ERROR_NETWORK_CONDITION_NOT_MET).assertEqual(6800501);
+        console.info(`SUB_MULTIMEDIA_AUDIO_ERRORS_ENUM_0100 ERROR_NETWORK_CONDITION_NOT_MET: ${audio.AudioErrors.ERROR_NETWORK_CONDITION_NOT_MET}`);
+        expect(audio.AudioErrors.ERROR_STORAGE_NOT_ENOUGH).assertEqual(6800502);
+        console.info(`SUB_MULTIMEDIA_AUDIO_ERRORS_ENUM_0100 ERROR_STORAGE_NOT_ENOUGH: ${audio.AudioErrors.ERROR_STORAGE_NOT_ENOUGH}`);
+        done();
+      } catch (error) {
+        console.info(`SUB_MULTIMEDIA_AUDIO_ERRORS_ENUM_0100 fail: ${error.code}, ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
   })
 }

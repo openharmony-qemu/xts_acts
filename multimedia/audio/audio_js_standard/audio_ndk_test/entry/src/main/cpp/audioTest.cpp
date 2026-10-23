@@ -8618,6 +8618,9 @@ static napi_value AudioCommonResult_001(napi_env env, napi_callback_info info)
     int32_t errorUnsupported = 6800104;
     int32_t errorTimeout = 6800105;
     int32_t errorLimit = 6800201;
+    int32_t serviceDied = 6800302;
+    int32_t networkConditionNotMet = 6800501;
+    int32_t storageNotEnough = 6800502;
     if (streamErrorSystem != AUDIOSTREAM_ERROR_SYSTEM) {
         napi_create_int32(env, TEST_FAIL, &res);
         LOG("AUDIOSTREAM_ERROR_SYSTEM fail, result is: %{public}d", AUDIOSTREAM_ERROR_SYSTEM);
@@ -8636,6 +8639,21 @@ static napi_value AudioCommonResult_001(napi_env env, napi_callback_info info)
     if (errorLimit != AUDIOCOMMON_RESULT_ERROR_STREAM_LIMIT) {
         napi_create_int32(env, TEST_FAIL, &res);
         LOG("AUDIOCOMMON_RESULT_ERROR_STREAM_LIMIT fail, result is: %{public}d", AUDIOCOMMON_RESULT_ERROR_STREAM_LIMIT);
+        return res;
+    }
+    if (serviceDied != AUDIOCOMMON_RESULT_ERROR_SERVICE_DIED) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("AUDIOCOMMON_RESULT_ERROR_SERVICE_DIED fail, result is: %{public}d", AUDIOCOMMON_RESULT_ERROR_SERVICE_DIED);
+        return res;
+    }
+    if (networkConditionNotMet != AUDIOCOMMON_RESULT_ERROR_NETWORK_CONDITION_NOT_MET) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("NETWORK_CONDITION_NOT_MET is: %{public}d", AUDIOCOMMON_RESULT_ERROR_NETWORK_CONDITION_NOT_MET);
+        return res;
+    }
+    if (storageNotEnough != AUDIOCOMMON_RESULT_ERROR_STORAGE_NOT_ENOUGH) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("STORAGE_NOT_ENOUGH is: %{public}d", AUDIOCOMMON_RESULT_ERROR_STORAGE_NOT_ENOUGH);
         return res;
     }
     napi_create_int32(env, TEST_PASS, &res);
