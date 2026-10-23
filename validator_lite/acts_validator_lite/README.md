@@ -57,11 +57,7 @@ xdevice 根据 `user_config.xml` 中有无 `NfsServer` 节点自动选择传输�
 | 网口（默认） | 配置了 `NfsServer`（ip 非空） | NFS 挂载，文件经网络到达设备 | 设备已接网线 |
 | 串口 | 删除 `NfsServer` 节点 | 经 U-Boot ymodem 自动部署到设备（免镜像修改、免额外工具） | 无网口环境 |
 
-串口模式说明：
-- 将上述示例中 `<server label="NfsServer">...</server>` 整段删除即可切换；
-- 部署完全自动：进入 U-Boot → ymodem 传输 aa/bm/HAP → 写入用户分区 → 校验（闪存级 crc32 + OS 级哈希）→ 重启安装；
-- 文件内容未变化时自动跳过传输（增量部署）；
-- 全量部署约 3 分钟（115200 波特率），测试执行与网口模式完全一致。
+串口模式说明：将上述示例中 `<server label="NfsServer">...</server>` 整段删除即可切换，部署与测试执行均自动完成，无需额外操作。
 
 
 ### 2. 执行
