@@ -267,8 +267,6 @@ napi_value OHConsumerSurfaceCreateWithSingleBufferModeUnusingTextImageAbnormal(n
     int32_t ret5 = OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &buffer, &fenceFd);
     NAPI_ASSERT(env, ret5 == NATIVE_ERROR_OK, "ret5 != NATIVE_ERROR_OK");
     napi_create_int32(env, SUCCESS, &result);
-    OH_NativeWindow_DestroyNativeWindowBuffer(buffer);
-    OH_NativeWindow_DestroyNativeWindow(nativeWindow);
     OH_NativeImage_Destroy(&nativeImage);
     return result;
 }
@@ -334,8 +332,6 @@ napi_value OHNativeImageReleaseTextImageNormal(napi_env env, napi_callback_info 
         napi_create_int32(env, ret, &result);
         return result;
     }
-    OH_NativeWindow_DestroyNativeWindowBuffer(buffer);
-    OH_NativeWindow_DestroyNativeWindow(nativeWindow);
     OH_NativeImage_Destroy(&nativeImage);
     napi_create_int32(env, SUCCESS, &result);
     return result;
@@ -430,8 +426,6 @@ napi_value OHNativeImageReleaseTextImageDestroyImage(napi_env env, napi_callback
     OH_NativeImage_Destroy(&nativeImage);
     int32_t ret = OH_NativeImage_ReleaseTextImage(nativeImage);
     napi_create_int32(env, ret, &result);
-    OH_NativeWindow_DestroyNativeWindowBuffer(buffer);
-    OH_NativeWindow_DestroyNativeWindow(nativeWindow);
     return result;
 }
 
@@ -551,8 +545,6 @@ napi_value OHNativeImageCreateWithSingleBufferModeTest1(napi_env env, napi_callb
         napi_create_int32(env, FAIL, &result);
     }
     OH_NativeImage_ReleaseTextImage(image);
-    OH_NativeWindow_DestroyNativeWindowBuffer(buffer);
-    OH_NativeWindow_DestroyNativeWindow(nativeWindow);
     OH_NativeBuffer_Unreference(nativeBuffer);
     OH_NativeImage_Destroy(&image);
     return result;
@@ -597,10 +589,6 @@ napi_value OHNativeImageCreateWithSingleBufferModeTest2(napi_env env, napi_callb
     int32_t errorCode2 = OH_NativeImage_ReleaseTextImage(image);
     NAPI_ASSERT(env, errorCode2 == NATIVE_ERROR_OK, "errorCode2 != NATIVE_ERROR_OK");
     napi_create_int32(env, SUCCESS, &result);
-    OH_NativeWindow_DestroyNativeWindowBuffer(buffer1);
-    OH_NativeWindow_DestroyNativeWindowBuffer(buffer2);
-    OH_NativeWindow_DestroyNativeWindowBuffer(buffer3);
-    OH_NativeWindow_DestroyNativeWindow(nativeWindow);
     OH_NativeBuffer_Unreference(nativeBuffer);
     OH_NativeImage_Destroy(&image);
     return result;
@@ -623,7 +611,6 @@ napi_value OHNativeImageCreateWithSingleBufferModeTest3(napi_env env, napi_callb
     OH_NativeImage_AcquireNativeWindowBuffer(image, &nativeWindowBuffer, &fenceFd);
     int32_t ret = OH_NativeImage_ReleaseNativeWindowBuffer(image, nativeWindowBuffer, fenceFd);
     napi_create_int32(env, ret, &result);
-    OH_NativeWindow_DestroyNativeWindowBuffer(nativeWindowBuffer);
     OH_NativeImage_Destroy(&image);
     return result;
 }
@@ -646,7 +633,6 @@ napi_value OHConsumerSurfaceCreateWithSingleBufferModeTest(napi_env env, napi_ca
     } else {
         napi_create_int32(env, FAIL, &result);
     }
-    OH_NativeWindow_DestroyNativeWindowBuffer(nativeWindowBuffer);
     OH_NativeImage_Destroy(&image);
     return result;
 }
@@ -666,7 +652,6 @@ napi_value OHNativeImageAcquireLatestNativeWindowBufferAbNormal(napi_env env, na
     } else {
         napi_create_int32(env, FAIL, &result);
     }
-    OH_NativeWindow_DestroyNativeWindowBuffer(NativeWindowBuffer);
     OH_NativeImage_Destroy(&image);
     return result;
 }
@@ -786,7 +771,6 @@ napi_value OHNativeImageAcquireLatestNativeWindowBufferAbNormal03(napi_env env, 
     NAPI_ASSERT(env, ret == NATIVE_ERROR_NO_BUFFER, "ret != NATIVE_ERROR_NO_BUFFER");
     
     napi_create_int32(env, SUCCESS, &result);
-    OH_NativeWindow_DestroyNativeWindowBuffer(NativeWindowBuffer);
     OH_NativeImage_Destroy(&image);
     delete initNative;
     return result;
@@ -812,7 +796,6 @@ napi_value OHNativeImageAcquireLatestNativeWindowBufferCall(napi_env env, napi_c
         NAPI_ASSERT(env, ret3 == NATIVE_ERROR_OK, "ret3 != NATIVE_ERROR_OK");
     }
     napi_create_int32(env, SUCCESS, &result);
-    OH_NativeWindow_DestroyNativeWindowBuffer(NativeWindowBuffer);
     OH_NativeImage_Destroy(&image);
     delete initNative;
     return result;
@@ -861,8 +844,6 @@ napi_value OHNativeImageCreateWithSingleBufferModeChangeTextureTarget(napi_env e
         napi_create_int32(env, FAIL, &result);
         return result;
     }
-    OH_NativeWindow_DestroyNativeWindowBuffer(buffer);
-    OH_NativeWindow_DestroyNativeWindow(nativeWindow);
     OH_NativeImage_Destroy(&nativeImage);
     napi_create_int32(env, SUCCESS, &result);
     return result;
@@ -945,8 +926,6 @@ napi_value OHNativeImageIsReleasedNormal0(napi_env env, napi_callback_info info)
     } else {
         napi_create_int32(env, FAIL, &result);
     }
-    OH_NativeWindow_DestroyNativeWindowBuffer(buffer);
-    OH_NativeWindow_DestroyNativeWindow(nativeWindow);
     OH_NativeImage_Destroy(&nativeImage);
     return result;
 }
@@ -993,8 +972,6 @@ napi_value OHNativeImageIsReleasedNormal1(napi_env env, napi_callback_info info)
     } else {
         napi_create_int32(env, FAIL, &result);
     }
-    OH_NativeWindow_DestroyNativeWindow(nativeWindow);
-    OH_NativeWindow_DestroyNativeWindowBuffer(buffer);
     OH_NativeImage_Destroy(&nativeImage);
     return result;
 }
