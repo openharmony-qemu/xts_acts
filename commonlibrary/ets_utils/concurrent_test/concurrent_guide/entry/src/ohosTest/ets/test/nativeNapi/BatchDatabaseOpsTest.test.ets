@@ -688,7 +688,7 @@ export default function BatchDatabaseOpsTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testBatchDatabaseOps2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testBatchDatabaseOps2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let taskCount: number = 8
       let rowsPerTask: number = 5
       let successRows: number = 0
@@ -715,6 +715,7 @@ export default function BatchDatabaseOpsTest(): void {
       let count = await taskpool.execute(new taskpool.Task(queryCountInTaskPool, context, DB_NAME, TABLE_NAME)) as number
       expect(count).assertEqual(successRows)
       console.info(`testBatchDatabaseOps2600 successRows: ${successRows}, count: ${count}, conflictCode: ${conflictCode}`)
+      done()
     })
   })
 }

@@ -1123,7 +1123,7 @@ export default function containerSerializeTest() {
       } catch (err) {
         console.info(`${caseName} rejected: code => ${err.code} message => ${err.message}`);
         expect(typeof err.code).assertEqual('number');
-        expect((err.code as number) !== 0).assertTrue();
+        expect(err.code !== 0).assertTrue();
       }
     });
 
@@ -1148,7 +1148,7 @@ export default function containerSerializeTest() {
         } catch (err) {
           console.info(`${caseName} size ${size} rejected: code => ${err.code} message => ${err.message}`);
           expect(typeof err.code).assertEqual('number');
-        expect((err.code as number) !== 0).assertTrue();
+        expect(err.code !== 0).assertTrue();
         }
       }
     });
