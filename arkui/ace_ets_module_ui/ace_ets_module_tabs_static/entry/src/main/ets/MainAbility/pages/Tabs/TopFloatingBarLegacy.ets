@@ -29,7 +29,7 @@ import {
 @Component
 struct TopFloatingBarLegacy {
   build() {
-    Column({ space: 10 }) {
+    Column({ space: 10 }as Record<string, Object>) {
       Tabs() {
         TabContent() {
           Column().width('100%').height('100%').backgroundColor(Color.Pink)
