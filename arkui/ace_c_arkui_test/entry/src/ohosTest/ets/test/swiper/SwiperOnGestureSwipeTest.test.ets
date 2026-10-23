@@ -17,6 +17,8 @@ import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
 import Utils from '../common/Utils';
 import nativeFunc from 'libnativefunc.so'
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function swiperOnGestureSwipeTest() {
 
   describe('SwiperOnGestureSwipeTest', () => {
@@ -40,7 +42,7 @@ export default function swiperOnGestureSwipeTest() {
       let driver = Driver.create();
       let component = await driver.findComponent(ON.id("SwiperOnGestureSwipe"));
       let point = await component.getBounds();
-      await driver.swipe(point.right, point.top + 20, point.left, point.top + 20, 2000);
+      await driver.swipe(point.right, point.top + 20, point.left, point.top + 20, 2000, displayID);
       await Utils.sleep(2000);
       expect(Utils.getComponentInfoByKey('SwiperOnGestureSwipe').$attrs.backgroundColor).assertEqual('#FF00FF00');
       done();

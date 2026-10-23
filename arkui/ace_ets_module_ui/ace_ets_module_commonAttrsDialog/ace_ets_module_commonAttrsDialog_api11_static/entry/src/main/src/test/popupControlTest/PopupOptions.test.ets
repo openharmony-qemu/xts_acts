@@ -31,6 +31,7 @@ import { UtilsTest } from '../Util.test';
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0;
 
 export default function PopupOptions() {
   describe('PopupOptions', () => {
@@ -86,7 +87,7 @@ it('PopupOptions_static_0100', Level.LEVEL0, async (done: () => void): Promise<v
       expect(properties.type).assertEqual(1) //1表示系统告警窗口TYPE_SYSTEM_ALERT
 
       await CommonFunc.sleep(1000);
-       driver?.click(2, 2);
+        driver?.click(2, 2, displayID);
       await CommonFunc.sleep(1000);
       console.info('[PopupOptions_0100] END');
       done();

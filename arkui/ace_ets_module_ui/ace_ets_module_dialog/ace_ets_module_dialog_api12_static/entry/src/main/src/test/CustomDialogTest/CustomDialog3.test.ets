@@ -23,6 +23,8 @@ import inspector from '@ohos.arkui.inspector';
 import common from '@ohos.app.ability.common';
 import window from '@ohos.window';
 
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
+
 export default function CustomDialog3() {
   describe('CustomDialog3', () => {
     beforeEach(async (): Promise<void> => {
@@ -65,7 +67,7 @@ it('CustomDialog3_static_0100', Level.LEVEL2, async (done: () => void): Promise<
       await Column.click();
       await CommonFunc.sleep(1000);
 
-      await driver.triggerKey(2070);
+      await driver.triggerKey(2070, displayID);
       await CommonFunc.sleep(1000);
 
   let context = AppStorage.get<common.UIAbilityContext>('abilityContext');
@@ -99,7 +101,7 @@ it('CustomDialog3_static_0200', Level.LEVEL2, async (done: () => void): Promise<
       await button.click();
       await CommonFunc.sleep(1000);
 
-      await driver.click((Math.round((AppStorage.get<number>('winLeft') as number)+20)).toInt(), (Math.round((AppStorage.get<number>('winTop') as number)+200)).toInt());
+      await driver.click((Math.round((AppStorage.get<number>('winLeft') as number)+20)).toInt(), (Math.round((AppStorage.get<number>('winTop') as number)+200)).toInt(), displayID);
       await CommonFunc.sleep(1000);
 
   let context = AppStorage.get<common.UIAbilityContext>('abilityContext');

@@ -22,6 +22,8 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import window from '@ohos.window';
 
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
+
 export default function openCustomDialog1() {
   describe('openCustomDialog1', () => {
     beforeEach(async (): Promise<void> => {
@@ -63,7 +65,7 @@ it('openCustomDialog1_static_0100', Level.LEVEL2, async (done: () => void): Prom
       await button.click();
       await CommonFunc.sleep(1000);
 
-      await driver.triggerKey(2070);
+      await driver.triggerKey(2070, displayID);
       await CommonFunc.sleep(1000);
 
       let button1:Component = await driver.findComponent(ON.text('确认')) as Component;
@@ -93,7 +95,7 @@ it('openCustomDialog1_static_0200', Level.LEVEL2, async (done: () => void): Prom
       await button.click();
       await CommonFunc.sleep(1000);
 
-      await driver.click((Math.round((AppStorage.get<number>('winLeft') as number)+20)).toInt(), (Math.round((AppStorage.get<number>('winTop') as number)+200)).toInt());
+      await driver.click((Math.round((AppStorage.get<number>('winLeft') as number)+20)).toInt(), (Math.round((AppStorage.get<number>('winTop') as number)+200)).toInt(), displayID);
       await CommonFunc.sleep(1000);
 
       let button1:Component = await driver.findComponent(ON.text('确认')) as Component;

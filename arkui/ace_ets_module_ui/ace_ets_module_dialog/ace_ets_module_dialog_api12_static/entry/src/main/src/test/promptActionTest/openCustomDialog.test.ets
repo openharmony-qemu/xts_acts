@@ -22,6 +22,8 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import window from '@ohos.window';
 
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
+
 export default function openCustomDialog() {
   describe('openCustomDialog', () => {
     beforeEach(async (): Promise<void> => {
@@ -58,7 +60,7 @@ it('openCustomDialog_static_0100', Level.LEVEL2, async (done: () => void): Promi
       let button:Component = await driver.findComponent(ON.id('openCustomDialogXTS')) as Component;
       await button.click();
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2070);
+      await driver.triggerKey(2070, displayID);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('openCustomDialogMessage');
       let obj = JSON.parseJsonElement(strJson);

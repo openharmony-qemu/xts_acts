@@ -24,6 +24,8 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 
 
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
+
 export default function RatingAdvancedTest() {
   describe('RatingAdvancedTest', () => {
 
@@ -76,7 +78,7 @@ export default function RatingAdvancedTest() {
       await Utils.sleep(1000);
       console.info("[SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0010] obj1.getElement('$attrs').getString('content') is: " + obj1.getElement('$attrs').getString('content'));
       expect(obj1.getElement('$attrs').getString('content')).assertContain('2');
-      await driver.click((rect.left + Math.round((rect.right-rect.left)/8*3)+1).toInt(),Math.round((rect.top+rect.bottom)/2).toInt())
+      await driver.click((rect.left + Math.round((rect.right-rect.left)/8*3)+1).toInt(),Math.round((rect.top+rect.bottom)/2).toInt(), displayID)
       console.info(`click is: `+rect.left+ Math.round((rect.right-rect.left)/8*3)+1 ,Math.round((rect.top+rect.bottom)/2))
       await Utils.sleep(1000);
       let strJson2 = inspector.getInspectorByKey('ratingText01');
@@ -113,7 +115,7 @@ export default function RatingAdvancedTest() {
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info("[SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0020] obj2.getElement('$attrs').getString('content') is: " + obj2.getElement('$attrs').getString('stars'));
       expect(obj2.getElement('$attrs').getString('stars')).assertEqual("5");
-      await driver.click(rect.left+1 as int,Math.round((rect.top+rect.bottom)/2).toInt())
+      await driver.click(rect.left+1 as int,Math.round((rect.top+rect.bottom)/2).toInt(), displayID)
       console.info(`click is: `+rect.left+1,Math.round((rect.top+rect.bottom)/2))
       await Utils.sleep(1000);
       let strJson3 = inspector.getInspectorByKey('ratingText02');
@@ -151,7 +153,7 @@ export default function RatingAdvancedTest() {
       console.info("[SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0020] obj2.getElement('$attrs').getString('stars') is: " + obj2.getElement('$attrs').getString('stars'));
       expect(obj2.getElement('$attrs').getString('stars')).assertEqual("5");
 
-      await driver.click(rect.left+1 as int,Math.round((rect.top+rect.bottom)/2).toInt())
+      await driver.click(rect.left+1 as int,Math.round((rect.top+rect.bottom)/2).toInt(), displayID)
       console.info(`click is: `+rect.left+1,Math.round((rect.top+rect.bottom)/2))
 
       await Utils.sleep(1000);
@@ -180,14 +182,14 @@ export default function RatingAdvancedTest() {
       let btn1 = await driver.findComponent(ON.id('rating04')) as Component;
       let rect = await btn1!.getBounds();
       console.info(`rect is: ` + JSON.stringify(rect))
-      await driver.click(rect.left+1 as int,Math.round((rect.top+rect.bottom)/2).toInt())
+      await driver.click(rect.left+1 as int,Math.round((rect.top+rect.bottom)/2).toInt(), displayID)
       await Utils.sleep(1000);
       let strJson1 = inspector.getInspectorByKey('ratingText04');
       let obj1 = JSON.parseJsonElement(strJson1);
       await Utils.sleep(1000);
       console.info("[SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0040] obj1.getElement('$attrs').getString('content') is: " + obj1.getElement('$attrs').getString('content'));
       expect(obj1.getElement('$attrs').getString('content')).assertContain('6');
-      await driver.click(rect.right-1 as int,Math.round((rect.top+rect.bottom)/2).toInt())
+      await driver.click(rect.right-1 as int,Math.round((rect.top+rect.bottom)/2).toInt(), displayID)
       await Utils.sleep(1000);
       let strJson2 = inspector.getInspectorByKey('ratingText04');
       let obj2 = JSON.parseJsonElement(strJson2);
@@ -223,7 +225,7 @@ export default function RatingAdvancedTest() {
       let btn1 = await driver.findComponent(ON.id('rating05')) as Component;
       let rect = await btn1!.getBounds();
       console.info(`rect is: ` + JSON.stringify(rect))
-      await driver.click(rect.left+1 as int, Math.round((rect.top+rect.bottom)/2).toInt())
+      await driver.click(rect.left+1 as int, Math.round((rect.top+rect.bottom)/2).toInt(), displayID)
       console.info(`click is: `+rect.left+1,Math.round((rect.top+rect.bottom)/2))
       await Utils.sleep(1000);
       let strJson3 = inspector.getInspectorByKey('ratingText05');
@@ -250,7 +252,7 @@ export default function RatingAdvancedTest() {
       let btn1 = await driver.findComponent(ON.id('rating06')) as Component;
       let rect = await btn1!.getBounds();
       console.info(`rect is: ` + JSON.stringify(rect))
-      await driver.click(rect.left+1 as int,Math.round((rect.top+rect.bottom)/2).toInt())
+      await driver.click(rect.left+1 as int,Math.round((rect.top+rect.bottom)/2).toInt(), displayID)
       console.info(`click is: `+rect.left+1,Math.round((rect.top+rect.bottom)/2))
       await Utils.sleep(1000);
       let strJson1 = inspector.getInspectorByKey('ratingText06');
@@ -290,7 +292,7 @@ export default function RatingAdvancedTest() {
       await btn1.click()
       let rect = await btn2.getBounds();
       console.info(`rect is: ` + JSON.stringify(rect))
-      await driver.click((rect.left+Math.round((rect.right-rect.left)/2)-1).toInt(),Math.round((rect.top+rect.bottom)/2).toInt())
+      await driver.click((rect.left+Math.round((rect.right-rect.left)/2)-1).toInt(),Math.round((rect.top+rect.bottom)/2).toInt(), displayID)
       console.info(`click is: `,rect.left+Math.round((rect.right-rect.left)/2)-1,Math.round((rect.top+rect.bottom)/2))
       await Utils.sleep(1000);
       let strJson2 = inspector.getInspectorByKey('ratingText07');

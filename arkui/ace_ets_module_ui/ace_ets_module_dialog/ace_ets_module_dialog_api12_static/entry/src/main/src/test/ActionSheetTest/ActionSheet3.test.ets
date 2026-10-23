@@ -24,6 +24,8 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import window from '@ohos.window';
 
 
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
+
 export default function ActionSheet3() {
   describe('ActionSheet3', () => {
     beforeEach(async (): Promise<void> => {
@@ -66,7 +68,7 @@ it('ActionSheet3_static_0100', Level.LEVEL2, async (done: () => void): Promise<v
       await Column.click();
       await CommonFunc.sleep(1000);
 
-      await driver.triggerKey(2070);
+      await driver.triggerKey(2070, displayID);
       await CommonFunc.sleep(1000);
 
   let context = AppStorage.get<common.UIAbilityContext>('abilityContext');
@@ -100,7 +102,7 @@ it('ActionSheet3_static_0200', Level.LEVEL2, async (done: () => void): Promise<v
       await Column.click();
       await CommonFunc.sleep(1000);
 
-      await driver.click((Math.round((AppStorage.get<number>('winLeft') as number)+20)).toInt(), (Math.round((AppStorage.get<number>('winTop') as number)+200)).toInt());
+      await driver.click((Math.round((AppStorage.get<number>('winLeft') as number)+20)).toInt(), (Math.round((AppStorage.get<number>('winTop') as number)+200)).toInt(), displayID);
       await CommonFunc.sleep(1000);
 
   let context = AppStorage.get<common.UIAbilityContext>('abilityContext');

@@ -17,6 +17,8 @@ import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
 import Utils from '../common/Utils';
 import nativeFunc from 'libnativefunc.so'
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function swiperNestedScrollEventTest() {
 
   describe('SwiperNestedScrollEventTest', () => {
@@ -40,7 +42,7 @@ export default function swiperNestedScrollEventTest() {
       let driver = Driver.create();
       let refresh = await driver.findComponent(ON.id('ChildSwiperNestedScroll'));
       let point = await refresh.getBounds();
-      await driver.drag(point.right, point.top + 50, point.left, point.top + 50, 10000);
+      await driver.drag(point.right, point.top + 50, point.left, point.top + 50, 10000, displayID);
       await Utils.sleep(2000);
       expect(Utils.getComponentInfoByKey('SwiperNestedScroll').$attrs.backgroundColor).assertEqual('#FFFFFFFF');
       done();
@@ -60,7 +62,7 @@ export default function swiperNestedScrollEventTest() {
       let driver = Driver.create();
       let refresh = await driver.findComponent(ON.id('ChildSwiperNestedScroll'));
       let point = await refresh.getBounds();
-      await driver.drag(point.right, point.top + 50, point.left, point.top + 50, 10000);
+      await driver.drag(point.right, point.top + 50, point.left, point.top + 50, 10000, displayID);
       await Utils.sleep(4000);
       expect(Utils.getComponentInfoByKey('SwiperNestedScroll1').$attrs.backgroundColor).assertEqual('#FF00FF00');
       done();

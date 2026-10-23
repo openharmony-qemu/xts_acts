@@ -33,6 +33,8 @@ async function sleep(time: int):Promise<int> {
 
 const BUNDLE_NAME = 'com.arkui.ace.picker'
 
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
+
 export default function SliderInterfaceTest() {
   describe('SliderInterfaceTest', () => {
 
@@ -300,7 +302,7 @@ it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0450', Level.LEVEL3, asy
       let rect = await (slider?.getBounds() as Promise<Rect>);
       console.info(`rect is: ` + JSON.stringify(rect))
       await driver.drag(rect.left, Math.round((rect.top + rect.bottom) / 2).toInt(),
-        rect.left + Math.round((rect.right - rect.left) / 4).toInt(), Math.round((rect.top + rect.bottom) / 2).toInt(), 600)
+        rect.left + Math.round((rect.right - rect.left) / 4).toInt(), Math.round((rect.top + rect.bottom) / 2).toInt(), 600, displayID)
       console.info(`drag is: ` + rect.left, Math.round((rect.top + rect.bottom) / 2),
         rect.left + Math.round((rect.right - rect.left) / 4), Math.round((rect.top + rect.bottom) / 2), 600)
       await Utils.sleep(1000);
@@ -333,7 +335,7 @@ it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0480', Level.LEVEL3, asy
       let rect = await (slider?.getBounds() as Promise<Rect>);
       console.info(`rect is: ` + JSON.stringify(rect))
       await driver.drag(rect.left, Math.round((rect.top + rect.bottom) / 2).toInt(),
-        rect.left + Math.round((rect.right - rect.left) / 4).toInt(), Math.round((rect.top + rect.bottom) / 2).toInt(), 600)
+        rect.left + Math.round((rect.right - rect.left) / 4).toInt(), Math.round((rect.top + rect.bottom) / 2).toInt(), 600, displayID)
       console.info(`drag is: ` + rect.left, Math.round((rect.top + rect.bottom) / 2),
         rect.left + Math.round((rect.right - rect.left) / 4), Math.round((rect.top + rect.bottom) / 2), 600)
       await Utils.sleep(1000);
@@ -415,7 +417,7 @@ it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0660', Level.LEVEL3, asy
       let rect = await (slider?.getBounds() as Promise<Rect>);
       console.info(`rect is: ` + JSON.stringify(rect))
       await driver.drag(rect.left, Math.round((rect.top + rect.bottom) / 2).toInt(),
-        rect.left + Math.round((rect.right - rect.left) / 4).toInt(), Math.round((rect.top + rect.bottom) / 2).toInt(), 600)
+        rect.left + Math.round((rect.right - rect.left) / 4).toInt(), Math.round((rect.top + rect.bottom) / 2).toInt(), 600, displayID)
       console.info(`drag is: ` + rect.left, Math.round((rect.top + rect.bottom) / 2),
         rect.left + Math.round((rect.right - rect.left) / 4), Math.round((rect.top + rect.bottom) / 2), 600)
       await Utils.sleep(1000);
@@ -448,7 +450,7 @@ it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0670', Level.LEVEL3, asy
       console.info(`rect is: ` + JSON.stringify(rect))
       await Utils.sleep(1000);
       await driver.drag(rect.left, Math.round((rect.top + rect.bottom) / 2).toInt(),
-        rect.left + Math.round((rect.right - rect.left) / 8).toInt(), Math.round((rect.top + rect.bottom) / 2).toInt(), 600)
+        rect.left + Math.round((rect.right - rect.left) / 8).toInt(), Math.round((rect.top + rect.bottom) / 2).toInt(), 600, displayID)
       console.info(`drag is: [SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0670] ` + rect.left,
         Math.round((rect.top + rect.bottom) / 2), rect.left + Math.round((rect.right - rect.left) / 8),
         Math.round((rect.top + rect.bottom) / 2), 600)
@@ -482,7 +484,7 @@ it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0680', Level.LEVEL3, asy
       let rect = await (slider?.getBounds() as Promise<Rect>);
       console.info(`rect is: ` + JSON.stringify(rect))
       await driver.drag(rect.left, Math.round((rect.top + rect.bottom) / 2).toInt(), rect.left + 55,
-        Math.round((rect.top + rect.bottom) / 2).toInt(), 600)
+        Math.round((rect.top + rect.bottom) / 2).toInt(), 600, displayID)
       console.info(`drag is: `, rect.left, Math.round((rect.top + rect.bottom) / 2), rect.left + 55,
         Math.round((rect.top + rect.bottom) / 2), 600)
       await Utils.sleep(1000);
@@ -513,7 +515,7 @@ it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0690', Level.LEVEL3, asy
       let slider = await driver.findComponent(ON.id('Slider17'));
       let rect = await (slider?.getBounds() as Promise<Rect>);
       console.info(`rect is: ` + JSON.stringify(rect))
-      await driver.click(rect.left + Math.round((rect.right - rect.left) / 5).toInt(), Math.round((rect.top + rect.bottom) / 2).toInt())
+      await driver.click(rect.left + Math.round((rect.right - rect.left) / 5).toInt(), Math.round((rect.top + rect.bottom) / 2).toInt(), displayID)
       console.info(`click is: ` + rect.left + Math.round((rect.right - rect.left) / 5),
         Math.round((rect.top + rect.bottom) / 2))
       await Utils.sleep(1000);
@@ -544,7 +546,7 @@ it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0700', Level.LEVEL3, asy
       let slider = await driver.findComponent(ON.id('Slider18'));
       let rect = await (slider?.getBounds() as Promise<Rect>);
       console.info(`rect is: ` + JSON.stringify(rect))
-      await driver.click(rect.left, Math.round((rect.top + rect.bottom) / 2).toInt())
+      await driver.click(rect.left, Math.round((rect.top + rect.bottom) / 2).toInt(), displayID)
       await Utils.sleep(1000);
       let strJson1 = inspector.getInspectorByKey('Slider18');
       let obj1 = JSON.parseJsonElement(strJson1);
@@ -573,7 +575,7 @@ it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0710', Level.LEVEL3, asy
       let slider = await driver.findComponent(ON.id('Slider19'));
       let rect = await (slider?.getBounds() as Promise<Rect>);
       console.info(`rect is: ` + JSON.stringify(rect))
-      await driver.click(rect.left, Math.round((rect.top + rect.bottom) / 2).toInt())
+      await driver.click(rect.left, Math.round((rect.top + rect.bottom) / 2).toInt(), displayID)
       await Utils.sleep(1000);
       let strJson1 = inspector.getInspectorByKey('Slider19');
       let obj1 = JSON.parseJsonElement(strJson1);
@@ -604,7 +606,7 @@ it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0720', Level.LEVEL3, asy
       await Utils.sleep(1000);
       console.info(`rect is: ` + JSON.stringify(rect))
       await driver.drag(rect.left, Math.round((rect.top + rect.bottom) / 2).toInt(),
-        rect.left + Math.round((rect.right - rect.left) / 4).toInt(), Math.round((rect.top + rect.bottom) / 2).toInt(), 600)
+        rect.left + Math.round((rect.right - rect.left) / 4).toInt(), Math.round((rect.top + rect.bottom) / 2).toInt(), 600, displayID)
       console.info(`drag is: ` + rect.left, Math.round((rect.top + rect.bottom) / 2),
         rect.left + Math.round((rect.right - rect.left) / 4), Math.round((rect.top + rect.bottom) / 2), 600)
       await Utils.sleep(1000);
@@ -636,7 +638,7 @@ it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_0730', Level.LEVEL3, asy
       let rect = await (slider?.getBounds() as Promise<Rect>);
       console.info(`rect is: ` + JSON.stringify(rect))
       await Utils.sleep(1000);
-      await driver.click(rect.left + Math.round((rect.right - rect.left) / 4).toInt(), Math.round((rect.top + rect.bottom) / 2).toInt())
+      await driver.click(rect.left + Math.round((rect.right - rect.left) / 4).toInt(), Math.round((rect.top + rect.bottom) / 2).toInt(), displayID)
       console.info(`click is: ` + rect.left + Math.round((rect.right - rect.left) / 4),
         Math.round((rect.top + rect.bottom) / 2))
       await Utils.sleep(1000);
@@ -669,7 +671,7 @@ it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_INTERFACE_static_1080', Level.LEVEL3, asy
       console.info(`rect is: ` + JSON.stringify(rect))
       await Utils.sleep(1000);
       await driver.drag(rect.left, Math.round((rect.top + rect.bottom) / 2).toInt(),
-        rect.left + Math.round((rect.right - rect.left) / 4).toInt(), Math.round((rect.top + rect.bottom) / 2).toInt(), 600)
+        rect.left + Math.round((rect.right - rect.left) / 4).toInt(), Math.round((rect.top + rect.bottom) / 2).toInt(), 600, displayID)
       console.info(`drag is: ` + rect.left, Math.round((rect.top + rect.bottom) / 2),
         rect.left + Math.round((rect.right - rect.left) / 4), Math.round((rect.top + rect.bottom) / 2), 600)
       await Utils.sleep(1000);
