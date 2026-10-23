@@ -85,15 +85,18 @@ struct webResourceError {
               break;
             }
             case 'emitWebResourceErrorConstructor001': {
-              Utils.emitEvent(true, 141520);
+              let error: WebResourceError = new WebResourceError();
+              Utils.emitEvent(error != null, 141520);
               break;
             }
             case 'emitWebResourceErrorConstructorReturn001': {
-              Utils.emitEvent(true, 141521);
+              let error: WebResourceError = new WebResourceError();
+              Utils.emitEvent(error instanceof WebResourceError, 141521);
               break;
             }
             case 'emitWebResourceErrorClass001': {
-              Utils.emitEvent(true, 141522);
+              let error: WebResourceError = new WebResourceError();
+              Utils.emitEvent(error instanceof WebResourceError, 141522);
               break;
             }
           }

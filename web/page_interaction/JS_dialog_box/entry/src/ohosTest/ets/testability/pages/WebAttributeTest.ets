@@ -237,39 +237,48 @@ struct WebAttributeTest {
                   break;
               }
               case 'emitJsResultConstructor001': {
-                Utils.emitEvent(true, 177170);
+                let jsResult: JsResult = new JsResult();
+                Utils.emitEvent(jsResult != null, 177170);
                 break;
               }
               case 'emitScreenCaptureHandlerConstructor001': {
-                Utils.emitEvent(true, 177180);
+                let handler: ScreenCaptureHandler = new ScreenCaptureHandler();
+                Utils.emitEvent(handler != null, 177180);
                 break;
               }
               case 'emitJsGeolocationConstructor001': {
-                Utils.emitEvent(true, 177190);
+                let geo: JsGeolocation = new JsGeolocation();
+                Utils.emitEvent(geo != null, 177190);
                 break;
               }
               case 'emitJsResultConstructorReturn001': {
-                Utils.emitEvent(true, 177171);
+                let jsResult: JsResult = new JsResult();
+                Utils.emitEvent(jsResult instanceof JsResult, 177171);
                 break;
               }
               case 'emitJsResultClass001': {
-                Utils.emitEvent(true, 177172);
+                let jsResult: JsResult = new JsResult();
+                Utils.emitEvent(jsResult instanceof JsResult, 177172);
                 break;
               }
               case 'emitScreenCaptureHandlerConstructorReturn001': {
-                Utils.emitEvent(true, 177181);
+                let handler: ScreenCaptureHandler = new ScreenCaptureHandler();
+                Utils.emitEvent(handler instanceof ScreenCaptureHandler, 177181);
                 break;
               }
               case 'emitScreenCaptureHandlerClass001': {
-                Utils.emitEvent(true, 177182);
+                let handler: ScreenCaptureHandler = new ScreenCaptureHandler();
+                Utils.emitEvent(handler instanceof ScreenCaptureHandler, 177182);
                 break;
               }
               case 'emitJsGeolocationConstructorReturn001': {
-                Utils.emitEvent(true, 177191);
+                let geo: JsGeolocation = new JsGeolocation();
+                Utils.emitEvent(geo instanceof JsGeolocation, 177191);
                 break;
               }
               case 'emitJsGeolocationClass001': {
-                Utils.emitEvent(true, 177192);
+                let geo: JsGeolocation = new JsGeolocation();
+                Utils.emitEvent(geo instanceof JsGeolocation, 177192);
                 break;
               }
             }

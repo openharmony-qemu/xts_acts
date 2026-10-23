@@ -75,15 +75,18 @@ struct clientAuthenticationHandlerTest {
               break;
             }
             case 'emitClientAuthenticationHandlerConstructor001': {
-              Utils.emitEvent(true, 26031047);
+              let handler: ClientAuthenticationHandler = new ClientAuthenticationHandler();
+              Utils.emitEvent(handler != null, 26031047);
               break;
             }
             case 'emitClientAuthenticationHandlerConstructorReturn001': {
-              Utils.emitEvent(true, 26031048);
+              let handler: ClientAuthenticationHandler = new ClientAuthenticationHandler();
+              Utils.emitEvent(handler instanceof ClientAuthenticationHandler, 26031048);
               break;
             }
             case 'emitClientAuthenticationHandlerClass001': {
-              Utils.emitEvent(true, 26031049);
+              let handler: ClientAuthenticationHandler = new ClientAuthenticationHandler();
+              Utils.emitEvent(handler instanceof ClientAuthenticationHandler, 26031049);
               break;
             }
 
