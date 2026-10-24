@@ -24,8 +24,10 @@ import Utils from './Utils';
 
 import { fileUri } from '@kit.CoreFileKit';
 import {Driver,ON, Component} from '@ohos.UiTest'
+import display from '@ohos.display';
 
 let sub:commonEventManager.CommonEventSubscriber;
+let currentDisplayId = display.getDefaultDisplaySync().id;
 export default function errorCodeTest() {
   describe('errorCodeTest', () => {
     let TAG = 'errorCodeTest ===>';
@@ -72,7 +74,7 @@ export default function errorCodeTest() {
       };
 
       let options: StartOptions = {
-        displayId: 0
+        displayId: currentDisplayId
       };
       // test errcode
       try {
@@ -270,7 +272,7 @@ export default function errorCodeTest() {
         parameters:  { 'keyFd': { 'type': 'FD', 'value': -1}}
       };
       let options: StartOptions = {
-        displayId: 0
+        displayId: currentDisplayId
       };
       try {
         await AppStorage.get<common.UIAbilityContext>("errocode")!.startAbility(want, options)
@@ -310,7 +312,7 @@ export default function errorCodeTest() {
         abilityName: 'EntryAbility'
       };
       let options: StartOptions = {
-        displayId: 0
+        displayId: currentDisplayId
       };
       try {
         await AppStorage.get<common.UIAbilityContext>("errocode")!.startAbility(want, options)
@@ -353,7 +355,7 @@ export default function errorCodeTest() {
         }
       };
       let options: StartOptions = {
-        displayId: 0
+        displayId: currentDisplayId
       };
       try {
         await AppStorage.get<common.UIAbilityContext>("errocode")!.startAbility(want, options)
@@ -397,7 +399,7 @@ export default function errorCodeTest() {
         }
       };
       let options: StartOptions = {
-        displayId: 0
+        displayId: currentDisplayId
       };
       try {
         await AppStorage.get<common.UIAbilityContext>("errocode")!.startAbility(want, options)
@@ -441,7 +443,7 @@ export default function errorCodeTest() {
           }
         };
         let options: StartOptions = {
-          displayId: 0
+          displayId: currentDisplayId
         };
         // test errorcode
         try {
@@ -489,7 +491,7 @@ export default function errorCodeTest() {
           }
         };
         let options: StartOptions = {
-          displayId: 0,
+          displayId: currentDisplayId,
           processMode:contextConstant.ProcessMode.ATTACH_TO_STATUS_BAR_ITEM,
           startupVisibility:contextConstant.StartupVisibility.STARTUP_HIDE
         };
@@ -538,12 +540,12 @@ export default function errorCodeTest() {
           abilityName: 'NewAbility',
         };
         let options: StartOptions = {
-          displayId: 0,
+          displayId: currentDisplayId,
           processMode:contextConstant.ProcessMode.NEW_PROCESS_ATTACH_TO_PARENT,
           startupVisibility:contextConstant.StartupVisibility.STARTUP_HIDE
         };
         let options1: StartOptions = {
-          displayId: 0,
+          displayId: currentDisplayId,
           processMode:contextConstant.ProcessMode.NEW_PROCESS_ATTACH_TO_PARENT,
           startupVisibility:contextConstant.StartupVisibility.STARTUP_HIDE
         };
@@ -623,7 +625,7 @@ export default function errorCodeTest() {
           }
         };
         let options: StartOptions = {
-          displayId: 0
+          displayId: currentDisplayId
         };
         // start
         try {

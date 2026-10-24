@@ -35,9 +35,10 @@ let driver1:Driver;
 export default function verificationTest() {
   describe('VerificationTestTest', () => {
     beforeAll(async()=>{
+      let currentDisplayId = display.getDefaultDisplaySync().id;
       try{
         driver1 = await Driver.create();
-        let allowed = await driver1.findComponent(ON.id('advanced_dialog_button_0'));
+        let allowed = await driver1.findComponent(ON.id('advanced_dialog_button_0').belongingDisplay(currentDisplayId));
         if (allowed) {
           await allowed.click();
         }

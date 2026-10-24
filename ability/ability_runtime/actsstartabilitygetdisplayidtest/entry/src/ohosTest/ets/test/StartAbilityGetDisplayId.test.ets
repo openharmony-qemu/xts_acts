@@ -103,7 +103,7 @@ export default function startAbilityGetDisplayIdTest() {
               }
               console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbilityForResult ` +
                 `subcribed success 500=====> data: ${JSON.stringify(commonEventData)}`);
-              expect(commonEventData.parameters![displayId]).assertEqual(0);
+              expect(commonEventData.parameters![displayId]).assertEqual(currentDisplayId);
               commonEvent.unsubscribe(subscriber, (err, data) => {
                 if (err) {
                   console.error(JSON.stringify(err));
@@ -154,7 +154,7 @@ export default function startAbilityGetDisplayIdTest() {
               }
               console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbilityForResult ` +
                 `subcribed success 600=====> data: ${JSON.stringify(commonEventData)}`);
-              expect(commonEventData.parameters![displayId]).assertEqual(0);
+              expect(commonEventData.parameters![displayId]).assertEqual(currentDisplayId);
               commonEvent.unsubscribe(subscriber, (err, data) => {
                 if (err) {
                   console.error(JSON.stringify(err));
@@ -200,7 +200,7 @@ export default function startAbilityGetDisplayIdTest() {
               if (err) {
                 console.error(JSON.stringify(err));
               }
-              expect(commonEventData.parameters![displayId]).assertEqual(0);
+              expect(commonEventData.parameters![displayId]).assertEqual(currentDisplayId);
               commonEvent.unsubscribe(subscriber, (err, data) => {
                 if (err) {
                   console.error(JSON.stringify(err));
@@ -300,7 +300,7 @@ export default function startAbilityGetDisplayIdTest() {
               }
               console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbilityForResult  subcribed success ` +
                 `200=====> data: ${JSON.stringify(commonEventData)}`);
-              expect(commonEventData.parameters![displayId]).assertEqual(0);
+              expect(commonEventData.parameters![displayId]).assertEqual(currentDisplayId);
               commonEvent.unsubscribe(subscriber, (err, data) => {
                 if (err) {
                   console.error(JSON.stringify(err));
@@ -348,7 +348,7 @@ export default function startAbilityGetDisplayIdTest() {
               }
               console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbilityForResult  subcribed success ` +
                 `100=====> data: ${JSON.stringify(commonEventData)}`);
-              expect(commonEventData.parameters![displayId]).assertEqual(0);
+              expect(commonEventData.parameters![displayId]).assertEqual(currentDisplayId);
               commonEvent.unsubscribe(subscriber, (err, data) => {
                 if (err) {
                   console.error(JSON.stringify(err));
@@ -399,7 +399,7 @@ export default function startAbilityGetDisplayIdTest() {
               }
               console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbilityForResult  subcribed success ` +
                 `400=====> data: ${JSON.stringify(commonEventData)}`);
-              expect(commonEventData.parameters![displayId]).assertEqual(0);
+              expect(commonEventData.parameters![displayId]).assertEqual(currentDisplayId);
               commonEvent.unsubscribe(subscriber, (err, data) => {
                 if (err) {
                   console.error(JSON.stringify(err));
