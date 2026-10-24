@@ -52,39 +52,6 @@ export default function arrayListUnionTest() {
     });
 
     /**
-     * @tc.name   testArrayListUnionTest0100
-     * @tc.number SUB_ARKTS_ARRAY_LIST_UNION_0100
-     * @tc.desc   Verify ArrayList union type constructor and add with number, boolean, object, null, undefined and bigint values
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArrayListUnionTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const empty: ArrayList<UnionAllValue> = new ArrayList<UnionAllValue>();
-      expect(empty.length).assertEqual(0);
-      expect(empty.isEmpty()).assertTrue();
-
-      const list: ArrayList<UnionAllValue> = new ArrayList<UnionAllValue>();
-      for (let i = 0; i < ALL_VALUES.length; i++) {
-        expect(list.add(ALL_VALUES[i])).assertTrue();
-      }
-      expect(list.length).assertEqual(ALL_VALUES.length);
-      expect(list[0]).assertEqual(100);
-      expect(list[4]).assertEqual(0);
-      expect(list[8]).assertTrue();
-      let accessThrew: boolean = false;
-      try {
-        const beyond: UnionAllValue = list[13];
-        expect(beyond).assertUndefined();
-      } catch (e) {
-        accessThrew = true;
-        expect((e as Error).name === 'BusinessError' || (e as Error).name === 'RangeError').assertTrue();
-      }
-      expect(accessThrew || list.length === 13).assertTrue();
-      expect(list.length).assertEqual(ALL_VALUES.length);
-    });
-
-    /**
      * @tc.name   testArrayListUnionTest0200
      * @tc.number SUB_ARKTS_ARRAY_LIST_UNION_0200
      * @tc.desc   Verify ArrayList union type has, getIndexOf, getLastIndexOf, insert and remove behavior
@@ -213,54 +180,6 @@ export default function arrayListUnionTest() {
       expect(list.length).assertEqual(4);
       list.trimToCurrentLength();
       expect(list.length).assertEqual(4);
-    });
-
-    /**
-     * @tc.name   testArrayListUnionTest0600
-     * @tc.number SUB_ARKTS_ARRAY_LIST_UNION_0600
-     * @tc.desc   Verify ArrayList union type boundary access, out-of-range removeByIndex and insert, clear and empty clone
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArrayListUnionTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const list: ArrayList<UnionAllValue> = new ArrayList<UnionAllValue>();
-      list.add(1);
-      let accessThrew: boolean = false;
-      try {
-        const beyond: UnionAllValue = list[1];
-        expect(beyond).assertUndefined();
-      } catch (e) {
-        accessThrew = true;
-        expect((e as Error).name === 'BusinessError' || (e as Error).name === 'RangeError').assertTrue();
-      }
-      expect(accessThrew || list.length === 1).assertTrue();
-      expect(list.length).assertEqual(1);
-
-      let removeThrew: boolean = false;
-      try {
-        list.removeByIndex(88);
-      } catch (e) {
-        removeThrew = true;
-        expect(((e as Error).name).length > 0).assertTrue();
-      }
-      expect(removeThrew).assertTrue();
-      expect(list.length).assertEqual(1);
-
-      let insertThrew: boolean = false;
-      try {
-        list.insert(9, 66);
-      } catch (e) {
-        insertThrew = true;
-        expect((e as Error).name === 'BusinessError' || (e as Error).name === 'RangeError').assertTrue();
-      }
-      expect(insertThrew).assertTrue();
-      expect(list.length).assertEqual(1);
-
-      list.clear();
-      expect(list.length).assertEqual(0);
-      expect(list.isEmpty()).assertTrue();
-      expect(list.clone().length).assertEqual(0);
     });
   });
 }

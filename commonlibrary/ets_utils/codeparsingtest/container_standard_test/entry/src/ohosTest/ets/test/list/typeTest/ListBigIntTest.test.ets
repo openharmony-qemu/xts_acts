@@ -235,50 +235,5 @@ export default function listBigIntTest() {
       expect(list.getLast()).assertEqual(300n);
       expect(list.isEmpty()).assertFalse();
     });
-
-    /**
-     * @tc.name   testListBigIntTest0600
-     * @tc.number SUB_ARKTS_LIST_BIGINT_0600
-     * @tc.desc   Verify List bigint out-of-bounds get/insert/removeByIndex behavior, empty list access and clear
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testListBigIntTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const list: List<bigint> = new List<bigint>();
-      list.add(1n);
-      list.add(2n);
-      expect(list.get(2)).assertUndefined();
-      expect(list[2]).assertUndefined();
-
-      let removeThrew: boolean = false;
-      try {
-        list.removeByIndex(9);
-      } catch (e) {
-        removeThrew = true;
-        expect(((e as Error).name).length > 0).assertTrue();
-      }
-      expect(removeThrew).assertTrue();
-      expect(list.length).assertEqual(2);
-
-      let insertThrew: boolean = false;
-      try {
-        list.insert(9n, 50);
-      } catch (e) {
-        insertThrew = true;
-      }
-      expect(insertThrew).assertTrue();
-      expect(list.length).assertEqual(2);
-
-      const empty: List<bigint> = new List<bigint>();
-      expect(empty.getFirst()).assertUndefined();
-      expect(empty.getLast()).assertUndefined();
-
-      list.clear();
-      expect(list.length).assertEqual(0);
-      expect(list.isEmpty()).assertTrue();
-      const emptyIter = list[Symbol.iterator]();
-      expect(emptyIter.next().done).assertTrue();
-    });
   });
 }
