@@ -21,6 +21,8 @@ import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
+
 export default function openCustomDialogTest() {
   describe('openCustomDialogTest', () => {
     beforeEach(async (): Promise<void> => {
@@ -69,7 +71,7 @@ it('openCustomDialogTest_static_001', Level.LEVEL2, async (done: () => void): Pr
       console.info('return log-----' + JSON.parseJsonElement(OpenCustomDialog).getElement('$attrs').getString('content'));
       expect(JSON.parseJsonElement(OpenCustomDialog).getElement('$attrs').getString('content')).assertEqual('OpenCustomDialog');
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2070);
+      await driver.triggerKey(2070, displayID);
       await CommonFunc.sleep(1000);
       console.info('[openCustomDialogTest_001] END');
       done();
