@@ -1307,6 +1307,56 @@ export default function MultimodalMouseNdkTest() {
     });
 
     /**
+     * @tc.name   SUB_MMI_Input_Api_CreateAllSystemHotkeys_0300
+     * @tc.number SUB_MMI_Input_Api_CreateAllSystemHotkeys_0300
+     * @tc.desc   OH_Input_CreateAllSystemHotkeys Interface testing, verify the create of all system hotkeys
+     *             when the count parameter is 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MMI_Input_Api_CreateAllSystemHotkeys_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_CreateAllSystemHotkeys_0300';
+      console.info(`${caseName} start to test OH_Input_CreateAllSystemHotkeys`);
+      try {
+        let data = mouse.CreateAllSystemHotkeys3();
+        console.info(`${caseName} Test NAPI data= ${JSON.stringify(data)}`);
+        expect(data == 1).assertTrue();
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} end to test OH_Input_CreateAllSystemHotkeys`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_CreateAllSystemHotkeys_0400
+     * @tc.number SUB_MMI_Input_Api_CreateAllSystemHotkeys_0400
+     * @tc.desc   OH_Input_CreateAllSystemHotkeys Interface testing, verify the create of all system hotkeys
+     *             when the count parameter is -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MMI_Input_Api_CreateAllSystemHotkeys_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_CreateAllSystemHotkeys_0400';
+      console.info(`${caseName} start to test OH_Input_CreateAllSystemHotkeys`);
+      try {
+        let data = mouse.CreateAllSystemHotkeys4();
+        console.info(`${caseName} Test NAPI data= ${JSON.stringify(data)}`);
+        expect(data == 1).assertTrue();
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} end to test OH_Input_CreateAllSystemHotkeys`);
+    });
+
+    /**
      * @tc.name   SUB_MMI_Input_GetIntervalSinceLastInput_0100
      * @tc.number SUB_MMI_Input_GetIntervalSinceLastInput_0100
      * @tc.desc   OH_Input_GetIntervalSinceLastInput Interface testing.

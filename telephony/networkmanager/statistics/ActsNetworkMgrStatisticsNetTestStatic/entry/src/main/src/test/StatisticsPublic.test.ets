@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -40,7 +40,7 @@ const ExpectTrue = (n: boolean) => {
         console.info("expectInfo", `test sucess`);
     }
 }
-export default function statisticsHasNetTest() {
+export default function statisticsHasNetTest(): void {
 
     describe("StatisticsHasNetTest", (): void => {
 
@@ -154,18 +154,19 @@ export default function statisticsHasNetTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
                 let ifaceName = "eth0";
-                statistics.getIfaceRxBytes(ifaceName).then((stats: long) => {
+                try {
+                    let stats = await statistics.getIfaceRxBytes(ifaceName);
                     console.log(`${caseName} getIfaceRxBytes success ${JSON.stringify(stats)}`);
                     ExpectFail();
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
-                }).catch((error: Error) => {
+                } catch (error) {
                     let err = error as BusinessError;
                     hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
                     ExpectTrue(err.code == 2103005 || err.code == 2103012);
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
-                });
+                }
 
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
@@ -188,18 +189,19 @@ export default function statisticsHasNetTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
                 let ifaceName = "wlan0";
-                statistics.getIfaceRxBytes(ifaceName).then((stats: long) => {
+                try {
+                    let stats = await statistics.getIfaceRxBytes(ifaceName);
                     console.log(`${caseName} getIfaceRxBytes success ${JSON.stringify(stats)}`);
                     ExpectTrue(stats >= 0);
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
-                }).catch((error: Error) => {
+                } catch (error) {
                     let err = error as BusinessError;
                     hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
                     ExpectFail();
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
-                });
+                }
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
                 ExpectFail();
@@ -221,18 +223,19 @@ export default function statisticsHasNetTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
                 let ifaceName = "wlan1";
-                statistics.getIfaceRxBytes(ifaceName).then((stats: long) => {
+                try {
+                    let stats = await statistics.getIfaceRxBytes(ifaceName);
                     console.log(`${caseName} getIfaceRxBytes success ${JSON.stringify(stats)}`);
                     ExpectFail();
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
-                }).catch((error: Error) => {
+                } catch (error) {
                     let err = error as BusinessError;
                     hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
                     ExpectTrue(err.code == 2103005 || err.code == 2103012);
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
-                });
+                }
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
                 ExpectFail();
@@ -350,18 +353,19 @@ export default function statisticsHasNetTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
                 let ifaceName = "eth0";
-                statistics.getIfaceTxBytes(ifaceName).then((stats: long) => {
+                try {
+                    let stats = await statistics.getIfaceTxBytes(ifaceName);
                     console.log(`${caseName} getIfaceRxBytes success ${JSON.stringify(stats)}`);
                     ExpectFail();
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
-                }).catch((error: Error) => {
+                } catch (error) {
                     let err = error as BusinessError;
                     hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
                     ExpectTrue(err.code == 2103005 || err.code == 2103012);
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
-                });
+                }
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
                 ExpectFail();
@@ -383,18 +387,19 @@ export default function statisticsHasNetTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
                 let ifaceName = "wlan0";
-                statistics.getIfaceTxBytes(ifaceName).then((stats: long) => {
+                try {
+                    let stats = await statistics.getIfaceTxBytes(ifaceName);
                     console.log(`${caseName} getIfaceRxBytes success ${JSON.stringify(stats)}`);
                     ExpectTrue(stats >= 0);
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
-                }).catch((error: Error) => {
+                } catch (error) {
                     let err = error as BusinessError;
                     hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
                     ExpectFail();
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
-                });
+                }
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
                 ExpectFail();
@@ -416,18 +421,19 @@ export default function statisticsHasNetTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
                 let ifaceName = "wlan1";
-                statistics.getIfaceTxBytes(ifaceName).then((stats: long) => {
+                try {
+                    let stats = await statistics.getIfaceTxBytes(ifaceName);
                     console.log(`${caseName} getIfaceRxBytes success ${JSON.stringify(stats)}`);
                     ExpectFail();
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
-                }).catch((error: Error) => {
+                } catch (error) {
                     let err = error as BusinessError;
                     hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
                     ExpectTrue(err.code == 2103005 || err.code == 2103012);
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
-                });
+                }
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
                 ExpectFail();
@@ -479,18 +485,19 @@ export default function statisticsHasNetTest() {
             let caseName: string = 'testManagergetAllTxBytesPromise_static_0100';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                statistics.getAllTxBytes().then((stats: long) => {
+                try {
+                    let stats = await statistics.getAllTxBytes();
                     hilog.info(domain, tag, '%{public}s', caseName +': stats ->'+stats);
                     ExpectTrue(stats >= 0);
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
-                }).catch((error: Error) => {
+                } catch (error) {
                     let err = error as BusinessError;
                     hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
                     ExpectFail();
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
-                });
+                }
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
                 ExpectFail();
@@ -542,18 +549,19 @@ export default function statisticsHasNetTest() {
             let caseName: string = 'testManagergetAllRxBytesPromise_static_0100';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                statistics.getAllRxBytes().then((stats: long) => {
+                try {
+                    let stats = await statistics.getAllRxBytes();
                     hilog.info(domain, tag, '%{public}s', caseName +': stats ->'+stats);
                     ExpectTrue(stats >= 0);
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
-                }).catch((error: Error) => {
+                } catch (error) {
                     let err = error as BusinessError;
                     hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
                     ExpectFail();
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
-                });
+                }
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
                 ExpectFail();
@@ -576,7 +584,7 @@ export default function statisticsHasNetTest() {
             try{
                 let uid :int = 1010;
                 try {
-                    let stats: long = await statistics.getUidRxBytes(uid);
+                    let stats = await statistics.getUidRxBytes(uid);
                     hilog.info(domain, tag, '%{public}s', `${caseName} getUidRxBytes success ${JSON.stringify(stats)}`);
                     ExpectFail();
                 } catch (error) {
@@ -625,18 +633,19 @@ export default function statisticsHasNetTest() {
                 }
                 httpRequest.destroy();
                 hilog.info(domain, tag, '%{public}s', caseName +': current uid is'+ uid);
-                statistics.getUidRxBytes(uid).then((stats: long) => {
+                try {
+                    let stats = await statistics.getUidRxBytes(uid);
                     hilog.info(domain, tag, '%{public}s', caseName +': stats ->'+stats);
                     ExpectTrue(stats >= 0);
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
-                }).catch((error: Error) => {
+                } catch (error) {
                     let err = error as BusinessError;
                     hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
                     ExpectFail();
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
-                });
+                }
             } catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
                 ExpectFail();
@@ -732,7 +741,7 @@ export default function statisticsHasNetTest() {
             try{
                 let uid :int = 1010;
                 try {
-                    let stats: long = await statistics.getUidTxBytes(uid);
+                    let stats = await statistics.getUidTxBytes(uid);
                     hilog.info(domain, tag, '%{public}s', `${caseName} getUidTxBytes success ${JSON.stringify(stats)}`);
                     ExpectFail();
                 } catch (error) {
@@ -772,18 +781,19 @@ export default function statisticsHasNetTest() {
                     }
                 }                
                 hilog.info(domain, tag, '%{public}s', caseName +': current uid is'+ uid);
-                statistics.getUidTxBytes(uid).then((stats: long) => {
+                try {
+                    let stats = await statistics.getUidTxBytes(uid);
                     hilog.info(domain, tag, '%{public}s', caseName +': stats ->'+stats);
                     ExpectTrue(stats >= 0);
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
-                }).catch((error: Error) => {
+                } catch (error) {
                     let err = error as BusinessError;
                     hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
                     ExpectFail();
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
-                });
+                }
             } catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
                 ExpectFail();
@@ -878,18 +888,19 @@ export default function statisticsHasNetTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
                 let sockfd :int = 1;
-                statistics.getSockfdRxBytes(sockfd).then((stats: long) => {
+                try {
+                    let stats = await statistics.getSockfdRxBytes(sockfd);
                     hilog.info(domain, tag, '%{public}s', caseName +': stats ->'+stats);
                     ExpectFail();
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
-                }).catch((error: Error) => {
+                } catch (error) {
                     let err = error as BusinessError;
                     hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
                     ExpectTrue(err.code == 2100002);
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
-                });
+                }
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
                 ExpectFail();
@@ -911,18 +922,19 @@ export default function statisticsHasNetTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
                 let sockfd :int = -1;
-                statistics.getSockfdRxBytes(sockfd).then((stats: long) => {
+                try {
+                    let stats = await statistics.getSockfdRxBytes(sockfd);
                     hilog.info(domain, tag, '%{public}s', caseName +': stats ->'+stats);
                     ExpectFail();
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
-                }).catch((error: Error) => {
+                } catch (error) {
                     let err = error as BusinessError;
                     hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
                     ExpectTrue(err.code == 2100001);
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
-                });
+                }
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
                 ExpectFail();
@@ -1008,18 +1020,19 @@ export default function statisticsHasNetTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
                 let sockfd :int = 1;
-                statistics.getSockfdTxBytes(sockfd).then((stats: long) => {
+                try {
+                    let stats = await statistics.getSockfdTxBytes(sockfd);
                     hilog.info(domain, tag, '%{public}s', caseName +': stats ->'+stats);
                     ExpectFail();
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
-                }).catch((error: Error) => {
+                } catch (error) {
                     let err = error as BusinessError;
                     hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
                     ExpectTrue(err.code == 2100002);
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
-                });
+                }
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
                 ExpectFail();
@@ -1041,18 +1054,19 @@ export default function statisticsHasNetTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
                 let sockfd :int = -1;
-                statistics.getSockfdTxBytes(sockfd).then((stats: long) => {
+                try {
+                    let stats = await statistics.getSockfdTxBytes(sockfd);
                     hilog.info(domain, tag, '%{public}s', caseName +': stats ->'+stats);
                     ExpectFail();
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
-                }).catch((error: Error) => {
+                } catch (error) {
                     let err = error as BusinessError;
                     hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
                     ExpectTrue(err.code == 2100001);
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
-                });
+                }
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
                 ExpectFail();
@@ -1137,18 +1151,19 @@ export default function statisticsHasNetTest() {
             let caseName: string = 'testManagergetCellularRxBytesPromise_static_0100';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                statistics.getCellularRxBytes().then((stats: long) => {
+                try {
+                    let stats = await statistics.getCellularRxBytes();
                     hilog.info(domain, tag, '%{public}s', caseName +': stats ->'+stats);
                     ExpectFail();
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
-                }).catch((error: Error) => {
+                } catch (error) {
                     let err = error as BusinessError;
                     hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
                     ExpectTrue(err.code == 2103012);
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
-                });
+                }
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
                 ExpectFail();
@@ -1200,18 +1215,19 @@ export default function statisticsHasNetTest() {
             let caseName: string = 'testManagergetCellularTxBytesPromise_static_0100';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                statistics.getCellularTxBytes().then((stats: long) => {
+                try {
+                    let stats = await statistics.getCellularTxBytes();
                     hilog.info(domain, tag, '%{public}s', caseName +': stats ->'+stats);
                     ExpectFail();
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
-                }).catch((error: Error) => {
+                } catch (error) {
                     let err = error as BusinessError;
                     hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
                     ExpectTrue(err.code == 2103012);
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
-                });
+                }
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
                 ExpectFail();

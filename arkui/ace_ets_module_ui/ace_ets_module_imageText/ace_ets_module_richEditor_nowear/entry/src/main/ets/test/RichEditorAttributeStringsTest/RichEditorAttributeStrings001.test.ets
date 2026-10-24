@@ -70,7 +70,7 @@ export default function RichEditorAttributeStrings001() {
       let rich = await driver.findComponent(ON.id('RichEditorAttributeStrings001'));
       let getBounds = await rich.getBoundsCenter();
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.x, getBounds.y );
+      await driver.clickAt({ x: getBounds.x, y: getBounds.y, displayId: displayID });
       await CommonFunc.sleep(500);
       driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A, 0, displayID);
       await CommonFunc.sleep(500);
@@ -79,7 +79,7 @@ export default function RichEditorAttributeStrings001() {
       let richOther = await driver.findComponent(ON.id('RichEditorAttributeStrings001_1'));
       let getBoundsOther = await richOther.getBoundsCenter();
       await CommonFunc.sleep(500);
-      await driver.click(getBoundsOther.x, getBoundsOther.y );
+      await driver.clickAt({ x: getBoundsOther.x, y: getBoundsOther.y, displayId: displayID });
       await CommonFunc.sleep(500);
       driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V, 0, displayID);
       await CommonFunc.sleep(500);
@@ -138,7 +138,7 @@ export default function RichEditorAttributeStrings001() {
       let rich = await driver.findComponent(ON.id('RichEditorAttributeStrings001'));
       let getBounds = await rich.getBoundsCenter();
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.x, getBounds.y );
+      await driver.clickAt({ x: getBounds.x, y: getBounds.y, displayId: displayID });
       await CommonFunc.sleep(500);
       driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A, 0, displayID);
       await CommonFunc.sleep(500);
@@ -147,7 +147,7 @@ export default function RichEditorAttributeStrings001() {
       let richOther = await driver.findComponent(ON.id('RichEditorAttributeStrings001_1'));
       let getBoundsOther = await richOther.getBoundsCenter();
       await CommonFunc.sleep(500);
-      await driver.click(getBoundsOther.x, getBoundsOther.y );
+      await driver.clickAt({ x: getBoundsOther.x, y: getBoundsOther.y, displayId: displayID });
       await CommonFunc.sleep(500);
       driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A, 0, displayID);
       await CommonFunc.sleep(500);

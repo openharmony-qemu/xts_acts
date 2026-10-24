@@ -15,7 +15,9 @@
  */
 
 import OpenOrderOverlayTest from './OpenOrderOverlay/OpenOrderOverlay.test';
+import Dialogcover from './CoverageTest/Dialogcover.test';
 
 export default function testsuite(): void {
   OpenOrderOverlayTest();
+  Dialogcover();
 }

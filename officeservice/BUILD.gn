@@ -22,6 +22,7 @@ group("officeservice") {
       "ActsObjectEditorDocumentTestThree:ActsObjectEditorDocumentThreeTest",
       "ActsObjectEditorEnumTest:ActsObjectEditorEnumTest",
       "ActsObjectEditorExtensionTest:ActsObjectEditorExtensionTest",
+      "ActsObjectEditorExtensionTwoTest:ActsObjectEditorExtensionTwoTest",
       "ActsObjectEditorProxyTest:ActsObjectEditorProxyTest",
       "ActsObjectEditorProxyTestTwo:ActsObjectEditorProxyTwoTest",
       "ActsObjectEditorProxyThreeTest:ActsObjectEditorProxyThreeTest",

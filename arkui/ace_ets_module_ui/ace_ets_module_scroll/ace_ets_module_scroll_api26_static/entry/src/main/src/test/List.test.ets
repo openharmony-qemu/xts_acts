@@ -46,6 +46,8 @@ import lazyVWaterFlowLayoutModifier from './LazyVWaterFlowLayout/lazyVWaterFlowL
 import lazyVGridLayoutModifier from './LazyVGridLayout/lazyVGridLayoutModifier.test'
 import ColumnsTemplateItemFillPolicy from './LazyVGridLayout/ColumnsTemplateItemFillPolicy.test'
 import ScrollScrollBarHeight from './Scroll/scrollScrollBarHeight.test'
+import ScrollGetScrollStateTest from './Scroll/ScrollGetScrollState.test'
+import ScrollWithMouseTest from './Scroll/ScrollWithMouse.test'
 import customListLayoutTest from './LazyDynamicLayout/customListLayoutTest.test';
 
 export default function testsuite() {
@@ -75,5 +77,7 @@ export default function testsuite() {
   lazyVGridLayoutModifier();
   ColumnsTemplateItemFillPolicy();
   ScrollScrollBarHeight();
+  ScrollGetScrollStateTest();
+  ScrollWithMouseTest();
   customListLayoutTest();
 }

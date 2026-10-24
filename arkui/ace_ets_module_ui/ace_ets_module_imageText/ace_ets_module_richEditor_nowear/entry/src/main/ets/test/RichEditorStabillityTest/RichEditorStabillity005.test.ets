@@ -30,6 +30,8 @@ import {
 import CommonFunc from '../../MainAbility/common/Common';
 import { KeyCode } from '@kit.InputKit';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RichEditorStabillity005() {
   describe('RichEditorStabillity005', () => {
     beforeEach(async (done: Function) => {
@@ -67,7 +69,7 @@ export default function RichEditorStabillity005() {
       let driver = Driver.create();
       let rich = await driver.findComponent(ON.id('RichEditorStabillity005'));
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
       await CommonFunc.sleep(500);
       let getPosition = await driver.findComponent(ON.id('getPosition'));
       await getPosition.click();
@@ -76,9 +78,9 @@ export default function RichEditorStabillity005() {
       let pointPositionText = await pointPosition.getText();
       await CommonFunc.sleep(500);
       expect(pointPositionText).assertLarger(0);
-      await driver.drag(pointCenter.x + 50, pointCenter.y + 50, pointCenter.x + 50, pointCenter.y + 650, 600);
+      await driver.dragBetween({ x: pointCenter.x + 50, y: pointCenter.y + 50, displayId: displayID }, { x: pointCenter.x + 50, y: pointCenter.y + 650, displayId: displayID }, 600);
       await CommonFunc.sleep(1000);
-      await driver.click(pointCenter.x + 50, pointCenter.y + 650);
+      await driver.clickAt({ x: pointCenter.x + 50, y: pointCenter.y + 650, displayId: displayID });
       await CommonFunc.sleep(500);
       await getPosition.click();
       await CommonFunc.sleep(500);

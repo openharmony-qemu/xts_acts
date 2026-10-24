@@ -25,6 +25,18 @@ export default class TestAbility extends UIAbility {
         hilog.info(0x0000, 'testTag', '%{public}s', 'want param:' + JSON.stringify(want) ?? '');
         hilog.info(0x0000, 'testTag', '%{public}s', 'launchParam:'+ JSON.stringify(launchParam) ?? '');
         globalThis.abilityContext = this.context;
+        try{
+            let appIndex = this.context.getApplicationContext().getCurrentAppCloneIndex();
+            hilog.info(0x0000, 'testTag', '%{public}s', 'TestAbility appIndex ' + appIndex)
+            if(appIndex === 0){
+                AppStorage.setOrCreate('appCloneSupport', true);
+            }
+        }catch(e){
+            hilog.info(0x0000, 'testTag', '%{public}s', 'TestAbility getCurrentAppCloneIndex catch ' + e.code + ' ' + e.message)
+            AppStorage.setOrCreate('appCloneSupport', false);
+        }
+        let appCloneSupport = AppStorage.get('appCloneSupport') as boolean;
+        hilog.info(0x0000, 'testTag', '%{public}s', 'TestAbility getCurrentAppCloneIndex result ' + appCloneSupport)
         let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
         abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
         let abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs;

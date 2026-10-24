@@ -32,7 +32,7 @@ type NullableString = string | null;
 type ThreeState = string | null | undefined;
 type UnionIntString = int | string;
 
-export default function AsyncLockTest() {
+export default function AsyncLockTest(): void {
   let printLog = 'AsyncLockTest:';
   describe('AsyncLockTest', (): void => {
     afterEach(async (): Promise<void> => {

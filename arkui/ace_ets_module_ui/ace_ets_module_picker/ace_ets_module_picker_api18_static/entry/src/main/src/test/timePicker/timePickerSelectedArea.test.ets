@@ -66,11 +66,10 @@ export default function timePickerSelectedAreaTest() {
         let bottom = rect.bottom;
         let middle = (top + bottom) / 2
 
-        await driver.swipe(
-          Math.round(left + (right - left) / 6).toInt(),
-          Math.round(top + (bottom - top) / 2).toInt(),
-          Math.round(left + (right - left) / 6).toInt(),
-          Math.round(top).toInt());
+        let displayId = await timePicker!.getDisplayId();
+        await driver.swipeBetween(
+          { x: Math.round(left + (right - left) / 6).toInt(), y: Math.round(top + (bottom - top) / 2).toInt(), displayId: displayId },
+          { x: Math.round(left + (right - left) / 6).toInt(), y: Math.round(top).toInt(), displayId: displayId });
         await Utils.sleep(6000);
 
         let textStr = await driver.findComponent(ON.id('textFlag'));

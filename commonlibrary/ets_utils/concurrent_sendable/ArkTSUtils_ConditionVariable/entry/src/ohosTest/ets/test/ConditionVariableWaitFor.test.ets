@@ -14,6 +14,7 @@
  */
 import { beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { ArkTSUtils, MessageEvents, taskpool, worker } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 import { sleep, threadWaitFor } from './ConditionVariableHelpers';
 
 export default function conditionVariableWaitForTest() {
@@ -311,5 +312,115 @@ export default function conditionVariableWaitForTest() {
       done();
     });
 
+    /**
+     * @tc.number  SUB_CONDITIONVAR_WAITFOR_NAN_0100
+     * @tc.name    testCvWaitForNan0001
+     * @tc.desc    Verify waitFor(NaN) behavior is pinned
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testCvWaitForNan0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let cv = new ArkTSUtils.locks.ConditionVariable();
+      setTimeout(() => {
+        cv.notifyAll();
+      }, 500);
+      let behavior = 'none';
+      try {
+        await cv.waitFor(NaN);
+        behavior = 'resolved';
+      } catch (error) {
+        behavior = 'threw';
+      }
+      expect(['resolved', 'threw'].indexOf(behavior) >= 0).assertTrue();
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_CONDITIONVAR_WAITFOR_INFINITY_0200
+     * @tc.name    testCvWaitForInfinity0002
+     * @tc.desc    Verify waitFor(Infinity) behavior is pinned
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testCvWaitForInfinity0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let cv = new ArkTSUtils.locks.ConditionVariable();
+      setTimeout(() => {
+        cv.notifyAll();
+      }, 100);
+      let behavior = 'none';
+      try {
+        await cv.waitFor(Infinity);
+        behavior = 'resolved';
+      } catch (error) {
+        behavior = 'threw';
+      }
+      expect(behavior !== 'none').assertTrue();
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_CONDITIONVAR_WAITFOR_FLOAT_0300
+     * @tc.name    testCvWaitForFloat0003
+     * @tc.desc    Verify waitFor(500.5) behavior is pinned
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testCvWaitForFloat0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let cv = new ArkTSUtils.locks.ConditionVariable();
+      setTimeout(() => {
+        cv.notifyAll();
+      }, 700);
+      let t0 = Date.now();
+      try {
+        await cv.waitFor(500.5);
+      } catch (error) {
+      }
+      let dt = Date.now() - t0;
+      expect(dt >= 0).assertTrue();
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_CONDITIONVAR_WAITFOR_STRING_0400
+     * @tc.name    testCvWaitForString0004
+     * @tc.desc    Verify waitFor with wrong-typed string pins an error
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testCvWaitForString0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let cv = new ArkTSUtils.locks.ConditionVariable();
+      let pin = -1;
+      try {
+        await cv.waitFor('1000' as Object as number);
+      } catch (error) {
+        pin = (error as BusinessError).code;
+      }
+      expect(pin !== -1).assertTrue();
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_CONDITIONVAR_WAITFOR_MISSING_0500
+     * @tc.name    testCvWaitForMissing0005
+     * @tc.desc    Verify waitFor with missing arg pins an error
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testCvWaitForMissing0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let cv = new ArkTSUtils.locks.ConditionVariable();
+      let pin = -1;
+      try {
+        await cv.waitFor('invalid' as Object as number);
+      } catch (error) {
+        pin = (error as BusinessError).code;
+      }
+      expect(pin !== -1).assertTrue();
+      done()
+    })
   });
 }

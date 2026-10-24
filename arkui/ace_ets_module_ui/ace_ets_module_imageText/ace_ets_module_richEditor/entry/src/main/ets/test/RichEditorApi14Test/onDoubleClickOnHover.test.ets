@@ -17,6 +17,7 @@ import router from '@ohos.router';
 import { Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 
 export default function RichEditorOnDoubleClickTest() {
   describe('RichEditorOnDoubleClickTest', () => {
@@ -57,7 +58,7 @@ export default function RichEditorOnDoubleClickTest() {
       let RichEditor = await driver.findComponent(ON.id('RichEditor_OnDoubleClickOnHover'));
       let point = await RichEditor.getBoundsCenter();
       await CommonFunc.sleep(500);
-      await driver.mouseMoveTo({ x: point.x , y: point.y })
+      await driver.mouseMoveTo({ x: point.x , y: point.y, displayId: displayID })
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('OnDoubleClickOnHover');
       let obj: ESObject = JSON.parse(strJson);
@@ -82,12 +83,12 @@ export default function RichEditorOnDoubleClickTest() {
       let RichEditor = await driver.findComponent(ON.id('RichEditor_OnDoubleClickOnHover'));
       let point = await RichEditor.getBoundsCenter();
       await CommonFunc.sleep(500);
-      await driver.mouseMoveTo({ x:point.x , y:point.y })
+      await driver.mouseMoveTo({ x:point.x , y:point.y, displayId: displayID })
       await CommonFunc.sleep(1000);
       let text = await driver.findComponent(ON.id('OnDoubleClickOnHover'));
       let point2 = await text.getBoundsCenter();
       await CommonFunc.sleep(500);
-      await driver.mouseMoveTo({ x:point2.x , y:point2.y })
+      await driver.mouseMoveTo({ x:point2.x , y:point2.y, displayId: displayID })
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('OnDoubleClickOnHover');
       let obj: ESObject = JSON.parse(strJson);

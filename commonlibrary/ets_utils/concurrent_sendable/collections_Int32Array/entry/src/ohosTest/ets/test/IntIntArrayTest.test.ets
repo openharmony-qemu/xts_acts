@@ -62,7 +62,9 @@ class CustomIntIntArray extends collections.Int32Array {
 
 export default function IntIntArrayTest(): void {
   describe('IntIntArrayTest', (): void => {
-    beforeAll((): void => {})
+    beforeAll(async (): Promise<void> => {
+    await sleep(200);
+  })
     beforeEach((): void => {})
     afterEach((): void => {})
     afterAll(async (): Promise<void> => {
@@ -1079,5 +1081,53 @@ export default function IntIntArrayTest(): void {
       expect(arr2.length).assertEqual(5)
       expect(arr2.byteOffset).assertEqual(20)
     })
+
+    /**
+     * @tc.number  SUB_TYPEDARRAY_SLICE_INDEPENDENCE_0100
+     * @tc.name    testTypedArraySliceIndependence0001
+     * @tc.desc    Verify slice returns independent copy while subarray shares buffer
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testTypedArraySliceIndependence0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let arr = new collections.Int32Array([100000, 200000, 300000]);
+      let s = arr.slice(0, 2);
+      s[0] = 999999;
+      expect(arr[0]).assertEqual(100000);
+      let sub = arr.subarray(0, 2);
+      sub[0] = 888888;
+      expect(arr[0]).assertEqual(888888);
+    });
+
+    /**
+     * @tc.number  SUB_TYPEDARRAY_MAP_INDEPENDENCE_0200
+     * @tc.name    testTypedArrayMapIndependence0002
+     * @tc.desc    Verify map returns independent new array
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testTypedArrayMapIndependence0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let arr = new collections.Int32Array([1, 2, 3]);
+      let m = arr.map((v: number): number => v * 2);
+      m[0] = 999;
+      expect(arr[0]).assertEqual(1);
+    });
+
+    /**
+     * @tc.number  SUB_TYPEDARRAY_FILTER_INDEPENDENCE_0300
+     * @tc.name    testTypedArrayFilterIndependence0003
+     * @tc.desc    Verify filter returns independent new array
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testTypedArrayFilterIndependence0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let arr = new collections.Int32Array([1, 2, 3]);
+      let f = arr.filter((v: number): boolean => v > 1);
+      f[0] = 999;
+      expect(arr[1]).assertEqual(2);
+    });
   })
 }

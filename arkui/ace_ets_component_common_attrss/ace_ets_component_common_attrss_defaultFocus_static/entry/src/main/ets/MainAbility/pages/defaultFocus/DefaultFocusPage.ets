@@ -504,6 +504,6 @@ struct DefaultFocusPage {
           }.tabBar('Tabs1').applyStyles(this.commonStyle)
         }.width(200).height(300)
       }
-    }.width('100%').height('100%')
+    }.width('100%').height('100%').justifyContent(FlexAlign.Center)
   }
 }

@@ -29,9 +29,11 @@ workerPort.onmessage = (e: MessageEvents) => {
   if (object.contextName === 'SUB_Ability_AbilityRuntime_Worker_Stage_1100') {
     let sendableContext: sendableContextManager.SendableContext = object.sendableContext;
     let context: common.UIAbilityContext = sendableContextManager.convertToUIAbilityContext(sendableContext);
-    hilog.info(0x0000, 'testTag', '%{public}s', object.contextName + '[WorkerTrans1] uiability context convert to uiability context.');
+    hilog.info(0x0000, 'testTag', '%{public}s', object.contextName +
+      '[WorkerTrans1] uiability context convert to uiability context.');
     try {
-      hilog.info(0x0000, 'testTag', object.contextName + '[WorkerTrans1] Worker uiability context.cacheDir: %{public}s', context.cacheDir);
+      hilog.info(0x0000, 'testTag', object.contextName +
+        '[WorkerTrans1] Worker uiability context.cacheDir: %{public}s', context.cacheDir);
       workerPort.postMessage({'key': '[WorkerTrans1] succes', 'value': context});
     } catch (error) {
       hilog.error(0x0000, 'testTag', object.contextName + '[WorkerTrans1]  failed %{public}s',

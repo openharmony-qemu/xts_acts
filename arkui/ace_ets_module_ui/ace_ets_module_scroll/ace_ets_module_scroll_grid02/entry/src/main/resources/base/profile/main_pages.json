@@ -20,6 +20,7 @@
         "MainAbility/pages/LazyVGridLayout/LazyVGridLayout",
         "MainAbility/pages/Grid/barMarginGrid",
         "MainAbility/pages/Grid/canOverGrid",
+        "MainAbility/pages/Grid/gridScrollWithMouse",
         "MainAbility/pages/Grid/gridStopDrag",
         "MainAbility/pages/Grid/syncLoadGrid",
         "MainAbility/pages/Grid/ModifierDraggingFling",

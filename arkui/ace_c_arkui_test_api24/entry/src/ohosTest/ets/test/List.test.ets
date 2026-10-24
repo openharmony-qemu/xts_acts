@@ -27,6 +27,7 @@ import arkuiNativeCapiUiInputEvent from './arkui_native/ArkUICapiGenerated_ui_in
 import PointerEventGetCurrentLocalTest from './pointerEventGetCurrentLocal/PointerEventGetCurrentLocalTest.test'
 import TextGetCharacterTest from './TextGetCharacter/TextGetCharacterTest.test'
 import CrossLanguageOptionsSupportFiveMethodsTest from './FrameNode/CrossLanguageOptionsSupportFiveMethodsTest.test'
+import NodeTransform3DTest from './NodeTransform3D/NodeTransform3DTest.test'
 
 export default function testsuite() {
   matrix4Test();
@@ -44,4 +45,5 @@ export default function testsuite() {
   PointerEventGetCurrentLocalTest();
   TextGetCharacterTest();
   CrossLanguageOptionsSupportFiveMethodsTest();
+  NodeTransform3DTest();
 }

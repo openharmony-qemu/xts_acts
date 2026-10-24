@@ -18,6 +18,8 @@ import CommonFunc from "../../MainAbility/common/Common";
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import abilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function richEditorApi111() {
   describe('richEditorApi111', () => {
     beforeEach(async (done: Function) => {
@@ -73,7 +75,7 @@ export default function richEditorApi111() {
       button1.click()
       await CommonFunc.sleep(1000);
 
-      await driver.click(centerPoint.x, centerPoint.y);
+      await driver.clickAt({ x: centerPoint.x, y: centerPoint.y, displayId: displayID });
       await CommonFunc.sleep(2000);
 
       let button2: Component = await driver.findComponent(ON.text('粘贴'));

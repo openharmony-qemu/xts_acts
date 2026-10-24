@@ -14,6 +14,7 @@
 */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
 import { collections } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 import { gc } from './model/SendableModel';
 
 export function sleep(time: number): Promise<void> {
@@ -39,6 +40,16 @@ const enum SendableEnum {
   VALUE3 = 3
 }
 
+
+@Sendable
+class SupBindHolder001 {
+  map: collections.Map<number, string> = new collections.Map<number, string>([[1, 'a']]);
+}
+
+@Sendable
+class SupBindHolder002 {
+  arr: collections.Array<number> = new collections.Array<number>(1, 2, 3);
+}
 export default function collectionsContainerSendableObjectTest() {
   let id = setInterval(() => {
     gc();
@@ -914,5 +925,47 @@ export default function collectionsContainerSendableObjectTest() {
         console.info(`${caseName} test end`);
         done()
       })
+
+    /**
+     * @tc.number  SUB_SENDABLE_BIND_ONE_0100
+     * @tc.name    testSendableBind0001
+     * @tc.desc    Verify Sendable class Map field detached get throws 10200011
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testSendableBind0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let holder = new SupBindHolder001();
+      let fn = holder.map.get;
+      let pin = -1;
+      try {
+        fn(1);
+      } catch (error) {
+        pin = (error as BusinessError).code;
+      }
+      expect(pin).assertEqual(10200011);
+      done();
+    });
+
+    /**
+     * @tc.number  SUB_SENDABLE_BIND_ONE_0200
+     * @tc.name    testSendableBind0002
+     * @tc.desc    Verify Sendable class Array field detached push throws 10200011
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testSendableBind0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let holder = new SupBindHolder002();
+      let fn = holder.arr.push;
+      let pin = -1;
+      try {
+        fn(4);
+      } catch (error) {
+        pin = (error as BusinessError).code;
+      }
+      expect(pin).assertEqual(10200011);
+      done();
+    });
   })
 }

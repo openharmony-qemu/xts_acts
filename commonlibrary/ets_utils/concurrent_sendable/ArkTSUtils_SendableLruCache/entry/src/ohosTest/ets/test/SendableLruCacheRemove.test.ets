@@ -16,6 +16,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
 import { sleep } from './SendableLruCacheHelpers';
 import { ArkTSUtils } from '@kit.ArkTS'
+import { BusinessError } from '@kit.BasicServicesKit'
 
 export default function SendableLruCacheRemoveTest() {
   describe('SendableLruCacheRemoveTest', () => {
@@ -211,5 +212,19 @@ export default function SendableLruCacheRemoveTest() {
       }
     })
 
+    /**
+     * @tc.number  SUB_LRUCACHE_REMOVE_ONE_0100
+     * @tc.name    testLruCacheRemoveOne0001
+     * @tc.desc    Verify remove with wrong-typed key does not throw 401 (actual)
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testLruCacheRemoveOne0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let cache = new ArkTSUtils.SendableLruCache<number | string | null, number | string>(100)
+      cache.put(1, 2)
+      expect(cache.remove('invalid' as Object as number)).assertUndefined()
+      done()
+    })
   })
 }

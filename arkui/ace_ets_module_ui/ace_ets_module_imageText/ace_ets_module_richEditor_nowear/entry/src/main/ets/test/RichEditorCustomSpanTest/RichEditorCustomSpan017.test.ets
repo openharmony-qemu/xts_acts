@@ -30,6 +30,8 @@ import {
 import CommonFunc from '../../MainAbility/common/Common';
 import { KeyCode } from '@kit.InputKit';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RichEditorCustomSpan017() {
   describe('RichEditorCustomSpan017', () => {
     beforeEach(async (done: Function) => {
@@ -68,7 +70,7 @@ export default function RichEditorCustomSpan017() {
       let rich = await driver.findComponent(ON.id('RichEditorCustomSpan017'));
       let getBounds = await rich.getBounds();
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.left + 200, getBounds.top + 30);
+      await driver.clickAt({ x: getBounds.left + 200, y: getBounds.top + 30, displayId: displayID });
       await CommonFunc.sleep(500);
       let addCustom = await driver.findComponent(ON.id('addCustom'));
       await addCustom.click();
@@ -78,7 +80,7 @@ export default function RichEditorCustomSpan017() {
       let imageTop = await driver.findComponent(ON.id('imageTop'));
       await imageTop.click();
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.left + 200, getBounds.top + 50);
+      await driver.clickAt({ x: getBounds.left + 200, y: getBounds.top + 50, displayId: displayID });
       await CommonFunc.sleep(500);
       let onClickFlag = await driver.findComponent(ON.id('onClickFlag'));
       let onClickFlagText = await onClickFlag.getText();
@@ -101,7 +103,7 @@ export default function RichEditorCustomSpan017() {
       let rich = await driver.findComponent(ON.id('RichEditorCustomSpan017'));
       let getBounds = await rich.getBounds();
       await CommonFunc.sleep(500);
-      await driver.longClick(getBounds.left + 180, getBounds.top + 40);
+      await driver.longClickAt({ x: getBounds.left + 180, y: getBounds.top + 40, displayId: displayID });
       await CommonFunc.sleep(100);
       let onLongPressFlag = await driver.findComponent(ON.id('onLongPressFlag'));
       let onLongPressFlagText = await onLongPressFlag.getText();

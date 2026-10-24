@@ -16,6 +16,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size} from '@ohos/hypium';
 import Utils from './Util.test';
 import { collections } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 @Sendable
 class TestClass {
@@ -560,6 +561,38 @@ export default function CollectionsMapHasTest() {
 
       expect(result).assertEqual(true);
       expect(end - start).assertLess(10);
+    });
+
+    /**
+     * @tc.number  SUB_MAP_HAS_BIND_0100
+     * @tc.name    testMapHasBind0001
+     * @tc.desc    Verify has detached invocation throws 10200011
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testMapHasBind0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let map = new collections.Map<number, string>([[1, 'a']]);
+      let fn = map.has;
+      try {
+        fn(1);
+        expect().assertFail();
+      } catch (error) {
+        expect((error as BusinessError).code).assertEqual(10200011);
+      }
+    });
+
+    /**
+     * @tc.number  SUB_MAP_HAS_ONE_0200
+     * @tc.name    testMapHasOne0002
+     * @tc.desc    Verify has with wrong-typed key throws 401
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testMapHasOne0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let map = new collections.Map<number, string>();
+      expect(map.has('wrong' as Object as number)).assertFalse();
     });
   })
 }

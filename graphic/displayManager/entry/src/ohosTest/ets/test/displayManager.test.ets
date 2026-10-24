@@ -2677,8 +2677,8 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin.');
       try {
-        let result = display.getDisplayByIdSync(0);
-        console.log(`${caseName} display.getDisplayByIdSync(0): ${JSON.stringify(result)}`);
+        let result = display.getDefaultDisplaySync();
+        console.log(`${caseName} display.getDefaultDisplaySync(): ${JSON.stringify(result)}`);
         let width = result.width / 2;
         let height = result.height / 2;
         console.log(`${caseName} width: ${width}`);
@@ -2692,7 +2692,7 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
         console.log(`${caseName} relativePosition: ${JSON.stringify(relativePosition)}`);
         expect(Math.abs(relativePosition.position.x - width)).assertLargerOrEqual(0)
         expect(Math.abs(relativePosition.position.y - height)).assertLargerOrEqual(0)
-        expect(relativePosition.displayId).assertEqual(0)
+        expect(relativePosition.displayId).assertEqual(result.id)
         done();
       } catch (e) {
         console.error(`${caseName} Failed2. err: ${JSON.stringify(e)}`);
@@ -2727,7 +2727,7 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
         console.info(msgStr + `Succeeded in obtaining fold display mode. Data: ${mode}`);
         let region = defaultDisplay.getLiveCreaseRegion();
         console.log(`${caseName} region: ${JSON.stringify(region)}`);
-        expect(region.displayId).assertEqual(0)
+        expect(region.displayId).assertEqual(displayClass.id)
         if (deviceType === '2in1' && result) {
           expect(region.creaseRects.length).assertLarger(0);
           for (let i = 0; i < region.creaseRects.length; i++) {
@@ -2812,7 +2812,7 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
         console.log(`${caseName} defaultDisplay: ${JSON.stringify(defaultDisplay)}`);
         let region = defaultDisplay.getLiveCreaseRegion();
         console.log(`${caseName} region: ${JSON.stringify(region)}`);
-        expect(region.displayId).assertEqual(0)
+        expect(region.displayId).assertEqual(defaultDisplay.id)
         expect(region.creaseRects.length).assertLargerOrEqual(0)
         await display.destroyVirtualScreen(screenId).then(() =>{
           console.info(caseName + 'Succeeded in destroyVirtualScreen1');

@@ -30,23 +30,23 @@ export class MySendAbleClass {
     this.null1 = null1
   }
 
-  add() {
+  add(): Number {
     return this.numberItem1;
   }
 
-  stringEdit() {
+  stringEdit(): string {
     return this.stringItem;
   }
 
-  bigintEdit() {
+  bigintEdit(): bigint {
     return this.bigint1;
   }
 
-  nullEdit() {
+  nullEdit(): null {
     return this.null1;
   }
 
-  booleanItemEdit() {
+  booleanItemEdit(): boolean {
     return this.booleanItem;
   }
 }
@@ -66,23 +66,23 @@ export class MyClass {
     this.null1 = null1
   }
 
-  add() {
+  add(): Number {
     return this.numberItem1;
   }
 
-  stringEdit() {
+  stringEdit(): string {
     return this.stringItem;
   }
 
-  bigintEdit() {
+  bigintEdit(): bigint {
     return this.bigint1;
   }
 
-  nullEdit() {
+  nullEdit(): null {
     return this.null1;
   }
 
-  booleanItemEdit() {
+  booleanItemEdit(): boolean {
     return this.booleanItem;
   }
 }
@@ -120,15 +120,15 @@ export function sendableAFunc1(sendAble: SendableA): Promise<Number> {
 }
 
 export class MyClass2 {
-  array2: Array<Number>
-  constructor(array2: Array<Number>) {
+  array2: Array<number>
+  constructor(array2: Array<number>) {
     this.array2 = array2
   }
 }
 
 export class ClassB2 extends MyClass2 {
   constructor() {
-    super(Array.create<Number>(2, NaN));
+    super([0, 0]);
   }
 }
 

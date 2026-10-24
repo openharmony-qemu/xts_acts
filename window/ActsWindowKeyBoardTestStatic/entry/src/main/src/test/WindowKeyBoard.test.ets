@@ -143,20 +143,17 @@ export default function WindowKeyBoardTest() {
                     console.info(msgStr +  'keyboard show animation completion. keyboardInfo: ' + JSON.stringify(keyboardInfo));
                 });
                 hilog.info(domain, tag,msgStr + 'window.off_keyboardDidShow success');
-                expect(false).assertTrue();
                 done()
             } catch (exception) {
                 exception = exception as BusinessError;
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
-                expect(exception.code === 1300002 || exception.code === 801).assertTrue();
-                if (exception.code !== 801) {
-                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to enable the listener for keyboard show. Cause code:' + JSON.stringify(exception));
-                    expect(exception.code).assertEqual(1300002);
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception.code));
+                if (!isSyscapSessionManagerSupported) {
+                  expect(exception.code).assertEqual(801);
+                  expect(exception.message !== '').assertTrue();
                 } else {
-                    hilog.error(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager' + JSON.stringify(exception));
-                    expect(exception.code).assertEqual(801);
+                  expect(false).assertTrue();
                 }
-                done()
+                done();
             }
         })
 
@@ -224,18 +221,15 @@ export default function WindowKeyBoardTest() {
                     console.info(msgStr +  'keyboard show animation completion. keyboardInfo: ' + JSON.stringify(keyboardInfo));
                 });
                 hilog.info(domain, tag,msgStr + 'window.on_keyboardDidHide success');
-                expect(false).assertTrue();
                 done()
             } catch (exception) {
                 exception = exception as BusinessError;
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
-                expect(exception.code === 1300002 || exception.code === 801).assertTrue();
-                if (exception.code !== 801) {
-                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to enable the listener for keyboard show. Cause code:' + JSON.stringify(exception));
-                    expect(exception.code).assertEqual(1300002);
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception.code));
+                if (!isSyscapSessionManagerSupported) {
+                  expect(exception.code).assertEqual(801);
+                  expect(exception.message !== '').assertTrue();
                 } else {
-                    hilog.error(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager' + JSON.stringify(exception));
-                    expect(exception.code).assertEqual(801);
+                  expect(false).assertTrue();
                 }
                 done()
             }

@@ -83,7 +83,9 @@ struct webResourceError {
               }
               break;
             }
-            case "testGetCustomErrorCode001": {
+            case "testGetCustomErrorCode001":
+            case "testGetCustomErrorCodeCall001":
+            case "testGetCustomErrorCodeReturn001": {
               try {
                 this.customErrorCode = -1;
                 this.schemeHandler = new webView.WebSchemeHandler();
@@ -121,7 +123,9 @@ struct webResourceError {
             console.log(`errorCode is: ${this.errorCode}`);
             this.customErrorCode = event.error.getCustomErrorCode();
             console.log(`customErrorCode is: ${this.customErrorCode}`);
-            if (this.str === 'testGetCustomErrorCode001') {
+            if (this.str === 'testGetCustomErrorCode001' ||
+              this.str === 'testGetCustomErrorCodeCall001' ||
+              this.str === 'testGetCustomErrorCodeReturn001') {
               Utils.emitEvent(this.customErrorCode, 120025);
             }
           }

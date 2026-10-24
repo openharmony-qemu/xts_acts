@@ -29,6 +29,7 @@ add_library(nativerender SHARED
     pointerEventGetCurrentLocal/PointerEventGetCurrentLocalTest.cpp
     TextGetCharacter/TextGetCharacterTest.cpp
     FrameNode/CrossLanguageOptionsSupportFiveMethodsTest.cpp
+    NodeTransform3D/NodeTransform3DTest.cpp
 )
 
 add_library(nativefunc SHARED

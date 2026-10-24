@@ -14,6 +14,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { collections } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 export default function BitVectorHasTest() {
   describe('BitVectorHasTest', () => {
@@ -1312,5 +1313,24 @@ export default function BitVectorHasTest() {
         done()
       });
 
+    /**
+     * @tc.number  SUB_BITVECTOR_HAS_ONE_0100
+     * @tc.name    testBitVectorHas0024
+     * @tc.desc    Verify has with wrong-typed value throws 10200001 (out of range)
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorHas0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let bv = new collections.BitVector(0);
+      bv.push(1);
+      let pin = -1;
+      try {
+        bv.has('x' as Object as number, 0, 3);
+      } catch (error) {
+        pin = (error as BusinessError).code;
+      }
+      expect(pin).assertEqual(10200001);
+    });
   })
 }

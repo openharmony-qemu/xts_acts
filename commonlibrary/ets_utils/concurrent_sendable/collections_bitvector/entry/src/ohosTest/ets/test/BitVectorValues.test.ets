@@ -1335,5 +1335,32 @@ export default function BitVectorValuesTest() {
         done()
       });
 
+    /**
+     * @tc.number  SUB_BITVECTOR_ITER_ONE_0100
+     * @tc.name    testBitVectorIter0001
+     * @tc.desc    Verify for...of order and break behavior
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorIter0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let bv = new collections.BitVector(0);
+      bv.push(0); bv.push(1); bv.push(0); bv.push(1); bv.push(0);
+      let collected: number[] = [];
+      for (let v of bv) {
+        collected.push(v);
+      }
+      expect(collected.length).assertEqual(5);
+      expect(collected[1]).assertEqual(1);
+      let breakCol: number[] = [];
+      for (let v of bv) {
+        if (v === 1) {
+          break;
+        }
+        breakCol.push(v);
+      }
+      expect(breakCol.length).assertEqual(1);
+    });
+
   })
 }

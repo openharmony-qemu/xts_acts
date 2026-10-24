@@ -57,6 +57,22 @@ export default function audioRendererTest() {
       console.info(`${TagFrmwkRender}: afterAll: Test suite-level cleanup condition`);
     })
 
+    let checkCarSupportSync = async(): Promise<boolean> => {
+      let audioManager = audio.getAudioManager();
+      let audioRoutingManager = audioManager!.getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager!.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`checkCarSupportSync outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+          console.info(`this device has external device.`)
+          return false;
+      } else if (outputDeviceDescription.length == 0) {
+          console.info(`this device has external device`)
+          return false;
+      } else {
+          return true;
+      }
+    }
+
     let getFdRead = async (pathName: string, done: ()=>void) => {
       let context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
       console.info(`context: ${JSON.stringify(context)}`);
@@ -10371,27 +10387,30 @@ export default function audioRendererTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_VIDEO_STREAM_STATIC_USAGE', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let AudioStreamInfo: audio.AudioStreamInfo = {
-        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_16000,
-        channels: audio.AudioChannel.CHANNEL_1,
-        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
-        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
-      }
+      if(await checkCarSupportSync()) {
+        let AudioStreamInfo: audio.AudioStreamInfo = {
+          samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_16000,
+          channels: audio.AudioChannel.CHANNEL_1,
+          sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+          encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+        }
 
-      let AudioRendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
-        rendererFlags: 0
-      }
+        let AudioRendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+          rendererFlags: 0
+        }
 
-      let AudioRendererOptions: audio.AudioRendererOptions = {
-        streamInfo: AudioStreamInfo,
-        rendererInfo: AudioRendererInfo
+        let AudioRendererOptions: audio.AudioRendererOptions = {
+          streamInfo: AudioStreamInfo,
+          rendererInfo: AudioRendererInfo
+        }
+        readPath = 'StarWars10s-1C-16000-2SW.wav'
+        await getFdRead(readPath, done);
+        await playWithVideoStream(AudioRendererOptions, filePath, done);
+        await Utils.msSleep(2000);
+        expect(AudioStreamInfo.samplingRate).assertEqual(audio.AudioSamplingRate.SAMPLE_RATE_16000);
+        done();
       }
-      readPath = 'StarWars10s-1C-16000-2SW.wav'
-      await getFdRead(readPath, done);
-      await playWithVideoStream(AudioRendererOptions, filePath, done);
-      await Utils.msSleep(2000);
-      expect(AudioStreamInfo.samplingRate).assertEqual(audio.AudioSamplingRate.SAMPLE_RATE_16000);
       done();
     })
 
@@ -10819,95 +10838,98 @@ export default function audioRendererTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_FLUSH_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let AudioStreamInfo: audio.AudioStreamInfo = {
-        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
-        channels: audio.AudioChannel.CHANNEL_2,
-        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE,
-        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
-      }
-
-      let AudioRendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_RINGTONE,
-        rendererFlags: 0
-      }
-
-      let AudioRendererOptions: audio.AudioRendererOptions = {
-        streamInfo: AudioStreamInfo,
-        rendererInfo: AudioRendererInfo
-      }
-      let resultFlag = false;
-
-      let audioRen: audio.AudioRenderer | null = null;
-      let isPass = false;
-      try {
-        let data = await audio.createAudioRenderer(AudioRendererOptions);
-        audioRen = data;
-        console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err) {
-        console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
-        LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
-        LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
-        let sampleFormat = AudioRendererOptions.streamInfo.sampleFormat;
-        if ((sampleFormat == LE24 || sampleFormat == LE32) && err.code == 202) {
-          isPass = true;
-        } else {
-          resultFlag = false;
+      if(await checkCarSupportSync()) {
+        let AudioStreamInfo: audio.AudioStreamInfo = {
+          samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+          channels: audio.AudioChannel.CHANNEL_2,
+          sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE,
+          encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
         }
-      }
-      console.log(`isPass: ${isPass}`);
-      if (isPass) {
-        resultFlag = true;
-        expect(resultFlag).assertTrue();
-        done();
-        return new Promise<void>((resolve, reject) => {
-          resolve(undefined);
+
+        let AudioRendererInfo: audio.AudioRendererInfo = {
+          usage: audio.StreamUsage.STREAM_USAGE_RINGTONE,
+          rendererFlags: 0
+        }
+
+        let AudioRendererOptions: audio.AudioRendererOptions = {
+          streamInfo: AudioStreamInfo,
+          rendererInfo: AudioRendererInfo
+        }
+        let resultFlag = false;
+
+        let audioRen: audio.AudioRenderer | null = null;
+        let isPass = false;
+        try {
+          let data = await audio.createAudioRenderer(AudioRendererOptions);
+          audioRen = data;
+          console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
+        } catch (err) {
+          console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
+          LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
+          LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
+          let sampleFormat = AudioRendererOptions.streamInfo.sampleFormat;
+          if ((sampleFormat == LE24 || sampleFormat == LE32) && err.code == 202) {
+            isPass = true;
+          } else {
+            resultFlag = false;
+          }
+        }
+        console.log(`isPass: ${isPass}`);
+        if (isPass) {
+          resultFlag = true;
+          expect(resultFlag).assertTrue();
+          done();
+          return new Promise<void>((resolve, reject) => {
+            resolve(undefined);
+          });
+        }
+
+        audioRen!.onStateChange((AudioState: audio.AudioState) => {
+
+          console.log(`${TagFrmwk}: Volume Change Event is called`);
+
+          switch (AudioState) {
+            case audio.AudioState.STATE_RUNNING:
+              console.info(`${TagFrmwk}: state : STATE_RUNNING`);
+              audioRen!.flush().then(() => {
+                console.info('Renderer flushed successfully');
+              }).catch((err: Error) => {
+                console.error(`ERROR: ${err}`);
+              });
+              resultFlag = true;
+              break;
+            default:
+              console.info(`${TagFrmwk}: state : ${AudioState}`);
+              break;
+          }
         });
+
+        await audioRen!.start().then(() => {
+          console.info(`${TagFrmwkRender}: renderInstant started :SUCCESS`);
+        }).catch((err: Error) => {
+          console.info(`${TagFrmwkRender}: renderInstant start :ERROR : ${err.message}`);
+          resultFlag = false;
+        });
+
+        await Utils.msSleep(500);
+
+        await audioRen!.stop().then(() => {
+          console.info(`${TagFrmwkRender}: Renderer stopped : SUCCESS`);
+        }).catch((err: Error) => {
+          console.info(`${TagFrmwkRender}: Renderer stop:ERROR : ${err.message}`);
+        });
+
+        await audioRen!.release().then(() => {
+          console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
+        }).catch((err: Error) => {
+          console.info(`${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
+        });
+        await Utils.msSleep(1000);
+
+        expect(resultFlag).assertTrue();
+
+        done();
       }
-
-      audioRen!.onStateChange((AudioState: audio.AudioState) => {
-
-        console.log(`${TagFrmwk}: Volume Change Event is called`);
-
-        switch (AudioState) {
-          case audio.AudioState.STATE_RUNNING:
-            console.info(`${TagFrmwk}: state : STATE_RUNNING`);
-            audioRen!.flush().then(() => {
-              console.info('Renderer flushed successfully');
-            }).catch((err: Error) => {
-              console.error(`ERROR: ${err}`);
-            });
-            resultFlag = true;
-            break;
-          default:
-            console.info(`${TagFrmwk}: state : ${AudioState}`);
-            break;
-        }
-      });
-
-      await audioRen!.start().then(() => {
-        console.info(`${TagFrmwkRender}: renderInstant started :SUCCESS`);
-      }).catch((err: Error) => {
-        console.info(`${TagFrmwkRender}: renderInstant start :ERROR : ${err.message}`);
-        resultFlag = false;
-      });
-
-      await Utils.msSleep(500);
-
-      await audioRen!.stop().then(() => {
-        console.info(`${TagFrmwkRender}: Renderer stopped : SUCCESS`);
-      }).catch((err: Error) => {
-        console.info(`${TagFrmwkRender}: Renderer stop:ERROR : ${err.message}`);
-      });
-
-      await audioRen!.release().then(() => {
-        console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
-      }).catch((err: Error) => {
-        console.info(`${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
-      });
-      await Utils.msSleep(1000);
-
-      expect(resultFlag).assertTrue();
-
       done();
 
     })
@@ -11609,27 +11631,30 @@ export default function audioRendererTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_CLEARSELECTMEDIAINPUTDEVICE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let audioManager:audio.AudioManager = audio.getAudioManager();
-      let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
-      let data: audio.AudioDeviceDescriptors = audioSessionManager.getAvailableDevices(audio.DeviceUsage.MEDIA_OUTPUT_DEVICES);
-      console.info(`SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_CLEARSELECTMEDIAINPUTDEVICE_STATIC_0100 data is ${JSON.stringify(data)}`);
-      let flag = true;
-      try{
-        if (data[0]){
-          audioSessionManager.selectMediaInputDevice(data[0]);
-          audioSessionManager.clearSelectedMediaInputDevice().then(() => {
-            console.info(`Successed in doing selectMediaInputDevice.`);
-            expect(flag).assertEqual(true);
-            done();
-          }).catch((error:Error) => {
-              expect(flag).assertEqual(false);
-              console.error(`Failed to selectMediaInputDevice. Code: ${error.code}, message: ${error.message}`);
+      if(await checkCarSupportSync()) {
+        let audioManager:audio.AudioManager = audio.getAudioManager();
+        let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
+        let data: audio.AudioDeviceDescriptors = audioSessionManager.getAvailableDevices(audio.DeviceUsage.MEDIA_OUTPUT_DEVICES);
+        console.info(`SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_CLEARSELECTMEDIAINPUTDEVICE_STATIC_0100 data is ${JSON.stringify(data)}`);
+        let flag = true;
+        try{
+          if (data[0]){
+            audioSessionManager.selectMediaInputDevice(data[0]);
+            audioSessionManager.clearSelectedMediaInputDevice().then(() => {
+              console.info(`Successed in doing selectMediaInputDevice.`);
+              expect(flag).assertEqual(true);
               done();
-          });
+            }).catch((error:Error) => {
+                expect(flag).assertEqual(false);
+                console.error(`Failed to selectMediaInputDevice. Code: ${error.code}, message: ${error.message}`);
+                done();
+            });
+          }
+        } catch (error) {
+          expect(flag).assertEqual(false);
+          console.error(`Failed to selectMediaInputDevice. Code: ${error.code}, message: ${error.message}`);
+          done();
         }
-      } catch (error) {
-        expect(flag).assertEqual(false);
-        console.error(`Failed to selectMediaInputDevice. Code: ${error.code}, message: ${error.message}`);
         done();
       }
       done();

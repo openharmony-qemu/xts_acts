@@ -230,12 +230,12 @@ export default function TextInputPageJsunit() {
       let textInputRect = CommonFunc.getComponentRectOnScreen('textInput')
       let clickX = Math.round((textInputRect.right + textInputRect.left)/2)
       let clickY = Math.round((textInputRect.bottom + textInputRect.top)/2)
-      await driverX.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_RIGHT)
+      await driverX.mouseClick({ x: clickX, y: clickY, displayId: displayID }, MouseButton.MOUSE_BUTTON_RIGHT)
       await CommonFunc.sleep(3000);
       let textComponent3 = await driver.findComponent(ON.text('全选'));
       await textComponent3?.click()
       await CommonFunc.sleep(3000);
-      await driverX.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_RIGHT)
+      await driverX.mouseClick({ x: clickX, y: clickY, displayId: displayID }, MouseButton.MOUSE_BUTTON_RIGHT)
       await CommonFunc.sleep(1000);
       let textComponent4 = await driver.findComponent(ON.text('复制'));
       await textComponent4.click()
@@ -249,12 +249,12 @@ export default function TextInputPageJsunit() {
       console.info("[TextInputPageJsunit_0400] Verify copy succ !");
 
       // Verify onCut function of TextInput component
-      await driverX.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_RIGHT)
+      await driverX.mouseClick({ x: clickX, y: clickY, displayId: displayID }, MouseButton.MOUSE_BUTTON_RIGHT)
       await CommonFunc.sleep(1000);
       let textComponent5 = await driver.findComponent(ON.text('全选'));
       await textComponent5?.click()
       await CommonFunc.sleep(3000);
-      await driverX.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_RIGHT)
+      await driverX.mouseClick({ x: clickX, y: clickY, displayId: displayID }, MouseButton.MOUSE_BUTTON_RIGHT)
       await CommonFunc.sleep(1000);
       let textComponent6 = await driver.findComponent(ON.text('剪切'));
       await textComponent6.click()
@@ -266,7 +266,7 @@ export default function TextInputPageJsunit() {
       console.info("[TextInputPageJsunit_0400] Verify cut succ !");
 
       // Verify onPaste function of TextInput component
-      await driverX.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_RIGHT)
+      await driverX.mouseClick({ x: clickX, y: clickY, displayId: displayID }, MouseButton.MOUSE_BUTTON_RIGHT)
       await CommonFunc.sleep(1000);
       let textComponent7 = await driver.findComponent(ON.text('粘贴'));
       await textComponent7.click()

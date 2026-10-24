@@ -1024,9 +1024,11 @@ static napi_value GetFileDescriptorFlow(napi_env env, napi_callback_info info)
 /**
  * @tc.name          SUB_USB_USBMANAGER_CAPI_TEST_4400
  * @tc.desc          Verify OH_UsbManager_GetFileDescriptor fails after the pipe was closed
- *                   (state isolation): connect, close, then query the fd. The documented CAPI
- *                   contract maps "no device handle" from either driver flavor to
- *                   OH_USBMANAGER_ERROR_NO_DEVICE (see ohusb_manager.cpp ConvertErrCodeForGetFd).
+ *                   (state isolation): connect, close, then query the fd. When the device is
+ *                   still present the service maps the driver "no device handle" error to a
+ *                   service error, so the documented CAPI contract returns
+ *                   ERR_CODE_SERVICE_EXCEPTION (see ohusb_manager.cpp
+ *                   ConvertErrCodeForGetFd); NO_DEVICE is reserved for a detached device.
  * @tc.type          Function
  */
 static napi_value GetFileDescriptorAfterClose(napi_env env, napi_callback_info info)

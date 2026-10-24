@@ -19,7 +19,9 @@ import { sleep } from '../Utils';
 
 export default function UintByteClampedArrayCtorTest(): void {
   describe('UintByteClampedArrayCtorTest', (): void => {
-    beforeAll((): void => {})
+    beforeAll(async (): Promise<void> => {
+    await sleep(200);
+  })
     beforeEach((): void => {})
     afterEach((): void => {})
     afterAll(async (): Promise<void> => {

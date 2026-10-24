@@ -57,7 +57,9 @@ class CustomFloatArray extends collections.Float32Array {
 
 export default function FloatArrayTest(): void {
   describe('FloatArrayTest', (): void => {
-    beforeAll((): void => {})
+    beforeAll(async (): Promise<void> => {
+    await sleep(200);
+  })
     beforeEach((): void => {})
     afterEach((): void => {})
     afterAll(async (): Promise<void> => {
@@ -1038,5 +1040,43 @@ export default function FloatArrayTest(): void {
       expect(arr2.length).assertEqual(3)
       expect(arr2.byteOffset).assertEqual(8)
     })
+
+    /**
+     * @tc.number  SUB_TYPEDARRAY_SET_TYPEDARRAY_SRC_0100
+     * @tc.name    testTypedArraySetTypedArraySrc0001
+     * @tc.desc    Verify set accepts TypedArray source with cross-type conversion
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testTypedArraySetTypedArraySrc0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let arr = new collections.Float32Array(5);
+      let src = new collections.Int32Array([1, 2, 3]);
+      arr.set(src, 1);
+      expect(arr[1]).assertEqual(1);
+      expect(arr[2]).assertEqual(2);
+      expect(arr[3]).assertEqual(3);
+      let i8 = new collections.Int8Array(3);
+      i8.set(new collections.Uint8Array([200, 201, 202]));
+      expect(i8[0]).assertEqual(-56);
+      expect(i8[1]).assertEqual(-55);
+      expect(i8[2]).assertEqual(-54);
+    });
+
+    /**
+     * @tc.number  SUB_TYPEDARRAY_F32_SORT_NAN_0200
+     * @tc.name    testTypedArrayF32SortNan0002
+     * @tc.desc    Verify sort with NaN/Infinity keeps length stable
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testTypedArrayF32SortNan0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let f32 = new collections.Float32Array([3.14, NaN, -Infinity, Infinity, 1.5]);
+      f32.sort();
+      expect(f32.length).assertEqual(5);
+      f32.sort((a: number, b: number): number => b - a);
+      expect(f32.length).assertEqual(5);
+    });
   })
 }

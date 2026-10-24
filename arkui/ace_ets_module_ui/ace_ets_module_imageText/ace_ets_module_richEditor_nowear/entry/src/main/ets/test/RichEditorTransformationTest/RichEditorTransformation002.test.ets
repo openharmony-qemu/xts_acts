@@ -30,6 +30,8 @@ import {
 import CommonFunc from '../../MainAbility/common/Common';
 import { KeyCode } from '@kit.InputKit';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RichEditorTransformation002() {
   describe('RichEditorTransformation002', () => {
     beforeEach(async (done: Function) => {
@@ -67,8 +69,8 @@ export default function RichEditorTransformation002() {
       let driver = Driver.create();
       let rich = await driver.findComponent(ON.id('RichEditorTransformation002'));
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
-      await driver.click(pointCenter.x, pointCenter.y);
+      await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
+      await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
       await CommonFunc.sleep(1000);
 
       let selectAll = await driver.findComponent(ON.text('全选'))
@@ -91,9 +93,9 @@ export default function RichEditorTransformation002() {
       let driver = Driver.create();
       let rich = await driver.findComponent(ON.id('RichEditorTransformation002'));
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
       await CommonFunc.sleep(500);
-      await driver.longClick(pointCenter.x, pointCenter.y);
+      await driver.longClickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
       await CommonFunc.sleep(500);
 
       let selectAll = await driver.findComponent(ON.text('全选'))

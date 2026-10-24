@@ -108,7 +108,9 @@ async function factorFloatFunc(buffer: collections.ArrayBuffer, size: number, lo
 
 export default function ConcurrentFactorComboTest(): void {
   describe('ConcurrentFactorComboTest', (): void => {
-    beforeAll((): void => {})
+    beforeAll(async (): Promise<void> => {
+    await sleep(200);
+  })
     beforeEach((): void => {})
     afterEach((): void => {})
     afterAll(async (): Promise<void> => {

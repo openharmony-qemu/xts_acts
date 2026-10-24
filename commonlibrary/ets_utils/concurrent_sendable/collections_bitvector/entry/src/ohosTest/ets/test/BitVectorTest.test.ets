@@ -48,7 +48,9 @@ class MyBitVector extends collections.BitVector {
 
 export default function BitVectorTest(): void {
   describe('BitVectorTest', (): void => {
-    beforeAll((): void => {})
+    beforeAll(async (): Promise<void> => {
+    await sleep(200);
+  })
     beforeEach((): void => {})
     afterEach((): void => {})
     afterAll(async (): Promise<void> => {
@@ -292,5 +294,93 @@ export default function BitVectorTest(): void {
       expect(bv instanceof collections.BitVector).assertTrue()
       expect(typeof bv).assertEqual("object")
     })
+
+    /**
+     * @tc.number  SUB_BITVECTOR_COMBO_ONE_0100
+     * @tc.name    testBitVectorCombo0001
+     * @tc.desc    Verify flipBitByIndex then getIndexOf
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorCombo0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let bv = new collections.BitVector(4);
+      bv.flipBitByIndex(2);
+      expect(bv.getIndexOf(1, 0, 4)).assertEqual(2);
+    });
+
+    /**
+     * @tc.number  SUB_BITVECTOR_COMBO_ONE_0200
+     * @tc.name    testBitVectorCombo0002
+     * @tc.desc    Verify flipBitByIndex then has
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorCombo0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let bv = new collections.BitVector(4);
+      bv.flipBitByIndex(1);
+      expect(bv.has(1, 0, 4)).assertTrue();
+      expect(bv.has(0, 0, 4)).assertTrue();
+    });
+
+    /**
+     * @tc.number  SUB_BITVECTOR_COMBO_ONE_0300
+     * @tc.name    testBitVectorCombo0003
+     * @tc.desc    Verify multi-layer sub-vector independence
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorCombo0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let bv = new collections.BitVector(4);
+      bv[1] = 1;
+      bv[3] = 1;
+      bv.setAllBits(1);
+      let sub = bv.getBitsByRange(0, 4);
+      sub.setAllBits(0);
+      sub.flipBitsByRange(0, 2);
+      expect(sub[0]).assertEqual(1);
+      expect(sub[1]).assertEqual(1);
+      expect(sub[2]).assertEqual(0);
+      expect(bv.getBitCountByRange(1, 0, 4)).assertEqual(4);
+    });
+
+    /**
+     * @tc.number  SUB_BITVECTOR_COMBO_ONE_0400
+     * @tc.name    testBitVectorCombo0004
+     * @tc.desc    Verify cross-word sub-vector operation
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorCombo0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let bv = new collections.BitVector(0);
+      for (let i = 0; i < 129; i++) {
+        bv.push(0);
+      }
+      let sub = bv.getBitsByRange(60, 70);
+      sub.flipBitsByRange(0, 5);
+      expect(sub.getBitCountByRange(1, 0, 5)).assertEqual(5);
+      expect(bv.getBitCountByRange(1, 60, 70)).assertEqual(0);
+    });
+
+    /**
+     * @tc.number  SUB_BITVECTOR_COMBO_ONE_0500
+     * @tc.name    testBitVectorCombo0005
+     * @tc.desc    Verify setAllBits then getBitsByRange then flipBitByIndex
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorCombo0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let bv = new collections.BitVector(6);
+      bv.setAllBits(1);
+      let sub = bv.getBitsByRange(1, 5);
+      sub.flipBitByIndex(0);
+      expect(sub[0]).assertEqual(0);
+      expect(sub[1]).assertEqual(1);
+      expect(bv.getBitCountByRange(1, 0, 6)).assertEqual(6);
+    });
   })
 }

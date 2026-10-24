@@ -78,7 +78,7 @@ export default function testsuite() {
   BaseDialogOptionsSystemMaterialTest();
   CustomDialogControllerOptionsSystemMaterialTest();
   ShowDialogOptionsSystemMaterialTest();
-  ShowToastOptionsTest();
   OpenOrderOverlayTest();
   DisplayModeInSubWindowTest();
+  ShowToastOptionsTest();
 }

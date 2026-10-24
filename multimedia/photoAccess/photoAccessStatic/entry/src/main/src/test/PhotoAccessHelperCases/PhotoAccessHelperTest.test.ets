@@ -19,7 +19,6 @@ import dataSharePredicates from '@ohos.data.dataSharePredicates';
 import {
   checkSet,
   checkUri,
-  checkReadAndWrite,
   columns,
   photoExtensions,
   videoExtensions,
@@ -28,7 +27,7 @@ import {
   fetchOptions_allocate_file
 } from './common'
 import { BusinessError } from '@ohos.base';
-import { driveFn, getPermission, sleep } from '../Common.test.ets'
+import { driveFn, getPermission, checkResourceFile, createResource } from '../Common.test.ets'
 import {
   describe,
   beforeAll,
@@ -44,17 +43,15 @@ import {
 } from '../../../../hypium/index';
 import Context from "application.Context"
 import image from '@ohos.multimedia.image';
-import common from '@ohos.app.ability.common';
-import hilog from '@ohos.hilog'
 
 interface size {
   width: number,
   height: number
 }
 
-export default function PhotoAccessHelperTest() {
+export default function PhotoAccessHelperCaseTest() {
 
-  describe('PhotoAccessHelperTest', () => {
+  describe('PhotoAccessHelperCaseTest', () => {
     let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
     let fetchOptions: photoAccessHelper.FetchOptions = {
       fetchColumns: [],
@@ -1027,7 +1024,9 @@ export default function PhotoAccessHelperTest() {
       console.info('beforeAll case');
       await getPermission();
       await driveFn();
-      await sleep(1000);
+      checkResourceFile(testContext);
+      let fileNameList = ['testPhoto001.jpg', 'testPhoto001.mp4', "addCb01.jpg"];
+      await createResource(testContext, fileNameList);
     });
 
     beforeEach(async () => {

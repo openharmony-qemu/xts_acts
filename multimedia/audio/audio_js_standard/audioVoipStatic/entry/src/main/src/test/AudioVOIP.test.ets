@@ -137,6 +137,22 @@ export default function audioVoip() {
             console.info(`AudioFrameworkTest: afterAll: Test suite-level cleanup condition`);
         })
 
+        let checkCarSupportSync = async(): Promise<boolean> => {
+            let audioManager = audio.getAudioManager();
+            let audioRoutingManager = audioManager!.getRoutingManager();
+            let outputDeviceDescription = await audioRoutingManager!.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+            console.info(`checkCarSupportSync outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+            if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+                console.info(`this device has external device.`)
+                return false;
+            } else if (outputDeviceDescription.length == 0) {
+                console.info(`this device has external device`)
+                return false;
+            } else {
+                return true;
+            }
+        }
+
         let getAbilityInfo = async (fileName: string) => {
             try {
                 let testContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
@@ -414,28 +430,30 @@ export default function audioVoip() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AUDIO_VOIP_PLAY_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            if(await checkCarSupportSync()) {
+                let AudioStreamInfo: audio.AudioStreamInfo = {
+                    samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+                    channels: audio.AudioChannel.CHANNEL_1,
+                    sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+                    encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+                }
 
-            let AudioStreamInfo: audio.AudioStreamInfo = {
-                samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
-                channels: audio.AudioChannel.CHANNEL_1,
-                sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
-                encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
-            }
+                let AudioRendererInfo: audio.AudioRendererInfo = {
+                    usage: audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION,
+                    rendererFlags: 0
+                }
 
-            let AudioRendererInfo: audio.AudioRendererInfo = {
-                usage: audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION,
-                rendererFlags: 0
+                let AudioRendererOptions: audio.AudioRendererOptions = {
+                    streamInfo: AudioStreamInfo,
+                    rendererInfo: AudioRendererInfo
+                }
+                await getFdRead("StarWars10s-1C-44100-2SW.wav");
+                let resultFlag = await playbackPromise(AudioRendererOptions, filePath);
+                Utils.msSleep(100);
+                console.info(`${TagRender}: resultFlag : ${resultFlag}`);
+                expect(resultFlag).assertTrue();
+                done();
             }
-
-            let AudioRendererOptions: audio.AudioRendererOptions = {
-                streamInfo: AudioStreamInfo,
-                rendererInfo: AudioRendererInfo
-            }
-            await getFdRead("StarWars10s-1C-44100-2SW.wav");
-            let resultFlag = await playbackPromise(AudioRendererOptions, filePath);
-            Utils.msSleep(100);
-            console.info(`${TagRender}: resultFlag : ${resultFlag}`);
-            expect(resultFlag).assertTrue();
             done();
         })
 
@@ -448,29 +466,31 @@ export default function audioVoip() {
          * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            if(await checkCarSupportSync()) {
+                let AudioStreamInfo: audio.AudioStreamInfo = {
+                    samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+                    channels: audio.AudioChannel.CHANNEL_2,
+                    sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+                    encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+                }
 
-            let AudioStreamInfo: audio.AudioStreamInfo = {
-                samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
-                channels: audio.AudioChannel.CHANNEL_2,
-                sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
-                encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+                let AudioCapturerInfo: audio.AudioCapturerInfo = {
+                    source: audio.SourceType.SOURCE_TYPE_VOICE_COMMUNICATION,
+                    capturerFlags: 0
+                }
+
+                let AudioCapturerOptions: audio.AudioCapturerOptions = {
+                    streamInfo: AudioStreamInfo,
+                    capturerInfo: AudioCapturerInfo
+                }
+
+                await getAbilityInfo("capture_js-44100-2C-16B.pcm");
+                let resultFlag = await recPromise(AudioCapturerOptions, mediaDir);
+                Utils.msSleep(100);
+                console.info(`${TagRender}: resultFlag : ${resultFlag}`);
+                expect(resultFlag).assertTrue();
+                done();
             }
-
-            let AudioCapturerInfo: audio.AudioCapturerInfo = {
-                source: audio.SourceType.SOURCE_TYPE_VOICE_COMMUNICATION,
-                capturerFlags: 0
-            }
-
-            let AudioCapturerOptions: audio.AudioCapturerOptions = {
-                streamInfo: AudioStreamInfo,
-                capturerInfo: AudioCapturerInfo
-            }
-
-            await getAbilityInfo("capture_js-44100-2C-16B.pcm");
-            let resultFlag = await recPromise(AudioCapturerOptions, mediaDir);
-            Utils.msSleep(100);
-            console.info(`${TagRender}: resultFlag : ${resultFlag}`);
-            expect(resultFlag).assertTrue();
             done();
         })
 
@@ -483,52 +503,55 @@ export default function audioVoip() {
          * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AUDIO_VOIP_RECPLAY_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            if(await checkCarSupportSync()) {
+                let AudioStreamInfoCap: audio.AudioStreamInfo = {
+                    samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+                    channels: audio.AudioChannel.CHANNEL_2,
+                    sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+                    encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+                }
 
-            let AudioStreamInfoCap: audio.AudioStreamInfo = {
-                samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
-                channels: audio.AudioChannel.CHANNEL_2,
-                sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
-                encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+                let AudioCapturerInfo: audio.AudioCapturerInfo = {
+                    source: audio.SourceType.SOURCE_TYPE_VOICE_COMMUNICATION,
+                    capturerFlags: 0
+                }
+
+                let AudioCapturerOptions: audio.AudioCapturerOptions = {
+                    streamInfo: AudioStreamInfoCap,
+                    capturerInfo: AudioCapturerInfo
+                }
+
+                let AudioStreamInfoRen: audio.AudioStreamInfo = {
+                    samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+                    channels: audio.AudioChannel.CHANNEL_1,
+                    sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+                    encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+                }
+
+                let AudioRendererInfo: audio.AudioRendererInfo = {
+                    usage: audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION,
+                    rendererFlags: 0
+                }
+
+                let AudioRendererOptions: audio.AudioRendererOptions = {
+                    streamInfo: AudioStreamInfoRen,
+                    rendererInfo: AudioRendererInfo
+                }
+
+                await getAbilityInfo("capture_js-44100-2C-16B-2.pcm");
+                recPromise(AudioCapturerOptions, mediaDir);
+                Utils.msSleep(500);
+
+                readpath = 'StarWars10s-1C-44100-2SW.wav';
+                await getFdRead(readpath);
+                let resultFlag = await playbackPromise(AudioRendererOptions, readpath);
+                Utils.msSleep(100);
+                console.info(`${TagRender}: resultFlag : ${resultFlag}`);
+                expect(resultFlag).assertTrue();
+                done();
             }
-
-            let AudioCapturerInfo: audio.AudioCapturerInfo = {
-                source: audio.SourceType.SOURCE_TYPE_VOICE_COMMUNICATION,
-                capturerFlags: 0
-            }
-
-            let AudioCapturerOptions: audio.AudioCapturerOptions = {
-                streamInfo: AudioStreamInfoCap,
-                capturerInfo: AudioCapturerInfo
-            }
-
-            let AudioStreamInfoRen: audio.AudioStreamInfo = {
-                samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
-                channels: audio.AudioChannel.CHANNEL_1,
-                sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
-                encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
-            }
-
-            let AudioRendererInfo: audio.AudioRendererInfo = {
-                usage: audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION,
-                rendererFlags: 0
-            }
-
-            let AudioRendererOptions: audio.AudioRendererOptions = {
-                streamInfo: AudioStreamInfoRen,
-                rendererInfo: AudioRendererInfo
-            }
-
-            await getAbilityInfo("capture_js-44100-2C-16B-2.pcm");
-            recPromise(AudioCapturerOptions, mediaDir);
-            Utils.msSleep(500);
-
-            readpath = 'StarWars10s-1C-44100-2SW.wav';
-            await getFdRead(readpath);
-            let resultFlag = await playbackPromise(AudioRendererOptions, readpath);
-            Utils.msSleep(100);
-            console.info(`${TagRender}: resultFlag : ${resultFlag}`);
-            expect(resultFlag).assertTrue();
             done();
+
         })
     });
 }

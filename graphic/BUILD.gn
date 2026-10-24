@@ -40,6 +40,7 @@ group("graphic") {
       "effectKitGE:ActsEffectKitGETest",
       "graphic3D:ActsGraphic3DTest",
       "graphic3DStatic:ActsGraphic3dStaticTest",
+      "graphicComponent3DStatic:ActsGraphicComponent3dStaticTest",
       "graphicColorSpace:ActsColorSpaceManagerTest",
       "graphicColorSpaceStatic:ActsColorSpaceManagerStaticTest",
       "graphicDisplaySync:ActsGraphicDisplaySyncTest",

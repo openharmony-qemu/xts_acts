@@ -14,6 +14,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { collections } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 export default function BitVectorGetBitCountByRangeTest() {
   describe('BitVectorGetBitCountByRangeTest', () => {
@@ -1393,5 +1394,24 @@ export default function BitVectorGetBitCountByRangeTest() {
         done()
       });
 
+    /**
+     * @tc.number  SUB_BITVECTOR_COUNT_ONE_0100
+     * @tc.name    testBitVectorCount0001
+     * @tc.desc    Verify getBitCountByRange with wrong-typed value throws 10200001 (out of range)
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorCount0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let bv = new collections.BitVector(0);
+      bv.push(1);
+      let pin = -1;
+      try {
+        bv.getBitCountByRange('x' as Object as number, 0, 5);
+      } catch (error) {
+        pin = (error as BusinessError).code;
+      }
+      expect(pin).assertEqual(10200001);
+    });
   });
 }

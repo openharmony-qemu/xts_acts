@@ -16,6 +16,16 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
 import { sleep, CreateDefaultLruCache, CreateDefaultUndefinedLruCache } from './SendableLruCacheHelpers';
 import { ArkTSUtils } from '@kit.ArkTS'
+
+@Sendable
+class SupCreateDefaultCache001 extends ArkTSUtils.SendableLruCache<string, string> {
+  createDefault(key: string): string | undefined {
+    if (key === 'missing') {
+      return 'default-value';
+    }
+    return undefined;
+  }
+}
 export default function SendableLruCacheCreateDefaultTest() {
   describe('SendableLruCacheCreateDefaultTest', () => {
     beforeAll(() => {
@@ -277,5 +287,39 @@ export default function SendableLruCacheCreateDefaultTest() {
       done();
     })
 
+    /**
+     * @tc.number  SUB_LRUCACHE_CREATEDEFAULT_DOC_0100
+     * @tc.name    testLruCacheCreateDefaultDoc0001
+     * @tc.desc    Verify createDefault override returns default value for missing key
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testLruCacheCreateDefaultDoc0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let cache = new SupCreateDefaultCache001(10)
+      let created = cache.get('missing')
+      expect(created).assertEqual('default-value')
+      let miss = cache.get('missing2')
+      expect(miss === undefined).assertTrue()
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_LRUCACHE_ONREMOVE_CONFORMANCE_0200
+     * @tc.name    testLruCacheOnRemoveConformance0002
+     * @tc.desc    Verify no onRemove hook and eviction only increments remove count
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testLruCacheOnRemoveConformance0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let cache = new ArkTSUtils.SendableLruCache<number, number>(2)
+      expect((cache as object as Record<string, Object>)['onRemove'] === undefined).assertTrue()
+      cache.put(1, 1)
+      cache.put(2, 2)
+      cache.put(3, 3)
+      expect(cache.getRemoveCount() >= 1).assertTrue()
+      done()
+    })
   })
 }

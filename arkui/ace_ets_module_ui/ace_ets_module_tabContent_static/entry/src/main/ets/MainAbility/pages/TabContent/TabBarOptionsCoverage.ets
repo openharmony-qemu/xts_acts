@@ -15,7 +15,7 @@
  */
 
 import {
-  Entry, Component, Column, Text, Scroll, Tabs, TabContent, Color, TabBarOptions
+  Entry, Component, Column, Text, Scroll, Tabs, TabContent, Color, TabBarOptions, BottomTabBarStyle, TabBarBadgeStyle,$r
 } from '@ohos.arkui.component';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { Router } from '@ohos.arkui.UIContext';
@@ -153,6 +153,34 @@ struct TabBarOptionsCoverage {
           }.tabBar('B')
         }
         .id('tabs_tabBar_default')
+        .width('100%').height(120)
+
+        Text('BottomTabBarStyle badge normal').fontSize(12)
+        Tabs() {
+          TabContent() {
+            Column().width('100%').height(40).backgroundColor(Color.Blue)
+          }
+          .id('tabBarOptions_bottomTabBar_badge')
+          .tabBar(new BottomTabBarStyle($r('app.media.icon'), 'Home').badge({ value: 8, maxCount: 99 } as TabBarBadgeStyle))
+          TabContent() {
+            Column().width('100%').height(40).backgroundColor(Color.Green)
+          }.tabBar('B')
+        }
+        .id('tabs_tabBarOptions_bottomTabBar_badge')
+        .width('100%').height(120)
+
+        Text('BottomTabBarStyle badge undefined').fontSize(12)
+        Tabs() {
+          TabContent() {
+            Column().width('100%').height(40).backgroundColor(Color.Blue)
+          }
+          .id('tabBarOptions_bottomTabBar_badge_undefined')
+          .tabBar(new BottomTabBarStyle($r('app.media.icon'), 'Home').badge({} as TabBarBadgeStyle))
+          TabContent() {
+            Column().width('100%').height(40).backgroundColor(Color.Green)
+          }.tabBar('B')
+        }
+        .id('tabs_tabBarOptions_bottomTabBar_badge_undefined')
         .width('100%').height(120)
       }
       .width('100%')

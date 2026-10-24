@@ -360,7 +360,10 @@ export default function sliderJsunitSliderTest() {
       let y = Math.round(top + (bottom - top) / 2).toInt()
 
       await driver.delayMs(waitUiReadyMs)
-      await driver.swipe(left, y, x, y)
+      let displayId = await slider?.getDisplayId();
+      await driver.swipeBetween(
+        { x: Math.round(left).toInt(), y: y, displayId: displayId },
+        { x: x, y: y, displayId: displayId });
 
       await driver.delayMs(waitUiReadyMs)
       let strJson = inspector.getInspectorByKey("tex")

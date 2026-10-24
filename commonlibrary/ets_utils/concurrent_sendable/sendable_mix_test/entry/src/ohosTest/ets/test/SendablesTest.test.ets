@@ -22,7 +22,27 @@ import { testSendableSimpleDate, testSendableSimpleString, testSendableSimpleNum
   testSendableContainerWithUndefinedField,testSendableWithGenericSendableField, testSendableContainerWithNullableNested,
   testSendableImportedInitializer }
   from './SendablesTest'
+import { taskpool } from '@kit.ArkTS'
 
+
+@Concurrent
+function supModifyLiteral001(obj: Record<string, number>): void {
+  obj.a = 999;
+}
+
+@Concurrent
+function supModifyArrayLiteral001(arr: number[]): void {
+  arr[0] = 999;
+}
+
+class SupLiteralObj001 {
+  a: number = 1;
+}
+
+@Concurrent
+function supModifyObj001(obj: SupLiteralObj001): void {
+  obj.a = 999;
+}
 export default function SendablesTestWithAlloc() {
   let printLog = 'SendablesTestWithAlloc:';
   describe('SendablesTestWithAlloc', () => {
@@ -339,5 +359,34 @@ export default function SendablesTestWithAlloc() {
       done();
     })
 
+
+    /**
+     * @tc.number  SUB_SENDABLE_DOC_ARRAY_LITERAL_0200
+     * @tc.name    testSendableDocArrayLiteral0002
+     * @tc.desc    Verify array literal is copied across threads
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testSendableDocArrayLiteral0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let arrayLiteral: number[] = [1, 2, 3];
+      await taskpool.execute(new taskpool.Task(supModifyArrayLiteral001, arrayLiteral));
+      expect(arrayLiteral[0]).assertEqual(1);
+      done()
+    })
+    /**
+     * @tc.number  SUB_SENDABLE_DOC_LITERAL_ONE_0100
+     * @tc.name    testSendableDocLiteral0001
+     * @tc.desc    Verify non-Sendable object is copied across threads
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testSendableDocLiteral0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let literalObj: SupLiteralObj001 = new SupLiteralObj001();
+      await taskpool.execute(new taskpool.Task(supModifyObj001, literalObj));
+      expect(literalObj.a).assertEqual(1);
+      done()
+    })
   })
 }

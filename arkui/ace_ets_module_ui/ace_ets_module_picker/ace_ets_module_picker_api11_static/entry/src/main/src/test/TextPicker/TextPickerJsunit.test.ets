@@ -139,8 +139,10 @@ export default function TextPickerJsunit() {
       let bottom = rect.bottom
       let right = rect.right
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(left + (right - left) / 2).toInt(), Math.round(top + (bottom - top) / 2).toInt(),
-        Math.round(left + (right - left) / 2).toInt(), Math.round(top).toInt());
+      let displayId = await textPicker?.getDisplayId();
+      await driver.swipeBetween(
+        { x: Math.round(left + (right - left) / 2).toInt(), y: Math.round(top + (bottom - top) / 2).toInt(), displayId: displayId },
+        { x: Math.round(left + (right - left) / 2).toInt(), y: Math.round(top).toInt(), displayId: displayId });
       await CommonFunc.sleep(6000);
       let strJson = inspector.getInspectorByKey('textContent1');
       let obj = JSON.parseJsonElement(strJson);

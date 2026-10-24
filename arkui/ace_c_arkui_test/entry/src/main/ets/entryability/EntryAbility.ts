@@ -13,44 +13,70 @@
  * limitations under the License.
  */
 
-import UIAbility from '@ohos.app.ability.UIAbility';
-import hilog from '@ohos.hilog';
-import window from '@ohos.window';
+import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { window } from '@kit.ArkUI';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 export default class EntryAbility extends UIAbility {
-  onCreate(want, launchParam) {
+  private para: Record<string, number> = { 'propAM': 42, 'propBM': 40 };
+  private storage: LocalStorage = new LocalStorage(this.para);
+
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
+    globalThis.abilityWant = want;
   }
 
   onDestroy() {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
   }
-
-  onWindowStageCreate(windowStage: window.WindowStage) {
+  
+  onWindowStageCreate(windowStage: window.WindowStage): void {
     // Main window is created, set main page for this ability
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
-    windowStage.loadContent('pages/Index', (err, data) => {
-      if (err.code) {
-        hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
+    globalThis.windowStage = windowStage
+    globalThis.abilityContext = this.context
+    let mainWindow: window.Window = windowStage.getMainWindowSync();
+    let promise1 = mainWindow.getProperties();
+    promise1.then((data) => {
+      console.info('当前屏幕ID' + data.displayId);
+      AppStorage.setOrCreate('displayID', data.displayId);
+    }).catch((err: BusinessError) => {
+    });
+
+    let windowClass: window.Window | undefined = undefined;
+    windowStage.getMainWindow((err: BusinessError, data) => {
+      let errCode: number = err.code;
+      if (errCode) {
+        console.error(`Failed to obtain the main window. Cause code: ${err.code}, message: ${err.message}`);
         return;
       }
-      hilog.info(0x0000, 'testTag', 'Succeeded in loading the content. Data: %{public}s', JSON.stringify(data) ?? '');
+      windowClass = data;
+      console.info('Succeeded in obtaining the main window. Data: ' + JSON.stringify(data));
+      
+      let promise = windowClass.loadContent('MainAbility/pages/index/index', this.storage);
+      promise.then(() => {
+        console.info('Succeeded in loading the content.');
+      }).catch((err: BusinessError) => {
+        console.error(`Failed to load the content. Cause code: ${err.code}, message: ${err.message}`);
+      });
     });
+    AppStorage.setOrCreate('windowStage', windowStage);
   }
 
-  onWindowStageDestroy() {
+  onWindowStageDestroy(): void {
     // Main window is destroyed, release UI related resources
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageDestroy');
   }
 
-  onForeground() {
+  onForeground(): void {
     // Ability has brought to foreground
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onForeground');
   }
 
-  onBackground() {
+  onBackground(): void {
     // Ability has back to background
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onBackground');
   }
-};
+}

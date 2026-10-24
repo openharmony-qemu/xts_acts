@@ -15,7 +15,7 @@
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import { describe, it, expect, beforeAll, beforeEach, afterEach, afterAll, Level } from '@ohos/hypium-dynamic';
-import { getPermission, driveFn, LOG_TAG, copyImageToSandbox } from '../../common';
+import { getPermission, driveFn, LOG_TAG, copyImageToSandbox, checkResourceFile, createResource } from '../../common';
 import common from '@ohos.app.ability.common';
 
 const TAG = LOG_TAG + 'loadMovingPhoto';
@@ -45,6 +45,10 @@ export default function MediaAssetManagerLoadMovingPhotoTest() {
       console.info(TAG, 'beforeAll case');
       await getPermission();
       await driveFn();
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let fileNameList: Array<string> = [ "01.jpg" , "01.mp4" ];
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNameList);
     });
 
     beforeEach(() => {
@@ -78,23 +82,5 @@ export default function MediaAssetManagerLoadMovingPhotoTest() {
       await loadMovingPhotoPromiseTest(done, testName, videoPath, imagePath);
     })
 
-    /**
-     * @tc.name   MediaAssetManager_cancelRequest_promise_002
-     * @tc.number MEDIA_ASSET_MANAGER_LOAD_MOVING_PHOTO_002
-     * @tc.desc   cancelRequest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    /*it('MediaAssetManager_cancelRequest_promise_002', Level.LEVEL0, async (done: Function) => {
-      const testName = 'MediaAssetManager_cancelRequest_promise_002';
-      const videoFileName = '1vp9_320x240_30.mp4';
-      const videoPath = '1vp9_320x240_30.mp4';
-      await copyImageToSandbox(videoFileName, videoPath);
-      const imageFileName = '1vp9_320x240_30.mp4';
-      const imagePath = '1vp9_320x240_30.mp4';
-      await copyImageToSandbox(imageFileName, imagePath);
-      await loadMovingPhotoPromiseTest(done, testName, 'videoPath', 'imagePath');
-    })*/
   })
 }

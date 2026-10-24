@@ -89,6 +89,8 @@ export default function startAbilityGetDisplayIdTest() {
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0500', Level.LEVEL3,
       async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0500';
+      let currentDisplayId = display.getDefaultDisplaySync().id;
+      console.info(`${TEST_CASE_NAME}====> getDefaultDisplaySync sucess: ${currentDisplayId}`);
       try {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: [Constant.event_500]
@@ -101,7 +103,7 @@ export default function startAbilityGetDisplayIdTest() {
               }
               console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbilityForResult ` +
                 `subcribed success 500=====> data: ${JSON.stringify(commonEventData)}`);
-              expect(commonEventData.parameters![displayId]).assertEqual(0);
+              expect(commonEventData.parameters![displayId]).assertEqual(currentDisplayId);
               commonEvent.unsubscribe(subscriber, (err, data) => {
                 if (err) {
                   console.error(JSON.stringify(err));
@@ -138,6 +140,8 @@ export default function startAbilityGetDisplayIdTest() {
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0600', Level.LEVEL3, async (done: Function) =>
       {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0600';
+      let currentDisplayId = display.getDefaultDisplaySync().id;
+      console.info(`${TEST_CASE_NAME}====> getDefaultDisplaySync sucess: ${currentDisplayId}`);
       try {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: [Constant.event_600]
@@ -150,7 +154,7 @@ export default function startAbilityGetDisplayIdTest() {
               }
               console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbilityForResult ` +
                 `subcribed success 600=====> data: ${JSON.stringify(commonEventData)}`);
-              expect(commonEventData.parameters![displayId]).assertEqual(0);
+              expect(commonEventData.parameters![displayId]).assertEqual(currentDisplayId);
               commonEvent.unsubscribe(subscriber, (err, data) => {
                 if (err) {
                   console.error(JSON.stringify(err));
@@ -184,6 +188,8 @@ export default function startAbilityGetDisplayIdTest() {
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0700', Level.LEVEL3, async (done: Function) =>
       {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0700';
+      let currentDisplayId = display.getDefaultDisplaySync().id;
+      console.info(`${TEST_CASE_NAME}====> getDefaultDisplaySync sucess: ${currentDisplayId}`);
       try {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: [Constant.event_700]
@@ -194,7 +200,7 @@ export default function startAbilityGetDisplayIdTest() {
               if (err) {
                 console.error(JSON.stringify(err));
               }
-              expect(commonEventData.parameters![displayId]).assertEqual(0);
+              expect(commonEventData.parameters![displayId]).assertEqual(currentDisplayId);
               commonEvent.unsubscribe(subscriber, (err, data) => {
                 if (err) {
                   console.error(JSON.stringify(err));
@@ -231,6 +237,8 @@ export default function startAbilityGetDisplayIdTest() {
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0300', Level.LEVEL3, async (done: Function) =>
       {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0300';
+      let currentDisplayId = display.getDefaultDisplaySync().id;
+      console.info(`${TEST_CASE_NAME}====> getDefaultDisplaySync sucess: ${currentDisplayId}`);
       try {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: [Constant.event_300]
@@ -244,7 +252,7 @@ export default function startAbilityGetDisplayIdTest() {
               console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbilityForResult ` +
                 `subcribed success 300=====> data: ${JSON.stringify(commonEventData)}`);
 
-              expect(commonEventData.parameters![displayId]).assertEqual(0);
+              expect(commonEventData.parameters![displayId]).assertEqual(currentDisplayId);
               commonEvent.unsubscribe(subscriber, (err, data) => {
                 if (err) {
                   console.error(JSON.stringify(err));
@@ -278,6 +286,8 @@ export default function startAbilityGetDisplayIdTest() {
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0200', Level.LEVEL3,
       async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0200'
+      let currentDisplayId = display.getDefaultDisplaySync().id;
+      console.info(`${TEST_CASE_NAME}====> getDefaultDisplaySync sucess: ${currentDisplayId}`);
       try {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: [Constant.event_200]
@@ -290,7 +300,7 @@ export default function startAbilityGetDisplayIdTest() {
               }
               console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbilityForResult  subcribed success ` +
                 `200=====> data: ${JSON.stringify(commonEventData)}`);
-              expect(commonEventData.parameters![displayId]).assertEqual(0);
+              expect(commonEventData.parameters![displayId]).assertEqual(currentDisplayId);
               commonEvent.unsubscribe(subscriber, (err, data) => {
                 if (err) {
                   console.error(JSON.stringify(err));
@@ -324,6 +334,8 @@ export default function startAbilityGetDisplayIdTest() {
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0100', Level.LEVEL3,
       async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0100';
+      let currentDisplayId = display.getDefaultDisplaySync().id;
+      console.info(`${TEST_CASE_NAME}====> getDefaultDisplaySync sucess: ${currentDisplayId}`);
       try {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: [Constant.event_100]
@@ -336,7 +348,7 @@ export default function startAbilityGetDisplayIdTest() {
               }
               console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbilityForResult  subcribed success ` +
                 `100=====> data: ${JSON.stringify(commonEventData)}`);
-              expect(commonEventData.parameters![displayId]).assertEqual(0);
+              expect(commonEventData.parameters![displayId]).assertEqual(currentDisplayId);
               commonEvent.unsubscribe(subscriber, (err, data) => {
                 if (err) {
                   console.error(JSON.stringify(err));
@@ -373,6 +385,8 @@ export default function startAbilityGetDisplayIdTest() {
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0400', Level.LEVEL3,
       async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0400';
+      let currentDisplayId = display.getDefaultDisplaySync().id;
+      console.info(`${TEST_CASE_NAME}====> getDefaultDisplaySync sucess: ${currentDisplayId}`);
       try {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: [Constant.event_400]
@@ -385,7 +399,7 @@ export default function startAbilityGetDisplayIdTest() {
               }
               console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbilityForResult  subcribed success ` +
                 `400=====> data: ${JSON.stringify(commonEventData)}`);
-              expect(commonEventData.parameters![displayId]).assertEqual(0);
+              expect(commonEventData.parameters![displayId]).assertEqual(currentDisplayId);
               commonEvent.unsubscribe(subscriber, (err, data) => {
                 if (err) {
                   console.error(JSON.stringify(err));

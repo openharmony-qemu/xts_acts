@@ -19,7 +19,7 @@ import Utils from '../Util.test';
 import hilog from '@ohos.hilog'
 import Context from "application.Context"
 import { describe, beforeAll, it, expect, TestType, Size, Level, Hypium } from "../../../../hypium/index";
-import { fetchOption, checkUserAlbum, checkSystemAlbum, sleep, getPermission, driveFn, pushCreateAsset } from '../Common.test.ets'
+import { fetchOption, checkUserAlbum, checkSystemAlbum, sleep, getPermission, driveFn, checkResourceFile, createResource } from '../Common.test.ets'
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
 import { BusinessError } from '@ohos.base'
 
@@ -39,8 +39,8 @@ export default function registerPhotoChangeTest () {
       hilog.info(domain, tag, 'beforeAll case');
       await getPermission();
       await driveFn();
-      await sleep(1000);
-      await pushCreateAsset(appContext, fileNameList);
+      await checkResourceFile(appContext);
+      await createResource(appContext, fileNameList);
     });
 
     const NOTIFY_CHANGE_UPDATE = photoAccessHelper.NotifyChangeType.NOTIFY_CHANGE_UPDATE;

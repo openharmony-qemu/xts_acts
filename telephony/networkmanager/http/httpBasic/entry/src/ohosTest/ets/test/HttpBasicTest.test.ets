@@ -42,9 +42,9 @@ export default function HttpBasicTest() {
      * @tc.desc   Function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testTelephonyNETSTACKHttpTestUserAgent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) =>{
+    it('testTelephonyNETSTACKHttpTestUserAgent0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) =>{
       let caseName = 'testTelephonyNETSTACKHttpTestUserAgent0100';
       console.info(`${caseName}---start`);
       try {
@@ -74,9 +74,9 @@ export default function HttpBasicTest() {
      * @tc.desc   Function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testTelephonyNETSTACKHttpTestHeader0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) =>{
+    it('testTelephonyNETSTACKHttpTestHeader0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) =>{
       let caseName = 'testTelephonyNETSTACKHttpTestHeader0100';
       console.info(`${caseName}---start`);
       try {
@@ -109,15 +109,15 @@ export default function HttpBasicTest() {
     });
 
     /**
-     * @tc.name   testTelephonyNETSTACKHttpTestPost
-     * @tc.number SUB_Telephony_NETSTACK_HttpTestPost
+     * @tc.name   testTelephonyNETSTACKHttpTestPost0100
+     * @tc.number SUB_Telephony_NETSTACK_HttpTestPost_0100
      * @tc.desc   Function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testTelephonyNETSTACKHttpTestPost', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) =>{
-      let caseName = 'testTelephonyNETSTACKHttpTestPost';
+    it('testTelephonyNETSTACKHttpTestPost0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) =>{
+      let caseName = 'testTelephonyNETSTACKHttpTestPost0100';
       console.info(`${caseName}---start`);
       try {
         let http = netHttp.createHttp();
@@ -142,15 +142,15 @@ export default function HttpBasicTest() {
     });
 
     /**
-     * @tc.name   testTelephonyNETSTACKHttpTestPUT
-     * @tc.number SUB_Telephony_NETSTACK_HttpTestPUT
+     * @tc.name   testTelephonyNETSTACKHttpTestPUT0100
+     * @tc.number SUB_Telephony_NETSTACK_HttpTestPUT_0100
      * @tc.desc   Function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testTelephonyNETSTACKHttpTestPUT', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) =>{
-      let caseName = 'testTelephonyNETSTACKHttpTestPUT';
+    it('testTelephonyNETSTACKHttpTestPUT0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) =>{
+      let caseName = 'testTelephonyNETSTACKHttpTestPUT0100';
       console.info(`${caseName}---start`);
       try {
         let http = netHttp.createHttp();
@@ -174,15 +174,15 @@ export default function HttpBasicTest() {
     });
 
     /**
-     * @tc.name   testTelephonyNETSTACKHttpTestCookies
-     * @tc.number SUB_Telephony_NETSTACK_HttpTestCookies
+     * @tc.name   testTelephonyNETSTACKHttpTestCookies0100
+     * @tc.number SUB_Telephony_NETSTACK_HttpTestCookies_0100
      * @tc.desc   Function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testTelephonyNETSTACKHttpTestCookies', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) =>{
-      let caseName = 'testTelephonyNETSTACKHttpTestCookies';
+    it('testTelephonyNETSTACKHttpTestCookies0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) =>{
+      let caseName = 'testTelephonyNETSTACKHttpTestCookies0100';
       console.info(`${caseName}---start`);
       try {
         let http = netHttp.createHttp();
@@ -205,15 +205,15 @@ export default function HttpBasicTest() {
     });
 
     /**
-     * @tc.name   testTelephonyNETSTACKHttpTestEncode
-     * @tc.number SUB_Telephony_NETSTACK_HttpTestEncode
+     * @tc.name   testTelephonyNETSTACKHttpTestEncode0100
+     * @tc.number SUB_Telephony_NETSTACK_HttpTestEncode_0100
      * @tc.desc   Function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testTelephonyNETSTACKHttpTestEncode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) =>{
-      let caseName = 'testTelephonyNETSTACKHttpTestEncode';
+    it('testTelephonyNETSTACKHttpTestEncode0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) =>{
+      let caseName = 'testTelephonyNETSTACKHttpTestEncode0100';
       console.info(`${caseName}---start`);
       try {
         let http = netHttp.createHttp();

@@ -114,5 +114,28 @@ export default function napiMicrotaskScopeTest() {
         done();
       }
     });
+
+    /**
+     * @tc.name   napiMicrotaskScopeTest005
+     * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_MICROTASKSCOPE_0500
+     * @tc.desc   Test resolve with NULL deferred in scope, verify napi_invalid_arg and scope not broken
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('napiMicrotaskScopeTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG = "napiMicrotaskScopeTest005";
+      console.info(`${TAG} START`);
+      try {
+        let value = napitest.NapiMicrotaskScopeNullDeferred();
+        console.info(`${TAG} result is: ` + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err}`);
+        expect().assertFail();
+      } finally {
+        done();
+      }
+    });
   })
 }

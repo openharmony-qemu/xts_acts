@@ -71,12 +71,10 @@ it('timePickerDialogSelectedAreaTest_static_001', Level.LEVEL0, async (done: () 
         Math.round(top + (bottom - top) / 2),
         Math.round(left + (right - left) / 2),
         Math.round(top))
-      await driver.swipe(
-        Math.round(left + (right - left) / 2).toInt(),
-        Math.round(top + (bottom - top) / 2).toInt(),
-        Math.round(left + (right - left) / 2).toInt(),
-        Math.round(top).toInt()
-      );
+      let displayId = await timePickerDialog!.getDisplayId();
+      await driver.swipeBetween(
+        { x: Math.round(left + (right - left) / 2).toInt(), y: Math.round(top + (bottom - top) / 2).toInt(), displayId: displayId },
+        { x: Math.round(left + (right - left) / 2).toInt(), y: Math.round(top).toInt(), displayId: displayId });
       await Utils.sleep(6000);
 
       let btn1 = await driver.findComponent(ON.text('确定'));

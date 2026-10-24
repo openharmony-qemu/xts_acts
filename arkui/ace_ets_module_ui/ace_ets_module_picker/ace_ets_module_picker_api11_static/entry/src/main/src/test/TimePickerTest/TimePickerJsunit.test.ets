@@ -82,16 +82,19 @@ it('TimePickerJsunit_static_0100', Level.LEVEL1, async (done: () => void): Promi
       let hour1 = await (hour?.getText() as Promise<string>);
       console.info("[TimePickerJsunit_static_0100] hour1: " + JSON.stringify(hour1));
       expect(hour1).assertEqual('hour:8');
-      await driver.swipe(Math.round(left + (right - left) / 6).toInt(), Math.round(top + (bottom - top) / 2).toInt(),
-        Math.round(left + (right - left) / 6).toInt(), Math.round(top).toInt());
+      let displayId = await timePicker?.getDisplayId();
+      await driver.swipeBetween(
+        { x: Math.round(left + (right - left) / 6).toInt(), y: Math.round(top + (bottom - top) / 2).toInt(), displayId: displayId },
+        { x: Math.round(left + (right - left) / 6).toInt(), y: Math.round(top).toInt(), displayId: displayId });
       await CommonFunc.sleep(6000);
       let hour2 = await (hour?.getText() as Promise<string>);
       console.info("[TimePickerJsunit_static_0100] hour2: " + JSON.stringify(hour2));
       expect(hour2).assertEqual('hour:20');
 
       // Verify hour
-      await driver.swipe(Math.round(left + (right - left) / 2).toInt(), Math.round(top + (bottom - top) / 2).toInt(),
-        Math.round(left + (right - left) / 2).toInt(), Math.round(top + (bottom - top) * 0.75).toInt());
+      await driver.swipeBetween(
+        { x: Math.round(left + (right - left) / 2).toInt(), y: Math.round(top + (bottom - top) / 2).toInt(), displayId: displayId },
+        { x: Math.round(left + (right - left) / 2).toInt(), y: Math.round(top + (bottom - top) * 0.75).toInt(), displayId: displayId });
       await CommonFunc.sleep(6000);
       let hour3 = await (hour?.getText() as Promise<string>);
       console.info("[TimePickerJsunit_static_0100] hour3: " + JSON.stringify(hour3));
@@ -102,8 +105,9 @@ it('TimePickerJsunit_static_0100', Level.LEVEL1, async (done: () => void): Promi
       let minute1 = await (minute?.getText() as Promise<string>);
       console.info("[TimePickerJsunit_static_0100] minute1: " + JSON.stringify(minute1));
       expect(minute1).assertEqual('minute:0');
-      await driver.swipe(Math.round(left + (right - left) * 5 / 6).toInt(), Math.round(top + (bottom - top) / 2).toInt(),
-        Math.round(left + (right - left) * 5 / 6).toInt(), Math.round(top + (bottom - top) * 0.75).toInt());
+      await driver.swipeBetween(
+        { x: Math.round(left + (right - left) * 5 / 6).toInt(), y: Math.round(top + (bottom - top) / 2).toInt(), displayId: displayId },
+        { x: Math.round(left + (right - left) * 5 / 6).toInt(), y: Math.round(top + (bottom - top) * 0.75).toInt(), displayId: displayId });
       await CommonFunc.sleep(6000);
       let minute2 = await (minute?.getText() as Promise<string>);
       console.info("[TimePickerJsunit_static_0100] minute2: " + JSON.stringify(minute2));
@@ -173,8 +177,10 @@ it('TimePickerJsunit_static_0300', Level.LEVEL1, async (done: () => void): Promi
       let hour = await driver.findComponent(ON.id('hour'));
       let hour1 = await (hour?.getText() as Promise<string>);
       console.info("[TimePickerJsunit_static_0300] hour1: " + JSON.stringify(hour1));
-      await driver.swipe(Math.round(left + (right - left) / 4).toInt(), Math.round(top + (bottom - top) / 2).toInt(),
-        Math.round(left + (right - left) / 4).toInt(), Math.round(top + (bottom - top) * 0.75).toInt());
+      let displayId = await timePicker?.getDisplayId();
+      await driver.swipeBetween(
+        { x: Math.round(left + (right - left) / 4).toInt(), y: Math.round(top + (bottom - top) / 2).toInt(), displayId: displayId },
+        { x: Math.round(left + (right - left) / 4).toInt(), y: Math.round(top + (bottom - top) * 0.75).toInt(), displayId: displayId });
       await CommonFunc.sleep(6000);
       let hourComponent = await driver.findComponent(ON.id('hour'));
       let hour2 = await (hourComponent?.getText() as Promise<string>);
@@ -185,8 +191,9 @@ it('TimePickerJsunit_static_0300', Level.LEVEL1, async (done: () => void): Promi
       let minute = await driver.findComponent(ON.id('minute'));
       let minute1 = await (minute?.getText() as Promise<string>);
       console.info("[TimePickerJsunit_static_0300] minute1: " + JSON.stringify(minute1));
-      await driver.swipe(Math.round(left + (right - left) * 0.75).toInt(), Math.round(top + (bottom - top) / 2).toInt(),
-        Math.round(left + (right - left) * 0.75).toInt(), Math.round(top + (bottom - top) * 0.75).toInt());
+      await driver.swipeBetween(
+        { x: Math.round(left + (right - left) * 0.75).toInt(), y: Math.round(top + (bottom - top) / 2).toInt(), displayId: displayId },
+        { x: Math.round(left + (right - left) * 0.75).toInt(), y: Math.round(top + (bottom - top) * 0.75).toInt(), displayId: displayId });
       await CommonFunc.sleep(6000);
       let minute2 = await (minute?.getText() as Promise<string>);
       console.info("[TimePickerJsunit_static_0300] minute2: " + JSON.stringify(minute2));

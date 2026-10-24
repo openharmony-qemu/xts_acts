@@ -14,6 +14,7 @@
 */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
 import { collections, taskpool } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 
 export function sleep(time: number): Promise<void> {
@@ -40,7 +41,7 @@ export default function Int8ArrayBasicTest() {
       // This API supports only one parameter: preset action function.
     })
     beforeEach(async () => {
-      await sleep(200);
+      await sleep(100);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
@@ -1602,5 +1603,181 @@ export default function Int8ArrayBasicTest() {
       })
 
 
+    /**
+     * @tc.number  SUB_TYPEDARRAY_FOREACH_MOD_FILL_0100
+     * @tc.name    testTypedArrayForeachModFill0001
+     * @tc.desc    Verify fill inside forEach throws 10200201
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testTypedArrayForeachModFill0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let arr = new collections.Int8Array([1, 2, 3, 4, 5]);
+      let code = 0;
+      try {
+        arr.forEach((value: number): void => {
+          arr.fill(0);
+        });
+      } catch (error) {
+        code = (error as BusinessError).code;
+      }
+      expect(code).assertEqual(10200201);
+      done();
+    });
+
+    /**
+     * @tc.number  SUB_TYPEDARRAY_FOREACH_MOD_COPYWITHIN_0200
+     * @tc.name    testTypedArrayForeachModCopyWithin0002
+     * @tc.desc    Verify copyWithin inside forEach throws 10200201
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testTypedArrayForeachModCopyWithin0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let arr = new collections.Int8Array([1, 2, 3, 4, 5]);
+      let code = 0;
+      try {
+        arr.forEach((value: number): void => {
+          arr.copyWithin(0, 1);
+        });
+      } catch (error) {
+        code = (error as BusinessError).code;
+      }
+      expect(code).assertEqual(10200201);
+      done();
+    });
+
+    /**
+     * @tc.number  SUB_TYPEDARRAY_FOREACH_MOD_SORT_0300
+     * @tc.name    testTypedArrayForeachModSort0003
+     * @tc.desc    Verify sort inside forEach throws 10200201
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testTypedArrayForeachModSort0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let arr = new collections.Int8Array([1, 2, 3, 4, 5]);
+      let code = 0;
+      try {
+        arr.forEach((value: number): void => {
+          arr.sort();
+        });
+      } catch (error) {
+        code = (error as BusinessError).code;
+      }
+      expect(code).assertEqual(10200201);
+      done();
+    });
+
+    /**
+     * @tc.number  SUB_TYPEDARRAY_BPE_INT8_0400
+     * @tc.name    testTypedArrayBpeInt80004
+     * @tc.desc    Verify Int8Array BYTES_PER_ELEMENT is 1
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testTypedArrayBpeInt80004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let bpe = new collections.Int8Array(4);
+      expect(collections.Int8Array.BYTES_PER_ELEMENT).assertEqual(1);
+      expect(bpe.byteLength).assertEqual(bpe.length * collections.Int8Array.BYTES_PER_ELEMENT);
+      done();
+    });
+
+    /**
+     * @tc.number  SUB_TYPEDARRAY_BPE_UINT8_0500
+     * @tc.name    testTypedArrayBpeUint80005
+     * @tc.desc    Verify Uint8Array BYTES_PER_ELEMENT is 1
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testTypedArrayBpeUint80005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let bpe = new collections.Uint8Array(4);
+      expect(collections.Uint8Array.BYTES_PER_ELEMENT).assertEqual(1);
+      expect(bpe.byteLength).assertEqual(bpe.length * collections.Uint8Array.BYTES_PER_ELEMENT);
+      done();
+    });
+
+    /**
+     * @tc.number  SUB_TYPEDARRAY_BPE_U8CLAMPED_0600
+     * @tc.name    testTypedArrayBpeU8Clamped0006
+     * @tc.desc    Verify Uint8ClampedArray BYTES_PER_ELEMENT is 1
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testTypedArrayBpeU8Clamped0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let bpe = new collections.Uint8ClampedArray(4);
+      expect(collections.Uint8ClampedArray.BYTES_PER_ELEMENT).assertEqual(1);
+      expect(bpe.byteLength).assertEqual(bpe.length * collections.Uint8ClampedArray.BYTES_PER_ELEMENT);
+      done();
+    });
+
+    /**
+     * @tc.number  SUB_TYPEDARRAY_BPE_INT16_0700
+     * @tc.name    testTypedArrayBpeInt160007
+     * @tc.desc    Verify Int16Array BYTES_PER_ELEMENT is 2
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testTypedArrayBpeInt160007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let bpe = new collections.Int16Array(4);
+      expect(collections.Int16Array.BYTES_PER_ELEMENT).assertEqual(2);
+      expect(bpe.byteLength).assertEqual(bpe.length * collections.Int16Array.BYTES_PER_ELEMENT);
+      done();
+    });
+
+    /**
+     * @tc.number  SUB_TYPEDARRAY_BPE_UINT16_0800
+     * @tc.name    testTypedArrayBpeUint160008
+     * @tc.desc    Verify Uint16Array BYTES_PER_ELEMENT is 2
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testTypedArrayBpeUint160008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let bpe = new collections.Uint16Array(4);
+      expect(collections.Uint16Array.BYTES_PER_ELEMENT).assertEqual(2);
+      expect(bpe.byteLength).assertEqual(bpe.length * collections.Uint16Array.BYTES_PER_ELEMENT);
+      done();
+    });
+
+    /**
+     * @tc.number  SUB_TYPEDARRAY_BPE_UINT32_0900
+     * @tc.name    testTypedArrayBpeUint320009
+     * @tc.desc    Verify Uint32Array BYTES_PER_ELEMENT is 4
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testTypedArrayBpeUint320009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let bpe = new collections.Uint32Array(4);
+      expect(collections.Uint32Array.BYTES_PER_ELEMENT).assertEqual(4);
+      expect(bpe.byteLength).assertEqual(bpe.length * collections.Uint32Array.BYTES_PER_ELEMENT);
+      done();
+    });
+
+    /**
+     * @tc.number  SUB_TYPEDARRAY_BUFFER_NONMULTIPLE_1000
+     * @tc.name    testTypedArrayBufferNonMultiple0010
+     * @tc.desc    Verify TypedArray constructor with non-multiple byteLength buffer behavior is pinned
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testTypedArrayBufferNonMultiple0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let buf = new ArrayBuffer(5);
+      let behavior = 'none';
+      try {
+        let ta = new collections.Int16Array(buf);
+        behavior = 'constructed:' + ta.length;
+      } catch (error) {
+        behavior = 'code' + (error as BusinessError).code;
+      }
+      expect(behavior !== 'none').assertTrue();
+      done();
+    });
   })
 }

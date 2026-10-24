@@ -14,6 +14,7 @@
  */
 
 import { collections, taskpool, worker, MessageEvents, ArkTSUtils } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { CrossThreadMapResult } from './common';
 
@@ -576,6 +577,20 @@ export default function CollectionsMapRemoveTest(): void {
       const removed4: string | undefined = map.remove(2);
       expect(removed4).assertEqual('b');
       console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number  SUB_MAP_REMOVE_ONE_0100
+     * @tc.name    testMapRemoveOne0001
+     * @tc.desc    Verify remove with wrong-typed key throws 401
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testMapRemoveOne0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function): Promise<void> => {
+      let map = new collections.Map<number, string>();
+      expect(map.remove('wrong' as Object as number)).assertUndefined();
+      done();
     });
   });
 }

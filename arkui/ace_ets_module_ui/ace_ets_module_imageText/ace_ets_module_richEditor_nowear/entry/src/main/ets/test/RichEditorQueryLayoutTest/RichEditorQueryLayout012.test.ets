@@ -30,6 +30,8 @@ import {
 import CommonFunc from '../../MainAbility/common/Common';
 import { KeyCode } from '@kit.InputKit';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RichEditorQueryLayout012() {
   describe('RichEditorQueryLayout012', () => {
     beforeEach(async (done: Function) => {
@@ -67,7 +69,7 @@ export default function RichEditorQueryLayout012() {
       let driver = Driver.create();
       let rich = await driver.findComponent(ON.id('rich_struct'));
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
       await CommonFunc.sleep(1000);
 
       let get_content = await driver.findComponent(ON.id('get_content'));

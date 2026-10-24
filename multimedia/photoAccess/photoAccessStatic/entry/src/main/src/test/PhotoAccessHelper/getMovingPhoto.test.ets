@@ -93,7 +93,7 @@ class ErrorHandlerMissingImageUri implements photoAccessHelper.MediaAssetDataHan
       hilog.info(domain, tag, "ErrorHandlerMissingImageUri: requestContent should have thrown an error");
       expect(false).assertTrue();
     } catch (error) {
-      error = error as BusinessError;
+     
       hilog.info(domain, tag, `ErrorHandlerMissingImageUri get moving photo uri fail !`);
       expect(error.code).assertEqual(14000011);
     }
@@ -111,7 +111,7 @@ class ErrorHandlerMissingVideoUri implements photoAccessHelper.MediaAssetDataHan
       hilog.info(domain, tag, "ErrorHandlerMissingVideoUri: requestContent should have thrown an error");
       expect(false).assertTrue();
     } catch (error) {
-      error = error as BusinessError;
+     
       hilog.info(domain, tag, `ErrorHandlerMissingImageUri get moving photo uri fail !`);
       expect(error.code).assertEqual(401);
     }
@@ -128,7 +128,7 @@ class ErrorPhotoHandlerWrongImageuri implements photoAccessHelper.MediaAssetData
       hilog.info(domain, tag, "moving photo image content retrieved successfully");
       expect(false).assertTrue();
     } catch (error) {
-      error = error as BusinessError;
+     
       hilog.info(domain, tag, `ErrorPhotoHandlerWrongImageuri get moving photo uri fail !`);
       expect(error.code).assertEqual(14000011);
     }
@@ -146,7 +146,7 @@ class ErrorPhotoHandlerMissingImageuri implements photoAccessHelper.MediaAssetDa
       hilog.info(domain, tag, "moving photo image content retrieved successfully");
       expect(false).assertTrue();
     } catch (error) {
-      error = error as BusinessError;
+     
       hilog.info(domain, tag, `ErrorPhotoHandlerMissingImageuri get moving photo uri fail !`);
       expect(error.code).assertEqual(401);
     }
@@ -162,7 +162,7 @@ class ErrorArrayBufferHandlerMissingType implements photoAccessHelper.MediaAsset
       waitForCompletion(async () => { buffer = await (movingPhoto as photoAccessHelper.MovingPhoto).requestContent(resourceType! as photoAccessHelper.ResourceType);})
       expect(false).assertTrue();
     } catch (error) {
-      error = error as BusinessError;
+     
       hilog.info(domain, tag, `ErrorArrayBufferHandlerMissingType get moving photo uri fail !`);
       expect(error.code).assertEqual(14000011);
     }
@@ -193,10 +193,8 @@ export default function getMovingPhotoTest() {
         let photoAsset = await fetchResult.getFirstObject();
         fetchResult.close();
         let assetChangeRequest = new photoAccessHelper.MediaAssetChangeRequest(photoAsset);
-        let photoUri =
-          "file://ohos.acts.multimedia.photoaccess.Static/data/storage/el2/base/haps/entry/photos/test_mov_1.jpg";
-        let videoUri =
-          "file://ohos.acts.multimedia.photoaccess.Static/data/storage/el2/base/haps/entry/photos/test_mov_1.mp4";
+        let photoUri = testContext.filesDir + '/test_mov_1.jpg';
+        let videoUri = testContext.filesDir + '/test_mov_1.mp4';
         (assetChangeRequest as photoAccessHelper.MediaAssetChangeRequest).addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, photoUri);
         (assetChangeRequest as photoAccessHelper.MediaAssetChangeRequest).addResource(photoAccessHelper.ResourceType.VIDEO_RESOURCE, videoUri);
         await (phAccessHelper as photoAccessHelper.PhotoAccessHelper).applyChanges((assetChangeRequest as photoAccessHelper.MediaAssetChangeRequest));
@@ -424,7 +422,7 @@ export default function getMovingPhotoTest() {
           expect(false).assertTrue();
           done();
         } catch (err) {
-          err = err as BusinessError;
+         
           hilog.info(domain, tag, `${testNum} failed with error: ${err.code}, ${err.message}`);
           expect(err.code).assertEqual(401);
           done();

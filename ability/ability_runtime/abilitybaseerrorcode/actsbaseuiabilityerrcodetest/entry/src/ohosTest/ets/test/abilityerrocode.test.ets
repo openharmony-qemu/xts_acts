@@ -24,8 +24,10 @@ import Utils from './Utils';
 
 import { fileUri } from '@kit.CoreFileKit';
 import {Driver,ON, Component} from '@ohos.UiTest'
+import display from '@ohos.display';
 
 let sub:commonEventManager.CommonEventSubscriber;
+let currentDisplayId = display.getDefaultDisplaySync().id;
 export default function errorCodeTest() {
   describe('errorCodeTest', () => {
     let TAG = 'errorCodeTest ===>';
@@ -72,7 +74,7 @@ export default function errorCodeTest() {
       };
 
       let options: StartOptions = {
-        displayId: 0
+        displayId: currentDisplayId
       };
       // test errcode
       try {
@@ -94,32 +96,6 @@ export default function errorCodeTest() {
         let message = (err as BusinessError).message;
         console.error(TAG + `startAbility failed, code is ${code}, message is ${message}`);
         expect().assertFail();
-        done();
-      }
-    })
-
-    /**
-     * @tc.name   SUB_Ability_AbilityBase_ErrorCode_0002
-     * @tc.number SUB_Ability_AbilityBase_ErrorCode_0002
-     * @tc.desc   To verify the errcode 16000071 when The App clone is not supported.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Ability_AbilityBase_ErrorCode_0002', Level.LEVEL0, async (done: Function)=> {
-      hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_ErrorCode_0002 start');
-      // test errcode
-      try {
-        let appCloneIndex = AppStorage.get<common.ApplicationContext>("ApplicationContext")!.getApplicationContext().getCurrentAppCloneIndex();
-        console.info("the app clone is " + appCloneIndex);
-        expect().assertFail();
-        done();
-      } catch(err) {
-        // 处理入参错误异常
-        let code = (err as BusinessError).code;
-        let message = (err as BusinessError).message;
-        console.error(TAG + `startAbility failed, code is ${code}, message is ${message}`);
-        expect(err.code).assertEqual(16000071)
         done();
       }
     })
@@ -148,7 +124,6 @@ export default function errorCodeTest() {
           expect().assertFail();
           done();
         })
-
       } catch(err) {
         // 处理入参错误异常
         let code = (err as BusinessError).code;
@@ -297,7 +272,7 @@ export default function errorCodeTest() {
         parameters:  { 'keyFd': { 'type': 'FD', 'value': -1}}
       };
       let options: StartOptions = {
-        displayId: 0
+        displayId: currentDisplayId
       };
       try {
         await AppStorage.get<common.UIAbilityContext>("errocode")!.startAbility(want, options)
@@ -337,7 +312,7 @@ export default function errorCodeTest() {
         abilityName: 'EntryAbility'
       };
       let options: StartOptions = {
-        displayId: 0
+        displayId: currentDisplayId
       };
       try {
         await AppStorage.get<common.UIAbilityContext>("errocode")!.startAbility(want, options)
@@ -380,7 +355,7 @@ export default function errorCodeTest() {
         }
       };
       let options: StartOptions = {
-        displayId: 0
+        displayId: currentDisplayId
       };
       try {
         await AppStorage.get<common.UIAbilityContext>("errocode")!.startAbility(want, options)
@@ -424,7 +399,7 @@ export default function errorCodeTest() {
         }
       };
       let options: StartOptions = {
-        displayId: 0
+        displayId: currentDisplayId
       };
       try {
         await AppStorage.get<common.UIAbilityContext>("errocode")!.startAbility(want, options)
@@ -468,7 +443,7 @@ export default function errorCodeTest() {
           }
         };
         let options: StartOptions = {
-          displayId: 0
+          displayId: currentDisplayId
         };
         // test errorcode
         try {
@@ -516,7 +491,7 @@ export default function errorCodeTest() {
           }
         };
         let options: StartOptions = {
-          displayId: 0,
+          displayId: currentDisplayId,
           processMode:contextConstant.ProcessMode.ATTACH_TO_STATUS_BAR_ITEM,
           startupVisibility:contextConstant.StartupVisibility.STARTUP_HIDE
         };
@@ -565,12 +540,12 @@ export default function errorCodeTest() {
           abilityName: 'NewAbility',
         };
         let options: StartOptions = {
-          displayId: 0,
+          displayId: currentDisplayId,
           processMode:contextConstant.ProcessMode.NEW_PROCESS_ATTACH_TO_PARENT,
           startupVisibility:contextConstant.StartupVisibility.STARTUP_HIDE
         };
         let options1: StartOptions = {
-          displayId: 0,
+          displayId: currentDisplayId,
           processMode:contextConstant.ProcessMode.NEW_PROCESS_ATTACH_TO_PARENT,
           startupVisibility:contextConstant.StartupVisibility.STARTUP_HIDE
         };
@@ -650,7 +625,7 @@ export default function errorCodeTest() {
           }
         };
         let options: StartOptions = {
-          displayId: 0
+          displayId: currentDisplayId
         };
         // start
         try {

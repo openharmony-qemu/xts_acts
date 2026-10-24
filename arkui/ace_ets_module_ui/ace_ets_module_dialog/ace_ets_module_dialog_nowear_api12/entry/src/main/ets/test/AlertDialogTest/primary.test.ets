@@ -72,7 +72,7 @@ export default function primary() {
       await driver.triggerKey(2054,displayID);
       console.info('primary_0100 Enter');
       await CommonFunc.sleep(1500);
-      let button1 = await driver.findComponent(ON.text('鎸夐挳1'));
+      let button1 = await driver.findComponent(ON.text('按钮1'));
       expect(button1 == null).assertTrue()
       // await button1.click();
       await CommonFunc.sleep(1000);
@@ -98,7 +98,7 @@ export default function primary() {
       await driver.triggerKey(2054,displayID);
       console.info('primary_0200 Enter');
       await CommonFunc.sleep(1500);
-      let button1 = await driver.findComponent(ON.text('鎸夐挳1'));
+      let button1 = await driver.findComponent(ON.text('按钮1'));
       expect(button1 != null).assertTrue()
       await button1.click();
       await CommonFunc.sleep(1000);

@@ -1,0 +1,27 @@
+<div class="container">
+ 	<div class="content-title">
+ 	    <text class="title">WorkoutSensors</text>
+ 	    <input type="button" value="?" class="backBtnHelp" onclick="helpClicked"/>
+ 	</div>
+ 	<list class="scroll-area">
+ 	    <list-item class="litem" style="height: 230px;">
+ 	        <text class="box-title">开启/关闭Sensor open/close sensor</text>
+			<text class="tip" show="{{ ! sensorSupported }}">{{ sensorTip }}</text>
+ 	        <text class="result">value:{{ onSensor }}</text>
+ 	        <text class="status-text">状态: {{ onSensorMsg }}</text>
+ 	        <div class="op-row">
+ 	            <input class="opBtn" type="button" value="开启sensor" onclick="openSensor"/>
+ 	            <input class="opBtn" type="button" value="关闭sensor" onclick="closeSensor"/>
+ 	        </div>
+ 	        <div class="pf-row">
+ 	            <input class="pfBtn" style="background-color: {{ sensorPassColor }};" type="button" value="pass"
+ 	                onclick="passSensor"/>
+ 	            <input class="pfBtn" style="background-color: {{ sensorFailColor }};" type="button" value="fail"
+ 	                onclick="failSensor"/>
+ 	        </div>
+ 	    </list-item>
+ 	</list>
+ 	<div class="bottom-bt">
+ 	    <input type="button" value="back" class="button" onclick="backClicked"/>
+ 	</div>
+</div>

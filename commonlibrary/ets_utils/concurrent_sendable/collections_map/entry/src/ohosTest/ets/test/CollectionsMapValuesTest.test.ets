@@ -16,6 +16,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size} from '@ohos/hypium';
 import Utils from './Util.test';
 import { collections } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 @Sendable
 class TestClass {
@@ -789,6 +790,24 @@ export default function CollectionsMapValuesTest() {
       expect(values[0]).assertEqual('initial');
     });
 
+    /**
+     * @tc.number  SUB_MAP_VALUES_BIND_0100
+     * @tc.name    testMapValuesBind0001
+     * @tc.desc    Verify values detached invocation throws 10200011
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testMapValuesBind0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let map = new collections.Map<number, string>([[1, 'a']]);
+      let fn = map.values;
+      try {
+        fn();
+        expect().assertFail();
+      } catch (error) {
+        expect((error as BusinessError).code).assertEqual(10200011);
+      }
+    });
   })
 }
 

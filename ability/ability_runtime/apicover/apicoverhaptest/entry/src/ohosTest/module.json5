@@ -16,7 +16,7 @@
   "module": {
     "name": "entry_test",
     "type": "feature",
-    "srcEntry": "./ets/Application/AbilityStage.ts",
+    "srcEntry": "./ets/Application/AbilityStage.ets",
     "description": "$string:module_test_desc",
     "mainElement": "TestAbility",
     "deviceTypes": [],
@@ -46,7 +46,7 @@
       },
       {
         "name": "com.example.apicoverhaptest.MainAbility",
-        "srcEntry": "./ets/MainAbility/MainAbility.ts",
+        "srcEntry": "./ets/MainAbility/MainAbility.ets",
         "description": "$string:phone_entry_main",
         "icon": "$media:icon",
         "label": "$string:entry_label",
@@ -67,7 +67,7 @@
       },
       {
         "name": "SecondAbility",
-        "srcEntry": "./ets/SecondAbility/SecondAbility.ts",
+        "srcEntry": "./ets/SecondAbility/SecondAbility.ets",
         "description": "$string:phone_entry_main",
         "icon": "$media:icon",
         "label": "$string:entry_label",
@@ -78,7 +78,7 @@
       },
       {
         "name": "ThirdAbility",
-        "srcEntry": "./ets/ThirdAbility/SecondAbility.ts",
+        "srcEntry": "./ets/ThirdAbility/SecondAbility.ets",
         "description": "$string:phone_entry_main",
         "icon": "$media:icon",
         "label": "$string:entry_label",
@@ -89,7 +89,7 @@
       },
       {
         "name": "CreateFormAbility",
-        "srcEntry": "./ets/CreateFormAbility/CreateFormAbility.ts",
+        "srcEntry": "./ets/CreateFormAbility/CreateFormAbility.ets",
         "description": "$string:phone_entry_main",
         "icon": "$media:icon",
         "label": "$string:entry_label",
@@ -100,7 +100,7 @@
       },
       {
         "name": "CreateFormAbility33",
-        "srcEntry": "./ets/CreateFormAbility/CreateFormAbility33.ts",
+        "srcEntry": "./ets/CreateFormAbility/CreateFormAbility33.ets",
         "description": "$string:phone_entry_main",
         "icon": "$media:icon",
         "label": "$string:entry_label",
@@ -111,7 +111,7 @@
       },
       {
         "name": "CreateFormAbility23",
-        "srcEntry": "./ets/CreateFormAbility/CreateFormAbility23.ts",
+        "srcEntry": "./ets/CreateFormAbility/CreateFormAbility23.ets",
         "description": "$string:phone_entry_main",
         "icon": "$media:icon",
         "label": "$string:entry_label",
@@ -122,7 +122,7 @@
       },
       {
         "name": "FormHostAbility",
-        "srcEntry": "./ets/FormHostAbility/FormHostAbility.ts",
+        "srcEntry": "./ets/FormHostAbility/FormHostAbility.ets",
         "description": "$string:phone_entry_main",
         "icon": "$media:icon",
         "label": "$string:entry_label",

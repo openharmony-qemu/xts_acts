@@ -86,6 +86,9 @@
         "MainAbility/pages/TabContentNullUndefined/tabBarNullUndefined",
         "MainAbility/pages/animationCurveNullUndefined/animationCurveNullUndefined",
         "MainAbility/pages/Tabs/TabsSidebarStyle",
-        "MainAbility/pages/TabContent/TabBarOptionsCoverage"
+        "MainAbility/pages/TabContent/TabBarOptionsCoverage",
+        "MainAbility/pages/Tabs/TopFloatingBarStyle",
+        "MainAbility/pages/Tabs/TopFloatingBarInvalid",
+        "MainAbility/pages/Tabs/TopFloatingBarLegacy"
     ]
 }

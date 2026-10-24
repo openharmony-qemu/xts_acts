@@ -58,7 +58,7 @@ export default function webViewController() {
         await Utils.sleep(2000);
         Utils.registerEvent('testOnShowFileSelector001', true, 31029, done);
         inspector.sendEventByKey('WebViewControllerButton', 10, '');
-        await Utils.sleep(3000)
+        await Utils.sleep(10000)
         done()
       })
 
@@ -76,7 +76,7 @@ export default function webViewController() {
         await Utils.sleep(2000);
         Utils.registerEvent('testFileSelectorResult', true, 310291, done);
         inspector.sendEventByKey('WebViewControllerButton', 10, '');
-        await Utils.sleep(3000)
+        await Utils.sleep(10000)
         done()
       })
 
@@ -94,7 +94,7 @@ export default function webViewController() {
         await Utils.sleep(2000);
         Utils.registerEvent('testFileSelectorParam', true, 310292, done);
         inspector.sendEventByKey('WebViewControllerButton', 10, '');
-        await Utils.sleep(3000)
+        await Utils.sleep(10000)
         done()
       })
 
@@ -112,7 +112,7 @@ export default function webViewController() {
         await Utils.sleep(2000);
         Utils.registerEvent('testOnShowFileSelectorUndefined', true, 310293, done);
         inspector.sendEventByKey('WebViewControllerButton', 10, '');
-        await Utils.sleep(3000)
+        await Utils.sleep(10000)
         done()
       })
 
@@ -130,7 +130,7 @@ export default function webViewController() {
         await Utils.sleep(2000);
         Utils.registerEvent('testFileSelectorParamGetTitle001', 'open file', 31030, done);
         inspector.sendEventByKey('WebViewControllerButton', 10, '');
-        await Utils.sleep(3000)
+        await Utils.sleep(10000)
         done()
       })
 
@@ -152,7 +152,7 @@ export default function webViewController() {
         Utils.registerEvent('testFileSelectorParamGetMode001', FileSelectorMode.FILE_OPEN_FOLDER_MODE, 310313, done);
         Utils.registerEvent('testFileSelectorParamGetMode001', FileSelectorMode.FILE_SAVE_MODE, 310314, done);
         inspector.sendEventByKey('WebViewControllerButton', 10, '');
-        await Utils.sleep(3000)
+        await Utils.sleep(10000)
         done()
       })
 
@@ -170,7 +170,7 @@ export default function webViewController() {
         await Utils.sleep(2000);
         Utils.registerEvent('testFileSelectorParamGetAcceptType001', '.json', 31032, done);
         inspector.sendEventByKey('WebViewControllerButton', 10, '');
-        await Utils.sleep(3000)
+        await Utils.sleep(10000)
         done()
       })
 
@@ -188,7 +188,7 @@ export default function webViewController() {
         await Utils.sleep(2000);
         Utils.registerEvent('testFileSelectorParamIsCapture001', false, 31033, done);
         inspector.sendEventByKey('WebViewControllerButton', 10, '');
-        await Utils.sleep(3000)
+        await Utils.sleep(10000)
         done()
       })
 
@@ -206,7 +206,7 @@ export default function webViewController() {
         await Utils.sleep(2000);
         Utils.registerEvent('testFileSelectorResultHandleFileList001', '"1.json"', 31034, done);
         inspector.sendEventByKey('WebViewControllerButton', 10, '');
-        await Utils.sleep(3000)
+        await Utils.sleep(10000)
         done()
       })
 
@@ -224,7 +224,7 @@ export default function webViewController() {
         await Utils.sleep(2000);
         Utils.registerEvent('testFileSelectorParamGetMimeTypes001', '.json', 31035, done);
         inspector.sendEventByKey('WebViewControllerButton', 10, '');
-        await Utils.sleep(3000)
+        await Utils.sleep(10000)
         done()
       })
 
@@ -242,7 +242,7 @@ export default function webViewController() {
         await Utils.sleep(2000);
         Utils.registerEvent('testFileSelectorParamGetSuggestedName001', 'Documents', 31036, done);
         inspector.sendEventByKey('WebViewControllerButton', 10, '');
-        await Utils.sleep(3000)
+        await Utils.sleep(10000)
         done()
       })
 
@@ -260,7 +260,7 @@ export default function webViewController() {
         await Utils.sleep(2000);
         Utils.registerEvent('testFileSelectorParamGetDefaultPath001', '/storage/Users/currentUser/', 31037, done);
         inspector.sendEventByKey('WebViewControllerButton', 10, '');
-        await Utils.sleep(3000)
+        await Utils.sleep(10000)
         done()
       })
 
@@ -294,7 +294,7 @@ export default function webViewController() {
         await Utils.sleep(2000);
         Utils.registerEvent('emitOnShowFileSelector05', 'video/*', 20260109, done);
         inspector.sendEventByKey('WebViewControllerButton', 10, '');
-        await Utils.sleep(3000)
+        await Utils.sleep(10000)
         done()
       })
 
@@ -312,7 +312,7 @@ export default function webViewController() {
         await Utils.sleep(2000);
         Utils.registerEvent('testFileSelectorParamGetDescriptions001', 1, 31038, done);
         inspector.sendEventByKey('WebViewControllerButton', 10, '');
-        await Utils.sleep(3000)
+        await Utils.sleep(10000)
         done()
       })
 
@@ -330,7 +330,7 @@ export default function webViewController() {
         await Utils.sleep(2000);
         Utils.registerEvent('testFileSelectorParamIsAcceptAllOptionExcluded001', false, 31039, done);
         inspector.sendEventByKey('WebViewControllerButton', 10, '');
-        await Utils.sleep(3000)
+        await Utils.sleep(10000)
         done()
       })
 
@@ -348,7 +348,7 @@ export default function webViewController() {
         await Utils.sleep(2000);
         Utils.registerEvent('testFileSelectorParamGetAcceptableFileTypes001', 0, 31040, done);
         inspector.sendEventByKey('WebViewControllerButton', 10, '');
-        await Utils.sleep(3000)
+        await Utils.sleep(10000)
         done()
       })
 
@@ -382,14 +382,14 @@ export default function webViewController() {
         await Utils.sleep(2000);
         Utils.registerEvent('emitOnShowFileSelector06', '[".mp4",".ogm",".wmv",".mpg"]', 20260110, done);
         inspector.sendEventByKey('WebViewControllerButton', 10, '');
-        await Utils.sleep(3000)
+        await Utils.sleep(10000)
         done()
       })
 
     afterAll(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'afterAll start');
       Utils.emitEvent('back', 10)
-      await Utils.sleep(2000);
+      await Utils.sleep(10000);
       inspector.sendEventByKey('WebViewControllerButton', 10, '');
     })
   })

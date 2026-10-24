@@ -91,7 +91,9 @@ class ProcessableClampedArray extends collections.Uint8ClampedArray implements I
 
 export default function UintByteClampedArrayConcurrentTest(): void {
   describe('UintByteClampedArrayConcurrentTest', (): void => {
-    beforeAll((): void => {})
+    beforeAll(async (): Promise<void> => {
+    await sleep(200);
+  })
     beforeEach((): void => {})
     afterEach((): void => {})
     afterAll(async (): Promise<void> => {

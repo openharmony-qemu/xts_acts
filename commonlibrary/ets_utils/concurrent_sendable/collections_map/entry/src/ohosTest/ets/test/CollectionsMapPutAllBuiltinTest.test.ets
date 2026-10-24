@@ -14,6 +14,7 @@
  */
 
 import { collections, taskpool, worker, MessageEvents } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 
 
@@ -315,5 +316,25 @@ export default function CollectionsMapPutAllBuiltinTest(): void {
         expect(map.get(3)).assertEqual('c');
         console.info(`${caseName}, test end`);
       });
+
+    /**
+     * @tc.number  SUB_MAP_PUTALL_BUILTIN_BIND_0100
+     * @tc.name    testMapPutAllBuiltinBind0001
+     * @tc.desc    Verify putAll(ReadonlyMap) detached invocation throws 10200011
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testMapPutAllBuiltinBind0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let map = new collections.Map<number, string>();
+      let builtinSrc = new Map<number, string>([[1, 'a']]);
+      let fn = map.putAll;
+      try {
+        fn(builtinSrc);
+        expect().assertFail();
+      } catch (error) {
+        expect((error as BusinessError).code).assertEqual(10200011);
+      }
+    });
   });
 }

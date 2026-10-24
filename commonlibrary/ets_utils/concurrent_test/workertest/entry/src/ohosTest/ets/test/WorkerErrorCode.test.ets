@@ -13,9 +13,8 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, afterEach, TestType, Level, Size } from '@ohos/hypium';
-import {
-  ArkTSUtils,
+import {beforeAll, describe, it, expect, afterEach, TestType, Level, Size} from '@ohos/hypium';
+import {  ArkTSUtils,
   collections,
   ErrorEvent,
   JSON,
@@ -26,6 +25,15 @@ import {
   ThreadWorkerPriority
 } from '@kit.ArkTS';
 import { GetTime, Sleep } from '../utils/utils';
+
+
+function sleep(time: number): Promise<void> {
+  return new Promise<void>((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, time);
+  });
+}
 
 declare class ArkTools {
   static forceFullGC(): void;
@@ -89,7 +97,11 @@ export function undefinedReturn(): undefined {
 
 export default function workerErrorCodeTest() {
   describe('workerErrorCodeTest', () => {
-    afterEach(async () => {
+    beforeAll(async () => {
+      await sleep(200);
+    })
+
+        afterEach(async () => {
       await Sleep(50);
     })
     /**

@@ -51,9 +51,8 @@ export default function onDidStopDraggingModifierTest() {
         await CommonFunc.sleep(500);
         let driver = Driver.create()
         await CommonFunc.sleep(1000);
-        let dragScroll = await driver.findComponent(ON.id('grid_dragging'));
+        let dragScroll = await driver.findComponent(ON.id('GridModifier_onDidStopDragging_grid_dragging'));
         const rect = await (dragScroll?.getBounds() as Promise<Rect>);
-        let displayId = await dragScroll!.getDisplayId();
         let top = rect.top;
         let right = rect.right;
         let left = rect.left;
@@ -64,8 +63,8 @@ export default function onDidStopDraggingModifierTest() {
         let startY = (Math.round(top + height * 0.8)).toInt();
         let endY = (Math.round(top + height * 0.2)).toInt();
         await driver.swipeBetween(
-          { x: centerX, y: startY, displayId: displayId },
-          { x: centerX, y: endY, displayId: displayId }
+          { x: centerX, y: startY, displayId: AppStorage.get<number>('displayID')?.toInt() ?? 0 },
+          { x: centerX, y: endY, displayId: AppStorage.get<number>('displayID')?.toInt() ?? 0 }
         );
         await CommonFunc.sleep(2000);
         expect(JSON.parseJsonElement(inspector.getInspectorByKey('GridModifier_onDidStopDragging_onDidStopDragging'))

@@ -30,6 +30,8 @@ import {
 import CommonFunc from '../../MainAbility/common/Common';
 import { KeyCode } from '@kit.InputKit';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RichEditorSetStyledString013() {
   describe('RichEditorSetStyledString013', () => {
     beforeEach(async (done: Function) => {
@@ -68,12 +70,12 @@ export default function RichEditorSetStyledString013() {
       let rich = await driver.findComponent(ON.id('RichEditorSetStyledString013'));
       let getBounds = await rich.getBoundsCenter();
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.x, getBounds.y);
+      await driver.clickAt({ x: getBounds.x, y: getBounds.y, displayId: displayID });
       await CommonFunc.sleep(500);
       let image_top = await driver.findComponent(ON.id('image_top'));
       await image_top.click();
       await CommonFunc.sleep(500);
-      await driver.longClick(getBounds.x, getBounds.y);
+      await driver.longClickAt({ x: getBounds.x, y: getBounds.y, displayId: displayID });
       await CommonFunc.sleep(500);
       let selectAll = await driver.findComponent(ON.text('全选'));
       await selectAll.click();
@@ -84,7 +86,7 @@ export default function RichEditorSetStyledString013() {
       let update_option = await driver.findComponent(ON.id('update_option'));
       await update_option.click();
       await CommonFunc.sleep(500);
-      await driver.longClick(getBounds.x, getBounds.y);
+      await driver.longClickAt({ x: getBounds.x, y: getBounds.y, displayId: displayID });
       await CommonFunc.sleep(500);
       selectAll = await driver.findComponent(ON.text('全选'));
       await selectAll.click();

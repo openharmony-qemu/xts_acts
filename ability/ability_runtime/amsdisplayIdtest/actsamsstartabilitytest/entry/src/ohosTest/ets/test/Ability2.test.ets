@@ -159,7 +159,7 @@ export default function abilityTest() {
 
         let processInfoCheck = async (data:CommonEventManager.CommonEventData):Promise<void> => {
           console.info('====> ACTS_StartAbility_2500=====>');
-          expect(data.parameters!['displayId']).assertEqual(0);
+          expect(data.parameters!['displayId']).assertEqual(displayClassId);
           done();
         }
 
@@ -219,7 +219,7 @@ export default function abilityTest() {
 
         let processInfoCheck = async (data:CommonEventManager.CommonEventData):Promise<void> => {
           console.info('====> ACTS_StartAbility_2700=====>');
-          expect(data.parameters!['displayId']).assertEqual(0);
+          expect(data.parameters!['displayId']).assertEqual(displayClassId);
           done();
         }
 

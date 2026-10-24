@@ -17,6 +17,8 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import CommonFunc from '../../MainAbility/common/Common';
 import { Driver, ON, MouseButton } from '@ohos.UiTest';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RichEditorApi() {
   describe('RichEditorApi', () => {
     beforeEach(async (done: Function) => {
@@ -150,7 +152,8 @@ export default function RichEditorApi() {
       let RichEditor3 = CommonFunc.getComponentRectOnScreen('RichEditorApi_RichEditor3')
       await driver.mouseClick({
         x: Math.round((RichEditor3.right - RichEditor3.left) * 0.5 + RichEditor3.left),
-        y: Math.round((RichEditor3.bottom - RichEditor3.top) * 0.5 + RichEditor3.top)
+        y: Math.round((RichEditor3.bottom - RichEditor3.top) * 0.5 + RichEditor3.top),
+        displayId: displayID
       }, MouseButton.MOUSE_BUTTON_RIGHT)
       await CommonFunc.sleep(1000);
 
@@ -178,8 +181,8 @@ export default function RichEditorApi() {
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
       let RichEditor4 = CommonFunc.getComponentRectOnScreen('RichEditorApi_RichEditor4')
-      await driver.longClick(Math.round((RichEditor4.right - RichEditor4.left) * 0.5 + RichEditor4.left),
-        Math.round((RichEditor4.bottom - RichEditor4.top) * 0.5 + RichEditor4.top))
+      await driver.longClickAt({ x: Math.round((RichEditor4.right - RichEditor4.left) * 0.5 + RichEditor4.left),
+        y: Math.round((RichEditor4.bottom - RichEditor4.top) * 0.5 + RichEditor4.top), displayId: displayID })
       await CommonFunc.sleep(2000);
 
       let strJson = getInspectorByKey('RichEditorApi_text2');

@@ -74,5 +74,24 @@ export default function CollectionsArrayBufferByteLengthTest() {
         expect(arrayBuffer.byteLength).assertEqual(0)
         Done()
       })
+
+    /**
+     * @tc.number  SUB_ARRAYBUFFER_BYTELENGTH_READONLY_0100
+     * @tc.name    testArrayBufferByteLengthReadonly0001
+     * @tc.desc    Verify byteLength is read-only and write is ignored
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('testArrayBufferByteLengthReadonly0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: Function) => {
+      let arrayBuffer = new collections.ArrayBuffer(8)
+      try {
+        (arrayBuffer as object as Record<string, number>)['byteLength'] = 5
+      } catch (error) {
+        console.info('testTag', '%{public}s', 'byteLength write rejected')
+      }
+      expect(arrayBuffer.byteLength).assertEqual(8)
+      Done()
+    })
   })
 }

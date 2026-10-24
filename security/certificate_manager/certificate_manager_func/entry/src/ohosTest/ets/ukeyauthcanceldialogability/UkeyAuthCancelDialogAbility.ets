@@ -1,0 +1,44 @@
+/*
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import { AbilityConstant, UIExtensionContentSession, Want } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import UkeyAuthExtensionAbility from '@ohos.security.UkeyAuthExtensionAbility';
+
+const DOMAIN = 0x0000;
+
+export default class UkeyAuthCancelDialogAbility extends UkeyAuthExtensionAbility {
+  onCreate(launchParam: AbilityConstant.LaunchParam): void {
+    hilog.info(DOMAIN, 'testTag', '%{public}s', 'UkeyAuthCancelDialogAbility onCreate');
+  }
+
+  onSessionCreate(want: Want, session: UIExtensionContentSession): void {
+    hilog.info(DOMAIN, 'testTag', '%{public}s', 'UkeyAuthCancelDialogAbility onSessionCreate');
+    let param: Record<string, Object> = {
+      'context': this.context
+    };
+    let storage: LocalStorage = new LocalStorage(param);
+    storage.setOrCreate('session', session);
+    session.loadContent('ukeyauthcanceldialogability/pages/Index', storage);
+  }
+
+  onSessionDestroy(session: UIExtensionContentSession): void {
+    hilog.info(DOMAIN, 'testTag', '%{public}s', 'UkeyAuthCancelDialogAbility onSessionDestroy');
+  }
+
+  onDestroy(): void {
+    hilog.info(DOMAIN, 'testTag', '%{public}s', 'UkeyAuthCancelDialogAbility onDestroy');
+  }
+}

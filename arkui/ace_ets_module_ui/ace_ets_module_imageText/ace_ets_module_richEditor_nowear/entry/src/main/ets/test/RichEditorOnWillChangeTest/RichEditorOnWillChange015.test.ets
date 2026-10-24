@@ -69,7 +69,7 @@ export default function RichEditorOnWillChange015() {
       let driver = Driver.create();
       let rich = await driver.findComponent(ON.id('RichEditorOnWillChange015'));
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
       await CommonFunc.sleep(1000);
 
       try {
@@ -91,7 +91,7 @@ export default function RichEditorOnWillChange015() {
       }
       await CommonFunc.sleep(500);
       pointCenter = await rich.getBoundsCenter();
-      await driver.longClick(pointCenter.x, pointCenter.y);
+      await driver.longClickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
       await CommonFunc.sleep(1000);
       let paste = await driver.findComponent(ON.text('粘贴'))
       await paste?.click();

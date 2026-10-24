@@ -14,7 +14,7 @@
  */
 
 import { describe, expect, it, Level } from '@ohos/hypium'
-import * as shortTimeTaskNdk from 'libshorttimetaskndk.so'
+import shortTimeTaskNdk from 'libshorttimetaskndk.so'
 
 export default function ActsShortTimeTaskNdkTest() {
   describe('ActsShortTimeTaskNdkTest', () => {

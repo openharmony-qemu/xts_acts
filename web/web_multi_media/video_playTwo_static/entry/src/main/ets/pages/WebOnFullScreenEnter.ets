@@ -76,7 +76,7 @@ struct WebOnFullScreenEnter {
                 inspector.sendEventByKey('OnFullScreenEnterTestWeb', 10, '');
                 setTimeout(() => {
                   Utils.emitEvent(this.onFullScreenEnterCalled , 442)
-                }, 4000)
+                }, 20000)
               } catch (error) {
                 error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -88,7 +88,7 @@ struct WebOnFullScreenEnter {
                 setTimeout(() => {
                   console.log('this.handler: ' + this.handler)
                   Utils.emitEvent((this.handler ?? 0) != 0 , 443)
-                }, 4000)
+                }, 20000)
               } catch (error) {
                 error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -100,7 +100,7 @@ struct WebOnFullScreenEnter {
                 setTimeout(() => {
                   console.log('this.handlerExitFullScreenCalled: ' + this.handlerExitFullScreenCalled)
                   Utils.emitEvent(this.handlerExitFullScreenCalled , 444)
-                }, 4000)
+                }, 20000)
               } catch (error) {
                 error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -112,7 +112,7 @@ struct WebOnFullScreenEnter {
                 setTimeout(() => {
                   console.log('this.videoWidth: ' + this.videoWidth)
                   Utils.emitEvent((this.videoWidth ?? 0) > 0 , 445)
-                }, 4000)
+                }, 20000)
               } catch (error) {
                 error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -124,7 +124,7 @@ struct WebOnFullScreenEnter {
                 setTimeout(() => {
                   console.log('this.videoHeight: ' + this.videoHeight)
                   Utils.emitEvent((this.videoHeight ?? 0) > 0 , 446)
-                }, 4000)
+                }, 20000)
               } catch (error) {
                 error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);

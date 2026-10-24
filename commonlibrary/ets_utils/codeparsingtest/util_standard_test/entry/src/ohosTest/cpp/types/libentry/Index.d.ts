@@ -38,3 +38,7 @@ export const acquireThreadsafeFunctions: ()=> boolean;
 export const releaseThreadsafeFunctions: ()=> boolean;
 export const getCApiHandleCount: ()=> number;
 export const getSubRuntimeHandleCount: ()=> number;
+export const createTestRef: (value: object) => string;
+export const deleteTestRef: () => void;
+export const createWeakTestRef: (value: object) => string;
+export const deleteWeakTestRef: () => void;

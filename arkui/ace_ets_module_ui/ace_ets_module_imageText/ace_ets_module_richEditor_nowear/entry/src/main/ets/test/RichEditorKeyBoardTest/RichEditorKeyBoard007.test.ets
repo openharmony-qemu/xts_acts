@@ -74,7 +74,7 @@ export default function RichEditorKeyBoard007() {
       await CommonFunc.sleep(1000);
 
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
       await CommonFunc.sleep(1000);
 
       driver.triggerKey(KeyCode.KEYCODE_A, displayID);

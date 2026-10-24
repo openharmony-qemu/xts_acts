@@ -13,11 +13,9 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, Level } from "@ohos/hypium";
 import clouddisk from "libclouddisk.so";
-import { fileUri } from "@kit.CoreFileKit";
-import { common, UIAbility } from "@kit.AbilityKit";
-import fs from "@ohos.file.fs";
+import { describe, it, expect, Level, beforeAll, afterEach } from "@ohos/hypium";
+import { grantDocumentFolderAccess, uSleep } from './CommonUtils';
 
 const CloudDisk_ErrorCode = new Map<string, number>([
   ["CLOUD_DISK_OK", 0],
@@ -30,6 +28,12 @@ const CloudDisk_ErrorCode = new Map<string, number>([
 
 export default function CloudDiskNdkTest() {
   describe("CloudDiskNdkTest", () => {
+
+    afterEach(async (done: Function) => {
+      await uSleep(200);
+      done();
+    });
+
     /**
      * @tc.number SUB_BASIC_FM_CloudDisk_RegisterSyncFolder_0100
      * @tc.name CloudDisk_RegisterSyncFolder_001

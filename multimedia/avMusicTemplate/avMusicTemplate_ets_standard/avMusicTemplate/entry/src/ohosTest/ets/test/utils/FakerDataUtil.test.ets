@@ -416,8 +416,35 @@ export class FakerDataUtil {
     let res: avMusicTemplate.SearchPlayInfo = {
       musicInfo: FakerDataUtil.getSearchPlayMusicInfo(),
       videoInfo: FakerDataUtil.getSearchPlayVideoInfo(),
+      karaokeInfo: FakerDataUtil.getSearchPlayKaraokeInfo(),
     };
     return res;
+  }
+
+  static getSearchPlayKaraokeItem(): avMusicTemplate.SearchPlayKaraokeItem {
+    return {
+      entityId: 'karaokeEntityId001',
+      entityName: 'karaokeEntityName001'
+    }
+  }
+
+  static getSearchPlayKaraokeInfo(): avMusicTemplate.SearchPlayKaraokeInfo {
+    return {
+      songName: 'karaokeSongName001',
+      artist: 'karaokeArtist001',
+      albumName: 'karaokeAlbumName001',
+      billBoard: 'karaokeBillBoard001',
+      scene: 'karaokeScene001',
+      genre: 'karaokeGenre001',
+      instrument: 'karaokeInstrument001',
+      language: 'karaokeLanguage001',
+      decade: 'karaokeDecade001',
+      mood: 'karaokeMood001',
+      gender: 'karaokeGender001',
+      queryKeyWords: 'karaokeQueryKeyWords001',
+      items: [FakerDataUtil.getSearchPlayKaraokeItem()],
+      extra: 'karaokeExtra001'
+    }
   }
 
   static async getWantAgent(): Promise<WantAgent> {

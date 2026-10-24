@@ -69,7 +69,7 @@ export default function swipeGestureTest() {
       let driver = Driver.create();
       let speed = Math.floor(areaWidth1 * 0.6 / 0.016 / 1000) * 1000
       await CommonFunc.sleep(1000);
-      await driver.swipeBetween({x:Math.round(areaObj1.left + areaWidth1 / 2),y:Math.round(areaObj1.bottom-areaHeight1 / 4),displayId:displayID},{x:Math.round(areaObj1.left + areaWidth1 / 2),y:Math.round(areaObj1.top),displayId:displayID}, 1600)
+      await driver.swipeBetween({x:Math.round(areaObj1.left + areaWidth1 / 2),y:Math.round(areaObj1.bottom-areaHeight1 / 4),displayId:displayID},{x:Math.round(areaObj1.left + areaWidth1 / 2),y:Math.round(areaObj1.top+areaHeight1 / 4),displayId:displayID}, 1600)
       await CommonFunc.sleep(3000);
       let strJson = getInspectorByKey('SwipeGesture');
       let obj: ESObject = JSON.parse(strJson);
@@ -98,12 +98,12 @@ export default function swipeGestureTest() {
       let areaHeight2 = areaObj2.bottom - areaObj2.top
       let areaWidth2 = areaObj2.right - areaObj2.left
       console.log('SwipeGesture1_0200 areaObj2',areaObj2.left,areaObj2.top,areaObj2.right,areaObj2.bottom)
-      console.log('SwipeGesture1_0200 areaObj2 clicked start',Math.round(areaObj2.left + areaWidth2 * 0.8),Math.round(areaObj2.top + areaObj2.top + areaHeight2/2))
-      console.log('SwipeGesture1_0200 areaObj2 clicked end',Math.round(areaObj2.left + areaWidth2 * 0.2),Math.round(areaObj2.top + areaObj2.top + areaHeight2/2))
+      console.log('SwipeGesture1_0200 areaObj2 clicked start',Math.round(areaObj2.left + areaWidth2 * 0.8),Math.round(areaObj2.top + areaHeight2/2))
+      console.log('SwipeGesture1_0200 areaObj2 clicked end',Math.round(areaObj2.left + areaWidth2 * 0.2),Math.round(areaObj2.top + areaHeight2/2))
       let driver = Driver.create();
       let speed = Math.floor(areaWidth2 * 0.6 / 0.016 / 1000) * 1000
       await CommonFunc.sleep(1000);
-      await driver.swipeBetween({x:Math.round(areaObj2.left + areaWidth2 * 0.8),y:Math.round(areaObj2.top + areaObj2.top + areaHeight2/2),displayId:displayID},{x:Math.round(areaObj2.left + areaWidth2 * 0.2),y:Math.round(areaObj2.top + areaObj2.top + areaHeight2/2),displayId:displayID},speed)
+      await driver.swipeBetween({x:Math.round(areaObj2.left + areaWidth2 * 0.8),y:Math.round(areaObj2.top + areaHeight2/2),displayId:displayID},{x:Math.round(areaObj2.left + areaWidth2 * 0.2),y:Math.round(areaObj2.top + areaHeight2/2),displayId:displayID},speed)
       await CommonFunc.sleep(3000);
       let strJson = getInspectorByKey('SwipeGesture2');
       let obj: ESObject = JSON.parse(strJson);

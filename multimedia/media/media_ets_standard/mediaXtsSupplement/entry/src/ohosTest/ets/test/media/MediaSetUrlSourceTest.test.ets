@@ -21,9 +21,8 @@ const TAG ='MediaXts.SetUrISource';
 async function testSetUrlSource(testName: string,callback:(avMetadataExtractor: media.AVMetadataExtractor)=>void,){
   let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
   console.info(TAG,testName,'createImageSource',avMetadataExtractor);
-  callback(avMetadataExtractor)
+  await callback(avMetadataExtractor)
   await avMetadataExtractor.release();
-  expect().assertFail();
 }
 export default function SetUrISourceTest() {
   describe('SetUrISourceTest', () => {

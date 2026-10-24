@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
+ * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -60,7 +60,7 @@ let advResponse: ble.AdvertiseData = {
     serviceData: [serviceDataUnit]
 };
 
-export default function bluetoothBleCallbackTest() {
+export default function bluetoothBleCallbackTest(): void {
 
     describe("bluetoothBleCallbackTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
@@ -101,14 +101,14 @@ export default function bluetoothBleCallbackTest() {
             }
         })
         /**
-         * @tc.number  startAdvertisingTest_callback_002
-         * @tc.name    startAdvertisingTest_callback_002
+         * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_STARTADVERTISINGTESTCALLBACK_0100
+         * @tc.name    startAdvertisingTest_callback_002_static_0100
          * @tc.desc    startAdvertisingTest_callback_002
          * @tc.level   Level 0
          * @tc.type    Function
          * @tc.size    MEDIUMTEST
          */
-        it("startAdvertisingTest_callback_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        it("startAdvertisingTest_callback_002_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let manufactureValueBuffers = new Uint8Array(32);
             for (let count = 0; count < 32; count++) {
                 manufactureValueBuffers[count] = (count+1);
@@ -156,9 +156,8 @@ export default function bluetoothBleCallbackTest() {
             }
             try {
                 hilog.error(domain, tag, "========================================5");
-                await startAdvertisingCallback().then((outAdvHandle) => {
-                    hilog.info(domain, tag, "startAdvertising return outAdvHandle: " + outAdvHandle);
-                });
+                let outAdvHandle = await startAdvertisingCallback();
+                hilog.info(domain, tag, "startAdvertising return outAdvHandle: " + outAdvHandle);
                 ble.stopAdvertising();
                 hilog.error(domain, tag, "========================================6");
             } catch (err) {
@@ -169,13 +168,13 @@ export default function bluetoothBleCallbackTest() {
                     hilog.info(domain, tag, 'api is not support');
                     expect(true).assertEqual(err.code === 801);
                 } else {
-                    expect(Number(err.code)).assertEqual(2902054);
+                    expect(err.code).assertEqual(2902054);
                 }
             }
             done();
         })
         /**
-         * @tc.number  notifyCharacteristicChangedTest_callback
+         * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_NOTIFYCHARACTERISTICCHANGEDCALLBACK_0100
          * @tc.name    notifyCharacteristicChangedTest_callback
          * @tc.desc    notifyCharacteristicChangedTest_callback
          * @tc.level   Level 0
@@ -228,9 +227,8 @@ export default function bluetoothBleCallbackTest() {
             }
             try {
                 hilog.info(domain, tag, "333333333333333333333333333333333333333");
-                await notifyCharacteristicChangedCallback().then(() => {
-                    hilog.info(domain, tag, "notifyCharacteristicChanged callback successful");
-                });
+                await notifyCharacteristicChangedCallback();
+                hilog.info(domain, tag, "notifyCharacteristicChanged callback successful");
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "44444444444444444444444444444444444444444");
@@ -239,14 +237,14 @@ export default function bluetoothBleCallbackTest() {
                     hilog.info(domain, tag, "api is not supported.");
                     expect(true).assertEqual(err.code === 801);
                 } else {
-                    expect(Number(err.code)).assertEqual(2900099);
+                    expect(err.code).assertEqual(2900099);
                 }
             }
             done();
         })
 
         /**
-         * @tc.number  getDeviceNameTest_callback
+         * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_GETDEVICENAME_0100
          * @tc.name    getDeviceNameTest_callback
          * @tc.desc    getDeviceNameTest_callback
          * @tc.level   Level 0
@@ -275,9 +273,8 @@ export default function bluetoothBleCallbackTest() {
                 });
             }
             try {
-                await getDeviceNameCallback().then((data) => {
-                    hilog.info(domain, tag, "getDeviceName callback successful");
-                });
+                await getDeviceNameCallback();
+                hilog.info(domain, tag, "getDeviceName callback successful");
             } catch (err) {
                 err = err as BusinessError;
                 hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
@@ -285,13 +282,13 @@ export default function bluetoothBleCallbackTest() {
                     hilog.info(domain, tag, 'api is not support');
                     expect(err.code === 801).assertTrue();
                 } else {
-                    expect(Number(err.code)).assertEqual(2900099);
+                    expect(err.code).assertEqual(2900099);
                 }
             }
             done();
         })
         /**
-         * @tc.number  enableAdvertisingTest_callback
+         * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_ENABLEADVERTISING_0100
          * @tc.name    enableAdvertisingTest_callback
          * @tc.desc    enableAdvertisingTest_callback
          * @tc.level   Level 0
@@ -324,9 +321,8 @@ export default function bluetoothBleCallbackTest() {
                 });
             }
             try {
-                await enableAdvertisingCallback().then((data) => {
-                    hilog.info(domain, tag, "enableAdvertising callback successful");
-                });
+                await enableAdvertisingCallback();
+                hilog.info(domain, tag, "enableAdvertising callback successful");
             } catch (err) {
                 err = err as BusinessError;
                 hilog.error(domain, tag, "enableAdvertisingTest_callback, errCode:" + err.code + ",errMessage:" + err.message);
@@ -334,13 +330,13 @@ export default function bluetoothBleCallbackTest() {
                     hilog.info(domain, tag, 'api is not support');
                     expect(err.code === 801).assertTrue();
                 } else {
-                    expect(Number(err.code)).assertEqual(2902055);
+                    expect(err.code).assertEqual(2902055);
                 }
             }
             done();
         })
         /**
-         * @tc.number  setCharacteristicChangeIndicationTest_callback
+         * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_SETCHARACTERISTICCHANGEINDICATION_0100
          * @tc.name    setCharacteristicChangeIndicationTest_callback
          * @tc.desc    setCharacteristicChangeIndicationTest_callback
          * @tc.level   Level 0
@@ -405,24 +401,23 @@ export default function bluetoothBleCallbackTest() {
                 });
             }
             try {
-                await setCharacteristicChangeIndicationCallback().then(() => {
-                    hilog.info(domain, tag, "setCharacteristicChangeIndication callback successful");
-                });
+                await setCharacteristicChangeIndicationCallback();
+                hilog.info(domain, tag, "setCharacteristicChangeIndication callback successful");
             } catch (err) {
                 err = err as BusinessError;
                 hilog.error(domain, tag, "setCharacteristicChangeIndication callback get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
                     hilog.error(domain, tag, 'api is not support');
-                    expect(Number(err.code)).assertEqual(801);
+                    expect(err.code).assertEqual(801);
                 } else {
-                    expect(Number(err.code)).assertEqual(401);
+                    expect(err.code).assertEqual(401);
                 }
             }
             done();
         })
 
         /**
-         * @tc.number  readDescriptorValueTest_callback
+         * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_READDESCRIPTORVALUE_0100
          * @tc.name    readDescriptorValueTest_callback
          * @tc.desc    readDescriptorValueTest_callback
          * @tc.level   Level 0
@@ -460,9 +455,8 @@ export default function bluetoothBleCallbackTest() {
                 });
             }
             try {
-                await readDescriptorValueCallback().then((data) => {
-                    hilog.info(domain, tag, "readDescriptorValue callback successful");
-                });
+                await readDescriptorValueCallback();
+                hilog.info(domain, tag, "readDescriptorValue callback successful");
             } catch (err) {
                 err = err as BusinessError;
                 hilog.error(domain, tag, "readDescriptorValue callback errCode:" + err.code + ",errMessage:" + err.message);
@@ -470,9 +464,83 @@ export default function bluetoothBleCallbackTest() {
                     hilog.info(domain, tag, "api is not supported.");
                     expect(true).assertEqual(err.code === 801);
                 } else if (err.code === 401) {
-                    expect(Number(err.code)).assertEqual(401);
+                    expect(err.code).assertEqual(401);
                 } else {
-                    expect(Number(err.code)).assertEqual(2900099);
+                    expect(err.code).assertEqual(2900099);
+                }
+            }
+            done();
+        })
+        /**
+         * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTICVALUE_0100
+         * @tc.name    readCharacteristicValueTest_callback_static_0100
+         * @tc.desc    readCharacteristicValueTest_callback
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("readCharacteristicValueTest_callback_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let descriptors: Array<ble.BLEDescriptor> = [];
+            let bufferDesc = new ArrayBuffer(8);
+            let descV = new Uint8Array(bufferDesc);
+            descV[0] = 11;
+            let gattPermissions: ble.GattPermissions = {
+                read: false,
+                readEncrypted: false,
+                readEncryptedMitm: false,
+                write: false,
+                writeEncrypted: false,
+                writeEncryptedMitm: false,
+                writeSigned: false,
+                writeSignedMitm: false
+            }
+            let descriptor: ble.BLEDescriptor = {
+                serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+                descriptorUuid: '00002903-0000-1000-8000-00805F9B34FB', descriptorValue: bufferDesc,
+                descriptorHandle: 0, permissions: gattPermissions
+            };
+            descriptors.push(descriptor);
+
+            let bufferCCC = new ArrayBuffer(8);
+            let cccV = new Uint8Array(bufferCCC);
+            cccV[0] = 1;
+            let characteristic: ble.BLECharacteristic = {
+                serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+                characteristicValue: bufferCCC, descriptors: descriptors
+            };
+            let readCharacteristicValueCallback = () => {
+                return new Promise<ble.BLECharacteristic>((resolve,reject) => {
+                    gattClientDevice!.readCharacteristicValue(characteristic, (err: BusinessError|null, data: ble.BLECharacteristic|undefined)=> {
+                        try {
+                            if (err) {
+                                hilog.info(domain, tag, 'readCharacteristicValue callback failed' + JSON.stringify(err));
+                                reject(err);
+                            } else {
+                                hilog.info(domain, tag, 'readCharacteristicValue callback value:'+JSON.stringify(data));
+                                if (data != undefined) {
+                                    resolve(data);
+                                }
+                            }
+                        } catch (err) {
+                            err = err as BusinessError;
+                            hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
+                        }
+                    });
+                });
+            }
+            try {
+                await readCharacteristicValueCallback();
+                hilog.info(domain, tag, "readCharacteristicValue callback successful");
+            } catch (err) {
+                err = err as BusinessError;
+                hilog.error(domain, tag, "readCharacteristicValue callback errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, "api is not supported.");
+                    expect(true).assertEqual(err.code === 801);
+                } else {
+                    expect(err.code).assertEqual(401);
                 }
             }
             done();
@@ -510,9 +578,8 @@ export default function bluetoothBleCallbackTest() {
                 });
             }
             try {
-                await disableAdvertisingCallback().then(() => {
-                    hilog.info(domain, tag, "disableAdvertising callback successful");
-                });
+                await disableAdvertisingCallback();
+                hilog.info(domain, tag, "disableAdvertising callback successful");
             } catch (err) {
                 err = err as BusinessError;
                 hilog.error(domain, tag, "disableAdvertising callback errCode:" + err.code + ",errMessage:" + err.message);
@@ -520,13 +587,292 @@ export default function bluetoothBleCallbackTest() {
                     hilog.info(domain, tag, 'api is not support');
                     expect(true).assertEqual(err.code === 801);
                 } else {
-                    expect(Number(err.code)).assertEqual(2902055);
+                    expect(err.code).assertEqual(2902055);
                 }
             }
             done();
         })
+
         /**
-         * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_READDESCRIPTORVALUE_CALLBACK_PARAMETER_0100
+         * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTICVALUECALLBACKPARAMETER_0100
+         * @tc.name    readCharacteristicValueTest_callback_descriptorsEmpty_static_0100
+         * @tc.desc    readCharacteristicValue descriptors empty array test.
+         * @tc.level   LEVEL0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("readCharacteristicValueTest_callback_descriptorsEmpty_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let bufferCCC = new ArrayBuffer(8);
+            let cccV = new Uint8Array(bufferCCC);
+            cccV[0] = 1;
+            let descriptors: Array<ble.BLEDescriptor> = [];
+            let characteristic: ble.BLECharacteristic = {
+                serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+                characteristicValue: bufferCCC,
+                descriptors: descriptors
+            };
+            let readCharacteristicValueCallback = () => {
+                return new Promise<ble.BLECharacteristic>((resolve, reject) => {
+                    gattClientDevice!.readCharacteristicValue(characteristic, (err: BusinessError | null, data: ble.BLECharacteristic | undefined) => {
+                        try {
+                            if (err) {
+                                hilog.info(domain, tag, 'readCharacteristicValue callback failed' + JSON.stringify(err));
+                                reject(err);
+                            } else {
+                                hilog.info(domain, tag, 'readCharacteristicValue callback value:' + JSON.stringify(data));
+                                if (data != undefined) {
+                                    resolve(data);
+                                }
+                            }
+                        } catch (err) {
+                            hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
+                        }
+                    });
+                });
+            }
+            try {
+                await readCharacteristicValueCallback()
+                hilog.info(domain, tag, "readCharacteristicValue callback successful");
+            } catch (err) {
+                hilog.error(domain, tag, "readCharacteristicValue callback errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, "api is not supported.");
+                    expect(true).assertEqual(err.code === 801);
+                } else {
+                    expect(err.code).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+        * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTICVALUECALLBACKPARAMETER_0200
+        * @tc.name    readCharacteristicValueTest_callback_descriptorsNotEmpty_static_0100
+        * @tc.desc    readCharacteristicValue descriptors not empty array test.
+        * @tc.level   LEVEL0
+        * @tc.type    Function
+        * @tc.size    MEDIUMTEST
+        */
+        it("readCharacteristicValueTest_callback_descriptorsNotEmpty_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let bufferDesc = new ArrayBuffer(8);
+            let descV = new Uint8Array(bufferDesc);
+            descV[0] = 11;
+            let gattPermissions: ble.GattPermissions = {
+                read: false,
+                readEncrypted: false,
+                readEncryptedMitm: false,
+                write: false,
+                writeEncrypted: false,
+                writeEncryptedMitm: false,
+                writeSigned: false,
+                writeSignedMitm: false
+            }
+            let descriptor: ble.BLEDescriptor = {
+                serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+                descriptorUuid: '00002903-0000-1000-8000-00805F9B34FB',
+                descriptorValue: bufferDesc,
+                descriptorHandle: 0,
+                permissions: gattPermissions
+            };
+            let descriptors: Array<ble.BLEDescriptor> = [];
+            descriptors.push(descriptor);
+            let bufferCCC = new ArrayBuffer(8);
+            let cccV = new Uint8Array(bufferCCC);
+            cccV[0] = 1;
+            let characteristic: ble.BLECharacteristic = {
+                serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+                characteristicValue: bufferCCC,
+                descriptors: descriptors
+            };
+            let readCharacteristicValueCallback = () => {
+                return new Promise<ble.BLECharacteristic>((resolve, reject) => {
+                    gattClientDevice!.readCharacteristicValue(characteristic, (err: BusinessError | null, data: ble.BLECharacteristic | undefined) => {
+                        try {
+                            if (err) {
+                                hilog.info(domain, tag, 'readCharacteristicValue callback failed' + JSON.stringify(err));
+                                reject(err);
+                            } else {
+                                hilog.info(domain, tag, 'readCharacteristicValue callback value:' + JSON.stringify(data));
+                                if (data != undefined) {
+                                    resolve(data);
+                                }
+                            }
+                        } catch (err) {
+                            hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
+                        }
+                    });
+                });
+            }
+            try {
+                await readCharacteristicValueCallback()
+                hilog.info(domain, tag, "readCharacteristicValue callback successful");
+            } catch (err) {
+                hilog.error(domain, tag, "readCharacteristicValue callback errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, "api is not supported.");
+                    expect(true).assertEqual(err.code === 801);
+                } else {
+                    expect(err.code).assertEqual(401);
+                }
+            }
+            done();
+        })
+        
+        /**
+         * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTICVALUECALLBACKPARAMETER_0300
+         * @tc.name    readCharacteristicValueTest_callback_descriptorUuidEmpty_static_0100
+         * @tc.desc    readCharacteristicValue descriptorUuid empty string test.
+         * @tc.level   LEVEL0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("readCharacteristicValueTest_callback_descriptorUuidEmpty_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let bufferDesc = new ArrayBuffer(8);
+            let descV = new Uint8Array(bufferDesc);
+            descV[0] = 11;
+            let gattPermissions: ble.GattPermissions = {
+                read: true,
+                readEncrypted: false,
+                readEncryptedMitm: false,
+                write: false,
+                writeEncrypted: false,
+                writeEncryptedMitm: false,
+                writeSigned: false,
+                writeSignedMitm: false
+            }
+            let descriptor: ble.BLEDescriptor = {
+                serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+                descriptorUuid: '',
+                descriptorValue: bufferDesc,
+                descriptorHandle: 0,
+                permissions: gattPermissions
+            };
+            let descriptors: Array<ble.BLEDescriptor> = [];
+            descriptors.push(descriptor);
+            let bufferCCC = new ArrayBuffer(8);
+            let cccV = new Uint8Array(bufferCCC);
+            cccV[0] = 1;
+            let characteristic: ble.BLECharacteristic = {
+                serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+                characteristicValue: bufferCCC,
+                descriptors: descriptors
+            };
+            let readCharacteristicValueCallback = () => {
+                return new Promise<ble.BLECharacteristic>((resolve, reject) => {
+                    gattClientDevice!.readCharacteristicValue(characteristic, (err: BusinessError | null, data: ble.BLECharacteristic | undefined) => {
+                        try {
+                            if (err) {
+                                hilog.info(domain, tag, 'readCharacteristicValue callback failed' + JSON.stringify(err));
+                                reject(err);
+                            } else {
+                                hilog.info(domain, tag, 'readCharacteristicValue callback value:' + JSON.stringify(data));
+                                if (data != undefined) {
+                                    resolve(data);
+                                }
+                            }
+                        } catch (err) {
+                            hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
+                        }
+                    });
+                });
+            }
+            try {
+                await readCharacteristicValueCallback()
+                hilog.info(domain, tag, "readCharacteristicValue callback successful");
+            } catch (err) {
+                hilog.error(domain, tag, "readCharacteristicValue callback errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, "api is not supported.");
+                    expect(true).assertEqual(err.code === 801);
+                } else {
+                    expect(err.code).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+        * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTICVALUECALLBACKPARAMETER_0400
+        * @tc.name    readCharacteristicValueTest_callback_permissionsReadTrue_static_0100
+        * @tc.desc    readCharacteristicValue descriptor permissions read true test.
+        * @tc.level   LEVEL0
+        * @tc.type    Function
+        * @tc.size    MEDIUMTEST
+        */
+        it("readCharacteristicValueTest_callback_permissionsReadTrue_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let bufferDesc = new ArrayBuffer(8);
+            let descV = new Uint8Array(bufferDesc);
+            descV[0] = 11;
+            let gattPermissions: ble.GattPermissions = {
+                read: true,
+                readEncrypted: true,
+                readEncryptedMitm: true,
+                write: true,
+                writeEncrypted: true,
+                writeEncryptedMitm: true,
+                writeSigned: true,
+                writeSignedMitm: true
+            }
+            let descriptor: ble.BLEDescriptor = {
+                serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+                descriptorUuid: '00002903-0000-1000-8000-00805F9B34FB',
+                descriptorValue: bufferDesc,
+                descriptorHandle: 0,
+                permissions: gattPermissions
+            };
+            let descriptors: Array<ble.BLEDescriptor> = [];
+            descriptors.push(descriptor);
+            let bufferCCC = new ArrayBuffer(8);
+            let cccV = new Uint8Array(bufferCCC);
+            cccV[0] = 1;
+            let characteristic: ble.BLECharacteristic = {
+                serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+                characteristicValue: bufferCCC,
+                descriptors: descriptors
+            };
+            let readCharacteristicValueCallback = () => {
+                return new Promise<ble.BLECharacteristic>((resolve, reject) => {
+                    gattClientDevice!.readCharacteristicValue(characteristic, (err: BusinessError | null, data: ble.BLECharacteristic | undefined) => {
+                        try {
+                            if (err) {
+                                hilog.info(domain, tag, 'readCharacteristicValue callback failed' + JSON.stringify(err));
+                                reject(err);
+                            } else {
+                                hilog.info(domain, tag, 'readCharacteristicValue callback value:' + JSON.stringify(data));
+                                if (data != undefined) {
+                                    resolve(data);
+                                }
+                            }
+                        } catch (err) {
+                            hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
+                        }
+                    });
+                });
+            }
+            try {
+                await readCharacteristicValueCallback()
+                hilog.info(domain, tag, "readCharacteristicValue callback successful");
+            } catch (err) {
+                hilog.error(domain, tag, "readCharacteristicValue callback errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, "api is not supported.");
+                    expect(true).assertEqual(err.code === 801);
+                } else {
+                    expect(err.code).assertEqual(401);
+                }
+            }
+            done();
+        })
+    
+        /**
+         * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_READDESCRIPTORVALUECALLBACKPARAMETER_0100
          * @tc.name    readDescriptorValueTest_callback_permissionsAllTrue
          * @tc.desc    readDescriptorValue descriptor permissions all true test.
          * @tc.level   LEVEL0
@@ -582,9 +928,9 @@ export default function bluetoothBleCallbackTest() {
                     hilog.info(domain, tag, "api is not supported.");
                     expect(true).assertEqual(err.code === 801);
                 } else if (err.code === 401) {
-                    expect(Number(err.code)).assertEqual(401);
+                    expect(err.code).assertEqual(401);
                 } else {
-                    expect(Number(err.code)).assertEqual(2900099);
+                    expect(err.code).assertEqual(2900099);
                 }
             }
             done();
@@ -592,7 +938,7 @@ export default function bluetoothBleCallbackTest() {
 
     
         /**
-         * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_SETCHARACTERISTICCHANGEINDICATION_CALLBACK_PARAMETER_0100
+         * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_SETCHARACTERISTICCHANGEINDICATIONCALLBACKPARAMETER_0100
          * @tc.name    setCharacteristicChangeIndicationTest_callback_descriptorsNotEmpty
          * @tc.desc    setCharacteristicChangeIndication descriptors not empty array test.
          * @tc.level   LEVEL0
@@ -670,16 +1016,16 @@ export default function bluetoothBleCallbackTest() {
                 hilog.error(domain, tag, "setCharacteristicChangeIndication callback errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
                     hilog.error(domain, tag, 'api is not support');
-                    expect(Number(err.code)).assertEqual(801);
+                    expect(err.code).assertEqual(801);
                 } else {
-                    expect(Number(err.code)).assertEqual(401);
+                    expect(err.code).assertEqual(401);
                 }
             }
             done();
         })
 
         /**
-        * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_SETCHARACTERISTICCHANGEINDICATION_CALLBACK_PARAMETER_0200
+        * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_SETCHARACTERISTICCHANGEINDICATIONCALLBACKPARAMETER_0200
         * @tc.name    setCharacteristicChangeIndicationTest_callback_descriptorUuidEmpty
         * @tc.desc    setCharacteristicChangeIndication descriptorUuid empty string test.
         * @tc.level   LEVEL0
@@ -757,16 +1103,16 @@ export default function bluetoothBleCallbackTest() {
                 hilog.error(domain, tag, "setCharacteristicChangeIndication callback errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
                     hilog.error(domain, tag, 'api is not support');
-                    expect(Number(err.code)).assertEqual(801);
+                    expect(err.code).assertEqual(801);
                 } else {
-                    expect(Number(err.code)).assertEqual(401);
+                    expect(err.code).assertEqual(401);
                 }
             }
             done();
         })
 
         /**
-         * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_SETCHARACTERISTICCHANGEINDICATION_CALLBACK_PARAMETER_0300
+         * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_SETCHARACTERISTICCHANGEINDICATIONCALLBACKPARAMETER_0300
          * @tc.name    setCharacteristicChangeIndicationTest_callback_propertiesAllTrue
          * @tc.desc    setCharacteristicChangeIndication characteristic properties all true test.
          * @tc.level   LEVEL0
@@ -845,16 +1191,16 @@ export default function bluetoothBleCallbackTest() {
                 hilog.error(domain, tag, "setCharacteristicChangeIndication callback errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
                     hilog.error(domain, tag, 'api is not support');
-                    expect(Number(err.code)).assertEqual(801);
+                    expect(err.code).assertEqual(801);
                 } else {
-                    expect(Number(err.code)).assertEqual(401);
+                    expect(err.code).assertEqual(401);
                 }
             }
             done();
         })
 
         /**
-        * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_SETCHARACTERISTICCHANGEINDICATION_CALLBACK_PARAMETER_0400
+        * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_SETCHARACTERISTICCHANGEINDICATIONCALLBACKPARAMETER_0400
         * @tc.name    setCharacteristicChangeIndicationTest_callback_permissionsAllTrue
         * @tc.desc    setCharacteristicChangeIndication characteristic permissions all true test.
         * @tc.level   LEVEL0
@@ -921,9 +1267,9 @@ export default function bluetoothBleCallbackTest() {
                 hilog.error(domain, tag, "setCharacteristicChangeIndication callback errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
                     hilog.error(domain, tag, 'api is not support');
-                    expect(Number(err.code)).assertEqual(801);
+                    expect(err.code).assertEqual(801);
                 } else {
-                    expect(Number(err.code)).assertEqual(401);
+                    expect(err.code).assertEqual(401);
                 }
             }
             done();

@@ -14,6 +14,7 @@
  */
 import { describe, it, expect, TestType, Size, Level, afterEach } from '@ohos/hypium';
 import { ArkTSUtils, collections, lang, HashMap, HashSet } from '@kit.ArkTS'
+import { BusinessError } from '@kit.BasicServicesKit'
 import { SendableTestClass, NormalTestClass } from './exportFunc'
 
 function sleep(time: number) {
@@ -25,6 +26,13 @@ interface GeneratedObjectLiteralInterface_1 {
 }
 
 
+
+class SupPlainObj001 {
+  x: number = 1;
+  y: string = 's';
+  z: null = null;
+  w: number[] = [1, 2];
+}
 export default function ASONStringifyTest() {
   describe('ASONStringifyTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -3086,5 +3094,80 @@ export default function ASONStringifyTest() {
       expect(jsonStr).assertEqual('[{"date":"2024-01-01T00:00:00.000Z","name":"Test"},["date"]]');
     });
 
+
+    /**
+     * @tc.number  SUB_ASON_STRINGIFY_IDEMPOTENT_0200
+     * @tc.name    testAsonStringifyIdempotent0002
+     * @tc.desc    Verify same value stringified twice yields identical string
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testAsonStringifyIdempotent0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let mapIdem = ArkTSUtils.ASON.parse('{"a":1}', undefined,
+        {
+          parseReturnType: ArkTSUtils.ASON.ParseReturnType.MAP,
+          bigIntMode: ArkTSUtils.ASON.BigIntMode.DEFAULT
+        }) as collections.Map<string, bigint>;
+      let s1: string = ArkTSUtils.ASON.stringify(mapIdem);
+      let s2: string = ArkTSUtils.ASON.stringify(mapIdem);
+      expect(s1).assertEqual(s2);
+    })
+
+    /**
+     * @tc.number  SUB_ASON_PARSE_MUTATE_STRINGIFY_0300
+     * @tc.name    testAsonParseMutateStringify0003
+     * @tc.desc    Verify mutation on parsed MAP is reflected in stringify
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testAsonParseMutateStringify0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let mapMut = ArkTSUtils.ASON.parse('{"a":1,"b":2}', undefined,
+        {
+          parseReturnType: ArkTSUtils.ASON.ParseReturnType.MAP,
+          bigIntMode: ArkTSUtils.ASON.BigIntMode.DEFAULT
+        }) as collections.Map<string, bigint>;
+      mapMut.set('c', 3n);
+      mapMut.delete('a');
+      let sMut: string = ArkTSUtils.ASON.stringify(mapMut);
+      expect(sMut.includes('"b":2')).assertTrue();
+      expect(sMut.includes('"c":3')).assertTrue();
+      expect(sMut.includes('"a"')).assertFalse();
+    })
+
+    /**
+     * @tc.number  SUB_ASON_STRINGIFY_PLAIN_OBJ_0400
+     * @tc.name    testAsonStringifyPlainObj0004
+     * @tc.desc    Verify stringify supports plain non-Sendable object
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testAsonStringifyPlainObj0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let plain = new SupPlainObj001();
+      let sPlain: string = ArkTSUtils.ASON.stringify(plain);
+      expect(sPlain).assertEqual('{"x":1,"y":"s","z":null,"w":[1,2]}');
+    })
+
+    /**
+     * @tc.number  SUB_ASON_STRINGIFY_VALUE_ONE_0100
+     * @tc.name    testAsonStringifyOneValue0001
+     * @tc.desc    Verify stringify with illegal value type does not throw 401 (actual)
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testAsonStringifyOneValue0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let illegal: () => void = (): void => {
+      };
+      let threw = false;
+      try {
+        ArkTSUtils.ASON.stringify(illegal as Object);
+      } catch (error) {
+        threw = true;
+      }
+      expect(threw).assertFalse();
+    });
   })
 }

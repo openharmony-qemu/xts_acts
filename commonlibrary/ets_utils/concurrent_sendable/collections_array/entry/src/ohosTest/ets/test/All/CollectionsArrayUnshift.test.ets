@@ -17,6 +17,7 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level
 import { TestA } from './pages/InterfaceDefined';
 import { sleep } from './pages/Utils';
 import { collections } from '@kit.ArkTS'
+import { BusinessError } from '@kit.BasicServicesKit';
 
 export default function CollectionsArrayUnshift() {
   describe('CollectionsArrayUnshift', () => {
@@ -357,5 +358,24 @@ export default function CollectionsArrayUnshift() {
       done();
       console.info(`${caseName} test end`);
     })
+
+    /**
+     * @tc.number  SUB_ARRAY_UNSHIFT_BIND_0100
+     * @tc.name    testArrayUnshiftBind0001
+     * @tc.desc    Verify unshift detached invocation throws 10200011
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testArrayUnshiftBind0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new collections.Array<number>();
+      let fn = arr.unshift;
+      try {
+        fn(1);
+        expect().assertFail();
+      } catch (error) {
+        expect((error as BusinessError).code).assertEqual(10200011);
+      }
+    });
   })
 }

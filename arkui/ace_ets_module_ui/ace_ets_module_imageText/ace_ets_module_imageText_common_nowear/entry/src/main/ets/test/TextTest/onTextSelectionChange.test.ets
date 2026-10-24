@@ -69,7 +69,7 @@ export default function OnTextSelectionChangeTest() {
       await CommonFunc.sleep(1000);
       console.info('[OnTextSelectionChangeTest_0010] get1: ' + AppStorage.get('OnTextSelectionChange'));
       expect(AppStorage.get('OnTextSelectionChange')).assertEqual('start:0,end:11');
-      await driver.mouseClick({ x: clickX3, y: clickY }, MouseButton.MOUSE_BUTTON_LEFT);
+      await driver.mouseClick({ x: clickX3, y: clickY, displayId: displayID }, MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(1000);
       console.info('[OnTextSelectionChangeTest_0010] get2: ' + AppStorage.get('OnTextSelectionChange'));
       expect(AppStorage.get('OnTextSelectionChange')).assertEqual('start:-1,end:-1');
@@ -124,7 +124,7 @@ export default function OnTextSelectionChangeTest() {
       let clickX = Math.round((textRect.left + textRect.right)/2)
       let clickY = Math.round(textRect.bottom - 10)
       // 鼠标左键点击文本外，文本取消选中
-      await driver.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_LEFT);
+      await driver.mouseClick({ x: clickX, y: clickY, displayId: displayID }, MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(1000);
       console.info('[OnTextSelectionChangeTest_0020] get2: ' + AppStorage.get('OnTextSelectionChange'));
       expect(AppStorage.get('OnTextSelectionChange')).assertEqual('start:-1,end:-1');
@@ -149,7 +149,7 @@ export default function OnTextSelectionChangeTest() {
       let textRect = CommonFunc.getComponentRectOnScreen('OnTextSelectionChange_text');
       let clickX = Math.round(textRect.right + 10)
       let clickY = Math.round((textRect.bottom + textRect.top)/2)
-      await driver.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_LEFT);
+      await driver.mouseClick({ x: clickX, y: clickY, displayId: displayID }, MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(1000);
       console.info('[OnTextSelectionChangeTest_0030] get2: ' +
       AppStorage.get('OnTextSelectionChange'));

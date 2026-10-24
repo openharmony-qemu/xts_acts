@@ -13,13 +13,13 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import {beforeAll, describe, it, expect, TestType, Size, Level} from '@ohos/hypium';
 import { collections } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 import { taskpool } from '@kit.ArkTS';
 import { worker } from '@kit.ArkTS';
 import { ArkTSUtils } from '@kit.ArkTS';
-import {
-  concurrentForEachCount,
+import {  concurrentForEachCount,
   concurrentModifyDuringForEach,
   concurrentIterateEntries,
   concurrentIterateKeys,
@@ -35,12 +35,64 @@ import {
   largeMapHandler
 } from './CollectionsMapConcurrentTasks';
 import { sharedMap } from './SharedMap';
+
+function sleep(time: number): Promise<void> {
+  return new Promise<void>((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, time);
+  });
+}
+
 let lockSeq: number = 0;  // 0009 AsyncLock 锁名自增计数（避免跨用例/重试串扰）
 
+
+@Sendable
+class SupMapShared001 {
+  map: collections.Map<number, string> = new collections.Map<number, string>();
+}
+
+@Concurrent
+function supMapWrite001(map: collections.Map<number, string>, base: number): void {
+  for (let i = 0; i < 200; i++) {
+    try {
+      map.set(base + i, 'v' + (base + i));
+    } catch (error) {
+    }
+  }
+}
+
+@Concurrent
+function supMapRemove001(map: collections.Map<number, string>, base: number): void {
+  for (let i = 0; i < 200; i++) {
+    try {
+      map.remove(base + i);
+    } catch (error) {
+    }
+  }
+}
+
+@Sendable
+class SupMapSharedSame001 {
+  map: collections.Map<string, number> = new collections.Map<string, number>();
+}
+
+@Concurrent
+function supMapWriteSame001(map: collections.Map<string, number>, value: number): void {
+  for (let i = 0; i < 200; i++) {
+    try {
+      map.set('sameKey', value);
+    } catch (error) {
+    }
+  }
+}
 export default function collectionsMapConcurrentTest() {
   describe('CollectionsMapConcurrentTest', () => {
+    beforeAll(async () => {
+      await sleep(200);
+    })
 
-    /**
+        /**
      * @tc.number  SUB_COLLECTIONS_MAP_CONCURRENT_0100
      * @tc.name  testCollectionsMapConcurrent0001
      * @tc.desc  3 TaskPool tasks concurrently forEach the same Map (100 entries).
@@ -97,7 +149,7 @@ export default function collectionsMapConcurrentTest() {
 
         let errCode: number = await taskpool.execute(concurrentModifyDuringForEach, map) as number;
 
-        expect(errCode === 0 || errCode === 10200201).assertTrue();
+        expect(errCode).assertEqual(10200201);
 
         console.info(caseName + ', test end, errCode = ' + errCode);
       } catch (e) {
@@ -862,5 +914,78 @@ export default function collectionsMapConcurrentTest() {
       done();
     });
 
+    /**
+     * @tc.number  SUB_MAP_CONC_DISTINCT_KEYS_0100
+     * @tc.name    testMapConcDistinctKeys0001
+     * @tc.desc    Verify concurrent writes of distinct keys keep all values correct
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testMapConcDistinctKeys0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let shared = new SupMapShared001();
+      let tasks: taskpool.Task[] = [];
+      for (let t = 0; t < 5; t++) {
+        tasks.push(new taskpool.Task(supMapWrite001, shared.map, t * 200));
+      }
+      for (let t = 0; t < tasks.length; t++) {
+        await taskpool.execute(tasks[t]);
+      }
+      expect(shared.map.size).assertEqual(1000);
+      for (let i = 0; i < 1000; i++) {
+        expect(shared.map.get(i)).assertEqual('v' + i);
+      }
+      done()
+    });
+
+    /**
+     * @tc.number  SUB_MAP_CONC_SAME_KEY_0200
+     * @tc.name    testMapConcSameKey0002
+     * @tc.desc    Verify concurrent writes of same key keep single entry with valid value
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testMapConcSameKey0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let shared = new SupMapSharedSame001();
+      let tasks: taskpool.Task[] = [];
+      for (let t = 1; t <= 5; t++) {
+        tasks.push(new taskpool.Task(supMapWriteSame001, shared.map, t));
+      }
+      for (let t = 0; t < tasks.length; t++) {
+        await taskpool.execute(tasks[t]);
+      }
+      expect(shared.map.size).assertEqual(1);
+      let validVals: number[] = [1, 2, 3, 4, 5];
+      expect(validVals.indexOf(shared.map.get('sameKey') as number) >= 0).assertTrue();
+      done()
+    });
+
+    /**
+     * @tc.number  SUB_MAP_CONC_REMOVE_VERIFY_0300
+     * @tc.name    testMapConcRemoveVerify0003
+     * @tc.desc    Verify concurrent remove leaves no ghost keys
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testMapConcRemoveVerify0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let shared = new SupMapShared001();
+      for (let i = 0; i < 1000; i++) {
+        shared.map.set(i, 'v' + i);
+      }
+      let tasks: taskpool.Task[] = [];
+      for (let t = 0; t < 5; t++) {
+        tasks.push(new taskpool.Task(supMapRemove001, shared.map, t * 200));
+      }
+      for (let t = 0; t < tasks.length; t++) {
+        await taskpool.execute(tasks[t]);
+      }
+      for (let i = 0; i < 1000; i++) {
+        expect(shared.map.has(i)).assertFalse();
+        expect(shared.map.get(i) === undefined).assertTrue();
+      }
+      done()
+    });
   });
 }

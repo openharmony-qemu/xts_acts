@@ -2274,7 +2274,7 @@ export default function expressionTest4() {
       const str: string = "abcdefghijklmnopqrstuvwxyz";
       const position: int = 3;
       const result: char = str.charAt(position + 5);
-      expect(result).assertEqual('i');
+      expect(result).assertEqual(c'i');
     });
 
     /**

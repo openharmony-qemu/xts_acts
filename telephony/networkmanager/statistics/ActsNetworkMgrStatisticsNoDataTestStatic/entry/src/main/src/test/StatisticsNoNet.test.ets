@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /**
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -39,7 +39,7 @@ const ExpectTrue = (n: boolean) => {
     }
 }
 
-export default function statisticsNoNetTest() {
+export default function statisticsNoNetTest(): void {
 
     describe("StatisticsNoNetTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
@@ -89,18 +89,19 @@ export default function statisticsNoNetTest() {
             let caseName: string = 'testNetworkMgrStatisticsGetAllRxBytes_static_0600';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                statistics.getAllRxBytes().then((stats: long)=>{
+                try {
+                    let stats = await statistics.getAllRxBytes();
                     hilog.info(domain, tag, '%{public}s', caseName +': stats ->'+stats);
                     ExpectTrue(true);
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
-                }).catch((error: Error) => {
+                } catch (error) {
                     let err = error as BusinessError;
                     hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
                     ExpectFail();
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
-                })
+                }
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
                 ExpectFail();
@@ -154,18 +155,19 @@ export default function statisticsNoNetTest() {
             let caseName: string = 'testNetworkMgrStatisticsGetAllTxBytes_static_0600';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                statistics.getAllTxBytes().then((stats: long)=>{
+                try {
+                    let stats = await statistics.getAllTxBytes();
                     hilog.info(domain, tag, '%{public}s', caseName +': stats ->'+stats);
                     ExpectTrue(true);
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
-                }).catch((error: Error) => {
+                } catch (error) {
                     let err = error as BusinessError;
                     hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
                     ExpectFail();
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
-                })
+                }
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
                 ExpectFail();

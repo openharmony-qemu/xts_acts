@@ -772,6 +772,30 @@ static napi_value CreateHotkey1(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value CreateAllSystemHotkeys3(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    int32_t count = 0;
+    Input_Hotkey **hotkey = OH_Input_CreateAllSystemHotkeys(count);
+    OH_LOG_INFO(LOG_APP, "SUB_MMI_Input_Api_CreateAllSystemHotkeys_0300 hotkeyIsNull:%{public}d",
+        hotkey == nullptr ? 1 : 0);
+    napi_create_int32(env, hotkey == nullptr ? 1 : 0, &result);
+    OH_Input_DestroyAllSystemHotkeys(hotkey, count);
+    return result;
+}
+
+static napi_value CreateAllSystemHotkeys4(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    int32_t count = -1;
+    Input_Hotkey **hotkey = OH_Input_CreateAllSystemHotkeys(count);
+    OH_LOG_INFO(LOG_APP, "SUB_MMI_Input_Api_CreateAllSystemHotkeys_0400 hotkeyIsNull:%{public}d",
+        hotkey == nullptr ? 1 : 0);
+    napi_create_int32(env, hotkey == nullptr ? 1 : 0, &result);
+    OH_Input_DestroyAllSystemHotkeys(hotkey, count);
+    return result;
+}
+
 static napi_value GetInterSinceLastInput1(napi_env env, napi_callback_info info)
 {
     napi_value result;
@@ -877,6 +901,8 @@ static napi_property_descriptor desc_part3[] = {
     {"CustomCursor18", nullptr, CustomCursor18, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"CreateDeviceInfo1", nullptr, CreateDeviceInfo1, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"CreateHotkey1", nullptr, CreateHotkey1, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"CreateAllSystemHotkeys3", nullptr, CreateAllSystemHotkeys3, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"CreateAllSystemHotkeys4", nullptr, CreateAllSystemHotkeys4, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"GetInterSinceLastInput1", nullptr, GetInterSinceLastInput1, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"RemoveKeyEventHook1", nullptr, RemoveKeyEventHook1, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"DispatchToNextHandler1", nullptr, DispatchToNextHandler1, nullptr, nullptr, nullptr, napi_default, nullptr},

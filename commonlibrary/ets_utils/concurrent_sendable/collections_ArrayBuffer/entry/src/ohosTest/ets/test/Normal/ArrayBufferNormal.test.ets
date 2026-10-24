@@ -1,6 +1,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '@ohos/hypium';
 import { collections, taskpool } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 declare class ArkTools {
   static forceFullGC(): void
@@ -153,6 +154,18 @@ function crossThreadContentVerify(buf: collections.ArrayBuffer, begin: number, e
   }
 }
 
+
+@Concurrent
+function writeBufTask001(view: collections.Int8Array): void {
+  for (let i = 0; i < view.length; i++) {
+    view[i] = (i + 1) % 128;
+  }
+}
+
+@Concurrent
+function sliceSegmentTask001(buf: collections.ArrayBuffer, begin: number, end: number): collections.ArrayBuffer {
+  return buf.slice(begin, end);
+}
 export default function ArrayBufferNormalTest() {
   describe('ArrayBufferNormalTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -190,7 +203,7 @@ export default function ArrayBufferNormalTest() {
           expect().assertFail();
       } catch (err) {
        console.error(`${TAG} failed, error: ${err.message}`);
-       // verify entering catch only, do not assert message
+       expect(err instanceof RangeError).assertTrue();
       }
       done()
     });
@@ -397,7 +410,7 @@ export default function ArrayBufferNormalTest() {
         expect().assertFail();
       } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
-        // verify entering catch only, do not assert message
+        expect(err instanceof RangeError).assertTrue();
       }
       done()
     });
@@ -462,7 +475,7 @@ export default function ArrayBufferNormalTest() {
         expect().assertFail();
       } catch (err) {
         console.error(`${TAG} error: ${err.message}`);
-        // verify entering catch only, do not assert message
+        expect(err instanceof RangeError).assertTrue();
       }
       done()
     });
@@ -1452,5 +1465,79 @@ export default function ArrayBufferNormalTest() {
       }
       done()
     });
+
+    /**
+     * @tc.number  SUB_ARRAYBUFFER_SLICE_ONE_0100
+     * @tc.name    testArrayBufferSliceOne0001
+     * @tc.desc    Verify concurrent modification during slice does not throw 10200201 (actual)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('testArrayBufferSliceOne0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      const TAG = "testArrayBufferSliceOne0001";
+      try {
+        let buf = new collections.ArrayBuffer(1024);
+        let view = new collections.Int8Array(buf);
+        for (let i = 0; i < 1024; i++) {
+          view[i] = i % 128;
+        }
+        let writerPromise = taskpool.execute(new taskpool.Task(writeBufTask001, view));
+        let sawError = false;
+        for (let k = 0; k < 1000; k++) {
+          try {
+            buf.slice(0, 512);
+          } catch (error) {
+            let e: BusinessError = error as BusinessError;
+            if (e.code === 10200201) {
+              sawError = true;
+            }
+          }
+        }
+        await writerPromise;
+        expect(sawError).assertFalse();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_ARRAYBUFFER_CONC_VERIFY_0200
+     * @tc.name    testArrayBufferConcVerify0002
+     * @tc.desc    Verify concurrent slice segments content consistency
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('testArrayBufferConcVerify0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      const TAG = "supArrayBufferConcVerify0002";
+      try {
+        let buf = new collections.ArrayBuffer(100);
+        let view = new collections.Uint8Array(buf);
+        for (let i = 0; i < 100; i++) {
+          view[i] = i;
+        }
+        let tasks: taskpool.Task[] = [];
+        for (let s = 0; s < 5; s++) {
+          tasks.push(new taskpool.Task(sliceSegmentTask001, buf, s * 10, (s + 1) * 10));
+        }
+        let results = await Promise.all(tasks.map((t: taskpool.Task) => taskpool.execute(t)));
+        for (let s = 0; s < 5; s++) {
+          let seg = results[s] as collections.ArrayBuffer;
+          expect(seg.byteLength).assertEqual(10);
+          let segView = new collections.Uint8Array(seg);
+          for (let j = 0; j < 10; j++) {
+            expect(segView[j]).assertEqual(view[s * 10 + j]);
+          }
+        }
+        expect(buf.byteLength).assertEqual(100);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+      }
+      done()
+    })
    })
 }

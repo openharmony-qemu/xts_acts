@@ -30,6 +30,8 @@ import {
 import CommonFunc from '../../MainAbility/common/Common';
 import { KeyCode } from '@kit.InputKit';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RichEditorSetStyledString016() {
   describe('RichEditorSetStyledString016', () => {
     beforeEach(async (done: Function) => {
@@ -68,7 +70,7 @@ export default function RichEditorSetStyledString016() {
       let rich = await driver.findComponent(ON.id('RichEditorSetStyledString016'));
       let getBounds = await rich.getBoundsCenter();
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.x, getBounds.y);
+      await driver.clickAt({ x: getBounds.x, y: getBounds.y, displayId: displayID });
       await CommonFunc.sleep(500);
       let image_center = await driver.findComponent(ON.id('image_center'));
       await image_center.click();
@@ -122,7 +124,7 @@ export default function RichEditorSetStyledString016() {
       let rich = await driver.findComponent(ON.id('RichEditorSetStyledString016'));
       let getBounds = await rich.getBoundsCenter();
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.x, getBounds.y);
+      await driver.clickAt({ x: getBounds.x, y: getBounds.y, displayId: displayID });
       await CommonFunc.sleep(500);
       let isEditing = await driver.findComponent(ON.id('isEditing'));
       let isEditingText = await isEditing.getText();

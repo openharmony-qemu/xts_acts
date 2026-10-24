@@ -2600,5 +2600,19 @@ export default function Uint16ArrayAllTest() {
       arr.fill(9, 1, 10);
       expect(arr.toString()).assertEqual('1,9,9,9');
     })
+    /**
+     * @tc.number  SUB_TYPEDARRAY_UINT_SIXTEEN_ALL_ADD_FROM_0100
+     * @tc.name    testTypedArrayAllAddFrom0001
+     * @tc.desc    Verify Uint16Array.from() is added to the All suite
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testTypedArrayAllAddFrom0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let fromArr = collections.Uint16Array.from([1, 2, 3]);
+      expect(fromArr.length).assertEqual(3);
+      expect(fromArr[0]).assertEqual(1);
+    });
+
   })
 }

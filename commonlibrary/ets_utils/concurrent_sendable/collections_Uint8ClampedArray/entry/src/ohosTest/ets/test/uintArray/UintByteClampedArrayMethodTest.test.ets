@@ -19,7 +19,9 @@ import { sleep } from '../Utils';
 
 export default function UintByteClampedArrayMethodTest(): void {
   describe('UintByteClampedArrayMethodTest', (): void => {
-    beforeAll((): void => {})
+    beforeAll(async (): Promise<void> => {
+    await sleep(200);
+  })
     beforeEach((): void => {})
     afterEach((): void => {})
     afterAll(async (): Promise<void> => {
@@ -95,6 +97,12 @@ export default function UintByteClampedArrayMethodTest(): void {
       expect(arr[1]).assertEqual(200)
       expect(arr[3]).assertEqual(200)
       expect(arr[4]).assertEqual(128)
+      arr.fill(256)
+      expect(arr[0]).assertEqual(255)
+      arr.fill(-1)
+      expect(arr[0]).assertEqual(0)
+      arr[0] = 300
+      expect(arr[0]).assertEqual(255)
     })
 
     /**
@@ -812,5 +820,72 @@ export default function UintByteClampedArrayMethodTest(): void {
       expect(arr[1]).assertEqual(2)
       expect(arr[2]).assertEqual(128)
     })
+
+    /**
+     * @tc.number  SUB_TYPEDARRAY_U8CLAMPED_CLAMP_CTOR_0100
+     * @tc.name    testTypedArrayU8ClampedClampCtor0001
+     * @tc.desc    Verify constructor clamps out-of-range elements to [0,255]
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testTypedArrayU8ClampedClampCtor0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let c = new collections.Uint8ClampedArray([256, 300, -1, -100, 999, 257]);
+      expect(c[0]).assertEqual(255);
+      expect(c[1]).assertEqual(255);
+      expect(c[2]).assertEqual(0);
+      expect(c[3]).assertEqual(0);
+      expect(c[4]).assertEqual(255);
+      expect(c[5]).assertEqual(255);
+    });
+
+    /**
+     * @tc.number  SUB_TYPEDARRAY_U8CLAMPED_CLAMP_FILL_0200
+     * @tc.name    testTypedArrayU8ClampedClampFill0002
+     * @tc.desc    Verify fill clamps out-of-range values
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testTypedArrayU8ClampedClampFill0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let c1 = new collections.Uint8ClampedArray(3);
+      c1.fill(256);
+      expect(c1[0]).assertEqual(255);
+      let c2 = new collections.Uint8ClampedArray(3);
+      c2.fill(-1);
+      expect(c2[0]).assertEqual(0);
+    });
+
+    /**
+     * @tc.number  SUB_TYPEDARRAY_U8CLAMPED_CLAMP_SET_0300
+     * @tc.name    testTypedArrayU8ClampedClampSet0003
+     * @tc.desc    Verify set clamps out-of-range values
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testTypedArrayU8ClampedClampSet0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let c = new collections.Uint8ClampedArray(3);
+      c.set([256, -1, 300]);
+      expect(c[0]).assertEqual(255);
+      expect(c[1]).assertEqual(0);
+      expect(c[2]).assertEqual(255);
+    });
+
+    /**
+     * @tc.number  SUB_TYPEDARRAY_U8CLAMPED_CLAMP_INDEX_0400
+     * @tc.name    testTypedArrayU8ClampedClampIndex0004
+     * @tc.desc    Verify index assignment clamps out-of-range values
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testTypedArrayU8ClampedClampIndex0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let c = new collections.Uint8ClampedArray(2);
+      c[0] = 256;
+      c[1] = -5;
+      expect(c[0]).assertEqual(255);
+      expect(c[1]).assertEqual(0);
+    });
   })
 }
