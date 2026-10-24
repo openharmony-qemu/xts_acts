@@ -12,12 +12,11 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium';
+import {beforeAll, describe, it, expect, Level, Size, TestType} from '@ohos/hypium';
 import { ArkTSUtils, collections, JSON, lang, taskpool } from '@kit.ArkTS';
 import { BusinessError } from '@ohos.base';
 import { delay, getTaskStateByTaskName } from '../utils/taskPoolCommon';
-import {
-  testFailed,
+import {  testFailed,
   periodicTask,
   inspectStatus,
   additionDelay,
@@ -100,6 +99,15 @@ import {
   ISendableClass,
   shareTypeTask0015,
 } from '../utils/taskPoolExecuteCommon';
+
+
+function sleep(time: number): Promise<void> {
+  return new Promise<void>((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, time);
+  });
+}
 
 declare class ArkTools {
   static forceFullGC(): void;
@@ -353,7 +361,11 @@ function testExecutePeriodically(args: number): void {
 
 export default function TaskPoolTest1() {
   describe('TaskPoolTest1', () => {
-    /**
+    beforeAll(async () => {
+      await sleep(200);
+    })
+
+        /**
      * @tc.name   testExecuteTask0001
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_EXECUTE_TASK_0100
      * @tc.desc   Testing the task->execute with create func, assert return type and value.

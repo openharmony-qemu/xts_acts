@@ -30,7 +30,7 @@ export default function PromiseAnyTest1() {
       // This API supports only one parameter: preset action function.
       console.info('PromiseAnyTest beforeEach called');
       // Add delay to ensure resources from the previous test case are released
-      await sleep(300);
+      await sleep(100);
     })
 
     afterEach(() => {

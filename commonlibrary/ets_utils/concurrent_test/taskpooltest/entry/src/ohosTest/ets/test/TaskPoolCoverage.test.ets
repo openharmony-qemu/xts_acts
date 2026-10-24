@@ -13,7 +13,7 @@
 * limitations under the License.
 */
 
-import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import {beforeAll, describe, expect, it, Level, Size, TestType} from '@ohos/hypium';
 import { taskpool } from '@kit.ArkTS';
 // boundary value coverage tests
 
@@ -98,8 +98,11 @@ function concurrentNullArg(args: number | null | undefined): number | null | und
 
 export default function taskPoolCoverageTest() {
   describe('TaskPoolCoverageTest', () => {
+    beforeAll(async () => {
+      await sleep(200);
+    })
 
-    /**
+        /**
      * @tc.name   testTaskSetTransferListWithNull
      * @tc.number SUB_CONCURRENCY_TASKPOOL_SETTRANSFERLIST_NULL_0100
      * @tc.desc   Test Task.setTransferList with null parameter.
