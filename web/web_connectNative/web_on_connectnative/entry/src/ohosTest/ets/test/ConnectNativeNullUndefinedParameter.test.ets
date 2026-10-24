@@ -92,7 +92,7 @@ export default function connectNativeNullUndefinedParameterTest() {
       try {
         let connId = webNativeMessagingExtensionManager.connectNative(context, want, callback);
         hilog.info(0x0000, 'testTag', `${tcNumber} connectNative called with connId: ${connId}`);
-        expect(connId).not().assertUndefined();
+        expect(connId > 0).assertTrue();
       } catch (error) {
         let err = error as BusinessError;
         if (isCapabilityNotSupported(err)) {
@@ -143,7 +143,7 @@ export default function connectNativeNullUndefinedParameterTest() {
       try {
         let connId = webNativeMessagingExtensionManager.connectNative(context, want, callback);
         hilog.info(0x0000, 'testTag', `${tcNumber} connectNative called with connId: ${connId}`);
-        expect(connId).not().assertUndefined();
+        expect(connId > 0).assertTrue();
       } catch (error) {
         let err = error as BusinessError;
         if (isCapabilityNotSupported(err)) {
@@ -201,7 +201,7 @@ export default function connectNativeNullUndefinedParameterTest() {
       try {
         let connId = webNativeMessagingExtensionManager.connectNative(context, invalidWant, callback);
         hilog.info(0x0000, 'testTag', `${tcNumber} connectNative called with connId: ${connId}`);
-        expect(connId).not().assertUndefined();
+        expect(connId>0).assertTrue();
       } catch (error) {
         let err = error as BusinessError;
         if (isCapabilityNotSupported(err)) {
@@ -259,7 +259,7 @@ export default function connectNativeNullUndefinedParameterTest() {
       try {
         let connId = webNativeMessagingExtensionManager.connectNative(context, invalidWant, callback);
         hilog.info(0x0000, 'testTag', `${tcNumber} connectNative called with connId: ${connId}`);
-        expect(connId).not().assertUndefined();
+        expect(connId > 0).assertTrue();
       } catch (error) {
         let err = error as BusinessError;
         if (isCapabilityNotSupported(err)) {
@@ -317,7 +317,7 @@ export default function connectNativeNullUndefinedParameterTest() {
       try {
         let connId = webNativeMessagingExtensionManager.connectNative(context, invalidWant, callback);
         hilog.info(0x0000, 'testTag', `${tcNumber} connectNative called with connId: ${connId}`);
-        expect(connId).not().assertUndefined();
+        expect(connId > 0).assertTrue();
       } catch (error) {
         let err = error as BusinessError;
         if (isCapabilityNotSupported(err)) {
@@ -375,7 +375,7 @@ export default function connectNativeNullUndefinedParameterTest() {
       try {
         let connId = webNativeMessagingExtensionManager.connectNative(context, invalidWant, callback);
         hilog.info(0x0000, 'testTag', `${tcNumber} connectNative called with connId: ${connId}`);
-        expect(connId).not().assertUndefined();
+        expect(connId > 0).assertTrue();
       } catch (error) {
         let err = error as BusinessError;
         if (isCapabilityNotSupported(err)) {

@@ -260,11 +260,13 @@ export default class Utils {
           await Utils.sleep(1000);
           retryTimes++;
           console.log(logFlag + ' retryTimes = ' + retryTimes);
+        } else {
+          await buttonComponent.click();
         }
-        await buttonComponent.click();
       } catch (e) {
         const error = e as BusinessError;
-        console.error(`${logFlag} ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+        console.error(
+          `${logFlag} ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
         if (error.code === 17000002) {
           retry = true;
           await Utils.sleep(1000);

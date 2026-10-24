@@ -58,7 +58,7 @@ export default function webViewRegisterNativeEmbedRule() {
     it('testWebViewRegisterNativeEmbedRule', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebViewRegisterNativeEmbedRule", 153840);
       Utils.registerEvent("emitWebViewRegisterNativeEmbedRule", true, 153850, done);
-      waitAndClickComponent("webViewRegisterNativeEmbedRule",driver);
+      await waitAndClickComponent("webViewRegisterNativeEmbedRule",driver);
     })
   })
 }

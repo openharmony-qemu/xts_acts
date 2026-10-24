@@ -124,7 +124,7 @@ export default function webExtensionConnectionCallbackOnConnectParameterTest() {
       try {
         let connId = webNativeMessagingExtensionManager.connectNative(context, want, callback);
         hilog.info(0x0000, 'testTag', `${tcNumber} connectNative called with connId: ${connId}`);
-        expect(connId).not().assertUndefined();
+        expect(connId > 0).assertTrue();
         
         // 等待一段时间让回调执行
         await sleep(2000);
@@ -222,7 +222,7 @@ export default function webExtensionConnectionCallbackOnConnectParameterTest() {
       try {
         let connId = webNativeMessagingExtensionManager.connectNative(context, want, callback);
         hilog.info(0x0000, 'testTag', `${tcNumber} connectNative called with connId: ${connId}`);
-        expect(connId).not().assertUndefined();
+        expect(connId > 0).assertTrue();
         
         // 等待一段时间让回调执行
         await sleep(2000);
@@ -322,7 +322,7 @@ export default function webExtensionConnectionCallbackOnConnectParameterTest() {
       try {
         let connId = webNativeMessagingExtensionManager.connectNative(context, want, callback);
         hilog.info(0x0000, 'testTag', `${tcNumber} connectNative called with connId: ${connId}`);
-        expect(connId).not().assertUndefined();
+        expect(connId > 0).assertTrue();
         
         // 等待一段时间让回调执行
         await sleep(2000);
