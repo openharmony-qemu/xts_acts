@@ -12,14 +12,21 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import { describe, it, expect, TestType, Level, Size } from '@ohos/hypium';
+import {beforeAll, describe, it, expect, TestType, Level, Size} from '@ohos/hypium';
 import { ArkTSUtils, collections, HashMap, JSON, lang, taskpool } from '@kit.ArkTS';
 import { BusinessError } from '@ohos.base';
 import { delay, getTaskStateByTaskName } from '../utils/taskPoolCommon';
-import { inspectStatus, additionDelay, printArgs } from '../utils/taskPoolTask';
-
-import { testTransfer, Concurrent } from '../utils/taskPool';
+import { inspectStatus, additionDelay, printArgs } from '../utils/taskPoolTask';import { testTransfer, Concurrent } from '../utils/taskPool';
 import { Sleep } from '../utils/utils';
+
+
+function sleep(time: number): Promise<void> {
+  return new Promise<void>((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, time);
+  });
+}
 
 declare class ArkTools {
   static forceFullGC(): void;
@@ -138,8 +145,11 @@ function printTask(args: taskpool.Task): taskpool.Task {
 
 export default function TaskPoolErrorCodeTest() {
   describe('TaskPoolErrorCodeTest', () => {
+    beforeAll(async () => {
+      await sleep(200);
+    })
 
-    /**
+        /**
      * @tc.name   testTaskErrorCode0003
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_TASK_ERROR_CODE_0300
      * @tc.desc   Task sendData 10200006

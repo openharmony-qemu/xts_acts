@@ -13,14 +13,13 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import {beforeAll, describe, it, expect, TestType, Size, Level} from '@ohos/hypium';
 import { collections } from '@kit.ArkTS';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { taskpool } from '@kit.ArkTS';
 import { worker } from '@kit.ArkTS';
 import { ArkTSUtils } from '@kit.ArkTS';
-import {
-  concurrentForEachCount,
+import {  concurrentForEachCount,
   concurrentModifyDuringForEach,
   concurrentIterateEntries,
   concurrentIterateKeys,
@@ -36,6 +35,15 @@ import {
   largeMapHandler
 } from './CollectionsMapConcurrentTasks';
 import { sharedMap } from './SharedMap';
+
+function sleep(time: number): Promise<void> {
+  return new Promise<void>((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, time);
+  });
+}
+
 let lockSeq: number = 0;  // 0009 AsyncLock 锁名自增计数（避免跨用例/重试串扰）
 
 
@@ -80,8 +88,11 @@ function supMapWriteSame001(map: collections.Map<string, number>, value: number)
 }
 export default function collectionsMapConcurrentTest() {
   describe('CollectionsMapConcurrentTest', () => {
+    beforeAll(async () => {
+      await sleep(200);
+    })
 
-    /**
+        /**
      * @tc.number  SUB_COLLECTIONS_MAP_CONCURRENT_0100
      * @tc.name  testCollectionsMapConcurrent0001
      * @tc.desc  3 TaskPool tasks concurrently forEach the same Map (100 entries).

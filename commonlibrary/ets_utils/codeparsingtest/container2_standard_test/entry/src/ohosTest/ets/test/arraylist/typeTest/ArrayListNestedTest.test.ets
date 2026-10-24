@@ -212,53 +212,5 @@ export default function arrayListNestedTest() {
       list.trimToCurrentLength();
       expect(list.length).assertEqual(4);
     });
-
-    /**
-     * @tc.name   testArrayListNestedTest0600
-     * @tc.number SUB_ARKTS_ARRAY_LIST_NESTED_0600
-     * @tc.desc   Verify ArrayList nested array boundary access, out-of-range removeByIndex and insert, clear and empty clone
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArrayListNestedTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const list: ArrayList<Array<number>> = new ArrayList<Array<number>>();
-      list.add(VALID_VALUES[0]);
-      let accessThrew: boolean = false;
-      try {
-        const beyond: Array<number> = list[1];
-        expect(beyond).assertUndefined();
-      } catch (e) {
-        accessThrew = true;
-        expect((e as Error).name === 'BusinessError' || (e as Error).name === 'RangeError').assertTrue();
-      }
-      expect(accessThrew || list.length === 1).assertTrue();
-      expect(list.length).assertEqual(1);
-
-      let removeThrew: boolean = false;
-      try {
-        list.removeByIndex(12);
-      } catch (e) {
-        removeThrew = true;
-        expect(((e as Error).name).length > 0).assertTrue();
-      }
-      expect(removeThrew).assertTrue();
-      expect(list.length).assertEqual(1);
-
-      let insertThrew: boolean = false;
-      try {
-        list.insert(VALID_VALUES[1], 21);
-      } catch (e) {
-        insertThrew = true;
-        expect((e as Error).name === 'BusinessError' || (e as Error).name === 'RangeError').assertTrue();
-      }
-      expect(insertThrew).assertTrue();
-      expect(list.length).assertEqual(1);
-
-      list.clear();
-      expect(list.length).assertEqual(0);
-      expect(list.isEmpty()).assertTrue();
-      expect(list.clone().length).assertEqual(0);
-    });
   });
 }

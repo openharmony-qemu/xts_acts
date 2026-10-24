@@ -21,6 +21,8 @@ import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
+
 export default function dialogApi() {
   describe('dialogApi', () => {
     beforeEach(async (): Promise<void> => {
@@ -67,7 +69,7 @@ it('dialogApi_static_0100', Level.LEVEL2, async (done: () => void): Promise<void
       expect(obj.getElement('$attrs').getString('label')).assertEqual("dialogApi");
       console.info('[dialogApi_0100] END');
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2070)
+      await driver.triggerKey(2070, displayID)
       await CommonFunc.sleep(1000);
       done();
     });

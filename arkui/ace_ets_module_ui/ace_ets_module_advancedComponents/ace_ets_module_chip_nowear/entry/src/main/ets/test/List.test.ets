@@ -70,6 +70,11 @@ import ChipGroupV2AbnormalSpacePaddingTest from './ChipGroupV2Test/ChipGroupV2Ab
 import ChipGroupV2AbnormalSuffixTest from './ChipGroupV2Test/ChipGroupV2AbnormalSuffixTest.test';
 import ChipV2AbnormalComboTest from './chipV2/ChipV2AbnormalComboTest.test';
 import ChipGroupV2AbnormalComboTest from './ChipGroupV2Test/ChipGroupV2AbnormalComboTest.test';
+import ChipGroupOnItemsChangeTest from './ChipGroupTest/ChipGroupOnItemsChangeTest.test';
+import ChipGroupOnItemsChangeAbnormalTest from './ChipGroupTest/ChipGroupOnItemsChangeAbnormalTest.test';
+import ChipGroupV2OnItemsChangeTest from './ChipGroupV2Test/ChipGroupV2OnItemsChangeTest.test';
+import ChipGroupV2OnItemsChangeAbnormalTest from './ChipGroupV2Test/ChipGroupV2OnItemsChangeAbnormalTest.test';
+
 export default function testsuite() {
   chipDirectionTest();
   ChipAction();
@@ -126,4 +131,8 @@ export default function testsuite() {
   ChipGroupV2AbnormalSuffixTest();
   ChipV2AbnormalComboTest();
   ChipGroupV2AbnormalComboTest();
+  ChipGroupOnItemsChangeTest();
+  ChipGroupOnItemsChangeAbnormalTest();
+  ChipGroupV2OnItemsChangeTest();
+  ChipGroupV2OnItemsChangeAbnormalTest();
 }

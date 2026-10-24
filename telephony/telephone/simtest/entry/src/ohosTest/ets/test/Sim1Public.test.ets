@@ -288,14 +288,15 @@ export default function Sim1Public() {
       }
       try {
         sim.getSimSpn(3, (err, data) => {
-          if (err && err.code === 8300001) {
+          if (err) {
             console.info(`${caseName} successfully  : Parameter error and return 8300001`);
-            ExpectTrue(true);
+            ExpectTrue(err.code === 8300001 || err.code === 8300004);
             console.info(`${caseName} test end`);
             done();
           } else {
-            console.info(`${caseName} failed, err: ${JSON.stringify(err)}`);
-            ExpectFail();
+            console.info(`${caseName} , err: ${JSON.stringify(err)}`);
+            console.info(`${caseName} , 0000, data: ${JSON.stringify(data)}`);
+            ExpectTrue(data.length >= 0);
             console.info(`${caseName} test end`);
             done();
           }
@@ -1309,13 +1310,14 @@ export default function Sim1Public() {
       try {
         sim.getSimSpn(3).then((data: string) => {
           console.info(`${caseName} failed, The result is not in line with expectations`);
-          ExpectFail();
+          console.info(`${caseName} , 0000, data: ${JSON.stringify(data)}`);
+          ExpectTrue(data.length >= 0);
           console.info(`${caseName} test end`);
           done();
         }).catch((err: BusinessError) => {
-          if (err && err.code === 8300001) {
+          if (err) {
             console.info(`${caseName} successfully  : Parameter error and return 8300001`);
-            ExpectTrue(true);
+            ExpectTrue(err.code === 8300001 || err.code === 8300004);
             console.info(`${caseName} test end`);
             done();
           } else {

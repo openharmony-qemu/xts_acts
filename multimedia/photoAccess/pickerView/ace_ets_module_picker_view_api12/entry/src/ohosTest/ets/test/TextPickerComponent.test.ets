@@ -5847,5 +5847,39 @@ export default function TextPicker() {
       done();
     });
 
+    /**
+     * @tc.name   SUB_PHOTO_PICKER_TEST_1400
+     * @tc.number SUB_PHOTO_PICKER_TEST_1400
+     * @tc.desc   Testing defaultRecommendationType & FEATURED_SINGLE_PET
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_PHOTO_PICKER_TEST_1400', Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      let pickerOptions: PickerOptions = getDefaultPickerOptions();
+      pickerOptions.recommendationOptions = {
+        recommendationTypeList: [photoAccessHelper.RecommendationType.FEATURED_SINGLE_PET, photoAccessHelper.RecommendationType.DOG,
+          photoAccessHelper.RecommendationType.ARCHITECTURE, photoAccessHelper.RecommendationType.LANDSCAPE],
+        defaultRecommendationType: photoAccessHelper.RecommendationType.FEATURED_SINGLE_PET
+      }
+      const photoPicker = new photoAccessHelper.PhotoViewPicker();
+      try{
+        photoPicker.select(pickerOptions).then((PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
+          console.info('SUB_PHOTO_PICKER_TEST_1400, PhotoViewPicker.select successfully, PhotoSelectResult uri: ' +
+          JSON.stringify(PhotoSelectResult));
+        })
+        await closePickerModel(driver);
+      } catch(err) {
+        expect(false).assertTrue();
+        console.error(`SUB_PHOTO_PICKER_TEST_1400, PhotoViewPicker.select failed with err: ${err.code}, ${err.message}`);
+      }
+      console.info("SUB_PHOTO_PICKER_TEST_1400 finish");
+      done();
+    });
+
   })
 }

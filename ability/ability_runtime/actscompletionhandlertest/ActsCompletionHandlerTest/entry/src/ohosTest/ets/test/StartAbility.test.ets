@@ -217,8 +217,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(async (done: Function) => {
       try {
-        const ability = await abilityDelegatorRegistry.getAbilityDelegator().getCurrentTopAbility();
-        testContext = ability.context;
+        testContext = AppStorage.get("testAbilityContext") as common.UIAbilityContext;
       } catch (err) {
         hilog.info(DOMAIN, LOG_TAG, 'get context failed: ' + JSON.stringify(err));
         try { expect().assertFail(); } catch (err) {}
