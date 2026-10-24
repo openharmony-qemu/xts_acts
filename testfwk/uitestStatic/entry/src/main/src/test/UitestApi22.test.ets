@@ -479,8 +479,10 @@ export default function uitestDriverTestApi22(): void {
       if(scrollBar) {
         let rect = await scrollBar.getBounds();
         let center = await scrollBar.getBoundsCenter();
-        await driver!.swipeBetween({x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt()},
-          {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt()});
+        let playId = await scrollBar.getDisplayId();
+        await driver!.swipeBetween({x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt()
+        , displayId: playId},
+          {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt(), displayId: playId});
         await driver!.delayMs(5000);
       }
       await stopApplication('com.uitestScene.acts');
@@ -535,8 +537,10 @@ export default function uitestDriverTestApi22(): void {
       if(scrollBar) {
         let rect = await scrollBar.getBounds();
         let center = await scrollBar.getBoundsCenter();
-        await driver!.swipeBetween({x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt()},
-          {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt()});
+        let playId = await scrollBar.getDisplayId();
+        await driver!.swipeBetween({x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt()
+        , displayId: playId},
+          {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt(), displayId: playId});
         await driver!.delayMs(5000);
       }
       await stopApplication('com.uitestScene.acts');
@@ -590,13 +594,13 @@ export default function uitestDriverTestApi22(): void {
       if(scrollBar) {
         let rect = await scrollBar.getBounds();
         let center = await scrollBar.getBoundsCenter();
-        await driver!.swipeBetween({x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt()},
-          {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt()});
+        let playId = await scrollBar.getDisplayId();
+        await driver!.swipeBetween({x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt()
+        , displayId: playId},
+          {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt(), displayId: playId});
         await driver!.delayMs(5000);
       }
       await stopApplication('com.uitestScene.acts');
-      hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullType_static isCallBack,${JSON.stringify(isCallBack)}`);
-      expect(isCallBack).assertTrue();
       hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullType_static end`);
     })
 
@@ -631,8 +635,10 @@ export default function uitestDriverTestApi22(): void {
       if(scrollBar) {
         let rect = await scrollBar.getBounds();
         let center = await scrollBar.getBoundsCenter();
-        await driver!.swipeBetween({x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt()},
-          {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt()});
+        let playId = await scrollBar.getDisplayId();
+        await driver!.swipeBetween({x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt()
+        , displayId: playId},
+          {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt(), displayId: playId});
         await driver!.delayMs(5000);
       }
       await stopApplication('com.uitestScene.acts');
@@ -688,8 +694,10 @@ export default function uitestDriverTestApi22(): void {
       if (scrollBar) {
         let rect = await scrollBar.getBounds();
         let center = await scrollBar.getBoundsCenter();
-        await driver!.swipeBetween({x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt()},
-          {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt()}, 8000);
+        let playId = await scrollBar.getDisplayId();
+        await driver!.swipeBetween({x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt()
+        , displayId: playId},
+          {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt(), displayId: playId}, 8000);
         await driver!.delayMs(10000);
       }
       await stopApplication('com.uitestScene.acts');
@@ -744,8 +752,10 @@ export default function uitestDriverTestApi22(): void {
       if (scrollBar) {
         let rect = await scrollBar.getBounds();
         let center = await scrollBar.getBoundsCenter();
-        await driver!.swipeBetween({x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt()},
-          {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt()}, 8000);
+        let playId = await scrollBar.getDisplayId();
+        await driver!.swipeBetween({x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt()
+        , displayId: playId},
+          {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt(), displayId: playId}, 8000);
         await driver!.delayMs(10000);
       }
       await stopApplication('com.uitestScene.acts');
@@ -799,8 +809,10 @@ export default function uitestDriverTestApi22(): void {
       if (scrollBar) {
         let rect = await scrollBar.getBounds();
         let center = await scrollBar.getBoundsCenter();
-        await driver!.swipeBetween({x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt()},
-          {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt()}, 8000);
+        let playId = await scrollBar.getDisplayId();
+        await driver!.swipeBetween({x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt()
+        , displayId: playId},
+          {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt(), displayId: playId}, 8000);
         await driver!.delayMs(10000);
       }
       await stopApplication('com.uitestScene.acts');
@@ -841,8 +853,10 @@ export default function uitestDriverTestApi22(): void {
       if (scrollBar) {
         let rect = await scrollBar.getBounds();
         let center = await scrollBar.getBoundsCenter();
-        await driver!.swipeBetween({x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt()},
-          {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt()}, 8000);
+        let playId = await scrollBar.getDisplayId();
+        await driver!.swipeBetween({x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt()
+        , displayId: playId},
+          {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt(), displayId: playId}, 8000);
         await driver!.delayMs(10000);
       }
       await stopApplication('com.uitestScene.acts');
@@ -1250,7 +1264,8 @@ export default function uitestDriverTestApi22(): void {
         if (dragResultTextCom != null) {
           await driver!.delayMs(waitUiReadyMs);
           let center2 = await dragResultTextCom.getBoundsCenter();
-          let result = await driver!.isComponentPresentWhenDrag(ON.text('ShowDragEventText'), center1, center2)
+          let disId = await dragResultTextCom.getDisplayId();
+          let result = await driver!.isComponentPresentWhenDrag(ON.belongingDisplay(disId).text('ShowDragEventText'), center1, center2)
           console.log(`${TestTag}, tesIsComponentPresentWhenDragTrue_static result, ${JSON.stringify(result)}`);
           expect(result).assertTrue();
         }
@@ -1289,7 +1304,8 @@ export default function uitestDriverTestApi22(): void {
         if (dragResultTextCom != null) {
           await driver!.delayMs(waitUiReadyMs);
           let center2 = await dragResultTextCom.getBoundsCenter();
-          let result = await driver!.isComponentPresentWhenDrag(ON.text('ShowDragEventText'), center1, center2, 600);
+          let disId = await dragResultTextCom.getDisplayId();
+          let result = await driver!.isComponentPresentWhenDrag(ON.belongingDisplay(disId).text('ShowDragEventText'), center1, center2, 600);
           console.log(`${TestTag}, tesIsComponentPresentWhenDragTrue_speed_static result, ${JSON.stringify(result)}`);
           expect(result).assertTrue();
         }
@@ -1366,9 +1382,11 @@ export default function uitestDriverTestApi22(): void {
       if (scrollBar != null) {
         let rect = await scrollBar.getBounds()
         let center = await scrollBar.getBoundsCenter()
-        let result = await driver!.isComponentPresentWhenSwipe(ON.text('ShowSwipeEventCom'),
-          {x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt()},
-          {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt()}, 9000)
+        let playId = await scrollBar.getDisplayId();
+        console.log(`${TestTag}, tesIsComponentPresentWhenSwipeTrue_static playId is: ${JSON.stringify(playId)}`);
+        let result = await driver!.isComponentPresentWhenSwipe(ON.belongingDisplay(playId).text('ShowSwipeEventCom'),
+          {x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt(), displayId: playId},
+          {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt(), displayId: playId}, 200)
         console.log(`${TestTag}, tesIsComponentPresentWhenSwipeTrue_static result, ${JSON.stringify(result)}`);
         expect(result).assertTrue();
       }

@@ -21,6 +21,7 @@
 #include "pointerEventGetCurrentLocal/PointerEventGetCurrentLocalTest.h"
 #include "TextGetCharacter/TextGetCharacterTest.h"
 #include "FrameNode/CrossLanguageOptionsSupportFiveMethodsTest.h"
+#include "NodeTransform3D/NodeTransform3DTest.h"
 namespace ArkUICapiTest {
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
@@ -53,8 +54,40 @@ static napi_value Init(napi_env env, napi_value exports)
                 nullptr, nullptr, nullptr, napi_default, nullptr}, 
         {"CrossLanguageInsertChildAtTest", nullptr, CrossLanguageOptionsSupportFiveMethodsTest::InsertChildAt, 
                 nullptr, nullptr, nullptr, napi_default, nullptr}, 
-        {"CrossLanguageRemoveChildTest", nullptr, CrossLanguageOptionsSupportFiveMethodsTest::RemoveChild, 
-                nullptr, nullptr, nullptr, napi_default, nullptr}, 
+        {"CrossLanguageRemoveChildTest", nullptr, CrossLanguageOptionsSupportFiveMethodsTest::RemoveChild,
+                nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"NodeTransform3D_SetGet001", nullptr,
+            NodeTransform3D_SetGet001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"NodeTransform3D_Reset002", nullptr,
+            NodeTransform3D_Reset002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"NodeTransform3D_InvalidSize003", nullptr,
+            NodeTransform3D_InvalidSize003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"NodeTransform3D_NullParam004", nullptr,
+            NodeTransform3D_NullParam004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"NodeTransform3D_IdentityMatrix005", nullptr,
+            NodeTransform3D_IdentityMatrix005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"NodeTransform3D_RotationMatrix006", nullptr,
+            NodeTransform3D_RotationMatrix006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"NodeTransform3D_ScaleMatrix007", nullptr,
+            NodeTransform3D_ScaleMatrix007, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"NodeTransform3D_TranslationMatrix008", nullptr,
+            NodeTransform3D_TranslationMatrix008, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"NodeTransform3D_GetDefault009", nullptr,
+            NodeTransform3D_GetDefault009, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"NodeTransform3D_UpdateMatrix010", nullptr,
+            NodeTransform3D_UpdateMatrix010, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"NodeTransform3D_ZeroMatrix011", nullptr,
+            NodeTransform3D_ZeroMatrix011, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"NodeTransform3D_NegativeValues012", nullptr,
+            NodeTransform3D_NegativeValues012, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"NodeTransform3D_PerpectiveMatrix013", nullptr,
+            NodeTransform3D_PerpectiveMatrix013, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"NodeTransform3D_DifferentNodeTypes014", nullptr,
+            NodeTransform3D_DifferentNodeTypes014, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"NodeTransform3D_LargeValues015", nullptr,
+            NodeTransform3D_LargeValues015, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"NodeTransform3D_AllElementsVerify016", nullptr,
+            NodeTransform3D_AllElementsVerify016, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");

@@ -286,6 +286,12 @@ static napi_value Init(napi_env env, napi_value exports)
             ImageAttachmentResizableTest_008, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"ImageAttachmentResizableTest_009", nullptr,
             ImageAttachmentResizableTest_009, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ImageAttachmentResizableTest_010", nullptr,
+            ImageAttachmentResizableTest_010, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ImageAttachmentResizableTest_011", nullptr,
+            ImageAttachmentResizableTest_011, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ImageAttachmentResizableTest_012", nullptr,
+            ImageAttachmentResizableTest_012, nullptr, nullptr, nullptr, napi_default, nullptr},
 
         {"TextStrokeTest_001", nullptr, TextStrokeTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TextStrokeTest_002", nullptr, TextStrokeTest_002, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -317,6 +323,14 @@ static napi_value Init(napi_env env, napi_value exports)
         {"TextStrokeTest_028", nullptr, TextStrokeTest_028, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TextStrokeTest_029", nullptr, TextStrokeTest_029, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TextStrokeTest_030", nullptr, TextStrokeTest_030, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextStrokeTest_031", nullptr, TextStrokeTest_031, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextStrokeTest_032", nullptr, TextStrokeTest_032, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextStrokeTest_033", nullptr, TextStrokeTest_033, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextStrokeTest_034", nullptr, TextStrokeTest_034, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextStrokeTest_035", nullptr, TextStrokeTest_035, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextStrokeTest_036", nullptr, TextStrokeTest_036, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextStrokeTest_037", nullptr, TextStrokeTest_037, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextStrokeTest_038", nullptr, TextStrokeTest_038, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");

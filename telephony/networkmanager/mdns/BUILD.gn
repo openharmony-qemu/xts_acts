@@ -16,6 +16,10 @@ import("//build/ohos_var.gni")
 group("mdns") {
   testonly = true
   if (is_standard_system) {
-    deps = [ "mdnstest:ActsNetworkMgrMdnsTest" ]
+    deps = [ 
+      "mdnstest:ActsNetworkMgrMdnsTest",
+      "ActsNetworkMgrMdnsTestStatic:ActsNetworkMgrMdnsStaticTest",
+      "ActsNetworkMgrMdnsNoNetTestStatic:ActsNetworkMgrMdnsNoNetStaticTest",
+    ]
   }
 }

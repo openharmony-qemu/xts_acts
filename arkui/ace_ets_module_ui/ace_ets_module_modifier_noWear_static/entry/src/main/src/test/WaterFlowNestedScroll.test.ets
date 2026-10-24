@@ -67,12 +67,15 @@ export default function waterFlowNestedScrollJsunit() {
 it('ArkUI_Stage_waterFlowNestedScroll01_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ArkUI_Stage_waterFlowNestedScroll01] START');
       await Utils.sleep(2000)
-      let webRect: RectValue = Utils.getComponentRect('ColumnSize') as RectValue;
-      console.info(`ArkUI_Stage_waterFlowNestedScroll01 get webRect is:` + JSON.stringify(webRect));
-      let x = Math.floor(Utils.getRectHorizontalCenterX(webRect))
-      let y = Math.floor(Utils.getRectVerticalCenterY(webRect))
       let driver = Driver.create();
-      await driver.swipe(Math.round(x).toInt(), Math.round(y + UIContext.resolveUIContext()!.vp2px(60)).toInt(), Math.round(x).toInt(), Math.round(y - UIContext.resolveUIContext()!.vp2px(60)).toInt());
+      let swipeComp = await driver.findComponent(ON.id('ColumnSize'));
+      let swipeRect = await swipeComp!.getBounds();
+      let displayId = await swipeComp!.getDisplayId();
+      let x = Math.floor(swipeRect.left + (swipeRect.right - swipeRect.left) / 2);
+      let y = Math.floor(swipeRect.top + (swipeRect.bottom - swipeRect.top) / 2);
+      await driver.swipeBetween(
+        { x: x.toInt(), y: (y + UIContext.resolveUIContext()!.vp2px(60)).toInt(), displayId: displayId },
+        { x: x.toInt(), y: (y - UIContext.resolveUIContext()!.vp2px(60)).toInt(), displayId: displayId });
       console.info('[ArkUI_Stage_waterFlowNestedScroll01] driver.swipe end');
       try {
         let callBack: (backData: events_emitter.EventData) => void = (backData: events_emitter.EventData) => {

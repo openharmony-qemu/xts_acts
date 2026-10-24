@@ -26,7 +26,8 @@ export default function moveAbilityToBackgroundTest() {
   describe('ActsMoveAbilityToBackgroundTest', () => {
     beforeAll(async () => {
       try {
-        mpEnable = systemParameterEnhance.getSync('persist.sys.abilityms.move_ui_ability_to_background_api_enable', 'false');
+        mpEnable = systemParameterEnhance.getSync('persist.sys.abilityms.move_ui_ability_to_background_api_enable',
+          'false');
       } catch(err) {
         console.error(`MoveAbilityToBackground Get system parameter error: ${JSON.stringify(err)}`);
       }
@@ -65,13 +66,13 @@ export default function moveAbilityToBackgroundTest() {
       console.log(`${tag}, it begin`);
       if (mpEnable === 'true') {
         try {
-          let cmd = "aa start -b com.acts.moveabilitytobgtest -a EntryAbility";
-          let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+          let cmd = 'aa start -b com.acts.moveabilitytobgtest -a EntryAbility';
+          let user = AbilityDelegatorRegistry.getArguments().parameters['-u'];
           if(user !== undefined){
               cmd += ' -u ' + user;
           }
           await abilityDelegator.executeShellCommand(cmd);
-          let button = await driver.waitForComponent(ON.text("Move To background"), 4000);
+          let button = await driver.waitForComponent(ON.text('Move To background'), 4000);
           expect(button != null).assertTrue();
           let subscribeInfo: CommonEventManager.CommonEventSubscribeInfo = {
             events: ['Acts_onBackground_MoveAbilityToBackground_Event_1']
@@ -100,10 +101,12 @@ export default function moveAbilityToBackgroundTest() {
           done();
         }
       }else if(mpEnable === 'false') {
-        console.error(`${tag} error, current device not support MoveAbilityToBackground,please check: ${JSON.stringify(mpEnable)}`);
+        console.error(`${tag} error, current device not support MoveAbilityToBackground,please check:
+          ${JSON.stringify(mpEnable)}`);
         done();
       }else{
-        console.error(`${tag} error, current device get MoveAbilityToBackground config fail,please check: ${JSON.stringify(mpEnable)}`);
+        console.error(`${tag} error, current device get MoveAbilityToBackground config fail,please check:
+          ${JSON.stringify(mpEnable)}`);
         expect().assertFail();
         done();
       }
@@ -117,7 +120,7 @@ function unSubscribe(subscriber: CommonEventManager.CommonEventSubscriber, callb
     if (err) {
       console.error(`unsubscribe failed, code is ${err.code}, message is ${err.message}`);
     } else {
-      console.info("unsubscribe success");
+      console.info('unsubscribe success');
     }
     callback();
   };

@@ -17,6 +17,8 @@ import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, MouseButton, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RelativeChain11() {
   describe('RelativeChain11', () => {
     beforeEach(async (done: Function) => {
@@ -59,7 +61,7 @@ export default function RelativeChain11() {
       let rel_height = rel.bottom - rel.top;
       console.info("[RelativeChain11_001] rel rect_value is: " + JSON.stringify(rel));
       let driver: Driver = Driver.create();
-      await driver.mouseClick({x: Math.round(rel.left + rel_width * 0.2), y: Math.round(rel.top + rel_height * 0.2)}, MouseButton.MOUSE_BUTTON_LEFT);
+      await driver.mouseClick({x: Math.round(rel.left + rel_width * 0.2), y: Math.round(rel.top + rel_height * 0.2), displayId: displayID}, MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('RelativeChain11Text');
       await CommonFunc.sleep(200);

@@ -342,7 +342,7 @@ export default function listLevel1Test() {
     /**
      * @tc.name   listLevel1Test_1000
      * @tc.number SUB_ACE_listLevel1Test_1000
-     * @tc.desc   test contentStartOffset/contentEndOffset
+     * @tc.desc   test contentStartOffset
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -352,8 +352,8 @@ export default function listLevel1Test() {
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "contentStartOffset": "200",
-            "contentEndOffset": "200"
+            "padding": "0",
+            "contentStartOffset": "5"
           }
         }
         let innerEvent: events_emitter.InnerEvent = {
@@ -367,10 +367,25 @@ export default function listLevel1Test() {
       }
       await CommonFunc.sleep(1000);
       let strJson: string = getInspectorByKey('listlevel1');
-
       console.info("[listLevel1Test_1000] JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
-      expect(JSON.parse(strJson).$attrs.contentStartOffset).assertEqual("200.000000");
-      expect(JSON.parse(strJson).$attrs.contentEndOffset).assertEqual("200.000000");
+      expect(JSON.parse(strJson).$attrs.padding).assertEqual("0.00vp");
+      expect(JSON.parse(strJson).$attrs.contentStartOffset).assertEqual("5.000000");
+
+      await CommonFunc.sleep(1000);
+      let driver: Driver = Driver.create();
+      let scrollColumn: Component = await driver.findComponent(ON.type('Scroll'));
+      let button = await scrollColumn.scrollSearch(ON.id('GetItemRectButton'));
+      await button.click();
+      await CommonFunc.sleep(10000);
+      let strJsonRectY: string = getInspectorByKey('itemRectY');
+      let strJsonRectWidth: string = getInspectorByKey('itemRectWidth');
+      let strJsonRectHeight: string = getInspectorByKey('itemRectHeight');
+      console.info("[listLevel1Test_1000] JSON.parse(strJsonRectY) is: " + JSON.stringify(JSON.parse(strJsonRectY).$attrs.content));
+      console.info("[listLevel1Test_1000] JSON.parse(strJsonRectWidth) is: " + JSON.stringify(JSON.parse(strJsonRectWidth).$attrs.content));
+      console.info("[listLevel1Test_1000] JSON.parse(strJsonRectHeight) is: " + JSON.stringify(JSON.parse(strJsonRectHeight).$attrs.content));
+      expect(JSON.parse(strJsonRectY).$attrs.content).assertEqual('itemRectY:5');
+      expect(JSON.parse(strJsonRectWidth).$attrs.content).assertEqual('itemRectWidth:200');
+      expect(JSON.parse(strJsonRectHeight).$attrs.content).assertEqual('itemRectHeight:100');
       console.info('listLevel1Test_1000 END');
       done()
     });
@@ -378,7 +393,7 @@ export default function listLevel1Test() {
     /**
      * @tc.name   listLevel1Test_1100
      * @tc.number SUB_ACE_listLevel1Test_1100
-     * @tc.desc   test contentEndOffset/padding
+     * @tc.desc   test contentStartOffset/contentEndOffset and currentOffset
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -388,8 +403,8 @@ export default function listLevel1Test() {
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "padding": "5",
-            "contentEndOffset": "5"
+            "contentStartOffset": "10",
+            "contentEndOffset": "10"
           }
         }
         let innerEvent: events_emitter.InnerEvent = {
@@ -403,10 +418,22 @@ export default function listLevel1Test() {
       }
       await CommonFunc.sleep(1000);
       let strJson: string = getInspectorByKey('listlevel1');
-
       console.info("[listLevel1Test_1100] JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
-      expect(JSON.parse(strJson).$attrs.padding).assertEqual("5.00vp");
-      expect(JSON.parse(strJson).$attrs.contentEndOffset).assertEqual("5.000000");
+      expect(JSON.parse(strJson).$attrs.contentStartOffset).assertEqual("10.000000");
+      expect(JSON.parse(strJson).$attrs.contentEndOffset).assertEqual("10.000000");
+
+      let driver: Driver = Driver.create();
+      let scrollColumn: Component = await driver.findComponent(ON.type('Scroll'));
+      let button = await scrollColumn.scrollSearch(ON.id('currentOffsetButton'));
+      await button.click();
+      await CommonFunc.sleep(1000);
+      let strJsonX: string = getInspectorByKey('xoffset');
+      let strJsonY: string = getInspectorByKey('yoffset');
+      await CommonFunc.sleep(1000);
+      console.info("[listLevel1Test_1100] component xoffset is: " + JSON.stringify(JSON.parse(strJsonX).$attrs.content));
+      console.info("[listLevel1Test_1100] component yoffset is: " + JSON.stringify(JSON.parse(strJsonY).$attrs.content));
+      expect(JSON.parse(strJsonX).$attrs.content).assertEqual("xoffset:0");
+      expect(JSON.parse(strJsonY).$attrs.content).assertEqual("yoffset:-10");
       console.info('listLevel1Test_1100 END');
       done()
     });
@@ -424,8 +451,8 @@ export default function listLevel1Test() {
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "padding": "0",
-            "contentStartOffset": "5"
+            "contentStartOffset": "200",
+            "contentEndOffset": "200"
           }
         }
         let innerEvent: events_emitter.InnerEvent = {
@@ -441,8 +468,8 @@ export default function listLevel1Test() {
       let strJson: string = getInspectorByKey('listlevel1');
 
       console.info("[listLevel1Test_1200] JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
-      expect(JSON.parse(strJson).$attrs.padding).assertEqual("0.00vp");
-      expect(JSON.parse(strJson).$attrs.contentStartOffset).assertEqual("5.000000");
+      expect(JSON.parse(strJson).$attrs.contentStartOffset).assertEqual("200.000000");
+      expect(JSON.parse(strJson).$attrs.contentEndOffset).assertEqual("200.000000");
       console.info('listLevel1Test_1200 END');
       done()
     });
@@ -450,7 +477,7 @@ export default function listLevel1Test() {
     /**
      * @tc.name   listLevel1Test_1300
      * @tc.number SUB_ACE_listLevel1Test_1300
-     * @tc.desc   test contentStartOffset
+     * @tc.desc   test contentEndOffset/padding
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -460,8 +487,8 @@ export default function listLevel1Test() {
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "padding": "0",
-            "contentStartOffset": "5"
+            "padding": "5",
+            "contentEndOffset": "5"
           }
         }
         let innerEvent: events_emitter.InnerEvent = {
@@ -475,25 +502,10 @@ export default function listLevel1Test() {
       }
       await CommonFunc.sleep(1000);
       let strJson: string = getInspectorByKey('listlevel1');
-      console.info("[listLevel1Test_1300] JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
-      expect(JSON.parse(strJson).$attrs.padding).assertEqual("0.00vp");
-      expect(JSON.parse(strJson).$attrs.contentStartOffset).assertEqual("5.000000");
 
-      await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
-      let scrollColumn: Component = await driver.findComponent(ON.type('Scroll'));
-      let button = await scrollColumn.scrollSearch(ON.id('GetItemRectButton'));
-      await button.click();
-      await CommonFunc.sleep(10000);
-      let strJsonRectY: string = getInspectorByKey('itemRectY');
-      let strJsonRectWidth: string = getInspectorByKey('itemRectWidth');
-      let strJsonRectHeight: string = getInspectorByKey('itemRectHeight');
-      console.info("[listLevel1Test_1300] JSON.parse(strJsonRectY) is: " + JSON.stringify(JSON.parse(strJsonRectY).$attrs.content));
-      console.info("[listLevel1Test_1300] JSON.parse(strJsonRectWidth) is: " + JSON.stringify(JSON.parse(strJsonRectWidth).$attrs.content));
-      console.info("[listLevel1Test_1300] JSON.parse(strJsonRectHeight) is: " + JSON.stringify(JSON.parse(strJsonRectHeight).$attrs.content));
-      expect(JSON.parse(strJsonRectY).$attrs.content).assertEqual('itemRectY:5');
-      expect(JSON.parse(strJsonRectWidth).$attrs.content).assertEqual('itemRectWidth:200');
-      expect(JSON.parse(strJsonRectHeight).$attrs.content).assertEqual('itemRectHeight:100');
+      console.info("[listLevel1Test_1300] JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
+      expect(JSON.parse(strJson).$attrs.padding).assertEqual("5.00vp");
+      expect(JSON.parse(strJson).$attrs.contentEndOffset).assertEqual("5.000000");
       console.info('listLevel1Test_1300 END');
       done()
     });
@@ -501,7 +513,7 @@ export default function listLevel1Test() {
     /**
      * @tc.name   listLevel1Test_1400
      * @tc.number SUB_ACE_listLevel1Test_1400
-     * @tc.desc   test contentStartOffset/contentEndOffset and currentOffset
+     * @tc.desc   test contentStartOffset/contentEndOffset
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -511,8 +523,8 @@ export default function listLevel1Test() {
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "contentStartOffset": "10",
-            "contentEndOffset": "10"
+            "padding": "0",
+            "contentStartOffset": "5"
           }
         }
         let innerEvent: events_emitter.InnerEvent = {
@@ -526,22 +538,10 @@ export default function listLevel1Test() {
       }
       await CommonFunc.sleep(1000);
       let strJson: string = getInspectorByKey('listlevel1');
-      console.info("[listLevel1Test_1400] JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
-      expect(JSON.parse(strJson).$attrs.contentStartOffset).assertEqual("10.000000");
-      expect(JSON.parse(strJson).$attrs.contentEndOffset).assertEqual("10.000000");
 
-      let driver: Driver = Driver.create();
-      let scrollColumn: Component = await driver.findComponent(ON.type('Scroll'));
-      let button = await scrollColumn.scrollSearch(ON.id('currentOffsetButton'));
-      await button.click();
-      await CommonFunc.sleep(1000);
-      let strJsonX: string = getInspectorByKey('xoffset');
-      let strJsonY: string = getInspectorByKey('yoffset');
-      await CommonFunc.sleep(1000);
-      console.info("[listLevel1Test_1400] component xoffset is: " + JSON.stringify(JSON.parse(strJsonX).$attrs.content));
-      console.info("[listLevel1Test_1400] component yoffset is: " + JSON.stringify(JSON.parse(strJsonY).$attrs.content));
-      expect(JSON.parse(strJsonX).$attrs.content).assertEqual("xoffset:0");
-      expect(JSON.parse(strJsonY).$attrs.content).assertEqual("yoffset:-10");
+      console.info("[listLevel1Test_1400] JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
+      expect(JSON.parse(strJson).$attrs.padding).assertEqual("0.00vp");
+      expect(JSON.parse(strJson).$attrs.contentStartOffset).assertEqual("5.000000");
       console.info('listLevel1Test_1400 END');
       done()
     });

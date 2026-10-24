@@ -821,14 +821,24 @@ export default function LocalSocketTest() {
 
               console.log(`${caseName} data.message: ${hasMessage}, data.address: ${hasAddress}, data.size: ${hasSize}`);
               expectTrue(hasMessage && hasAddress && hasSize);
+              let uintArray: Uint8Array = new Uint8Array(0);
               if (hasMessage) {
-                const uintArray = new Uint8Array(data.message);
+                uintArray = new Uint8Array(data.message);
                 let messageView = '';
                 for (let i = 0; i < uintArray.length; i++) {
                   messageView += String.fromCharCode(uintArray[i]);
                 }
                 console.log(`${caseName} total: ${JSON.stringify(data)}`);
                 console.log(`${caseName} message infomation: ${messageView}`);
+                expectTrue(data.message instanceof ArrayBuffer);
+                expectTrue(data.message.byteLength === 'Hello world!'.length);
+                expectTrue(messageView === 'Hello world!');
+              }
+              if (hasSize) {
+                console.log(`${caseName} message size: ${data.size}`);
+                expectTrue(typeof data.size === 'number');
+                expectTrue(data.size === uintArray.length);
+                expectTrue(data.size === 'Hello world!'.length);
               }
             } catch (err) {
               console.info(`${caseName} callback error: ${JSON.stringify(err)}`);

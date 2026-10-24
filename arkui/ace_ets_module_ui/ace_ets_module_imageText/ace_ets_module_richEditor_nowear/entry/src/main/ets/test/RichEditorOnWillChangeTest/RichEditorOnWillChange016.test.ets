@@ -69,7 +69,7 @@ export default function RichEditorOnWillChange016() {
       let driver = Driver.create();
       let rich = await driver.findComponent(ON.id('RichEditorOnWillChange016'));
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
       await CommonFunc.sleep(1000);
 
       try {

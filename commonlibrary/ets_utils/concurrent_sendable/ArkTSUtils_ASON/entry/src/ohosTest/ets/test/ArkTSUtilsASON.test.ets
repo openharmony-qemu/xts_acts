@@ -30,13 +30,35 @@ import {
   sharedTimeTask
 } from '../utils/arkTSUtilsCommon';
 
+
+@Concurrent
+function supAsonConsume001(obj: lang.ISendable): string {
+  return (obj as object)?.['name'] as string;
+}
+
+@Concurrent
+function supAsonMapConsume001(m: collections.Map<string, bigint>): bigint {
+  m.set('x', 9n);
+  return m.get('k') as bigint;
+}
+
+@Sendable
+class SupAsonShared001 {
+  map: collections.Map<string, string> = new collections.Map<string, string>();
+}
+
+@Concurrent
+function supAsonWrite001(shared: SupAsonShared001, key: string, json: string): void {
+  let obj = ArkTSUtils.ASON.parse(json) as lang.ISendable;
+  shared.map.set(key, (obj as object)?.['v'] as string);
+}
 export default function arkTSUtilsASONTest() {
   describe('arkTSUtilsASONTest', () => {
 
     /**
      * @tc.name   testTransformer0001
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_5400
-     * @tc.desc   Test the function of the interface Transformer.
+     * @tc.desc   Test ASON.parse with PARSE_AS_BIGINT options (BigIntMode/ParseReturnType).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -60,15 +82,15 @@ export default function arkTSUtilsASONTest() {
     })
 
     /**
-     * @tc.name   testAsyncLockParseOptions0001
+     * @tc.name   testBigIntModeOptions0001
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_5500
-     * @tc.desc   Test the function of the interface LockAsyncParseOptions.
+     * @tc.desc   Test ASON.parse with BigIntMode/ParseReturnType options.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testAsyncLockParseOptions0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const TAG = "testAsyncLockParseOptions0001";
+    it('testBigIntModeOptions0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testBigIntModeOptions0001";
       try {
         type ISendable = lang.ISendable;
         let options: ArkTSUtils.ASON.ParseOptions = {
@@ -86,15 +108,15 @@ export default function arkTSUtilsASONTest() {
     })
 
     /**
-     * @tc.name   testAsyncLockParseOptions0002
+     * @tc.name   testBigIntModeOptions0002
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_5600
-     * @tc.desc   Test the function of the interface LockAsyncParseOptions.
+     * @tc.desc   Test ASON.parse with BigIntMode/ParseReturnType options.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testAsyncLockParseOptions0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const TAG = "testAsyncLockParseOptions0002";
+    it('testBigIntModeOptions0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testBigIntModeOptions0002";
       try {
         type ISendable = lang.ISendable;
         let options: ArkTSUtils.ASON.ParseOptions = {
@@ -113,15 +135,15 @@ export default function arkTSUtilsASONTest() {
     })
 
     /**
-     * @tc.name   testAsyncLockParseOptions0003
+     * @tc.name   testBigIntModeOptions0003
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_5700
-     * @tc.desc   Test the function of the interface LockAsyncParseOptions.
+     * @tc.desc   Test ASON.parse with BigIntMode/ParseReturnType options.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testAsyncLockParseOptions0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const TAG = "testAsyncLockParseOptions0003";
+    it('testBigIntModeOptions0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testBigIntModeOptions0003";
       try {
         type ISendable = lang.ISendable;
         let options: ArkTSUtils.ASON.ParseOptions = {
@@ -140,15 +162,15 @@ export default function arkTSUtilsASONTest() {
     })
 
     /**
-     * @tc.name   testAsyncLockParseOptions0004
+     * @tc.name   testBigIntModeOptions0004
      * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_ARK_TS_UTILS_5800
-     * @tc.desc   Test the function of the interface LockAsyncParseOptions.
+     * @tc.desc   Test ASON.parse with BigIntMode/ParseReturnType options.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testAsyncLockParseOptions0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const TAG = "testAsyncLockParseOptions0004";
+    it('testBigIntModeOptions0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = "testBigIntModeOptions0004";
       try {
         let options: ArkTSUtils.ASON.ParseOptions = {
           bigIntMode: ArkTSUtils.ASON.BigIntMode.DEFAULT,
@@ -582,6 +604,105 @@ export default function arkTSUtilsASONTest() {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_ASON_PARSE_REVIVER_IGNORE_0100
+     * @tc.name    testAsonParseReviverIgnore0001
+     * @tc.desc    Verify ASON.parse rejects non-undefined reviver (throws)
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testAsonParseReviverIgnore0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let reviverIgnore001: (key: string, value: lang.ISendable | undefined | null) => lang.ISendable | undefined | null =
+        (key: string, value: lang.ISendable | undefined | null): lang.ISendable | undefined | null => value;
+      let threw = false;
+      try {
+        ArkTSUtils.ASON.parse('{"a":1}', reviverIgnore001);
+      } catch (error) {
+        threw = true;
+      }
+      expect(threw).assertTrue();
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_ASON_CONC_TASKPOOL_0200
+     * @tc.name    testAsonConcTaskpool0002
+     * @tc.desc    Verify ASON.parse result visibility across TaskPool
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testAsonConcTaskpool0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let parsed = ArkTSUtils.ASON.parse('{"name":"John"}') as lang.ISendable;
+      let envName = await taskpool.execute(new taskpool.Task(supAsonConsume001, parsed)) as string;
+      expect(envName).assertEqual('John');
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_ASON_CONC_TASKPOOL_MAP_0300
+     * @tc.name    testAsonConcTaskpoolMap0003
+     * @tc.desc    Verify ASON.parse MAP result readable and writable across TaskPool
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testAsonConcTaskpoolMap0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let map = ArkTSUtils.ASON.parse('{"k":1,"v":2}', undefined,
+        {
+          parseReturnType: ArkTSUtils.ASON.ParseReturnType.MAP,
+          bigIntMode: ArkTSUtils.ASON.BigIntMode.PARSE_AS_BIGINT
+        }) as collections.Map<string, bigint>;
+      let got = await taskpool.execute(new taskpool.Task(supAsonMapConsume001, map)) as bigint;
+      expect(BigInt(got)).assertEqual(1n);
+      expect(map.get('x')).assertEqual(9n);
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_ASON_CONC_MULTI_WRITE_0400
+     * @tc.name    testAsonConcMultiWrite0004
+     * @tc.desc    Verify concurrent ASON.parse writes to shared map keep all keys correct
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testAsonConcMultiWrite0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let shared = new SupAsonShared001();
+      let tasks: taskpool.Task[] = [];
+      for (let t = 0; t < 5; t++) {
+        tasks.push(new taskpool.Task(supAsonWrite001, shared, `k${t}`, `{"v":"v${t}"}`));
+      }
+      for (let t = 0; t < tasks.length; t++) {
+        await taskpool.execute(tasks[t]);
+      }
+      for (let t = 0; t < 5; t++) {
+        expect(shared.map.get(`k${t}`)).assertEqual(`v${t}`);
+      }
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_ASON_BIGINT_DEFAULT_LOSSY_0500
+     * @tc.name    testAsonBigintDefaultLossy0005
+     * @tc.desc    Verify DEFAULT mode parses large integer with precision loss
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testAsonBigintDefaultLossy0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let opts: ArkTSUtils.ASON.ParseOptions = {
+        bigIntMode: ArkTSUtils.ASON.BigIntMode.DEFAULT,
+        parseReturnType: ArkTSUtils.ASON.ParseReturnType.OBJECT
+      };
+      let obj = ArkTSUtils.ASON.parse('{"n":112233445566778899}', undefined, opts) as lang.ISendable;
+      let nval: number = (obj as object)?.['n'] as number;
+      expect(typeof nval).assertEqual('number');
+      expect(BigInt(nval) === 112233445566778899n).assertFalse();
       done()
     })
   })

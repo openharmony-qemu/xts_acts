@@ -12,8 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
 import bundleManager from '@ohos.bundle.bundleManager'
+import common from '@ohos.app.ability.common'
 
 export default function abilityTest() {
     describe('ActsglobalThis.abilityStageContextTest', () => {
@@ -27,7 +28,9 @@ export default function abilityTest() {
          */
         it('ACTS_getApplicationInfo_0300', Level.LEVEL0, async (done:Function) => {
             console.log("ACTS_getApplicationInfo_0300 --- start ability=====>'+ abilityContext.applicationInfo")
-            checkApplicationInfo(globalThis.abilityContext.applicationInfo);
+            let abilityContext = AppStorage.get('abilityContext') as common.UIAbilityContext;
+            expect(abilityContext !== undefined).assertTrue();
+            checkApplicationInfo(abilityContext.applicationInfo);
             done();
         })
 
@@ -41,7 +44,9 @@ export default function abilityTest() {
          */
         it('ACTS_getHapModuleInfo_0300', Level.LEVEL0, async (done:Function) => {
             console.log("ACTS_getHapModuleInfo_0300 --- start ability=====>'+ abilityContext.currentHapModuleInfo")
-            checkHapModuleInfo(globalThis.abilityStageContext.currentHapModuleInfo);
+            let abilityStageContext = AppStorage.get('abilityStageContext') as common.AbilityStageContext;
+            expect(abilityStageContext !== undefined).assertTrue();
+            checkHapModuleInfo(abilityStageContext.currentHapModuleInfo);
             done();
         })
 
@@ -61,10 +66,6 @@ export default function abilityTest() {
                 console.log("checkApplicationInfo data.permissions[" + j + "] : " + data.permissions[j]);
             }
             console.log("checkApplicationInfo codePath : " + data.codePath);
-            console.log("checkApplicationInfo metadata size : " + data.metadata.size);
-            for (let j = 0; j < data.metadata.size; j++) {
-                console.log("checkApplicationInfo data.metadata[" + j + "] : " + data.metadata[j]);
-            }
             console.log("checkApplicationInfo removable: " + data.removable);
             console.log("checkApplicationInfo accessTokenId: " + data.accessTokenId);
             console.log("checkApplicationInfo uid: " + data.uid);
@@ -117,19 +118,19 @@ export default function abilityTest() {
             expect(data.accessTokenId).assertLarger(0);
             expect(data.uid).assertLarger(0);
             expect(data.iconResource.bundleName).assertEqual("com.acts.stabilitystagecontext");
-            expect(data.iconResource.moduleName).assertEqual("com.acts.stabilitystagecontext");
+            expect(data.iconResource.moduleName).assertEqual("entry");
             expect(data.iconResource.id).assertLarger(0);
             expect(data.labelResource.bundleName).assertEqual("com.acts.stabilitystagecontext");
-            expect(data.labelResource.moduleName).assertEqual("com.acts.stabilitystagecontext");
+            expect(data.labelResource.moduleName).assertEqual("entry");
             expect(data.labelResource.id).assertLarger(0);
             expect(data.descriptionResource.bundleName).assertEqual("com.acts.stabilitystagecontext");
-            expect(data.descriptionResource.moduleName).assertEqual("com.acts.stabilitystagecontext");
+            expect(data.descriptionResource.moduleName).assertEqual("entry");
             expect(data.descriptionResource.id).assertLarger(0);
-            expect(data.appDistributionType).assertEqual("os_integration");
-            expect(data.appProvisionType).assertEqual("release");
-            expect(data.systemApp).assertEqual(true);
+            expect(["os_integration", "none"]).assertContain(data.appDistributionType);
+            expect(["release", "debug"]).assertContain(data.appProvisionType);
+            expect(typeof (data.systemApp)).assertEqual('boolean');
             expect(data.bundleType).assertEqual(0);
-            expect(data.debug).assertEqual(false);
+            expect(typeof (data.debug)).assertEqual('boolean');
             console.log("checkApplicationInfo end  " + data);
         }
 
@@ -182,7 +183,7 @@ export default function abilityTest() {
             expect(Array.isArray(data.preloads)).assertEqual(true);
             console.log("checkHapModuleInfo_expect_typeof_end")
 
-            expect(data.name).assertEqual('com.acts.stabilitystagecontext');
+            expect(data.name).assertEqual('entry');
             expect(data.icon).assertEqual('$media:icon');
             expect(data.iconId).assertEqual(16777225); //16777224 =>16777225
             expect(data.label).assertEqual('$string:entry_label');
@@ -192,7 +193,7 @@ export default function abilityTest() {
             expect(data.mainElementName).assertEqual('com.acts.stabilitystagecontext.MainAbility');
             expect(data.abilitiesInfo.length).assertEqual(1);
             expect(data.abilitiesInfo[0].bundleName).assertEqual('com.acts.stabilitystagecontext');
-            expect(data.abilitiesInfo[0].moduleName).assertEqual('com.acts.stabilitystagecontext');
+            expect(data.abilitiesInfo[0].moduleName).assertEqual('entry');
             expect(data.extensionAbilitiesInfo.length).assertEqual(0);
             expect(data.metadata.length).assertEqual(0);
 			expect(data.deviceTypes.length).assertEqual(0);

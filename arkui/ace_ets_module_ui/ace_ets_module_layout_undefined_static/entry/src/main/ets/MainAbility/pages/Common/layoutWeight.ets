@@ -1,4 +1,5 @@
 'use static';
+
 /**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +15,7 @@
  * limitations under the License.
  */
 import { State } from '@ohos.arkui.stateManagement'
-import { Entry,Column,Text,Button,Divider,Component,SafeAreaType,
+import { Entry,Column,Text,Button,Divider,Component,SafeAreaType, ColumnOptions,
   SafeAreaEdge} from '@ohos.arkui.component'
 
 @Entry
@@ -24,20 +25,21 @@ struct CommonExample {
   @State buttonText: string = 'false'
 
   build() {
-    Column() {
-      Text('layoutWeight-动态切换').fontSize(20).margin(15).width('90%')
-      Button('Button')
-        .fontSize(50)
-        .layoutWeight(this.isUndefined ? undefined : 1 as Double)
-        .id('Common_layoutWeight')
-
-      Divider()
+    Column({space:2} as ColumnOptions) {
+      Text('layoutWeight-动态切换').height(20)
       Button('isUndefined = ' + this.buttonText)
         .id('changeButton')
         .onClick(() => {
           this.isUndefined == true ? this.isUndefined = false : this.isUndefined = true
           this.isUndefined == true ? this.buttonText = 'true' : this.buttonText = 'false'
         })
-    }.width('100%')
+        .height(20)
+      Button('Button')
+        .fontSize(30)
+        .layoutWeight(this.isUndefined ? undefined : 1 as Double)
+        .id('Common_layoutWeight')
+
+      Divider()
+    }.width('100%').height('100%')
   }
 }

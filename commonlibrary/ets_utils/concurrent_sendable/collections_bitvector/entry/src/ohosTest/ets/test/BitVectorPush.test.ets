@@ -832,5 +832,50 @@ export default function BitVectorPushTest() {
         expect(bitVectorList.getBitCountByRange(0, 0, 5)).assertEqual(0);
         done()
       });
+
+    /**
+     * @tc.number  SUB_BITVECTOR_PUSH_ONE_0100
+     * @tc.name    testBitVectorPush0019
+     * @tc.desc    Verify push with wrong-typed value is accepted as bit 1 (actual)
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorPush0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let bv = new collections.BitVector(0);
+      let r = bv.push('invalid' as Object as number);
+      expect(r).assertTrue();
+      expect(bv.length).assertEqual(1);
+    });
+
+    /**
+     * @tc.number  SUB_BITVECTOR_PUSH_ONE_0200
+     * @tc.name    testBitVectorPush0020
+     * @tc.desc    Verify push with wrong-typed value is accepted as bit 1 (actual)
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorPush0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let bv = new collections.BitVector(0);
+      let r = bv.push('invalid' as Object as number);
+      expect(r).assertTrue();
+      expect(bv.length).assertEqual(1);
+    });
+
+    /**
+     * @tc.number  SUB_BITVECTOR_PUSH_ONE_0300
+     * @tc.name    testBitVectorPush0021
+     * @tc.desc    Verify push with wrong-typed value is accepted as bit 1 (actual)
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorPush0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let bv = new collections.BitVector(0);
+      let r = bv.push('1' as Object as number);
+      expect(r).assertTrue();
+      expect(bv.length).assertEqual(1);
+    });
   })
 }

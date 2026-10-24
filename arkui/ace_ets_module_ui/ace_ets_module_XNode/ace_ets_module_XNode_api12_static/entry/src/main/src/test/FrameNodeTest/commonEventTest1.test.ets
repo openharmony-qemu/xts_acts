@@ -1,4 +1,5 @@
 'use static';
+
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import { describe, beforeAll, beforeEach, afterEach, afterAll,  it, Level, expect } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, MouseButton,Point } from '@ohos.UiTest';
@@ -29,6 +31,9 @@ import {UtilsTest,startAbility} from '../Util.test';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+
+let displayID: Int = 0;
+
 export default function commonEventTest1() {
   describe('commonEventTest1', () => {
     beforeAll(async (): Promise<void> => {
@@ -36,6 +41,8 @@ export default function commonEventTest1() {
       await UtilsTest.msSleep(4000)
       await startAbility("com.arkui.ace.XNode.api12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
+      console.info("commonEventTest1 displayID: " + displayID.toString());
     });
     beforeEach(async (): Promise<void> => {
       console.info("commonEventTest1 beforeEach start");
@@ -65,10 +72,6 @@ export default function commonEventTest1() {
       console.info("commonEventTest1 after each called");
     });
     
-    
-
-
-
     /**
      * @tc.number   commonEventTest1_static_0100
      * @tc.name     commonEventTest1_static_0100
@@ -83,7 +86,7 @@ it('commonEventTest1_static_0100', Level.LEVEL0, async (done: () => void): Promi
       await CommonFunc.sleep(1000);
       let node: Component | null = await driver.findComponent(ON.id('commonEventTest1_node'));
       let point = await (node?.getBoundsCenter() as Promise<Point>);
-      await driver.mouseClick({x:Math.round(point.x).toInt(), y:Math.round(point.y).toInt()}, MouseButton.MOUSE_BUTTON_LEFT);
+      await driver.mouseClick({x:Math.round(point.x).toInt(), y:Math.round(point.y).toInt(), displayId: displayID}, MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(2000);
       let btn1 = await driver.findComponent(ON.id('commonEventTest1_getOnMouse'));
       await (btn1?.click() as Promise<void>)
@@ -97,10 +100,6 @@ it('commonEventTest1_static_0100', Level.LEVEL0, async (done: () => void): Promi
       done();
     });
     
-    
-
-
-
     /**
      * @tc.number   commonEventTest1_static_0200
      * @tc.name     commonEventTest1_static_0200

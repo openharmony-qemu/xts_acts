@@ -77,22 +77,19 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0220', Level.LEVEL0,
       await CommonFunc.sleep(500);
       
       let strJson = inspector.getInspectorByKey('lSwipe23Action0');
+      console.info("[SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0220] current component obj is: " +
+        JSON.stringify(JSON.parseJsonElement(strJson)));
 
-      let ListItem_00: RectValue = CommonFunc.getComponentRect('lSwipe23Action0');
-      let right: number = ListItem_00.right;
-      let left: number = ListItem_00.left;
-      let top: number = ListItem_00.top;
-      let bottom: number = ListItem_00.bottom;
-      let width = right - left;
-      let height = bottom -top;
-      console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0220 value is" + left + " --" + right + "--" + top + "--" + bottom);
-      console.info("[SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0220] current component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      
-      await driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + width/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.resolveUIContext()!.vp2px(40))).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + width/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number  + top + UIContext.resolveUIContext()!.vp2px(30))).toInt()
+      let swipeComp23a = await driver.findComponent(ON.id('lSwipe23Action0'));
+      let rect23a = await swipeComp23a!.getBounds();
+      let displayId23a = await swipeComp23a!.getDisplayId();
+      let width23a = rect23a.right - rect23a.left;
+
+            await driver.swipeBetween(
+        { x: (Math.round(rect23a.left + width23a / 2)).toInt(), y: (Math.round(rect23a.top +
+          UIContext.resolveUIContext()!.vp2px(40))).toInt(), displayId: displayId23a },
+        { x: (Math.round(rect23a.left + width23a / 2)).toInt(), y: (Math.round(rect23a.top +
+          UIContext.resolveUIContext()!.vp2px(30))).toInt(), displayId: displayId23a }
       );
       await CommonFunc.sleep(4000);
       
@@ -122,22 +119,19 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0230', Level.LEVEL0,
       await CommonFunc.sleep(500);
       
       let strJson = inspector.getInspectorByKey('lSwipe23Action0');
+      console.info("[SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0230] current component obj is: " +
+        JSON.stringify(JSON.parseJsonElement(strJson)));
 
-      let ListItem_00: RectValue = CommonFunc.getComponentRect('lSwipe23Action0');
-      let right: number = ListItem_00.right;
-      let left: number = ListItem_00.left;
-      let top: number = ListItem_00.top;
-      let bottom: number = ListItem_00.bottom;
-      let width = right - left;
-      let height = bottom -top;
-      console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0230 value is" + left + " --" + right + "--" + top + "--" + bottom);
-      console.info("[SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0230] current component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      
-      await driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + width/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.resolveUIContext()!.vp2px(100))).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + width/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number  + top + UIContext.resolveUIContext()!.vp2px(50))).toInt()
+      let swipeComp23b = await driver.findComponent(ON.id('lSwipe23Action0'));
+      let rect23b = await swipeComp23b!.getBounds();
+      let displayId23b = await swipeComp23b!.getDisplayId();
+      let width23b = rect23b.right - rect23b.left;
+
+            await driver.swipeBetween(
+        { x: (Math.round(rect23b.left + width23b / 2)).toInt(), y: (Math.round(rect23b.top +
+          UIContext.resolveUIContext()!.vp2px(100))).toInt(), displayId: displayId23b },
+        { x: (Math.round(rect23b.left + width23b / 2)).toInt(), y: (Math.round(rect23b.top +
+          UIContext.resolveUIContext()!.vp2px(50))).toInt(), displayId: displayId23b }
       );
       await CommonFunc.sleep(4000);
       
@@ -168,22 +162,19 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0240', Level.LEVEL0,
       await CommonFunc.sleep(500);
       
       let strJson = inspector.getInspectorByKey('lSwipe23Action0');
+      console.info("[SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0240] current component obj is: " +
+        JSON.stringify(JSON.parseJsonElement(strJson)));
 
-      let ListItem_00: RectValue = CommonFunc.getComponentRect('lSwipe23Action0');
-      let right: number = ListItem_00.right;
-      let left: number = ListItem_00.left;
-      let top: number = ListItem_00.top;
-      let bottom: number = ListItem_00.bottom;
-      let width = right - left;
-      let height = bottom -top;
-      console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0240 value is" + left + " --" + right + "--" + top + "--" + bottom);
-      console.info("[SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0240] current component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      
-      await driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + width/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.resolveUIContext()!.vp2px(150))).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + width/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number  + top + UIContext.resolveUIContext()!.vp2px(5))).toInt()
+      let swipeComp23c = await driver.findComponent(ON.id('lSwipe23Action0'));
+      let rect23c = await swipeComp23c!.getBounds();
+      let displayId23c = await swipeComp23c!.getDisplayId();
+      let width23c = rect23c.right - rect23c.left;
+
+            await driver.swipeBetween(
+        { x: (Math.round(rect23c.left + width23c / 2)).toInt(), y: (Math.round(rect23c.top +
+          UIContext.resolveUIContext()!.vp2px(150))).toInt(), displayId: displayId23c },
+        { x: (Math.round(rect23c.left + width23c / 2)).toInt(), y: (Math.round(rect23c.top +
+          UIContext.resolveUIContext()!.vp2px(5))).toInt(), displayId: displayId23c }
       );
       await CommonFunc.sleep(4000);
       

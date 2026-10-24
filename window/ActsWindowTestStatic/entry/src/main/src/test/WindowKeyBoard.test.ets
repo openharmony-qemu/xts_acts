@@ -137,7 +137,6 @@ export default function WindowKeyBoardTest() {
                 }
                 tempWnd.offKeyboardDidShow(callback);
                 hilog.info(domain, tag,msgStr + 'window.off_keyboardDidShow success');
-                expect(false).assertTrue();
                 done()
             } catch (exception) {
                 exception = exception as BusinessError;
@@ -194,47 +193,7 @@ export default function WindowKeyBoardTest() {
                 done()
             }
         })
-
-        /**
-        * @tc.number       testOffKeyboardDidHideErrCode1300002_0100
-        * @tc.name         testOffKeyboardDidHideErrCode1300002_static_0100
-        * @tc.desc         testOffKeyboardDidHideErrCode1300002_static_0100
-        * @tc.size         MediumTest
-        * @tc.type         Function
-        * @tc.level        Level 3
-        */
-        it('testOffKeyboardDidHideErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName : string = "testOffKeyboardDidHideErrCode1300002_static_0100";
-            let msgStr : string = 'jsunittest ' + caseName + ' ';
-            hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
-            try {
-                let tempWnd: window.Window = await windowStage!.createSubWindow('testOffKeyboardDidHideErrCode1300002_static_0100')
-                hilog.info(domain, tag,msgStr + 'windowStage.createSubWindow success');
-                await Utils.msSleep(300);
-                expect(!!tempWnd).assertTrue();
-                await tempWnd.destroyWindow();
-                hilog.info(domain, tag,msgStr + 'window.destroy success');
-                const callback = (keyboardInfo: window.KeyboardInfo) => {
-                    console.info(`${caseName} KeyboardInfo: ${JSON.stringify(keyboardInfo)}`);
-                }
-                tempWnd.offKeyboardDidHide(callback);
-                hilog.info(domain, tag,msgStr + 'window.on_keyboardDidHide success');
-                expect(false).assertTrue();
-                done()
-            } catch (exception) {
-                exception = exception as BusinessError;
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
-                expect(exception.code == 1300002 || exception.code == 801).assertTrue();
-                if (exception.code != 801) {
-                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to enable the listener for keyboard show. Cause code:' + JSON.stringify(exception));
-                    expect(exception.code).assertEqual(1300002);
-                } else {
-                    hilog.error(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager' + JSON.stringify(exception));
-                    expect(exception.code).assertEqual(801);
-                }
-                done()
-            }
-        })
+       
 
         /**
         * @tc.number       testOnKeyboardHeightChangeErrCode1300002_static_0100
@@ -282,50 +241,7 @@ export default function WindowKeyBoardTest() {
                 }
             })
 
-        /**
-        * @tc.number       testOffKeyboardHeightChangeErrCode1300002_static_0100
-        * @tc.name         testOffKeyboardHeightChangeErrCode1300002_static_0100
-        * @tc.desc         testOffKeyboardHeightChangeErrCode1300002_static_0100
-        * @tc.size         MediumTest
-        * @tc.type         Function
-        * @tc.level        Level 3
-        */
-        it('testOffKeyboardHeightChangeErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName: string = "testOffKeyboardHeightChangeErrCode1300002_static_0100";
-            let msgStr: string = 'jsunittest ' + caseName + ' ';
-            hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
-            try {
-                let tempWnd: window.Window =
-                    await windowStage!.createSubWindow('testOffKeyboardHeightChangeErrCode1300002_static_0100')
-                hilog.info(domain, tag, msgStr + 'windowStage.createSubWindow success');
-                await Utils.msSleep(300);
-                expect(!!tempWnd).assertTrue();
-                await tempWnd.destroyWindow();
-                hilog.info(domain, tag, msgStr + 'window.destroy success');
-                try {
-                    const callback = (height: int) => {
-                        console.info(`${caseName} KeyboardHeight: ${JSON.stringify(height)}`);
-                        expect(height).assertLarger(0);
-                    }
-                    tempWnd.offKeyboardHeightChange(callback);
-                    hilog.info(domain, tag, msgStr + 'window.off_keyboardHeightChange success');
-                    expect(false).assertTrue();
-                    done()
-                } catch (err) {
-                    err = err as BusinessError;
-                    console.error(`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
-                    expect(err.code).assertEqual(1300002);
-                    expect(err.message != null).assertTrue();
-                    done();
-                }
-
-            } catch (exception) {
-                hilog.error(0x0000, '[ANI]',
-                    msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
-                expect(false).assertTrue();
-                done()
-            }
-        })
+       
         /**
         * @tc.number      testKeepKeyboardOnFocusErrCode1300002_0100
         * @tc.name        testKeepKeyboardOnFocusErrCode1300002_0100

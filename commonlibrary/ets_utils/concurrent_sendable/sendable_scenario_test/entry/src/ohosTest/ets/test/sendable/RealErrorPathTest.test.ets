@@ -82,6 +82,7 @@ export default function RealErrorPathTest(): void {
         expect().assertFail()
       } catch (e) {
         caught = true
+        expect((e as Error).message.includes('real failure')).assertTrue()
       }
       expect(caught).assertTrue()
       done()
@@ -108,6 +109,7 @@ export default function RealErrorPathTest(): void {
           break
         } catch (e) {
           failedTimes++
+          expect((e as Error).message.includes('attempt')).assertTrue()
         }
       }
       expect(failedTimes).assertEqual(2)
@@ -135,6 +137,7 @@ export default function RealErrorPathTest(): void {
           await taskpool.execute(task)
         } catch (e) {
           attempts++
+          expect((e as Error).message.includes('real failure')).assertTrue()
         }
       }
       if (attempts === maxRetries) {
@@ -163,13 +166,17 @@ export default function RealErrorPathTest(): void {
         await Utils.sleep(500)
         taskpool.cancel(task)
         let cancelled: boolean = false
+        let cancelMessage: string = ''
         try {
           await executePromise
         } catch (e) {
           cancelled = true
+          cancelMessage = (e as Error).message
         }
         expect(cancelled).assertTrue()
+        expect(cancelMessage.length > 0).assertTrue()
         expect(state.getAttempts()).assertEqual(1)
+        expect(state.attempts_).assertEqual(1)
       } catch (error) {
         console.error("testRealErrorPath0400 failed");
         expect(false).assertFail();
@@ -194,15 +201,20 @@ export default function RealErrorPathTest(): void {
         await Utils.sleep(500)
         taskpool.cancel(overdueTask)
         let overdueFailed: boolean = false
+        let overdueMessage: string = ''
         try {
           await overduePromise
         } catch (e) {
           overdueFailed = true
+          overdueMessage = (e as Error).message
         }
         expect(overdueFailed).assertTrue()
+        expect(overdueMessage.length > 0).assertTrue()
         const quickTask: taskpool.Task = new taskpool.Task(quickSuccessTask)
         const quickResult: Object = await taskpool.execute(quickTask)
         expect(quickResult as number).assertEqual(2026)
+        expect(state.getAttempts()).assertEqual(0)
+        expect(state.attempts_).assertEqual(0)
       } catch (error) {
         console.error("testRealErrorPath0500 failed");
         expect(false).assertFail();

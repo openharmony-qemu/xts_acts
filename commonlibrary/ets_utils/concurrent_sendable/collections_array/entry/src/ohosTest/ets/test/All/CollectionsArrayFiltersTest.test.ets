@@ -261,5 +261,20 @@ export default function CollectionsArrayFiltersTest() {
       expect(Array.from(result)).assertDeepEquals(Array.from(expectedResult));
     });
 
+    /**
+     * @tc.number  SUB_ARRAY_FILTER_INDEP_0100
+     * @tc.name    testArrayFilterIndep0001
+     * @tc.desc    Verify filter returns new array independent from source
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testArrayFilterIndep0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = collections.Array.from<number>([1, 2, 3, 4]);
+      let f = arr.filter((x: number): boolean => x > 2);
+      expect(f === arr).assertFalse();
+      arr.push(5);
+      expect(f.length).assertEqual(2);
+    });
   })
 }

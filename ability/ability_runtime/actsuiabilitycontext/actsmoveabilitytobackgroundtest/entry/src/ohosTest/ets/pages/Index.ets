@@ -18,7 +18,7 @@ import Want from '@ohos.app.ability.Want';
 
 @Entry
 @Component
-struct Index {
+struct PagesIndex {
   @State moveToBg: string = 'Move To background'
 
   build() {

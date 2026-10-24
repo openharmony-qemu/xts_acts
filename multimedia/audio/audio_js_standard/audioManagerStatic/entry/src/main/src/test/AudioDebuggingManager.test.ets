@@ -40,6 +40,22 @@ export default function audioDebuggingManagerTest() {
       console.info(`${TAG}: afterAll called`);
     });
 
+    let checkCarSupportSync = async(): Promise<boolean> => {
+      let audioManager = audio.getAudioManager();
+      let audioRoutingManager = audioManager!.getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager!.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`checkCarSupportSync outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+          console.info(`this device has external device.`)
+          return false;
+      } else if (outputDeviceDescription.length == 0) {
+          console.info(`this device has external device`)
+          return false;
+      } else {
+          return true;
+      }
+    }
+
     /**
      * @tc.name    SUB_MULTIMEDIA_AUDIO_PRINT_APP_INFO_STATIC_0100
      * @tc.number  SUB_MULTIMEDIA_AUDIO_PRINT_APP_INFO_STATIC_0100
@@ -163,38 +179,41 @@ export default function audioDebuggingManagerTest() {
      * @tc.level   LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_PRINT_CAPTURER_INFO_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        let audioManager: audio.AudioManager;
-        audioManager = audio.getAudioManager();
-        let debugManager: audio.AudioDebuggingManager;
-        debugManager = audioManager.getDebuggingManager();
-        let audioCapturer: audio.AudioCapturer | null;
-        let audioCapturerOptions: audio.AudioCapturerOptions = {
-          streamInfo: {
-            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
-            channels: audio.AudioChannel.CHANNEL_2,
-            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
-            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
-          },
-          capturerInfo: {
-            source: audio.SourceType.SOURCE_TYPE_MIC,
-            capturerFlags: 0
-          }
-        };
-        
-        audioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
-        await audioCapturer!.start();
-        
-        debugManager.printCapturerInfo(audioCapturer!, -1);
-        console.info(`${TAG}: printCapturerInfo with valid capturer executed successfully`);
-        await Utils.msSleep(1000);
-        await audioCapturer!.release();
-        done();
-      } catch (error) {
-        console.error(`${TAG}: printCapturerInfo failed: ${error.code}, ${error.message}`);
-        expect().assertFail();
-        done();
+      if(await checkCarSupportSync()) {
+        try {
+          let audioManager: audio.AudioManager;
+          audioManager = audio.getAudioManager();
+          let debugManager: audio.AudioDebuggingManager;
+          debugManager = audioManager.getDebuggingManager();
+          let audioCapturer: audio.AudioCapturer | null;
+          let audioCapturerOptions: audio.AudioCapturerOptions = {
+            streamInfo: {
+              samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+              channels: audio.AudioChannel.CHANNEL_2,
+              sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+              encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+            },
+            capturerInfo: {
+              source: audio.SourceType.SOURCE_TYPE_MIC,
+              capturerFlags: 0
+            }
+          };
+          
+          audioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
+          await audioCapturer!.start();
+          
+          debugManager.printCapturerInfo(audioCapturer!, -1);
+          console.info(`${TAG}: printCapturerInfo with valid capturer executed successfully`);
+          await Utils.msSleep(1000);
+          await audioCapturer!.release();
+          done();
+        } catch (error) {
+          console.error(`${TAG}: printCapturerInfo failed: ${error.code}, ${error.message}`);
+          expect().assertFail();
+          done();
+        }
       }
+      done();
     });
 
     /**

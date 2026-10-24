@@ -19,23 +19,24 @@
         "type": "ShellKit",
         "run-command": [
             "remount",
-            "mkdir /data/test",
-            "mkdir -p /data/app/el2/100/base/ohos.acts.multimedia.avimagegenerator.static/haps/entry/files",
-            "chmod 777 -R /data/app/el2/100/base/ohos.acts.multimedia.avimagegenerator.static/haps/entry"
+            "mkdir /data/test"
         ]
     },
     {
         "type": "PushKit",
         "push": [
-            "./resource/audio/H264_AAC.mp4 -> /data/app/el2/100/base/ohos.acts.multimedia.avimagegenerator.static/haps/entry/files/",
-            "./resource/media/metadata/mjpeg_mp3.mp3 -> /data/app/el2/100/base/ohos.acts.multimedia.avimagegenerator.static/haps/entry/files/"
+            "./resource/audio/H264_AAC.mp4 -> /data/local/tmp/",
+            "./resource/media/metadata/mjpeg_mp3.mp3 -> /data/local/tmp/",
+            "./resource/media/setup_media_js_standard_avImageGeneratorStatic_test.sh -> /data/local/tmp/"
         ]
     },{
         "type": "ShellKit",
         "run-command": [
             "power-shell wakeup",
             "uinput -T -m 300 2700 280 200",
-            "power-shell setmode 602"
+            "power-shell setmode 602",
+            "chmod 755 /data/local/tmp/",
+            "sh /data/local/tmp/setup_media_js_standard_avImageGeneratorStatic_test.sh"
         ]
     }]
 }

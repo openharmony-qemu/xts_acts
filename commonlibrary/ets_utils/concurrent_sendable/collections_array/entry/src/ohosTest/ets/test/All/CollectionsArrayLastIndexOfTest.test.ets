@@ -17,6 +17,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit'
 import { any, exportObj2, lastIndexOf } from './pages/ArrayFunOpen'
 import { sleep } from './pages/Utils'
 import { collections } from '@kit.ArkTS'
+import { BusinessError } from '@kit.BasicServicesKit';
 
 export default function CollectionsArrayLastIndexOfTest() {
   describe('CollectionsArrayLastIndexOfTest', () => {
@@ -397,5 +398,24 @@ export default function CollectionsArrayLastIndexOfTest() {
       expect(array.lastIndexOf(0x3)).assertEqual(4)
       Done()
     })
+
+    /**
+     * @tc.number  SUB_ARRAY_LASTINDEXOF_BIND_0100
+     * @tc.name    testArrayLastIndexOfBind0001
+     * @tc.desc    Verify lastIndexOf detached invocation throws 10200011
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testArrayLastIndexOfBind0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new collections.Array<number>(1, 2, 3);
+      let fn = arr.lastIndexOf;
+      try {
+        fn(1);
+        expect().assertFail();
+      } catch (error) {
+        expect((error as BusinessError).code).assertEqual(10200011);
+      }
+    });
   })
 }

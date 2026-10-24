@@ -76,13 +76,19 @@ it('ArkUI_List_Swipe_static_0100', Level.LEVEL1, async (done: () => void): Promi
       // 3.swipe item to left
       let baseKey: string = 'MyList1_ListItem0'
       let strJson: string = inspector.getInspectorByKey(baseKey);
-      const winLeft: number = AppStorage.get<number>("winLeft") as number
-      const winTop: number = AppStorage.get<number>("winTop") as number
-      console.info("windowRect Left: " + winLeft + ',' + "windowRect Top: " + winTop);
-      let rectCenter: number[] = getRectCenter(JSON.parseJsonElement(strJson).getString('$rect'))
-      await driver.swipe((Math.round(winLeft + rectCenter[0] + (rectCenter[3] - rectCenter[2]) / 4)).toInt(),
-        (Math.round(winTop + rectCenter[1])).toInt(),
-        0, (Math.round(winTop + rectCenter[1])).toInt())
+      let swipeComponent = await driver.findComponent(ON.id(baseKey));
+      let rect = await swipeComponent!.getBounds();
+      let displayId = await swipeComponent!.getDisplayId();
+      let width: number = rect.right - rect.left;
+      let height: number = rect.bottom - rect.top;
+      console.info("swipe0100 bounds left: " + rect.left + ',top: ' + rect.top +
+        ',width: ' + width + ',height: ' + height + ',displayId: ' + displayId);
+      await driver.swipeBetween(
+        { x: (Math.round(rect.right - width / 4)).toInt(),
+          y: (Math.round(rect.top + height / 2)).toInt(), displayId: displayId },
+        { x: (Math.round(rect.left)).toInt(),
+          y: (Math.round(rect.top + height / 2)).toInt(), displayId: displayId }
+      )
       await sleep(3000) // wait for ui update
       console.info('get getInspectorByKey swipe0100')
       let strJson2: string = inspector.getInspectorByKey('swipe0100')
@@ -110,15 +116,20 @@ it('ArkUI_List_Swipe_static_0300', Level.LEVEL1, async (done: () => void): Promi
 
       let baseKey: string = 'MyList2_ListItem0'
       let strJson: string = inspector.getInspectorByKey(baseKey);
-      const winLeft: number = AppStorage.get<number>("winLeft") as number
-      const winTop: number = AppStorage.get<number>("winTop") as number
-      console.info("windowRect Left: " + winLeft + ',' + "windowRect Top: " + winTop);
+      let swipeComponent = await driver.findComponent(ON.id(baseKey));
+      let rect = await swipeComponent!.getBounds();
+      let displayId = await swipeComponent!.getDisplayId();
+      let width: number = rect.right - rect.left;
+      let height: number = rect.bottom - rect.top;
+      console.info("swipe0300 bounds left: " + rect.left + ',top: ' + rect.top +
+        ',width: ' + width + ',height: ' + height + ',displayId: ' + displayId);
       // 2.swipe right
-      let rectCenter: number[] = getRectCenter(JSON.parseJsonElement(strJson).getString('$rect'))
-      await driver.swipe((Math.round(winLeft + rectCenter[0])).toInt(),
-        (Math.round(winTop + rectCenter[1])).toInt(),
-        (Math.round(winLeft + rectCenter[0] + (rectCenter[3] - rectCenter[2]) / 4)).toInt(),
-        (Math.round(winTop + rectCenter[1])).toInt())
+      await driver.swipeBetween(
+        { x: (Math.round(rect.left)).toInt(),
+          y: (Math.round(rect.top + height / 2)).toInt(), displayId: displayId },
+        { x: (Math.round(rect.left + width / 4)).toInt(),
+          y: (Math.round(rect.top + height / 2)).toInt(), displayId: displayId }
+      )
 
       await sleep(3000) // wait for ui update
       console.info('get getInspectorByKey swipe0300')
@@ -173,13 +184,19 @@ it('ArkUI_List_Swipe_static_0500', Level.LEVEL1, async (done: () => void): Promi
       // 2.swipe item to left
       let baseKey: string = 'MyList1_ListItem1'
       let strJson: string = inspector.getInspectorByKey(baseKey);
-      let rectCenter: number[] = getRectCenter(JSON.parseJsonElement(strJson).getString('$rect'))
-      const winLeft: number = AppStorage.get<number>("winLeft") as number
-      const winTop: number = AppStorage.get<number>("winTop") as number
-      console.info("windowRect Left: " + winLeft + ',' + "windowRect Top: " + winTop);
-      await driver.swipe((Math.round(winLeft + rectCenter[0] + (rectCenter[3] - rectCenter[2]) / 4)).toInt(),
-        (Math.round(winTop + rectCenter[1])).toInt(),
-        0, (Math.round(winTop + rectCenter[1])).toInt())
+      let swipeComponent = await driver.findComponent(ON.id(baseKey));
+      let rect = await swipeComponent!.getBounds();
+      let displayId = await swipeComponent!.getDisplayId();
+      let width: number = rect.right - rect.left;
+      let height: number = rect.bottom - rect.top;
+      console.info("swipe0500 bounds left: " + rect.left + ',top: ' + rect.top +
+        ',width: ' + width + ',height: ' + height + ',displayId: ' + displayId);
+      await driver.swipeBetween(
+        { x: (Math.round(rect.right - width / 4)).toInt(),
+          y: (Math.round(rect.top + height / 2)).toInt(), displayId: displayId },
+        { x: (Math.round(rect.left)).toInt(),
+          y: (Math.round(rect.top + height / 2)).toInt(), displayId: displayId }
+      )
       await sleep(8000) // wait for ui update
       let strJson2: string = inspector.getInspectorByKey('swipe0500')
 

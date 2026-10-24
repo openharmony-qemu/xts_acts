@@ -64,11 +64,10 @@ export default function UIPickerCallbackTest() {
       let right = rect.right;
       let bottom = rect.bottom;
       console.info("rectValue is" + left + " --" + right + "--" + top + "--" + bottom);
-      await driver.swipe(
-        Math.round((left + right) / 2).toInt(),
-        Math.round((top + bottom) / 2).toInt(),
-        Math.round((left + right) / 2).toInt(),
-        Math.round((top + bottom) / 4).toInt(),600
+      let displayId = await picker?.getDisplayId();
+      await driver.swipeBetween(
+        { x: Math.round((left + right) / 2).toInt(), y: Math.round((top + bottom) / 2).toInt(), displayId: displayId },
+        { x: Math.round((left + right) / 2).toInt(), y: Math.round((top + bottom) / 4).toInt(), displayId: displayId }, 600
       );
       await Utils.sleep(SLEEP_TIME_L);
       const indexText = await driver.findComponent(ON.id('text_callback_onchange_index'));
@@ -99,11 +98,10 @@ export default function UIPickerCallbackTest() {
       let right = rect.right;
       let bottom = rect.bottom;
       console.info("rectValue is" + left + " --" + right + "--" + top + "--" + bottom);
-      await driver.swipe(
-        Math.round((left + right) / 2).toInt(),
-        Math.round((top + bottom) / 2).toInt(),
-        Math.round((left + right) / 2).toInt(),
-        Math.round((top + bottom) / 4).toInt(),600
+      let displayId = await picker?.getDisplayId();
+      await driver.swipeBetween(
+        { x: Math.round((left + right) / 2).toInt(), y: Math.round((top + bottom) / 2).toInt(), displayId: displayId },
+        { x: Math.round((left + right) / 2).toInt(), y: Math.round((top + bottom) / 4).toInt(), displayId: displayId }, 600
       );
       await Utils.sleep(SLEEP_TIME_L);
       const indexText = await driver.findComponent(ON.id('text_callback_onscrollstop_index'));

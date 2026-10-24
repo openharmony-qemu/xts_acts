@@ -74,65 +74,6 @@ target_link_libraries(avtranscoderconfigndk PUBLIC
     libnative_media_adec.so
 )
 
-
-add_library(lowpoweraudiosinkndk SHARED LowPowerSinkTest.cpp)
-target_link_libraries(lowpoweraudiosinkndk PUBLIC
-    libace_napi.z.so
-    libavrecorder.so
-    libnative_media_core.so
-    libnative_media_core.so
-    libnative_media_codecbase.so
-    libnative_media_venc.so
-    libnative_window.so
-    libavplayer.so
-    libnative_image.so
-    libGLESv3.so
-    libEGL.so
-    libnative_buffer.so
-    libhilog_ndk.z.so
-    librawfile.z.so
-    libavtranscoder.so
-    libnative_media_avsource.so
-    libnative_media_core.so
-    libnative_media_aenc.so
-    libnative_media_codecbase.so
-    libnative_media_adec.so
-    liblowpower_avsink.so
-    libnative_media_avsource.so
-    libnative_media_avdemuxer.so
-    libnative_buffer.so
-    libnative_media_venc.so
-)
-
-add_library(lowpoweraudiosinktwondk SHARED LowPowerSinkTwoTest.cpp)
-target_link_libraries(lowpoweraudiosinktwondk PUBLIC
-    libace_napi.z.so
-    libavrecorder.so
-    libnative_media_core.so
-    libnative_media_core.so
-    libnative_media_codecbase.so
-    libnative_media_venc.so
-    libnative_window.so
-    libavplayer.so
-    libnative_image.so
-    libGLESv3.so
-    libEGL.so
-    libnative_buffer.so
-    libhilog_ndk.z.so
-    librawfile.z.so
-    libavtranscoder.so
-    libnative_media_avsource.so
-    libnative_media_core.so
-    libnative_media_aenc.so
-    libnative_media_codecbase.so
-    libnative_media_adec.so
-    liblowpower_avsink.so
-    libnative_media_avsource.so
-    libnative_media_avdemuxer.so
-    libnative_buffer.so
-    libnative_media_venc.so
-)
-
 add_library(avimagemetadatndk SHARED AVImageMetadatTest.cpp)
 target_link_libraries(avimagemetadatndk PUBLIC
     libace_napi.z.so

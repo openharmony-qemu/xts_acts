@@ -23,8 +23,9 @@ import {
   fetchOption,
   getFileAsset,
   getPermission,
-  pushCreateAsset,
-  createMovingPhoto
+  createMovingPhoto,
+  checkResourceFile,
+  createResource
 } from '../common'
 
 
@@ -38,9 +39,8 @@ export default function cloneAssetTest() {
 
     beforeAll(async () => {
       await getPermission();
-      await sleep(10);
-      await pushCreateAsset(context, fileNameList);
-      await sleep(3500);
+      checkResourceFile(context);
+      await createResource(context, fileNameList)
     })
 
 

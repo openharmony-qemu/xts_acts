@@ -16,6 +16,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
 import { sleep } from './SendableLruCacheHelpers';
 import { ArkTSUtils } from '@kit.ArkTS'
+import { BusinessError } from '@kit.BasicServicesKit'
 
 export default function SendableLruCacheGetTest() {
   describe('SendableLruCacheGetTest', () => {
@@ -293,5 +294,19 @@ export default function SendableLruCacheGetTest() {
         done()
       })
 
+    /**
+     * @tc.number  SUB_LRUCACHE_GET_ONE_0100
+     * @tc.name    testLruCacheGetOne0001
+     * @tc.desc    Verify get(null) throws 401
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testLruCacheGetOne0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let cache = new ArkTSUtils.SendableLruCache<number | string | null, number | string>(100)
+      cache.put(20, 'v')
+      expect(cache.get('invalid' as Object as number)).assertUndefined()
+      done()
+    })
   })
 }

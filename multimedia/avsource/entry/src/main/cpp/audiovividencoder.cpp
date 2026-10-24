@@ -967,11 +967,11 @@ static napi_value MixModeObjNumCheck(napi_env env, napi_callback_info info)
     Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_MIX, true);
     if (IsSupportAudioVivid()) {
         g_format = OH_AVFormat_Create();
-        g_objNum = OBJECT_NUM_10;
+        g_objNum = OBJECT_NUM_4;
         int32_t errNum = 0;
         OH_AVErrCode ret;
         OH_AVCodec *codec = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_VIVID, true);
-        // 5.1 + 10obj
+        // 5.1 + 4obj
         SetAudioVividFormat();
         ret = OH_AudioCodec_Configure(codec, g_format);
         if (ret != AV_ERR_OK) {
@@ -985,9 +985,9 @@ static napi_value MixModeObjNumCheck(napi_env env, napi_callback_info info)
         if (ret != AV_ERR_INVALID_VAL) {
             errNum++;
         }
-        // 5.1 + 11obj
+        // 5.1 + 6obj
         OH_AudioCodec_Reset(codec);
-        g_objNum = OBJECT_NUM_11;
+        g_objNum = OBJECT_NUM_6;
         SetAudioVividFormat();
         ret = OH_AudioCodec_Configure(codec, g_format);
         if (ret != AV_ERR_INVALID_VAL) {
@@ -1178,8 +1178,8 @@ static napi_value CreateMixMode(napi_env env, napi_callback_info info)
         }
         OH_AudioVividMetaBuilder_Destroy(builder);
         builder = nullptr;
-        // 7.1.4
-        g_soundbedChannelLayout = OH_AudioChannelLayout::CH_LAYOUT_7POINT1POINT4;
+        // 5.1.2
+        g_soundbedChannelLayout = OH_AudioChannelLayout::CH_LAYOUT_5POINT1POINT2;
         SetAudioVividFormat();
         ret = OH_AudioVividMetaBuilder_Create(&builder, g_format);
         if (ret != AV_ERR_OK || builder == nullptr) {
@@ -1217,19 +1217,19 @@ static napi_value CreateObjNumCheck(napi_env env, napi_callback_info info)
     OH_AudioVividMetaBuilder *builder = nullptr;
     OH_AVErrCode ret;
     Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_MIX, true);
-    g_objNum = OBJECT_NUM_10;
+    g_objNum = OBJECT_NUM_4;
     SetAudioVividFormat();
     if (IsSupportAudioVivid()) {
         int32_t errNum = 0;
-        // 5.1 + 10obj
+        // 5.1 + 4obj
         ret = OH_AudioVividMetaBuilder_Create(&builder, g_format);
         if (ret != AV_ERR_OK || builder == nullptr) {
             errNum++;
         }
         OH_AudioVividMetaBuilder_Destroy(builder);
         builder = nullptr;
-        // 5.1 + 11obj
-        g_objNum = OBJECT_NUM_11;
+        // 5.1 + 6obj
+        g_objNum = OBJECT_NUM_6;
         SetAudioVividFormat();
         ret = OH_AudioVividMetaBuilder_Create(&builder, g_format);
         if (ret == AV_ERR_OK || builder != nullptr) {

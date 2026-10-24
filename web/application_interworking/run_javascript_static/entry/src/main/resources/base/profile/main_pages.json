@@ -2,6 +2,7 @@
   "src": [
     "pages/jsMessageExt",
     "pages/web",
-    "pages/webTwo"
+    "pages/webTwo",
+    "pages/webResourceResponseSetResponseBodyParam"
   ]
 }

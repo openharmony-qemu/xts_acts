@@ -15,6 +15,8 @@ group("ActsWebNetworkInterceptionTest") {
   testonly = true
   if (is_standard_system) {
     deps = [
+      "ace_network_interception_dynamic_dev_one:ActsWebNetworkInterceptionDynamicDevOneTest",
+      "ace_network_interception_dynamic_dev_one_static:ActsWebNetworkInterceptionDynamicDevOneStaticTest",
       "ace_network_interception_cloudservice_controller:ActsWebNetworkInterceptionCloudServiceControllerTest",
       "ace_network_interception_cloudservice_controller_enhanced:ActsWebNetworkInterceptionCloudServiceControllerEnhancedTest",
       "ace_network_interception_cloudservice_controller_five:ActsWebNetworkInterceptionCloudServiceControllerFiveTest",

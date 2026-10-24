@@ -1271,7 +1271,7 @@ export default function uitestComponentErrorTest() {
       }
       console.log(TestTag, 'test_isSelected_17000004 end');
       done()
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_clearText_17000002

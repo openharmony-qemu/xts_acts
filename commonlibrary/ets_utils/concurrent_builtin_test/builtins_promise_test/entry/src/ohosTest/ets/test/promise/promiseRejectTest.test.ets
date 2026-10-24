@@ -109,7 +109,7 @@ export default function promiseRejectTest() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('PromiseRejectTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseRejectTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let allRejectionReason = '';
       const promise1 = Promise.resolve(10);
       const promise2 = Promise.reject(new Error('Second promise rejected'));
@@ -122,6 +122,7 @@ export default function promiseRejectTest() {
       }
 
       expect(allRejectionReason).assertEqual('Second promise rejected');
+      done();
     });
 
     /**
@@ -154,7 +155,7 @@ export default function promiseRejectTest() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('PromiseRejectTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseRejectTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const promises = [
         Promise.resolve('success'),
         Promise.reject('failure'),
@@ -167,6 +168,7 @@ export default function promiseRejectTest() {
       expect((results[1] as PromiseRejectedResult).reason).assertEqual('failure');
       expect((results[2] as PromiseFulfilledResult<string>).value).assertEqual('delayed success');
       expect(results.every(r => r.status)).assertEqual(true);
+      done();
     });
 
     /**
@@ -669,13 +671,13 @@ export default function promiseRejectTest() {
     it('PromiseRejectTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const fastReject: Promise<string> = new Promise<string>((_, reject) => {
         // Fix: Reject directly without wrapping in Promise.reject
-        setTimeout(() => reject('Fast'), 10);
+        setTimeout(() => reject('Fast'), 50);
       });
       const slowReject: Promise<number> = new Promise<number>((_, reject) => {
-        setTimeout(() => reject(new Error('Slow')), 30);
+        setTimeout(() => reject(new Error('Slow')), 200);
       });
       const slowResolve: Promise<boolean> = new Promise<boolean>((resolve) => {
-        setTimeout(() => resolve(true), 50);
+        setTimeout(() => resolve(true), 350);
       });
 
       let raceReason = '';
@@ -962,7 +964,7 @@ export default function promiseRejectTest() {
      * @tc.type Function
      * @tc.level Level 4
      */
-    it('PromiseRejectTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseRejectTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const promiseSet = new Set<Promise<string>>([
         new Promise<string>((_, reject) => setTimeout(() => reject('Set1'), 20)),
         new Promise<string>(resolve => setTimeout(() => resolve('Set2'), 10)),
@@ -976,6 +978,7 @@ export default function promiseRejectTest() {
       expect((resultArr[0] as PromiseRejectedResult).reason).assertEqual('Set1');
       expect((resultArr[1] as PromiseFulfilledResult<string>).value).assertEqual('Set2');
       expect((resultArr[2] as PromiseRejectedResult).reason).assertEqual('Set3');
+      done();
     });
 
     /**
@@ -1081,11 +1084,11 @@ export default function promiseRejectTest() {
      * @tc.type Function
      * @tc.level Level 4
      */
-    it('PromiseRejectTest042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseRejectTest042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const racePromises = [
-        new Promise<string>((_, reject) => setTimeout(() => reject(Promise.reject('10ms')), 10)),
-        new Promise<string>((_, reject) => setTimeout(() => reject('5ms'), 5)),
-        new Promise<string>(resolve => setTimeout(() => resolve('20ms'), 20))
+        new Promise<string>((_, reject) => setTimeout(() => reject(Promise.reject('10ms')), 200)),
+        new Promise<string>((_, reject) => setTimeout(() => reject('5ms'), 50)),
+        new Promise<string>(resolve => setTimeout(() => resolve('20ms'), 350))
       ];
 
       let winner = '';
@@ -1096,6 +1099,7 @@ export default function promiseRejectTest() {
       }
 
       expect(winner).assertEqual('5ms');
+      done();
     });
 
     /**
@@ -1356,7 +1360,7 @@ export default function promiseRejectTest() {
      * @tc.type Function
      * @tc.level Level 4
      */
-    it('PromiseRejectTest052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseRejectTest052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let catchCount = 0;
       const innerAll: Promise<(number | string)[]> = Promise.all([
         new Promise<number>((resolve) => setTimeout(() => resolve(10), 5)),
@@ -1374,6 +1378,7 @@ export default function promiseRejectTest() {
       }
 
       expect(catchCount).assertEqual(1);
+      done();
     });
 
     /**
@@ -1586,7 +1591,7 @@ export default function promiseRejectTest() {
           // Fix: Reject directly with reason (no Promise.reject wrap)
           setTimeout(() => reject('Inner fail 1'), 5);
         }),
-        new Promise<number>((resolve) => setTimeout(() => resolve(100), 15)),
+        new Promise<number>((resolve) => setTimeout(() => resolve(100), 50)),
         new Promise<string>((_, reject) => setTimeout(() => reject('Inner fail 2'), 10))
       ]);
       const outerAny: Promise<Object> = Promise.any([
@@ -1595,7 +1600,7 @@ export default function promiseRejectTest() {
           setTimeout(() => reject('Outer fail'), 8);
         }),
         innerAny,
-        new Promise<boolean>((resolve) => setTimeout(() => resolve(true), 20))
+        new Promise<boolean>((resolve) => setTimeout(() => resolve(true), 200))
       ]);
 
       const result = await outerAny;
@@ -1774,10 +1779,10 @@ export default function promiseRejectTest() {
       const raceCandidates = [
         new Promise<string>((_, reject) => {
           // Fix: Reject directly with reason (no Promise.reject wrap)
-          setTimeout(() => reject('15ms-reject'), 15);
+          setTimeout(() => reject('15ms-reject'), 200);
         }),
-        new Promise<number>((resolve) => setTimeout(() => resolve(100), 10)),
-        new Promise<boolean>((_, reject) => setTimeout(() => reject('20ms-reject'), 20))
+        new Promise<number>((resolve) => setTimeout(() => resolve(100), 50)),
+        new Promise<boolean>((_, reject) => setTimeout(() => reject('20ms-reject'), 350))
       ];
 
       let raceResult: number | string | boolean = '';
@@ -1850,21 +1855,21 @@ export default function promiseRejectTest() {
       const timeLog: string[] = [];
       const innerSet = new Set<Promise<string | number>>([
         new Promise<string>((_, reject) => setTimeout(() => {
-          timeLog.push('inner-reject(20ms)');
+          timeLog.push('inner-reject(350ms)');
           // Fix: Reject directly with reason (no Promise.reject wrap)
           reject('Inner');
-        }, 20)),
+        }, 350)),
         new Promise<number>((resolve) => setTimeout(() => {
-          timeLog.push('inner-resolve(10ms)');
+          timeLog.push('inner-resolve(50ms)');
           resolve(200);
-        }, 10))
+        }, 50))
       ]);
       const outerSet = new Set<Promise<Object>>([
         Promise.allSettled(innerSet),
         new Promise<string>((_, reject) => setTimeout(() => {
-          timeLog.push('outer-reject(15ms)');
+          timeLog.push('outer-reject(200ms)');
           reject('Outer');
-        }, 15))
+        }, 200))
       ]);
 
       const outerResults = await Promise.allSettled(outerSet);
@@ -1873,8 +1878,8 @@ export default function promiseRejectTest() {
       expect((Array.from(innerResults)[0] as PromiseRejectedResult).reason).assertEqual('Inner');
       expect((Array.from(innerResults)[1] as PromiseFulfilledResult<number>).value).assertEqual(200);
       expect((outerResults[1] as PromiseRejectedResult).reason).assertEqual('Outer');
-      // Execution order based on timeout delays (10ms → 15ms → 20ms)
-      expect(timeLog).assertDeepEquals(['inner-resolve(10ms)', 'outer-reject(15ms)', 'inner-reject(20ms)']);
+      // Execution order based on timeout delays (50ms → 200ms → 350ms)
+      expect(timeLog).assertDeepEquals(['inner-resolve(50ms)', 'outer-reject(200ms)', 'inner-reject(350ms)']);
     });
 
     /**
@@ -2178,11 +2183,11 @@ export default function promiseRejectTest() {
       const raceCandidates = [
         new Promise<string>((_, reject) => {
           // Fix: Reject directly with reason (no Promise.reject wrap)
-          setTimeout(() => reject('Reject (10ms)'), 10);
+          setTimeout(() => reject('Reject (10ms)'), 50);
         })
           .then(val => val + ' extended')
           .catch((err: string) => Promise.reject(`Caught: ${err}`)),
-        new Promise<number>((resolve) => setTimeout(() => resolve(200), 15))
+        new Promise<number>((resolve) => setTimeout(() => resolve(200), 200))
           .then(val => val * 2)
       ];
 
@@ -2329,18 +2334,19 @@ export default function promiseRejectTest() {
      * @tc.type Function
      * @tc.level Level 4
      */
-    it('PromiseRejectTest081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseRejectTest081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const start = Date.now();
       const raceCandidates = [
         new Promise<string>((_, reject) => setTimeout(() => reject(Promise.reject('Race-err(10ms)')), 10))
-          .catch((err: Error) => new Promise<string>((resolve) => setTimeout(() => resolve(`Recover: ${err}`), 15))),
-        new Promise<number>((resolve) => setTimeout(() => resolve(300), 20))
+          .catch((err: Error) => new Promise<string>((resolve) => setTimeout(() => resolve(`Recover: ${err}`), 200))),
+        new Promise<number>((resolve) => setTimeout(() => resolve(300), 50))
       ];
 
       const result = await Promise.race(raceCandidates);
       const end = Date.now();
 
       expect(result).assertEqual(300);
+      done();
     });
 
     /**
@@ -2698,9 +2704,9 @@ export default function promiseRejectTest() {
       const raceCandidates = [
         new Promise<string>((_, reject) => {
           // Fix: Reject directly with reason (no Promise.reject wrap)
-          setTimeout(() => reject('Race Reject (10ms)'), 10);
+          setTimeout(() => reject('Race Reject (10ms)'), 50);
         }),
-        new Promise<number>((resolve) => setTimeout(() => resolve(200), 20))
+        new Promise<number>((resolve) => setTimeout(() => resolve(200), 200))
       ];
       // Use Promise.any as fallback for Promise.race when rejection occurs first
       const combined = Promise.race(raceCandidates)
@@ -2768,19 +2774,20 @@ export default function promiseRejectTest() {
      * @tc.type Function
      * @tc.level Level 4
      */
-    it('PromiseRejectTest095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseRejectTest095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const anyCandidates = [
         new Promise<string>((_, reject) => setTimeout(() => reject(Promise.reject('Any Reject 1 (5ms)')), 5)),
-        new Promise<number>((resolve) => setTimeout(() => resolve(100), 15)),
+        new Promise<number>((resolve) => setTimeout(() => resolve(100), 50)),
         new Promise<string>((_, reject) => setTimeout(() => reject('Any Reject 2 (10ms)'), 10))
       ];
       const raceCandidates = [
         Promise.any(anyCandidates),
-        new Promise<boolean>((_, reject) => setTimeout(() => reject(Promise.reject('Race Reject (20ms)')), 20))
+        new Promise<boolean>((_, reject) => setTimeout(() => reject(Promise.reject('Race Reject (20ms)')), 200))
       ];
 
       const result = await Promise.race(raceCandidates);
       expect(result).assertEqual(100);
+      done();
     });
 
     /**
@@ -2825,12 +2832,12 @@ export default function promiseRejectTest() {
       const raceCandidates = [
         new Promise<string>((_, reject) => {
           // Fix: Reject directly with reason (no Promise.reject wrap)
-          setTimeout(() => reject('Fast Reject (8ms)'), 8);
+          setTimeout(() => reject('Fast Reject (8ms)'), 50);
         })
           .finally(() => {
             cleanupExecuted = true;
           }),
-        new Promise<number>((resolve) => setTimeout(() => resolve(300), 15))
+        new Promise<number>((resolve) => setTimeout(() => resolve(300), 200))
       ];
 
       let raceReason = '';
@@ -2912,19 +2919,19 @@ export default function promiseRejectTest() {
     it('PromiseRejectTest100', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, async () => {
       const innerRace = Promise.race([
         new Promise<string>((_, reject) => {
-          setTimeout(() => reject('Inner Race Reject (5ms)'), 5);
+          setTimeout(() => reject('Inner Race Reject (5ms)'), 50);
         }),
-        new Promise<number>((resolve) => setTimeout(() => resolve(10), 10))
+        new Promise<number>((resolve) => setTimeout(() => resolve(10), 200))
       ]);
       const handledInnerRace = innerRace.catch((err:string) => err);
       const middleAll = Promise.all([
         handledInnerRace,
-        new Promise<boolean>((resolve) => setTimeout(() => resolve(true), 15))
+        new Promise<boolean>((resolve) => setTimeout(() => resolve(true), 350))
       ]);
       const outerRace = Promise.race([
         middleAll,
         new Promise<string>((_, reject) => {
-          setTimeout(() => reject('Outer Race Reject (20ms)'), 20);
+          setTimeout(() => reject('Outer Race Reject (20ms)'), 500);
         })
       ]);
 

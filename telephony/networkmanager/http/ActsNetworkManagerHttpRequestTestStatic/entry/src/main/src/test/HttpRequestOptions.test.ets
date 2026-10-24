@@ -84,7 +84,7 @@ export default function httpRequestOptionsTest() {
                                     done();
                                 } else {
                                     hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
-                                    ExpectTrue(data?.responseCode == 200);
+                                    ExpectTrue(data?.responseCode === 200);
                                     httpRequest.destroy();
                                     done();
                                 }
@@ -133,7 +133,7 @@ export default function httpRequestOptionsTest() {
                                     done();
                                 } else {
                                     hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
-                                    ExpectTrue(data?.responseCode == 200);
+                                    ExpectTrue(data?.responseCode === 200);
                                     httpRequest.destroy();
                                     done();
                                 }
@@ -180,7 +180,7 @@ export default function httpRequestOptionsTest() {
                                 done();
                             } else {
                                 hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
-                                ExpectTrue(data?.responseCode == 200);
+                                ExpectTrue(data?.responseCode === 200);
                                 httpRequest.destroy();
                                 done();
                             }
@@ -224,7 +224,7 @@ export default function httpRequestOptionsTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {
                             hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
-                            ExpectTrue(data?.responseCode == 200);
+                            ExpectTrue(data?.responseCode === 200);
                             httpRequest.destroy();
                             done();
                         }).catch((error: Error) => {
@@ -270,7 +270,7 @@ export default function httpRequestOptionsTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {
                             hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
-                            ExpectTrue(data?.responseCode == 200);
+                            ExpectTrue(data?.responseCode === 200);
                             httpRequest.destroy();
                             done();
                         }).catch((error: Error) => {
@@ -316,7 +316,7 @@ export default function httpRequestOptionsTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {
                             hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
-                            ExpectTrue(data?.responseCode == 200);
+                            ExpectTrue(data?.responseCode === 200);
                             httpRequest.destroy();
                             done();
                         }).catch((error: Error) => {
@@ -361,7 +361,7 @@ export default function httpRequestOptionsTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {
                             hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
-                            ExpectTrue(data?.responseCode == 200);
+                            ExpectTrue(data?.responseCode === 200);
                             httpRequest.destroy();
                             done();
                         }).catch((error: Error) => {
@@ -428,7 +428,7 @@ export default function httpRequestOptionsTest() {
                                                 done();
                                             } else {
                                                 hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
-                                                ExpectTrue(data?.performanceTiming.tcpTiming == 0);
+                                                ExpectTrue(data?.performanceTiming.tcpTiming === 0);
                                                 httpRequest.destroy();
                                                 done();
                                             }
@@ -486,7 +486,7 @@ export default function httpRequestOptionsTest() {
                                             done();
                                         } else {
                                             hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
-                                            ExpectTrue(data?.performanceTiming.tcpTiming == 0);
+                                            ExpectTrue(data?.performanceTiming.tcpTiming === 0);
                                             httpRequest.destroy();
                                             done();
                                         }
@@ -540,7 +540,7 @@ export default function httpRequestOptionsTest() {
                                 done();
                             } else {
                                 hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
-                                ExpectTrue(data?.responseCode == 200);
+                                ExpectTrue(data?.responseCode === 200);
                                 httpRequest.destroy();
                                 done();
                             }
@@ -586,7 +586,7 @@ export default function httpRequestOptionsTest() {
                                 done();
                             } else {
                                 hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
-                                ExpectTrue(data?.responseCode == 200);
+                                ExpectTrue(data?.responseCode === 200);
                                 httpRequest.destroy();
                                 done();
                             }
@@ -632,7 +632,7 @@ export default function httpRequestOptionsTest() {
                                 done();
                             } else {
                                 hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
-                                ExpectTrue(data?.responseCode == 200);
+                                ExpectTrue(data?.responseCode === 200);
                                 httpRequest.destroy();
                                 done();
                             }
@@ -674,7 +674,7 @@ export default function httpRequestOptionsTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {
                             hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
-                            ExpectTrue(data?.responseCode == 200);
+                            ExpectTrue(data?.responseCode === 200);
                             httpRequest.destroy();
                             done();
                         }).catch((error: Error) => {
@@ -718,7 +718,7 @@ export default function httpRequestOptionsTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {
                             hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
-                            ExpectTrue(data?.responseCode == 200);
+                            ExpectTrue(data?.responseCode === 200);
                             httpRequest.destroy();
                             done();
                         }).catch((error: Error) => {
@@ -762,7 +762,7 @@ export default function httpRequestOptionsTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {
                             hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
-                            ExpectTrue(data?.responseCode == 200);
+                            ExpectTrue(data?.responseCode === 200);
                             httpRequest.destroy();
                             done();
                         }).catch((error: Error) => {
@@ -812,7 +812,7 @@ export default function httpRequestOptionsTest() {
                                 done();
                             } else {
                                 hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
-                                ExpectTrue(data?.responseCode == 200);
+                                ExpectTrue(data?.responseCode === 200);
                                 httpRequest.destroy();
                                 done();
                             }
@@ -858,7 +858,7 @@ export default function httpRequestOptionsTest() {
                                 done();
                             } else {
                                 hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
-                                ExpectTrue(data?.responseCode == 200);
+                                ExpectTrue(data?.responseCode === 200);
                                 httpRequest.destroy();
                                 done();
                             }
@@ -898,7 +898,7 @@ export default function httpRequestOptionsTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {
                             hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
-                            ExpectTrue(data?.responseCode == 200);
+                            ExpectTrue(data?.responseCode === 200);
                             httpRequest.destroy();
                             done();
                         }).catch((error: Error) => {
@@ -942,7 +942,7 @@ export default function httpRequestOptionsTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {
                             hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
-                            ExpectTrue(data?.responseCode == 200);
+                            ExpectTrue(data?.responseCode === 200);
                             httpRequest.destroy();
                             done();
                         }).catch((error: Error) => {
@@ -992,7 +992,7 @@ export default function httpRequestOptionsTest() {
                                 done();
                             } else {
                                 hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
-                                ExpectTrue(data?.responseCode == 200);
+                                ExpectTrue(data?.responseCode === 200);
                                 httpRequest.destroy();
                                 done();
                             }
@@ -1038,7 +1038,7 @@ export default function httpRequestOptionsTest() {
                                 done();
                             } else {
                                 hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
-                                ExpectTrue(data?.responseCode == 200);
+                                ExpectTrue(data?.responseCode === 200);
                                 httpRequest.destroy();
                                 done();
                             }
@@ -1085,7 +1085,7 @@ export default function httpRequestOptionsTest() {
                                 done();
                             } else {
                                 hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
-                                ExpectTrue(data?.responseCode == 200);
+                                ExpectTrue(data?.responseCode === 200);
                                 httpRequest.destroy();
                                 done();
                             }
@@ -1125,7 +1125,7 @@ export default function httpRequestOptionsTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {
                             hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
-                            ExpectTrue(data?.responseCode == 200);
+                            ExpectTrue(data?.responseCode === 200);
                             httpRequest.destroy();
                             done();
                         }).catch((error: Error) => {
@@ -1169,7 +1169,7 @@ export default function httpRequestOptionsTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {
                             hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
-                            ExpectTrue(data?.responseCode == 200);
+                            ExpectTrue(data?.responseCode === 200);
                             httpRequest.destroy();
                             done();
                         }).catch((error: Error) => {
@@ -1213,7 +1213,7 @@ export default function httpRequestOptionsTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {
                             hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
-                            ExpectTrue(data?.responseCode == 200);
+                            ExpectTrue(data?.responseCode === 200);
                             httpRequest.destroy();
                             done();
                         }).catch((error: Error) => {
@@ -1259,7 +1259,7 @@ export default function httpRequestOptionsTest() {
                             (err: BusinessError<void>|null, data: http.HttpResponse| undefined) => {
                                 if (err?.code != 0) {
                                     hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
-                                    ExpectTrue(err?.code == 2300028);
+                                    ExpectTrue(err?.code === 2300028);
                                     httpRequest.destroy();
                                     done();
                                 } else {
@@ -1305,7 +1305,7 @@ export default function httpRequestOptionsTest() {
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions, (err: BusinessError<void>|null, data: http.HttpResponse| undefined) => {
                             if (err?.code != 0) {
                                 hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
-                                ExpectTrue(err?.code == 2300028);
+                                ExpectTrue(err?.code === 2300028);
                                 httpRequest.destroy();
                                 done();
                             } else {
@@ -1355,7 +1355,7 @@ export default function httpRequestOptionsTest() {
                             done();
                         }).catch((error: Error) => { let err = error as BusinessError;
                             hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
-                            ExpectTrue(err?.code == 2300028);
+                            ExpectTrue(err?.code === 2300028);
                             httpRequest.destroy();
                             done();
                         });
@@ -1399,7 +1399,7 @@ export default function httpRequestOptionsTest() {
                         }).catch((error: Error) => {
                             let err = error as BusinessError;
                             hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
-                            ExpectTrue(err?.code == 2300028);
+                            ExpectTrue(err?.code === 2300028);
                             httpRequest.destroy();
                             done();
                         });
@@ -1445,7 +1445,7 @@ export default function httpRequestOptionsTest() {
                                 done();
                             } else {
                                 hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
-                                ExpectTrue(data?.responseCode == 200);
+                                ExpectTrue(data?.responseCode === 200);
                                 httpRequest.destroy();
                                 done();
                             }
@@ -1486,7 +1486,7 @@ export default function httpRequestOptionsTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {
                             hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
-                            ExpectTrue(data?.responseCode == 200);
+                            ExpectTrue(data?.responseCode === 200);
                             httpRequest.destroy();
                             done();
                         }).catch((error: Error) => {

@@ -16,6 +16,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
 import { sleep } from './SendableLruCacheHelpers';
 import { ArkTSUtils } from '@kit.ArkTS'
+import { BusinessError } from '@kit.BasicServicesKit'
 
 export default function SendableLruCachePutTest() {
   describe('SendableLruCachePutTest', () => {
@@ -396,5 +397,20 @@ export default function SendableLruCachePutTest() {
       done();
     })
 
+    /**
+     * @tc.number  SUB_LRUCACHE_PUT_ONE_0100
+     * @tc.name    testLruCachePutOne0001
+     * @tc.desc    Verify put with null/undefined key and null value throws 401
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testLruCachePutOne0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let cache = new ArkTSUtils.SendableLruCache<number | string | undefined | null, number | string>(100)
+      cache.put('invalid' as Object as number, 'v')
+      cache.put(1, 'invalid' as Object as number)
+      expect(cache.length).assertEqual(2)
+      done()
+    })
   })
 }

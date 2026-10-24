@@ -59,8 +59,10 @@ export default function onScrollIndexFlow3() {
 it('onScrollIndexFlow3_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[onScrollIndexFlow3_static_0100] START');
       let driver = Driver.create();
+      await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id('onScrollIndex_scroller'));
-      await (btn?.click() as Promise<void>);
+      console.info("[onScrollIndexFlow3_static_0100] btn is: " + btn);
+      await btn!.click();
       await CommonFunc.sleep(2000);
 
       let strJson = inspector.getInspectorByKey('onScrollIndex_flow');

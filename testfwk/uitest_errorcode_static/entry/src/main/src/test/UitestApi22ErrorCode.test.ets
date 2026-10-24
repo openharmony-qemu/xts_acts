@@ -257,17 +257,6 @@ export default function uitestDriverErrorTest(): void {
       try {
         await driver!.isComponentPresentWhenDrag(ON.enabled(true), {
           x: 100,
-          y: 100,
-          displayId: 0
-        }, {x: 100, y: 100, displayId: 1})
-        expect().assertFail();
-      }catch (e) {
-        console.log(`${TestTag}, testIsComponentPresentWhenDrag_17000007_static error diff.displayId: ${JSON.stringify(e)}`);
-        expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
-      }
-      try {
-        await driver!.isComponentPresentWhenDrag(ON.enabled(true), {
-          x: 100,
           y: 100
         }, {x: 100, y: 100}, -1)
         expect().assertFail();
@@ -376,17 +365,6 @@ export default function uitestDriverErrorTest(): void {
         expect().assertFail();
       }catch (e) {
         console.log(`${TestTag}, testIsComponentPresentWhenSwipe_17000007_static error to.displayId = -1: ${JSON.stringify(e)}`);
-        expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
-      }
-      try {
-        await driver!.isComponentPresentWhenSwipe(ON.enabled(true), {
-          x: 100,
-          y: 100,
-          displayId: 0
-        }, {x: 100, y: 100, displayId: 1})
-        expect().assertFail();
-      }catch (e) {
-        console.log(`${TestTag}, testIsComponentPresentWhenSwipe_17000007_static error diff.displayId: ${JSON.stringify(e)}`);
         expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       try {

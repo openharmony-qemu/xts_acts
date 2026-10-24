@@ -15,6 +15,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
 import { ArkTSUtils, collections, taskpool } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 export let bitVector: collections.BitVector = new collections.BitVector(0);
 
@@ -209,5 +210,82 @@ export default function AsyncLocktest() {
         done()
       })
 
+    /**
+     * @tc.number  SUB_ASYNCLOCK_REQUEST_ONE_0100
+     * @tc.name    testAsyncLockRequestOne0001
+     * @tc.desc    Verify request with non-string name throws 401
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testAsyncLockRequestOne0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let pin = -1;
+      try {
+        ArkTSUtils.locks.AsyncLock.request(123 as Object as string);
+        expect().assertFail();
+      } catch (error) {
+        pin = (error as BusinessError).code;
+      }
+      expect(pin).assertEqual(401);
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_ASYNCLOCK_QUERY_ONE_0200
+     * @tc.name    testAsyncLockQueryOne0002
+     * @tc.desc    Verify query with non-string name throws 401
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testAsyncLockQueryOne0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      await ArkTSUtils.locks.AsyncLock.request('lockQuery001');
+      let pin = -1;
+      try {
+        ArkTSUtils.locks.AsyncLock.query(456 as Object as string);
+        expect().assertFail();
+      } catch (error) {
+        pin = (error as BusinessError).code;
+      }
+      expect(pin).assertEqual(401);
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_CALLBACK_ONE_0300
+     * @tc.name    testAsyncLockLockAsyncCallbackOne0003
+     * @tc.desc    Verify lockAsync with non-function callback does not throw 401 (returns pending Promise)
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testAsyncLockLockAsyncCallbackOne0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let lock = new ArkTSUtils.locks.AsyncLock();
+      let pending: Promise<void> = lock.lockAsync(123 as Object as () => void);
+      expect(typeof pending.then).assertEqual('function');
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_ASYNCLOCK_LOCKASYNC_ONE_0400
+     * @tc.name    testAsyncLockLockAsyncOne0004
+     * @tc.desc    Verify normal instance cannot reach 10200030
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testAsyncLockLockAsyncOne0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let lock = new ArkTSUtils.locks.AsyncLock();
+      let reached = false;
+      try {
+        await lock.lockAsync((): void => {});
+      } catch (error) {
+        if ((error as BusinessError).code === 10200030) {
+          reached = true;
+        }
+      }
+      expect(reached).assertFalse();
+      done()
+    })
   })
 }

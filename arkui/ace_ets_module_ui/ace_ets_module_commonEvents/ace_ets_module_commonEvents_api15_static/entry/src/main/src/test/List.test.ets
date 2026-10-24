@@ -64,12 +64,12 @@ export default function testsuite() {
   onkeyEventDispatchTest7();
   onkeyEventDispatchTest8();
   GetChangedPointerId(); 
+  swipeGestureTest(); 
   componentSnapshot(); 
   longpressGestureTest(); 
   panGestureTest(); 
   pinchGestureTest(); 
   rotationGestureTest(); 
-  swipeGestureTest(); 
   tapGestureTest(); 
   SnapshotOptions_region(); 
   setKeyProcessingModeTest();

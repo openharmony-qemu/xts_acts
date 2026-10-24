@@ -78,11 +78,16 @@ beforeEach(async (done: () => void): Promise<void> => {
      * @tc.level  LEVEL0
      */
     it('testOnInterceptKeyEventStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void):Promise<void> => {
-      await Utils.msSleep(1000)
       let driver = Driver.create();
+      await Utils.msSleep(1000)
+      let displayId:number=0;
+      const componentWebView=await driver.findComponent(ON.id('WebOnInterceptKeyEventWebView'));
+      if(componentWebView!=null){
+        displayId=await componentWebView.getDisplayId();
+      }
       Utils.emitEvent("emitOnInterceptKeyEvent002", 10)
       await Utils.msSleep(1000)
-      await driver.triggerKey(2046);
+      await driver.triggerKey(2046,displayId.toInt());
       await Utils.msSleep(3000)
       let buttonClick = await driver.findComponent((ON.id('WebOnInterceptKeyEventWebView')));
       await Utils.msSleep(1000)
@@ -90,7 +95,7 @@ beforeEach(async (done: () => void): Promise<void> => {
         await buttonClick.click();
       }
       await Utils.msSleep(5000)
-      await driver.triggerKey(2047);
+      await driver.triggerKey(2047,displayId.toInt());
       await Utils.msSleep(5000)
       Utils.registerEvent("testOnInterceptKeyEvent002", 2047, 70422, done);
       await Utils.msSleep(3000)
@@ -111,7 +116,12 @@ beforeEach(async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       Utils.emitEvent("emitOnInterceptKeyEvent003", 10)
       await Utils.msSleep(1000)
-      await driver.triggerKey(2047);
+      let displayId:number=0;
+      const componentWebView=await driver.findComponent(ON.id('WebOnInterceptKeyEventWebView'));
+      if(componentWebView!=null){
+        displayId=await componentWebView.getDisplayId();
+      }
+      await driver.triggerKey(2047,displayId.toInt());
       await Utils.msSleep(3000)
       let buttonClick = await driver.findComponent((ON.id('WebOnInterceptKeyEventWebView')));
       await Utils.msSleep(1000)
@@ -119,7 +129,7 @@ beforeEach(async (done: () => void): Promise<void> => {
         await buttonClick.click();
       }
       await Utils.msSleep(5000)
-      await driver.triggerKey(2047);
+      await driver.triggerKey(2047,displayId.toInt());
       await Utils.msSleep(5000)
       Utils.registerEvent("testOnInterceptKeyEvent003", 2047, 70425, done);
       await Utils.msSleep(3000)

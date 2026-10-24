@@ -3,6 +3,7 @@ import { hilog } from "@kit.PerformanceAnalysisKit";
 import { isArrayArrayEqual, isArrayEqual, isObjectEqual } from "./pages/Util";
 import { sleep } from "./pages/Utils";
 import { collections } from '@kit.ArkTS'
+import { BusinessError } from '@kit.BasicServicesKit';
 
 export default function CollectionsArraySliceTest() {
   describe('CollectionsArraySliceTest', () => {
@@ -416,5 +417,21 @@ export default function CollectionsArraySliceTest() {
       expect(isArrayEqual(Array.from(res), [4, 5, 6])).assertTrue()
       Done()
     })
+
+    /**
+     * @tc.number  SUB_ARRAY_SLICE_INDEP_0100
+     * @tc.name    testArraySliceIndep0001
+     * @tc.desc    Verify slice returns new array independent from source
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testArraySliceIndep0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = collections.Array.from<number>([1, 2, 3, 4, 5]);
+      let s = arr.slice(1, 4);
+      expect(s === arr).assertFalse();
+      arr.push(99);
+      expect(s.length).assertEqual(3);
+    });
   })
 }

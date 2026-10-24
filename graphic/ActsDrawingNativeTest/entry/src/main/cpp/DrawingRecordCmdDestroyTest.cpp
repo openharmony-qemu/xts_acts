@@ -20,11 +20,11 @@
 #include <thread>
 #include "include/OhosCommonTest.h"
 
-#define DRAWING_NUMBER_2 2
-#define DRAWING_NUMBER_5 5
-#define DRAWING_NUMBER_10 10
-#define DRAWING_NUMBER_200 200
-#define DRAWING_NUMBER_0XFF 0xFF
+#define NUMBER_2 2
+#define NUMBER_5 5
+#define NUMBER_10 10
+#define NUMBER_200 200
+#define NUMBER_0XFF 0xFF
 
 
 namespace OHOS {
@@ -74,14 +74,14 @@ OH_Drawing_RecordCmd* threadFunctionTest1()
     // 创建一个画笔Pen对象，Pen对象用于形状的边框线绘制
     OH_Drawing_Pen* cPen = OH_Drawing_PenCreate();
     OH_Drawing_PenSetAntiAlias(cPen, true);
-    OH_Drawing_PenSetColor(cPen, OH_Drawing_ColorSetArgb(DRAWING_NUMBER_0XFF, DRAWING_NUMBER_0XFF, 0, 0));
+    OH_Drawing_PenSetColor(cPen, OH_Drawing_ColorSetArgb(NUMBER_0XFF, NUMBER_0XFF, 0, 0));
     OH_Drawing_PenSetWidth(cPen, penWidth);
     OH_Drawing_PenSetJoin(cPen, LINE_ROUND_JOIN);
     // 将Pen画笔设置到canvas中
     OH_Drawing_CanvasAttachPen(canvas, cPen);
     // 创建一个画刷Brush对象，Brush对象用于形状的填充
     OH_Drawing_Brush* cBrush = OH_Drawing_BrushCreate();
-    OH_Drawing_BrushSetColor(cBrush, OH_Drawing_ColorSetArgb(DRAWING_NUMBER_0XFF, 0, DRAWING_NUMBER_0XFF, 0));
+    OH_Drawing_BrushSetColor(cBrush, OH_Drawing_ColorSetArgb(NUMBER_0XFF, 0, NUMBER_0XFF, 0));
     // 将Brush画刷设置到canvas中
     OH_Drawing_CanvasAttachBrush(canvas, cBrush);
     drawCircle(canvas, width);

@@ -16,10 +16,7 @@
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
 import image from '@ohos.multimedia.image'
 import { describe, it, expect, beforeAll, Level } from '@ohos/hypium-dynamic'
-import {
-  photoKeys,
-  fetchOption, getPermission, driveFn, sleep,
-} from '../common'
+import { photoKeys, fetchOption, getPermission, driveFn, sleep, checkResourceFile, createResource } from '../common'
 import common from '@ohos.app.ability.common'
 
 export default function requestImageTest() {
@@ -31,6 +28,9 @@ export default function requestImageTest() {
       await getPermission();
       await driveFn();
       await sleep(1000);
+      const fileNames: Array<string> = ["request_image.jpg"];
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNames);
     });
     /**
      * @tc.name   request_image_000

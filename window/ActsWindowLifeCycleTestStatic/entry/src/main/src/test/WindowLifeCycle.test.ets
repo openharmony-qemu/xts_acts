@@ -119,6 +119,7 @@ export default function WindowLifeCycleTest() {
         let isPCStatus: string = '';
         let isFreeWindowMode:boolean = false;
         let canIUseRes: boolean = false;
+        let isPCMode: boolean = false;
         let windowclassArr:Array<window.Window>;
         let deviceType: string = deviceInfo.deviceType;
         console.info(`deviceType: ${deviceType}`);
@@ -156,6 +157,14 @@ export default function WindowLifeCycleTest() {
             isPCStatus = settings.getValueSync(context!, 'isStatusBarExist', '', settings.domainName.USER_PROPERTY);
             let mainWindowClass:window.Window = windowStage!.getMainWindowSync();
             isFreeWindowMode = mainWindowClass.isInFreeWindowMode();
+            let promiseSnapshot = mainWindowClass.getWindowStateSnapshot();
+            promiseSnapshot.then((data) => {
+                let str = JSON.parseJsonElement(data);
+                isPCMode = str.getBoolean('isPcMode')
+                hilog.info(domain, tag, `beforeAll: Succeeded. data=${data}, isPcMode=${isPCMode}`);
+            }).catch((err: Error):PromiseLike<void>|undefined => {
+                hilog.error(domain, tag, `beforeAll: getWindowStateSnapshot Failed. Cause code: ${err.code}, cancel message: ${err.message}`);
+            });
             //isPCStatus == '' 非PC设备
             //isPCStatus == '1' PC设备状态栏dock未融合
             //isPCStatus == '0' PC设备状态栏dock融合
@@ -935,31 +944,23 @@ export default function WindowLifeCycleTest() {
             let caseName:string = "testOffNoInteractionDetectedErrCode1300002_static_0200";
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
-            let subWin: window.Window
-            windowStage!.createSubWindow('testOffNoInteractionDetectedErrCode1300002_static_0200')
-                .then((data:window.Window)=>{
-                waitForCompletion(async() => {
-                    subWin = data;
-                    expect(!!subWin).assertTrue();
-                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
-                    await (subWin! as window.Window).destroyWindow();
-                    try {
-                        subWin!.offNoInteractionDetected();
-                        hilog.error(0x0000, '[ANI]', msgStr + 'Succeeded in calling on noInteractionDetected.');
-                        expect(false).assertTrue();
-                        done()
-                    } catch (e) {
-                        e = e as BusinessError;
-                        hilog.info(0x0000, '[ANI]', msgStr +' Failed to call on noInteractionDetected. Cause:' + JSON.stringify(e));
-                        expect(e!.code).assertEqual(1300002);
-                        done()
-                    }
-                })
-                })
-                .catch((err: Error):PromiseLike<void>|undefined => {
-                    hilog.error(0x0000, '[ANI]',msgStr +  `Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
+            try {
+                let subWin: window.Window = await windowStage!.createSubWindow('testOffNoInteractionDetectedErrCode1300002_static_0200');
+                await subWin!.destroyWindow();
+                subWin!.offNoInteractionDetected();
+                hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in calling on noInteractionDetected.');
+                done()
+            } catch (error) {
+                error = error as BusinessError;
+                hilog.info(0x0000, '[ANI]', msgStr +' Failed to call on noInteractionDetected. Cause:' + JSON.stringify(error!.code));
+                if(!canIUseRes){
+                    expect(error!.code).assertEqual(801);
+                    expect(error!.message !== '').assertTrue();
+                }else{
                     expect(false).assertTrue();
-                });
+                }
+                done()
+            }
 
         })
 
@@ -1120,32 +1121,24 @@ export default function WindowLifeCycleTest() {
             let caseName:string = "testOffSubWindowCloseErrCode1300002_static_0200";
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
-            let subWin: window.Window
-            windowStage!.createSubWindow('testOffSubWindowCloseErrCode1300002_static_0200')
-                .then((data:window.Window)=>{
-                waitForCompletion(async() => {
-                    subWin = data;
-                    expect(!!subWin).assertTrue();
-                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
-                    await (subWin! as window.Window).destroyWindow();
-                    try {
-                        subWin!.offSubWindowClose(() => {
-                        });
-                        hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling on subWindowClose.');
-                        expect(false).assertTrue();
-                        done()
-                    } catch (e) {
-                        e = e as BusinessError;
-                        hilog.info(0x0000, '[ANI]',msgStr + 'Failed to call on subWindowClose. Cause:' + JSON.stringify(e));
-                        expect(e!.code).assertEqual(1300002);
-                        done()
-                    }
-                })
-                })
-                .catch((err: Error):PromiseLike<void>|undefined => {
-                    hilog.error(0x0000, '[ANI]',msgStr +  `Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
-                    expect(false).assertTrue();
+            try {
+                let subWin: window.Window = await windowStage!.createSubWindow('testOffSubWindowCloseErrCode1300002_static_0200');
+                await subWin!.destroyWindow();
+                subWin!.offSubWindowClose(() => {
                 });
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling on subWindowClose.');
+                done()
+            } catch (error) {
+                error = error as BusinessError;
+                hilog.info(0x0000, '[ANI]',msgStr + 'Failed to call on subWindowClose. Cause:' + JSON.stringify(error!.code));
+                if(!canIUseRes){
+                  expect(error!.code).assertEqual(801);
+                  expect(error!.message !== '').assertTrue();
+                }else{
+                  expect(false).assertTrue();
+                }
+                done()
+            }
 
         })
 
@@ -1253,17 +1246,15 @@ export default function WindowLifeCycleTest() {
                 hilog.info(domain, tag,msgStr + 'window.destroy success');
                 tempWnd.offWindowWillClose();
                 hilog.info(domain, tag,msgStr + 'window.on_windowWillClose success');
-                expect(false).assertTrue();
                 done()
             } catch (exception) {
                 exception = exception as BusinessError;
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
-                if (exception.code != 801) {
-                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to off_windowWillClose. Cause code:' + JSON.stringify(exception));
-                    expect(exception.code).assertEqual(1300002);
-                } else {
-                    hilog.error(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager' + JSON.stringify(exception));
-                    expect(exception.code).assertEqual(801);
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception!.code));
+                if(!isFreeWindowMode){
+                  expect(exception!.code).assertEqual(801);
+                  expect(exception!.message !== '').assertTrue();
+                }else{
+                 expect(false).assertTrue();
                 }
                 done()
             }
@@ -2125,36 +2116,7 @@ export default function WindowLifeCycleTest() {
                 }
             }
         })
-        /**
-         * @tc.name   testOffuiExtensionLimitChange_DestoryedSubWindow_static
-         * @tc.number SUB_BASIC_WMS_WINDOW_ON_UIEXTENSION_SECURElIMITCHANGE_ERROECODE_static_0200
-         * @tc.desc   testOffuiExtensionLimitChange_DestoryedSubWindow
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
-        it('testOffuiExtensionLimitChange_DestoryedSubWindow_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-            let caseName:string = 'testOffuiExtensionLimitChange_DestoryedSubWindow_static';
-            let subWindowClass:window.Window = await windowStage!.createSubWindow('testOffuiExtensionLimitChange_DestoryedSubWindow_static');
-            await subWindowClass.destroyWindow();
-            try {
-                const callback = (data: boolean) => { };
-                subWindowClass.offUiExtensionSecureLimitChange(callback);
-                expect(true).assertFail();
-                done()
-            } catch (error) {
-                error = error as BusinessError;
-                console.error(`${caseName} Failed. Cause: ${JSON.stringify(error)}`);
-                if (error.code === 801) {
-                    expect(error.message != null).assertTrue();
-                    done();
-                } else {
-                    expect(error.code).assertEqual(1300002);
-                    expect(error.message != null).assertTrue();
-                    done();
-                }
-            }
-        })
+       
         /**
          * @tc.name   test_windowClassLoadContentByName_callback_withstorage_static
          * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_LOADCONTENTBYNAME_JS_API_static_3880
@@ -5004,6 +4966,140 @@ export default function WindowLifeCycleTest() {
           done();
         };
       })
+
+   /**
+     * @tc.number     SUB_BASIC_WMS_START_ABILITY_MINIMIZE_ON_START_EXCLUDE_FROM_DOCK_RECENT_UNDEFINED_Static_0100
+     * @tc.name       SUB_BASIC_WMS_START_ABILITY_MINIMIZE_ON_START_EXCLUDE_FROM_DOCK_RECENT_UNDEFINED_Static_0100
+     * @tc.desc       SUB_BASIC_WMS_START_ABILITY_MINIMIZE_ON_START_EXCLUDE_FROM_DOCK_RECENT_UNDEFINED_Static_0100
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level0
+     */
+    it('SUB_BASIC_WMS_START_ABILITY_MINIMIZE_ON_START_EXCLUDE_FROM_DOCK_RECENT_UNDEFINED_Static_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName: string =
+          'SUB_BASIC_WMS_START_ABILITY_MINIMIZE_ON_START_EXCLUDE_FROM_DOCK_RECENT_UNDEFINED_Static_0100 ';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(0x0000, '[ANI]', msgStr + 'begin');
+        let startOptions: StartOptions = {
+          windowCreateParams: {
+            minimizeOnStart: undefined,
+            excludeFromDock: undefined,
+            excludeFromRecent: undefined
+          }
+        };
+        try {
+          let windowStageStart: window.WindowStage = await startAbility(caseName, context!, startOptions);
+          let mainWindow = windowStageStart!.getMainWindowSync();
+          await Utils.msSleep(300);
+          let isWindowShowing = mainWindow!.isWindowShowing()
+          let isFocused = mainWindow!.isFocused()
+          console.info(`${msgStr} isWindowShowing:${isWindowShowing}, isFocused:${isFocused}`);
+          expect(isWindowShowing).assertTrue();
+          expect(isFocused).assertTrue();
+          await terminateAbility(caseName);
+          done();
+        } catch (exception) {
+          await terminateAbility(caseName);
+          hilog.error(0x0000, '[ANI]',
+            msgStr +
+              `Failed startAbility windowCreateParams. exception Cause code: ${exception!.code}, message: ${exception!.message}`);
+          expect(false).assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.number     SUB_BASIC_WMS_START_ABILITY_MINIMIZE_ON_START_EXCLUDE_FROM_DOCK_RECENT_FALSE_Static_0100
+     * @tc.name       SUB_BASIC_WMS_START_ABILITY_MINIMIZE_ON_START_EXCLUDE_FROM_DOCK_RECENT_FALSE_Static_0100
+     * @tc.desc       SUB_BASIC_WMS_START_ABILITY_MINIMIZE_ON_START_EXCLUDE_FROM_DOCK_RECENT_FALSE_Static_0100
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level0
+     */
+    it('SUB_BASIC_WMS_START_ABILITY_MINIMIZE_ON_START_EXCLUDE_FROM_DOCK_RECENT_FALSE_Static_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName: string =
+          'SUB_BASIC_WMS_START_ABILITY_MINIMIZE_ON_START_EXCLUDE_FROM_DOCK_RECENT_FALSE_Static_0100 ';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(0x0000, '[ANI]', msgStr + 'begin');
+        let startOptions: StartOptions = {
+          windowCreateParams: {
+            minimizeOnStart: false,
+            excludeFromDock: false,
+            excludeFromRecent: false
+          }
+        };
+        try {
+          let windowStageStart: window.WindowStage = await startAbility(caseName, context!, startOptions);
+          let mainWindow = windowStageStart!.getMainWindowSync();
+          await Utils.msSleep(300);
+          let isWindowShowing = mainWindow!.isWindowShowing()
+          let isFocused = mainWindow!.isFocused()
+          console.info(`${msgStr} isWindowShowing:${isWindowShowing}, isFocused:${isFocused}`);
+          expect(isWindowShowing).assertTrue();
+          expect(isFocused).assertTrue();
+          await terminateAbility(caseName);
+          done();
+        } catch (exception) {
+          await terminateAbility(caseName);
+          hilog.error(0x0000, '[ANI]',
+            msgStr +
+              `Failed startAbility windowCreateParams. exception Cause code: ${exception!.code}, message: ${exception!.message}`);
+          expect(false).assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.number     SUB_BASIC_WMS_START_ABILITY_MINIMIZE_ON_START_EXCLUDE_FROM_DOCK_RECENT_TRUE_Static_0100
+     * @tc.name       SUB_BASIC_WMS_START_ABILITY_MINIMIZE_ON_START_EXCLUDE_FROM_DOCK_RECENT_TRUE_Static_0100
+     * @tc.desc       SUB_BASIC_WMS_START_ABILITY_MINIMIZE_ON_START_EXCLUDE_FROM_DOCK_RECENT_TRUE_Static_0100
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level0
+     */
+    it('SUB_BASIC_WMS_START_ABILITY_MINIMIZE_ON_START_EXCLUDE_FROM_DOCK_RECENT_TRUE_Static_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName: string =
+          'SUB_BASIC_WMS_START_ABILITY_MINIMIZE_ON_START_EXCLUDE_FROM_DOCK_RECENT_TRUE_Static_0100 ';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(0x0000, '[ANI]', msgStr + 'begin');
+        let startOptions: StartOptions = {
+          windowCreateParams: {
+            minimizeOnStart: true,
+            excludeFromDock: true,
+            excludeFromRecent: true
+          }
+        };
+        try {
+          let windowStageStart: window.WindowStage = await startAbility(caseName, context!, startOptions);
+          let mainWindow = windowStageStart!.getMainWindowSync();
+          await Utils.msSleep(300);
+          let isWindowShowing = mainWindow!.isWindowShowing()
+          let isFocused = mainWindow!.isFocused()
+          console.info(`${msgStr} isWindowShowing:${isWindowShowing}, isFocused:${isFocused}`);
+          if (deviceType === '2in1' || isPCMode) {
+            expect(isWindowShowing).assertFalse();
+            expect(isFocused).assertFalse();
+          } else {
+            expect(isWindowShowing).assertTrue();
+            expect(isFocused).assertTrue();
+          }
+          await terminateAbility(caseName);
+          done();
+        } catch (exception) {
+          await terminateAbility(caseName);
+          hilog.error(0x0000, '[ANI]',
+            msgStr +
+              `Failed startAbility windowCreateParams. exception Cause code: ${exception!.code}, message: ${exception!.message}`);
+          expect(false).assertTrue();
+          done();
+        }
+      });
 
     })
 

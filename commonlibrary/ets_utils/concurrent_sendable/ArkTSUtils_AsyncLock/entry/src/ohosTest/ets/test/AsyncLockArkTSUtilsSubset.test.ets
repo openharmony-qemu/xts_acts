@@ -15,6 +15,7 @@
 
 import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium';
 import { ArkTSUtils, lang, taskpool } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 import { Sleep } from './utils/utils';
 import {
   exclusiveTask,
@@ -26,6 +27,19 @@ import {
   sharedTaskTime,
   sharedTimeTask
 } from './utils/arkTSUtilsCommon';
+
+
+
+class SupAbortSignal001 {
+  aborted: boolean = false;
+  reason: string = '';
+}
+
+@Concurrent
+function supAsyncLockWorkerCtx001(name: string): number {
+  let held = ArkTSUtils.locks.AsyncLock.query(name).held;
+  return held.length > 0 ? held[0].contextId : -1;
+}
 
 export default function AsyncLockArkTSUtilsSubsetTest() {
   describe('AsyncLockArkTSUtilsSubsetTest', () => {
@@ -1472,5 +1486,118 @@ export default function AsyncLockArkTSUtilsSubsetTest() {
       done()
     })
 
+
+
+
+    /**
+     * @tc.number  SUB_ASYNCLOCK_QUERYALL_NAMES_0400
+     * @tc.name    testAsyncLockQueryAllNames0004
+     * @tc.desc    Verify queryAll returns a states array with items for created locks
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testAsyncLockQueryAllNames0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      await ArkTSUtils.locks.AsyncLock.request('nameA001');
+      await ArkTSUtils.locks.AsyncLock.request('nameB001');
+      await ArkTSUtils.locks.AsyncLock.request('nameC001');
+      let states = ArkTSUtils.locks.AsyncLock.queryAll();
+      expect(Array.isArray(states)).assertTrue();
+      expect(states.length >= 3).assertTrue();
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_ASYNCLOCK_CONTEXTID_CROSS_0300
+     * @tc.name    testAsyncLockContextIdCross0003
+     * @tc.desc    Verify contextId is equal across main and worker (actual)
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testAsyncLockContextIdCross0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      await ArkTSUtils.locks.AsyncLock.request('sharedCtxLock001');
+      let heldMain = ArkTSUtils.locks.AsyncLock.query('sharedCtxLock001').held;
+      let cidMain = heldMain.length > 0 ? heldMain[0].contextId : -1;
+      let cidWorker = await taskpool.execute(new taskpool.Task(supAsyncLockWorkerCtx001, 'sharedCtxLock001')) as number;
+      expect(Number.isFinite(cidMain)).assertTrue();
+      expect(Number.isFinite(cidWorker)).assertTrue();
+      expect(cidMain === cidWorker).assertTrue();
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_ABORT_REASON_0001
+     * @tc.name    testLockAsyncAbortReason0001
+     * @tc.desc    Verify aborted signal skips callback and rejects without propagating signal.reason (actual)
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testLockAsyncAbortReason0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let lock = new ArkTSUtils.locks.AsyncLock();
+      let holdOpts = new ArkTSUtils.locks.AsyncLockOptions<string>();
+      holdOpts.isAvailable = true;
+      holdOpts.timeout = 0;
+      holdOpts.signal = null;
+      lock.lockAsync(async (): Promise<void> => { await Sleep(800); },
+        ArkTSUtils.locks.AsyncLockMode.EXCLUSIVE, holdOpts);
+      let abortOpts = new ArkTSUtils.locks.AsyncLockOptions<string>();
+      abortOpts.isAvailable = true;
+      abortOpts.timeout = 0;
+      const REASON = 'abort-reason-X';
+      let abortSignal = new SupAbortSignal001();
+      abortSignal.aborted = true;
+      abortSignal.reason = REASON;
+      abortOpts.signal = abortSignal as Object as ArkTSUtils.locks.AbortSignal<string>;
+      let callbackRan = false;
+      let caught: Object | null = null;
+      try {
+        await lock.lockAsync(async (): Promise<void> => { callbackRan = true; },
+          ArkTSUtils.locks.AsyncLockMode.EXCLUSIVE, abortOpts);
+      } catch (err) {
+        caught = err as Object;
+      }
+      expect(callbackRan).assertEqual(false);
+      expect(caught !== null).assertTrue();
+      expect(JSON.stringify(caught).indexOf(REASON) < 0).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_ABORT_SIGNAL_SAMETHREAD_0001
+     * @tc.name    testAbortSignalSameThread0001
+     * @tc.desc    Verify AbortSignal same-thread abort rejects lockAsync and skips callback (cross-thread access is UB)
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testAbortSignalSameThread0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      const TAG = 'testAbortSignalSameThread0001';
+      try {
+        let lock = new ArkTSUtils.locks.AsyncLock();
+        let opts = new ArkTSUtils.locks.AsyncLockOptions<string>();
+        opts.isAvailable = true;
+        opts.timeout = 0;
+        let sameThreadSignal = new SupAbortSignal001();
+        sameThreadSignal.aborted = true;
+        sameThreadSignal.reason = 'same-thread-abort';
+        opts.signal = sameThreadSignal as Object as ArkTSUtils.locks.AbortSignal<string>;
+        let ran = false;
+        let caught: Object | null = null;
+        try {
+          await lock.lockAsync(async (): Promise<void> => { ran = true; },
+            ArkTSUtils.locks.AsyncLockMode.SHARED, opts);
+        } catch (err) {
+          caught = err as Object;
+        }
+        expect(ran).assertEqual(false);
+        expect(caught !== null).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+      done();
+    })
   })
 }

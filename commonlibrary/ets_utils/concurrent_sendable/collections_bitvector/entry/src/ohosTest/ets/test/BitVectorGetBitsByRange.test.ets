@@ -14,6 +14,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { collections } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 export default function BitVectorGetBitsByRangeTest() {
   describe('BitVectorGetBitsByRangeTest', () => {
@@ -909,5 +910,249 @@ export default function BitVectorGetBitsByRangeTest() {
         }
         done()
       });
+
+    /**
+     * @tc.number  SUB_BITVECTOR_GETRANGE_ONE_0100
+     * @tc.name    testBitVectorGetRange0001
+     * @tc.desc    Verify sub-vector push independent from source
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorGetRange0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src = new collections.BitVector(0);
+      src.push(1); src.push(0); src.push(1); src.push(0);
+      let sub = src.getBitsByRange(1, 3);
+      sub.push(1);
+      expect(sub.length).assertEqual(3);
+      expect(sub[2]).assertEqual(1);
+      expect(src.length).assertEqual(4);
+    });
+
+    /**
+     * @tc.number  SUB_BITVECTOR_GETRANGE_ONE_0200
+     * @tc.name    testBitVectorGetRange0002
+     * @tc.desc    Verify sub-vector pop independent from source
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorGetRange0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src = new collections.BitVector(0);
+      src.push(1); src.push(0); src.push(1); src.push(0);
+      let sub = src.getBitsByRange(1, 3);
+      let r = sub.pop();
+      expect(r).assertEqual(1);
+      expect(sub.length).assertEqual(1);
+      expect(src.length).assertEqual(4);
+    });
+
+    /**
+     * @tc.number  SUB_BITVECTOR_GETRANGE_ONE_0300
+     * @tc.name    testBitVectorGetRange0003
+     * @tc.desc    Verify sub-vector setBitsByRange does not affect source
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorGetRange0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src = new collections.BitVector(0);
+      src.push(1); src.push(0); src.push(1); src.push(0);
+      let sub = src.getBitsByRange(0, 4);
+      sub.setBitsByRange(1, 0, 2);
+      expect(sub[0]).assertEqual(1);
+      expect(sub[1]).assertEqual(1);
+      expect(src[1]).assertEqual(0);
+    });
+
+    /**
+     * @tc.number  SUB_BITVECTOR_GETRANGE_ONE_0400
+     * @tc.name    testBitVectorGetRange0004
+     * @tc.desc    Verify sub-vector setAllBits does not affect source
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorGetRange0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src = new collections.BitVector(0);
+      src.push(0); src.push(0); src.push(0);
+      let sub = src.getBitsByRange(0, 3);
+      sub.setAllBits(1);
+      expect(sub.getBitCountByRange(1, 0, 3)).assertEqual(3);
+      expect(src.getBitCountByRange(1, 0, 3)).assertEqual(0);
+    });
+
+    /**
+     * @tc.number  SUB_BITVECTOR_GETRANGE_ONE_0500
+     * @tc.name    testBitVectorGetRange0005
+     * @tc.desc    Verify sub-vector flipBitByIndex does not affect source
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorGetRange0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src = new collections.BitVector(0);
+      src.push(0); src.push(0);
+      let sub = src.getBitsByRange(0, 2);
+      sub.flipBitByIndex(0);
+      expect(sub[0]).assertEqual(1);
+      expect(src[0]).assertEqual(0);
+    });
+
+    /**
+     * @tc.number  SUB_BITVECTOR_GETRANGE_ONE_0600
+     * @tc.name    testBitVectorGetRange0006
+     * @tc.desc    Verify sub-vector flipBitsByRange does not affect source
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorGetRange0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src = new collections.BitVector(0);
+      src.push(0); src.push(0); src.push(0);
+      let sub = src.getBitsByRange(0, 3);
+      sub.flipBitsByRange(0, 2);
+      expect(sub.getBitCountByRange(1, 0, 2)).assertEqual(2);
+      expect(src.getBitCountByRange(1, 0, 3)).assertEqual(0);
+    });
+
+    /**
+     * @tc.number  SUB_BITVECTOR_GETRANGE_ONE_0700
+     * @tc.name    testBitVectorGetRange0007
+     * @tc.desc    Verify sub-vector getBitCountByRange result
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorGetRange0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src = new collections.BitVector(0);
+      src.push(1); src.push(0); src.push(1); src.push(0);
+      let sub = src.getBitsByRange(0, 4);
+      expect(sub.getBitCountByRange(1, 0, 4)).assertEqual(2);
+    });
+
+    /**
+     * @tc.number  SUB_BITVECTOR_GETRANGE_ONE_0800
+     * @tc.name    testBitVectorGetRange0008
+     * @tc.desc    Verify sub-vector has result
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorGetRange0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src = new collections.BitVector(0);
+      src.push(0); src.push(1);
+      let sub = src.getBitsByRange(0, 2);
+      expect(sub.has(1, 0, 2)).assertTrue();
+    });
+
+    /**
+     * @tc.number  SUB_BITVECTOR_GETRANGE_ONE_0900
+     * @tc.name    testBitVectorGetRange0009
+     * @tc.desc    Verify sub-vector getIndexOf/getLastIndexOf result
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorGetRange0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src = new collections.BitVector(0);
+      src.push(0); src.push(1); src.push(0);
+      let sub = src.getBitsByRange(0, 3);
+      expect(sub.getIndexOf(1, 0, 3)).assertEqual(1);
+      expect(sub.getLastIndexOf(0, 0, 3)).assertEqual(2);
+    });
+
+    /**
+     * @tc.number  SUB_BITVECTOR_GETRANGE_ONE_1000
+     * @tc.name    testBitVectorGetRange0010
+     * @tc.desc    Verify sub-vector resize does not affect source
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorGetRange0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src = new collections.BitVector(0);
+      src.push(1); src.push(1); src.push(1); src.push(1);
+      let sub = src.getBitsByRange(0, 4);
+      sub.resize(2);
+      expect(sub.length).assertEqual(2);
+      expect(src.length).assertEqual(4);
+    });
+
+    /**
+     * @tc.number  SUB_BITVECTOR_GETRANGE_ONE_1100
+     * @tc.name    testBitVectorGetRange0011
+     * @tc.desc    Verify sub-vector values order
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorGetRange0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src = new collections.BitVector(0);
+      src.push(0); src.push(1);
+      let sub = src.getBitsByRange(0, 2);
+      let collected: number[] = [];
+      for (let v of sub.values()) {
+        collected.push(v);
+      }
+      expect(collected[0]).assertEqual(0);
+      expect(collected[1]).assertEqual(1);
+    });
+
+    /**
+     * @tc.number  SUB_BITVECTOR_GETRANGE_ONE_1200
+     * @tc.name    testBitVectorGetRange0012
+     * @tc.desc    Verify sub-vector index read/write independent from source
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorGetRange0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src = new collections.BitVector(0);
+      src.push(0); src.push(1);
+      let sub = src.getBitsByRange(0, 2);
+      expect(sub[0]).assertEqual(0);
+      sub[0] = 1;
+      expect(sub[0]).assertEqual(1);
+      expect(src[0]).assertEqual(0);
+    });
+
+    /**
+     * @tc.number  SUB_BITVECTOR_GETRANGE_ONE_1300
+     * @tc.name    testBitVectorGetRange0013
+     * @tc.desc    Verify sub-vector deep copy independence
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorGetRange0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src = new collections.BitVector(0);
+      src.push(1); src.push(1); src.push(1); src.push(1);
+      let sub = src.getBitsByRange(0, 4);
+      sub.flipBitsByRange(0, 4);
+      sub.setAllBits(0);
+      sub.push(1);
+      expect(src.getBitCountByRange(1, 0, 4)).assertEqual(4);
+    });
+
+    /**
+     * @tc.number  SUB_BITVECTOR_GETRANGE_ONE_1400
+     * @tc.name    testBitVectorGetRange0014
+     * @tc.desc    Verify getBitsByRange with wrong-typed index throws 401
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorGetRange0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let bv = new collections.BitVector(0);
+      bv.push(1);
+      let pin = -1;
+      try {
+        bv.getBitsByRange('x' as Object as number, 3);
+      } catch (error) {
+        pin = (error as BusinessError).code;
+      }
+      expect(pin).assertEqual(401);
+    });
   });
 }

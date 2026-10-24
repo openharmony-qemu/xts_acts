@@ -102,7 +102,10 @@ beforeEach(async (done: () => void): Promise<void> => {
           await insertBtn.click();
           await Utils.msSleep(2000);
         }
-        text = await testInput.getText();
+        testInput = await driver.findComponent(ON.text('OriginalInsertText'))
+        if(testInput!=null){
+          text = await testInput.getText();
+        }
         expect(text).assertEqual('OriginalInsertText');
 
         let delFBtn = await driver.findComponent(ON.text('deleteForward'))
@@ -112,7 +115,10 @@ beforeEach(async (done: () => void): Promise<void> => {
           await delFBtn.click();
           await Utils.msSleep(2000);
         }
-        text = await testInput.getText();
+        testInput = await driver.findComponent(ON.text('OriginalInsertTe'))
+        if(testInput!=null){
+          text = await testInput.getText();
+        }
         expect(text).assertEqual('OriginalInsertTe');
 
         let delBBtn = await driver.findComponent(ON.text('deleteBackward'))
@@ -122,7 +128,10 @@ beforeEach(async (done: () => void): Promise<void> => {
           await delBBtn.click();
           await Utils.msSleep(2000);
         }
-        text = await testInput.getText();
+        testInput = await driver.findComponent(ON.text('OriginalInsertTe'))
+        if(testInput!=null){
+          text = await testInput.getText();
+        }
         expect(text).assertEqual('OriginalInsertTe');
         let textRst = await driver.findComponent(ON.id('ResultShow'));
         expect(textRst != null).assertTrue();

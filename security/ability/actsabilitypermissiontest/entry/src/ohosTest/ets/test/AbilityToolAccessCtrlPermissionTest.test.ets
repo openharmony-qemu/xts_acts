@@ -111,5 +111,34 @@ export default function permissionTest() {
       }
       done();
     });
+
+    /**
+     * @tc.name   SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0190
+     * @tc.number SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0190
+     * @tc.desc   requestToolTicket without EXEC_PUBLIC_CLI_TOOL returns error 201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: Function) => {
+      let cliCmdInfos: Array<abilityToolAccessCtrl.CliCmdInfo> = [{
+        cliCmdName: 'ohos-aa',
+        subCliCmdName: 'start'
+      }];
+      let ticketParams: abilityToolAccessCtrl.TicketParams = {
+        ticketExpireTimeMs: 30000
+      };
+      try {
+        await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketParams);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (checkDeviceIsDevBoard()) {
+          expect(error.code).assertEqual(24010002);
+        } else {
+          expect(error.code).assertEqual(201);
+        }
+      }
+      done();
+    });
   });
 }

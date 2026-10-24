@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 import getPhotoAccessHelperTest from './getPhotoAccessHelper.test';
-import provisionResourcesTest from './provisionResources.test';
 import checkAlbumAttrTest from './AbsAlbum/checkAttr.test';
 import albumGetAssetsTest from './AbsAlbum/getAssets.test';
 import addAssetsTest from './Album/addAssets.test';
@@ -58,8 +57,6 @@ import unRegisterChangeTest from './PhotoAccessHelper/unRegisterChange.test';
 import registerChangeTest from './PhotoAccessHelper/registerChange.test';
 import releaseTest from './PhotoAccessHelper/release.test';
 import photoPickerTest from './PhotoAccessHelper/photoPicker.test';
-import PhotoAccessHelperCasesTest from  './PhotoAccessHelperCases/PhotoAccessHelperTest.test';
-//import photoAccessHelperTest from './photoAccessHelperTest/PhotoAccessHelper.test';
 import checkAttrTest from './PhotoAsset/checkAttr.test';
 import closeTest from './PhotoAsset/close.test';
 import commitModifyTest from './PhotoAsset/commitModify.test';
@@ -94,7 +91,6 @@ import checkPhotoUrisReadPermissionTest from './PhotoAccessHelper/checkPhotoUris
 import quickRequestImageTest from './MediaAssetManager/quickRequestImage.test';
 
 export default function testsuite() {
-  provisionResourcesTest();
   getPhotoAccessHelperTest();
   checkAlbumAttrTest();
   albumGetAssetsTest();
@@ -141,8 +137,6 @@ export default function testsuite() {
   registerChangeTest();
   releaseTest();
   photoPickerTest();
-  PhotoAccessHelperCasesTest();
-  //photoAccessHelperTest();
   checkAttrTest();
   closeTest();
   commitModifyTest();

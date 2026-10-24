@@ -105,7 +105,7 @@ export default function abilityTest(abilityContext) {
       let id: number;
 
       let subscribeCallBack = (err: BusinessError, data: CommonEventManager.CommonEventData) => {
-        console.debug("====>ACTS_StartAbility_2100 Subscribe CallBack data:====>" + JSON.stringify(data));
+        console.info("====>ACTS_StartAbility_2100 Subscribe CallBack data:====>" + JSON.stringify(data));
 
         let processInfoCheck = async (data: CommonEventManager.CommonEventData): Promise<void> => {
           console.info('====> ACTS_StartAbility_2100=====>');
@@ -124,13 +124,13 @@ export default function abilityTest(abilityContext) {
       }
 
       commonEvent.createSubscriber(subscriberInfoMultiInstance).then(async (data) => {
-        console.debug("====>Create0100 Subscriber====>");
+        console.info("====>Create0100 Subscriber====>");
         subscriber = data;
         commonEvent.subscribe(subscriber, subscribeCallBack);
       })
 
       let unSubscribeCallback = (): void => {
-        console.debug("====>UnSubscribe0100 CallBack====>");
+        console.info("====>UnSubscribe0100 CallBack====>");
       }
 
       let timeout = (): void => {
@@ -164,11 +164,11 @@ export default function abilityTest(abilityContext) {
         let id: number;
 
         let subscribeCallBack = (err: BusinessError, data: CommonEventManager.CommonEventData) => {
-          console.debug("====>ACTS_StartAbility_2500 Subscribe CallBack data:====>" + JSON.stringify(data));
+          console.info("====>ACTS_StartAbility_2500 Subscribe CallBack data:====>" + JSON.stringify(data));
 
           let processInfoCheck = async (data: CommonEventManager.CommonEventData): Promise<void> => {
             console.info('====> ACTS_StartAbility_2500=====>');
-            expect(data.parameters!['displayId']).assertEqual(0);
+            expect(data.parameters!['displayId']).assertEqual(displayClassId);
             done();
           }
 
@@ -183,13 +183,13 @@ export default function abilityTest(abilityContext) {
         }
 
         commonEvent.createSubscriber(subscriberInfoMultiInstance).then(async (data) => {
-          console.debug("====>Create0300 Subscriber====>");
+          console.info("====>Create0300 Subscriber====>");
           subscriber = data;
           commonEvent.subscribe(subscriber, subscribeCallBack);
         })
 
         let unSubscribeCallback = (): void => {
-          console.debug("====>UnSubscribe0300 CallBack====>");
+          console.info("====>UnSubscribe0300 CallBack====>");
         }
 
         let timeout = (): void => {
@@ -224,11 +224,11 @@ export default function abilityTest(abilityContext) {
         let id: number;
 
         let subscribeCallBack = (err: BusinessError, data: CommonEventManager.CommonEventData) => {
-          console.debug("====>ACTS_StartAbility_2700 Subscribe CallBack data:====>" + JSON.stringify(data));
+          console.info("====>ACTS_StartAbility_2700 Subscribe CallBack data:====>" + JSON.stringify(data));
 
           let processInfoCheck = async (data: CommonEventManager.CommonEventData): Promise<void> => {
             console.info('====> ACTS_StartAbility_2700=====>');
-            expect(data.parameters!['displayId']).assertEqual(0);
+            expect(data.parameters!['displayId']).assertEqual(displayClassId);
             done();
           }
 
@@ -243,13 +243,13 @@ export default function abilityTest(abilityContext) {
         }
 
         commonEvent.createSubscriber(subscriberInfoMultiInstance).then(async (data) => {
-          console.debug("====>Create0400 Subscriber====>");
+          console.info("====>Create0400 Subscriber====>");
           subscriber = data;
           commonEvent.subscribe(subscriber, subscribeCallBack);
         })
 
         let unSubscribeCallback = (): void => {
-          console.debug("====>UnSubscribe0400 CallBack====>");
+          console.info("====>UnSubscribe0400 CallBack====>");
         }
 
         let timeout = (): void => {

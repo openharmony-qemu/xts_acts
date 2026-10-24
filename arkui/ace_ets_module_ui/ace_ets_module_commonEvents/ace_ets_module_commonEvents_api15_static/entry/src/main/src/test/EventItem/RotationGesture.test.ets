@@ -22,6 +22,7 @@ import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function rotationGestureEventTest() {
   describe('rotationGestureEvent', () => {
     beforeEach(async (): Promise<void> => {
@@ -78,16 +79,20 @@ it('RotationGesture1_static_0100', Level.LEVEL0, async (done: () => void): Promi
       await CommonFunc.sleep(1000);
       let pointers: PointerMatrix = PointerMatrix.create(2, 2);
       pointers.setPoint(0, 0, {
-        x: Math.round(areaObj1.left + areaWidth1 / 4).toInt(), y: Math.round(areaObj1.top + areaHeight1 / 4).toInt()
+        x: Math.round(areaObj1.left + areaWidth1 / 4).toInt(), y: Math.round(areaObj1.top + areaHeight1 / 4).toInt(),
+        displayId: displayID
       });
       pointers.setPoint(0, 1, {
-        x: Math.round(areaObj1.right - areaWidth1 / 2).toInt(), y: Math.round(areaObj1.top + areaHeight1 / 4).toInt()
+        x: Math.round(areaObj1.right - areaWidth1 / 2).toInt(), y: Math.round(areaObj1.top + areaHeight1 / 4).toInt(),
+        displayId: displayID
       });
       pointers.setPoint(1, 0, {
-        x: Math.round(areaObj1.right - areaWidth1 / 2).toInt(), y: Math.round(areaObj1.bottom - areaHeight1 / 4).toInt()
+        x: Math.round(areaObj1.right - areaWidth1 / 2).toInt(), y: Math.round(areaObj1.bottom - areaHeight1 / 4).toInt(),
+        displayId: displayID
       });
       pointers.setPoint(1, 1, {
-        x: Math.round(areaObj1.left + areaWidth1 / 4).toInt(), y: Math.round(areaObj1.bottom - areaHeight1 / 4).toInt()
+        x: Math.round(areaObj1.left + areaWidth1 / 4).toInt(), y: Math.round(areaObj1.bottom - areaHeight1 / 4).toInt(),
+        displayId: displayID
       });
       try {
         await driver.injectMultiPointerAction(pointers,2400);
@@ -100,7 +105,7 @@ it('RotationGesture1_static_0100', Level.LEVEL0, async (done: () => void): Promi
       console.info('[RotationGesture1_static_0100] component obj is: ' + JSON.stringify(obj));
       console.info('[RotationGesture1_static_0100] title: ' +
       JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('0');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual(displayID + '');
       console.info('[RotationGesture1_static_0100] END');
       done();
     });

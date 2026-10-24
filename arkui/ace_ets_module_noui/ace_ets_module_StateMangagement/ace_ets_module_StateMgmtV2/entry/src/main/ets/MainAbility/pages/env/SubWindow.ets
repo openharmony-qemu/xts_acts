@@ -16,7 +16,36 @@ import { uiObserver, window,UIUtils,display } from '@kit.ArkUI';
 import { common } from '@kit.AbilityKit';
 let subWindowClass: window.Window | undefined = undefined;
 let envNum: number = 0;
+
 @Entry
+@ComponentV2
+struct SubMainWindow {
+  @Local windowInfoInitialized: boolean = false;
+
+  aboutToAppear(): void {
+    this.windowInfoInitialized = this.isWindowInfoInitialized();
+    if (!this.windowInfoInitialized) {
+      setTimeout(() => {
+        this.windowInfoInitialized = this.isWindowInfoInitialized();
+      }, 500);
+    }
+  }
+
+  private isWindowInfoInitialized(): boolean {
+    return this.getUIContext().isWindowInfoInitialized();
+  }
+
+  build() {
+    Column() {
+      if (this.windowInfoInitialized) {
+        SubWindow();
+      } else {
+        Text('window info not initialized');
+      }
+    }
+  }
+}
+
 @ComponentV2
 struct SubWindow {
   @Local message: string = 'SubWindow';

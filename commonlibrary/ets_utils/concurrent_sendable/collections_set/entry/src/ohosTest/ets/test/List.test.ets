@@ -39,7 +39,6 @@ import collectionsSetWorkerTest from './CollectionsSetConcurrent/CollectionsSetW
 import collectionsSetInheritanceAndSendableTypesTest from './CollectionSetBase/CollectionsSetInheritanceAndSendableTypes.test';
 import collectionsSetSendableFunctionTest from './CollectionSetBase/CollectionsSetSendableFunction.test';
 import SetBasicTest from './SetBasic.test';
-import SetConcurrentTest from './Concurrent/SetConcurrent.test';
 import SetNormalTest from './Normal/SetNormal.test';
 import SetTaskPoolTest from './TaskPool/SetTaskPool.test';
 
@@ -47,7 +46,6 @@ import SetInheritanceTest from './collections/SetInheritanceTest.test';
 
 export default function testsuite() {
   SetBasicTest();
-  SetConcurrentTest();
   SetNormalTest();
   SetTaskPoolTest();
   

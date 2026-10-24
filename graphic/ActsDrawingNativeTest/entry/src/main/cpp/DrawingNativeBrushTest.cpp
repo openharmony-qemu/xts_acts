@@ -18,19 +18,19 @@
 #include "include/OhosCommonTest.h"
 #include "include/log_common.h"
 
-#define DRAWING_NUMBER_1 1
-#define DRAWING_NUMBER_2 2
-#define DRAWING_NUMBER_10 10
-#define DRAWING_NUMBER_32 32
-#define DRAWING_NUMBER_100 100
-#define DRAWING_NUMBER_128 128
-#define DRAWING_NUMBER_200 200
-#define DRAWING_NUMBER_201 201
-#define DRAWING_NUMBER_255 255
-#define DRAWING_NUMBER_400 400
-#define DRAWING_NUMBER_500 500
-#define DRAWING_NUMBER_12345678 12345678
-#define DRAWING_NUMBER_87654321 87654321
+#define NUMBER_1 1
+#define NUMBER_2 2
+#define NUMBER_10 10
+#define NUMBER_32 32
+#define NUMBER_100 100
+#define NUMBER_128 128
+#define NUMBER_200 200
+#define NUMBER_201 201
+#define NUMBER_255 255
+#define NUMBER_400 400
+#define NUMBER_500 500
+#define NUMBER_12345678 12345678
+#define NUMBER_87654321 87654321
 
 namespace OHOS {
 namespace Rosen {
@@ -71,7 +71,7 @@ int TestBrushCopyNormal()
     // add assert
     EXPECT_NE(brush1, nullptr);
     // 2. Set the color of brush 1 by calling OH_Drawing_BrushSetColor
-    OH_Drawing_BrushSetColor(brush1, DRAWING_NUMBER_12345678);
+    OH_Drawing_BrushSetColor(brush1, NUMBER_12345678);
     // 3. Copy brush 1 to create brush object 2 by calling OH_Drawing_BrushCopy
     OH_Drawing_Brush *brush2 = OH_Drawing_BrushCopy(brush1);
     // add assert
@@ -80,12 +80,12 @@ int TestBrushCopyNormal()
     EXPECT_NE(brush2, nullptr);
     // 4. Get the color of brush object 2 by calling OH_Drawing_BrushGetColor
     uint32_t color = OH_Drawing_BrushGetColor(brush2);
-    EXPECT_EQ(color, DRAWING_NUMBER_12345678);
+    EXPECT_EQ(color, NUMBER_12345678);
     // 5. Modify the color of brush object 1 by calling OH_Drawing_BrushSetColor
-    OH_Drawing_BrushSetColor(brush1, DRAWING_NUMBER_87654321);
+    OH_Drawing_BrushSetColor(brush1, NUMBER_87654321);
     // 6. Get the color of brush object 2 again by calling OH_Drawing_BrushGetColor
     color = OH_Drawing_BrushGetColor(brush2);
-    EXPECT_EQ(color, DRAWING_NUMBER_12345678);
+    EXPECT_EQ(color, NUMBER_12345678);
     // 7. Free memory
     OH_Drawing_BrushDestroy(brush1);
     OH_Drawing_BrushDestroy(brush2);
@@ -127,10 +127,10 @@ int TestBrushCopyInputDestroyed()
     // 3. Destroy brush object 1 by calling OH_Drawing_BrushDestroy
     OH_Drawing_BrushDestroy(brush1);
     // 4. Set the color of brush object 2 by calling OH_Drawing_BrushSetColor
-    OH_Drawing_BrushSetColor(brush2, DRAWING_NUMBER_12345678);
+    OH_Drawing_BrushSetColor(brush2, NUMBER_12345678);
     // 5. Get the color of brush object 2 by calling OH_Drawing_BrushGetColor
     uint32_t color = OH_Drawing_BrushGetColor(brush2);
-    EXPECT_EQ(color, DRAWING_NUMBER_12345678);
+    EXPECT_EQ(color, NUMBER_12345678);
     // 6. Free memory
     OH_Drawing_BrushDestroy(brush2);
     DrawingNativeBrushTestTearDown();
@@ -145,7 +145,7 @@ int TestBrushCopyMultipleCalls()
     // add assert
     EXPECT_NE(brush, nullptr);
     // 2. Call OH_Drawing_BrushCopy ten times in a loop
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_Brush *brushCopy = OH_Drawing_BrushCopy(brush);
         // add assert
         EXPECT_NE(brushCopy, nullptr);
@@ -270,12 +270,12 @@ int TestBrushGetColorNormal()
     // add assert
     EXPECT_NE(brush, nullptr);
     // 2. Set the color of the brush object by calling OH_Drawing_BrushSetColor
-    OH_Drawing_BrushSetColor(brush, DRAWING_NUMBER_12345678);
+    OH_Drawing_BrushSetColor(brush, NUMBER_12345678);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // 3. Get the color of the brush object by calling OH_Drawing_BrushGetColor
     uint32_t color = OH_Drawing_BrushGetColor(brush);
-    EXPECT_EQ(color, DRAWING_NUMBER_12345678);
+    EXPECT_EQ(color, NUMBER_12345678);
     // 4. Free memory
     OH_Drawing_BrushDestroy(brush);
     DrawingNativeBrushTestTearDown();
@@ -307,12 +307,12 @@ int TestBrushSetColorNormal()
     // add assert
     EXPECT_NE(brush, nullptr);
     // 2. Set the color of the brush object by calling OH_Drawing_BrushSetColor
-    OH_Drawing_BrushSetColor(brush, DRAWING_NUMBER_12345678);
+    OH_Drawing_BrushSetColor(brush, NUMBER_12345678);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // 3. Get the color of the brush object by calling OH_Drawing_BrushGetColor
     uint32_t color = OH_Drawing_BrushGetColor(brush);
-    EXPECT_EQ(color, DRAWING_NUMBER_12345678);
+    EXPECT_EQ(color, NUMBER_12345678);
     // 4. Free memory
     OH_Drawing_BrushDestroy(brush);
     DrawingNativeBrushTestTearDown();
@@ -327,7 +327,7 @@ int TestBrushSetColorNull()
     // add assert
     EXPECT_NE(brush, nullptr);
     // 2. Call OH_Drawing_BrushSetColor with nullptr as the first parameter
-    OH_Drawing_BrushSetColor(nullptr, DRAWING_NUMBER_12345678);
+    OH_Drawing_BrushSetColor(nullptr, NUMBER_12345678);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 3. Call OH_Drawing_BrushSetColor with 0 as the second parameter
@@ -349,11 +349,11 @@ int TestBrushSetColorAbnormal()
     // add assert
     EXPECT_NE(brush, nullptr);
     // 2. Call OH_Drawing_BrushSetColor with a negative number or a non-uint32_t type parameter as the second argument
-    OH_Drawing_BrushSetColor(brush, -DRAWING_NUMBER_1);
+    OH_Drawing_BrushSetColor(brush, -NUMBER_1);
     // Ignoring the test for passing a floating-point number, as it will result in an error
     // 3. Call OH_Drawing_BrushGetColor to get the brush color
     uint32_t color = OH_Drawing_BrushGetColor(brush);
-    EXPECT_EQ(color, std::pow(DRAWING_NUMBER_2, DRAWING_NUMBER_32) - DRAWING_NUMBER_1);
+    EXPECT_EQ(color, std::pow(NUMBER_2, NUMBER_32) - NUMBER_1);
     // 4. Free memory
     OH_Drawing_BrushDestroy(brush);
     DrawingNativeBrushTestTearDown();
@@ -369,7 +369,7 @@ int TestBrushSetColorMaximum()
     EXPECT_NE(brush, nullptr);
     // 2. Set the color of the brush object by calling OH_Drawing_BrushSetColor with a value greater than the maximum
     // value of uint32_t (0xFFFFFFFF)
-    OH_Drawing_BrushSetColor(brush, 0xFFFFFFFF + DRAWING_NUMBER_1);
+    OH_Drawing_BrushSetColor(brush, 0xFFFFFFFF + NUMBER_1);
     // 3. Get the color of the brush object by calling OH_Drawing_BrushGetColor
     uint32_t color = OH_Drawing_BrushGetColor(brush);
     EXPECT_EQ(color, 0);
@@ -387,7 +387,7 @@ int TestBrushSetGetColorMultipleTimes()
     EXPECT_NE(brush, nullptr);
     
     // 连续设置和获取颜色验证准确性
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         uint32_t setColor = 0xFFFF0000 + i;
         OH_Drawing_BrushSetColor(brush, setColor);
         
@@ -408,10 +408,10 @@ int TestBrushGetAlphaNormal()
     // add assert
     EXPECT_NE(brush, nullptr);
     // 2. Set the alpha value of the brush object by calling OH_Drawing_BrushSetAlpha
-    OH_Drawing_BrushSetAlpha(brush, DRAWING_NUMBER_128);
+    OH_Drawing_BrushSetAlpha(brush, NUMBER_128);
     // 3. Get the alpha value of the brush object by calling OH_Drawing_BrushGetAlpha
     uint8_t alpha = OH_Drawing_BrushGetAlpha(brush);
-    EXPECT_EQ(alpha, DRAWING_NUMBER_128);
+    EXPECT_EQ(alpha, NUMBER_128);
     // 4. Free memory
     OH_Drawing_BrushDestroy(brush);
     DrawingNativeBrushTestTearDown();
@@ -443,10 +443,10 @@ int TestBrushSetAlphaNormal()
     // add assert
     EXPECT_NE(brush, nullptr);
     // 2. Set the alpha value of the brush object by calling OH_Drawing_BrushSetAlpha
-    OH_Drawing_BrushSetAlpha(brush, DRAWING_NUMBER_128);
+    OH_Drawing_BrushSetAlpha(brush, NUMBER_128);
     // 3. Get the alpha value of the brush object by calling OH_Drawing_BrushGetAlpha
     uint8_t alpha = OH_Drawing_BrushGetAlpha(brush);
-    EXPECT_EQ(alpha, DRAWING_NUMBER_128);
+    EXPECT_EQ(alpha, NUMBER_128);
     // 4. Free memory
     OH_Drawing_BrushDestroy(brush);
     DrawingNativeBrushTestTearDown();
@@ -461,7 +461,7 @@ int TestBrushSetAlphaNull()
     // add assert
     EXPECT_NE(brush, nullptr);
     // 2. Call OH_Drawing_BrushSetAlpha with nullptr as the first parameter
-    OH_Drawing_BrushSetAlpha(nullptr, DRAWING_NUMBER_128);
+    OH_Drawing_BrushSetAlpha(nullptr, NUMBER_128);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 3. Call OH_Drawing_BrushSetAlpha with 0 as the second parameter
@@ -480,10 +480,10 @@ int TestBrushSetAlphaAbnormal()
     // add assert
     EXPECT_NE(brush, nullptr);
     // 2. Call OH_Drawing_BrushSetAlpha with a negative number or a non-uint8_t type parameter as the second argument
-    OH_Drawing_BrushSetAlpha(brush, -DRAWING_NUMBER_1);
+    OH_Drawing_BrushSetAlpha(brush, -NUMBER_1);
     // 3. Call OH_Drawing_BrushGetAlpha to get the alpha value
     uint8_t alpha = OH_Drawing_BrushGetAlpha(brush);
-    EXPECT_EQ(alpha, DRAWING_NUMBER_255);
+    EXPECT_EQ(alpha, NUMBER_255);
     // 4. Free memory
     OH_Drawing_BrushDestroy(brush);
     DrawingNativeBrushTestTearDown();
@@ -499,7 +499,7 @@ int TestBrushSetAlphaMaximum()
     EXPECT_NE(brush, nullptr);
     // 2. Set the alpha value of the brush object by calling OH_Drawing_BrushSetAlpha with a value greater than the
     // maximum value of uint8_t (0xFFFFFFFF + 1)
-    OH_Drawing_BrushSetAlpha(brush, 0xFFFFFFFF + DRAWING_NUMBER_1);
+    OH_Drawing_BrushSetAlpha(brush, 0xFFFFFFFF + NUMBER_1);
     // 3. Get the alpha value of the brush object by calling OH_Drawing_BrushGetAlpha
     uint8_t alpha = OH_Drawing_BrushGetAlpha(brush);
     EXPECT_EQ(alpha, 0);
@@ -517,7 +517,7 @@ int TestBrushSetGetAlphaMultipleTimes()
     EXPECT_NE(brush, nullptr);
     
     // 连续设置和获取alpha验证准确性
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         uint8_t setAlpha = static_cast<uint8_t>(i * 25);
         OH_Drawing_BrushSetAlpha(brush, setAlpha);
         
@@ -538,10 +538,10 @@ int TestBrushSetShaderEffectNormal()
     // add assert
     EXPECT_NE(brush, nullptr);
     // 2. Create a shader object by calling OH_Drawing_ShaderEffectCreate
-    OH_Drawing_Point *startPt = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_400);
-    OH_Drawing_Point *endPt = OH_Drawing_PointCreate(DRAWING_NUMBER_200, DRAWING_NUMBER_500);
+    OH_Drawing_Point *startPt = OH_Drawing_PointCreate(NUMBER_100, NUMBER_400);
+    OH_Drawing_Point *endPt = OH_Drawing_PointCreate(NUMBER_200, NUMBER_500);
     uint32_t color[] = {0xFFFF0000, 0xFF00FF00};
-    float pos[] = {0, DRAWING_NUMBER_1};
+    float pos[] = {0, NUMBER_1};
     OH_Drawing_ShaderEffect *linearGradient =
         OH_Drawing_ShaderEffectCreateLinearGradient(startPt, endPt, color, pos, 2.0f, OH_Drawing_TileMode::CLAMP);
     // add assert
@@ -566,10 +566,10 @@ int TestBrushSetShaderEffectNull()
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
     // add assert
     EXPECT_NE(brush, nullptr);
-    OH_Drawing_Point *startPt = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_400);
-    OH_Drawing_Point *endPt = OH_Drawing_PointCreate(DRAWING_NUMBER_200, DRAWING_NUMBER_500);
+    OH_Drawing_Point *startPt = OH_Drawing_PointCreate(NUMBER_100, NUMBER_400);
+    OH_Drawing_Point *endPt = OH_Drawing_PointCreate(NUMBER_200, NUMBER_500);
     uint32_t color[] = {0xFFFF0000, 0xFF00FF00};
-    float pos[] = {0, DRAWING_NUMBER_1};
+    float pos[] = {0, NUMBER_1};
     OH_Drawing_ShaderEffect *linearGradient =
         OH_Drawing_ShaderEffectCreateLinearGradient(startPt, endPt, color, pos, 2.0f, OH_Drawing_TileMode::CLAMP);
     // add assert
@@ -598,7 +598,7 @@ int TestBrushSetShadowLayerNormal()
     EXPECT_NE(brush, nullptr);
     // 2. Create a shadow layer object by calling OH_Drawing_ShadowLayerCreate
     OH_Drawing_ShadowLayer *shadowLayer =
-        OH_Drawing_ShadowLayerCreate(DRAWING_NUMBER_10, DRAWING_NUMBER_10, DRAWING_NUMBER_10, DRAWING_NUMBER_12345678);
+        OH_Drawing_ShadowLayerCreate(NUMBER_10, NUMBER_10, NUMBER_10, NUMBER_12345678);
     // add assert
     EXPECT_NE(shadowLayer, nullptr);
     // add assert
@@ -621,7 +621,7 @@ int TestBrushSetShadowLayerNull()
     // add assert
     EXPECT_NE(brush, nullptr);
     OH_Drawing_ShadowLayer *shadowLayer =
-        OH_Drawing_ShadowLayerCreate(DRAWING_NUMBER_10, DRAWING_NUMBER_10, DRAWING_NUMBER_10, DRAWING_NUMBER_12345678);
+        OH_Drawing_ShadowLayerCreate(NUMBER_10, NUMBER_10, NUMBER_10, NUMBER_12345678);
     // add assert
     EXPECT_NE(shadowLayer, nullptr);
     // 2. Call OH_Drawing_BrushSetShadowLayer with nullptr as the first parameter
@@ -793,10 +793,10 @@ int TestBrushResetNormal()
     EXPECT_NE(brush, nullptr);
     uint32_t color1 = OH_Drawing_BrushGetColor(brush);
     // 2. Set the color for the brush object by calling OH_Drawing_BrushSetColor
-    OH_Drawing_BrushSetColor(brush, DRAWING_NUMBER_12345678);
+    OH_Drawing_BrushSetColor(brush, NUMBER_12345678);
     // 3. Get the color of the brush object by calling OH_Drawing_BrushGetColor
     uint32_t color2 = OH_Drawing_BrushGetColor(brush);
-    EXPECT_EQ(color2, DRAWING_NUMBER_12345678);
+    EXPECT_EQ(color2, NUMBER_12345678);
     // 4. Reset the state of the brush object by calling OH_Drawing_BrushReset
     OH_Drawing_BrushReset(brush);
     // add assert
@@ -868,7 +868,7 @@ int TestBrushGetAlphaFloatBoundary()
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(a, 0.0f);
     
-    OH_Drawing_BrushSetAlpha(brush, DRAWING_NUMBER_255);
+    OH_Drawing_BrushSetAlpha(brush, NUMBER_255);
     errorCode = OH_Drawing_BrushGetAlphaFloat(brush, &a);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(a, 1.0f);
@@ -970,7 +970,7 @@ int TestBrushSetColor4fNormal()
     float r = 0;
     float g = 0;
     float b = 0;
-    int num = DRAWING_NUMBER_201;
+    int num = NUMBER_201;
     OH_Drawing_ErrorCode errorCode = OH_Drawing_BrushSetColor4f(brush, 1.0f, 1.0f, 1.0f, 1.0f, nullptr);
     OH_Drawing_BrushGetAlphaFloat(brush, &a);
     OH_Drawing_BrushGetRedFloat(brush, &r);

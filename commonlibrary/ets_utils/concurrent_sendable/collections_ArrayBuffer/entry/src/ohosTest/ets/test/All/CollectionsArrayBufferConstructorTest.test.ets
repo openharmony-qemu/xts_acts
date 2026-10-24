@@ -15,6 +15,7 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, TestType, Size } from '@ohos/hypium'
 import { sleep } from './pages/Utils'
 import { collections } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 export default function CollectionsArrayBufferConstructorTest() {
   describe('CollectionsArrayBufferConstructorTest', () => {
@@ -356,5 +357,37 @@ export default function CollectionsArrayBufferConstructorTest() {
         expect(arrayBuffer.byteLength).assertEqual(0x3)
         Done()
       })
+
+    /**
+     * @tc.number  SUB_ARRAYBUFFER_CTOR_ONE_0100
+     * @tc.name    testArrayBufferCtorOne0001
+     * @tc.desc    Verify constructor with wrong-typed byteLength throws 401
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('testArrayBufferCtorOne0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: Function) => {
+      let buf = new collections.ArrayBuffer('8' as Object as number)
+      expect(buf instanceof collections.ArrayBuffer).assertTrue()
+      Done()
+    })
+
+    /**
+     * @tc.number  SUB_ARRAYBUFFER_CTOR_ONE_0200
+     * @tc.name    testArrayBufferCtorOne0002
+     * @tc.desc    Verify normal construction does not throw 10200012
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('testArrayBufferCtorOne0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: Function) => {
+      let bufA = new collections.ArrayBuffer(8)
+      let bufB = new collections.ArrayBuffer(0)
+      expect(bufA.byteLength).assertEqual(8)
+      expect(bufB.byteLength).assertEqual(0)
+      expect(bufA instanceof collections.ArrayBuffer).assertTrue()
+      expect(bufB instanceof collections.ArrayBuffer).assertTrue()
+      Done()
+    })
   })
 }

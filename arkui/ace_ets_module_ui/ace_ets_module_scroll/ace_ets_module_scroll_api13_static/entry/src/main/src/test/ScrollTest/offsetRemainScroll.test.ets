@@ -61,7 +61,10 @@ it('offsetRemainScroll_static_0100', Level.LEVEL1, async (done: () => void): Pro
       console.info('[offsetRemainScroll_static_0100] START');
       try {
         await CommonFunc.sleep(1000);
-        let swiperTabs: RectValue = CommonFunc.getComponentRectOnScreen('scroll_offsetRemain');
+        let driver = Driver.create()
+        let swipeComp = await driver.findComponent(ON.id('scroll_offsetRemain'));
+        let swiperTabs = await swipeComp!.getBounds();
+        let displayId = await swipeComp!.getDisplayId();
         let top = swiperTabs.top;
         let right = swiperTabs.right;
         let left = swiperTabs.left;
@@ -69,9 +72,18 @@ it('offsetRemainScroll_static_0100', Level.LEVEL1, async (done: () => void): Pro
         console.info("waterFlow6Jsunit_001 value is" + left + " --" + right + "--" + top + "--" + bottom);
         let height = bottom -top;
         let width = right - left;
-        let driver = Driver.create()
         await CommonFunc.sleep(1000);
-        await driver.swipe((Math.round(left + width/2)).toInt(),(Math.round(top + height*0.8)).toInt(),(Math.round(left + width/2)).toInt(),(Math.round(top + height*0.2)).toInt());
+        await driver.swipeBetween(
+          {
+            x: (Number.parseInt(`${(Math.round(left + width/2)).toInt()}`)).toInt(),
+            y: (Number.parseInt(`${(Math.round(top + height*0.8)).toInt()}`)).toInt(),
+            displayId: displayId
+          },
+          {
+            x: (Number.parseInt(`${(Math.round(left + width/2)).toInt()}`)).toInt(),
+            y: (Number.parseInt(`${(Math.round(top + height*0.2)).toInt()}`)).toInt(),
+            displayId: displayId
+          });
         await CommonFunc.sleep(2000);
         let strJson = inspector.getInspectorByKey('scroll_offsetRemain_text');
         console.info("[offsetRemainScroll_static_0100] component obj is: " + strJson);

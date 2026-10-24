@@ -860,12 +860,22 @@ export default function ActsBmsQueryAbilityByWant() {
           { "type": "prefixType/*" }, bundle.BundleFlag.GET_BUNDLE_DEFAULT, userId);
         console.info(`${TAG} Sub_Bms_Framework_Query_AbilityInfo_5220 success, res.length=${res.length}`);
         const list = ['TypeDoubleWildCard', 'TypeSingleWildCard', 'TypeString'];
+        let coveredCnt = 0;
         if (res && res.length) {
           for (let i = 0; i < res.length; i++) {
             console.info(`${TAG} Sub_Bms_Framework_Query_AbilityInfo_5220 res[${i}].description=${res[i].description}`);
-            expect(list.includes(res[i].description)).assertEqual(true);
+          }
+          for (let i = 0; i < list.length; i++) {
+            for (let j = 0; j < res.length; j++) {
+              if (res[j].description === list[i]) {
+                coveredCnt++;
+                break;
+              }
+            }
           }
         }
+        console.info(`${TAG} Sub_Bms_Framework_Query_AbilityInfo_5220 covered count=${coveredCnt}, expected=${list.length}`);
+        expect(coveredCnt).assertEqual(list.length);
       } catch (err) {
         console.error(`${TAG} Sub_Bms_Framework_Query_AbilityInfo_5220 fail, err=${JSON.stringify(err)}`);
         expect().assertFail();
@@ -889,12 +899,22 @@ export default function ActsBmsQueryAbilityByWant() {
           { "type": "prefixType/suffixType" }, bundle.BundleFlag.GET_BUNDLE_DEFAULT, userId);
         console.info(`${TAG} sub_Bms_Framework_Query_AbilityInfo_5240 success, res.length=${res.length}`);
         const list = ['TypeDoubleWildCard', 'TypeSingleWildCard', 'TypeString'];
+        let coveredCnt = 0;
         if (res && res.length) {
           for (let i = 0; i < res.length; i++) {
             console.info(`${TAG} sub_Bms_Framework_Query_AbilityInfo_5240 res[${i}].description=${res[i].description}`);
-            expect(list.includes(res[i].description)).assertEqual(true);
+          }
+          for (let i = 0; i < list.length; i++) {
+            for (let j = 0; j < res.length; j++) {
+              if (res[j].description === list[i]) {
+                coveredCnt++;
+                break;
+              }
+            }
           }
         }
+        console.info(`${TAG} sub_Bms_Framework_Query_AbilityInfo_5240 covered count=${coveredCnt}, expected=${list.length}`);
+        expect(coveredCnt).assertEqual(list.length);
       } catch (err) {
         console.error(`${TAG} sub_Bms_Framework_Query_AbilityInfo_5240 fail, err=${JSON.stringify(err)}`);
         expect().assertFail();
@@ -918,12 +938,22 @@ export default function ActsBmsQueryAbilityByWant() {
           { "type": "prefixTypeExt/suffixTypeExt" }, bundle.BundleFlag.GET_BUNDLE_DEFAULT, userId);
         console.info(`${TAG} Sub_Bms_Framework_Query_AbilityInfo_5740 success, res.length=${res.length}`);
         const list = ['TypeStringExt', 'TypeDoubleWildCard'];
+        let coveredCnt = 0;
         if (res && res.length) {
           for (let i = 0; i < res.length; i++) {
             console.info(`${TAG} Sub_Bms_Framework_Query_AbilityInfo_5740 res[${i}].description=${res[i].description}`);
-            expect(list.includes(res[i].description)).assertEqual(true);
+          }
+          for (let i = 0; i < list.length; i++) {
+            for (let j = 0; j < res.length; j++) {
+              if (res[j].description === list[i]) {
+                coveredCnt++;
+                break;
+              }
+            }
           }
         }
+        console.info(`${TAG} Sub_Bms_Framework_Query_AbilityInfo_5740 covered count=${coveredCnt}, expected=${list.length}`);
+        expect(coveredCnt).assertEqual(list.length);
       } catch (err) {
         console.error(`${TAG} Sub_Bms_Framework_Query_AbilityInfo_5740 fail, err=${JSON.stringify(err)}`);
         expect().assertFail();

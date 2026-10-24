@@ -110,6 +110,22 @@ export default function audioRendererTest() {
       console.info(`${TagFrmwkRender}: afterAll: Test suite-level cleanup condition`);
     })
 
+    let checkCarSupportSync = async(): Promise<boolean> => {
+        let audioManager = audio.getAudioManager();
+        let audioRoutingManager = audioManager!.getRoutingManager();
+        let outputDeviceDescription = await audioRoutingManager!.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+        console.info(`checkCarSupportSync outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+        if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+            console.info(`this device has external device.`)
+            return false;
+        } else if (outputDeviceDescription.length == 0) {
+            console.info(`this device has external device`)
+            return false;
+        } else {
+            return true;
+        }
+    }
+
     let filePath: string;
 
     let renderPlay = async () => {
@@ -172,29 +188,32 @@ export default function audioRendererTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_GETCURRENTOUTPUTDEVICES_PROMISE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      try {
-        await audioRen!.getCurrentOutputDevices().then((data: audio.AudioDeviceDescriptors) => {
-          console.info(`${TagFrmwkRender}: deviceRole:${data[0].deviceRole}, deviceType:${data[0].deviceType}, id:${data[0].id}, name:${data[0].name},
-            address:${data[0].address}, sampleRates:${data[0].sampleRates}, channelCounts:${data[0].channelCounts}, channelMasks:${data[0].channelMasks}`);
-          expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
-          expect(data[0].deviceType).assertEqual(audio.DeviceType.SPEAKER);
-          expect(data[0].id).assertEqual(testConst.OUTPUT_NUMBER_1);
-          done();
-        }).catch((error: Error) => {
-          console.log("${TagFrmwkRender}: getCurrentOutputDevices error = " + error);
-          expect(false).assertTrue();
-          done();
-        });
-      } catch (error) {
-        error = error as BusinessError;
-        console.info(`${TagFrmwkRender}: get current output deviceinfo unknown errro: [${error.code}, ${error.message}]`);
-        if (error.code === 5400106) {
-          done();
-        } else {
-          expect(false).assertTrue();
-          done();
+      if(await checkCarSupportSync()) {
+        try {
+          await audioRen!.getCurrentOutputDevices().then((data: audio.AudioDeviceDescriptors) => {
+            console.info(`${TagFrmwkRender}: deviceRole:${data[0].deviceRole}, deviceType:${data[0].deviceType}, id:${data[0].id}, name:${data[0].name},
+              address:${data[0].address}, sampleRates:${data[0].sampleRates}, channelCounts:${data[0].channelCounts}, channelMasks:${data[0].channelMasks}`);
+            expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
+            expect(data[0].deviceType).assertEqual(audio.DeviceType.SPEAKER);
+            expect(data[0].id).assertEqual(testConst.OUTPUT_NUMBER_1);
+            done();
+          }).catch((error: Error) => {
+            console.log("${TagFrmwkRender}: getCurrentOutputDevices error = " + error);
+            expect(false).assertTrue();
+            done();
+          });
+        } catch (error) {
+          error = error as BusinessError;
+          console.info(`${TagFrmwkRender}: get current output deviceinfo unknown errro: [${error.code}, ${error.message}]`);
+          if (error.code === 5400106) {
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
         }
       }
+      done();
     });
 
     /**
@@ -253,19 +272,22 @@ export default function audioRendererTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_GETCURRENTOUTPUTDEVICES_CALLBACK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      audioRen!.getCurrentOutputDevices((err: BusinessError<void> | null, data: audio.AudioDeviceDescriptors | undefined) => {
-        if (err) {
-          console.info(`${TagFrmwkRender}: getCurrentOutputDevices ERROR ! code: ${err?.code}, mesage: ${err?.message}`);
-          expect(false).assertTrue();
-        } else {
-          console.info(`${TagFrmwkRender}: deviceRole:${data![0].deviceRole}, deviceType:${data![0].deviceType}, id:${data![0].id},
-            address:${data![0].address}, sampleRates:${data![0].sampleRates}, channelCounts:${data![0].channelCounts}, channelMasks:${data![0].channelMasks}`);
-          expect(data![0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
-          expect(data![0].deviceType).assertEqual(audio.DeviceType.SPEAKER);
-          expect(data![0].id).assertEqual(testConst.OUTPUT_NUMBER_1);
-          done();
-        }
-      });
+      if(await checkCarSupportSync()) {
+        audioRen!.getCurrentOutputDevices((err: BusinessError<void> | null, data: audio.AudioDeviceDescriptors | undefined) => {
+          if (err) {
+            console.info(`${TagFrmwkRender}: getCurrentOutputDevices ERROR ! code: ${err?.code}, mesage: ${err?.message}`);
+            expect(false).assertTrue();
+          } else {
+            console.info(`${TagFrmwkRender}: deviceRole:${data![0].deviceRole}, deviceType:${data![0].deviceType}, id:${data![0].id},
+              address:${data![0].address}, sampleRates:${data![0].sampleRates}, channelCounts:${data![0].channelCounts}, channelMasks:${data![0].channelMasks}`);
+            expect(data![0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
+            expect(data![0].deviceType).assertEqual(audio.DeviceType.SPEAKER);
+            expect(data![0].id).assertEqual(testConst.OUTPUT_NUMBER_1);
+            done();
+          }
+        });
+      }
+      done();
     });
 
     /**
@@ -277,32 +299,35 @@ export default function audioRendererTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_GETCURRENTOUTPUTDEVICES_CALLBACK_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      await renderPlay();
-      audioRen!.getCurrentOutputDevices((err: BusinessError<void> | null, data: audio.AudioDeviceDescriptors | undefined) => {
-        if (err) {
-          console.info(`${TagFrmwkRender}: getCurrentOutputDevices ERROR! error: ${err?.code}, mesage: ${err?.message}`);
-          expect(false).assertTrue();
-          done();
-        } else {
-          console.info(`${TagFrmwkRender}: getCurrentOutputDevices :deviceRole:${data![0].deviceRole}, deviceType:${data![0].deviceType}, id:${data![0].id},
-            address:${data![0].address}, sampleRates:${data![0].sampleRates}, channelCounts:${data![0].channelCounts}, channelMasks:${data![0].channelMasks}`);
-          expect(data![0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
-          expect(data![0].deviceType).assertEqual(audio.DeviceType.SPEAKER);
-          expect(data![0].id).assertEqual(testConst.OUTPUT_NUMBER_1);
-          console.info(`${TagFrmwkRender}: Renderer getCurrentOutputDevices SUCCESS! now stop the audiorenderer`);
-          audioRen!.drain().then(() => {
-            console.info(`${TagFrmwkRender}: Renderer drain, stop the audiorenderer`);
-            audioRen!.stop().then(() => {
-              console.info(`${TagFrmwkRender}: Renderer stopp SUCCESS, testcase SUCCESS!`);
-              done();
+      if(await checkCarSupportSync()) {
+        await renderPlay();
+        audioRen!.getCurrentOutputDevices((err: BusinessError<void> | null, data: audio.AudioDeviceDescriptors | undefined) => {
+          if (err) {
+            console.info(`${TagFrmwkRender}: getCurrentOutputDevices ERROR! error: ${err?.code}, mesage: ${err?.message}`);
+            expect(false).assertTrue();
+            done();
+          } else {
+            console.info(`${TagFrmwkRender}: getCurrentOutputDevices :deviceRole:${data![0].deviceRole}, deviceType:${data![0].deviceType}, id:${data![0].id},
+              address:${data![0].address}, sampleRates:${data![0].sampleRates}, channelCounts:${data![0].channelCounts}, channelMasks:${data![0].channelMasks}`);
+            expect(data![0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
+            expect(data![0].deviceType).assertEqual(audio.DeviceType.SPEAKER);
+            expect(data![0].id).assertEqual(testConst.OUTPUT_NUMBER_1);
+            console.info(`${TagFrmwkRender}: Renderer getCurrentOutputDevices SUCCESS! now stop the audiorenderer`);
+            audioRen!.drain().then(() => {
+              console.info(`${TagFrmwkRender}: Renderer drain, stop the audiorenderer`);
+              audioRen!.stop().then(() => {
+                console.info(`${TagFrmwkRender}: Renderer stopp SUCCESS, testcase SUCCESS!`);
+                done();
+              }).catch((err: Error) => {
+                console.info(`${TagFrmwkRender}: Renderer stop:ERROR : ${err.message}`);
+              });
             }).catch((err: Error) => {
-              console.info(`${TagFrmwkRender}: Renderer stop:ERROR : ${err.message}`);
+              console.error(`${TagFrmwkRender}: Renderer drain: ERROR : ${err.message}`);
             });
-          }).catch((err: Error) => {
-            console.error(`${TagFrmwkRender}: Renderer drain: ERROR : ${err.message}`);
-          });
-        }
-      });
+          }
+        });
+      }
+      done();
     });
 
     /**
@@ -314,19 +339,22 @@ export default function audioRendererTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_GETCURRENTOUTPUTDEVICESSYNC_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      try {
-        let data = audioRen!.getCurrentOutputDevicesSync();
-        console.info(`${TagFrmwkRender}: deviceRole:${data[0].deviceRole}, deviceType:${data[0].deviceType}, id:${data[0].id}, name:${data[0].name},
-            address:${data[0].address}, sampleRates:${data[0].sampleRates}, channelCounts:${data[0].channelCounts}, channelMasks:${data[0].channelMasks}`);
-        expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
-        expect(data[0].deviceType).assertEqual(audio.DeviceType.SPEAKER);
-        expect(data[0].id).assertEqual(testConst.OUTPUT_NUMBER_1);
-        done();
-      } catch (err) {
-        console.log("${TagFrmwkRender}: getCurrentOutputDevices error = " + err);
-        expect(false).assertTrue();
-        done();
+      if(await checkCarSupportSync()) {
+        try {
+          let data = audioRen!.getCurrentOutputDevicesSync();
+          console.info(`${TagFrmwkRender}: deviceRole:${data[0].deviceRole}, deviceType:${data[0].deviceType}, id:${data[0].id}, name:${data[0].name},
+              address:${data[0].address}, sampleRates:${data[0].sampleRates}, channelCounts:${data[0].channelCounts}, channelMasks:${data[0].channelMasks}`);
+          expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
+          expect(data[0].deviceType).assertEqual(audio.DeviceType.SPEAKER);
+          expect(data[0].id).assertEqual(testConst.OUTPUT_NUMBER_1);
+          done();
+        } catch (err) {
+          console.log("${TagFrmwkRender}: getCurrentOutputDevices error = " + err);
+          expect(false).assertTrue();
+          done();
+        }
       }
+      done();
     });
 
   })

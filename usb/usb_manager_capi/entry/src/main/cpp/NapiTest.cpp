@@ -109,7 +109,8 @@ static napi_value GetUsbDeviceListNoDevice(napi_env env, napi_callback_info info
 
 /**
  * @tc.name          SUB_USB_USBMANAGER_0200
- * @tc.desc          Verify OH_UsbManager_FreeUsbDeviceList is a safe no-op for null array and zero count.
+ * @tc.desc          Verify OH_UsbManager_FreeUsbDeviceList is a safe no-op for null array and zero count,
+ *                   plus boundary deviceCount values 255 and 256.
  * @tc.type          Function
  */
 static napi_value FreeUsbDeviceListSafeNoop(napi_env env, napi_callback_info info)
@@ -120,6 +121,8 @@ static napi_value FreeUsbDeviceListSafeNoop(napi_env env, napi_callback_info inf
     OH_UsbManager_FreeUsbDeviceList(devices, deviceCount);
     OH_UsbManager_FreeUsbDeviceList(nullptr, 0);
     OH_UsbManager_FreeUsbDeviceList(nullptr, 1);
+    OH_UsbManager_FreeUsbDeviceList(nullptr, 255);
+    OH_UsbManager_FreeUsbDeviceList(nullptr, 256);
     return CreateInt32(env, static_cast<int32_t>(ret));
 }
 
@@ -1021,9 +1024,11 @@ static napi_value GetFileDescriptorFlow(napi_env env, napi_callback_info info)
 /**
  * @tc.name          SUB_USB_USBMANAGER_CAPI_TEST_4400
  * @tc.desc          Verify OH_UsbManager_GetFileDescriptor fails after the pipe was closed
- *                   (state isolation): connect, close, then query the fd. The documented CAPI
- *                   contract maps "no device handle" from either driver flavor to
- *                   OH_USBMANAGER_ERROR_NO_DEVICE (see ohusb_manager.cpp ConvertErrCodeForGetFd).
+ *                   (state isolation): connect, close, then query the fd. When the device is
+ *                   still present the service maps the driver "no device handle" error to a
+ *                   service error, so the documented CAPI contract returns
+ *                   ERR_CODE_SERVICE_EXCEPTION (see ohusb_manager.cpp
+ *                   ConvertErrCodeForGetFd); NO_DEVICE is reserved for a detached device.
  * @tc.type          Function
  */
 static napi_value GetFileDescriptorAfterClose(napi_env env, napi_callback_info info)

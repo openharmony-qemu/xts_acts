@@ -15,7 +15,7 @@
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
 import { describe, it, expect, beforeAll, Level } from '@ohos/hypium-dynamic'
-import { photoKeys, fetchOption, getFileAsset, sleep, getPermission, driveFn } from '../common'
+import { photoKeys, fetchOption, getFileAsset, sleep, getPermission, driveFn, checkResourceFile, createResource } from '../common'
 import common from '@ohos.app.ability.common'
 
 export default function addRemoveAssetsChangeRequestTest() {
@@ -26,6 +26,9 @@ export default function addRemoveAssetsChangeRequestTest() {
       await getPermission();
       await driveFn();
       await sleep(1000);
+      let fileNameList = ["addRemoveAssetsChangeReq01.jpg", "addRemoveAssetsChangeReq02.jpg"];
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNameList);
     });
 
     let helper:ESObject  = photoAccessHelper.getPhotoAccessHelper(testContext);

@@ -1,6 +1,7 @@
 {
   "src": [
     "pages/WebScrollbarLayoutPolicy",
-    "pages/WebScrollDirectionalLock"
+    "pages/WebScrollDirectionalLock",
+    "pages/WebFlingSpeedLimit"
   ]
 }

@@ -5,6 +5,7 @@
 	"testability/pages/WebViewGetPageOffSet",
     "testability/pages/WebBackToTop",
     "testability/pages/WebScrollbarLayoutPolicy",
-    "testability/pages/WebScrollDirectionalLock"
+    "testability/pages/WebScrollDirectionalLock",
+    "testability/pages/WebFlingSpeedLimit"
   ]
 }

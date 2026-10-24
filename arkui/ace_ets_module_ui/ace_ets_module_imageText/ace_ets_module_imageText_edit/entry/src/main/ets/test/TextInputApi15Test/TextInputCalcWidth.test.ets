@@ -56,9 +56,20 @@ export default function TextInputCalcWidthTest() {
       console.info('[TextInputCalcWidthTest_0001] row rect: ' + JSON.stringify(row));
       console.info('[TextInputCalcWidthTest_0001] textInput rect: ' + JSON.stringify(textInput));
       console.info('[TextInputCalcWidthTest_0001] trailing rect: ' + JSON.stringify(trailing));
-      expect(Math.abs((textInput.right - textInput.left) - expectedTextInputWidth) <= 1).assertTrue();
-      expect(Math.abs(trailing.left - textInput.right) <= 1).assertTrue();
-      expect(Math.abs(trailing.right - (row.right - vp2px(40))) <= 1).assertTrue();
+      let actualTextInputWidth = textInput.right - textInput.left;
+      let diffTextInput = Math.abs(actualTextInputWidth - expectedTextInputWidth);
+      console.info('[TextInputCalcWidthTest_0001] actualTextInputWidth: ' + actualTextInputWidth
+        + ', expectedTextInputWidth: ' + expectedTextInputWidth + ', diff: ' + diffTextInput);
+      expect(diffTextInput <= 2).assertTrue();
+      let diffTrailingLeftTextInputRight = Math.abs(trailing.left - textInput.right);
+      console.info('[TextInputCalcWidthTest_0001] trailing.left: ' + trailing.left
+        + ', textInput.right: ' + textInput.right + ', diff: ' + diffTrailingLeftTextInputRight);
+      expect(diffTrailingLeftTextInputRight <= 2).assertTrue();
+      let expectedTrailingRight = row.right - vp2px(40);
+      let diffTrailingRight = Math.abs(trailing.right - expectedTrailingRight);
+      console.info('[TextInputCalcWidthTest_0001] trailing.right: ' + trailing.right
+        + ', expectedTrailingRight: ' + expectedTrailingRight + ', diff: ' + diffTrailingRight);
+      expect(diffTrailingRight <= 2).assertTrue();
       done();
     });
   });

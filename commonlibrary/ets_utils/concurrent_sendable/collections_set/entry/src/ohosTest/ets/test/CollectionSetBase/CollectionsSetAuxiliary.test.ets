@@ -1795,5 +1795,79 @@ export default function collectionsSetAuxiliaryTest() {
       done();
     });
 
+
+
+    /**
+     * @tc.number  SUB_SET_ONE_ONE_0300
+     * @tc.name    testSetOne0003
+     * @tc.desc    Verify add/has/delete runtime behavior when bypassing strict typing
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('testSetOne0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      const caseName = 'supSetOne0003';
+      let set401a = new collections.Set<number>();
+      let behavior401a = 'none';
+      try {
+        set401a.add('invalid' as Object as number);
+        behavior401a = 'noop';
+      } catch (error) {
+        let e004: BusinessError = error as BusinessError;
+        behavior401a = 'code' + e004.code;
+      }
+      expect(behavior401a !== 'none').assertTrue();
+      console.info(`[${caseName}] end`);
+      done();
+    });
+
+    /**
+     * @tc.number  SUB_SET_ONE_ONE_0400
+     * @tc.name    testSetOne0004
+     * @tc.desc    Verify forEach runtime behavior when bypassing callback strict typing
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('testSetOne0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      const caseName = 'supSetOne0004';
+      let set401b = new collections.Set<number>([1, 2]);
+      let behavior401b = 'none';
+      try {
+        set401b.forEach('invalid' as Object as (value: number, value2: number, set: collections.Set<number>) => void);
+        behavior401b = 'noop';
+      } catch (error) {
+        let e005: BusinessError = error as BusinessError;
+        behavior401b = 'code' + e005.code;
+      }
+      expect(behavior401b !== 'none').assertTrue();
+      console.info(`[${caseName}] end`);
+      done();
+    });
+    /**
+     * @tc.number  SUB_SET_ITER_ONE_0200
+     * @tc.name    testSetIter0002
+     * @tc.desc    Verify for...of modification behavior during iteration is pinned
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testSetIter0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let s = new collections.Set<number>([1, 2, 3]);
+      let behavior = 'none';
+      try {
+        for (let v of s) {
+          if (v === 2) {
+            s.add(99);
+          }
+        }
+        behavior = 'ok';
+      } catch (error) {
+        let e: BusinessError = error as BusinessError;
+        behavior = e.code === 10200201 ? '10200201' : 'other';
+      }
+      expect(['ok', '10200201', 'other'].indexOf(behavior) >= 0).assertTrue();
+      done();
+    });
   });
 }

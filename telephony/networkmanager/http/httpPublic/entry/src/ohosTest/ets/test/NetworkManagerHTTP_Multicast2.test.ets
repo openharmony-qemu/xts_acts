@@ -113,7 +113,7 @@ export default function NetworkManagerMulticastHTTP2Test() {
       try {
         httpRequest.request(url, httpRequestOptions_fileData).then(( data ) => {
           console.log(`${caseName} request failed, err: ${JSON.stringify(data)}`);
-          expectTrue(data.responseCode == 200);
+          expectTrue(data.responseCode === 200);
           console.info(`${caseName}---End`);
           done();
         }).catch(( err: BusinessError ) => {
@@ -143,7 +143,7 @@ export default function NetworkManagerMulticastHTTP2Test() {
       try {
         httpRequest.request(url,httpRequestOptions_form).then((data) => {
           console.log(`${caseName} request success, data: ${JSON.stringify(data)}`);
-          expectTrue(data.responseCode == 200);
+          expectTrue(data.responseCode === 200);
           console.info(`${caseName}---End`);
           done();
         }).catch((err:BusinessError) => {
@@ -173,7 +173,7 @@ export default function NetworkManagerMulticastHTTP2Test() {
       try {
         httpRequest.request(url,httpRequestOptions).then((data) => {
           console.log(`${caseName} request success, data: ${JSON.stringify(data)}`);
-          expectTrue(data.responseCode == 200);
+          expectTrue(data.responseCode === 200);
           console.info(`${caseName}---End`);
           done();
         }).catch((err:BusinessError) => {

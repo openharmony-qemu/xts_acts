@@ -54,9 +54,17 @@ export default function requestMethodJsunit() {
         };
         let httpRequest = http.createHttp();
         httpRequest.request('https://www.baidu.com/', httpRequestOptions, (err, data) => {
+          if (err) {
+            console.log(caseName + ' request error: ' + JSON.stringify(err));
+            expectFalse();
+            httpRequest.destroy();
+            console.info(`${caseName}---End`);
+            done();
+            return;
+          }
           console.log(caseName + JSON.stringify(err) + ' data: ' + JSON.stringify(data));
           if (data){
-            expectTrue(data.responseCode == 200);
+            expectTrue(data.responseCode === 200);
           }
           httpRequest.destroy();
           console.info(`${caseName}---End`);
@@ -93,7 +101,7 @@ export default function requestMethodJsunit() {
         httpRequest.request('https://www.baidu.com/', httpRequestOptions).then(data => {
           console.log(caseName + JSON.stringify(data));
           if (data){
-            expectTrue(data.responseCode == 200);
+            expectTrue(data.responseCode === 200);
           }
           httpRequest.destroy();
           console.info(`${caseName}---End`);
@@ -133,9 +141,17 @@ export default function requestMethodJsunit() {
         };
         let httpRequest = http.createHttp();
         httpRequest.request('https://www.baidu.com/', httpRequestOptions, (err, data) => {
+          if (err) {
+            console.log(caseName + ' request error: ' + JSON.stringify(err));
+            expectFalse();
+            httpRequest.destroy();
+            console.info(`${caseName}---End`);
+            done();
+            return;
+          }
           console.log(caseName + JSON.stringify(err) + ' data: ' + JSON.stringify(data));
           if (data){
-            expectTrue(data.responseCode == 200);
+            expectTrue(data.responseCode === 200);
           }
           httpRequest.destroy();
           console.info(`${caseName}---End`);
@@ -172,7 +188,7 @@ export default function requestMethodJsunit() {
         httpRequest.request('https://www.baidu.com/', httpRequestOptions).then(data => {
           console.log(caseName + JSON.stringify(data));
           if (data){
-            expectTrue(data.responseCode == 200);
+            expectTrue(data.responseCode === 200);
           }
           httpRequest.destroy();
           console.info(`${caseName}---End`);
@@ -219,9 +235,17 @@ export default function requestMethodJsunit() {
         }
         let httpRequest = http.createHttp();
         httpRequest.request('https://fanyi-api.baidu.com/api/trans/vip/translate', httpRequestOptions, (err, data) => {
+          if (err) {
+            console.log(caseName + ' request error: ' + JSON.stringify(err));
+            expectFalse();
+            httpRequest.destroy();
+            console.info(`${caseName}---End`);
+            done();
+            return;
+          }
           console.log(caseName + JSON.stringify(err) + ' data: ' + JSON.stringify(data));
           if (data){
-            expectTrue(data.responseCode == 200);
+            expectTrue(data.responseCode === 200);
           }
           httpRequest.destroy();
           console.info(`${caseName}---End`);
@@ -266,7 +290,7 @@ export default function requestMethodJsunit() {
         httpRequest.request('https://fanyi-api.baidu.com/api/trans/vip/translate', httpRequestOptions).then(data => {
           console.log(caseName + JSON.stringify(data));
           if (data){
-            expectTrue(data.responseCode == 200);
+            expectTrue(data.responseCode === 200);
           }
           httpRequest.destroy();
           console.info(`${caseName}---End`);
@@ -314,7 +338,7 @@ export default function requestMethodJsunit() {
         httpRequest.requestInStream('https://fanyi-api.baidu.com/api/trans/vip/translate', httpRequestOptions).then(data => {
           console.log(caseName + JSON.stringify(data));
           if (data){
-            expectTrue(data == 200);
+            expectTrue(data === 200);
           }
           httpRequest.destroy();
           console.info(`${caseName}---End`);
@@ -353,9 +377,17 @@ export default function requestMethodJsunit() {
         };
         let httpRequest = http.createHttp();
         httpRequest.request('https://www.baidu.com/', httpRequestOptions, (err, data) => {
+          if (err) {
+            console.log(caseName + ' request error: ' + JSON.stringify(err));
+            expectFalse();
+            httpRequest.destroy();
+            console.info(`${caseName}---End`);
+            done();
+            return;
+          }
           console.log(caseName + JSON.stringify(err) + ' data: ' + JSON.stringify(data));
           if (data){
-            expectTrue(data.responseCode == 200);
+            expectTrue(data.responseCode === 200);
           }
           httpRequest.destroy();
           console.info(`${caseName}---End`);
@@ -391,7 +423,7 @@ export default function requestMethodJsunit() {
         httpRequest.request('https://www.baidu.com/', httpRequestOptions).then(data => {
           console.log(caseName + JSON.stringify(data));
           if (data){
-            expectTrue(data.responseCode == 200);
+            expectTrue(data.responseCode === 200);
           }
           httpRequest.destroy();
           console.info(`${caseName}---End`);
@@ -430,9 +462,17 @@ export default function requestMethodJsunit() {
         };
         let httpRequest = http.createHttp();
         httpRequest.request('https://httpbin.moyufangge.com/anything', httpRequestOptions, (err, data) => {
+          if (err) {
+            console.log(caseName + ' request error: ' + JSON.stringify(err));
+            expectFalse();
+            httpRequest.destroy();
+            console.info(`${caseName}---End`);
+            done();
+            return;
+          }
           console.log(caseName + JSON.stringify(err) + ' data: ' + JSON.stringify(data));
           if (data){
-            expectTrue(data.responseCode == 200);
+            expectTrue(data.responseCode === 200);
           }
           httpRequest.destroy();
           console.info(`${caseName}---End`);
@@ -468,7 +508,7 @@ export default function requestMethodJsunit() {
         httpRequest.request('https://httpbin.moyufangge.com/anything', httpRequestOptions).then(data => {
           console.log(caseName + JSON.stringify(data));
           if (data){
-            expectTrue(data.responseCode == 200);
+            expectTrue(data.responseCode === 200);
           }
           httpRequest.destroy();
           console.info(`${caseName}---End`);
@@ -507,9 +547,17 @@ export default function requestMethodJsunit() {
         };
         let httpRequest = http.createHttp();
         httpRequest.request('https://www.baidu.com/', httpRequestOptions, (err, data) => {
+          if (err) {
+            console.log(caseName + ' request error: ' + JSON.stringify(err));
+            expectFalse();
+            httpRequest.destroy();
+            console.info(`${caseName}---End`);
+            done();
+            return;
+          }
           console.log(caseName + JSON.stringify(err) + ' data: ' + JSON.stringify(data));
           if (data){
-            expectTrue(data.responseCode == 200);
+            expectTrue(data.responseCode === 200);
           }
           httpRequest.destroy();
           console.info(`${caseName}---End`);
@@ -545,7 +593,7 @@ export default function requestMethodJsunit() {
         httpRequest.request('https://www.baidu.com/', httpRequestOptions).then(data => {
           console.log(caseName + JSON.stringify(data));
           if (data){
-            expectTrue(data.responseCode == 200);
+            expectTrue(data.responseCode === 200);
           }
           httpRequest.destroy();
           console.info(`${caseName}---End`);
@@ -584,9 +632,17 @@ export default function requestMethodJsunit() {
         };
         let httpRequest = http.createHttp();
         httpRequest.request('https://www.openharmony.cn/', httpRequestOptions, (err, data) => {
+          if (err) {
+            console.log(caseName + ' request error: ' + JSON.stringify(err));
+            expectFalse();
+            httpRequest.destroy();
+            console.info(`${caseName}---End`);
+            done();
+            return;
+          }
           console.log(caseName + JSON.stringify(err) + ' data: ' + JSON.stringify(data));
           if (data){
-            expectTrue(data.responseCode == 405);
+            expectTrue(data.responseCode === 405);
           }
           httpRequest.destroy();
           console.info(`${caseName}---End`);
@@ -622,7 +678,7 @@ export default function requestMethodJsunit() {
         httpRequest.request('https://www.openharmony.cn/', httpRequestOptions).then(data => {
           console.log(caseName + JSON.stringify(data));
             if (data){
-            expectTrue(data.responseCode == 405);
+            expectTrue(data.responseCode === 405);
           }
           httpRequest.destroy();
           console.info(`${caseName}---End`);
@@ -661,9 +717,17 @@ export default function requestMethodJsunit() {
         };
         let httpRequest = http.createHttp();
         httpRequest.request('https://www.baidu.com/', httpRequestOptions, (err, data) => {
+          if (err) {
+            console.log(caseName + ' request error: ' + JSON.stringify(err));
+            expectFalse();
+            httpRequest.destroy();
+            console.info(`${caseName}---End`);
+            done();
+            return;
+          }
           console.log(caseName + JSON.stringify(err) + ' data: ' + JSON.stringify(data));
             if (data){
-            expectTrue(data.responseCode == 200);
+            expectTrue(data.responseCode === 200);
           }
           httpRequest.destroy();
           console.info(`${caseName}---End`);
@@ -699,7 +763,7 @@ export default function requestMethodJsunit() {
         httpRequest.request('https://www.baidu.com/', httpRequestOptions).then(data => {
           console.log(caseName + JSON.stringify(data));
             if (data){
-            expectTrue(data.responseCode == 200);
+            expectTrue(data.responseCode === 200);
           }
           httpRequest.destroy();
           console.info(`${caseName}---End`);
@@ -740,7 +804,7 @@ export default function requestMethodJsunit() {
         httpRequest.requestInStream('https://www.baidu.com/', httpRequestOptions, (err: BusinessError, data: number) => {
           console.log(caseName + JSON.stringify(err) + ' data: ' + JSON.stringify(data));
             if (data){
-            expectTrue(data == 200);
+            expectTrue(data === 200);
           }
           httpRequest.destroy();
           console.info(`${caseName}---End`);
@@ -776,7 +840,7 @@ export default function requestMethodJsunit() {
         httpRequest.requestInStream('https://www.baidu.com/', httpRequestOptions).then(data => {
           console.log(caseName + JSON.stringify(data));
             if (data){
-            expectTrue(data == 200);
+            expectTrue(data === 200);
           }
           httpRequest.destroy();
           console.info(`${caseName}---End`);
@@ -816,7 +880,7 @@ export default function requestMethodJsunit() {
         let httpRequest = http.createHttp();
         httpRequest.requestInStream('https://www.baidu.com/', httpRequestOptions, (err: BusinessError, data: number) => {
             if (data){
-            expectTrue(data == 200);
+            expectTrue(data === 200);
           }
           httpRequest.destroy();
           console.info(`${caseName}---End`);
@@ -851,7 +915,7 @@ export default function requestMethodJsunit() {
         httpRequest.requestInStream('https://www.baidu.com/', httpRequestOptions).then(data => {
           console.log(caseName + JSON.stringify(data));
             if (data){
-            expectTrue(data == 200);
+            expectTrue(data === 200);
           }
           httpRequest.destroy();
           console.info(`${caseName}---End`);
@@ -892,7 +956,7 @@ export default function requestMethodJsunit() {
         httpRequest.requestInStream('https://httpbin.moyufangge.com/anything', httpRequestOptions, (err, data) => {
           console.log(caseName + JSON.stringify(err) + ' data: ' + JSON.stringify(data));
             if (data){
-            expectTrue(data == 200);
+            expectTrue(data === 200);
           }
           httpRequest.destroy();
           console.info(`${caseName}---End`);
@@ -927,7 +991,7 @@ export default function requestMethodJsunit() {
         httpRequest.requestInStream('https://httpbin.moyufangge.com/anything', httpRequestOptions).then(data => {
           console.log(caseName + JSON.stringify(data));
             if (data){
-            expectTrue(data == 200);
+            expectTrue(data === 200);
           }
           httpRequest.destroy();
           console.info(`${caseName}---End`);
@@ -968,7 +1032,7 @@ export default function requestMethodJsunit() {
         httpRequest.requestInStream('https://www.openharmony.cn/', httpRequestOptions, (err, data) => {
           console.log(caseName + JSON.stringify(err) + ' data: ' + JSON.stringify(data));
             if (data){
-            expectTrue(data == 405);
+            expectTrue(data === 405);
           }
           httpRequest.destroy();
           console.info(`${caseName}---End`);
@@ -1003,7 +1067,7 @@ export default function requestMethodJsunit() {
         httpRequest.requestInStream('https://www.openharmony.cn/', httpRequestOptions).then(data => {
           console.log(caseName + JSON.stringify(data));
             if (data){
-            expectTrue(data == 405);
+            expectTrue(data === 405);
           }
           httpRequest.destroy();
           console.info(`${caseName}---End`);
@@ -1043,7 +1107,7 @@ export default function requestMethodJsunit() {
         httpRequest.requestInStream('https://www.baidu.com/', httpRequestOptions, (err, data) => {
           console.log(caseName + JSON.stringify(err) + ' data: ' + JSON.stringify(data));
             if (data){
-            expectTrue(data == 200);
+            expectTrue(data === 200);
           }
           httpRequest.destroy();
           console.info(`${caseName}---End`);
@@ -1079,7 +1143,7 @@ export default function requestMethodJsunit() {
         httpRequest.requestInStream('https://www.baidu.com/', httpRequestOptions).then(data => {
           console.log(caseName + JSON.stringify(data));
             if (data){
-            expectTrue(data == 200);
+            expectTrue(data === 200);
           }
           httpRequest.destroy();
           console.info(`${caseName}---End`);
@@ -1120,7 +1184,7 @@ export default function requestMethodJsunit() {
         httpRequest.requestInStream('https://www.baidu.com/', httpRequestOptions, (err, data) => {
           console.log(caseName + JSON.stringify(err) + ' data: ' + JSON.stringify(data));
             if (data){
-            expectTrue(data == 200);
+            expectTrue(data === 200);
           }
           httpRequest.destroy();
           console.info(`${caseName}---End`);
@@ -1155,7 +1219,7 @@ export default function requestMethodJsunit() {
         httpRequest.requestInStream('https://www.baidu.com/', httpRequestOptions).then(data => {
           console.log(caseName + JSON.stringify(data));
             if (data){
-            expectTrue(data == 200);
+            expectTrue(data === 200);
           }
           httpRequest.destroy();
           console.info(`${caseName}---End`);

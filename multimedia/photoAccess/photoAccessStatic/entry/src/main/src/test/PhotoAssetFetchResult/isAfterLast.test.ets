@@ -17,7 +17,7 @@
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
 import { describe, it, expect, beforeAll, Hypium, TestType, Size, Level } from '../../../../hypium/index'
-import { getPermission, driveFn, sleep } from '../Common.test.ets'
+import { getPermission, driveFn, checkResourceFile, createResource } from '../Common.test.ets'
 import Context from "application.Context"
 import common from '@ohos.app.ability.common';
 
@@ -49,7 +49,8 @@ export default function assetIsAfterLastTest() {
       console.info('beforeAll case');
       await getPermission();
       await driveFn();
-      await sleep(1000);
+      await checkResourceFile(testContext);
+      await createResource(testContext, ['01.jpg', '02.jpg', '01.mp4']);
     });
 
     //image

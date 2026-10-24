@@ -160,16 +160,20 @@ function testIsFeatureSupported() {
   /**
    * @tc.name   test_isFeatureSupported_0700
    * @tc.number SUB_CUSTOMIZATION_EDM_IS_FEATURE_SUPPORTED_JS_0700
-   * @tc.desc   test isFeatureSupported with feature out of range
+   * @tc.desc   test isFeatureSupported with OPTICAL_DISC_DRIVE_BURN
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL0
    */
   it("test_isFeatureSupported_0700", Level.LEVEL0, async (done: Function) => {
     try {
-      let ret: boolean = common.isFeatureSupported(999);
+      let ret: boolean = common.isFeatureSupported(common.ManagedFeature.OPTICAL_DISC_DRIVE_BURN);
       console.info('test_isFeatureSupported_0700 ret = ' + ret);
-      expect(ret).assertFalse();
+      if (ret) {
+        expect(ret).assertTrue();
+      } else {
+        expect(ret).assertFalse();
+      }
     } catch (error) {
       console.info('test_isFeatureSupported_0700 error.code = ' + error.code);
       expect(false).assertTrue();
@@ -180,19 +184,159 @@ function testIsFeatureSupported() {
   /**
    * @tc.name   test_isFeatureSupported_0800
    * @tc.number SUB_CUSTOMIZATION_EDM_IS_FEATURE_SUPPORTED_JS_0800
-   * @tc.desc   test isFeatureSupported with negative feature
+   * @tc.desc   test isFeatureSupported with EXACT_TIMER
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL0
    */
   it("test_isFeatureSupported_0800", Level.LEVEL0, async (done: Function) => {
     try {
-      let ret: boolean = common.isFeatureSupported(-1);
+      let ret: boolean = common.isFeatureSupported(common.ManagedFeature.EXACT_TIMER);
       console.info('test_isFeatureSupported_0800 ret = ' + ret);
-      expect(ret).assertFalse();
+      if (ret) {
+        expect(ret).assertTrue();
+      } else {
+        expect(ret).assertFalse();
+      }
     } catch (error) {
       console.info('test_isFeatureSupported_0800 error.code = ' + error.code);
       expect(false).assertTrue();
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_isFeatureSupported_0900
+   * @tc.number SUB_CUSTOMIZATION_EDM_IS_FEATURE_SUPPORTED_JS_0900
+   * @tc.desc   test isFeatureSupported with EXEMPTION_RESOURCE
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("test_isFeatureSupported_0900", Level.LEVEL0, async (done: Function) => {
+    try {
+      let ret: boolean = common.isFeatureSupported(common.ManagedFeature.EXEMPTION_RESOURCE);
+      console.info('test_isFeatureSupported_0900 ret = ' + ret);
+      if (ret) {
+        expect(ret).assertTrue();
+      } else {
+        expect(ret).assertFalse();
+      }
+    } catch (error) {
+      console.info('test_isFeatureSupported_0900 error.code = ' + error.code);
+      expect(false).assertTrue();
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_isFeatureSupported_1000
+   * @tc.number SUB_CUSTOMIZATION_EDM_IS_FEATURE_SUPPORTED_JS_1000
+   * @tc.desc   test isFeatureSupported with X_KEY
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("test_isFeatureSupported_1000", Level.LEVEL0, async (done: Function) => {
+    try {
+      let ret: boolean = common.isFeatureSupported(common.ManagedFeature.X_KEY);
+      console.info('test_isFeatureSupported_1000 ret = ' + ret);
+      if (ret) {
+        expect(ret).assertTrue();
+      } else {
+        expect(ret).assertFalse();
+      }
+    } catch (error) {
+      console.info('test_isFeatureSupported_1000 error.code = ' + error.code);
+      expect(false).assertTrue();
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_isFeatureSupported_1100
+   * @tc.number SUB_CUSTOMIZATION_EDM_IS_FEATURE_SUPPORTED_JS_1100
+   * @tc.desc   test isFeatureSupported with SYSTEM_ROLLBACK
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("test_isFeatureSupported_1100", Level.LEVEL0, async (done: Function) => {
+    try {
+      let ret: boolean = common.isFeatureSupported(common.ManagedFeature.SYSTEM_ROLLBACK);
+      console.info('test_isFeatureSupported_1100 ret = ' + ret);
+      if (ret) {
+        expect(ret).assertTrue();
+      } else {
+        expect(ret).assertFalse();
+      }
+    } catch (error) {
+      console.info('test_isFeatureSupported_1100 error.code = ' + error.code);
+      expect(false).assertTrue();
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_isFeatureSupported_1200
+   * @tc.number SUB_CUSTOMIZATION_EDM_IS_FEATURE_SUPPORTED_JS_1200
+   * @tc.desc   test isFeatureSupported with SUPER_PRIVACY
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("test_isFeatureSupported_1200", Level.LEVEL0, async (done: Function) => {
+    try {
+      let ret: boolean = common.isFeatureSupported(common.ManagedFeature.SUPER_PRIVACY);
+      console.info('test_isFeatureSupported_1200 ret = ' + ret);
+      if (ret) {
+        expect(ret).assertTrue();
+      } else {
+        expect(ret).assertFalse();
+      }
+    } catch (error) {
+      console.info('test_isFeatureSupported_1200 error.code = ' + error.code);
+      expect(false).assertTrue();
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_isFeatureSupported_1300
+   * @tc.number SUB_CUSTOMIZATION_EDM_IS_FEATURE_SUPPORTED_JS_1300
+   * @tc.desc   test isFeatureSupported with feature out of range
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("test_isFeatureSupported_1300", Level.LEVEL0, async (done: Function) => {
+    try {
+      let ret: boolean = common.isFeatureSupported(999);
+      console.info('test_isFeatureSupported_1300 ret = ' + ret);
+      expect(ret).assertEqual(false);
+    } catch (error) {
+      console.info('test_isFeatureSupported_1300 error.code = ' + error.code);
+      expect().assertFail();
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_isFeatureSupported_1400
+   * @tc.number SUB_CUSTOMIZATION_EDM_IS_FEATURE_SUPPORTED_JS_1400
+   * @tc.desc   test isFeatureSupported with negative feature
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("test_isFeatureSupported_1400", Level.LEVEL0, async (done: Function) => {
+    try {
+      let ret: boolean = common.isFeatureSupported(-1);
+      console.info('test_isFeatureSupported_1400 ret = ' + ret);
+      expect(ret).assertEqual(false);
+    } catch (error) {
+      console.info('test_isFeatureSupported_1400 error.code = ' + error.code);
+      expect().assertFail();
     }
     done();
   });

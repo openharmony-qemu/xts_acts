@@ -35,6 +35,7 @@
       "testability/pages/webSchemeHandlerResponseSetHeaderByNameParam",
       "testability/pages/webSchemeHandlerResponseGetHeaderByNameParam",
       "testability/pages/webResourceResponseSetResponseDataParam",
+      "testability/pages/webResourceResponseSetResponseBodyParam",
       "testability/pages/webResourceResponseSetResponseEncodingParam",
       "testability/pages/webResourceResponseSetResponseMimeTypeParam",
       "testability/pages/webResourceResponseSetReasonMessageParam",

@@ -101,7 +101,8 @@ export default function DisplayNdkTest() {
           console.log('jsUnittest getDisplayCapability failed');
         }
       }
-      try {
+      if(deviceType !== 'car'){
+        try {
           let driver = Driver.create();
           let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
           console.log('findComponent allowed: ' + JSON.stringify(allowed));
@@ -111,6 +112,8 @@ export default function DisplayNdkTest() {
         } catch (err) {
           console.error('findComponent allowed failed: ' + JSON.stringify(err));
         }
+      }
+      
     })
     beforeEach(() => {
       // Presets an action, which is performed before each unit test case starts.

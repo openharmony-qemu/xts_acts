@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,15 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import statisticsNoNetTest from "./StatisticsNoNet.test";
+import StatisticsNoNetTest from "./StatisticsNoNet.test";
+import NetStatisticsNoDataTest from './NetStatisticsNoDataTest.test';
 import EmptyTest from './Empty.test';
+import StatisticsTest from './StatisticsTest.test';
 import connection from '@ohos.net.connection';
 
 let isDefaultNet: boolean = connection.hasDefaultNetSync();
 
-export default function testsuite() {
+export default function testsuite(): void {
     if(!isDefaultNet) {
-        statisticsNoNetTest();
+        StatisticsNoNetTest();
+        NetStatisticsNoDataTest();
+        StatisticsTest();
     }else{
         EmptyTest();
     }

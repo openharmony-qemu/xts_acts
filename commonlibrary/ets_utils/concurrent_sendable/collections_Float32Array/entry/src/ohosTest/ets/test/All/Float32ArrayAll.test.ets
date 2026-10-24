@@ -2891,5 +2891,19 @@ export default function Float32ArrayAllTest() {
 }
 
 function approxEqual(a: number, b: number, epsilon: number = 0.000001): boolean {
+    /**
+     * @tc.number  SUB_TYPEDARRAY_FLOAT_THIRTYTWO_ALL_ADD_FROM_0100
+     * @tc.name    testTypedArrayAllAddFrom0001
+     * @tc.desc    Verify Float32Array.from() is added to the All suite
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testTypedArrayAllAddFrom0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let fromArr = collections.Float32Array.from([1, 2, 3]);
+      expect(fromArr.length).assertEqual(3);
+      expect(fromArr[0]).assertEqual(1);
+    });
+
   return Math.abs(a - b) < epsilon;
 }

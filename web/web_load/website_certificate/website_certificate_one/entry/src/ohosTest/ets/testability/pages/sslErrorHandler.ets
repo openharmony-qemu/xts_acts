@@ -144,15 +144,18 @@ struct sslErrorHandler {
             }
 
             case 'emitSslErrorHandlerConstructor001': {
-              Utils.emitEvent(true, 202590);
+              let handler: SslErrorHandler = new SslErrorHandler();
+              Utils.emitEvent(handler != null, 202590);
               break;
             }
             case 'emitSslErrorHandlerConstructorReturn001': {
-              Utils.emitEvent(true, 202591);
+              let handler: SslErrorHandler = new SslErrorHandler();
+              Utils.emitEvent(handler instanceof SslErrorHandler, 202591);
               break;
             }
             case 'emitSslErrorHandlerClass001': {
-              Utils.emitEvent(true, 202592);
+              let handler: SslErrorHandler = new SslErrorHandler();
+              Utils.emitEvent(handler instanceof SslErrorHandler, 202592);
               break;
             }
 

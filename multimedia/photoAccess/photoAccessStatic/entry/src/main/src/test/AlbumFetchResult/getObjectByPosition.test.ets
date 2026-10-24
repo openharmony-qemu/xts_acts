@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, Hypium } from "../../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, Hypium,beforeAll } from "../../../../hypium/index";
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
 import Context from "application.Context"
 import hilog from '@ohos.hilog'
-import { fetchOption, genRadomStr } from '../Common.test.ets'
+import { fetchOption, genRadomStr, getPermission, driveFn, sleep } from '../Common.test.ets'
 import Utils from "../Util.test"
 import { BusinessError } from '@ohos.base';
 
@@ -30,6 +30,12 @@ export default function albumGetPositionObjectTest() {
   describe("albumGetPositionObjectTest", (): void => {
     const appContext: Context = Hypium.get("context") as Context;
     const helper = photoAccessHelper.getPhotoAccessHelper(appContext);
+    beforeAll(async()=>{
+      hilog.info(domain,tag,'beforeAll case');
+      await getPermission();
+      await driveFn();
+      await sleep(1000);
+    });
 
     /**
      * @tc.name   album_getObjectByPosition_callback_static_000
@@ -113,5 +119,6 @@ export default function albumGetPositionObjectTest() {
           done();
         }
       });
+ 
   })
 }

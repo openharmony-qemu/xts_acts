@@ -152,6 +152,18 @@ struct WebComponent {
                 }
                 break;
               }
+              case "emitSwitchToWebMonitoredBlankScreenPage": {
+                try {
+                  let uiContext: UIContext = this.getUIContext();
+                  let router: Router = uiContext.getRouter();
+                  router.pushUrl({ url: 'pages/WebMonitoredBlankScreen' })
+                  console.info("emitSwitchToWebMonitoredBlankScreenPage success");
+                } catch (error) {
+                  error = error as BusinessError;
+                  console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                }
+                break;
+              }
             }
           })
       }

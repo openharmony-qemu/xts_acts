@@ -1478,6 +1478,20 @@ export default function nativeAVScreenCaptureNdkTest() {
     });
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_MIC_AEC_0100
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_MIC_AEC_0100
+     * @tc.desc   OH_AVScreenCapture_StrategyForMicAEC-True
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_MIC_AEC_0100', Level.LEVEL0, async (done: Function) => {
+      let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForMicAEC();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_PAUSE_RESUME_0100
      * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_PAUSE_RESUME_0100
      * @tc.desc   OH_AVScreenCapture_PauseScreenCapture and OH_AVScreenCapture_ResumeScreenCapture

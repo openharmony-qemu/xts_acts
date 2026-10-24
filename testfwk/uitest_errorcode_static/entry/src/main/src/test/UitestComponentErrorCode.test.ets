@@ -17,6 +17,7 @@ import { beforeAll, beforeEach, describe, it, expect,TestType, Size, Level } fro
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver } from '@kit.TestKit'
 import { BusinessError } from '@ohos.base';
 import  hilog  from '@ohos.hilog'
+import display from '@ohos.display';
 import { Utils, startAbility, stopApplication } from './Util.test';
 
 const waitUiReadyMs : int = 1000;
@@ -30,8 +31,12 @@ let tag: string = 'uitestTag'; //日志标识字符串,作为tag标识当前runn
 
 export default function uitestComponentErrorTest(): void {
   describe('uitestComponentErrorTest', (): void => {
+    let displayId: int = 0;
+    let primaryId: int = 0;
     beforeAll(async () : Promise<void> => {
       hilog.info(domain, tag, "uitestComponentErrorTest loadup start!!!!!")
+      displayId = display.getDefaultDisplaySync().id.toInt();
+      primaryId = display.getPrimaryDisplaySync().id.toInt();
       await Utils.msSleep(1000)
       hilog.info(domain, tag, "uitestComponentErrorTest loadup over!!!!!")
     })
@@ -52,7 +57,12 @@ export default function uitestComponentErrorTest(): void {
         await driver.delayMs(waitUiReadyMs);
         let scrollBar = await driver.findComponent(ON.type('Scroll'));
         hilog.info(domain, tag, `test_scrollToTop_17000004_static scrollBar is: ${JSON.stringify(scrollBar)}`);
-        await stopApplication('com.uitestScene.acts');
+        let disPlay = display.getDefaultDisplaySync();
+        if (displayId === primaryId) {
+          await stopApplication('com.uitestScene.acts');
+        } else {
+          await driver.pressBack(disPlay.id.toInt());
+        }
         await driver.delayMs(waitUiReadyMs * 2);
         if (scrollBar != null) {
           await scrollBar.scrollToTop();
@@ -82,7 +92,12 @@ export default function uitestComponentErrorTest(): void {
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
         await driver.delayMs(waitUiReadyMs);
         let button = await driver.findComponent(ON.type('Scroll'));
-        await stopApplication('com.uitestScene.acts');
+        let disPlay = display.getDefaultDisplaySync();
+        if (displayId === primaryId) {
+          await stopApplication('com.uitestScene.acts');
+        } else {
+          await driver.pressBack(disPlay.id.toInt());
+        }
         await driver.delayMs(waitUiReadyMs * 2);
         if (button != null) {
           await button.scrollSearch(ON.text('next page'));
@@ -112,7 +127,12 @@ export default function uitestComponentErrorTest(): void {
       await driver.delayMs(waitUiReadyMs);
       let button = await driver.findComponent(ON.type('Scroll'));
       await driver.delayMs(waitUiReadyMs);
-      await stopApplication('com.uitestScene.acts');
+      let disPlay = display.getDefaultDisplaySync();
+      if (displayId === primaryId) {
+        await stopApplication('com.uitestScene.acts');
+      } else {
+        await driver.pressBack(disPlay.id.toInt());
+      }
       await driver.delayMs(waitUiReadyMs * 2);
       try {
         if (button != null) {
@@ -144,7 +164,12 @@ export default function uitestComponentErrorTest(): void {
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
         await driver.delayMs(waitUiReadyMs);
         let button = await driver.findComponent(ON.text('MainPage'));
-        await stopApplication('com.uitestScene.acts');
+        let disPlay = display.getDefaultDisplaySync();
+        if (displayId === primaryId) {
+          await stopApplication('com.uitestScene.acts');
+        } else {
+          await driver.pressBack(disPlay.id.toInt());
+        }
         await driver.delayMs(waitUiReadyMs);
         if (button != null) {
           await button.click();
@@ -174,7 +199,12 @@ export default function uitestComponentErrorTest(): void {
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
         await driver.delayMs(waitUiReadyMs);
         let button = await driver.findComponent(ON.text('MainPage'));
-        await stopApplication('com.uitestScene.acts');
+        let disPlay = display.getDefaultDisplaySync();
+        if (displayId === primaryId) {
+          await stopApplication('com.uitestScene.acts');
+        } else {
+          await driver.pressBack(disPlay.id.toInt());
+        }
         await driver.delayMs(waitUiReadyMs * 2);
         if (button != null) {
           await button.doubleClick();
@@ -203,7 +233,12 @@ export default function uitestComponentErrorTest(): void {
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
         await driver.delayMs(waitUiReadyMs);
         let button = await driver.findComponent(ON.text('MainPage'));
-        await stopApplication('com.uitestScene.acts');
+        let disPlay = display.getDefaultDisplaySync();
+        if (displayId === primaryId) {
+          await stopApplication('com.uitestScene.acts');
+        } else {
+          await driver.pressBack(disPlay.id.toInt());
+        }
         await driver.delayMs(waitUiReadyMs * 2);
         if (button != null) {
           await button.longClick();
@@ -231,7 +266,12 @@ export default function uitestComponentErrorTest(): void {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
       await driver.delayMs(waitUiReadyMs);
       let button = await driver.findComponent(ON.text('MainPage'));
-      await stopApplication('com.uitestScene.acts');
+      let disPlay = display.getDefaultDisplaySync();
+      if (displayId === primaryId) {
+        await stopApplication('com.uitestScene.acts');
+      } else {
+        await driver.pressBack(disPlay.id.toInt());
+      }
       try {
         await driver.delayMs(waitUiReadyMs * 2);
         if (button != null) {
@@ -261,7 +301,12 @@ export default function uitestComponentErrorTest(): void {
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
         await driver.delayMs(waitUiReadyMs);
         let button = await driver.findComponent(ON.text('MainPage'));
-        await stopApplication('com.uitestScene.acts');
+        let disPlay = display.getDefaultDisplaySync();
+        if (displayId === primaryId) {
+          await stopApplication('com.uitestScene.acts');
+        } else {
+          await driver.pressBack(disPlay.id.toInt());
+        }
         await driver.delayMs(waitUiReadyMs * 2);
         if (button != null) {
           await button.getText();
@@ -290,7 +335,12 @@ export default function uitestComponentErrorTest(): void {
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
         await driver.delayMs(waitUiReadyMs);
         let button = await driver.findComponent(ON.text('MainPage'));
-        await stopApplication('com.uitestScene.acts');
+        let disPlay = display.getDefaultDisplaySync();
+        if (displayId === primaryId) {
+          await stopApplication('com.uitestScene.acts');
+        } else {
+          await driver.pressBack(disPlay.id.toInt());
+        }
         await driver.delayMs(waitUiReadyMs * 2);
         if (button != null) {
           await button.getType();
@@ -319,7 +369,12 @@ export default function uitestComponentErrorTest(): void {
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
         await driver.delayMs(waitUiReadyMs);
         let button = await driver.findComponent(ON.text('MainPage'));
-        await stopApplication('com.uitestScene.acts');
+        let disPlay = display.getDefaultDisplaySync();
+        if (displayId === primaryId) {
+          await stopApplication('com.uitestScene.acts');
+        } else {
+          await driver.pressBack(disPlay.id.toInt());
+        }
         await driver.delayMs(waitUiReadyMs * 2);
         if (button != null) {
           await button.getBounds();
@@ -348,7 +403,12 @@ export default function uitestComponentErrorTest(): void {
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
         await driver.delayMs(waitUiReadyMs);
         let button = await driver.findComponent(ON.text('MainPage'));
-        await stopApplication('com.uitestScene.acts');
+        let disPlay = display.getDefaultDisplaySync();
+        if (displayId === primaryId) {
+          await stopApplication('com.uitestScene.acts');
+        } else {
+          await driver.pressBack(disPlay.id.toInt());
+        }
         await driver.delayMs(waitUiReadyMs * 2);
         if (button != null) {
           await button.getBoundsCenter();
@@ -376,7 +436,12 @@ export default function uitestComponentErrorTest(): void {
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
         await driver.delayMs(waitUiReadyMs);
         let button = await driver.findComponent(ON.text('MainPage'));
-        await stopApplication('com.uitestScene.acts');
+        let disPlay = display.getDefaultDisplaySync();
+        if (displayId === primaryId) {
+          await stopApplication('com.uitestScene.acts');
+        } else {
+          await driver.pressBack(disPlay.id.toInt());
+        }
         await driver.delayMs(waitUiReadyMs * 2);
         if (button != null) {
           await button.isClickable();
@@ -405,7 +470,12 @@ export default function uitestComponentErrorTest(): void {
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
         await driver.delayMs(waitUiReadyMs);
         let button = await driver.findComponent(ON.text('MainPage'));
-        await stopApplication('com.uitestScene.acts');
+        let disPlay = display.getDefaultDisplaySync();
+        if (displayId === primaryId) {
+          await stopApplication('com.uitestScene.acts');
+        } else {
+          await driver.pressBack(disPlay.id.toInt());
+        }
         await driver.delayMs(waitUiReadyMs * 2);
         if (button != null) {
           await button.isLongClickable();
@@ -434,7 +504,12 @@ export default function uitestComponentErrorTest(): void {
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
         await driver.delayMs(waitUiReadyMs);
         let button = await driver.findComponent(ON.text('MainPage'));
-        await stopApplication('com.uitestScene.acts');
+        let disPlay = display.getDefaultDisplaySync();
+        if (displayId === primaryId) {
+          await stopApplication('com.uitestScene.acts');
+        } else {
+          await driver.pressBack(disPlay.id.toInt());
+        }
         await driver.delayMs(waitUiReadyMs * 2);
         if (button != null) {
           await button.isChecked();
@@ -463,7 +538,12 @@ export default function uitestComponentErrorTest(): void {
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
         await driver.delayMs(waitUiReadyMs);
         let button = await driver.findComponent(ON.text('MainPage'));
-        await stopApplication('com.uitestScene.acts');
+        let disPlay = display.getDefaultDisplaySync();
+        if (displayId === primaryId) {
+          await stopApplication('com.uitestScene.acts');
+        } else {
+          await driver.pressBack(disPlay.id.toInt());
+        }
         await driver.delayMs(waitUiReadyMs * 2);
         if (button != null) {
           await button.isCheckable();
@@ -492,7 +572,12 @@ export default function uitestComponentErrorTest(): void {
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
         await driver.delayMs(waitUiReadyMs);
         let button = await driver.findComponent(ON.text('MainPage'));
-        await stopApplication('com.uitestScene.acts');
+        let disPlay = display.getDefaultDisplaySync();
+        if (displayId === primaryId) {
+          await stopApplication('com.uitestScene.acts');
+        } else {
+          await driver.pressBack(disPlay.id.toInt());
+        }
         await driver.delayMs(waitUiReadyMs * 2);
         if (button != null) {
           await button.isScrollable();
@@ -520,7 +605,12 @@ export default function uitestComponentErrorTest(): void {
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
         await driver.delayMs(waitUiReadyMs);
         let button = await driver.findComponent(ON.text('MainPage'));
-        await stopApplication('com.uitestScene.acts');
+        let disPlay = display.getDefaultDisplaySync();
+        if (displayId === primaryId) {
+          await stopApplication('com.uitestScene.acts');
+        } else {
+          await driver.pressBack(disPlay.id.toInt());
+        }
         await driver.delayMs(waitUiReadyMs * 2);
         if (button != null) {
           await button.isEnabled();
@@ -548,7 +638,12 @@ export default function uitestComponentErrorTest(): void {
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
         await driver.delayMs(waitUiReadyMs);
         let button = await driver.findComponent(ON.text('MainPage'));
-        await stopApplication('com.uitestScene.acts');
+        let disPlay = display.getDefaultDisplaySync();
+        if (displayId === primaryId) {
+          await stopApplication('com.uitestScene.acts');
+        } else {
+          await driver.pressBack(disPlay.id.toInt());
+        }
         await driver.delayMs(waitUiReadyMs * 2);
         if (button != null) {
           await button.isFocused();
@@ -576,7 +671,12 @@ export default function uitestComponentErrorTest(): void {
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
         await driver.delayMs(waitUiReadyMs);
         let button = await driver.findComponent(ON.text('MainPage'));
-        await stopApplication('com.uitestScene.acts');
+        let disPlay = display.getDefaultDisplaySync();
+        if (displayId === primaryId) {
+          await stopApplication('com.uitestScene.acts');
+        } else {
+          await driver.pressBack(disPlay.id.toInt());
+        }
         await driver.delayMs(waitUiReadyMs * 2);
         if (button != null) {
           await button.isSelected();
@@ -604,7 +704,12 @@ export default function uitestComponentErrorTest(): void {
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
         await driver.delayMs(waitUiReadyMs);
         let button = await driver.findComponent(ON.text('MainPage'));
-        await stopApplication('com.uitestScene.acts');
+        let disPlay = display.getDefaultDisplaySync();
+        if (displayId === primaryId) {
+          await stopApplication('com.uitestScene.acts');
+        } else {
+          await driver.pressBack(disPlay.id.toInt());
+        }
         await driver.delayMs(waitUiReadyMs * 2);
         if (button != null) {
           await button.inputText('hello');
@@ -632,7 +737,12 @@ export default function uitestComponentErrorTest(): void {
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
         await driver.delayMs(waitUiReadyMs);
         let button = await driver.findComponent(ON.text('MainPage'));
-        await stopApplication('com.uitestScene.acts');
+        let disPlay = display.getDefaultDisplaySync();
+        if (displayId === primaryId) {
+          await stopApplication('com.uitestScene.acts');
+        } else {
+          await driver.pressBack(disPlay.id.toInt());
+        }
         await driver.delayMs(waitUiReadyMs * 2);
         if (button != null) {
           await button.clearText();
@@ -660,7 +770,12 @@ export default function uitestComponentErrorTest(): void {
         let driver = Driver.create();
         await driver.delayMs(waitUiReadyMs);
         let button = await driver.findComponent(ON.text('MainPage'));
-        await stopApplication('com.uitestScene.acts');
+        let disPlay = display.getDefaultDisplaySync();
+        if (displayId === primaryId) {
+          await stopApplication('com.uitestScene.acts');
+        } else {
+          await driver.pressBack(disPlay.id.toInt());
+        }
         await driver.delayMs(waitUiReadyMs * 2);
         if (button != null) {
           await button.dragTo(button);
@@ -688,7 +803,12 @@ export default function uitestComponentErrorTest(): void {
         let driver = Driver.create();
         await driver.delayMs(waitUiReadyMs);
         let button = await driver.findComponent(ON.text('MainPage'));
-        await stopApplication('com.uitestScene.acts');
+        let disPlay = display.getDefaultDisplaySync();
+        if (displayId === primaryId) {
+          await stopApplication('com.uitestScene.acts');
+        } else {
+          await driver.pressBack(disPlay.id.toInt());
+        }
         await driver.delayMs(waitUiReadyMs * 2);
         if (button != null) {
           await button.pinchOut(1.2);
@@ -719,7 +839,12 @@ export default function uitestComponentErrorTest(): void {
         let driver = Driver.create();
         await driver.delayMs(waitUiReadyMs);
         let button = await driver.findComponent(ON.text('MainPage'));
-        await stopApplication('com.uitestScene.acts');
+        let disPlay = display.getDefaultDisplaySync();
+        if (displayId === primaryId) {
+          await stopApplication('com.uitestScene.acts');
+        } else {
+          await driver.pressBack(disPlay.id.toInt());
+        }
         await driver.delayMs(waitUiReadyMs * 2);
         if (button != null) {
           await button.pinchIn(0.5);
@@ -751,7 +876,12 @@ export default function uitestComponentErrorTest(): void {
         await driver.delayMs(waitUiReadyMs);
         let button = await driver.findComponent(ON.text('MainPage'));
         await driver.delayMs(waitUiReadyMs);
-        await stopApplication('com.uitestScene.acts');
+        let disPlay = display.getDefaultDisplaySync();
+        if (displayId === primaryId) {
+          await stopApplication('com.uitestScene.acts');
+        } else {
+          await driver.pressBack(disPlay.id.toInt());
+        }
         await driver.delayMs(waitUiReadyMs * 2);
         if (button != null) {
           await button.getDescription();
@@ -783,7 +913,12 @@ export default function uitestComponentErrorTest(): void {
         await driver.delayMs(waitUiReadyMs);
         let button = await driver.findComponent(ON.text('MainPage'));
         await driver.delayMs(waitUiReadyMs);
-        await stopApplication('com.uitestScene.acts');
+        let disPlay = display.getDefaultDisplaySync();
+        if (displayId === primaryId) {
+          await stopApplication('com.uitestScene.acts');
+        } else {
+          await driver.pressBack(disPlay.id.toInt());
+        }
         await driver.delayMs(waitUiReadyMs * 2);
         if (button != null) {
           await button.getHint();
@@ -851,7 +986,12 @@ export default function uitestComponentErrorTest(): void {
         await driver.delayMs(waitUiReadyMs);
         let button = await driver.findComponent(ON.text('MainPage'));
         await driver.delayMs(waitUiReadyMs);
-        await stopApplication('com.uitestScene.acts');
+        let disPlay = display.getDefaultDisplaySync();
+        if (displayId === primaryId) {
+          await stopApplication('com.uitestScene.acts');
+        } else {
+          await driver.pressBack(disPlay.id.toInt());
+        }
         await driver.delayMs(waitUiReadyMs * 2);
         console.log(`${TestTag}, test_inputTextMode_17000004_static button: ${JSON.stringify(button)}`);
         expect(button != null).assertTrue();

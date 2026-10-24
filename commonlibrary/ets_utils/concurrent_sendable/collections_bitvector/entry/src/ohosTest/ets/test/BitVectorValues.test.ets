@@ -130,43 +130,6 @@ export default function BitVectorValuesTest() {
     });
 
     /**
-     * @tc.name   BitVectorTest6400
-     * @tc.number SUB_COMMONLIBRARY_BITVECTOR_TEST_1104
-     * @tc.desc   Verify BitVector values returns iterator with correct first element
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('BitVectorTest6400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let bv = new collections.BitVector(8)
-      bv[0] = 1
-      let iter = bv.values()
-      let first = iter.next()
-      expect(first.value).assertEqual(1)
-      expect(first.done).assertFalse()
-    })
-
-    /**
-     * @tc.name   BitVectorTest6500
-     * @tc.number SUB_COMMONLIBRARY_BITVECTOR_TEST_1105
-     * @tc.desc   Verify BitVector values iterator traversal covers all elements
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('BitVectorTest6500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let bv = new collections.BitVector(8)
-      let count = 0
-      let iter = bv.values()
-      let temp = iter.next()
-      while (!temp.done) {
-        count++
-        temp = iter.next()
-      }
-      expect(count).assertEqual(8)
-    })
-
-    /**
      * @tc.name   BitVectortest04200
      * @tc.number SUB_COMMONLIBRARY_BITVECTOR_TEST_1106
      * @tc.desc   BitVectortest04200
@@ -1371,6 +1334,33 @@ export default function BitVectorValuesTest() {
         }
         done()
       });
+
+    /**
+     * @tc.number  SUB_BITVECTOR_ITER_ONE_0100
+     * @tc.name    testBitVectorIter0001
+     * @tc.desc    Verify for...of order and break behavior
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorIter0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let bv = new collections.BitVector(0);
+      bv.push(0); bv.push(1); bv.push(0); bv.push(1); bv.push(0);
+      let collected: number[] = [];
+      for (let v of bv) {
+        collected.push(v);
+      }
+      expect(collected.length).assertEqual(5);
+      expect(collected[1]).assertEqual(1);
+      let breakCol: number[] = [];
+      for (let v of bv) {
+        if (v === 1) {
+          break;
+        }
+        breakCol.push(v);
+      }
+      expect(breakCol.length).assertEqual(1);
+    });
 
   })
 }

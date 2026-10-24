@@ -15,7 +15,7 @@
 
 {
   "module": {
-    "name": "entry",
+    "name": "entry_test",
     "type": "feature",
     "description": "$string:entry_desc",
     "mainElement": "MainAbility",
@@ -46,7 +46,7 @@
       },
       {
         "name": "Ability1",
-        "srcEntry": "./ets/Ability1/Ability1.ts",
+        "srcEntry": "./ets/Ability1/Ability1.ets",
         "description": "$string:Ability1_desc",
         "icon": "$media:icon",
         "label": "$string:Ability1_label",
@@ -55,7 +55,7 @@
       },
       {
         "name": "Ability2",
-        "srcEntry": "./ets/Ability2/Ability2.ts",
+        "srcEntry": "./ets/Ability2/Ability2.ets",
         "description": "$string:Ability2_desc",
         "icon": "$media:icon",
         "label": "$string:Ability2_label",

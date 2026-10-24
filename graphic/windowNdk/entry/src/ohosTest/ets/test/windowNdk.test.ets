@@ -76,16 +76,6 @@ export default function windowNdk() {
       //isFreeWindowMode == true 自由窗口模式
       //isFreeWindowMode == false 非自由窗口模式
       console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
-      try {
-        let driver = Driver.create();
-        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
-        console.log('findComponent allowed: ' + JSON.stringify(allowed));
-        if (allowed) {
-          await allowed.click();
-        }
-      } catch (err) {
-        console.error('findComponent allowed failed: ' + JSON.stringify(err));
-      }
       let promise = WindowClass.getWindowStateSnapshot();
       promise.then((data)=>{
         let jsonObj: object = JSON.parse(data);
@@ -478,7 +468,7 @@ export default function windowNdk() {
       console.info(`${caseName}: result: ${result}`);
       expect(result).assertEqual(0);
       await sleep(1000);
-      if((isStatusBarVisible && !isFreeWindowMode)|| deviceType == 'tv'){
+      if((isStatusBarVisible && !isFreeWindowMode)|| deviceType == 'tv' || deviceType == 'car'){
         WindowClass.off('avoidAreaChange')
         expect(flag).assertEqual(true)
         done()
@@ -510,7 +500,7 @@ export default function windowNdk() {
       console.info(`${caseName}: result: ${result}`);
       expect(result).assertEqual(0);
       await sleep(1000);
-      if((isStatusBarVisible && !isFreeWindowMode)|| deviceType == 'tv'){
+      if((isStatusBarVisible && !isFreeWindowMode)|| deviceType == 'tv' || deviceType == 'car'){
         WindowClass.off('avoidAreaChange')
         windowNdkTest.setWindowStatusBarEnabled(windowId, true, false);
         await sleep(500)
@@ -544,7 +534,7 @@ export default function windowNdk() {
       console.info(`${caseName}: result: ${result}`);
       expect(result).assertEqual(0);
       await sleep(1000);
-      if((isStatusBarVisible && !isFreeWindowMode)|| deviceType == 'tv'){
+      if((isStatusBarVisible && !isFreeWindowMode)|| deviceType == 'tv' || deviceType == 'car'){
         WindowClass.off('avoidAreaChange')
         windowNdkTest.setWindowStatusBarEnabled(windowId, true, false);
         await sleep(500)
@@ -701,7 +691,7 @@ export default function windowNdk() {
       expect(result).assertEqual(0);
       await sleep(1000);
       console.info(`${caseName} flag: ${flag}`);
-      if (deviceType === 'phone' ||deviceType === 'wearable' || deviceType === 'tv' || deviceType === '2in1' || deviceType === 'car' || deviceType === 'tablet' || (deviceType == 'default'&& isSystemCapabilitySupport == true)){
+      if (deviceType === 'phone' ||deviceType === 'wearable' || deviceType === 'tv' || deviceType === '2in1' || deviceType === 'tablet' || (deviceType == 'default'&& isSystemCapabilitySupport == true)){
          WindowClass.off('avoidAreaChange')
         expect(flag).assertEqual(false)
         done()
@@ -733,7 +723,7 @@ export default function windowNdk() {
       expect(result).assertEqual(0);
       await sleep(1000);
       console.info(`${caseName} flag: ${flag}`);
-      if(deviceType === 'phone' ||deviceType === 'wearable' || deviceType === 'tv' || deviceType === '2in1' || deviceType === 'car' || deviceType === 'tablet'||(deviceType == 'default'&& isSystemCapabilitySupport == true)){
+      if(deviceType === 'phone' ||deviceType === 'wearable' || deviceType === 'tv' || deviceType === '2in1' || deviceType === 'tablet'||(deviceType == 'default'&& isSystemCapabilitySupport == true)){
         WindowClass.off('avoidAreaChange')
         expect(flag).assertEqual(false)
         done()
@@ -767,7 +757,7 @@ export default function windowNdk() {
       expect(result).assertEqual(0);
       await sleep(1000);
       console.info(`${caseName} flag: ${flag}`);
-      if(deviceType === 'phone' ||deviceType === 'wearable' || deviceType === 'tv' || deviceType === '2in1' || deviceType === 'car' || deviceType === 'tablet'||(deviceType == 'default'&& isSystemCapabilitySupport == true)){
+      if(deviceType === 'phone' ||deviceType === 'wearable' || deviceType === 'tv' || deviceType === '2in1' || deviceType === 'tablet'||(deviceType == 'default'&& isSystemCapabilitySupport == true)){
         WindowClass.off('avoidAreaChange')
         expect(flag).assertEqual(false)
         done()
@@ -1831,7 +1821,7 @@ export default function windowNdk() {
       console.info(`${caseName}: result2: ${result2}`);
       console.info(`${caseName} flag: ${flag}`);
       await sleep(200);
-      if (canIUseRes === false ||(deviceType === 'phone' && isFreeWindowMode === false) || (deviceType === 'tablet' && isFreeWindowMode === false) || deviceType === 'tv'|| (deviceType == 'default'&& isSystemCapabilitySupport == true)) {
+      if (canIUseRes === false ||(deviceType === 'phone' && isFreeWindowMode === false) || (deviceType === 'tablet' && isFreeWindowMode === false) || deviceType === 'tv'|| (deviceType == 'default'&& isSystemCapabilitySupport == true) || deviceType === 'car' ) {
         expect(result2).assertEqual(0);
         expect(areaChangeType).assertEqual(window.AvoidAreaType.TYPE_SYSTEM);
         expect(flag).assertEqual(true);
@@ -1839,7 +1829,7 @@ export default function windowNdk() {
         expect(areaChange!.topRect.height).assertLarger(0);
         WindowClass.off('avoidAreaChange');
         done();
-      } else if (deviceType === 'wearable' || deviceType === '2in1' || deviceType === 'car' || (deviceType === 'tablet' && isFreeWindowMode === true)) {
+      } else if (deviceType === 'wearable' || deviceType === '2in1' || (deviceType === 'tablet' && isFreeWindowMode === true)) {
         expect(result2).assertEqual(0);
         expect(flag).assertEqual(false);
         WindowClass.off('avoidAreaChange');
@@ -1869,7 +1859,7 @@ export default function windowNdk() {
       let areaChangeType: window.AvoidAreaType | undefined = undefined;
       let flag: boolean = false;
       WindowClass.on('avoidAreaChange', (data: window.AvoidAreaOptions) => {
-        console.info('Succeeded in enabling the listener for system avoid area changes. type:' +
+        console.info(caseName + 'Succeeded in enabling the listener for system avoid area changes. type:' +
           JSON.stringify(data.type) + ', area: ' + JSON.stringify(data.area));
         flag = true;
         areaChange = data.area;
@@ -1879,9 +1869,14 @@ export default function windowNdk() {
       let result2 = windowNdkTest.setWindowNavigationBarEnabled(windowId, true, true);
       console.info(`${ caseName }: result2: ${ result2 }`);
       await sleep(200);
-      if (!canIUseRes) {
+      if (!canIUseRes || deviceType === 'car') {
+        if (deviceType === 'car') {
+          expect(areaChangeType).assertEqual(window.AvoidAreaType.TYPE_NAVIGATION_INDICATOR);
+        }
+         else{
+          expect(areaChangeType).assertEqual(window.AvoidAreaType.TYPE_SYSTEM);
+         }
         expect(result2).assertEqual(0);
-        expect(areaChangeType).assertEqual(window.AvoidAreaType.TYPE_SYSTEM);
         expect(flag).assertEqual(true);
         expect(areaChange!.bottomRect.width).assertLarger(0);
         expect(areaChange!.bottomRect.height).assertLarger(0);

@@ -18,6 +18,7 @@ import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern
 import CommonFunc from '../../MainAbility/common/Common';
 import { MessageManager, Callback } from '../../MainAbility/common/MessageManager';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 
 export default function textArea_bottom() {
   describe('textArea_bottom', () => {
@@ -65,15 +66,13 @@ export default function textArea_bottom() {
 
         let driver = await Driver.create();
         await CommonFunc.sleep(500);
-        await driver.mouseScroll({x:360, y:800}, true, 30, 2072)
+        await driver.mouseScroll({x:360, y:800, displayId: displayID}, true, 30, 2072)
         await CommonFunc.sleep(1000);
 
         console.log('assert  click before position')
         let textArea_01 = CommonFunc.getComponentRect('textArea_bottom' + '_textArea_01');
         let y1 = textArea_01.top
-        await driver.click(
-          (Math.round(textArea_01.left + (textArea_01.right - textArea_01.left) /2)),(Math.round(textArea_01.top + (textArea_01.bottom - textArea_01.top) /45))
-        );
+        await driver.clickAt({ x: (Math.round(textArea_01.left + (textArea_01.right - textArea_01.left) /2)), y: (Math.round(textArea_01.top + (textArea_01.bottom - textArea_01.top) /45)), displayId: displayID });
         await CommonFunc.sleep(1000);
 
         console.log('assert click after position')
@@ -108,16 +107,14 @@ export default function textArea_bottom() {
 
         let driver = await Driver.create();
         await CommonFunc.sleep(500);
-        await driver.mouseScroll({x:360, y:640}, true, 30, 2072)
+        await driver.mouseScroll({x:360, y:640, displayId: displayID}, true, 30, 2072)
         await CommonFunc.sleep(1000);
 
         let textArea_01 = CommonFunc.getComponentRect('textArea_bottom' + '_textArea_01');
 
         console.log('assert position')
         let y1 = textArea_01.bottom
-        await driver.click(
-          (Math.round(textArea_01.left + (textArea_01.right - textArea_01.left) /2)),(Math.round(textArea_01.top + (textArea_01.bottom - textArea_01.top) /2))
-        );
+        await driver.clickAt({ x: (Math.round(textArea_01.left + (textArea_01.right - textArea_01.left) /2)), y: (Math.round(textArea_01.top + (textArea_01.bottom - textArea_01.top) /2)), displayId: displayID });
         await CommonFunc.sleep(1000);
         let textArea_02 = CommonFunc.getComponentRect('textArea_bottom' + '_textArea_01');
         let y2 = textArea_02.bottom
@@ -149,15 +146,13 @@ export default function textArea_bottom() {
 
         let driver = await Driver.create();
         await CommonFunc.sleep(500);
-        await driver.mouseScroll({x:360, y:640}, true, 30, 2072)
+        await driver.mouseScroll({x:360, y:640, displayId: displayID}, true, 30, 2072)
         await CommonFunc.sleep(1000);
 
         let textArea_01 = CommonFunc.getComponentRect('textArea_bottom' + '_textArea_01');
         console.log('assert position')
         let y1 = textArea_01.bottom
-        await driver.click(
-          (Math.round(textArea_01.left + (textArea_01.right - textArea_01.left) /2)),(Math.round(textArea_01.top + (textArea_01.bottom - textArea_01.top) /45 *44))
-        );
+        await driver.clickAt({ x: (Math.round(textArea_01.left + (textArea_01.right - textArea_01.left) /2)), y: (Math.round(textArea_01.top + (textArea_01.bottom - textArea_01.top) /45 *44)), displayId: displayID });
         await CommonFunc.sleep(1000);
         let textArea_02 = CommonFunc.getComponentRect('textArea_bottom' + '_textArea_01');
         let y2 = textArea_02.bottom

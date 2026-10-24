@@ -121,82 +121,6 @@ export default function ActsDAGetSetTestStatic(): void {
       });
 
     /**
-     * @tc.name   getOsAccountDistributedInfoStatic_test0100
-     * @tc.number getOsAccountDistributedInfoStatic_test0100
-     * @tc.desc   Test distributedAccount.getOsAccountDistributedInfo API functionality.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('getOsAccountDistributedInfoStatic_test0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        hilog.info(0x0000, tag, "====>start getOsAccountDistributedInfoStatic_test0100====");
-        let accountAbility: account.DistributedAccountAbility = account.getDistributedAccountAbility();
-        try {
-          hilog.info(0x0000, tag, "====>start getOsAccountDistributedInfo promise");
-          let data: account.DistributedInfo = await accountAbility.getOsAccountDistributedInfo();
-          hilog.info(0x0000, tag, '====>test0100 data:' + JSON.stringify(data));
-          expect(data.name).assertEqual('ohosAnonymousName');
-          expect(data.id).assertEqual('ohosAnonymousUid');
-          expect(data.event).assertEqual('');
-          expect(data.nickname).assertEqual('');
-          expect(data.avatar).assertEqual('');
-          expect(data.scalableData != null).assertTrue();
-          expect(data.status).assertEqual(account.DistributedAccountStatus.NOT_LOGGED_IN);
-          expect(1).assertEqual(account.DistributedAccountStatus.LOGGED_IN);
-        } catch (err) {
-          hilog.info(0x0000, tag, '====>test0100 err:' + JSON.stringify(err));
-          expect().assertFail();
-        }
-        done();
-      });
-
-    /**
-     * @tc.name   getOsAccountDistributedInfoStatic_test0200
-     * @tc.number getOsAccountDistributedInfoStatic_test0200
-     * @tc.desc   Test distributedAccount.getOsAccountDistributedInfo API functionality by callback.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('getOsAccountDistributedInfoStatic_test0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        hilog.info(0x0000, tag, "====>start getOsAccountDistributedInfoStatic_test0200====");
-        let accountAbility: account.DistributedAccountAbility = account.getDistributedAccountAbility();
-        try {
-          hilog.info(0x0000, tag, "====>start getOsAccountDistributedInfo callback");
-          accountAbility.getOsAccountDistributedInfo((err: BusinessError<void> | null, data: account.DistributedInfo | undefined): void => {
-            hilog.info(0x0000, tag, '====>test0200 err:' + JSON.stringify(err));
-            hilog.info(0x0000, tag, '====>test0200 data:' + JSON.stringify(data));
-            try {
-              if (err) {
-                hilog.info(0x0000, tag, "====>run err");
-                expect().assertFail();
-              } else {
-                if (data) {
-                  expect(data?.name).assertEqual('ohosAnonymousName');
-                  expect(data?.id).assertEqual('ohosAnonymousUid');
-                  expect(data?.event).assertEqual('');
-                  expect(data?.status).assertEqual(account.DistributedAccountStatus.NOT_LOGGED_IN);
-                  hilog.info(0x0000, tag, "====>test0200 success");
-                } else {
-                  hilog.info(0x0000, tag, "====>run err");
-                  expect().assertFail();
-                }
-              }
-            } catch (err) {
-              hilog.info(0x0000, tag, '====>Assert Fail, err:' + JSON.stringify(err));
-            }
-            done();
-          });
-        } catch (err) {
-          hilog.info(0x0000, tag, '====>test002 err:' + JSON.stringify(err));
-          expect().assertFail();
-          done();
-        }
-      });
-
-    /**
      * @tc.number    setOsAccountDistributedInfo_test001
      * @tc.name      setOsAccountDistributedInfo_test001
      * @tc.desc      Test distributedAccount.setOsAccountDistributedInfo API functionality.
@@ -294,14 +218,48 @@ export default function ActsDAGetSetTestStatic(): void {
       });
 
     /**
-     * @tc.number    setOsAccountDistributedInfo_test003
-     * @tc.name      setOsAccountDistributedInfo_test003
-     * @tc.desc      Test setOsAccountDistributedInfo 12300003 errcode.
+     * @tc.number    SUB_account_osaccount_set_distributed_info_token_invalid_0300
+     * @tc.name      SUB_account_osaccount_set_distributed_info_token_invalid_0300
+     * @tc.desc      Test setOsAccountDistributedInfo 12300003 errcode by callback.
      * @tc.type      FUNCTION
      * @tc.size      MEDIUMTEST
      * @tc.level     LEVEL0
      */
-    it('setOsAccountDistributedInfo_test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SUB_account_osaccount_set_distributed_info_token_invalid_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(0x0000, tag, "====>SUB_account_osaccount_set_distributed_info_token_invalid_0300 start====");
+        let accountAbility: account.DistributedAccountAbility = account.getDistributedAccountAbility();
+        let tokenInvalidInfo: account.DistributedInfo = {
+          name: 'ZhangSan',
+          id: '12345',
+          event: "Ohos.account.event.TOKEN_INVALID"
+        };
+        accountAbility.setOsAccountDistributedInfo(tokenInvalidInfo, (err: BusinessError<void> | null): void => {
+          hilog.info(0x0000, tag, "====>SUB_account_osaccount_set_distributed_info_token_invalid_0300 err: " + JSON.stringify(err));
+          try {
+            if (err) {
+              expect(err?.code).assertEqual(12300003);
+            } else {
+              hilog.info(0x0000, tag, "====>run err");
+              expect().assertFail();
+            }
+          } catch (err) {
+            hilog.info(0x0000, tag, '====>Assert err: ' + JSON.stringify(err));
+          }
+          hilog.info(0x0000, tag, "====>SUB_account_osaccount_set_distributed_info_token_invalid_0300 end====");
+          done();
+        });
+      });
+
+    /**
+     * @tc.number    SUB_account_osaccount_set_distributed_info_token_invalid_0400
+     * @tc.name      SUB_account_osaccount_set_distributed_info_token_invalid_0400
+     * @tc.desc      Test setOsAccountDistributedInfo 12300003 errcode by promise.
+     * @tc.type      FUNCTION
+     * @tc.size      MEDIUMTEST
+     * @tc.level     LEVEL0
+     */
+    it('SUB_account_osaccount_set_distributed_info_token_invalid_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let accountAbility: account.DistributedAccountAbility = account.getDistributedAccountAbility();
         let tokenInvalidInfo: account.DistributedInfo = {
@@ -310,65 +268,28 @@ export default function ActsDAGetSetTestStatic(): void {
           event: "Ohos.account.event.TOKEN_INVALID"
         };
         try {
-          hilog.info(0x0000, tag, "====>setOsAccountDistributedInfo_test003 start====");
-          accountAbility.setOsAccountDistributedInfo(tokenInvalidInfo, (err: BusinessError<void> | null): void => {
-            hilog.info(0x0000, tag, '====>setInfo_test003 err: ' + JSON.stringify(err));
-            try {
-              if (err) {
-                expect(err?.code).assertEqual(12300003);
-              } else {
-                hilog.info(0x0000, tag, "====>run err");
-                expect().assertFail();
-              }
-            } catch (err) {
-              hilog.info(0x0000, tag, '====>Assert err: ' + JSON.stringify(err));
-            }
-            done();
-          });
-        } catch (err) {
-          hilog.info(0x0000, tag, '====>setInfo_test003 catch exception: ' + JSON.stringify(err));
+          hilog.info(0x0000, tag, "====>SUB_account_osaccount_set_distributed_info_token_invalid_0400 start====");
+          await accountAbility.setOsAccountDistributedInfo(tokenInvalidInfo);
+          hilog.info(0x0000, tag, "====>SUB_account_osaccount_set_distributed_info_token_invalid_0400 run err");
           expect().assertFail();
+          done();
+        } catch (err) {
+          hilog.info(0x0000, tag, "====>SUB_account_osaccount_set_distributed_info_token_invalid_0400 err: " + JSON.stringify(err));
+          expect((err as BusinessError).code).assertEqual(12300003);
+          hilog.info(0x0000, tag, "====>SUB_account_osaccount_set_distributed_info_token_invalid_0400 end====");
           done();
         }
       });
 
     /**
-     * @tc.number    setOsAccountDistributedInfo_test0031
-     * @tc.name      setOsAccountDistributedInfo_test0031
-     * @tc.desc      Test setOsAccountDistributedInfo 12300003 errcode.
-     * @tc.type      FUNCTION
-     * @tc.size      MEDIUMTEST
-     * @tc.level     LEVEL0
-     */
-    it('setOsAccountDistributedInfo_test0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        let accountAbility: account.DistributedAccountAbility = account.getDistributedAccountAbility();
-        let tokenInvalidInfo: account.DistributedInfo = {
-          name: 'ZhangSan',
-          id: '12345',
-          event: "Ohos.account.event.TOKEN_INVALID"
-        };
-        try {
-          hilog.info(0x0000, tag, "====>setOsAccountDistributedInfo_test0031 start====");
-          await accountAbility.setOsAccountDistributedInfo(tokenInvalidInfo);
-          hilog.info(0x0000, tag, "====>run err");
-          expect().assertFail();
-        } catch (err) {
-          hilog.info(0x0000, tag, '====>setInfo_test0031 err: ' + JSON.stringify(err));
-          expect(err.code).assertEqual(12300003);
-        }
-        done();
-      });
-      
-    /**
-     * @tc.number    setOsAccountDistributedInfo_test004
-     * @tc.name      setOsAccountDistributedInfo_test004
+     * @tc.number    SUB_account_osaccount_set_distributed_info_callback_0500
+     * @tc.name      SUB_account_osaccount_set_distributed_info_callback_0500
      * @tc.desc      Test distributedAccount.setOsAccountDistributedInfo API functionality by callback.
      * @tc.type      FUNCTION
      * @tc.size      MEDIUMTEST
      * @tc.level     LEVEL0
      */
-    it('setOsAccountDistributedInfo_test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SUB_account_osaccount_set_distributed_info_callback_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let accountAbility: account.DistributedAccountAbility = account.getDistributedAccountAbility();
         let obj: account.DistributedInfo = {
@@ -377,12 +298,12 @@ export default function ActsDAGetSetTestStatic(): void {
           event: 'Ohos.account.event.LOGIN',
           scalableData: {}
         };
-        hilog.info(0x0000, tag, "====>setOsAccountDistributedInfo_test004 start====");
+        hilog.info(0x0000, tag, "====>SUB_account_osaccount_set_distributed_info_callback_0500 start====");
         accountAbility.setOsAccountDistributedInfo(obj, (err: BusinessError<void> | null): void => {
-          hilog.info(0x0000, tag, "====>setInfo_test004 update_err: " + JSON.stringify(err));
+          hilog.info(0x0000, tag, "====>SUB_account_osaccount_set_distributed_info_callback_0500 update_err: " + JSON.stringify(err));
           accountAbility.getOsAccountDistributedInfo((err: BusinessError<void> | null, data: account.DistributedInfo | undefined): void => {
-            hilog.info(0x0000, tag, "====>setInfo_test004 query_err: " + JSON.stringify(err));
-            hilog.info(0x0000, tag, "====>setInfo_test004 query_data: " + JSON.stringify(data));
+            hilog.info(0x0000, tag, "====>SUB_account_osaccount_set_distributed_info_callback_0500 query_err: " + JSON.stringify(err));
+            hilog.info(0x0000, tag, "====>SUB_account_osaccount_set_distributed_info_callback_0500 query_data: " + JSON.stringify(data));
             try {
               if (data) {
                 expect(data?.name).assertEqual('Z**********');
@@ -402,8 +323,8 @@ export default function ActsDAGetSetTestStatic(): void {
             };
             hilog.info(0x0000, tag, "====>start LOGOUT");
             accountAbility.setOsAccountDistributedInfo(obj1, (err: BusinessError<void> | null): void => {
-              hilog.info(0x0000, tag, '====>setInfo_test004 err callback:' + JSON.stringify(err));
-              hilog.info(0x0000, tag, "====>setInfo_test004 end====");
+              hilog.info(0x0000, tag, '====>SUB_account_osaccount_set_distributed_info_callback_0500 err callback:' + JSON.stringify(err));
+              hilog.info(0x0000, tag, "====>SUB_account_osaccount_set_distributed_info_callback_0500 end====");
               done();
             });
           });

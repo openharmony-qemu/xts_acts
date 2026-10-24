@@ -18,7 +18,8 @@
     "sourceOption": {
       "workers": [
         "./src/ohosTest/ets/test/util/worker.ets",
-        "./src/ohosTest/ets/test/util/GetGlobalHandleCountWorker.ets"
+        "./src/ohosTest/ets/test/util/GetGlobalHandleCountWorker.ets",
+        "./src/ohosTest/ets/test/util/TrackGlobalRefWorker.ets"
       ]
     },
     "externalNativeOptions": {

@@ -37,10 +37,14 @@ async function exitInputMethod() {
 export default function uitestEnumTest(): void {
   describe('uitestTest_Api20', (): void => {
     let driver: Driver | undefined;
+    let displayId: int = 0;
+    let primaryId: int = 0;
     beforeAll(async () : Promise<void> => {
       hilog.info(domain, tag, "uitestEnumTest loadup start!!!!!");
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
       driver = Driver.create();
+      displayId = display.getDefaultDisplaySync().id.toInt();
+      primaryId = display.getPrimaryDisplaySync().id.toInt();
       await Utils.msSleep(1000);
       await getInputMethodPermission(driver!);
       await stopApplication('com.uitestScene.acts');
@@ -187,11 +191,11 @@ export default function uitestEnumTest(): void {
       }
       if(text != null) {
         let center = await text.getBoundsCenter();
-        await driver!.click(center.x, center.y);
+        await driver!.clickAt(center);
         await driver!.delayMs(waitUiReadyMs);
-        await driver!.triggerCombineKeys(2072, 2017);
+        await driver!.triggerCombineKeys(2072, 2017, 0, disPlay.id.toInt());
         await driver!.delayMs(waitUiReadyMs);
-        await driver!.triggerCombineKeys(2072, 2019, 0);
+        await driver!.triggerCombineKeys(2072, 2019, 0, disPlay.id.toInt());
         await driver!.delayMs(waitUiReadyMs);
       }
       await exitInputMethod();
@@ -543,53 +547,55 @@ export default function uitestEnumTest(): void {
      * @tc.level  LEVEL3
      */
     it('testGetDisplayRotationWithId_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      hilog.info(domain, tag, `testGetDisplayRotationWithId_static start`);
-      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
-      await driver!.delayMs(waitUiReadyMs);
-      let disPlay = display.getDefaultDisplaySync();
-      await driver!.setDisplayRotation(DisplayRotation.ROTATION_0);
-      await driver!.delayMs(waitUiReadyMs);
-      let rotation = await driver!.getDisplayRotation(disPlay.id.toInt());
-      if (rotation == DisplayRotation.ROTATION_90) {
-        console.info('The device is displayed in horizontal on default');
-        await driver!.setDisplayRotation(DisplayRotation.ROTATION_90);
+      if (displayId === primaryId) { // 此用例不支持车机副屏执行
+        hilog.info(domain, tag, `testGetDisplayRotationWithId_static start`);
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
         await driver!.delayMs(waitUiReadyMs);
-        let rotation1 = await driver!.getDisplayRotation(disPlay.id.toInt());
-        expect(rotation1 == DisplayRotation.ROTATION_0).assertTrue();
-
-        await driver!.setDisplayRotation(DisplayRotation.ROTATION_180);
-        await driver!.delayMs(waitUiReadyMs);
-        let rotation2 = await driver!.getDisplayRotation(disPlay.id.toInt());
-        expect(rotation2 == DisplayRotation.ROTATION_270).assertTrue();
-
-        await driver!.setDisplayRotation(DisplayRotation.ROTATION_270);
-        await driver!.delayMs(waitUiReadyMs);
-        let rotation3 = await driver!.getDisplayRotation(disPlay.id.toInt());
-        expect(rotation3 == DisplayRotation.ROTATION_180).assertTrue();
-
-        await driver!.setDisplayRotation(DisplayRotation.ROTATION_90);
-      } else if (rotation == DisplayRotation.ROTATION_0) {
-        console.info('The device is displayed in vertical on default');
-        await driver!.setDisplayRotation(DisplayRotation.ROTATION_90);
-        await driver!.delayMs(waitUiReadyMs)
-        let rotation1 = await driver!.getDisplayRotation(disPlay.id.toInt());
-        expect(rotation1 == DisplayRotation.ROTATION_90).assertTrue();
-
-        await driver!.setDisplayRotation(DisplayRotation.ROTATION_180);
-        await driver!.delayMs(waitUiReadyMs);
-        let rotation2 = await driver!.getDisplayRotation(disPlay.id.toInt());
-        expect(rotation2 == DisplayRotation.ROTATION_180).assertTrue();
-
-        await driver!.setDisplayRotation(DisplayRotation.ROTATION_270);
-        await driver!.delayMs(waitUiReadyMs);
-        let rotation3 = await driver!.getDisplayRotation(disPlay.id.toInt());
-        expect(rotation3 == DisplayRotation.ROTATION_270).assertTrue();
-
+        let disPlay = display.getDefaultDisplaySync();
         await driver!.setDisplayRotation(DisplayRotation.ROTATION_0);
         await driver!.delayMs(waitUiReadyMs);
+        let rotation = await driver!.getDisplayRotation(disPlay.id.toInt());
+        if (rotation == DisplayRotation.ROTATION_90) {
+          console.info('The device is displayed in horizontal on default');
+          await driver!.setDisplayRotation(DisplayRotation.ROTATION_90);
+          await driver!.delayMs(waitUiReadyMs);
+          let rotation1 = await driver!.getDisplayRotation(disPlay.id.toInt());
+          expect(rotation1 == DisplayRotation.ROTATION_0).assertTrue();
+
+          await driver!.setDisplayRotation(DisplayRotation.ROTATION_180);
+          await driver!.delayMs(waitUiReadyMs);
+          let rotation2 = await driver!.getDisplayRotation(disPlay.id.toInt());
+          expect(rotation2 == DisplayRotation.ROTATION_270).assertTrue();
+
+          await driver!.setDisplayRotation(DisplayRotation.ROTATION_270);
+          await driver!.delayMs(waitUiReadyMs);
+          let rotation3 = await driver!.getDisplayRotation(disPlay.id.toInt());
+          expect(rotation3 == DisplayRotation.ROTATION_180).assertTrue();
+
+          await driver!.setDisplayRotation(DisplayRotation.ROTATION_90);
+        } else if (rotation == DisplayRotation.ROTATION_0) {
+          console.info('The device is displayed in vertical on default');
+          await driver!.setDisplayRotation(DisplayRotation.ROTATION_90);
+          await driver!.delayMs(waitUiReadyMs)
+          let rotation1 = await driver!.getDisplayRotation(disPlay.id.toInt());
+          expect(rotation1 == DisplayRotation.ROTATION_90).assertTrue();
+
+          await driver!.setDisplayRotation(DisplayRotation.ROTATION_180);
+          await driver!.delayMs(waitUiReadyMs);
+          let rotation2 = await driver!.getDisplayRotation(disPlay.id.toInt());
+          expect(rotation2 == DisplayRotation.ROTATION_180).assertTrue();
+
+          await driver!.setDisplayRotation(DisplayRotation.ROTATION_270);
+          await driver!.delayMs(waitUiReadyMs);
+          let rotation3 = await driver!.getDisplayRotation(disPlay.id.toInt());
+          expect(rotation3 == DisplayRotation.ROTATION_270).assertTrue();
+
+          await driver!.setDisplayRotation(DisplayRotation.ROTATION_0);
+          await driver!.delayMs(waitUiReadyMs);
+        }
+        await stopApplication('com.uitestScene.acts');
+        hilog.info(domain, tag, `testGetDisplayRotationWithId_static end`);
       }
-      await stopApplication('com.uitestScene.acts');
-      hilog.info(domain, tag, `testGetDisplayRotationWithId_static end`);
     })
 
     /**

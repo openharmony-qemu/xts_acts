@@ -256,6 +256,30 @@ export default function nearLinkManagerTest() {
     })
 
     /**
+     * @tc.name SUB_Communication_XTS_NearLink_Manager_ISSUP_0300
+     * @tc.number SUB_Communication_XTS_NearLink_Manager_ISSUP_0300
+     * @tc.desc  isFrameType4Supported method test.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('SUB_Communication_XTS_NearLink_Manager_ISSUP_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'SUB_Communication_XTS_NearLink_Manager_ISSUP_0300';
+      console.info(`${caseName} test start`);
+      try {
+        console.info('[Nearlink Test] call isFrameType4Supported start');
+        let isFrameType4Supported: boolean = manager.isFrameType4Supported();
+        console.info('[Nearlink Test] isFrameType4Supported result: ' + isFrameType4Supported);
+        expect(isFrameType4Supported === true || isFrameType4Supported === false).assertTrue();
+      } catch (err) {
+        console.info("[NearLink_test]nearLink isFrameType4Supported fail " + JSON.stringify(err));
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
      * @tc.name SUB_Communication_XTS_NearLinkPub_Manager_On_0100
      * @tc.number SUB_Communication_XTS_NearLinkPub_Manager_On_0100
      * @tc.desc manager.onStateChange normal call with callback

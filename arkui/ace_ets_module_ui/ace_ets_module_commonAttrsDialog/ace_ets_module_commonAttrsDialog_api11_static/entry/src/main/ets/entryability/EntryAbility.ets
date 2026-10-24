@@ -33,6 +33,21 @@ class EntryAbility extends UIAbility {
     hilog.info(0x0000, 'testTag sjd EntryAbility', 'EntryAbility onWindowStageCreate');
     try {
       AppStorage.setOrCreate<common.BaseContext>('abilityContext', this.context);
+      let windowClass: window.Window | undefined = undefined;
+      windowStage.getMainWindow((err: BusinessError<void> | null, data): void => {
+        if (err?.code) {
+          console.error('Failed to obtain the main window. Cause: ' + JSON.stringify(err));
+          return;
+        }
+        windowClass = data;
+        try {
+          let properties: window.WindowProperties | undefined = windowClass?.getWindowProperties();
+          AppStorage.setOrCreate<number>('displayID', properties?.displayId ?? 0);
+          console.info('当前屏幕ID' + (properties?.displayId ?? 0));
+        } catch (exception) {
+          hilog.error(0x0000, 'testTag', 'Failed to obtain the window properties. Cause: ' + JSON.stringify(exception));
+        }
+      });
       windowStage.loadContent('MainAbility/pages/index/index', (err: BusinessError<void> | null): void => {
         hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent entering');
         MyCallback.runCasesOfCallback();

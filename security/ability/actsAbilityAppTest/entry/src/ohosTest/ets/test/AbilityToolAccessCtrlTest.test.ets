@@ -17,6 +17,7 @@ import abilityToolAccessCtrl from '@ohos.abilityToolAccessCtrl';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { Permissions } from '@kit.AbilityKit';
 import deviceInfo from '@ohos.deviceInfo';
+import power from '@ohos.power';
 
 function checkDeviceIsDevBoard() {
   const chipType = deviceInfo.chipType?.toLowerCase();
@@ -25,6 +26,28 @@ function checkDeviceIsDevBoard() {
   } else {
     return false;
   }
+}
+
+interface TicketObj {
+  message: string,
+  challenge: string,
+  ticket: string
+}
+
+interface MessageObj {
+  cliInfos: Array<CliInfoObj>,
+  apiPermissions: Array<Object>,
+  callerTokenId: number,
+  startTime: number,
+  ticketExpireTimeMs: number,
+  remoteInfo: string,
+  needUnlockScreen: boolean
+}
+
+interface CliInfoObj {
+  cliCmdName: string,
+  subCliCmdName: string,
+  permissionList: Array<string>
 }
 
 function assertPermResult(
@@ -1449,6 +1472,709 @@ export default function abilityTest() {
             expect(false).assertTrue();
           }
         }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0010
+     * @tc.number SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0010
+     * @tc.desc   All parameters are normal, call requestToolTicket interface normally
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        console.info("SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0010 requestToolTicket with all normal parameters");
+        let cliCmdInfos: Array<abilityToolAccessCtrl.CliCmdInfo> = [{
+          cliCmdName: 'ohos-aa',
+          subCliCmdName: 'start'
+        }];
+        let ticketParams: abilityToolAccessCtrl.TicketParams = {
+          ticketExpireTimeMs: 30000
+        };
+        try {
+          let data: abilityToolAccessCtrl.TicketQueryResult =
+            await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketParams);
+          console.info(`SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0010 success, ticket: ${data.ticket}`);
+          expect(data !== null).assertTrue();
+          expect(data.permissionResults !== null).assertTrue();
+          expect(data.permissionResults.length === 0).assertTrue();
+          expect(data.ticket != null && data.ticket.length > 0).assertTrue();
+          let ticketObj: TicketObj = JSON.parse(data.ticket);
+          console.info("SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0010: ticketObj: " + JSON.stringify(ticketObj));
+          let messageObj: MessageObj = JSON.parse(ticketObj.message);
+          console.info("SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0010: messageObj: " + JSON.stringify(messageObj));
+          console.info("SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0010: apiPermissions: " + messageObj.apiPermissions);
+          expect(messageObj.apiPermissions.length === 0).assertTrue();
+          expect(messageObj.ticketExpireTimeMs === 30000).assertTrue();
+          let cliInfoObj: CliInfoObj = messageObj.cliInfos[0];
+          console.info("SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0010: cliInfoObj: " + JSON.stringify(cliInfoObj));
+          expect(cliInfoObj.permissionList[0]).assertContain("ohos.permission.cli.START_ABILITY");
+        } catch (error) {
+          console.error(
+            `SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0010 fail, code: ${error.code}, message: ${error.message}`);
+          if (checkDeviceIsDevBoard()) {
+            expect(error.code).assertEqual(24010002);
+          } else {
+            expect(error.code).assertEqual(201);
+          }
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0020
+     * @tc.number SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0020
+     * @tc.desc   cliCmdInfos with two CliCmdInfo, call requestToolTicket interface normally
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        console.info("SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0020 requestToolTicket with two CliCmdInfo");
+        let cliCmdInfos: Array<abilityToolAccessCtrl.CliCmdInfo> = [{
+          cliCmdName: 'ohos-aa',
+          subCliCmdName: 'start'
+        }, {
+          cliCmdName: 'ohos-aa',
+          subCliCmdName: 'force-stop'
+        }];
+        let ticketParams: abilityToolAccessCtrl.TicketParams = {
+          ticketExpireTimeMs: 30000
+        };
+        try {
+          let data: abilityToolAccessCtrl.TicketQueryResult =
+            await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketParams);
+          console.info(`SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0020 success, ticket: ${data.ticket}`);
+          expect(data !== null).assertTrue();
+          expect(data.permissionResults !== null).assertTrue();
+          expect(data.permissionResults.length === 0).assertTrue();
+          expect(data.ticket != null && data.ticket.length > 0).assertTrue();
+          let ticketObj: TicketObj = JSON.parse(data.ticket);
+          console.info(`SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0020 ticketObj: ${JSON.stringify(ticketObj)}`);
+          let messageObj: MessageObj = JSON.parse(ticketObj.message);
+          console.info(`SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0020 messageObj: ${JSON.stringify(messageObj)}`);
+          console.info(`SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0020 apiPermissions length: ${messageObj.apiPermissions.length}`);
+          expect(messageObj.apiPermissions.length === 0).assertTrue();
+          console.info(`SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0020 ticketExpireTimeMs: ${messageObj.ticketExpireTimeMs}`);
+          expect(messageObj.ticketExpireTimeMs === 30000).assertTrue();
+          let cliInfoObj1: CliInfoObj = messageObj.cliInfos[0];
+          let cliInfoObj2: CliInfoObj = messageObj.cliInfos[1];
+          console.info(`SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0020 permissionList1: ${JSON.stringify(cliInfoObj1.permissionList)}`);
+          console.info(`SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0020 permissionList2: ${JSON.stringify(cliInfoObj2.permissionList)}`);
+          expect(cliInfoObj1.permissionList.includes("ohos.permission.cli.START_ABILITY")).assertTrue();
+          expect(cliInfoObj2.permissionList.includes("ohos.permission.cli.KILL_APP_PROCESSES")).assertTrue();
+        } catch (error) {
+          console.error(
+            `SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0020 fail, code: ${error.code}, message: ${error.message}`);
+          if (checkDeviceIsDevBoard()) {
+            expect(error.code).assertEqual(24010002);
+          } else {
+            expect(error.code).assertEqual(201);
+          }
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0030
+     * @tc.number SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0030
+     * @tc.desc   cliCmdInfos with permission that requires user authorization
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        console.info("SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0030 requestToolTicket with permission requires user authorization");
+        let cliCmdInfos: Array<abilityToolAccessCtrl.CliCmdInfo> = [{
+          cliCmdName: 'ohos-bm',
+          subCliCmdName: 'uninstall'
+        }];
+        let ticketParams: abilityToolAccessCtrl.TicketParams = {
+          ticketExpireTimeMs: 30000
+        };
+        try {
+          let data: abilityToolAccessCtrl.TicketQueryResult =
+            await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketParams);
+          console.info(`SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0030 success, ticket: ${data.ticket}`);
+          console.info(`SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0030 permissionResults ` + JSON.stringify(data.permissionResults));
+          expect(data.permissionResults.length === 1).assertTrue();
+          expect(data !== null).assertTrue();
+          expect(data.permissionResults !== null).assertTrue();
+          expect(data.ticket).assertEqual('');
+          expect(data.permissionResults[0].permission).assertContain("ohos.permission.cli.UNINSTALL_BUNDLE");
+        } catch (error) {
+          console.error(
+            `SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0030 fail, code: ${error.code}, message: ${error.message}`);
+          if (checkDeviceIsDevBoard()) {
+            expect(error.code).assertEqual(24010002);
+          } else {
+            expect(error.code).assertEqual(201);
+          }
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0040
+     * @tc.number SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0040
+     * @tc.desc   cliCmdInfos with one authorized permission and one permission that requires user authorization
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        console.info("SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0040 requestToolTicket with authorized and unauthorized permissions");
+        let cliCmdInfos: Array<abilityToolAccessCtrl.CliCmdInfo> = [{
+          cliCmdName: 'ohos-aa',
+          subCliCmdName: 'start'
+        }, {
+          cliCmdName: 'ohos-bm',
+          subCliCmdName: 'uninstall'
+        }];
+        let ticketParams: abilityToolAccessCtrl.TicketParams = {
+          ticketExpireTimeMs: 30000
+        };
+        try {
+          let data: abilityToolAccessCtrl.TicketQueryResult =
+            await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketParams);
+          console.info(`SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0040 success, ticket: ${data.ticket}`);
+          console.info(`SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0040 permissionResults ` + JSON.stringify(data.permissionResults));
+          expect(data !== null).assertTrue();
+          expect(data.permissionResults !== null).assertTrue();
+          expect(data.permissionResults.length === 1).assertTrue();
+          expect(data.ticket).assertEqual('');
+          expect(data.permissionResults[0].permission).assertContain("ohos.permission.cli.UNINSTALL_BUNDLE");
+        } catch (error) {
+          console.error(
+            `SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0040 fail, code: ${error.code}, message: ${error.message}`);
+          if (checkDeviceIsDevBoard()) {
+            expect(error.code).assertEqual(24010002);
+          } else {
+            expect(error.code).assertEqual(201);
+          }
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0050
+     * @tc.number SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0050
+     * @tc.desc   cliCmdInfos is null, returns error 24010000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        console.info("SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0050 requestToolTicket with cliCmdInfos null");
+        let ticketParams: abilityToolAccessCtrl.TicketParams = {
+          ticketExpireTimeMs: 30000
+        };
+        try {
+          await abilityToolAccessCtrl.requestToolTicket(null, ticketParams);
+          expect(false).assertTrue();
+        } catch (error) {
+          console.error(
+            `SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0050 fail, code: ${error.code}, message: ${error.message}`);
+          if (checkDeviceIsDevBoard()) {
+            expect(error.code).assertEqual(24010002);
+          } else {
+            expect(error.code === 201 || error.code === 24010000).assertTrue();
+          }
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0060
+     * @tc.number SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0060
+     * @tc.desc   cliCmdInfos is undefined, returns error 24010000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        console.info("SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0060 requestToolTicket with cliCmdInfos undefined");
+        let ticketParams: abilityToolAccessCtrl.TicketParams = {
+          ticketExpireTimeMs: 30000
+        };
+        try {
+          await abilityToolAccessCtrl.requestToolTicket(undefined, ticketParams);
+          expect(false).assertTrue();
+        } catch (error) {
+          console.error(
+            `SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0060 fail, code: ${error.code}, message: ${error.message}`);
+          if (checkDeviceIsDevBoard()) {
+            expect(error.code).assertEqual(24010002);
+          } else {
+            expect(error.code === 201 || error.code === 24010000).assertTrue();
+          }
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0070
+     * @tc.number SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0070
+     * @tc.desc   ticketParams is null, call requestToolTicket normally
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        console.info("SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0070 requestToolTicket with ticketParams null");
+        let cliCmdInfos: Array<abilityToolAccessCtrl.CliCmdInfo> = [{
+          cliCmdName: 'ohos-aa',
+          subCliCmdName: 'start'
+        }];
+        try {
+          let data: abilityToolAccessCtrl.TicketQueryResult =
+            await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, null);
+          console.info(`SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0070 success, ticket: ${data.ticket}`);
+          expect(data !== null).assertTrue();
+          expect(data.permissionResults !== null).assertTrue();
+          expect(data.permissionResults.length === 0).assertTrue();
+          expect(data.ticket != null && data.ticket.length > 0).assertTrue();
+        } catch (error) {
+          console.error(
+            `SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0070 fail, code: ${error.code}, message: ${error.message}`);
+          if (checkDeviceIsDevBoard()) {
+            expect(error.code).assertEqual(24010002);
+          } else {
+            expect(error.code).assertEqual(201);
+          }
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0080
+     * @tc.number SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0080
+     * @tc.desc   ticketParams is undefined, call requestToolTicket normally
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        console.info("SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0080 requestToolTicket with ticketParams undefined");
+        let cliCmdInfos: Array<abilityToolAccessCtrl.CliCmdInfo> = [{
+          cliCmdName: 'ohos-aa',
+          subCliCmdName: 'start'
+        }];
+        try {
+          let data: abilityToolAccessCtrl.TicketQueryResult =
+            await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, undefined);
+          console.info(`SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0080 success, ticket: ${data.ticket}`);
+          expect(data !== null).assertTrue();
+          expect(data.permissionResults !== null).assertTrue();
+          expect(data.permissionResults.length === 0).assertTrue();
+          expect(data.ticket != null && data.ticket.length > 0).assertTrue();
+        } catch (error) {
+          console.error(
+            `SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0080 fail, code: ${error.code}, message: ${error.message}`);
+          if (checkDeviceIsDevBoard()) {
+            expect(error.code).assertEqual(24010002);
+          } else {
+            expect(error.code).assertEqual(201);
+          }
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0090
+     * @tc.number SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0090
+     * @tc.desc   cliCmdInfos with non-existent permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        console.info("SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0090 requestToolTicket with non-existent permission");
+        let cliCmdInfos: Array<abilityToolAccessCtrl.CliCmdInfo> = [{
+          cliCmdName: 'ohos-xxx',
+          subCliCmdName: 'test'
+        }];
+        let ticketParams: abilityToolAccessCtrl.TicketParams = {
+          ticketExpireTimeMs: 30000
+        };
+        try {
+          await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketParams);
+          expect(false).assertTrue();
+        } catch (error) {
+          console.error(
+            `SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0090 fail, code: ${error.code}, message: ${error.message}`);
+          expect(error.code === 24010002 || error.code === 201).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0100
+     * @tc.number SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0100
+     * @tc.desc   ticketExpireTimeMs not set, verify default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        console.info("SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0100 requestToolTicket without ticketExpireTimeMs");
+        let cliCmdInfos: Array<abilityToolAccessCtrl.CliCmdInfo> = [{
+          cliCmdName: 'ohos-aa',
+          subCliCmdName: 'start'
+        }];
+        let ticketParams: abilityToolAccessCtrl.TicketParams = {};
+        try {
+          let data: abilityToolAccessCtrl.TicketQueryResult =
+            await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketParams);
+          console.info(`SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0100 success, ticket: ${data.ticket}`);
+          let ticketObj: TicketObj = JSON.parse(data.ticket);
+          let messageObj: MessageObj = JSON.parse(ticketObj.message);
+          console.info(`SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0100 returned ticketExpireTimeMs: ${messageObj.ticketExpireTimeMs}`);
+          expect(messageObj.ticketExpireTimeMs === 10000).assertTrue();
+        } catch (error) {
+          console.error(
+            `SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0100 fail, code: ${error.code}, message: ${error.message}`);
+          if (checkDeviceIsDevBoard()) {
+            expect(error.code).assertEqual(24010002);
+          } else {
+            expect(error.code).assertEqual(201);
+          }
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0110
+     * @tc.number SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0110
+     * @tc.desc   cliCmdInfos is empty array, returns error 24010000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        console.info("SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0110 requestToolTicket with empty cliCmdInfos");
+        let cliCmdInfos: Array<abilityToolAccessCtrl.CliCmdInfo> = [];
+        let ticketParams: abilityToolAccessCtrl.TicketParams = {
+          ticketExpireTimeMs: 30000
+        };
+        try {
+          await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketParams);
+          expect(false).assertTrue();
+        } catch (error) {
+          console.error(
+            `SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0110 fail, code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(24010000);
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0120
+     * @tc.number SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0120
+     * @tc.desc   subCliCmdName is empty string, call succeeds but permissionList is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        console.info("SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0120 requestToolTicket with empty subCliCmdName");
+        let cliCmdInfos: Array<abilityToolAccessCtrl.CliCmdInfo> = [{
+          cliCmdName: 'ohos-aa',
+          subCliCmdName: ''
+        }];
+        let ticketParams: abilityToolAccessCtrl.TicketParams = {
+          ticketExpireTimeMs: 30000
+        };
+        try {
+          let data: abilityToolAccessCtrl.TicketQueryResult =
+            await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketParams);
+          console.info(`SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0120 success, ticket: ${data.ticket}`);
+          let ticketObj: TicketObj = JSON.parse(data.ticket);
+          let messageObj: MessageObj = JSON.parse(ticketObj.message);
+          let cliInfoObj: CliInfoObj = messageObj.cliInfos[0];
+          console.info(`SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0120 permissionList: ${JSON.stringify(cliInfoObj.permissionList)}`);
+          expect(cliInfoObj.permissionList.length === 0).assertTrue();
+          console.info(`SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0120 apiPermissions: ${JSON.stringify(messageObj.apiPermissions)}`);
+          expect(messageObj.apiPermissions.length === 0).assertTrue();
+        } catch (error) {
+          console.error(
+            `SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0120 fail, code: ${error.code}, message: ${error.message}`);
+          if (checkDeviceIsDevBoard()) {
+            expect(error.code).assertEqual(24010002);
+          } else {
+            expect(error.code).assertEqual(201);
+          }
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0130
+     * @tc.number SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0130
+     * @tc.desc   ticketExpireTimeMs is 60000ms (60s boundary), normal call
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        console.info("SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0130 requestToolTicket with ticketExpireTimeMs 60000ms");
+        let cliCmdInfos: Array<abilityToolAccessCtrl.CliCmdInfo> = [{
+          cliCmdName: 'ohos-aa',
+          subCliCmdName: 'start'
+        }];
+        let ticketParams: abilityToolAccessCtrl.TicketParams = {
+          ticketExpireTimeMs: 60000
+        };
+        try {
+          let data: abilityToolAccessCtrl.TicketQueryResult =
+            await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketParams);
+          console.info(`SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0130 success, ticket: ${data.ticket}`);
+          expect(data !== null).assertTrue();
+          expect(data.ticket != null && data.ticket.length > 0).assertTrue();
+          let ticketObj: TicketObj = JSON.parse(data.ticket);
+          let messageObj: MessageObj = JSON.parse(ticketObj.message);
+          console.info(`SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0130 returned ticketExpireTimeMs: ${messageObj.ticketExpireTimeMs}`);
+          expect(messageObj.ticketExpireTimeMs === 60000).assertTrue();
+        } catch (error) {
+          console.error(
+            `SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0130 fail, code: ${error.code}, message: ${error.message}`);
+          if (checkDeviceIsDevBoard()) {
+            expect(error.code).assertEqual(24010002);
+          } else {
+            expect(error.code).assertEqual(201);
+          }
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0140
+     * @tc.number SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0140
+     * @tc.desc   ticketExpireTimeMs is 60001ms (61s, exceeds 60s), returns error 24010000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        console.info("SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0140 requestToolTicket with ticketExpireTimeMs 60001ms");
+        let cliCmdInfos: Array<abilityToolAccessCtrl.CliCmdInfo> = [{
+          cliCmdName: 'ohos-aa',
+          subCliCmdName: 'start'
+        }];
+        let ticketParams: abilityToolAccessCtrl.TicketParams = {
+          ticketExpireTimeMs: 60001
+        };
+        try {
+          await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketParams);
+          expect(false).assertTrue();
+        } catch (error) {
+          console.error(
+            `SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0140 fail, code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(24010000);
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0150
+     * @tc.number SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0150
+     * @tc.desc   ticketExpireTimeMs is -1 (negative), returns error 24010000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        console.info("SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0150 requestToolTicket with ticketExpireTimeMs -1");
+        let cliCmdInfos: Array<abilityToolAccessCtrl.CliCmdInfo> = [{
+          cliCmdName: 'ohos-aa',
+          subCliCmdName: 'start'
+        }];
+        let ticketParams: abilityToolAccessCtrl.TicketParams = {
+          ticketExpireTimeMs: -1
+        };
+        try {
+          await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketParams);
+          expect(false).assertTrue();
+        } catch (error) {
+          console.error(
+            `SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0150 fail, code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(24010002);
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0160
+     * @tc.number SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0160
+     * @tc.desc   ticketExpireTimeMs is 0 (zero boundary), verify return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        console.info("SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0160 requestToolTicket with ticketExpireTimeMs 0");
+        let cliCmdInfos: Array<abilityToolAccessCtrl.CliCmdInfo> = [{
+          cliCmdName: 'ohos-aa',
+          subCliCmdName: 'start'
+        }];
+        let ticketParams: abilityToolAccessCtrl.TicketParams = {
+          ticketExpireTimeMs: 0
+        };
+        try {
+          let data: abilityToolAccessCtrl.TicketQueryResult =
+            await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketParams);
+          console.info(`SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0160 success, ticket: ${data.ticket}`);
+          let ticketObj: TicketObj = JSON.parse(data.ticket);
+          let messageObj: MessageObj = JSON.parse(ticketObj.message);
+          console.info(`SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0160 ticketExpireTimeMs: ${messageObj.ticketExpireTimeMs}`);
+          expect(messageObj.ticketExpireTimeMs === 10000).assertTrue();
+        } catch (error) {
+          console.error(
+            `SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0160 fail, code: ${error.code}, message: ${error.message}`);
+          if (checkDeviceIsDevBoard()) {
+            expect(error.code).assertEqual(24010002);
+          } else {
+            expect(error.code).assertEqual(201);
+          }
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0170
+     * @tc.number SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0170
+     * @tc.desc   cliCmdInfos with duplicate permissions, verify return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        console.info("SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0170 requestToolTicket with duplicate permissions");
+        let cliCmdInfos: Array<abilityToolAccessCtrl.CliCmdInfo> = [{
+          cliCmdName: 'ohos-aa',
+          subCliCmdName: 'start'
+        }, {
+          cliCmdName: 'ohos-aa',
+          subCliCmdName: 'start'
+        }];
+        let ticketParams: abilityToolAccessCtrl.TicketParams = {
+          ticketExpireTimeMs: 30000
+        };
+        try {
+          let data: abilityToolAccessCtrl.TicketQueryResult =
+            await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketParams);
+          console.info(`SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0170 success, ticket: ${data.ticket}`);
+          let ticketObj: TicketObj = JSON.parse(data.ticket);
+          let messageObj: MessageObj = JSON.parse(ticketObj.message);
+          let cliInfoObj1: CliInfoObj = messageObj.cliInfos[0];
+          let cliInfoObj2: CliInfoObj = messageObj.cliInfos[1];
+          console.info(`SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0170 cliInfoObj1: ${JSON.stringify(cliInfoObj1)}`);
+          console.info(`SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0170 cliInfoObj2: ${JSON.stringify(cliInfoObj2)}`);
+          expect(cliInfoObj1.permissionList[0]).assertContain("ohos.permission.cli.START_ABILITY");
+          expect(cliInfoObj2.permissionList[0]).assertContain("ohos.permission.cli.START_ABILITY");
+        } catch (error) {
+          console.error(
+            `SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0170 fail, code: ${error.code}, message: ${error.message}`);
+          if (checkDeviceIsDevBoard()) {
+            expect(error.code).assertEqual(24010002);
+          } else {
+            expect(error.code).assertEqual(201);
+          }
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0180
+     * @tc.number SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0180
+     * @tc.desc   Stress test: call requestToolTicket 3000 times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        console.info("SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0180 stress test: call requestToolTicket 3000 times");
+        await new Promise<void>(resolve => setTimeout(resolve, 30000));
+        let cliCmdInfos: Array<abilityToolAccessCtrl.CliCmdInfo> = [{
+          cliCmdName: 'ohos-aa',
+          subCliCmdName: 'start'
+        }];
+        let ticketParams: abilityToolAccessCtrl.TicketParams = {
+          ticketExpireTimeMs: 10000
+        };
+        let successCount: number = 0;
+        for (let i = 0; i < 1000; i++) {
+          try {
+            let data: abilityToolAccessCtrl.TicketQueryResult =
+              await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketParams);
+            expect(data !== null).assertTrue();
+            console.info("SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0180: success in call requestToolTicket, times: " + successCount);
+            successCount ++ ;
+          } catch (error) {
+            if (error.code)
+            console.error(`SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0180 iteration ${i} fail, code: ${error.code}, message: ${error.message}`);
+            if (checkDeviceIsDevBoard()) {
+              expect(error.code).assertEqual(24010002);
+            } else {
+              expect(error.code).assertEqual(201);
+            }
+          }
+        }
+        await new Promise<void>(resolve => setTimeout(resolve, 10000));
+        for (let i = 1000; i < 2000; i++) {
+          try {
+            let data: abilityToolAccessCtrl.TicketQueryResult =
+              await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketParams);
+            expect(data !== null).assertTrue();
+            console.info("SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0180: success in call requestToolTicket, times: " + successCount);
+            successCount ++ ;
+          } catch (error) {
+            console.error(`SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0180 iteration ${i} fail, code: ${error.code}, message: ${error.message}`);
+            if (checkDeviceIsDevBoard()) {
+              expect(error.code).assertEqual(24010002);
+            } else {
+              expect(error.code).assertEqual(201);
+            }
+          }
+        }
+        await new Promise<void>(resolve => setTimeout(resolve, 10000));
+        for (let i = 2000; i < 3000; i++) {
+          try {
+            let data: abilityToolAccessCtrl.TicketQueryResult =
+              await abilityToolAccessCtrl.requestToolTicket(cliCmdInfos, ticketParams);
+            expect(data !== null).assertTrue();
+            console.info("SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0180: success in call requestToolTicket, times: " + successCount);
+            successCount ++ ;
+          } catch (error) {
+            console.error(`SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0180 iteration ${i} fail, code: ${error.code}, message: ${error.message}`);
+            if (checkDeviceIsDevBoard()) {
+              expect(error.code).assertEqual(24010002);
+            } else {
+              expect(error.code).assertEqual(201);
+            }
+          }
+        }
+        await new Promise<void>(resolve => setTimeout(resolve, 10000));
+        console.info(`SUB_Security_Asset_SecureAccessFence_RequestToolTicket_0180 end. `);
         done();
       });
   });

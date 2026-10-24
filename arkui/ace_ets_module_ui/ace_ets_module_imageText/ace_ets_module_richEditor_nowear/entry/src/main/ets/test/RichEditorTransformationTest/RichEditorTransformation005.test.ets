@@ -69,7 +69,7 @@ export default function RichEditorTransformation005() {
       let driver = Driver.create();
       let rich = await driver.findComponent(ON.id('RichEditorTransformation005'));
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
       await CommonFunc.sleep(500);
       let getLength = await driver.findComponent(ON.id('getLength'));
       await getLength.click();
@@ -84,7 +84,7 @@ export default function RichEditorTransformation005() {
       let setTypingStyle = await driver.findComponent(ON.id('setTypingStyle'));
       await setTypingStyle.click();
       await CommonFunc.sleep(500);
-      await driver.longClick(pointCenter.x, pointCenter.y);
+      await driver.longClickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
       await CommonFunc.sleep(500);
       driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V, 0, displayID);
       await CommonFunc.sleep(500);

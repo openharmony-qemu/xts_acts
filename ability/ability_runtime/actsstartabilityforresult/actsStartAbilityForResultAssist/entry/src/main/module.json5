@@ -25,7 +25,7 @@
     "abilities": [
       {
         "name": "EntryAbility",
-        "srcEntry": "./ets/entryability/EntryAbility.ts",
+        "srcEntry": "./ets/entryability/EntryAbility.ets",
         "description": "$string:EntryAbility_desc",
         "icon": "$media:icon",
         "label": "$string:EntryAbility_label",
@@ -45,7 +45,7 @@
       },
       {
         "name": "EntryAbility4",
-        "srcEntry": "./ets/entryability/EntryAbility4.ts",
+        "srcEntry": "./ets/entryability/EntryAbility4.ets",
         "description": "$string:EntryAbility_desc",
         "icon": "$media:icon",
         "label": "$string:EntryAbility_label",

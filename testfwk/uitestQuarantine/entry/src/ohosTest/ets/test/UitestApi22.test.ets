@@ -37,7 +37,12 @@ async function startAbility(bundleName: string, abilityName: string) {
 }
 
 async function stopApplication(bundleName: string) {
-  await delegator.executeShellCommand(`aa force-stop ${bundleName} `).then(result => {
+  let cmd = `aa force-stop ${bundleName}`;
+  let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+  if(user !== undefined){
+      cmd += ' -u ' + user;
+  }
+  await delegator.executeShellCommand(cmd).then(result => {
     console.info(`${TestTag}, stop application finished: ${result}`)
   }).catch((err: BusinessError) => {
     console.error(`${TestTag},stop application failed: ${err}`)
@@ -89,7 +94,8 @@ export default function uiTestApi22Test() {
       let dragResultTextCom = await driver.findComponent(ON.id('dragResultText'));
       await driver.delayMs(waitUiReadyMs);
       let center2 = await dragResultTextCom.getBoundsCenter();
-      let result = await driver.isComponentPresentWhenDrag(ON.text('ShowDragEventText'), center1, center2)
+      let disPlay = display.getDefaultDisplaySync();
+      let result = await driver.isComponentPresentWhenDrag(ON.belongingDisplay(disPlay.id).text('ShowDragEventText'), center1, center2)
       console.log(`${TestTag}, tesIsComponentPresentWhenDragTrue result, ${JSON.stringify(result)}`);
       expect(result).assertTrue();
       let text = await driver.findComponent(ON.text('drag end'));

@@ -59,16 +59,21 @@ export default function listDidJsunit() {
      */
 it('listDidJsunit_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[listDidJsunit_static_0100] START');
-      let listRect = CommonFunc.getComponentRectOnScreen('scrollSource_list')
       let driver = Driver.create()
+      await CommonFunc.sleep(500);
+      let swipeComp = await driver.findComponent(ON.id('scrollSource_list'));
+      let listRect = await swipeComp!.getBounds();
+      let displayId = await swipeComp!.getDisplayId();
       await CommonFunc.sleep(1000);
       await driver.fling({
         x: (Number.parseInt(`${(listRect.right - listRect.left) * 0.5 + listRect.left}`)).toInt(),
-        y: (Number.parseInt(`${(listRect.bottom - listRect.top) * 0.6 + listRect.top}`)).toInt()
+        y: (Number.parseInt(`${(listRect.bottom - listRect.top) * 0.6 + listRect.top}`)).toInt(),
+        displayId: displayId
       },
         {
           x: (Number.parseInt(`${(listRect.right - listRect.left) * 0.5 + listRect.left}`)).toInt(),
-          y: (Number.parseInt(`${(listRect.bottom - listRect.top) * 0.2 + listRect.top}`)).toInt()
+          y: (Number.parseInt(`${(listRect.bottom - listRect.top) * 0.2 + listRect.top}`)).toInt(),
+          displayId: displayId
         }, 5, 1000);
       await CommonFunc.sleep(2000);
 

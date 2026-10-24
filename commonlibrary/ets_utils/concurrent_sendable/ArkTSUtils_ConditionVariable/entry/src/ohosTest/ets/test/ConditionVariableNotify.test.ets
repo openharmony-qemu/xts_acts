@@ -14,6 +14,7 @@
  */
 import { beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { ArkTSUtils, MessageEvents, taskpool, worker } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 import { sleep, threadNotify, threadWait, threadWaitFor } from './ConditionVariableHelpers';
 
 export default function conditionVariableNotifyTest() {
@@ -868,5 +869,91 @@ export default function conditionVariableNotifyTest() {
       done();
     });
 
+    /**
+     * @tc.number  SUB_CONDITIONVAR_REQUEST_NONSTRING_0100
+     * @tc.name    testCvRequestNonString0001
+     * @tc.desc    Verify request with non-string name pins an error
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testCvRequestNonString0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let pin = -1;
+      try {
+        ArkTSUtils.locks.ConditionVariable.request(123 as Object as string);
+      } catch (error) {
+        pin = (error as BusinessError).code;
+      }
+      expect(pin !== -1).assertTrue();
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_CONDITIONVAR_REQUEST_MISSING_0200
+     * @tc.name    testCvRequestMissing0002
+     * @tc.desc    Verify request with missing name pins an error
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testCvRequestMissing0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let emptyNames: string[] = [];
+      let missingName: string = emptyNames[0];
+      let pin = -1;
+      try {
+        ArkTSUtils.locks.ConditionVariable.request(missingName);
+      } catch (error) {
+        pin = (error as BusinessError).code;
+      }
+      expect(pin !== -1).assertTrue();
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_CONDITIONVAR_REQUEST_SAME_NAME_0300
+     * @tc.name    testCvRequestSameName0003
+     * @tc.desc    Verify request with same name returns distinct instances (actual)
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testCvRequestSameName0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let a = ArkTSUtils.locks.ConditionVariable.request('supSameX');
+      let b = ArkTSUtils.locks.ConditionVariable.request('supSameX');
+      expect(a !== b).assertTrue();
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_CONDITIONVAR_REQUEST_DIFF_NAME_0400
+     * @tc.name    testCvRequestDiffName0004
+     * @tc.desc    Verify request with different names returns different instances
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testCvRequestDiffName0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let a = ArkTSUtils.locks.ConditionVariable.request('supDiffA');
+      let b = ArkTSUtils.locks.ConditionVariable.request('supDiffB');
+      expect(a !== b).assertTrue();
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_CONDITIONVAR_NOTIFY_VOID_0600
+     * @tc.name    testCvNotifyVoid0006
+     * @tc.desc    Verify notifyAll/notifyOne return undefined
+     * @tc.size    MEDIUMTEST
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testCvNotifyVoid0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let cv = new ArkTSUtils.locks.ConditionVariable();
+      let r1 = cv.notifyAll();
+      let r2 = cv.notifyOne();
+      expect(r1 === undefined).assertTrue();
+      expect(r2 === undefined).assertTrue();
+      done()
+    })
   });
 }

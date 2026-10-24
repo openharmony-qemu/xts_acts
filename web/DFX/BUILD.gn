@@ -15,6 +15,8 @@ group("DFXTest") {
   testonly = true
   if (is_standard_system) {
     deps = [
+      "ace_web_resource_enhanced_dev_one:ActsWebResourceEnhancedDevOneTest",
+      "ace_web_blank_screen_monitor_dev_one:ActsWebBlankScreenMonitorDevOneTest",
       "crash_information:ActsWebCrashInformationTest",
       "crash_information_static:ActsWebCrashInformationStaticTest",
       "log_dotting:ActsWebLogDottingTest",

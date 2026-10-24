@@ -1,4 +1,5 @@
 'use static';
+
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -65,10 +66,6 @@ export default function Grid_Col_Offset_Number() {
       console.info("Grid_Col_Offset_Number after each called")
     });
 
-    
-    
-    
-
 /**
      * @tc.number   SUB_ACE_Grid_Col_Offset_Number_TEST_static_0100
      * @tc.name     SUB_ACE_Grid_Col_Offset_Number_TEST_static_0100
@@ -92,51 +89,54 @@ it('SUB_ACE_Grid_Col_Offset_Number_TEST_static_0100', Level.LEVEL0, async (done:
       let Grid_Col_Offset_Number_05: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_Number_05');
       let Grid_Col_Offset_Number_06: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_Number_06');
       let Grid_Col_Offset_Number_07: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_Number_07');
-      let Grid_Col_Offset_Number_G1: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_Number' + '_G1');
+      let Grid_Col_Offset_Number_G1: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_Number_G1');
       console.log('assert space')
-      expect(Math.abs((Grid_Col_Offset_Number_01.left - Grid_Col_Offset_Number_00.right) -
-      UIContext.resolveUIContext()!.vp2px(10)) <= 1)
-        .assertTrue();
-      expect(Math.abs((Grid_Col_Offset_Number_02.left - Grid_Col_Offset_Number_01.right) -
-      UIContext.resolveUIContext()!.vp2px(10)) <= 1)
-        .assertTrue();
 
-      expect(Math.abs((Grid_Col_Offset_Number_04.left - Grid_Col_Offset_Number_03.right) -
-      UIContext.resolveUIContext()!.vp2px(10)) <= 1)
-        .assertTrue();
-      expect(Math.abs((Grid_Col_Offset_Number_05.left - Grid_Col_Offset_Number_04.right) -
-      UIContext.resolveUIContext()!.vp2px(10)) <= 1)
-        .assertTrue();
+      console.info('SUB_ACE_Grid_Col_Offset_Number_TEST_static_0100_chazhi1:'+ Math.floor(Math.abs((Grid_Col_Offset_Number_01.left - Grid_Col_Offset_Number_00.right) -
+      UIContext.resolveUIContext()!.vp2px(10))));
+      console.info('SUB_ACE_Grid_Col_Offset_Number_TEST_static_0100_chazhi2:'+ Math.floor(Math.abs((Grid_Col_Offset_Number_02.left - Grid_Col_Offset_Number_01.right) -
+      UIContext.resolveUIContext()!.vp2px(10))));
+      console.info('SUB_ACE_Grid_Col_Offset_Number_TEST_static_0100_chazhi3:'+ Math.floor(Math.abs((Grid_Col_Offset_Number_04.left - Grid_Col_Offset_Number_03.right) -
+      UIContext.resolveUIContext()!.vp2px(10))));
+      console.info('SUB_ACE_Grid_Col_Offset_Number_TEST_static_0100_chazhi4:'+ Math.floor(Math.abs((Grid_Col_Offset_Number_05.left - Grid_Col_Offset_Number_04.right) -
+      UIContext.resolveUIContext()!.vp2px(10))));
+      console.info('SUB_ACE_Grid_Col_Offset_Number_TEST_static_0100_chazhi5:'+ Math.floor(Math.abs((Grid_Col_Offset_Number_07.left - Grid_Col_Offset_Number_06.right) -
+      UIContext.resolveUIContext()!.vp2px(10))));
+      console.info('SUB_ACE_Grid_Col_Offset_Number_TEST_static_0100_chazhi6:'+ Math.floor(Math.abs((Grid_Col_Offset_Number_03.top - Grid_Col_Offset_Number_00.bottom) -
+      UIContext.resolveUIContext()!.vp2px(10))));
+      console.info('SUB_ACE_Grid_Col_Offset_Number_TEST_static_0100_chazhi7:'+ Math.floor(Math.abs((Grid_Col_Offset_Number_04.top - Grid_Col_Offset_Number_01.bottom) -
+      UIContext.resolveUIContext()!.vp2px(10))));
+      console.info('SUB_ACE_Grid_Col_Offset_Number_TEST_static_0100_chazhi8:'+ Math.floor(Math.abs((Grid_Col_Offset_Number_05.top - Grid_Col_Offset_Number_02.bottom) -
+      UIContext.resolveUIContext()!.vp2px(10))));
+      console.info('SUB_ACE_Grid_Col_Offset_Number_TEST_static_0100_chazhi9:'+ Math.floor(Math.abs((Grid_Col_Offset_Number_06.top - Grid_Col_Offset_Number_03.bottom) -
+      UIContext.resolveUIContext()!.vp2px(10))));
+      console.info('SUB_ACE_Grid_Col_Offset_Number_TEST_static_0100_chazhi10:'+ Math.floor(Math.abs((Grid_Col_Offset_Number_07.top - Grid_Col_Offset_Number_04.bottom) -
+      UIContext.resolveUIContext()!.vp2px(10))));
 
-      expect(Math.abs((Grid_Col_Offset_Number_07.left - Grid_Col_Offset_Number_06.right) -
-      UIContext.resolveUIContext()!.vp2px(10)) <= 1)
-        .assertTrue();
-
-      expect(Math.abs((Grid_Col_Offset_Number_03.top - Grid_Col_Offset_Number_00.bottom) -
-      UIContext.resolveUIContext()!.vp2px(10)) <= 1)
-        .assertTrue();
-      expect(Math.abs((Grid_Col_Offset_Number_04.top - Grid_Col_Offset_Number_01.bottom) -
-      UIContext.resolveUIContext()!.vp2px(10)) <= 1)
-        .assertTrue();
-      expect(Math.abs((Grid_Col_Offset_Number_05.top - Grid_Col_Offset_Number_02.bottom) -
-      UIContext.resolveUIContext()!.vp2px(10)) <= 1)
-        .assertTrue();
-
-      expect(Math.abs((Grid_Col_Offset_Number_06.top - Grid_Col_Offset_Number_03.bottom) -
-      UIContext.resolveUIContext()!.vp2px(10)) <= 1)
-        .assertTrue();
-      expect(Math.abs((Grid_Col_Offset_Number_07.top - Grid_Col_Offset_Number_04.bottom) -
-      UIContext.resolveUIContext()!.vp2px(10)) <= 1)
-        .assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Offset_Number_01.left - Grid_Col_Offset_Number_00.right) -
+      UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Offset_Number_02.left - Grid_Col_Offset_Number_01.right) -
+      UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Offset_Number_04.left - Grid_Col_Offset_Number_03.right) -
+      UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Offset_Number_05.left - Grid_Col_Offset_Number_04.right) -
+      UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Offset_Number_07.left - Grid_Col_Offset_Number_06.right) -
+      UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Offset_Number_03.top - Grid_Col_Offset_Number_00.bottom) -
+      UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Offset_Number_04.top - Grid_Col_Offset_Number_01.bottom) -
+      UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Offset_Number_05.top - Grid_Col_Offset_Number_02.bottom) -
+      UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Offset_Number_06.top - Grid_Col_Offset_Number_03.bottom) -
+      UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Offset_Number_07.top - Grid_Col_Offset_Number_04.bottom) -
+      UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
 
       console.info('[SUB_ACE_Grid_Col_Offset_Number_TEST_static_0100] END');
       done();
     });
-
-
-    
-    
-    
 
 /**
      * @tc.number   SUB_ACE_Grid_Col_Offset_Number_TEST_static_0200
@@ -162,48 +162,66 @@ it('SUB_ACE_Grid_Col_Offset_Number_TEST_static_0200', Level.LEVEL0, async (done:
       let Grid_Col_Offset_Number_06: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_Number_06');
       let Grid_Col_Offset_Number_07: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_Number_07');
       console.log('assert space')
-      expect(Math.abs((Grid_Col_Offset_Number_01.left - Grid_Col_Offset_Number_00.right) -
-      UIContext.resolveUIContext()!.vp2px(10)) <= 1)
+
+      console.info('SUB_ACE_Grid_Col_Offset_Number_TEST_static_0200_chazhi1:'+ Math.floor(Math.abs((Grid_Col_Offset_Number_01.left - Grid_Col_Offset_Number_00.right) -
+      UIContext.resolveUIContext()!.vp2px(10))));
+      console.info('SUB_ACE_Grid_Col_Offset_Number_TEST_static_0200_chazhi2:'+ Math.floor(Math.abs((Grid_Col_Offset_Number_02.left - Grid_Col_Offset_Number_01.right) -
+      UIContext.resolveUIContext()!.vp2px(10))));
+      console.info('SUB_ACE_Grid_Col_Offset_Number_TEST_static_0200_chazhi3:'+ Math.floor(Math.abs((Grid_Col_Offset_Number_04.left - Grid_Col_Offset_Number_03.right) -
+      UIContext.resolveUIContext()!.vp2px(10))));
+      console.info('SUB_ACE_Grid_Col_Offset_Number_TEST_static_0200_chazhi4:'+ Math.floor(Math.abs((Grid_Col_Offset_Number_05.left - Grid_Col_Offset_Number_04.right) -
+      UIContext.resolveUIContext()!.vp2px(10))));
+      console.info('SUB_ACE_Grid_Col_Offset_Number_TEST_static_0200_chazhi5:'+ Math.floor(Math.abs((Grid_Col_Offset_Number_07.left - Grid_Col_Offset_Number_06.right) -
+      UIContext.resolveUIContext()!.vp2px(10))));
+      console.info('SUB_ACE_Grid_Col_Offset_Number_TEST_static_0200_chazhi6:'+ Math.floor(Math.abs((Grid_Col_Offset_Number_03.top - Grid_Col_Offset_Number_00.bottom) -
+      UIContext.resolveUIContext()!.vp2px(10))));
+      console.info('SUB_ACE_Grid_Col_Offset_Number_TEST_static_0200_chazhi7:'+ Math.floor(Math.abs((Grid_Col_Offset_Number_04.top - Grid_Col_Offset_Number_01.bottom) -
+      UIContext.resolveUIContext()!.vp2px(10))));
+      console.info('SUB_ACE_Grid_Col_Offset_Number_TEST_static_0200_chazhi8:'+ Math.floor(Math.abs((Grid_Col_Offset_Number_05.top - Grid_Col_Offset_Number_02.bottom) -
+      UIContext.resolveUIContext()!.vp2px(10))));
+      console.info('SUB_ACE_Grid_Col_Offset_Number_TEST_static_0200_chazhi9:'+ Math.floor(Math.abs((Grid_Col_Offset_Number_06.top - Grid_Col_Offset_Number_03.bottom) -
+      UIContext.resolveUIContext()!.vp2px(10))));
+      console.info('SUB_ACE_Grid_Col_Offset_Number_TEST_static_0200_chazhi10:'+ Math.floor(Math.abs((Grid_Col_Offset_Number_07.top - Grid_Col_Offset_Number_04.bottom) -
+      UIContext.resolveUIContext()!.vp2px(10))));
+
+      expect(Math.floor(Math.abs((Grid_Col_Offset_Number_01.left - Grid_Col_Offset_Number_00.right) -
+      UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs((Grid_Col_Offset_Number_02.left - Grid_Col_Offset_Number_01.right) -
-      UIContext.resolveUIContext()!.vp2px(10)) <= 1)
+      expect(Math.floor(Math.abs((Grid_Col_Offset_Number_02.left - Grid_Col_Offset_Number_01.right) -
+      UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Grid_Col_Offset_Number_04.left - Grid_Col_Offset_Number_03.right) -
-      UIContext.resolveUIContext()!.vp2px(10)) <= 1)
+      expect(Math.floor(Math.abs((Grid_Col_Offset_Number_04.left - Grid_Col_Offset_Number_03.right) -
+      UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs((Grid_Col_Offset_Number_05.left - Grid_Col_Offset_Number_04.right) -
-      UIContext.resolveUIContext()!.vp2px(10)) <= 1)
-        .assertTrue();
-
-      expect(Math.abs((Grid_Col_Offset_Number_07.left - Grid_Col_Offset_Number_06.right) -
-      UIContext.resolveUIContext()!.vp2px(10)) <= 1)
+      expect(Math.floor(Math.abs((Grid_Col_Offset_Number_05.left - Grid_Col_Offset_Number_04.right) -
+      UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Grid_Col_Offset_Number_03.top - Grid_Col_Offset_Number_00.bottom) -
-      UIContext.resolveUIContext()!.vp2px(10)) <= 1)
-        .assertTrue();
-      expect(Math.abs((Grid_Col_Offset_Number_04.top - Grid_Col_Offset_Number_01.bottom) -
-      UIContext.resolveUIContext()!.vp2px(10)) <= 1)
-        .assertTrue();
-      expect(Math.abs((Grid_Col_Offset_Number_05.top - Grid_Col_Offset_Number_02.bottom) -
-      UIContext.resolveUIContext()!.vp2px(10)) <= 1)
+      expect(Math.floor(Math.abs((Grid_Col_Offset_Number_07.left - Grid_Col_Offset_Number_06.right) -
+      UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Grid_Col_Offset_Number_06.top - Grid_Col_Offset_Number_03.bottom) -
-      UIContext.resolveUIContext()!.vp2px(10)) <= 1)
+      expect(Math.floor(Math.abs((Grid_Col_Offset_Number_03.top - Grid_Col_Offset_Number_00.bottom) -
+      UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs((Grid_Col_Offset_Number_07.top - Grid_Col_Offset_Number_04.bottom) -
-      UIContext.resolveUIContext()!.vp2px(10)) <= 1)
+      expect(Math.floor(Math.abs((Grid_Col_Offset_Number_04.top - Grid_Col_Offset_Number_01.bottom) -
+      UIContext.resolveUIContext()!.vp2px(10))) <= 1)
+        .assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Offset_Number_05.top - Grid_Col_Offset_Number_02.bottom) -
+      UIContext.resolveUIContext()!.vp2px(10))) <= 1)
+        .assertTrue();
+
+      expect(Math.floor(Math.abs((Grid_Col_Offset_Number_06.top - Grid_Col_Offset_Number_03.bottom) -
+      UIContext.resolveUIContext()!.vp2px(10))) <= 1)
+        .assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Offset_Number_07.top - Grid_Col_Offset_Number_04.bottom) -
+      UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
 
       console.info('[SUB_ACE_Grid_Col_Offset_Number_TEST_static_0200] END');
       done();
     });
-
-    
-    
-    
 
 /**
      * @tc.number   SUB_ACE_Grid_Col_Offset_Number_TEST_static_0300
@@ -228,28 +246,42 @@ it('SUB_ACE_Grid_Col_Offset_Number_TEST_static_0300', Level.LEVEL0, async (done:
       let Grid_Col_Offset_Number_05: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_Number_05');
       let Grid_Col_Offset_Number_06: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_Number_06');
       let Grid_Col_Offset_Number_07: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_Number_07');
-      let Grid_Col_Offset_Number_G1: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_Number' + '_G1');
+      let Grid_Col_Offset_Number_G1: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_Number_G1');
 
       console.log('assert space')
-      expect(Math.abs((Grid_Col_Offset_Number_02.top - Grid_Col_Offset_Number_00.bottom) -
-      UIContext.resolveUIContext()!.vp2px(10)) <= 1)
+
+      console.info('SUB_ACE_Grid_Col_Offset_Number_TEST_static_0300_chazhi1:'+ Math.floor(Math.abs((Grid_Col_Offset_Number_02.top - Grid_Col_Offset_Number_00.bottom) -
+      UIContext.resolveUIContext()!.vp2px(10))));
+      console.info('SUB_ACE_Grid_Col_Offset_Number_TEST_static_0300_chazhi2:'+ Math.floor(Math.abs((Grid_Col_Offset_Number_03.top - Grid_Col_Offset_Number_01.bottom) -
+      UIContext.resolveUIContext()!.vp2px(10))));
+      console.info('SUB_ACE_Grid_Col_Offset_Number_TEST_static_0300_chazhi3:'+ Math.floor(Math.abs((Grid_Col_Offset_Number_04.top - Grid_Col_Offset_Number_02.bottom) -
+      UIContext.resolveUIContext()!.vp2px(10))));
+      console.info('SUB_ACE_Grid_Col_Offset_Number_TEST_static_0300_chazhi4:'+ Math.floor(Math.abs((Grid_Col_Offset_Number_05.top - Grid_Col_Offset_Number_03.bottom) -
+      UIContext.resolveUIContext()!.vp2px(10))));
+      console.info('SUB_ACE_Grid_Col_Offset_Number_TEST_static_0300_chazhi5:'+ Math.floor(Math.abs((Grid_Col_Offset_Number_06.top - Grid_Col_Offset_Number_04.bottom) -
+      UIContext.resolveUIContext()!.vp2px(10))));
+      console.info('SUB_ACE_Grid_Col_Offset_Number_TEST_static_0300_chazhi6:'+ Math.floor(Math.abs((Grid_Col_Offset_Number_07.top - Grid_Col_Offset_Number_05.bottom) -
+      UIContext.resolveUIContext()!.vp2px(10))));
+
+      expect(Math.floor(Math.abs((Grid_Col_Offset_Number_02.top - Grid_Col_Offset_Number_00.bottom) -
+      UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs((Grid_Col_Offset_Number_03.top - Grid_Col_Offset_Number_01.bottom) -
-      UIContext.resolveUIContext()!.vp2px(10)) <= 1)
+      expect(Math.floor(Math.abs((Grid_Col_Offset_Number_03.top - Grid_Col_Offset_Number_01.bottom) -
+      UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Grid_Col_Offset_Number_04.top - Grid_Col_Offset_Number_02.bottom) -
-      UIContext.resolveUIContext()!.vp2px(10)) <= 1)
+      expect(Math.floor(Math.abs((Grid_Col_Offset_Number_04.top - Grid_Col_Offset_Number_02.bottom) -
+      UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs((Grid_Col_Offset_Number_05.top - Grid_Col_Offset_Number_03.bottom) -
-      UIContext.resolveUIContext()!.vp2px(10)) <= 1)
+      expect(Math.floor(Math.abs((Grid_Col_Offset_Number_05.top - Grid_Col_Offset_Number_03.bottom) -
+      UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
 
-      expect(Math.abs((Grid_Col_Offset_Number_06.top - Grid_Col_Offset_Number_04.bottom) -
-      UIContext.resolveUIContext()!.vp2px(10)) <= 1)
+      expect(Math.floor(Math.abs((Grid_Col_Offset_Number_06.top - Grid_Col_Offset_Number_04.bottom) -
+      UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs((Grid_Col_Offset_Number_07.top - Grid_Col_Offset_Number_05.bottom) -
-      UIContext.resolveUIContext()!.vp2px(10)) <= 1)
+      expect(Math.floor(Math.abs((Grid_Col_Offset_Number_07.top - Grid_Col_Offset_Number_05.bottom) -
+      UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
 
       console.info('[SUB_ACE_Grid_Col_Offset_Number_TEST_static_0300] END');

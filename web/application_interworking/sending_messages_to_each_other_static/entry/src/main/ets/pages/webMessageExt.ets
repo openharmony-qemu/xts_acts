@@ -989,8 +989,7 @@ struct webMessageExt {
                   Utils.emitEvent(value[0], this.listening_port.toLong())
                 } else if (this.listening_flag == 16) {
                   try {
-                    let err = result.getError()
-                    let value = err.name + ': ' + err.message
+                    let value = result.getError().message
                     console.info(`The postErrorToApp() return value is: ${value}`)
                     Utils.emitEvent(value, this.listening_port.toLong())
                   } catch (error) {

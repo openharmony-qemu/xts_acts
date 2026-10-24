@@ -45,6 +45,14 @@ add_library(nativefunc SHARED
     hovered/HoveredTest.cpp
 )
 
+add_library(nativeanim SHARED
+    animate/NativeModuleAnimationTest.cpp
+    animate/NativeModuleAnimationExtraTest.cpp
+    animate/NativeModuleAnimApi2601Test.cpp
+    animate/NativeModuleAnimationInit.cpp
+    animate/native_anim_common.cpp
+)
+
 find_library(
     # Sets the name of the path variable.
     hilog-lib
@@ -77,5 +85,8 @@ target_link_libraries(nativerender PUBLIC
         libnative_drawing.so libpixelmap.so libace_napi.z.so ${hilog-lib} ${libace-lib} ${libnapi-lib} ${libuv-lib} libudmf.so)
 target_link_libraries(nativefunc PUBLIC
  	    libnative_drawing.so libpixelmap.so libace_napi.z.so libudmf.so ${hilog-lib} ${libace-lib} ${libnapi-lib} ${libuv-lib})
+target_link_libraries(nativeanim PUBLIC
+        libnative_drawing.so libpixelmap.so libace_napi.z.so libudmf.so ${hilog-lib} ${libace-lib} ${libnapi-lib}
+        ${libuv-lib} dl)
 target_link_libraries(nativeNode PUBLIC
         libnative_drawing.so libpixelmap.so libace_napi.z.so ${hilog-lib} ${libace-lib} ${libnapi-lib} ${libuv-lib} libudmf.so)

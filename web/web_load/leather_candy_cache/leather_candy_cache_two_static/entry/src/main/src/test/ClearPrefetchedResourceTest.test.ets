@@ -162,5 +162,45 @@ export default function ClearPrefetchedResourceTest() : void {
         done();
       })
 
+    /**
+     * @tc.name   testPrefetchResourceNullStatic001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_PREFETCHRESOURCE_NULL_0400
+     * @tc.desc   test prefetchResource with null RequestInfo, expect error 17100002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPrefetchResourceNullStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('testPrefetchResourceNullStatic001', 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testPrefetchResourceNullStatic001', 17100002, 41023107, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('clearPrefetchedResourceTestButton', 10, '');
+        await Utils.msSleep(5000);
+        done();
+      })
+
+    /**
+     * @tc.name   testPrefetchResourceUndefinedStatic001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_PREFETCHRESOURCE_UNDEFINED_0500
+     * @tc.desc   test prefetchResource with undefined RequestInfo, expect error 17100002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPrefetchResourceUndefinedStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('testPrefetchResourceUndefinedStatic001', 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testPrefetchResourceUndefinedStatic001', 17100002, 41023108, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('clearPrefetchedResourceTestButton', 10, '');
+        await Utils.msSleep(5000);
+        done();
+      })
+
   })
 }

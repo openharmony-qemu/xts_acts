@@ -43,7 +43,7 @@ export default function DrawingNativeSurfaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testSurfaceCreateFromGpuContextNormal', Level.LEVEL0, () => {
+    it('testSurfaceCreateFromGpuContextNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingSurface(0);
       expect(result).assertEqual(0);
     })
@@ -56,7 +56,7 @@ export default function DrawingNativeSurfaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testSurfaceCreateFromGpuContextNull', Level.LEVEL3, () => {
+    it('testSurfaceCreateFromGpuContextNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingSurface(1);
       expect(result).assertEqual(0);
     })
@@ -67,9 +67,9 @@ export default function DrawingNativeSurfaceTest() {
      * @tc.desc   test for testSurfaceCreateFromGpuContextBoundary.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL3
      */
-    it('testSurfaceCreateFromGpuContextBoundary', Level.LEVEL0, () => {
+    it('testSurfaceCreateFromGpuContextBoundary', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingSurface(2);
       expect(result).assertEqual(0);
     })
@@ -82,7 +82,7 @@ export default function DrawingNativeSurfaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testSurfaceDestroyNormal', Level.LEVEL0, () => {
+    it('testSurfaceDestroyNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingSurface(3);
       expect(result).assertEqual(0);
     })
@@ -95,7 +95,7 @@ export default function DrawingNativeSurfaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testSurfaceDestroyNull', Level.LEVEL3, () => {
+    it('testSurfaceDestroyNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingSurface(4);
       expect(result).assertEqual(0);
     })
@@ -108,7 +108,7 @@ export default function DrawingNativeSurfaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testSurfaceGetCanvasNormal', Level.LEVEL0, () => {
+    it('testSurfaceGetCanvasNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingSurface(5);
       expect(result).assertEqual(0);
     })
@@ -121,7 +121,7 @@ export default function DrawingNativeSurfaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testSurfaceGetCanvasNull', Level.LEVEL3, () => {
+    it('testSurfaceGetCanvasNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingSurface(6);
       expect(result).assertEqual(0);
     })
@@ -132,9 +132,9 @@ export default function DrawingNativeSurfaceTest() {
      * @tc.desc   test for testSurfaceGetCanvasBoundary.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL3
      */
-    it('testSurfaceGetCanvasBoundary', Level.LEVEL0, () => {
+    it('testSurfaceGetCanvasBoundary', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingSurface(7);
       expect(result).assertEqual(0);
     })
@@ -147,7 +147,7 @@ export default function DrawingNativeSurfaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testSurfaceCreateOnScreenNormal', Level.LEVEL0, () => {
+    it('testSurfaceCreateOnScreenNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingSurface(8);
       expect(result).assertEqual(0);
     })
@@ -160,7 +160,7 @@ export default function DrawingNativeSurfaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testSurfaceCreateOnScreenNull', Level.LEVEL3, () => {
+    it('testSurfaceCreateOnScreenNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingSurface(9);
       expect(result).assertEqual(0);
     })
@@ -173,7 +173,7 @@ export default function DrawingNativeSurfaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testSurfaceCreateOnScreenMultipleCalls', Level.LEVEL3, () => {
+    it('testSurfaceCreateOnScreenMultipleCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingSurface(10);
       expect(result).assertEqual(0);
     })
@@ -186,7 +186,7 @@ export default function DrawingNativeSurfaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testSurfaceFlushNormal', Level.LEVEL0, () => {
+    it('testSurfaceFlushNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingSurface(11);
       expect(result).assertEqual(0);
     })
@@ -199,7 +199,7 @@ export default function DrawingNativeSurfaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testSurfaceFlushNull', Level.LEVEL3, () => {
+    it('testSurfaceFlushNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingSurface(12);
       expect(result).assertEqual(0);
     })
@@ -212,7 +212,7 @@ export default function DrawingNativeSurfaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testSurfaceFlushAbnormal', Level.LEVEL3, () => {
+    it('testSurfaceFlushAbnormal', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingSurface(13);
       expect(result).assertEqual(0);
     })
@@ -225,7 +225,7 @@ export default function DrawingNativeSurfaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testSurfaceFlushMultipleCalls', Level.LEVEL3, () => {
+    it('testSurfaceFlushMultipleCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingSurface(14);
       expect(result).assertEqual(0);
     })
@@ -238,7 +238,7 @@ export default function DrawingNativeSurfaceTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testSurfaceFlushTiming', Level.LEVEL3, () => {
+    it('testSurfaceFlushTiming', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingSurface(15);
       expect(result).assertEqual(0);
     })

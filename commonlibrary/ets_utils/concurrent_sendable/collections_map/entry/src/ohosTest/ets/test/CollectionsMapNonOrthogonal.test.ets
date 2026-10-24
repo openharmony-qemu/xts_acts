@@ -553,7 +553,7 @@ export default function CollectionsMapNonOrthogonalTest() {
     /**
      * @tc.number  SUB_COLLECTIONS_MAP_NON_ORTHOGONAL_2000
      * @tc.name    testCollectionsMapNonOrthogonal0020
-     * @tc.desc    Verify constructor throws 10200012 error when construction fails
+     * @tc.desc    Verify constructor with null returns empty map (duplicate of 0500, retained for regression); does not cover 10200012
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
@@ -601,7 +601,7 @@ export default function CollectionsMapNonOrthogonalTest() {
       } catch (err) {
         errorCode = err && err.code !== undefined ? err.code : -1;
       }
-      expect(errorCode === 0 || errorCode === 10200201).assertTrue();
+      expect(errorCode).assertEqual(10200201);
       console.info(caseName + ', test end');
     });
 
@@ -921,6 +921,22 @@ export default function CollectionsMapNonOrthogonalTest() {
       console.info(caseName + ', test end');
     });
 
+    /**
+     * @tc.number  SUB_MAP_CTOR_ONE_0100
+     * @tc.name    testMapCtorOne0001
+     * @tc.desc    Verify normal construction does not throw 10200012
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testMapCtorOne0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let mapA = new collections.Map<number, string>();
+      let mapB = new collections.Map<number, string>(null);
+      expect(mapA.size).assertEqual(0);
+      expect(mapB.size).assertEqual(0);
+      expect(mapA instanceof collections.Map).assertTrue();
+      expect(mapB instanceof collections.Map).assertTrue();
+    });
   });
 
 }  // export default function CollectionsMapNonOrthogonalTest()

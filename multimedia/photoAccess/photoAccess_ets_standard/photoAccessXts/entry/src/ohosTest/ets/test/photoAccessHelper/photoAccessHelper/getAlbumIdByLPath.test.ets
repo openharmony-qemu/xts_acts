@@ -27,6 +27,8 @@ import {
   getPermission,
   driveFn,
   isNum,
+  checkResourceFile,
+  createResource
 } from '../../common'
 import common from '@ohos.app.ability.common';
 
@@ -39,6 +41,10 @@ export default function getAlbumIdByLPathTest () {
       await getPermission();
       await driveFn();
       await sleep(1000);
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let fileNameList: Array<string> = [ "01.jpg" , "01.mp4" ];
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNameList);
     });
 
     /**

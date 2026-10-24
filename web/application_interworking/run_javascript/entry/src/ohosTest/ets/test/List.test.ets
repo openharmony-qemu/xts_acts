@@ -53,6 +53,8 @@ import webSchemeHandlerResponseSetNetErrorCodeParam from './WebSchemeHandlerResp
 import webSchemeHandlerResponseGetHeaderByNameParam from './WebSchemeHandlerResponseGetHeaderByNameParam.test';
 
 import webResourceResponseSetResponseDataParam from './WebResourceResponseSetResponseDataParam.test';
+import webResourceResponseSetResponseBodyParam from './WebResourceResponseSetResponseBodyParam.test';
+import webResourceResponseSetResponseBodyCoverageDirect from './WebResourceResponseSetResponseBodyCoverageDirect.test';
 import webResourceResponseSetResponseEncodingParam from './WebResourceResponseSetResponseEncodingParam.test';
 import webResourceResponseSetResponseMimeTypeParam from './WebResourceResponseSetResponseMimeTypeParam.test';
 import webResourceResponseSetResponseHeaderParam from './WebResourceResponseSetResponseHeaderParam.test';
@@ -100,6 +102,8 @@ export default function testsuite() {
 
   webResourceResponseSetReasonMessageParam()
   webResourceResponseSetResponseDataParam()
+  webResourceResponseSetResponseBodyParam()
+  webResourceResponseSetResponseBodyCoverageDirect()
   webResourceResponseSetResponseEncodingParam()
   webResourceResponseSetResponseMimeTypeParam()
   webResourceResponseSetResponseHeaderParam()

@@ -16,6 +16,7 @@
 import btAccess from '@ohos.bluetooth.access';
 import common from '@ohos.bluetooth.common';
 import partnerAgent from '@ohos.FusionConnectivity.partnerAgent';
+import PartnerAgentExtensionContext from '@ohos.FusionConnectivity.PartnerAgentExtensionContext';
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic';
 import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver } from '@ohos.UiTest'
 
@@ -1380,5 +1381,29 @@ export default function fusionAgentTest() {
             done();
         })
 
+        /**
+         * @tc.name   SUB_COMMUNICATION_FUSION_ADD_3700
+         * @tc.number SUB_COMMUNICATION_FUSION_ADD_3700
+         * @tc.desc   test PartnerAgentExtensionContext
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_FUSION_ADD_3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                let ctx = PartnerAgentExtensionContext;
+                console.info("[fusion_js]PartnerAgentExtensionContext typeof is: " + typeof ctx);
+                expect(typeof ctx).assertEqual('function');
+            } catch (err) {
+                console.error("[fusion_js]PartnerAgentExtensionContext errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    console.info("设备 is not support.");
+                    expect(err.code).assertEqual(801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
     })
 }

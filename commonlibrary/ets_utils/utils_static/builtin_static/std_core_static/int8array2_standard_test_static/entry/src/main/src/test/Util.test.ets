@@ -10,6 +10,6 @@ export default class Utils{
   }
 
   static async releaseAfterEachTest(): Promise<void> {
-    await Utils.msSleep(25);
+    await Utils.msSleep(120);
   }
 }

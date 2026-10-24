@@ -14,6 +14,7 @@
 */
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { ArkTSUtils, collections, taskpool } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 import {
   gc,
   longRunningTask,
@@ -856,6 +857,99 @@ function testConcurrentCollectionsSetRW(set: collections.Set<SendableClass>): vo
 }
 
 
+
+@Sendable
+class SupSendableHolder001 {
+  map: collections.Map<number, number> = new collections.Map<number, number>();
+}
+
+@Concurrent
+function supSendableConcWrite001(holder: SupSendableHolder001, base: number): void {
+  for (let i = 0; i < 200; i++) {
+    holder.map.set(base + i, (base + i) * 2);
+  }
+}
+
+@Sendable
+class SupSendableHolder002 {
+  map: collections.Map<number, number> = new collections.Map<number, number>();
+}
+
+@Concurrent
+function supSendableConcDelete002(holder: SupSendableHolder002): void {
+  for (let i = 0; i < 1000; i++) {
+    holder.map.delete(i);
+  }
+}
+
+@Sendable
+class SupSendableHolder003 {
+  map: collections.Map<number, number> = new collections.Map<number, number>();
+}
+
+@Sendable
+class SupSendableHolder004 {
+  map: collections.Map<number, number> = new collections.Map<number, number>();
+  lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
+}
+
+@Concurrent
+async function supSendableConcLockedWrite004(holder: SupSendableHolder004, base: number): Promise<void> {
+  await holder.lock.lockAsync((): Promise<void> => {
+    for (let i = 0; i < 200; i++) {
+      holder.map.set(base + i, (base + i) * 2);
+    }
+    return Promise.resolve();
+  });
+}
+
+@Sendable
+class SupSendableCounter001 {
+  a: number = 0;
+  b: number = 0;
+  c: number = 0;
+  d: number = 0;
+  e: number = 0;
+}
+
+@Concurrent
+function supSendableWriteField001(counter: SupSendableCounter001, field: string, value: number): void {
+  for (let i = 0; i < 200; i++) {
+    if (field === 'a') {
+      counter.a = value;
+    } else if (field === 'b') {
+      counter.b = value;
+    } else if (field === 'c') {
+      counter.c = value;
+    } else if (field === 'd') {
+      counter.d = value;
+    } else {
+      counter.e = value;
+    }
+  }
+}
+
+@Sendable
+class SupSendableCounter002 {
+  v: number = 0;
+}
+
+@Concurrent
+function supSendableWriteSame002(counter: SupSendableCounter002, value: number): void {
+  for (let i = 0; i < 200; i++) {
+    counter.v = value;
+  }
+}
+
+@Sendable
+class SupSendableRef003 {
+  value: number = 0;
+}
+
+@Concurrent
+function supSendableMutateRef003(obj: SupSendableRef003): void {
+  obj.value = 200;
+}
 export default function concurrentSharedObjectRWTest() {
   let id = setInterval(() => {
     gc();
@@ -892,6 +986,7 @@ export default function concurrentSharedObjectRWTest() {
           count++;
         }).catch((e: Error) => {
           console.error(`${tag}: execute task failed: ${e.message}`);
+          expect().assertFail();
         });
         testConcurrentCounterRW(counter);
       }
@@ -923,6 +1018,7 @@ export default function concurrentSharedObjectRWTest() {
           count++;
         }).catch((e: Error) => {
           console.error(`${tag}: execute task failed: ${e.message}`);
+          expect().assertFail();
         });
         testConcurrentArrayRW(arr);
       }
@@ -954,6 +1050,7 @@ export default function concurrentSharedObjectRWTest() {
           count++;
         }).catch((e: Error) => {
           console.error(`${tag}: execute task failed: ${e.message}`);
+          expect().assertFail();
         });
         testConcurrentMapRW(mapObj);
       }
@@ -987,6 +1084,7 @@ export default function concurrentSharedObjectRWTest() {
           count++;
         }).catch((e: Error) => {
           console.error(`${tag}: execute task failed: ${e.message}`);
+          expect().assertFail();
         });
         testConcurrentComplexRW(counter, arr, mapObj);
       }
@@ -1022,6 +1120,7 @@ export default function concurrentSharedObjectRWTest() {
             count++;
           }).catch((e: Error) => {
             console.error(`${tag}: execute task failed: ${e.message}`);
+            expect().assertFail();
           });
           testConcurrentCollectionsMapRW(map);
         }
@@ -1057,6 +1156,7 @@ export default function concurrentSharedObjectRWTest() {
             count++;
           }).catch((e: Error) => {
             console.error(`${tag}: execute task failed: ${e.message}`);
+            expect().assertFail();
           });
           testConcurrentCollectionsArrayRW(arr);
         }
@@ -1092,6 +1192,7 @@ export default function concurrentSharedObjectRWTest() {
             count++;
           }).catch((e: Error) => {
             console.error(`${tag}: execute task failed: ${e.message}`);
+            expect().assertFail();
           });
           testConcurrentCollectionsSetRW(set);
         }
@@ -1124,6 +1225,7 @@ export default function concurrentSharedObjectRWTest() {
             count++;
           }).catch((e: Error) => {
             console.error(`${tag}: execute task failed: ${e.message}`);
+            expect().assertFail();
           });
           testConcurrentCounterRW(counter);
         }
@@ -1155,6 +1257,7 @@ export default function concurrentSharedObjectRWTest() {
           count++;
         }).catch((e: Error) => {
           console.error(`${tag}: execute task failed: ${e.message}`);
+          expect().assertFail();
         });
         testConcurrentArrayRW(arr);
       }
@@ -1186,6 +1289,7 @@ export default function concurrentSharedObjectRWTest() {
           count++;
         }).catch((e: Error) => {
           console.error(`${tag}: execute task failed: ${e.message}`);
+          expect().assertFail();
         });
         testConcurrentMapRW(mapObj);
       }
@@ -1220,6 +1324,7 @@ export default function concurrentSharedObjectRWTest() {
             count++;
           }).catch((e: Error) => {
             console.error(`${tag}: execute task failed: ${e.message}`);
+            expect().assertFail();
           });
           testConcurrentComplexRW(counter, arr, mapObj);
         }
@@ -1254,16 +1359,19 @@ export default function concurrentSharedObjectRWTest() {
             count++;
           }).catch((e: Error) => {
             console.error(`${tag}: execute task failed: ${e.message}`);
+            expect().assertFail();
           });
           taskpool.execute(testConcurrentCounterRW, counter2).then(() => {
             count++;
           }).catch((e: Error) => {
             console.error(`${tag}: execute task failed: ${e.message}`);
+            expect().assertFail();
           });
           taskpool.execute(testConcurrentCounterRW, counter3).then(() => {
             count++;
           }).catch((e: Error) => {
             console.error(`${tag}: execute task failed: ${e.message}`);
+            expect().assertFail();
           });
           testConcurrentCounterRW(counter1);
           testConcurrentCounterRW(counter2);
@@ -1299,6 +1407,7 @@ export default function concurrentSharedObjectRWTest() {
             count++;
           }).catch((e: Error) => {
             console.error(`${tag}: execute task failed: ${e.message}`);
+            expect().assertFail();
           });
           testConcurrentCounterRW(counter);
         }
@@ -1329,6 +1438,7 @@ export default function concurrentSharedObjectRWTest() {
           count++;
         }).catch((e: Error) => {
           console.error(`${tag}: execute task failed: ${e.message}`);
+          expect().assertFail();
         });
         testErrorHandling(counter);
       }
@@ -1363,16 +1473,19 @@ export default function concurrentSharedObjectRWTest() {
             count++;
           }).catch((e: Error) => {
             console.error(`${tag}: execute task failed: ${e.message}`);
+            expect().assertFail();
           });
           taskpool.execute(testConcurrentArrayRW, arr).then(() => {
             count++;
           }).catch((e: Error) => {
             console.error(`${tag}: execute task failed: ${e.message}`);
+            expect().assertFail();
           });
           taskpool.execute(testConcurrentMapRW, mapObj).then(() => {
             count++;
           }).catch((e: Error) => {
             console.error(`${tag}: execute task failed: ${e.message}`);
+            expect().assertFail();
           });
           testConcurrentCounterRW(counter);
           testConcurrentArrayRW(arr);
@@ -1410,6 +1523,7 @@ export default function concurrentSharedObjectRWTest() {
             count++;
           }).catch((e: Error) => {
             console.error(`${tag}: execute task failed: ${e.message}`);
+            expect().assertFail();
           });
           testConcurrentCollectionsMapRW(map);
         }
@@ -1441,6 +1555,7 @@ export default function concurrentSharedObjectRWTest() {
           count++;
         }).catch((e: Error) => {
           console.error(`${tag}: execute task failed: ${e.message}`);
+          expect().assertFail();
         });
         longRunningTask(counter);
       }
@@ -1472,6 +1587,7 @@ export default function concurrentSharedObjectRWTest() {
           count++;
         }).catch((e: Error) => {
           console.error(`${tag}: execute task failed: ${e.message}`);
+          expect().assertFail();
         });
         testConcurrentCounterRW(counter);
       }
@@ -1490,6 +1606,7 @@ export default function concurrentSharedObjectRWTest() {
           count++;
         }).catch((e: Error) => {
           console.error(`${tag}: execute task failed: ${e.message}`);
+          expect().assertFail();
         });
         testConcurrentCounterRW(counter);
       }
@@ -1529,16 +1646,19 @@ export default function concurrentSharedObjectRWTest() {
             count++;
           }).catch((e: Error) => {
             console.error(`${tag}: execute task failed: ${e.message}`);
+            expect().assertFail();
           });
           taskpool.execute(testConcurrentCollectionsArrayRW, arr).then(() => {
             count++;
           }).catch((e: Error) => {
             console.error(`${tag}: execute task failed: ${e.message}`);
+            expect().assertFail();
           });
           taskpool.execute(testConcurrentCollectionsSetRW, set).then(() => {
             count++;
           }).catch((e: Error) => {
             console.error(`${tag}: execute task failed: ${e.message}`);
+            expect().assertFail();
           });
           testConcurrentCollectionsMapRW(map);
           testConcurrentCollectionsArrayRW(arr);
@@ -1576,6 +1696,7 @@ export default function concurrentSharedObjectRWTest() {
             count++;
           }).catch((e: Error) => {
             console.error(`${tag}: execute task failed: ${e.message}`);
+            expect().assertFail();
           });
           testConcurrentInt8ArrayRW(typedArr);
         }
@@ -1611,6 +1732,7 @@ export default function concurrentSharedObjectRWTest() {
             count++;
           }).catch((e: Error) => {
             console.error(`${tag}: execute task failed: ${e.message}`);
+            expect().assertFail();
           });
           testConcurrentInt32ArrayRW(typedArr);
         }
@@ -1646,6 +1768,7 @@ export default function concurrentSharedObjectRWTest() {
             count++;
           }).catch((e: Error) => {
             console.error(`${tag}: execute task failed: ${e.message}`);
+            expect().assertFail();
           });
           testConcurrentFloat32ArrayRW(typedArr);
         }
@@ -1682,6 +1805,7 @@ export default function concurrentSharedObjectRWTest() {
             count++;
           }).catch((e: Error) => {
             console.error(`${tag}: execute task failed: ${e.message}`);
+            expect().assertFail();
           });
           testConcurrentArrayBufferRW(buffer);
         }
@@ -1717,6 +1841,7 @@ export default function concurrentSharedObjectRWTest() {
             count++;
           }).catch((e: Error) => {
             console.error(`${tag}: execute task failed: ${e.message}`);
+            expect().assertFail();
           });
           testConcurrentUint8ArrayRW(typedArr);
         }
@@ -1752,6 +1877,7 @@ export default function concurrentSharedObjectRWTest() {
             count++;
           }).catch((e: Error) => {
             console.error(`${tag}: execute task failed: ${e.message}`);
+            expect().assertFail();
           });
           testConcurrentUint32ArrayRW(typedArr);
         }
@@ -1787,6 +1913,7 @@ export default function concurrentSharedObjectRWTest() {
             count++;
           }).catch((e: Error) => {
             console.error(`${tag}: execute task failed: ${e.message}`);
+            expect().assertFail();
           });
           testConcurrentInt16ArrayRW(typedArr);
         }
@@ -1822,6 +1949,7 @@ export default function concurrentSharedObjectRWTest() {
             count++;
           }).catch((e: Error) => {
             console.error(`${tag}: execute task failed: ${e.message}`);
+            expect().assertFail();
           });
           testConcurrentUint16ArrayRW(typedArr);
         }
@@ -1857,6 +1985,7 @@ export default function concurrentSharedObjectRWTest() {
             count++;
           }).catch((e: Error) => {
             console.error(`${tag}: execute task failed: ${e.message}`);
+            expect().assertFail();
           });
           testConcurrentUint8ClampedArrayRW(typedArr);
         }
@@ -1900,26 +2029,31 @@ export default function concurrentSharedObjectRWTest() {
             count++;
           }).catch((e: Error) => {
             console.error(`${tag}: execute task failed: ${e.message}`);
+            expect().assertFail();
           });
           taskpool.execute(testConcurrentInt32ArrayRW, int32Arr).then(() => {
             count++;
           }).catch((e: Error) => {
             console.error(`${tag}: execute task failed: ${e.message}`);
+            expect().assertFail();
           });
           taskpool.execute(testConcurrentFloat32ArrayRW, float32Arr).then(() => {
             count++;
           }).catch((e: Error) => {
             console.error(`${tag}: execute task failed: ${e.message}`);
+            expect().assertFail();
           });
           taskpool.execute(testConcurrentUint8ArrayRW, uint8Arr).then(() => {
             count++;
           }).catch((e: Error) => {
             console.error(`${tag}: execute task failed: ${e.message}`);
+            expect().assertFail();
           });
           taskpool.execute(testConcurrentUint32ArrayRW, uint32Arr).then(() => {
             count++;
           }).catch((e: Error) => {
             console.error(`${tag}: execute task failed: ${e.message}`);
+            expect().assertFail();
           });
           testConcurrentInt8ArrayRW(int8Arr);
           testConcurrentInt32ArrayRW(int32Arr);
@@ -1958,6 +2092,7 @@ export default function concurrentSharedObjectRWTest() {
           count++;
         }).catch((e: Error) => {
           console.error(`${tag}: execute task failed: ${e.message}`);
+          expect().assertFail();
         });
         testConcurrentInt32ArrayRW(typedArr);
       }
@@ -1992,6 +2127,7 @@ export default function concurrentSharedObjectRWTest() {
             count++;
           }).catch((e: Error) => {
             console.error(`${tag}: execute task failed: ${e.message}`);
+            expect().assertFail();
           });
           testConcurrentConcatArrayRW(concatArr);
         }
@@ -2026,6 +2162,7 @@ export default function concurrentSharedObjectRWTest() {
             count++;
           }).catch((e: Error) => {
             console.error(`${tag}: execute task failed: ${e.message}`);
+            expect().assertFail();
           });
           testConcurrentConcatArrayStringRW(concatArr);
         }
@@ -2060,6 +2197,7 @@ export default function concurrentSharedObjectRWTest() {
             count++;
           }).catch((e: Error) => {
             console.error(`${tag}: execute task failed: ${e.message}`);
+            expect().assertFail();
           });
           testConcurrentConcatArrayRW(concatArr);
         }
@@ -2093,6 +2231,7 @@ export default function concurrentSharedObjectRWTest() {
           count++;
         }).catch((e: Error) => {
           console.error(`${tag}: execute task failed: ${e.message}`);
+          expect().assertFail();
         });
         testConcurrentConcatArrayRW(concatArr);
       }
@@ -2131,6 +2270,7 @@ export default function concurrentSharedObjectRWTest() {
             count++;
           }).catch((e: Error) => {
             console.error(`${tag}: execute task failed: ${e.message}`);
+            expect().assertFail();
           });
           testConcurrentConcatArrayRW(concatArr);
         }
@@ -2167,6 +2307,7 @@ export default function concurrentSharedObjectRWTest() {
             count++;
           }).catch((e: Error) => {
             console.error(`${tag}: execute task failed: ${e.message}`);
+            expect().assertFail();
           });
           testConcurrentInt32ArrayRW(typedArr);
         }
@@ -2204,11 +2345,13 @@ export default function concurrentSharedObjectRWTest() {
             count++;
           }).catch((e: Error) => {
             console.error(`${tag}: execute task failed: ${e.message}`);
+            expect().assertFail();
           });
           taskpool.execute(testConcurrentConcatArrayStringRW, concatStrArr).then(() => {
             count++;
           }).catch((e: Error) => {
             console.error(`${tag}: execute task failed: ${e.message}`);
+            expect().assertFail();
           });
           testConcurrentConcatArrayRW(concatArr);
           testConcurrentConcatArrayStringRW(concatStrArr);
@@ -2245,6 +2388,7 @@ export default function concurrentSharedObjectRWTest() {
             count++;
           }).catch((e: Error) => {
             console.error(`${tag}: execute task failed: ${e.message}`);
+            expect().assertFail();
           });
           testConcurrentLRUCacheSendableRW(lruCache);
         }
@@ -2280,6 +2424,7 @@ export default function concurrentSharedObjectRWTest() {
             count++;
           }).catch((e: Error) => {
             console.error(`${tag}: execute task failed: ${e.message}`);
+            expect().assertFail();
           });
           testConcurrentLRUCacheSendableRW(lruCache);
         }
@@ -2316,6 +2461,7 @@ export default function concurrentSharedObjectRWTest() {
             count++;
           }).catch((e: Error) => {
             console.error(`${tag}: execute task failed: ${e.message}`);
+            expect().assertFail();
           });
           testConcurrentBitVectorRW(bitVector);
         }
@@ -2351,6 +2497,7 @@ export default function concurrentSharedObjectRWTest() {
           count++;
         }).catch((e: Error) => {
           console.error(`${tag}: execute task failed: ${e.message}`);
+          expect().assertFail();
         });
         testConcurrentBitVectorRW(bitVector);
       }
@@ -2362,5 +2509,188 @@ export default function concurrentSharedObjectRWTest() {
       console.info(`${tag} end.`);
       done();
     });
+
+    /**
+     * @tc.number  SUB_SENDABLE_CONC_ONE_0100
+     * @tc.name    testSendableConc0001
+     * @tc.desc    Verify concurrent map write without lock does not throw 10200201 (actual)
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testSendableConc0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let holder = new SupSendableHolder001();
+      let tasks: taskpool.Task[] = [];
+      for (let t = 0; t < 5; t++) {
+        tasks.push(new taskpool.Task(supSendableConcWrite001, holder, t * 200));
+      }
+      let caught = false;
+      for (let t = 0; t < tasks.length; t++) {
+        try {
+          await taskpool.execute(tasks[t]);
+        } catch (error) {
+          if ((error as BusinessError).code === 10200201) {
+            caught = true;
+          }
+        }
+      }
+      expect(caught).assertFalse();
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_SENDABLE_CONC_ONE_0200
+     * @tc.name    testSendableConc0002
+     * @tc.desc    Verify concurrent map delete does not throw 10200201 (actual)
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testSendableConc0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let holder = new SupSendableHolder002();
+      for (let i = 0; i < 1000; i++) {
+        holder.map.set(i, i);
+      }
+      let tasks: taskpool.Task[] = [];
+      for (let t = 0; t < 5; t++) {
+        tasks.push(new taskpool.Task(supSendableConcDelete002, holder));
+      }
+      let caught = false;
+      for (let t = 0; t < tasks.length; t++) {
+        try {
+          await taskpool.execute(tasks[t]);
+        } catch (error) {
+          if ((error as BusinessError).code === 10200201) {
+            caught = true;
+          }
+        }
+      }
+      expect(caught).assertFalse();
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_SENDABLE_CONC_ONE_0300
+     * @tc.name    testSendableConc0003
+     * @tc.desc    Verify delete inside forEach throws 10200201
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testSendableConc0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let holder = new SupSendableHolder003();
+      for (let i = 0; i < 100; i++) {
+        holder.map.set(i, i);
+      }
+      let caught = false;
+      try {
+        holder.map.forEach((value: number, key: number): void => {
+          holder.map.delete(key);
+        });
+      } catch (error) {
+        if ((error as BusinessError).code === 10200201) {
+          caught = true;
+        }
+      }
+      expect(caught).assertTrue();
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_SENDABLE_CONC_ONE_0400
+     * @tc.name    testSendableConc0004
+     * @tc.desc    Verify AsyncLock protected concurrent write keeps all values correct
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testSendableConc0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let holder = new SupSendableHolder004();
+      let tasks: taskpool.Task[] = [];
+      for (let t = 0; t < 5; t++) {
+        tasks.push(new taskpool.Task(supSendableConcLockedWrite004, holder, t * 200));
+      }
+      for (let t = 0; t < tasks.length; t++) {
+        await taskpool.execute(tasks[t]);
+      }
+      expect(holder.map.size).assertEqual(1000);
+      for (let i = 0; i < 1000; i++) {
+        expect(holder.map.get(i)).assertEqual(i * 2);
+      }
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_SENDABLE_VISIB_ONE_0500
+     * @tc.name    testSendableVisib0005
+     * @tc.desc    Verify multi-writer distinct fields keep correct final values
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testSendableVisib0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let counter = new SupSendableCounter001();
+      let tasks: taskpool.Task[] = [];
+      tasks.push(new taskpool.Task(supSendableWriteField001, counter, 'a', 11));
+      tasks.push(new taskpool.Task(supSendableWriteField001, counter, 'b', 22));
+      tasks.push(new taskpool.Task(supSendableWriteField001, counter, 'c', 33));
+      tasks.push(new taskpool.Task(supSendableWriteField001, counter, 'd', 44));
+      tasks.push(new taskpool.Task(supSendableWriteField001, counter, 'e', 55));
+      for (let t = 0; t < tasks.length; t++) {
+        try {
+          await taskpool.execute(tasks[t]);
+        } catch (error) {
+          expect((error as BusinessError).code).assertEqual(10200201);
+        }
+      }
+      expect(counter.a).assertEqual(11);
+      expect(counter.b).assertEqual(22);
+      expect(counter.c).assertEqual(33);
+      expect(counter.d).assertEqual(44);
+      expect(counter.e).assertEqual(55);
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_SENDABLE_VISIB_ONE_0600
+     * @tc.name    testSendableVisib0006
+     * @tc.desc    Verify multi-writer same field final value belongs to written set
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testSendableVisib0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let counter = new SupSendableCounter002();
+      let tasks: taskpool.Task[] = [];
+      for (let t = 1; t <= 5; t++) {
+        tasks.push(new taskpool.Task(supSendableWriteSame002, counter, t));
+      }
+      for (let t = 0; t < tasks.length; t++) {
+        try {
+          await taskpool.execute(tasks[t]);
+        } catch (error) {
+          expect((error as BusinessError).code).assertEqual(10200201);
+        }
+      }
+      let valid: number[] = [1, 2, 3, 4, 5];
+      expect(valid.indexOf(counter.v) >= 0).assertTrue();
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_SENDABLE_VISIB_ONE_0700
+     * @tc.name    testSendableVisib0007
+     * @tc.desc    Verify Sendable object is shared by reference across threads
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testSendableVisib0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let obj = new SupSendableRef003();
+      obj.value = 100;
+      await taskpool.execute(new taskpool.Task(supSendableMutateRef003, obj));
+      expect(obj.value).assertEqual(200);
+      done()
+    })
   })
 }

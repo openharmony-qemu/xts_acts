@@ -54,6 +54,8 @@ export default function systemManagerTest() {
     testStopExactTimer();
     testDestroyExactTimer();
     testAllowedPrinterIPAddressessPolicy();
+    testSetVolumeDegree();
+    testGetVolumeDegree();
   })
 }
 
@@ -729,7 +731,7 @@ function testSetLocalHotaDomain() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
     try {
       const TEST_HOTA_DOMAIN: string = "https://www.hota.com";
-      systemManager.setLocalHotaDomain(SELFWANT, TEST_HOTA_DOMAIN);
+      systemManager.setLocalHotaDomain(TEST_HOTA_DOMAIN);
       expect(false).assertTrue();
     } catch (error) {
       if (error.code === 801) {
@@ -756,7 +758,7 @@ function testGetLocalHotaDomain() {
   it("test_get_local_hota_domain_0100", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
     try {
-      systemManager.getLocalHotaDomain(SELFWANT);
+      systemManager.getLocalHotaDomain();
     } catch (error) {
       expect(error.code === 201).assertTrue();
     } finally {
@@ -1015,6 +1017,52 @@ function testAllowedPrinterIPAddressessPolicy() {
     try {
       let result: Array<string> = systemManager.getAllowedPrinterIPAddressesForAccount();
       expect(result.length).assertEqual(0);
+    } catch (error) {
+      expect(error.code).assertEqual(201);
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testSetVolumeDegree() {
+  /**
+   * @tc.name   test_set_volume_degree_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_VOLUME_DEGREE_JS_0100
+   * @tc.desc   test systemManager setVolumeDegree with normal admin without permission
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_volume_degree_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      systemManager.setVolumeDegree(systemManager.AudioVolumeType.STREAM_MUSIC, 50);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code).assertEqual(201);
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testGetVolumeDegree() {
+  /**
+   * @tc.name   test_get_volume_degree_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_VOLUME_DEGREE_JS_0100
+   * @tc.desc   test systemManager getVolumeDegree with normal admin without permission
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_volume_degree_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      let result: number = systemManager.getVolumeDegree(systemManager.AudioVolumeType.STREAM_MUSIC);
+      expect(false).assertTrue();
     } catch (error) {
       expect(error.code).assertEqual(201);
     } finally {

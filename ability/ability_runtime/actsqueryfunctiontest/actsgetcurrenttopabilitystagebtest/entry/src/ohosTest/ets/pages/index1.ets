@@ -14,7 +14,7 @@
  */
 @Entry
 @Component
-struct Index {
+struct PagesIndex1 {
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
       Text('this is A')

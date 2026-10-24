@@ -3712,7 +3712,7 @@ export default function ActsLongTimeTaskManagerStaticTest() {
             let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
             continuousTaskRequest.wantAgent = want;
             let getWant: _WantAgent = continuousTaskRequest.wantAgent;
-            console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_8800 Operation get wantAgent succeeded. getWant: ` + JSON.stringify(getWant));
+            console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_8800 Operation get wantAgent succeeded.`);
             expect(getWant !== undefined).assertTrue();
             expect(getWant !== null).assertTrue();
             done();

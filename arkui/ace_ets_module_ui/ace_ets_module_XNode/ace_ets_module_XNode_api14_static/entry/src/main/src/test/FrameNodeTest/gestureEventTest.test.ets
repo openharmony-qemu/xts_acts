@@ -1,4 +1,5 @@
 'use static';
+
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import events_emitter from '@ohos.events.emitter';
 import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
@@ -21,6 +23,9 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
+
+let displayID: Int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+
 export default function gestureEventTest() {
   describe('gestureEventTest', () => {
     beforeEach(async (): Promise<void> => {
@@ -79,7 +84,10 @@ it('gestureEventTest_static_0100', Level.LEVEL0, async (done: () => void): Promi
       let point = await node.getBoundsCenter();
       console.info("[gestureEventTest_static_0100] getBoundsCenter point.x: " + point.x + ", point.y: " + point.y);
       try {
-        await driver.swipe((Math.round(point.x - UIContext.resolveUIContext()!.vp2px(50))).toInt(), (Math.round(point.y)).toInt(), (Math.round(point.x + UIContext.resolveUIContext()!.vp2px(50))).toInt(), (Math.round(point.y)).toInt());
+        await driver.swipeBetween(
+          { x: (Math.round(point.x - UIContext.resolveUIContext()!.vp2px(50))).toInt(), y: (Math.round(point.y)).toInt(), displayId: displayID },
+          { x: (Math.round(point.x + UIContext.resolveUIContext()!.vp2px(50))).toInt(), y: (Math.round(point.y)).toInt(), displayId: displayID }
+        );
       } catch (err) {
         console.info('gestureEventTest swipe err: ' + JSON.stringify(err));
       }

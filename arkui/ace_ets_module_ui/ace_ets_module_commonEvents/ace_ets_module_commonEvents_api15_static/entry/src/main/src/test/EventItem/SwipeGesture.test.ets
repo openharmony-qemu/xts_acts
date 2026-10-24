@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
-import { Component, Driver, ON, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, ON, PointerMatrix } from '@kit.TestKit';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import RectValue from '../../../ets/MainAbility/common/Rect';
@@ -22,6 +22,7 @@ import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function swipeGestureEventTest() {
   describe('swipeGestureEvent', () => {
     beforeEach(async (): Promise<void> => {
@@ -62,23 +63,23 @@ it('SwipeGesture1_static_0100', Level.LEVEL0, async (done: () => void): Promise<
       await CommonFunc.sleep(1000);
       let top = colum.top
       let left = colum.left
+      let areaWidth = colum.right - colum.left
+      let areaHeight = colum.bottom - colum.top
       console.log('test start get data is:' + colum.top + '[]' + colum.left)
-      console.log('test start get data is:' + Math.round(AppStorage.get<number>("winLeft")! + 100) +
-        '[]' + Math.round(top + 100) + '[]' +
-      Math.round(AppStorage.get<number>("winLeft")! + 500) + '[]' + Math.round(top + 500) + '[]' + 600)
+      console.log('test start get data is:' + Math.round(left + areaWidth * 0.2) +
+        '[]' + Math.round(top + areaHeight * 0.2) + '[]' +
+      Math.round(left + areaWidth * 0.8) + '[]' + Math.round(top + areaHeight * 0.8) + '[]' + 600)
 
-      await driver.swipe(Math.round(AppStorage.get<number>("winLeft")! + 100).toInt(),
-        Math.round(top + 100).toInt(),
-        Math.round(AppStorage.get<number>("winLeft")! + 500).toInt(), Math.round(top + 500).toInt(), 600 as Int)
+      await driver.swipeBetween({x: Math.round(left + areaWidth * 0.2).toInt(), y: Math.round(top + areaHeight * 0.2).toInt(), displayId: displayID}, {x: Math.round(left + areaWidth * 0.8).toInt(), y: Math.round(top + areaHeight * 0.8).toInt(), displayId: displayID}, 600 as Int)
 
       await CommonFunc.sleep(5000);
-      let strJson = inspector.getInspectorByKey('SwipeGesture' + '_value');
+      let strJson = inspector.getInspectorByKey('value');
       await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(strJson);
       console.info('[SwipeGesture1_static_0100] component obj is: ' + JSON.stringify(obj));
       console.info('[SwipeGesture1_static_0100] title: ' +
       JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('0');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual(displayID + '');
       console.info('[SwipeGesture1_static_0100] END');
       done();
     });

@@ -15,7 +15,7 @@
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
 import { describe, it, expect, beforeAll, Level } from '@ohos/hypium-dynamic'
-import { fetchOption, photoType, photoKeys, getPermission, driveFn, sleep } from '../common'
+import { fetchOption, photoType, photoKeys, getPermission, driveFn, sleep, checkResourceFile, createResource } from '../common'
 import common from '@ohos.app.ability.common';
 
 export default function assetGetLastObjectTest() {
@@ -73,6 +73,9 @@ export default function assetGetLastObjectTest() {
       await getPermission();
       await driveFn();
       await sleep(1000);
+      const fileNames: Array<string> = [ "01.jpg", "01.mp4" ];
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNames);
     });
 
     //image

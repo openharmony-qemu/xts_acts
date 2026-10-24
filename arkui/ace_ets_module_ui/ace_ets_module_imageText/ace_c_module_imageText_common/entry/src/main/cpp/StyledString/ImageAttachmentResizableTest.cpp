@@ -154,4 +154,73 @@ static napi_value ImageAttachmentResizableTest_009(napi_env env, napi_callback_i
     NAPI_END(text);
 }
 
+static napi_value ImageAttachmentResizableTest_010(napi_env env, napi_callback_info info)
+{
+    NAPI_START(text, ARKUI_NODE_TEXT);
+    auto attachment1 = OH_ArkUI_ImageAttachment_Create();
+    ASSERT_EQ(attachment1 != nullptr, true);
+    auto latticeA = CreateAttachmentLattice();
+    ASSERT_EQ(latticeA != nullptr, true);
+    auto setRet1 = OH_ArkUI_ImageAttachment_SetResizableLattice(attachment1, latticeA);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+        "ImageAttachmentResizableTest_010 SetResizableLattice first ret=%{public}d", setRet1);
+    ASSERT_EQ(setRet1, ARKUI_ERROR_CODE_NO_ERROR);
+
+    auto latticeB = CreateAttachmentLattice();
+    ASSERT_EQ(latticeB != nullptr, true);
+    auto getRet1 = OH_ArkUI_ImageAttachment_GetResizableLattice(attachment1, latticeB);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+        "ImageAttachmentResizableTest_010 GetResizableLattice first ret=%{public}d", getRet1);
+    ASSERT_EQ(getRet1, ARKUI_ERROR_CODE_NO_ERROR);
+    ASSERT_EQ(latticeB != nullptr, true);
+
+    auto attachment2 = OH_ArkUI_ImageAttachment_Create();
+    ASSERT_EQ(attachment2 != nullptr, true);
+    auto setRet2 = OH_ArkUI_ImageAttachment_SetResizableLattice(attachment2, latticeB);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+        "ImageAttachmentResizableTest_010 SetResizableLattice second ret=%{public}d", setRet2);
+    ASSERT_EQ(setRet2, ARKUI_ERROR_CODE_NO_ERROR);
+
+    auto latticeC = CreateAttachmentLattice();
+    ASSERT_EQ(latticeC != nullptr, true);
+    auto getRet2 = OH_ArkUI_ImageAttachment_GetResizableLattice(attachment2, latticeC);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+        "ImageAttachmentResizableTest_010 GetResizableLattice second ret=%{public}d", getRet2);
+    ASSERT_EQ(getRet2, ARKUI_ERROR_CODE_NO_ERROR);
+    ASSERT_EQ(latticeC != nullptr, true);
+
+    OH_Drawing_LatticeDestroy(latticeA);
+    OH_Drawing_LatticeDestroy(latticeB);
+    OH_Drawing_LatticeDestroy(latticeC);
+    OH_ArkUI_ImageAttachment_Destroy(attachment1);
+    OH_ArkUI_ImageAttachment_Destroy(attachment2);
+    NAPI_END(text);
+}
+
+static napi_value ImageAttachmentResizableTest_011(napi_env env, napi_callback_info info)
+{
+    NAPI_START(text, ARKUI_NODE_TEXT);
+    auto lattice = CreateAttachmentLattice();
+    ASSERT_EQ(lattice != nullptr, true);
+    auto ret = OH_ArkUI_ImageAttachment_GetResizableLattice(nullptr, lattice);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+        "ImageAttachmentResizableTest_011 GetResizableLattice nullptr att ret=%{public}d", ret);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
+    OH_Drawing_LatticeDestroy(lattice);
+    NAPI_END(text);
+}
+
+static napi_value ImageAttachmentResizableTest_012(napi_env env, napi_callback_info info)
+{
+    NAPI_START(text, ARKUI_NODE_TEXT);
+    auto attachment = OH_ArkUI_ImageAttachment_Create();
+    ASSERT_EQ(attachment != nullptr, true);
+    auto ret = OH_ArkUI_ImageAttachment_GetResizableLattice(attachment, nullptr);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+        "ImageAttachmentResizableTest_012 GetResizableLattice nullptr lattice ret=%{public}d", ret);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
+    OH_ArkUI_ImageAttachment_Destroy(attachment);
+    NAPI_END(text);
+}
+
 }

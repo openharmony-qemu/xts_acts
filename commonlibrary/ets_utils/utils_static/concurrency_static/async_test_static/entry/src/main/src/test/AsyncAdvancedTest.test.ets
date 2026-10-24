@@ -27,7 +27,7 @@ async function buildTree(depth: int): Promise<TreeNode> {
   return node;
 };
 
-export default function asyncAdvancedTest() {
+export default function asyncAdvancedTest(): void {
   describe('asyncAdvancedTest', () => {
     afterEach(async () => {
       await sleep(50)

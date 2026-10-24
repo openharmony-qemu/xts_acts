@@ -1294,5 +1294,19 @@ export default function UintIntArrayTest(): void {
       expect(arr[2]).assertEqual(1)
       expect(arr[3]).assertEqual(0)
     })
+
+    /**
+     * @tc.number  SUB_TYPEDARRAY_OVERFLOW_UINT32_0100
+     * @tc.name    testTypedArrayOverflowUint320001
+     * @tc.desc    Verify Uint32Array assignment wraps to unsigned range
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testTypedArrayOverflowUint320001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let ov = new collections.Uint32Array(1);
+      ov[0] = -1;
+      expect(ov[0]).assertEqual(4294967295);
+    });
   })
 }

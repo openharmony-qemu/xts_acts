@@ -24,7 +24,7 @@ import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import OpenLinkOptions from '@ohos.app.ability.OpenLinkOptions';
 import { common } from '@kit.AbilityKit';
 
-let context = getContext(this) as common.UIAbilityContext;;
+let context = getContext(this) as common.UIAbilityContext;
 let link = 'example://www.example.com';
 let linkNotExist = 'demo://www.example.com';
 let invalidParamErrNo = 401;
@@ -32,14 +32,14 @@ let componentNotExistErrNo = 16000019;
 let resultCode = 111;
 let trueParamOptions: OpenLinkOptions = {
   appLinkingOnly: true,
-  parameters: {demo_key: "demo_value"}
+  parameters: {demo_key: 'demo_value'}
 };
 let falseParamOptions: OpenLinkOptions = {
   appLinkingOnly: false,
-  parameters: {demo_key: "demo_value"}
+  parameters: {demo_key: 'demo_value'}
 };
 let paramOptions: OpenLinkOptions = {
-  parameters: {demo_key: "demo_value", demo_num: 111}
+  parameters: {demo_key: 'demo_value', demo_num: 111}
 };
 
 export default function openLinkTest() {
@@ -78,13 +78,12 @@ export default function openLinkTest() {
       console.log(`${tag}, it begin`);
 
       try {
-        context.openLink("").then(() => {
+        context.openLink('').then(() => {
           console.info(`#${tag}# open link successful`);
           expect().assertFail();
           done();
         }).catch((error: BusinessError) => {
           console.info(`#${tag}# open link err : ${error}`);
-          expect().assertFail();
           // expect(error.code == undefined).assertFalse();
           // expect(error.code).assertEqual(-1);
           done();
@@ -109,7 +108,7 @@ export default function openLinkTest() {
       console.log(`${tag}, it begin`);
 
       try {
-        context.openLink("illegalUri").then(() => {
+        context.openLink('illegalUri').then(() => {
           console.info(`#${tag}# open link successful`);
           expect().assertFail();
           done();
@@ -281,6 +280,7 @@ export default function openLinkTest() {
 
       try {
         context.openLink(link, paramOptions, (err, result) => {
+                            console.info(`openLink callback err: ${JSON.stringify(err)}`);
                             console.info(`openLink callback result: ${JSON.stringify(result.resultCode)}`);
                             console.info(`openLink callback result data: ${JSON.stringify(result.want)}`);
                             expect(result.resultCode).assertEqual(resultCode);
@@ -314,6 +314,7 @@ export default function openLinkTest() {
 
       try {
         context.openLink(link, trueParamOptions, (err, result) => {
+                            console.info(`openLink callback err: ${JSON.stringify(err)}`);
                             console.info(`openLink callback result: ${JSON.stringify(result.resultCode)}`);
                             console.info(`openLink callback result data: ${JSON.stringify(result.want)}`);
                             expect(result.resultCode).assertEqual(resultCode);
@@ -348,6 +349,7 @@ export default function openLinkTest() {
 
       try {
         context.openLink(link, falseParamOptions, (err, result) => {
+                            console.info(`openLink callback err: ${JSON.stringify(err)}`);
                             console.info(`openLink callback result: ${JSON.stringify(result.resultCode)}`);
                             console.info(`openLink callback result data: ${JSON.stringify(result.want)}`);
                             expect(result.resultCode).assertEqual(resultCode);

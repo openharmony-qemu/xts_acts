@@ -50,7 +50,7 @@ class MainAbility {
 
       featureAbility.getWant((err, want) => {
         hilog.info(0x0000, 'testTag', '%{public}s', `get want: ${JSON.stringify(want)}`);
-        let number = want.parameters?.data;
+        let number = want.parameters?.data as number;
         switch (number) {
           case 3:
             hilog.info(0x0000, 'testTag', '%{public}s', `case 3 ----->`);

@@ -24,6 +24,9 @@ import {
   getPermission,
   driveFn,
   LOG_TAG,
+  sleep,
+  checkResourceFile,
+  createResource
 } from '../../common';
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
@@ -135,6 +138,15 @@ export default function commitModifyTest() {
       console.info(TAG, 'beforeAll case');
       await getPermission();
       await driveFn();
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let fileNameList: Array<string> = [
+        "modifyCb01.jpg", "modifyCb02.jpg", "modifyCb03.jpg", "modifyCb04.jpg", "modifyCb05.jpg", "modifyCb06.jpg", "modifyCb07.jpg",
+        "modifyCb01.mp4", "modifyCb02.mp4", "modifyCb03.mp4", "modifyCb04.mp4", "modifyCb05.mp4", "modifyCb06.mp4", "modifyCb07.mp4",
+        "modifyPro01.jpg", "modifyPro02.jpg", "modifyPro03.jpg", "modifyPro04.jpg", "modifyPro05.jpg", "modifyPro06.jpg", "modifyPro07.jpg",
+        "modifyPro01.mp4", "modifyPro02.mp4", "modifyPro03.mp4", "modifyPro04.mp4", "modifyPro05.mp4", "modifyPro06.mp4", "modifyPro07.mp4"
+      ];
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNameList);
     });
 
     beforeEach(() => {

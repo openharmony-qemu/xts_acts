@@ -1,6 +1,7 @@
 {
   "src": [
     "MainAbility/pages/index/index",
-    "MainAbility/pages/OpenOrderOverlay/OpenOrderOverlayTestPage"
+    "MainAbility/pages/OpenOrderOverlay/OpenOrderOverlayTestPage",
+    "MainAbility/pages/coverage/Dialogcover"
   ]
 }

@@ -14,8 +14,13 @@
 * limitations under the License.
 */
 import taskPoolSendableTest from './TaskPoolSendable.test'
+import taskPoolStaticTest from './taskpool/TaskPoolStatic.test'
+import taskPoolStandardCompleteTest from './taskpool/TaskpoolStandardStaticComplete.test'
+import taskPoolErrorSuccessTest from './taskpool/TaskPoolErrorSuccessTestStaticComplete.test'
 
-
-export default function testsuite() {
+export default function testsuite(): void {
   taskPoolSendableTest();
+  taskPoolStaticTest();
+  taskPoolStandardCompleteTest();
+  taskPoolErrorSuccessTest();
 }

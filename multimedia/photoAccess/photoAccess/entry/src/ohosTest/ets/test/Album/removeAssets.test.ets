@@ -26,7 +26,9 @@ import {
   pushCreateAsset,
   albumSubtype,
   albumType,
-  createMovingPhoto
+  createMovingPhoto,
+  checkResourceFile,
+  createResource
 } from '../common'
 import common from '@ohos.app.ability.common'
 import { BusinessError } from '@ohos.base'
@@ -37,6 +39,7 @@ export default function removeAssetsTest () {
   describe('removeAssetsTest', () => {
     let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
     const invalidArgErrorCode = 13900020;
+    const ts = `_${Date.now()}`;
     let getAlbum = async (testNum: string, type: photoAccessHelper.AlbumType, subtype: photoAccessHelper.AlbumSubtype, key: string = '', value: string | number = '') => {
       let predicatesAlbum: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
       if (key != '') {
@@ -97,6 +100,9 @@ export default function removeAssetsTest () {
       await getPermission();
       await driveFn();
       await sleep(1000);
+      let fileNameList = [`removeCb01${ts}.jpg`, `removeCb03${ts}.jpg`, `removeCb01${ts}.mp4`, `removeCb04${ts}.jpg`, `removePro01${ts}.jpg`, `removePro03${ts}.jpg`, `removePro01${ts}.mp4`, `removePro04${ts}.jpg`];
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNameList)
     });
 
     const helper:ESObject  = photoAccessHelper.getPhotoAccessHelper(testContext)
@@ -113,8 +119,8 @@ export default function removeAssetsTest () {
     it('removeAssets_callback_000', Level.LEVEL0, async (done: Function) => {
       const testNum = 'removeAssets_callback_000';
       try {
-        const album:ESObject = await helper.createAlbum(testNum);
-        const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, 'removeCb01.jpg');
+        const album:ESObject = await helper.createAlbum(`${testNum}${ts}`);
+        const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, `removeCb01${ts}.jpg`);
         const asset = await getFileAsset(testContext, testNum, fetchOps);
         // add asset to album will create a new asset
         await album.addAssets([asset]);
@@ -156,9 +162,9 @@ export default function removeAssetsTest () {
     it('removeAssets_callback_002', Level.LEVEL2, async (done: Function) => {
       const testNum = 'removeAssets_callback_002';
       try {
-        const album: photoAccessHelper.Album = await helper.createAlbum(testNum);
-        const fetchOps1 = fetchOption(testNum, photoKeys.DISPLAY_NAME, 'removeCb03.jpg');
-        const fetchOps2 = fetchOption(testNum, photoKeys.DISPLAY_NAME, 'removeCb01.mp4');
+        const album: photoAccessHelper.Album = await helper.createAlbum(`${testNum}${ts}`);
+        const fetchOps1 = fetchOption(testNum, photoKeys.DISPLAY_NAME, `removeCb03${ts}.jpg`);
+        const fetchOps2 = fetchOption(testNum, photoKeys.DISPLAY_NAME, `removeCb01${ts}.mp4`);
         const assetList: Array<photoAccessHelper.PhotoAsset> = new Array();
         const asset1 = await getFileAsset(testContext, testNum, fetchOps1);
         assetList.push(asset1);
@@ -204,7 +210,7 @@ export default function removeAssetsTest () {
     it('removeAssets_callback_003', Level.LEVEL2, async (done: Function) => {
       const testNum = 'removeAssets_callback_003';
       try {
-        const album: photoAccessHelper.Album = await helper.createAlbum(testNum);
+        const album: photoAccessHelper.Album = await helper.createAlbum(`${testNum}${ts}`);
         album.removeAssets([], async (err) => {
           try {
             if (err) {
@@ -234,7 +240,7 @@ export default function removeAssetsTest () {
     it('removeAssets_callback_004', Level.LEVEL2, async (done: Function) => {
       const testNum = 'removeAssets_callback_004';
       try {
-        const album: photoAccessHelper.Album = await helper.createAlbum(testNum);
+        const album: photoAccessHelper.Album = await helper.createAlbum(`${testNum}${ts}`);
         album.removeAssets(undefined, async (err) => {
           expect(false).assertTrue();
           done();
@@ -257,8 +263,8 @@ export default function removeAssetsTest () {
     it('removeAssets_callback_005', Level.LEVEL2, async (done: Function) => {
       const testNum = 'removeAssets_callback_005';
       try {
-        const album:ESObject = await helper.createAlbum(testNum);
-        const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, 'removeCb04.jpg');
+        const album:ESObject = await helper.createAlbum(`${testNum}${ts}`);
+        const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, `removeCb04${ts}.jpg`);
         const asset = await getFileAsset(testContext, testNum, fetchOps);
 
         await album.addAssets([asset]);
@@ -290,7 +296,7 @@ export default function removeAssetsTest () {
     it('removeAssets_callback_006', Level.LEVEL2, async (done: Function) => {
       const testNum = 'removeAssets_callback_006';
       try {
-        const album: ESObject = await helper.createAlbum(testNum);
+        const album: ESObject = await helper.createAlbum(`${testNum}${ts}`);
         album.removeAssets(['123123'], async (err: BusinessError) => {
           expect(false).assertTrue(); 
         })
@@ -315,7 +321,7 @@ export default function removeAssetsTest () {
       try {
         let album: photoAccessHelper.Album = await getAlbum(testNum, albumType.SYSTEM, albumSubtype.FAVORITE);
         let assetNames: Array<string> = [
-          'removeAssets_callback_07.jpg'
+          `removeAssets_callback_07${ts}.jpg`
         ]
         await pushCreateAsset(testContext, assetNames);
         const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, assetNames[0]);
@@ -349,7 +355,7 @@ export default function removeAssetsTest () {
       try {
         let album: photoAccessHelper.Album = await getAlbum(testNum, albumType.SYSTEM, albumSubtype.VIDEO);
         let assetNames: Array<string> = [
-          'removeAssets_callback_08.mp4'
+          `removeAssets_callback_08${ts}.mp4`
         ]
         await pushCreateAsset(testContext, assetNames);
         const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, assetNames[0]);
@@ -384,7 +390,7 @@ export default function removeAssetsTest () {
         console.info(testNum + 'album count is : ' + fetchResult.getCount());
         let album: photoAccessHelper.Album = await fetchResult.getLastObject();
         let assetNames: Array<string> = [
-          'removeAssets_callback_09.jpg'
+          `removeAssets_callback_09${ts}.jpg`
         ]
         await pushCreateAsset(testContext, assetNames);
         const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, assetNames[0]);
@@ -418,7 +424,7 @@ export default function removeAssetsTest () {
       try {
         let album: photoAccessHelper.Album = await getAlbum(testNum, albumType.SYSTEM, albumSubtype.TRASH);
         let assetNames: Array<string> = [
-          'removeAssets_callback_10.jpg'
+          `removeAssets_callback_10${ts}.jpg`
         ]
         await pushCreateAsset(testContext, assetNames);
         const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, assetNames[0]);
@@ -452,7 +458,7 @@ export default function removeAssetsTest () {
       try {
         let album: photoAccessHelper.Album = await getAlbum(testNum, albumType.SYSTEM, albumSubtype.SCREENSHOT);
         let assetNames: Array<string> = [
-          'removeAssets_callback_11.jpg'
+          `removeAssets_callback_11${ts}.jpg`
         ]
         await pushCreateAsset(testContext, assetNames);
         const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, assetNames[0]);
@@ -486,7 +492,7 @@ export default function removeAssetsTest () {
       try {
         let album: photoAccessHelper.Album = await getAlbum(testNum, albumType.SYSTEM, albumSubtype.CAMERA);
         let assetNames: Array<string> = [
-          'removeAssets_callback_12.jpg'
+          `removeAssets_callback_12${ts}.jpg`
         ]
         await pushCreateAsset(testContext, assetNames);
         const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, assetNames[0]);
@@ -519,7 +525,7 @@ export default function removeAssetsTest () {
       try {
         let album: photoAccessHelper.Album = await getAlbum(testNum, albumType.SYSTEM, albumSubtype.IMAGE);
         let assetNames: Array<string> = [
-          'removeAssets_callback_13.jpg'
+          `removeAssets_callback_13${ts}.jpg`
         ]
         await pushCreateAsset(testContext, assetNames);
         const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, assetNames[0]);
@@ -552,7 +558,7 @@ export default function removeAssetsTest () {
       try {
         let album: photoAccessHelper.Album = await getAlbum(testNum, albumType.SYSTEM, albumSubtype.CLOUD_ENHANCEMENT);
         let assetNames: Array<string> = [
-          'removeAssets_callback_14.jpg'
+          `removeAssets_callback_14${ts}.jpg`
         ]
         await pushCreateAsset(testContext, assetNames);
         const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, assetNames[0]);
@@ -585,7 +591,7 @@ export default function removeAssetsTest () {
       try {
         let album: photoAccessHelper.Album = await getAlbum(testNum, albumType.SOURCE, albumSubtype.SOURCE_GENERIC);
         let assetNames: Array<string> = [
-          'removeAssets_callback_15.jpg'
+          `removeAssets_callback_15${ts}.jpg`
         ]
         await pushCreateAsset(testContext, assetNames);
         const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, assetNames[0]);
@@ -616,8 +622,8 @@ export default function removeAssetsTest () {
     it('removeAssets_callback_016', Level.LEVEL0, async (done: Function) => {
       const testNum = 'removeAssets_callback_016';
       try {
-        let album: photoAccessHelper.Album = await helper.createAlbum(testNum);
-        let title: string = 'removeAssets_callback_16';
+        let album: photoAccessHelper.Album = await helper.createAlbum(`${testNum}${ts}`);
+        let title: string = `removeAssets_callback_16${ts}`;
         let displayName: string = title + '.jpg'
         await createMovingPhoto(testNum, testContext, title)
         const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, displayName);
@@ -630,7 +636,7 @@ export default function removeAssetsTest () {
             console.info(`${testNum} err: ${err.code}`);
             expect(false).assertTrue();
           } else {
-            album = await getAlbum(testNum, albumType.USER, albumSubtype.USER_GENERIC, albumKeys.ALBUM_NAME, testNum);
+            album = await getAlbum(testNum, albumType.USER, albumSubtype.USER_GENERIC, albumKeys.ALBUM_NAME, `${testNum}${ts}`);
             const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, displayName);
             const fetchResult = await album.getAssets(fetchOps);
             console.info(`${testNum} fetchResult count is : ${fetchResult.getCount()}`);
@@ -656,9 +662,9 @@ export default function removeAssetsTest () {
     it('removeAssets_callback_017', Level.LEVEL2, async (done: Function) => {
       const testNum = 'removeAssets_callback_017';
       try {
-        let album: photoAccessHelper.Album = await helper.createAlbum(testNum);
+        let album: photoAccessHelper.Album = await helper.createAlbum(`${testNum}${ts}`);
         let assetNames: Array<string> = [
-          'removeAssets_callback_17.jpg'
+          `removeAssets_callback_17${ts}.jpg`
         ]
         await pushCreateAsset(testContext, assetNames);
         const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, assetNames[0]);
@@ -693,9 +699,9 @@ export default function removeAssetsTest () {
     it('removeAssets_callback_018', Level.LEVEL2, async (done: Function) => {
       const testNum = 'removeAssets_callback_018';
       try {
-        let album: photoAccessHelper.Album = await helper.createAlbum(testNum);
+        let album: photoAccessHelper.Album = await helper.createAlbum(`${testNum}${ts}`);
         let assetNames: Array<string> = [
-          'removeAssets_callback_18.jpg'
+          `removeAssets_callback_18${ts}.jpg`
         ]
         await pushCreateAsset(testContext, assetNames);
         const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, assetNames[0]);
@@ -730,9 +736,9 @@ export default function removeAssetsTest () {
     it('removeAssets_callback_019', Level.LEVEL2, async (done: Function) => {
       const testNum = 'removeAssets_callback_019';
       try {
-        let album: photoAccessHelper.Album = await helper.createAlbum(testNum);
+        let album: photoAccessHelper.Album = await helper.createAlbum(`${testNum}${ts}`);
         let assetNames: Array<string> = [
-          'removeAssets_callback_19.jpg'
+          `removeAssets_callback_19${ts}.jpg`
         ]
         await pushCreateAsset(testContext, assetNames);
         const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, assetNames[0]);
@@ -769,11 +775,11 @@ export default function removeAssetsTest () {
     it('removeAssets_callback_020', Level.LEVEL0, async (done: Function) => {
       const testNum = 'removeAssets_callback_020';
       try {
-        let album: photoAccessHelper.Album = await helper.createAlbum(testNum);
+        let album: photoAccessHelper.Album = await helper.createAlbum(`${testNum}${ts}`);
         let assetNames: Array<string> = [
-          'removeAssets_callback_201.jpg',
-          'removeAssets_callback_202.jpg',
-          'removeAssets_callback_203.jpg'
+          `removeAssets_callback_201${ts}.jpg`,
+          `removeAssets_callback_202${ts}.jpg`,
+          `removeAssets_callback_203${ts}.jpg`
         ]
         await pushCreateAsset(testContext, assetNames);
         let assetList: Array<photoAccessHelper.PhotoAsset> = [];
@@ -800,7 +806,7 @@ export default function removeAssetsTest () {
             expect(err.code == 14000011).assertTrue();
           } else {
             for (let i = 1; i < assetNames.length; i++) {
-              album = await getAlbum(testNum, albumType.USER, albumSubtype.USER_GENERIC, albumKeys.ALBUM_NAME, testNum);
+              album = await getAlbum(testNum, albumType.USER, albumSubtype.USER_GENERIC, albumKeys.ALBUM_NAME, `${testNum}${ts}`);
               const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, assetNames[i]);
               const fetchResult = await album.getAssets(fetchOps);
               console.info(`${testNum} ${assetNames[i]} fetchResult count is : ${fetchResult.getCount()}`);
@@ -828,9 +834,9 @@ export default function removeAssetsTest () {
     it('removeAssets_callback_021', Level.LEVEL2, async (done: Function) => {
       const testNum = 'removeAssets_callback_021';
       try {
-        let album: photoAccessHelper.Album = await helper.createAlbum(testNum);
+        let album: photoAccessHelper.Album = await helper.createAlbum(`${testNum}${ts}`);
         let assetNames: Array<string> = [
-          'removeAssets_callback_21.jpg'
+          `removeAssets_callback_21${ts}.jpg`
         ]
         await pushCreateAsset(testContext, assetNames);
         const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, assetNames[0]);
@@ -844,7 +850,7 @@ export default function removeAssetsTest () {
             console.info(`${testNum} err: ${err.code}`);
             expect(false).assertTrue();
           } else {
-            album = await getAlbum(testNum, albumType.USER, albumSubtype.USER_GENERIC, albumKeys.ALBUM_NAME, testNum);
+            album = await getAlbum(testNum, albumType.USER, albumSubtype.USER_GENERIC, albumKeys.ALBUM_NAME, `${testNum}${ts}`);
             const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, assetNames[0]);
             const fetchResult = await album.getAssets(fetchOps);
             console.info(`${testNum} fetchResult count is : ${fetchResult.getCount()}`);
@@ -871,8 +877,8 @@ export default function removeAssetsTest () {
     it('removeAssets_promise_000', Level.LEVEL0, async (done: Function) => {
       const testNum = 'removeAssets_promise_000';
       try {
-        const album:ESObject = await helper.createAlbum(testNum);
-        const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, 'removePro01.jpg');
+        const album:ESObject = await helper.createAlbum(`${testNum}${ts}`);
+        const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, `removePro01${ts}.jpg`);
         const asset = await getFileAsset(testContext, testNum, fetchOps);
 
         await album.addAssets([asset]);
@@ -904,9 +910,9 @@ export default function removeAssetsTest () {
     it('removeAssets_promise_002', Level.LEVEL2, async (done: Function) => {
       const testNum = 'removeAssets_promise_002';
       try {
-        const album:ESObject = await helper.createAlbum(testNum);
-        const fetchOps1 = fetchOption(testNum, photoKeys.DISPLAY_NAME, 'removePro03.jpg');
-        const fetchOps2 = fetchOption(testNum, photoKeys.DISPLAY_NAME, 'removePro01.mp4');
+        const album:ESObject = await helper.createAlbum(`${testNum}${ts}`);
+        const fetchOps1 = fetchOption(testNum, photoKeys.DISPLAY_NAME, `removePro03${ts}.jpg`);
+        const fetchOps2 = fetchOption(testNum, photoKeys.DISPLAY_NAME, `removePro01${ts}.mp4`);
         const assetList: Array<photoAccessHelper.PhotoAsset> = new Array();
         const asset1 = await getFileAsset(testContext, testNum, fetchOps1);
         assetList.push(asset1);
@@ -940,7 +946,7 @@ export default function removeAssetsTest () {
     it('removeAssets_promise_003', Level.LEVEL2, async (done: Function) => {
       const testNum = 'removeAssets_promise_003';
       try {
-        const album:ESObject = await helper.createAlbum(testNum);
+        const album:ESObject = await helper.createAlbum(`${testNum}${ts}`);
         await album.removeAssets([]);
         done();
       } catch (error) {
@@ -961,7 +967,7 @@ export default function removeAssetsTest () {
     it('removeAssets_promise_004', Level.LEVEL2, async (done: Function) => {
       const testNum = 'removeAssets_promise_004';
       try {
-        const album:ESObject = await helper.createAlbum(testNum);
+        const album:ESObject = await helper.createAlbum(`${testNum}${ts}`);
         await album.removeAssets(undefined);
         expect(false).assertTrue();
         done();
@@ -983,8 +989,8 @@ export default function removeAssetsTest () {
     it('removeAssets_promise_005', Level.LEVEL2, async (done: Function) => {
       const testNum = 'removeAssets_promise_005';
       try {
-        const album:ESObject = await helper.createAlbum(testNum);
-        const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, 'removePro04.jpg');
+        const album:ESObject = await helper.createAlbum(`${testNum}${ts}`);
+        const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, `removePro04${ts}.jpg`);
         const asset = await getFileAsset(testContext, testNum, fetchOps);
 
         await album.addAssets([asset]);
@@ -1011,7 +1017,7 @@ export default function removeAssetsTest () {
     it('removeAssets_promise_006', Level.LEVEL2, async (done: Function) => {
       const testNum = 'removeAssets_promise_006';
       try {
-        const album:ESObject = await helper.createAlbum(testNum);
+        const album:ESObject = await helper.createAlbum(`${testNum}${ts}`);
         console.log(`${testNum} start`);
         await album.removeAssets([123123]);
         expect(false).assertTrue();
@@ -1036,7 +1042,7 @@ export default function removeAssetsTest () {
       try {
         let album: photoAccessHelper.Album = await getAlbum(testNum, albumType.SYSTEM, albumSubtype.FAVORITE);
         let assetNames: Array<string> = [
-          'removeAssets_callback_07.jpg'
+          `removeAssets_callback_07${ts}.jpg`
         ]
         await pushCreateAsset(testContext, assetNames);
         const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, assetNames[0]);
@@ -1066,7 +1072,7 @@ export default function removeAssetsTest () {
       try {
         let album: photoAccessHelper.Album = await getAlbum(testNum, albumType.SYSTEM, albumSubtype.VIDEO);
         let assetNames: Array<string> = [
-          'removeAssets_callback_08.mp4'
+          `removeAssets_callback_08${ts}.mp4`
         ]
         await pushCreateAsset(testContext, assetNames);
         const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, assetNames[0]);
@@ -1097,7 +1103,7 @@ export default function removeAssetsTest () {
         console.info(testNum + 'album count is : ' + fetchResult.getCount());
         let album: photoAccessHelper.Album = await fetchResult.getLastObject();
         let assetNames: Array<string> = [
-          'removeAssets_callback_09.jpg'
+          `removeAssets_callback_09${ts}.jpg`
         ]
         await pushCreateAsset(testContext, assetNames);
         const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, assetNames[0]);
@@ -1127,7 +1133,7 @@ export default function removeAssetsTest () {
       try {
         let album: photoAccessHelper.Album = await getAlbum(testNum, albumType.SYSTEM, albumSubtype.TRASH);
         let assetNames: Array<string> = [
-          'removeAssets_callback_10.jpg'
+          `removeAssets_callback_10${ts}.jpg`
         ]
         await pushCreateAsset(testContext, assetNames);
         const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, assetNames[0]);
@@ -1157,7 +1163,7 @@ export default function removeAssetsTest () {
       try {
         let album: photoAccessHelper.Album = await getAlbum(testNum, albumType.SYSTEM, albumSubtype.SCREENSHOT);
         let assetNames: Array<string> = [
-          'removeAssets_callback_11.jpg'
+          `removeAssets_callback_11${ts}.jpg`
         ]
         await pushCreateAsset(testContext, assetNames);
         const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, assetNames[0]);
@@ -1187,7 +1193,7 @@ export default function removeAssetsTest () {
       try {
         let album: photoAccessHelper.Album = await getAlbum(testNum, albumType.SYSTEM, albumSubtype.CAMERA);
         let assetNames: Array<string> = [
-          'removeAssets_callback_12.jpg'
+          `removeAssets_callback_12${ts}.jpg`
         ]
         await pushCreateAsset(testContext, assetNames);
         const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, assetNames[0]);
@@ -1216,7 +1222,7 @@ export default function removeAssetsTest () {
       try {
         let album: photoAccessHelper.Album = await getAlbum(testNum, albumType.SYSTEM, albumSubtype.IMAGE);
         let assetNames: Array<string> = [
-          'removeAssets_callback_13.jpg'
+          `removeAssets_callback_13${ts}.jpg`
         ]
         await pushCreateAsset(testContext, assetNames);
         const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, assetNames[0]);
@@ -1245,7 +1251,7 @@ export default function removeAssetsTest () {
       try {
         let album: photoAccessHelper.Album = await getAlbum(testNum, albumType.SYSTEM, albumSubtype.CLOUD_ENHANCEMENT);
         let assetNames: Array<string> = [
-          'removeAssets_callback_14.jpg'
+          `removeAssets_callback_14${ts}.jpg`
         ]
         await pushCreateAsset(testContext, assetNames);
         const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, assetNames[0]);
@@ -1274,7 +1280,7 @@ export default function removeAssetsTest () {
       try {
         let album: photoAccessHelper.Album = await getAlbum(testNum, albumType.SOURCE, albumSubtype.SOURCE_GENERIC);
         let assetNames: Array<string> = [
-          'removeAssets_callback_15.jpg'
+          `removeAssets_callback_15${ts}.jpg`
         ]
         await pushCreateAsset(testContext, assetNames);
         const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, assetNames[0]);

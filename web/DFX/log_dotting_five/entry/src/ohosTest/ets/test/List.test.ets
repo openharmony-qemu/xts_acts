@@ -18,6 +18,7 @@ import webInitTest from './WebInitTest.test';
 import webMessageExt from './WebMessageExt.test';
 import setPathAllowingUniversalAccess from './setPathAllowingUniversalAccess.test';
 import webResourceError from './WebResourceError.test';
+import webResourceErrorGetCustomErrorCodeCoverageDirect from './WebResourceErrorGetCustomErrorCodeCoverageDirect.test';
 import webDownloadEnumTest from './WebDownloadEnumTest.test';
 import abilityTest from './Ability.test';
 import precompileJavaScript from './precompileJavaScript.test';
@@ -33,6 +34,7 @@ export default function testsuite() {
   webMessageExt();
   setPathAllowingUniversalAccess();
   webResourceError();
+  webResourceErrorGetCustomErrorCodeCoverageDirect();
   webDownloadEnumTest();
   abilityTest();
   precompileJavaScript();

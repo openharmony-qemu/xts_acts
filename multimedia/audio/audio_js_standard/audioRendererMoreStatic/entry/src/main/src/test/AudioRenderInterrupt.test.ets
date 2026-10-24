@@ -41,6 +41,22 @@ export default function AudioRendererInterruptUnitTest() {
             console.info('afterEach called')
         })
 
+        let checkCarSupportSync = async(): Promise<boolean> => {
+            let audioManager = audio.getAudioManager();
+            let audioRoutingManager = audioManager!.getRoutingManager();
+            let outputDeviceDescription = await audioRoutingManager!.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+            console.info(`checkCarSupportSync outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+            if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+                console.info(`this device has external device.`)
+                return false;
+            } else if (outputDeviceDescription.length == 0) {
+                console.info(`this device has external device`)
+                return false;
+            } else {
+                return true;
+            }
+        }
+
         let renderInfo: Record<string, audio.AudioRendererInfo> = {
             'MUSIC': {
                 usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
@@ -750,36 +766,37 @@ export default function AudioRendererInterruptUnitTest() {
 
 
         /**
-         * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_STATIC_2100
-         * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_STATIC_2100
-         * @tc.desc   AudioRender  MUSIC INTERRUPT RINGTONE
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
+        * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_STATIC_2100
+        * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_STATIC_2100
+        * @tc.desc   AudioRender  MUSIC INTERRUPT RINGTONE
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL0
+        */
         it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_STATIC_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let render1 = await createAudioRenderer(renderInfo['RINGTONE'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
-            await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            await start(render1, done)
-
-            let render2 = await createAudioRenderer(renderInfo['MUSIC'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
-            await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            render2.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
-                console.log("15-2.eventAction=" + JSON.stringify(eventAction))
-                if (eventAction.eventType == audio.InterruptType.INTERRUPT_TYPE_BEGIN) {
-                    expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_DUCK)
-                } else if (eventAction.eventType == audio.InterruptType.INTERRUPT_TYPE_END) {
-                    expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_UNDUCK)
-                } else {
-                }
-            })
-            await start(render2, done)
-            await Utils.msSleep(500)
-            await release(render1, done)
-            await release(render2, done)
-            done()
+            if(await checkCarSupportSync()) {
+              let render1 = await createAudioRenderer(renderInfo['RINGTONE'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
+                await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                await start(render1, done)
+                let render2 = await createAudioRenderer(renderInfo['MUSIC'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
+                await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                render2.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
+                    console.log("15-2.eventAction=" + JSON.stringify(eventAction))
+                    if (eventAction.eventType == audio.InterruptType.INTERRUPT_TYPE_BEGIN) {
+                        expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_DUCK)
+                    } else if (eventAction.eventType == audio.InterruptType.INTERRUPT_TYPE_END) {
+                        expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_UNDUCK)
+                    } else {
+                    }
+                })
+                await start(render2, done)
+                await Utils.msSleep(500)
+                await release(render1, done)
+                await release(render2, done)
+                done()  
+            }
+            done();
         })
-
         /**
          * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_STATIC_2200
          * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_STATIC_2200
@@ -789,23 +806,24 @@ export default function AudioRendererInterruptUnitTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_STATIC_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let render1 = await createAudioRenderer(renderInfo['RINGTONE'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
-            await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            render1.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
-                console.log("16.eventAction=" + JSON.stringify(eventAction))
-                expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_STOP)
-            })
-            await start(render1, done)
-
-            let render2: audio.AudioRenderer = await createAudioRenderer(renderInfo['MUSIC'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
-            await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            await start(render2, done)
-            await Utils.msSleep(500)
-            await release(render1, done)
-            await release(render2, done)
-            done()
+            if(await checkCarSupportSync()) {
+                let render1 = await createAudioRenderer(renderInfo['RINGTONE'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
+                await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                render1.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
+                    console.log("16.eventAction=" + JSON.stringify(eventAction))
+                    expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_STOP)
+                })
+                await start(render1, done)
+                let render2: audio.AudioRenderer = await createAudioRenderer(renderInfo['MUSIC'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
+                await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                await start(render2, done)
+                await Utils.msSleep(500)
+                await release(render1, done)
+                await release(render2, done)
+                done()
+            }
+            done();
         })
-
         /**
          * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_STATIC_2300
          * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_STATIC_2300
@@ -815,29 +833,30 @@ export default function AudioRendererInterruptUnitTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_STATIC_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let flag1 = false;
-            let flag2 = false;
-            let render1 = await createAudioRenderer(renderInfo['RINGTONE'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
-            await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            await start(render1, done)
-            render1.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
-                console.log("23 render1.eventAction:" + JSON.stringify(eventAction))
-                flag1 = true;
-            })
-
-            let render2 = await createAudioRenderer(renderInfo['RINGTONE'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
-            await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            render2.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
-                console.log("23 render2.eventAction:" + JSON.stringify(eventAction))
-                flag2 = true;
-            })
-            await start(render2, done)
-
-            await Utils.msSleep(500)
-            await release(render1, done)
-            await release(render2, done)
-            expect(flag1 == false && flag2 == false).assertTrue()
-            done()
+            if(await checkCarSupportSync()) {
+                let flag1 = false;
+                let flag2 = false;
+                let render1 = await createAudioRenderer(renderInfo['RINGTONE'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
+                await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                await start(render1, done)
+                render1.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
+                    console.log("23 render1.eventAction:" + JSON.stringify(eventAction))
+                    flag1 = true;
+                })
+                let render2 = await createAudioRenderer(renderInfo['RINGTONE'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
+                await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                render2.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
+                    console.log("23 render2.eventAction:" + JSON.stringify(eventAction))
+                    flag2 = true;
+                })
+                await start(render2, done)
+                await Utils.msSleep(500)
+                await release(render1, done)
+                await release(render2, done)
+                expect(flag1 == false && flag2 == false).assertTrue()
+                done()
+            }
+            done();
         })
 
         /**
@@ -932,26 +951,29 @@ export default function AudioRendererInterruptUnitTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_STATIC_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let render1 = await createAudioRenderer(renderInfo['RINGTONE'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
-            await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            await start(render1, done)
+            if(await checkCarSupportSync()) {
+                let render1 = await createAudioRenderer(renderInfo['RINGTONE'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
+                await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                await start(render1, done)
 
-            let render2 = await createAudioRenderer(renderInfo['SPEECH'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
-            await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            render2.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
-                console.log("15-2.eventAction=" + JSON.stringify(eventAction))
-                if (eventAction.eventType == audio.InterruptType.INTERRUPT_TYPE_BEGIN) {
-                    expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_DUCK)
-                } else if (eventAction.eventType == audio.InterruptType.INTERRUPT_TYPE_END) {
-                    expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_UNDUCK)
-                } else {
-                }
-            })
-            await start(render2, done)
-            await Utils.msSleep(500)
-            await release(render1, done)
-            await release(render2, done)
-            done()
+                let render2 = await createAudioRenderer(renderInfo['SPEECH'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
+                await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                render2.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
+                    console.log("15-2.eventAction=" + JSON.stringify(eventAction))
+                    if (eventAction.eventType == audio.InterruptType.INTERRUPT_TYPE_BEGIN) {
+                        expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_DUCK)
+                    } else if (eventAction.eventType == audio.InterruptType.INTERRUPT_TYPE_END) {
+                        expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_UNDUCK)
+                    } else {
+                    }
+                })
+                await start(render2, done)
+                await Utils.msSleep(500)
+                await release(render1, done)
+                await release(render2, done)
+                done()
+            }
+            done();
         })
 
         /**
@@ -963,26 +985,29 @@ export default function AudioRendererInterruptUnitTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_STATIC_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let render1 = await createAudioRenderer(renderInfo['RINGTONE'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
-            await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            await start(render1, done)
+            if(await checkCarSupportSync()) {
+                let render1 = await createAudioRenderer(renderInfo['RINGTONE'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
+                await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                await start(render1, done)
 
-            let render2 = await createAudioRenderer(renderInfo['MOVIE'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
-            await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            render2.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
-                console.log("15-2.eventAction=" + JSON.stringify(eventAction))
-                if (eventAction.eventType == audio.InterruptType.INTERRUPT_TYPE_BEGIN) {
-                    expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_DUCK)
-                } else if (eventAction.eventType == audio.InterruptType.INTERRUPT_TYPE_END) {
-                    expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_UNDUCK)
-                } else {
-                }
-            })
-            await start(render2, done)
-            await Utils.msSleep(500)
-            await release(render1, done)
-            await release(render2, done)
-            done()
+                let render2 = await createAudioRenderer(renderInfo['MOVIE'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
+                await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                render2.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
+                    console.log("15-2.eventAction=" + JSON.stringify(eventAction))
+                    if (eventAction.eventType == audio.InterruptType.INTERRUPT_TYPE_BEGIN) {
+                        expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_DUCK)
+                    } else if (eventAction.eventType == audio.InterruptType.INTERRUPT_TYPE_END) {
+                        expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_UNDUCK)
+                    } else {
+                    }
+                })
+                await start(render2, done)
+                await Utils.msSleep(500)
+                await release(render1, done)
+                await release(render2, done)
+                done()
+            }
+            done();
         })
 
         /**
@@ -994,26 +1019,29 @@ export default function AudioRendererInterruptUnitTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_STATIC_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let render1 = await createAudioRenderer(renderInfo['RINGTONE'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
-            await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            await start(render1, done)
+            if(await checkCarSupportSync()) {
+                let render1 = await createAudioRenderer(renderInfo['RINGTONE'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
+                await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                await start(render1, done)
 
-            let render2 = await createAudioRenderer(renderInfo['UNKNOW'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
-            await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            render2.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
-                console.log("15-2.eventAction=" + JSON.stringify(eventAction))
-                if (eventAction.eventType == audio.InterruptType.INTERRUPT_TYPE_BEGIN) {
-                    expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_DUCK)
-                } else if (eventAction.eventType == audio.InterruptType.INTERRUPT_TYPE_END) {
-                    expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_UNDUCK)
-                } else {
-                }
-            })
-            await start(render2, done)
-            await Utils.msSleep(500)
-            await release(render1, done)
-            await release(render2, done)
-            done()
+                let render2 = await createAudioRenderer(renderInfo['UNKNOW'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
+                await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                render2.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
+                    console.log("15-2.eventAction=" + JSON.stringify(eventAction))
+                    if (eventAction.eventType == audio.InterruptType.INTERRUPT_TYPE_BEGIN) {
+                        expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_DUCK)
+                    } else if (eventAction.eventType == audio.InterruptType.INTERRUPT_TYPE_END) {
+                        expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_UNDUCK)
+                    } else {
+                    }
+                })
+                await start(render2, done)
+                await Utils.msSleep(500)
+                await release(render1, done)
+                await release(render2, done)
+                done()
+            }
+            done();
         })
 
         /**
@@ -1025,21 +1053,24 @@ export default function AudioRendererInterruptUnitTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_STATIC_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let render1 = await createAudioRenderer(renderInfo['VOICE_ASSISTANT'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
-            await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            render1.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
-                console.log("22.eventAction=" + JSON.stringify(eventAction))
-                expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_STOP)
-            })
-            await start(render1, done)
+            if(await checkCarSupportSync()) {
+                let render1 = await createAudioRenderer(renderInfo['VOICE_ASSISTANT'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
+                await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                render1.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
+                    console.log("22.eventAction=" + JSON.stringify(eventAction))
+                    expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_STOP)
+                })
+                await start(render1, done)
 
-            let render2 = await createAudioRenderer(renderInfo['MUSIC'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
-            await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            await start(render2, done)
-            await Utils.msSleep(500)
-            await release(render1, done)
-            await release(render2, done)
-            done()
+                let render2 = await createAudioRenderer(renderInfo['MUSIC'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
+                await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                await start(render2, done)
+                await Utils.msSleep(500)
+                await release(render1, done)
+                await release(render2, done)
+                done()
+            }
+            done();
         })
 
         /**
@@ -1051,21 +1082,24 @@ export default function AudioRendererInterruptUnitTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_STATIC_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let render1 = await createAudioRenderer(renderInfo['VOICE_ASSISTANT'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
-            await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            render1.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
-                console.log("23.eventAction=" + JSON.stringify(eventAction))
-                expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_STOP)
-            })
-            await start(render1, done)
+            if(await checkCarSupportSync()) {
+                let render1 = await createAudioRenderer(renderInfo['VOICE_ASSISTANT'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
+                await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                render1.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
+                    console.log("23.eventAction=" + JSON.stringify(eventAction))
+                    expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_STOP)
+                })
+                await start(render1, done)
 
-            let render2: audio.AudioRenderer = await createAudioRenderer(renderInfo['MUSIC'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
-            await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            await start(render2, done)
-            await Utils.msSleep(500)
-            await release(render1, done)
-            await release(render2, done)
-            done()
+                let render2: audio.AudioRenderer = await createAudioRenderer(renderInfo['MUSIC'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
+                await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                await start(render2, done)
+                await Utils.msSleep(500)
+                await release(render1, done)
+                await release(render2, done)
+                done()
+            }
+            done();
         })
 
         /**
@@ -1077,21 +1111,24 @@ export default function AudioRendererInterruptUnitTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_STATIC_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let render1 = await createAudioRenderer(renderInfo['VOICE_ASSISTANT'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
-            await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            render1.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
-                console.log("24.eventAction=" + JSON.stringify(eventAction))
-                expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_STOP)
-            })
-            await start(render1, done)
+            if(await checkCarSupportSync()) {
+                let render1 = await createAudioRenderer(renderInfo['VOICE_ASSISTANT'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
+                await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                render1.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
+                    console.log("24.eventAction=" + JSON.stringify(eventAction))
+                    expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_STOP)
+                })
+                await start(render1, done)
 
-            let render2 = await createAudioRenderer(renderInfo['RINGTONE'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
-            await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            await start(render2, done)
-            await Utils.msSleep(500)
-            await release(render1, done)
-            await release(render2, done)
-            done()
+                let render2 = await createAudioRenderer(renderInfo['RINGTONE'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
+                await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                await start(render2, done)
+                await Utils.msSleep(500)
+                await release(render1, done)
+                await release(render2, done)
+                done()
+            }
+            done();
         })
 
         /**
@@ -1103,21 +1140,24 @@ export default function AudioRendererInterruptUnitTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_STATIC_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let render1 = await createAudioRenderer(renderInfo['VOICE_ASSISTANT'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
-            await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            render1.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
-                console.log("25.eventAction=" + JSON.stringify(eventAction))
-                expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_STOP)
-            })
-            await start(render1, done)
+            if(await checkCarSupportSync()) {
+                let render1 = await createAudioRenderer(renderInfo['VOICE_ASSISTANT'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
+                await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                render1.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
+                    console.log("25.eventAction=" + JSON.stringify(eventAction))
+                    expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_STOP)
+                })
+                await start(render1, done)
 
-            let render2 = await createAudioRenderer(renderInfo['VOICE_ASSISTANT'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
-            await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            await start(render2, done)
-            await Utils.msSleep(500)
-            await release(render1, done)
-            await release(render2, done)
-            done()
+                let render2 = await createAudioRenderer(renderInfo['VOICE_ASSISTANT'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
+                await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                await start(render2, done)
+                await Utils.msSleep(500)
+                await release(render1, done)
+                await release(render2, done)
+                done()
+            }
+            done();
         })
 
         /**
@@ -1129,21 +1169,24 @@ export default function AudioRendererInterruptUnitTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_STATIC_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let render1 = await createAudioRenderer(renderInfo['VOICE_ASSISTANT'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
-            await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            render1.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
-                console.log("27.eventAction=" + JSON.stringify(eventAction))
-                expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_STOP)
-            })
-            await start(render1, done)
+            if(await checkCarSupportSync()) {
+                let render1 = await createAudioRenderer(renderInfo['VOICE_ASSISTANT'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
+                await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                render1.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
+                    console.log("27.eventAction=" + JSON.stringify(eventAction))
+                    expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_STOP)
+                })
+                await start(render1, done)
 
-            let render2 = await createAudioRenderer(renderInfo['ALARM'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
-            await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            await start(render2, done)
-            await Utils.msSleep(500)
-            await release(render1, done)
-            await release(render2, done)
-            done()
+                let render2 = await createAudioRenderer(renderInfo['ALARM'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
+                await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                await start(render2, done)
+                await Utils.msSleep(500)
+                await release(render1, done)
+                await release(render2, done)
+                done()
+            }
+            done();
         })
 
         /**
@@ -1155,21 +1198,24 @@ export default function AudioRendererInterruptUnitTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_STATIC_3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let render1 = await createAudioRenderer(renderInfo['VOICE_ASSISTANT'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
-            await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            render1.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
-                console.log("28.eventAction=" + JSON.stringify(eventAction))
-                expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_STOP)
-            })
-            await start(render1, done)
+            if(await checkCarSupportSync()) {
+                let render1 = await createAudioRenderer(renderInfo['VOICE_ASSISTANT'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
+                await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                render1.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
+                    console.log("28.eventAction=" + JSON.stringify(eventAction))
+                    expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_STOP)
+                })
+                await start(render1, done)
 
-            let render2 = await createAudioRenderer(renderInfo['ACCESSIBILITY'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
-            await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            await start(render2, done)
-            await Utils.msSleep(500)
-            await release(render1, done)
-            await release(render2, done)
-            done()
+                let render2 = await createAudioRenderer(renderInfo['ACCESSIBILITY'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
+                await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                await start(render2, done)
+                await Utils.msSleep(500)
+                await release(render1, done)
+                await release(render2, done)
+                done()
+            }
+            done();
         })
 
         /**
@@ -1181,21 +1227,24 @@ export default function AudioRendererInterruptUnitTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_STATIC_3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let render1 = await createAudioRenderer(renderInfo['VOICE_ASSISTANT'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
-            await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            render1.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
-                console.log("22.eventAction=" + JSON.stringify(eventAction))
-                expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_STOP)
-            })
-            await start(render1, done)
+            if(await checkCarSupportSync()) {
+                let render1 = await createAudioRenderer(renderInfo['VOICE_ASSISTANT'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
+                await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                render1.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
+                    console.log("22.eventAction=" + JSON.stringify(eventAction))
+                    expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_STOP)
+                })
+                await start(render1, done)
 
-            let render2 = await createAudioRenderer(renderInfo['SPEECH'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
-            await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            await start(render2, done)
-            await Utils.msSleep(500)
-            await release(render1, done)
-            await release(render2, done)
-            done()
+                let render2 = await createAudioRenderer(renderInfo['SPEECH'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
+                await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                await start(render2, done)
+                await Utils.msSleep(500)
+                await release(render1, done)
+                await release(render2, done)
+                done()
+            }
+            done();
         })
 
         /**
@@ -1207,21 +1256,24 @@ export default function AudioRendererInterruptUnitTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_STATIC_3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let render1 = await createAudioRenderer(renderInfo['VOICE_ASSISTANT'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
-            await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            render1.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
-                console.log("22.eventAction=" + JSON.stringify(eventAction))
-                expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_STOP)
-            })
-            await start(render1, done)
+            if(await checkCarSupportSync()) {
+                let render1 = await createAudioRenderer(renderInfo['VOICE_ASSISTANT'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
+                await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                render1.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
+                    console.log("22.eventAction=" + JSON.stringify(eventAction))
+                    expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_STOP)
+                })
+                await start(render1, done)
 
-            let render2 = await createAudioRenderer(renderInfo['MOVIE'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
-            await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            await start(render2, done)
-            await Utils.msSleep(500)
-            await release(render1, done)
-            await release(render2, done)
-            done()
+                let render2 = await createAudioRenderer(renderInfo['MOVIE'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
+                await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                await start(render2, done)
+                await Utils.msSleep(500)
+                await release(render1, done)
+                await release(render2, done)
+                done()
+            }
+            done();
         })
 
         /**
@@ -1233,21 +1285,24 @@ export default function AudioRendererInterruptUnitTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_STATIC_4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let render1 = await createAudioRenderer(renderInfo['VOICE_ASSISTANT'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
-            await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            render1.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
-                console.log("22.eventAction=" + JSON.stringify(eventAction))
-                expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_STOP)
-            })
-            await start(render1, done)
+            if(await checkCarSupportSync()) {
+                let render1 = await createAudioRenderer(renderInfo['VOICE_ASSISTANT'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
+                await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                render1.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
+                    console.log("22.eventAction=" + JSON.stringify(eventAction))
+                    expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_STOP)
+                })
+                await start(render1, done)
 
-            let render2 = await createAudioRenderer(renderInfo['UNKNOW'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
-            await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            await start(render2, done)
-            await Utils.msSleep(500)
-            await release(render1, done)
-            await release(render2, done)
-            done()
+                let render2 = await createAudioRenderer(renderInfo['UNKNOW'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
+                await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                await start(render2, done)
+                await Utils.msSleep(500)
+                await release(render1, done)
+                await release(render2, done)
+                done()
+            }
+            done();
         })
 
         /**
@@ -1259,20 +1314,23 @@ export default function AudioRendererInterruptUnitTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_STATIC_5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let render1 = await createAudioRenderer(renderInfo['ALARM'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
-            await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            render1.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
-                console.log("36.eventAction=" + JSON.stringify(eventAction))
-                expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_STOP)
-            })
-            await start(render1, done)
-            let render2 = await createAudioRenderer(renderInfo['MUSIC'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
-            await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            await start(render2, done)
-            await Utils.msSleep(500)
-            await release(render1, done)
-            await release(render2, done)
-            done()
+            if(await checkCarSupportSync()) {
+                let render1 = await createAudioRenderer(renderInfo['ALARM'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
+                await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                render1.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
+                    console.log("36.eventAction=" + JSON.stringify(eventAction))
+                    expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_STOP)
+                })
+                await start(render1, done)
+                let render2 = await createAudioRenderer(renderInfo['MUSIC'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
+                await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                await start(render2, done)
+                await Utils.msSleep(500)
+                await release(render1, done)
+                await release(render2, done)
+                done()
+            }
+            done();
         })
 
         /**
@@ -1284,21 +1342,24 @@ export default function AudioRendererInterruptUnitTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_STATIC_5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let render1 = await createAudioRenderer(renderInfo['ALARM'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
-            await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            render1.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
-                console.log("37.eventAction=" + JSON.stringify(eventAction))
-                expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_STOP)
-            })
-            await start(render1, done)
+            if(await checkCarSupportSync()) {
+                let render1 = await createAudioRenderer(renderInfo['ALARM'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
+                await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                render1.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
+                    console.log("37.eventAction=" + JSON.stringify(eventAction))
+                    expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_STOP)
+                })
+                await start(render1, done)
 
-            let render2: audio.AudioRenderer = await createAudioRenderer(renderInfo['MUSIC'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
-            await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            await start(render2, done)
-            await Utils.msSleep(500)
-            await release(render1, done)
-            await release(render2, done)
-            done()
+                let render2: audio.AudioRenderer = await createAudioRenderer(renderInfo['MUSIC'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
+                await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                await start(render2, done)
+                await Utils.msSleep(500)
+                await release(render1, done)
+                await release(render2, done)
+                done()
+            }
+            done();
         })
 
         /**
@@ -1424,20 +1485,23 @@ export default function AudioRendererInterruptUnitTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_STATIC_5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let render1 = await createAudioRenderer(renderInfo['ALARM'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
-            await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            render1.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
-                console.log("36.eventAction=" + JSON.stringify(eventAction))
-                expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_STOP)
-            })
-            await start(render1, done)
-            let render2 = await createAudioRenderer(renderInfo['SPEECH'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
-            await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            await start(render2, done)
-            await Utils.msSleep(500)
-            await release(render1, done)
-            await release(render2, done)
-            done()
+            if(await checkCarSupportSync()) {
+                let render1 = await createAudioRenderer(renderInfo['ALARM'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
+                await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                render1.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
+                    console.log("36.eventAction=" + JSON.stringify(eventAction))
+                    expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_STOP)
+                })
+                await start(render1, done)
+                let render2 = await createAudioRenderer(renderInfo['SPEECH'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
+                await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                await start(render2, done)
+                await Utils.msSleep(500)
+                await release(render1, done)
+                await release(render2, done)
+                done()
+            }
+            done();
         })
 
         /**
@@ -1449,20 +1513,23 @@ export default function AudioRendererInterruptUnitTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_STATIC_5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let render1 = await createAudioRenderer(renderInfo['ALARM'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
-            await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            render1.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
-                console.log("36.eventAction=" + JSON.stringify(eventAction))
-                expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_STOP)
-            })
-            await start(render1, done)
-            let render2 = await createAudioRenderer(renderInfo['MOVIE'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
-            await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            await start(render2, done)
-            await Utils.msSleep(500)
-            await release(render1, done)
-            await release(render2, done)
-            done()
+            if(await checkCarSupportSync()) {
+                let render1 = await createAudioRenderer(renderInfo['ALARM'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
+                await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                render1.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
+                    console.log("36.eventAction=" + JSON.stringify(eventAction))
+                    expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_STOP)
+                })
+                await start(render1, done)
+                let render2 = await createAudioRenderer(renderInfo['MOVIE'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
+                await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                await start(render2, done)
+                await Utils.msSleep(500)
+                await release(render1, done)
+                await release(render2, done)
+                done()
+            }
+            done();
         })
 
         /**
@@ -1474,20 +1541,23 @@ export default function AudioRendererInterruptUnitTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_STATIC_6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let render1 = await createAudioRenderer(renderInfo['ALARM'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
-            await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            render1.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
-                console.log("36.eventAction=" + JSON.stringify(eventAction))
-                expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_STOP)
-            })
-            await start(render1, done)
-            let render2 = await createAudioRenderer(renderInfo['UNKNOW'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
-            await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            await start(render2, done)
-            await Utils.msSleep(500)
-            await release(render1, done)
-            await release(render2, done)
-            done()
+            if(await checkCarSupportSync()) {
+                let render1 = await createAudioRenderer(renderInfo['ALARM'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
+                await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                render1.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
+                    console.log("36.eventAction=" + JSON.stringify(eventAction))
+                    expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_STOP)
+                })
+                await start(render1, done)
+                let render2 = await createAudioRenderer(renderInfo['UNKNOW'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
+                await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                await start(render2, done)
+                await Utils.msSleep(500)
+                await release(render1, done)
+                await release(render2, done)
+                done()
+            }
+            done();
         })
 
         /**
@@ -1499,25 +1569,28 @@ export default function AudioRendererInterruptUnitTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_STATIC_6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let render1 = await createAudioRenderer(renderInfo['ACCESSIBILITY'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
-            await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            await start(render1, done)
+            if(await checkCarSupportSync()) {
+                let render1 = await createAudioRenderer(renderInfo['ACCESSIBILITY'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
+                await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                await start(render1, done)
 
-            let render2 = await createAudioRenderer(renderInfo['MUSIC'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
-            render2.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
-                console.log("44_2.eventAction=" + JSON.stringify(eventAction))
-                if (eventAction.eventType == audio.InterruptType.INTERRUPT_TYPE_BEGIN) {
-                    expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_DUCK)
-                } else if (eventAction.eventType == audio.InterruptType.INTERRUPT_TYPE_END) {
-                    expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_UNDUCK)
-                } else {
-                }
-            })
-            await start(render2, done)
-            await Utils.msSleep(500)
-            await release(render1, done)
-            await release(render2, done)
-            done()
+                let render2 = await createAudioRenderer(renderInfo['MUSIC'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
+                render2.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
+                    console.log("44_2.eventAction=" + JSON.stringify(eventAction))
+                    if (eventAction.eventType == audio.InterruptType.INTERRUPT_TYPE_BEGIN) {
+                        expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_DUCK)
+                    } else if (eventAction.eventType == audio.InterruptType.INTERRUPT_TYPE_END) {
+                        expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_UNDUCK)
+                    } else {
+                    }
+                })
+                await start(render2, done)
+                await Utils.msSleep(500)
+                await release(render1, done)
+                await release(render2, done)
+                done()
+            }
+            done();
         })
 
         /**
@@ -1529,26 +1602,29 @@ export default function AudioRendererInterruptUnitTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_STATIC_6200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let render1 = await createAudioRenderer(renderInfo['ACCESSIBILITY'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
-            await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            await start(render1, done)
+            if(await checkCarSupportSync()) {
+                let render1 = await createAudioRenderer(renderInfo['ACCESSIBILITY'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
+                await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                await start(render1, done)
 
-            let render2: audio.AudioRenderer = await createAudioRenderer(renderInfo['MUSIC'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
-            await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            render2.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
-                console.log("44_2.eventAction=" + JSON.stringify(eventAction))
-                if (eventAction.eventType == audio.InterruptType.INTERRUPT_TYPE_BEGIN) {
-                    expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_DUCK)
-                } else if (eventAction.eventType == audio.InterruptType.INTERRUPT_TYPE_END) {
-                    expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_UNDUCK)
-                } else {
-                }
-            })
-            await start(render2, done)
-            await Utils.msSleep(500)
-            await release(render1, done)
-            await release(render2, done)
-            done()
+                let render2: audio.AudioRenderer = await createAudioRenderer(renderInfo['MUSIC'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
+                await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                render2.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
+                    console.log("44_2.eventAction=" + JSON.stringify(eventAction))
+                    if (eventAction.eventType == audio.InterruptType.INTERRUPT_TYPE_BEGIN) {
+                        expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_DUCK)
+                    } else if (eventAction.eventType == audio.InterruptType.INTERRUPT_TYPE_END) {
+                        expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_UNDUCK)
+                    } else {
+                    }
+                })
+                await start(render2, done)
+                await Utils.msSleep(500)
+                await release(render1, done)
+                await release(render2, done)
+                done()
+            }
+            done();
         })
 
         /**
@@ -2708,29 +2784,31 @@ export default function AudioRendererInterruptUnitTest() {
         })
 
         /**
-         * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_STATIC_19100
-         * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_STATIC_19100
-         * @tc.desc   AudioRender  MUSIC INTERRUPT VOICE_MESSAGE
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
+        * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_STATIC_19100
+        * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_STATIC_19100
+        * @tc.desc   AudioRender  MUSIC INTERRUPT VOICE_MESSAGE
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL0
+        */
         it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_STATIC_19100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let render1 = await createAudioRenderer(renderInfo['VOICE_MESSAGE'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
-            await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            render1.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
-                console.log("1.eventAction=" + JSON.stringify(eventAction))
-                expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_STOP)
-            })
-            await start(render1, done)
-
-            let render2 = await createAudioRenderer(renderInfo['MUSIC'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
-            await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            await start(render2, done)
-            await Utils.msSleep(500)
-            await release(render1, done)
-            await release(render2, done)
-            done()
+            if(await checkCarSupportSync()) {
+                let render1 = await createAudioRenderer(renderInfo['VOICE_MESSAGE'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
+                await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                render1.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
+                    console.log("1.eventAction=" + JSON.stringify(eventAction))
+                    expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_STOP)
+                })
+                await start(render1, done)
+                let render2 = await createAudioRenderer(renderInfo['MUSIC'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
+                await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                await start(render2, done)
+                await Utils.msSleep(500)
+                await release(render1, done)
+                await release(render2, done)
+                done()
+            }
+            done();
         })
 
         /**
@@ -3396,34 +3474,36 @@ export default function AudioRendererInterruptUnitTest() {
         })
 
         /**
-         * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_STATIC_14100
-         * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_STATIC_14100
-         * @tc.desc   AudioRender  ALARM INTERRUPT NAVIGATION
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
+        * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_STATIC_14100
+        * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_STATIC_14100
+        * @tc.desc   AudioRender  ALARM INTERRUPT NAVIGATION
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL0
+        */
         it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_STATIC_14100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let render1 = await createAudioRenderer(renderInfo['NAVIGATION'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
-            await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            render1.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
-                console.log("14.eventAction=" + JSON.stringify(eventAction))
-                if (eventAction.eventType == audio.InterruptType.INTERRUPT_TYPE_BEGIN) {
-                    expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_DUCK)
-                } else if (eventAction.eventType == audio.InterruptType.INTERRUPT_TYPE_END) {
-                    expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_UNDUCK)
-                } else {
-                }
-            })
-            await start(render1, done)
-
-            let render2 = await createAudioRenderer(renderInfo['ALARM'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
-            await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-            await start(render2, done)
-            await Utils.msSleep(500)
-            await release(render1, done)
-            await release(render2, done)
-            done()
+            if(await checkCarSupportSync()) {
+                let render1 = await createAudioRenderer(renderInfo['NAVIGATION'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
+                await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                render1.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
+                    console.log("14.eventAction=" + JSON.stringify(eventAction))
+                    if (eventAction.eventType == audio.InterruptType.INTERRUPT_TYPE_BEGIN) {
+                        expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_DUCK)
+                    } else if (eventAction.eventType == audio.InterruptType.INTERRUPT_TYPE_END) {
+                        expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_UNDUCK)
+                    } else {
+                    }
+                })
+                await start(render1, done)
+                let render2 = await createAudioRenderer(renderInfo['ALARM'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
+                await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+                await start(render2, done)
+                await Utils.msSleep(500)
+                await release(render1, done)
+                await release(render2, done)
+                done()
+            }
+            done();
         })
 
         /**

@@ -65,16 +65,23 @@ export default function HttpCaPathTest() {
      * @tc.desc   request: input https://www.openharmony.cn/ & error of caPath by Async
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it("testTelephonyNetStackHTTPSCertificateManagement0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it("testTelephonyNetStackHTTPSCertificateManagement0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let CASE_NAME = 'testTelephonyNetStackHTTPSCertificateManagement0100';
       console.info(`${CASE_NAME}---start`);
       try {
         let httpRequest = http.createHttp();
         httpRequest.request(URL1, httpRequestOptions1, (err, data) => {
+          if (err) {
+            console.info(`${CASE_NAME} httpsRequest fail, err: ${JSON.stringify(err)}`);
+            ExpectFail();
+            httpRequest.destroy();
+            done();
+            return;
+          }
           console.info(`${CASE_NAME} httpsRequest success, data: ${JSON.stringify(data)}`);
-          ExpectTrue(data.responseCode == 200);
+          ExpectTrue(data.responseCode === 200);
           httpRequest.destroy();
           done();
         })
@@ -91,16 +98,23 @@ export default function HttpCaPathTest() {
      * @tc.desc   request: input https://www.openharmony.cn/ & null of caPath by Async
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it("testTelephonyNetStackHTTPSCertificateManagement0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
+    it("testTelephonyNetStackHTTPSCertificateManagement0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,  async (done: Function) => {
       let CASE_NAME = 'testTelephonyNetStackHTTPSCertificateManagement0200';
       console.info(`${CASE_NAME}---start`);
       try {
         let httpRequest = http.createHttp();
         httpRequest.request(URL1, httpRequestOptions2, (err, data) => {
+          if (err) {
+            console.info(`${CASE_NAME} httpsRequest fail, err: ${JSON.stringify(err)}`);
+            ExpectFail();
+            httpRequest.destroy();
+            done();
+            return;
+          }
           console.info(`${CASE_NAME} httpsRequest success, data: ${JSON.stringify(data)}`);
-          ExpectTrue(data.responseCode == 200);
+          ExpectTrue(data.responseCode === 200);
           httpRequest.destroy();
           done();
         })
@@ -117,16 +131,23 @@ export default function HttpCaPathTest() {
      * @tc.desc   request: input https://www.openharmony.cn/ & default of caPath by Async
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it("testTelephonyNetStackHTTPSCertificateManagement0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
+    it("testTelephonyNetStackHTTPSCertificateManagement0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
       let CASE_NAME = 'testTelephonyNetStackHTTPSCertificateManagement0300';
       console.info(`${CASE_NAME}---start`);
       try {
         let httpRequest = http.createHttp();
         httpRequest.request(URL1, httpRequestOptions3, (err, data) => {
+          if (err) {
+            console.info(`${CASE_NAME} httpsRequest fail, err: ${JSON.stringify(err)}`);
+            ExpectFail();
+            httpRequest.destroy();
+            done();
+            return;
+          }
           console.info(`${CASE_NAME} httpsRequest success, data: ${JSON.stringify(data)}`);
-          ExpectTrue(data.responseCode == 200);
+          ExpectTrue(data.responseCode === 200);
           httpRequest.destroy();
           done();
         })

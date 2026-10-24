@@ -105,7 +105,7 @@ export default function popupKeyboardAvoidMode() {
         expect(height - height1 > 0).assertTrue()
         await CommonFunc.sleep(1000)
         await (confirm?.click() as Promise<void>)
-        await driver.triggerKey(2070)
+        await driver.triggerKey(2070, AppStorage.get<number>('displayID')?.toInt() ?? 0)
       }
       console.info("[popupKeyboardAvoidMode_static_0100] END")
       done()
@@ -142,7 +142,7 @@ export default function popupKeyboardAvoidMode() {
         let confirm = await driver.findComponent(ON.text("confirm"))
 
         expect(confirm != null).assertFalse()
-        await driver.triggerKey(2070)
+        await driver.triggerKey(2070, AppStorage.get<number>('displayID')?.toInt() ?? 0)
       }
       console.info("[popupKeyboardAvoidMode_static_0200] END")
       done()
@@ -189,7 +189,7 @@ export default function popupKeyboardAvoidMode() {
 
         console.info("[popupKeyboardAvoidMode_static_0300] height1 " + height1)
         expect(height - height1 > 0).assertTrue()
-        await driver.triggerKey(2070)
+        await driver.triggerKey(2070, AppStorage.get<number>('displayID')?.toInt() ?? 0)
       }
       console.info("[popupKeyboardAvoidMode_static_0300] END")
       done()
@@ -228,7 +228,7 @@ export default function popupKeyboardAvoidMode() {
         let confirm = await driver.findComponent(ON.id("text"))
 
         expect(confirm != null).assertFalse()
-        await driver.triggerKey(2070)
+        await driver.triggerKey(2070, AppStorage.get<number>('displayID')?.toInt() ?? 0)
       }
       console.info("[popupKeyboardAvoidMode_static_0400] END")
       done()

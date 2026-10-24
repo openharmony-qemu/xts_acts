@@ -18,7 +18,7 @@
     "name": "entry_test",
     "type": "feature",
     "mainElement": "TestAbility",
-    "srcEntry": "./ets/MyAbilityStage/MyAbilityStage.ts",
+    "srcEntry": "./ets/MyAbilityStage/MyAbilityStage.ets",
     "deviceTypes": [],
     "deliveryWithInstall": true,
     "installationFree": false,

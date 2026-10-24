@@ -20,9 +20,11 @@ import Utils from '../../test/Utils.test';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
-import { Driver, ON, On, MouseButton  } from '@ohos.UiTest';
+import { Driver, ON, On, MouseButton, Point } from '@ohos.UiTest';
 import testNapi from 'libentry.so';
 import web_webview from '@ohos.web.webview'
+import deviceInfo from '@ohos.deviceInfo'
+
 let driver = Driver.create()
 
 @CustomDialog
@@ -67,8 +69,10 @@ struct Index {
   @State scrollResult: boolean = false;
   @State isPageEnd: number = -1;
   @State str: string = "";
-  @State navigationPolicy:number = 5;
-  @State navigationPolicyArr: NavigationPolicy[] = [NavigationPolicy.NEW_POPUP,NavigationPolicy.NEW_WINDOW,NavigationPolicy.NEW_BACKGROUND_TAB,NavigationPolicy.NEW_FOREGROUND_TAB]
+  @State navigationPolicy: number = 5;
+  @State navigationPolicyArr: NavigationPolicy[] =
+    [NavigationPolicy.NEW_POPUP, NavigationPolicy.NEW_WINDOW, NavigationPolicy.NEW_BACKGROUND_TAB,
+      NavigationPolicy.NEW_FOREGROUND_TAB]
   webTag: string = 'ArkWeb1';
   dialogController: CustomDialogController | null = null;
   controller: web_webview.WebviewController = new web_webview.WebviewController(this.webTag);
@@ -76,7 +80,6 @@ struct Index {
     console.info("test result: " + result);
     this.scrollResult = true;
   }
-
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -101,35 +104,45 @@ struct Index {
     }
   }
 
-
   build() {
     Column({ space: 20 }) {
       Button('web click')
         .key('WebViewNavigationPolicyButton')
         .onClick(async () => {
-          await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
-          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+          await Utils.waitForExist(() => this.isReceive, this.str + ' isReceive', 1, 1000);
+          await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
           console.info("key==>" + this.str)
+          const isCar: boolean = deviceInfo.deviceType === "car";
           switch (this.str) {
             case 'emitWebViewNavigationPolicy001': {
               try {
-                if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
+                if (!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
                   console.log('pbbbnetment');
                   Utils.emitEvent(0, 20260113)
                 } else {
-                  Utils.sleep(1000);
+                  await Utils.sleep(1000);
                   let buttonOne = await driver.findComponent(ON.text('打开新窗口'));
                   let point = await buttonOne.getBoundsCenter();
                   await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_LEFT, 2047);
                   let webRect = Utils.getComponentRect('WebViewNavigationPolicyWeb');
-                  let downX = Math.round(globalThis.winLeft + webRect.left  + 15);
+                  let downX = Math.round(globalThis.winLeft + webRect.left + 15);
+                  if (isCar) {
+                    downX = Math.round(globalThis.winLeft + webRect.left + 50);
+                  }
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
-                  await driver.click(downX, downY);
-                  Utils.sleep(2000);
-                  await driver.click(downX, downY);
-                  setTimeout(() =>{
+                  const displayId: number =
+                    await (await driver.findComponent(ON.id('WebViewNavigationPolicyButton'))).getDisplayId();
+                  const pointClick: Point = {
+                    x: downX,
+                    y: downY,
+                    displayId: displayId
+                  }
+                  await driver.clickAt(pointClick);
+                  await Utils.sleep(2000);
+                  await driver.clickAt(pointClick);
+                  setTimeout(() => {
                     Utils.emitEvent(this.navigationPolicyArr[this.navigationPolicy], 20260113)
-                  },4000)
+                  }, 4000)
                 }
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
@@ -141,27 +154,37 @@ struct Index {
 
             case 'emitWebViewNavigationPolicy002': {
               try {
-                if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
+                if (!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
                   console.log('pbbbnetment');
                   Utils.emitEvent(1, 20260114)
                 } else {
                   this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile("window.open.html"))
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
                   let buttonOne = await driver.findComponent(ON.text('打开新标签'));
                   console.log('ppbb' + buttonOne)
                   let point = await buttonOne.getBoundsCenter();
                   await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_LEFT, 2047);
-                  Utils.sleep(1000);
+                  await Utils.sleep(1000);
                   let webRect = Utils.getComponentRect('WebViewNavigationPolicyWeb');
-                  let downX = Math.round(globalThis.winLeft + webRect.left  + 15);
+                  let downX = Math.round(globalThis.winLeft + webRect.left + 15);
+                  if (isCar) {
+                    downX = Math.round(globalThis.winLeft + webRect.left + 50);
+                  }
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
-                  await driver.click(downX, downY);
-                  Utils.sleep(2000);
-                  await driver.click(downX, downY);
-                  setTimeout(() =>{
+                  const displayId: number =
+                    await (await driver.findComponent(ON.id('WebViewNavigationPolicyButton'))).getDisplayId();
+                  const pointClick: Point = {
+                    x: downX,
+                    y: downY,
+                    displayId: displayId
+                  }
+                  await driver.clickAt(pointClick);
+                  await Utils.sleep(2000);
+                  await driver.clickAt(pointClick);
+                  setTimeout(() => {
                     Utils.emitEvent(this.navigationPolicyArr[this.navigationPolicy], 20260114)
-                  },4000)
+                  }, 4000)
                 }
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
@@ -173,24 +196,34 @@ struct Index {
             case 'emitWebViewNavigationPolicy003': {
               try {
 
-                if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
+                if (!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
                   console.log('pbbbnetment');
                   Utils.emitEvent(2, 20260115)
                 } else {
-                  Utils.sleep(1000);
+                  await Utils.sleep(1000);
                   let buttonOne = await driver.findComponent(ON.text('打开新窗口'));
                   let point = await buttonOne.getBoundsCenter();
                   await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_LEFT, 2072);
-                  Utils.sleep(1000);
+                  await Utils.sleep(1000);
                   let webRect = Utils.getComponentRect('WebViewNavigationPolicyWeb');
-                  let downX = Math.round(globalThis.winLeft + webRect.left  + 15);
+                  let downX = Math.round(globalThis.winLeft + webRect.left + 15);
+                  if (isCar) {
+                    downX = Math.round(globalThis.winLeft + webRect.left + 50);
+                  }
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
-                  await driver.click(downX, downY);
-                  Utils.sleep(2000);
-                  await driver.click(downX, downY);
-                  setTimeout(() =>{
+                  const displayId: number =
+                    await (await driver.findComponent(ON.id('WebViewNavigationPolicyButton'))).getDisplayId();
+                  const pointClick: Point = {
+                    x: downX,
+                    y: downY,
+                    displayId: displayId
+                  }
+                  await driver.clickAt(pointClick);
+                  await Utils.sleep(2000);
+                  await driver.clickAt(pointClick);
+                  setTimeout(() => {
                     Utils.emitEvent(this.navigationPolicyArr[this.navigationPolicy], 20260115)
-                  },4000)
+                  }, 4000)
                 }
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
@@ -202,26 +235,36 @@ struct Index {
             case 'emitWebViewNavigationPolicy004': {
               try {
 
-                if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
+                if (!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
                   console.log('pbbbnetment');
                   Utils.emitEvent(2, 20260116)
                 } else {
                   this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile("window.open.html"))
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
                   let buttonOne = await driver.findComponent(ON.text('打开新标签'));
                   let point = await buttonOne.getBoundsCenter();
                   await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_LEFT, 2072);
-                  Utils.sleep(1000);
+                  await Utils.sleep(1000);
                   let webRect = Utils.getComponentRect('WebViewNavigationPolicyWeb');
-                  let downX = Math.round(globalThis.winLeft + webRect.left  + 15);
+                  let downX = Math.round(globalThis.winLeft + webRect.left + 15);
+                  if (isCar) {
+                    downX = Math.round(globalThis.winLeft + webRect.left + 50);
+                  }
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
-                  await driver.click(downX, downY);
-                  Utils.sleep(2000);
-                  await driver.click(downX, downY);
-                  setTimeout(() =>{
+                  const displayId: number =
+                    await (await driver.findComponent(ON.id('WebViewNavigationPolicyButton'))).getDisplayId();
+                  const pointClick: Point = {
+                    x: downX,
+                    y: downY,
+                    displayId: displayId
+                  }
+                  await driver.clickAt(pointClick);
+                  await Utils.sleep(2000);
+                  await driver.clickAt(pointClick);
+                  setTimeout(() => {
                     Utils.emitEvent(this.navigationPolicyArr[this.navigationPolicy], 20260116)
-                  },4000)
+                  }, 4000)
                 }
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
@@ -233,26 +276,36 @@ struct Index {
             case 'emitWebViewNavigationPolicy005': {
               try {
 
-                if(!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
+                if (!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
                   console.log('pbbbnetment');
                   Utils.emitEvent(3, 20260117)
                 } else {
                   this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile("window.open.html"))
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
                   let buttonOne = await driver.findComponent(ON.text('打开新标签'));
                   let point = await buttonOne.getBoundsCenter();
                   await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_LEFT);
-                  Utils.sleep(1000);
+                  await Utils.sleep(1000);
                   let webRect = Utils.getComponentRect('WebViewNavigationPolicyWeb');
-                  let downX = Math.round(globalThis.winLeft + webRect.left  + 15);
+                  let downX = Math.round(globalThis.winLeft + webRect.left + 15);
+                  if (isCar) {
+                    downX = Math.round(globalThis.winLeft + webRect.left + 50);
+                  }
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
-                  await driver.click(downX, downY);
-                  Utils.sleep(2000);
-                  await driver.click(downX, downY);
-                  setTimeout(() =>{
+                  const displayId: number =
+                    await (await driver.findComponent(ON.id('WebViewNavigationPolicyButton'))).getDisplayId();
+                  const pointClick: Point = {
+                    x: downX,
+                    y: downY,
+                    displayId: displayId
+                  }
+                  await driver.clickAt(pointClick);
+                  await Utils.sleep(2000);
+                  await driver.clickAt(pointClick);
+                  setTimeout(() => {
                     Utils.emitEvent(this.navigationPolicyArr[this.navigationPolicy], 20260117)
-                  },4000)
+                  }, 4000)
                 }
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
@@ -330,7 +383,7 @@ struct Index {
             }
             console.log("===== ArkTS onWindowNewExt 结束 =====");
           })
-      }.height('20%')
+      }.height('50%')
     }
     .height('100%')
     .width('100%')

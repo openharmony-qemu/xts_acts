@@ -21,15 +21,16 @@ import { ApplicationStateChangeCallback } from '@kit.AbilityKit';
 import eventBus from '../lib/EventBus';
 import { Event } from '@kit.ArkTS';
 
-let TestAbilityContext:common.UIAbilityContext;
+let testAbilityContext:common.UIAbilityContext;
 export default function LifeCycleLinstenerTest() {
   let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
   let mpEnable = '';
   describe('LifeCycleLinstenerTest', () => {
     beforeAll(() => {
-      TestAbilityContext = AppStorage.get<common.UIAbilityContext>("abilityContext") as common.UIAbilityContext
+      testAbilityContext = AppStorage.get<common.UIAbilityContext>('abilityContext') as common.UIAbilityContext
       try {
-        mpEnable = systemParameterEnhance.getSync('persist.sys.abilityms.move_ui_ability_to_background_api_enable', 'false');
+        mpEnable = systemParameterEnhance.getSync('persist.sys.abilityms.move_ui_ability_to_background_api_enable',
+          'false');
       } catch(err) {
         console.info(`MoveAbilityToBackground Get system parameter error: ${JSON.stringify(err)}`);
       }
@@ -45,8 +46,8 @@ export default function LifeCycleLinstenerTest() {
         console.log(`afterEach terminateSelf success`);
       }
       if (!globalThis.testAbilityOnForeground) {
-        let cmd = "aa start -b com.acts.moveabilitytobgtest -a TestAbility";
-        let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+        let cmd = 'aa start -b com.acts.moveabilitytobgtest -a TestAbility';
+        let user = AbilityDelegatorRegistry.getArguments().parameters['-u'];
         if(user !== undefined){
             cmd += ' -u ' + user;
         }
@@ -69,13 +70,29 @@ export default function LifeCycleLinstenerTest() {
     it('SUB_Ability_AbilityRuntime_getCurrentAppCloneIndex_0100', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_getCurrentAppCloneIndex_0100`;
       console.log(`${tag}, it begin`);
-      try {
-        let applicationContext:common.ApplicationContext = TestAbilityContext.getApplicationContext();
-        let appCloneIndex:number = applicationContext.getCurrentAppCloneIndex();
-      } catch (err) {
-        console.info(`${tag} error, errorCode: ${JSON.stringify(err?.message)}`);
-        expect(err?.code).assertEqual(16000071);
-        done();
+      let appCloneSupport = AppStorage.get('appCloneSupport') as boolean;
+      if(!appCloneSupport){
+        try {
+          let applicationContext:common.ApplicationContext = testAbilityContext.getApplicationContext();
+          let appCloneIndex:number = applicationContext.getCurrentAppCloneIndex();
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.info(`${tag} error, errorCode: ${JSON.stringify(err?.message)}`);
+          expect(err?.code).assertEqual(16000071);
+          done();
+        }
+      } else {
+        try {
+          let applicationContext:common.ApplicationContext = testAbilityContext.getApplicationContext();
+          let appCloneIndex:number = applicationContext.getCurrentAppCloneIndex();
+          expect(appCloneIndex).assertEqual(0);
+          done();
+        } catch (err) {
+          console.info(`${tag} error, errorCode: ${JSON.stringify(err?.message)}`);
+          expect().assertFail();
+          done();
+        }
       }
     });
 
@@ -106,23 +123,24 @@ export default function LifeCycleLinstenerTest() {
               eventBus.emit(`${tag}_onApplicationBackground`);
             }
           }
-          let applicationContext:common.ApplicationContext = TestAbilityContext.getApplicationContext();
+          let applicationContext:common.ApplicationContext = testAbilityContext.getApplicationContext();
           try {
             applicationContext.on('applicationStateChange', applicationStateChangeCallback);
           } catch (paramError) {
-            console.info(tag + `error: ${(paramError as BusinessError).code}, ${(paramError as BusinessError).message}`);
+            console.info(tag + `error: ${(paramError as BusinessError).code}, ${(paramError as
+              BusinessError).message}`);
             expect(1).assertEqual(5);
             done();
           }
-          TestAbilityContext.moveAbilityToBackground();
+          testAbilityContext.moveAbilityToBackground();
           await Promise.all([
             eventBus.onWait('TestAbility_onBackground'),
             eventBus.onWait(`${tag}_onApplicationBackground`),
           ]);
           console.info(tag + ` backgoundFlag: ` + backgoundFlag);
           expect(backgoundFlag).assertTrue();
-          let cmd = "aa start -b com.acts.moveabilitytobgtest -a TestAbility";
-          let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+          let cmd = 'aa start -b com.acts.moveabilitytobgtest -a TestAbility';
+          let user = AbilityDelegatorRegistry.getArguments().parameters['-u'];
           if(user !== undefined){
               cmd += ' -u ' + user;
           }
@@ -136,7 +154,8 @@ export default function LifeCycleLinstenerTest() {
           try {
             applicationContext.off('applicationStateChange', applicationStateChangeCallback);
           } catch (paramError) {
-            console.info(tag + ` off error: ${(paramError as BusinessError).code}, ${(paramError as BusinessError).message}`);
+            console.info(tag + ` off error: ${(paramError as BusinessError).code}, ${(paramError as
+              BusinessError).message}`);
             expect().assertFail();
             done();
           }
@@ -147,10 +166,12 @@ export default function LifeCycleLinstenerTest() {
           done();
         }
       }else if(mpEnable === 'false') {
-        console.info(`${tag} error, current device not support MoveAbilityToBackground,please check: ${JSON.stringify(mpEnable)}`);
+        console.info(`${tag} error, current device not support MoveAbilityToBackground,please check:
+          ${JSON.stringify(mpEnable)}`);
         done();
       }else{
-        console.info(`${tag} error, current device get MoveAbilityToBackground config fail,please check: ${JSON.stringify(mpEnable)}`);
+        console.info(`${tag} error, current device get MoveAbilityToBackground config fail,please check:
+          ${JSON.stringify(mpEnable)}`);
         expect().assertFail();
         done();
       }
@@ -184,22 +205,24 @@ export default function LifeCycleLinstenerTest() {
               eventBus.emit(`${tag}_onApplicationBackground`);
             }
           }
-          let applicationContext:common.ApplicationContext = TestAbilityContext.getApplicationContext();
+          let applicationContext:common.ApplicationContext = testAbilityContext.getApplicationContext();
           try {
             applicationContext.on('applicationStateChange', applicationStateChangeCallback);
           } catch (paramError) {
-            console.info(tag + ` error: ${(paramError as BusinessError).code}, ${(paramError as BusinessError).message}`);
+            console.info(tag + ` error: ${(paramError as BusinessError).code}, ${(paramError as
+              BusinessError).message}`);
             expect().assertFail();
             done();
           }
           try {
             applicationContext.off('applicationStateChange', applicationStateChangeCallback);
           } catch (paramError) {
-            console.info(tag + `error: ${(paramError as BusinessError).code}, ${(paramError as BusinessError).message}`);
+            console.info(tag + `error: ${(paramError as BusinessError).code}, ${(paramError as
+              BusinessError).message}`);
             expect().assertFail();
             done();
           }
-          TestAbilityContext.startAbility({
+          testAbilityContext.startAbility({
             bundleName:'com.acts.moveabilitytobgtest',
             abilityName:'EntryAbility1'
           }).then((data)=>{
@@ -218,10 +241,10 @@ export default function LifeCycleLinstenerTest() {
             eventBus.onWait('EntryAbility1_onBackground'),
             eventBus.onWait('TestAbility_onForeground'),
           ])
-          TestAbilityContext.moveAbilityToBackground();
+          testAbilityContext.moveAbilityToBackground();
           await Promise.all([eventBus.onWait('TestAbility_onBackground')])
-          let cmd = "aa start -b com.acts.moveabilitytobgtest -a TestAbility";
-          let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+          let cmd = 'aa start -b com.acts.moveabilitytobgtest -a TestAbility';
+          let user = AbilityDelegatorRegistry.getArguments().parameters['-u'];
           if(user !== undefined){
               cmd += ' -u ' + user;
           }
@@ -240,10 +263,12 @@ export default function LifeCycleLinstenerTest() {
           done();
         }
       }else if(mpEnable === 'false') {
-        console.info(`${tag} error, current device not support MoveAbilityToBackground,please check: ${JSON.stringify(mpEnable)}`);
+        console.info(`${tag} error, current device not support MoveAbilityToBackground,please check:
+          ${JSON.stringify(mpEnable)}`);
         done();
       }else{
-        console.info(`${tag} error, current device get MoveAbilityToBackground config fail,please check: ${JSON.stringify(mpEnable)}`);
+        console.info(`${tag} error, current device get MoveAbilityToBackground config fail,please check:
+          ${JSON.stringify(mpEnable)}`);
         expect().assertFail();
         done();
       }

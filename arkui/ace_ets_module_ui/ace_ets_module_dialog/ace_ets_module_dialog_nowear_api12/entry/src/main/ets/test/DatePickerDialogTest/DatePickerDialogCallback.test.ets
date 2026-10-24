@@ -18,6 +18,8 @@ import { Driver, ON} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 import events_emitter from '@ohos.events.emitter';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function DatePickerDialogCallback() {
   describe('DatePickerDialogCallback', () => {
     beforeEach(async (done: Function) => {
@@ -97,7 +99,7 @@ export default function DatePickerDialogCallback() {
       }
       events_emitter.on(event3, callback3);
       await CommonFunc.sleep(3000)
-      await driver1.pressBack();
+      await driver1.pressBack(displayID);
 
     });
 

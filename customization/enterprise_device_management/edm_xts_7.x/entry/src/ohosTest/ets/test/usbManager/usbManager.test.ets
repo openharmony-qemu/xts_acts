@@ -957,11 +957,7 @@ function testAddAllowedOpticalDiscDriveBurnUsbDevices() {
       await usbManager.addAllowedOpticalDiscDriveBurnUsbDevices(OPTICAL_DISC_BURN_USB_DEVICES);
       expect().assertFail();
     } catch (error) {
-      if (error.code === 801) {
-        expect(error.code).assertEqual(801);
-      } else {
-        expect(error.code).assertEqual(9200001);
-      }
+      expect(error.code).assertEqual(9200001);
     }
     done();
   });
@@ -1005,11 +1001,7 @@ function testAddAllowedOpticalDiscDriveBurnUsbDevices() {
       await usbManager.addAllowedOpticalDiscDriveBurnUsbDevices(null);
       expect().assertFail();
     } catch (error) {
-      if (error.code === 801) {
-        expect(error.code).assertEqual(801);
-      } else {
-        expect(error.code).assertEqual(401);
-      }
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1030,11 +1022,7 @@ function testAddAllowedOpticalDiscDriveBurnUsbDevices() {
       await usbManager.addAllowedOpticalDiscDriveBurnUsbDevices(undefined);
       expect().assertFail();
     } catch (error) {
-      if (error.code === 801) {
-        expect(error.code).assertEqual(801);
-      } else {
-        expect(error.code).assertEqual(401);
-      }
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1104,7 +1092,7 @@ function testAddAllowedOpticalDiscDriveBurnUsbDevices() {
     try {
       await usbManager.addAllowedOpticalDiscDriveBurnUsbDevices(OPTICAL_DISC_BURN_USB_DEVICES);
       let result = await usbManager.getAllowedOpticalDiscDriveBurnUsbDevices(common.QueryPolicy.SELF);
-      expect(result.length > 0).assertEqual(true);
+      expect(result.length).assertEqual(1);
       await usbManager.removeAllowedOpticalDiscDriveBurnUsbDevices(OPTICAL_DISC_BURN_USB_DEVICES);
     } catch (error) {
       expect(error.code).assertEqual(801);
@@ -1129,11 +1117,7 @@ function testRemoveAllowedOpticalDiscDriveBurnUsbDevices() {
       await usbManager.removeAllowedOpticalDiscDriveBurnUsbDevices(OPTICAL_DISC_BURN_USB_DEVICES);
       expect().assertFail();
     } catch (error) {
-      if (error.code === 801) {
-        expect(error.code).assertEqual(801);
-      } else {
-        expect(error.code).assertEqual(9200001);
-      }
+      expect(error.code).assertEqual(9200001);
     }
     done();
   });
@@ -1177,11 +1161,7 @@ function testRemoveAllowedOpticalDiscDriveBurnUsbDevices() {
       await usbManager.removeAllowedOpticalDiscDriveBurnUsbDevices(null);
       expect().assertFail();
     } catch (error) {
-      if (error.code === 801) {
-        expect(error.code).assertEqual(801);
-      } else {
-        expect(error.code).assertEqual(401);
-      }
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1202,11 +1182,7 @@ function testRemoveAllowedOpticalDiscDriveBurnUsbDevices() {
       await usbManager.removeAllowedOpticalDiscDriveBurnUsbDevices(undefined);
       expect().assertFail();
     } catch (error) {
-      if (error.code === 801) {
-        expect(error.code).assertEqual(801);
-      } else {
-        expect(error.code).assertEqual(401);
-      }
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1277,7 +1253,7 @@ function testRemoveAllowedOpticalDiscDriveBurnUsbDevices() {
       await usbManager.addAllowedOpticalDiscDriveBurnUsbDevices(OPTICAL_DISC_BURN_USB_DEVICES);
       await usbManager.removeAllowedOpticalDiscDriveBurnUsbDevices(OPTICAL_DISC_BURN_USB_DEVICES);
       let result = await usbManager.getAllowedOpticalDiscDriveBurnUsbDevices(common.QueryPolicy.SELF);
-      expect(result.length === 0).assertEqual(true);
+      expect(result.length).assertEqual(0);
     } catch (error) {
       expect(error.code).assertEqual(801);
     } finally {
@@ -1318,7 +1294,7 @@ function testGetAllowedOpticalDiscDriveBurnUsbDevices() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       let result = await usbManager.getAllowedOpticalDiscDriveBurnUsbDevices(common.QueryPolicy.SELF);
-      expect(result.length >= 0).assertEqual(true);
+      expect(result.length).assertEqual(0);
     } catch (error) {
       expect(error.code).assertEqual(9200002);
     } finally {
@@ -1339,7 +1315,7 @@ function testGetAllowedOpticalDiscDriveBurnUsbDevices() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let result = await usbManager.getAllowedOpticalDiscDriveBurnUsbDevices(null);
-      expect(result.length >= 0).assertEqual(true);
+      expect(result.length).assertEqual(0);
     } catch (error) {
       expect().assertFail();
     } finally {
@@ -1360,7 +1336,7 @@ function testGetAllowedOpticalDiscDriveBurnUsbDevices() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let result = await usbManager.getAllowedOpticalDiscDriveBurnUsbDevices(undefined);
-      expect(result.length >= 0).assertEqual(true);
+      expect(result.length).assertEqual(0);
     } catch (error) {
       expect().assertFail();
     } finally {
@@ -1381,7 +1357,7 @@ function testGetAllowedOpticalDiscDriveBurnUsbDevices() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let result = await usbManager.getAllowedOpticalDiscDriveBurnUsbDevices(2);
-      expect(result.length >= 0).assertEqual(true);
+      expect(result.length).assertEqual(0);
     } catch (error) {
       expect().assertFail();
     } finally {
@@ -1402,7 +1378,7 @@ function testGetAllowedOpticalDiscDriveBurnUsbDevices() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let result = await usbManager.getAllowedOpticalDiscDriveBurnUsbDevices(common.QueryPolicy.SELF);
-      expect(result.length >= 0).assertEqual(true);
+      expect(result.length).assertEqual(0);
     } catch (error) {
       expect().assertFail();
     } finally {
@@ -1423,7 +1399,7 @@ function testGetAllowedOpticalDiscDriveBurnUsbDevices() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let result = await usbManager.getAllowedOpticalDiscDriveBurnUsbDevices(common.QueryPolicy.ALL);
-      expect(result.length >= 0).assertEqual(true);
+      expect(result.length).assertEqual(0);
     } catch (error) {
       expect().assertFail();
     } finally {
@@ -1462,7 +1438,7 @@ function testGetAllowedOpticalDiscDriveBurnUsbDevices() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       let result = await usbManager.getAllowedOpticalDiscDriveBurnUsbDevices();
-      expect(result.length >= 0).assertEqual(true);
+      expect(result.length).assertEqual(0);
     } catch (error) {
       expect(error.code).assertEqual(9200002);
     } finally {
@@ -1482,10 +1458,12 @@ function testGetAllowedOpticalDiscDriveBurnUsbDevices() {
   it("test_getAllowedOpticalDiscDriveBurnUsbDevices_1000", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
+      await usbManager.addAllowedOpticalDiscDriveBurnUsbDevices(OPTICAL_DISC_BURN_USB_DEVICES);
       let result = await usbManager.getAllowedOpticalDiscDriveBurnUsbDevices();
-      expect(result.length >= 0).assertEqual(true);
+      expect(result.length).assertEqual(1);
+      await usbManager.removeAllowedOpticalDiscDriveBurnUsbDevices(OPTICAL_DISC_BURN_USB_DEVICES);
     } catch (error) {
-      expect().assertFail();
+      expect(error.code).assertEqual(801);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1814,7 +1792,7 @@ function testIsExternalStorageInterceptEnable() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let result = usbManager.isExternalStorageInterceptEnable(null);
-      expect(typeof result === 'boolean').assertEqual(true);
+      expect(result).assertEqual(false);
     } catch (error) {
       expect().assertFail();
     } finally {
@@ -1835,7 +1813,7 @@ function testIsExternalStorageInterceptEnable() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let result = usbManager.isExternalStorageInterceptEnable(undefined);
-      expect(typeof result === 'boolean').assertEqual(true);
+      expect(result).assertEqual(false);
     } catch (error) {
       expect().assertFail();
     } finally {
@@ -1856,7 +1834,7 @@ function testIsExternalStorageInterceptEnable() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let result = usbManager.isExternalStorageInterceptEnable(2);
-      expect(typeof result === 'boolean').assertEqual(true);
+      expect(result).assertEqual(false);
     } catch (error) {
       expect().assertFail();
     } finally {
@@ -1877,7 +1855,7 @@ function testIsExternalStorageInterceptEnable() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let result = usbManager.isExternalStorageInterceptEnable(common.QueryPolicy.SELF);
-      expect(typeof result === 'boolean').assertEqual(true);
+      expect(result).assertEqual(false);
     } catch (error) {
       expect().assertFail();
     } finally {
@@ -1898,7 +1876,7 @@ function testIsExternalStorageInterceptEnable() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let result = usbManager.isExternalStorageInterceptEnable(common.QueryPolicy.ALL);
-      expect(typeof result === 'boolean').assertEqual(true);
+      expect(result).assertEqual(false);
     } catch (error) {
       expect().assertFail();
     } finally {
@@ -1958,7 +1936,7 @@ function testIsExternalStorageInterceptEnable() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let result = usbManager.isExternalStorageInterceptEnable();
-      expect(typeof result === 'boolean').assertEqual(true);
+      expect(result).assertEqual(false);
     } catch (error) {
       expect().assertFail();
     } finally {
@@ -2187,7 +2165,7 @@ function testGetExternalStorageDeviceInfos() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let result = usbManager.getExternalStorageDeviceInfos();
-      expect(Array.isArray(result)).assertEqual(true);
+      expect(result.length).assertEqual(0);
     } catch (error) {
       expect().assertFail();
     } finally {

@@ -73,6 +73,7 @@ export default function WaterFlowDraggingFlingModifierTest() {
         await CommonFunc.sleep(1000);
         let dragScroll = await driver.findComponent(ON.id('waterFlowModifier_dragging_fling'));
         const rect = await (dragScroll?.getBounds() as Promise<Rect>);
+        let displayId = await dragScroll!.getDisplayId();
         let top = rect.top;
         let left = rect.left;
         let right = rect.right;
@@ -80,8 +81,13 @@ export default function WaterFlowDraggingFlingModifierTest() {
         console.info('WaterFlowDraggingFlingModifier_static_0100 value is' + left + ' --' + right + '--' + top + '--' + bottom);
         let height = bottom - top;
         let width = right - left;
-        await driver.swipe(Math.round(left + width / 2).toInt(), Math.round(top + height * 0.8).toInt(),
-          Math.round(left + width / 2).toInt(), Math.round(top + height * 0.2).toInt(), 1000);
+        let centerX = (Math.round(left + width / 2)).toInt();
+        let startY = (Math.round(top + height * 0.8)).toInt();
+        let endY = (Math.round(top + height * 0.2)).toInt();
+        await driver.swipeBetween(
+          { x: centerX, y: startY, displayId: displayId },
+          { x: centerX, y: endY, displayId: displayId }
+        );
         await CommonFunc.sleep(SLEEP_TIME_2000);
 
         let strJson1 = inspector.getInspectorByKey('waterFlowModifier_startDragging');

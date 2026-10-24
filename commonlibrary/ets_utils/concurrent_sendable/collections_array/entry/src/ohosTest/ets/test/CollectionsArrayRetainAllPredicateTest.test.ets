@@ -14,6 +14,7 @@
  */
 
 import { collections, taskpool, worker, MessageEvents, ArkTSUtils } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import {CrossThreadApiResult} from './common'
 
@@ -120,6 +121,36 @@ function executeArrayRetainAllPredicateWorker(array: collections.Array<number>):
   });
 }
 
+
+@Sendable
+class SupArrayShared001 {
+  arr: collections.Array<number> = new collections.Array<number>();
+  lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
+}
+
+@Concurrent
+async function supArrayWrite001(shared: SupArrayShared001, base: number): Promise<void> {
+  await shared.lock.lockAsync((): Promise<void> => {
+    for (let j = 0; j < 100; j++) {
+      shared.arr.push(base * 100 + j);
+    }
+    return Promise.resolve();
+  });
+}
+
+@Sendable
+class SupArraySameShared001 {
+  arr: collections.Array<number> = new collections.Array<number>(0, 0, 0, 0, 0);
+  lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
+}
+
+@Concurrent
+async function supArrayWriteSame001(shared: SupArraySameShared001, value: number): Promise<void> {
+  await shared.lock.lockAsync((): Promise<void> => {
+    shared.arr[2] = value;
+    return Promise.resolve();
+  });
+}
 export default function CollectionsArrayRetainAllPredicateTest(): void {
   describe('CollectionsArrayRetainAllPredicateTest', (): void => {
     beforeAll((done: Function): void => {
@@ -772,5 +803,48 @@ export default function CollectionsArrayRetainAllPredicateTest(): void {
         expect(receiver.at(2)).assertEqual(5);
         console.info(`${caseName}, test end`);
       });
+
+    /**
+     * @tc.number  SUB_ARRAY_CONC_DISTINCT_KEYS_0100
+     * @tc.name    testArrayConcDistinctKeys0001
+     * @tc.desc    Verify concurrent writes of distinct indices keep all values
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testArrayConcDistinctKeys0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function): Promise<void> => {
+      let shared = new SupArrayShared001();
+      let tasks: taskpool.Task[] = [];
+      for (let i = 0; i < 10; i++) {
+        tasks.push(new taskpool.Task(supArrayWrite001, shared, i));
+      }
+      for (let i = 0; i < tasks.length; i++) {
+        await taskpool.execute(tasks[i]);
+      }
+      expect(shared.arr.length).assertEqual(1000);
+      done();
+    });
+
+    /**
+     * @tc.number  SUB_ARRAY_CONC_SAME_KEY_0200
+     * @tc.name    testArrayConcSameKey0002
+     * @tc.desc    Verify concurrent writes of same index keep valid value
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testArrayConcSameKey0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function): Promise<void> => {
+      let shared = new SupArraySameShared001();
+      let tasks: taskpool.Task[] = [];
+      for (let i = 1; i <= 5; i++) {
+        tasks.push(new taskpool.Task(supArrayWriteSame001, shared, i));
+      }
+      for (let i = 0; i < tasks.length; i++) {
+        await taskpool.execute(tasks[i]);
+      }
+      let valid: number[] = [1, 2, 3, 4, 5];
+      expect(valid.indexOf(shared.arr[2]) >= 0).assertTrue();
+      done();
+    });
   });
 }

@@ -99,7 +99,7 @@ interface lockType_exclusiveMultiWorkerTest {
   tid: number
 }
 // test entry point
-export async function exclusiveMultiWorkerTest() {
+export async function exclusiveMultiWorkerTest(): Promise<string> {
   let lockName = 'exclusiveMultiWorkerLock';
   let tidBuf = createInt();
   tidBuf[0] = 0;
@@ -192,7 +192,7 @@ export function sharedMultiTest(): Promise<String> {
 }
 
 // test entry point
-export async function sharedMultiWorkerTest() {
+export async function sharedMultiWorkerTest(): Promise<string> {
   let lockName = 'sharedMultiWorkerLock';
   let sab = new ArrayBuffer(2 * 4);
   let flagBuf = new Int32Array(sab);
@@ -228,7 +228,7 @@ export async function sharedMultiWorkerTest() {
 }
 
 
-export function isAvailableTrueJob(lockName: string) {
+export function isAvailableTrueJob(lockName: string): void {
   let lock = AsyncLock.request(lockName);
   let options = new AsyncLockOptions<void>();
   options.isAvailable = true;
@@ -592,7 +592,7 @@ interface lockType_sequentialLockWorkerTest {
 }
 
 // test entry point
-export async function sequentialLockWorkerTest() {
+export async function sequentialLockWorkerTest(): Promise<string> {
   let lockNameB = 'sequentialLockWorkerB';
   let flagBuf = createInt();
   flagBuf[0] = 0;

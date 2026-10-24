@@ -40,9 +40,9 @@ export default function HttpUsingProtocolTest() {
      * @tc.desc   test http1_1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('testTelephonyNETSTACKHttp2TestBasicGet0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function)=> {
+    it('testTelephonyNETSTACKHttp2TestBasicGet0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function)=> {
       let caseName = 'testTelephonyNETSTACKHttp2TestBasicGet0100';
       console.info(`${caseName}---start`);
       try {
@@ -51,7 +51,7 @@ export default function HttpUsingProtocolTest() {
           usingProtocol: http.HttpProtocol.HTTP1_1
         }).then((data)=> {
           console.info(`${caseName} data: ` + JSON.stringify(data));
-          ExpectTrue(data.responseCode == 200);
+          ExpectTrue(data.responseCode === 200);
           httpRequest.destroy();
           console.info(`${caseName}---end`);
           done();
@@ -70,9 +70,9 @@ export default function HttpUsingProtocolTest() {
      * @tc.desc   test http1_2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('testTelephonyNETSTACKHttp2TestBasicGet0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function)=> {
+    it('testTelephonyNETSTACKHttp2TestBasicGet0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function)=> {
       let caseName = 'testTelephonyNETSTACKHttp2TestBasicGet0200';
       console.info(`${caseName}---start`);
       try {
@@ -81,7 +81,7 @@ export default function HttpUsingProtocolTest() {
           usingProtocol: http.HttpProtocol.HTTP2
         }).then((data) =>{
           console.info(`${caseName} data: ` + JSON.stringify(data));
-          ExpectTrue(data.responseCode == 200);
+          ExpectTrue(data.responseCode === 200);
           httpRequest.destroy();
           console.info(`${caseName}---end`);
           done();
@@ -101,16 +101,16 @@ export default function HttpUsingProtocolTest() {
      * @tc.desc   test normal
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('testTelephonyNETSTACKHttp2TestBasicGet0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function)=> {
+    it('testTelephonyNETSTACKHttp2TestBasicGet0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function)=> {
       let caseName = 'testTelephonyNETSTACKHttp2TestBasicGet0300';
       console.info(`${caseName}---start`);
       try {
         let httpRequest  = http.createHttp();
         httpRequest.request("https://www.baidu.com").then( (data)=> {
           console.info(`${caseName} data: ` + JSON.stringify(data));
-          ExpectTrue(data.responseCode == 200);
+          ExpectTrue(data.responseCode === 200);
           httpRequest.destroy();
           console.info(`${caseName}---end`);
           done();
@@ -140,7 +140,7 @@ export default function HttpUsingProtocolTest() {
           usingProtocol: http.HttpProtocol.HTTP1_1
         }).then((data)=> {
           console.info(`${caseName} data: ` + JSON.stringify(data));
-          ExpectTrue(data.responseCode == 200);
+          ExpectTrue(data.responseCode === 200);
           expect(http.HttpProtocol.HTTP1_1).assertEqual(0);
           expect(http.HttpProtocol.HTTP2).assertEqual(1);
           httpRequest.destroy();
@@ -172,7 +172,7 @@ export default function HttpUsingProtocolTest() {
           usingProtocol: http.HttpProtocol.HTTP2
         }).then((data)=> {
           console.info(`${caseName} data: ` + JSON.stringify(data));
-          ExpectTrue(data.responseCode == 200);
+          ExpectTrue(data.responseCode === 200);
           expect(http.HttpDataType.STRING).assertEqual(0);
           expect(http.HttpDataType.OBJECT).assertEqual(1);
           expect(http.HttpDataType.ARRAY_BUFFER).assertEqual(2);
@@ -194,9 +194,9 @@ export default function HttpUsingProtocolTest() {
      * @tc.desc   usingCache test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('testTelephonyHttpHttpTestPriority0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function)=> {
+    it('testTelephonyHttpHttpTestPriority0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function)=> {
       let caseName = 'testTelephonyHttpHttpTestPriority0100';
       console.info(`${caseName}---start`);
       try {
@@ -213,13 +213,20 @@ export default function HttpUsingProtocolTest() {
             caPath: ''
           }
           let httpRequest = http.createHttp();
-          httpRequest.request("https://www.baidu.com", httpRequestOptions, (err, data) => {
-            console.info(caseName + JSON.stringify(err) + "data" + JSON.stringify(data));
-            ExpectTrue(data.responseCode == 200);
-            ExpectTrue(data.resultType == http.HttpDataType.STRING);
-            httpRequest.destroy();
-            done();
-          });
+           httpRequest.request("https://www.baidu.com", httpRequestOptions, (err, data) => {
+             if (err) {
+               console.info(`${caseName} request error: ${JSON.stringify(err)}`);
+               ExpectFail();
+               httpRequest.destroy();
+               done();
+               return;
+             }
+             console.info(caseName + JSON.stringify(err) + "data" + JSON.stringify(data));
+             ExpectTrue(data.responseCode === 200);
+             ExpectTrue(data.resultType === http.HttpDataType.STRING);
+             httpRequest.destroy();
+             done();
+           });
       } catch (error) {
         console.info(`${caseName}  catch  err: ${JSON.stringify(error)}`);
         ExpectFail();

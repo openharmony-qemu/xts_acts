@@ -61,17 +61,19 @@ it('listScrollerBar_static_0100', Level.LEVEL0, async (done: () => void): Promis
         console.info('[listScrollerBar_static_0100] START');
         let driver = Driver.create()
         await CommonFunc.sleep(1000);
-        let swiperBar = CommonFunc.getComponentRectOnScreen('scroller_list_scrollbar');
-        let top = swiperBar.top;
-        let bottom = swiperBar.bottom;
-        let right = swiperBar.right;
-        let left = swiperBar.left;
-        let widthBar = right - left;
-        console.info("listScrollerBar_static_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
-        const uiContext = AppStorage.get<UIContext>('uiContext')!;
-        await (driver.swipe((Math.round(left + widthBar / 2)).toInt(), (Math.round(top + uiContext.vp2px(10))).toInt(),
-          (Math.round(left + widthBar / 2)).toInt(),
-          (Math.round(bottom - uiContext.vp2px(10))).toInt(),1000) as Promise<void>);
+        let swipeComp = await driver.findComponent(ON.id('scroller_list_scrollbar'));
+        let rect = await swipeComp!.getBounds();
+        let displayId = await swipeComp!.getDisplayId();
+        let widthBar = rect.right - rect.left;
+        let startX = (Math.round(rect.left + widthBar / 2)).toInt();
+        let startY = (Math.round(rect.top + UIContext.resolveUIContext()!.vp2px(10))).toInt();
+        let endY = (Math.round(rect.bottom - UIContext.resolveUIContext()!.vp2px(10))).toInt();
+        console.info("[listScrollerBar_static_0100] rect left=" + rect.left + " right=" + rect.right +
+          " top=" + rect.top + " bottom=" + rect.bottom + " displayId=" + displayId);
+        await driver.swipeBetween(
+          { x: startX, y: startY, displayId: displayId },
+          { x: startX, y: endY, displayId: displayId }
+        );
         await CommonFunc.sleep(8000);
         let strJson = inspector.getInspectorByKey('list_scrollBar_onText');
         console.info("[listScrollerBar_static_0100] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));

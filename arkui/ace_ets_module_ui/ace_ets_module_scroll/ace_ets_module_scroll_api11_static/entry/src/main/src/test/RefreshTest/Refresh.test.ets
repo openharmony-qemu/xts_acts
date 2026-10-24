@@ -69,7 +69,7 @@ export default function RefreshTest() {
 it('ArkUX_Refresh_Visual_static_0010', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Refresh_Visual_static_0010 START');
       try {
-        let strJson = inspector.getInspectorByKey('refreshux' + '_ArkUX_Refresh_Visual_0010');
+        let strJson = inspector.getInspectorByKey('refreshux_ArkUX_Refresh_Visual_0010');
         console.info('ArkUX_Refresh_Visual_static_0010 START  :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
         console.info("ArkUX_Refresh_Visual_static_0010 obj is: " + JSON.stringifyJsonElement(obj));
@@ -94,7 +94,7 @@ it('ArkUX_Refresh_Visual_static_0010', Level.LEVEL1, async (done: () => void): P
 it('ArkUX_Refresh_Visual_static_0020', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Refresh_Visual_static_0020 START');
       try {
-        let strJson = inspector.getInspectorByKey('refreshux' + '_ArkUX_Refresh_Visual_0020');
+        let strJson = inspector.getInspectorByKey('refreshux_ArkUX_Refresh_Visual_0020');
         console.info('ArkUX_Refresh_Visual_static_0020 START  :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
         console.info("ArkUX_Refresh_Visual_static_0020 obj is: " + JSON.stringifyJsonElement(obj));
@@ -119,7 +119,7 @@ it('ArkUX_Refresh_Visual_static_0020', Level.LEVEL1, async (done: () => void): P
 it('ArkUX_Refresh_Visual_static_0030', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Refresh_Visual_static_0030 START');
       try {
-        let strJson = inspector.getInspectorByKey('refreshux' + '_ArkUX_Refresh_Visual_0030');
+        let strJson = inspector.getInspectorByKey('refreshux_ArkUX_Refresh_Visual_0030');
         console.info('ArkUX_Refresh_Visual_static_0030 START  :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
         console.info("ArkUX_Refresh_Visual_static_0030 obj is: " + JSON.stringifyJsonElement(obj));
@@ -144,7 +144,7 @@ it('ArkUX_Refresh_Visual_static_0030', Level.LEVEL1, async (done: () => void): P
 it('ArkUX_Refresh_Visual_static_0040', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Refresh_Visual_static_0040 START');
       try {
-        let strJson = inspector.getInspectorByKey('refreshux' + '_ArkUX_Refresh_Visual_0040');
+        let strJson = inspector.getInspectorByKey('refreshux_ArkUX_Refresh_Visual_0040');
         console.info('ArkUX_Refresh_Visual_static_0040 START  :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
         console.info("ArkUX_Refresh_Visual_static_0040 obj is: " + JSON.stringifyJsonElement(obj));
@@ -169,7 +169,7 @@ it('ArkUX_Refresh_Visual_static_0040', Level.LEVEL1, async (done: () => void): P
 it('ArkUX_Refresh_Visual_static_0050', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Refresh_Visual_static_0050 START');
       try {
-        let strJson = inspector.getInspectorByKey('refreshux' + '_ArkUX_Refresh_Visual_0050');
+        let strJson = inspector.getInspectorByKey('refreshux_ArkUX_Refresh_Visual_0050');
         console.info('ArkUX_Refresh_Visual_static_0050 START  :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
         console.info("ArkUX_Refresh_Visual_static_0050 obj is: " + JSON.stringifyJsonElement(obj));

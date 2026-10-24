@@ -22,6 +22,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { collections, ArkTSUtils } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 function sleep(time: number): Promise<void> {
   return new Promise<void>((resolve) => setTimeout(resolve, time));
@@ -1512,5 +1513,23 @@ export default function CollectionsMapKeysValuesTest() {
       console.info(caseName + ', test end');
     });
 
+    /**
+     * @tc.number  SUB_MAP_KEYS_BIND_0100
+     * @tc.name    testMapKeysBind0001
+     * @tc.desc    Verify keys detached invocation throws 10200011
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testMapKeysBind0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let map = new collections.Map<number, string>([[1, 'a']]);
+      let fn = map.keys;
+      try {
+        fn();
+        expect().assertFail();
+      } catch (error) {
+        expect((error as BusinessError).code).assertEqual(10200011);
+      }
+    });
   });
 }

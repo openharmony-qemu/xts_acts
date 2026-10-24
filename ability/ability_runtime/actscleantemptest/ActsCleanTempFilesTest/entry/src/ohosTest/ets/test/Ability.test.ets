@@ -15,7 +15,7 @@
 
 import commonEvent from '@ohos.commonEventManager';
 import delegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { describe, it, expect, Level } from '@ohos/hypium-dynamic';
+import { describe, it, expect, Level, afterEach } from '@ohos/hypium-dynamic';
 import { getContext } from '../common/getContext';
 import common from '@ohos.app.ability.common';
 
@@ -24,15 +24,28 @@ function sleep(ms: number) {
 }
 
 let abilityDelegator = delegatorRegistry.getAbilityDelegator();
-let ACTS_Register: commonEvent.CommonEventSubscribeInfo = {
+let actsRegister: commonEvent.CommonEventSubscribeInfo = {
   events: ['Acts_CleanTempFiles_0101', 'Acts_CleanTempFiles_0102', 'Acts_CleanTempFiles_0103',
     'Acts_CleanTempFiles_0104', 'Acts_CleanTempFiles_0201', 'Acts_CleanTempFiles_0202', 'Acts_CleanTempFiles_0203',
     'Acts_CleanTempFiles_0204', 'Acts_CleanTempFiles_0301', 'Acts_CleanTempFiles_0302', 'Acts_CleanTempFiles_0401',
     'Acts_CleanTempFiles_0402']
 };
 
+async function stopRelyApp(): Promise<void> {
+  const cmd = 'aa force-stop com.acts.cleancachefilesreply';
+  try {
+    await abilityDelegator.executeShellCommand(cmd);
+  } catch (e) {
+    console.warn('force-stop rely: ' + JSON.stringify(e));
+  }
+  await sleep(1500);
+}
+
 export default function abilityTest() {
   describe('ActsCleanTempFilesTest', () => {
+    afterEach(async () => {
+      await stopRelyApp();
+    });
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_CleanCacheFiles_0100
@@ -53,7 +66,7 @@ export default function abilityTest() {
         'ACTS_RegisterEvent_Fourth': false
       }
 
-      commonEvent.createSubscriber(ACTS_Register).then(async (data) => {
+      commonEvent.createSubscriber(actsRegister).then(async (data) => {
         console.log('Acts_CleanTempFiles_0100 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -116,7 +129,11 @@ export default function abilityTest() {
           console.log('Acts_CleanTempFiles_0102 startAbility err: ' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      });
     })
 
     /**
@@ -138,7 +155,7 @@ export default function abilityTest() {
         'ACTS_RegisterEvent_Fourth': false
       }
 
-      commonEvent.createSubscriber(ACTS_Register).then(async (data) => {
+      commonEvent.createSubscriber(actsRegister).then(async (data) => {
         console.log('Acts_CleanTempFiles_0200 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -203,7 +220,11 @@ export default function abilityTest() {
           console.log('Acts_CleanTempFiles_0202 startAbility err: ' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      });
     })
 
     /**
@@ -222,7 +243,7 @@ export default function abilityTest() {
         'ACTS_RegisterEvent_First': false, 'ACTS_RegisterEvent_Second': false
       }
 
-      commonEvent.createSubscriber(ACTS_Register).then(async (data) => {
+      commonEvent.createSubscriber(actsRegister).then(async (data) => {
         console.log('Acts_CleanTempFiles_0300 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -270,7 +291,11 @@ export default function abilityTest() {
           console.log('Acts_CleanTempFiles_0302 startAbility err: ' + JSON.stringify(err));
           expect(err.code).assertEqual(0);
         })
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      });
     })
 
     /**
@@ -301,7 +326,7 @@ export default function abilityTest() {
         'ACTS_RegisterEvent_First': false, 'ACTS_RegisterEvent_Second': false
       }
 
-      commonEvent.createSubscriber(ACTS_Register).then(async (data) => {
+      commonEvent.createSubscriber(actsRegister).then(async (data) => {
         console.log('Acts_CleanTempFiles_0400 Create Subscribe');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
@@ -346,7 +371,11 @@ export default function abilityTest() {
               key: 'Acts_CleanTempFiles_0402'
             }
           }, options)
-      })
+      }).catch((err: BusinessError) => {
+        console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      });
     })
   })
 }

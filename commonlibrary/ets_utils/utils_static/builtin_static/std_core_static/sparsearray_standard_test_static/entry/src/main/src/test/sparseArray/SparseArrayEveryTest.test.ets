@@ -56,7 +56,7 @@ export default function SparseArrayEveryTest(): void {
      * @tc.desc Every [1,2,3] with v>0: result true, typeof boolean, assertEqual(true)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayEvery001', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
@@ -73,7 +73,7 @@ export default function SparseArrayEveryTest(): void {
      * @tc.desc Test SparseArray.every, verify method result (result is true)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayEvery002', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -87,7 +87,7 @@ export default function SparseArrayEveryTest(): void {
      * @tc.desc Test SparseArray.every, verify method result (result is false)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayEvery003', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -101,7 +101,7 @@ export default function SparseArrayEveryTest(): void {
      * @tc.desc Test SparseArray.every, verify method result (result is false)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayEvery004', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, -2, 3);
@@ -115,7 +115,7 @@ export default function SparseArrayEveryTest(): void {
      * @tc.desc Verify every returns false when boolean predicate fails on last element
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayEvery005', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -129,7 +129,7 @@ export default function SparseArrayEveryTest(): void {
      * @tc.desc Test SparseArray.every error path, verify expected exception is thrown (assertFail is triggered, error.name equals "ClassCastError")
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayEvery006', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -146,7 +146,7 @@ export default function SparseArrayEveryTest(): void {
      * @tc.desc Test SparseArray.every error path, verify expected exception is thrown (assertFail is triggered, error.name equals "ClassCastError")
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayEvery007', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -163,7 +163,7 @@ export default function SparseArrayEveryTest(): void {
      * @tc.desc Test SparseArray.every, verify method result (values.length equals 3, values[0] equals 1)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayEvery008', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -184,7 +184,7 @@ export default function SparseArrayEveryTest(): void {
      * @tc.desc Test SparseArray.every, verify method result (result is true)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayEvery009', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(2147483647, 2147483647);
@@ -198,7 +198,7 @@ export default function SparseArrayEveryTest(): void {
      * @tc.desc Test SparseArray.every, verify method result (result is true)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayEvery010', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(0, 1, 2);
@@ -212,7 +212,7 @@ export default function SparseArrayEveryTest(): void {
      * @tc.desc Test SparseArray.every, verify method result (result is true)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayEvery011', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(-1, -2, -3);
@@ -226,7 +226,7 @@ export default function SparseArrayEveryTest(): void {
      * @tc.desc Test SparseArray.every, verify method result (result is true)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayEvery012', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<string>("a", "b", "c");
@@ -240,7 +240,7 @@ export default function SparseArrayEveryTest(): void {
      * @tc.desc Test SparseArray.every, verify method result (result is false)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayEvery013', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<boolean>(true, true, false);
@@ -254,7 +254,7 @@ export default function SparseArrayEveryTest(): void {
      * @tc.desc Test SparseArray.every, verify method result (indices.length equals 3, indices[0] equals 0)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayEvery014', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -275,7 +275,7 @@ export default function SparseArrayEveryTest(): void {
      * @tc.desc Test SparseArray.every, verify method result (firstIndex equals 0)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayEvery015', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1);
@@ -294,7 +294,7 @@ export default function SparseArrayEveryTest(): void {
      * @tc.desc Test SparseArray.every, verify method result (lastIndex equals 2)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayEvery016', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -312,7 +312,7 @@ export default function SparseArrayEveryTest(): void {
      * @tc.desc Test SparseArray.every, verify method result (receivedArray !== null && receivedArray !== undefined is true, receivedArray equals arr)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayEvery017', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -331,7 +331,7 @@ export default function SparseArrayEveryTest(): void {
      * @tc.desc Test SparseArray.every, verify method result (arr[0] equals 100)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayEvery018', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -348,7 +348,7 @@ export default function SparseArrayEveryTest(): void {
      * @tc.desc Test SparseArray.every, verify method result (arrayLength equals 3)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayEvery019', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -366,7 +366,7 @@ export default function SparseArrayEveryTest(): void {
      * @tc.desc Test SparseArray.every, verify method result (callCount equals 3, result is true)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayEvery020', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(5);
@@ -388,7 +388,7 @@ export default function SparseArrayEveryTest(): void {
      * @tc.desc Test SparseArray.every, verify method result (result is true)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayEvery021', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>();
@@ -402,7 +402,7 @@ export default function SparseArrayEveryTest(): void {
      * @tc.desc Test SparseArray.every, verify method result (callCount equals 1, result is false)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayEvery022', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(-1, 2, 3);
@@ -421,7 +421,7 @@ export default function SparseArrayEveryTest(): void {
      * @tc.desc Test SparseArray.every, verify method result (callCount equals 3, result is false)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayEvery023', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, -3, 4);
@@ -440,7 +440,7 @@ export default function SparseArrayEveryTest(): void {
      * @tc.desc Test SparseArray.every, verify method result (result is false)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayEvery024', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<string>("a", "b", "");
@@ -454,7 +454,7 @@ export default function SparseArrayEveryTest(): void {
      * @tc.desc Test SparseArray.every, verify method result (result is true)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayEvery025', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<boolean>(true, true, true);
@@ -468,7 +468,7 @@ export default function SparseArrayEveryTest(): void {
      * @tc.desc Test SparseArray.every, verify method result (arr.length === 0 is true, result is true)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayEvery026', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(-1);
@@ -483,7 +483,7 @@ export default function SparseArrayEveryTest(): void {
      * @tc.desc Test SparseArray.every, verify method result (result is true)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayEvery027', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1000);
@@ -500,7 +500,7 @@ export default function SparseArrayEveryTest(): void {
      * @tc.desc Test SparseArray.every error path, verify expected exception is thrown (assertFail is triggered, error.name equals "CustomError028")
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayEvery028', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         try {
@@ -519,7 +519,7 @@ export default function SparseArrayEveryTest(): void {
      * @tc.desc every propagates callback Error with expected name and message
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayEvery029', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
@@ -541,7 +541,7 @@ export default function SparseArrayEveryTest(): void {
      * @tc.desc Test SparseArray.every, verify method result (result is true)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayEvery030', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<Person030>(new Person030("Alice", 20), new Person030("Bob", 25));
@@ -555,7 +555,7 @@ export default function SparseArrayEveryTest(): void {
      * @tc.desc Test SparseArray.every, verify method result (visitedIndices.length equals 3, visitedIndices[0] equals 0)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayEvery031', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(5);
@@ -579,7 +579,7 @@ export default function SparseArrayEveryTest(): void {
      * @tc.desc Test SparseArray.every, verify method result (arr[0] equals 2, arr[1] equals 4)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayEvery032', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -598,7 +598,7 @@ export default function SparseArrayEveryTest(): void {
      * @tc.desc Test SparseArray.every, verify method result (arr.length equals 2)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayEvery033', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3, 4, 5);
@@ -617,7 +617,7 @@ export default function SparseArrayEveryTest(): void {
      * @tc.desc Test SparseArray.every, verify method result (arr.length equals 4, arr[3] equals 4)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayEvery034', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
@@ -637,7 +637,7 @@ export default function SparseArrayEveryTest(): void {
      * @tc.desc every on SparseArray<short> returns true when all elements positive
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayEvery035', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<short>(10 as short, 20 as short, 30 as short);
@@ -650,7 +650,7 @@ export default function SparseArrayEveryTest(): void {
      * @tc.desc every on SparseArray<byte> returns true when all byte elements below 128
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayEvery036', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<byte>(10 as byte, 127 as byte, 20 as byte);
@@ -663,7 +663,7 @@ export default function SparseArrayEveryTest(): void {
      * @tc.desc every returns false when array contains null element
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayEvery037', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int | null>(1, null, 3);
@@ -676,7 +676,7 @@ export default function SparseArrayEveryTest(): void {
      * @tc.desc every on array with 0xA and 0b101 elements all satisfy v >= 0
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayEvery038', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(0xA, 0b101, 0);
@@ -689,7 +689,7 @@ export default function SparseArrayEveryTest(): void {
      * @tc.desc every returns true when all elements are empty strings
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testSparseArrayEvery039', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<string>("", "", "");

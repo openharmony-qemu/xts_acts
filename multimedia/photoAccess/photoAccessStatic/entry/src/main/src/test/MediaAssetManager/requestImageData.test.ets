@@ -17,16 +17,11 @@
 import Context from "application.Context"
 import { describe, it, expect, TestType, Size, Level, Hypium, beforeAll } from '../../../../hypium/index'
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
-import hilog from '@ohos.hilog'
-import { fetchOption, getPermission, driveFn, sleep } from '../Common.test.ets';
-import { BusinessError } from '@ohos.base'
-
-let domain: int= 0x0000;
-let tag: string = 'testTag';
+import { fetchOption, getPermission, driveFn, checkResourceFile, createResource } from '../Common.test.ets';
 
 class MediaHandler implements photoAccessHelper.MediaAssetDataHandler<ArrayBuffer> {
   onDataPrepared(data: ArrayBuffer | undefined, map?: Map<string, string>) {
-    hilog.info(domain, tag, `MediaHandler succeed`);
+    console.info(`MediaHandler succeed`);
   }
 }
 
@@ -35,10 +30,12 @@ export default function requestImageDataTest() {
     let testContext: Context = Hypium.get("context") as Context;
     let helper = photoAccessHelper.getPhotoAccessHelper(testContext);
     beforeAll(async () => {
-      hilog.info(domain, tag, 'beforeAll case');
+      console.info('beforeAll case');
       await getPermission();
       await driveFn();
-      await sleep(1000);
+      checkResourceFile(testContext);
+      let fileNameList = ['request_image.jpg'];
+      await createResource(testContext, fileNameList);
     });
 
     /**
@@ -64,7 +61,7 @@ export default function requestImageDataTest() {
           photoAccessHelper.MediaAssetManager.requestImageData(testContext, photoAsset, requestOptions, handler);
           done()
         } catch (error) {
-          hilog.info(domain, tag, `${testNum} failed; error: ${error}`);
+          console.error(`${testNum} failed; error: ${error}`);
           expect(false).assertTrue();
           done();
         }

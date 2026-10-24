@@ -17,19 +17,19 @@
 #include "include/OhosCommonTest.h"
 #include <cstdint>
 
-#define DRAWING_NUMBER_1 1
-#define DRAWING_NUMBER_2 2
-#define DRAWING_NUMBER_3 3
-#define DRAWING_NUMBER_4 4
-#define DRAWING_NUMBER_10 10
-#define DRAWING_NUMBER_50 50
-#define DRAWING_NUMBER_100 100
-#define DRAWING_NUMBER_200 200
-#define DRAWING_NUMBER_256 256
-#define DRAWING_NUMBER_300 300
-#define DRAWING_NUMBER_1080 1080
-#define DRAWING_NUMBER_1090 1090
-#define DRAWING_NUMBER_1100 1100
+#define NUMBER_1 1
+#define NUMBER_2 2
+#define NUMBER_3 3
+#define NUMBER_4 4
+#define NUMBER_10 10
+#define NUMBER_50 50
+#define NUMBER_100 100
+#define NUMBER_200 200
+#define NUMBER_256 256
+#define NUMBER_300 300
+#define NUMBER_1080 1080
+#define NUMBER_1090 1090
+#define NUMBER_1100 1100
 
 namespace OHOS {
 namespace Rosen {
@@ -53,7 +53,7 @@ int TestCanvasDrawSingleChaWithFeaturesNormal()
 {
     DrawingNativeCanvasTestPart6TestSetUp();
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
-    const char *str1 = "DRAWING_NUMBER_1";
+    const char *str1 = "NUMBER_1";
     const char *str2 = "H";
     const char *str3 = "a";
     const char *str4 = "你";
@@ -63,8 +63,8 @@ int TestCanvasDrawSingleChaWithFeaturesNormal()
     const char *str8 = "龘";
     const char *str9 = "無";
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
-    float curX = DRAWING_NUMBER_100;
-    float curY = DRAWING_NUMBER_100;
+    float curX = NUMBER_100;
+    float curY = NUMBER_100;
     OH_Drawing_FontFeatures* features = OH_Drawing_FontFeaturesCreate();
     EXPECT_NE(features, nullptr);
     EXPECT_EQ(OH_Drawing_CanvasDrawSingleCharacterWithFeatures(canvas, str1, font, curX, curY, features),
@@ -95,9 +95,9 @@ int TestCanvasDrawSingleChaWithFeaturesNormal()
 int TestCanvasDrawSingleChaWithFeaturesAbNormal()
 {
     DrawingNativeCanvasTestPart6TestSetUp();
-    float curX = DRAWING_NUMBER_100;
-    float curY = DRAWING_NUMBER_100;
-    float textSize = DRAWING_NUMBER_50;
+    float curX = NUMBER_100;
+    float curY = NUMBER_100;
+    float textSize = NUMBER_50;
     const char *str = "(";
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -134,11 +134,11 @@ int TestCanvasDrawSingleChaWithFeaturesCalls()
 {
     DrawingNativeCanvasTestPart6TestSetUp();
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
-    const char *str1 = "DRAWING_NUMBER_1";
+    const char *str1 = "NUMBER_1";
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
-    float curX = DRAWING_NUMBER_100;
-    float curY = DRAWING_NUMBER_100;
-    int count = DRAWING_NUMBER_10;
+    float curX = NUMBER_100;
+    float curY = NUMBER_100;
+    int count = NUMBER_10;
     OH_Drawing_FontFeatures* features = OH_Drawing_FontFeaturesCreate();
     EXPECT_NE(features, nullptr);
     for (int i = 0; i < count; i++) {
@@ -200,7 +200,7 @@ int TestCanvasResetClipMultipleCalls()
     OH_Drawing_Rect *rect1 = OH_Drawing_RectCreate(100.0f, 100.0f, 300.0f, 300.0f);
     EXPECT_NE(rect1, nullptr);
     OH_Drawing_CanvasClipRect(canvas, rect1, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasResetClip(canvas);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     }
@@ -222,14 +222,14 @@ int TestCanvasDrawGlyphsNormal()
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
     OH_Drawing_FontSetTextSize(font, 100.0f);
     EXPECT_NE(font, nullptr);
-    int glyphIds[] = {DRAWING_NUMBER_1080, DRAWING_NUMBER_1090, DRAWING_NUMBER_1100};
+    int glyphIds[] = {NUMBER_1080, NUMBER_1090, NUMBER_1100};
     OH_Drawing_Point2D positions[] = {
-        {DRAWING_NUMBER_100, DRAWING_NUMBER_100},
-        {DRAWING_NUMBER_200, DRAWING_NUMBER_100},
-        {DRAWING_NUMBER_300, DRAWING_NUMBER_100}
+        {NUMBER_100, NUMBER_100},
+        {NUMBER_200, NUMBER_100},
+        {NUMBER_300, NUMBER_100}
     };
     OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawGlyphs(
-        canvas, glyphIds, DRAWING_NUMBER_3, 0, positions, DRAWING_NUMBER_3, 0, DRAWING_NUMBER_3, font);
+        canvas, glyphIds, NUMBER_3, 0, positions, NUMBER_3, 0, NUMBER_3, font);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     OH_Drawing_CanvasDestroy(canvas);
     OH_Drawing_FontDestroy(font);
@@ -245,23 +245,23 @@ int TestCanvasDrawGlyphsNull()
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
     OH_Drawing_FontSetTextSize(font, 100.0f);
     EXPECT_NE(font, nullptr);
-    int glyphIds[] = {DRAWING_NUMBER_1080, DRAWING_NUMBER_1090, DRAWING_NUMBER_1100};
+    int glyphIds[] = {NUMBER_1080, NUMBER_1090, NUMBER_1100};
     OH_Drawing_Point2D positions[] = {
-        {DRAWING_NUMBER_100, DRAWING_NUMBER_100},
-        {DRAWING_NUMBER_200, DRAWING_NUMBER_100},
-        {DRAWING_NUMBER_300, DRAWING_NUMBER_100}
+        {NUMBER_100, NUMBER_100},
+        {NUMBER_200, NUMBER_100},
+        {NUMBER_300, NUMBER_100}
     };
     OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawGlyphs(
-        nullptr, glyphIds, DRAWING_NUMBER_3, 0, positions, DRAWING_NUMBER_3, 0, DRAWING_NUMBER_3, font);
+        nullptr, glyphIds, NUMBER_3, 0, positions, NUMBER_3, 0, NUMBER_3, font);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     errorCode = OH_Drawing_CanvasDrawGlyphs(
-        canvas, nullptr, DRAWING_NUMBER_3, 0, positions, DRAWING_NUMBER_3, 0, DRAWING_NUMBER_3, font);
+        canvas, nullptr, NUMBER_3, 0, positions, NUMBER_3, 0, NUMBER_3, font);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     errorCode = OH_Drawing_CanvasDrawGlyphs(
-        canvas, glyphIds, DRAWING_NUMBER_3, 0, nullptr, DRAWING_NUMBER_3, 0, DRAWING_NUMBER_3, font);
+        canvas, glyphIds, NUMBER_3, 0, nullptr, NUMBER_3, 0, NUMBER_3, font);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     errorCode = OH_Drawing_CanvasDrawGlyphs(
-        canvas, glyphIds, DRAWING_NUMBER_3, 0, positions, DRAWING_NUMBER_3, 0, DRAWING_NUMBER_3, nullptr);
+        canvas, glyphIds, NUMBER_3, 0, positions, NUMBER_3, 0, NUMBER_3, nullptr);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     OH_Drawing_CanvasDestroy(canvas);
     OH_Drawing_FontDestroy(font);
@@ -277,30 +277,30 @@ int TestCanvasDrawGlyphsAbnormal()
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
     OH_Drawing_FontSetTextSize(font, 100.0f);
     EXPECT_NE(font, nullptr);
-    int glyphIds[] = {DRAWING_NUMBER_1080, DRAWING_NUMBER_1090, DRAWING_NUMBER_1100};
+    int glyphIds[] = {NUMBER_1080, NUMBER_1090, NUMBER_1100};
     OH_Drawing_Point2D positions[] = {
-        {DRAWING_NUMBER_100, DRAWING_NUMBER_100},
-        {DRAWING_NUMBER_200, DRAWING_NUMBER_100},
-        {DRAWING_NUMBER_300, DRAWING_NUMBER_100}
+        {NUMBER_100, NUMBER_100},
+        {NUMBER_200, NUMBER_100},
+        {NUMBER_300, NUMBER_100}
     };
     OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawGlyphs(
-        canvas, glyphIds, DRAWING_NUMBER_3, -1, positions, DRAWING_NUMBER_3, 0, DRAWING_NUMBER_3, font);
+        canvas, glyphIds, NUMBER_3, -1, positions, NUMBER_3, 0, NUMBER_3, font);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
     errorCode = OH_Drawing_CanvasDrawGlyphs(
-        canvas, glyphIds, DRAWING_NUMBER_3, 0, positions, DRAWING_NUMBER_3, -DRAWING_NUMBER_1, DRAWING_NUMBER_3, font);
+        canvas, glyphIds, NUMBER_3, 0, positions, NUMBER_3, -NUMBER_1, NUMBER_3, font);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
     errorCode = OH_Drawing_CanvasDrawGlyphs(
-        canvas, glyphIds, DRAWING_NUMBER_2, 0, positions, DRAWING_NUMBER_3, 0, DRAWING_NUMBER_3, font);
+        canvas, glyphIds, NUMBER_2, 0, positions, NUMBER_3, 0, NUMBER_3, font);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
     errorCode = OH_Drawing_CanvasDrawGlyphs(
-        canvas, glyphIds, DRAWING_NUMBER_3, 0, positions, DRAWING_NUMBER_2, 0, DRAWING_NUMBER_3, font);
+        canvas, glyphIds, NUMBER_3, 0, positions, NUMBER_2, 0, NUMBER_3, font);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
     
     errorCode = OH_Drawing_CanvasDrawGlyphs(
-        canvas, glyphIds, DRAWING_NUMBER_3, 0, positions, DRAWING_NUMBER_3, 0, 0, font);
+        canvas, glyphIds, NUMBER_3, 0, positions, NUMBER_3, 0, 0, font);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
     errorCode = OH_Drawing_CanvasDrawGlyphs(
-        canvas, glyphIds, DRAWING_NUMBER_3, 0, positions, DRAWING_NUMBER_3, 0, -DRAWING_NUMBER_1, font);
+        canvas, glyphIds, NUMBER_3, 0, positions, NUMBER_3, 0, -NUMBER_1, font);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
     OH_Drawing_CanvasDestroy(canvas);
     OH_Drawing_FontDestroy(font);
@@ -316,15 +316,15 @@ int TestCanvasDrawGlyphsMultipleCalls()
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
     OH_Drawing_FontSetTextSize(font, 100.0f);
     EXPECT_NE(font, nullptr);
-    int glyphIds[] = {DRAWING_NUMBER_1080, DRAWING_NUMBER_1090, DRAWING_NUMBER_1100};
+    int glyphIds[] = {NUMBER_1080, NUMBER_1090, NUMBER_1100};
     OH_Drawing_Point2D positions[] = {
-        {DRAWING_NUMBER_100, DRAWING_NUMBER_100},
-        {DRAWING_NUMBER_200, DRAWING_NUMBER_100},
-        {DRAWING_NUMBER_300, DRAWING_NUMBER_100}
+        {NUMBER_100, NUMBER_100},
+        {NUMBER_200, NUMBER_100},
+        {NUMBER_300, NUMBER_100}
     };
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawGlyphs(
-            canvas, glyphIds, DRAWING_NUMBER_3, 0, positions, DRAWING_NUMBER_3, 0, DRAWING_NUMBER_3, font);
+            canvas, glyphIds, NUMBER_3, 0, positions, NUMBER_3, 0, NUMBER_3, font);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     }
     OH_Drawing_CanvasDestroy(canvas);
@@ -336,13 +336,13 @@ int TestCanvasDrawGlyphsMultipleCalls()
 int TestCanvasIsOpaqueNormal()
 {
     DrawingNativeCanvasTestPart6TestSetUp();
-    int32_t width = DRAWING_NUMBER_256;
-    int32_t height = DRAWING_NUMBER_256;
+    int32_t width = NUMBER_256;
+    int32_t height = NUMBER_256;
     OH_Drawing_Image_Info imageInfo = {width, height, COLOR_FORMAT_RGBA_8888, ALPHA_FORMAT_OPAQUE};
     bool isOpaque = false;
     uint32_t sizePix = width * height;
     std::vector<uint32_t> pixels(sizePix, 0);
-    uint32_t rowBytes = width * DRAWING_NUMBER_4;
+    uint32_t rowBytes = width * NUMBER_4;
     OH_Drawing_Bitmap *bitmap = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels.data(), rowBytes);
     OH_Drawing_Canvas *bitmapCanvas = OH_Drawing_CanvasCreate();
     OH_Drawing_CanvasBind(bitmapCanvas, bitmap);
@@ -358,13 +358,13 @@ int TestCanvasIsOpaqueNormal()
 int TestCanvasIsOpaqueNull()
 {
     DrawingNativeCanvasTestPart6TestSetUp();
-    int32_t width = DRAWING_NUMBER_256;
-    int32_t height = DRAWING_NUMBER_256;
+    int32_t width = NUMBER_256;
+    int32_t height = NUMBER_256;
     OH_Drawing_Image_Info imageInfo = {width, height, COLOR_FORMAT_RGBA_8888, ALPHA_FORMAT_OPAQUE};
     bool isOpaque = false;
     uint32_t sizePix = width * height;
     std::vector<uint32_t> pixels(sizePix, 0);
-    uint32_t rowBytes = width * DRAWING_NUMBER_4;
+    uint32_t rowBytes = width * NUMBER_4;
     OH_Drawing_Bitmap *bitmap = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels.data(), rowBytes);
     OH_Drawing_Canvas *bitmapCanvas = OH_Drawing_CanvasCreate();
     OH_Drawing_CanvasBind(bitmapCanvas, bitmap);
@@ -383,17 +383,17 @@ int TestCanvasIsOpaqueNull()
 int TestCanvasIsOpaqueMultipleCalls()
 {
     DrawingNativeCanvasTestPart6TestSetUp();
-    int32_t width = DRAWING_NUMBER_256;
-    int32_t height = DRAWING_NUMBER_256;
+    int32_t width = NUMBER_256;
+    int32_t height = NUMBER_256;
     OH_Drawing_Image_Info imageInfo = {width, height, COLOR_FORMAT_RGBA_8888, ALPHA_FORMAT_OPAQUE};
     bool isOpaque = false;
     uint32_t sizePix = width * height;
     std::vector<uint32_t> pixels(sizePix, 0);
-    uint32_t rowBytes = width * DRAWING_NUMBER_4;
+    uint32_t rowBytes = width * NUMBER_4;
     OH_Drawing_Bitmap *bitmap = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels.data(), rowBytes);
     OH_Drawing_Canvas *bitmapCanvas = OH_Drawing_CanvasCreate();
     OH_Drawing_CanvasBind(bitmapCanvas, bitmap);
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasIsOpaque(bitmapCanvas, &isOpaque);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
         EXPECT_EQ(isOpaque, true);

@@ -102,12 +102,14 @@ struct WebViewEnumAndFontLibrary {
   @State minLogicalFontSize: number = 13
   @State databaseAccess: boolean = true
   @State PermissionRequestState: boolean = false
-  @State userAgentPC:string = "";
+  @State userAgentPC: string = "";
   WebResult: WebContextMenuResult = new WebContextMenuResult;
-  @State SourceTypeArr:ContextMenuSourceType[] = [ContextMenuSourceType.None,ContextMenuSourceType.Mouse,ContextMenuSourceType.LongPress]
-  @State MediaTypeArr:ContextMenuMediaType[] = [ContextMenuMediaType.None,ContextMenuMediaType.Image]
-  @State FieldTypeArr:ContextMenuInputFieldType[] = [ContextMenuInputFieldType.None,ContextMenuInputFieldType.PlainText,ContextMenuInputFieldType.Password,ContextMenuInputFieldType.Number,ContextMenuInputFieldType.Telephone,ContextMenuInputFieldType.Other ]
-
+  @State SourceTypeArr: ContextMenuSourceType[] =
+    [ContextMenuSourceType.None, ContextMenuSourceType.Mouse, ContextMenuSourceType.LongPress]
+  @State MediaTypeArr: ContextMenuMediaType[] = [ContextMenuMediaType.None, ContextMenuMediaType.Image]
+  @State FieldTypeArr: ContextMenuInputFieldType[] =
+    [ContextMenuInputFieldType.None, ContextMenuInputFieldType.PlainText, ContextMenuInputFieldType.Password,
+      ContextMenuInputFieldType.Number, ContextMenuInputFieldType.Telephone, ContextMenuInputFieldType.Other]
   @State isReceive: number = -1;
   @State isPageEnd: number = -1;
   @State isOnContextMenuShowEnd: number = -1;
@@ -140,8 +142,9 @@ struct WebViewEnumAndFontLibrary {
       Row() {
         Button("web click").key('buttonEnumAndFontLibrary').onClick(async () => {
           console.info("key==>" + this.str)
-          await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
-          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+          await Utils.waitForExist(() => this.isReceive, this.str + ' isReceive', 1, 1000);
+          await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
+
           switch (this.str) {
             case "emitWebContextMenuParamX": {
               let button = await driver.findComponent(ON.id('webCenter'));
@@ -162,7 +165,7 @@ struct WebViewEnumAndFontLibrary {
               this.isOnContextMenuShowEnd = -1
               await button.longClick();
               await Utils.waitForReleaseDriver(this.str, driver)
-              await Utils.waitForExist(()=>this.isOnContextMenuShowEnd, this.str+' isOnContextMenuShowEnd', 1, 500);
+              await Utils.waitForExist(() => this.isOnContextMenuShowEnd, this.str + ' isOnContextMenuShowEnd', 1, 500);
               Utils.emitEvent(String(this.LinkUrl), 183230)
               break;
             }
@@ -171,7 +174,7 @@ struct WebViewEnumAndFontLibrary {
               this.isOnContextMenuShowEnd = -1
               await button.longClick();
               await Utils.waitForReleaseDriver(this.str, driver)
-              await Utils.waitForExist(()=>this.isOnContextMenuShowEnd, this.str+' isOnContextMenuShowEnd', 1, 500);
+              await Utils.waitForExist(() => this.isOnContextMenuShowEnd, this.str + ' isOnContextMenuShowEnd', 1, 500);
               Utils.emitEvent(String(this.LinkUrl), 183240)
               break;
             }
@@ -180,7 +183,7 @@ struct WebViewEnumAndFontLibrary {
               this.isOnContextMenuShowEnd = -1
               await button.longClick();
               await Utils.waitForReleaseDriver(this.str, driver)
-              await Utils.waitForExist(()=>this.isOnContextMenuShowEnd, this.str+' isOnContextMenuShowEnd', 1, 500);
+              await Utils.waitForExist(() => this.isOnContextMenuShowEnd, this.str + ' isOnContextMenuShowEnd', 1, 500);
               Utils.emitEvent(String(this.SourceUrl), 183250)
               break;
             }
@@ -196,7 +199,7 @@ struct WebViewEnumAndFontLibrary {
               this.onlineImageAccessAttr = true;
               this.isPageEnd = -1
               this.controller.loadUrl("resource://rawfile/ParamExistsImageTrue.html")
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
               let button = await driver.findComponent(ON.id('webCenter'));
               await button.longClick();
               await Utils.waitForReleaseDriver(this.str, driver)
@@ -208,7 +211,7 @@ struct WebViewEnumAndFontLibrary {
               this.onlineImageAccessAttr = false;
               this.isPageEnd = -1
               this.controller.loadUrl("resource://rawfile/indexJru.html")
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
               let button = await driver.findComponent(ON.id('webCenter'));
               await button.longClick();
               await Utils.waitForReleaseDriver(this.str, driver)
@@ -225,10 +228,10 @@ struct WebViewEnumAndFontLibrary {
             }
             case "emitWebContextMenuParamGetSourceType": {
               this.userAgentPC = this.controller.getUserAgent();
-                if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(this.SourceTypeArr[ContextMenuSourceType.LongPress], 183290)
-                  break;
-                }
+              if ((this.userAgentPC).includes("PC")) {
+                Utils.emitEvent(this.SourceTypeArr[ContextMenuSourceType.LongPress], 183290)
+                break;
+              }
 
               let button = await driver.findComponent(ON.id('webCenter'));
               await button.longClick();
@@ -242,8 +245,9 @@ struct WebViewEnumAndFontLibrary {
                 Utils.emitEvent(this.SourceTypeArr[ContextMenuSourceType.None], 183300)
                 break;
               }
-
-              await driver.triggerCombineKeys(2047, 2099);
+              const displayId: number =
+                await (await driver.findComponent(ON.id('buttonEnumAndFontLibrary'))).getDisplayId();
+              await driver.triggerCombineKeys(2047, 2099, undefined, displayId);
               await Utils.waitForReleaseDriver(this.str, driver)
               Utils.emitEvent(this.SourceTypeArr[this.SourceType], 183300)
               break;
@@ -275,11 +279,11 @@ struct WebViewEnumAndFontLibrary {
 
               let button = await driver.findComponent(ON.id('webCenter'));
               await button.longClick();
-              await Utils.waitForReleaseDriver(this.str,driver)
+              await Utils.waitForReleaseDriver(this.str, driver)
               Utils.emitEvent(Number(this.EditStateFlags), 183330)
               this.isPageEnd = -1
               this.controller.loadUrl("resource://rawfile/indexJru.html")
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
               this.FileSelectorMode = 0
               break;
             }
@@ -287,20 +291,20 @@ struct WebViewEnumAndFontLibrary {
 
               let button = await driver.findComponent(ON.id('webCenter'));
               await button.longClick();
-              await Utils.waitForReleaseDriver(this.str,driver)
+              await Utils.waitForReleaseDriver(this.str, driver)
               Utils.emitEvent(this.FieldTypeArr[this.InputFieldType], 183340)
               break;
             }
             case "emitContextMenuSourceTypeLongPress": {
               this.userAgentPC = this.controller.getUserAgent();
-                if ((this.userAgentPC).includes("PC")) {
-                  Utils.emitEvent(2, 183350)
-                  break;
-                }
+              if ((this.userAgentPC).includes("PC")) {
+                Utils.emitEvent(2, 183350)
+                break;
+              }
 
               let button = await driver.findComponent(ON.id('webCenter'));
               await button.longClick();
-              await Utils.waitForReleaseDriver(this.str,driver)
+              await Utils.waitForReleaseDriver(this.str, driver)
               Utils.emitEvent(this.SourceTypeArr[this.SourceType], 183350)
               break;
             }
@@ -308,41 +312,44 @@ struct WebViewEnumAndFontLibrary {
 
               let button = await driver.findComponent(ON.id('webCenter'));
               await button.longClick();
-              await Utils.waitForReleaseDriver(this.str,driver)
+              await Utils.waitForReleaseDriver(this.str, driver)
               Utils.emitEvent(Number(this.EditStateFlags), 183360)
               this.isPageEnd = -1
               this.controller.loadUrl("resource://rawfile/indexJru.html")
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
               break;
             }
             case "emitContextMenuMediaTypeNone": {
               let button = await driver.findComponent(ON.id('webCenter'));
               await button.longClick();
-              await Utils.waitForReleaseDriver(this.str,driver)
+              await Utils.waitForReleaseDriver(this.str, driver)
               Utils.emitEvent(this.MediaTypeArr[this.MediaType], 183370)
               this.MediaType = 0
               this.isPageEnd = -1
               this.controller.loadUrl("resource://rawfile/indexJru.html")
-              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
               break;
             }
             case "onContextMenuShow": {
               let button = await driver.findComponent(ON.id('webCenter'));
               await button.longClick();
-              await Utils.waitForReleaseDriver(this.str,driver)
+              await Utils.waitForReleaseDriver(this.str, driver)
               Utils.emitEvent(Boolean(this.onContextMenuShowState), 183380);
               break;
             }
                           case 'emitWebContextMenuParamConstructor001': {
-                Utils.emitEvent(true, 183390);
+                let param: WebContextMenuParam = new WebContextMenuParam();
+                Utils.emitEvent(param != null, 183390);
                 break;
               }
                           case 'emitWebContextMenuParamConstructorReturn001': {
-                Utils.emitEvent(true, 183391);
+                let param: WebContextMenuParam = new WebContextMenuParam();
+                Utils.emitEvent(param instanceof WebContextMenuParam, 183391);
                 break;
               }
                           case 'emitWebContextMenuParamClass001': {
-                Utils.emitEvent(true, 183392);
+                let param: WebContextMenuParam = new WebContextMenuParam();
+                Utils.emitEvent(param instanceof WebContextMenuParam, 183392);
                 break;
               }
 
@@ -406,8 +413,7 @@ struct WebViewEnumAndFontLibrary {
           return true
         })
         .onErrorReceive((event) => {
-          console.
-          log("error", event)
+          console.log("error", event)
           if (event) {
             console.log('getErrorInfo:' + event.error.getErrorInfo())
             console.log('getErrorCode:' + event.error.getErrorCode())

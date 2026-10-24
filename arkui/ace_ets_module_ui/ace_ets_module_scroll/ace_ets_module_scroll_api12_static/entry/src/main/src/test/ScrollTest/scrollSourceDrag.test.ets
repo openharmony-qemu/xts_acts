@@ -55,7 +55,11 @@ export default function scrollSourceDrag() {
      */
 it('scrollSourceDrag_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[scrollSourceDrag_0100] START');
-      let swiperDrag = CommonFunc.getComponentRectOnScreen('scrollSource_drag');
+      let driver = Driver.create()
+      await CommonFunc.sleep(500);
+      let swipeComp = await driver.findComponent(ON.id('scrollSource_drag'));
+      let swiperDrag = await swipeComp!.getBounds();
+      let displayId = await swipeComp!.getDisplayId();
       let top = swiperDrag.top;
       let right = swiperDrag.right;
       let left = swiperDrag.left;
@@ -63,10 +67,14 @@ it('scrollSourceDrag_0100', Level.LEVEL0, async (done: () => void): Promise<void
       console.info("scrollSourceDrag_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom - top;
       let width = right - left;
-      let driver = Driver.create()
       await CommonFunc.sleep(500);
-      await driver.drag((Math.round(left + width / 2)).toInt(), (Math.round(top + height * 0.2)).toInt(),
-        (Math.round(left + width / 2)).toInt(), (Math.round(top + height * 0.6)).toInt());
+      await driver.dragBetween(
+        { x: (Number.parseInt(`${(Math.round(left + width / 2)).toInt()}`)).toInt(),
+          y: (Number.parseInt(`${(Math.round(top + height * 0.2)).toInt()}`)).toInt(),
+          displayId: displayId },
+        { x: (Number.parseInt(`${(Math.round(left + width / 2)).toInt()}`)).toInt(),
+          y: (Number.parseInt(`${(Math.round(top + height * 0.6)).toInt()}`)).toInt(),
+          displayId: displayId });
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('scroller_DRAG');
       console.info("[scrollSourceDrag_0100] component obj is: " +

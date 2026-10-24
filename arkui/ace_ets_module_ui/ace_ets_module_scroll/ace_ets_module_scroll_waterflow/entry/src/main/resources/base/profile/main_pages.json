@@ -5,6 +5,7 @@
         "MainAbility/pages/Waterflow_add",
         "MainAbility/pages/WaterFlowFrictionPage",
         "MainAbility/pages/WaterFlow/waterFlowDraggingFling",
+        "MainAbility/pages/WaterFlow/waterFlowWithMouse",
         "MainAbility/pages/WaterFlow/repeatNoMakeObserved",
         "MainAbility/pages/WaterFlow/waterOffsetRes",
         "MainAbility/pages/WaterFlow/waterContentOffset",

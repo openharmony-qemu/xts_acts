@@ -66,6 +66,7 @@ import backPressBehaviorList from './List/backPressBehaviorList.test';
 import headerFooterStyle from './ListItemGroup/headerFooterStyle.test';
 import listEnableEditMode from './listOptions/listEnableEditMode.test';
 import listEditModeChange from './listOptions/listEditModeChange.test';
+import listWithMouse from './List/ListWithMouse.test';
 
 export default function testsuite() {
   headerListJsunit()
@@ -121,4 +122,5 @@ export default function testsuite() {
   headerFooterStyle()
   listEnableEditMode()
   listEditModeChange()
+  listWithMouse()
 }

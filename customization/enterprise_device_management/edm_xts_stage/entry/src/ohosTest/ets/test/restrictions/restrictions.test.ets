@@ -6537,6 +6537,124 @@ function testSetDisallowedPolicy() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_set_disallowed_policy_super_privacy_mode_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSUPERPRIVACYMODE_0100
+   * @tc.desc   test restrictions setDisallowedPolicy with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_disallowed_policy_super_privacy_mode_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SUPER_PRIVACY, false);
+      expect(restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SUPER_PRIVACY)).assertEqual(false);
+    } catch (error) {
+      expect(error.code).assertEqual(801);
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_disallowed_policy_super_privacy_mode_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSUPERPRIVACYMODE_0200
+   * @tc.desc   test restrictions setDisallowedPolicy with byod admin (should fail with 9200002)
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_disallowed_policy_super_privacy_mode_0200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SUPER_PRIVACY, false);
+      expect().assertFail();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(9200002);
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_disallowed_policy_super_privacy_mode_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSUPERPRIVACYMODE_0300
+   * @tc.desc   test restrictions setDisallowedPolicy with normal admin (should fail with 9200002)
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_disallowed_policy_super_privacy_mode_0300", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SUPER_PRIVACY, false);
+      expect().assertFail();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(9200002);
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_disallowed_policy_super_privacy_mode_0400
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSUPERPRIVACYMODE_0400
+   * @tc.desc   test restrictions setDisallowedPolicy without admin (should fail with 9200001)
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_disallowed_policy_super_privacy_mode_0400", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SUPER_PRIVACY, false);
+      expect().assertFail();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(9200001);
+      }
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_disallowed_policy_super_privacy_mode_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSUPERPRIVACYMODE_0500
+   * @tc.desc   test restrictions setDisallowedPolicy with invalid admin (should fail with 401)
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_disallowed_policy_super_privacy_mode_0500", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.setDisallowedPolicy(INVALID_WANT, restrictions.FeatureForDevice.SUPER_PRIVACY, false);
+      expect().assertFail();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(401);
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
 }
 function testGetDisallowedPolicy() {
   /**
@@ -7760,6 +7878,99 @@ it("test_get_disallowed_policy_uinput_0500", Level.LEVEL2, async (done: Function
       expect(error.code == 9200002).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_disallowed_policy_super_privacy_mode_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYSUPERPRIVACYMODE_0100
+   * @tc.desc   test restrictions getDisallowedPolicy with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_disallowed_policy_super_privacy_mode_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SUPER_PRIVACY);
+      expect(ret).assertEqual(false);
+    } catch (error) {
+      expect(error.code).assertEqual(801);
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_disallowed_policy_super_privacy_mode_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYSUPERPRIVACYMODE_0200
+   * @tc.desc   test restrictions getDisallowedPolicy without admin (should fail with 9200001)
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_disallowed_policy_super_privacy_mode_0200", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SUPER_PRIVACY);
+      expect().assertFail();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(9200001);
+      }
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_disallowed_policy_super_privacy_mode_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYSUPERPRIVACYMODE_0300
+   * @tc.desc   test restrictions getDisallowedPolicy with byod admin (should fail with 9200002)
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_disallowed_policy_super_privacy_mode_0300", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SUPER_PRIVACY);
+      expect().assertFail();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(9200002);
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_disallowed_policy_super_privacy_mode_0400
+   * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYSUPERPRIVACYMODE_0400
+   * @tc.desc   test restrictions getDisallowedPolicy with invalid admin (should fail with 401)
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_disallowed_policy_super_privacy_mode_0400", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.getDisallowedPolicy(INVALID_WANT, restrictions.FeatureForDevice.SUPER_PRIVACY);
+      expect().assertFail();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(401);
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
     done();
   });

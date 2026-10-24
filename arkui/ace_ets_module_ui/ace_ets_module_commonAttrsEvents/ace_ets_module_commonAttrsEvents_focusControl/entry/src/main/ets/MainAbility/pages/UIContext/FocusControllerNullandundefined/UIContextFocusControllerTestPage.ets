@@ -23,23 +23,23 @@ struct UIContextFocusControllerTestPage {
   build() {
     Column() {
       Text(this.message)
-        .fontSize(20)
+        .fontSize(16)
         .width('90%')
-        .height('5%')
-        .margin({ top: '2%', bottom: '2%' })
+        .height('3%')
+        .margin({ top: '1%', bottom: '1%' })
 
       // requestFocus tests
       Text('requestFocus Tests')
-        .fontSize(18)
+        .fontSize(14)
         .width('90%')
-        .height('4%')
+        .height('3%')
         .margin({ top: '1%', bottom: '1%' })
         .fontWeight(FontWeight.Bold)
 
       Button('Test requestFocus with empty string')
         .id('btn_request_focus_empty')
         .width('90%')
-        .height('5%')
+        .height('4%')
         .margin({ top: '1%' })
         .onClick(() => {
           try {
@@ -55,7 +55,7 @@ struct UIContextFocusControllerTestPage {
       Button('Test requestFocus with null')
         .id('btn_request_focus_null')
         .width('90%')
-        .height('5%')
+        .height('4%')
         .margin({ top: '1%' })
         .onClick(() => {
           try {
@@ -71,7 +71,7 @@ struct UIContextFocusControllerTestPage {
       Button('Test requestFocus with undefined')
         .id('btn_request_focus_undefined')
         .width('90%')
-        .height('5%')
+        .height('4%')
         .margin({ top: '1%' })
         .onClick(() => {
           try {
@@ -87,20 +87,20 @@ struct UIContextFocusControllerTestPage {
       Divider()
         .width('90%')
         .height('1%')
-        .margin({ top: '2%', bottom: '2%' })
+        .margin({ top: '1%', bottom: '1%' })
 
       // setAutoFocusTransfer tests
       Text('setAutoFocusTransfer Tests')
-        .fontSize(18)
+        .fontSize(14)
         .width('90%')
-        .height('4%')
+        .height('3%')
         .margin({ top: '1%', bottom: '1%' })
         .fontWeight(FontWeight.Bold)
 
       Button('Test setAutoFocusTransfer with true')
         .id('btn_set_auto_focus_true')
         .width('90%')
-        .height('5%')
+        .height('4%')
         .margin({ top: '1%' })
         .onClick(() => {
           try {
@@ -115,7 +115,7 @@ struct UIContextFocusControllerTestPage {
       Button('Test setAutoFocusTransfer with false')
         .id('btn_set_auto_focus_false')
         .width('90%')
-        .height('5%')
+        .height('4%')
         .margin({ top: '1%' })
         .onClick(() => {
           try {
@@ -130,20 +130,20 @@ struct UIContextFocusControllerTestPage {
       Divider()
         .width('90%')
         .height('1%')
-        .margin({ top: '2%', bottom: '2%' })
+        .margin({ top: '1%', bottom: '1%' })
 
       // setKeyProcessingMode tests
       Text('setKeyProcessingMode Tests')
-        .fontSize(18)
+        .fontSize(14)
         .width('90%')
-        .height('4%')
+        .height('3%')
         .margin({ top: '1%', bottom: '1%' })
         .fontWeight(FontWeight.Bold)
 
       Button('Test setKeyProcessingMode with null')
         .id('btn_set_key_mode_null')
         .width('90%')
-        .height('5%')
+        .height('4%')
         .margin({ top: '1%' })
         .onClick(() => {
           try {
@@ -158,7 +158,7 @@ struct UIContextFocusControllerTestPage {
       Button('Test setKeyProcessingMode with undefined')
         .id('btn_set_key_mode_undefined')
         .width('90%')
-        .height('5%')
+        .height('4%')
         .margin({ top: '1%' })
         .onClick(() => {
           try {
@@ -173,7 +173,7 @@ struct UIContextFocusControllerTestPage {
       Button('Test clear')
         .id('FocusControllerClearFocus')
         .width('90%')
-        .height('5%')
+        .height('4%')
         .margin({ top: '1%' })
         .onClick(() => {
           try {
@@ -189,13 +189,13 @@ struct UIContextFocusControllerTestPage {
       Divider()
         .width('90%')
         .height('1%')
-        .margin({ top: '2%', bottom: '2%' })
+        .margin({ top: '1%', bottom: '1%' })
 
       Button('Back')
         .id('btn_back')
         .width('50%')
-        .height('5%')
-        .margin({ top: '2%' })
+        .height('4%')
+        .margin({ top: '1%', bottom: '1%' })
         .onClick(() => {
           router.back();
         })
@@ -203,5 +203,6 @@ struct UIContextFocusControllerTestPage {
     .width('100%')
     .height('70%')
     .padding('2%')
+    .justifyContent(FlexAlign.Center)
   }
 }

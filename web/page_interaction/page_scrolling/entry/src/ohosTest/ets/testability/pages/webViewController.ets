@@ -18,7 +18,7 @@ import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import { JsProxyObject } from '../../test/Interfaces';
 import image from '@ohos.multimedia.image';
-import { Driver } from '@kit.TestKit';
+import { Driver, Point, ON } from '@kit.TestKit';
 import { XtsTestServer } from 'library';
 
 const EVENT_ID_SET_SUITE_KEY = 179801;
@@ -140,8 +140,15 @@ struct webViewController {
                 this.isPageEnd = -1
                 this.controller.loadUrl(this.mServer.getAssetUrl('overScroll.html'));
                 await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
-                this.onOverScrollCallBack = false
-                await driver.swipe(X, Y - 60, X, Y + 60);
+                this.onOverScrollCallBack = false;
+                const displayId:number=await (await driver.findComponent(ON.id('WebViewControllerButton'))).getDisplayId()
+                const pointStart:Point={
+                  x:X,y:Y-60,displayId:displayId
+                }
+                const pointEnd:Point={
+                  x:X,y:Y+60,displayId:displayId
+                }
+                await driver.swipeBetween(pointStart,pointEnd);
                 await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
                 Utils.emitEvent(this.onOverScrollCallBack, 179840)
               } catch (error) {
@@ -157,7 +164,14 @@ struct webViewController {
                 this.controller.loadUrl(this.mServer.getAssetUrl('overScroll.html'));
                 await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 this.onOverScrollCallBack = false
-                await driver.swipe(X, Y + 230, X, Y - 200);
+                const displayId:number=await (await driver.findComponent(ON.id('WebViewControllerButton'))).getDisplayId()
+                const pointStart:Point={
+                  x:X,y:Y+ 230,displayId:displayId
+                }
+                const pointEnd:Point={
+                  x:X,y:Y- 200,displayId:displayId
+                }
+                await driver.swipeBetween(pointStart,pointEnd);
                 await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
                 Utils.emitEvent(this.onOverScrollCallBack, 179850)
               } catch (error) {
@@ -173,7 +187,14 @@ struct webViewController {
                 this.controller.loadUrl(this.mServer.getAssetUrl('overScroll.html'));
                 await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 this.onOverScrollCallBack = false
-                await driver.swipe(X + 60, Y, X - 60, Y);
+                const displayId:number=await (await driver.findComponent(ON.id('WebViewControllerButton'))).getDisplayId()
+                const pointStart:Point={
+                  x:X,y:Y+60,displayId:displayId
+                }
+                const pointEnd:Point={
+                  x:X,y:Y-60,displayId:displayId
+                }
+                await driver.swipeBetween(pointStart,pointEnd);
                 Utils.emitEvent(this.onOverScrollCallBack, 179860)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -188,7 +209,14 @@ struct webViewController {
                 this.controller.loadUrl(this.mServer.getAssetUrl('overScroll.html'));
                 await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 this.onOverScrollCallBack = false
-                await driver.swipe(X - 60, Y, X + 60, Y);
+                const displayId:number=await (await driver.findComponent(ON.id('WebViewControllerButton'))).getDisplayId()
+                const pointStart:Point={
+                  x:X,y:Y-60,displayId:displayId
+                }
+                const pointEnd:Point={
+                  x:X,y:Y+60,displayId:displayId
+                }
+                await driver.swipeBetween(pointStart,pointEnd);
                 Utils.emitEvent(this.onOverScrollCallBack, 179870)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);

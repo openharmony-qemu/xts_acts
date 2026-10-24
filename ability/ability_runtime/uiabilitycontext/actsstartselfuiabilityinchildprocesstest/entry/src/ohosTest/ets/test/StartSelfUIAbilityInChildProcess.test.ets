@@ -161,6 +161,7 @@ export default function StartSelfUIAbilityInChildProcessTest() {
         abilityName: 'SingletonAbility'
       };
       try {
+        let capabilityNotSupport = false;
         await context.startSelfUIAbilityInChildProcess(want, '1')
           .then(() => {
             hilog.info(DOMAIN, 'testTag', '${CASE_NAME} succeed');
@@ -169,8 +170,12 @@ export default function StartSelfUIAbilityInChildProcessTest() {
             let msg = `${CASE_NAME} error, code:${e.code}, message:${e.message}`;
             hilog.error(DOMAIN, 'testTag', msg);
             expect(e.code).assertEqual(801);
+            capabilityNotSupport = true;
             done();
           });
+        if (capabilityNotSupport) {
+          return;
+        }
         await sleep(500);
         context.startSelfUIAbilityInChildProcess(want, '2')
           .then(() => {

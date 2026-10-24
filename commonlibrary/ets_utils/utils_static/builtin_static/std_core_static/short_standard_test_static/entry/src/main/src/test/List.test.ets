@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 import shortConstructorTest from './short/ShortConstructorTest.test';
 import shortToLongTest from './short/ShortToLongTest.test';

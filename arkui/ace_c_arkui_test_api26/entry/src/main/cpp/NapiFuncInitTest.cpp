@@ -48,7 +48,11 @@
 #include "arcSwiper/ArcSwiperMethodTest.cpp"
 #include "arcAlphabetIndexer/ArcAlphabetIndexerAttributeTest.cpp"
 #include "node/SetUiDvsyncSwitchTest.cpp"
+#include "nativeModule/RuntimeCheckModeTest.cpp"
 #include "node/UIAgentGetPageTextTest.cpp"
+#include "node/GetImagesByNodeIdAsyncTest.cpp"
+#include "image/ImageAnimatorInterpolationTest.cpp"
+#include "calendarPicker/CalendarPickerFirstDayOfWeekTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -281,12 +285,51 @@ static napi_value Init(napi_env env, napi_value exports)
         {"SetUiDvsyncSwitchTest002", nullptr, SetUiDvsyncSwitchTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"SetUiDvsyncSwitchTest003", nullptr, SetUiDvsyncSwitchTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"SetUiDvsyncSwitchTest004", nullptr, SetUiDvsyncSwitchTest004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RuntimeCheckModeTest001", nullptr, RuntimeCheckModeTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RuntimeCheckModeTest002", nullptr, RuntimeCheckModeTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RuntimeCheckModeTest003", nullptr, RuntimeCheckModeTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RuntimeCheckModeTest004", nullptr, RuntimeCheckModeTest004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RuntimeCheckModeTest005", nullptr, RuntimeCheckModeTest005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RuntimeCheckModeTest006", nullptr, RuntimeCheckModeTest006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RuntimeCheckModeTest007", nullptr, RuntimeCheckModeTest007, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RuntimeCheckModeTest008", nullptr, RuntimeCheckModeTest008, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RuntimeCheckModeTest009", nullptr, RuntimeCheckModeTest009, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RuntimeCheckModeTest010", nullptr, RuntimeCheckModeTest010, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RuntimeCheckModeTest011", nullptr, RuntimeCheckModeTest011, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RuntimeCheckModeTest012", nullptr, RuntimeCheckModeTest012, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RuntimeCheckModeTest013", nullptr, RuntimeCheckModeTest013, nullptr, nullptr, nullptr, napi_default, nullptr},
 
         {"UIAgentGetPageTextTest001", nullptr, UIAgentGetPageTextTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"UIAgentGetPageTextTest002", nullptr, UIAgentGetPageTextTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"UIAgentGetPageTextTest003", nullptr, UIAgentGetPageTextTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"UIAgentGetPageTextTest004", nullptr, UIAgentGetPageTextTest004, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"UIAgentGetPageTextTest005", nullptr, UIAgentGetPageTextTest005, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"GetImagesByNodeIdAsyncTest001", nullptr, GetImagesByNodeIdAsyncTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetImagesByNodeIdAsyncTest002", nullptr, GetImagesByNodeIdAsyncTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetImagesByNodeIdAsyncTest003", nullptr, GetImagesByNodeIdAsyncTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetImagesByNodeIdAsyncTest004", nullptr, GetImagesByNodeIdAsyncTest004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetImagesByNodeIdAsyncTest005", nullptr, GetImagesByNodeIdAsyncTest005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetImagesByNodeIdAsyncTest006", nullptr, GetImagesByNodeIdAsyncTest006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetImagesByNodeIdAsyncTest007", nullptr, GetImagesByNodeIdAsyncTest007, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetImagesByNodeIdAsyncTest008", nullptr, GetImagesByNodeIdAsyncTest008, nullptr, nullptr, nullptr, napi_default, nullptr},
+		
+		{"testImageAnimatorInterpolation001", nullptr, TestImageAnimatorInterpolation001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testImageAnimatorInterpolation002", nullptr, TestImageAnimatorInterpolation002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testImageAnimatorInterpolation003", nullptr, TestImageAnimatorInterpolation003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testImageAnimatorInterpolation004", nullptr, TestImageAnimatorInterpolation004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testImageAnimatorInterpolation005", nullptr, TestImageAnimatorInterpolation005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testImageAnimatorInterpolation006", nullptr, TestImageAnimatorInterpolation006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testImageAnimatorInterpolation007", nullptr, TestImageAnimatorInterpolation007, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testImageAnimatorInterpolation008", nullptr, TestImageAnimatorInterpolation008, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testCalendarPickerFirstDayOfWeek001", nullptr, TestCalendarPickerFirstDayOfWeek001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testCalendarPickerFirstDayOfWeek002", nullptr, TestCalendarPickerFirstDayOfWeek002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testCalendarPickerFirstDayOfWeek003", nullptr, TestCalendarPickerFirstDayOfWeek003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testCalendarPickerFirstDayOfWeek004", nullptr, TestCalendarPickerFirstDayOfWeek004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testCalendarPickerFirstDayOfWeek005", nullptr, TestCalendarPickerFirstDayOfWeek005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testCalendarPickerFirstDayOfWeek006", nullptr, TestCalendarPickerFirstDayOfWeek006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testCalendarPickerFirstDayOfWeek007", nullptr, TestCalendarPickerFirstDayOfWeek007, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testCalendarPickerFirstDayOfWeek008", nullptr, TestCalendarPickerFirstDayOfWeek008, nullptr, nullptr, nullptr, napi_default, nullptr},
         };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");

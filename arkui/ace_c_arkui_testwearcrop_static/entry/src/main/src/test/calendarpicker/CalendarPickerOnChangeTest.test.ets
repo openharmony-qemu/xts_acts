@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index";
 import Utils from '../common/Utils';
 import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
@@ -23,18 +22,14 @@ import { AppStorage } from '@ohos.arkui.stateManagement'
 import { UIContext } from '@ohos.arkui.UIContext'
 
 export default function calendarPickerOnChangeTest() {
-
   describe('CalendarPickerOnChangeTest', () => {
     let PAGE_TAG = 'CalendarPickerOnChangeTest';
     const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!
-
     beforeEach(async (): Promise<void> => {
       console.info("[ui] beforeEach start");
       await Utils.pushPage(`calendarpicker/${PAGE_TAG}`, false);
       console.info("[ui] beforeEach end");
     });
-
-
     
     /**
      * @tc.number   testCalendarPickerOnChange001
@@ -43,15 +38,11 @@ export default function calendarPickerOnChangeTest() {
      * @tc.level    Level.LEVEL1
      */
     it('testCalendarPickerOnChange001', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.log('Utils.getComponentRect start')
-      let Rect = Utils.getComponentRect('calendarPickerOnChangeTest')
-      console.log('Utils.getComponentRect end')
-      Utils.clickLocation(Math.round((AppStorage.get<number>('winLeft')!).toDouble() + Rect.right - uiContext.vp2px(5)).toInt(),
-        Math.round((AppStorage.get<number>('winTop')!).toDouble() + Rect.bottom - uiContext.vp2px(5)).toInt())
-      await Utils.sleep(2000)
+      await Utils.pickerComponent('calendarPickerOnChangeTest');
+      await Utils.sleep(2000);
       expect(Utils.getComponentInfoByKey('calendarPickerOnChangeTest')
         .getElement('$attrs')
-        .getString('backgroundColor')).assertEqual('#FF00FF00')
+        .getString('backgroundColor')).assertEqual('#FF00FF00');
       done()
     })
   })

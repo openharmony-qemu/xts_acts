@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
+ * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -30,28 +30,28 @@ let deviceId: string = "00:11:22:33:44:55";
 let g_context: common.UIAbilityContext;
 let a2dpSrc: a2dp.A2dpSourceProfile | undefined;
 
-export default function bluetoothA2dpTest() {
+export default function bluetoothA2dpTest(): void {
 
   describe("bluetoothA2dpTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
     beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
       try {
-          await Utils.msSleep(2000);
-          hilog.info(domain, tag, " uitestOnTest load up over!!!!!")
-          g_context = Hypium.get('Context') as common.UIAbilityContext;
-          let atManager = abilityAccessCtrl.createAtManager();
-          let arr: Array<Permissions> = new Array<Permissions>();
-          arr.push('ohos.permission.ACCESS_BLUETOOTH')
-          atManager.requestPermissionsFromUser(g_context, arr,
-              (err: BusinessError<void> | null, data: PermissionRequestResult | undefined) => {
-                  hilog.info(0x0000, 'testTag', ' requestPermissionsFromUser end');
-                  hilog.info(domain, tag, "request success permissions" + JSON.stringify(data));
-                  hilog.info(domain, tag, "getPermissionRequestResult err" + JSON.stringify(err));
-              });
+        await Utils.msSleep(2000);
+        hilog.info(domain, tag, " uitestOnTest load up over!!!!!")
+        g_context = Hypium.get('Context') as common.UIAbilityContext;
+        let atManager = abilityAccessCtrl.createAtManager();
+        let arr: Array<Permissions> = new Array<Permissions>();
+        arr.push('ohos.permission.ACCESS_BLUETOOTH')
+        atManager.requestPermissionsFromUser(g_context, arr,
+          (err: BusinessError<void> | null, data: PermissionRequestResult | undefined) => {
+            hilog.info(0x0000, 'testTag', ' requestPermissionsFromUser end');
+            hilog.info(domain, tag, "request success permissions" + JSON.stringify(data));
+            hilog.info(domain, tag, "getPermissionRequestResult err" + JSON.stringify(err));
+          });
       } catch (err) {
-          err = err as BusinessError;
-          hilog.error(domain, tag, '%{public}s', 'get failed, err: ' + err);
+        err = err as BusinessError;
+        hilog.error(domain, tag, '%{public}s', 'get failed, err: ' + err);
       }
       await Utils.msSleep(2000);
       await Utils.clickRequestPermission('允许');
@@ -73,59 +73,62 @@ export default function bluetoothA2dpTest() {
     })
 
     /**
-     * @tc.number  getPlayingStateTest
+     * @tc.number  SUB_COMMUNICATION_BLUETOOTHACCESS_GETPLAYINGSTATETEST_0100
      * @tc.name    getPlayingStateTest
      * @tc.desc    Test getPlayingStateTest API functionality
      * @tc.level   Level 0
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      */
-    it("getPlayingStateTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        let state: a2dp.PlayingState = a2dpSrc!.getPlayingState(deviceId);
-        hilog.info(domain, tag, "getPlayingState:" + state);
-        expect(true).assertEqual(state === a2dp.PlayingState.STATE_NOT_PLAYING || state === a2dp.PlayingState.STATE_PLAYING);
-      } catch (err) {
-        err = err as BusinessError;
-        hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-        hilog.info(domain, tag, "getPlayingState get errCode:" + err.code + ",errMessage:" + err.message);
-        if (err.code === 801 || err.code === 2900004) {
-          hilog.info(domain, tag, 'api is not support or profile not support');
-          expect(err.code === 801 || err.code === 2900004).assertTrue();
-        } else {
-          expect(Number(err.code)).assertEqual(2900099);
+    it("getPlayingStateTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let state: a2dp.PlayingState = a2dpSrc!.getPlayingState(deviceId);
+          hilog.info(domain, tag, "getPlayingState:" + state);
+          expect(true)
+            .assertEqual(state === a2dp.PlayingState.STATE_NOT_PLAYING || state === a2dp.PlayingState.STATE_PLAYING);
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+          hilog.info(domain, tag, "getPlayingState get errCode:" + err.code + ",errMessage:" + err.message);
+          if (err.code === 801 || err.code === 2900004) {
+            hilog.info(domain, tag, 'api is not support or profile not support');
+            expect(err.code === 801 || err.code === 2900004).assertTrue();
+          } else {
+            expect(err.code).assertEqual(2900099);
+          }
         }
-      }
-      done();
-    })
+        done();
+      })
 
     /**
-     * @tc.number  PlayingStateTest
+     * @tc.number  SUB_COMMUNICATION_BLUETOOTHACCESS_PLAYINGSTATETEST_0100
      * @tc.name    PlayingStateTest
      * @tc.desc    Test PlayingStateTest API functionality
      * @tc.level   Level 0
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      */
-    it("PlayingStateTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        let STATE_PLAYING: a2dp.PlayingState = a2dp.PlayingState.STATE_PLAYING;
-        hilog.info(domain, tag, "STATE_PLAYING:" + STATE_PLAYING);
-        expect(true).assertEqual(STATE_PLAYING === 1);
-        let STATE_NOT_PLAYING: a2dp.PlayingState = a2dp.PlayingState.STATE_NOT_PLAYING;
-        hilog.info(domain, tag, "STATE_NOT_PLAYING:" + STATE_NOT_PLAYING);
-        expect(true).assertEqual(STATE_NOT_PLAYING === 0);
-      } catch (err) {
-        err = err as BusinessError;
-        hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-        hilog.info(domain, tag, "PlayingState get errCode:" + err.code + ",errMessage:" + err.message);
-        expect().assertFail();
-      }
-      done();
-    })
+    it("PlayingStateTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let STATE_PLAYING: a2dp.PlayingState = a2dp.PlayingState.STATE_PLAYING;
+          hilog.info(domain, tag, "STATE_PLAYING:" + STATE_PLAYING);
+          expect(true).assertEqual(STATE_PLAYING === 1);
+          let STATE_NOT_PLAYING: a2dp.PlayingState = a2dp.PlayingState.STATE_NOT_PLAYING;
+          hilog.info(domain, tag, "STATE_NOT_PLAYING:" + STATE_NOT_PLAYING);
+          expect(true).assertEqual(STATE_NOT_PLAYING === 0);
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+          hilog.info(domain, tag, "PlayingState get errCode:" + err.code + ",errMessage:" + err.message);
+          expect().assertFail();
+        }
+        done();
+      })
 
     /**
-     * @tc.number  CodecTypeTest
+     * @tc.number  SUB_COMMUNICATION_BLUETOOTHACCESS_CODECTYPETEST_0100
      * @tc.name    CodecTypeTest
      * @tc.desc    Test CodecTypeTest API functionality
      * @tc.level   Level 0
@@ -167,139 +170,237 @@ export default function bluetoothA2dpTest() {
     })
 
     /**
-     * @tc.number  CodecChannelModeTest
+     * @tc.number  SUB_COMMUNICATION_BLUETOOTHACCESS_CODECCHANNELMODETEST_0100
      * @tc.name    CodecChannelModeTest
      * @tc.desc    Test CodecChannelModeTest API functionality
      * @tc.level   Level 0
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      */
-    it("CodecChannelModeTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        let STATE_CODEC_CHANNEL_MODE_NONE: a2dp.CodecChannelMode = a2dp.CodecChannelMode.CODEC_CHANNEL_MODE_NONE;
-        hilog.info(domain, tag, "STATE_CODEC_CHANNEL_MODE_NONE:" + STATE_CODEC_CHANNEL_MODE_NONE);
-        expect(true).assertEqual(STATE_CODEC_CHANNEL_MODE_NONE === 0);
+    it("CodecChannelModeTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let STATE_CODEC_CHANNEL_MODE_NONE: a2dp.CodecChannelMode = a2dp.CodecChannelMode.CODEC_CHANNEL_MODE_NONE;
+          hilog.info(domain, tag, "STATE_CODEC_CHANNEL_MODE_NONE:" + STATE_CODEC_CHANNEL_MODE_NONE);
+          expect(true).assertEqual(STATE_CODEC_CHANNEL_MODE_NONE === 0);
 
-        let STATE_CODEC_CHANNEL_MODE_MONO: a2dp.CodecChannelMode = a2dp.CodecChannelMode.CODEC_CHANNEL_MODE_MONO;
-        hilog.info(domain, tag, "STATE_CODEC_CHANNEL_MODE_MONO:" + STATE_CODEC_CHANNEL_MODE_MONO);
-        expect(true).assertEqual(STATE_CODEC_CHANNEL_MODE_MONO === 1);
+          let STATE_CODEC_CHANNEL_MODE_MONO: a2dp.CodecChannelMode = a2dp.CodecChannelMode.CODEC_CHANNEL_MODE_MONO;
+          hilog.info(domain, tag, "STATE_CODEC_CHANNEL_MODE_MONO:" + STATE_CODEC_CHANNEL_MODE_MONO);
+          expect(true).assertEqual(STATE_CODEC_CHANNEL_MODE_MONO === 1);
 
-        let STATE_CODEC_CHANNEL_MODE_STEREO: a2dp.CodecChannelMode = a2dp.CodecChannelMode.CODEC_CHANNEL_MODE_STEREO;
-        hilog.info(domain, tag, "STATE_CODEC_CHANNEL_MODE_STEREO:" + STATE_CODEC_CHANNEL_MODE_STEREO);
-        expect(true).assertEqual(STATE_CODEC_CHANNEL_MODE_STEREO === 2);
-      } catch (err) {
-        err = err as BusinessError;
-        hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-        hilog.info(domain, tag, "CodecChannelMode get errCode:" + err.code + ",errMessage:" + err.message);
-        expect().assertFail();
-      }
-      done();
-    })
+          let STATE_CODEC_CHANNEL_MODE_STEREO: a2dp.CodecChannelMode = a2dp.CodecChannelMode.CODEC_CHANNEL_MODE_STEREO;
+          hilog.info(domain, tag, "STATE_CODEC_CHANNEL_MODE_STEREO:" + STATE_CODEC_CHANNEL_MODE_STEREO);
+          expect(true).assertEqual(STATE_CODEC_CHANNEL_MODE_STEREO === 2);
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+          hilog.info(domain, tag, "CodecChannelMode get errCode:" + err.code + ",errMessage:" + err.message);
+          expect().assertFail();
+        }
+        done();
+      })
 
     /**
-     * @tc.number  CodecBitsPerSampleTest
+     * @tc.number  SUB_COMMUNICATION_BLUETOOTHACCESS_CODECBITSPERSAMPLETEST_0100
      * @tc.name    CodecBitsPerSampleTest
      * @tc.desc    Test CodecBitsPerSampleTest API functionality
      * @tc.level   Level 0
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      */
-    it("CodecBitsPerSampleTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        let STATE_CODEC_BITS_PER_SAMPLE_NONE: a2dp.CodecBitsPerSample = a2dp.CodecBitsPerSample.CODEC_BITS_PER_SAMPLE_NONE;
-        hilog.info(domain, tag, "STATE_CODEC_BITS_PER_SAMPLE_NONE:" + STATE_CODEC_BITS_PER_SAMPLE_NONE);
-        expect(true).assertEqual(STATE_CODEC_BITS_PER_SAMPLE_NONE === 0);
+    it("CodecBitsPerSampleTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let STATE_CODEC_BITS_PER_SAMPLE_NONE: a2dp.CodecBitsPerSample =
+            a2dp.CodecBitsPerSample.CODEC_BITS_PER_SAMPLE_NONE;
+          hilog.info(domain, tag, "STATE_CODEC_BITS_PER_SAMPLE_NONE:" + STATE_CODEC_BITS_PER_SAMPLE_NONE);
+          expect(true).assertEqual(STATE_CODEC_BITS_PER_SAMPLE_NONE === 0);
 
-        let STATE_CODEC_BITS_PER_SAMPLE_16: a2dp.CodecBitsPerSample = a2dp.CodecBitsPerSample.CODEC_BITS_PER_SAMPLE_16;
-        hilog.info(domain, tag, "STATE_CODEC_BITS_PER_SAMPLE_16:" + STATE_CODEC_BITS_PER_SAMPLE_16);
-        expect(true).assertEqual(STATE_CODEC_BITS_PER_SAMPLE_16 === 1);
+          let STATE_CODEC_BITS_PER_SAMPLE_16: a2dp.CodecBitsPerSample =
+            a2dp.CodecBitsPerSample.CODEC_BITS_PER_SAMPLE_16;
+          hilog.info(domain, tag, "STATE_CODEC_BITS_PER_SAMPLE_16:" + STATE_CODEC_BITS_PER_SAMPLE_16);
+          expect(true).assertEqual(STATE_CODEC_BITS_PER_SAMPLE_16 === 1);
 
-        let STATE_CODEC_BITS_PER_SAMPLE_24: a2dp.CodecBitsPerSample = a2dp.CodecBitsPerSample.CODEC_BITS_PER_SAMPLE_24;
-        hilog.info(domain, tag, "STATE_CODEC_BITS_PER_SAMPLE_24:" + STATE_CODEC_BITS_PER_SAMPLE_24);
-        expect(true).assertEqual(STATE_CODEC_BITS_PER_SAMPLE_24 === 2);
+          let STATE_CODEC_BITS_PER_SAMPLE_24: a2dp.CodecBitsPerSample =
+            a2dp.CodecBitsPerSample.CODEC_BITS_PER_SAMPLE_24;
+          hilog.info(domain, tag, "STATE_CODEC_BITS_PER_SAMPLE_24:" + STATE_CODEC_BITS_PER_SAMPLE_24);
+          expect(true).assertEqual(STATE_CODEC_BITS_PER_SAMPLE_24 === 2);
 
-        let STATE_CODEC_BITS_PER_SAMPLE_32: a2dp.CodecBitsPerSample = a2dp.CodecBitsPerSample.CODEC_BITS_PER_SAMPLE_32;
-        hilog.info(domain, tag, "STATE_CODEC_BITS_PER_SAMPLE_32:" + STATE_CODEC_BITS_PER_SAMPLE_32);
-        expect(true).assertEqual(STATE_CODEC_BITS_PER_SAMPLE_32 === 3);
-      } catch (err) {
-        err = err as BusinessError;
-        hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-        hilog.info(domain, tag, "CodecBitsPerSample get errCode:" + err.code + ",errMessage:" + err.message);
-        expect().assertFail();
-      }
-      done();
-    })
+          let STATE_CODEC_BITS_PER_SAMPLE_32: a2dp.CodecBitsPerSample =
+            a2dp.CodecBitsPerSample.CODEC_BITS_PER_SAMPLE_32;
+          hilog.info(domain, tag, "STATE_CODEC_BITS_PER_SAMPLE_32:" + STATE_CODEC_BITS_PER_SAMPLE_32);
+          expect(true).assertEqual(STATE_CODEC_BITS_PER_SAMPLE_32 === 3);
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+          hilog.info(domain, tag, "CodecBitsPerSample get errCode:" + err.code + ",errMessage:" + err.message);
+          expect().assertFail();
+        }
+        done();
+      })
 
     /**
-     * @tc.number  CodecSampleRateTest
+     * @tc.number  SUB_COMMUNICATION_BLUETOOTHACCESS_CODECSAMPLERATETEST_0100
      * @tc.name    CodecSampleRateTest
      * @tc.desc    Test CodecSampleRateTest API functionality
      * @tc.level   Level 0
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      */
-    it("CodecSampleRateTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        let STATE_CODEC_SAMPLE_RATE_NONE: a2dp.CodecSampleRate = a2dp.CodecSampleRate.CODEC_SAMPLE_RATE_NONE;
-        hilog.info(domain, tag, "STATE_CODEC_SAMPLE_RATE_NONE:" + STATE_CODEC_SAMPLE_RATE_NONE);
-        expect(true).assertEqual(STATE_CODEC_SAMPLE_RATE_NONE === 0);
+    it("CodecSampleRateTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let STATE_CODEC_SAMPLE_RATE_NONE: a2dp.CodecSampleRate = a2dp.CodecSampleRate.CODEC_SAMPLE_RATE_NONE;
+          hilog.info(domain, tag, "STATE_CODEC_SAMPLE_RATE_NONE:" + STATE_CODEC_SAMPLE_RATE_NONE);
+          expect(true).assertEqual(STATE_CODEC_SAMPLE_RATE_NONE === 0);
 
-        let STATE_CODEC_SAMPLE_RATE_44100: a2dp.CodecSampleRate = a2dp.CodecSampleRate.CODEC_SAMPLE_RATE_44100;
-        hilog.info(domain, tag, "STATE_CODEC_SAMPLE_RATE_44100:" + STATE_CODEC_SAMPLE_RATE_44100);
-        expect(true).assertEqual(STATE_CODEC_SAMPLE_RATE_44100 === 1);
+          let STATE_CODEC_SAMPLE_RATE_44100: a2dp.CodecSampleRate = a2dp.CodecSampleRate.CODEC_SAMPLE_RATE_44100;
+          hilog.info(domain, tag, "STATE_CODEC_SAMPLE_RATE_44100:" + STATE_CODEC_SAMPLE_RATE_44100);
+          expect(true).assertEqual(STATE_CODEC_SAMPLE_RATE_44100 === 1);
 
-        let STATE_CODEC_SAMPLE_RATE_48000: a2dp.CodecSampleRate = a2dp.CodecSampleRate.CODEC_SAMPLE_RATE_48000;
-        hilog.info(domain, tag, "STATE_CODEC_SAMPLE_RATE_48000:" + STATE_CODEC_SAMPLE_RATE_48000);
-        expect(true).assertEqual(STATE_CODEC_SAMPLE_RATE_48000 === 2);
+          let STATE_CODEC_SAMPLE_RATE_48000: a2dp.CodecSampleRate = a2dp.CodecSampleRate.CODEC_SAMPLE_RATE_48000;
+          hilog.info(domain, tag, "STATE_CODEC_SAMPLE_RATE_48000:" + STATE_CODEC_SAMPLE_RATE_48000);
+          expect(true).assertEqual(STATE_CODEC_SAMPLE_RATE_48000 === 2);
 
-        let STATE_CODEC_SAMPLE_RATE_88200: a2dp.CodecSampleRate = a2dp.CodecSampleRate.CODEC_SAMPLE_RATE_88200;
-        hilog.info(domain, tag, "STATE_CODEC_SAMPLE_RATE_88200:" + STATE_CODEC_SAMPLE_RATE_88200);
-        expect(true).assertEqual(STATE_CODEC_SAMPLE_RATE_88200 === 3);
+          let STATE_CODEC_SAMPLE_RATE_88200: a2dp.CodecSampleRate = a2dp.CodecSampleRate.CODEC_SAMPLE_RATE_88200;
+          hilog.info(domain, tag, "STATE_CODEC_SAMPLE_RATE_88200:" + STATE_CODEC_SAMPLE_RATE_88200);
+          expect(true).assertEqual(STATE_CODEC_SAMPLE_RATE_88200 === 3);
 
-        let STATE_CODEC_SAMPLE_RATE_96000: a2dp.CodecSampleRate = a2dp.CodecSampleRate.CODEC_SAMPLE_RATE_96000;
-        hilog.info(domain, tag, "STATE_CODEC_SAMPLE_RATE_96000:" + STATE_CODEC_SAMPLE_RATE_96000);
-        expect(true).assertEqual(STATE_CODEC_SAMPLE_RATE_96000 === 4);
+          let STATE_CODEC_SAMPLE_RATE_96000: a2dp.CodecSampleRate = a2dp.CodecSampleRate.CODEC_SAMPLE_RATE_96000;
+          hilog.info(domain, tag, "STATE_CODEC_SAMPLE_RATE_96000:" + STATE_CODEC_SAMPLE_RATE_96000);
+          expect(true).assertEqual(STATE_CODEC_SAMPLE_RATE_96000 === 4);
 
-        let STATE_CODEC_SAMPLE_RATE_176400: a2dp.CodecSampleRate = a2dp.CodecSampleRate.CODEC_SAMPLE_RATE_176400;
-        hilog.info(domain, tag, "STATE_CODEC_SAMPLE_RATE_176400:" + STATE_CODEC_SAMPLE_RATE_176400);
-        expect(true).assertEqual(STATE_CODEC_SAMPLE_RATE_176400 === 5);
+          let STATE_CODEC_SAMPLE_RATE_176400: a2dp.CodecSampleRate = a2dp.CodecSampleRate.CODEC_SAMPLE_RATE_176400;
+          hilog.info(domain, tag, "STATE_CODEC_SAMPLE_RATE_176400:" + STATE_CODEC_SAMPLE_RATE_176400);
+          expect(true).assertEqual(STATE_CODEC_SAMPLE_RATE_176400 === 5);
 
-        let STATE_CODEC_SAMPLE_RATE_192000: a2dp.CodecSampleRate = a2dp.CodecSampleRate.CODEC_SAMPLE_RATE_192000;
-        hilog.info(domain, tag, "STATE_CODEC_SAMPLE_RATE_192000:" + STATE_CODEC_SAMPLE_RATE_192000);
-        expect(true).assertEqual(STATE_CODEC_SAMPLE_RATE_192000 === 6);
-      } catch (err) {
-        err = err as BusinessError;
-        hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-        hilog.info(domain, tag, "CodecSampleRate get errCode:" + err.code + ",errMessage:" + err.message);
-        expect().assertFail();
-      }
-      done();
-    })
+          let STATE_CODEC_SAMPLE_RATE_192000: a2dp.CodecSampleRate = a2dp.CodecSampleRate.CODEC_SAMPLE_RATE_192000;
+          hilog.info(domain, tag, "STATE_CODEC_SAMPLE_RATE_192000:" + STATE_CODEC_SAMPLE_RATE_192000);
+          expect(true).assertEqual(STATE_CODEC_SAMPLE_RATE_192000 === 6);
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+          hilog.info(domain, tag, "CodecSampleRate get errCode:" + err.code + ",errMessage:" + err.message);
+          expect().assertFail();
+        }
+        done();
+      })
 
     /**
-     * @tc.number  SUB_COMMUNICATION_BLUETOOTHACCESS_GETPLAYINGSTATE_ADD_0100
+     * @tc.number  SUB_COMMUNICATION_BLUETOOTHACCESS_GETPLAYINGSTATEADD_0100
      * @tc.name    SUB_COMMUNICATION_BLUETOOTHACCESS_GETPLAYINGSTATE_ADD_0100
      * @tc.desc    Test getPlayingStateTest API functionality
      * @tc.level   Level 0
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      */
-    it("SUB_COMMUNICATION_BLUETOOTHACCESS_GETPLAYINGSTATE_ADD_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        let state: a2dp.PlayingState = a2dpSrc!.getPlayingState("");
-        hilog.info(domain, tag, "getPlayingState:" + state);
-        expect().assertFail();
-      } catch (err) {
-        hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-        hilog.info(domain, tag, "getPlayingState get errCode:" + err.code + ",errMessage:" + err.message);
-        if (err.code === 801 || err.code === 2900004) {
-          hilog.info(domain, tag, 'api is not support or profile not support');
-          expect(err.code === 801 || err.code === 2900004).assertTrue();
-        } else {
-          expect(Number(err.code)).assertEqual(401);
+    it("SUB_COMMUNICATION_BLUETOOTHACCESS_GETPLAYINGSTATE_ADD_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let state: a2dp.PlayingState = a2dpSrc!.getPlayingState("");
+          hilog.info(domain, tag, "getPlayingState:" + state);
+          expect().assertFail();
+        } catch (err) {
+          hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+          hilog.info(domain, tag, "getPlayingState get errCode:" + err.code + ",errMessage:" + err.message);
+          if (err.code === 801 || err.code === 2900004) {
+            hilog.info(domain, tag, 'api is not support or profile not support');
+            expect(err.code === 801 || err.code === 2900004).assertTrue();
+          } else {
+            expect(err.code).assertEqual(401);
+          }
         }
-      }
-      done();
-    })
+        done();
+      })
+
+    /**
+     * @tc.number  SUB_COMMUNICATION_BLUETOOTHACCESS_CODECBITRATETEST_0100
+     * @tc.name    CodecBitRateTest
+     * @tc.desc    Test CodecBitRateTest API functionality
+     * @tc.level   Level 0
+     * @tc.type    Function
+     * @tc.size    MEDIUMTEST
+     */
+    it("CodecBitRateTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let CODEC_BIT_RATE_96000: a2dp.CodecBitRate = a2dp.CodecBitRate.CODEC_BIT_RATE_96000;
+          hilog.info(domain, tag, "CODEC_BIT_RATE_96000:" + CODEC_BIT_RATE_96000);
+          expect(true).assertEqual(CODEC_BIT_RATE_96000 === 0);
+
+          let CODEC_BIT_RATE_128000: a2dp.CodecBitRate = a2dp.CodecBitRate.CODEC_BIT_RATE_128000;
+          hilog.info(domain, tag, "CODEC_BIT_RATE_128000:" + CODEC_BIT_RATE_128000);
+          expect(true).assertEqual(CODEC_BIT_RATE_128000 === 1);
+
+          let CODEC_BIT_RATE_192000: a2dp.CodecBitRate = a2dp.CodecBitRate.CODEC_BIT_RATE_192000;
+          hilog.info(domain, tag, "CODEC_BIT_RATE_192000:" + CODEC_BIT_RATE_192000);
+          expect(true).assertEqual(CODEC_BIT_RATE_192000 === 2);
+
+          let CODEC_BIT_RATE_256000: a2dp.CodecBitRate = a2dp.CodecBitRate.CODEC_BIT_RATE_256000;
+          hilog.info(domain, tag, "CODEC_BIT_RATE_256000:" + CODEC_BIT_RATE_256000);
+          expect(true).assertEqual(CODEC_BIT_RATE_256000 === 3);
+
+          let CODEC_BIT_RATE_320000: a2dp.CodecBitRate = a2dp.CodecBitRate.CODEC_BIT_RATE_320000;
+          hilog.info(domain, tag, "CODEC_BIT_RATE_320000:" + CODEC_BIT_RATE_320000);
+          expect(true).assertEqual(CODEC_BIT_RATE_320000 === 4);
+
+          let CODEC_BIT_RATE_480000: a2dp.CodecBitRate = a2dp.CodecBitRate.CODEC_BIT_RATE_480000;
+          hilog.info(domain, tag, "CODEC_BIT_RATE_480000:" + CODEC_BIT_RATE_480000);
+          expect(true).assertEqual(CODEC_BIT_RATE_480000 === 5);
+
+          let CODEC_BIT_RATE_640000: a2dp.CodecBitRate = a2dp.CodecBitRate.CODEC_BIT_RATE_640000;
+          hilog.info(domain, tag, "CODEC_BIT_RATE_640000:" + CODEC_BIT_RATE_640000);
+          expect(true).assertEqual(CODEC_BIT_RATE_640000 === 6);
+
+          let CODEC_BIT_RATE_960000: a2dp.CodecBitRate = a2dp.CodecBitRate.CODEC_BIT_RATE_960000;
+          hilog.info(domain, tag, "CODEC_BIT_RATE_960000:" + CODEC_BIT_RATE_960000);
+          expect(true).assertEqual(CODEC_BIT_RATE_960000 === 7);
+
+          let CODEC_BIT_RATE_ABR: a2dp.CodecBitRate = a2dp.CodecBitRate.CODEC_BIT_RATE_ABR;
+          hilog.info(domain, tag, "CODEC_BIT_RATE_ABR:" + CODEC_BIT_RATE_ABR);
+          expect(true).assertEqual(CODEC_BIT_RATE_ABR === 8);
+
+          let CODEC_BIT_RATE_1500000: a2dp.CodecBitRate = a2dp.CodecBitRate.CODEC_BIT_RATE_1500000;
+          hilog.info(domain, tag, "CODEC_BIT_RATE_1500000:" + CODEC_BIT_RATE_1500000);
+          expect(true).assertEqual(CODEC_BIT_RATE_1500000 === 9);
+
+          let CODEC_BIT_RATE_2300000: a2dp.CodecBitRate = a2dp.CodecBitRate.CODEC_BIT_RATE_2300000;
+          hilog.info(domain, tag, "CODEC_BIT_RATE_2300000:" + CODEC_BIT_RATE_2300000);
+          expect(true).assertEqual(CODEC_BIT_RATE_2300000 === 10);
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+          hilog.info(domain, tag, "CodecBitRate get errCode:" + err.code + ",errMessage:" + err.message);
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.number  SUB_COMMUNICATION_BLUETOOTHACCESS_CODECFRAMELENGTHTEST_0100
+     * @tc.name    CodecFrameLengthTest
+     * @tc.desc    Test CodecFrameLengthTest API functionality
+     * @tc.level   Level 0
+     * @tc.type    Function
+     * @tc.size    MEDIUMTEST
+     */
+    it("CodecFrameLengthTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let CODEC_FRAME_LENGTH_5MS: a2dp.CodecFrameLength = a2dp.CodecFrameLength.CODEC_FRAME_LENGTH_5MS;
+          hilog.info(domain, tag, "CODEC_FRAME_LENGTH_5MS:" + CODEC_FRAME_LENGTH_5MS);
+          expect(true).assertEqual(CODEC_FRAME_LENGTH_5MS === 0);
+
+          let CODEC_FRAME_LENGTH_10MS: a2dp.CodecFrameLength = a2dp.CodecFrameLength.CODEC_FRAME_LENGTH_10MS;
+          hilog.info(domain, tag, "CODEC_FRAME_LENGTH_10MS:" + CODEC_FRAME_LENGTH_10MS);
+          expect(true).assertEqual(CODEC_FRAME_LENGTH_10MS === 1);
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+          hilog.info(domain, tag, "CodecFrameLength get errCode:" + err.code + ",errMessage:" + err.message);
+          expect().assertFail();
+        }
+        done();
+      })
   })
 }

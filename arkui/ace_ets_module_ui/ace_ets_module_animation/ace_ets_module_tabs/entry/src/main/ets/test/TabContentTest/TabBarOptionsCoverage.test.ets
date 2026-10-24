@@ -202,5 +202,100 @@ export default function tabBarOptionsCoverageTest() {
       done();
     });
 
+    /**
+     * @tc.number SUB_ARKUI_TABCONTENT_TABBAR_BADGEVALUE_1200
+     * @tc.name SUB_ARKUI_TABCONTENT_TABBAR_BADGEVALUE_1200
+     * @tc.desc Cover TabBarOptions badge value ResourceStr
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_ARKUI_TABCONTENT_TABBAR_BADGEVALUE_1200', Level.LEVEL1, async (done: Function) => {
+      await CommonFunc.sleep(400);
+      let node: string = getInspectorByKey('tabBarOptions_badgeValue_resourceStr');
+      let obj: Record<string, Object> = JSON.parse(node);
+      let attrs: Record<string, Object> = obj['$attrs'] as Record<string, Object>;
+      expect(attrs !== undefined).assertTrue();
+      console.info('[BADGEVALUE_1200] tabBar: ' + JSON.stringify(attrs['tabBar']));
+      expect(attrs['tabBar'] !== undefined).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_TABCONTENT_TABBAR_BADGEMAX_1300
+     * @tc.name SUB_ARKUI_TABCONTENT_TABBAR_BADGEMAX_1300
+     * @tc.desc Cover TabBarOptions badge maxCount zero
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_ARKUI_TABCONTENT_TABBAR_BADGEMAX_1300', Level.LEVEL1, async (done: Function) => {
+      await CommonFunc.sleep(400);
+      let node: string = getInspectorByKey('tabBarOptions_badgeMax_zero');
+      let obj: Record<string, Object> = JSON.parse(node);
+      let attrs: Record<string, Object> = obj['$attrs'] as Record<string, Object>;
+      expect(attrs !== undefined).assertTrue();
+      console.info('[BADGEMAX_1300] tabBar: ' + JSON.stringify(attrs['tabBar']));
+      expect(attrs['tabBar'] !== undefined).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_TABCONTENT_TABBAR_BADGE_GT_MAX_1400
+     * @tc.name SUB_ARKUI_TABCONTENT_TABBAR_BADGE_GT_MAX_1400
+     * @tc.desc Cover TabBarOptions badge value greater than maxCount
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_ARKUI_TABCONTENT_TABBAR_BADGE_GT_MAX_1400', Level.LEVEL1, async (done: Function) => {
+      await CommonFunc.sleep(400);
+      let node: string = getInspectorByKey('tabBarOptions_badgeValue_gt_maxCount');
+      let obj: Record<string, Object> = JSON.parse(node);
+      let attrs: Record<string, Object> = obj['$attrs'] as Record<string, Object>;
+      expect(attrs !== undefined).assertTrue();
+      console.info('[BADGE_GT_MAX_1400] tabBar: ' + JSON.stringify(attrs['tabBar']));
+      expect(attrs['tabBar'] !== undefined).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_TABCONTENT_TABBAR_BOTTOM_BADGE_1500
+     * @tc.name SUB_ARKUI_TABCONTENT_TABBAR_BOTTOM_BADGE_1500
+     * @tc.desc Cover BottomTabBarStyle badge normal
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_ARKUI_TABCONTENT_TABBAR_BOTTOM_BADGE_1500', Level.LEVEL1, async (done: Function) => {
+      await CommonFunc.sleep(400);
+      let node: string = getInspectorByKey('tabBarOptions_bottomTabBar_badge');
+      let obj: Record<string, Object> = JSON.parse(node);
+      let attrs: Record<string, Object> = obj['$attrs'] as Record<string, Object>;
+      expect(attrs !== undefined).assertTrue();
+      console.info('[BOTTOM_BADGE_1500] tabBar: ' + JSON.stringify(attrs['tabBar']));
+      expect(attrs['tabBar'] !== undefined).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_TABCONTENT_TABBAR_BOTTOM_BADGE_UNDEF_1600
+     * @tc.name SUB_ARKUI_TABCONTENT_TABBAR_BOTTOM_BADGE_UNDEF_1600
+     * @tc.desc Cover BottomTabBarStyle badge undefined
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_ARKUI_TABCONTENT_TABBAR_BOTTOM_BADGE_UNDEF_1600', Level.LEVEL1, async (done: Function) => {
+      await CommonFunc.sleep(400);
+      let node: string = getInspectorByKey('tabBarOptions_bottomTabBar_badge_undefined');
+      let obj: Record<string, Object> = JSON.parse(node);
+      let attrs: Record<string, Object> = obj['$attrs'] as Record<string, Object>;
+      expect(attrs !== undefined).assertTrue();
+      console.info('[BOTTOM_BADGE_UNDEF_1600] tabBar: ' + JSON.stringify(attrs['tabBar']));
+      expect(attrs['tabBar'] !== undefined).assertTrue();
+      done();
+    });
+
   });
 }

@@ -27,7 +27,7 @@
     "abilities": [
       {
         "name": "EntryAbility",
-        "srcEntry": "./ets/entryability/EntryAbility.ts",
+        "srcEntry": "./ets/entryability/EntryAbility.ets",
         "description": "$string:EntryAbility_desc",
         "icon": "$media:icon",
         "label": "$string:EntryAbility_label",
@@ -50,7 +50,7 @@
       },
       {
         "name": "ShareAcquireShareDataAbility",
-        "srcEntry": "./ets/entryability/ShareAcquireShareDataAbility.ts",
+        "srcEntry": "./ets/entryability/ShareAcquireShareDataAbility.ets",
         "description": "$string:EntryAbility_desc",
         "icon": "$media:icon",
         "label": "$string:EntryAbility_label",

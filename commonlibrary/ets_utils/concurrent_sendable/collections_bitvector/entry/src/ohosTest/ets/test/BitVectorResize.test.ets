@@ -15,11 +15,31 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { collections } from '@kit.ArkTS';
+import { taskpool } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 const SLEEP_INTERVAL_MS: number = 100;
 
 function sleep(ms: number): Promise<void> {
   return new Promise<void>((resolve: Function) => setTimeout(resolve, ms));
+}
+
+async function asyncSleep(time: number) {
+  return await new Promise<number>((resolve) => {
+    setTimeout(() => {
+      resolve(1)
+    }, time)
+  })
+}
+
+@Concurrent
+function testResize(index: number, bit: collections.BitVector) {
+  let tag = 'testResize'
+  try {
+    bit.resize(10);
+  } catch (e) {
+    console.info(`${tag} Task execution catch: ${(e as BusinessError).message}, code: ${(e as BusinessError).code}`);
+  }
 }
 
 export default function BitVectorResizeTest() {
@@ -409,7 +429,7 @@ export default function BitVectorResizeTest() {
         /**
          * @tc.name   testBitVectorEmptyResizeBoundary0001
          * @tc.number SUB_COMMONLIBRARY_BITVECTOR_TEST_0616
-         * @tc.desc   BitVector empty: resize(0) on born-empty BitVector, verify length stays 0.
+         * @tc.desc   BitVector empty: resize(0) on born-empty BitVector, verify length stays 0 (positive assertion).
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -417,19 +437,15 @@ export default function BitVectorResizeTest() {
         it('testBitVectorEmptyResizeBoundary0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
           async (done: Function) => {
             let bitVectorList: collections.BitVector = new collections.BitVector(0);
-            try {
-              bitVectorList.resize(0);
-              expect(bitVectorList.length).assertEqual(0);
-            } catch (err) {
-              expect(err.code).assertEqual(10200001);
-            }
+            bitVectorList.resize(0);
+            expect(bitVectorList.length).assertEqual(0);
             done()
           });
 
         /**
          * @tc.name   testBitVectorEmptyResizeBoundary0002
          * @tc.number SUB_COMMONLIBRARY_BITVECTOR_TEST_0617
-         * @tc.desc   BitVector empty: resize(1) on born-empty BitVector, known issue: throws error 10200001.
+         * @tc.desc   BitVector empty: resize(1) on born-empty BitVector grows to length 1 with new bit 0.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -437,20 +453,16 @@ export default function BitVectorResizeTest() {
         it('testBitVectorEmptyResizeBoundary0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
           async (done: Function) => {
             let bitVectorList: collections.BitVector = new collections.BitVector(0);
-            try {
-              bitVectorList.resize(1);
-              expect(bitVectorList.length).assertEqual(1);
-              expect(bitVectorList[0]).assertEqual(0);
-            } catch (err) {
-              expect(err.code).assertEqual(10200001);
-            }
+            bitVectorList.resize(1);
+            expect(bitVectorList.length).assertEqual(1);
+            expect(bitVectorList[0]).assertEqual(0);
             done()
           });
 
         /**
          * @tc.name   testBitVectorEmptyResizeBoundary0003
          * @tc.number SUB_COMMONLIBRARY_BITVECTOR_TEST_0618
-         * @tc.desc   BitVector empty: resize(64) on born-empty BitVector, known issue: throws error 10200001.
+         * @tc.desc   BitVector empty: resize(64) on born-empty BitVector grows to 64 with all 64 bits 0.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -458,12 +470,15 @@ export default function BitVectorResizeTest() {
         it('testBitVectorEmptyResizeBoundary0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
           async (done: Function) => {
             let bitVectorList: collections.BitVector = new collections.BitVector(0);
-            try {
-              bitVectorList.resize(64);
-              expect(bitVectorList.length).assertEqual(64);
-            } catch (err) {
-              expect(err.code).assertEqual(10200001);
+            bitVectorList.resize(64);
+            expect(bitVectorList.length).assertEqual(64);
+            let allZero: boolean = true;
+            for (let i: number = 0; i < 64; i++) {
+              if (bitVectorList[i] !== 0) {
+                allZero = false;
+              }
             }
+            expect(allZero).assertTrue();
             done()
           });
 
@@ -481,13 +496,9 @@ export default function BitVectorResizeTest() {
             bitVectorList.push(1);
             bitVectorList.pop();
             expect(bitVectorList.length).assertEqual(0);
-            try {
-              bitVectorList.resize(1);
-              expect(bitVectorList.length).assertEqual(1);
-              expect(bitVectorList[0]).assertEqual(0);
-            } catch (err) {
-              expect(err.code).assertEqual(10200001);
-            }
+            bitVectorList.resize(1);
+            expect(bitVectorList.length).assertEqual(1);
+            expect(bitVectorList[0]).assertEqual(0);
             done()
           });
 
@@ -627,5 +638,492 @@ export default function BitVectorResizeTest() {
             }
             done()
           });
+
+    /**
+     * @tc.name   testBitVectorResize10200201
+     * @tc.number SUB_COMMONLIBRARY_BITVECTOR_TEST_0626
+     * @tc.desc   BitVector resize 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testBitVectorResize10200201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'testBitVectorResize10200201';
+        console.info(`${caseName} test start`);
+        let count = 0;
+        let hasException = false;
+        let bitVector = new collections.BitVector(4);
+        try {
+          for (let i = 0; i < 100; i++) {
+            taskpool.execute(testResize, i, bitVector).then(() => {
+              count++
+            }).catch((e: BusinessError) => {
+              console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            })
+          }
+          for (let i = 0; i < 10; i++) {
+            bitVector.resize(10)
+          }
+        } catch (e) {
+          hasException = true;
+          console.info(`${caseName} Task execution failed with error: ${(e as BusinessError).message}, code: ${(e as BusinessError).code}`);
+          expect((e as BusinessError).code === 10200201 || (e as BusinessError).code === 10200001).assertEqual(true)
+        }
+        while (count < 100) {
+          await asyncSleep(100)
+        }
+        if (!hasException) {
+          expect(bitVector.length).assertEqual(10);
+        }
+        console.info(`${caseName} test end`);
+        done()
+      });
+
+    /**
+     * @tc.number  SUB_BITVECTOR_RESIZE_ONE_0100
+     * @tc.name    testBitVectorResize0017
+     * @tc.desc    Verify out-of-range index after shrink throws 10200001
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorResize0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let bv = new collections.BitVector(0);
+      for (let i = 0; i < 5; i++) {
+        bv.push(1);
+      }
+      bv.resize(2);
+      let pin = -1;
+      try {
+        let v = bv[3];
+        console.info(String(v));
+      } catch (error) {
+        pin = (error as BusinessError).code;
+      }
+      expect(pin).assertEqual(10200001);
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_BITVECTOR_RESIZE_ONE_0200
+     * @tc.name    testBitVectorResize0018
+     * @tc.desc    Verify has with old range after shrink throws 10200001
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorResize0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let bv = new collections.BitVector(0);
+      for (let i = 0; i < 5; i++) {
+        bv.push(1);
+      }
+      bv.resize(2);
+      let pin = -1;
+      try {
+        bv.has(1, 0, 5);
+      } catch (error) {
+        pin = (error as BusinessError).code;
+      }
+      expect(pin).assertEqual(10200001);
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_BITVECTOR_RESIZE_ONE_0300
+     * @tc.name    testBitVectorResize0019
+     * @tc.desc    Verify getIndexOf with old range after shrink throws 10200001
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorResize0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let bv = new collections.BitVector(0);
+      for (let i = 0; i < 5; i++) {
+        bv.push(1);
+      }
+      bv.resize(2);
+      let pin = -1;
+      try {
+        bv.getIndexOf(1, 0, 5);
+      } catch (error) {
+        pin = (error as BusinessError).code;
+      }
+      expect(pin).assertEqual(10200001);
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_BITVECTOR_RESIZE_ONE_0400
+     * @tc.name    testBitVectorResize0020
+     * @tc.desc    Verify getBitCountByRange with old range after shrink throws 10200001
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorResize0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let bv = new collections.BitVector(0);
+      for (let i = 0; i < 5; i++) {
+        bv.push(1);
+      }
+      bv.resize(2);
+      let pin = -1;
+      try {
+        bv.getBitCountByRange(1, 0, 5);
+      } catch (error) {
+        pin = (error as BusinessError).code;
+      }
+      expect(pin).assertEqual(10200001);
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_BITVECTOR_RESIZE_ONE_0500
+     * @tc.name    testBitVectorResize0021
+     * @tc.desc    Verify getBitsByRange out of range after shrink throws 10200001
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorResize0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let bv = new collections.BitVector(0);
+      for (let i = 0; i < 5; i++) {
+        bv.push(1);
+      }
+      bv.resize(2);
+      let pin = -1;
+      try {
+        bv.getBitsByRange(3, 5);
+      } catch (error) {
+        pin = (error as BusinessError).code;
+      }
+      expect(pin).assertEqual(10200001);
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_BITVECTOR_RESIZE_ONE_0600
+     * @tc.name    testBitVectorResize0022
+     * @tc.desc    Verify valid range operations after shrink work normally
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorResize0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let bv = new collections.BitVector(0);
+      for (let i = 0; i < 5; i++) {
+        bv.push(1);
+      }
+      bv.resize(2);
+      expect(bv.has(1, 0, 2)).assertTrue();
+      expect(bv[0]).assertEqual(1);
+      expect(bv[1]).assertEqual(1);
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_BITVECTOR_RESIZE_ONE_0700
+     * @tc.name    testBitVectorResize0023
+     * @tc.desc    Verify has in new zero area after expand returns true
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorResize0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let bv = new collections.BitVector(4);
+      bv[0] = 1;
+      bv.resize(10);
+      expect(bv.has(0, 4, 10)).assertTrue();
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_BITVECTOR_RESIZE_ONE_0800
+     * @tc.name    testBitVectorResize0024
+     * @tc.desc    Verify getBitCountByRange counts 6 zeros in new area
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorResize0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let bv = new collections.BitVector(4);
+      bv[0] = 1;
+      bv.resize(10);
+      expect(bv.getBitCountByRange(0, 4, 10)).assertEqual(6);
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_BITVECTOR_RESIZE_ONE_0900
+     * @tc.name    testBitVectorResize0025
+     * @tc.desc    Verify getIndexOf(0) hits new area start
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorResize0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let bv = new collections.BitVector(4);
+      bv[0] = 1;
+      bv.resize(10);
+      expect(bv.getIndexOf(0, 4, 10)).assertEqual(4);
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_BITVECTOR_RESIZE_ONE_1000
+     * @tc.name    testBitVectorResize0026
+     * @tc.desc    Verify getIndexOf(1) in new zero area returns -1
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorResize0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let bv = new collections.BitVector(4);
+      bv[0] = 1;
+      bv.resize(10);
+      expect(bv.getIndexOf(1, 4, 10)).assertEqual(-1);
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_BITVECTOR_RESIZE_ONE_1100
+     * @tc.name    testBitVectorResize0027
+     * @tc.desc    Verify all new bits are zero after expand
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorResize0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let bv = new collections.BitVector(4);
+      bv[0] = 1;
+      bv.resize(10);
+      let allZero = true;
+      for (let i = 4; i < 10; i++) {
+        if (bv[i] !== 0) {
+          allZero = false;
+        }
+      }
+      expect(allZero).assertTrue();
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_BITVECTOR_RESIZE_ONE_1200
+     * @tc.name    testBitVectorResize0028
+     * @tc.desc    Verify resize with NaN/Infinity throws 401
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorResize0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let bv = new collections.BitVector(4);
+      let pinA = -1;
+      try {
+        bv.resize(NaN);
+      } catch (error) {
+        pinA = (error as BusinessError).code;
+      }
+      expect(pinA).assertEqual(401);
+      let pinB = -1;
+      try {
+        bv.resize(Infinity);
+      } catch (error) {
+        pinB = (error as BusinessError).code;
+      }
+      expect(pinB).assertEqual(401);
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_BITVECTOR_RESIZE_ONE_1300
+     * @tc.name    testBitVectorResize0029
+     * @tc.desc    Verify resize with negative value throws 10200001
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorResize0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let bv = new collections.BitVector(4);
+      let pin = -1;
+      try {
+        bv.resize(-1);
+      } catch (error) {
+        pin = (error as BusinessError).code;
+      }
+      expect(pin).assertEqual(10200001);
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_BITVECTOR_RESIZE_ONE_1400
+     * @tc.name    testBitVectorResize0030
+     * @tc.desc    Verify empty BitVector resize(5) results in all zero
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorResize0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let bv = new collections.BitVector(0);
+      bv.resize(5);
+      expect(bv.length).assertEqual(5);
+      let allZero = true;
+      for (let i = 0; i < 5; i++) {
+        if (bv[i] !== 0) {
+          allZero = false;
+        }
+      }
+      expect(allZero).assertTrue();
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_BITVECTOR_RESIZE_ONE_1500
+     * @tc.name    testBitVectorResize0031
+     * @tc.desc    Verify empty BitVector resize(65) across word boundary all zero
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorResize0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let bv = new collections.BitVector(0);
+      bv.resize(65);
+      expect(bv.length).assertEqual(65);
+      expect(bv.getBitCountByRange(0, 0, 65)).assertEqual(65);
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_BITVECTOR_RESIZE_ONE_1600
+     * @tc.name    testBitVectorResize0032
+     * @tc.desc    Verify empty BitVector resize(128)/resize(129) all zero
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorResize0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let bv = new collections.BitVector(0);
+      bv.resize(128);
+      expect(bv.length).assertEqual(128);
+      bv.resize(129);
+      expect(bv.length).assertEqual(129);
+      expect(bv.getBitCountByRange(0, 0, 129)).assertEqual(129);
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_BITVECTOR_RESIZE_ONE_1700
+     * @tc.name    testBitVectorResize0033
+     * @tc.desc    Verify empty BitVector resize(1024)/resize(1025) all zero
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorResize0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let bv = new collections.BitVector(0);
+      bv.resize(1024);
+      expect(bv.length).assertEqual(1024);
+      bv.resize(1025);
+      expect(bv.length).assertEqual(1025);
+      expect(bv.getBitCountByRange(0, 0, 1025)).assertEqual(1025);
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_BITVECTOR_RESIZE_ONE_1800
+     * @tc.name    testBitVectorResize0034
+     * @tc.desc    Verify queries consistent after empty BitVector resize(10)
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorResize0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let bv = new collections.BitVector(0);
+      bv.resize(10);
+      expect(bv.has(0, 0, 10)).assertTrue();
+      expect(bv.getBitCountByRange(0, 0, 10)).assertEqual(10);
+      expect(bv.getIndexOf(0, 0, 10)).assertEqual(0);
+      let cnt = 0;
+      for (let v of bv.values()) {
+        cnt++;
+      }
+      expect(cnt).assertEqual(10);
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_BITVECTOR_RESIZE_ONE_1900
+     * @tc.name    testBitVectorResize0035
+     * @tc.desc    Verify writes work on expanded zero area after empty resize(8)
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorResize0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let bv = new collections.BitVector(0);
+      bv.resize(8);
+      bv.push(1);
+      bv.flipBitByIndex(0);
+      bv.setBitsByRange(1, 2, 4);
+      bv.setAllBits(1);
+      expect(bv.getBitCountByRange(1, 0, bv.length)).assertEqual(bv.length);
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_BITVECTOR_RESIZE_ONE_2000
+     * @tc.name    testBitVectorResize0036
+     * @tc.desc    Verify resize to zero then up yields correct length
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorResize0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let bv = new collections.BitVector(4);
+      bv.resize(0);
+      bv.resize(3);
+      expect(bv.length).assertEqual(3);
+      expect(bv.getBitCountByRange(0, 0, 3)).assertEqual(3);
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_BITVECTOR_RESIZE_ONE_2100
+     * @tc.name    testBitVectorResize0037
+     * @tc.desc    Verify pop all then resize up yields correct length
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorResize0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let bv = new collections.BitVector(0);
+      bv.push(1);
+      bv.push(1);
+      bv.push(1);
+      bv.pop();
+      bv.pop();
+      bv.pop();
+      bv.resize(2);
+      expect(bv.length).assertEqual(2);
+      expect(bv.getBitCountByRange(0, 0, 2)).assertEqual(2);
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_BITVECTOR_RESIZE_ONE_2200
+     * @tc.name    testBitVectorResize0038
+     * @tc.desc    Verify read/write after empty BitVector resize(4)
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('testBitVectorResize0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let bv = new collections.BitVector(0);
+      bv.resize(4);
+      expect(bv[0]).assertEqual(0);
+      bv[0] = 1;
+      expect(bv[0]).assertEqual(1);
+      expect(bv[1]).assertEqual(0);
+      done()
+    })
   })
 }

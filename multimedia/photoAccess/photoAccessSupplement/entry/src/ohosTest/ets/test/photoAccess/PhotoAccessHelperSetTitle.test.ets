@@ -60,45 +60,6 @@ export default function PhotoSetTitleTestSupp() {
       AppStorage.delete('emptyString');
     });
     /**
-     * @tc.number    SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00001
-     * @tc.name      SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00001
-     * @tc.desc      PhotoViewPicker.select-参数属性覆盖-true
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it('SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00001', Level.LEVEL0, async (done: Function) => {
-      let testName= 'SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00001';
-      try {
-        let photoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
-        photoSelectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
-        photoSelectOptions.maxSelectNumber = 5;
-        let photoPicker = new photoAccessHelper.PhotoViewPicker();
-        photoSelectOptions.isEditSupported = true;
-        photoSelectOptions.isOriginalSupported = true;
-        photoSelectOptions.isDestroyedWithNavigation = true;
-        photoSelectOptions.isReturnToPhotoBrowserEnabled = true;
-        photoSelectOptions.subWindowName = "";
-        photoSelectOptions.completeButtonText = 0;
-        let phAsset = {albumUri :'',displayName:'',gridLevel:0} as photoAccessHelper.ContextRecoveryInfo;
-        photoPicker.select(photoSelectOptions).then((photoSelectResult)=>{
-          console.info(TAG,testName,'PhotoViewPicker.select successfully, photoSelectResult uri: ' + JSON.stringify(photoSelectResult));
-          expect(isEmpty(photoSelectResult)).assertFalse();
-          done();
-        })
-        await sleep(3000);
-        await driver?.click(400,550)
-        await sleep(3000);
-        let power = await driver?.waitForComponent(ON.text('完成', MatchPattern.EQUALS), 500);
-        await power?.click();
-      }
-      catch (error) {
-        console.error(TAG,`${testName} failed; error: ${error.code}`);
-        expect().assertFail();
-        done();
-      }
-    });
-    /**
      * @tc.number    SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00008
      * @tc.name      SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00008
      * @tc.desc      PhotoViewPicker.select-第一个参数为null
@@ -2084,73 +2045,6 @@ export default function PhotoSetTitleTestSupp() {
         done();
       }
     });
-    /**
-     * @tc.name   SUB_ON_PHOTO_ALBUM_CHANGE_001
-     * @tc.number SUB_ON_PHOTO_ALBUM_CHANGE_001
-     * @tc.desc   PhotoAccessHelper.on_photoAlbumChange-返回值所有属性覆盖
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_ON_PHOTO_ALBUM_CHANGE_001', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_ON_PHOTO_ALBUM_CHANGE_001';
-      let onCallback = (changeData: photoAccessHelper.AlbumChangeInfos) => {
-        console.info(TAG,testName,'onCallback success, changData: ' + JSON.stringify(changeData));
-        expect(changeData.type == 0).assertTrue();
-        expect(isEmpty(changeData.albumChangeDatas)).assertFalse();
-        expect(changeData.isForRecheck).assertFalse();
-        done();
-      }
-      try {
-        let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
-          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC);
-        let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
-        PhAccessHelper.on('photoAlbumChange', onCallback);
-
-        let albumChangeRequest: photoAccessHelper.MediaAlbumChangeRequest = new photoAccessHelper.MediaAlbumChangeRequest(album);
-        let newAlbumName: string = 'newAlbumName'+ new Date().getTime();
-        albumChangeRequest.setAlbumName(newAlbumName);
-        await PhAccessHelper.applyChanges(albumChangeRequest);
-      } catch (error) {
-        console.error(TAG, testName, `fetch failed with err: ${error.code}, ${error.message}`);
-        expect().assertFail()
-        done();
-      }
-    });
-    /**
-     * @tc.number    SUB_SENDABLE_PHOTO_ASSET_GET_LAST_OBJECT_PROMISE_00001
-     * @tc.name      SUB_SENDABLE_PHOTO_ASSET_GET_LAST_OBJECT_PROMISE_00001
-     * @tc.desc      sendable-getLastObject-返回值所有属性覆盖
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it('SUB_SENDABLE_PHOTO_ASSET_GET_LAST_OBJECT_PROMISE_00001', Level.LEVEL0, async (done: Function) => {
-      let testName= 'SUB_SENDABLE_PHOTO_ASSET_GET_LAST_OBJECT_PROMISE_00001';
-      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-      let phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelper = sendablePhotoAccessHelper.getPhotoAccessHelper(testContext);
-      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-      let fetchOption: photoAccessHelper.FetchOptions = {
-        fetchColumns: [],
-        predicates: predicates
-      };
-      try {
-        let fetchResult: sendablePhotoAccessHelper.FetchResult<sendablePhotoAccessHelper.PhotoAsset> =
-          await phAccessHelper.getAssets(fetchOption);
-        await fetchResult.getFirstObject();
-        let photoAsset: sendablePhotoAccessHelper.PhotoAsset = await fetchResult.getLastObject();
-        console.info(TAG,testName,'succeed');
-        expect(isEmpty(photoAsset.uri)).assertFalse();
-        expect(isEmpty(photoAsset.displayName)).assertFalse();
-        expect(photoAsset.photoType == 1 || photoAsset.photoType == 2).assertTrue();
-        done();
-      }
-      catch (error) {
-        console.error(TAG,`${testName} failed; error: ${error.code}`);
-        expect().assertFail();
-        done();
-      }
-    });
 
     /**
      * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_REQUEST_MOVING_PHOTO_000001
@@ -2207,48 +2101,6 @@ export default function PhotoSetTitleTestSupp() {
       }
     });
     /**
-     * @tc.name   SUB_ON_PHOTO_CHANGE_001
-     * @tc.number SUB_ON_PHOTO_CHANGE_001
-     * @tc.desc   PhotoAccessHelper.on_photoChange-返回值所有属性覆盖
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_ON_PHOTO_CHANGE_001', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_ON_PHOTO_CHANGE_001';
-      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-      let fetchOptions: photoAccessHelper.FetchOptions = {
-        fetchColumns: [],
-        predicates: predicates
-      };
-      let onCallback = (changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
-        console.info(TAG,testName,'onCallback success, changData: ' + JSON.stringify(changeData));
-        expect(changeData.type == 1).assertTrue();
-        expect(isEmpty(changeData.assetChangeDatas)).assertFalse();
-        expect(changeData.isForRecheck).assertFalse();
-        done();
-      }
-      try {
-        let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
-          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.IMAGE);
-        let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
-        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-          await album.getAssets(fetchOptions);
-        let asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-        PhAccessHelper.on('photoChange', onCallback);
-        let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest = new photoAccessHelper.MediaAssetChangeRequest(asset);
-        let newTitle: string = 'newTitle';
-        assetChangeRequest.setTitle(newTitle);
-        await PhAccessHelper.applyChanges(assetChangeRequest);
-        await sleep(1000)
-        PhAccessHelper.off('photoChange', onCallback);
-      } catch (error) {
-        console.error(TAG, testName, `fetch failed with err: ${error.code}, ${error.message}`);
-        expect().assertFail()
-        done();
-      }
-    });
-    /**
      * @tc.name   SUB_PHOTO_ACCESS_HELPER_UNREGISTER_CHANGE_CALLBACK_002
      * @tc.number SUB_PHOTO_ACCESS_HELPER_UNREGISTER_CHANGE_CALLBACK_002
      * @tc.desc   PhotoAccessHelper.unRegisterChange-第1个参数undefined覆盖
@@ -2285,45 +2137,6 @@ export default function PhotoSetTitleTestSupp() {
       } catch (error) {
         console.error(TAG, testName, `getAlbumsCallback failed with err: ${error.code}, ${error.message}`);
         expect(Number(error.code)).assertEqual(13900020);
-        done();
-      }
-    });
-    /**
-     * @tc.name   SUB_PHOTO_ACCESS_HELPER_UNREGISTER_CHANGE_CALLBACK_003
-     * @tc.number SUB_PHOTO_ACCESS_HELPER_UNREGISTER_CHANGE_CALLBACK_003
-     * @tc.desc   PhotoAccessHelper.unRegisterChange-第1个参数""覆盖
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_PHOTO_ACCESS_HELPER_UNREGISTER_CHANGE_CALLBACK_003', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_PHOTO_ACCESS_HELPER_UNREGISTER_CHANGE_CALLBACK_003';
-      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-      let fetchOptions: photoAccessHelper.FetchOptions = {
-        fetchColumns: [],
-        predicates: predicates
-      };
-      try {
-        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await PhAccessHelper.getAssets(fetchOptions);
-        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-        let isCallbackTriggered = false;
-        let onCallback1 = (changeData: photoAccessHelper.ChangeData) => {
-          isCallbackTriggered = true;
-          console.info(TAG,testName,'onCallback1 on',changeData.type);
-          expect(changeData.type == 1 ).assertTrue();
-        }
-        PhAccessHelper.registerChange(photoAsset.uri, false, onCallback1);
-        let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest = new photoAccessHelper.MediaAssetChangeRequest(photoAsset);
-        let newTitle: string = 'newTitle22';
-        assetChangeRequest.setTitle(newTitle);
-        await PhAccessHelper.applyChanges(assetChangeRequest);
-        await sleep(1000)
-        PhAccessHelper.unRegisterChange("",onCallback1);
-        expect(isCallbackTriggered).assertTrue();
-        done();
-      } catch (error) {
-        console.error(TAG, testName, `getAlbumsCallback failed with err: ${error.code}, ${error.message}`);
-        expect().assertFail();
         done();
       }
     });

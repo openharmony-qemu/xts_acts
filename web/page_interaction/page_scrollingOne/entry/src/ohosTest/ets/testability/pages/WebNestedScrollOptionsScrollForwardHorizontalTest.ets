@@ -15,7 +15,7 @@
 
 import events_emitter from '@ohos.events.emitter';
 import webView from '@ohos.web.webview';
-import { Driver } from '@ohos.UiTest';
+import { Driver, ON, Point } from '@ohos.UiTest';
 import Utils from '../../test/Utils';
 
 const EVENT_ID_SET_SUITE_KEY = 184301;
@@ -64,8 +64,8 @@ struct WebNestedScrollOptionsScrollForwardHorizontalTest {
         .key('NestedScrollOptionsScrollForwardHorizontalTestButton')
         .onClick(async () => {
           console.info("key==>" + this.str)
-          await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
-          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+          await Utils.waitForExist(() => this.isReceive, this.str + ' isReceive', 1, 1000);
+          await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
           let webRect = Utils.getComponentRect('ForwardRowSize');
           let X = Utils.getRectHorizontalCenterX(webRect)
           let Y = Utils.getRectVerticalCenterY(webRect)
@@ -75,14 +75,22 @@ struct WebNestedScrollOptionsScrollForwardHorizontalTest {
                 this.scrollForwardEnums = NestedScrollMode.SELF_ONLY
                 this.scrollBackwardEnums = NestedScrollMode.SELF_ONLY
                 this.scroller.scrollEdge(Edge.Start)
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.controller.scrollTo(5000, 0)
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
                 this.controller.scrollBy(-40, 0)
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
-                await driver.swipe(X + 100, Y, X - 100, Y);
+                const displayId: number = await (await driver.findComponent(
+                  ON.id('NestedScrollOptionsScrollForwardHorizontalTestButton'))).getDisplayId();
+                const pointStart: Point = {
+                  x: X + 100, y: Y, displayId: displayId
+                }
+                const pointEnd: Point = {
+                  x: X - 100, y: Y, displayId: displayId
+                }
+                await driver.swipeBetween(pointStart, pointEnd)
                 Utils.emitEvent(this.parentScrollTime == 0 && this.selfScrollTime != 0, 184310)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -94,15 +102,23 @@ struct WebNestedScrollOptionsScrollForwardHorizontalTest {
                 this.scrollForwardEnums = NestedScrollMode.SELF_FIRST
                 this.scrollBackwardEnums = NestedScrollMode.SELF_ONLY
                 this.scroller.scrollEdge(Edge.Start)
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.controller.scrollTo(5000, 0)
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.controller.scrollBy(-40, 0)
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
-                await driver.swipe(X + 100, Y, X - 100, Y);
+                const displayId: number = await (await driver.findComponent(
+                  ON.id('NestedScrollOptionsScrollForwardHorizontalTestButton'))).getDisplayId();
+                const pointStart: Point = {
+                  x: X + 100, y: Y, displayId: displayId
+                }
+                const pointEnd: Point = {
+                  x: X - 100, y: Y, displayId: displayId
+                }
+                await driver.swipeBetween(pointStart, pointEnd)
                 Utils.emitEvent(this.parentScrollTime > this.selfScrollTime && this.selfScrollTime > 0, 184320)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -115,14 +131,22 @@ struct WebNestedScrollOptionsScrollForwardHorizontalTest {
                 this.scrollForwardEnums = NestedScrollMode.PARENT_FIRST
                 this.scrollBackwardEnums = NestedScrollMode.SELF_ONLY
                 this.scroller.scrollEdge(Edge.End)
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.controller.scrollTo(0, 0)
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
                 this.scroller.scrollBy(-40, 0)
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
-                await driver.swipe(X + 100, Y, X - 100, Y);
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
+                const displayId: number = await (await driver.findComponent(
+                  ON.id('NestedScrollOptionsScrollForwardHorizontalTestButton'))).getDisplayId();
+                const pointStart: Point = {
+                  x: X + 100, y: Y, displayId: displayId
+                }
+                const pointEnd: Point = {
+                  x: X - 100, y: Y, displayId: displayId
+                }
+                await driver.swipeBetween(pointStart, pointEnd)
                 Utils.emitEvent(this.parentScrollTime < this.selfScrollTime && this.parentScrollTime > 0, 184330)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -135,12 +159,20 @@ struct WebNestedScrollOptionsScrollForwardHorizontalTest {
                 this.scrollForwardEnums = NestedScrollMode.PARALLEL
                 this.scrollBackwardEnums = NestedScrollMode.SELF_ONLY
                 this.scroller.scrollEdge(Edge.Start)
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.controller.scrollTo(0, 0)
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
-                await driver.swipe(X + 100, Y, X - 100, Y);
+                const displayId: number = await (await driver.findComponent(
+                  ON.id('NestedScrollOptionsScrollForwardHorizontalTestButton'))).getDisplayId();
+                const pointStart: Point = {
+                  x: X + 100, y: Y, displayId: displayId
+                }
+                const pointEnd: Point = {
+                  x: X - 100, y: Y, displayId: displayId
+                }
+                await driver.swipeBetween(pointStart, pointEnd)
                 Utils.emitEvent(this.parentScrollTime > 0 && this.selfScrollTime > 0, 184340)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -153,15 +185,23 @@ struct WebNestedScrollOptionsScrollForwardHorizontalTest {
                 this.scrollForwardEnums = NestedScrollMode.SELF_ONLY
                 this.scrollBackwardEnums = NestedScrollMode.SELF_FIRST
                 this.scroller.scrollEdge(Edge.Start)
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.controller.scrollTo(5000, 0)
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
                 this.controller.scrollBy(-40, 0)
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
-                await driver.swipe(X + 100, Y, X - 100, Y);
+                const displayId: number = await (await driver.findComponent(
+                  ON.id('NestedScrollOptionsScrollForwardHorizontalTestButton'))).getDisplayId();
+                const pointStart: Point = {
+                  x: X + 100, y: Y, displayId: displayId
+                }
+                const pointEnd: Point = {
+                  x: X - 100, y: Y, displayId: displayId
+                }
+                await driver.swipeBetween(pointStart, pointEnd)
                 Utils.emitEvent(this.parentScrollTime == 0 && this.selfScrollTime != 0, 184350)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -174,16 +214,24 @@ struct WebNestedScrollOptionsScrollForwardHorizontalTest {
                 this.scrollForwardEnums = NestedScrollMode.SELF_FIRST
                 this.scrollBackwardEnums = NestedScrollMode.SELF_FIRST
                 this.scroller.scrollEdge(Edge.Start)
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.controller.scrollTo(5000, 0)
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.controller.scrollBy(-40, 0)
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
-                await driver.swipe(X + 100, Y, X - 100, Y);
+                const displayId: number = await (await driver.findComponent(
+                  ON.id('NestedScrollOptionsScrollForwardHorizontalTestButton'))).getDisplayId();
+                const pointStart: Point = {
+                  x: X + 100, y: Y, displayId: displayId
+                }
+                const pointEnd: Point = {
+                  x: X - 100, y: Y, displayId: displayId
+                }
+                await driver.swipeBetween(pointStart, pointEnd)
                 Utils.emitEvent(this.parentScrollTime > this.selfScrollTime && this.selfScrollTime > 0, 184360)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -196,16 +244,24 @@ struct WebNestedScrollOptionsScrollForwardHorizontalTest {
                 this.scrollForwardEnums = NestedScrollMode.PARENT_FIRST
                 this.scrollBackwardEnums = NestedScrollMode.SELF_FIRST
                 this.scroller.scrollEdge(Edge.End)
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.controller.scrollTo(0, 0)
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
                 this.scroller.scrollBy(-40, 0)
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
-                await driver.swipe(X + 100, Y, X - 100, Y);
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
+                const displayId: number = await (await driver.findComponent(
+                  ON.id('NestedScrollOptionsScrollForwardHorizontalTestButton'))).getDisplayId();
+                const pointStart: Point = {
+                  x: X + 100, y: Y, displayId: displayId
+                }
+                const pointEnd: Point = {
+                  x: X - 100, y: Y, displayId: displayId
+                }
+                await driver.swipeBetween(pointStart, pointEnd)
                 Utils.emitEvent(this.parentScrollTime < this.selfScrollTime && this.parentScrollTime > 0, 184370)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -218,15 +274,23 @@ struct WebNestedScrollOptionsScrollForwardHorizontalTest {
                 this.scrollForwardEnums = NestedScrollMode.PARALLEL
                 this.scrollBackwardEnums = NestedScrollMode.SELF_FIRST
                 this.scroller.scrollEdge(Edge.Start)
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.controller.scrollTo(0, 0)
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
-                await driver.swipe(X + 100, Y, X - 100, Y);
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                const displayId: number = await (await driver.findComponent(
+                  ON.id('NestedScrollOptionsScrollForwardHorizontalTestButton'))).getDisplayId();
+                const pointStart: Point = {
+                  x: X + 100, y: Y, displayId: displayId
+                }
+                const pointEnd: Point = {
+                  x: X - 100, y: Y, displayId: displayId
+                }
+                await driver.swipeBetween(pointStart, pointEnd)
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 Utils.emitEvent(this.parentScrollTime > 0 && this.selfScrollTime > 0, 184380)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -239,15 +303,23 @@ struct WebNestedScrollOptionsScrollForwardHorizontalTest {
                 this.scrollForwardEnums = NestedScrollMode.SELF_ONLY
                 this.scrollBackwardEnums = NestedScrollMode.PARENT_FIRST
                 this.scroller.scrollEdge(Edge.Start)
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.controller.scrollTo(5000, 0)
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
                 this.controller.scrollBy(-40, 0)
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
-                await driver.swipe(X + 100, Y, X - 100, Y);
+                const displayId: number = await (await driver.findComponent(
+                  ON.id('NestedScrollOptionsScrollForwardHorizontalTestButton'))).getDisplayId();
+                const pointStart: Point = {
+                  x: X + 100, y: Y, displayId: displayId
+                }
+                const pointEnd: Point = {
+                  x: X - 100, y: Y, displayId: displayId
+                }
+                await driver.swipeBetween(pointStart, pointEnd)
                 Utils.emitEvent(this.parentScrollTime == 0 && this.selfScrollTime != 0, 184390)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -260,16 +332,24 @@ struct WebNestedScrollOptionsScrollForwardHorizontalTest {
                 this.scrollForwardEnums = NestedScrollMode.SELF_FIRST
                 this.scrollBackwardEnums = NestedScrollMode.PARENT_FIRST
                 this.scroller.scrollEdge(Edge.Start)
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.controller.scrollTo(5000, 0)
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.controller.scrollBy(-40, 0)
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
-                await driver.swipe(X + 100, Y, X - 100, Y);
+                const displayId: number = await (await driver.findComponent(
+                  ON.id('NestedScrollOptionsScrollForwardHorizontalTestButton'))).getDisplayId();
+                const pointStart: Point = {
+                  x: X + 100, y: Y, displayId: displayId
+                }
+                const pointEnd: Point = {
+                  x: X - 100, y: Y, displayId: displayId
+                }
+                await driver.swipeBetween(pointStart, pointEnd)
                 Utils.emitEvent(this.parentScrollTime > this.selfScrollTime && this.selfScrollTime > 0, 184400)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -282,16 +362,24 @@ struct WebNestedScrollOptionsScrollForwardHorizontalTest {
                 this.scrollForwardEnums = NestedScrollMode.PARENT_FIRST
                 this.scrollBackwardEnums = NestedScrollMode.PARENT_FIRST
                 this.scroller.scrollEdge(Edge.End)
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.controller.scrollTo(0, 0)
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
                 this.scroller.scrollBy(-40, 0)
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
-                await driver.swipe(X + 100, Y, X - 100, Y);
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
+                const displayId: number = await (await driver.findComponent(
+                  ON.id('NestedScrollOptionsScrollForwardHorizontalTestButton'))).getDisplayId();
+                const pointStart: Point = {
+                  x: X + 100, y: Y, displayId: displayId
+                }
+                const pointEnd: Point = {
+                  x: X - 100, y: Y, displayId: displayId
+                }
+                await driver.swipeBetween(pointStart, pointEnd)
                 Utils.emitEvent(this.parentScrollTime < this.selfScrollTime && this.parentScrollTime > 0, 184410)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -304,13 +392,21 @@ struct WebNestedScrollOptionsScrollForwardHorizontalTest {
                 this.scrollForwardEnums = NestedScrollMode.PARALLEL
                 this.scrollBackwardEnums = NestedScrollMode.PARENT_FIRST
                 this.scroller.scrollEdge(Edge.Start)
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.controller.scrollTo(0, 0)
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
-                await driver.swipe(X + 100, Y, X - 100, Y);
+                const displayId: number = await (await driver.findComponent(
+                  ON.id('NestedScrollOptionsScrollForwardHorizontalTestButton'))).getDisplayId();
+                const pointStart: Point = {
+                  x: X + 100, y: Y, displayId: displayId
+                }
+                const pointEnd: Point = {
+                  x: X - 100, y: Y, displayId: displayId
+                }
+                await driver.swipeBetween(pointStart, pointEnd)
                 Utils.emitEvent(this.parentScrollTime > 0 && this.selfScrollTime > 0, 184420)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -324,15 +420,23 @@ struct WebNestedScrollOptionsScrollForwardHorizontalTest {
                 this.scrollForwardEnums = NestedScrollMode.SELF_ONLY
                 this.scrollBackwardEnums = NestedScrollMode.PARALLEL
                 this.scroller.scrollEdge(Edge.Start)
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.controller.scrollTo(5000, 0)
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
                 this.controller.scrollBy(-40, 0)
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
-                await driver.swipe(X + 100, Y, X - 100, Y);
+                const displayId: number = await (await driver.findComponent(
+                  ON.id('NestedScrollOptionsScrollForwardHorizontalTestButton'))).getDisplayId();
+                const pointStart: Point = {
+                  x: X + 100, y: Y, displayId: displayId
+                }
+                const pointEnd: Point = {
+                  x: X - 100, y: Y, displayId: displayId
+                }
+                await driver.swipeBetween(pointStart, pointEnd)
                 Utils.emitEvent(this.parentScrollTime == 0 && this.selfScrollTime != 0, 184430)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -345,16 +449,24 @@ struct WebNestedScrollOptionsScrollForwardHorizontalTest {
                 this.scrollForwardEnums = NestedScrollMode.SELF_FIRST
                 this.scrollBackwardEnums = NestedScrollMode.PARALLEL
                 this.scroller.scrollEdge(Edge.Start)
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.controller.scrollTo(5000, 0)
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.controller.scrollBy(-40, 0)
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
-                await driver.swipe(X + 100, Y, X - 100, Y);
+                const displayId: number = await (await driver.findComponent(
+                  ON.id('NestedScrollOptionsScrollForwardHorizontalTestButton'))).getDisplayId();
+                const pointStart: Point = {
+                  x: X + 100, y: Y, displayId: displayId
+                }
+                const pointEnd: Point = {
+                  x: X - 100, y: Y, displayId: displayId
+                }
+                await driver.swipeBetween(pointStart, pointEnd)
                 Utils.emitEvent(this.parentScrollTime > this.selfScrollTime && this.selfScrollTime > 0, 184440)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -367,16 +479,24 @@ struct WebNestedScrollOptionsScrollForwardHorizontalTest {
                 this.scrollForwardEnums = NestedScrollMode.PARENT_FIRST
                 this.scrollBackwardEnums = NestedScrollMode.PARALLEL
                 this.scroller.scrollEdge(Edge.End)
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.controller.scrollTo(0, 0)
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
                 this.scroller.scrollBy(-40, 0)
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
-                await driver.swipe(X + 100, Y, X - 100, Y);
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
+                const displayId: number = await (await driver.findComponent(
+                  ON.id('NestedScrollOptionsScrollForwardHorizontalTestButton'))).getDisplayId();
+                const pointStart: Point = {
+                  x: X + 100, y: Y, displayId: displayId
+                }
+                const pointEnd: Point = {
+                  x: X - 100, y: Y, displayId: displayId
+                }
+                await driver.swipeBetween(pointStart, pointEnd)
                 Utils.emitEvent(this.parentScrollTime < this.selfScrollTime && this.parentScrollTime > 0, 184450)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -389,13 +509,21 @@ struct WebNestedScrollOptionsScrollForwardHorizontalTest {
                 this.scrollForwardEnums = NestedScrollMode.PARALLEL
                 this.scrollBackwardEnums = NestedScrollMode.PARALLEL
                 this.scroller.scrollEdge(Edge.Start)
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.controller.scrollTo(0, 0)
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
-                await driver.swipe(X + 100, Y, X - 100, Y);
+                const displayId: number = await (await driver.findComponent(
+                  ON.id('NestedScrollOptionsScrollForwardHorizontalTestButton'))).getDisplayId();
+                const pointStart: Point = {
+                  x: X + 100, y: Y, displayId: displayId
+                }
+                const pointEnd: Point = {
+                  x: X - 100, y: Y, displayId: displayId
+                }
+                await driver.swipeBetween(pointStart, pointEnd)
                 Utils.emitEvent(this.parentScrollTime > 0 && this.selfScrollTime > 0, 184460)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);

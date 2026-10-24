@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import {  State, Observed } from '@ohos.arkui.stateManagement'
-import { Entry,Column,Text,Button,Divider,SafeAreaType,SafeAreaEdge,
+import { Entry,Column,Text,Button,Divider,SafeAreaType,SafeAreaEdge, ColumnOptions,
   Component,ButtonAttribute,AttributeModifier} from '@ohos.arkui.component'
 
 @Observed
@@ -33,20 +33,21 @@ struct CommonExample {
   @State modifier4 : LayoutWeightModifierCommon = new LayoutWeightModifierCommon()
 
   build() {
-    Column() {
-      Text('layoutWeight-动态切换').fontSize(20).margin(15).width('90%')
-      Button('Button')
-        .fontSize(50)
-        .attributeModifier(this.modifier4)
-        .id('Common_layoutWeightModifier')
-      
-      Divider()
+    Column({space:2} as ColumnOptions) {
+      Text('layoutWeight-动态切换').height(20)
       Button('isUndefined = ' + this.buttonText)
         .id('changeButton')
         .onClick(() => {
           this.modifier4.isUndefined == true ? this.modifier4.isUndefined = false : this.modifier4.isUndefined = true
           this.modifier4.isUndefined == true ? this.buttonText = 'true' : this.buttonText = 'false'
         })
-    }.width('100%')
+        .height(20)
+      Button('Button')
+        .fontSize(30)
+        .attributeModifier(this.modifier4)
+        .id('Common_layoutWeightModifier')
+
+      Divider()
+    }.width('100%').height('100%')
   }
 }

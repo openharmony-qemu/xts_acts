@@ -16,7 +16,7 @@
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
 import image from '@ohos.multimedia.image';
 import { describe, it, expect, beforeAll, Level } from '@ohos/hypium-dynamic'
-import { photoKeys, fetchOption, getFileAsset, getPermission, driveFn, sleep, pushCreateAsset, createMovingPhoto, albumSubtype, albumType } from '../common'
+import { photoKeys, fetchOption, getFileAsset, getPermission, driveFn, sleep, pushCreateAsset, createMovingPhoto, albumSubtype, albumType, checkResourceFile, createResource } from '../common'
 import common from '@ohos.app.ability.common';
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
 import fileio from "@ohos.fileio";
@@ -223,7 +223,9 @@ export default function getThumbnailTest() {
       await getPermission();
       await driveFn();
       await sleep(1000);
-      await pushCreateAsset(testContext, fileNameList);
+      const fileNames: Array<string> = [ "getThumb.jpg", "getThumb.mp4" ];
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNames);
     });
 
     //callback

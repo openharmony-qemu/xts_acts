@@ -24,7 +24,7 @@ let subscriberInfo_MainAbility: commonEvent.CommonEventSubscribeInfo = {
   events: ["ACTS_ConnectAbility_0100_CommonEvent", "ACTS_TerminateSelf_CommonEvent", "ACTS_TerminateSelf_CommonEvent9"]
 };
 const START_ABILITY_TIMEOUT = 5000;
-console.debug("====>in Ability.test====>");
+console.info("====>in Ability.test====>");
 
 function sleep(ms: number): Promise<void> {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -34,13 +34,13 @@ export default function abilityTest() {
   describe('ActsGetDisplayIdStartAbilityForResultTest', () => {
 
     afterEach(async (done: Function) => {
-      console.debug('= ACTS_afterEach ====<begin');
+      console.info('= ACTS_afterEach ====<begin');
       await sleep(2000);
-      console.debug('= ACTS_afterEach ====<end');
+      console.info('= ACTS_afterEach ====<end');
       done();
     })
 
-    console.debug("====>in ActsGetDisplayIdStartAbilityForResultTest====>");
+    console.info("====>in ActsGetDisplayIdStartAbilityForResultTest====>");
 
     /**
      * @tc.name   ACTS_startAbilityForResult_0800
@@ -55,17 +55,17 @@ export default function abilityTest() {
       let id: number = -1;
 
       commonEvent.createSubscriber(subscriberInfo_MainAbility).then(async (data) => {
-        console.debug("====>ACTS_startAbilityForResult_0800 Create Subscriber====>");
+        console.info("====>ACTS_startAbilityForResult_0800 Create Subscriber====>");
         let subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
-          console.debug("====>ACTS_startAbilityForResult_0800 Subscribe CallBack data:====>" + JSON.stringify(data));
+          console.info("====>ACTS_startAbilityForResult_0800 Subscribe CallBack data:====>" + JSON.stringify(data));
           if (data.event == "ACTS_TerminateSelf_CommonEvent") {
             console.info('====> ACTS_startAbilityForResult_0800 start success=====>');
             clearTimeout(id);
             console.info('====> ACTS_startAbilityForResult_0800=====>');
             expect(data.parameters!['displayId']).assertEqual(displayClassId);
             commonEvent.unsubscribe(subscriber, () => {
-              console.debug("====>UnSubscribe0800 CallBack====>");
+              console.info("====>UnSubscribe0800 CallBack====>");
             });
             done();
           }
@@ -77,7 +77,7 @@ export default function abilityTest() {
           }, {
           displayId: displayClassId
         }).then(() => {
-          console.debug("====>ACTS_startAbilityForResult_0800 end====>");
+          console.info("====>ACTS_startAbilityForResult_0800 end====>");
         })
       })
 
@@ -102,18 +102,18 @@ export default function abilityTest() {
       let id: number = -1;
 
       commonEvent.createSubscriber(subscriberInfo_MainAbility).then(async (data) => {
-        console.debug("====>ACTS_startAbilityForResult_0900 Create Subscriber====>");
+        console.info("====>ACTS_startAbilityForResult_0900 Create Subscriber====>");
         let subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
-          console.debug("====>ACTS_startAbilityForResult_0900 Subscribe CallBack data:====>" + JSON.stringify(data));
+          console.info("====>ACTS_startAbilityForResult_0900 Subscribe CallBack data:====>" + JSON.stringify(data));
 
           if (data.event == "ACTS_TerminateSelf_CommonEvent") {
             console.info('====> ACTS_startAbilityForResult_0900 start success=====>');
             clearTimeout(id);
             console.info('====> ACTS_startAbilityForResult_0900=====>');
-            expect(data.parameters!['displayId']).assertEqual(0);
+            expect(data.parameters!['displayId']).assertEqual(displayClassId);
             commonEvent.unsubscribe(subscriber, () => {
-              console.debug("====>ACTS_startAbilityForResult_0900 UnSubscribe CallBack====>");
+              console.info("====>ACTS_startAbilityForResult_0900 UnSubscribe CallBack====>");
             });
             done();
           }
@@ -125,10 +125,10 @@ export default function abilityTest() {
           }, {
           displayId: undefined
         }).then(() => {
-          console.debug("====>ACTS_startAbilityForResult_0900 end====>");
+          console.info("====>ACTS_startAbilityForResult_0900 end====>");
         }).catch((err: base.BusinessError) => {
           expect().assertFail();
-          console.debug("====>ACTS_startAbilityForResult_0900 err====>" + err);
+          console.info("====>ACTS_startAbilityForResult_0900 err====>" + err);
         })
       })
 
@@ -152,19 +152,19 @@ export default function abilityTest() {
       let id: number = -1;
 
       commonEvent.createSubscriber(subscriberInfo_MainAbility).then(async (data) => {
-        console.debug("====>ACTS_startAbilityForResult_1000 Create Subscriber====>");
+        console.info("====>ACTS_startAbilityForResult_1000 Create Subscriber====>");
         let subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
-          console.debug("====>ACTS_startAbilityForResult_1000 Subscribe CallBack data:====>" + JSON.stringify(data));
+          console.info("====>ACTS_startAbilityForResult_1000 Subscribe CallBack data:====>" + JSON.stringify(data));
 
           if (data.event == "ACTS_TerminateSelf_CommonEvent") {
             console.info('====> ACTS_startAbilityForResult_1000 start success=====>');
             clearTimeout(id);
             console.info('====> ACTS_startAbilityForResult_1000=====>');
-            expect(data.parameters!['displayId']).assertEqual(0);
+            expect(data.parameters!['displayId']).assertEqual(displayClassId);
 
             commonEvent.unsubscribe(subscriber, () => {
-              console.debug("====>ACTS_startAbilityForResult_1000 UnSubscribe CallBack====>");
+              console.info("====>ACTS_startAbilityForResult_1000 UnSubscribe CallBack====>");
             });
             done();
           }
@@ -178,10 +178,10 @@ export default function abilityTest() {
               "ohos.aafwk.param.displayId": 10,
             }
           }, {}).then(() => {
-          console.debug("====>ACTS_startAbilityForResult_1000 end====>");
+          console.info("====>ACTS_startAbilityForResult_1000 end====>");
         }).catch((err: base.BusinessError) => {
           expect().assertFail();
-          console.debug("====>ACTS_startAbilityForResult_1000 err====>" + err);
+          console.info("====>ACTS_startAbilityForResult_1000 err====>" + err);
         })
       })
 

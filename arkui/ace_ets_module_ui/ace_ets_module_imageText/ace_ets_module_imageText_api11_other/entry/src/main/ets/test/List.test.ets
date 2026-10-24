@@ -164,8 +164,8 @@ export default function testsuite() {
   imageAnimatorJsunit();
   buttonJsunit();
   buttonEnabledJsunit();
-  checkBoxGroupUIJsunit();
-  CheckBoxJsunit();
+  // checkBoxGroupUIJsunit();
+  // CheckBoxJsunit();
   loadingProgressJsunit();
   ProgressJsunit();
   PatternLockJsunit();

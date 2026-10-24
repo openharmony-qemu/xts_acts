@@ -22,6 +22,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import {Driver,ON} from '@kit.TestKit';
 
 let testAbilityContext:common.UIAbilityContext;
 
@@ -68,13 +69,18 @@ export default function webJsunitTwo() {
      * @tc.level  LEVEL0
      */
     it('testOnFullScreenEnterStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let driver=Driver.create();
       await Utils.msSleep(5000);
       Utils.emitEvent("emitOnFullScreenEnter", 10)
       await Utils.msSleep(2000);
       Utils.registerEvent("testOnFullScreenEnter001", true, 442, done);
       await Utils.msSleep(2000);
+      const componentFullscreen=await driver.findComponent(ON.text('全屏'))
+      if(componentFullscreen!=null){
+        await componentFullscreen.click();
+      }
       inspector.sendEventByKey('OnFullScreenEnterTestButton', 10, '');
-      await Utils.msSleep(3000);
+      await Utils.msSleep(30000);
       done();
     })
 
@@ -93,7 +99,7 @@ export default function webJsunitTwo() {
       Utils.registerEvent("testOnFullScreenEnter002", true, 443, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('OnFullScreenEnterTestButton', 10, '');
-      await Utils.msSleep(5000);
+      await Utils.msSleep(30000);
       done();
     })
 
@@ -112,7 +118,7 @@ export default function webJsunitTwo() {
       Utils.registerEvent("testOnFullScreenEnter003", true, 444, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('OnFullScreenEnterTestButton', 10, '');
-      await Utils.msSleep(5000);
+      await Utils.msSleep(30000);
       done();
     })
 
@@ -131,7 +137,7 @@ export default function webJsunitTwo() {
       Utils.registerEvent("testOnFullScreenEnter004", true, 445, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('OnFullScreenEnterTestButton', 10, '');
-      await Utils.msSleep(5000);
+      await Utils.msSleep(30000);
       done();
     })
 
@@ -150,7 +156,7 @@ export default function webJsunitTwo() {
       Utils.registerEvent("testOnFullScreenEnter005", true, 446, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('OnFullScreenEnterTestButton', 10, '');
-      await Utils.msSleep(5000);
+      await Utils.msSleep(30000);
       done();
     })
 

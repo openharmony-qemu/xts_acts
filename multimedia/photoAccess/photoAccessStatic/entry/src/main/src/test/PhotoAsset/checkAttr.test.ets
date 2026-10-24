@@ -17,7 +17,7 @@
 import { describe, it, expect, beforeAll, Hypium, TestType, Size, Level } from '../../../../hypium/index'
 import Context from "application.Context"
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
-import { fetchOption, getFileAsset, getAssetId, getPermission, driveFn, sleep } from '../Common.test.ets'
+import { fetchOption, getFileAsset, getAssetId, getPermission, driveFn, checkResourceFile, createResource } from '../Common.test.ets'
 import common from '@ohos.app.ability.common';
 
 async function checkAssetAttr(done: () => void, testNum: string, displayName: string,
@@ -44,12 +44,14 @@ async function checkAssetAttr(done: () => void, testNum: string, displayName: st
 
 export default function checkAttrTest() {
   describe('checkAttrTest', () => {
+    let testContext: Context = Hypium.get("context") as Context;
 
     beforeAll(async () => {
       console.info('beforeAll case');
       await getPermission();
       await driveFn();
-      await sleep(1000);
+      await checkResourceFile(testContext);
+      await createResource(testContext, ['01.jpg', '01.mp4']);
     });
 
     /**

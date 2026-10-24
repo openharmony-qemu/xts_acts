@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
-import { Component, Driver, MouseButton, ON, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, MouseButton, ON, PointerMatrix } from '@kit.TestKit';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import RectValue from '../../../ets/MainAbility/common/Rect';
@@ -22,6 +22,7 @@ import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function setKeyProcessingModeTest() {
   describe('setKeyProcessingModeTest', () => {
     beforeEach(async (): Promise<void> => {
@@ -71,11 +72,11 @@ it('setKeyProcessingModeTest_static_0100', Level.LEVEL0, async (done: () => void
       await CommonFunc.sleep(1000);
       await (btn?.click() as Promise<void>)
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
       let obj = inspector.getInspectorByKey('focus');
       await CommonFunc.sleep(1000);
@@ -103,11 +104,11 @@ it('setKeyProcessingModeTest_static_0200', Level.LEVEL0, async (done: () => void
       await CommonFunc.sleep(2000);
       await (btn?.click() as Promise<void>)
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
       let obj = inspector.getInspectorByKey('focus');
       await CommonFunc.sleep(2000);

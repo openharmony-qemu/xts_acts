@@ -25,6 +25,8 @@ group("startup_standard") {
       "deviceinfo_static:ActsStartupInitDeviceInfoStaticTest",
       "boardinfo:startup_boardinfo_js_test",
       "boardinfo_static:ActsStartupInitBoardInfoStaticTest",
+      "boardinfo_nopermission:startup_boardinfo_nopermission_test",
+      "boardinfo_nopermission_static:ActsStartupBoardInfoNoPermissionStaticTest",
     ]
   }
 }

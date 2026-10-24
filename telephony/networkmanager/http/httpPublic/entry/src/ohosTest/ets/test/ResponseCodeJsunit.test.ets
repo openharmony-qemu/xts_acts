@@ -767,7 +767,7 @@ export default function responseCodeJsunit() {
         let httpRequest: http.HttpRequest = http.createHttp();
         httpRequest.request("https://httpbin.moyufangge.com/status/412", (err: BusinessError<void>|null, data: http.HttpResponse|undefined) => {
           if (!err && data) {
-            expectTrue(data.responseCode == http.ResponseCode.PRECON_FAILED);
+            expectTrue(data.responseCode === http.ResponseCode.PRECON_FAILED);
             expectTrue(data.responseCode === 412);
             console.info(`${caseName} data.responseCode:, ${JSON.stringify(data.responseCode)}`);
             console.info(`${caseName}---End`);
