@@ -19,7 +19,10 @@ group("eap") {
     deps = [
       "eapErrorCodeTest:ActsNetworkMgrEapErrorCodeTest",
       "eapNoPTest:ActsNetworkMgrEapNopTest",
-      "eapTest:ActsNetworkMgrEapTest"
+      "eapTest:ActsNetworkMgrEapTest",
+      "ActsNetworkMgrEapErrorCodeTestStatic:ActsNetworkMgrEapErrorCodeStaticTest",
+      "ActsNetworkMgrEapNopTestStatic:ActsNetworkMgrEapNopStaticTest",
+      "ActsWifiEapTestStatic:ActsWifiEapStaticTest",
     ]
   }
 }
