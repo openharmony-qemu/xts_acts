@@ -644,6 +644,7 @@ export default function SecurityHuksApiTest() {
     it('SUB_Security_HUKS_Api_API22_Interface_0100', TestType.COMPATIBILITY | Size.SMALLTEST | Level.LEVEL0, async () => {
       if (canIUse("SystemCapability.Security.Huks.CryptoExtension")) {
         expect(huksExternalCrypto.HuksExternalCryptoTagType.HUKS_EXT_CRYPTO_TAG_TYPE_INT).assertEqual(268435456);
+        expect(huksExternalCrypto.HuksExternalCryptoTagType.HUKS_EXT_CRYPTO_TAG_TYPE_UINT).assertEqual(536870912);
         expect(huksExternalCrypto.HuksExternalCryptoTagType.HUKS_EXT_CRYPTO_TAG_TYPE_BYTES).assertEqual(1342177280);
       }
     })
