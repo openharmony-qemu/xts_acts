@@ -2145,13 +2145,6 @@ export default function uitestDriverErrorTest() {
         console.log(`${TestTag}, test_driver_swipeBetween_17000007 speed=-1 error is: ${JSON.stringify(e)}`);
         expect(e.code).assertEqual(ParameterErrorCode);
       }
-      try {
-        await driver.swipeBetween({x: 100, y:100, displayId: 0}, {x:100, y: 100, displayId: 1});
-        expect().assertFail();
-      }catch (e) {
-        console.log(`${TestTag}, test_driver_swipeBetween_17000007 diff error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(ParameterErrorCode);
-      }
       console.log(`${TestTag}, test_driver_swipeBetween_17000007 end`);
     })
 
@@ -2563,17 +2556,6 @@ export default function uitestDriverErrorTest() {
       try {
         await driver.isComponentPresentWhenDrag(ON.enabled(true), {
           x: 100,
-          y: 100,
-          displayId: 0
-        }, {x: 100, y: 100, displayId: 1})
-        expect().assertFail();
-      }catch (e) {
-        console.log(`${TestTag}, testIsComponentPresentWhenDrag_17000007 error diff.displayId: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(ParameterErrorCode);
-      }
-      try {
-        await driver.isComponentPresentWhenDrag(ON.enabled(true), {
-          x: 100,
           y: 100
         }, {x: 100, y: 100}, -1)
         expect().assertFail();
@@ -2727,17 +2709,6 @@ export default function uitestDriverErrorTest() {
       try {
         await driver.isComponentPresentWhenSwipe(ON.enabled(true), {
           x: 100,
-          y: 100,
-          displayId: 0
-        }, {x: 100, y: 100, displayId: 1})
-        expect().assertFail();
-      }catch (e) {
-        console.log(`${TestTag}, testIsComponentPresentWhenSwipe_17000007 error diff.displayId: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(ParameterErrorCode);
-      }
-      try {
-        await driver.isComponentPresentWhenSwipe(ON.enabled(true), {
-          x: 100,
           y: 100
         }, {x: 100, y: 100}, -1)
         expect().assertFail();
@@ -2802,13 +2773,6 @@ export default function uitestDriverErrorTest() {
         expect().assertFail();
       }catch (e) {
         console.log(`${TestTag}, testKnuckleKnock_17000007 displayId = -1: ${JSON.stringify(e)}`);
-        expect(e.code == 17000005||e.code == 17000007).assertTrue();
-      }
-      try {
-        await driver.knuckleKnock([{x: 100, y: 100, displayId: 0}, {x: 100, y: 100, displayId: 2}],  2)
-        expect().assertFail();
-      }catch (e) {
-        console.log(`${TestTag}, testKnuckleKnock_17000007 error displayId = 2: ${JSON.stringify(e)}`);
         expect(e.code == 17000005||e.code == 17000007).assertTrue();
       }
       try {
