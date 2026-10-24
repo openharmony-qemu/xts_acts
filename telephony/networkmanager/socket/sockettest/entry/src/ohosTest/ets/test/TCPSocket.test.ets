@@ -9336,70 +9336,6 @@ export default function TCPSocketTest() {
             }
         });
         /**
-         * @tc.name   testNetworkMgrGetListeningTcpInfo0100
-         * @tc.number SUB_NetworkMgr_Get_Listening_Tcp_Info_0100
-         * @tc.desc   Get current Tcp port states
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
-        it('testNetworkMgrGetListeningTcpInfo0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-            let caseName: string = 'testNetworkMgrGetListeningTcpInfo0100';
-            console.info(`${caseName}---Start`);
-
-            try {
-                connection.getSystemNetPortStates().then((data: connection.NetPortStatesInfo) => {
-                    if (data !== undefined && data.tcpPortStatesInfo !== undefined) {
-                        console.info(`${caseName} tcpPortStatesInfo length: ${data.tcpPortStatesInfo.length}`);
-
-                        for (let i = 0; i < data.tcpPortStatesInfo.length; i++) {
-                            const tcpItem = data.tcpPortStatesInfo[i];
-                            console.info(`${caseName} tcpItem[${i}]: ${JSON.stringify(tcpItem)}`);
-
-                            expectTrue(typeof tcpItem.tcpLocalIp === 'string');
-                            expectTrue(isValidIp(tcpItem.tcpLocalIp));
-
-                            expectTrue(typeof tcpItem.tcpLocalPort === 'number');
-                            expectTrue(tcpItem.tcpLocalPort >= 0 && tcpItem.tcpLocalPort <= 65535);
-
-                            expectTrue(typeof tcpItem.tcpRemoteIp === 'string');
-                            expectTrue(isValidIp(tcpItem.tcpRemoteIp));
-
-                            expectTrue(typeof tcpItem.tcpRemotePort === 'number');
-                            expectTrue(tcpItem.tcpRemotePort >= 0 && tcpItem.tcpRemotePort <= 65535);
-
-                            expectTrue(typeof tcpItem.tcpUid === 'number');
-                            expectTrue(tcpItem.tcpUid >= 0);
-
-                            expectTrue(typeof tcpItem.tcpPid === 'number');
-                            expectTrue(tcpItem.tcpPid >= 0);
-
-                            expectTrue(typeof tcpItem.tcpState === 'number');
-                            expectTrue(tcpItem.tcpState >= 0);
-                        }
-
-                        expect(data.tcpPortStatesInfo.length >= 0).assertTrue();
-                    } else {
-                        expect(data === undefined).assertTrue();
-                        console.info(`${caseName} error: data or its port states info is undefined`);
-                        expectTrue(false);
-                    }
-                    done();
-                }).catch((error: BusinessError) => {
-                    console.info(`${caseName} error fetching system net port states, errorCode:${error.code} ${JSON.stringify(error)}`);
-                    expectTrue(false);
-                    console.info(`${caseName}---End`);
-                    done();
-                });
-            } catch (err) {
-                console.info(`${caseName} catch err: ${JSON.stringify(err)}`);
-                expectTrue(err.code === 201);
-                console.info(`${caseName}---End`);
-                done();
-            }
-        });
-
-        /**
          * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions5300
          * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_5300
          * @tc.desc   Get TCPSocket status,after bind;  callback
@@ -9605,6 +9541,69 @@ export default function TCPSocketTest() {
                 console.info(`${caseName}_catch fail ${JSON.stringify(err)}`);
                 expectFail();
                 console.info(`${caseName} test end`);
+                done();
+            }
+        });
+        /**
+         * @tc.name   testNetworkMgrGetListeningTcpInfo0100
+         * @tc.number SUB_NetworkMgr_Get_Listening_Tcp_Info_0100
+         * @tc.desc   Get current Tcp port states
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('testNetworkMgrGetListeningTcpInfo0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+            let caseName: string = 'testNetworkMgrGetListeningTcpInfo0100';
+            console.info(`${caseName}---Start`);
+
+            try {
+                connection.getSystemNetPortStates().then((data: connection.NetPortStatesInfo) => {
+                    if (data !== undefined && data.tcpPortStatesInfo !== undefined) {
+                        console.info(`${caseName} tcpPortStatesInfo length: ${data.tcpPortStatesInfo.length}`);
+
+                        for (let i = 0; i < data.tcpPortStatesInfo.length; i++) {
+                            const tcpItem = data.tcpPortStatesInfo[i];
+                            console.info(`${caseName} tcpItem[${i}]: ${JSON.stringify(tcpItem)}`);
+
+                            expectTrue(typeof tcpItem.tcpLocalIp === 'string');
+                            expectTrue(isValidIp(tcpItem.tcpLocalIp));
+
+                            expectTrue(typeof tcpItem.tcpLocalPort === 'number');
+                            expectTrue(tcpItem.tcpLocalPort >= 0 && tcpItem.tcpLocalPort <= 65535);
+
+                            expectTrue(typeof tcpItem.tcpRemoteIp === 'string');
+                            expectTrue(isValidIp(tcpItem.tcpRemoteIp));
+
+                            expectTrue(typeof tcpItem.tcpRemotePort === 'number');
+                            expectTrue(tcpItem.tcpRemotePort >= 0 && tcpItem.tcpRemotePort <= 65535);
+
+                            expectTrue(typeof tcpItem.tcpUid === 'number');
+                            expectTrue(tcpItem.tcpUid >= 0);
+
+                            expectTrue(typeof tcpItem.tcpPid === 'number');
+                            expectTrue(tcpItem.tcpPid >= 0);
+
+                            expectTrue(typeof tcpItem.tcpState === 'number');
+                            expectTrue(tcpItem.tcpState >= 0);
+                        }
+
+                        expect(data.tcpPortStatesInfo.length >= 0).assertTrue();
+                    } else {
+                        expect(data === undefined).assertTrue();
+                        console.info(`${caseName} error: data or its port states info is undefined`);
+                        expectTrue(false);
+                    }
+                    done();
+                }).catch((error: BusinessError) => {
+                    console.info(`${caseName} error fetching system net port states, errorCode:${error.code} ${JSON.stringify(error)}`);
+                    expectTrue(false);
+                    console.info(`${caseName}---End`);
+                    done();
+                });
+            } catch (err) {
+                console.info(`${caseName} catch err: ${JSON.stringify(err)}`);
+                expectTrue(err.code === 201);
+                console.info(`${caseName}---End`);
                 done();
             }
         });

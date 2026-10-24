@@ -947,6 +947,30 @@ export default function ActsNetConnectionTest() {
     })
 
     /**
+     * @tc.name   testNetworkManagerNetStackCertificatePinningKindNoP0100
+     * @tc.number SUB_NetworkManager_NetStack_Certificate_PinningKind_NoP_0100
+     * @tc.desc   Test PinningKind code interface returns NETCONN_PERMISSION_DENIED error code
+     *            when the application does not have the permission required to call the API.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkManagerNetStackCertificatePinningKindNoP0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkManagerNetStackCertificatePinningKindNoP0100';
+      try {
+        console.info(`${caseName} ---start`);
+        let result: number = NetConnectionTest.NetStack_Certificate_PinningKind("https://www.baidu.com");
+        console.info(`${caseName} result is: ` + JSON.stringify(result));
+        expect(result).assertEqual(NETCONN_PERMISSION_DENIED);
+        done();
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(true);
+        done();
+      }
+    })
+
+    /**
      * @tc.name   testNetworkManagerNetStackHashAlgorithm0100
      * @tc.number SUB_NetworkManager_NetStack_Hash_Algorithm_0100
      * @tc.desc   Test Hash Algorithm interface.

@@ -18,7 +18,8 @@ group("eap") {
   if (is_standard_system) {
     deps = [
       "eapErrorCodeTest:ActsNetworkMgrEapErrorCodeTest",
-      "eapNoPTest:ActsNetworkMgrEapNopTest"
+      "eapNoPTest:ActsNetworkMgrEapNopTest",
+      "eapTest:ActsNetworkMgrEapTest"
     ]
   }
 }
