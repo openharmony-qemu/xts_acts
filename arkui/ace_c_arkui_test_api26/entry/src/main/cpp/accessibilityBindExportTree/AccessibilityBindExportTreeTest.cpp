@@ -24,7 +24,7 @@ namespace ArkUICapiTest {
 
 static napi_value BindExportTreeTest001(napi_env env, napi_callback_info info)
 {
-    NAPI_START(owner, ARKUI_NODE_COLUMN);
+    NAPI_START(owner, ARKUI_NODE_CUSTOM);
     auto exportedRoot = nodeAPI->createNode(ARKUI_NODE_COLUMN);
     ASSERT_EQ(exportedRoot != nullptr, true);
     auto ret = OH_ArkUI_Accessibility_BindExportTree(owner, PARAM_1, exportedRoot);
@@ -34,7 +34,7 @@ static napi_value BindExportTreeTest001(napi_env env, napi_callback_info info)
 
 static napi_value BindExportTreeTest002(napi_env env, napi_callback_info info)
 {
-    NAPI_START(owner, ARKUI_NODE_COLUMN);
+    NAPI_START(owner, ARKUI_NODE_CUSTOM);
     auto exportedRoot = nodeAPI->createNode(ARKUI_NODE_COLUMN);
     ASSERT_EQ(exportedRoot != nullptr, true);
     auto ret1 = OH_ArkUI_Accessibility_BindExportTree(owner, PARAM_1, exportedRoot);
@@ -46,8 +46,8 @@ static napi_value BindExportTreeTest002(napi_env env, napi_callback_info info)
 
 static napi_value BindExportTreeTest003(napi_env env, napi_callback_info info)
 {
-    NAPI_START(owner1, ARKUI_NODE_COLUMN);
-    auto owner2 = nodeAPI->createNode(ARKUI_NODE_COLUMN);
+    NAPI_START(owner1, ARKUI_NODE_CUSTOM);
+    auto owner2 = nodeAPI->createNode(ARKUI_NODE_CUSTOM);
     ASSERT_EQ(owner2 != nullptr, true);
     auto exportedRoot = nodeAPI->createNode(ARKUI_NODE_COLUMN);
     ASSERT_EQ(exportedRoot != nullptr, true);
@@ -60,7 +60,7 @@ static napi_value BindExportTreeTest003(napi_env env, napi_callback_info info)
 
 static napi_value BindExportTreeTest004(napi_env env, napi_callback_info info)
 {
-    NAPI_START(owner, ARKUI_NODE_COLUMN);
+    NAPI_START(owner, ARKUI_NODE_CUSTOM);
     auto exportedRoot1 = nodeAPI->createNode(ARKUI_NODE_COLUMN);
     ASSERT_EQ(exportedRoot1 != nullptr, true);
     auto exportedRoot2 = nodeAPI->createNode(ARKUI_NODE_COLUMN);
@@ -74,7 +74,7 @@ static napi_value BindExportTreeTest004(napi_env env, napi_callback_info info)
 
 static napi_value BindExportTreeTest005(napi_env env, napi_callback_info info)
 {
-    NAPI_START(owner, ARKUI_NODE_COLUMN);
+    NAPI_START(owner, ARKUI_NODE_CUSTOM);
     auto exportedRoot = nodeAPI->createNode(ARKUI_NODE_COLUMN);
     ASSERT_EQ(exportedRoot != nullptr, true);
     auto ret = OH_ArkUI_Accessibility_BindExportTree(owner, PARAM_0, exportedRoot);
@@ -84,7 +84,7 @@ static napi_value BindExportTreeTest005(napi_env env, napi_callback_info info)
 
 static napi_value BindExportTreeTest006(napi_env env, napi_callback_info info)
 {
-    NAPI_START(owner, ARKUI_NODE_COLUMN);
+    NAPI_START(owner, ARKUI_NODE_CUSTOM);
     auto exportedRoot = nodeAPI->createNode(ARKUI_NODE_COLUMN);
     ASSERT_EQ(exportedRoot != nullptr, true);
     auto ret = OH_ArkUI_Accessibility_BindExportTree(nullptr, PARAM_1, exportedRoot);
@@ -94,7 +94,7 @@ static napi_value BindExportTreeTest006(napi_env env, napi_callback_info info)
 
 static napi_value BindExportTreeTest007(napi_env env, napi_callback_info info)
 {
-    NAPI_START(owner, ARKUI_NODE_COLUMN);
+    NAPI_START(owner, ARKUI_NODE_CUSTOM);
     auto ret = OH_ArkUI_Accessibility_BindExportTree(owner, PARAM_1, nullptr);
     ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
     NAPI_END;
@@ -102,7 +102,7 @@ static napi_value BindExportTreeTest007(napi_env env, napi_callback_info info)
 
 static napi_value BindExportTreeTest008(napi_env env, napi_callback_info info)
 {
-    NAPI_START(owner, ARKUI_NODE_COLUMN);
+    NAPI_START(owner, ARKUI_NODE_CUSTOM);
     auto exportedRoot = nodeAPI->createNode(ARKUI_NODE_COLUMN);
     ASSERT_EQ(exportedRoot != nullptr, true);
     auto ret = OH_ArkUI_Accessibility_BindExportTree(owner, INT64_MAX, exportedRoot);
@@ -112,7 +112,7 @@ static napi_value BindExportTreeTest008(napi_env env, napi_callback_info info)
 
 static napi_value BindExportTreeTest009(napi_env env, napi_callback_info info)
 {
-    NAPI_START(owner, ARKUI_NODE_COLUMN);
+    NAPI_START(owner, ARKUI_NODE_CUSTOM);
     auto exportedRoot = nodeAPI->createNode(ARKUI_NODE_COLUMN);
     ASSERT_EQ(exportedRoot != nullptr, true);
     auto ret = OH_ArkUI_Accessibility_BindExportTree(owner, PARAM_NEGATIVE_1, exportedRoot);
@@ -122,7 +122,7 @@ static napi_value BindExportTreeTest009(napi_env env, napi_callback_info info)
 
 static napi_value BindExportTreeTest010(napi_env env, napi_callback_info info)
 {
-    NAPI_START(owner, ARKUI_NODE_COLUMN);
+    NAPI_START(owner, ARKUI_NODE_CUSTOM);
     auto exportedRoot = nodeAPI->createNode(ARKUI_NODE_COLUMN);
     ASSERT_EQ(exportedRoot != nullptr, true);
     auto ret = OH_ArkUI_Accessibility_BindExportTree(nullptr, PARAM_1, nullptr);
@@ -132,7 +132,7 @@ static napi_value BindExportTreeTest010(napi_env env, napi_callback_info info)
 
 static napi_value UnbindExportTreeTest001(napi_env env, napi_callback_info info)
 {
-    NAPI_START(owner, ARKUI_NODE_COLUMN);
+    NAPI_START(owner, ARKUI_NODE_CUSTOM);
     auto exportedRoot = nodeAPI->createNode(ARKUI_NODE_COLUMN);
     ASSERT_EQ(exportedRoot != nullptr, true);
     auto ret1 = OH_ArkUI_Accessibility_BindExportTree(owner, PARAM_1, exportedRoot);
@@ -144,7 +144,7 @@ static napi_value UnbindExportTreeTest001(napi_env env, napi_callback_info info)
 
 static napi_value UnbindExportTreeTest002(napi_env env, napi_callback_info info)
 {
-    NAPI_START(owner, ARKUI_NODE_COLUMN);
+    NAPI_START(owner, ARKUI_NODE_CUSTOM);
     auto ret = OH_ArkUI_Accessibility_UnbindExportTree(owner, PARAM_1);
     ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
     NAPI_END;
@@ -152,7 +152,7 @@ static napi_value UnbindExportTreeTest002(napi_env env, napi_callback_info info)
 
 static napi_value UnbindExportTreeTest003(napi_env env, napi_callback_info info)
 {
-    NAPI_START(owner, ARKUI_NODE_COLUMN);
+    NAPI_START(owner, ARKUI_NODE_CUSTOM);
     auto exportedRoot = nodeAPI->createNode(ARKUI_NODE_COLUMN);
     ASSERT_EQ(exportedRoot != nullptr, true);
     auto ret1 = OH_ArkUI_Accessibility_BindExportTree(owner, PARAM_1, exportedRoot);
@@ -166,7 +166,7 @@ static napi_value UnbindExportTreeTest003(napi_env env, napi_callback_info info)
 
 static napi_value UnbindExportTreeTest004(napi_env env, napi_callback_info info)
 {
-    NAPI_START(owner, ARKUI_NODE_COLUMN);
+    NAPI_START(owner, ARKUI_NODE_CUSTOM);
     auto exportedRoot = nodeAPI->createNode(ARKUI_NODE_COLUMN);
     ASSERT_EQ(exportedRoot != nullptr, true);
     auto ret1 = OH_ArkUI_Accessibility_BindExportTree(owner, PARAM_1, exportedRoot);
@@ -187,7 +187,7 @@ static napi_value UnbindExportTreeTest005(napi_env env, napi_callback_info info)
 
 static napi_value UnbindExportTreeTest006(napi_env env, napi_callback_info info)
 {
-    NAPI_START(owner, ARKUI_NODE_COLUMN);
+    NAPI_START(owner, ARKUI_NODE_CUSTOM);
     auto exportedRoot1 = nodeAPI->createNode(ARKUI_NODE_COLUMN);
     ASSERT_EQ(exportedRoot1 != nullptr, true);
     auto exportedRoot2 = nodeAPI->createNode(ARKUI_NODE_COLUMN);
@@ -205,7 +205,7 @@ static napi_value UnbindExportTreeTest006(napi_env env, napi_callback_info info)
 
 static napi_value UnbindExportTreeTest007(napi_env env, napi_callback_info info)
 {
-    NAPI_START(owner, ARKUI_NODE_COLUMN);
+    NAPI_START(owner, ARKUI_NODE_CUSTOM);
     auto exportedRoot = nodeAPI->createNode(ARKUI_NODE_COLUMN);
     ASSERT_EQ(exportedRoot != nullptr, true);
     auto ret1 = OH_ArkUI_Accessibility_BindExportTree(owner, PARAM_0, exportedRoot);
@@ -217,7 +217,7 @@ static napi_value UnbindExportTreeTest007(napi_env env, napi_callback_info info)
 
 static napi_value UnbindExportTreeTest008(napi_env env, napi_callback_info info)
 {
-    NAPI_START(owner, ARKUI_NODE_COLUMN);
+    NAPI_START(owner, ARKUI_NODE_CUSTOM);
     auto ret = OH_ArkUI_Accessibility_UnbindExportTree(owner, INT64_MAX);
     ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
     NAPI_END;
@@ -225,7 +225,7 @@ static napi_value UnbindExportTreeTest008(napi_env env, napi_callback_info info)
 
 static napi_value UnbindExportTreeTest009(napi_env env, napi_callback_info info)
 {
-    NAPI_START(owner, ARKUI_NODE_COLUMN);
+    NAPI_START(owner, ARKUI_NODE_CUSTOM);
     auto ret = OH_ArkUI_Accessibility_UnbindExportTree(owner, PARAM_NEGATIVE_1);
     ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
     NAPI_END;
@@ -233,7 +233,7 @@ static napi_value UnbindExportTreeTest009(napi_env env, napi_callback_info info)
 
 static napi_value UnbindExportTreeTest010(napi_env env, napi_callback_info info)
 {
-    NAPI_START(owner, ARKUI_NODE_COLUMN);
+    NAPI_START(owner, ARKUI_NODE_CUSTOM);
     auto exportedRoot = nodeAPI->createNode(ARKUI_NODE_COLUMN);
     ASSERT_EQ(exportedRoot != nullptr, true);
     auto ret1 = OH_ArkUI_Accessibility_BindExportTree(owner, PARAM_1, exportedRoot);

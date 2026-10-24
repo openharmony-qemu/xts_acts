@@ -35,7 +35,7 @@ static void TestInjectionCallback(OH_ArkUI_NativeModule_UIEventInjection_ResultC
 
 static OH_ArkUI_NativeModule_UIJsonWrapper *CreateValidCommand()
 {
-    const char *jsonStr = "{\"schemaVersion\": 1, \"cmd\": {\"type\": \"click\", \"action_info\": {}}}";
+    const char *jsonStr = "{\"schemaVersion\": 1, \"cmd\": {\"type\": \"setText\", \"action_info\": {\"value\": \"hello\"}}}";
     size_t jsonSize = std::strlen(jsonStr);
     OH_ArkUI_NativeModule_UIJsonWrapper *wrapper = nullptr;
     OH_ArkUI_NativeModule_UIJsonWrapperCreate(jsonStr, jsonSize, &wrapper);
@@ -72,11 +72,11 @@ static napi_value UIEventInjectionResultCodeTest004(napi_env env, napi_callback_
 
 static napi_value UIEventInjectCompositeCommandTest001(napi_env env, napi_callback_info info)
 {
-    NAPI_START(column, ARKUI_NODE_COLUMN);
-    auto context = OH_ArkUI_GetContextByNode(column);
+    NAPI_START(textInput, ARKUI_NODE_TEXT_INPUT);
+    auto context = OH_ArkUI_GetContextByNode(textInput);
     ASSERT_EQ(context != nullptr, true);
     int32_t uniqueId = 0;
-    auto getIdRet = OH_ArkUI_NodeUtils_GetNodeUniqueId(column, &uniqueId);
+    auto getIdRet = OH_ArkUI_NodeUtils_GetNodeUniqueId(textInput, &uniqueId);
     ASSERT_EQ(getIdRet, ARKUI_ERROR_CODE_NO_ERROR);
     auto command = CreateValidCommand();
     ASSERT_EQ(command != nullptr, true);
@@ -130,8 +130,8 @@ static napi_value UIEventInjectCompositeCommandTest004(napi_env env, napi_callba
 
 static napi_value UIEventInjectCompositeCommandTest005(napi_env env, napi_callback_info info)
 {
-    NAPI_START(column, ARKUI_NODE_COLUMN);
-    auto context = OH_ArkUI_GetContextByNode(column);
+    NAPI_START(textInput, ARKUI_NODE_TEXT_INPUT);
+    auto context = OH_ArkUI_GetContextByNode(textInput);
     ASSERT_EQ(context != nullptr, true);
     const uint32_t invalidUniqueId = 0xFFFFFFFF;
     auto command = CreateValidCommand();
@@ -145,11 +145,11 @@ static napi_value UIEventInjectCompositeCommandTest005(napi_env env, napi_callba
 
 static napi_value UIEventInjectCompositeCommandTest006(napi_env env, napi_callback_info info)
 {
-    NAPI_START(column, ARKUI_NODE_COLUMN);
-    auto context = OH_ArkUI_GetContextByNode(column);
+    NAPI_START(textInput, ARKUI_NODE_TEXT_INPUT);
+    auto context = OH_ArkUI_GetContextByNode(textInput);
     ASSERT_EQ(context != nullptr, true);
     int32_t uniqueId = 0;
-    auto getIdRet = OH_ArkUI_NodeUtils_GetNodeUniqueId(column, &uniqueId);
+    auto getIdRet = OH_ArkUI_NodeUtils_GetNodeUniqueId(textInput, &uniqueId);
     ASSERT_EQ(getIdRet, ARKUI_ERROR_CODE_NO_ERROR);
     auto command = CreateValidCommand();
     ASSERT_EQ(command != nullptr, true);
@@ -220,11 +220,11 @@ static napi_value UIEventInjectCompositeCommandTest009(napi_env env, napi_callba
 
 static napi_value UIEventInjectCompositeCommandTest010(napi_env env, napi_callback_info info)
 {
-    NAPI_START(column, ARKUI_NODE_COLUMN);
-    auto context = OH_ArkUI_GetContextByNode(column);
+    NAPI_START(textInput, ARKUI_NODE_TEXT_INPUT);
+    auto context = OH_ArkUI_GetContextByNode(textInput);
     ASSERT_EQ(context != nullptr, true);
     int32_t uniqueId = 0;
-    auto getIdRet = OH_ArkUI_NodeUtils_GetNodeUniqueId(column, &uniqueId);
+    auto getIdRet = OH_ArkUI_NodeUtils_GetNodeUniqueId(textInput, &uniqueId);
     ASSERT_EQ(getIdRet, ARKUI_ERROR_CODE_NO_ERROR);
     auto command = CreateValidCommand();
     ASSERT_EQ(command != nullptr, true);
@@ -243,11 +243,11 @@ static napi_value UIEventInjectCompositeCommandTest010(napi_env env, napi_callba
 
 static napi_value UIEventInjectCompositeCommandTest011(napi_env env, napi_callback_info info)
 {
-    NAPI_START(column, ARKUI_NODE_COLUMN);
-    auto context = OH_ArkUI_GetContextByNode(column);
+    NAPI_START(textInput, ARKUI_NODE_TEXT_INPUT);
+    auto context = OH_ArkUI_GetContextByNode(textInput);
     ASSERT_EQ(context != nullptr, true);
     int32_t uniqueId = 0;
-    ASSERT_EQ(OH_ArkUI_NodeUtils_GetNodeUniqueId(column, &uniqueId), ARKUI_ERROR_CODE_NO_ERROR);
+    ASSERT_EQ(OH_ArkUI_NodeUtils_GetNodeUniqueId(textInput, &uniqueId), ARKUI_ERROR_CODE_NO_ERROR);
     auto command = CreateValidCommand();
     ASSERT_EQ(command != nullptr, true);
     auto ret1 = OH_ArkUI_NativeModule_UIEventInjectCompositeCommand(
