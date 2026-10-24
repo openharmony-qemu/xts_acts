@@ -259,5 +259,71 @@ export default function arrayListStringTest() {
       expect(list.length).assertEqual(4);
       expect(list[3]).assertEqual('date');
     });
+ 
+    /**
+     * @tc.name   testArrayListStringTest0600
+     * @tc.number SUB_ARKTS_ARRAY_LIST_STRING_0600
+     * @tc.desc   Verify ArrayList string boundary access, out-of-range insert, removeByIndex and subArrayList throwing, null and undefined lookup, clear and empty iterator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayListStringTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const list: ArrayList<StringDynamicItem> = new ArrayList<StringDynamicItem>();
+      list.add('x');
+      list.add('y');
+      let accessThrew: boolean = false;
+      try {
+        const beyond: StringDynamicItem = list[2];
+        expect(beyond).assertUndefined();
+      } catch (e) {
+        accessThrew = true;
+        expect(((e as Error).name).length > 0).assertTrue();
+      }
+      expect(accessThrew || list.length === 2).assertTrue();
+      expect(list.length).assertEqual(2);
+ 
+      let insertThrew: boolean = false;
+      try {
+        list.insert('out', 99);
+      } catch (e) {
+        insertThrew = true;
+        expect(((e as Error).name).length > 0).assertTrue();
+      }
+      expect(insertThrew).assertTrue();
+      expect(list.has('out')).assertFalse();
+      expect(list.length).assertEqual(2);
+ 
+      let removeThrew: boolean = false;
+      try {
+        list.removeByIndex(2);
+      } catch (e) {
+        removeThrew = true;
+        expect(((e as Error).name).length > 0).assertTrue();
+      }
+      expect(removeThrew).assertTrue();
+      expect(list.length).assertEqual(2);
+ 
+      let subThrew: boolean = false;
+      try {
+        list.subArrayList(1, 0);
+      } catch (e) {
+        subThrew = true;
+      }
+      expect(subThrew).assertTrue();
+ 
+      const nullList: ArrayList<StringDynamicItem> = new ArrayList<StringDynamicItem>();
+      nullList.add(null);
+      nullList.add(undefined);
+      expect(nullList.has(null)).assertTrue();
+      expect(nullList.has(undefined)).assertTrue();
+      expect(nullList.getIndexOf(null)).assertEqual(0);
+ 
+      list.clear();
+      expect(list.length).assertEqual(0);
+      expect(list.isEmpty()).assertTrue();
+      const emptyIter = list[Symbol.iterator]();
+      expect(emptyIter.next().done).assertTrue();
+    });
   });
 }
