@@ -298,7 +298,7 @@ static ArkUI_AnimatorHandle SetAnimatorReverse(ArkUI_NodeHandle column)
     auto context = OH_ArkUI_GetContextByNode(column);
     ArkUI_NativeAnimateAPI_1* animateAPI = nullptr;
     OH_ArkUI_GetModuleInterface(ARKUI_NATIVE_ANIMATE, ArkUI_NativeAnimateAPI_1, animateAPI);
-    OH_ArkUI_AnimatorOption_SetDuration(animatorOption, PARAM_1000);
+    OH_ArkUI_AnimatorOption_SetDuration(animatorOption, PARAM_10000);
     OH_ArkUI_AnimatorOption_SetBegin(animatorOption, PARAM_100);
     OH_ArkUI_AnimatorOption_SetEnd(animatorOption, PARAM_200);
     OH_ArkUI_AnimatorOption_RegisterOnFrameCallback(animatorOption, column, [](ArkUI_AnimatorOnFrameEvent* event) {
@@ -307,6 +307,7 @@ static ArkUI_AnimatorHandle SetAnimatorReverse(ArkUI_NodeHandle column)
         if (nodeHandle) {
             auto node = std::make_shared<Component>(nodeHandle);
             node->SetWidth(value);
+            OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "AnimationEventTest", "SetWidth %{public}f", value);
         }
     });
     OH_ArkUI_AnimatorOption_RegisterOnFinishCallback(animatorOption, column, [](ArkUI_AnimatorEvent* event) {
