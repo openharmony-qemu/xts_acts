@@ -12,9 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, expect, it, Level, Size, TestType, afterAll } from '@ohos/hypium';
-import {
-  ISendable,
+import {beforeAll, describe, expect, it, Level, Size, TestType, afterAll} from '@ohos/hypium';
+import {  ISendable,
   ModifiedTopLevelSendableFunction,
   SendableAsyncFuncSetClass,
   SendableConstEnum,
@@ -30,11 +29,24 @@ import {
 } from './SendableClassFuncSet';
 import { ArkTSUtils, collections } from '@kit.ArkTS';
 
+
+function sleep(time: number): Promise<void> {
+  return new Promise<void>((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, time);
+  });
+}
+
 new SendableStaticFuncSetClass();
 
 export default function sendableDefaultFuncSetClassTest() {
   describe('ActsSendableFuncSetClassTest', () => {
-    afterAll(async () => {
+    beforeAll(async () => {
+      await sleep(200);
+    })
+
+        afterAll(async () => {
       console.info('afterAll called');
       await new Promise<void>((resolve)=>setTimeout(resolve,100))
     });

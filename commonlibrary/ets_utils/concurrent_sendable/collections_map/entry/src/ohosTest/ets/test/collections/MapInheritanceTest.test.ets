@@ -140,7 +140,9 @@ function concurrentBatchSetFunc(map: BasicMap, count: number): number {
 
 export default function MapInheritanceTest(): void {
   describe('MapInheritanceTest', (): void => {
-    beforeAll((): void => {})
+    beforeAll(async (): Promise<void> => {
+    await sleep(200);
+  })
     beforeEach((): void => {})
     afterEach((): void => {})
     afterAll(async (): Promise<void> => {

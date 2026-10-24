@@ -32,7 +32,7 @@ export default function AtomicsAPITest() {
     beforeEach(async () => {
       console.info('AtomicsAPITest beforeEach called');
       // Add delay to ensure resources from the previous test case are released
-      await sleep(200);
+      await sleep(100);
     })
 
     // Presets a clear action, which is performed after each unit test case ends.
