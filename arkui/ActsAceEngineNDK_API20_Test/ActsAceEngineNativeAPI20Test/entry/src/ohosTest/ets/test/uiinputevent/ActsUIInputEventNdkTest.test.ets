@@ -28,8 +28,8 @@ export default function ActsUIInputEventNdkTest() {
     const y1: number = Math.floor(globalThis.winHeight / 2 + globalThis.winTop);
     const x2: number = Math.floor(globalThis.winWidth / 4 + globalThis.winLeft);
     const y2: number = Math.floor(globalThis.winHeight / 4 + globalThis.winTop);
-    const moveFrom: Point = { x: x1, y: y1 };
-    const moveTo: Point = { x: x2, y: y2 };
+    const moveFrom: Point = { x: x1, y: y1, displayId: displayID };
+    const moveTo: Point = { x: x2, y: y2, displayId: displayID };
     const speed: number = 2500;
     beforeEach(async (done: Function) => {
       Utils.pushPageNoClear('UIInputEvent/UIInputEvent', done);
@@ -810,7 +810,7 @@ export default function ActsUIInputEventNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>testArkUI_UIInputEvent_Type_0143 start====");
-          await Utils.driver.triggerCombineKeys(2045, 2019, displayID);
+          await Utils.driver.triggerCombineKeys(2045, 2019, 0, displayID);
           let result = uiinputeventndk.UIInputEventType0143();
           console.info("====>testArkUI_UIInputEvent_Type_0143 result: " + result);
           expect(result).assertEqual(OS_ACCOUNT_ERR_OK);

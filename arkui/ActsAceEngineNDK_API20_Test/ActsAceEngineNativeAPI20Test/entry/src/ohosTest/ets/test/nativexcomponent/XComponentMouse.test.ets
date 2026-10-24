@@ -18,6 +18,7 @@ import nativexcomponent from 'libnativexcomponent.so';
 import Utils from "../common/Utils";
 import { MouseButton, Point } from "@kit.TestKit";
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 export default function XComponentMouseTest() {
   describe('XComponentMouseTest', () => {
     const x1: number = Math.floor(globalThis.winWidth / 2 + globalThis.winLeft);
@@ -25,7 +26,7 @@ export default function XComponentMouseTest() {
     const x2: number = Math.floor(globalThis.winWidth / 4 + globalThis.winLeft);
     const y2: number = Math.floor(globalThis.winHeight / 4 + globalThis.winTop);
     const moveFrom: Point = { x: x1, y: y1 };
-    const moveTo: Point = { x: x2, y: y2 };
+    const moveTo: Point = { x: x2, y: y2, displayId: displayID };
     const speed: number = 2500;
     beforeAll(async (done: Function) => {
       await Utils.pushPageNoClear(`NativeXComponent/MouseNativeXComponent`, done);
