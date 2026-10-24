@@ -51,7 +51,7 @@ export default function CustomPopupOptionsFalse() {
         console.info("get CustomPopupOptionsFalse state pages:" + JSON.stringify(pages));
         if (!("CustomPopupOptionsFalse" == pages.name)) {
           console.info("get CustomPopupOptionsFalse pages.name:" + JSON.stringify(pages.name));
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // await router 有已知问题，先注�?使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -88,7 +88,7 @@ it('CustomPopupOptionsFalse_static_0100', Level.LEVEL0, async (done: () => void)
       expect(properties.type).assertEqual(1) //1表示系统告警窗口TYPE_SYSTEM_ALERT
 
       await CommonFunc.sleep(1000);
-        driver?.click(2, 2, displayID);
+        driver?.clickAt(2, 2, displayID);
       await CommonFunc.sleep(1000);
       console.info('[CustomPopupOptionsFalse_0100] END');
       done();

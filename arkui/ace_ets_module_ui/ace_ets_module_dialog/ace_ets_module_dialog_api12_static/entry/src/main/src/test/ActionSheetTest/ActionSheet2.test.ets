@@ -109,7 +109,7 @@ it('ActionSheet2_static_0200', Level.LEVEL2, async (done: () => void): Promise<v
       await button.click();
       await CommonFunc.sleep(1000);
 
-      await driver.click((Math.round((AppStorage.get<number>('winLeft') as number) + 20)).toInt(),
+      await driver.clickAt((Math.round((AppStorage.get<number>('winLeft') as number) + 20)).toInt(),
         (Math.round((AppStorage.get<number>('winTop') as number) + 200)).toInt(), displayID);
       await CommonFunc.sleep(1000);
 

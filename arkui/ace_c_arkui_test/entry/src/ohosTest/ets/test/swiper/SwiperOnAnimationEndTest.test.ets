@@ -18,8 +18,6 @@ import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
 import Utils from '../common/Utils';
 import nativeFunc from 'libnativefunc.so'
 
-let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
-
 export default function swiperOnAnimationEndTest() {
 
   describe('SwiperOnAnimationEndTest', () => {
@@ -42,7 +40,7 @@ export default function swiperOnAnimationEndTest() {
         let driver = Driver.create();
         let component = await driver.findComponent(ON.id("SwiperOnAnimationEnd"));
         let point = await component.getBounds();
-        await driver.drag(point.right, point.top + 20, point.left, point.top + 20, 2000, displayID);
+        await driver.drag(point.right, point.top + 20, point.left, point.top + 20, 2000);
         await Utils.sleep(1000);
         expect(Utils.getComponentInfoByKey('SwiperOnAnimationEnd').$attrs.backgroundColor).assertEqual('#FF00FF00');
         done();

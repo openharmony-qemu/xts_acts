@@ -94,7 +94,7 @@ it('bindContextMenu_static_0100', Level.LEVEL0, async (done: () => void): Promis
       expect(properties.type).assertEqual(0) //0表示应用子窗口TYPE_APP
 
       await CommonFunc.sleep(1000);
-      driver?.click(2, 2, displayID);
+      driver?.clickAt(2, 2, displayID);
       await CommonFunc.sleep(3000);
       console.info('[bindContextMenu_0100] END');
       done();

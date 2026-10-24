@@ -135,7 +135,7 @@ it('RatingUIJsunit_static_0300', Level.LEVEL1, async (done: () => void): Promise
       console.info(`rating ` + JSON.stringify(rating))
       let rect = await (rating?.getBounds() as Promise<Rect>);
       console.info(`rect is: ` + JSON.stringify(rect))
-      await driver.click(rect.left.toInt()+Math.round((rect.right-rect.left)/2).toInt()-1,Math.round((rect.top+rect.bottom)/2).toInt(), displayID)
+      await driver.clickAt(rect.left.toInt()+Math.round((rect.right-rect.left)/2).toInt()-1,Math.round((rect.top+rect.bottom)/2).toInt(), displayID)
       console.info(`click is: `,rect.left+Math.round((rect.right-rect.left)/2)-1,Math.round((rect.top+rect.bottom)/2))
       await CommonFunc.sleep(1000);
       // Verify the rating value of the Rating component

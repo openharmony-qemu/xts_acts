@@ -102,7 +102,7 @@ it('ActionSheet3_static_0200', Level.LEVEL2, async (done: () => void): Promise<v
       await Column.click();
       await CommonFunc.sleep(1000);
 
-      await driver.click((Math.round((AppStorage.get<number>('winLeft') as number)+20)).toInt(), (Math.round((AppStorage.get<number>('winTop') as number)+200)).toInt(), displayID);
+      await driver.clickAt((Math.round((AppStorage.get<number>('winLeft') as number)+20)).toInt(), (Math.round((AppStorage.get<number>('winTop') as number)+200)).toInt(), displayID);
       await CommonFunc.sleep(1000);
 
   let context = AppStorage.get<common.UIAbilityContext>('abilityContext');

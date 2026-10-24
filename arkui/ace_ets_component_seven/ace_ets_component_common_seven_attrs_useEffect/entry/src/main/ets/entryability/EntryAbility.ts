@@ -36,20 +36,6 @@ export default class EntryAbility extends UIAbility {
       }
       hilog.info(0x0000, 'testTag', 'Succeeded in loading the content. Data: %{public}s', JSON.stringify(data) ?? '');
     });
-    let windowClass: window.Window | undefined = undefined;
-    windowStage.getMainWindow((err, data) => {
-      if (err.code) {
-        console.error('Failed to obtain the main window. Cause: ' + JSON.stringify(err));
-        return;
-      }
-      windowClass = data;
-      try {
-        let properties: window.WindowProperties | undefined = windowClass?.getWindowProperties();
-        AppStorage.setOrCreate<number>('displayID', properties?.displayId ?? 0);
-      } catch (exception) {
-        hilog.error(0x0000, 'testTag', 'Failed to obtain the window properties. Cause: ' + JSON.stringify(exception));
-      }
-    })
   }
 
   onWindowStageDestroy() {

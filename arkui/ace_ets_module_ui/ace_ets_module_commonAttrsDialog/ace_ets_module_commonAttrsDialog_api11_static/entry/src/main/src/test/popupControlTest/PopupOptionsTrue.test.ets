@@ -51,7 +51,7 @@ export default function PopupOptionsTrue() {
         console.info("get PopupOptionsTrue state pages:" + JSON.stringify(pages));
         if (!("PopupOptionsTrue" == pages.name)) {
           console.info("get PopupOptionsTrue pages.name:" + JSON.stringify(pages.name));
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // await router 有已知问题，先注�?使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -88,7 +88,7 @@ it('PopupOptionsTrue_static_0100', Level.LEVEL0, async (done: () => void): Promi
       expect(properties.type).assertEqual(0)//0表示应用子窗口TYPE_APP
 
       await CommonFunc.sleep(1000);
-        driver?.click(2, 2, displayID);
+        driver?.clickAt(2, 2, displayID);
       await CommonFunc.sleep(1000);
       console.info('[PopupOptionsTrue_0100] END');
       done();
