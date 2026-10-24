@@ -89,5 +89,7 @@ struct ListExample_get {
         }).height('50%').width('30%').id('get_childDefaultSize')
       }.height('20%')
     }
+    .padding(10)
+    .margin(10)
   }
 }

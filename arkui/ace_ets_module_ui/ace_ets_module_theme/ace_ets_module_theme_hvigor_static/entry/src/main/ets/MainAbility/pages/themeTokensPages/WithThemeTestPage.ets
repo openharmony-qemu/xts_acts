@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License")
@@ -84,8 +84,12 @@ struct WithThemeTestPage {
           }
         }
       }.alignItems(VerticalAlign.Center)
+      .padding(10)
+      .margin(10)
       .width('100%')
       .height('100%')
     }
+    .padding(10)
+    .margin(10)
   }
 }

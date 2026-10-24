@@ -61,7 +61,10 @@ struct tabsBarBackgroundEffectPage {
         .onClick((e: ClickEvent) => {
           this.isState = !this.isState
         })
-    }.width(400)
+    }
+    .padding(10)
+    .margin(10)
+    .width(400)
     .height(400)
   }
 }

@@ -45,5 +45,7 @@ struct pushNamedRoute23 {
       })
         .id('pushNamedRoute23_btn1')
     }
+    .padding(10)
+    .margin(10)
   }
 }

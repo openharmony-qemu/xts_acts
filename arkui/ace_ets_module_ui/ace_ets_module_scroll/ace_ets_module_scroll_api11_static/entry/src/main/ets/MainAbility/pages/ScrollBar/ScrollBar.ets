@@ -145,5 +145,7 @@ struct ScrollBarExample {
         }.width(30).backgroundColor('#ededed').key('scrollbar6').margin({ top: 30 } as Margin)
       }.height('45%').width('90%').margin({ top: 30 } as Margin)
     }
+    .padding(10)
+    .margin(10)
   }
 }

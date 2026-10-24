@@ -80,7 +80,10 @@ struct listItem_testcase {
           .key('listitem4')
         }
       }.width('100%').height('100%').backgroundColor(0xDCDCDC).padding({ top: 5 } as Padding)
-    }.width(300)
+    }
+    .padding(10)
+    .margin(10)
+    .width(300)
     .height(300)
     .borderColor(Color.Pink)
     .borderWidth(2)

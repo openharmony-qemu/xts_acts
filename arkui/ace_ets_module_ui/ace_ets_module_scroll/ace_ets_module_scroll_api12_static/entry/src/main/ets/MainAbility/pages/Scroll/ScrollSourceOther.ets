@@ -116,6 +116,9 @@ struct ScrollSourceOtherExample {
         .height('5%')
         .margin({ top: 200, left: 20 } as Margin)
 
-    }.width('100%').height('100%').backgroundColor(0xDCDCDC)
+    }
+    .padding(10)
+    .margin(10)
+    .width('100%').height('100%').backgroundColor(0xDCDCDC)
   }
 }

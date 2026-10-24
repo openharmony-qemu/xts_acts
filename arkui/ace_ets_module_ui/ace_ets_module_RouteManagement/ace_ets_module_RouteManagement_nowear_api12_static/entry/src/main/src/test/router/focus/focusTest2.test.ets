@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -72,7 +72,11 @@ it('focus_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       await driver.triggerKey(2049);
       await CommonFunc.sleep(1000);
 
+      let displayId: undefined | Int = 0;
       let btn1 = await driver.findComponent(ON.id('focus1_btn1'));
+      await CommonFunc.sleep(1000);
+      displayId = await btn1?.getDisplayId();
+      await CommonFunc.sleep(1000);
       let btn1_isFocusedValue = await btn1!.isFocused()
       expect(btn1_isFocusedValue).assertEqual(true);
       console.info('[focus_0100] btn1 isFocused');
@@ -97,7 +101,9 @@ it('focus_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       expect(btn3_isFocusedValue).assertEqual(true);
       console.info('[focus_0100] btn3 isFocused');
 
-      await driver.pressBack();
+      if (displayId != undefined) {
+        await driver.pressBack(displayId as Int);
+      }
       await CommonFunc.sleep(2000);
 
       let btn4 = await driver.findComponent(ON.id('focus1_btn2'));

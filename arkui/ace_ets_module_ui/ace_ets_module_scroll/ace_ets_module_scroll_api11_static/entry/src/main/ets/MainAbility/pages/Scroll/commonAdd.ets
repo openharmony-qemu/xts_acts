@@ -54,6 +54,8 @@ struct ForegroundBlurStyleDemo {
         .reuseId(undefined)
 
     }
+    .padding(10)
+    .margin(10)
     .height('100%')
     .width('100%')
     .width('100%')

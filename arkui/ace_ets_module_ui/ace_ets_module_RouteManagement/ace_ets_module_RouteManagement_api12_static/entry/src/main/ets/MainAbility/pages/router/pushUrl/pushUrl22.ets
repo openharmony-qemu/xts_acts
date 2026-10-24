@@ -38,5 +38,7 @@ struct pushUrl22 {
       })
         .id('pushUrl22_btn1')
     }
+    .padding(10)
+    .margin(10)
   }
 }

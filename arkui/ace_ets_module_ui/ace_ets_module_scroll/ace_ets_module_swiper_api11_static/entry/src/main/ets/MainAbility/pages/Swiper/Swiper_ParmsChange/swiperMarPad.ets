@@ -60,6 +60,9 @@ struct SwiperMarPadTest {
       .displayCount(1)
       .margin(20)
       .padding(20)
-    }.alignItems(HorizontalAlign.Start)
+    }
+    .padding(10)
+    .margin(10)
+    .alignItems(HorizontalAlign.Start)
   }
 }

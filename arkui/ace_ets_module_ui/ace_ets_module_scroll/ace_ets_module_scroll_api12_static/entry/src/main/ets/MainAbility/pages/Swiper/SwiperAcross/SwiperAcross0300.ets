@@ -63,5 +63,7 @@ struct SwiperAcross0300 {
       Text(this.onAnimationStart).key('swiper_across_0300')
 
     }
+    .padding(10)
+    .margin(10)
   }
 }

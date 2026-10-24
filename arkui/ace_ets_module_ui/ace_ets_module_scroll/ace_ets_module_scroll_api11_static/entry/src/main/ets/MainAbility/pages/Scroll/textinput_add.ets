@@ -115,6 +115,9 @@ struct TextInputExample {
         .margin(20)
         .borderRadius(0)
         .style(TextInputStyle.Inline)
-    }.width('100%')
+    }
+    .padding(10)
+    .margin(10)
+    .width('100%')
   }
 }

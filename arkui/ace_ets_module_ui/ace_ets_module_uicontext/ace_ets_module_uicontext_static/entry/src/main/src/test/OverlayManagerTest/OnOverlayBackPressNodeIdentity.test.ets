@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /**
  * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -132,12 +132,18 @@ export default function OnOverlayBackPressNodeIdentityTest(): void {
         await CommonFunc.sleep(SLEEP_TIME);
         expect(getContentByKey('backPressStatus')).assertEqual('option_set_true');
         const overlayText = await findByText(driver, 'overlay_content_backpress');
+        let displayId: undefined | Int = 0;
+        await CommonFunc.sleep(1000);
+        displayId = await overlayText?.getDisplayId();
+        await CommonFunc.sleep(1000);
         expect(overlayText !== null).assertTrue();
         await (overlayText!.click() as Promise<void>);
         await CommonFunc.sleep(500);
         // 按返回键触发 onBackPress，返回 true 时拦截（overlay 保持、回调计数增加）
         try {
-          await (driver.pressBack() as Promise<void>);
+          if (displayId != undefined) {
+            await (driver.pressBack(displayId as Int) as Promise<void>);
+          }
           await CommonFunc.sleep(SLEEP_TIME);
           const overlayTextAfter = await findByText(driver, 'overlay_content_backpress');
           const countAfterBack = getContentByKey('backPressCount');
@@ -173,12 +179,18 @@ export default function OnOverlayBackPressNodeIdentityTest(): void {
         await CommonFunc.sleep(SLEEP_TIME);
         expect(getContentByKey('backPressStatus')).assertEqual('option_set_false');
         const overlayText = await findByText(driver, 'overlay_content_backpress');
+        let displayId: undefined | Int = 0;
+        await CommonFunc.sleep(1000);
+        displayId = await overlayText?.getDisplayId();
+        await CommonFunc.sleep(1000);
         expect(overlayText !== null).assertTrue();
         await (overlayText!.click() as Promise<void>);
         await CommonFunc.sleep(500);
         // 按返回键：返回 false 放行时 back 事件传播到下层组件（页面退出）
         try {
-          await (driver.pressBack() as Promise<void>);
+          if (displayId != undefined) {
+            await (driver.pressBack(displayId as Int) as Promise<void>);
+          }
           await CommonFunc.sleep(1500);
           const pageGone = await driver.findComponent(ON.id('addContent'));
           if (pageGone === null) {

@@ -230,5 +230,7 @@ struct TabsExampleSec {
       .barBackgroundColor($r("sys.color.ohos_toggle_bg"))
       .key('BarBackgroundColorResource')
     }
+    .padding(10)
+    .margin(10)
   }
 }

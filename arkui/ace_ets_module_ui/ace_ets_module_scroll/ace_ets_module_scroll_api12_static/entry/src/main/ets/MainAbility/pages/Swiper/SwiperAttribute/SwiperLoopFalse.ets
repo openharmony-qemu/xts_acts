@@ -32,6 +32,8 @@ struct SwiperLoopFalse {
         Text('2')
       }.width('100%').height('100%').backgroundColor(0xD2B48C).id('swiperLoopFalse02')
     }
+    .padding(10)
+    .margin(10)
     .id('swiperLoopFalse')
     .loop(false)
   }

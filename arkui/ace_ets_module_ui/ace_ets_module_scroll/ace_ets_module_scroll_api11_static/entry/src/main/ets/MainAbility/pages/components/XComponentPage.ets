@@ -62,5 +62,7 @@ struct XComponentPage {
       //     console.log('onDestroy  ...')
       //   } as VoidCallback)
     }
+    .padding(10)
+    .margin(10)
   }
 }

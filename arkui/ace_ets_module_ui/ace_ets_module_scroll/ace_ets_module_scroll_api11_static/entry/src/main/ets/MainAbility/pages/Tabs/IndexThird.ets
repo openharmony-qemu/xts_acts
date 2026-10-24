@@ -864,5 +864,7 @@ struct TabsExampleThird {
         .key("subTabBarDefaultTestLeftJudge")
 
     }
+    .padding(10)
+    .margin(10)
   }
 }

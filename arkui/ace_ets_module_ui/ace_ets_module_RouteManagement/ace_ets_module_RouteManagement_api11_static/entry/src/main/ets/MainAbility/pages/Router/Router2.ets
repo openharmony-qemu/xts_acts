@@ -52,7 +52,10 @@ struct Second {
       Text('' + this.content).textAlign(TextAlign.Center)
       Text('' + this.data1).textAlign(TextAlign.Center).id('data1String')
       Text('' + this.data2).textAlign(TextAlign.Center).id('data2String')
-    }.width('100%')
+    }
+    .padding(10)
+    .margin(10)
+    .width('100%')
 
   }
 }

@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -220,6 +220,8 @@ struct RefreshOffsetOffsetExample {
           .width('30%')
         }
       }
+    .padding(10)
+    .margin(10)
       .height('90%')
 
       Button('changeOrientation').id('changeOrientation')
@@ -228,5 +230,7 @@ struct RefreshOffsetOffsetExample {
           this.changeOrientation()
         })
     }
+    .padding(10)
+    .margin(10)
   }
 }

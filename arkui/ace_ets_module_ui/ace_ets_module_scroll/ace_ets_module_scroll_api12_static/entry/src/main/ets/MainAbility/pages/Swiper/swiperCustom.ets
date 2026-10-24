@@ -112,6 +112,9 @@ struct SwiperCustomPage {
         console.info("onContentDidScroll selectedIndex: " + selectedIndex + ", index: " + index + ", position: " +
           position + ", mainAxisLength: " + mainAxisLength)
       })
-    }.width('100%')
+    }
+    .padding(10)
+    .margin(10)
+    .width('100%')
   }
 }

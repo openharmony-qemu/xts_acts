@@ -78,5 +78,7 @@ struct SwiperInterface1570 {
       .duration(0)
 
     }
+    .padding(10)
+    .margin(10)
   }
 }

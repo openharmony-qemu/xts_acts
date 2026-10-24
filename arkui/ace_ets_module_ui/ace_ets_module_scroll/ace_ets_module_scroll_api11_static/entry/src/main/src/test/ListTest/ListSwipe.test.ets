@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -72,7 +72,7 @@ it('ArkUI_List_Swipe_static_0100', Level.LEVEL1, async (done: () => void): Promi
       let CASE: string = 'ArkUI_List_Swipe_static_0100'
       console.info(`${SUITE} ${CASE} START`);
       let driver: Driver = Driver.create()
-      await driver.delayMs(waitUiReadyMs)
+      await CommonFunc.sleep(waitUiReadyMs)
       // 3.swipe item to left
       let baseKey: string = 'MyList1_ListItem0'
       let strJson: string = inspector.getInspectorByKey(baseKey);
@@ -112,7 +112,7 @@ it('ArkUI_List_Swipe_static_0300', Level.LEVEL1, async (done: () => void): Promi
       let CASE: string = 'ArkUI_List_Swipe_static_0300'
       console.info(`${SUITE} ${CASE} START`);
       let driver: Driver = Driver.create()
-      await driver.delayMs(waitUiReadyMs)
+      await CommonFunc.sleep(waitUiReadyMs)
 
       let baseKey: string = 'MyList2_ListItem0'
       let strJson: string = inspector.getInspectorByKey(baseKey);
@@ -154,7 +154,7 @@ it('ArkUI_List_Swipe_static_0400', Level.LEVEL1, async (done: () => void): Promi
       let CASE: string = 'ArkUI_List_Swipe_static_0400'
       console.info(`${SUITE} ${CASE} START`);
       let driver: Driver = Driver.create()
-      await driver.delayMs(waitUiReadyMs)
+      await CommonFunc.sleep(waitUiReadyMs)
 
       // 2.trigger button click, expect state change COLLAPSED and onFinish be called
       inspector.sendEventByKey('MyList2CloseButton', 10, '')
@@ -180,7 +180,7 @@ it('ArkUI_List_Swipe_static_0500', Level.LEVEL1, async (done: () => void): Promi
       let CASE: string = 'ArkUI_List_Swipe_static_0500'
       console.info(`${SUITE} ${CASE} START`);
       let driver: Driver = Driver.create()
-      await driver.delayMs(waitUiReadyMs)
+      await CommonFunc.sleep(waitUiReadyMs)
       // 2.swipe item to left
       let baseKey: string = 'MyList1_ListItem1'
       let strJson: string = inspector.getInspectorByKey(baseKey);

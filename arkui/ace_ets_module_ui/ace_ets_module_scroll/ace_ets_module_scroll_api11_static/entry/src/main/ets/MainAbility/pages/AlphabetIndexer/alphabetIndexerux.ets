@@ -443,6 +443,9 @@ struct AlphabetIndexerTestux {
         })
         .margin({ top: 20, left: 20 } as Margin)
         .popupItemFont({ weight: this.popupItemFontWeightNum } as Font)
-    }.backgroundColor(0x00FFFF).width('100%').height('100%')
+    }
+    .padding(10)
+    .margin(10)
+    .backgroundColor(0x00FFFF).width('100%').height('100%')
   }
 }

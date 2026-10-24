@@ -84,5 +84,7 @@ struct TimePickerPage {
         }
       }
     }
+    .padding(10)
+    .margin(10)
   }
 }

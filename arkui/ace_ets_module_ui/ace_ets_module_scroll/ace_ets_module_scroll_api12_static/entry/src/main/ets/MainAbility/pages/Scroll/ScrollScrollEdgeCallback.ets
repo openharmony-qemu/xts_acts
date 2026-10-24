@@ -59,5 +59,7 @@ struct ScrollScrollEdgeCallback {
       .height('70%')
       .edgeEffect(EdgeEffect.None)
     }
+    .padding(10)
+    .margin(10)
   }
 }

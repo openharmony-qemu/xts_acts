@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -188,7 +188,7 @@ it('ArkUI_List_Delete_static_0500', Level.LEVEL1, async (done: () => void): Prom
       console.info(`${SUITE} ${CASE} START`);
 
       let driver: Driver = Driver.create()
-      await driver.delayMs(1000)
+      await CommonFunc.sleep(1000)
       let baseKey: string = 'MyList5_ListItem0'
       let strJson: string = inspector.getInspectorByKey(baseKey);
 

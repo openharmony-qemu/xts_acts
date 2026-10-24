@@ -92,6 +92,9 @@ struct Tabs_barMode {
       .width(330)
       .height(300)
       .backgroundColor('#F1F3F5')
-    }.width('100%')
+    }
+    .padding(10)
+    .margin(10)
+    .width('100%')
   }
 }

@@ -176,5 +176,7 @@ struct refreshux {
       .border({ width: 1, color: Color.Blue })
       .size({ width: "100%", height: 300 })
     }
+    .padding(10)
+    .margin(10)
   }
 }

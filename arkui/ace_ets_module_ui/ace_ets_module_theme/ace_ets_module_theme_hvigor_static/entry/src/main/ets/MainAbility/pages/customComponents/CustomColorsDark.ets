@@ -84,6 +84,9 @@ export struct CustomColorsDark {
         }
         .padding({ left: '8vp', right: '8vp' } as Padding)
       }, (item: DataClass) => String((item.token)) + item.text)
-    }.alignItems(HorizontalAlign.Start)
+    }
+    .padding(10)
+    .margin(10)
+    .alignItems(HorizontalAlign.Start)
   }
 }

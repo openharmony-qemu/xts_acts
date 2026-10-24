@@ -60,6 +60,8 @@ struct Index {
         .fontSize(50)
         .fontWeight(FontWeight.Bold)
     }
+    .padding(10)
+    .margin(10)
     .width('100%')
     .height('100%')
   }

@@ -95,6 +95,9 @@ struct ScrollSourceBARExample {
         .id('scrollSource_4')
         .height('5%')
         .margin({ top: 150, left: 20 } as Margin)
-    }.width('90%').height('70%').backgroundColor(0xDCDCDC)
+    }
+    .padding(10)
+    .margin(10)
+    .width('90%').height('70%').backgroundColor(0xDCDCDC)
   }
 }

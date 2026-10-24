@@ -44,6 +44,8 @@ struct SwiperAutoPlay_2 {
         Text('6')
       }.width('100%').height('100%').backgroundColor(0xF5DEB3).id('swiperAutoPlay_206')
     }
+    .padding(10)
+    .margin(10)
     .id('swiperAutoPlay_2')
     .autoPlay(true, undefined)
   }

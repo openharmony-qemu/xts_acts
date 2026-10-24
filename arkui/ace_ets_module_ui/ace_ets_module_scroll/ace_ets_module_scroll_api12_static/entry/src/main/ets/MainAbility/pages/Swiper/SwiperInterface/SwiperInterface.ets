@@ -101,5 +101,7 @@ struct SwiperInterface {
       .loop(false)
 
     }
+    .padding(10)
+    .margin(10)
   }
 }

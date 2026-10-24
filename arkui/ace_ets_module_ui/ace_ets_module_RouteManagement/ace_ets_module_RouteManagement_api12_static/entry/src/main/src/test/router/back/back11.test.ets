@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -69,7 +69,11 @@ it('back11_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> =
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
 
+      let displayId: undefined | Int = 0;
       let btn1 = await driver.findComponent(ON.id('back11_btn'));
+      await CommonFunc.sleep(1000);
+      displayId = await btn1?.getDisplayId();
+      await CommonFunc.sleep(1000);
       await btn1!.click();
       await CommonFunc.sleep(2000);
       console.info('[back11_static_0100] btn1');
@@ -79,7 +83,9 @@ it('back11_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> =
       await CommonFunc.sleep(2000);
       console.info('[back11_static_0100] btn2');
 
-      await driver.pressBack()
+      if (displayId != undefined) {
+        await driver.pressBack(displayId as Int);
+      }
       await CommonFunc.sleep(2000);
       console.info('[back11_static_0100] pressBack');
 

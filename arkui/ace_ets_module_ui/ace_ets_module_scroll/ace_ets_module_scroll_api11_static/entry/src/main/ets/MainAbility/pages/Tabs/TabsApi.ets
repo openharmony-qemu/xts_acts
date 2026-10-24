@@ -177,5 +177,7 @@ struct TabsApi {
         this.text = 'onChange'
       })
     }
+    .padding(10)
+    .margin(10)
   }
 }

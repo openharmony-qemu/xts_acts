@@ -88,6 +88,8 @@ struct RadioPage {
         }
       }
     }
+    .padding(10)
+    .margin(10)
     .height('100%')
   }
 }

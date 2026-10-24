@@ -145,5 +145,7 @@ struct RouterPushOne {
           })
       }
     }
+    .padding(10)
+    .margin(10)
   }
 }

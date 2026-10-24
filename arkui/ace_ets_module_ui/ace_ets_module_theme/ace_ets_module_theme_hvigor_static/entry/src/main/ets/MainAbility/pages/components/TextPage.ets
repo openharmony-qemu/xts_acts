@@ -60,6 +60,8 @@ struct TextPage {
           .key(TextKeys.textWithTheme)
       }
     }
+    .padding(10)
+    .margin(10)
     .width('100%')
   }
 }

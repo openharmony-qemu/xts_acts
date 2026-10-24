@@ -95,6 +95,9 @@ struct Tabs_PadMar {
       .padding(this.testPadding)
       .margin(this.testMargin)
       .backgroundColor('#F1F3F5')
-    }.alignItems(HorizontalAlign.Start).width('100%').key("Tabs_PadMar_Column_01")
+    }
+    .padding(10)
+    .margin(10)
+    .alignItems(HorizontalAlign.Start).width('100%').key("Tabs_PadMar_Column_01")
   }
 }

@@ -93,7 +93,10 @@ struct symbolModifierIndex {
         })
         .backgroundColor('0xF1F3F5')
       }
-    }.width('100%')
+    }
+    .padding(10)
+    .margin(10)
+    .width('100%')
     .height('100%')
   }
 }

@@ -134,5 +134,7 @@ struct SideBarContainerTest {
         console.info('status' + value)
       })
     }
+    .padding(10)
+    .margin(10)
   }
 }
