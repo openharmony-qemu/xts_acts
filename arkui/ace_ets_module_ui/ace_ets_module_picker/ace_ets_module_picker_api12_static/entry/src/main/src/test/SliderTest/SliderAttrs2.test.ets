@@ -71,7 +71,7 @@ export default function SliderAttrs2() {
       await Utils.sleep(1000);
       let slider = await driver.findComponent(ON.id('SliderAttrs2_slider2')) as Component;
       let point = await slider!.getBoundsCenter();
-      await driver.clickAt(point.x, point.y, displayID)
+      await driver.clickAt({x: point.x, y: point.y, displayId: displayID})
       await Utils.sleep(2000);
 
       let strJson1 = inspector.getInspectorByKey('SliderAttrs2_text2');

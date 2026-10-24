@@ -87,7 +87,7 @@ it('bindMenu_static_0100', Level.LEVEL0, async (done: () => void): Promise<void>
       expect(properties.type == 1 || properties.type == 0).assertTrue()
 
       await CommonFunc.sleep(1000);
-       driver?.clickAt(2, 2, displayID);
+       driver?.clickAt({x: 2, y: 2, displayId: displayID});
       await CommonFunc.sleep(1000);
       console.info('[bindMenu_0100] END');
       done();

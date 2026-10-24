@@ -373,7 +373,7 @@ export default function ColumnSliderTest() {
       let rect = await slider!.getBounds();
       console.info(`rect is: ` + JSON.stringify(rect))
 
-      await driver.clickAt((rect.left+Math.round((rect.right-rect.left)/10)+30).toInt(),Math.round((rect.top+rect.bottom)/2).toInt(), displayID)
+      await driver.clickAt({x: (rect.left+Math.round((rect.right-rect.left)/10)+30).toInt(), y: Math.round((rect.top+rect.bottom)/2).toInt(), displayId: displayID})
       console.info(`click is: `,rect.left+Math.round((rect.right-rect.left)/10)+30,Math.round((rect.top+rect.bottom)/2))
       // await driver.clickAt(120,524);
       // console.info(`driver.click 1`)
@@ -418,7 +418,7 @@ export default function ColumnSliderTest() {
       let slider = await driver.findComponent(ON.id('XSlider17')) as Component;
       let rect = await slider!.getBounds();
       console.info(`rect is: ` + JSON.stringify(rect))
-      await driver.clickAt((rect.left+Math.round((rect.right-rect.left)/10)+30).toInt(), Math.round((rect.top+rect.bottom)/2).toInt(), displayID)
+      await driver.clickAt({x: (rect.left+Math.round((rect.right-rect.left)/10)+30).toInt(), y: Math.round((rect.top+rect.bottom)/2).toInt(), displayId: displayID})
       console.info(`click is: `,rect.left+Math.round((rect.right-rect.left)/10)+30,Math.round((rect.top+rect.bottom)/2))
       await Utils.sleep(1000);
       let strJson1 = inspector.getInspectorByKey('XSlider17');
@@ -620,7 +620,7 @@ export default function ColumnSliderTest() {
       let slider = await driver.findComponent(ON.id('XSlider25')) as Component;
       let rect = await slider!.getBounds();
       console.info(`rect is: ` + JSON.stringify(rect))
-      await driver.clickAt((rect.left+Math.round((rect.right-rect.left)/10)).toInt(),Math.round((rect.top+rect.bottom)/2).toInt(), displayID)
+      await driver.clickAt({x: (rect.left+Math.round((rect.right-rect.left)/10)).toInt(), y: Math.round((rect.top+rect.bottom)/2).toInt(), displayId: displayID})
       console.info(`click is: `+rect.left+Math.round((rect.right-rect.left)/10),Math.round((rect.top+rect.bottom)/2))
       let strJson1 = inspector.getInspectorByKey('XSlider25');
       let obj1 = JSON.parseJsonElement(strJson1);
@@ -645,7 +645,7 @@ export default function ColumnSliderTest() {
       let slider = await driver.findComponent(ON.id('XSlider26')) as Component;
       let rect = await slider!.getBounds();
       console.info(`rect is: ` + JSON.stringify(rect))
-      await driver.clickAt((rect.left+Math.round((rect.right-rect.left)/10)).toInt(),Math.round((rect.top+rect.bottom)/2).toInt(), displayID)
+      await driver.clickAt({x: (rect.left+Math.round((rect.right-rect.left)/10)).toInt(), y: Math.round((rect.top+rect.bottom)/2).toInt(), displayId: displayID})
       console.info(`click is: `+rect.left+Math.round((rect.right-rect.left)/10),Math.round((rect.top+rect.bottom)/2))
       let strJson1 = inspector.getInspectorByKey('XSlider26');
       let obj1 = JSON.parseJsonElement(strJson1);
