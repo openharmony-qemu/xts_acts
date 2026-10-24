@@ -21,7 +21,7 @@ import deviceInfoTest from './deviceInfo/deviceInfo.test';
 import accountManagerTest from './accountManager/accountManager.test.ets'
 import adminManagerTest from './adminManager/adminManager.test.ets'
 import applicationManagerTest from './applicationManager/applicationManager.test.ets'
-import bundleManagerTest from './bundleManager/bundleManager.test.ets'
+import bundleManagerTest from './bundleManager/BundleManager.test.ets'
 import restrictionsTest from './restrictions/restrictions.test';
 import systemManagerTest from './systemManager/systemManager.test';
 import wifiManagerTest from './wifiManager/wifiManager.test';

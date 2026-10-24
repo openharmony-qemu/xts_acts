@@ -30,6 +30,8 @@ import {
 import adminManager from '@ohos.enterprise.adminManager';
 import bundleManager from '@ohos.enterprise.bundleManager';
 
+const DEFAULT_APP_ABILITY_NAME: string = 'EntryAbility';
+
 export default function bundleManagerTest() {
   describe('bundleManager_test', () => {
     /**
@@ -720,5 +722,49 @@ export default function bundleManagerTest() {
       done();
       console.info(' --- test_getInstalledBundleStorageStats_0100  -------- END --------');
     })
+
+    /**
+     * @tc.name   test_setDefaultApplication_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDEFAULTAPPLICATION_0100
+     * @tc.desc   test setDefaultApplication without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_setDefaultApplication_0100", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        bundleManager.setDefaultApplication(bundleManager.DefaultApplicationType.BROWSER, SELFHAPNAME,
+          DEFAULT_APP_ABILITY_NAME, DEFAULT_USER_ID);
+        expect().assertFail();
+      } catch (error) {
+        expect(error.code).assertEqual(201);
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_getDefaultApplicationBundleName_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETDEFAULTAPPLICATIONBUNDLENAME_0100
+     * @tc.desc   test getDefaultApplicationBundleName without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getDefaultApplicationBundleName_0100", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        bundleManager.getDefaultApplicationBundleName(bundleManager.DefaultApplicationType.BROWSER,
+          DEFAULT_USER_ID);
+        expect().assertFail();
+      } catch (error) {
+        expect(error.code).assertEqual(201);
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
   })
 }
