@@ -5356,7 +5356,7 @@ export default function TextPicker() {
         return;
       }
 
-      let checkbox: Component = await driver.findComponent(ON.belongingDisplay(disPlay.id).type('Checkbox'));
+      let checkboxComp: Component = await driver.findComponent(ON.belongingDisplay(disPlay.id).type('Checkbox'));
       if (checkboxComp !== null) {
         await checkboxComp.click();
         console.info('SUB_PHOTO_PICKER_TEST_0700 checkbox clicked');
