@@ -19,6 +19,7 @@ import CommonFunc, { ClickInfo } from '../MainAbility/common/Common';
 import { EventType } from '../MainAbility/common/Common';
 import { Component, Driver, ON, MatchPattern } from '@ohos.UiTest';
 import events_emitter from '@ohos.events.emitter';
+import display from '@ohos.display';
 import {
   PhotoPickerComponent,
   PickerController,
@@ -1191,7 +1192,8 @@ export default function TextPicker() {
       expect(JSON.parse(strJson).$attrs.visibility).assertEqual('Visibility.Visible');
       await CommonFunc.sleep(2000);
 
-      let checkBoxs: Array<Component> = await driver.findComponents(ON.type('Checkbox'));
+      let disPlay = display.getDefaultDisplaySync();
+      let checkBoxs: Array<Component> = await driver.findComponents(ON.belongingDisplay(disPlay.id).type('Checkbox'));
       if (checkBoxs === null || checkBoxs.length <= 0) {
         console.info("testPicker14 findComponent checkbox fail");
       } else {
@@ -1242,13 +1244,14 @@ export default function TextPicker() {
       await routeToUrl(options);
       await CommonFunc.sleep(2000);
 
-      let changeNumButton: Component = await driver.waitForComponent(ON.text('选择修改数量').type('Button'), 5000);
+      let disPlay = display.getDefaultDisplaySync();
+      let changeNumButton: Component = await driver.waitForComponent(ON.belongingDisplay(disPlay.id).text('选择修改数量').type('Button'), 5000);
       if (changeNumButton === null || changeNumButton === undefined) {
         console.info("testPicker15 findComponent changeNumButton fail");
       } else {
         console.info("testPicker15 findComponent changeNumButton success");
         await changeNumButton.click();
-        let checkBoxs: Array<Component> = await driver.findComponents(ON.type('Checkbox'));
+        let checkBoxs: Array<Component> = await driver.findComponents(ON.belongingDisplay(disPlay.id).type('Checkbox'));
         if (checkBoxs === null || checkBoxs.length <= 0) {
           console.info("testPicker15 findComponent checkbox fail");
         } else {
@@ -2921,8 +2924,9 @@ export default function TextPicker() {
         await btn.click();
       }
 
-      const checkbox = await driver.waitForComponent(ON.type('Checkbox'), 3000);
-      const finishBtn: Component = await driver.findComponent(ON.id('Complete')) || await driver.waitForComponent(ON.text('完成').type('Button'), 5000);
+      let disPlay = display.getDefaultDisplaySync();
+      const checkbox = await driver.waitForComponent(ON.belongingDisplay(disPlay.id).type('Checkbox'), 3000);
+      const finishBtn: Component = await driver.findComponent(ON.belongingDisplay(disPlay.id).id('Complete')) || await driver.waitForComponent(ON.belongingDisplay(disPlay.id).text('完成').type('Button'), 5000);
       if (checkbox !== undefined && checkbox !== null && finishBtn !== undefined && finishBtn !== null) {
         await checkbox.click();
         await CommonFunc.sleep(1000);
@@ -3041,7 +3045,8 @@ export default function TextPicker() {
       await routeToUrl(options);
       await CommonFunc.sleep(2000);
 
-      let checkBoxes: Array<Component> = await driver.findComponents(ON.type('Checkbox'));
+      let disPlay = display.getDefaultDisplaySync();
+      let checkBoxes: Array<Component> = await driver.findComponents(ON.belongingDisplay(disPlay.id).type('Checkbox'));
       if (checkBoxes === null || checkBoxes.length <= 0) {
         console.info("testPicker53 findComponent checkbox fail");
         router.back();
@@ -3159,7 +3164,8 @@ export default function TextPicker() {
       expect(JSON.parse(strJson)?.$attrs?.visibility).assertEqual('Visibility.Visible');
 
       await CommonFunc.sleep(600);
-      const images: Array<Component> = await driver.findComponents(ON.type('Image'));
+      let disPlay = display.getDefaultDisplaySync();
+      const images: Array<Component> = await driver.findComponents(ON.belongingDisplay(disPlay.id).type('Image'));
       expect(images && images.length > 0).assertTrue();
       if(!images || images.length === 0) {
         console.log("Any image found! Fail!");
@@ -3540,7 +3546,8 @@ export default function TextPicker() {
             expect(JSON.parse(strJson).$attrs.visibility).assertEqual('Visibility.Visible');
             await CommonFunc.sleep(2000);
 
-            let checkBoxs: Array<Component> = await driver.findComponents(ON.type('Checkbox'));
+            let disPlay = display.getDefaultDisplaySync();
+            let checkBoxs: Array<Component> = await driver.findComponents(ON.belongingDisplay(disPlay.id).type('Checkbox'));
             if (checkBoxs === null || checkBoxs.length <= 0) {
               console.info("testPicker59 findComponent checkbox fail");
             } else {
@@ -4293,7 +4300,8 @@ export default function TextPicker() {
 
       await CommonFunc.sleep(2000);
 
-      let checkBoxs: Array<Component> = await driver.findComponents(ON.type('Checkbox'));
+      let disPlay = display.getDefaultDisplaySync();
+      let checkBoxs: Array<Component> = await driver.findComponents(ON.belongingDisplay(disPlay.id).type('Checkbox'));
       if (checkBoxs === null || checkBoxs.length <= 0) {
         console.info("testPicker70 findComponent checkbox fail");
       } else {
@@ -5193,7 +5201,8 @@ export default function TextPicker() {
       expect(JSON.parse(strJson).$attrs.visibility).assertEqual('Visibility.Visible');
       await CommonFunc.sleep(2000);
 
-      let checkBoxs: Array<Component> = await driver.findComponents(ON.type('Checkbox'));
+      let disPlay = display.getDefaultDisplaySync();
+      let checkBoxs: Array<Component> = await driver.findComponents(ON.belongingDisplay(disPlay.id).type('Checkbox'));
       if (checkBoxs === null || checkBoxs.length <= 0) {
         console.info("SUB_PHOTO_PICKER_TEST_0500 findComponent checkbox fail");
       } else {
@@ -5324,7 +5333,8 @@ export default function TextPicker() {
       }
       await routeToUrl(options);
 
-      let checkbox: Component = await driver.findComponent(ON.type('Checkbox'));
+      let disPlay = display.getDefaultDisplaySync();
+      let checkbox: Component = await driver.findComponent(ON.belongingDisplay(disPlay.id).type('Checkbox'));
       if (checkbox === null) {
         console.info('SUB_PHOTO_PICKER_TEST_0700 no photo found, skipping zoom test');
         router.back();
@@ -5346,21 +5356,21 @@ export default function TextPicker() {
         return;
       }
 
-      let checkboxComp: Component = await driver.findComponent(ON.type('Checkbox'));
+      let checkbox: Component = await driver.findComponent(ON.belongingDisplay(disPlay.id).type('Checkbox'));
       if (checkboxComp !== null) {
         await checkboxComp.click();
         console.info('SUB_PHOTO_PICKER_TEST_0700 checkbox clicked');
         await CommonFunc.sleep(500);
       }
 
-      let previewBtn: Component = await driver.findComponent(ON.id('previewButton'));
+      let previewBtn: Component = await driver.findComponent(ON.belongingDisplay(disPlay.id).id('previewButton'));
       if (previewBtn !== null) {
         await previewBtn.click();
         console.info('SUB_PHOTO_PICKER_TEST_0700 previewButton clicked');
         await CommonFunc.sleep(2000);
       }
 
-      let bigImage: Component = await driver.findComponent(ON.type('Image'));
+      let bigImage: Component = await driver.findComponent(ON.belongingDisplay(disPlay.id).type('Image'));
       if (bigImage !== null) {
         try {
           await bigImage.pinchOut(2.0);
@@ -5495,10 +5505,11 @@ export default function TextPicker() {
         const strJson: string = getInspectorByKey('PhotoPickerComponent');
         expect(JSON.parse(strJson).$attrs.visibility).assertEqual('Visibility.Visible');
 
-        let checkBoxes: Array<Component> = await driver.findComponents(ON.type('Checkbox'));
+        let disPlay = display.getDefaultDisplaySync();
+        const checkBoxes: Array<Component> = await driver.findComponents(ON.belongingDisplay(disPlay.id).type('Checkbox'));
         for (let attempt = 0; attempt < 12 && (checkBoxes === null || checkBoxes.length < 2); attempt++) {
           await CommonFunc.sleep(200);
-          checkBoxes = await driver.findComponents(ON.type('Checkbox'));
+          await driver.findComponents(ON.belongingDisplay(disPlay.id).type('Checkbox'));
         }
         if (checkBoxes === null || checkBoxes.length < 2) {
           console.info('SUB_PHOTO_PICKER_TEST_0900: less than two photos available, skipping test');
@@ -5510,7 +5521,7 @@ export default function TextPicker() {
           try {
             receivedData = await waitForUnselectableInfo(code, async () => {
               const currentCheckBoxes: Array<Component> =
-                await driver.findComponents(ON.type('Checkbox'));
+                await driver.findComponents(ON.belongingDisplay(disPlay.id).type('Checkbox'));
               if (!currentCheckBoxes || currentCheckBoxes.length < 2) {
                 throw new Error('SUB_PHOTO_PICKER_TEST_0900 cannot find the second checkbox');
               }
@@ -5566,10 +5577,11 @@ export default function TextPicker() {
           throw new Error('0901: PhotoPickerComponent inspector is empty');
         }
         expect(JSON.parse(strJson).$attrs.visibility).assertEqual('Visibility.Visible');
-        let checkBoxes: Array<Component> = await driver.findComponents(ON.type('Checkbox'));
+        let disPlay = display.getDefaultDisplaySync();
+        const checkBoxes: Array<Component> = await driver.findComponents(ON.belongingDisplay(disPlay.id).type('Checkbox'));
         for (let attempt = 0; attempt < 12 && (checkBoxes === null || checkBoxes.length < 2); attempt++) {
           await CommonFunc.sleep(200);
-          checkBoxes = await driver.findComponents(ON.type('Checkbox'));
+          checkBoxes =  await driver.findComponents(ON.belongingDisplay(disPlay.id).type('Checkbox'));;
         }
         if (checkBoxes === null || checkBoxes.length < 2) {
           console.info('0901: less than two photos available, skipping test');
@@ -5577,14 +5589,14 @@ export default function TextPicker() {
           await checkBoxes[0].click();
           await CommonFunc.sleep(1000);
           console.info('0901: first photo selected');
-          const previewButton = await driver.waitForComponent(ON.id('previewButton'), 5000);
+          const previewButton = await driver.waitForComponent(ON.belongingDisplay(disPlay.id).id('previewButton'), 5000);
           if (previewButton === null || previewButton === undefined) {
             throw new Error('0901: previewButton not found');
           }
           await previewButton.click();
           browserOpenAttempted = true;
           await CommonFunc.sleep(1000);
-          const pickerArea = await driver.findComponent(ON.id('PhotoPickerComponent'));
+          const pickerArea = await driver.findComponent(ON.belongingDisplay(disPlay.id).id('PhotoPickerComponent'));
           if (pickerArea === null || pickerArea === undefined) {
             throw new Error('0901: picker area not found');
           }
@@ -5603,7 +5615,7 @@ export default function TextPicker() {
           let receivedData: UnselectableItemInfo | undefined = undefined;
           try {
             receivedData = await waitForUnselectableInfo(code, async () => {
-              const browserCheckboxes: Array<Component> = await driver.findComponents(ON.type('Checkbox'));
+               const browserCheckboxes: Array<Component> = await driver.findComponents(ON.belongingDisplay(disPlay.id).type('Checkbox'));
               if (!browserCheckboxes || browserCheckboxes.length === 0) {
                 throw new Error('0901: browser checkbox not found');
               }
