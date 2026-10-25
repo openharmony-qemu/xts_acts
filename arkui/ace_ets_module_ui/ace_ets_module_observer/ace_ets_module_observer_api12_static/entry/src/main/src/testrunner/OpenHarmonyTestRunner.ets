@@ -36,7 +36,8 @@ export class OpenHarmonyTestRunner implements TestRunner {
     abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
   }
 
-  public onRun: () => void = () => {
+  public get onRun(): () => void {
+    return () => {
     hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun');
 
     abilityDelegatorArguments = abilityDelegatorRegistry.getArguments();
@@ -55,4 +56,5 @@ export class OpenHarmonyTestRunner implements TestRunner {
       hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun end');
     }, 4000)
   }
+    }
 }
