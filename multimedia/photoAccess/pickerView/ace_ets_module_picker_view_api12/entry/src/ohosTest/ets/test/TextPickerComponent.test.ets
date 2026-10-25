@@ -5581,7 +5581,7 @@ export default function TextPicker() {
         const checkBoxes: Array<Component> = await driver.findComponents(ON.belongingDisplay(disPlay.id).type('Checkbox'));
         for (let attempt = 0; attempt < 12 && (checkBoxes === null || checkBoxes.length < 2); attempt++) {
           await CommonFunc.sleep(200);
-          checkBoxes =  await driver.findComponents(ON.belongingDisplay(disPlay.id).type('Checkbox'));;
+          checkBoxes =  await driver.findComponents(ON.belongingDisplay(disPlay.id).type('Checkbox'));
         }
         if (checkBoxes === null || checkBoxes.length < 2) {
           console.info('0901: less than two photos available, skipping test');
