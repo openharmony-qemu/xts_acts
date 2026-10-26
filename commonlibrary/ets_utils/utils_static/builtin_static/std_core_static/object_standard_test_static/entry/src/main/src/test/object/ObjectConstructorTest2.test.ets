@@ -3776,5 +3776,1101 @@ export default function objectConstructorTest2(): void {
       expect(ks.length).assertEqual(0);
       expect(ks.includes("x")).assertFalse();
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2060
+     * @tc.name objectConstructorTest206
+     * @tc.desc Verify string record values are unchanged and $_hashCode is stable across calls
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest206", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const rec: Record<string, string> = { "k1": "v1", "k2": "v2" };
+      const h1: int = rec.$_hashCode();
+      const h12: int = rec.$_hashCode();
+      expect(h1).assertEqual(h12);
+      let actual1: string = rec["k1"]!;
+      let expected1: string = "v1";
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = rec["k2"]!;
+      let expected2: string = "v2";
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2070
+     * @tc.name objectConstructorTest207
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest207", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const rec: Record<string, int> = {};
+      const h1: int = rec.$_hashCode();
+      const h12: int = rec.$_hashCode();
+      expect(h1).assertEqual(h12);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2080
+     * @tc.name objectConstructorTest208
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest208", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const rec: Record<string, int> = { "count": 5, "total": 12 };
+      const h1: int = rec.$_hashCode();
+      const h12: int = rec.$_hashCode();
+      expect(h1).assertEqual(h12);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2090
+     * @tc.name objectConstructorTest209
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest209", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r1: Record<string, int> = { 'k': 1 };
+      const r2: Record<string, int> = { 'k': 2 };
+      const h1: int = r1.$_hashCode();
+      const h2: int = r2.$_hashCode();
+      const h12: int = r1.$_hashCode();
+      const h22: int = r2.$_hashCode();
+      expect(h1).assertEqual(h12);
+      expect(h2).assertEqual(h22);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2100
+     * @tc.name objectConstructorTest210
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest210", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Object = new Object();
+      const b: Object = new Object();
+      const arr: Object[] = [a, b];
+      const h1: int = arr.$_hashCode();
+      const h12: int = arr.$_hashCode();
+      expect(h1).assertEqual(h12);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2110
+     * @tc.name objectConstructorTest211
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest211", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const grid: int[][] = [
+        [1, 2],
+        [3, 4],
+      ];
+      const h1: int = grid.$_hashCode();
+      const h12: int = grid.$_hashCode();
+      expect(h1).assertEqual(h12);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2120
+     * @tc.name objectConstructorTest212
+     * @tc.desc Verify $_hashCode of string array returns stable int hash across calls
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest212", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: string[] = ['x', 'y'];
+      const h1: int = arr.$_hashCode();
+      const h12: int = arr.$_hashCode();
+      expect(h1).assertEqual(h12);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2130
+     * @tc.name objectConstructorTest213
+     * @tc.desc Verify Point $_hashCode remains stable for coordinate pairs (1,1), (1,2), and (3,4)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest213", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const points: Point[] = [new Point(1, 1), new Point(1, 2), new Point(3, 4)];
+      for (const point of points) {
+        const firstHash: int = point.$_hashCode();
+        const secondHash: int = point.$_hashCode();
+        expect(firstHash).assertEqual(secondHash);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2140
+     * @tc.name objectConstructorTest214
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest214", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const p1: Point = new Point(1, 1);
+      const p2: Point = new Point(2, 2);
+      const hp1: int = p1.$_hashCode();
+      const hp2: int = p2.$_hashCode();
+      const hp1b: int = p1.$_hashCode();
+      const hp2b: int = p2.$_hashCode();
+      expect(hp1).assertEqual(hp1b);
+      expect(hp2).assertEqual(hp2b);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2150
+     * @tc.name objectConstructorTest215
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest215", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const m: Marker = new Marker();
+      const h1: int = m.$_hashCode();
+      const h12: int = m.$_hashCode();
+      expect(h1).assertEqual(h12);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2160
+     * @tc.name objectConstructorTest216
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest216", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const bag: Bag = new Bag(['a', 'b']);
+      const h1: int = bag.$_hashCode();
+      const h12: int = bag.$_hashCode();
+      expect(h1).assertEqual(h12);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2170
+     * @tc.name objectConstructorTest217
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest217", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const cfg: Config = new Config({ 'k': 1 });
+      const h1: int = cfg.$_hashCode();
+      const h12: int = cfg.$_hashCode();
+      expect(h1).assertEqual(h12);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2180
+     * @tc.name objectConstructorTest218
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest218", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const p: Point = new Point(1, 2);
+      const r: Rect = new Rect(3, 4);
+      const hp: int = p.$_hashCode();
+      const hp2: int = p.$_hashCode();
+      const hr: int = r.$_hashCode();
+      const hr2: int = r.$_hashCode();
+      expect(hp).assertEqual(hp2);
+      expect(hr).assertEqual(hr2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2190
+     * @tc.name objectConstructorTest219
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest219", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const it: Item001 = new Item001(1);
+      const o: Object = new Object();
+      const hi: int = it.$_hashCode();
+      const hi2: int = it.$_hashCode();
+      const ho: int = o.$_hashCode();
+      const ho2: int = o.$_hashCode();
+      expect(hi).assertEqual(hi2);
+      expect(ho).assertEqual(ho2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2200
+     * @tc.name objectConstructorTest220
+     * @tc.desc Verify Point instance fields x y hold constructor values 5 and 6
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest220", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const p: Point = new Point(5, 6);
+      let actual1: number = p.x;
+      let expected1: int = 5;
+      expect(actual1).assertEqual(expected1);
+      let actual2: number = p.y;
+      let expected2: int = 6;
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2210
+     * @tc.name objectConstructorTest221
+     * @tc.desc Verify $_hashCode of record is stable after value update
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest221", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const rec: Record<string, number> = { 'k': 1 };
+      const h1: int = rec.$_hashCode();
+      rec['k'] = 2;
+      const h12: int = rec.$_hashCode();
+      expect(h1).assertEqual(h12);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2220
+     * @tc.name objectConstructorTest222
+     * @tc.desc Verify record $_hashCode stays callable after value updates
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest222", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const rec: Record<string, string> = { 'k': 'a' };
+      rec['k'] = 'b';
+      rec["k2"] = 'c';
+      const h1: int = rec.$_hashCode();
+      const h12: int = rec.$_hashCode();
+      expect(h1).assertEqual(h12);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2230
+     * @tc.name objectConstructorTest223
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest223", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const p: Point = new Point(1, 2);
+      p.x = 10;
+      p.y = 20;
+      const h1: int = p.$_hashCode();
+      const h12: int = p.$_hashCode();
+      expect(h1).assertEqual(h12);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2240
+     * @tc.name objectConstructorTest224
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest224", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: int[] = [1, 2];
+      arr[0] = 9;
+      const h1: int = arr.$_hashCode();
+      const h12: int = arr.$_hashCode();
+      expect(h1).assertEqual(h12);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2250
+     * @tc.name objectConstructorTest225
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest225", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const rec: Record<string, number> = { 'a': 1 };
+      const h1: int = rec.$_hashCode();
+      const h12: int = rec.$_hashCode();
+      expect(h1).assertEqual(h12);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2260
+     * @tc.name objectConstructorTest226
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest226", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const rec: Record<string, int> = { 'k': 1 };
+      rec['k'] = 5;
+      rec['k'] = 1;
+      const h1: int = rec.$_hashCode();
+      const h12: int = rec.$_hashCode();
+      expect(h1).assertEqual(h12);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2270
+     * @tc.name objectConstructorTest227
+     * @tc.desc Verify Box005 $_hashCode is consistent after value restore
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest227", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const b: Box005 = new Box005();
+      const h1: int = b.$_hashCode();
+      const h12: int = b.$_hashCode();
+      expect(h1).assertEqual(h12);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2280
+     * @tc.name objectConstructorTest228
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest228", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const rec: Record<string, int> = { 'a': 1, 'b': 2 };
+      rec['a'] = 100;
+      rec['b'] = 200;
+      rec['c'] = 300;
+      rec['a'] = 1;
+      rec['b'] = 2;
+      rec['c'] = 3;
+      const h1: int = rec.$_hashCode();
+      const h12: int = rec.$_hashCode();
+      expect(h1).assertEqual(h12);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2290
+     * @tc.name objectConstructorTest229
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest229", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const o: Object = new Object();
+      const rec: Record<string, string> = { 'k': 'v' };
+      const ho1: int = o.$_hashCode();
+      const ho12: int = o.$_hashCode();
+      const hr1: int = rec.$_hashCode();
+      const hr12: int = rec.$_hashCode();
+      expect(ho1).assertEqual(ho12);
+      expect(hr1).assertEqual(hr12);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2300
+     * @tc.name objectConstructorTest230
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest230", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const rec: Record<string, int> = { 'k': 1 };
+      const h1: int = rec.$_hashCode();
+      const h12: int = rec.$_hashCode();
+      expect(h1).assertEqual(h12);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2310
+     * @tc.name objectConstructorTest231
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest231", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: string[] = ['a'];
+      const h1: int = arr.$_hashCode();
+      const h12: int = arr.$_hashCode();
+      expect(h1).assertEqual(h12);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2320
+     * @tc.name objectConstructorTest232
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest232", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const t: Tag = new Tag("t1");
+      const a: Object = new Object();
+      const b: Object = new Object();
+      const ht: int = t.$_hashCode();
+      const ha: int = a.$_hashCode();
+      const hb: int = b.$_hashCode();
+      const ht2: int = t.$_hashCode();
+      const ha2: int = a.$_hashCode();
+      const hb2: int = b.$_hashCode();
+      expect(ht).assertEqual(ht2);
+      expect(ha).assertEqual(ha2);
+      expect(hb).assertEqual(hb2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2330
+     * @tc.name objectConstructorTest233
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest233", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let obj: Object = new Object();
+      const oldHash: int = obj.$_hashCode();
+      const oldHash2: int = obj.$_hashCode();
+      obj = new Object();
+      const second: int = obj.$_hashCode();
+      const second2: int = obj.$_hashCode();
+      expect(oldHash).assertEqual(oldHash2);
+      expect(second).assertEqual(second2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2340
+     * @tc.name objectConstructorTest234
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest234", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let obj: Object = new Object();
+      const oldRef: Object = obj;
+      const h0a: int = oldRef.$_hashCode();
+      obj = new Object();
+      const oldHash: int = oldRef.$_hashCode();
+      const oldHash2: int = oldRef.$_hashCode();
+      expect(h0a).assertEqual(oldHash);
+      expect(oldHash).assertEqual(oldHash2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2350
+     * @tc.name objectConstructorTest235
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest235", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let obj: Object = new Object();
+      const flag: boolean = true;
+      if (flag) {
+        obj = new Object();
+      } else {
+        obj = new Object();
+      }
+      const h1: int = obj.$_hashCode();
+      const h12: int = obj.$_hashCode();
+      expect(h1).assertEqual(h12);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2360
+     * @tc.name objectConstructorTest236
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest236", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let obj: Object = new Object();
+      const oldRef: Object = obj;
+      const oldHash: int = oldRef.$_hashCode();
+      obj = new Object();
+      const newHash: int = obj.$_hashCode();
+      const oldHash2: int = oldRef.$_hashCode();
+      const newHash2: int = obj.$_hashCode();
+      expect(oldHash).assertEqual(oldHash2);
+      expect(newHash).assertEqual(newHash2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2370
+     * @tc.name objectConstructorTest237
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest237", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let obj: Object = new Object();
+      for (let i: int = 0; i < 3; i++) {
+        obj = new Object();
+        const a: int = obj.$_hashCode();
+        const a2: int = obj.$_hashCode();
+        expect(a).assertEqual(a2);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2380
+     * @tc.name objectConstructorTest238
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest238", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let obj: Object = new Object();
+      obj = new Object();
+      const getCurrent = (): Object => obj;
+      const h1: int = getCurrent().$_hashCode();
+      const h12: int = getCurrent().$_hashCode();
+      expect(h1).assertEqual(h12);
+      obj = new Object();
+      const h2: int = getCurrent().$_hashCode();
+      const h22: int = getCurrent().$_hashCode();
+      expect(h2).assertEqual(h22);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2390
+     * @tc.name objectConstructorTest239
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest239", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Object[] = [new Object(), new Object()];
+      let obj: Object = arr[0];
+      const h0a: int = obj.$_hashCode();
+      const h0a2: int = obj.$_hashCode();
+      expect(h0a).assertEqual(h0a2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2400
+     * @tc.name objectConstructorTest240
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest240", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: Object = new Object();
+      let b: Object = new Object();
+      const hb: int = b.$_hashCode();
+      a = b;
+      const ha2: int = a.$_hashCode();
+      const hb2: int = b.$_hashCode();
+      expect(ha2).assertEqual(hb);
+      expect(hb2).assertEqual(hb);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2410
+     * @tc.name objectConstructorTest241
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest241", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj: Object = new Object();
+      const r1: int = safeHash(obj);
+      const r2: int = safeHash(obj);
+      expect(r2).assertEqual(r1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2420
+     * @tc.name objectConstructorTest242
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest242", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj: Object = new Object();
+      const h0: int = obj.$_hashCode();
+      const h02: int = obj.$_hashCode();
+      for (let i: int = 0; i < 4; i++) {
+        const h1: int = obj.$_hashCode();
+        expect(h1).assertEqual(h0);
+      }
+      expect(h0).assertEqual(h02);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2430
+     * @tc.name objectConstructorTest243
+     * @tc.desc Verify collecting $_hashCode of Object array elements yields one entry per element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest243", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Object[] = [new Object(), new Object(), new Object()];
+      const hashes: int[] = [];
+      for (let i: int = 0; i < arr.length; i++) {
+        const h: int = arr[i].$_hashCode();
+        hashes.push(h);
+      }
+      let actual1: int = hashes.length;
+      let expected1: int = 3;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2440
+     * @tc.name objectConstructorTest244
+     * @tc.desc Verify $_hashCode of each Object array element is self-consistent
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest244", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Object[] = [new Object(), new Object(), new Object()];
+      const h0: int = arr[0].$_hashCode();
+      const h1: int = arr[1].$_hashCode();
+      const h2: int = arr[2].$_hashCode();
+      const h02: int = arr[0].$_hashCode();
+      const h12: int = arr[1].$_hashCode();
+      const h22: int = arr[2].$_hashCode();
+      expect(h0).assertEqual(h02);
+      expect(h1).assertEqual(h12);
+      expect(h2).assertEqual(h22);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2450
+     * @tc.name objectConstructorTest245
+     * @tc.desc Verify repeated $_hashCode calls on one object return identical values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest245", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj: Object = new Object();
+      const h0: int = obj.$_hashCode();
+      const h1: int = obj.$_hashCode();
+      const h2: int = obj.$_hashCode();
+      expect(h0).assertEqual(h1);
+      expect(h1).assertEqual(h2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2460
+     * @tc.name objectConstructorTest246
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest246", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arrA: Object[] = [new Object(), new Object()];
+      const arrB: Object[] = [new Object(), new Object()];
+      for (let i: int = 0; i < arrA.length; i++) {
+        const ha: int = arrA[i].$_hashCode();
+        const hb: int = arrB[i].$_hashCode();
+        const ha2: int = arrA[i].$_hashCode();
+        const hb2: int = arrB[i].$_hashCode();
+        expect(ha).assertEqual(ha2);
+        expect(hb).assertEqual(hb2);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2470
+     * @tc.name objectConstructorTest247
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest247", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Object[] = [new Object(), new Object()];
+      const before: number = arr.length;
+      for (const item of arr) {
+        item.$_hashCode();
+      }
+      const after: number = arr.length;
+      expect(after).assertEqual(before);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2480
+     * @tc.name objectConstructorTest248
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest248", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Object[] = [new Object(), new Object()];
+      const first: Object = arr[0];
+      const second: Object = arr[1];
+      const hf: int = first.$_hashCode();
+      const hs: int = second.$_hashCode();
+      const hf2: int = first.$_hashCode();
+      const hs2: int = second.$_hashCode();
+      expect(hf).assertEqual(hf2);
+      expect(hs).assertEqual(hs2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2490
+     * @tc.name objectConstructorTest249
+     * @tc.desc Verify Item002 has own property "name"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest249", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj: Object = new Item002();
+      const own: boolean = obj.hasOwnProperty("name");
+      expect(own).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2500
+     * @tc.name objectConstructorTest250
+     * @tc.desc Verify Item004 has own property "name"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest250", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj: Object = new Item004();
+      const own: boolean = obj.hasOwnProperty("name");
+      expect(own).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2510
+     * @tc.name objectConstructorTest251
+     * @tc.desc Verify NodeC has own properties a b c
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest251", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj: Object = new NodeC();
+      const hasA: boolean = obj.hasOwnProperty('a');
+      const hasB: boolean = obj.hasOwnProperty('b');
+      const hasC: boolean = obj.hasOwnProperty('c');
+      expect(hasA).assertTrue();
+      expect(hasB).assertTrue();
+      expect(hasC).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2520
+     * @tc.name objectConstructorTest252
+     * @tc.desc Verify Box006 instance has own property name
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest252", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const box: Box006 = new Box006();
+      const own: boolean = box.hasOwnProperty("name");
+      expect(own).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2530
+     * @tc.name objectConstructorTest253
+     * @tc.desc Verify Item005 hasOwnProperty returns false for empty string key
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest253", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj: Object = new Item005();
+      const emptyKey: boolean = obj.hasOwnProperty('');
+      expect(emptyKey).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2540
+     * @tc.name objectConstructorTest254
+     * @tc.desc Verify Item007 has own property "name"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest254", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj: Object = new Item007();
+      for (let i: int = 0; i < 3; i++) {
+        const own: boolean = obj.hasOwnProperty("name");
+        expect(own).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2550
+     * @tc.name objectConstructorTest255
+     * @tc.desc Verify Item007 has own property "name" after reassignment
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest255", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const item: Item007 = new Item007();
+      const own: boolean = item.hasOwnProperty("name");
+      expect(own).assertTrue();
+      item.name = "renamed";
+      const own2: boolean = item.hasOwnProperty("name");
+      expect(own2).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2560
+     * @tc.name objectConstructorTest256
+     * @tc.desc Verify $_hashCode of record viewed as Object returns stable int hash
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest256", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const rec: Record<string, number> = {};
+      const obj: Object = rec;
+      const h1: int = obj.$_hashCode();
+      const h12: int = obj.$_hashCode();
+      expect(h1).assertEqual(h12);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2570
+     * @tc.name objectConstructorTest257
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest257", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const rec: Record<string, number> = { 'a': 1 };
+      const obj: Object = rec;
+      const h1: int = obj.$_hashCode();
+      const h12: int = obj.$_hashCode();
+      expect(h1).assertEqual(h12);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2580
+     * @tc.name objectConstructorTest258
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest258", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const rec: Record<string, number> = {};
+      const obj: Object = rec;
+      rec['b'] = 2;
+      const h1: int = obj.$_hashCode();
+      const h12: int = obj.$_hashCode();
+      expect(h1).assertEqual(h12);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2590
+     * @tc.name objectConstructorTest259
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest259", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const rec: Record<string, number> = { 'v': 1 };
+      const obj: Object = rec;
+      const hr1: int = rec.$_hashCode();
+      const ho1: int = obj.$_hashCode();
+      const hr12: int = rec.$_hashCode();
+      const ho12: int = obj.$_hashCode();
+      expect(hr1).assertEqual(hr12);
+      expect(ho1).assertEqual(ho12);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2600
+     * @tc.name objectConstructorTest260
+     * @tc.desc Verify deeply nested record $_hashCode returns consistent value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest260", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const level4: Record<string, number> = { "value": 1 };
+      const level3: Record<string, Object> = { "next": level4 };
+      const level2: Record<string, Object> = { "next": level3 };
+      const level1: Record<string, Object> = { "next": level2 };
+      const obj: Object = level1;
+      const h1: int = obj.$_hashCode();
+      const h12: int = obj.$_hashCode();
+      expect(h1).assertEqual(h12);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2610
+     * @tc.name objectConstructorTest261
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest261", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inner: Record<string, number> = { 'v': 1 };
+      const mid: Record<string, Object> = { "child": inner };
+      const outer: Record<string, Object> = { "child": mid };
+      const objOuter: Object = outer;
+      const objMid: Object = mid;
+      const objInner: Object = inner;
+      const ho: int = objOuter.$_hashCode();
+      const hm: int = objMid.$_hashCode();
+      const hi: int = objInner.$_hashCode();
+      const ho2: int = objOuter.$_hashCode();
+      const hm2: int = objMid.$_hashCode();
+      const hi2: int = objInner.$_hashCode();
+      expect(ho).assertEqual(ho2);
+      expect(hm).assertEqual(hm2);
+      expect(hi).assertEqual(hi2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2620
+     * @tc.name objectConstructorTest262
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest262", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inner: Record<string, number> = { 'v': 1 };
+      const outer: Record<string, Object> = { "child": inner };
+      const arr: Object[] = [inner, outer, new Object()];
+      for (const item of arr) {
+        const h1: int = item.$_hashCode();
+        const h12: int = item.$_hashCode();
+        expect(h1).assertEqual(h12);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2630
+     * @tc.name objectConstructorTest263
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest263", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj: Object = new Leaf();
+      const h1: int = obj.$_hashCode();
+      const h12: int = obj.$_hashCode();
+      expect(h1).assertEqual(h12);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2640
+     * @tc.name objectConstructorTest264
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest264", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inner: Record<string, number> = { 'v': 1 };
+      const outer: Record<string, Object> = { "child": inner };
+      const h1: int = outer.$_hashCode();
+      const h12: int = outer.$_hashCode();
+      expect(h1).assertEqual(h12);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2650
+     * @tc.name objectConstructorTest265
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest265", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const rec1: Object = {} as Record<string, number>;
+      const rec2: Object = {} as Record<string, number>;
+      const arr: Object[] = [rec1, rec2];
+      for (const item of arr) {
+        const h1: int = item.$_hashCode();
+        const h12: int = item.$_hashCode();
+        expect(h1).assertEqual(h12);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2660
+     * @tc.name objectConstructorTest266
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest266", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const shallow: Record<string, number> = { 'v': 1 };
+      const inner: Record<string, number> = { 'v': 2 };
+      const deep: Record<string, Object> = { "child": inner };
+      const objS: Object = shallow;
+      const objD: Object = deep;
+      const hs1: int = objS.$_hashCode();
+      const hd1: int = objD.$_hashCode();
+      const hs12: int = objS.$_hashCode();
+      const hd12: int = objD.$_hashCode();
+      expect(hs1).assertEqual(hs12);
+      expect(hd1).assertEqual(hd12);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2670
+     * @tc.name objectConstructorTest267
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest267", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const leaf: Record<string, number> = { 'v': 1 };
+      const mid: Record<string, Object> = { "list": leaf };
+      const top: Record<string, Object> = { "items": mid };
+      const obj: Object = top;
+      const h1: int = obj.$_hashCode();
+      const h12: int = obj.$_hashCode();
+      expect(h1).assertEqual(h12);
+    });
   });
 }
