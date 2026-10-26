@@ -1,0 +1,71 @@
+{
+    "description": "Configuration for hjunit demo Tests",
+    "driver": {
+        "type": "ValidatorTest",
+        "bundle-name": "com.example.actsvalidator",
+        "package-name": "com.example.actsvalidator",
+        "xml_path": "/data/app/el2/100/base/com.example.actsvalidator/haps/entry/files/Test.xml"
+    },
+    "kits": [
+        {
+            "test-file-name": [
+                "validator.hap",
+                "UninstallTest.hap"
+            ],
+            "type": "AppInstallKit",
+            "cleanup-apps": false
+        },
+        {
+            "type": "ShellKit",
+            "run-command": [
+                "hilog -Q pidoff"
+            ]
+        },
+        {
+            "type": "CommandKit",
+            "shell": [
+                {
+                    "name": "shell",
+                    "value": "\"SP_daemon &\""
+                },
+                {
+                    "name": "shell",
+                    "value": "aa start -a MainAbility -b com.example.actsvalidator"
+                },
+                {
+                    "name": "push",
+                    "value": "picture->/storage/media/100/local/files/Pictures"
+                },
+                {
+                    "name": "shell",
+                    "value": "mediatool send /storage/media/100/local/files/Pictures"
+                }
+            ]
+        },
+        {
+            "type": "PushKit",
+            "push": [
+                "AAC160001.aac->/data/local/tmp/",
+                "AAC48000321.aac->/data/local/tmp/",
+                "FLAC48000321.flac->/data/local/tmp/",
+                "MP348000321.mp3->/data/local/tmp/",
+                "MPEG448000321.m4a->/data/local/tmp/",
+                "OGG480001.ogg->/data/local/tmp/",
+                "vorbis48000321.wav->/data/local/tmp/",
+                "h264Mp3.mkv->/data/local/tmp/",
+                "h264Mp3.mp4->/data/local/tmp/",
+                "./resource/acts-validator/setup_acts_validator_player_test.sh -> /data/local/tmp/"
+
+            ],
+            "uninstall": false
+        },
+        {
+            "type": "ShellKit",
+            "run-command": [
+                "scanner",
+                "chmod 755 /data/local/tmp/",
+                "sh /data/local/tmp/setup_acts_validator_player_test.sh"
+            ]
+        }
+    ]
+}
