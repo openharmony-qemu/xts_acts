@@ -1892,5 +1892,1323 @@ export default function objectFromEntriesTest2(): void {
       let actual1: boolean = s.has('b');
       expect(actual1).assertTrue();
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_0920
+     * @tc.name objectFromEntriesTest092
+     * @tc.desc Verify Object.fromEntries<Set<number>> builds record with value 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const empty: Set<number> = new Set<number>();
+      const pairs: Array<[string, Set<number>]> = [['e', empty]];
+      const record: Record<string, Set<number>> = Object.fromEntries<Set<number>>(pairs);
+      let actual1: number = record['e']!.size;
+      let expected1: int = 0;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_0930
+     * @tc.name objectFromEntriesTest093
+     * @tc.desc Verify Object.fromEntries<Set<number>> builds record from key-value pairs
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Set<number> = new Set<number>();
+      const b: Set<number> = new Set<number>();
+      a.add(1);
+      b.add(2);
+      const pairs: Array<[string, Set<number>]> = [
+        ['a', a],
+        ['b', b],
+      ];
+      const record: Record<string, Set<number>> = Object.fromEntries<Set<number>>(pairs);
+      let actual1: boolean = record['a']!.has(1);
+      expect(actual1).assertTrue();
+      let actual2: boolean = record['b']!.has(2);
+      expect(actual2).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_0940
+     * @tc.name objectFromEntriesTest094
+     * @tc.desc Verify Object.fromEntries<Set<string>> builds record with value 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest094", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const s: Set<string> = new Set<string>();
+      s.add('q');
+      const pairs: Array<[PropertyKey, Set<string>]> = [['7', s]];
+      const record: Record<PropertyKey, Set<string>> = Object.fromEntries<Set<string>>(pairs);
+      let actual1: number = record['7']!.size;
+      let expected1: int = 1;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_0950
+     * @tc.name objectFromEntriesTest095
+     * @tc.desc Verify Object.fromEntries<Set<number>> builds record from key-value pairs
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const s: Set<number> = new Set<number>();
+      s.add(1);
+      const pairs: Array<[string, Set<number>]> = [['s', s]];
+      const record: Record<string, Set<number>> = Object.fromEntries<Set<number>>(pairs);
+      s.delete(1);
+      let actual1: boolean = record['s']!.has(1);
+      expect(actual1).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_0960
+     * @tc.name objectFromEntriesTest096
+     * @tc.desc Verify Object.fromEntries<Record<string, number>> builds record with value 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest096", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inner: Record<string, number> = { 'x': 1, 'y': 2 };
+      const pairs: Array<[string, Record<string, number>]> = [['r', inner]];
+      const record: Record<string, Record<string, number>> = Object.fromEntries<Record<string, number>>(pairs);
+      let actual1: string = `${record['r']!['x']!}`;
+      let expected1: string = '1';
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_0970
+     * @tc.name objectFromEntriesTest097
+     * @tc.desc Verify Object.fromEntries<Record<string, number>> builds record with value 55
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest097", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inner: Record<string, number> = { 'x': 1 };
+      const pairs: Array<[string, Record<string, number>]> = [['r', inner]];
+      const record: Record<string, Record<string, number>> = Object.fromEntries<Record<string, number>>(pairs);
+      inner['x'] = 55;
+      let actual1: string = `${record['r']!['x']!}`;
+      let expected1: string = "55";
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_0980
+     * @tc.name objectFromEntriesTest098
+     * @tc.desc Verify Object.fromEntries<Record<string, number>> builds record with value 66
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest098", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inner: Record<string, number> = { 'x': 1 };
+      const pairs: Array<[string, Record<string, number>]> = [['r', inner]];
+      const record: Record<string, Record<string, number>> = Object.fromEntries<Record<string, number>>(pairs);
+      record['r']!['y'] = 66;
+      let actual1: string = `${inner['y']!}`;
+      let expected1: string = "66";
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_0990
+     * @tc.name objectFromEntriesTest099
+     * @tc.desc Verify Object.fromEntries<Record<string, number>> builds record with value 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest099", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const empty: Record<string, number> = {};
+      const pairs: Array<[string, Record<string, number>]> = [['e', empty]];
+      const record: Record<string, Record<string, number>> = Object.fromEntries<Record<string, number>>(pairs);
+      let actual1: int = Object.keys(record['e']!).length;
+      let expected1: int = 0;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1000
+     * @tc.name objectFromEntriesTest100
+     * @tc.desc Verify Object.fromEntries with nested Record value builds record with value 7
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const nested: Record<string, Record<string, number>> = { 'a': { 'b': 7 } };
+      const pairs: Array<[string, Record<string, Record<string, number>>]> = [['n', nested]];
+      const record: Record<string, Record<string, Record<string, number>>> = Object.fromEntries<
+        Record<string, Record<string, number>>
+      >(pairs);
+      let actual1: string = `${record['n']!['a']!['b']!}`;
+      let expected1: string = '7';
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1010
+     * @tc.name objectFromEntriesTest101
+     * @tc.desc Verify Object.fromEntries<Record<string, string>> builds record with value "v"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest101", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inner: Record<string, string> = { 'k': 'v' };
+      const pairs: Array<[PropertyKey, Record<string, string>]> = [['8', inner]];
+      const record: Record<PropertyKey, Record<string, string>> = Object.fromEntries<Record<string, string>>(pairs);
+      let actual1: string = record['8']!['k']!;
+      let expected1: string = 'v';
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1020
+     * @tc.name objectFromEntriesTest102
+     * @tc.desc Verify Object.fromEntries<Record<string, number>> builds record with value 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest102", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const ra: Record<string, number> = { 'a': 1 };
+      const rb: Record<string, number> = { 'b': 2 };
+      const pairs: Array<[string, Record<string, number>]> = [
+        ['p', ra],
+        ['q', rb],
+      ];
+      const record: Record<string, Record<string, number>> = Object.fromEntries<Record<string, number>>(pairs);
+      let actual1: string = `${record['p']!['a']!}`;
+      let expected1: string = '1';
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = `${record['q']!['b']!}`;
+      let expected2: string = '2';
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1030
+     * @tc.name objectFromEntriesTest103
+     * @tc.desc Verify Object.fromEntries<Object> builds record with Date year 2020 and RegExp string /ab/
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest103", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const d: Date = new Date(2020, 0, 1);
+      const r: RegExp = new RegExp("ab");
+      const pairs: Array<[string, Object]> = [
+        ['d', d],
+        ['r', r],
+      ];
+      const record: Record<string, Object> = Object.fromEntries<Object>(pairs);
+      expect((record['d']! as Date).getFullYear()).assertEqual(2020);
+      let actual2: string = record['r']!.toString();
+      let expected2: string = "/ab/";
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1040
+     * @tc.name objectFromEntriesTest104
+     * @tc.desc Verify Object.fromEntries<Object> builds record with value "mix"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest104", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const e: Error = new Error("mix");
+      const tag: Tag = { id: 3 };
+      const pairs: Array<[string, Object]> = [
+        ['e', e],
+        ['t', tag],
+      ];
+      const record: Record<string, Object> = Object.fromEntries<Object>(pairs);
+      let actual1: string = (record['e'] as Error).message;
+      let expected1: string = "mix";
+      expect(actual1).assertEqual(expected1);
+      let actual2: number = (record['t'] as Tag).id;
+      let expected2: int = 3;
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1050
+     * @tc.name objectFromEntriesTest105
+     * @tc.desc Verify Object.fromEntries<Object> builds record with value 2
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest105", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Array<number> = [1, 2];
+      const m: Map<string, number> = new Map<string, number>();
+      m.set('k', 1);
+      const pairs: Array<[string, Object]> = [
+        ['a', arr],
+        ['m', m],
+      ];
+      const record: Record<string, Object> = Object.fromEntries<Object>(pairs);
+      let actual1: int = (record['a'] as Array<number>).length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: number = (record['m'] as Map<string, number>).size;
+      let expected2: int = 1;
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1060
+     * @tc.name objectFromEntriesTest106
+     * @tc.desc Verify Object.fromEntries<Object> builds record with value "v"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest106", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const s: Set<number> = new Set<number>();
+      s.add(1);
+      const inner: Record<string, string> = { 'k': 'v' };
+      const pairs: Array<[string, Object]> = [
+        ['s', s],
+        ['r', inner],
+      ];
+      const record: Record<string, Object> = Object.fromEntries<Object>(pairs);
+      let actual1: boolean = (record['s'] as Set<number>).has(1);
+      expect(actual1).assertTrue();
+      let actual2: string = (record['r'] as Record<string, string>)['k']!;
+      let expected2: string = 'v';
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1070
+     * @tc.name objectFromEntriesTest107
+     * @tc.desc Verify Object.fromEntries<Object> builds record with value 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest107", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const c: Counter007 = new Counter007();
+      const tag: Tag001 = { id: 9 };
+      const pairs: Array<[string, Object]> = [
+        ['c', c],
+        ['t', tag],
+      ];
+      const record: Record<string, Object> = Object.fromEntries<Object>(pairs);
+      let actual1: number = (record['c'] as Counter007).increment();
+      let expected1: int = 1;
+      expect(actual1).assertEqual(expected1);
+      let actual2: number = (record['t'] as Tag001).id;
+      let expected2: int = 9;
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1080
+     * @tc.name objectFromEntriesTest108
+     * @tc.desc Verify Object.fromEntries<Object> builds record with Error message only and Set containing z
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest108", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const e: Error = new Error("only");
+      const s: Set<string> = new Set<string>();
+      s.add('z');
+      const pairs: Array<[string, Object]> = [
+        ['e', e],
+        ['s', s],
+      ];
+      const record: Record<string, Object> = Object.fromEntries<Object>(pairs);
+      expect((record['e']! as Error).message).assertEqual("only");
+      let actual2: boolean = (record['s'] as Set<string>).has('z');
+      expect(actual2).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1090
+     * @tc.name objectFromEntriesTest109
+     * @tc.desc Verify Object.fromEntries<Date> builds record with value 1710000000000
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest109", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const d: Date = new Date(1710000000000);
+      const source: Map<string, Date> = new Map<string, Date>();
+      source.set('d', d);
+      const record: Record<string, Date> = Object.fromEntries<Date>(source.entries());
+      let actual1: number = record['d']!.getTime();
+      let expected1: number = 1710000000000;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1100
+     * @tc.name objectFromEntriesTest110
+     * @tc.desc Verify Object.fromEntries<RegExp> builds record from Set entries and record.test returns true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest110", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r: RegExp = new RegExp("abc");
+      const source: Set<[string, RegExp]> = new Set<[string, RegExp]>();
+      source.add(['r', r]);
+      const record: Record<string, RegExp> = Object.fromEntries<RegExp>(source);
+      let actual1: boolean = record['r']!.test("xxabcxx");
+      expect(actual1).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1110
+     * @tc.name objectFromEntriesTest111
+     * @tc.desc Verify Object.fromEntries<Date> builds record with key "k" and Date value from array pairs
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest111", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const d: Date = new Date(2020, 0, 1);
+      const pairs: Array<[string, Date]> = [['k', d]];
+      const r1: Record<string, Date> = Object.fromEntries<Date>(pairs);
+      let actual1: number = r1['k']!.getTime();
+      let expected1: number = new Date(2020, 0, 1).getTime();
+      expect(actual1).assertEqual(expected1);
+      let actual2: number = r1['k']!.getFullYear();
+      let expected2: int = 2020;
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1120
+     * @tc.name objectFromEntriesTest112
+     * @tc.desc Verify Object.fromEntries<Error> builds record with value "viaMap"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest112", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const e: Error = new Error("viaMap");
+      const source: Map<string, Error> = new Map<string, Error>();
+      source.set('e', e);
+      const record: Record<string, Error> = Object.fromEntries<Error>(source.entries());
+      let actual1: string = record['e']!.message;
+      let expected1: string = "viaMap";
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1130
+     * @tc.name objectFromEntriesTest113
+     * @tc.desc Verify Object.fromEntries<Date> keys s, 1, __sk__ map to 2020, 2021, 2020
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest113", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const d1: Date = new Date(2020, 0, 1);
+      const d2: Date = new Date(2021, 0, 1);
+      const sk: string = "__sk__";
+      const pairs: Array<[PropertyKey, Date]> = [
+        ['s', d1],
+        ['1', d2],
+        [sk, d1],
+      ];
+      const record: Record<PropertyKey, Date> = Object.fromEntries<Date>(pairs);
+      let actual1: number = record['s']!.getFullYear();
+      let expected1: int = 2020;
+      expect(actual1).assertEqual(expected1);
+      let actual2: number = record['1']!.getFullYear();
+      let expected2: int = 2021;
+      expect(actual2).assertEqual(expected2);
+      let actual3: number = record[sk]!.getFullYear();
+      let expected3: int = 2020;
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1140
+     * @tc.name objectFromEntriesTest114
+     * @tc.desc Verify Object.fromEntries<Any> builds a non-null record from empty pairs
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest114", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pairs: Array<[string, Any]> = [];
+      const record: Record<string, Any> = Object.fromEntries<Any>(pairs);
+      expect(Object.keys(record).length).assertEqual(0);
+      expect(record.hasOwnProperty("anything")).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1150
+     * @tc.name objectFromEntriesTest115
+     * @tc.desc Verify Object.fromEntries<Any> on empty pairs yields record where Object.hasOwn is false
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest115", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pairs: Array<[string, Any]> = [];
+      const record: Record<string, Any> = Object.fromEntries<Any>(pairs);
+      let actual1: boolean = Object.hasOwn(record, 'x');
+      expect(actual1).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1160
+     * @tc.name objectFromEntriesTest116
+     * @tc.desc Verify Object.fromEntries<Any> builds record with value '{}'
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest116", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pairs: Array<[string, Any]> = [];
+      const record: Record<string, Any> = Object.fromEntries<Any>(pairs);
+      let actual1: string = JSON.stringify(record);
+      let expected1: string = "{}";
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1170
+     * @tc.name objectFromEntriesTest117
+     * @tc.desc Verify Object.fromEntries<Any> builds record with 1 keys
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest117", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pairs: Array<[string, Any]> = [];
+      const record: Record<string, Any> = Object.fromEntries<Any>(pairs);
+      record["added"] = 1;
+      let actual1: int = Object.keys(record).length;
+      let expected1: int = 1;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1180
+     * @tc.name objectFromEntriesTest118
+     * @tc.desc Verify Object.fromEntries<Any> builds record with value 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest118", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pairs: Array<[string, Any]> = [];
+      const recordA: Record<string, Any> = Object.fromEntries<Any>(pairs);
+      const recordB: Record<string, Any> = Object.fromEntries<Any>(pairs);
+      recordA['k'] = 1;
+      let actual1: int = Object.keys(recordB).length;
+      let expected1: int = 0;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1190
+     * @tc.name objectFromEntriesTest119
+     * @tc.desc Verify Object.fromEntries<Any> on empty array copied via Array.from yields record with 0 keys
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest119", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source: Array<[string, Any]> = [];
+      const pairs: Array<[string, Any]> = Array.from(source);
+      const record: Record<string, Any> = Object.fromEntries<Any>(pairs);
+      let actual1: int = Object.keys(record).length;
+      let expected1: int = 0;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1200
+     * @tc.name objectFromEntriesTest120
+     * @tc.desc Verify Object.fromEntries<Any> on empty Map.entries() iterator yields record with 0 keys
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest120", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const map: Map<string, Any> = new Map<string, Any>();
+      const record: Record<string, Any> = Object.fromEntries<Any>(map.entries());
+      let actual1: int = Object.keys(record).length;
+      let expected1: int = 0;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1210
+     * @tc.name objectFromEntriesTest121
+     * @tc.desc Verify Object.fromEntries<Any> on empty Map itself yields record with 0 keys
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest121", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const map: Map<string, Any> = new Map<string, Any>();
+      const record: Record<string, Any> = Object.fromEntries<Any>(map);
+      let actual1: int = Object.keys(record).length;
+      let expected1: int = 0;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1220
+     * @tc.name objectFromEntriesTest122
+     * @tc.desc Verify Object.fromEntries<Any> on empty Set of pairs yields record with 0 keys
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest122", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: Set<[string, Any]> = new Set<[string, Any]>();
+      const record: Record<string, Any> = Object.fromEntries<Any>(set);
+      let actual1: int = Object.keys(record).length;
+      let expected1: int = 0;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1230
+     * @tc.name objectFromEntriesTest123
+     * @tc.desc Verify Object.fromEntries<Any> on array.values() of empty pairs yields record with 0 keys
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest123", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pairs: Array<[string, Any]> = [];
+      const record: Record<string, Any> = Object.fromEntries<Any>(pairs.values());
+      let actual1: int = Object.keys(record).length;
+      let expected1: int = 0;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1240
+     * @tc.name objectFromEntriesTest124
+     * @tc.desc Verify Object.fromEntries<Any> on cleared Map.entries() yields record with 0 keys
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest124", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const map: Map<string, Any> = new Map<string, Any>();
+      map.set('a', 1);
+      map.clear();
+      const record: Record<string, Any> = Object.fromEntries<Any>(map.entries());
+      let actual1: int = Object.keys(record).length;
+      let expected1: int = 0;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1250
+     * @tc.name objectFromEntriesTest125
+     * @tc.desc Verify Object.fromEntries<Any> on Map after deleting sole entry yields record with 0 keys
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest125", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const map: Map<string, Any> = new Map<string, Any>();
+      map.set('a', 1);
+      map.delete('a');
+      const record: Record<string, Any> = Object.fromEntries<Any>(map.entries());
+      let actual1: int = Object.keys(record).length;
+      let expected1: int = 0;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1260
+     * @tc.name objectFromEntriesTest126
+     * @tc.desc Verify Object.fromEntries<Any> on Set after deleting sole pair yields record with 0 keys
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest126", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const entry: [string, Any] = ['a', 1];
+      const set: Set<[string, Any]> = new Set<[string, Any]>();
+      set.add(entry);
+      set.delete(entry);
+      const record: Record<string, Any> = Object.fromEntries<Any>(set);
+      let actual1: int = Object.keys(record).length;
+      let expected1: int = 0;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1270
+     * @tc.name objectFromEntriesTest127
+     * @tc.desc Verify Object.fromEntries<Any> on inline empty array literal yields record with 0 keys
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest127", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = Object.fromEntries<Any>([] as Array<[string, Any]>);
+      let actual1: int = Object.keys(record).length;
+      let expected1: int = 0;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1280
+     * @tc.name objectFromEntriesTest128
+     * @tc.desc Verify Object.fromEntries<Any> on exhausted Map iterator yields record with 0 keys
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest128", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const map: Map<string, Any> = new Map<string, Any>();
+      const it: IterableIterator<[string, Any]> = map.entries();
+      it.next();
+      const record: Record<string, Any> = Object.fromEntries<Any>(it);
+      let actual1: int = Object.keys(record).length;
+      let expected1: int = 0;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1290
+     * @tc.name objectFromEntriesTest129
+     * @tc.desc Verify Object.fromEntries<Any> on empty Map yields record without own property __proto__
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest129", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const map: Map<string, Any> = new Map<string, Any>();
+      const record: Record<string, Any> = Object.fromEntries<Any>(map.entries());
+      let actual1: boolean = record.hasOwnProperty("__proto__");
+      expect(actual1).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1300
+     * @tc.name objectFromEntriesTest130
+     * @tc.desc Verify Object.fromEntries<Any> builds record with value 2
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest130", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pairs: Array<[string, Any]> = [
+        ['a', 1],
+        ['a', 2],
+      ];
+      const record: Record<string, Any> = Object.fromEntries<Any>(pairs);
+      let actual1: string = `${record['a']!}`;
+      let expected1: string = '2';
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1310
+     * @tc.name objectFromEntriesTest131
+     * @tc.desc Verify Object.fromEntries<Any> builds record with 1 keys
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest131", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pairs: Array<[string, Any]> = [
+        ['a', 1],
+        ['a', 2],
+      ];
+      const record: Record<string, Any> = Object.fromEntries<Any>(pairs);
+      let actual1: int = Object.keys(record).length;
+      let expected1: int = 1;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1320
+     * @tc.name objectFromEntriesTest132
+     * @tc.desc Verify Object.fromEntries<Any> duplicate key keeps last value 10 and typeof int
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest132", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pairs: Array<[string, Any]> = [
+        ['a', "first"],
+        ['a', 10],
+      ];
+      const record: Record<string, Any> = Object.fromEntries<Any>(pairs);
+      let actual1: string = `${record['a']!}`;
+      let expected1: string = "10";
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = typeof record['a'];
+      let expected2: string = "int";
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1330
+     * @tc.name objectFromEntriesTest133
+     * @tc.desc Verify Object.fromEntries<Any> builds record with value 2
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest133", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pairs: Array<[string, Any]> = [
+        ['x', 1],
+        ['y', 2],
+        ['x', 3],
+      ];
+      const record: Record<string, Any> = Object.fromEntries<Any>(pairs);
+      let actual1: string = `${record['y']!}`;
+      let expected1: string = '2';
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = `${record['x']!}`;
+      let expected2: string = '3';
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1340
+     * @tc.name objectFromEntriesTest134
+     * @tc.desc Verify Object.fromEntries<Any> builds record with value 2
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest134", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pairs: Array<[string, Any]> = [
+        ['a', 1],
+        ['a', 2],
+        ['b', 3],
+        ['b', 4],
+      ];
+      const record: Record<string, Any> = Object.fromEntries<Any>(pairs);
+      let actual1: string = `${record['a']!}`;
+      let expected1: string = '2';
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = `${record['b']!}`;
+      let expected2: string = '4';
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1350
+     * @tc.name objectFromEntriesTest135
+     * @tc.desc Verify Object.fromEntries<Any> builds record with 1 keys
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest135", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const sym: string = "__dup__";
+      const pairs: Array<[string, Any]> = [
+        [sym, "first"],
+        [sym, "second"],
+      ];
+      const record: Record<string, Any> = Object.fromEntries<Any>(pairs);
+      let actual1: int = Object.keys(record).length;
+      let expected1: int = 1;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1360
+     * @tc.name objectFromEntriesTest136
+     * @tc.desc Verify Object.fromEntries<Any> builds record with 2 keys
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest136", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pairs: Array<[string, Any]> = [
+        ['a', 1],
+        ['A', 2],
+      ];
+      const record: Record<string, Any> = Object.fromEntries<Any>(pairs);
+      let actual1: int = Object.keys(record).length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = `${record['a']!}`;
+      let expected2: string = '1';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = `${record['A']!}`;
+      let expected3: string = '2';
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1370
+     * @tc.name objectFromEntriesTest137
+     * @tc.desc Verify Object.fromEntries<Any> builds record with value shared
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest137", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const shared: Record<string, Any> = { "tag": "shared" };
+      const pairs: Array<[string, Any]> = [
+        ['a', shared],
+        ['a', shared],
+      ];
+      const record: Record<string, Any> = Object.fromEntries<Any>(pairs);
+      let actual1: Record<string, Any> = record['a']! as Record<string, Any>;
+      let expected1: Record<string, Any> = shared;
+      expect(actual1).assertEqual(expected1);
+      expect(actual1["tag"] as string).assertEqual("shared");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1380
+     * @tc.name objectFromEntriesTest138
+     * @tc.desc Verify Object.fromEntries<Any> builds record with 1 keys
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest138", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pairs: Array<[string, Any]> = [
+        ['1', "num"],
+        ['1', "str"],
+      ];
+      const record: Record<string, Any> = Object.fromEntries<Any>(pairs);
+      let actual1: int = Object.keys(record).length;
+      let expected1: int = 1;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = record['1']! as string;
+      let expected2: string = "str";
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1390
+     * @tc.name objectFromEntriesTest139
+     * @tc.desc Verify Object.fromEntries<Any> builds record with value 3
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest139", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pairs: Array<[string, Any]> = [
+        ['a', 1],
+        ['b', 2],
+        ['b', 3],
+        ['a', 4],
+        ['c', 5],
+      ];
+      const record: Record<string, Any> = Object.fromEntries<Any>(pairs);
+      let actual1: int = Object.entries(record).length;
+      let expected1: int = 3;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1400
+     * @tc.name objectFromEntriesTest140
+     * @tc.desc Verify Object.fromEntries<Any> builds record with key 'a' mapped to null
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest140", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pairs: Array<[string, Any]> = [['a', null]];
+      const record: Record<string, Any> = Object.fromEntries<Any>(pairs);
+      let actual1: boolean = Object.hasOwn(record, 'a');
+      expect(actual1).assertTrue();
+      let actualValue1: Any = record['a'];
+      let actualValue1IsNull: boolean = actualValue1 === null;
+      expect(actualValue1IsNull).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1410
+     * @tc.name objectFromEntriesTest141
+     * @tc.desc Verify Object.fromEntries<Any> builds record from key-value pairs
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest141", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pairs: Array<[string, Any]> = [['a', undefined]];
+      const record: Record<string, Any> = Object.fromEntries<Any>(pairs);
+      let actual1: boolean = record.hasOwnProperty('a');
+      expect(actual1).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1420
+     * @tc.name objectFromEntriesTest142
+     * @tc.desc Verify Object.fromEntries<Any> builds record with value '{"a":null}'
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest142", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pairs: Array<[string, Any]> = [['a', null]];
+      const record: Record<string, Any> = Object.fromEntries<Any>(pairs);
+      let actual1: string = JSON.stringify(record);
+      let expected1: string = "{\"a\":null}";
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1430
+     * @tc.name objectFromEntriesTest143
+     * @tc.desc Verify Object.fromEntries<Any> builds record with value '{}'
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest143", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pairs: Array<[string, Any]> = [['a', undefined]];
+      const record: Record<string, Any> = Object.fromEntries<Any>(pairs);
+      let actual1: string = JSON.stringify(record);
+      let expected1: string = "{}";
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1440
+     * @tc.name objectFromEntriesTest144
+     * @tc.desc Verify Object.fromEntries<Any> builds record with 3 keys
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest144", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pairs: Array<[string, Any]> = [
+        ['a', 1],
+        ['b', null],
+        ['c', 'x'],
+      ];
+      const record: Record<string, Any> = Object.fromEntries<Any>(pairs);
+      let actual1: int = Object.keys(record).length;
+      let expected1: int = 3;
+      expect(actual1).assertEqual(expected1);
+      let actualValue1: Any = record['b'];
+      let actualValue1IsNull: boolean = actualValue1 === null;
+      expect(actualValue1IsNull).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1450
+     * @tc.name objectFromEntriesTest145
+     * @tc.desc Verify Object.fromEntries<Any> builds record with value 2
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest145", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pairs: Array<[string, Any]> = [
+        ['a', undefined],
+        ['b', 2],
+      ];
+      const record: Record<string, Any> = Object.fromEntries<Any>(pairs);
+      let actual1: string = `${record['b']!}`;
+      let expected1: string = '2';
+      expect(actual1).assertEqual(expected1);
+      let actual2: boolean = Object.hasOwn(record, 'a');
+      expect(actual2).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1460
+     * @tc.name objectFromEntriesTest146
+     * @tc.desc Verify Object.fromEntries<Any> builds record with value 'set'
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest146", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pairs: Array<[string, Any]> = [['a', null]];
+      const record: Record<string, Any> = Object.fromEntries<Any>(pairs);
+      record['a'] = "set";
+      let actual1: string = record['a']! as string;
+      let expected1: string = "set";
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1470
+     * @tc.name objectFromEntriesTest147
+     * @tc.desc Verify Object.fromEntries<Any> builds record with value 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest147", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pairs: Array<[string, Any]> = [['a', undefined]];
+      const record: Record<string, Any> = Object.fromEntries<Any>(pairs);
+      record['a'] = 1;
+      let actual1: string = `${record['a']!}`;
+      let expected1: string = '1';
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1480
+     * @tc.name objectFromEntriesTest148
+     * @tc.desc Verify Object.fromEntries<Any> builds record with 2 keys
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest148", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pairs: Array<[string, Any]> = [
+        ['n', null],
+        ['u', undefined],
+      ];
+      const record: Record<string, Any> = Object.fromEntries<Any>(pairs);
+      let actual1: int = Object.keys(record).length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actualValue1: Any = record['n'];
+      let actualValue1IsNull: boolean = actualValue1 === null;
+      expect(actualValue1IsNull).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1490
+     * @tc.name objectFromEntriesTest149
+     * @tc.desc Verify Object.fromEntries<Any> builds record with value 'undefined'
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest149", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pairs: Array<[string, Any]> = [['a', undefined]];
+      const record: Record<string, Any> = Object.fromEntries<Any>(pairs);
+      let actual1: boolean = Object.hasOwn(record, 'a');
+      expect(actual1).assertTrue();
+      let actual2: string = String(record['a']);
+      let expected2: string = "undefined";
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1500
+     * @tc.name objectFromEntriesTest150
+     * @tc.desc Verify Object.fromEntries<Any> builds record preserving key order ab
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest150", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pairs: Array<[string, Any]> = [
+        ['a', 1],
+        ['b', 2],
+      ];
+      const record: Record<string, Any> = Object.fromEntries<Any>(pairs);
+      let order: string = '';
+      for (const key of Object.keys(record)) {
+        order += key;
+      }
+      expect(order).assertEqual("ab");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1510
+     * @tc.name objectFromEntriesTest151
+     * @tc.desc Verify Object.fromEntries<Any> builds record preserving key order
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest151", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pairs: Array<[string, Any]> = [
+        ["first", 1],
+        ["second", 2],
+        ["third", 3],
+      ];
+      const record: Record<string, Any> = Object.fromEntries<Any>(pairs);
+      let actual1: string = Object.keys(record)[0];
+      let expected1: string = "first";
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = Object.keys(record)[2];
+      let expected2: string = "third";
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1520
+     * @tc.name objectFromEntriesTest152
+     * @tc.desc Verify Object.fromEntries<Any> builds record from key-value pairs
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest152", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pairs: Array<[string, Any]> = [
+        ['a', 1],
+        ['b', 2],
+      ];
+      const record: Record<string, Any> = Object.fromEntries<Any>(pairs);
+      let actual1: boolean = record.hasOwnProperty('a');
+      expect(actual1).assertTrue();
+      let actual2: boolean = record.hasOwnProperty('b');
+      expect(actual2).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1530
+     * @tc.name objectFromEntriesTest153
+     * @tc.desc Verify Object.fromEntries<Any> builds record with value 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest153", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pairs: Array<[string, Any]> = [
+        ['a', 1],
+        ['b', 2],
+      ];
+      const record: Record<string, Any> = Object.fromEntries<Any>(pairs);
+      let actual1: string = `${record['a']!}`;
+      let expected1: string = '1';
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = `${record['b']!}`;
+      let expected2: string = '2';
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1540
+     * @tc.name objectFromEntriesTest154
+     * @tc.desc Verify Object.fromEntries<Any> builds record with 1 keys
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest154", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pairs: Array<[string, Any]> = [['a', 1]];
+      const record: Record<string, Any> = Object.fromEntries<Any>(pairs);
+      record['a'] = 9;
+      let actual1: int = Object.keys(record).length;
+      let expected1: int = 1;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = `${record['a']!}`;
+      let expected2: string = '9';
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1550
+     * @tc.name objectFromEntriesTest155
+     * @tc.desc Verify Object.fromEntries<Any> builds record from key-value pairs
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest155", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pairs: Array<[string, Any]> = [
+        ['a', 1],
+        ['b', 2],
+      ];
+      const record: Record<string, Any> = Object.fromEntries<Any>(pairs);
+      let actual1: boolean = Object.hasOwn(record, 'a');
+      expect(actual1).assertTrue();
+      let actual2: boolean = Object.hasOwn(record, 'b');
+      expect(actual2).assertTrue();
+      let actual3: boolean = Object.hasOwn(record, 'c');
+      expect(actual3).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1560
+     * @tc.name objectFromEntriesTest156
+     * @tc.desc Verify Object.fromEntries<Any> builds record with 1 keys
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest156", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const sym: string = "__s__";
+      const pairs: Array<[string, Any]> = [[sym, 1]];
+      const record: Record<string, Any> = Object.fromEntries<Any>(pairs);
+      let actual1: int = Object.keys(record).length;
+      let expected1: int = 1;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1570
+     * @tc.name objectFromEntriesTest157
+     * @tc.desc Verify Object.fromEntries<Any> builds record with 2 keys
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest157", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pairs: Array<[string, Any]> = [
+        ['a', 10],
+        ['b', 20],
+      ];
+      const record: Record<string, Any> = Object.fromEntries<Any>(pairs);
+      let actual1: int = Object.keys(record).length;
+      let expected1: number = 2;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1580
+     * @tc.name objectFromEntriesTest158
+     * @tc.desc Verify Object.fromEntries<Any> builds record whose keys iterate summing values 3 across 2 keys
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest158", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pairs: Array<[string, Any]> = [
+        ['a', 1],
+        ['b', 2],
+      ];
+      const record: Record<string, Any> = Object.fromEntries<Any>(pairs);
+      let total: int = 0;
+      let keyCount: number = 0;
+      for (const key of Object.keys(record)) {
+        total += Int.parseInt(`${record[key]}`, 10);
+        keyCount++;
+      }
+      expect(total).assertEqual(3);
+      expect(keyCount).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_FROMENTRIES_1590
+     * @tc.name objectFromEntriesTest159
+     * @tc.desc Verify Object.fromEntries<Any> builds record with key 'a'
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectFromEntriesTest159", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pairs: Array<[string, Any]> = [['a', 1]];
+      const record: Record<string, Any> = Object.fromEntries<Any>(pairs);
+      const keys: Array<string> = Object.keys(record);
+      expect(keys[0]!).assertEqual('a');
+    });
   });
 }
