@@ -15,9 +15,11 @@
 import systemDateTimeJsunit from './SystemDateTimeJsunit.test';
 import systemDateTimeSync from './SystemDateTimeSync.test';
 import systemTimeJsunit from './SystemTimeJsunit.test';
+import systemTimePowerOnTimerTest from './SystemTimePowerOnTimer.test';
 
 export default function testsuite() {
   systemDateTimeJsunit();
   systemDateTimeSync();
   systemTimeJsunit();
+  systemTimePowerOnTimerTest();
 }
