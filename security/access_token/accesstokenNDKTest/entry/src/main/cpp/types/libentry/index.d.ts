@@ -14,3 +14,4 @@
  */
 export const osCheckSelfPermissionA: (a: string) => boolean;
 export const osCheckSelfPermissionB: (a: string) => boolean;
+export const osCheckSelfPermissionC: (a: string) => boolean;
