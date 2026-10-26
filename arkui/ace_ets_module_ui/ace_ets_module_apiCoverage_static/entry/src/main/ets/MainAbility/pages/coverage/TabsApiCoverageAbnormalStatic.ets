@@ -283,7 +283,7 @@ struct TabsApiCoverageAbnormalStatic {
 
   build() {
     Scroll() {
-      Column({ space: 8 }) {
+      Column({ space: 8 } as ColumnOptions) {
         Text('TabsApiCoverageAbnormalStatic').id('tabsApiCovAbnStaticTitle').fontSize(16)
         this.barStyleSection()
         this.sidebarPositionSection()

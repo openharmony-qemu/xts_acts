@@ -51,7 +51,7 @@ struct TabsApiCoverageStatic {
 
   build() {
     Scroll() {
-      Column({ space: 8 }) {
+      Column({ space: 8 } as ColumnOptions) {
         Text('TabsApiCoverageStatic').id('tabsApiCoverageStaticTitle').fontSize(18)
         Text(this.ctrlModeFlag).id('tabsCtrlModeFlag').fontSize(12)
         this.tabsMainSection()
@@ -94,7 +94,7 @@ struct TabsApiCoverageStatic {
       placeholder: 'search',
       searchCallback: (_text: string): void => {
       },
-      searchFilter: (_idx: number, _text: string): boolean => {
+      searchFilter: (_idx: int, _text: string): boolean => {
         return true;
       }
     })
