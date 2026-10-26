@@ -959,7 +959,7 @@ export default function ActsNetConnectionTest() {
       let caseName: string = 'testNetworkManagerNetStackCertificatePinningKindNoP0100';
       try {
         console.info(`${caseName} ---start`);
-        let result: number = NetConnectionTest.NetStack_Certificate_PinningKind("https://www.baidu.com");
+        let result: number = NetConnectionTest.NetStack_Certificate_PinningKindNoP("https://www.baidu.com");
         console.info(`${caseName} result is: ` + JSON.stringify(result));
         expect(result).assertEqual(NETCONN_PERMISSION_DENIED);
         done();
