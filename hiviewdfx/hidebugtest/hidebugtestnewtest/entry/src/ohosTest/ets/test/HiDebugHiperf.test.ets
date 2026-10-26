@@ -5,7 +5,6 @@ import testNapi from 'libentry.so';
 import { taskpool } from '@kit.ArkTS';
 import { statfs } from '@kit.CoreFileKit';
 
-add
 const DOMAIN = 0x0000;
 @Concurrent
 
@@ -413,6 +412,31 @@ export default function hidebughiperfTest() {
         expect(false).assertTrue();
         done();
       }
+    });
+
+    /**
+     * @tc.number SUB_DFX_DFR_Hidebug_Hiperf_Interface_1500
+     * @tc.name SUB_DFX_DFR_Hidebug_Hiperf_Interface_1500
+     * @tc.desc 错误码覆盖
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level3
+     */
+    it('SUB_DFX_DFR_Hidebug_Hiperf_Interface_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1500 start");
+      try {
+        console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1500 start01");
+        let errcode = testNapi.Start_Errcode(100, 1000);
+        console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1500 start01" + errcode);
+        expect(errcode == 0 || errcode == 401 || errcode == 11400300 || errcode == 11400301 || errcode == 11400302).assertTrue();
+        console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1500 record success");
+        done();
+      } catch (err) {
+        console.error(`====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1500 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1500 end");
     });
 
   })
