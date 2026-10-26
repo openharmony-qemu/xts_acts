@@ -60,6 +60,10 @@ import ReusableChildState2Test from './Reusable/ReusableChildState2Test.test';
 import ReusableChildState3Test from './Reusable/ReusableChildState3Test.test';
 import ReusableChildState4Test from './Reusable/ReusableChildState4Test.test';
 import ExtendableComponentApiTest from './ExtendableComponent/ExtendableComponentApi.test';
+import IsPlaceholder0060Test from './builder/IsPlaceholder0060Test.test';
+import IsPlaceholder0070Test from './builder/IsPlaceholder0070Test.test';
+import IsPlaceholder0080Test from './builder/IsPlaceholder0080Test.test';
+import IsPlaceholder0430Test from './builder/IsPlaceholder0430Test.test';
 
 export default function testsuite() {
     MutableBuilder001();
@@ -68,6 +72,10 @@ export default function testsuite() {
     Builder0120TestJsunit();
     Builder0050TestJsunit();
     Builder0070TestJsunit();
+    IsPlaceholder0060Test();
+    IsPlaceholder0070Test();
+    IsPlaceholder0080Test();
+    IsPlaceholder0430Test();
     Extend0010TestJsunit();
     Local1Jsunit();
     Local2Jsunit();
