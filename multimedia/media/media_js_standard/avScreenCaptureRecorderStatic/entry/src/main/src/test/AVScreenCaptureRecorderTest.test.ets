@@ -17,6 +17,7 @@
 import media from '@ohos.multimedia.media'
 import MediaTestBase from './MediaTestBase.test';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '../../../hypium/index';
+import { BusinessError } from '@ohos.base';
 
 let mediaTestBase = new MediaTestBase()
 
