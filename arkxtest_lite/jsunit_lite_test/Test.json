@@ -29,6 +29,7 @@
         "hap-file-name": "ActsJsunitLiteTest.hap",
         "timeout": "600000",
         "cleanup": "true",
-        "reboot-after-cleanup": "true"
+        "reboot-after-cleanup": "true",
+        "testcase-timeout": "5000"
     }
 }

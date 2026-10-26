@@ -1,4 +1,5 @@
 import router from '@system.router';
+import file from '@system.file';
 import app from '@system.app';
 
 export default {
@@ -70,6 +71,26 @@ export default {
       }
       totalCount++;
     }
+    let reportLines = [];
+    for (let i = 0; i < keys.length; i++) {
+      let k = keys[i];
+      let st = items[k].status;
+      let rs = (st === 'pass' || st === 'fail') ? st : 'untested';
+      let line = '[report] ' + k + ' ' + rs;
+      let ed = items[k].errorDetail || '';
+      if (ed) { line += ' ' + ed; }
+      reportLines.push(line);
+    }
+    reportLines.unshift('[report_start]');
+    reportLines.push('[total] ' + totalCount + ' ' + passCount + ' ' + failCount);
+    reportLines.push('[end]');
+    reportLines.push('[report_end]');
+    file.writeText({
+      uri: 'internal://app/report.txt',
+      text: reportLines.join('\n') + '\n',
+      success: function() { console.info('[report_file] write ok'); },
+      fail: function(d, code) { console.info('[report_file] write fail code=' + code); }
+    });
     console.info('[report_start]');
     this._outputReportLines(items, keys, 0, passCount, failCount, totalCount);
   },
