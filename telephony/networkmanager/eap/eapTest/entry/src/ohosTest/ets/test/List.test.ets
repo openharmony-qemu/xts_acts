@@ -14,10 +14,17 @@
  */
 import EmptyTest from './Empty.test';
 import eapTest from './Eap.test';
+import eap from '@ohos.net.eap';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 export default function testsuite() {
   if(canIUse('SystemCapability.Communication.NetManager.Eap')){
-    eapTest();
+    eap.getEthEapConfig().then(()=>{
+      eapTest();
+    }).catch((error: BusinessError)=>{
+      console.info(`eapTest device not support eap, error: ${JSON.stringify(error)}`);
+      EmptyTest();
+    });
   }else{
     EmptyTest();
   }
