@@ -3772,5 +3772,1364 @@ export default function objectAssignTest2(): void {
       let expected1: string = '4';
       expect(actual1).assertEqual(expected1);
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_1890
+     * @tc.name objectAssignTest189
+     * @tc.desc Verify Object.assign copies source value "1" for key "a", "b", "c" into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest189", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const srcRecord47: Record<string, Any> = { 'a': 1 };
+      const srcRecord46: Record<string, Any> = { 'b': 2 };
+      const srcRecord45: Record<string, Any> = { 'c': 3 };
+      const result: Record<PropertyKey, Any> = Object.assign(Object.assign(srcRecord47, srcRecord46), srcRecord45);
+      let actual1: string = `${result['a']!}`;
+      let expected1: string = '1';
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = `${result['b']!}`;
+      let expected2: string = '2';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = `${result['c']!}`;
+      let expected3: string = '3';
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_1900
+     * @tc.name objectAssignTest190
+     * @tc.desc Verify Object.assign copies source value "\u963f\u660e" for key "\u540d\u5b57", "\u5e74\u9f84", "\u57ce\u5e02" into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest190", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const srcRecord48: Record<string, Any> = { "名字": "阿明" };
+      Object.assign(target, srcRecord48);
+      const srcRecord49: Record<string, Any> = { "年龄": 18 };
+      Object.assign(target, srcRecord49);
+      const srcRecord50: Record<string, Any> = { "城市": "北京" };
+      Object.assign(target, srcRecord50);
+      let actual1: string = `${target['名字']!}`;
+      let expected1: string = "阿明";
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = `${target['年龄']!}`;
+      let expected2: string = "18";
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = `${target['城市']!}`;
+      let expected3: string = "北京";
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_1910
+     * @tc.name objectAssignTest191
+     * @tc.desc Verify Object.assign copies source value "box" for key "\u1f4e6", "\u1f4ec", "\u1f512" into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest191", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const srcRecord51: Record<string, Any> = { '📦': "box" };
+      Object.assign(target, srcRecord51);
+      const srcRecord52: Record<string, Any> = { '📬': "mail" };
+      Object.assign(target, srcRecord52);
+      const srcRecord53: Record<string, Any> = { '🔒': "lock" };
+      Object.assign(target, srcRecord53);
+      let actual1: string = `${target['📦']!}`;
+      let expected1: string = "box";
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = `${target['📬']!}`;
+      let expected2: string = "mail";
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = `${target['🔒']!}`;
+      let expected3: string = "lock";
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_1920
+     * @tc.name objectAssignTest192
+     * @tc.desc Verify Object.assign copies source value "1" for key "<b>x</b>", "<i>y</i>" into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest192", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const srcRecord54: Record<string, Any> = { "<b>x</b>": 1 };
+      Object.assign(target, srcRecord54);
+      const srcRecord55: Record<string, Any> = { "<i>y</i>": 2 };
+      Object.assign(target, srcRecord55);
+      let actual1: string = `${target['<b>x</b>']!}`;
+      let expected1: string = '1';
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = `${target['<i>y</i>']!}`;
+      let expected2: string = '2';
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_1930
+     * @tc.name objectAssignTest193
+     * @tc.desc Verify Object.assign copies source value "2" for key "seq", "kind" into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest193", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const srcRecord56: Record<string, Any> = { "seq": 1 };
+      Object.assign(target, srcRecord56);
+      Object.assign(target, new Tag());
+      const srcRecord57: Record<string, Any> = { "seq": 2 };
+      Object.assign(target, srcRecord57);
+      let actual1: string = `${target['seq']!}`;
+      let expected1: string = '2';
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = `${target['kind']!}`;
+      let expected2: string = "custom";
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_1940
+     * @tc.name objectAssignTest194
+     * @tc.desc Verify Object.assign copies source value "L" for key "fromLit", "fromInst", "last" into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest194", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inst: Record<string, Any> = {};
+      inst["fromInst"] = 'I';
+      const target: Record<string, Any> = {};
+      const srcRecord58: Record<string, Any> = { "fromLit": 'L' };
+      Object.assign(target, srcRecord58);
+      Object.assign(target, inst);
+      const srcRecord59: Record<string, Any> = { "last": 'Z' };
+      Object.assign(target, srcRecord59);
+      let actual1: string = `${target['fromLit']!}`;
+      let expected1: string = 'L';
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = `${target['fromInst']!}`;
+      let expected2: string = 'I';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = `${target['last']!}`;
+      let expected3: string = 'Z';
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_1950
+     * @tc.name objectAssignTest195
+     * @tc.desc Verify Object.assign copies source value "empty" for key "" into empty target with length 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest195", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { '': "empty" };
+      Object.assign(target, source);
+      let actual1: int = Object.keys(target).length;
+      let expected1: int = 1;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_1960
+     * @tc.name objectAssignTest196
+     * @tc.desc Verify Object.assign copies source value "alice" for key "name" into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest196", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { '': "empty", "name": "alice" };
+      Object.assign(target, source);
+      let actual1: int = Object.keys(target).length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = target["name"]! as string;
+      let expected2: string = "alice";
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_1970
+     * @tc.name objectAssignTest197
+     * @tc.desc Verify Object.assign copies source value "first" for key "" into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest197", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { '': "first" };
+      const source2: Record<string, Any> = { 'a': "second" };
+      Object.assign(target, source);
+      Object.assign(target, source2);
+      let actual1: string = target['']! as string;
+      let expected1: string = "first";
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_1980
+     * @tc.name objectAssignTest198
+     * @tc.desc Verify Object.assign copies source value "empty" for key "" and "zero" for key "0" into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest198", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { '': "empty", '0': "zero" };
+      Object.assign(target, source);
+      let actual1: string = target['']! as string;
+      let expected1: string = "empty";
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = target['0']! as string;
+      let expected2: string = "zero";
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_1990
+     * @tc.name objectAssignTest199
+     * @tc.desc Verify Object.assign exposes key "" first in Object.keys of target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest199", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { '': "empty" };
+      Object.assign(target, source);
+      const keys: Array<string> = Object.keys(target);
+      let actual1: string = keys[0]!;
+      let expected1: string = '';
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2000
+     * @tc.name objectAssignTest200
+     * @tc.desc Verify Object.assign exposes value "empty" of key "" in Object.values of target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { '': "empty" };
+      Object.assign(target, source);
+      const values: Array<Any> = Object.values(target);
+      let actual1: string = values[0]! as string;
+      let expected1: string = "empty";
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2010
+     * @tc.name objectAssignTest201
+     * @tc.desc Verify Object.assign exposes entry ["", "empty"] via Object.entries of target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest201", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { '': "empty" };
+      Object.assign(target, source);
+      const entries = Object.entries(target);
+      let actual1: string = entries[0]![0]! as string;
+      let expected1: string = '';
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = entries[0]![1]! as string;
+      let expected2: string = "empty";
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2020
+     * @tc.name objectAssignTest202
+     * @tc.desc Verify Object.assign copies empty-string key "", Object.hasOwn(target, "") is true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest202", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { '': "empty" };
+      Object.assign(target, source);
+      let actual1: boolean = Object.hasOwn(target, '');
+      expect(actual1).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2030
+     * @tc.name objectAssignTest203
+     * @tc.desc Verify Object.assign copies source value 42 for key "" into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest203", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { '': 42 };
+      Object.assign(target, source);
+      let actual1: string = `${target['']!}`;
+      let expected1: string = `${42}`;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2040
+     * @tc.name objectAssignTest204
+     * @tc.desc Verify Object.assign copies nested object under empty-string key and exposes its inner key "x" value 1 into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest204", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inner: Record<string, Any> = { 'x': 1 };
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { '': inner };
+      Object.assign(target, source);
+      const stored: Record<string, Any> = target[''] as Record<string, Any>;
+      let actual1: string = `${stored['x']!}`;
+      let expected1: string = `${1}`;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2050
+     * @tc.name objectAssignTest205
+     * @tc.desc Verify Object.assign copies boolean true for empty-string key "" into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest205", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { '': true };
+      Object.assign(target, source);
+      let actual1: boolean = target['']! as boolean;
+      expect(actual1).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2060
+     * @tc.name objectAssignTest206
+     * @tc.desc Verify Object.assign keeps value of key "" as null in target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest206", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { '': null };
+      Object.assign(target, source);
+      let actualValue1: Any = target[''];
+      let actualValue1IsNull: boolean = actualValue1 === null;
+      expect(actualValue1IsNull).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2070
+     * @tc.name objectAssignTest207
+     * @tc.desc Verify Object.assign copies source value "\u5f20\u4e09" for key "\u540d\u5b57" into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest207", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { "名字": "张三" };
+      Object.assign(target, source);
+      let actual1: string = target["名字"]! as string;
+      let expected1: string = "张三";
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2080
+     * @tc.name objectAssignTest208
+     * @tc.desc Verify Object.assign copies source value 1 for key "\u7532", "\u4e59" into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest208", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { '甲': 1, '乙': 2 };
+      Object.assign(target, source);
+      const keys: Array<string> = Object.keys(target);
+      let actual1: string = keys[0]!;
+      let expected1: string = '甲';
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = keys[1]!;
+      let expected2: string = '乙';
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2090
+     * @tc.name objectAssignTest209
+     * @tc.desc Verify Object.assign copies source value 3 for key "\u4e2d\u6587", "ascii", "\u65e5\u672c\u8a9e" into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest209", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { "中文": "cn", "ascii": "en", "日本語": "jp" };
+      Object.assign(target, source);
+      let actual1: int = Object.keys(target).length;
+      let expected1: int = 3;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2100
+     * @tc.name objectAssignTest210
+     * @tc.desc Verify Object.assign copies source value 3 for key "\uc548\ub155", "\u043f\u0440\u0438\u0432\u0435\u0442", "\u0645\u0631\u062d\u0628\u0627" into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest210", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { "안녕": 1, "привет": 2, "مرحبا": 3 };
+      Object.assign(target, source);
+      let actual1: int = Object.keys(target).length;
+      let expected1: int = 3;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = `${target['안녕']!}`;
+      let expected2: string = `${1}`;
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2110
+     * @tc.name objectAssignTest211
+     * @tc.desc Verify Object.assign copies source value 95 for key "\u8bed\u6587", "\u6570\u5b66" into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest211", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { "语文": 95, "数学": 100 };
+      Object.assign(target, source);
+      const values: Array<Any> = Object.values(target);
+      let actual1: string = `${values[0]!}`;
+      let expected1: string = `${95}`;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = `${values[1]!}`;
+      let expected2: string = `${100}`;
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2120
+     * @tc.name objectAssignTest212
+     * @tc.desc Verify Object.assign copies source value 1 for key "\u1f600", "\u4e2d\u6587" into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest212", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { '😀': 1, "中文": 2 };
+      Object.assign(target, source);
+      let actual1: string = `${target['😀']!}`;
+      let expected1: string = `${1}`;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = `${target['中文']!}`;
+      let expected2: string = `${2}`;
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2130
+     * @tc.name objectAssignTest213
+     * @tc.desc Verify Object.assign copies source value 2 for key "\u200B", "normal" into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest213", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { "\u200B": 1, "normal": 2 };
+      Object.assign(target, source);
+      let actual1: int = Object.keys(target).length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2140
+     * @tc.name objectAssignTest214
+     * @tc.desc Verify Object.assign copies source value 2 for key "\u200Bkey", "key" into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest214", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { "\u200Bkey": 1, "key": 2 };
+      Object.assign(target, source);
+      let actual1: int = Object.keys(target).length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = `${target['key']!}`;
+      let expected2: string = `${2}`;
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2150
+     * @tc.name objectAssignTest215
+     * @tc.desc Verify Object.assign copies source value "\u200B" for key "\u200B" into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest215", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { "\u200B": 1 };
+      Object.assign(target, source);
+      const names: Array<string> = Object.getOwnPropertyNames(target);
+      let actual1: string = names[0]!;
+      let expected1: string = "\u200B";
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2160
+     * @tc.name objectAssignTest216
+     * @tc.desc Verify Object.assign copies source value "long" for a 500-char key into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest216", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const longKey: string = 'k'.repeat(500);
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = {};
+      source[longKey] = "long";
+      Object.assign(target, source);
+      let actual1: string = target[longKey]! as string;
+      let expected1: string = "long";
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2170
+     * @tc.name objectAssignTest217
+     * @tc.desc Verify Object.assign copies source values 1 and 2 for keys "short" and a 1000-char key into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest217", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const longKey: string = 'x'.repeat(1000);
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { "short": 1 };
+      source[longKey] = 2;
+      Object.assign(target, source);
+      let actual1: int = Object.keys(target).length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2180
+     * @tc.name objectAssignTest218
+     * @tc.desc Verify Object.assign copies source value 1 for key longKey into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest218", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const longKey: string = 'a'.repeat(800);
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = {};
+      source[longKey] = 1;
+      Object.assign(target, source);
+      const keys: Array<string> = Object.keys(target);
+      let actual1: string = keys[0]!;
+      let expected1: string = longKey;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2190
+     * @tc.name objectAssignTest219
+     * @tc.desc Verify Object.assign copies source value "v" for key longKey into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest219", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const longKey: string = 'b'.repeat(600);
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = {};
+      source[longKey] = 'v';
+      Object.assign(target, source);
+      const names: Array<string> = Object.getOwnPropertyNames(target);
+      let actual1: string = names[0]!;
+      let expected1: string = longKey;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2200
+     * @tc.name objectAssignTest220
+     * @tc.desc Verify Object.assign copies long value for a 400-char key into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest220", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const longKey: string = 'k'.repeat(400);
+      const longValue: string = 'v'.repeat(400);
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = {};
+      source[longKey] = longValue;
+      Object.assign(target, source);
+      let actual1: string = target[longKey]! as string;
+      let expected1: string = longValue;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2210
+     * @tc.name objectAssignTest221
+     * @tc.desc Verify Object.assign copies source values for two 200-char keys into target with length 2
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest221", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const key1: string = 'a'.repeat(200);
+      const key2: string = 'b'.repeat(200);
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = {};
+      source[key1] = 1;
+      source[key2] = 2;
+      Object.assign(target, source);
+      let actual1: int = Object.keys(target).length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2220
+     * @tc.name objectAssignTest222
+     * @tc.desc Verify Object.assign copies source value "payload" for an XSS-like key into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest222", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const xssKey: string = "<script>alert(1)</script>";
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = {};
+      source[xssKey] = "payload";
+      Object.assign(target, source);
+      let actual1: string = target[xssKey]! as string;
+      let expected1: string = "payload";
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2230
+     * @tc.name objectAssignTest223
+     * @tc.desc Verify Object.assign copies source value 1 for key xssKey into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest223", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const xssKey: string = "<img src=x onerror=alert(1)>";
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = {};
+      source[xssKey] = 1;
+      Object.assign(target, source);
+      const keys: Array<string> = Object.keys(target);
+      let actual1: string = keys[0]!;
+      let expected1: string = xssKey;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2240
+     * @tc.name objectAssignTest224
+     * @tc.desc Verify Object.assign copies source value "ok" for key "safe" and value 2 for an XSS-like key into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest224", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const xssKey: string = "<script>alert(1)</script>";
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { "safe": "ok" };
+      source[xssKey] = 2;
+      Object.assign(target, source);
+      let actual1: int = Object.keys(target).length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = target["safe"]! as string;
+      let expected2: string = "ok";
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2250
+     * @tc.name objectAssignTest225
+     * @tc.desc Verify Object.assign copies source value "x" for key xssKey into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest225", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const xssKey: string = "<svg/onload=alert(1)>";
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = {};
+      source[xssKey] = 'x';
+      Object.assign(target, source);
+      const entries = Object.entries(target);
+      let actual1: string = entries[0]![0]! as string;
+      let expected1: string = xssKey;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = entries[0]![1]! as string;
+      let expected2: string = 'x';
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2260
+     * @tc.name objectAssignTest226
+     * @tc.desc Verify Object.assign copies source value "viaString" for key "0" into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest226", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const zeroKey: string = String(0);
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = {};
+      source[zeroKey] = "viaString";
+      Object.assign(target, source);
+      let actual1: string = target['0']! as string;
+      let expected1: string = "viaString";
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2270
+     * @tc.name objectAssignTest227
+     * @tc.desc Verify Object.assign copies source value "-1" for key "-1", "0.5" into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest227", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { "-1": "neg", "0.5": "half" };
+      Object.assign(target, source);
+      const keys: Array<string> = Object.keys(target);
+      let actual1: string = keys[0]!;
+      let expected1: string = "-1";
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = keys[1]!;
+      let expected2: string = "0.5";
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2280
+     * @tc.name objectAssignTest228
+     * @tc.desc Verify Object.assign copies source value "hex" for key "0x10" into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest228", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { "0x10": "hex" };
+      Object.assign(target, source);
+      let actual1: string = target["0x10"]! as string;
+      let expected1: string = "hex";
+      expect(actual1).assertEqual(expected1);
+      let actual2: int = Object.keys(target).length;
+      let expected2: int = 1;
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2290
+     * @tc.name objectAssignTest229
+     * @tc.desc Verify Object.assign merges 7 special keys (empty, CJK, emoji, zero-width, xss, long, digit) into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest229", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const xssKey: string = "<script>x</script>";
+      const longKey: string = 'L'.repeat(100);
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { '': 1, "中文": 2, '😀': 3, "\u200B": 4, '0': 5 };
+      source[xssKey] = 6;
+      source[longKey] = 7;
+      Object.assign(target, source);
+      let actual1: int = Object.keys(target).length;
+      let expected1: int = 7;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2300
+     * @tc.name objectAssignTest230
+     * @tc.desc Verify Object.assign copies source values "a","b","c" for keys "", emoji, \u4e2d\u6587 into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest230", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { '': 'a', '😀': 'b', "中文": 'c' };
+      Object.assign(target, source);
+      const values: Array<Any> = Object.values(target);
+      let actual1: string = values[0]! as string;
+      let expected1: string = 'a';
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = values[1]! as string;
+      let expected2: string = 'b';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = values[2]! as string;
+      let expected3: string = 'c';
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2310
+     * @tc.name objectAssignTest231
+     * @tc.desc Verify Object.assign copies source values 1, 2 for keys "a", "b" into target entries
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest231", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { 'a': 1, 'b': 2 };
+      Object.assign(target, source);
+      const entries = Object.entries(target);
+      let actual1: string = `${entries[0]![0]!}`;
+      let expected1: string = 'a';
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = `${entries[0]![1]!}`;
+      let expected2: string = `${1}`;
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = `${entries[1]![1]!}`;
+      let expected3: string = `${2}`;
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2320
+     * @tc.name objectAssignTest232
+     * @tc.desc Verify Object.assign copies source keys "x", "y" into target with matching own property names
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest232", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { 'x': 1, 'y': 2 };
+      Object.assign(target, source);
+      const keys: Array<string> = Object.keys(target);
+      const names: Array<string> = Object.getOwnPropertyNames(target);
+      let actual1: int = keys.length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = names[0]!;
+      let expected2: string = 'x';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = names[1]!;
+      let expected3: string = 'y';
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2330
+     * @tc.name objectAssignTest233
+     * @tc.desc Verify Object.assign copies source value "0" for key "0", "a" into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest233", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { '0': 'z', 'a': 'A' };
+      Object.assign(target, source);
+      const entries = Object.entries(target);
+      let actual1: string = entries[0]![0]! as string;
+      let expected1: string = '0';
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = entries[0]![1]! as string;
+      let expected2: string = 'z';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = entries[1]![0]! as string;
+      let expected3: string = 'a';
+      expect(actual3).assertEqual(expected3);
+      let actual4: string = entries[1]![1]! as string;
+      let expected4: string = 'A';
+      expect(actual4).assertEqual(expected4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2340
+     * @tc.name objectAssignTest234
+     * @tc.desc Verify Object.assign copies source value "e" for key "" into target and returns the target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest234", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { '': 'e' };
+      const result: Record<string, Any> = Object.assign(target, source);
+      expect(result).assertEqual(target);
+      let actual1: string = result['']! as string;
+      let expected1: string = 'e';
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2350
+     * @tc.name objectAssignTest235
+     * @tc.desc Verify Object.assign copies source value 3 for key "0", "\u4e2d" into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest235", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { '': 1, '0': 2 };
+      Object.assign(target, source);
+      const source2: Record<string, Any> = { '中': 3 };
+      Object.assign(target, source2);
+      let actual1: int = Object.keys(target).length;
+      let expected1: int = 3;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = `${target['']!}`;
+      let expected2: string = `${1}`;
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = `${target['0']!}`;
+      let expected3: string = `${2}`;
+      expect(actual3).assertEqual(expected3);
+      let actual4: string = `${target['中']!}`;
+      let expected4: string = `${3}`;
+      expect(actual4).assertEqual(expected4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2360
+     * @tc.name objectAssignTest236
+     * @tc.desc Verify Object.assign copies source value 1 for key "a" into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest236", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = { 'a': 1 };
+      const source: Record<string, Any> = {};
+      Object.assign(target, source);
+      const values: Array<Any> = Object.values(target);
+      let actual1: int = values.length;
+      let expected1: int = 1;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = `${values[0]!}`;
+      let expected2: string = `${1}`;
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2370
+     * @tc.name objectAssignTest237
+     * @tc.desc Verify Object.assign copies source values "e", "c", "z" for keys "", "U+4E2D", "0" into two targets
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest237", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source: Record<string, Any> = { '': 'e', '中': 'c', '0': 'z' };
+      const target1: Record<string, Any> = {};
+      const target2: Record<string, Any> = {};
+      Object.assign(target1, source);
+      Object.assign(target2, source);
+      let actual1: string = target1['']! as string;
+      let expected1: string = 'e';
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = target1['中']! as string;
+      let expected2: string = 'c';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = target1['0']! as string;
+      let expected3: string = 'z';
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2380
+     * @tc.name objectAssignTest238
+     * @tc.desc Verify Object.assign merges 3 special-char keys (empty, \u4e2d, emoji) into target with length 3
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest238", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const source1: Record<string, Any> = { '': 'e' };
+      const source2: Record<string, Any> = { '中': 'c' };
+      const source3: Record<string, Any> = { '😀': 's' };
+      Object.assign(target, source1);
+      Object.assign(target, source2);
+      Object.assign(target, source3);
+      let actual1: int = Object.keys(target).length;
+      let expected1: int = 3;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2390
+     * @tc.name objectAssignTest239
+     * @tc.desc Verify Object.assign copies source value "v" for key "" and "z" for key "0" into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest239", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { '': 'v', '0': 'z' };
+      Object.assign(target, source);
+      Object.assign(target, source);
+      Object.assign(target, source);
+      let actual1: string = target['']! as string;
+      let expected1: string = 'v';
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = target['0']! as string;
+      let expected2: string = 'z';
+      expect(actual2).assertEqual(expected2);
+      let actual3: int = Object.keys(target).length;
+      let expected3: int = 2;
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2400
+     * @tc.name objectAssignTest240
+     * @tc.desc Verify Object.assign copies source value 1 for key "a", "b" into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest240", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { 'a': 1 };
+      const source2: Record<string, Any> = { 'b': 2 };
+      const firstResult: Record<string, Any> = Object.assign(target, source);
+      const secondResult: Record<string, Any> = Object.assign(firstResult, source2);
+      let actual1: string = `${secondResult['a']!}`;
+      let expected1: string = `${1}`;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = `${secondResult['b']!}`;
+      let expected2: string = `${2}`;
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2410
+     * @tc.name objectAssignTest241
+     * @tc.desc Verify Object.assign keeps value 1 for zero-width-space key after later source assignment
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest241", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { "\u200B": 1, 'x': 2 };
+      Object.assign(target, source);
+      const source2: Record<string, Any> = { 'y': 3 };
+      Object.assign(target, source2);
+      let actual1: string = `${target['\u200B']!}`;
+      let expected1: string = `${1}`;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2420
+     * @tc.name objectAssignTest242
+     * @tc.desc Verify Object.assign copies source value 1 for key "\u7532", "\u4e59", "\u4e19" into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest242", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const s1: Record<string, Any> = { '甲': 1 };
+      const s2: Record<string, Any> = { '乙': 2 };
+      const s3: Record<string, Any> = { '丙': 3 };
+      Object.assign(target, s1);
+      Object.assign(target, s2);
+      Object.assign(target, s3);
+      const keys: Array<string> = Object.keys(target);
+      let actual1: string = keys[0]!;
+      let expected1: string = '甲';
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = keys[1]!;
+      let expected2: string = '乙';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = keys[2]!;
+      let expected3: string = '丙';
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2430
+     * @tc.name objectAssignTest243
+     * @tc.desc Verify Object.assign copies source value 99 for key "\u7532", "\u4e59", "\u7532" into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest243", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const s1: Record<string, Any> = { '甲': 1, '乙': 2 };
+      Object.assign(target, s1);
+      const s2: Record<string, Any> = { '甲': 99 };
+      Object.assign(target, s2);
+      const keys: Array<string> = Object.keys(target);
+      let actual1: string = keys[0]!;
+      let expected1: string = '甲';
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = keys[1]!;
+      let expected2: string = '乙';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = `${target['甲']!}`;
+      let expected3: string = `${99}`;
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2440
+     * @tc.name objectAssignTest244
+     * @tc.desc Verify Object.assign copies source value "c" for key "" into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest244", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const s1: Record<string, Any> = { '': 'a' };
+      const s2: Record<string, Any> = { '': 'b' };
+      const s3: Record<string, Any> = { '': 'c' };
+      Object.assign(target, s1);
+      Object.assign(target, s2);
+      Object.assign(target, s3);
+      let actual1: string = target['']! as string;
+      let expected1: string = 'c';
+      expect(actual1).assertEqual(expected1);
+      let actual2: int = Object.keys(target).length;
+      let expected2: int = 1;
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2450
+     * @tc.name objectAssignTest245
+     * @tc.desc Verify Object.assign copies source value 'z' for key "0" and 'e' for key "" with length 2 into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest245", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const s1: Record<string, Any> = { '0': 'z' };
+      Object.assign(target, s1);
+      const s2: Record<string, Any> = { '': 'e' };
+      Object.assign(target, s2);
+      let actual1: int = Object.keys(target).length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = target['0']! as string;
+      let expected2: string = 'z';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = target['']! as string;
+      let expected3: string = 'e';
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2460
+     * @tc.name objectAssignTest246
+     * @tc.desc Verify Object.assign copies source value 2 for key "\u4e2d", "\u4e2d" into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest246", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const targetA: Record<string, Any> = {};
+      const targetB: Record<string, Any> = {};
+      const s1: Record<string, Any> = { '中': 1 };
+      const s2: Record<string, Any> = { '中': 2 };
+      Object.assign(targetA, s1);
+      Object.assign(targetA, s2);
+      Object.assign(targetB, s2);
+      Object.assign(targetB, s1);
+      let actual1: string = `${targetA['中']!}`;
+      let expected1: string = `${2}`;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = `${targetB['中']!}`;
+      let expected2: string = `${1}`;
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2470
+     * @tc.name objectAssignTest247
+     * @tc.desc Verify Object.assign copies source value "add" for key "\u65b0" into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest247", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const s1: Record<string, Any> = { '': 'e' };
+      const firstResult: Record<string, Any> = Object.assign(target, s1);
+      const s2: Record<string, Any> = { '中': 'c' };
+      const secondResult: Record<string, Any> = Object.assign(firstResult, s2);
+      secondResult['新'] = "add";
+      let actual1: string = target['新']! as string;
+      let expected1: string = "add";
+      expect(actual1).assertEqual(expected1);
+      let actual2: int = Object.keys(target).length;
+      let expected2: int = 3;
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2480
+     * @tc.name objectAssignTest248
+     * @tc.desc Verify Object.assign copies source values 'a','b' for keys emoji, \u4e2d\u6587 with 2 entries into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest248", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const s1: Record<string, Any> = { '😀': 'a' };
+      const s2: Record<string, Any> = { "中文": 'b' };
+      Object.assign(target, s1);
+      Object.assign(target, s2);
+      const entries = Object.entries(target);
+      let actual1: int = entries.length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = entries[0]![0]! as string;
+      let expected2: string = '😀';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = entries[1]![0]! as string;
+      let expected3: string = "中文";
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2490
+     * @tc.name objectAssignTest249
+     * @tc.desc Verify Object.assign copies source value 2 for key "\u200B", "x" into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest249", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const s1: Record<string, Any> = { "\u200B": 1 };
+      Object.assign(target, s1);
+      const s2: Record<string, Any> = { 'x': 2 };
+      Object.assign(target, s2);
+      const names: Array<string> = Object.getOwnPropertyNames(target);
+      let actual1: int = names.length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = names[0]!;
+      let expected2: string = "\u200B";
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2500
+     * @tc.name objectAssignTest250
+     * @tc.desc Verify Object.assign from 2 sources copies empty-string key "", Object.hasOwn(target, "") is true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest250", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const s1: Record<string, Any> = { '': 'a' };
+      const s2: Record<string, Any> = { 'b': 2 };
+      Object.assign(target, s1);
+      Object.assign(target, s2);
+      let actual1: boolean = Object.hasOwn(target, '');
+      expect(actual1).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2510
+     * @tc.name objectAssignTest251
+     * @tc.desc Verify Object.assign copies source values for a 1000-char key and an XSS-like key into target with length 2
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest251", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const longKey: string = 'k'.repeat(1000);
+      const xssKey: string = "<script>alert(1)</script>";
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = {};
+      source[longKey] = 1;
+      source[xssKey] = 2;
+      Object.assign(target, source);
+      let actual1: int = Object.keys(target).length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ASSIGN2_2520
+     * @tc.name objectAssignTest252
+     * @tc.desc Verify Object.assign copies source value "z" for key "0", "\u4e2d\u6587" into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectAssignTest252", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { '0': 'z', "中文": 'c' };
+      Object.assign(target, source);
+      let actual1: string = target['0']! as string;
+      let expected1: string = 'z';
+      expect(actual1).assertEqual(expected1);
+    });
   });
 }
