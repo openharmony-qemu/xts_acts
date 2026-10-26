@@ -14,7 +14,7 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
-import systemTimer from "@ohos.systemTime";
+import systemTimer from "@ohos.systemTimer";
 import { BusinessError } from '@ohos.base';
 
 class PowerOnTimerOptionsRaw {
