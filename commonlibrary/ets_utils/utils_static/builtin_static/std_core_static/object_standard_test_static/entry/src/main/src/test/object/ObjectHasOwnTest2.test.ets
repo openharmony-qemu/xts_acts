@@ -1889,5 +1889,1466 @@ export default function objectHasOwnTest2(): void {
       let expected3: string = `${5}`;
       expect(actual3).assertEqual(expected3);
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1040
+     * @tc.name objectHasOwnTest104
+     * @tc.desc Verify obj.hasOwnProperty returns true for existing key "dynamic" plus Object.keys/values consistency check
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest104", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { "init": 0 };
+      record["dynamic"] = 1;
+      let actual1: boolean = record.hasOwnProperty("dynamic");
+      expect(actual1).assertTrue();
+      let actual2: int = Object.keys(record).length;
+      let expected2: int = 2;
+      expect(actual2).assertEqual(expected2);
+      const entries: Array<[string, Any] | null | undefined> = Object.entries(record);
+      let actual3: string = entries[1]![0];
+      let expected3: string = "dynamic";
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1050
+     * @tc.name objectHasOwnTest105
+     * @tc.desc Verify obj.hasOwnProperty returns true for existing key "str"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest105", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { "str": "text", "num": 42 };
+      let actual1: boolean = record.hasOwnProperty("str");
+      expect(actual1).assertTrue();
+      let actual2: boolean = record.hasOwnProperty("num");
+      expect(actual2).assertTrue();
+      const entries: Array<[string, Any] | null | undefined> = Object.entries(record);
+      let actual3: string = `${entries[0]![1]}`;
+      let expected3: string = "text";
+      expect(actual3).assertEqual(expected3);
+      let actual4: string = `${entries[1]![1]}`;
+      let expected4: string = `${42}`;
+      expect(actual4).assertEqual(expected4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1060
+     * @tc.name objectHasOwnTest106
+     * @tc.desc Verify obj.hasOwnProperty returns true for existing key entries[i]![0]
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest106", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'a': 1, 'b': 2, 'c': 3 };
+      const entries: Array<[string, Any] | null | undefined> = Object.entries(record);
+      for (let i = 0; i < entries.length; i++) {
+        let actual1: boolean = record.hasOwnProperty(entries[i]![0]);
+        expect(actual1).assertTrue();
+      }
+      let actual2: boolean = record.hasOwnProperty("nope");
+      expect(actual2).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1070
+     * @tc.name objectHasOwnTest107
+     * @tc.desc Verify obj.hasOwnProperty returns true for existing key "name"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest107", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const p: P = new P();
+      let actual1: boolean = p.hasOwnProperty("name");
+      expect(actual1).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1080
+     * @tc.name objectHasOwnTest108
+     * @tc.desc Verify obj.hasOwnProperty returns true for existing key "age"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest108", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const p: P001 = new P001();
+      let actual1: boolean = p.hasOwnProperty("age");
+      expect(actual1).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1090
+     * @tc.name objectHasOwnTest109
+     * @tc.desc Verify obj.hasOwnProperty returns true for existing key "active"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest109", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const p: P002 = new P002();
+      let actual1: boolean = p.hasOwnProperty("active");
+      expect(actual1).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1100
+     * @tc.name objectHasOwnTest110
+     * @tc.desc Verify obj.hasOwnProperty returns true for existing key "id"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest110", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const p: P004 = new P004();
+      let actual1: boolean = p.hasOwnProperty("id");
+      expect(actual1).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1110
+     * @tc.name objectHasOwnTest111
+     * @tc.desc Verify obj.hasOwnProperty returns true for existing key "child"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest111", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const p: P005 = new P005();
+      let actual1: boolean = p.hasOwnProperty("child");
+      expect(actual1).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1120
+     * @tc.name objectHasOwnTest112
+     * @tc.desc Verify obj.hasOwnProperty returns true for existing key "data"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest112", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const p: P006 = new P006();
+      let actual1: boolean = p.hasOwnProperty("data");
+      expect(actual1).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1130
+     * @tc.name objectHasOwnTest113
+     * @tc.desc Verify obj.hasOwnProperty returns false for missing key "missing"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest113", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const p: P007 = new P007();
+      let actual1: boolean = p.hasOwnProperty("missing");
+      expect(actual1).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1140
+     * @tc.name objectHasOwnTest114
+     * @tc.desc Verify obj.hasOwnProperty returns false for missing key "anyKey"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest114", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const p: P008 = new P008();
+      let actual1: boolean = p.hasOwnProperty("anyKey");
+      expect(actual1).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1150
+     * @tc.name objectHasOwnTest115
+     * @tc.desc Verify obj.hasOwnProperty returns true for existing key "b"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest115", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const c: Child001 = new Child001();
+      let actual1: boolean = c.hasOwnProperty('b');
+      expect(actual1).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1160
+     * @tc.name objectHasOwnTest116
+     * @tc.desc Verify obj.hasOwnProperty returns true for existing key "g"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest116", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const leaf: Leaf = new Leaf();
+      let actual1: boolean = leaf.hasOwnProperty('g');
+      expect(actual1).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1170
+     * @tc.name objectHasOwnTest117
+     * @tc.desc Verify obj.hasOwnProperty returns true for existing key "v"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest117", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const c: Child002 = new Child002();
+      let actual1: boolean = c.hasOwnProperty('v');
+      expect(actual1).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1180
+     * @tc.name objectHasOwnTest118
+     * @tc.desc Verify obj.hasOwnProperty returns false for missing key "zzz"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest118", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const c: Child003 = new Child003();
+      let actual1: boolean = c.hasOwnProperty("zzz");
+      expect(actual1).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1190
+     * @tc.name objectHasOwnTest119
+     * @tc.desc Verify obj.hasOwnProperty returns false for missing key "hello"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest119", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const c: Child005 = new Child005();
+      let actual1: boolean = c.hasOwnProperty("hello");
+      expect(actual1).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1200
+     * @tc.name objectHasOwnTest120
+     * @tc.desc Verify obj.hasOwnProperty returns false for missing key "say"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest120", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const p: P009 = new P009();
+      let actual1: boolean = p.hasOwnProperty("say");
+      expect(actual1).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1210
+     * @tc.name objectHasOwnTest121
+     * @tc.desc Verify obj.hasOwnProperty returns false for missing key "constructor"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest121", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const p: P010 = new P010();
+      let actual1: boolean = p.hasOwnProperty("constructor");
+      expect(actual1).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1220
+     * @tc.name objectHasOwnTest122
+     * @tc.desc Verify obj.hasOwnProperty returns false for missing key "s"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest122", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const p: P011 = new P011();
+      let actual1: boolean = p.hasOwnProperty('s');
+      expect(actual1).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1230
+     * @tc.name objectHasOwnTest123
+     * @tc.desc Verify obj.hasOwnProperty returns false for missing key "v"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest123", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const p: P012 = new P012();
+      let actual1: boolean = p.hasOwnProperty('v');
+      expect(actual1).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1240
+     * @tc.name objectHasOwnTest124
+     * @tc.desc Verify obj.hasOwnProperty returns true for existing key "x"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest124", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const p: P013 = new P013();
+      let actual1: boolean = p.hasOwnProperty('x');
+      expect(actual1).assertTrue();
+      let actual2: boolean = p.hasOwnProperty('y');
+      expect(actual2).assertTrue();
+      let actual3: boolean = p.hasOwnProperty('z');
+      expect(actual3).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1250
+     * @tc.name objectHasOwnTest125
+     * @tc.desc Verify obj.hasOwnProperty returns false for missing key 3
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest125", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: number[] = [10, 20, 30];
+      let actual1: boolean = arr.hasOwnProperty(3);
+      expect(actual1).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1260
+     * @tc.name objectHasOwnTest126
+     * @tc.desc Verify obj.hasOwnProperty returns true for existing key "length"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest126", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: number[] = [10, 20, 30];
+      let actual1: boolean = arr.hasOwnProperty("length");
+      expect(actual1).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1270
+     * @tc.name objectHasOwnTest127
+     * @tc.desc Verify obj.hasOwnProperty returns true for existing key "0"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest127", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: number[] = [10, 20, 30];
+      let actual1: boolean = arr.hasOwnProperty('0');
+      expect(actual1).assertTrue();
+      let actual2: boolean = arr.hasOwnProperty(0);
+      expect(actual2).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1280
+     * @tc.name objectHasOwnTest128
+     * @tc.desc Verify obj.hasOwnProperty returns false for missing key "x"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest128", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: number[] = [10, 20, 30];
+      let actual1: boolean = arr.hasOwnProperty('x');
+      expect(actual1).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1290
+     * @tc.name objectHasOwnTest129
+     * @tc.desc Verify obj.hasOwnProperty returns true for existing key 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest129", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: string[] = ['a', 'b'];
+      let actual1: boolean = arr.hasOwnProperty(0);
+      expect(actual1).assertTrue();
+      let actual2: boolean = arr.hasOwnProperty(1);
+      expect(actual2).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1300
+     * @tc.name objectHasOwnTest130
+     * @tc.desc Verify obj.hasOwnProperty returns false for missing key 2
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest130", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: string[] = ['a', 'b'];
+      let actual1: boolean = arr.hasOwnProperty(2);
+      expect(actual1).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1310
+     * @tc.name objectHasOwnTest131
+     * @tc.desc Verify obj.hasOwnProperty returns true for existing key 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest131", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const flags: boolean[] = [true, false];
+      let actual1: boolean = flags.hasOwnProperty(0);
+      expect(actual1).assertTrue();
+      let actual2: boolean = flags.hasOwnProperty(1);
+      expect(actual2).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1320
+     * @tc.name objectHasOwnTest132
+     * @tc.desc Verify obj.hasOwnProperty returns false for missing key 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest132", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: number[] = [];
+      let actual1: boolean = arr.hasOwnProperty(0);
+      expect(actual1).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1330
+     * @tc.name objectHasOwnTest133
+     * @tc.desc Verify obj.hasOwnProperty returns true for existing key "length"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest133", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: number[] = [];
+      let actual1: boolean = arr.hasOwnProperty("length");
+      expect(actual1).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1340
+     * @tc.name objectHasOwnTest134
+     * @tc.desc Verify obj.hasOwnProperty distinguishes existing vs missing key 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest134", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: number[] = [7];
+      let actual1: boolean = arr.hasOwnProperty(0);
+      expect(actual1).assertTrue();
+      let actual2: boolean = arr.hasOwnProperty(1);
+      expect(actual2).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1350
+     * @tc.name objectHasOwnTest135
+     * @tc.desc Verify obj.hasOwnProperty returns true for existing key 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest135", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const m: number[][] = [
+        [1, 2],
+        [3, 4],
+      ];
+      let actual1: boolean = m.hasOwnProperty(0);
+      expect(actual1).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1360
+     * @tc.name objectHasOwnTest136
+     * @tc.desc Verify obj.hasOwnProperty returns true for existing key 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest136", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const m: number[][] = [
+        [1, 2],
+        [3, 4],
+      ];
+      let actual1: boolean = m[0].hasOwnProperty(1);
+      expect(actual1).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1370
+     * @tc.name objectHasOwnTest137
+     * @tc.desc Verify obj.hasOwnProperty returns false for missing key 2
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest137", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const m: number[][] = [
+        [1, 2],
+        [3, 4],
+      ];
+      let actual1: boolean = m.hasOwnProperty(2);
+      expect(actual1).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1380
+     * @tc.name objectHasOwnTest138
+     * @tc.desc Verify obj.hasOwnProperty returns true for existing key 2
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest138", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: number[] = [1, 2];
+      arr.push(3);
+      let actual1: boolean = arr.hasOwnProperty(2);
+      expect(actual1).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1390
+     * @tc.name objectHasOwnTest139
+     * @tc.desc Verify obj.hasOwnProperty returns false for missing key "push"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest139", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: number[] = [1, 2];
+      let actual1: boolean = arr.hasOwnProperty("push");
+      expect(actual1).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1400
+     * @tc.name objectHasOwnTest140
+     * @tc.desc Verify obj.hasOwnProperty returns false for missing key 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest140", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Array<number | undefined> = [];
+      let actual1: boolean = arr.hasOwnProperty(0);
+      expect(actual1).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1410
+     * @tc.name objectHasOwnTest141
+     * @tc.desc Verify obj.hasOwnProperty returns true for existing key "length"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest141", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Array<number | undefined> = [];
+      let actual1: boolean = arr.hasOwnProperty("length");
+      expect(actual1).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1420
+     * @tc.name objectHasOwnTest142
+     * @tc.desc Verify obj.hasOwnProperty returns false for missing key 3
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest142", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const o: Record<string, Any> = { '1': 'a', '2': 'b' };
+      let actual1: boolean = o.hasOwnProperty(3);
+      expect(actual1).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1430
+     * @tc.name objectHasOwnTest143
+     * @tc.desc Verify obj.hasOwnProperty returns false for missing key other
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest143", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const symLikeKey: string = "__sym__";
+      const o: Record<string, Any> = {};
+      o[symLikeKey] = 1;
+      const other: string = "__other__";
+      let actual1: boolean = o.hasOwnProperty(other);
+      expect(actual1).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1440
+     * @tc.name objectHasOwnTest144
+     * @tc.desc Verify obj.hasOwnProperty distinguishes existing vs missing key "x"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest144", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const o: Record<string, Any> = { 'x': 1, 'y': '2', 'z': true };
+      let actual1: boolean = o.hasOwnProperty('x');
+      expect(actual1).assertTrue();
+      let actual2: boolean = o.hasOwnProperty('z');
+      expect(actual2).assertTrue();
+      let actual3: boolean = o.hasOwnProperty('w');
+      expect(actual3).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1450
+     * @tc.name objectHasOwnTest145
+     * @tc.desc Verify obj.hasOwnProperty returns false for missing key "deep"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest145", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const nestedRecord: Record<string, Any> = { "deep": 1 };
+      const o: Record<string, Any> = { "inner": nestedRecord };
+      let actual1: boolean = o.hasOwnProperty("deep");
+      expect(actual1).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1460
+     * @tc.name objectHasOwnTest146
+     * @tc.desc Verify Object.hasOwn returns true for nested key "c" and "b"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest146", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const nestedRecord: Record<string, Any> = { 'c': 1 };
+      const innerRecord: Record<string, Any> = { 'b': nestedRecord };
+      const o: Record<string, Any> = { 'a': innerRecord };
+      let actual1: boolean = Object.hasOwn((o['a'] as Record<string, Any>)['b'] as Record<string, Any>, 'c');
+      expect(actual1).assertTrue();
+      let actual2: boolean = Object.hasOwn(o['a'] as Record<string, Any>, 'b');
+      expect(actual2).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1470
+     * @tc.name objectHasOwnTest147
+     * @tc.desc Verify obj.hasOwnProperty and Object.hasOwn return true for key "k" on object and nested record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest147", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const nestedRecord: Record<string, Any> = { 'k': 2 };
+      const o: Record<string, Any> = { 'k': 1, "inner": nestedRecord };
+      let actual1: boolean = o.hasOwnProperty('k');
+      expect(actual1).assertTrue();
+      let actual2: boolean = Object.hasOwn(o["inner"] as Record<string, Any>, 'k');
+      expect(actual2).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1480
+     * @tc.name objectHasOwnTest148
+     * @tc.desc Verify obj.hasOwnProperty returns true for existing key "n"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest148", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const n: Object | null = null;
+      const o: Record<string, Any> = { 'n': n };
+      let actual1: boolean = o.hasOwnProperty('n');
+      expect(actual1).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1490
+     * @tc.name objectHasOwnTest149
+     * @tc.desc Verify obj.hasOwnProperty returns true for existing key "u"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest149", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const u: number | undefined = undefined;
+      const o: Record<string, Any> = { 'u': u };
+      let actual1: boolean = o.hasOwnProperty('u');
+      expect(actual1).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1500
+     * @tc.name objectHasOwnTest150
+     * @tc.desc Verify obj.hasOwnProperty returns true for existing key "child"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest150", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const n: Node = new Node();
+      let actual1: boolean = n.hasOwnProperty("child");
+      expect(actual1).assertTrue();
+      let actual2: boolean = n.child.hasOwnProperty('k');
+      expect(actual2).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1510
+     * @tc.name objectHasOwnTest151
+     * @tc.desc Verify obj.hasOwnProperty returns true for existing key "a"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest151", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const o: Record<string, Any> = { 'a': 1 };
+      let actual1: boolean = o.hasOwnProperty('a');
+      expect(actual1).assertTrue();
+      let actual2: boolean = o.hasOwnProperty('b');
+      expect(actual2).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1520
+     * @tc.name objectHasOwnTest152
+     * @tc.desc Verify obj.hasOwnProperty returns false for missing key "say"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest152", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const p: P014 = new P014();
+      let actual1: boolean = p.hasOwnProperty("say");
+      expect(actual1).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1530
+     * @tc.name objectHasOwnTest153
+     * @tc.desc Verify Object.hasOwn returns true for existing keys "a" and "hasOwnProperty" when property shadows Object.prototype method
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest153", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const o: Record<string, Any> = { 'a': 1, "hasOwnProperty": 3 };
+      let actual1: boolean = Object.hasOwn(o, 'a');
+      expect(actual1).assertTrue();
+      let actual2: boolean = Object.hasOwn(o, "hasOwnProperty");
+      expect(actual2).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1540
+     * @tc.name objectHasOwnTest154
+     * @tc.desc Verify obj.hasOwnProperty returns true for existing string key __sym__
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest154", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const symLikeKey: string = "__sym__";
+      const o: Record<string, Any> = {};
+      o[symLikeKey] = 1;
+      let actual1: boolean = o.hasOwnProperty(symLikeKey);
+      expect(actual1).assertTrue();
+      let actual2: boolean = o.hasOwnProperty("other");
+      expect(actual2).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1550
+     * @tc.name objectHasOwnTest155
+     * @tc.desc Verify number array hasOwnProperty accepts indices 0 and 1 for both two-element datasets
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest155", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inputs: number[][] = [[10, 20], [1, 2]];
+      for (const arr of inputs) {
+        let actual1: boolean = arr.hasOwnProperty(0);
+        expect(actual1).assertTrue();
+        let actual2: boolean = arr.hasOwnProperty(1);
+        expect(actual2).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1560
+     * @tc.name objectHasOwnTest156
+     * @tc.desc Verify obj.hasOwnProperty returns false for missing key 5
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest156", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: number[] = [1, 2];
+      let actual1: boolean = arr.hasOwnProperty(5);
+      expect(actual1).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1570
+     * @tc.name objectHasOwnTest157
+     * @tc.desc Verify obj.hasOwnProperty returns false for missing key 999999
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest157", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = {};
+      let actual1: boolean = record.hasOwnProperty(999999);
+      expect(actual1).assertFalse();
+      let actual2: boolean = record.hasOwnProperty(-5);
+      expect(actual2).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1580
+     * @tc.name objectHasOwnTest158
+     * @tc.desc Verify obj.hasOwnProperty returns false for missing key keys[i]
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest158", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = {};
+      const keys: string[] = ["alpha", "beta", "gamma", "delta", "epsilon", "zeta", "eta", "theta", "iota", "kappa"];
+      for (let i = 0; i < keys.length; i++) {
+        let actual1: boolean = record.hasOwnProperty(keys[i]);
+        expect(actual1).assertFalse();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1590
+     * @tc.name objectHasOwnTest159
+     * @tc.desc Verify obj.hasOwnProperty returns false for missing key "alpha"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest159", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const box: EmptyBox = new EmptyBox();
+      let actual1: boolean = box.hasOwnProperty("alpha");
+      expect(actual1).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1600
+     * @tc.name objectHasOwnTest160
+     * @tc.desc Verify obj.hasOwnProperty returns false for missing key "greet"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest160", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const g: Greeter = new Greeter();
+      let actual1: boolean = g.hasOwnProperty("greet");
+      expect(actual1).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1610
+     * @tc.name objectHasOwnTest161
+     * @tc.desc Verify obj.hasOwnProperty returns false for missing key "__proto__"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest161", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const box: EmptyBox001 = new EmptyBox001();
+      let actual1: boolean = box.hasOwnProperty("__proto__");
+      expect(actual1).assertFalse();
+      let actual2: boolean = box.hasOwnProperty("constructor");
+      expect(actual2).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1620
+     * @tc.name objectHasOwnTest162
+     * @tc.desc Verify obj.hasOwnProperty returns false for missing key 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest162", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const box: EmptyBox002 = new EmptyBox002();
+      let actual1: boolean = box.hasOwnProperty(0);
+      expect(actual1).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1630
+     * @tc.name objectHasOwnTest163
+     * @tc.desc Verify obj.hasOwnProperty distinguishes existing vs missing key "name"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest163", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const o: Owned = new Owned();
+      let actual1: boolean = o.hasOwnProperty("name");
+      expect(actual1).assertTrue();
+      let actual2: boolean = o.hasOwnProperty("age");
+      expect(actual2).assertTrue();
+      let actual3: boolean = o.hasOwnProperty("other");
+      expect(actual3).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1640
+     * @tc.name objectHasOwnTest164
+     * @tc.desc Verify obj.hasOwnProperty distinguishes existing vs missing key "x"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest164", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const noProto: Record<string, Any> = {};
+      noProto['x'] = 1;
+      let actual1: boolean = noProto.hasOwnProperty('x');
+      expect(actual1).assertTrue();
+      let actual2: boolean = noProto.hasOwnProperty('y');
+      expect(actual2).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1650
+     * @tc.name objectHasOwnTest165
+     * @tc.desc Verify obj.hasOwnProperty distinguishes existing vs missing key "\u200B"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest165", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { "\u200B": 'w', "alpha": 1 };
+      let actual1: boolean = record.hasOwnProperty("\u200B");
+      expect(actual1).assertTrue();
+      let actual2: boolean = record.hasOwnProperty("alpha");
+      expect(actual2).assertTrue();
+      let actual3: boolean = record.hasOwnProperty("beta");
+      expect(actual3).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1660
+     * @tc.name objectHasOwnTest166
+     * @tc.desc Verify obj.hasOwnProperty distinguishes existing vs missing key pre
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest166", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pre: string = "\u00E9";
+      const decomp: string = "e\u0301";
+      const record: Record<string, Any> = {};
+      record[pre] = "pre";
+      let actual1: boolean = record.hasOwnProperty(pre);
+      expect(actual1).assertTrue();
+      let actual2: boolean = record.hasOwnProperty(decomp);
+      expect(actual2).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1670
+     * @tc.name objectHasOwnTest167
+     * @tc.desc Verify obj.hasOwnProperty returns true for existing key composite
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest167", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const composite: string = "中文😀" + "\u200B";
+      const record: Record<string, Any> = {};
+      record[composite] = 'c';
+      let actual1: boolean = record.hasOwnProperty(composite);
+      expect(actual1).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1680
+     * @tc.name objectHasOwnTest168
+     * @tc.desc Verify obj.hasOwnProperty distinguishes existing vs missing key "\u200B"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest168", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { "\u200B": 's', "\u200B\u200B": 'd' };
+      let actual1: boolean = record.hasOwnProperty("\u200B");
+      expect(actual1).assertTrue();
+      let actual2: boolean = record.hasOwnProperty("\u200B\u200B");
+      expect(actual2).assertTrue();
+      let actual3: boolean = record.hasOwnProperty("\u200B\u200B\u200B");
+      expect(actual3).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1690
+     * @tc.name objectHasOwnTest169
+     * @tc.desc Verify obj.hasOwnProperty distinguishes existing vs missing key heartVs
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest169", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const heartBase: string = '❤';
+      const heartVs: string = '❤' + "\uFE0F";
+      const record: Record<string, Any> = {};
+      record[heartVs] = "vs";
+      let actual1: boolean = record.hasOwnProperty(heartVs);
+      expect(actual1).assertTrue();
+      let actual2: boolean = record.hasOwnProperty(heartBase);
+      expect(actual2).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1700
+     * @tc.name objectHasOwnTest170
+     * @tc.desc Verify obj.hasOwnProperty returns false for missing key longKey
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest170", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const longKey: string = 'a'.repeat(100);
+      const record: Record<string, Any> = { 'b': 1 };
+      let actual1: boolean = record.hasOwnProperty(longKey);
+      expect(actual1).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1710
+     * @tc.name objectHasOwnTest171
+     * @tc.desc Verify obj.hasOwnProperty distinguishes existing vs missing key prefix
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest171", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const longKey: string = 'a'.repeat(100);
+      const prefix: string = longKey.substring(0, 50);
+      const record: Record<string, Any> = {};
+      record[longKey] = 1;
+      let actual1: boolean = record.hasOwnProperty(prefix);
+      expect(actual1).assertFalse();
+      let actual2: boolean = record.hasOwnProperty(longKey);
+      expect(actual2).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1720
+     * @tc.name objectHasOwnTest172
+     * @tc.desc Verify obj.hasOwnProperty distinguishes existing vs missing key k1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest172", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const k1: string = 'b'.repeat(99) + 'x';
+      const k2: string = 'b'.repeat(99) + 'y';
+      const record: Record<string, Any> = {};
+      record[k1] = 1;
+      let actual1: boolean = record.hasOwnProperty(k1);
+      expect(actual1).assertTrue();
+      let actual2: boolean = record.hasOwnProperty(k2);
+      expect(actual2).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1730
+     * @tc.name objectHasOwnTest173
+     * @tc.desc Verify obj.hasOwnProperty returns true for existing key digitKey
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest173", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const digitKey: string = "1234567890".repeat(10);
+      const record: Record<string, Any> = {};
+      record[digitKey] = 'd';
+      let actual1: boolean = record.hasOwnProperty(digitKey);
+      expect(actual1).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1740
+     * @tc.name objectHasOwnTest174
+     * @tc.desc Verify obj.hasOwnProperty distinguishes existing vs missing key a1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest174", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a1: string = "ab".repeat(50);
+      const a2: string = "ba".repeat(50);
+      const record: Record<string, Any> = {};
+      record[a1] = 1;
+      let actual1: boolean = record.hasOwnProperty(a1);
+      expect(actual1).assertTrue();
+      let actual2: boolean = record.hasOwnProperty(a2);
+      expect(actual2).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1750
+     * @tc.name objectHasOwnTest175
+     * @tc.desc Verify obj.hasOwnProperty distinguishes existing vs missing key k100
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest175", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const k100: string = 'a'.repeat(100);
+      const k200: string = 'a'.repeat(200);
+      const record: Record<string, Any> = {};
+      record[k100] = 1;
+      record[k200] = 2;
+      let actual1: boolean = record.hasOwnProperty(k100);
+      expect(actual1).assertTrue();
+      let actual2: boolean = record.hasOwnProperty(k200);
+      expect(actual2).assertTrue();
+      let actual3: boolean = record.hasOwnProperty('a'.repeat(150));
+      expect(actual3).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1760
+     * @tc.name objectHasOwnTest176
+     * @tc.desc Verify obj.hasOwnProperty distinguishes existing vs missing key xss
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest176", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const xss: string = "<script>alert(1)</script>";
+      const obf: string = "<scr" + "\u200B" + "ipt>alert(1)</script>";
+      const record: Record<string, Any> = {};
+      record[xss] = "raw";
+      let actual1: boolean = record.hasOwnProperty(xss);
+      expect(actual1).assertTrue();
+      let actual2: boolean = record.hasOwnProperty(obf);
+      expect(actual2).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1770
+     * @tc.name objectHasOwnTest177
+     * @tc.desc Verify obj.hasOwnProperty returns true for existing key payload
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest177", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let payload: string = '';
+      for (let i = 0; i < 10; i++) {
+        payload += "<script>alert(1)</script>";
+      }
+      const record: Record<string, Any> = {};
+      record[payload] = 'p';
+      let actual1: boolean = record.hasOwnProperty(payload);
+      expect(actual1).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1780
+     * @tc.name objectHasOwnTest178
+     * @tc.desc Verify obj.hasOwnProperty returns true for existing key 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest178", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: number[] = [10, 20, 30];
+      for (let i = 0; i < 3; i++) {
+        let actual1: boolean = arr.hasOwnProperty(i);
+        expect(actual1).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1790
+     * @tc.name objectHasOwnTest179
+     * @tc.desc Verify obj.hasOwnProperty distinguishes existing vs missing key 2
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest179", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: number[] = [10, 20, 30];
+      let actual1: boolean = arr.hasOwnProperty(2);
+      expect(actual1).assertTrue();
+      arr.pop();
+      let actual2: boolean = arr.hasOwnProperty(2);
+      expect(actual2).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1800
+     * @tc.name objectHasOwnTest180
+     * @tc.desc Verify obj.hasOwnProperty returns true for existing key "k"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest180", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'k': 1 };
+      const keys: Array<string> = Object.keys(record);
+      for (let i = 0; i < keys.length; i++) {
+        let actual1: boolean = record.hasOwnProperty(keys[i]);
+        expect(actual1).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1810
+     * @tc.name objectHasOwnTest181
+     * @tc.desc Verify obj.hasOwnProperty returns false for missing numeric-string keys 0 to 4
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest181", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = {};
+      for (let i = 0; i < 5; i++) {
+        let actual1: boolean = record.hasOwnProperty(i.toString());
+        expect(actual1).assertFalse();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1820
+     * @tc.name objectHasOwnTest182
+     * @tc.desc Verify obj.hasOwnProperty distinguishes existing vs missing key "k"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest182", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = {};
+      let actual1: boolean = record.hasOwnProperty('k');
+      expect(actual1).assertFalse();
+      record['k'] = 1;
+      let actual2: boolean = record.hasOwnProperty('k');
+      expect(actual2).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1830
+     * @tc.name objectHasOwnTest183
+     * @tc.desc Verify obj.hasOwnProperty distinguishes existing vs missing key "yes"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest183", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { "yes": 1 };
+      let actual1: boolean = record.hasOwnProperty("yes");
+      expect(actual1).assertTrue();
+      for (let i = 0; i < 5; i++) {
+        let actual2: boolean = record.hasOwnProperty(i.toString());
+        expect(actual2).assertFalse();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1840
+     * @tc.name objectHasOwnTest184
+     * @tc.desc Verify obj.hasOwnProperty returns true for existing key "a"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest184", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'a': 1 };
+      const own: boolean = record.hasOwnProperty('a');
+      expect(own).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1850
+     * @tc.name objectHasOwnTest185
+     * @tc.desc Verify obj.hasOwnProperty returns false for missing key "missing"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest185", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'a': 1 };
+      const own: boolean = record.hasOwnProperty("missing");
+      expect(own).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1860
+     * @tc.name objectHasOwnTest186
+     * @tc.desc Verify obj.hasOwnProperty returns true for existing key names[i]
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest186", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'a': 1, 'b': 2, 'c': 3 };
+      const names: string[] = Object.getOwnPropertyNames(record);
+      for (let i = 0; i < names.length; i++) {
+        let actual1: boolean = record.hasOwnProperty(names[i]);
+        expect(actual1).assertTrue();
+      }
+      let actual2: boolean = record.hasOwnProperty("nope");
+      expect(actual2).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1870
+     * @tc.name objectHasOwnTest187
+     * @tc.desc Verify obj.hasOwnProperty checks key names[i] ownership
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest187", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'a': 1, 'b': 2, 'c': 3 };
+      let actual1: boolean = record.hasOwnProperty("a");
+      expect(actual1).assertTrue();
+      let actual2: boolean = record.hasOwnProperty("b");
+      expect(actual2).assertTrue();
+      let actual3: boolean = record.hasOwnProperty("c");
+      expect(actual3).assertTrue();
+      let actual4: boolean = record.hasOwnProperty("nope");
+      expect(actual4).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1880
+     * @tc.name objectHasOwnTest188
+     * @tc.desc Verify obj.hasOwnProperty returns true for existing unicode keys including CJK word, emoji and zero-width space
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest188", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { "中文": 1, '😀': 2, "\u200B": 3 };
+      const names: string[] = Object.getOwnPropertyNames(record);
+      let actual1: boolean = names.includes("中文");
+      expect(actual1).assertTrue();
+      let actual2: boolean = names.includes('😀');
+      expect(actual2).assertTrue();
+      let actual3: boolean = names.includes("\u200B");
+      expect(actual3).assertTrue();
+      let actual4: boolean = record.hasOwnProperty("中文");
+      expect(actual4).assertTrue();
+      let actual5: boolean = record.hasOwnProperty('😀');
+      expect(actual5).assertTrue();
+      let actual6: boolean = record.hasOwnProperty("\u200B");
+      expect(actual6).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1890
+     * @tc.name objectHasOwnTest189
+     * @tc.desc Verify obj.hasOwnProperty returns true for existing key "<script>alert(1)</script>"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest189", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const xss: string = "<script>alert(1)</script>";
+      const record: Record<string, Any> = {};
+      record[xss] = 1;
+      let actual1: boolean = Object.getOwnPropertyNames(record).includes(xss);
+      expect(actual1).assertTrue();
+      let actual2: boolean = record.hasOwnProperty(xss);
+      expect(actual2).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1900
+     * @tc.name objectHasOwnTest190
+     * @tc.desc Verify obj.hasOwnProperty returns true for existing key longKey
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest190", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const longKey: string = 'a'.repeat(100);
+      const record: Record<string, Any> = {};
+      record[longKey] = 1;
+      let actual1: boolean = Object.getOwnPropertyNames(record).includes(longKey);
+      expect(actual1).assertTrue();
+      let actual2: boolean = record.hasOwnProperty(longKey);
+      expect(actual2).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1910
+     * @tc.name objectHasOwnTest191
+     * @tc.desc Verify obj.hasOwnProperty distinguishes existing vs missing key "a"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest191", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'a': 1, 'b': 2 };
+      let actual1: boolean = record.hasOwnProperty('a');
+      expect(actual1).assertTrue();
+      let actual2: boolean = Object.getOwnPropertyNames(record).includes('a');
+      expect(actual2).assertTrue();
+      let actual3: boolean = record.hasOwnProperty("missing");
+      expect(actual3).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1920
+     * @tc.name objectHasOwnTest192
+     * @tc.desc Verify obj.hasOwnProperty returns true for existing key "z"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest192", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'a': 1 };
+      record['z'] = 26;
+      let actual1: boolean = record.hasOwnProperty('z');
+      expect(actual1).assertTrue();
+      let actual2: boolean = Object.getOwnPropertyNames(record).includes('z');
+      expect(actual2).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_HASOWN_1930
+     * @tc.name objectHasOwnTest193
+     * @tc.desc Verify obj.hasOwnProperty returns false for missing key "any"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectHasOwnTest193", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = {};
+      const names: string[] = Object.getOwnPropertyNames(record);
+      let actual1: boolean = record.hasOwnProperty("any");
+      expect(actual1).assertFalse();
+      expect(names.length).assertEqual(0);
+    });
   });
 }
