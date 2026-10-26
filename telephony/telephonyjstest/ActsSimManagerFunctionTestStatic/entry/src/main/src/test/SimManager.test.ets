@@ -232,6 +232,7 @@ export default function SimManagerTest() {
       sim.isSimActive(SLOTID_INVALID, (err: BusinessError | null, data: Boolean | undefined) => {
         if (err?.code === 8300001 || data === false) {
           console.info(CASE_NAME + "isSimActive async err info :" + JSON.stringify(err) + "data:" + JSON.stringify(data));
+          ExpectTrue(true);
           done();
         }
       });
