@@ -69,6 +69,8 @@ import DragEventSummaryTest from './dragEventSummary/DragEventSummaryTest.test';
 import ImageAnimatorInterpolationTest from './image/ImageAnimatorInterpolationTest.test'
 import ImageCollectionTakeItemByNodeIdTest from './node/ImageCollectionTakeItemByNodeId.test'
 import CalendarPickerFirstDayOfWeekTest from './calendarPicker/CalendarPickerFirstDayOfWeekTest.test'
+import AccessibilityBindExportTreeTest from './accessibilityBindExportTree/AccessibilityBindExportTreeTest.test'
+import UIEventInjectionTest from './uiEventInjection/UIEventInjectionTest.test'
 
 export default function testsuite() {
   SetUiDvsyncSwitchTest() // 此条特殊用例请放在首行，勿动
@@ -126,4 +128,6 @@ export default function testsuite() {
   UIAgentGetPageTextErrorCodeTest()
   CalendarPickerFirstDayOfWeekTest()
   RuntimeCheckModeTest()
+  AccessibilityBindExportTreeTest()
+  UIEventInjectionTest()
 }
