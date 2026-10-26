@@ -5578,7 +5578,7 @@ export default function TextPicker() {
         }
         expect(JSON.parse(strJson).$attrs.visibility).assertEqual('Visibility.Visible');
         let disPlay = display.getDefaultDisplaySync();
-        const checkBoxes: Array<Component> = await driver.findComponents(ON.belongingDisplay(disPlay.id).type('Checkbox'));
+        let checkBoxes: Array<Component> = await driver.findComponents(ON.belongingDisplay(disPlay.id).type('Checkbox'));
         for (let attempt = 0; attempt < 12 && (checkBoxes === null || checkBoxes.length < 2); attempt++) {
           await CommonFunc.sleep(200);
           checkBoxes =  await driver.findComponents(ON.belongingDisplay(disPlay.id).type('Checkbox'));
