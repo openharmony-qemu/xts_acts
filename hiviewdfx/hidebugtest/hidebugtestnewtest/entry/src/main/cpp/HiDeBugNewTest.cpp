@@ -13,7 +13,6 @@
  * limitations under the License.
  */
  
- add
 #include "napi/native_api.h"
 #include "hidebug/hidebug.h"
 #include "hidebug/hidebug_type.h"
@@ -321,7 +320,75 @@ static napi_value Start(napi_env env, napi_callback_info info) {
     return sum;
     return nullptr;
 }
+static napi_value Start_Errcode(napi_env env, napi_callback_info info) {
+    napi_value sum;
+    size_t argc = 2;
+    napi_value args[2] = {nullptr};
 
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    napi_valuetype valuetype0;
+    napi_typeof(env, args[0], &valuetype0);
+
+    napi_valuetype valuetype1;
+    napi_typeof(env, args[1], &valuetype1);
+
+    int32_t value0;
+    napi_get_value_int32(env, args[0], &value0);
+
+    int32_t value1;
+    napi_get_value_int32(env, args[1], &value1);
+        static int count = 0;
+        HiDebug_ProcessSamplerConfig config{
+            .tids = tids.data(),
+            .size = static_cast<uint32_t>(tids.size()),
+            .frequency = static_cast<uint32_t>(value0),
+            .duration = static_cast<uint32_t>(value1),
+            .reserved = 0,
+        };
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TestTag", "Get params  %{public}d  %{public}d", value0,value1 );
+        HiDebug_ErrorCode code = OH_HiDebug_RequestThreadLiteSampling(&config, [](const char *stack) {
+            std::string stacks(stack);
+            OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TestTag", "Get stacks start %{public}lu",
+                             stacks.size());
+            if (stacks.empty()) {
+                return;
+            }
+            size_t start = 0;
+            size_t end = 0;
+            while ((end = stacks.find('\n', start)) != std::string::npos) {
+                 OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TestTag", "Get stacks in %{public}s",
+                             stacks.substr(start, end - start).data());
+                start = end + 1;
+            }
+            if (start < stacks.size()) {
+                 OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TestTag", "Get stacks end %{public}s",
+                             stacks.substr(start, end - start).data());
+            }
+        });
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TestTag", "Get Errcode done %{public}d", code );
+    switch (code) {
+        case HIDEBUG_SUCCESS:
+            napi_create_double(env, HIDEBUG_SUCCESS, &sum);
+            break;
+        case HIDEBUG_INVALID_ARGUMENT:
+            napi_create_double(env, HIDEBUG_INVALID_ARGUMENT, &sum);
+            break;
+        case HIDEBUG_NOT_SUPPORTED:
+            napi_create_double(env, HIDEBUG_NOT_SUPPORTED, &sum);
+            break;
+        case HIDEBUG_UNDER_SAMPLING:
+            napi_create_double(env, HIDEBUG_UNDER_SAMPLING, &sum);
+            break;
+        case HIDEBUG_RESOURCE_UNAVAILABLE:
+            napi_create_double(env, HIDEBUG_RESOURCE_UNAVAILABLE, &sum);
+            break;
+        default:
+            napi_create_double(env, code, &sum);
+            break;
+    }
+    return sum;
+}
 static  napi_value AddThread(napi_env env, napi_callback_info info) {
     s.store(true);
     size_t argc = 1;
