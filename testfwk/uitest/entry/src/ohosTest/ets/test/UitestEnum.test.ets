@@ -25,7 +25,7 @@ export default function uitestEnumTest() {
       expect(MatchPattern.REG_EXP).assertEqual(4);
       expect(MatchPattern.REG_EXP_ICASE).assertEqual(5);
       console.log(`${TestTag}, test_MatchPattern end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_WindowMode
@@ -42,7 +42,7 @@ export default function uitestEnumTest() {
       expect(WindowMode.SECONDARY).assertEqual(2);
       expect(WindowMode.FLOATING).assertEqual(3);
       console.log(`${TestTag}, test_WindowMode end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_ResizeDirection
@@ -63,7 +63,7 @@ export default function uitestEnumTest() {
       expect(ResizeDirection.RIGHT_UP).assertEqual(6);
       expect(ResizeDirection.RIGHT_DOWN).assertEqual(7);
       console.log(`${TestTag}, test_ResizeDirection end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_DisplayRotation
@@ -80,7 +80,7 @@ export default function uitestEnumTest() {
       expect(DisplayRotation.ROTATION_180).assertEqual(2);
       expect(DisplayRotation.ROTATION_270).assertEqual(3);
       console.log(`${TestTag}, test_DisplayRotation end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_UiDirection
@@ -97,7 +97,7 @@ export default function uitestEnumTest() {
       expect(UiDirection.UP).assertEqual(2);
       expect(UiDirection.DOWN).assertEqual(3);
       console.log(`${TestTag}, test_UiDirection end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_MouseButton
@@ -113,6 +113,6 @@ export default function uitestEnumTest() {
       expect(MouseButton.MOUSE_BUTTON_RIGHT).assertEqual(1);
       expect(MouseButton.MOUSE_BUTTON_MIDDLE).assertEqual(2);
       console.log(`${TestTag}, test_MouseButton end`);
-    })
+    }, undefined, 'emulator')
   })
 }

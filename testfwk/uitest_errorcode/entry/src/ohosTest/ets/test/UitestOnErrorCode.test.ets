@@ -49,7 +49,7 @@ export default function uitestOnErrorTest() {
         expect(e.code).assertEqual(ParameterErrorCode);
       }
       console.log(`${TestTag}, test_belongingDisplay_17000007 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_originalText_17000007
@@ -76,6 +76,6 @@ export default function uitestOnErrorTest() {
         expect(e.code).assertEqual(ParameterErrorCode);
       }
       console.log(`${TestTag}, test_originalText_17000007 end`);
-    })
+    }, undefined, 'emulator')
   })
 }

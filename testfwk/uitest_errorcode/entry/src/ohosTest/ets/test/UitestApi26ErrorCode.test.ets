@@ -1017,7 +1017,7 @@ export default function uitestApi26ErrorTest() {
       }
       await sleep(waitUiReadyMs * 8);
       console.log(`${TestTag}, testDriverDumpLayoutErrorConcurrentCall end`);
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverDumpLayoutErrorEmptyPath
@@ -1040,7 +1040,7 @@ export default function uitestApi26ErrorTest() {
         expect((err as BusinessError).message).assertContain('Invalid file path');
       }
       console.log(`${TestTag}, testDriverDumpLayoutErrorEmptyPath end`);
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverDumpLayoutErrorInvalidPath
@@ -1061,7 +1061,7 @@ export default function uitestApi26ErrorTest() {
         expect((err as BusinessError).code).assertEqual(17000007);
       }
       console.log(`${TestTag}, testDriverDumpLayoutErrorInvalidPath end`);
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverDumpLayoutErrorNegativeDisplayId
@@ -1083,7 +1083,7 @@ export default function uitestApi26ErrorTest() {
         expect((err as BusinessError).code).assertEqual(17000007);
       }
       console.log(`${TestTag}, testDriverDumpLayoutErrorNegativeDisplayId end`);
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverDumpLayoutErrorNullSavePath
@@ -1104,7 +1104,7 @@ export default function uitestApi26ErrorTest() {
         expect((err as BusinessError).code).assertEqual(17000007);
       }
       console.log(`${TestTag}, testDriverDumpLayoutErrorNullSavePath end`);
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverDumpLayoutErrorUndefinedSavePath
@@ -1125,7 +1125,7 @@ export default function uitestApi26ErrorTest() {
         expect((err as BusinessError).code).assertEqual(17000007);
       }
       console.log(`${TestTag}, testDriverDumpLayoutErrorUndefinedSavePath end`);
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverMouseDragPressureMinimum
@@ -1146,7 +1146,7 @@ export default function uitestApi26ErrorTest() {
         expect((error as BusinessError).code).assertEqual(17000007);
       }
       console.log(`${TestTag}, testDriverMouseDragPressureMinimum end`);
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverMouseDragPressureMaximum
@@ -1167,7 +1167,7 @@ export default function uitestApi26ErrorTest() {
         expect((error as BusinessError).code).assertEqual(17000007);
       }
       console.log(`${TestTag}, testDriverMouseDragPressureMaximum end`);
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverMouseDragErrorConcurrentCall
@@ -1194,7 +1194,7 @@ export default function uitestApi26ErrorTest() {
       }
       await sleep(waitUiReadyMs * 8);
       console.log(`${TestTag}, testDriverMouseDragErrorConcurrentCall end`);
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverMouseDragErrorSpeedNegative
@@ -1219,7 +1219,7 @@ export default function uitestApi26ErrorTest() {
         expect((err as BusinessError).message).assertContain('Expect integer which cannot be less than 0');
       }
       console.log(`${TestTag}, testDriverMouseDragErrorSpeedNegative end`);
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverMouseDragErrorDurationTooSmall
@@ -1242,7 +1242,7 @@ export default function uitestApi26ErrorTest() {
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       console.log(`${TestTag}, testDriverMouseDragErrorDurationTooSmall end`);
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverMouseDragErrorPressureTooSmall
@@ -1265,7 +1265,7 @@ export default function uitestApi26ErrorTest() {
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       console.log(`${TestTag}, testDriverMouseDragErrorPressureTooSmall end`);
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverMouseDragErrorPressureTooLarge
@@ -1288,7 +1288,7 @@ export default function uitestApi26ErrorTest() {
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       console.log(`${TestTag}, testDriverMouseDragErrorPressureTooLarge end`);
-});
+}, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverMouseDragErrorNullFromPoint
@@ -1310,7 +1310,7 @@ export default function uitestApi26ErrorTest() {
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       console.log(`${TestTag}, testDriverMouseDragErrorNullFromPoint end`);
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverMouseDragErrorUndefinedFromPoint
@@ -1332,7 +1332,7 @@ export default function uitestApi26ErrorTest() {
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       console.log(`${TestTag}, testDriverMouseDragErrorUndefinedFromPoint end`);
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverMouseDragErrorNullToPoint
@@ -1354,7 +1354,7 @@ export default function uitestApi26ErrorTest() {
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       console.log(`${TestTag}, testDriverMouseDragErrorNullToPoint end`);
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverMouseDragErrorUndefinedToPoint
@@ -1376,7 +1376,7 @@ export default function uitestApi26ErrorTest() {
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       console.log(`${TestTag}, testDriverMouseDragErrorUndefinedToPoint end`);
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverTriggerPenKeyAirMouseWithoutPoint
@@ -1396,7 +1396,7 @@ export default function uitestApi26ErrorTest() {
         expect(error.code === DeviceErrorCode || error.code === ParameterErrorCode).assertTrue();
       }
       hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyAirMouseWithoutPoint over');
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverTriggerPenKeyAirMouseWithNullPoint
@@ -1416,7 +1416,7 @@ export default function uitestApi26ErrorTest() {
         expect(error.code === DeviceErrorCode || error.code === ParameterErrorCode).assertTrue();
       }
       hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyAirMouseWithNullPoint over');
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverTriggerPenKeyKeyNull
@@ -1436,7 +1436,7 @@ export default function uitestApi26ErrorTest() {
         expect(error.code).assertEqual(ParameterErrorCode);
       }
       hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyKeyNull over');
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverTriggerPenKeyModeNull
@@ -1456,7 +1456,7 @@ export default function uitestApi26ErrorTest() {
         expect(error.code).assertEqual(ParameterErrorCode);
       }
       hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyModeNull over');
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverTriggerPenKeyOperationNull
@@ -1476,7 +1476,7 @@ export default function uitestApi26ErrorTest() {
         expect(error.code).assertEqual(ParameterErrorCode);
       }
       hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyOperationNull over');
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverTriggerPenKeyKeyUndefined
@@ -1496,7 +1496,7 @@ export default function uitestApi26ErrorTest() {
         expect(error.code).assertEqual(ParameterErrorCode);
       }
       hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyKeyUndefined over');
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverTriggerPenKeyModeUndefined
@@ -1516,7 +1516,7 @@ export default function uitestApi26ErrorTest() {
         expect(error.code).assertEqual(ParameterErrorCode);
       }
       hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyModeUndefined over');
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverTriggerPenKeyOperationUndefined
@@ -1536,7 +1536,7 @@ export default function uitestApi26ErrorTest() {
         expect(error.code).assertEqual(ParameterErrorCode);
       }
       hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyOperationUndefined over');
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverTriggerPenKeyHandwritingClickOptionsNull
@@ -1556,7 +1556,7 @@ export default function uitestApi26ErrorTest() {
         expect(error.code).assertEqual(DeviceErrorCode)
       }
       hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingClickOptionsNull over');
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverTriggerPenKeyHandwritingClickOptionsUndefined
@@ -1576,7 +1576,7 @@ export default function uitestApi26ErrorTest() {
         expect(error.code).assertEqual(DeviceErrorCode)
       }
       hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingClickOptionsUndefined over');
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverTriggerPenKeyConcurrentCalls
@@ -1601,7 +1601,7 @@ export default function uitestApi26ErrorTest() {
       }
       await sleep(waitUiReadyMs * 8);
       hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyConcurrentCalls over');
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverTriggerPenKeyKeyOutOfRangeAboveMax
@@ -1621,7 +1621,7 @@ export default function uitestApi26ErrorTest() {
         expect(err.code === DeviceErrorCode || err.code === ParameterErrorCode).assertTrue();
       }
       hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyKeyOutOfRangeAboveMax over');
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverTriggerPenKeyKeyOutOfRangeNegative
@@ -1643,7 +1643,7 @@ export default function uitestApi26ErrorTest() {
         expect((error as BusinessError).message).assertContain('Expect integer which cannot be less than 0');
       }
       hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyKeyOutOfRangeNegative over');
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverTriggerPenKeyModeOutOfRangeAboveMax
@@ -1663,7 +1663,7 @@ export default function uitestApi26ErrorTest() {
         expect(err.code === DeviceErrorCode || err.code === ParameterErrorCode).assertTrue();
       }
       hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyModeOutOfRangeAboveMax over');
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverTriggerPenKeyModeOutOfRangeNegative
@@ -1683,7 +1683,7 @@ export default function uitestApi26ErrorTest() {
         expect(error.code).assertEqual(ParameterErrorCode);
       }
       hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyModeOutOfRangeNegative over');
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverTriggerPenKeyOperationOutOfRangeAboveMax
@@ -1703,7 +1703,7 @@ export default function uitestApi26ErrorTest() {
         expect(err.code === DeviceErrorCode || err.code === ParameterErrorCode).assertTrue();
       }
       hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyOperationOutOfRangeAboveMax over');
-    });
+    }, undefined, 'emulator');
 
     /**
      * @tc.name   testDriverTriggerPenKeyOperationOutOfRangeNegative
@@ -1723,7 +1723,7 @@ export default function uitestApi26ErrorTest() {
         expect(error.code).assertEqual(ParameterErrorCode);
       }
       hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyOperationOutOfRangeNegative over');
-    });
+    }, undefined, 'emulator');
 
   })
 }

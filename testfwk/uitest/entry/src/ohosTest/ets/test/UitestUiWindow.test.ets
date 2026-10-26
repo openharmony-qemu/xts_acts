@@ -256,7 +256,7 @@ export default function uiUiWindowTest() {
       expect(isFocused == true).assertTrue()
       expect(isActived == true).assertTrue()
       await stopApplication('com.uitestScene.acts')
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testWindowResume_split
@@ -336,7 +336,7 @@ export default function uiUiWindowTest() {
         expect(error.code == WindowsErrorCode).assertTrue()
       }
       await envRecovery(driver)
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testSplit_split2
@@ -385,7 +385,7 @@ export default function uiUiWindowTest() {
         expect(error.code == WindowsErrorCode).assertTrue();
       }
       await envRecovery(driver)
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testWindowMoveTo_full
@@ -437,7 +437,7 @@ export default function uiUiWindowTest() {
         console.log('testWindowMoveTo_float error is' + error)
         expect(error.code == WindowsErrorCode).assertTrue()
       }
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testWindowMoveTo_split
@@ -460,7 +460,7 @@ export default function uiUiWindowTest() {
         expect(error.code == WindowsErrorCode).assertTrue()
       }
       await envRecovery(driver)
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testWindowResize_full
@@ -483,7 +483,7 @@ export default function uiUiWindowTest() {
         console.log('testWindowResize_full error is ' + error)
         expect(error.code == WindowsErrorCode).assertTrue()
       }
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testWindowResizeA_float
@@ -531,7 +531,7 @@ export default function uiUiWindowTest() {
         console.log('testWindowResizeA_float error is ' + error)
         expect(error.code == WindowsErrorCode).assertTrue()
       }
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testWindowResizeA_UP_float
@@ -640,7 +640,7 @@ export default function uiUiWindowTest() {
         console.log('testWindowResizeB_float error is ' + error)
         expect(error.code == WindowsErrorCode).assertTrue()
       }
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testWindowResizeB_UP_float
@@ -677,7 +677,7 @@ export default function uiUiWindowTest() {
         console.log('testWindowResizeB_UP_float error is ' + error)
         expect(error.code == WindowsErrorCode).assertTrue()
       }
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testWindowResizeB_split1
@@ -751,7 +751,7 @@ export default function uiUiWindowTest() {
         expect(error.code == WindowsErrorCode).assertTrue()
       }
       await envRecovery(driver)
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testWindowMinimize_full
@@ -777,7 +777,7 @@ export default function uiUiWindowTest() {
         console.log('testWindowMinimize_full error is ' + error)
         expect(error.code == WindowsErrorCode).assertTrue()
       }
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testWindowMinimize_float
@@ -803,7 +803,7 @@ export default function uiUiWindowTest() {
         console.log('testWindowMinimize_full error is ' + error)
         expect(error.code == WindowsErrorCode).assertTrue()
       }
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testWindowMinimize_split
@@ -830,7 +830,7 @@ export default function uiUiWindowTest() {
         expect(error.code == WindowsErrorCode).assertTrue()
       }
       await envRecovery(driver)
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testWindowClose_full
@@ -856,7 +856,7 @@ export default function uiUiWindowTest() {
         console.log('testWindowClose_full error is ' + error)
         expect(error.code == WindowsErrorCode).assertTrue()
       }
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testWindowClose_float
@@ -882,7 +882,7 @@ export default function uiUiWindowTest() {
         console.log('testWindowClose_full error is ' + error)
         expect(error.code == WindowsErrorCode).assertTrue()
       }
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testWindowClose_split
@@ -910,7 +910,7 @@ export default function uiUiWindowTest() {
       }
       await stopApplication('com.uitestScene.acts')
       await envRecovery(driver)
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testWindowMaximize_full
@@ -932,7 +932,7 @@ export default function uiUiWindowTest() {
         console.log('testWindowMaximize_full error is ' + error)
         expect(error.code == WindowsErrorCode).assertTrue()
       }
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testWindowMaximize_float
