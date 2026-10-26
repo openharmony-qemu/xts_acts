@@ -21,7 +21,12 @@ async function startAbility(bundleName: string, abilityName: string) {
 }
 
 async function stopApplication(bundleName: string) {
-  await delegator.executeShellCommand(`aa force-stop ${bundleName} `).then(result => {
+  let cmd = `aa force-stop ${bundleName}`;
+  let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+  if(user !== undefined){
+      cmd += ' -u ' + user;
+  }
+  await delegator.executeShellCommand(cmd).then(result => {
     console.info(`UiTestCase, stop application finished: ${result}`)
   }).catch((err : BusinessError) => {
     console.error(`UiTestCase,stop application failed: ${err}`)

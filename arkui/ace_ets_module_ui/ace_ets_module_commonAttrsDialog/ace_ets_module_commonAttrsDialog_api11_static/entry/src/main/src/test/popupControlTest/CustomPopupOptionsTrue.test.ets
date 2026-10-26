@@ -31,6 +31,7 @@ import { UtilsTest } from '../Util.test';
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0;
 
 export default function CustomPopupOptionsTrue() {
   describe('CustomPopupOptionsTrue', () => {
@@ -86,7 +87,7 @@ it('CustomPopupOptionsTrue_static_0100', Level.LEVEL0, async (done: () => void):
       expect(properties.type).assertEqual(0) //0表示应用子窗口TYPE_APP
 
       await CommonFunc.sleep(1000);
-       driver?.click(2, 2);
+        driver?.clickAt({x: 2, y: 2, displayId: displayID});
       await CommonFunc.sleep(1000);
       console.info('[CustomPopupOptionsTrue_0100] END');
       done();

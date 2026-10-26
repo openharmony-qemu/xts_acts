@@ -259,7 +259,7 @@ export default function arrayListStringTest() {
       expect(list.length).assertEqual(4);
       expect(list[3]).assertEqual('date');
     });
-
+ 
     /**
      * @tc.name   testArrayListStringTest0600
      * @tc.number SUB_ARKTS_ARRAY_LIST_STRING_0600
@@ -282,7 +282,7 @@ export default function arrayListStringTest() {
       }
       expect(accessThrew || list.length === 2).assertTrue();
       expect(list.length).assertEqual(2);
-
+ 
       let insertThrew: boolean = false;
       try {
         list.insert('out', 99);
@@ -293,7 +293,7 @@ export default function arrayListStringTest() {
       expect(insertThrew).assertTrue();
       expect(list.has('out')).assertFalse();
       expect(list.length).assertEqual(2);
-
+ 
       let removeThrew: boolean = false;
       try {
         list.removeByIndex(2);
@@ -303,7 +303,7 @@ export default function arrayListStringTest() {
       }
       expect(removeThrew).assertTrue();
       expect(list.length).assertEqual(2);
-
+ 
       let subThrew: boolean = false;
       try {
         list.subArrayList(1, 0);
@@ -311,14 +311,14 @@ export default function arrayListStringTest() {
         subThrew = true;
       }
       expect(subThrew).assertTrue();
-
+ 
       const nullList: ArrayList<StringDynamicItem> = new ArrayList<StringDynamicItem>();
       nullList.add(null);
       nullList.add(undefined);
       expect(nullList.has(null)).assertTrue();
       expect(nullList.has(undefined)).assertTrue();
       expect(nullList.getIndexOf(null)).assertEqual(0);
-
+ 
       list.clear();
       expect(list.length).assertEqual(0);
       expect(list.isEmpty()).assertTrue();

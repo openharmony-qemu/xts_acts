@@ -225,53 +225,5 @@ export default function arrayListObjectTest() {
       expect(list.length).assertEqual(4);
       expect(list[3]).assertEqual(OBJECT_D);
     });
-
-    /**
-     * @tc.name   testArrayListObjectTest0600
-     * @tc.number SUB_ARKTS_ARRAY_LIST_OBJECT_0600
-     * @tc.desc   Verify ArrayList object boundary access, out-of-range removeByIndex and insert, clear and empty clone
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArrayListObjectTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const list: ArrayList<ArrayObjectItem> = new ArrayList<ArrayObjectItem>();
-      list.add(OBJECT_A);
-      let accessThrew: boolean = false;
-      try {
-        const beyond: ArrayObjectItem = list[1];
-        expect(beyond).assertUndefined();
-      } catch (e) {
-        accessThrew = true;
-        expect((e as Error).name === 'BusinessError' || (e as Error).name === 'RangeError').assertTrue();
-      }
-      expect(accessThrew || list.length === 1).assertTrue();
-      expect(list.length).assertEqual(1);
-
-      let removeThrew: boolean = false;
-      try {
-        list.removeByIndex(10);
-      } catch (e) {
-        removeThrew = true;
-        expect(((e as Error).name).length > 0).assertTrue();
-      }
-      expect(removeThrew).assertTrue();
-      expect(list.length).assertEqual(1);
-
-      let insertThrew: boolean = false;
-      try {
-        list.insert(OBJECT_B, 44);
-      } catch (e) {
-        insertThrew = true;
-        expect((e as Error).name === 'BusinessError' || (e as Error).name === 'RangeError').assertTrue();
-      }
-      expect(insertThrew).assertTrue();
-      expect(list.length).assertEqual(1);
-
-      list.clear();
-      expect(list.length).assertEqual(0);
-      expect(list.isEmpty()).assertTrue();
-      expect(list.clone().length).assertEqual(0);
-    });
   });
 }

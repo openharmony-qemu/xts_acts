@@ -128,11 +128,11 @@
              expect(appInfo?.accessTokenId).assertLarger(0);
              expect(appInfo?.uid).assertLarger(0);
              expect(appInfo?.iconResource?.bundleName).assertEqual('ohos.acts.bundlemanagererrcode.test.static');
-             expect(appInfo?.iconResource?.moduleName).assertEqual('phone');
+             expect(appInfo?.iconResource?.moduleName).assertEqual('entry');
              expect(appInfo?.iconResource?.id).assertLarger(0);
              expect(appInfo?.labelResource?.id).assertLarger(0);
              expect(appInfo?.labelResource?.bundleName).assertEqual('ohos.acts.bundlemanagererrcode.test.static');
-             expect(appInfo?.labelResource?.moduleName).assertEqual('phone');
+             expect(appInfo?.labelResource?.moduleName).assertEqual('entry');
              expect(appInfo?.appDistributionType).assertEqual('os_integration');
              expect(appInfo?.appProvisionType).assertEqual('release');
              expect(appInfo?.systemApp).assertFalse();

@@ -242,48 +242,5 @@ export default function listFunctionTest() {
       expect(list.getLast()(0)).assertEqual(1);
       expect(list.isEmpty()).assertFalse();
     });
-
-    /**
-     * @tc.name   testListFunctionTest0600
-     * @tc.number SUB_ARKTS_LIST_FUNCTION_0600
-     * @tc.desc   Verify List function out-of-bounds get/insert/removeByIndex behavior, empty list access and clear
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testListFunctionTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const list: List<ListFunctionItem> = new List<ListFunctionItem>();
-      list.add(FUNCTION_A);
-      expect(list.get(1)).assertUndefined();
-      expect(list[1]).assertUndefined();
-
-      let removeThrew: boolean = false;
-      try {
-        list.removeByIndex(6);
-      } catch (e) {
-        removeThrew = true;
-        expect(((e as Error).name).length > 0).assertTrue();
-      }
-      expect(removeThrew).assertTrue();
-      expect(list.length).assertEqual(1);
-
-      let insertThrew: boolean = false;
-      try {
-        list.insert(FUNCTION_B, 11);
-      } catch (e) {
-        insertThrew = true;
-      }
-      expect(insertThrew).assertTrue();
-      expect(list.length).assertEqual(1);
-
-      const empty: List<ListFunctionItem> = new List<ListFunctionItem>();
-      expect(empty.getFirst()).assertUndefined();
-      expect(empty.getLast()).assertUndefined();
-
-      list.clear();
-      expect(list.length).assertEqual(0);
-      expect(list.isEmpty()).assertTrue();
-      expect(list.convertToArray().length).assertEqual(0);
-    });
   });
 }

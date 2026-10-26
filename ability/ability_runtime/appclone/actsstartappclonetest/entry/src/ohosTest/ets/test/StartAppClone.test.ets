@@ -21,6 +21,7 @@ import Want from '@ohos.app.ability.Want';
 import wantConstant from '@ohos.app.ability.wantConstant';
 
 let appCloneBundleName: string = 'com.ohos.appclonehap1';
+let appCloneSupport: boolean = false;
   let appCloneIndex = 1;
   let paramForCreatingAppClone: installer.CreateAppCloneParam = {
     userId: 100,
@@ -29,6 +30,8 @@ let appCloneBundleName: string = 'com.ohos.appclonehap1';
 export default function startAppCloneTest() {
   describe('ActsStartAppCloneTest', () => {
     beforeAll(() => {
+      appCloneSupport = AppStorage.get('appCloneSupport') as boolean;
+      console.info('appCloneSupport: ' + appCloneSupport);
     });
     beforeEach(() => {
     });
@@ -49,6 +52,11 @@ export default function startAppCloneTest() {
     it('SUB_Ability_AbilityRuntime_StartAbilityClone_0100', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_StartAbilityClone_0100`;
       console.log(`${tag}, it begin`);
+      if (!appCloneSupport) {
+        console.info(`${tag}, current device not support app clone.`);
+        done();
+        return;
+      }
 
       let subscribeInfo: CommonEventManager.CommonEventSubscribeInfo = {
         events: ['start_appClone_0100']
@@ -103,6 +111,11 @@ export default function startAppCloneTest() {
     it('SUB_Ability_AbilityRuntime_StartAbilityClone_0200', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_StartAbilityClone_0200`;
       console.log(`${tag}, it begin`);
+      if (!appCloneSupport) {
+        console.info(`${tag}, current device not support app clone.`);
+        done();
+        return;
+      }
 
       createAppClone();
       await sleep(1000);
@@ -163,6 +176,11 @@ export default function startAppCloneTest() {
       await sleep(1000);
       let tag = `SUB_Ability_AbilityRuntime_StartAbilityClone_0300`;
       console.log(`${tag}, it begin`);
+      if (!appCloneSupport) {
+        console.info(`${tag}, current device not support app clone.`);
+        done();
+        return;
+      }
 
       let maxAppCloneIndex: number = 1000;
       let want: Want = {
@@ -201,6 +219,11 @@ export default function startAppCloneTest() {
     it('SUB_Ability_AbilityRuntime_StartAbilityClone_0400', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_StartAbilityClone_0400`;
       console.log(`${tag}, it begin`);
+      if (!appCloneSupport) {
+        console.info(`${tag}, current device not support app clone.`);
+        done();
+        return;
+      }
 
       let invalidAppCloneIndex: number = 1001;
       let want: Want = {
@@ -239,6 +262,11 @@ export default function startAppCloneTest() {
     it('SUB_Ability_AbilityRuntime_StartAbilityClone_0500', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_StartAbilityClone_0500`;
       console.log(`${tag}, it begin`);
+      if (!appCloneSupport) {
+        console.info(`${tag}, current device not support app clone.`);
+        done();
+        return;
+      }
 
       let invalidAppCloneIndex: number = -1;
       let want: Want = {
@@ -277,6 +305,11 @@ export default function startAppCloneTest() {
     it('SUB_Ability_AbilityRuntime_StartAbilityClone_0600', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_StartAbilityClone_0600`;
       console.log(`${tag}, it begin`);
+      if (!appCloneSupport) {
+        console.info(`${tag}, current device not support app clone.`);
+        done();
+        return;
+      }
 
       let subscribeInfo: CommonEventManager.CommonEventSubscribeInfo = {
         events: ['start_appClone_0600']
@@ -331,6 +364,11 @@ export default function startAppCloneTest() {
     it('SUB_Ability_AbilityRuntime_StartAbilityClone_0700', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_StartAbilityClone_0700`;
       console.log(`${tag}, it begin`);
+      if (!appCloneSupport) {
+        console.info(`${tag}, current device not support app clone.`);
+        done();
+        return;
+      }
 
       createAppClone();
       await sleep(1000);
@@ -391,6 +429,11 @@ export default function startAppCloneTest() {
       await sleep(1000);
       let tag = `SUB_Ability_AbilityRuntime_StartAbilityClone_0800`;
       console.log(`${tag}, it begin`);
+      if (!appCloneSupport) {
+        console.info(`${tag}, current device not support app clone.`);
+        done();
+        return;
+      }
 
       let maxAppCloneIndex: number = 1000;
       let want: Want = {
@@ -429,6 +472,11 @@ export default function startAppCloneTest() {
     it('SUB_Ability_AbilityRuntime_StartAbilityClone_0900', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_StartAbilityClone_0900`;
       console.log(`${tag}, it begin`);
+      if (!appCloneSupport) {
+        console.info(`${tag}, current device not support app clone.`);
+        done();
+        return;
+      }
 
       createAppClone();
       await sleep(1000);
@@ -487,6 +535,11 @@ export default function startAppCloneTest() {
       await sleep(1000);
       let tag = `SUB_Ability_AbilityRuntime_StartAbilityClone_1000`;
       console.log(`${tag}, it begin`);
+      if (!appCloneSupport) {
+        console.info(`${tag}, current device not support app clone.`);
+        done();
+        return;
+      }
 
       let maxAppCloneIndex: number = 1000;
       let want: Want = {
@@ -525,6 +578,11 @@ export default function startAppCloneTest() {
     it('SUB_Ability_AbilityRuntime_StartAbilityClone_1100', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_StartAbilityClone_1100`;
       console.log(`${tag}, it begin`);
+      if (!appCloneSupport) {
+        console.info(`${tag}, current device not support app clone.`);
+        done();
+        return;
+      }
 
       createAppClone();
       await sleep(1000);
@@ -583,6 +641,11 @@ export default function startAppCloneTest() {
       await sleep(1000);
       let tag = `SUB_Ability_AbilityRuntime_StartAbilityClone_1200`;
       console.log(`${tag}, it begin`);
+      if (!appCloneSupport) {
+        console.info(`${tag}, current device not support app clone.`);
+        done();
+        return;
+      }
 
       let maxAppCloneIndex: number = 1000;
       let want: Want = {
@@ -621,6 +684,11 @@ export default function startAppCloneTest() {
     it('SUB_Ability_AbilityRuntime_StartAbilityClone_1300', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_StartAbilityClone_1300`;
       console.log(`${tag}, it begin`);
+      if (!appCloneSupport) {
+        console.info(`${tag}, current device not support app clone.`);
+        done();
+        return;
+      }
 
       createAppClone();
       await sleep(1000);
@@ -681,6 +749,11 @@ export default function startAppCloneTest() {
       await sleep(1000);
       let tag = `SUB_Ability_AbilityRuntime_StartAbilityClone_1400`;
       console.log(`${tag}, it begin`);
+      if (!appCloneSupport) {
+        console.info(`${tag}, current device not support app clone.`);
+        done();
+        return;
+      }
 
       let maxAppCloneIndex: number = 1000;
       let want: Want = {
@@ -719,6 +792,11 @@ export default function startAppCloneTest() {
     it('SUB_Ability_AbilityRuntime_StartAbilityClone_1500', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_StartAbilityClone_1500`;
       console.log(`${tag}, it begin`);
+      if (!appCloneSupport) {
+        console.info(`${tag}, current device not support app clone.`);
+        done();
+        return;
+      }
 
       createAppClone();
       await sleep(1000);
@@ -779,6 +857,11 @@ export default function startAppCloneTest() {
       await sleep(1000);
       let tag = `SUB_Ability_AbilityRuntime_StartAbilityClone_1600`;
       console.log(`${tag}, it begin`);
+      if (!appCloneSupport) {
+        console.info(`${tag}, current device not support app clone.`);
+        done();
+        return;
+      }
 
       let maxAppCloneIndex: number = 1000;
       let want: Want = {
@@ -817,6 +900,11 @@ export default function startAppCloneTest() {
     it('SUB_Ability_AbilityRuntime_StartAbilityClone_1700', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_StartAbilityClone_1700`;
       console.log(`${tag}, it begin`);
+      if (!appCloneSupport) {
+        console.info(`${tag}, current device not support app clone.`);
+        done();
+        return;
+      }
 
       createAppClone();
       await sleep(1000);
@@ -877,6 +965,11 @@ export default function startAppCloneTest() {
       await sleep(1000);
       let tag = `SUB_Ability_AbilityRuntime_StartAbilityClone_1800`;
       console.log(`${tag}, it begin`);
+      if (!appCloneSupport) {
+        console.info(`${tag}, current device not support app clone.`);
+        done();
+        return;
+      }
 
       let maxAppCloneIndex: number = 1000;
       let want: Want = {
@@ -915,6 +1008,11 @@ export default function startAppCloneTest() {
     it('SUB_Ability_AbilityRuntime_StartAbilityClone_1900', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_StartAbilityClone_1900`;
       console.log(`${tag}, it begin`);
+      if (!appCloneSupport) {
+        console.info(`${tag}, current device not support app clone.`);
+        done();
+        return;
+      }
 
       createAppClone();
       await sleep(1000);
@@ -975,6 +1073,11 @@ export default function startAppCloneTest() {
       await sleep(1000);
       let tag = `SUB_Ability_AbilityRuntime_StartAbilityClone_2000`;
       console.log(`${tag}, it begin`);
+      if (!appCloneSupport) {
+        console.info(`${tag}, current device not support app clone.`);
+        done();
+        return;
+      }
 
       let maxAppCloneIndex: number = 1000;
       let want: Want = {
@@ -1013,6 +1116,11 @@ export default function startAppCloneTest() {
     it('SUB_Ability_AbilityRuntime_ProcessInformation_0100', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_ProcessInformation_0100`;
       console.log(`${tag}, it begin`);
+      if (!appCloneSupport) {
+        console.info(`${tag}, current device not support app clone.`);
+        done();
+        return;
+      }
 
       createAppClone();
       await sleep(1000);

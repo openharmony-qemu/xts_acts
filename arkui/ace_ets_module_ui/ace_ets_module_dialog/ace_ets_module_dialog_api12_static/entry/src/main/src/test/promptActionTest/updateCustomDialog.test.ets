@@ -22,6 +22,8 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import window from '@ohos.window';
 
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
+
 export default function updateCustomDialog() {
   describe('updateCustomDialog', () => {
     beforeEach(async (): Promise<void> => {
@@ -58,7 +60,7 @@ it('updateCustomDialog_static_0100', Level.LEVEL2, async (done: () => void): Pro
       let button:Component = await driver.findComponent(ON.id('updateCustomDialogXTS')) as Component;
       await button.click();
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2070);
+      await driver.triggerKey(2070, displayID);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('updateCustomDialogMessage');
       let obj = JSON.parseJsonElement(strJson);

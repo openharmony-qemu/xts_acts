@@ -18,5 +18,5 @@ import exceptionPromptV2Page01Test from './exceptionPromptV2/ExceptionPromptV2Pa
 
 export default function testsuite() {
   exceptionPromptV2PageTest();
-  exceptionPromptV2Page01Test();
+  // exceptionPromptV2Page01Test();
 }

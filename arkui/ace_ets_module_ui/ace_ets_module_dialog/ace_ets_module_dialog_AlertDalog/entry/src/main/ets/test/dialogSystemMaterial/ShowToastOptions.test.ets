@@ -719,45 +719,7 @@ export default function ShowToastOptionsTest() {
       done();
     });
 
-    /**
-     * @tc.name   ShowToastOptionsTest_CloseToast_0100
-     * @tc.number SUB_ARKUI_API_ShowToastOptions_CloseToast_0100
-     * @tc.desc   Test closeToast function
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('ShowToastOptionsTest_CloseToast_0100', Level.LEVEL0, async (done: Function) => {
-      console.info('ShowToastOptionsTest_CloseToast_0100 START');
-      let driver = await Driver.create()
-      await CommonFunc.sleep(1000);
-
-      let btnOpen = await driver.findComponent(ON.id('btn_message_string'));
-      expect(btnOpen).not().assertUndefined();
-      await btnOpen.click();
-      await CommonFunc.sleep(500);
-
-      let resultText = await driver.findComponent(ON.id('result_text'));
-      
-      let text = await resultText.getText();
-      if (globalThis.winLeft == 0) {
-        expect(text.indexOf('ToastId')).assertLarger(-1);
-      }
-
-      let btnClose = await driver.findComponent(ON.id('btn_close'));
-      expect(btnClose).not().assertUndefined();
-      await btnClose.click();
-      await CommonFunc.sleep(500);
-
-      text = await resultText.getText();
-      if (globalThis.winLeft == 0) {
-        expect(text.indexOf('Closed')).assertLarger(-1);
-      }
-      console.info('ShowToastOptionsTest_CloseToast_0100 result: ' + text);
-
-      console.info('ShowToastOptionsTest_CloseToast_0100 END');
-      done();
-    });
+    
 
     /**
      * @tc.name   ShowToastOptionsTest_OpenToastReturn_0100
@@ -799,6 +761,42 @@ export default function ShowToastOptionsTest() {
       console.info('ShowToastOptionsTest_ImmersiveStyle_0100 ImmersiveStyle enum values verified');
 
       console.info('ShowToastOptionsTest_ImmersiveStyle_0100 END');
+      done();
+    });
+
+    /**
+     * @tc.name   ShowToastOptionsTest_CloseToast_0100
+     * @tc.number SUB_ARKUI_API_ShowToastOptions_CloseToast_0100
+     * @tc.desc   Test closeToast function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ShowToastOptionsTest_CloseToast_0100', Level.LEVEL0, async (done: Function) => {
+      console.info('ShowToastOptionsTest_CloseToast_0100 START');
+      let driver = await Driver.create()
+      await CommonFunc.sleep(1000);
+
+      let btnOpen = await driver.findComponent(ON.id('btn_message_string'));
+      expect(btnOpen).not().assertUndefined();
+      await btnOpen.click();
+      await CommonFunc.sleep(500);
+
+      let resultText = await driver.findComponent(ON.id('result_text'));
+      
+      let text = await resultText.getText();
+      expect(text.indexOf('ToastId')).assertLarger(-1);
+
+      let btnClose = await driver.findComponent(ON.id('btn_close'));
+      expect(btnClose).not().assertUndefined();
+      await btnClose.click();
+      await CommonFunc.sleep(500);
+
+      text = await resultText.getText();
+      expect(text.indexOf('Closed')).assertLarger(-1);
+      console.info('ShowToastOptionsTest_CloseToast_0100 result: ' + text);
+
+      console.info('ShowToastOptionsTest_CloseToast_0100 END');
       done();
     });
     

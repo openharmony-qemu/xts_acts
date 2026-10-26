@@ -122,7 +122,9 @@ function checkSendableSemanticsConcurrent(arr: collections.Array<number>): boole
 
 export default function ConcatArrayConcurrentTest(): void {
   describe('ConcatArrayConcurrentTest', (): void => {
-    beforeAll((): void => {})
+    beforeAll(async (): Promise<void> => {
+    await sleep(200);
+  })
     beforeEach((): void => {})
     afterEach((): void => {})
     afterAll(async (): Promise<void> => {

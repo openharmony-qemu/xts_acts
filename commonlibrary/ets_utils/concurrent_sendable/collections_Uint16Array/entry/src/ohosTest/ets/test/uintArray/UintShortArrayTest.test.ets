@@ -62,7 +62,9 @@ class CustomUintShortArray extends collections.Uint16Array {
 
 export default function UintShortArrayTest(): void {
   describe('UintShortArrayTest', (): void => {
-    beforeAll((): void => {})
+    beforeAll(async (): Promise<void> => {
+    await sleep(200);
+  })
     beforeEach((): void => {})
     afterEach((): void => {})
     afterAll(async (): Promise<void> => {
