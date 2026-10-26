@@ -57,4 +57,5 @@ export class OpenHarmonyTestRunner implements TestRunner {
     }, 4000)
   }
     }
+  public set onRun(_: () => void) {}
 }

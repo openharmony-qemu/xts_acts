@@ -48,4 +48,5 @@ export class OpenHarmonyTestRunner implements TestRunner {
       hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun end');
     }
   }
+  public set onRun(_: () => void) {}
 }
