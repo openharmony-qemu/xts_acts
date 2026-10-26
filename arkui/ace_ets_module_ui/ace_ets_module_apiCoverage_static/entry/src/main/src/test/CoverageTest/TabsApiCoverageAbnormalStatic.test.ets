@@ -70,8 +70,11 @@ export default function tabsApiCoverageAbnormalStaticTest(): void {
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_BARSTYLE_0100', Level.LEVEL1, async () => {
       await Utils.sleep(800);
-      const strJson: string = inspector.getInspectorByKey('tabs_barStyle_undefined');
-      expect(strJson.length > 2).assertTrue();
+      const defJson: string = inspector.getInspectorByKey('tabs_barStyle_default');
+      const abnJson: string = inspector.getInspectorByKey('tabs_barStyle_undefined');
+      const defAttrs = JSON.parseJsonElement(defJson).getElement('$attrs');
+      const abnAttrs = JSON.parseJsonElement(abnJson).getElement('$attrs');
+      expect(abnAttrs.getString('barStyle')).assertEqual(defAttrs.getString('barStyle'));
     });
     /**
      * @tc.number SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_SIDEBARPOS_0200
@@ -83,8 +86,11 @@ export default function tabsApiCoverageAbnormalStaticTest(): void {
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_SIDEBARPOS_0200', Level.LEVEL1, async () => {
       await Utils.sleep(800);
-      const strJson: string = inspector.getInspectorByKey('tabs_sidebarPosition_undefined');
-      expect(strJson.length > 2).assertTrue();
+      const defJson: string = inspector.getInspectorByKey('tabs_sidebarPosition_default');
+      const abnJson: string = inspector.getInspectorByKey('tabs_sidebarPosition_undefined');
+      const defAttrs = JSON.parseJsonElement(defJson).getElement('$attrs');
+      const abnAttrs = JSON.parseJsonElement(abnJson).getElement('$attrs');
+      expect(abnAttrs.getString('sidebarPosition')).assertEqual(defAttrs.getString('sidebarPosition'));
     });
     /**
      * @tc.number SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_SIDEBARHEADER_0300
@@ -96,8 +102,13 @@ export default function tabsApiCoverageAbnormalStaticTest(): void {
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_SIDEBARHEADER_0300', Level.LEVEL1, async () => {
       await Utils.sleep(800);
-      const strJson: string = inspector.getInspectorByKey('tabs_sidebarHeader_undefined');
-      expect(strJson.length > 2).assertTrue();
+      const defJson: string = inspector.getInspectorByKey('tabs_sidebarHeader_default');
+      const abnJson: string = inspector.getInspectorByKey('tabs_sidebarHeader_undefined');
+      const defAttrs = JSON.parseJsonElement(defJson).getElement('$attrs');
+      const abnAttrs = JSON.parseJsonElement(abnJson).getElement('$attrs');
+      expect(abnAttrs.getString('barStyle')).assertEqual(defAttrs.getString('barStyle'));
+      expect(JSON.stringify(abnAttrs.getElement('sidebarHeader')))
+        .assertEqual(JSON.stringify(defAttrs.getElement('sidebarHeader')));
     });
     /**
      * @tc.number SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_SIDEBARSEARCH_0400
@@ -109,8 +120,12 @@ export default function tabsApiCoverageAbnormalStaticTest(): void {
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_SIDEBARSEARCH_0400', Level.LEVEL1, async () => {
       await Utils.sleep(800);
-      const strJson: string = inspector.getInspectorByKey('tabs_sidebarSearchable_undefined');
-      expect(strJson.length > 2).assertTrue();
+      const defJson: string = inspector.getInspectorByKey('tabs_sidebarSearchable_default');
+      const abnJson: string = inspector.getInspectorByKey('tabs_sidebarSearchable_undefined');
+      const defAttrs = JSON.parseJsonElement(defJson).getElement('$attrs');
+      const abnAttrs = JSON.parseJsonElement(abnJson).getElement('$attrs');
+      expect(JSON.stringify(abnAttrs.getElement('sidebarSearchable')))
+        .assertEqual(JSON.stringify(defAttrs.getElement('sidebarSearchable')));
     });
     /**
      * @tc.number SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_BREAKPOINT_0500
@@ -122,8 +137,12 @@ export default function tabsApiCoverageAbnormalStaticTest(): void {
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_BREAKPOINT_0500', Level.LEVEL1, async () => {
       await Utils.sleep(800);
-      const strJson: string = inspector.getInspectorByKey('tabs_barDisplayModeBreakpoint_undefined');
-      expect(strJson.length > 2).assertTrue();
+      const defJson: string = inspector.getInspectorByKey('tabs_barDisplayModeBreakpoint_default');
+      const abnJson: string = inspector.getInspectorByKey('tabs_barDisplayModeBreakpoint_undefined');
+      const defAttrs = JSON.parseJsonElement(defJson).getElement('$attrs');
+      const abnAttrs = JSON.parseJsonElement(abnJson).getElement('$attrs');
+      expect(JSON.stringify(abnAttrs.getElement('barDisplayModeBreakpoint')))
+        .assertEqual(JSON.stringify(defAttrs.getElement('barDisplayModeBreakpoint')));
     });
     /**
      * @tc.number SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_ONBARMODE_0600
@@ -135,8 +154,12 @@ export default function tabsApiCoverageAbnormalStaticTest(): void {
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_ONBARMODE_0600', Level.LEVEL1, async () => {
       await Utils.sleep(800);
-      const strJson: string = inspector.getInspectorByKey('tabs_onBarDisplayModeChange_undefined');
-      expect(strJson.length > 2).assertTrue();
+      const defJson: string = inspector.getInspectorByKey('tabs_onBarDisplayModeChange_default');
+      const abnJson: string = inspector.getInspectorByKey('tabs_onBarDisplayModeChange_undefined');
+      const defAttrs = JSON.parseJsonElement(defJson).getElement('$attrs');
+      const abnAttrs = JSON.parseJsonElement(abnJson).getElement('$attrs');
+      expect(abnAttrs.getString('barStyle')).assertEqual(defAttrs.getString('barStyle'));
+      expect(abnAttrs.getString('barStyle')).assertEqual('TabBarStyle.SIDEBAR_ADAPTABLE');
     });
     /**
      * @tc.number SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_SELICON_0700
@@ -148,8 +171,12 @@ export default function tabsApiCoverageAbnormalStaticTest(): void {
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_SELICON_0700', Level.LEVEL0, async (): Promise<void> => {
       await Utils.sleep(800);
-      let strJson: string = inspector.getInspectorByKey('tabs_sidebarSelectedIconColor_undefined');
-      expect(strJson.length > 2).assertTrue();
+      const defJson: string = inspector.getInspectorByKey('tabs_sidebarSelectedIconColor_default');
+      const abnJson: string = inspector.getInspectorByKey('tabs_sidebarSelectedIconColor_undefined');
+      const defAttrs = JSON.parseJsonElement(defJson).getElement('$attrs');
+      const abnAttrs = JSON.parseJsonElement(abnJson).getElement('$attrs');
+      expect(abnAttrs.getString('sidebarSelectedIconColor'))
+        .assertEqual(defAttrs.getString('sidebarSelectedIconColor'));
     });
 
     /**
@@ -162,8 +189,12 @@ export default function tabsApiCoverageAbnormalStaticTest(): void {
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_SELTEXT_0800', Level.LEVEL0, async (): Promise<void> => {
       await Utils.sleep(800);
-      let strJson: string = inspector.getInspectorByKey('tabs_sidebarSelectedTextColor_undefined');
-      expect(strJson.length > 2).assertTrue();
+      const defJson: string = inspector.getInspectorByKey('tabs_sidebarSelectedTextColor_default');
+      const abnJson: string = inspector.getInspectorByKey('tabs_sidebarSelectedTextColor_undefined');
+      const defAttrs = JSON.parseJsonElement(defJson).getElement('$attrs');
+      const abnAttrs = JSON.parseJsonElement(abnJson).getElement('$attrs');
+      expect(abnAttrs.getString('sidebarSelectedTextColor'))
+        .assertEqual(defAttrs.getString('sidebarSelectedTextColor'));
     });
 
     /**
@@ -176,8 +207,12 @@ export default function tabsApiCoverageAbnormalStaticTest(): void {
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_UNSELICON_0900', Level.LEVEL0, async (): Promise<void> => {
       await Utils.sleep(800);
-      let strJson: string = inspector.getInspectorByKey('tabs_sidebarUnselectedIconColor_undefined');
-      expect(strJson.length > 2).assertTrue();
+      const defJson: string = inspector.getInspectorByKey('tabs_sidebarUnselectedIconColor_default');
+      const abnJson: string = inspector.getInspectorByKey('tabs_sidebarUnselectedIconColor_undefined');
+      const defAttrs = JSON.parseJsonElement(defJson).getElement('$attrs');
+      const abnAttrs = JSON.parseJsonElement(abnJson).getElement('$attrs');
+      expect(abnAttrs.getString('sidebarUnselectedIconColor'))
+        .assertEqual(defAttrs.getString('sidebarUnselectedIconColor'));
     });
 
     /**
@@ -190,8 +225,12 @@ export default function tabsApiCoverageAbnormalStaticTest(): void {
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_UNSELTEXT_1000', Level.LEVEL0, async (): Promise<void> => {
       await Utils.sleep(800);
-      let strJson: string = inspector.getInspectorByKey('tabs_sidebarUnselectedTextColor_undefined');
-      expect(strJson.length > 2).assertTrue();
+      const defJson: string = inspector.getInspectorByKey('tabs_sidebarUnselectedTextColor_default');
+      const abnJson: string = inspector.getInspectorByKey('tabs_sidebarUnselectedTextColor_undefined');
+      const defAttrs = JSON.parseJsonElement(defJson).getElement('$attrs');
+      const abnAttrs = JSON.parseJsonElement(abnJson).getElement('$attrs');
+      expect(abnAttrs.getString('sidebarUnselectedTextColor'))
+        .assertEqual(defAttrs.getString('sidebarUnselectedTextColor'));
     });
 
     /**
@@ -204,8 +243,12 @@ export default function tabsApiCoverageAbnormalStaticTest(): void {
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_SELBOARD_1100', Level.LEVEL0, async (): Promise<void> => {
       await Utils.sleep(800);
-      let strJson: string = inspector.getInspectorByKey('tabs_sidebarSelectedBoardColor_undefined');
-      expect(strJson.length > 2).assertTrue();
+      const defJson: string = inspector.getInspectorByKey('tabs_sidebarSelectedBoardColor_default');
+      const abnJson: string = inspector.getInspectorByKey('tabs_sidebarSelectedBoardColor_undefined');
+      const defAttrs = JSON.parseJsonElement(defJson).getElement('$attrs');
+      const abnAttrs = JSON.parseJsonElement(abnJson).getElement('$attrs');
+      expect(abnAttrs.getString('sidebarSelectedBoardColor'))
+        .assertEqual(defAttrs.getString('sidebarSelectedBoardColor'));
     });
 
     /**
@@ -218,8 +261,12 @@ export default function tabsApiCoverageAbnormalStaticTest(): void {
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_TABVIS_1200', Level.LEVEL1, async () => {
       await Utils.sleep(800);
-      const strJson: string = inspector.getInspectorByKey('tabVis_undefined');
-      expect(strJson.length > 2).assertTrue();
+      const defJson: string = inspector.getInspectorByKey('tabVis_default');
+      const abnJson: string = inspector.getInspectorByKey('tabVis_undefined');
+      const defAttrs = JSON.parseJsonElement(defJson).getElement('$attrs');
+      const abnAttrs = JSON.parseJsonElement(abnJson).getElement('$attrs');
+      expect(JSON.stringify(abnAttrs.getElement('tabBarVisibility')))
+        .assertEqual(JSON.stringify(defAttrs.getElement('tabBarVisibility')));
     });
   });
 }

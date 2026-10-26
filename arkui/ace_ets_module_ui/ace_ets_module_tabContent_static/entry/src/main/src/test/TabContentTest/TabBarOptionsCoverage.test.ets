@@ -63,7 +63,8 @@ export default function tabBarOptionsCoverageTest(): void {
     it('SUB_ARKUI_TABCONTENT_TABBAR_STATIC_TEXT_0100', Level.LEVEL0, async (): Promise<void> => {
       await CommonFunc.sleep(600);
       let strJson: string = inspector.getInspectorByKey('tabBarOptions_text_normal');
-      expect(strJson.length > 2).assertTrue();
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getElement('tabBar').getString('text')).assertEqual('Home');
     });
 
     /**
@@ -76,8 +77,12 @@ export default function tabBarOptionsCoverageTest(): void {
      */
     it('SUB_ARKUI_TABCONTENT_TABBAR_STATIC_TEXT_0200', Level.LEVEL0, async (): Promise<void> => {
       await CommonFunc.sleep(600);
-      let strJson: string = inspector.getInspectorByKey('tabBarOptions_text_undefined');
-      expect(strJson.length > 2).assertTrue();
+      let strJsonUndef: string = inspector.getInspectorByKey('tabBarOptions_text_undefined');
+      let objUndef = JSON.parseJsonElement(strJsonUndef);
+      let strJsonBase: string = inspector.getInspectorByKey('tabBarOptions_default');
+      let objBase = JSON.parseJsonElement(strJsonBase);
+      expect(JSON.stringify(objUndef.getElement('$attrs').getElement('tabBar')))
+        .assertEqual(JSON.stringify(objBase.getElement('$attrs').getElement('tabBar')));
     });
 
     /**
@@ -91,7 +96,11 @@ export default function tabBarOptionsCoverageTest(): void {
     it('SUB_ARKUI_TABCONTENT_TABBAR_STATIC_BADGEVALUE_0300', Level.LEVEL0, async (): Promise<void> => {
       await CommonFunc.sleep(600);
       let strJson: string = inspector.getInspectorByKey('tabBarOptions_badgeValue_normal');
-      expect(strJson.length > 2).assertTrue();
+      let obj = JSON.parseJsonElement(strJson);
+      let tabBar = obj.getElement('$attrs').getElement('tabBar');
+      expect(tabBar.getString('text')).assertEqual('Home');
+      expect(tabBar.getElement('badge').getInteger('value')).assertEqual(8);
+      expect(tabBar.getElement('badge').getInteger('maxCount')).assertEqual(99);
     });
 
     /**
@@ -104,8 +113,12 @@ export default function tabBarOptionsCoverageTest(): void {
      */
     it('SUB_ARKUI_TABCONTENT_TABBAR_STATIC_BADGEVALUE_0400', Level.LEVEL0, async (): Promise<void> => {
       await CommonFunc.sleep(600);
-      let strJson: string = inspector.getInspectorByKey('tabBarOptions_badgeValue_undefined');
-      expect(strJson.length > 2).assertTrue();
+      let strJsonUndef: string = inspector.getInspectorByKey('tabBarOptions_badgeValue_undefined');
+      let objUndef = JSON.parseJsonElement(strJsonUndef);
+      let strJsonBase: string = inspector.getInspectorByKey('tabBarOptions_text_normal');
+      let objBase = JSON.parseJsonElement(strJsonBase);
+      expect(JSON.stringify(objUndef.getElement('$attrs').getElement('tabBar').getElement('badge')))
+        .assertEqual(JSON.stringify(objBase.getElement('$attrs').getElement('tabBar').getElement('badge')));
     });
 
     /**
@@ -119,7 +132,11 @@ export default function tabBarOptionsCoverageTest(): void {
     it('SUB_ARKUI_TABCONTENT_TABBAR_STATIC_BADGEMAX_0500', Level.LEVEL0, async (): Promise<void> => {
       await CommonFunc.sleep(600);
       let strJson: string = inspector.getInspectorByKey('tabBarOptions_badgeMax_normal');
-      expect(strJson.length > 2).assertTrue();
+      let obj = JSON.parseJsonElement(strJson);
+      let tabBar = obj.getElement('$attrs').getElement('tabBar');
+      expect(tabBar.getString('text')).assertEqual('Home');
+      expect(tabBar.getElement('badge').getInteger('value')).assertEqual(8);
+      expect(tabBar.getElement('badge').getInteger('maxCount')).assertEqual(99);
     });
 
     /**
@@ -132,8 +149,12 @@ export default function tabBarOptionsCoverageTest(): void {
      */
     it('SUB_ARKUI_TABCONTENT_TABBAR_STATIC_BADGEMAX_0600', Level.LEVEL0, async (): Promise<void> => {
       await CommonFunc.sleep(600);
-      let strJson: string = inspector.getInspectorByKey('tabBarOptions_badgeMax_undefined');
-      expect(strJson.length > 2).assertTrue();
+      let strJsonUndef: string = inspector.getInspectorByKey('tabBarOptions_badgeMax_undefined');
+      let objUndef = JSON.parseJsonElement(strJsonUndef);
+      let strJsonBase: string = inspector.getInspectorByKey('tabBarOptions_badgeValue_normal');
+      let objBase = JSON.parseJsonElement(strJsonBase);
+      expect(objUndef.getElement('$attrs').getElement('tabBar').getElement('badge').getInteger('maxCount'))
+        .assertEqual(objBase.getElement('$attrs').getElement('tabBar').getElement('badge').getInteger('maxCount'));
     });
 
     /**
@@ -146,8 +167,12 @@ export default function tabBarOptionsCoverageTest(): void {
      */
     it('SUB_ARKUI_TABCONTENT_TABBAR_STATIC_UNDEF_0700', Level.LEVEL0, async (): Promise<void> => {
       await CommonFunc.sleep(600);
-      let strJson: string = inspector.getInspectorByKey('tabBarOptions_tabBar_undefined');
-      expect(strJson.length > 2).assertTrue();
+      let strJsonUndef: string = inspector.getInspectorByKey('tabBarOptions_tabBar_undefined');
+      let objUndef = JSON.parseJsonElement(strJsonUndef);
+      let strJsonBase: string = inspector.getInspectorByKey('tabBarOptions_default');
+      let objBase = JSON.parseJsonElement(strJsonBase);
+      expect(JSON.stringify(objUndef.getElement('$attrs').getElement('tabBar')))
+        .assertEqual(JSON.stringify(objBase.getElement('$attrs').getElement('tabBar')));
     });
 
   });

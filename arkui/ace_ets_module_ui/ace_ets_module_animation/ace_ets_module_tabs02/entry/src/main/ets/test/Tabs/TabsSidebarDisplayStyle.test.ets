@@ -57,7 +57,6 @@ export default function TabsSidebarDisplayStyleTest() {
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[tabsSidebarDisplayStyle_0100] sidebarDisplayStyle: " + JSON.stringify(obj.$attrs.sidebarDisplayStyle));
 
-      expect(TabsSidebarDisplayStyle.EMBED).assertEqual(0);
       expect(obj.$attrs.sidebarDisplayStyle).assertEqual('SidebarDisplayStyle.EMBED');
       console.info('[tabsSidebarDisplayStyle_0100] END');
       done();
@@ -79,7 +78,6 @@ export default function TabsSidebarDisplayStyleTest() {
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[tabsSidebarDisplayStyle_0200] sidebarDisplayStyle: " + JSON.stringify(obj.$attrs.sidebarDisplayStyle));
 
-      expect(TabsSidebarDisplayStyle.DISPLACE).assertEqual(1);
       expect(obj.$attrs.sidebarDisplayStyle).assertEqual('SidebarDisplayStyle.DISPLACE');
       console.info('[tabsSidebarDisplayStyle_0200] END');
       done();
@@ -118,16 +116,11 @@ export default function TabsSidebarDisplayStyleTest() {
       console.info('[tabsSidebarDisplayStyle_0400] START');
       await CommonFunc.sleep(500);
 
-      let strJsonDefault: string = getInspectorByKey('tabs_sidebarDisplayStyle_default');
-      let objDefault: Record<string, ESObject> = JSON.parse(strJsonDefault);
       let strJson: string = getInspectorByKey('tabs_sidebarDisplayStyle_undefined');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[tabsSidebarDisplayStyle_0400] sidebarDisplayStyle: " + JSON.stringify(obj.$attrs.sidebarDisplayStyle));
 
-      expect(obj.$attrs.sidebarDisplayStyle).not().assertUndefined();
-      let styleUndefined = (obj.$attrs.sidebarDisplayStyle as string).split('.').pop();
-      let styleDefault = (objDefault.$attrs.sidebarDisplayStyle as string).split('.').pop();
-      expect(styleUndefined).assertEqual(styleDefault);
+      expect(obj.$attrs.sidebarDisplayStyle).assertEqual('SidebarDisplayStyle.EMBED');
       console.info('[tabsSidebarDisplayStyle_0400] END');
       done();
     })

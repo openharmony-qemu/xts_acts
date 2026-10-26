@@ -211,11 +211,13 @@ struct TabsApiCoverage {
       TabContent() {
         Column().width('100%').height(40).backgroundColor(Color.Blue)
       }
+      .id('tabsApiCov_tabA')
       .tabBar('A')
       .tabBarVisibility(TabVisibility.VISIBLE, TabBarDisplayMode.SIDEBAR)
       TabContent() {
         Column().width('100%').height(40).backgroundColor(Color.Green)
       }
+      .id('tabsApiCov_tabB')
       .tabBar('B')
       .tabBarVisibility(TabVisibility.HIDDEN, TabBarDisplayMode.BOTTOM_TABBAR)
     }

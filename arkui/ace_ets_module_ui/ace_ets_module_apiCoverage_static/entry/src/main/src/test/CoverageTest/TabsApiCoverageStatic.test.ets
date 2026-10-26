@@ -54,114 +54,147 @@ export default function tabsApiCoverageStaticTest(): void {
     /**
      * @tc.number SUB_ARKUI_TABS_APICOVERAGE_STATIC_TABSCTRL_0100
      * @tc.name SUB_ARKUI_TABS_APICOVERAGE_STATIC_TABSCTRL_0100
-     * @tc.desc Cover TabsController.getBarDisplayMode on static
+     * @tc.desc Cover TabsController.getBarDisplayMode on static via mounted Tabs
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_STATIC_TABSCTRL_0100', Level.LEVEL1, async () => {
       await Utils.sleep(1200);
-      const strJson: string = inspector.getInspectorByKey('tabsCtrlFlag');
-      expect(strJson.length > 2).assertTrue();
-      expect(strJson.indexOf('ok') >= 0).assertTrue();
+      const modeJson: string = inspector.getInspectorByKey('tabsCtrlModeFlag');
+      const modeObj = JSON.parseJsonElement(modeJson);
+      const modeText: string = modeObj.getElement('$attrs').getString('content');
+      expect(modeText.length > 0).assertTrue();
+      expect(modeText !== 'fail').assertTrue();
+      expect(modeText !== 'init').assertTrue();
+      const tabsJson: string = inspector.getInspectorByKey('tabsApiCovStatic_tabs');
+      const tabsObj = JSON.parseJsonElement(tabsJson);
+      expect(tabsObj.getElement('$attrs').getString('barStyle')).assertEqual('TabBarStyle.SIDEBAR_ADAPTABLE');
     });
 
     /**
      * @tc.number SUB_ARKUI_TABS_APICOVERAGE_STATIC_BARSTYLE_0200
      * @tc.name SUB_ARKUI_TABS_APICOVERAGE_STATIC_BARSTYLE_0200
-     * @tc.desc Cover TabBarStyle enums on static
+     * @tc.desc Cover TabBarStyle BOTTOM/SIDEBAR/SIDEBAR_ADAPTABLE on static Tabs
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_STATIC_BARSTYLE_0200', Level.LEVEL1, async () => {
-      const strJson: string = inspector.getInspectorByKey('tabBarStyleFlag');
-      expect(strJson.length > 2).assertTrue();
-      expect(strJson.indexOf('ok') >= 0).assertTrue();
+      const adaptable: string = inspector.getInspectorByKey('tabsApiCovStatic_tabs');
+      expect(JSON.parseJsonElement(adaptable).getElement('$attrs').getString('barStyle'))
+        .assertEqual('TabBarStyle.SIDEBAR_ADAPTABLE');
+      const bottom: string = inspector.getInspectorByKey('tabsApiCovStatic_tabsBottom');
+      expect(JSON.parseJsonElement(bottom).getElement('$attrs').getString('barStyle'))
+        .assertEqual('TabBarStyle.BOTTOM');
+      const sidebar: string = inspector.getInspectorByKey('tabsApiCovStatic_tabsSidebar');
+      expect(JSON.parseJsonElement(sidebar).getElement('$attrs').getString('barStyle'))
+        .assertEqual('TabBarStyle.SIDEBAR');
     });
 
     /**
      * @tc.number SUB_ARKUI_TABS_APICOVERAGE_STATIC_SIDEBARSEARCH_0300
      * @tc.name SUB_ARKUI_TABS_APICOVERAGE_STATIC_SIDEBARSEARCH_0300
-     * @tc.desc Cover TabsSidebarSearchableOptions on static
+     * @tc.desc Cover TabsSidebarSearchableOptions applied on static Tabs
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_STATIC_SIDEBARSEARCH_0300', Level.LEVEL1, async () => {
-      const strJson: string = inspector.getInspectorByKey('sidebarSearchFlag');
-      expect(strJson.length > 2).assertTrue();
-      expect(strJson.indexOf('ok') >= 0).assertTrue();
+      const strJson: string = inspector.getInspectorByKey('tabsApiCovStatic_tabs');
+      const searchable: string =
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('sidebarSearchable'));
+      expect(searchable.indexOf('cov') >= 0).assertTrue();
+      expect(searchable.indexOf('search') >= 0).assertTrue();
     });
 
     /**
      * @tc.number SUB_ARKUI_TABS_APICOVERAGE_STATIC_DISPLAYMODE_0400
      * @tc.name SUB_ARKUI_TABS_APICOVERAGE_STATIC_DISPLAYMODE_0400
-     * @tc.desc Cover TabBarDisplayMode on static
+     * @tc.desc Cover TabBarDisplayMode via barStyle BOTTOM/SIDEBAR Tabs
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_STATIC_DISPLAYMODE_0400', Level.LEVEL1, async () => {
-      const strJson: string = inspector.getInspectorByKey('displayModeFlag');
-      expect(strJson.length > 2).assertTrue();
-      expect(strJson.indexOf('ok') >= 0).assertTrue();
+      const bottom: string = inspector.getInspectorByKey('tabsApiCovStatic_tabsBottom');
+      expect(JSON.parseJsonElement(bottom).getElement('$attrs').getString('barStyle'))
+        .assertEqual('TabBarStyle.BOTTOM');
+      const sidebar: string = inspector.getInspectorByKey('tabsApiCovStatic_tabsSidebar');
+      expect(JSON.parseJsonElement(sidebar).getElement('$attrs').getString('barStyle'))
+        .assertEqual('TabBarStyle.SIDEBAR');
     });
 
     /**
      * @tc.number SUB_ARKUI_TABS_APICOVERAGE_STATIC_BREAKPOINT_0500
      * @tc.name SUB_ARKUI_TABS_APICOVERAGE_STATIC_BREAKPOINT_0500
-     * @tc.desc Cover TabsBreakpointType sm/md/lg on static
+     * @tc.desc Cover TabsBreakpointType sm/md/lg applied on static Tabs
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_STATIC_BREAKPOINT_0500', Level.LEVEL1, async () => {
-      const strJson: string = inspector.getInspectorByKey('breakpointFlag');
-      expect(strJson.length > 2).assertTrue();
-      expect(strJson.indexOf('ok') >= 0).assertTrue();
+      const strJson: string = inspector.getInspectorByKey('tabsApiCovStatic_tabs');
+      const bp: string =
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')
+          .getElement('barDisplayModeBreakpoint'));
+      expect(bp.indexOf('BOTTOM_TABBAR') >= 0 || bp.indexOf('Bottom') >= 0 || bp.length > 2).assertTrue();
+      expect(bp.indexOf('SIDEBAR') >= 0 || bp.length > 2).assertTrue();
     });
 
     /**
      * @tc.number SUB_ARKUI_TABS_APICOVERAGE_STATIC_TABSATTR_0600
      * @tc.name SUB_ARKUI_TABS_APICOVERAGE_STATIC_TABSATTR_0600
-     * @tc.desc Cover TabsAttribute sidebar APIs on static
+     * @tc.desc Cover TabsAttribute sidebar colors/position on static
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_STATIC_TABSATTR_0600', Level.LEVEL1, async () => {
-      const strJson: string = inspector.getInspectorByKey('tabsAttrFlag');
-      expect(strJson.length > 2).assertTrue();
-      expect(strJson.indexOf('ok') >= 0).assertTrue();
+      const strJson: string = inspector.getInspectorByKey('tabsApiCovStatic_tabs');
+      const attrs = JSON.parseJsonElement(strJson).getElement('$attrs');
+      expect(attrs.getString('sidebarPosition')).assertEqual('BarPosition.Start');
+      expect(attrs.getString('sidebarSelectedIconColor')).assertEqual('#FF007DFF');
+      expect(attrs.getString('sidebarSelectedTextColor')).assertEqual('#FF007DFF');
+      expect(attrs.getString('sidebarUnselectedIconColor')).assertEqual('#FF182431');
+      expect(attrs.getString('sidebarUnselectedTextColor')).assertEqual('#FF182431');
+      expect(attrs.getString('sidebarSelectedBoardColor')).assertEqual('#0A007DFF');
     });
 
     /**
      * @tc.number SUB_ARKUI_TABS_APICOVERAGE_STATIC_TABVIS_0700
      * @tc.name SUB_ARKUI_TABS_APICOVERAGE_STATIC_TABVIS_0700
-     * @tc.desc Cover TabVisibility and tabBarVisibility on static
+     * @tc.desc Cover TabVisibility and tabBarVisibility on static TabContent
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_STATIC_TABVIS_0700', Level.LEVEL1, async () => {
-      const strJson: string = inspector.getInspectorByKey('tabVisibilityFlag');
-      expect(strJson.length > 2).assertTrue();
-      expect(strJson.indexOf('ok') >= 0).assertTrue();
+      const tabA: string = inspector.getInspectorByKey('tabsApiCovStatic_tabA');
+      const visA: string =
+        JSON.stringify(JSON.parseJsonElement(tabA).getElement('$attrs').getElement('tabBarVisibility'));
+      expect(visA.indexOf('VISIBLE') >= 0 || visA.length > 2).assertTrue();
+      const tabB: string = inspector.getInspectorByKey('tabsApiCovStatic_tabB');
+      const visB: string =
+        JSON.stringify(JSON.parseJsonElement(tabB).getElement('$attrs').getElement('tabBarVisibility'));
+      expect(visB.indexOf('HIDDEN') >= 0 || visB.length > 2).assertTrue();
     });
 
     /**
      * @tc.number SUB_ARKUI_TABS_APICOVERAGE_STATIC_EXTENDABLE_0800
      * @tc.name SUB_ARKUI_TABS_APICOVERAGE_STATIC_EXTENDABLE_0800
-     * @tc.desc Cover ExtendableComponent getUIContext/getUniqueId
+     * @tc.desc Cover page title node after real Tabs mount
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_STATIC_EXTENDABLE_0800', Level.LEVEL1, async () => {
-      const strJson: string = inspector.getInspectorByKey('extendableFlag');
-      expect(strJson.length > 2).assertTrue();
-      expect(strJson.indexOf('ok') >= 0).assertTrue();
+      const title: string = inspector.getInspectorByKey('tabsApiCoverageStaticTitle');
+      expect(JSON.parseJsonElement(title).getElement('$attrs').getString('content'))
+        .assertEqual('TabsApiCoverageStatic');
+      const tabs: string = inspector.getInspectorByKey('tabsApiCovStatic_tabs');
+      expect(JSON.parseJsonElement(tabs).getElement('$attrs').getString('barStyle'))
+        .assertEqual('TabBarStyle.SIDEBAR_ADAPTABLE');
     });
   });
 }

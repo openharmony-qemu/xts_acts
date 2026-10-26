@@ -60,7 +60,8 @@ export default function tabsSidebarStyle(): void {
     it('SUB_ARKUI_TABS_SIDEBAR_STATIC_BARSTYLE_0100', Level.LEVEL0, async (): Promise<void> => {
       await CommonFunc.sleep(600);
       let strJson: string = inspector.getInspectorByKey('tabs_barStyle_normal');
-      expect(strJson.length > 2).assertTrue();
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getString('barStyle')).assertEqual('TabBarStyle.SIDEBAR');
     });
 
     /**
@@ -74,7 +75,8 @@ export default function tabsSidebarStyle(): void {
     it('SUB_ARKUI_TABS_SIDEBAR_STATIC_BARSTYLE_0200', Level.LEVEL0, async (): Promise<void> => {
       await CommonFunc.sleep(600);
       let strJson: string = inspector.getInspectorByKey('tabs_barStyle_undefined');
-      expect(strJson.length > 2).assertTrue();
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getString('barStyle')).assertEqual('TabBarStyle.STANDARD');
     });
 
     /**
@@ -88,7 +90,8 @@ export default function tabsSidebarStyle(): void {
     it('SUB_ARKUI_TABS_SIDEBAR_STATIC_SIDEBARPOSITION_0300', Level.LEVEL0, async (): Promise<void> => {
       await CommonFunc.sleep(600);
       let strJson: string = inspector.getInspectorByKey('tabs_sidebarPosition_normal');
-      expect(strJson.length > 2).assertTrue();
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getString('sidebarPosition')).assertEqual('BarPosition.Start');
     });
 
     /**
@@ -101,8 +104,12 @@ export default function tabsSidebarStyle(): void {
      */
     it('SUB_ARKUI_TABS_SIDEBAR_STATIC_SIDEBARPOSITION_0400', Level.LEVEL0, async (): Promise<void> => {
       await CommonFunc.sleep(600);
-      let strJson: string = inspector.getInspectorByKey('tabs_sidebarPosition_undefined');
-      expect(strJson.length > 2).assertTrue();
+      let strJsonUndef: string = inspector.getInspectorByKey('tabs_sidebarPosition_undefined');
+      let objUndef = JSON.parseJsonElement(strJsonUndef);
+      let strJsonBase: string = inspector.getInspectorByKey('tabs_barStyle_normal');
+      let objBase = JSON.parseJsonElement(strJsonBase);
+      expect(objUndef.getElement('$attrs').getString('sidebarPosition'))
+        .assertEqual(objBase.getElement('$attrs').getString('sidebarPosition'));
     });
 
     /**
@@ -116,7 +123,8 @@ export default function tabsSidebarStyle(): void {
     it('SUB_ARKUI_TABS_SIDEBAR_STATIC_SIDEBARWIDTH_0500', Level.LEVEL0, async (): Promise<void> => {
       await CommonFunc.sleep(600);
       let strJson: string = inspector.getInspectorByKey('tabs_sidebarWidth_normal');
-      expect(strJson.length > 2).assertTrue();
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getString('sidebarWidth')).assertEqual('240.00vp');
     });
 
     /**
@@ -129,8 +137,12 @@ export default function tabsSidebarStyle(): void {
      */
     it('SUB_ARKUI_TABS_SIDEBAR_STATIC_SIDEBARWIDTH_0600', Level.LEVEL0, async (): Promise<void> => {
       await CommonFunc.sleep(600);
-      let strJson: string = inspector.getInspectorByKey('tabs_sidebarWidth_undefined');
-      expect(strJson.length > 2).assertTrue();
+      let strJsonUndef: string = inspector.getInspectorByKey('tabs_sidebarWidth_undefined');
+      let objUndef = JSON.parseJsonElement(strJsonUndef);
+      let strJsonBase: string = inspector.getInspectorByKey('tabs_barStyle_normal');
+      let objBase = JSON.parseJsonElement(strJsonBase);
+      expect(objUndef.getElement('$attrs').getString('sidebarWidth'))
+        .assertEqual(objBase.getElement('$attrs').getString('sidebarWidth'));
     });
 
     /**
@@ -144,7 +156,8 @@ export default function tabsSidebarStyle(): void {
     it('SUB_ARKUI_TABS_SIDEBAR_STATIC_MINSIDEBARWIDTH_0700', Level.LEVEL0, async (): Promise<void> => {
       await CommonFunc.sleep(600);
       let strJson: string = inspector.getInspectorByKey('tabs_minSidebarWidth_normal');
-      expect(strJson.length > 2).assertTrue();
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getString('minSidebarWidth')).assertEqual('200.00vp');
     });
 
     /**
@@ -157,8 +170,12 @@ export default function tabsSidebarStyle(): void {
      */
     it('SUB_ARKUI_TABS_SIDEBAR_STATIC_MINSIDEBARWIDTH_0800', Level.LEVEL0, async (): Promise<void> => {
       await CommonFunc.sleep(600);
-      let strJson: string = inspector.getInspectorByKey('tabs_minSidebarWidth_undefined');
-      expect(strJson.length > 2).assertTrue();
+      let strJsonUndef: string = inspector.getInspectorByKey('tabs_minSidebarWidth_undefined');
+      let objUndef = JSON.parseJsonElement(strJsonUndef);
+      let strJsonBase: string = inspector.getInspectorByKey('tabs_barStyle_normal');
+      let objBase = JSON.parseJsonElement(strJsonBase);
+      expect(objUndef.getElement('$attrs').getString('minSidebarWidth'))
+        .assertEqual(objBase.getElement('$attrs').getString('minSidebarWidth'));
     });
 
     /**
@@ -172,7 +189,8 @@ export default function tabsSidebarStyle(): void {
     it('SUB_ARKUI_TABS_SIDEBAR_STATIC_MAXSIDEBARWIDTH_0900', Level.LEVEL0, async (): Promise<void> => {
       await CommonFunc.sleep(600);
       let strJson: string = inspector.getInspectorByKey('tabs_maxSidebarWidth_normal');
-      expect(strJson.length > 2).assertTrue();
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getString('maxSidebarWidth')).assertEqual('320.00vp');
     });
 
     /**
@@ -185,8 +203,12 @@ export default function tabsSidebarStyle(): void {
      */
     it('SUB_ARKUI_TABS_SIDEBAR_STATIC_MAXSIDEBARWIDTH_1000', Level.LEVEL0, async (): Promise<void> => {
       await CommonFunc.sleep(600);
-      let strJson: string = inspector.getInspectorByKey('tabs_maxSidebarWidth_undefined');
-      expect(strJson.length > 2).assertTrue();
+      let strJsonUndef: string = inspector.getInspectorByKey('tabs_maxSidebarWidth_undefined');
+      let objUndef = JSON.parseJsonElement(strJsonUndef);
+      let strJsonBase: string = inspector.getInspectorByKey('tabs_barStyle_normal');
+      let objBase = JSON.parseJsonElement(strJsonBase);
+      expect(objUndef.getElement('$attrs').getString('maxSidebarWidth'))
+        .assertEqual(objBase.getElement('$attrs').getString('maxSidebarWidth'));
     });
 
     /**
@@ -200,7 +222,8 @@ export default function tabsSidebarStyle(): void {
     it('SUB_ARKUI_TABS_SIDEBAR_STATIC_MINCONTENTWIDTH_1100', Level.LEVEL0, async (): Promise<void> => {
       await CommonFunc.sleep(600);
       let strJson: string = inspector.getInspectorByKey('tabs_minContentWidth_normal');
-      expect(strJson.length > 2).assertTrue();
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getString('minContentWidth')).assertEqual('360.00vp');
     });
 
     /**
@@ -213,8 +236,12 @@ export default function tabsSidebarStyle(): void {
      */
     it('SUB_ARKUI_TABS_SIDEBAR_STATIC_MINCONTENTWIDTH_1200', Level.LEVEL0, async (): Promise<void> => {
       await CommonFunc.sleep(600);
-      let strJson: string = inspector.getInspectorByKey('tabs_minContentWidth_undefined');
-      expect(strJson.length > 2).assertTrue();
+      let strJsonUndef: string = inspector.getInspectorByKey('tabs_minContentWidth_undefined');
+      let objUndef = JSON.parseJsonElement(strJsonUndef);
+      let strJsonBase: string = inspector.getInspectorByKey('tabs_barStyle_normal');
+      let objBase = JSON.parseJsonElement(strJsonBase);
+      expect(objUndef.getElement('$attrs').getString('minContentWidth'))
+        .assertEqual(objBase.getElement('$attrs').getString('minContentWidth'));
     });
 
     /**
@@ -228,7 +255,8 @@ export default function tabsSidebarStyle(): void {
     it('SUB_ARKUI_TABS_SIDEBAR_STATIC_SIDEBARBACKGROUNDCOLOR_1300', Level.LEVEL0, async (): Promise<void> => {
       await CommonFunc.sleep(600);
       let strJson: string = inspector.getInspectorByKey('tabs_sidebarBackgroundColor_normal');
-      expect(strJson.length > 2).assertTrue();
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getString('sidebarBackgroundColor')).assertEqual('#FFFFFFFF');
     });
 
     /**
@@ -241,8 +269,12 @@ export default function tabsSidebarStyle(): void {
      */
     it('SUB_ARKUI_TABS_SIDEBAR_STATIC_SIDEBARBACKGROUNDCOLOR_1400', Level.LEVEL0, async (): Promise<void> => {
       await CommonFunc.sleep(600);
-      let strJson: string = inspector.getInspectorByKey('tabs_sidebarBackgroundColor_undefined');
-      expect(strJson.length > 2).assertTrue();
+      let strJsonUndef: string = inspector.getInspectorByKey('tabs_sidebarBackgroundColor_undefined');
+      let objUndef = JSON.parseJsonElement(strJsonUndef);
+      let strJsonBase: string = inspector.getInspectorByKey('tabs_barStyle_normal');
+      let objBase = JSON.parseJsonElement(strJsonBase);
+      expect(objUndef.getElement('$attrs').getString('sidebarBackgroundColor'))
+        .assertEqual(objBase.getElement('$attrs').getString('sidebarBackgroundColor'));
     });
 
     /**
@@ -256,7 +288,9 @@ export default function tabsSidebarStyle(): void {
     it('SUB_ARKUI_TABS_SIDEBAR_STATIC_SIDEBARBACKGROUNDBLURSTYLE_1500', Level.LEVEL0, async (): Promise<void> => {
       await CommonFunc.sleep(600);
       let strJson: string = inspector.getInspectorByKey('tabs_sidebarBackgroundBlurStyle_normal');
-      expect(strJson.length > 2).assertTrue();
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getString('sidebarBackgroundBlurStyle'))
+        .assertEqual('BlurStyle.COMPONENT_ULTRA_THICK');
     });
 
     /**
@@ -269,8 +303,12 @@ export default function tabsSidebarStyle(): void {
      */
     it('SUB_ARKUI_TABS_SIDEBAR_STATIC_SIDEBARBACKGROUNDBLURSTYLE_1600', Level.LEVEL0, async (): Promise<void> => {
       await CommonFunc.sleep(600);
-      let strJson: string = inspector.getInspectorByKey('tabs_sidebarBackgroundBlurStyle_undefined');
-      expect(strJson.length > 2).assertTrue();
+      let strJsonUndef: string = inspector.getInspectorByKey('tabs_sidebarBackgroundBlurStyle_undefined');
+      let objUndef = JSON.parseJsonElement(strJsonUndef);
+      let strJsonBase: string = inspector.getInspectorByKey('tabs_barStyle_normal');
+      let objBase = JSON.parseJsonElement(strJsonBase);
+      expect(objUndef.getElement('$attrs').getString('sidebarBackgroundBlurStyle'))
+        .assertEqual(objBase.getElement('$attrs').getString('sidebarBackgroundBlurStyle'));
     });
 
     /**
@@ -284,7 +322,10 @@ export default function tabsSidebarStyle(): void {
     it('SUB_ARKUI_TABS_SIDEBAR_STATIC_SIDEBARDIVIDER_1700', Level.LEVEL0, async (): Promise<void> => {
       await CommonFunc.sleep(600);
       let strJson: string = inspector.getInspectorByKey('tabs_sidebarDivider_normal');
-      expect(strJson.length > 2).assertTrue();
+      let obj = JSON.parseJsonElement(strJson);
+      let divider = obj.getElement('$attrs').getElement('sidebarDivider');
+      expect(divider.getString('strokeWidth')).assertEqual('1.00vp');
+      expect(divider.getString('color')).assertEqual('#33000000');
     });
 
     /**
@@ -297,8 +338,12 @@ export default function tabsSidebarStyle(): void {
      */
     it('SUB_ARKUI_TABS_SIDEBAR_STATIC_SIDEBARDIVIDER_1800', Level.LEVEL0, async (): Promise<void> => {
       await CommonFunc.sleep(600);
-      let strJson: string = inspector.getInspectorByKey('tabs_sidebarDivider_undefined');
-      expect(strJson.length > 2).assertTrue();
+      let strJsonUndef: string = inspector.getInspectorByKey('tabs_sidebarDivider_undefined');
+      let objUndef = JSON.parseJsonElement(strJsonUndef);
+      let strJsonBase: string = inspector.getInspectorByKey('tabs_barStyle_normal');
+      let objBase = JSON.parseJsonElement(strJsonBase);
+      expect(JSON.stringify(objUndef.getElement('$attrs').getElement('sidebarDivider')))
+        .assertEqual(JSON.stringify(objBase.getElement('$attrs').getElement('sidebarDivider')));
     });
 
     /**
@@ -312,7 +357,8 @@ export default function tabsSidebarStyle(): void {
     it('SUB_ARKUI_TABS_SIDEBAR_STATIC_SIDEBARSELECTEDICONCOLOR_1900', Level.LEVEL0, async (): Promise<void> => {
       await CommonFunc.sleep(600);
       let strJson: string = inspector.getInspectorByKey('tabs_sidebarSelectedIconColor_normal');
-      expect(strJson.length > 2).assertTrue();
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getString('sidebarSelectedIconColor')).assertEqual('#FF007DFF');
     });
 
     /**
@@ -325,8 +371,12 @@ export default function tabsSidebarStyle(): void {
      */
     it('SUB_ARKUI_TABS_SIDEBAR_STATIC_SIDEBARSELECTEDICONCOLOR_2000', Level.LEVEL0, async (): Promise<void> => {
       await CommonFunc.sleep(600);
-      let strJson: string = inspector.getInspectorByKey('tabs_sidebarSelectedIconColor_undefined');
-      expect(strJson.length > 2).assertTrue();
+      let strJsonUndef: string = inspector.getInspectorByKey('tabs_sidebarSelectedIconColor_undefined');
+      let objUndef = JSON.parseJsonElement(strJsonUndef);
+      let strJsonBase: string = inspector.getInspectorByKey('tabs_barStyle_normal');
+      let objBase = JSON.parseJsonElement(strJsonBase);
+      expect(objUndef.getElement('$attrs').getString('sidebarSelectedIconColor'))
+        .assertEqual(objBase.getElement('$attrs').getString('sidebarSelectedIconColor'));
     });
 
     /**
@@ -340,7 +390,8 @@ export default function tabsSidebarStyle(): void {
     it('SUB_ARKUI_TABS_SIDEBAR_STATIC_SIDEBARSELECTEDTEXTCOLOR_2100', Level.LEVEL0, async (): Promise<void> => {
       await CommonFunc.sleep(600);
       let strJson: string = inspector.getInspectorByKey('tabs_sidebarSelectedTextColor_normal');
-      expect(strJson.length > 2).assertTrue();
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getString('sidebarSelectedTextColor')).assertEqual('#FF007DFF');
     });
 
     /**
@@ -353,8 +404,12 @@ export default function tabsSidebarStyle(): void {
      */
     it('SUB_ARKUI_TABS_SIDEBAR_STATIC_SIDEBARSELECTEDTEXTCOLOR_2200', Level.LEVEL0, async (): Promise<void> => {
       await CommonFunc.sleep(600);
-      let strJson: string = inspector.getInspectorByKey('tabs_sidebarSelectedTextColor_undefined');
-      expect(strJson.length > 2).assertTrue();
+      let strJsonUndef: string = inspector.getInspectorByKey('tabs_sidebarSelectedTextColor_undefined');
+      let objUndef = JSON.parseJsonElement(strJsonUndef);
+      let strJsonBase: string = inspector.getInspectorByKey('tabs_barStyle_normal');
+      let objBase = JSON.parseJsonElement(strJsonBase);
+      expect(objUndef.getElement('$attrs').getString('sidebarSelectedTextColor'))
+        .assertEqual(objBase.getElement('$attrs').getString('sidebarSelectedTextColor'));
     });
 
     /**
@@ -368,7 +423,8 @@ export default function tabsSidebarStyle(): void {
     it('SUB_ARKUI_TABS_SIDEBAR_STATIC_SIDEBARUNSELECTEDICONCOLOR_2300', Level.LEVEL0, async (): Promise<void> => {
       await CommonFunc.sleep(600);
       let strJson: string = inspector.getInspectorByKey('tabs_sidebarUnselectedIconColor_normal');
-      expect(strJson.length > 2).assertTrue();
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getString('sidebarUnselectedIconColor')).assertEqual('#FF182431');
     });
 
     /**
@@ -381,8 +437,12 @@ export default function tabsSidebarStyle(): void {
      */
     it('SUB_ARKUI_TABS_SIDEBAR_STATIC_SIDEBARUNSELECTEDICONCOLOR_2400', Level.LEVEL0, async (): Promise<void> => {
       await CommonFunc.sleep(600);
-      let strJson: string = inspector.getInspectorByKey('tabs_sidebarUnselectedIconColor_undefined');
-      expect(strJson.length > 2).assertTrue();
+      let strJsonUndef: string = inspector.getInspectorByKey('tabs_sidebarUnselectedIconColor_undefined');
+      let objUndef = JSON.parseJsonElement(strJsonUndef);
+      let strJsonBase: string = inspector.getInspectorByKey('tabs_barStyle_normal');
+      let objBase = JSON.parseJsonElement(strJsonBase);
+      expect(objUndef.getElement('$attrs').getString('sidebarUnselectedIconColor'))
+        .assertEqual(objBase.getElement('$attrs').getString('sidebarUnselectedIconColor'));
     });
 
     /**
@@ -396,7 +456,8 @@ export default function tabsSidebarStyle(): void {
     it('SUB_ARKUI_TABS_SIDEBAR_STATIC_SIDEBARUNSELECTEDTEXTCOLOR_2500', Level.LEVEL0, async (): Promise<void> => {
       await CommonFunc.sleep(600);
       let strJson: string = inspector.getInspectorByKey('tabs_sidebarUnselectedTextColor_normal');
-      expect(strJson.length > 2).assertTrue();
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getString('sidebarUnselectedTextColor')).assertEqual('#FF182431');
     });
 
     /**
@@ -409,8 +470,12 @@ export default function tabsSidebarStyle(): void {
      */
     it('SUB_ARKUI_TABS_SIDEBAR_STATIC_SIDEBARUNSELECTEDTEXTCOLOR_2600', Level.LEVEL0, async (): Promise<void> => {
       await CommonFunc.sleep(600);
-      let strJson: string = inspector.getInspectorByKey('tabs_sidebarUnselectedTextColor_undefined');
-      expect(strJson.length > 2).assertTrue();
+      let strJsonUndef: string = inspector.getInspectorByKey('tabs_sidebarUnselectedTextColor_undefined');
+      let objUndef = JSON.parseJsonElement(strJsonUndef);
+      let strJsonBase: string = inspector.getInspectorByKey('tabs_barStyle_normal');
+      let objBase = JSON.parseJsonElement(strJsonBase);
+      expect(objUndef.getElement('$attrs').getString('sidebarUnselectedTextColor'))
+        .assertEqual(objBase.getElement('$attrs').getString('sidebarUnselectedTextColor'));
     });
 
     /**
@@ -424,7 +489,8 @@ export default function tabsSidebarStyle(): void {
     it('SUB_ARKUI_TABS_SIDEBAR_STATIC_SIDEBARSELECTEDBOARDCOLOR_2700', Level.LEVEL0, async (): Promise<void> => {
       await CommonFunc.sleep(600);
       let strJson: string = inspector.getInspectorByKey('tabs_sidebarSelectedBoardColor_normal');
-      expect(strJson.length > 2).assertTrue();
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getString('sidebarSelectedBoardColor')).assertEqual('#0A007DFF');
     });
 
     /**
@@ -437,8 +503,12 @@ export default function tabsSidebarStyle(): void {
      */
     it('SUB_ARKUI_TABS_SIDEBAR_STATIC_SIDEBARSELECTEDBOARDCOLOR_2800', Level.LEVEL0, async (): Promise<void> => {
       await CommonFunc.sleep(600);
-      let strJson: string = inspector.getInspectorByKey('tabs_sidebarSelectedBoardColor_undefined');
-      expect(strJson.length > 2).assertTrue();
+      let strJsonUndef: string = inspector.getInspectorByKey('tabs_sidebarSelectedBoardColor_undefined');
+      let objUndef = JSON.parseJsonElement(strJsonUndef);
+      let strJsonBase: string = inspector.getInspectorByKey('tabs_barStyle_normal');
+      let objBase = JSON.parseJsonElement(strJsonBase);
+      expect(objUndef.getElement('$attrs').getString('sidebarSelectedBoardColor'))
+        .assertEqual(objBase.getElement('$attrs').getString('sidebarSelectedBoardColor'));
     });
 
   });
