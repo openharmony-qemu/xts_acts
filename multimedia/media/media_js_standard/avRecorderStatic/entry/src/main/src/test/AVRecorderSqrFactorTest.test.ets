@@ -94,59 +94,213 @@ export default function AVRecorderSqrFactorTest() {
   describe('AVRecorderSqrFactorTest', () => {
     let commonFun = new Common();
 
-    SQR_CASES.forEach((tc: SqrCase) => {
-      it(tc.name, Level.LEVEL0, async (done: () => void) => {
-        console.info(TAG + tc.name + ' start');
-        let avRecorder: media.AVRecorder | undefined = undefined;
-        let fdObject: FdObject = {
-          fileAsset: null,
-          fdNumber: null
-        };
-        try {
-          let fileName = commonFun.resourceName();
-          fdObject = await commonFun.getFd(fileName);
-          const fdPath = 'fd://' + fdObject.fdNumber;
-          const avConfig = buildSqrConfig(tc.sqrFactor, tc.enableStableQualityMode, fdPath);
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0100
+     * @tc.desc   1.create 2.prepare with sqrFactor=0 (min boundary) and enableStableQualityMode=true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0100', Level.LEVEL0, async (done: () => void) => {
+      await runSqrCase(SQR_CASES[0], commonFun, done);
+    });
 
-          avRecorder = await media.createAVRecorder();
-          if (avRecorder == undefined) {
-            console.error(TAG + 'createAVRecorder failed');
-            expect().assertFail();
-            done();
-            return;
-          }
-          await avRecorder.prepare(avConfig);
-          if (tc.expectError) {
-            console.error(TAG + 'prepare should have failed for ' + tc.desc);
-            await avRecorder.release();
-            expect().assertFail();
-          } else {
-            console.info(TAG + 'prepare success for ' + tc.desc);
-            await avRecorder.release();
-            expect(avRecorder.state).assertEqual(commonFun.AV_RECORDER_STATE.RELEASED);
-          }
-        } catch (err) {
-          if (tc.expectError) {
-            console.info(TAG + 'prepare failed as expected for ' + tc.desc + ': ' + JSON.stringify(err));
-            expect(err.code).assertEqual(tc.errCode!);
-          } else {
-            console.error(TAG + tc.name + ' failed: ' + JSON.stringify(err));
-            expect().assertFail();
-          }
-        } finally {
-          if (avRecorder != undefined) {
-            try {
-              await avRecorder.release();
-            } catch (e) {
-              console.error(TAG + 'release failed: ' + JSON.stringify(e));
-            }
-            avRecorder = undefined;
-          }
-          await commonFun.closeFd(fdObject.fdNumber);
-        }
-        console.info(TAG + tc.name + ' end');
-        done();
-      })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0200
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0200
+     * @tc.desc   1.create 2.prepare with sqrFactor=51 (max boundary) and enableStableQualityMode=true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0200', Level.LEVEL0, async (done: () => void) => {
+      await runSqrCase(SQR_CASES[1], commonFun, done);
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0300
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0300
+     * @tc.desc   1.create 2.prepare with sqrFactor=27 (normal value) and enableStableQualityMode=true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0300', Level.LEVEL0, async (done: () => void) => {
+      await runSqrCase(SQR_CASES[2], commonFun, done);
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0400
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0400
+     * @tc.desc   1.create 2.prepare with sqrFactor=-1 (invalid, below min) and enableStableQualityMode=true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0400', Level.LEVEL0, async (done: () => void) => {
+      await runSqrCase(SQR_CASES[3], commonFun, done);
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0500
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0500
+     * @tc.desc   1.create 2.prepare with sqrFactor=52 (invalid, above max) and enableStableQualityMode=true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0500', Level.LEVEL0, async (done: () => void) => {
+      await runSqrCase(SQR_CASES[4], commonFun, done);
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0600
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0600
+     * @tc.desc   1.create 2.prepare with sqrFactor=10 and release success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0600', Level.LEVEL0, async (done: () => void) => {
+      await runSqrCase(SQR_CASES[5], commonFun, done);
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0700
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0700
+     * @tc.desc   1.create 2.prepare with sqrFactor not set, skip validation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0700', Level.LEVEL0, async (done: () => void) => {
+      await runSqrCase(SQR_CASES[6], commonFun, done);
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0800
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0800
+     * @tc.desc   1.create 2.prepare with sqrFactor=1 (boundary min+1) and enableStableQualityMode=true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0800', Level.LEVEL0, async (done: () => void) => {
+      await runSqrCase(SQR_CASES[7], commonFun, done);
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0900
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0900
+     * @tc.desc   1.create 2.prepare with sqrFactor=50 (boundary max-1) and enableStableQualityMode=true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0900', Level.LEVEL0, async (done: () => void) => {
+      await runSqrCase(SQR_CASES[8], commonFun, done);
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_1000
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_1000
+     * @tc.desc   1.create 2.prepare with sqrFactor=-1, no validation (mode=false)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_1000', Level.LEVEL0, async (done: () => void) => {
+      await runSqrCase(SQR_CASES[9], commonFun, done);
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_1100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_1100
+     * @tc.desc   1.create 2.prepare with sqrFactor=52, no validation (mode=false)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_1100', Level.LEVEL0, async (done: () => void) => {
+      await runSqrCase(SQR_CASES[10], commonFun, done);
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_1200
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_1200
+     * @tc.desc   1.create 2.prepare with sqrFactor=27 (VBR mode)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_1200', Level.LEVEL0, async (done: () => void) => {
+      await runSqrCase(SQR_CASES[11], commonFun, done);
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_1300
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_1300
+     * @tc.desc   1.create 2.prepare with sqrFactor not set (default behavior)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_1300', Level.LEVEL0, async (done: () => void) => {
+      await runSqrCase(SQR_CASES[12], commonFun, done);
     });
   })
+}
+
+async function runSqrCase(tc: SqrCase, commonFun: Common, done: () => void): Promise<void> {
+  console.info(TAG + tc.name + ' start');
+  let avRecorder: media.AVRecorder | undefined = undefined;
+  let fdObject: FdObject = {
+    fileAsset: null,
+    fdNumber: null
+  };
+  try {
+    let fileName = commonFun.resourceName();
+    fdObject = await commonFun.getFd(fileName);
+    const fdPath = 'fd://' + fdObject.fdNumber;
+    const avConfig = buildSqrConfig(tc.sqrFactor, tc.enableStableQualityMode, fdPath);
+
+    avRecorder = await media.createAVRecorder();
+    if (avRecorder == undefined) {
+      console.error(TAG + 'createAVRecorder failed');
+      expect().assertFail();
+      done();
+      return;
+    }
+    await avRecorder.prepare(avConfig);
+    if (tc.expectError) {
+      console.error(TAG + 'prepare should have failed for ' + tc.desc);
+      await avRecorder.release();
+      expect().assertFail();
+    } else {
+      console.info(TAG + 'prepare success for ' + tc.desc);
+      await avRecorder.release();
+      expect(avRecorder.state).assertEqual(commonFun.AV_RECORDER_STATE.RELEASED);
+    }
+  } catch (err) {
+    if (tc.expectError) {
+      console.info(TAG + 'prepare failed as expected for ' + tc.desc + ': ' + JSON.stringify(err));
+      expect(err.code).assertEqual(tc.errCode!);
+    } else {
+      console.error(TAG + tc.name + ' failed: ' + JSON.stringify(err));
+      expect().assertFail();
+    }
+  } finally {
+    if (avRecorder != undefined) {
+      try {
+        await avRecorder.release();
+      } catch (e) {
+        console.error(TAG + 'release failed: ' + JSON.stringify(e));
+      }
+      avRecorder = undefined;
+    }
+    await commonFun.closeFd(fdObject.fdNumber);
+  }
+  console.info(TAG + tc.name + ' end');
+  done();
 }
