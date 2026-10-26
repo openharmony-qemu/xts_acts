@@ -1877,5 +1877,1894 @@ export default function objectEntriesTest2(): void {
       let expected3: string = "hi";
       expect(actual3).assertEqual(expected3);
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_0870
+     * @tc.name objectEntriesTest087
+     * @tc.desc Verify Object.entries returns 2 key-value pairs for class instance User
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const u: User = new User("Alice", 30);
+      const entries = Object.entries(u);
+      let actual1: int = entries.length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = entries[0]![0];
+      let expected2: string = "name";
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = entries[1]![0];
+      let expected3: string = "age";
+      expect(actual3).assertEqual(expected3);
+      let actual4: string = entries[0]![1]! as string;
+      let expected4: string = "Alice";
+      expect(actual4).assertEqual(expected4);
+      let actual5: string = `${entries[1]![1]!}`;
+      let expected5: string = `${30}`;
+      expect(actual5).assertEqual(expected5);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_0880
+     * @tc.name objectEntriesTest088
+     * @tc.desc Verify Object.entries returns value 1.5 for class instance D
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const d: D = new D();
+      const entries = Object.entries(d);
+      let actual1: number = entries[0]![1]! as number;
+      let expected1: number = 1.5;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_0890
+     * @tc.name objectEntriesTest089
+     * @tc.desc Verify Object.entries returns value "ok" for class instance S
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const s: S = new S();
+      const entries = Object.entries(s);
+      let actual1: string = entries[0]![1]! as string;
+      let expected1: string = "ok";
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_0900
+     * @tc.name objectEntriesTest090
+     * @tc.desc Verify Object.entries returns value true for class instance B
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const b: B = new B();
+      const entries = Object.entries(b);
+      let actual1: boolean = entries[0]![1]! as boolean;
+      expect(actual1).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_0910
+     * @tc.name objectEntriesTest091
+     * @tc.desc Verify Object.entries returns 1 key-value pairs for class instance N
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const n: N = new N();
+      const entries = Object.entries(n);
+      let actual1: int = entries.length;
+      let expected1: int = 1;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = entries[0]![0];
+      let expected2: string = "value";
+      expect(actual2).assertEqual(expected2);
+      let actualValue1: Any = entries[0]![1];
+      let actualValue1IsNull: boolean = actualValue1 === null;
+      expect(actualValue1IsNull).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_0920
+     * @tc.name objectEntriesTest092
+     * @tc.desc Verify Object.entries returns 1 key-value pairs for class instance Holder
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const h: Holder = new Holder();
+      const entries = Object.entries(h);
+      let actual1: int = entries.length;
+      let expected1: int = 1;
+      expect(actual1).assertEqual(expected1);
+      let actual2: int = (entries[0]![1] as int[]).length;
+      let expected2: int = 3;
+      expect(actual2).assertEqual(expected2);
+      let actual3: number = (entries[0]![1] as int[])[0];
+      let expected3: int = 1;
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_0930
+     * @tc.name objectEntriesTest093
+     * @tc.desc Verify Object.entries returns 2 key-value pairs for class instance Person
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const p: Person = new Person();
+      const entries = Object.entries(p);
+      let actual1: int = entries.length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = (entries[1]![1] as Address).city;
+      let expected2: string = "Beijing";
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_0940
+     * @tc.name objectEntriesTest094
+     * @tc.desc Verify Object.entries returns 1 key-value pairs for class instance Config
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest094", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const c: Config = new Config();
+      const entries = Object.entries(c);
+      let actual1: int = entries.length;
+      let expected1: int = 1;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = entries[0]![0];
+      let expected2: string = "env";
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_0950
+     * @tc.name objectEntriesTest095
+     * @tc.desc Verify Object.entries returns 1 key-value pairs for class instance Greeter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const g: Greeter = new Greeter();
+      const entries = Object.entries(g);
+      let actual1: int = entries.length;
+      let expected1: int = 1;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = entries[0]![0];
+      let expected2: string = "greeting";
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_0960
+     * @tc.name objectEntriesTest096
+     * @tc.desc Verify Object.entries returns entries with values "A" and "B" for class instance Item
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest096", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Item = new Item();
+      const b: Item = new Item();
+      a.name = 'A';
+      b.name = 'B';
+      const entriesA = Object.entries(a);
+      const entriesB = Object.entries(b);
+      let actual1: string = entriesA[0]![1]! as string;
+      let expected1: string = 'A';
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = entriesB[0]![1]! as string;
+      let expected2: string = 'B';
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_0970
+     * @tc.name objectEntriesTest097
+     * @tc.desc Verify Object.entries returns array of length 2 for class instance Dog
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest097", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const d: Dog = new Dog();
+      const entries = Object.entries(d);
+      let actual1: int = entries.length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_0980
+     * @tc.name objectEntriesTest098
+     * @tc.desc Verify Object.entries returns 2 key-value pairs for class instance Dog001
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest098", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const d: Dog001 = new Dog001();
+      const entries = Object.entries(d);
+      let actual1: string = entries[0]![0];
+      let expected1: string = "type";
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = entries[0]![1]! as string;
+      let expected2: string = "animal";
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_0990
+     * @tc.name objectEntriesTest099
+     * @tc.desc Verify Object.entries returns 2 key-value pairs for class instance Dog002
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest099", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const d: Dog002 = new Dog002();
+      const entries = Object.entries(d);
+      let actual1: string = entries[1]![0];
+      let expected1: string = "name";
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = entries[1]![1]! as string;
+      let expected2: string = "wangwang";
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1000
+     * @tc.name objectEntriesTest100
+     * @tc.desc Verify Object.entries returns 3 key-value pairs for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const c: Child = new Child();
+      const entries = Object.entries(c);
+      let actual1: int = entries.length;
+      let expected1: int = 3;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = entries[0]![0];
+      let expected2: string = 'a';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = entries[1]![0];
+      let expected3: string = 'b';
+      expect(actual3).assertEqual(expected3);
+      let actual4: string = entries[2]![0];
+      let expected4: string = 'c';
+      expect(actual4).assertEqual(expected4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1010
+     * @tc.name objectEntriesTest101
+     * @tc.desc Verify Object.entries returns 3 key-value pairs for array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest101", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: int[] = [10, 20, 30];
+      const entries = Object.entries(arr);
+      let actual1: string = entries[0]![0];
+      let expected1: string = '0';
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = entries[1]![0];
+      let expected2: string = '1';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = entries[2]![0];
+      let expected3: string = '2';
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1020
+     * @tc.name objectEntriesTest102
+     * @tc.desc Verify Object.entries returns 10 key-value pairs for array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest102", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: int[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+      const entries = Object.entries(arr);
+      let actual1: int = entries.length;
+      let expected1: int = 10;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = entries[9]![0];
+      let expected2: string = '9';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = `${entries[9]![1]!}`;
+      let expected3: string = `${9}`;
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1030
+     * @tc.name objectEntriesTest103
+     * @tc.desc Verify Object.entries returns 2 key-value pairs for array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest103", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: int[] = [10, 20];
+      const entries = Object.entries(arr);
+      let actual1: int = entries[0]![1] as int;
+      let expected1: int = 10;
+      expect(actual1).assertEqual(expected1);
+      let actual2: int = entries[1]![1] as int;
+      let expected2: int = 20;
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1040
+     * @tc.name objectEntriesTest104
+     * @tc.desc Verify Object.entries returns array of length matching the input array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest104", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: int[] = [10, 20, 30];
+      const entries = Object.entries(arr);
+      let actual1: int = entries.length;
+      let expected1: int = 3;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1050
+     * @tc.name objectEntriesTest105
+     * @tc.desc Verify Object.entries returns array of length 3
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest105", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { "name": "ArkTS", "type": "language", "ver": "1.2" };
+      const entries = Object.entries(record);
+      let actual1: int = entries.length;
+      let expected1: int = 3;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1060
+     * @tc.name objectEntriesTest106
+     * @tc.desc Verify Object.entries returns 1 key-value pairs for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest106", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { "name": "ArkTS" };
+      const entries = Object.entries(record);
+      let actual1: string = entries[0]![1]! as string;
+      let expected1: string = "ArkTS";
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1070
+     * @tc.name objectEntriesTest107
+     * @tc.desc Verify Object.entries returns 2 key-value pairs for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest107", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 't': true, 'f': false };
+      const entries = Object.entries(record);
+      let actual1: boolean = entries[0]![1]! as boolean;
+      expect(actual1).assertTrue();
+      let actual2: boolean = entries[1]![1]! as boolean;
+      expect(actual2).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1080
+     * @tc.name objectEntriesTest108
+     * @tc.desc Verify Object.entries returns 4 key-value pairs for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest108", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'a': 1, 'b': 2, 'c': 3, 'd': 4 };
+      const entries = Object.entries(record);
+      let actual1: int = entries.length;
+      let expected1: int = 4;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = entries[3]![0];
+      let expected2: string = 'd';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = `${entries[3]![1]!}`;
+      let expected3: string = `${4}`;
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1090
+     * @tc.name objectEntriesTest109
+     * @tc.desc Verify Object.entries returns 1 key-value pairs for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest109", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { '': "empty" };
+      const entries = Object.entries(record);
+      let actual1: string = entries[0]![0];
+      let expected1: string = '';
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = entries[0]![1]! as string;
+      let expected2: string = "empty";
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1100
+     * @tc.name objectEntriesTest110
+     * @tc.desc Verify Object.entries returns array of length matching a second Object.entries call
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest110", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'a': 1, 'b': 2 };
+      const e1 = Object.entries(record);
+      const e2 = Object.entries(record);
+      let actual1: int = e1.length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = `${e1[0]![0]}`;
+      let expected2: string = 'a';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = `${e1[1]![1]!}`;
+      let expected3: string = '2';
+      expect(actual3).assertEqual(expected3);
+      let actual4: string = `${e2[0]![0]}`;
+      let expected4: string = 'a';
+      expect(actual4).assertEqual(expected4);
+      let actual5: string = `${e2[1]![1]!}`;
+      let expected5: string = '2';
+      expect(actual5).assertEqual(expected5);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1110
+     * @tc.name objectEntriesTest111
+     * @tc.desc Verify Object.entries returns 1 key-value pairs for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest111", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'a': 1 };
+      const entries = Object.entries(record);
+      entries[0] = ['z', 9];
+      const again = Object.entries(record);
+      let actual1: string = again[0]![0];
+      let expected1: string = 'a';
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = `${again[0]![1]!}`;
+      let expected2: string = `${1}`;
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1120
+     * @tc.name objectEntriesTest112
+     * @tc.desc Verify Object.entries returns 1 key-value pairs for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest112", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const srcRecord1: Record<string, Any> = { 'x': 1 };
+      const entries = Object.entries(srcRecord1);
+      let actual1: int = entries.length;
+      let expected1: int = 1;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = entries[0]![0];
+      let expected2: string = 'x';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = `${entries[0]![1]!}`;
+      let expected3: string = `${1}`;
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1130
+     * @tc.name objectEntriesTest113
+     * @tc.desc Verify Object.entries returns 2 key-value pairs for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest113", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const srcRecord2: Record<string, Any> = { "alpha": 'a', "beta": 'b' };
+      const entries = Object.entries(srcRecord2);
+      let actual1: string = entries[0]![0];
+      let expected1: string = "alpha";
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = entries[1]![0];
+      let expected2: string = "beta";
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1140
+     * @tc.name objectEntriesTest114
+     * @tc.desc Verify Object.entries returns 2 key-value pairs for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest114", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const srcRecord3: Record<string, Any> = { "alpha": 'a', "beta": 'b' };
+      const entries = Object.entries(srcRecord3);
+      let actual1: string = entries[0]![1]! as string;
+      let expected1: string = 'a';
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = entries[1]![1]! as string;
+      let expected2: string = 'b';
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1150
+     * @tc.name objectEntriesTest115
+     * @tc.desc Verify Object.entries returns 3 key-value pairs for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest115", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const srcRecord4: Record<string, Any> = { 'a': 1, 'b': 2, 'c': 3 };
+      const entries = Object.entries(srcRecord4);
+      let actual1: int = entries.length;
+      let expected1: int = 3;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = entries[2]![0];
+      let expected2: string = 'c';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = `${entries[2]![1]!}`;
+      let expected3: string = `${3}`;
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1160
+     * @tc.name objectEntriesTest116
+     * @tc.desc Verify Object.entries returns 2 key-value pairs for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest116", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const p = new Point();
+      const entries = Object.entries(p);
+      let actual1: int = entries.length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = entries[0]![0];
+      let expected2: string = 'x';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = `${entries[0]![1]!}`;
+      let expected3: string = `${1}`;
+      expect(actual3).assertEqual(expected3);
+      let actual4: string = entries[1]![0];
+      let expected4: string = 'y';
+      expect(actual4).assertEqual(expected4);
+      let actual5: string = `${entries[1]![1]!}`;
+      let expected5: string = `${2}`;
+      expect(actual5).assertEqual(expected5);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1170
+     * @tc.name objectEntriesTest117
+     * @tc.desc Verify Object.entries returns 1 key-value pairs for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest117", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const c = new Counter();
+      const entries = Object.entries(c);
+      let actual1: int = entries.length;
+      let expected1: int = 1;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = entries[0]![0];
+      let expected2: string = "count";
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1180
+     * @tc.name objectEntriesTest118
+     * @tc.desc Verify Object.entries returns 3 key-value pairs for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest118", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const b = new Box003();
+      const entries = Object.entries(b);
+      let actual1: int = entries.length;
+      let expected1: int = 3;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = entries[2]![0];
+      let expected2: string = 'd';
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1190
+     * @tc.name objectEntriesTest119
+     * @tc.desc Verify Object.entries returns 2 key-value pairs for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest119", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 's': "text", 'n': 7 };
+      const entries = Object.entries(record);
+      let actual1: string = entries[0]![1]! as string;
+      let expected1: string = "text";
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = `${entries[1]![1]!}`;
+      let expected2: string = `${7}`;
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1200
+     * @tc.name objectEntriesTest120
+     * @tc.desc Verify Object.entries returns array of length matching a second Object.entries call
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest120", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const p = new Pair002();
+      const e1 = Object.entries(p);
+      const srcRecord6: Record<string, Any> = { 'a': 1, 'b': 2 };
+      const e2 = Object.entries(srcRecord6);
+      let actual1: int = e1.length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = `${e1[0]![0]}`;
+      let expected2: string = 'a';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = `${e1[1]![1]!}`;
+      let expected3: string = '2';
+      expect(actual3).assertEqual(expected3);
+      let actual4: string = `${e2[0]![0]}`;
+      let expected4: string = 'a';
+      expect(actual4).assertEqual(expected4);
+      let actual5: string = `${e2[1]![1]!}`;
+      let expected5: string = '2';
+      expect(actual5).assertEqual(expected5);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1210
+     * @tc.name objectEntriesTest121
+     * @tc.desc Verify Object.entries returns 2 key-value pairs for array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest121", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: number[] = [10, 20];
+      const entries = Object.entries(arr);
+      let actual1: string = entries[0]![0];
+      let expected1: string = '0';
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = entries[1]![0];
+      let expected2: string = '1';
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1220
+     * @tc.name objectEntriesTest122
+     * @tc.desc Verify Object.entries returns 3 key-value pairs for array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest122", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: string[] = ['a', 'b', 'c'];
+      const entries = Object.entries(arr);
+      let actual1: string = entries[0]![0];
+      let expected1: string = '0';
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = entries[2]![0];
+      let expected2: string = '2';
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1230
+     * @tc.name objectEntriesTest123
+     * @tc.desc Verify Object.entries returns 3 key-value pairs for array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest123", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: number[] = [5, 6, 7];
+      const entries = Object.entries(arr);
+      let actual1: string = `${entries[0]![1]!}`;
+      let expected1: string = `${5}`;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = `${entries[1]![1]!}`;
+      let expected2: string = `${6}`;
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = `${entries[2]![1]!}`;
+      let expected3: string = `${7}`;
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1240
+     * @tc.name objectEntriesTest124
+     * @tc.desc Verify Object.entries returns array of length 4
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest124", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: number[] = [1, 2, 3, 4];
+      const entries = Object.entries(arr);
+      let actual1: int = entries.length;
+      let expected1: int = 4;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1250
+     * @tc.name objectEntriesTest125
+     * @tc.desc Verify Object.entries returns 2 key-value pairs for array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest125", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const objA: Record<string, number> = { "id": 1 };
+      const objB: Record<string, number> = { "id": 2 };
+      const arr: Record<string, number>[] = [objA, objB];
+      const entries = Object.entries(arr);
+      let actual1: number = (entries[0]![1]! as Record<string, number>)["id"]! as number;
+      let expected1: number = 1;
+      expect(actual1).assertEqual(expected1);
+      let actual2: number = (entries[1]![1]! as Record<string, number>)["id"]! as number;
+      let expected2: number = 2;
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1260
+     * @tc.name objectEntriesTest126
+     * @tc.desc Verify Object.entries returns 2 key-value pairs for array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest126", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const grid: number[][] = [
+        [1, 2],
+        [3, 4],
+      ];
+      const entries = Object.entries(grid);
+      let actual1: number = (entries[0]![1]! as number[])[0]!;
+      let expected1: number = 1;
+      expect(actual1).assertEqual(expected1);
+      let actual2: number = (entries[1]![1]! as number[])[1]!;
+      let expected2: number = 4;
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1270
+     * @tc.name objectEntriesTest127
+     * @tc.desc Verify Object.entries returns 3 key-value pairs for array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest127", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: number[] = [7, 8, 9];
+      const entries = Object.entries(arr);
+      let actual1: int = entries.length;
+      let expected1: int = 3;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = entries[0]![0];
+      let expected2: string = '0';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = entries[2]![0];
+      let expected3: string = '2';
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1280
+     * @tc.name objectEntriesTest128
+     * @tc.desc Verify Object.entries returns 2 key-value pairs for array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest128", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: boolean[] = [true, false];
+      const entries = Object.entries(arr);
+      let actual1: boolean = entries[0]![1]! as boolean;
+      expect(actual1).assertTrue();
+      let actual2: boolean = entries[1]![1]! as boolean;
+      expect(actual2).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1290
+     * @tc.name objectEntriesTest129
+     * @tc.desc Verify Object.entries returns array of length 3
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest129", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r: Record<string, Any> = { 'a': 1, 'b': 2, 'c': 3 };
+      const e1 = Object.entries(r);
+      const srcRecord8: Record<string, Any> = { 'a': 1, 'b': 2, 'c': 3 };
+      const e2 = Object.entries(srcRecord8);
+      let actual1: int = e1.length;
+      let expected1: int = 3;
+      expect(actual1).assertEqual(expected1);
+      let actual2: int = e2.length;
+      let expected2: int = 3;
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1300
+     * @tc.name objectEntriesTest130
+     * @tc.desc Verify Object.entries returns entries with keys "a" and "0"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest130", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r: Record<string, Any> = { 'a': 1 };
+      const arr: number[] = [1];
+      const e1 = Object.entries(r);
+      const srcRecord9: Record<string, Any> = { 'a': 1 };
+      const e2 = Object.entries(srcRecord9);
+      const e3 = Object.entries(arr);
+      let actual1: string = e1[0]![0];
+      let expected1: string = 'a';
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = e2[0]![0];
+      let expected2: string = 'a';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = e3[0]![0];
+      let expected3: string = '0';
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1310
+     * @tc.name objectEntriesTest131
+     * @tc.desc Verify Object.entries returns array of length matching a second Object.entries call
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest131", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: number[] = [4, 5];
+      const e1 = Object.entries(arr);
+      const srcRecord10: Record<string, Any> = { '0': 4, '1': 5 };
+      const e2 = Object.entries(srcRecord10);
+      let actual1: int = e1.length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = `${e1[0]![1]!}`;
+      let expected2: string = '4';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = `${e1[1]![1]!}`;
+      let expected3: string = '5';
+      expect(actual3).assertEqual(expected3);
+      let actual4: string = `${e2[0]![1]!}`;
+      let expected4: string = '4';
+      expect(actual4).assertEqual(expected4);
+      let actual5: string = `${e2[1]![1]!}`;
+      let expected5: string = '5';
+      expect(actual5).assertEqual(expected5);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1320
+     * @tc.name objectEntriesTest132
+     * @tc.desc Verify Object.entries returns array of length matching a second Object.entries call
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest132", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const e1 = Object.entries(new Rec());
+      const srcRecord11: Record<string, Any> = { 'm': 1, 'n': 2 };
+      const e2 = Object.entries(srcRecord11);
+      let actual1: int = e1.length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = e1[0]![0];
+      let expected2: string = 'm';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = e1[1]![0];
+      let expected3: string = 'n';
+      expect(actual3).assertEqual(expected3);
+      let actual4: string = `${e2[0]![1]!}`;
+      let expected4: string = '1';
+      expect(actual4).assertEqual(expected4);
+      let actual5: string = `${e2[1]![1]!}`;
+      let expected5: string = '2';
+      expect(actual5).assertEqual(expected5);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1330
+     * @tc.name objectEntriesTest133
+     * @tc.desc Verify Object.entries returns 3 key-value pairs for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest133", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'a': 1, 'b': 2, 'c': 3 };
+      const entries = Object.entries(record);
+      const keys: string[] = Object.keys(record);
+      let actual1: int = entries.length;
+      let expected1: int = 3;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = entries[0]![0];
+      let expected2: string = 'a';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = entries[1]![0];
+      let expected3: string = 'b';
+      expect(actual3).assertEqual(expected3);
+      let actual4: string = entries[2]![0];
+      let expected4: string = 'c';
+      expect(actual4).assertEqual(expected4);
+      let actual5: string = keys[0]!;
+      let expected5: string = 'a';
+      expect(actual5).assertEqual(expected5);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1340
+     * @tc.name objectEntriesTest134
+     * @tc.desc Verify Object.entries returns array of length matching Object.keys
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest134", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'p': 1, 'q': 2 };
+      const entries = Object.entries(record);
+      const keys: string[] = Object.keys(record);
+      let actual1: int = entries.length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: int = keys.length;
+      let expected2: int = 2;
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1350
+     * @tc.name objectEntriesTest135
+     * @tc.desc Verify Object.entries returns array of length 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest135", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const o: Record<string, Any> = {};
+      const entries = Object.entries(o);
+      const keys: string[] = Object.keys(o);
+      let actual1: int = entries.length;
+      let expected1: int = 0;
+      expect(actual1).assertEqual(expected1);
+      let actual2: int = keys.length;
+      let expected2: int = 0;
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1360
+     * @tc.name objectEntriesTest136
+     * @tc.desc Verify Object.entries returns 2 key-value pairs for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest136", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const b = new Book();
+      const entries = Object.entries(b);
+      const keys: string[] = Object.keys(b);
+      let actual1: int = entries.length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = entries[0]![0];
+      let expected2: string = "title";
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = entries[1]![0];
+      let expected3: string = "pages";
+      expect(actual3).assertEqual(expected3);
+      let actual4: string = keys[0]!;
+      let expected4: string = "title";
+      expect(actual4).assertEqual(expected4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1370
+     * @tc.name objectEntriesTest137
+     * @tc.desc Verify Object.entries returns 2 key-value pairs for array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest137", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: number[] = [10, 20];
+      const entries = Object.entries(arr);
+      const keys: string[] = Object.keys(arr);
+      let actual1: int = entries.length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = entries[0]![0];
+      let expected2: string = '0';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = entries[1]![0];
+      let expected3: string = '1';
+      expect(actual3).assertEqual(expected3);
+      let actual4: string = keys[0]!;
+      let expected4: string = '0';
+      expect(actual4).assertEqual(expected4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1380
+     * @tc.name objectEntriesTest138
+     * @tc.desc Verify Object.entries returns array of length matching a second Object.entries call
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest138", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'a': 1, 'b': 2 };
+      const e1 = Object.entries(record);
+      const k1: string[] = Object.keys(record);
+      const e2 = Object.entries(record);
+      const k2: string[] = Object.keys(record);
+      let actual1: int = e1.length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: int = k1.length;
+      let expected2: int = 2;
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = e1[0]![0];
+      let expected3: string = 'a';
+      expect(actual3).assertEqual(expected3);
+      let actual4: string = `${e2[0]![1]!}`;
+      let expected4: string = '1';
+      expect(actual4).assertEqual(expected4);
+      let actual5: string = k2[1]!;
+      let expected5: string = 'b';
+      expect(actual5).assertEqual(expected5);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1390
+     * @tc.name objectEntriesTest139
+     * @tc.desc Verify Object.entries returns 2 key-value pairs for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest139", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'a': 1 };
+      record['b'] = 2;
+      const entries = Object.entries(record);
+      const keys: string[] = Object.keys(record);
+      let actual1: int = entries.length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: int = keys.length;
+      let expected2: int = 2;
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = entries[1]![0];
+      let expected3: string = 'b';
+      expect(actual3).assertEqual(expected3);
+      let actual4: string = keys[1]!;
+      let expected4: string = 'b';
+      expect(actual4).assertEqual(expected4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1400
+     * @tc.name objectEntriesTest140
+     * @tc.desc Verify Object.entries returns array of length 2
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest140", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'a': 1, 'b': 2 };
+      const k1: string[] = Object.keys(record);
+      const k2: string[] = Object.keys(record);
+      const entries = Object.entries(record);
+      let actual1: int = entries.length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: int = k1.length;
+      let expected2: int = 2;
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = k2[0]!;
+      let expected3: string = 'a';
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1410
+     * @tc.name objectEntriesTest141
+     * @tc.desc Verify Object.entries returns 2 key-value pairs for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest141", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'x': 10, 'y': 20 };
+      const entries = Object.entries(record);
+      const keys: string[] = Object.keys(record);
+      let actual0: int = entries.length;
+      let expected0: int = 2;
+      expect(actual0).assertEqual(expected0);
+      let expectedKeys: string[] = ['x', 'y'];
+      for (let i = 0; i < keys.length; i++) {
+        let actual1: string = entries[i]![0]!;
+        let expected1: string = expectedKeys[i]!;
+        expect(actual1).assertEqual(expected1);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1420
+     * @tc.name objectEntriesTest142
+     * @tc.desc Verify Object.entries returns 3 key-value pairs for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest142", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'a': 1, 'b': 2, 'c': 3 };
+      const entries = Object.entries(record);
+      let actual1: int = entries.length;
+      let expected1: int = 3;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = `${entries[0]![1]!}`;
+      let expected2: string = '1';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = `${entries[1]![1]!}`;
+      let expected3: string = '2';
+      expect(actual3).assertEqual(expected3);
+      let actual4: string = `${entries[2]![1]!}`;
+      let expected4: string = '3';
+      expect(actual4).assertEqual(expected4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1430
+     * @tc.name objectEntriesTest143
+     * @tc.desc Verify Object.entries returns array of length matching Object.values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest143", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { "k1": "v1", "k2": "v2" };
+      const entries = Object.entries(record);
+      const values: Any[] = Object.values(record);
+      let actual1: int = entries.length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: int = values.length;
+      let expected2: int = 2;
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1440
+     * @tc.name objectEntriesTest144
+     * @tc.desc Verify Object.entries returns 2 key-value pairs for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest144", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'b': 1, 'a': 2 };
+      const entries = Object.entries(record);
+      let actual1: string = `${entries[0]![1]!}`;
+      let expected1: string = '1';
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = `${entries[1]![1]!}`;
+      let expected2: string = '2';
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1450
+     * @tc.name objectEntriesTest145
+     * @tc.desc Verify Object.entries returns 3 key-value pairs for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest145", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'a': 'x', 'b': 2, 'c': true };
+      const entries = Object.entries(record);
+      let actual1: int = entries.length;
+      let expected1: int = 3;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = `${entries[0]![1]!}`;
+      let expected2: string = 'x';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = `${entries[1]![1]!}`;
+      let expected3: string = '2';
+      expect(actual3).assertEqual(expected3);
+      let actual4: boolean = entries[2]![1]! as boolean;
+      expect(actual4).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1460
+     * @tc.name objectEntriesTest146
+     * @tc.desc Verify Object.entries enumerates integer-index string keys per engine ordering
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest146", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { '2': 'b', '1': 'a' };
+      const entries = Object.entries(record);
+      const values: Any[] = Object.values(record);
+      let actual1: int = entries.length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = entries[0]![1]! as string;
+      let expected2: string = 'b';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = entries[1]![1]! as string;
+      let expected3: string = 'a';
+      expect(actual3).assertEqual(expected3);
+      let actual4: string = `${values[0]}`;
+      let expected4: string = 'b';
+      expect(actual4).assertEqual(expected4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1470
+     * @tc.name objectEntriesTest147
+     * @tc.desc Verify Object.entries returns array of length 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest147", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const o: Record<string, Any> = {};
+      const entries = Object.entries(o);
+      const values: Any[] = Object.values(o);
+      let actual1: int = entries.length;
+      let expected1: int = 0;
+      expect(actual1).assertEqual(expected1);
+      let actual2: int = values.length;
+      let expected2: int = 0;
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1480
+     * @tc.name objectEntriesTest148
+     * @tc.desc Verify Object.entries returns 2 key-value pairs for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest148", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const cfg = new Config001();
+      const entries = Object.entries(cfg);
+      const values: Any[] = Object.values(cfg);
+      let actual1: int = entries.length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = entries[0]![1]! as string;
+      let expected2: string = "localhost";
+      expect(actual2).assertEqual(expected2);
+      let actual3: number = entries[1]![1]! as number;
+      let expected3: number = 8080;
+      expect(actual3).assertEqual(expected3);
+      let actual4: string = `${values[0]}`;
+      let expected4: string = "localhost";
+      expect(actual4).assertEqual(expected4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1490
+     * @tc.name objectEntriesTest149
+     * @tc.desc Verify Object.entries returns 1 key-value pair for record with nested object value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest149", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inner: Record<string, number> = { 'k': 1 };
+      const record: Record<string, Any> = { "obj": inner };
+      const entries = Object.entries(record);
+      let actual1: number = (entries[0]![1]! as Record<string, number>)['k']! as number;
+      let expected1: number = 1;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = entries[0]![0];
+      let expected2: string = "obj";
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1500
+     * @tc.name objectEntriesTest150
+     * @tc.desc Verify Object.entries returns 3 key-value pairs for array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest150", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: number[] = [5, 6, 7];
+      const entries = Object.entries(arr);
+      let actual1: int = entries.length;
+      let expected1: int = 3;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = `${entries[0]![1]!}`;
+      let expected2: string = '5';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = `${entries[2]![1]!}`;
+      let expected3: string = '7';
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1510
+     * @tc.name objectEntriesTest151
+     * @tc.desc Verify Object.entries returns a snapshot unaffected by later record mutation (entries keeps 1, values reflects 99)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest151", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'a': 1 };
+      const entries = Object.entries(record);
+      let actual1: string = `${entries[0]![1]!}`;
+      let expected1: string = `${1}`;
+      expect(actual1).assertEqual(expected1);
+      record['a'] = 99;
+      let actual2: string = `${entries[0]![1]!}`;
+      let expected2: string = `${1}`;
+      expect(actual2).assertEqual(expected2);
+      const values: Any[] = Object.values(record);
+      let actual3: string = `${values[0]}`;
+      let expected3: string = `${99}`;
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1520
+     * @tc.name objectEntriesTest152
+     * @tc.desc Verify Object.entries returns 3 key-value pairs for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest152", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'a': 10, 'b': 20, 'c': 30 };
+      const entries = Object.entries(record);
+      let actual1: int = entries.length;
+      let expected1: int = 3;
+      expect(actual1).assertEqual(expected1);
+      let actual3: string = `${entries[0]![0]}`;
+      let expected3: string = 'a';
+      expect(actual3).assertEqual(expected3);
+      let actual4: string = `${entries[0]![1]!}`;
+      let expected4: string = "10";
+      expect(actual4).assertEqual(expected4);
+      let actual5: string = `${entries[2]![1]!}`;
+      let expected5: string = "30";
+      expect(actual5).assertEqual(expected5);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1530
+     * @tc.name objectEntriesTest153
+     * @tc.desc Verify Object.entries returns 2 key-value pairs for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest153", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { "name": "ArkTS", "level": 3 };
+      const entries = Object.entries(record);
+      let actual1: string = entries[0]![0];
+      let expected1: string = "name";
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = entries[0]![1]! as string;
+      let expected2: string = "ArkTS";
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = entries[1]![0];
+      let expected3: string = "level";
+      expect(actual3).assertEqual(expected3);
+      let actual4: string = `${entries[1]![1]!}`;
+      let expected4: string = `${3}`;
+      expect(actual4).assertEqual(expected4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1540
+     * @tc.name objectEntriesTest154
+     * @tc.desc Verify Object.entries returns 2 key-value pairs for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest154", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'b': 1, 'a': 2 };
+      const entries = Object.entries(record);
+      const keys: string[] = Object.keys(record);
+      const values: Any[] = Object.values(record);
+      let actual1: string = `${entries[0]![0]}`;
+      let expected1: string = 'b';
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = `${entries[0]![1]!}`;
+      let expected2: string = '1';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = keys[0]!;
+      let expected3: string = 'b';
+      expect(actual3).assertEqual(expected3);
+      let actual4: string = `${values[0]}`;
+      let expected4: string = `${1}`;
+      expect(actual4).assertEqual(expected4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1550
+     * @tc.name objectEntriesTest155
+     * @tc.desc Verify Object.entries returns array of length 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest155", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const o: Record<string, Any> = {};
+      const entries = Object.entries(o);
+      const keys: string[] = Object.keys(o);
+      const values: Any[] = Object.values(o);
+      let actual1: int = entries.length;
+      let expected1: int = 0;
+      expect(actual1).assertEqual(expected1);
+      let actual2: int = keys.length;
+      let expected2: int = 0;
+      expect(actual2).assertEqual(expected2);
+      let actual3: int = values.length;
+      let expected3: int = 0;
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1560
+     * @tc.name objectEntriesTest156
+     * @tc.desc Verify Object.entries returns 4 key-value pairs for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest156", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'a': 1, 'b': 2, 'c': 3, 'd': 4 };
+      const entries = Object.entries(record);
+      let actual1: int = entries.length;
+      let expected1: int = 4;
+      expect(actual1).assertEqual(expected1);
+      let expectedKeys: string[] = ['a', 'b', 'c', 'd'];
+      let expectedValues: string[] = ['1', '2', '3', '4'];
+      for (let i = 0; i < entries.length; i++) {
+        let actual2: string = entries[i]![0]!;
+        let expected2: string = expectedKeys[i]!;
+        expect(actual2).assertEqual(expected2);
+        let actual3: string = `${entries[i]![1]!}`;
+        let expected3: string = expectedValues[i]!;
+        expect(actual3).assertEqual(expected3);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1570
+     * @tc.name objectEntriesTest157
+     * @tc.desc Verify Object.entries returns array of length matching Object.getOwnPropertyNames
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest157", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { "k1": "v1", "k2": "v2" };
+      const entries = Object.entries(record);
+      const names: string[] = Object.getOwnPropertyNames(record);
+      let actual1: int = entries.length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: int = names.length;
+      let expected2: int = 2;
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1580
+     * @tc.name objectEntriesTest158
+     * @tc.desc Verify Object.entries returns array of length 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest158", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const o: Record<string, Any> = {};
+      const entries = Object.entries(o);
+      const names: string[] = Object.getOwnPropertyNames(o);
+      let actual1: int = entries.length;
+      let expected1: int = 0;
+      expect(actual1).assertEqual(expected1);
+      let actual2: int = names.length;
+      let expected2: int = 0;
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1590
+     * @tc.name objectEntriesTest159
+     * @tc.desc Verify Object.entries returns 2 key-value pairs for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest159", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const t = new Task();
+      const entries = Object.entries(t);
+      let actual1: int = entries.length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = entries[0]![0];
+      let expected2: string = "id";
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = entries[1]![0];
+      let expected3: string = "name";
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1600
+     * @tc.name objectEntriesTest160
+     * @tc.desc Verify Object.entries returns 2 key-value pairs for array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest160", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: number[] = [1, 2];
+      const entries = Object.entries(arr);
+      const names: string[] = Object.getOwnPropertyNames(arr);
+      let actual1: int = entries.length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: int = names.length;
+      let expected2: int = 3;
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = entries[0]![0];
+      let expected3: string = '0';
+      expect(actual3).assertEqual(expected3);
+      let actual4: string = names[2]!;
+      let expected4: string = "length";
+      expect(actual4).assertEqual(expected4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1610
+     * @tc.name objectEntriesTest161
+     * @tc.desc Verify Object.entries returns 1 key-value pairs for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest161", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { "solo": 1 };
+      const entries = Object.entries(record);
+      const names: string[] = Object.getOwnPropertyNames(record);
+      let actual1: string = entries[0]![0];
+      let expected1: string = "solo";
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = names[0]!;
+      let expected2: string = "solo";
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1620
+     * @tc.name objectEntriesTest162
+     * @tc.desc Verify Object.entries returns 1 key-value pairs for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest162", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const w = new WorkerTest();
+      const entries = Object.entries(w);
+      const names: string[] = Object.getOwnPropertyNames(w);
+      let actual1: int = entries.length;
+      let expected1: int = 1;
+      expect(actual1).assertEqual(expected1);
+      let actual2: int = names.length;
+      let expected2: int = 1;
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = entries[0]![0];
+      let expected3: string = "name";
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1630
+     * @tc.name objectEntriesTest163
+     * @tc.desc Verify Object.entries returns 2 key-value pairs for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest163", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'a': 1 };
+      const names1: string[] = Object.getOwnPropertyNames(record);
+      let actual1: int = names1.length;
+      let expected1: int = 1;
+      expect(actual1).assertEqual(expected1);
+      record['b'] = 2;
+      const entries = Object.entries(record);
+      const names2: string[] = Object.getOwnPropertyNames(record);
+      let actual2: int = entries.length;
+      let expected2: int = 2;
+      expect(actual2).assertEqual(expected2);
+      let actual3: int = names2.length;
+      let expected3: int = 2;
+      expect(actual3).assertEqual(expected3);
+      let actual4: string = entries[1]![0];
+      let expected4: string = 'b';
+      expect(actual4).assertEqual(expected4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1640
+     * @tc.name objectEntriesTest164
+     * @tc.desc Verify Object.entries returns array of length 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest164", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r: Record<string, Any> = {};
+      const o: Record<string, Any> = {};
+      const arr: number[] = [];
+      const e1 = Object.entries(r);
+      const e2 = Object.entries(o);
+      const e3 = Object.entries(arr);
+      let actual1: int = e1.length;
+      let expected1: int = 0;
+      expect(actual1).assertEqual(expected1);
+      let actual2: int = e2.length;
+      let expected2: int = 0;
+      expect(actual2).assertEqual(expected2);
+      let actual3: int = e3.length;
+      let expected3: int = 0;
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1650
+     * @tc.name objectEntriesTest165
+     * @tc.desc Verify Object.entries returns array of length 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest165", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'a': 1 };
+      const e1 = Object.entries(record);
+      let actual1: int = e1.length;
+      let expected1: int = 1;
+      expect(actual1).assertEqual(expected1);
+      record['b'] = 2;
+      record['c'] = 3;
+      const e2 = Object.entries(record);
+      let actual2: int = e2.length;
+      let expected2: int = 3;
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = e2[2]![0];
+      let expected3: string = 'c';
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1660
+     * @tc.name objectEntriesTest166
+     * @tc.desc Verify Object.entries returns 1 key-value pairs for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest166", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = {};
+      record["added"] = 1;
+      const entries = Object.entries(record);
+      let actual1: int = entries.length;
+      let expected1: int = 1;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = entries[0]![0];
+      let expected2: string = "added";
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = `${entries[0]![1]!}`;
+      let expected3: string = `${1}`;
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1670
+     * @tc.name objectEntriesTest167
+     * @tc.desc Verify Object.entries returns array of length 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest167", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inner: Record<string, Any> = {};
+      const outer: Record<string, Any> = { "inner": inner };
+      const entries = Object.entries(outer);
+      let actual1: int = entries.length;
+      let expected1: int = 1;
+      expect(actual1).assertEqual(expected1);
+      const innerEntries = Object.entries(inner);
+      let actual2: int = innerEntries.length;
+      let expected2: int = 0;
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1680
+     * @tc.name objectEntriesTest168
+     * @tc.desc Verify Object.entries returns 3 key-value pairs for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest168", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'a': 1, 'b': {} as Record<string, Any>, 'c': 3 };
+      const entries = Object.entries(record);
+      let actual1: int = entries.length;
+      let expected1: int = 3;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = entries[1]![0];
+      let expected2: string = 'b';
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1690
+     * @tc.name objectEntriesTest169
+     * @tc.desc Verify Object.entries returns 1 key-value pairs for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest169", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { '😀': "smile" };
+      const entries = Object.entries(record);
+      let actual1: int = entries.length;
+      let expected1: int = 1;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = entries[0]![0];
+      let expected2: string = '😀';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = entries[0]![1]! as string;
+      let expected3: string = "smile";
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1700
+     * @tc.name objectEntriesTest170
+     * @tc.desc Verify Object.entries returns 1 key-value pairs for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest170", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { "\u200B": null };
+      const entries = Object.entries(record);
+      let actual1: int = entries.length;
+      let expected1: int = 1;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = entries[0]![0];
+      let expected2: string = "\u200B";
+      expect(actual2).assertEqual(expected2);
+      let actualValue1: Any = entries[0]![1];
+      let actualValue1IsNull: boolean = actualValue1 === null;
+      expect(actualValue1IsNull).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1710
+     * @tc.name objectEntriesTest171
+     * @tc.desc Verify Object.entries returns 1 key-value pairs for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest171", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { "👨‍👩‍👧": "family" };
+      const entries = Object.entries(record);
+      let actual1: int = entries.length;
+      let expected1: int = 1;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = entries[0]![0];
+      let expected2: string = "👨‍👩‍👧";
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_ENTRIES2_1720
+     * @tc.name objectEntriesTest172
+     * @tc.desc Verify Object.entries returns 1 key-value pairs for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectEntriesTest172", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { "Hello世界": 1 };
+      const entries = Object.entries(record);
+      let actual1: string = entries[0]![0];
+      let expected1: string = "Hello世界";
+      expect(actual1).assertEqual(expected1);
+    });
   });
 }
