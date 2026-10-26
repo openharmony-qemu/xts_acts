@@ -17,7 +17,7 @@ import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
-export default function SpliceDeleteMin() {
+export default function spliceDeleteMin() {
   describe('spliceDeleteMin', () => {
     beforeEach(async (done: Function) => {
       console.info("spliceDeleteMin beforeEach start");

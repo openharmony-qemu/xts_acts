@@ -17,7 +17,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import router from '@ohos.router';
 import CommonFunc from '../MainAbility/common/Common';
 
-export default function MinCountMin() {
+export default function minCountMin() {
   describe('minCountMin', () => {
     beforeEach(async (done: Function) => {
       console.info("minCountMin beforeEach start");
