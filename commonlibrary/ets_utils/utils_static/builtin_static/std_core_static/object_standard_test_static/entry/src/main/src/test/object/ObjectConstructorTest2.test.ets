@@ -1882,5 +1882,1899 @@ export default function objectConstructorTest2(): void {
       const isSameInstance: boolean = objA === objB;
       expect(isSameInstance).assertFalse();
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1000
+     * @tc.name objectConstructorTest100
+     * @tc.desc Verify adding a key to one object literal leaves the other empty
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const objA: Record<string, Any> = {};
+      const objB: Record<string, Any> = {};
+      const recordA: Record<string, Any> = objA;
+      recordA["marker"] = 1;
+      let actual1: int = Object.keys(objB).length;
+      let expected1: int = 0;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1010
+     * @tc.name objectConstructorTest101
+     * @tc.desc Verify two object literals hold independent values for same key k
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest101", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const objA: Record<string, Any> = {};
+      const objB: Record<string, Any> = {};
+      const recordA: Record<string, Any> = objA;
+      const recordB: Record<string, Any> = objB;
+      recordA['k'] = 'a';
+      recordB['k'] = 'b';
+      let actual1: string = recordA['k']! as string;
+      let expected1: string = 'a';
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = recordB['k']! as string;
+      let expected2: string = 'b';
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1020
+     * @tc.name objectConstructorTest102
+     * @tc.desc Verify keysLength helper returns 0 for two new Object() instances
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest102", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const objA: Object = new Object();
+      const objB: Object = new Object();
+      const lenA: number = keysLength(objA);
+      const lenB: number = keysLength(objB);
+      expect(lenA).assertEqual(0);
+      expect(lenB).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1030
+     * @tc.name objectConstructorTest103
+     * @tc.desc Verify new Object() creates object with 0 own keys
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest103", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const keys: string[] = Object.keys(new Object());
+      expect(keys.length).assertEqual(0);
+      expect(keys.includes("x")).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1040
+     * @tc.name objectConstructorTest104
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest104", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const objA: Object = new Object();
+      const objB: Object = new Object();
+      const hashA1: number = objA.$_hashCode();
+      const hashA12: int = objA.$_hashCode();
+      expect(hashA1).assertEqual(hashA12);
+      const hashB1: number = objB.$_hashCode();
+      const hashB12: int = objB.$_hashCode();
+      expect(hashB1).assertEqual(hashB12);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1050
+     * @tc.name objectConstructorTest105
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest105", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const objA: Object = new Object();
+      const objB: Object = new Object();
+      const hashA1: number = objA.$_hashCode();
+      const hashB1: number = objB.$_hashCode();
+      const same: boolean = hashA1 === hashB1;
+      expect(same).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1060
+     * @tc.name objectConstructorTest106
+     * @tc.desc Verify keysLength helper returns 0 for new Object()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest106", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj: Object = new Object();
+      let actual1: number = keysLength(obj);
+      let expected1: int = 0;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1070
+     * @tc.name objectConstructorTest107
+     * @tc.desc Verify new Object() creates object with 0 own keys
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest107", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let blockCount: number = -1;
+      {
+        const obj: Object = new Object();
+        blockCount = Object.keys(obj).length;
+      }
+      expect(blockCount).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1080
+     * @tc.name objectConstructorTest108
+     * @tc.desc Verify new Object() toString returns [object Object]
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest108", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cleaned: boolean = false;
+      try {
+        const obj: Object = new Object();
+        let actual1: string = obj.toString();
+        let expected1: string = "[object Object]";
+        expect(actual1).assertEqual(expected1);
+      } finally {
+        cleaned = true;
+      }
+      expect(cleaned).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1090
+     * @tc.name objectConstructorTest109
+     * @tc.desc Verify new Object() creates object with 0 own keys
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest109", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj: Object = new Object();
+      let firstRead: number = Object.keys(obj).length;
+      let secondRead: number = Object.keys(obj).length;
+      let thirdRead: number = Object.keys(obj).length;
+      expect(firstRead).assertEqual(0);
+      expect(secondRead).assertEqual(0);
+      expect(thirdRead).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1100
+     * @tc.name objectConstructorTest110
+     * @tc.desc Verify new Object() hasOwnProperty returns false for any key
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest110", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj: Object = new Object();
+      const hit: boolean = obj.hasOwnProperty(0);
+      expect(hit).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1110
+     * @tc.name objectConstructorTest111
+     * @tc.desc Verify Object.keys throws on undefined argument
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest111", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        Object.keys(asObj(undefined));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1120
+     * @tc.name objectConstructorTest112
+     * @tc.desc Verify Object.keys throws on null argument
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest112", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        Object.keys(asObj(null));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1130
+     * @tc.name objectConstructorTest113
+     * @tc.desc Verify Object.values throws on undefined argument
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest113", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        Object.values(asObj(undefined));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1140
+     * @tc.name objectConstructorTest114
+     * @tc.desc Verify Object.values throws on null argument
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest114", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        Object.values(asObj(null));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1150
+     * @tc.name objectConstructorTest115
+     * @tc.desc Verify Object.entries throws on undefined argument
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest115", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        Object.entries(asObj(undefined));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1160
+     * @tc.name objectConstructorTest116
+     * @tc.desc Verify Object.entries throws on null argument
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest116", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        Object.entries(asObj(null));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1170
+     * @tc.name objectConstructorTest117
+     * @tc.desc Verify Object.getOwnPropertyNames throws on undefined argument
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest117", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        Object.getOwnPropertyNames(asObj(undefined));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1180
+     * @tc.name objectConstructorTest118
+     * @tc.desc Verify Object.getOwnPropertyNames throws on null argument
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest118", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        Object.getOwnPropertyNames(asObj(null));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1190
+     * @tc.name objectConstructorTest119
+     * @tc.desc Verify Object.hasOwn throws on undefined argument
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest119", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        Object.hasOwn(asObj(undefined), 'k');
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1200
+     * @tc.name objectConstructorTest120
+     * @tc.desc Verify Object.hasOwn throws on null argument
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest120", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        Object.hasOwn(asObj(null), 'k');
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1210
+     * @tc.name objectConstructorTest121
+     * @tc.desc Verify Object.assign throws on undefined target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest121", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const bad: Record<string, Any> = undefined as Record<string, Any>;
+        const src: Record<string, Any> = { 'a': 1 };
+        Object.assign(bad, src);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1220
+     * @tc.name objectConstructorTest122
+     * @tc.desc Verify Object.assign throws on null target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest122", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const bad: Record<string, Any> = null as Record<string, Any>;
+        const src: Record<string, Any> = { 'a': 1 };
+        Object.assign(bad, src);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1230
+     * @tc.name objectConstructorTest123
+     * @tc.desc Verify Object.assign throws ClassCastError on null source
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest123", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const target: Record<string, Any> = {};
+        Object.assign(target, asObj(null));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1240
+     * @tc.name objectConstructorTest124
+     * @tc.desc Verify Object.assign throws ClassCastError on undefined source
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest124", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const target: Record<string, Any> = {};
+        Object.assign(target, asObj(undefined));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1250
+     * @tc.name objectConstructorTest125
+     * @tc.desc Verify new Object() toLocaleString returns [object Object]
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest125", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj: Object = new Object();
+      const result: String = obj.toLocaleString(undefined);
+      expect(result).assertEqual("[object Object]");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1260
+     * @tc.name objectConstructorTest126
+     * @tc.desc Verify Object.values returns "NaN" string for NaN value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest126", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'n': Double.NaN };
+      const vals: Any[] = Object.values(record);
+      let actual1: string = `${vals[0]!}`;
+      let expected1: string = "NaN";
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1270
+     * @tc.name objectConstructorTest127
+     * @tc.desc Verify Object.values returns "-Infinity" string for -Infinity value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest127", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'i': -Double.POSITIVE_INFINITY };
+      const vals: Any[] = Object.values(record);
+      let actual1: string = `${vals[0]!}`;
+      let expected1: string = "-Infinity";
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1280
+     * @tc.name objectConstructorTest128
+     * @tc.desc Verify Object.values stringifies -0 as -Infinity
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest128", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'z': -0.0 };
+      const vals: Any[] = Object.values(record);
+      const n: number = vals[0] as number;
+      let actual1: number = 1 / n;
+      let expected1: number = -Double.POSITIVE_INFINITY;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1290
+     * @tc.name objectConstructorTest129
+     * @tc.desc Verify Object.values returns "9007199254740991" string for max safe integer
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest129", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'm': 9007199254740991 };
+      const vals: Any[] = Object.values(record);
+      let actual1: string = `${vals[0]!}`;
+      let expected1: string = "9007199254740991";
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1300
+     * @tc.name objectConstructorTest130
+     * @tc.desc Verify Object.values preserves falsy values 0 empty string and false
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest130", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'z': 0, 's': '', 'b': false };
+      const vals: Any[] = Object.values(record);
+      let actual1: string = `${vals[0]!}`;
+      let expected1: string = `${0}`;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = vals[1]! as string;
+      let expected2: string = '';
+      expect(actual2).assertEqual(expected2);
+      let actual3: boolean = vals[2]! as boolean;
+      expect(actual3).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1310
+     * @tc.name objectConstructorTest131
+     * @tc.desc Verify Object.assign copies null value from source to target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest131", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { 'n': null };
+      Object.assign(target, source);
+      const vals: Any[] = Object.values(target);
+      let actualValue1: Any = vals[0];
+      let actualValue1IsNull: boolean = actualValue1 === null;
+      expect(actualValue1IsNull).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1320
+     * @tc.name objectConstructorTest132
+     * @tc.desc Verify Object.assign copies undefined value from source to target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest132", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { 'u': undefined };
+      Object.assign(target, source);
+      const vals: Any[] = Object.values(target);
+      let actualValue1: Any = vals[0];
+      let actualValue1IsUndefined: boolean = actualValue1 === undefined;
+      expect(actualValue1IsUndefined).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1330
+     * @tc.name objectConstructorTest133
+     * @tc.desc Verify new Object() hasOwnProperty returns false for any key
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest133", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj: Object = new Object();
+      const hit: boolean = obj.hasOwnProperty(Double.NaN);
+      expect(hit).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1340
+     * @tc.name objectConstructorTest134
+     * @tc.desc Verify new Object() toLocaleString with invalid locale returns [object Object]
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest134", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj: Object = new Object();
+      const result: String = obj.toLocaleString("not-a-locale!!");
+      expect(result).assertEqual("[object Object]");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1350
+     * @tc.name objectConstructorTest135
+     * @tc.desc Verify new Object() toLocaleString with long locale returns [object Object]
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest135", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj: Object = new Object();
+      let locale: string = '';
+      for (let i = 0; i < 200; i++) {
+        locale = locale + 'a';
+      }
+      const result: String = obj.toLocaleString(locale);
+      expect(result).assertEqual("[object Object]");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1360
+     * @tc.name objectConstructorTest136
+     * @tc.desc Verify new Object() toLocaleString with locale and options returns [object Object]
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest136", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj: Object = new Object();
+      const options: Object = new Object();
+      const result: String = obj.toLocaleString("xx_YY!!", options);
+      expect(result).assertEqual("[object Object]");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1370
+     * @tc.name objectConstructorTest137
+     * @tc.desc Verify new Object() creates object with 0 own keys
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest137", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj: Object = new Object();
+      const before: string[] = Object.keys(obj);
+      obj.toLocaleString("en");
+      const after: string[] = Object.keys(obj);
+      let actual1: int = before.length;
+      let expected1: int = 0;
+      expect(actual1).assertEqual(expected1);
+      let actual2: int = after.length;
+      let expected2: int = 0;
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1380
+     * @tc.name objectConstructorTest138
+     * @tc.desc Verify Object.assign copies source keys a b to target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest138", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { 'a': 1, 'b': 2 };
+      Object.assign(target, source);
+      const keys: string[] = Object.keys(target);
+      let actual1: int = keys.length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = keys[0]!;
+      let expected2: string = 'a';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = `${target['b']!}`;
+      let expected3: string = '2';
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1390
+     * @tc.name objectConstructorTest139
+     * @tc.desc Verify Object.assign later source overwrites earlier source key
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest139", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const s1: Record<string, Any> = { 'k': 1 };
+      const s2: Record<string, Any> = { 'k': 9 };
+      Object.assign(target, s1, s2);
+      let actual1: string = `${target['k']!}`;
+      let expected1: string = '9';
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1400
+     * @tc.name objectConstructorTest140
+     * @tc.desc Verify Object.assign copies source key to target without modifying source
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest140", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { 'v': 5 };
+      const before: string = `${source['v']!}`;
+      Object.assign(target, source);
+      const after: string = `${source['v']!}`;
+      expect(after).assertEqual(before);
+      let actual1: int = Object.keys(target).length;
+      let expected1: int = 1;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1410
+     * @tc.name objectConstructorTest141
+     * @tc.desc Verify Object.assign with no source leaves existing target keys
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest141", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = { "keep": 1 };
+      const result: Record<string, Any> = Object.assign(target);
+      const keys: string[] = Object.keys(result);
+      let actual1: int = keys.length;
+      let expected1: int = 1;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = keys[0]!;
+      let expected2: string = "keep";
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1420
+     * @tc.name objectConstructorTest142
+     * @tc.desc Verify new Object() as assign source leaves existing target keys
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest142", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = { 't': 1 };
+      const empty: Object = new Object();
+      Object.assign(target, empty);
+      const keys: string[] = Object.keys(target);
+      let actual1: int = keys.length;
+      let expected1: int = 1;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = keys[0]!;
+      let expected2: string = 't';
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1430
+     * @tc.name objectConstructorTest143
+     * @tc.desc Verify new Object() as assign source adds no keys to target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest143", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const empty: Object = new Object();
+      const src: Record<string, Any> = { 'x': 7 };
+      Object.assign(target, empty, src);
+      const vals: Any[] = Object.values(target);
+      let actual1: int = vals.length;
+      let expected1: int = 1;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = `${vals[0]!}`;
+      let expected2: string = `${7}`;
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1440
+     * @tc.name objectConstructorTest144
+     * @tc.desc Verify Object.assign copies array indices as target keys
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest144", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const arr: int[] = [10, 20];
+      Object.assign(target, arr);
+      let actual1: string = `${target['0']!}`;
+      let expected1: string = "10";
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = `${target['1']!}`;
+      let expected2: string = "20";
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1450
+     * @tc.name objectConstructorTest145
+     * @tc.desc Verify Object.assign merges array and object sources into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest145", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const arr: int[] = [5];
+      const src: Record<string, Any> = { "tag": 'T' };
+      Object.assign(target, arr, src);
+      let actual1: string = `${target['0']!}`;
+      let expected1: string = '5';
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = `${target['tag']!}`;
+      let expected2: string = 'T';
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1460
+     * @tc.name objectConstructorTest146
+     * @tc.desc Verify Object.assign with empty array source leaves existing target keys
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest146", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = { 'k': 1 };
+      const emptyArr: int[] = [];
+      Object.assign(target, emptyArr);
+      let actual1: int = Object.keys(target).length;
+      let expected1: int = 1;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1470
+     * @tc.name objectConstructorTest147
+     * @tc.desc Verify Object.assign copies instance own properties to target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest147", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      Object.assign(target, new Origin());
+      const keys: string[] = Object.keys(target);
+      let actual1: string = keys[0]!;
+      let expected1: string = "originX";
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = `${target['originX']!}`;
+      let expected2: string = '0';
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1480
+     * @tc.name objectConstructorTest148
+     * @tc.desc Verify Object.assign merges multiple sources into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest148", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const s1: Record<string, Any> = { 'a': 1 };
+      const s2: Record<string, Any> = { 'b': 2 };
+      const s3: Record<string, Any> = { 'c': 3 };
+      Object.assign(target, s1, s2, s3);
+      let actual1: int = Object.keys(target).length;
+      let expected1: int = 3;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = `${target['c']!}`;
+      let expected2: string = '3';
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1490
+     * @tc.name objectConstructorTest149
+     * @tc.desc Verify Object.assign last source wins for duplicate key
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest149", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const s1: Record<string, Any> = { 'k': 1 };
+      const s2: Record<string, Any> = { 'k': 2 };
+      const s3: Record<string, Any> = { 'k': 3 };
+      Object.assign(target, s1, s2, s3);
+      let actual1: string = `${target['k']!}`;
+      let expected1: string = '3';
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1500
+     * @tc.name objectConstructorTest150
+     * @tc.desc Verify Object.assign copies source keys z a m to target preserving order
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest150", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { 'z': 26, 'a': 1, 'm': 13 };
+      Object.assign(target, source);
+      const keys: string[] = Object.keys(target);
+      let actual1: string = keys[0]!;
+      let expected1: string = 'z';
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = keys[1]!;
+      let expected2: string = 'a';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = keys[2]!;
+      let expected3: string = 'm';
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1510
+     * @tc.name objectConstructorTest151
+     * @tc.desc Verify chained Object.assign merges source keys a b into target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest151", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const t1: Record<string, Any> = {};
+      const s1: Record<string, Any> = { 'a': 1 };
+      const s2: Record<string, Any> = { 'b': 2 };
+      const merged: Record<string, Any> = Object.assign(Object.assign(t1, s1), s2);
+      const keys: string[] = Object.keys(merged);
+      let actual1: int = keys.length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = keys[1]!;
+      let expected2: string = 'b';
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1520
+     * @tc.name objectConstructorTest152
+     * @tc.desc Verify Object.assign copies source key n to target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest152", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { 'n': 1 };
+      Object.assign(target, source);
+      let actual1: boolean = Object.hasOwn(target, 'n');
+      expect(actual1).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1530
+     * @tc.name objectConstructorTest153
+     * @tc.desc Verify Record after Object.assign hasOwnProperty returns true for own key n
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest153", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { 'n': 1 };
+      Object.assign(target, source);
+      let actual1: boolean = target.hasOwnProperty('n');
+      expect(actual1).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1540
+     * @tc.name objectConstructorTest154
+     * @tc.desc Verify Object.assign adds 2 source keys to existing target keys
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest154", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = { "pre": 0 };
+      const before: number = Object.keys(target).length;
+      const source: Record<string, Any> = { 'x': 1, 'y': 2 };
+      Object.assign(target, source);
+      const after: number = Object.keys(target).length;
+      expect(after).assertEqual(before + 2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1550
+     * @tc.name objectConstructorTest155
+     * @tc.desc Verify Object.assign merges source key k2 into target with existing key k1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest155", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = { "k1": 10 };
+      const source: Record<string, Any> = { "k2": 20 };
+      Object.assign(target, source);
+      const keys: string[] = Object.keys(target);
+      const vals: Any[] = Object.values(target);
+      let actual1: string = keys[0]!;
+      let expected1: string = "k1";
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = `${vals[0]!}`;
+      let expected2: string = `${10}`;
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = keys[1]!;
+      let expected3: string = "k2";
+      expect(actual3).assertEqual(expected3);
+      let actual4: string = `${vals[1]!}`;
+      let expected4: string = `${20}`;
+      expect(actual4).assertEqual(expected4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1560
+     * @tc.name objectConstructorTest156
+     * @tc.desc Verify Object.assign copies source key k to empty target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest156", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { 'k': 1 };
+      const keys: string[] = Object.keys(Object.assign(target, source));
+      let actual1: int = keys.length;
+      let expected1: int = 1;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = keys[0]!;
+      let expected2: string = 'k';
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1570
+     * @tc.name objectConstructorTest157
+     * @tc.desc Verify Object.assign copies source value to target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest157", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { 'v': 9 };
+      const vals: Any[] = Object.values(Object.assign(target, source));
+      let actual1: string = `${vals[0]!}`;
+      let expected1: string = `${9}`;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1580
+     * @tc.name objectConstructorTest158
+     * @tc.desc Verify Object.assign copies source entry e to target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest158", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { 'e': 4 };
+      const entries = Object.entries(Object.assign(target, source));
+      let actual1: int = entries.length;
+      let expected1: int = 1;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = entries[0]![0];
+      let expected2: string = 'e';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = `${entries[0]![1]}`;
+      let expected3: string = `${4}`;
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1590
+     * @tc.name objectConstructorTest159
+     * @tc.desc Verify Object.hasOwn returns true for own keys 0 and a of record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest159", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { '0': "zero", '1': "one", 'a': 'A' };
+      let actual1: boolean = Object.hasOwn(record, '0');
+      expect(actual1).assertTrue();
+      let actual2: boolean = Object.hasOwn(record, 'a');
+      expect(actual2).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1600
+     * @tc.name objectConstructorTest160
+     * @tc.desc Verify Object.keys of record returns index-like keys 0 and 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest160", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { '0': 10, '1': 20 };
+      const keys: string[] = Object.keys(record);
+      let actual1: int = keys.length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = keys[0]!;
+      let expected2: string = '0';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = keys[1]!;
+      let expected3: string = '1';
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1610
+     * @tc.name objectConstructorTest161
+     * @tc.desc Verify Object.keys of int array returns index keys 0 to 2
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest161", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: int[] = [10, 20, 30];
+      const keys: string[] = Object.keys(arr);
+      let actual1: int = keys.length;
+      let expected1: int = 3;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = keys[0]!;
+      let expected2: string = '0';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = keys[1]!;
+      let expected3: string = '1';
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1620
+     * @tc.name objectConstructorTest162
+     * @tc.desc Verify Object.values of int array returns 7 8 9
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest162", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: int[] = [7, 8, 9];
+      const vals: Any[] = Object.values(arr);
+      let actual1: int = vals.length;
+      let expected1: int = 3;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = `${vals[1]!}`;
+      let expected2: string = `${8}`;
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1630
+     * @tc.name objectConstructorTest163
+     * @tc.desc Verify Object.entries of int array returns index entries
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest163", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: int[] = [4, 5];
+      const entries = Object.entries(arr);
+      let actual1: int = entries.length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = entries[0]![0];
+      let expected2: string = '0';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = `${entries[0]![1]}`;
+      let expected3: string = `${4}`;
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1640
+     * @tc.name objectConstructorTest164
+     * @tc.desc Verify Object.getOwnPropertyNames of int array returns indices and length
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest164", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: int[] = [1, 2, 3];
+      const names: string[] = Object.getOwnPropertyNames(arr);
+      let actual1: int = names.length;
+      let expected1: int = 4;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = names[1]!;
+      let expected2: string = '1';
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1650
+     * @tc.name objectConstructorTest165
+     * @tc.desc Verify int array hasOwnProperty returns false for out-of-range indices 5 and 999
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest165", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inputs: int[][] = [[1, 2], [10, 20]];
+      const indices: int[] = [5, 999];
+      for (let caseIndex: int = 0; caseIndex < inputs.length; caseIndex++) {
+        const arr: int[] = inputs[caseIndex];
+        const hit: boolean = arr.hasOwnProperty(indices[caseIndex]);
+        expect(hit).assertFalse();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1660
+     * @tc.name objectConstructorTest166
+     * @tc.desc Verify new Object() hasOwnProperty returns true for own key "1"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest166", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: int[] = [1, 2];
+      const hit: boolean = arr.hasOwnProperty(1);
+      expect(hit).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1670
+     * @tc.name objectConstructorTest167
+     * @tc.desc Verify Object.values returns nested record reference as value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest167", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inner: Record<string, Any> = { "deep": 1 };
+      const outer: Record<string, Any> = { "level": inner };
+      const vals: Any[] = Object.values(outer);
+      let actual1: Object = vals[0]! as Object;
+      let expected1: Object = inner;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1680
+     * @tc.name objectConstructorTest168
+     * @tc.desc Verify Object.keys of nested record returns own keys level and plain
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest168", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inner: Record<string, Any> = { "deep": 1 };
+      const outer: Record<string, Any> = { "level": inner, "plain": 2 };
+      const keys: string[] = Object.keys(outer);
+      let actual1: int = keys.length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = keys[1]!;
+      let expected2: string = "plain";
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1690
+     * @tc.name objectConstructorTest169
+     * @tc.desc Verify nested object record access returns leaf value 9
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest169", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const deep: Record<string, Any> = { "leaf": 9 };
+      const mid: Record<string, Any> = { "node": deep };
+      const root: Record<string, Any> = { "top": mid };
+      const node: Record<string, Any> = root["top"] as Record<string, Any>;
+      const child: Record<string, Any> = node["node"] as Record<string, Any>;
+      const leaf: string = `${child['leaf']!}`;
+      expect(leaf).assertEqual('9');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1700
+     * @tc.name objectConstructorTest170
+     * @tc.desc Verify Object.assign copies nested object reference to target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest170", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inner: Record<string, Any> = { 'd': 6 };
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { "child": inner };
+      Object.assign(target, source);
+      const child: Record<string, Any> = target["child"] as Record<string, Any>;
+      let actual1: string = `${child['d']!}`;
+      let expected1: string = `${6}`;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1710
+     * @tc.name objectConstructorTest171
+     * @tc.desc Verify Object.assign copies source key child to target
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest171", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const inner: Record<string, Any> = { "deep": 3 };
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { "child": inner };
+      Object.assign(target, source);
+      const keys: string[] = Object.keys(target);
+      let actual1: int = keys.length;
+      let expected1: int = 1;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = keys[0]!;
+      let expected2: string = "child";
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1720
+     * @tc.name objectConstructorTest172
+     * @tc.desc Verify Object.assign overwrites existing target key child with source value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest172", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const origInner: Record<string, Any> = { 'a': 1 };
+      const target: Record<string, Any> = { "child": origInner };
+      const inner: Record<string, Any> = { 'b': 2 };
+      const source: Record<string, Any> = { "child": inner };
+      Object.assign(target, source);
+      const child: Record<string, Any> = target["child"] as Record<string, Any>;
+      const keys: string[] = Object.keys(child);
+      let actual1: int = keys.length;
+      let expected1: int = 1;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = keys[0]!;
+      let expected2: string = 'b';
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1730
+     * @tc.name objectConstructorTest173
+     * @tc.desc Verify new Object() toString returns [object Object]
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest173", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj: Object = new Object();
+      const k1: string[] = Object.keys(obj);
+      const objValues: Any[] = Object.values(obj);
+      const e1 = Object.entries(obj);
+      const n1: string[] = Object.getOwnPropertyNames(obj);
+      const t1: String = obj.toString();
+      let actual1: int = k1.length;
+      let expected1: int = 0;
+      expect(actual1).assertEqual(expected1);
+      let actual2: int = objValues.length;
+      let expected2: int = 0;
+      expect(actual2).assertEqual(expected2);
+      let actual3: int = e1.length;
+      let expected3: int = 0;
+      expect(actual3).assertEqual(expected3);
+      let actual4: int = n1.length;
+      let expected4: int = 0;
+      expect(actual4).assertEqual(expected4);
+      expect(t1).assertEqual("[object Object]");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1740
+     * @tc.name objectConstructorTest174
+     * @tc.desc Verify new Object() hasOwnProperty returns false for any key
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest174", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj: Object = new Object();
+      const h1: boolean = Object.hasOwn(obj, 'k');
+      const h2: boolean = obj.hasOwnProperty('k');
+      expect(h1).assertFalse();
+      expect(h2).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1750
+     * @tc.name objectConstructorTest175
+     * @tc.desc Verify new Object() hasOwnProperty returns true for own key "id"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest175", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const target: Record<string, Any> = {};
+      const source: Record<string, Any> = { "id": 7 };
+      const result: Record<string, Any> = Object.assign(target, source);
+      let actual1: int = Object.keys(result).length;
+      let expected1: int = 1;
+      expect(actual1).assertEqual(expected1);
+      let actual2: boolean = Object.hasOwn(result, "id");
+      expect(actual2).assertTrue();
+      let actual3: boolean = result.hasOwnProperty("id");
+      expect(actual3).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1760
+     * @tc.name objectConstructorTest176
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest176", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj: Object = new Object();
+      obj.toLocaleString("en-US");
+      const h1: int = obj.$_hashCode();
+      const h12: int = obj.$_hashCode();
+      expect(h1).assertEqual(h12);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1770
+     * @tc.name objectConstructorTest177
+     * @tc.desc Verify new Object() toString and toLocaleString add no own keys
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest177", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj: Object = new Object();
+      obj.toString();
+      obj.toLocaleString();
+      const keys: string[] = Object.keys(obj);
+      let actual1: int = keys.length;
+      let expected1: int = 0;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1780
+     * @tc.name objectConstructorTest178
+     * @tc.desc Verify Object.keys of Position instance returns own field names x y
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest178", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const keys: string[] = Object.keys(new Position());
+      let actual1: int = keys.length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = keys[0]!;
+      let expected2: string = 'x';
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1790
+     * @tc.name objectConstructorTest179
+     * @tc.desc Verify Object.values of Vec2 instance returns 1 and 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest179", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const vals: Any[] = Object.values(new Vec2());
+      let actual1: string = `${vals[0]!}`;
+      let expected1: string = `${1}`;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = `${vals[1]!}`;
+      let expected2: string = `${1}`;
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1800
+     * @tc.name objectConstructorTest180
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest180", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const box: Object = new Box002();
+      const h1: int = box.$_hashCode();
+      const h12: int = box.$_hashCode();
+      expect(h1).assertEqual(h12);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1810
+     * @tc.name objectConstructorTest181
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest181", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: number[] = [1, 2, 3];
+      const h1: int = arr.$_hashCode();
+      const h12: int = arr.$_hashCode();
+      expect(h1).assertEqual(h12);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1820
+     * @tc.name objectConstructorTest182
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest182", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const u: Object = new User();
+      const hash: int = u.$_hashCode();
+      const hash2: int = u.$_hashCode();
+      expect(hash).assertEqual(hash2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1830
+     * @tc.name objectConstructorTest183
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest183", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const it: Item = new Item();
+      const hash: int = it.$_hashCode();
+      const hash2: int = it.$_hashCode();
+      expect(hash).assertEqual(hash2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1840
+     * @tc.name objectConstructorTest184
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest184", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const p: Object = new Product();
+      const hash: int = p.$_hashCode();
+      const hash22: int = p.$_hashCode();
+      expect(hash).assertEqual(hash22);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1850
+     * @tc.name objectConstructorTest185
+     * @tc.desc Verify $_hashCode of Product instance is stable after name mutation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest185", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const p: Product = new Product();
+      const hash1: int = p.$_hashCode();
+      p.name = "eraser";
+      const hash22: int = p.$_hashCode();
+      expect(hash1).assertEqual(hash22);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1860
+     * @tc.name objectConstructorTest186
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest186", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const f: Object = new Flag001();
+      const hash: int = f.$_hashCode();
+      const hash2: int = f.$_hashCode();
+      expect(hash).assertEqual(hash2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1870
+     * @tc.name objectConstructorTest187
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest187", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const c: Object = new Cart();
+      const hash: int = c.$_hashCode();
+      const hash2: int = c.$_hashCode();
+      expect(hash).assertEqual(hash2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1880
+     * @tc.name objectConstructorTest188
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest188", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const o: Object = new Outer001();
+      const hash: int = o.$_hashCode();
+      const hash2: int = o.$_hashCode();
+      expect(hash).assertEqual(hash2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1890
+     * @tc.name objectConstructorTest189
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest189", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const d: Object = new EmptyData();
+      const hash: int = d.$_hashCode();
+      const hash2: int = d.$_hashCode();
+      expect(hash).assertEqual(hash2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1900
+     * @tc.name objectConstructorTest190
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest190", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const calc: Calculator = new Calculator();
+      const hash: int = calc.$_hashCode();
+      const hash2: int = calc.$_hashCode();
+      expect(hash).assertEqual(hash2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1910
+     * @tc.name objectConstructorTest191
+     * @tc.desc Verify Empty001 $_hashCode returns consistent int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest191", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const e: Empty001 = new Empty001();
+      const hash: int = e.$_hashCode();
+      const hash2: int = e.$_hashCode();
+      expect(hash).assertEqual(hash2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1920
+     * @tc.name objectConstructorTest192
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest192", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const dog: Dog = new Dog();
+      const hash: int = dog.$_hashCode();
+      const hash2: int = dog.$_hashCode();
+      expect(hash).assertEqual(hash2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1930
+     * @tc.name objectConstructorTest193
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest193", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const n1: Node = new Node();
+      const n2: Node = new Node();
+      const h1a: int = n1.$_hashCode();
+      const h1b: int = n1.$_hashCode();
+      const h2a: int = n2.$_hashCode();
+      const h2b: int = n2.$_hashCode();
+      expect(h1a).assertEqual(h1b);
+      expect(h2a).assertEqual(h2b);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1940
+     * @tc.name objectConstructorTest194
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest194", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const n: Node001 = new Node001();
+      const hash: int = n.$_hashCode();
+      const hash2: int = n.$_hashCode();
+      expect(hash).assertEqual(hash2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1950
+     * @tc.name objectConstructorTest195
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest195", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const n: Node002 = new Node002();
+      const hash: int = n.$_hashCode();
+      const hash2: int = n.$_hashCode();
+      expect(hash).assertEqual(hash2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1960
+     * @tc.name objectConstructorTest196
+     * @tc.desc Verify $_hashCode of Node003 instance returns stable int hash across calls
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest196", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const n: Node003 = new Node003();
+      const hash: int = n.$_hashCode();
+      const hash2: int = n.$_hashCode();
+      expect(hash).assertEqual(hash2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1970
+     * @tc.name objectConstructorTest197
+     * @tc.desc Verify boolean array $_hashCode returns consistent value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest197", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: boolean[] = [true, false];
+      const hash: int = arr.$_hashCode();
+      const hash2: int = arr.$_hashCode();
+      expect(hash).assertEqual(hash2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1980
+     * @tc.name objectConstructorTest198
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest198", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const matrix: number[][] = [
+        [3, 4],
+      ];
+      const hash: int = matrix.$_hashCode();
+      const hash2: int = matrix.$_hashCode();
+      expect(hash).assertEqual(hash2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_1990
+     * @tc.name objectConstructorTest199
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest199", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: string[] = ['x'];
+      const obj: Object = arr;
+      const hash: int = obj.$_hashCode();
+      const hash2: int = obj.$_hashCode();
+      expect(hash).assertEqual(hash2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2000
+     * @tc.name objectConstructorTest200
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: number[] = [1, 2, 3];
+      const hash1: int = arr.$_hashCode();
+      arr[0] = 100;
+      const hash22: int = arr.$_hashCode();
+      expect(hash1).assertEqual(hash22);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2010
+     * @tc.name objectConstructorTest201
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest201", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj: Object = new Object();
+      const hash: int = obj.$_hashCode();
+      const restored: number = Number(hash.toString());
+      expect(restored).assertEqual(hash);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2020
+     * @tc.name objectConstructorTest202
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest202", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj: Object = new Object();
+      const hash: int = obj.$_hashCode();
+      const parsed: number = parseFloat(hash.toString());
+      expect(parsed).assertEqual(hash);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2030
+     * @tc.name objectConstructorTest203
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest203", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const d: Demo = new Demo();
+      const hash: int = d.$_hashCode();
+      const hash2: int = d.$_hashCode();
+      expect(hash).assertEqual(hash2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2040
+     * @tc.name objectConstructorTest204
+     * @tc.desc Verify new Object() $_hashCode returns int hash value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest204", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Object = new Object();
+      const b: Object = new Object();
+      const ha: int = a.$_hashCode();
+      const hb: int = b.$_hashCode();
+      const ha2: int = a.$_hashCode();
+      expect(ha).assertEqual(ha2);
+      const hb2: int = b.$_hashCode();
+      expect(hb).assertEqual(hb2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_CONSTRUCTOR2_2050
+     * @tc.name objectConstructorTest205
+     * @tc.desc Verify new Object() Object.keys returns empty array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectConstructorTest205", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Object = new Object();
+      const ks: string[] = Object.keys(a);
+      expect(ks.length).assertEqual(0);
+      expect(ks.includes("x")).assertFalse();
+    });
   });
 }
