@@ -28,11 +28,11 @@ import {
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 class GridSnapOffsetProvider implements ScrollSnapOffsetProvider {
-  calculateApproachOffset(velocity: int, decayOffset: int): int {
+  calculateApproachOffset(velocity: double, decayOffset: double): double {
     return decayOffset;
   }
 
-  calculateSnapOffset(velocity: int): int {
+  calculateSnapOffset(velocity: double): double {
     return 0;
   }
 }
