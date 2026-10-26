@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, beforeEach, Level } from '@ohos/hypium-dynamic';
+import { describe, it, expect, beforeAll, beforeEach, Level } from '@ohos/hypium';
 import request from '@ohos.request';
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
@@ -2697,6 +2697,521 @@ export default function requestSupplementalDownTest() {
       } catch (err) {
         console.info(`====>SUB_Request_download_Supplemental_7900 catch err: ${JSON.stringify(err)}`);
         expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_download_Supplemental_8000
+     * @tc.number SUB_Request_download_Supplemental_8000
+     * @tc.desc   Download with notification.hideStopButton is true, mode BACKGROUND.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Request_download_Supplemental_8000', Level.LEVEL2, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_download_Supplemental_8000 is starting-----------------------");
+      let config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'http://127.0.0.1:3374',
+        data: '',
+        saveas: './SUB_Request_download_Supplemental_8000.txt',
+        mode: request.agent.Mode.BACKGROUND,
+        network: request.agent.Network.ANY,
+        overwrite: true,
+        notification: {
+          title: 'downloadTest',
+          text: 'hideStopButton true',
+          hideStopButton: true
+        }
+      } as request.agent.Config;
+      try {
+        let task = await request.agent.create(baseContext, config);
+        console.info(`====>SUB_Request_download_Supplemental_8000 config: ${JSON.stringify(task.config)}`);
+        expect(task.tid !== undefined).assertTrue();
+        let notification = task.config.notification;
+        expect(notification !== undefined).assertTrue();
+        if (notification !== undefined) {
+          let notificationStr = JSON.stringify(notification);
+          expect(notificationStr.includes('"hideStopButton":true')).assertTrue();
+        }
+        let on_completedCallback = async (pro: request.agent.Progress) => {
+          try {
+            task.off('completed', on_completedCallback);
+            console.info("====>SUB_Request_download_Supplemental_8000 pro.state: " + pro.state);
+            expect(pro.state === 64).assertTrue();
+            done();
+          } catch (err) {
+            console.info("====>SUB_Request_download_Supplemental_8000 completed err: " + JSON.stringify(err));
+            done();
+          }
+        }
+        task.on('completed', on_completedCallback);
+        await task.start();
+        console.info("====>SUB_Request_download_Supplemental_8000 start");
+      } catch (err) {
+        console.info("====>SUB_Request_download_Supplemental_8000 catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_download_Supplemental_8100
+     * @tc.number SUB_Request_download_Supplemental_8100
+     * @tc.desc   Download with notification.hideStopButton is false, mode BACKGROUND.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Request_download_Supplemental_8100', Level.LEVEL2, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_download_Supplemental_8100 is starting-----------------------");
+      let config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'http://127.0.0.1:3374',
+        data: '',
+        saveas: './SUB_Request_download_Supplemental_8100.txt',
+        mode: request.agent.Mode.BACKGROUND,
+        network: request.agent.Network.ANY,
+        overwrite: true,
+        notification: {
+          title: 'downloadTest',
+          text: 'hideStopButton false',
+          hideStopButton: false
+        }
+      } as request.agent.Config;
+      try {
+        let task = await request.agent.create(baseContext, config);
+        console.info(`====>SUB_Request_download_Supplemental_8100 config: ${JSON.stringify(task.config)}`);
+        expect(task.tid !== undefined).assertTrue();
+        let notification = task.config.notification;
+        expect(notification !== undefined).assertTrue();
+        if (notification !== undefined) {
+          let notificationStr = JSON.stringify(notification);
+          expect(notificationStr.includes('"hideStopButton":false')).assertTrue();
+        }
+        let on_completedCallback = async (pro: request.agent.Progress) => {
+          try {
+            task.off('completed', on_completedCallback);
+            console.info("====>SUB_Request_download_Supplemental_8100 pro.state: " + pro.state);
+            expect(pro.state === 64).assertTrue();
+            done();
+          } catch (err) {
+            console.info("====>SUB_Request_download_Supplemental_8100 completed err: " + JSON.stringify(err));
+            done();
+          }
+        }
+        task.on('completed', on_completedCallback);
+        await task.start();
+        console.info("====>SUB_Request_download_Supplemental_8100 start");
+      } catch (err) {
+        console.info("====>SUB_Request_download_Supplemental_8100 catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_download_Supplemental_8200
+     * @tc.number SUB_Request_download_Supplemental_8200
+     * @tc.desc   Download with notification.hideStopButton not set (default), mode BACKGROUND.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Request_download_Supplemental_8200', Level.LEVEL2, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_download_Supplemental_8200 is starting-----------------------");
+      let config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'http://127.0.0.1:3374',
+        data: '',
+        saveas: './SUB_Request_download_Supplemental_8200.txt',
+        mode: request.agent.Mode.BACKGROUND,
+        network: request.agent.Network.ANY,
+        overwrite: true,
+        notification: {
+          title: 'downloadTest',
+          text: 'default value test'
+        }
+      } as request.agent.Config;
+      try {
+        let task = await request.agent.create(baseContext, config);
+        console.info(`====>SUB_Request_download_Supplemental_8200 config: ${JSON.stringify(task.config)}`);
+        expect(task.tid !== undefined).assertTrue();
+        let notification = task.config.notification;
+        expect(notification !== undefined).assertTrue();
+        if (notification !== undefined) {
+          let notificationStr = JSON.stringify(notification);
+          console.info(`====>SUB_Request_download_Supplemental_8200 notificationStr: ${notificationStr}`);
+          expect(!notificationStr.includes('"hideStopButton"') ||
+            notificationStr.includes('"hideStopButton":false')).assertTrue();
+        }
+        let on_completedCallback = async (pro: request.agent.Progress) => {
+          try {
+            task.off('completed', on_completedCallback);
+            console.info("====>SUB_Request_download_Supplemental_8200 pro.state: " + pro.state);
+            expect(pro.state === 64).assertTrue();
+            done();
+          } catch (err) {
+            console.info("====>SUB_Request_download_Supplemental_8200 completed err: " + JSON.stringify(err));
+            done();
+          }
+        }
+        task.on('completed', on_completedCallback);
+        await task.start();
+        console.info("====>SUB_Request_download_Supplemental_8200 start");
+      } catch (err) {
+        console.info("====>SUB_Request_download_Supplemental_8200 catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_download_Supplemental_8300
+     * @tc.number SUB_Request_download_Supplemental_8300
+     * @tc.desc   Download with notification.hideStopButton is true, mode FOREGROUND.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Request_download_Supplemental_8300', Level.LEVEL2, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_download_Supplemental_8300 is starting-----------------------");
+      let config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'http://127.0.0.1:3374',
+        data: '',
+        saveas: './SUB_Request_download_Supplemental_8300.txt',
+        mode: request.agent.Mode.FOREGROUND,
+        network: request.agent.Network.ANY,
+        overwrite: true,
+        notification: {
+          title: 'downloadTest',
+          text: 'hideStopButton foreground',
+          hideStopButton: true
+        }
+      } as request.agent.Config;
+      try {
+        let task = await request.agent.create(baseContext, config);
+        console.info(`====>SUB_Request_download_Supplemental_8300 config: ${JSON.stringify(task.config)}`);
+        expect(task.tid !== undefined).assertTrue();
+        let notification = task.config.notification;
+        expect(notification !== undefined).assertTrue();
+        if (notification !== undefined) {
+          let notificationStr = JSON.stringify(notification);
+          expect(notificationStr.includes('"hideStopButton":true')).assertTrue();
+        }
+        await request.agent.remove(task.tid);
+        console.info("====>SUB_Request_download_Supplemental_8300 remove success");
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_download_Supplemental_8300 catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_download_Supplemental_8400
+     * @tc.number SUB_Request_download_Supplemental_8400
+     * @tc.desc   Download with notification.hideStopButton is true and full notification fields, mode BACKGROUND.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Request_download_Supplemental_8400', Level.LEVEL2, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_download_Supplemental_8400 is starting-----------------------");
+      let config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'http://127.0.0.1:3374',
+        data: '',
+        saveas: './SUB_Request_download_Supplemental_8400.txt',
+        mode: request.agent.Mode.BACKGROUND,
+        network: request.agent.Network.ANY,
+        overwrite: true,
+        notification: {
+          title: 'downloadTestNotification',
+          text: 'hideStopButton full notification',
+          hideStopButton: true
+        }
+      } as request.agent.Config;
+      try {
+        let task = await request.agent.create(baseContext, config);
+        console.info(`====>SUB_Request_download_Supplemental_8400 config: ${JSON.stringify(task.config)}`);
+        expect(task.tid !== undefined).assertTrue();
+        let notification = task.config.notification;
+        expect(notification !== undefined).assertTrue();
+        if (notification !== undefined) {
+          let notificationStr = JSON.stringify(notification);
+          expect(notificationStr.includes('"title":"downloadTestNotification"')).assertTrue();
+          expect(notificationStr.includes('"text":"hideStopButton full notification"')).assertTrue();
+          expect(notificationStr.includes('"hideStopButton":true')).assertTrue();
+        }
+        let on_completedCallback = async (pro: request.agent.Progress) => {
+          try {
+            task.off('completed', on_completedCallback);
+            console.info("====>SUB_Request_download_Supplemental_8400 pro.state: " + pro.state);
+            expect(pro.state === 64).assertTrue();
+            done();
+          } catch (err) {
+            console.info("====>SUB_Request_download_Supplemental_8400 completed err: " + JSON.stringify(err));
+            done();
+          }
+        }
+        task.on('completed', on_completedCallback);
+        await task.start();
+        console.info("====>SUB_Request_download_Supplemental_8400 start");
+      } catch (err) {
+        console.info("====>SUB_Request_download_Supplemental_8400 catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_download_Supplemental_8500
+     * @tc.number SUB_Request_download_Supplemental_8500
+     * @tc.desc   Download with notification.hideStopButton is null, mode BACKGROUND.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_download_Supplemental_8500', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_download_Supplemental_8500 is starting-----------------------");
+      let config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'http://127.0.0.1:3374',
+        data: '',
+        saveas: './SUB_Request_download_Supplemental_8500.txt',
+        mode: request.agent.Mode.BACKGROUND,
+        network: request.agent.Network.ANY,
+        overwrite: true,
+        notification: {
+          title: 'downloadTest',
+          text: 'hideStopButton null',
+          hideStopButton: null
+        }
+      } as request.agent.Config;
+      try {
+        let task = await request.agent.create(baseContext, config);
+        console.info(`====>SUB_Request_download_Supplemental_8500 config: ${JSON.stringify(task.config)}`);
+        expect(task.tid !== undefined).assertTrue();
+        await request.agent.remove(task.tid);
+        console.info("====>SUB_Request_download_Supplemental_8500 remove success");
+        done();
+      } catch (err) {
+        console.info(`====>SUB_Request_download_Supplemental_8500 catch err: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_download_Supplemental_8600
+     * @tc.number SUB_Request_download_Supplemental_8600
+     * @tc.desc   Download with notification.hideStopButton is string type, mode BACKGROUND.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_download_Supplemental_8600', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_download_Supplemental_8600 is starting-----------------------");
+      let config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'http://127.0.0.1:3374',
+        data: '',
+        saveas: './SUB_Request_download_Supplemental_8600.txt',
+        mode: request.agent.Mode.BACKGROUND,
+        network: request.agent.Network.ANY,
+        overwrite: true,
+        notification: {
+          title: 'downloadTest',
+          text: 'hideStopButton string',
+          hideStopButton: "true"
+        }
+      } as request.agent.Config;
+      try {
+        let task = await request.agent.create(baseContext, config);
+        console.info(`====>SUB_Request_download_Supplemental_8600 config: ${JSON.stringify(task.config)}`);
+        expect(task.tid !== undefined).assertTrue();
+        await request.agent.remove(task.tid);
+        console.info("====>SUB_Request_download_Supplemental_8600 remove success");
+        done();
+      } catch (err) {
+        console.info(`====>SUB_Request_download_Supplemental_8600 catch err: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_download_Supplemental_8700
+     * @tc.number SUB_Request_download_Supplemental_8700
+     * @tc.desc   Download with notification.hideStopButton is number type, mode BACKGROUND.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_download_Supplemental_8700', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_download_Supplemental_8700 is starting-----------------------");
+      let config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'http://127.0.0.1:3374',
+        data: '',
+        saveas: './SUB_Request_download_Supplemental_8700.txt',
+        mode: request.agent.Mode.BACKGROUND,
+        network: request.agent.Network.ANY,
+        overwrite: true,
+        notification: {
+          title: 'downloadTest',
+          text: 'hideStopButton number',
+          hideStopButton: 1
+        }
+      } as request.agent.Config;
+      try {
+        let task = await request.agent.create(baseContext, config);
+        console.info(`====>SUB_Request_download_Supplemental_8700 config: ${JSON.stringify(task.config)}`);
+        expect(task.tid !== undefined).assertTrue();
+        await request.agent.remove(task.tid);
+        console.info("====>SUB_Request_download_Supplemental_8700 remove success");
+        done();
+      } catch (err) {
+        console.info(`====>SUB_Request_download_Supplemental_8700 catch err: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_download_Supplemental_8800
+     * @tc.number SUB_Request_download_Supplemental_8800
+     * @tc.desc   Download callback with notification.hideStopButton is true, mode BACKGROUND.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Request_download_Supplemental_8800', Level.LEVEL2, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_download_Supplemental_8800 is starting-----------------------");
+      let config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'http://127.0.0.1:3374',
+        data: '',
+        saveas: './SUB_Request_download_Supplemental_8800.txt',
+        mode: request.agent.Mode.BACKGROUND,
+        network: request.agent.Network.ANY,
+        overwrite: true,
+        notification: {
+          title: 'downloadTest',
+          text: 'hideStopButton true callback',
+          hideStopButton: true
+        }
+      } as request.agent.Config;
+      try {
+        request.agent.create(baseContext, config, async (err, task) => {
+          let on_completedCallback = async (pro: request.agent.Progress) => {
+            try {
+              task.off('completed', on_completedCallback);
+              console.info("====>SUB_Request_download_Supplemental_8800 pro.state: " + pro.state);
+              expect(pro.state === 64).assertTrue();
+              done();
+            } catch (err) {
+              console.info("====>SUB_Request_download_Supplemental_8800 completed err: " + JSON.stringify(err));
+              done();
+            }
+          }
+          try {
+            if (err) {
+              console.info("====>SUB_Request_download_Supplemental_8800 create err: " + JSON.stringify(err));
+              expect().assertFail();
+              done();
+              return;
+            }
+            console.info(`====>SUB_Request_download_Supplemental_8800 config: ${JSON.stringify(task.config)}`);
+            expect(task.tid !== undefined).assertTrue();
+            let notification = task.config.notification;
+            expect(notification !== undefined).assertTrue();
+            if (notification !== undefined) {
+              let notificationStr = JSON.stringify(notification);
+              expect(notificationStr.includes('"hideStopButton":true')).assertTrue();
+            }
+            task.on('completed', on_completedCallback);
+            await task.start();
+            console.info("====>SUB_Request_download_Supplemental_8800 start");
+          } catch (err) {
+            console.info("====>SUB_Request_download_Supplemental_8800 catch err: " + JSON.stringify(err));
+            await request.agent.remove(task.tid);
+            done();
+          }
+        });
+      } catch (err) {
+        console.info("====>SUB_Request_download_Supplemental_8800 create catch err: " + JSON.stringify(err));
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_download_Supplemental_8900
+     * @tc.number SUB_Request_download_Supplemental_8900
+     * @tc.desc   Download callback with notification.hideStopButton is false, mode BACKGROUND.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Request_download_Supplemental_8900', Level.LEVEL2, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_download_Supplemental_8900 is starting-----------------------");
+      let config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'http://127.0.0.1:3374',
+        data: '',
+        saveas: './SUB_Request_download_Supplemental_8900.txt',
+        mode: request.agent.Mode.BACKGROUND,
+        network: request.agent.Network.ANY,
+        overwrite: true,
+        notification: {
+          title: 'downloadTest',
+          text: 'hideStopButton false callback',
+          hideStopButton: false
+        }
+      } as request.agent.Config;
+      try {
+        request.agent.create(baseContext, config, async (err, task) => {
+          let on_completedCallback = async (pro: request.agent.Progress) => {
+            try {
+              task.off('completed', on_completedCallback);
+              console.info("====>SUB_Request_download_Supplemental_8900 pro.state: " + pro.state);
+              expect(pro.state === 64).assertTrue();
+              done();
+            } catch (err) {
+              console.info("====>SUB_Request_download_Supplemental_8900 completed err: " + JSON.stringify(err));
+              done();
+            }
+          }
+          try {
+            if (err) {
+              console.info("====>SUB_Request_download_Supplemental_8900 create err: " + JSON.stringify(err));
+              expect().assertFail();
+              done();
+              return;
+            }
+            console.info(`====>SUB_Request_download_Supplemental_8900 config: ${JSON.stringify(task.config)}`);
+            expect(task.tid !== undefined).assertTrue();
+            let notification = task.config.notification;
+            expect(notification !== undefined).assertTrue();
+            if (notification !== undefined) {
+              let notificationStr = JSON.stringify(notification);
+              expect(notificationStr.includes('"hideStopButton":false')).assertTrue();
+            }
+            task.on('completed', on_completedCallback);
+            await task.start();
+            console.info("====>SUB_Request_download_Supplemental_8900 start");
+          } catch (err) {
+            console.info("====>SUB_Request_download_Supplemental_8900 catch err: " + JSON.stringify(err));
+            await request.agent.remove(task.tid);
+            done();
+          }
+        });
+      } catch (err) {
+        console.info("====>SUB_Request_download_Supplemental_8900 create catch err: " + JSON.stringify(err));
         done();
       }
     });
