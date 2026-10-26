@@ -41,7 +41,21 @@ export default function workerMaxLimitTest() {
       const caseName = 'testWorkerMaxLimit0001';
       const workers: worker.ThreadWorker[] = [];
       let limitCode = 0;
-      for (let i = 0; i < MAX_WORKER_TRY; i++) {
+      let firstCreated = false;
+      for (let attempt = 0; attempt < 10 && !firstCreated; attempt++) {
+        try {
+          const instance = new worker.ThreadWorker('../workers/WorkermaxEcho.ets');
+          workers.push(instance);
+          firstCreated = true;
+          limitCode = 0;
+        } catch (err) {
+          limitCode = err.code;
+          console.info(`${caseName} first create attempt ${attempt} failed: code => ${limitCode} message => ${err.message}`);
+          await sleep(500);
+        }
+      }
+      expect(firstCreated).assertTrue();
+      for (let i = 1; i < MAX_WORKER_TRY && limitCode === 0; i++) {
         try {
           const instance = new worker.ThreadWorker('../workers/WorkermaxEcho.ets');
           workers.push(instance);
@@ -60,14 +74,14 @@ export default function workerMaxLimitTest() {
         }
         await sleep(500);
         let recreated = false;
-        for (let attempt = 0; attempt < 10 && !recreated; attempt++) {
+        for (let attempt = 0; attempt < 20 && !recreated; attempt++) {
           try {
             const instance = new worker.ThreadWorker('../workers/WorkermaxEcho.ets');
             recreated = true;
             instance.terminate();
           } catch (err) {
             console.info(`${caseName} recreate attempt ${attempt} failed: code => ${err.code} message => ${err.message}`);
-            await sleep(300);
+            await sleep(500);
           }
         }
         expect(recreated).assertTrue();

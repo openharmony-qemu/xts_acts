@@ -16,6 +16,6 @@ import ActsWorkerMixTest from './WorkermixTest.test'
 import WorkerMaxLimitTest from './WorkermaxLimit.test'
 
 export default function testsuite() {
-  ActsWorkerMixTest();
   WorkerMaxLimitTest();
+  ActsWorkerMixTest();
 }
