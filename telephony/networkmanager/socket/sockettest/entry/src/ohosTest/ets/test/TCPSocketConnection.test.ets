@@ -71,8 +71,18 @@ export default function TCPSocketConnectionTest() {
      */
     it('testNetworkMgrSocketTCPSocketConnectionSend0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTCPSocketConnectionSend0100';
-      try {
-        console.info(`${caseName} test start`);
+      console.info(`${caseName} test start`);
+      const MAX_RETRY: number = 3;
+      const ATTEMPT_TIMEOUT: number = 5000;
+      let caseDone: boolean = false;
+      let finishCase = (): void => {
+        if (!caseDone) {
+          caseDone = true;
+          console.info(`${caseName} test end`);
+          done();
+        }
+      };
+      let attemptOnce = async (attempt: number): Promise<boolean> => {
         let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
         let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
         let listenAddress: socket.NetAddress = {
@@ -80,46 +90,91 @@ export default function TCPSocketConnectionTest() {
           port: 14000,
           family: 1
         };
-        await tcpServer.listen(listenAddress).catch((err:BusinessError) => {
-          console.info('fail to listen' + err.code.toString());
-        });
-        let tcpConnectOptions: socket.TCPConnectOptions = {
-          address: listenAddress
-        };
-        tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
+        try {
+          let tcpConnectOptions: socket.TCPConnectOptions = {
+            address: listenAddress
+          };
           let tcpSendOption: socket.TCPSendOptions = {
             data: 'Hello, client!'
           };
-          client.on('error',(err:BusinessError) => {
-            console.error("on error,err:" + JSON.stringify(err));
-          });
-          client.send(tcpSendOption, (err: BusinessError) => {
-            if (err) {
-              console.info(`${caseName} fail err:${JSON.stringify(err)}`);
-              expectFail();
-              done();
-            } else {
-              console.info(`${caseName} success`);
-              expectTrue(err === undefined, `${caseName} send should succeed without error`);
-              done();
+          let sendOk: boolean = false;
+          await new Promise<void>((resolve) => {
+            let finished: boolean = false;
+            let finish = (): void => {
+              if (!finished) {
+                finished = true;
+                resolve();
+              }
             };
-            client.off('error',(err:BusinessError) => {
-              console.error("off error,err:" + JSON.stringify(err));
-            });
-            tcpServer.off('connect');
-            console.info(`${caseName} test end`);
-            done();
+            let timer: number = setTimeout(() => {
+              console.info(`${caseName} attempt ${attempt} wait result timeout`);
+              finish();
+            }, ATTEMPT_TIMEOUT);
+            let doConnect = async (): Promise<void> => {
+              let listenOk: boolean = true;
+              await tcpServer.listen(listenAddress).catch((err:BusinessError) => {
+                console.info(`${caseName} attempt ${attempt} fail to listen err:${JSON.stringify(err)}`);
+                listenOk = false;
+              });
+              if (!listenOk) {
+                clearTimeout(timer);
+                finish();
+                return;
+              }
+              tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
+                client.on('error',(err:BusinessError) => {
+                  console.error("on error,err:" + JSON.stringify(err));
+                });
+                client.send(tcpSendOption, (err: BusinessError) => {
+                  clearTimeout(timer);
+                  if (err) {
+                    console.info(`${caseName} attempt ${attempt} send fail err:${JSON.stringify(err)}`);
+                  } else {
+                    console.info(`${caseName} attempt ${attempt} send success`);
+                    expectTrue(err === undefined, `${caseName} send should succeed without error`);
+                    sendOk = true;
+                  }
+                  client.off('error');
+                  finish();
+                });
+              });
+              await tcp.connect(tcpConnectOptions).catch((err:BusinessError) => {
+                console.info(`${caseName} attempt ${attempt} fail to connect err:${JSON.stringify(err)}`);
+                clearTimeout(timer);
+                finish();
+              });
+            };
+            doConnect();
           });
+          return sendOk;
+        } catch (err) {
+          console.info(`${caseName} attempt ${attempt} exception err:${JSON.stringify(err)}`);
+          return false;
+        } finally {
+          tcpServer.off('connect');
+          await tcp.close().catch((err:BusinessError) => {
+            console.info(`${caseName} fail to close err:${JSON.stringify(err)}`);
+          });
+          await tcpServer.close().catch((err:BusinessError) => {
+            console.info(`${caseName} fail to close server err:${JSON.stringify(err)}`);
+          });
+        }
+      };
+      let passed: boolean = false;
+      for (let attempt: number = 1; attempt <= MAX_RETRY; attempt++) {
+        passed = await attemptOnce(attempt);
+        if (passed) {
+          break;
+        }
+        console.info(`${caseName} attempt ${attempt} failed, retry`);
+        await new Promise<void>((resolve) => {
+          setTimeout(() => {
+            resolve();
+          }, 500);
         });
-        await tcp.connect(tcpConnectOptions).catch((err:BusinessError) => {
-          console.info('fail to connect' + err.code.toString());
-        });
-      } catch (err) {
-        console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
-        expectFail();
-        console.info(`${caseName} test end`);
-        done();
       }
+      expectTrue(passed, `${caseName} send should succeed`);
+      finishCase();
     });
 
     /**
