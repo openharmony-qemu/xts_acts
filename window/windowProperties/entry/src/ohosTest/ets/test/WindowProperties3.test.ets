@@ -1424,7 +1424,7 @@ export default function windowPropertiesTest3() {
         let envSystemDensityText = await button.getText();
         console.info(`${message} envSystemDensity from page: ${envSystemDensityText}`);
       
-        expect(envSystemDensity).assertEqual(systemDensityFromApi);
+        expect(envSystemDensityText).assertEqual(systemDensityFromApi);
         console.info(`${message} Succeeded. envSystemDensity equals systemDensity from API.`);
         
         done();
