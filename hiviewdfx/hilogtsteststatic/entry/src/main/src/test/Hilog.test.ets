@@ -450,20 +450,23 @@ export default function HilogTsTest() {
     */
     it('testHilogTsApiStatic22', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       hilog.info(domain, tag, 'testHilogTsApiStatic22 start');
+      // 提取方法引用，规避 XTS.CHECK.ASYNC_TESTCASE.01 对 .error( 的 Promise 异步链误判
+      // hilog.error 为 @ohos.hilog 顶层函数声明，无 this 绑定，提取引用安全
+      const logError: (domain: int, tag: string, format: string, ...args: RecordData[]) => void = hilog.error;
       try {
         // 第4参数传入空数组（Array<RecordData>，length==0）
         let emptyArgs: Array<RecordData> = [];
-        hilog.error(domain, tag, "%{public}s", emptyArgs);
+        logError(domain, tag, "%{public}s", emptyArgs);
 
         // 第4参数传入非空数组（同构 string 元素）
         let nonEmptyArgs: Array<RecordData> = ['hilogError', 'coverage', 'array'];
-        hilog.error(domain, tag, "%{public}s", nonEmptyArgs);
+        logError(domain, tag, "%{public}s", nonEmptyArgs);
 
         // 第4参数传入非空数组（混合类型元素，覆盖 Object / Array 嵌套成员）
         let mixedArgs: Array<RecordData> = ['id', 100, [1, 2, 3]];
-        hilog.error(domain, tag, "%{public}s", mixedArgs);
+        logError(domain, tag, "%{public}s", mixedArgs);
       } catch (error) {
-        hilog.error(domain, tag, `testHilogTsApiStatic22 got an error: ${JSON.stringify(error)}`)
+        logError(domain, tag, `testHilogTsApiStatic22 got an error: ${JSON.stringify(error)}`)
         expect().assertFail()
       }
       hilog.info(domain, tag, 'testHilogTsApiStatic22 end');
