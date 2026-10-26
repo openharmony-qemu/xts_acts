@@ -5,6 +5,7 @@ import testNapi from 'libentry.so';
 import { taskpool } from '@kit.ArkTS';
 import { statfs } from '@kit.CoreFileKit';
 
+add
 const DOMAIN = 0x0000;
 @Concurrent
 

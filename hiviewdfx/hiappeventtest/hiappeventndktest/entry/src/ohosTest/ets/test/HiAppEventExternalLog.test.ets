@@ -3,6 +3,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import { BusinessError } from '@kit.BasicServicesKit';
 import testNapi from 'libentry.so'
 
+add
 export function asyncSleep(time: number): Promise<Object> {
   return new Promise(resolve => setTimeout(resolve, time));
 }

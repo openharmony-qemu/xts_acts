@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+add
 import { describe, it, expect, TestType, Level, Size } from '@ohos/hypium';
 import hiappevent from 'libentry.so';
 import fs from '@ohos.file.fs';

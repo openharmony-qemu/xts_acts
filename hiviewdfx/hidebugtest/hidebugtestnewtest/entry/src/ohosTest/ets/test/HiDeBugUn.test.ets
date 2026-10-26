@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+add
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level} from "@ohos/hypium"
 import hidebug from '@ohos.hidebug'
 import featureAbility from '@ohos.ability.featureAbility';

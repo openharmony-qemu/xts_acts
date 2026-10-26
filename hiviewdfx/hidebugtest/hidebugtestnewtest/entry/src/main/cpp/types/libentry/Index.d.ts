@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+add
 export const add: (a: number, b: number) => number;
 import hidebug from '@ohos.hidebug';
 export const getNativeMemInfoTrue: () => hidebug.NativeMemInfo;

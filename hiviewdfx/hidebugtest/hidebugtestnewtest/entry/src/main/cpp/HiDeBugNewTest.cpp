@@ -13,6 +13,7 @@
  * limitations under the License.
  */
  
+ add
 #include "napi/native_api.h"
 #include "hidebug/hidebug.h"
 #include "hidebug/hidebug_type.h"

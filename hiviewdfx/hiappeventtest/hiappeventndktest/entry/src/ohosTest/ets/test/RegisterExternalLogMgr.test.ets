@@ -2,6 +2,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import hilog from '@ohos.hilog';
 import testNapi from 'libentry.so';
 
+add
 const DOMAIN = 0x0000;
 const TAG = 'RegisterExternalLogMgr';
 

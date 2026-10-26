@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+ add
 import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll} from "../../../hypium/index";
 import hilog from '@ohos.hilog'
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识

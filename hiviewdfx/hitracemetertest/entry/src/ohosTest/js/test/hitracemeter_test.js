@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+add
 import hiTraceMeter from "@ohos.hiTraceMeter"
 import hilog from '@ohos.hilog'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level} from '@ohos/hypium'
