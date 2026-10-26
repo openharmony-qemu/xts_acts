@@ -12,7 +12,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-add
 export const add: (a: number, b: number) => number;
 export const stopProfiler: () => number;
 export const testCreateProfilerOptions: () => number;
@@ -62,3 +61,14 @@ export const testGetProfilerOptionsDefaults: () => {
 export const testSetStackTraceMode: (mode: number) => number;
 export const testSetStackTraceModeNull: () => number;
 export const testStartProfilerWithOptionsStackTraceMode: (resourceType: number, maxDuration: number, stackTraceMode: number) => number;
+// Additional coverage functions
+export const testCreateProfilerOptionsNullCheck: () => number;
+export const testDestroyProfilerOptionsValid: () => number;
+export const testStartProfilerWithDMA: () => number;
+export const testStartProfilerWithASHMEM: () => number;
+export const testStartProfilerWithCompositeHeap: () => number;
+export const testSetStackTraceModeDiscardDestroyed: () => number;
+export const testSetStackTraceModeKeepAll: () => number;
+export const testStartProfilerWithDMAAndDiscardMode: () => number;
+export const testStartProfilerWithAshmemAndKeepAllMode: () => number;
+export const testStartProfilerWithCompositeHeapAndDiscardMode: () => number;
