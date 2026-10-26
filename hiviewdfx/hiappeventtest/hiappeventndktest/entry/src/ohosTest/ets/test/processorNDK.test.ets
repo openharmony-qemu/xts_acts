@@ -610,8 +610,8 @@ export default function processorNDKTest() {
       */
     it('SUB_DFX_DFT_HiAppEvent_Processor_Code_3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)  => {
       try{
-        const processor = testNapi.CreateProcessor("124")
-        const result = testNapi.DestroyProcessor(processor);
+        const processor = hiappevent.CreateProcessor("124")
+        const result = hiappevent.DestroyProcessor(processor);
         done();
       }catch(err){
         console.error(`====>SUB_DFX_DFT_HiAppEvent_Processor_Code_3800 catch > error code: ${err.code}, error msg: ${err.message}`)
