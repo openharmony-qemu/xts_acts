@@ -965,7 +965,7 @@ export default function HidebugTest() {
 
     /**
      * @tc.name   HidebugTest_0042
-     * @tc.number HidebugTest_0042
+     * @tc.number SUB_DFX_DFR_Hidebug_Interface_0042
      * @tc.desc   startProfiling函数的边界值覆盖,filename长度为1(最小有效长度)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -988,7 +988,7 @@ export default function HidebugTest() {
     });
     /**
      * @tc.name   HidebugTest_0043
-     * @tc.number HidebugTest_0043
+     * @tc.number SUB_DFX_DFR_Hidebug_Interface_0043
      * @tc.desc   startProfiling函数的边界值覆盖,filename长度为127(接近最大长度128)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1012,7 +1012,7 @@ export default function HidebugTest() {
     });
     /**
      * @tc.name   HidebugTest_0044
-     * @tc.number HidebugTest_0044
+     * @tc.number SUB_DFX_DFR_Hidebug_Interface_0044
      * @tc.desc   startProfiling函数的边界值覆盖,filename长度为128(最大有效长度)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1036,7 +1036,7 @@ export default function HidebugTest() {
     });
     /**
      * @tc.name   HidebugTest_0045
-     * @tc.number HidebugTest_0045
+     * @tc.number SUB_DFX_DFR_Hidebug_Interface_0045
      * @tc.desc   startProfiling函数的边界值覆盖,filename长度为129(超过最大长度128,预期报错或截断)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1061,7 +1061,7 @@ export default function HidebugTest() {
 
     /**
      * @tc.name   HidebugTest_0046
-     * @tc.number HidebugTest_0046
+     * @tc.number SUB_DFX_DFR_Hidebug_Interface_0046
      * @tc.desc   dumpHeapData函数的边界值覆盖,filename长度为1(最小有效长度)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1082,7 +1082,7 @@ export default function HidebugTest() {
     });
     /**
      * @tc.name   HidebugTest_0047
-     * @tc.number HidebugTest_0047
+     * @tc.number SUB_DFX_DFR_Hidebug_Interface_0047
      * @tc.desc   dumpHeapData函数的边界值覆盖,filename长度为127(接近最大长度128)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1104,7 +1104,7 @@ export default function HidebugTest() {
     });
     /**
      * @tc.name   HidebugTest_0048
-     * @tc.number HidebugTest_0048
+     * @tc.number SUB_DFX_DFR_Hidebug_Interface_0048
      * @tc.desc   dumpHeapData函数的边界值覆盖,filename长度为128(最大有效长度)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1126,7 +1126,7 @@ export default function HidebugTest() {
     });
     /**
      * @tc.name   HidebugTest_0049
-     * @tc.number HidebugTest_0049
+     * @tc.number SUB_DFX_DFR_Hidebug_Interface_0049
      * @tc.desc   dumpHeapData函数的边界值覆盖,filename长度为129(超过最大长度128,预期报错或截断)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1149,7 +1149,7 @@ export default function HidebugTest() {
 
     /**
      * @tc.name   HidebugTest_0050
-     * @tc.number HidebugTest_0050
+     * @tc.number SUB_DFX_DFR_Hidebug_Interface__0050
      * @tc.desc   startJsCpuProfiling函数的边界值覆盖,filename长度为1(最小有效长度)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1172,7 +1172,7 @@ export default function HidebugTest() {
     });
     /**
      * @tc.name   HidebugTest_0051
-     * @tc.number HidebugTest_0051
+     * @tc.number SUB_DFX_DFR_Hidebug_Interface__0051
      * @tc.desc   startJsCpuProfiling函数的边界值覆盖,filename长度为127(接近最大长度128)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1196,7 +1196,7 @@ export default function HidebugTest() {
     });
     /**
      * @tc.name   HidebugTest_0052
-     * @tc.number HidebugTest_0052
+     * @tc.number SUB_DFX_DFR_Hidebug_Interface__0052
      * @tc.desc   startJsCpuProfiling函数的边界值覆盖,filename长度为128(最大有效长度)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1220,7 +1220,7 @@ export default function HidebugTest() {
     });
     /**
      * @tc.name   HidebugTest_0053
-     * @tc.number HidebugTest_0053
+     * @tc.number SUB_DFX_DFR_Hidebug_Interface__0053
      * @tc.desc   startJsCpuProfiling函数的边界值覆盖,filename长度为129(超过最大长度128,预期报错或截断)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
