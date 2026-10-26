@@ -1595,6 +1595,7 @@ static napi_value Init(napi_env env, napi_value exports)
         {"addthread", nullptr, AddThread, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"clearthreads", nullptr, ClearThreads, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"start", nullptr, Start, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"Start_Errcode", nullptr, Start_Errcode, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"starterrstack", nullptr, StartErrStack, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"starterrconfig", nullptr, StartErrConfig, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"starterrconfigtid", nullptr, StartErrConfigtid, nullptr, nullptr, nullptr, napi_default, nullptr},
