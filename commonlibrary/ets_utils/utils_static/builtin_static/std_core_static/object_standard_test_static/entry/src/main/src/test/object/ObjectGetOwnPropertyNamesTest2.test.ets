@@ -1878,5 +1878,1881 @@ export default function objectGetOwnPropertyNamesTest2(): void {
       let expected4: string = "my key";
       expect(actual4).assertEqual(expected4);
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_0990
+     * @tc.name objectGetOwnPropertyNamesTest099
+     * @tc.desc Verify Object.getOwnPropertyNames returns names array with 1 elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest099", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const nestedRecord: Record<string, Any> = { "inner": 1 };
+      const record: Record<string, Any> = { "outer": nestedRecord };
+      const names1: string[] = Object.getOwnPropertyNames(record);
+      const ref: Object = record;
+      const names2: string[] = Object.getOwnPropertyNames(ref);
+      let actual1: int = names1.length;
+      let expected1: int = 1;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = names1[0]!;
+      let expected2: string = "outer";
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = names2[0]!;
+      let expected3: string = "outer";
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1000
+     * @tc.name objectGetOwnPropertyNamesTest100
+     * @tc.desc Verify Object.getOwnPropertyNames returns names array with 2 elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { "gap": undefined, "keep": 1 };
+      const names1: string[] = Object.getOwnPropertyNames(record);
+      const ref: Object = record;
+      const names2: string[] = Object.getOwnPropertyNames(ref);
+      let actual1: int = names1.length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: int = names2.length;
+      let expected2: int = 2;
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = names1[0]!;
+      let expected3: string = "gap";
+      expect(actual3).assertEqual(expected3);
+      let actual4: string = names2[0]!;
+      let expected4: string = "gap";
+      expect(actual4).assertEqual(expected4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1010
+     * @tc.name objectGetOwnPropertyNamesTest101
+     * @tc.desc Verify Object.getOwnPropertyNames returns names array with 2 elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest101", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { "empty": null, "full": 2 };
+      const names1: string[] = Object.getOwnPropertyNames(record);
+      const ref: Object = record;
+      const names2: string[] = Object.getOwnPropertyNames(ref);
+      let actual1: int = names1.length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: int = names2.length;
+      let expected2: int = 2;
+      expect(actual2).assertEqual(expected2);
+      let actual3: int = names1.indexOf("empty");
+      let expected3: int = 0;
+      expect(actual3).assertEqual(expected3);
+      let actual4: int = names2.indexOf("empty");
+      let expected4: int = 0;
+      expect(actual4).assertEqual(expected4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1020
+     * @tc.name objectGetOwnPropertyNamesTest102
+     * @tc.desc Verify Object.getOwnPropertyNames returns names array with "a" elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest102", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'a': 1, 'b': 2, 'c': 3 };
+      const ref: Object = record;
+      const n1: string[] = Object.getOwnPropertyNames(record);
+      const n2: string[] = Object.getOwnPropertyNames(ref);
+      let actual1: string = n1[0]!;
+      let expected1: string = 'a';
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = n2[1]!;
+      let expected2: string = 'b';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = n1[2]!;
+      let expected3: string = 'c';
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1030
+     * @tc.name objectGetOwnPropertyNamesTest103
+     * @tc.desc Verify Object.getOwnPropertyNames returns names array with 2 elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest103", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'a': 1 };
+      const ref: Object = record;
+      const names1: string[] = Object.getOwnPropertyNames(record);
+      const names2: string[] = Object.getOwnPropertyNames(ref);
+      names1.push("fake");
+      let actual1: int = names1.length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: int = names2.length;
+      let expected2: int = 1;
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = names2[0]!;
+      let expected3: string = 'a';
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1040
+     * @tc.name objectGetOwnPropertyNamesTest104
+     * @tc.desc Verify Object.getOwnPropertyNames returns names array with "x,y,z" elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest104", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'x': 1, 'y': 2, 'z': 3 };
+      const ref: Object = record;
+      const names1: string[] = Object.getOwnPropertyNames(record);
+      const names2: string[] = Object.getOwnPropertyNames(ref);
+      let actual1: string = names1.join(',');
+      let expected1: string = "x,y,z";
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = names2.join(',');
+      let expected2: string = "x,y,z";
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1050
+     * @tc.name objectGetOwnPropertyNamesTest105
+     * @tc.desc Verify Object.getOwnPropertyNames returns names array with 2 elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest105", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r1: Record<string, Any> = { 'm': 1, 'n': 2 };
+      const r2: Record<string, Any> = {};
+      r2['m'] = 1;
+      r2['n'] = 2;
+      const n1: string[] = Object.getOwnPropertyNames(r1);
+      let actual1: int = n1.length;
+      let expected1: number = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = n1[0]!;
+      let expected2: string = 'm';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = n1[1]!;
+      let expected3: string = 'n';
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1060
+     * @tc.name objectGetOwnPropertyNamesTest106
+     * @tc.desc Verify Object.getOwnPropertyNames returns 4 names (3 indices plus length) for array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest106", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Array<string> = ['p', 'q', 'r'];
+      const names: string[] = Object.getOwnPropertyNames(arr);
+      let actual1: int = names.length;
+      let expected1: int = 4;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = names[0]!;
+      let expected2: string = '0';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = names[1]!;
+      let expected3: string = '1';
+      expect(actual3).assertEqual(expected3);
+      let actual4: string = names[3]!;
+      let expected4: string = "length";
+      expect(actual4).assertEqual(expected4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1070
+     * @tc.name objectGetOwnPropertyNamesTest107
+     * @tc.desc Verify Object.getOwnPropertyNames returns names array with "0" elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest107", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: number[] = [10, 20, 30];
+      const names: string[] = Object.getOwnPropertyNames(arr);
+      let actual1: string = names[0]!;
+      let expected1: string = '0';
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = names[1]!;
+      let expected2: string = '1';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = names[2]!;
+      let expected3: string = '2';
+      expect(actual3).assertEqual(expected3);
+      let actual4: string = names[3]!;
+      let expected4: string = "length";
+      expect(actual4).assertEqual(expected4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1080
+     * @tc.name objectGetOwnPropertyNamesTest108
+     * @tc.desc Verify Object.getOwnPropertyNames returns 1 names for array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest108", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: string[] = [];
+      const names: string[] = Object.getOwnPropertyNames(arr);
+      let actual1: int = names.length;
+      let expected1: int = 1;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = names[0]!;
+      let expected2: string = "length";
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1090
+     * @tc.name objectGetOwnPropertyNamesTest109
+     * @tc.desc Verify Object.getOwnPropertyNames returns 3 names for array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest109", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Array<Array<number>> = [[1], [2]];
+      const names: string[] = Object.getOwnPropertyNames(arr);
+      let actual1: int = names.length;
+      let expected1: int = 3;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = names[0]!;
+      let expected2: string = '0';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = names[1]!;
+      let expected3: string = '1';
+      expect(actual3).assertEqual(expected3);
+      let actual4: string = names[2]!;
+      let expected4: string = "length";
+      expect(actual4).assertEqual(expected4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1100
+     * @tc.name objectGetOwnPropertyNamesTest110
+     * @tc.desc Verify Object.getOwnPropertyNames returns names array with 3 elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest110", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: string[] = ['a', 'b'];
+      const obj: Record<string, Any> = { '0': 'a', '1': 'b', "length": 2 };
+      const names1: string[] = Object.getOwnPropertyNames(arr);
+      const names2: string[] = Object.getOwnPropertyNames(obj);
+      let actual1: int = names1.length;
+      let expected1: number = 3;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = names1[0]!;
+      let expected2: string = '0';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = names1[1]!;
+      let expected3: string = '1';
+      expect(actual3).assertEqual(expected3);
+      let actual4: string = names1[2]!;
+      let expected4: string = "length";
+      expect(actual4).assertEqual(expected4);
+      expect(names2.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1110
+     * @tc.name objectGetOwnPropertyNamesTest111
+     * @tc.desc Verify Object.getOwnPropertyNames returns names array with 3 elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest111", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arrS: Array<string> = ['a', 'b'];
+      const arrN: number[] = [1, 2];
+      const names1: string[] = Object.getOwnPropertyNames(arrS);
+      let actual1: int = names1.length;
+      let expected1: number = 3;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = names1[0]!;
+      let expected2: string = '0';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = names1[2]!;
+      let expected3: string = "length";
+      expect(actual3).assertEqual(expected3);
+      expect(arrN.length).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1120
+     * @tc.name objectGetOwnPropertyNamesTest112
+     * @tc.desc Verify Object.getOwnPropertyNames returns names array with "0" elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest112", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: string[] = ['a', 'b'];
+      const names1: string[] = Object.getOwnPropertyNames(arr);
+      let actual1: string = names1[0]!;
+      let expected1: string = '0';
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = names1[1]!;
+      let expected2: string = '1';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = names1[2]!;
+      let expected3: string = "length";
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1130
+     * @tc.name objectGetOwnPropertyNamesTest113
+     * @tc.desc Verify Object.getOwnPropertyNames returns 3 names for array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest113", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: string[] = ['a', 'b'];
+      arr[0] = 'z';
+      const names: string[] = Object.getOwnPropertyNames(arr);
+      let actual1: int = names.length;
+      let expected1: int = 3;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = names[0]!;
+      let expected2: string = '0';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = names[2]!;
+      let expected3: string = "length";
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1140
+     * @tc.name objectGetOwnPropertyNamesTest114
+     * @tc.desc Verify Object.getOwnPropertyNames returns names array with 2 elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest114", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'a': 1 };
+      const ref: Object = record;
+      record['b'] = 2;
+      const names1: string[] = Object.getOwnPropertyNames(record);
+      const names2: string[] = Object.getOwnPropertyNames(ref);
+      let actual1: int = names1.length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: int = names1.indexOf('b');
+      let expected2: int = 1;
+      expect(actual2).assertEqual(expected2);
+      let actual3: int = names2.indexOf('b');
+      let expected3: int = 1;
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1150
+     * @tc.name objectGetOwnPropertyNamesTest115
+     * @tc.desc Verify Object.getOwnPropertyNames returns names array with 2 elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest115", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'a': 1, 'b': 2 };
+      const ref: Object = record;
+      record['a'] = 99;
+      const names1: string[] = Object.getOwnPropertyNames(record);
+      const names2: string[] = Object.getOwnPropertyNames(ref);
+      let actual1: int = names1.length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = names1[0]!;
+      let expected2: string = 'a';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = names2[0]!;
+      let expected3: string = 'a';
+      expect(actual3).assertEqual(expected3);
+      let actual4: string = names2[1]!;
+      let expected4: string = 'b';
+      expect(actual4).assertEqual(expected4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1160
+     * @tc.name objectGetOwnPropertyNamesTest116
+     * @tc.desc Verify Object.getOwnPropertyNames returns names array with 1 elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest116", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'a': 1 };
+      const names: string[] = Object.getOwnPropertyNames(record);
+      names.push("fake");
+      const again: string[] = Object.getOwnPropertyNames(record);
+      let actual1: int = again.length;
+      let expected1: int = 1;
+      expect(actual1).assertEqual(expected1);
+      let actual2: int = again.indexOf("fake");
+      let expected2: int = -1;
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1170
+     * @tc.name objectGetOwnPropertyNamesTest117
+     * @tc.desc Verify Object.getOwnPropertyNames returns names array with 2 elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest117", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'a': 1, 'b': 2 };
+      const ref: Object = record;
+      const names1: string[] = Object.getOwnPropertyNames(record);
+      const names2: string[] = Object.getOwnPropertyNames(ref);
+      let actual1: int = names1.length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: int = names2.length;
+      let expected2: int = 2;
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1180
+     * @tc.name objectGetOwnPropertyNamesTest118
+     * @tc.desc Verify Object.getOwnPropertyNames returns names array with "a" elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest118", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'a': 1 };
+      let ref: Object = record;
+      const names1: string[] = Object.getOwnPropertyNames(ref);
+      const newRec: Record<string, Any> = { 'b': 2 };
+      ref = newRec;
+      const names2: string[] = Object.getOwnPropertyNames(ref);
+      let actual1: string = names1[0]!;
+      let expected1: string = 'a';
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = names2[0]!;
+      let expected2: string = 'b';
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1190
+     * @tc.name objectGetOwnPropertyNamesTest119
+     * @tc.desc Verify Object.getOwnPropertyNames returns 3 names for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest119", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'a': 1, 'b': 2, 'c': 3 };
+      const names: string[] = Object.getOwnPropertyNames(record);
+      const keys: string[] = Object.keys(record);
+      let actual1: int = names.length;
+      let expected1: number = 3;
+      expect(actual1).assertEqual(expected1);
+      expect(keys.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1200
+     * @tc.name objectGetOwnPropertyNamesTest120
+     * @tc.desc Verify Object.getOwnPropertyNames returns names array with "x" elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest120", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'x': 10, 'y': 20 };
+      const names: string[] = Object.getOwnPropertyNames(record);
+      const keys: string[] = Object.keys(record);
+      let actual1: string = names[0]!;
+      let expected1: string = 'x';
+      expect(actual1).assertEqual(expected1);
+      expect(keys[0]).assertEqual('x');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1210
+     * @tc.name objectGetOwnPropertyNamesTest121
+     * @tc.desc Verify Object.getOwnPropertyNames returns names array with "a" elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest121", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'a': 1, 'b': 2 };
+      const names: string[] = Object.getOwnPropertyNames(record);
+      const keys: string[] = Object.keys(record);
+      let actual1: string = names[0]!;
+      let expected1: string = 'a';
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = names[1]!;
+      let expected2: string = 'b';
+      expect(actual2).assertEqual(expected2);
+      expect(keys[0]).assertEqual('a');
+      expect(keys[1]).assertEqual('b');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1220
+     * @tc.name objectGetOwnPropertyNamesTest122
+     * @tc.desc Verify Object.getOwnPropertyNames returns names array with "k1,k2,k3" elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest122", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { "k1": 1, "k2": 2, "k3": 3 };
+      const names: string[] = Object.getOwnPropertyNames(record);
+      const keys: string[] = Object.keys(record);
+      let actual1: string = names.join(',');
+      let expected1: string = "k1,k2,k3";
+      expect(actual1).assertEqual(expected1);
+      expect(keys.join(',')).assertEqual("k1,k2,k3");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1230
+     * @tc.name objectGetOwnPropertyNamesTest123
+     * @tc.desc Verify Object.getOwnPropertyNames returns 2 names for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest123", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { "名字": "ArkTS", "版本": "1.2" };
+      const names: string[] = Object.getOwnPropertyNames(record);
+      const keys: string[] = Object.keys(record);
+      let actual1: int = names.length;
+      let expected1: number = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = names[0]!;
+      let expected2: string = "名字";
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = keys[1]!;
+      let expected3: string = "版本";
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1240
+     * @tc.name objectGetOwnPropertyNamesTest124
+     * @tc.desc Verify Object.getOwnPropertyNames returns names array with 0 elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest124", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = {};
+      const ref: Object = record;
+      const names1: string[] = Object.getOwnPropertyNames(record);
+      const names2: string[] = Object.getOwnPropertyNames(ref);
+      const keys: string[] = Object.keys(record);
+      let actual1: int = names1.length;
+      let expected1: int = 0;
+      expect(actual1).assertEqual(expected1);
+      let actual2: int = names2.length;
+      let expected2: int = 0;
+      expect(actual2).assertEqual(expected2);
+      let actual3: int = keys.length;
+      let expected3: int = 0;
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1250
+     * @tc.name objectGetOwnPropertyNamesTest125
+     * @tc.desc Verify Object.getOwnPropertyNames returns 0 names for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest125", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj: Object = {};
+      const names: string[] = Object.getOwnPropertyNames(obj);
+      const keys: string[] = Object.keys(obj);
+      let actual1: int = names.length;
+      let expected1: int = 0;
+      expect(actual1).assertEqual(expected1);
+      let actual2: int = keys.length;
+      let expected2: int = 0;
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1260
+     * @tc.name objectGetOwnPropertyNamesTest126
+     * @tc.desc Verify Object.getOwnPropertyNames contains the record keys
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest126", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'a': 1, 'b': 2, 'c': 3 };
+      const names: string[] = Object.getOwnPropertyNames(record);
+      const keys: string[] = Object.keys(record);
+      let hit: number = 0;
+      for (const key of keys) {
+        if (names.indexOf(key) !== -1) {
+          hit++;
+        }
+      }
+      expect(hit).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1270
+     * @tc.name objectGetOwnPropertyNamesTest127
+     * @tc.desc Verify Object.getOwnPropertyNames returns names array with "a" elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest127", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'a': 1 };
+      const names: string[] = Object.getOwnPropertyNames(record);
+      const keys: string[] = Object.keys(record);
+      let actual1: string = names[0]!;
+      let expected1: string = 'a';
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = keys[0]!;
+      let expected2: string = 'a';
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1280
+     * @tc.name objectGetOwnPropertyNamesTest128
+     * @tc.desc Verify Object.getOwnPropertyNames contains the record keys
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest128", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: string[] = ['a', 'b'];
+      const names: string[] = Object.getOwnPropertyNames(arr);
+      const keys: string[] = Object.keys(arr);
+      let actual1: int = names.indexOf("length");
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: int = keys.indexOf("length");
+      let expected2: int = -1;
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1290
+     * @tc.name objectGetOwnPropertyNamesTest129
+     * @tc.desc Verify Object.getOwnPropertyNames returns 1 names for array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest129", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: string[] = ['a', 'b'];
+      const names: string[] = Object.getOwnPropertyNames(arr);
+      const keys: string[] = Object.keys(arr);
+      let actual1: int = names.length - keys.length;
+      let expected1: int = 1;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = names[keys.length]!;
+      let expected2: string = "length";
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1300
+     * @tc.name objectGetOwnPropertyNamesTest130
+     * @tc.desc Verify Object.getOwnPropertyNames returns 1 names for array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest130", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: string[] = [];
+      const names: string[] = Object.getOwnPropertyNames(arr);
+      const keys: string[] = Object.keys(arr);
+      let actual1: int = names.length;
+      let expected1: int = 1;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = names[0]!;
+      let expected2: string = "length";
+      expect(actual2).assertEqual(expected2);
+      let actual3: int = keys.length;
+      let expected3: int = 0;
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1310
+     * @tc.name objectGetOwnPropertyNamesTest131
+     * @tc.desc Verify Object.getOwnPropertyNames returns 1 names for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest131", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = {};
+      record["hidden"] = 1;
+      const names: string[] = Object.getOwnPropertyNames(record);
+      let actual1: int = names.length;
+      let expected1: int = 1;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = names[0]!;
+      let expected2: string = "hidden";
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1320
+     * @tc.name objectGetOwnPropertyNamesTest132
+     * @tc.desc Verify Object.getOwnPropertyNames returns names array with "shown" elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest132", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = {};
+      record["shown"] = 2;
+      const names: string[] = Object.getOwnPropertyNames(record);
+      const keys: string[] = Object.keys(record);
+      let actual1: string = names[0]!;
+      let expected1: string = "shown";
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = keys[0]!;
+      let expected2: string = "shown";
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1330
+     * @tc.name objectGetOwnPropertyNamesTest133
+     * @tc.desc Verify Object.getOwnPropertyNames returns 4 names for array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest133", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: number[] = [1, 2, 3];
+      const names: string[] = Object.getOwnPropertyNames(arr);
+      let actual1: int = names.length;
+      let expected1: int = 4;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = names[3]!;
+      let expected2: string = "length";
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1340
+     * @tc.name objectGetOwnPropertyNamesTest134
+     * @tc.desc Verify Object.getOwnPropertyNames returns 3 names for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest134", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'a': 1, 'b': 2, 'c': 3 };
+      const names: string[] = Object.getOwnPropertyNames(record);
+      const vals: Any[] = Object.values(record);
+      let actual1: int = names.length;
+      let expected1: number = 3;
+      expect(actual1).assertEqual(expected1);
+      expect(vals.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1350
+     * @tc.name objectGetOwnPropertyNamesTest135
+     * @tc.desc Verify Object.getOwnPropertyNames returns names array with "x" elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest135", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'x': 10, 'y': 20 };
+      const names: string[] = Object.getOwnPropertyNames(record);
+      const vals: Any[] = Object.values(record);
+      let actual1: string = names[0]!;
+      let expected1: string = 'x';
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = `${vals[0]!}`;
+      let expected2: string = `${10}`;
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = names[1]!;
+      let expected3: string = 'y';
+      expect(actual3).assertEqual(expected3);
+      let actual4: string = `${vals[1]!}`;
+      let expected4: string = `${20}`;
+      expect(actual4).assertEqual(expected4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1360
+     * @tc.name objectGetOwnPropertyNamesTest136
+     * @tc.desc Verify Object.getOwnPropertyNames returns names array with "\u59d3\u540d" elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest136", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { "姓名": "Alice", "年龄": 18 };
+      const names: string[] = Object.getOwnPropertyNames(record);
+      const vals: Any[] = Object.values(record);
+      let actual1: string = names[0]!;
+      let expected1: string = "姓名";
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = vals[0]! as string;
+      let expected2: string = "Alice";
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = names[1]!;
+      let expected3: string = "年龄";
+      expect(actual3).assertEqual(expected3);
+      let actual4: string = `${vals[1]!}`;
+      let expected4: string = `${18}`;
+      expect(actual4).assertEqual(expected4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1370
+     * @tc.name objectGetOwnPropertyNamesTest137
+     * @tc.desc Verify Object.getOwnPropertyNames returns 0 names for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest137", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = {};
+      const names: string[] = Object.getOwnPropertyNames(record);
+      const vals: Any[] = Object.values(record);
+      let actual1: int = names.length;
+      let expected1: int = 0;
+      expect(actual1).assertEqual(expected1);
+      let actual2: int = vals.length;
+      let expected2: int = 0;
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1380
+     * @tc.name objectGetOwnPropertyNamesTest138
+     * @tc.desc Verify Object.getOwnPropertyNames returns 0 names for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest138", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj: Object = {};
+      const names: string[] = Object.getOwnPropertyNames(obj);
+      const vals: Any[] = Object.values(obj);
+      let actual1: int = names.length;
+      let expected1: int = 0;
+      expect(actual1).assertEqual(expected1);
+      let actual2: int = vals.length;
+      let expected2: int = 0;
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1390
+     * @tc.name objectGetOwnPropertyNamesTest139
+     * @tc.desc Verify Object.getOwnPropertyNames returns names array with "0" elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest139", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: string[] = ['a', 'b'];
+      const names: string[] = Object.getOwnPropertyNames(arr);
+      const vals: Any[] = Object.values(arr);
+      let actual1: string = names[0]!;
+      let expected1: string = '0';
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = vals[0]! as string;
+      let expected2: string = 'a';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = names[1]!;
+      let expected3: string = '1';
+      expect(actual3).assertEqual(expected3);
+      let actual4: string = vals[1]! as string;
+      let expected4: string = 'b';
+      expect(actual4).assertEqual(expected4);
+      let actual5: string = names[2]!;
+      let expected5: string = "length";
+      expect(actual5).assertEqual(expected5);
+      let actual6: int = vals.length;
+      let expected6: int = 2;
+      expect(actual6).assertEqual(expected6);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1400
+     * @tc.name objectGetOwnPropertyNamesTest140
+     * @tc.desc Verify Object.getOwnPropertyNames returns names array with "1" elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest140", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'a': 1, 'b': 2 };
+      const names: string[] = Object.getOwnPropertyNames(record);
+      const vals: Any[] = Object.values(record);
+      let actual1: string = `${record[names[0]]!}`;
+      let expected1: string = `1`;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = `${record[names[1]]!}`;
+      let expected2: string = `2`;
+      expect(actual2).assertEqual(expected2);
+      expect(vals.length).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1410
+     * @tc.name objectGetOwnPropertyNamesTest141
+     * @tc.desc Verify Object.getOwnPropertyNames returns 3 names for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest141", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'a': 1, 'b': 2, 'c': 3 };
+      const names: string[] = Object.getOwnPropertyNames(record);
+      const entries = Object.entries(record);
+      let actual1: int = names.length;
+      let expected1: number = 3;
+      expect(actual1).assertEqual(expected1);
+      expect(entries.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1420
+     * @tc.name objectGetOwnPropertyNamesTest142
+     * @tc.desc Verify Object.getOwnPropertyNames returns names array with "x" elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest142", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'x': 10, 'y': 20 };
+      const names: string[] = Object.getOwnPropertyNames(record);
+      const entries = Object.entries(record);
+      let actual1: string = entries[0]![0];
+      let expected1: string = 'x';
+      expect(actual1).assertEqual(expected1);
+      expect(names[0]).assertEqual('x');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1430
+     * @tc.name objectGetOwnPropertyNamesTest143
+     * @tc.desc Verify Object.entries and Object.values return value 10 and length 2 for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest143", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'x': 10, 'y': 20 };
+      const entries = Object.entries(record);
+      const vals: Any[] = Object.values(record);
+      let actual1: string = `${entries[0]![1]!}`;
+      let expected1: string = `10`;
+      expect(actual1).assertEqual(expected1);
+      expect(vals.length).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1440
+     * @tc.name objectGetOwnPropertyNamesTest144
+     * @tc.desc Verify Object.getOwnPropertyNames contains the record keys
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest144", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'a': 1, 'b': 2 };
+      const names: string[] = Object.getOwnPropertyNames(record);
+      const entries = Object.entries(record);
+      let actual1: int = names.indexOf(entries[0]![0]);
+      let expected1: int = 0;
+      expect(actual1).assertEqual(expected1);
+      let actual2: int = names.indexOf(entries[1]![0]);
+      let expected2: int = 1;
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1450
+     * @tc.name objectGetOwnPropertyNamesTest145
+     * @tc.desc Verify Object.getOwnPropertyNames returns 0 names for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest145", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = {};
+      const names: string[] = Object.getOwnPropertyNames(record);
+      const entries = Object.entries(record);
+      let actual1: int = names.length;
+      let expected1: int = 0;
+      expect(actual1).assertEqual(expected1);
+      let actual2: int = entries.length;
+      let expected2: int = 0;
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1460
+     * @tc.name objectGetOwnPropertyNamesTest146
+     * @tc.desc Verify Object.getOwnPropertyNames returns names array with 2 elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest146", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: string[] = ['a', 'b'];
+      const names: string[] = Object.getOwnPropertyNames(arr);
+      const entries = Object.entries(arr);
+      let actual1: int = entries.length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = entries[0]![0];
+      let expected2: string = '0';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = entries[1]![0];
+      let expected3: string = '1';
+      expect(actual3).assertEqual(expected3);
+      let actual4: string = names[2]!;
+      let expected4: string = "length";
+      expect(actual4).assertEqual(expected4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1470
+     * @tc.name objectGetOwnPropertyNamesTest147
+     * @tc.desc Verify Object.getOwnPropertyNames returns names array with "\u540d\u5b57" elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest147", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { "名字": "ArkTS" };
+      const names: string[] = Object.getOwnPropertyNames(record);
+      const entries = Object.entries(record);
+      let actual1: string = names[0]!;
+      let expected1: string = "名字";
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = entries[0]![0];
+      let expected2: string = "名字";
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1480
+     * @tc.name objectGetOwnPropertyNamesTest148
+     * @tc.desc Verify Object.getOwnPropertyNames lists own property names of record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest148", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'a': 1, 'b': 2, 'c': 3 };
+      const names: string[] = Object.getOwnPropertyNames(record);
+      let actual1: boolean = record.hasOwnProperty('a');
+      expect(actual1).assertTrue();
+      let actual2: boolean = record.hasOwnProperty('b');
+      expect(actual2).assertTrue();
+      let actual3: boolean = record.hasOwnProperty('c');
+      expect(actual3).assertTrue();
+      expect(names[0]).assertEqual('a');
+      expect(names[1]).assertEqual('b');
+      expect(names[2]).assertEqual('c');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1490
+     * @tc.name objectGetOwnPropertyNamesTest149
+     * @tc.desc Verify Object.getOwnPropertyNames returns 3 names for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest149", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'a': 1, 'b': 2, 'c': 3 };
+      const names: string[] = Object.getOwnPropertyNames(record);
+      let owned: number = 0;
+      for (const key of names) {
+        if (record.hasOwnProperty(key)) {
+          owned++;
+        }
+      }
+      expect(owned).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1500
+     * @tc.name objectGetOwnPropertyNamesTest150
+     * @tc.desc Verify Object.getOwnPropertyNames contains the record keys
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest150", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'a': 1 };
+      const names: string[] = Object.getOwnPropertyNames(record);
+      let actual1: boolean = record.hasOwnProperty("notHere");
+      expect(actual1).assertFalse();
+      let actual2: int = names.indexOf("notHere");
+      let expected2: int = -1;
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1510
+     * @tc.name objectGetOwnPropertyNamesTest151
+     * @tc.desc Verify Object.getOwnPropertyNames contains the record keys
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest151", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: string[] = ['a', 'b'];
+      const names: string[] = Object.getOwnPropertyNames(arr);
+      let actual1: int = names.indexOf("length");
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: boolean = arr.hasOwnProperty("length");
+      expect(actual2).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1520
+     * @tc.name objectGetOwnPropertyNamesTest152
+     * @tc.desc Verify Object.getOwnPropertyNames lists own property names of record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest152", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj: Record<string, Any> = { 'x': 1, 'y': 2 };
+      const names: string[] = Object.getOwnPropertyNames(obj);
+      let actual1: boolean = obj.hasOwnProperty('x');
+      expect(actual1).assertTrue();
+      let actual2: boolean = obj.hasOwnProperty('y');
+      expect(actual2).assertTrue();
+      expect(names[0]).assertEqual('x');
+      expect(names[1]).assertEqual('y');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1530
+     * @tc.name objectGetOwnPropertyNamesTest153
+     * @tc.desc Verify Object.getOwnPropertyNames contains the record keys
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest153", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { "gap": undefined, "keep": 1 };
+      const names: string[] = Object.getOwnPropertyNames(record);
+      let actual1: boolean = record.hasOwnProperty("gap");
+      expect(actual1).assertTrue();
+      let actual2: int = names.indexOf("gap");
+      let expected2: int = 0;
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1540
+     * @tc.name objectGetOwnPropertyNamesTest154
+     * @tc.desc Verify Object.getOwnPropertyNames returns 0 names for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest154", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj: Object = {};
+      const names: string[] = Object.getOwnPropertyNames(obj);
+      let actual1: int = names.length;
+      let expected1: int = 0;
+      expect(actual1).assertEqual(expected1);
+      let actual2: boolean = obj.hasOwnProperty('a');
+      expect(actual2).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1550
+     * @tc.name objectGetOwnPropertyNamesTest155
+     * @tc.desc Verify Object.getOwnPropertyNames returns names array with 3 elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest155", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'a': 1, 'b': 2, 'c': 3 };
+      const ref: Object = record;
+      const names1: string[] = Object.getOwnPropertyNames(record);
+      const names2: string[] = Object.getOwnPropertyNames(ref);
+      const keys: string[] = Object.keys(record);
+      const vals: Any[] = Object.values(record);
+      let actual1: int = names1.length;
+      let expected1: number = 3;
+      expect(actual1).assertEqual(expected1);
+      let actual2: int = names1.length;
+      let expected2: number = 3;
+      expect(actual2).assertEqual(expected2);
+      let actual3: int = keys.length;
+      let expected3: number = 3;
+      expect(actual3).assertEqual(expected3);
+      expect(names2.length).assertEqual(3);
+      expect(vals.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1560
+     * @tc.name objectGetOwnPropertyNamesTest156
+     * @tc.desc Verify Object.getOwnPropertyNames returns 3 names for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest156", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'x': 1, 'y': 2, 'z': 3 };
+      const names: string[] = Object.getOwnPropertyNames(record);
+      const keys: string[] = Object.keys(record);
+      const entries = Object.entries(record);
+      let actual1: int = names.length;
+      let expected1: number = 3;
+      expect(actual1).assertEqual(expected1);
+      let actual2: int = keys.length;
+      let expected2: number = 3;
+      expect(actual2).assertEqual(expected2);
+      expect(entries.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1570
+     * @tc.name objectGetOwnPropertyNamesTest157
+     * @tc.desc Verify Object.getOwnPropertyNames returns 1 names for array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest157", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: string[] = ['a', 'b'];
+      const names: string[] = Object.getOwnPropertyNames(arr);
+      const keys: string[] = Object.keys(arr);
+      const entries = Object.entries(arr);
+      let actual1: int = names.length - keys.length;
+      let expected1: int = 1;
+      expect(actual1).assertEqual(expected1);
+      let actual2: int = keys.length;
+      let expected2: number = 2;
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = names[keys.length]!;
+      let expected3: string = "length";
+      expect(actual3).assertEqual(expected3);
+      expect(entries.length).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1580
+     * @tc.name objectGetOwnPropertyNamesTest158
+     * @tc.desc Verify Object.getOwnPropertyNames returns 2 names for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest158", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'a': 1, 'b': 2 };
+      const names: string[] = Object.getOwnPropertyNames(record);
+      const keys: string[] = Object.keys(record);
+      const vals: Any[] = Object.values(record);
+      const entries = Object.entries(record);
+      let actual1: int = names.length;
+      let expected1: number = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: int = keys.length;
+      let expected2: number = 2;
+      expect(actual2).assertEqual(expected2);
+      let actual3: int = vals.length;
+      let expected3: number = 2;
+      expect(actual3).assertEqual(expected3);
+      let actual4: boolean = record.hasOwnProperty('a');
+      expect(actual4).assertTrue();
+      let actual5: boolean = record.hasOwnProperty('b');
+      expect(actual5).assertTrue();
+      expect(entries.length).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1590
+     * @tc.name objectGetOwnPropertyNamesTest159
+     * @tc.desc Verify Object.getOwnPropertyNames returns names array with 2 elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest159", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'a': 1, 'b': 2 };
+      const ref: Object = record;
+      const names1: string[] = Object.getOwnPropertyNames(record);
+      const names2: string[] = Object.getOwnPropertyNames(ref);
+      const keys: string[] = Object.keys(record);
+      let actual1: int = names1.length;
+      let expected1: number = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: int = names2.length;
+      let expected2: number = 2;
+      expect(actual2).assertEqual(expected2);
+      expect(keys.length).assertEqual(2);
+      let actual3: boolean = record.hasOwnProperty('a');
+      expect(actual3).assertTrue();
+      let actual4: boolean = record.hasOwnProperty('b');
+      expect(actual4).assertTrue();
+      expect(names2[0]).assertEqual('a');
+      expect(keys[1]).assertEqual('b');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1600
+     * @tc.name objectGetOwnPropertyNamesTest160
+     * @tc.desc Verify Object.getOwnPropertyNames returns 0 names for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest160", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj: Object = new Object();
+      const names: string[] = Object.getOwnPropertyNames(obj);
+      const keys: string[] = Object.keys(obj);
+      const vals: Any[] = Object.values(obj);
+      const entries = Object.entries(obj);
+      let actual1: int = names.length;
+      let expected1: int = 0;
+      expect(actual1).assertEqual(expected1);
+      let actual2: int = keys.length;
+      let expected2: int = 0;
+      expect(actual2).assertEqual(expected2);
+      let actual3: int = vals.length;
+      let expected3: int = 0;
+      expect(actual3).assertEqual(expected3);
+      let actual4: int = entries.length;
+      let expected4: int = 0;
+      expect(actual4).assertEqual(expected4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1610
+     * @tc.name objectGetOwnPropertyNamesTest161
+     * @tc.desc Verify Object.getOwnPropertyNames returns 0 names for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest161", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = {};
+      const ref: Object = record;
+      Object.getOwnPropertyNames(record);
+      Object.getOwnPropertyNames(ref);
+      const names: string[] = Object.getOwnPropertyNames(record);
+      let actual1: int = names.length;
+      let expected1: int = 0;
+      expect(actual1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1620
+     * @tc.name objectGetOwnPropertyNamesTest162
+     * @tc.desc Verify Object.getOwnPropertyNames returns names array with 1 elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest162", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { "only": 1 };
+      const ref: Object = record;
+      const names1: string[] = Object.getOwnPropertyNames(record);
+      const names2: string[] = Object.getOwnPropertyNames(ref);
+      let actual1: int = names1.length;
+      let expected1: int = 1;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = names1[0]!;
+      let expected2: string = "only";
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = names2[0]!;
+      let expected3: string = "only";
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1630
+     * @tc.name objectGetOwnPropertyNamesTest163
+     * @tc.desc Verify Object.getOwnPropertyNames returns names array with 5 elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest163", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const nestedRecord: Record<string, Any> = { 'x': 1 };
+      const record: Record<string, Any> = { 's': "str", 'n': 1, 'b': false, "arr": [1], "obj": nestedRecord };
+      const ref: Object = record;
+      const names1: string[] = Object.getOwnPropertyNames(record);
+      const names2: string[] = Object.getOwnPropertyNames(ref);
+      let actual1: int = names1.length;
+      let expected1: int = 5;
+      expect(actual1).assertEqual(expected1);
+      let actual2: int = names2.length;
+      let expected2: int = 5;
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = names1[0]!;
+      let expected3: string = 's';
+      expect(actual3).assertEqual(expected3);
+      let actual4: string = names2[4]!;
+      let expected4: string = "obj";
+      expect(actual4).assertEqual(expected4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1640
+     * @tc.name objectGetOwnPropertyNamesTest164
+     * @tc.desc Verify Object.getOwnPropertyNames returns names array with 3 elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest164", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { '$': 1, '@': 2, "你好，ArkTS": 3 };
+      const ref: Object = record;
+      const names1: string[] = Object.getOwnPropertyNames(record);
+      const names2: string[] = Object.getOwnPropertyNames(ref);
+      let actual1: int = names1.length;
+      let expected1: int = 3;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = names1[0]!;
+      let expected2: string = '$';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = names2[1]!;
+      let expected3: string = '@';
+      expect(actual3).assertEqual(expected3);
+      let actual4: string = names1[2]!;
+      let expected4: string = "你好，ArkTS";
+      expect(actual4).assertEqual(expected4);
+      let actual5: string = names2[2]!;
+      let expected5: string = "你好，ArkTS";
+      expect(actual5).assertEqual(expected5);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1650
+     * @tc.name objectGetOwnPropertyNamesTest165
+     * @tc.desc Verify Object.getOwnPropertyNames returns names array with 4 elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest165", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { "txt": 'v', "num": 42, "flag": true, "list": [1, 2] };
+      const ref: Object = record;
+      const names1: string[] = Object.getOwnPropertyNames(record);
+      const names2: string[] = Object.getOwnPropertyNames(ref);
+      let actual1: int = names1.length;
+      let expected1: int = 4;
+      expect(actual1).assertEqual(expected1);
+      let actual2: int = names2.length;
+      let expected2: int = 4;
+      expect(actual2).assertEqual(expected2);
+      let actual3: int = names1.indexOf("txt");
+      let expected3: int = 0;
+      expect(actual3).assertEqual(expected3);
+      let actual4: int = names2.indexOf("list");
+      let expected4: int = 3;
+      expect(actual4).assertEqual(expected4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1660
+     * @tc.name objectGetOwnPropertyNamesTest166
+     * @tc.desc Verify Object.getOwnPropertyNames returns 0 for empty record and 1 for zero-width-space key record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest166", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const emptyRecord: Record<string, Any> = {};
+      const blankRecord: Record<string, Any> = { "\u200B": 'w' };
+      const emptyNames: string[] = Object.getOwnPropertyNames(emptyRecord);
+      const blankNames: string[] = Object.getOwnPropertyNames(blankRecord);
+      let actual1: int = emptyNames.length;
+      let expected1: int = 0;
+      expect(actual1).assertEqual(expected1);
+      let actual2: int = blankNames.length;
+      let expected2: int = 1;
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = blankNames[0]!;
+      let expected3: string = "\u200B";
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1670
+     * @tc.name objectGetOwnPropertyNamesTest167
+     * @tc.desc Verify Object.getOwnPropertyNames returns 0 for empty record and 1 for XSS-string key record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest167", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const emptyRecord: Record<string, Any> = {};
+      const xssRecord: Record<string, Any> = { "<script>alert(1)</script>": 1 };
+      const emptyNames: string[] = Object.getOwnPropertyNames(emptyRecord);
+      const xssNames: string[] = Object.getOwnPropertyNames(xssRecord);
+      let actual1: int = emptyNames.length;
+      let expected1: int = 0;
+      expect(actual1).assertEqual(expected1);
+      let actual2: int = xssNames.length;
+      let expected2: int = 1;
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = xssNames[0]!;
+      let expected3: string = "<script>alert(1)</script>";
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1680
+     * @tc.name objectGetOwnPropertyNamesTest168
+     * @tc.desc Verify Object.getOwnPropertyNames returns 0 for empty record and 1 for 1000-char key record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest168", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const emptyRecord: Record<string, Any> = {};
+      const longKey: string = 'k'.repeat(1000);
+      const longRecord: Record<string, Any> = {};
+      longRecord[longKey] = 1;
+      let actual1: int = Object.getOwnPropertyNames(emptyRecord).length;
+      let expected1: int = 0;
+      expect(actual1).assertEqual(expected1);
+      let actual2: int = Object.getOwnPropertyNames(longRecord).length;
+      let expected2: int = 1;
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1690
+     * @tc.name objectGetOwnPropertyNamesTest169
+     * @tc.desc Verify Object.getOwnPropertyNames returns 3 names for record after adding 3 keys (0 before)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest169", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = {};
+      const before: string[] = Object.getOwnPropertyNames(record);
+      let actual1: int = before.length;
+      let expected1: int = 0;
+      expect(actual1).assertEqual(expected1);
+      record["中文"] = 1;
+      record['🎉'] = 2;
+      record["42"] = 3;
+      const after: string[] = Object.getOwnPropertyNames(record);
+      let actual2: int = after.length;
+      let expected2: int = 3;
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = after[0]!;
+      let expected3: string = "中文";
+      expect(actual3).assertEqual(expected3);
+      let actual4: string = after[1]!;
+      let expected4: string = '🎉';
+      expect(actual4).assertEqual(expected4);
+      let actual5: string = after[2]!;
+      let expected5: string = "42";
+      expect(actual5).assertEqual(expected5);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1700
+     * @tc.name objectGetOwnPropertyNamesTest170
+     * @tc.desc Verify Object.getOwnPropertyNames returns 2 names for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest170", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { '0': 'a', "00": 'b' };
+      const names: string[] = Object.getOwnPropertyNames(record);
+      let actual1: int = names.length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: boolean = names.includes('0');
+      expect(actual2).assertTrue();
+      let actual3: boolean = names.includes("00");
+      expect(actual3).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1710
+     * @tc.name objectGetOwnPropertyNamesTest171
+     * @tc.desc Verify Object.getOwnPropertyNames returns 2 names for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest171", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { "k1": null, "k2": undefined };
+      const names: string[] = Object.getOwnPropertyNames(record);
+      let actual1: int = names.length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = names[0]!;
+      let expected2: string = "k1";
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = names[1]!;
+      let expected3: string = "k2";
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1720
+     * @tc.name objectGetOwnPropertyNamesTest172
+     * @tc.desc Verify Object.getOwnPropertyNames returns 3 names for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest172", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { "测试": 1, "用例": 2, "边界": 3 };
+      const names: string[] = Object.getOwnPropertyNames(record);
+      let actual1: int = names.length;
+      let expected1: int = 3;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = names[0]!;
+      let expected2: string = "测试";
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = names[1]!;
+      let expected3: string = "用例";
+      expect(actual3).assertEqual(expected3);
+      let actual4: string = names[2]!;
+      let expected4: string = "边界";
+      expect(actual4).assertEqual(expected4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1730
+     * @tc.name objectGetOwnPropertyNamesTest173
+     * @tc.desc Verify Object.getOwnPropertyNames returns 2 names for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest173", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'é': 1, "e\u0301": 2 };
+      const names: string[] = Object.getOwnPropertyNames(record);
+      let actual1: int = names.length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: boolean = names.includes('é');
+      expect(actual2).assertTrue();
+      let actual3: boolean = names.includes("e\u0301");
+      expect(actual3).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1740
+     * @tc.name objectGetOwnPropertyNamesTest174
+     * @tc.desc Verify Object.getOwnPropertyNames returns 1 names for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest174", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const longKey: string = 'x'.repeat(1000);
+      const record: Record<string, Any> = {};
+      record[longKey] = 1;
+      const names: string[] = Object.getOwnPropertyNames(record);
+      let actual1: int = names.length;
+      let expected1: int = 1;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = names[0]!;
+      let expected2: string = longKey;
+      expect(actual2).assertEqual(expected2);
+      let actual3: int = names[0]!.length;
+      let expected3: int = 1000;
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1750
+     * @tc.name objectGetOwnPropertyNamesTest175
+     * @tc.desc Verify Object.getOwnPropertyNames returns 2 names for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest175", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const longKey: string = 'z'.repeat(1000);
+      const record: Record<string, Any> = { "short": 1 };
+      record[longKey] = 2;
+      const names: string[] = Object.getOwnPropertyNames(record);
+      let actual1: int = names.length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = names[0]!;
+      let expected2: string = "short";
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = names[1]!;
+      let expected3: string = longKey;
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1760
+     * @tc.name objectGetOwnPropertyNamesTest176
+     * @tc.desc Verify Object.getOwnPropertyNames returns 2 names for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest176", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const keyA: string = 'a'.repeat(500);
+      const keyB: string = 'b'.repeat(500);
+      const record: Record<string, Any> = {};
+      record[keyA] = 1;
+      record[keyB] = 2;
+      const names: string[] = Object.getOwnPropertyNames(record);
+      let actual1: int = names.length;
+      let expected1: int = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = names[0]!;
+      let expected2: string = keyA;
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = names[1]!;
+      let expected3: string = keyB;
+      expect(actual3).assertEqual(expected3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1770
+     * @tc.name objectGetOwnPropertyNamesTest177
+     * @tc.desc Verify Object.getOwnPropertyNames returns 1 names for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest177", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const longKey: string = "ab\u200Bcd".repeat(200);
+      const record: Record<string, Any> = {};
+      record[longKey] = 1;
+      const names: string[] = Object.getOwnPropertyNames(record);
+      let actual1: int = names.length;
+      let expected1: int = 1;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = names[0]!;
+      let expected2: string = longKey;
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1780
+     * @tc.name objectGetOwnPropertyNamesTest178
+     * @tc.desc Verify Object.getOwnPropertyNames returns 1 names for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest178", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const longKey: string = 'm'.repeat(1000);
+      const record: Record<string, Any> = {};
+      record[longKey] = "payload";
+      const names: string[] = Object.getOwnPropertyNames(record);
+      let actual1: int = names.length;
+      let expected1: int = 1;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = names[0]!;
+      let expected2: string = longKey;
+      expect(actual2).assertEqual(expected2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1790
+     * @tc.name objectGetOwnPropertyNamesTest179
+     * @tc.desc Verify Object.getOwnPropertyNames returns 3 names for record
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest179", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const record: Record<string, Any> = { 'a': 1 };
+      record['b'] = 2;
+      record['c'] = 3;
+      const names: string[] = Object.getOwnPropertyNames(record);
+      let actual1: int = names.length;
+      let expected1: int = 3;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = names[0]!;
+      let expected2: string = 'a';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = names[1]!;
+      let expected3: string = 'b';
+      expect(actual3).assertEqual(expected3);
+      let actual4: string = names[2]!;
+      let expected4: string = 'c';
+      expect(actual4).assertEqual(expected4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_OBJECT_GETOWNPROPERTYNAMES_1800
+     * @tc.name objectGetOwnPropertyNamesTest180
+     * @tc.desc Verify Object.getOwnPropertyNames returns names array with 2 elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("objectGetOwnPropertyNamesTest180", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r1: Record<string, Any> = { 'x': 1, 'y': 2 };
+      const r2: Record<string, Any> = {};
+      r2['x'] = 1;
+      r2['y'] = 2;
+      const n1: string[] = Object.getOwnPropertyNames(r1);
+      const n2: string[] = Object.getOwnPropertyNames(r2);
+      let actual1: int = n1.length;
+      let expected1: number = 2;
+      expect(actual1).assertEqual(expected1);
+      let actual2: string = n1[0]!;
+      let expected2: string = 'x';
+      expect(actual2).assertEqual(expected2);
+      let actual3: string = n1[1]!;
+      let expected3: string = 'y';
+      expect(actual3).assertEqual(expected3);
+      expect(n2.length).assertEqual(2);
+      expect(n2.join(',')).assertEqual("x,y");
+    });
   });
 }
