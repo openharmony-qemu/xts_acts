@@ -1997,3 +1997,1618 @@ export default function Int16ArrayReduceRightTest(): void {
           len2 = a.length;
           return prev + cur;
         });
+        arr.reduceRight((prev: number, cur: number, idx: int, a: Int16Array) => {
+          len1 = a.length;
+          return prev + cur;
+        }, 0);
+        expect(len2).assertEqual(3);
+        expect(len1).assertEqual(3);
+
+      }
+      {
+        const arr = Int16Array.of(100, 200, 300);
+        let callCount: number = 0;
+        arr.reduceRight((prev: number, cur: number, idx: int, a: Int16Array) => {
+          callCount = callCount + 1;
+          return prev + cur;
+        });
+        expect(callCount).assertEqual(2);
+
+      }
+      {
+        const arr = Int16Array.of(100, 200, 300);
+        let callCount: number = 0;
+        arr.reduceRight((prev: number, cur: number, idx: int, a: Int16Array) => {
+          callCount = callCount + 1;
+          return prev + cur;
+        }, 0);
+        expect(callCount).assertEqual(3);
+
+      }
+      {
+        const arr = Int16Array.of(42);
+        let callCount: number = 0;
+        const result: number = arr.reduceRight((prev: number, cur: number, idx: int, a: Int16Array) => {
+          callCount = callCount + 1;
+          return prev + cur;
+        });
+        expect(callCount).assertEqual(0);
+        expect(result).assertEqual(42);
+
+      }
+      {
+        const arr = Int16Array.of(42);
+        let callCount: number = 0;
+        const result: number = arr.reduceRight((prev: number, cur: number, idx: int, a: Int16Array) => {
+          callCount = callCount + 1;
+          return prev + cur;
+        }, 100);
+        expect(callCount).assertEqual(1);
+        expect(result).assertEqual(142);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_REDUCERIGHT_2200
+     * @tc.name testReduceRightTypesPrim001
+     * @tc.desc Verify reduceRight with primitive generic U types and initial values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testReduceRightTypesPrim001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let arr = Int16Array.of(1, 2, 3);
+        let result: bigint = arr.reduceRight((prev: bigint, curr: number): bigint => {
+          return prev + BigInt(curr);
+        }, BigInt(0));
+        expect(result).assertEqual(BigInt(6));
+
+      }
+      {
+        let arr = Int16Array.of(1, 2, 3);
+        let result = arr.reduceRight((prev: number, curr: number): number => {
+          return prev + curr;
+        }, 10);
+        expect(result).assertEqual(16);
+
+      }
+      {
+        let arr = Int16Array.of(1, 2, 3);
+        let result = arr.reduceRight((prev: number, curr: number): number => {
+          return prev + curr;
+        }, -5);
+        expect(result).assertEqual(1);
+
+      }
+      {
+        let arr = Int16Array.of(10, 20, 30);
+        let result = arr.reduceRight((prev: number, curr: number): number => {
+          return prev + curr;
+        }, 100);
+        expect(result).assertEqual(160);
+
+      }
+      {
+        let arr = Int16Array.of(5);
+        let result = arr.reduceRight((prev: number, curr: number): number => {
+          return prev + curr;
+        }, 0);
+        expect(result).assertEqual(5);
+
+      }
+      {
+        let arr = new Int16Array(0);
+        let result = arr.reduceRight((prev: number, curr: number): number => {
+          return prev + curr;
+        }, 0);
+        expect(result).assertEqual(0);
+
+      }
+      {
+        let arr = Int16Array.of(1, 2);
+        let result = arr.reduceRight((prev: number, curr: number): number => {
+          return prev + curr;
+        }, 0.5);
+        expect(result).assertEqual(3.5);
+
+      }
+      {
+        let arr = Int16Array.of(1, 2);
+        let result = arr.reduceRight((prev: number, curr: number): number => {
+          return prev + curr;
+        }, Double.POSITIVE_INFINITY);
+        expect(result).assertEqual(Double.POSITIVE_INFINITY);
+
+      }
+      {
+        let arr = Int16Array.of(1, 2);
+        let result = arr.reduceRight((prev: number, curr: number): number => {
+          return prev + curr;
+        }, -Double.POSITIVE_INFINITY);
+        expect(result).assertEqual(-Double.POSITIVE_INFINITY);
+
+      }
+      {
+        let arr = Int16Array.of(-1, -2, -3);
+        let result = arr.reduceRight((prev: number, curr: number): number => {
+          return prev + curr;
+        }, 0);
+        expect(result).assertEqual(-6);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_REDUCERIGHT_2300
+     * @tc.name testReduceRightTypesPrim002
+     * @tc.desc Verify reduceRight with primitive generic U types and initial values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testReduceRightTypesPrim002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let arr = Int16Array.of(32767);
+        let result = arr.reduceRight((prev: number, curr: number): number => {
+          return prev + curr;
+        }, 0);
+        expect(result).assertEqual(32767);
+
+      }
+      {
+        let arr = Int16Array.of(-32768);
+        let result = arr.reduceRight((prev: number, curr: number): number => {
+          return prev + curr;
+        }, 0);
+        expect(result).assertEqual(-32768);
+
+      }
+      {
+        let arr = Int16Array.of(0, 0, 0);
+        let result = arr.reduceRight((prev: number, curr: number): number => {
+          return prev + curr;
+        }, 0);
+        expect(result).assertEqual(0);
+
+      }
+      {
+        let arr = new Int16Array(0);
+        let result = arr.reduceRight((prev: number, curr: number): number => {
+          return prev + curr;
+        }, 42);
+        expect(result).assertEqual(42);
+
+      }
+      {
+        let arr = Int16Array.of(1, -1, 2, -2);
+        let result = arr.reduceRight((prev: number, curr: number): number => {
+          return prev + curr;
+        }, 0);
+        expect(result).assertEqual(0);
+
+      }
+      {
+        let arr = Int16Array.of(1, 2, 3);
+        let result = arr.reduceRight((prev: number, curr: number): number => {
+          return prev + curr;
+        }, 1000000);
+        expect(result).assertEqual(1000006);
+
+      }
+      {
+        let arr = Int16Array.of(32767, -32768);
+        let result = arr.reduceRight((prev: number, curr: number): number => {
+          return prev + curr;
+        }, 0);
+        expect(result).assertEqual(-1);
+
+      }
+      {
+        let arr = Int16Array.of(1, 2, 3);
+        let result: string = arr.reduceRight((prev: string, curr: number): string => {
+          return prev + curr.toString();
+        }, "pre:");
+        expect(result).assertEqual("pre:321");
+
+      }
+      {
+        let arr = Int16Array.of(0, -1, 32767);
+        let result: string = arr.reduceRight((prev: string, curr: number): string => {
+          return prev + curr.toString();
+        }, "");
+        expect(result).assertEqual("32767-10");
+
+      }
+      {
+        let arr = Int16Array.of(5);
+        let result: string = arr.reduceRight((prev: string, curr: number): string => {
+          return prev + curr.toString();
+        }, "");
+        expect(result).assertEqual("5");
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_REDUCERIGHT_2400
+     * @tc.name testReduceRightTypesPrim003
+     * @tc.desc Verify reduceRight with primitive generic U types and initial values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testReduceRightTypesPrim003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let arr = new Int16Array(0);
+        let result: string = arr.reduceRight((prev: string, curr: number): string => {
+          return prev + curr.toString();
+        }, "x");
+        expect(result).assertEqual("x");
+
+      }
+      {
+        let arr = Int16Array.of(10, 20, 30);
+        let result: string = arr.reduceRight((prev: string, curr: number): string => {
+          return prev + curr.toString();
+        }, "");
+        expect(result).assertEqual("302010");
+
+      }
+      {
+        let arr = Int16Array.of(1, 2, 3);
+        let result: boolean = arr.reduceRight((prev: boolean, curr: number): boolean => {
+          return prev && (curr !== 0);
+        }, true);
+        expect(result).assertTrue();
+
+      }
+      {
+        let arr = Int16Array.of(1, 2, 3);
+        let result: boolean = arr.reduceRight((prev: boolean, curr: number): boolean => {
+          return prev || (curr > 2);
+        }, false);
+        expect(result).assertTrue();
+
+      }
+      {
+        let arr = new Int16Array(0);
+        let result: boolean = arr.reduceRight((prev: boolean, curr: number): boolean => {
+          return prev && (curr !== 0);
+        }, true);
+        expect(result).assertTrue();
+
+      }
+      {
+        let arr = Int16Array.of(1, 2, 3);
+        let result: bigint = arr.reduceRight((prev: bigint, curr: number): bigint => {
+          return prev + BigInt(curr);
+        }, BigInt(100));
+        expect(result).assertEqual(BigInt(106));
+
+      }
+      {
+        let arr = new Int16Array(0);
+        let result: bigint = arr.reduceRight((prev: bigint, curr: number): bigint => {
+          return prev + BigInt(curr);
+        }, BigInt(0));
+        expect(result).assertEqual(BigInt(0));
+
+      }
+      {
+        let arr = Int16Array.of(50, 30, 20);
+        let result = arr.reduceRight((prev: number, curr: number): number => {
+          return prev + curr;
+        }, -100);
+        expect(result).assertEqual(0);
+
+      }
+      {
+        let arr = Int16Array.of(1, 2, 3, 4, 5);
+        let result = arr.reduceRight((prev: number, curr: number): number => {
+          return prev + curr;
+        }, 0);
+        expect(result).assertEqual(15);
+
+      }
+      {
+        let arr = Int16Array.of(1, 2, 3);
+        let result = arr.reduceRight((prev: number, curr: number): number => {
+          return prev + curr * curr;
+        }, 0);
+        expect(result).assertEqual(14);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_REDUCERIGHT_2500
+     * @tc.name testReduceRightTypesPrim004
+     * @tc.desc Verify reduceRight with primitive generic U types and initial values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testReduceRightTypesPrim004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let arr = Int16Array.of(10000, 20000);
+        let result = arr.reduceRight((prev: number, curr: number): number => {
+          return prev + curr;
+        }, 0);
+        expect(result).assertEqual(30000);
+
+      }
+      {
+        let arr = Int16Array.of(1, 2);
+        let result = arr.reduceRight((prev: number, curr: number): number => {
+          return prev + curr;
+        }, 0);
+        expect(result).assertEqual(3);
+
+      }
+      {
+        let arr = Int16Array.of(1, 2);
+        let result: bigint = arr.reduceRight((prev: bigint, curr: number): bigint => {
+          return prev + BigInt(curr);
+        }, BigInt(0));
+        expect(result).assertEqual(BigInt(3));
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(10, 20, 30);
+        let result: string = arr.reduceRight<string>((prev: string, curr: number, idx: int, a: Int16Array): string => prev + curr.toString(), "");
+        expect(result).assertEqual("302010");
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(1, 2, 3);
+        let result: number = arr.reduceRight<number>((prev: number, curr: number, idx: int, a: Int16Array): number => prev + curr, 0);
+        expect(result).assertEqual(6);
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(10, 20);
+        let init: ReduceRightPart03Accumulator = new ReduceRightPart03Accumulator();
+        let result: ReduceRightPart03Accumulator = arr.reduceRight<ReduceRightPart03Accumulator>((prev: ReduceRightPart03Accumulator, curr: number, idx: int, a: Int16Array): ReduceRightPart03Accumulator => {
+          prev.sum = prev.sum + curr;
+          return prev;
+        }, init);
+        let resultValue1: number = result.sum;
+        let expectedValue1: int = 30;
+        expect(resultValue1).assertEqual(expectedValue1);
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(10, 20);
+        let capturedPrev: string = "";
+        let capturedCurr: number = 0;
+        arr.reduceRight<string>((prev: string, curr: number, idx: int, a: Int16Array): string => {
+          capturedPrev = prev;
+          capturedCurr = curr;
+          return prev + curr.toString();
+        }, "INIT");
+        expect(capturedPrev).assertEqual("INIT20");
+        expect(capturedCurr).assertEqual(10);
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(5, 15);
+        let capturedPrev: number = -999;
+        arr.reduceRight<number>((prev: number, curr: number, idx: int, a: Int16Array): number => {
+          capturedPrev = prev;
+          return prev + curr;
+        }, 100);
+        expect(capturedPrev).assertEqual(115);
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(3);
+        let init: ReduceRightPart03Box = new ReduceRightPart03Box();
+        init.value = 99;
+        let isSameRef: boolean = false;
+        arr.reduceRight<ReduceRightPart03Box>((prev: ReduceRightPart03Box, curr: number, idx: int, a: Int16Array): ReduceRightPart03Box => {
+          isSameRef = (prev === init);
+          prev.value = prev.value + curr;
+          return prev;
+        }, init);
+        expect(isSameRef).assertTrue();
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(1, 2, 3);
+        let result: string = arr.reduceRight<string>((prev: string, curr: number, idx: int, a: Int16Array): string => prev + "-" + curr.toString(), "start");
+        expect(result).assertEqual("start-3-2-1");
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_REDUCERIGHT_2600
+     * @tc.name testReduceRightTypesPrim005
+     * @tc.desc Verify reduceRight with primitive generic U types and initial values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testReduceRightTypesPrim005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let arr: Int16Array = new Int16Array(0);
+        let result: string = arr.reduceRight<string>((prev: string, curr: number, idx: int, a: Int16Array): string => prev + curr.toString(), "hello");
+        expect(result).assertEqual("hello");
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(42);
+        let result: string = arr.reduceRight<string>((prev: string, curr: number, idx: int, a: Int16Array): string => prev + curr.toString() + "]", "[");
+        expect(result).assertEqual("[42]");
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(1, 2, 3);
+        let result: number = arr.reduceRight<number>((prev: number, curr: number, idx: int, a: Int16Array): number => prev - curr, 100);
+        expect(result).assertEqual(94);
+
+      }
+      {
+        let arr: Int16Array = new Int16Array(0);
+        let result: number = arr.reduceRight<number>((prev: number, curr: number, idx: int, a: Int16Array): number => prev + curr, 9999);
+        expect(result).assertEqual(9999);
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(5);
+        let callCount: number = 0;
+        let result: number = arr.reduceRight<number>((prev: number, curr: number, idx: int, a: Int16Array): number => {
+          callCount++;
+          return prev + curr;
+        }, 0);
+        expect(callCount).assertEqual(1);
+        expect(result).assertEqual(5);
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(-32768, 32767);
+        let result: number = arr.reduceRight<number>((prev: number, curr: number, idx: int, a: Int16Array): number => prev + curr, 0);
+        expect(result).assertEqual(-1);
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(1, 2, 3);
+        let result: double = arr.reduceRight<double>((prev: double, curr: number, idx: int, a: Int16Array): double => prev + curr, 0.0);
+        expect(result).assertEqual(6.0);
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(1, 2);
+        let result: double = arr.reduceRight<double>((prev: double, curr: number, idx: int, a: Int16Array): double => prev + curr, 0.5);
+        expect(result).assertEqual(3.5);
+
+      }
+      {
+        let arr: Int16Array = new Int16Array(0);
+        let result: double = arr.reduceRight<double>((prev: double, curr: number, idx: int, a: Int16Array): double => prev + curr, 3.14);
+        expect(result).assertEqual(3.14);
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(1);
+        let result: double = arr.reduceRight<double>((prev: double, curr: number, idx: int, a: Int16Array): double => prev + curr, 0.0);
+        expect(result).assertEqual(1);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_REDUCERIGHT_2700
+     * @tc.name testReduceRightTypesPrim006
+     * @tc.desc Verify reduceRight with primitive generic U types and initial values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testReduceRightTypesPrim006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let arr: Int16Array = Int16Array.of(3, 4);
+        let result: float = arr.reduceRight<float>((prev: float, curr: number, idx: int, a: Int16Array): float => Double.toFloat(prev + curr), 0.0 as float);
+        expect(result).assertEqual(7.0 as float);
+
+      }
+      {
+        let arr: Int16Array = new Int16Array(0);
+        let result: float = arr.reduceRight<float>((prev: float, curr: number, idx: int, a: Int16Array): float => Double.toFloat(prev + curr), 1.0 as float);
+        expect(result).assertEqual(1.0 as float);
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(10, 20);
+        let result: byte = arr.reduceRight<byte>((prev: byte, curr: number, idx: int, a: Int16Array): byte => Int.toByte((prev + curr).toInt()), Int.toByte(0));
+        expect(result).assertEqual(Int.toByte(30));
+
+      }
+      {
+        let arr: Int16Array = new Int16Array(0);
+        let result: byte = arr.reduceRight<byte>((prev: byte, curr: number, idx: int, a: Int16Array): byte => prev, Int.toByte(5));
+        expect(result).assertEqual(Int.toByte(5));
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(100, 200);
+        let result: short = arr.reduceRight<short>((prev: short, curr: number, idx: int, a: Int16Array): short => Int.toShort((prev + curr).toInt()), Int.toShort(0));
+        expect(result).assertEqual(Int.toShort(300));
+
+      }
+      {
+        let arr: Int16Array = new Int16Array(0);
+        let result: short = arr.reduceRight<short>((prev: short, curr: number, idx: int, a: Int16Array): short => prev, Int.toShort(1));
+        expect(result).assertEqual(Int.toShort(1));
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(1, 2);
+        let result: number = arr.reduceRight<number>((prev: number, curr: number, idx: int, a: Int16Array): number => prev + curr, 65);
+        expect(result).assertEqual(68);
+
+      }
+      {
+        let arr: Int16Array = new Int16Array(0);
+        let result: number = arr.reduceRight<number>((prev: number, curr: number, idx: int, a: Int16Array): number => prev, 97);
+        expect(result).assertEqual(97);
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(1000, 2000);
+        let result: long = arr.reduceRight<long>((prev: long, curr: number, idx: int, a: Int16Array): long => (prev + curr.toLong()), Int.toLong(0));
+        expect(result).assertEqual(Int.toLong(3000));
+
+      }
+      {
+        let arr: Int16Array = new Int16Array(0);
+        let result: long = arr.reduceRight<long>((prev: long, curr: number, idx: int, a: Int16Array): long => prev, Int.toLong(999));
+        expect(result).assertEqual(Int.toLong(999));
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_REDUCERIGHT_2800
+     * @tc.name testReduceRightTypesPrim007
+     * @tc.desc Verify reduceRight with primitive generic U types and initial values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testReduceRightTypesPrim007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let arr: Int16Array = Int16Array.of(1, 1);
+        let result: boolean = arr.reduceRight<boolean>((prev: boolean, curr: number, idx: int, a: Int16Array): boolean => prev && (curr > 0), true);
+        expect(result).assertTrue();
+
+      }
+      {
+        let arr: Int16Array = new Int16Array(0);
+        let result: boolean = arr.reduceRight<boolean>((prev: boolean, curr: number, idx: int, a: Int16Array): boolean => prev && (curr > 0), true);
+        expect(result).assertTrue();
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(1, 2, 3);
+        let result: bigint = arr.reduceRight<bigint>((prev: bigint, curr: number, idx: int, a: Int16Array): bigint => prev + BigInt(curr), BigInt(0));
+        expect(result).assertEqual(BigInt(6));
+
+      }
+      {
+        let arr: Int16Array = new Int16Array(0);
+        let result: bigint = arr.reduceRight<bigint>((prev: bigint, curr: number, idx: int, a: Int16Array): bigint => prev + BigInt(curr), BigInt(42));
+        expect(result).assertEqual(BigInt(42));
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(7, 14, 21);
+        let manualSum: number = 0;
+        for (let i = arr.length - 1; i >= 0; i--) {
+          manualSum = manualSum + arr.$_get(i);
+        }
+        let result: number = arr.reduceRight<number>((prev: number, curr: number, idx: int, a: Int16Array): number => prev + curr, 0);
+        expect(result).assertEqual(manualSum);
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(1, 2);
+        let result: number = arr.reduceRight<number>((prev: number, curr: number, idx: int, a: Int16Array): number => prev + curr, 0);
+        expect(result).assertEqual(3);
+
+      }
+      {
+        const arr = Int16Array.of(1, 2, 3);
+        const result: number = arr.reduceRight((prev: number, cur: number, idx: int, a: Int16Array) => prev * cur, 10);
+        expect(result).assertEqual(10 * 3 * 2 * 1);
+
+      }
+      {
+        const arr = Int16Array.of(1, 2, 3);
+        const result: number = arr.reduceRight((prev: number, cur: number, idx: int, a: Int16Array) => prev * 2 + cur, 0);
+        expect(result).assertEqual((((0 * 2 + 3) * 2 + 2) * 2 + 1));
+
+      }
+      {
+        const arr = Int16Array.of(1, 2, 3);
+        const result: number = arr.reduceRight((prev: number, cur: number, idx: int, a: Int16Array) => prev - cur, 32767);
+        expect(result).assertEqual(32767 - 3 - 2 - 1);
+
+      }
+      {
+        const arr = Int16Array.of(5, 6, 7);
+        const rExplicit: number = arr.reduceRight<number>((prev: number, cur: number, idx: int, a: Int16Array) => prev * cur, 2);
+        const rInferred: number = arr.reduceRight((prev: number, cur: number, idx: int, a: Int16Array) => prev * cur, 2);
+        expect(rExplicit).assertEqual(rInferred);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_REDUCERIGHT_2900
+     * @tc.name testReduceRightTypesPrim008
+     * @tc.desc Verify reduceRight with primitive generic U types and initial values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testReduceRightTypesPrim008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        const arr = Int16Array.of(2, 3, 4);
+        const r1: number = arr.reduceRight((prev: number, cur: number, idx: int, a: Int16Array) => prev + cur);
+        const r2: number = arr.reduceRight((prev: number, cur: number, idx: int, a: Int16Array) => prev + cur, 0);
+        expect(r1).assertEqual(r2);
+
+      }
+      {
+        const arr = Int16Array.of(1, 2, 3);
+        const result: number = arr.reduceRight((prev: number, cur: number, idx: int, a: Int16Array) => prev + cur * 0.5, 0.0);
+        expect(result).assertEqual(0.0 + 3 * 0.5 + 2 * 0.5 + 1 * 0.5);
+
+      }
+      {
+        const arr = Int16Array.of(5, 10, 15);
+        const rOvl1: number = arr.reduceRight((prev: number, cur: number, idx: int, a: Int16Array) => prev - cur, 0);
+        const rOvl2: number = arr.reduceRight((prev: number, cur: number, idx: int, a: Int16Array) => prev - cur);
+        expect(rOvl1).assertEqual(0 - 15 - 10 - 5);
+        expect(rOvl2).assertEqual(15 - 10 - 5);
+
+      }
+      {
+        const arr = Int16Array.of(2, 3, 4);
+        const r2: number = arr.reduceRight( (prev: number, cur: number, idx: int, a: Int16Array): number => prev * cur);
+        const r1: number = arr.reduceRight((prev: number, cur: number, idx: int, a: Int16Array): number => prev * cur, 1);
+        expect(r2).assertEqual(4 * 3 * 2);
+        expect(r1).assertEqual(1 * 4 * 3 * 2);
+
+      }
+      {
+        const arr = Int16Array.of(7, 8);
+        const r1 = arr.reduceRight((prev: number, cur: number, idx: int, a: Int16Array) => prev + cur, 0);
+        const r2 = arr.reduceRight((prev: number, cur: number, idx: int, a: Int16Array) => prev + cur);
+        expect(r1).assertEqual(15);
+        expect(r2).assertEqual(15);
+
+      }
+      {
+        const arr = Int16Array.of(1, 2, 3);
+        const result: number = arr.reduceRight((prev: number, cur: number, idx: int, a: Int16Array) => prev - cur, 10);
+        expect(result).assertEqual(10 - 3 - 2 - 1);
+
+      }
+      {
+        const arr = Int16Array.of(5, 10, 15);
+        const result: number = arr.reduceRight((prev: number, cur: number, idx: int, a: Int16Array) => prev + cur, -10);
+        expect(result).assertEqual(-10 + 15 + 10 + 5);
+
+      }
+      {
+        const arr = Int16Array.of(1, 2);
+        const rNum = arr.reduceRight((prev: number, cur: number, idx: int, a: Int16Array) => prev + cur, 0);
+        const rStr = arr.reduceRight<string>((prev: string, cur: number, idx: int, a: Int16Array) => prev + cur.toString(), "s");
+        expect(rNum).assertEqual(3);
+        expect(rStr).assertEqual("s21");
+
+      }
+      {
+        const arr = Int16Array.of(10000, 20000, 30000);
+        const r1: number = arr.reduceRight((prev: number, cur: number, idx: int, a: Int16Array) => prev + cur, 0);
+        const r2: number = arr.reduceRight((prev: number, cur: number, idx: int, a: Int16Array) => prev + cur);
+        expect(r1).assertEqual(60000);
+        expect(r2).assertEqual(60000);
+
+      }
+      {
+        const arr = Int16Array.of(1, 1, 1);
+        const r1: number = arr.reduceRight((prev: number, cur: number, idx: int, a: Int16Array) => prev * 2 + cur, 10);
+        const r2: number = arr.reduceRight((prev: number, cur: number, idx: int, a: Int16Array) => prev * 2 + cur);
+        expect(r1).assertEqual(((10 * 2 + 1) * 2 + 1) * 2 + 1);
+        expect(r2).assertEqual((1 * 2 + 1) * 2 + 1);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_REDUCERIGHT_3000
+     * @tc.name testReduceRightTypesPrim009
+     * @tc.desc Verify reduceRight with primitive generic U types and initial values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testReduceRightTypesPrim009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        const arr = Int16Array.of(1, 2);
+        const result = arr.reduceRight<string>((prev: string, cur: number, idx: int, a: Int16Array) => prev + cur.toString(), "x");
+        expect(result).assertEqual("x21");
+
+      }
+      {
+        const arr = Int16Array.of(1, 2);
+        const result: string = arr.reduceRight<string>((prev: string, cur: number, idx: int, a: Int16Array) => prev + cur.toString(), "a");
+        let resultValue1: string = result.toString();
+        let expectedValue1: string = "a21";
+        expect(resultValue1).assertEqual(expectedValue1);
+
+      }
+      {
+        const arr = Int16Array.of(1, 2, 3);
+        const result: string = arr.reduceRight<string>((prev: string, cur: number, idx: int, a: Int16Array) => prev + cur.toString(), "p");
+        let resultValue1: int = result.length;
+        let expectedValue1: int = "p321".length;
+        expect(resultValue1).assertEqual(expectedValue1);
+
+      }
+      {
+        const arr = Int16Array.of(5, 6);
+        const result = arr.reduceRight((prev: number, cur: number, idx: int, a: Int16Array) => prev * cur, 1);
+        expect(result).assertEqual(30);
+
+      }
+      {
+        const arr = Int16Array.of(1, 0);
+        const result = arr.reduceRight<boolean>((prev: boolean, cur: number, idx: int, a: Int16Array) => prev && (cur === 0), true);
+        expect(result).assertFalse();
+
+      }
+      {
+        const arr = Int16Array.of(1, 2);
+        const r: number = arr.reduceRight((prev: number, cur: number, idx: int, a: Int16Array) => prev + cur, 0);
+        expect(r).assertEqual(3);
+
+      }
+      {
+        const arr = Int16Array.of(1, 2);
+        const init = "start";
+        let firstPrev: string = "";
+        arr.reduceRight<string>((prev: string, cur: number, idx: int, a: Int16Array) => {
+          if (firstPrev.length === 0) {
+            firstPrev = prev;
+          }
+          return prev + cur.toString();
+        }, init);
+        expect(firstPrev).assertEqual("start");
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_REDUCERIGHT_3100
+     * @tc.name testReduceRightTypesObj001
+     * @tc.desc Verify reduceRight with object generic U types and object accumulators
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testReduceRightTypesObj001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let arr = Int16Array.of(1, 2);
+        let init: ReduceRightPart01AccStats = new ReduceRightPart01AccStats();
+        let result: ReduceRightPart01AccStats = arr.reduceRight((prev: ReduceRightPart01AccStats, curr: number): ReduceRightPart01AccStats => {
+          let s: ReduceRightPart01AccStats = new ReduceRightPart01AccStats();
+          s.sum = prev.sum + curr;
+          s.count = prev.count + 1;
+          return s;
+        }, init);
+        let resultValue1: number = result.sum;
+        let expectedValue1: int = 3;
+        expect(resultValue1).assertEqual(expectedValue1);
+        let resultValue2: number = result.count;
+        let expectedValue2: int = 2;
+        expect(resultValue2).assertEqual(expectedValue2);
+
+      }
+      {
+        let arr = Int16Array.of(1, 2, 3);
+        let init: ReduceRightPart01AccStats = new ReduceRightPart01AccStats();
+        let result: ReduceRightPart01AccStats = arr.reduceRight((prev: ReduceRightPart01AccStats, curr: number): ReduceRightPart01AccStats => {
+          let s: ReduceRightPart01AccStats = new ReduceRightPart01AccStats();
+          s.sum = prev.sum + curr;
+          s.count = prev.count + 1;
+          return s;
+        }, init);
+        let resultValue1: number = result.sum;
+        let expectedValue1: int = 6;
+        expect(resultValue1).assertEqual(expectedValue1);
+        let resultValue2: number = result.count;
+        let expectedValue2: int = 3;
+        expect(resultValue2).assertEqual(expectedValue2);
+
+      }
+      {
+        let arr = new Int16Array(0);
+        let init: ReduceRightPart01AccStats = new ReduceRightPart01AccStats();
+        let result: ReduceRightPart01AccStats = arr.reduceRight((prev: ReduceRightPart01AccStats, curr: number): ReduceRightPart01AccStats => {
+          let s: ReduceRightPart01AccStats = new ReduceRightPart01AccStats();
+          s.sum = prev.sum + curr;
+          s.count = prev.count + 1;
+          return s;
+        }, init);
+        let resultValue1: number = result.sum;
+        let expectedValue1: int = 0;
+        expect(resultValue1).assertEqual(expectedValue1);
+        let resultValue2: number = result.count;
+        let expectedValue2: int = 0;
+        expect(resultValue2).assertEqual(expectedValue2);
+
+      }
+      {
+        let arr = Int16Array.of(1, 2, 3);
+        let init: ReduceRightPart01Accumulator = new ReduceRightPart01Accumulator();
+        let result: ReduceRightPart01Accumulator = arr.reduceRight((prev: ReduceRightPart01Accumulator, curr: number): ReduceRightPart01Accumulator => {
+          let acc: ReduceRightPart01Accumulator = new ReduceRightPart01Accumulator();
+          acc.value = prev.value + curr;
+          return acc;
+        }, init);
+        let resultValue1: number = result.value;
+        let expectedValue1: int = 6;
+        expect(resultValue1).assertEqual(expectedValue1);
+
+      }
+      {
+        let arr = Int16Array.of(1);
+        let init: ReduceRightPart01AccStats = new ReduceRightPart01AccStats();
+        let result: ReduceRightPart01AccStats = arr.reduceRight((prev: ReduceRightPart01AccStats, curr: number): ReduceRightPart01AccStats => {
+          let s: ReduceRightPart01AccStats = new ReduceRightPart01AccStats();
+          s.sum = prev.sum + curr;
+          s.count = prev.count + 1;
+          return s;
+        }, init);
+        expect(result.sum).assertEqual(1);
+        expect(result.count).assertEqual(1);
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(100, 200, 300);
+        let init: Date = new Date(0);
+        let result: Date = arr.reduceRight<Date>((prev: Date, curr: number, idx: int, a: Int16Array): Date => new Date(prev.getTime() + curr.toLong()), init);
+        let resultValue1: number = result.getTime();
+        let expectedValue1: int = 600;
+        expect(resultValue1).assertEqual(expectedValue1);
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(1, 2);
+        let init: RegExp = new RegExp("a", "g");
+        let result: RegExp = arr.reduceRight<RegExp>((prev: RegExp, curr: number, idx: int, a: Int16Array): RegExp => new RegExp(prev.source + curr.toString(), prev.flags), init);
+        let resultValue1: string = result.source;
+        let expectedValue1: string = "a21";
+        expect(resultValue1).assertEqual(expectedValue1);
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(10, 20, 30);
+        let init: Map<string, number> = new Map<string, number>();
+        let result: Map<string, number> = arr.reduceRight<Map<string, number>>((prev: Map<string, number>, curr: number, idx: int, a: Int16Array) => {
+          prev.set("k" + idx.toString(), curr);
+          return prev;
+        }, init);
+        let resultValue1: number = result.size;
+        let expectedValue1: int = 3;
+        expect(resultValue1).assertEqual(expectedValue1);
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(5, 10, 15);
+        let init: Set<number> = new Set<number>();
+        let result: Set<number> = arr.reduceRight<Set<number>>((prev: Set<number>, curr: number, idx: int, a: Int16Array) => {
+          prev.add(curr);
+          return prev;
+        }, init);
+        let resultValue1: number = result.size;
+        let expectedValue1: int = 3;
+        expect(resultValue1).assertEqual(expectedValue1);
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(50);
+        let init: Date = new Date(1000);
+        let isSameRef: boolean = false;
+        arr.reduceRight<Date>((prev: Date, curr: number, idx: int, a: Int16Array): Date => {
+          isSameRef = (prev === init);
+          return new Date(prev.getTime() + curr.toLong());
+        }, init);
+        expect(isSameRef).assertTrue();
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_REDUCERIGHT_3200
+     * @tc.name testReduceRightTypesObj002
+     * @tc.desc Verify reduceRight with object generic U types and object accumulators
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testReduceRightTypesObj002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let arr: Int16Array = Int16Array.of(1);
+        let init: RegExp = new RegExp("prefix", "g");
+        let capturedSource: string = "";
+        arr.reduceRight<RegExp>((prev: RegExp, curr: number, idx: int, a: Int16Array): RegExp => {
+          capturedSource = prev.source;
+          return new RegExp(prev.source + curr.toString(), prev.flags);
+        }, init);
+        expect(capturedSource).assertEqual("prefix");
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(5);
+        let init: Map<string, number> = new Map<string, number>();
+        init.set("x", 10);
+        let isSameRef: boolean = false;
+        arr.reduceRight<Map<string, number>>((prev: Map<string, number>, curr: number, idx: int, a: Int16Array) => {
+          isSameRef = (prev === init);
+          prev.set("y", curr);
+          return prev;
+        }, init);
+        expect(isSameRef).assertTrue();
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(7);
+        let init: Set<number> = new Set<number>();
+        init.add(42);
+        let isSameRef: boolean = false;
+        arr.reduceRight<Set<number>>((prev: Set<number>, curr: number, idx: int, a: Int16Array) => {
+          isSameRef = (prev === init);
+          prev.add(curr);
+          return prev;
+        }, init);
+        expect(isSameRef).assertTrue();
+
+      }
+      {
+        let arr: Int16Array = new Int16Array(0);
+        let init: Date = new Date(9999);
+        let result: Date = arr.reduceRight<Date>((prev: Date, curr: number, idx: int, a: Int16Array): Date => new Date(prev.getTime() + curr.toLong()), init);
+        let resultValue1: boolean = result === init;
+        expect(resultValue1).assertTrue();
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(1);
+        let init: Date = new Date(0);
+        let result: Date = arr.reduceRight<Date>((prev: Date, curr: number, idx: int, a: Int16Array): Date => new Date(prev.getTime() + curr.toLong()), init);
+        let resultValue1: boolean = result instanceof Date;
+        expect(resultValue1).assertTrue();
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(1, 2, 3);
+        let init: RegExp = new RegExp("a", "g");
+        let result: RegExp = arr.reduceRight<RegExp>((prev: RegExp, curr: number, idx: int, a: Int16Array): RegExp => new RegExp(prev.source + curr.toString(), prev.flags), init);
+        let resultValue1: string = result.source;
+        let expectedValue1: string = "a321";
+        expect(resultValue1).assertEqual(expectedValue1);
+
+      }
+      {
+        let arr: Int16Array = new Int16Array(0);
+        let init: RegExp = new RegExp("test", "i");
+        let result: RegExp = arr.reduceRight<RegExp>((prev: RegExp, curr: number, idx: int, a: Int16Array): RegExp => new RegExp(prev.source + curr.toString(), prev.flags), init);
+        let resultValue1: boolean = result === init;
+        expect(resultValue1).assertTrue();
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(10, 20, 30);
+        let init: Map<string, number> = new Map<string, number>();
+        let result: Map<string, number> = arr.reduceRight<Map<string, number>>((prev: Map<string, number>, curr: number, idx: int, a: Int16Array) => {
+          prev.set("k" + idx.toString(), curr);
+          return prev;
+        }, init);
+        let resultValue1: number = result.size;
+        let expectedValue1: int = 3;
+        expect(resultValue1).assertEqual(expectedValue1);
+        let resultValue2 = result.get("k2");
+        let expectedValue2: int = 30;
+        expect(resultValue2).assertEqual(expectedValue2);
+        let resultValue3 = result.get("k0");
+        let expectedValue3: int = 10;
+        expect(resultValue3).assertEqual(expectedValue3);
+
+      }
+      {
+        let arr: Int16Array = new Int16Array(0);
+        let init: Map<string, number> = new Map<string, number>();
+        init.set("x", 99);
+        let result: Map<string, number> = arr.reduceRight<Map<string, number>>((prev: Map<string, number>, curr: number, idx: int, a: Int16Array) => prev, init);
+        let resultValue1: boolean = result === init;
+        expect(resultValue1).assertTrue();
+        let resultValue2: number = result.size;
+        let expectedValue2: int = 1;
+        expect(resultValue2).assertEqual(expectedValue2);
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(5, 10, 15);
+        let init: Set<number> = new Set<number>();
+        let result: Set<number> = arr.reduceRight<Set<number>>((prev: Set<number>, curr: number, idx: int, a: Int16Array) => {
+          prev.add(curr);
+          return prev;
+        }, init);
+        let resultValue1: number = result.size;
+        let expectedValue1: int = 3;
+        expect(resultValue1).assertEqual(expectedValue1);
+        let resultValue2: boolean = result.has(15);
+        expect(resultValue2).assertTrue();
+        let resultValue3: boolean = result.has(5);
+        expect(resultValue3).assertTrue();
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_REDUCERIGHT_3300
+     * @tc.name testReduceRightTypesObj003
+     * @tc.desc Verify reduceRight with object generic U types and object accumulators
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testReduceRightTypesObj003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let arr: Int16Array = new Int16Array(0);
+        let init: Set<number> = new Set<number>();
+        init.add(42);
+        let result: Set<number> = arr.reduceRight<Set<number>>((prev: Set<number>, curr: number, idx: int, a: Int16Array) => prev, init);
+        let resultValue1: boolean = result === init;
+        expect(resultValue1).assertTrue();
+        let resultValue2: number = result.size;
+        let expectedValue2: int = 1;
+        expect(resultValue2).assertEqual(expectedValue2);
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(1, 2, 3);
+        let init: Float32Array = new Float32Array(0);
+        let result: Float32Array = arr.reduceRight<Float32Array>((prev: Float32Array, curr: number, idx: int, a: Int16Array): Float32Array => {
+          let merged: Float32Array = new Float32Array(prev.length + 1);
+          for (let i = 0; i < prev.length; i++) {
+            merged.$_set(i, prev.$_get(i));
+          }
+          merged.$_set(prev.length, curr);
+          return merged;
+        }, init);
+        let resultValue1: int = result.length;
+        let expectedValue1: int = 3;
+        expect(resultValue1).assertEqual(expectedValue1);
+
+      }
+      {
+        let arr: Int16Array = new Int16Array(0);
+        let init: Float32Array = new Float32Array(2);
+        init.$_set(0, 10);
+        init.$_set(1, 20);
+        let result: Float32Array = arr.reduceRight<Float32Array>((prev: Float32Array, curr: number, idx: int, a: Int16Array): Float32Array => prev, init);
+        let resultValue1: boolean = result === init;
+        expect(resultValue1).assertTrue();
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(1);
+        let init: Float32Array = new Float32Array(1);
+        init.$_set(0, 0);
+        let result: Float32Array = arr.reduceRight<Float32Array>((prev: Float32Array, curr: number, idx: int, a: Int16Array): Float32Array => {
+          prev.$_set(0, prev.$_get(0) + curr);
+          return prev;
+        }, init);
+        let resultValue1: boolean = result instanceof Float32Array;
+        expect(resultValue1).assertTrue();
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(10, 20);
+        let init: Float64Array = new Float64Array(0);
+        let result: Float64Array = arr.reduceRight<Float64Array>((prev: Float64Array, curr: number, idx: int, a: Int16Array): Float64Array => {
+          let merged: Float64Array = new Float64Array(prev.length + 1);
+          for (let i = 0; i < prev.length; i++) {
+            merged.$_set(i, prev.$_get(i));
+          }
+          merged.$_set(prev.length, curr);
+          return merged;
+        }, init);
+        let resultValue1: int = result.length;
+        let expectedValue1: int = 2;
+        expect(resultValue1).assertEqual(expectedValue1);
+
+      }
+      {
+        let arr: Int16Array = new Int16Array(0);
+        let init: Float64Array = new Float64Array(1);
+        init.$_set(0, 3.14);
+        let result: Float64Array = arr.reduceRight<Float64Array>((prev: Float64Array, curr: number, idx: int, a: Int16Array): Float64Array => prev, init);
+        let resultValue1: boolean = result === init;
+        expect(resultValue1).assertTrue();
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(1, 2);
+        let init: Record<string, number> = {} as Record<string, number>;
+        let result: Record<string, number> = arr.reduceRight<Record<string, number>>((prev: Record<string, number>, curr: number, idx: int, a: Int16Array) => {
+          prev["k" + idx.toString()] = curr;
+          return prev;
+        }, init);
+        let resultValue1 = result["k1"];
+        let expectedValue1: int = 2;
+        expect(resultValue1).assertEqual(expectedValue1);
+        let resultValue2 = result["k0"];
+        let expectedValue2: int = 1;
+        expect(resultValue2).assertEqual(expectedValue2);
+
+      }
+      {
+        let arr: Int16Array = new Int16Array(0);
+        let init: Record<string, number> = {} as Record<string, number>;
+        init["a"] = 1;
+        let result: Record<string, number> = arr.reduceRight<Record<string, number>>((prev: Record<string, number>, curr: number, idx: int, a: Int16Array) => prev, init);
+        let resultValue1: boolean = result === init;
+        expect(resultValue1).assertTrue();
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(10, 20, 30);
+        let init: ReduceRightPart03Acc = new ReduceRightPart03Acc();
+        let result: ReduceRightPart03Acc = arr.reduceRight<ReduceRightPart03Acc>((prev: ReduceRightPart03Acc, curr: number, idx: int, a: Int16Array): ReduceRightPart03Acc => {
+          prev.sum = prev.sum + curr;
+          prev.count = prev.count + 1;
+          return prev;
+        }, init);
+        let resultValue1: number = result.sum;
+        let expectedValue1: int = 60;
+        expect(resultValue1).assertEqual(expectedValue1);
+        let resultValue2: number = result.count;
+        let expectedValue2: int = 3;
+        expect(resultValue2).assertEqual(expectedValue2);
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(100);
+        let d1: Date = new Date(500);
+        let d2: Date = new Date(500);
+        let r1 = arr.reduceRight<Date>((prev: Date, curr: number, idx: int, a: Int16Array): Date => new Date(prev.getTime() + curr.toLong()), d1);
+        let r2 = arr.reduceRight<Date>((prev: Date, curr: number, idx: int, a: Int16Array): Date => new Date(prev.getTime() + curr.toLong()), d2);
+        let resultValue1: number = r1.getTime();
+        let expectedValue1: number = r2.getTime();
+        expect(resultValue1).assertEqual(expectedValue1);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_REDUCERIGHT_3400
+     * @tc.name testReduceRightTypesObj004
+     * @tc.desc Verify reduceRight with object generic U types and object accumulators
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testReduceRightTypesObj004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let arr: Int16Array = Int16Array.of(1);
+        let re1: RegExp = new RegExp("test", "g");
+        let re2: RegExp = new RegExp("test", "g");
+        let r1 = arr.reduceRight<RegExp>((prev: RegExp, curr: number, idx: int, a: Int16Array): RegExp => new RegExp(prev.source + curr.toString(), prev.flags), re1);
+        let r2 = arr.reduceRight<RegExp>((prev: RegExp, curr: number, idx: int, a: Int16Array): RegExp => new RegExp(prev.source + curr.toString(), prev.flags), re2);
+        let resultValue1: string = r1.source;
+        let expectedValue1: string = r2.source;
+        expect(resultValue1).assertEqual(expectedValue1);
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(1, 2);
+        let m1: Map<string, number> = new Map<string, number>();
+        let m2: Map<string, number> = new Map<string, number>();
+        let r1 = arr.reduceRight<Map<string, number>>((prev: Map<string, number>, curr: number, idx: int, a: Int16Array) => {
+          prev.set("k" + curr.toString(), curr);
+          return prev;
+        }, m1);
+        let r2 = arr.reduceRight<Map<string, number>>((prev: Map<string, number>, curr: number, idx: int, a: Int16Array) => {
+          prev.set("k" + curr.toString(), curr);
+          return prev;
+        }, m2);
+        let resultValue1: number = r1.size;
+        let expectedValue1: number = r2.size;
+        expect(resultValue1).assertEqual(expectedValue1);
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(1, 2, 3);
+        let s1: Set<number> = new Set<number>();
+        let s2: Set<number> = new Set<number>();
+        let r1 = arr.reduceRight<Set<number>>((prev: Set<number>, curr: number, idx: int, a: Int16Array) => {
+          prev.add(curr);
+          return prev;
+        }, s1);
+        let r2 = arr.reduceRight<Set<number>>((prev: Set<number>, curr: number, idx: int, a: Int16Array) => {
+          prev.add(curr);
+          return prev;
+        }, s2);
+        let resultValue1: number = r1.size;
+        let expectedValue1: number = r2.size;
+        expect(resultValue1).assertEqual(expectedValue1);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_REDUCERIGHT_3500
+     * @tc.name testReduceRightError001
+     * @tc.desc Verify reduceRight propagates errors and throws TypeError on empty array without initialValue
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testReduceRightError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let arr = Int16Array.of(1, 2, 3);
+        try {
+          arr.reduceRight((prev: number, curr: number): number => {
+            throw new TypeError("test error");
+          }, 0);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+
+      }
+      {
+        let callCount: number = 0;
+        let arr = Int16Array.of(1, 2, 3);
+        try {
+          arr.reduceRight((prev: number, curr: number): number => {
+            callCount++;
+            if (callCount === 1) {
+              throw new TypeError("first call error");
+            }
+            return prev + curr;
+          }, 0);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+        expect(callCount).assertEqual(1);
+
+      }
+      {
+        let callCount: number = 0;
+        let arr = Int16Array.of(1, 2, 3);
+        try {
+          arr.reduceRight((prev: number, curr: number): number => {
+            callCount++;
+            if (callCount === 2) {
+              throw new TypeError("middle call error");
+            }
+            return prev + curr;
+          }, 0);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+        expect(callCount).assertEqual(2);
+
+      }
+      {
+        let callCount: number = 0;
+        let arr = Int16Array.of(1, 2, 3);
+        try {
+          arr.reduceRight((prev: number, curr: number): number => {
+            callCount++;
+            if (callCount === 3) {
+              throw new TypeError("last call error");
+            }
+            return prev + curr;
+          }, 0);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+        expect(callCount).assertEqual(3);
+
+      }
+      {
+        let arr = new Int16Array(0);
+        try {
+          arr.reduceRight((prev: number, curr: number, idx: int, a: Int16Array): number => prev + curr);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+
+      }
+      {
+        let arr = Int16Array.of(1, 2, 3);
+        try {
+          arr.reduceRight((prev: number, curr: number, idx: int, a: Int16Array): number => {
+            throw new TypeError('fail');
+          });
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+
+      }
+      {
+        let arr = Int16Array.of(10, 20, 30);
+        try {
+          arr.reduceRight((prev: number, curr: number, idx: int, a: Int16Array): number => {
+            if (idx === 0) {
+              throw new TypeError('last call');
+            }
+            return prev + curr;
+          });
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+
+      }
+      {
+        let arr = Int16Array.of(1, 2, 3, 4, 5);
+        let afterThrowCallCount: number = 0;
+        try {
+          arr.reduceRight((prev: number, curr: number, idx: int, a: Int16Array): number => {
+            if (idx === 2) {
+              throw new TypeError('middle');
+            }
+            afterThrowCallCount++;
+            return prev + curr;
+          });
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+        expect(afterThrowCallCount).assertEqual(1);
+
+      }
+      {
+        let buf = new ArrayBuffer(0);
+        let arr = new Int16Array(buf);
+        try {
+          arr.reduceRight((prev: number, curr: number, idx: int, a: Int16Array): number => prev + curr);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(1, 2);
+        let init: Error = new Error("start");
+        let result: Error = arr.reduceRight<Error>((prev: Error, curr: number, idx: int, a: Int16Array): Error => new Error(prev.message + "-" + curr.toString()), init);
+        let resultValue1: string = result.message;
+        let expectedValue1: string = "start-2-1";
+        expect(resultValue1).assertEqual(expectedValue1);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_REDUCERIGHT_3600
+     * @tc.name testReduceRightError002
+     * @tc.desc Verify reduceRight propagates errors and throws TypeError on empty array without initialValue
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testReduceRightError002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let arr: Int16Array = new Int16Array(0);
+        let init: Error = new Error("empty");
+        let result: Error = arr.reduceRight<Error>((prev: Error, curr: number, idx: int, a: Int16Array): Error => new Error(prev.message + curr.toString()), init);
+        let resultValue1: boolean = result === init;
+        expect(resultValue1).assertTrue();
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(1, 2, 3, 4);
+        let afterThrowCalls: number = 0;
+        try {
+          arr.reduceRight<number>((prev: number, curr: number, idx: int, a: Int16Array): number => {
+            if (idx === 3) { throw new TypeError("first round fail"); }
+            afterThrowCalls++;
+            return prev + curr;
+          }, 0);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+        expect(afterThrowCalls).assertEqual(0);
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(1, 2, 3, 4);
+        let sideEffectSum: number = 0;
+        try {
+          arr.reduceRight<number>((prev: number, curr: number, idx: int, a: Int16Array): number => {
+            sideEffectSum = sideEffectSum + curr;
+            if (idx === 1) { throw new TypeError("stop at idx 1"); }
+            return prev + curr;
+          }, 0);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+        expect(sideEffectSum).assertEqual(9);
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(100, 200, 300);
+        try {
+          arr.reduceRight<number>((prev: number, curr: number, idx: int, a: Int16Array): number => {
+            throw new TypeError("abort");
+          }, 0);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+        let resultValue1: number = arr.$_get(0);
+        let expectedValue1: int = 100;
+        expect(resultValue1).assertEqual(expectedValue1);
+        let resultValue2: number = arr.$_get(1);
+        let expectedValue2: int = 200;
+        expect(resultValue2).assertEqual(expectedValue2);
+        let resultValue3: number = arr.$_get(2);
+        let expectedValue3: int = 300;
+        expect(resultValue3).assertEqual(expectedValue3);
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(1, 2, 3, 4, 5);
+        let originalLen: number = arr.length;
+        try {
+          arr.reduceRight<number>((prev: number, curr: number, idx: int, a: Int16Array): number => {
+            if (idx === 2) { throw new TypeError("mid"); }
+            return prev + curr;
+          }, 0);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+        let resultValue1: int = arr.length;
+        let expectedValue1: number = originalLen;
+        expect(resultValue1).assertEqual(expectedValue1);
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(1, 2);
+        try {
+          arr.reduceRight<string>((prev: string, curr: number, idx: int, a: Int16Array): string => {
+            throw new TypeError("string reduceRight fail");
+          }, "");
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(1, 2);
+        let init: ReduceRightPart03ImmBox = new ReduceRightPart03ImmBox();
+        init.value = 10;
+        try {
+          arr.reduceRight<ReduceRightPart03ImmBox>((prev: ReduceRightPart03ImmBox, curr: number, idx: int, a: Int16Array): ReduceRightPart03ImmBox => {
+            if (idx === 1) { throw new TypeError("early fail"); }
+            let next: ReduceRightPart03ImmBox = new ReduceRightPart03ImmBox();
+            next.value = prev.value + curr;
+            return next;
+          }, init);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+        let resultValue1: number = init.value;
+        let expectedValue1: int = 10;
+        expect(resultValue1).assertEqual(expectedValue1);
+
+      }
+      {
+        const arr = new Int16Array(0);
+        try {
+          arr.reduceRight((prev: number, cur: number, idx: int, a: Int16Array) => prev + cur);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+        let resultValue1: int = arr.BYTES_PER_ELEMENT;
+        let expectedValue1: int = 2;
+        expect(resultValue1).assertEqual(expectedValue1);
+
+      }
+      {
+        const arr = new Int16Array(0);
+        try {
+          arr.reduceRight((prev: number, cur: number, idx: int, a: Int16Array) => prev + cur);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+        let resultValue1: int = arr.byteLength;
+        let expectedValue1: int = 0;
+        expect(resultValue1).assertEqual(expectedValue1);
+
+      }
+      {
+        const arr = new Int16Array(0);
+        try {
+          arr.reduceRight((prev: number, cur: number, idx: int, a: Int16Array) => prev + cur);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+        const result: number = arr.reduceRight((prev: number, cur: number, idx: int, a: Int16Array) => prev + cur, 99);
+        expect(result).assertEqual(99);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_REDUCERIGHT_3700
+     * @tc.name testReduceRightError003
+     * @tc.desc Verify reduceRight propagates errors and throws TypeError on empty array without initialValue
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testReduceRightError003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        const arr = Int16Array.of(10, 20, 30);
+        try {
+          arr.reduceRight((prev: number, cur: number, idx: int, a: Int16Array) => {
+            throw new TypeError("fail");
+          }, 0);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+        let resultValue1: number = arr.$_get(0 as int);
+        let expectedValue1: int = 10;
+        expect(resultValue1).assertEqual(expectedValue1);
+        let resultValue2: number = arr.$_get(1 as int);
+        let expectedValue2: int = 20;
+        expect(resultValue2).assertEqual(expectedValue2);
+        let resultValue3: number = arr.$_get(2 as int);
+        let expectedValue3: int = 30;
+        expect(resultValue3).assertEqual(expectedValue3);
+
+      }
+      {
+        const arr = new Int16Array(0);
+        try {
+          arr.reduceRight((prev: number, cur: number, idx: int, a: Int16Array) => prev + cur);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+        const result: string = arr.reduceRight<string>((prev: string, cur: number, idx: int, a: Int16Array) => prev + cur.toString(), "ok");
+        expect(result).assertEqual("ok");
+
+      }
+    });
+
+  });
+}
