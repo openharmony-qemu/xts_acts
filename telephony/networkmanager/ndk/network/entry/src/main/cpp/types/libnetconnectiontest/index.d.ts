@@ -31,6 +31,7 @@ export const WebSocket_Request_Options: () => number;
 export const Web_Socket: (a: number) => number;
 export const Web_Socket_ErrCode: (a: number, b: string) => number;
 export const NetStack_Certificate_PinningKind: (a: string) => number;
+export const NetStack_Certificate_PinningKindNoP: (a: string) => number;
 export const NetStack_Hash_Algorithm: (a: string) => number;
 export const Public_KeyHash: (a: string) => number;
 export const NetStack_IsCleartextPermitted: (a: number) => number;
