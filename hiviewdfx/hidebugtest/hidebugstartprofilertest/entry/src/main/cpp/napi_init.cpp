@@ -13,7 +13,6 @@
  * limitations under the License.
  */
  
- add
 #include "napi/native_api.h"
 #include "hidebug/hidebug.h"
 #include "hidebug/hidebug_type.h"
@@ -657,6 +656,212 @@ static napi_value TestStartProfilerWithOptionsStackTraceMode(napi_env env, napi_
     return result;
 }
 
+// ============================================================
+// Additional test functions for coverage gaps
+// ============================================================
+
+// Test OH_HiDebug_CreateProfilerOptions returns non-nullptr (explicit nullptr check)
+static napi_value TestCreateProfilerOptionsNullCheck(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag TestCreateProfilerOptionsNullCheck start");
+    OH_HiDebug_ProfilerOptions* opts = OH_HiDebug_CreateProfilerOptions();
+    napi_value result;
+    if (opts == nullptr) {
+        OH_LOG_ERROR(LOG_APP, "testTag TestCreateProfilerOptionsNullCheck: opts is nullptr");
+        napi_create_int32(env, 0, &result);
+    } else {
+        // Explicitly verify the pointer is valid by using it
+        HiDebug_ErrorCode code = OH_HiDebug_SetMaxDurationSec(opts, MIN_DURATION_SEC);
+        OH_HiDebug_DestroyProfilerOptions(opts);
+        napi_create_int32(env, 1, &result);
+    }
+    return result;
+}
+
+// Test OH_HiDebug_DestroyProfilerOptions with valid pointer returns HIDEBUG_SUCCESS
+static napi_value TestDestroyProfilerOptionsValid(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag TestDestroyProfilerOptionsValid start");
+    OH_HiDebug_ProfilerOptions* opts = OH_HiDebug_CreateProfilerOptions();
+    if (opts == nullptr) {
+        napi_value result;
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    HiDebug_ErrorCode code = OH_HiDebug_DestroyProfilerOptions(opts);
+    OH_LOG_INFO(LOG_APP, "testTag TestDestroyProfilerOptionsValid code=%{public}d", code);
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+// Test OH_HiDebug_StartProfilerWithOptions with explicit OH_RES_TYPE_DMA enum value
+static napi_value TestStartProfilerWithDMA(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag TestStartProfilerWithDMA start");
+    OH_HiDebug_ProfilerOptions* opts = OH_HiDebug_CreateProfilerOptions();
+    if (opts == nullptr) {
+        napi_value result;
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    OH_HiDebug_SetMaxDurationSec(opts, MIN_DURATION_SEC);
+    OH_HiDebug_SetFilterSize(opts, MIN_FILTER_SIZE);
+    OH_HiDebug_SetSampleIntervalBytes(opts, MIN_SAMPLE_INTERVAL_BYTES);
+    HiDebug_ErrorCode code = OH_HiDebug_StartProfilerWithOptions(OH_RES_TYPE_DMA, opts, OnProfilerOptionsResult);
+    OH_HiDebug_DestroyProfilerOptions(opts);
+    OH_LOG_INFO(LOG_APP, "testTag TestStartProfilerWithDMA code=%{public}d", code);
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+// Test OH_HiDebug_StartProfilerWithOptions with explicit OH_RES_TYPE_ASHMEM enum value
+static napi_value TestStartProfilerWithASHMEM(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag TestStartProfilerWithASHMEM start");
+    OH_HiDebug_ProfilerOptions* opts = OH_HiDebug_CreateProfilerOptions();
+    if (opts == nullptr) {
+        napi_value result;
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    OH_HiDebug_SetMaxDurationSec(opts, MIN_DURATION_SEC);
+    OH_HiDebug_SetFilterSize(opts, MIN_FILTER_SIZE);
+    OH_HiDebug_SetSampleIntervalBytes(opts, MIN_SAMPLE_INTERVAL_BYTES);
+    HiDebug_ErrorCode code = OH_HiDebug_StartProfilerWithOptions(OH_RES_TYPE_ASHMEM, opts, OnProfilerOptionsResult);
+    OH_HiDebug_DestroyProfilerOptions(opts);
+    OH_LOG_INFO(LOG_APP, "testTag TestStartProfilerWithASHMEM code=%{public}d", code);
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+// Test OH_HiDebug_StartProfilerWithOptions with explicit OH_RES_TYPE_COMPOSITE_HEAP enum value
+static napi_value TestStartProfilerWithCompositeHeap(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag TestStartProfilerWithCompositeHeap start");
+    OH_HiDebug_ProfilerOptions* opts = OH_HiDebug_CreateProfilerOptions();
+    if (opts == nullptr) {
+        napi_value result;
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    OH_HiDebug_SetMaxDurationSec(opts, MIN_DURATION_SEC);
+    OH_HiDebug_SetFilterSize(opts, MIN_FILTER_SIZE);
+    OH_HiDebug_SetSampleIntervalBytes(opts, MIN_SAMPLE_INTERVAL_BYTES);
+    HiDebug_ErrorCode code = OH_HiDebug_StartProfilerWithOptions(
+        OH_RES_TYPE_COMPOSITE_HEAP, opts, OnProfilerOptionsResult);
+    OH_HiDebug_DestroyProfilerOptions(opts);
+    OH_LOG_INFO(LOG_APP, "testTag TestStartProfilerWithCompositeHeap code=%{public}d", code);
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+// Test OH_HiDebug_SetStackTraceMode with explicit OH_HIDEBUG_STACK_TRACE_DISCARD_DESTROYED enum value
+static napi_value TestSetStackTraceModeDiscardDestroyed(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag TestSetStackTraceModeDiscardDestroyed start");
+    OH_HiDebug_ProfilerOptions* opts = OH_HiDebug_CreateProfilerOptions();
+    if (opts == nullptr) {
+        napi_value result;
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    HiDebug_ErrorCode code = OH_HiDebug_SetStackTraceMode(opts, OH_HIDEBUG_STACK_TRACE_DISCARD_DESTROYED);
+    OH_LOG_INFO(LOG_APP, "testTag TestSetStackTraceModeDiscardDestroyed code=%{public}d", code);
+    OH_HiDebug_DestroyProfilerOptions(opts);
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+// Test OH_HiDebug_SetStackTraceMode with explicit OH_HIDEBUG_STACK_TRACE_KEEP_ALL enum value
+static napi_value TestSetStackTraceModeKeepAll(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag TestSetStackTraceModeKeepAll start");
+    OH_HiDebug_ProfilerOptions* opts = OH_HiDebug_CreateProfilerOptions();
+    if (opts == nullptr) {
+        napi_value result;
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    HiDebug_ErrorCode code = OH_HiDebug_SetStackTraceMode(opts, OH_HIDEBUG_STACK_TRACE_KEEP_ALL);
+    OH_LOG_INFO(LOG_APP, "testTag TestSetStackTraceModeKeepAll code=%{public}d", code);
+    OH_HiDebug_DestroyProfilerOptions(opts);
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+// Test OH_HiDebug_StartProfilerWithOptions with explicit OH_RES_TYPE_DMA + DISCARD_DESTROYED stack trace mode
+static napi_value TestStartProfilerWithDMAAndDiscardMode(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag TestStartProfilerWithDMAAndDiscardMode start");
+    OH_HiDebug_ProfilerOptions* opts = OH_HiDebug_CreateProfilerOptions();
+    if (opts == nullptr) {
+        napi_value result;
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    OH_HiDebug_SetMaxDurationSec(opts, MIN_DURATION_SEC);
+    OH_HiDebug_SetFilterSize(opts, MIN_FILTER_SIZE);
+    OH_HiDebug_SetSampleIntervalBytes(opts, MIN_SAMPLE_INTERVAL_BYTES);
+    OH_HiDebug_SetStackTraceMode(opts, OH_HIDEBUG_STACK_TRACE_DISCARD_DESTROYED);
+    HiDebug_ErrorCode code = OH_HiDebug_StartProfilerWithOptions(OH_RES_TYPE_DMA, opts, OnProfilerOptionsResult);
+    OH_HiDebug_DestroyProfilerOptions(opts);
+    OH_LOG_INFO(LOG_APP, "testTag TestStartProfilerWithDMAAndDiscardMode code=%{public}d", code);
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+// Test OH_HiDebug_StartProfilerWithOptions with explicit OH_RES_TYPE_ASHMEM + KEEP_ALL stack trace mode
+static napi_value TestStartProfilerWithAshmemAndKeepAllMode(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag TestStartProfilerWithAshmemAndKeepAllMode start");
+    OH_HiDebug_ProfilerOptions* opts = OH_HiDebug_CreateProfilerOptions();
+    if (opts == nullptr) {
+        napi_value result;
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    OH_HiDebug_SetMaxDurationSec(opts, MIN_DURATION_SEC);
+    OH_HiDebug_SetFilterSize(opts, MIN_FILTER_SIZE);
+    OH_HiDebug_SetSampleIntervalBytes(opts, MIN_SAMPLE_INTERVAL_BYTES);
+    OH_HiDebug_SetStackTraceMode(opts, OH_HIDEBUG_STACK_TRACE_KEEP_ALL);
+    HiDebug_ErrorCode code = OH_HiDebug_StartProfilerWithOptions(OH_RES_TYPE_ASHMEM, opts, OnProfilerOptionsResult);
+    OH_HiDebug_DestroyProfilerOptions(opts);
+    OH_LOG_INFO(LOG_APP, "testTag TestStartProfilerWithAshmemAndKeepAllMode code=%{public}d", code);
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+// Test OH_HiDebug_StartProfilerWithOptions with explicit OH_RES_TYPE_COMPOSITE_HEAP + DISCARD_DESTROYED mode
+static napi_value TestStartProfilerWithCompositeHeapAndDiscardMode(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag TestStartProfilerWithCompositeHeapAndDiscardMode start");
+    OH_HiDebug_ProfilerOptions* opts = OH_HiDebug_CreateProfilerOptions();
+    if (opts == nullptr) {
+        napi_value result;
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    OH_HiDebug_SetMaxDurationSec(opts, MIN_DURATION_SEC);
+    OH_HiDebug_SetFilterSize(opts, MIN_FILTER_SIZE);
+    OH_HiDebug_SetSampleIntervalBytes(opts, MIN_SAMPLE_INTERVAL_BYTES);
+    OH_HiDebug_SetStackTraceMode(opts, OH_HIDEBUG_STACK_TRACE_DISCARD_DESTROYED);
+    HiDebug_ErrorCode code = OH_HiDebug_StartProfilerWithOptions(
+        OH_RES_TYPE_COMPOSITE_HEAP, opts, OnProfilerOptionsResult);
+    OH_HiDebug_DestroyProfilerOptions(opts);
+    OH_LOG_INFO(LOG_APP, "testTag TestStartProfilerWithCompositeHeapAndDiscardMode code=%{public}d", code);
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -690,6 +895,17 @@ static napi_value Init(napi_env env, napi_value exports)
         { "testSetStackTraceMode", nullptr, TestSetStackTraceMode, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "testSetStackTraceModeNull", nullptr, TestSetStackTraceModeNull, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "testStartProfilerWithOptionsStackTraceMode", nullptr, TestStartProfilerWithOptionsStackTraceMode, nullptr, nullptr, nullptr, napi_default, nullptr },
+        // Additional coverage functions
+        {"testCreateProfilerOptionsNullCheck", nullptr, TestCreateProfilerOptionsNullCheck, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testDestroyProfilerOptionsValid", nullptr, TestDestroyProfilerOptionsValid, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testStartProfilerWithDMA", nullptr, TestStartProfilerWithDMA, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testStartProfilerWithASHMEM", nullptr, TestStartProfilerWithASHMEM, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testStartProfilerWithCompositeHeap", nullptr, TestStartProfilerWithCompositeHeap, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testSetStackTraceModeDiscardDestroyed", nullptr, TestSetStackTraceModeDiscardDestroyed, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testSetStackTraceModeKeepAll", nullptr, TestSetStackTraceModeKeepAll, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testStartProfilerWithDMAAndDiscardMode", nullptr, TestStartProfilerWithDMAAndDiscardMode, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testStartProfilerWithAshmemAndKeepAllMode", nullptr, TestStartProfilerWithAshmemAndKeepAllMode, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testStartProfilerWithCompositeHeapAndDiscardMode", nullptr, TestStartProfilerWithCompositeHeapAndDiscardMode, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
