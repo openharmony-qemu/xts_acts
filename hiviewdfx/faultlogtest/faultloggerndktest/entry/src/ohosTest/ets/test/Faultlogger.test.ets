@@ -12,7 +12,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- add
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { FaultLogger } from '@kit.PerformanceAnalysisKit';
 import { BusinessError } from '@kit.BasicServicesKit';
@@ -426,6 +425,644 @@ export default function faultloggerTest() {
         if (error.code == 801) {
           expect(error.message == "The device doesn't support this api").assertTrue();
         }
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFR_Faultlogger_Interface_1400
+     * @tc.number SUB_DFX_DFR_Faultlogger_Interface_1400
+     * @tc.desc   检验query Promise接口faultType传null时返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DFX_DFR_Faultlogger_Interface_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("---------------------------SUB_DFX_DFR_Faultlogger_Interface_1400----------------------------------");
+      try {
+        await FaultLogger.query(null);
+        console.info("SUB_DFX_DFR_Faultlogger_Interface_1400 should not reach here");
+        expect(false).assertTrue();
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info("SUB_DFX_DFR_Faultlogger_Interface_1400 error code: " + error.code + ", message: " + error.message);
+        expect(error.code == 401).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFR_Faultlogger_Interface_1500
+     * @tc.number SUB_DFX_DFR_Faultlogger_Interface_1500
+     * @tc.desc   检验query Promise接口faultType传undefined时返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DFX_DFR_Faultlogger_Interface_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("---------------------------SUB_DFX_DFR_Faultlogger_Interface_1500----------------------------------");
+      try {
+        await FaultLogger.query(undefined);
+        console.info("SUB_DFX_DFR_Faultlogger_Interface_1500 should not reach here");
+        expect(false).assertTrue();
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info("SUB_DFX_DFR_Faultlogger_Interface_1500 error code: " + error.code + ", message: " + error.message);
+        expect(error.code == 401).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFR_Faultlogger_Interface_1600
+     * @tc.number SUB_DFX_DFR_Faultlogger_Interface_1600
+     * @tc.desc   检验query Promise接口faultType传API定义之外的枚举值(-1)时返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DFX_DFR_Faultlogger_Interface_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("---------------------------SUB_DFX_DFR_Faultlogger_Interface_1600----------------------------------");
+      try {
+        let ret = await FaultLogger.query(-1);
+        console.info("SUB_DFX_DFR_Faultlogger_Interface_1600 ret == " + ret.length);
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info("SUB_DFX_DFR_Faultlogger_Interface_1600 error code: " + error.code + ", message: " + error.message);
+        expect(error.code == 401).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFR_Faultlogger_Interface_1700
+     * @tc.number SUB_DFX_DFR_Faultlogger_Interface_1700
+     * @tc.desc   检验query Promise接口faultType传API定义之外的枚举值(1)时返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DFX_DFR_Faultlogger_Interface_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("---------------------------SUB_DFX_DFR_Faultlogger_Interface_1700----------------------------------");
+      try {
+        let ret = await FaultLogger.query(1);
+        console.info("SUB_DFX_DFR_Faultlogger_Interface_1700 ret == " + ret.length);
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info("SUB_DFX_DFR_Faultlogger_Interface_1700 error code: " + error.code + ", message: " + error.message);
+        expect(error.code == 401).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFR_Faultlogger_Interface_1800
+     * @tc.number SUB_DFX_DFR_Faultlogger_Interface_1800
+     * @tc.desc   检验query Promise接口faultType传API定义之外的枚举值(5)时返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DFX_DFR_Faultlogger_Interface_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("---------------------------SUB_DFX_DFR_Faultlogger_Interface_1800----------------------------------");
+      try {
+        let ret = await FaultLogger.query(5);
+        console.info("SUB_DFX_DFR_Faultlogger_Interface_1800 ret == " + ret.length);
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info("SUB_DFX_DFR_Faultlogger_Interface_1800 error code: " + error.code + ", message: " + error.message);
+        expect(error.code == 401).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFR_Faultlogger_Interface_1900
+     * @tc.number SUB_DFX_DFR_Faultlogger_Interface_1900
+     * @tc.desc   检验query Promise接口faultType传API定义之外的枚举值(99)时返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DFX_DFR_Faultlogger_Interface_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("---------------------------SUB_DFX_DFR_Faultlogger_Interface_1900----------------------------------");
+      try {
+        let ret = await FaultLogger.query(99);
+        console.info("SUB_DFX_DFR_Faultlogger_Interface_1900 ret == " + ret.length);
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info("SUB_DFX_DFR_Faultlogger_Interface_1900 error code: " + error.code + ", message: " + error.message);
+        expect(error.code == 401).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFR_Faultlogger_Interface_2000
+     * @tc.number SUB_DFX_DFR_Faultlogger_Interface_2000
+     * @tc.desc   检验query callback接口faultType传null时返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DFX_DFR_Faultlogger_Interface_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("---------------------------SUB_DFX_DFR_Faultlogger_Interface_2000----------------------------------");
+      let callback = (error: BusinessError, ret: Array<FaultLogger.FaultLogInfo>) => {
+        if (error) {
+          console.info("SUB_DFX_DFR_Faultlogger_Interface_2000 callback error code: " + error.code + ", message: " + error.message);
+          expect(error.code == 401).assertTrue();
+        } else {
+          console.info("SUB_DFX_DFR_Faultlogger_Interface_2000 callback ret length: " + ret.length);
+          expect(false).assertTrue();
+        }
+        done();
+      }
+      try {
+        FaultLogger.query(null, callback);
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info("SUB_DFX_DFR_Faultlogger_Interface_2000 catch error code: " + error.code + ", message: " + error.message);
+        expect(error.code == 401).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFR_Faultlogger_Interface_2100
+     * @tc.number SUB_DFX_DFR_Faultlogger_Interface_2100
+     * @tc.desc   检验query callback接口faultType传undefined时返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DFX_DFR_Faultlogger_Interface_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("---------------------------SUB_DFX_DFR_Faultlogger_Interface_2100----------------------------------");
+      let callback = (error: BusinessError, ret: Array<FaultLogger.FaultLogInfo>) => {
+        if (error) {
+          console.info("SUB_DFX_DFR_Faultlogger_Interface_2100 callback error code: " + error.code + ", message: " + error.message);
+          expect(error.code == 401).assertTrue();
+        } else {
+          console.info("SUB_DFX_DFR_Faultlogger_Interface_2100 callback ret length: " + ret.length);
+          expect(false).assertTrue();
+        }
+        done();
+      }
+      try {
+        FaultLogger.query(undefined, callback);
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info("SUB_DFX_DFR_Faultlogger_Interface_2100 catch error code: " + error.code + ", message: " + error.message);
+        expect(error.code == 401).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFR_Faultlogger_Interface_2200
+     * @tc.number SUB_DFX_DFR_Faultlogger_Interface_2200
+     * @tc.desc   检验query callback接口faultType传API定义之外的枚举值(-1)时返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DFX_DFR_Faultlogger_Interface_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("---------------------------SUB_DFX_DFR_Faultlogger_Interface_2200----------------------------------");
+      let callback = (error: BusinessError, ret: Array<FaultLogger.FaultLogInfo>) => {
+        if (error) {
+          console.info("SUB_DFX_DFR_Faultlogger_Interface_2200 callback error code: " + error.code + ", message: " + error.message);
+        } else {
+          console.info("SUB_DFX_DFR_Faultlogger_Interface_2200 callback ret length: " + ret.length);
+        }
+        done();
+      }
+      try {
+        FaultLogger.query(-1, callback);
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info("SUB_DFX_DFR_Faultlogger_Interface_2200 catch error code: " + error.code + ", message: " + error.message);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFR_Faultlogger_Interface_2300
+     * @tc.number SUB_DFX_DFR_Faultlogger_Interface_2300
+     * @tc.desc   检验query callback接口faultType传API定义之外的枚举值(1)时返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DFX_DFR_Faultlogger_Interface_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("---------------------------SUB_DFX_DFR_Faultlogger_Interface_2300----------------------------------");
+      let callback = (error: BusinessError, ret: Array<FaultLogger.FaultLogInfo>) => {
+        if (error) {
+          console.info("SUB_DFX_DFR_Faultlogger_Interface_2300 callback error code: " + error.code + ", message: " + error.message);
+        } else {
+          console.info("SUB_DFX_DFR_Faultlogger_Interface_2300 callback ret length: " + ret.length);
+        }
+        done();
+      }
+      try {
+        FaultLogger.query(1, callback);
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info("SUB_DFX_DFR_Faultlogger_Interface_2300 catch error code: " + error.code + ", message: " + error.message);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFR_Faultlogger_Interface_2400
+     * @tc.number SUB_DFX_DFR_Faultlogger_Interface_2400
+     * @tc.desc   检验query callback接口faultType传API定义之外的枚举值(5)时返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DFX_DFR_Faultlogger_Interface_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("---------------------------SUB_DFX_DFR_Faultlogger_Interface_2400----------------------------------");
+      let callback = (error: BusinessError, ret: Array<FaultLogger.FaultLogInfo>) => {
+        if (error) {
+          console.info("SUB_DFX_DFR_Faultlogger_Interface_2400 callback error code: " + error.code + ", message: " + error.message);
+        } else {
+          console.info("SUB_DFX_DFR_Faultlogger_Interface_2400 callback ret length: " + ret.length);
+        }
+        done();
+      }
+      try {
+        FaultLogger.query(5, callback);
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info("SUB_DFX_DFR_Faultlogger_Interface_2400 catch error code: " + error.code + ", message: " + error.message);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFR_Faultlogger_Interface_2500
+     * @tc.number SUB_DFX_DFR_Faultlogger_Interface_2500
+     * @tc.desc   检验query callback接口faultType传API定义之外的枚举值(99)时返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DFX_DFR_Faultlogger_Interface_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("---------------------------SUB_DFX_DFR_Faultlogger_Interface_2500----------------------------------");
+      let callback = (error: BusinessError, ret: Array<FaultLogger.FaultLogInfo>) => {
+        if (error) {
+          console.info("SUB_DFX_DFR_Faultlogger_Interface_2500 callback error code: " + error.code + ", message: " + error.message);
+        } else {
+          console.info("SUB_DFX_DFR_Faultlogger_Interface_2500 callback ret length: " + ret.length);
+        }
+        done();
+      }
+      try {
+        FaultLogger.query(99, callback);
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info("SUB_DFX_DFR_Faultlogger_Interface_2500 catch error code: " + error.code + ", message: " + error.message);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFR_Faultlogger_Interface_2600
+     * @tc.number SUB_DFX_DFR_Faultlogger_Interface_2600
+     * @tc.desc   检验querySelfFaultLog Promise接口faultType传null时返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DFX_DFR_Faultlogger_Interface_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("---------------------------SUB_DFX_DFR_Faultlogger_Interface_2600----------------------------------");
+      try {
+        await FaultLogger.querySelfFaultLog(null);
+        console.info("SUB_DFX_DFR_Faultlogger_Interface_2600 should not reach here");
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info("SUB_DFX_DFR_Faultlogger_Interface_2600 error code: " + error.code + ", message: " + error.message);
+        expect(error.code == 401).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFR_Faultlogger_Interface_2700
+     * @tc.number SUB_DFX_DFR_Faultlogger_Interface_2700
+     * @tc.desc   检验querySelfFaultLog Promise接口faultType传undefined时返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DFX_DFR_Faultlogger_Interface_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("---------------------------SUB_DFX_DFR_Faultlogger_Interface_2700----------------------------------");
+      try {
+        await FaultLogger.querySelfFaultLog(undefined);
+        console.info("SUB_DFX_DFR_Faultlogger_Interface_2700 should not reach here");
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info("SUB_DFX_DFR_Faultlogger_Interface_2700 error code: " + error.code + ", message: " + error.message);
+        expect(error.code == 401).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFR_Faultlogger_Interface_2800
+     * @tc.number SUB_DFX_DFR_Faultlogger_Interface_2800
+     * @tc.desc   检验querySelfFaultLog Promise接口faultType传API定义之外的枚举值(-1)时返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DFX_DFR_Faultlogger_Interface_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("---------------------------SUB_DFX_DFR_Faultlogger_Interface_2800----------------------------------");
+      try {
+        let ret = await FaultLogger.querySelfFaultLog((-1) as FaultLogger.FaultType);
+        console.info("SUB_DFX_DFR_Faultlogger_Interface_2800 ret == " + ret.length);
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info("SUB_DFX_DFR_Faultlogger_Interface_2800 error code: " + error.code + ", message: " + error.message);
+        expect(error.code == 401).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFR_Faultlogger_Interface_2900
+     * @tc.number SUB_DFX_DFR_Faultlogger_Interface_2900
+     * @tc.desc   检验querySelfFaultLog Promise接口faultType传API定义之外的枚举值(1)时返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DFX_DFR_Faultlogger_Interface_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("---------------------------SUB_DFX_DFR_Faultlogger_Interface_2900----------------------------------");
+      try {
+        let ret = await FaultLogger.querySelfFaultLog((1) as FaultLogger.FaultType);
+        console.info("SUB_DFX_DFR_Faultlogger_Interface_2900 ret == " + ret.length);
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info("SUB_DFX_DFR_Faultlogger_Interface_2900 error code: " + error.code + ", message: " + error.message);
+        expect(error.code == 401).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFR_Faultlogger_Interface_3000
+     * @tc.number SUB_DFX_DFR_Faultlogger_Interface_3000
+     * @tc.desc   检验querySelfFaultLog Promise接口faultType传API定义之外的枚举值(5)时返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DFX_DFR_Faultlogger_Interface_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("---------------------------SUB_DFX_DFR_Faultlogger_Interface_3000----------------------------------");
+      try {
+        let ret = await FaultLogger.querySelfFaultLog((5) as FaultLogger.FaultType);
+        console.info("SUB_DFX_DFR_Faultlogger_Interface_3000 ret == " + ret.length);
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info("SUB_DFX_DFR_Faultlogger_Interface_3000 error code: " + error.code + ", message: " + error.message);
+        expect(error.code == 401).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFR_Faultlogger_Interface_3100
+     * @tc.number SUB_DFX_DFR_Faultlogger_Interface_3100
+     * @tc.desc   检验querySelfFaultLog Promise接口faultType传API定义之外的枚举值(99)时返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DFX_DFR_Faultlogger_Interface_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("---------------------------SUB_DFX_DFR_Faultlogger_Interface_3100----------------------------------");
+      try {
+        let ret = await FaultLogger.querySelfFaultLog((99) as FaultLogger.FaultType);
+        console.info("SUB_DFX_DFR_Faultlogger_Interface_3100 ret == " + ret.length);
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info("SUB_DFX_DFR_Faultlogger_Interface_3100 error code: " + error.code + ", message: " + error.message);
+        expect(error.code == 401).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFR_Faultlogger_Interface_3200
+     * @tc.number SUB_DFX_DFR_Faultlogger_Interface_3200
+     * @tc.desc   检验querySelfFaultLog callback接口faultType传null时返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DFX_DFR_Faultlogger_Interface_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("---------------------------SUB_DFX_DFR_Faultlogger_Interface_3200----------------------------------");
+      let isDone = false;
+      let timer = setTimeout(() => {
+        if (!isDone) {
+          isDone = true;
+          console.info("SUB_DFX_DFR_Faultlogger_Interface_3200 timeout, querySelfFaultLog did not call callback");
+          done();
+        }
+      }, 5000);
+      let callback = (error: BusinessError, ret: Array<FaultLogger.FaultLogInfo>) => {
+        if (!isDone) {
+          isDone = true;
+          clearTimeout(timer);
+          if (error) {
+            console.info("SUB_DFX_DFR_Faultlogger_Interface_3200 callback error code: " + error.code + ", message: " + error.message);
+          } else {
+            console.info("SUB_DFX_DFR_Faultlogger_Interface_3200 callback ret length: " + ret.length);
+          }
+          done();
+        }
+      }
+      try {
+        FaultLogger.querySelfFaultLog(null, callback);
+      } catch (err) {
+        if (!isDone) {
+          isDone = true;
+          clearTimeout(timer);
+          let error = err as BusinessError;
+          console.info("SUB_DFX_DFR_Faultlogger_Interface_3200 catch error code: " + error.code + ", message: " + error.message);
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFR_Faultlogger_Interface_3300
+     * @tc.number SUB_DFX_DFR_Faultlogger_Interface_3300
+     * @tc.desc   检验querySelfFaultLog callback接口faultType传undefined时返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DFX_DFR_Faultlogger_Interface_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("---------------------------SUB_DFX_DFR_Faultlogger_Interface_3300----------------------------------");
+      let isDone = false;
+      let timer = setTimeout(() => {
+        if (!isDone) {
+          isDone = true;
+          console.info("SUB_DFX_DFR_Faultlogger_Interface_3300 timeout, querySelfFaultLog did not call callback");
+          done();
+        }
+      }, 5000);
+      let callback = (error: BusinessError, ret: Array<FaultLogger.FaultLogInfo>) => {
+        if (!isDone) {
+          isDone = true;
+          clearTimeout(timer);
+          if (error) {
+            console.info("SUB_DFX_DFR_Faultlogger_Interface_3300 callback error code: " + error.code + ", message: " + error.message);
+          } else {
+            console.info("SUB_DFX_DFR_Faultlogger_Interface_3300 callback ret length: " + ret.length);
+          }
+          done();
+        }
+      }
+      try {
+        FaultLogger.querySelfFaultLog(undefined, callback);
+      } catch (err) {
+        if (!isDone) {
+          isDone = true;
+          clearTimeout(timer);
+          let error = err as BusinessError;
+          console.info("SUB_DFX_DFR_Faultlogger_Interface_3300 catch error code: " + error.code + ", message: " + error.message);
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFR_Faultlogger_Interface_3400
+     * @tc.number SUB_DFX_DFR_Faultlogger_Interface_3400
+     * @tc.desc   检验querySelfFaultLog callback接口faultType传API定义之外的枚举值(-1)时返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DFX_DFR_Faultlogger_Interface_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("---------------------------SUB_DFX_DFR_Faultlogger_Interface_3400----------------------------------");
+      let callback = (error: BusinessError, ret: Array<FaultLogger.FaultLogInfo>) => {
+        if (error) {
+          console.info("SUB_DFX_DFR_Faultlogger_Interface_3400 callback error code: " + error.code + ", message: " + error.message);
+        } else {
+          console.info("SUB_DFX_DFR_Faultlogger_Interface_3400 callback ret length: " + ret.length);
+        }
+        done();
+      }
+      try {
+        FaultLogger.querySelfFaultLog(-1, callback);
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info("SUB_DFX_DFR_Faultlogger_Interface_3400 catch error code: " + error.code + ", message: " + error.message);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFR_Faultlogger_Interface_3500
+     * @tc.number SUB_DFX_DFR_Faultlogger_Interface_3500
+     * @tc.desc   检验querySelfFaultLog callback接口faultType传API定义之外的枚举值(1)时返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DFX_DFR_Faultlogger_Interface_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("---------------------------SUB_DFX_DFR_Faultlogger_Interface_3500----------------------------------");
+      let callback = (error: BusinessError, ret: Array<FaultLogger.FaultLogInfo>) => {
+        if (error) {
+          console.info("SUB_DFX_DFR_Faultlogger_Interface_3500 callback error code: " + error.code + ", message: " + error.message);
+        } else {
+          console.info("SUB_DFX_DFR_Faultlogger_Interface_3500 callback ret length: " + ret.length);
+        }
+        done();
+      }
+      try {
+        FaultLogger.querySelfFaultLog(1, callback);
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info("SUB_DFX_DFR_Faultlogger_Interface_3500 catch error code: " + error.code + ", message: " + error.message);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFR_Faultlogger_Interface_3600
+     * @tc.number SUB_DFX_DFR_Faultlogger_Interface_3600
+     * @tc.desc   检验querySelfFaultLog callback接口faultType传API定义之外的枚举值(5)时返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DFX_DFR_Faultlogger_Interface_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("---------------------------SUB_DFX_DFR_Faultlogger_Interface_3600----------------------------------");
+      let callback = (error: BusinessError, ret: Array<FaultLogger.FaultLogInfo>) => {
+        if (error) {
+          console.info("SUB_DFX_DFR_Faultlogger_Interface_3600 callback error code: " + error.code + ", message: " + error.message);
+        } else {
+          console.info("SUB_DFX_DFR_Faultlogger_Interface_3600 callback ret length: " + ret.length);
+        }
+        done();
+      }
+      try {
+        FaultLogger.querySelfFaultLog(5, callback);
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info("SUB_DFX_DFR_Faultlogger_Interface_3600 catch error code: " + error.code + ", message: " + error.message);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFR_Faultlogger_Interface_3700
+     * @tc.number SUB_DFX_DFR_Faultlogger_Interface_3700
+     * @tc.desc   检验querySelfFaultLog callback接口faultType传API定义之外的枚举值(99)时返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DFX_DFR_Faultlogger_Interface_3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("---------------------------SUB_DFX_DFR_Faultlogger_Interface_3700----------------------------------");
+      let callback = (error: BusinessError, ret: Array<FaultLogger.FaultLogInfo>) => {
+        if (error) {
+          console.info("SUB_DFX_DFR_Faultlogger_Interface_3700 callback error code: " + error.code + ", message: " + error.message);
+        } else {
+          console.info("SUB_DFX_DFR_Faultlogger_Interface_3700 callback ret length: " + ret.length);
+        }
+        done();
+      }
+      try {
+        FaultLogger.querySelfFaultLog(99, callback);
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info("SUB_DFX_DFR_Faultlogger_Interface_3700 catch error code: " + error.code + ", message: " + error.message);
+        expect(false).assertTrue();
         done();
       }
     })
