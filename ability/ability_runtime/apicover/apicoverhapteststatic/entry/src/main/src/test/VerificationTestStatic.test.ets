@@ -27,7 +27,7 @@ import { Driver, ON } from '@ohos.UiTest';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 
-export default function verificationStaticTest() {
+export default function verificationStaticTest(): void {
   describe('verificationStaticTest', () => {
 
     beforeAll(async() => {

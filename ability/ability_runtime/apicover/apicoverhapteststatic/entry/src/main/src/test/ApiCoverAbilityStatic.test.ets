@@ -66,7 +66,7 @@ let context: common.UIAbilityContext | undefined;
 let array: string[] = new Array<string>();
 let dir: string = "";
 
-export default function ApiCoverStaticTest() {
+export default function ApiCoverStaticTest(): void {
   describe('ApiCoverStaticTestTest', () => {
     const BUNDLE_NAME = 'com.example.apicoverhaptest.static';
 
