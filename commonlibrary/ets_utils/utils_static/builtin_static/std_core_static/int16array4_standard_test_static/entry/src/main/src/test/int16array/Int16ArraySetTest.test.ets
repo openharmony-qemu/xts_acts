@@ -7648,3 +7648,165 @@ export default function Int16ArraySetTest(): void {
 
       }
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SET_5400
+     * @tc.name testSetError008
+     * @tc.desc Verify set throws RangeError for out-of-bounds insertPos or oversized source
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testSetError008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let arr: Int16Array = new Int16Array(2);
+        arr.$_set(0, 70);
+        let alike: number[] = [1, 2];
+        try {
+          arr.set(alike, 5);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('RangeError');
+
+          let resultValue2: number = arr.$_get(0);
+          let expectedValue2: int = 70;
+          expect(resultValue2).assertEqual(expectedValue2);
+
+        }
+
+      }
+      {
+        let arr: Int16Array = new Int16Array(2);
+        arr.$_set(0, 80);
+        let fa: FixedArray<short> = [1, 2];
+        try {
+          arr.set(fa, -1);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('RangeError');
+
+          let resultValue2: number = arr.$_get(0);
+          let expectedValue2: int = 80;
+          expect(resultValue2).assertEqual(expectedValue2);
+          let resultValue3: number = arr.$_get(1);
+          let expectedValue3: int = 0;
+          expect(resultValue3).assertEqual(expectedValue3);
+
+        }
+
+      }
+      {
+        let arr: Int16Array = new Int16Array(2);
+        arr.$_set(0, 90);
+        let src: Int16Array = Int16Array.of(1, 2);
+        try {
+          arr.set(src, -3);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('RangeError');
+
+          let resultValue2: number = arr.$_get(0);
+          let expectedValue2: int = 90;
+          expect(resultValue2).assertEqual(expectedValue2);
+          let resultValue3: number = arr.$_get(1);
+          let expectedValue3: int = 0;
+          expect(resultValue3).assertEqual(expectedValue3);
+
+        }
+
+      }
+      {
+        let arr: Int16Array = new Int16Array(2);
+        arr.$_set(0, 100);
+        let alike: number[] = [1, 2];
+        try {
+          arr.set(alike, -5);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('RangeError');
+
+          let resultValue2: number = arr.$_get(0);
+          let expectedValue2: int = 100;
+          expect(resultValue2).assertEqual(expectedValue2);
+
+        }
+
+      }
+      {
+        let arr: Int16Array = new Int16Array(3);
+        arr.$_set(0, 110);
+        let fa: FixedArray<short> = [1, 2, 3, 4];
+        try {
+          arr.set(fa, 1);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('RangeError');
+
+          let resultValue2: number = arr.$_get(0);
+          let expectedValue2: int = 110;
+          expect(resultValue2).assertEqual(expectedValue2);
+          let resultValue3: number = arr.$_get(1);
+          let expectedValue3: int = 0;
+          expect(resultValue3).assertEqual(expectedValue3);
+
+        }
+
+      }
+      {
+        let arr: Int16Array = new Int16Array(2);
+        arr.$_set(0, 120);
+        let fan: FixedArray<number> = [1.0, 2.0, 3.0];
+        try {
+          arr.set(fan, 0);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('RangeError');
+
+          let resultValue2: number = arr.$_get(0);
+          let expectedValue2: int = 120;
+          expect(resultValue2).assertEqual(expectedValue2);
+          let resultValue3: number = arr.$_get(1);
+          let expectedValue3: int = 0;
+          expect(resultValue3).assertEqual(expectedValue3);
+
+        }
+
+      }
+      {
+        let arr: Int16Array = new Int16Array(2);
+        arr.$_set(0, 130);
+        let src: Int16Array = Int16Array.of(1, 2, 3);
+        try {
+          arr.set(src, 1);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('RangeError');
+
+          let resultValue2: number = arr.$_get(0);
+          let expectedValue2: int = 130;
+          expect(resultValue2).assertEqual(expectedValue2);
+
+        }
+
+      }
+      {
+        let arr: Int16Array = new Int16Array(2);
+        arr.$_set(0, 140);
+        let alike: number[] = [1, 2, 3];
+        try {
+          arr.set(alike, 0);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('RangeError');
+
+          let resultValue2: number = arr.$_get(0);
+          let expectedValue2: int = 140;
+          expect(resultValue2).assertEqual(expectedValue2);
+
+        }
+
+      }
+    });
+
+  });
+}
