@@ -16,7 +16,7 @@
 
 import {
   BaseConnectOptions, BaseCustomDialog, ConnectOptions, CustomBuilder,
-  CustomComponent, CustomComponentContext, CustomComponentLifecycle,
+  CustomComponent, CustomComponentLifecycle,
   CustomComponentLifecycleObserver, CustomComponentLifecycleState,
   CustomComponentV2, EntryPoint, ExtendableComponent, IDecoratedVariable,
   IMonitor, IObservedObject, IReusePool, IReusableInfo, IVariableOwner,
@@ -112,18 +112,6 @@ export class CoverageReusePool implements IReusePool {
 
   preRender(_builder: WrappedBuilder<CustomBuilder>, _times: int): Promise<void> {
     return Promise.resolve();
-  }
-}
-
-export class CoverageComponentContext implements CustomComponentContext {
-  private readonly pool: IReusePool = new CoverageReusePool();
-
-  getReusePool(): IReusePool | undefined {
-    return this.pool;
-  }
-
-  registerActiveAndInactiveCallback(_active?: () => void,
-    _inactive?: () => void): void {
   }
 }
 
