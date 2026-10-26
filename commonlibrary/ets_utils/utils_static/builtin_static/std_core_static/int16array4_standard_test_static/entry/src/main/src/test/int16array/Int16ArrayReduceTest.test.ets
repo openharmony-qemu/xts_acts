@@ -1993,3 +1993,573 @@ export default function Int16ArrayReduceTest(): void {
           arr.reduce((prev, curr, idx, array) => {
             throw new TypeError('callback error');
           });
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+
+      }
+      {
+        let arr = new Int16Array([5, 6]);
+        try {
+          arr.reduce((prev, curr, idx, array) => {
+            throw new TypeError('type error in callback');
+          });
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_REDUCE_2100
+     * @tc.name testReduceError002
+     * @tc.desc Verify reduce propagates errors and throws TypeError on empty array without initialValue
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testReduceError002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let arr = new Int16Array([10, 20]);
+        try {
+          arr.reduce((prev, curr, idx, array) => {
+            throw new RangeError('range error in callback');
+          });
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('RangeError');
+        }
+
+      }
+      {
+        let arr = new Int16Array();
+        try {
+          arr.reduce((prev, curr, idx, array) => prev + curr);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+
+      }
+      {
+        let arr = new Int16Array([42]);
+        let result = arr.reduce((prev, curr, idx, array) => {
+          throw new TypeError('should not be called');
+        });
+        expect(result).assertEqual(42);
+
+      }
+      {
+        let arr = new Int16Array([1, 2, 3]);
+        let secondCallExecuted = false;
+        try {
+          arr.reduce((prev, curr, idx, array) => {
+            if (idx === 1) {
+              throw new TypeError('first call error');
+            }
+            secondCallExecuted = true;
+            return prev + curr;
+          });
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+        expect(secondCallExecuted).assertFalse();
+
+      }
+      {
+        let arr = new Int16Array([10, 20, 30]);
+        let firstCallDone = false;
+        try {
+          arr.reduce((prev, curr, idx, array) => {
+            if (idx === 1) {
+              firstCallDone = true;
+            }
+            if (idx === 2) {
+              throw new TypeError('second call error');
+            }
+            return prev + curr;
+          });
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+        expect(firstCallDone).assertTrue();
+
+      }
+      {
+        let arr = new Int16Array([5, 6, 7]);
+        try {
+          arr.reduce((prev, curr, idx, array) => {
+            throw new TypeError('fail');
+          });
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+        let resultValue1: number = arr.$_get(0);
+        let expectedValue1: int = 5;
+        expect(resultValue1).assertEqual(expectedValue1);
+        let resultValue2: number = arr.$_get(1);
+        let expectedValue2: int = 6;
+        expect(resultValue2).assertEqual(expectedValue2);
+        let resultValue3: number = arr.$_get(2);
+        let expectedValue3: int = 7;
+        expect(resultValue3).assertEqual(expectedValue3);
+        let resultValue4: int = arr.length;
+        let expectedValue4: int = 3;
+        expect(resultValue4).assertEqual(expectedValue4);
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(1, 2);
+        let init: Error = new Error("start");
+        let result = arr.reduce<Error>((prev: Error, curr: number, idx: int, a: Int16Array): Error => new Error(prev.message + "-" + curr.toString()), init);
+        let resultValue1: string = result.message;
+        let expectedValue1: string = "start-1-2";
+        expect(resultValue1).assertEqual(expectedValue1);
+
+      }
+      {
+        let arr: Int16Array = new Int16Array(0);
+        let init: Error = new Error("empty");
+        let result = arr.reduce<Error>((prev: Error, curr: number, idx: int, a: Int16Array): Error => new Error(prev.message + curr.toString()), init);
+        let resultValue1: boolean = result === init;
+        expect(resultValue1).assertTrue();
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(1, 2, 3, 4);
+        let afterThrowCalls: number = 0;
+        try {
+          arr.reduce<number>((prev: number, curr: number, idx: int, a: Int16Array): number => {
+            if (idx === 0) { throw new TypeError("first round fail"); }
+            afterThrowCalls++;
+            return prev + curr;
+          }, 0);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+        expect(afterThrowCalls).assertEqual(0);
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(1, 2);
+        try {
+          arr.reduce<string>((prev: string, curr: number, idx: int, a: Int16Array): string => {
+            throw new TypeError("string reduce fail");
+          }, "");
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_REDUCE_2200
+     * @tc.name testReduceError003
+     * @tc.desc Verify reduce propagates errors and throws TypeError on empty array without initialValue
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testReduceError003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let arr: Int16Array = Int16Array.of(100, 200, 300);
+        try {
+          arr.reduce<number>((prev: number, curr: number, idx: int, a: Int16Array): number => {
+            throw new TypeError("abort");
+          }, 0);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+        let resultValue1: number = arr.$_get(0);
+        let expectedValue1: int = 100;
+        expect(resultValue1).assertEqual(expectedValue1);
+        let resultValue2: number = arr.$_get(1);
+        let expectedValue2: int = 200;
+        expect(resultValue2).assertEqual(expectedValue2);
+        let resultValue3: number = arr.$_get(2);
+        let expectedValue3: int = 300;
+        expect(resultValue3).assertEqual(expectedValue3);
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(1, 2, 3, 4, 5);
+        let originalLen: number = arr.length;
+        try {
+          arr.reduce<number>((prev: number, curr: number, idx: int, a: Int16Array): number => {
+            if (idx === 2) { throw new TypeError("mid"); }
+            return prev + curr;
+          }, 0);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+        let resultValue1: int = arr.length;
+        let expectedValue1: number = originalLen;
+        expect(resultValue1).assertEqual(expectedValue1);
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(1, 2, 3, 4);
+        let sideEffectSum: number = 0;
+        try {
+          arr.reduce<number>((prev: number, curr: number, idx: int, a: Int16Array): number => {
+            sideEffectSum = sideEffectSum + curr;
+            if (idx === 2) { throw new TypeError("stop at idx 2"); }
+            return prev + curr;
+          }, 0);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+        expect(sideEffectSum).assertEqual(6);
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(1, 2);
+        let init: ReduceP03ImmBox = new ReduceP03ImmBox();
+        init.value = 10;
+        try {
+          arr.reduce<ReduceP03ImmBox>((prev: ReduceP03ImmBox, curr: number, idx: int, a: Int16Array): ReduceP03ImmBox => {
+            if (idx === 0) { throw new TypeError("early fail"); }
+            let next: ReduceP03ImmBox = new ReduceP03ImmBox();
+            next.value = prev.value + curr;
+            return next;
+          }, init);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+        let resultValue1: number = init.value;
+        let expectedValue1: int = 10;
+        expect(resultValue1).assertEqual(expectedValue1);
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(1, 2, 3);
+        try {
+          arr.reduce<number>((prev: number, curr: number, idx: int, a: Int16Array): number => {
+            throw new TypeError("type error");
+          }, 0);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+
+      }
+      {
+        let arr: Int16Array = Int16Array.of(1, 2);
+        try {
+          arr.reduce<number>((prev: number, curr: number, idx: int, a: Int16Array): number => {
+            throw new RangeError("range error");
+          }, 0);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('RangeError');
+        }
+
+      }
+      {
+        let arr = new Int16Array(0);
+        try {
+          arr.reduce((prev, curr, idx, a) => prev + curr);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+
+      }
+      {
+        let arr = new Int16Array(0);
+        try {
+          arr.reduce((prev, curr, idx, a) => prev + curr);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+        let resultValue1: int = arr.length;
+        let expectedValue1: int = 0;
+        expect(resultValue1).assertEqual(expectedValue1);
+
+      }
+      {
+        let arr = new Int16Array(0);
+        try {
+          arr.reduce((prev, curr, idx, a) => prev + curr);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+        let resultValue1: int = arr.BYTES_PER_ELEMENT;
+        let expectedValue1: int = 2;
+        expect(resultValue1).assertEqual(expectedValue1);
+
+      }
+      {
+        let arr = new Int16Array(0);
+        try {
+          arr.reduce((prev, curr, idx, a) => prev + curr);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+        let r = arr.reduce<number>((prev, curr, idx, a) => prev + curr, 7);
+        expect(r).assertEqual(7);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_REDUCE_2300
+     * @tc.name testReduceError004
+     * @tc.desc Verify reduce propagates errors and throws TypeError on empty array without initialValue
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testReduceError004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let arr = Int16Array.of(1, 2, 3);
+        let orig: Int16Array = arr;
+        try {
+          arr.reduce<number>((prev, curr, idx, a) => {
+            throw new TypeError("fail");
+          }, 0);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+        let resultValue1: boolean = arr instanceof Int16Array;
+        expect(resultValue1).assertTrue();
+        let resultValue3: boolean = arr === orig;
+        expect(resultValue3).assertTrue();
+
+      }
+      {
+        let arr = Int16Array.of(1, 2, 3);
+        try {
+          arr.reduce<number>((prev, curr, idx, a) => {
+            throw new TypeError("fail");
+          }, 0);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+        let resultValue1: int = arr.length;
+        let expectedValue1: int = 3;
+        expect(resultValue1).assertEqual(expectedValue1);
+
+      }
+      {
+        let arr = Int16Array.of(1, 2, 3, 4);
+        let origByteLen: number = arr.byteLength;
+        try {
+          arr.reduce<number>((prev, curr, idx, a) => {
+            throw new TypeError("fail");
+          }, 0);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+        let resultValue1: int = arr.byteLength;
+        let expectedValue1: number = origByteLen;
+        expect(resultValue1).assertEqual(expectedValue1);
+
+      }
+      {
+        let arr = Int16Array.of(10, 20, 30);
+        try {
+          arr.reduce<number>((prev, curr, idx, a) => {
+            throw new TypeError("fail");
+          }, 0);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+        let resultValue1: number = arr.$_get(0);
+        let expectedValue1: int = 10;
+        expect(resultValue1).assertEqual(expectedValue1);
+        let resultValue2: number = arr.$_get(1);
+        let expectedValue2: int = 20;
+        expect(resultValue2).assertEqual(expectedValue2);
+        let resultValue3: number = arr.$_get(2);
+        let expectedValue3: int = 30;
+        expect(resultValue3).assertEqual(expectedValue3);
+
+      }
+      {
+        let arr = Int16Array.of(1, 2);
+        try {
+          arr.reduce<number>((prev, curr, idx, a) => {
+            throw new TypeError("fail");
+          }, 0);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+        let resultValue1: int = arr.BYTES_PER_ELEMENT;
+        let expectedValue1: int = 2;
+        expect(resultValue1).assertEqual(expectedValue1);
+
+      }
+      {
+        let arr = Int16Array.of(5, 6, 7, 8);
+        try {
+          arr.reduce((prev, curr, idx, a) => {
+            throw new TypeError("fail");
+          });
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+        let resultValue1: int = arr.length;
+        let expectedValue1: int = 4;
+        expect(resultValue1).assertEqual(expectedValue1);
+
+      }
+      {
+        let arr = Int16Array.of(11, 22, 33);
+        try {
+          arr.reduce((prev, curr, idx, a) => {
+            throw new TypeError("fail");
+          });
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+        let resultValue1: number = arr.$_get(0);
+        let expectedValue1: int = 11;
+        expect(resultValue1).assertEqual(expectedValue1);
+        let resultValue2: number = arr.$_get(1);
+        let expectedValue2: int = 22;
+        expect(resultValue2).assertEqual(expectedValue2);
+        let resultValue3: number = arr.$_get(2);
+        let expectedValue3: int = 33;
+        expect(resultValue3).assertEqual(expectedValue3);
+
+      }
+      {
+        let arr = Int16Array.of(1, 2, 3, 4);
+        let sideSeq: number[] = [];
+        try {
+          arr.reduce((prev, curr, idx, a) => {
+            sideSeq.push(curr);
+            if (idx === 2) { throw new TypeError("abort"); }
+            return prev + curr;
+          });
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+        let resultValue1: int = sideSeq.length;
+        let expectedValue1: int = 2;
+        expect(resultValue1).assertEqual(expectedValue1);
+        let resultValue2: number = sideSeq[0];
+        let expectedValue2: int = 2;
+        expect(resultValue2).assertEqual(expectedValue2);
+        let resultValue3: number = sideSeq[1];
+        let expectedValue3: int = 3;
+        expect(resultValue3).assertEqual(expectedValue3);
+
+      }
+      {
+        let arr = Int16Array.of(1, 2, 3, 4, 5);
+        let arrRef: Int16Array = arr;
+        try {
+          arr.reduce<number>((prev, curr, idx, a) => {
+            if (idx === 2) { throw new TypeError("mid fail"); }
+            return prev + curr;
+          }, 0);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+        let resultValue1: boolean = arr === arrRef;
+        expect(resultValue1).assertTrue();
+
+      }
+      {
+        let arr = Int16Array.of(10, 20, 30);
+        try {
+          arr.reduce((prev, curr, idx, a) => {
+            throw new TypeError("fail");
+          });
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+        let r = arr.reduce<number>((prev, curr, idx, a) => prev + curr, 0);
+        expect(r).assertEqual(60);
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_REDUCE_2400
+     * @tc.name testReduceError005
+     * @tc.desc Verify reduce propagates errors and throws TypeError on empty array without initialValue
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testReduceError005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        let arr = Int16Array.of(10, 20, 30);
+        try {
+          arr.reduce<number>((prev, curr, idx, a) => {
+            throw new TypeError("fail");
+          }, 0);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+        let r = arr.reduce((prev, curr, idx, a) => prev + curr);
+        expect(r).assertEqual(60);
+
+      }
+      {
+        let arr = new Int16Array(0);
+        try {
+          arr.reduce((prev, curr, idx, a) => prev + curr);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+        try {
+          arr.reduce((prev, curr, idx, a) => prev + curr);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+
+      }
+      {
+        let buf = new ArrayBuffer(8);
+        let arr = new Int16Array(buf, 2, 3);
+        let origOffset: number = arr.byteOffset;
+        try {
+          arr.reduce((prev, curr, idx, a) => {
+            throw new TypeError("fail");
+          });
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('TypeError');
+        }
+        let resultValue1: int = arr.byteOffset;
+        let expectedValue1: number = origOffset;
+        expect(resultValue1).assertEqual(expectedValue1);
+
+      }
+    });
+
+  });
+}
