@@ -17,7 +17,7 @@ import eapTest from './Eap.test';
 import { deviceInfo } from '@kit.BasicServicesKit';
 
 export default function testsuite() {
-  if(canIUse('SystemCapability.Communication.NetManager.Eap'){
+  if(canIUse('SystemCapability.Communication.NetManager.Eap') && sim.getMaxSimCount()<1){
     eapTest();
   }else{
     EmptyTest();
