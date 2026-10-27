@@ -51,6 +51,7 @@
 #include "nativeModule/RuntimeCheckModeTest.cpp"
 #include "node/UIAgentGetPageTextTest.cpp"
 #include "node/GetImagesByNodeIdAsyncTest.cpp"
+#include "node/ContentChangeEventTest.cpp"
 #include "image/ImageAnimatorInterpolationTest.cpp"
 #include "calendarPicker/CalendarPickerFirstDayOfWeekTest.cpp"
 #include "accessibilityBindExportTree/AccessibilityBindExportTreeTest.cpp"
@@ -315,7 +316,32 @@ static napi_value Init(napi_env env, napi_value exports)
         {"GetImagesByNodeIdAsyncTest006", nullptr, GetImagesByNodeIdAsyncTest006, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetImagesByNodeIdAsyncTest007", nullptr, GetImagesByNodeIdAsyncTest007, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetImagesByNodeIdAsyncTest008", nullptr, GetImagesByNodeIdAsyncTest008, nullptr, nullptr, nullptr, napi_default, nullptr},
-		
+
+        {"ContentChangeEventTest001", nullptr, ContentChangeEventTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest002", nullptr, ContentChangeEventTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest003", nullptr, ContentChangeEventTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest004", nullptr, ContentChangeEventTest004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest005", nullptr, ContentChangeEventTest005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest006", nullptr, ContentChangeEventTest006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest007", nullptr, ContentChangeEventTest007, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest008", nullptr, ContentChangeEventTest008, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest009", nullptr, ContentChangeEventTest009, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest010", nullptr, ContentChangeEventTest010, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest011", nullptr, ContentChangeEventTest011, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest012", nullptr, ContentChangeEventTest012, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest013", nullptr, ContentChangeEventTest013, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest014", nullptr, ContentChangeEventTest014, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest015", nullptr, ContentChangeEventTest015, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest016", nullptr, ContentChangeEventTest016, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest017", nullptr, ContentChangeEventTest017, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest018", nullptr, ContentChangeEventTest018, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest019", nullptr, ContentChangeEventTest019, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest020", nullptr, ContentChangeEventTest020, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest021", nullptr, ContentChangeEventTest021, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest022", nullptr, ContentChangeEventTest022, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest023", nullptr, ContentChangeEventTest023, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest024", nullptr, ContentChangeEventTest024, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ContentChangeEventTest025", nullptr, ContentChangeEventTest025, nullptr, nullptr, nullptr, napi_default, nullptr},
 		{"testImageAnimatorInterpolation001", nullptr, TestImageAnimatorInterpolation001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testImageAnimatorInterpolation002", nullptr, TestImageAnimatorInterpolation002, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testImageAnimatorInterpolation003", nullptr, TestImageAnimatorInterpolation003, nullptr, nullptr, nullptr, napi_default, nullptr},

@@ -62,6 +62,7 @@ import SetUiDvsyncSwitchTest from './node/SetUiDvsyncSwitchTest.test'
 import RuntimeCheckModeTest from './nativeModule/RuntimeCheckModeTest.test'
 import UIAgentGetPageTextTest from './node/UIAgentGetPageTextTest.test'
 import GetImagesByNodeIdAsyncTest from './node/GetImagesByNodeIdAsyncTest.test'
+import ContentChangeEventTest from './node/ContentChangeEventTest.test'
 import NativeModuleAnimationTest from './animate/NativeModuleAnimation.test'
 import NativeModuleAnimApi2601Test from './animate/NativeModuleAnimApi2601.test'
 import UIAgentGetPageTextErrorCodeTest from './node/UIAgentGetPageTextErrorCodeTest.test'
@@ -76,6 +77,7 @@ export default function testsuite() {
   SetUiDvsyncSwitchTest() // 此条特殊用例请放在首行，勿动
   UIAgentGetPageTextTest()
   GetImagesByNodeIdAsyncTest()
+  ContentChangeEventTest()
   RegisterCommonAreaApproximateChangeEventTest();
   UnregisterCommonAreaApproximateChangeEventTest();
   AreaChangeErrorCodeTest();
