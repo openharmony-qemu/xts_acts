@@ -17,7 +17,7 @@
 struct DatePickerDialogButtonStylePage {
   private selectedDate: Date = new Date('2010-1-1')
   @State acceptButtonStyle_Text: string = '';
-  @State DatePicker_Options: DatePickerDialogOptions = {
+  @State DatePickerOptions: DatePickerDialogOptions = {
     start: new Date('2000-1-1'),
     end: new Date('2100-12-31'),
     selected: this.selectedDate,
@@ -60,8 +60,8 @@ struct DatePickerDialogButtonStylePage {
       Button('DatePickerDialog')
         .margin(20)
         .onClick(() => {
-          DatePickerDialog.show(this.DatePicker_Options)
-          if (this.DatePicker_Options.acceptButtonStyle!.type == ButtonType.Normal) {
+          DatePickerDialog.show(this.DatePickerOptions)
+          if (this.DatePickerOptions.acceptButtonStyle!.type == ButtonType.Normal) {
             this.acceptButtonStyle_Text = 'acceptButtonStyle_Text'
           }
         })
