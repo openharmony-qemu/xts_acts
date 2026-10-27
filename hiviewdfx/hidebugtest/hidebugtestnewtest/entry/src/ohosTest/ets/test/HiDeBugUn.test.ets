@@ -1237,7 +1237,7 @@ export default function HidebugTest() {
         done();
       }catch(err){
         console.error(`====>HidebugTest_0053 startJsCpuProfiling catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(false).assertTrue();
+        expect(err.message).assertContain("Invalid parameter")
         done();
       }
       console.info("HidebugTest_0053 end");
