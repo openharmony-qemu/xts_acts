@@ -25,6 +25,7 @@ import CollectionsArrayContainsAllBuiltinTest from './CollectionsArrayContainsAl
 import CollectionsArrayRetainAllSendableTest from './CollectionsArrayRetainAllSendableTest.test';
 import CollectionsArrayRetainAllBuiltinTest from './CollectionsArrayRetainAllBuiltinTest.test';
 import CollectionsArrayRetainAllPredicateTest from './CollectionsArrayRetainAllPredicateTest.test';
+
 import arrayConstructorSuite from './CollectionsArrayBaseTest/ArrayConstructor.test';
 import arrayTraversalSuite from './CollectionsArrayBaseTest/ArrayTraversal.test';
 import arrayQuerySuite from './CollectionsArrayBaseTest/ArrayQuery.test';
@@ -250,4 +251,3 @@ export default function testsuite() {
   ConcurrentFactorComboTest();
   RealWorldComboTest();
 };
-
