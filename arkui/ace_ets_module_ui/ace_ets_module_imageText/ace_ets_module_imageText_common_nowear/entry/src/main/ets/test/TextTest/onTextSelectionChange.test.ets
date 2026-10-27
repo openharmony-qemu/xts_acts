@@ -65,7 +65,11 @@ export default function OnTextSelectionChangeTest() {
       let clickX2 = Math.round(textRect.right - 2)
       let clickX3 = Math.round(textRect.right + 10)
       let clickY = Math.round((textRect.bottom + textRect.top)/2)
-      await driver.mouseDrag({ x: clickX1, y: clickY },{ x: clickX2, y: clickY }, 600);
+      try {
+        await driver.mouseDrag({ x: clickX1, y: clickY, displayId: displayID },{ x: clickX2, y: clickY, displayId: displayID }, 600);
+      } catch (err) {
+        console.log('driver.mouseDrag error: ' + err);
+      }
       await CommonFunc.sleep(1000);
       console.info('[OnTextSelectionChangeTest_0010] get1: ' + AppStorage.get('OnTextSelectionChange'));
       expect(AppStorage.get('OnTextSelectionChange')).assertEqual('start:0,end:11');

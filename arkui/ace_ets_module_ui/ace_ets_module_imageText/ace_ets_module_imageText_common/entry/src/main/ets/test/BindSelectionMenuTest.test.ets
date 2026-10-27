@@ -112,7 +112,11 @@ export default function BindSelectionMenuTest() {
         await CommonFunc.sleep(500);
         let point = await Text.getBoundsCenter();
         await CommonFunc.sleep(500);
-        await driver.mouseDrag({x:Math.round(point.x-vp2px(20)), y:Math.round(point.y)},{x:Math.round(point.x+vp2px(20)), y:Math.round(point.y)},600);
+        try {
+          await driver.mouseDrag({x:Math.round(point.x-vp2px(20)), y:Math.round(point.y), displayId: displayID},{x:Math.round(point.x+vp2px(20)), y:Math.round(point.y), displayId: displayID},600);
+        } catch (err) {
+          console.log('driver.mouseDrag error: ' + err);
+        }
         await CommonFunc.sleep(500);
         let  CustomMenu = await driver.findComponent(ON.text('自定义菜单'))
         expect(CustomMenu != null).assertEqual(true)
@@ -186,7 +190,11 @@ export default function BindSelectionMenuTest() {
         await CommonFunc.sleep(500);
         let point = await image.getBoundsCenter();
         await CommonFunc.sleep(500);
-        await driver.mouseDrag({x:Math.round(point.x-vp2px(24)), y:Math.round(point.y)},{x:Math.round(point.x+vp2px(24)), y:Math.round(point.y)},600);
+        try {
+          await driver.mouseDrag({x:Math.round(point.x-vp2px(24)), y:Math.round(point.y), displayId: displayID},{x:Math.round(point.x+vp2px(24)), y:Math.round(point.y), displayId: displayID},600);
+        } catch (err) {
+          console.log('driver.mouseDrag error: ' + err);
+        }
         await CommonFunc.sleep(500);
         let  CustomMenu = await driver.findComponent(ON.text('自定义菜单'))
         expect(CustomMenu != null).assertEqual(true)
@@ -261,7 +269,11 @@ export default function BindSelectionMenuTest() {
         await CommonFunc.sleep(500);
         let point = await mixed.getBoundsCenter();
         await CommonFunc.sleep(500);
-        await driver.mouseDrag({x:Math.round(point.x-vp2px(20)), y:Math.round(point.y)},{x:Math.round(point.x+vp2px(50)), y:Math.round(point.y)},600);
+        try {
+          await driver.mouseDrag({x:Math.round(point.x-vp2px(20)), y:Math.round(point.y), displayId: displayID},{x:Math.round(point.x+vp2px(50)), y:Math.round(point.y), displayId: displayID},600);
+        } catch (err) {
+          console.log('driver.mouseDrag error: ' + err);
+        }
         await CommonFunc.sleep(500);
         let  CustomMenu = await driver.findComponent(ON.text('自定义菜单'))
         expect(CustomMenu != null).assertEqual(true)
