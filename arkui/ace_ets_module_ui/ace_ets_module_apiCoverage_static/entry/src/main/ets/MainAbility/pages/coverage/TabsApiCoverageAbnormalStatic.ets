@@ -15,7 +15,7 @@
  */
 
 import {
-  Entry, Component, Column, Text, Scroll, Tabs, TabContent,
+  Entry, Component, Column, ColumnOptions, Text, Scroll, Tabs, TabContent,
   TabBarStyle, TabBarDisplayMode, BarPosition, Color, TabVisibility
 } from '@ohos.arkui.component';
 import { AppStorage } from '@ohos.arkui.stateManagement';
