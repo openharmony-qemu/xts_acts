@@ -1,6 +1,6 @@
 {
     "devices": {
-        "general": ["2in1"],
+        "general": [],
         "custom": [
             {
                 "xts": [
