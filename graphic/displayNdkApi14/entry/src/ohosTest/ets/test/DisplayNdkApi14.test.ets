@@ -134,8 +134,11 @@ export default function ActsDisplayNdkApi14Test() {
       
       await getPermision();
       await sleep(300);
-      await ClickButtonDriver();
-      await sleep(200);
+      if(deviceType !== 'car'){
+       await ClickButtonDriver();
+       await sleep(200); 
+      }
+      
     })
     beforeEach(() => {
       // Presets an action, which is performed before each unit test case starts.
