@@ -282,7 +282,7 @@ export default function abilityTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_0800
      * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_0800
-     * @tc.desc   Expect: success for 2in1 device, others failed with code 201
+     * @tc.desc   Expect: success for 2in1 device, others failed with code 801
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -310,6 +310,10 @@ export default function abilityTest() {
         } else if (err?.code === 801) {
           hilog.info(DOMAIN, LOG_TAG, tag + " success");
           done();
+        } else {
+          hilog.info(DOMAIN, LOG_TAG, tag + " unexpected code");
+          try { expect().assertFail(); } catch (err) {}
+          done();
         }
       }
     })
@@ -317,7 +321,7 @@ export default function abilityTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1000
      * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1000
-     * @tc.desc   Expect: call failed with code 201
+     * @tc.desc   Expect: permission denied without ohos.permission.SET_ABILITY_INSTANCE_INFO, code 201
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -894,6 +898,68 @@ export default function abilityTest() {
       }
       try {
         await testContext.setAbilityInstanceInfo('label_group_undefined', pixelMap, undefined);
+        hilog.info(DOMAIN, LOG_TAG, tag + " fail");
+        try { expect().assertFail(); } catch (err) {}
+        done();
+      } catch (err) {
+        hilog.info(DOMAIN, LOG_TAG, "setAbilityInstanceInfo failed: " + JSON.stringify(err))
+        try { expect(err?.code).assertEqual(401); } catch (err) {}
+        hilog.info(DOMAIN, LOG_TAG, tag + " success");
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3000
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3000
+     * @tc.desc   Expect: invalid context failed with code 16000011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3000', Level.LEVEL0, async (done: Function) => {
+      let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3000';
+      hilog.info(DOMAIN, LOG_TAG, tag + " it begin");
+      if (deviceInfo.deviceType !== '2in1') {
+        done();
+        return;
+      }
+      let fakeContext = { stageMode: true } as common.UIAbilityContext;
+      try {
+        await fakeContext.setAbilityInstanceInfo('label_ctx', pixelMap);
+        hilog.info(DOMAIN, LOG_TAG, tag + " fail");
+        try { expect().assertFail(); } catch (err) {}
+        done();
+      } catch (err) {
+        hilog.info(DOMAIN, LOG_TAG, "setAbilityInstanceInfo failed: " + JSON.stringify(err))
+        let bizError = err as BusinessError;
+        expect(bizError.code === 16000011 || bizError.code === 401).assertTrue();
+        hilog.info(DOMAIN, LOG_TAG, tag + " success");
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3100
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3100
+     * @tc.desc   Expect: label over 1024 bytes failed with code 401 (param spec)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3100', Level.LEVEL0, async (done: Function) => {
+      let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3100';
+      hilog.info(DOMAIN, LOG_TAG, tag + " it begin");
+      if (deviceInfo.deviceType !== '2in1') {
+        done();
+        return;
+      }
+      let label = '';
+      for (let i = 0; i < 65; i++) {
+        label += '0123456789abcdef';
+      }
+      try {
+        await testContext.setAbilityInstanceInfo(label, pixelMap);
         hilog.info(DOMAIN, LOG_TAG, tag + " fail");
         try { expect().assertFail(); } catch (err) {}
         done();

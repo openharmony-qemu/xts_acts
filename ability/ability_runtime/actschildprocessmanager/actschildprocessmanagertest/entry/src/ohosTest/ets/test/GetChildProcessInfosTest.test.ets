@@ -89,7 +89,7 @@ export default function getChildProcessInfosTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_GetChildProcessInfos_Empty_0100
      * @tc.number SUB_Ability_AbilityRuntime_GetChildProcessInfos_Empty_0100
-     * @tc.desc   getChildProcessInfos returns array (empty or existing children).
+     * @tc.desc   getChildProcessInfos returns empty array when no child process exists.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -99,9 +99,7 @@ export default function getChildProcessInfosTest() {
         try {
           let infos = await childProcessManager.getChildProcessInfos();
           expect(Array.isArray(infos)).assertTrue();
-          for (let i = 0; i < infos.length; i++) {
-            assertInfoShape(infos[i]);
-          }
+          expect(infos.length).assertEqual(0);
         } catch (e) {
           let err = e as BusinessError;
           console.info(`${TAG} Empty_0100 code=${err.code}`);
