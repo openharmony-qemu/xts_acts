@@ -68,7 +68,6 @@ struct IgnoreReadOnlyFalse {
       Text(this.getterResult)
         .id('text_false_getter')
         .height('3%')
-        .fontSize(16)
 
       Button('Connect Getter')
         .id('btn_false_getter')
@@ -90,7 +89,6 @@ struct IgnoreReadOnlyFalse {
       Text(this.computedResult)
         .id('text_false_computed')
         .height('3%')
-        .fontSize(16)
 
       Button('Connect Computed')
         .id('btn_false_computed')
@@ -112,7 +110,6 @@ struct IgnoreReadOnlyFalse {
       Text(this.derivedResult)
         .id('text_false_derived')
         .height('3%')
-        .fontSize(16)
 
       Button('Connect Derived')
         .id('btn_false_derived')

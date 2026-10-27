@@ -71,7 +71,6 @@ struct IgnoreReadOnlyInvalid {
       Text(this.nullGetterResult)
         .id('text_false_null_getter')
         .height('3%')
-        .fontSize(16)
 
       Button('Connect Null Getter')
         .id('btn_false_null_getter')
@@ -93,7 +92,6 @@ struct IgnoreReadOnlyInvalid {
       Text(this.nullComputedResult)
         .id('text_false_null_computed')
         .height('3%')
-        .fontSize(16)
 
       Button('Connect Null Computed')
         .id('btn_false_null_computed')
@@ -115,7 +113,6 @@ struct IgnoreReadOnlyInvalid {
       Text(this.nullDerivedResult)
         .id('text_false_null_derived')
         .height('3%')
-        .fontSize(16)
 
       Button('Connect Null Derived')
         .id('btn_false_null_derived')
@@ -137,7 +134,6 @@ struct IgnoreReadOnlyInvalid {
       Text(this.undefinedGetterResult)
         .id('text_false_undefined_getter')
         .height('3%')
-        .fontSize(16)
 
       Button('Connect Undefined Getter')
         .id('btn_false_undefined_getter')
@@ -159,7 +155,6 @@ struct IgnoreReadOnlyInvalid {
       Text(this.undefinedComputedResult)
         .id('text_false_undefined_computed')
         .height('3%')
-        .fontSize(16)
 
       Button('Connect Undefined Computed')
         .id('btn_false_undefined_computed')
@@ -181,7 +176,6 @@ struct IgnoreReadOnlyInvalid {
       Text(this.undefinedDerivedResult)
         .id('text_false_undefined_derived')
         .height('3%')
-        .fontSize(16)
 
       Button('Connect Undefined Derived')
         .id('btn_false_undefined_derived')
