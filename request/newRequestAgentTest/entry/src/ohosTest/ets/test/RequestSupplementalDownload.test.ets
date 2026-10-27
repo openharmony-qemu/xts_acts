@@ -2989,7 +2989,7 @@ export default function requestSupplementalDownTest() {
         notification: {
           title: 'downloadTest',
           text: 'hideStopButton null',
-          hideStopButton: null
+          hideStopButton: null as boolean
         }
       } as request.agent.Config;
       try {
@@ -3027,7 +3027,7 @@ export default function requestSupplementalDownTest() {
         notification: {
           title: 'downloadTest',
           text: 'hideStopButton string',
-          hideStopButton: "true"
+          hideStopButton: "true" as boolean
         }
       } as request.agent.Config;
       try {
@@ -3065,7 +3065,7 @@ export default function requestSupplementalDownTest() {
         notification: {
           title: 'downloadTest',
           text: 'hideStopButton number',
-          hideStopButton: 1
+          hideStopButton: 1 as boolean
         }
       } as request.agent.Config;
       try {
