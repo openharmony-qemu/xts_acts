@@ -34,6 +34,8 @@
     "MainAbility/pages/uiutils/GlobalReusePool",
     "MainAbility/pages/uiutils/GlobalReusePool002",
     "MainAbility/pages/uiutils/GlobalReusePool003",
-    "MainAbility/pages/uiutils/GlobalReusePool004"
+    "MainAbility/pages/uiutils/GlobalReusePool004",
+    "MainAbility/pages/builder/IsPlaceholder0060",
+    "MainAbility/pages/builder/IsPlaceholder0070"
   ]
 }
