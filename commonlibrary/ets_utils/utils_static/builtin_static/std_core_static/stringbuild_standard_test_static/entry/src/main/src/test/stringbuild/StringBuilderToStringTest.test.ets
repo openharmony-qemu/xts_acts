@@ -1937,3 +1937,242 @@ export default function StringBuilderToStringTest(): void {
 
       }
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BUILDER_TO_STRING_3000
+     * @tc.name testToStringStaticType001
+     * @tc.desc Verify static toString return type and integration behavior
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testToStringStaticType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+          let result: string = StringBuilder.toString(3.14);
+          expect(typeof result).assertEqual('string');
+
+      }
+      {
+          let result: string = StringBuilder.toString(20);
+          expect(result).assertEqual('20');
+
+      }
+      {
+          let result: string = StringBuilder.toString(0.001);
+          expect(result).assertEqual('0.001');
+          expect(typeof result).assertEqual('string');
+
+      }
+      {
+          let r1: string = StringBuilder.toString(true);
+          let r2: string = StringBuilder.toString(12 as byte);
+          let r3: string = StringBuilder.toString(c'A');
+          let r4: string = StringBuilder.toString(100 as short);
+          let r5: string = StringBuilder.toString(10000);
+          let r6: string = StringBuilder.toString(100);
+          let r7: string = StringBuilder.toString(3.14f);
+          let r8: string = StringBuilder.toString(123.456);
+          expect(r1).assertEqual('true');
+          expect(r2).assertEqual('12');
+          expect(r3).assertEqual('A');
+          expect(r4).assertEqual('100');
+          expect(r5).assertEqual('10000');
+          expect(r6).assertEqual('100');
+          expect(r7).assertEqual('3.14');
+          expect(r8).assertEqual('123.456');
+
+      }
+      {
+          let r1: string = StringBuilder.toString(42);
+          let r2: string = StringBuilder.toString(true);
+          let r3: string = StringBuilder.toString(3.14);
+          const builder = new StringBuilder(r1 + r2 + r3);
+          expect(builder.toString()).assertEqual("42true3.14");
+
+      }
+      {
+          let strVal: string = StringBuilder.toString(42);
+          const builder = new StringBuilder("Value: ");
+          builder.append(strVal);
+          expect(builder.toString()).assertEqual("Value: 42");
+
+      }
+      {
+          let r1: string = StringBuilder.toString(true);
+          let r2: string = StringBuilder.toString(3.14);
+          let combined: string = r1 + r2;
+          expect(combined).assertEqual("true3.14");
+
+      }
+      {
+        const sb = new StringBuilder();
+        sb.append(StringBuilder.toString(Number.NaN.toFloat()));
+        expect(sb.toString()).assertEqual('NaN');
+
+      }
+      {
+        const sb = new StringBuilder();
+        sb.append(StringBuilder.toString(Float.POSITIVE_INFINITY));
+        expect(sb.toString()).assertEqual('Infinity');
+
+      }
+      {
+        const sb = new StringBuilder();
+        sb.append(StringBuilder.toString(Float.NEGATIVE_INFINITY));
+        expect(sb.toString()).assertEqual('-Infinity');
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BUILDER_TO_STRING_3100
+     * @tc.name testToStringStaticType002
+     * @tc.desc Verify static toString return type and integration behavior
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testToStringStaticType002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        const result = StringBuilder.toString(c'B');
+        expect(Class.of(result).getName()).assertEqual('std.core.String');
+
+      }
+      {
+        const result = StringBuilder.toString(43 as int);
+        expect(Class.of(result).getName()).assertEqual('std.core.String');
+
+      }
+      {
+        const result = StringBuilder.toString(1.0 as float);
+        expect(Class.of(result).getName()).assertEqual('std.core.String');
+
+      }
+      {
+        let v: short = 42;
+        const result: String = StringBuilder.toString(v);
+        expect(Class.of(result).getName()).assertEqual('std.core.String');
+
+      }
+      {
+        let v: double = 9.99;
+        const result: String = StringBuilder.toString(v);
+        expect(Class.of(result).getName()).assertEqual('std.core.String');
+
+      }
+      {
+        const result: String = StringBuilder.toString(true);
+        expect(Class.of(result).getName()).assertEqual('std.core.String');
+
+      }
+      {
+        let v: long = 999;
+        const result: String = StringBuilder.toString(v);
+        expect(Class.of(result).getName()).assertEqual('std.core.String');
+
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BUILDER_TO_STRING_3200
+     * @tc.name testToStringStaticThrows001
+     * @tc.desc Verify static toString throws on invalid input
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testToStringStaticThrows001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      {
+        try {
+          const obj: PlainObject = new PlainObject();
+          StringBuilder.toString(obj as object as float);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('ClassCastError');
+        }
+
+      }
+      {
+        try {
+          let undef: boolean | undefined = undefined;
+          StringBuilder.toString(undef as boolean);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('ClassCastError');
+        }
+
+      }
+      {
+        try {
+          let undef: byte | undefined = undefined;
+          StringBuilder.toString(undef as byte);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('ClassCastError');
+        }
+
+      }
+      {
+        try {
+          let undef: char | undefined = undefined;
+          StringBuilder.toString(undef as char);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('ClassCastError');
+        }
+
+      }
+      {
+        try {
+          let undef: short | undefined = undefined;
+          StringBuilder.toString(undef as short);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('ClassCastError');
+        }
+
+      }
+      {
+        try {
+          let undef: long | undefined = undefined;
+          StringBuilder.toString(undef as long);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('ClassCastError');
+        }
+
+      }
+      {
+        try {
+          let undef: double | undefined = undefined;
+          StringBuilder.toString(undef as double);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('ClassCastError');
+        }
+
+      }
+      {
+        try {
+          let nul: null = null;
+          StringBuilder.toString(nul!);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('NullPointerError');
+        }
+
+      }
+      {
+        try {
+          let undef: undefined = undefined;
+          StringBuilder.toString(undef as int);
+          expect().assertFail();
+        } catch (e) {
+          expect(e.name).assertEqual('ClassCastError');
+        }
+
+      }
+    });
+
+  });
+}
