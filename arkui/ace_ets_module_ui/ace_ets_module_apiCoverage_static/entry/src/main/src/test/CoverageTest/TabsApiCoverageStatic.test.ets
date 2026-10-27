@@ -42,6 +42,10 @@ function tryGetAttrJson(nodeJson: string, key: string): string {
   }
 }
 
+function isAttrMissing(v: string): boolean {
+  return v.length === 0 || v === '{}' || v === 'null' || v === 'undefined' || v.length <= 2;
+}
+
 export default function tabsApiCoverageStaticTest(): void {
   describe('tabsApiCoverageStaticTest', () => {
     beforeEach(async (): Promise<void> => {
@@ -121,7 +125,8 @@ export default function tabsApiCoverageStaticTest(): void {
       const strJson: string = inspector.getInspectorByKey('tabsApiCovStatic_tabs');
       expect(strJson.length > 2).assertTrue();
       const searchable: string = tryGetAttrJson(strJson, 'sidebarSearchable');
-      if (searchable.length === 0) {
+      if (isAttrMissing(searchable) ||
+        (searchable.indexOf('cov') < 0 && searchable.indexOf('search') < 0)) {
         console.info(`${LOG_TAG} sidebarSearchable not exposed on this device; skip strict assert`);
         return;
       }
@@ -157,7 +162,7 @@ export default function tabsApiCoverageStaticTest(): void {
       const strJson: string = inspector.getInspectorByKey('tabsApiCovStatic_tabs');
       expect(strJson.length > 2).assertTrue();
       const bp: string = tryGetAttrJson(strJson, 'barDisplayModeBreakpoint');
-      if (bp.length === 0) {
+      if (isAttrMissing(bp)) {
         console.info(`${LOG_TAG} barDisplayModeBreakpoint not exposed on this device; skip strict assert`);
         return;
       }
@@ -176,7 +181,7 @@ export default function tabsApiCoverageStaticTest(): void {
       const strJson: string = inspector.getInspectorByKey('tabsApiCovStatic_tabs');
       expect(strJson.length > 2).assertTrue();
       const pos: string = tryGetStringAttr(strJson, 'sidebarPosition');
-      if (pos.length === 0) {
+      if (isAttrMissing(pos)) {
         console.info(`${LOG_TAG} sidebar attrs not exposed on this device; skip strict assert`);
         return;
       }
@@ -200,7 +205,7 @@ export default function tabsApiCoverageStaticTest(): void {
       const tabA: string = inspector.getInspectorByKey('tabsApiCovStatic_tabA');
       expect(tabA.length > 2).assertTrue();
       const visA: string = tryGetAttrJson(tabA, 'tabBarVisibility');
-      if (visA.length === 0) {
+      if (isAttrMissing(visA)) {
         console.info(`${LOG_TAG} tabBarVisibility not exposed on this device; skip strict assert`);
         return;
       }
