@@ -95,5 +95,28 @@ export default function formBindingDataTest() {
             done();
             hilog.info(DOMAIN, TAG, 'FormBindingDataStaticTest002 end');
         })
+
+        /**
+         * @tc.name   SUB_ABILITY_FORM_FWK_CREATE_FORM_BINDING_DATA_EX_0100
+         * @tc.number SUB_ABILITY_FORM_FWK_CREATE_FORM_BINDING_DATA_EX_0100
+         * @tc.desc   check createFormBindingDataEx with object parameter
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("SUB_ABILITY_FORM_FWK_CREATE_FORM_BINDING_DATA_EX_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            await Utils.msSleep(1000);
+            hilog.info(DOMAIN, TAG, 'SUB_ABILITY_FORM_FWK_CREATE_FORM_BINDING_DATA_EX_0100 start');
+
+            let dataObj: Record<string, string> = {
+                'temperature': '11c',
+                'time': '11:00'
+            };
+            let formBinding = formBindingData.createFormBindingDataEx(dataObj);
+            expect(formBinding.data + '').assertEqual('temperature,11c,time,11:00');
+
+            done();
+            hilog.info(DOMAIN, TAG, 'SUB_ABILITY_FORM_FWK_CREATE_FORM_BINDING_DATA_EX_0100 end');
+        })
     })
 }
