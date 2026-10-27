@@ -20,6 +20,7 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 export default function verticalTrue() {
   describe('verticalTrue', () => {
     beforeEach(async (): Promise<void> => {
@@ -66,8 +67,7 @@ it('verticalTrue_static_0100', Level.LEVEL0, async (done: () => void): Promise<v
       let width = right - left;
       let driver = Driver.create()
       await CommonFunc.sleep(500);
-      await driver.swipe((Math.round(left + width / 2)).toInt(), (Math.round(top + height * 0.9)).toInt(),
-        (Math.round(left + width / 2)).toInt(), (Math.round(top + height * 0.1)).toInt());
+      await driver.swipeBetween({ x: (Math.round(left + width / 2)).toInt(), y: (Math.round(top + height * 0.9)).toInt(), displayId: displayID }, { x: (Math.round(left + width / 2)).toInt(), y: (Math.round(top + height * 0.1)).toInt(), displayId: displayID });
       await CommonFunc.sleep(2000);
       let strJson1 = inspector.getInspectorByKey('portrait_onGestureSwipe');
       console.info("[verticalTrue_static_0100] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson1)));

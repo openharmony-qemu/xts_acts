@@ -50,6 +50,7 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 export default function swiper2() {
   describe('swiper2', () => {
     beforeAll(async (): Promise<void> => {
@@ -107,8 +108,7 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0260', Level.LEVEL0, async (don
 
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(btLeft).toInt(), Math.round(btBottom / 2).toInt(), (Math.round(btRight) + 40).toInt(),
-        Math.round(btBottom / 2).toInt());
+      await driver.swipeBetween({ x: Math.round(btLeft).toInt(), y: Math.round(btBottom / 2).toInt(), displayId: displayID }, { x: (Math.round(btRight) + 40).toInt(), y: Math.round(btBottom / 2).toInt(), displayId: displayID });
       await CommonFunc.sleep(5000);
 
       let strJson = inspector.getInspectorByKey('swiperText2');

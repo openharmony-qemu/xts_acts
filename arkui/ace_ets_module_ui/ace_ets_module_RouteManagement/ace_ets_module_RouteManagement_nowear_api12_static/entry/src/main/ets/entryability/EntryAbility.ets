@@ -22,6 +22,7 @@ import hilog from '@ohos.hilog';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from "@ohos.app.ability.common";
 import { UIContext } from '@ohos.arkui.UIContext';
+import display from '@ohos.display';
 
 export default class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
@@ -35,6 +36,10 @@ export default class EntryAbility extends UIAbility {
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
+    let displayInfo = display.getDefaultDisplaySync();
+    console.info('当前屏幕ID' + displayInfo.id);
+    AppStorage.setOrCreate('displayID', displayInfo.id);
+
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
     AppStorage.setOrCreate<window.WindowStage>('windowStage', windowStage);
     AppStorage.setOrCreate<common.UIAbilityContext>('abilityContext', this.context);

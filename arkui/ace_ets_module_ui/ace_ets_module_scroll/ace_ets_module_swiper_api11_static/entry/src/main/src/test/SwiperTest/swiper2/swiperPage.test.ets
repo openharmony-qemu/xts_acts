@@ -50,6 +50,7 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 export default function swiperPageTest() {
   describe('swiperPageTest', () => {
     beforeAll(async (): Promise<void> => {
@@ -110,20 +111,14 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0030', Level.LEVEL0, async (don
       const uiContext = new UIContext();
       const winLeft = AppStorage.get<number>('winLeft') ?? 0;
       const winTop = AppStorage.get<number>('winTop as Int') ?? 0;
-      await driver.swipe(Math.round(winLeft + Math.round(btRight) - Math.round(UIContext.resolveUIContext()!.vp2px(20))).toInt(),
-       Math.round(winTop  + Math.round(btBottom / 2)).toInt(),
-       Math.round(winLeft + Math.round(btLeft) + Math.round(UIContext.resolveUIContext()!.vp2px(10))).toInt(),
-       Math.round(winTop  + Math.round(btBottom / 2)).toInt());
+      await driver.swipeBetween({ x: Math.round(winLeft + Math.round(btRight) - Math.round(UIContext.resolveUIContext()!.vp2px(20))).toInt(), y: Math.round(winTop  + Math.round(btBottom / 2)).toInt(), displayId: displayID }, { x: Math.round(winLeft + Math.round(btLeft) + Math.round(UIContext.resolveUIContext()!.vp2px(10))).toInt(), y: Math.round(winTop  + Math.round(btBottom / 2)).toInt(), displayId: displayID });
       await CommonFunc.sleep(5000);
       // get the component of text_3
       let text3: Component = await driver.findComponent(ON.text('5')) as Component;
       let ttContent = await text3.getText();
       expect(ttContent).assertEqual("5")
       // swipe again
-      await driver.swipe(Math.round(winLeft + Math.round(btRight) - Math.round(UIContext.resolveUIContext()!.vp2px(20))).toInt(),
-        Math.round(winTop + Math.round(btBottom / 2)).toInt(),
-        Math.round(winLeft + Math.round(btLeft) + Math.round(UIContext.resolveUIContext()!.vp2px(10))).toInt(),
-        Math.round(winTop + Math.round(btBottom / 2)).toInt());
+      await driver.swipeBetween({ x: Math.round(winLeft + Math.round(btRight) - Math.round(UIContext.resolveUIContext()!.vp2px(20))).toInt(), y: Math.round(winTop + Math.round(btBottom / 2)).toInt(), displayId: displayID }, { x: Math.round(winLeft + Math.round(btLeft) + Math.round(UIContext.resolveUIContext()!.vp2px(10))).toInt(), y: Math.round(winTop + Math.round(btBottom / 2)).toInt(), displayId: displayID });
       await CommonFunc.sleep(5000);
       let text7: Component = await driver.findComponent(ON.text('8')) as Component;
       let ttContent7 = await text7.getText();

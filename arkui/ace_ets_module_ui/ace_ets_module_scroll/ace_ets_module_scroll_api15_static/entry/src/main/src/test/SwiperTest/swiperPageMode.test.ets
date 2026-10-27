@@ -21,6 +21,7 @@ import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 export default function swiperPageMode() {
   describe('swiperPageMode', () => {
     beforeEach(async (): Promise<void> => {
@@ -87,7 +88,7 @@ it('swiperPageMode_static_0100', Level.LEVEL1, async (done: () => void): Promise
         let width = right - left;
         let height = bottom - top;
         console.info("swiperPageMode_static_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
-        await driver.mouseScroll({ x: (Math.round(left + width / 2)).toInt(), y: (Math.round(top + height / 2)).toInt() },
+        await driver.mouseScroll({ x: (Math.round(left + width / 2)).toInt(), y: (Math.round(top + height / 2)).toInt(), displayId: displayID },
           true, 1)
         await CommonFunc.sleep(1000);
         let strJson2 = inspector.getInspectorByKey('swiper_PageMode_onChange');
@@ -132,7 +133,7 @@ it('swiperPageMode_static_0200', Level.LEVEL1, async (done: () => void): Promise
         let width = right - left;
         let height = bottom - top;
         console.info("swiperPageMode_static_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
-        await driver.mouseScroll({ x: (Math.round(left + width / 2)).toInt(), y: (Math.round(top + height / 2)).toInt() },
+        await driver.mouseScroll({ x: (Math.round(left + width / 2)).toInt(), y: (Math.round(top + height / 2)).toInt(), displayId: displayID },
           true, 3)
         await CommonFunc.sleep(5000);
 

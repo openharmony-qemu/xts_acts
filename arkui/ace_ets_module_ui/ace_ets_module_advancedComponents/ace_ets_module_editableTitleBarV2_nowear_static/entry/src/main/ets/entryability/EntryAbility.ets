@@ -20,6 +20,7 @@ import window from '@ohos.window';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
 import { MyCallback } from '../models/MyCallback';
+import display from '@ohos.display';
 
 
 class EntryAbility extends UIAbility {
@@ -28,6 +29,10 @@ class EntryAbility extends UIAbility {
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
+    let displayInfo = display.getDefaultDisplaySync();
+    console.info('当前屏幕ID' + displayInfo.id);
+    AppStorage.setOrCreate('displayID', displayInfo.id);
+
     hilog.info(0x0000, 'testTag sjd EntryAbility', 'EntryAbility onWindowStageCreate');
     try {
       windowStage.loadContent('MainAbility/pages/index/index', (err: BusinessError<void> | null): void => {

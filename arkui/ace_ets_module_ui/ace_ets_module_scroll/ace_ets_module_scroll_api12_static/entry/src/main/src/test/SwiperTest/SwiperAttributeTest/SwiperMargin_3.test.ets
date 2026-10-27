@@ -32,6 +32,7 @@ import text from "@ohos.graphics.text"
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 export default function SwiperMargin_3() {
   describe('SwiperMargin_3', () => {
     beforeEach(async (): Promise<void> => {
@@ -128,12 +129,7 @@ it('SwiperMargin_static_0190', Level.LEVEL0, async (done: () => void): Promise<v
       rect.bottom);
       let driver = Driver.create()
       await CommonFunc.sleep(500);
-      await driver.swipe(
-        (Number.parseInt(`${(rect.right - rect.left) * 0.8 + rect.left}`)).toInt(),
-        (Number.parseInt(`${(rect.bottom - rect.top) * 0.5 + rect.top}`)).toInt(),
-        (Number.parseInt(`${(rect.right - rect.left) * 0.1 + rect.left}`)).toInt(),
-        (Number.parseInt(`${(rect.bottom - rect.top) * 0.5 + rect.top}`)).toInt(),
-        1000);
+      await driver.swipeBetween({ x: (Number.parseInt(`${(rect.right - rect.left) * 0.8 + rect.left}`)).toInt(), y: (Number.parseInt(`${(rect.bottom - rect.top) * 0.5 + rect.top}`)).toInt(), displayId: displayID }, { x: (Number.parseInt(`${(rect.right - rect.left) * 0.1 + rect.left}`)).toInt(), y: (Number.parseInt(`${(rect.bottom - rect.top) * 0.5 + rect.top}`)).toInt(), displayId: displayID }, 1000);
       await CommonFunc.sleep(1000);
 
       let swiperRect = CommonFunc.getComponentRect('swiperMargin_3');

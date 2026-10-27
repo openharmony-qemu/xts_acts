@@ -20,6 +20,7 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 export default function tabsCallBack4() {
   describe('tabsCallBack4', () => {
     beforeEach(async (): Promise<void> => {
@@ -68,8 +69,7 @@ it('tabsCallBack4_static_0100', Level.LEVEL0, async (done: () => void): Promise<
       let width = right - left;
       let driver = Driver.create()
       await CommonFunc.sleep(500);
-      await driver.swipe((Math.round(left + width * 0.9)).toInt(), (Math.round(bottom - height / 2)).toInt(),
-        (Math.round(left + width * 0.1)).toInt(), (Math.round(bottom - height / 2)).toInt());
+      await driver.swipeBetween({ x: (Math.round(left + width * 0.9)).toInt(), y: (Math.round(bottom - height / 2)).toInt(), displayId: displayID }, { x: (Math.round(left + width * 0.1)).toInt(), y: (Math.round(bottom - height / 2)).toInt(), displayId: displayID });
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('tabs_callback_4');
       console.info("[tabsCallBack4_static_0100] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));

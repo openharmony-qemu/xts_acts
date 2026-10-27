@@ -50,6 +50,7 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 export default function SwiperVisibility() {
   describe('SwiperVisibility', () => {
     beforeAll(async (): Promise<void> => {
@@ -109,10 +110,7 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0520', Level.LEVEL0, async (don
       const uiContext = new UIContext();
       const winLeft = AppStorage.get<number>('winLeft') ?? 0;
       const winTop = AppStorage.get<number>('winTop as Int') ?? 0;
-      await driver.swipe(winLeft.toInt() + (Math.round(btRight) - Math.round(UIContext.resolveUIContext()!.vp2px(20))).toInt(),
-        winTop.toInt() + Math.round(btBottom / 2).toInt(),
-        (winLeft + Math.round(btLeft)).toInt() + Math.round(UIContext.resolveUIContext()!.vp2px(10)).toInt(),
-        winTop.toInt() + Math.round(btBottom / 2).toInt());
+      await driver.swipeBetween({ x: winLeft.toInt() + (Math.round(btRight) - Math.round(UIContext.resolveUIContext()!.vp2px(20))).toInt(), y: winTop.toInt() + Math.round(btBottom / 2).toInt(), displayId: displayID }, { x: (winLeft + Math.round(btLeft)).toInt() + Math.round(UIContext.resolveUIContext()!.vp2px(10)).toInt(), y: winTop.toInt() + Math.round(btBottom / 2).toInt(), displayId: displayID });
       await CommonFunc.sleep(4800);
 
       let strJson = inspector.getInspectorByKey('SwiperVisibilityText');
