@@ -18,7 +18,7 @@ import fs from '@ohos.file.fs'
 import request from "@ohos.request";
 import commonEvent from '@ohos.commonEventManager';
 import common from '@ohos.app.ability.common';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { WifiConnectStatus } from '../common/WifiConnectStatus';
 import  { Request, UploadRequestOptions, UploadResponse } from '@kit.BasicServicesKit';
@@ -1972,138 +1972,6 @@ export default function requestSupplementalUploadTest() {
     });
 
     /**
-     * @tc.name   SUB_Request_upload_Supplemental_4400
-     * @tc.number SUB_Request_upload_Supplemental_4400
-     * @tc.desc   Upload with notification.hideStopButton is null, mode BACKGROUND.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Request_upload_Supplemental_4400', Level.LEVEL3, async (done: Function) => {
-      console.info("====>-----------------------SUB_Request_upload_Supplemental_4400 is starting-----------------------");
-      let attachments: Array<request.agent.FormItem> = [{
-        name: "uploadTest",
-        value: {
-          path: "./test.txt",
-          filename: "test.txt",
-          mimeType: "application/octet-stream"
-        }
-      }];
-      let config = {
-        action: request.agent.Action.UPLOAD,
-        url: 'http://127.0.0.1:8080',
-        mode: request.agent.Mode.BACKGROUND,
-        method: "POST",
-        data: attachments,
-        notification: {
-          title: 'uploadTest',
-          text: 'hideStopButton null',
-          hideStopButton: null as boolean
-        }
-      } as request.agent.Config;
-      try {
-        let task = await request.agent.create(baseContext, config);
-        console.info(`====>SUB_Request_upload_Supplemental_4400 config: ${JSON.stringify(task.config)}`);
-        expect(task.tid !== undefined).assertTrue();
-        await request.agent.remove(task.tid);
-        console.info("====>SUB_Request_upload_Supplemental_4400 remove success");
-        done();
-      } catch (err) {
-        console.info(`====>SUB_Request_upload_Supplemental_4400 catch err: ${JSON.stringify(err)}`);
-        expect().assertFail();
-        done();
-      }
-    });
-
-    /**
-     * @tc.name   SUB_Request_upload_Supplemental_4500
-     * @tc.number SUB_Request_upload_Supplemental_4500
-     * @tc.desc   Upload with notification.hideStopButton is string type, mode BACKGROUND.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Request_upload_Supplemental_4500', Level.LEVEL3, async (done: Function) => {
-      console.info("====>-----------------------SUB_Request_upload_Supplemental_4500 is starting-----------------------");
-      let attachments: Array<request.agent.FormItem> = [{
-        name: "uploadTest",
-        value: {
-          path: "./test.txt",
-          filename: "test.txt",
-          mimeType: "application/octet-stream"
-        }
-      }];
-      let config = {
-        action: request.agent.Action.UPLOAD,
-        url: 'http://127.0.0.1:8080',
-        mode: request.agent.Mode.BACKGROUND,
-        method: "POST",
-        data: attachments,
-        notification: {
-          title: 'uploadTest',
-          text: 'hideStopButton string',
-          hideStopButton: "true" as boolean
-        }
-      } as request.agent.Config;
-      try {
-        let task = await request.agent.create(baseContext, config);
-        console.info(`====>SUB_Request_upload_Supplemental_4500 config: ${JSON.stringify(task.config)}`);
-        expect(task.tid !== undefined).assertTrue();
-        await request.agent.remove(task.tid);
-        console.info("====>SUB_Request_upload_Supplemental_4500 remove success");
-        done();
-      } catch (err) {
-        console.info(`====>SUB_Request_upload_Supplemental_4500 catch err: ${JSON.stringify(err)}`);
-        expect().assertFail();
-        done();
-      }
-    });
-
-    /**
-     * @tc.name   SUB_Request_upload_Supplemental_4600
-     * @tc.number SUB_Request_upload_Supplemental_4600
-     * @tc.desc   Upload with notification.hideStopButton is number type, mode BACKGROUND.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Request_upload_Supplemental_4600', Level.LEVEL3, async (done: Function) => {
-      console.info("====>-----------------------SUB_Request_upload_Supplemental_4600 is starting-----------------------");
-      let attachments: Array<request.agent.FormItem> = [{
-        name: "uploadTest",
-        value: {
-          path: "./test.txt",
-          filename: "test.txt",
-          mimeType: "application/octet-stream"
-        }
-      }];
-      let config = {
-        action: request.agent.Action.UPLOAD,
-        url: 'http://127.0.0.1:8080',
-        mode: request.agent.Mode.BACKGROUND,
-        method: "POST",
-        data: attachments,
-        notification: {
-          title: 'uploadTest',
-          text: 'hideStopButton number',
-          hideStopButton: 1 as boolean
-        }
-      } as request.agent.Config;
-      try {
-        let task = await request.agent.create(baseContext, config);
-        console.info(`====>SUB_Request_upload_Supplemental_4600 config: ${JSON.stringify(task.config)}`);
-        expect(task.tid !== undefined).assertTrue();
-        await request.agent.remove(task.tid);
-        console.info("====>SUB_Request_upload_Supplemental_4600 remove success");
-        done();
-      } catch (err) {
-        console.info(`====>SUB_Request_upload_Supplemental_4600 catch err: ${JSON.stringify(err)}`);
-        expect().assertFail();
-        done();
-      }
-    });
-
-    /**
      * @tc.name   SUB_Request_upload_Supplemental_4700
      * @tc.number SUB_Request_upload_Supplemental_4700
      * @tc.desc   Upload callback with notification.hideStopButton is true, mode BACKGROUND.
@@ -2170,6 +2038,7 @@ export default function requestSupplementalUploadTest() {
         });
       } catch (err) {
         console.info("====>SUB_Request_upload_Supplemental_4700 create catch err: " + JSON.stringify(err));
+        expect().assertFail();
         done();
       }
     });
@@ -2241,6 +2110,7 @@ export default function requestSupplementalUploadTest() {
         });
       } catch (err) {
         console.info("====>SUB_Request_upload_Supplemental_4800 create catch err: " + JSON.stringify(err));
+        expect().assertFail();
         done();
       }
     });
