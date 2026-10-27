@@ -2734,7 +2734,6 @@ export default function bluetoothConnectionTest(): void {
           let virtualAddress: string = connection.getVirtualAddressByHash(
             connection.HashAlgorithmType.HASH_ALGORITHM_SHA256, "");
           hilog.info(domain, tag, "getVirtualAddressByHash result: " + JSON.stringify(virtualAddress));
-          expect(true).assertTrue();
         } catch (err) {
           err = err as BusinessError;
           hilog.info(domain, tag,
