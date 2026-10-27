@@ -17,8 +17,8 @@ ohos_app_assist_suite("ActsAutoEffectMainTest") {
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
   hap_name = "ActsAutoEffectMainTest"
-  subsystem_name = "graphic"
-  part_name = "graphic_2d"
+  subsystem_name = "multimedia"
+  part_name = "video_processing_engine"
 }
 
 ohos_js_app_suite("ActsAutoEffectHapTest") {
@@ -26,7 +26,7 @@ ohos_js_app_suite("ActsAutoEffectHapTest") {
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
   hap_name = "ActsAutoEffectHapTest"
-  subsystem_name = "graphic"
-  part_name = "graphic_2d"
+  subsystem_name = "multimedia"
+  part_name = "video_processing_engine"
   deps = [ ":ActsAutoEffectMainTest" ]
 }
