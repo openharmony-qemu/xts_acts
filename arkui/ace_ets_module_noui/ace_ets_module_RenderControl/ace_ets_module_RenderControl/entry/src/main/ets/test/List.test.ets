@@ -87,6 +87,9 @@ import LazyForEachCustomComponentFreezeModeTest from './LazyForEach/LazyForEachC
 import RepeatReusableMemOptStrategyTest from './Repeat/RepeatReusableMemOptStrategyTest.test';
 import LazyForEachReusableMemOptStrategyTest from './LazyForEach/LazyForEachReusableMemOptStrategyTest.test';
 import LazyForEachDataReloadTest from './LazyForEach/LazyForEachDataReloadTest.test';
+import RepeatAllowReuseInAnimationNullUndefinedTest from './Repeat/RepeatAllowReuseInAnimationNullUndefined.test';
+import RepeatAllowReuseInAnimationGridTest from './Repeat/RepeatAllowReuseInAnimationGrid.test';
+import RepeatAllowReuseInAnimationWaterFlowTest from './Repeat/RepeatAllowReuseInAnimationWaterFlow.test';
 
 export default function testsuite() {
     Foreach1();
@@ -163,4 +166,7 @@ export default function testsuite() {
     RepeatReusableMemOptStrategyTest();
     LazyForEachReusableMemOptStrategyTest();
     LazyForEachDataReloadTest();
+    RepeatAllowReuseInAnimationNullUndefinedTest();
+    RepeatAllowReuseInAnimationGridTest();
+    RepeatAllowReuseInAnimationWaterFlowTest();
 }
