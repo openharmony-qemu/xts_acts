@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import hilog from '@ohos.hilog';
-import { describe, it, expect, TestType, Size, Level } from '../../../hypium/index';
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import insightIntentProvider from '@ohos.app.ability.insightIntentProvider'
 import insightIntent from '@ohos.app.ability.insightIntent'
 import { BusinessError, RecordData } from '@ohos.base';

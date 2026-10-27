@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import hilog from '@ohos.hilog';
-import { describe, beforeAll, it, expect, Level } from '../../../hypium/index';
+import { describe, beforeAll, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import image from '@ohos.multimedia.image';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';

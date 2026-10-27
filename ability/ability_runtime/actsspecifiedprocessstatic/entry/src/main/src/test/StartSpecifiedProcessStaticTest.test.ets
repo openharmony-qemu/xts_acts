@@ -15,7 +15,7 @@
  */
 
 import hilog from '@ohos.hilog';
-import {  describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level  } from '../../../hypium/index';
+import {  describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level  } from '@ohos/hypium-static/src/main/indexStatic';
 import { BusinessError, RecordData } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import Utils from './Util.test';

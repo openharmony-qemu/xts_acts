@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {  describe, it, expect, Level, beforeAll} from '../../../hypium/index';
+import {  describe, it, expect, Level, beforeAll} from '@ohos/hypium-static/src/main/indexStatic';
 import appManager from "@ohos.app.ability.appManager"
 import { BusinessError } from '@ohos.base';
 import UIAbility from '@ohos.app.ability.UIAbility';
