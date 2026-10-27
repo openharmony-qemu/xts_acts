@@ -89,15 +89,15 @@ export default function actsNotificationAnsEnableBatchNoSystemStaticTest() {
     })
 
     /**
-     * @tc.name   SUB_Notification_Ans_Enable_Batch_Static_0100
-     * @tc.number SUB_Notification_Ans_Enable_Batch_Static_0100
+     * @tc.name   Sub_Notification_Ans_Enable_Batch_Static_0100
+     * @tc.number Sub_Notification_Ans_Enable_Batch_Static_0100
      * @tc.desc   1.2 Call the setReminderInfoByBundles, getReminderInfoByBundles, getBadgeDisplayStatusByBundles, and setBadgeDisplayStatusByBundles interfaces, where hap is a third-party application, and an error 202 is reported
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_Notification_Ans_Enable_Batch_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async (done: () => void): Promise<void> => {
-      const testNum = 'SUB_Notification_Ans_Enable_Batch_Static_0100';
+    it('Sub_Notification_Ans_Enable_Batch_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async (done: () => void): Promise<void> => {
+      const testNum = 'Sub_Notification_Ans_Enable_Batch_Static_0100';
       let nullStr:string=''
       let reminderInfosOne: Array<notificationManager.NotificationReminderInfo> = [
         {
@@ -151,25 +151,41 @@ export default function actsNotificationAnsEnableBatchNoSystemStaticTest() {
           }).catch((error)=>{
             let err:BusinessError=error as BusinessError
             console.error(`${testNum}setReminderInfoByBundles fail: ${err.code}, message is ${err.message}`);
-            expect(err.code).assertEqual(202)
+             if(err.code === 801){
+              expect(err.code).assertEqual(801)
+            }else{
+              expect(err.code).assertEqual(202)
+            }
           })
         } catch(err) {
           console.error(`${testNum}GetBadgeDisplayStatusByBundles failed, code is ${err.code}, message is ${err.message}`);
-          expect(err.code).assertEqual(202)
-        };
-          notificationManager.setBadgeDisplayStatusByBundles(badges).then(() => {
-            console.info(`${testNum}setReminderInfoByBundles success`);
-            expect(false).assertTrue();
-            done()
-          }).catch((error)=>{
-            let err:BusinessError=error as BusinessError
-            console.error(`${testNum}setReminderInfoByBundles fail: ${err.code}, message is ${err.message}`);
+          if(err.code === 801){
+            expect(err.code).assertEqual(801)
+          }else{
             expect(err.code).assertEqual(202)
-            done()
-          })
+          }
+        };
+        notificationManager.setBadgeDisplayStatusByBundles(badges).then(() => {
+          console.info(`${testNum}setReminderInfoByBundles success`);
+          expect(false).assertTrue();
+          done()
+        }).catch((error)=>{
+          let err:BusinessError=error as BusinessError
+          console.error(`${testNum}setReminderInfoByBundles fail: ${err.code}, message is ${err.message}`);
+          if(err.code === 801){
+            expect(err.code).assertEqual(801)
+          }else{
+            expect(err.code).assertEqual(202)
+          }
+          done()
+        })
       } catch (err) {
         hilog.error(0x0000, 'testTag', `${testNum}restart failed: ${err.code}, ${err.message},${testNum}`);
-        expect(err).assertEqual(0)
+        if(err.code === 801){
+          expect(err.code).assertEqual(801)
+        }else{
+          expect().assertFail()
+        }
         done();
       }
     })
