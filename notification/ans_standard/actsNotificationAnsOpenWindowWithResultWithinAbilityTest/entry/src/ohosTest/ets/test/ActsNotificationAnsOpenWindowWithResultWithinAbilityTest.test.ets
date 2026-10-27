@@ -25,7 +25,7 @@ let ctx = getContext(this) as common.UIAbilityContext;
 function sleep(time: number) {
   return new Promise((resolve: (value: string) => void) => {
     setTimeout(() => {
-      resolve("ok");
+      resolve('ok');
     }, time)
   });
 }
@@ -51,9 +51,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
       let context: common.UIAbilityContext = getContext(ctx) as common.UIAbilityContext;
       try {
         // 1. 打开订阅设置页并等待结果
-        const data = notificationExtensionSubscription.openSubscriptionSettingsWithResult(context);
-        hilog.info(0x0000, 'testTag',
-          `${testNum} openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data)}`);
+        const dataPromise: Promise<notificationExtensionSubscription.UserGrantSetting> = notificationExtensionSubscription.openSubscriptionSettingsWithResult(context);
     
         // 2. 等待设置页展示并点击“确定”
         await sleep(1000)
@@ -67,11 +65,11 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
         }
 
         //3. 此时接口返回设置结果，做断言
-        const result = await data;
+        const data: notificationExtensionSubscription.UserGrantSetting | undefined = await dataPromise;
         hilog.info(0x0000, 'testTag',
-          `${testNum} openSubscriptionSettingsWithResult success, result: ${JSON.stringify(result)}`);
-        expect(data.userGrantEnabled).assertEqual(false)
-        if (data.grantedBundleInfos !== undefined) {
+          `${testNum} openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data)}`);
+        expect(data?.userGrantEnabled).assertEqual(false)
+        if (data?.grantedBundleInfos !== undefined) {
           expect(JSON.stringify(data.grantedBundleInfos)).assertEqual('[]')
         }
         done();
@@ -103,7 +101,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
       try {
         // 1. 打开订阅设置页并拿到结果
         let context: common.UIAbilityContext = getContext(ctx) as common.UIAbilityContext;
-        const data =  notificationExtensionSubscription.openSubscriptionSettingsWithResult(context);
+        const dataPromise: Promise<notificationExtensionSubscription.UserGrantSetting> = notificationExtensionSubscription.openSubscriptionSettingsWithResult(context);
         
         // 2. UI 操作：打开授权开关 → 允许 → 确定
         await sleep(1000)
@@ -133,12 +131,13 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
         
         //3. 此时接口返回设置结果，做断言
         await sleep(1000)
+        const data: notificationExtensionSubscription.UserGrantSetting | undefined = await dataPromise;
         hilog.info(0x0000, 'testTag',
           `${testNum} openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data)}`);
-        expect(data.userGrantEnabled).assertEqual(true)
-        if (data.grantedBundleInfos !== undefined) {
+        expect(data?.userGrantEnabled).assertEqual(true)
+        if (data?.grantedBundleInfos !== undefined) {
           for (let index = 0; index < data.grantedBundleInfos.length; index++) {
-            expect(data.grantedBundleInfos[index].appIndex).assertEqual(0)
+            expect(data?.grantedBundleInfos[index].appIndex).assertEqual(0)
           }
         }
         done();
@@ -169,7 +168,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
       try {
         // 1. 打开订阅设置页并验证默认未授权状态
         let context: common.UIAbilityContext = getContext(ctx) as common.UIAbilityContext;
-        const data = notificationExtensionSubscription.openSubscriptionSettingsWithResult(context);
+        const dataPromise: Promise<notificationExtensionSubscription.UserGrantSetting> = notificationExtensionSubscription.openSubscriptionSettingsWithResult(context);
     
         // 2. 等待设置页展示，直接点“确定”关闭（保持开关默认关闭状态）
         await sleep(1000)
@@ -191,10 +190,11 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
         }
 
         await sleep(1000);
+        const data: notificationExtensionSubscription.UserGrantSetting | undefined = await dataPromise;
         hilog.info(0x0000, 'testTag',
           `${testNum} openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data)}`);
-        expect(data.userGrantEnabled).assertEqual(false)
-        if (data.grantedBundleInfos !== undefined) {
+        expect(data?.userGrantEnabled).assertEqual(false)
+        if (data?.grantedBundleInfos !== undefined) {
           expect(JSON.stringify(data.grantedBundleInfos)).assertEqual('[]')
         }
         done();
@@ -224,7 +224,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
       try {
         // 1. 第一次打开设置页，验证当前授权状态（await，失败进统一 catch）
         let context: common.UIAbilityContext = getContext(ctx) as common.UIAbilityContext;
-        const data1 = notificationExtensionSubscription.openSubscriptionSettingsWithResult(context);
+        const firstSettingPromise: Promise<notificationExtensionSubscription.UserGrantSetting> = notificationExtensionSubscription.openSubscriptionSettingsWithResult(context);
     
         // 2. UI 操作：开启授权开关 → 允许 → 全部 → 确定
         await sleep(1000)
@@ -262,16 +262,17 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
         }
         // 3. 第一次打开设置页，验证断言
         await sleep(1000);
+        const firstSetting: notificationExtensionSubscription.UserGrantSetting | undefined = await firstSettingPromise;
         hilog.info(0x0000, 'testTag',
-          `${testNum} openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data1)}`);
-        expect(data1.userGrantEnabled).assertEqual(true)
-        if (data1.grantedBundleInfos !== undefined) {
-          expect(JSON.stringify(data.grantedBundleInfos)).assertContain('{"bundleName":"com.example.actsnotificationansopenwindowwithresultwithinabilitytest","appName":"AAAopenWindow","appIndex":0}')
+          `${testNum} openSubscriptionSettingsWithResult success, data: ${JSON.stringify(firstSetting)}`);
+        expect(firstSetting?.userGrantEnabled).assertEqual(true)
+        if (firstSetting?.grantedBundleInfos !== undefined) {
+          expect(JSON.stringify(firstSetting.grantedBundleInfos)).assertContain('{"bundleName":"com.example.actsnotificationansopenwindowwithresultwithinabilitytest","appName":"AAAopenWindow","appIndex":0}')
         }
 
         // 4. 第二次打开设置页，验证授权已生效
         await sleep(1000)
-        const data2 = notificationExtensionSubscription.openSubscriptionSettingsWithResult(context);
+        const lastSettingPromise: Promise<notificationExtensionSubscription.UserGrantSetting> = notificationExtensionSubscription.openSubscriptionSettingsWithResult(context);
     
         // 4. 点击关闭按钮收尾
         await sleep(1000)
@@ -284,11 +285,12 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
         }
         // 5. 第二次打开设置页，验证断言
         await sleep(1000)
+        const lastSetting: notificationExtensionSubscription.UserGrantSetting | undefined = await lastSettingPromise;
         hilog.info(0x0000, 'testTag',
-          `${testNum} openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data2)}`);
-        expect(data2.userGrantEnabled).assertEqual(true)
-        if (data2.grantedBundleInfos !== undefined) {
-          expect(JSON.stringify(data.grantedBundleInfos)).assertContain('{"bundleName":"com.example.actsnotificationansopenwindowwithresultwithinabilitytest","appName":"AAAopenWindow","appIndex":0}')
+          `${testNum} openSubscriptionSettingsWithResult success, data: ${JSON.stringify(lastSetting)}`);
+        expect(lastSetting?.userGrantEnabled).assertEqual(true)
+        if (lastSetting?.grantedBundleInfos !== undefined) {
+          expect(JSON.stringify(lastSetting.grantedBundleInfos)).assertContain('{"bundleName":"com.example.actsnotificationansopenwindowwithresultwithinabilitytest","appName":"AAAopenWindow","appIndex":0}')
         }
         done();
       } catch (err) {
@@ -408,7 +410,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
       const testNum: string = 'SUB_Notification_Ans_openWindow_WithResult_1500'
       try {
         // 传 undefined，预期抛出参数错误 401（或设备不支持 801）
-        const data = await notificationExtensionSubscription.openSubscriptionSettingsWithResult(undefined);
+        const data = notificationExtensionSubscription.openSubscriptionSettingsWithResult(undefined);
         // 若成功返回，说明参数校验失效，判失败
         hilog.info(0x0000, 'testTag',
           `${testNum} openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data)}`);
