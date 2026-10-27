@@ -30,10 +30,13 @@ let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner
 export class OpenHarmonyTestRunner implements TestRunner {
   constructor() {}
 
-  public onPrepare: () => void = () => {
-    hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner OnPrepare');
-    abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+  public get onPrepare(): () => void {
+    return () => {
+      hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner OnPrepare');
+      abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+    }
   }
+  public set onPrepare(_: () => void) {}
   public get onRun(): () => void {
     return () => {
       hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun');
