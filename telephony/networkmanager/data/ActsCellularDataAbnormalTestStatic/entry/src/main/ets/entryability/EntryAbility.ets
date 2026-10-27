@@ -20,6 +20,8 @@ import Want from '@ohos.app.ability.Want';
 import window from '@ohos.window';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
+import common from '@ohos.app.ability.common';
+import { AppStorage } from '@ohos.arkui.stateManagement';
 
 
 class EntryAbility extends UIAbility {
@@ -50,6 +52,7 @@ class EntryAbility extends UIAbility {
 
   onForeground() {
     hilog.info(0x0000, 'testTag EntryAbility', '%{public}s', 'TestAbility onForeground');
+    AppStorage.setOrCreate<common.UIAbilityContext>("UIAbilityContext", this.context);
   }
 
   onBackground() {
