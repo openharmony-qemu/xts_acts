@@ -702,7 +702,7 @@ export default function uiUiWindowTest() {
      */
     it('testWindowResizeB_split1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(waitUiReadyMs)
+      await driver.delayMs(3000)
       try {
         await setSplit(driver)
         await driver.delayMs(waitUiReadyMs)
