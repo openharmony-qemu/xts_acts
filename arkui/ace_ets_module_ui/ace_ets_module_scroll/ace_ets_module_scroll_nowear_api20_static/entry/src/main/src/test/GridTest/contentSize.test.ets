@@ -51,6 +51,7 @@ export default function contentSizeTest() {
     it('test_ContentSize', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
+      await CommonFunc.sleep(1000);
       let btn1 = await driver.findComponent(ON.id('normal'));
       await (btn1?.click() as Promise<void>);
       await Utils.sleep(1000);
