@@ -1906,12 +1906,8 @@ export default function AVScreenCaptureRecorderTest() {
           width: 320,
           height: 240
         };
-        await captureRecorder!.setCaptureArea(0, area).then(() => {
-          console.info('avScreenCaptureRecorder setCaptureArea success');
-        }).catch((err: Error) => {
-          console.error('avScreenCaptureRecorder setCaptureArea failed, error: ' + err.message);
-          expect().assertFail();
-        });
+        await captureRecorder!.setCaptureArea(0, area);
+        console.info('avScreenCaptureRecorder setCaptureArea success');
       } catch (err) {
         console.error('avScreenCaptureRecorder setCaptureArea catch error: ' + (err as BusinessError).message);
         expect().assertFail();
@@ -1944,16 +1940,13 @@ export default function AVScreenCaptureRecorderTest() {
           width: 320,
           height: 240
         };
-        await captureRecorder!.setCaptureArea(0, area).then(() => {
-          console.error('setCaptureArea should fail for negative left');
-          expect().assertFail();
-        }).catch((err: Error) => {
-          console.info('setCaptureArea failed as expected, error code: ' + (err as BusinessError).code);
-          expect((err as BusinessError).code).assertEqual(5400108);
-        });
-      } catch (err) {
-        console.error('avScreenCaptureRecorder setCaptureArea catch error: ' + (err as BusinessError).message);
+        await captureRecorder!.setCaptureArea(0, area);
+        console.error('setCaptureArea should fail for negative left');
         expect().assertFail();
+      } catch (err) {
+        console.info('setCaptureArea failed as expected, error code: ' + (err as BusinessError).code +
+          ', message: ' + (err as BusinessError).message);
+        expect((err as BusinessError).code).assertEqual(5400108);
       }
       await captureRecorder!.release();
       console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0200 end');
@@ -1983,16 +1976,13 @@ export default function AVScreenCaptureRecorderTest() {
           width: 320,
           height: 240
         };
-        await captureRecorder!.setCaptureArea(0, area).then(() => {
-          console.error('setCaptureArea should fail for negative top');
-          expect().assertFail();
-        }).catch((err: Error) => {
-          console.info('setCaptureArea failed as expected, error code: ' + (err as BusinessError).code);
-          expect((err as BusinessError).code).assertEqual(5400108);
-        });
-      } catch (err) {
-        console.error('avScreenCaptureRecorder setCaptureArea catch error: ' + (err as BusinessError).message);
+        await captureRecorder!.setCaptureArea(0, area);
+        console.error('setCaptureArea should fail for negative top');
         expect().assertFail();
+      } catch (err) {
+        console.info('setCaptureArea failed as expected, error code: ' + (err as BusinessError).code +
+          ', message: ' + (err as BusinessError).message);
+        expect((err as BusinessError).code).assertEqual(5400108);
       }
       await captureRecorder!.release();
       console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0300 end');
@@ -2022,16 +2012,13 @@ export default function AVScreenCaptureRecorderTest() {
           width: -100,
           height: 240
         };
-        await captureRecorder!.setCaptureArea(0, area).then(() => {
-          console.error('setCaptureArea should fail for negative width');
-          expect().assertFail();
-        }).catch((err: Error) => {
-          console.info('setCaptureArea failed as expected, error code: ' + (err as BusinessError).code);
-          expect((err as BusinessError).code).assertEqual(5400108);
-        });
-      } catch (err) {
-        console.error('avScreenCaptureRecorder setCaptureArea catch error: ' + (err as BusinessError).message);
+        await captureRecorder!.setCaptureArea(0, area);
+        console.error('setCaptureArea should fail for negative width');
         expect().assertFail();
+      } catch (err) {
+        console.info('setCaptureArea failed as expected, error code: ' + (err as BusinessError).code +
+          ', message: ' + (err as BusinessError).message);
+        expect((err as BusinessError).code).assertEqual(5400108);
       }
       await captureRecorder!.release();
       console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0400 end');
@@ -2061,16 +2048,13 @@ export default function AVScreenCaptureRecorderTest() {
           width: 320,
           height: -100
         };
-        await captureRecorder!.setCaptureArea(0, area).then(() => {
-          console.error('setCaptureArea should fail for negative height');
-          expect().assertFail();
-        }).catch((err: Error) => {
-          console.info('setCaptureArea failed as expected, error code: ' + (err as BusinessError).code);
-          expect((err as BusinessError).code).assertEqual(5400108);
-        });
-      } catch (err) {
-        console.error('avScreenCaptureRecorder setCaptureArea catch error: ' + (err as BusinessError).message);
+        await captureRecorder!.setCaptureArea(0, area);
+        console.error('setCaptureArea should fail for negative height');
         expect().assertFail();
+      } catch (err) {
+        console.info('setCaptureArea failed as expected, error code: ' + (err as BusinessError).code +
+          ', message: ' + (err as BusinessError).message);
+        expect((err as BusinessError).code).assertEqual(5400108);
       }
       await captureRecorder!.release();
       console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0500 end');
@@ -2100,16 +2084,13 @@ export default function AVScreenCaptureRecorderTest() {
           width: 320,
           height: -100
         };
-        await captureRecorder!.setCaptureArea(0, area).then(() => {
-          console.error('setCaptureArea should fail for negative top and height');
-          expect().assertFail();
-        }).catch((err: Error) => {
-          console.info('setCaptureArea failed as expected, error code: ' + (err as BusinessError).code);
-          expect((err as BusinessError).code).assertEqual(5400108);
-        });
-      } catch (err) {
-        console.error('avScreenCaptureRecorder setCaptureArea catch error: ' + (err as BusinessError).message);
+        await captureRecorder!.setCaptureArea(0, area);
+        console.error('setCaptureArea should fail for negative top and height');
         expect().assertFail();
+      } catch (err) {
+        console.info('setCaptureArea failed as expected, error code: ' + (err as BusinessError).code +
+          ', message: ' + (err as BusinessError).message);
+        expect((err as BusinessError).code).assertEqual(5400108);
       }
       await captureRecorder!.release();
       console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0600 end');
@@ -2139,16 +2120,13 @@ export default function AVScreenCaptureRecorderTest() {
           width: 720,
           height: 1280
         };
-        await captureRecorder!.setCaptureArea(0, area).then(() => {
-          console.error('setCaptureArea should fail for out-of-range area');
-          expect().assertFail();
-        }).catch((err: Error) => {
-          console.info('setCaptureArea failed as expected, error code: ' + (err as BusinessError).code);
-          expect((err as BusinessError).code).assertEqual(5400108);
-        });
-      } catch (err) {
-        console.error('avScreenCaptureRecorder setCaptureArea catch error: ' + (err as BusinessError).message);
+        await captureRecorder!.setCaptureArea(0, area);
+        console.error('setCaptureArea should fail for out-of-range area');
         expect().assertFail();
+      } catch (err) {
+        console.info('setCaptureArea failed as expected, error code: ' + (err as BusinessError).code +
+          ', message: ' + (err as BusinessError).message);
+        expect((err as BusinessError).code).assertEqual(5400108);
       }
       await captureRecorder!.release();
       console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0700 end');
@@ -2179,16 +2157,13 @@ export default function AVScreenCaptureRecorderTest() {
           width: 320,
           height: 240
         };
-        await captureRecorder!.setCaptureArea(0, area).then(() => {
-          console.error('setCaptureArea should fail after release');
-          expect().assertFail();
-        }).catch((err: Error) => {
-          console.info('setCaptureArea failed as expected, error code: ' + (err as BusinessError).code);
-          expect((err as BusinessError).code).assertEqual(5400102);
-        });
-      } catch (err) {
-        console.error('avScreenCaptureRecorder setCaptureArea catch error: ' + (err as BusinessError).message);
+        await captureRecorder!.setCaptureArea(0, area);
+        console.error('setCaptureArea should fail after release');
         expect().assertFail();
+      } catch (err) {
+        console.info('setCaptureArea failed as expected, error code: ' + (err as BusinessError).code +
+          ', message: ' + (err as BusinessError).message);
+        expect((err as BusinessError).code).assertEqual(5400102);
       }
       console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_0800 end');
       done();
@@ -2229,12 +2204,8 @@ export default function AVScreenCaptureRecorderTest() {
           width: 320,
           height: 240
         };
-        await captureRecorder!.setCaptureArea(0, area).then(() => {
-          console.info('avScreenCaptureRecorder setCaptureArea success during recording');
-        }).catch((err: Error) => {
-          console.error('avScreenCaptureRecorder setCaptureArea failed, error: ' + err.message);
-          expect().assertFail();
-        });
+        await captureRecorder!.setCaptureArea(0, area);
+        console.info('avScreenCaptureRecorder setCaptureArea success during recording');
       } catch (err) {
         console.error('avScreenCaptureRecorder setCaptureArea catch error: ' + (err as BusinessError).message);
         expect().assertFail();
@@ -2267,16 +2238,13 @@ export default function AVScreenCaptureRecorderTest() {
           width: 320,
           height: 240
         };
-        await captureRecorder!.setCaptureArea(-1, area).then(() => {
-          console.error('setCaptureArea should fail for negative displayId');
-          expect().assertFail();
-        }).catch((err: Error) => {
-          console.info('setCaptureArea failed as expected, error code: ' + (err as BusinessError).code);
-          expect((err as BusinessError).code).assertEqual(5400108);
-        });
-      } catch (err) {
-        console.error('avScreenCaptureRecorder setCaptureArea catch error: ' + (err as BusinessError).message);
+        await captureRecorder!.setCaptureArea(-1, area);
+        console.error('setCaptureArea should fail for negative displayId');
         expect().assertFail();
+      } catch (err) {
+        console.info('setCaptureArea failed as expected, error code: ' + (err as BusinessError).code +
+          ', message: ' + (err as BusinessError).message);
+        expect((err as BusinessError).code).assertEqual(5400108);
       }
       await captureRecorder!.release();
       console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_1000 end');
@@ -2306,16 +2274,13 @@ export default function AVScreenCaptureRecorderTest() {
           width: 320,
           height: 240
         };
-        await captureRecorder!.setCaptureArea(9999, area).then(() => {
-          console.error('setCaptureArea should fail for non-existent displayId');
-          expect().assertFail();
-        }).catch((err: Error) => {
-          console.info('setCaptureArea failed as expected, error code: ' + (err as BusinessError).code);
-          expect((err as BusinessError).code).assertEqual(5400108);
-        });
-      } catch (err) {
-        console.error('avScreenCaptureRecorder setCaptureArea catch error: ' + (err as BusinessError).message);
+        await captureRecorder!.setCaptureArea(9999, area);
+        console.error('setCaptureArea should fail for non-existent displayId');
         expect().assertFail();
+      } catch (err) {
+        console.info('setCaptureArea failed as expected, error code: ' + (err as BusinessError).code +
+          ', message: ' + (err as BusinessError).message);
+        expect((err as BusinessError).code).assertEqual(5400108);
       }
       await captureRecorder!.release();
       console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_SET_CAPTURE_AREA_1100 end');
