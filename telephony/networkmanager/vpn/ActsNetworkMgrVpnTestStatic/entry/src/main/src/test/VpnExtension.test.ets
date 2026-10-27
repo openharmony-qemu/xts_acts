@@ -58,9 +58,9 @@ export default function vpnTest(): void {
     /**
       * @tc.name   SUB_NETWORKMANAGER_VPN_STATIC_CONTEXT_0100
       * @tc.number SUB_NETWORKMANAGER_VPN_STATIC_CONTEXT_0100
-      * @tc.desc   In static ArkTS, VpnExtensionAbility is a napi native class without an exposed constructor,
-      *            so it cannot be instantiated with new outside its lifecycle; if construction unexpectedly
-      *            succeeds, its context attribute is undefined outside its lifecycle
+      * @tc.desc   In static ArkTS, VpnExtensionAbility can be constructed with new outside its lifecycle
+      *            without throwing, and its context attribute is an uninitialized object (nativePtr 0,
+      *            empty processName) rather than a live VpnExtensionContext
       * @tc.type   FUNCTION
       * @tc.size   MEDIUMTEST
       * @tc.level   LEVEL0
@@ -77,15 +77,14 @@ export default function vpnTest(): void {
         hilog.info(domain, tag, '%{public}s',
           `${caseName} new VpnExtensionAbility threw, error: ${JSON.stringify(error)}`);
       }
-      if (thrown) {
-        expect(vpnExtensionAbility === undefined).assertTrue();
-        hilog.info(domain, tag, '%{public}s', `${caseName} construction forbidden in static mode, as expected`);
-      } else {
-        hilog.info(domain, tag, '%{public}s', `${caseName} start2`);
-        let context: vpnExtension.VpnExtensionContext | undefined = vpnExtensionAbility?.context;
-        hilog.info(domain, tag, '%{public}s', `${caseName} context ${JSON.stringify(context)}`);
-        expect(context === undefined).assertTrue();
-      }
+      expect(thrown === false).assertTrue();
+      expect(vpnExtensionAbility !== undefined).assertTrue();
+      let context: vpnExtension.VpnExtensionContext | undefined = vpnExtensionAbility?.context;
+      let contextJson: string = JSON.stringify(context);
+      hilog.info(domain, tag, '%{public}s', `${caseName} context ${contextJson}`);
+      expect(context !== undefined).assertTrue();
+      expect(contextJson.includes('"nativePtr":0')).assertTrue();
+      expect(context?.processName === '').assertTrue();
       done();
       hilog.info(domain, tag, '%{public}s', `${caseName} end`);
     })
@@ -146,9 +145,9 @@ export default function vpnTest(): void {
     /**
       * @tc.name   SUB_NETWORKMANAGER_VPN_STATIC_CONTEXT_0400
       * @tc.number SUB_NETWORKMANAGER_VPN_STATIC_CONTEXT_0400
-      * @tc.desc   The context of a VpnExtensionAbility created outside its lifecycle is a
-      *            VpnExtensionContext instance only after the extension is started by the system,
-      *            and stays undefined otherwise
+      * @tc.desc   The context of a VpnExtensionAbility created outside its lifecycle is an uninitialized
+      *            object (nativePtr 0, empty processName); it becomes a live VpnExtensionContext only
+      *            after the extension is started by the system
       * @tc.type   FUNCTION
       * @tc.size   MEDIUMTEST
       * @tc.level   LEVEL0
@@ -157,18 +156,23 @@ export default function vpnTest(): void {
       let caseName: string = 'SUB_NETWORKMANAGER_VPN_STATIC_CONTEXT_0400';
       hilog.info(domain, tag, '%{public}s', `${caseName} start`);
       let ability: VpnExtensionAbility | undefined = undefined;
+      let thrown: boolean = false;
       try {
         ability = new VpnExtensionAbility();
       } catch (error) {
-        ability = undefined;
+        thrown = true;
         hilog.info(domain, tag, '%{public}s',
           `${caseName} new VpnExtensionAbility threw, error: ${JSON.stringify(error)}`);
       }
+      expect(thrown === false).assertTrue();
       let context: vpnExtension.VpnExtensionContext | undefined = ability?.context;
-      expect(context === undefined).assertTrue();
+      expect(context !== undefined).assertTrue();
+      let contextJson: string = JSON.stringify(context);
+      hilog.info(domain, tag, '%{public}s', `${caseName} context ${contextJson}`);
+      expect(contextJson.includes('"nativePtr":0')).assertTrue();
+      expect(context?.processName === '').assertTrue();
       let summary: string = getVpnExtensionContextSummary(context);
       hilog.info(domain, tag, '%{public}s', `${caseName} summary: ${summary}`);
-      expect(summary.includes('processName: undefined')).assertTrue();
       hilog.info(domain, tag, '%{public}s', `${caseName} end`);
       done();
     })
