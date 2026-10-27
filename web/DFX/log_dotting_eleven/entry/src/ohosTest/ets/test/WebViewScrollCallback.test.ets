@@ -66,7 +66,7 @@ export default function WebViewScrollCallbackTest() {
     /**
     * @tc.number     SUB_WEB_SCROLLCALLBACK_0100
     * @tc.name       testWebViewScrollCallback001
-    * @tc.desc       ScrollCallback
+    * @tc.desc       ScrollCallback: register before page end then scroll
     * @tc.size       MEDIUM
     * @tc.type       Function
     * @tc.level      Level 0
@@ -79,7 +79,7 @@ export default function WebViewScrollCallbackTest() {
     /**
      * @tc.number     SUB_WEB_SCROLLCALLBACK_0200
      * @tc.name       testWebViewScrollCallback002
-     * @tc.desc       ScrollCallback
+     * @tc.desc       ScrollCallback: register after page end then scroll
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 0
