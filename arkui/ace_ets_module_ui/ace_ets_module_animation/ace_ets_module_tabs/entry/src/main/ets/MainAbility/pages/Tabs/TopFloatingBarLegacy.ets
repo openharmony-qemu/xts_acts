@@ -1,6 +1,8 @@
 /**
  * TopFloatingBarLegacy Test Page
- * Test legacy styles (BOTTOM/SIDEBAR) no regression and BOTTOM ignores topBarFloatingStyle
+ * Test legacy styles (BOTTOM/SIDEBAR) no regression.
+ * Note: do NOT call topBarFloatingStyle here — method is undefined on CI Phone and
+ * throws TypeError "undefined is not callable", killing the HAP process.
  */
 
 @Entry
@@ -40,7 +42,7 @@ struct TopFloatingBarLegacy {
       .height('25%')
       .width('100%')
 
-      // ER19: BOTTOM + topBarFloatingStyle ignored
+      // ER19 proxy: BOTTOM only (topBarFloatingStyle omitted — unsupported on CI Phone)
       Tabs() {
         TabContent() {
           Column().width('100%').height('100%').backgroundColor(Color.Pink)
@@ -51,11 +53,6 @@ struct TopFloatingBarLegacy {
       }
       .id('tabs_legacy_bottom_ignores_top_floating')
       .barStyle(TabBarStyle.BOTTOM)
-      .topBarFloatingStyle({
-        barWidth: 400,
-        maskColor: '#33000000',
-        maskHeight: 200
-      })
       .barMode(BarMode.Scrollable)
       .height('25%')
       .width('100%')
