@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 import EmptyTest from './Empty.test';
+import sim from '@ohos.telephony.sim';
 import eapTest from './Eap.test';
 import { deviceInfo } from '@kit.BasicServicesKit';
 
