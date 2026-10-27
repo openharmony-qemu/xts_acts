@@ -34,9 +34,6 @@ ohos_static_library("libdeqpgles3func0022b") {
   include_dirs = common_include
   deps = common_depends_gles3
   external_deps = [
-    "hilog:libhilog",
-    "image_framework:image_native",
-    "zlib:libz",
   ]
   configs = [ ":deqp_platform_ohos_config" ]
   testonly = true
