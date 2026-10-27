@@ -1497,11 +1497,11 @@ export default function bluetoothBleTest(): void {
         } catch (err) {
           hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
           BleScanner!.offBLEDeviceFind(onReceiveEvents);
-          if (err.code === 801 || err.code === 2900009) {
+          if (err.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]startScan is not support or start scan as it is out of hardware');
-            expect(true).assertTrue();
+            expect(err.code).assertEqual(801);
           } else {
-            expect().assertFail();
+            expect(err.code).assertEqual(2900099);
           }
         }
         BleScanner!.offBLEDeviceFind(onReceiveEvents);
@@ -1539,7 +1539,7 @@ export default function bluetoothBleTest(): void {
           hilog.error(domain, tag, `${caseName} ` + "errCode:" + err.code + ",errMessage:" + err.message);
           if (err.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]startBLEScan is not support');
-            expect(true).assertTrue();
+            expect(err.code).assertEqual(801);
           } else {
             expect(err.code).assertEqual(2900099);
           }
@@ -1579,7 +1579,7 @@ export default function bluetoothBleTest(): void {
           hilog.error(domain, tag, `${caseName} ` + "errCode:" + err.code + ",errMessage:" + err.message);
           if (err.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]startBLEScan is not support');
-            expect(true).assertTrue();
+            expect(err.code).assertEqual(801);
           } else {
             expect(err.code).assertEqual(2900099);
           }
@@ -1619,7 +1619,7 @@ export default function bluetoothBleTest(): void {
           hilog.error(domain, tag, `${caseName} ` + "errCode:" + err.code + ",errMessage:" + err.message);
           if (err.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]startBLEScan is not support');
-            expect(true).assertTrue();
+            expect(err.code).assertEqual(801);
           } else {
             expect(err.code).assertEqual(2900099);
           }
@@ -1659,7 +1659,7 @@ export default function bluetoothBleTest(): void {
           hilog.error(domain, tag, `${caseName} ` + "errCode:" + err.code + ",errMessage:" + err.message);
           if (err.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]startBLEScan is not support');
-            expect(true).assertTrue();
+            expect(err.code).assertEqual(801);
           } else {
             expect(err.code).assertEqual(2900099);
           }
@@ -1720,11 +1720,11 @@ export default function bluetoothBleTest(): void {
           hilog.error(domain, tag, "isExtended errCode:" + err.code + ",errMessage:" + err.message);
           BleScanner!.offBLEDeviceFind(onReceiveEvents);
           hilog.info(domain, tag, 'lmq1 117');
-          if (err.code === 801 || err.code === 2900099) {
+          if (err.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]startScan is not support or start scan as it is out of hardware');
-            expect(true).assertTrue();
+            expect(err.code).assertEqual(801);
           } else {
-            expect().assertFail();
+            expect(err.code).assertEqual(2900099);
           }
         }
         BleScanner!.offBLEDeviceFind(onReceiveEvents);
@@ -1774,11 +1774,11 @@ export default function bluetoothBleTest(): void {
         } catch (err) {
           hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
           BleScanner!.offBLEDeviceFind(onReceiveEvents);
-          if (err.code === 801 || err.code === 2900009) {
+          if (err.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]startScan is not support or start scan as it is out of hardware');
-            expect(true).assertTrue();
+            expect(err.code).assertEqual(801);
           } else {
-            expect().assertFail();
+            expect(err.code).assertEqual(2900099);
           }
         }
         BleScanner!.offBLEDeviceFind(onReceiveEvents);

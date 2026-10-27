@@ -1761,7 +1761,7 @@ export default function btBleManagerTest(): void {
             `[bluetooth_js]setCharacteristicChangeNotification failed, code is ${error.code},message is ${error.message}`);
           if (error.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]setCharacteristicChangeNotification is not support');
-            expect(true).assertTrue();
+            expect(error.code).assertEqual(801);
           } else {
             expect(error.code).assertEqual(401);
           }
@@ -1799,7 +1799,7 @@ export default function btBleManagerTest(): void {
             `[bluetooth_js]GetRssiValue error, code is ${error.code},message is ${error.message}`);
           if (error.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]getRssiValue is not support');
-            expect(true).assertTrue();
+            expect(error.code).assertEqual(801);
           } else {
             expect(error.code).assertEqual(2901003);
           }
@@ -1833,7 +1833,7 @@ export default function btBleManagerTest(): void {
             `[bluetooth_js]GetRssiValue error, code is ${error.code},message is ${error.message}`);
           if (error.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]getRssiValue is not support');
-            expect(true).assertTrue();
+            expect(error.code).assertEqual(801);
           } else {
             expect(error.code).assertEqual(2901003);
           }
@@ -1887,7 +1887,7 @@ export default function btBleManagerTest(): void {
             `[bluetooth_js]writeCharacteristicValue error, code is ${error.code},message is ${error.message}`);
           if (error.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]writeCharacteristicValue is not support');
-            expect(true).assertTrue();
+            expect(error.code).assertEqual(801);
           } else {
             expect(error.code).assertEqual(401);
           }
@@ -1940,7 +1940,7 @@ export default function btBleManagerTest(): void {
             `[bluetooth_js]writeCharacteristicValue failed, code is ${error.code},message is ${error.message}`);
           if (error.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]writeCharacteristicValue is not support');
-            expect(true).assertTrue();
+            expect(error.code).assertEqual(801);
           } else {
             expect(error.code).assertEqual(401);
           }
@@ -2011,7 +2011,7 @@ export default function btBleManagerTest(): void {
             `[bluetooth_js]writeCharacteristicValue failed, code is ${error.code},message is ${error.message}`);
           if (error.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]writeCharacteristicValue is not support');
-            expect(true).assertTrue();
+            expect(error.code).assertEqual(801);
           } else {
             expect(error.code).assertEqual(401);
           }
@@ -2073,7 +2073,7 @@ export default function btBleManagerTest(): void {
             `[bluetooth_js]writeCharacteristicValue failed, code is ${error.code},message is ${error.message}`);
           if (error.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]writeCharacteristicValue is not support');
-            expect(true).assertTrue();
+            expect(error.code).assertEqual(801);
           } else {
             expect(error.code).assertEqual(401);
           }
@@ -2154,7 +2154,7 @@ export default function btBleManagerTest(): void {
             `[bluetooth_js]writeCharacteristicValue failed, code is ${error.code},message is ${error.message}`);
           if (error.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]writeCharacteristicValue is not support');
-            expect(true).assertTrue();
+            expect(error.code).assertEqual(801);
           } else {
             expect(error.code).assertEqual(401);
           }
@@ -2226,7 +2226,7 @@ export default function btBleManagerTest(): void {
             `[bluetooth_js]writeCharacteristicValue failed, code is ${error.code},message is ${error.message}`);
           if (error.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]writeCharacteristicValue is not support');
-            expect(true).assertTrue();
+            expect(error.code).assertEqual(801);
           } else {
             expect(error.code).assertEqual(401);
           }
@@ -2297,7 +2297,7 @@ export default function btBleManagerTest(): void {
             `[bluetooth_js]writeCharacteristicValue failed, code is ${error.code},message is ${error.message}`);
           if (error.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]writeCharacteristicValue is not support');
-            expect(true).assertTrue();
+            expect(error.code).assertEqual(801);
           } else {
             expect(error.code).assertEqual(401);
           }
@@ -2376,7 +2376,7 @@ export default function btBleManagerTest(): void {
             `[bluetooth_js]writeCharacteristicValue failed, code is ${error.code},message is ${error.message}`);
           if (error.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]writeCharacteristicValue is not support');
-            expect(true).assertTrue();
+            expect(error.code).assertEqual(801);
           } else {
             expect(error.code).assertEqual(401);
           }
@@ -2401,7 +2401,7 @@ export default function btBleManagerTest(): void {
           hilog.info(domain, tag, "characteristicReadOn errCode:" + err.code + ",errMessage:" + err.message);
           if (err.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]characteristicRead is not support');
-            expect(true).assertTrue();
+            expect(err.code).assertEqual(801);
           } else {
             expect(err.code).assertEqual(2900099);
           }
@@ -2428,7 +2428,7 @@ export default function btBleManagerTest(): void {
           hilog.info(domain, tag, "characteristicReadOff errCode:" + err.code + ",errMessage:" + err.message);
           if (err.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]characteristicRead is not support');
-            expect(true).assertTrue();
+            expect(err.code).assertEqual(801);;
           } else {
             expect(err.code).assertEqual(2900099);
           }
@@ -2482,7 +2482,7 @@ export default function btBleManagerTest(): void {
             `[bluetooth_js]characteristicWrite failed, code is ${error.code},message is ${error.message}`);
           if (error.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]characteristicWrite is not support');
-            expect(true).assertTrue();
+            expect(error.code).assertEqual(801);
           } else {
             expect(error.code).assertEqual(2900099);
           }
@@ -2510,7 +2510,7 @@ export default function btBleManagerTest(): void {
             `[bluetooth_js]characteristicWrite failed, code is ${error.code},message is ${error.message}`);
           if (error.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]characteristicWrite is not support');
-            expect(true).assertTrue();
+            expect(error.code).assertEqual(801);
           } else {
             expect(error.code).assertEqual(2900099);
           }
@@ -2563,7 +2563,7 @@ export default function btBleManagerTest(): void {
             "bluetooth gattClient close errCode:" + err.code + ",bluetooth gattClient close errMessage:" + err.message);
           if (err.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]close is not support');
-            expect(true).assertTrue();
+            expect(err.code).assertEqual(801);
           } else {
             expect(err.code).assertEqual(2900099);
           }
@@ -2590,7 +2590,7 @@ export default function btBleManagerTest(): void {
             "bluetooth mtu changed errCode:" + err.code + ",bluetooth mtu changed errMessage:" + err.message);
           if (err.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]BLEMtuChange is not support');
-            expect(true).assertTrue();
+            expect(err.code).assertEqual(801);
           } else {
             expect().assertFail();
           }
@@ -2624,7 +2624,7 @@ export default function btBleManagerTest(): void {
             "bluetooth mtu changed off errCode:" + err.code + ",bluetooth mtu changed off errMessage:" + err.message);
           if (err.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]BLEMtuChange is not support');
-            expect(true).assertTrue();
+            expect(err.code).assertEqual(801);
           } else {
             expect().assertFail();
           }
@@ -2680,7 +2680,7 @@ export default function btBleManagerTest(): void {
             message is ${error.message}`);
           if (error.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]BLECharacteristicChangeON is not support');
-            expect(true).assertTrue();
+            expect(error.code).assertEqual(801);
           } else {
             expect().assertFail();
           }
@@ -2707,7 +2707,7 @@ export default function btBleManagerTest(): void {
             message is ${error.message}`);
           if (error.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]BLECharacteristicChangeOFF is not support');
-            expect(true).assertTrue();
+            expect(error.code).assertEqual(801);
           } else {
             expect().assertFail();
           }
@@ -2760,7 +2760,7 @@ export default function btBleManagerTest(): void {
             `[bluetooth_js]GattConnect failed, code is ${error.code},message is ${error.message}`);
           if (error.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]BLEConnectionStateChange is not support');
-            expect(true).assertTrue();
+            expect(error.code).assertEqual(801);
           } else {
             expect().assertFail();
           }
@@ -2787,7 +2787,7 @@ export default function btBleManagerTest(): void {
             `[bluetooth_js]GattConnect failed, code is ${error.code},message is ${error.message}`);
           if (error.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]BLEConnectionStateChange is not support');
-            expect(true).assertTrue();
+            expect(error.code).assertEqual(801);
           } else {
             expect().assertFail();
           }
@@ -2840,7 +2840,7 @@ export default function btBleManagerTest(): void {
             message is ${error.message}`);
           if (error.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]descriptorWrite is not support');
-            expect(true).assertTrue();
+            expect(error.code).assertEqual(801);
           } else {
             expect(error.code).assertEqual(2900099);
           }
@@ -2867,7 +2867,7 @@ export default function btBleManagerTest(): void {
             message is ${error.message}`);
           if (error.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]descriptorWrite is not support');
-            expect(true).assertTrue();
+            expect(error.code).assertEqual(801);
           } else {
             expect(error.code).assertEqual(2900099);
           }
@@ -2921,7 +2921,7 @@ export default function btBleManagerTest(): void {
             `[bluetooth_js]descriptorRead failed, code is ${error.code},message is ${error.message}`);
           if (error.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]descriptorRead is not support');
-            expect(true).assertTrue();
+            expect(error.code).assertEqual(801);
           } else {
             expect(error.code).assertEqual(2900099);
           }
@@ -2948,7 +2948,7 @@ export default function btBleManagerTest(): void {
             `[bluetooth_js]descriptorRead failed, code is ${error.code},message is ${error.message}`);
           if (error.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]descriptorRead is not support');
-            expect(true).assertTrue();
+            expect(error.code).assertEqual(801);
           } else {
             expect(error.code).assertEqual(2900099);
           }
@@ -3001,7 +3001,7 @@ export default function btBleManagerTest(): void {
           hilog.error(domain, tag, `[bluetooth_js]connect failed, code is ${error.code},message is ${error.message}`);
           if (error.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]connect is not support');
-            expect(true).assertTrue();
+            expect(err.code).assertEqual(801);
           } else {
             expect(error.code).assertEqual(2900099);
           }

@@ -145,7 +145,7 @@ export default function btBleServiceTest(): void {
             "bluetooth mtu changed on errCode:" + err.code + ",bluetooth mtu changed on errMessage:" + err.message);
           if (err.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]BLEMtuChange is not support');
-            expect(true).assertTrue();
+            expect(err.code).assertEqual(801);
           } else {
             expect(err.code).assertEqual(2900099);
           }
@@ -178,7 +178,7 @@ export default function btBleServiceTest(): void {
             "bluetooth mtu changed off errCode:" + err.code + ",bluetooth mtu changed off errMessage:" + err.message);
           if (err.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]BLEMtuChange is not support');
-            expect(true).assertTrue();
+            expect(err.code).assertEqual(801);
           } else {
             expect(err.code).assertEqual(2900099);
           }
@@ -234,7 +234,7 @@ export default function btBleServiceTest(): void {
             `[bluetooth_js]connectionStateChange failed, code is ${error.code},message is ${error.message}`);
           if (error.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]connectionStateChange is not support');
-            expect(true).assertTrue();
+            expect(error.code).assertEqual(801);
           } else {
             expect(error.code).assertEqual(2900099);
           }
@@ -261,7 +261,7 @@ export default function btBleServiceTest(): void {
             `[bluetooth_js]connectionStateChange failed, code is ${error.code},message is ${error.message}`);
           if (error.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]connectionStateChange is not support');
-            expect(true).assertTrue();
+            expect(error.code).assertEqual(801);
           } else {
             expect(error.code).assertEqual(2900099);
           }
