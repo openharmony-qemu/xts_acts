@@ -2235,6 +2235,156 @@ export default function btBleManagerTest(): void {
       })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_WRITECHARACTERISTIC_ADD_static_1100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_WRITECHARACTERISTICADD_1100
+     * @tc.desc   xts 用例覆盖writeType非法枚举值 by promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_WRITECHARACTERISTIC_ADD_static_1100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let descriptors: Array<bluetoothBle.BLEDescriptor> = [];
+        let bufferDesc = new ArrayBuffer(8);
+        let descV = new Uint8Array(bufferDesc);
+        descV[0] = 11;
+        let gattPermissions: bluetoothBle.GattPermissions = {
+          read: true,
+          readEncrypted: true,
+          readEncryptedMitm: true,
+          write: true,
+          writeEncrypted: true,
+          writeEncryptedMitm: true,
+          writeSigned: true,
+          writeSignedMitm: true
+        }
+        let gattProperties: bluetoothBle.GattProperties = {
+          write: true,
+          writeNoResponse: true,
+          read: true,
+          notify: true,
+          indicate: true,
+          broadcast: true,
+          authenticatedSignedWrite: true,
+          extendedProperties: true
+        };
+        let descriptor: bluetoothBle.BLEDescriptor = {
+          serviceUuid: '',
+          characteristicUuid: '',
+          descriptorUuid: '',
+          descriptorValue: bufferDesc,
+          descriptorHandle: 0,
+          permissions: gattPermissions
+        };
+        descriptors.push(descriptor);
+
+        let bufferCCC = new ArrayBuffer(8);
+        let cccV = new Uint8Array(bufferCCC);
+        cccV[0] = 1;
+        let characteristic: bluetoothBle.BLECharacteristic = {
+          serviceUuid: '',
+          characteristicUuid: '',
+          characteristicValue: bufferCCC,
+          descriptors: descriptors,
+          properties: gattProperties,
+          permissions: gattPermissions
+        };
+        try {
+          gattC!.writeCharacteristicValue(characteristic, 99 as bluetoothBle.GattWriteType);
+          done();
+        } catch (error) {
+          hilog.error(domain, tag,
+            `[bluetooth_js]writeCharacteristicValue failed, code is ${error.code},message is ${error.message}`);
+          if (error.code === 801) {
+            hilog.info(domain, tag, '[bluetooth_js]writeCharacteristicValue is not support');
+            expect(true).assertTrue();
+          } else {
+            expect(error.code).assertEqual(401);
+          }
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_WRITECHARACTERISTIC_ADD_static_1200
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_WRITECHARACTERISTICADD_1200
+     * @tc.desc   xts 用例覆盖writeType非法枚举值 by callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_WRITECHARACTERISTIC_ADD_static_1200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let descriptors: Array<bluetoothBle.BLEDescriptor> = [];
+        let bufferDesc = new ArrayBuffer(8);
+        let descV = new Uint8Array(bufferDesc);
+        descV[0] = 11;
+        let gattPermissions: bluetoothBle.GattPermissions = {
+          read: true,
+          readEncrypted: true,
+          readEncryptedMitm: true,
+          write: true,
+          writeEncrypted: true,
+          writeEncryptedMitm: true,
+          writeSigned: true,
+          writeSignedMitm: true
+        }
+        let gattProperties: bluetoothBle.GattProperties = {
+          write: true,
+          writeNoResponse: true,
+          read: true,
+          notify: true,
+          indicate: true,
+          broadcast: true,
+          authenticatedSignedWrite: true,
+          extendedProperties: true
+        };
+        let descriptor: bluetoothBle.BLEDescriptor = {
+          serviceUuid: '',
+          characteristicUuid: '',
+          descriptorUuid: '',
+          descriptorValue: bufferDesc,
+          descriptorHandle: 0,
+          permissions: gattPermissions
+        };
+        descriptors.push(descriptor);
+
+        let bufferCCC = new ArrayBuffer(8);
+        let cccV = new Uint8Array(bufferCCC);
+        cccV[0] = 1;
+        let characteristic: bluetoothBle.BLECharacteristic = {
+          serviceUuid: '',
+          characteristicUuid: '',
+          characteristicValue: bufferCCC,
+          descriptors: descriptors,
+          properties: gattProperties,
+          permissions: gattPermissions
+        };
+        try {
+          gattC!.writeCharacteristicValue(characteristic, 99 as bluetoothBle.GattWriteType,
+            (err: BusinessError | null) => {
+              if (err) {
+                hilog.info(domain, tag, 'wrCharacteristicVal failed' + err);
+              } else {
+                hilog.info(domain, tag, '[bluetooth_js]wrCharacteristicVal value success');
+                expect().assertFail();
+              }
+            });
+          done();
+        } catch (error) {
+          hilog.error(domain, tag,
+            `[bluetooth_js]writeCharacteristicValue failed, code is ${error.code},message is ${error.message}`);
+          if (error.code === 801) {
+            hilog.info(domain, tag, '[bluetooth_js]writeCharacteristicValue is not support');
+            expect(true).assertTrue();
+          } else {
+            expect(error.code).assertEqual(401);
+          }
+        }
+        done();
+      })
+
+    /**
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTIC_static_2100
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTIC_2100
      * @tc.desc   Test On and off api10.
@@ -2288,6 +2438,33 @@ export default function btBleManagerTest(): void {
       })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTIC_OFFNOPARAM_static_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTICOFFNOPARAM_0100
+     * @tc.desc   Test offCharacteristicRead without param api10.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTIC_OFFNOPARAM_static_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        try {
+          gattS!.onCharacteristicRead(ReadCharacteristicReq);
+          gattS!.offCharacteristicRead();
+          hilog.info(domain, tag, "characteristicReadOff without param is success");
+        } catch (err) {
+          hilog.info(domain, tag,
+            "characteristicReadOff without param errCode:" + err.code + ",errMessage:" + err.message);
+          if (err.code === 801) {
+            hilog.info(domain, tag, '[bluetooth_js]characteristicRead is not support');
+            expect(err.code).assertEqual(801);
+          } else {
+            expect(err.code).assertEqual(2900099);
+          }
+        }
+        done();
+      })
+
+    /**
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_WRITECHARACTERISTIC_static_2000
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_WRITECHARACTERISTIC_2000
      * @tc.desc   Test on and off api10.
@@ -2334,6 +2511,33 @@ export default function btBleManagerTest(): void {
           if (error.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]characteristicWrite is not support');
             expect(true).assertTrue();
+          } else {
+            expect(error.code).assertEqual(2900099);
+          }
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_WRITECHARACTERISTIC_OFFNOPARAM_static_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_WRITECHARACTERISTICOFFNOPARAM_0100
+     * @tc.desc   Test offCharacteristicWrite without param api10.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_WRITECHARACTERISTIC_OFFNOPARAM_static_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        try {
+          gattS!.onCharacteristicWrite(WriteCharacteristicReq);
+          gattS!.offCharacteristicWrite();
+          hilog.info(domain, tag, "characteristicWriteOff without param is success");
+        } catch (error) {
+          hilog.error(domain, tag,
+            `[bluetooth_js]characteristicWriteOff without param failed, code is ${error.code},message is ${error.message}`);
+          if (error.code === 801) {
+            hilog.info(domain, tag, '[bluetooth_js]characteristicWrite is not support');
+            expect(error.code).assertEqual(801);
           } else {
             expect(error.code).assertEqual(2900099);
           }
@@ -2429,6 +2633,37 @@ export default function btBleManagerTest(): void {
       })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLEC_MTUCHANGE_OFFNOPARAM_static_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLEC_MTUCHANGEOFFNOPARAM_0100
+     * @tc.desc   test GattClientDevice off blemtuchange without param api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLEC_MTUCHANGE_OFFNOPARAM_static_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        try {
+          gattC!.onBLEMtuChange((mtu: int) => {
+            hilog.info(domain, tag, 'BLEMtuChange, mtu: ' + mtu);
+          });
+          gattC!.offBLEMtuChange();
+          hilog.info(domain, tag, "bluetooth mtu changed off without param is success");
+        } catch (err) {
+          hilog.info(domain, tag,
+            "bluetooth mtu changed off without param errCode:" + err.code +
+            ",bluetooth mtu changed off without param errMessage:" + err.message);
+          if (err.code === 801) {
+            hilog.info(domain, tag, '[bluetooth_js]BLEMtuChange is not support');
+            expect(err.code).assertEqual(801);
+          } else {
+            expect(err.code).assertEqual(2900099);
+          }
+        }
+        done();
+      })
+
+    /**
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_SETNOTIFYCHARACTERISTIC_static_1400
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_SETNOTIFYCHARACTERISTIC_1400
      * @tc.desc   Test On and off api10.
@@ -2475,6 +2710,34 @@ export default function btBleManagerTest(): void {
             expect(true).assertTrue();
           } else {
             expect().assertFail();
+          }
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_SETNOTIFYCHARACTERISTIC_OFFNOPARAM_static_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_SETNOTIFYCHARACTERISTICOFFNOPARAM_0100
+     * @tc.desc   Test offBLECharacteristicChange without param api10.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_SETNOTIFYCHARACTERISTIC_OFFNOPARAM_static_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        try {
+          gattC!.onBLECharacteristicChange(CharacteristicChange);
+          gattC!.offBLECharacteristicChange();
+          hilog.info(domain, tag, "BLECharacteristicChangeOFF without param is success");
+        } catch (error) {
+          hilog.error(domain, tag,
+            `[bluetooth_js]BLECharacteristicChangeOFF without param failed, code is ${error.code},
+            message is ${error.message}`);
+          if (error.code === 801) {
+            hilog.info(domain, tag, '[bluetooth_js]BLECharacteristicChangeOFF is not support');
+            expect(error.code).assertEqual(801);
+          } else {
+            expect(error.code).assertEqual(2900099);
           }
         }
         done();
@@ -2533,6 +2796,34 @@ export default function btBleManagerTest(): void {
       })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTCONNECT_OFFNOPARAM_static_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTCONNECTOFFNOPARAM_0100
+     * @tc.desc   Test offBLEConnectionStateChange without param api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCONNECT_OFFNOPARAM_static_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        try {
+          gattC!.onBLEConnectionStateChange(ConnectStateChanged);
+          gattC!.offBLEConnectionStateChange();
+          hilog.info(domain, tag, "BLEConnectionStateChangeOff without param is success");
+        } catch (error) {
+          hilog.error(domain, tag,
+            `[bluetooth_js]GattConnect off without param failed, code is ${error.code},message is ${error.message}`);
+          if (error.code === 801) {
+            hilog.info(domain, tag, '[bluetooth_js]BLEConnectionStateChange is not support');
+            expect(error.code).assertEqual(801);
+          } else {
+            expect(error.code).assertEqual(2900099);
+          }
+        }
+        done();
+      })
+
+    /**
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_WRITEDESCRIPTOR_static_1200
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_WRITEDESCRIPTOR_1200
      * @tc.desc   Test on and off api10.
@@ -2585,6 +2876,35 @@ export default function btBleManagerTest(): void {
       })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_WRITEDESCRIPTOR_OFFNOPARAM_static_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_WRITEDESCRIPTOROFFNOPARAM_0100
+     * @tc.desc   Test offDescriptorWrite without param api10.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_WRITEDESCRIPTOR_OFFNOPARAM_static_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        try {
+          gattS!.onDescriptorWrite(WriteDescriptorReq);
+          gattS!.offDescriptorWrite();
+          hilog.info(domain, tag, "descriptorWriteOff without param is success");
+        } catch (error) {
+          hilog.error(domain, tag,
+            `[bluetooth_js]descriptorWriteOff without param failed, code is ${error.code},
+            message is ${error.message}`);
+          if (error.code === 801) {
+            hilog.info(domain, tag, '[bluetooth_js]descriptorWrite is not support');
+            expect(error.code).assertEqual(801);
+          } else {
+            expect(error.code).assertEqual(2900099);
+          }
+        }
+        done();
+      })
+
+    /**
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_READDESCRIPTOR_static_1500
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_READDESCRIPTOR_1500
      * @tc.desc   Test On and Off api10.
@@ -2629,6 +2949,35 @@ export default function btBleManagerTest(): void {
           if (error.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]descriptorRead is not support');
             expect(true).assertTrue();
+          } else {
+            expect(error.code).assertEqual(2900099);
+          }
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_READDESCRIPTOR_OFFNOPARAM_static_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_READDESCRIPTOROFFNOPARAM_0100
+     * @tc.desc   Test offDescriptorRead without param api10.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_READDESCRIPTOR_OFFNOPARAM_static_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        try {
+          gattS!.onDescriptorRead(ReadDescriptorReq);
+          gattS!.offDescriptorRead();
+          hilog.info(domain, tag, "descriptorReadOff without param is success");
+        } catch (error) {
+          hilog.error(domain, tag,
+            `[bluetooth_js]descriptorReadOff without param failed, code is ${error.code},
+            message is ${error.message}`);
+          if (error.code === 801) {
+            hilog.info(domain, tag, '[bluetooth_js]descriptorRead is not support');
+            expect(error.code).assertEqual(801);
           } else {
             expect(error.code).assertEqual(2900099);
           }

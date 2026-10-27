@@ -187,6 +187,37 @@ export default function btBleServiceTest(): void {
       })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLES_MTUCHANGE_OFFNOPARAM_static_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLES_MTUCHANGEOFFNOPARAM_0100
+     * @tc.desc   test gattserver off blemtuchange without param api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLES_MTUCHANGE_OFFNOPARAM_static_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        try {
+          gattServer!.onBLEMtuChange((mtu: int) => {
+            hilog.info(domain, tag, 'BLEMtuChange on value' + JSON.stringify(mtu));
+          })
+          gattServer!.offBLEMtuChange();
+          hilog.info(domain, tag, "bluetooth mtu changed off without param is success");
+        } catch (err) {
+          hilog.error(domain, tag,
+            "bluetooth mtu changed off without param errCode:" + err.code +
+            ",bluetooth mtu changed off without param errMessage:" + err.message);
+          if (err.code === 801) {
+            hilog.info(domain, tag, '[bluetooth_js]BLEMtuChange is not support');
+            expect(err.code).assertEqual(801);
+          } else {
+            expect(err.code).assertEqual(2900099);
+          }
+        }
+        done();
+      })
+
+    /**
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERCONNECT_static_0100
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERCONNECT_0100
      * @tc.desc   Test on and off api10 .
@@ -231,6 +262,35 @@ export default function btBleServiceTest(): void {
           if (error.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]connectionStateChange is not support');
             expect(true).assertTrue();
+          } else {
+            expect(error.code).assertEqual(2900099);
+          }
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERCONNECT_OFFNOPARAM_static_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERCONNECTOFFNOPARAM_0100
+     * @tc.desc   Test offConnectionStateChange without param api10.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERCONNECT_OFFNOPARAM_static_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        try {
+          gattServer!.onConnectionStateChange(Connected);
+          gattServer!.offConnectionStateChange();
+          hilog.info(domain, tag, "connectionStateChangeOff without param is success");
+        } catch (error) {
+          hilog.error(domain, tag,
+            `[bluetooth_js]connectionStateChange off without param failed, code is ${error.code},
+            message is ${error.message}`);
+          if (error.code === 801) {
+            hilog.info(domain, tag, '[bluetooth_js]connectionStateChange is not support');
+            expect(error.code).assertEqual(801);
           } else {
             expect(error.code).assertEqual(2900099);
           }
