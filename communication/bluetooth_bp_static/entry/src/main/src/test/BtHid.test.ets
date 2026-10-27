@@ -1523,7 +1523,6 @@ export default function btHidTest(): void {
           });
           hilog.info(domain, tag, "[bluetooth_js]hid registerHidDevice RH 0500 is called ");
           await sleep(1000);
-          expect(true).assertTrue();
         } catch (err) {
           hilog.error(domain, tag,
             "[bluetooth_js]hid registerHidDevice is fail , errCode:" + err.code + ",errMessage:" + err.message);
@@ -1902,14 +1901,14 @@ export default function btHidTest(): void {
       })
 
     /**
-     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_static_1200
-     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASEHIDPROFILEADD_1200
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_static_1600
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASEHIDPROFILEADD_1600
      * @tc.desc   Test replyReport 非法枚举值参数覆盖 未注册 2903052 api23.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_static_1200',
+    it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_static_1600',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
         try {
           let type: hid.ReportType = 99 as hid.ReportType;
