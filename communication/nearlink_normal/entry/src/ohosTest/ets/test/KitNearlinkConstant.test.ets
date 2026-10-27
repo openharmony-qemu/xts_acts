@@ -318,5 +318,32 @@ export default function constantTest() {
         console.info(`${caseName} test end`);
         done();
       })
+
+    /**
+     * @tc.number SUB_Communication_XTS_NearLink_Constant_Enum_0500
+     * @tc.name SUB_Communication_XTS_NearLink_Constant_Enum_0500
+     * @tc.desc FrameType enum values test.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('SUB_Communication_XTS_NearLink_Constant_Enum_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let caseName = 'SUB_Communication_XTS_NearLink_Constant_Enum_0500';
+        console.info(`${caseName} test start`);
+        try {
+          let FRAME_TYPE_1: nearlinkConstant.FrameType = nearlinkConstant.FrameType.FRAME_TYPE_1;
+          console.info(`${caseName} FRAME_TYPE_1 result:` + FRAME_TYPE_1);
+          expect(FRAME_TYPE_1).assertEqual(1);
+          let FRAME_TYPE_4: nearlinkConstant.FrameType = nearlinkConstant.FrameType.FRAME_TYPE_4;
+          console.info(`${caseName} FRAME_TYPE_4 result:` + FRAME_TYPE_4);
+          expect(FRAME_TYPE_4).assertEqual(4);
+        } catch (error) {
+          console.info(`${caseName} FrameType error.code` + error.code + `,errMessage:` + error.message);
+          expect().assertFail();
+        }
+        console.info(`${caseName} test end`);
+        done();
+      })
   })
 }

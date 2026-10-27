@@ -16,6 +16,7 @@
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic';
 import manager from '@ohos.nearlink.manager';
 import advertising from '@ohos.nearlink.advertising';
+import nearlinkConstant from '@ohos.nearlink.constant';
 import { clickRequestPermission } from './ClickRequestPermission';
 import { sleep } from './Sleep';
 import { openNearLink } from './OpenNearLink';
@@ -84,11 +85,13 @@ let onReceiveEvent =(changeInfo: advertising.AdvertisingStateChangeInfo) => {
 export default function advertisingTest() {
   describe('advertisingTest', () => {
     let return_boolean: boolean;
+    let isFrameType4Supported: boolean;
     beforeAll(async (done:Function) => {
       console.info('beforeAll start');
       await clickRequestPermission();
       await sleep(TIME_SLEEP);
       return_boolean = manager.isNearLinkSupported();
+      isFrameType4Supported = manager.isFrameType4Supported();
       console.info('beforeAll end');
       done();
     });
@@ -889,5 +892,134 @@ export default function advertisingTest() {
       }
       done();
     });
+    /**
+     * @tc.number SUB_Communication_XTS_NearLinkPub_Advertising_ADD_1000
+     * @tc.name SUB_Communication_XTS_NearLinkPub_Advertising_ADD_1000
+     * @tc.desc startAdvertising with frameType FRAME_TYPE_1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('SUB_Communication_XTS_NearLinkPub_Advertising_ADD_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = 'SUB_Communication_XTS_NearLinkPub_Advertising_ADD_1000';
+      console.info(`${caseName} test start`);
+      let advertisingSettings: advertising.AdvertisingSettings = {
+        interval:INTERVAL_MIN,
+        power:advertising.TxPowerMode.ADV_TX_POWER_MEDIUM,
+        isConnectable:true,
+        frameType:nearlinkConstant.FrameType.FRAME_TYPE_1
+      };
+      let advertisingData: advertising.AdvertisingData = {
+        serviceUuids:[UUID_UPP_Available],
+        manufacturerData:[manufacturerData],
+        serviceData:[serviceData],
+        includeDeviceName:false
+      };
+      let advertisingParams: advertising.AdvertisingParams = {
+        advertisingSettings: advertisingSettings,
+        advertisingData: advertisingData
+      };
+      try {
+        console.info('[Nearlink Test] call startAdvertising start');
+        let outAdvHandle = await advertising.startAdvertising(advertisingParams);
+        console.info('[Nearlink Test] startAdvertising promise result out:' + JSON.stringify(outAdvHandle));
+        expect(typeof outAdvHandle).assertEqual('number');
+        await advertising.stopAdvertising(outAdvHandle);
+        console.info('[Nearlink Test] stopAdvertising promise success');
+      } catch (error) {
+        console.info("[Nearlink Test] advertising ADD_1000 errCode:" + error.code + ",errMessage:" + error.message);
+        if (error.code === 801) {
+          console.info('api is not support');
+          expect(error.code).assertEqual(801);
+        } else {
+          expect().assertFail();
+        }
+      }
+      done();
+    })
+    /**
+     * @tc.number SUB_Communication_XTS_NearLinkPub_Advertising_ADD_1100
+     * @tc.name SUB_Communication_XTS_NearLinkPub_Advertising_ADD_1100
+     * @tc.desc startAdvertising with frameType FRAME_TYPE_4
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('SUB_Communication_XTS_NearLinkPub_Advertising_ADD_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = 'SUB_Communication_XTS_NearLinkPub_Advertising_ADD_1100';
+      console.info(`${caseName} test start`);
+      let advertisingSettings: advertising.AdvertisingSettings = {
+        interval:INTERVAL_MIN,
+        power:advertising.TxPowerMode.ADV_TX_POWER_MEDIUM,
+        isConnectable:true,
+        frameType:nearlinkConstant.FrameType.FRAME_TYPE_4
+      };
+      let advertisingData: advertising.AdvertisingData = {
+        serviceUuids:[UUID_UPP_Available],
+        manufacturerData:[manufacturerData],
+        serviceData:[serviceData],
+        includeDeviceName:false
+      };
+      let advertisingParams: advertising.AdvertisingParams = {
+        advertisingSettings: advertisingSettings,
+        advertisingData: advertisingData
+      };
+      try {
+        console.info('[Nearlink Test] call startAdvertising start');
+        let outAdvHandle = await advertising.startAdvertising(advertisingParams);
+        console.info('[Nearlink Test] startAdvertising promise result out:' + JSON.stringify(outAdvHandle));
+        expect(typeof outAdvHandle).assertEqual('number');
+        await advertising.stopAdvertising(outAdvHandle);
+        console.info('[Nearlink Test] stopAdvertising promise success');
+        expect(isFrameType4Supported === true).assertTrue();
+      } catch (error) {
+        console.info("[Nearlink Test] advertising ADD_1100 errCode:" + error.code + ",errMessage:" + error.message);
+        if (error.code === 801) {
+          console.info('api is not support');
+          expect(error.code).assertEqual(801);
+          expect(isFrameType4Supported === false).assertTrue();
+        } else {
+          expect().assertFail();
+        }
+      }
+      done();
+    })
+    /**
+     * @tc.number SUB_Communication_XTS_NearLinkPub_Advertising_ADD_1200
+     * @tc.name SUB_Communication_XTS_NearLinkPub_Advertising_ADD_1200
+     * @tc.desc startAdvertising with invalid frameType -1, expect 401
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('SUB_Communication_XTS_NearLinkPub_Advertising_ADD_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = 'SUB_Communication_XTS_NearLinkPub_Advertising_ADD_1200';
+      console.info(`${caseName} test start`);
+      let advertisingSettings: advertising.AdvertisingSettings = {
+        interval:INTERVAL_MIN,
+        power:advertising.TxPowerMode.ADV_TX_POWER_MEDIUM,
+        isConnectable:true,
+        frameType:-1
+      };
+      let advertisingData: advertising.AdvertisingData = {
+        serviceUuids:[UUID_UPP_Available],
+        manufacturerData:[manufacturerData],
+        serviceData:[serviceData],
+        includeDeviceName:false
+      };
+      let advertisingParams: advertising.AdvertisingParams = {
+        advertisingSettings: advertisingSettings,
+        advertisingData: advertisingData
+      };
+      try {
+        console.info('[Nearlink Test] call startAdvertising start');
+        await advertising.startAdvertising(advertisingParams);
+        expect().assertFail();
+      } catch (error) {
+        console.info("[Nearlink Test] advertising ADD_1200 errCode:" + error.code + ",errMessage:" + error.message);
+        expect(error.code).assertEqual(401);
+      }
+      done();
+    })
   })
 }

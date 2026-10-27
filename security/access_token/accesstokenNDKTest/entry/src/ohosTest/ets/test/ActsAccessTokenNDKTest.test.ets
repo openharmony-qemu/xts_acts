@@ -87,6 +87,28 @@ export default function ActsAccessTokenNDKTest() {
         done();
       }
     })
+
+    /**
+     * @tc.name   SUB_Access_Token_CheckPermission_0300
+     * @tc.number SUB_Access_Token_CheckPermission_0300
+     * @tc.desc   Checks whether this application has been granted the given permission with empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Access_Token_CheckPermission_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try{
+        console.info('=======> SUB_Access_Token_CheckPermission_0300 start ==========');
+        let result: boolean = testNapi.osCheckSelfPermissionC('');
+        console.info('=======>SUB_Access_Token_CheckPermission_0300 result：' + result);
+        expect(result).assertFalse();
+        done();
+      } catch (error) {
+        console.info('=======>SUB_Access_Token_CheckPermission_0300 catch error：' + error);
+        expect(false).assertTrue();
+        done();
+      }
+    })
   })
 }
 

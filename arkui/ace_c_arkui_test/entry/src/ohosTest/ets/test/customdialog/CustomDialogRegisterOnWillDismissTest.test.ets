@@ -18,6 +18,8 @@ import Utils from '../common/Utils';
 import nativeFunc from 'libnativefunc.so'
 import { Driver } from '@ohos.UiTest';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function customDialogRegisterOnWillDismissTest() {
 
   describe('CustomDialogRegisterOnWillDismissTest', () => {
@@ -40,7 +42,9 @@ export default function customDialogRegisterOnWillDismissTest() {
       await Utils.clickComponent('buttonRegisterOnWillDismiss')
       await Utils.sleep(2000)
       let driver: Driver = Driver.create();
-      await driver.pressBack()
+      // 需要传入id
+      // await driver.pressBack()
+      await driver.pressBack(displayID);
       await Utils.sleep(2000)
       expect(getInspectorByKey('columnRegisterOnWillDismiss')).assertEqual("")
       done()

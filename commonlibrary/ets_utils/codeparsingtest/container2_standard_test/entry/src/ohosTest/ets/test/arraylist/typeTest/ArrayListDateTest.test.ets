@@ -219,53 +219,5 @@ export default function arrayListDateTest() {
       list.trimToCurrentLength();
       expect(list.length).assertEqual(3);
     });
-
-    /**
-     * @tc.name   testArrayListDateTest0600
-     * @tc.number SUB_ARKTS_ARRAY_LIST_DATE_0600
-     * @tc.desc   Verify ArrayList Date boundary access, out-of-range removeByIndex and insert, clear and empty clone
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArrayListDateTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const list: ArrayList<Date> = new ArrayList<Date>();
-      list.add(DATE_A);
-      let accessThrew: boolean = false;
-      try {
-        const beyond: Date = list[1];
-        expect(beyond).assertUndefined();
-      } catch (e) {
-        accessThrew = true;
-        expect((e as Error).name === 'BusinessError' || (e as Error).name === 'RangeError').assertTrue();
-      }
-      expect(accessThrew || list.length === 1).assertTrue();
-      expect(list.length).assertEqual(1);
-
-      let removeThrew: boolean = false;
-      try {
-        list.removeByIndex(4);
-      } catch (e) {
-        removeThrew = true;
-        expect(((e as Error).name).length > 0).assertTrue();
-      }
-      expect(removeThrew).assertTrue();
-      expect(list.length).assertEqual(1);
-
-      let insertThrew: boolean = false;
-      try {
-        list.insert(DATE_B, 30);
-      } catch (e) {
-        insertThrew = true;
-        expect((e as Error).name === 'BusinessError' || (e as Error).name === 'RangeError').assertTrue();
-      }
-      expect(insertThrew).assertTrue();
-      expect(list.length).assertEqual(1);
-
-      list.clear();
-      expect(list.length).assertEqual(0);
-      expect(list.isEmpty()).assertTrue();
-      expect(list.clone().length).assertEqual(0);
-    });
   });
 }

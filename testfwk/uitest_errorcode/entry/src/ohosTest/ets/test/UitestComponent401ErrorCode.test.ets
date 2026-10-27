@@ -54,7 +54,7 @@ export default function uitestEnumTest() {
       }
       await stopApplication('com.uitestScene.acts');
       console.log(`${TestTag}, testApi9_Component_inputText_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi20_Component_inputTextMode_401
@@ -101,7 +101,7 @@ export default function uitestEnumTest() {
       }
       await stopApplication('com.uitestScene.acts');
       console.log(`${TestTag}, testApi20_Component_inputTextMode_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi9_Component_scrollToTop_401
@@ -154,7 +154,7 @@ export default function uitestEnumTest() {
       }
       await stopApplication('com.uitestScene.acts');
       console.log(`${TestTag}, testApi9_Component_scrollToTop_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi9_Component_scrollToBottom_401
@@ -207,7 +207,7 @@ export default function uitestEnumTest() {
       }
       await stopApplication('com.uitestScene.acts');
       console.log(`${TestTag}, testApi9_Component_scrollToBottom_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi9_Component_dragTo_401
@@ -240,7 +240,7 @@ export default function uitestEnumTest() {
       }
       await stopApplication('com.uitestScene.acts');
       console.log(`${TestTag}, testApi9_Component_dragTo_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi9_Component_pinchOut_401
@@ -282,7 +282,7 @@ export default function uitestEnumTest() {
       }
       await stopApplication('com.uitestScene.acts');
       console.log(`${TestTag}, testApi9_Component_pinchOut_401 END`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi9_Component_pinchIn_401
@@ -394,7 +394,7 @@ export default function uitestEnumTest() {
       }
       await stopApplication('com.uitestScene.acts');
       console.log(`${TestTag}, testApi9_Component_scrollSearch_401 END`);
-    })
+    }, undefined, 'emulator')
 
   })
 }

@@ -141,8 +141,8 @@ export default function abilityTest() {
               expect(abilityStateData?.moduleName).assertEqual('entry');
               expect(abilityStateData?.abilityType).assertEqual(1);
               expect(abilityStateData?.isAtomicService).assertFalse();
-              let appCloneIndex =  AppStorage.get('appCloneIndex') as boolean;
-              if(!appCloneIndex){
+              let appCloneSupport =  AppStorage.get('appCloneSupport') as boolean;
+              if(!appCloneSupport){
                 expect(abilityStateData?.appCloneIndex).assertEqual(undefined);
               }else{
                 expect(abilityStateData?.appCloneIndex).assertEqual(0);

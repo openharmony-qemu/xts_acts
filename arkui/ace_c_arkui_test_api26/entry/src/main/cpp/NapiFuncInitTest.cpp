@@ -54,6 +54,8 @@
 #include "node/ContentChangeEventTest.cpp"
 #include "image/ImageAnimatorInterpolationTest.cpp"
 #include "calendarPicker/CalendarPickerFirstDayOfWeekTest.cpp"
+#include "accessibilityBindExportTree/AccessibilityBindExportTreeTest.cpp"
+#include "uiEventInjection/UIEventInjectionTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -356,6 +358,46 @@ static napi_value Init(napi_env env, napi_value exports)
         {"testCalendarPickerFirstDayOfWeek006", nullptr, TestCalendarPickerFirstDayOfWeek006, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testCalendarPickerFirstDayOfWeek007", nullptr, TestCalendarPickerFirstDayOfWeek007, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testCalendarPickerFirstDayOfWeek008", nullptr, TestCalendarPickerFirstDayOfWeek008, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"BindExportTreeTest001", nullptr, BindExportTreeTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BindExportTreeTest002", nullptr, BindExportTreeTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BindExportTreeTest003", nullptr, BindExportTreeTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BindExportTreeTest004", nullptr, BindExportTreeTest004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BindExportTreeTest005", nullptr, BindExportTreeTest005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BindExportTreeTest006", nullptr, BindExportTreeTest006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BindExportTreeTest007", nullptr, BindExportTreeTest007, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BindExportTreeTest008", nullptr, BindExportTreeTest008, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BindExportTreeTest009", nullptr, BindExportTreeTest009, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BindExportTreeTest010", nullptr, BindExportTreeTest010, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"UnbindExportTreeTest001", nullptr, UnbindExportTreeTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UnbindExportTreeTest002", nullptr, UnbindExportTreeTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UnbindExportTreeTest003", nullptr, UnbindExportTreeTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UnbindExportTreeTest004", nullptr, UnbindExportTreeTest004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UnbindExportTreeTest005", nullptr, UnbindExportTreeTest005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UnbindExportTreeTest006", nullptr, UnbindExportTreeTest006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UnbindExportTreeTest007", nullptr, UnbindExportTreeTest007, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UnbindExportTreeTest008", nullptr, UnbindExportTreeTest008, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UnbindExportTreeTest009", nullptr, UnbindExportTreeTest009, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UnbindExportTreeTest010", nullptr, UnbindExportTreeTest010, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"UIEventInjectionResultCodeTest001", nullptr, UIEventInjectionResultCodeTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIEventInjectionResultCodeTest002", nullptr, UIEventInjectionResultCodeTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIEventInjectionResultCodeTest003", nullptr, UIEventInjectionResultCodeTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIEventInjectionResultCodeTest004", nullptr, UIEventInjectionResultCodeTest004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIEventInjectCompositeCommandTest001", nullptr, UIEventInjectCompositeCommandTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIEventInjectCompositeCommandTest002", nullptr, UIEventInjectCompositeCommandTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIEventInjectCompositeCommandTest003", nullptr, UIEventInjectCompositeCommandTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIEventInjectCompositeCommandTest004", nullptr, UIEventInjectCompositeCommandTest004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIEventInjectCompositeCommandTest005", nullptr, UIEventInjectCompositeCommandTest005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIEventInjectCompositeCommandTest006", nullptr, UIEventInjectCompositeCommandTest006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIEventInjectCompositeCommandTest007", nullptr, UIEventInjectCompositeCommandTest007, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIEventInjectCompositeCommandTest008", nullptr, UIEventInjectCompositeCommandTest008, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIEventInjectCompositeCommandTest009", nullptr, UIEventInjectCompositeCommandTest009, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIEventInjectCompositeCommandTest010", nullptr, UIEventInjectCompositeCommandTest010, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIEventInjectCompositeCommandTest011", nullptr, UIEventInjectCompositeCommandTest011, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIEventInjectionCallbackTest001", nullptr, UIEventInjectionCallbackTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIEventInjectionCallbackTest002", nullptr, UIEventInjectionCallbackTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
         };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");

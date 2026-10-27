@@ -21,7 +21,12 @@ async function startAbility(bundleName: string, abilityName: string) {
 }
 
 async function stopApplication(bundleName: string) {
-  await delegator.executeShellCommand(`aa force-stop ${bundleName} `).then(result => {
+  let cmd = `aa force-stop ${bundleName}`;
+  let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+  if(user !== undefined){
+      cmd += ' -u ' + user;
+  }
+  await delegator.executeShellCommand(cmd).then(result => {
     console.info(`UiTestCase, stop application finished: ${result}`)
   }).catch((err : BusinessError) => {
     console.error(`UiTestCase,stop application failed: ${err}`)
@@ -71,7 +76,7 @@ export default function uitestComponentErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_scrollToTop_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_scrollToTop_17000004
@@ -98,7 +103,7 @@ export default function uitestComponentErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(TestTag, 'test_scrollToTop_17000004 end');
-    })
+    }, undefined, 'emulator')
 
 
     /**
@@ -129,7 +134,7 @@ export default function uitestComponentErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_scrollSearch_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_scrollSearch_17000004
@@ -156,7 +161,7 @@ export default function uitestComponentErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(TestTag, 'test_scrollSearch_17000004 end');
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_scrollToBottom_17000002
@@ -185,7 +190,7 @@ export default function uitestComponentErrorTest() {
       }
       await sleep(waitUiReadyMs * 6);
       console.log(`${TestTag}, test_scrollToBottom_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_scrollToBottom_17000004
@@ -214,7 +219,7 @@ export default function uitestComponentErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(TestTag, 'test_scrollToBottom_17000004 end');
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_click_17000002
@@ -243,7 +248,7 @@ export default function uitestComponentErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_click_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_click_17000004
@@ -270,7 +275,7 @@ export default function uitestComponentErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(TestTag, 'test_click_17000004 end');
-    })
+    }, undefined, 'emulator')
 
 
     /**
@@ -300,7 +305,7 @@ export default function uitestComponentErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_click_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_doubleClick_17000004
@@ -327,7 +332,7 @@ export default function uitestComponentErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(TestTag, 'test_click_17000004 end');
-    })
+    }, undefined, 'emulator')
 
 
     /**
@@ -357,7 +362,7 @@ export default function uitestComponentErrorTest() {
       }
       await sleep(waitUiReadyMs * 3);
       console.log(`${TestTag}, test_longClick_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_longClick_17000004
@@ -384,7 +389,7 @@ export default function uitestComponentErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(TestTag, 'test_longClick_17000004 end');
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_getId_17000002
@@ -413,7 +418,7 @@ export default function uitestComponentErrorTest() {
       }
       await sleep(waitUiReadyMs * 4);
       console.log(`${TestTag}, test_getId_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_getId_17000004
@@ -440,7 +445,7 @@ export default function uitestComponentErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(TestTag, 'test_getId_17000004 end');
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_getText_17000002
@@ -469,7 +474,7 @@ export default function uitestComponentErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_getText_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_getText_17000004
@@ -496,7 +501,7 @@ export default function uitestComponentErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(TestTag, 'test_getText_17000004 end');
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_getType_17000002
@@ -525,7 +530,7 @@ export default function uitestComponentErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_getType_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_getType_17000004
@@ -552,7 +557,7 @@ export default function uitestComponentErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(TestTag, 'test_getType_17000004 end');
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_getBounds_17000002
@@ -581,7 +586,7 @@ export default function uitestComponentErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_getBounds_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_getBounds_17000004
@@ -608,7 +613,7 @@ export default function uitestComponentErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(TestTag, 'test_getBounds_17000004 end');
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_getBoundsCenter_17000002
@@ -637,7 +642,7 @@ export default function uitestComponentErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_getBoundsCenter_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_getBoundsCenter_17000004
@@ -664,7 +669,7 @@ export default function uitestComponentErrorTest() {
       }
       await sleep(waitUiReadyMs * 2);
       console.log(TestTag, 'test_getBoundsCenter_17000004 end');
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_isClickable_17000002
@@ -693,7 +698,7 @@ export default function uitestComponentErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_isClickable_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_isClickable_17000004
@@ -720,7 +725,7 @@ export default function uitestComponentErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(TestTag, 'test_isClickable_17000004 end');
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_isLongClickable_17000002
@@ -749,7 +754,7 @@ export default function uitestComponentErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_isLongClickable_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_isLongClickable_17000004
@@ -776,7 +781,7 @@ export default function uitestComponentErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(TestTag, 'test_isLongClickable_17000004 end');
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_isChecked_17000002
@@ -805,7 +810,7 @@ export default function uitestComponentErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_isChecked_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_isChecked_17000004
@@ -832,7 +837,7 @@ export default function uitestComponentErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(TestTag, 'test_isChecked_17000004 end');
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_isCheckable_17000002
@@ -861,7 +866,7 @@ export default function uitestComponentErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_isCheckable_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_isCheckable_17000004
@@ -888,7 +893,7 @@ export default function uitestComponentErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(TestTag, 'test_isCheckable_17000004 end');
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_isScrollable_17000002
@@ -917,7 +922,7 @@ export default function uitestComponentErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_isScrollable_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_isScrollable_17000004
@@ -943,7 +948,7 @@ export default function uitestComponentErrorTest() {
         expect(e.code).assertEqual(InvisibleErrorCode);
       }
       console.log(TestTag, 'test_isScrollable_17000004 end');
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_isEnabled_17000002
@@ -972,7 +977,7 @@ export default function uitestComponentErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_isEnabled_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_isEnabled_17000004
@@ -998,7 +1003,7 @@ export default function uitestComponentErrorTest() {
         expect(e.code).assertEqual(InvisibleErrorCode);
       }
       console.log(TestTag, 'test_isEnabled_17000004 end');
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_isFocused_17000002
@@ -1027,7 +1032,7 @@ export default function uitestComponentErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_isFocused_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_isFocused_17000004
@@ -1053,7 +1058,7 @@ export default function uitestComponentErrorTest() {
         expect(e.code).assertEqual(InvisibleErrorCode);
       }
       console.log(TestTag, 'test_isFocused_17000004 end');
-    })
+    }, undefined, 'emulator')
 
 
     /**
@@ -1083,7 +1088,7 @@ export default function uitestComponentErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_isSelected_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_isSelected_17000004
@@ -1109,7 +1114,7 @@ export default function uitestComponentErrorTest() {
         expect(e.code).assertEqual(InvisibleErrorCode);
       }
       console.log(TestTag, 'test_isSelected_17000004 end');
-    })
+    }, undefined, 'emulator')
 
 
     /**
@@ -1139,7 +1144,7 @@ export default function uitestComponentErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_isSelected_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_inputTextMode_801
@@ -1172,7 +1177,7 @@ export default function uitestComponentErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(`${TestTag}, test_inputTextMode_801 end`);
-    })
+    }, undefined, 'emulator')
 
 
     /**
@@ -1204,7 +1209,7 @@ export default function uitestComponentErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_inputTextMode_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_inputTextMode_401
@@ -1243,7 +1248,7 @@ export default function uitestComponentErrorTest() {
       }
       console.log(`${TestTag}, test_inputTextMode_401 end`);
       await stopApplication('com.uitestScene.acts');
-    })
+    }, undefined, 'emulator')
 
 
     /**
@@ -1271,7 +1276,7 @@ export default function uitestComponentErrorTest() {
       }
       console.log(TestTag, 'test_isSelected_17000004 end');
       done()
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_clearText_17000002
@@ -1301,7 +1306,7 @@ export default function uitestComponentErrorTest() {
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_clearText_17000002 end`);
       done()
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_clearText_17000004
@@ -1328,7 +1333,7 @@ export default function uitestComponentErrorTest() {
       }
       console.log(TestTag, 'test_clearText_17000004 end');
       done()
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_dragTo_17000002
@@ -1357,7 +1362,7 @@ export default function uitestComponentErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_dragTo_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_dragTo_17000004
@@ -1384,7 +1389,7 @@ export default function uitestComponentErrorTest() {
         expect(e.code).assertEqual(InvisibleErrorCode);
       }
       console.log(TestTag, 'test_dragTo_17000004 end');
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_pinchOut_17000002
@@ -1413,7 +1418,7 @@ export default function uitestComponentErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_pinchOut_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_pinchOut_17000004
@@ -1443,7 +1448,7 @@ export default function uitestComponentErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(`${TestTag}, test_pinchOut_17000004 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_pinchIn_17000002
@@ -1472,7 +1477,7 @@ export default function uitestComponentErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_pinchIn_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_pinchIn_17000004
@@ -1502,7 +1507,7 @@ export default function uitestComponentErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(`${TestTag}, test_pinchIn_17000004 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_getDescription_17000002
@@ -1531,7 +1536,7 @@ export default function uitestComponentErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_getDescription_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_getDescription_17000004
@@ -1562,7 +1567,7 @@ export default function uitestComponentErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(`${TestTag}, test_getDescription_17000004 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_getHint_17000002
@@ -1591,7 +1596,7 @@ export default function uitestComponentErrorTest() {
       }
       await sleep(waitUiReadyMs * 5);
       console.log(`${TestTag}, test_getHint_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_getHint_17000004
@@ -1620,7 +1625,7 @@ export default function uitestComponentErrorTest() {
       }
       await sleep(waitUiReadyMs);
       console.log(`${TestTag}, test_getHint_17000004 end`);
-    })
+    }, undefined, 'emulator')
 
 
     /**
@@ -1650,7 +1655,7 @@ export default function uitestComponentErrorTest() {
         expect(e.code).assertEqual(InvisibleErrorCode);
       }
       console.log(`${TestTag}, test_inputTextMode_17000004 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_getDisplayId_17000002
@@ -1678,7 +1683,7 @@ export default function uitestComponentErrorTest() {
       await sleep(waitUiReadyMs * 5);
       await stopApplication('com.uitestScene.acts');
       console.log(`${TestTag}, test_getDisplayId_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
 
     /**
@@ -1707,7 +1712,7 @@ export default function uitestComponentErrorTest() {
       }
       await stopApplication('com.uitestScene.acts');
       console.log(`${TestTag}, test_getDisplayId_17000004 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_getOriginalText_17000002
@@ -1735,7 +1740,7 @@ export default function uitestComponentErrorTest() {
       await sleep(waitUiReadyMs * 5);
       await stopApplication('com.uitestScene.acts');
       console.log(`${TestTag}, test_getOriginalText_17000002 end`);
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   test_getOriginalText_17000004

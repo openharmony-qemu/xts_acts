@@ -16,6 +16,7 @@
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic';
 import manager from '@ohos.nearlink.manager';
 import scan from '@ohos.nearlink.scan';
+import nearlinkConstant from '@ohos.nearlink.constant';
 
 import { clickRequestPermission } from './ClickRequestPermission';
 import { sleep } from './Sleep';
@@ -51,11 +52,13 @@ let SERVICE_UUID = 4567;
 export default function scanTest() {
   describe('scanTest', () => {
     let return_boolean: boolean;
+    let isFrameType4Supported: boolean;
     beforeAll(async (done:Function) => {
       console.info('beforeAll start');
       await clickRequestPermission();
       await sleep(TIME_SLEEP);
       return_boolean = manager.isNearLinkSupported();
+      isFrameType4Supported = manager.isFrameType4Supported();
       console.info('beforeAll end');
       done();
     })
@@ -1128,5 +1131,155 @@ export default function scanTest() {
       }
       done();
     });
+    /**
+     * @tc.name SUB_Communication_XTS_NearLink_Scan_2100
+     * @tc.number SUB_Communication_XTS_NearLink_Scan_2100
+     * @tc.desc startScan with frameType FRAME_TYPE_1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('SUB_Communication_XTS_NearLink_Scan_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = 'SUB_Communication_XTS_NearLink_Scan_2100';
+      console.info(`${caseName} test start`);
+      let scanFilters: scan.ScanFilters = {
+        address: ADDRESS,
+        deviceName: NAME,
+        manufacturerId: SERVICE_UUID,
+        manufacturerData: manufacturerDataBuffer.buffer,
+        manufacturerDataMask: manufacturerDataMaskBuffer.buffer,
+        rssi: RSSI
+      };
+      let ScanOptions: scan.ScanOptions = {
+        scanMode: scan.ScanMode.SCAN_MODE_BALANCED,
+        duration: 10,
+        frameType: nearlinkConstant.FrameType.FRAME_TYPE_1
+      };
+      let onReceiveEvent:(scanRes: scan.ScanResults[]) => void = (scanRes: scan.ScanResults[]) => {
+        console.info('[Nearlink Test] scan ScanResults = ' + JSON.stringify(scanRes));
+        if (scanRes.length > 0) {
+          console.info('[Nearlink Test] scan address = ' + JSON.stringify(scanRes[0].address)
+            + ', rssi = ' + JSON.stringify(scanRes[0].rssi) + ', data = ' + JSON.stringify(scanRes[0].data)
+            + ', deviceName = ' + JSON.stringify(scanRes[0].deviceName) + ', isConnectable = ' + JSON.stringify(scanRes[0].isConnectable)
+            + ', deviceClass = ' + JSON.stringify(scanRes[0].deviceClass) + ', frameType = ' + JSON.stringify(scanRes[0].frameType));
+          expect(scanRes.length > 0).assertTrue();
+        } else {
+          expect(scanRes.length === 0).assertTrue();
+        }
+      }
+      try {
+        console.info('[Nearlink Test] call onDeviceFound start');
+        scan.onDeviceFound(onReceiveEvent);
+        console.info('[Nearlink Test] call startScan start');
+        await scan.startScan([scanFilters], ScanOptions);
+        console.info('[Nearlink Test] call stopScan start');
+        await scan.stopScan();
+        console.info('[Nearlink Test] call offDeviceFound start');
+        scan.offDeviceFound(onReceiveEvent);
+        console.info('[Nearlink Test] offDeviceFound success');
+      } catch (error) {
+        console.info("[Nearlink Test] scan 2100 errCode:" + error.code + ",errMessage:" + error.message);
+        if (error.code === 801) {
+          console.info('api is not support');
+          expect(error.code).assertEqual(801);
+        } else {
+          expect().assertFail();
+        }
+      }
+      done();
+    })
+    /**
+     * @tc.name SUB_Communication_XTS_NearLink_Scan_2200
+     * @tc.number SUB_Communication_XTS_NearLink_Scan_2200
+     * @tc.desc startScan with frameType FRAME_TYPE_4
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('SUB_Communication_XTS_NearLink_Scan_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = 'SUB_Communication_XTS_NearLink_Scan_2200';
+      console.info(`${caseName} test start`);
+      let scanFilters: scan.ScanFilters = {
+        address: ADDRESS,
+        deviceName: NAME,
+        manufacturerId: SERVICE_UUID,
+        manufacturerData: manufacturerDataBuffer.buffer,
+        manufacturerDataMask: manufacturerDataMaskBuffer.buffer,
+        rssi: RSSI
+      };
+      let ScanOptions: scan.ScanOptions = {
+        scanMode: scan.ScanMode.SCAN_MODE_BALANCED,
+        duration: 10,
+        frameType: nearlinkConstant.FrameType.FRAME_TYPE_4
+      };
+      let onReceiveEvent:(scanRes: scan.ScanResults[]) => void = (scanRes: scan.ScanResults[]) => {
+        console.info('[Nearlink Test] scan ScanResults = ' + JSON.stringify(scanRes));
+        if (scanRes.length > 0) {
+          console.info('[Nearlink Test] scan address = ' + JSON.stringify(scanRes[0].address)
+            + ', rssi = ' + JSON.stringify(scanRes[0].rssi) + ', data = ' + JSON.stringify(scanRes[0].data)
+            + ', deviceName = ' + JSON.stringify(scanRes[0].deviceName) + ', isConnectable = ' + JSON.stringify(scanRes[0].isConnectable)
+            + ', deviceClass = ' + JSON.stringify(scanRes[0].deviceClass) + ', frameType = ' + JSON.stringify(scanRes[0].frameType));
+          expect(scanRes.length > 0).assertTrue();
+        } else {
+          expect(scanRes.length === 0).assertTrue();
+        }
+      }
+      try {
+        console.info('[Nearlink Test] call onDeviceFound start');
+        scan.onDeviceFound(onReceiveEvent);
+        console.info('[Nearlink Test] call startScan start');
+        await scan.startScan([scanFilters], ScanOptions);
+        console.info('[Nearlink Test] call stopScan start');
+        await scan.stopScan();
+        console.info('[Nearlink Test] call offDeviceFound start');
+        scan.offDeviceFound(onReceiveEvent);
+        console.info('[Nearlink Test] offDeviceFound success');
+        expect(isFrameType4Supported === true).assertTrue();
+      } catch (error) {
+        console.info("[Nearlink Test] scan 2200 errCode:" + error.code + ",errMessage:" + error.message);
+        if (error.code === 801) {
+          console.info('api is not support');
+          expect(error.code).assertEqual(801);
+          expect(isFrameType4Supported === false).assertTrue();
+        } else {
+          expect().assertFail();
+        }
+      }
+      done();
+    })
+    /**
+     * @tc.name SUB_Communication_XTS_NearLink_Scan_2300
+     * @tc.number SUB_Communication_XTS_NearLink_Scan_2300
+     * @tc.desc startScan with invalid frameType -1, expect 401
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('SUB_Communication_XTS_NearLink_Scan_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = 'SUB_Communication_XTS_NearLink_Scan_2300';
+      console.info(`${caseName} test start`);
+      let scanFilters: scan.ScanFilters = {
+        address: ADDRESS,
+        deviceName: NAME,
+        manufacturerId: SERVICE_UUID,
+        manufacturerData: manufacturerDataBuffer.buffer,
+        manufacturerDataMask: manufacturerDataMaskBuffer.buffer,
+        rssi: RSSI
+      };
+      let ScanOptions: scan.ScanOptions = {
+        scanMode: scan.ScanMode.SCAN_MODE_BALANCED,
+        duration: 10,
+        frameType: -1
+      };
+      try {
+        console.info('[Nearlink Test] call startScan start');
+        await scan.startScan([scanFilters], ScanOptions);
+        expect().assertFail();
+      } catch (error) {
+        console.info("[Nearlink Test] scan 2300 errCode:" + error.code + ",errMessage:" + error.message);
+        expect(error.code).assertEqual(401);
+      }
+      done();
+    })
   })
 }

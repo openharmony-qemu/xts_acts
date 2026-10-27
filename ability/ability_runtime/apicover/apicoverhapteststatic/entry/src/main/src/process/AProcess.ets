@@ -17,7 +17,7 @@ import { ChildProcess, ChildProcessArgs } from '@kit.AbilityKit';
 
 export default class DemoProcess extends ChildProcess {
 
-  onStart() {
+  onStart(): void {
     console.log('ChildProcess start!!!');
   }
 }

@@ -62,7 +62,7 @@ export default function uitestEnumTest() {
       }
       console.log(`${TestTag}, testApi8_UiComponent_inputText_5 END`);
       await stopApplication('com.uitestScene.acts');
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testApi8_UiComponent_scrollSearch_5
@@ -95,7 +95,7 @@ export default function uitestEnumTest() {
       }
       console.log(`${TestTag}, testApi8_UiComponent_scrollSearch_5 END`);
       await stopApplication('com.uitestScene.acts');
-    })
+    }, undefined, 'emulator')
 
 
   })

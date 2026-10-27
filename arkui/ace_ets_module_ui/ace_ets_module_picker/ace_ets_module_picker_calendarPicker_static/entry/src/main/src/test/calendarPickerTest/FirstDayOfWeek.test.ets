@@ -247,5 +247,29 @@ export default function CalendarPickerFirstDayOfWeekTest() {
         done();
       }
     })
+
+    /**
+     * @tc.number SUB_ARKUI_ACE_ENGINE_CALENDAR_PICKER_FIRST_DAY_OF_WEEK_STATIC_1100
+     * @tc.name CalendarPickerFirstDayOfWeek_undefined_1100
+     * @tc.desc Verify CalendarPicker firstDayOfWeek property with undefined value test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it('CalendarPickerFirstDayOfWeek_undefined_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('CalendarPickerFirstDayOfWeek_undefined_1100 START')
+      try {
+        let strJson = inspector.getInspectorByKey('calendarPicker011');
+        let obj = JSON.parseJsonElement(strJson);
+        let firstDayOfWeek: string = obj.getElement('$attrs').getString('firstDayOfWeek');
+        console.info('CalendarPickerFirstDayOfWeek_undefined_1100 firstDayOfWeek: ' + firstDayOfWeek);
+        expect(firstDayOfWeek).assertEqual('CalendarFirstDayOfWeek.LOCAL');
+        done();
+      } catch (err) {
+        console.error('CalendarPickerFirstDayOfWeek_undefined_1100 error: ' + err);
+        expect().assertFail();
+        done();
+      }
+    })
   })
 }

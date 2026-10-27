@@ -60,11 +60,13 @@ export default function webResourceError() {
           console.info('======> WLAN connection established ');
         } else {
           expect().message('======> WLAN Network error').assertFail();
-          done()
+          done();
+          return;
         }
         if (data.chload >= 900 || data.rssi <= -80) {
           expect().message('======> WLAN Network error').assertFail();
           done();
+          return;
         } else if (data.chload >= 500) {
           console.info('======> The internet connection is poor. ');
         }
@@ -72,6 +74,7 @@ export default function webResourceError() {
         console.info('======> getLinkedInfo promise failed, err : ' + JSON.stringify(err));
         throw (err as Error);
         done();
+        return;
       }
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
@@ -98,6 +101,33 @@ export default function webResourceError() {
       await waitForExist(()=>isReturn, "testGetErrorInfo001", true,1000);
       done();
     })
+  })
+
+  describe('webResourceErrorConstructorTestSuite', () => {
+    beforeAll(async (done: Function) => {
+      let options: router.RouterOptions = {
+        url: 'testability/pages/webResourceError',
+      }
+      try {
+        router.clear();
+        let pages = router.getState();
+        if (!('webResourceError' == pages.name)) {
+          await router.pushUrl(options);
+        }
+      } catch (err) {
+        console.error('push webResourceError page error: ' + err);
+      }
+      done();
+    });
+
+    beforeEach(async (done: Function) => {
+      config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
+        console.info('enable success');
+      }).catch((err: object) => {
+        console.error(`failed to enable, ${err}`);
+      });
+      done();
+    });
 
     /**
      * @tc.name   testWebResourceErrorConstructor001

@@ -377,6 +377,7 @@ export default function securityManagerTest() {
     testGetUserExtCredential();
     testSetUnlockPolicy();
     testGetUnlockPolicy();
+    testGetPasswordLastChangedTime();
   })
 }
 
@@ -1483,6 +1484,29 @@ function testGetUnlockPolicy() {
       } else {
         expect(error.code).assertEqual(201);
       }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testGetPasswordLastChangedTime() {
+  /**
+   * @tc.name   test_get_password_last_changed_time_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_PASSWORD_LAST_CHANGED_TIME_NO_PERMISSION_JS_0100
+   * @tc.desc   test securityManager getPasswordLastChangedTime with permission denied 201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_password_last_changed_time_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      securityManager.getPasswordLastChangedTime(INT_VALID_ACCOUNTID);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 201).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }

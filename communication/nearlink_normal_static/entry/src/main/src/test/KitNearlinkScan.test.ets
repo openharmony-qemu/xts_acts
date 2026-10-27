@@ -17,6 +17,7 @@
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '../../../hypium/index';
 import manager from '@ohos.nearlink.manager';
 import scan from '@ohos.nearlink.scan';
+import nearlinkConstant from '@ohos.nearlink.constant';
 
 import Utils from './Util.test';
 import hilog from '@ohos.hilog';
@@ -56,11 +57,13 @@ let SERVICE_UUID = 4567;
 export default function scanTest(): void {
   describe('scanTest', () => {
     let return_boolean: boolean;
+    let isFrameType4Supported: boolean;
     beforeAll(async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'beforeAll start');
       await Utils.clickRequestPermission();
       await Utils.msSleep(TIME_SLEEP);
       return_boolean = manager.isNearLinkSupported();
+      isFrameType4Supported = manager.isFrameType4Supported();
       hilog.info(0x0000, 'testTag', '%{public}s', 'beforeAll end');
       done();
     })
@@ -956,6 +959,124 @@ export default function scanTest(): void {
         if (error.code === 801) {
           hilog.info(0x0000, 'testTag', '%{public}s', 'api is not support');
           expect(return_boolean === false).assertTrue();
+        } else {
+          expect().assertFail();
+        }
+      }
+      done();
+    })
+    /**
+     * @tc.name SUB_Communication_XTS_NearLink_Scan_static_2100
+     * @tc.number SUB_Communication_XTS_NearLink_Scan_2100
+     * @tc.desc startScan with frameType FRAME_TYPE_1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('SUB_Communication_XTS_NearLink_Scan_static_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName = 'SUB_Communication_XTS_NearLink_Scan_static_2100';
+      hilog.info(0x0000, 'testTag', '%{public}s test start', caseName);
+      let scanFilters: scan.ScanFilters = {
+        address: ADDRESS,
+        deviceName: NAME,
+        manufacturerId: SERVICE_UUID,
+        manufacturerData: manufacturerDataBuffer.buffer,
+        manufacturerDataMask: manufacturerDataMaskBuffer.buffer,
+        rssi: RSSI
+      };
+      let scanOptions: scan.ScanOptions = {
+        scanMode: scan.ScanMode.SCAN_MODE_BALANCED,
+        duration: 10,
+        frameType: nearlinkConstant.FrameType.FRAME_TYPE_1
+      };
+      let onReceiveEvent:(scanRes: scan.ScanResults[]) => void = (scanRes: scan.ScanResults[]) => {
+        hilog.info(0x0000, 'testTag', '[Nearlink Test] scan ScanResults = %{public}s', JSON.stringify(scanRes));
+        if (scanRes.length > 0) {
+          hilog.info(0x0000, 'testTag',
+            '[Nearlink Test] scan address = %{public}s, rssi = %{public}s, data = %{public}s, deviceName = %{public}s, isConnectable = %{public}s, deviceClass = %{public}s, frameType = %{public}s',
+            JSON.stringify(scanRes[0].address), JSON.stringify(scanRes[0].rssi), JSON.stringify(scanRes[0].data),
+            JSON.stringify(scanRes[0].deviceName), JSON.stringify(scanRes[0].isConnectable),
+            JSON.stringify(scanRes[0].deviceClass), JSON.stringify(scanRes[0].frameType));
+          expect(scanRes.length > 0).assertTrue();
+        } else {
+          expect(scanRes.length === 0).assertTrue();
+        }
+      }
+      try {
+        hilog.info(0x0000, 'testTag', '%{public}s', '[Nearlink Test] call onDeviceFound start');
+        scan.onDeviceFound(onReceiveEvent);
+        hilog.info(0x0000, 'testTag', '%{public}s', '[Nearlink Test] call startScan start');
+        await scan.startScan([scanFilters], scanOptions);
+        hilog.info(0x0000, 'testTag', '%{public}s', '[Nearlink Test] call stopScan start');
+        await scan.stopScan();
+        hilog.info(0x0000, 'testTag', '%{public}s', '[Nearlink Test] call offDeviceFound start');
+        scan.offDeviceFound(onReceiveEvent);
+        hilog.info(0x0000, 'testTag', '%{public}s', '[Nearlink Test] offDeviceFound success');
+      } catch (error) {
+        hilog.info(0x0000, 'testTag', '[Nearlink Test] scan 2100 errCode:%{public}s,errMessage:%{public}s', error.code, error.message);
+        if (error.code === 801) {
+          hilog.info(0x0000, 'testTag', '%{public}s', 'api is not support');
+          expect(error.code).assertEqual(801);
+        } else {
+          expect().assertFail();
+        }
+      }
+      done();
+    })
+    /**
+     * @tc.name SUB_Communication_XTS_NearLink_Scan_static_2200
+     * @tc.number SUB_Communication_XTS_NearLink_Scan_2200
+     * @tc.desc startScan with frameType FRAME_TYPE_4
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('SUB_Communication_XTS_NearLink_Scan_static_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName = 'SUB_Communication_XTS_NearLink_Scan_static_2200';
+      hilog.info(0x0000, 'testTag', '%{public}s test start', caseName);
+      let scanFilters: scan.ScanFilters = {
+        address: ADDRESS,
+        deviceName: NAME,
+        manufacturerId: SERVICE_UUID,
+        manufacturerData: manufacturerDataBuffer.buffer,
+        manufacturerDataMask: manufacturerDataMaskBuffer.buffer,
+        rssi: RSSI
+      };
+      let scanOptions: scan.ScanOptions = {
+        scanMode: scan.ScanMode.SCAN_MODE_BALANCED,
+        duration: 10,
+        frameType: nearlinkConstant.FrameType.FRAME_TYPE_4
+      };
+      let onReceiveEvent:(scanRes: scan.ScanResults[]) => void = (scanRes: scan.ScanResults[]) => {
+        hilog.info(0x0000, 'testTag', '[Nearlink Test] scan ScanResults = %{public}s', JSON.stringify(scanRes));
+        if (scanRes.length > 0) {
+          hilog.info(0x0000, 'testTag',
+            '[Nearlink Test] scan address = %{public}s, rssi = %{public}s, data = %{public}s, deviceName = %{public}s, isConnectable = %{public}s, deviceClass = %{public}s, frameType = %{public}s',
+            JSON.stringify(scanRes[0].address), JSON.stringify(scanRes[0].rssi), JSON.stringify(scanRes[0].data),
+            JSON.stringify(scanRes[0].deviceName), JSON.stringify(scanRes[0].isConnectable),
+            JSON.stringify(scanRes[0].deviceClass), JSON.stringify(scanRes[0].frameType));
+          expect(scanRes.length > 0).assertTrue();
+        } else {
+          expect(scanRes.length === 0).assertTrue();
+        }
+      }
+      try {
+        hilog.info(0x0000, 'testTag', '%{public}s', '[Nearlink Test] call onDeviceFound start');
+        scan.onDeviceFound(onReceiveEvent);
+        hilog.info(0x0000, 'testTag', '%{public}s', '[Nearlink Test] call startScan start');
+        await scan.startScan([scanFilters], scanOptions);
+        hilog.info(0x0000, 'testTag', '%{public}s', '[Nearlink Test] call stopScan start');
+        await scan.stopScan();
+        hilog.info(0x0000, 'testTag', '%{public}s', '[Nearlink Test] call offDeviceFound start');
+        scan.offDeviceFound(onReceiveEvent);
+        hilog.info(0x0000, 'testTag', '%{public}s', '[Nearlink Test] offDeviceFound success');
+        expect(isFrameType4Supported === true).assertTrue();
+      } catch (error) {
+        hilog.info(0x0000, 'testTag', '[Nearlink Test] scan 2200 errCode:%{public}s,errMessage:%{public}s', error.code, error.message);
+        if (error.code === 801) {
+          hilog.info(0x0000, 'testTag', '%{public}s', 'api is not support');
+          expect(error.code).assertEqual(801);
+          expect(isFrameType4Supported === false).assertTrue();
         } else {
           expect().assertFail();
         }

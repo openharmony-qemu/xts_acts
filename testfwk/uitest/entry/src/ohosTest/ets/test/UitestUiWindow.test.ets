@@ -23,6 +23,7 @@ const delegator: AbilityDelegatorRegistry.AbilityDelegator = abilityDelegatorReg
 const waitUiReadyMs: number = 1000;
 const TestTag = 'uitestUiWindowTest';
 const WindowsErrorCode = 17000005;
+let defaultDisplayId: number = 0;
 
 async function startAbility(bundleName: string, abilityName: string) {
   let cmd = `aa start -b ${bundleName} -a ${abilityName}`;
@@ -46,7 +47,8 @@ async function stopApplication(bundleName: string) {
 }
 
 async function setFloat(driver: Driver) {
-  let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+  let disId = display.getDefaultDisplaySync().id;
+  let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: disId })
   console.log(`${TestTag}, setFloat findWindow, ${JSON.stringify(window)}`);
   let windowMode = await window.getWindowMode()
   console.log(`${TestTag}, setFloat getWindowMode, ${JSON.stringify(windowMode)}`);
@@ -57,7 +59,8 @@ async function setFloat(driver: Driver) {
 }
 
 async function setFull(driver: Driver) {
-  let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+  let disId = display.getDefaultDisplaySync().id;
+  let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: disId })
   console.log(`${TestTag}, setFull findWindow, ${JSON.stringify(window)}`);
   let windowMode = await window.getWindowMode()
   console.log(`${TestTag}, setFull getWindowMode, ${JSON.stringify(windowMode)}`);
@@ -69,8 +72,9 @@ async function setFull(driver: Driver) {
 
 async function firstSplit(driver: Driver) {
   await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
-  await driver.delayMs(waitUiReadyMs);
-  let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
+  await driver.delayMs(3000);
+  let disId = display.getDefaultDisplaySync().id;
+  let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: disId })
   console.log(`${TestTag}, firstSplit window,${JSON.stringify(window)}`);
   if (window != null) {
     try {
@@ -87,7 +91,8 @@ async function firstSplit(driver: Driver) {
 }
 
 async function setSplit(driver: Driver) {
-  let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+  let disId = display.getDefaultDisplaySync().id;
+  let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: disId })
   console.log(`${TestTag}, setSplit window,${JSON.stringify(window)}`);
   await window.split()
   await driver.delayMs(waitUiReadyMs * 2)
@@ -95,7 +100,7 @@ async function setSplit(driver: Driver) {
   console.log(`${TestTag}, setSplit scbCom,${JSON.stringify(scbCom)}`);
   if (scbCom != null) {
     await startAbility('com.uitest.acts', 'EntryAbility')
-    await driver.delayMs(waitUiReadyMs * 2)
+    await driver.delayMs(3000)
     let btn0 = await driver.findComponent(ON.text('稍后提示'))
     console.log(`${TestTag}, setSplit scbCom,${JSON.stringify(btn0)}`);
     if (btn0 != null) {
@@ -145,7 +150,8 @@ async function envRecovery(driver: Driver) {
       await driver.pressBack()
       await driver.delayMs(waitUiReadyMs * 3)
     }
-    let resumeWindow = await driver.findWindow({ bundleName: 'com.uitest.acts' })
+    let disId = display.getDefaultDisplaySync().id;
+    let resumeWindow = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: disId })
     if (resumeWindow != null) {
       await resumeWindow.resume()
     }
@@ -160,6 +166,7 @@ export default function uiUiWindowTest() {
   describe('uitestUiWindowTest', () => {
     let driver: Driver
     beforeAll(async () => {
+      defaultDisplayId = display.getDefaultDisplaySync().id;
       driver = Driver.create();
       await driver.delayMs(1000);
       await firstSplit(driver);
@@ -172,8 +179,8 @@ export default function uiUiWindowTest() {
     afterAll(async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
       const driver = Driver.create();
-      await driver.delayMs(waitUiReadyMs);
-      let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
+      await driver.delayMs(3000);
+      let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId });
       console.log(`${TestTag}, afterAll window,${JSON.stringify(window)}`);
       if (window != null) {
         try {
@@ -200,8 +207,8 @@ export default function uiUiWindowTest() {
      */
     it('testApi9_UiWindow_getBundleName', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(waitUiReadyMs)
-      let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+      await driver.delayMs(3000)
+      let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
       let name = await window.getBundleName()
       expect(name == 'com.uitestScene.acts').assertTrue()
       await stopApplication('com.uitestScene.acts')
@@ -217,8 +224,8 @@ export default function uiUiWindowTest() {
      */
     it('testApi9_UiWindow_getTitle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(waitUiReadyMs)
-      let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+      await driver.delayMs(3000)
+      let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
       let title = await window.getTitle()
       expect(title == '').assertTrue()
       await stopApplication('com.uitestScene.acts')
@@ -234,12 +241,13 @@ export default function uiUiWindowTest() {
      */
     it('testApi9_UiWindow_Attr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(waitUiReadyMs)
+      await driver.delayMs(3000)
       let window = await driver.findWindow({
         bundleName: 'com.uitestScene.acts',
         focused: true,
         actived: true,
-        title: ''
+        title: '',
+        displayId: defaultDisplayId
       })
       await window.focus()
       await driver.delayMs(waitUiReadyMs)
@@ -248,7 +256,7 @@ export default function uiUiWindowTest() {
       expect(isFocused == true).assertTrue()
       expect(isActived == true).assertTrue()
       await stopApplication('com.uitestScene.acts')
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testWindowResume_split
@@ -260,11 +268,11 @@ export default function uiUiWindowTest() {
      */
     it('testWindowResume_split', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(waitUiReadyMs)
+      await driver.delayMs(3000)
       try {
         await setSplit(driver)
         await driver.delayMs(waitUiReadyMs)
-        let windowSplit = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let windowSplit = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
         console.log(`${TestTag}, testWindowResume_split setSplit windowSplit,${JSON.stringify(windowSplit)}`);
         let splitMode = await windowSplit.getWindowMode()
         console.log(`${TestTag}, testWindowResume_split setSplit splitMode,${JSON.stringify(splitMode)}`);
@@ -281,7 +289,7 @@ export default function uiUiWindowTest() {
         expect(falseActived).assertFalse()
         await windowSplit.resume()
         await driver.delayMs(waitUiReadyMs)
-        let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
         console.log(`${TestTag}, testWindowResume_split findWindow2 success,${JSON.stringify(window2)}`);
         let windowmode2 = await window2.getWindowMode()
         console.log(`${TestTag}, testWindowResume_split getWindowMode2 success,${JSON.stringify(windowmode2)}`);
@@ -303,11 +311,11 @@ export default function uiUiWindowTest() {
      */
     it('testSplit_split1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(waitUiReadyMs)
+      await driver.delayMs(3000)
       try {
         await setFull(driver)
         await driver.delayMs(waitUiReadyMs)
-        let windowFull = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let windowFull = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
         console.log(`${TestTag}, testSplit_split1 setFull windowFull, ${JSON.stringify(windowFull)}`);
         let fullMode = await windowFull.getWindowMode()
         console.log(`${TestTag}, testSplit_split1 setFull fullMode, ${JSON.stringify(fullMode)}`);
@@ -315,10 +323,10 @@ export default function uiUiWindowTest() {
 
         await setSplit(driver)
         await driver.delayMs(waitUiReadyMs)
-        let windowSplit = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let windowSplit = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
         await windowSplit.split()
         await driver.delayMs(waitUiReadyMs)
-        let window3 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
+        let window3 = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId });
         console.log(`${TestTag}, testSplit_split1 findWindow3 success,${JSON.stringify(window3)}`);
         let windowMode = await window3.getWindowMode();
         console.log(`${TestTag}, testSplit_split1 getWindowMode success,${JSON.stringify(windowMode)}`);
@@ -328,7 +336,7 @@ export default function uiUiWindowTest() {
         expect(error.code == WindowsErrorCode).assertTrue()
       }
       await envRecovery(driver)
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testSplit_split2
@@ -346,11 +354,11 @@ export default function uiUiWindowTest() {
         await btn1.click()
         await driver.delayMs(waitUiReadyMs * 7)
       }
-      await driver.delayMs(waitUiReadyMs);
+      await driver.delayMs(3000);
       try {
         await setFloat(driver)
         await driver.delayMs(waitUiReadyMs)
-        let windowFloat = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let windowFloat = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
         console.log(`${TestTag}, testSplit_split2 setFloat windowFloat, ${JSON.stringify(windowFloat)}`);
         let floatMode = await windowFloat.getWindowMode()
         console.log(`${TestTag}, testSplit_split2 setFloat floatMode, ${JSON.stringify(floatMode)}`);
@@ -358,7 +366,7 @@ export default function uiUiWindowTest() {
 
         await setSplit(driver)
         await driver.delayMs(waitUiReadyMs)
-        let window2 = await driver.findWindow({ bundleName: 'com.uitest.acts' });
+        let window2 = await driver.findWindow({ bundleName: 'com.uitest.acts', displayId: defaultDisplayId });
         console.log(`${TestTag}, testSplit_split2 window2: ${JSON.stringify(window2)}`);
         await window2.split();
         await driver.delayMs(waitUiReadyMs * 3)
@@ -367,7 +375,7 @@ export default function uiUiWindowTest() {
           await btn.click()
           await driver.delayMs(waitUiReadyMs * 7)
         }
-        let window4 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
+        let window4 = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId });
         console.log(`${TestTag}, testSplit_split2 findWindow4 success: ${JSON.stringify(window4)}`);
         let windowMode1 = await window4.getWindowMode();
         console.log(`${TestTag}, testSplit_split2 getWindowMode1 success: ${JSON.stringify(windowMode1)}`);
@@ -377,7 +385,7 @@ export default function uiUiWindowTest() {
         expect(error.code == WindowsErrorCode).assertTrue();
       }
       await envRecovery(driver)
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testWindowMoveTo_full
@@ -389,11 +397,11 @@ export default function uiUiWindowTest() {
      */
     it('testWindowMoveTo_full', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(waitUiReadyMs)
+      await driver.delayMs(3000)
       try {
         await setFull(driver)
         await driver.delayMs(waitUiReadyMs)
-        let window1 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let window1 = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
         await window1.moveTo(100, 100)
       } catch (error) {
         console.log('testWindowMoveTo_full error is ' + error)
@@ -411,15 +419,15 @@ export default function uiUiWindowTest() {
      */
     it('testWindowMoveTo_float', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(waitUiReadyMs)
+      await driver.delayMs(3000)
       try {
         await setFloat(driver)
         await driver.delayMs(waitUiReadyMs)
-        let windowFloat = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let windowFloat = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
         let bounds1 = await windowFloat.getBounds()
         await windowFloat.moveTo(100, 100)
         await driver.delayMs(waitUiReadyMs)
-        let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
         console.log(`${TestTag}, testWindowMoveTo_float findWindow2 success, ${JSON.stringify(window2)}`);
         let bounds2 = await window2.getBounds()
         console.log(`${TestTag}, testWindowMoveTo_float getBounds2 success, ${JSON.stringify(bounds2)}`);
@@ -429,7 +437,7 @@ export default function uiUiWindowTest() {
         console.log('testWindowMoveTo_float error is' + error)
         expect(error.code == WindowsErrorCode).assertTrue()
       }
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testWindowMoveTo_split
@@ -441,18 +449,18 @@ export default function uiUiWindowTest() {
      */
     it('testWindowMoveTo_split', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(waitUiReadyMs)
+      await driver.delayMs(3000)
       try {
         await setSplit(driver)
         await driver.delayMs(waitUiReadyMs)
-        let windowSplit = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let windowSplit = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
         await windowSplit.moveTo(100, 100)
       } catch (error) {
         console.log('testWindowMoveTo_split1 error is ' + error)
         expect(error.code == WindowsErrorCode).assertTrue()
       }
       await envRecovery(driver)
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testWindowResize_full
@@ -464,18 +472,18 @@ export default function uiUiWindowTest() {
      */
     it('testWindowResize_full', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(waitUiReadyMs)
+      await driver.delayMs(3000)
       try {
         await setFull(driver)
         await driver.delayMs(waitUiReadyMs)
-        let windowFull = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let windowFull = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
         await windowFull.resize(600, 600, ResizeDirection.RIGHT_DOWN)
         await driver.delayMs(waitUiReadyMs * 2)
       } catch (error) {
         console.log('testWindowResize_full error is ' + error)
         expect(error.code == WindowsErrorCode).assertTrue()
       }
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testWindowResizeA_float
@@ -487,11 +495,11 @@ export default function uiUiWindowTest() {
      */
     it('testWindowResizeA_float', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(waitUiReadyMs)
+      await driver.delayMs(3000)
       try {
         await setFloat(driver)
         await driver.delayMs(waitUiReadyMs)
-        let windowFloat = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let windowFloat = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
         let bounds1 = await windowFloat.getBounds()
         let bounds1x = Math.floor(bounds1.right - bounds1.left)
         let bounds1y = Math.floor(bounds1.bottom - bounds1.top)
@@ -500,7 +508,7 @@ export default function uiUiWindowTest() {
         await windowFloat.resize(resizex, resizey, ResizeDirection.RIGHT_DOWN)
         await driver.delayMs(waitUiReadyMs * 2)
         console.log(`${TestTag}, testWindowResizeA_float windowFloat.resize success `);
-        let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
         console.log(`${TestTag}, testWindowResizeA_float findWindow2 success, ${JSON.stringify(window2)}`);
         let bounds2 = await window2.getBounds()
         console.log(`${TestTag}, testWindowResizeA_float getBounds2 success, ${JSON.stringify(bounds2)}`);
@@ -508,11 +516,11 @@ export default function uiUiWindowTest() {
         await window2.resize(bounds1x, bounds1y, ResizeDirection.RIGHT_DOWN)
         await driver.delayMs(waitUiReadyMs * 2)
 
-        let window3 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let window3 = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
         let bounds3 = await window2.getBounds()
         await window3.resize(resizex, resizey, ResizeDirection.LEFT_DOWN)
         await driver.delayMs(waitUiReadyMs * 2)
-        let window4 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let window4 = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
         console.log(`${TestTag}, testWindowResizeA_float findWindow4 success, ${JSON.stringify(window4)}`);
         let bounds4 = await window4.getBounds()
         console.log(`${TestTag}, testWindowResizeA_float getBounds4 success, ${JSON.stringify(bounds4)}`);
@@ -523,7 +531,7 @@ export default function uiUiWindowTest() {
         console.log('testWindowResizeA_float error is ' + error)
         expect(error.code == WindowsErrorCode).assertTrue()
       }
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testWindowResizeA_UP_float
@@ -535,13 +543,13 @@ export default function uiUiWindowTest() {
      */
     it('testWindowResizeA_UP_float', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(waitUiReadyMs)
+      await driver.delayMs(3000)
       try {
         await setFloat(driver)
         await driver.delayMs(waitUiReadyMs)
         let floatbtn = await driver.findComponent(ON.id('floatingButtonMaximize'))
         if (floatbtn == null) {
-          let window1 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+          let window1 = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
           let bounds1 = await window1.getBounds()
           let bounds1x = Math.floor(bounds1.right - bounds1.left)
           let bounds1y = Math.floor(bounds1.bottom - bounds1.top)
@@ -549,7 +557,7 @@ export default function uiUiWindowTest() {
           let resizey = Math.floor(bounds1y / 2)
           await window1.resize(resizex, resizey, ResizeDirection.RIGHT_UP)
           await driver.delayMs(waitUiReadyMs * 2)
-          let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+          let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
           console.log(`${TestTag}, testWindowResizeA_UP_float findWindow2 success, ${JSON.stringify(window2)}`);
           let bounds2 = await window2.getBounds()
           console.log(`${TestTag}, testWindowResizeA_UP_float getBounds2 success, ${JSON.stringify(bounds2)}`);
@@ -557,11 +565,11 @@ export default function uiUiWindowTest() {
           await window2.resize(bounds1x, bounds1y, ResizeDirection.RIGHT_UP)
           await driver.delayMs(waitUiReadyMs * 2)
 
-          let window3 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+          let window3 = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
           let bounds3 = await window3.getBounds()
           await window3.resize(resizex, resizey, ResizeDirection.LEFT_UP)
           await driver.delayMs(waitUiReadyMs * 2)
-          let window4 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+          let window4 = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
           console.log(`${TestTag}, testWindowResizeA_UP_float findWindow4 success, ${JSON.stringify(window4)}`);
           let bounds4 = await window4.getBounds()
           console.log(`${TestTag}, testWindowResizeA_UP_float getBounds4 success, ${JSON.stringify(bounds4)}`);
@@ -585,11 +593,11 @@ export default function uiUiWindowTest() {
      */
     it('testWindowResizeB_float', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(waitUiReadyMs)
+      await driver.delayMs(3000)
       try {
         await setFloat(driver)
         await driver.delayMs(waitUiReadyMs)
-        let windowFloat = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let windowFloat = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
         let bounds1 = await windowFloat.getBounds()
         let bounds1x = Math.floor(bounds1.right - bounds1.left)
         let bounds1y = Math.floor(bounds1.bottom - bounds1.top)
@@ -597,7 +605,7 @@ export default function uiUiWindowTest() {
         let resizey = Math.floor(bounds1y / 2)
         await windowFloat.resize(bounds1x, resizey, ResizeDirection.DOWN)
         await driver.delayMs(waitUiReadyMs * 2)
-        let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
         console.log(`${TestTag}, testWindowResizeB_float findWindow2 success, ${JSON.stringify(window2)}`);
         let bounds2 = await window2.getBounds()
         console.log(`${TestTag}, testWindowResizeB_float getBounds2 success, ${JSON.stringify(bounds2)}`);
@@ -605,11 +613,11 @@ export default function uiUiWindowTest() {
         await window2.resize(bounds1x, bounds1y, ResizeDirection.DOWN)
         await driver.delayMs(waitUiReadyMs * 2)
 
-        let window6 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let window6 = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
         let bounds6 = await window6.getBounds()
         await window6.resize(resizex, bounds1y, ResizeDirection.RIGHT)
         await driver.delayMs(waitUiReadyMs * 2)
-        let window7 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let window7 = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
         console.log(`${TestTag}, testWindowResizeB_float findWindow7 success, ${JSON.stringify(window7)}`);
         let bounds7 = await window7.getBounds()
         console.log(`${TestTag}, testWindowResizeB_float getBounds7 success, ${JSON.stringify(bounds7)}`);
@@ -617,11 +625,11 @@ export default function uiUiWindowTest() {
         await window7.resize(bounds1x, bounds1y, ResizeDirection.RIGHT)
         await driver.delayMs(waitUiReadyMs * 2)
 
-        let window8 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let window8 = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
         let bounds8 = await window8.getBounds()
         await window8.resize(resizex, bounds1y, ResizeDirection.LEFT)
         await driver.delayMs(waitUiReadyMs * 2)
-        let window9 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let window9 = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
         console.log(`${TestTag}, testWindowResizeB_float findWindow9 success, ${JSON.stringify(window9)}`);
         let bounds9 = await window9.getBounds()
         console.log(`${TestTag}, testWindowResizeB_float getBounds9 success, ${JSON.stringify(bounds9)}`);
@@ -632,7 +640,7 @@ export default function uiUiWindowTest() {
         console.log('testWindowResizeB_float error is ' + error)
         expect(error.code == WindowsErrorCode).assertTrue()
       }
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testWindowResizeB_UP_float
@@ -644,20 +652,20 @@ export default function uiUiWindowTest() {
      */
     it('testWindowResizeB_UP_float', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(waitUiReadyMs)
+      await driver.delayMs(3000)
       try {
         await setFloat(driver)
         await driver.delayMs(waitUiReadyMs)
         let floatbtn = await driver.findComponent(ON.id('floatingButtonMaximize'))
         if (floatbtn == null) {
-          let window1 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+          let window1 = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
           let bounds1 = await window1.getBounds()
           let bounds1x = Math.floor(bounds1.right - bounds1.left)
           let bounds1y = Math.floor(bounds1.bottom - bounds1.top)
           let resizey = Math.floor(bounds1y / 2)
           await window1.resize(bounds1x, resizey, ResizeDirection.UP)
           await driver.delayMs(waitUiReadyMs * 2)
-          let window6 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+          let window6 = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
           console.log(`${TestTag}, testWindowResizeB_UP_float findWindow6 success, ${JSON.stringify(window6)}`);
           let bounds6 = await window6.getBounds()
           console.log(`${TestTag}, testWindowResizeB_UP_float getBounds6 success, ${JSON.stringify(bounds6)}`);
@@ -669,7 +677,7 @@ export default function uiUiWindowTest() {
         console.log('testWindowResizeB_UP_float error is ' + error)
         expect(error.code == WindowsErrorCode).assertTrue()
       }
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testWindowResizeB_split1
@@ -681,7 +689,7 @@ export default function uiUiWindowTest() {
      */
     it('testWindowResizeB_split1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(waitUiReadyMs)
+      await driver.delayMs(3000)
       try {
         await setSplit(driver)
         await driver.delayMs(waitUiReadyMs)
@@ -689,7 +697,7 @@ export default function uiUiWindowTest() {
         await driver.delayMs(waitUiReadyMs)
         // Non-free multi-window mode
         if (scbCom != null) {
-          let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+          let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
           let bounds = await window.getBounds()
           let point = await driver.getDisplaySize()
           // The device's screen splitting mode is left-right split screen.
@@ -697,7 +705,7 @@ export default function uiUiWindowTest() {
             console.log("The device's screen splitting mode is left-right split screen.")
             await window.resize(0, bounds.bottom - bounds.top, ResizeDirection.RIGHT)
             await driver.delayMs(waitUiReadyMs * 2)
-            let window3 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+            let window3 = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
             console.log(`${TestTag}, testWindowResizeB_split1 findWindow3 success ,${JSON.stringify(window3)}`);
             expect(window3 == null).assertTrue()
           }
@@ -717,22 +725,22 @@ export default function uiUiWindowTest() {
               console.log(`${TestTag}, testWindowResizeB_split1 setDisplayRotation success ,${JSON.stringify(direction)}`);
               expect(direction == 1).assertTrue()
             }
-            let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+            let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
             let bounds1 = await window2.getBounds()
             await window2.resize(0, bounds1.bottom - bounds1.top, ResizeDirection.RIGHT)
             await driver.delayMs(waitUiReadyMs * 2)
-            let window3 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+            let window3 = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
             console.log(`${TestTag}, testWindowResizeB_split1 findWindow3 success ,${JSON.stringify(window3)}`);
             expect(window3 == null).assertTrue()
           }
         }
         // Free Multi-Window Mode
         else {
-          let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+          let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
           let bounds1 = await window2.getBounds()
           await window2.resize(500, bounds1.bottom - bounds1.top, ResizeDirection.RIGHT)
           await driver.delayMs(waitUiReadyMs * 2)
-          let window3 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+          let window3 = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
           console.log(`${TestTag}, testWindowResizeB_split1 findWindow3 success ,${JSON.stringify(window3)}`);
           let bounds2 = await window3.getBounds()
           console.log(`${TestTag}, testWindowResizeB_split1 getBounds2 success ,${JSON.stringify(bounds2)}`);
@@ -743,7 +751,7 @@ export default function uiUiWindowTest() {
         expect(error.code == WindowsErrorCode).assertTrue()
       }
       await envRecovery(driver)
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testWindowMinimize_full
@@ -755,21 +763,21 @@ export default function uiUiWindowTest() {
      */
     it('testWindowMinimize_full', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(waitUiReadyMs)
+      await driver.delayMs(3000)
       try {
         await setFull(driver)
         await driver.delayMs(waitUiReadyMs)
-        let windowFull = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let windowFull = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
         await windowFull.minimize()
         await driver.delayMs(waitUiReadyMs)
-        let window1 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let window1 = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
         console.log(`${TestTag}, testWindowMinimize_full findWindow1 success, ${JSON.stringify(window1)}`);
         expect(window1 == null).assertTrue()
       } catch (error) {
         console.log('testWindowMinimize_full error is ' + error)
         expect(error.code == WindowsErrorCode).assertTrue()
       }
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testWindowMinimize_float
@@ -781,21 +789,21 @@ export default function uiUiWindowTest() {
      */
     it('testWindowMinimize_float', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(waitUiReadyMs)
+      await driver.delayMs(3000)
       try {
         await setFloat(driver)
         await driver.delayMs(waitUiReadyMs)
-        let windowFloat = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let windowFloat = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
         await windowFloat.minimize()
         await driver.delayMs(waitUiReadyMs)
-        let window1 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let window1 = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
         console.log(`${TestTag}, testWindowMinimize_float findWindow1 success, ${JSON.stringify(window1)}`);
         expect(window1 == null).assertTrue()
       } catch (error) {
         console.log('testWindowMinimize_full error is ' + error)
         expect(error.code == WindowsErrorCode).assertTrue()
       }
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testWindowMinimize_split
@@ -807,14 +815,14 @@ export default function uiUiWindowTest() {
      */
     it('testWindowMinimize_split', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(waitUiReadyMs)
+      await driver.delayMs(3000)
       try {
         await setSplit(driver)
         await driver.delayMs(waitUiReadyMs)
-        let windowSplit = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let windowSplit = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
         await windowSplit.minimize()
         await driver.delayMs(waitUiReadyMs)
-        let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
         console.log(`${TestTag}, testWindowMinimize_split findWindow2 success,${JSON.stringify(window2)}`);
         expect(window2 == null).assertTrue()
       } catch (error) {
@@ -822,7 +830,7 @@ export default function uiUiWindowTest() {
         expect(error.code == WindowsErrorCode).assertTrue()
       }
       await envRecovery(driver)
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testWindowClose_full
@@ -834,21 +842,21 @@ export default function uiUiWindowTest() {
      */
     it('testWindowClose_full', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(waitUiReadyMs)
+      await driver.delayMs(3000)
       try {
         await setFull(driver)
         await driver.delayMs(waitUiReadyMs)
-        let windowFull = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let windowFull = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
         await windowFull.close()
         await driver.delayMs(waitUiReadyMs)
-        let window1 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let window1 = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
         console.log(`${TestTag}, testWindowClose_full findWindow1 success, ${JSON.stringify(window1)}`);
         expect(window1 == null).assertTrue()
       } catch (error) {
         console.log('testWindowClose_full error is ' + error)
         expect(error.code == WindowsErrorCode).assertTrue()
       }
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testWindowClose_float
@@ -860,21 +868,21 @@ export default function uiUiWindowTest() {
      */
     it('testWindowClose_float', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(waitUiReadyMs)
+      await driver.delayMs(3000)
       try {
         await setFloat(driver)
         await driver.delayMs(waitUiReadyMs)
-        let windowFloat = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let windowFloat = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
         await windowFloat.close()
         await driver.delayMs(waitUiReadyMs)
-        let window1 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let window1 = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
         console.log(`${TestTag}, testWindowClose_float findWindow1 success, ${JSON.stringify(window1)}`);
         expect(window1 == null).assertTrue()
       } catch (error) {
         console.log('testWindowClose_full error is ' + error)
         expect(error.code == WindowsErrorCode).assertTrue()
       }
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testWindowClose_split
@@ -886,14 +894,14 @@ export default function uiUiWindowTest() {
      */
     it('testWindowClose_split', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(waitUiReadyMs)
+      await driver.delayMs(3000)
       try {
         await setSplit(driver)
         await driver.delayMs(waitUiReadyMs)
-        let windowSplit = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let windowSplit = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
         await windowSplit.close()
         await driver.delayMs(waitUiReadyMs)
-        let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
         console.log(`${TestTag}, testWindowClose_split findWindow2 success,${JSON.stringify(window2)}`);
         expect(window2 == null).assertTrue()
       } catch (error) {
@@ -902,7 +910,7 @@ export default function uiUiWindowTest() {
       }
       await stopApplication('com.uitestScene.acts')
       await envRecovery(driver)
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testWindowMaximize_full
@@ -914,17 +922,17 @@ export default function uiUiWindowTest() {
      */
     it('testWindowMaximize_full', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(waitUiReadyMs)
+      await driver.delayMs(3000)
       try {
         await setFull(driver)
         await driver.delayMs(waitUiReadyMs)
-        let windowFull = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let windowFull = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
         await windowFull.maximize()
       } catch (error) {
         console.log('testWindowMaximize_full error is ' + error)
         expect(error.code == WindowsErrorCode).assertTrue()
       }
-    })
+    }, undefined, 'emulator')
 
     /**
      * @tc.name   testWindowMaximize_float
@@ -936,14 +944,14 @@ export default function uiUiWindowTest() {
      */
     it('testWindowMaximize_float', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(waitUiReadyMs)
+      await driver.delayMs(3000)
       try {
         await setFloat(driver)
         await driver.delayMs(waitUiReadyMs)
-        let windowFloat = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let windowFloat = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
         await windowFloat.maximize()
         await driver.delayMs(waitUiReadyMs)
-        let window3 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let window3 = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
         console.log(`${TestTag}, testWindowMaximize_float findWindow3 success, ${JSON.stringify(window3)}`);
         let mode = await window3.getWindowMode()
         console.log(`${TestTag}, testWindowMaximize_float getWindowMode success, ${JSON.stringify(mode)}`);
@@ -964,14 +972,14 @@ export default function uiUiWindowTest() {
      */
     it('testWindowMaximize_split', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(waitUiReadyMs)
+      await driver.delayMs(3000)
       try {
         await setSplit(driver)
         await driver.delayMs(waitUiReadyMs)
-        let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
         await window2.maximize()
         await driver.delayMs(waitUiReadyMs)
-        let window3 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let window3 = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
         console.log(`${TestTag}, testWindowMaximize_split findWindow3 success,${JSON.stringify(window3)}`);
         let mode = await window3.getWindowMode()
         console.log(`${TestTag}, testWindowMaximize_split getWindowMode success,${JSON.stringify(mode)}`);

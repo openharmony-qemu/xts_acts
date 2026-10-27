@@ -186,6 +186,25 @@ struct CalendarPickerDialogFirstDayOfWeekExample {
             }
           });
         }).id('firstDayOfWeek008')
+
+      Button('UNDEFINED')
+        .margin(10)
+        .onClick((e: ClickEvent) => {
+          console.info('CalendarDialog.show');
+          CalendarPickerDialog.show({
+            selected: this.selectedDate,
+            firstDayOfWeek: undefined,
+            onAccept: (value) => {
+              console.info('calendar onAccept:' + JSON.stringify(value));
+            },
+            onCancel: () => {
+              console.info('calendar onCancel');
+            },
+            onChange: (value) => {
+              console.info('calendar onChange:' + JSON.stringify(value));
+            }
+          });
+        }).id('firstDayOfWeek011')
     }.width('100%').margin({ top: 50 } as Margin)
   }
 }

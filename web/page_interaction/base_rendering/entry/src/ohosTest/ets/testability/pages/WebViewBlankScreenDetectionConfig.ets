@@ -19,6 +19,34 @@ import events_emitter from '@ohos.events.emitter';
 import { Hypium } from '@ohos/hypium';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import testsuite from '../../test/List.test';
+import {
+  REASON_DNS_RESOLVE_FAILED,
+  REASON_REQUEST_TIMED_OUT,
+  REASON_CONNECTION_REFUSED,
+  REASON_CONNECTION_RESET,
+  REASON_SSL_ERROR,
+  REASON_CERT_ERROR,
+  REASON_INTERNET_DISCONNECTED,
+  REASON_REDIRECT_LOOP,
+  REASON_PROXY_ERROR,
+  REASON_OTHER_NETWORK_ERROR,
+  REASON_MAIN_DOC_EMPTY,
+  REASON_HTTP_4XX_ERROR,
+  REASON_HTTP_5XX_ERROR,
+  REASON_JS_GLOBAL_BUNDLE_LOAD_FAILED,
+  REASON_CSS_LOAD_FAILED,
+  REASON_MULTI_RESOURCE_LOAD_FAILED,
+  REASON_CORS_BLOCKED,
+  REASON_CSP_BLOCKED,
+  REASON_MIXED_CONTENT_BLOCKED,
+  REASON_JS_RUNTIME_ERROR,
+  REASON_NO_FIRST_CONTENTFUL_PAINT,
+  REASON_RENDERER_CRASHED,
+  REASON_RENDERER_KILLED,
+  REASON_GPU_PROCESS_CRASHED,
+  REASON_GPU_PROCESS_WATCHDOG_TIMEOUT,
+  REASON_WEB_VIEW_ZERO_SIZE
+} from '../../test/BlankScreenReasonValues';
 const EVENT_ID_SET_SUITE_KEY = 183117;
 const TAG = 'ContextMenu';
 
@@ -31,6 +59,7 @@ struct webViewController {
   @State isPageEnd: number = -1;
   @State blankScreenReasonArr:DetectedBlankScreenReason[] = [DetectedBlankScreenReason.NO_CONTENTFUL_NODES,DetectedBlankScreenReason.SUB_THRESHOLD_CONTENTFUL_NODES]
   @State flag: number = 1;
+  @State monitoredBlankScreenRegistered: boolean = false;
 
 
 
@@ -72,6 +101,7 @@ struct webViewController {
           .key('WebViewBlankScreenDetectionConfigButton').onClick(async () => {
           console.info("key==>" + this.str)
           await Utils.waitForExist(() => this.isReceive, this.str + ' isReceive', 1, 1000);
+          this.isReceive = -1;
           switch (this.str) {
             case "emitWebViewBlankScreenDetectionConfig": {
               try {
@@ -107,6 +137,200 @@ struct webViewController {
               break;
             }
 
+            case "emitOnMonitoredBlankScreenCall001": {
+              try {
+                Utils.emitEvent(true, 20261001);
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+
+            case "emitOnMonitoredBlankScreenParam001": {
+              try {
+                let callback: OnMonitorBlankScreenCallback = (event: MonitoredBlankScreenEventInfo) => {
+                  Utils.emitEvent(event.url, 20261010);
+                  Utils.emitEvent(event.reason, 20261011);
+                  Utils.emitEvent(event.extraMsg, 20261012);
+                };
+                let paramEvent: MonitoredBlankScreenEventInfo = {
+                  url: 'resource://rawfile/kongbai.html',
+                  reason: REASON_MAIN_DOC_EMPTY,
+                  extraMsg: 'main document is empty'
+                };
+                callback(paramEvent);
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+
+            case "emitOnMonitoredBlankScreenReturn001": {
+              try {
+                this.isPageEnd = -1;
+                this.webcontroller.loadUrl($rawfile('1text.html'));
+                await Utils.waitForExist(() => this.isPageEnd, 'emitOnMonitoredBlankScreenReturn001', 1, 1000);
+                Utils.emitEvent(true, 20261020);
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+
+            case "emitBlankScreenReasonDnsResolveFailed001": {
+              Utils.emitEvent(REASON_DNS_RESOLVE_FAILED, 20261101);
+              break;
+            }
+            case "emitBlankScreenReasonRequestTimedOut001": {
+              Utils.emitEvent(REASON_REQUEST_TIMED_OUT, 20261102);
+              break;
+            }
+            case "emitBlankScreenReasonConnectionRefused001": {
+              Utils.emitEvent(REASON_CONNECTION_REFUSED, 20261103);
+              break;
+            }
+            case "emitBlankScreenReasonConnectionReset001": {
+              Utils.emitEvent(REASON_CONNECTION_RESET, 20261104);
+              break;
+            }
+            case "emitBlankScreenReasonSslError001": {
+              Utils.emitEvent(REASON_SSL_ERROR, 20261105);
+              break;
+            }
+            case "emitBlankScreenReasonCertError001": {
+              Utils.emitEvent(REASON_CERT_ERROR, 20261106);
+              break;
+            }
+            case "emitBlankScreenReasonInternetDisconnected001": {
+              Utils.emitEvent(REASON_INTERNET_DISCONNECTED, 20261107);
+              break;
+            }
+            case "emitBlankScreenReasonRedirectLoop001": {
+              Utils.emitEvent(REASON_REDIRECT_LOOP, 20261108);
+              break;
+            }
+            case "emitBlankScreenReasonProxyError001": {
+              Utils.emitEvent(REASON_PROXY_ERROR, 20261109);
+              break;
+            }
+            case "emitBlankScreenReasonOtherNetworkError001": {
+              Utils.emitEvent(REASON_OTHER_NETWORK_ERROR, 20261110);
+              break;
+            }
+            case "emitBlankScreenReasonMainDocEmpty001": {
+              Utils.emitEvent(REASON_MAIN_DOC_EMPTY, 20261111);
+              break;
+            }
+            case "emitBlankScreenReasonHttp4xxError001": {
+              Utils.emitEvent(REASON_HTTP_4XX_ERROR, 20261112);
+              break;
+            }
+            case "emitBlankScreenReasonHttp5xxError001": {
+              Utils.emitEvent(REASON_HTTP_5XX_ERROR, 20261113);
+              break;
+            }
+            case "emitBlankScreenReasonJsGlobalBundleLoadFailed001": {
+              Utils.emitEvent(REASON_JS_GLOBAL_BUNDLE_LOAD_FAILED, 20261114);
+              break;
+            }
+            case "emitBlankScreenReasonCssLoadFailed001": {
+              Utils.emitEvent(REASON_CSS_LOAD_FAILED, 20261115);
+              break;
+            }
+            case "emitBlankScreenReasonMultiResourceLoadFailed001": {
+              Utils.emitEvent(REASON_MULTI_RESOURCE_LOAD_FAILED, 20261116);
+              break;
+            }
+            case "emitBlankScreenReasonCorsBlocked001": {
+              Utils.emitEvent(REASON_CORS_BLOCKED, 20261117);
+              break;
+            }
+            case "emitBlankScreenReasonCspBlocked001": {
+              Utils.emitEvent(REASON_CSP_BLOCKED, 20261118);
+              break;
+            }
+            case "emitBlankScreenReasonMixedContentBlocked001": {
+              Utils.emitEvent(REASON_MIXED_CONTENT_BLOCKED, 20261119);
+              break;
+            }
+            case "emitBlankScreenReasonJsRuntimeError001": {
+              Utils.emitEvent(REASON_JS_RUNTIME_ERROR, 20261120);
+              break;
+            }
+            case "emitBlankScreenReasonNoFirstContentfulPaint001": {
+              Utils.emitEvent(REASON_NO_FIRST_CONTENTFUL_PAINT, 20261121);
+              break;
+            }
+            case "emitBlankScreenReasonRendererCrashed001": {
+              Utils.emitEvent(REASON_RENDERER_CRASHED, 20261122);
+              break;
+            }
+            case "emitBlankScreenReasonRendererKilled001": {
+              Utils.emitEvent(REASON_RENDERER_KILLED, 20261123);
+              break;
+            }
+            case "emitBlankScreenReasonGpuProcessCrashed001": {
+              Utils.emitEvent(REASON_GPU_PROCESS_CRASHED, 20261124);
+              break;
+            }
+            case "emitBlankScreenReasonGpuProcessWatchdogTimeout001": {
+              Utils.emitEvent(REASON_GPU_PROCESS_WATCHDOG_TIMEOUT, 20261125);
+              break;
+            }
+            case "emitBlankScreenReasonWebViewZeroSize001": {
+              Utils.emitEvent(REASON_WEB_VIEW_ZERO_SIZE, 20261126);
+              break;
+            }
+            case "emitMonitoredBlankScreenEventInfoInterface001": {
+              let info: MonitoredBlankScreenEventInfo = {
+                url: 'resource://rawfile/kongbai.html',
+                reason: REASON_SSL_ERROR,
+                extraMsg: 'ssl handshake failed'
+              };
+              Utils.emitEvent(info != null, 20261201);
+              break;
+            }
+            case "emitMonitoredBlankScreenEventInfoUrl001": {
+              let info: MonitoredBlankScreenEventInfo = {
+                url: 'resource://rawfile/kongbai.html',
+                reason: REASON_MAIN_DOC_EMPTY,
+                extraMsg: ''
+              };
+              Utils.emitEvent(info.url, 20261202);
+              break;
+            }
+            case "emitMonitoredBlankScreenEventInfoReason001": {
+              let info: MonitoredBlankScreenEventInfo = {
+                url: 'resource://rawfile/kongbai.html',
+                reason: REASON_DNS_RESOLVE_FAILED,
+                extraMsg: 'dns error'
+              };
+              Utils.emitEvent(info.reason, 20261203);
+              break;
+            }
+            case "emitMonitoredBlankScreenEventInfoExtraMsg001": {
+              let info: MonitoredBlankScreenEventInfo = {
+                url: 'resource://rawfile/kongbai.html',
+                reason: REASON_REQUEST_TIMED_OUT,
+                extraMsg: 'request timed out after 30s'
+              };
+              Utils.emitEvent(info.extraMsg, 20261204);
+              break;
+            }
+            case "emitOnMonitorBlankScreenCallbackType001": {
+              let callback: OnMonitorBlankScreenCallback = (event: MonitoredBlankScreenEventInfo) => {
+                console.log(`callback url ${event.url}, reason ${event.reason}, extra ${event.extraMsg}`);
+              };
+              let callbackEvent: MonitoredBlankScreenEventInfo = {
+                url: 'resource://rawfile/kongbai.html',
+                reason: REASON_CERT_ERROR,
+                extraMsg: 'cert invalid'
+              };
+              callback(callbackEvent);
+              Utils.emitEvent(true, 20261205);
+              break;
+            }
+
           }
         })
       }
@@ -133,6 +357,11 @@ struct webViewController {
           detectionTiming: [2, 4, 6, 8],
           contentfulNodesCountThreshold: 17,
           detectionMethods: [BlankScreenDetectionMethod.DETECTION_CONTENTFUL_NODES_SEVENTEEN]
+        })
+        .enableBlankScreenMonitor(true)
+        .onMonitoredBlankScreen((event: MonitoredBlankScreenEventInfo) => {
+          console.log(`Monitored blank screen on ${event.url}, reason ${event.reason}, extra ${event.extraMsg}`);
+          this.monitoredBlankScreenRegistered = true;
         })
         .width('100%')
         .height('80%')

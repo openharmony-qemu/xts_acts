@@ -23,6 +23,8 @@ import inspector from '@ohos.arkui.inspector';
 
 
 
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
+
 export default function dialogTransitionTest() {
   describe('dialogTransitionTest', () => {
 
@@ -78,7 +80,7 @@ it('dialogTransitionTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Lev
       await CommonFunc.sleep(2000);
       let text: string = AppStorage.get<string>('text')!
       expect(text).assertEqual('onWillAppear');
-      await driver.triggerKey(2070);
+      await driver.triggerKey(2070, displayID);
       await CommonFunc.sleep(2000);
       let text1: string = AppStorage.get<string>('text')!
       expect(text1).assertEqual('onDidDisappear');

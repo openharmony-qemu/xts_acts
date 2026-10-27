@@ -82,6 +82,7 @@ export default function securityManagerTest() {
     testUKeyFullLifecycle();
     testSetWeakPinEnable();
     testIsWeakPinEnabled();
+    testGetPasswordLastChangedTime();
   })
 }
 
@@ -5225,6 +5226,166 @@ function testIsWeakPinEnabled() {
       expect(result).assertEqual(false);
     } catch (error) {
       expect(false).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+}
+
+function testGetPasswordLastChangedTime() {
+  const ACCOUNT_ID_ZERO: number = 0;
+
+  /**
+   * @tc.name   test_get_password_last_changed_time_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_PASSWORD_LAST_CHANGED_TIME_JS_0100
+   * @tc.desc   test getPasswordLastChangedTime without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_password_last_changed_time_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      securityManager.getPasswordLastChangedTime(CURRENT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 9200001).assertTrue();
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_password_last_changed_time_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_PASSWORD_LAST_CHANGED_TIME_JS_0200
+   * @tc.desc   test getPasswordLastChangedTime with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_password_last_changed_time_0200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      securityManager.getPasswordLastChangedTime(CURRENT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 9200002).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_password_last_changed_time_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_PASSWORD_LAST_CHANGED_TIME_JS_0300
+   * @tc.desc   test getPasswordLastChangedTime success
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("test_get_password_last_changed_time_0300", Level.LEVEL0, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let result: number = securityManager.getPasswordLastChangedTime(CURRENT_USER_ID);
+      expect(result >= 0).assertTrue();
+    } catch (error) {
+      if (error.code === 9200016) {
+        expect(error.code === 9200016).assertTrue();
+      } else if (error.code === 9200012) {
+        expect(error.code === 9200012).assertTrue();
+      } else {
+        expect(false).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_password_last_changed_time_0400
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_PASSWORD_LAST_CHANGED_TIME_JS_0400
+   * @tc.desc   test getPasswordLastChangedTime with invalid accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_password_last_changed_time_0400", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.getPasswordLastChangedTime(INVALID_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 9200012).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_password_last_changed_time_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_PASSWORD_LAST_CHANGED_TIME_JS_0500
+   * @tc.desc   test getPasswordLastChangedTime with null accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_password_last_changed_time_0500", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.getPasswordLastChangedTime(null);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_password_last_changed_time_0600
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_PASSWORD_LAST_CHANGED_TIME_JS_0600
+   * @tc.desc   test getPasswordLastChangedTime with undefined accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_password_last_changed_time_0600", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.getPasswordLastChangedTime(undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_password_last_changed_time_0700
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_PASSWORD_LAST_CHANGED_TIME_JS_0700
+   * @tc.desc   test getPasswordLastChangedTime with accountId 0
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_password_last_changed_time_0700", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let result: number = securityManager.getPasswordLastChangedTime(ACCOUNT_ID_ZERO);
+      expect(result >= 0).assertTrue();
+    } catch (error) {
+      if (error.code === 9200016) {
+        expect(error.code === 9200016).assertTrue();
+      } else if (error.code === 9200012) {
+        expect(error.code === 9200012).assertTrue();
+      } else {
+        expect(false).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }

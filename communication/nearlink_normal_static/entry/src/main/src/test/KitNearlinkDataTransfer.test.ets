@@ -24,6 +24,7 @@ import hilog from '@ohos.hilog';
 export default function dataTransferTest(): void {
   describe('dataTransferTest', () => {
     let return_boolean: boolean;
+    let isFrameType4Supported: boolean;
     let TIME_SLEEP: int = 2000;
     let ADDRESS = "11:22:33:44:55:66";
     let ADDRESS_Invailable1 = "11:22:33:44:55:6";
@@ -47,6 +48,7 @@ export default function dataTransferTest(): void {
       await Utils.msSleep(TIME_SLEEP);
       await Utils.clickRequestPermission();
       return_boolean = manager.isNearLinkSupported();
+      isFrameType4Supported = manager.isFrameType4Supported();
       hilog.info(0x0000, 'testTag', '%{public}s', '[Nearlink Test] beforeAll end');
       done();
     })
@@ -1470,6 +1472,90 @@ export default function dataTransferTest(): void {
           expect(err.code).assertEqual(801);
         } else {
           expect(err.code).assertEqual(36100043);
+        }
+      }
+      done();
+    })
+    /**
+     * @tc.name SUB_Communication_XTS_NearLinkPub_DataTransfer_static_5900
+     * @tc.number SUB_Communication_XTS_NearLinkPub_DataTransfer_5900
+     * @tc.desc dataTransfer connect with frameType FRAME_TYPE_1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('SUB_Communication_XTS_NearLinkPub_DataTransfer_static_5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let params: dataTransfer.ConnectionParams = {
+        address:ADDRESS,
+        uuid:UUID,
+        frameType:constant.FrameType.FRAME_TYPE_1
+      }
+      try {
+        hilog.info(0x0000, 'testTag', '%{public}s', '[Nearlink Test] call connect start');
+        await dataTransfer.connect(params);
+      } catch (err) {
+        hilog.info(0x0000, 'testTag', '[nearLink_test]dataTransfer connect fail %{public}s', JSON.stringify(err));
+        if (err.code === 801) {
+          hilog.info(0x0000, 'testTag', '%{public}s', 'api is not support');
+          expect(err.code).assertEqual(801);
+        } else {
+          expect().assertFail();
+        }
+      }
+
+      try {
+        hilog.info(0x0000, 'testTag', '%{public}s', '[Nearlink Test] call disconnect start');
+        await dataTransfer.disconnect(params);
+      } catch (err) {
+        hilog.info(0x0000, 'testTag', '[nearLink_test]dataTransfer disconnect fail %{public}s', JSON.stringify(err));
+        if (err.code === 801) {
+          hilog.info(0x0000, 'testTag', '%{public}s', 'api is not support');
+          expect(err.code).assertEqual(801);
+        } else {
+          expect().assertFail();
+        }
+      }
+      done();
+    })
+    /**
+     * @tc.name SUB_Communication_XTS_NearLinkPub_DataTransfer_static_6000
+     * @tc.number SUB_Communication_XTS_NearLinkPub_DataTransfer_6000
+     * @tc.desc dataTransfer connect with frameType FRAME_TYPE_4
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('SUB_Communication_XTS_NearLinkPub_DataTransfer_static_6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let params: dataTransfer.ConnectionParams = {
+        address:ADDRESS,
+        uuid:UUID,
+        frameType:constant.FrameType.FRAME_TYPE_4
+      }
+      try {
+        hilog.info(0x0000, 'testTag', '%{public}s', '[Nearlink Test] call connect start');
+        await dataTransfer.connect(params);
+        expect(isFrameType4Supported === true).assertTrue();
+      } catch (err) {
+        hilog.info(0x0000, 'testTag', '[nearLink_test]dataTransfer connect fail %{public}s', JSON.stringify(err));
+        if (err.code === 801) {
+          hilog.info(0x0000, 'testTag', '%{public}s', 'api is not support');
+          expect(err.code).assertEqual(801);
+          expect(isFrameType4Supported === false).assertTrue();
+        } else {
+          expect().assertFail();
+        }
+      }
+
+      try {
+        hilog.info(0x0000, 'testTag', '%{public}s', '[Nearlink Test] call disconnect start');
+        await dataTransfer.disconnect(params);
+      } catch (err) {
+        hilog.info(0x0000, 'testTag', '[nearLink_test]dataTransfer disconnect fail %{public}s', JSON.stringify(err));
+        if (err.code === 801) {
+          hilog.info(0x0000, 'testTag', '%{public}s', 'api is not support');
+          expect(err.code).assertEqual(801);
+        } else {
+          expect().assertFail();
         }
       }
       done();
