@@ -206,6 +206,7 @@ export default function wifiEapTest(): void {
         try {
           hilog.info(domain, tag, "SUB_Communication_Netmanager_Eap_js_static_0200 regCustomEapHandler start");
           eap.regCustomEapHandler(validNetType, validEapCode, validEapType, getEapData);
+          done();
         } catch(err) {
           hilog.info(domain, tag, "SUB_Communication_Netmanager_Eap_js_static_0200 regCustomEapHandler fail" + `code:${JSON.stringify(err?.code)}` + `message:${JSON.stringify(err?.message)}`);
           done();
