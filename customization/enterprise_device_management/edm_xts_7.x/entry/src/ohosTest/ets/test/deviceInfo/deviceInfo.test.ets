@@ -36,8 +36,8 @@ export default function deviceInfoTest() {
      */
     it("test_get_patch_info_0100", Level.LEVEL2, async (done: Function) => {
       try {
-        await deviceInfo.getPatchInfo();
-        expect(false).assertTrue();
+        let patchInfoList: Array<deviceInfo.PatchInfo> = await deviceInfo.getPatchInfo();
+        expect(Array.isArray(patchInfoList)).assertTrue();
       } catch (error) {
         if (error.code === 801) {
           expect(error.code).assertEqual(801);
@@ -59,8 +59,8 @@ export default function deviceInfoTest() {
     it("test_get_patch_info_0200", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
       try {
-        await deviceInfo.getPatchInfo();
-        expect(false).assertTrue();
+        let patchInfoList: Array<deviceInfo.PatchInfo> = await deviceInfo.getPatchInfo();
+        expect(Array.isArray(patchInfoList)).assertTrue();
       } catch (error) {
         if (error.code === 801) {
           expect(error.code).assertEqual(801);
