@@ -68,11 +68,8 @@ export default function ActsNotificationAnsGetNotificationSettingTest() {
         // 3. 滚动到底部，关闭“桌面角标”
         let scrollBar = await driver.findComponent(ON.text('桌面角标'))
         console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
-        expect(scrollBar != null).assertTrue()
-        if (scrollBar !== null) {
-          await scrollBar.scrollToBottom()
-          await sleep(1000)
-        }
+        await scrollBar?.scrollToBottom()
+        await sleep(1000)
         let button2 = await driver.findComponent(ON.text('桌面角标'));
         console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
         if (button2 !== null) {
@@ -84,7 +81,7 @@ export default function ActsNotificationAnsGetNotificationSettingTest() {
         // 4. 滚动回顶部，关闭“允许通知”
         let scrollBar1 = await driver.findComponent(ON.text('桌面角标'))
         console.info(testNum + `scrollToTop scrollBar, ${JSON.stringify(scrollBar1)} `);
-        await scrollBar1.scrollToTop()
+        await scrollBar1?.scrollToTop()
         await sleep(1500);
         let button3 = await driver.findComponent(ON.type('Toggle').isAfter(ON.text('允许通知')));
         console.info(testNum + `button3 is ${JSON.stringify(button3)}`);
