@@ -15,7 +15,7 @@
  */
 
 import hilog from '@ohos.hilog';
-import {  afterEach, beforeAll, describe, expect, it, Level  } from '../../../hypium/index';
+import {  afterEach, beforeAll, describe, expect, it, Level  } from '@ohos/hypium-static/src/main/indexStatic';
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';

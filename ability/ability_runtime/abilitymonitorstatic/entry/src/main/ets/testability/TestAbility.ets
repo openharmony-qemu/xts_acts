@@ -19,7 +19,7 @@ import Want from '@ohos.app.ability.Want';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import window from '@ohos.window';
 import hilog from '@ohos.hilog';
-import { Hypium } from '../../../hypium/index';
+import { Hypium } from '@ohos/hypium-static/src/main/indexStatic';
 import testsuite from '../../src/test/List.test';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
