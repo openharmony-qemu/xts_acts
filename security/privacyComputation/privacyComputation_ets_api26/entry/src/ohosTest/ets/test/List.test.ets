@@ -18,10 +18,10 @@ import SecurityPrivacyComputationApiCoverParamTest from './SecurityPrivacyComput
 import SecurityPrivacyComputationApiCoverParamSpecTest from './SecurityPrivacyComputationApiCoverParamSpec.test';
 import SecurityPrivacyComputationFuncTest from './SecurityPrivacyComputationFunc.test';
 import SecurityPrivacyComputationSoftwareTest from './SecurityPrivacyComputationSoftware.test';
-import { CheckSoftware } from './utils/privacyComputation/PrivacyComputationUtils';
 
-export default async function testsuite(): Promise<void> {
-  const useSoftware: boolean = await CheckSoftware();
+export default function testsuite(): void {
+  // Only devices with the HUKS crypto extension provide the vendor privacyComputation implementation.
+  const useSoftware: boolean = !canIUse("SystemCapability.Security.Huks.CryptoExtension");
   if (useSoftware) {
     SecurityPrivacyComputationSoftwareTest();
     return;
