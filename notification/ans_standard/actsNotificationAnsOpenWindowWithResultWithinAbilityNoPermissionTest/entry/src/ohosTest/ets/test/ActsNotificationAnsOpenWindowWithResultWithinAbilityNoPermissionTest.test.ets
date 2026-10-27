@@ -26,7 +26,7 @@ let ctx = getContext(this) as common.UIAbilityContext;
 function sleep(time: number) {
   return new Promise((resolve: (value: string) => void) => {
     setTimeout(() => {
-      resolve('ok');
+      resolve("ok");
     }, time)
   });
 }
@@ -170,7 +170,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
         }
         let scrollBar = await driver.findComponent(ON.text('桌面角标'));
         console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
-        await scrollBar.scrollToBottom()
+        await scrollBar?.scrollToBottom()
         await sleep(1500);
         let button2 = await driver.findComponent(ON.text('桌面角标'));
         console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
