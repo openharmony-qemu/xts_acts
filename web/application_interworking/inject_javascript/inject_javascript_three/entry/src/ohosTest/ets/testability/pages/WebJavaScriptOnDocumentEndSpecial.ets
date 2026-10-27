@@ -114,7 +114,9 @@ struct WebJavaScriptOnDocumentEndSpecial {
         .onConsole((event) => {
           if (event) {
             let msg = event.message.getMessage();
-            this.message.push(msg);
+            if (msg.indexOf('javaScriptOnDocumentEnd') >= 0) {
+              this.message.push(msg);
+            }
             console.log('javaScriptOnDocumentEnd message===>' + this.message);
           }
           return false
