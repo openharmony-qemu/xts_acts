@@ -17,7 +17,7 @@ import eapTest from './Eap.test';
 import { deviceInfo } from '@kit.BasicServicesKit';
 
 export default function testsuite() {
-  if(canIUse('SystemCapability.Communication.NetManager.Eap') && deviceInfo.deviceType !== 'phone'){
+  if(canIUse('SystemCapability.Communication.NetManager.Eap'){
     eapTest();
   }else{
     EmptyTest();
