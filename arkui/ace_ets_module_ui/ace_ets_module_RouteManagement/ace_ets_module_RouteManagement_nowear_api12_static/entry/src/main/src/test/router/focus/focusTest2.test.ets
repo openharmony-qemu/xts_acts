@@ -69,19 +69,24 @@ it('focus_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
 
-      await driver.triggerKey(2049);
-      await CommonFunc.sleep(1000);
-
       let displayId: undefined | Int = 0;
       let btn1 = await driver.findComponent(ON.id('focus1_btn1'));
       await CommonFunc.sleep(1000);
       displayId = await btn1?.getDisplayId();
       await CommonFunc.sleep(1000);
+
+      if (displayId != undefined) {
+        await driver.triggerKey(2049, displayId as Int);
+      }
+      await CommonFunc.sleep(1000);
+
       let btn1_isFocusedValue = await btn1!.isFocused()
       expect(btn1_isFocusedValue).assertEqual(true);
       console.info('[focus_0100] btn1 isFocused');
 
-      await driver.triggerKey(2049);
+      if (displayId != undefined) {
+        await driver.triggerKey(2049, displayId as Int);
+      }
       await CommonFunc.sleep(1000);
 
       let btn2 = await driver.findComponent(ON.id('focus1_btn2'));
@@ -93,7 +98,9 @@ it('focus_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       await CommonFunc.sleep(2000);
       console.info('[focus_0100] btn2 click');
 
-      await driver.triggerKey(2049);
+      if (displayId != undefined) {
+        await driver.triggerKey(2049, displayId as Int);
+      }
       await CommonFunc.sleep(1000);
 
       let btn3 = await driver.findComponent(ON.id('focus01_btn1'));

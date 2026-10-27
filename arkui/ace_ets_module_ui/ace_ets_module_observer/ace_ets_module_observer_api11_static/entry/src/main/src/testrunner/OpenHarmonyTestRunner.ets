@@ -35,29 +35,31 @@ export class OpenHarmonyTestRunner implements TestRunner {
     hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner OnPrepare');
     abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
   }
+  public get onRun(): () => void {
+    return () => {
+      hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun');
 
-  public onRun: () => void = () => {
-    hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun');
+      abilityDelegatorArguments = abilityDelegatorRegistry.getArguments();
+      abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 
-    abilityDelegatorArguments = abilityDelegatorRegistry.getArguments();
-    abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-
-    let cmd = 'aa start -d 0 -a EntryAbility' + ' -b ' + abilityDelegatorArguments.bundleName
-    let debug = abilityDelegatorArguments.parameters['-D']
-    if (debug == 'true') {
-      cmd += ' -D'
+      let cmd = 'aa start -d 0 -a EntryAbility' + ' -b ' + abilityDelegatorArguments.bundleName
+      let debug = abilityDelegatorArguments.parameters['-D']
+      if (debug == 'true') {
+        cmd += ' -D'
+      }
+      let user = abilityDelegatorArguments.parameters['-u'];
+      if (user !== undefined) {
+        cmd += ' -u ' + user;
+      }
+      hilog.info(domain, tag, 'cmd : %{public}s', cmd);
+      abilityDelegator.executeShellCommand(cmd)
+      hilog.info(domain, tag, '%{public}s', 'wait for ability ready...');
+      setTimeout(() => {
+        hilog.info(domain, tag, '%{public}s', 'start run testcase!!!');
+        Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite);
+        hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun end');
+      }, 4000)
     }
-    let user = abilityDelegatorArguments.parameters['-u'];
-    if (user !== undefined) {
-      cmd += ' -u ' + user;
-    }
-    hilog.info(domain, tag, 'cmd : %{public}s', cmd);
-    abilityDelegator.executeShellCommand(cmd)
-    hilog.info(domain, tag, '%{public}s', 'wait for ability ready...');
-    setTimeout(() => {
-      hilog.info(domain, tag, '%{public}s', 'start run testcase!!!');
-      Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite);
-      hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun end');
-    }, 4000)
   }
+  public set onRun(_: () => void) {}
 }
