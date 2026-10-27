@@ -16,9 +16,14 @@
 import EtherNetNoPTest from './EthernetNoP.test';
 import WebSocketPermissionDeniedTest from './SocketNop.test';
 import NetFirewallNoPTest from './NetfirewallNop.test';
+import { canIUse } from '@internal.full.global';
 
 export default function testsuite(): void {
-    EtherNetNoPTest();
+    if (canIUse("SystemCapability.Communication.NetManager.NetFirewall")) {
+        NetFirewallNoPTest();
+    }
+    if (canIUse("SystemCapability.Communication.NetManager.Ethernet")){
+        EtherNetNoPTest();
+    }
     WebSocketPermissionDeniedTest();
-    NetFirewallNoPTest();
 }
