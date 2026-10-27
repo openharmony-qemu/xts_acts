@@ -77,6 +77,7 @@ export default function WaterFlow_scrollTo() {
      * @tc.level    Level.LEVEL0
      */
     it('WaterFlow_scrollTo_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.sleep(1000);
       let driver = Driver.create();
       await Utils.sleep(1000);
       let btn1 = await driver.findComponent(ON.id('Button2'));

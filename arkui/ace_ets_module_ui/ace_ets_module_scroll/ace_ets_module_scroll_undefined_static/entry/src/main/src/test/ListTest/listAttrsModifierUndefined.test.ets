@@ -692,18 +692,22 @@ export default function ListAttrsModifierUndefinedTest() {
       await CommonFunc.sleep(1000);
       console.info("[ListAttrsModifierUndefinedTest_static_1700] click List_onScrollStart");
       await (changeBtn_top?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(2000);
       expect(await (text?.getText() as Promise<String>)).assertEqual('onScrollStart');
       await CommonFunc.sleep(1000);
+
+      // 先关闭 onScrollStart，避免 flingBottom 时 onScrollStart 覆盖 onScrollStop
+      await (changeBtn?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+      console.info("[ListAttrsModifierUndefinedTest_static_1700] close List_onScrollStart");
 
       let changeBtn_end = await driver.findComponent(ON.id('List_onScrollStop'));
       await (changeBtn_end?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       console.info("[ListAttrsModifierUndefinedTest_static_1700] click List_onScrollStop");
       await (changeBtn_bottom?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(3000);
       expect(await (text?.getText() as Promise<String>)).assertEqual('onScrollStop');
-      await (changeBtn?.click() as Promise<void>);
       await (changeBtn_end?.click() as Promise<void>);
       console.info('[ListAttrsModifierUndefinedTest_static_1700] END');
       done();
@@ -729,7 +733,7 @@ export default function ListAttrsModifierUndefinedTest() {
       let changeBtn_bottom = await driver.findComponent(ON.id('List_flingBottom'));
       let changeBtn_top = await driver.findComponent(ON.id('List_flingTop'));
       await (changeBtn_bottom?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(2000);
       let text = await driver.findComponent(ON.id('List_text'));
       await CommonFunc.sleep(1000);
       expect(await (text?.getText() as Promise<String>)).assertEqual('Hello World');
@@ -740,7 +744,7 @@ export default function ListAttrsModifierUndefinedTest() {
       await CommonFunc.sleep(1000);
       console.info("[ListAttrsModifierUndefinedTest_static_1800] click List_onScrollVisibleContentChange");
       await (changeBtn_top?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(2000);
       expect(await (text?.getText() as Promise<String>)).assertEqual('onScrollVisibleContentChange');
       await (changeBtn?.click() as Promise<void>);
       console.info('[ListAttrsModifierUndefinedTest_static_1800] END');

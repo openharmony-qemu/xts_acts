@@ -203,7 +203,8 @@ it('ArkUI_List_Delete_static_0500', Level.LEVEL1, async (done: () => void): Prom
       await driver.swipeBetween(
         { x: (Math.round(rect.right - (rect.right - rect.left) / 6)).toInt(),
           y: (Math.round(rect.top + (rect.bottom - rect.top) / 2)).toInt(), displayId: displayId },
-        { x: rect.left, y: (Math.round(rect.top + (rect.bottom - rect.top) / 2)).toInt(), displayId: displayId }
+        { x: (Math.round(rect.left)).toInt(),
+          y: (Math.round(rect.top + (rect.bottom - rect.top) / 2)).toInt(), displayId: displayId }
       );
       await sleep(3000);
       let strJson2: string = inspector.getInspectorByKey('MyList5ListItemOnDeleteH');

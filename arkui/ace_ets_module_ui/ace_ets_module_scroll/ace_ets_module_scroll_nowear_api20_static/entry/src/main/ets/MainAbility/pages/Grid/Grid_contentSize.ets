@@ -183,7 +183,6 @@ struct GridContentSizeDemo {
             this.handleError(error as BusinessError, '正常获取');
           }
         })
-        .layoutWeight(1)
         .key('normal')
       // 显示区域
       Text('contentSize() 方法测试')
