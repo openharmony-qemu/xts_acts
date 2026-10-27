@@ -177,7 +177,7 @@ export default function ObserverManagerTest() {
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
       try {
         let options: observer.ObserverOptions = {
-          slotId: 3
+          slotId: 100
         };
         observer.onCellularDataConnectionStateChange(options, (data: observer.DataConnectionStateInfo) => {
           hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
@@ -359,7 +359,7 @@ export default function ObserverManagerTest() {
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
       try {
         let options: observer.ObserverOptions = {
-          slotId: 3
+          slotId: 100
         };
         observer.onCellularDataFlowChange(options, (data: observer.DataFlowType) => {
           hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
