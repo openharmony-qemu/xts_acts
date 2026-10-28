@@ -16,6 +16,7 @@
 #include "onAreaChange/AreaChangeErrorCodeTest.cpp"
 #include "gestureIntercept/GestureErrorCodeTest.cpp"
 #include "scroll/scrollWithMouseTest.cpp"
+#include "scroll/scrollWithKeyboardTest.cpp"
 #include "scroll/autoAdjustMarginTest.cpp"
 #include "scroll/scrollBarHeightTest.cpp"
 #include "list/listBackBehaviorTest.cpp"
@@ -81,6 +82,16 @@ static napi_value Init(napi_env env, napi_value exports)
         {"ScrollWithMouseTest_003", nullptr, ScrollWithMouseTest_003, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"ScrollWithMouseTest_004", nullptr, ScrollWithMouseTest_004, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"ScrollWithKeyboardTest_001", nullptr, ScrollWithKeyboardTest_001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"ScrollWithKeyboardTest_002", nullptr, ScrollWithKeyboardTest_002, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"ScrollWithKeyboardTest_003", nullptr, ScrollWithKeyboardTest_003, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"ScrollWithKeyboardTest_004", nullptr, ScrollWithKeyboardTest_004, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"ScrollWithKeyboardTest_005", nullptr, ScrollWithKeyboardTest_005, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"AutoAdjustMarginTest_001", nullptr, AutoAdjustMarginTest_001, nullptr, nullptr, nullptr,
          napi_default, nullptr},

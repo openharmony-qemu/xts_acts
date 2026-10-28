@@ -67,6 +67,8 @@ import ColumnsTemplateItemFillPolicyTest from './LazyVGridLayout/ColumnsTemplate
 import gridEnableEditMode from './gridOptions/gridEnableEditMode.test';
 import gridEditModeOptions from './gridOptions/gridEditModeOptions.test';
 import gridEditModeChange from './gridOptions/gridEditModeChange.test';
+import gridKeyboardScrollVertical from './gridOptions/GridKeyboardScrollVertical.test';
+import gridKeyboardScrollHorizontal from './gridOptions/GridKeyboardScrollHorizontal.test';
 
 export default function testsuite() {
   GridReboundTest()
@@ -123,4 +125,6 @@ export default function testsuite() {
   gridEnableEditMode()
   gridEditModeOptions()
   gridEditModeChange()
+  gridKeyboardScrollVertical()
+  gridKeyboardScrollHorizontal()
 }
