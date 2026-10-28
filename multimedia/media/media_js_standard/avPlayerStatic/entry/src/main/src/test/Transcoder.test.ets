@@ -1360,5 +1360,279 @@ export default function AVTransCoderTest() {
       toNextStep(avTranscoder, avTranscoderConfig, PAUSE_TIME, mySteps, done)
       console.info('SUB_MULTIMEDIA_AVTANSCODER_static_2300 end');
     });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVTANSCODER_static_2400
+     * @tc.number SUB_MULTIMEDIA_AVTANSCODER_static_2400
+     * @tc.desc   Transcoder enableStableQualityMode true with sqrFactor 26 full lifecycle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVTANSCODER_static_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info('SUB_MULTIMEDIA_AVTANSCODER_static_2400 start');
+      let avTranscoderConfig: media.AVTranscoderConfig = {
+        audioBitrate: 200000,
+        audioCodec: media.CodecMimeType.AUDIO_AAC,
+        fileFormat: media.ContainerFormatType.CFT_MPEG_4,
+        videoBitrate: 3000000,
+        videoCodec: media.CodecMimeType.VIDEO_HEVC,
+        videoFrameWidth: 720,
+        videoFrameHeight: 480,
+        enableStableQualityMode: true,
+        sqrFactor: 26,
+      }
+      outputName = resourceName();
+      pauseProgress = 30;
+      inputName = "H264_AAC.mp4";
+      await getfdScrAndfdDst();
+      expect(outputFdObject).not().assertNull();
+      let mySteps = new Array<string>(
+        // create
+        CREATEAVTRANSCODER_PROMISE_EVENT, SETONCALLBACK_EVENT, SET_SRC_AND_DST,
+        // prepare
+        PREPAREAVTRANSCODER_PROMISE_EVENT,
+        // start Transcoder
+        STARTAVTRANSCODER_PROMISE_EVENT,
+        // pause Transcoder
+        PAUSEAVTRANSCODER_PROMISE_EVENT,
+        // resume Transcoder
+        RESUMEAVTRANSCODER_PROMISE_EVENT,
+        // cancel Transcoder
+        CANCELAVTRANSCODER_PROMISE_EVENT,
+        // release Transcoder
+        RELEASEAVTRANSCODER_PROMISE_EVENT,
+        // end
+        END_EVENT);
+      toNextStep(avTranscoder, avTranscoderConfig, PAUSE_TIME, mySteps, done)
+      console.info('SUB_MULTIMEDIA_AVTANSCODER_static_2400 end');
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVTANSCODER_static_2500
+     * @tc.number SUB_MULTIMEDIA_AVTANSCODER_static_2500
+     * @tc.desc   Transcoder enableStableQualityMode false with sqrFactor 26 full lifecycle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVTANSCODER_static_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info('SUB_MULTIMEDIA_AVTANSCODER_static_2500 start');
+      let avTranscoderConfig: media.AVTranscoderConfig = {
+        audioBitrate: 200000,
+        audioCodec: media.CodecMimeType.AUDIO_AAC,
+        fileFormat: media.ContainerFormatType.CFT_MPEG_4,
+        videoBitrate: 3000000,
+        videoCodec: media.CodecMimeType.VIDEO_HEVC,
+        videoFrameWidth: 720,
+        videoFrameHeight: 480,
+        enableStableQualityMode: false,
+        sqrFactor: 26,
+      }
+      outputName = resourceName();
+      pauseProgress = 30;
+      inputName = "H264_AAC.mp4";
+      await getfdScrAndfdDst();
+      expect(outputFdObject).not().assertNull();
+      let mySteps = new Array<string>(
+        // create
+        CREATEAVTRANSCODER_PROMISE_EVENT, SETONCALLBACK_EVENT, SET_SRC_AND_DST,
+        // prepare
+        PREPAREAVTRANSCODER_PROMISE_EVENT,
+        // start Transcoder
+        STARTAVTRANSCODER_PROMISE_EVENT,
+        // pause Transcoder
+        PAUSEAVTRANSCODER_PROMISE_EVENT,
+        // resume Transcoder
+        RESUMEAVTRANSCODER_PROMISE_EVENT,
+        // cancel Transcoder
+        CANCELAVTRANSCODER_PROMISE_EVENT,
+        // release Transcoder
+        RELEASEAVTRANSCODER_PROMISE_EVENT,
+        // end
+        END_EVENT);
+      toNextStep(avTranscoder, avTranscoderConfig, PAUSE_TIME, mySteps, done)
+      console.info('SUB_MULTIMEDIA_AVTANSCODER_static_2500 end');
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVTANSCODER_static_2600
+     * @tc.number SUB_MULTIMEDIA_AVTANSCODER_static_2600
+     * @tc.desc   Transcoder enableStableQualityMode true without sqrFactor full lifecycle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVTANSCODER_static_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info('SUB_MULTIMEDIA_AVTANSCODER_static_2600 start');
+      let avTranscoderConfig: media.AVTranscoderConfig = {
+        audioBitrate: 200000,
+        audioCodec: media.CodecMimeType.AUDIO_AAC,
+        fileFormat: media.ContainerFormatType.CFT_MPEG_4,
+        videoBitrate: 3000000,
+        videoCodec: media.CodecMimeType.VIDEO_HEVC,
+        videoFrameWidth: 720,
+        videoFrameHeight: 480,
+        enableStableQualityMode: true,
+      }
+      outputName = resourceName();
+      pauseProgress = 30;
+      inputName = "H264_AAC.mp4";
+      await getfdScrAndfdDst();
+      expect(outputFdObject).not().assertNull();
+      let mySteps = new Array<string>(
+        // create
+        CREATEAVTRANSCODER_PROMISE_EVENT, SETONCALLBACK_EVENT, SET_SRC_AND_DST,
+        // prepare
+        PREPAREAVTRANSCODER_PROMISE_EVENT,
+        // start Transcoder
+        STARTAVTRANSCODER_PROMISE_EVENT,
+        // pause Transcoder
+        PAUSEAVTRANSCODER_PROMISE_EVENT,
+        // resume Transcoder
+        RESUMEAVTRANSCODER_PROMISE_EVENT,
+        // cancel Transcoder
+        CANCELAVTRANSCODER_PROMISE_EVENT,
+        // release Transcoder
+        RELEASEAVTRANSCODER_PROMISE_EVENT,
+        // end
+        END_EVENT);
+      toNextStep(avTranscoder, avTranscoderConfig, PAUSE_TIME, mySteps, done)
+      console.info('SUB_MULTIMEDIA_AVTANSCODER_static_2600 end');
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVTANSCODER_static_2700
+     * @tc.number SUB_MULTIMEDIA_AVTANSCODER_static_2700
+     * @tc.desc   Transcoder only sqrFactor 26 without enableStableQualityMode full lifecycle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVTANSCODER_static_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info('SUB_MULTIMEDIA_AVTANSCODER_static_2700 start');
+      let avTranscoderConfig: media.AVTranscoderConfig = {
+        audioBitrate: 200000,
+        audioCodec: media.CodecMimeType.AUDIO_AAC,
+        fileFormat: media.ContainerFormatType.CFT_MPEG_4,
+        videoBitrate: 3000000,
+        videoCodec: media.CodecMimeType.VIDEO_HEVC,
+        videoFrameWidth: 720,
+        videoFrameHeight: 480,
+        sqrFactor: 26,
+      }
+      outputName = resourceName();
+      pauseProgress = 30;
+      inputName = "H264_AAC.mp4";
+      await getfdScrAndfdDst();
+      expect(outputFdObject).not().assertNull();
+      let mySteps = new Array<string>(
+        // create
+        CREATEAVTRANSCODER_PROMISE_EVENT, SETONCALLBACK_EVENT, SET_SRC_AND_DST,
+        // prepare
+        PREPAREAVTRANSCODER_PROMISE_EVENT,
+        // start Transcoder
+        STARTAVTRANSCODER_PROMISE_EVENT,
+        // pause Transcoder
+        PAUSEAVTRANSCODER_PROMISE_EVENT,
+        // resume Transcoder
+        RESUMEAVTRANSCODER_PROMISE_EVENT,
+        // cancel Transcoder
+        CANCELAVTRANSCODER_PROMISE_EVENT,
+        // release Transcoder
+        RELEASEAVTRANSCODER_PROMISE_EVENT,
+        // end
+        END_EVENT);
+      toNextStep(avTranscoder, avTranscoderConfig, PAUSE_TIME, mySteps, done)
+      console.info('SUB_MULTIMEDIA_AVTANSCODER_static_2700 end');
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVTANSCODER_static_2800
+     * @tc.number SUB_MULTIMEDIA_AVTANSCODER_static_2800
+     * @tc.desc   Transcoder enableStableQualityMode true with sqrFactor lower boundary 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVTANSCODER_static_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info('SUB_MULTIMEDIA_AVTANSCODER_static_2800 start');
+      let avTranscoderConfig: media.AVTranscoderConfig = {
+        audioBitrate: 200000,
+        audioCodec: media.CodecMimeType.AUDIO_AAC,
+        fileFormat: media.ContainerFormatType.CFT_MPEG_4,
+        videoBitrate: 3000000,
+        videoCodec: media.CodecMimeType.VIDEO_HEVC,
+        videoFrameWidth: 720,
+        videoFrameHeight: 480,
+        enableStableQualityMode: true,
+        sqrFactor: 0,
+      }
+      outputName = resourceName();
+      pauseProgress = 30;
+      inputName = "H264_AAC.mp4";
+      await getfdScrAndfdDst();
+      expect(outputFdObject).not().assertNull();
+      let mySteps = new Array<string>(
+        // create
+        CREATEAVTRANSCODER_PROMISE_EVENT, SETONCALLBACK_EVENT, SET_SRC_AND_DST,
+        // prepare
+        PREPAREAVTRANSCODER_PROMISE_EVENT,
+        // start Transcoder
+        STARTAVTRANSCODER_PROMISE_EVENT,
+        // pause Transcoder
+        PAUSEAVTRANSCODER_PROMISE_EVENT,
+        // resume Transcoder
+        RESUMEAVTRANSCODER_PROMISE_EVENT,
+        // cancel Transcoder
+        CANCELAVTRANSCODER_PROMISE_EVENT,
+        // release Transcoder
+        RELEASEAVTRANSCODER_PROMISE_EVENT,
+        // end
+        END_EVENT);
+      toNextStep(avTranscoder, avTranscoderConfig, PAUSE_TIME, mySteps, done)
+      console.info('SUB_MULTIMEDIA_AVTANSCODER_static_2800 end');
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVTANSCODER_static_2900
+     * @tc.number SUB_MULTIMEDIA_AVTANSCODER_static_2900
+     * @tc.desc   Transcoder enableStableQualityMode true with sqrFactor upper boundary 51
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVTANSCODER_static_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info('SUB_MULTIMEDIA_AVTANSCODER_static_2900 start');
+      let avTranscoderConfig: media.AVTranscoderConfig = {
+        audioBitrate: 200000,
+        audioCodec: media.CodecMimeType.AUDIO_AAC,
+        fileFormat: media.ContainerFormatType.CFT_MPEG_4,
+        videoBitrate: 3000000,
+        videoCodec: media.CodecMimeType.VIDEO_HEVC,
+        videoFrameWidth: 720,
+        videoFrameHeight: 480,
+        enableStableQualityMode: true,
+        sqrFactor: 51,
+      }
+      outputName = resourceName();
+      pauseProgress = 30;
+      inputName = "H264_AAC.mp4";
+      await getfdScrAndfdDst();
+      expect(outputFdObject).not().assertNull();
+      let mySteps = new Array<string>(
+        // create
+        CREATEAVTRANSCODER_PROMISE_EVENT, SETONCALLBACK_EVENT, SET_SRC_AND_DST,
+        // prepare
+        PREPAREAVTRANSCODER_PROMISE_EVENT,
+        // start Transcoder
+        STARTAVTRANSCODER_PROMISE_EVENT,
+        // pause Transcoder
+        PAUSEAVTRANSCODER_PROMISE_EVENT,
+        // resume Transcoder
+        RESUMEAVTRANSCODER_PROMISE_EVENT,
+        // cancel Transcoder
+        CANCELAVTRANSCODER_PROMISE_EVENT,
+        // release Transcoder
+        RELEASEAVTRANSCODER_PROMISE_EVENT,
+        // end
+        END_EVENT);
+      toNextStep(avTranscoder, avTranscoderConfig, PAUSE_TIME, mySteps, done)
+      console.info('SUB_MULTIMEDIA_AVTANSCODER_static_2900 end');
+    });
   })
 }
