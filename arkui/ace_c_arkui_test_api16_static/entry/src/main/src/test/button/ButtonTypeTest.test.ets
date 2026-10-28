@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { beforeEach, describe, expect, it, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from '../common/Utils';
 import {LibUtil} from '../../../ets/pages/LibUtil'
 let libUtil:LibUtil = new LibUtil();

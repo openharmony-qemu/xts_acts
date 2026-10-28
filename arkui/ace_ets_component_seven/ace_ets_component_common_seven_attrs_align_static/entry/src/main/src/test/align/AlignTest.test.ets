@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import CommonTest from '../common/CommonTest';
-import { describe, expect } from '../../../../hypium/index'
+import { describe, expect } from '@ohos/hypium-static/src/main/indexStatic'
 import { BasePageConfig, PageConfig, TestValue } from '../../../ets/MainAbility/common/Utils';
 import { Alignment } from '@ohos.arkui.component'
 

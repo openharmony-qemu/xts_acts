@@ -21,7 +21,7 @@ import {
   expect,
   Level,
   afterAll
-} from "../../../../hypium/index"
+} from "@ohos/hypium-static/src/main/indexStatic"
 import router from '@ohos.router';
 import {
   Component,

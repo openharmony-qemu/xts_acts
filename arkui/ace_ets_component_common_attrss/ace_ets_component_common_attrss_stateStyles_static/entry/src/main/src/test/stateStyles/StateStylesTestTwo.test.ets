@@ -16,7 +16,7 @@
 
 import Utils, { BasePageConfig, PageConfig, TestValue, RectValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { describe, expect, beforeEach } from '../../../../hypium/index';
+import { describe, expect, beforeEach } from '@ohos/hypium-static/src/main/indexStatic';
 import { AlignRuleOption, VerticalAlign, HorizontalAlign } from '@ohos.arkui.component';
 import inspector from '@ohos.arkui.inspector';
 

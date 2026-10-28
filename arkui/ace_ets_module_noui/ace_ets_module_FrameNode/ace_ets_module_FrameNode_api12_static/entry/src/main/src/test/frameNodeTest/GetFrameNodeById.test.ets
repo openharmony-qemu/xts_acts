@@ -15,7 +15,7 @@
  */
 
 import inspector from '@ohos.arkui.inspector'
-import { describe, beforeEach, afterEach, it, Level, expect } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, it, Level, expect } from "@ohos/hypium-static/src/main/indexStatic"
 import router from '@ohos.router';
 import {
   Driver,

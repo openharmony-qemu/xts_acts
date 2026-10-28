@@ -17,7 +17,7 @@ import { UIContext }  from '@ohos.arkui.UIContext';
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import Utils, { BasePageConfig, PageConfig, TestValue, RectValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { describe, expect, beforeEach } from '../../../../hypium/index';
+import { describe, expect, beforeEach } from '@ohos/hypium-static/src/main/indexStatic';
 import { AlignRuleOption, VerticalAlign, HorizontalAlign } from '@ohos.arkui.component';
 import { jsonx } from "std/core";
 import CommonFunc from '../../../ets/MainAbility/common/Common';

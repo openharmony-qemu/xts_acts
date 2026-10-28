@@ -16,7 +16,7 @@
 
 import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
-import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from "../../../ets/MainAbility/common/Utils";
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
 import { UIContext, Router } from '@ohos.arkui.UIContext';

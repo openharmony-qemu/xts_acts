@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, beforeEach, Level } from '../../../../hypium/index';
+import { describe, it, expect, beforeAll, beforeEach, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import { Driver, ON, MatchPattern, Component } from '@kit.TestKit';
 import router from '@ohos.router';
 import { Router, UIContext, OverlayManagerOptions } from '@ohos.arkui.UIContext';

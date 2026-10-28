@@ -15,7 +15,7 @@
  */
 
 
-import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import { Driver, ON, MatchPattern } from '@kit.TestKit';
 import inspector from '@ohos.arkui.inspector';
 import router from '@ohos.router';

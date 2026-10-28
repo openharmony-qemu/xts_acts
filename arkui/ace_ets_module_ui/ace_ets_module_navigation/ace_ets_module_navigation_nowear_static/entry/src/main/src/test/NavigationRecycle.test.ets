@@ -1,5 +1,5 @@
 'use static';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { UtilsTest } from './Util.test';
 import { Router } from '@ohos.arkui.UIContext';

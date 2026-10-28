@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import CommonTest from '../common/CommonTest';
-import { describe, expect } from '../../../../hypium/index'
+import { describe, expect } from '@ohos/hypium-static/src/main/indexStatic'
 import Utils, { BasePageConfig, PageConfig, TestValue, SetValue} from '../../../ets/MainAbility/common/Utils';
 import { ClickEffectLevel } from '@ohos.arkui.component'
 /**

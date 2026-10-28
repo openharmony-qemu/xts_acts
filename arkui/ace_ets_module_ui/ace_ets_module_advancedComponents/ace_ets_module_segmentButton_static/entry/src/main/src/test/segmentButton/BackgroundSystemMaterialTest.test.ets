@@ -17,7 +17,7 @@
 
 import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
-import { beforeEach, describe, expect, it, Level, beforeAll, afterEach } from '../../../../hypium/index';
+import { beforeEach, describe, expect, it, Level, beforeAll, afterEach } from '@ohos/hypium-static/src/main/indexStatic';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';

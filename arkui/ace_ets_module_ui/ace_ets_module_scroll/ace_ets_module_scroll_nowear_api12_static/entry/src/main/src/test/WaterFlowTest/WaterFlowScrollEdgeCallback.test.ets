@@ -14,7 +14,7 @@
  * limitations under the License.
  * kdslahfahnja fsd skdfsf fsdsdffs
  */
-import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import {
   Component,

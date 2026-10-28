@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import RectValue from '../../../ets/MainAbility/common/Rect';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';

@@ -15,7 +15,7 @@
  */
 
 import router from '@ohos.router';
-import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '@ohos/hypium-static/src/main/indexStatic'
 import CommonFunc from '../../../ets/MainAbility/common/Common'
 
 import accessibility from '@ohos.accessibility';
