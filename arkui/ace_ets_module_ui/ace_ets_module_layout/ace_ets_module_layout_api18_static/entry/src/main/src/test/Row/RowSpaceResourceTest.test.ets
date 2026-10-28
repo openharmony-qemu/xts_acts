@@ -22,7 +22,7 @@ import {
   it,
   expect,
   Level
-} from '../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import inspector from '@ohos.arkui.inspector'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';

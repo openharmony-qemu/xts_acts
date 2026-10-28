@@ -21,7 +21,7 @@ import {
   it,
   expect,
   Level
-} from '../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';

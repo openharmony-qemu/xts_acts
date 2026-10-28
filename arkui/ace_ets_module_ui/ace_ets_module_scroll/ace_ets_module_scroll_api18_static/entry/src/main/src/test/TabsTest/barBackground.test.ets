@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterEach, beforeEach, describe, expect, it, Level, Size, TestType, afterAll } from '../../../../hypium/index'
+import { afterEach, beforeEach, describe, expect, it, Level, Size, TestType, afterAll } from '@ohos/hypium-static/src/main/indexStatic'
 import router from '@ohos.router';
 import {
   Component,

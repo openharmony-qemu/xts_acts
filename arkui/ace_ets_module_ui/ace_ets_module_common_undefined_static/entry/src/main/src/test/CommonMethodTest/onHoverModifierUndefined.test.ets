@@ -15,7 +15,7 @@
  */
 
 import events_emitter from '@ohos.events.emitter';
-import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, Point } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -30,7 +30,8 @@ import { BusinessError } from '@ohos.base';
 import { KeyCode } from '@ohos.multimodalInput.keyCode';
 let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function onHoverModifierUndefined() {
-  describe('onHoverModifierUndefined', () => {
+  describe('onHoverModifierUndefined', () => {
+
 
     beforeEach(async (): Promise<void> => {
       console.info("onHoverModifierUndefined beforeEach start");

@@ -15,7 +15,7 @@
  */
 import Utils, { BasePageConfig, PageConfig, TestValue, RectValue, ExpectValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest from '../common/CommonTest';
-import { describe, expect, beforeEach } from '../../../../hypium/index';
+import { describe, expect, beforeEach } from '@ohos/hypium-static/src/main/indexStatic';
 import { focusControl, $r, SizeOptions, Color } from '@ohos.arkui.component';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';

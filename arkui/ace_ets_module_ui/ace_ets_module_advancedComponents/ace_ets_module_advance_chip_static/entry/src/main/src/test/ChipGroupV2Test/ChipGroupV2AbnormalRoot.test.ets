@@ -15,7 +15,7 @@
  */
 
 
-import { describe, beforeAll, beforeEach, afterEach, it, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, it, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import { UtilsTest } from '../Util.test';
 import { Router } from '@ohos.arkui.UIContext';

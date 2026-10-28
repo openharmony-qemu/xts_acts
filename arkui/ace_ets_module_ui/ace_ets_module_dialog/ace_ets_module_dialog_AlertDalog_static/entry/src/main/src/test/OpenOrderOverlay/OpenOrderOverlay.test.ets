@@ -16,7 +16,7 @@
 
 import {
   describe, beforeAll, afterAll, beforeEach, afterEach, it, expect, Level
-} from '../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import { Driver, ON, Component } from '@kit.TestKit';
 import { LevelOrder, LevelMode } from '@ohos.promptAction';
 import { Router } from '@ohos.arkui.UIContext';

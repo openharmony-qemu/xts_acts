@@ -20,7 +20,7 @@ import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
 import inspector from '@ohos.arkui.inspector';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { describe, expect } from '../../../../hypium/index';
+import { describe, expect } from '@ohos/hypium-static/src/main/indexStatic';
 
 export default function onVisibleAreaChangeTest() {
   //Component to be tested

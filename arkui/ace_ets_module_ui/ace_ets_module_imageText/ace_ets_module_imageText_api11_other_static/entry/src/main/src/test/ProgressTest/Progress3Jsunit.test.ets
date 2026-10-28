@@ -17,7 +17,7 @@
 import router from '@ohos.router';
 import window from '@ohos.window';
 import events_emitter from '@ohos.events.emitter';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from '@ohos/hypium-static/src/main/indexStatic';
 import { Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';

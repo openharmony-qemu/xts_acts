@@ -15,7 +15,7 @@
  */
 import {
   describe, beforeEach, afterEach, it, expect, Level, afterAll
-} from "../../../../hypium/index"
+} from "@ohos/hypium-static/src/main/indexStatic"
 import router from '@ohos.router';
 import {
   Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix

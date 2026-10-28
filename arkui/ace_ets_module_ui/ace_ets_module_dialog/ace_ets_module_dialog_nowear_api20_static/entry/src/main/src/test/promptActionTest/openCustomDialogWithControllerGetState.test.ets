@@ -23,7 +23,7 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import { Component, Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';

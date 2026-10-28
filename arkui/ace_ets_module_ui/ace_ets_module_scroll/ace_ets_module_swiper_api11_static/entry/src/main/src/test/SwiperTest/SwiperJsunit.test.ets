@@ -22,7 +22,7 @@ import {
   it,
   expect,
   Level
-} from '../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import {

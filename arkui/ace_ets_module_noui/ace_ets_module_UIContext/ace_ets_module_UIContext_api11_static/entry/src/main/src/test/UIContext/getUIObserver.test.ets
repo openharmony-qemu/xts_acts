@@ -15,7 +15,7 @@
  */
 import router from '@ohos.router';
 import { UIContext, AtomicServiceBar, Router, KeyboardAvoidMode } from '@ohos.arkui.UIContext';
-import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium-static/src/main/indexStatic"
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';

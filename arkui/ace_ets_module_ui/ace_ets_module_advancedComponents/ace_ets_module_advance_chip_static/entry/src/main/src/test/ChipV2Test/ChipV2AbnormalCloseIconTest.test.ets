@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, it, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, it, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import { UtilsTest } from '../Util.test';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import {

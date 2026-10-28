@@ -16,7 +16,7 @@
 import Utils, {CurrentRatio, BasePageConfig, PageConfig, TestValue, RectValue,StrJsonObj } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { describe, expect } from '../../../../hypium/index';
+import { describe, expect } from '@ohos/hypium-static/src/main/indexStatic';
 async function executeTab(data: BasePageConfig, referenceOneValue: string, textValue: string, referenceTwoValue: string) {
   expect(Utils.performKeyEventDownUp(2049, 'Tab')).assertEqual(true);
   await Utils.sleep(1000);

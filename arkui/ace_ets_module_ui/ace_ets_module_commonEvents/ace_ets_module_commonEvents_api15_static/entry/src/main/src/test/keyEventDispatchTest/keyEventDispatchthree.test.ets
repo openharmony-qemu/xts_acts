@@ -15,7 +15,7 @@
  */
 
 import { KeyCode } from '@ohos.multimodalInput.keyCode';
-import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import { Driver, ON, Component, PointerMatrix, MouseButton } from '@kit.TestKit';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';

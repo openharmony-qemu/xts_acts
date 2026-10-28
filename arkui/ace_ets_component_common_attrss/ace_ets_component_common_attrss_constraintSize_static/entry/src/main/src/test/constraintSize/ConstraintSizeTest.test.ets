@@ -18,7 +18,7 @@ import { ConstraintSizeOptions} from '@ohos.arkui.component';
 import { AttrsManager, AlignItems } from '../../../ets/MainAbility/common/AttrsManager';
 import Utils, { BasePageConfig, PageConfig, TestValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { describe, expect } from '../../../../hypium/index';
+import { describe, expect } from '@ohos/hypium-static/src/main/indexStatic';
 import { AlignRuleOption, VerticalAlign, HorizontalAlign, $r, ItemAlign } from '@ohos.arkui.component';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement'
