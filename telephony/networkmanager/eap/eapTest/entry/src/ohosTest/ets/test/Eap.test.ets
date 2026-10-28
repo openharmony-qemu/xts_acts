@@ -38,11 +38,13 @@ const IsEnvError = (error: BusinessError): boolean => {
     return false;
   }
   // 201: permission not granted on this env; 33200001: invalid net;
-  // 33200009: netmanager stop; 33200011: no eap config;
-  // 33200012: config locked; 33200099: internal error (no 802.1X env, cable off, etc.)
+  // 33200009: netmanager stop; 33200010: invalid eth state; 33200011: no eap config;
+  // 33200012: config locked; 33200013: eth eap config unavailable on this env;
+  // 33200099: internal error (no 802.1X env, cable off, etc.)
   return error.code == 201 || error.code == 33200001 || error.code == 33200002 ||
     error.code == 33200003 || error.code == 33200004 || error.code == 33200009 ||
-    error.code == 33200011 || error.code == 33200012 || error.code == 33200099;
+    error.code == 33200010 || error.code == 33200011 || error.code == 33200012 ||
+    error.code == 33200013 || error.code == 33200099;
 }
 
 const IsValidEthEapState = (state: number): boolean => {
@@ -526,7 +528,9 @@ export default function eapTest() {
     /**
      * @tc.name   testCommunicationEapEthEapConfig0600
      * @tc.number SUB_Communication_Eap_EthEapConfig_0600
-     * @tc.desc   Test setEthEapConfig with a PEAP profile whose identity is peapuser and password is peappass123.
+     * @tc.desc   End-to-end chain with PEAP profile: setEthEapConfig -> getEthEapConfig verify ->
+     *            onStateChange subscribe -> connect(ACTION_CONNECT) -> observe state by getEthEapStateInfo ->
+     *            connect(ACTION_DISCONNECT) -> deleteEthEapConfig cleanup.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -534,6 +538,61 @@ export default function eapTest() {
     it("testCommunicationEapEthEapConfig0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName: string = "testCommunicationEapEthEapConfig0600";
       console.info(`${caseName}---start`);
+      let stateChangeCallback = (info: eap.EthEapStateInfo): void => {
+        console.info(`${caseName} onStateChange: state=${info.state}, retryCount=${info.retryCount}, message=${info.message}`);
+        ExpectTrue(IsValidEthEapState(info.state));
+      }
+      const cleanupAndDone = (): void => {
+        try {
+          eap.offStateChange(stateChangeCallback);
+        } catch (offErr) {
+          console.error(`${caseName} offStateChange cleanup failed: ${JSON.stringify(offErr)}`);
+        }
+        try {
+          eap.deleteEthEapConfig().then(() => {
+            console.info(`${caseName} deleteEthEapConfig cleanup success`);
+            console.info(`${caseName}---End`);
+            done();
+          }).catch((delErr: BusinessError) => {
+            console.error(`${caseName} deleteEthEapConfig cleanup failed, code:${delErr.code}, message:${delErr.message}`);
+            console.info(`${caseName}---End`);
+            done();
+          });
+        } catch (delErr) {
+          console.error(`${caseName} deleteEthEapConfig cleanup failed: ${JSON.stringify(delErr)}`);
+          console.info(`${caseName}---End`);
+          done();
+        }
+      };
+      const connectAndObserve = (): void => {
+        eap.connect(eap.EthEapConnectAction.ACTION_CONNECT).then(() => {
+          console.info(`${caseName} connect ACTION_CONNECT success`);
+          setTimeout(() => {
+            try {
+              let stateInfo: eap.EthEapStateInfo = eap.getEthEapStateInfo();
+              console.info(`${caseName} getEthEapStateInfo: ${JSON.stringify(stateInfo)}`);
+              ExpectTrue(stateInfo !== undefined && stateInfo !== null);
+              ExpectTrue(IsValidEthEapState(stateInfo.state));
+              ExpectTrue(typeof stateInfo.retryCount === 'number' && stateInfo.retryCount >= 0);
+            } catch (stateErr) {
+              console.error(`${caseName} getEthEapStateInfo failed: ${JSON.stringify(stateErr)}`);
+              ExpectTrue(IsEnvError(stateErr as BusinessError));
+            }
+            eap.connect(eap.EthEapConnectAction.ACTION_DISCONNECT).then(() => {
+              console.info(`${caseName} connect ACTION_DISCONNECT success`);
+              cleanupAndDone();
+            }).catch((disconnErr: BusinessError) => {
+              console.error(`${caseName} connect ACTION_DISCONNECT failed, code:${disconnErr.code}, message:${disconnErr.message}`);
+              ExpectTrue(IsEnvError(disconnErr));
+              cleanupAndDone();
+            });
+          }, 3 * 1000);
+        }).catch((connErr: BusinessError) => {
+          console.error(`${caseName} connect ACTION_CONNECT failed, code:${connErr.code}, message:${connErr.message}`);
+          ExpectTrue(IsEnvError(connErr));
+          cleanupAndDone();
+        });
+      };
       try {
         let peapProfile: eap.EthEapProfile = {
           eapMethod: eap.EapMethod.EAP_PEAP,
@@ -566,25 +625,24 @@ export default function eapTest() {
         ExpectTrue(peapConfig.profile.password === "peappass123");
         eap.setEthEapConfig(peapConfig);
         console.info(`${caseName} setEthEapConfig with PEAP profile success`);
+        eap.onStateChange(stateChangeCallback);
+        console.info(`${caseName} onStateChange success`);
         eap.getEthEapConfig().then((result: eap.EthEapConfig) => {
           console.info(`${caseName} getEthEapConfig success: identity=${result.profile.identity}`);
           ExpectTrue(result !== undefined && result !== null);
           ExpectTrue(result.profile !== undefined && result.profile !== null);
           ExpectTrue(result.profile.identity === "peapuser");
           ExpectTrue(result.profile.password === "peappass123");
-          console.info(`${caseName}---End`);
-          done();
-        }).catch((error: BusinessError) => {
-          console.error(`${caseName} getEthEapConfig failed, code:${error.code}, message:${error.message}`);
-          ExpectTrue(IsEnvError(error));
-          console.info(`${caseName}---End`);
-          done();
+          connectAndObserve();
+        }).catch((getError: BusinessError) => {
+          console.error(`${caseName} getEthEapConfig failed, code:${getError.code}, message:${getError.message}`);
+          ExpectTrue(IsEnvError(getError));
+          cleanupAndDone();
         });
       } catch (error) {
         console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
         ExpectTrue(IsEnvError(error as BusinessError));
-        console.info(`${caseName}---End`);
-        done();
+        cleanupAndDone();
       }
     })
 
