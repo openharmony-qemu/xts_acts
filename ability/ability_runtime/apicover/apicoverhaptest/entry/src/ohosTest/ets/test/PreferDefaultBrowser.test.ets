@@ -19,11 +19,14 @@ import Want from '@ohos.app.ability.Want';
 import StartOptions from '@ohos.app.ability.StartOptions';
 import { BusinessError } from '@ohos.base';
 import { Driver } from '@ohos.UiTest';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import bundleManager from '@ohos.bundle.bundleManager';
 
 const HTTPS_URI = 'https://www.example.com';
 const HTTP_URI = 'http://www.example.com';
 const SELF_BUNDLE = 'com.example.apicoverhaptest';
 const INVALID_PARAM_ERR = 401;
+const BROWSER_CHECK_DELAY_MS = 1500;
 
 function getContext(): common.UIAbilityContext {
   return AppStorage.get<common.UIAbilityContext>('abilityContext')!;
@@ -38,9 +41,7 @@ function httpWant(): Want {
 }
 
 function optionsPrefer(prefer: boolean): StartOptions {
-  let options: StartOptions = {};
-  (options as ESObject).preferDefaultBrowser = prefer;
-  return options;
+  return { preferDefaultBrowser: prefer };
 }
 
 function optionsOmit(): StartOptions {
@@ -53,9 +54,59 @@ function optionsPreferAbnormal(value: ESObject): StartOptions {
   return options;
 }
 
-function finishPreferCase(tag: string, prefer: boolean, err: BusinessError | undefined, done: Function): void {
+async function getForegroundBundleName(): Promise<string> {
+  let delegator = abilityDelegatorRegistry.getAbilityDelegator();
+  let top = await delegator.getCurrentTopAbility();
+  let bundleName = top?.context?.abilityInfo?.bundleName;
+  return bundleName !== undefined ? bundleName : '';
+}
+
+async function getBrowserCandidateBundles(): Promise<string[]> {
+  let bundles: string[] = [];
+  try {
+    let want: Want = {
+      action: 'ohos.want.action.viewData',
+      entities: ['entity.system.browsable'],
+      uri: HTTPS_URI
+    };
+    let abilities = await bundleManager.queryAbilityInfo(want,
+      bundleManager.AbilityFlag.GET_ABILITY_INFO_WITH_APPLICATION);
+    if (abilities !== undefined) {
+      for (let i = 0; i < abilities.length; i++) {
+        let name = abilities[i].bundleName;
+        if (name !== undefined && name.length > 0 && bundles.indexOf(name) < 0) {
+          bundles.push(name);
+        }
+      }
+    }
+  } catch (err) {
+    console.info(`queryAbilityInfo browser err=${JSON.stringify(err)}`);
+  }
+  return bundles;
+}
+
+async function assertForegroundIsDefaultBrowser(tag: string): Promise<void> {
+  if (driverGlobal !== undefined) {
+    await driverGlobal.delayMs(BROWSER_CHECK_DELAY_MS);
+  } else {
+    await new Promise<void>((resolve) => setTimeout(resolve, BROWSER_CHECK_DELAY_MS));
+  }
+  let topBundle = await getForegroundBundleName();
+  let browsers = await getBrowserCandidateBundles();
+  console.info(`${tag} foreground=${topBundle} browsers=${JSON.stringify(browsers)}`);
+  expect(topBundle.length > 0).assertTrue();
+  expect(topBundle === SELF_BUNDLE).assertFalse();
+  if (browsers.length > 0) {
+    expect(browsers.indexOf(topBundle) >= 0).assertTrue();
+  }
+}
+
+let driverGlobal: Driver | undefined = undefined;
+
+function finishPreferCase(tag: string, prefer: boolean, err: BusinessError | undefined, done: Function,
+  verifyBrowser: boolean = false): void {
   let options = optionsPrefer(prefer);
-  expect((options as ESObject).preferDefaultBrowser).assertEqual(prefer);
+  expect(options.preferDefaultBrowser).assertEqual(prefer);
   if (err !== undefined && err.code !== 0) {
     console.info(`${tag} err code=${err.code} msg=${err.message}`);
     expect(err.code === INVALID_PARAM_ERR).assertFalse();
@@ -63,6 +114,16 @@ function finishPreferCase(tag: string, prefer: boolean, err: BusinessError | und
     return;
   }
   console.info(`${tag} success`);
+  if (verifyBrowser && prefer) {
+    assertForegroundIsDefaultBrowser(tag).then(() => {
+      done();
+    }).catch((assertErr: Error) => {
+      console.info(`${tag} browser assert err=${JSON.stringify(assertErr)}`);
+      expect().assertFail();
+      done();
+    });
+    return;
+  }
   done();
 }
 
@@ -79,19 +140,20 @@ function finishPreferOmit(tag: string, err: BusinessError | undefined, done: Fun
 
 function finishPreferAbnormal(tag: string, err: BusinessError | undefined, done: Function): void {
   if (err === undefined || err.code === 0) {
-    console.info(`${tag} success (false-path)`);
+    console.info(`${tag} expect param error but success`);
+    expect().assertFail();
     done();
     return;
   }
   console.info(`${tag} err code=${err.code} msg=${err.message}`);
-  expect(err.code === INVALID_PARAM_ERR).assertFalse();
+  expect(err.code !== 0).assertTrue();
   done();
 }
 
 function finishPreferCatch(tag: string, prefer: boolean, error: Error, done: Function): void {
   console.info(`${tag} catch ${JSON.stringify(error)}`);
   let options = optionsPrefer(prefer);
-  expect((options as ESObject).preferDefaultBrowser).assertEqual(prefer);
+  expect(options.preferDefaultBrowser).assertEqual(prefer);
   done();
 }
 
@@ -103,9 +165,10 @@ function finishPreferOmitCatch(tag: string, error: Error, done: Function): void 
 
 function finishPreferAbnormalCatch(tag: string, error: Error, done: Function): void {
   console.info(`${tag} catch ${JSON.stringify(error)}`);
+  expect(error !== undefined).assertTrue();
   let biz = error as BusinessError;
   if (biz !== undefined && biz.code !== undefined) {
-    expect(biz.code === INVALID_PARAM_ERR).assertFalse();
+    expect(biz.code !== 0).assertTrue();
   }
   done();
 }
@@ -117,6 +180,7 @@ export default function PreferDefaultBrowserTest() {
     beforeAll(async () => {
       try {
         driver = Driver.create();
+        driverGlobal = driver;
       } catch (err) {
         console.info(`PreferDefaultBrowserTest beforeAll driver err=${JSON.stringify(err)}`);
       }
@@ -126,9 +190,7 @@ export default function PreferDefaultBrowserTest() {
       try {
         if (driver) {
           await driver.pressBack();
-          await driver.delayMs(300);
-          await driver.pressBack();
-          await driver.delayMs(300);
+          await driver.delayMs(500);
         }
       } catch (err) {
         console.info(`PreferDefaultBrowserTest afterEach err=${JSON.stringify(err)}`);
@@ -148,7 +210,7 @@ export default function PreferDefaultBrowserTest() {
       const tag = 'SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_0100';
       try {
         getContext().startAbility(httpsWant(), optionsPrefer(true), (err: BusinessError) => {
-          finishPreferCase(tag, true, err, done);
+          finishPreferCase(tag, true, err, done, true);
         });
       } catch (error) {
         finishPreferCatch(tag, true, error, done);
@@ -168,10 +230,10 @@ export default function PreferDefaultBrowserTest() {
       try {
         getContext().startAbility(httpsWant(), optionsPrefer(true))
           .then(() => {
-            finishPreferCase(tag, true, undefined, done);
+            finishPreferCase(tag, true, undefined, done, true);
           })
           .catch((err: BusinessError) => {
-            finishPreferCase(tag, true, err, done);
+            finishPreferCase(tag, true, err, done, true);
           });
       } catch (error) {
         finishPreferCatch(tag, true, error, done);
@@ -232,7 +294,7 @@ export default function PreferDefaultBrowserTest() {
       const tag = 'SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_0500';
       try {
         getContext().startAbility(httpWant(), optionsPrefer(true), (err: BusinessError) => {
-          finishPreferCase(tag, true, err, done);
+          finishPreferCase(tag, true, err, done, true);
         });
       } catch (error) {
         finishPreferCatch(tag, true, error, done);
@@ -252,10 +314,10 @@ export default function PreferDefaultBrowserTest() {
       try {
         getContext().startAbility(httpWant(), optionsPrefer(true))
           .then(() => {
-            finishPreferCase(tag, true, undefined, done);
+            finishPreferCase(tag, true, undefined, done, true);
           })
           .catch((err: BusinessError) => {
-            finishPreferCase(tag, true, err, done);
+            finishPreferCase(tag, true, err, done, true);
           });
       } catch (error) {
         finishPreferCatch(tag, true, error, done);
@@ -368,7 +430,7 @@ export default function PreferDefaultBrowserTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_1200
      * @tc.number SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_1200
-     * @tc.desc   startAbility callback with https uri and preferDefaultBrowser null (false-path)
+     * @tc.desc   startAbility callback with https uri and preferDefaultBrowser null; must error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -387,7 +449,7 @@ export default function PreferDefaultBrowserTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_1250
      * @tc.number SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_1250
-     * @tc.desc   startAbility callback with https uri and preferDefaultBrowser undefined (false-path)
+     * @tc.desc   startAbility callback with https uri and preferDefaultBrowser undefined; must error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -406,7 +468,7 @@ export default function PreferDefaultBrowserTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_1300
      * @tc.number SUB_Ability_AbilityRuntime_PreferDefaultBrowser_StartAbility_1300
-     * @tc.desc   startAbility callback with https uri and preferDefaultBrowser number (false-path)
+     * @tc.desc   startAbility callback with https uri and preferDefaultBrowser number; must error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
