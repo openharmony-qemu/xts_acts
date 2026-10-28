@@ -1798,3 +1798,204 @@ export default function atomicsSubTest() {
       let validationPassed = false;
       let cleanedUp = false;
 
+      // Step 1: Validate all subtract values
+      const validateBatch = (values: number[]): Promise<boolean> => {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            validationPassed = values.every(v => v > 0);
+            log.push(`Batch validation: ${validationPassed ? 'passed' : 'failed'}`);
+            resolve(validationPassed);
+          }, 8);
+        });
+      };
+
+      // Step 2: Batch subtract
+      const runBatch = (arr: collections.Int32Array, indexes: number[], values: number[]): Promise<number[]> => {
+        return Promise.all(
+          indexes.map((idx, i) => {
+            return new Promise<number>((resolve) => {
+              setTimeout(() => {
+                const old = ArkTSUtils.Atomics.sub(arr, idx, values[i]);
+                log.push(`Sub index ${idx}: old=${old}, new=${arr[idx]}`);
+                resolve(old);
+              }, 5);
+            });
+          })
+        );
+      };
+
+      // Step 3: Cleanup (reset to initial values)
+      const cleanupBatch = (arr: collections.Int32Array, initial: number[]): Promise<void> => {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            arr[0] = initial[0];
+            arr[1] = initial[1];
+            arr[2] = initial[2];
+            cleanedUp = true;
+            log.push('Cleanup: restored initial values');
+            resolve();
+          }, 10);
+        });
+      };
+
+      // Execute workflow
+      const initialValues = [60, 90, 120];
+      const isValid = await validateBatch(subs);
+      let oldValues: number[] = [];
+      if (isValid) {
+        oldValues = await runBatch(ia, [0, 1, 2], subs);
+        await cleanupBatch(ia, initialValues);
+      }
+
+      // Assertions
+      expect(validationPassed).assertEqual(true);
+      expect(oldValues).assertDeepEquals(initialValues);
+      expect(cleanedUp).assertEqual(true);
+      expect(ia).assertDeepEquals(new collections.Int32Array(initialValues));
+      expect(log).assertDeepEquals([
+        'Batch validation: passed',
+        'Sub index 0: old=60, new=45',
+        'Sub index 1: old=90, new=65',
+        'Sub index 2: old=120, new=90',
+        'Cleanup: restored initial values'
+      ]);
+    });
+/**
+     * @tc.name   testArkTSUtilsAtomicsSub0063
+     * @tc.number SUB_ARKTSUTILS_ATOMICS_SUB_6300
+     * @tc.desc   Promise.allSettled with valid subtract task and out-of-range index task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testArkTSUtilsAtomicsSub0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      const sab = new collections.ArrayBuffer(8);
+      const ia = new collections.Int32Array(sab);
+
+      ia[0] = 75;
+
+      const validTask = new Promise<number>((resolve) => {
+        setTimeout(() => resolve(ArkTSUtils.Atomics.sub(ia, 0, 20)), 10);
+      });
+
+      const invalidTask = new Promise<number>((resolve, reject) => {
+        setTimeout(() => {
+          try {
+            resolve(ArkTSUtils.Atomics.sub(ia, 2, 20));
+          } catch (err) {
+            reject(err);
+          }
+        }, 10);
+      });
+
+      const results = await Promise.allSettled([validTask, invalidTask]);
+      expect(results[0].status).assertEqual('fulfilled');
+      expect(results[1].status).assertEqual('rejected');
+      const validResult = results[0] as PromiseFulfilledResult<number>;
+      expect(validResult.value).assertEqual(75);
+      expect(ia[0]).assertEqual(55);
+    });
+/**
+     * @tc.name   testArkTSUtilsAtomicsSub0064
+     * @tc.number SUB_ARKTSUTILS_ATOMICS_SUB_6400
+     * @tc.desc   Verify load/exchange snapshot of two Int32 counters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testArkTSUtilsAtomicsSub0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const sab = new collections.ArrayBuffer(12);
+      const ia = new collections.Int32Array(sab);
+      ia[0] = 3;  // Val1
+      ia[1] = 5;  // Val2
+      ia[2] = 8;  // Sum (Val1+Val2)
+
+      // Validate lock-free support for batch operations
+      expect(ArkTSUtils.Atomics.isLockFree(4)).assertEqual(true);
+
+      // Lock-free batch update
+      ArkTSUtils.Atomics.add(ia, 0, 2); // Val1: 3→5
+      ArkTSUtils.Atomics.sub(ia, 1, 1); // Val2:5→4
+      const newSum = ArkTSUtils.Atomics.load(ia, 0) + ArkTSUtils.Atomics.load(ia, 1);
+      ArkTSUtils.Atomics.compareExchange(ia, 2, 8, newSum); // Update sum lock-free
+
+      expect(ArkTSUtils.Atomics.load(ia, 0)).assertEqual(5);
+      expect(ArkTSUtils.Atomics.load(ia, 1)).assertEqual(4);
+      expect(ArkTSUtils.Atomics.load(ia, 2)).assertEqual(9);
+    });
+/**
+     * @tc.name   testArkTSUtilsAtomicsSub0065
+     * @tc.number SUB_ARKTSUTILS_ATOMICS_SUB_6500
+     * @tc.desc   Verify resource allocation rollback via sub/add/exchange on collections.Int32Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testArkTSUtilsAtomicsSub0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const sab = new collections.ArrayBuffer(8);
+      const ia = new collections.Int32Array(sab);
+      ia[0] = 30; // Resource pool
+      ia[1] = 0;  // Allocated amount
+
+      expect(ArkTSUtils.Atomics.isLockFree(4)).assertEqual(true);
+
+      // Allocate 10 resources (lock-free)
+      ArkTSUtils.Atomics.sub(ia, 0, 10);
+      const allocated = 10;
+      // Record allocation (lock-free)
+      ArkTSUtils.Atomics.exchange(ia, 1, allocated);
+
+      // Rollback allocation (lock-free)
+      ArkTSUtils.Atomics.add(ia, 0, allocated);
+      ArkTSUtils.Atomics.exchange(ia, 1, 0);
+
+      expect(ArkTSUtils.Atomics.load(ia, 0)).assertEqual(30);
+      expect(ArkTSUtils.Atomics.load(ia, 1)).assertEqual(0);
+    });
+/**
+     * @tc.name   testArkTSUtilsAtomicsSub0066
+     * @tc.number SUB_ARKTSUTILS_ATOMICS_SUB_6600
+     * @tc.desc   Verify resource allocation rollback via sub/load/compareExchange on collections.Int32Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testArkTSUtilsAtomicsSub0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const sab = new collections.ArrayBuffer(4);
+      const ia = new collections.Int32Array(sab);
+      ia[0] = -10; // Debt
+
+      expect(ArkTSUtils.Atomics.isLockFree(4)).assertEqual(true);
+
+      ArkTSUtils.Atomics.sub(ia, 0, -6); // Repay 6: -10 +6 = -4
+      const remaining = ArkTSUtils.Atomics.load(ia, 0);
+      ArkTSUtils.Atomics.compareExchange(ia, 0, remaining, 0); // Clear remaining debt
+
+      expect(ia[0]).assertEqual(0);
+    });
+/**
+     * @tc.name   testArkTSUtilsAtomicsSub0067
+     * @tc.number SUB_ARKTSUTILS_ATOMICS_SUB_6700
+     * @tc.desc   Verify two-counter snapshot via load/exchange on collections.Int32Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testArkTSUtilsAtomicsSub0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const sab = new collections.ArrayBuffer(8);
+      const ia = new collections.Int32Array(sab);
+      ia[0] = 25; // Counter A
+      ia[1] = 35; // Counter B
+
+      // Atomic snapshot of both counters (load + exchange to lock temporarily)
+      const snapshotA = ArkTSUtils.Atomics.load(ia, 0);
+      const lockB = ArkTSUtils.Atomics.exchange(ia, 1, -1); // Lock B
+      const snapshotB = lockB === -1 ? ArkTSUtils.Atomics.load(ia, 1) : lockB;
+      ArkTSUtils.Atomics.exchange(ia, 1, snapshotB); // Unlock B
+
+      expect(snapshotA).assertEqual(25);
+      expect(snapshotB).assertEqual(35);
+      expect(ArkTSUtils.Atomics.load(ia, 1)).assertEqual(35);
+    });
+  })
+}
