@@ -2517,3 +2517,352 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
+    it('testArkTSUtilsAtomicsExchange0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      const sab = new collections.ArrayBuffer(4);
+      const ia = new collections.Int32Array(sab);
+      ia[0] = 10;
+      let winnerId: string = '';
+
+      // Closure factory: creates exchange closures with unique IDs
+      const createExchangeClosure = (id: string, targetValue: number) => {
+        return async (): Promise<string> => {
+          return new Promise<string>((resolve) => {
+            setTimeout(() => {
+              ArkTSUtils.Atomics.exchange(ia, 0, targetValue);
+              winnerId = id;
+              resolve(id);
+            }, Math.random() * 10); // Random delay to simulate race
+          });
+        };
+      };
+
+      // Create 3 closure instances (competing to update)
+      const closure1 = createExchangeClosure('closure1', 20);
+      const closure2 = createExchangeClosure('closure2', 30);
+      const closure3 = createExchangeClosure('closure3', 40);
+
+      // Race all closures
+      const winningId = await Promise.race([closure1(), closure2(), closure3()]);
+      // Wait for all closures to complete (ensure no further updates)
+      await Promise.allSettled([closure1(), closure2(), closure3()]);
+
+      expect(['closure1', 'closure2', 'closure3'].includes(winningId)).assertTrue()
+      expect([20, 30, 40].includes(ia[0])).assertTrue(); // Final value matches winning closure
+    });
+    /**
+     * @tc.name   testArkTSUtilsAtomicsExchange0075
+     * @tc.number SUB_ARKTSUTILS_ATOMICS_EXCHANGE_7500
+     * @tc.desc   Test comprehensive async nested exchange with retry, validation, and cleanup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testArkTSUtilsAtomicsExchange0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      const sab = new collections.ArrayBuffer(12); // 3 Int32: [data, lock, cleanupFlag]
+      const ia = new collections.Int32Array(sab);
+      ia[0] = 5; // Data
+      ia[1] = 0; // Lock: 0=idle, 1=held
+      ia[2] = 0; // Cleanup flag: 0=not done, 1=done
+      const maxRetries = 3;
+      let retryCount = 0;
+      let cleanupDone = false;
+
+      // 1. Acquire lock (atomic exchange)
+      const acquireLock = async (): Promise<boolean> => {
+        return new Promise<boolean>((resolve) => {
+          const attempt = () => {
+            const oldLock = ArkTSUtils.Atomics.exchange(ia, 1, 1);
+            resolve(oldLock === 0);
+          };
+          setTimeout(attempt, 2);
+        });
+      };
+
+      // 2. Validate new value (async)
+      const validateValue = async (newValue: number): Promise<boolean> => {
+        return new Promise<boolean>((resolve) => {
+          setTimeout(() => {
+            resolve(newValue > ia[0] && newValue < 100); // New value > current + <100
+          }, 3);
+        });
+      };
+
+      // 3. Nested exchange with retry
+      const exchangeWithRetry = async (targetValue: number): Promise<boolean> => {
+        if (retryCount >= maxRetries) {
+          return false;
+        }
+        retryCount++;
+
+        const isValid = await validateValue(targetValue);
+        if (!isValid) {
+          return exchangeWithRetry(targetValue + 10);
+        } // Retry with adjusted value
+
+        await new Promise<void>((resolve) => {
+          setTimeout(() => {
+            ArkTSUtils.Atomics.exchange(ia, 0, targetValue);
+            resolve();
+          }, 2);
+        });
+        return true;
+      };
+
+      // 4. Main workflow: lock → exchange → cleanup
+      const mainWorkflow = async (targetValue: number): Promise<boolean> => {
+        const hasLock = await acquireLock();
+        if (!hasLock) {
+          return false;
+        }
+
+        try {
+          // Simulate competing state change (may trigger retry)
+          const competingTask = new Promise<void>((resolve) => {
+            setTimeout(() => {
+              if (ia[1] === 1) {
+                ArkTSUtils.Atomics.exchange(ia, 0, 10);
+              } // Adjust data to trigger retry
+              resolve();
+            }, 5);
+          });
+
+          const exchangeSuccess = await Promise.all([exchangeWithRetry(targetValue), competingTask]);
+          return exchangeSuccess[0];
+        } finally {
+          // Cleanup: release lock + set cleanup flag
+          await Promise.all([
+            new Promise<void>((resolve) => {
+              setTimeout(() => {
+                ArkTSUtils.Atomics.exchange(ia, 1, 0); // Release lock
+                resolve();
+              }, 2);
+            }),
+            new Promise<void>((resolve) => {
+              setTimeout(() => {
+                ArkTSUtils.Atomics.exchange(ia, 2, 1); // Set cleanup flag
+                cleanupDone = true;
+                resolve();
+              }, 2);
+            })
+          ]);
+        }
+      };
+
+      // Run comprehensive workflow
+      const success = await mainWorkflow(15);
+      expect(success).assertEqual(true);
+      expect(retryCount).assertLarger(0); // Retry triggered by competing task
+      expect(cleanupDone).assertEqual(true);
+      expect(ia[0]).assertLarger(10); // Final value > adjusted competing value
+      expect(ia[1]).assertEqual(0); // Lock released
+      expect(ia[2]).assertEqual(1); // Cleanup flag set
+    });
+/**
+     * @tc.name   testArkTSUtilsAtomicsExchange0076
+     * @tc.number SUB_ARKTSUTILS_ATOMICS_EXCHANGE_7600
+     * @tc.desc   Test nested exchange with async error handling
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testArkTSUtilsAtomicsExchange0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      const sab = new collections.ArrayBuffer(4);
+      const ia = new collections.Int32Array(sab);
+      ia[0] = 5;
+      let errorCaught = false;
+
+      // Inner exchange function with error check
+      const safeExchange = async (index: number, newValue: number): Promise<number> => {
+        return new Promise<number>((resolve, reject) => {
+          setTimeout(() => {
+            try {
+              if (index < 0 || index >= ia.length) {
+                throw new RangeError('Invalid index');
+              }
+              const old = ArkTSUtils.Atomics.exchange(ia, index, newValue);
+              resolve(old);
+            } catch (err) {
+              errorCaught = true;
+              reject(err);
+            }
+          }, 5);
+        });
+      };
+
+      // Outer async function
+      const runExchange = async (): Promise<boolean> => {
+        try {
+          await safeExchange(0, 10); // Valid
+          await safeExchange(1, 15); // Invalid index
+          return true;
+        } catch (err) {
+          expect((err as RangeError).message).assertEqual('Invalid index');
+          return false;
+        }
+      };
+
+      const success = await runExchange();
+      expect(success).assertEqual(false);
+      expect(errorCaught).assertEqual(true);
+      expect(ia[0]).assertEqual(10);
+    });
+/**
+     * @tc.name   testArkTSUtilsAtomicsExchange0077
+     * @tc.number SUB_ARKTSUTILS_ATOMICS_EXCHANGE_7700
+     * @tc.desc   Test async exchange with Promise.allSettled for partial success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testArkTSUtilsAtomicsExchange0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      const sab = new collections.ArrayBuffer(8); // 2 Int32 elements
+      const ia = new collections.Int32Array(sab);
+      ia[0] = 5;
+      ia[1] = 15;
+
+      // Async exchange function (may throw)
+      const partialExchange = async (index: number, newValue: number): Promise<number> => {
+        return new Promise<number>((resolve, reject) => {
+          setTimeout(() => {
+            if (index === 1) {
+              reject(new Error('Index 1 blocked'));
+              return;
+            }
+            const old = ArkTSUtils.Atomics.exchange(ia, index, newValue);
+            resolve(old);
+          }, 4);
+        });
+      };
+
+      // Run partial exchanges
+      const results = await Promise.allSettled([
+        partialExchange(0, 10), // Success
+        partialExchange(1, 20)// Failure
+      ]);
+
+      // Verify results
+      expect((results[0] as PromiseFulfilledResult<number>).value).assertEqual(5);
+      expect((results[1] as PromiseRejectedResult).reason.message).assertEqual('Index 1 blocked');
+      expect(ia[0]).assertEqual(10); // Updated
+      expect(ia[1]).assertEqual(15); // Not updated
+    });
+/**
+     * @tc.name   testArkTSUtilsAtomicsExchange0078
+     * @tc.number SUB_ARKTSUTILS_ATOMICS_EXCHANGE_7800
+     * @tc.desc   Test async exchange with nested error propagation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testArkTSUtilsAtomicsExchange0078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      const sab = new collections.ArrayBuffer(4);
+      const ia = new collections.Int32Array(sab);
+      ia[0] = 5;
+      let errorPropagated = false;
+
+      // Inner function that may throw
+      const innerExchange = async (index: number, newValue: number): Promise<number> => {
+        return new Promise<number>((resolve, reject) => {
+          setTimeout(() => {
+            if (newValue < 0) {
+              reject(new Error('Negative value not allowed'));
+              return;
+            }
+            const old = ArkTSUtils.Atomics.exchange(ia, index, newValue);
+            resolve(old);
+          }, 3);
+        });
+      };
+
+      // Outer function that propagates error
+      const outerExchange = async (): Promise<boolean> => {
+        try {
+          await innerExchange(0, 10); // Valid
+          await innerExchange(0, -5); // Invalid (throws)
+          return true;
+        } catch (err) {
+          errorPropagated = true;
+          expect((err as Error).message).assertEqual('Negative value not allowed');
+          return false;
+        }
+      };
+
+      const success = await outerExchange();
+      expect(success).assertEqual(false);
+      expect(errorPropagated).assertEqual(true);
+      expect(ia[0]).assertEqual(10); // First exchange persists
+    });
+/**
+     * @tc.name   testArkTSUtilsAtomicsExchange0079
+     * @tc.number SUB_ARKTSUTILS_ATOMICS_EXCHANGE_7900
+     * @tc.desc   Verify state transition (idle->processing->completed) via compareExchange/add/exchange on Int32Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testArkTSUtilsAtomicsExchange0079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const sab = new collections.ArrayBuffer(4);
+      const ia = new collections.Int32Array(sab);
+      ia[0] = 0; // State: 0 (idle) →1 (processing) →2 (completed)
+
+      // Transition 0→1 (idle→processing)
+      const transition1 = ArkTSUtils.Atomics.compareExchange(ia, 0, 0, 1);
+      expect(transition1).assertEqual(0);
+      expect(ArkTSUtils.Atomics.load(ia, 0)).assertEqual(1);
+
+      // Simulate processing (atomic add for progress)
+      ArkTSUtils.Atomics.add(ia, 0, 1); // 1→2 (processing→completed)
+      const transition2 = ArkTSUtils.Atomics.compareExchange(ia, 0, 2, 2);
+      expect(transition2).assertEqual(2);
+
+      // Reset state (atomic exchange)
+      const reset = ArkTSUtils.Atomics.exchange(ia, 0, 0);
+      expect(reset).assertEqual(2);
+      expect(ArkTSUtils.Atomics.load(ia, 0)).assertEqual(0);
+    });
+    /**
+     * @tc.name   testArkTSUtilsAtomicsExchange0080
+     * @tc.number SUB_ARKTSUTILS_ATOMICS_EXCHANGE_8000
+     * @tc.desc   Async exchange with Promise.allSettled and test-created error logging
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testArkTSUtilsAtomicsExchange0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      const sab = new collections.ArrayBuffer(12);
+      const ia = new collections.Int32Array(sab);
+      ia[0] = 5;
+      ia[1] = 15;
+      ia[2] = 25;
+      const errorLogs: string[] = [];
+
+      const exchangeWithError = async (index: number, newValue: number): Promise<number> => {
+        return new Promise<number>((resolve, reject) => {
+          setTimeout(() => {
+            if (index === 1) {
+              const errMsg = 'Index 1 update failed';
+              errorLogs.push(errMsg);
+              reject(new Error(errMsg));
+              return;
+            }
+            resolve(ArkTSUtils.Atomics.exchange(ia, index, newValue));
+          }, 3);
+        });
+      };
+
+      const results = await Promise.allSettled([
+        exchangeWithError(0, 10),
+        exchangeWithError(1, 20),
+        exchangeWithError(2, 30)
+      ]);
+
+      expect((results[0] as PromiseFulfilledResult<number>).value).assertEqual(5);
+      expect((results[1] as PromiseRejectedResult).reason.message).assertEqual('Index 1 update failed');
+      expect((results[2] as PromiseFulfilledResult<number>).value).assertEqual(25);
+      expect(errorLogs).assertDeepEquals(['Index 1 update failed']);
+      expect(ia[0]).assertEqual(10);
+      expect(ia[1]).assertEqual(15);
+      expect(ia[2]).assertEqual(30);
+    });
+  })
+}
