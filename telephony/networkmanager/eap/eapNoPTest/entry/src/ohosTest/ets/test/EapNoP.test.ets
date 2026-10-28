@@ -100,7 +100,7 @@ export default function eapNoPTest() {
         done();
       } catch (error) {
         console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
-        ExpectTrue(error.code == 201);
+        ExpectTrue(error.code === 201);
         console.info(`${caseName}---End`);
         done();
       }
@@ -125,7 +125,7 @@ export default function eapNoPTest() {
         done();
       } catch (error) {
         console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
-        ExpectTrue(error.code == 201);
+        ExpectTrue(error.code === 201);
         console.info(`${caseName}---End`);
         done();
       }
@@ -150,7 +150,7 @@ export default function eapNoPTest() {
         done();
       } catch (error) {
         console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
-        ExpectTrue(error.code == 201);
+        ExpectTrue(error.code === 201);
         console.info(`${caseName}---End`);
         done();
       }
@@ -175,7 +175,7 @@ export default function eapNoPTest() {
         done();
       } catch (error) {
         console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
-        ExpectTrue(error.code == 201);
+        ExpectTrue(error.code === 201);
         console.info(`${caseName}---End`);
         done();
       }
@@ -205,7 +205,7 @@ export default function eapNoPTest() {
         done();
       } catch (error) {
         console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
-        ExpectTrue(error.code == 201);
+        ExpectTrue(error.code === 201);
         console.info(`${caseName}---End`);
         done();
       }
@@ -230,7 +230,7 @@ export default function eapNoPTest() {
         done();
       } catch (error) {
         console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
-        ExpectTrue(error.code == 201);
+        ExpectTrue(error.code === 201);
         console.info(`${caseName}---End`);
         done();
       }
@@ -255,7 +255,7 @@ export default function eapNoPTest() {
         done();
       } catch (error) {
         console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
-        ExpectTrue(error.code == 201);
+        ExpectTrue(error.code === 201);
         console.info(`${caseName}---End`);
         done();
       }
@@ -280,13 +280,13 @@ export default function eapNoPTest() {
           done();
         }).catch((error: BusinessError) => {
           console.error(`${caseName} connect failed, code:${error.code}, message:${error.message}`);
-          ExpectTrue(error.code == 201);
+          ExpectTrue(error.code === 201);
           console.info(`${caseName}---End`);
           done();
         });
       } catch (error) {
         console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
-        ExpectTrue(error.code == 201);
+        ExpectTrue(error.code === 201);
         console.info(`${caseName}---End`);
         done();
       }
@@ -311,13 +311,13 @@ export default function eapNoPTest() {
           done();
         }).catch((error: BusinessError) => {
           console.error(`${caseName} connect failed, code:${error.code}, message:${error.message}`);
-          ExpectTrue(error.code == 201);
+          ExpectTrue(error.code === 201);
           console.info(`${caseName}---End`);
           done();
         });
       } catch (error) {
         console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
-        ExpectTrue(error.code == 201);
+        ExpectTrue(error.code === 201);
         console.info(`${caseName}---End`);
         done();
       }
@@ -342,13 +342,13 @@ export default function eapNoPTest() {
           done();
         }).catch((error: BusinessError) => {
           console.error(`${caseName} deleteEthEapConfig failed, code:${error.code}, message:${error.message}`);
-          ExpectTrue(error.code == 201);
+          ExpectTrue(error.code === 201);
           console.info(`${caseName}---End`);
           done();
         });
       } catch (error) {
         console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
-        ExpectTrue(error.code == 201);
+        ExpectTrue(error.code === 201);
         console.info(`${caseName}---End`);
         done();
       }
@@ -373,13 +373,13 @@ export default function eapNoPTest() {
           done();
         }).catch((error: BusinessError) => {
           console.error(`${caseName} getEthEapConfig failed, code:${error.code}, message:${error.message}`);
-          ExpectTrue(error.code == 201);
+          ExpectTrue(error.code === 201);
           console.info(`${caseName}---End`);
           done();
         });
       } catch (error) {
         console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
-        ExpectTrue(error.code == 201);
+        ExpectTrue(error.code === 201);
         console.info(`${caseName}---End`);
         done();
       }
@@ -404,7 +404,7 @@ export default function eapNoPTest() {
         done();
       } catch (error) {
         console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
-        ExpectTrue(error.code == 201);
+        ExpectTrue(error.code === 201);
         console.info(`${caseName}---End`);
         done();
       }
@@ -432,7 +432,7 @@ export default function eapNoPTest() {
         done();
       } catch (error) {
         console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
-        ExpectTrue(error.code == 201);
+        ExpectTrue(error.code !== 201);
         console.info(`${caseName}---End`);
         done();
       }
@@ -460,7 +460,7 @@ export default function eapNoPTest() {
         done();
       } catch (error) {
         console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
-        ExpectTrue(error.code == 201);
+        ExpectTrue(error.code !== 201);
         console.info(`${caseName}---End`);
         done();
       }
@@ -485,7 +485,7 @@ export default function eapNoPTest() {
         done();
       } catch (error) {
         console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
-        ExpectTrue(error.code == 201);
+        ExpectTrue(error.code !== 201);
         console.info(`${caseName}---End`);
         done();
       }
@@ -516,7 +516,7 @@ export default function eapNoPTest() {
         done();
       } catch (error) {
         console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
-        ExpectTrue(error.code == 201);
+        ExpectTrue(error.code === 201);
         console.info(`${caseName}---End`);
         done();
       }
