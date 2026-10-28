@@ -50,6 +50,8 @@ struct TabsApi12CoverageStatic {
   @State tabVisHiddenSpec: string = `${TabVisibility.HIDDEN}`;
   @State displayModeBottomSpec: string = `${TabBarDisplayMode.BOTTOM_TABBAR}`;
   @State displayModeSidebarSpec: string = `${TabBarDisplayMode.SIDEBAR}`;
+  @State bpSpecFlag: string = 'init';
+  @State searchOptSpec: string = 'init';
 
   aboutToAppear(): void {
     try {
@@ -58,11 +60,15 @@ struct TabsApi12CoverageStatic {
     } catch (error) {
       console.info('[TabsApi12CoverageStatic] router error ' + error);
     }
+    // Same literals as used in real .tabBarVisibility / breakpoint / searchable calls below
     this.tabVisParamVisible =
       `vis=${TabVisibility.VISIBLE},mode=${TabBarDisplayMode.SIDEBAR}`;
     this.tabVisParamHidden =
       `vis=${TabVisibility.HIDDEN},mode=${TabBarDisplayMode.BOTTOM_TABBAR}`;
     this.tabVisParamUndefMode = `vis=${TabVisibility.VISIBLE},mode=undefined`;
+    this.bpSpecFlag =
+      `sm=${TabBarDisplayMode.BOTTOM_TABBAR},md=${TabBarDisplayMode.SIDEBAR},lg=${TabBarDisplayMode.SIDEBAR}`;
+    this.searchOptSpec = 'searchText=api12cov|placeholder=api12search';
     this.initSidebarHeader();
   }
 
@@ -107,8 +113,6 @@ struct TabsApi12CoverageStatic {
       } else {
         this.ctrlModeFlag = `${mode}`;
       }
-      // Drive the same handler registered on onBarDisplayModeChange with real return value
-      this.applyBarModeChange(mode);
     } catch (err) {
       console.info('[TabsApi12CoverageStatic] getBarDisplayMode error ' + err);
       this.ctrlModeFlag = 'fail';
@@ -149,6 +153,8 @@ struct TabsApi12CoverageStatic {
         Text(this.searchProbeCb).id('tabsApi12_searchProbeCb').fontSize(12)
         Text(this.searchProbeFilter).id('tabsApi12_searchProbeFilter').fontSize(12)
         Text(this.searchProbeRet).id('tabsApi12_searchProbeRet').fontSize(12)
+        Text(this.bpSpecFlag).id('tabsApi12_bpSpecFlag').fontSize(12)
+        Text(this.searchOptSpec).id('tabsApi12_searchOptSpec').fontSize(12)
         Button('flipBarStyle')
           .id('tabsApi12_flipBarStyle')
           .onClick((): void => {
@@ -191,6 +197,9 @@ struct TabsApi12CoverageStatic {
     .onAppear((): void => {
       this.probeTabsCtrl();
       this.probeSearchOptions();
+      // Flip barStyle once to encourage framework onBarDisplayModeChange delivery
+      this.useAdaptable = false;
+      this.probeTabsCtrl();
     })
     .barStyle(this.useAdaptable ? TabBarStyle.SIDEBAR_ADAPTABLE : TabBarStyle.SIDEBAR)
     .sidebarPosition(BarPosition.Start)
