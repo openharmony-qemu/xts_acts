@@ -39,7 +39,12 @@ async function startAbility(bundleName: string, abilityName: string) {
 }
 
 async function stopApplication(bundleName: string) {
-  await delegator.executeShellCommand(`aa force-stop ${bundleName} `).then(result => {
+  let cmd = `aa force-stop ${bundleName}`;
+  let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+  if(user !== undefined){
+      cmd += ' -u ' + user;
+  }
+  await delegator.executeShellCommand(cmd).then(result => {
     console.info(`${TestTag}, stop application finished: ${result}`)
   }).catch((err: BusinessError) => {
     console.error(`${TestTag},stop application failed: ${err}`)
@@ -154,6 +159,14 @@ async function envRecovery(driver: Driver) {
     let resumeWindow = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: disId })
     if (resumeWindow != null) {
       await resumeWindow.resume()
+    }
+    await stopApplication('com.uitestScene.acts')
+    let uitestWindow = await driver.findWindow({ bundleName: 'com.uitest.acts', displayId: disId })
+    if (uitestWindow != null) {
+      let uitestWindowMode = await uitestWindow.getWindowMode()
+      if (uitestWindowMode != WindowMode.FLOATING) {
+        await uitestWindow.resume()
+      }
     }
   } catch (error) {
     console.log('envRecovery error is ' + error)
@@ -704,7 +717,7 @@ export default function uiUiWindowTest() {
           if (bounds.right != point.x) {
             console.log("The device's screen splitting mode is left-right split screen.")
             await window.resize(0, bounds.bottom - bounds.top, ResizeDirection.RIGHT)
-            await driver.delayMs(waitUiReadyMs * 2)
+            await driver.delayMs(waitUiReadyMs * 5)
             let window3 = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
             console.log(`${TestTag}, testWindowResizeB_split1 findWindow3 success ,${JSON.stringify(window3)}`);
             expect(window3 == null).assertTrue()
@@ -728,7 +741,7 @@ export default function uiUiWindowTest() {
             let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
             let bounds1 = await window2.getBounds()
             await window2.resize(0, bounds1.bottom - bounds1.top, ResizeDirection.RIGHT)
-            await driver.delayMs(waitUiReadyMs * 2)
+            await driver.delayMs(waitUiReadyMs * 5)
             let window3 = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
             console.log(`${TestTag}, testWindowResizeB_split1 findWindow3 success ,${JSON.stringify(window3)}`);
             expect(window3 == null).assertTrue()
@@ -739,7 +752,7 @@ export default function uiUiWindowTest() {
           let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
           let bounds1 = await window2.getBounds()
           await window2.resize(500, bounds1.bottom - bounds1.top, ResizeDirection.RIGHT)
-          await driver.delayMs(waitUiReadyMs * 2)
+          await driver.delayMs(waitUiReadyMs * 5)
           let window3 = await driver.findWindow({ bundleName: 'com.uitestScene.acts', displayId: defaultDisplayId })
           console.log(`${TestTag}, testWindowResizeB_split1 findWindow3 success ,${JSON.stringify(window3)}`);
           let bounds2 = await window3.getBounds()
