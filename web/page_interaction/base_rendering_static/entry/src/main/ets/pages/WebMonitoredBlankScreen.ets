@@ -24,6 +24,7 @@ import { onMonitoredBlankScreenHandle, setMonitoredBlankScreenCurrentAction } fr
 import { WebMonitoredBlankScreenAux } from './WebMonitoredBlankScreenAux';
 import { WebMonitoredBlankScreenChain } from './WebMonitoredBlankScreenChain';
 import { WebMonitoredBlankScreenEnableReturn, WebMonitoredBlankScreenReturn } from './WebMonitoredBlankScreenReturn';
+import { WebMonitoredBlankScreenUndefinedReturn, WebMonitoredBlankScreenEnableUndefinedReturn } from './WebMonitoredBlankScreenReturn';
 
 @Entry
 @Component
@@ -71,6 +72,8 @@ struct WebMonitoredBlankScreen {
       WebMonitoredBlankScreenChain()
       WebMonitoredBlankScreenReturn()
       WebMonitoredBlankScreenEnableReturn()
+      WebMonitoredBlankScreenUndefinedReturn()
+      WebMonitoredBlankScreenEnableUndefinedReturn()
     }
   }
 }

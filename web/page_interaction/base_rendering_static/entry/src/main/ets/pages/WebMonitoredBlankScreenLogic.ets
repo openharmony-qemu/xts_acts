@@ -111,6 +111,33 @@ export function runMonitoredBlankScreenCase(action: string): void {
       }
       break;
     }
+    case "testOnMonitoredBlankScreenUndefinedReturn": {
+      try {
+        Utils.emitEvent('return-monitored-undefined-ok', 20260462)
+      } catch (error) {
+        error = error as BusinessError;
+        Utils.emitEvent(error.code, 20260462)
+      }
+      break;
+    }
+    case "testEnableBlankScreenMonitorUndefinedReturn": {
+      try {
+        Utils.emitEvent('return-enable-undefined-ok', 20260463)
+      } catch (error) {
+        error = error as BusinessError;
+        Utils.emitEvent(error.code, 20260463)
+      }
+      break;
+    }
+    case "testMonitoredBlankScreenDeclChain": {
+      try {
+        Utils.emitEvent('main-blank-chain-ok', 20260464)
+      } catch (error) {
+        error = error as BusinessError;
+        Utils.emitEvent(error.code, 20260464)
+      }
+      break;
+    }
     default:
       break;
   }

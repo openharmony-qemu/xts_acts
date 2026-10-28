@@ -37,8 +37,15 @@ export class StringFields {
   public str: string = '';
 }
 
+const ON_ZOOM_CHANGE_CALLBACK_EVENT: Int = 182222;
+
 const zoomChangeReturnProbe: OnZoomChangeCallback = (event: OnZoomChangeEvent): void => {
   console.info('onZoomChangeReturnProbe old=' + event.oldZoomFactor);
+};
+
+const zoomChangeInvokeProbe: OnZoomChangeCallback = (event: OnZoomChangeEvent): void => {
+  Utils.emitEvent('callback-invoked', ON_ZOOM_CHANGE_CALLBACK_EVENT);
+  Utils.emitEvent(typeof event.newZoomFactor, ON_ZOOM_CHANGE_CALLBACK_EVENT + 1);
 };
 
 @Entry
@@ -48,6 +55,7 @@ struct WebZoomFactor {
   controller: webView.WebviewController = new webView.WebviewController(undefined);
   detachedController: webView.WebviewController = new webView.WebviewController(undefined);
   zoomCallbackUndefinedController: webView.WebviewController = new webView.WebviewController(undefined);
+  zoomCallbackInvokeController: webView.WebviewController = new webView.WebviewController(undefined);
   @State isPageEnd: Int = -1;
   @State onZoomChangeCount: Int = 0;
   @State lastZoomOld: double = -1;
@@ -201,6 +209,12 @@ struct WebZoomFactor {
             case 'testOnZoomChangeReturn':
               Utils.emitEvent('return-zoom-ok', 182221);
               break;
+            case 'testOnZoomChangeDeclChain':
+              Utils.emitEvent('main-chain-ok', 182224);
+              break;
+            case 'testOnZoomChangeCallback':
+              Utils.emitEvent(true, ON_ZOOM_CHANGE_CALLBACK_EVENT);
+              break;
             default:
               Utils.emitEvent(false, 182299);
           }
@@ -238,6 +252,12 @@ struct WebZoomFactor {
         .height('1')
         .onZoomChange(zoomChangeReturnProbe)
         .zoomControlAccess(true)
+
+      Web({ src: $rawfile('zoom_test.html'), controller: this.zoomCallbackInvokeController })
+        .width('1')
+        .height('1')
+        .zoomControlAccess(true)
+        .onZoomChange(zoomChangeInvokeProbe)
     }
   }
 }

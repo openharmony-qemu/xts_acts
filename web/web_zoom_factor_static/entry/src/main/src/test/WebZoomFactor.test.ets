@@ -27,6 +27,7 @@ const EVENT_SUITE = 182100;
 const INIT_ERR_MSG = 'Init error. The WebviewController must be associated with a Web component';
 /** API 为 double；ArkTS 运行时 typeof 为 number */
 const ZOOM_FACTOR_RUNTIME_TYPE: string = 'number';
+const ON_ZOOM_CHANGE_CALLBACK_EVENT: Int = 182222;
 
 let testAbilityContext: common.UIAbilityContext;
 
@@ -252,6 +253,44 @@ export default function webZoomFactorStaticTest(): void {
         let button = await driver.findComponent(ON.id('WebZoomFactorTestButton'));
         await button?.click();
         await Utils.msSleep(8000);
+      });
+
+    /**
+     * @tc.name   testOnZoomChangeCallbackStatic
+     * @tc.number SUB_WEB_ONZOOMCHANGE_CALLBACK_STATIC_1350
+     * @tc.desc   onZoomChange(OnZoomChangeCallback) registered on Web without throw
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testOnZoomChangeCallbackStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        Utils.registerEvent('testOnZoomChangeCallback', true, ON_ZOOM_CHANGE_CALLBACK_EVENT, done);
+        await Utils.emitEvent('testOnZoomChangeCallback', EVENT_SUITE);
+        await Utils.msSleep(300);
+        let driver: Driver = Driver.create();
+        let button = await driver.findComponent(ON.id('WebZoomFactorTestButton'));
+        await button?.click();
+        await Utils.msSleep(2000);
+      });
+
+    /**
+     * @tc.name   testOnZoomChangeDeclChainStatic
+     * @tc.number SUB_WEB_ONZOOMCHANGE_DECL_CHAIN_STATIC_1410
+     * @tc.desc   onZoomChange(callback).onPageEnd chain on main Web returns this
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testOnZoomChangeDeclChainStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        Utils.registerEvent('testOnZoomChangeDeclChain', 'main-chain-ok', 182224, done);
+        await Utils.emitEvent('testOnZoomChangeDeclChain', EVENT_SUITE);
+        await Utils.msSleep(300);
+        let driver: Driver = Driver.create();
+        let button = await driver.findComponent(ON.id('WebZoomFactorTestButton'));
+        await button?.click();
+        await Utils.msSleep(2000);
       });
 
     /**

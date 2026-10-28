@@ -25,3 +25,27 @@ export struct WebMonitoredBlankScreenEnableReturn {
       .javaScriptAccess(true)
   }
 }
+
+/** onMonitoredBlankScreen(undefined) chain return this */
+@Component
+export struct WebMonitoredBlankScreenUndefinedReturn {
+  controllerUndefinedReturn: web_webview.WebviewController = new web_webview.WebviewController(undefined);
+
+  build(): void {
+    Web({ src: 'resource://rawfile/1text.html', controller: this.controllerUndefinedReturn })
+      .onMonitoredBlankScreen(undefined)
+      .javaScriptAccess(true)
+  }
+}
+
+/** enableBlankScreenMonitor(undefined) chain return this */
+@Component
+export struct WebMonitoredBlankScreenEnableUndefinedReturn {
+  controllerEnableUndefinedReturn: web_webview.WebviewController = new web_webview.WebviewController(undefined);
+
+  build(): void {
+    Web({ src: 'resource://rawfile/1text.html', controller: this.controllerEnableUndefinedReturn })
+      .enableBlankScreenMonitor(undefined)
+      .javaScriptAccess(true)
+  }
+}
