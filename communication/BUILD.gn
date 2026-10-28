@@ -40,6 +40,8 @@ group("communication") {
       "dsoftbus/rpc_request:ActsRpcRequestJsTest",
       "fusion:ActsFusionJsTest",
       "fusion_nop:ActsFusionNopTest",
+      "fusion_static:ActsFusionJsStaticTest",
+      "fusion_nop_static:ActsFusionNopStaticTest",
       "nearlink_nop:ActsNearlinkNopTest",
       "nearlink_nop_static:ActsNearlinkNopStaticTest",
       "nearlink_normal:ActsNearlinkNormalTest",
