@@ -2700,8 +2700,9 @@ export default function bluetoothConnectionTest(): void {
       async (done: () => void): Promise<void> => {
         try {
           let virtualAddress: string = connection.getVirtualAddressByHash(
-            99 as connection.HashAlgorithmType, "testHashValue");
+            99, "testHashValue");
           hilog.info(domain, tag, "getVirtualAddressByHash result: " + JSON.stringify(virtualAddress));
+          except().assertFail();
         } catch (err) {
           err = err as BusinessError;
           hilog.info(domain, tag,
@@ -2710,7 +2711,7 @@ export default function bluetoothConnectionTest(): void {
             hilog.info(domain, tag, 'api is not support');
             expect(err.code).assertEqual(801);
           } else {
-            expect().assertFail();
+            expect(err.code).assertEqual(401);
           }
         }
         done();
