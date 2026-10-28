@@ -858,7 +858,7 @@ export default function btHidTest(): void {
     it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_static_0600',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
         try {
-          let error: hid.ErrorReason = 99 as hid.ErrorReason;
+          let error: hid.ErrorReason = 99;
           hidDevice!.reportError(error);
           hilog.info(domain, tag, "[bluetooth_js]hid reportError is success ");
           expect().assertFail();
@@ -1351,7 +1351,7 @@ export default function btHidTest(): void {
             name: "testName",
             description: "testDescription",
             provider: "testProvoder",
-            subclass: 99 as hid.Subclass,
+            subclass: 99,
             descriptors: descriptors,
           };
           hidDevice!.registerHidDevice(sdpIllegal, inqos, outqos, (data: boolean) => {
@@ -1387,7 +1387,7 @@ export default function btHidTest(): void {
       async (done: () => void): Promise<void> => {
         try {
           let inqosIllegal: hid.HidDeviceQos = {
-            serviceType: 99 as hid.ServiceType,
+            serviceType: 99,
             tokenRate: 0,
             tokenBucketSize: 0,
             peakBandwidth: 0,
@@ -1399,6 +1399,7 @@ export default function btHidTest(): void {
           });
           hilog.info(domain, tag, "[bluetooth_js]hid registerHidDevice RH 0200 is called ");
           await sleep(1000);
+          except.assertFail();
         } catch (err) {
           hilog.error(domain, tag,
             "[bluetooth_js]hid registerHidDevice is fail , errCode:" + err.code + ",errMessage:" + err.message);
@@ -1907,7 +1908,7 @@ export default function btHidTest(): void {
     it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_static_1600',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
         try {
-          let type: hid.ReportType = 99 as hid.ReportType;
+          let type: hid.ReportType = 99;
           let id: int = 1;
           let reportData: Uint8Array = new Uint8Array([0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77]);
           hidDevice!.replyReport(type, id, reportData);
