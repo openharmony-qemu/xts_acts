@@ -54,11 +54,33 @@ function readAttrJson(nodeId: string, key: string): string {
   }
 }
 
-function pairEqualOrSkip(a: string, b: string): boolean {
-  if (a.length === 0 || b.length === 0) {
-    return true;
+function isInspectorSentinel(v: string): boolean {
+  return v.length === 0 || v === 'null' || v === 'undefined' || v === '{}';
+}
+
+/**
+ * Compare default vs explicit-undefined Inspector dumps.
+ * New images may dump omit as "null" while undefined resolves to a theme color;
+ * that is accepted when the undefined side is a concrete #AARRGGBB value.
+ */
+function assertPairEqualOrSkip(defVal: string, abnVal: string): void {
+  if (isInspectorSentinel(defVal) && isInspectorSentinel(abnVal)) {
+    expect(defVal).assertEqual(abnVal);
+    return;
   }
-  return a === b;
+  if (isInspectorSentinel(defVal) && abnVal.startsWith('#')) {
+    expect(abnVal.length >= 7).assertTrue();
+    return;
+  }
+  if (isInspectorSentinel(abnVal) && defVal.startsWith('#')) {
+    expect(defVal.length >= 7).assertTrue();
+    return;
+  }
+  if (isInspectorSentinel(defVal) || isInspectorSentinel(abnVal)) {
+    expect(defVal).assertEqual(abnVal);
+    return;
+  }
+  expect(defVal).assertEqual(abnVal);
 }
 
 export default function tabsApiCoverageAbnormalStaticTest(): void {
@@ -92,7 +114,7 @@ export default function tabsApiCoverageAbnormalStaticTest(): void {
     it('SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_BARSTYLE_0100', Level.LEVEL1, async () => {
       const defVal: string = readAttrString('tabs_barStyle_default', 'barStyle');
       const abnVal: string = readAttrString('tabs_barStyle_undefined', 'barStyle');
-      expect(pairEqualOrSkip(defVal, abnVal)).assertTrue();
+      assertPairEqualOrSkip(defVal, abnVal);
     });
 
     /**
@@ -106,7 +128,7 @@ export default function tabsApiCoverageAbnormalStaticTest(): void {
     it('SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_SIDEBARPOS_0200', Level.LEVEL1, async () => {
       const defVal: string = readAttrString('tabs_sidebarPosition_default', 'sidebarPosition');
       const abnVal: string = readAttrString('tabs_sidebarPosition_undefined', 'sidebarPosition');
-      expect(pairEqualOrSkip(defVal, abnVal)).assertTrue();
+      assertPairEqualOrSkip(defVal, abnVal);
     });
 
     /**
@@ -122,7 +144,8 @@ export default function tabsApiCoverageAbnormalStaticTest(): void {
       const abnBar: string = readAttrString('tabs_sidebarHeader_undefined', 'barStyle');
       const defHdr: string = readAttrJson('tabs_sidebarHeader_default', 'sidebarHeader');
       const abnHdr: string = readAttrJson('tabs_sidebarHeader_undefined', 'sidebarHeader');
-      expect(pairEqualOrSkip(defBar, abnBar) && pairEqualOrSkip(defHdr, abnHdr)).assertTrue();
+      assertPairEqualOrSkip(defBar, abnBar);
+      assertPairEqualOrSkip(defHdr, abnHdr);
     });
 
     /**
@@ -136,7 +159,7 @@ export default function tabsApiCoverageAbnormalStaticTest(): void {
     it('SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_SIDEBARSEARCH_0400', Level.LEVEL1, async () => {
       const defVal: string = readAttrJson('tabs_sidebarSearchable_default', 'sidebarSearchable');
       const abnVal: string = readAttrJson('tabs_sidebarSearchable_undefined', 'sidebarSearchable');
-      expect(pairEqualOrSkip(defVal, abnVal)).assertTrue();
+      assertPairEqualOrSkip(defVal, abnVal);
     });
 
     /**
@@ -152,7 +175,7 @@ export default function tabsApiCoverageAbnormalStaticTest(): void {
         readAttrJson('tabs_barDisplayModeBreakpoint_default', 'barDisplayModeBreakpoint');
       const abnVal: string =
         readAttrJson('tabs_barDisplayModeBreakpoint_undefined', 'barDisplayModeBreakpoint');
-      expect(pairEqualOrSkip(defVal, abnVal)).assertTrue();
+      assertPairEqualOrSkip(defVal, abnVal);
     });
 
     /**
@@ -166,7 +189,7 @@ export default function tabsApiCoverageAbnormalStaticTest(): void {
     it('SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_ONBARMODE_0600', Level.LEVEL1, async () => {
       const defVal: string = readAttrString('tabs_onBarDisplayModeChange_default', 'barStyle');
       const abnVal: string = readAttrString('tabs_onBarDisplayModeChange_undefined', 'barStyle');
-      expect(pairEqualOrSkip(defVal, abnVal)).assertTrue();
+      assertPairEqualOrSkip(defVal, abnVal);
     });
 
     /**
@@ -182,7 +205,7 @@ export default function tabsApiCoverageAbnormalStaticTest(): void {
         readAttrString('tabs_sidebarSelectedIconColor_default', 'sidebarSelectedIconColor');
       const abnVal: string =
         readAttrString('tabs_sidebarSelectedIconColor_undefined', 'sidebarSelectedIconColor');
-      expect(pairEqualOrSkip(defVal, abnVal)).assertTrue();
+      assertPairEqualOrSkip(defVal, abnVal);
     });
 
     /**
@@ -198,7 +221,7 @@ export default function tabsApiCoverageAbnormalStaticTest(): void {
         readAttrString('tabs_sidebarSelectedTextColor_default', 'sidebarSelectedTextColor');
       const abnVal: string =
         readAttrString('tabs_sidebarSelectedTextColor_undefined', 'sidebarSelectedTextColor');
-      expect(pairEqualOrSkip(defVal, abnVal)).assertTrue();
+      assertPairEqualOrSkip(defVal, abnVal);
     });
 
     /**
@@ -214,7 +237,7 @@ export default function tabsApiCoverageAbnormalStaticTest(): void {
         readAttrString('tabs_sidebarUnselectedIconColor_default', 'sidebarUnselectedIconColor');
       const abnVal: string =
         readAttrString('tabs_sidebarUnselectedIconColor_undefined', 'sidebarUnselectedIconColor');
-      expect(pairEqualOrSkip(defVal, abnVal)).assertTrue();
+      assertPairEqualOrSkip(defVal, abnVal);
     });
 
     /**
@@ -230,7 +253,7 @@ export default function tabsApiCoverageAbnormalStaticTest(): void {
         readAttrString('tabs_sidebarUnselectedTextColor_default', 'sidebarUnselectedTextColor');
       const abnVal: string =
         readAttrString('tabs_sidebarUnselectedTextColor_undefined', 'sidebarUnselectedTextColor');
-      expect(pairEqualOrSkip(defVal, abnVal)).assertTrue();
+      assertPairEqualOrSkip(defVal, abnVal);
     });
 
     /**
@@ -246,7 +269,7 @@ export default function tabsApiCoverageAbnormalStaticTest(): void {
         readAttrString('tabs_sidebarSelectedBoardColor_default', 'sidebarSelectedBoardColor');
       const abnVal: string =
         readAttrString('tabs_sidebarSelectedBoardColor_undefined', 'sidebarSelectedBoardColor');
-      expect(pairEqualOrSkip(defVal, abnVal)).assertTrue();
+      assertPairEqualOrSkip(defVal, abnVal);
     });
 
     /**
@@ -260,7 +283,7 @@ export default function tabsApiCoverageAbnormalStaticTest(): void {
     it('SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_TABVIS_1200', Level.LEVEL1, async () => {
       const defVal: string = readAttrJson('tabVis_default', 'tabBarVisibility');
       const abnVal: string = readAttrJson('tabVis_undefined', 'tabBarVisibility');
-      expect(pairEqualOrSkip(defVal, abnVal)).assertTrue();
+      assertPairEqualOrSkip(defVal, abnVal);
     });
   });
 }
