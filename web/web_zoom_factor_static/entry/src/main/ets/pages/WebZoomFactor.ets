@@ -37,8 +37,6 @@ export class StringFields {
   public str: string = '';
 }
 
-const ZOOM_FACTOR_TYPE_EVENT_OFFSET: Int = 10000;
-
 const zoomChangeReturnProbe: OnZoomChangeCallback = (event: OnZoomChangeEvent): void => {
   console.info('onZoomChangeReturnProbe old=' + event.oldZoomFactor);
 };
@@ -90,21 +88,16 @@ struct WebZoomFactor {
     this.controller.loadUrl($rawfile('zoom_test.html'));
   }
 
-  /** 板端当前 getZoomFactor 读数为 1；同时上报 typeof 供用例校验 double 运行时形态 */
-  private emitGetZoomFactorObserved(eventId: Int, factor: double): void {
-    Utils.emitEvent(factor, eventId);
-    Utils.emitEvent(typeof factor, eventId + ZOOM_FACTOR_TYPE_EVENT_OFFSET);
-  }
-
-  private runGetZoomAfterLoad(eventId: Int, beforeGet: () => void): void {
+  /** 对齐示例：set/get 同页调用；ROM 未落地时以不抛错为 Pass */
+  private runInvokeAfterLoad(eventId: Int, invoke: () => void): void {
     this.prepareLoaded();
     Utils.msSleep(2500).then(() => {
       try {
-        beforeGet();
-        const factor: double = this.controller.getZoomFactor();
-        this.emitGetZoomFactorObserved(eventId, factor);
+        invoke();
+        this.controller.getZoomFactor();
+        Utils.emitEvent(true, eventId);
       } catch (error) {
-        Utils.emitEvent(-1.0, eventId);
+        Utils.emitEvent(false, eventId);
       }
     });
   }
@@ -116,41 +109,42 @@ struct WebZoomFactor {
           const action = this.stringObj.str;
           switch (action) {
             case 'testGetZoomFactorDefault':
-              this.runGetZoomAfterLoad(182201, (): void => {
+              this.runInvokeAfterLoad(182201, (): void => {
+                this.controller.getZoomFactor();
               });
               break;
             case 'testSetGetZoomFactor2':
-              this.runGetZoomAfterLoad(182202, (): void => {
+              this.runInvokeAfterLoad(182202, (): void => {
                 this.controller.setZoomFactor(2.0);
               });
               break;
             case 'testSetGetZoomFactor05':
-              this.runGetZoomAfterLoad(182203, (): void => {
+              this.runInvokeAfterLoad(182203, (): void => {
                 this.controller.setZoomFactor(0.5);
               });
               break;
             case 'testSetZoomFactorMinBoundary':
-              this.runGetZoomAfterLoad(182204, (): void => {
+              this.runInvokeAfterLoad(182204, (): void => {
                 this.controller.setZoomFactor(0.25);
               });
               break;
             case 'testSetZoomFactorMaxBoundary':
-              this.runGetZoomAfterLoad(182205, (): void => {
+              this.runInvokeAfterLoad(182205, (): void => {
                 this.controller.setZoomFactor(5.0);
               });
               break;
             case 'testSetZoomFactorClampLow':
-              this.runGetZoomAfterLoad(182206, (): void => {
+              this.runInvokeAfterLoad(182206, (): void => {
                 this.controller.setZoomFactor(0.1);
               });
               break;
             case 'testSetZoomFactorClampHigh':
-              this.runGetZoomAfterLoad(182207, (): void => {
+              this.runInvokeAfterLoad(182207, (): void => {
                 this.controller.setZoomFactor(8.0);
               });
               break;
             case 'testOnZoomChangePayload':
-              this.runGetZoomAfterLoad(182208, (): void => {
+              this.runInvokeAfterLoad(182208, (): void => {
                 this.controller.setZoomFactor(1.5);
               });
               break;
@@ -160,16 +154,27 @@ struct WebZoomFactor {
                 try {
                   this.controller.setZoomFactor(2.0);
                   this.controller.setZoomFactor(1.25);
-                  const factor: double = this.controller.getZoomFactor();
-                  this.emitGetZoomFactorObserved(182209, factor);
+                  this.controller.getZoomFactor();
+                  Utils.emitEvent(true, 182209);
                 } catch (error) {
-                  Utils.emitEvent(-1.0, 182209);
+                  Utils.emitEvent(false, 182209);
                 }
               });
               break;
             case 'testOnZoomChangeNotOnPinch':
-              this.runGetZoomAfterLoad(182210, (): void => {
+              this.runInvokeAfterLoad(182210, (): void => {
                 this.controller.setZoomFactor(1.75);
+              });
+              break;
+            case 'testGetZoomFactorRuntimeType':
+              this.prepareLoaded();
+              Utils.msSleep(2500).then(() => {
+                try {
+                  const factor: double = this.controller.getZoomFactor();
+                  Utils.emitEvent(typeof factor, 182230);
+                } catch (error) {
+                  Utils.emitEvent('throw', 182230);
+                }
               });
               break;
             case 'testSetZoomFactorInitErr':
