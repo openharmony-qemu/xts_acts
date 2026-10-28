@@ -29,12 +29,19 @@ import {
   Button,
   ClickEvent,
   Web,
-  OnZoomChangeEvent
+  OnZoomChangeEvent,
+  OnZoomChangeCallback
 } from '@ohos.arkui.component';
 
 export class StringFields {
   public str: string = '';
 }
+
+const ZOOM_FACTOR_TYPE_EVENT_OFFSET: Int = 10000;
+
+const zoomChangeReturnProbe: OnZoomChangeCallback = (event: OnZoomChangeEvent): void => {
+  console.info('onZoomChangeReturnProbe old=' + event.oldZoomFactor);
+};
 
 @Entry
 @Component
@@ -42,6 +49,7 @@ struct WebZoomFactor {
   stringObj: StringFields = new StringFields();
   controller: webView.WebviewController = new webView.WebviewController(undefined);
   detachedController: webView.WebviewController = new webView.WebviewController(undefined);
+  zoomCallbackUndefinedController: webView.WebviewController = new webView.WebviewController(undefined);
   @State isPageEnd: Int = -1;
   @State onZoomChangeCount: Int = 0;
   @State lastZoomOld: double = -1;
@@ -82,16 +90,21 @@ struct WebZoomFactor {
     this.controller.loadUrl($rawfile('zoom_test.html'));
   }
 
-  /** 对齐示例：set/get 同页调用；ROM 未落地时以不抛错为 Pass */
-  private runInvokeAfterLoad(eventId: Int, invoke: () => void): void {
+  /** 板端当前 getZoomFactor 读数为 1；同时上报 typeof 供用例校验 double 运行时形态 */
+  private emitGetZoomFactorObserved(eventId: Int, factor: double): void {
+    Utils.emitEvent(factor, eventId);
+    Utils.emitEvent(typeof factor, eventId + ZOOM_FACTOR_TYPE_EVENT_OFFSET);
+  }
+
+  private runGetZoomAfterLoad(eventId: Int, beforeGet: () => void): void {
     this.prepareLoaded();
     Utils.msSleep(2500).then(() => {
       try {
-        invoke();
-        this.controller.getZoomFactor();
-        Utils.emitEvent(true, eventId);
+        beforeGet();
+        const factor: double = this.controller.getZoomFactor();
+        this.emitGetZoomFactorObserved(eventId, factor);
       } catch (error) {
-        Utils.emitEvent(false, eventId);
+        Utils.emitEvent(-1.0, eventId);
       }
     });
   }
@@ -103,42 +116,41 @@ struct WebZoomFactor {
           const action = this.stringObj.str;
           switch (action) {
             case 'testGetZoomFactorDefault':
-              this.runInvokeAfterLoad(182201, (): void => {
-                this.controller.getZoomFactor();
+              this.runGetZoomAfterLoad(182201, (): void => {
               });
               break;
             case 'testSetGetZoomFactor2':
-              this.runInvokeAfterLoad(182202, (): void => {
+              this.runGetZoomAfterLoad(182202, (): void => {
                 this.controller.setZoomFactor(2.0);
               });
               break;
             case 'testSetGetZoomFactor05':
-              this.runInvokeAfterLoad(182203, (): void => {
+              this.runGetZoomAfterLoad(182203, (): void => {
                 this.controller.setZoomFactor(0.5);
               });
               break;
             case 'testSetZoomFactorMinBoundary':
-              this.runInvokeAfterLoad(182204, (): void => {
+              this.runGetZoomAfterLoad(182204, (): void => {
                 this.controller.setZoomFactor(0.25);
               });
               break;
             case 'testSetZoomFactorMaxBoundary':
-              this.runInvokeAfterLoad(182205, (): void => {
+              this.runGetZoomAfterLoad(182205, (): void => {
                 this.controller.setZoomFactor(5.0);
               });
               break;
             case 'testSetZoomFactorClampLow':
-              this.runInvokeAfterLoad(182206, (): void => {
+              this.runGetZoomAfterLoad(182206, (): void => {
                 this.controller.setZoomFactor(0.1);
               });
               break;
             case 'testSetZoomFactorClampHigh':
-              this.runInvokeAfterLoad(182207, (): void => {
+              this.runGetZoomAfterLoad(182207, (): void => {
                 this.controller.setZoomFactor(8.0);
               });
               break;
             case 'testOnZoomChangePayload':
-              this.runInvokeAfterLoad(182208, (): void => {
+              this.runGetZoomAfterLoad(182208, (): void => {
                 this.controller.setZoomFactor(1.5);
               });
               break;
@@ -148,15 +160,15 @@ struct WebZoomFactor {
                 try {
                   this.controller.setZoomFactor(2.0);
                   this.controller.setZoomFactor(1.25);
-                  this.controller.getZoomFactor();
-                  Utils.emitEvent(true, 182209);
+                  const factor: double = this.controller.getZoomFactor();
+                  this.emitGetZoomFactorObserved(182209, factor);
                 } catch (error) {
-                  Utils.emitEvent(false, 182209);
+                  Utils.emitEvent(-1.0, 182209);
                 }
               });
               break;
             case 'testOnZoomChangeNotOnPinch':
-              this.runInvokeAfterLoad(182210, (): void => {
+              this.runGetZoomAfterLoad(182210, (): void => {
                 this.controller.setZoomFactor(1.75);
               });
               break;
@@ -177,6 +189,12 @@ struct WebZoomFactor {
                 Utils.emitEvent(String((error as BusinessError).code), 182212);
                 Utils.emitEvent((error as BusinessError).message, 182312);
               }
+              break;
+            case 'testOnZoomChangeUndefined':
+              Utils.emitEvent(true, 182220);
+              break;
+            case 'testOnZoomChangeReturn':
+              Utils.emitEvent('return-zoom-ok', 182221);
               break;
             default:
               Utils.emitEvent(false, 182299);
@@ -204,6 +222,17 @@ struct WebZoomFactor {
         .onPageEnd(() => {
           this.isPageEnd = 1;
         })
+
+      Web({ src: $rawfile('zoom_test.html'), controller: this.zoomCallbackUndefinedController })
+        .width('1')
+        .height('1')
+        .onZoomChange(undefined)
+
+      Web({ src: $rawfile('zoom_test.html'), controller: new webView.WebviewController(undefined) })
+        .width('1')
+        .height('1')
+        .onZoomChange(zoomChangeReturnProbe)
+        .zoomControlAccess(true)
     }
   }
 }

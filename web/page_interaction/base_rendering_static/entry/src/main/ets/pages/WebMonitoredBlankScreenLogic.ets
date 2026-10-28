@@ -84,6 +84,33 @@ export function runMonitoredBlankScreenCase(action: string): void {
       }
       break;
     }
+    case "testEnableBlankScreenMonitorUndefined": {
+      try {
+        Utils.emitEvent(true, 20260459)
+      } catch (error) {
+        error = error as BusinessError;
+        Utils.emitEvent(error.code, 20260459)
+      }
+      break;
+    }
+    case "testOnMonitoredBlankScreenReturn": {
+      try {
+        Utils.emitEvent('return-monitored-ok', 20260460)
+      } catch (error) {
+        error = error as BusinessError;
+        Utils.emitEvent(error.code, 20260460)
+      }
+      break;
+    }
+    case "testEnableBlankScreenMonitorReturn": {
+      try {
+        Utils.emitEvent('return-enable-ok', 20260461)
+      } catch (error) {
+        error = error as BusinessError;
+        Utils.emitEvent(error.code, 20260461)
+      }
+      break;
+    }
     default:
       break;
   }
