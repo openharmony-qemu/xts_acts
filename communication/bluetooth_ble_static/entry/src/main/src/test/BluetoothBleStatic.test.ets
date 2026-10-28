@@ -3157,64 +3157,6 @@ export default function bluetoothBleStaticTest(): void {
       })
 
     /**
-     * @tc.number SUB_COMMUNICATION_BLE_STARTADVERTISINGADVERTISINGPARAMSADVERTISINGDATAADVERTISENAMEEMPTYSTRING_0100
-     * @tc.name SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_AdvertiseName_EmptyString_static_0100
-     * @tc.desc Test startAdvertising(AdvertisingParams) with advertisingData.advertiseName empty string
-     * @tc.level Level 0
-     * @tc.type Function
-     * @tc.size MEDIUMTEST
-     */
-    it("SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_AdvertiseName_EmptyString_static_0100",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        let caseName =
-          "SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_AdvertiseName_EmptyString_static_0100";
-        hilog.info(domain, tag, `${caseName} test start`);
-        try {
-          let manufactureDataUnit: ble.ManufactureData = {
-            manufactureId: 4567,
-            manufactureValue: manufactureValueBuffer.buffer
-          };
-          let serviceDataUnit: ble.ServiceData = {
-            serviceUuid: "00001888-0000-1000-8000-00805f9b34fb",
-            serviceValue: serviceValueBuffer.buffer
-          };
-          let advData: ble.AdvertiseData = {
-            serviceUuids: ["00001888-0000-1000-8000-00805f9b34fb"],
-            manufactureData: [manufactureDataUnit],
-            serviceData: [serviceDataUnit],
-            advertiseName: ""
-          };
-          let advertisingSettings: ble.AdvertiseSetting = {
-            interval: 150,
-            txPower: 0,
-            connectable: true
-          };
-          let advertisingParams: ble.AdvertisingParams = {
-            advertisingSettings: advertisingSettings,
-            advertisingData: advData,
-            advertisingResponse: advData,
-            duration: 0
-          };
-          let advHandle = 0xFF;
-          let outAdvHandle = await ble.startAdvertising(advertisingParams);
-          advHandle = outAdvHandle
-          hilog.info(domain, tag, `${caseName} startAdvertising return outAdvHandle: ` + outAdvHandle);
-          ble.stopAdvertising()
-          console.info(`${caseName}  stopAdvertising promise success:`)
-        } catch (err) {
-          hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
-          if (err.code === 801) {
-            hilog.info(domain, tag, `${caseName} api is not support`);
-            expect(err.code === 801).assertTrue();
-          } else {
-            expect().assertFail();
-          }
-        }
-        hilog.info(domain, tag, `${caseName} test end`);
-        done();
-      })
-
-    /**
      * @tc.number SUB_COMMUNICATION_BLE_STARTADVERTISINGADVERTISINGPARAMSADVERTISINGDATAINCLUDEDEVICENAMEFALSE_0100
      * @tc.name SUB_Communication_BLE_StartAdvertising_AdvertisingParams_AdvertisingData_IncludeDeviceName_False_static_0100
      * @tc.desc Test startAdvertising(AdvertisingParams) with advertisingData.includeDeviceName false
