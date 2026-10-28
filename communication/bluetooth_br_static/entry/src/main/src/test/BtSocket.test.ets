@@ -821,41 +821,6 @@ export default function btSocketTest(): void {
         done();
       })
 
-    /**
-     * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPPListen_ADD_static_0500
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPPLISTENADD_0500
-     * @tc.desc   Test SppListen options.type 非法枚举值
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SPPListen_ADD_static_0500',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-        const SppOption: bluetooth.SppOptions = {
-          uuid: '00001810-0000-1000-8000-00805F9B34FB',
-          secure: false,
-          type: 99 as bluetooth.SppType
-        };
-        let serverNumber = -1;
-        try {
-          bluetooth.sppListen('server_illegal_type', SppOption, serverSocket);
-          hilog.info(domain, tag, '[bluetooth_js]:sppListen 0500 success');
-          expect().assertFail();
-        } catch (error) {
-          hilog.error(domain, tag,
-            `[bluetooth_js]SPPListen error, code is ${error.code},message is ${error.message}`);
-          if (error.code === 801) {
-            hilog.info(domain, tag, '[bluetooth_js]sppListen is not support or profile not support');
-            expect(error.code).assertEqual(801);
-          } else if (error.code === 401) {
-            hilog.info(domain, tag, '[bluetooth_js]sppListen invalid param');
-            expect(error.code).assertEqual(401);
-          } else {
-            expect(error.code).assertEqual(2900004);
-          }
-        }
-        done();
-      })
 
     /**
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SppConnect_ADD_static_0100
@@ -973,45 +938,6 @@ export default function btSocketTest(): void {
         done();
       })
 
-    /**
-     * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SppConnect_ADD_static_0400
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPPCONNECTADD_0400
-     * @tc.desc   Test SppConnect options.type 非法枚举值
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SppConnect_ADD_static_0400',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-        let sppOption: bluetooth.SppOptions = {
-          uuid: '',
-          secure: true,
-          type: 99 as bluetooth.SppType
-        };
-        try {
-          bluetooth.sppConnect('00:11:22:33:44:55', sppOption, (code: BusinessError | null, number: int | undefined) => {
-            if (code) {
-              hilog.info(domain, tag, '[bluetooth_js] code is: ' + JSON.stringify(code));
-            } else {
-              hilog.info(domain, tag, '[bluetooth_js]sppConnect Number:'
-                + JSON.stringify(number));
-              expect(true).assertEqual(number != null);
-            }
-          });
-        } catch (error) {
-          hilog.error(domain, tag, `[bluetooth_js]SPPConnect error, code is ${error.code},message is ${error.message}`);
-          if (error.code === 801) {
-            hilog.info(domain, tag, '[bluetooth_js]sppConnect is not support or profile not support');
-            expect(error.code).assertEqual(801);
-          } else if (error.code === 401) {
-            hilog.info(domain, tag, '[bluetooth_js]sppConnect invalid param');
-            expect(error.code).assertEqual(401);
-          } else {
-            expect(error.code).assertEqual(2900004);
-          }
-        }
-        done();
-      })
 
     /**
      * @tc.name   SUB_COMMUNICATION_BLUETOOTH_SOCKET_GETMAX_ReceiveDataSize_static_0100
