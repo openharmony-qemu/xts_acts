@@ -66,8 +66,8 @@ async function closeChipByText(driver: Driver, text: string): Promise<void> {
   let rect = await chipComp!.getBounds();
   let chipWidth: number = rect.right - rect.left;
   let chipHeight: number = rect.bottom - rect.top;
-  let x: number = rect.right - Math.round(chipWidth * 0.25) + (AppStorage.get<number>('winLeft') ?? 0);
-  let y: number = rect.top + Math.round(chipHeight * 0.5) + (AppStorage.get<number>('winTop') ?? 0);
+  let x: number = rect.right - Math.round(chipWidth * 0.25);
+  let y: number = rect.top + Math.round(chipHeight * 0.5);
   console.info('closeChipByText text=' + text + ' click close at x=' + x + ' y=' + y
     + ' bounds={left:' + rect.left + ',right:' + rect.right + ',top:' + rect.top + ',bottom:' + rect.bottom
     + '} chipWidth=' + chipWidth + ' chipHeight=' + chipHeight);
