@@ -35,6 +35,7 @@ import { KeyCode } from '@ohos.multimodalInput.keyCode';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
 export default function RichEditorOnSelectionChange019() {
   describe('RichEditorOnSelectionChange019', () => {
     beforeAll(async (): Promise<void> => {
@@ -58,7 +59,7 @@ export default function RichEditorOnSelectionChange019() {
           console.info("push RichEditorOnSelectionChange019 success");
         }
       } catch (err) {
-        console.error("push RichEditorOnSelectionChange019 page error: " + err);
+        console.log("push RichEditorOnSelectionChange019 page error: " + err);
         expect().assertFail();
       }
     });
@@ -75,18 +76,42 @@ export default function RichEditorOnSelectionChange019() {
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('RichEditorOnSelectionChange019')) as Promise<Component>);
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      try {
+        await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.click error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A);
+      try {
+        driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_X);
+      try {
+        driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_X, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V);
+      try {
+        driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_Z);
+      try {
+        driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_Z, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_Y);
+      try {
+        driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_Y, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
 
       let message = await (driver.findComponent(ON.id('message')) as Promise<Component>);

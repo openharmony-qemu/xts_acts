@@ -34,6 +34,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
 export default function RichEditorTransformation003() {
   describe('RichEditorTransformation003', () => {
     beforeAll(async (): Promise<void> => {
@@ -57,7 +58,7 @@ export default function RichEditorTransformation003() {
           console.info("push RichEditorTransformation003 success");
         }
       } catch (err) {
-        console.error("push RichEditorTransformation003 page error: " + err);
+        console.log("push RichEditorTransformation003 page error: " + err);
         expect().assertFail();
       }
     });
@@ -74,7 +75,11 @@ export default function RichEditorTransformation003() {
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('RichEditorTransformation003')) as Promise<Component>);
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      try {
+        await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('RichEditorTransformation003');
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_AffineTransformation_static_005 strJson',strJson);

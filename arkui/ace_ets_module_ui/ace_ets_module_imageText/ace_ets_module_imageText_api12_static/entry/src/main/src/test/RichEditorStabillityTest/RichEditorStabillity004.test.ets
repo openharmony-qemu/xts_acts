@@ -34,6 +34,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
 export default function RichEditorStabillity004() {
   describe('RichEditorStabillity004', () => {
     beforeAll(async (): Promise<void> => {
@@ -57,7 +58,7 @@ export default function RichEditorStabillity004() {
           console.info("push RichEditorStabillity004 success");
         }
       } catch (err) {
-        console.error("push RichEditorStabillity004 page error: " + err);
+        console.log("push RichEditorStabillity004 page error: " + err);
         expect().assertFail();
       }
     });
@@ -75,13 +76,13 @@ export default function RichEditorStabillity004() {
         let driver = Driver.create();
         let rich = await (driver.findComponent(ON.id('RichEditorStabillity004')) as Promise<Component>);
         let pointCenter = await rich.getBoundsCenter();
-        await driver.click(pointCenter.x, pointCenter.y);
+        await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
         await CommonFunc.sleep(500);
-        await driver.drag(pointCenter.x + 50, pointCenter.y + 50, pointCenter.x + 50, pointCenter.y + 650, 600);
+        await driver.dragBetween({ x: pointCenter.x + 50, y: pointCenter.y + 50, displayId: displayID }, { x: pointCenter.x + 50, y: pointCenter.y + 650, displayId: displayID }, 600);
         await CommonFunc.sleep(1000);
-        await driver.click(pointCenter.x + 50, pointCenter.y + 650);
+        await driver.clickAt({ x: pointCenter.x + 50, y: pointCenter.y + 650, displayId: displayID });
         await CommonFunc.sleep(500);
-        await driver.drag(pointCenter.x + 50, pointCenter.y + 650, pointCenter.x + 50, pointCenter.y + 50, 600);
+        await driver.dragBetween({ x: pointCenter.x + 50, y: pointCenter.y + 650, displayId: displayID }, { x: pointCenter.x + 50, y: pointCenter.y + 50, displayId: displayID }, 600);
         await CommonFunc.sleep(1000);
         done();
       } catch(err) {

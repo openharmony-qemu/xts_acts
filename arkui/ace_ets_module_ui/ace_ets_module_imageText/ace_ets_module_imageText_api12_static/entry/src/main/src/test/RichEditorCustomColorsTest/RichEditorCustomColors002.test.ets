@@ -34,6 +34,7 @@ import { KeyCode } from '@ohos.multimodalInput.keyCode';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
 export default function RichEditorCustomColors002() {
   describe('RichEditorCustomColors002', () => {
     beforeAll(async (): Promise<void> => {
@@ -57,7 +58,7 @@ export default function RichEditorCustomColors002() {
           console.info("push RichEditorCustomColors002 success");
         }
       } catch (err) {
-        console.error("push RichEditorCustomColors002 page error: " + err);
+        console.log("push RichEditorCustomColors002 page error: " + err);
         expect().assertFail();
       }
     });
@@ -75,7 +76,7 @@ export default function RichEditorCustomColors002() {
         let driver = Driver.create();
         let rich = await (driver.findComponent(ON.id('rich_struct')) as Promise<Component>);
         let pointCenter = await rich.getBoundsCenter();
-        await driver.click(pointCenter.x, pointCenter.y);
+        await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
         await CommonFunc.sleep(1000);
         done();
       } catch(err) {

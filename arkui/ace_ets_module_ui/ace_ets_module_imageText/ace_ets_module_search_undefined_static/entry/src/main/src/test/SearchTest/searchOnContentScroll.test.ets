@@ -40,6 +40,7 @@ import { BusinessError } from '@ohos.base';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
 export default function searchOnContentScroll() {
   describe('searchOnContentScroll', () => {
     beforeAll(async (): Promise<void> => {
@@ -68,7 +69,7 @@ export default function searchOnContentScroll() {
         }
         console.info("searchOnContentScroll beforeEach start3");
       } catch (err) {
-        console.error("push searchOnContentScroll page error:" + err);
+        console.log("push searchOnContentScroll page error:" + err);
       }
       console.info("searchOnContentScroll beforeEach start4");
     });
@@ -95,7 +96,11 @@ export default function searchOnContentScroll() {
       let text = await driver.findComponent(ON.id('key_search_onContentScroll_001'))
       await (text?.inputText('placeholder(search)placeholder(search)placeholder(search)placeholder(search)') as Promise<void>)
       await CommonFunc.sleep(2000);
-      driver.triggerKey(2070);
+      try {
+        driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(2000);
       let strJsonNew = inspector.getInspectorByKey('test_text_onContentScroll');
       console.info('[' + tagName + '] Search onContentScroll is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)
@@ -114,7 +119,11 @@ export default function searchOnContentScroll() {
       let text1 = await driver.findComponent(ON.id('key_search_onContentScroll_001'))
       await (text1?.inputText('placeholder(search)placeholder(search)placeholder(search)placeholder(search)') as Promise<void>)
       await CommonFunc.sleep(1000);
-      driver.triggerKey(2070);
+      try {
+        driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJsonNew1 = inspector.getInspectorByKey('test_text_onContentScroll');
       console.info('[' + tagName + '] Search onContentScroll is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew1)

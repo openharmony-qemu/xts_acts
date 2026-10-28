@@ -35,6 +35,8 @@ import { KeyCode } from '@ohos.multimodalInput.keyCode';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+
 export default function RichEditorKeyBoard006() {
   describe('RichEditorKeyBoard006', () => {
     beforeAll(async (): Promise<void> => {
@@ -58,7 +60,7 @@ export default function RichEditorKeyBoard006() {
           console.info("push RichEditorKeyBoard006 success");
         }
       } catch (err) {
-        console.error("push RichEditorKeyBoard006 page error: " + err);
+        console.log("push RichEditorKeyBoard006 page error: " + err);
         expect().assertFail();
       }
     });
@@ -75,10 +77,18 @@ export default function RichEditorKeyBoard006() {
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('RichEditorKeyBoard006')) as Promise<Component>);
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      try {
+        await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
-      driver.triggerKey(KeyCode.KEYCODE_ENTER);
+      try {
+        driver.triggerKey(KeyCode.KEYCODE_ENTER, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
       let isEditingFlag = await (driver.findComponent(ON.id('isEditingFlag')) as Promise<Component>);

@@ -30,6 +30,7 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
 export default function RichEditorOnWillChangeTest() {
   describe('RichEditorOnWillChangeTest', () => {
     beforeAll(async (): Promise<void> => {
@@ -55,7 +56,7 @@ export default function RichEditorOnWillChangeTest() {
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error("push RichEditorOnWillChangeTest page error:" + err);
+        console.log("push RichEditorOnWillChangeTest page error:" + err);
       }
       console.info("RichEditorOnWillChangeTest beforeEach end");
     }); 
@@ -77,9 +78,17 @@ it('SUB_ACE_RichEditorOnWillChange_static_0010', Level.LEVEL2, async (done: () =
       let button = await driver.findComponent(ON.id('setCaretOffset'));
       let point:Point = await button!.getBoundsCenter()
       await CommonFunc.sleep(500);
-      await driver.click(point.x, point.y);
+      try {
+        await driver.clickAt({ x: point.x, y: point.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2054);
+      try {
+        await driver.triggerKey(2054, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       // let onWillChangeRange = await driver.findComponent(ON.id('onWillChange_range'));
       // let range = onWillChangeRange?.getText();
       let range = inspector.getInspectorByKey('onWillChange_range');

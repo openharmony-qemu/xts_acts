@@ -31,6 +31,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
 
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
 export default function RichEditorOnHoverTest() {
   describe('RichEditorOnHoverTest', () => {
     beforeAll(async (): Promise<void> => {
@@ -56,7 +57,7 @@ export default function RichEditorOnHoverTest() {
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error("push RichEditorOnHoverTest page error:" + err);
+        console.log("push RichEditorOnHoverTest page error:" + err);
       }
       console.info("RichEditorOnHoverTest beforeEach end");
     }); 
@@ -78,7 +79,11 @@ it('RichEditorOnHoverTest_static_0010', Level.LEVEL2, async (done: () => void): 
       let RichEditor = await driver.findComponent(ON.id('RichEditor_onHover_id'));
       let point:Point = await RichEditor!.getBoundsCenter()
       await CommonFunc.sleep(500);
-      await driver.mouseMoveTo({x:point.x , y:point.y })
+      try {
+        await driver.mouseMoveTo({x:point.x , y:point.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.mouseMoveTo error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('onHover_text2_id');
       let obj = JSON.parseJsonElement(strJson);
@@ -105,12 +110,20 @@ it('RichEditorOnHoverTest_static_0020', Level.LEVEL2, async (done: () => void): 
       let RichEditor = await driver.findComponent(ON.id('RichEditor_onHover_id'));
       let point:Point = await RichEditor!.getBoundsCenter()
       await CommonFunc.sleep(500);
-      await driver.mouseMoveTo({x:point.x , y:point.y })
+      try {
+        await driver.mouseMoveTo({x:point.x , y:point.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.mouseMoveTo error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let text2 = await driver.findComponent(ON.id('onHover_text2_id'));
       let point2:Point = await text2!.getBoundsCenter()
       await CommonFunc.sleep(500);
-      await driver.mouseMoveTo({x:point2.x , y:point2.y })
+      try {
+        await driver.mouseMoveTo({x:point2.x , y:point2.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.mouseMoveTo error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('onHover_text1_id');
       let obj = JSON.parseJsonElement(strJson);

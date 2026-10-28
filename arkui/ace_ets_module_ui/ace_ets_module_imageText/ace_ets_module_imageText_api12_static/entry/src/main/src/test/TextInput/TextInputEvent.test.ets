@@ -30,6 +30,7 @@ let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
 export default function TextInputEvent() {
   describe('TextInputEvent', () => {
     beforeAll(async (): Promise<void> => {
@@ -54,7 +55,7 @@ export default function TextInputEvent() {
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error("push TextInputEvent page error:" + err);
+        console.log("push TextInputEvent page error:" + err);
       }
       console.info("TextInputEvent beforeEach end");
     }); 
@@ -80,7 +81,11 @@ export default function TextInputEvent() {
       let text = await (driver.findComponent(ON.id('TextInputEvent')) as Promise<Component>);
       await text.inputText('9');
       await CommonFunc.sleep(1000);
-	    await driver.triggerKey(2070);
+	    try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('TextInputEventText')
       let strJson2 = inspector.getInspectorByKey('TextInputEventText2');
@@ -110,9 +115,17 @@ export default function TextInputEvent() {
       let driver = Driver.create();
       let text = await (driver.findComponent(ON.id('TextInputEvent2')) as Promise<Component>);
       let point:Point = await text.getBoundsCenter();
-      await driver.inputText(point,'9');
+      try {
+        await driver.inputText({ x: point.x, y: point.y, displayId: displayID },'9');
+      } catch (err) {
+        console.log('driver.inputText error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
-	    await driver.triggerKey(2070);
+	    try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('TextInputEventText')
       let strJson2 = inspector.getInspectorByKey('TextInputEventText2');
@@ -142,9 +155,17 @@ export default function TextInputEvent() {
       let driver = Driver.create();
       let text = await (driver.findComponent(ON.id('TextInputEvent')) as Promise<Component>);
       let point: Point = await text.getBoundsCenter();
-      await driver.inputText(point, '123');
+      try {
+        await driver.inputText({ x: point.x, y: point.y, displayId: displayID }, '123');
+      } catch (err) {
+        console.log('driver.inputText error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
-	    await driver.triggerKey(2070);
+	    try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('TextInputEventText')
       let strJson2 = inspector.getInspectorByKey('TextInputEventText2');
@@ -174,9 +195,17 @@ export default function TextInputEvent() {
       let driver = Driver.create();
       let text = await (driver.findComponent(ON.id('TextInputEvent2')) as Promise<Component>);
       let point: Point  = await text.getBoundsCenter();
-      await driver.inputText(point, '3');
+      try {
+        await driver.inputText({ x: point.x, y: point.y, displayId: displayID }, '3');
+      } catch (err) {
+        console.log('driver.inputText error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
-	    await driver.triggerKey(2070);
+	    try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('TextInputEventText')
       let strJson2 = inspector.getInspectorByKey('TextInputEventText2');
@@ -207,7 +236,11 @@ export default function TextInputEvent() {
       let text = await (driver.findComponent(ON.id('TextInputEvent')) as Promise<Component>);
       await text.inputText('123');
       await CommonFunc.sleep(1000);
-	    await driver.triggerKey(2070);
+	    try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('TextInputEventText3')
       let strJson2 = inspector.getInspectorByKey('TextInputEventText4');
@@ -238,11 +271,19 @@ export default function TextInputEvent() {
       let text = await (driver.findComponent(ON.id('TextInputEvent')) as Promise<Component>);
       await text.inputText('123');
       await CommonFunc.sleep(1000);
-	  await driver.triggerKey(2070);
+	  try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       await text.clearText();
       await CommonFunc.sleep(1000);
-	  await driver.triggerKey(2070);
+	  try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('TextInputEventText5')
       let strJson2 = inspector.getInspectorByKey('TextInputEventText6');
@@ -273,11 +314,19 @@ export default function TextInputEvent() {
       let text = await (driver.findComponent(ON.id('TextInputEvent3')) as Promise<Component>);
       await text.inputText('123');
       await CommonFunc.sleep(1000);
-	  await driver.triggerKey(2070);
+	  try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       await text.clearText();
       await CommonFunc.sleep(1000);
-	  await driver.triggerKey(2070);
+	  try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('TextInputEventText5')
       let strJson2 = inspector.getInspectorByKey('TextInputEventText6');

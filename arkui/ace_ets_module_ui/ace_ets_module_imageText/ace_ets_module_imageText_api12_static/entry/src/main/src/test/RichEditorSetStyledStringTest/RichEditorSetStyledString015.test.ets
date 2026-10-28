@@ -34,6 +34,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
 export default function RichEditorSetStyledString015() {
   describe('RichEditorSetStyledString015', () => {
     beforeAll(async (): Promise<void> => {
@@ -57,7 +58,7 @@ export default function RichEditorSetStyledString015() {
           console.info("push RichEditorSetStyledString015 success");
         }
       } catch (err) {
-        console.error("push RichEditorSetStyledString015 page error: " + err);
+        console.log("push RichEditorSetStyledString015 page error: " + err);
         expect().assertFail();
       }
     });
@@ -75,7 +76,11 @@ export default function RichEditorSetStyledString015() {
       let rich = await (driver.findComponent(ON.id('RichEditorSetStyledString015')) as Promise<Component>);
       let getBounds = await rich.getBoundsCenter();
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.x, getBounds.y);
+      try {
+        await driver.clickAt({ x: getBounds.x, y: getBounds.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       let image_top = await (driver.findComponent(ON.id('image_top')) as Promise<Component>);
       await image_top.click();
@@ -111,7 +116,11 @@ export default function RichEditorSetStyledString015() {
       let setTypingStyle = await (driver.findComponent(ON.id('setTypingStyle')) as Promise<Component>);
       await setTypingStyle.click();
       await CommonFunc.sleep(500);
-      driver.triggerKey(KeyCode.KEYCODE_A);
+      try {
+        driver.triggerKey(KeyCode.KEYCODE_A, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       let getTypingStyle = await (driver.findComponent(ON.id('getTypingStyle')) as Promise<Component>);
       await getTypingStyle.click();
@@ -138,9 +147,17 @@ export default function RichEditorSetStyledString015() {
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_static_0044', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_static_0044 START');
       let driver = Driver.create();
-      driver.triggerKey(KeyCode.KEYCODE_C);
+      try {
+        driver.triggerKey(KeyCode.KEYCODE_C, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      driver.triggerKey(KeyCode.KEYCODE_D);
+      try {
+        driver.triggerKey(KeyCode.KEYCODE_D, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       let getTypingStyle = await (driver.findComponent(ON.id('getTypingStyle')) as Promise<Component>);
       await getTypingStyle.click();
@@ -170,7 +187,11 @@ export default function RichEditorSetStyledString015() {
       let rich = await (driver.findComponent(ON.id('RichEditorSetStyledString015')) as Promise<Component>);
       let getBounds = await rich.getBoundsCenter();
       await CommonFunc.sleep(500);
-      await driver.longClick(getBounds.x, getBounds.y);
+      try {
+        await driver.longClickAt({ x: getBounds.x, y: getBounds.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.longClickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       let close_menu = await (driver.findComponent(ON.id('close_menu')) as Promise<Component>);
       await close_menu.click();

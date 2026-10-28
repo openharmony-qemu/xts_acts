@@ -35,6 +35,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
 export default function RichEditorShortCutKeys020() {
   describe('RichEditorShortCutKeys020', () => {
     beforeAll(async (): Promise<void> => {
@@ -58,7 +59,7 @@ export default function RichEditorShortCutKeys020() {
           console.info("push RichEditorShortCutKeys020 success");
         }
       } catch (err) {
-        console.error("push RichEditorShortCutKeys020 page error: " + err);
+        console.log("push RichEditorShortCutKeys020 page error: " + err);
         expect().assertFail();
       }
     });
@@ -75,16 +76,32 @@ export default function RichEditorShortCutKeys020() {
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('RichEditorShortCutKeys020')) as Promise<Component>);
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      try {
+        await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       let setSelect = await (driver.findComponent(ON.id('setSelect')) as Promise<Component>);
       await setSelect.click();
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_I);
+      try {
+        driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_I, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_B);
+      try {
+        driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_B, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_U);
+      try {
+        driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_U, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       let getSpans = await (driver.findComponent(ON.id('getSpans')) as Promise<Component>);
       await getSpans.click();

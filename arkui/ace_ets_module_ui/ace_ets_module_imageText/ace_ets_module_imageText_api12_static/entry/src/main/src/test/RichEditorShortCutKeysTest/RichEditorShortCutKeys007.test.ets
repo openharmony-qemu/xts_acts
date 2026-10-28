@@ -34,6 +34,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
 export default function RichEditorShortCutKeys007() {
   describe('RichEditorShortCutKeys007', () => {
     beforeAll(async (): Promise<void> => {
@@ -57,7 +58,7 @@ export default function RichEditorShortCutKeys007() {
           console.info("push RichEditorShortCutKeys007 success");
         }
       } catch (err) {
-        console.error("push RichEditorShortCutKeys007 page error: " + err);
+        console.log("push RichEditorShortCutKeys007 page error: " + err);
         expect().assertFail();
       }
     });
@@ -81,12 +82,20 @@ export default function RichEditorShortCutKeys007() {
       expect(styleText).assertContain('"fontWeight":9');
       let rich = await (driver.findComponent(ON.id('RichEditorShortCutKeys007')) as Promise<Component>);
       let pointCenter = await rich.getBoundsCenter();
-      await driver.longClick(pointCenter.x, pointCenter.y);
+      try {
+        await driver.longClickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.longClickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       let selectAll = await (driver.findComponent(ON.text('全选')) as Promise<Component>);
       await selectAll.click();
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_B);
+      try {
+        driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_B, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(2000);
       await get_content.click();
       await CommonFunc.sleep(500);

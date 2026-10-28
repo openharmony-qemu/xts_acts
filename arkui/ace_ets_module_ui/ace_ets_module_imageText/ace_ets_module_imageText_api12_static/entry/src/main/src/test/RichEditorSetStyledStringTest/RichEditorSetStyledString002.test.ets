@@ -34,6 +34,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
 export default function RichEditorSetStyledString002() {
   describe('RichEditorSetStyledString002', () => {
     beforeAll(async (): Promise<void> => {
@@ -57,7 +58,7 @@ export default function RichEditorSetStyledString002() {
           console.info("push RichEditorSetStyledString002 success");
         }
       } catch (err) {
-        console.error("push RichEditorSetStyledString002 page error: " + err);
+        console.log("push RichEditorSetStyledString002 page error: " + err);
         expect().assertFail();
       }
     });
@@ -76,7 +77,11 @@ export default function RichEditorSetStyledString002() {
       let getBounds = await rich.getBoundsCenter();
       await CommonFunc.sleep(500);
 
-      await driver.click(getBounds.x, getBounds.y );
+      try {
+        await driver.clickAt({ x: getBounds.x, y: getBounds.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
       let add_image = await (driver.findComponent(ON.id('add_image')) as Promise<Component>);

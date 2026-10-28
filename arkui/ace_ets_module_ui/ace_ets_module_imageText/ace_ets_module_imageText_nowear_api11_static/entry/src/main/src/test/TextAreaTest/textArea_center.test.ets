@@ -29,6 +29,7 @@ import { UtilsTest } from '../Util.test';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
 export default function textArea_center() {
   describe('textArea_center', () : void=> {
     beforeAll(async (): Promise<void> => {
@@ -53,7 +54,7 @@ export default function textArea_center() {
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error("push textArea_center page error:" + err);
+        console.log("push textArea_center page error:" + err);
       }
       console.info("textArea_center beforeEach end");
     });
@@ -82,9 +83,11 @@ it('textArea_center_static_001', Level.LEVEL2, async (done: ()=>void ) => {
 
         let driver =  Driver.create();
         await CommonFunc.sleep(500);
-        await (driver.click(
-          (Math.round(textArea_01.left + (textArea_01.right - textArea_01.left) /2).toInt()),(Math.round(textArea_01.top + (textArea_01.bottom - textArea_01.top) /45).toInt())
-        ) as Promise<void>);
+        try {
+          await (driver.clickAt({ x: (Math.round(textArea_01.left + (textArea_01.right - textArea_01.left) /2).toInt()), y: (Math.round(textArea_01.top + (textArea_01.bottom - textArea_01.top) /45).toInt()), displayId: displayID }) as Promise<void>);
+        } catch (err) {
+          console.log('driver.clickAt error: ' + JSON.stringify(err));
+        }
         await CommonFunc.sleep(1000);
 
         console.log('get click after Initial value')
@@ -125,9 +128,11 @@ it('textArea_center_static_002', Level.LEVEL2, async (done: ()=>void ) => {
 
         let driver =  Driver.create();
         await CommonFunc.sleep(500);
-        await (driver.click(
-          (Math.round(textArea_01.left + (textArea_01.right - textArea_01.left) /2).toInt()),(Math.round(textArea_01.top + (textArea_01.bottom - textArea_01.top) /2 + AppStorage.get<UIContext>('uiContext')!.vp2px(20)).toInt())
-        ) as Promise<void>);
+        try {
+          await (driver.clickAt({ x: (Math.round(textArea_01.left + (textArea_01.right - textArea_01.left) /2).toInt()), y: (Math.round(textArea_01.top + (textArea_01.bottom - textArea_01.top) /2 + AppStorage.get<UIContext>('uiContext')!.vp2px(20)).toInt()), displayId: displayID }) as Promise<void>);
+        } catch (err) {
+          console.log('driver.clickAt error: ' + JSON.stringify(err));
+        }
         await CommonFunc.sleep(1000);
 
         console.log('get click after Initial value')
@@ -173,9 +178,11 @@ it('textArea_center_static_003', Level.LEVEL2, async (done: ()=>void ) => {
         let y5 = textArea_01.bottom
 
         await CommonFunc.sleep(500);
-        await (driver.click(
-          (Math.round(textArea_01.left + (textArea_01.right - textArea_01.left) /2).toInt()),(Math.round(textArea_01.top + (textArea_01.bottom - textArea_01.top) /45 *40).toInt())
-        ) as Promise<void>);
+        try {
+          await (driver.clickAt({ x: (Math.round(textArea_01.left + (textArea_01.right - textArea_01.left) /2).toInt()), y: (Math.round(textArea_01.top + (textArea_01.bottom - textArea_01.top) /45 *40).toInt()), displayId: displayID }) as Promise<void>);
+        } catch (err) {
+          console.log('driver.clickAt error: ' + JSON.stringify(err));
+        }
         await CommonFunc.sleep(1000);
 
         console.log('get click after Initial value')

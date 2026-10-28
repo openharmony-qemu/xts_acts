@@ -34,6 +34,7 @@ import { KeyCode } from '@ohos.multimodalInput.keyCode';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
 export default function RichEditorOnWillChange020() {
   describe('RichEditorOnWillChange020', () => {
     beforeAll(async (): Promise<void> => {
@@ -57,7 +58,7 @@ export default function RichEditorOnWillChange020() {
           console.info("push RichEditorOnWillChange020 success");
         }
       } catch (err) {
-        console.error("push RichEditorOnWillChange020 page error: " + err);
+        console.log("push RichEditorOnWillChange020 page error: " + err);
         expect().assertFail();
       }
     });
@@ -74,7 +75,11 @@ export default function RichEditorOnWillChange020() {
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('rich_struct')) as Promise<Component>);
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      try {
+        await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.click error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
       let onWillChange = await (driver.findComponent(ON.id('onWillChange_callback')) as Promise<Component>);
@@ -91,7 +96,11 @@ export default function RichEditorOnWillChange020() {
       expect(replaceText).assertEqual('replacedSpans_callback:true');
       expect(didText).assertEqual('onDidChange_callback:true');
 
-      await driver.triggerKey(KeyCode.KEYCODE_DEL);
+      try {
+        await driver.triggerKey(KeyCode.KEYCODE_DEL, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
 
       let onWillChange_rangeBefore = await (driver.findComponent(ON.id('onWillChange_rangeBefore')) as Promise<Component>);
@@ -126,7 +135,11 @@ export default function RichEditorOnWillChange020() {
       await back.click();
       await CommonFunc.sleep(500);
 
-      await driver.triggerKey(KeyCode.KEYCODE_FORWARD_DEL);
+      try {
+        await driver.triggerKey(KeyCode.KEYCODE_FORWARD_DEL, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
 
       onWillBefore = await onWillChange_rangeBefore.getText();

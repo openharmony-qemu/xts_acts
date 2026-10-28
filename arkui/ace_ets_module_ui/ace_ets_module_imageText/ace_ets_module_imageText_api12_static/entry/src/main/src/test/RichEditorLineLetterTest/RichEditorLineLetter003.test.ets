@@ -35,6 +35,7 @@ import { KeyCode } from '@ohos.multimodalInput.keyCode';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
 export default function RichEditorLineLetter003() {
   describe('RichEditorLineLetter003', () => {
     beforeAll(async (): Promise<void> => {
@@ -58,7 +59,7 @@ export default function RichEditorLineLetter003() {
           console.info("push RichEditorLineLetter003 success");
         }
       } catch (err) {
-        console.error("push RichEditorLineLetter003 page error: " + err);
+        console.log("push RichEditorLineLetter003 page error: " + err);
         expect().assertFail();
       }
     });
@@ -76,10 +77,18 @@ export default function RichEditorLineLetter003() {
 
       let richEditor = await (driver.findComponent(ON.id('RichEditor')) as Promise<Component>);
       let pointCenter1 = await richEditor.getBoundsCenter();
-      await driver.click(pointCenter1.x, pointCenter1.y);
+      try {
+        await driver.clickAt({ x: pointCenter1.x, y: pointCenter1.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
-      await driver.longClick(pointCenter1.x, pointCenter1.y);
+      try {
+        await driver.longClickAt({ x: pointCenter1.x, y: pointCenter1.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.longClickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
       let selectAll = await (driver.findComponent(ON.text('全选')) as Promise<Component>)
@@ -92,10 +101,18 @@ export default function RichEditorLineLetter003() {
 
       let rich = await (driver.findComponent(ON.id('RichEditorLineLetter003')) as Promise<Component>);
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      try {
+        await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
-      await driver.longClick(pointCenter.x, pointCenter.y);
+      try {
+        await driver.longClickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.longClickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
       let paste = await (driver.findComponent(ON.text('粘贴')) as Promise<Component>)

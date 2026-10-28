@@ -35,6 +35,8 @@ import { KeyCode } from '@ohos.multimodalInput.keyCode';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+
 export default function RichEditorGetNumber003() {
   describe('RichEditorGetNumber003', () => {
     beforeAll(async (): Promise<void> => {
@@ -58,7 +60,7 @@ export default function RichEditorGetNumber003() {
           console.info("push RichEditorGetNumber003 success");
         }
       } catch (err) {
-        console.error("push RichEditorGetNumber003 page error: " + err);
+        console.log("push RichEditorGetNumber003 page error: " + err);
         expect().assertFail();
       }
     });
@@ -75,7 +77,11 @@ export default function RichEditorGetNumber003() {
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('RichEditorGetNumber003')) as Promise<Component>);
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      try {
+        await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
       let getLineCount = await (driver.findComponent(ON.id('getLineCount')) as Promise<Component>);
@@ -89,9 +95,17 @@ export default function RichEditorGetNumber003() {
       await set_care.click();
       await CommonFunc.sleep(500);
 
-      driver.triggerKey(KeyCode.KEYCODE_A);
+      try {
+        driver.triggerKey(KeyCode.KEYCODE_A, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      driver.triggerKey(KeyCode.KEYCODE_F);
+      try {
+        driver.triggerKey(KeyCode.KEYCODE_F, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
 
       lineCountText = await lineCount.getText();

@@ -30,6 +30,8 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+
 export default function RichEditorApi222() {
   describe('RichEditorApi222', () => {
     beforeAll(async (): Promise<void> => {
@@ -53,7 +55,7 @@ export default function RichEditorApi222() {
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error("push RichEditorApi222 page error:" + err);
+        console.log("push RichEditorApi222 page error:" + err);
       }
       console.info("RichEditorApi222 beforeEach end");
     });
@@ -79,14 +81,20 @@ it('RichEditorApi2_static_001', Level.LEVEL2, async (done: () => void) => {
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
       let RichEditor1 = CommonFunc.getComponentRectOnScreen('RichEditorApi2_RichEditor1')
-      await driver.mouseDrag({
-        x: Math.round((RichEditor1.right - RichEditor1.left) * 0.3 + RichEditor1.left).toInt(),
-        y: Math.round((RichEditor1.bottom - RichEditor1.top) * 0.5 + RichEditor1.top).toInt()
-      },
-        {
-          x: Math.round((RichEditor1.right - RichEditor1.left) * 0.5 + RichEditor1.left).toInt(),
-          y: Math.round((RichEditor1.bottom - RichEditor1.top) * 0.5 + RichEditor1.top).toInt()
-        })
+      try {
+        await driver.mouseDrag({
+          x: Math.round((RichEditor1.right - RichEditor1.left) * 0.3 + RichEditor1.left).toInt(),
+          y: Math.round((RichEditor1.bottom - RichEditor1.top) * 0.5 + RichEditor1.top).toInt(),
+          displayId: displayID
+        },
+          {
+            x: Math.round((RichEditor1.right - RichEditor1.left) * 0.5 + RichEditor1.left).toInt(),
+            y: Math.round((RichEditor1.bottom - RichEditor1.top) * 0.5 + RichEditor1.top).toInt(),
+            displayId: displayID
+          })
+      } catch (err) {
+        console.log('driver.mouseDrag error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(3000);
 
       let strJson = inspector.getInspectorByKey('RichEditorApi2_text1');

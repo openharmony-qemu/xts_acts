@@ -30,6 +30,8 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+
 export default function textAreaInputTest() {
   describe('textAreaInputTest', () => {
     beforeAll(async (): Promise<void> => {
@@ -54,7 +56,7 @@ export default function textAreaInputTest() {
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error("push textAreaInputTest page error:" + err);
+        console.log("push textAreaInputTest page error:" + err);
       }
       console.info("textAreaInputTest beforeEach end");
     }); 
@@ -88,7 +90,11 @@ export default function textAreaInputTest() {
           await button?.click();
           await CommonFunc.sleep(1000);
         }
-        await driver.triggerKey(2070);
+        try {
+          await driver.triggerKey(2070, displayID);
+        } catch (err) {
+          console.log('driver.triggerKey error: ' + JSON.stringify(err));
+        }
         await CommonFunc.sleep(1000);
         let button1 = await driver.findComponent(ON.text('下一步'));
         await CommonFunc.sleep(500);
@@ -110,7 +116,7 @@ export default function textAreaInputTest() {
           let button3 = await driver.findComponent(ON.text('全选'));
           await CommonFunc.sleep(500);
           await (button3?.click() as Promise<void>);
-          console.info('textAreaInputTest0001 全选 success');
+          console.info('textAreaInputTest0001 全选success');
         }catch(e){
 
         }
@@ -137,7 +143,7 @@ export default function textAreaInputTest() {
           await CommonFunc.sleep(500);
           await (button5?.click() as Promise<void>);
           await CommonFunc.sleep(500);
-          console.info('textAreaInputTest0001 2 全选 success');
+          console.info('textAreaInputTest0001 2 全选success');
         }catch(e){
 
         }

@@ -30,6 +30,7 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
 export default function textAreaInputTest() {
   describe('textAreaInputTest', () : void=> {
     beforeAll(async (): Promise<void> => {
@@ -53,7 +54,7 @@ export default function textAreaInputTest() {
           //console.info("push textAreaInputTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push textAreaInputTest page error:" + err);
+        console.log("push textAreaInputTest page error:" + err);
       }
       console.info("textAreaInputTest foreEach end");
     });
@@ -87,7 +88,11 @@ export default function textAreaInputTest() {
           await button?.click();
           await CommonFunc.sleep(1000);
         }
-        await driver.triggerKey(2070);
+        try {
+          await driver.triggerKey(2070, displayID);
+        } catch (err) {
+          console.log('driver.triggerKey error: ' + JSON.stringify(err));
+        }
         await CommonFunc.sleep(1000);
         let button1 = await driver.findComponent(ON.text('下一步'));
         await CommonFunc.sleep(500);
@@ -107,7 +112,7 @@ export default function textAreaInputTest() {
         let button3 = await driver.findComponent(ON.text('全选'));
         await CommonFunc.sleep(500);
         button3 ? await button3!.click() : null
-        console.info('textAreaInputTest0001 全选 success');
+        console.info('textAreaInputTest0001 全选success');
         await CommonFunc.sleep(1000);
 
         await (textArea1?.dragTo(textArea2 as Component) as Promise<void>);
@@ -125,7 +130,7 @@ export default function textAreaInputTest() {
         await CommonFunc.sleep(500);
         button5 ? await button5!.click() : null
         await CommonFunc.sleep(500);
-        console.info('textAreaInputTest0001 2 全选 success');
+        console.info('textAreaInputTest0001 2 全选success');
         let button6 = await driver.findComponent(ON.text('复制'));
         await CommonFunc.sleep(500);
         button6 ? await button6!.click() : null

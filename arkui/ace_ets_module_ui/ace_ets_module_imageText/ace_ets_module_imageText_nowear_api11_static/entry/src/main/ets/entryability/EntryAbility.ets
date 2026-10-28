@@ -23,6 +23,7 @@ import { MyCallback } from '../models/MyCallback';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
 import common from '@ohos.app.ability.common';
+import { display } from '@kit.ArkUI';
 class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag sjd EntryAbility', 'EntryAbility onCreate');
@@ -30,11 +31,14 @@ class EntryAbility extends UIAbility {
       AppStorage.setOrCreate<common.Context>('applicationContext',this.context.getApplicationContext())
       AppStorage.setOrCreate<common.Context>('context',this.context)
     } catch (error) {
-      console.error(`getApplicationContext failed, error.code: ${(error as BusinessError).code}, error.message: ${(error as BusinessError).message}`);
+      console.log(`getApplicationContext failed, error.code: ${(error as BusinessError).code}, error.message: ${(error as BusinessError).message}`);
     }
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
+    let displayInfo: display.Display = display.getDefaultDisplaySync();
+    console.info('当前屏幕ID' + displayInfo.id);
+    AppStorage.setOrCreate('displayID', displayInfo.id);
     hilog.info(0x0000, 'testTag sjd EntryAbility', 'EntryAbility onWindowStageCreate');
     try {
       windowStage.loadContent('MainAbility/pages/index/index', (err: BusinessError<void> | null): void => {
@@ -48,7 +52,7 @@ class EntryAbility extends UIAbility {
         windowStage.getMainWindow((err: BusinessError<void> | null, data): void => {
           let errCode: number = err!.code;
           if (errCode) {
-            console.error('Failed to obtain the main window. Cause: ' + JSON.stringify(err));
+            console.log('Failed to obtain the main window. Cause: ' + JSON.stringify(err));
             return;
           }
           windowClass = data;

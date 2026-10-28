@@ -17,6 +17,7 @@ let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
 export default function TextInputOnEditChange() {
   describe('TextInputOnEditChange', () => {
     beforeAll(async (): Promise<void> => {
@@ -42,7 +43,7 @@ export default function TextInputOnEditChange() {
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error("push TextInputOnEditChange page error: " + err);
+        console.log("push TextInputOnEditChange page error: " + err);
       }
     });
 
@@ -67,11 +68,19 @@ it('TextInputOnEditChange_static_001', Level.LEVEL0, async (done: () => void): P
       let button = await driver.findComponent(ON.id('change')) as Component;
       await text.inputText('9');
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       await text2.inputText('9');
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(200);
       let strJson = inspector.getInspectorByKey('TextInputText')
       let obj = JSON.parseJsonElement(strJson);
@@ -80,11 +89,19 @@ it('TextInputOnEditChange_static_001', Level.LEVEL0, async (done: () => void): P
       await button.click();
       await text.inputText('6');
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       await text2.inputText('6');
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(200);
       let strJson2 = inspector.getInspectorByKey('TextInputText')
       let obj2 = JSON.parseJsonElement(strJson2);
@@ -92,11 +109,19 @@ it('TextInputOnEditChange_static_001', Level.LEVEL0, async (done: () => void): P
       await button.click();
       await text.inputText('6');
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       await text2.inputText('6');
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(200);
       let strJson3 = inspector.getInspectorByKey('TextInputText')
       let obj3 = JSON.parseJsonElement(strJson3);

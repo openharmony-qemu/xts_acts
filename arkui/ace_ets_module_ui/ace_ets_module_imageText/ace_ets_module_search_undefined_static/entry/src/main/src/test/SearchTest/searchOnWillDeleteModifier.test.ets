@@ -41,6 +41,7 @@ import { inputMethod } from '@kit.IMEKit';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
 export default function searchOnWillDeleteModifier() {
   describe('searchOnWillDeleteModifier', () => {
     beforeAll(async (): Promise<void> => {
@@ -69,7 +70,7 @@ export default function searchOnWillDeleteModifier() {
         }
         console.info("searchOnWillDeleteModifier beforeEach start3");
       } catch (err) {
-        console.error("push searchOnWillDeleteModifier page error:" + err);
+        console.log("push searchOnWillDeleteModifier page error:" + err);
       }
       console.info("searchOnWillDeleteModifier beforeEach start4");
     });
@@ -102,7 +103,11 @@ export default function searchOnWillDeleteModifier() {
       button?.click()
       console.info("searchOnWillDeleteModifier beforeEach start8.2");
       await CommonFunc.sleep(3000);
-      await driver.triggerKey(2055);
+      try {
+        await driver.triggerKey(2055, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(2000);
       await inputMethod.getController().stopInputSession();
       await CommonFunc.sleep(2000);
@@ -131,7 +136,11 @@ export default function searchOnWillDeleteModifier() {
       newbutton?.click();
       console.info("button_onWillDeleteModifier1 beforeEach start12.3");
       await CommonFunc.sleep(3000);
-      await driver.triggerKey(2055);
+      try {
+        await driver.triggerKey(2055, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       console.info("button_onWillDeleteModifier1 beforeEach start12.4");
       await CommonFunc.sleep(3000);
       let strJsonNew1 = inspector.getInspectorByKey('key_search_OnWillDeleteModifier_001');

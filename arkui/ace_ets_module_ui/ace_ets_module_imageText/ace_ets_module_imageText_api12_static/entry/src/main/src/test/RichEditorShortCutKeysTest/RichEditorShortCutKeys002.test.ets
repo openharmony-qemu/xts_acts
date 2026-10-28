@@ -34,6 +34,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
 export default function RichEditorShortCutKeys002() {
   describe('RichEditorShortCutKeys002', () => {
     beforeAll(async (): Promise<void> => {
@@ -57,7 +58,7 @@ export default function RichEditorShortCutKeys002() {
           console.info("push RichEditorShortCutKeys002 success");
         }
       } catch (err) {
-        console.error("push RichEditorShortCutKeys002 page error: " + err);
+        console.log("push RichEditorShortCutKeys002 page error: " + err);
         expect().assertFail();
       }
     });
@@ -74,10 +75,18 @@ export default function RichEditorShortCutKeys002() {
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('RichEditorShortCutKeys002')) as Promise<Component>);
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      try {
+        await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
-      driver.triggerKey(KeyCode.KEYCODE_MOVE_HOME);
+      try {
+        driver.triggerKey(KeyCode.KEYCODE_MOVE_HOME, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
       let get_position = await (driver.findComponent(ON.id('get_position')) as Promise<Component>);
@@ -102,7 +111,11 @@ export default function RichEditorShortCutKeys002() {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDIT0R_SHORTCUTKEYS_static_0003 START');
       let driver = Driver.create();
 
-      driver.triggerKey(KeyCode.KEYCODE_MOVE_END);
+      try {
+        driver.triggerKey(KeyCode.KEYCODE_MOVE_END, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
       let get_position = await (driver.findComponent(ON.id('get_position')) as Promise<Component>);

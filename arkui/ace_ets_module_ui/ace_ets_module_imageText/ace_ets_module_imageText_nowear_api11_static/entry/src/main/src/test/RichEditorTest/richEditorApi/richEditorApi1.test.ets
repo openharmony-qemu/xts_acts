@@ -30,6 +30,8 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+
 export default function richEditorApi1() {
   describe('richEditorApi1', () => {
     beforeAll(async (): Promise<void> => {
@@ -53,7 +55,7 @@ export default function richEditorApi1() {
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error("push richEditorApi1 page error:" + err);
+        console.log("push richEditorApi1 page error:" + err);
       }
       console.info("richEditorApi1 beforeEach end");
     });
@@ -88,7 +90,11 @@ it('richEditorApi1_static_0100', Level.LEVEL2, async (done: () => void) => {
       await (button1?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
 
-      await driver.click(centerPoint.x, centerPoint.y);
+      try {
+        await driver.clickAt({ x: centerPoint.x, y: centerPoint.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(2000);
 
       let button2: Component|null = await driver.findComponent(ON.text('粘贴'));

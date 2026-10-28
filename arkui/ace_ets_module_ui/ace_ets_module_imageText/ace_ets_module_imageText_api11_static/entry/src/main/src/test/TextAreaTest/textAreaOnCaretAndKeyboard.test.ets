@@ -32,6 +32,8 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+
 export default function textAreaOnCaretAndKeyboardTest() {
   describe('textAreaOnCaretAndKeyboardTest', () => {
     beforeAll(async (): Promise<void> => {
@@ -58,7 +60,7 @@ export default function textAreaOnCaretAndKeyboardTest() {
           // console.info("push textAreaOnCaretAndKeyboardTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push textAreaOnCaretAndKeyboardTest page error:" + err);
+        console.log("push textAreaOnCaretAndKeyboardTest page error:" + err);
       }
       console.info("textAreaOnCaretAndKeyboardTest beforeEach end");
     });
@@ -82,7 +84,11 @@ export default function textAreaOnCaretAndKeyboardTest() {
       let textAreaComponent = await driver.findComponent(ON.id('textAreaOnCaretAndKeyboard'));
       await (textAreaComponent?.click() as Promise<void>);
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let buttonComponent = await driver.findComponent(ON.id('textAreaOnCaretAndKeyboard' + '_button'));
       await (buttonComponent?.click() as Promise<void>);
@@ -95,9 +101,17 @@ export default function textAreaOnCaretAndKeyboardTest() {
       expect(obj.getElement('$attrs').getString('caretPosition')).assertEqual('5');
 
       await (textAreaComponent?.inputText('hello world') as Promise<void>);
-      await driver.triggerKey(2047)
+      try {
+        await driver.triggerKey(2047, displayID)
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       await (buttonComponent?.click() as Promise<void>);
       await CommonFunc.sleep(500);
@@ -122,7 +136,11 @@ export default function textAreaOnCaretAndKeyboardTest() {
       let textAreaComponent = await driver.findComponent(ON.id('textAreaOnCaretAndKeyboard'));
       await (textAreaComponent?.click() as Promise<void>);
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let buttonComponent = await driver.findComponent(ON.id('button_1'));
       await (buttonComponent?.click() as Promise<void>);
