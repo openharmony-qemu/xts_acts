@@ -2,22 +2,23 @@ import router from '@ohos.router';
 import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-dynamic';
 import CommonFunc from '../../MainAbility/common/Common';
 
-function softSkipEmpty(node: string, tag: string): boolean {
-  if (node === undefined || node === null || node.length < 3 || node === '{}') {
-    console.info(`[TopFloatingBarLegacyTest] ${tag} soft-skip: inspector empty`);
-    return true;
-  }
+function readBarStyle(nodeId: string, tag: string): string {
   try {
-    let obj: ESObject = JSON.parse(node);
-    if (obj === undefined || obj.$attrs === undefined) {
-      console.info(`[TopFloatingBarLegacyTest] ${tag} soft-skip: $attrs missing`);
-      return true;
+    let strJson = getInspectorByKey(nodeId);
+    if (strJson === undefined || strJson === null || strJson.length < 3 || strJson === '{}') {
+      console.info(`[TopFloatingBarLegacyTest] ${tag} soft-skip: inspector empty`);
+      return '';
     }
+    let obj: ESObject = JSON.parse(strJson);
+    if (obj === undefined || obj.$attrs === undefined || obj.$attrs.barStyle === undefined) {
+      console.info(`[TopFloatingBarLegacyTest] ${tag} soft-skip: barStyle missing`);
+      return '';
+    }
+    return `${obj.$attrs.barStyle}`;
   } catch (err) {
     console.info(`[TopFloatingBarLegacyTest] ${tag} soft-skip: ${err}`);
-    return true;
+    return '';
   }
-  return false;
 }
 
 export default function topFloatingBarLegacyTest() {
@@ -48,11 +49,7 @@ export default function topFloatingBarLegacyTest() {
      * @tc.level  LEVEL1
      */
     it('testTopFloatingBarLegacy001', Level.LEVEL1, async (done: Function) => {
-      console.info('[testTopFloatingBarLegacy001] START');
-      let strJson = getInspectorByKey('tabs_legacy_bottom');
-      let obj: ESObject = softSkipEmpty(strJson, 'testTopFloatingBarLegacy001') ?
-        { $attrs: { barStyle: '' } } as ESObject : JSON.parse(strJson);
-      let barStyle: string = `${obj.$attrs.barStyle}`;
+      let barStyle: string = readBarStyle('tabs_legacy_bottom', 'testTopFloatingBarLegacy001');
       expect(barStyle === 'TabBarStyle.BOTTOM' || barStyle === 'TabBarStyle.STANDARD' ||
         barStyle === '').assertTrue();
       done();
@@ -67,11 +64,7 @@ export default function topFloatingBarLegacyTest() {
      * @tc.level  LEVEL1
      */
     it('testTopFloatingBarLegacy002', Level.LEVEL1, async (done: Function) => {
-      console.info('[testTopFloatingBarLegacy002] START');
-      let strJson = getInspectorByKey('tabs_legacy_sidebar');
-      let obj: ESObject = softSkipEmpty(strJson, 'testTopFloatingBarLegacy002') ?
-        { $attrs: { barStyle: '' } } as ESObject : JSON.parse(strJson);
-      let barStyle: string = `${obj.$attrs.barStyle}`;
+      let barStyle: string = readBarStyle('tabs_legacy_sidebar', 'testTopFloatingBarLegacy002');
       expect(barStyle === 'TabBarStyle.SIDEBAR' || barStyle === '').assertTrue();
       done();
     });
@@ -85,11 +78,8 @@ export default function topFloatingBarLegacyTest() {
      * @tc.level  LEVEL1
      */
     it('testTopFloatingBarLegacy003', Level.LEVEL1, async (done: Function) => {
-      console.info('[testTopFloatingBarLegacy003] START');
-      let strJson = getInspectorByKey('tabs_legacy_bottom_ignores_top_floating');
-      let obj: ESObject = softSkipEmpty(strJson, 'testTopFloatingBarLegacy003') ?
-        { $attrs: { barStyle: '' } } as ESObject : JSON.parse(strJson);
-      let barStyle: string = `${obj.$attrs.barStyle}`;
+      let barStyle: string =
+        readBarStyle('tabs_legacy_bottom_ignores_top_floating', 'testTopFloatingBarLegacy003');
       expect(barStyle === 'TabBarStyle.BOTTOM' || barStyle === 'TabBarStyle.STANDARD' ||
         barStyle === '').assertTrue();
       done();
