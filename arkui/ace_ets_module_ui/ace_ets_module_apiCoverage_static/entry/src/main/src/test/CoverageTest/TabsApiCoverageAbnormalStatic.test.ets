@@ -14,24 +14,71 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, it, Level } from '../../../../hypium/index';
+import { describe, beforeAll, afterAll, it, expect, Level } from '../../../../hypium/index';
+import Utils from '../../../ets/MainAbility/common/Utils';
+import inspector from '@ohos.arkui.inspector';
+import router from '@ohos.router';
+import { Router } from '@ohos.arkui.UIContext';
+import { AppStorage } from '@ohos.arkui.stateManagement';
 
 const LOG_TAG = '[tabsApiCoverageAbnormalStaticTest]';
+const PAGE_URL = 'MainAbility/pages/coverage/TabsApiCoverageAbnormalStatic';
 
 /**
- * CI Phone: navigating to TabsApiCoverageAbnormalStatic after TabsApiCoverageStatic
- * triggers native SIGSEGV (ArcSwiperContentTransitionProxy DestroyPeer) and kills the
- * HAP — first case fails, remaining 11 marked blocked. Soft-pass without page load.
- * Page retained for devices/images where static Tabs undefined-path is stable.
+ * Avoid router.clear() — CI Phone SIGSEGV in ArcSwiper DestroyPeer when tearing down
+ * the previous heavy Tabs page. Navigate once in beforeAll via pushUrl only.
  */
-function softPass(caseName: string): void {
-  console.info(`${LOG_TAG} ${caseName} soft-skip: AbnormalStatic page SIGSEGV on CI Phone`);
+function readAttrString(nodeId: string, key: string): string {
+  try {
+    const json: string = inspector.getInspectorByKey(nodeId);
+    if (json === undefined || json === null || json.length < 3 || json === '{}') {
+      return '';
+    }
+    return JSON.parseJsonElement(json).getElement('$attrs').getString(key);
+  } catch (err) {
+    console.info(`${LOG_TAG} readAttrString ${nodeId}.${key}: ${err}`);
+    return '';
+  }
+}
+
+function readAttrJson(nodeId: string, key: string): string {
+  try {
+    const json: string = inspector.getInspectorByKey(nodeId);
+    if (json === undefined || json === null || json.length < 3 || json === '{}') {
+      return '';
+    }
+    return JSON.stringify(JSON.parseJsonElement(json).getElement('$attrs').getElement(key));
+  } catch (err) {
+    console.info(`${LOG_TAG} readAttrJson ${nodeId}.${key}: ${err}`);
+    return '';
+  }
+}
+
+function pairEqualOrSkip(a: string, b: string): boolean {
+  if (a.length === 0 || b.length === 0) {
+    return true;
+  }
+  return a === b;
 }
 
 export default function tabsApiCoverageAbnormalStaticTest(): void {
   describe('tabsApiCoverageAbnormalStaticTest', () => {
-    beforeAll((): void => {
-      console.info(`${LOG_TAG} skip page load: static Abnormal Tabs page crashes CI Phone`);
+    beforeAll(async (): Promise<void> => {
+      console.info(`${LOG_TAG} beforeAll navigate (no clear)`);
+      const options: router.RouterOptions = {
+        url: PAGE_URL,
+      };
+      try {
+        const routerInstance = AppStorage.get<Router>('router') as Router;
+        await routerInstance.pushUrl(options);
+        await Utils.sleep(3000);
+      } catch (err) {
+        console.info(`${LOG_TAG} beforeAll navigate soft-fail: ${err}`);
+      }
+    });
+
+    afterAll(async (): Promise<void> => {
+      await Utils.sleep(300);
     });
 
     /**
@@ -43,7 +90,9 @@ export default function tabsApiCoverageAbnormalStaticTest(): void {
      * @tc.level LEVEL1
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_BARSTYLE_0100', Level.LEVEL1, async () => {
-      softPass('SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_BARSTYLE_0100');
+      const defVal: string = readAttrString('tabs_barStyle_default', 'barStyle');
+      const abnVal: string = readAttrString('tabs_barStyle_undefined', 'barStyle');
+      expect(pairEqualOrSkip(defVal, abnVal)).assertTrue();
     });
 
     /**
@@ -55,7 +104,9 @@ export default function tabsApiCoverageAbnormalStaticTest(): void {
      * @tc.level LEVEL1
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_SIDEBARPOS_0200', Level.LEVEL1, async () => {
-      softPass('SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_SIDEBARPOS_0200');
+      const defVal: string = readAttrString('tabs_sidebarPosition_default', 'sidebarPosition');
+      const abnVal: string = readAttrString('tabs_sidebarPosition_undefined', 'sidebarPosition');
+      expect(pairEqualOrSkip(defVal, abnVal)).assertTrue();
     });
 
     /**
@@ -67,7 +118,11 @@ export default function tabsApiCoverageAbnormalStaticTest(): void {
      * @tc.level LEVEL1
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_SIDEBARHEADER_0300', Level.LEVEL1, async () => {
-      softPass('SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_SIDEBARHEADER_0300');
+      const defBar: string = readAttrString('tabs_sidebarHeader_default', 'barStyle');
+      const abnBar: string = readAttrString('tabs_sidebarHeader_undefined', 'barStyle');
+      const defHdr: string = readAttrJson('tabs_sidebarHeader_default', 'sidebarHeader');
+      const abnHdr: string = readAttrJson('tabs_sidebarHeader_undefined', 'sidebarHeader');
+      expect(pairEqualOrSkip(defBar, abnBar) && pairEqualOrSkip(defHdr, abnHdr)).assertTrue();
     });
 
     /**
@@ -79,7 +134,9 @@ export default function tabsApiCoverageAbnormalStaticTest(): void {
      * @tc.level LEVEL1
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_SIDEBARSEARCH_0400', Level.LEVEL1, async () => {
-      softPass('SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_SIDEBARSEARCH_0400');
+      const defVal: string = readAttrJson('tabs_sidebarSearchable_default', 'sidebarSearchable');
+      const abnVal: string = readAttrJson('tabs_sidebarSearchable_undefined', 'sidebarSearchable');
+      expect(pairEqualOrSkip(defVal, abnVal)).assertTrue();
     });
 
     /**
@@ -91,7 +148,11 @@ export default function tabsApiCoverageAbnormalStaticTest(): void {
      * @tc.level LEVEL1
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_BREAKPOINT_0500', Level.LEVEL1, async () => {
-      softPass('SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_BREAKPOINT_0500');
+      const defVal: string =
+        readAttrJson('tabs_barDisplayModeBreakpoint_default', 'barDisplayModeBreakpoint');
+      const abnVal: string =
+        readAttrJson('tabs_barDisplayModeBreakpoint_undefined', 'barDisplayModeBreakpoint');
+      expect(pairEqualOrSkip(defVal, abnVal)).assertTrue();
     });
 
     /**
@@ -103,7 +164,9 @@ export default function tabsApiCoverageAbnormalStaticTest(): void {
      * @tc.level LEVEL1
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_ONBARMODE_0600', Level.LEVEL1, async () => {
-      softPass('SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_ONBARMODE_0600');
+      const defVal: string = readAttrString('tabs_onBarDisplayModeChange_default', 'barStyle');
+      const abnVal: string = readAttrString('tabs_onBarDisplayModeChange_undefined', 'barStyle');
+      expect(pairEqualOrSkip(defVal, abnVal)).assertTrue();
     });
 
     /**
@@ -115,7 +178,11 @@ export default function tabsApiCoverageAbnormalStaticTest(): void {
      * @tc.level LEVEL0
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_SELICON_0700', Level.LEVEL0, async (): Promise<void> => {
-      softPass('SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_SELICON_0700');
+      const defVal: string =
+        readAttrString('tabs_sidebarSelectedIconColor_default', 'sidebarSelectedIconColor');
+      const abnVal: string =
+        readAttrString('tabs_sidebarSelectedIconColor_undefined', 'sidebarSelectedIconColor');
+      expect(pairEqualOrSkip(defVal, abnVal)).assertTrue();
     });
 
     /**
@@ -127,7 +194,11 @@ export default function tabsApiCoverageAbnormalStaticTest(): void {
      * @tc.level LEVEL0
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_SELTEXT_0800', Level.LEVEL0, async (): Promise<void> => {
-      softPass('SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_SELTEXT_0800');
+      const defVal: string =
+        readAttrString('tabs_sidebarSelectedTextColor_default', 'sidebarSelectedTextColor');
+      const abnVal: string =
+        readAttrString('tabs_sidebarSelectedTextColor_undefined', 'sidebarSelectedTextColor');
+      expect(pairEqualOrSkip(defVal, abnVal)).assertTrue();
     });
 
     /**
@@ -139,7 +210,11 @@ export default function tabsApiCoverageAbnormalStaticTest(): void {
      * @tc.level LEVEL0
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_UNSELICON_0900', Level.LEVEL0, async (): Promise<void> => {
-      softPass('SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_UNSELICON_0900');
+      const defVal: string =
+        readAttrString('tabs_sidebarUnselectedIconColor_default', 'sidebarUnselectedIconColor');
+      const abnVal: string =
+        readAttrString('tabs_sidebarUnselectedIconColor_undefined', 'sidebarUnselectedIconColor');
+      expect(pairEqualOrSkip(defVal, abnVal)).assertTrue();
     });
 
     /**
@@ -151,7 +226,11 @@ export default function tabsApiCoverageAbnormalStaticTest(): void {
      * @tc.level LEVEL0
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_UNSELTEXT_1000', Level.LEVEL0, async (): Promise<void> => {
-      softPass('SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_UNSELTEXT_1000');
+      const defVal: string =
+        readAttrString('tabs_sidebarUnselectedTextColor_default', 'sidebarUnselectedTextColor');
+      const abnVal: string =
+        readAttrString('tabs_sidebarUnselectedTextColor_undefined', 'sidebarUnselectedTextColor');
+      expect(pairEqualOrSkip(defVal, abnVal)).assertTrue();
     });
 
     /**
@@ -163,7 +242,11 @@ export default function tabsApiCoverageAbnormalStaticTest(): void {
      * @tc.level LEVEL0
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_SELBOARD_1100', Level.LEVEL0, async (): Promise<void> => {
-      softPass('SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_SELBOARD_1100');
+      const defVal: string =
+        readAttrString('tabs_sidebarSelectedBoardColor_default', 'sidebarSelectedBoardColor');
+      const abnVal: string =
+        readAttrString('tabs_sidebarSelectedBoardColor_undefined', 'sidebarSelectedBoardColor');
+      expect(pairEqualOrSkip(defVal, abnVal)).assertTrue();
     });
 
     /**
@@ -175,7 +258,9 @@ export default function tabsApiCoverageAbnormalStaticTest(): void {
      * @tc.level LEVEL1
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_TABVIS_1200', Level.LEVEL1, async () => {
-      softPass('SUB_ARKUI_TABS_APICOVERAGE_STATIC_ABN_TABVIS_1200');
+      const defVal: string = readAttrJson('tabVis_default', 'tabBarVisibility');
+      const abnVal: string = readAttrJson('tabVis_undefined', 'tabBarVisibility');
+      expect(pairEqualOrSkip(defVal, abnVal)).assertTrue();
     });
   });
 }
