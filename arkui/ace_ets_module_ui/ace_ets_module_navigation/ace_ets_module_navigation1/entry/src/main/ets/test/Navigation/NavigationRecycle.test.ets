@@ -56,7 +56,7 @@ async function findComponentWithScroll(driver: Driver, id: string, maxScrollRetr
         return comp;
       }
       // Scroll down via mouse wheel (PC-compatible)
-      await driver.mouseScroll({ x: centerX, y: centerY }, true, 3);
+      await driver.mouseScroll({ x: centerX, y: centerY, displayId: displayID }, true, 3);
       await CommonFunc.sleep(500);
     }
     // Final check after scrolling
@@ -98,6 +98,8 @@ function getTextContentById(id: string): string {
 // ============================================================================
 // NavigationRecycleTest - Navigation.recoverable / configuration API coverage
 // ============================================================================
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function NavigationRecycleTest() {
 
   // ==========================================================================

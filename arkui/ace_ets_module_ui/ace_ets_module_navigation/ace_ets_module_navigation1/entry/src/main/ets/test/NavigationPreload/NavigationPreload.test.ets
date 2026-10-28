@@ -141,7 +141,7 @@ async function findComponentWithScroll(driver: Driver, id: string, maxScrollRetr
           // getBounds failed, continue scrolling
         }
       }
-      await driver.mouseScroll({ x: scrollCenterX, y: scrollCenterY }, true, 5);
+      await driver.mouseScroll({ x: scrollCenterX, y: scrollCenterY, displayId: displayID }, true, 5);
       await CommonFunc.sleep(600);
     }
     console.info('findComponentWithScroll: mouseScroll exhausted ' + maxScrollRetries + ' retries for id=' + id);
@@ -186,6 +186,8 @@ async function createDriverSafely(): Promise<Driver | null> {
     return null;
   }
 }
+
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 
 export default function NavigationPreloadTest() {
   describe('NavigationPreloadTest', () => {
