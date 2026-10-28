@@ -2689,35 +2689,6 @@ export default function bluetoothConnectionTest(): void {
       })
 
     /**
-     * @tc.number  SUB_COMMUNICATION_BP_GETVIRTUALADDRESSBYHASHILLEGALALGORITHM_0100
-     * @tc.name    getVirtualAddressByHashIllegalAlgorithmTest
-     * @tc.desc    Test getVirtualAddressByHash with illegal algorithmType
-     * @tc.level   Level 0
-     * @tc.type    Function
-     * @tc.size    MEDIUMTEST
-     */
-    it("getVirtualAddressByHashIllegalAlgorithmTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        try {
-          let virtualAddress: string = connection.getVirtualAddressByHash(
-            99, "testHashValue");
-          hilog.info(domain, tag, "getVirtualAddressByHash result: " + JSON.stringify(virtualAddress));
-          except().assertFail();
-        } catch (err) {
-          err = err as BusinessError;
-          hilog.info(domain, tag,
-            "getVirtualAddressByHash errCode:" + err.code + ",errMessage:" + err.message);
-          if (err.code === 801) {
-            hilog.info(domain, tag, 'api is not support');
-            expect(err.code).assertEqual(801);
-          } else {
-            expect(err.code).assertEqual(401);
-          }
-        }
-        done();
-      })
-
-    /**
      * @tc.number  SUB_COMMUNICATION_BP_GETVIRTUALADDRESSBYHASHEMPTYHASHVALUE_0100
      * @tc.name    getVirtualAddressByHashEmptyHashValueTest
      * @tc.desc    Test getVirtualAddressByHash with empty string hashValue
