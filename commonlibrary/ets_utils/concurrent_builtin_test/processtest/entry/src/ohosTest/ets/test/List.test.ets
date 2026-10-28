@@ -17,10 +17,12 @@ import ProcessInterfacetTest from './ProcessInterfacetTest.test';
 import ProcessSupplementSecondTest from './ProcessSupplementSecondTest.test';
 import ProcessSupplementTest from './ProcessSupplementTes.test';
 import ProcessBoundaryTest from './ProcessBoundaryTest.test';
+import ProcessSystemApiTest from './ProcessSystemApiTest.test';
 
 export default function testsuite() {
   ProcessSupplementTest();
   ProcessInterfacetTest();
   ProcessSupplementSecondTest();
   ProcessBoundaryTest();
+  ProcessSystemApiTest();
 }

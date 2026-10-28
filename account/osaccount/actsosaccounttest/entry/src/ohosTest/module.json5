@@ -40,6 +40,9 @@
       },
       {
           "name": "ohos.permission.kernel.NET_RAW"
+      },
+      {
+          "name": "ohos.permission.kernel.USB_CAPTURE"
       }
     ],
     "abilities": [

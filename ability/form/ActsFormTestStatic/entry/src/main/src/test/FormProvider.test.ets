@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, afterEach } from '../../../hypium/index';
+import { describe, it, expect, TestType, Size, Level, afterEach } from '@ohos/hypium-static/src/main/indexStatic';
 import hilog from '@ohos.hilog';
 import { BusinessError, RecordData } from '@ohos.base';
 import formProvider from '@ohos.app.form.formProvider';

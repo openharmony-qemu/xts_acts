@@ -13,7 +13,9 @@
  * limitations under the License.
  */
 import ActsWorkerMixTest from './WorkermixTest.test'
+import WorkerMaxLimitTest from './WorkermaxLimit.test'
 
 export default function testsuite() {
+  WorkerMaxLimitTest();
   ActsWorkerMixTest();
 }

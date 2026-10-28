@@ -18,6 +18,8 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import { Driver, ON, MouseButton } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common'
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function SelectionMenuOptions() {
   describe('SelectionMenuOptions', () => {
     beforeEach(async (done: Function) => {
@@ -66,7 +68,11 @@ export default function SelectionMenuOptions() {
         await CommonFunc.sleep(500);
         let point = await richEditor.getBoundsCenter();
         await CommonFunc.sleep(500);
-        await driver.mouseDrag({x:Math.round(point.x-vp2px(20)), y:Math.round(point.y)},{x:Math.round(point.x+vp2px(20)), y:Math.round(point.y)},600);
+        try {
+          await driver.mouseDrag({x:Math.round(point.x-vp2px(20)), y:Math.round(point.y), displayId: displayID},{x:Math.round(point.x+vp2px(20)), y:Math.round(point.y), displayId: displayID},600);
+        } catch (err) {
+          console.log('driver.mouseDrag error: ' + err);
+        }
         await CommonFunc.sleep(500);
         await driver.assertComponentExist(ON.text('自定义菜单'));
         await CommonFunc.sleep(500);
@@ -98,7 +104,11 @@ export default function SelectionMenuOptions() {
         await CommonFunc.sleep(500);
         let point = await image.getBoundsCenter();
         await CommonFunc.sleep(500);
-        await driver.mouseDrag({x:Math.round(point.x+vp2px(24)), y:Math.round(point.y)},{x:Math.round(point.x-vp2px(26)), y:Math.round(point.y)},600);
+        try {
+          await driver.mouseDrag({x:Math.round(point.x+vp2px(24)), y:Math.round(point.y), displayId: displayID},{x:Math.round(point.x-vp2px(26)), y:Math.round(point.y), displayId: displayID},600);
+        } catch (err) {
+          console.log('driver.mouseDrag error: ' + err);
+        }
         await CommonFunc.sleep(500);
         await driver.assertComponentExist(ON.text('自定义菜单'));
         await CommonFunc.sleep(500);
@@ -130,7 +140,11 @@ export default function SelectionMenuOptions() {
         await CommonFunc.sleep(500);
         let point = await mixed.getBoundsCenter();
         await CommonFunc.sleep(500);
-        await driver.mouseDrag({x:Math.round(point.x-vp2px(20)), y:Math.round(point.y)},{x:Math.round(point.x+vp2px(50)), y:Math.round(point.y)},600);
+        try {
+          await driver.mouseDrag({x:Math.round(point.x-vp2px(20)), y:Math.round(point.y), displayId: displayID},{x:Math.round(point.x+vp2px(50)), y:Math.round(point.y), displayId: displayID},600);
+        } catch (err) {
+          console.log('driver.mouseDrag error: ' + err);
+        }
         await CommonFunc.sleep(500);
         await driver.assertComponentExist(ON.text('自定义菜单'));
         await CommonFunc.sleep(500);

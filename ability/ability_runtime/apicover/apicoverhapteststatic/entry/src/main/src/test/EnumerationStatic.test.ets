@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, it, expect, TestType, Size, Level } from "../../../hypium/index";
+import { describe, beforeAll, it, expect, TestType, Size, Level } from "@ohos/hypium-static/src/main/indexStatic";
 import hilog from '@ohos.hilog'
 import abilityConstant from '@ohos.app.ability.AbilityConstant';
 import wantConstant from "@ohos.app.ability.wantConstant";
@@ -30,7 +30,7 @@ import insightIntent from '@ohos.app.ability.insightIntent';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 
-export default function EnumerationStaticTest() {
+export default function EnumerationStaticTest(): void {
   describe('EnumerationStaticTest', () => {
     beforeAll(async () => {
       let driver = Driver.create();	

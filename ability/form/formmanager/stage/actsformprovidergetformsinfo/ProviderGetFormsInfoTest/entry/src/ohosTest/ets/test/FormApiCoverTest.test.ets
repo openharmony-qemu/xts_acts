@@ -1010,5 +1010,142 @@ export default function formApiCoverTest() {
       }
       hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
     });
+
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_CREATE_FORM_BINDING_DATA_EX_0100
+     * @tc.number SUB_ABILITY_FORM_FWK_CREATE_FORM_BINDING_DATA_EX_0100
+     * @tc.desc   createFormBindingDataEx with object parameter test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ABILITY_FORM_FWK_CREATE_FORM_BINDING_DATA_EX_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      const itName = 'SUB_ABILITY_FORM_FWK_CREATE_FORM_BINDING_DATA_EX_0100';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${itName} start`);
+      try {
+        let dataObj: Record<string, string> = {
+          'name': 'test',
+          'value': '21°'
+        };
+        let bindingData = formBindingData.createFormBindingDataEx(dataObj);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${itName} success. bindingData: ${JSON.stringify(bindingData)}`);
+        expect(!!bindingData).assertTrue();
+        expect(bindingData.isSupportMoreImages).assertTrue();
+        done();
+      } catch(error) {
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${itName} fail. error code: ${error?.code}`);
+        expect().assertFail();
+        done();
+      }
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${itName} end`);
+    });
+
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_CREATE_FORM_BINDING_DATA_EX_0200
+     * @tc.number SUB_ABILITY_FORM_FWK_CREATE_FORM_BINDING_DATA_EX_0200
+     * @tc.desc   createFormBindingDataEx with string parameter test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ABILITY_FORM_FWK_CREATE_FORM_BINDING_DATA_EX_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      const itName = 'SUB_ABILITY_FORM_FWK_CREATE_FORM_BINDING_DATA_EX_0200';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${itName} start`);
+      try {
+        let bindingData = formBindingData.createFormBindingDataEx('{"name":"test","value":"21°"}');
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${itName} success. bindingData: ${JSON.stringify(bindingData)}`);
+        expect(!!bindingData).assertTrue();
+        expect(bindingData.isSupportMoreImages).assertTrue();
+        done();
+      } catch(error) {
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${itName} fail. error code: ${error?.code}`);
+        expect().assertFail();
+        done();
+      }
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${itName} end`);
+    });
+
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_CREATE_FORM_BINDING_DATA_EX_0300
+     * @tc.number SUB_ABILITY_FORM_FWK_CREATE_FORM_BINDING_DATA_EX_0300
+     * @tc.desc   createFormBindingDataEx with undefined parameter test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ABILITY_FORM_FWK_CREATE_FORM_BINDING_DATA_EX_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      const itName = 'SUB_ABILITY_FORM_FWK_CREATE_FORM_BINDING_DATA_EX_0300';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${itName} start`);
+      try {
+        let bindingData = formBindingData.createFormBindingDataEx(undefined);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${itName} success. bindingData: ${!!bindingData}`);
+        expect(!!bindingData).assertTrue();
+        expect(bindingData.isSupportMoreImages).assertTrue();
+        done();
+      } catch(error) {
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${itName} fail. error code: ${error?.code}`);
+        expect().assertFail();
+        done();
+      }
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${itName} end`);
+    });
+
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_CREATE_FORM_BINDING_DATA_EX_0400
+     * @tc.number SUB_ABILITY_FORM_FWK_CREATE_FORM_BINDING_DATA_EX_0400
+     * @tc.desc   createFormBindingDataEx with number parameter should throw 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ABILITY_FORM_FWK_CREATE_FORM_BINDING_DATA_EX_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+      const itName = 'SUB_ABILITY_FORM_FWK_CREATE_FORM_BINDING_DATA_EX_0400';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${itName} start`);
+      try {
+        formBindingData.createFormBindingDataEx(123);
+        expect().assertFail();
+        done();
+      } catch(error) {
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${itName} exception caught: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ERROR_CODE1);
+        done();
+      }
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${itName} end`);
+    });
+
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_CREATE_FORM_BINDING_DATA_EX_0500
+     * @tc.number SUB_ABILITY_FORM_FWK_CREATE_FORM_BINDING_DATA_EX_0500
+     * @tc.desc   createFormBindingDataEx with formImages parameter test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ABILITY_FORM_FWK_CREATE_FORM_BINDING_DATA_EX_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      const itName = 'SUB_ABILITY_FORM_FWK_CREATE_FORM_BINDING_DATA_EX_0500';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${itName} start`);
+      try {
+        let formImagesParam: Record<string, number> = {
+          'image': 100
+        };
+        let param: Record<string, string | Record<string, number>> = {
+          'name': '21°',
+          'imgSrc': 'image',
+          'formImages': formImagesParam
+        };
+        let bindingData = formBindingData.createFormBindingDataEx(param);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${itName} success. bindingData: ${JSON.stringify(bindingData)}`);
+        let data = JSON.parse(bindingData.data as string) as Record<string, string | Record<string, number>>;
+        expect(data.name === '21°').assertTrue();
+        expect((data.formImages as Record<string, number>).image === 100).assertTrue();
+        expect(bindingData.isSupportMoreImages).assertTrue();
+        done();
+      } catch(error) {
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${itName} fail. error code: ${error?.code}`);
+        expect().assertFail();
+        done();
+      }
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${itName} end`);
+    });
   })
 }

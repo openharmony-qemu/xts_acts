@@ -2,6 +2,8 @@
     "src": [
         "MainAbility/pages/index/index",
         "MainAbility/pages/GridMaxCount",
+        "MainAbility/pages/maxCountMin",
+        "MainAbility/pages/minCountMin",
         "MainAbility/pages/GridItemOnSelect",
         "MainAbility/pages/Grid_add",
         "MainAbility/pages/GridRows1",

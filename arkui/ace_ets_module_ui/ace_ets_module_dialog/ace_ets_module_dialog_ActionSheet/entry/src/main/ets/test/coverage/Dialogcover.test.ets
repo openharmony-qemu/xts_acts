@@ -188,7 +188,7 @@ export default function coverageTypesTest() {
      * @tc.level LEVEL1
      */
     it('SUB_ARKUI_APICOVERAGE0910_EXTRALIAS_1000', Level.LEVEL1, async (done: Function) => {
-      let node = getInspectorByKey('extraAliasesFlag');
+      let node = getInspectorByKey('extraAliasFlag');
       expect(JSON.parse(node).$attrs.content).assertEqual('ok');
       done();
     });

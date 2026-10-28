@@ -29,6 +29,8 @@ function sleep(time: int):Promise<int> {
   })
 }
 
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
+
 export default function RatingAdvancedTest() {
   describe('RatingAdvancedTest', () => {
 
@@ -73,7 +75,7 @@ it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_static_0040', Level.LEVEL3,
       await Utils.sleep(2000);
       let driver = Driver.create();
       await Utils.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       let strJson1 = inspector.getInspectorByKey('ratingFocusText01');
       let obj1 = JSON.parseJsonElement(strJson1);
       await Utils.sleep(1000);
@@ -98,7 +100,7 @@ it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_static_0050', Level.LEVEL3,
       await Utils.sleep(2000);
       let driver = Driver.create();
       await Utils.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       let strJson1 = inspector.getInspectorByKey('ratingFocusText02');
       let obj1 = JSON.parseJsonElement(strJson1);
       await Utils.sleep(1000);
@@ -123,7 +125,7 @@ it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_static_0060', Level.LEVEL3,
       await Utils.sleep(2000);
       let driver = Driver.create();
       await Utils.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       let strJson1 = inspector.getInspectorByKey('ratingFocusText03');
       let obj1 = JSON.parseJsonElement(strJson1);
       await Utils.sleep(1000);
@@ -148,7 +150,7 @@ it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_static_0070', Level.LEVEL3,
       await Utils.sleep(2000);
       let driver = Driver.create();
       await Utils.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       let strJson1 = inspector.getInspectorByKey('ratingFocusText04');
       let obj1 = JSON.parseJsonElement(strJson1);
       await Utils.sleep(1000);
@@ -173,7 +175,7 @@ it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_static_0080', Level.LEVEL3,
       await Utils.sleep(2000);
       let driver = Driver.create();
       await Utils.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       let strJson1 = inspector.getInspectorByKey('ratingFocusText05');
       let obj1 = JSON.parseJsonElement(strJson1);
       await Utils.sleep(1000);
@@ -198,7 +200,7 @@ it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_static_0090', Level.LEVEL3,
       await Utils.sleep(2000);
       let driver = Driver.create();
       await Utils.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       let strJson1 = inspector.getInspectorByKey('ratingFocusText06');
       let obj1 = JSON.parseJsonElement(strJson1);
       await Utils.sleep(1000);

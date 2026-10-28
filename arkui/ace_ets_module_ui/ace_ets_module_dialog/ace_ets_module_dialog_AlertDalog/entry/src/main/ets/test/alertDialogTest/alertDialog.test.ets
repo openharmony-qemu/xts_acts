@@ -49,18 +49,23 @@ export default function alertDialogCenterStartJsunit() {
       console.info("alertDialogCenterStart after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         testalertDialogCenterStart0001
-     * @tc.desc         acealertDialogCenterStartEtsTest0001
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   testalertDialogCenterStart0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   acealertDialogCenterStartEtsTest0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testalertDialogCenterStart0001', Level.LEVEL2, async (done: Function) => {
       console.info('alertDialogCenterStart testalertDialogCenterStart0011 START');
       let driver = await Driver.create()
       await Utils.sleep(2000);
+      // 先完成 UiTest 异步调用，再注册 events_emitter 回调，避免回调内 done() 触发下一条用例时
+      // UiTest 仍在处理 findComponent/click，导致 "uitest-api dose not allow calling concurrently"
+      let button = await driver.findComponent(ON.text('button'));
+      await button?.click();
+      await Utils.sleep(1000);
       try {
         let event: events_emitter.InnerEvent = {
           eventId: 81601,
@@ -77,24 +82,26 @@ export default function alertDialogCenterStartJsunit() {
       } catch (err) {
         console.info("testalertDialogCenterStart0001 on events_emitter err : " + JSON.stringify(err));
       }
-      let button = await driver.findComponent(ON.text('button'));
-      await button?.click();
-      await Utils.sleep(1000);
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         testMeasureText0001
-     * @tc.desc        test text width
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
-     */
      
+    /**
+     * @tc.name   testMeasureText0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   testMeasureText0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMeasureText0001', Level.LEVEL2, async (done: Function) => {
       console.info('testMeasureText0001 start');
       let driver = await Driver.create()
       await Utils.sleep(2000);
+      // 先完成 UiTest 异步调用，再执行 measure + done()，
+      // 避免 done() 后 UiTest 仍在处理 findComponent 导致下一条用例并发调用报错
+      let button = await driver.findComponent(ON.text('button'));
+      await button?.click();
+      await Utils.sleep(1000);
       try {
         let measureOptions: MeasureOptions = {
           textContent: "alertDialog-CenterStart"
@@ -108,9 +115,6 @@ export default function alertDialogCenterStartJsunit() {
         expect().assertFail();
         done();
       }
-      let button = await driver.findComponent(ON.text('button'));
-      await button?.click();
-      await Utils.sleep(1000);
     });
 
   })

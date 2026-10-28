@@ -21,7 +21,7 @@ import window from '@ohos.window';
 import hilog from '@ohos.hilog';
 import common from '@ohos.app.ability.common';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { Hypium } from '../../../hypium/index';
+import { Hypium } from '@ohos/hypium-static/src/main/indexStatic';
 import testsuite from '../../src/test/List.test';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识

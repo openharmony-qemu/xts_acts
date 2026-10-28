@@ -39,6 +39,7 @@
         "MainAbility/pages/List/ListFillPolicy",
         "MainAbility/pages/List/ListContentSize",
         "MainAbility/pages/List/listNoMakeObserved",
+        "MainAbility/pages/List/spliceDeleteMin",
         "MainAbility/pages/List/listCacheCount",
         "MainAbility/pages/emptyBranch/listLazyTrue",
         "MainAbility/pages/emptyBranch/listLazyFalse",

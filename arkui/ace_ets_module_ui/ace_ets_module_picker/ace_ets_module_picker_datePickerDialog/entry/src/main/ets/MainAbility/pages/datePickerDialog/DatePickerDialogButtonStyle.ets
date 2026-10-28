@@ -15,71 +15,57 @@
 @Entry
 @Component
 struct DatePickerDialogButtonStylePage {
-  selectedDate: Date = new Date('2010-1-1')
+  private selectedDate: Date = new Date('2010-1-1')
+  @State acceptButtonStyle_Text: string = '';
+  @State datePickerOptions: DatePickerDialogOptions = {
+    start: new Date('2000-1-1'),
+    end: new Date('2100-12-31'),
+    selected: this.selectedDate,
+    showTime: true,
+    useMilitaryTime: false,
+    disappearTextStyle: { color: Color.Pink, font: { size: '22fp', weight: FontWeight.Bold } },
+    textStyle: { color: '#ff00ff00', font: { size: '18fp', weight: FontWeight.Normal } },
+    selectedTextStyle: { color: '#ff182431', font: { size: '14fp', weight: FontWeight.Regular } },
+    acceptButtonStyle: {
+      type: ButtonType.Normal,
+      style: ButtonStyleMode.NORMAL,
+      role: ButtonRole.NORMAL,
+      fontColor: Color.Red,
+      fontSize: '26fp',
+      fontWeight: FontWeight.Bolder,
+      fontStyle: FontStyle.Normal,
+      fontFamily: 'sans-serif',
+      backgroundColor: '#80834511',
+      borderRadius: 20
+    },
+    cancelButtonStyle: {
+      type: ButtonType.Normal,
+      style: ButtonStyleMode.NORMAL,
+      role: ButtonRole.NORMAL,
+      fontColor: Color.Blue,
+      fontSize: '16fp',
+      fontWeight: FontWeight.Normal,
+      fontStyle: FontStyle.Italic,
+      fontFamily: 'sans-serif',
+      backgroundColor: '#50182431',
+      borderRadius: 10
+    },
+  };
 
   build() {
     Column() {
+      Text(this.acceptButtonStyle_Text)
+        .id('acceptButtonStyle_Text')
+        .margin(20)
       Button('DatePickerDialog')
-        .id('DateButtonStyle')
         .margin(20)
         .onClick(() => {
-          DatePickerDialog.show({
-            start: new Date('2000-1-1'),
-            end: new Date('2100-12-31'),
-            selected: this.selectedDate,
-            showTime: true,
-            useMilitaryTime: false,
-            disappearTextStyle: { color: Color.Pink, font: { size: '22fp', weight: FontWeight.Bold } },
-            textStyle: { color: '#ff00ff00', font: { size: '18fp', weight: FontWeight.Normal } },
-            selectedTextStyle: { color: '#ff182431', font: { size: '14fp', weight: FontWeight.Regular } },
-            acceptButtonStyle: {
-              type: ButtonType.Normal,
-              style: ButtonStyleMode.NORMAL,
-              role: ButtonRole.NORMAL,
-              fontColor: Color.Red,
-              fontSize: '26fp',
-              fontWeight: FontWeight.Bolder,
-              fontStyle: FontStyle.Normal,
-              fontFamily: 'sans-serif',
-              backgroundColor: '#80834511',
-              borderRadius: 20
-            },
-            cancelButtonStyle: {
-              type: ButtonType.Normal,
-              style: ButtonStyleMode.NORMAL,
-              role: ButtonRole.NORMAL,
-              fontColor: Color.Blue,
-              fontSize: '16fp',
-              fontWeight: FontWeight.Normal,
-              fontStyle: FontStyle.Italic,
-              fontFamily: 'sans-serif',
-              backgroundColor: '#50182431',
-              borderRadius: 10
-            },
-            onDateAccept: (value: Date) => {
-              this.selectedDate = value
-              console.info('DatePickerDialog:onDateAccept()' + value.toString())
-            },
-            onCancel: () => {
-              console.info('DatePickerDialog:onCancel()')
-            },
-            onDateChange: (value: Date) => {
-              console.info('DatePickerDialog:onDateChange()' + value.toString())
-            },
-            onDidAppear: () => {
-              console.info('DatePickerDialog:onDidAppear()')
-            },
-            onDidDisappear: () => {
-              console.info('DatePickerDialog:onDidDisappear()')
-            },
-            onWillAppear: () => {
-              console.info('DatePickerDialog:onWillAppear()')
-            },
-            onWillDisappear: () => {
-              console.info('DatePickerDialog:onWillDisappear()')
-            }
-          })
+          DatePickerDialog.show(this.datePickerOptions)
+          if (this.datePickerOptions.acceptButtonStyle!.type == ButtonType.Normal) {
+            this.acceptButtonStyle_Text = 'acceptButtonStyle_Text'
+          }
         })
-    }.width('100%')
+        .id('DateButtonStyle')
+    }.width('100%').height('100%')
   }
 }

@@ -1,0 +1,11 @@
+{
+  "test_args": [
+    "-s tag emulator"
+  ],
+  "suite": [
+    {"module_name": "ActsPerfTestTest"},
+    {"module_name": "ActsUiTest"},
+    {"module_name": "ActsUiTestErrorCodeTest"},
+    {"module_name": "ActsUiTestQuarantineTest"}
+  ]
+}

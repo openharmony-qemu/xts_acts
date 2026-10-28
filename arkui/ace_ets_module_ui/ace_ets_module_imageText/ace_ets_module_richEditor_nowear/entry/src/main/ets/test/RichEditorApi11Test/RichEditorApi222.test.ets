@@ -18,6 +18,8 @@ import CommonFunc from '../../MainAbility/common/Common';
 import { Driver, ON, MouseButton } from '@ohos.UiTest';
 
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RichEditorApi222() {
   describe('RichEditorApi222', () => {
     beforeEach(async (done: Function) => {
@@ -87,14 +89,20 @@ export default function RichEditorApi222() {
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
       let RichEditor1 = CommonFunc.getComponentRectOnScreen('RichEditorApi2_RichEditor1')
-      await driver.mouseDrag({
-        x: Math.round((RichEditor1.right - RichEditor1.left) * 0.3 + RichEditor1.left),
-        y: Math.round((RichEditor1.bottom - RichEditor1.top) * 0.5 + RichEditor1.top)
-      },
-        {
-          x: Math.round((RichEditor1.right - RichEditor1.left) * 0.5 + RichEditor1.left),
-          y: Math.round((RichEditor1.bottom - RichEditor1.top) * 0.5 + RichEditor1.top)
-        })
+      try {
+        await driver.mouseDrag({
+          x: Math.round((RichEditor1.right - RichEditor1.left) * 0.3 + RichEditor1.left),
+          y: Math.round((RichEditor1.bottom - RichEditor1.top) * 0.5 + RichEditor1.top),
+          displayId: displayID
+        },
+          {
+            x: Math.round((RichEditor1.right - RichEditor1.left) * 0.5 + RichEditor1.left),
+            y: Math.round((RichEditor1.bottom - RichEditor1.top) * 0.5 + RichEditor1.top),
+            displayId: displayID
+          })
+      } catch (err) {
+        console.log('driver.mouseDrag error: ' + err);
+      }
       await CommonFunc.sleep(3000);
 
       let strJson = getInspectorByKey('RichEditorApi2_text1');

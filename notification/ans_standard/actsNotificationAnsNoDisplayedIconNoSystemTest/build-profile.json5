@@ -27,7 +27,7 @@
             "useNormalizedOHMUrl": true
           }
         },
-        "compileSdkVersion": "26.0.1",
+        "compileSdkVersion": "26.1.0",
         "compatibleSdkVersion": "23",
         "runtimeOS": "OpenHarmony",
       }

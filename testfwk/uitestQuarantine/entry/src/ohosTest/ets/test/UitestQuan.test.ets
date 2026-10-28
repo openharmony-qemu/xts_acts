@@ -919,7 +919,7 @@ export default function UiTest() {
         expect(button2 == null).assertTrue()
         await stopApplication('com.uitestScene.acts');
       }
-    })
+    }, undefined, 'emulator')
   })
 
   describe('UiTest_API9', () => {

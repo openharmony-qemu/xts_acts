@@ -2027,7 +2027,7 @@ export default function PhotoOutputStaticTest(): void {
     /**
      * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_IS_FOCUS_MODE_SUPPORTED_STATIC_0100
      * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_IS_FOCUS_MODE_SUPPORTED_STATIC_0100
-     * @tc.desc   isFocusModeSupported api success
+     * @tc.desc   isFocusModeSupported api success with FOCUS_MODE_MANUAL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -2040,24 +2040,15 @@ export default function PhotoOutputStaticTest(): void {
           expect().assertFail();
           done();
         } else {
-          const formats = [
-            camera.FocusMode.FOCUS_MODE_MANUAL,
-            camera.FocusMode.FOCUS_MODE_CONTINUOUS_AUTO,
-            camera.FocusMode.FOCUS_MODE_AUTO,
-            camera.FocusMode.FOCUS_MODE_LOCKED,
-          ];
-
-          for (const format of formats) {
-            try {
-              createPhotoOutput();
-              await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
-              let result = mPhotoSession!.isFocusModeSupported(format);
-              console.info(TAG, testName, "Entering start PASSED", result);
-              expect(isEmptyBoolean(result)).assertFalse();
-            } catch (err) {
-              console.error(TAG, testName, " FAILED", err.code);
-              expect().assertFail();
-            }
+          try {
+            createPhotoOutput();
+            await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+            let result = mPhotoSession!.isFocusModeSupported(camera.FocusMode.FOCUS_MODE_MANUAL);
+            console.info(TAG, testName, "Entering start PASSED", result);
+            expect(isEmptyBoolean(result)).assertFalse();
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect().assertFail();
           }
           await releasePhotoSession();
           done();
@@ -2067,7 +2058,7 @@ export default function PhotoOutputStaticTest(): void {
     /**
      * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_IS_FOCUS_MODE_SUPPORTED_STATIC_0200
      * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_IS_FOCUS_MODE_SUPPORTED_STATIC_0200
-     * @tc.desc   isFocusModeSupported api 7400103
+     * @tc.desc   isFocusModeSupported api success with FOCUS_MODE_CONTINUOUS_AUTO
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -2075,6 +2066,99 @@ export default function PhotoOutputStaticTest(): void {
     it('SUB_MULTIMEDIA_CAMERA_SESSION_IS_FOCUS_MODE_SUPPORTED_STATIC_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         const testName = 'SUB_MULTIMEDIA_CAMERA_SESSION_IS_FOCUS_MODE_SUPPORTED_STATIC_0200';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            createPhotoOutput();
+            await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+            let result = mPhotoSession!.isFocusModeSupported(camera.FocusMode.FOCUS_MODE_CONTINUOUS_AUTO);
+            console.info(TAG, testName, "Entering start PASSED", result);
+            expect(isEmptyBoolean(result)).assertFalse();
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect().assertFail();
+          }
+          await releasePhotoSession();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_IS_FOCUS_MODE_SUPPORTED_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_IS_FOCUS_MODE_SUPPORTED_STATIC_0300
+     * @tc.desc   isFocusModeSupported api success with FOCUS_MODE_AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_IS_FOCUS_MODE_SUPPORTED_STATIC_0300',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_SESSION_IS_FOCUS_MODE_SUPPORTED_STATIC_0300';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            createPhotoOutput();
+            await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+            let result = mPhotoSession!.isFocusModeSupported(camera.FocusMode.FOCUS_MODE_AUTO);
+            console.info(TAG, testName, "Entering start PASSED", result);
+            expect(isEmptyBoolean(result)).assertFalse();
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect().assertFail();
+          }
+          await releasePhotoSession();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_IS_FOCUS_MODE_SUPPORTED_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_IS_FOCUS_MODE_SUPPORTED_STATIC_0400
+     * @tc.desc   isFocusModeSupported api success with FOCUS_MODE_LOCKED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_IS_FOCUS_MODE_SUPPORTED_STATIC_0400',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_SESSION_IS_FOCUS_MODE_SUPPORTED_STATIC_0400';
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName, "Entering FAILED with NoCamera");
+          expect().assertFail();
+          done();
+        } else {
+          try {
+            createPhotoOutput();
+            await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+            let result = mPhotoSession!.isFocusModeSupported(camera.FocusMode.FOCUS_MODE_LOCKED);
+            console.info(TAG, testName, "Entering start PASSED", result);
+            expect(isEmptyBoolean(result)).assertFalse();
+          } catch (err) {
+            console.error(TAG, testName, " FAILED", err.code);
+            expect().assertFail();
+          }
+          await releasePhotoSession();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_IS_FOCUS_MODE_SUPPORTED_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_IS_FOCUS_MODE_SUPPORTED_STATIC_0500
+     * @tc.desc   isFocusModeSupported api 7400103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_IS_FOCUS_MODE_SUPPORTED_STATIC_0500',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const testName = 'SUB_MULTIMEDIA_CAMERA_SESSION_IS_FOCUS_MODE_SUPPORTED_STATIC_0500';
         if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
           console.info(TAG, testName, "Entering FAILED with NoCamera");
           expect().assertFail();

@@ -16,7 +16,7 @@
 import hilog from '@ohos.hilog';
 import { RecordData } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import {  afterEach, beforeAll, describe, expect, it, Level, Size, TestType } from '../../../hypium/index';
+import {  afterEach, beforeAll, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-static/src/main/indexStatic';
 import { abilityDelegatorRegistry } from '@kit.TestKit';
 import common from '@ohos.app.ability.common';
 import application from '@ohos.app.ability.application';

@@ -60,6 +60,7 @@ it('waterFlowFling1_static_0100', Level.LEVEL1, async (done: () => void): Promis
       console.info('[waterFlowFling1_static_0100] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
+      await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id('fling_scroll_1'));
       console.info("[waterFlowFling1_static_0100] btn is: " + btn);
       await btn!.click();

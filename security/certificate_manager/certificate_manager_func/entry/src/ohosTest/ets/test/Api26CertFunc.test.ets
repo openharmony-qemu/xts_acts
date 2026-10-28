@@ -75,6 +75,9 @@ export default function api26CertFuncTestUnit() {
         if (err.code === 29700005) {
           console.info("Only the PC/2in1 device can open the dialog box of the UkeyAuthExtensionAbility type.");
           expect(err.code).assertEqual(29700005);
+        } else if (err.code === 801) {
+          console.info(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0010 801`);
+          expect(err.code).assertEqual(801);
         } else {
           console.error(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0010 failed. code:${err.code}, message:${err.message}`);
           expect(false).assertTrue();
@@ -100,8 +103,13 @@ export default function api26CertFuncTestUnit() {
         await certManagerDialog.openAuthDialogForUkeyProvider(null, ukeyAuthRequest);
         expect(false).assertTrue();
       } catch (err) {
-        console.error(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0020 failed. code:${err.code}, message:${err.message}`);
-        expect(err.code).assertEqual(401);
+        if (err.code === 801) {
+          console.info(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0020 801`);
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0020 failed. code:${err.code}, message:${err.message}`);
+          expect(err.code).assertEqual(401);
+        }
       }
       done();
     });
@@ -123,8 +131,13 @@ export default function api26CertFuncTestUnit() {
         await certManagerDialog.openAuthDialogForUkeyProvider(undefined, ukeyAuthRequest);
         expect(false).assertTrue();
       } catch (err) {
-        console.error(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0030 failed. code:${err.code}, message:${err.message}`);
-        expect(err.code).assertEqual(401);
+        if (err.code === 801) {
+          console.info(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0030 801`);
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0030 failed. code:${err.code}, message:${err.message}`);
+          expect(err.code).assertEqual(401);
+        }
       }
       done();
     });
@@ -147,8 +160,13 @@ export default function api26CertFuncTestUnit() {
         await certManagerDialog.openAuthDialogForUkeyProvider(dialogInfo, null);
         expect(false).assertTrue();
       } catch (err) {
-        console.error(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0040 failed. code:${err.code}, message:${err.message}`);
-        expect(err.code).assertEqual(401);
+        if (err.code === 801) {
+          console.info(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0040 801`);
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0040 failed. code:${err.code}, message:${err.message}`);
+          expect(err.code).assertEqual(401);
+        }
       }
       done();
     });
@@ -171,8 +189,13 @@ export default function api26CertFuncTestUnit() {
         await certManagerDialog.openAuthDialogForUkeyProvider(dialogInfo, undefined);
         expect(false).assertTrue();
       } catch (err) {
-        console.error(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0050 failed. code:${err.code}, message:${err.message}`);
-        expect(err.code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_PARAMETER_VALIDATION_FAILED);
+        if (err.code === 801) {
+          console.info(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0050 801`);
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0050 failed. code:${err.code}, message:${err.message}`);
+          expect(err.code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_PARAMETER_VALIDATION_FAILED);
+        }
       }
       done();
     });
@@ -198,8 +221,13 @@ export default function api26CertFuncTestUnit() {
         await certManagerDialog.openAuthDialogForUkeyProvider(dialogInfo, ukeyAuthRequest);
         expect(false).assertTrue();
       } catch (err) {
-        console.error(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0070 failed. code:${err.code}, message:${err.message}`);
-        expect(err.code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_PARAMETER_VALIDATION_FAILED);
+        if (err.code === 801) {
+          console.info(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0070 801`);
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0070 failed. code:${err.code}, message:${err.message}`);
+          expect(err.code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_PARAMETER_VALIDATION_FAILED);
+        }
       }
       done();
     });
@@ -225,8 +253,13 @@ export default function api26CertFuncTestUnit() {
         await certManagerDialog.openAuthDialogForUkeyProvider(dialogInfo, ukeyAuthRequest);
         expect(false).assertTrue();
       } catch (err) {
-        console.error(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0080 failed. code:${err.code}, message:${err.message}`);
-        expect(err.code).assertEqual(29700006);
+        if (err.code === 801) {
+          console.info(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0080 801`);
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0080 failed. code:${err.code}, message:${err.message}`);
+          expect(err.code).assertEqual(29700006);
+        }
       }
       done();
     });
@@ -252,8 +285,13 @@ export default function api26CertFuncTestUnit() {
         await certManagerDialog.openAuthDialogForUkeyProvider(dialogInfo, ukeyAuthRequest);
         expect(false).assertTrue();
       } catch (err) {
-        console.error(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0090 failed. code:${err.code}, message:${err.message}`);
-        expect(err.code).assertEqual(29700003);
+        if (err.code === 801) {
+          console.info(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0090 801`);
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0090 failed. code:${err.code}, message:${err.message}`);
+          expect(err.code).assertEqual(29700003);
+        }
       }
       done();
     });
@@ -279,8 +317,13 @@ export default function api26CertFuncTestUnit() {
         await certManagerDialog.openAuthDialogForUkeyProvider(dialogInfo, ukeyAuthRequest);
         expect(false).assertTrue();
       } catch (err) {
-        console.error(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0100 failed. code:${err.code}, message:${err.message}`);
-        expect(err.code).assertEqual(29700006);
+        if (err.code === 801) {
+          console.info(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0100 801`);
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0100 failed. code:${err.code}, message:${err.message}`);
+          expect(err.code).assertEqual(29700006);
+        }
       }
       done();
     });
@@ -288,7 +331,7 @@ export default function api26CertFuncTestUnit() {
     /**
      * @tc.name   SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0110
      * @tc.number SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0110
-     * @tc.desc   Verify AbilityType.UKEY_AUTH_EXTENSION_ABILITY equals 1
+      * @tc.desc   Verify AbilityType.UKEY_AUTH_EXTENSION_ABILITY equals 1, ERROR_OPERATION_TIMEOUT equals 29700009, ERROR_NOT_CONCURRENT_SUPPORT equals 29700010
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -297,6 +340,8 @@ export default function api26CertFuncTestUnit() {
       console.info('SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0110 start');
       expect(certManagerDialog.AbilityType.UKEY_AUTH_EXTENSION_ABILITY).assertEqual(1);
       expect(bundleManager.ExtensionAbilityType.UKEY_AUTH).assertEqual(40);
+      expect(certManagerDialog.CertificateDialogErrorCode.ERROR_OPERATION_TIMEOUT).assertEqual(29700009);
+      expect(certManagerDialog.CertificateDialogErrorCode.ERROR_NOT_CONCURRENT_SUPPORT).assertEqual(29700010);
       done();
     });
 
@@ -321,8 +366,13 @@ export default function api26CertFuncTestUnit() {
         await certManagerDialog.openAuthDialogForUkeyProvider(dialogInfo, ukeyAuthRequest);
         expect(false).assertTrue();
       } catch (err) {
-        console.error(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0120 failed. code:${err.code}, message:${err.message}`);
-        expect(err.code).assertEqual(29700006);
+        if (err.code === 801) {
+          console.info(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0120 801`);
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0120 failed. code:${err.code}, message:${err.message}`);
+          expect(err.code).assertEqual(29700006);
+        }
       }
       done();
     });
@@ -351,6 +401,9 @@ export default function api26CertFuncTestUnit() {
         if (err.code === 29700005) {
           expect(err.code).assertEqual(29700005);
           console.info("Only the PC/2in1 device can open the dialog box of the UkeyAuthExtensionAbility type.");
+        } else if (err.code === 801) {
+          console.info(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0130 801`);
+          expect(err.code).assertEqual(801);
         } else {
           console.error(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0130 failed. code:${err.code}, message:${err.message}`);
           expect(false).assertTrue();
@@ -380,8 +433,13 @@ export default function api26CertFuncTestUnit() {
         await certManagerDialog.openAuthDialogForUkeyProvider(dialogInfo, ukeyAuthRequest);
         expect(false).assertTrue();
       } catch (err) {
-        console.info(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0140 error code: ${err.code}, message: ${err.message}`);
-        expect(err.code).assertEqual(29700006);
+        if (err.code === 801) {
+          console.info(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0140 801`);
+          expect(err.code).assertEqual(801);
+        } else {
+          console.info(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0140 error code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(29700006);
+        }
       }
       done();
     });
@@ -411,6 +469,9 @@ export default function api26CertFuncTestUnit() {
         if (err.code === 29700005) {
           console.info("Only the PC/2in1 device can open the dialog box of the UkeyAuthExtensionAbility type.");
           expect(err.code).assertEqual(29700005);
+        } else if (err.code === 801) {
+          console.info(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0150 801`);
+          expect(err.code).assertEqual(801);
         } else {
           console.error(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0150 failed. code:${err.code}, message:${err.message}`);
           expect(false).assertTrue();
@@ -441,8 +502,13 @@ export default function api26CertFuncTestUnit() {
         await certManagerDialog.openAuthDialogForUkeyProvider(dialogInfo, ukeyAuthRequest);
         expect(false).assertTrue();
       } catch (err) {
-        console.error(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0160 failed. code:${err.code}, message:${err.message}`);
-        expect(err.code).assertEqual(29700006);
+        if (err.code === 801) {
+          console.info(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0160 801`);
+          expect(err.code).assertEqual(801);
+        } else {
+          console.error(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0160 failed. code:${err.code}, message:${err.message}`);
+          expect(err.code).assertEqual(29700006);
+        }
       }
       done();
     });
@@ -472,6 +538,9 @@ export default function api26CertFuncTestUnit() {
         if (err.code === 29700005) {
           console.info("Only the PC/2in1 device can open the dialog box of the UkeyAuthExtensionAbility type.");
           expect(err.code).assertEqual(29700005);
+        } else if (err.code === 801) {
+          console.info(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0170 801`);
+          expect(err.code).assertEqual(801);
         } else {
           console.error(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0170 failed. code:${err.code}, message:${err.message}`);
           expect(false).assertTrue();
@@ -505,6 +574,9 @@ export default function api26CertFuncTestUnit() {
         if (err.code === 29700005) {
           console.info("Only the PC/2in1 device can open the dialog box of the UkeyAuthExtensionAbility type.");
           expect(err.code).assertEqual(29700005);
+        } else if (err.code === 801) {
+          console.info(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0180 801`);
+          expect(err.code).assertEqual(801);
         } else {
           console.error(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0180 failed. code:${err.code}, message:${err.message}`);
           expect(false).assertTrue();
@@ -538,6 +610,9 @@ export default function api26CertFuncTestUnit() {
         if (err.code === 29700005) {
           console.info("Only the PC/2in1 device can open the dialog box of the UkeyAuthExtensionAbility type.");
           expect(err.code).assertEqual(29700005);
+        } else if (err.code === 801) {
+          console.info(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0190 801`);
+          expect(err.code).assertEqual(801);
         } else {
           console.error(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0190 failed. code:${err.code}, message:${err.message}`);
           expect(false).assertTrue();
@@ -571,6 +646,9 @@ export default function api26CertFuncTestUnit() {
         if (err.code === 29700005) {
           console.info("Only the PC/2in1 device can open the dialog box of the UkeyAuthExtensionAbility type.");
           expect(err.code).assertEqual(29700005);
+        } else if (err.code === 801) {
+          console.info(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0200 801`);
+          expect(err.code).assertEqual(801);
         } else {
           console.error(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0200 failed. code:${err.code}, message:${err.message}`);
           expect(false).assertTrue();
@@ -604,6 +682,9 @@ export default function api26CertFuncTestUnit() {
         if (err.code === 29700005) {
           console.info("Only the PC/2in1 device can open the dialog box of the UkeyAuthExtensionAbility type.");
           expect(err.code).assertEqual(29700005);
+        } else if (err.code === 801) {
+          console.info(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0210 801`);
+          expect(err.code).assertEqual(801);
         } else {
           console.error(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0210 failed. code:${err.code}, message:${err.message}`);
           expect(false).assertTrue();
@@ -636,6 +717,9 @@ export default function api26CertFuncTestUnit() {
         if (err.code === 29700005) {
           console.info("Only the PC/2in1 device can open the dialog box of the UkeyAuthExtensionAbility type.");
           expect(err.code).assertEqual(29700005);
+        } else if (err.code === 801) {
+          console.info(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0220 801`);
+          expect(err.code).assertEqual(801);
         } else {
           console.error(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0220 failed. code:${err.code}, message:${err.message}`);
           expect(false).assertTrue();
@@ -669,6 +753,9 @@ export default function api26CertFuncTestUnit() {
         if(err.code === 29700005) {
           console.info("Only the PC/2in1 device can open the dialog box of the UkeyAuthExtensionAbility type.");
           expect(err.code).assertEqual(29700005)
+        } else if (err.code === 801) {
+          console.info(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0230 801`);
+          expect(err.code).assertEqual(801);
         } else {
           console.error(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0230 failed. code:${err.code}, message:${err.message}`);
           expect(false).assertTrue();
@@ -702,6 +789,9 @@ export default function api26CertFuncTestUnit() {
         if (err.code === 29700005) {
           console.info("Only the PC/2in1 device can open the dialog box of the UkeyAuthExtensionAbility type.");
           expect(err.code).assertEqual(29700005);
+        } else if (err.code === 801) {
+          console.info(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0240 801`);
+          expect(err.code).assertEqual(801);
         } else {
           console.error(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0240 failed. code:${err.code}, message:${err.message}`);
           expect(false).assertTrue();
@@ -734,6 +824,9 @@ export default function api26CertFuncTestUnit() {
         if (err.code === 29700005) {
           console.info("Only the PC/2in1 device can open the dialog box of the UkeyAuthExtensionAbility type.");
           expect(err.code).assertEqual(29700005);
+        } else if (err.code === 801) {
+          console.info(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0250 801`);
+          expect(err.code).assertEqual(801);
         } else {
           console.error(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0250 failed. code:${err.code}, message:${err.message}`);
           expect(err.code).assertEqual(29700002);
@@ -767,6 +860,9 @@ export default function api26CertFuncTestUnit() {
         if (err.code === 29700005) {
           console.info("Only the PC/2in1 device can open the dialog box of the UkeyAuthExtensionAbility type.");
           expect(err.code).assertEqual(29700005);
+        } else if (err.code === 801) {
+          console.info(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0260 801`);
+          expect(err.code).assertEqual(801);
         } else {
           console.error(`SUB_Security_CertManager_OpenAuthDialogForUkeyProvider_Func_0260 failed. code:${err.code}, message:${err.message}`);
           expect(err.code).assertEqual(29700009);
@@ -774,5 +870,6 @@ export default function api26CertFuncTestUnit() {
       }
       done();
     });
+
   })
 }

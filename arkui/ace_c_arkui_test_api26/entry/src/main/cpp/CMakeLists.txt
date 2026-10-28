@@ -32,6 +32,8 @@ add_library(nativerender SHARED
     arcSwiper/ArcSwiperEventCallbackTest.cpp
     arcAlphabetIndexer/ArcAlphabetIndexerEventCallbackTest.cpp
     dragEventSummary/DragEventSummaryTest.cpp
+    node/ImageCollectionTakeItemByNodeId.cpp
+    node/UIAgentGetPageTextErrorCodeTest.cpp
 )
 
  add_library(nativeNode SHARED 

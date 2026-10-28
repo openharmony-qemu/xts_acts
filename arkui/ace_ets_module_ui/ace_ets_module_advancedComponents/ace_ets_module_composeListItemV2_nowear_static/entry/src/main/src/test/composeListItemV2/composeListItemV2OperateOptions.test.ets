@@ -206,6 +206,9 @@ export default function composeListItemV2OperateOptionsTest() {
       console.info('[composeListItemV2OperateOptions_static_0700] START');
       try {
         let driver = Driver.create();
+        await driver.delayMs(1000);
+        let scrollBar = await driver.findComponent(ON.type('Scroll'));
+        let searchText = await (scrollBar?.scrollSearch(ON.text('symbolStyle test')) as Promise<Component>);
         await driver.delayMs(2000);
         let operateText = await driver.findComponent(ON.text('symbolStyle test'));
         expect(operateText !== null).assertTrue();
@@ -229,10 +232,10 @@ export default function composeListItemV2OperateOptionsTest() {
       console.info('[composeListItemV2OperateOptions_static_0800] START');
       try {
         let driver = Driver.create();
-        await driver.delayMs(2000);
-        let scrollBar = await driver.findComponent(ON.type('Scroll'));
-        let searchText = await (scrollBar?.scrollSearch(ON.text('toggle test')) as Promise<Component>);
         await driver.delayMs(1000);
+        let scrollBar = await driver.findComponent(ON.type('Scroll'));
+        await scrollBar!.scrollToBottom();
+        await driver.delayMs(2000);
         let operateText = await driver.findComponent(ON.text('toggle test'));
         expect(operateText !== null).assertTrue();
         await driver.delayMs(1000);

@@ -171,5 +171,26 @@ export default function setTimeoutTest() {
       console.info(`${caseName} test end`);
       Done();
     })
+
+    /**
+     * @tc.name   testSetTimeout0700
+     * @tc.number SUB_TIMER_SETTIMEOUT_TEST_0700
+     * @tc.desc   test setTimeout without delay defaults to 0 and fires
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testSetTimeout0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
+      const caseName = 'testSetTimeout0700';
+      console.info(`${caseName} test start`);
+      flag = false;
+      setTimeout(() => {
+        flag = true;
+      });
+      await sleep(100);
+      expect(flag).assertTrue();
+      console.info(`${caseName} test end`);
+      Done();
+    })
   })
 }

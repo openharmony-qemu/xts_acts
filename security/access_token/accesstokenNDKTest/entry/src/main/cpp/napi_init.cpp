@@ -43,6 +43,17 @@ static napi_value OsCheckSelfPermissionB(napi_env env,
     return result;
 }
 
+static napi_value OsCheckSelfPermissionC(napi_env env,
+                                         napi_callback_info info)
+                                         {
+    const char* str = "";
+    bool returnValue = OH_AT_CheckSelfPermission(str);
+
+    napi_value result = nullptr;
+    NAPI_CALL(env, napi_get_boolean(env, returnValue, &result));
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -50,8 +61,10 @@ static napi_value Init(napi_env env, napi_value exports)
         {"osCheckSelfPermissionA", nullptr, OsCheckSelfPermissionA, nullptr,
          nullptr, nullptr, napi_default, nullptr},
         {"osCheckSelfPermissionB", nullptr, OsCheckSelfPermissionB, nullptr,
+         nullptr, nullptr, napi_default, nullptr},
+        {"osCheckSelfPermissionC", nullptr, OsCheckSelfPermissionC, nullptr,
          nullptr, nullptr, napi_default, nullptr}};
-
+        
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
 }

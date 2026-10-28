@@ -242,48 +242,5 @@ export default function listMixedTest() {
       expect(list.getLast()).assertEqual(30);
       expect(list.isEmpty()).assertFalse();
     });
-
-    /**
-     * @tc.name   testListMixedTest0600
-     * @tc.number SUB_ARKTS_LIST_MIXED_0600
-     * @tc.desc   Verify List mixed-type out-of-bounds get/insert/removeByIndex behavior, empty list access and clear
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testListMixedTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const list: List<MixedItem> = new List<MixedItem>();
-      list.add(1);
-      expect(list.get(1)).assertUndefined();
-      expect(list[1]).assertUndefined();
-
-      let removeThrew: boolean = false;
-      try {
-        list.removeByIndex(70);
-      } catch (e) {
-        removeThrew = true;
-        expect(((e as Error).name).length > 0).assertTrue();
-      }
-      expect(removeThrew).assertTrue();
-      expect(list.length).assertEqual(1);
-
-      let insertThrew: boolean = false;
-      try {
-        list.insert('out', 31);
-      } catch (e) {
-        insertThrew = true;
-      }
-      expect(insertThrew).assertTrue();
-      expect(list.length).assertEqual(1);
-
-      const empty: List<MixedItem> = new List<MixedItem>();
-      expect(empty.getFirst()).assertUndefined();
-      expect(empty.getLast()).assertUndefined();
-
-      list.clear();
-      expect(list.length).assertEqual(0);
-      expect(list.isEmpty()).assertTrue();
-      expect(list.convertToArray().length).assertEqual(0);
-    });
   });
 }

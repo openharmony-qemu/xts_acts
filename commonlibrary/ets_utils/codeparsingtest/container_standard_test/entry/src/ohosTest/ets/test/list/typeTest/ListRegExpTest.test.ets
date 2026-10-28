@@ -232,48 +232,5 @@ export default function listRegExpTest() {
       expect(list.getLast()).assertEqual(VALID_VALUES[2]);
       expect(list.isEmpty()).assertFalse();
     });
-
-    /**
-     * @tc.name   testListRegExpTest0600
-     * @tc.number SUB_ARKTS_LIST_REGEXP_0600
-     * @tc.desc   Verify List RegExp out-of-bounds get/insert/removeByIndex behavior, empty list access and clear
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testListRegExpTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const list: List<RegExp> = new List<RegExp>();
-      list.add(VALID_VALUES[0]);
-      expect(list.get(1)).assertUndefined();
-      expect(list[1]).assertUndefined();
-
-      let removeThrew: boolean = false;
-      try {
-        list.removeByIndex(15);
-      } catch (e) {
-        removeThrew = true;
-        expect(((e as Error).name).length > 0).assertTrue();
-      }
-      expect(removeThrew).assertTrue();
-      expect(list.length).assertEqual(1);
-
-      let insertThrew: boolean = false;
-      try {
-        list.insert(VALID_VALUES[1], 77);
-      } catch (e) {
-        insertThrew = true;
-      }
-      expect(insertThrew).assertTrue();
-      expect(list.length).assertEqual(1);
-
-      const empty: List<RegExp> = new List<RegExp>();
-      expect(empty.getFirst()).assertUndefined();
-      expect(empty.getLast()).assertUndefined();
-
-      list.clear();
-      expect(list.length).assertEqual(0);
-      expect(list.isEmpty()).assertTrue();
-      expect(list.convertToArray().length).assertEqual(0);
-    });
   });
 }

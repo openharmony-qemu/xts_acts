@@ -88,40 +88,49 @@ export default function saveCompCustomizeTest() {
 
     let clickAllowBtn = async (testname: string, driver: Driver) => {
       console.info(`====>${testname} clickAllowBtn function Start====`);
-      try {
-        let allowBtn = await driver.findComponent(ON.text('允许'));
-        await Utils.sleep(3000);
-        console.info(`====>${testname} allowBtn is:` + JSON.stringify(allowBtn));
-        if(allowBtn !== null) {
-          console.info(`====>${testname} allowBtnClick START====`);
-          await allowBtn.click();
-          console.info(`====>${testname} reClick====`);
-        } else {
-          let startX = 0;
-          let startY = 0;
-          let endX = 0;
-          let endY = 0;
-          display.getAllDisplays((err, data) => {
-            console.info(`====>${testname} the window data[0].width: ` + data[0].width);
-            console.info(`====>${testname} the window data[0].height: ` + data[0].height);
-            startX = endX = Math.floor(data[0].width * (1/2));
-            startY = Math.floor(data[0].height * (4/5));
-            endY = Math.floor(data[0].height * (1/5));
-          });
-          for(let i = 0; i < 5; i++){
-            await driver.swipe(startX, startY, endX, endY);
-            await Utils.sleep(100);
-          }
+      const allowClickRetry = 3;
+      for (let retry = 0; retry < allowClickRetry; retry++) {
+        try {
           let allowBtn = await driver.findComponent(ON.text('允许'));
-          await Utils.sleep(3000);
+          await Utils.sleep(500);
           console.info(`====>${testname} allowBtn is:` + JSON.stringify(allowBtn));
-          console.info(`====>${testname} allowBtnClick START====`);
-          await allowBtn.click();
-          console.info(`====>${testname} reClick====`);
+          if(allowBtn !== null) {
+            console.info(`====>${testname} allowBtnClick START====`);
+            await allowBtn.click();
+            console.info(`====>${testname} reClick====`);
+            return;
+          } else {
+            let startX = 0;
+            let startY = 0;
+            let endX = 0;
+            let endY = 0;
+            display.getAllDisplays((err, data) => {
+              console.info(`====>${testname} the window data[0].width: ` + data[0].width);
+              console.info(`====>${testname} the window data[0].height: ` + data[0].height);
+              startX = endX = Math.floor(data[0].width * (1/2));
+              startY = Math.floor(data[0].height * (4/5));
+              endY = Math.floor(data[0].height * (1/5));
+            });
+            for(let i = 0; i < 5; i++){
+              await driver.swipe(startX, startY, endX, endY);
+              await Utils.sleep(100);
+            }
+            let allowBtn2 = await driver.findComponent(ON.text('允许'));
+            await Utils.sleep(500);
+            console.info(`====>${testname} allowBtn2 is:` + JSON.stringify(allowBtn2));
+            console.info(`====>${testname} allowBtnClick START====`);
+            await allowBtn2.click();
+            console.info(`====>${testname} reClick====`);
+            return;
+          }
+        } catch (err) {
+          console.error(`====>${testname} clickAllowBtn err (retry ${retry + 1}/${allowClickRetry}) : ` + JSON.stringify(err));
+          if (retry < allowClickRetry - 1) {
+            await Utils.sleep(2000);
+          } else {
+            expect(false).assertTrue();
+          }
         }
-      } catch (err) {
-        console.error(`====>${testname} clickAllowBtn err : ` + JSON.stringify(err));
-        expect(false).assertTrue();
       }
       console.info(`====>${testname} clickAllowBtn function End====`);
     }

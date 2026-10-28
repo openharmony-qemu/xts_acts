@@ -1,5 +1,19 @@
 import { afterEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { errorManager } from '@kit.AbilityKit';
 import { sleep } from './utils';
+
+let asyncUnhandledReason = '';
+
+function asyncRejectionObserver(observer: errorManager.GlobalError): void {
+  if (observer.message === 'async-unhandled') {
+    asyncUnhandledReason = observer.message;
+  }
+  console.info(`asyncRejectionObserver: ${observer.message}`);
+}
+
+async function fireAndForgetRejection(): Promise<void> {
+  throw new Error('async-unhandled');
+}
 
 export default function asyncSecTest(): void {
   describe('asyncSecTest', () => {
@@ -2430,6 +2444,30 @@ export default function asyncSecTest(): void {
       expect(successCount).assertEqual(PURCHASE_COUNT);
 
       expect(globalInventory.stock).assertEqual(100 - PURCHASE_COUNT);
+    });
+
+    /**
+     * @tc.name   testAsyncSecUnhandled0055
+     * @tc.number SUB_ASYNC_SEC_TEST_0100
+     * @tc.desc   Verify an async fire-and-forget rejection triggers the host unhandled rejection observer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testAsyncSecUnhandled0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      asyncUnhandledReason = '';
+      errorManager.on('globalUnhandledRejectionDetected', asyncRejectionObserver);
+      try {
+        fireAndForgetRejection();
+        let waited = 0;
+        while (asyncUnhandledReason === '' && waited < 30) {
+          await sleep(100);
+          waited++;
+        }
+      } finally {
+        errorManager.off('globalUnhandledRejectionDetected', asyncRejectionObserver);
+      }
+      expect(asyncUnhandledReason).assertEqual('async-unhandled');
     });
   })
 }

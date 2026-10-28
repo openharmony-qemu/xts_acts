@@ -21,7 +21,8 @@ group("netmanager_websocket") {
       "NetManagerWSSupportCustomProtocol:ActsNetManagerWSSupportCustomProtocolTest",
       "sslcertverify:ActsNetworkManagerSSLCertVerifyTest",
       "websocketcertverify:ActsNetworkManagerWebSocketCertVerifyTest",
-      "NetManagerVpn:ActsNetManagerVpnTest"
+      "NetManagerVpn:ActsNetManagerVpnTest",
+      "ActsNetManagerVpnTestStatic:ActsNetManagerVpnStaticTest",
     ]
   }
 }

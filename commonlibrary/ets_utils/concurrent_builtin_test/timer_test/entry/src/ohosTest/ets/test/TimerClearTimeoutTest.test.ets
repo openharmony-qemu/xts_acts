@@ -205,6 +205,28 @@ export default function clearTimeoutTest() {
       console.info(`${caseName} test end`);
       Done();
     })
+
+    /**
+     * @tc.name   testClearTimeout0700
+     * @tc.number SUB_TIMER_CLEARTIMEOUT_TEST_0700
+     * @tc.desc   test clearTimeout without argument is a no-op
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testClearTimeout0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
+      const caseName = 'testClearTimeout0700';
+      console.info(`${caseName} test start`);
+      flag = false;
+      clearTimeout();
+      setTimeout(() => {
+        flag = true;
+      }, 10);
+      await sleep(100);
+      expect(flag).assertTrue();
+      console.info(`${caseName} test end`);
+      Done();
+    })
   })
 }
 

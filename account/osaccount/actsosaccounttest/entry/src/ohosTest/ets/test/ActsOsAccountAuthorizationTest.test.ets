@@ -856,6 +856,225 @@ export default function ActsOsAccountAuthorizationTest(): void {
         console.info("====>AuthorizationResultStructReturn_001 catch err: " + JSON.stringify(err));
         expect().assertFail();
         done();
+       }
+    });
+
+    /**
+     * @tc.name   AuthorizationPrivilegeReturn_002
+     * @tc.number SUB_Account_OsAccount_PrivReturn_0002
+     * @tc.desc   Verify Privilege enum PRIVILEGE_MONITOR_RAW_USB_PACKETS value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('AuthorizationPrivilegeReturn_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void) => {
+      console.info("====>AuthorizationPrivilegeReturn_002 start====");
+      try {
+        let value: string = authorization.Privilege.PRIVILEGE_MONITOR_RAW_USB_PACKETS;
+        console.info("====>AuthorizationPrivilegeReturn_002 value: " + value);
+        expect(value).assertEqual('ohos.privilege.monitor_raw_usb_packets');
+        console.info("====>AuthorizationPrivilegeReturn_002 end====");
+        done();
+      } catch (err) {
+        console.info("====>AuthorizationPrivilegeReturn_002 catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AuthorizationHasParam_002
+     * @tc.number SUB_Account_OsAccount_HasParam_0002
+     * @tc.desc   Verify hasAuthorization with PRIVILEGE_MONITOR_RAW_USB_PACKETS returns a boolean.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('AuthorizationHasParam_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void) => {
+      console.info("====>AuthorizationHasParam_002 start====");
+      try {
+        let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
+        let has: boolean = await manager.hasAuthorization(
+          authorization.Privilege.PRIVILEGE_MONITOR_RAW_USB_PACKETS);
+        console.info("====>AuthorizationHasParam_002 has: " + has);
+        expect(has == true || has == false).assertTrue();
+        console.info("====>AuthorizationHasParam_002 end====");
+        done();
+      } catch (err) {
+        console.info("====>AuthorizationHasParam_002 catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AuthorizationReqParam_003
+     * @tc.number SUB_Account_OsAccount_ReqParam_0003
+     * @tc.desc   Verify requestAuthorization with PRIVILEGE_MONITOR_RAW_USB_PACKETS clicking cancel returns CANCELED.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('AuthorizationReqParam_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void) => {
+      console.info("====>AuthorizationReqParam_003 start====");
+      let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
+      let context: common.UIAbilityContext = getForegroundContext();
+      let has: boolean = await manager.hasAuthorization(
+          authorization.Privilege.PRIVILEGE_MONITOR_RAW_USB_PACKETS);
+      if ( has ) {
+        console.info("====>AuthorizationReqParam_003 already authorized, skip cancel test====");
+        done();
+      } else {
+        try {
+          let result: authorization.AuthorizationResult = await requestAuthAndClick(
+            manager,
+            authorization.Privilege.PRIVILEGE_MONITOR_RAW_USB_PACKETS,
+            context,
+            ["取消", "Cancel"]
+          );
+          console.info("====>AuthorizationReqParam_003 result: " + JSON.stringify(result));
+          if (result != null) {
+            expect(result.resultCode == authorization.AuthorizationResultCode.AUTHORIZATION_CANCELED ||
+              result.resultCode == authorization.AuthorizationResultCode.AUTHORIZATION_NOT_SUPPORTED).assertTrue();
+          }
+        } catch (err) {
+          console.info("====>AuthorizationReqParam_003 catch err: " + JSON.stringify(err));
+          let code: number = (err as BusinessError).code;
+          if (code !== 12300001 && code !== 12300304) {
+            expect().assertFail();
+          } else {
+            console.info("====>AuthorizationReqParam_003 dialog force-stopped, UI automation limitation, skip====");
+          }
+        }
+        try {
+          let hasAfter: boolean = await manager.hasAuthorization(
+            authorization.Privilege.PRIVILEGE_MONITOR_RAW_USB_PACKETS);
+          expect(hasAfter).assertFalse()
+        } catch (err) {
+          console.error("====>AuthorizationReqParam_003 has catch err: " + JSON.stringify(err))
+          expect().assertFail()
+        }
+        console.info("====>AuthorizationReqParam_003 end====");
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AuthorizationReqParam_004
+     * @tc.number SUB_Account_OsAccount_ReqParam_0004
+     * @tc.desc   Verify requestAuthorization with PRIVILEGE_MONITOR_RAW_USB_PACKETS clicking confirm returns GRANTED.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('AuthorizationReqParam_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void) => {
+      console.info("====>AuthorizationReqParam_004 start====");
+      let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
+      let context: common.UIAbilityContext = getForegroundContext();
+      console.info("====>AuthorizationReqParam_004 context: " + JSON.stringify(context));
+      let has: boolean = await manager.hasAuthorization(
+          authorization.Privilege.PRIVILEGE_MONITOR_RAW_USB_PACKETS);
+      if ( has ) {
+        try {
+          let auth_result: authorization.AuthorizationResult = await manager.requestAuthorization(
+            authorization.Privilege.PRIVILEGE_MONITOR_RAW_USB_PACKETS, context);
+          console.info("====>AuthorizationReqParam_004 auth_result: " + JSON.stringify(auth_result));
+          expect(auth_result.resultCode).assertEqual(authorization.AuthorizationResultCode.AUTHORIZATION_GRANTED)
+        } catch (err) {
+          console.info("AuthorizationReqParam_004 authorization err: " + JSON.stringify(err))
+          expect().assertFail();
+        }
+        done();
+      } else {
+        try {
+          let result: authorization.AuthorizationResult = await requestAuthAndClick(
+            manager,
+            authorization.Privilege.PRIVILEGE_MONITOR_RAW_USB_PACKETS,
+            context,
+            ["确定", "OK"]
+          );
+          console.info("====>AuthorizationReqParam_004 result: " + JSON.stringify(result));
+          expect(result != null).assertTrue();
+          if (result != null) {
+            if (result.resultCode === authorization.AuthorizationResultCode.AUTHORIZATION_NOT_SUPPORTED) {
+              console.info("====>AuthorizationReqParam_004 interface not enabled on this device====");
+              expect(result.resultCode)
+                .assertEqual(authorization.AuthorizationResultCode.AUTHORIZATION_NOT_SUPPORTED);
+              done();
+              return;
+            }
+            expect(result.resultCode)
+              .assertEqual(authorization.AuthorizationResultCode.AUTHORIZATION_GRANTED);
+            expect(result.privilege).assertEqual('ohos.privilege.monitor_raw_usb_packets')
+          }
+          let auth_result: authorization.AuthorizationResult = await manager.requestAuthorization(
+            authorization.Privilege.PRIVILEGE_MONITOR_RAW_USB_PACKETS, context);
+          console.info("====>AuthorizationReqParam_004 auth_result: " + JSON.stringify(auth_result));
+          expect(auth_result.resultCode).assertEqual(authorization.AuthorizationResultCode.AUTHORIZATION_GRANTED)
+        } catch (err) {
+          console.info("====>AuthorizationReqParam_004 catch err: " + JSON.stringify(err));
+          expect().assertFail();
+        }
+        try {
+          let hasAfter: boolean = await manager.hasAuthorization(
+            authorization.Privilege.PRIVILEGE_MONITOR_RAW_USB_PACKETS);
+          expect(hasAfter).assertTrue()
+        } catch (err) {
+          console.error("====>AuthorizationReqParam_004 has catch err: " + JSON.stringify(err))
+          expect().assertFail()
+        }
+        console.info("====>AuthorizationReqParam_004 end====");
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AuthorizationResultStructReturn_002
+     * @tc.number SUB_Account_OsAccount_ResultStruct_0002
+     * @tc.desc   Verify AuthorizationResult structure with PRIVILEGE_MONITOR_RAW_USB_PACKETS exposes resultCode and privilege.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('AuthorizationResultStructReturn_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void) => {
+      console.info("====>AuthorizationResultStructReturn_002 start====");
+      let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
+      let context: common.UIAbilityContext = getForegroundContext();
+      let has: boolean = await manager.hasAuthorization(
+          authorization.Privilege.PRIVILEGE_MONITOR_RAW_USB_PACKETS);
+      try {
+        let result: authorization.AuthorizationResult;
+        if (!has) {
+          result = await requestAuthAndClick(
+            manager,
+            authorization.Privilege.PRIVILEGE_MONITOR_RAW_USB_PACKETS,
+            context,
+            ["确定", "OK"]
+          );
+        } else {
+          result = await manager.requestAuthorization(
+            authorization.Privilege.PRIVILEGE_MONITOR_RAW_USB_PACKETS, context);
+        }
+        console.info("====>AuthorizationResultStructReturn_002 result: " + JSON.stringify(result));
+        expect(result != null).assertTrue();
+        if (result != null) {
+          expect(result.privilege != null).assertTrue();
+          expect(result.privilege).assertEqual(authorization.Privilege.PRIVILEGE_MONITOR_RAW_USB_PACKETS);
+          let code: number = result.resultCode as number;
+          console.info("====>AuthorizationResultStructReturn_002 resultCode: " + code);
+          expect(code >= 0).assertTrue();
+        }
+        console.info("====>AuthorizationResultStructReturn_002 end====");
+        done();
+      } catch (err) {
+        console.info("====>AuthorizationResultStructReturn_002 catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
       }
     });
   });

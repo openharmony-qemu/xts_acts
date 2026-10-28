@@ -9406,6 +9406,137 @@ export default function applicationManagerTest() {
       }
       done();
     })
+
+    /**
+     * @tc.name   test_addKeepAliveApps_maxCount_0001
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDKEEPALIVEAPPS_MAXCOUNT_0001
+     * @tc.desc   test addKeepAliveApps with exactly 10 apps (max limit)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addKeepAliveApps_maxCount_0001", Level.LEVEL2, async (done: Function) => {
+        let keepAliveApps: Array<string> = [];
+        for (let i = 0; i < 10; i++) {
+          keepAliveApps.push("com.test.keepalive." + i);
+        }
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.addKeepAliveApps(SELFWANT, keepAliveApps, DEFAULT_USER_ID);
+      } catch (error) {
+        if (error.code === '801') {
+          expect(error.code).assertEqual('801');
+        } else {
+          expect().assertFail();
+        }
+      } finally {
+        try {
+          applicationManager.removeKeepAliveApps(SELFWANT, keepAliveApps, DEFAULT_USER_ID);
+        } catch (e) {
+        }
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_addKeepAliveApps_maxCount_0002
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDKEEPALIVEAPPS_MAXCOUNT_0002
+     * @tc.desc   test addKeepAliveApps with 11 apps (exceeds max limit of 10)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addKeepAliveApps_maxCount_0002", Level.LEVEL2, async (done: Function) => {
+      try {
+        let keepAliveApps: Array<string> = [];
+        for (let i = 0; i < 11; i++) {
+          keepAliveApps.push("com.test.keepalive." + i);
+        }
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.addKeepAliveApps(SELFWANT, keepAliveApps, DEFAULT_USER_ID);
+        expect().assertFail();
+      } catch (error) {
+        if (error.code === '801') {
+          expect(error.code).assertEqual('801');
+        } else {
+          expect(error.code).assertEqual('401');
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_addKeepAliveApps_maxCount_0003
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDKEEPALIVEAPPS_MAXCOUNT_0003
+     * @tc.desc   test addKeepAliveApps cumulatively exceeds max limit (add 10, then add 1 more)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addKeepAliveApps_maxCount_0003", Level.LEVEL2, async (done: Function) => {
+      let keepAliveApps10: Array<string> = [];
+      for (let i = 0; i < 10; i++) {
+        keepAliveApps10.push("com.test.keepalive." + i);
+      }
+      let keepAliveAppsExtra: Array<string> = ["com.test.keepalive.extra"];
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.addKeepAliveApps(SELFWANT, keepAliveApps10, DEFAULT_USER_ID);
+        applicationManager.addKeepAliveApps(SELFWANT, keepAliveAppsExtra, DEFAULT_USER_ID);
+        expect().assertFail();
+      } catch (error) {
+        if (error.code === '801') {
+          expect(error.code).assertEqual('801');
+        } else {
+          expect(error.code).assertEqual('401');
+        }
+      } finally {
+        try {
+          applicationManager.removeKeepAliveApps(SELFWANT, keepAliveApps10, DEFAULT_USER_ID);
+        } catch (e) {
+        }
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_getKeepAliveApps_maxCount_0001
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETKEEPALIVEAPPS_MAXCOUNT_0001
+     * @tc.desc   test getKeepAliveApps returns correct count after adding 10 apps (max limit)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getKeepAliveApps_maxCount_0001", Level.LEVEL2, async (done: Function) => {
+      let keepAliveApps: Array<string> = [];
+      for (let i = 0; i < 10; i++) {
+        keepAliveApps.push("com.test.keepalive." + i);
+      }
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.addKeepAliveApps(SELFWANT, keepAliveApps, DEFAULT_USER_ID);
+        let result: Array<string> = applicationManager.getKeepAliveApps(SELFWANT, DEFAULT_USER_ID);
+        expect(result.length).assertEqual(10);
+      } catch (error) {
+        if (error.code === '801') {
+          expect(error.code).assertEqual('801');
+        } else {
+          expect().assertFail();
+        }
+      } finally {
+        try {
+          applicationManager.removeKeepAliveApps(SELFWANT, keepAliveApps, DEFAULT_USER_ID);
+        } catch (e) {
+        }
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
     /**
      * @tc.name   addAllowedRunningBundles_test_006_1
      * @tc.number addAllowedRunningBundles_test_006_1

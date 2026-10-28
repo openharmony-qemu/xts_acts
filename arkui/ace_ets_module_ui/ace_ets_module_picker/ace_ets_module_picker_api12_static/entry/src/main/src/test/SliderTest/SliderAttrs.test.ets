@@ -23,6 +23,8 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 
 
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
+
 export default function SliderAttrs() {
   describe('SliderAttrs', () => {
 
@@ -93,7 +95,7 @@ export default function SliderAttrs() {
       await Utils.sleep(1000);
       let slider = await driver.findComponent(ON.id('SliderAttrs_slider2')) as Component;
       let point = await slider!.getBoundsCenter();
-      await driver.click(point.x, point.y)
+      await driver.clickAt({x: point.x, y: point.y, displayId: displayID})
       await Utils.sleep(2000);
 
       let strJson1 = inspector.getInspectorByKey('SliderAttrs_slider2');
@@ -129,7 +131,7 @@ export default function SliderAttrs() {
       await Utils.sleep(1000);
       let slider = await driver.findComponent(ON.id('SliderAttrs_slider3')) as Component;
       let point = await slider!.getBoundsCenter();
-      await driver.click(point.x, point.y)
+      await driver.clickAt({x: point.x, y: point.y, displayId: displayID})
       await Utils.sleep(2000);
 
       let strJson1 = inspector.getInspectorByKey('SliderAttrs_slider3');
