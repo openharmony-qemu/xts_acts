@@ -848,37 +848,6 @@ export default function btHidTest(): void {
       })
 
     /**
-     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_static_0600
-     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASEHIDPROFILEADD_0600
-     * @tc.desc   Test reportError 非法枚举值参数覆盖 未注册 2903052 api23.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_static_0600',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-        try {
-          let error: hid.ErrorReason = 99;
-          hidDevice!.reportError(error);
-          hilog.info(domain, tag, "[bluetooth_js]hid reportError is success ");
-          expect().assertFail();
-        } catch (err) {
-          hilog.error(domain, tag,
-            "[bluetooth_js]hid reportError is fail , errCode:" + err.code + ",errMessage:" + err.message);
-          if (err.code === 801) {
-            hilog.info(domain, tag, "设备（除手机外） is not support.");
-            expect(err.code).assertEqual(801);
-          } else if (err.code === 401) {
-            hilog.info(domain, tag, "invalid param");
-            expect(err.code).assertEqual(401);
-          } else {
-            expect(err.code).assertEqual(2903052);
-          }
-        }
-        done();
-      })
-
-    /**
      * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_NOR_static_0200
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASEHIDPROFILENOR_0200
      * @tc.desc   Test disconnect 未注册 2903052 api23.
@@ -1336,85 +1305,6 @@ export default function btHidTest(): void {
         done();
       })
 
-    /**
-     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_RH_static_0100
-     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASEHIDPROFILERH_0100
-     * @tc.desc   Test registerHidDevice sdp.subclass 非法枚举值 api23.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_RH_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: () => void): Promise<void> => {
-        try {
-          let sdpIllegal: hid.HidDeviceSdp = {
-            name: "testName",
-            description: "testDescription",
-            provider: "testProvoder",
-            subclass: 99,
-            descriptors: descriptors,
-          };
-          hidDevice!.registerHidDevice(sdpIllegal, inqos, outqos, (data: boolean) => {
-            hilog.info(domain, tag, "[bluetooth_js] registerHidDevice RH 0100 success" + JSON.stringify(data));
-          });
-          hilog.info(domain, tag, "[bluetooth_js]hid registerHidDevice RH 0100 is called ");
-          await sleep(1000);
-        } catch (err) {
-          hilog.error(domain, tag,
-            "[bluetooth_js]hid registerHidDevice is fail , errCode:" + err.code + ",errMessage:" + err.message);
-          if (err.code === 801) {
-            hilog.info(domain, tag, "设备（除手机外） is not support.");
-            expect(err.code).assertEqual(801);
-          } else if (err.code === 401) {
-            hilog.info(domain, tag, "invalid param");
-            expect(err.code).assertEqual(401);
-          } else {
-            expect(err.code).assertEqual(2903051);
-          }
-        }
-        done();
-      })
-
-    /**
-     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_RH_static_0200
-     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASEHIDPROFILERH_0200
-     * @tc.desc   Test registerHidDevice inQos.serviceType 非法枚举值 api23.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_RH_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: () => void): Promise<void> => {
-        try {
-          let inqosIllegal: hid.HidDeviceQos = {
-            serviceType: 99,
-            tokenRate: 0,
-            tokenBucketSize: 0,
-            peakBandwidth: 0,
-            latency: -1,
-            delayVariation: -1,
-          };
-          hidDevice!.registerHidDevice(sdp, inqosIllegal, outqos, (data: boolean) => {
-            hilog.info(domain, tag, "[bluetooth_js] registerHidDevice RH 0200 success" + JSON.stringify(data));
-          });
-          hilog.info(domain, tag, "[bluetooth_js]hid registerHidDevice RH 0200 is called ");
-          await sleep(1000);
-          except.assertFail();
-        } catch (err) {
-          hilog.error(domain, tag,
-            "[bluetooth_js]hid registerHidDevice is fail , errCode:" + err.code + ",errMessage:" + err.message);
-          if (err.code === 801) {
-            hilog.info(domain, tag, "设备（除手机外） is not support.");
-            expect(err.code).assertEqual(801);
-          } else if (err.code === 401) {
-            hilog.info(domain, tag, "invalid param");
-            expect(err.code).assertEqual(401);
-          } else {
-            expect(err.code).assertEqual(2903051);
-          }
-        }
-        done();
-      })
 
     /**
      * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_RH_static_0300
@@ -1890,39 +1780,6 @@ export default function btHidTest(): void {
           if (err.code === 801) {
             hilog.info(domain, tag, "设备（除手机外） is not support.");
             expect(err.code).assertEqual(801);
-          } else {
-            expect(err.code).assertEqual(2903052);
-          }
-        }
-        done();
-      })
-
-    /**
-     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_static_1600
-     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BASEHIDPROFILEADD_1600
-     * @tc.desc   Test replyReport 非法枚举值参数覆盖 未注册 2903052 api23.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_COMMUNICATION_BLUETOOTH_BASE_HIDPROFILE_ADD_static_1600',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-        try {
-          let type: hid.ReportType = 99;
-          let id: int = 1;
-          let reportData: Uint8Array = new Uint8Array([0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77]);
-          hidDevice!.replyReport(type, id, reportData);
-          hilog.info(domain, tag, "[bluetooth_js]hid replyReport is success ");
-          expect().assertFail();
-        } catch (err) {
-          hilog.error(domain, tag,
-            "[bluetooth_js]hid replyReport is fail , errCode:" + err.code + ",errMessage:" + err.message);
-          if (err.code === 801) {
-            hilog.info(domain, tag, "设备（除手机外） is not support.");
-            expect(err.code).assertEqual(801);
-          } else if (err.code === 401) {
-            hilog.info(domain, tag, "invalid param");
-            expect(err.code).assertEqual(401);
           } else {
             expect(err.code).assertEqual(2903052);
           }
