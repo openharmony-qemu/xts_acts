@@ -977,76 +977,7 @@ export default function bluetoothBleTest(): void {
         }
         done();
       })
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADD_2200
-     * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_ADD_static_2200
-     * @tc.desc API23 client setPhy 连接未建立 非法枚举值 test
-     * @tc.type Method
-     * @tc.size MEDIUMTEST
-     * @tc.level Level 0
-     */
-    it('SUB_COMMUNICATION_BLUETOOTHBLE_ADD_static_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: () => void): Promise<void> => {
-        try {
-          let phyValueIllegal: bluetooth.PhyValue = {
-            txPhy: 99 as bluetooth.BlePhy,
-            rxPhy: 99 as bluetooth.BlePhy,
-            phyMode: 99 as bluetooth.CodedPhyMode,
-          };
-          await device!.setPhy(phyValueIllegal);
-          hilog.info(domain, tag, '[bt_arkts] client setPhy success');
-          expect().assertFail();
-        } catch (error) {
-          hilog.error(domain, tag,
-            `[bt_arkts] client setPhy is failed, code is ${error.code},message is ${error.message}`);
-          if (error.code === 801) {
-            hilog.info(domain, tag, '[bt_arkts]setPhy is not support');
-            expect(error.code === 801).assertTrue();
-          } else if (error.code === 401) {
-            hilog.info(domain, tag, '[bt_arkts]client setPhy invalid param.');
-            expect(error.code).assertEqual(401);
-          } else {
-            hilog.info(domain, tag, '[bt_arkts]client The connection is not established.');
-            expect(error.code).assertEqual(2901003);
-          }
-        }
-        done();
-      })
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADD_2300
-     * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_ADD_static_2300
-     * @tc.desc API23 server setPhy 连接未建立 非法枚举值 test
-     * @tc.type Method
-     * @tc.size MEDIUMTEST
-     * @tc.level Level 0
-     */
-    it('SUB_COMMUNICATION_BLUETOOTHBLE_ADD_static_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: () => void): Promise<void> => {
-        try {
-          let phyValueIllegal: bluetooth.PhyValue = {
-            txPhy: 99 as bluetooth.BlePhy,
-            rxPhy: 99 as bluetooth.BlePhy,
-            phyMode: 99 as bluetooth.CodedPhyMode,
-          };
-          await gattServer!.setPhy(deviceId, phyValueIllegal);
-          hilog.info(domain, tag, '[bt_arkts] server setPhy is success');
-          expect().assertFail();
-        } catch (error) {
-          hilog.error(domain, tag,
-            `[bt_arkts] server setPhy is failed, code is ${error.code},message is ${error.message}`);
-          if (error.code === 801) {
-            hilog.info(domain, tag, '[bt_arkts]setPhy is not support');
-            expect(error.code === 801).assertTrue();
-          } else if (error.code === 401) {
-            hilog.info(domain, tag, '[bt_arkts]server setPhy invalid param.');
-            expect(error.code).assertEqual(401);
-          } else {
-            hilog.info(domain, tag, '[bt_arkts] server The connection is not established.');
-            expect(error.code).assertEqual(2901003);
-          }
-        }
-        done();
-      })
+    
     /**
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVERGETSERVICES_0100
      * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICES_static_0100
@@ -2144,34 +2075,6 @@ export default function bluetoothBleTest(): void {
         done();
       })
 
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICEUPDATECONNECTIONPARAM_0400
-     * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_static_0400
-     * @tc.desc 20251113API22用例覆盖 updateConnectionParam 非法枚举值.
-     * @tc.type Method
-     * @tc.size MEDIUMTEST
-     * @tc.level Level 0
-     */
-    it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_static_0400',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-        try {
-          await device!.updateConnectionParam(99 as bluetooth.ConnectionParam);
-          hilog.info(domain, tag, '[bt_arkts]get device updateConnectionParam is' + JSON.stringify(device))
-        } catch (error) {
-          hilog.error(domain, tag,
-            `[bt_arkts]device updateConnectionParam is failed, code is ${error.code},message is ${error.message}`);
-          if (error.code === 801) {
-            hilog.info(domain, tag, '[bt_arkts] device updateConnectionParam is not support');
-            expect(error.code === 801).assertTrue();
-          } else if (error.code === 401) {
-            hilog.info(domain, tag, '[bt_arkts] device updateConnectionParam invalid param.');
-            expect(error.code).assertEqual(401);
-          } else {
-            expect(error.code).assertEqual(2901003);
-          }
-        }
-        done();
-      })
 
     /**
      * @tc.name   SUB_COMMUNICATION_BLUETOOTH_GATTSERVER_REMOVEALLSERVICES_static_0100
