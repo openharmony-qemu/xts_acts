@@ -2710,12 +2710,10 @@ export default function bluetoothConnectionTest(): void {
           if (err.code === 801) {
             hilog.info(domain, tag, 'api is not support');
             expect(err.code).assertEqual(801);
-          } else if (err.code === 401) {
-            hilog.info(domain, tag, 'invalid param');
-            expect(err.code).assertEqual(401);
           } else {
-            expect().assertFail();
-          }
+            hilog.info(domain, tag, 'invalid param');
+            expect(err.code).assertEqual(2900015);
+          } 
         }
         done();
       })
