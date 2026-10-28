@@ -1911,7 +1911,7 @@ export default function TaskPoolStaticTest(): void {
     /**
      * @tc.name   testCancelTaskStatic0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0640
-     * @tc.desc   Testing cancel(task) when task is executing.
+     * @tc.desc   Testing cancel(task) after a delayed task has finished.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -1940,8 +1940,9 @@ export default function TaskPoolStaticTest(): void {
         } catch (e) {
           cancelCaught = true;
           console.info(`${caseName} cancel completed task code => ${e.code} message => ${e.message}`);
+          expect(e.code).assertEqual(10200085);
         }
-        expect(cancelCaught).assertFalse();
+        expect(cancelCaught).assertTrue();
         expect(await p2 as number).assertEqual(201);
         expect(await p3 as number).assertEqual(301);
         expect(await p4 as number).assertEqual(401);
@@ -2889,7 +2890,7 @@ export default function TaskPoolStaticTest(): void {
     /**
      * @tc.name   testTaskStateStatic0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0960
-     * @tc.desc   Create a task, read its state and assert isDone returns false before execution completes.
+     * @tc.desc   Create a delayed task and assert it is hidden from taskpool info and isDone returns false.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -2901,8 +2902,14 @@ export default function TaskPoolStaticTest(): void {
         let task: taskpool.Task = new taskpool.Task(caseName, additionDelay, 50.0);
         let executePromise: Promise<Any> = taskpool.executeDelayed(500, task);
         let taskpoolInfo: taskpool.TaskPoolInfo = taskpool.getTaskPoolInfo();
-        let state: number = getTaskStateByTaskName(taskpoolInfo, caseName);
-        expect(state).assertEqual(taskpool.State.DELAYED);
+        let taskInfoFound: boolean = false;
+        for (let taskInfo of Array.from(taskpoolInfo.taskInfos)) {
+          if (taskInfo.name === caseName) {
+            taskInfoFound = true;
+            break;
+          }
+        }
+        expect(taskInfoFound).assertFalse();
         expect(task.isDone()).assertFalse();
         taskpool.cancel(task);
         try {
