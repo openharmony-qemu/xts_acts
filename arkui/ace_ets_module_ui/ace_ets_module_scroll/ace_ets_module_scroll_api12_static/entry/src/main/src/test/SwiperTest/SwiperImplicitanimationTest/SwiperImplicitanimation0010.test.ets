@@ -30,7 +30,7 @@ import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
-let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+let displayID: number = AppStorage.get<number>('displayID') ? AppStorage.get<number>('displayID') as number : 0;
 export default function SwiperImplicitanimation0010() {
   describe('SwiperImplicitanimation0010', () => {
     beforeEach(async (): Promise<void> => {
@@ -78,7 +78,7 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_static_0010', Level.LEV
         let width = right - left;
         let driver = Driver.create()
         await CommonFunc.sleep(1000);
-        await driver.dragBetween({ x: (Math.round(left + width * 0.8)).toInt(), y: (Math.round(bottom - height / 2)).toInt(), displayId: displayID }, { x: (Math.round(left + width * 0.1)).toInt(), y: (Math.round(bottom - height / 2)).toInt(), displayId: displayID });
+        await driver.dragBetween({ x: (Math.round(left + width * 0.8)).toInt(), y: (Math.round(bottom - height / 2)).toInt(), displayId: displayID as Int }, { x: (Math.round(left + width * 0.1)).toInt(), y: (Math.round(bottom - height / 2)).toInt(), displayId: displayID as Int });
         await CommonFunc.sleep(3000);
         let strJson2: string = inspector.getInspectorByKey('implicitanimation_0010');
         let marq2 = JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content');

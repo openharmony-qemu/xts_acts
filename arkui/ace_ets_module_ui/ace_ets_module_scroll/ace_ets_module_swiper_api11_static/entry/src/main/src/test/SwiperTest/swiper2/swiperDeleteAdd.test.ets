@@ -50,7 +50,7 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
-let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+let displayID: number = AppStorage.get<number>('displayID') ? AppStorage.get<number>('displayID') as number : 0;
 export default function swiperDelAddTest() {
   describe('swiperDelAddTest', () => {
     beforeAll(async (): Promise<void> => {
@@ -114,7 +114,7 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0070', Level.LEVEL1, async (don
       const uiContext = new UIContext();
       const winLeft = AppStorage.get<number>('winLeft') ?? 0;
       const winTop = AppStorage.get<number>('winTop as Int') ?? 0;
-      await driver.swipeBetween({ x: (winLeft + Math.round(btLeft)  + Math.round(UIContext.resolveUIContext()!.vp2px(20))).toInt(), y: (winTop + btTop + Math.round(btHeight / 2)).toInt(), displayId: displayID }, { x: (winLeft + Math.round(btRight)).toInt(), y: (winTop + btTop + Math.round(btHeight / 2)).toInt(), displayId: displayID });
+      await driver.swipeBetween({ x: (winLeft + Math.round(btLeft)  + Math.round(UIContext.resolveUIContext()!.vp2px(20))).toInt(), y: (winTop + btTop + Math.round(btHeight / 2)).toInt(), displayId: displayID as Int }, { x: (winLeft + Math.round(btRight)).toInt(), y: (winTop + btTop + Math.round(btHeight / 2)).toInt(), displayId: displayID as Int });
       await CommonFunc.sleep(3000);
 
       // click the Previous button
@@ -164,7 +164,7 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0080', Level.LEVEL1, async (don
       const winLeft = AppStorage.get<number>('winLeft') ?? 0;
       const winTop = AppStorage.get<number>('winTop as Int') ?? 0;
       // right scroll
-      await driver.swipeBetween({ x: (Math.round(winLeft + Math.round(btRight) - UIContext.resolveUIContext()!.vp2px(10))).toInt(), y: Math.round(winTop + btTop + Math.round(btHeight / 2)).toInt(), displayId: displayID }, { x: Math.round(winLeft + Math.round(btLeft).toInt() + Math.round(UIContext.resolveUIContext()!.vp2px(20).toInt())).toInt(), y: Math.round(winTop + btTop + Math.round(btHeight / 2)).toInt(), displayId: displayID });
+      await driver.swipeBetween({ x: (Math.round(winLeft + Math.round(btRight) - UIContext.resolveUIContext()!.vp2px(10))).toInt(), y: Math.round(winTop + btTop + Math.round(btHeight / 2)).toInt(), displayId: displayID as Int }, { x: Math.round(winLeft + Math.round(btLeft).toInt() + Math.round(UIContext.resolveUIContext()!.vp2px(20).toInt())).toInt(), y: Math.round(winTop + btTop + Math.round(btHeight / 2)).toInt(), displayId: displayID as Int });
       await CommonFunc.sleep(5000);
 
       // click the next button

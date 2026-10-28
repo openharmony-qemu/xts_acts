@@ -34,7 +34,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter';
 
 
-let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+let displayID: number = AppStorage.get<number>('displayID') ? AppStorage.get<number>('displayID') as number : 0;
 export default function offsetEdgeBtm() {
   describe('offsetEdgeBtm', () => {
 
@@ -85,7 +85,7 @@ it('offsetEdgeBtm_static_0100', Level.LEVEL1, async (done: () => void): Promise<
       let width = right - left;
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
-      await driver.swipeBetween({ x: (Math.round(left + width / 2)).toInt(), y: (Math.round(top + height * 0.8)).toInt(), displayId: displayID }, { x: (Math.round(left + width / 2)).toInt(), y: (Math.round(top + height * 0.2)).toInt(), displayId: displayID });
+      await driver.swipeBetween({ x: (Math.round(left + width / 2)).toInt(), y: (Math.round(top + height * 0.8)).toInt(), displayId: displayID as Int }, { x: (Math.round(left + width / 2)).toInt(), y: (Math.round(top + height * 0.2)).toInt(), displayId: displayID as Int });
       await CommonFunc.sleep(3000);
 
       let btn: Component = await driver.findComponent(ON.id('offset_scrollEdge_btm')) as Component;

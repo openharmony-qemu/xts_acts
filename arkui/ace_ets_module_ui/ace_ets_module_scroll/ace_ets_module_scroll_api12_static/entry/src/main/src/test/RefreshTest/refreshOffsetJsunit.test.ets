@@ -99,10 +99,10 @@ it('refreshOffsetJsunit_static_0200', Level.LEVEL0, async (done: () => void): Pr
       await driver.swipeBetween(
         { x: (Number.parseInt(`${(Math.round(left + width * 0.2)).toInt()}`)).toInt(),
           y: (Number.parseInt(`${(Math.round(bottom - height / 2)).toInt()}`)).toInt(),
-          displayId: displayId },
+          displayId: displayID as Int },
         { x: (Number.parseInt(`${(Math.round(left + width * 0.2)).toInt()}`)).toInt(),
           y: (Number.parseInt(`${(Math.round(bottom - height / 4)).toInt()}`)).toInt(),
-          displayId: displayId });
+          displayId: displayID as Int });
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('refresh_mess');
       let obj = JSON.parseJsonElement(strJson);

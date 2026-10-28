@@ -27,7 +27,7 @@ import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { Driver, ON, Component, Rect } from '@ohos.UiTest';
 
-let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+let displayID: number = AppStorage.get<number>('displayID') ? AppStorage.get<number>('displayID') as number : 0;
 export default function TabsOnGestureSwipeTest() {
   describe('TabsOnGestureSwipeTest', () => {
     beforeAll(async (): Promise<void> => {
@@ -76,7 +76,7 @@ export default function TabsOnGestureSwipeTest() {
       let startY1 = rect?.bottom as Int;
       let endX1 = rect?.left as Int;
       let endY1 = rect?.top as Int;
-      driver.swipeBetween({ x: startX1 - 100, y: startY1 - 100, displayId: displayID }, { x: endX1, y: endY1, displayId: displayID }, 5000);
+      driver.swipeBetween({ x: startX1 - 100, y: startY1 - 100, displayId: displayID as Int }, { x: endX1, y: endY1, displayId: displayID as Int }, 5000);
       await CommonFunc.sleep(3000);
       let testText = await driver.findComponent(ON.id('textOnGestureSwipe'));
       expect(await (testText?.getText() as Promise<string>)).assertEqual('undefined onGestureSwipe');

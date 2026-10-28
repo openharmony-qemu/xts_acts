@@ -85,9 +85,9 @@ it('ArkUI_List_Swipe_static_0100', Level.LEVEL1, async (done: () => void): Promi
         ',width: ' + width + ',height: ' + height + ',displayId: ' + displayId);
       await driver.swipeBetween(
         { x: (Math.round(rect.right - width / 4)).toInt(),
-          y: (Math.round(rect.top + height / 2)).toInt(), displayId: displayId },
+          y: (Math.round(rect.top + height / 2)).toInt(), displayId: displayID as Int },
         { x: (Math.round(rect.left)).toInt(),
-          y: (Math.round(rect.top + height / 2)).toInt(), displayId: displayId }
+          y: (Math.round(rect.top + height / 2)).toInt(), displayId: displayID as Int }
       )
       await sleep(3000) // wait for ui update
       console.info('get getInspectorByKey swipe0100')
@@ -126,9 +126,9 @@ it('ArkUI_List_Swipe_static_0300', Level.LEVEL1, async (done: () => void): Promi
       // 2.swipe right
       await driver.swipeBetween(
         { x: (Math.round(rect.left)).toInt(),
-          y: (Math.round(rect.top + height / 2)).toInt(), displayId: displayId },
+          y: (Math.round(rect.top + height / 2)).toInt(), displayId: displayID as Int },
         { x: (Math.round(rect.left + width / 4)).toInt(),
-          y: (Math.round(rect.top + height / 2)).toInt(), displayId: displayId }
+          y: (Math.round(rect.top + height / 2)).toInt(), displayId: displayID as Int }
       )
 
       await sleep(3000) // wait for ui update
@@ -193,9 +193,9 @@ it('ArkUI_List_Swipe_static_0500', Level.LEVEL1, async (done: () => void): Promi
         ',width: ' + width + ',height: ' + height + ',displayId: ' + displayId);
       await driver.swipeBetween(
         { x: (Math.round(rect.right - width / 4)).toInt(),
-          y: (Math.round(rect.top + height / 2)).toInt(), displayId: displayId },
+          y: (Math.round(rect.top + height / 2)).toInt(), displayId: displayID as Int },
         { x: (Math.round(rect.left)).toInt(),
-          y: (Math.round(rect.top + height / 2)).toInt(), displayId: displayId }
+          y: (Math.round(rect.top + height / 2)).toInt(), displayId: displayID as Int }
       )
       await sleep(8000) // wait for ui update
       let strJson2: string = inspector.getInspectorByKey('swipe0500')

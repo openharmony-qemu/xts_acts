@@ -27,7 +27,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import { UtilsTest } from '../Util.test';
 
-let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+let displayID: number = AppStorage.get<number>('displayID') ? AppStorage.get<number>('displayID') as number : 0;
 export default function onAnimationEnd_ModifierUndefinedTest() {
   describe('onAnimationEnd_ModifierUndefinedTest', () => {
     beforeAll(async (): Promise<void> => {
@@ -85,7 +85,7 @@ export default function onAnimationEnd_ModifierUndefinedTest() {
       let width = bounds.right - bounds.left;
       let height = bounds.bottom - bounds.top;
 
-      await driver.swipeBetween({ x: (bounds.left + width - 50).toInt(), y: (bounds.top + height / 2).toInt(), displayId: displayID }, { x: (bounds.left + 50).toInt(), y: (bounds.top + height / 2).toInt(), displayId: displayID }, 3000);
+      await driver.swipeBetween({ x: (bounds.left + width - 50).toInt(), y: (bounds.top + height / 2).toInt(), displayId: displayID as Int }, { x: (bounds.left + 50).toInt(), y: (bounds.top + height / 2).toInt(), displayId: displayID as Int }, 3000);
       await CommonFunc.sleep(2000);
 
       let strJson2 = inspector.getInspectorByKey('swiper_onAnimationEnd');
@@ -111,7 +111,7 @@ export default function onAnimationEnd_ModifierUndefinedTest() {
       let width2 = bounds2.right - bounds2.left;
       let height2 = bounds2.bottom - bounds2.top;
 
-      await driver.swipeBetween({ x: (bounds2.left + width2 - 50).toInt(), y: (bounds2.top + height2 / 2).toInt(), displayId: displayID }, { x: (bounds2.left + 50).toInt(), y: (bounds2.top + height2 / 2).toInt(), displayId: displayID }, 3000);
+      await driver.swipeBetween({ x: (bounds2.left + width2 - 50).toInt(), y: (bounds2.top + height2 / 2).toInt(), displayId: displayID as Int }, { x: (bounds2.left + 50).toInt(), y: (bounds2.top + height2 / 2).toInt(), displayId: displayID as Int }, 3000);
       await CommonFunc.sleep(2000);
 
       let strJson4 = inspector.getInspectorByKey('swiper_onAnimationEnd');

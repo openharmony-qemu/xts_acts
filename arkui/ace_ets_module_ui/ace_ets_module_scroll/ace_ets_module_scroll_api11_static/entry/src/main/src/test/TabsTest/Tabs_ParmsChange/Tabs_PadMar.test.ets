@@ -24,7 +24,7 @@ import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeD
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
-let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+let displayID: number = AppStorage.get<number>('displayID') ? AppStorage.get<number>('displayID') as number : 0;
 export default function tabs_PadMarTest() {
   describe('Tabs_PadMarTest', () => {
     beforeEach(async (): Promise<void> => {
@@ -110,12 +110,12 @@ it('testTabsPad_static_01', Level.LEVEL0, async (done: () => void): Promise<void
         let driver = Driver.create();
         await CommonFunc.sleep(1000);
         await driver.swipeBetween({ x: (Math.round(Tabs_PadMar_011.right -
-          ((Tabs_PadMar_011.right - Tabs_PadMar_011.left) / 6))).toInt(), y: (Math.round(Tabs_PadMar_011.top + ((Tabs_PadMar_011.bottom - Tabs_PadMar_011.top) / 2))).toInt(), displayId: displayID }, { x: (Math.round(Tabs_PadMar_011.left + ((Tabs_PadMar_011.right - Tabs_PadMar_011.left) / 6))).toInt(), y: (Math.round(Tabs_PadMar_011.top + ((Tabs_PadMar_011.bottom - Tabs_PadMar_011.top) / 2))).toInt(), displayId: displayID });
+          ((Tabs_PadMar_011.right - Tabs_PadMar_011.left) / 6))).toInt(), y: (Math.round(Tabs_PadMar_011.top + ((Tabs_PadMar_011.bottom - Tabs_PadMar_011.top) / 2))).toInt(), displayId: displayID as Int }, { x: (Math.round(Tabs_PadMar_011.left + ((Tabs_PadMar_011.right - Tabs_PadMar_011.left) / 6))).toInt(), y: (Math.round(Tabs_PadMar_011.top + ((Tabs_PadMar_011.bottom - Tabs_PadMar_011.top) / 2))).toInt(), displayId: displayID as Int });
         await CommonFunc.sleep(1000);
         let Tabs_PadMar_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_002');
         let Tabs_PadMar_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_012');
         await driver.swipeBetween({ x: (Math.round(Tabs_PadMar_012.right -
-          ((Tabs_PadMar_012.right - Tabs_PadMar_012.left) / 6))).toInt(), y: (Math.round(Tabs_PadMar_012.top + ((Tabs_PadMar_012.bottom - Tabs_PadMar_012.top) / 2))).toInt(), displayId: displayID }, { x: (Math.round(Tabs_PadMar_012.left + ((Tabs_PadMar_012.right - Tabs_PadMar_012.left) / 6))).toInt(), y: (Math.round(Tabs_PadMar_012.top + ((Tabs_PadMar_012.bottom - Tabs_PadMar_012.top) / 2))).toInt(), displayId: displayID });
+          ((Tabs_PadMar_012.right - Tabs_PadMar_012.left) / 6))).toInt(), y: (Math.round(Tabs_PadMar_012.top + ((Tabs_PadMar_012.bottom - Tabs_PadMar_012.top) / 2))).toInt(), displayId: displayID as Int }, { x: (Math.round(Tabs_PadMar_012.left + ((Tabs_PadMar_012.right - Tabs_PadMar_012.left) / 6))).toInt(), y: (Math.round(Tabs_PadMar_012.top + ((Tabs_PadMar_012.bottom - Tabs_PadMar_012.top) / 2))).toInt(), displayId: displayID as Int });
         await CommonFunc.sleep(1000);
         let Tabs_PadMar_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_003');
         let Tabs_PadMar_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_013');
@@ -272,12 +272,12 @@ it('testTabsMar_static_02', Level.LEVEL0, async (done: () => void): Promise<void
         let driver = Driver.create();
         await CommonFunc.sleep(1000);
         await driver.swipeBetween({ x: (Math.round(Tabs_PadMar_011.right -
-          ((Tabs_PadMar_011.right - Tabs_PadMar_011.left) / 6))).toInt(), y: (Math.round(Tabs_PadMar_011.top + ((Tabs_PadMar_011.bottom - Tabs_PadMar_011.top) / 2))).toInt(), displayId: displayID }, { x: (Math.round(Tabs_PadMar_011.left + ((Tabs_PadMar_011.right - Tabs_PadMar_011.left) / 6))).toInt(), y: (Math.round(Tabs_PadMar_011.top + ((Tabs_PadMar_011.bottom - Tabs_PadMar_011.top) / 2))).toInt(), displayId: displayID });
+          ((Tabs_PadMar_011.right - Tabs_PadMar_011.left) / 6))).toInt(), y: (Math.round(Tabs_PadMar_011.top + ((Tabs_PadMar_011.bottom - Tabs_PadMar_011.top) / 2))).toInt(), displayId: displayID as Int }, { x: (Math.round(Tabs_PadMar_011.left + ((Tabs_PadMar_011.right - Tabs_PadMar_011.left) / 6))).toInt(), y: (Math.round(Tabs_PadMar_011.top + ((Tabs_PadMar_011.bottom - Tabs_PadMar_011.top) / 2))).toInt(), displayId: displayID as Int });
         await CommonFunc.sleep(1000);
         let Tabs_PadMar_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_002');
         let Tabs_PadMar_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_012');
         await driver.swipeBetween({ x: (Math.round(Tabs_PadMar_012.right -
-          ((Tabs_PadMar_012.right - Tabs_PadMar_012.left) / 6))).toInt(), y: (Math.round(Tabs_PadMar_012.top + ((Tabs_PadMar_012.bottom - Tabs_PadMar_012.top) / 2))).toInt(), displayId: displayID }, { x: (Math.round(Tabs_PadMar_012.left + ((Tabs_PadMar_012.right - Tabs_PadMar_012.left) / 6))).toInt(), y: (Math.round(Tabs_PadMar_012.top + ((Tabs_PadMar_012.bottom - Tabs_PadMar_012.top) / 2))).toInt(), displayId: displayID });
+          ((Tabs_PadMar_012.right - Tabs_PadMar_012.left) / 6))).toInt(), y: (Math.round(Tabs_PadMar_012.top + ((Tabs_PadMar_012.bottom - Tabs_PadMar_012.top) / 2))).toInt(), displayId: displayID as Int }, { x: (Math.round(Tabs_PadMar_012.left + ((Tabs_PadMar_012.right - Tabs_PadMar_012.left) / 6))).toInt(), y: (Math.round(Tabs_PadMar_012.top + ((Tabs_PadMar_012.bottom - Tabs_PadMar_012.top) / 2))).toInt(), displayId: displayID as Int });
         await CommonFunc.sleep(1000);
         let Tabs_PadMar_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_003');
         let Tabs_PadMar_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_013');
@@ -419,12 +419,12 @@ it('testTabsPadMar_static_03', Level.LEVEL0, async (done: () => void): Promise<v
         let driver = Driver.create();
         await CommonFunc.sleep(1000);
         await driver.swipeBetween({ x: (Math.round(Tabs_PadMar_011.right -
-          ((Tabs_PadMar_011.right - Tabs_PadMar_011.left) / 6))).toInt(), y: (Math.round(Tabs_PadMar_011.top + ((Tabs_PadMar_011.bottom - Tabs_PadMar_011.top) / 2))).toInt(), displayId: displayID }, { x: (Math.round(Tabs_PadMar_011.left + ((Tabs_PadMar_011.right - Tabs_PadMar_011.left) / 6))).toInt(), y: (Math.round(Tabs_PadMar_011.top + ((Tabs_PadMar_011.bottom - Tabs_PadMar_011.top) / 2))).toInt(), displayId: displayID });
+          ((Tabs_PadMar_011.right - Tabs_PadMar_011.left) / 6))).toInt(), y: (Math.round(Tabs_PadMar_011.top + ((Tabs_PadMar_011.bottom - Tabs_PadMar_011.top) / 2))).toInt(), displayId: displayID as Int }, { x: (Math.round(Tabs_PadMar_011.left + ((Tabs_PadMar_011.right - Tabs_PadMar_011.left) / 6))).toInt(), y: (Math.round(Tabs_PadMar_011.top + ((Tabs_PadMar_011.bottom - Tabs_PadMar_011.top) / 2))).toInt(), displayId: displayID as Int });
         await CommonFunc.sleep(1000);
         let Tabs_PadMar_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_002');
         let Tabs_PadMar_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_012');
         await driver.swipeBetween({ x: (Math.round(Tabs_PadMar_012.right -
-          ((Tabs_PadMar_012.right - Tabs_PadMar_012.left) / 6))).toInt(), y: (Math.round(Tabs_PadMar_012.top + ((Tabs_PadMar_012.bottom - Tabs_PadMar_012.top) / 2))).toInt(), displayId: displayID }, { x: (Math.round(Tabs_PadMar_012.left + ((Tabs_PadMar_012.right - Tabs_PadMar_012.left) / 6))).toInt(), y: (Math.round(Tabs_PadMar_012.top + ((Tabs_PadMar_012.bottom - Tabs_PadMar_012.top) / 2))).toInt(), displayId: displayID });
+          ((Tabs_PadMar_012.right - Tabs_PadMar_012.left) / 6))).toInt(), y: (Math.round(Tabs_PadMar_012.top + ((Tabs_PadMar_012.bottom - Tabs_PadMar_012.top) / 2))).toInt(), displayId: displayID as Int }, { x: (Math.round(Tabs_PadMar_012.left + ((Tabs_PadMar_012.right - Tabs_PadMar_012.left) / 6))).toInt(), y: (Math.round(Tabs_PadMar_012.top + ((Tabs_PadMar_012.bottom - Tabs_PadMar_012.top) / 2))).toInt(), displayId: displayID as Int });
         await CommonFunc.sleep(1000);
         let Tabs_PadMar_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_003');
         let Tabs_PadMar_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_PadMar' + '_013');

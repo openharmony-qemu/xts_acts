@@ -24,7 +24,7 @@ import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeD
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
-let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+let displayID: number = AppStorage.get<number>('displayID') ? AppStorage.get<number>('displayID') as number : 0;
 export default function tabs_WidHeiTest() {
   describe('tabs_WidHeiTest', () => {
     beforeEach(async (): Promise<void> => {
@@ -107,12 +107,12 @@ it('testTabsWidHei01_static_01', Level.LEVEL0, async (done: () => void): Promise
         let driver = Driver.create();
         await CommonFunc.sleep(1000);
         await driver.swipeBetween({ x: (Math.round(Tabs_WidHei_011.right -
-          ((Tabs_WidHei_011.right - Tabs_WidHei_011.left) / 6))).toInt(), y: (Math.round(Tabs_WidHei_011.top + ((Tabs_WidHei_011.bottom - Tabs_WidHei_011.top) / 2))).toInt(), displayId: displayID }, { x: (Math.round(Tabs_WidHei_011.left + ((Tabs_WidHei_011.right - Tabs_WidHei_011.left) / 6))).toInt(), y: (Math.round(Tabs_WidHei_011.top + ((Tabs_WidHei_011.bottom - Tabs_WidHei_011.top) / 2))).toInt(), displayId: displayID });
+          ((Tabs_WidHei_011.right - Tabs_WidHei_011.left) / 6))).toInt(), y: (Math.round(Tabs_WidHei_011.top + ((Tabs_WidHei_011.bottom - Tabs_WidHei_011.top) / 2))).toInt(), displayId: displayID as Int }, { x: (Math.round(Tabs_WidHei_011.left + ((Tabs_WidHei_011.right - Tabs_WidHei_011.left) / 6))).toInt(), y: (Math.round(Tabs_WidHei_011.top + ((Tabs_WidHei_011.bottom - Tabs_WidHei_011.top) / 2))).toInt(), displayId: displayID as Int });
         await CommonFunc.sleep(1000);
         let Tabs_WidHei_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_WidHei' + '_002');
         let Tabs_WidHei_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_WidHei' + '_012');
         await driver.swipeBetween({ x: (Math.round(Tabs_WidHei_012.right -
-          ((Tabs_WidHei_012.right - Tabs_WidHei_012.left) / 6))).toInt(), y: (Math.round(Tabs_WidHei_012.top + ((Tabs_WidHei_012.bottom - Tabs_WidHei_012.top) / 2))).toInt(), displayId: displayID }, { x: (Math.round(Tabs_WidHei_012.left + ((Tabs_WidHei_012.right - Tabs_WidHei_012.left) / 6))).toInt(), y: (Math.round(Tabs_WidHei_012.top + ((Tabs_WidHei_012.bottom - Tabs_WidHei_012.top) / 2))).toInt(), displayId: displayID });
+          ((Tabs_WidHei_012.right - Tabs_WidHei_012.left) / 6))).toInt(), y: (Math.round(Tabs_WidHei_012.top + ((Tabs_WidHei_012.bottom - Tabs_WidHei_012.top) / 2))).toInt(), displayId: displayID as Int }, { x: (Math.round(Tabs_WidHei_012.left + ((Tabs_WidHei_012.right - Tabs_WidHei_012.left) / 6))).toInt(), y: (Math.round(Tabs_WidHei_012.top + ((Tabs_WidHei_012.bottom - Tabs_WidHei_012.top) / 2))).toInt(), displayId: displayID as Int });
         await CommonFunc.sleep(1000);
         let Tabs_WidHei_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_WidHei' + '_003');
         let Tabs_WidHei_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_WidHei' + '_013');
@@ -244,12 +244,12 @@ it('testTabsWidHei02_static_02', Level.LEVEL0, async (done: () => void): Promise
         let driver = Driver.create();
         await CommonFunc.sleep(1000);
         await driver.swipeBetween({ x: (Math.round(Tabs_WidHei_011.right -
-          ((Tabs_WidHei_011.right - Tabs_WidHei_011.left) / 6))).toInt(), y: (Math.round(Tabs_WidHei_011.top + ((Tabs_WidHei_011.bottom - Tabs_WidHei_011.top) / 2))).toInt(), displayId: displayID }, { x: (Math.round(Tabs_WidHei_011.left + ((Tabs_WidHei_011.right - Tabs_WidHei_011.left) / 6))).toInt(), y: (Math.round(Tabs_WidHei_011.top + ((Tabs_WidHei_011.bottom - Tabs_WidHei_011.top) / 2))).toInt(), displayId: displayID });
+          ((Tabs_WidHei_011.right - Tabs_WidHei_011.left) / 6))).toInt(), y: (Math.round(Tabs_WidHei_011.top + ((Tabs_WidHei_011.bottom - Tabs_WidHei_011.top) / 2))).toInt(), displayId: displayID as Int }, { x: (Math.round(Tabs_WidHei_011.left + ((Tabs_WidHei_011.right - Tabs_WidHei_011.left) / 6))).toInt(), y: (Math.round(Tabs_WidHei_011.top + ((Tabs_WidHei_011.bottom - Tabs_WidHei_011.top) / 2))).toInt(), displayId: displayID as Int });
         await CommonFunc.sleep(1000);
         let Tabs_WidHei_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_WidHei' + '_002');
         let Tabs_WidHei_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_WidHei' + '_012');
         await driver.swipeBetween({ x: (Math.round(Tabs_WidHei_012.right -
-          ((Tabs_WidHei_012.right - Tabs_WidHei_012.left) / 6))).toInt(), y: (Math.round(Tabs_WidHei_012.top + ((Tabs_WidHei_012.bottom - Tabs_WidHei_012.top) / 2))).toInt(), displayId: displayID }, { x: (Math.round(Tabs_WidHei_012.left + ((Tabs_WidHei_012.right - Tabs_WidHei_012.left) / 6))).toInt(), y: (Math.round(Tabs_WidHei_012.top + ((Tabs_WidHei_012.bottom - Tabs_WidHei_012.top) / 2))).toInt(), displayId: displayID });
+          ((Tabs_WidHei_012.right - Tabs_WidHei_012.left) / 6))).toInt(), y: (Math.round(Tabs_WidHei_012.top + ((Tabs_WidHei_012.bottom - Tabs_WidHei_012.top) / 2))).toInt(), displayId: displayID as Int }, { x: (Math.round(Tabs_WidHei_012.left + ((Tabs_WidHei_012.right - Tabs_WidHei_012.left) / 6))).toInt(), y: (Math.round(Tabs_WidHei_012.top + ((Tabs_WidHei_012.bottom - Tabs_WidHei_012.top) / 2))).toInt(), displayId: displayID as Int });
         await CommonFunc.sleep(1000);
         let Tabs_WidHei_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_WidHei' + '_003');
         let Tabs_WidHei_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_WidHei' + '_013');

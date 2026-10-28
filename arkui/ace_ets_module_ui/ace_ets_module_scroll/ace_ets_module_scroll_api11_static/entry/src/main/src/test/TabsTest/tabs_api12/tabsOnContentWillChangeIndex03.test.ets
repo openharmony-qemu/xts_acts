@@ -22,7 +22,7 @@ import inspector from '@ohos.arkui.inspector';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
-let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+let displayID: number = AppStorage.get<number>('displayID') ? AppStorage.get<number>('displayID') as number : 0;
 export default function tabsOnContentWillChangeIndex03JsunitTest() {
   describe('tabsOnContentWillChangeIndex03JsunitTest', () => {
     beforeEach(async (): Promise<void> => {
@@ -72,9 +72,9 @@ it('tabsOnContentWillChangeJsunitTest_static_0030', Level.LEVEL0, async (done: (
 
         await driver.swipeBetween({ x: (Math.round((AppStorage.get<number>("winLeft") ?? 0) +
           (tabsRect.right - tabsRect.left) * 0.1 + tabsRect.left)).toInt(), y: (Math.round((AppStorage.get<number>("winTop") ?? 0) + (tabsRect.bottom - tabsRect.top) / 2 +
-          tabsRect.top)).toInt(), displayId: displayID }, { x: (Math.round((AppStorage.get<number>("winLeft") ?? 0) +
+          tabsRect.top)).toInt(), displayId: displayID as Int }, { x: (Math.round((AppStorage.get<number>("winLeft") ?? 0) +
             (tabsRect.right - tabsRect.left) * 0.8 + tabsRect.left)).toInt(), y: (Math.round((AppStorage.get<number>("winTop") ?? 0) + (tabsRect.bottom - tabsRect.top) / 2 +
-          tabsRect.top)).toInt(), displayId: displayID });
+          tabsRect.top)).toInt(), displayId: displayID as Int });
         await CommonFunc.sleep(2000);
 
         let strJson1 = inspector.getInspectorByKey('currentIndex2x');
@@ -90,9 +90,9 @@ it('tabsOnContentWillChangeJsunitTest_static_0030', Level.LEVEL0, async (done: (
 
         await driver.swipeBetween({ x: (Math.round((AppStorage.get<number>("winLeft") ?? 0) +
           (tabsRect.right - tabsRect.left) * 0.8 + tabsRect.left)).toInt(), y: (Math.round((AppStorage.get<number>("winTop") ?? 0) + (tabsRect.bottom - tabsRect.top) / 2 +
-          tabsRect.top)).toInt(), displayId: displayID }, { x: (Math.round((AppStorage.get<number>("winLeft") ?? 0) +
+          tabsRect.top)).toInt(), displayId: displayID as Int }, { x: (Math.round((AppStorage.get<number>("winLeft") ?? 0) +
             (tabsRect.right - tabsRect.left) * 0.1 + tabsRect.left)).toInt(), y: (Math.round((AppStorage.get<number>("winTop") ?? 0) + (tabsRect.bottom - tabsRect.top) / 2 +
-          tabsRect.top)).toInt(), displayId: displayID });
+          tabsRect.top)).toInt(), displayId: displayID as Int });
         await CommonFunc.sleep(2000);
 
         let strJson2 = inspector.getInspectorByKey('currentIndex2x');
@@ -108,9 +108,9 @@ it('tabsOnContentWillChangeJsunitTest_static_0030', Level.LEVEL0, async (done: (
 
         await driver.swipeBetween({ x: (Math.round((AppStorage.get<number>("winLeft") ?? 0) +
           (tabsRect.right - tabsRect.left) * 0.8 + tabsRect.left)).toInt(), y: (Math.round((AppStorage.get<number>("winTop") ?? 0) + (tabsRect.bottom - tabsRect.top) / 2 +
-          tabsRect.top)).toInt(), displayId: displayID }, { x: (Math.round((AppStorage.get<number>("winLeft") ?? 0) +
+          tabsRect.top)).toInt(), displayId: displayID as Int }, { x: (Math.round((AppStorage.get<number>("winLeft") ?? 0) +
             (tabsRect.right - tabsRect.left) * 0.1 + tabsRect.left)).toInt(), y: (Math.round((AppStorage.get<number>("winTop") ?? 0) + (tabsRect.bottom - tabsRect.top) / 2 +
-          tabsRect.top)).toInt(), displayId: displayID });
+          tabsRect.top)).toInt(), displayId: displayID as Int });
         await CommonFunc.sleep(2000);
 
         let strJson23 = inspector.getInspectorByKey('currentIndex2x');

@@ -33,7 +33,7 @@ class DataObj {
   data3: Array<number> = [0];
 }
 
-let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+let displayID: number = AppStorage.get<number>('displayID') ? AppStorage.get<number>('displayID') as number : 0;
 export default function ApiCommponentAddJsunit() {
   describe('ApiCommponentAddJsunit', () => {
 
@@ -140,7 +140,7 @@ it('apiCommponentAddJsunit_static_0200', Level.LEVEL0, async (done: () => void):
         let driver = Driver.create();
         await CommonFunc.sleep(1000);
         const uiContext = AppStorage.get<UIContext>('uiContext');
-        await driver.swipeBetween({ x: (Math.round(left + Math.round(uiContext!.vp2px(30)))).toInt(), y: (Math.round(top + Math.round(uiContext!.vp2px(30)))).toInt(), displayId: displayID }, { x: (Math.round(left + Math.round(uiContext!.vp2px(20)))).toInt(), y: (Math.round(top + Math.round(uiContext!.vp2px(30)))).toInt(), displayId: displayID });
+        await driver.swipeBetween({ x: (Math.round(left + Math.round(uiContext!.vp2px(30)))).toInt(), y: (Math.round(top + Math.round(uiContext!.vp2px(30)))).toInt(), displayId: displayID as Int }, { x: (Math.round(left + Math.round(uiContext!.vp2px(20)))).toInt(), y: (Math.round(top + Math.round(uiContext!.vp2px(30)))).toInt(), displayId: displayID as Int });
         await CommonFunc.sleep(1000);
         // judge whether the top
         let onScrollStartText = await driver.findComponent(ON.id('4'));

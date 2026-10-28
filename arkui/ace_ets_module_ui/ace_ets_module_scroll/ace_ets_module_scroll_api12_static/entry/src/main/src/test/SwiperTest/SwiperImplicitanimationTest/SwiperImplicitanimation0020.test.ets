@@ -31,7 +31,7 @@ import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
-let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+let displayID: number = AppStorage.get<number>('displayID') ? AppStorage.get<number>('displayID') as number : 0;
 export default function SwiperImplicitanimation0020() {
   describe('SwiperImplicitanimation0020', () => {
     beforeEach(async (): Promise<void> => {
@@ -86,7 +86,7 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_static_0020', Level.LEV
         const uiContext = AppStorage.get<UIContext>('uiContext')!;
         let x: number = parseInt(uiContext.vp2px(120).toString());
         let x1: number = parseInt(uiContext.vp2px(90).toString());
-        await driver.dragBetween({ x: (point2.x + x).toInt(), y: (point2.y).toInt(), displayId: displayID }, { x: (point2.x - x1).toInt(), y: (point2.y).toInt(), displayId: displayID }, 3000)
+        await driver.dragBetween({ x: (point2.x + x).toInt(), y: (point2.y).toInt(), displayId: displayID as Int }, { x: (point2.x - x1).toInt(), y: (point2.y).toInt(), displayId: displayID as Int }, 3000)
         await CommonFunc.sleep(1000);
         let strIndex4: string = inspector.getInspectorByKey('implicitanimation_0020_1')
         let jsonIndex4 = JSON.parseJsonElement(strIndex4).getElement('$attrs').getString('content');
@@ -110,7 +110,7 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_static_0020', Level.LEV
         await (showPrevious?.click() as Promise<void>);
         await CommonFunc.sleep(1000);
 
-        await driver.dragBetween({ x: (point2.x - x).toInt(), y: (point2.y).toInt(), displayId: displayID }, { x: (point2.x + x1).toInt(), y: (point2.y).toInt(), displayId: displayID }, 3000)
+        await driver.dragBetween({ x: (point2.x - x).toInt(), y: (point2.y).toInt(), displayId: displayID as Int }, { x: (point2.x + x1).toInt(), y: (point2.y).toInt(), displayId: displayID as Int }, 3000)
         await CommonFunc.sleep(1000);
         let strIndex0: string = inspector.getInspectorByKey('implicitanimation_0020_1')
         let jsonIndex0 = JSON.parseJsonElement(strIndex0).getElement('$attrs').getString('content');

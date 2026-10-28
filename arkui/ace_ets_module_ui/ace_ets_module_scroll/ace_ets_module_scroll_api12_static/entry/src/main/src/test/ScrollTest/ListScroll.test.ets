@@ -74,10 +74,10 @@ it('ListScrollTest1_0100', Level.LEVEL0, async (done: () => void): Promise<void>
       await driver.swipeBetween(
         { x: (Number.parseInt(`${(Math.round(left + width*0.2)).toInt()}`)).toInt(),
           y: (Number.parseInt(`${(Math.round(bottom - height/4)).toInt()}`)).toInt(),
-          displayId: displayId },
+          displayId: displayID as Int },
         { x: (Number.parseInt(`${(Math.round(left + width*0.2)).toInt()}`)).toInt(),
           y: (Number.parseInt(`${(Math.round(bottom - height/2)).toInt()}`)).toInt(),
-          displayId: displayId });
+          displayId: displayID as Int });
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('listScroll_1');
       let strJson1 = inspector.getInspectorByKey('listScroll_2');

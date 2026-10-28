@@ -50,7 +50,7 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
-let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+let displayID: number = AppStorage.get<number>('displayID') ? AppStorage.get<number>('displayID') as number : 0;
 export default function SwiperLoop() {
   describe('SwiperLoop', () => {
     beforeAll(async (): Promise<void> => {
@@ -114,7 +114,7 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0270', Level.LEVEL0, async (don
       const uiContext = new UIContext();
       const winLeft = AppStorage.get<number>('winLeft') ?? 0;
       const winTop = AppStorage.get<number>('winTop as Int') ?? 0;
-      await driver.swipeBetween({ x: Math.round(winLeft + btRight).toInt(), y: Math.round(winTop + btBottom / 2).toInt(), displayId: displayID }, { x: (Math.round(winLeft + btLeft).toInt() + Math.round(UIContext.resolveUIContext()!.vp2px(27).toInt())).toInt(), y: Math.round(btBottom / 2).toInt() + winTop.toInt() as Int, displayId: displayID });
+      await driver.swipeBetween({ x: Math.round(winLeft + btRight).toInt(), y: Math.round(winTop + btBottom / 2).toInt(), displayId: displayID as Int }, { x: (Math.round(winLeft + btLeft).toInt() + Math.round(UIContext.resolveUIContext()!.vp2px(27).toInt())).toInt(), y: Math.round(btBottom / 2).toInt() + winTop.toInt() as Int, displayId: displayID as Int });
       await CommonFunc.sleep(3500);
 
       let strJson = inspector.getInspectorByKey('SwiperLoopText10');
@@ -155,7 +155,7 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0280', Level.LEVEL0, async (don
       const uiContext = new UIContext();
       const winLeft = AppStorage.get<number>('winLeft') ?? 0;
       const winTop = AppStorage.get<number>('winTop as Int') ?? 0;
-      await driver.swipeBetween({ x: (winLeft.toInt() + Math.round(btLeft).toInt() + Math.round(UIContext.resolveUIContext()!.vp2px(27).toInt())).toInt(), y: Math.round(winTop + btBottom / 2).toInt(), displayId: displayID }, { x: Math.round(winLeft + btRight).toInt(), y: Math.round(winTop + btBottom / 2).toInt(), displayId: displayID });
+      await driver.swipeBetween({ x: (winLeft.toInt() + Math.round(btLeft).toInt() + Math.round(UIContext.resolveUIContext()!.vp2px(27).toInt())).toInt(), y: Math.round(winTop + btBottom / 2).toInt(), displayId: displayID as Int }, { x: Math.round(winLeft + btRight).toInt(), y: Math.round(winTop + btBottom / 2).toInt(), displayId: displayID as Int });
       await CommonFunc.sleep(3500);
 
       let strJson = inspector.getInspectorByKey('SwiperLoopText10');
@@ -196,7 +196,7 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0340', Level.LEVEL0, async (don
       const uiContext = new UIContext();
       const winLeft = AppStorage.get<number>('winLeft') ?? 0;
       const winTop = AppStorage.get<number>('winTop as Int') ?? 0;
-      await driver.swipeBetween({ x: (Math.round(winLeft + btRight - UIContext.resolveUIContext()!.vp2px(50))).toInt(), y: Math.round(winTop + btBottom / 2).toInt(), displayId: displayID }, { x: (Math.round(winLeft + btLeft + Math.round(UIContext.resolveUIContext()!.vp2px(27))).toInt()), y: Math.round(winTop + btBottom / 2).toInt(), displayId: displayID });
+      await driver.swipeBetween({ x: (Math.round(winLeft + btRight - UIContext.resolveUIContext()!.vp2px(50))).toInt(), y: Math.round(winTop + btBottom / 2).toInt(), displayId: displayID as Int }, { x: (Math.round(winLeft + btLeft + Math.round(UIContext.resolveUIContext()!.vp2px(27))).toInt()), y: Math.round(winTop + btBottom / 2).toInt(), displayId: displayID as Int });
       await CommonFunc.sleep(3500);
 
       let strJson = inspector.getInspectorByKey('SwiperLoopText6');
@@ -234,7 +234,7 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0350', Level.LEVEL0, async (don
       const uiContext = new UIContext();
       const winLeft = AppStorage.get<number>('winLeft') ?? 0;
       const winTop = AppStorage.get<number>('winTop as Int') ?? 0;
-      await driver.swipeBetween({ x: (Math.round(winLeft + btLeft) + Math.round(UIContext.resolveUIContext()!.vp2px(27))).toInt(), y: Math.round(winTop + btBottom / 2).toInt(), displayId: displayID }, { x: Math.round(winLeft + btRight).toInt(), y: Math.round(winTop + btBottom / 2).toInt(), displayId: displayID });
+      await driver.swipeBetween({ x: (Math.round(winLeft + btLeft) + Math.round(UIContext.resolveUIContext()!.vp2px(27))).toInt(), y: Math.round(winTop + btBottom / 2).toInt(), displayId: displayID as Int }, { x: Math.round(winLeft + btRight).toInt(), y: Math.round(winTop + btBottom / 2).toInt(), displayId: displayID as Int });
       await CommonFunc.sleep(3500);
 
       let strJson = inspector.getInspectorByKey('SwiperLoopText5');

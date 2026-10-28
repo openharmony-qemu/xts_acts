@@ -50,7 +50,7 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
-let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+let displayID: number = AppStorage.get<number>('displayID') ? AppStorage.get<number>('displayID') as number : 0;
 export default function swiperWidthTest() {
   describe('swiperWidthTest', () => {
     beforeAll(async (): Promise<void> => {
@@ -111,7 +111,7 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0020', Level.LEVEL0, async (don
       const uiContext = new UIContext();
       const winLeft = AppStorage.get<number>('winLeft') ?? 0;
       const winTop = AppStorage.get<number>('winTop as Int') ?? 0;
-      await driver.swipeBetween({ x: (winLeft + Math.round(btRight) - Math.round(UIContext.resolveUIContext()!.vp2px(10))).toInt(), y: (Math.round(btBottom / 2) + winTop.toInt()).toInt(), displayId: displayID }, { x: (winLeft + Math.round(btLeft).toInt() + Math.round(UIContext.resolveUIContext()!.vp2px(10))).toInt(), y: (Math.round(btBottom / 2) + winTop.toInt()).toInt(), displayId: displayID });
+      await driver.swipeBetween({ x: (winLeft + Math.round(btRight) - Math.round(UIContext.resolveUIContext()!.vp2px(10))).toInt(), y: (Math.round(btBottom / 2) + winTop.toInt()).toInt(), displayId: displayID as Int }, { x: (winLeft + Math.round(btLeft).toInt() + Math.round(UIContext.resolveUIContext()!.vp2px(10))).toInt(), y: (Math.round(btBottom / 2) + winTop.toInt()).toInt(), displayId: displayID as Int });
       await CommonFunc.sleep(5000);
       // get the component of text_3
       let text3: Component = await driver.findComponent(ON.text('3')) as Component;

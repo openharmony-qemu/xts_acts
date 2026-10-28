@@ -68,12 +68,12 @@ it('listDidJsunit_static_0100', Level.LEVEL1, async (done: () => void): Promise<
       await driver.fling({
         x: (Number.parseInt(`${(listRect.right - listRect.left) * 0.5 + listRect.left}`)).toInt(),
         y: (Number.parseInt(`${(listRect.bottom - listRect.top) * 0.6 + listRect.top}`)).toInt(),
-        displayId: displayId
+        displayId: displayID as Int
       },
         {
           x: (Number.parseInt(`${(listRect.right - listRect.left) * 0.5 + listRect.left}`)).toInt(),
           y: (Number.parseInt(`${(listRect.bottom - listRect.top) * 0.2 + listRect.top}`)).toInt(),
-          displayId: displayId
+          displayId: displayID as Int
         }, 5, 1000);
       await CommonFunc.sleep(2000);
 

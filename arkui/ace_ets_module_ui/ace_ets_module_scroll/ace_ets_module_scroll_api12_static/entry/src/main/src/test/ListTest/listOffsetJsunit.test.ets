@@ -76,10 +76,10 @@ it('listOffsetJsunit_001', Level.LEVEL1, async (done: () => void): Promise<void>
       await driver.swipeBetween(
         { x: (Number.parseInt(`${(Math.round(left + width / 2)).toInt()}`)).toInt(),
           y: (Number.parseInt(`${(Math.round(top + height * 0.7)).toInt()}`)).toInt(),
-          displayId: displayId },
+          displayId: displayID as Int },
         { x: (Number.parseInt(`${(Math.round(left + width / 2)).toInt()}`)).toInt(),
           y: (Number.parseInt(`${(Math.round(top + height * 0.2)).toInt()}`)).toInt(),
-          displayId: displayId });
+          displayId: displayID as Int });
       await CommonFunc.sleep(2000);
 
       let strJson = inspector.getInspectorByKey('list_offset');

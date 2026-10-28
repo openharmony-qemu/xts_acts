@@ -21,6 +21,7 @@ import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
 import { MyCallback } from '../models/MyCallback';
 import display from '@ohos.display';
+import { AppStorage } from '@ohos.arkui.stateManagement';
 
 
 class EntryAbility extends UIAbility {

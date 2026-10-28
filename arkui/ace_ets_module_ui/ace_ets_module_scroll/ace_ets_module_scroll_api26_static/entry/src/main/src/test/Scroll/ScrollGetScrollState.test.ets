@@ -101,9 +101,9 @@ export default function ScrollGetScrollStateTest() {
         let endY: number = Math.round(rect.top + (rect.bottom - rect.top) * 0.2);
         await driver.swipeBetween(
           { x: centerX.toInt(),
-            y: startY.toInt(), displayId: displayId },
+            y: startY.toInt(), displayId: displayID as Int },
           { x: centerX.toInt(),
-            y: endY.toInt(), displayId: displayId }
+            y: endY.toInt(), displayId: displayID as Int }
         );
         await Utils.sleep(2000);
         let record: string = `${AppStorage.get<string>('getScrollState_stateRecord')}`;
@@ -159,9 +159,9 @@ export default function ScrollGetScrollStateTest() {
         let endY: number = Math.round(rect.top + (rect.bottom - rect.top) * 0.2);
         await driver.swipeBetween(
           { x: centerX.toInt(),
-            y: startY.toInt(), displayId: displayId },
+            y: startY.toInt(), displayId: displayID as Int },
           { x: centerX.toInt(),
-            y: endY.toInt(), displayId: displayId }
+            y: endY.toInt(), displayId: displayID as Int }
         );
         await Utils.sleep(2000);
         let btn = await driver.findComponent(ON.id('getScrollState_default'));

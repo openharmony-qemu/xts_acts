@@ -96,10 +96,10 @@ it('refreshOffsetChangeJsunit_static_0200', Level.LEVEL0, async (done: () => voi
       await driver.swipeBetween(
         { x: (Number.parseInt(`${(Math.round(left + width * 0.2)).toInt()}`)).toInt(),
           y: (Number.parseInt(`${(Math.round(bottom - height / 2)).toInt()}`)).toInt(),
-          displayId: displayId },
+          displayId: displayID as Int },
         { x: (Number.parseInt(`${(Math.round(left + width * 0.2)).toInt()}`)).toInt(),
           y: (Number.parseInt(`${(Math.round(top)).toInt()}`)).toInt(),
-          displayId: displayId });
+          displayId: displayID as Int });
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('refresh_mess2');
       let obj = JSON.parseJsonElement(strJson);
@@ -137,10 +137,10 @@ it('refreshOffsetChangeJsunit_static_0300', Level.LEVEL0, async (done: () => voi
       await driver.swipeBetween(
         { x: (Number.parseInt(`${(Math.round(left + width * 0.2)).toInt()}`)).toInt(),
           y: (Number.parseInt(`${(Math.round(top + height / 10)).toInt()}`)).toInt(),
-          displayId: displayId },
+          displayId: displayID as Int },
         { x: (Number.parseInt(`${(Math.round(left + width * 0.2)).toInt()}`)).toInt(),
           y: (Number.parseInt(`${(Math.round(bottom)).toInt()}`)).toInt(),
-          displayId: displayId });
+          displayId: displayID as Int });
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('refresh_mess3');
       let obj = JSON.parseJsonElement(strJson);
@@ -178,10 +178,10 @@ it('refreshOffsetChangeJsunit_static_0400', Level.LEVEL0, async (done: () => voi
       await driver.swipeBetween(
         { x: (Number.parseInt(`${(Math.round(left + width * 0.2)).toInt()}`)).toInt(),
           y: (Number.parseInt(`${(Math.round(top + height / 10)).toInt()}`)).toInt(),
-          displayId: displayId },
+          displayId: displayID as Int },
         { x: (Number.parseInt(`${(Math.round(left + width * 0.2)).toInt()}`)).toInt(),
           y: (Number.parseInt(`${(Math.round(bottom)).toInt()}`)).toInt(),
-          displayId: displayId });
+          displayId: displayID as Int });
       await CommonFunc.sleep(3000);
       let strJson1 = inspector.getInspectorByKey('refresh_mess1_1');
       let obj1 = JSON.parseJsonElement(strJson1);
@@ -229,10 +229,10 @@ it('refreshOffsetChangeJsunit_static_0500', Level.LEVEL0, async (done: () => voi
       await driver.swipeBetween(
         { x: (Number.parseInt(`${(Math.round(left + width * 0.2)).toInt()}`)).toInt(),
           y: (Number.parseInt(`${(Math.round(top + height / 10)).toInt()}`)).toInt(),
-          displayId: displayId },
+          displayId: displayID as Int },
         { x: (Number.parseInt(`${(Math.round(left + width * 0.2)).toInt()}`)).toInt(),
           y: (Number.parseInt(`${(Math.round(bottom)).toInt()}`)).toInt(),
-          displayId: displayId });
+          displayId: displayID as Int });
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('refresh_mess2');
       let obj = JSON.parseJsonElement(strJson);
@@ -270,17 +270,17 @@ it('refreshOffsetChangeJsunit_static_0600', Level.LEVEL0, async (done: () => voi
       await driver.dragBetween(
         { x: (Number.parseInt(`${(Math.round(left + width * 0.2)).toInt()}`)).toInt(),
           y: (Number.parseInt(`${(Math.round(top + height * 0.1)).toInt()}`)).toInt(),
-          displayId: displayId },
+          displayId: displayID as Int },
         { x: (Number.parseInt(`${(Math.round(left + width * 0.2)).toInt()}`)).toInt(),
           y: (Number.parseInt(`${(Math.round(top + height * 0.25)).toInt()}`)).toInt(),
-          displayId: displayId });
+          displayId: displayID as Int });
       await driver.swipeBetween(
         { x: (Number.parseInt(`${(Math.round(left + width * 0.2)).toInt()}`)).toInt(),
           y: (Number.parseInt(`${(Math.round(top + height * 0.25)).toInt()}`)).toInt(),
-          displayId: displayId },
+          displayId: displayID as Int },
         { x: (Number.parseInt(`${(Math.round(left + width * 0.2)).toInt()}`)).toInt(),
           y: (Number.parseInt(`${(Math.round(top + height / 8)).toInt()}`)).toInt(),
-          displayId: displayId });
+          displayId: displayID as Int });
       let strJson = inspector.getInspectorByKey('refresh_mess1_2');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[refreshOffsetChangeJsunit_static_0600] component obj is: " + JSON.stringify(obj));
@@ -318,10 +318,10 @@ it('refreshOffsetChangeJsunit_static_0700', Level.LEVEL0, async (done: () => voi
         await driver.swipeBetween(
           { x: (Number.parseInt(`${(Math.round(left + width * 0.2)).toInt()}`)).toInt(),
             y: (Number.parseInt(`${(Math.round(top + height * 0.1)).toInt()}`)).toInt(),
-            displayId: displayId },
+            displayId: displayID as Int },
           { x: (Number.parseInt(`${(Math.round(left + width * 0.2)).toInt()}`)).toInt(),
             y: (Number.parseInt(`${(Math.round(top + height * 0.9)).toInt()}`)).toInt(),
-            displayId: displayId });
+            displayId: displayID as Int });
         await CommonFunc.sleep(1000);
         let strJson1 = inspector.getInspectorByKey('refresh_mess1_1');
         let obj1 = JSON.parseJsonElement(strJson1);
@@ -331,10 +331,10 @@ it('refreshOffsetChangeJsunit_static_0700', Level.LEVEL0, async (done: () => voi
         await driver.swipeBetween(
           { x: (Number.parseInt(`${(Math.round(left + width * 0.2)).toInt()}`)).toInt(),
             y: (Number.parseInt(`${(Math.round(top + height * 0.5)).toInt()}`)).toInt(),
-            displayId: displayId },
+            displayId: displayID as Int },
           { x: (Number.parseInt(`${(Math.round(left + width * 0.2)).toInt()}`)).toInt(),
             y: (Number.parseInt(`${(Math.round(top + height * 0.4)).toInt()}`)).toInt(),
-            displayId: displayId });
+            displayId: displayID as Int });
         let strJson = inspector.getInspectorByKey('refresh_mess1_2');
         let obj = JSON.parseJsonElement(strJson);
         console.info("[refreshOffsetChangeJsunit_static_0700] component obj is: " + JSON.stringify(obj));
@@ -378,10 +378,10 @@ it('refreshOffsetChangeJsunit_static_0800', Level.LEVEL0, async (done: () => voi
         await driver.swipeBetween(
           { x: (Number.parseInt(`${(Math.round(left + width * 0.2)).toInt()}`)).toInt(),
             y: (Number.parseInt(`${(Math.round(top + height * 0.1)).toInt()}`)).toInt(),
-            displayId: displayId },
+            displayId: displayID as Int },
           { x: (Number.parseInt(`${(Math.round(left + width * 0.2)).toInt()}`)).toInt(),
             y: (Number.parseInt(`${(Math.round(top + height * 0.8)).toInt()}`)).toInt(),
-            displayId: displayId });
+            displayId: displayID as Int });
         await CommonFunc.sleep(1000);
         let strJson1 = inspector.getInspectorByKey('refresh_mess1_1');
         let obj1 = JSON.parseJsonElement(strJson1);
@@ -391,10 +391,10 @@ it('refreshOffsetChangeJsunit_static_0800', Level.LEVEL0, async (done: () => voi
         await driver.swipeBetween(
           { x: (Number.parseInt(`${(Math.round(left + width * 0.2)).toInt()}`)).toInt(),
             y: (Number.parseInt(`${(Math.round(top + height * 0.5)).toInt()}`)).toInt(),
-            displayId: displayId },
+            displayId: displayID as Int },
           { x: (Number.parseInt(`${(Math.round(left + width * 0.2)).toInt()}`)).toInt(),
             y: (Number.parseInt(`${(Math.round(top + height * 0.8)).toInt()}`)).toInt(),
-            displayId: displayId });
+            displayId: displayID as Int });
         let strJson = inspector.getInspectorByKey('refresh_mess1_2');
         let obj = JSON.parseJsonElement(strJson);
         console.info("[refreshOffsetChangeJsunit_static_0800] component obj is: " + JSON.stringify(obj));
@@ -440,10 +440,10 @@ it('refreshOffsetChangeJsunit_static_0900', Level.LEVEL0, async (done: () => voi
       await driver.swipeBetween(
         { x: (Number.parseInt(`${(Math.round(left + width * 0.2)).toInt()}`)).toInt(),
           y: (Number.parseInt(`${(Math.round(top + height / 10)).toInt()}`)).toInt(),
-          displayId: displayId },
+          displayId: displayID as Int },
         { x: (Number.parseInt(`${(Math.round(left + width * 0.2)).toInt()}`)).toInt(),
           y: (Number.parseInt(`${(Math.round(bottom)).toInt()}`)).toInt(),
-          displayId: displayId });
+          displayId: displayID as Int });
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('refresh_mess2');
       let obj = JSON.parseJsonElement(strJson);
