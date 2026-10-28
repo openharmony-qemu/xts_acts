@@ -176,14 +176,14 @@ export default class Utils {
   static getComponentRectByObj(obj: ComponentInfo): RectInfo {
     console.info('[getInspectorByKey] current component is: ' + obj.$type);
     let rectInfo: Object[] = JSON.parse('[' + obj.$rect + ']');
-    let rect_value: RectInfo = {
+    let rectValue: RectInfo = {
       left: JSON.parse('[' + rectInfo[0] + ']')[0],
       top: JSON.parse('[' + rectInfo[0] + ']')[1],
       right: JSON.parse('[' + rectInfo[1] + ']')[0],
       bottom: JSON.parse('[' + rectInfo[1] + ']')[1]
     };
-    console.info(JSON.stringify(rect_value));
-    return rect_value;
+    console.info(JSON.stringify(rectValue));
+    return rectValue;
   }
 
   static getRectHorizontalCenterX(rect: RectInfo): number {
@@ -261,9 +261,12 @@ export default class Utils {
         }
         await buttonComponent.click();
       } catch (e) {
-        const error = e as BusinessError;
-        console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-        if (error.code === 17000002) {
+        console.error(JSON.stringify(e));
+        let errCode = 0;
+        if (e != null && typeof e === 'object' && (e as Record<string, number>).code != null) {
+          errCode = (e as Record<string, number>).code;
+        }
+        if (errCode === 17000002) {
           retry = true;
           await Utils.sleep(500);
           retryTimes++;

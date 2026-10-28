@@ -16,7 +16,6 @@
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils.test';
 import web_webview from '@ohos.web.webview';
-import { BusinessError } from '@kit.BasicServicesKit';
 
 const EVENT_KEY = 207100;
 const LOAD_SETTLE_MS = 2500;
@@ -53,19 +52,23 @@ struct DynamicSdkWebviewPage {
     }
   }
 
+  private zoomControllerApi(): Record<string, Object> {
+    return this.controller as Record<string, Object>;
+  }
+
   private hasZoomFactorApi(): boolean {
-    const api: ESObject = this.controller as ESObject;
+    const api = this.zoomControllerApi();
     return typeof api['setZoomFactor'] === 'function' && typeof api['getZoomFactor'] === 'function';
   }
 
   private invokeSetZoomFactor(value: number): void {
-    const api: ESObject = this.controller as ESObject;
-    api['setZoomFactor'](value);
+    const api = this.zoomControllerApi();
+    (api['setZoomFactor'] as (v: number) => void)(value);
   }
 
   private invokeGetZoomFactor(): number {
-    const api: ESObject = this.controller as ESObject;
-    return api['getZoomFactor']() as number;
+    const api = this.zoomControllerApi();
+    return (api['getZoomFactor'] as () => number)();
   }
 
   private async waitPageThenSleep(): Promise<void> {
@@ -202,8 +205,8 @@ struct DynamicSdkWebviewPage {
   }
 
   private invokeSetZoomFactorRaw(value: number | undefined | null): void {
-    const api: ESObject = this.controller as ESObject;
-    api['setZoomFactor'](value);
+    const api = this.zoomControllerApi();
+    (api['setZoomFactor'] as (v: number | undefined | null) => void)(value);
   }
 
   private async caseSetZoomFactorInvalid(kind: string, eventId: number): Promise<void> {
@@ -220,8 +223,10 @@ struct DynamicSdkWebviewPage {
       }
       Utils.emitEvent('unexpected_no_throw', eventId);
     } catch (error) {
-      const err = error as BusinessError;
-      const code = err.code != null ? String(err.code) : '401';
+      let code = '401';
+      if (error != null && typeof error === 'object' && (error as Record<string, Object>)['code'] != null) {
+        code = String((error as Record<string, Object>)['code']);
+      }
       Utils.emitEvent(code, eventId);
     }
   }
