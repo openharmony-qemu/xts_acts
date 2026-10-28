@@ -102,12 +102,7 @@ JSON.stringify(sidebarDisplayStyle));
      let sidebarDisplayStyle = obj.getElement('$attrs').getElement('sidebarDisplayStyle');
      console.log('[tabsSidebarDisplayStyle_static_0300] sidebarDisplayStyle: ' +
 JSON.stringify(sidebarDisplayStyle));
-     let strJsonDefault = inspector.getInspectorByKey('tabs_sidebarDisplayStyle_default');
-     let objDefault = JSON.parseJsonElement(strJsonDefault);
-     let sidebarDisplayStyleDefault = objDefault.getElement('$attrs').getElement('sidebarDisplayStyle');
-     console.log('[tabsSidebarDisplayStyle_static_0300] default sidebarDisplayStyle: ' +
-JSON.stringify(sidebarDisplayStyleDefault));
-     expect(JSON.stringify(sidebarDisplayStyle)).assertEqual(JSON.stringify(sidebarDisplayStyleDefault));
+     expect(obj.getElement('$attrs').getString('sidebarDisplayStyle')).assertEqual('SidebarDisplayStyle.EMBED');
      done();
    });
 

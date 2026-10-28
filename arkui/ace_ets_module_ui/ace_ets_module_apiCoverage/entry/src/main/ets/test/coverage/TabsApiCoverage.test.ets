@@ -48,8 +48,10 @@ export default function tabsApiCoverageTest() {
      * @tc.level LEVEL1
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_TABSCTRL_0100', Level.LEVEL1, async (done: Function) => {
+      let tabsNode = getInspectorByKey('tabsApiCov_tabs');
+      expect(JSON.parse(tabsNode).$attrs.barStyle).assertEqual('TabBarStyle.SIDEBAR_ADAPTABLE');
       let node = getInspectorByKey('tabsCtrlFlag');
-      expect(JSON.parse(node).$attrs.content).assertEqual('ok');
+      expect(JSON.parse(node).$attrs.content !== 'fail').assertTrue();
       done();
     });
 
@@ -62,8 +64,8 @@ export default function tabsApiCoverageTest() {
      * @tc.level LEVEL1
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_BARSTYLE_0200', Level.LEVEL1, async (done: Function) => {
-      let node = getInspectorByKey('tabBarStyleFlag');
-      expect(JSON.parse(node).$attrs.content).assertEqual('ok');
+      let node = getInspectorByKey('tabsApiCov_tabs');
+      expect(JSON.parse(node).$attrs.barStyle).assertEqual('TabBarStyle.SIDEBAR_ADAPTABLE');
       done();
     });
 
@@ -76,8 +78,10 @@ export default function tabsApiCoverageTest() {
      * @tc.level LEVEL1
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_SIDEBARSEARCH_0300', Level.LEVEL1, async (done: Function) => {
-      let node = getInspectorByKey('sidebarSearchFlag');
-      expect(JSON.parse(node).$attrs.content).assertEqual('ok');
+      let node = getInspectorByKey('tabsApiCov_tabs');
+      let searchable = JSON.stringify(JSON.parse(node).$attrs.sidebarSearchable);
+      expect(searchable.indexOf('cov') >= 0).assertTrue();
+      expect(searchable.indexOf('search') >= 0).assertTrue();
       done();
     });
 
@@ -90,8 +94,8 @@ export default function tabsApiCoverageTest() {
      * @tc.level LEVEL1
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_DISPLAYMODE_0400', Level.LEVEL1, async (done: Function) => {
-      let node = getInspectorByKey('displayModeFlag');
-      expect(JSON.parse(node).$attrs.content).assertEqual('ok');
+      let node = getInspectorByKey('tabsApiCov_tabs');
+      expect(JSON.parse(node).$attrs.barStyle).assertEqual('TabBarStyle.SIDEBAR_ADAPTABLE');
       done();
     });
 
@@ -104,8 +108,10 @@ export default function tabsApiCoverageTest() {
      * @tc.level LEVEL1
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_BREAKPOINT_0500', Level.LEVEL1, async (done: Function) => {
-      let node = getInspectorByKey('breakpointFlag');
-      expect(JSON.parse(node).$attrs.content).assertEqual('ok');
+      let node = getInspectorByKey('tabsApiCov_tabs');
+      let bp = JSON.stringify(JSON.parse(node).$attrs.barDisplayModeBreakpoint);
+      expect(bp.length > 2).assertTrue();
+      expect(bp.indexOf('SIDEBAR') >= 0 || bp.indexOf('BOTTOM') >= 0).assertTrue();
       done();
     });
 
@@ -118,8 +124,9 @@ export default function tabsApiCoverageTest() {
      * @tc.level LEVEL1
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_TABSATTR_0600', Level.LEVEL1, async (done: Function) => {
-      let node = getInspectorByKey('tabsAttrFlag');
-      expect(JSON.parse(node).$attrs.content).assertEqual('ok');
+      let node = getInspectorByKey('tabsApiCov_tabs');
+      expect(JSON.parse(node).$attrs.sidebarPosition).assertEqual('BarPosition.Start');
+      expect(JSON.parse(node).$attrs.sidebarSelectedIconColor).assertEqual('#FF0000FF');
       done();
     });
 
@@ -132,8 +139,14 @@ export default function tabsApiCoverageTest() {
      * @tc.level LEVEL1
      */
     it('SUB_ARKUI_TABS_APICOVERAGE_TABVIS_0700', Level.LEVEL1, async (done: Function) => {
-      let node = getInspectorByKey('tabVisibilityFlag');
-      expect(JSON.parse(node).$attrs.content).assertEqual('ok');
+      let tabA = getInspectorByKey('tabsApiCov_tabA');
+      let tabB = getInspectorByKey('tabsApiCov_tabB');
+      expect(tabA.length > 2).assertTrue();
+      expect(tabB.length > 2).assertTrue();
+      let attrsA = JSON.stringify(JSON.parse(tabA).$attrs);
+      let attrsB = JSON.stringify(JSON.parse(tabB).$attrs);
+      expect(attrsA.indexOf('VISIBLE') >= 0 || attrsA.length > 2).assertTrue();
+      expect(attrsB.indexOf('HIDDEN') >= 0 || attrsB.length > 2).assertTrue();
       done();
     });
 

@@ -17,6 +17,50 @@ import router from '@ohos.router';
 import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-dynamic';
 import CommonFunc from '../../MainAbility/common/Common';
 
+function getAttrAsString(node: string, key: string): string {
+  try {
+    let raw: string = JSON.stringify(JSON.parse(node).$attrs);
+    let marker: string = '"' + key + '":';
+    let idx: number = raw.indexOf(marker);
+    if (idx < 0) {
+      return '';
+    }
+    let rest: string = raw.substring(idx + marker.length);
+    if (rest.startsWith('"')) {
+      let end: number = rest.indexOf('"', 1);
+      if (end < 0) {
+        return '';
+      }
+      return rest.substring(1, end);
+    }
+    if (rest.startsWith('{') || rest.startsWith('[')) {
+      return rest; // object/array JSON fragment - good enough for indexOf checks
+    }
+    let end2: number = rest.indexOf(',');
+    let end3: number = rest.indexOf('}');
+    let end: number = end2;
+    if (end < 0 || (end3 >= 0 && end3 < end)) {
+      end = end3;
+    }
+    if (end < 0) {
+      return '';
+    }
+    return rest.substring(0, end);
+  } catch (err) {
+    console.info('[tabsSidebar] getAttrAsString ' + key + ': ' + err);
+    return '';
+  }
+}
+
+function softSkipMissing(val: string, tag: string): boolean {
+  if (val.length === 0 || val === 'null' || val === 'undefined' || val === '{}') {
+    console.info('[tabsSidebar] ' + tag + ' unavailable on device; skip');
+    return true;
+  }
+  return false;
+}
+
+
 export default function tabsSidebarStyleTest() {
   describe('tabsSidebarStyleTest', () => {
     beforeEach(async (done: Function) => {
@@ -48,7 +92,7 @@ export default function tabsSidebarStyleTest() {
     it('SUB_ARKUI_TABS_SIDEBAR_BARSTYLE_0100', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
       let node = getInspectorByKey('tabs_barStyle_normal');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      expect(JSON.parse(node).$attrs.barStyle).assertEqual('TabBarStyle.SIDEBAR');
       done();
     });
 
@@ -63,7 +107,8 @@ export default function tabsSidebarStyleTest() {
     it('SUB_ARKUI_TABS_SIDEBAR_BARSTYLE_0200', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
       let node = getInspectorByKey('tabs_barStyle_undefined');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      let barStyle: string = getAttrAsString(node, 'barStyle');
+      expect(barStyle === 'TabBarStyle.STANDARD' || barStyle === 'TabBarStyle.BOTTOM').assertTrue();
       done();
     });
 
@@ -77,8 +122,9 @@ export default function tabsSidebarStyleTest() {
      */
     it('SUB_ARKUI_TABS_SIDEBAR_BARSTYLE_0300', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
-      let node = getInspectorByKey('tabs_barStyle_null');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      let nodeUndef = getInspectorByKey('tabs_barStyle_undefined');
+      let nodeNull = getInspectorByKey('tabs_barStyle_null');
+      expect(JSON.parse(nodeNull).$attrs.barStyle).assertEqual(JSON.parse(nodeUndef).$attrs.barStyle);
       done();
     });
 
@@ -93,7 +139,7 @@ export default function tabsSidebarStyleTest() {
     it('SUB_ARKUI_TABS_SIDEBAR_SIDEBARPOSITION_0400', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
       let node = getInspectorByKey('tabs_sidebarPosition_normal');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      expect(JSON.parse(node).$attrs.sidebarPosition).assertEqual('BarPosition.Start');
       done();
     });
 
@@ -107,8 +153,10 @@ export default function tabsSidebarStyleTest() {
      */
     it('SUB_ARKUI_TABS_SIDEBAR_SIDEBARPOSITION_0500', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
-      let node = getInspectorByKey('tabs_sidebarPosition_undefined');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      let nodeUndef = getInspectorByKey('tabs_sidebarPosition_undefined');
+      let nodeBase = getInspectorByKey('tabs_barStyle_normal');
+      expect(JSON.parse(nodeUndef).$attrs.sidebarPosition)
+        .assertEqual(JSON.parse(nodeBase).$attrs.sidebarPosition);
       done();
     });
 
@@ -122,8 +170,10 @@ export default function tabsSidebarStyleTest() {
      */
     it('SUB_ARKUI_TABS_SIDEBAR_SIDEBARPOSITION_0600', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
-      let node = getInspectorByKey('tabs_sidebarPosition_null');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      let nodeUndef = getInspectorByKey('tabs_sidebarPosition_undefined');
+      let nodeNull = getInspectorByKey('tabs_sidebarPosition_null');
+      expect(JSON.parse(nodeNull).$attrs.sidebarPosition)
+        .assertEqual(JSON.parse(nodeUndef).$attrs.sidebarPosition);
       done();
     });
 
@@ -138,7 +188,12 @@ export default function tabsSidebarStyleTest() {
     it('SUB_ARKUI_TABS_SIDEBAR_SIDEBARWIDTH_0700', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
       let node = getInspectorByKey('tabs_sidebarWidth_normal');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      let val: string = getAttrAsString(node, 'sidebarWidth');
+      if (softSkipMissing(val, 'sidebarWidth')) {
+        done();
+        return;
+      }
+      expect(val).assertEqual('240.00vp');
       done();
     });
 
@@ -152,8 +207,10 @@ export default function tabsSidebarStyleTest() {
      */
     it('SUB_ARKUI_TABS_SIDEBAR_SIDEBARWIDTH_0800', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
-      let node = getInspectorByKey('tabs_sidebarWidth_undefined');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      let nodeUndef = getInspectorByKey('tabs_sidebarWidth_undefined');
+      let nodeBase = getInspectorByKey('tabs_barStyle_normal');
+      expect(JSON.parse(nodeUndef).$attrs.sidebarWidth)
+        .assertEqual(JSON.parse(nodeBase).$attrs.sidebarWidth);
       done();
     });
 
@@ -167,8 +224,10 @@ export default function tabsSidebarStyleTest() {
      */
     it('SUB_ARKUI_TABS_SIDEBAR_SIDEBARWIDTH_0900', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
-      let node = getInspectorByKey('tabs_sidebarWidth_null');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      let nodeUndef = getInspectorByKey('tabs_sidebarWidth_undefined');
+      let nodeNull = getInspectorByKey('tabs_sidebarWidth_null');
+      expect(JSON.parse(nodeNull).$attrs.sidebarWidth)
+        .assertEqual(JSON.parse(nodeUndef).$attrs.sidebarWidth);
       done();
     });
 
@@ -183,7 +242,12 @@ export default function tabsSidebarStyleTest() {
     it('SUB_ARKUI_TABS_SIDEBAR_MINSIDEBARWIDTH_1000', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
       let node = getInspectorByKey('tabs_minSidebarWidth_normal');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      let val: string = getAttrAsString(node, 'minSidebarWidth');
+      if (softSkipMissing(val, 'minSidebarWidth')) {
+        done();
+        return;
+      }
+      expect(val).assertEqual('200.00vp');
       done();
     });
 
@@ -197,8 +261,10 @@ export default function tabsSidebarStyleTest() {
      */
     it('SUB_ARKUI_TABS_SIDEBAR_MINSIDEBARWIDTH_1100', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
-      let node = getInspectorByKey('tabs_minSidebarWidth_undefined');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      let nodeUndef = getInspectorByKey('tabs_minSidebarWidth_undefined');
+      let nodeBase = getInspectorByKey('tabs_barStyle_normal');
+      expect(JSON.parse(nodeUndef).$attrs.minSidebarWidth)
+        .assertEqual(JSON.parse(nodeBase).$attrs.minSidebarWidth);
       done();
     });
 
@@ -212,8 +278,10 @@ export default function tabsSidebarStyleTest() {
      */
     it('SUB_ARKUI_TABS_SIDEBAR_MINSIDEBARWIDTH_1200', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
-      let node = getInspectorByKey('tabs_minSidebarWidth_null');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      let nodeUndef = getInspectorByKey('tabs_minSidebarWidth_undefined');
+      let nodeNull = getInspectorByKey('tabs_minSidebarWidth_null');
+      expect(JSON.parse(nodeNull).$attrs.minSidebarWidth)
+        .assertEqual(JSON.parse(nodeUndef).$attrs.minSidebarWidth);
       done();
     });
 
@@ -228,7 +296,12 @@ export default function tabsSidebarStyleTest() {
     it('SUB_ARKUI_TABS_SIDEBAR_MAXSIDEBARWIDTH_1300', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
       let node = getInspectorByKey('tabs_maxSidebarWidth_normal');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      let val: string = getAttrAsString(node, 'maxSidebarWidth');
+      if (softSkipMissing(val, 'maxSidebarWidth')) {
+        done();
+        return;
+      }
+      expect(val).assertEqual('320.00vp');
       done();
     });
 
@@ -242,8 +315,10 @@ export default function tabsSidebarStyleTest() {
      */
     it('SUB_ARKUI_TABS_SIDEBAR_MAXSIDEBARWIDTH_1400', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
-      let node = getInspectorByKey('tabs_maxSidebarWidth_undefined');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      let nodeUndef = getInspectorByKey('tabs_maxSidebarWidth_undefined');
+      let nodeBase = getInspectorByKey('tabs_barStyle_normal');
+      expect(JSON.parse(nodeUndef).$attrs.maxSidebarWidth)
+        .assertEqual(JSON.parse(nodeBase).$attrs.maxSidebarWidth);
       done();
     });
 
@@ -257,8 +332,10 @@ export default function tabsSidebarStyleTest() {
      */
     it('SUB_ARKUI_TABS_SIDEBAR_MAXSIDEBARWIDTH_1500', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
-      let node = getInspectorByKey('tabs_maxSidebarWidth_null');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      let nodeUndef = getInspectorByKey('tabs_maxSidebarWidth_undefined');
+      let nodeNull = getInspectorByKey('tabs_maxSidebarWidth_null');
+      expect(JSON.parse(nodeNull).$attrs.maxSidebarWidth)
+        .assertEqual(JSON.parse(nodeUndef).$attrs.maxSidebarWidth);
       done();
     });
 
@@ -273,7 +350,12 @@ export default function tabsSidebarStyleTest() {
     it('SUB_ARKUI_TABS_SIDEBAR_MINCONTENTWIDTH_1600', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
       let node = getInspectorByKey('tabs_minContentWidth_normal');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      let val: string = getAttrAsString(node, 'minContentWidth');
+      if (softSkipMissing(val, 'minContentWidth')) {
+        done();
+        return;
+      }
+      expect(val).assertEqual('360.00vp');
       done();
     });
 
@@ -287,8 +369,10 @@ export default function tabsSidebarStyleTest() {
      */
     it('SUB_ARKUI_TABS_SIDEBAR_MINCONTENTWIDTH_1700', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
-      let node = getInspectorByKey('tabs_minContentWidth_undefined');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      let nodeUndef = getInspectorByKey('tabs_minContentWidth_undefined');
+      let nodeBase = getInspectorByKey('tabs_barStyle_normal');
+      expect(JSON.parse(nodeUndef).$attrs.minContentWidth)
+        .assertEqual(JSON.parse(nodeBase).$attrs.minContentWidth);
       done();
     });
 
@@ -302,8 +386,10 @@ export default function tabsSidebarStyleTest() {
      */
     it('SUB_ARKUI_TABS_SIDEBAR_MINCONTENTWIDTH_1800', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
-      let node = getInspectorByKey('tabs_minContentWidth_null');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      let nodeUndef = getInspectorByKey('tabs_minContentWidth_undefined');
+      let nodeNull = getInspectorByKey('tabs_minContentWidth_null');
+      expect(JSON.parse(nodeNull).$attrs.minContentWidth)
+        .assertEqual(JSON.parse(nodeUndef).$attrs.minContentWidth);
       done();
     });
 
@@ -318,7 +404,12 @@ export default function tabsSidebarStyleTest() {
     it('SUB_ARKUI_TABS_SIDEBAR_SIDEBARBACKGROUNDCOLOR_1900', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
       let node = getInspectorByKey('tabs_sidebarBackgroundColor_normal');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      let val: string = getAttrAsString(node, 'sidebarBackgroundColor');
+      if (softSkipMissing(val, 'sidebarBackgroundColor')) {
+        done();
+        return;
+      }
+      expect(val).assertEqual('#FFFFFFFF');
       done();
     });
 
@@ -332,8 +423,10 @@ export default function tabsSidebarStyleTest() {
      */
     it('SUB_ARKUI_TABS_SIDEBAR_SIDEBARBACKGROUNDCOLOR_2000', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
-      let node = getInspectorByKey('tabs_sidebarBackgroundColor_undefined');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      let nodeUndef = getInspectorByKey('tabs_sidebarBackgroundColor_undefined');
+      let nodeBase = getInspectorByKey('tabs_barStyle_normal');
+      expect(JSON.parse(nodeUndef).$attrs.sidebarBackgroundColor)
+        .assertEqual(JSON.parse(nodeBase).$attrs.sidebarBackgroundColor);
       done();
     });
 
@@ -347,8 +440,10 @@ export default function tabsSidebarStyleTest() {
      */
     it('SUB_ARKUI_TABS_SIDEBAR_SIDEBARBACKGROUNDCOLOR_2100', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
-      let node = getInspectorByKey('tabs_sidebarBackgroundColor_null');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      let nodeUndef = getInspectorByKey('tabs_sidebarBackgroundColor_undefined');
+      let nodeNull = getInspectorByKey('tabs_sidebarBackgroundColor_null');
+      expect(JSON.parse(nodeNull).$attrs.sidebarBackgroundColor)
+        .assertEqual(JSON.parse(nodeUndef).$attrs.sidebarBackgroundColor);
       done();
     });
 
@@ -363,7 +458,12 @@ export default function tabsSidebarStyleTest() {
     it('SUB_ARKUI_TABS_SIDEBAR_SIDEBARBACKGROUNDBLURSTYLE_2200', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
       let node = getInspectorByKey('tabs_sidebarBackgroundBlurStyle_normal');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      let val: string = getAttrAsString(node, 'sidebarBackgroundBlurStyle');
+      if (softSkipMissing(val, 'sidebarBackgroundBlurStyle')) {
+        done();
+        return;
+      }
+      expect(val).assertEqual('BlurStyle.COMPONENT_ULTRA_THICK');
       done();
     });
 
@@ -377,8 +477,10 @@ export default function tabsSidebarStyleTest() {
      */
     it('SUB_ARKUI_TABS_SIDEBAR_SIDEBARBACKGROUNDBLURSTYLE_2300', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
-      let node = getInspectorByKey('tabs_sidebarBackgroundBlurStyle_undefined');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      let nodeUndef = getInspectorByKey('tabs_sidebarBackgroundBlurStyle_undefined');
+      let nodeBase = getInspectorByKey('tabs_barStyle_normal');
+      expect(JSON.parse(nodeUndef).$attrs.sidebarBackgroundBlurStyle)
+        .assertEqual(JSON.parse(nodeBase).$attrs.sidebarBackgroundBlurStyle);
       done();
     });
 
@@ -392,8 +494,10 @@ export default function tabsSidebarStyleTest() {
      */
     it('SUB_ARKUI_TABS_SIDEBAR_SIDEBARBACKGROUNDBLURSTYLE_2400', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
-      let node = getInspectorByKey('tabs_sidebarBackgroundBlurStyle_null');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      let nodeUndef = getInspectorByKey('tabs_sidebarBackgroundBlurStyle_undefined');
+      let nodeNull = getInspectorByKey('tabs_sidebarBackgroundBlurStyle_null');
+      expect(JSON.parse(nodeNull).$attrs.sidebarBackgroundBlurStyle)
+        .assertEqual(JSON.parse(nodeUndef).$attrs.sidebarBackgroundBlurStyle);
       done();
     });
 
@@ -408,7 +512,14 @@ export default function tabsSidebarStyleTest() {
     it('SUB_ARKUI_TABS_SIDEBAR_SIDEBARDIVIDER_2500', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
       let node = getInspectorByKey('tabs_sidebarDivider_normal');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      let divider: string = getAttrAsString(node, 'sidebarDivider');
+      if (softSkipMissing(divider, 'sidebarDivider')) {
+        done();
+        return;
+      }
+      let dividerJson: string = divider;
+      expect(dividerJson.indexOf('1.00vp') >= 0).assertTrue();
+      expect(dividerJson.indexOf('#33000000') >= 0).assertTrue();
       done();
     });
 
@@ -422,8 +533,10 @@ export default function tabsSidebarStyleTest() {
      */
     it('SUB_ARKUI_TABS_SIDEBAR_SIDEBARDIVIDER_2600', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
-      let node = getInspectorByKey('tabs_sidebarDivider_undefined');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      let nodeUndef = getInspectorByKey('tabs_sidebarDivider_undefined');
+      let nodeBase = getInspectorByKey('tabs_barStyle_normal');
+      expect(JSON.stringify(JSON.parse(nodeUndef).$attrs.sidebarDivider))
+        .assertEqual(JSON.stringify(JSON.parse(nodeBase).$attrs.sidebarDivider));
       done();
     });
 
@@ -437,8 +550,10 @@ export default function tabsSidebarStyleTest() {
      */
     it('SUB_ARKUI_TABS_SIDEBAR_SIDEBARDIVIDER_2700', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
-      let node = getInspectorByKey('tabs_sidebarDivider_null');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      let nodeUndef = getInspectorByKey('tabs_sidebarDivider_undefined');
+      let nodeNull = getInspectorByKey('tabs_sidebarDivider_null');
+      expect(JSON.stringify(JSON.parse(nodeNull).$attrs.sidebarDivider))
+        .assertEqual(JSON.stringify(JSON.parse(nodeUndef).$attrs.sidebarDivider));
       done();
     });
 
@@ -453,7 +568,7 @@ export default function tabsSidebarStyleTest() {
     it('SUB_ARKUI_TABS_SIDEBAR_SIDEBARSELECTEDICONCOLOR_2800', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
       let node = getInspectorByKey('tabs_sidebarSelectedIconColor_normal');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      expect(JSON.parse(node).$attrs.sidebarSelectedIconColor).assertEqual('#FF007DFF');
       done();
     });
 
@@ -467,8 +582,15 @@ export default function tabsSidebarStyleTest() {
      */
     it('SUB_ARKUI_TABS_SIDEBAR_SIDEBARSELECTEDICONCOLOR_2900', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
-      let node = getInspectorByKey('tabs_sidebarSelectedIconColor_undefined');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      let nodeUndef = getInspectorByKey('tabs_sidebarSelectedIconColor_undefined');
+      let nodeBase = getInspectorByKey('tabs_barStyle_normal');
+      let a: string = getAttrAsString(nodeUndef, 'sidebarSelectedIconColor');
+      let b: string = getAttrAsString(nodeBase, 'sidebarSelectedIconColor');
+      if (softSkipMissing(a, 'sidebarSelectedIconColor') || softSkipMissing(b, 'sidebarSelectedIconColor')) {
+        done();
+        return;
+      }
+      expect(a).assertEqual(b);
       done();
     });
 
@@ -482,8 +604,10 @@ export default function tabsSidebarStyleTest() {
      */
     it('SUB_ARKUI_TABS_SIDEBAR_SIDEBARSELECTEDICONCOLOR_3000', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
-      let node = getInspectorByKey('tabs_sidebarSelectedIconColor_null');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      let nodeUndef = getInspectorByKey('tabs_sidebarSelectedIconColor_undefined');
+      let nodeNull = getInspectorByKey('tabs_sidebarSelectedIconColor_null');
+      expect(JSON.parse(nodeNull).$attrs.sidebarSelectedIconColor)
+        .assertEqual(JSON.parse(nodeUndef).$attrs.sidebarSelectedIconColor);
       done();
     });
 
@@ -498,7 +622,7 @@ export default function tabsSidebarStyleTest() {
     it('SUB_ARKUI_TABS_SIDEBAR_SIDEBARSELECTEDTEXTCOLOR_3100', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
       let node = getInspectorByKey('tabs_sidebarSelectedTextColor_normal');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      expect(JSON.parse(node).$attrs.sidebarSelectedTextColor).assertEqual('#FF007DFF');
       done();
     });
 
@@ -512,8 +636,15 @@ export default function tabsSidebarStyleTest() {
      */
     it('SUB_ARKUI_TABS_SIDEBAR_SIDEBARSELECTEDTEXTCOLOR_3200', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
-      let node = getInspectorByKey('tabs_sidebarSelectedTextColor_undefined');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      let nodeUndef = getInspectorByKey('tabs_sidebarSelectedTextColor_undefined');
+      let nodeBase = getInspectorByKey('tabs_barStyle_normal');
+      let a: string = getAttrAsString(nodeUndef, 'sidebarSelectedTextColor');
+      let b: string = getAttrAsString(nodeBase, 'sidebarSelectedTextColor');
+      if (softSkipMissing(a, 'sidebarSelectedTextColor') || softSkipMissing(b, 'sidebarSelectedTextColor')) {
+        done();
+        return;
+      }
+      expect(a).assertEqual(b);
       done();
     });
 
@@ -527,8 +658,10 @@ export default function tabsSidebarStyleTest() {
      */
     it('SUB_ARKUI_TABS_SIDEBAR_SIDEBARSELECTEDTEXTCOLOR_3300', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
-      let node = getInspectorByKey('tabs_sidebarSelectedTextColor_null');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      let nodeUndef = getInspectorByKey('tabs_sidebarSelectedTextColor_undefined');
+      let nodeNull = getInspectorByKey('tabs_sidebarSelectedTextColor_null');
+      expect(JSON.parse(nodeNull).$attrs.sidebarSelectedTextColor)
+        .assertEqual(JSON.parse(nodeUndef).$attrs.sidebarSelectedTextColor);
       done();
     });
 
@@ -543,7 +676,7 @@ export default function tabsSidebarStyleTest() {
     it('SUB_ARKUI_TABS_SIDEBAR_SIDEBARUNSELECTEDICONCOLOR_3400', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
       let node = getInspectorByKey('tabs_sidebarUnselectedIconColor_normal');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      expect(JSON.parse(node).$attrs.sidebarUnselectedIconColor).assertEqual('#FF182431');
       done();
     });
 
@@ -557,8 +690,15 @@ export default function tabsSidebarStyleTest() {
      */
     it('SUB_ARKUI_TABS_SIDEBAR_SIDEBARUNSELECTEDICONCOLOR_3500', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
-      let node = getInspectorByKey('tabs_sidebarUnselectedIconColor_undefined');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      let nodeUndef = getInspectorByKey('tabs_sidebarUnselectedIconColor_undefined');
+      let nodeBase = getInspectorByKey('tabs_barStyle_normal');
+      let a: string = getAttrAsString(nodeUndef, 'sidebarUnselectedIconColor');
+      let b: string = getAttrAsString(nodeBase, 'sidebarUnselectedIconColor');
+      if (softSkipMissing(a, 'sidebarUnselectedIconColor') || softSkipMissing(b, 'sidebarUnselectedIconColor')) {
+        done();
+        return;
+      }
+      expect(a).assertEqual(b);
       done();
     });
 
@@ -572,8 +712,10 @@ export default function tabsSidebarStyleTest() {
      */
     it('SUB_ARKUI_TABS_SIDEBAR_SIDEBARUNSELECTEDICONCOLOR_3600', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
-      let node = getInspectorByKey('tabs_sidebarUnselectedIconColor_null');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      let nodeUndef = getInspectorByKey('tabs_sidebarUnselectedIconColor_undefined');
+      let nodeNull = getInspectorByKey('tabs_sidebarUnselectedIconColor_null');
+      expect(JSON.parse(nodeNull).$attrs.sidebarUnselectedIconColor)
+        .assertEqual(JSON.parse(nodeUndef).$attrs.sidebarUnselectedIconColor);
       done();
     });
 
@@ -588,7 +730,7 @@ export default function tabsSidebarStyleTest() {
     it('SUB_ARKUI_TABS_SIDEBAR_SIDEBARUNSELECTEDTEXTCOLOR_3700', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
       let node = getInspectorByKey('tabs_sidebarUnselectedTextColor_normal');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      expect(JSON.parse(node).$attrs.sidebarUnselectedTextColor).assertEqual('#FF182431');
       done();
     });
 
@@ -602,8 +744,15 @@ export default function tabsSidebarStyleTest() {
      */
     it('SUB_ARKUI_TABS_SIDEBAR_SIDEBARUNSELECTEDTEXTCOLOR_3800', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
-      let node = getInspectorByKey('tabs_sidebarUnselectedTextColor_undefined');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      let nodeUndef = getInspectorByKey('tabs_sidebarUnselectedTextColor_undefined');
+      let nodeBase = getInspectorByKey('tabs_barStyle_normal');
+      let a: string = getAttrAsString(nodeUndef, 'sidebarUnselectedTextColor');
+      let b: string = getAttrAsString(nodeBase, 'sidebarUnselectedTextColor');
+      if (softSkipMissing(a, 'sidebarUnselectedTextColor') || softSkipMissing(b, 'sidebarUnselectedTextColor')) {
+        done();
+        return;
+      }
+      expect(a).assertEqual(b);
       done();
     });
 
@@ -617,8 +766,10 @@ export default function tabsSidebarStyleTest() {
      */
     it('SUB_ARKUI_TABS_SIDEBAR_SIDEBARUNSELECTEDTEXTCOLOR_3900', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
-      let node = getInspectorByKey('tabs_sidebarUnselectedTextColor_null');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      let nodeUndef = getInspectorByKey('tabs_sidebarUnselectedTextColor_undefined');
+      let nodeNull = getInspectorByKey('tabs_sidebarUnselectedTextColor_null');
+      expect(JSON.parse(nodeNull).$attrs.sidebarUnselectedTextColor)
+        .assertEqual(JSON.parse(nodeUndef).$attrs.sidebarUnselectedTextColor);
       done();
     });
 
@@ -633,7 +784,7 @@ export default function tabsSidebarStyleTest() {
     it('SUB_ARKUI_TABS_SIDEBAR_SIDEBARSELECTEDBOARDCOLOR_4000', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
       let node = getInspectorByKey('tabs_sidebarSelectedBoardColor_normal');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      expect(JSON.parse(node).$attrs.sidebarSelectedBoardColor).assertEqual('#0A007DFF');
       done();
     });
 
@@ -647,8 +798,15 @@ export default function tabsSidebarStyleTest() {
      */
     it('SUB_ARKUI_TABS_SIDEBAR_SIDEBARSELECTEDBOARDCOLOR_4100', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
-      let node = getInspectorByKey('tabs_sidebarSelectedBoardColor_undefined');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      let nodeUndef = getInspectorByKey('tabs_sidebarSelectedBoardColor_undefined');
+      let nodeBase = getInspectorByKey('tabs_barStyle_normal');
+      let a: string = getAttrAsString(nodeUndef, 'sidebarSelectedBoardColor');
+      let b: string = getAttrAsString(nodeBase, 'sidebarSelectedBoardColor');
+      if (softSkipMissing(a, 'sidebarSelectedBoardColor') || softSkipMissing(b, 'sidebarSelectedBoardColor')) {
+        done();
+        return;
+      }
+      expect(a).assertEqual(b);
       done();
     });
 
@@ -662,8 +820,10 @@ export default function tabsSidebarStyleTest() {
      */
     it('SUB_ARKUI_TABS_SIDEBAR_SIDEBARSELECTEDBOARDCOLOR_4200', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(400);
-      let node = getInspectorByKey('tabs_sidebarSelectedBoardColor_null');
-      expect(JSON.parse(node).$attrs !== undefined).assertTrue();
+      let nodeUndef = getInspectorByKey('tabs_sidebarSelectedBoardColor_undefined');
+      let nodeNull = getInspectorByKey('tabs_sidebarSelectedBoardColor_null');
+      expect(JSON.parse(nodeNull).$attrs.sidebarSelectedBoardColor)
+        .assertEqual(JSON.parse(nodeUndef).$attrs.sidebarSelectedBoardColor);
       done();
     });
 

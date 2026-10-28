@@ -7,6 +7,7 @@ import TabsApiCoverageAbnormalStaticTest from './CoverageTest/TabsApiCoverageAbn
 export default function testsuite(): void {
   CoverageStaticTest();
   Coverage0917StaticTest();
-  TabsApiCoverageStaticTest();
+  // Abnormal before Static: avoid router.clear teardown SIGSEGV into Abnormal page
   TabsApiCoverageAbnormalStaticTest();
+  TabsApiCoverageStaticTest();
 }
