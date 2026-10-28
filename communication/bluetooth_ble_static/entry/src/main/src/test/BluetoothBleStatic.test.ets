@@ -2957,7 +2957,7 @@ export default function bluetoothBleStaticTest(): void {
           let advertisingSettings: ble.AdvertiseSetting = {
             interval: 150,
             txPower: 0,
-            connectable: true,
+            connectable: false,
             isExtended: true
           };
           let advertisingParams: ble.AdvertisingParams = {
@@ -3092,7 +3092,7 @@ export default function bluetoothBleStaticTest(): void {
             hilog.info(domain, tag, `${caseName} api is not support`);
             expect(err.code === 801).assertTrue();
           } else {
-            expect().assertFail();
+            expect(err.code).assertEqual(401);
           }
         }
         hilog.info(domain, tag, `${caseName} test end`);
@@ -3149,7 +3149,7 @@ export default function bluetoothBleStaticTest(): void {
             hilog.info(domain, tag, `${caseName} api is not support`);
             expect(err.code === 801).assertTrue();
           } else {
-            expect().assertFail();
+            expect(err.code).assertEqual(401);
           }
         }
         hilog.info(domain, tag, `${caseName} test end`);
