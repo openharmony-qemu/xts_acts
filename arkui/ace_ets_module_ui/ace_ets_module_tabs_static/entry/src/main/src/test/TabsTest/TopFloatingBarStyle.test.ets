@@ -59,7 +59,7 @@ export default function topFloatingBarStyle(): void {
     /**
      * @tc.name   topFloatingBarStyle_static_0100
      * @tc.number SUB_ARKUI_TABS_TOPFLOATINGBARSTYLE_STATIC_0100
-     * @tc.desc   Test barStyle(TOP) with topBarFloatingStyle({barWidth, maskColor, maskHeight}) renders correctly
+     * @tc.desc   Test barStyle(TOP) with barTopFloatingStyle({barWidth, maskColor, maskHeight}) renders correctly
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
@@ -71,8 +71,8 @@ export default function topFloatingBarStyle(): void {
       console.info('[topFloatingBarStyle_static_0100] inspector: ' + strJson);
       expect(strJson.length > 2).assertTrue();
       let obj = JSON.parseJsonElement(strJson);
-      let topBarFloatingStyle = obj.getElement('$attrs').getElement('topBarFloatingStyle');
-      console.info('[topFloatingBarStyle_static_0100] topBarFloatingStyle: ' + JSON.stringify(topBarFloatingStyle));
+      let barTopFloatingStyle = obj.getElement('$attrs').getElement('barTopFloatingStyle');
+      console.info('[topFloatingBarStyle_static_0100] barTopFloatingStyle: ' + JSON.stringify(barTopFloatingStyle));
       expect(obj.getElement('$attrs').getString('barStyle')).assertEqual('TabBarStyle.TOP');
       console.info('[topFloatingBarStyle_static_0100] END');
       done();
@@ -81,7 +81,7 @@ export default function topFloatingBarStyle(): void {
     /**
      * @tc.name   topFloatingBarStyle_static_0200
      * @tc.number SUB_ARKUI_TABS_TOPFLOATINGBARSTYLE_STATIC_0200
-     * @tc.desc   Test topBarFloatingStyle({barWidth: 400}) renders floating container with specified width
+     * @tc.desc   Test barTopFloatingStyle({barWidth: 400}) renders floating container with specified width
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
@@ -93,9 +93,9 @@ export default function topFloatingBarStyle(): void {
       console.info('[topFloatingBarStyle_static_0200] inspector: ' + strJson);
       expect(strJson.length > 2).assertTrue();
       let obj = JSON.parseJsonElement(strJson);
-      let topBarFloatingStyle = obj.getElement('$attrs').getElement('topBarFloatingStyle');
-      console.info('[topFloatingBarStyle_static_0200] topBarFloatingStyle: ' + JSON.stringify(topBarFloatingStyle));
-      expect(topBarFloatingStyle.getString('barWidth')).assertEqual('400.00vp');
+      let barTopFloatingStyle = obj.getElement('$attrs').getElement('barTopFloatingStyle');
+      console.info('[topFloatingBarStyle_static_0200] barTopFloatingStyle: ' + JSON.stringify(barTopFloatingStyle));
+      expect(barTopFloatingStyle.getString('barWidth')).assertEqual('400.00vp');
       console.info('[topFloatingBarStyle_static_0200] END');
       done();
     });
@@ -103,7 +103,7 @@ export default function topFloatingBarStyle(): void {
     /**
      * @tc.name   topFloatingBarStyle_static_0300
      * @tc.number SUB_ARKUI_TABS_TOPFLOATINGBARSTYLE_STATIC_0300
-     * @tc.desc   Test topBarFloatingStyle({maskColor, maskHeight}) renders mask with specified color and height
+     * @tc.desc   Test barTopFloatingStyle({maskColor, maskHeight}) renders mask with specified color and height
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
@@ -115,10 +115,10 @@ export default function topFloatingBarStyle(): void {
       console.info('[topFloatingBarStyle_static_0300] inspector: ' + strJson);
       expect(strJson.length > 2).assertTrue();
       let obj = JSON.parseJsonElement(strJson);
-      let topBarFloatingStyle = obj.getElement('$attrs').getElement('topBarFloatingStyle');
-      console.info('[topFloatingBarStyle_static_0300] topBarFloatingStyle: ' + JSON.stringify(topBarFloatingStyle));
-      expect(topBarFloatingStyle.getString('maskColor')).assertEqual('#33000000');
-      expect(topBarFloatingStyle.getString('maskHeight')).assertEqual('200.00vp');
+      let barTopFloatingStyle = obj.getElement('$attrs').getElement('barTopFloatingStyle');
+      console.info('[topFloatingBarStyle_static_0300] barTopFloatingStyle: ' + JSON.stringify(barTopFloatingStyle));
+      expect(barTopFloatingStyle.getString('maskColor')).assertEqual('#33000000');
+      expect(barTopFloatingStyle.getString('maskHeight')).assertEqual('200.00vp');
       console.info('[topFloatingBarStyle_static_0300] END');
       done();
     });
@@ -126,7 +126,7 @@ export default function topFloatingBarStyle(): void {
     /**
      * @tc.name   topFloatingBarStyle_static_0400
      * @tc.number SUB_ARKUI_TABS_TOPFLOATINGBARSTYLE_STATIC_0400
-     * @tc.desc   Test topBarFloatingStyle({maxWidth: 500}) constrains floating bar width
+     * @tc.desc   Test barTopFloatingStyle({maxWidth: 500}) constrains floating bar width
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
@@ -138,9 +138,9 @@ export default function topFloatingBarStyle(): void {
       console.info('[topFloatingBarStyle_static_0400] inspector: ' + strJson);
       expect(strJson.length > 2).assertTrue();
       let obj = JSON.parseJsonElement(strJson);
-      let topBarFloatingStyle = obj.getElement('$attrs').getElement('topBarFloatingStyle');
-      console.info('[topFloatingBarStyle_static_0400] topBarFloatingStyle: ' + JSON.stringify(topBarFloatingStyle));
-      expect(topBarFloatingStyle.getString('maxWidth')).assertEqual('500.00vp');
+      let barTopFloatingStyle = obj.getElement('$attrs').getElement('barTopFloatingStyle');
+      console.info('[topFloatingBarStyle_static_0400] barTopFloatingStyle: ' + JSON.stringify(barTopFloatingStyle));
+      expect(barTopFloatingStyle.getString('maxWidth')).assertEqual('500.00vp');
       console.info('[topFloatingBarStyle_static_0400] END');
       done();
     });
@@ -148,7 +148,7 @@ export default function topFloatingBarStyle(): void {
     /**
      * @tc.name   topFloatingBarStyle_static_0500
      * @tc.number SUB_ARKUI_TABS_TOPFLOATINGBARSTYLE_STATIC_0500
-     * @tc.desc   Test topBarFloatingStyle({offset: {x: 20, y: 0}}) offsets floating bar position
+     * @tc.desc   Test barTopFloatingStyle({offset: {x: 20, y: 0}}) offsets floating bar position
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
@@ -160,8 +160,8 @@ export default function topFloatingBarStyle(): void {
       console.info('[topFloatingBarStyle_static_0500] inspector: ' + strJson);
       expect(strJson.length > 2).assertTrue();
       let obj = JSON.parseJsonElement(strJson);
-      let topBarFloatingStyle = obj.getElement('$attrs').getElement('topBarFloatingStyle');
-      console.info('[topFloatingBarStyle_static_0500] topBarFloatingStyle: ' + JSON.stringify(topBarFloatingStyle));
+      let barTopFloatingStyle = obj.getElement('$attrs').getElement('barTopFloatingStyle');
+      console.info('[topFloatingBarStyle_static_0500] barTopFloatingStyle: ' + JSON.stringify(barTopFloatingStyle));
       console.info('[topFloatingBarStyle_static_0500] END');
       done();
     });
@@ -169,7 +169,7 @@ export default function topFloatingBarStyle(): void {
     /**
      * @tc.name   topFloatingBarStyle_static_0600
      * @tc.number SUB_ARKUI_TABS_TOPFLOATINGBARSTYLE_STATIC_0600
-     * @tc.desc   Test topBarFloatingStyle({barSideMargin: 16, barTopMargin: 8}) renders margins correctly
+     * @tc.desc   Test barTopFloatingStyle({barSideMargin: 16, barTopMargin: 8}) renders margins correctly
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
@@ -181,10 +181,10 @@ export default function topFloatingBarStyle(): void {
       console.info('[topFloatingBarStyle_static_0600] inspector: ' + strJson);
       expect(strJson.length > 2).assertTrue();
       let obj = JSON.parseJsonElement(strJson);
-      let topBarFloatingStyle = obj.getElement('$attrs').getElement('topBarFloatingStyle');
-      console.info('[topFloatingBarStyle_static_0600] topBarFloatingStyle: ' + JSON.stringify(topBarFloatingStyle));
-      expect(topBarFloatingStyle.getString('barSideMargin')).assertEqual('16.00vp');
-      expect(topBarFloatingStyle.getString('barTopMargin')).assertEqual('8.00vp');
+      let barTopFloatingStyle = obj.getElement('$attrs').getElement('barTopFloatingStyle');
+      console.info('[topFloatingBarStyle_static_0600] barTopFloatingStyle: ' + JSON.stringify(barTopFloatingStyle));
+      expect(barTopFloatingStyle.getString('barSideMargin')).assertEqual('16.00vp');
+      expect(barTopFloatingStyle.getString('barTopMargin')).assertEqual('8.00vp');
       console.info('[topFloatingBarStyle_static_0600] END');
       done();
     });
@@ -212,7 +212,7 @@ export default function topFloatingBarStyle(): void {
     /**
      * @tc.name   topFloatingBarStyle_static_0800
      * @tc.number SUB_ARKUI_TABS_TOPFLOATINGBARSTYLE_STATIC_0800
-     * @tc.desc   Test topBarFloatingStyle({barWidth: '50%'}) percentage value renders correctly
+     * @tc.desc   Test barTopFloatingStyle({barWidth: '50%'}) percentage value renders correctly
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
@@ -224,9 +224,9 @@ export default function topFloatingBarStyle(): void {
       console.info('[topFloatingBarStyle_static_0800] inspector: ' + strJson);
       expect(strJson.length > 2).assertTrue();
       let obj = JSON.parseJsonElement(strJson);
-      let topBarFloatingStyle = obj.getElement('$attrs').getElement('topBarFloatingStyle');
-      console.info('[topFloatingBarStyle_static_0800] topBarFloatingStyle: ' + JSON.stringify(topBarFloatingStyle));
-      expect(topBarFloatingStyle.getString('barWidth')).assertEqual('50.00%');
+      let barTopFloatingStyle = obj.getElement('$attrs').getElement('barTopFloatingStyle');
+      console.info('[topFloatingBarStyle_static_0800] barTopFloatingStyle: ' + JSON.stringify(barTopFloatingStyle));
+      expect(barTopFloatingStyle.getString('barWidth')).assertEqual('50.00%');
       console.info('[topFloatingBarStyle_static_0800] END');
       done();
     });
@@ -234,7 +234,7 @@ export default function topFloatingBarStyle(): void {
     /**
      * @tc.name   topFloatingBarStyle_static_0900
      * @tc.number SUB_ARKUI_TABS_TOPFLOATINGBARSTYLE_STATIC_0900
-     * @tc.desc   Test topBarFloatingStyle({maskHeight: '20%'}) percentage value renders correctly
+     * @tc.desc   Test barTopFloatingStyle({maskHeight: '20%'}) percentage value renders correctly
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
@@ -246,9 +246,9 @@ export default function topFloatingBarStyle(): void {
       console.info('[topFloatingBarStyle_static_0900] inspector: ' + strJson);
       expect(strJson.length > 2).assertTrue();
       let obj = JSON.parseJsonElement(strJson);
-      let topBarFloatingStyle = obj.getElement('$attrs').getElement('topBarFloatingStyle');
-      console.info('[topFloatingBarStyle_static_0900] topBarFloatingStyle: ' + JSON.stringify(topBarFloatingStyle));
-      expect(topBarFloatingStyle.getString('maskHeight')).assertEqual('20.00%');
+      let barTopFloatingStyle = obj.getElement('$attrs').getElement('barTopFloatingStyle');
+      console.info('[topFloatingBarStyle_static_0900] barTopFloatingStyle: ' + JSON.stringify(barTopFloatingStyle));
+      expect(barTopFloatingStyle.getString('maskHeight')).assertEqual('20.00%');
       console.info('[topFloatingBarStyle_static_0900] END');
       done();
     });
@@ -256,7 +256,7 @@ export default function topFloatingBarStyle(): void {
     /**
      * @tc.name   topFloatingBarStyle_static_1000
      * @tc.number SUB_ARKUI_TABS_TOPFLOATINGBARSTYLE_STATIC_1000
-     * @tc.desc   Test topBarFloatingStyle({maxWidth: '80%'}) percentage value renders correctly
+     * @tc.desc   Test barTopFloatingStyle({maxWidth: '80%'}) percentage value renders correctly
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
@@ -268,9 +268,9 @@ export default function topFloatingBarStyle(): void {
       console.info('[topFloatingBarStyle_static_1000] inspector: ' + strJson);
       expect(strJson.length > 2).assertTrue();
       let obj = JSON.parseJsonElement(strJson);
-      let topBarFloatingStyle = obj.getElement('$attrs').getElement('topBarFloatingStyle');
-      console.info('[topFloatingBarStyle_static_1000] topBarFloatingStyle: ' + JSON.stringify(topBarFloatingStyle));
-      expect(topBarFloatingStyle.getString('maxWidth')).assertEqual('80.00%');
+      let barTopFloatingStyle = obj.getElement('$attrs').getElement('barTopFloatingStyle');
+      console.info('[topFloatingBarStyle_static_1000] barTopFloatingStyle: ' + JSON.stringify(barTopFloatingStyle));
+      expect(barTopFloatingStyle.getString('maxWidth')).assertEqual('80.00%');
       console.info('[topFloatingBarStyle_static_1000] END');
       done();
     });
@@ -278,7 +278,7 @@ export default function topFloatingBarStyle(): void {
     /**
      * @tc.name   topFloatingBarStyle_static_1100
      * @tc.number SUB_ARKUI_TABS_TOPFLOATINGBARSTYLE_STATIC_1100
-     * @tc.desc   Test topBarFloatingStyle({barSideMargin: '5%', barTopMargin: '2%'}) percentage values render correctly
+     * @tc.desc   Test barTopFloatingStyle({barSideMargin: '5%', barTopMargin: '2%'}) percentage values render correctly
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
@@ -290,10 +290,10 @@ export default function topFloatingBarStyle(): void {
       console.info('[topFloatingBarStyle_static_1100] inspector: ' + strJson);
       expect(strJson.length > 2).assertTrue();
       let obj = JSON.parseJsonElement(strJson);
-      let topBarFloatingStyle = obj.getElement('$attrs').getElement('topBarFloatingStyle');
-      console.info('[topFloatingBarStyle_static_1100] topBarFloatingStyle: ' + JSON.stringify(topBarFloatingStyle));
-      expect(topBarFloatingStyle.getString('barSideMargin')).assertEqual('5.00%');
-      expect(topBarFloatingStyle.getString('barTopMargin')).assertEqual('2.00%');
+      let barTopFloatingStyle = obj.getElement('$attrs').getElement('barTopFloatingStyle');
+      console.info('[topFloatingBarStyle_static_1100] barTopFloatingStyle: ' + JSON.stringify(barTopFloatingStyle));
+      expect(barTopFloatingStyle.getString('barSideMargin')).assertEqual('5.00%');
+      expect(barTopFloatingStyle.getString('barTopMargin')).assertEqual('2.00%');
       console.info('[topFloatingBarStyle_static_1100] END');
       done();
     });
