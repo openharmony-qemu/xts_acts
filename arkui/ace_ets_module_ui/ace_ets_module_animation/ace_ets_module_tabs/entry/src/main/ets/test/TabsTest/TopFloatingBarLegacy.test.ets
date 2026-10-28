@@ -51,7 +51,6 @@ export default function topFloatingBarLegacyTest() {
       console.info('[testTopFloatingBarLegacy001] START');
       let strJson = getInspectorByKey('tabs_legacy_bottom');
       if (softSkipEmpty(strJson, 'testTopFloatingBarLegacy001')) {
-        expect(true).assertTrue();
         done();
         return;
       }
@@ -73,7 +72,6 @@ export default function topFloatingBarLegacyTest() {
       console.info('[testTopFloatingBarLegacy002] START');
       let strJson = getInspectorByKey('tabs_legacy_sidebar');
       if (softSkipEmpty(strJson, 'testTopFloatingBarLegacy002')) {
-        expect(true).assertTrue();
         done();
         return;
       }
@@ -94,7 +92,6 @@ export default function topFloatingBarLegacyTest() {
       console.info('[testTopFloatingBarLegacy003] START');
       let strJson = getInspectorByKey('tabs_legacy_bottom_ignores_top_floating');
       if (softSkipEmpty(strJson, 'testTopFloatingBarLegacy003')) {
-        expect(true).assertTrue();
         done();
         return;
       }

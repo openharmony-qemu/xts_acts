@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, it, Level } from '../../../../hypium/index';
 
 const LOG_TAG = '[tabsApiCoverageAbnormalStaticTest]';
 
@@ -26,7 +26,6 @@ const LOG_TAG = '[tabsApiCoverageAbnormalStaticTest]';
  */
 function softPass(caseName: string): void {
   console.info(`${LOG_TAG} ${caseName} soft-skip: AbnormalStatic page SIGSEGV on CI Phone`);
-  expect(true).assertTrue();
 }
 
 export default function tabsApiCoverageAbnormalStaticTest(): void {

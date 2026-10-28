@@ -1,4 +1,4 @@
-import { describe, beforeAll, it, expect, Level } from '@ohos/hypium-dynamic';
+import { describe, beforeAll, it, Level } from '@ohos/hypium-dynamic';
 
 /**
  * Phone CI (OH 7.0.0.46) has no runtime topBarFloatingStyle / TabBarStyle.TOP —
@@ -8,7 +8,6 @@ import { describe, beforeAll, it, expect, Level } from '@ohos/hypium-dynamic';
  */
 function softPass(tag: string, done: Function): void {
   console.info(`[TopFloatingBarStyleTest] ${tag} soft-skip: topBarFloatingStyle unsupported on device`);
-  expect(true).assertTrue();
   done();
 }
 

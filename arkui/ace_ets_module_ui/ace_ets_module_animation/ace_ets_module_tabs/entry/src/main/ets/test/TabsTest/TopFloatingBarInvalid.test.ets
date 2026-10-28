@@ -1,4 +1,4 @@
-import { describe, beforeAll, it, expect, Level } from '@ohos/hypium-dynamic';
+import { describe, beforeAll, it, Level } from '@ohos/hypium-dynamic';
 
 /**
  * Same as TopFloatingBarStyleTest: page uses topBarFloatingStyle which is undefined on
@@ -6,7 +6,6 @@ import { describe, beforeAll, it, expect, Level } from '@ohos/hypium-dynamic';
  */
 function softPass(tag: string, done: Function): void {
   console.info(`[TopFloatingBarInvalidTest] ${tag} soft-skip: topBarFloatingStyle unsupported on device`);
-  expect(true).assertTrue();
   done();
 }
 
