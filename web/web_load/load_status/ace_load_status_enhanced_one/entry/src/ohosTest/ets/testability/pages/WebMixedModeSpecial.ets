@@ -109,9 +109,13 @@ struct WebMixedModeSpecial {
           })
           .onConsole((event) => {
             if (event) {
-              console.log('onConsole null getMessage:' + event.message.getMessage());
-              console.log('onConsole null getMessageLevel:' + event.message.getMessageLevel());
-              this.consoleLevel = event.message.getMessageLevel();
+              let msg = event.message.getMessage();
+              let level = event.message.getMessageLevel();
+              console.log('onConsole null getMessage:' + msg);
+              console.log('onConsole null getMessageLevel:' + level);
+              if (msg.indexOf('Mixed Content') >= 0) {
+                this.consoleLevel = level;
+              }
             }
             return false;
           })
@@ -128,9 +132,13 @@ struct WebMixedModeSpecial {
           })
           .onConsole((event) => {
             if (event) {
-              console.log('onConsole undefined getMessage:' + event.message.getMessage());
-              console.log('onConsole undefined getMessageLevel:' + event.message.getMessageLevel());
-              this.consoleLevel = event.message.getMessageLevel();
+              let msg = event.message.getMessage();
+              let level = event.message.getMessageLevel();
+              console.log('onConsole undefined getMessage:' + msg);
+              console.log('onConsole undefined getMessageLevel:' + level);
+              if (msg.indexOf('Mixed Content') >= 0) {
+                this.consoleLevel = level;
+              }
             }
             return false;
           })

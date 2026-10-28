@@ -97,8 +97,10 @@ struct Index {
           let lineNumber = event.message.getLineNumber().toString();
           let sourceId = event.message.getSourceId();
           console.log("lineNumber:" + lineNumber);
-          Utils.emitEvent(lineNumber, 171320);
-          Utils.emitEvent(sourceId, 171330);
+          if (msg === 'console test') {
+            Utils.emitEvent(lineNumber, 171320);
+            Utils.emitEvent(sourceId, 171330);
+          }
           return false;
         })
         .onPageEnd((event) => {
