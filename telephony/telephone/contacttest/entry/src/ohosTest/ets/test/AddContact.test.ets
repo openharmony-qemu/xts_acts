@@ -3627,7 +3627,7 @@ export default function AddContactTest() {
                   console.info(`${caseName} queryContact: success data->${JSON.stringify(queryData)}`);
                   let resDate: contact.Contact = queryData;
                   if (resDate.significantDates !== undefined) {
-                    ExpectTrue(resDate.significantDates > 0);
+                    ExpectTrue(resDate.significantDates.length > 0);
                     done();
                   } else {
                     ExpectFail();
