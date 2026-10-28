@@ -1359,7 +1359,6 @@ export default function btHidTest(): void {
           });
           hilog.info(domain, tag, "[bluetooth_js]hid registerHidDevice RH 0100 is called ");
           await sleep(1000);
-          expect(true).assertTrue();
         } catch (err) {
           hilog.error(domain, tag,
             "[bluetooth_js]hid registerHidDevice is fail , errCode:" + err.code + ",errMessage:" + err.message);
@@ -1400,7 +1399,6 @@ export default function btHidTest(): void {
           });
           hilog.info(domain, tag, "[bluetooth_js]hid registerHidDevice RH 0200 is called ");
           await sleep(1000);
-          expect(true).assertTrue();
         } catch (err) {
           hilog.error(domain, tag,
             "[bluetooth_js]hid registerHidDevice is fail , errCode:" + err.code + ",errMessage:" + err.message);
@@ -1441,7 +1439,6 @@ export default function btHidTest(): void {
           });
           hilog.info(domain, tag, "[bluetooth_js]hid registerHidDevice RH 0300 is called ");
           await sleep(1000);
-          expect(true).assertTrue();
         } catch (err) {
           hilog.error(domain, tag,
             "[bluetooth_js]hid registerHidDevice is fail , errCode:" + err.code + ",errMessage:" + err.message);
@@ -1482,7 +1479,6 @@ export default function btHidTest(): void {
           });
           hilog.info(domain, tag, "[bluetooth_js]hid registerHidDevice RH 0400 is called ");
           await sleep(1000);
-          expect(true).assertTrue();
         } catch (err) {
           hilog.error(domain, tag,
             "[bluetooth_js]hid registerHidDevice is fail , errCode:" + err.code + ",errMessage:" + err.message);
