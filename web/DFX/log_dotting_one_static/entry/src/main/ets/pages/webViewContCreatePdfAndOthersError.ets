@@ -23,7 +23,7 @@ import webview from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import { Driver, ON, On } from '@ohos.UiTest';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { Hypium } from "../../../hypium/index";
+import { Hypium } from "@ohos/hypium-static/src/main/indexStatic";
 import { BusinessError, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 

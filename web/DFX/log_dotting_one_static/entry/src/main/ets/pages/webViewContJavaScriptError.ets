@@ -20,7 +20,7 @@ import Utils from '../../src/test/Util.test';
 import events_emitter from '@ohos.events.emitter';
 import emitter from '@ohos.events.emitter';
 import { Callback, RecordData } from '@ohos.base'
-import { Hypium } from '../../../hypium/index';
+import { Hypium } from '@ohos/hypium-static/src/main/indexStatic';
 import testsuite from '../../src/test/List.test';
 import { BusinessError } from '@ohos.base';
 import web_webview from '@ohos.web.webview';

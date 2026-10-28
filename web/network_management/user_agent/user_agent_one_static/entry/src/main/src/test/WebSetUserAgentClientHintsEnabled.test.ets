@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {beforeAll, beforeEach, describe, it, Level, Size, TestType, expect } from '../../../hypium/index';
+import {beforeAll, beforeEach, describe, it, Level, Size, TestType, expect } from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from './Util.test';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import {BusinessError, RecordData } from '@ohos.base';
