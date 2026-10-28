@@ -24,7 +24,7 @@ import {
 } from '@ohos.multimodalInput.gestureEvent';
 import hilog from '@ohos.hilog';
 import { BusinessError } from "@ohos.base";
-import { describe, it, expect, TestType, Size, Level } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level } from "@ohos/hypium-static/src/main/indexStatic";
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';

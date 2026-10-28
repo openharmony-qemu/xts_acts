@@ -19,7 +19,7 @@ import Want from '@ohos.app.ability.Want';
 import { BusinessError } from '@ohos.base';
 import launcherBundleManager from '@ohos.bundle.launcherBundleManager';
 import bundleManager from '@ohos.bundle.bundleManager';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect ,TestType ,Size ,Level } from "../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect ,TestType ,Size ,Level } from "@ohos/hypium-static/src/main/indexStatic";
 import { BundleInfo } from 'bundleManager.BundleInfo';
 
 let abilityFlags = bundleManager.AbilityFlag.GET_ABILITY_INFO_DEFAULT;

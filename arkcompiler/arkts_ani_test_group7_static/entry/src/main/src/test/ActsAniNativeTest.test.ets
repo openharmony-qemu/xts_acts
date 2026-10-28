@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level } from "@ohos/hypium-static/src/main/indexStatic";
 import { Foo } from '../ets/Index';
 import { testAniDynamicRegistration, dynAdd, dynSub } from './NativeBindings';
 import { hidebug } from '@kit.PerformanceAnalysisKit';

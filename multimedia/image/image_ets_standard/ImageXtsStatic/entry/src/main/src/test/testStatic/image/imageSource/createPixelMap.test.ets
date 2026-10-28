@@ -15,7 +15,7 @@
  */
 
 import { Context } from '@kit.AbilityKit';
-import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll,Hypium } from '../../../../../../hypium/index';
+import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll,Hypium } from '@ohos/hypium-static/src/main/indexStatic';
 import { image } from '@kit.ImageKit';
 import { fileIo as fs } from '@kit.CoreFileKit';
 

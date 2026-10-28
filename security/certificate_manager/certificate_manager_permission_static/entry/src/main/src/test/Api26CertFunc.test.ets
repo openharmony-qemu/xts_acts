@@ -15,7 +15,7 @@
  */
 
 import { BusinessError } from '@ohos.base';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium-static/src/main/indexStatic";
 import certManagerDialog from '@ohos.security.certManagerDialog';
 import hilog from '@ohos.hilog';
 

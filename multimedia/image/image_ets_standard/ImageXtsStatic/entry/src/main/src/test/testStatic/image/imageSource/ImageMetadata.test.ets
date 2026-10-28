@@ -15,7 +15,7 @@
  */
 import { image } from '@kit.ImageKit';
 import fs from '@ohos.file.fs';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect,Hypium, it, Level} from '../../../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect,Hypium, it, Level} from '@ohos/hypium-static/src/main/indexStatic';
 import { common } from '@kit.AbilityKit';
 const TAG = 'xts_static_ImageMetadataTest'
 export default function ImageMetadataTestStatic(): void {

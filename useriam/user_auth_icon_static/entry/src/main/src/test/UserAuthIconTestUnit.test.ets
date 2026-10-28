@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import  hilog  from '@ohos.hilog';
-import { describe, it, expect, Level, TestType, Size, beforeAll } from '../../../hypium/index';
+import { describe, it, expect, Level, TestType, Size, beforeAll } from '@ohos/hypium-static/src/main/indexStatic';
 import { Driver,ON, Component } from '@ohos.UiTest';
 import Utils from './Util.test';
 import { abilityDelegatorRegistry } from '@kit.TestKit';

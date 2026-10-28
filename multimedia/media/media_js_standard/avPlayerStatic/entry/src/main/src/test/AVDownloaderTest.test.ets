@@ -15,7 +15,7 @@
  */
 
 import media from '@ohos.multimedia.media'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "@ohos/hypium-static/src/main/indexStatic";
 
 const TAG = 'AVDownloaderTest';
 const TEST_URL = 'http://1.95.223.57/vod/www/faststart/720p_2m.mp4';

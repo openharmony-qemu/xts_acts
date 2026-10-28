@@ -25,7 +25,7 @@ import {
   beforeEach,
   afterEach,
   afterAll
-} from "../../../hypium/index";
+} from "@ohos/hypium-static/src/main/indexStatic";
 import hilog from '@ohos.hilog'
 import relationalStore from '@ohos.data.relationalStore'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';

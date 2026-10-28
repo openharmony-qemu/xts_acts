@@ -18,7 +18,7 @@ import hilog from '@ohos.hilog';
 import { BusinessError } from '@ohos.base';
 import { BundleInfo } from 'bundleManager.BundleInfo';
 import bundleManager from '@ohos.bundle.bundleManager';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium-static/src/main/indexStatic";
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';

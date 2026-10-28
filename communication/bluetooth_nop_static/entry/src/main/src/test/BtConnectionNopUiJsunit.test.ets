@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from "../../../hypium";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from "@ohos/hypium-static/src/main/indexStatic";
 import connection from '@ohos.bluetooth.connection';
 import hilog from '@ohos.hilog';
 import constant from '@ohos.bluetooth.constant';

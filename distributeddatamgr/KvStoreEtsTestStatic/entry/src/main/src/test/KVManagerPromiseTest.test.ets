@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "@ohos/hypium-static/src/main/indexStatic";
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import factory from '@ohos.data.distributedKVStore'
 import dataShare from '@ohos.data.dataSharePredicates'

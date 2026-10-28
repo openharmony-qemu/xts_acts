@@ -17,7 +17,7 @@
 import hilog from '@ohos.hilog';
 import { BusinessError } from '@ohos.base';
 import bundle from '@ohos.bundle.bundleManager';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium-static/src/main/indexStatic";
 
 const ERROR_SCHEME_NOT_IN_QUERYSCHEMES: int = 17700056;
 const ERROR_INVALID_LINK: int = 17700055;

@@ -15,7 +15,7 @@
  */
 
 import connection from '@ohos.net.connection';
-import { describe, expect, it , TestType, Size, Level, beforeEach } from "../../../hypium/index";
+import { describe, expect, it , TestType, Size, Level, beforeEach } from "@ohos/hypium-static/src/main/indexStatic";
 import { BusinessError } from '@ohos.base';
 import util from './CommonUtils.test';
 import hilog from '@ohos.hilog';

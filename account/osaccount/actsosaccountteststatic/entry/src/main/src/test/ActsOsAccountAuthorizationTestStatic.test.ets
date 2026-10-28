@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { authorization } from '@kit.BasicServicesKit'
-import { describe, it, expect, beforeEach, beforeAll, TestType, Size, Level } from "../../../hypium/index";
+import { describe, it, expect, beforeEach, beforeAll, TestType, Size, Level } from "@ohos/hypium-static/src/main/indexStatic";
 import common from '@ohos.app.ability.common';
 import { Driver, ON, Component, Rect } from '@ohos.UiTest';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import socket from '@ohos.net.socket'
-import { describe, it, expect, Level, Size, TestType, afterEach } from "../../../hypium/index";
+import { describe, it, expect, Level, Size, TestType, afterEach } from "@ohos/hypium-static/src/main/indexStatic";
 import { BusinessError } from "@ohos.base";
 import hilog from '@ohos.hilog';
 
