@@ -40,7 +40,7 @@ import {
   TestType,
   Size,
   Level
-} from '../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import Context from "application.Context"
 import image from '@ohos.multimedia.image';
 

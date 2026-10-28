@@ -26,7 +26,7 @@ import {
   TestType,
   Size,
   Level
-} from '../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import hilog from '@ohos.hilog';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识

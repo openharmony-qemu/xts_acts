@@ -26,7 +26,7 @@ import {
   Hypium,
   TestType,
   Size,
-} from '../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import { camera } from '@kit.CameraKit';
 import { getFd, getPermission, isEmpty, resourceName } from '../Common.test';
 import media from '@ohos.multimedia.media';

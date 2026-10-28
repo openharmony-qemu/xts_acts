@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from "../../../hypium";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from "@ohos/hypium-static/src/main/indexStatic";
 import baseProfile from '@ohos.bluetooth.baseProfile';
 import a2dp from '@ohos.bluetooth.a2dp';
 import pan from '@ohos.bluetooth.pan';

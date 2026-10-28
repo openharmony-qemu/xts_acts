@@ -15,7 +15,7 @@
  */
 
 import { image } from '@kit.ImageKit';
-import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '../../../../../../hypium/index';
+import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium-static/src/main/indexStatic';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 const TAG = '[ImageCreator].dequeueImage';

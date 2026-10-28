@@ -15,7 +15,7 @@
  */
 
 import Context from "application.Context"
-import { describe, it, expect, TestType, Size, Level, Hypium, beforeAll } from '../../../../hypium/index'
+import { describe, it, expect, TestType, Size, Level, Hypium, beforeAll } from '@ohos/hypium-static/src/main/indexStatic'
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import { fetchOption, getPermission, driveFn, checkResourceFile, createResource } from '../Common.test.ets';
 

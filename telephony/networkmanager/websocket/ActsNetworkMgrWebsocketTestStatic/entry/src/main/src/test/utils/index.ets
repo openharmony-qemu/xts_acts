@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { expect } from '../../../../hypium/index';
+import { expect } from '@ohos/hypium-static/src/main/indexStatic';
 import util from '@ohos.util';
 
 export function expectFail(info: string = ''): void {

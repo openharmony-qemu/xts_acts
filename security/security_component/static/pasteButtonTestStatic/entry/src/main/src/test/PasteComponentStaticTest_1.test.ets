@@ -24,7 +24,7 @@ import {
     TestType,
     Size,
     Level
-} from "../../../hypium/index";
+} from "@ohos/hypium-static/src/main/indexStatic";
 import router from '@ohos.router';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import events_emitter from '@ohos.events.emitter';

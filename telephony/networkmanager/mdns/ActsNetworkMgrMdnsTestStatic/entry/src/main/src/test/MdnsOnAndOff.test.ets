@@ -23,7 +23,7 @@ import {
   Level,
   TestType,
   afterEach,
-} from "../../../hypium/index";
+} from "@ohos/hypium-static/src/main/indexStatic";
 import mdns from '@ohos.net.mdns';
 import hilog from '@ohos.hilog';
 import Context from "application.Context";

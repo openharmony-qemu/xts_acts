@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeEach, beforeAll, TestType, Size, Level } from "../../../hypium/index";
+import { describe, it, expect, beforeEach, beforeAll, TestType, Size, Level } from "@ohos/hypium-static/src/main/indexStatic";
 import { BusinessError } from '@ohos.base';
 import webSocket from '@ohos.net.webSocket';
 import getWebsite from './utils/WsWebsite';

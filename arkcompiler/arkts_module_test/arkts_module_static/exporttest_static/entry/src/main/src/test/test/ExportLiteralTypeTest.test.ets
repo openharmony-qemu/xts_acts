@@ -14,7 +14,7 @@
 * limitations under the License.
 */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-static/src/main/indexStatic';
 import { StatusLiteral, NumOrNullish, StrOrNullish } from '../exports_literal/LiteralExport';
 import { sleep } from '../utils/Utils';
 

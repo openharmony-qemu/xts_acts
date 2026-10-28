@@ -26,7 +26,7 @@ import {
   expect,
   Level,
   Hypium
-} from '../../../../../../hypium/index';
+} from '@ohos/hypium-static/src/main/indexStatic';
 import { Context } from '@kit.AbilityKit';
 import { BusinessError } from '@ohos.base';
 

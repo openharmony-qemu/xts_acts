@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { image } from '@kit.ImageKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '../../../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '@ohos/hypium-static/src/main/indexStatic';
 
 const TAG = 'ImageXts.createImagePacker';
 

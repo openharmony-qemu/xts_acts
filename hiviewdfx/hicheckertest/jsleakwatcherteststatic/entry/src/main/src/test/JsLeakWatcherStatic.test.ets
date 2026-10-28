@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, TestType, Level, Size } from "../../../hypium/index"
+import { describe, expect, it, TestType, Level, Size } from "@ohos/hypium-static/src/main/indexStatic"
 import jsLeakWatcher from '@ohos.hiviewdfx.jsLeakWatcher';
 import { BusinessError } from '@ohos.base'
 import { common} from '@kit.AbilityKit';

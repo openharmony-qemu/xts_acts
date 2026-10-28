@@ -1,5 +1,5 @@
 'use static';
-import { describe, it, expect, Level, TestType, Size } from "../../../hypium/index";
+import { describe, it, expect, Level, TestType, Size } from "@ohos/hypium-static/src/main/indexStatic";
 import { BusinessError } from '@ohos.base';
 import connection from '@ohos.net.connection';
 import hilog from '@ohos.hilog';

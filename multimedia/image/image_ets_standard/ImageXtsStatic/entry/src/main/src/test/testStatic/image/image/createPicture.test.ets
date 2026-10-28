@@ -16,7 +16,7 @@
 
 
 import { image } from '@kit.ImageKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Hypium } from '../../../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Hypium } from '@ohos/hypium-static/src/main/indexStatic';
 import { Context } from '@kit.AbilityKit';
 
 const TAG = 'ImageXts.createPicture';
