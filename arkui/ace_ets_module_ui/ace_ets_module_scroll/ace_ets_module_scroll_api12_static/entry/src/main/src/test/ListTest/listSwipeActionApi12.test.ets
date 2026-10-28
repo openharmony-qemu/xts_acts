@@ -64,10 +64,10 @@ it('listSwipeActionApi12Test_static_001', Level.LEVEL1, async (done: () => void)
       await driver.swipeBetween(
         { x: (Math.round(rect.left + uiContext.vp2px(50))).toInt(),
           y: (Math.round((rect.top + rect.bottom) / 2)).toInt(),
-          displayId: displayID.toInt() },
+          displayId: displayId.toInt() },
         { x: (Math.round(rect.left + uiContext.vp2px(200))).toInt(),
           y: (Math.round((rect.top + rect.bottom) / 2)).toInt(),
-          displayId: displayID.toInt() });
+          displayId: displayId.toInt() });
       console.info('listSwipeActionApi12Test_static_003 START');
       await CommonFunc.sleep(5000);
       let strJson1 = inspector.getInspectorByKey('ListTestApi12_2');
