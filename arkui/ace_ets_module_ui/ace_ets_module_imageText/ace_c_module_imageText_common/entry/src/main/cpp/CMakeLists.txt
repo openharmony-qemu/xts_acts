@@ -16,6 +16,7 @@ add_library(nativerender SHARED
     TextCommon/TextCommonEnumTest.cpp
     TextArea/TextAreaEnumTest.cpp
     TextInput/TextInputEnumTest.cpp
+    Richeditor/RichEditorEnumTest.cpp
 )
 
 add_library(nativefunc SHARED
