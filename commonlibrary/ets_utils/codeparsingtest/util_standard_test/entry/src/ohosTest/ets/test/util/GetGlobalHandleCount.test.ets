@@ -985,7 +985,7 @@ export default function getGlobalHandleCountTest() {
         expect(current >= threshold).assertTrue();
         if (current >= threshold) {
           console.info(`${TAG} count exceeded threshold, triggering heap profiler`);
-          hidebug.dumpJsHeapData(SNAPSHOT_NAME, false);
+          hidebug.dumpJsHeapData(SNAPSHOT_NAME, true);
           let filesDir: string = '/data/storage/el2/base/files/';
           let files: string[] = fs.listFileSync(filesDir);
           let found = false;
@@ -1042,7 +1042,7 @@ export default function getGlobalHandleCountTest() {
         expect(current >= threshold).assertTrue();
         if (current >= threshold) {
           console.info(`${TAG} count exceeded threshold, triggering heap profiler`);
-          hidebug.dumpJsHeapData(SNAPSHOT_NAME, false);
+          hidebug.dumpJsHeapData(SNAPSHOT_NAME, true);
           let filesDir: string = '/data/storage/el2/base/files/';
           let files: string[] = fs.listFileSync(filesDir);
           let found = false;
@@ -1107,7 +1107,7 @@ export default function getGlobalHandleCountTest() {
         expect(current >= threshold).assertTrue();
         if (current >= threshold) {
           console.info(`${TAG} count exceeded threshold, triggering heap profiler`);
-          hidebug.dumpJsHeapData(SNAPSHOT_NAME, false);
+          hidebug.dumpJsHeapData(SNAPSHOT_NAME, true);
           let filesDir: string = '/data/storage/el2/base/files/';
           let files: string[] = fs.listFileSync(filesDir);
           let found = false;

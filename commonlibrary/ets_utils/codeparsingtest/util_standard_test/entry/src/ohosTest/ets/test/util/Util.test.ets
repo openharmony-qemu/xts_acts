@@ -66,7 +66,11 @@ async function dumpAndCheckMtEvent(
   try {
     testNapi.saveMainEnv();
     testNapi.createSubEnv();
-    testNapi.add(2, 3);
+    try {
+      testNapi.add(2, 3);
+    } finally {
+      try { testNapi.destroyEnv(); } catch (e) { }
+    }
     const deadline: number = Date.now() + 5000;
     while (matchedEvents.length === 0 && Date.now() < deadline) {
       await sleep(200);
@@ -74,7 +78,6 @@ async function dumpAndCheckMtEvent(
     expect(matchedEvents.length).assertLarger(0);
     return matchedEvents;
   } finally {
-    try { testNapi.destroyEnv(); } catch (e) { }
     hiAppEvent.removeWatcher(watcher);
   }
 }
