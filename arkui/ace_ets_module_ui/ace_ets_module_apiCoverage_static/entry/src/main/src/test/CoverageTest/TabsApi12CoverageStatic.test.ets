@@ -79,9 +79,9 @@ export default function tabsApi12CoverageStaticTest(): void {
      * @tc.level LEVEL1
      */
     it('SUB_ARKUI_TABS_API12_STATIC_TABVIS_VISIBLE_0100', Level.LEVEL1, async () => {
-      // 参数规格: page binds `${TabVisibility.VISIBLE}` into Text (not bare expect(enum))
+      // Spec: page binds TabVisibility.VISIBLE into Text (not bare expect(enum))
       expect(readContent('tabsApi12_visVisibleSpec')).assertEqual('0');
-      // 调用+入参: real TabContent.tabBarVisibility(VISIBLE, SIDEBAR)
+      // Call+args: real TabContent.tabBarVisibility(VISIBLE, SIDEBAR)
       expect(nodeMounted('tabsApi12_tabVisible')).assertTrue();
       expect(readContent('tabsApi12_tabVisParamVisible')).assertEqual('vis=0,mode=1');
       expect(readAttrString('tabsApi12_tabs', 'barStyle').indexOf('SIDEBAR') >= 0).assertTrue();
@@ -110,10 +110,10 @@ export default function tabsApi12CoverageStaticTest(): void {
      * @tc.level LEVEL1
      */
     it('SUB_ARKUI_TABS_API12_STATIC_TABBARVIS_0300', Level.LEVEL1, async () => {
-      // 参数规格 via page Text bound from TabBarDisplayMode enums used in real calls
+      // Spec via page Text bound from TabBarDisplayMode used in real calls
       expect(readContent('tabsApi12_modeBottomSpec')).assertEqual('0');
       expect(readContent('tabsApi12_modeSidebarSpec')).assertEqual('1');
-      // 入参组合 (same values as chained .tabBarVisibility on three TabContents)
+      // Arg combos (same values as chained .tabBarVisibility on three TabContents)
       expect(readContent('tabsApi12_tabVisParamVisible')).assertEqual('vis=0,mode=1');
       expect(readContent('tabsApi12_tabVisParamHidden')).assertEqual('vis=1,mode=0');
       expect(readContent('tabsApi12_tabVisParamUndefMode')).assertEqual('vis=0,mode=undefined');
@@ -161,10 +161,10 @@ export default function tabsApi12CoverageStaticTest(): void {
     it('SUB_ARKUI_TABS_API12_STATIC_SIDEBARSEARCH_0600', Level.LEVEL1, async () => {
       expect(nodeMounted('tabsApi12_tabs')).assertTrue();
       expect(readAttrString('tabsApi12_tabs', 'barStyle').indexOf('SIDEBAR') >= 0).assertTrue();
-      // 入参 literals actually passed into .sidebarSearchable({...})
+      // Arg literals actually passed into .sidebarSearchable({...})
       expect(readContent('tabsApi12_searchOptSpec'))
         .assertEqual('searchText=api12cov|placeholder=api12search');
-      // 同一 callback/filter 实调：入参 + filter 返回值
+      // Same callback/filter invoked: args + filter return
       expect(readContent('tabsApi12_searchProbeCb')).assertEqual('api12cov');
       expect(readContent('tabsApi12_searchProbeFilter')).assertEqual('0:api12probe');
       expect(readContent('tabsApi12_searchProbeRet')).assertEqual('true');
@@ -184,7 +184,7 @@ export default function tabsApi12CoverageStaticTest(): void {
       expect(
         barStyle === 'TabBarStyle.SIDEBAR_ADAPTABLE' || barStyle === 'TabBarStyle.SIDEBAR'
       ).assertTrue();
-      // 入参/参数规格: same sm/md/lg enums as .barDisplayModeBreakpoint({...})
+      // Args/spec: same sm/md/lg enums as .barDisplayModeBreakpoint({...})
       expect(readContent('tabsApi12_bpSpecFlag')).assertEqual('sm=0,md=1,lg=1');
     });
 
