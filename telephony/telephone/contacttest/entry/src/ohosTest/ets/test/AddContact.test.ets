@@ -3562,6 +3562,86 @@ export default function AddContactTest() {
       console.info(`${caseName} test end `);
     });
 
+      /**
+     * @tc.name   testTelephonyContactaddContact2500
+     * @tc.number SUB_Telephony_Contact_addContact_2500
+     * @tc.desc   add a contact and useing the promise method as an asynchronous method 10+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testTelephonyContactaddContact2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      const caseName: string = "testTelephonyContactaddContact2500";
+      console.info(`${caseName} test start `);
+      let context: Context = AppStorage.get('context') as Context;
+      sleep(500);
+      let contactInfo: contact.Contact = {
+        emails: [{
+          email: "13800000000@email.com", labelName: "自定义邮箱", labelId: 1, displayName: "emailDisplayName"
+        }],
+        significantDates: [
+          { dateValue: "2020-01-01", dateName: "自定义", dateType: contact.SignificantDateType.DATE_TYPE_BIRTHDAY },
+          { dateValue: "2020-02-01", dateName: "自定义", dateType: contact.SignificantDateType.DATE_TYPE_OTHER },
+          { dateValue: "2020-03-01", dateName: "自定义", dateType: contact.SignificantDateType.DATE_TYPE_LUNAR_BIRTHDAY },
+          { dateValue: "2020-04-01", dateName: "自定义", dateType: contact.SignificantDateType.DATE_TYPE_ANNIVERSARY }
+          ],
+        phoneNumbers: [{
+          phoneNumber: "13800000000", labelName: "自定义phoneNumbers", labelId: 4
+        }],
+        name: {
+          familyName: "familyName",
+          familyNamePhonetic: "familyNamePhonetic",
+          fullName: "小李",
+          givenName: "givenName",
+          givenNamePhonetic: "givenNamePhonetic",
+          middleName: "middleName",
+          middleNamePhonetic: "middleNamePhonetic",
+          namePrefix: "namePrefix",
+          nameSuffix: "nameSuffix"
+        },
+      };
+      contact.addContact(context, contactInfo, (err: BusinessError, data: number) => {
+        sleep(500);
+        if (err) {
+          console.log(`${caseName} addContact:err->${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        } else {
+          console.log(`${caseName} addContact:success->${JSON.stringify(data)}`);
+          ExpectTrue(data > 0);
+          contact.queryKey(context, data, (err: BusinessError, key: string) => {
+            if (err) {
+              console.log(`${caseName} queryKey: err->${JSON.stringify(err)}`);
+              ExpectFail();
+              done();
+            } else {
+              console.log(`${caseName} queryKey: success->${JSON.stringify(key)}`);
+              ExpectTrue(key.length != 0);
+              console.info(`${caseName} queryKey: success data->${JSON.stringify(key)}`);
+              contact.queryContact(context, key, (queryErr: BusinessError, queryData: contact.Contact) => {
+                if (queryErr) {
+                  console.info(`${caseName} queryContact: err->${JSON.stringify(queryErr)}`);
+                  ExpectFail();
+                  done();
+                } else {
+                  console.info(`${caseName} queryContact: success data->${JSON.stringify(queryData)}`);
+                  let resDate: contact.Contact = queryData;
+                  if (resDate.significantDates !== undefined) {
+                    ExpectTrue(resDate.significantDates.length > 0);
+                    done();
+                  } else {
+                    ExpectFail();
+                    done();
+                  }
+                }
+              });
+            }
+          });
+        }
+      });
+      console.info(`${caseName} test end `);
+    });
+
 
   })
 }
