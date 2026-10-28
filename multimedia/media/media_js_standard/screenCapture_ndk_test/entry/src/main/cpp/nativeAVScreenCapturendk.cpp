@@ -1349,6 +1349,44 @@ static napi_value normalAVScreenCaptureStrategyForMicAECVal(napi_env env, napi_c
     return res;
 }
 
+// SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_CONTENT_AUTO_PAUSE_SCENES_0100
+static napi_value normalAVScreenCaptureStrategyForContentAutoPauseScenes(napi_env env, napi_callback_info info)
+{
+    screenCaptureNormal = OH_AVScreenCapture_Create();
+    if (screenCaptureNormal == nullptr) {
+        napi_throw_error((env), nullptr, "error : expect screenCaptureNormal is not nullptr");
+    }
+    // 测试错误码：strategy is nullptr
+    OH_AVScreenCapture_CaptureStrategy* strategyNull = nullptr;
+    OH_AVSCREEN_CAPTURE_ErrCode result0 = OH_AVScreenCapture_StrategyForContentAutoPauseScenes(
+        strategyNull, OH_CAPTURE_AUTO_PAUSE_SCENE_SCREEN_FOLD_STATE_CHANGE);
+    OH_LOG_INFO(LOG_APP, "StrategyForContentAutoPauseScenes result0 = %{public}d", result0);
+    if (result0 != AV_SCREEN_CAPTURE_ERR_INVALID_VAL) {
+        napi_throw_error((env), nullptr, "error : expect StrategyForContentAutoPauseScenes is INVALID_VAL");
+    }
+
+    OH_AVScreenCapture_CaptureStrategy* strategy = OH_AVScreenCapture_CreateCaptureStrategy();
+    OH_AVSCREEN_CAPTURE_ErrCode result = OH_AVScreenCapture_StrategyForContentAutoPauseScenes(strategy,
+        OH_CAPTURE_AUTO_PAUSE_SCENE_SCREEN_FOLD_STATE_CHANGE);
+    OH_LOG_INFO(LOG_APP, "StrategyForContentAutoPauseScenes result = %{public}d", result);
+    if (result == AV_SCREEN_CAPTURE_ERR_OK) {
+        result = OH_AVScreenCapture_SetCaptureStrategy(screenCaptureNormal, strategy);
+    }
+    if (result == AV_SCREEN_CAPTURE_ERR_OK) {
+        result = OH_AVScreenCapture_ReleaseCaptureStrategy(strategy);
+    }
+    if (screenCaptureNormal) {
+        result = OH_AVScreenCapture_Release(screenCaptureNormal);
+    }
+    int resCapture = TEST_FAILED;
+    if (result == AV_SCREEN_CAPTURE_ERR_OK && result0 == AV_SCREEN_CAPTURE_ERR_INVALID_VAL) {
+        resCapture = TEST_PASS;
+    }
+    napi_value res;
+    napi_create_int32(env, resCapture, &res);
+    return res;
+}
+
 static napi_value normalAVScreenCaptureStrategyForKeepCaptureDuringCallTrue(napi_env env, napi_callback_info info)
 {
     screenCaptureNormal = OH_AVScreenCapture_Create();
@@ -3538,6 +3576,8 @@ static napi_value Init(napi_env env, napi_value exports)
             normalAVScreenCaptureStrategyForMicAECFalse, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"normalAVScreenCaptureStrategyForMicAECVal", nullptr,
             normalAVScreenCaptureStrategyForMicAECVal, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"normalAVScreenCaptureStrategyForContentAutoPauseScenes", nullptr,
+            normalAVScreenCaptureStrategyForContentAutoPauseScenes, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
