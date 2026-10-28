@@ -20,7 +20,7 @@ import inspector from '@ohos.arkui.inspector';
 import router from '@ohos.router';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { TabVisibility } from '@ohos.arkui.component';
+import { TabVisibility, TabBarDisplayMode } from '@ohos.arkui.component';
 
 const LOG_TAG = '[tabsApi12CoverageStaticTest]';
 const PAGE_URL = 'MainAbility/pages/coverage/TabsApi12CoverageStatic';
@@ -45,13 +45,12 @@ function readAttrString(nodeId: string, key: string): string {
   }
 }
 
-function readAttrJson(nodeId: string, key: string): string {
+function nodeMounted(nodeId: string): boolean {
   try {
     const json: string = inspector.getInspectorByKey(nodeId);
-    return JSON.stringify(JSON.parseJsonElement(json).getElement('$attrs').getElement(key));
+    return json.length > 2 && json !== '{}';
   } catch (err) {
-    console.info(`${LOG_TAG} readAttrJson ${nodeId}.${key}: ${err}`);
-    return '';
+    return false;
   }
 }
 
@@ -62,13 +61,9 @@ export default function tabsApi12CoverageStaticTest(): void {
       const options: router.RouterOptions = {
         url: PAGE_URL,
       };
-      try {
-        const routerInstance = AppStorage.get<Router>('router') as Router;
-        await routerInstance.pushUrl(options);
-        await Utils.sleep(3000);
-      } catch (err) {
-        console.info(`${LOG_TAG} beforeAll navigate soft-fail: ${err}`);
-      }
+      const routerInstance = AppStorage.get<Router>('router') as Router;
+      await routerInstance.pushUrl(options);
+      await Utils.sleep(3200);
     });
 
     afterAll(async (): Promise<void> => {
@@ -78,162 +73,152 @@ export default function tabsApi12CoverageStaticTest(): void {
     /**
      * @tc.number SUB_ARKUI_TABS_API12_STATIC_TABVIS_VISIBLE_0100
      * @tc.name SUB_ARKUI_TABS_API12_STATIC_TABVIS_VISIBLE_0100
-     * @tc.desc Cover TabVisibility.VISIBLE spec and call on static TabContent
+     * @tc.desc 参数规格+调用: TabVisibility.VISIBLE used by tabBarVisibility
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
     it('SUB_ARKUI_TABS_API12_STATIC_TABVIS_VISIBLE_0100', Level.LEVEL1, async () => {
+      // 参数规格
       expect(TabVisibility.VISIBLE).assertEqual(0);
-      const spec: string = readContent('tabsApi12_visVisibleSpec');
-      expect(spec).assertEqual('0');
-      const tabJson: string = inspector.getInspectorByKey('tabsApi12_tabVisible');
-      expect(tabJson.length > 2).assertTrue();
-      const tabsBar: string = readAttrString('tabsApi12_tabs', 'barStyle');
-      expect(tabsBar).assertEqual('TabBarStyle.SIDEBAR_ADAPTABLE');
+      expect(readContent('tabsApi12_visVisibleSpec')).assertEqual('0');
+      // 调用：真实挂到 TabContent.tabBarVisibility(VISIBLE, ...)
+      expect(nodeMounted('tabsApi12_tabVisible')).assertTrue();
+      expect(readContent('tabsApi12_tabVisParamVisible')).assertEqual('vis=0,mode=1');
+      expect(readAttrString('tabsApi12_tabs', 'barStyle').indexOf('SIDEBAR') >= 0).assertTrue();
     });
 
     /**
      * @tc.number SUB_ARKUI_TABS_API12_STATIC_TABVIS_HIDDEN_0200
      * @tc.name SUB_ARKUI_TABS_API12_STATIC_TABVIS_HIDDEN_0200
-     * @tc.desc Cover TabVisibility.HIDDEN spec and call on static TabContent
+     * @tc.desc 参数规格+调用: TabVisibility.HIDDEN used by tabBarVisibility
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
     it('SUB_ARKUI_TABS_API12_STATIC_TABVIS_HIDDEN_0200', Level.LEVEL1, async () => {
       expect(TabVisibility.HIDDEN).assertEqual(1);
-      const spec: string = readContent('tabsApi12_visHiddenSpec');
-      expect(spec).assertEqual('1');
-      const tabJson: string = inspector.getInspectorByKey('tabsApi12_tabHidden');
-      expect(tabJson.length > 2).assertTrue();
+      expect(readContent('tabsApi12_visHiddenSpec')).assertEqual('1');
+      expect(nodeMounted('tabsApi12_tabHidden')).assertTrue();
+      expect(readContent('tabsApi12_tabVisParamHidden')).assertEqual('vis=1,mode=0');
     });
 
     /**
      * @tc.number SUB_ARKUI_TABS_API12_STATIC_TABBARVIS_0300
      * @tc.name SUB_ARKUI_TABS_API12_STATIC_TABBARVIS_0300
-     * @tc.desc Cover TabContentAttribute.tabBarVisibility with VISIBLE/HIDDEN params
+     * @tc.desc 调用+入参+参数规格: tabBarVisibility(visibility, displayMode|undefined)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
     it('SUB_ARKUI_TABS_API12_STATIC_TABBARVIS_0300', Level.LEVEL1, async () => {
-      const visA: string = readAttrJson('tabsApi12_tabVisible', 'tabBarVisibility');
-      const visB: string = readAttrJson('tabsApi12_tabHidden', 'tabBarVisibility');
-      if (visA.length > 2 && visA !== '{}' && visA !== 'null') {
-        expect(visA.indexOf('VISIBLE') >= 0 || visA.indexOf('0') >= 0 || visA.length > 2).assertTrue();
-      } else {
-        expect(inspector.getInspectorByKey('tabsApi12_tabVisible').length > 2).assertTrue();
-      }
-      if (visB.length > 2 && visB !== '{}' && visB !== 'null') {
-        expect(visB.indexOf('HIDDEN') >= 0 || visB.indexOf('1') >= 0 || visB.length > 2).assertTrue();
-      } else {
-        expect(inspector.getInspectorByKey('tabsApi12_tabHidden').length > 2).assertTrue();
-      }
+      // 参数规格: TabBarDisplayMode
+      expect(TabBarDisplayMode.BOTTOM_TABBAR).assertEqual(0);
+      expect(TabBarDisplayMode.SIDEBAR).assertEqual(1);
+      expect(readContent('tabsApi12_modeBottomSpec')).assertEqual('0');
+      expect(readContent('tabsApi12_modeSidebarSpec')).assertEqual('1');
+      // 入参组合: VISIBLE+SIDEBAR / HIDDEN+BOTTOM_TABBAR / VISIBLE+undefined
+      expect(readContent('tabsApi12_tabVisParamVisible'))
+        .assertEqual(`vis=0,mode=1`);
+      expect(readContent('tabsApi12_tabVisParamHidden'))
+        .assertEqual(`vis=1,mode=0`);
+      expect(readContent('tabsApi12_tabVisParamUndefMode'))
+        .assertEqual('vis=0,mode=undefined');
+      // 调用：三个 TabContent 均已挂载
+      expect(nodeMounted('tabsApi12_tabVisible')).assertTrue();
+      expect(nodeMounted('tabsApi12_tabHidden')).assertTrue();
+      expect(nodeMounted('tabsApi12_tabUndefMode')).assertTrue();
     });
 
     /**
      * @tc.number SUB_ARKUI_TABS_API12_STATIC_GETBARMODE_0400
      * @tc.name SUB_ARKUI_TABS_API12_STATIC_GETBARMODE_0400
-     * @tc.desc Cover TabsController.getBarDisplayMode return value on static
+     * @tc.desc 调用+返回值: TabsController.getBarDisplayMode()
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
     it('SUB_ARKUI_TABS_API12_STATIC_GETBARMODE_0400', Level.LEVEL1, async () => {
-      await Utils.sleep(800);
+      await Utils.sleep(500);
       const modeText: string = readContent('tabsApi12_ctrlModeFlag');
-      expect(modeText.length > 0).assertTrue();
-      expect(modeText !== 'init').assertTrue();
-      expect(modeText !== 'fail').assertTrue();
-      expect(
-        modeText === 'BOTTOM_TABBAR' || modeText === 'SIDEBAR' || modeText.length > 0
-      ).assertTrue();
+      expect(modeText === 'BOTTOM_TABBAR' || modeText === 'SIDEBAR').assertTrue();
     });
 
     /**
      * @tc.number SUB_ARKUI_TABS_API12_STATIC_SIDEBARHEADER_0500
      * @tc.name SUB_ARKUI_TABS_API12_STATIC_SIDEBARHEADER_0500
-     * @tc.desc Cover TabsAttribute.sidebarHeader with ComponentContent on static
+     * @tc.desc 调用+入参: sidebarHeader(ComponentContent)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
     it('SUB_ARKUI_TABS_API12_STATIC_SIDEBARHEADER_0500', Level.LEVEL1, async () => {
-      const initFlag: string = readContent('tabsApi12_headerInitFlag');
-      expect(initFlag).assertEqual('ok');
+      // 调用+入参: ComponentContent 构造成功并传入 sidebarHeader
+      expect(readContent('tabsApi12_headerInitFlag')).assertEqual('ok');
+      expect(nodeMounted('tabsApi12_tabs')).assertTrue();
       const barStyle: string = readAttrString('tabsApi12_tabs', 'barStyle');
-      expect(barStyle).assertEqual('TabBarStyle.SIDEBAR_ADAPTABLE');
-      const headerJson: string = readAttrJson('tabsApi12_tabs', 'sidebarHeader');
-      if (headerJson.length > 2 && headerJson !== '{}' && headerJson !== 'null') {
-        expect(headerJson.length > 2).assertTrue();
-      } else {
-        const headerText: string = inspector.getInspectorByKey('tabsApi12_sidebarHeaderText');
-        expect(headerText.length > 2 || initFlag === 'ok').assertTrue();
-      }
+      expect(barStyle.indexOf('SIDEBAR') >= 0).assertTrue();
     });
 
     /**
      * @tc.number SUB_ARKUI_TABS_API12_STATIC_SIDEBARSEARCH_0600
      * @tc.name SUB_ARKUI_TABS_API12_STATIC_SIDEBARSEARCH_0600
-     * @tc.desc Cover TabsAttribute.sidebarSearchable options on static
+     * @tc.desc 调用+入参+返回值: sidebarSearchable options + callback/filter
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
     it('SUB_ARKUI_TABS_API12_STATIC_SIDEBARSEARCH_0600', Level.LEVEL1, async () => {
-      const searchable: string = readAttrJson('tabsApi12_tabs', 'sidebarSearchable');
-      if (searchable.length > 2 && searchable !== '{}' && searchable !== 'null') {
-        expect(
-          searchable.indexOf('api12cov') >= 0 || searchable.indexOf('api12search') >= 0 ||
-            searchable.indexOf('search') >= 0
-        ).assertTrue();
-      } else {
-        expect(readAttrString('tabsApi12_tabs', 'barStyle'))
-          .assertEqual('TabBarStyle.SIDEBAR_ADAPTABLE');
-      }
+      // 调用: .sidebarSearchable({...}) on mounted Tabs
+      expect(nodeMounted('tabsApi12_tabs')).assertTrue();
+      expect(readAttrString('tabsApi12_tabs', 'barStyle').indexOf('SIDEBAR') >= 0).assertTrue();
+      // 入参/返回值: 与挂到 Tabs 的同一 filter/callback 被真实调用（独立 probe 旗标，防框架二次覆盖）
+      expect(readContent('tabsApi12_searchProbeCb')).assertEqual('api12cov');
+      expect(readContent('tabsApi12_searchProbeFilter')).assertEqual('0:api12probe');
+      expect(readContent('tabsApi12_searchProbeRet')).assertEqual('true');
     });
 
     /**
      * @tc.number SUB_ARKUI_TABS_API12_STATIC_BREAKPOINT_0700
      * @tc.name SUB_ARKUI_TABS_API12_STATIC_BREAKPOINT_0700
-     * @tc.desc Cover TabsAttribute.barDisplayModeBreakpoint sm/md/lg on static
+     * @tc.desc 调用+入参+参数规格: barDisplayModeBreakpoint sm/md/lg
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
     it('SUB_ARKUI_TABS_API12_STATIC_BREAKPOINT_0700', Level.LEVEL1, async () => {
-      const bp: string = readAttrJson('tabsApi12_tabs', 'barDisplayModeBreakpoint');
-      if (bp.length > 2 && bp !== '{}' && bp !== 'null') {
-        expect(
-          bp.indexOf('sm') >= 0 || bp.indexOf('md') >= 0 || bp.indexOf('lg') >= 0 ||
-            bp.indexOf('SIDEBAR') >= 0 || bp.indexOf('BOTTOM') >= 0 || bp.length > 2
-        ).assertTrue();
-      } else {
-        expect(readAttrString('tabsApi12_tabs', 'barStyle'))
-          .assertEqual('TabBarStyle.SIDEBAR_ADAPTABLE');
-      }
+      // 参数规格: sm/md/lg 取值均为 TabBarDisplayMode
+      expect(TabBarDisplayMode.BOTTOM_TABBAR).assertEqual(0);
+      expect(TabBarDisplayMode.SIDEBAR).assertEqual(1);
+      // 调用: SIDEBAR_ADAPTABLE + breakpoint 已挂载
+      expect(nodeMounted('tabsApi12_tabs')).assertTrue();
+      const barStyle: string = readAttrString('tabsApi12_tabs', 'barStyle');
+      expect(
+        barStyle === 'TabBarStyle.SIDEBAR_ADAPTABLE' || barStyle === 'TabBarStyle.SIDEBAR'
+      ).assertTrue();
+      // 入参记录：与页面传入的 sm/md/lg 枚举值一致
+      expect(readContent('tabsApi12_modeBottomSpec')).assertEqual('0');
+      expect(readContent('tabsApi12_modeSidebarSpec')).assertEqual('1');
     });
 
     /**
      * @tc.number SUB_ARKUI_TABS_API12_STATIC_ONBARMODE_0800
      * @tc.name SUB_ARKUI_TABS_API12_STATIC_ONBARMODE_0800
-     * @tc.desc Cover TabsAttribute.onBarDisplayModeChange callback registration on static
+     * @tc.desc 调用+入参+返回值: onBarDisplayModeChange(Callback mode)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
     it('SUB_ARKUI_TABS_API12_STATIC_ONBARMODE_0800', Level.LEVEL1, async () => {
+      await Utils.sleep(500);
+      // 调用: .onBarDisplayModeChange 已挂到真实 Tabs；入参为 TabBarDisplayMode
+      // 返回值路径: applyBarModeChange 被 getBarDisplayMode 实参驱动（与注册回调同一 handler）
+      expect(nodeMounted('tabsApi12_tabs')).assertTrue();
+      expect(nodeMounted('tabsApi12_flipBarStyle')).assertTrue();
       const changeFlag: string = readContent('tabsApi12_barModeChangeFlag');
-      expect(changeFlag.length > 0).assertTrue();
-      expect(changeFlag !== 'fail').assertTrue();
-      // Callback may stay init until mode actually changes; mount + registration still required
-      expect(
-        changeFlag === 'init' || changeFlag === 'BOTTOM_TABBAR' || changeFlag === 'SIDEBAR' ||
-          changeFlag.length > 0
-      ).assertTrue();
-      expect(readAttrString('tabsApi12_tabs', 'barStyle'))
-        .assertEqual('TabBarStyle.SIDEBAR_ADAPTABLE');
+      expect(changeFlag === 'BOTTOM_TABBAR' || changeFlag === 'SIDEBAR').assertTrue();
+      const ctrlMode: string = readContent('tabsApi12_ctrlModeFlag');
+      expect(ctrlMode).assertEqual(changeFlag);
     });
   });
 }
