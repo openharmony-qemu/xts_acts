@@ -110,10 +110,10 @@ it('ScrollSourceOther_0200', Level.LEVEL0, async (done: () => void): Promise<voi
         await driver.swipeBetween(
           { x: (Number.parseInt(`${(Math.round(left + width / 2)).toInt()}`)).toInt(),
             y: (Number.parseInt(`${(Math.round(top + height * 0.6)).toInt()}`)).toInt(),
-            displayId: displayID as Int },
+            displayId: displayID.toInt() },
           { x: (Number.parseInt(`${(Math.round(left + width / 2)).toInt()}`)).toInt(),
             y: (Number.parseInt(`${(Math.round(top + height * 0.2)).toInt()}`)).toInt(),
-            displayId: displayID as Int });
+            displayId: displayID.toInt() });
         await CommonFunc.sleep(2000);
         let strJson = inspector.getInspectorByKey('EDGE_EFFECT');
         let obj = JSON.parseJsonElement(strJson);
@@ -158,13 +158,13 @@ it('ScrollSourceOther_0300', Level.LEVEL0, async (done: () => void): Promise<voi
         await driver.mouseScroll({
           x: (Math.round(left + width / 2)).toInt(),
           y: (Math.round(top + height * 0.3)).toInt(),
-          displayId: displayID as Int
+          displayId: displayID.toInt()
         }, false, 20)
         await CommonFunc.sleep(3000);
         await driver.mouseScroll({
           x: (Math.round(left + width / 2)).toInt(),
           y: (Math.round(top + height * 0.3)).toInt(),
-          displayId: displayID as Int
+          displayId: displayID.toInt()
         }, true, 20)
         await CommonFunc.sleep(3000);
 

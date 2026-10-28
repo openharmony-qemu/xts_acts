@@ -71,7 +71,7 @@ it('interceptSwiperTest_static_0100', Level.LEVEL1, async (done: () => void): Pr
         let driver = Driver.create()
         await CommonFunc.sleep(1000);
         const uiContext = AppStorage.get<UIContext>('uiContext')!;
-        await driver.swipeBetween({ x: (Math.round(right - uiContext.vp2px(20))).toInt(), y: (Math.round(top + height / 2)).toInt(), displayId: displayID as Int }, { x: (Math.round(left + uiContext.vp2px(20))).toInt(), y: (Math.round(top + height / 2)).toInt(), displayId: displayID as Int });
+        await driver.swipeBetween({ x: (Math.round(right - uiContext.vp2px(20))).toInt(), y: (Math.round(top + height / 2)).toInt(), displayId: displayID.toInt() }, { x: (Math.round(left + uiContext.vp2px(20))).toInt(), y: (Math.round(top + height / 2)).toInt(), displayId: displayID.toInt() });
         await CommonFunc.sleep(2000);
         let swiperContent = await driver.findComponent(ON.id('swiper_intercept_text'));
         let text1 = await (swiperContent?.getText() as Promise<string>);
@@ -106,7 +106,7 @@ it('interceptSwiperTest_static_0200', Level.LEVEL1, async (done: () => void): Pr
         let driver = Driver.create()
         await CommonFunc.sleep(1000);
         const uiContext = AppStorage.get<UIContext>('uiContext')!;
-        await driver.swipeBetween({ x: (Math.round(left + uiContext.vp2px(20))).toInt(), y: (Math.round(top + height / 2)).toInt(), displayId: displayID as Int }, { x: (Math.round(right - uiContext.vp2px(20))).toInt(), y: (Math.round(top + height / 2)).toInt(), displayId: displayID as Int });
+        await driver.swipeBetween({ x: (Math.round(left + uiContext.vp2px(20))).toInt(), y: (Math.round(top + height / 2)).toInt(), displayId: displayID.toInt() }, { x: (Math.round(right - uiContext.vp2px(20))).toInt(), y: (Math.round(top + height / 2)).toInt(), displayId: displayID.toInt() });
         await CommonFunc.sleep(2000);
         let swiperContent = await driver.findComponent(ON.id('swiper_intercept_text'));
         let text1 = await (swiperContent?.getText() as Promise<string>);

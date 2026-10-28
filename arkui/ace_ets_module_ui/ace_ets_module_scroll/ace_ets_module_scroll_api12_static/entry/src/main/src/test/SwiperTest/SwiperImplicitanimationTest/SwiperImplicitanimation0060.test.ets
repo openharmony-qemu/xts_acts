@@ -87,7 +87,7 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_static_0060', Level.LEV
         const uiContext = AppStorage.get<UIContext>('uiContext')!;
         let x: number = parseInt(uiContext.vp2px(120).toString());
         let x1: number = parseInt(uiContext.vp2px(90).toString());
-        await driver.dragBetween({ x: (point2.x - x).toInt(), y: (point2.y).toInt(), displayId: displayID as Int }, { x: (point2.x + x1).toInt(), y: (point2.y).toInt(), displayId: displayID as Int }, 3000)
+        await driver.dragBetween({ x: (point2.x - x).toInt(), y: (point2.y).toInt(), displayId: displayID.toInt() }, { x: (point2.x + x1).toInt(), y: (point2.y).toInt(), displayId: displayID.toInt() }, 3000)
         await CommonFunc.sleep(1000);
         let strIndex0: string = inspector.getInspectorByKey('implicitanimation_0060_1')
         let jsonIndex0 = JSON.parseJsonElement(strIndex0).getElement('$attrs').getString('content');
@@ -107,7 +107,7 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_static_0060', Level.LEV
         let showPrevious = await driver.findComponent(ON.id("btn_implicitanimation_0060"));
         await (showPrevious?.click() as Promise<void>);
         await CommonFunc.sleep(500);
-        await driver.dragBetween({ x: (point2.x + x).toInt(), y: (point2.y).toInt(), displayId: displayID as Int }, { x: (point2.x - x1).toInt(), y: (point2.y).toInt(), displayId: displayID as Int }, 3000)
+        await driver.dragBetween({ x: (point2.x + x).toInt(), y: (point2.y).toInt(), displayId: displayID.toInt() }, { x: (point2.x - x1).toInt(), y: (point2.y).toInt(), displayId: displayID.toInt() }, 3000)
         await CommonFunc.sleep(500);
         let strIndex4: string = inspector.getInspectorByKey('implicitanimation_0060_1')
         let jsonIndex4 = JSON.parseJsonElement(strIndex4).getElement('$attrs').getString('content');

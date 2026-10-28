@@ -85,7 +85,7 @@ export default function onAnimationEnd_ModifierUndefinedTest() {
       let width = bounds.right - bounds.left;
       let height = bounds.bottom - bounds.top;
 
-      await driver.swipeBetween({ x: (bounds.left + width - 50).toInt(), y: (bounds.top + height / 2).toInt(), displayId: displayID as Int }, { x: (bounds.left + 50).toInt(), y: (bounds.top + height / 2).toInt(), displayId: displayID as Int }, 3000);
+      await driver.swipeBetween({ x: (bounds.left + width - 50).toInt(), y: (bounds.top + height / 2).toInt(), displayId: displayID.toInt() }, { x: (bounds.left + 50).toInt(), y: (bounds.top + height / 2).toInt(), displayId: displayID.toInt() }, 3000);
       await CommonFunc.sleep(2000);
 
       let strJson2 = inspector.getInspectorByKey('swiper_onAnimationEnd');
@@ -111,7 +111,7 @@ export default function onAnimationEnd_ModifierUndefinedTest() {
       let width2 = bounds2.right - bounds2.left;
       let height2 = bounds2.bottom - bounds2.top;
 
-      await driver.swipeBetween({ x: (bounds2.left + width2 - 50).toInt(), y: (bounds2.top + height2 / 2).toInt(), displayId: displayID as Int }, { x: (bounds2.left + 50).toInt(), y: (bounds2.top + height2 / 2).toInt(), displayId: displayID as Int }, 3000);
+      await driver.swipeBetween({ x: (bounds2.left + width2 - 50).toInt(), y: (bounds2.top + height2 / 2).toInt(), displayId: displayID.toInt() }, { x: (bounds2.left + 50).toInt(), y: (bounds2.top + height2 / 2).toInt(), displayId: displayID.toInt() }, 3000);
       await CommonFunc.sleep(2000);
 
       let strJson4 = inspector.getInspectorByKey('swiper_onAnimationEnd');

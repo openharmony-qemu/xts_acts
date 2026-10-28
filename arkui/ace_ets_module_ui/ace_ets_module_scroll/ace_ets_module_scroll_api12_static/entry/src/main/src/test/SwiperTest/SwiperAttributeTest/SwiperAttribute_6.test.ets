@@ -79,7 +79,7 @@ it('SwiperAttribute_static_0100', Level.LEVEL0, async (done: () => void): Promis
       await CommonFunc.sleep(500);
       for (let i = 1; i <= 6; i++) {
         if (i > 1) {
-          await driver.swipeBetween({ x: (Number.parseInt(`${(rect.right - rect.left) * 0.8 + rect.left}`)).toInt(), y: (Number.parseInt(`${(rect.bottom - rect.top) * 0.5 + rect.top}`)).toInt(), displayId: displayID as Int }, { x: (Number.parseInt(`${(rect.right - rect.left) * 0.1 + rect.left}`)).toInt(), y: (Number.parseInt(`${(rect.bottom - rect.top) * 0.5 + rect.top}`)).toInt(), displayId: displayID as Int }, 1000);
+          await driver.swipeBetween({ x: (Number.parseInt(`${(rect.right - rect.left) * 0.8 + rect.left}`)).toInt(), y: (Number.parseInt(`${(rect.bottom - rect.top) * 0.5 + rect.top}`)).toInt(), displayId: displayID.toInt() }, { x: (Number.parseInt(`${(rect.right - rect.left) * 0.1 + rect.left}`)).toInt(), y: (Number.parseInt(`${(rect.bottom - rect.top) * 0.5 + rect.top}`)).toInt(), displayId: displayID.toInt() }, 1000);
           await CommonFunc.sleep(1000);
         }
         let columnRect = CommonFunc.getComponentRectOnScreen('swiperAttribute_60' + i);

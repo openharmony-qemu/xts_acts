@@ -74,7 +74,7 @@ export default function arcSwiperEvent() {
         let bottom = swipeTabs.bottom;
         let height = bottom - top;
         let width = right - left;
-        await driver.dragBetween({ x: Math.round(left + width * 0.8).toInt(), y: Math.round(top + height / 2).toInt(), displayId: displayID as Int }, { x: Math.round(left + width * 0.2).toInt(), y: Math.round(top + height / 2).toInt(), displayId: displayID as Int });
+        await driver.dragBetween({ x: Math.round(left + width * 0.8).toInt(), y: Math.round(top + height / 2).toInt(), displayId: displayID.toInt() }, { x: Math.round(left + width * 0.2).toInt(), y: Math.round(top + height / 2).toInt(), displayId: displayID.toInt() });
         await CommonFunc.sleep(2000);
         let strJson = inspector.getInspectorByKey('arcSwiper_onChange');
         console.info('[arcSwiperEvent_0100] content: ' +
@@ -128,7 +128,7 @@ export default function arcSwiperEvent() {
       let bottom = swipeTabs.bottom;
       let height = bottom - top;
       let width = right - left;
-      await driver.dragBetween({ x: Math.round(left + width * 0.8).toInt(), y: Math.round(top + height / 2).toInt(), displayId: displayID as Int }, { x: Math.round(left + width * 0.2).toInt(), y: Math.round(top + height / 2).toInt(), displayId: displayID as Int });
+      await driver.dragBetween({ x: Math.round(left + width * 0.8).toInt(), y: Math.round(top + height / 2).toInt(), displayId: displayID.toInt() }, { x: Math.round(left + width * 0.2).toInt(), y: Math.round(top + height / 2).toInt(), displayId: displayID.toInt() });
       await CommonFunc.sleep(2000);
       let strJson1 = inspector.getInspectorByKey('arcSwiper_onGestureSwipe');
       console.info('[arcSwiperEvent_0200] component obj1 is: ' + JSON.stringify(JSON.parseJsonElement(strJson1)));

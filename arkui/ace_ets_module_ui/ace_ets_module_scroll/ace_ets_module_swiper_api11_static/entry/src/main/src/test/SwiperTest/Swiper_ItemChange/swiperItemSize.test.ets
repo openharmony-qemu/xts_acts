@@ -118,7 +118,7 @@ it('testSwiperItemSize_static', Level.LEVEL0, async (done: () => void): Promise<
       // await CommonFunc.sleep(1000);原代码注释
       await CommonFunc.sleep(1000);
       let gridRect: RectValue = CommonFunc.getComponentRectOnScreen('itemSizekey')
-      await driver.swipeBetween({ x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.8 + gridRect.left}`).toInt(), y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`).toInt(), displayId: displayID as Int }, { x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.1 + gridRect.left}`).toInt(), y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`).toInt(), displayId: displayID as Int }, 1000);
+      await driver.swipeBetween({ x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.8 + gridRect.left}`).toInt(), y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`).toInt(), displayId: displayID.toInt() }, { x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.1 + gridRect.left}`).toInt(), y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`).toInt(), displayId: displayID.toInt() }, 1000);
       await CommonFunc.sleep(3000);
       // After flipping the page.
       itemSizekey = CommonFunc.getComponentRectOnScreen('itemSizekey');

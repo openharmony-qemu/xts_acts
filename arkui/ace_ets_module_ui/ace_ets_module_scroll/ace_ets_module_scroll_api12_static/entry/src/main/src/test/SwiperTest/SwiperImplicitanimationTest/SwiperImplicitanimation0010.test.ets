@@ -78,7 +78,7 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_static_0010', Level.LEV
         let width = right - left;
         let driver = Driver.create()
         await CommonFunc.sleep(1000);
-        await driver.dragBetween({ x: (Math.round(left + width * 0.8)).toInt(), y: (Math.round(bottom - height / 2)).toInt(), displayId: displayID as Int }, { x: (Math.round(left + width * 0.1)).toInt(), y: (Math.round(bottom - height / 2)).toInt(), displayId: displayID as Int });
+        await driver.dragBetween({ x: (Math.round(left + width * 0.8)).toInt(), y: (Math.round(bottom - height / 2)).toInt(), displayId: displayID.toInt() }, { x: (Math.round(left + width * 0.1)).toInt(), y: (Math.round(bottom - height / 2)).toInt(), displayId: displayID.toInt() });
         await CommonFunc.sleep(3000);
         let strJson2: string = inspector.getInspectorByKey('implicitanimation_0010');
         let marq2 = JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content');

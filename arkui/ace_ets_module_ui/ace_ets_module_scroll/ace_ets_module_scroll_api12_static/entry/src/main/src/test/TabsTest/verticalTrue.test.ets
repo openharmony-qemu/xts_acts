@@ -67,7 +67,7 @@ it('verticalTrue_static_0100', Level.LEVEL0, async (done: () => void): Promise<v
       let width = right - left;
       let driver = Driver.create()
       await CommonFunc.sleep(500);
-      await driver.swipeBetween({ x: (Math.round(left + width / 2)).toInt(), y: (Math.round(top + height * 0.9)).toInt(), displayId: displayID as Int }, { x: (Math.round(left + width / 2)).toInt(), y: (Math.round(top + height * 0.1)).toInt(), displayId: displayID as Int });
+      await driver.swipeBetween({ x: (Math.round(left + width / 2)).toInt(), y: (Math.round(top + height * 0.9)).toInt(), displayId: displayID.toInt() }, { x: (Math.round(left + width / 2)).toInt(), y: (Math.round(top + height * 0.1)).toInt(), displayId: displayID.toInt() });
       await CommonFunc.sleep(2000);
       let strJson1 = inspector.getInspectorByKey('portrait_onGestureSwipe');
       console.info("[verticalTrue_static_0100] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson1)));

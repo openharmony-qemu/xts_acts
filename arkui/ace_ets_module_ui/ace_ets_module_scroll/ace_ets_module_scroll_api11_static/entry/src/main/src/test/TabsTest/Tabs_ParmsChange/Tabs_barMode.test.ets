@@ -93,12 +93,12 @@ it('testTabsBarModeFixed_static_01', Level.LEVEL0, async (done: () => void): Pro
         let driver = Driver.create();
         await CommonFunc.sleep(1000);
         await driver.swipeBetween({ x: (Math.round(Tabs_barMode_011.right -
-          ((Tabs_barMode_011.right - Tabs_barMode_011.left) / 6))).toInt(), y: (Math.round(Tabs_barMode_011.top + ((Tabs_barMode_011.bottom - Tabs_barMode_011.top) / 2))).toInt(), displayId: displayID as Int }, { x: (Math.round(Tabs_barMode_011.left + ((Tabs_barMode_011.right - Tabs_barMode_011.left) / 6))).toInt(), y: (Math.round(Tabs_barMode_011.top + ((Tabs_barMode_011.bottom - Tabs_barMode_011.top) / 2))).toInt(), displayId: displayID as Int });
+          ((Tabs_barMode_011.right - Tabs_barMode_011.left) / 6))).toInt(), y: (Math.round(Tabs_barMode_011.top + ((Tabs_barMode_011.bottom - Tabs_barMode_011.top) / 2))).toInt(), displayId: displayID.toInt() }, { x: (Math.round(Tabs_barMode_011.left + ((Tabs_barMode_011.right - Tabs_barMode_011.left) / 6))).toInt(), y: (Math.round(Tabs_barMode_011.top + ((Tabs_barMode_011.bottom - Tabs_barMode_011.top) / 2))).toInt(), displayId: displayID.toInt() });
         await CommonFunc.sleep(1000);
         let Tabs_barMode_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode' + '_002');
         let Tabs_barMode_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode' + '_012');
         await driver.swipeBetween({ x: (Math.round(Tabs_barMode_012.right -
-          ((Tabs_barMode_012.right - Tabs_barMode_012.left) / 6))).toInt(), y: (Math.round(Tabs_barMode_012.top + ((Tabs_barMode_012.bottom - Tabs_barMode_012.top) / 2))).toInt(), displayId: displayID as Int }, { x: (Math.round(Tabs_barMode_012.left + ((Tabs_barMode_012.right - Tabs_barMode_012.left) / 6))).toInt(), y: (Math.round(Tabs_barMode_012.top + ((Tabs_barMode_012.bottom - Tabs_barMode_012.top) / 2))).toInt(), displayId: displayID as Int });
+          ((Tabs_barMode_012.right - Tabs_barMode_012.left) / 6))).toInt(), y: (Math.round(Tabs_barMode_012.top + ((Tabs_barMode_012.bottom - Tabs_barMode_012.top) / 2))).toInt(), displayId: displayID.toInt() }, { x: (Math.round(Tabs_barMode_012.left + ((Tabs_barMode_012.right - Tabs_barMode_012.left) / 6))).toInt(), y: (Math.round(Tabs_barMode_012.top + ((Tabs_barMode_012.bottom - Tabs_barMode_012.top) / 2))).toInt(), displayId: displayID.toInt() });
         await CommonFunc.sleep(1000);
         let Tabs_barMode_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode' + '_003');
         let Tabs_barMode_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode' + '_013');

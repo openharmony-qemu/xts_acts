@@ -75,7 +75,7 @@ export default function arcSwiperContent() {
         let bottom = swipeTabs.bottom;
         let height = bottom - top;
         let width = right - left;
-        await driver.dragBetween({ x: Math.round(left + width * 0.8).toInt(), y: Math.round(top + height / 2).toInt(), displayId: displayID as Int }, { x: Math.round(left + width * 0.2).toInt(), y: Math.round(top + height / 2).toInt(), displayId: displayID as Int });
+        await driver.dragBetween({ x: Math.round(left + width * 0.8).toInt(), y: Math.round(top + height / 2).toInt(), displayId: displayID.toInt() }, { x: Math.round(left + width * 0.2).toInt(), y: Math.round(top + height / 2).toInt(), displayId: displayID.toInt() });
         await CommonFunc.sleep(2000);
         await driver.assertComponentExist(ON.text('1'));
         let strJson = inspector.getInspectorByKey('onAnimationStart_arcs_content');

@@ -104,7 +104,7 @@ it('testSwiperSetLoopFalse_static', Level.LEVEL0, async (done: () => void): Prom
       //   await driver.swipe(250, 230, 200, 230);
       let driver = Driver.create()
       let gridRect: RectValue = CommonFunc.getComponentRectOnScreen('loopFalse')
-      await driver.swipeBetween({ x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.8 + gridRect.left}`).toInt(), y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`).toInt(), displayId: displayID as Int }, { x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.1 + gridRect.left}`).toInt(), y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`).toInt(), displayId: displayID as Int }, 1000);
+      await driver.swipeBetween({ x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.8 + gridRect.left}`).toInt(), y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`).toInt(), displayId: displayID.toInt() }, { x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.1 + gridRect.left}`).toInt(), y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`).toInt(), displayId: displayID.toInt() }, 1000);
       await CommonFunc.sleep(3000);
       let loopFalse = CommonFunc.getComponentRect('loopFalse');
       let strJson = inspector.getInspectorByKey('loopFalse');

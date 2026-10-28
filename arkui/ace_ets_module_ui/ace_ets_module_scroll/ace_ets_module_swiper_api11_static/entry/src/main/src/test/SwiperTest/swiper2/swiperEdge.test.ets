@@ -109,7 +109,7 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0290', Level.LEVEL0, async (don
       const winLeft = AppStorage.get<number>('winLeft') ?? 0;
       const winTop = AppStorage.get<number>('winTop as Int') ?? 0;
 
-      await driver.swipeBetween({ x: (winLeft + Math.round(btRight)).toInt(), y: (winTop.toInt() + Math.round(btBottom / 2)).toInt(), displayId: displayID as Int }, { x: (winLeft + Math.round(btRight) - Math.round(UIContext.resolveUIContext()!.vp2px(20))).toInt(), y: (winTop.toInt() + Math.round(btBottom / 2)).toInt(), displayId: displayID as Int });
+      await driver.swipeBetween({ x: (winLeft + Math.round(btRight)).toInt(), y: (winTop.toInt() + Math.round(btBottom / 2)).toInt(), displayId: displayID.toInt() }, { x: (winLeft + Math.round(btRight) - Math.round(UIContext.resolveUIContext()!.vp2px(20))).toInt(), y: (winTop.toInt() + Math.round(btBottom / 2)).toInt(), displayId: displayID.toInt() });
       // await CommonFunc.sleep(3000);
 
       // get the component of text_10, scroll distance is to short can not slow

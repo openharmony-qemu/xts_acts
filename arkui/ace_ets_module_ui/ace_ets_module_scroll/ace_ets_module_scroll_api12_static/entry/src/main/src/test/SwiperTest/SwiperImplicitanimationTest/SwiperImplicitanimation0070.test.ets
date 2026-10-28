@@ -83,7 +83,7 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_static_0070', Level.LEV
         let strIndex: string = inspector.getInspectorByKey('implicitanimation_0070_1')
         let jsonIndex = JSON.parseJsonElement(strIndex).getElement('$attrs').getString('content');
         expect(jsonIndex).assertEqual('0')
-        await driver.dragBetween({ x: point2.x - 200, y: point2.y, displayId: displayID as Int }, { x: point2.x + 150, y: point2.y, displayId: displayID as Int }, 500);
+        await driver.dragBetween({ x: point2.x - 200, y: point2.y, displayId: displayID.toInt() }, { x: point2.x + 150, y: point2.y, displayId: displayID.toInt() }, 500);
         await CommonFunc.sleep(300);
         let strIndex0: string = inspector.getInspectorByKey('implicitanimation_0070_1')
         let jsonIndex0 = JSON.parseJsonElement(strIndex0).getElement('$attrs').getString('content');
@@ -106,7 +106,7 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_static_0070', Level.LEV
         let strIndex3: string = inspector.getInspectorByKey('implicitanimation_0070_1')
         let jsonIndex3 = JSON.parseJsonElement(strIndex3).getElement('$attrs').getString('content');
         expect(jsonIndex3).assertEqual('1')
-        await driver.dragBetween({ x: point2.x + 200, y: point2.y, displayId: displayID as Int }, { x: point2.x - 200, y: point2.y, displayId: displayID as Int }, 500);
+        await driver.dragBetween({ x: point2.x + 200, y: point2.y, displayId: displayID.toInt() }, { x: point2.x - 200, y: point2.y, displayId: displayID.toInt() }, 500);
         await CommonFunc.sleep(300);
         let strIndex4: string = inspector.getInspectorByKey('implicitanimation_0070_1')
         let jsonIndex4 = JSON.parseJsonElement(strIndex4).getElement('$attrs').getString('content');

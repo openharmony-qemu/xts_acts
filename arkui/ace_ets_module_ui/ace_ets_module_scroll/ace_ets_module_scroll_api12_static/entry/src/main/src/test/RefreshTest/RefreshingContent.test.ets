@@ -77,10 +77,10 @@ it('RefreshingContent_static_0100', Level.LEVEL0, async (done: () => void): Prom
       await driver.swipeBetween(
         { x: (Number.parseInt(`${(Math.round(left + width * 0.2)).toInt()}`)).toInt(),
           y: (Number.parseInt(`${(Math.round(top + height / 10)).toInt()}`)).toInt(),
-          displayId: displayID as Int },
+          displayId: displayID.toInt() },
         { x: (Number.parseInt(`${(Math.round(left + width * 0.2)).toInt()}`)).toInt(),
           y: (Number.parseInt(`${(Math.round(bottom - height / 10)).toInt()}`)).toInt(),
-          displayId: displayID as Int });
+          displayId: displayID.toInt() });
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('RefreshingContent');
       let obj = JSON.parseJsonElement(strJson);

@@ -71,9 +71,9 @@ it('tabsOnContentWillChangeJsunitTest_static_0130', Level.LEVEL0, async (done: (
         // swipe index  0 -1   swipe direction top to bottom
         await driver.swipeBetween({ x: ((AppStorage.get<number>("winLeft") ?? 0) +
         Math.round((tabsRect.right - tabsRect.left) / 2 + tabsRect.left)).toInt(), y: (Math.round((AppStorage.get<number>("winTop") ?? 0) +
-            (tabsRect.bottom - tabsRect.top) * 0.8 + tabsRect.top)).toInt(), displayId: displayID as Int }, { x: (Math.round((AppStorage.get<number>("winLeft") ?? 0) +
+            (tabsRect.bottom - tabsRect.top) * 0.8 + tabsRect.top)).toInt(), displayId: displayID.toInt() }, { x: (Math.round((AppStorage.get<number>("winLeft") ?? 0) +
             (tabsRect.right - tabsRect.left) / 2 + tabsRect.left)).toInt(), y: (Math.round((AppStorage.get<number>("winTop") ?? 0) +
-            (tabsRect.bottom - tabsRect.top) * 0.05 + tabsRect.top)).toInt(), displayId: displayID as Int });
+            (tabsRect.bottom - tabsRect.top) * 0.05 + tabsRect.top)).toInt(), displayId: displayID.toInt() });
 
         await CommonFunc.sleep(2000);
 
@@ -84,9 +84,9 @@ it('tabsOnContentWillChangeJsunitTest_static_0130', Level.LEVEL0, async (done: (
         // swipe index  1 -2   swipe direction top to bottom
         await driver.swipeBetween({ x: ((AppStorage.get<number>("winLeft") ?? 0) +
         Math.round((tabsRect.right - tabsRect.left) / 2 + tabsRect.left)).toInt(), y: (Math.round((AppStorage.get<number>("winTop") ?? 0) +
-            (tabsRect.bottom - tabsRect.top) * 0.8 + tabsRect.top)).toInt(), displayId: displayID as Int }, { x: (Math.round((AppStorage.get<number>("winLeft") ?? 0) +
+            (tabsRect.bottom - tabsRect.top) * 0.8 + tabsRect.top)).toInt(), displayId: displayID.toInt() }, { x: (Math.round((AppStorage.get<number>("winLeft") ?? 0) +
             (tabsRect.right - tabsRect.left) / 2 + tabsRect.left)).toInt(), y: (Math.round((AppStorage.get<number>("winTop") ?? 0) +
-            (tabsRect.bottom - tabsRect.top) * 0.05 + tabsRect.top)).toInt(), displayId: displayID as Int });
+            (tabsRect.bottom - tabsRect.top) * 0.05 + tabsRect.top)).toInt(), displayId: displayID.toInt() });
 
         await CommonFunc.sleep(2000);
 
@@ -98,9 +98,9 @@ it('tabsOnContentWillChangeJsunitTest_static_0130', Level.LEVEL0, async (done: (
         // swipe index  2 -3   swipe direction top to bottom
         await driver.swipeBetween({ x: (Math.round((AppStorage.get<number>("winLeft") ?? 0) +
           (tabsRect.right - tabsRect.left) / 2 + tabsRect.left)).toInt(), y: (Math.round((AppStorage.get<number>("winTop") ?? 0) +
-            (tabsRect.bottom - tabsRect.top) * 0.8 + tabsRect.top)).toInt(), displayId: displayID as Int }, { x: (Math.round((AppStorage.get<number>("winLeft") ?? 0) +
+            (tabsRect.bottom - tabsRect.top) * 0.8 + tabsRect.top)).toInt(), displayId: displayID.toInt() }, { x: (Math.round((AppStorage.get<number>("winLeft") ?? 0) +
             (tabsRect.right - tabsRect.left) / 2 + tabsRect.left)).toInt(), y: (Math.round((AppStorage.get<number>("winTop") ?? 0) +
-            (tabsRect.bottom - tabsRect.top) * 0.05 + tabsRect.top)).toInt(), displayId: displayID as Int });
+            (tabsRect.bottom - tabsRect.top) * 0.05 + tabsRect.top)).toInt(), displayId: displayID.toInt() });
 
         await CommonFunc.sleep(2000);
 

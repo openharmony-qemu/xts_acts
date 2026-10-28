@@ -107,16 +107,16 @@ it('TabsBarPositionStartWithVerticalFalse_static_01', Level.LEVEL0, async (done:
         let driver = Driver.create();
         await CommonFunc.sleep(1000);
         await driver.swipeBetween({ x: (Math.round(Tabs_barPosition_011.right -
-          ((Tabs_barPosition_011.right - Tabs_barPosition_011.left) / 6))).toInt(), y: (Math.round(Tabs_barPosition_011.top + ((Tabs_barPosition_011.bottom - Tabs_barPosition_011.top) / 2))).toInt(), displayId: displayID as Int }, { x: (Math.round(Tabs_barPosition_011.left +
+          ((Tabs_barPosition_011.right - Tabs_barPosition_011.left) / 6))).toInt(), y: (Math.round(Tabs_barPosition_011.top + ((Tabs_barPosition_011.bottom - Tabs_barPosition_011.top) / 2))).toInt(), displayId: displayID.toInt() }, { x: (Math.round(Tabs_barPosition_011.left +
             ((Tabs_barPosition_011.right - Tabs_barPosition_011.left) / 6))).toInt(), y: (Math.round(Tabs_barPosition_011.top +
-            ((Tabs_barPosition_011.bottom - Tabs_barPosition_011.top) / 2))).toInt(), displayId: displayID as Int });
+            ((Tabs_barPosition_011.bottom - Tabs_barPosition_011.top) / 2))).toInt(), displayId: displayID.toInt() });
         await CommonFunc.sleep(1000);
         let Tabs_barPosition_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition' + '_002');
         let Tabs_barPosition_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition' + '_012');
         await driver.swipeBetween({ x: (Math.round(Tabs_barPosition_012.right -
-          ((Tabs_barPosition_012.right - Tabs_barPosition_012.left) / 6))).toInt(), y: (Math.round(Tabs_barPosition_012.top + ((Tabs_barPosition_012.bottom - Tabs_barPosition_012.top) / 2))).toInt(), displayId: displayID as Int }, { x: (Math.round(Tabs_barPosition_012.left +
+          ((Tabs_barPosition_012.right - Tabs_barPosition_012.left) / 6))).toInt(), y: (Math.round(Tabs_barPosition_012.top + ((Tabs_barPosition_012.bottom - Tabs_barPosition_012.top) / 2))).toInt(), displayId: displayID.toInt() }, { x: (Math.round(Tabs_barPosition_012.left +
             ((Tabs_barPosition_012.right - Tabs_barPosition_012.left) / 6))).toInt(), y: (Math.round(Tabs_barPosition_012.top +
-            ((Tabs_barPosition_012.bottom - Tabs_barPosition_012.top) / 2))).toInt(), displayId: displayID as Int });
+            ((Tabs_barPosition_012.bottom - Tabs_barPosition_012.top) / 2))).toInt(), displayId: displayID.toInt() });
         await CommonFunc.sleep(1000);
         let Tabs_barPosition_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition' + '_003');
         let Tabs_barPosition_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition' + '_013');
@@ -248,16 +248,16 @@ it('TabsBarPositionEndWithVerticalFalse_static_02', Level.LEVEL0, async (done: (
         let driver = Driver.create();
         await CommonFunc.sleep(1000);
         await driver.swipeBetween({ x: (Math.round(Tabs_barPosition_011.right -
-          ((Tabs_barPosition_011.right - Tabs_barPosition_011.left) / 6))).toInt(), y: (Math.round(Tabs_barPosition_011.top + ((Tabs_barPosition_011.bottom - Tabs_barPosition_011.top) / 2))).toInt(), displayId: displayID as Int }, { x: (Math.round(Tabs_barPosition_011.left +
+          ((Tabs_barPosition_011.right - Tabs_barPosition_011.left) / 6))).toInt(), y: (Math.round(Tabs_barPosition_011.top + ((Tabs_barPosition_011.bottom - Tabs_barPosition_011.top) / 2))).toInt(), displayId: displayID.toInt() }, { x: (Math.round(Tabs_barPosition_011.left +
             ((Tabs_barPosition_011.right - Tabs_barPosition_011.left) / 6))).toInt(), y: (Math.round(Tabs_barPosition_011.top +
-            ((Tabs_barPosition_011.bottom - Tabs_barPosition_011.top) / 2))).toInt(), displayId: displayID as Int });
+            ((Tabs_barPosition_011.bottom - Tabs_barPosition_011.top) / 2))).toInt(), displayId: displayID.toInt() });
         await CommonFunc.sleep(1000);
         let Tabs_barPosition_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition' + '_002');
         let Tabs_barPosition_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition' + '_012');
         await driver.swipeBetween({ x: (Math.round(Tabs_barPosition_012.right -
-          ((Tabs_barPosition_012.right - Tabs_barPosition_012.left) / 6))).toInt(), y: (Math.round(Tabs_barPosition_012.top + ((Tabs_barPosition_012.bottom - Tabs_barPosition_012.top) / 2))).toInt(), displayId: displayID as Int }, { x: (Math.round(Tabs_barPosition_012.left +
+          ((Tabs_barPosition_012.right - Tabs_barPosition_012.left) / 6))).toInt(), y: (Math.round(Tabs_barPosition_012.top + ((Tabs_barPosition_012.bottom - Tabs_barPosition_012.top) / 2))).toInt(), displayId: displayID.toInt() }, { x: (Math.round(Tabs_barPosition_012.left +
             ((Tabs_barPosition_012.right - Tabs_barPosition_012.left) / 6))).toInt(), y: (Math.round(Tabs_barPosition_012.top +
-            ((Tabs_barPosition_012.bottom - Tabs_barPosition_012.top) / 2))).toInt(), displayId: displayID as Int });
+            ((Tabs_barPosition_012.bottom - Tabs_barPosition_012.top) / 2))).toInt(), displayId: displayID.toInt() });
         await CommonFunc.sleep(1000);
         let Tabs_barPosition_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition' + '_003');
         let Tabs_barPosition_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition' + '_013');
@@ -398,17 +398,17 @@ it('TabsBarPositionStartWithVerticalTrue_static_03', Level.LEVEL0, async (done: 
         await CommonFunc.sleep(1000);
         await driver.swipeBetween({ x: (Math.round(Tabs_barPosition_011.left +
           ((Tabs_barPosition_011.right - Tabs_barPosition_011.left) / 2))).toInt(), y: (Math.round(Tabs_barPosition_011.bottom -
-            ((Tabs_barPosition_011.bottom - Tabs_barPosition_011.top) / 6))).toInt(), displayId: displayID as Int }, { x: (Math.round(Tabs_barPosition_011.left +
+            ((Tabs_barPosition_011.bottom - Tabs_barPosition_011.top) / 6))).toInt(), displayId: displayID.toInt() }, { x: (Math.round(Tabs_barPosition_011.left +
             ((Tabs_barPosition_011.right - Tabs_barPosition_011.left) / 2))).toInt(), y: (Math.round(Tabs_barPosition_011.top +
-            ((Tabs_barPosition_011.bottom - Tabs_barPosition_011.top) / 6))).toInt(), displayId: displayID as Int });
+            ((Tabs_barPosition_011.bottom - Tabs_barPosition_011.top) / 6))).toInt(), displayId: displayID.toInt() });
         await CommonFunc.sleep(1000);
         let Tabs_barPosition_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition' + '_002');
         let Tabs_barPosition_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition' + '_012');
         await driver.swipeBetween({ x: (Math.round(Tabs_barPosition_012.left +
           ((Tabs_barPosition_012.right - Tabs_barPosition_012.left) / 2))).toInt(), y: (Math.round(Tabs_barPosition_012.bottom -
-            ((Tabs_barPosition_012.bottom - Tabs_barPosition_012.top) / 6))).toInt(), displayId: displayID as Int }, { x: (Math.round(Tabs_barPosition_012.left +
+            ((Tabs_barPosition_012.bottom - Tabs_barPosition_012.top) / 6))).toInt(), displayId: displayID.toInt() }, { x: (Math.round(Tabs_barPosition_012.left +
             ((Tabs_barPosition_012.right - Tabs_barPosition_012.left) / 2))).toInt(), y: (Math.round(Tabs_barPosition_012.top +
-            ((Tabs_barPosition_012.bottom - Tabs_barPosition_012.top) / 6))).toInt(), displayId: displayID as Int });
+            ((Tabs_barPosition_012.bottom - Tabs_barPosition_012.top) / 6))).toInt(), displayId: displayID.toInt() });
         await CommonFunc.sleep(1000);
         let Tabs_barPosition_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition' + '_003');
         let Tabs_barPosition_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition' + '_013');
@@ -555,17 +555,17 @@ it('TabsBarPositionEndWithVerticalTrue_static_04', Level.LEVEL0, async (done: ()
         await CommonFunc.sleep(1000);
         await driver.swipeBetween({ x: (Math.round(Tabs_barPosition_011.left +
           ((Tabs_barPosition_011.right - Tabs_barPosition_011.left) / 2))).toInt(), y: (Math.round(Tabs_barPosition_011.bottom -
-            ((Tabs_barPosition_011.bottom - Tabs_barPosition_011.top) / 6))).toInt(), displayId: displayID as Int }, { x: (Math.round(Tabs_barPosition_011.left +
+            ((Tabs_barPosition_011.bottom - Tabs_barPosition_011.top) / 6))).toInt(), displayId: displayID.toInt() }, { x: (Math.round(Tabs_barPosition_011.left +
             ((Tabs_barPosition_011.right - Tabs_barPosition_011.left) / 2))).toInt(), y: (Math.round(Tabs_barPosition_011.top +
-            ((Tabs_barPosition_011.bottom - Tabs_barPosition_011.top) / 6))).toInt(), displayId: displayID as Int });
+            ((Tabs_barPosition_011.bottom - Tabs_barPosition_011.top) / 6))).toInt(), displayId: displayID.toInt() });
         await CommonFunc.sleep(1000);
         let Tabs_barPosition_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition' + '_002');
         let Tabs_barPosition_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition' + '_012');
         await driver.swipeBetween({ x: (Math.round(Tabs_barPosition_012.left +
           ((Tabs_barPosition_012.right - Tabs_barPosition_012.left) / 2))).toInt(), y: (Math.round(Tabs_barPosition_012.bottom -
-            ((Tabs_barPosition_012.bottom - Tabs_barPosition_012.top) / 6))).toInt(), displayId: displayID as Int }, { x: (Math.round(Tabs_barPosition_012.left +
+            ((Tabs_barPosition_012.bottom - Tabs_barPosition_012.top) / 6))).toInt(), displayId: displayID.toInt() }, { x: (Math.round(Tabs_barPosition_012.left +
             ((Tabs_barPosition_012.right - Tabs_barPosition_012.left) / 2))).toInt(), y: (Math.round(Tabs_barPosition_012.top +
-            ((Tabs_barPosition_012.bottom - Tabs_barPosition_012.top) / 6))).toInt(), displayId: displayID as Int });
+            ((Tabs_barPosition_012.bottom - Tabs_barPosition_012.top) / 6))).toInt(), displayId: displayID.toInt() });
         await CommonFunc.sleep(1000);
         let Tabs_barPosition_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition' + '_003');
         let Tabs_barPosition_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barPosition' + '_013');

@@ -70,7 +70,7 @@ export default function customContentTransition_ModifierStartUndefinedTest() {
       let bounds = await swiperItem.getBounds();
       let width = bounds.right - bounds.left;
       let height = bounds.bottom - bounds.top;
-      await driver.swipeBetween({ x: (bounds.left + width - 50).toInt(), y: (bounds.top + height / 2).toInt(), displayId: displayID as Int }, { x: (bounds.left + 50).toInt(), y: (bounds.top + height / 2).toInt(), displayId: displayID as Int }, 3000);
+      await driver.swipeBetween({ x: (bounds.left + width - 50).toInt(), y: (bounds.top + height / 2).toInt(), displayId: displayID.toInt() }, { x: (bounds.left + 50).toInt(), y: (bounds.top + height / 2).toInt(), displayId: displayID.toInt() }, 3000);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('testTextModifier');
       let obj = JSON.parseJsonElement(strJson);
@@ -82,7 +82,7 @@ export default function customContentTransition_ModifierStartUndefinedTest() {
       await (undefinedBtn?.click() as Promise<void>);
       await CommonFunc.sleep(500);
 
-      await driver.swipeBetween({ x: (bounds.left + width - 50).toInt(), y: (bounds.top + height / 2).toInt(), displayId: displayID as Int }, { x: (bounds.left + 50).toInt(), y: (bounds.top + height / 2).toInt(), displayId: displayID as Int }, 3000);
+      await driver.swipeBetween({ x: (bounds.left + width - 50).toInt(), y: (bounds.top + height / 2).toInt(), displayId: displayID.toInt() }, { x: (bounds.left + 50).toInt(), y: (bounds.top + height / 2).toInt(), displayId: displayID.toInt() }, 3000);
       await CommonFunc.sleep(1000);
 
       let strJson2 = inspector.getInspectorByKey('testTextModifier');

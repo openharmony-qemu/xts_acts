@@ -79,7 +79,7 @@ it('Navigation_L0_4_static_0100', Level.LEVEL0, async (done: () => void): Promis
 
       let list = CommonFunc.getComponentRect('Navigation_L0_4_list');
       await CommonFunc.sleep(1000);
-      await driver.swipeBetween({ x: Math.round(list.left + (list.right - list.left) / 2).toInt(), y: Math.round(list.top + (list.bottom - list.top) / 4 * 3).toInt(), displayId: displayID as Int }, { x: Math.round(list.left + (list.right - list.left) / 2).toInt(), y: Math.round(list.top + (list.bottom -  list.top) / 4).toInt(), displayId: displayID as Int });
+      await driver.swipeBetween({ x: Math.round(list.left + (list.right - list.left) / 2).toInt(), y: Math.round(list.top + (list.bottom - list.top) / 4 * 3).toInt(), displayId: displayID.toInt() }, { x: Math.round(list.left + (list.right - list.left) / 2).toInt(), y: Math.round(list.top + (list.bottom -  list.top) / 4).toInt(), displayId: displayID.toInt() });
 
       await CommonFunc.sleep(1000);
 

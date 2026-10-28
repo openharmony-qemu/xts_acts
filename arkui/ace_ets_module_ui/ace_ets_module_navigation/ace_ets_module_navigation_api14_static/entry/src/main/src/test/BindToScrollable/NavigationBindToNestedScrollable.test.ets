@@ -111,7 +111,7 @@ it('NavigationBindToNestedScrollable_static_0100', Level.LEVEL0, async (done: ()
       let right = scrollBarRect.right;
       let bottom = scrollBarRect.bottom;
       
-      await driver.swipeBetween({ x: Math.round(right - uiContext!.vp2px(11)).toInt(), y: Math.round(top + uiContext!.vp2px(12)).toInt(), displayId: displayID as Int }, { x: Math.round(right - uiContext!.vp2px(11)).toInt(), y: Math.round(bottom).toInt(), displayId: displayID as Int });
+      await driver.swipeBetween({ x: Math.round(right - uiContext!.vp2px(11)).toInt(), y: Math.round(top + uiContext!.vp2px(12)).toInt(), displayId: displayID.toInt() }, { x: Math.round(right - uiContext!.vp2px(11)).toInt(), y: Math.round(bottom).toInt(), displayId: displayID.toInt() });
       await driver.delayMs(500)
 
       await driver.assertComponentExist(ON.type('TitleBar'));
@@ -130,7 +130,7 @@ it('NavigationBindToNestedScrollable_static_0100', Level.LEVEL0, async (done: ()
       console.info('NavigationBindToNestedScrollable_0100 tooBarTop1: ', tooBarTop1);
       console.info('NavigationBindToNestedScrollable_0100 tooBarBottom1: ', tooBarBottom1);
 
-      await driver.swipeBetween({ x: Math.round(right - uiContext!.vp2px(11)).toInt(), y: Math.round(bottom - uiContext!.vp2px(12)).toInt(), displayId: displayID as Int }, { x: Math.round(right - uiContext!.vp2px(11)).toInt(), y: Math.round(top).toInt(), displayId: displayID as Int });
+      await driver.swipeBetween({ x: Math.round(right - uiContext!.vp2px(11)).toInt(), y: Math.round(bottom - uiContext!.vp2px(12)).toInt(), displayId: displayID.toInt() }, { x: Math.round(right - uiContext!.vp2px(11)).toInt(), y: Math.round(top).toInt(), displayId: displayID.toInt() });
       await driver.delayMs(500)
       let list = await driver.findComponent(ON.type('List'));
       
@@ -139,7 +139,7 @@ it('NavigationBindToNestedScrollable_static_0100', Level.LEVEL0, async (done: ()
       let listRight = listRect.right;
       let listBottom = listRect.bottom;
 
-      await driver.swipeBetween({ x: Math.round(listRight - uiContext!.vp2px(11)).toInt(), y: Math.round(listTop + uiContext!.vp2px(12)).toInt(), displayId: displayID as Int }, { x: Math.round(listRight - uiContext!.vp2px(11)).toInt(), y: Math.round(listBottom).toInt(), displayId: displayID as Int });
+      await driver.swipeBetween({ x: Math.round(listRight - uiContext!.vp2px(11)).toInt(), y: Math.round(listTop + uiContext!.vp2px(12)).toInt(), displayId: displayID.toInt() }, { x: Math.round(listRight - uiContext!.vp2px(11)).toInt(), y: Math.round(listBottom).toInt(), displayId: displayID.toInt() });
       await driver.delayMs(500)
 
       let component1 = await driver.findComponent(ON.type('TitleBar').text('pageOne'));

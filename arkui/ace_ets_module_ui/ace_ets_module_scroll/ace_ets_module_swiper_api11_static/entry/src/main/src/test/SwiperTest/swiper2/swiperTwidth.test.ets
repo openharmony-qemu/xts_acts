@@ -111,7 +111,7 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0020', Level.LEVEL0, async (don
       const uiContext = new UIContext();
       const winLeft = AppStorage.get<number>('winLeft') ?? 0;
       const winTop = AppStorage.get<number>('winTop as Int') ?? 0;
-      await driver.swipeBetween({ x: (winLeft + Math.round(btRight) - Math.round(UIContext.resolveUIContext()!.vp2px(10))).toInt(), y: (Math.round(btBottom / 2) + winTop.toInt()).toInt(), displayId: displayID as Int }, { x: (winLeft + Math.round(btLeft).toInt() + Math.round(UIContext.resolveUIContext()!.vp2px(10))).toInt(), y: (Math.round(btBottom / 2) + winTop.toInt()).toInt(), displayId: displayID as Int });
+      await driver.swipeBetween({ x: (winLeft + Math.round(btRight) - Math.round(UIContext.resolveUIContext()!.vp2px(10))).toInt(), y: (Math.round(btBottom / 2) + winTop.toInt()).toInt(), displayId: displayID.toInt() }, { x: (winLeft + Math.round(btLeft).toInt() + Math.round(UIContext.resolveUIContext()!.vp2px(10))).toInt(), y: (Math.round(btBottom / 2) + winTop.toInt()).toInt(), displayId: displayID.toInt() });
       await CommonFunc.sleep(5000);
       // get the component of text_3
       let text3: Component = await driver.findComponent(ON.text('3')) as Component;

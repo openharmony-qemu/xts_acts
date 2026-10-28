@@ -81,7 +81,7 @@ it('nestedScrollSwiper_static_0100', Level.LEVEL0, async (done: () => void): Pro
       let height = bottom - top;
       let width = right - left;
       await CommonFunc.sleep(1000);
-      await driver.swipeBetween({ x: (Math.round(left + width * 0.8)).toInt(), y: (Math.round(top + height / 2)).toInt(), displayId: displayID as Int }, { x: (Math.round(left + width * 0.1)).toInt(), y: (Math.round(top + height / 2)).toInt(), displayId: displayID as Int });
+      await driver.swipeBetween({ x: (Math.round(left + width * 0.8)).toInt(), y: (Math.round(top + height / 2)).toInt(), displayId: displayID.toInt() }, { x: (Math.round(left + width * 0.1)).toInt(), y: (Math.round(top + height / 2)).toInt(), displayId: displayID.toInt() });
       await CommonFunc.sleep(2000);
       await (driver?.assertComponentExist(ON.text('3')) as Promise<void>);
 

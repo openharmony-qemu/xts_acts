@@ -67,7 +67,7 @@ it('symbolTabs_static_0100', Level.LEVEL0, async (done: () => void): Promise<voi
       let width = right - left;
       let driver = Driver.create()
       await CommonFunc.sleep(500);
-      await driver.dragBetween({ x: (Math.round(left + width * 0.8)).toInt(), y: (Math.round(top + height / 2)).toInt(), displayId: displayID as Int }, { x: (Math.round(left + width * 0.2)).toInt(), y: (Math.round(top + height / 2)).toInt(), displayId: displayID as Int });
+      await driver.dragBetween({ x: (Math.round(left + width * 0.8)).toInt(), y: (Math.round(top + height / 2)).toInt(), displayId: displayID.toInt() }, { x: (Math.round(left + width * 0.2)).toInt(), y: (Math.round(top + height / 2)).toInt(), displayId: displayID.toInt() });
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('tabs_symbol_mess');
       console.info("[symbolTabs_static_0100] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));

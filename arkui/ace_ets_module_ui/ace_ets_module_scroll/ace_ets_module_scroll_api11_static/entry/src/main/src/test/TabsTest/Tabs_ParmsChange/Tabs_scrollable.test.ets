@@ -96,12 +96,12 @@ it('testTabsScrollableToTrue_static_01', Level.LEVEL0, async (done: () => void):
         let driver = Driver.create();
         await CommonFunc.sleep(1000);
         await driver.swipeBetween({ x: (Math.round(Tabs_scrollable_011.right -
-          ((Tabs_scrollable_011.right - Tabs_scrollable_011.left) / 6))).toInt(), y: (Math.round(Tabs_scrollable_011.top + ((Tabs_scrollable_011.bottom - Tabs_scrollable_011.top) / 2))).toInt(), displayId: displayID as Int }, { x: (Math.round(Tabs_scrollable_011.left + ((Tabs_scrollable_011.right - Tabs_scrollable_011.left) / 6))).toInt(), y: (Math.round(Tabs_scrollable_011.top + ((Tabs_scrollable_011.bottom - Tabs_scrollable_011.top) / 2))).toInt(), displayId: displayID as Int });
+          ((Tabs_scrollable_011.right - Tabs_scrollable_011.left) / 6))).toInt(), y: (Math.round(Tabs_scrollable_011.top + ((Tabs_scrollable_011.bottom - Tabs_scrollable_011.top) / 2))).toInt(), displayId: displayID.toInt() }, { x: (Math.round(Tabs_scrollable_011.left + ((Tabs_scrollable_011.right - Tabs_scrollable_011.left) / 6))).toInt(), y: (Math.round(Tabs_scrollable_011.top + ((Tabs_scrollable_011.bottom - Tabs_scrollable_011.top) / 2))).toInt(), displayId: displayID.toInt() });
         await CommonFunc.sleep(1000);
         let Tabs_scrollable_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_scrollable' + '_002');
         let Tabs_scrollable_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_scrollable' + '_012');
         await driver.swipeBetween({ x: (Math.round(Tabs_scrollable_012.right -
-          ((Tabs_scrollable_012.right - Tabs_scrollable_012.left) / 6))).toInt(), y: (Math.round(Tabs_scrollable_012.top + ((Tabs_scrollable_012.bottom - Tabs_scrollable_012.top) / 2))).toInt(), displayId: displayID as Int }, { x: (Math.round(Tabs_scrollable_012.left + ((Tabs_scrollable_012.right - Tabs_scrollable_012.left) / 6))).toInt(), y: (Math.round(Tabs_scrollable_012.top + ((Tabs_scrollable_012.bottom - Tabs_scrollable_012.top) / 2))).toInt(), displayId: displayID as Int });
+          ((Tabs_scrollable_012.right - Tabs_scrollable_012.left) / 6))).toInt(), y: (Math.round(Tabs_scrollable_012.top + ((Tabs_scrollable_012.bottom - Tabs_scrollable_012.top) / 2))).toInt(), displayId: displayID.toInt() }, { x: (Math.round(Tabs_scrollable_012.left + ((Tabs_scrollable_012.right - Tabs_scrollable_012.left) / 6))).toInt(), y: (Math.round(Tabs_scrollable_012.top + ((Tabs_scrollable_012.bottom - Tabs_scrollable_012.top) / 2))).toInt(), displayId: displayID.toInt() });
         await CommonFunc.sleep(1000);
         let Tabs_scrollable_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_scrollable' + '_003');
         let Tabs_scrollable_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_scrollable' + '_013');
@@ -222,7 +222,7 @@ it('testTabsScrollableToFalse_static_02', Level.LEVEL0, async (done: () => void)
         let driver = Driver.create();
         await CommonFunc.sleep(1000);
         await driver.swipeBetween({ x: (Math.round(Tabs_scrollable_011.right -
-          ((Tabs_scrollable_011.right - Tabs_scrollable_011.left) / 6))).toInt(), y: (Math.round(Tabs_scrollable_011.top + ((Tabs_scrollable_011.bottom - Tabs_scrollable_011.top) / 2))).toInt(), displayId: displayID as Int }, { x: (Math.round(Tabs_scrollable_011.left + ((Tabs_scrollable_011.right - Tabs_scrollable_011.left) / 6))).toInt(), y: (Math.round(Tabs_scrollable_011.top + ((Tabs_scrollable_011.bottom - Tabs_scrollable_011.top) / 2))).toInt(), displayId: displayID as Int });
+          ((Tabs_scrollable_011.right - Tabs_scrollable_011.left) / 6))).toInt(), y: (Math.round(Tabs_scrollable_011.top + ((Tabs_scrollable_011.bottom - Tabs_scrollable_011.top) / 2))).toInt(), displayId: displayID.toInt() }, { x: (Math.round(Tabs_scrollable_011.left + ((Tabs_scrollable_011.right - Tabs_scrollable_011.left) / 6))).toInt(), y: (Math.round(Tabs_scrollable_011.top + ((Tabs_scrollable_011.bottom - Tabs_scrollable_011.top) / 2))).toInt(), displayId: displayID.toInt() });
         await CommonFunc.sleep(1000);
         let Tabs_scrollable_0012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_scrollable' + '_004');
         let Tabs_scrollable_0112: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_scrollable' + '_041');

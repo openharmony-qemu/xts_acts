@@ -96,12 +96,12 @@ it('testTabsItemPad_static_01', Level.LEVEL0, async (done: () => void): Promise<
         let driver = Driver.create();
         await CommonFunc.sleep(1000);
         await driver.swipeBetween({ x: (Math.round(Tabs_itemPadMar_011.right -
-          ((Tabs_itemPadMar_011.right - Tabs_itemPadMar_011.left) / 6))).toInt(), y: (Math.round(Tabs_itemPadMar_011.top + ((Tabs_itemPadMar_011.bottom - Tabs_itemPadMar_011.top) / 2))).toInt(), displayId: displayID as Int }, { x: (Math.round(Tabs_itemPadMar_011.left + ((Tabs_itemPadMar_011.right - Tabs_itemPadMar_011.left) / 6))).toInt(), y: (Math.round(Tabs_itemPadMar_011.top + ((Tabs_itemPadMar_011.bottom - Tabs_itemPadMar_011.top) / 2))).toInt(), displayId: displayID as Int });
+          ((Tabs_itemPadMar_011.right - Tabs_itemPadMar_011.left) / 6))).toInt(), y: (Math.round(Tabs_itemPadMar_011.top + ((Tabs_itemPadMar_011.bottom - Tabs_itemPadMar_011.top) / 2))).toInt(), displayId: displayID.toInt() }, { x: (Math.round(Tabs_itemPadMar_011.left + ((Tabs_itemPadMar_011.right - Tabs_itemPadMar_011.left) / 6))).toInt(), y: (Math.round(Tabs_itemPadMar_011.top + ((Tabs_itemPadMar_011.bottom - Tabs_itemPadMar_011.top) / 2))).toInt(), displayId: displayID.toInt() });
         await CommonFunc.sleep(1000);
         let Tabs_itemPadMar_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar' + '_002');
         let Tabs_itemPadMar_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar' + '_012');
         await driver.swipeBetween({ x: (Math.round(Tabs_itemPadMar_012.right -
-          ((Tabs_itemPadMar_012.right - Tabs_itemPadMar_012.left) / 6))).toInt(), y: (Math.round(Tabs_itemPadMar_012.top + ((Tabs_itemPadMar_012.bottom - Tabs_itemPadMar_012.top) / 2))).toInt(), displayId: displayID as Int }, { x: (Math.round(Tabs_itemPadMar_012.left + ((Tabs_itemPadMar_012.right - Tabs_itemPadMar_012.left) / 6))).toInt(), y: (Math.round(Tabs_itemPadMar_012.top + ((Tabs_itemPadMar_012.bottom - Tabs_itemPadMar_012.top) / 2))).toInt(), displayId: displayID as Int });
+          ((Tabs_itemPadMar_012.right - Tabs_itemPadMar_012.left) / 6))).toInt(), y: (Math.round(Tabs_itemPadMar_012.top + ((Tabs_itemPadMar_012.bottom - Tabs_itemPadMar_012.top) / 2))).toInt(), displayId: displayID.toInt() }, { x: (Math.round(Tabs_itemPadMar_012.left + ((Tabs_itemPadMar_012.right - Tabs_itemPadMar_012.left) / 6))).toInt(), y: (Math.round(Tabs_itemPadMar_012.top + ((Tabs_itemPadMar_012.bottom - Tabs_itemPadMar_012.top) / 2))).toInt(), displayId: displayID.toInt() });
         await CommonFunc.sleep(1000);
         let Tabs_itemPadMar_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar' + '_003');
         let Tabs_itemPadMar_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar' + '_013');
@@ -231,12 +231,12 @@ it('testTabsItemMar_static_02', Level.LEVEL0, async (done: () => void): Promise<
         let driver = Driver.create();
         await CommonFunc.sleep(1000);
         await driver.swipeBetween({ x: (Math.round(Tabs_itemPadMar_011.right -
-          ((Tabs_itemPadMar_011.right - Tabs_itemPadMar_011.left) / 6))).toInt(), y: (Math.round(Tabs_itemPadMar_011.top + ((Tabs_itemPadMar_011.bottom - Tabs_itemPadMar_011.top) / 2))).toInt(), displayId: displayID as Int }, { x: (Math.round(Tabs_itemPadMar_011.left + ((Tabs_itemPadMar_011.right - Tabs_itemPadMar_011.left) / 6))).toInt(), y: (Math.round(Tabs_itemPadMar_011.top + ((Tabs_itemPadMar_011.bottom - Tabs_itemPadMar_011.top) / 2))).toInt(), displayId: displayID as Int });
+          ((Tabs_itemPadMar_011.right - Tabs_itemPadMar_011.left) / 6))).toInt(), y: (Math.round(Tabs_itemPadMar_011.top + ((Tabs_itemPadMar_011.bottom - Tabs_itemPadMar_011.top) / 2))).toInt(), displayId: displayID.toInt() }, { x: (Math.round(Tabs_itemPadMar_011.left + ((Tabs_itemPadMar_011.right - Tabs_itemPadMar_011.left) / 6))).toInt(), y: (Math.round(Tabs_itemPadMar_011.top + ((Tabs_itemPadMar_011.bottom - Tabs_itemPadMar_011.top) / 2))).toInt(), displayId: displayID.toInt() });
         await CommonFunc.sleep(1000);
         let Tabs_itemPadMar_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar' + '_002');
         let Tabs_itemPadMar_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar' + '_012');
         await driver.swipeBetween({ x: (Math.round(Tabs_itemPadMar_012.right -
-          ((Tabs_itemPadMar_012.right - Tabs_itemPadMar_012.left) / 6))).toInt(), y: (Math.round(Tabs_itemPadMar_012.top + ((Tabs_itemPadMar_012.bottom - Tabs_itemPadMar_012.top) / 2))).toInt(), displayId: displayID as Int }, { x: (Math.round(Tabs_itemPadMar_012.left + ((Tabs_itemPadMar_012.right - Tabs_itemPadMar_012.left) / 6))).toInt(), y: (Math.round(Tabs_itemPadMar_012.top + ((Tabs_itemPadMar_012.bottom - Tabs_itemPadMar_012.top) / 2))).toInt(), displayId: displayID as Int });
+          ((Tabs_itemPadMar_012.right - Tabs_itemPadMar_012.left) / 6))).toInt(), y: (Math.round(Tabs_itemPadMar_012.top + ((Tabs_itemPadMar_012.bottom - Tabs_itemPadMar_012.top) / 2))).toInt(), displayId: displayID.toInt() }, { x: (Math.round(Tabs_itemPadMar_012.left + ((Tabs_itemPadMar_012.right - Tabs_itemPadMar_012.left) / 6))).toInt(), y: (Math.round(Tabs_itemPadMar_012.top + ((Tabs_itemPadMar_012.bottom - Tabs_itemPadMar_012.top) / 2))).toInt(), displayId: displayID.toInt() });
         await CommonFunc.sleep(1000);
         let Tabs_itemPadMar_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar' + '_003');
         let Tabs_itemPadMar_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar' + '_013');
@@ -365,12 +365,12 @@ it('testTabsItemPadMar_static_03', Level.LEVEL0, async (done: () => void): Promi
         let driver = Driver.create();
         await CommonFunc.sleep(1000);
         await driver.swipeBetween({ x: (Math.round(Tabs_itemPadMar_011.right -
-          ((Tabs_itemPadMar_011.right - Tabs_itemPadMar_011.left) / 6))).toInt(), y: (Math.round(Tabs_itemPadMar_011.top + ((Tabs_itemPadMar_011.bottom - Tabs_itemPadMar_011.top) / 2))).toInt(), displayId: displayID as Int }, { x: (Math.round(Tabs_itemPadMar_011.left + ((Tabs_itemPadMar_011.right - Tabs_itemPadMar_011.left) / 6))).toInt(), y: (Math.round(Tabs_itemPadMar_011.top + ((Tabs_itemPadMar_011.bottom - Tabs_itemPadMar_011.top) / 2))).toInt(), displayId: displayID as Int });
+          ((Tabs_itemPadMar_011.right - Tabs_itemPadMar_011.left) / 6))).toInt(), y: (Math.round(Tabs_itemPadMar_011.top + ((Tabs_itemPadMar_011.bottom - Tabs_itemPadMar_011.top) / 2))).toInt(), displayId: displayID.toInt() }, { x: (Math.round(Tabs_itemPadMar_011.left + ((Tabs_itemPadMar_011.right - Tabs_itemPadMar_011.left) / 6))).toInt(), y: (Math.round(Tabs_itemPadMar_011.top + ((Tabs_itemPadMar_011.bottom - Tabs_itemPadMar_011.top) / 2))).toInt(), displayId: displayID.toInt() });
         await CommonFunc.sleep(1000);
         let Tabs_itemPadMar_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar' + '_002');
         let Tabs_itemPadMar_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar' + '_012');
         await driver.swipeBetween({ x: (Math.round(Tabs_itemPadMar_012.right -
-          ((Tabs_itemPadMar_012.right - Tabs_itemPadMar_012.left) / 6))).toInt(), y: (Math.round(Tabs_itemPadMar_012.top + ((Tabs_itemPadMar_012.bottom - Tabs_itemPadMar_012.top) / 2))).toInt(), displayId: displayID as Int }, { x: (Math.round(Tabs_itemPadMar_012.left + ((Tabs_itemPadMar_012.right - Tabs_itemPadMar_012.left) / 6))).toInt(), y: (Math.round(Tabs_itemPadMar_012.top + ((Tabs_itemPadMar_012.bottom - Tabs_itemPadMar_012.top) / 2))).toInt(), displayId: displayID as Int });
+          ((Tabs_itemPadMar_012.right - Tabs_itemPadMar_012.left) / 6))).toInt(), y: (Math.round(Tabs_itemPadMar_012.top + ((Tabs_itemPadMar_012.bottom - Tabs_itemPadMar_012.top) / 2))).toInt(), displayId: displayID.toInt() }, { x: (Math.round(Tabs_itemPadMar_012.left + ((Tabs_itemPadMar_012.right - Tabs_itemPadMar_012.left) / 6))).toInt(), y: (Math.round(Tabs_itemPadMar_012.top + ((Tabs_itemPadMar_012.bottom - Tabs_itemPadMar_012.top) / 2))).toInt(), displayId: displayID.toInt() });
         await CommonFunc.sleep(1000);
         let Tabs_itemPadMar_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar' + '_003');
         let Tabs_itemPadMar_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemPadMar' + '_013');

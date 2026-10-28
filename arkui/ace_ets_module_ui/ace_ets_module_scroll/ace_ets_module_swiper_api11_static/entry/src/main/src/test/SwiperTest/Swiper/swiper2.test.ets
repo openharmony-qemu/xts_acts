@@ -108,7 +108,7 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0260', Level.LEVEL0, async (don
 
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      await driver.swipeBetween({ x: Math.round(btLeft).toInt(), y: Math.round(btBottom / 2).toInt(), displayId: displayID as Int }, { x: (Math.round(btRight) + 40).toInt(), y: Math.round(btBottom / 2).toInt(), displayId: displayID as Int });
+      await driver.swipeBetween({ x: Math.round(btLeft).toInt(), y: Math.round(btBottom / 2).toInt(), displayId: displayID.toInt() }, { x: (Math.round(btRight) + 40).toInt(), y: Math.round(btBottom / 2).toInt(), displayId: displayID.toInt() });
       await CommonFunc.sleep(5000);
 
       let strJson = inspector.getInspectorByKey('swiperText2');

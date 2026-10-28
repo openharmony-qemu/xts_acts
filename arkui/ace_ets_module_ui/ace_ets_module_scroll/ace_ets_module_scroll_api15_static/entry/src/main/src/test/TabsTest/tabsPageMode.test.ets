@@ -86,7 +86,7 @@ it('tabsPageMode_static_0100', Level.LEVEL1, async (done: () => void): Promise<v
         let width = right - left;
         let height = bottom - top;
         console.info("swiperPageMode_static_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
-        await driver.mouseScroll({ x: (Math.round(left + width / 2)).toInt(), y: (Math.round(top + height / 2)).toInt(), displayId: displayID as Int },
+        await driver.mouseScroll({ x: (Math.round(left + width / 2)).toInt(), y: (Math.round(top + height / 2)).toInt(), displayId: displayID.toInt() },
           true, 1)
         await CommonFunc.sleep(1000);
 
@@ -133,7 +133,7 @@ it('tabsPageMode_static_0200', Level.LEVEL1, async (done: () => void): Promise<v
         let width = right - left;
         let height = bottom - top;
         console.info("swiperPageMode_static_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
-        await driver.mouseScroll({ x: (Math.round(left + width / 2)).toInt(), y: (Math.round(top + height / 2)).toInt(), displayId: displayID as Int },
+        await driver.mouseScroll({ x: (Math.round(left + width / 2)).toInt(), y: (Math.round(top + height / 2)).toInt(), displayId: displayID.toInt() },
           true, 3)
         await CommonFunc.sleep(5000);
 

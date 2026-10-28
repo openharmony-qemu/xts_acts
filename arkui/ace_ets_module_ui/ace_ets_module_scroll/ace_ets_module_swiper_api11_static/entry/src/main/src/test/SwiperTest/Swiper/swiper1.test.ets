@@ -112,7 +112,7 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0130', Level.LEVEL0, async (don
       const uiContext = new UIContext();
       const winLeft = AppStorage.get<number>('winLeft') ?? 0;
       const winTop = AppStorage.get<number>('winTop as Int') ?? 0;
-      await driver.swipeBetween({ x: (winLeft + Math.round(btLeft).toInt() + Math.round(UIContext.resolveUIContext()!.vp2px(27).toInt())).toInt(), y: (Math.round(winTop + btBottom - UIContext.resolveUIContext()!.vp2px(10))).toInt(), displayId: displayID as Int }, { x: (winLeft + Math.round(btLeft).toInt() + Math.round(UIContext.resolveUIContext()!.vp2px(27).toInt())).toInt(), y: Math.round(winTop + btTop + UIContext.resolveUIContext()!.vp2px(10)).toInt(), displayId: displayID as Int });
+      await driver.swipeBetween({ x: (winLeft + Math.round(btLeft).toInt() + Math.round(UIContext.resolveUIContext()!.vp2px(27).toInt())).toInt(), y: (Math.round(winTop + btBottom - UIContext.resolveUIContext()!.vp2px(10))).toInt(), displayId: displayID.toInt() }, { x: (winLeft + Math.round(btLeft).toInt() + Math.round(UIContext.resolveUIContext()!.vp2px(27).toInt())).toInt(), y: Math.round(winTop + btTop + UIContext.resolveUIContext()!.vp2px(10)).toInt(), displayId: displayID.toInt() });
       await CommonFunc.sleep(5000);
 
       let strJson = inspector.getInspectorByKey('swiperText1');

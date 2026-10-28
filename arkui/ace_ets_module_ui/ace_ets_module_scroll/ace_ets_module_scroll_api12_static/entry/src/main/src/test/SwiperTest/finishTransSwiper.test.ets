@@ -71,9 +71,9 @@ it('finishTransSwiper_static_0100', Level.LEVEL0, async (done: () => void): Prom
       await CommonFunc.sleep(1000);
       await driver.swipeBetween({ x: (Math.round(left + width * 0.8)
       ).toInt(), y: (Math.round(top + height / 2)
-      ).toInt(), displayId: displayID as Int }, { x: (Math.round(left + width * 0.2)
+      ).toInt(), displayId: displayID.toInt() }, { x: (Math.round(left + width * 0.2)
       ).toInt(), y: (Math.round(top + height / 2)
-        ).toInt(), displayId: displayID as Int });
+        ).toInt(), displayId: displayID.toInt() });
       await CommonFunc.sleep(2000);
       let strJson1 = inspector.getInspectorByKey('finishTransitionSwiper_text');
       console.info("[scrollSourceDrag_static_0100] component obj1 is: " +

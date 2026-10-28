@@ -79,7 +79,7 @@ it('navigation_add4_1_static_0100', Level.LEVEL0, async (done: () => void): Prom
 
   let navigation = CommonFunc.getComponentRect('navigation_add4_1_navigation');
 
-  await driver.swipeBetween({ x: (Math.round(navigation.left + (navigation.right - navigation.left) / 4 * 3)).toInt(), y: (Math.round(navigation.top + (navigation.bottom - navigation.top) / 2)).toInt(), displayId: displayID as Int }, { x: (Math.round(navigation.left + (navigation.right - navigation.left) / 4 * 1)).toInt(), y: (Math.round(navigation.top + (navigation.bottom -  navigation.top) / 2)).toInt(), displayId: displayID as Int });
+  await driver.swipeBetween({ x: (Math.round(navigation.left + (navigation.right - navigation.left) / 4 * 3)).toInt(), y: (Math.round(navigation.top + (navigation.bottom - navigation.top) / 2)).toInt(), displayId: displayID.toInt() }, { x: (Math.round(navigation.left + (navigation.right - navigation.left) / 4 * 1)).toInt(), y: (Math.round(navigation.top + (navigation.bottom -  navigation.top) / 2)).toInt(), displayId: displayID.toInt() });
   await CommonFunc.sleep(1000);
 
   let btn1 = await driver.findComponent(ON.id('navigation_add4_1_pageTwo_btn1'));

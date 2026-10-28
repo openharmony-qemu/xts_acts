@@ -80,12 +80,12 @@ it('scrollDidJsunit_0100', Level.LEVEL0, async (done: () => void): Promise<void>
       await driver.fling({
         x: (Number.parseInt(`${(scrollRect.right - scrollRect.left) * 0.5 + scrollRect.left}`)).toInt(),
         y: (Number.parseInt(`${(scrollRect.bottom - scrollRect.top) * 0.6 + scrollRect.top}`)).toInt(),
-        displayId: displayID as Int
+        displayId: displayID.toInt()
       },
         {
           x: (Number.parseInt(`${(scrollRect.right - scrollRect.left) * 0.5 + scrollRect.left}`)).toInt(),
           y: (Number.parseInt(`${(scrollRect.bottom - scrollRect.top) * 0.2 + scrollRect.top}`)).toInt(),
-          displayId: displayID as Int
+          displayId: displayID.toInt()
         }, 5, 1000);
       await CommonFunc.sleep(2000);
 

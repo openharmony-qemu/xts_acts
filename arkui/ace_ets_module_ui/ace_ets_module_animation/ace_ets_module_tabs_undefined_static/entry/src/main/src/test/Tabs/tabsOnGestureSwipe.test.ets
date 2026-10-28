@@ -76,7 +76,7 @@ export default function TabsOnGestureSwipeTest() {
       let startY1 = rect?.bottom as Int;
       let endX1 = rect?.left as Int;
       let endY1 = rect?.top as Int;
-      driver.swipeBetween({ x: startX1 - 100, y: startY1 - 100, displayId: displayID as Int }, { x: endX1, y: endY1, displayId: displayID as Int }, 5000);
+      driver.swipeBetween({ x: startX1 - 100, y: startY1 - 100, displayId: displayID.toInt() }, { x: endX1, y: endY1, displayId: displayID.toInt() }, 5000);
       await CommonFunc.sleep(3000);
       let testText = await driver.findComponent(ON.id('textOnGestureSwipe'));
       expect(await (testText?.getText() as Promise<string>)).assertEqual('undefined onGestureSwipe');
