@@ -2640,7 +2640,7 @@ export default function bluetoothConnectionTest(): void {
         try {
           connection.setLocalName("");
           hilog.info(domain, tag, "setLocalName empty string success");
-          expect(true).assertTrue();
+          expect().assertFail();
         } catch (err) {
           err = err as BusinessError;
           hilog.info(domain, tag, "setLocalName errCode:" + err.code + ",errMessage:" + err.message);
@@ -2670,7 +2670,7 @@ export default function bluetoothConnectionTest(): void {
         try {
           let transport: connection.BluetoothTransport = connection.getRemoteDeviceTransport("");
           hilog.info(domain, tag, "getRemoteDeviceTransport result: " + JSON.stringify(transport));
-          expect(true).assertTrue();
+          expect().assertFail();
         } catch (err) {
           err = err as BusinessError;
           hilog.info(domain, tag,
@@ -2702,7 +2702,6 @@ export default function bluetoothConnectionTest(): void {
           let virtualAddress: string = connection.getVirtualAddressByHash(
             99 as connection.HashAlgorithmType, "testHashValue");
           hilog.info(domain, tag, "getVirtualAddressByHash result: " + JSON.stringify(virtualAddress));
-          expect(true).assertTrue();
         } catch (err) {
           err = err as BusinessError;
           hilog.info(domain, tag,
@@ -2710,9 +2709,6 @@ export default function bluetoothConnectionTest(): void {
           if (err.code === 801) {
             hilog.info(domain, tag, 'api is not support');
             expect(err.code).assertEqual(801);
-          } else if (err.code === 401) {
-            hilog.info(domain, tag, 'invalid param');
-            expect(err.code).assertEqual(401);
           } else {
             expect().assertFail();
           }
@@ -2734,6 +2730,7 @@ export default function bluetoothConnectionTest(): void {
           let virtualAddress: string = connection.getVirtualAddressByHash(
             connection.HashAlgorithmType.HASH_ALGORITHM_SHA256, "");
           hilog.info(domain, tag, "getVirtualAddressByHash result: " + JSON.stringify(virtualAddress));
+          expect().assertFail();
         } catch (err) {
           err = err as BusinessError;
           hilog.info(domain, tag,
