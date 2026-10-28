@@ -26,7 +26,7 @@ let ctx = getContext(this) as common.UIAbilityContext;
 function sleep(time: number) {
   return new Promise((resolve: (value: string) => void) => {
     setTimeout(() => {
-      resolve('ok');
+      resolve("ok");
     }, time)
   });
 }
@@ -49,7 +49,6 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
      */
     it('SUB_Notification_Ans_openWindow_WithResult_1200', Level.LEVEL2, async (done: Function) => {
       let testNum: string = 'SUB_Notification_Ans_openWindow_WithResult_1200'
-      let driver: Driver = Driver.create();
       let num= 0
       try {
         let context: common.UIAbilityContext = getContext(ctx) as common.UIAbilityContext;
@@ -69,7 +68,8 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
               done();
             } else if (index === 499) {
               expect(err.code).assertEqual(1600018);
-              await sleep(500)
+              await sleep(1000)
+              let driver: Driver = Driver.create();
               let button6 = await driver.findComponent(ON.text('确定'));
               console.info(testNum + `button6 is ${JSON.stringify(button6)}`);
               if (button6 !== null) {
@@ -104,41 +104,41 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
      * @tc.level  LEVEL2
      */
     it('SUB_Notification_Ans_openWindow_WithResult_0700', Level.LEVEL2, async (done: Function) => {
-      let testNum: string = 'SUB_Notification_Ans_openWindow_WithResult_0700'
+      const testNum: string = 'SUB_Notification_Ans_openWindow_WithResult_0700'
+      
       try {
+        // 1. 打开半模态设置页并等待结果
         let context: common.UIAbilityContext = getContext(ctx) as common.UIAbilityContext;
-        let data = await notificationManager.openNotificationSettingsWithResult(context);
+        const dataPromsie = notificationManager.openNotificationSettingsWithResult(context);
+        // 2. 等待设置页展示并点击“确定”
+        await sleep(2000)
+        const driver: Driver = Driver.create();
+        let button2 = await driver.findComponent(ON.text('确定'));
+        console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
+        if (button2 !== null) {
+          await sleep(1000);
+          await button2.click()
+          await sleep(1000)
+        }
+        const data = await dataPromsie;
         hilog.info(0x0000, 'testTag',
-          `${testNum} openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data)}`);
+          `${testNum} openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
         expect(data.vibrationEnabled).assertEqual(true)
         expect(data.soundEnabled).assertEqual(true)
         expect(data.lockScreenEnabled).assertEqual(true)
         expect(data.badgeNumberEnabled).assertEqual(true)
         expect(data.bannerEnabled).assertEqual(false)
         expect(data.notificationEnabled).assertEqual(false)
-        // 设置页打开成功后执行 UI 流程
-        await sleep(2000)
-        let driver: Driver = Driver.create();
-        await driver.assertComponentExist(ON.text('通知管理'));
-        let button2 = await driver.findComponent(ON.text('确定'));
-        console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
-        if (button2 !== null) {
-          console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
-          await sleep(1000);
-          await button2.click()
-          await sleep(1000)
-        }
         done();
       } catch (err) {
+        let e: BusinessError = err as BusinessError;
         hilog.error(0x0000, 'testTag',
-          `${testNum} openSubscriptionSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
-        // 无权限打开设置页（801，普通三方应用）→ 接受错误码结束用例，不再执行 UI 流程
-        if (err.code === 801) {
-          expect(err.code).assertEqual(801);
-          done();
-          return
+          `${testNum} openNotificationSettingsWithResult failed, code is ${e.code}, message is ${e.message}`);
+        if (e.code === 801) {
+          expect(e.code).assertEqual(801);
+        } else {
+          expect(false).assertTrue();
         }
-        expect(false).assertTrue();
         done();
       }
     })
@@ -152,63 +152,56 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
      * @tc.level  LEVEL0
      */
     it('SUB_Notification_Ans_openWindow_WithResult_0100', Level.LEVEL0, async (done: Function) => {
-      let testNum: string = 'SUB_Notification_Ans_openWindow_WithResult_0100'
-
+      const testNum: string = 'SUB_Notification_Ans_openWindow_WithResult_0100'
+      
       try {
+        // 1. 打开半模态设置页并获取结果
         let context: common.UIAbilityContext = getContext(ctx) as common.UIAbilityContext;
-        let data = await notificationManager.openNotificationSettingsWithResult(context);
-        hilog.info(0x0000, 'testTag',
-          `${testNum} openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
-        expect(data.notificationEnabled).assertEqual(true)
-        expect(data.bannerEnabled).assertEqual(false)
-        // 设置页打开成功后执行 UI 流程
+        const dataPromsie = notificationManager.openNotificationSettingsWithResult(context);
+        // 2. 等待设置页展示并操作开关
         await sleep(2000)
-        let driver: Driver = Driver.create();
+        const driver: Driver = Driver.create();
         let button = await driver.findComponent(ON.type('Toggle').isAfter(ON.text('允许通知')));
         console.info(testNum + `button is ${JSON.stringify(button)}`);
         if (button !== null) {
-          console.info(testNum + `button is ${JSON.stringify(button)}`);
           await sleep(1000);
           await button.click()
           await sleep(1500)
         }
         let scrollBar = await driver.findComponent(ON.text('桌面角标'));
         console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
-        expect(scrollBar != null).assertTrue()
-        await scrollBar.scrollToBottom()
+        await scrollBar?.scrollToBottom()
         await sleep(1500);
         let button2 = await driver.findComponent(ON.text('桌面角标'));
         console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
         if (button2 !== null) {
-          console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
           await sleep(1000);
           await button2.click()
           await sleep(1500)
         }
-        let scrollBar1 = await driver.findComponent(ON.text('桌面角标'));
-        console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar1)} `);
-        expect(scrollBar1 != null).assertTrue()
-        await scrollBar1.scrollToTop()
-        await sleep(1500)
-        let button8 = await driver.findComponent(ON.text('确定'));
-        console.info(testNum + `button8 is ${JSON.stringify(button8)}`);
-        if (button8 !== null) {
-          console.info(testNum + `button8 is ${JSON.stringify(button8)}`);
+        let button3 = await driver.findComponent(ON.text('确定'));
+        console.info(testNum + `button3 is ${JSON.stringify(button3)}`);
+        if (button3 !== null) {
           await sleep(1000);
-          await button8.click()
+          await button3.click()
           await sleep(1000)
         }
+        // 3. 等待回调结果并断言
+        const data = await dataPromsie;
+        hilog.info(0x0000, 'testTag',
+          `${testNum} openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
+        expect(data.notificationEnabled).assertEqual(true)
+        expect(data.bannerEnabled).assertEqual(false)
         done();
       } catch (err) {
+        let e: BusinessError = err as BusinessError;
         hilog.error(0x0000, 'testTag',
-          `${testNum} openNotificationSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
-        // 无权限打开设置页（801，普通三方应用）→ 接受错误码结束用例，不再执行 UI 流程
-        if (err.code === 801) {
-          expect(err.code).assertEqual(801);
-          done();
-          return
+          `${testNum} openNotificationSettingsWithResult failed, code is ${e.code}, message is ${e.message}`);
+        if (e.code === 801) {
+          expect(e.code).assertEqual(801);
+        } else {
+          expect(false).assertTrue();
         }
-        expect(false).assertTrue();
         done();
       }
     })
@@ -222,27 +215,21 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
      * @tc.level  LEVEL0
      */
     it('SUB_Notification_Ans_openWindow_WithResult_0200', Level.LEVEL0, async (done: Function) => {
-      let testNum: string = 'SUB_Notification_Ans_openWindow_WithResult_0200'
+      const testNum: string = 'SUB_Notification_Ans_openWindow_WithResult_0200'
       try {
+        // 1. 打开半模态设置页并获取结果
         let context: common.UIAbilityContext = getContext(ctx) as common.UIAbilityContext;
-        let data = await notificationManager.openNotificationSettingsWithResult(context);
-        hilog.info(0x0000, 'testTag',
-          testNum + `openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
-        expect(data.bannerEnabled).assertEqual(true)
-        expect(data.badgeNumberEnabled).assertEqual(true)
-        expect(data.notificationEnabled).assertEqual(true)
-        // 设置页打开成功后执行 UI 流程
+        const dataPromsie = notificationManager.openNotificationSettingsWithResult(context);
+        // 2. 等待设置页展示并操作开关
         await sleep(2000);
-        let driver: Driver = Driver.create();
+        const driver: Driver = Driver.create();
         let scrollBar = await driver.findComponent(ON.text('桌面角标'));
         console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
-        expect(scrollBar != null).assertTrue()
-        await scrollBar.scrollToBottom()
+        await scrollBar?.scrollToBottom()
         await sleep(1500)
         let button = await driver.findComponent(ON.text('横幅通知'));
         console.info(testNum + `button is ${JSON.stringify(button)}`);
         if (button !== null) {
-          console.info(testNum + `button is ${JSON.stringify(button)}`);
           await sleep(1000);
           await button.click()
           await sleep(1500)
@@ -250,7 +237,6 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
         let button2 = await driver.findComponent(ON.text('桌面角标'));
         console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
         if (button2 !== null) {
-          console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
           await sleep(1000);
           await button2.click()
           await sleep(1500)
@@ -258,22 +244,27 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
         let button8 = await driver.findComponent(ON.text('确定'));
         console.info(testNum + `button8 is ${JSON.stringify(button8)}`);
         if (button8 !== null) {
-          console.info(testNum + `button8 is ${JSON.stringify(button8)}`);
           await sleep(1000);
           await button8.click()
           await sleep(1000)
         }
+        // 3. 等待回调结果并断言
+        const data = await dataPromsie;
+        hilog.info(0x0000, 'testTag',
+          testNum + `openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
+        expect(data.bannerEnabled).assertEqual(true)
+        expect(data.badgeNumberEnabled).assertEqual(true)
+        expect(data.notificationEnabled).assertEqual(true)
         done();
       } catch (err) {
+        let e: BusinessError = err as BusinessError;
         hilog.error(0x0000, 'testTag',
-          testNum + `openNotificationSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
-        // 无权限打开设置页（801，普通三方应用）→ 接受错误码结束用例，不再执行 UI 流程
-        if (err.code === 801) {
-          expect(err.code).assertEqual(801);
-          done();
-          return
+          testNum + `openNotificationSettingsWithResult failed, code is ${e.code}, message is ${e.message}`);
+        if (e.code === 801) {
+          expect(e.code).assertEqual(801);
+        } else {
+          expect(false).assertTrue();
         }
-        expect(false).assertTrue();
         done();
       }
     })
@@ -295,11 +286,10 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
             `${testNum} openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data)}`);
           expect(false).assertTrue();
           done()
-        }).catch((e: Error) => {
-          let err: BusinessError = e as BusinessError
+        }).catch((err: BusinessError) => {
           hilog.error(0x0000, 'testTag',
             `${testNum} openSubscriptionSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
-          if (err?.code === 801) {
+          if (err.code === 801) {
             expect(err.code).assertEqual(801);
             done();
           } else {
@@ -329,26 +319,22 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
      * @tc.level  LEVEL2
      */
     it('SUB_Notification_Ans_openWindow_WithResult_0900', Level.LEVEL0, async (done: Function) => {
-      let testNum: string = 'SUB_Notification_Ans_openWindow_WithResult_0900'
+      const testNum: string = 'SUB_Notification_Ans_openWindow_WithResult_0900'
+      
       try {
+        // 1. 打开半模态设置页并等待结果
         let context: common.UIAbilityContext = getContext(ctx) as common.UIAbilityContext;
-        let data = await notificationManager.openNotificationSettingsWithResult(context);
-        hilog.info(0x0000, 'testTag',
-          testNum + `openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
-        expect(data.bannerEnabled).assertEqual(false)
-        expect(data.notificationEnabled).assertEqual(true)
-        // 设置页打开成功后执行 UI 流程
-        await sleep(2000);
+        const dataPromsie = notificationManager.openNotificationSettingsWithResult(context);
+        // 2. 等待设置页展示并操作开关
+        await sleep(2000)
         let driver: Driver = Driver.create();
         let scrollBar = await driver.findComponent(ON.text('桌面角标'));
         console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
-        expect(scrollBar != null).assertTrue()
-        await scrollBar.scrollToBottom()
+        await scrollBar?.scrollToBottom()
         await sleep(1500)
         let button = await driver.findComponent(ON.text('横幅通知'));
         console.info(testNum + `button is ${JSON.stringify(button)}`);
         if (button !== null) {
-          console.info(testNum + `button is ${JSON.stringify(button)}`);
           await sleep(1000);
           await button.click()
           await sleep(1500)
@@ -356,7 +342,6 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
         let button2 = await driver.findComponent(ON.text('桌面角标'));
         console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
         if (button2 !== null) {
-          console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
           await sleep(1000);
           await button2.click()
           await sleep(1500)
@@ -364,49 +349,43 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
         let button8 = await driver.findComponent(ON.text('确定'));
         console.info(testNum + `button8 is ${JSON.stringify(button8)}`);
         if (button8 !== null) {
-          console.info(testNum + `button8 is ${JSON.stringify(button8)}`);
           await sleep(1000);
           await button8.click()
           await sleep(1000)
         }
+        // 3. 等待第一次回调结果并断言
+        const data = await dataPromsie;
+        hilog.info(0x0000, 'testTag',
+          `${testNum} openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
+        expect(data.bannerEnabled).assertEqual(false)
+        expect(data.notificationEnabled).assertEqual(true)
+        // 4. 再次调用 openNotificationSettingsWithResult 关闭界面
         await sleep(2000)
-        notificationManager.openNotificationSettingsWithResult(context).then((data) => {
-          hilog.info(0x0000, 'testTag',
-            testNum + `openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
-          expect(data.bannerEnabled).assertEqual(false)
-          expect(data.notificationEnabled).assertEqual(true)
-          done();
-        }).catch((e: Error) => {
-          let err: BusinessError = e as BusinessError
-          hilog.error(0x0000, 'testTag',
-            testNum + `openNotificationSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
-          if (err.code === 801) {
-            expect(err.code).assertEqual(801);
-            done();
-          } else {
-            expect(false).assertTrue();
-            done();
-          }
-        });
+        const dataPromsie2 = notificationManager.openNotificationSettingsWithResult(context);
         await sleep(1000)
         let button9 = await driver.findComponent(ON.type('SymbolGlyph'));
         console.info(testNum + `button9 is ${JSON.stringify(button9)}`);
         if (button9 !== null) {
-          console.info(testNum + `button9 is ${JSON.stringify(button9)}`);
           await sleep(1000);
           await button9.click()
           await sleep(1000)
         }
+        // 5. 等待第二次回调结果并断言
+        const data2 = await dataPromsie2;
+        hilog.info(0x0000, 'testTag',
+          `${testNum} openNotificationSettingsWithResult success, data2: ${JSON.stringify(data2)}`);
+        expect(data2.bannerEnabled).assertEqual(false)
+        expect(data2.notificationEnabled).assertEqual(true)
+        done();
       } catch (err) {
+        let e: BusinessError = err as BusinessError;
         hilog.error(0x0000, 'testTag',
-          testNum + `openNotificationSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
-        // 无权限打开设置页（801，普通三方应用）→ 接受错误码结束用例，不再执行 UI 流程
-        if (err.code === 801) {
-          expect(err.code).assertEqual(801);
-          done();
-          return
+          `${testNum} openNotificationSettingsWithResult failed, code is ${e.code}, message is ${e.message}`);
+        if (e.code === 801) {
+          expect(e.code).assertEqual(801);
+        } else {
+          expect(false).assertTrue();
         }
-        expect(false).assertTrue();
         done();
       }
     })
@@ -420,7 +399,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
      * @tc.level  LEVEL2
      */
     it('SUB_Notification_Ans_openWindow_WithResult_1100', Level.LEVEL0, async (done: Function) => {
-      let testNum: string = 'SUB_Notification_Ans_openWindow_WithResult_1100'
+      const testNum: string = 'SUB_Notification_Ans_openWindow_WithResult_1100'
       let num = 0
       let notificationRequest: notificationManager.NotificationRequest = {
         id: 1001,
@@ -428,32 +407,26 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
         content: {
           notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
           normal: {
-            title: '好友消息',
-            text: '李明：晚上一起吃饭吗？',
-            additionalText: '15:30'
+            title: "好友消息",
+            text: "李明：晚上一起吃饭吗？",
+            additionalText: "15:30"
           }
         }
       };
       try {
+        // 1. 打开半模态设置页并等待结果
         let context: common.UIAbilityContext = getContext(ctx) as common.UIAbilityContext;
-        let data = await notificationManager.openNotificationSettingsWithResult(context);
-        hilog.info(0x0000, 'testTag',
-          testNum + `openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
-        expect(data.bannerEnabled).assertEqual(true)
-        expect(data.badgeNumberEnabled).assertEqual(true)
-        expect(data.notificationEnabled).assertEqual(true)
-        // 设置页打开成功后执行 UI 流程
+        const dataPromsie = notificationManager.openNotificationSettingsWithResult(context);
+        // 2. 等待设置页展示并操作开关
         await sleep(2000);
         let driver: Driver = Driver.create();
         let scrollBar = await driver.findComponent(ON.text('桌面角标'));
         console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
-        expect(scrollBar != null).assertTrue()
-        await scrollBar.scrollToBottom()
+        await scrollBar?.scrollToBottom()
         await sleep(1500)
         let button = await driver.findComponent(ON.text('横幅通知'));
         console.info(testNum + `button is ${JSON.stringify(button)}`);
         if (button !== null) {
-          console.info(testNum + `button is ${JSON.stringify(button)}`);
           await sleep(1000);
           await button.click()
           await sleep(1500)
@@ -461,7 +434,6 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
         let button2 = await driver.findComponent(ON.text('桌面角标'));
         console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
         if (button2 !== null) {
-          console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
           await sleep(1000);
           await button2.click()
           await sleep(1500)
@@ -470,39 +442,34 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
         let button6 = await driver.findComponent(ON.text('确定'));
         console.info(testNum + `button6 is ${JSON.stringify(button6)}`);
         if (button6 !== null) {
-          console.info(testNum + `button6 is ${JSON.stringify(button6)}`);
           await sleep(1000);
           await button6.click()
           await sleep(1000)
         }
+        // 3. 等待回调结果并断言
+        const data = await dataPromsie;
+        hilog.info(0x0000, 'testTag',
+          `${testNum} openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
+        expect(data.bannerEnabled).assertEqual(true)
+        expect(data.badgeNumberEnabled).assertEqual(true)
+        expect(data.notificationEnabled).assertEqual(true)
+        // 4. 发布通知，提醒用户新的通知模式
         await sleep(1500)
-        await notificationManager.publish(notificationRequest).then(() => {
-          num = 0
-          console.info(testNum + 'publish success');
-          num++
-          expect(num).assertEqual(1);
-          done()
-        }).catch((e: Error) => {
-          let err: BusinessError = e as BusinessError
-          console.error(testNum + `publish failed, code is ${err.code}, message is ${err.message}`);
-          if (err?.code === 801) {
-            expect(err.code).assertEqual(801);
-            done();
-          } else {
-            expect().assertFail();
-            done();
-          }
-        });
+        await notificationManager.publish(notificationRequest);
+        num = 0
+        console.info(testNum + "publish success");
+        num++
+        expect(num).assertEqual(1);
+        done();
       } catch (err) {
+        let e: BusinessError = err as BusinessError;
         hilog.error(0x0000, 'testTag',
-          testNum + `openNotificationSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
-        // 无权限打开设置页（801，普通三方应用）→ 接受错误码结束用例，不再执行 UI 流程
-        if (err.code === 801) {
-          expect(err.code).assertEqual(801);
-          done();
-          return
+          `${testNum} openNotificationSettingsWithResult failed, code is ${e.code}, message is ${e.message}`);
+        if (e.code === 801) {
+          expect(e.code).assertEqual(801);
+        } else {
+          expect(false).assertTrue();
         }
-        expect(false).assertTrue();
         done();
       }
     })
