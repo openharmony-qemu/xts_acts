@@ -22,6 +22,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 
 
+let displayId: undefined | Int = 0;
 export default function ObserverApi() {
   describe('ObserverApi', () => {
     beforeEach(async (): Promise<void> => {
@@ -223,7 +224,9 @@ export default function ObserverApi() {
       console.info("[ObserverApi_002] btn2")
 
       try {
-        await driver.pressBack()
+        if (displayId != undefined) {
+        await driver.pressBack(displayId as Int);
+      }
       } catch (err) {
         console.info('ObserverApi_test pressBack err: ' + JSON.stringify(err));
       }

@@ -27,6 +27,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 import {SharedTransitionEffectType,Color} from '@ohos.arkui.component';
 import { BusinessError } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+let displayId: undefined | Int = 0;
 export default function UIObserverUpdateContextTest() {
   describe('UIObserverUpdateContextTest', () => {
     beforeAll(async (): Promise<void> => {
@@ -79,7 +80,9 @@ it('UIObserverUpdateContextTest_static_0100', Level.LEVEL2, async (done: () => v
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
-      await driver.pressBack();
+      if (displayId != undefined) {
+        await driver.pressBack(displayId as Int);
+      };
       await CommonFunc.sleep(1000);
 
       button = await driver.findComponent(ON.id("UIObserverUpdateContext_btn_off"));
