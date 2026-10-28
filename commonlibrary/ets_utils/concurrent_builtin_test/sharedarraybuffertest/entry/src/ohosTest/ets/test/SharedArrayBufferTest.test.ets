@@ -17,6 +17,13 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import { sleep, SliceResult, WorkerResult, BufferContainer, processSlice, workerFunction, modifyFunction, readFunction, MemoryMonitor, performBufferOperations, gc } from '../testability/pages/TestUtils';
 import taskpool from '@ohos.taskpool';
 
+@Concurrent
+function storeSharedBufferValue(sab: SharedArrayBuffer, index: number, value: number): number {
+  const view = new Int32Array(sab);
+  Atomics.store(view, index, value);
+  return Atomics.load(view, index);
+}
+
 export default function SharedArrayBufferTest() {
   describe('SharedArrayBufferTest', () => {
     // Presets an action, which is performed only once before all test cases of the test suite start.
@@ -677,7 +684,29 @@ export default function SharedArrayBufferTest() {
         done();
       }
     });
-    
+
+    /**
+     * @tc.name   testSharedArrayBufferCrossThreadVisibility1100
+     * @tc.number SUB_MODULE_SHAREDARRAYBUFFER_TEST_1100
+     * @tc.desc   Verify worker store is visible to the main thread through SharedArrayBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testSharedArrayBufferCrossThreadVisibility1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async () => {
+        const caseName = 'testSharedArrayBufferCrossThreadVisibility1100';
+        console.info(`${caseName} test start`);
+        const sab = new SharedArrayBuffer(4);
+        const ia = new Int32Array(sab);
+        ia[0] = 0;
+        const task = new taskpool.Task(storeSharedBufferValue, sab, 0, 12345);
+        const result = await taskpool.execute(task);
+        expect(result as number).assertEqual(12345);
+        expect(Atomics.load(ia, 0)).assertEqual(12345);
+        console.info(`${caseName} test end`);
+      });
+
   });
 }
 

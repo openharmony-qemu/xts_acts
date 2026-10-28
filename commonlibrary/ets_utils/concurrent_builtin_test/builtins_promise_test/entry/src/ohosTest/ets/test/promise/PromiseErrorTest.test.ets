@@ -16,7 +16,17 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { ArkTSUtils, taskpool } from '@kit.ArkTS';
+import { errorManager } from '@kit.AbilityKit';
 import { sleep, taskFunction1 } from '../../testability/pages/TestUtils';
+
+let unhandledRejectionReason = '';
+
+function promiseRejectionObserver(observer: errorManager.GlobalError): void {
+  if (observer.message === 'unhandled-x') {
+    unhandledRejectionReason = observer.message;
+  }
+  console.info(`promiseRejectionObserver: ${observer.message}`);
+}
 
 
 export default function PromiseErrorTest() {
@@ -222,6 +232,31 @@ export default function PromiseErrorTest() {
         expect(42).assertEqual(result)
         Done();
       })
+    })
+
+    /**
+     * @tc.name   testPromiseError0800
+     * @tc.number SUB_PROMISE_ERROR_TEST_0800
+     * @tc.desc   Verify a rejected Promise without handler triggers the host unhandled rejection observer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testPromiseError0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: Function) => {
+      unhandledRejectionReason = '';
+      errorManager.on('globalUnhandledRejectionDetected', promiseRejectionObserver);
+      try {
+        Promise.reject(new Error('unhandled-x'));
+        let waited = 0;
+        while (unhandledRejectionReason === '' && waited < 30) {
+          await sleep(100);
+          waited++;
+        }
+      } finally {
+        errorManager.off('globalUnhandledRejectionDetected', promiseRejectionObserver);
+      }
+      expect(unhandledRejectionReason).assertEqual('unhandled-x');
+      Done();
     })
 
   })

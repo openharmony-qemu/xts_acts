@@ -39,7 +39,7 @@ export default function abilityTest() {
 
       /**
        * @tc.name   testWorkerMix001
-       * @tc.number SUB_Runtime_Mix_Create_Delete_threads_0001
+       * @tc.number SUB_RUNTIME_MIX_CREATE_DELETE_THREADS_0100
        * @tc.desc   test worker total amount limited with error log
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -50,13 +50,25 @@ export default function abilityTest() {
           bundleName: PUBLISH_BUNDLE_NAME,
           abilityName: 'EntryAbility'
         })
-        await sleep(200);
+        await sleep(500);
         hilog.info(DOMAIN, TAG, '%{public}s', 'test start');
-        const descButton = await driver.findComponent(ON.text(await resourceManager.getStringValue($r('app.string.EntryAbility_desc'))));
-        await sleep(200);
+        const targetText = await resourceManager.getStringValue($r('app.string.EntryAbility_desc'));
+        let confirmButton = await driver.findComponent(ON.text('确定'));
+        if (confirmButton == null) {
+          confirmButton = await driver.findComponent(ON.text('OK'));
+        }
+        if (confirmButton != null) {
+          await confirmButton.click();
+          await sleep(500);
+        }
+        let descButton = await driver.findComponent(ON.text(targetText));
+        for (let i = 0; i < 20 && descButton == null; i++) {
+          await sleep(300);
+          descButton = await driver.findComponent(ON.text(targetText));
+        }
+        expect(descButton != null).assertTrue();
         await descButton?.click();
         await sleep(200);
-        expect(descButton != null).assertTrue();
         done();
       })
   })

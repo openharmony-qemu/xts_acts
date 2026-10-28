@@ -19,6 +19,12 @@ import { ArkTSUtils, collections } from '@kit.ArkTS'
 import Utils from '../utils'
 import { TaskState } from './sendable/SendableTestEnums'
 
+/*
+ * NOTE: This suite uses the local mock TaskState enum to verify the internal state machine behavior.
+ * It is NOT the taskpool.State contract enum (WAITING/RUNNING/CANCELED); the contract values are
+ * asserted by testTaskStateMachine1200 below.
+ */
+
 
 @Sendable
 class TaskTransitionRecord {
@@ -409,6 +415,21 @@ export default function TaskStateMachineTest(): void {
         console.error("testTaskStateMachine1100 failed");
         expect(false).assertFail();
       }
+      done();
+    })
+
+    /**
+     * @tc.name   testTaskStateMachine1200
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_TASKSTATEMACHINE_TEST_1200
+     * @tc.desc   Anchor case for the taskpool.State contract enum values WAITING/RUNNING/CANCELED (1/2/3)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testTaskStateMachine1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      expect(taskpool.State.WAITING.valueOf()).assertEqual(1)
+      expect(taskpool.State.RUNNING.valueOf()).assertEqual(2)
+      expect(taskpool.State.CANCELED.valueOf()).assertEqual(3)
       done();
     })
   })

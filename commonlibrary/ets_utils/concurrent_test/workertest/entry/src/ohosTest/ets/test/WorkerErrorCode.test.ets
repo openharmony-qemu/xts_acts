@@ -95,6 +95,49 @@ export function undefinedReturn(): undefined {
   return undefined
 }
 
+class HostWorkerApiHolder {
+  public workerInstance: worker.ThreadWorker | undefined = undefined;
+
+  public callAddEventListener(): void {
+    if (this.workerInstance !== undefined) {
+      this.workerInstance.addEventListener('hostApiEvent', (): void => {
+      });
+    }
+  }
+}
+
+class GlobalCallEchoHolder {
+  public echo(value: string): string {
+    return value;
+  }
+}
+
+async function runGlobalCallTimeout(timeout: number): Promise<string> {
+  return new Promise<string>((resolve) => {
+    const workerInstance: worker.ThreadWorker =
+      new worker.ThreadWorker('../workers/ErrorCode/WorkerGlobalCallTimeout', {
+        priority: ThreadWorkerPriority.HIGH
+      });
+    const holder = new GlobalCallEchoHolder();
+    let timeoutId = 0;
+    workerInstance.onmessage = (e) => {
+      clearTimeout(timeoutId);
+      workerInstance.terminate();
+      resolve(e.data as string);
+    };
+    workerInstance.registerGlobalCallObject('timeoutObj', holder);
+    workerInstance.postMessage(timeout);
+    timeoutId = setTimeout(() => {
+      try {
+        workerInstance.terminate();
+      } catch (error) {
+        console.info(`runGlobalCallTimeout terminate: ${error.message}`);
+      }
+      resolve('no-reply');
+    }, 8000);
+  });
+}
+
 export default function workerErrorCodeTest() {
   describe('workerErrorCodeTest', () => {
     beforeAll(async () => {
@@ -1556,6 +1599,246 @@ export default function workerErrorCodeTest() {
         await Sleep(100)
       }
       expect(bool).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.name   testThreadWorkerErrorCode0049
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_ERROR_CODE_4900
+     * @tc.desc   Host ThreadWorker API invoked through globalCallObject: either executes on the host thread
+     *            (no error) or throws 10200005; both outcomes are recorded
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testThreadWorkerErrorCode0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const caseName = "testThreadWorkerErrorCode0049";
+      let code = 0;
+      let message = '';
+      let success = false;
+      let finished = false;
+      const workerInstance: worker.ThreadWorker =
+        new worker.ThreadWorker("../workers/ErrorCode/WorkerHostApi", {
+          priority: ThreadWorkerPriority.HIGH
+        });
+      const holder = new HostWorkerApiHolder();
+      holder.workerInstance = workerInstance;
+      workerInstance.onmessage = (e) => {
+        const text = e.data as string;
+        const parts = text.split('|');
+        if (parts[0] === 'err') {
+          code = Number(parts[1]);
+          message = parts[2];
+        } else {
+          success = true;
+        }
+        finished = true;
+      };
+      workerInstance.registerGlobalCallObject('hostWorkerApi', holder);
+      workerInstance.postMessage('start');
+      let waitCount = 0;
+      while (!finished && waitCount < 50) {
+        await Sleep(100);
+        waitCount++;
+      }
+      expect(finished).assertTrue();
+      workerInstance.terminate();
+      console.log(`${caseName} success: ${success} code: ${code} message: ${message}`);
+      if (success) {
+        expect(code).assertEqual(0);
+      } else {
+        expect(code).assertEqual(10200005);
+        expect(message).assertContain('not supported in the worker thread');
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   testThreadWorkerErrorCode0050
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_ERROR_CODE_5000
+     * @tc.desc   callGlobalCallObjectMethod timeout boundary 0/negative/non-integer/overflow: 0 must succeed, others either succeed or throw 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testThreadWorkerErrorCode0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const caseName = "testThreadWorkerErrorCode0050";
+      const replyZero = await runGlobalCallTimeout(0);
+      expect(replyZero).assertEqual('ok|ok');
+
+      const replies: string[] = [
+        await runGlobalCallTimeout(5000.5),
+        await runGlobalCallTimeout(5001),
+        await runGlobalCallTimeout(-1)
+      ];
+      for (let i = 0; i < replies.length; i++) {
+        console.log(`${caseName} boundary ${i}: ${replies[i]}`);
+        const accepted = replies[i] === 'ok|ok' || replies[i].startsWith('err|401');
+        expect(accepted).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   testThreadWorkerErrorCode0051
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_ERROR_CODE_5100
+     * @tc.desc   unregisterGlobalCallObject with unmatched name does not throw
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testThreadWorkerErrorCode0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const caseName = "testThreadWorkerErrorCode0051";
+      let received = 0;
+      const workerInstance: worker.ThreadWorker =
+        new worker.ThreadWorker("../workers/ErrorCode/WorkerEcho", {
+          priority: ThreadWorkerPriority.HIGH
+        });
+      workerInstance.onmessage = () => {
+        received++;
+      };
+      workerInstance.postMessage('ping');
+      let waitCount = 0;
+      while (received < 1 && waitCount < 50) {
+        await Sleep(100);
+        waitCount++;
+      }
+      expect(received).assertEqual(1);
+      workerInstance.unregisterGlobalCallObject('notExist');
+      workerInstance.postMessage('pong');
+      let waitCount2 = 0;
+      while (received < 2 && waitCount2 < 50) {
+        await Sleep(100);
+        waitCount2++;
+      }
+      expect(received).assertEqual(2);
+      workerInstance.terminate();
+      console.log(`${caseName} received: ${received}`);
+      expect(received).assertEqual(2);
+      done();
+    });
+
+    /**
+     * @tc.name   testThreadWorkerErrorCode0052
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_ERROR_CODE_5200
+     * @tc.desc   100 concurrent postMessage round trips are all delivered
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testThreadWorkerErrorCode0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const caseName = "testThreadWorkerErrorCode0052";
+      const seen: boolean[] = [];
+      for (let i = 0; i < 100; i++) {
+        seen.push(false);
+      }
+      let count = 0;
+      const workerInstance: worker.ThreadWorker =
+        new worker.ThreadWorker("../workers/ErrorCode/WorkerEcho", {
+          priority: ThreadWorkerPriority.HIGH
+        });
+      workerInstance.onmessage = (e) => {
+        const value = e.data as number;
+        if (value >= 0 && value < 100) {
+          seen[value] = true;
+        }
+        count++;
+      };
+      for (let i = 0; i < 100; i++) {
+        workerInstance.postMessage(i);
+      }
+      let waitCount = 0;
+      while (count < 100 && waitCount < 100) {
+        await Sleep(100);
+        waitCount++;
+      }
+      expect(count).assertEqual(100);
+      workerInstance.terminate();
+      console.log(`${caseName} count: ${count}`);
+      expect(count).assertEqual(100);
+      for (let i = 0; i < 100; i++) {
+        expect(seen[i]).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   testThreadWorkerErrorCode0053
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_ERROR_CODE_5300
+     * @tc.desc   Second terminate is either idempotent (no throw) or throws 10200004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testThreadWorkerErrorCode0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const caseName = "testThreadWorkerErrorCode0053";
+      let exited = false;
+      const workerInstance: worker.ThreadWorker =
+        new worker.ThreadWorker("../workers/ErrorCode/WorkerEcho", {
+          priority: ThreadWorkerPriority.HIGH
+        });
+      workerInstance.onexit = () => {
+        exited = true;
+      };
+      workerInstance.terminate();
+      let waitCount = 0;
+      while (!exited && waitCount < 50) {
+        await Sleep(100);
+        waitCount++;
+      }
+      expect(exited).assertTrue();
+      let secondCode = 0;
+      try {
+        workerInstance.terminate();
+      } catch (err) {
+        secondCode = err.code;
+      }
+      console.log(`${caseName} second terminate code: ${secondCode}`);
+      expect([0, 10200004]).assertContain(secondCode);
+      done();
+    });
+
+    /**
+     * @tc.name   testThreadWorkerErrorCode0054
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_ERROR_CODE_5400
+     * @tc.desc   WorkerOptions.shared true is either ignored (worker usable) or rejected with a BusinessError code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testThreadWorkerErrorCode0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const caseName = "testThreadWorkerErrorCode0054";
+      let created = false;
+      let code = 0;
+      let received = false;
+      let workerInstance: worker.ThreadWorker | undefined = undefined;
+      try {
+        workerInstance = new worker.ThreadWorker("../workers/ErrorCode/WorkerEcho", {
+          shared: true,
+          priority: ThreadWorkerPriority.HIGH
+        });
+        created = true;
+      } catch (err) {
+        code = err.code;
+        console.log(`${caseName} shared true rejected: code => ${code} message => ${err.message}`);
+      }
+      if (created && workerInstance !== undefined) {
+        workerInstance.onmessage = () => {
+          received = true;
+        };
+        workerInstance.postMessage('shared');
+        let waitCount = 0;
+        while (!received && waitCount < 50) {
+          await Sleep(100);
+          waitCount++;
+        }
+        expect(received).assertTrue();
+        workerInstance.terminate();
+        expect(received).assertTrue();
+      } else {
+        expect(typeof code).assertEqual('number');
+      }
+      console.log(`${caseName} created: ${created}, code: ${code}, received: ${received}`);
       done();
     });
 

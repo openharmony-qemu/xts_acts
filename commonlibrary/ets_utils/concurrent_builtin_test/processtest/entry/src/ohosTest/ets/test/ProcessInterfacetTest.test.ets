@@ -240,7 +240,7 @@ export default function ProcessInterfacetTest() {
     /**
      * @tc.name   ProcessInterfacetTest0700
      * @tc.number SUB_PROCESS_INTERFACE_TEST_0700
-     * @tc.desc   test The getPastCpuTime() is tested in the main thread
+     * @tc.desc   test The getStartRealtime() is tested in the main thread
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -513,7 +513,7 @@ export default function ProcessInterfacetTest() {
     /**
      * @tc.name   ProcessInterfacetTest1500
      * @tc.number SUB_PROCESS_INTERFACE_TEST_1500
-     * @tc.desc   test The getPastCpuTime() is tested in the Worker
+     * @tc.desc   test The uptime() is tested in the Worker
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1

@@ -20,6 +20,15 @@ import { sleep } from '../testability/pages/Utils';
 
 const timerIds: number[] = [];
 
+@Concurrent
+function createTimeoutWithFlag(delay: number, sab: SharedArrayBuffer): number {
+  const view = new Int32Array(sab);
+  const id = setTimeout(() => {
+    Atomics.store(view, 0, 1);
+  }, delay);
+  return id;
+}
+
 export default function timerMultiThreadTest() {
   describe('TimerMultiThreadTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -148,6 +157,34 @@ export default function timerMultiThreadTest() {
         } finally {
           done();
         }
+      });
+
+    /**
+     * @tc.name   testTimerSetTimeoutCrossThread1007
+     * @tc.number SUB_TIMER_MULTI_THREAD_TEST_0700
+     * @tc.desc   setTimeout created in TaskPool fires in its own thread and main thread clearTimeout is a no-op
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTimerSetTimeoutCrossThread1007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+      async (done: Function) => {
+        const caseName = 'testTimerSetTimeoutCrossThread1007';
+        console.info(`${caseName} test start`);
+        const sab = new SharedArrayBuffer(4);
+        const view = new Int32Array(sab);
+        view[0] = 0;
+        const task = new taskpool.Task(createTimeoutWithFlag, 100, sab);
+        const timerId = await taskpool.execute(task) as number;
+        clearTimeout(timerId);
+        let waited = 0;
+        while (Atomics.load(view, 0) === 0 && waited < 20) {
+          await sleep(100);
+          waited++;
+        }
+        expect(Atomics.load(view, 0)).assertEqual(1);
+        console.info(`${caseName} test end`);
+        done();
       });
   });
 }

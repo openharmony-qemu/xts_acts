@@ -27,7 +27,8 @@
     },
     "sourceOption": {
       "workers": [
-        "./src/main/ets/worker/worker.ets"
+        "./src/main/ets/worker/worker.ets",
+        "./src/ohosTest/ets/workers/WorkermaxEcho.ets"
       ]
     }
   },
