@@ -2,6 +2,7 @@
   "src": [
     "pages/WebInitTest",
     "pages/WebContextMenuEditStateFlagTest",
-    "pages/WebEnableDataDetector"
+    "pages/WebEnableDataDetector",
+    "pages/WebCaretColor"
   ]
 }

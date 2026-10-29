@@ -16,9 +16,11 @@
 import WebInitTest from './WebInitTest.test'
 import webContextMenuEditStateFlagTest from "./WebContextMenuEditStateFlagTest.test"
 import WebWebEnableDataDetectorTest from "./WebEnableDataDetector.test"
+import WebCaretColorStaticTest from "./WebCaretColor.test"
 
 export default function testsuite() {
   WebInitTest();
   webContextMenuEditStateFlagTest();
   WebWebEnableDataDetectorTest();
+  WebCaretColorStaticTest();
 }

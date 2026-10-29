@@ -150,6 +150,13 @@ struct WebInitTest {
                 break;
               }
 
+              case 'emitSwitchToWebCaretColorPage': {
+                let uiContextCaret: UIContext = this.getUIContext();
+                let routerCaret: Router = uiContextCaret.getRouter();
+                routerCaret.pushUrl({ url: 'pages/WebCaretColor' });
+                console.log('push WebCaretColor success');
+                break;
+              }
               case 'SwitchNextPageStatic' : {
                 let uiContext: UIContext = this.getUIContext();
                 let router: Router = uiContext.getRouter();
