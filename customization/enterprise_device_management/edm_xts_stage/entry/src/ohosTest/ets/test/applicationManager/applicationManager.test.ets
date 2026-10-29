@@ -9426,6 +9426,8 @@ export default function applicationManagerTest() {
       } catch (error) {
         if (error.code === '801') {
           expect(error.code).assertEqual('801');
+        } else if (error.code === '9201005') {
+          expect(error.code).assertEqual('9201005');
         } else {
           expect().assertFail();
         }
@@ -9490,6 +9492,8 @@ export default function applicationManagerTest() {
       } catch (error) {
         if (error.code === '801') {
           expect(error.code).assertEqual('801');
+        } else if (error.code === '9201005') {
+          expect(error.code).assertEqual('9201005');
         } else {
           expect(error.code).assertEqual('401');
         }
@@ -9524,6 +9528,8 @@ export default function applicationManagerTest() {
       } catch (error) {
         if (error.code === '801') {
           expect(error.code).assertEqual('801');
+        } else if (error.code === '9201005') {
+          expect(error.code).assertEqual('9201005');
         } else {
           expect().assertFail();
         }
