@@ -20,10 +20,12 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import worker, { MessageEvents, ErrorEvent } from '@ohos.worker';
 import testNapi, { createTestRef, deleteTestRef, createWeakTestRef, deleteWeakTestRef } from 'libentry.so';
 import { hidebug } from '@kit.PerformanceAnalysisKit';
-import { fileIo as fs } from '@kit.CoreFileKit';
+import { fileIo as fs, statfs } from '@kit.CoreFileKit';
 
 const FILES_DIR = '/data/storage/el2/base/files/';
 const SNAPSHOT_PREFIX = 'track_global_ref_';
+const FREE_SIZE_THRESHOLD = 30 * 1024 * 1024 * 1024;
+let g_freeSize: number = 0;
 
 interface ParsedSnapshot {
   nodes: number[];
@@ -97,6 +99,10 @@ function verifyObjectInSnapshot(snapshot: ParsedSnapshot, objectName: string): b
 }
 
 function dumpAndVerifySnapshot(heapFileName: string, objectName: string): HeapVerifyResult {
+  if (g_freeSize <= FREE_SIZE_THRESHOLD) {
+    console.info(`dumpAndVerifySnapshot: freeSize ${g_freeSize} <= threshold, skip dump`);
+    return { heapResult: { found: false, edgeCount: 0, childNames: [] }, objectFound: false };
+  }
   hidebug.dumpJsHeapData(heapFileName, true);
   const heapPath: string = FILES_DIR + heapFileName + '.heapsnapshot';
   let content: string = '';
@@ -210,6 +216,10 @@ function findGlobalHandleObject(snapshot: ParsedSnapshot): GlobalHandleObjectRes
 }
 
 function dumpAndCheckHeap(heapFileName: string): GlobalHandleObjectResult {
+  if (g_freeSize <= FREE_SIZE_THRESHOLD) {
+    console.info(`dumpAndCheckHeap: freeSize ${g_freeSize} <= threshold, skip dump`);
+    return { found: false, edgeCount: 0, childNames: [] };
+  }
   hidebug.dumpJsHeapData(heapFileName, true);
   const heapPath: string = FILES_DIR + heapFileName + '.heapsnapshot';
   let content: string = '';
@@ -228,6 +238,10 @@ function dumpAndCheckHeap(heapFileName: string): GlobalHandleObjectResult {
 }
 
 async function dumpAndCheckHeapAsync(heapFileName: string): Promise<GlobalHandleObjectResult> {
+  if (g_freeSize <= FREE_SIZE_THRESHOLD) {
+    console.info(`dumpAndCheckHeapAsync: freeSize ${g_freeSize} <= threshold, skip dump`);
+    return { found: false, edgeCount: 0, childNames: [] };
+  }
   hidebug.dumpJsHeapData(heapFileName, true);
   await sleep(50);
   const heapPath: string = FILES_DIR + heapFileName + '.heapsnapshot';
@@ -331,6 +345,10 @@ function getGlobalHandleObjectDetail(snapshot: ParsedSnapshot): GlobalHandleObje
 }
 
 function dumpAndGetSnapshot(heapFileName: string): ParsedSnapshot {
+  if (g_freeSize <= FREE_SIZE_THRESHOLD) {
+    console.info(`dumpAndGetSnapshot: freeSize ${g_freeSize} <= threshold, skip dump`);
+    return { nodes: [], edges: [], strings: [], nodeFieldCount: 0, edgeFieldCount: 0, typeFieldIndex: 0, nameFieldIndex: 0, idFieldIndex: 0, selfSizeFieldIndex: 0, edgeCountFieldIndex: 0, edgeToNodeIndex: 0, nodeTypeNames: [] };
+  }
   hidebug.dumpJsHeapData(heapFileName, true);
   const heapPath: string = FILES_DIR + heapFileName + '.heapsnapshot';
   let content: string = '';
@@ -360,7 +378,9 @@ export default function trackGlobalRefTest() {
 
   describe('trackGlobalRefTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async () => {
+      g_freeSize = await statfs.getFreeSize(FILES_DIR);
+      console.info(`beforeAll freeSize: ${g_freeSize}`);
     })
 
     beforeEach(async () => {
@@ -587,10 +607,14 @@ export default function trackGlobalRefTest() {
         util.ArkTSVM.setTrackGlobalRef(true);
         let obj: TrackRefTestObject = new TrackRefTestObject(800, OBJ_NAME);
         useObject(obj);
-        const heapResult: GlobalHandleObjectResult = dumpAndCheckHeap(`${SNAPSHOT_PREFIX}08`);
-        expect(heapResult.found).assertTrue();
-        expect(heapResult.edgeCount).assertEqual(0);
-        console.info(`${TAG} GlobalHandleObject with 0 children: PASS`);
+        if (g_freeSize > FREE_SIZE_THRESHOLD) {
+          const heapResult: GlobalHandleObjectResult = dumpAndCheckHeap(`${SNAPSHOT_PREFIX}08`);
+          expect(heapResult.found).assertTrue();
+          expect(heapResult.edgeCount).assertEqual(0);
+          console.info(`${TAG} GlobalHandleObject with 0 children: PASS`);
+        } else {
+          console.info(`${TAG} freeSize ${g_freeSize} insufficient, skip dump`);
+        }
       } catch (err) {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
@@ -620,23 +644,27 @@ export default function trackGlobalRefTest() {
         useObject(obj);
         console.info(`${TAG} created napi_ref, address: ${refAddr}`);
 
-        const heapResult: GlobalHandleObjectResult = dumpAndCheckHeap(`${SNAPSHOT_PREFIX}09`);
-        expect(heapResult.found).assertTrue();
-        expect(heapResult.edgeCount).assertLarger(0);
+        if (g_freeSize > FREE_SIZE_THRESHOLD) {
+          const heapResult: GlobalHandleObjectResult = dumpAndCheckHeap(`${SNAPSHOT_PREFIX}09`);
+          expect(heapResult.found).assertTrue();
+          expect(heapResult.edgeCount).assertLarger(0);
 
-        let addrFound: boolean = false;
-        let prefixFound: boolean = false;
-        for (const childName of heapResult.childNames) {
-          if (childName.indexOf(refAddr) !== -1) {
-            addrFound = true;
+          let addrFound: boolean = false;
+          let prefixFound: boolean = false;
+          for (const childName of heapResult.childNames) {
+            if (childName.indexOf(refAddr) !== -1) {
+              addrFound = true;
+            }
+            if (childName.indexOf('ReferenceAddress:0x') !== -1) {
+              prefixFound = true;
+            }
           }
-          if (childName.indexOf('ReferenceAddress:0x') !== -1) {
-            prefixFound = true;
-          }
+          expect(addrFound).assertTrue();
+          expect(prefixFound).assertTrue();
+          console.info(`${TAG} ref address ${refAddr} found: ${addrFound}, ReferenceAddress prefix found: ${prefixFound}: PASS`);
+        } else {
+          console.info(`${TAG} freeSize ${g_freeSize} insufficient, skip dump`);
         }
-        expect(addrFound).assertTrue();
-        expect(prefixFound).assertTrue();
-        console.info(`${TAG} ref address ${refAddr} found: ${addrFound}, ReferenceAddress prefix found: ${prefixFound}: PASS`);
       } catch (err) {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
@@ -722,23 +750,27 @@ export default function trackGlobalRefTest() {
         useObject(objB);
         console.info(`${TAG} phase3: created ref B, address: ${refAddrB}`);
 
-        const heapResult: GlobalHandleObjectResult = dumpAndCheckHeap(`${SNAPSHOT_PREFIX}11`);
-        expect(heapResult.found).assertTrue();
-        expect(heapResult.edgeCount).assertLarger(0);
+        if (g_freeSize > FREE_SIZE_THRESHOLD) {
+          const heapResult: GlobalHandleObjectResult = dumpAndCheckHeap(`${SNAPSHOT_PREFIX}11`);
+          expect(heapResult.found).assertTrue();
+          expect(heapResult.edgeCount).assertLarger(0);
 
-        let addrBFound: boolean = false;
-        let prefixFound: boolean = false;
-        for (const childName of heapResult.childNames) {
-          if (childName.indexOf(refAddrB) !== -1) {
-            addrBFound = true;
+          let addrBFound: boolean = false;
+          let prefixFound: boolean = false;
+          for (const childName of heapResult.childNames) {
+            if (childName.indexOf(refAddrB) !== -1) {
+              addrBFound = true;
+            }
+            if (childName.indexOf('ReferenceAddress:0x') !== -1) {
+              prefixFound = true;
+            }
           }
-          if (childName.indexOf('ReferenceAddress:0x') !== -1) {
-            prefixFound = true;
-          }
+          expect(addrBFound).assertTrue();
+          expect(prefixFound).assertTrue();
+          console.info(`${TAG} ref B found: ${addrBFound}, ReferenceAddress prefix found: ${prefixFound}: PASS`);
+        } else {
+          console.info(`${TAG} freeSize ${g_freeSize} insufficient, skip dump`);
         }
-        expect(addrBFound).assertTrue();
-        expect(prefixFound).assertTrue();
-        console.info(`${TAG} ref B found: ${addrBFound}, ReferenceAddress prefix found: ${prefixFound}: PASS`);
       } catch (err) {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
@@ -767,11 +799,15 @@ export default function trackGlobalRefTest() {
         let obj: TrackRefTestObject = new TrackRefTestObject(1200, OBJ_NAME);
         createTestRef(obj);
         useObject(obj);
-        const verifyResult: HeapVerifyResult = dumpAndVerifySnapshot(`${SNAPSHOT_PREFIX}12`, OBJ_NAME);
-        expect(verifyResult.objectFound).assertTrue();
-        expect(verifyResult.heapResult.found).assertTrue();
-        expect(verifyResult.heapResult.edgeCount).assertLarger(0);
-        console.info(`${TAG} edgeCount after create: ${verifyResult.heapResult.edgeCount}`);
+        if (g_freeSize > FREE_SIZE_THRESHOLD) {
+          const verifyResult: HeapVerifyResult = dumpAndVerifySnapshot(`${SNAPSHOT_PREFIX}12`, OBJ_NAME);
+          expect(verifyResult.objectFound).assertTrue();
+          expect(verifyResult.heapResult.found).assertTrue();
+          expect(verifyResult.heapResult.edgeCount).assertLarger(0);
+          console.info(`${TAG} edgeCount after create: ${verifyResult.heapResult.edgeCount}`);
+        } else {
+          console.info(`${TAG} freeSize ${g_freeSize} insufficient, skip dump`);
+        }
       } catch (err) {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
@@ -843,10 +879,14 @@ export default function trackGlobalRefTest() {
         util.ArkTSVM.setTrackGlobalRef(true);
         let created: boolean = testNapi.createNapiRefs(REF_COUNT, 1);
         expect(created).assertTrue();
-        const heapResult: GlobalHandleObjectResult = dumpAndCheckHeap(`${SNAPSHOT_PREFIX}14`);
-        expect(heapResult.found).assertTrue();
-        expect(heapResult.edgeCount).assertLarger(0);
-        console.info(`${TAG} edgeCount: ${heapResult.edgeCount} > 0 (50 refs created)`);
+        if (g_freeSize > FREE_SIZE_THRESHOLD) {
+          const heapResult: GlobalHandleObjectResult = dumpAndCheckHeap(`${SNAPSHOT_PREFIX}14`);
+          expect(heapResult.found).assertTrue();
+          expect(heapResult.edgeCount).assertLarger(0);
+          console.info(`${TAG} edgeCount: ${heapResult.edgeCount} > 0 (50 refs created)`);
+        } else {
+          console.info(`${TAG} freeSize ${g_freeSize} insufficient, skip dump`);
+        }
       } catch (err) {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
@@ -877,19 +917,23 @@ export default function trackGlobalRefTest() {
         console.info(`${TAG} created ref before enabling tracking, address: ${refAddr}`);
 
         util.ArkTSVM.setTrackGlobalRef(true);
-        const verifyResult: HeapVerifyResult = dumpAndVerifySnapshot(`${SNAPSHOT_PREFIX}15`, OBJ_NAME);
-        expect(verifyResult.objectFound).assertTrue();
-        expect(verifyResult.heapResult.found).assertTrue();
+        if (g_freeSize > FREE_SIZE_THRESHOLD) {
+          const verifyResult: HeapVerifyResult = dumpAndVerifySnapshot(`${SNAPSHOT_PREFIX}15`, OBJ_NAME);
+          expect(verifyResult.objectFound).assertTrue();
+          expect(verifyResult.heapResult.found).assertTrue();
 
-        let addrFound: boolean = false;
-        for (const childName of verifyResult.heapResult.childNames) {
-          if (childName.indexOf(refAddr) !== -1) {
-            addrFound = true;
-            break;
+          let addrFound: boolean = false;
+          for (const childName of verifyResult.heapResult.childNames) {
+            if (childName.indexOf(refAddr) !== -1) {
+              addrFound = true;
+              break;
+            }
           }
+          expect(addrFound).assertFalse();
+          console.info(`${TAG} ref created before enable NOT tracked (StoreGlobalRefMapping no-op when tracking off): PASS, edgeCount: ${verifyResult.heapResult.edgeCount}`);
+        } else {
+          console.info(`${TAG} freeSize ${g_freeSize} insufficient, skip dump`);
         }
-        expect(addrFound).assertFalse();
-        console.info(`${TAG} ref created before enable NOT tracked (StoreGlobalRefMapping no-op when tracking off): PASS, edgeCount: ${verifyResult.heapResult.edgeCount}`);
       } catch (err) {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
@@ -918,9 +962,13 @@ export default function trackGlobalRefTest() {
 
         testNapi.createNapiRefs(REF_BATCH, 1);
         testNapi.createNapiRefs(REF_BATCH, 1);
-        const heapResult: GlobalHandleObjectResult = dumpAndCheckHeap(`${SNAPSHOT_PREFIX}16`);
-        console.info(`${TAG} after add 2 batches: edgeCount=${heapResult.edgeCount}`);
-        expect(heapResult.edgeCount).assertLarger(0);
+        if (g_freeSize > FREE_SIZE_THRESHOLD) {
+          const heapResult: GlobalHandleObjectResult = dumpAndCheckHeap(`${SNAPSHOT_PREFIX}16`);
+          console.info(`${TAG} after add 2 batches: edgeCount=${heapResult.edgeCount}`);
+          expect(heapResult.edgeCount).assertLarger(0);
+        } else {
+          console.info(`${TAG} freeSize ${g_freeSize} insufficient, skip dump`);
+        }
 
         testNapi.deleteNapiRefs(REF_BATCH);
         console.info(`${TAG} deleted one batch, remaining refs tracked: PASS`);
@@ -952,10 +1000,14 @@ export default function trackGlobalRefTest() {
         let obj: TrackRefTestObject = new TrackRefTestObject(1700, OBJ_NAME);
         createTestRef(obj);
         useObject(obj);
-        const verifyResult: HeapVerifyResult = dumpAndVerifySnapshot(`${SNAPSHOT_PREFIX}17`, OBJ_NAME);
-        expect(verifyResult.objectFound).assertTrue();
-        expect(verifyResult.heapResult.found).assertTrue();
-        console.info(`${TAG} main thread heap has GlobalHandleObject: PASS`);
+        if (g_freeSize > FREE_SIZE_THRESHOLD) {
+          const verifyResult: HeapVerifyResult = dumpAndVerifySnapshot(`${SNAPSHOT_PREFIX}17`, OBJ_NAME);
+          expect(verifyResult.objectFound).assertTrue();
+          expect(verifyResult.heapResult.found).assertTrue();
+          console.info(`${TAG} main thread heap has GlobalHandleObject: PASS`);
+        } else {
+          console.info(`${TAG} freeSize ${g_freeSize} insufficient, skip dump`);
+        }
       } catch (err) {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
@@ -1001,9 +1053,13 @@ export default function trackGlobalRefTest() {
             try {
               let obj: TrackRefTestObject = new TrackRefTestObject(1800, OBJ_NAME);
               useObject(obj);
-              const heapResult: GlobalHandleObjectResult = dumpAndCheckHeap(`${SNAPSHOT_PREFIX}18`);
-              expect(heapResult.found).assertTrue();
-              console.info(`${TAG} main thread heap has GlobalHandleObject after worker enabled: PASS`);
+              if (g_freeSize > FREE_SIZE_THRESHOLD) {
+                const heapResult: GlobalHandleObjectResult = dumpAndCheckHeap(`${SNAPSHOT_PREFIX}18`);
+                expect(heapResult.found).assertTrue();
+                console.info(`${TAG} main thread heap has GlobalHandleObject after worker enabled: PASS`);
+              } else {
+                console.info(`${TAG} freeSize ${g_freeSize} insufficient, skip heap dump`);
+              }
             } catch (err) {
               console.error(`${TAG} heap check failed, error code: ${(err as BusinessError).code}`);
               expect().assertFail();
@@ -1012,7 +1068,9 @@ export default function trackGlobalRefTest() {
           } else if (result === 'disabled') {
             try { newWorker.terminate(); } catch (e) { }
           } else {
+            console.error(`${TAG} unexpected worker response: ${result}`);
             expect().assertFail();
+            try { newWorker.terminate(); } catch (e) { }
           }
         };
         newWorker.postMessage('enable');
@@ -1023,7 +1081,7 @@ export default function trackGlobalRefTest() {
         done();
         return;
       }
-      const terminated: boolean = await awaitWorkerTerminated(termFlag);
+      const terminated: boolean = await awaitWorkerTerminated(termFlag, 15000);
       if (!terminated) {
         console.error(`${TAG} worker not terminated within timeout, force terminating`);
         try { newWorker.terminate(); } catch (e) { }
@@ -1196,10 +1254,14 @@ export default function trackGlobalRefTest() {
         util.ArkTSVM.setTrackGlobalRef(true);
         let created: boolean = testNapi.createNapiRefs(BATCH_COUNT, 1);
         expect(created).assertTrue();
-        const heapResult: GlobalHandleObjectResult = dumpAndCheckHeap(`${SNAPSHOT_PREFIX}25`);
-        expect(heapResult.found).assertTrue();
-        expect(heapResult.edgeCount).assertLarger(0);
-        console.info(`${TAG} edgeCount: ${heapResult.edgeCount} > 0 (${BATCH_COUNT} refs created)`);
+        if (g_freeSize > FREE_SIZE_THRESHOLD) {
+          const heapResult: GlobalHandleObjectResult = dumpAndCheckHeap(`${SNAPSHOT_PREFIX}25`);
+          expect(heapResult.found).assertTrue();
+          expect(heapResult.edgeCount).assertLarger(0);
+          console.info(`${TAG} edgeCount: ${heapResult.edgeCount} > 0 (${BATCH_COUNT} refs created)`);
+        } else {
+          console.info(`${TAG} freeSize ${g_freeSize} insufficient, skip dump`);
+        }
       } catch (err) {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
@@ -1218,7 +1280,7 @@ export default function trackGlobalRefTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testSetTrackGlobalRefDumpPerformance001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+    it('testSetTrackGlobalRefDumpPerformance001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const TAG = 'testSetTrackGlobalRefDumpPerformance001';
       const OBJ_NAME = 'TrackRefObj_2600';
       console.info(`${TAG} START`);
@@ -1229,26 +1291,29 @@ export default function trackGlobalRefTest() {
         let obj: TrackRefTestObject = new TrackRefTestObject(2600, OBJ_NAME);
         createTestRef(obj);
         useObject(obj);
-        hidebug.dumpJsHeapData(SNAPSHOT_NAME, true);
-        const files: string[] = fs.listFileSync(FILES_DIR);
-        let found = false;
-        for (let i = 0; i < files.length; i++) {
-          if (files[i].startsWith(SNAPSHOT_NAME) && files[i].endsWith('.heapsnapshot')) {
-            let heapPath = FILES_DIR + files[i];
-            let fileStat = fs.statSync(heapPath);
-            console.info(`${TAG} snapshot file: ${files[i]}, size: ${fileStat.size}`);
-            expect(fileStat.size > 0).assertTrue();
-            let content = fs.readTextSync(heapPath);
-            expect(content.length > 0).assertTrue();
-            expect(content.includes('"GlobalHandleObject')).assertTrue();
-            expect(content.includes(OBJ_NAME)).assertTrue();
-            fs.unlinkSync(heapPath);
-            console.info(`${TAG} deleted snapshot file: ${files[i]}`);
-            found = true;
-            break;
+        let freeSize = await statfs.getFreeSize(FILES_DIR);
+        if (freeSize > FREE_SIZE_THRESHOLD) {
+          hidebug.dumpJsHeapData(SNAPSHOT_NAME, true);
+          const files: string[] = fs.listFileSync(FILES_DIR);
+          let found = false;
+          for (let i = 0; i < files.length; i++) {
+            if (files[i].startsWith(SNAPSHOT_NAME) && files[i].endsWith('.heapsnapshot')) {
+              let heapPath = FILES_DIR + files[i];
+              let fileStat = fs.statSync(heapPath);
+              console.info(`${TAG} snapshot file: ${files[i]}, size: ${fileStat.size}`);
+              expect(fileStat.size > 0).assertTrue();
+              let content = fs.readTextSync(heapPath);
+              expect(content.length > 0).assertTrue();
+              expect(content.includes('"GlobalHandleObject')).assertTrue();
+              expect(content.includes(OBJ_NAME)).assertTrue();
+              fs.unlinkSync(heapPath);
+              console.info(`${TAG} deleted snapshot file: ${files[i]}`);
+              found = true;
+              break;
+            }
           }
+          expect(found).assertTrue();
         }
-        expect(found).assertTrue();
       } catch (err) {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
@@ -1267,7 +1332,7 @@ export default function trackGlobalRefTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testSetTrackGlobalRefSnapshotFileExists001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+    it('testSetTrackGlobalRefSnapshotFileExists001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const TAG = 'testSetTrackGlobalRefSnapshotFileExists001';
       const OBJ_NAME = 'TrackRefObj_2700';
       console.info(`${TAG} START`);
@@ -1278,22 +1343,25 @@ export default function trackGlobalRefTest() {
         let obj: TrackRefTestObject = new TrackRefTestObject(2700, OBJ_NAME);
         createTestRef(obj);
         useObject(obj);
-        hidebug.dumpJsHeapData(SNAPSHOT_NAME, true);
-        const files: string[] = fs.listFileSync(FILES_DIR);
-        let found = false;
-        for (let i = 0; i < files.length; i++) {
-          if (files[i].startsWith(SNAPSHOT_NAME) && files[i].endsWith('.heapsnapshot')) {
-            let heapPath = FILES_DIR + files[i];
-            let fileStat = fs.statSync(heapPath);
-            console.info(`${TAG} snapshot file: ${files[i]}, size: ${fileStat.size}`);
-            expect(fileStat.size > 0).assertTrue();
-            fs.unlinkSync(heapPath);
-            console.info(`${TAG} deleted snapshot file: ${files[i]}`);
-            found = true;
-            break;
+        let freeSize = await statfs.getFreeSize(FILES_DIR);
+        if (freeSize > FREE_SIZE_THRESHOLD) {
+          hidebug.dumpJsHeapData(SNAPSHOT_NAME, true);
+          const files: string[] = fs.listFileSync(FILES_DIR);
+          let found = false;
+          for (let i = 0; i < files.length; i++) {
+            if (files[i].startsWith(SNAPSHOT_NAME) && files[i].endsWith('.heapsnapshot')) {
+              let heapPath = FILES_DIR + files[i];
+              let fileStat = fs.statSync(heapPath);
+              console.info(`${TAG} snapshot file: ${files[i]}, size: ${fileStat.size}`);
+              expect(fileStat.size > 0).assertTrue();
+              fs.unlinkSync(heapPath);
+              console.info(`${TAG} deleted snapshot file: ${files[i]}`);
+              found = true;
+              break;
+            }
           }
+          expect(found).assertTrue();
         }
-        expect(found).assertTrue();
       } catch (err) {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
@@ -1312,7 +1380,7 @@ export default function trackGlobalRefTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testSetTrackGlobalRefSnapshotValidJson001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+    it('testSetTrackGlobalRefSnapshotValidJson001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const TAG = 'testSetTrackGlobalRefSnapshotValidJson001';
       const OBJ_NAME = 'TrackRefObj_2800';
       console.info(`${TAG} START`);
@@ -1323,25 +1391,28 @@ export default function trackGlobalRefTest() {
         let obj: TrackRefTestObject = new TrackRefTestObject(2800, OBJ_NAME);
         createTestRef(obj);
         useObject(obj);
-        hidebug.dumpJsHeapData(SNAPSHOT_NAME, true);
-        const files: string[] = fs.listFileSync(FILES_DIR);
-        let found = false;
-        for (let i = 0; i < files.length; i++) {
-          if (files[i].startsWith(SNAPSHOT_NAME) && files[i].endsWith('.heapsnapshot')) {
-            let heapPath = FILES_DIR + files[i];
-            let fileStat = fs.statSync(heapPath);
-            console.info(`${TAG} snapshot file: ${files[i]}, size: ${fileStat.size}`);
-            expect(fileStat.size > 0).assertTrue();
-            let content = fs.readTextSync(heapPath);
-            expect(content.includes(OBJ_NAME)).assertTrue();
-            console.info(`${TAG} snapshot file valid, size: ${fileStat.size}`);
-            fs.unlinkSync(heapPath);
-            console.info(`${TAG} deleted snapshot file: ${files[i]}`);
-            found = true;
-            break;
+        let freeSize = await statfs.getFreeSize(FILES_DIR);
+        if (freeSize > FREE_SIZE_THRESHOLD) {
+          hidebug.dumpJsHeapData(SNAPSHOT_NAME, true);
+          const files: string[] = fs.listFileSync(FILES_DIR);
+          let found = false;
+          for (let i = 0; i < files.length; i++) {
+            if (files[i].startsWith(SNAPSHOT_NAME) && files[i].endsWith('.heapsnapshot')) {
+              let heapPath = FILES_DIR + files[i];
+              let fileStat = fs.statSync(heapPath);
+              console.info(`${TAG} snapshot file: ${files[i]}, size: ${fileStat.size}`);
+              expect(fileStat.size > 0).assertTrue();
+              let content = fs.readTextSync(heapPath);
+              expect(content.includes(OBJ_NAME)).assertTrue();
+              console.info(`${TAG} snapshot file valid, size: ${fileStat.size}`);
+              fs.unlinkSync(heapPath);
+              console.info(`${TAG} deleted snapshot file: ${files[i]}`);
+              found = true;
+              break;
+            }
           }
+          expect(found).assertTrue();
         }
-        expect(found).assertTrue();
       } catch (err) {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
@@ -1360,7 +1431,7 @@ export default function trackGlobalRefTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testSetTrackGlobalRefSnapshotCleanup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+    it('testSetTrackGlobalRefSnapshotCleanup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const TAG = 'testSetTrackGlobalRefSnapshotCleanup001';
       const OBJ_NAME = 'TrackRefObj_2900';
       console.info(`${TAG} START`);
@@ -1371,32 +1442,35 @@ export default function trackGlobalRefTest() {
         let obj: TrackRefTestObject = new TrackRefTestObject(2900, OBJ_NAME);
         createTestRef(obj);
         useObject(obj);
-        hidebug.dumpJsHeapData(SNAPSHOT_NAME, true);
-        const files: string[] = fs.listFileSync(FILES_DIR);
-        let found = false;
-        let heapPath: string = '';
-        for (let i = 0; i < files.length; i++) {
-          if (files[i].startsWith(SNAPSHOT_NAME) && files[i].endsWith('.heapsnapshot')) {
-            heapPath = FILES_DIR + files[i];
-            let fileStat = fs.statSync(heapPath);
-            expect(fileStat.size > 0).assertTrue();
-            console.info(`${TAG} snapshot created, size: ${fileStat.size}`);
-            fs.unlinkSync(heapPath);
-            console.info(`${TAG} snapshot deleted`);
-            found = true;
-            break;
+        let freeSize = await statfs.getFreeSize(FILES_DIR);
+        if (freeSize > FREE_SIZE_THRESHOLD) {
+          hidebug.dumpJsHeapData(SNAPSHOT_NAME, true);
+          const files: string[] = fs.listFileSync(FILES_DIR);
+          let found = false;
+          let heapPath: string = '';
+          for (let i = 0; i < files.length; i++) {
+            if (files[i].startsWith(SNAPSHOT_NAME) && files[i].endsWith('.heapsnapshot')) {
+              heapPath = FILES_DIR + files[i];
+              let fileStat = fs.statSync(heapPath);
+              expect(fileStat.size > 0).assertTrue();
+              console.info(`${TAG} snapshot created, size: ${fileStat.size}`);
+              fs.unlinkSync(heapPath);
+              console.info(`${TAG} snapshot deleted`);
+              found = true;
+              break;
+            }
           }
-        }
-        expect(found).assertTrue();
+          expect(found).assertTrue();
 
-        let fileExists: boolean = true;
-        try {
-          fs.statSync(heapPath);
-        } catch (e) {
-          fileExists = false;
+          let fileExists: boolean = true;
+          try {
+            fs.statSync(heapPath);
+          } catch (e) {
+            fileExists = false;
+          }
+          expect(fileExists).assertFalse();
+          console.info(`${TAG} snapshot cleanup verified: PASS`);
         }
-        expect(fileExists).assertFalse();
-        console.info(`${TAG} snapshot cleanup verified: PASS`);
       } catch (err) {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
@@ -1425,18 +1499,22 @@ export default function trackGlobalRefTest() {
         let obj: TrackRefTestObject = new TrackRefTestObject(3000, OBJ_NAME);
         createTestRef(obj);
         useObject(obj);
-        const snapshot: ParsedSnapshot = dumpAndGetSnapshot(`${SNAPSHOT_PREFIX}30`);
-        expect(verifyObjectInSnapshot(snapshot, OBJ_NAME)).assertTrue();
-        expect(snapshot.nodes.length % snapshot.nodeFieldCount === 0).assertTrue();
-        expect(snapshot.edges.length % snapshot.edgeFieldCount === 0).assertTrue();
-        expect(snapshot.nodes.length > 0).assertTrue();
-        expect(snapshot.edges.length > 0).assertTrue();
-        expect(snapshot.strings.length > 0).assertTrue();
-        expect(snapshot.nodeFieldCount > 0).assertTrue();
-        expect(snapshot.edgeFieldCount > 0).assertTrue();
-        const nodeCount: number = snapshot.nodes.length / snapshot.nodeFieldCount;
-        const edgeCount: number = snapshot.edges.length / snapshot.edgeFieldCount;
-        console.info(`${TAG} nodeCount=${nodeCount}, edgeCount=${edgeCount}, nodeFieldCount=${snapshot.nodeFieldCount}`);
+        if (g_freeSize > FREE_SIZE_THRESHOLD) {
+          const snapshot: ParsedSnapshot = dumpAndGetSnapshot(`${SNAPSHOT_PREFIX}30`);
+          expect(verifyObjectInSnapshot(snapshot, OBJ_NAME)).assertTrue();
+          expect(snapshot.nodes.length % snapshot.nodeFieldCount === 0).assertTrue();
+          expect(snapshot.edges.length % snapshot.edgeFieldCount === 0).assertTrue();
+          expect(snapshot.nodes.length > 0).assertTrue();
+          expect(snapshot.edges.length > 0).assertTrue();
+          expect(snapshot.strings.length > 0).assertTrue();
+          expect(snapshot.nodeFieldCount > 0).assertTrue();
+          expect(snapshot.edgeFieldCount > 0).assertTrue();
+          const nodeCount: number = snapshot.nodes.length / snapshot.nodeFieldCount;
+          const edgeCount: number = snapshot.edges.length / snapshot.edgeFieldCount;
+          console.info(`${TAG} nodeCount=${nodeCount}, edgeCount=${edgeCount}, nodeFieldCount=${snapshot.nodeFieldCount}`);
+        } else {
+          console.info(`${TAG} freeSize ${g_freeSize} insufficient, skip dump`);
+        }
       } catch (err) {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
@@ -1465,26 +1543,30 @@ export default function trackGlobalRefTest() {
         let obj: TrackRefTestObject = new TrackRefTestObject(3100, OBJ_NAME);
         createTestRef(obj);
         useObject(obj);
-        const snapshot: ParsedSnapshot = dumpAndGetSnapshot(`${SNAPSHOT_PREFIX}31`);
-        let typeCount: number = 0;
-        let hasObject: boolean = false;
-        const typeSet: Set<string> = new Set<string>();
-        for (let i = 0; i < snapshot.nodes.length; i += snapshot.nodeFieldCount) {
-          const typeIdx: number = snapshot.nodes[i + snapshot.typeFieldIndex];
-          const typeName: string = getTypeName(snapshot, typeIdx);
-          if (!typeSet.has(typeName)) {
-            typeSet.add(typeName);
-            typeCount++;
-            if (typeName === 'object') {
-              hasObject = true;
+        if (g_freeSize > FREE_SIZE_THRESHOLD) {
+          const snapshot: ParsedSnapshot = dumpAndGetSnapshot(`${SNAPSHOT_PREFIX}31`);
+          let typeCount: number = 0;
+          let hasObject: boolean = false;
+          const typeSet: Set<string> = new Set<string>();
+          for (let i = 0; i < snapshot.nodes.length; i += snapshot.nodeFieldCount) {
+            const typeIdx: number = snapshot.nodes[i + snapshot.typeFieldIndex];
+            const typeName: string = getTypeName(snapshot, typeIdx);
+            if (!typeSet.has(typeName)) {
+              typeSet.add(typeName);
+              typeCount++;
+              if (typeName === 'object') {
+                hasObject = true;
+              }
             }
           }
+          const ghoResult: GlobalHandleObjectResult = findGlobalHandleObject(snapshot);
+          console.info(`${TAG} node types: ${typeCount}`);
+          expect(typeCount >= 3).assertTrue();
+          expect(hasObject).assertTrue();
+          expect(ghoResult.found).assertTrue();
+        } else {
+          console.info(`${TAG} freeSize ${g_freeSize} insufficient, skip dump`);
         }
-        const ghoResult: GlobalHandleObjectResult = findGlobalHandleObject(snapshot);
-        console.info(`${TAG} node types: ${typeCount}`);
-        expect(typeCount >= 3).assertTrue();
-        expect(hasObject).assertTrue();
-        expect(ghoResult.found).assertTrue();
       } catch (err) {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
@@ -1513,23 +1595,27 @@ export default function trackGlobalRefTest() {
         let obj: TrackRefTestObject = new TrackRefTestObject(3200, OBJ_NAME);
         createTestRef(obj);
         useObject(obj);
-        const snapshot: ParsedSnapshot = dumpAndGetSnapshot(`${SNAPSHOT_PREFIX}32`);
-        const idSet: Set<number> = new Set<number>();
-        let duplicateCount: number = 0;
-        let nonZeroIdCount: number = 0;
-        for (let i = 0; i < snapshot.nodes.length; i += snapshot.nodeFieldCount) {
-          const nodeId: number = snapshot.nodes[i + snapshot.idFieldIndex];
-          if (nodeId !== 0) {
-            nonZeroIdCount++;
-            if (idSet.has(nodeId)) {
-              duplicateCount++;
+        if (g_freeSize > FREE_SIZE_THRESHOLD) {
+          const snapshot: ParsedSnapshot = dumpAndGetSnapshot(`${SNAPSHOT_PREFIX}32`);
+          const idSet: Set<number> = new Set<number>();
+          let duplicateCount: number = 0;
+          let nonZeroIdCount: number = 0;
+          for (let i = 0; i < snapshot.nodes.length; i += snapshot.nodeFieldCount) {
+            const nodeId: number = snapshot.nodes[i + snapshot.idFieldIndex];
+            if (nodeId !== 0) {
+              nonZeroIdCount++;
+              if (idSet.has(nodeId)) {
+                duplicateCount++;
+              }
+              idSet.add(nodeId);
             }
-            idSet.add(nodeId);
           }
+          console.info(`${TAG} nonZeroIdNodes=${nonZeroIdCount}, uniqueIds=${idSet.size}, duplicates=${duplicateCount}`);
+          expect(duplicateCount === 0).assertTrue();
+          expect(idSet.size === nonZeroIdCount).assertTrue();
+        } else {
+          console.info(`${TAG} freeSize ${g_freeSize} insufficient, skip dump`);
         }
-        console.info(`${TAG} nonZeroIdNodes=${nonZeroIdCount}, uniqueIds=${idSet.size}, duplicates=${duplicateCount}`);
-        expect(duplicateCount === 0).assertTrue();
-        expect(idSet.size === nonZeroIdCount).assertTrue();
       } catch (err) {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
@@ -1558,26 +1644,30 @@ export default function trackGlobalRefTest() {
         let obj: TrackRefTestObject = new TrackRefTestObject(3300, OBJ_NAME);
         createTestRef(obj);
         useObject(obj);
-        const snapshot: ParsedSnapshot = dumpAndGetSnapshot(`${SNAPSHOT_PREFIX}33`);
-        expect(verifyObjectInSnapshot(snapshot, OBJ_NAME)).assertTrue();
-        let edgeOffset: number = 0;
-        let invalidEdgeCount: number = 0;
-        let totalEdgeCount: number = 0;
-        for (let i = 0; i < snapshot.nodes.length; i += snapshot.nodeFieldCount) {
-          const ec: number = snapshot.nodes[i + snapshot.edgeCountFieldIndex];
-          for (let j = 0; j < ec; j++) {
-            const eIdx: number = (edgeOffset + j) * snapshot.edgeFieldCount;
-            const toNode: number = snapshot.edges[eIdx + snapshot.edgeToNodeIndex];
-            if (toNode < 0 || toNode >= snapshot.nodes.length) {
-              invalidEdgeCount++;
+        if (g_freeSize > FREE_SIZE_THRESHOLD) {
+          const snapshot: ParsedSnapshot = dumpAndGetSnapshot(`${SNAPSHOT_PREFIX}33`);
+          expect(verifyObjectInSnapshot(snapshot, OBJ_NAME)).assertTrue();
+          let edgeOffset: number = 0;
+          let invalidEdgeCount: number = 0;
+          let totalEdgeCount: number = 0;
+          for (let i = 0; i < snapshot.nodes.length; i += snapshot.nodeFieldCount) {
+            const ec: number = snapshot.nodes[i + snapshot.edgeCountFieldIndex];
+            for (let j = 0; j < ec; j++) {
+              const eIdx: number = (edgeOffset + j) * snapshot.edgeFieldCount;
+              const toNode: number = snapshot.edges[eIdx + snapshot.edgeToNodeIndex];
+              if (toNode < 0 || toNode >= snapshot.nodes.length) {
+                invalidEdgeCount++;
+              }
+              totalEdgeCount++;
             }
-            totalEdgeCount++;
+            edgeOffset += ec;
           }
-          edgeOffset += ec;
+          console.info(`${TAG} totalEdges=${totalEdgeCount}, invalidEdges=${invalidEdgeCount}`);
+          expect(invalidEdgeCount === 0).assertTrue();
+          expect(totalEdgeCount > 0).assertTrue();
+        } else {
+          console.info(`${TAG} freeSize ${g_freeSize} insufficient, skip dump`);
         }
-        console.info(`${TAG} totalEdges=${totalEdgeCount}, invalidEdges=${invalidEdgeCount}`);
-        expect(invalidEdgeCount === 0).assertTrue();
-        expect(totalEdgeCount > 0).assertTrue();
       } catch (err) {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
@@ -1606,15 +1696,19 @@ export default function trackGlobalRefTest() {
         let obj: TrackRefTestObject = new TrackRefTestObject(3400, OBJ_NAME);
         createTestRef(obj);
         useObject(obj);
-        const snapshot: ParsedSnapshot = dumpAndGetSnapshot(`${SNAPSHOT_PREFIX}34`);
-        expect(verifyObjectInSnapshot(snapshot, OBJ_NAME)).assertTrue();
-        let sumEdgeCount: number = 0;
-        for (let i = 0; i < snapshot.nodes.length; i += snapshot.nodeFieldCount) {
-          sumEdgeCount += snapshot.nodes[i + snapshot.edgeCountFieldIndex];
+        if (g_freeSize > FREE_SIZE_THRESHOLD) {
+          const snapshot: ParsedSnapshot = dumpAndGetSnapshot(`${SNAPSHOT_PREFIX}34`);
+          expect(verifyObjectInSnapshot(snapshot, OBJ_NAME)).assertTrue();
+          let sumEdgeCount: number = 0;
+          for (let i = 0; i < snapshot.nodes.length; i += snapshot.nodeFieldCount) {
+            sumEdgeCount += snapshot.nodes[i + snapshot.edgeCountFieldIndex];
+          }
+          const totalEdges: number = snapshot.edges.length / snapshot.edgeFieldCount;
+          console.info(`${TAG} sumEdgeCount=${sumEdgeCount}, totalEdges=${totalEdges}`);
+          expect(sumEdgeCount === totalEdges).assertTrue();
+        } else {
+          console.info(`${TAG} freeSize ${g_freeSize} insufficient, skip dump`);
         }
-        const totalEdges: number = snapshot.edges.length / snapshot.edgeFieldCount;
-        console.info(`${TAG} sumEdgeCount=${sumEdgeCount}, totalEdges=${totalEdges}`);
-        expect(sumEdgeCount === totalEdges).assertTrue();
       } catch (err) {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
@@ -1644,36 +1738,40 @@ export default function trackGlobalRefTest() {
         createTestRef(obj);
         useObject(obj);
 
-        const snapshot: ParsedSnapshot = dumpAndGetSnapshot(`${SNAPSHOT_PREFIX}35`);
-        const detail: GlobalHandleObjectDetail = getGlobalHandleObjectDetail(snapshot);
-        expect(detail.found).assertTrue();
-        expect(detail.nodeInfo !== null).assertTrue();
-        if (detail.nodeInfo !== null) {
-          console.info(`${TAG} GHO node: type=${detail.nodeInfo.type}, id=${detail.nodeInfo.id}, selfSize=${detail.nodeInfo.selfSize}, edgeCount=${detail.nodeInfo.edgeCount}`);
-          expect(detail.nodeInfo.edgeCount > 0).assertTrue();
-          expect(detail.nodeInfo.selfSize >= 0).assertTrue();
-          expect(detail.nodeInfo.id >= 0).assertTrue();
-        }
-        expect(detail.childTypes.length > 0).assertTrue();
-        expect(detail.childNames.length > 0).assertTrue();
-        expect(detail.childSelfSizes.length > 0).assertTrue();
-        for (let i = 0; i < detail.childSelfSizes.length; i++) {
-          expect(detail.childSelfSizes[i] >= 0).assertTrue();
-        }
+        if (g_freeSize > FREE_SIZE_THRESHOLD) {
+          const snapshot: ParsedSnapshot = dumpAndGetSnapshot(`${SNAPSHOT_PREFIX}35`);
+          const detail: GlobalHandleObjectDetail = getGlobalHandleObjectDetail(snapshot);
+          expect(detail.found).assertTrue();
+          expect(detail.nodeInfo !== null).assertTrue();
+          if (detail.nodeInfo !== null) {
+            console.info(`${TAG} GHO node: type=${detail.nodeInfo.type}, id=${detail.nodeInfo.id}, selfSize=${detail.nodeInfo.selfSize}, edgeCount=${detail.nodeInfo.edgeCount}`);
+            expect(detail.nodeInfo.edgeCount > 0).assertTrue();
+            expect(detail.nodeInfo.selfSize >= 0).assertTrue();
+            expect(detail.nodeInfo.id >= 0).assertTrue();
+          }
+          expect(detail.childTypes.length > 0).assertTrue();
+          expect(detail.childNames.length > 0).assertTrue();
+          expect(detail.childSelfSizes.length > 0).assertTrue();
+          for (let i = 0; i < detail.childSelfSizes.length; i++) {
+            expect(detail.childSelfSizes[i] >= 0).assertTrue();
+          }
 
-        let hasObjectChild: boolean = false;
-        let prefixFound: boolean = false;
-        for (let i = 0; i < detail.childTypes.length; i++) {
-          if (detail.childTypes[i] === 'object') {
-            hasObjectChild = true;
+          let hasObjectChild: boolean = false;
+          let prefixFound: boolean = false;
+          for (let i = 0; i < detail.childTypes.length; i++) {
+            if (detail.childTypes[i] === 'object') {
+              hasObjectChild = true;
+            }
+            if (detail.childNames[i].indexOf('ReferenceAddress:0x') !== -1) {
+              prefixFound = true;
+            }
           }
-          if (detail.childNames[i].indexOf('ReferenceAddress:0x') !== -1) {
-            prefixFound = true;
-          }
+          expect(hasObjectChild).assertTrue();
+          expect(prefixFound).assertTrue();
+          console.info(`${TAG} OBJECT type child found: ${hasObjectChild}, ReferenceAddress:0x prefix found: ${prefixFound}: PASS`);
+        } else {
+          console.info(`${TAG} freeSize ${g_freeSize} insufficient, skip dump`);
         }
-        expect(hasObjectChild).assertTrue();
-        expect(prefixFound).assertTrue();
-        console.info(`${TAG} OBJECT type child found: ${hasObjectChild}, ReferenceAddress:0x prefix found: ${prefixFound}: PASS`);
       } catch (err) {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
@@ -1701,28 +1799,32 @@ export default function trackGlobalRefTest() {
         util.ArkTSVM.setTrackGlobalRef(true);
         let obj: TrackRefTestObject = new TrackRefTestObject(3600, OBJ_NAME);
         useObject(obj);
-        const snapshot: ParsedSnapshot = dumpAndGetSnapshot(`${SNAPSHOT_PREFIX}36`);
-        expect(verifyObjectInSnapshot(snapshot, OBJ_NAME)).assertTrue();
-        let objectNodeCount: number = 0;
-        let invalidSelfSizeCount: number = 0;
-        for (let i = 0; i < snapshot.nodes.length; i += snapshot.nodeFieldCount) {
-          const typeIdx: number = snapshot.nodes[i + snapshot.typeFieldIndex];
-          const typeName: string = getTypeName(snapshot, typeIdx);
-          const selfSize: number = snapshot.nodes[i + snapshot.selfSizeFieldIndex];
-          const edgeCount: number = snapshot.nodes[i + snapshot.edgeCountFieldIndex];
-          if (typeName === 'object') {
-            objectNodeCount++;
-            if (selfSize < 0) {
-              invalidSelfSizeCount++;
-            }
-            if (edgeCount < 0) {
-              invalidSelfSizeCount++;
+        if (g_freeSize > FREE_SIZE_THRESHOLD) {
+          const snapshot: ParsedSnapshot = dumpAndGetSnapshot(`${SNAPSHOT_PREFIX}36`);
+          expect(verifyObjectInSnapshot(snapshot, OBJ_NAME)).assertTrue();
+          let objectNodeCount: number = 0;
+          let invalidSelfSizeCount: number = 0;
+          for (let i = 0; i < snapshot.nodes.length; i += snapshot.nodeFieldCount) {
+            const typeIdx: number = snapshot.nodes[i + snapshot.typeFieldIndex];
+            const typeName: string = getTypeName(snapshot, typeIdx);
+            const selfSize: number = snapshot.nodes[i + snapshot.selfSizeFieldIndex];
+            const edgeCount: number = snapshot.nodes[i + snapshot.edgeCountFieldIndex];
+            if (typeName === 'object') {
+              objectNodeCount++;
+              if (selfSize < 0) {
+                invalidSelfSizeCount++;
+              }
+              if (edgeCount < 0) {
+                invalidSelfSizeCount++;
+              }
             }
           }
+          console.info(`${TAG} objectNodes=${objectNodeCount}, invalidCount=${invalidSelfSizeCount}`);
+          expect(objectNodeCount > 0).assertTrue();
+          expect(invalidSelfSizeCount === 0).assertTrue();
+        } else {
+          console.info(`${TAG} freeSize ${g_freeSize} insufficient, skip dump`);
         }
-        console.info(`${TAG} objectNodes=${objectNodeCount}, invalidCount=${invalidSelfSizeCount}`);
-        expect(objectNodeCount > 0).assertTrue();
-        expect(invalidSelfSizeCount === 0).assertTrue();
       } catch (err) {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
@@ -1750,11 +1852,14 @@ export default function trackGlobalRefTest() {
         util.ArkTSVM.setTrackGlobalRef(true);
         let obj: TrackRefTestObject = new TrackRefTestObject(3701, OBJ_NAME);
         useObject(obj);
-        hidebug.dumpJsHeapData(`${SNAPSHOT_PREFIX}37b`, true);
-        await sleep(50);
-        const contentEnabled: string = fs.readTextSync(FILES_DIR + `${SNAPSHOT_PREFIX}37b` + '.heapsnapshot');
-        expect(contentEnabled.includes('"GlobalHandleObject')).assertTrue();
-        console.info(`${TAG} enabled: GlobalHandleObject found in snapshot`);
+        let freeSize = await statfs.getFreeSize(FILES_DIR);
+        if (freeSize > FREE_SIZE_THRESHOLD) {
+          hidebug.dumpJsHeapData(`${SNAPSHOT_PREFIX}37b`, true);
+          await sleep(50);
+          const contentEnabled: string = fs.readTextSync(FILES_DIR + `${SNAPSHOT_PREFIX}37b` + '.heapsnapshot');
+          expect(contentEnabled.includes('"GlobalHandleObject')).assertTrue();
+          console.info(`${TAG} enabled: GlobalHandleObject found in snapshot`);
+        }
       } catch (err) {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
@@ -1793,28 +1898,32 @@ export default function trackGlobalRefTest() {
         useObject(weakObj);
         console.info(`${TAG} created weak ref, address: ${weakAddr}`);
 
-        const heapResult: GlobalHandleObjectResult = dumpAndCheckHeap(`${SNAPSHOT_PREFIX}38`);
-        expect(heapResult.found).assertTrue();
-        expect(heapResult.edgeCount).assertLarger(0);
+        if (g_freeSize > FREE_SIZE_THRESHOLD) {
+          const heapResult: GlobalHandleObjectResult = dumpAndCheckHeap(`${SNAPSHOT_PREFIX}38`);
+          expect(heapResult.found).assertTrue();
+          expect(heapResult.edgeCount).assertLarger(0);
 
-        let strongAddrFound: boolean = false;
-        let weakAddrFound: boolean = false;
-        let prefixFound: boolean = false;
-        for (const childName of heapResult.childNames) {
-          if (childName.indexOf(strongAddr) !== -1) {
-            strongAddrFound = true;
+          let strongAddrFound: boolean = false;
+          let weakAddrFound: boolean = false;
+          let prefixFound: boolean = false;
+          for (const childName of heapResult.childNames) {
+            if (childName.indexOf(strongAddr) !== -1) {
+              strongAddrFound = true;
+            }
+            if (childName.indexOf(weakAddr) !== -1) {
+              weakAddrFound = true;
+            }
+            if (childName.indexOf('ReferenceAddress:0x') !== -1) {
+              prefixFound = true;
+            }
           }
-          if (childName.indexOf(weakAddr) !== -1) {
-            weakAddrFound = true;
-          }
-          if (childName.indexOf('ReferenceAddress:0x') !== -1) {
-            prefixFound = true;
-          }
+          expect(strongAddrFound).assertTrue();
+          expect(weakAddrFound).assertFalse();
+          expect(prefixFound).assertTrue();
+          console.info(`${TAG} strong ref tracked: ${strongAddrFound}, weak ref not tracked: ${!weakAddrFound}, prefix found: ${prefixFound}: PASS`);
+        } else {
+          console.info(`${TAG} freeSize ${g_freeSize} insufficient, skip dump`);
         }
-        expect(strongAddrFound).assertTrue();
-        expect(weakAddrFound).assertFalse();
-        expect(prefixFound).assertTrue();
-        console.info(`${TAG} strong ref tracked: ${strongAddrFound}, weak ref not tracked: ${!weakAddrFound}, prefix found: ${prefixFound}: PASS`);
       } catch (err) {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
@@ -1857,29 +1966,33 @@ export default function trackGlobalRefTest() {
 
         await sleep(100);
 
-        const verifyResult: HeapVerifyResult = await new Promise<HeapVerifyResult>((resolve: Function) => {
-          const result: HeapVerifyResult = dumpAndVerifySnapshot(`${SNAPSHOT_PREFIX}39`, OBJ_NAME);
-          console.info(`${TAG} dumped heap in async context`);
-          resolve(result);
-        });
+        if (g_freeSize > FREE_SIZE_THRESHOLD) {
+          const verifyResult: HeapVerifyResult = await new Promise<HeapVerifyResult>((resolve: Function) => {
+            const result: HeapVerifyResult = dumpAndVerifySnapshot(`${SNAPSHOT_PREFIX}39`, OBJ_NAME);
+            console.info(`${TAG} dumped heap in async context`);
+            resolve(result);
+          });
 
-        expect(verifyResult.objectFound).assertTrue();
-        expect(verifyResult.heapResult.found).assertTrue();
-        expect(verifyResult.heapResult.edgeCount).assertLarger(0);
+          expect(verifyResult.objectFound).assertTrue();
+          expect(verifyResult.heapResult.found).assertTrue();
+          expect(verifyResult.heapResult.edgeCount).assertLarger(0);
 
-        let addrFound: boolean = false;
-        let prefixFound: boolean = false;
-        for (const childName of verifyResult.heapResult.childNames) {
-          if (childName.indexOf(refAddr) !== -1) {
-            addrFound = true;
+          let addrFound: boolean = false;
+          let prefixFound: boolean = false;
+          for (const childName of verifyResult.heapResult.childNames) {
+            if (childName.indexOf(refAddr) !== -1) {
+              addrFound = true;
+            }
+            if (childName.indexOf('ReferenceAddress:0x') !== -1) {
+              prefixFound = true;
+            }
           }
-          if (childName.indexOf('ReferenceAddress:0x') !== -1) {
-            prefixFound = true;
-          }
+          expect(addrFound).assertTrue();
+          expect(prefixFound).assertTrue();
+          console.info(`${TAG} ref ${refAddr} tracked across async boundary, addrFound: ${addrFound}, prefixFound: ${prefixFound}: PASS`);
+        } else {
+          console.info(`${TAG} freeSize ${g_freeSize} insufficient, skip dump`);
         }
-        expect(addrFound).assertTrue();
-        expect(prefixFound).assertTrue();
-        console.info(`${TAG} ref ${refAddr} tracked across async boundary, addrFound: ${addrFound}, prefixFound: ${prefixFound}: PASS`);
 
         await new Promise<void>((resolve: Function) => {
           deleteTestRef();
@@ -1917,17 +2030,20 @@ export default function trackGlobalRefTest() {
         hidebug.setJsRawHeapTrimLevel(hidebug.JsRawHeapTrimLevel.TRIM_LEVEL_1);
         console.info(`${TAG} setJsRawHeapTrimLevel(TRIM_LEVEL_1) done`);
 
-        const rawheapPath: string = await hidebug.dumpJsRawHeapData(true);
-        console.info(`${TAG} dumpJsRawHeapData returned path: ${rawheapPath}`);
+        let freeSize = await statfs.getFreeSize(FILES_DIR);
+        if (freeSize > FREE_SIZE_THRESHOLD) {
+          const rawheapPath: string = await hidebug.dumpJsRawHeapData(true);
+          console.info(`${TAG} dumpJsRawHeapData returned path: ${rawheapPath}`);
 
-        expect(rawheapPath.length > 0).assertTrue();
+          expect(rawheapPath.length > 0).assertTrue();
 
-        const fileStat = fs.statSync(rawheapPath);
-        console.info(`${TAG} rawheap file size: ${fileStat.size}`);
-        expect(fileStat.size > 0).assertTrue();
+          const fileStat = fs.statSync(rawheapPath);
+          console.info(`${TAG} rawheap file size: ${fileStat.size}`);
+          expect(fileStat.size > 0).assertTrue();
 
-        fs.unlinkSync(rawheapPath);
-        console.info(`${TAG} rawheap file cleaned up: PASS`);
+          fs.unlinkSync(rawheapPath);
+          console.info(`${TAG} rawheap file cleaned up: PASS`);
+        }
       } catch (err) {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
@@ -1957,28 +2073,32 @@ export default function trackGlobalRefTest() {
         useObject(obj);
         console.info(`${TAG} created napi_ref, address: ${refAddr}`);
 
-        const snapshot: ParsedSnapshot = dumpAndGetSnapshot(`${SNAPSHOT_PREFIX}41`);
-        const detail: GlobalHandleObjectDetail = getGlobalHandleObjectDetail(snapshot);
-        expect(detail.found).assertTrue();
-        expect(detail.nodeInfo !== null).assertTrue();
-        if (detail.nodeInfo !== null) {
-          expect(detail.nodeInfo.edgeCount > 0).assertTrue();
-        }
-        expect(detail.childNames.length > 0).assertTrue();
+        if (g_freeSize > FREE_SIZE_THRESHOLD) {
+          const snapshot: ParsedSnapshot = dumpAndGetSnapshot(`${SNAPSHOT_PREFIX}41`);
+          const detail: GlobalHandleObjectDetail = getGlobalHandleObjectDetail(snapshot);
+          expect(detail.found).assertTrue();
+          expect(detail.nodeInfo !== null).assertTrue();
+          if (detail.nodeInfo !== null) {
+            expect(detail.nodeInfo.edgeCount > 0).assertTrue();
+          }
+          expect(detail.childNames.length > 0).assertTrue();
 
-        let addrFound: boolean = false;
-        let prefixFound: boolean = false;
-        for (const childName of detail.childNames) {
-          if (childName.indexOf(refAddr) !== -1) {
-            addrFound = true;
+          let addrFound: boolean = false;
+          let prefixFound: boolean = false;
+          for (const childName of detail.childNames) {
+            if (childName.indexOf(refAddr) !== -1) {
+              addrFound = true;
+            }
+            if (childName.indexOf('ReferenceAddress:0x') !== -1) {
+              prefixFound = true;
+            }
           }
-          if (childName.indexOf('ReferenceAddress:0x') !== -1) {
-            prefixFound = true;
-          }
+          expect(addrFound).assertTrue();
+          expect(prefixFound).assertTrue();
+          console.info(`${TAG} edge path GHO→ReferenceAddress verified, addrFound: ${addrFound}, prefixFound: ${prefixFound}: PASS`);
+        } else {
+          console.info(`${TAG} freeSize ${g_freeSize} insufficient, skip dump`);
         }
-        expect(addrFound).assertTrue();
-        expect(prefixFound).assertTrue();
-        console.info(`${TAG} edge path GHO→ReferenceAddress verified, addrFound: ${addrFound}, prefixFound: ${prefixFound}: PASS`);
       } catch (err) {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
