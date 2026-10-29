@@ -1820,7 +1820,7 @@ export default function atomicsIsLockFreeTest() {
     it('testArkTSUtilsAtomicsIsLockFree0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const minSafeInt = Number.MIN_SAFE_INTEGER; // -9007199254740991
       const result = ArkTSUtils.Atomics.isLockFree(minSafeInt);
-      //expect(result).assertEqual(false);
+      expect(result).assertEqual(false);
       done();
     });
 /**
