@@ -600,20 +600,25 @@ export default function processorNDKTest() {
         console.info("testFaultLogger_0001 end");
       })
 
-      /**
-       * @tc.name   SUB_DFX_DFT_HiAppEvent_Processor_Code_3900
-       * @tc.number SUB_DFX_DFT_HiAppEvent_Processor_Code_3900
-       * @tc.desc   验证OH_HiAppEvent_DestroyProcessor-processor异常
-       * @tc.type   FUNCTION
-       * @tc.size   MEDIUMTEST
-       * @tc.level  LEVEL0
-       */
-      it('SUB_DFX_DFT_HiAppEvent_Processor_Code_3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)  => {
+    /**
+      * @tc.name   SUB_DFX_DFT_HiAppEvent_Processor_Code_3900
+      * @tc.number SUB_DFX_DFT_HiAppEvent_Processor_Code_3900
+      * @tc.desc   验证OH_HiAppEvent_DestroyProcessor-processor异常
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('SUB_DFX_DFT_HiAppEvent_Processor_Code_3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)  => {
+      try{
         const processor = hiappevent.CreateProcessor("124")
         const result = hiappevent.DestroyProcessor(processor);
-        expect(false).assertFalse();
         done();
-      })
+      }catch(err){
+        console.error(`====>SUB_DFX_DFT_HiAppEvent_Processor_Code_3800 catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+    })
 
     /**
      * @tc.name   SUB_DFX_DFT_HiAppEvent_Processor_Code_4000
