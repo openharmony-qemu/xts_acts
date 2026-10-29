@@ -75,10 +75,16 @@ it('NavDestination_onBackPressed_static_0100', Level.LEVEL0, async (done: () => 
       await CommonFunc.sleep(300);
 
       let btn1 = await (driver.findComponent(ON.id('NavDestination_onBackPressed_btn1')) as Promise<Component>);
+      let displayId: undefined | Int = 0;
+      await CommonFunc.sleep(1000);
+      displayId = await btn1?.getDisplayId();
+      await CommonFunc.sleep(1000);
       await btn1.click();
       await CommonFunc.sleep(1000);
 
-      await driver.triggerKey(2);
+      if (displayId != undefined) {
+        await driver.triggerKey(2, displayId as Int);
+      }
       await CommonFunc.sleep(300);
       let text1 = inspector.getInspectorByKey('NavDestination_onBackPressed' + '_text1');
       expect(JSON.parseJsonElement(text1).getElement('$attrs').getString('content')).assertEqual('{"number":1}');

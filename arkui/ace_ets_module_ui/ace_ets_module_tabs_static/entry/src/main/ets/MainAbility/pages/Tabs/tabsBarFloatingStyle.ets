@@ -200,6 +200,8 @@ struct TabsBarFloatingStylePage {
       .padding(5)
       .backgroundColor('#C0C0C0')
     }
+    .padding(10)
+    .margin(10)
     .height('100%')
     .width('100%')
   }

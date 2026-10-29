@@ -92,6 +92,8 @@ struct DividerPage {
         .width('100%')
       }
     }
+    .padding(10)
+    .margin(10)
     .alignItems(VerticalAlign.Center)
     .height('100%')
   }

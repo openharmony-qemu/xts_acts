@@ -56,6 +56,9 @@ struct SwiperAttribute_2 {
       .margin(20)
       .width('90%')
       .height('60%')
-    }.id('swiperAttributeParentColumn_2')
+    }
+    .padding(10)
+    .margin(10)
+    .id('swiperAttributeParentColumn_2')
   }
 }

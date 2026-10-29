@@ -86,5 +86,7 @@ struct RefreshOffsetExample {
       .pullToRefresh(true)
       .pullDownRatio(0.5)
     }
+    .padding(10)
+    .margin(10)
   }
 }

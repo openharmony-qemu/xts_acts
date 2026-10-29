@@ -72,6 +72,8 @@ struct ScrollTest {
         }, (item: number) => item.toString())
       }.width('100%').backgroundColor(0xDCDCDC)
     }
+    .padding(10)
+    .margin(10)
     .backgroundColor(Color.Yellow)
     .height('100%')
     .enablePaging(true)

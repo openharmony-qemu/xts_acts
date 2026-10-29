@@ -55,11 +55,11 @@ export default function ScrollToIndexForWaterFlowJsunit01() {
 it('ScrollToIndexForWaterFlow01_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ApiCommponentAdd02Jsunit_static_0900] START');
       let driver = Driver.create();
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
 
       let button = await driver.findComponent(ON.text("30"));
       await (button?.click() as Promise<void>)
-      await driver.delayMs(2000);
+      await CommonFunc.sleep(2000);
       let textItemCom = await driver.findComponent(ON.text("N30"));
       let currentItemID = await textItemCom!.getId();
       expect(currentItemID).assertEqual("ItemTextWaterFlow01_30");
@@ -78,15 +78,15 @@ it('ScrollToIndexForWaterFlow01_static_0100', Level.LEVEL1, async (done: () => v
 it('ScrollToIndexForWaterFlow01_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ScrollToIndexForWaterFlow01_static_0200] START');
       let driver = Driver.create();
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
 
       let button = await driver.findComponent(ON.text("66-true"));
       await (button?.click() as Promise<void>)
-      await driver.delayMs(2000);
+      await CommonFunc.sleep(2000);
       let textItemCom = await driver.findComponent(ON.text("N66"));
       let currentItemID = await textItemCom!.getId();
 
-      await driver.delayMs(2000);
+      await CommonFunc.sleep(2000);
       let isSmoothText = await driver.findComponent(ON.id("isSmooth"));
       console.log('isSmoothText' + isSmoothText);
       console.log('isSmoothText' + JSON.stringify(isSmoothText));
@@ -109,16 +109,16 @@ it('ScrollToIndexForWaterFlow01_static_0300', Level.LEVEL1, async (done: () => v
       console.info('[ScrollToIndexForWaterFlow01_static_0300] START');
       let driver = Driver.create();
 
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
       let moreColumnsBtn = await driver.findComponent(ON.text("moreColumns"));
       await (moreColumnsBtn?.click() as Promise<void>)
-      await driver.delayMs(2000);
+      await CommonFunc.sleep(2000);
       let button = await driver.findComponent(ON.text("u-99-false"));
       await (button?.click() as Promise<void>)
-      await driver.delayMs(2000);
+      await CommonFunc.sleep(2000);
       let textItemCom = await driver.findComponent(ON.text("N99"));
       let currentItemID = await textItemCom!.getId();
-      await driver.delayMs(2000);
+      await CommonFunc.sleep(2000);
       expect(currentItemID).assertEqual("ItemTextWaterFlow01_99");
 
       console.info('[ScrollToIndexForWaterFlow01_static_0300] END');

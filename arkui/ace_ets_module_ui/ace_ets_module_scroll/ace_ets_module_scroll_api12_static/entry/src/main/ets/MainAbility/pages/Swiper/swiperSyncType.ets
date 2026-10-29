@@ -93,5 +93,7 @@ struct sceneTypeFrame {
 
         })
     }
+    .padding(10)
+    .margin(10)
   }
 }

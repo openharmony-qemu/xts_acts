@@ -57,5 +57,7 @@ struct TabsAp1 {
         this.currentIndex = index
       })
     }
+    .padding(10)
+    .margin(10)
   }
 }

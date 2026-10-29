@@ -46,7 +46,10 @@ struct Second4 {
       Text('' + this.content)
       Text('' + this.data1).id('arrayData1')
       Text('' + this.data2).id('arrayData2')
-    }.width('100%')
+    }
+    .padding(10)
+    .margin(10)
+    .width('100%')
 
 
   }

@@ -219,6 +219,8 @@ struct ListDelete {
       .key('MyList5')
 
     }
+    .padding(10)
+    .margin(10)
     .width('100%')
     .backgroundColor(0xDCDCDC)
   }

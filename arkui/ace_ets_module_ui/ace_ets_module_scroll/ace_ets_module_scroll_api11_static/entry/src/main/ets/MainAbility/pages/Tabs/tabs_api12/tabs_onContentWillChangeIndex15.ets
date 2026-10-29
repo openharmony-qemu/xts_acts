@@ -159,6 +159,9 @@ struct TabsExampleApi12I15 {
         .onClick((e: ClickEvent) => {
           this.attr.shift();
         }).key("tabPopI")
-    }.width('100%')
+    }
+    .padding(10)
+    .margin(10)
+    .width('100%')
   }
 }

@@ -83,5 +83,7 @@ struct alphabetIndexer {
           console.info(this.value[index.toInt()] + ' on selected')
         })
     }
+    .padding(10)
+    .margin(10)
   }
 }

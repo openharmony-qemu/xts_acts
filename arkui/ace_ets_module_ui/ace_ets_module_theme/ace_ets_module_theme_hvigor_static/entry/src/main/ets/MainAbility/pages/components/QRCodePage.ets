@@ -65,6 +65,8 @@ struct QRCodePage {
           .key(QRCodeKeys.qrCodeWithTheme)
       }
     }
+    .padding(10)
+    .margin(10)
     .width('100%')
   }
 }

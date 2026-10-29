@@ -54,6 +54,9 @@ struct DisableAlertBeforeBackPage {
         .onClick((e: ClickEvent) => {
           this.getUIContext().getRouter().back({url:'MainAbility/pages/back_router/RouterBackAlert', params: '123'});
         });
-    }.width('100%').height('100%')
+    }
+    .padding(10)
+    .margin(10)
+    .width('100%').height('100%')
   }
 }

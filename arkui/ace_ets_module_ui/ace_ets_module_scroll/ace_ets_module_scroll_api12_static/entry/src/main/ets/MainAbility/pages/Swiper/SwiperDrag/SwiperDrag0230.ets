@@ -61,5 +61,7 @@ struct UIComponentScrollSwiperDrag0230 {
 
       Text(this.index).fontColor(80).width(200).height(200).key('UIComponent_ScrollSwiperDrag_0230')
     }
+    .padding(10)
+    .margin(10)
   }
 }

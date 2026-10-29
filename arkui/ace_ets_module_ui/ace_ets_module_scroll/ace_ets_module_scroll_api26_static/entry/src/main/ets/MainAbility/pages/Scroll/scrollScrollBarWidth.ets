@@ -210,6 +210,8 @@ struct ScrollIndex {
       .scrollBarColor(Color.Red)
       .height(200)
     }
+    .padding(10)
+    .margin(10)
 
   }
 }

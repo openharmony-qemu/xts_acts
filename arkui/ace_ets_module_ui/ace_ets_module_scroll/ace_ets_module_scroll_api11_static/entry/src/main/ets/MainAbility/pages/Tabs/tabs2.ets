@@ -92,7 +92,10 @@ struct TabsBarPosition {
       .width('90%')
       .backgroundColor(0xF5F5F5)
 
-    }.width("100%").height("100%")
+    }
+    .padding(10)
+    .margin(10)
+    .width("100%").height("100%")
   }
 }
 

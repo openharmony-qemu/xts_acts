@@ -73,7 +73,10 @@ struct gridItem_testcasee {
       // .params({
       //   data: 20
       // })
-    }.width(300)
+    }
+    .padding(10)
+    .margin(10)
+    .width(300)
     .height(350)
     .borderColor(Color.Pink)
     .borderWidth(2)

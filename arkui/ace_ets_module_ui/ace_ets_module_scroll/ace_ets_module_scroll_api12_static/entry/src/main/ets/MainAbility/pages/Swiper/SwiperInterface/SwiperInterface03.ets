@@ -126,5 +126,7 @@ struct SwiperInterface03 {
       .autoPlay(true, undefined)
       .curve(Curve.EaseOut)
     }
+    .padding(10)
+    .margin(10)
   }
 }

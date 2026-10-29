@@ -21,6 +21,7 @@ import { MessageManager, Callback } from '../../../ets/MainAbility/common/Messag
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
+let displayID: number = AppStorage.get<number>('displayID') ? AppStorage.get<number>('displayID') as number : 0;
 export default function tabIconJsunit() {
   describe('tabIconJsunit', () => {
     beforeEach(async (): Promise<void> => {
@@ -91,8 +92,7 @@ it('tabIconJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<
       let width = right - left;
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
-      await driver.swipe((Math.round(left + width * 0.9)).toInt(), (Math.round(bottom - height / 2)).toInt(),
-        (Math.round(left + width * 0.1)).toInt(), (Math.round(bottom - height / 2)).toInt());
+      await driver.swipeBetween({ x: (Math.round(left + width * 0.9)).toInt(), y: (Math.round(bottom - height / 2)).toInt(), displayId: displayID.toInt() }, { x: (Math.round(left + width * 0.1)).toInt(), y: (Math.round(bottom - height / 2)).toInt(), displayId: displayID.toInt() });
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('tabIcon_mess1');
       let strJson1 = inspector.getInspectorByKey('tabIcon_mess2');

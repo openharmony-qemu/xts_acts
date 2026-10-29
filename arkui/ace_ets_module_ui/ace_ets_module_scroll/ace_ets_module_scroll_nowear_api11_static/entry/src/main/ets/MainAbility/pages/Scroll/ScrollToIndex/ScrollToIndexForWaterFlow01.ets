@@ -169,5 +169,7 @@ struct ScrollToIndexForWaterFlow01 {
           }).margin({ top: 500, left: 10 } as Margin)
       }
     }
+    .padding(10)
+    .margin(10)
   }
 }

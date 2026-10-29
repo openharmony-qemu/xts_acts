@@ -128,6 +128,9 @@ struct Tabs_scrollable {
       .width('90%')
       .height('45%')
       .backgroundColor('#F1F3F5')
-    }.width('100%')
+    }
+    .padding(10)
+    .margin(10)
+    .width('100%')
   }
 }

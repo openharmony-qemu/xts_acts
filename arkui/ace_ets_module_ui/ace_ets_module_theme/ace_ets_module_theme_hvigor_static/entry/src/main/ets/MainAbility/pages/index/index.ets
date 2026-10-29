@@ -72,6 +72,9 @@ struct Index {
         Text(this.message)
         SystemColorsFromResources({postfix: ''})
       }.width('100%')
-    }.height('100%')
+    }
+    .padding(10)
+    .margin(10)
+    .height('100%')
   }
 }

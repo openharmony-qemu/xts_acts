@@ -68,5 +68,7 @@ struct router_PageB {
         Text(this.page + '').id('length')
       }.width('100%')
     }
+    .padding(10)
+    .margin(10)
   }
 }

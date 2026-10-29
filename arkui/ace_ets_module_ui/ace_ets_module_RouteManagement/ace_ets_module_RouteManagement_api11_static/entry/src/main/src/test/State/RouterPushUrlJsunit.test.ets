@@ -80,13 +80,13 @@ export default function RouterPushUrlJsunit() {
 it('RouterPushUrlJsunit_static_0001', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[RouterPushUrlJsunit_static_0001] START');
       let driver = Driver.create();
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       let btn = await driver.findComponent(ON.id('turn_RouterPushUrlTwo_noParms'));
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       await (btn?.click() as Promise<void>);
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       let text = await driver.findComponent(ON.id('Text_RouterPushTwo'));
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       let txt = await (text?.getText() as Promise<string>)
       expect(txt).assertEqual("RouterPushTwo ")
       done();
@@ -104,13 +104,13 @@ it('RouterPushUrlJsunit_static_0001', Level.LEVEL2, async (done: () => void): Pr
 it('RouterPushUrlJsunit_static_0002', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[RouterPushUrlJsunit_static_0002] START');
       let driver = Driver.create();
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       let btn = await driver.findComponent(ON.id('turn_RouterPushUrlTwo_hasParms'));
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       await (btn?.click() as Promise<void>);
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       let text = await driver.findComponent(ON.id('Text_RouterPushTwo'));
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       let txt = await (text?.getText() as Promise<string>)
       expect(txt).assertEqual("RouterPushTwo params")
       done();
@@ -128,22 +128,22 @@ it('RouterPushUrlJsunit_static_0002', Level.LEVEL2, async (done: () => void): Pr
 it('RouterPushUrlJsunit_static_0003', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[RouterPushUrlJsunit_static_0003] START');
       let driver = Driver.create();
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       const routerInstance = AppStorage.get<Router>("router") as Router
       let Length = routerInstance.getLength()
       expect("Length = " + Length).assertEqual("Length = 1")
       let btn1 = await driver.findComponent(ON.id('turn_RouterPushUrlTwo_noParms'));
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       await (btn1?.click() as Promise<void>);
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       let pageTwoLength = routerInstance.getLength()
       expect("pageTwoLength = " + pageTwoLength).assertEqual("pageTwoLength = 2")
       let pages = routerInstance.getState();
       expect(pages.index).assertEqual(2)
       let btn2 = await driver.findComponent(ON.id('turn_RouterPushUrlOne_RouterMode_Standard'));
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       await (btn2?.click() as Promise<void>);
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       let pageOneLength = routerInstance.getLength()
       expect("pageOneLength = " + pageOneLength).assertEqual("pageOneLength = 3")
       pages = routerInstance.getState();
@@ -163,22 +163,22 @@ it('RouterPushUrlJsunit_static_0003', Level.LEVEL2, async (done: () => void): Pr
 it('RouterPushUrlJsunit_static_0004', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[RouterPushUrlJsunit_static_0004] START');
       let driver = Driver.create();
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       const routerInstance = AppStorage.get<Router>("router") as Router
       let Length = routerInstance.getLength()
       expect(Length).assertEqual("1")
       let btn1 = await driver.findComponent(ON.id('turn_RouterPushUrlTwo_noParms'));
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       await (btn1?.click() as Promise<void>);
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       let pageTwoLength = routerInstance.getLength()
       expect("pageTwoLength = " + pageTwoLength).assertEqual("pageTwoLength = 2")
       let pages = routerInstance.getState();
       expect(pages.index).assertEqual(2)
       let btn2 = await driver.findComponent(ON.id('turn_RouterPushUrlOne_RouterMode_Single'));
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       await (btn2?.click() as Promise<void>);
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       let pageOneLength = routerInstance.getLength()
       expect("pageOneLength = " + pageOneLength).assertEqual("pageOneLength = 2")
       pages = routerInstance.getState();
@@ -200,15 +200,15 @@ it('RouterPushUrlJsunit_static_0005', Level.LEVEL2, async (done: () => void): Pr
       let driver = Driver.create();
       let scrollBar = await driver.findComponent(ON.type('Scroll'));
       let btn = await (scrollBar?.scrollSearch(ON.id('turn_RouterPushReplace_noParms')) as Promise<Component | null>);
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       await (btn?.click() as Promise<void>);
       const routerInstance = AppStorage.get<Router>("router") as Router
       let Length = routerInstance.getLength()
       expect(Length).assertEqual("1")
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       let scrollBar2 = await driver.findComponent(ON.type('Scroll'));
       let text = await (scrollBar2?.scrollSearch(ON.id('Text_RouterPushTwo')) as Promise<Component | null>);
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       let txt = await (text?.getText() as Promise<string>)
       expect(txt).assertEqual("RouterPushTwo ")
       done();
@@ -226,18 +226,18 @@ it('RouterPushUrlJsunit_static_0005', Level.LEVEL2, async (done: () => void): Pr
 it('RouterPushUrlJsunit_static_0006', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[RouterPushUrlJsunit_static_0006] START');
       let driver = Driver.create();
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       let scrollBar = await driver.findComponent(ON.type('Scroll'));
       let btn = await (scrollBar?.scrollSearch(ON.id('turn_RouterPushReplace_hasParms')) as Promise<Component | null>);
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       await (btn?.click() as Promise<void>);
       const routerInstance = AppStorage.get<Router>("router") as Router
       let Length = routerInstance.getLength()
       expect(Length).assertEqual("1")
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       let scrollBar2 = await driver.findComponent(ON.type('Scroll'));
       let text = await (scrollBar2?.scrollSearch(ON.id('Text_RouterPushTwo')) as Promise<Component | null>);
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       let txt = await (text?.getText() as Promise<string>)
       expect(txt).assertEqual("RouterPushTwo params")
       done();
@@ -255,15 +255,15 @@ it('RouterPushUrlJsunit_static_0006', Level.LEVEL2, async (done: () => void): Pr
 it('RouterPushUrlJsunit_static_0007', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[RouterPushUrlJsunit_static_0007] START');
       let driver = Driver.create();
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       let scrollBar = await driver.findComponent(ON.type('Scroll'));
       let btn = await (scrollBar?.scrollSearch(ON.id('turn_UIRouterPushUrlTwo_noParms')) as Promise<Component | null>);
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       await (btn?.click() as Promise<void>);
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       let scrollBar2 = await driver.findComponent(ON.type('Scroll'));
       let text = await (scrollBar2?.scrollSearch(ON.id('Text_UIRouterPushTwo')) as Promise<Component | null>);
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       let txt = await (text?.getText() as Promise<string>)
       expect(txt).assertEqual("UIRouterPushTwo ")
       done();
@@ -281,15 +281,15 @@ it('RouterPushUrlJsunit_static_0007', Level.LEVEL2, async (done: () => void): Pr
 it('RouterPushUrlJsunit_static_0008', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[RouterPushUrlJsunit_static_0008] START');
       let driver = Driver.create();
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       let scrollBar = await driver.findComponent(ON.type('Scroll'));
       let btn = await (scrollBar?.scrollSearch(ON.id('turn_UIRouterPushUrlTwo_hasParms')) as Promise<Component | null>);
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       await (btn?.click() as Promise<void>);
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       let scrollBar2 = await driver.findComponent(ON.type('Scroll'));
       let text = await (scrollBar2?.scrollSearch(ON.id('Text_UIRouterPushTwo')) as Promise<Component | null>);
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       let txt = await (text?.getText() as Promise<string>)
       expect(txt).assertEqual("UIRouterPushTwo params")
       done();
@@ -307,24 +307,24 @@ it('RouterPushUrlJsunit_static_0008', Level.LEVEL2, async (done: () => void): Pr
 it('RouterPushUrlJsunit_static_0009', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[RouterPushUrlJsunit_static_0009] START');
       let driver = Driver.create();
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       const routerInstance = AppStorage.get<Router>("router") as Router
       let Length = routerInstance.getLength()
       expect("Length = " + Length).assertEqual("Length = 1")
       let scrollBar = await driver.findComponent(ON.type('Scroll'));
       let btn1 = await (scrollBar?.scrollSearch(ON.id('turn_UIRouterPushUrlTwo_noParms')) as Promise<Component | null>);
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       await (btn1?.click() as Promise<void>);
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       let pageTwoLength = routerInstance.getLength()
       expect("pageTwoLength = " + pageTwoLength).assertEqual("pageTwoLength = 2")
       let pages = routerInstance.getState();
       expect(pages.index).assertEqual(2)
       let scrollBar2 = await driver.findComponent(ON.type('Scroll'));
       let btn2 = await (scrollBar2?.scrollSearch(ON.id('turn_UIRouterPushUrlOne_RouterMode_Standard')) as Promise<Component | null>);
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       await (btn2?.click() as Promise<void>);
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       let pageOneLength = routerInstance.getLength()
       expect("pageOneLength = " + pageOneLength).assertEqual("pageOneLength = 3")
       pages = routerInstance.getState();
@@ -344,24 +344,24 @@ it('RouterPushUrlJsunit_static_0009', Level.LEVEL2, async (done: () => void): Pr
 it('RouterPushUrlJsunit_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[RouterPushUrlJsunit_static_0010] START');
       let driver = Driver.create();
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       const routerInstance = AppStorage.get<Router>("router") as Router
       let Length = routerInstance.getLength()
       expect(Length).assertEqual("1")
       let scrollBar = await driver.findComponent(ON.type('Scroll'));
       let btn1 = await (scrollBar?.scrollSearch(ON.id('turn_UIRouterPushUrlTwo_noParms')) as Promise<Component | null>);
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       await (btn1?.click() as Promise<void>);
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       let pageTwoLength = routerInstance.getLength()
       expect("pageTwoLength = " + pageTwoLength).assertEqual("pageTwoLength = 2")
       let pages = routerInstance.getState();
       expect(pages.index).assertEqual(2)
       let scrollBar2 = await driver.findComponent(ON.type('Scroll'));
       let btn2 = await (scrollBar2?.scrollSearch(ON.id('turn_UIRouterPushUrlOne_RouterMode_Single')) as Promise<Component | null>);
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       await (btn2?.click() as Promise<void>);
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       let pageOneLength = routerInstance.getLength()
       expect("pageOneLength = " + pageOneLength).assertEqual("pageOneLength = 2")
       pages = routerInstance.getState();
@@ -383,15 +383,15 @@ it('RouterPushUrlJsunit_static_0011', Level.LEVEL2, async (done: () => void): Pr
       let driver = Driver.create();
       let scrollBar = await driver.findComponent(ON.type('Scroll'));
       let btn = await (scrollBar?.scrollSearch(ON.id('turn_UIRouterPushReplace_noParms')) as Promise<Component | null>);
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       await (btn?.click() as Promise<void>);
       const routerInstance = AppStorage.get<Router>("router") as Router
       let Length = routerInstance.getLength()
       expect(Length).assertEqual("1")
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       let scrollBar2 = await driver.findComponent(ON.type('Scroll'))
       let text = await (scrollBar2?.scrollSearch(ON.id('Text_UIRouterPushTwo')) as Promise<Component | null>);
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       let txt = await (text?.getText() as Promise<string>)
       expect(txt).assertEqual("UIRouterPushTwo ")
       done();
@@ -409,18 +409,18 @@ it('RouterPushUrlJsunit_static_0011', Level.LEVEL2, async (done: () => void): Pr
 it('RouterPushUrlJsunit_static_0012', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[RouterPushUrlJsunit_static_0012] START');
       let driver = Driver.create();
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       let scrollBar = await driver.findComponent(ON.type('Scroll'));
       let btn = await (scrollBar?.scrollSearch(ON.id('turn_UIRouterPushReplace_hasParms')) as Promise<Component | null>);
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       await (btn?.click() as Promise<void>);
       const routerInstance = AppStorage.get<Router>("router") as Router
       let Length = routerInstance.getLength()
       expect(Length).assertEqual("1")
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       let scrollBar2 = await driver.findComponent(ON.type('Scroll'));
       let text = await (scrollBar2?.scrollSearch(ON.id('Text_UIRouterPushTwo')) as Promise<Component | null>);
-      await driver.delayMs(waitUiReadyMs);
+      await CommonFunc.sleep(waitUiReadyMs);
       let txt = await (text?.getText() as Promise<string>)
       expect(txt).assertEqual("UIRouterPushTwo params")
       done();

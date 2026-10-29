@@ -110,6 +110,8 @@ struct TouchStrategyExample {
         .margin(10)
 
     }
+    .padding(10)
+    .margin(10)
     .width('100%')
     .height('100%')
     .key('Column_TouchStrategy')

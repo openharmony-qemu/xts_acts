@@ -53,6 +53,8 @@ export struct getRectangleByIdExample {
         .height('5%')
         .id('getRectangleByIdButton')
     }
+    .padding(10)
+    .margin(10)
     .height('100%')
     .width('100%')
   }

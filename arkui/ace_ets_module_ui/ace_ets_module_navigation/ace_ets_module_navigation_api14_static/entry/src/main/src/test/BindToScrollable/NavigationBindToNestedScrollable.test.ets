@@ -32,6 +32,7 @@ import {UtilsTest, startAbility, stopApplication} from "../Util.test"
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: number = AppStorage.get<number>('displayID') ? AppStorage.get<number>('displayID') as number : 0;
 export default function NavigationBindToNestedScrollable() {
   describe('NavigationBindToNestedScrollable', () => {
     beforeAll(async (): Promise<void> => {
@@ -110,7 +111,7 @@ it('NavigationBindToNestedScrollable_static_0100', Level.LEVEL0, async (done: ()
       let right = scrollBarRect.right;
       let bottom = scrollBarRect.bottom;
       
-      await driver.swipe(Math.round(right - uiContext!.vp2px(11)).toInt(), Math.round(top + uiContext!.vp2px(12)).toInt(), Math.round(right - uiContext!.vp2px(11)).toInt(), Math.round(bottom).toInt());
+      await driver.swipeBetween({ x: Math.round(right - uiContext!.vp2px(11)).toInt(), y: Math.round(top + uiContext!.vp2px(12)).toInt(), displayId: displayID.toInt() }, { x: Math.round(right - uiContext!.vp2px(11)).toInt(), y: Math.round(bottom).toInt(), displayId: displayID.toInt() });
       await driver.delayMs(500)
 
       await driver.assertComponentExist(ON.type('TitleBar'));
@@ -129,11 +130,7 @@ it('NavigationBindToNestedScrollable_static_0100', Level.LEVEL0, async (done: ()
       console.info('NavigationBindToNestedScrollable_0100 tooBarTop1: ', tooBarTop1);
       console.info('NavigationBindToNestedScrollable_0100 tooBarBottom1: ', tooBarBottom1);
 
-      await driver.swipe(
-        Math.round(right - uiContext!.vp2px(11)).toInt(), 
-        Math.round(bottom - uiContext!.vp2px(12)).toInt(), 
-        Math.round(right - uiContext!.vp2px(11)).toInt(), 
-        Math.round(top).toInt());
+      await driver.swipeBetween({ x: Math.round(right - uiContext!.vp2px(11)).toInt(), y: Math.round(bottom - uiContext!.vp2px(12)).toInt(), displayId: displayID.toInt() }, { x: Math.round(right - uiContext!.vp2px(11)).toInt(), y: Math.round(top).toInt(), displayId: displayID.toInt() });
       await driver.delayMs(500)
       let list = await driver.findComponent(ON.type('List'));
       
@@ -142,11 +139,7 @@ it('NavigationBindToNestedScrollable_static_0100', Level.LEVEL0, async (done: ()
       let listRight = listRect.right;
       let listBottom = listRect.bottom;
 
-      await driver.swipe(
-        Math.round(listRight - uiContext!.vp2px(11)).toInt(), 
-        Math.round(listTop + uiContext!.vp2px(12)).toInt(), 
-        Math.round(listRight - uiContext!.vp2px(11)).toInt(), 
-        Math.round(listBottom).toInt());
+      await driver.swipeBetween({ x: Math.round(listRight - uiContext!.vp2px(11)).toInt(), y: Math.round(listTop + uiContext!.vp2px(12)).toInt(), displayId: displayID.toInt() }, { x: Math.round(listRight - uiContext!.vp2px(11)).toInt(), y: Math.round(listBottom).toInt(), displayId: displayID.toInt() });
       await driver.delayMs(500)
 
       let component1 = await driver.findComponent(ON.type('TitleBar').text('pageOne'));

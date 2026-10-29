@@ -148,5 +148,7 @@ struct TabsPageFlipModeDemo1 {
         return true
       })
     }
+    .padding(10)
+    .margin(10)
   }
 }

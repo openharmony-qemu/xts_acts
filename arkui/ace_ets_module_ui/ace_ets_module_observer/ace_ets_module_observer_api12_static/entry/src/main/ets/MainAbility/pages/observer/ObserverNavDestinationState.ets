@@ -150,5 +150,7 @@ struct ObserverNavDestinationState {
       .title('NavIndex')
       .navDestination(this.PageMap)
     }
+    .padding(10)
+    .margin(10)
   }
 }

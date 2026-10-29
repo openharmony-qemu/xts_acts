@@ -65,5 +65,7 @@ struct RefreshLevel1 {
         console.log('onRefreshing test')
       })
     }
+    .padding(10)
+    .margin(10)
   }
 }

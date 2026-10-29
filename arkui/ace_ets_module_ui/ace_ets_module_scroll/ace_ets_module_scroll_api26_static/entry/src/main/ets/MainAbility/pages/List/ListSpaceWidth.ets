@@ -129,5 +129,7 @@ struct ListSpaceWidthExample {
       .backgroundColor(0xf5f5f5)
       .padding(15)
     }
+    .padding(10)
+    .margin(10)
   }
 }

@@ -119,5 +119,7 @@ struct showDotIndicatorDemo {
           console.log('current index: ' + index )
         })
     }
+    .padding(10)
+    .margin(10)
   }
 }

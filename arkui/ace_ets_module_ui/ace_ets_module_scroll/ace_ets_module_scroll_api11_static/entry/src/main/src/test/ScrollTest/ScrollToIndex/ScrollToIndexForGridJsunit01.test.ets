@@ -56,10 +56,10 @@ it('ScrollToIndexForGridJsunit01_static_0100', Level.LEVEL0, async (done: () => 
       console.info('[ScrollToIndexForGridJsunit01_static_0100] START');
 
       let driver = Driver.create();
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.text("30"));
       await (button?.click() as Promise<void>);
-      await driver.delayMs(2000);
+      await CommonFunc.sleep(2000);
       let gridItem = await driver.findComponent(ON.id("gridIndex01_30"));
       let gridItemID = await (gridItem?.getId() as Promise<string>);
       expect(gridItemID).assertEqual("gridIndex01_30");
@@ -80,13 +80,13 @@ it('ScrollToIndexForGridJsunit01_static_0200', Level.LEVEL0, async (done: () => 
       console.info('[ScrollToIndexForGridJsunit01_static_0200] START');
 
       let driver = Driver.create();
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.text("66-true"));
       await (button?.click() as Promise<void>);
-      await driver.delayMs(2000);
+      await CommonFunc.sleep(2000);
       console.log("button_page" + button);
       let smoothTextObj = await driver.findComponent(ON.id("isHaveSmooth_Grid01"));
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
 
       let gridItem = await driver.findComponent(ON.id("gridIndex01_66"));
       let gridItemID = await (gridItem?.getId() as Promise<string>);
@@ -109,12 +109,12 @@ it('ScrollToIndexForGridJsunit01_static_0300', Level.LEVEL0, async (done: () => 
       console.info('[ScrollToIndexForGridJsunit01_static_0300] START');
 
       let driver = Driver.create();
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.text("10-false"));
       await (button?.click() as Promise<void>);
-      await driver.delayMs(2000);
+      await CommonFunc.sleep(2000);
       let smoothTextObj = await driver.findComponent(ON.id("isHaveSmooth_Grid01"));
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
 
       let gridItem = await driver.findComponent(ON.id("gridIndex01_10"));
       let gridItemID = await (gridItem?.getId() as Promise<string>);
@@ -137,13 +137,13 @@ it('ScrollToIndexForGridJsunit01_static_0400', Level.LEVEL0, async (done: () => 
       console.info('[ScrollToIndexForGridJsunit01_static_0400] START');
 
       let driver = Driver.create();
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
       let button_page = await driver.findComponent(ON.text("99-true-Start"));
       await (button_page?.click() as Promise<void>);
-      await driver.delayMs(2000);
+      await CommonFunc.sleep(2000);
       console.log("button_page" + button_page);
       let smoothTextObj = await driver.findComponent(ON.id("isHaveSmooth_Grid01"));
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
 
       let gridItem = await driver.findComponent(ON.id("gridIndex01_99"));
       let gridItemText = await (gridItem?.getId() as Promise<string>);
@@ -173,13 +173,13 @@ it('ScrollToIndexForGridJsunit01_static_0500', Level.LEVEL0, async (done: () => 
       console.info('[ScrollToIndexForGridJsunit01_static_0500] START');
 
       let driver = Driver.create();
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.text("128-true-end"));
       await (button?.click() as Promise<void>);
-      await driver.delayMs(2000);
+      await CommonFunc.sleep(2000);
       console.log("button_page" + button);
       let smoothTextObj = await driver.findComponent(ON.id("isHaveSmooth_Grid01"));
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
 
       let gridItem = await driver.findComponent(ON.id("gridIndex01_128"));
       let gridItemText = await (gridItem?.getId() as Promise<string>);
@@ -215,22 +215,22 @@ it('ScrollToIndexForGridJsunit01_static_0600', Level.LEVEL0, async (done: () => 
       console.info('[ScrollToIndexForGridJsunit01_static_0600] START');
 
       let driver = Driver.create();
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.text("22-false-center"));
       await (button?.click() as Promise<void>);
-      await driver.delayMs(2000);
+      await CommonFunc.sleep(2000);
       let gridItem = await driver.findComponent(ON.id("gridIndex01_22"));
 
       let gridItemText = await (gridItem?.getId() as Promise<string>);
-      await driver.delayMs(2000);
+      await CommonFunc.sleep(2000);
 
       let bounds = await (gridItem?.getBoundsCenter() as Promise<Point>);
       let distanceTop = bounds.y;
-      await driver.delayMs(2000);
+      await CommonFunc.sleep(2000);
       let GridCom = await driver.findComponent(ON.id("GridID_Grid01"));
       let boundsCenter = await (GridCom?.getBoundsCenter() as Promise<Point>);
       let centerDistanceTop = boundsCenter.y;
-      await driver.delayMs(2000);
+      await CommonFunc.sleep(2000);
       expect(Math.abs(distanceTop - centerDistanceTop) <= 1).assertTrue();
 
       expect(gridItemText).assertEqual("gridIndex01_22");
@@ -251,15 +251,15 @@ it('ScrollToIndexForGridJsunit01_static_0700', Level.LEVEL0, async (done: () => 
       let driver = Driver.create();
       console.info('[ScrollToIndexForGridJsunit01_static_0700] START');
 
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
       let moreColButton = await driver.findComponent(ON.text("moreColumns"));
       await (moreColButton?.click() as Promise<void>);
-      await driver.delayMs(2000);
+      await CommonFunc.sleep(2000);
       let button = await driver.findComponent(ON.text("55-true-auto"));
       await (button?.click() as Promise<void>);
-      await driver.delayMs(2000);
+      await CommonFunc.sleep(2000);
       let smoothTextObj = await driver.findComponent(ON.id("isHaveSmooth_Grid01"));
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
       let gridItem = await driver.findComponent(ON.id("gridIndex01_55"));
       let gridItemText = await (gridItem?.getId() as Promise<string>);
 
@@ -282,20 +282,20 @@ it('ScrollToIndexForGridJsunit01_static_0800', Level.LEVEL0, async (done: () => 
       console.info('[ScrollToIndexForGridJsunit01_static_0800] START');
 
       let driver = Driver.create();
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
 
       let button = await driver.findComponent(ON.text("128-true-end"));
       await (button?.click() as Promise<void>);
-      await driver.delayMs(2000);
+      await CommonFunc.sleep(2000);
 
       let gridItem = await driver.findComponent(ON.id("gridIndex01_128"));
       let gridItemText = await (gridItem?.getId() as Promise<string>);
 
       let smoothTextObj = await driver.findComponent(ON.id("isHaveSmooth_Grid01"));
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
       let bounds = await (gridItem?.getBoundsCenter() as Promise<Point>);
       let distanceTop = bounds.y;
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
       let GridCom = await driver.findComponent(ON.id("GridID_Grid01"));
       let boundsCenter = await (GridCom?.getBoundsCenter() as Promise<Point>);
       let centerDistanceTop = boundsCenter.y;

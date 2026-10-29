@@ -22,6 +22,7 @@ import events_emitter from '@ohos.events.emitter';
 import inspector from '@ohos.arkui.inspector';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+let displayID: number = AppStorage.get<number>('displayID') ? AppStorage.get<number>('displayID') as number : 0;
 export default function finishTransSwiper() {
   describe('finishTransSwiper', () => {
     beforeEach(async (): Promise<void> => {
@@ -68,12 +69,11 @@ it('finishTransSwiper_static_0100', Level.LEVEL0, async (done: () => void): Prom
       let height = bottom - top;
       let width = right - left;
       await CommonFunc.sleep(1000);
-      await driver.swipe((Math.round(left + width * 0.8)
-      ).toInt(), (Math.round(top + height / 2)
-      ).toInt(), (Math.round(left + width * 0.2)
-      ).toInt(),
-        (Math.round(top + height / 2)
-        ).toInt());
+      await driver.swipeBetween({ x: (Math.round(left + width * 0.8)
+      ).toInt(), y: (Math.round(top + height / 2)
+      ).toInt(), displayId: displayID.toInt() }, { x: (Math.round(left + width * 0.2)
+      ).toInt(), y: (Math.round(top + height / 2)
+        ).toInt(), displayId: displayID.toInt() });
       await CommonFunc.sleep(2000);
       let strJson1 = inspector.getInspectorByKey('finishTransitionSwiper_text');
       console.info("[scrollSourceDrag_static_0100] component obj1 is: " +

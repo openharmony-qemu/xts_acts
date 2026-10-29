@@ -129,5 +129,7 @@ struct Index {
         })
       }.margin({ top: 50 } as Margin).width('100%')
     }
+    .padding(10)
+    .margin(10)
   }
 }

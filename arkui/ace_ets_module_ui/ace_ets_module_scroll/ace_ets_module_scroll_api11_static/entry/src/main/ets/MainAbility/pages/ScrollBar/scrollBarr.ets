@@ -106,5 +106,7 @@ struct ScrollBarExampler {
         }.key('scrollBarr_scroll').width(30).backgroundColor('#ededed')
       }
     }
+    .padding(10)
+    .margin(10)
   }
 }

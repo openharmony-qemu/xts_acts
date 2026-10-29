@@ -59,7 +59,10 @@ struct router_getStateByUrl5 {
           this.str3 = JSON.stringify(this.getUIContext().getRouter().getStateByUrl('shared_library')) + ''
         })
 
-    }.width('100%').height('100%')
+    }
+    .padding(10)
+    .margin(10)
+    .width('100%').height('100%')
 
   }
 }

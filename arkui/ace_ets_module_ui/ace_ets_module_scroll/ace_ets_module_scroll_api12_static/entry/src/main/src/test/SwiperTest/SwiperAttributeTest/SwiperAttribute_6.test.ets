@@ -32,6 +32,7 @@ import text from "@ohos.graphics.text"
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../../Util.test'
+let displayID: number = AppStorage.get<number>('displayID') ? AppStorage.get<number>('displayID') as number : 0;
 export default function SwiperAttribute_6() {
   describe('SwiperAttribute_6', () => {
     beforeEach(async (): Promise<void> => {
@@ -78,12 +79,7 @@ it('SwiperAttribute_static_0100', Level.LEVEL0, async (done: () => void): Promis
       await CommonFunc.sleep(500);
       for (let i = 1; i <= 6; i++) {
         if (i > 1) {
-          await driver.swipe(
-            (Number.parseInt(`${(rect.right - rect.left) * 0.8 + rect.left}`)).toInt(),
-            (Number.parseInt(`${(rect.bottom - rect.top) * 0.5 + rect.top}`)).toInt(),
-            (Number.parseInt(`${(rect.right - rect.left) * 0.1 + rect.left}`)).toInt(),
-            (Number.parseInt(`${(rect.bottom - rect.top) * 0.5 + rect.top}`)).toInt(),
-            1000);
+          await driver.swipeBetween({ x: (Number.parseInt(`${(rect.right - rect.left) * 0.8 + rect.left}`)).toInt(), y: (Number.parseInt(`${(rect.bottom - rect.top) * 0.5 + rect.top}`)).toInt(), displayId: displayID.toInt() }, { x: (Number.parseInt(`${(rect.right - rect.left) * 0.1 + rect.left}`)).toInt(), y: (Number.parseInt(`${(rect.bottom - rect.top) * 0.5 + rect.top}`)).toInt(), displayId: displayID.toInt() }, 1000);
           await CommonFunc.sleep(1000);
         }
         let columnRect = CommonFunc.getComponentRectOnScreen('swiperAttribute_60' + i);

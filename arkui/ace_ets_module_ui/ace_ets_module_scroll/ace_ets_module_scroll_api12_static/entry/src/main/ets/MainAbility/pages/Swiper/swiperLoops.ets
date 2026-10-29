@@ -58,6 +58,8 @@ struct swiperLoopsTest {
       .displayCount(1)
       .index(0)
     }
+    .padding(10)
+    .margin(10)
     .height('100%')
     .width('100%')
   }

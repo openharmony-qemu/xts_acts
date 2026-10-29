@@ -49,7 +49,10 @@ struct RouterUrlError {
             params: new routerParams('message', [123, 456, 789])
           })
         })
-    }.width('100%').height('100%')
+    }
+    .padding(10)
+    .margin(10)
+    .width('100%').height('100%')
 
   }
 }

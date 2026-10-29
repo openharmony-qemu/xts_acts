@@ -114,5 +114,7 @@ struct finishTransitionSwiperAnimated {
         console.info('mainAxisLength: ' + mainAxisLength)
       })
     }
+    .padding(10)
+    .margin(10)
   }
 }

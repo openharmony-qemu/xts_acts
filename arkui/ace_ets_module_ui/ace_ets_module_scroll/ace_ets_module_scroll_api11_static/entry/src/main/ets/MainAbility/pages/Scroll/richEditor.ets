@@ -209,5 +209,7 @@ struct richeditor2 {
       .width("100%")
       .height("70%")
     }
+    .padding(10)
+    .margin(10)
   }
 }

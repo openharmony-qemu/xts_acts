@@ -142,6 +142,8 @@ struct RouterPushThree {
           })
       }
     }
+    .padding(10)
+    .margin(10)
   }
 }
 class JsonObject {

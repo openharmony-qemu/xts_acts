@@ -109,5 +109,7 @@ struct RouterPushTwo {
           })
       }
     }
+    .padding(10)
+    .margin(10)
   }
 }

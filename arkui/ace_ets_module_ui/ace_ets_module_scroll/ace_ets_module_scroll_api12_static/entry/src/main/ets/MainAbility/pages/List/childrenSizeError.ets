@@ -101,5 +101,7 @@ struct childrenMainSizeError {
       }
       .childrenMainSize(this.listChildrenSize)
     }
+    .padding(10)
+    .margin(10)
   }
 }

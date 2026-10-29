@@ -152,6 +152,8 @@ struct ListRebound {
         .pullDownRatio(1)
       }
     }
+    .padding(10)
+    .margin(10)
   }
 }
 

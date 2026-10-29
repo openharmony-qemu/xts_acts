@@ -121,6 +121,8 @@ struct SwiperPage {
         .key(SwiperKeys.digitIndicatorWithTheme)
       }
     }
+    .padding(10)
+    .margin(10)
     .width('100%')
   }
 }

@@ -56,5 +56,7 @@ struct pushNamedRoute10 {
       })
         .id('pushNamedRoute10_btn1')
     }
+    .padding(10)
+    .margin(10)
   }
 }
