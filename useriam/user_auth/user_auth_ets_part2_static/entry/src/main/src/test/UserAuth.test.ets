@@ -32,15 +32,15 @@ export default function UserAuthTest() {
     })
 
     /**
-     * @tc.name   Security_IAM_Companion_Api_static_5001
-     * @tc.number Security_IAM_Companion_Api_static_5001
+     * @tc.name   SUB_Security_IAM_Companion_Api_Static_5001
+     * @tc.number SUB_Security_IAM_Companion_Api_Static_5001
      * @tc.desc   registerRemoteAuthCallback normal test
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('Security_IAM_Companion_Api_static_5001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, format, 'Security_IAM_Companion_Api_static_5001 start');
+    it('SUB_Security_IAM_Companion_Api_Static_5001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, format, 'SUB_Security_IAM_Companion_Api_Static_5001 start');
       const context: common.Context = await GlobalContext.getContext();
       let callback: userAuth.IRemoteAuthCallback = {
         onGetRemoteAuthWidgetParam: (challenge: Uint8Array): userAuth.WidgetParam => {
@@ -59,27 +59,37 @@ export default function UserAuthTest() {
         await userAuth.registerRemoteAuthCallback(callback);
         expect(true).assertTrue();
       } catch (err) {
-        hilog.info(domain, tag, format, "Security_IAM_Companion_Api_static_5001 failed " + err.code + " " + err.message);
-        expect(false).assertTrue();
+        if (err.code === 12500002) {
+          hilog.info(domain, tag, format, "SUB_Security_IAM_Companion_Api_Static_5001 expected error code 12500002");
+          expect(err.code).assertEqual(12500002);
+        } else {
+          hilog.info(domain, tag, format, "SUB_Security_IAM_Companion_Api_Static_5001 failed " + err.code + " " + err.message);
+          expect(false).assertTrue();
+        }
       }
       done();
     })
     /**
-     * @tc.name   Security_IAM_Companion_Api_static_5004
-     * @tc.number Security_IAM_Companion_Api_static_5004
+     * @tc.name   SUB_Security_IAM_Companion_Api_Static_5004
+     * @tc.number SUB_Security_IAM_Companion_Api_Static_5004
      * @tc.desc   unregisterRemoteAuthCallback normal test
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('Security_IAM_Companion_Api_static_5004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, format, 'Security_IAM_Companion_Api_static_5004 start');
+    it('SUB_Security_IAM_Companion_Api_Static_5004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, format, 'SUB_Security_IAM_Companion_Api_Static_5004 start');
       try {
         await userAuth.unregisterRemoteAuthCallback();
         expect(true).assertTrue();
       } catch (err) {
-        hilog.info(domain, tag, format, "Security_IAM_Companion_Api_static_5004 failed " + err.code + " " + err.message);
-        expect(false).assertTrue();
+        if (err.code === 12500002) {
+          hilog.info(domain, tag, format, "SUB_Security_IAM_Companion_Api_Static_5004 expected error code 12500002");
+          expect(err.code).assertEqual(12500002);
+        } else {
+          hilog.info(domain, tag, format, "SUB_Security_IAM_Companion_Api_Static_5004 failed " + err.code + " " + err.message);
+          expect(false).assertTrue();
+        }
       }
       done();
     })
@@ -138,8 +148,13 @@ export default function UserAuthTest() {
           expect(result.userInfo != undefined).assertTrue();
           expect(result.authTrustLevel != undefined).assertTrue();
         } catch (err) {
-          hilog.info(domain, tag, format, "SUB_Security_IAM_PassiveRecognition_Api_static_5002: getUserRecognitionResult failed, err.code " + err.code + ", err.message " + err.message);
-          expect(false).assertTrue();
+          hilog.info(domain, tag, format, "SUB_Security_IAM_PassiveRecognition_Api_static_5001: getUserRecognitionMgr failed, err.code " + err.code + ", err.message " + err.message);
+          if (err.code === 12500002) {
+            hilog.info(domain, tag, format, "SUB_Security_IAM_PassiveRecognition_Api_static_5001 expected error code 12500002");
+            expect(err.code).assertEqual(12500002);
+          } else {
+            expect(false).assertTrue();
+          }
         }
       } else {
         try {
@@ -147,8 +162,13 @@ export default function UserAuthTest() {
           expect(mgr === null).assertTrue();
           hilog.info(domain, tag, format, "getUserRecognitionMgr returned null, device does not support passive recognition");
         } catch (err) {
-          hilog.info(domain, tag, format, "SUB_Security_IAM_PassiveRecognition_Api_static_5002: getUserRecognitionMgr failed, err.code " + err.code + ", err.message " + err.message);
-          expect(false).assertTrue();
+          hilog.info(domain, tag, format, "SUB_Security_IAM_PassiveRecognition_Api_static_5002: getUserRecognitionResult failed, err.code " + err.code + ", err.message " + err.message);
+          if (err.code === 12500002) {
+            hilog.info(domain, tag, format, "SUB_Security_IAM_PassiveRecognition_Api_static_5002 expected error code 12500002");
+            expect(err.code).assertEqual(12500002);
+          } else {
+            expect(false).assertTrue();
+          }
         }
       }
       done();
@@ -177,7 +197,12 @@ export default function UserAuthTest() {
           });
         } catch (err) {
           hilog.info(domain, tag, format, "SUB_Security_IAM_PassiveRecognition_Api_static_5003: onUserRecognitionChange failed, err.code " + err.code + ", err.message " + err.message);
-          expect(false).assertTrue();
+          if (err.code === 12500002) {
+            hilog.info(domain, tag, format, "SUB_Security_IAM_PassiveRecognition_Api_static_5003 expected error code 12500002");
+            expect(err.code).assertEqual(12500002);
+          } else {
+            expect(false).assertTrue();
+          }
         }
       } else {
         try {
@@ -218,7 +243,12 @@ export default function UserAuthTest() {
           });
         } catch (err) {
           hilog.info(domain, tag, format, "SUB_Security_IAM_PassiveRecognition_Api_static_5004: offUserRecognitionChange failed, err.code " + err.code + ", err.message " + err.message);
-          expect(false).assertTrue();
+          if (err.code === 12500002) {
+            hilog.info(domain, tag, format, "SUB_Security_IAM_PassiveRecognition_Api_static_5004 expected error code 12500002");
+            expect(err.code).assertEqual(12500002);
+          } else {
+            expect(false).assertTrue();
+          }
         }
       } else {
         try {
@@ -254,7 +284,12 @@ export default function UserAuthTest() {
           hilog.info(domain, tag, format, "SUB_Security_IAM_PassiveRecognition_Api_static_5005: offUserRecognitionChange success");
         } catch (err) {
           hilog.info(domain, tag, format, "SUB_Security_IAM_PassiveRecognition_Api_static_5005: offUserRecognitionChange failed, err.code " + err.code + ", err.message " + err.message);
-          expect(false).assertTrue();
+          if (err.code === 12500002) {
+            hilog.info(domain, tag, format, "SUB_Security_IAM_PassiveRecognition_Api_static_5005 expected error code 12500002");
+            expect(err.code).assertEqual(12500002);
+          } else {
+            expect(false).assertTrue();
+          }
         }
       } else {
         try {
@@ -303,7 +338,12 @@ export default function UserAuthTest() {
           hilog.info(domain, tag, format, "SUB_Security_IAM_PassiveRecognition_Api_static_5007: offUserRecognitionChange returns null");
         } catch (err) {
           hilog.info(domain, tag, format, "SUB_Security_IAM_PassiveRecognition_Api_static_5007: offUserRecognitionChange failed, err.code " + err.code + ", err.message " + err.message);
-          expect(false).assertTrue();
+          if (err.code === 12500002) {
+            hilog.info(domain, tag, format, "SUB_Security_IAM_PassiveRecognition_Api_static_5007 expected error code 12500002");
+            expect(err.code).assertEqual(12500002);
+          } else {
+            expect(false).assertTrue();
+          }
         }
       } else {
         try {

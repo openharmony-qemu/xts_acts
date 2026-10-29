@@ -76,6 +76,9 @@ export default function UserAuthIcon() {
         await Utils.msSleep(5000);
         hilog.info(domain, tag, format, 'SUB_Security_IAM_authWidget_Func_Static_0330 code is ' + code);
         expect((code == "12500010") || (code == "12500005")).assertTrue();
+      } else {
+        hilog.info(domain, tag, format, 'SUB_Security_IAM_authWidget_Func_Static_0330 device not supports FACE, skip test');
+        expect(checkFace == -1).assertTrue();
       }
       done();
     })

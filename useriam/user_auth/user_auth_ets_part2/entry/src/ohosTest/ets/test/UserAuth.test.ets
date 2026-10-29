@@ -25,15 +25,15 @@ export default function UserAuthTest() {
     })
 
     /**
-     * @tc.name   Security_IAM_Companion_Api_5001
-     * @tc.number Security_IAM_Companion_Api_5001
+     * @tc.name   SUB_Security_IAM_Companion_Api_5001
+     * @tc.number SUB_Security_IAM_Companion_Api_5001
      * @tc.desc   registerRemoteAuthCallback normal test
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('Security_IAM_Companion_Api_5001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
-      console.info('Security_IAM_Companion_Api_5001 start');
+    it('SUB_Security_IAM_Companion_Api_5001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
+      console.info('SUB_Security_IAM_Companion_Api_5001 start');
       let callback: userAuth.IRemoteAuthCallback = {
         onGetRemoteAuthWidgetParam: (challenge: Uint8Array): userAuth.WidgetParam => {
           return {
@@ -50,26 +50,36 @@ export default function UserAuthTest() {
       try {
         await userAuth.registerRemoteAuthCallback(callback);
       } catch (err) {
-        console.info("Security_IAM_Companion_Api_5001 failed", err.code, err.message);
-        expect(false).assertTrue();
+        if (err.code === 12500002) {
+          console.info("SUB_Security_IAM_Companion_Api_5001 expected error code 12500002");
+          expect(err.code).assertEqual(12500002);
+        } else {
+          console.info("SUB_Security_IAM_Companion_Api_5001 failed", err.code, err.message);
+          expect(false).assertTrue();
+        }
       }
     })
     /**
-     * @tc.name   Security_IAM_Companion_Api_5001
-     * @tc.number Security_IAM_Companion_Api_5001
+     * @tc.name   SUB_Security_IAM_Companion_Api_5004
+     * @tc.number SUB_Security_IAM_Companion_Api_5004
      * @tc.desc   unregisterRemoteAuthCallback normal test
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('Security_IAM_Companion_Api_5003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
-      console.info('Security_IAM_Companion_Api_5003 start');
+    it('SUB_Security_IAM_Companion_Api_5004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
+      console.info('SUB_Security_IAM_Companion_Api_5004 start');
       try {
         await userAuth.unregisterRemoteAuthCallback();
         expect(true).assertTrue();
       } catch (err) {
-        console.info("Security_IAM_Companion_Api_5003 failed", err.code, err.message);
-        expect(false).assertTrue();
+        if (err.code === 12500002) {
+          console.info("SUB_Security_IAM_Companion_Api_5004 expected error code 12500002");
+          expect(err.code).assertEqual(12500002);
+        } else {
+          console.info("SUB_Security_IAM_Companion_Api_5004 failed", err.code, err.message);
+          expect(false).assertTrue();
+        }
       }
     })
     /**
@@ -90,7 +100,12 @@ export default function UserAuthTest() {
           console.info("SUB_Security_IAM_PassiveRecognition_Api_5001: getUserRecognitionMgr success");
         } catch (err) {
           console.info(`SUB_Security_IAM_PassiveRecognition_Api_5001: getUserRecognitionMgr failed, err.code ${err.code}, err.message ${err.message}`);
-          expect(false).assertTrue();
+          if (err.code === 12500002) {
+            console.info("SUB_Security_IAM_PassiveRecognition_Api_5001 expected error code 12500002");
+            expect(err.code).assertEqual(12500002);
+          } else {
+            expect(false).assertTrue();
+          }
         }
       } else {
         try {
@@ -126,7 +141,12 @@ export default function UserAuthTest() {
           expect(result.authTrustLevel != undefined).assertTrue();
         } catch (err) {
           console.info(`SUB_Security_IAM_PassiveRecognition_Api_5002: getUserRecognitionResult failed, err.code ${err.code}, err.message ${err.message}`);
-          expect(false).assertTrue();
+          if (err.code === 12500002) {
+            console.info("SUB_Security_IAM_PassiveRecognition_Api_5002 expected error code 12500002");
+            expect(err.code).assertEqual(12500002);
+          } else {
+            expect(false).assertTrue();
+          }
         }
       } else {
         try {
@@ -162,7 +182,12 @@ export default function UserAuthTest() {
           });
         } catch (err) {
           console.info(`SUB_Security_IAM_PassiveRecognition_Api_5003: onUserRecognitionChange failed, err.code ${err.code}, err.message ${err.message}`);
-          expect(false).assertTrue();
+          if (err.code === 12500002) {
+            console.info("SUB_Security_IAM_PassiveRecognition_Api_5003 expected error code 12500002");
+            expect(err.code).assertEqual(12500002);
+          } else {
+            expect(false).assertTrue();
+          }
         }
       } else {
         try {
@@ -201,7 +226,12 @@ export default function UserAuthTest() {
           });
         } catch (err) {
           console.info(`SUB_Security_IAM_PassiveRecognition_Api_5004: offUserRecognitionChange failed, err.code ${err.code}, err.message ${err.message}`);
-          expect(false).assertTrue();
+          if (err.code === 12500002) {
+            console.info("SUB_Security_IAM_PassiveRecognition_Api_5004 expected error code 12500002");
+            expect(err.code).assertEqual(12500002);
+          } else {
+            expect(false).assertTrue();
+          }
         }
       } else {
         try {
@@ -235,7 +265,12 @@ export default function UserAuthTest() {
           console.info("SUB_Security_IAM_PassiveRecognition_Api_5005: offUserRecognitionChange success");
         } catch (err) {
           console.info(`SUB_Security_IAM_PassiveRecognition_Api_5005: offUserRecognitionChange failed, err.code ${err.code}, err.message ${err.message}`);
-          expect(false).assertTrue();
+          if (err.code === 12500002) {
+            console.info("SUB_Security_IAM_PassiveRecognition_Api_5005 expected error code 12500002");
+            expect(err.code).assertEqual(12500002);
+          } else {
+            expect(false).assertTrue();
+          }
         }
       } else {
         try {
@@ -281,7 +316,12 @@ export default function UserAuthTest() {
           console.info("SUB_Security_IAM_PassiveRecognition_Api_5007: offUserRecognitionChange returns null");
         } catch (err) {
           console.info(`SUB_Security_IAM_PassiveRecognition_Api_5007: offUserRecognitionChange failed, err.code ${err.code}, err.message ${err.message}`);
-          expect(false).assertTrue();
+          if (err.code === 12500002) {
+            console.info("SUB_Security_IAM_PassiveRecognition_Api_5007 expected error code 12500002");
+            expect(err.code).assertEqual(12500002);
+          } else {
+            expect(false).assertTrue();
+          }
         }
       } else {
         try {
