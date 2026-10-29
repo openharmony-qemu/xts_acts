@@ -48,7 +48,11 @@ export default function WebCaretColorStaticTest(): void {
     beforeAll(async (): Promise<void> => {
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator =
         abilityDelegatorRegistry.getAbilityDelegator();
-      let cmd: string = 'aa start -a EntryAbility -b com.pageInteraction.test.static';
+      let user = abilityDelegatorRegistry.getArguments().parameters['-u'];
+      if (user === undefined) {
+        user = '100';
+      }
+      let cmd: string = 'aa start -a EntryAbility -b com.pageInteraction.test.static -u ' + user;
       abilityDelegator.executeShellCommand(cmd);
       await Utils.msSleep(3000);
       await Utils.emitEvent('emitSwitchToWebCaretColorPage', 10);
