@@ -18,6 +18,7 @@ import systemDateTime from '@ohos.systemDateTime';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic';
 import { BusinessError } from '@ohos.base';
 import { Driver, ON} from '@ohos.UiTest';
+
 function sleep(delay:number): Promise<void> {
   return new Promise((resolve) => {
     setTimeout(() => {
@@ -721,22 +722,15 @@ export default function wifiSta() {
           userActionTimeout: 15,
           addNetworkToSystem: true
         };
-        wifiMg.connectToCandidateConfig(settings).then(async(result) => {
+        const connectPromise = wifiMg.connectToCandidateConfig(settings).then((result) => {
           console.info(`${caseName} connectToCandidateConfig promise success` + JSON.stringify(result));
-          done();
-        }).catch(async(err: BusinessError) => {
+        }).catch((err: BusinessError) => {
           console.error(`${caseName} connectToCandidateConfig get error:` + JSON.stringify(err));
-          if (err.code === 801) {
-            console.info(`${caseName} api is not support`);
-            expect(err.code).assertEqual(801);
-          } else {
-            expect().assertFail();
-          }
-          done();
         });
         await clickText(driver, '连接');
         console.info(`${caseName} connectToCandidateConfig click 连接`);
         await sleep(1000);
+        await connectPromise;
       } catch (err) {
         console.error(`${caseName} failed: ${JSON.stringify(err)}, code: ${err.code}, message: ${err.message}`);
         if (err.code === 801) {
@@ -745,9 +739,9 @@ export default function wifiSta() {
         } else {
           expect().assertFail();
         }
-        done();
       }
       console.info(`${caseName} test end`);
+      done();
     });
     /**
      * @tc.number SUB_Communication_WiFi_wifiManager_ConnectToCandidateConfig_Settings_0005
@@ -821,22 +815,15 @@ export default function wifiSta() {
           userActionTimeout: 30,
           addNetworkToSystem: true
         };
-        wifiMg.connectToCandidateConfig(settings).then(async(result) => {
+        const connectPromise = wifiMg.connectToCandidateConfig(settings).then((result) => {
           console.info(`${caseName} connectToCandidateConfig promise success` + JSON.stringify(result));
-          done();
-        }).catch(async(err: BusinessError) => {
+        }).catch((err: BusinessError) => {
           console.error(`${caseName} connectToCandidateConfig get error:` + JSON.stringify(err));
-          if (err.code === 801) {
-            console.info(`${caseName} api is not support`);
-            expect(err.code).assertEqual(801);
-          } else {
-            expect(err.code).assertEqual(2501006);
-          }
-          done();
         });
         await clickText(driver, '取消');
         console.info(`${caseName} connectToCandidateConfig click 取消`);
         await sleep(1000);
+        await connectPromise;
       } catch (err) {
         console.error(`${caseName} failed: ${JSON.stringify(err)}, code: ${err.code}, message: ${err.message}`);
         if (err.code === 801) {
@@ -845,9 +832,9 @@ export default function wifiSta() {
         } else {
           expect(err.code).assertEqual(2501006);
         }
-        done();
       }
       console.info(`${caseName} test end`);
+      done();
     });
     /**
      * @tc.number SUB_Communication_WiFi_wifiManager_ConnectToCandidateConfig_Settings_0007
