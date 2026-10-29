@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { beforeAll, describe, it, expect, TestType, Size, Level } from '../hypium_lib/index';
+import { beforeAll, describe, it, expect, TestType, Size, Level } from '@ohos/hypium-static/src/main/indexStatic';
 import Utils from './Util.test';
 import events_emitter from '@ohos.events.emitter';
 import { RecordData } from '@ohos.base';
