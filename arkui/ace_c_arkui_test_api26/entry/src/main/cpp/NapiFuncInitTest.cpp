@@ -56,6 +56,7 @@
 #include "calendarPicker/CalendarPickerFirstDayOfWeekTest.cpp"
 #include "accessibilityBindExportTree/AccessibilityBindExportTreeTest.cpp"
 #include "uiEventInjection/UIEventInjectionTest.cpp"
+#include "node/BufferQueueSizeTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -398,6 +399,25 @@ static napi_value Init(napi_env env, napi_value exports)
         {"UIEventInjectCompositeCommandTest011", nullptr, UIEventInjectCompositeCommandTest011, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"UIEventInjectionCallbackTest001", nullptr, UIEventInjectionCallbackTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"UIEventInjectionCallbackTest002", nullptr, UIEventInjectionCallbackTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"BufferQueueSizeTest001", nullptr, BufferQueueSizeTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest002", nullptr, BufferQueueSizeTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest003", nullptr, BufferQueueSizeTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest004", nullptr, BufferQueueSizeTest004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest005", nullptr, BufferQueueSizeTest005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest006", nullptr, BufferQueueSizeTest006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest007", nullptr, BufferQueueSizeTest007, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest008", nullptr, BufferQueueSizeTest008, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest009", nullptr, BufferQueueSizeTest009, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest010", nullptr, BufferQueueSizeTest010, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest011", nullptr, BufferQueueSizeTest011, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest012", nullptr, BufferQueueSizeTest012, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest013", nullptr, BufferQueueSizeTest013, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest014", nullptr, BufferQueueSizeTest014, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest015", nullptr, BufferQueueSizeTest015, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest016", nullptr, BufferQueueSizeTest016, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"BufferQueueSizeTest017", nullptr, BufferQueueSizeTest017, nullptr, nullptr, nullptr, napi_default, nullptr},
+
         };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");
