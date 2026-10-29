@@ -488,7 +488,6 @@ export async function atomicsIsLockFreeTest067(): Promise<type67[]> {
     await delay(2);
     const isFree = ArkTSUtils.Atomics.isLockFree(sizes[i]);
     const item: type67 = {
-      size: sizes[i],
       isFree,
       isValidSize: [1, 2, 4, 8].includes(sizes[i]),
       resultIsValid: typeof isFree === 'boolean'
