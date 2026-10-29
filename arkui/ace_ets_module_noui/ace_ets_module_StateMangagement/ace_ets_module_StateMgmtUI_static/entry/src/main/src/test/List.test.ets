@@ -55,6 +55,8 @@ import StaticCoverageStorageTest from './staticCoverage/StaticCoverageStorage.te
 import StaticCoverageUtilsTest from './staticCoverage/StaticCoverageUtils.test';
 import IsPlaceholder0060Test from './builder/IsPlaceholder0060Test.test';
 import IsPlaceholder0070Test from './builder/IsPlaceholder0070Test.test';
+import BuilderAnnotationTargets01Test from './builder/BuilderAnnotationTargets01.test';
+import BuilderAnnotationTargets02Test from './builder/BuilderAnnotationTargets02.test';
  
  
 export default function testsuite() {
@@ -98,4 +100,6 @@ export default function testsuite() {
   GlobalReusePoolTest();
   IsPlaceholder0060Test();
   IsPlaceholder0070Test();
+  BuilderAnnotationTargets01Test();
+  BuilderAnnotationTargets02Test();
 }
