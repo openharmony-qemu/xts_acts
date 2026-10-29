@@ -27,6 +27,7 @@ import CollectionsSetValuesTest from "./CollectionsSetValuesTest.test";
 import CollectionsSetSizeTest from "./CollectionsSetSizeTest.test";
 import CollectionsSetSymbolIteratorTest from './CollectionsSetSymbolIteratorTest.test'
 import CollectionsSetExpand1024Test from './CollectionsSetExpand1024Test.test';
+import CollectionsSetMultiRoundConsistencyTest from './CollectionsSetMultiRoundConsistencyTest.test';
 
 import collectionsSetConstructorTest from './CollectionSetBase/CollectionsSetConstructor.test';
 import collectionsSetForEachEntriesTest from './CollectionSetBase/CollectionsSetForEachEntries.test';
@@ -63,6 +64,7 @@ export default function testsuite() {
   CollectionsSetSizeTest();
   CollectionsSetSymbolIteratorTest();
   CollectionsSetExpand1024Test();
+  CollectionsSetMultiRoundConsistencyTest();
   
   collectionsSetConcurrentTest();
   collectionsSetWorkerTest();
