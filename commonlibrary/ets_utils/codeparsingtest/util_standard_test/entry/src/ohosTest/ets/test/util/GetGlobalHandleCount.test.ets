@@ -19,7 +19,10 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import worker, { MessageEvents, ErrorEvent } from '@ohos.worker';
 import testNapi from 'libentry.so';
 import { hidebug } from '@kit.PerformanceAnalysisKit';
-import { fileIo as fs } from '@kit.CoreFileKit';
+import { fileIo as fs, statfs } from '@kit.CoreFileKit';
+
+const FILES_DIR = '/data/storage/el2/base/files/';
+const FREE_SIZE_THRESHOLD = 30 * 1024 * 1024 * 1024;
 
 @Sendable
 class SendableData {
@@ -969,7 +972,7 @@ export default function getGlobalHandleCountTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testGetGlobalHandleCount028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+    it('testGetGlobalHandleCount028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const TAG = 'testGetGlobalHandleCount028';
       console.info(`${TAG} START`);
       const REF_COUNT = 50;
@@ -984,27 +987,29 @@ export default function getGlobalHandleCountTest() {
         console.info(`${TAG} baseline: ${baseline}, current: ${current}, threshold: ${threshold}`);
         expect(current >= threshold).assertTrue();
         if (current >= threshold) {
-          console.info(`${TAG} count exceeded threshold, triggering heap profiler`);
-          hidebug.dumpJsHeapData(SNAPSHOT_NAME, true);
-          let filesDir: string = '/data/storage/el2/base/files/';
-          let files: string[] = fs.listFileSync(filesDir);
-          let found = false;
-          for (let i = 0; i < files.length; i++) {
-            if (files[i].startsWith(SNAPSHOT_NAME)) {
-              let filePath = filesDir + files[i];
-              let fileStat = fs.statSync(filePath);
-              console.info(`${TAG} snapshot file: ${files[i]}, size: ${fileStat.size}`);
-              expect(fileStat.size > 0).assertTrue();
-              let content = fs.readTextSync(filePath);
-              console.info(`${TAG} snapshot size: ${content.length} chars, keyword: ${SNAPSHOT_KEYWORD}`);
-              expect(content.includes(SNAPSHOT_KEYWORD)).assertTrue();
-              fs.unlinkSync(filePath);
-              console.info(`${TAG} deleted snapshot file: ${files[i]}`);
-              found = true;
-              break;
+          let freeSize = await statfs.getFreeSize(FILES_DIR);
+          if (freeSize > FREE_SIZE_THRESHOLD) {
+            console.info(`${TAG} count exceeded threshold, triggering heap profiler`);
+            hidebug.dumpJsHeapData(SNAPSHOT_NAME, true);
+            let files: string[] = fs.listFileSync(FILES_DIR);
+            let found = false;
+            for (let i = 0; i < files.length; i++) {
+              if (files[i].startsWith(SNAPSHOT_NAME)) {
+                let filePath = FILES_DIR + files[i];
+                let fileStat = fs.statSync(filePath);
+                console.info(`${TAG} snapshot file: ${files[i]}, size: ${fileStat.size}`);
+                expect(fileStat.size > 0).assertTrue();
+                let content = fs.readTextSync(filePath);
+                console.info(`${TAG} snapshot size: ${content.length} chars, keyword: ${SNAPSHOT_KEYWORD}`);
+                expect(content.includes(SNAPSHOT_KEYWORD)).assertTrue();
+                fs.unlinkSync(filePath);
+                console.info(`${TAG} deleted snapshot file: ${files[i]}`);
+                found = true;
+                break;
+              }
             }
+            expect(found).assertTrue();
           }
-          expect(found).assertTrue();
         }
         let deleted: boolean = testNapi.deleteNapiRefs(REF_COUNT);
         expect(deleted).assertTrue();
@@ -1026,7 +1031,7 @@ export default function getGlobalHandleCountTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testGetGlobalHandleCount029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+    it('testGetGlobalHandleCount029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const TAG = 'testGetGlobalHandleCount029';
       console.info(`${TAG} START`);
       const PROMISE_COUNT = 50;
@@ -1041,27 +1046,29 @@ export default function getGlobalHandleCountTest() {
         console.info(`${TAG} baseline: ${baseline}, current: ${current}, threshold: ${threshold}`);
         expect(current >= threshold).assertTrue();
         if (current >= threshold) {
-          console.info(`${TAG} count exceeded threshold, triggering heap profiler`);
-          hidebug.dumpJsHeapData(SNAPSHOT_NAME, true);
-          let filesDir: string = '/data/storage/el2/base/files/';
-          let files: string[] = fs.listFileSync(filesDir);
-          let found = false;
-          for (let i = 0; i < files.length; i++) {
-            if (files[i].startsWith(SNAPSHOT_NAME)) {
-              let filePath = filesDir + files[i];
-              let fileStat = fs.statSync(filePath);
-              console.info(`${TAG} snapshot file: ${files[i]}, size: ${fileStat.size}`);
-              expect(fileStat.size > 0).assertTrue();
-              let content = fs.readTextSync(filePath);
-              console.info(`${TAG} snapshot size: ${content.length} chars, keyword: ${SNAPSHOT_KEYWORD}`);
-              expect(content.includes(SNAPSHOT_KEYWORD)).assertTrue();
-              fs.unlinkSync(filePath);
-              console.info(`${TAG} deleted snapshot file: ${files[i]}`);
-              found = true;
-              break;
+          let freeSize = await statfs.getFreeSize(FILES_DIR);
+          if (freeSize > FREE_SIZE_THRESHOLD) {
+            console.info(`${TAG} count exceeded threshold, triggering heap profiler`);
+            hidebug.dumpJsHeapData(SNAPSHOT_NAME, true);
+            let files: string[] = fs.listFileSync(FILES_DIR);
+            let found = false;
+            for (let i = 0; i < files.length; i++) {
+              if (files[i].startsWith(SNAPSHOT_NAME)) {
+                let filePath = FILES_DIR + files[i];
+                let fileStat = fs.statSync(filePath);
+                console.info(`${TAG} snapshot file: ${files[i]}, size: ${fileStat.size}`);
+                expect(fileStat.size > 0).assertTrue();
+                let content = fs.readTextSync(filePath);
+                console.info(`${TAG} snapshot size: ${content.length} chars, keyword: ${SNAPSHOT_KEYWORD}`);
+                expect(content.includes(SNAPSHOT_KEYWORD)).assertTrue();
+                fs.unlinkSync(filePath);
+                console.info(`${TAG} deleted snapshot file: ${files[i]}`);
+                found = true;
+                break;
+              }
             }
+            expect(found).assertTrue();
           }
-          expect(found).assertTrue();
         }
         for (let i = 0; i < promises.length; i++) {
           promises[i].catch((): void => {});
@@ -1086,7 +1093,7 @@ export default function getGlobalHandleCountTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testGetGlobalHandleCount030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+    it('testGetGlobalHandleCount030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const TAG = 'testGetGlobalHandleCount030';
       console.info(`${TAG} START`);
       const TIMER_COUNT = 50;
@@ -1106,27 +1113,29 @@ export default function getGlobalHandleCountTest() {
         console.info(`${TAG} baseline: ${baseline}, current: ${current}, threshold: ${threshold}`);
         expect(current >= threshold).assertTrue();
         if (current >= threshold) {
-          console.info(`${TAG} count exceeded threshold, triggering heap profiler`);
-          hidebug.dumpJsHeapData(SNAPSHOT_NAME, true);
-          let filesDir: string = '/data/storage/el2/base/files/';
-          let files: string[] = fs.listFileSync(filesDir);
-          let found = false;
-          for (let i = 0; i < files.length; i++) {
-            if (files[i].startsWith(SNAPSHOT_NAME)) {
-              let filePath = filesDir + files[i];
-              let fileStat = fs.statSync(filePath);
-              console.info(`${TAG} snapshot file: ${files[i]}, size: ${fileStat.size}`);
-              expect(fileStat.size > 0).assertTrue();
-              let content = fs.readTextSync(filePath);
-              console.info(`${TAG} snapshot size: ${content.length} chars, keyword: ${SNAPSHOT_KEYWORD}`);
-              expect(content.includes(SNAPSHOT_KEYWORD)).assertTrue();
-              fs.unlinkSync(filePath);
-              console.info(`${TAG} deleted snapshot file: ${files[i]}`);
-              found = true;
-              break;
+          let freeSize = await statfs.getFreeSize(FILES_DIR);
+          if (freeSize > FREE_SIZE_THRESHOLD) {
+            console.info(`${TAG} count exceeded threshold, triggering heap profiler`);
+            hidebug.dumpJsHeapData(SNAPSHOT_NAME, true);
+            let files: string[] = fs.listFileSync(FILES_DIR);
+            let found = false;
+            for (let i = 0; i < files.length; i++) {
+              if (files[i].startsWith(SNAPSHOT_NAME)) {
+                let filePath = FILES_DIR + files[i];
+                let fileStat = fs.statSync(filePath);
+                console.info(`${TAG} snapshot file: ${files[i]}, size: ${fileStat.size}`);
+                expect(fileStat.size > 0).assertTrue();
+                let content = fs.readTextSync(filePath);
+                console.info(`${TAG} snapshot size: ${content.length} chars, keyword: ${SNAPSHOT_KEYWORD}`);
+                expect(content.includes(SNAPSHOT_KEYWORD)).assertTrue();
+                fs.unlinkSync(filePath);
+                console.info(`${TAG} deleted snapshot file: ${files[i]}`);
+                found = true;
+                break;
+              }
             }
+            expect(found).assertTrue();
           }
-          expect(found).assertTrue();
         }
         for (let i = 0; i < activeTimerIds.length; i++) {
           clearInterval(activeTimerIds[i]);
