@@ -148,4 +148,10 @@ export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbil
     expect(event.parameters !== null).assertTrue();
     expect(event.time > 0).assertTrue();
   }
+  
+  onPasswordFailed(cumulativeFailedCount: number, userId: number): void {
+    console.info(`EnterpriseAdminExtensionAbility onPasswordFailed cumulativeFailedCount: ${cumulativeFailedCount}, userId: ${userId}`);
+    expect(cumulativeFailedCount >= 0 && cumulativeFailedCount <= 200).assertTrue();
+    expect(userId >= 0).assertTrue();
+  }
 }
