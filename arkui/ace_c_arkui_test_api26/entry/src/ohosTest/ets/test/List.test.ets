@@ -72,6 +72,7 @@ import ImageCollectionTakeItemByNodeIdTest from './node/ImageCollectionTakeItemB
 import CalendarPickerFirstDayOfWeekTest from './calendarPicker/CalendarPickerFirstDayOfWeekTest.test'
 import AccessibilityBindExportTreeTest from './accessibilityBindExportTree/AccessibilityBindExportTreeTest.test'
 import UIEventInjectionTest from './uiEventInjection/UIEventInjectionTest.test'
+import CollectionEnumTest from "./collection/CollectionEnum.test"
 
 export default function testsuite() {
   SetUiDvsyncSwitchTest() // 此条特殊用例请放在首行，勿动
@@ -132,4 +133,5 @@ export default function testsuite() {
   RuntimeCheckModeTest()
   AccessibilityBindExportTreeTest()
   UIEventInjectionTest()
+  CollectionEnumTest()
 }
