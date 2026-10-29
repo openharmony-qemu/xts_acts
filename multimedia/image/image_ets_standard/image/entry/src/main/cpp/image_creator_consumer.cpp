@@ -23,6 +23,7 @@
 #include "napi/native_api.h"
 
 #define HASH_CAL_VALUE 33
+#define DEFAULT_SYSTEM_BIT 8
 
 namespace OHOS {
 enum GSError : int32_t {
@@ -91,7 +92,7 @@ bool Is64BitSystem()
 #elif defined(__arm__) || defined(__i386__) || defined(_ILP32) || defined(__ILP32__)
     return false;
 #else
-    return sizeof(void *) == 8;
+    return sizeof(void *) == DEFAULT_SYSTEM_BIT;
 #endif
 }
 
