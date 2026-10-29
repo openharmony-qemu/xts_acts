@@ -723,8 +723,6 @@ export default function wifiSta() {
         };
         wifiMg.connectToCandidateConfig(settings).then(async(result) => {
           console.info(`${caseName} connectToCandidateConfig promise success` + JSON.stringify(result));
-          await clickText(driver, '连接');
-          console.info(`${caseName} connectToCandidateConfig promise success`);
           done();
         }).catch(async(err: BusinessError) => {
           console.error(`${caseName} connectToCandidateConfig get error:` + JSON.stringify(err));
@@ -736,6 +734,9 @@ export default function wifiSta() {
           }
           done();
         });
+        await clickText('连接');
+        console.info(`${caseName} connectToCandidateConfig click 连接`);
+        await sleep(1000);
       } catch (err) {
         console.error(`${caseName} failed: ${JSON.stringify(err)}, code: ${err.code}, message: ${err.message}`);
         if (err.code === 801) {
@@ -822,8 +823,6 @@ export default function wifiSta() {
         };
         wifiMg.connectToCandidateConfig(settings).then(async(result) => {
           console.info(`${caseName} connectToCandidateConfig promise success` + JSON.stringify(result));
-          await clickText(driver, '取消');
-          console.info(`${caseName} connectToCandidateConfig promise success`);
           done();
         }).catch(async(err: BusinessError) => {
           console.error(`${caseName} connectToCandidateConfig get error:` + JSON.stringify(err));
@@ -835,6 +834,9 @@ export default function wifiSta() {
           }
           done();
         });
+        await clickText('取消');
+        console.info(`${caseName} connectToCandidateConfig click 取消`);
+        await sleep(1000);
       } catch (err) {
         console.error(`${caseName} failed: ${JSON.stringify(err)}, code: ${err.code}, message: ${err.message}`);
         if (err.code === 801) {
