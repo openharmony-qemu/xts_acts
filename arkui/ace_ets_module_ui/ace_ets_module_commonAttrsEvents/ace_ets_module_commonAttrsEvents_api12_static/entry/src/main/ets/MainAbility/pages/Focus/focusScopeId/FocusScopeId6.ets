@@ -90,8 +90,9 @@ struct FocusScopeId6 {
   build() {
     Column({space: 5} as ColumnOptions) {
       Navigation(this.pageInfos) {
-        Row({ space: 5 } as RowOptions) {
+        Scroll() {
           Column({ space: 5 } as ColumnOptions) {
+
             Text('焦点组1，可删除')
             if (this.flag) {
               Column({ space: 5 } as ColumnOptions) {
@@ -106,9 +107,7 @@ struct FocusScopeId6 {
               .onClick((e: ClickEvent) => {
                 this.flag = !this.flag
               })
-          }
 
-          Column({ space: 5 } as ColumnOptions) {
             Text('焦点组2')
             Column({ space: 5 } as ColumnOptions) {
               Button('btn1').focusOnTouch(true).id('FocusScopeId6_btn1_2')
@@ -117,17 +116,17 @@ struct FocusScopeId6 {
             }
             .focusScopeId('FocusScopeId6_focusGroup2', true)
             .borderWidth(1)
+
+            Button('button').focusOnTouch(true).id('FocusScopeId6_btn_btn')
+
+            Button('clearFocus')
+              .id('FocusScopeId6_clearFocus')
+              .onClick((e: ClickEvent) => {
+                this.getUIContext().getFocusController().clearFocus()
+              })
+
           }
-
         }
-
-        Button('button').focusOnTouch(true).id('FocusScopeId6_btn_btn')
-
-        Button('clearFocus')
-          .id('FocusScopeId6_clearFocus')
-          .onClick((e: ClickEvent) => {
-            this.getUIContext().getFocusController().clearFocus()
-          })
       }
       .id('FocusScopeId6_nav')
       .mode(this.modeValue)

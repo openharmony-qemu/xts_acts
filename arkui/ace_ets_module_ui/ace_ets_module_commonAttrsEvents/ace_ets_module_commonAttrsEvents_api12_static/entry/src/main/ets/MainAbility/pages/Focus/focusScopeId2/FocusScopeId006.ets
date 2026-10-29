@@ -101,7 +101,7 @@ struct FocusScopeId006 {
   }
 
   build() {
-    Column() {
+    Column({space: 5} as ColumnOptions) {
       Navigation(this.pageInfos) {
         Scroll() {
           Column({ space: 5 } as ColumnOptions) {

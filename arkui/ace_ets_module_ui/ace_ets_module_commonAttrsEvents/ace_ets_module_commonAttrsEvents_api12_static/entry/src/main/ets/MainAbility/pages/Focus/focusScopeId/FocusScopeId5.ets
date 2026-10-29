@@ -90,7 +90,8 @@ struct FocusScopeId5 {
   build() {
     Column({space: 5} as ColumnOptions) {
       Navigation(this.pageInfos) {
-        Column({ space: 5 } as ColumnOptions) {
+        Scroll() {
+          Column({ space: 5 } as ColumnOptions) {
 
             Text('焦点组5')
             Column({ space: 5 } as ColumnOptions) {
@@ -121,36 +122,36 @@ struct FocusScopeId5 {
 
 
             Text('焦点组6，第三个按钮设置默认获焦')
-            Row() {
-              Column({ space: 5 } as ColumnOptions) {
-                Button('btn1').focusOnTouch(true)
-                  .id('FocusScopeId5_btn1_6')
-                Button('btn2').focusOnTouch(true)
-                  .id('FocusScopeId5_btn2_6')
-                Button('defaultFocus:true').focusOnTouch(true).defaultFocus(true)
-                  .id('FocusScopeId5_btn3_6')
-              }
-              .focusScopeId('FocusScopeId5_focusGroup6', true, true)
-              .borderWidth(1)
+            Column({ space: 5 } as ColumnOptions) {
+              Button('btn1').focusOnTouch(true)
+                .id('FocusScopeId5_btn1_6')
+              Button('btn2').focusOnTouch(true)
+                .id('FocusScopeId5_btn2_6')
+              Button('defaultFocus:true').focusOnTouch(true).defaultFocus(true)
+                .id('FocusScopeId5_btn3_6')
+            }
+            .focusScopeId('FocusScopeId5_focusGroup6', true)
+            .borderWidth(1)
 
-              Column({ space: 5 } as ColumnOptions) {
-                Button('clearFocus')
-                  .id('FocusScopeId5_clearFocus')
-                  .focusOnTouch(true)
-                  .onClick((e: ClickEvent) => {
-                    this.getUIContext().getFocusController().clearFocus()
-                  })
 
-                Button('requestFocus_焦点组1 btn2')
-                  .id('FocusScopeId5_requestFocus')
-                  .focusOnTouch(true)
-                  .onClick((e: ClickEvent) => {
-                    this.getUIContext().getFocusController().requestFocus('FocusScopeId5_btn2_6')
-                  })
-              }
+            Column({ space: 5 } as ColumnOptions) {
+              Button('clearFocus')
+                .id('FocusScopeId5_clearFocus')
+                .focusOnTouch(true)
+                .onClick((e: ClickEvent) => {
+                  this.getUIContext().getFocusController().clearFocus()
+                })
+
+              Button('requestFocus_焦点组1 btn2')
+                .id('FocusScopeId5_requestFocus')
+                .focusOnTouch(true)
+                .onClick((e: ClickEvent) => {
+                  this.getUIContext().getFocusController().requestFocus('FocusScopeId5_btn2_6')
+                })
             }
 
           }
+        }
       }
       .id('FocusScopeId5_nav')
       .mode(this.modeValue)
@@ -158,7 +159,7 @@ struct FocusScopeId5 {
       .navDestination(this.PageMap)
       .height('100%')
 
-    }.width('100%').height('90%').align(Alignment.Top)
+    }.width('100%')
     .id('FocusScopeId5_col')
   }
 }
