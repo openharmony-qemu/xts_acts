@@ -14,11 +14,37 @@
  * limitations under the License.
  */
 
-import { beforeAll, describe, it, expect, TestType, Size, Level } from '@ohos/hypium-static/src/main/indexStatic';
+import { beforeAll, describe, it, expect, TestType, Size, Level } from '../hypium_lib/index';
 import Utils from './Util.test';
 import events_emitter from '@ohos.events.emitter';
 import { RecordData } from '@ohos.base';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import { Driver, ON } from '@ohos.UiTest';
+
+async function navigateToWebCaretColorPage(): Promise<void> {
+  let driver = Driver.create();
+  if (await driver.findComponent(ON.id('WebCaretColorButton')) != null) {
+    return;
+  }
+  await Utils.emitEvent('SwitchNextPageStatic', 10);
+  await Utils.clickComponent('WebInitTestButton');
+  await Utils.msSleep(1500);
+  if (await driver.findComponent(ON.id('WebCaretColorButton')) != null) {
+    return;
+  }
+  await Utils.emitEvent('SwitchNextPageStatic', 10);
+  await Utils.clickComponent('WebInitTestButton');
+  await Utils.msSleep(1500);
+  await Utils.emitEvent('SwitchNextPageStatic', 10);
+  await Utils.clickComponent('WebEnableDataDetectorButton');
+  await Utils.msSleep(2000);
+  if (await driver.findComponent(ON.id('WebCaretColorButton')) != null) {
+    return;
+  }
+  await Utils.emitEvent('emitSwitchToWebCaretColorPage', 10);
+  await Utils.clickComponent('WebInitTestButton');
+  await Utils.msSleep(2000);
+}
 
 async function runCaretCase(action: string, eventId: int, expected: Object): Promise<void> {
   let actual: Object = -1;
@@ -55,9 +81,7 @@ export default function WebCaretColorStaticTest(): void {
       let cmd: string = 'aa start -a EntryAbility -b com.pageInteraction.test.static -u ' + user;
       abilityDelegator.executeShellCommand(cmd);
       await Utils.msSleep(3000);
-      await Utils.emitEvent('emitSwitchToWebCaretColorPage', 10);
-      await Utils.clickComponent('WebInitTestButton');
-      await Utils.msSleep(2000);
+      await navigateToWebCaretColorPage();
     });
 
     /**
