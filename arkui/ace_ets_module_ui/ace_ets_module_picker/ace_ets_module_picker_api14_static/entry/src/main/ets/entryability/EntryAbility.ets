@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -56,9 +56,11 @@ class EntryAbility extends UIAbility {
             let wRect: window.Rect | undefined = properties?.windowRect;
             AppStorage.setOrCreate<number>('winLeft', wRect?.left ?? 0);
             AppStorage.setOrCreate<number>('winTop', wRect?.top ?? 0);
+            AppStorage.setOrCreate<number>('displayID', properties?.displayId ?? 0);
             hilog.info(0x0000, 'testTag', 'Succeeded get winLeft:' + wRect?.left + ',winTop:' + wRect?.top);
           } catch (exception) {
-            hilog.error(0x0000, 'testTag', 'Failed to obtain the window properties. Cause: ' + JSON.stringify(exception));
+            hilog.error(0x0000, 'testTag',
+              'Failed to obtain the window properties. Cause: ' + JSON.stringify(exception));
           }
           // Obtain a UIContext instance.
           if (windowClass !== null) {
@@ -72,9 +74,9 @@ class EntryAbility extends UIAbility {
     }
   }
 
-  // onDestroy() {
-  //   hilog.info(0x0000, 'testTag sjd EntryAbility', '%{public}s', 'TestAbility onDestroy');
-  // }
+  onDestroy(): Promise<void> {
+    hilog.info(0x0000, 'testTag sjd EntryAbility', '%{public}s', 'TestAbility onDestroy');
+  }
 
   onWindowStageDestroy() {
     hilog.info(0x0000, 'testTag sjd EntryAbility', '%{public}s', 'TestAbility onWindowStageDestroy');

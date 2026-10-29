@@ -15,7 +15,7 @@
  */
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-static/src/main/indexStatic';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import {
   Component,
@@ -72,20 +72,30 @@ export default function TimePickerAddApi() {
       let timePickerComp = await driver.findComponent(ON.id('TimePickerAddApi'));
       let displayId = await timePickerComp!.getDisplayId();
       let rect = await timePickerComp!.getBounds();
+      let left = rect.left;
+      let top = rect.top;
+      let right = rect.right;
+      let bottom = rect.bottom;
       console.info('[TimePickerAddApi_static_001] rect is: ' + JSON.stringify(rect));
       await CommonFunc.sleep(500);
+      let swipeX = Math.round(left + (right - left) / 6).toInt();
+      let startY = Math.round(top + (bottom - top) / 2).toInt();
+      let endY = Math.round(top).toInt();
+      console.info(
+        '[TimePickerAddApi_static_001] swipe from (' + swipeX + ',' + startY + ') to (' + swipeX + ',' + endY + ')');
       await driver.swipeBetween(
         {
-          x: Math.round(rect.right - AppStorage.get<UIContext>("uiContext")!.vp2px(100)).toInt(),
-          y: Math.round(rect.bottom - AppStorage.get<UIContext>("uiContext")!.vp2px(10)).toInt(),
+          x: swipeX,
+          y: startY,
           displayId: displayId
         },
         {
-          x: Math.round(rect.right - AppStorage.get<UIContext>("uiContext")!.vp2px(100)).toInt(),
-          y: Math.round(rect.top).toInt(),
+          x: swipeX,
+          y: endY,
           displayId: displayId
-        });
-      await CommonFunc.sleep(1000);
+        },
+        600);
+      await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('TimePickerAddApiText');
       await CommonFunc.sleep(200);
       let obj = JSON.parseJsonElement(strJson);

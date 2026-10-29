@@ -20,6 +20,6 @@ import onScrollStopTest from './textPicker/onScrollStopTest.test';
 import maxFontScaleTest from './segmentButton/maxFontScaleTest.test'
 export default function testsuite() {
   onScrollStopTest()  //SDK11.25  Pass: 2
-  maxFontScaleTest()  //11.25.SDK上 编译问题高级组件，0702不实现
-  accessibilitySelectedTypeTest()   //11.25.SDK 编译问题 chip B018交付
+  //maxFontScaleTest()  //11.25.SDK上 编译问题高级组件，0702不实现
+  //accessibilitySelectedTypeTest()   //11.25.SDK 编译问题 chip B018交付
 }
