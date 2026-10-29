@@ -67,10 +67,9 @@ async function tryToDisConnWifi(){
   console.info("wifi_test/wifi status:" + wifiMg.isWifiActive());
 }
 
-export async function clickText(text_respond: string): Promise<void> {
+export async function clickText(driver: Driver, text_respond: string): Promise<void> {
   try {
     console.info('clickText start');
-    let driver = Driver.create();
     await driver.delayMs(1000);
     console.info('get button start');
     let button = await driver.findComponent(ON.text(text_respond));
@@ -88,14 +87,14 @@ export async function clickText(text_respond: string): Promise<void> {
     }
     console.info("get button break" + JSON.stringify(button));
     await button.click();
-    await driver.delayMs(2000);
+    await driver.delayMs(1000);
     console.info('clickText end');
   } catch (err) {
     console.info('clickText failed' + err);
   }
 }
 export default function wifiSta() {
-
+  let driver:Driver = Driver.create();
   describe('wifiSta', async () => {
     let networkId = -1;
     beforeAll(async (done:Function) =>{
@@ -603,7 +602,7 @@ export default function wifiSta() {
         }
       }
       try{
-        await clickText('连接');
+        await clickText(driver, '连接');
       } catch(err){
         console.info(`${caseName} clickText 消除用例弹框影响 end`);
       }
@@ -686,7 +685,7 @@ export default function wifiSta() {
         }
       }
       try{
-        await clickText('连接');
+        await clickText(driver, '连接');
       } catch(err){
         console.info(`${caseName} clickText 消除用例弹框影响 end`);
       }
@@ -724,6 +723,8 @@ export default function wifiSta() {
         };
         wifiMg.connectToCandidateConfig(settings).then(async(result) => {
           console.info(`${caseName} connectToCandidateConfig promise success` + JSON.stringify(result));
+          await clickText(driver, '连接');
+          console.info(`${caseName} connectToCandidateConfig promise success`);
           done();
         }).catch(async(err: BusinessError) => {
           console.error(`${caseName} connectToCandidateConfig get error:` + JSON.stringify(err));
@@ -735,9 +736,6 @@ export default function wifiSta() {
           }
           done();
         });
-        await clickText('连接');
-        console.info(`${caseName} connectToCandidateConfig promise success`);
-        await sleep(1000);
       } catch (err) {
         console.error(`${caseName} failed: ${JSON.stringify(err)}, code: ${err.code}, message: ${err.message}`);
         if (err.code === 801) {
@@ -789,7 +787,7 @@ export default function wifiSta() {
         }
       }
       try{
-        await clickText('连接');
+        await clickText(driver, '连接');
       } catch(err){
         console.info(`${caseName} clickText 消除用例弹框影响 end`);
       }
@@ -824,6 +822,8 @@ export default function wifiSta() {
         };
         wifiMg.connectToCandidateConfig(settings).then(async(result) => {
           console.info(`${caseName} connectToCandidateConfig promise success` + JSON.stringify(result));
+          await clickText(driver, '取消');
+          console.info(`${caseName} connectToCandidateConfig promise success`);
           done();
         }).catch(async(err: BusinessError) => {
           console.error(`${caseName} connectToCandidateConfig get error:` + JSON.stringify(err));
@@ -835,8 +835,6 @@ export default function wifiSta() {
           }
           done();
         });
-        await clickText('取消');
-        console.info(`${caseName} connectToCandidateConfig promise success`);
       } catch (err) {
         console.error(`${caseName} failed: ${JSON.stringify(err)}, code: ${err.code}, message: ${err.message}`);
         if (err.code === 801) {
@@ -1153,7 +1151,7 @@ export default function wifiSta() {
         console.info(`${caseName} addCandidateConfig networkId: ${networkId}`);
         await wifiMg.connectToCandidateConfig(networkId);
         console.info(`${caseName} connectToCandidateConfig promise success`);
-        await clickText('连接');
+        await clickText(driver, '连接');
         console.info(`${caseName} 点击连接 弹框出现10s后消失，对弹框动作无论是点击连接还是取消均不影响`);
       } catch (err) {
         console.error(`${caseName} failed: ${JSON.stringify(err)}, code: ${err.code}, message: ${err.message}`);
@@ -1194,7 +1192,7 @@ export default function wifiSta() {
         console.info(`${caseName} addCandidateConfig networkId: ${networkId}`);
         await wifiMg.connectToCandidateConfig(networkId);
         console.info(`${caseName} connectToCandidateConfig promise success`);
-        await clickText('连接');
+        await clickText(driver, '连接');
         console.info(`${caseName} 点击连接 弹框出现10s后消失，对弹框动作无论是点击连接还是取消均不影响`);
       } catch (err) {
         console.error(`${caseName} failed: ${JSON.stringify(err)}, code: ${err.code}, message: ${err.message}`);
