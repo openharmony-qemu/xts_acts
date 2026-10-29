@@ -297,7 +297,7 @@ export default function AtomicsFunctionTest() {
         sharedArray[i] = i + 1;
       }
       await new Promise<void>((resolve) => {
-        WorkerSrc.workerInstance.postMessage(buffer);
+        WorkerSrc.workerInstance.postMessageWithSharedSendable(buffer);
         WorkerSrc.workerInstance.onmessage = (e: MessageEvents) => {
           const workerData = e.data as collections.Uint8Array;
           for (let i = 0; i < 100; i++) {
@@ -328,7 +328,7 @@ export default function AtomicsFunctionTest() {
         sharedArray[i] = i;
       }
       await new Promise<void>((resolve) => {
-        WorkerSrc2.workerInstance.postMessage(buffer);
+        WorkerSrc2.workerInstance.postMessageWithSharedSendable(buffer);
         WorkerSrc2.workerInstance.onmessage = (e: MessageEvents) => {
           const workerData = new collections.Uint16Array(e.data as collections.ArrayBuffer);
           for (let i = 0; i < 100; i++) {
@@ -359,7 +359,7 @@ export default function AtomicsFunctionTest() {
         sharedArray[i] = i;
       }
       await new Promise<void>((resolve) => {
-        WorkerSrc3.workerInstance.postMessage(buffer);
+        WorkerSrc3.workerInstance.postMessageWithSharedSendable(buffer);
         WorkerSrc3.workerInstance.onmessage = (e: MessageEvents) => {
           const workerData = new collections.Uint32Array(e.data as collections.ArrayBuffer);
           for (let i = 0; i < 100; i++) {

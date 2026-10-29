@@ -56,8 +56,8 @@ export default function AtomicsMultithreadTest() {
       sharedArray[0] = 10;
       const worker1 = new worker.ThreadWorker('../../testability/pages/workers/Worker4');
       const worker2 = new worker.ThreadWorker('../../testability/pages/workers/Worker5');
-      worker1.postMessage(sharedBuffer);
-      worker2.postMessage(sharedBuffer);
+      worker1.postMessageWithSharedSendable(sharedBuffer);
+      worker2.postMessageWithSharedSendable(sharedBuffer);
       await Promise.all([
         new Promise<void>((resolve) => {
           worker1.onmessage = (e) => {
@@ -91,7 +91,7 @@ export default function AtomicsMultithreadTest() {
       const sharedArray = new collections.Int32Array(sharedBuffer);
       sharedArray[0] = 5;
       const worker1 = new worker.ThreadWorker('../../testability/pages/workers/Worker4');
-      worker1.postMessage(sharedBuffer);
+      worker1.postMessageWithSharedSendable(sharedBuffer);
       const finalValue = await new Promise<number>((resolve) => {
         worker1.onmessage = (e) => {
           console.log(`Worker1 result: ${e.data}`);
@@ -116,8 +116,8 @@ export default function AtomicsMultithreadTest() {
       sharedArray[0] = 10;
       const worker1 = new worker.ThreadWorker('../../testability/pages/workers/Worker4');
       const worker2 = new worker.ThreadWorker('../../testability/pages/workers/Worker5');
-      worker1.postMessage(sharedBuffer);
-      worker2.postMessage(sharedBuffer);
+      worker1.postMessageWithSharedSendable(sharedBuffer);
+      worker2.postMessageWithSharedSendable(sharedBuffer);
       await Promise.all([
         new Promise<void>((resolve) => {
           worker1.onmessage = (e) => {
@@ -150,7 +150,7 @@ export default function AtomicsMultithreadTest() {
       const counter = new SharedCounter(10);
       const worker1 = new worker.ThreadWorker('../../testability/pages/workers/Worker6');
       let result = 0;
-      worker1.postMessage(counter.getBuffer());
+      worker1.postMessageWithSharedSendable(counter.getBuffer());
       result = await new Promise<number>((resolve)=>{
         worker1.onmessage = () => {
           console.log(`Worker1`);

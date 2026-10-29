@@ -28,7 +28,7 @@ export default function atomicsWaitTest() {
       // Run in worker to avoid blocking main thread
       const result = await new Promise<string>((resolve) => {
         const workerInstance = new worker.ThreadWorker("./workers/Worker01.ets");
-        workerInstance.postMessage({ ta, index: 0, value: 20 } as typeWait01)
+        workerInstance.postMessageWithSharedSendable({ ta, index: 0, value: 20 } as typeWait01)
         workerInstance.onmessage = (e) => {
           resolve(e.data)
           workerInstance.terminate()
@@ -60,7 +60,7 @@ export default function atomicsWaitTest() {
 
       const waitResult = new Promise<string>(async (resolve) => {
         const workerInstance = new worker.ThreadWorker("./workers/Worker01.ets");
-        workerInstance.postMessage({ ta, index: 0, value: 0 } as typeWait01)
+        workerInstance.postMessageWithSharedSendable({ ta, index: 0, value: 0 } as typeWait01)
         workerInstance.onmessage = (e) => {
           resolve(e.data)
           workerInstance.terminate()
@@ -71,7 +71,7 @@ export default function atomicsWaitTest() {
 
         await sleep(200)
         const workerInstance2 = new worker.ThreadWorker("./workers/Worker02.ets");
-        workerInstance2.postMessage({ ta, index: 0 } as typeWait02)
+        workerInstance2.postMessageWithSharedSendable({ ta, index: 0 } as typeWait02)
         workerInstance2.onmessage = (e) => {
           workerInstance2.terminate()
         }
@@ -102,7 +102,7 @@ export default function atomicsWaitTest() {
 
       const result = await new Promise<string>((resolve) => {
         const workerInstance = new worker.ThreadWorker("./workers/Worker03.ets");
-        workerInstance.postMessage({
+        workerInstance.postMessageWithSharedSendable({
           ta,
           index: 0,
           value: 5,
@@ -137,7 +137,7 @@ export default function atomicsWaitTest() {
 
       const errorResult = await new Promise<string>((resolve) => {
         const workerInstance = new worker.ThreadWorker("./workers/Worker03.ets");
-        workerInstance.postMessage({
+        workerInstance.postMessageWithSharedSendable({
           ta,
           index: 0,
           value: 1,
@@ -179,7 +179,7 @@ export default function atomicsWaitTest() {
 
       const errorResult = await new Promise<string>((resolve) => {
         const workerInstance = new worker.ThreadWorker("./workers/Worker03.ets");
-        workerInstance.postMessage({
+        workerInstance.postMessageWithSharedSendable({
           ta,
           index: 0,
           value: 1,
@@ -221,7 +221,7 @@ export default function atomicsWaitTest() {
 
       const errorResult = await new Promise<string>((resolve) => {
         const workerInstance = new worker.ThreadWorker("./workers/Worker03.ets");
-        workerInstance.postMessage({
+        workerInstance.postMessageWithSharedSendable({
           ta,
           index: 0,
           value: 1,
@@ -263,7 +263,7 @@ export default function atomicsWaitTest() {
 
       const errorResult = await new Promise<string>((resolve) => {
         const workerInstance = new worker.ThreadWorker("./workers/Worker03.ets");
-        workerInstance.postMessage({
+        workerInstance.postMessageWithSharedSendable({
           ta,
           index: 0,
           value: 1,
@@ -305,7 +305,7 @@ export default function atomicsWaitTest() {
 
       const errorResult = await new Promise<string>((resolve) => {
         const workerInstance = new worker.ThreadWorker("./workers/Worker03.ets");
-        workerInstance.postMessage({
+        workerInstance.postMessageWithSharedSendable({
           ta,
           index: 0,
           value: 1,
@@ -367,13 +367,13 @@ export default function atomicsWaitTest() {
       tt.onexit = () => { flag = true; };
       uu.onexit = () => { flag = true; };
 
-      ss.postMessage({ ta: int32 } as typeWait07);
+      ss.postMessageWithSharedSendable({ ta: int32 } as typeWait07);
       while (!flag) { await sleep(50); }
       flag = false;
-      tt.postMessage({ ta: int32 } as typeWait07);
+      tt.postMessageWithSharedSendable({ ta: int32 } as typeWait07);
       while (!flag) { await sleep(50); }
       flag = false;
-      uu.postMessage({ ta: int32 } as typeWait07);
+      uu.postMessageWithSharedSendable({ ta: int32 } as typeWait07);
       while (!flag) { await sleep(50); }
 
       ArkTSUtils.Atomics.notify(int32, 0, 1);
@@ -420,7 +420,7 @@ export default function atomicsWaitTest() {
       };
       ss.onexit = () => { flag = true; };
 
-      ss.postMessage({ ta: int32 } as typeWait07);
+      ss.postMessageWithSharedSendable({ ta: int32 } as typeWait07);
       while (!flag) { await sleep(50); }
       flag = false;
       ArkTSUtils.Atomics.store(int32, 0, 2);
@@ -456,8 +456,8 @@ export default function atomicsWaitTest() {
       ss.onexit = () => { flag = true; };
       tt.onexit = () => { flag = true; };
 
-      ss.postMessage({ sab: sab } as typeWait11);
-      tt.postMessage({ sab: sab } as typeWait11);
+      ss.postMessageWithSharedSendable({ sab: sab } as typeWait11);
+      tt.postMessageWithSharedSendable({ sab: sab } as typeWait11);
       while (count != 2) { await sleep(50); }
 
       flag = false;
@@ -485,7 +485,7 @@ export default function atomicsWaitTest() {
 
       const errorResult = await new Promise<string>((resolve) => {
         const workerInstance = new worker.ThreadWorker("./workers/Worker01.ets");
-        workerInstance.postMessage({ ta, index: 1, value: 0 } as typeWait01)
+        workerInstance.postMessageWithSharedSendable({ ta, index: 1, value: 0 } as typeWait01)
         workerInstance.onmessage = (e) => {
           resolve(e.data)
           workerInstance.terminate()
@@ -519,7 +519,7 @@ export default function atomicsWaitTest() {
 
       const errorResult = await new Promise<string>((resolve) => {
         const workerInstance = new worker.ThreadWorker("./workers/Worker03.ets");
-        workerInstance.postMessage({
+        workerInstance.postMessageWithSharedSendable({
           ta,
           index: 0,
           value: 1,
@@ -561,7 +561,7 @@ export default function atomicsWaitTest() {
 
       const errorResult = await new Promise<string>((resolve) => {
         const workerInstance = new worker.ThreadWorker("./workers/Worker03.ets");
-        workerInstance.postMessage({
+        workerInstance.postMessageWithSharedSendable({
           ta,
           index: 0,
           value: 1,
@@ -603,7 +603,7 @@ export default function atomicsWaitTest() {
 
       const errorResult = await new Promise<string>((resolve) => {
         const workerInstance = new worker.ThreadWorker("./workers/Worker03.ets");
-        workerInstance.postMessage({
+        workerInstance.postMessageWithSharedSendable({
           ta,
           index: 0,
           value: 1,

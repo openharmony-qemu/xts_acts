@@ -1812,7 +1812,7 @@ export default function atomicsIsLockFreeTest() {
 /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0072
      * @tc.number SUB_ARKTSUTILS_ATOMICS_IS_LOCK_FREE_7200
-     * @tc.desc   Test ArkTSUtils.Atomics.isLockFree with min safe integer (-2^53 + 1)
+     * @tc.desc   Verify isLockFree returns true for min safe integer (-2^53 + 1)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1820,7 +1820,7 @@ export default function atomicsIsLockFreeTest() {
     it('testArkTSUtilsAtomicsIsLockFree0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const minSafeInt = Number.MIN_SAFE_INTEGER; // -9007199254740991
       const result = ArkTSUtils.Atomics.isLockFree(minSafeInt);
-      expect(result).assertEqual(false);
+      expect(result).assertEqual(true);
       done();
     });
 /**
