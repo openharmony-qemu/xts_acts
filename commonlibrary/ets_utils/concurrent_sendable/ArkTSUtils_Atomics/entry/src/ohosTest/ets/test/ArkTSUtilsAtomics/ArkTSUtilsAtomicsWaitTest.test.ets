@@ -20,7 +20,7 @@ export default function atomicsWaitTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testArkTSUtilsAtomicsWait0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testArkTSUtilsAtomicsWait0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ta = new collections.Int32Array(sab);
       ta[0] = 10; // Actual value
@@ -41,6 +41,7 @@ export default function atomicsWaitTest() {
         await sleep(100)
       }
       expect(result).assertEqual('not-equal');
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsWait0002
@@ -50,7 +51,7 @@ export default function atomicsWaitTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsWait0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsWait0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ta = new collections.Int32Array(sab);
       ta[0] = 0; // Match expected value
@@ -83,6 +84,7 @@ export default function atomicsWaitTest() {
         await sleep(100)
       }
       expect(result).assertEqual('ok');
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsWait0003
@@ -92,7 +94,7 @@ export default function atomicsWaitTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsWait0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsWait0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ta = new collections.Int32Array(sab);
       ta[0] = 5; // Match expected value
@@ -118,6 +120,7 @@ export default function atomicsWaitTest() {
         await sleep(100)
       }
       expect(result).assertEqual('timed-out');
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsWait0004
@@ -127,7 +130,7 @@ export default function atomicsWaitTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsWait0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsWait0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ta = new collections.Int32Array(sab); // Length 1
       let finish = false;
@@ -159,6 +162,7 @@ export default function atomicsWaitTest() {
         await sleep(100)
       }
       expect(errorResult).assertEqual('not-equal');
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsWait0005
@@ -168,7 +172,7 @@ export default function atomicsWaitTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsWait0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsWait0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(8);
       const ta = new collections.Int32Array(sab);
       let finish = false;
@@ -200,6 +204,7 @@ export default function atomicsWaitTest() {
         await sleep(100)
       }
       expect(errorResult).assertEqual('not-equal');
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsWait0006
@@ -209,7 +214,7 @@ export default function atomicsWaitTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsWait0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsWait0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(8);
       const ta = new collections.Int32Array(sab);
       let finish = false;
@@ -241,6 +246,7 @@ export default function atomicsWaitTest() {
         await sleep(100)
       }
       expect(errorResult).assertEqual('not-equal');
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsWait0007
@@ -250,7 +256,7 @@ export default function atomicsWaitTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsWait0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsWait0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(8);
       const ta = new collections.Int32Array(sab);
       let finish = false;
@@ -282,6 +288,7 @@ export default function atomicsWaitTest() {
         await sleep(100)
       }
       expect(errorResult).assertEqual('not-equal');
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsWait0008
@@ -291,7 +298,7 @@ export default function atomicsWaitTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsWait0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsWait0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(8);
       const ta = new collections.Int32Array(sab);
       let finish = false;
@@ -323,6 +330,7 @@ export default function atomicsWaitTest() {
         await sleep(100)
       }
       expect(errorResult).assertEqual('not-equal');
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsWait0009
@@ -332,7 +340,7 @@ export default function atomicsWaitTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testArkTSUtilsAtomicsWait0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testArkTSUtilsAtomicsWait0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(20);
       const int32 = new collections.Int32Array(sab);
       let flag = false;
@@ -384,6 +392,7 @@ export default function atomicsWaitTest() {
 
       expect(res).assertEqual(1);
       expect(res1).assertEqual(5);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsWait0010
@@ -393,7 +402,7 @@ export default function atomicsWaitTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testArkTSUtilsAtomicsWait0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('testArkTSUtilsAtomicsWait0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(20);
       const int32 = new collections.Int32Array(sab);
       let flag = false;
@@ -423,6 +432,7 @@ export default function atomicsWaitTest() {
       while (!flag) { await sleep(50); }
 
       expect(res).assertEqual(3);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsWait0011
@@ -432,7 +442,7 @@ export default function atomicsWaitTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testArkTSUtilsAtomicsWait0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testArkTSUtilsAtomicsWait0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(20);
       const int32 = new collections.Uint32Array(sab);
       int32[0] = 1;
@@ -458,6 +468,7 @@ export default function atomicsWaitTest() {
       while (!flag) { await sleep(50); }
 
       expect(int32[0]).assertEqual(21);
+      done();
     });
 /**
      * @tc.name   testArkTSUtilsAtomicsWait0012
@@ -467,7 +478,7 @@ export default function atomicsWaitTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsWait0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsWait0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ta = new collections.Int32Array(sab); // Int32Array with length 1
       let finish = false;
@@ -491,6 +502,7 @@ export default function atomicsWaitTest() {
         await sleep(100)
       }
       expect(errorResult).assertContain('RangeError');
+      done();
     });
 /**
      * @tc.name   testArkTSUtilsAtomicsWait0013
@@ -500,7 +512,7 @@ export default function atomicsWaitTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsWait0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsWait0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(8);
       const ta = new collections.Int32Array(sab);
       let finish = false;
@@ -532,6 +544,7 @@ export default function atomicsWaitTest() {
         await sleep(100)
       }
       expect(errorResult).assertEqual('not-equal');
+      done();
     });
 /**
      * @tc.name   testArkTSUtilsAtomicsWait0014
@@ -541,7 +554,7 @@ export default function atomicsWaitTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsWait0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsWait0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(8);
       const ta = new collections.Int32Array(sab);
       let finish = false;
@@ -573,6 +586,7 @@ export default function atomicsWaitTest() {
         await sleep(100)
       }
       expect(errorResult).assertEqual('not-equal');
+      done();
     });
 /**
      * @tc.name   testArkTSUtilsAtomicsWait0015
@@ -582,7 +596,7 @@ export default function atomicsWaitTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsWait0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsWait0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(8);
       const ta = new collections.Int32Array(sab);
       let finish = false;
@@ -614,6 +628,7 @@ export default function atomicsWaitTest() {
         await sleep(100)
       }
       expect(errorResult).assertEqual('not-equal');
+      done();
     });
   })
 }

@@ -46,7 +46,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsIsLockFree0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const asyncCheck = async (size: number): Promise<boolean> => {
         await new Promise<void>(resolve => setTimeout(resolve, 5));
         return ArkTSUtils.Atomics.isLockFree(size);
@@ -54,6 +54,7 @@ export default function atomicsIsLockFreeTest() {
 
       const result = await asyncCheck(4);
       expect(typeof result).assertEqual('boolean');
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0002
@@ -63,9 +64,10 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsIsLockFree0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const result = await Promise.resolve(ArkTSUtils.Atomics.isLockFree(8));
       expect(typeof result).assertEqual('boolean');
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0003
@@ -75,7 +77,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsIsLockFree0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const nestedCheck = (): boolean => {
         const innerCheck = (size: number) => ArkTSUtils.Atomics.isLockFree(size);
         return innerCheck(1);
@@ -83,6 +85,7 @@ export default function atomicsIsLockFreeTest() {
 
       const result = nestedCheck();
       expect(typeof result).assertEqual('boolean');
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0004
@@ -92,13 +95,14 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsIsLockFree0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const result = await (async () => {
         await new Promise<void>(resolve => setTimeout(resolve, 3));
         return ArkTSUtils.Atomics.isLockFree(2);
       })();
 
       expect(typeof result).assertEqual('boolean');
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0005
@@ -108,13 +112,14 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsIsLockFree0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const raceResult = await Promise.race([
         Promise.resolve(ArkTSUtils.Atomics.isLockFree(4)),
         new Promise<boolean>(resolve => setTimeout(() => resolve(false), 10))
       ]);
 
       expect(typeof raceResult).assertEqual('boolean');
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0006
@@ -124,7 +129,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsIsLockFree0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const result = await Promise.all([
         Promise.resolve(ArkTSUtils.Atomics.isLockFree(8)),
         Promise.resolve(ArkTSUtils.Atomics.isLockFree(8))
@@ -132,6 +137,7 @@ export default function atomicsIsLockFreeTest() {
 
       expect(result[0]).assertEqual(result[1]);
       expect(typeof result[1]).assertEqual('boolean');
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0007
@@ -141,10 +147,11 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsIsLockFree0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const result = ArkTSUtils.Atomics.isLockFree(1);
       const isValid = typeof result === 'boolean';
       expect(isValid).assertEqual(true);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0008
@@ -154,7 +161,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsIsLockFree0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const elementSize = 2;
       let checkResult = false;
 
@@ -165,6 +172,7 @@ export default function atomicsIsLockFreeTest() {
       }
 
       expect(typeof checkResult).assertEqual('boolean');
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0009
@@ -174,7 +182,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsIsLockFree0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const elementSize = 4;
       const results: boolean[] = [];
 
@@ -188,6 +196,7 @@ export default function atomicsIsLockFreeTest() {
         expect(res).assertEqual(firstResult);
       }
       expect(typeof firstResult).assertEqual('boolean');
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0010
@@ -197,7 +206,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsIsLockFree0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const sizes = [1, 3, 4, 6, 8, -2]; // Valid:1/4/8; Invalid:3/6/-2
       const results: type41[] = [];
 
@@ -218,6 +227,7 @@ export default function atomicsIsLockFreeTest() {
           expect(item.isFree).assertEqual(false);
         }
       });
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0011
@@ -227,7 +237,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsIsLockFree0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       // Outer async function
       const outerCheck = async (size: number): Promise<boolean> => {
         // Inner async function with delay
@@ -240,6 +250,7 @@ export default function atomicsIsLockFreeTest() {
 
       const result = await outerCheck(8);
       expect(typeof result).assertEqual('boolean');
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0012
@@ -249,8 +260,9 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsIsLockFree0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       expect(ArkTSUtils.Atomics.isLockFree(Number.EPSILON)).assertEqual(false);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0013
@@ -260,7 +272,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsIsLockFree0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const promises = [
         Promise.resolve(ArkTSUtils.Atomics.isLockFree(4)),
         Promise.resolve(ArkTSUtils.Atomics.isLockFree(4)),
@@ -277,6 +289,7 @@ export default function atomicsIsLockFreeTest() {
       results.slice(1).forEach(res => {
         expect((res as PromiseFulfilledResult<boolean>).value).assertEqual(firstVal);
       });
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0014
@@ -286,7 +299,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsIsLockFree0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       // Mock async API to get element size
       const mockFetchSize = async (): Promise<number> => {
         await new Promise<void>(resolve => setTimeout(resolve, 5));
@@ -297,6 +310,7 @@ export default function atomicsIsLockFreeTest() {
       const result = ArkTSUtils.Atomics.isLockFree(size);
       expect(size).assertEqual(4);
       expect(typeof result).assertEqual('boolean');
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0015
@@ -306,7 +320,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsIsLockFree0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const checkLockFree = async (size: number): Promise<string> => {
         await new Promise<void>(resolve => setTimeout(resolve, 2));
         if (size === 1) {
@@ -323,6 +337,7 @@ export default function atomicsIsLockFreeTest() {
 
       const resultMsg = await checkLockFree(1);
       expect(resultMsg).assertContain('1-byte is lock-free');
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0016
@@ -332,7 +347,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsIsLockFree0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const createLockCheckClosure = (size: number) => {
         // Closure captures 'size' from outer function
         return async () => {
@@ -344,6 +359,7 @@ export default function atomicsIsLockFreeTest() {
       const lockCheck = createLockCheckClosure(2);
       const result = await lockCheck();
       expect(typeof result).assertEqual('boolean');
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0017
@@ -353,7 +369,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsIsLockFree0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const racePromises = [
         // Valid size (4-byte) with short delay
         new Promise<type51>((resolve) => {
@@ -372,6 +388,7 @@ export default function atomicsIsLockFreeTest() {
       const winner = await Promise.race(racePromises);
       expect(winner.size).assertEqual(4); // Short delay promise wins
       expect(typeof winner.isFree).assertEqual('boolean');
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0018
@@ -381,7 +398,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsIsLockFree0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let cleanupCalled = false;
 
       const asyncCheckWithCleanup = async (size: number): Promise<boolean> => {
@@ -398,6 +415,7 @@ export default function atomicsIsLockFreeTest() {
       const result = await asyncCheckWithCleanup(8);
       expect(typeof result).assertEqual('boolean');
       expect(cleanupCalled).assertEqual(true);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0019
@@ -407,7 +425,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsIsLockFree0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const results: type51[] = await atomicsIsLockFreeTest051();
 
       expect(results.length).assertEqual(3);
@@ -419,6 +437,7 @@ export default function atomicsIsLockFreeTest() {
           expect(res.isFree).assertEqual(results[0].isFree);
         }
       });
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0020
@@ -428,7 +447,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsIsLockFree0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const nestedErrorCheck = async () => {
         let finalResult: boolean | string = false;
         try {
@@ -447,6 +466,7 @@ export default function atomicsIsLockFreeTest() {
 
       const result = await nestedErrorCheck();
       expect(result).assertEqual(true);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0021
@@ -456,7 +476,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsIsLockFree0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const result = await Promise.resolve(4) // Start with size 4
         .then(async size => {
           await new Promise<void>(resolve => setTimeout(resolve, 2));
@@ -469,6 +489,7 @@ export default function atomicsIsLockFreeTest() {
         });
 
       expect(result).assertContain('lock-free');
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0022
@@ -478,7 +499,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsIsLockFree0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const validateResult = async (isFree: boolean, callback: (valid: boolean) => void) => {
         await new Promise<void>(resolve => setTimeout(resolve, 3));
         callback(typeof isFree === 'boolean');
@@ -493,6 +514,7 @@ export default function atomicsIsLockFreeTest() {
       });
 
       expect(isResultValid).assertEqual(true);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0023
@@ -502,7 +524,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsIsLockFree0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const parallelTasks = [
         // Task 1: Check 8-byte lock-free
         (async () => {
@@ -519,6 +541,7 @@ export default function atomicsIsLockFreeTest() {
       const results = await Promise.all(parallelTasks);
       const lockCheckResult: type55 | undefined = results.find(res => res.type === '8-byte-check');
       expect(lockCheckResult?.result).assertEqual(true);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0024
@@ -528,7 +551,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsIsLockFree0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let retryCount = 0;
       const maxRetries = 2;
 
@@ -547,6 +570,7 @@ export default function atomicsIsLockFreeTest() {
       const result = await asyncRetryCheck(1);
       expect(retryCount).assertEqual(maxRetries);
       expect(typeof result).assertEqual('boolean');
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0025
@@ -556,7 +580,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsIsLockFree0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const nestedTasks = [
         Promise.resolve(ArkTSUtils.Atomics.isLockFree(4)),
         Promise.all([
@@ -568,6 +592,7 @@ export default function atomicsIsLockFreeTest() {
       const result = await Promise.all(nestedTasks);
       expect(result[0]).assertEqual(true);
       expect(result[1]).assertDeepEquals([true,true]);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0026
@@ -577,7 +602,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsIsLockFree0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let errorLogged = false;
       const mockLogger = (msg: string) => {
         errorLogged = true;
@@ -595,6 +620,7 @@ export default function atomicsIsLockFreeTest() {
       const result = await asyncCheckWithLog();
       expect(result).assertEqual(true);
       expect(errorLogged).assertEqual(false);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0027
@@ -604,7 +630,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsIsLockFree0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const size = 8;
       let finalMsg = '';
 
@@ -625,6 +651,7 @@ export default function atomicsIsLockFreeTest() {
 
       expect(asyncConditionalChain).assertContain('8-byte operations are lock-free');
       expect(finalMsg).assertEqual(asyncConditionalChain);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0028
@@ -634,7 +661,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsIsLockFree0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const validationResult = await (async () => {
         await new Promise<void>(resolve => setTimeout(resolve, 3));
         const size = 2;
@@ -650,6 +677,7 @@ export default function atomicsIsLockFreeTest() {
       expect(validationResult.resultIsValid).assertEqual(true);
       expect(validationResult.isValidSize).assertEqual(true);
       expect(typeof validationResult.isFree).assertEqual('boolean');
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0029
@@ -659,7 +687,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsIsLockFree0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const promises = [
         Promise.resolve(ArkTSUtils.Atomics.isLockFree(1)), // Valid
         Promise.resolve(ArkTSUtils.Atomics.isLockFree(5)), // Invalid
@@ -677,6 +705,7 @@ export default function atomicsIsLockFreeTest() {
           expect(value).assertEqual(false);
         }
       });
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0030
@@ -686,7 +715,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsIsLockFree0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const createOuterClosure = () => {
         const outerSize = 4;
         return (): Promise<boolean> => {
@@ -704,6 +733,7 @@ export default function atomicsIsLockFreeTest() {
       const outerClosure = createOuterClosure();
       const result = await outerClosure();
       expect(typeof result).assertEqual('boolean');
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0031
@@ -713,7 +743,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsIsLockFree0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const raceResult = await Promise.race([
         // Primary check: 1-byte size with delay
         new Promise<boolean>((resolve) => {
@@ -730,6 +760,7 @@ export default function atomicsIsLockFreeTest() {
       ]);
 
       expect(typeof raceResult).assertEqual('boolean');
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0032
@@ -739,7 +770,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsIsLockFree0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const size = 8;
       const cache: boolean[] = [];
 
@@ -757,6 +788,7 @@ export default function atomicsIsLockFreeTest() {
       const firstCache = cache[0];
       expect(firstCache).assertEqual(true)
       expect(typeof firstCache).assertEqual('boolean');
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0033
@@ -766,7 +798,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsIsLockFree0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const asyncNaNCheck = async () => {
         try {
           const result = ArkTSUtils.Atomics.isLockFree(NaN);
@@ -779,6 +811,7 @@ export default function atomicsIsLockFreeTest() {
 
       const result = await asyncNaNCheck();
       expect(result).assertEqual(false);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0034
@@ -788,7 +821,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsIsLockFree0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let cleanupExecuted = false;
       const size = 2;
 
@@ -804,6 +837,7 @@ export default function atomicsIsLockFreeTest() {
 
       expect(typeof result).assertEqual('boolean');
       expect(cleanupExecuted).assertEqual(true);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0035
@@ -813,7 +847,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsIsLockFree0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const results: type67[] = await atomicsIsLockFreeTest067();
 
 
@@ -826,6 +860,7 @@ export default function atomicsIsLockFreeTest() {
           expect(res.isFree).assertEqual(false);
         }
       });
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0036
@@ -835,7 +870,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsIsLockFree0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const taskCount = 3;
       // Create multiple parallel tasks checking 1-byte size
       const parallelTasks = Array.from(new Array(taskCount), async () => {
@@ -849,6 +884,7 @@ export default function atomicsIsLockFreeTest() {
       const firstResult = results[0];
       expect(firstResult).assertEqual(true);
       expect(typeof firstResult).assertEqual('boolean');
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0037
@@ -858,7 +894,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsIsLockFree0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let tryExecuted = false;
       let catchExecuted = false;
       let finallyExecuted = false;
@@ -882,6 +918,7 @@ export default function atomicsIsLockFreeTest() {
       expect(catchExecuted).assertEqual(false); // No error thrown
       expect(finallyExecuted).assertEqual(true);
       expect(typeof result).assertEqual('boolean');
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0038
@@ -891,7 +928,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsIsLockFree0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const sizes = [1, 2, 3, 4, 6, 8];
       const aggregationResult: GeneratedObjectLiteralInterface_2 = {
         validSizes: [] as number[],
@@ -918,6 +955,7 @@ export default function atomicsIsLockFreeTest() {
       expect(aggregationResult.validSizes).assertDeepEquals([1, 2, 4, 8]);
       expect(aggregationResult.invalidSizes).assertDeepEquals([3, 6]);
       expect(aggregationResult.lockFreeCount).assertLargerOrEqual(0); // Count depends on environment
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0039
@@ -927,7 +965,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsIsLockFree0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const validateAndCheck = async (size: number): Promise<typeLock71> => {
         await new Promise<void>(resolve => setTimeout(resolve, 3));
         // Validate parameter type first
@@ -949,6 +987,7 @@ export default function atomicsIsLockFreeTest() {
       // Test with invalid non-integer size
       const invalidTypeResult = await validateAndCheck(4.5);
       expect(invalidTypeResult.valid).assertEqual(false);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0040
@@ -958,7 +997,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsIsLockFree0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const innerRace = () => {
         return Promise.race([
           Promise.resolve(ArkTSUtils.Atomics.isLockFree(2)),
@@ -973,6 +1012,7 @@ export default function atomicsIsLockFreeTest() {
       ]);
 
       expect(typeof outerRaceResult).assertEqual('boolean');
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0041
@@ -982,7 +1022,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsIsLockFree0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const sizes = [1, 1, 1, 5, 1]; // Early exit when invalid size is hit
       const results: boolean[] = [];
       let exitEarly = false;
@@ -1006,6 +1046,7 @@ export default function atomicsIsLockFreeTest() {
       expect(results.length).assertEqual(4); // Processed [1,1,1,5]
       expect(exitEarly).assertEqual(true);
       expect(results[3]).assertEqual(false); // Result for invalid size 5
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0042
@@ -1015,7 +1056,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsIsLockFree0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const createStatefulChecker = (initialSize: number) => {
         let callCount = 0;
         // Closure preserves initialSize and callCount
@@ -1037,6 +1078,7 @@ export default function atomicsIsLockFreeTest() {
       expect(secondCall.callCount).assertEqual(2);
       expect(typeof firstCall.result).assertEqual('boolean');
       expect(typeof secondCall.result).assertEqual('boolean');
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0043
@@ -1046,7 +1088,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsIsLockFree0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const asyncInvalidInfinityCheck = async () => {
         let flowLog: string[] = [];
         try {
@@ -1065,6 +1107,7 @@ export default function atomicsIsLockFreeTest() {
       const flowLog = await asyncInvalidInfinityCheck();
       expect(flowLog).assertDeepEquals(['try-start', 'try-success']); // No error thrown
       // -Infinity is invalid, returns false
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0044
@@ -1074,7 +1117,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsIsLockFree0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const mixedTasks = [
         // Atomics check task
         (async () => {
@@ -1100,6 +1143,7 @@ export default function atomicsIsLockFreeTest() {
       // Both lock-check results should be consistent
       expect(lockCheckResults[0].result).assertEqual(lockCheckResults[1].result);
       expect(typeof lockCheckResults[0].result).assertEqual('boolean');
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0045
@@ -1109,7 +1153,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsIsLockFree0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const results: type77[] = await atomicsIsLockFreeTest077();
 
       expect(results.length).assertEqual(2);
@@ -1117,6 +1161,7 @@ export default function atomicsIsLockFreeTest() {
         expect(res.size).assertEqual(2);
         expect(typeof res.result).assertEqual('boolean');
       });
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0046
@@ -1126,7 +1171,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsIsLockFree0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const outerValidation = async (size: number) => {
         const innerValidation = async (s: number): Promise<boolean> => {
           await new Promise<void>(resolve => setTimeout(resolve, 2));
@@ -1144,6 +1189,7 @@ export default function atomicsIsLockFreeTest() {
 
       const  isSizeValid  = await outerValidation(1);
       expect(isSizeValid).assertEqual(true);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0047
@@ -1153,7 +1199,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsIsLockFree0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let simulateInvalidState = true;
       let retryCount = 0;
 
@@ -1173,6 +1219,7 @@ export default function atomicsIsLockFreeTest() {
       const result = await asyncCheckWithStateRetry(8);
       expect(retryCount).assertEqual(2); // Retried once
       expect(typeof result).assertEqual('boolean');
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0048
@@ -1182,7 +1229,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsIsLockFree0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const sizes = [1, 3, 4, 6, 8, -2];
       const asyncFilterResults = async () => {
         const allResults = await Promise.all(
@@ -1200,6 +1247,7 @@ export default function atomicsIsLockFreeTest() {
         expect([1, 4, 8].includes(item.size)).assertEqual(true); // 2 not in input sizes
         expect(item.isFree).assertEqual(true);
       });
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0049
@@ -1209,7 +1257,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsIsLockFree0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const raceResult = await Promise.race([
         // Atomics check (faster, should win)
         new Promise<boolean>((resolve) => {
@@ -1226,6 +1274,7 @@ export default function atomicsIsLockFreeTest() {
       ]);
 
       expect(typeof raceResult).assertEqual('boolean');
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0050
@@ -1235,7 +1284,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsIsLockFree0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const createChecker = (baseSize: number) => {
         // Capture baseSize and return closure that uses it
         return async (offset: number) => {
@@ -1250,6 +1299,7 @@ export default function atomicsIsLockFreeTest() {
 
       expect(res.size).assertEqual(2);
       expect(typeof res.result).assertEqual('boolean');
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0051
@@ -1259,7 +1309,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsIsLockFree0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const iterations = 3;
       const log: string[] = [];
 
@@ -1276,6 +1326,7 @@ export default function atomicsIsLockFreeTest() {
       log.forEach(entry => {
         expect(entry).assertContain('1-byte lock-free = true');
       });
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0052
@@ -1285,7 +1336,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsIsLockFree0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const finalValidation = await Promise.resolve(8)
         .then(size => {
           // First chain step: validate size type
@@ -1307,6 +1358,7 @@ export default function atomicsIsLockFreeTest() {
       expect(finalValidation.size).assertEqual(8);
       expect(finalValidation.isValid).assertEqual(true);
       expect(typeof finalValidation.isFree).assertEqual('boolean');
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0053
@@ -1316,8 +1368,9 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsIsLockFree0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       expect(ArkTSUtils.Atomics.isLockFree(Number.MIN_VALUE)).assertEqual(false);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0054
@@ -1327,7 +1380,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsIsLockFree0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let state: 'idle' | 'checking' | 'done' = 'idle';
 
       const asyncCheckWithState = async (size: number): Promise<boolean> => {
@@ -1343,6 +1396,7 @@ export default function atomicsIsLockFreeTest() {
       const result = await resultPromise;
       expect(state).assertEqual('done');
       expect(typeof result).assertEqual('boolean');
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0055
@@ -1352,7 +1406,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsIsLockFree0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const results: type88[] = await atomicsIsLockFreeTest088();
 
       expect(results.length).assertEqual(3);
@@ -1365,6 +1419,7 @@ export default function atomicsIsLockFreeTest() {
       // Third result: valid 1-byte
       expect(results[2].hasError).assertEqual(false);
       expect(typeof results[2].isFree).assertEqual('boolean');
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0056
@@ -1374,7 +1429,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsIsLockFree0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const createOuterClosure = (minSize: number, maxSize: number) => {
         return async (size: number) => {
           const innerValidate = async (s: number): Promise<typeLock71> => {
@@ -1396,6 +1451,7 @@ export default function atomicsIsLockFreeTest() {
       // Test invalid size (out of range)
       const invalidResult = await sizeChecker(9);
       expect(invalidResult.valid).assertEqual(false);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0057
@@ -1405,7 +1461,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsIsLockFree0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const iterations = 4;
       const aggregation: GeneratedObjectLiteralInterface_6 = {
         trueCount: 0,
@@ -1428,6 +1484,7 @@ export default function atomicsIsLockFreeTest() {
       // All results for same size should be consistent
       const firstResult = aggregation.allResults[0];
       expect(firstResult).assertEqual(true);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0058
@@ -1437,7 +1494,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsIsLockFree0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       // Create 3 identical checkers with different delays
       const createChecker = (delay: number) => {
         return new Promise<typeLock91>((resolve) => {
@@ -1452,6 +1509,7 @@ export default function atomicsIsLockFreeTest() {
 
       expect(winner.delay).assertEqual(2); // Fastest delay wins
       expect(typeof winner.result).assertEqual('boolean');
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0059
@@ -1461,7 +1519,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsIsLockFree0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const dynamicValidate = async (size: number, validSizes: number[]): Promise<boolean> => {
         await new Promise<void>(resolve => setTimeout(resolve, 3));
         if (!validSizes.includes(size)) {
@@ -1477,6 +1535,7 @@ export default function atomicsIsLockFreeTest() {
       // Test invalid size with dynamic list
       const invalidResult = await dynamicValidate(3, validSizes);
       expect(invalidResult).assertEqual(false);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0060
@@ -1486,7 +1545,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsIsLockFree0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let cleanupCalled = false;
 
       const result = await Promise.resolve(8)
@@ -1506,6 +1565,7 @@ export default function atomicsIsLockFreeTest() {
 
       expect(typeof result).assertEqual('boolean');
       expect(cleanupCalled).assertEqual(true);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0061
@@ -1515,7 +1575,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsIsLockFree0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const batchSize = 3;
       const progress: number[] = [];
       const results: boolean[] = [];
@@ -1531,6 +1591,7 @@ export default function atomicsIsLockFreeTest() {
       await asyncBatchWithProgress();
       expect(results.length).assertEqual(batchSize);
       expect(progress).assertDeepEquals([33, 67, 100]); // Approximate progress percentages
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0062
@@ -1540,8 +1601,9 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsIsLockFree0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       expect(ArkTSUtils.Atomics.isLockFree(Number.POSITIVE_INFINITY)).assertEqual(false);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0063
@@ -1551,7 +1613,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsIsLockFree0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const iterations = 3;
       let validationCount = 0;
 
@@ -1571,6 +1633,7 @@ export default function atomicsIsLockFreeTest() {
 
       await asyncLoopWithValidation(4);
       expect(validationCount).assertEqual(iterations); // All results passed validation
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0064
@@ -1580,7 +1643,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsIsLockFree0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const innerRace = (size: number) => {
         return Promise.race([
           Promise.resolve(ArkTSUtils.Atomics.isLockFree(size)),
@@ -1595,6 +1658,7 @@ export default function atomicsIsLockFreeTest() {
       ]);
 
       expect(typeof finalResult).assertEqual('boolean');
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0065
@@ -1604,7 +1668,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsIsLockFree0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const adjustSizeAndCheck = async (baseSize: number, offset: number) => {
         await new Promise<void>(resolve => setTimeout(resolve, 3));
         const adjustedSize = baseSize + offset;
@@ -1620,6 +1684,7 @@ export default function atomicsIsLockFreeTest() {
 
       expect(typeof result1).assertEqual('boolean');
       expect(typeof result2).assertEqual('boolean');
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0066
@@ -1629,7 +1694,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsIsLockFree0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const filteredResults: type51[] = await atomicsIsLockFreeTest099();
 
 
@@ -1642,6 +1707,7 @@ export default function atomicsIsLockFreeTest() {
           expect(res.isFree).assertEqual(filteredResults[0].isFree);
         }
       });
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0067
@@ -1651,7 +1717,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsIsLockFree0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const validSizes = [1, 2, 4, 8];
       const batchResults: typeLock100[] = [];
 
@@ -1672,6 +1738,7 @@ export default function atomicsIsLockFreeTest() {
         expect(res.isValid).assertEqual(true);
         expect(typeof res.isFree).assertEqual('boolean');
       });
+      done();
     });
 /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0068
@@ -1681,7 +1748,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsIsLockFree0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(12);
       const ia = new collections.Int32Array(sab);
       ia[0] = 3;  // Val1
@@ -1700,6 +1767,7 @@ export default function atomicsIsLockFreeTest() {
       expect(ArkTSUtils.Atomics.load(ia, 0)).assertEqual(5);
       expect(ArkTSUtils.Atomics.load(ia, 1)).assertEqual(4);
       expect(ArkTSUtils.Atomics.load(ia, 2)).assertEqual(9);
+      done();
     });
 /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0069
@@ -1709,9 +1777,10 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsIsLockFree0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const objectArg: Record<string, number> = { 'value': 4 };
       expect(ArkTSUtils.Atomics.isLockFree(objectArg as Object as number)).assertFalse();
+      done();
     });
 /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0070
@@ -1721,9 +1790,10 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsIsLockFree0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const arrayArg: number[] = [4];
       expect(ArkTSUtils.Atomics.isLockFree(arrayArg as Object as number)).assertTrue();
+      done();
     });
 /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0071
@@ -1733,10 +1803,11 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsIsLockFree0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const maxSafeInt = Number.MAX_SAFE_INTEGER; // 9007199254740991
       const result = ArkTSUtils.Atomics.isLockFree(maxSafeInt);
       expect(result).assertEqual(false);
+      done();
     });
 /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0072
@@ -1746,10 +1817,11 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsIsLockFree0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const minSafeInt = Number.MIN_SAFE_INTEGER; // -9007199254740991
       const result = ArkTSUtils.Atomics.isLockFree(minSafeInt);
       //expect(result).assertEqual(false);
+      done();
     });
 /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0073
@@ -1759,7 +1831,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsIsLockFree0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const promises = [
         // Valid check
         Promise.resolve(ArkTSUtils.Atomics.isLockFree(2)),
@@ -1781,6 +1853,7 @@ export default function atomicsIsLockFreeTest() {
       // Check third valid promise
       expect(results[2].status).assertEqual('fulfilled');
       expect(typeof (results[2] as PromiseFulfilledResult<boolean>).value).assertEqual('boolean');
+      done();
     });
 /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0074
@@ -1790,13 +1863,14 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testArkTSUtilsAtomicsIsLockFree0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const elementSize = 4;
       const result1 = ArkTSUtils.Atomics.isLockFree(elementSize);
       const result2 = ArkTSUtils.Atomics.isLockFree(elementSize);
       const result3 = ArkTSUtils.Atomics.isLockFree(elementSize);
       expect(result1).assertEqual(result2);
       expect(result2).assertEqual(result3);
+      done();
     });
 /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0075
@@ -1806,8 +1880,9 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsIsLockFree0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       expect(ArkTSUtils.Atomics.isLockFree(Number.MAX_VALUE)).assertEqual(false);
+      done();
     });
 /**
      * @tc.name   testArkTSUtilsAtomicsIsLockFree0076
@@ -1817,7 +1892,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsIsLockFree0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsIsLockFree0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const asyncSizeCheck = async () => {
         let result: boolean | null = null;
         try {
@@ -1831,6 +1906,7 @@ export default function atomicsIsLockFreeTest() {
 
       const result = await asyncSizeCheck();
       expect(typeof result).assertEqual('boolean');
+      done();
     });
   })
 }

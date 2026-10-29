@@ -531,7 +531,7 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 10;
@@ -561,6 +561,7 @@ export default function atomicsExchangeTest() {
 
       expect(['task1', 'task2'].includes(winner)).assertTrue();
       expect([20, 30].includes(ia[0])).assertTrue(); // Matches winning task's value
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsExchange0031
@@ -570,7 +571,7 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 0;
@@ -606,6 +607,7 @@ export default function atomicsExchangeTest() {
       expect(isComplete[0]).assertEqual(true);
       expect(ia[0]).assertEqual(target);
       expect(retryCount).assertLargerOrEqual(target); // Retries occurred
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsExchange0032
@@ -615,7 +617,7 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(8); // 2 Int32 elements
       const ia = new collections.Int32Array(sab);
       ia[0] = 5;
@@ -641,6 +643,7 @@ export default function atomicsExchangeTest() {
       expect(old[1]).assertEqual(15);
       expect(ia[0]).assertEqual(10);
       expect(ia[1]).assertEqual(20);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsExchange0033
@@ -650,10 +653,11 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const oldValues: number[] = await atomicsExchangeTest054();
 
       expect(oldValues).assertDeepEquals([10, 20, 30]);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsExchange0034
@@ -663,7 +667,7 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 8;
@@ -690,6 +694,7 @@ export default function atomicsExchangeTest() {
       expect(timeoutTriggered).assertEqual(true);
       expect(result).assertEqual(-1);
       expect(ia[0]).assertEqual(8); // No exchange (timeout won)
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsExchange0035
@@ -699,7 +704,7 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       class AtomicUpdater {
         private ia: collections.Int32Array;
 
@@ -744,6 +749,7 @@ export default function atomicsExchangeTest() {
       const isVerified = await updater.updateAndVerify(0, 15);
       expect(isVerified).assertEqual(true);
       expect(updater.getIa()[0]).assertEqual(15); // Access private for test
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsExchange0036
@@ -753,7 +759,7 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(8); // 2 Int32 elements (state + data)
       const ia = new collections.Int32Array(sab);
       ia[0] = 0; // State: 0=idle, 1=ready
@@ -796,6 +802,7 @@ export default function atomicsExchangeTest() {
       expect(oldData[0]).assertEqual(10);
       expect(ia[1]).assertEqual(20);
       expect(ia[0]).assertEqual(1);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsExchange0037
@@ -805,7 +812,7 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 0;
@@ -834,6 +841,7 @@ export default function atomicsExchangeTest() {
 
       expect(lastOldValue).assertEqual(5);
       expect(ia[0]).assertEqual(7);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsExchange0038
@@ -843,7 +851,7 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 10;
@@ -877,6 +885,7 @@ export default function atomicsExchangeTest() {
       expect(success).assertEqual(false);
       expect(retryCount).assertEqual(maxRetries);
       expect(ia[0]).assertEqual(12); // 10 + 2 retries = 12
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsExchange0039
@@ -886,7 +895,7 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(8); // 2 Int32 elements
       const ia = new collections.Int32Array(sab);
       ia[0] = 5;
@@ -915,6 +924,7 @@ export default function atomicsExchangeTest() {
       expect(finalOldValue).assertEqual(15);
       expect(ia[0]).assertEqual(10);
       expect(ia[1]).assertEqual(20);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsExchange0040
@@ -924,11 +934,12 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       // Consume iterator (3 dynamic updates)
       const oldValues: number[] = await atomicsExchangeTest063();
 
       expect(oldValues).assertDeepEquals([0, 0, 0]); // 0→0, 0→2, 2→4
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsExchange0041
@@ -938,7 +949,7 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(8); // 2 Int32 elements (A: trigger, B: data)
       const ia = new collections.Int32Array(sab);
       ia[0] = 0; // Trigger (0: not ready, 1: ready)
@@ -981,6 +992,7 @@ export default function atomicsExchangeTest() {
       expect(oldB[0]).assertEqual(10);
       expect(ia[1]).assertEqual(20);
       expect(ia[0]).assertEqual(1);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsExchange0042
@@ -990,7 +1002,7 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(8); // 2 Int32 elements (data + cleanup flag)
       const ia = new collections.Int32Array(sab);
       ia[0] = 15; // Data
@@ -1032,6 +1044,7 @@ export default function atomicsExchangeTest() {
       expect(ia[0]).assertEqual(0);
       expect(ia[1]).assertEqual(1);
       expect(cleanupRan).assertEqual(true); // Cleanup ran twice
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsExchange0043
@@ -1041,7 +1054,7 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 8;
@@ -1073,6 +1086,7 @@ export default function atomicsExchangeTest() {
       expect(cancelled).assertEqual(true);
       expect(result).assertEqual(-1);
       expect(ia[0]).assertEqual(8); // No exchange (cancelled)
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsExchange0044
@@ -1082,7 +1096,7 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
 
       // Base class with atomic exchange
       class BaseAtomic {
@@ -1121,6 +1135,7 @@ export default function atomicsExchangeTest() {
       const isUpdated = await updater.updateData(20);
       expect(isUpdated).assertEqual(true);
       expect(updater.getData()).assertEqual(20);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsExchange0045
@@ -1130,7 +1145,7 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(12); // 3 Int32 elements
       const ia = new collections.Int32Array(sab);
       ia[0] = 5;
@@ -1161,6 +1176,7 @@ export default function atomicsExchangeTest() {
       expect(ia[1]).assertEqual(30); // Index 1 updated
       expect(ia[0]).assertEqual(5); // Index 0 unchanged
       expect(ia[2]).assertEqual(25); // Index 2 unchanged
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsExchange0046
@@ -1170,7 +1186,7 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 10;
@@ -1212,6 +1228,7 @@ export default function atomicsExchangeTest() {
       expect(success1).assertEqual(true);
       expect(success2).assertEqual(false);
       expect(ia[0]).assertEqual(20); // Only first exchange succeeds
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsExchange0047
@@ -1221,7 +1238,7 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 0;
@@ -1253,6 +1270,7 @@ export default function atomicsExchangeTest() {
 
       expect(isReached).assertEqual(true);
       expect(ia[0]).assertEqual(4);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsExchange0048
@@ -1262,7 +1280,7 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(8); // 2 Int32 elements (A and B)
       const ia = new collections.Int32Array(sab);
       ia[0] = 10;
@@ -1296,6 +1314,7 @@ export default function atomicsExchangeTest() {
       expect(isConsistent).assertEqual(false);
       expect(ia[0]).assertEqual(20);
       expect(ia[1]).assertEqual(30);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsExchange0049
@@ -1305,7 +1324,7 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 5;
@@ -1347,6 +1366,7 @@ export default function atomicsExchangeTest() {
       expect(retryCount).assertLarger(0); // Retries occurred
       expect(oldValue).assertEqual(5);
       expect(ia[0]).assertEqual(16); // Recovered to 16 (15+1)
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsExchange0050
@@ -1356,7 +1376,7 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 10;
@@ -1388,6 +1408,7 @@ export default function atomicsExchangeTest() {
       await Promise.race([exchangeTo20(), exchangeTo30()]);
       expect(['closure1', 'closure2'].includes(winner)).assertTrue()
       expect([20, 30].includes(ia[0])).assertTrue(); // Matches winner's value
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsExchange0051
@@ -1397,7 +1418,7 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       class SharedAtomic {
         private ia: collections.Int32Array;
         private index: number;
@@ -1439,6 +1460,7 @@ export default function atomicsExchangeTest() {
       expect(old2).assertEqual(15);
       expect(instance1.getValue()).assertEqual(10);
       expect(instance2.getValue()).assertEqual(20);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsExchange0052
@@ -1448,7 +1470,7 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 0;
@@ -1476,6 +1498,7 @@ export default function atomicsExchangeTest() {
       expect(oldValue).assertEqual(0);
       expect(ia[0]).assertLargerOrEqual(10); // Matches API mock range
       expect(ia[0]).assertLessOrEqual(109);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsExchange0053
@@ -1485,7 +1508,7 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       const initialValue = 5;
@@ -1521,6 +1544,7 @@ export default function atomicsExchangeTest() {
       expect(oldValue).assertEqual(initialValue);
       expect(resetDone).assertEqual(true);
       expect(ia[0]).assertEqual(initialValue); // Reset successful
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsExchange0054
@@ -1530,10 +1554,11 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const oldValues: number[] = await atomicsExchangeTest078();
 
       expect(oldValues).assertDeepEquals([10, 15, 25]); // Valid exchanges
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsExchange0055
@@ -1543,7 +1568,7 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(8); // 2 Int32: [lock, data]
       const ia = new collections.Int32Array(sab);
       ia[0] = 0; // Lock: 0=idle, 1=held
@@ -1595,6 +1620,7 @@ export default function atomicsExchangeTest() {
       expect(oldData).assertEqual(5);
       expect(ia[1]).assertEqual(15);
       expect(ia[0]).assertEqual(0); // Lock released
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsExchange0056
@@ -1604,7 +1630,7 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(12); // 3 Int32: [A, B, C]
       const ia = new collections.Int32Array(sab);
       ia[0] = 10; // A
@@ -1668,6 +1694,7 @@ export default function atomicsExchangeTest() {
       expect(success).assertEqual(false);
       expect(rolledBack).assertEqual(false);
       expect(ia).assertDeepEquals(new collections.Int32Array(initialValues)); // All rolled back
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsExchange0057
@@ -1677,7 +1704,7 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 0;
@@ -1715,6 +1742,7 @@ export default function atomicsExchangeTest() {
       expect(res3.success).assertEqual(true);
       expect(res3.old).assertEqual(50);
       expect(ia[0]).assertEqual(75);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsExchange0058
@@ -1724,7 +1752,7 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 10;
@@ -1773,6 +1801,7 @@ export default function atomicsExchangeTest() {
       expect(cancelled).assertEqual(false);
       expect(result).assertEqual(-1);
       expect(ia[0]).assertEqual(10); // No exchange
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsExchange0059
@@ -1782,7 +1811,7 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
 
       // Base class with exchange logic
       abstract class BaseValidator {
@@ -1836,6 +1865,7 @@ export default function atomicsExchangeTest() {
       expect(success2).assertEqual(false);
       expect(success3).assertEqual(true);
       expect(validator.getValue()).assertEqual(12);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsExchange0060
@@ -1845,7 +1875,7 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 8;
@@ -1903,6 +1933,7 @@ export default function atomicsExchangeTest() {
       expect(success1).assertEqual(true);
       expect(success2).assertEqual(false);
       expect(ia[0]).assertEqual(18);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsExchange0061
@@ -1912,7 +1943,7 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 0;
@@ -1956,6 +1987,7 @@ export default function atomicsExchangeTest() {
       expect(history[2].old).assertEqual(20);
       expect(history[2].new).assertEqual(30);
       expect(ia[0]).assertEqual(30);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsExchange0062
@@ -1965,7 +1997,7 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 5;
@@ -2008,6 +2040,7 @@ export default function atomicsExchangeTest() {
       expect(success).assertEqual(true);
       expect(retryCount).assertEqual(1); // 1 retry (4→6: valid)
       expect(ia[0]).assertEqual(6);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsExchange0063
@@ -2017,7 +2050,7 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 10;
@@ -2046,6 +2079,7 @@ export default function atomicsExchangeTest() {
       const oldValue = await apiRace();
       expect(oldValue).assertEqual(10);
       expect(ia[0]).assertEqual(20); // API 1 wins (faster)
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsExchange0064
@@ -2055,7 +2089,7 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
 
       // Class with static shared collections.ArrayBuffer
       class StaticAtomic {
@@ -2088,6 +2122,7 @@ export default function atomicsExchangeTest() {
       expect(old1).assertEqual(0); // Initial value is 0
       expect(old2).assertEqual(15);
       expect(StaticAtomic.getValue()).assertEqual(25);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsExchange0065
@@ -2097,7 +2132,7 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(8); // 2 Int32: [data, resourceFlag]
       const ia = new collections.Int32Array(sab);
       ia[0] = 5;
@@ -2151,6 +2186,7 @@ export default function atomicsExchangeTest() {
       expect(resourceReleased).assertEqual(true);
       expect(ia[0]).assertEqual(15);
       expect(ia[1]).assertEqual(0); // Resource released
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsExchange0066
@@ -2160,7 +2196,7 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 0;
@@ -2194,6 +2230,7 @@ export default function atomicsExchangeTest() {
       expect(success2).assertEqual(false);
       expect(success3).assertEqual(true);
       expect(ia[0]).assertEqual(10);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsExchange0067
@@ -2203,7 +2240,7 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(8); // 2 Int32: [A, B]
       const ia = new collections.Int32Array(sab);
       const initialA = 10;
@@ -2260,6 +2297,7 @@ export default function atomicsExchangeTest() {
       expect(rolledBack).assertEqual(true);
       expect(ia[0]).assertEqual(initialA); // A rolled back
       expect(ia[1]).assertEqual(initialB); // B unchanged
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsExchange0068
@@ -2269,7 +2307,7 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 10;
@@ -2297,6 +2335,7 @@ export default function atomicsExchangeTest() {
       expect(stateChanged).assertEqual(true);
       expect(oldValue[0]).assertEqual(15); // Exchange uses modified state
       expect(ia[0]).assertEqual(20); // Exchange completes after state change
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsExchange0069
@@ -2306,7 +2345,7 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 0;
@@ -2345,6 +2384,7 @@ export default function atomicsExchangeTest() {
       expect(res2.reason).assertEqual('Too frequent');
       expect(res3.success).assertEqual(true);
       expect(ia[0]).assertEqual(30);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsExchange0070
@@ -2354,7 +2394,7 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(8); // 2 Int32: [dependent, trigger]
       const ia = new collections.Int32Array(sab);
       ia[0] = 5; // Dependent value
@@ -2391,6 +2431,7 @@ export default function atomicsExchangeTest() {
       expect(oldDependent[0]).assertEqual(5);
       expect(ia[0]).assertEqual(15);
       expect(ia[1]).assertEqual(1);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsExchange0071
@@ -2400,11 +2441,12 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const oldValues: number[] = await atomicsExchangeTest096();
 
       expect(oldValues).assertDeepEquals([0, 10, 20]); // Stops before 30 (30 > 25)
       // expect(ia[0]).assertEqual(30); // Final value (exceeds stopValue, iterator stops)
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsExchange0072
@@ -2414,7 +2456,7 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 10;
@@ -2456,6 +2498,7 @@ export default function atomicsExchangeTest() {
       expect(auditLog[1].new).assertNaN()
       expect(auditLog[1].success).assertEqual(true);
       expect(ia[0]).assertEqual(0); // Second exchange fails, value unchanged
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsExchange0073
@@ -2465,7 +2508,7 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 15;
@@ -2508,6 +2551,7 @@ export default function atomicsExchangeTest() {
       expect(success1).assertEqual(true);
       expect(success2).assertEqual(false);
       expect(ia[0]).assertEqual(25);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsExchange0074
@@ -2517,7 +2561,7 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 10;
@@ -2548,6 +2592,7 @@ export default function atomicsExchangeTest() {
 
       expect(['closure1', 'closure2', 'closure3'].includes(winningId)).assertTrue()
       expect([20, 30, 40].includes(ia[0])).assertTrue(); // Final value matches winning closure
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsExchange0075
@@ -2557,7 +2602,7 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(12); // 3 Int32: [data, lock, cleanupFlag]
       const ia = new collections.Int32Array(sab);
       ia[0] = 5; // Data
@@ -2656,6 +2701,7 @@ export default function atomicsExchangeTest() {
       expect(ia[0]).assertLarger(10); // Final value > adjusted competing value
       expect(ia[1]).assertEqual(0); // Lock released
       expect(ia[2]).assertEqual(1); // Cleanup flag set
+      done();
     });
 /**
      * @tc.name   testArkTSUtilsAtomicsExchange0076
@@ -2665,7 +2711,7 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 5;
@@ -2705,6 +2751,7 @@ export default function atomicsExchangeTest() {
       expect(success).assertEqual(false);
       expect(errorCaught).assertEqual(true);
       expect(ia[0]).assertEqual(10);
+      done();
     });
 /**
      * @tc.name   testArkTSUtilsAtomicsExchange0077
@@ -2714,7 +2761,7 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(8); // 2 Int32 elements
       const ia = new collections.Int32Array(sab);
       ia[0] = 5;
@@ -2745,6 +2792,7 @@ export default function atomicsExchangeTest() {
       expect((results[1] as PromiseRejectedResult).reason.message).assertEqual('Index 1 blocked');
       expect(ia[0]).assertEqual(10); // Updated
       expect(ia[1]).assertEqual(15); // Not updated
+      done();
     });
 /**
      * @tc.name   testArkTSUtilsAtomicsExchange0078
@@ -2754,7 +2802,7 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 5;
@@ -2791,6 +2839,7 @@ export default function atomicsExchangeTest() {
       expect(success).assertEqual(false);
       expect(errorPropagated).assertEqual(true);
       expect(ia[0]).assertEqual(10); // First exchange persists
+      done();
     });
 /**
      * @tc.name   testArkTSUtilsAtomicsExchange0079
@@ -2828,7 +2877,7 @@ export default function atomicsExchangeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsExchange0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsExchange0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(12);
       const ia = new collections.Int32Array(sab);
       ia[0] = 5;
@@ -2863,6 +2912,7 @@ export default function atomicsExchangeTest() {
       expect(ia[0]).assertEqual(10);
       expect(ia[1]).assertEqual(15);
       expect(ia[2]).assertEqual(30);
+      done();
     });
   })
 }

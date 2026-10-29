@@ -37,7 +37,7 @@ export default function atomicsCombTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testArkTSUtilsAtomicsComb0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testArkTSUtilsAtomicsComb0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const view = new collections.Int32Array(sab);
 
@@ -45,6 +45,7 @@ export default function atomicsCombTest() {
       const result = ArkTSUtils.Atomics.load(view, 0);
 
       expect(result).assertEqual(42);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsComb0002
@@ -54,7 +55,7 @@ export default function atomicsCombTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testArkTSUtilsAtomicsComb0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testArkTSUtilsAtomicsComb0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const view = new collections.Int32Array(sab);
 
@@ -64,6 +65,7 @@ export default function atomicsCombTest() {
 
       const result = newValue;
       expect(result).assertEqual(15);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsComb0003
@@ -73,7 +75,7 @@ export default function atomicsCombTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testArkTSUtilsAtomicsComb0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testArkTSUtilsAtomicsComb0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const view = new collections.Int32Array(sab);
 
@@ -83,6 +85,7 @@ export default function atomicsCombTest() {
 
       const result = newValue;
       expect(result).assertEqual(13);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsComb0004
@@ -92,7 +95,7 @@ export default function atomicsCombTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testArkTSUtilsAtomicsComb0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testArkTSUtilsAtomicsComb0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const view = new collections.Int32Array(sab);
 
@@ -102,6 +105,7 @@ export default function atomicsCombTest() {
 
       const result = newValue;
       expect(result).assertEqual(200);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsComb0005
@@ -111,7 +115,7 @@ export default function atomicsCombTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testArkTSUtilsAtomicsComb0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testArkTSUtilsAtomicsComb0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const view = new collections.Int32Array(sab);
 
@@ -121,6 +125,7 @@ export default function atomicsCombTest() {
 
       const result = newValue;
       expect(result).assertEqual(150);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsComb0006
@@ -130,7 +135,7 @@ export default function atomicsCombTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testArkTSUtilsAtomicsComb0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testArkTSUtilsAtomicsComb0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const view = new collections.Int32Array(sab);
 
@@ -142,6 +147,7 @@ export default function atomicsCombTest() {
 
       const result = ArkTSUtils.Atomics.load(view, 0);
       expect(result).assertEqual(2);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsComb0007
@@ -151,7 +157,7 @@ export default function atomicsCombTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsComb0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsComb0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const view = new collections.Int32Array(sab);
 
@@ -167,6 +173,7 @@ export default function atomicsCombTest() {
 
       const result = ArkTSUtils.Atomics.load(view, 0);
       expect(result).assertEqual(46);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsComb0008
@@ -176,7 +183,7 @@ export default function atomicsCombTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsComb0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsComb0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       // 测试ArkTSUtils.Atomics.isLockFree方法
       // 检查不同大小的原子操作是否是无锁的
 
@@ -201,6 +208,7 @@ export default function atomicsCombTest() {
 
       const result = ArkTSUtils.Atomics.load(view, 0);
       expect(result).assertEqual(42);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsComb0009
@@ -210,7 +218,7 @@ export default function atomicsCombTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsComb0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsComb0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       // 测试不同视图上的原子操作
       const sab = new collections.ArrayBuffer(8); // 8字节共享内存
 
@@ -234,6 +242,7 @@ export default function atomicsCombTest() {
       const combinedResult = result1 + result2 + 10; // 15 + 17 + 10 = 42
 
       expect(combinedResult).assertEqual(42);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsComb0010
@@ -243,7 +252,7 @@ export default function atomicsCombTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsComb0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsComb0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       // 测试复杂的原子操作序列
       const sab = new collections.ArrayBuffer(16); // 16字节共享内存
       const view = new collections.Int32Array(sab);
@@ -274,6 +283,7 @@ export default function atomicsCombTest() {
       const combinedResult = (result1 + result2 + result3 + result4) - 31;
 
       expect(combinedResult).assertEqual(77);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsComb0011
@@ -283,7 +293,7 @@ export default function atomicsCombTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testArkTSUtilsAtomicsComb0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testArkTSUtilsAtomicsComb0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const view = new collections.Int32Array(sab);
 
@@ -295,6 +305,7 @@ export default function atomicsCombTest() {
 
       const result = ArkTSUtils.Atomics.load(view, 0);
       expect(result).assertEqual(42);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsComb0012
@@ -304,7 +315,7 @@ export default function atomicsCombTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testArkTSUtilsAtomicsComb0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testArkTSUtilsAtomicsComb0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const view = new collections.Int32Array(sab);
 
@@ -319,6 +330,7 @@ export default function atomicsCombTest() {
 
       const result = ArkTSUtils.Atomics.load(view, 0);
       expect(result).assertEqual(42);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsComb0013
@@ -328,7 +340,7 @@ export default function atomicsCombTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testArkTSUtilsAtomicsComb0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testArkTSUtilsAtomicsComb0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(8);
       const view = new collections.Int32Array(sab);
 
@@ -344,6 +356,7 @@ export default function atomicsCombTest() {
       const result = oldValue1 + oldValue2 + 17; // 10 + 20 + 12 = 42
 
       expect(result).assertEqual(47);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsComb0014
@@ -353,7 +366,7 @@ export default function atomicsCombTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testArkTSUtilsAtomicsComb0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testArkTSUtilsAtomicsComb0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const view = new collections.Int32Array(sab);
 
@@ -366,6 +379,7 @@ export default function atomicsCombTest() {
 
       const result = ArkTSUtils.Atomics.load(view, 0);
       expect(result).assertEqual(42);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsComb0015
@@ -375,7 +389,7 @@ export default function atomicsCombTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testArkTSUtilsAtomicsComb0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testArkTSUtilsAtomicsComb0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const view = new collections.Int32Array(sab);
 
@@ -387,6 +401,7 @@ export default function atomicsCombTest() {
 
       const result = ArkTSUtils.Atomics.load(view, 0);
       expect(result).assertEqual(42);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsComb0016
@@ -396,7 +411,7 @@ export default function atomicsCombTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testArkTSUtilsAtomicsComb0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testArkTSUtilsAtomicsComb0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const view = new collections.Int32Array(sab);
 
@@ -408,6 +423,7 @@ export default function atomicsCombTest() {
 
       const result = ArkTSUtils.Atomics.load(view, 0);
       expect(result).assertEqual(42);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsComb0017
@@ -417,7 +433,7 @@ export default function atomicsCombTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsComb0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsComb0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(8);
 
       // 创建多个视图
@@ -433,6 +449,7 @@ export default function atomicsCombTest() {
 
       const result = ArkTSUtils.Atomics.load(int32View, 0);
       expect(result).assertEqual(42);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsComb0018
@@ -442,7 +459,7 @@ export default function atomicsCombTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsComb0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsComb0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(8);
 
       // 创建重叠视图
@@ -459,6 +476,7 @@ export default function atomicsCombTest() {
       const result = (ArkTSUtils.Atomics.load(int32View, 0) >> 16) & 0xFFFF;
 
       expect(result).assertEqual(42);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsComb0019
@@ -468,7 +486,7 @@ export default function atomicsCombTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsComb0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsComb0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const view = new collections.Int32Array(sab);
 
@@ -482,6 +500,7 @@ export default function atomicsCombTest() {
       const result = ArkTSUtils.Atomics.load(view, 0) & 0xFFFF;
 
       expect(result).assertEqual(42);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsComb0020
@@ -491,7 +510,7 @@ export default function atomicsCombTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsComb0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsComb0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(8);
       const view = new collections.Int32Array(sab);
 
@@ -521,6 +540,7 @@ export default function atomicsCombTest() {
 
       const finalResult = ArkTSUtils.Atomics.load(view, 1);
       expect(finalResult).assertEqual(42);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsComb0021
@@ -530,7 +550,7 @@ export default function atomicsCombTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsComb0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsComb0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(16);
 
       // 创建不同数据类型的视图
@@ -551,6 +571,7 @@ export default function atomicsCombTest() {
       const result = Math.round(floatValue);
 
       expect(result).assertEqual(0);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsComb0022
@@ -560,7 +581,7 @@ export default function atomicsCombTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsComb0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsComb0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const view = new collections.Int32Array(sab);
 
@@ -575,6 +596,7 @@ export default function atomicsCombTest() {
 
       const result = ArkTSUtils.Atomics.load(view, 0);
       expect(result).assertEqual(32);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsComb0023
@@ -584,7 +606,7 @@ export default function atomicsCombTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsComb0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsComb0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const view = new collections.Int32Array(sab);
 
@@ -600,6 +622,7 @@ export default function atomicsCombTest() {
 
       const result = ArkTSUtils.Atomics.load(view, 0);
       expect(result).assertEqual(42);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsComb0024
@@ -609,7 +632,7 @@ export default function atomicsCombTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsComb0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsComb0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const view = new collections.Int32Array(sab);
 
@@ -623,6 +646,7 @@ export default function atomicsCombTest() {
 
       const result = ArkTSUtils.Atomics.load(view, 0);
       expect(result).assertEqual(42);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsComb0025
@@ -632,7 +656,7 @@ export default function atomicsCombTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsComb0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsComb0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const view = new collections.Int32Array(sab);
 
@@ -651,6 +675,7 @@ export default function atomicsCombTest() {
 
       const result = ArkTSUtils.Atomics.load(view, 0);
       expect(result).assertEqual(42);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsComb0026
@@ -660,7 +685,7 @@ export default function atomicsCombTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsComb0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsComb0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const view = new collections.Int32Array(sab);
 
@@ -677,6 +702,7 @@ export default function atomicsCombTest() {
 
       const result = ArkTSUtils.Atomics.load(data.view, data.index);
       expect(result).assertEqual(42);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsComb0027
@@ -686,7 +712,7 @@ export default function atomicsCombTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsComb0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsComb0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(16);
       const view = new collections.Int32Array(sab);
 
@@ -705,6 +731,7 @@ export default function atomicsCombTest() {
 
       const result = ArkTSUtils.Atomics.load(view, 2);
       expect(result).assertEqual(42);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsComb0028
@@ -714,7 +741,7 @@ export default function atomicsCombTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsComb0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsComb0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(16);
       const view = new collections.Int32Array(sab);
 
@@ -744,6 +771,7 @@ export default function atomicsCombTest() {
 
       const result = ArkTSUtils.Atomics.load(view, 3);
       expect(result).assertEqual(42);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsComb0029
@@ -753,7 +781,7 @@ export default function atomicsCombTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsComb0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsComb0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const sab1 = new collections.ArrayBuffer(4);
       const sab2 = new collections.ArrayBuffer(4);
       const sab3 = new collections.ArrayBuffer(4);
@@ -777,6 +805,7 @@ export default function atomicsCombTest() {
 
       const result = ArkTSUtils.Atomics.load(view1, 0);
       expect(result).assertEqual(42);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsComb0030
@@ -786,7 +815,7 @@ export default function atomicsCombTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsComb0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsComb0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(32);
 
       // 创建复杂的偏移视图
@@ -816,6 +845,7 @@ export default function atomicsCombTest() {
 
       const result2 = ArkTSUtils.Atomics.load(viewWithOffset, 0);
       expect(result2).assertEqual(42);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsComb0031
@@ -825,7 +855,7 @@ export default function atomicsCombTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsComb0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsComb0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 15; // Initial value
@@ -843,6 +873,7 @@ export default function atomicsCombTest() {
       const failedOldVal = ArkTSUtils.Atomics.compareExchange(ia, 0, 15, 45);
       expect(failedOldVal).assertEqual(30); // Return current value instead of expected old value
       expect(ArkTSUtils.Atomics.load(ia, 0)).assertEqual(30); // Verify no unintended update
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsComb0032
@@ -852,7 +883,7 @@ export default function atomicsCombTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsComb0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsComb0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(32);
       const view = new collections.Int32Array(sab);
 
@@ -888,6 +919,7 @@ export default function atomicsCombTest() {
       ArkTSUtils.Atomics.sub(boundarySubarray, 0, 58); // 100 - 58 = 42
 
       expect(ArkTSUtils.Atomics.load(boundarySubarray, 0)).assertEqual(42);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsComb0033
@@ -897,7 +929,7 @@ export default function atomicsCombTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsComb0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsComb0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const view = new collections.Int32Array(sab);
 
@@ -914,6 +946,7 @@ export default function atomicsCombTest() {
 
       const result = ArkTSUtils.Atomics.load(data.view, data.index);
       expect(result).assertEqual(42);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsComb0034
@@ -923,7 +956,7 @@ export default function atomicsCombTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsComb0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsComb0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(16);
       const view = new collections.Int32Array(sab);
 
@@ -942,6 +975,7 @@ export default function atomicsCombTest() {
 
       const result = ArkTSUtils.Atomics.load(view, 2);
       expect(result).assertEqual(42);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsComb0035
@@ -951,7 +985,7 @@ export default function atomicsCombTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsComb0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsComb0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(16);
       const view = new collections.Int32Array(sab);
 
@@ -981,6 +1015,7 @@ export default function atomicsCombTest() {
 
       const result = ArkTSUtils.Atomics.load(view, 3);
       expect(result).assertEqual(42);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsComb0036
@@ -990,7 +1025,7 @@ export default function atomicsCombTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsComb0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsComb0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(1024 * 1024); // 1MB buffer
       const view = new collections.Int32Array(sab);
 
@@ -1003,6 +1038,7 @@ export default function atomicsCombTest() {
 
       const result = ArkTSUtils.Atomics.load(view, index);
       expect(result).assertEqual(42);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsComb0037
@@ -1012,7 +1048,7 @@ export default function atomicsCombTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsComb0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsComb0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(64);
       const view = new collections.Int32Array(sab);
 
@@ -1027,6 +1063,7 @@ export default function atomicsCombTest() {
 
       const result = ArkTSUtils.Atomics.load(view, 2);
       expect(result).assertEqual(42);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsComb0038
@@ -1036,7 +1073,7 @@ export default function atomicsCombTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsComb0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsComb0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(16);
 
       // 创建多个视图
@@ -1053,6 +1090,7 @@ export default function atomicsCombTest() {
 
       const result = ArkTSUtils.Atomics.load(view1, 0);
       expect(result).assertEqual(42);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsComb0039
@@ -1062,7 +1100,7 @@ export default function atomicsCombTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsComb0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsComb0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(16);
       const view = new collections.Int32Array(sab);
 
@@ -1079,6 +1117,7 @@ export default function atomicsCombTest() {
 
       const result = ArkTSUtils.Atomics.load(view, getIndex());
       expect(result).assertEqual(42);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsComb0040
@@ -1088,7 +1127,7 @@ export default function atomicsCombTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsComb0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsComb0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(16);
       const view = new collections.Int32Array(sab);
 
@@ -1103,6 +1142,7 @@ export default function atomicsCombTest() {
 
       const result = ArkTSUtils.Atomics.load(view, 1);
       expect(result).assertEqual(100);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsComb0041
@@ -1112,7 +1152,7 @@ export default function atomicsCombTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsComb0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsComb0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const view = new collections.Int32Array(sab);
 
@@ -1126,6 +1166,7 @@ export default function atomicsCombTest() {
 
       const result = ArkTSUtils.Atomics.load(view, 0);
       expect(result).assertEqual(42);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsComb0042
@@ -1135,7 +1176,7 @@ export default function atomicsCombTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsComb0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsComb0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 0; // Initial state: 0 (off)
@@ -1153,6 +1194,7 @@ export default function atomicsCombTest() {
       expect(old2).assertEqual(0);
       expect(toggle2).assertEqual(1);
       expect(ia[0]).assertEqual(0);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsComb0043
@@ -1162,7 +1204,7 @@ export default function atomicsCombTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsComb0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsComb0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const view = new collections.Int32Array(sab);
 
@@ -1178,6 +1220,7 @@ export default function atomicsCombTest() {
 
       const result = ArkTSUtils.Atomics.load(view, 0);
       expect(result).assertEqual(42);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsComb0044
@@ -1187,7 +1230,7 @@ export default function atomicsCombTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsComb0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsComb0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(32);
       const view = new collections.Int32Array(sab);
 
@@ -1239,6 +1282,7 @@ export default function atomicsCombTest() {
 
       const result = ArkTSUtils.Atomics.load(view, OFFSETS.result);
       expect(result).assertEqual(42);
+      done();
     });
 /**
      * @tc.name   testArkTSUtilsAtomicsComb0045
@@ -1248,7 +1292,7 @@ export default function atomicsCombTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsComb0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsComb0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const view = new collections.Int32Array(sab);
 
@@ -1264,6 +1308,7 @@ export default function atomicsCombTest() {
 
       const result = transferredView[0];
       expect(result).assertEqual(42);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsComb0046
@@ -1273,7 +1318,7 @@ export default function atomicsCombTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkTSUtilsAtomicsComb0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testArkTSUtilsAtomicsComb0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const buffer = new collections.ArrayBuffer(4);
       const view = new collections.Int32Array(buffer);
 
@@ -1281,6 +1326,7 @@ export default function atomicsCombTest() {
       ArkTSUtils.Atomics.sub(view, 0, 58);
 
       expect(ArkTSUtils.Atomics.load(view, 0)).assertEqual(42);
+      done();
     });
   })
 }

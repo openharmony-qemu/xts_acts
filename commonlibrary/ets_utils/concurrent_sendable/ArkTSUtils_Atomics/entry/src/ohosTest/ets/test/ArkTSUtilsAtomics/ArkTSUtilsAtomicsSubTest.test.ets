@@ -447,7 +447,7 @@ export default function atomicsSubTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsSub0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsSub0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 85;
@@ -464,6 +464,7 @@ export default function atomicsSubTest() {
       const oldValue = await asyncSub(ia, 0, 25);
       expect(oldValue).assertEqual(85);
       expect(ia[0]).assertEqual(60);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsSub0024
@@ -473,7 +474,7 @@ export default function atomicsSubTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsSub0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsSub0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(8);
       const ia = new collections.Int32Array(sab);
       ia[0] = 60;
@@ -497,6 +498,7 @@ export default function atomicsSubTest() {
       expect(old[1]).assertEqual(90);
       expect(ia[0]).assertEqual(45);
       expect(ia[1]).assertEqual(60);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsSub0025
@@ -506,7 +508,7 @@ export default function atomicsSubTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsSub0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsSub0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(8);
       const ia = new collections.Int32Array(sab);
       ia[0] = 40;
@@ -529,6 +531,7 @@ export default function atomicsSubTest() {
       expect(oldValue).assertEqual(70);
       expect(ia[1]).assertEqual(45);
       expect(ia[0]).assertEqual(40); // Unchanged
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsSub0026
@@ -538,7 +541,7 @@ export default function atomicsSubTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsSub0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsSub0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 50;
@@ -561,6 +564,7 @@ export default function atomicsSubTest() {
       expect(retryCount).assertEqual(1);
       expect(oldValue).assertEqual(50);
       expect(ia[0]).assertEqual(38);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsSub0027
@@ -570,7 +574,7 @@ export default function atomicsSubTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsSub0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsSub0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 100;
@@ -594,6 +598,7 @@ export default function atomicsSubTest() {
 
       expect([100, 80].includes(winnerOld)).assertTrue(); // Either task wins first
       expect(ia[0]).assertEqual(50); // 100 -20-30 = 50
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsSub0028
@@ -603,7 +608,7 @@ export default function atomicsSubTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsSub0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsSub0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 75;
@@ -626,6 +631,7 @@ export default function atomicsSubTest() {
       const oldValue = await dynamicSub(ia, 0);
       expect(oldValue).assertEqual(75);
       expect(ia[0]).assertEqual(50);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsSub0029
@@ -635,7 +641,7 @@ export default function atomicsSubTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsSub0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsSub0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 60;
@@ -660,6 +666,7 @@ export default function atomicsSubTest() {
       const validResult = results[0] as PromiseFulfilledResult<number>;
       expect(validResult.value).assertEqual(60);
       expect(ia[0]).assertEqual(45);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsSub0030
@@ -669,7 +676,7 @@ export default function atomicsSubTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsSub0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsSub0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 120;
@@ -700,6 +707,7 @@ export default function atomicsSubTest() {
       expect(history[1].new).assertEqual(70);
       expect(history[2].old).assertEqual(70);
       expect(history[2].new).assertEqual(55);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsSub0031
@@ -709,7 +717,7 @@ export default function atomicsSubTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsSub0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsSub0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 80;
@@ -752,6 +760,7 @@ export default function atomicsSubTest() {
       expect(log.length).assertEqual(1);
       expect(log[0]).assertEqual('Sub: old=80, new=50');
       expect(ia[0]).assertEqual(50);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsSub0032
@@ -761,7 +770,7 @@ export default function atomicsSubTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsSub0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsSub0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(12);
       const ia = new collections.Int32Array(sab);
       ia[0] = 25;
@@ -786,6 +795,7 @@ export default function atomicsSubTest() {
       expect(ia[2]).assertEqual(55);
       expect(ia[0]).assertEqual(25); // Unchanged
       expect(ia[1]).assertEqual(50); // Unchanged
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsSub0033
@@ -795,7 +805,7 @@ export default function atomicsSubTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsSub0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsSub0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 65;
@@ -814,6 +824,7 @@ export default function atomicsSubTest() {
       const result = await Promise.race([subTask, timeoutTask]);
       expect(result).assertEqual(65); // Subtract task wins
       expect(ia[0]).assertEqual(50);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsSub0034
@@ -823,7 +834,7 @@ export default function atomicsSubTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsSub0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsSub0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 40;
@@ -846,6 +857,7 @@ export default function atomicsSubTest() {
       expect(errorCaught).assertEqual(true);
       expect(result).assertNull();
       expect(ia[0]).assertEqual(40); // Unchanged
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsSub0035
@@ -855,7 +867,7 @@ export default function atomicsSubTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsSub0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsSub0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(12);
       const ia = new collections.Int32Array(sab);
       ia[0] = 30;
@@ -881,6 +893,7 @@ export default function atomicsSubTest() {
       expect(ia[0]).assertEqual(25); // 30 - 5
       expect(ia[1]).assertEqual(45); // 60 - 15
       expect(ia[2]).assertEqual(65); // 90 - 25
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsSub0036
@@ -890,7 +903,7 @@ export default function atomicsSubTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsSub0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsSub0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 50;
@@ -924,6 +937,7 @@ export default function atomicsSubTest() {
       expect(result2.success).assertEqual(false);
       expect(result2.old).assertEqual(25);
       expect(ia[0]).assertEqual(25);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsSub0037
@@ -933,7 +947,7 @@ export default function atomicsSubTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsSub0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsSub0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 70;
@@ -957,6 +971,7 @@ export default function atomicsSubTest() {
       expect(oldValue[0]).assertEqual(70);
       expect(stateCheckPassed).assertEqual(true);
       expect(ia[0]).assertEqual(50);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsSub0038
@@ -966,7 +981,7 @@ export default function atomicsSubTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsSub0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsSub0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 8;
@@ -981,6 +996,7 @@ export default function atomicsSubTest() {
       ArkTSUtils.Atomics.sub(ia, 0, 1); // Final decrement (if above floor)
 
       expect(ia[0]).assertEqual(Math.max(current - 2 - 1, floor));
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsSub0039
@@ -990,7 +1006,7 @@ export default function atomicsSubTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsSub0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsSub0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 100;
@@ -1015,6 +1031,7 @@ export default function atomicsSubTest() {
 
       expect(valLog).assertDeepEquals([20, 15, 10]);
       expect(ia[0]).assertEqual(55); // 100 -20-15-10 = 55
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsSub0040
@@ -1024,7 +1041,7 @@ export default function atomicsSubTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsSub0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsSub0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 90;
@@ -1054,6 +1071,7 @@ export default function atomicsSubTest() {
       const oldValue = await conditionalSub(ia, 0);
       expect(oldValue).assertEqual(90);
       expect(ia[0]).assertEqual(65); // 90 > 50 → subtract 25 (90-25=65)
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsSub0041
@@ -1063,7 +1081,7 @@ export default function atomicsSubTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsSub0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsSub0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 80;
@@ -1091,6 +1109,7 @@ export default function atomicsSubTest() {
       const secondOld = await secondSub(ia);
       expect(secondOld).assertEqual(60); // First subtract result is 60
       expect(ia[0]).assertEqual(40); // 60 - 20 = 40
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsSub0042
@@ -1100,7 +1119,7 @@ export default function atomicsSubTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsSub0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsSub0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 95;
@@ -1124,6 +1143,7 @@ export default function atomicsSubTest() {
 
       expect([95, 65, 70].includes(winnerOld)).assertTrue(); // Depends on execution order
       expect(ia[0]).assertEqual(40); // 95 -30-25 = 40
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsSub0043
@@ -1133,7 +1153,7 @@ export default function atomicsSubTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsSub0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsSub0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(8);
       const ia = new collections.Int32Array(sab);
       ia[0] = 40;
@@ -1173,6 +1193,7 @@ export default function atomicsSubTest() {
       expect(oldValues).assertDeepEquals([40, 60]);
       expect(ia[0]).assertEqual(30); // 40 - 10 = 30
       expect(ia[1]).assertEqual(45); // 60 - 15 = 45
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsSub0044
@@ -1182,7 +1203,7 @@ export default function atomicsSubTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsSub0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsSub0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(8);
       const ia = new collections.Int32Array(sab);
       ia[0] = 50; // Total quota
@@ -1196,6 +1217,7 @@ export default function atomicsSubTest() {
 
       expect(ia[0]).assertEqual(38);
       expect(ia[1]).assertEqual(12);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsSub0045
@@ -1205,7 +1227,7 @@ export default function atomicsSubTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsSub0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsSub0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 65;
@@ -1230,6 +1252,7 @@ export default function atomicsSubTest() {
       expect(oldValue[0]).assertEqual(65);
       expect(cleanedUp).assertEqual(true);
       expect(ia[0]).assertEqual(0); // Cleanup resets value
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsSub0046
@@ -1239,7 +1262,7 @@ export default function atomicsSubTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsSub0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsSub0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 90;
@@ -1269,6 +1292,7 @@ export default function atomicsSubTest() {
       expect(old2).assertEqual(75); // Returns current value (no subtract)
       expect(old3).assertEqual(75);
       expect(ia[0]).assertEqual(55); // 90 -15-20 = 55
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsSub0047
@@ -1278,7 +1302,7 @@ export default function atomicsSubTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsSub0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsSub0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 50;
@@ -1305,6 +1329,7 @@ export default function atomicsSubTest() {
       expect(oldValue).assertEqual(50); // Subtract task wins
       expect(valueChanged).assertEqual(true);
       expect(ia[0]).assertEqual(100); // Change task overwrites result
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsSub0048
@@ -1314,7 +1339,7 @@ export default function atomicsSubTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsSub0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsSub0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(8);
       const ia = new collections.Int32Array(sab);
       ia[0] = 1;
@@ -1326,6 +1351,7 @@ export default function atomicsSubTest() {
 
       ArkTSUtils.Atomics.exchange(ia, 1, ArkTSUtils.Atomics.load(ia, 1) + 1);
       expect(ia[1]).assertEqual(1);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsSub0049
@@ -1335,7 +1361,7 @@ export default function atomicsSubTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsSub0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsSub0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(12);
       const ia = new collections.Int32Array(sab);
       ia[0] = 40;
@@ -1361,6 +1387,7 @@ export default function atomicsSubTest() {
       const values = await batchSubAndAggregate(ia, [0, 1, 2], subs);
       expect(values.oldValues).assertDeepEquals([40, 70, 100]);
       expect(values.newValues).assertDeepEquals([30, 45, 70]); // 40-10, 70-25, 100-30
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsSub0050
@@ -1370,7 +1397,7 @@ export default function atomicsSubTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsSub0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsSub0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 120;
@@ -1395,6 +1422,7 @@ export default function atomicsSubTest() {
 
       expect(cumulativeVal).assertEqual(70);
       expect(ia[0]).assertEqual(50); // 120 -70 =50
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsSub0051
@@ -1404,7 +1432,7 @@ export default function atomicsSubTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsSub0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsSub0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 80;
@@ -1421,6 +1449,7 @@ export default function atomicsSubTest() {
       // Old values depend on execution order, but total subtracted is 45
       expect(oldValues.every(v => v >= 35 && v <= 80)).assertEqual(true);
       expect(ia[0]).assertEqual(35); // 80 -15-20-10 = 35
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsSub0052
@@ -1430,7 +1459,7 @@ export default function atomicsSubTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsSub0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsSub0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 50;
@@ -1454,6 +1483,7 @@ export default function atomicsSubTest() {
       expect(retryCount).assertEqual(1);
       expect(oldValue).assertEqual(50);
       expect(ia[0]).assertEqual(40); // 50 - 10 = 40
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsSub0053
@@ -1463,7 +1493,7 @@ export default function atomicsSubTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsSub0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsSub0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 60;
@@ -1485,6 +1515,7 @@ export default function atomicsSubTest() {
 
       expect(result).assertEqual('timeout'); // Timeout wins
       expect(ia[0]).assertEqual(35); // Subtract task still completes later
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsSub0054
@@ -1494,7 +1525,7 @@ export default function atomicsSubTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsSub0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsSub0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 95;
@@ -1528,6 +1559,7 @@ export default function atomicsSubTest() {
       expect(old1).assertEqual(95);
       expect(errorThrown).assertEqual(true);
       expect(ia[0]).assertEqual(75); // Only first subtract is applied
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsSub0055
@@ -1537,7 +1569,7 @@ export default function atomicsSubTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsSub0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsSub0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 85;
@@ -1563,6 +1595,7 @@ export default function atomicsSubTest() {
       const oldValue = await chainSub(ia, 0);
       expect(oldValue).assertEqual(85);
       expect(ia[0]).assertEqual(70); // 85 - 15 = 70
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsSub0056
@@ -1572,7 +1605,7 @@ export default function atomicsSubTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsSub0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsSub0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 90;
@@ -1600,6 +1633,7 @@ export default function atomicsSubTest() {
       expect(timeLog[1].val).assertEqual(20);
       expect(timeLog[1].timestamp - timeLog[0].timestamp).assertLargerOrEqual(10); // Delay between timestamps
       expect(ia[0]).assertEqual(55); // 90 -15-20 = 55
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsSub0057
@@ -1609,7 +1643,7 @@ export default function atomicsSubTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsSub0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsSub0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 60;
@@ -1636,6 +1670,7 @@ export default function atomicsSubTest() {
       const oldValue = await derivedSub(ia, 0);
       expect(oldValue).assertEqual(60);
       expect(ia[0]).assertEqual(45); // 60 - 15 = 45
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsSub0058
@@ -1645,7 +1680,7 @@ export default function atomicsSubTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsSub0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsSub0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(12);
       const ia = new collections.Int32Array(sab);
       ia[0] = 4;  // X
@@ -1662,6 +1697,7 @@ export default function atomicsSubTest() {
       expect(ia[0]).assertEqual(6);
       expect(ia[1]).assertEqual(9);
       expect(ia[2]).assertEqual(15);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsSub0059
@@ -1671,7 +1707,7 @@ export default function atomicsSubTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsSub0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsSub0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 80;
@@ -1702,6 +1738,7 @@ export default function atomicsSubTest() {
       expect(old2).assertEqual(65); // Returns current value (no subtract)
       expect(old3).assertEqual(65);
       expect(ia[0]).assertEqual(45); // 80 -15-20 = 45
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsSub0060
@@ -1711,7 +1748,7 @@ export default function atomicsSubTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsSub0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsSub0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(8);
       const ia = new collections.Int32Array(sab);
       ia[0] = 50;
@@ -1741,6 +1778,7 @@ export default function atomicsSubTest() {
       expect(oldValues).assertDeepEquals([50, 70, 40]); // Old values for each subtract
       expect(ia[0]).assertEqual(25); // 50 -10-15 = 25
       expect(ia[1]).assertEqual(70); // Invalid value → subtract 0, no change
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsSub0061
@@ -1750,7 +1788,7 @@ export default function atomicsSubTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsSub0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsSub0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 90;
@@ -1778,6 +1816,7 @@ export default function atomicsSubTest() {
       expect(changeHistory[0]).assertDeepEquals({ before: 90, after: 70, val: 20 });
       expect(changeHistory[1]).assertDeepEquals({ before: 70, after: 55, val: 15 });
       expect(ia[0]).assertEqual(55);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsSub0062
@@ -1787,7 +1826,7 @@ export default function atomicsSubTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsSub0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsSub0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(12);
       const ia = new collections.Int32Array(sab);
       ia[0] = 60;
@@ -1859,6 +1898,7 @@ export default function atomicsSubTest() {
         'Sub index 2: old=120, new=90',
         'Cleanup: restored initial values'
       ]);
+      done();
     });
 /**
      * @tc.name   testArkTSUtilsAtomicsSub0063
@@ -1868,7 +1908,7 @@ export default function atomicsSubTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsSub0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsSub0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(8);
       const ia = new collections.Int32Array(sab);
 
@@ -1894,6 +1934,7 @@ export default function atomicsSubTest() {
       const validResult = results[0] as PromiseFulfilledResult<number>;
       expect(validResult.value).assertEqual(75);
       expect(ia[0]).assertEqual(55);
+      done();
     });
 /**
      * @tc.name   testArkTSUtilsAtomicsSub0064

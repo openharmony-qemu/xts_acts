@@ -502,7 +502,7 @@ export default function atomicsXorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsXor0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsXor0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 19; // 0b10011
@@ -519,6 +519,7 @@ export default function atomicsXorTest() {
       const oldValue = await asyncXor(ia, 0, 7); // 0b00111
       expect(oldValue).assertEqual(19);
       expect(ia[0]).assertEqual(20); // 0b10110 (19 ^ 7 = 22)
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsXor0027
@@ -528,7 +529,7 @@ export default function atomicsXorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsXor0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsXor0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(8);
       const ia = new collections.Int32Array(sab);
       ia[0] = 11; // 0b001011
@@ -552,6 +553,7 @@ export default function atomicsXorTest() {
       expect(result[1]).assertEqual(23);
       expect(ia[0]).assertEqual(14);
       expect(ia[1]).assertEqual(30);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsXor0028
@@ -561,7 +563,7 @@ export default function atomicsXorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsXor0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsXor0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(8);
       const ia = new collections.Int32Array(sab);
       ia[0] = 16; // 0b10000
@@ -584,6 +586,7 @@ export default function atomicsXorTest() {
       expect(oldValue).assertEqual(31);
       expect(ia[1]).assertEqual(19);
       expect(ia[0]).assertEqual(16); // Unchanged
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsXor0029
@@ -593,7 +596,7 @@ export default function atomicsXorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsXor0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsXor0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 26; // 0b11010
@@ -616,6 +619,7 @@ export default function atomicsXorTest() {
       expect(retryCount).assertEqual(1);
       expect(oldValue).assertEqual(26);
       expect(ia[0]).assertEqual(18);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsXor0030
@@ -625,7 +629,7 @@ export default function atomicsXorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsXor0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsXor0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 15; // 0b1111
@@ -649,6 +653,7 @@ export default function atomicsXorTest() {
 
       expect([15, 8, 12].includes(winnerOld)).assertTrue(); // Depends on execution order
       expect(ia[0]).assertEqual(4); // 15 ^7^12 = 4
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsXor0031
@@ -658,7 +663,7 @@ export default function atomicsXorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsXor0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsXor0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 49; // 0b110001
@@ -681,6 +686,7 @@ export default function atomicsXorTest() {
       const oldValue = await dynamicXor(ia, 0); // 0b110001 ^ 0b10110 = 0b100111 (39)
       expect(oldValue).assertEqual(49);
       expect(ia[0]).assertEqual(39);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsXor0032
@@ -690,7 +696,7 @@ export default function atomicsXorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsXor0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsXor0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 35;
@@ -715,6 +721,7 @@ export default function atomicsXorTest() {
       const validResult = results[0] as PromiseFulfilledResult<number>;
       expect(validResult.value).assertEqual(35);
       expect(ia[0]).assertEqual(45);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsXor0033
@@ -724,7 +731,7 @@ export default function atomicsXorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsXor0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsXor0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 50; // 0b110010
@@ -760,6 +767,7 @@ export default function atomicsXorTest() {
       expect(history[1].new).assertEqual(41);
       expect(history[2].old).assertEqual(41);
       expect(history[2].new).assertEqual(32);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsXor0034
@@ -769,7 +777,7 @@ export default function atomicsXorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsXor0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsXor0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 27; // 0b11011
@@ -812,6 +820,7 @@ export default function atomicsXorTest() {
       expect(log.length).assertEqual(1);
       expect(log[0]).assertEqual('XOR: old=27, new=21'); // 27 ^14=19
       expect(ia[0]).assertEqual(21);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsXor0035
@@ -821,7 +830,7 @@ export default function atomicsXorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsXor0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsXor0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(12);
       const ia = new collections.Int32Array(sab);
       ia[0] = 12; // 0b1100
@@ -846,6 +855,7 @@ export default function atomicsXorTest() {
       expect(ia[2]).assertEqual(62);
       expect(ia[0]).assertEqual(12); // Unchanged
       expect(ia[1]).assertEqual(28); // Unchanged
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsXor0036
@@ -855,7 +865,7 @@ export default function atomicsXorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsXor0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsXor0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 39; // 0b100111
@@ -874,6 +884,7 @@ export default function atomicsXorTest() {
       const result = await Promise.race([xorTask, timeoutTask]);
       expect(result).assertEqual(39); // XOR task wins
       expect(ia[0]).assertEqual(40);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsXor0037
@@ -883,7 +894,7 @@ export default function atomicsXorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsXor0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsXor0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 17; // 0b10001
@@ -906,6 +917,7 @@ export default function atomicsXorTest() {
       expect(errorCaught).assertEqual(true);
       expect(result).assertNull();
       expect(ia[0]).assertEqual(17); // Unchanged
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsXor0038
@@ -915,7 +927,7 @@ export default function atomicsXorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsXor0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsXor0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(12);
       const ia = new collections.Int32Array(sab);
       ia[0] = 8; // 0b1000
@@ -941,6 +953,7 @@ export default function atomicsXorTest() {
       expect(ia[0]).assertEqual(13); // 8 ^5=13
       expect(ia[1]).assertEqual(25); // 18^11=27
       expect(ia[2]).assertEqual(55); // 33^22=19
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsXor0039
@@ -950,7 +963,7 @@ export default function atomicsXorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsXor0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsXor0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 22; // 0b10110
@@ -985,6 +998,7 @@ export default function atomicsXorTest() {
       expect(result2.success).assertEqual(false);
       expect(result2.old).assertEqual(31);
       expect(ia[0]).assertEqual(31);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsXor0040
@@ -994,7 +1008,7 @@ export default function atomicsXorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsXor0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsXor0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 37; // 0b100101
@@ -1018,6 +1032,7 @@ export default function atomicsXorTest() {
       expect(result[0]).assertEqual(37);
       expect(stateCheckPassed).assertEqual(true);
       expect(ia[0]).assertEqual(43);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsXor0041
@@ -1027,7 +1042,7 @@ export default function atomicsXorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsXor0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsXor0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 0b101100; // Initial bitmask: 44
@@ -1040,6 +1055,7 @@ export default function atomicsXorTest() {
       ArkTSUtils.Atomics.or(ia, 0, 0b10); // 0b110000 | 0b10 = 0b110010 (50)
 
       expect(ArkTSUtils.Atomics.load(ia, 0)).assertEqual(50);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsXor0042
@@ -1049,7 +1065,7 @@ export default function atomicsXorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsXor0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsXor0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 41; // 0b101001
@@ -1074,6 +1090,7 @@ export default function atomicsXorTest() {
 
       expect(valLog).assertDeepEquals([12, 9, 15]);
       expect(ia[0]).assertEqual(35);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsXor0043
@@ -1083,7 +1100,7 @@ export default function atomicsXorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsXor0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsXor0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 36; // 0b100100
@@ -1113,6 +1130,7 @@ export default function atomicsXorTest() {
       const oldValue = await conditionalXor(ia, 0); // 36>30 → use 18 → 0b100100^0b10010=0b110110 (54)
       expect(oldValue).assertEqual(36);
       expect(ia[0]).assertEqual(54);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsXor0044
@@ -1122,7 +1140,7 @@ export default function atomicsXorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsXor0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsXor0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 55; // 0b110111
@@ -1150,6 +1168,7 @@ export default function atomicsXorTest() {
       const secondOld = await secondXor(ia);
       expect(secondOld).assertEqual(36);
       expect(ia[0]).assertEqual(35);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsXor0045
@@ -1159,7 +1178,7 @@ export default function atomicsXorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsXor0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsXor0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 28; // 0b11100
@@ -1183,6 +1202,7 @@ export default function atomicsXorTest() {
 
       expect([28, 23, 19].includes(winnerOld)).assertTrue(); // Depends on execution order
       expect(ia[0]).assertEqual(24); // 28 ^11^15 = 24
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsXor0046
@@ -1192,7 +1212,7 @@ export default function atomicsXorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsXor0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsXor0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(8);
       const ia = new collections.Int32Array(sab);
       ia[0] = 19; // 0b10011
@@ -1232,6 +1252,7 @@ export default function atomicsXorTest() {
       expect(oldValues).assertDeepEquals([19, 41]);
       expect(ia[0]).assertEqual(20); // 19 ^7=22
       expect(ia[1]).assertEqual(36); // 41 ^13=52
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsXor0047
@@ -1241,7 +1262,7 @@ export default function atomicsXorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsXor0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsXor0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 46; // 0b101110
@@ -1274,6 +1295,7 @@ export default function atomicsXorTest() {
       expect(totalCount).assertEqual(3);
       expect(successCount).assertEqual(3);
       expect(ia[0]).assertEqual(-53);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsXor0048
@@ -1283,7 +1305,7 @@ export default function atomicsXorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsXor0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsXor0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 31; // 0b11111
@@ -1308,6 +1330,7 @@ export default function atomicsXorTest() {
       expect(oldValue[0]).assertEqual(31);
       expect(cleanedUp).assertEqual(true);
       expect(ia[0]).assertEqual(0); // Cleanup resets value
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsXor0049
@@ -1317,7 +1340,7 @@ export default function atomicsXorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsXor0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsXor0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 43; // 0b101011
@@ -1347,6 +1370,7 @@ export default function atomicsXorTest() {
       expect(old2).assertEqual(39); // Returns current value (no XOR)
       expect(old3).assertEqual(39);
       expect(ia[0]).assertEqual(52);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsXor0050
@@ -1356,7 +1380,7 @@ export default function atomicsXorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsXor0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsXor0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 25; // 0b11001
@@ -1383,6 +1407,7 @@ export default function atomicsXorTest() {
       expect(oldValue).assertEqual(25); // XOR task wins
       expect(valueChanged).assertEqual(true);
       expect(ia[0]).assertEqual(50); // Change task overwrites result
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsXor0051
@@ -1392,7 +1417,7 @@ export default function atomicsXorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsXor0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsXor0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(12);
       const ia = new collections.Int32Array(sab);
       ia[0] = 14; // 0b1110
@@ -1418,6 +1443,7 @@ export default function atomicsXorTest() {
       const res = await batchXorAndAggregate(ia, [0, 1, 2], xors);
       expect(res.oldValues).assertDeepEquals([14, 29, 46]);
       expect(res.newValues).assertDeepEquals([11, 17, 57]); // 14^5=11, 29^12=17, 46^23=61
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsXor0052
@@ -1427,7 +1453,7 @@ export default function atomicsXorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsXor0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsXor0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 51; // 0b110011
@@ -1452,6 +1478,7 @@ export default function atomicsXorTest() {
 
       expect(cumulativeVal).assertEqual(0);
       expect(ia[0]).assertEqual(51);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsXor0053
@@ -1461,7 +1488,7 @@ export default function atomicsXorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsXor0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsXor0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 33; // 0b100001
@@ -1480,6 +1507,7 @@ export default function atomicsXorTest() {
       // Old values depend on execution order, total XOR result is fixed
       expect(oldValues.every(v => v >= 16 && v <= 58)).assertEqual(true);
       expect(ia[0]).assertEqual(44); // 33 ^10^17^22 = 40
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsXor0054
@@ -1489,7 +1517,7 @@ export default function atomicsXorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsXor0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsXor0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 49; // 0b110001
@@ -1513,6 +1541,7 @@ export default function atomicsXorTest() {
       expect(retryCount).assertEqual(1);
       expect(oldValue).assertEqual(49);
       expect(ia[0]).assertEqual(63); // 49 ^ 14 = 63
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsXor0055
@@ -1522,7 +1551,7 @@ export default function atomicsXorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsXor0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsXor0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 26; // 0b11010
@@ -1544,6 +1573,7 @@ export default function atomicsXorTest() {
 
       expect(result).assertEqual('timeout'); // Timeout wins
       expect(ia[0]).assertEqual(19); // XOR task still completes later
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsXor0056
@@ -1553,7 +1583,7 @@ export default function atomicsXorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsXor0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsXor0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 58; // 0b111010
@@ -1587,6 +1617,7 @@ export default function atomicsXorTest() {
       expect(old1).assertEqual(58);
       expect(errorThrown).assertEqual(true);
       expect(ia[0]).assertEqual(45); // Only first XOR is applied
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsXor0057
@@ -1596,7 +1627,7 @@ export default function atomicsXorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsXor0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsXor0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 44; // 0b101100
@@ -1622,6 +1653,7 @@ export default function atomicsXorTest() {
       const oldValue = await chainXor(ia, 0); // 44 ^13 = 37 (0b100101)
       expect(oldValue).assertEqual(44);
       expect(ia[0]).assertEqual(33);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsXor0058
@@ -1631,7 +1663,7 @@ export default function atomicsXorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsXor0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsXor0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 35; // 0b100011
@@ -1659,6 +1691,7 @@ export default function atomicsXorTest() {
       expect(timeLog[1].val).assertEqual(18);
       expect(timeLog[1].timestamp - timeLog[0].timestamp).assertLargerOrEqual(10); // Delay between timestamps
       expect(ia[0]).assertEqual(61);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsXor0059
@@ -1668,7 +1701,7 @@ export default function atomicsXorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsXor0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsXor0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 52; // 0b110100
@@ -1695,6 +1728,7 @@ export default function atomicsXorTest() {
       const oldValue = await derivedXor(ia, 0); // 52 ^7= 47 (0b101111)
       expect(oldValue).assertEqual(52);
       expect(ia[0]).assertEqual(51);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsXor0060
@@ -1704,7 +1738,7 @@ export default function atomicsXorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsXor0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsXor0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 1;  // Initial state: 1 (on)
@@ -1715,6 +1749,7 @@ export default function atomicsXorTest() {
       expect(toggled).assertEqual(1);
       expect(reset).assertEqual(0);
       expect(ArkTSUtils.Atomics.load(ia, 0)).assertEqual(1);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsXor0061
@@ -1724,7 +1759,7 @@ export default function atomicsXorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsXor0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsXor0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 29; // 0b11101
@@ -1755,6 +1790,7 @@ export default function atomicsXorTest() {
       expect(old2).assertEqual(21); // Returns current value (no XOR)
       expect(old3).assertEqual(21);
       expect(ia[0]).assertEqual(25);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsXor0062
@@ -1764,7 +1800,7 @@ export default function atomicsXorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsXor0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsXor0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(8);
       const ia = new collections.Int32Array(sab);
       ia[0] = 17; // 0b10001
@@ -1794,6 +1830,7 @@ export default function atomicsXorTest() {
       expect(oldValues).assertDeepEquals([17, 38, 20]); // 17^5=20, 38^0=38, 20^14=6
       expect(ia[0]).assertEqual(26);
       expect(ia[1]).assertEqual(-39); // Invalid value → XOR 0, no change
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsXor0063
@@ -1803,7 +1840,7 @@ export default function atomicsXorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsXor0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsXor0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ia = new collections.Int32Array(sab);
       ia[0] = 46; // 0b101110
@@ -1835,6 +1872,7 @@ export default function atomicsXorTest() {
       expect(changeHistory[1].after).assertEqual(55);
       expect(changeHistory[1].val).assertEqual(22);
       expect(ia[0]).assertEqual(55);
+      done();
     });
     /**
      * @tc.name   testArkTSUtilsAtomicsXor0064
@@ -1844,7 +1882,7 @@ export default function atomicsXorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsXor0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsXor0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(12);
       const ia = new collections.Int32Array(sab);
       ia[0] = 32; // 0b100000
@@ -1912,6 +1950,7 @@ export default function atomicsXorTest() {
       expect(log)
         .assertDeepEquals(["Batch validation: passed", "XOR index 0: old=32, new=50", "XOR index 1: old=57, new=46",
           "XOR index 2: old=83, new=112", "Cleanup: restored initial values"]);
+      done();
     });
 /**
      * @tc.name   testArkTSUtilsAtomicsXor0065
@@ -1921,7 +1960,7 @@ export default function atomicsXorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testArkTSUtilsAtomicsXor0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('testArkTSUtilsAtomicsXor0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(8);
       const ia = new collections.Int32Array(sab);
 
@@ -1947,6 +1986,7 @@ export default function atomicsXorTest() {
       const validResult = results[0] as PromiseFulfilledResult<number>;
       expect(validResult.value).assertEqual(23);
       expect(ia[0]).assertEqual(29);
+      done();
     });
 /**
      * @tc.name   testArkTSUtilsAtomicsXor0066
