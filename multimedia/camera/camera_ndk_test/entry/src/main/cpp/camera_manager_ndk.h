@@ -414,6 +414,7 @@ public:
 
     Camera_ErrorCode IsAutoDeviceSwitchSupported(bool* isSupported);
     Camera_ErrorCode EnableAutoDeviceSwitch(bool isEnable);
+    Camera_ErrorCode EnableAutoDeviceSwitch(int useCaseCode, bool isEnable);
     Camera_ErrorCode RegisterAutoDeviceSwitchStatusCallback(int useCaseCode);
     Camera_ErrorCode UnegisterAutoDeviceSwitchStatusCallback(int useCaseCode);
     Camera_ErrorCode RegisterSystemPressureLevel(int useCaseCode);
