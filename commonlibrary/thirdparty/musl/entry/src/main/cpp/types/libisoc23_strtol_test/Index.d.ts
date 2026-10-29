@@ -1,0 +1,12 @@
+export const Isoc23Strtol_0100: () => number;
+export const Isoc23Strtol_0200: () => number;
+export const Isoc23Strtol_0300: () => number;
+export const Isoc23Strtol_0400: () => number;
+export const Isoc23Strtol_0500: () => number;
+export const Isoc23Strtol_0600: () => number;
+export const Isoc23Strtol_0700: () => number;
+export const Isoc23Strtol_0800: () => number;
+export const Isoc23Strtol_0900: () => number;
+export const Isoc23Strtol_1000: () => number;
+export const Isoc23Strtol_1100: () => number;
+export const Isoc23Strtol_1200: () => number;

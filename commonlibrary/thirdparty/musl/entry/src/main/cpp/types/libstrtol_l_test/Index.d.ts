@@ -1,0 +1,9 @@
+export const StrtolL_0100: () => number;
+export const StrtolL_0200: () => number;
+export const StrtolL_0300: () => number;
+export const StrtolL_0400: () => number;
+export const StrtolL_0500: () => number;
+export const StrtolL_0600: () => number;
+export const StrtolL_0700: () => number;
+export const StrtolL_0800: () => number;
+export const StrtolL_0900: () => number;

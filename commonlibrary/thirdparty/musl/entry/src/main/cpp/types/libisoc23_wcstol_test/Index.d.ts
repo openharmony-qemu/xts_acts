@@ -1,0 +1,9 @@
+export const Isoc23Wcstol_0100: () => number;
+export const Isoc23Wcstol_0200: () => number;
+export const Isoc23Wcstol_0300: () => number;
+export const Isoc23Wcstol_0400: () => number;
+export const Isoc23Wcstol_0500: () => number;
+export const Isoc23Wcstol_0600: () => number;
+export const Isoc23Wcstol_0700: () => number;
+export const Isoc23Wcstol_0800: () => number;
+export const Isoc23Wcstol_0900: () => number;

@@ -1,0 +1,16 @@
+export const Isoc23Fscanf_0100: () => number;
+export const Isoc23Fscanf_0200: () => number;
+export const Isoc23Fscanf_0300: () => number;
+export const Isoc23Fscanf_0400: () => number;
+export const Isoc23Fscanf_0500: () => number;
+export const Isoc23Fscanf_0600: () => number;
+export const Isoc23Fscanf_0700: () => number;
+export const Isoc23Fscanf_0800: () => number;
+export const Isoc23Fscanf_0900: () => number;
+export const Isoc23Fscanf_1000: () => number;
+export const Isoc23Fscanf_1100: () => number;
+export const Isoc23Fscanf_1200: () => number;
+export const Isoc23Fscanf_1300: () => number;
+export const Isoc23Fscanf_1400: () => number;
+export const Isoc23Fscanf_1500: () => number;
+export const Isoc23Fscanf_1600: () => number;

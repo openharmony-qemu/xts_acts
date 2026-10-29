@@ -1,0 +1,6 @@
+{
+  "name": "libopenat64_2_test.so",
+  "types": "./Index.d.ts",
+  "version": "1.0.0",
+  "description": "openat64_2 test module"
+}

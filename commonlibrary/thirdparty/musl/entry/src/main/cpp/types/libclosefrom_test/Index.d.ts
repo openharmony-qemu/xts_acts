@@ -1,0 +1,13 @@
+export const Closefrom_0100: () => number;
+export const Closefrom_0200: () => number;
+export const Closefrom_0300: () => number;
+export const Closefrom_0400: () => number;
+export const Closefrom_0500: () => number;
+export const Closefrom_0600: () => number;
+export const Closefrom_0700: () => number;
+export const Closefrom_0800: () => number;
+export const Closefrom_0900: () => number;
+export const Closefrom_1000: () => number;
+export const Closefrom_1100: () => number;
+export const Closefrom_1200: () => number;
+export const Closefrom_1300: () => number;

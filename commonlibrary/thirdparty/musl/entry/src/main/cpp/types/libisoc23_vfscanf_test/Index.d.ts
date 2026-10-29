@@ -1,0 +1,11 @@
+export const Isoc23Vfscanf_0100: () => number;
+export const Isoc23Vfscanf_0200: () => number;
+export const Isoc23Vfscanf_0300: () => number;
+export const Isoc23Vfscanf_0400: () => number;
+export const Isoc23Vfscanf_0500: () => number;
+export const Isoc23Vfscanf_0600: () => number;
+export const Isoc23Vfscanf_0700: () => number;
+export const Isoc23Vfscanf_0800: () => number;
+export const Isoc23Vfscanf_0900: () => number;
+export const Isoc23Vfscanf_1000: () => number;
+export const Isoc23Vfscanf_1100: () => number;
