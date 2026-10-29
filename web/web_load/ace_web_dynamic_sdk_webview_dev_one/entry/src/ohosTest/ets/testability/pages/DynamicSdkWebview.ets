@@ -71,18 +71,44 @@ struct DynamicSdkWebviewPage {
     return (api['getZoomFactor'] as () => number)();
   }
 
+  private pageEndReady(): (err?: Error) => boolean {
+    return (err?: Error) => {
+      if (err) {
+        console.error(JSON.stringify(err));
+      }
+      return this.isPageEnd === 1;
+    };
+  }
+
+  private receiveReady(): (err?: Error) => number {
+    return (err?: Error) => {
+      if (err) {
+        console.error(JSON.stringify(err));
+      }
+      return this.isReceive;
+    };
+  }
+
   private async waitPageThenSleep(): Promise<void> {
-    await Utils.waitForExist(() => this.isPageEnd === 1, 'DynamicSdkWebviewPageEnd', true, 500, 30);
-    await Utils.sleep(LOAD_SETTLE_MS);
+    try {
+      await Utils.waitForExist(this.pageEndReady(), 'DynamicSdkWebviewPageEnd', true, 500, 30);
+      await Utils.sleep(LOAD_SETTLE_MS);
+    } catch (e) {
+      console.error(JSON.stringify(e));
+    }
   }
 
   build() {
     Column() {
       Button('DynamicSdkWebview').id('DynamicSdkWebviewBtn').onClick(async () => {
-        await Utils.waitForExist(() => this.isReceive, 'DynamicSdkWebviewReceive', 1, 3000);
-        const action = this.cmd;
-        this.isReceive = -1;
-        await this.runCase(action);
+        try {
+          await Utils.waitForExist(this.receiveReady(), 'DynamicSdkWebviewReceive', 1, 3000);
+          const action = this.cmd;
+          this.isReceive = -1;
+          await this.runCase(action);
+        } catch (e) {
+          console.error(JSON.stringify(e));
+        }
       })
       Web({ src: $rawfile('zoom_test.html'), controller: this.controller })
         .width('80%')
@@ -104,6 +130,7 @@ struct DynamicSdkWebviewPage {
   }
 
   private async runCase(action: string): Promise<void> {
+    try {
     switch (action) {
       case 'testSetZoomFactor':
         await this.caseSetGet(1.25, 206130);
@@ -141,9 +168,13 @@ struct DynamicSdkWebviewPage {
       default:
         Utils.emitEvent(false, 206199);
     }
+    } catch (e) {
+      console.error(JSON.stringify(e));
+    }
   }
 
   private async caseSetGet(target: number, eventId: number): Promise<void> {
+    try {
     await this.waitPageThenSleep();
     if (!this.hasZoomFactorApi()) {
       Utils.emitEvent(true, eventId);
@@ -157,9 +188,13 @@ struct DynamicSdkWebviewPage {
       console.error(JSON.stringify(e));
       Utils.emitEvent(false, eventId);
     }
+    } catch (e) {
+      console.error(JSON.stringify(e));
+    }
   }
 
   private async caseGetZoomFactorReturn(eventId: number): Promise<void> {
+    try {
     await this.waitPageThenSleep();
     if (!this.hasZoomFactorApi()) {
       Utils.emitEvent(true, eventId);
@@ -172,6 +207,9 @@ struct DynamicSdkWebviewPage {
     } catch (e) {
       console.error(JSON.stringify(e));
       Utils.emitEvent(false, eventId);
+    }
+    } catch (e) {
+      console.error(JSON.stringify(e));
     }
   }
 
@@ -210,6 +248,7 @@ struct DynamicSdkWebviewPage {
   }
 
   private async caseSetZoomFactorInvalid(kind: string, eventId: number): Promise<void> {
+    try {
     await this.waitPageThenSleep();
     if (!this.hasZoomFactorApi()) {
       Utils.emitEvent('401', eventId);
@@ -228,6 +267,9 @@ struct DynamicSdkWebviewPage {
         code = String((error as Record<string, Object>)['code']);
       }
       Utils.emitEvent(code, eventId);
+    }
+    } catch (e) {
+      console.error(JSON.stringify(e));
     }
   }
 }

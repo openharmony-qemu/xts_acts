@@ -23,7 +23,44 @@ const driver = Driver.create();
 const EVENT_KEY = 207200;
 const BTN = 'DynamicSdkBlankScreenBtn';
 
-export default function DynamicSdkBlankScreenTest() {
+async function runDynamicCase(
+  emitAction: string,
+  registerName: string,
+  expected: Object,
+  eventId: number,
+  waitLabel: string): Promise<number> {
+  Utils.emitEvent(emitAction, EVENT_KEY);
+  let ok = 0;
+  const onDone = (err?: Error) => {
+    if (err) {
+      console.error(JSON.stringify(err));
+    }
+    ok = 1;
+  };
+  Utils.registerBaseEvent(registerName, expected, eventId, onDone,
+    (d: events_emitter.EventData, e: Object) => {
+      expect(d?.data?.ACTION).assertEqual(e);
+    });
+  try {
+    await Utils.waitAndClickComponent(driver, BTN);
+  } catch (e) {
+    console.error(JSON.stringify(e));
+  }
+  const okProbe = (err?: Error): number => {
+    if (err) {
+      console.error(JSON.stringify(err));
+    }
+    return ok;
+  };
+  try {
+    await Utils.waitForExist(okProbe, waitLabel, 1, 8000);
+  } catch (e) {
+    console.error(JSON.stringify(e));
+  }
+  return ok;
+}
+
+export default function dynamicSdkBlankScreenTest() {
   describe('DynamicSdkBlankScreen', () => {
     beforeAll(async (done: Function) => {
       try {
@@ -44,19 +81,10 @@ export default function DynamicSdkBlankScreenTest() {
      */
     it('SUB_WEB_WEBATTRIBUTE_ENABLEBLANKSCREENMONITOR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-        Utils.emitEvent('testEnableBlankScreenMonitor', EVENT_KEY);
-        let ok = 0;
-        Utils.registerBaseEvent('testEnableBlankScreenMonitor', true, 204330, (err?: Error) => { if (err) { console.error(JSON.stringify(err)); } ok = 1; },
-          (d: events_emitter.EventData, e: Object) => { expect(d?.data?.ACTION).assertEqual(e); });
-        try {
-          await Utils.waitAndClickComponent(driver, BTN);
-        } catch (e) {
-          console.error(JSON.stringify(e));
-        }
-        if (await Utils.waitForExist(() => ok, 'testEnableBlankScreenMonitor', 1, 8000)) {
-          expect(ok).assertEqual(1);
-          done();
-        }
+        const ok = await runDynamicCase( 'testEnableBlankScreenMonitor', 'testEnableBlankScreenMonitor', true, 204330,
+          'testEnableBlankScreenMonitor');
+        expect(ok).assertEqual(1);
+        done();
       });
 
     /**
@@ -69,19 +97,11 @@ export default function DynamicSdkBlankScreenTest() {
      */
     it('SUB_WEB_WEBATTRIBUTE_ENABLEBLANKSCREENMONITOR_FALSE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-        Utils.emitEvent('testEnableBlankScreenMonitorFalse', EVENT_KEY);
-        let ok = 0;
-        Utils.registerBaseEvent('testEnableBlankScreenMonitorFalse', true, 204331, (err?: Error) => { if (err) { console.error(JSON.stringify(err)); } ok = 1; },
-          (d: events_emitter.EventData, e: Object) => { expect(d?.data?.ACTION).assertEqual(e); });
-        try {
-          await Utils.waitAndClickComponent(driver, BTN);
-        } catch (e) {
-          console.error(JSON.stringify(e));
-        }
-        if (await Utils.waitForExist(() => ok, 'testEnableBlankScreenMonitorFalse', 1, 8000)) {
-          expect(ok).assertEqual(1);
-          done();
-        }
+        const ok = await runDynamicCase('testEnableBlankScreenMonitorFalse',
+          'testEnableBlankScreenMonitorFalse', true, 204331,
+          'testEnableBlankScreenMonitorFalse');
+        expect(ok).assertEqual(1);
+        done();
       });
 
     /**
@@ -92,21 +112,14 @@ export default function DynamicSdkBlankScreenTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_WEB_WEBATTRIBUTE_ENABLEBLANKSCREENMONITOR_UNDEFINED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('SUB_WEB_WEBATTRIBUTE_ENABLEBLANKSCREENMONITOR_UNDEFINED_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-        Utils.emitEvent('testEnableBlankScreenMonitorUndefined', EVENT_KEY);
-        let ok = 0;
-        Utils.registerBaseEvent('testEnableBlankScreenMonitorUndefined', true, 204332, (err?: Error) => { if (err) { console.error(JSON.stringify(err)); } ok = 1; },
-          (d: events_emitter.EventData, e: Object) => { expect(d?.data?.ACTION).assertEqual(e); });
-        try {
-          await Utils.waitAndClickComponent(driver, BTN);
-        } catch (e) {
-          console.error(JSON.stringify(e));
-        }
-        if (await Utils.waitForExist(() => ok, 'testEnableBlankScreenMonitorUndefined', 1, 8000)) {
-          expect(ok).assertEqual(1);
-          done();
-        }
+        const ok = await runDynamicCase('testEnableBlankScreenMonitorUndefined',
+          'testEnableBlankScreenMonitorUndefined', true, 204332,
+          'testEnableBlankScreenMonitorUndefined');
+        expect(ok).assertEqual(1);
+        done();
       });
 
     /**
@@ -117,21 +130,14 @@ export default function DynamicSdkBlankScreenTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_WEB_WEBATTRIBUTE_ENABLEBLANKSCREENMONITOR_RETURNTHIS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('SUB_WEB_WEBATTRIBUTE_ENABLEBLANKSCREENMONITOR_RETURNTHIS_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-        Utils.emitEvent('testEnableBlankScreenMonitorReturnThis', EVENT_KEY);
-        let ok = 0;
-        Utils.registerBaseEvent('testEnableBlankScreenMonitorReturnThis', true, 204333, (err?: Error) => { if (err) { console.error(JSON.stringify(err)); } ok = 1; },
-          (d: events_emitter.EventData, e: Object) => { expect(d?.data?.ACTION).assertEqual(e); });
-        try {
-          await Utils.waitAndClickComponent(driver, BTN);
-        } catch (e) {
-          console.error(JSON.stringify(e));
-        }
-        if (await Utils.waitForExist(() => ok, 'testEnableBlankScreenMonitorReturnThis', 1, 8000)) {
-          expect(ok).assertEqual(1);
-          done();
-        }
+        const ok = await runDynamicCase('testEnableBlankScreenMonitorReturnThis',
+          'testEnableBlankScreenMonitorReturnThis', true, 204333,
+          'testEnableBlankScreenMonitorReturnThis');
+        expect(ok).assertEqual(1);
+        done();
       });
   });
 }

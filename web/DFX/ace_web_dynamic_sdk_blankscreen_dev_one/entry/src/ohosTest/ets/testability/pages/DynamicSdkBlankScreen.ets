@@ -35,13 +35,26 @@ struct DynamicSdkBlankScreenPage {
     });
   }
 
+  private receiveReady(): (err?: Error) => number {
+    return (err?: Error) => {
+      if (err) {
+        console.error(JSON.stringify(err));
+      }
+      return this.isReceive;
+    };
+  }
+
   build() {
     Column() {
       Button('DynamicSdkBlankScreen').id('DynamicSdkBlankScreenBtn').onClick(async () => {
-        await Utils.waitForExist(() => this.isReceive, 'DynamicSdkBlankScreenReceive', 1, 3000);
-        const action = this.cmd;
-        this.isReceive = -1;
-        this.runCase(action);
+        try {
+          await Utils.waitForExist(this.receiveReady(), 'DynamicSdkBlankScreenReceive', 1, 3000);
+          const action = this.cmd;
+          this.isReceive = -1;
+          this.runCase(action);
+        } catch (e) {
+          console.error(JSON.stringify(e));
+        }
       })
       Web({ src: $rawfile('index.html'), controller: this.controller })
         .blankScreenDetectionConfig({ enable: true, detectionMethods: [0], detectionTiming: [1.0] })

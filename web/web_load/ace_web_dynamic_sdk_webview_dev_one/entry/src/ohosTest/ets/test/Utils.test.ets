@@ -21,14 +21,13 @@ import fs from '@ohos.file.fs';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 export default class Utils {
-  static sleep(time: number) {
-    return new Promise<string>((resolve, reject) => {
+  static sleep(time: number): Promise<void> {
+    return new Promise<void>((resolve) => {
       setTimeout(() => {
-        resolve("ok")
-      }, time)
-    }).then(() => {
-      console.info(`sleep ${time} over...`)
-    })
+        console.info(`sleep ${time} over...`);
+        resolve();
+      }, time);
+    });
   }
 
   static copyRawFileToSandbox(rawFileName: string): string {
@@ -63,13 +62,21 @@ export default class Utils {
 
   static async clickComponent(id: string) {
     let driver = Driver.create();
-    let component = await driver.findComponent(ON.id(id));
-    await component.click();
+    try {
+      let component = await driver.findComponent(ON.id(id));
+      await component.click();
+    } catch (e) {
+      console.error(JSON.stringify(e));
+    }
   }
 
   static async triggerKey(id: number) {
     let driver = Driver.create();
-    await driver.triggerKey(id);
+    try {
+      await driver.triggerKey(id);
+    } catch (e) {
+      console.error(JSON.stringify(e));
+    }
   }
 
   static registerBaseEvent(testCaseName: string, expected: Object, eventId: number,
