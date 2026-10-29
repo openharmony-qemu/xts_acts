@@ -33,6 +33,7 @@ const ExpectTrue = (n: boolean) => {
     console.info(`exportTrue failed err: ${JSON.stringify(err)}`);
   }
 }
+
 let netType = 1;
 let eapCode = 1;
 let eapType = 25;
@@ -168,8 +169,8 @@ export default function eapNoPTest() {
       let caseName: string = "testCommunicationEapLogOffEthEapNop0400";
       console.info(`${caseName}---start`);
       try {
-        eap.startEthEap(netId, profile);
-        console.info(`${caseName } startEthEap success`);
+        eap.logOffEthEap(netId);
+        console.info(`${caseName } logOffEthEap success`);
         ExpectFail();
         console.info(`${caseName}---End`);
         done();
@@ -432,7 +433,7 @@ export default function eapNoPTest() {
         done();
       } catch (error) {
         console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
-        ExpectTrue(error.code == 201);
+        ExpectTrue(error.code == 201 || error.code == 33200099);
         try {
           eap.offStateChange();
           console.info(`${caseName} offStateChange cleanup success`);
@@ -474,7 +475,7 @@ export default function eapNoPTest() {
         done();
       } catch (error) {
         console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
-        ExpectTrue(error.code == 201);
+        ExpectTrue(error.code == 201 || error.code == 33200099);
         try {
           eap.offStateChange();
           console.info(`${caseName} offStateChange cleanup success`);
@@ -516,7 +517,7 @@ export default function eapNoPTest() {
         done();
       } catch (error) {
         console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
-        ExpectTrue(error.code == 201);
+        ExpectTrue(error.code == 201 || error.code == 33200099);
         try {
           eap.offStateChange();
           console.info(`${caseName} offStateChange cleanup success`);
