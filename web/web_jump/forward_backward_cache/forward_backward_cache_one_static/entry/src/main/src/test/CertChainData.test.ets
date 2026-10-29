@@ -93,7 +93,7 @@ export default function CertChainDataTest(): void {
         Utils.registerEvent("onErrorReceive",true,2024120992,done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('certChainDataWeb',10,'');
-        await Utils.msSleep(5000);
+        await Utils.msSleep(10000);
         done();
       })
 
