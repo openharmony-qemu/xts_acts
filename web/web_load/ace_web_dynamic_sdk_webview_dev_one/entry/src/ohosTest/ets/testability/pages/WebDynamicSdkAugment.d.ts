@@ -14,6 +14,6 @@
  */
 
 declare interface ZoomFactorWebviewController {
-  setZoomFactor(factor: number): void;
+  setZoomFactor(factor: number | undefined | null): void;
   getZoomFactor(): number;
 }

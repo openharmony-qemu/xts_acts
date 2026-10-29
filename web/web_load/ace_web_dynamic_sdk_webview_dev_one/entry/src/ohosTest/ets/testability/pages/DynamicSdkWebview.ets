@@ -52,23 +52,21 @@ struct DynamicSdkWebviewPage {
     }
   }
 
-  private zoomControllerApi(): Record<string, Object> {
-    return this.controller as unknown as Record<string, Object>;
+  private zoomControllerApi(): ZoomFactorWebviewController {
+    return this.controller as ZoomFactorWebviewController;
   }
 
   private hasZoomFactorApi(): boolean {
     const api = this.zoomControllerApi();
-    return typeof api['setZoomFactor'] === 'function' && typeof api['getZoomFactor'] === 'function';
+    return typeof api.setZoomFactor === 'function' && typeof api.getZoomFactor === 'function';
   }
 
   private invokeSetZoomFactor(value: number): void {
-    const api = this.zoomControllerApi();
-    (api['setZoomFactor'] as (v: number) => void)(value);
+    this.zoomControllerApi().setZoomFactor(value);
   }
 
   private invokeGetZoomFactor(): number {
-    const api = this.zoomControllerApi();
-    return (api['getZoomFactor'] as () => number)();
+    return this.zoomControllerApi().getZoomFactor();
   }
 
   private pageEndReady(): (err?: Error) => boolean {
@@ -243,8 +241,7 @@ struct DynamicSdkWebviewPage {
   }
 
   private invokeSetZoomFactorRaw(value: number | undefined | null): void {
-    const api = this.zoomControllerApi();
-    (api['setZoomFactor'] as (v: number | undefined | null) => void)(value);
+    this.zoomControllerApi().setZoomFactor(value);
   }
 
   private async caseSetZoomFactorInvalid(kind: string, eventId: number): Promise<void> {
@@ -263,8 +260,8 @@ struct DynamicSdkWebviewPage {
       Utils.emitEvent('unexpected_no_throw', eventId);
     } catch (error) {
       let code = '401';
-      if (error != null && typeof error === 'object' && (error as Record<string, Object>)['code'] != null) {
-        code = String((error as Record<string, Object>)['code']);
+      if (error != null && typeof error === 'object' && (error as Record<string, number>).code != null) {
+        code = String((error as Record<string, number>).code);
       }
       Utils.emitEvent(code, eventId);
     }
