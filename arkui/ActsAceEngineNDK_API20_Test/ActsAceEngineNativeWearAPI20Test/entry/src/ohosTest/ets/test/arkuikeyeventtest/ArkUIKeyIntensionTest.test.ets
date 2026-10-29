@@ -18,6 +18,8 @@ import keyeventndk from 'libkeyeventndk.so'
 import Utils from '../common/Utils'
 import { IntentionCode } from '@kit.InputKit';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function ArkUIKeyIntensionTest() {
   describe('ArkUIKeyIntensionTest', () => {
     const x1: number = Math.floor(globalThis.winWidth / 2 + globalThis.winLeft);
@@ -78,7 +80,7 @@ export default function ArkUIKeyIntensionTest() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testArkUIKeyIntensionUp0100 start====");
-          await Utils.driver.triggerKey(2012);
+          await Utils.driver.triggerKey(2012, displayID);
           let result: number = keyeventndk.GetKeyIntensionType(1);
           console.info(`====>testArkUIKeyIntensionUp0100 result====${result}`);
           expect(1).assertEqual(result);
@@ -101,7 +103,7 @@ export default function ArkUIKeyIntensionTest() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testArkUIKeyIntensionDown0100 start====");
-          await Utils.driver.triggerKey(2013);
+          await Utils.driver.triggerKey(2013, displayID);
           let result: number = keyeventndk.GetKeyIntensionType(2);
           console.info(`====>testArkUIKeyIntensionDown0100 result====${result}`);
           expect(1).assertEqual(result);
@@ -124,7 +126,7 @@ export default function ArkUIKeyIntensionTest() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testArkUIKeyIntensionLeft0100 start====");
-          await Utils.driver.triggerKey(2014);
+          await Utils.driver.triggerKey(2014, displayID);
           let result: number = keyeventndk.GetKeyIntensionType(3);
           console.info(`====>testArkUIKeyIntensionLeft0100 result====${result}`);
           expect(1).assertEqual(result);
@@ -147,7 +149,7 @@ export default function ArkUIKeyIntensionTest() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testArkUIKeyIntensionRight0100 start====");
-          await Utils.driver.triggerKey(2015);
+          await Utils.driver.triggerKey(2015, displayID);
           let result: number = keyeventndk.GetKeyIntensionType(4);
           console.info(`====>testArkUIKeyIntensionRight0100 result====${result}`);
           expect(1).assertEqual(result);
@@ -170,7 +172,7 @@ export default function ArkUIKeyIntensionTest() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testArkUIKeyIntensionSelect0100 start====");
-          await Utils.driver.triggerKey(2054);
+          await Utils.driver.triggerKey(2054, displayID);
           let result: number = keyeventndk.GetKeyIntensionType(5);
           console.info(`====>testArkUIKeyIntensionSelect0100 result====${result}`);
           expect(1).assertEqual(result);
@@ -193,7 +195,7 @@ export default function ArkUIKeyIntensionTest() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testArkUIKeyIntensionBack0100 start====");
-          await Utils.driver.triggerKey(2302);
+          await Utils.driver.triggerKey(2302, displayID);
           let result: number = keyeventndk.GetKeyIntensionType(7);
           console.info(`====>testArkUIKeyIntensionBack0100 result====${result}`);
           expect(1).assertEqual(result);
@@ -216,7 +218,7 @@ export default function ArkUIKeyIntensionTest() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testArkUIKeyIntensionMenu0100 start====");
-          await Utils.driver.triggerKey(2311);
+          await Utils.driver.triggerKey(2311, displayID);
           let result: number = keyeventndk.GetKeyIntensionType(9);
           console.info(`====>testArkUIKeyIntensionMenu0100 result====${result}`);
           expect(1).assertEqual(result);
@@ -239,7 +241,7 @@ export default function ArkUIKeyIntensionTest() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testArkUIKeyIntensionHome0100 start====");
-          await Utils.driver.triggerKey(2081);
+          await Utils.driver.triggerKey(2081, displayID);
           let result: number = keyeventndk.GetKeyIntensionType(10);
           console.info(`====>testArkUIKeyIntensionHome0100 result====${result}`);
           expect(1).assertEqual(result);
@@ -262,7 +264,7 @@ export default function ArkUIKeyIntensionTest() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testArkUIKeyIntensionPageUp0100 start====");
-          await Utils.driver.triggerKey(2068);
+          await Utils.driver.triggerKey(2068, displayID);
           let result: number = keyeventndk.GetKeyIntensionType(11);
           console.info(`====>testArkUIKeyIntensionPageUp0100 result====${result}`);
           expect(1).assertEqual(result);
@@ -285,7 +287,7 @@ export default function ArkUIKeyIntensionTest() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testArkUIKeyIntensionPageDown0100 start====");
-          await Utils.driver.triggerKey(2069);
+          await Utils.driver.triggerKey(2069, displayID);
           let result: number = keyeventndk.GetKeyIntensionType(12);
           console.info(`====>testArkUIKeyIntensionPageDown0100 result====${result}`);
           expect(1).assertEqual(result);
@@ -308,7 +310,7 @@ export default function ArkUIKeyIntensionTest() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testArkUIKeyIntensionZoomOut0100 start====");
-          await Utils.driver.triggerCombineKeys(2072,2066);
+          await Utils.driver.triggerCombineKeys(2072, 2066, 0, displayID);
           let result: number = keyeventndk.GetKeyIntensionType(13);
           console.info(`====>testArkUIKeyIntensionZoomOut0100 result====${result}`);
           expect(1).assertEqual(result);
@@ -331,7 +333,7 @@ export default function ArkUIKeyIntensionTest() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testArkUIKeyIntensionZoomIn0100 start====");
-          await Utils.driver.triggerCombineKeys(2072,2057);
+          await Utils.driver.triggerCombineKeys(2072, 2057, 0, displayID);
           let result: number = keyeventndk.GetKeyIntensionType(14);
           console.info(`====>testArkUIKeyIntensionZoomIn0100 result====${result}`);
           expect(1).assertEqual(result);
@@ -354,7 +356,7 @@ export default function ArkUIKeyIntensionTest() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testArkUIKeyIntensionMediaMute0100 start====");
-          await Utils.driver.triggerKey(23);
+          await Utils.driver.triggerKey(23, displayID);
           let result: number = keyeventndk.GetKeyIntensionType(106);
           console.info(`====>testArkUIKeyIntensionMediaMute0100 result====${result}`);
           expect(1).assertEqual(result);
@@ -377,8 +379,8 @@ export default function ArkUIKeyIntensionTest() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testArkUIKeyIntensionVolumeUp0100 start====");
-          await Utils.driver.triggerKey(16);
-          await Utils.driver.doubleClick(x1, y1);
+          await Utils.driver.triggerKey(16, displayID);
+          await Utils.driver.doubleClickAt({ x: x1, y: y1, displayId: displayID });
           let result: number = keyeventndk.GetKeyIntensionType(107);
           console.info(`====>testArkUIKeyIntensionVolumeUp0100 result====${result}`);
           expect(1).assertEqual(result);
@@ -401,7 +403,7 @@ export default function ArkUIKeyIntensionTest() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testArkUIKeyIntensionVolumeDown0100 start====");
-          await Utils.driver.triggerKey(17);
+          await Utils.driver.triggerKey(17, displayID);
           let result: number = keyeventndk.GetKeyIntensionType(108);
           console.info(`====>testArkUIKeyIntensionVolumeDown0100 result====${result}`);
           expect(1).assertEqual(result);
@@ -424,7 +426,7 @@ export default function ArkUIKeyIntensionTest() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testArkUIKeyIntensionEscape0100 start====");
-          await Utils.driver.triggerKey(2070);
+          await Utils.driver.triggerKey(2070, displayID);
           let result: number = keyeventndk.GetKeyIntensionType(6);
           console.info(`====>testArkUIKeyIntensionEscape0100 result====${result}`);
           expect(1).assertEqual(result);

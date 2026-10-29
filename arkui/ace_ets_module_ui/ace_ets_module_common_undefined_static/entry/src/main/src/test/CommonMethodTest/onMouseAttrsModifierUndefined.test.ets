@@ -26,8 +26,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
-export default function OnMouseAttrsModifierUndefinedTest() {
+export default function OnMouseAttrsModifierUndefinedTest(): void {
  describe('OnMouseAttrsModifierUndefinedTest', () => {
 
 
@@ -64,25 +63,26 @@ export default function OnMouseAttrsModifierUndefinedTest() {
    */
   it('OnMouseAttrsModifierUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
    console.info('[OnMouseAttrsModifierUndefinedTest_static_0100] START');
+   let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
    let driver: Driver = Driver.create()
    await CommonFunc.sleep(1000);
    let myButton = await driver.findComponent(ON.id('MyButtonMouseModifier'));
    await CommonFunc.sleep(500);
    let changeBtn = await driver.findComponent(ON.id('Common_OnMouseModifier'));
-   await (changeBtn?.click() as Promise<void>);
+   await changeBtn?.click();
    await CommonFunc.sleep(1000);
-   let point: Point = await (myButton?.getBoundsCenter() as Promise<Point>);
-   let point1: Point = await (changeBtn?.getBoundsCenter() as Promise<Point>);
+   let point: Point = await myButton!.getBoundsCenter();
+   let point1: Point = await changeBtn!.getBoundsCenter();
    await driver.mouseMoveTo({x: point1.x, y: point1.y, displayId: displayID});
    await CommonFunc.sleep(1000);
-   await (changeBtn?.click() as Promise<void>);
+   await changeBtn?.click();
    await CommonFunc.sleep(1000);
    await driver.mouseMoveTo({x: point.x, y: point.y, displayId: displayID});
    await CommonFunc.sleep(1000);
    let strJson = inspector.getInspectorByKey('MyButtonMouseModifier');
    let res = JSON.parseJsonElement(strJson).getElement('$attrs').getString('label');
    expect(res).assertEqual('onMouse:1');
-   await (changeBtn?.click() as Promise<void>);
+   await changeBtn?.click();
    await CommonFunc.sleep(2000);
    await driver.mouseMoveTo({x: point1.x, y: point1.y, displayId: displayID});
    await CommonFunc.sleep(1000);
@@ -93,7 +93,7 @@ export default function OnMouseAttrsModifierUndefinedTest() {
    expect(res).assertEqual('onMouse:2');
    await driver.mouseMoveTo({x: point1.x, y: point1.y, displayId: displayID});
    await CommonFunc.sleep(1000);
-   await (changeBtn?.click() as Promise<void>);
+   await changeBtn?.click();
    console.info('[OnMouseAttrsModifierUndefinedTest_static_0100] END');
    done();
   });

@@ -46,9 +46,9 @@ import {
 @Component
 struct FocusScopeId10 {
   build() {
-    Column({ space: 5 } as ColumnOptions) {
+    Column({space:5}) {
       Text('焦点组设置默认获焦')
-      Column({ space: 5 } as ColumnOptions) {
+      Column({space:5}){
         Button('btn1').focusOnTouch(true)
         Button('defaultFocus:true').defaultFocus(true).focusOnTouch(true)
         Button('FocusPriority.PREVIOUS')
@@ -56,16 +56,16 @@ struct FocusScopeId10 {
           .focusScopePriority('FocusScopeId10_focusGroup1', FocusPriority.PREVIOUS)
           .focusOnTouch(true)
       }
-      .focusScopeId('FocusScopeId10_focusGroup1', true)
+      .focusScopeId('FocusScopeId10_focusGroup1',true)
       .borderWidth(1)
 
-      Button('btn4').focusOnTouch(true).id('FocusScopeId10_btn4')
+      Button('btn4').focusOnTouch(true) .id('FocusScopeId10_btn4')
 
       Text('非焦点组')
-      Column({ space: 5 } as ColumnOptions) {
+      Column({space:5}){
         Button('btn5').focusOnTouch(true)
           .id('FocusScopeId10_btn5')
-          .onClick((e: ClickEvent) => {
+          .onClick(()=>{
             this.getUIContext().getFocusController().clearFocus()
           })
         Button('FocusPriority.PRIOR')
@@ -76,8 +76,9 @@ struct FocusScopeId10 {
           .id('FocusScopeId10_btn7')
           .focusOnTouch(true)
       }
-      .focusScopeId('FocusScopeId10_focusGroup2', false)
+      .focusScopeId('FocusScopeId10_focusGroup2',false)
       .borderWidth(1)
+
 
     }.width('100%')
   }

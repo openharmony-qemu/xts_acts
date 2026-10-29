@@ -57,6 +57,7 @@ export default class MainAbility extends Ability {
         globalThis.winTop = wRect.top;
         globalThis.winWidth = wRect.width;
         globalThis.winHeight = wRect.height;
+        AppStorage.setOrCreate('displayID', properties.displayId);
         hilog.info(0x0000, 'testTag', 'Succeeded get winRect:' + JSON.stringify(wRect));
         hilog.info(0x0000, 'testTag', 'Succeeded get winLeft:' + globalThis.winLeft + ',winTop:' + globalThis.winTop );
         hilog.info(0x0000, 'testTag', 'Succeeded get winWidth:' + globalThis.winWidth + ',winHeight:' + globalThis.winHeight );
