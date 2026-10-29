@@ -267,8 +267,9 @@ export default function AtomicsAPISecondTest() {
       try {
         const result0: boolean = ArkTSUtils.Atomics.isLockFree(0);
         expect(result0).assertFalse();
-        expect(ArkTSUtils.Atomics.isLockFree(null as number)).assertFalse();
-        expect(ArkTSUtils.Atomics.isLockFree(undefined as number)).assertFalse();
+        const nullValues: (number | null | undefined)[] = [null, undefined];
+        expect(ArkTSUtils.Atomics.isLockFree(nullValues[0] as number)).assertFalse();
+        expect(ArkTSUtils.Atomics.isLockFree(nullValues[1] as number)).assertFalse();
         
       } catch (error) {
         console.error(`${caseName} Test failed: ${error}`);
