@@ -27,11 +27,6 @@ interface OnZoomChangeEvent {
 
 type OnZoomChangeCallback = (zoomChangeInfo: OnZoomChangeEvent) => void;
 
-interface ZoomFactorWebviewController {
-  setZoomFactor(factor: number | undefined | null): void;
-  getZoomFactor(): number;
-}
-
 @Entry
 @Component
 struct DynamicSdkWebviewPage {
@@ -55,23 +50,6 @@ struct DynamicSdkWebviewPage {
     } catch (e) {
       console.error(JSON.stringify(e));
     }
-  }
-
-  private zoomControllerApi(): ZoomFactorWebviewController {
-    return this.controller as ZoomFactorWebviewController;
-  }
-
-  private hasZoomFactorApi(): boolean {
-    const api = this.zoomControllerApi();
-    return typeof api.setZoomFactor === 'function' && typeof api.getZoomFactor === 'function';
-  }
-
-  private invokeSetZoomFactor(value: number): void {
-    this.zoomControllerApi().setZoomFactor(value);
-  }
-
-  private invokeGetZoomFactor(): number {
-    return this.zoomControllerApi().getZoomFactor();
   }
 
   private pageEndReady(): (err?: Error) => boolean {
@@ -117,11 +95,8 @@ struct DynamicSdkWebviewPage {
         .width('80%')
         .height('70%')
         .onControllerAttached(() => {
-          if (!this.hasZoomFactorApi()) {
-            return;
-          }
           try {
-            this.invokeSetZoomFactor(1.0);
+            this.controller.setZoomFactor(1.0);
           } catch (e) {
             console.error(JSON.stringify(e));
           }
@@ -134,43 +109,43 @@ struct DynamicSdkWebviewPage {
 
   private async runCase(action: string): Promise<void> {
     try {
-    switch (action) {
-      case 'testSetZoomFactor':
-        await this.caseSetGet(1.25, 206130);
-        break;
-      case 'testGetZoomFactor':
-        await this.caseGetZoomFactorReturn(206131);
-        break;
-      case 'testSetZoomTrigger':
-        await this.caseSetGet(1.5, 206215);
-        break;
-      case 'testOnZoomChangeCallback':
-        this.caseOnZoomChangeCallbackType(206211);
-        break;
-      case 'testOnZoomChangeEvent':
-        this.caseOnZoomChangeEventType(206212);
-        break;
-      case 'testOldZoomFactor':
-        this.caseOldZoomFactor(206213);
-        break;
-      case 'testNewZoomFactor':
-        this.caseNewZoomFactor(206214);
-        break;
-      case 'testSetZoomFactorUndefined':
-        await this.caseSetZoomFactorInvalid('undefined', 206132);
-        break;
-      case 'testSetZoomFactorNull':
-        await this.caseSetZoomFactorInvalid('null', 206133);
-        break;
-      case 'testOnZoomChangeUndefined':
-        this.caseOnZoomChangeUndefined(206216);
-        break;
-      case 'testOnZoomChangeReturnThis':
-        Utils.emitEvent(true, 206217);
-        break;
-      default:
-        Utils.emitEvent(false, 206199);
-    }
+      switch (action) {
+        case 'testSetZoomFactor':
+          await this.caseSetGet(1.25, 206130);
+          break;
+        case 'testGetZoomFactor':
+          await this.caseGetZoomFactorReturn(206131);
+          break;
+        case 'testSetZoomTrigger':
+          await this.caseSetGet(1.5, 206215);
+          break;
+        case 'testOnZoomChangeCallback':
+          this.caseOnZoomChangeCallbackType(206211);
+          break;
+        case 'testOnZoomChangeEvent':
+          this.caseOnZoomChangeEventType(206212);
+          break;
+        case 'testOldZoomFactor':
+          this.caseOldZoomFactor(206213);
+          break;
+        case 'testNewZoomFactor':
+          this.caseNewZoomFactor(206214);
+          break;
+        case 'testSetZoomFactorUndefined':
+          await this.caseSetZoomFactorInvalid('undefined', 206132);
+          break;
+        case 'testSetZoomFactorNull':
+          await this.caseSetZoomFactorInvalid('null', 206133);
+          break;
+        case 'testOnZoomChangeUndefined':
+          this.caseOnZoomChangeUndefined(206216);
+          break;
+        case 'testOnZoomChangeReturnThis':
+          Utils.emitEvent(true, 206217);
+          break;
+        default:
+          Utils.emitEvent(false, 206199);
+      }
     } catch (e) {
       console.error(JSON.stringify(e));
     }
@@ -178,19 +153,15 @@ struct DynamicSdkWebviewPage {
 
   private async caseSetGet(target: number, eventId: number): Promise<void> {
     try {
-    await this.waitPageThenSleep();
-    if (!this.hasZoomFactorApi()) {
-      Utils.emitEvent(true, eventId);
-      return;
-    }
-    try {
-      this.invokeSetZoomFactor(target);
-      this.invokeGetZoomFactor();
-      Utils.emitEvent(true, eventId);
-    } catch (e) {
-      console.error(JSON.stringify(e));
-      Utils.emitEvent(false, eventId);
-    }
+      await this.waitPageThenSleep();
+      try {
+        this.controller.setZoomFactor(target);
+        this.controller.getZoomFactor();
+        Utils.emitEvent(true, eventId);
+      } catch (e) {
+        console.error(JSON.stringify(e));
+        Utils.emitEvent(false, eventId);
+      }
     } catch (e) {
       console.error(JSON.stringify(e));
     }
@@ -198,19 +169,15 @@ struct DynamicSdkWebviewPage {
 
   private async caseGetZoomFactorReturn(eventId: number): Promise<void> {
     try {
-    await this.waitPageThenSleep();
-    if (!this.hasZoomFactorApi()) {
-      Utils.emitEvent(true, eventId);
-      return;
-    }
-    try {
-      this.invokeSetZoomFactor(1.0);
-      let factor: number = this.invokeGetZoomFactor();
-      Utils.emitEvent(factor > 0, eventId);
-    } catch (e) {
-      console.error(JSON.stringify(e));
-      Utils.emitEvent(false, eventId);
-    }
+      await this.waitPageThenSleep();
+      try {
+        this.controller.setZoomFactor(1.0);
+        let factor: number = this.controller.getZoomFactor();
+        Utils.emitEvent(factor > 0, eventId);
+      } catch (e) {
+        console.error(JSON.stringify(e));
+        Utils.emitEvent(false, eventId);
+      }
     } catch (e) {
       console.error(JSON.stringify(e));
     }
@@ -245,31 +212,23 @@ struct DynamicSdkWebviewPage {
     Utils.emitEvent(accepted, eventId);
   }
 
-  private invokeSetZoomFactorRaw(value: number | undefined | null): void {
-    this.zoomControllerApi().setZoomFactor(value);
-  }
-
   private async caseSetZoomFactorInvalid(kind: string, eventId: number): Promise<void> {
     try {
-    await this.waitPageThenSleep();
-    if (!this.hasZoomFactorApi()) {
-      Utils.emitEvent('401', eventId);
-      return;
-    }
-    try {
-      if (kind === 'undefined') {
-        this.invokeSetZoomFactorRaw(undefined);
-      } else {
-        this.invokeSetZoomFactorRaw(null);
+      await this.waitPageThenSleep();
+      try {
+        if (kind === 'undefined') {
+          this.controller.setZoomFactor(undefined);
+        } else {
+          this.controller.setZoomFactor(null);
+        }
+        Utils.emitEvent('unexpected_no_throw', eventId);
+      } catch (error) {
+        let code = '401';
+        if (error != null && typeof error === 'object' && (error as Record<string, number>).code != null) {
+          code = String((error as Record<string, number>).code);
+        }
+        Utils.emitEvent(code, eventId);
       }
-      Utils.emitEvent('unexpected_no_throw', eventId);
-    } catch (error) {
-      let code = '401';
-      if (error != null && typeof error === 'object' && (error as Record<string, number>).code != null) {
-        code = String((error as Record<string, number>).code);
-      }
-      Utils.emitEvent(code, eventId);
-    }
     } catch (e) {
       console.error(JSON.stringify(e));
     }
