@@ -78,7 +78,7 @@ export default function AtomicsAPIThirdlyTest() {
     /**
      * @tc.name   testArkTSUtilsAtomicsApiThirdly0002
      * @tc.number SUB_ARKTSUTILS_ATOMICS_API_THIRDLY_0200
-     * @tc.desc   Test
+     * @tc.desc   Verify concurrent exchange writes to distinct indices
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -86,18 +86,18 @@ export default function AtomicsAPIThirdlyTest() {
     it('testArkTSUtilsAtomicsApiThirdly0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: Function) => {
       const caseName = 'AtomicsAddApiThirdlyTest0200';
       console.info(`${caseName} test start`);
-      const sharedBuffer = new collections.ArrayBuffer(collections.Int32Array.BYTES_PER_ELEMENT);
-      const sharedArray = new collections.Int32Array(sharedBuffer);
-      sharedArray[0] = 0;
-      const taskGroup = new taskpool.TaskGroup();
       const taskCount = 10;
+      const sharedBuffer = new collections.ArrayBuffer(collections.Int32Array.BYTES_PER_ELEMENT * taskCount);
+      const sharedArray = new collections.Int32Array(sharedBuffer);
+      const taskGroup = new taskpool.TaskGroup();
       for (let i = 0; i < taskCount; i++) {
-        const task = new taskpool.Task(taskFunction, sharedArray, 0, i);
+        const task = new taskpool.Task(taskFunction, sharedArray, i, i);
         taskGroup.addTask(task);
       }
       await taskpool.execute(taskGroup);
-      console.log(`${sharedArray[0]}`);
-      expect(9).assertEqual(sharedArray[0]);
+      for (let i = 0; i < taskCount; i++) {
+        expect(sharedArray[i]).assertEqual(i);
+      }
       console.info(`${caseName} test end`);
       Done();
     });
