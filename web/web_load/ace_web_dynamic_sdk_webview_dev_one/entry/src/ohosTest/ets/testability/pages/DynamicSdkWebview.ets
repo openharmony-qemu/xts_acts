@@ -53,7 +53,7 @@ struct DynamicSdkWebviewPage {
   }
 
   private zoomControllerApi(): Record<string, Object> {
-    return this.controller as Record<string, Object>;
+    return this.controller as unknown as Record<string, Object>;
   }
 
   private hasZoomFactorApi(): boolean {
