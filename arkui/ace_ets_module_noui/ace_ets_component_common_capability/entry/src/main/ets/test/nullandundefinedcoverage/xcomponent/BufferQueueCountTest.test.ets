@@ -69,7 +69,7 @@ export default function BufferQueueCountTest() {
 
     /**
      * @tc.name   bufferQueueCount_normal_001
-     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_NORMAL_001
+     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_NORMAL_0100
      * @tc.desc   测试bufferQueueCount接口传入正常值2（最小有效值）
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -85,7 +85,7 @@ export default function BufferQueueCountTest() {
 
     /**
      * @tc.name   bufferQueueCount_normal_002
-     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_NORMAL_002
+     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_NORMAL_0200
      * @tc.desc   测试bufferQueueCount接口传入正常值3（中间值）
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -101,7 +101,7 @@ export default function BufferQueueCountTest() {
 
     /**
      * @tc.name   bufferQueueCount_normal_003
-     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_NORMAL_003
+     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_NORMAL_0300
      * @tc.desc   测试bufferQueueCount接口传入正常值4（中间值）
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -117,7 +117,7 @@ export default function BufferQueueCountTest() {
 
     /**
      * @tc.name   bufferQueueCount_normal_004
-     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_NORMAL_004
+     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_NORMAL_0400
      * @tc.desc   测试bufferQueueCount接口传入正常值5（最大有效值）
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -135,7 +135,7 @@ export default function BufferQueueCountTest() {
 
     /**
      * @tc.name   bufferQueueCount_boundary_001
-     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_BOUNDARY_001
+     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_BOUNDARY_0100
      * @tc.desc   测试bufferQueueCount接口传入边界值2（下界）
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -151,7 +151,7 @@ export default function BufferQueueCountTest() {
 
     /**
      * @tc.name   bufferQueueCount_boundary_002
-     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_BOUNDARY_002
+     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_BOUNDARY_0200
      * @tc.desc   测试bufferQueueCount接口传入边界值5（上界）
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -167,7 +167,7 @@ export default function BufferQueueCountTest() {
 
     /**
      * @tc.name   bufferQueueCount_boundary_003
-     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_BOUNDARY_003
+     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_BOUNDARY_0300
      * @tc.desc   测试bufferQueueCount接口传入小于下界的值1，按最小值2处理
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -183,7 +183,7 @@ export default function BufferQueueCountTest() {
 
     /**
      * @tc.name   bufferQueueCount_boundary_004
-     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_BOUNDARY_004
+     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_BOUNDARY_0400
      * @tc.desc   测试bufferQueueCount接口传入大于上界的值6，按最大值5处理
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -199,7 +199,7 @@ export default function BufferQueueCountTest() {
 
     /**
      * @tc.name   bufferQueueCount_boundary_005
-     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_BOUNDARY_005
+     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_BOUNDARY_0500
      * @tc.desc   测试bufferQueueCount接口传入远小于下界的值-10，按最小值2处理
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -215,7 +215,7 @@ export default function BufferQueueCountTest() {
 
     /**
      * @tc.name   bufferQueueCount_boundary_006
-     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_BOUNDARY_006
+     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_BOUNDARY_0600
      * @tc.desc   测试bufferQueueCount接口传入远大于上界的值100，按最大值5处理
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -231,7 +231,7 @@ export default function BufferQueueCountTest() {
 
     /**
      * @tc.name   bufferQueueCount_boundary_007
-     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_BOUNDARY_007
+     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_BOUNDARY_0700
      * @tc.desc   测试bufferQueueCount接口传入0，按最小值2处理
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -247,7 +247,7 @@ export default function BufferQueueCountTest() {
 
     /**
      * @tc.name   bufferQueueCount_boundary_008
-     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_BOUNDARY_008
+     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_BOUNDARY_0800
      * @tc.desc   测试bufferQueueCount接口传入负值-1，按最小值2处理
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -265,7 +265,7 @@ export default function BufferQueueCountTest() {
 
     /**
      * @tc.name   bufferQueueCount_abnormal_001
-     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_ABNORMAL_001
+     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_ABNORMAL_0100
      * @tc.desc   测试bufferQueueCount接口传入非整数值2.5，按默认值5处理
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -281,7 +281,7 @@ export default function BufferQueueCountTest() {
 
     /**
      * @tc.name   bufferQueueCount_abnormal_002
-     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_ABNORMAL_002
+     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_ABNORMAL_0200
      * @tc.desc   测试bufferQueueCount接口传入非整数值3.7，按默认值5处理
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -297,7 +297,7 @@ export default function BufferQueueCountTest() {
 
     /**
      * @tc.name   bufferQueueCount_abnormal_003
-     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_ABNORMAL_003
+     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_ABNORMAL_0300
      * @tc.desc   测试bufferQueueCount接口传入NaN，按默认值5处理
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -313,7 +313,7 @@ export default function BufferQueueCountTest() {
 
     /**
      * @tc.name   bufferQueueCount_abnormal_004
-     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_ABNORMAL_004
+     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_ABNORMAL_0400
      * @tc.desc   测试bufferQueueCount接口传入Infinity，按默认值5处理
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -329,7 +329,7 @@ export default function BufferQueueCountTest() {
 
     /**
      * @tc.name   bufferQueueCount_abnormal_005
-     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_ABNORMAL_005
+     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_ABNORMAL_0500
      * @tc.desc   测试bufferQueueCount接口传入-Infinity，按默认值5处理
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -347,7 +347,7 @@ export default function BufferQueueCountTest() {
 
     /**
      * @tc.name   bufferQueueCount_null_001
-     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_NULL_001
+     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_NULL_0100
      * @tc.desc   测试bufferQueueCount接口传入null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -363,7 +363,7 @@ export default function BufferQueueCountTest() {
 
     /**
      * @tc.name   bufferQueueCount_undefined_001
-     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_UNDEFINED_001
+     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_UNDEFINED_0100
      * @tc.desc   测试bufferQueueCount接口传入undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -381,7 +381,7 @@ export default function BufferQueueCountTest() {
 
     /**
      * @tc.name   bufferQueueCount_default_001
-     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_DEFAULT_001
+     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_DEFAULT_0100
      * @tc.desc   测试bufferQueueCount接口未调用时默认值为5
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -397,7 +397,7 @@ export default function BufferQueueCountTest() {
 
     /**
      * @tc.name   bufferQueueCount_default_002
-     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_DEFAULT_002
+     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_DEFAULT_0200
      * @tc.desc   测试bufferQueueCount接口传入默认值5
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -416,7 +416,7 @@ export default function BufferQueueCountTest() {
 
     /**
      * @tc.name   bufferQueueCount_chaining_001
-     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_CHAINING_001
+     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_CHAINING_0100
      * @tc.desc   测试bufferQueueCount接口链式调用返回对象正确
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -432,7 +432,7 @@ export default function BufferQueueCountTest() {
 
     /**
      * @tc.name   bufferQueueCount_dynamicModify_001
-     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_DYNAMIC_MODIFY_001
+     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_DYNAMIC_MODIFY_0100
      * @tc.desc   测试bufferQueueCount接口动态修改：先设置2再设置为5
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -451,7 +451,7 @@ export default function BufferQueueCountTest() {
 
     /**
      * @tc.name   bufferQueueCount_dynamicModify_002
-     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_DYNAMIC_MODIFY_002
+     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_DYNAMIC_MODIFY_0200
      * @tc.desc   测试bufferQueueCount接口动态修改：先设置5再设置为2
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -470,7 +470,7 @@ export default function BufferQueueCountTest() {
 
     /**
      * @tc.name   bufferQueueCount_dynamicModify_003
-     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_DYNAMIC_MODIFY_003
+     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_DYNAMIC_MODIFY_0300
      * @tc.desc   测试bufferQueueCount接口多次动态修改值：2→3→4→5→3
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -496,7 +496,7 @@ export default function BufferQueueCountTest() {
 
     /**
      * @tc.name   bufferQueueCount_reset_001
-     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_RESET_001
+     * @tc.number SUB_ARKUI_XCOMPONENT_BUFFERQUEUECOUNT_RESET_0100
      * @tc.desc   测试bufferQueueCount接口reset后countValue恢复为null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
