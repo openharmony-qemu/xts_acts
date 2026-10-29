@@ -27,6 +27,11 @@ interface OnZoomChangeEvent {
 
 type OnZoomChangeCallback = (zoomChangeInfo: OnZoomChangeEvent) => void;
 
+interface ZoomFactorWebviewController {
+  setZoomFactor(factor: number | undefined | null): void;
+  getZoomFactor(): number;
+}
+
 @Entry
 @Component
 struct DynamicSdkWebviewPage {
