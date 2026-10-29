@@ -734,7 +734,7 @@ export default function wifiSta() {
           }
           done();
         });
-        await clickText('连接');
+        await clickText(driver, '连接');
         console.info(`${caseName} connectToCandidateConfig click 连接`);
         await sleep(1000);
       } catch (err) {
@@ -834,7 +834,7 @@ export default function wifiSta() {
           }
           done();
         });
-        await clickText('取消');
+        await clickText(driver, '取消');
         console.info(`${caseName} connectToCandidateConfig click 取消`);
         await sleep(1000);
       } catch (err) {
