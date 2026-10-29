@@ -250,7 +250,8 @@ export default function atomicsOrTest() {
         return ops.map(op => ArkTSUtils.Atomics.or(arr, op.idx, op.val));
       };
 
-      const oldValues = batchOr(ia, [{ idx: 0, val: 4 }, { idx: 1, val: 2 }]);
+      const ops: typeOr26[] = [{ idx: 0, val: 4 }, { idx: 1, val: 2 }];
+      const oldValues = batchOr(ia, ops);
       expect(oldValues).assertDeepEquals([3, 5]);
       expect(ia[0]).assertEqual(7); // 0b0111
       expect(ia[1]).assertEqual(7); // 0b0111

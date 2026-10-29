@@ -1084,11 +1084,7 @@ export default function atomicsAddTest() {
       i32a[0] = 0;
 
       const valuesToAdd = [5, 10, 15, 20];
-      const results: number[] = [];
-
-      for await (const result of atomicAddGenerator(valuesToAdd, i32a)) {
-        results.push(result);
-      }
+      const results: number[] = await atomicAddGenerator(valuesToAdd, i32a);
 
       expect(results).assertDeepEquals([0, 5, 15, 30]);
       expect(i32a[0]).assertEqual(50); // 5 + 10 + 15 + 20 = 50

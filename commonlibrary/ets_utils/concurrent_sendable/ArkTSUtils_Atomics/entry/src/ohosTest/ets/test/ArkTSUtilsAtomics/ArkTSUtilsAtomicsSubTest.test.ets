@@ -259,7 +259,8 @@ export default function atomicsSubTest() {
         return ops.map(op => ArkTSUtils.Atomics.sub(arr, op.idx, op.val));
       };
 
-      const oldValues = batchSub(ia, [{ idx: 0, val: 5 }, { idx: 1, val: 8 }]);
+      const ops: typeSub25[] = [{ idx: 0, val: 5 }, { idx: 1, val: 8 }];
+      const oldValues = batchSub(ia, ops);
       expect(oldValues).assertDeepEquals([20, 30]);
       expect(ia[0]).assertEqual(15);
       expect(ia[1]).assertEqual(22);

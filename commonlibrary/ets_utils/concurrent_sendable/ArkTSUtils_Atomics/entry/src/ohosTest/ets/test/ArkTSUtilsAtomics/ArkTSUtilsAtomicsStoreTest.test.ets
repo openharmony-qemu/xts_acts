@@ -1106,15 +1106,16 @@ export default function atomicsStoreTest() {
       const sab = new collections.ArrayBuffer(4);
       const ta = new collections.Int32Array(sab);
       const targetVal = 45678;
-      const cache: typeStore85 = {};
+      const cache: typeStore85 = new collections.Map<number, number>();
 
       const cachedStore = async (arr: collections.Int32Array, idx: number, val: number) => {
-        if (cache[idx] !== undefined) {
-          return cache[idx];
+        const cachedValue: number | undefined = cache.get(idx);
+        if (cachedValue !== undefined) {
+          return cachedValue;
         }
         await new Promise<void>(resolve => setTimeout(resolve, 2));
         const storedVal = ArkTSUtils.Atomics.store(arr, idx, val);
-        cache[idx] = storedVal;
+        cache.set(idx, storedVal);
         return storedVal;
       }
 
@@ -1122,7 +1123,7 @@ export default function atomicsStoreTest() {
       const storedVal2 = await cachedStore(ta, 0, 99999); // Should use cache
       expect(storedVal1).assertEqual(targetVal);
       expect(storedVal2).assertEqual(targetVal);
-      expect(cache[0]).assertEqual(targetVal);
+      expect(cache.get(0) as number).assertEqual(targetVal);
       expect(ta[0]).assertEqual(targetVal);
       done();
     });

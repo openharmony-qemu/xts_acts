@@ -1147,16 +1147,17 @@ export default function atomicsLoadTest() {
       const sab = new collections.ArrayBuffer(4);
       const ta = new collections.Int32Array(sab);
       ta[0] = 45678;
-      const cache: typeLoad85 = {};
+      const cache: typeLoad85 = new collections.Map<number, number>();
 
       // Load + async cache value by index
       const cachedLoad = async (arr: collections.Int32Array, idx: number) => {
-        if (cache[idx] !== undefined) {
-          return cache[idx];
+        const cachedValue: number | undefined = cache.get(idx);
+        if (cachedValue !== undefined) {
+          return cachedValue;
         }
         await new Promise<void>(resolve => setTimeout(resolve, 2));
         const value = ArkTSUtils.Atomics.load(arr, idx);
-        cache[idx] = value;
+        cache.set(idx, value);
         return value;
       }
 
@@ -1164,7 +1165,7 @@ export default function atomicsLoadTest() {
       const result2 = await cachedLoad(ta, 0); // Use cache
       expect(result1).assertEqual(45678);
       expect(result2).assertEqual(45678);
-      expect(cache[0]).assertEqual(45678);
+      expect(cache.get(0) as number).assertEqual(45678);
       done();
     });
     /**

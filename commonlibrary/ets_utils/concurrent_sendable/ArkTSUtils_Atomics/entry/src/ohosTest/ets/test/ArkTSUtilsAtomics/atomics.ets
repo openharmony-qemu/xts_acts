@@ -1,393 +1,512 @@
-import { ArkTSUtils, collections } from '@kit.ArkTS';
 /*
-* Copyright (C) 2025 HiHope Open Source Organization.
-* Licensed under the Apache License, Version 2.0 (the 'License');
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*   http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an 'AS IS' BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
+ * Copyright (C) 2025 HiHope Open Source Organization.
+ * Licensed under the Apache License, Version 2.0 (the 'License');
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an 'AS IS' BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
-// Async generator that performs atomic adds
-export async function* atomicAddGenerator(values: number[], i32a: collections.Int32Array): AsyncGenerator<number> {
-  for (const value of values) {
-    await new Promise(resolve => setTimeout(resolve, 10));
-    const oldValue = ArkTSUtils.Atomics.add(i32a, 0, value);
-    yield oldValue;
-  }
+import { ArkTSUtils, collections } from '@kit.ArkTS';
+
+export interface typeOld {
+  old: number;
+  new: number;
 }
-export async function* andGenerator90(arr: collections.Int32Array, idx: number, masks: number[]) {
-  for (const mask of masks) {
-    await new Promise<void>(resolve => setTimeout(resolve, 2));
-    const oldVal = ArkTSUtils.Atomics.and(arr, idx, mask);
-    yield { oldVal, newVal: arr[idx] };
-  }
+
+export interface type56 {
+  time: number;
+  old: number;
+  new: number;
+  val: number;
 }
-export async function atomicsAndTest090(){
+
+export interface type63 {
+  old: number;
+  success: boolean;
+}
+
+export interface type71 {
+  old: number;
+  success: boolean;
+}
+
+export interface type90 {
+  oldVal: number;
+  newVal: number;
+}
+
+export interface type69 {
+  idx: number;
+  res: number;
+}
+
+export interface type73 {
+  oldVal: number;
+  newVal: number;
+  mask: number;
+}
+
+export interface type96 {
+  time: number;
+  oldValue: number;
+  success: boolean;
+}
+
+export interface typeCom90 {
+  success: boolean;
+  oldValue: number;
+}
+
+export interface type97 {
+  old: number;
+  new: number;
+  success: boolean;
+}
+
+export interface type86 {
+  old: number;
+  new: number;
+  time: number;
+}
+
+export interface type94 {
+  success: boolean;
+  reason?: string;
+}
+
+export interface type41 {
+  size: number;
+  isFree: boolean;
+  isValidSize: boolean;
+}
+
+export interface type55 {
+  type: string;
+  result: boolean | number;
+}
+
+export interface type88 {
+  hasError: boolean;
+  isFree: boolean;
+}
+
+export interface type51 {
+  size: number;
+  isFree: boolean;
+}
+
+export interface type67 {
+  resultIsValid: boolean;
+  isFree: boolean;
+  isValidSize: boolean;
+}
+
+export interface type77 {
+  size: number;
+  result: boolean;
+}
+
+export interface typeLock71 {
+  valid: boolean;
+  result?: boolean;
+}
+
+export interface typeLock100 {
+  size: number;
+  isFree: boolean;
+  isValid: boolean;
+}
+
+export interface typeLock91 {
+  delay: number;
+  result: boolean;
+}
+
+export interface typeLock74 {
+  result: boolean;
+  callCount: number;
+  size: number;
+}
+
+export type typeLoad85 = collections.Map<number, number>;
+export type typeStore85 = collections.Map<number, number>;
+
+export interface typeLoad80 {
+  loaded: boolean;
+  value: number;
+}
+
+export interface typeLoad95 {
+  id1: number;
+  id2: number;
+}
+
+export interface typeLoad88 {
+  value: number;
+  inRange: boolean;
+}
+
+export interface typeNotify96 {
+  valid0: boolean;
+  valid1: boolean;
+}
+
+export interface typeNotify78 {
+  time: number;
+  count: number;
+}
+
+export interface typeOr75 {
+  old: number;
+  success: boolean;
+}
+
+export interface typeOr87 {
+  oldValues: number[];
+  newValues: number[];
+}
+
+export interface typeOr80 {
+  old: number;
+  success: boolean;
+}
+
+export interface typeOr60 {
+  time: number;
+  old: number;
+  new: number;
+}
+
+export interface typeOr52 {
+  old: number;
+  new: number;
+}
+
+export interface typeOr97 {
+  mask: number;
+  timestamp: number;
+}
+
+export interface typeOr26 {
+  idx: number;
+  val: number;
+}
+
+export interface typeStore95 {
+  id1: number;
+  id2: number;
+}
+
+export interface typeStore88 {
+  storedVal: number;
+  inRange: boolean;
+}
+
+export interface typeStore80 {
+  stored: boolean;
+  value: number;
+}
+
+export interface typeSub76 {
+  old: number;
+  success: boolean;
+}
+
+export interface typeSub83 {
+  oldValues: number[];
+  newValues: number[];
+}
+
+export interface typeSub71 {
+  old: number;
+  success: boolean;
+}
+
+export interface typeSub63 {
+  old: number;
+  success: boolean;
+}
+
+export interface typeSub98 {
+  before: number;
+  after: number;
+  val: number;
+}
+
+export interface typeSub93 {
+  val: number;
+  timestamp: number;
+}
+
+export interface typeSub56 {
+  time: number;
+  old: number;
+  new: number;
+}
+
+export interface typeSub46 {
+  oldValue: number;
+  newValue: number;
+}
+
+export interface typeSub25 {
+  idx: number;
+  val: number;
+}
+
+export interface typeXor93 {
+  val: number;
+  timestamp: number;
+}
+
+export interface typeXor98 {
+  before: number;
+  after: number;
+  val: number;
+}
+
+export interface typeWait01 {
+  ta: collections.Int32Array;
+  index: number;
+  value: number;
+}
+
+export interface typeWait04 {
+  ta: collections.Int32Array;
+  index: number;
+  value: number;
+}
+
+export interface typeWait02 {
+  ta: collections.Int32Array;
+  index: number;
+}
+
+export interface typeWait05 {
+  ta: collections.Int32Array;
+  index: number;
+}
+
+export interface typeWait03 {
+  ta: collections.Int32Array;
+  index: number;
+  value: number;
+  timeout: number;
+}
+
+export interface typeWait06 {
+  ta: collections.Int32Array;
+  index: number;
+  value: number;
+  timeout: number;
+}
+
+export interface typeWait07 {
+  ta: collections.Int32Array;
+}
+
+export interface typeWait11 {
+  sab: collections.ArrayBuffer;
+}
+
+function delay(ms: number): Promise<void> {
+  return new Promise<void>((resolve: () => void) => {
+    setTimeout(resolve, ms);
+  });
+}
+
+export async function atomicAddGenerator(values: number[], i32a: collections.Int32Array): Promise<number[]> {
+  const oldValues: number[] = [];
+  for (let i = 0; i < values.length; i++) {
+    await delay(10);
+    oldValues.push(ArkTSUtils.Atomics.add(i32a, 0, values[i]));
+  }
+  return oldValues;
+}
+
+export async function atomicsAndTest090(): Promise<type90[]> {
   const sab = new collections.ArrayBuffer(4);
   const ia = new collections.Int32Array(sab);
-  ia[0] = 40; // 0b101000
-
-  // Async generator function for ArkTSUtils.Atomics.and
-
-
-  // Iterate generator and collect results
-  const masks = [0b101111, 0b100000];
-  const generator = andGenerator90(ia, 0, masks);
+  ia[0] = 40;
+  const masks: number[] = [0b101111, 0b100000];
   const results: type90[] = [];
-
-  for await (const res of generator) {
-    results.push(res);
+  for (let i = 0; i < masks.length; i++) {
+    await delay(2);
+    const oldVal = ArkTSUtils.Atomics.and(ia, 0, masks[i]);
+    const item: type90 = { oldVal, newVal: ia[0] };
+    results.push(item);
   }
-  return results
+  return results;
 }
 
-export async function atomicsCompareExchangeTest067(){
+export async function atomicsCompareExchangeTest067(): Promise<number[]> {
   const sab = new collections.ArrayBuffer(4);
   const ia = new collections.Int32Array(sab);
   ia[0] = 100;
-
-  // Async generator that yields compareExchange results
-  async function* atomicGenerator(updates: [number, number][]) {
-    for (const [expected, newValue] of updates) {
-      yield new Promise<number>((resolve) => {
-        setTimeout(() => {
-          const oldValue = ArkTSUtils.Atomics.compareExchange(ia, 0, expected, newValue);
-          resolve(oldValue);
-        }, 3);
-      });
-    }
-  }
-
-  // Define update sequence
-  const updates: [number, number][] = [[100, 110], [110, 120], [120, 130]];
-  const generator = atomicGenerator(updates);
+  const expectedValues: number[] = [100, 110, 120];
+  const newValues: number[] = [110, 120, 130];
   const oldValues: number[] = [];
-
-  // Consume generator
-  for await (const oldVal of generator) {
-    oldValues.push(oldVal);
+  for (let i = 0; i < expectedValues.length; i++) {
+    await delay(3);
+    oldValues.push(ArkTSUtils.Atomics.compareExchange(ia, 0, expectedValues[i], newValues[i]));
   }
-  return oldValues
+  return oldValues;
 }
 
-export async function atomicsCompareExchangeTest082(){
+export async function atomicsCompareExchangeTest082(): Promise<number[]> {
   const sab = new collections.ArrayBuffer(4);
   const ia = new collections.Int32Array(sab);
   ia[0] = 10;
-
-  // Async iterator: persists last expected value between yields
-  async function* atomicUpdateIterator(updates: number[]): AsyncGenerator<number> {
-    let lastExpected = ia[0]; // Persist state
-    for (const newValue of updates) {
-      yield new Promise<number>((resolve) => {
-        setTimeout(() => {
-          const oldValue = ArkTSUtils.Atomics.compareExchange(ia, 0, lastExpected, newValue);
-          if (oldValue === lastExpected) {
-            lastExpected = newValue; // Update persisted state on success
-          }
-          resolve(oldValue);
-        }, 4);
-      });
-    }
-  }
-
-  // Define update sequence (depends on persisted state)
-  const updates = [15, 20, 25];
-  const iterator = atomicUpdateIterator(updates);
+  let lastExpected = ia[0];
+  const updates: number[] = [15, 20, 25];
   const oldValues: number[] = [];
-
-  // Consume iterator
-  for await (const oldVal of iterator) {
-    oldValues.push(oldVal);
+  for (let i = 0; i < updates.length; i++) {
+    await delay(4);
+    const oldValue = ArkTSUtils.Atomics.compareExchange(ia, 0, lastExpected, updates[i]);
+    if (oldValue === lastExpected) {
+      lastExpected = updates[i];
+    }
+    oldValues.push(oldValue);
   }
-  return oldValues
+  return oldValues;
 }
-export async function atomicsExchangeTest096(){
+
+export async function atomicsExchangeTest096(): Promise<number[]> {
   const sab = new collections.ArrayBuffer(4);
   const ia = new collections.Int32Array(sab);
   ia[0] = 0;
-  const stopValue = 25; // Stop when value reaches 25
+  const stopValue = 25;
+  const step = 10;
   const oldValues: number[] = [];
-
-  // Async iterator: stops when value reaches stopValue
-  async function* autoStopIterator(step: number) {
-    let current = ia[0];
-    while (current < stopValue) {
-      yield new Promise<number>((resolve) => {
-        setTimeout(() => {
-          const old = ArkTSUtils.Atomics.exchange(ia, 0, current + step);
-          oldValues.push(old);
-          current += step;
-          resolve(old);
-        }, 3);
-      });
-    }
+  let current = ia[0];
+  while (current < stopValue) {
+    await delay(3);
+    oldValues.push(ArkTSUtils.Atomics.exchange(ia, 0, current + step));
+    current += step;
   }
-
-  // Consume iterator (stops automatically)
-  const iterator = autoStopIterator(10);
-  for await (const _ of iterator) { /* No-op: track via oldValues */ }
-  return oldValues
+  return oldValues;
 }
-export async function atomicsExchangeTest078(){
+
+export async function atomicsExchangeTest078(): Promise<number[]> {
   const sab = new collections.ArrayBuffer(4);
   const ia = new collections.Int32Array(sab);
   ia[0] = 10;
-  const errorValues = new Set([20, 30]); // Values that trigger error
+  const values: number[] = [15, 20, 25, 30, 35];
   const oldValues: number[] = [];
-  let errorCount = 0;
-
-  // Async iterator with per-iteration error handling
-  async function* exchangeIterator(values: number[]) {
-    for (const val of values) {
-      yield new Promise<{ old: number; success: boolean }>((resolve) => {
-        setTimeout(() => {
-          if (errorValues.has(val)) {
-            errorCount++;
-            resolve({ old: ia[0], success: false }); // Error: skip exchange
-            return;
-          }
-          const old = ArkTSUtils.Atomics.exchange(ia, 0, val);
-          oldValues.push(old);
-          resolve({ old, success: true });
-        }, 3);
-      });
+  for (let i = 0; i < values.length; i++) {
+    await delay(3);
+    if (values[i] === 20 || values[i] === 30) {
+      continue;
     }
+    oldValues.push(ArkTSUtils.Atomics.exchange(ia, 0, values[i]));
   }
-
-  // Define value sequence (includes error values)
-  const values = [15, 20, 25, 30, 35];
-  const iterator = exchangeIterator(values);
-
-  // Consume iterator
-  for await (const res of iterator) { /* No-op: results tracked via side effects */ }
-
-  return oldValues
+  return oldValues;
 }
-export async function atomicsExchangeTest063(){
+
+export async function atomicsExchangeTest063(): Promise<number[]> {
   const sab = new collections.ArrayBuffer(4);
   const ia = new collections.Int32Array(sab);
   ia[0] = 0;
-
-  // Async iterator: generates new values dynamically (current * 2)
-  async function* dynamicValueGenerator(count: number) {
-    let current = ia[0];
-    for (let i = 0; i < count; i++) {
-      current *= 2;
-      yield new Promise<number>((resolve) => {
-        setTimeout(() => {
-          const old = ArkTSUtils.Atomics.exchange(ia, 0, current);
-          resolve(old);
-        }, 3);
-      });
-    }
-  }
-
-  // Consume iterator (3 dynamic updates)
-  const generator = dynamicValueGenerator(3);
   const oldValues: number[] = [];
-  for await (const old of generator) {
-    oldValues.push(old);
+  let current = ia[0];
+  for (let i = 0; i < 3; i++) {
+    current *= 2;
+    await delay(3);
+    oldValues.push(ArkTSUtils.Atomics.exchange(ia, 0, current));
   }
-  return oldValues
+  return oldValues;
 }
-export async function atomicsExchangeTest054(){
+
+export async function atomicsExchangeTest054(): Promise<number[]> {
   const sab = new collections.ArrayBuffer(4);
   const ia = new collections.Int32Array(sab);
   ia[0] = 10;
-
-  // Async generator: yields old values after exchange
-  async function* exchangeGenerator(newValues: number[]) {
-    for (const val of newValues) {
-      yield new Promise<number>((resolve) => {
-        setTimeout(() => {
-          const old = ArkTSUtils.Atomics.exchange(ia, 0, val);
-          resolve(old);
-        }, 3);
-      });
-    }
-  }
-
-  // Define update sequence
-  const newValues = [20, 30, 40];
-  const generator = exchangeGenerator(newValues);
+  const newValues: number[] = [20, 30, 40];
   const oldValues: number[] = [];
-
-  // Consume generator
-  for await (const old of generator) {
-    oldValues.push(old);
+  for (let i = 0; i < newValues.length; i++) {
+    await delay(3);
+    oldValues.push(ArkTSUtils.Atomics.exchange(ia, 0, newValues[i]));
   }
-
-  return oldValues
+  return oldValues;
 }
-export async function atomicsIsLockFreeTest088(){
-  async function* lockFreeGeneratorWithErrorHandling(sizes: (number | string)[]):
-    AsyncGenerator<{ size: number | string; isFree: boolean; hasError: boolean }> {
-    for (const size of sizes) {
-      try {
-        await new Promise<void>(resolve => setTimeout(resolve, 2));
-        const isFree = ArkTSUtils.Atomics.isLockFree(size as number);
-        yield { size, isFree, hasError: false };
-      } catch (err) {
-        yield { size, isFree: false, hasError: true };
-      }
-    }
-  }
 
+export async function atomicsIsLockFreeTest088(): Promise<type88[]> {
   const sizes: (number | string)[] = [1, 'invalid', 1];
-  const generator = lockFreeGeneratorWithErrorHandling(sizes);
-  const results: { size: number | string; isFree: boolean; hasError: boolean }[] = [];
-
-  for await (const res of generator) {
-    results.push(res);
-  }
-
-  return results
-}
-export async function atomicsIsLockFreeTest051(){
-  async function* lockFreeGenerator(sizes: number[]) {
-    for (const size of sizes) {
-      await new Promise<void>(resolve => setTimeout(resolve, 2));
-      yield { size, isFree: ArkTSUtils.Atomics.isLockFree(size) };
+  const results: type88[] = [];
+  for (let i = 0; i < sizes.length; i++) {
+    await delay(2);
+    try {
+      const isFree = ArkTSUtils.Atomics.isLockFree(sizes[i] as number);
+      const item: type88 = { hasError: false, isFree };
+      results.push(item);
+    } catch (err) {
+      const item: type88 = { hasError: true, isFree: false };
+      results.push(item);
     }
   }
-
-  const sizes = [1, 1, 1];
-  const generator = lockFreeGenerator(sizes);
-  const results: { size: number, isFree: boolean }[] = [];
-
-  for await (const res of generator) {
-    results.push(res);
-  }
-
-  return results
+  return results;
 }
-export async function atomicsIsLockFreeTest077(){
-  async function* lockFreeGeneratorWithEarlyReturn(sizes: number[], maxCalls: number) {
-    let callCount = 0;
-    for (const size of sizes) {
-      if (callCount >= maxCalls) {
-        return;
-      } // Early return after max calls
-      callCount++;
-      await new Promise<void>(resolve => setTimeout(resolve, 2));
-      yield { size, result: ArkTSUtils.Atomics.isLockFree(size) };
+
+export async function atomicsIsLockFreeTest051(): Promise<type51[]> {
+  const sizes: number[] = [1, 1, 1];
+  const results: type51[] = [];
+  for (let i = 0; i < sizes.length; i++) {
+    await delay(2);
+    const item: type51 = { size: sizes[i], isFree: ArkTSUtils.Atomics.isLockFree(sizes[i]) };
+    results.push(item);
+  }
+  return results;
+}
+
+export async function atomicsIsLockFreeTest077(): Promise<type77[]> {
+  const sizes: number[] = [2, 2, 2, 2];
+  const results: type77[] = [];
+  let callCount = 0;
+  for (let i = 0; i < sizes.length; i++) {
+    if (callCount >= 2) {
+      break;
+    }
+    callCount++;
+    await delay(2);
+    const item: type77 = { size: sizes[i], result: ArkTSUtils.Atomics.isLockFree(sizes[i]) };
+    results.push(item);
+  }
+  return results;
+}
+
+export async function atomicsIsLockFreeTest067(): Promise<type67[]> {
+  const sizes: number[] = [4, 4, 5];
+  const results: type67[] = [];
+  for (let i = 0; i < sizes.length; i++) {
+    await delay(2);
+    const isFree = ArkTSUtils.Atomics.isLockFree(sizes[i]);
+    const item: type67 = {
+      size: sizes[i],
+      isFree,
+      isValidSize: [1, 2, 4, 8].includes(sizes[i]),
+      resultIsValid: typeof isFree === 'boolean'
+    };
+    results.push(item);
+  }
+  return results;
+}
+
+export async function atomicsIsLockFreeTest099(): Promise<type51[]> {
+  const sizes: number[] = [4, 5, 4, 6, 4];
+  const filteredResults: type51[] = [];
+  for (let i = 0; i < sizes.length; i++) {
+    await delay(2);
+    if (sizes[i] === 4) {
+      const item: type51 = { size: sizes[i], isFree: ArkTSUtils.Atomics.isLockFree(sizes[i]) };
+      filteredResults.push(item);
     }
   }
-
-  const sizes = [2, 2, 2, 2];
-  const generator = lockFreeGeneratorWithEarlyReturn(sizes, 2);
-  const results: { size: number, result: boolean }[] = [];
-
-  for await (const res of generator) {
-    results.push(res);
-  }
-  return results
+  return filteredResults;
 }
-export async function atomicsIsLockFreeTest067(){
-  async function* validatedLockFreeGenerator(sizes: number[]) {
-    for (const size of sizes) {
-      await new Promise<void>(resolve => setTimeout(resolve, 2));
-      const isFree = ArkTSUtils.Atomics.isLockFree(size);
-      yield {
-        size,
-        isFree,
-        isValidSize: [1, 2, 4, 8].includes(size),
-        resultIsValid: typeof isFree === 'boolean'
-      };
-    }
-  }
-
-  const sizes = [4, 4, 5]; // 2 valid, 1 invalid
-  const generator = validatedLockFreeGenerator(sizes);
-  const results: { size: number; isFree: boolean; isValidSize: boolean; resultIsValid: boolean }[] = [];
-
-  for await (const res of generator) {
-    results.push(res);
-  }
-  return results
-}
-export async function atomicsIsLockFreeTest099(){
-  async function* lockFreeGenerator(sizes: number[]) {
-    for (const size of sizes) {
-      await new Promise<void>(resolve => setTimeout(resolve, 2));
-      yield { size, isFree: ArkTSUtils.Atomics.isLockFree(size) };
-    }
-  }
-
-  const sizes = [4, 5, 4, 6, 4];
-  const generator = lockFreeGenerator(sizes);
-  const filteredResults: { size: number, isFree: boolean }[] = [];
-
-  for await (const res of generator) {
-    if (res.size === 4) {
-      filteredResults.push(res);
-    } // Filter to only 4-byte results
-  }
-  return filteredResults
-}
-export type typeOld = { old: number; new: number }
-export type type56 = { time: number; old: number; new: number; val: number }
-export type type63 = { old: number; success: boolean }
-export type type71 = { old: number; success: boolean }
-export type type90 = { oldVal: number, newVal: number }
-export type type69 = { idx: number, res: number }
-export type type73 = { oldVal: number, newVal: number, mask: number }
-export type type96 = { time: number; oldValue: number; success: boolean }
-export type typeCom90 ={ success: boolean; oldValue: number }
-export type type97 ={ old: number; new: number; success: boolean }
-export type type86 ={ old: number; new: number; time: number }
-export type type94 ={ success: boolean; reason?: string }
-export type type41 ={ size: number, isFree: boolean, isValidSize: boolean }
-export type type55 ={ type: string, result: boolean|number}
-export type type88 ={ hasError: boolean, isFree: boolean}
-export type type51 ={ size: number, isFree: boolean }
-export type type67 ={ resultIsValid: boolean, isFree: boolean , isValidSize: boolean }
-export type type77 ={ size: number, result: boolean }
-export type typeLock71 ={ valid: boolean, result?: boolean }
-export type typeLock100 ={ size: number, isFree: boolean, isValid: boolean }
-export type typeLock91 ={ delay: number, result: boolean }
-export type typeLock74 ={ result:boolean, callCount:number, size:number}
-export type typeLoad85 ={ [key: number]: number }
-export type typeLoad80 ={ loaded: boolean, value: number }
-export type typeLoad95 ={ id1: number, id2: number }
-export type typeLoad88 ={ value: number, inRange: boolean }
-export type typeNotify96 ={ valid0: boolean; valid1: boolean }
-export type typeNotify78 ={ time: number; count: number }
-export type typeOr75 ={ old: number; success: boolean }
-export type typeOr87 ={ oldValues: number[], newValues: number[] }
-export type typeOr80 ={ old: number; success: boolean }
-export type typeOr60 ={ time: number; old: number; new: number }
-export type typeOr52 ={ old: number; new: number }
-export type typeOr97 ={ mask: number; timestamp: number }
-export type typeOr26 ={idx: number, val: number}
-export type typeStore85 ={ [key: number]: number }
-export type typeStore95 ={ id1: number, id2: number }
-export type typeStore88 ={ storedVal: number, inRange: boolean }
-export type typeStore80 ={ stored: boolean, value: number }
-export type typeSub76 ={ old: number; success: boolean }
-export type typeSub83 ={ oldValues: number[], newValues: number[] }
-export type typeSub71 ={ old: number; success: boolean }
-export type typeSub63 ={ old: number; success: boolean }
-export type typeSub98 ={ before: number; after: number; val: number }
-export type typeSub93 ={ val: number; timestamp: number }
-export type typeSub56 ={ time: number; old: number; new: number }
-export type typeSub46 ={  oldValue:number, newValue: number }
-export type typeSub25 ={idx: number, val: number}
-export type typeXor93 ={ val: number; timestamp: number }
-export type typeXor98 ={ before: number; after: number; val: number }
-export type typeWait01 ={ ta:collections.Int32Array, index: number, value: number }
-export type typeWait04 ={ ta:collections.Int32Array, index: number, value: number }
-export type typeWait02 ={ ta:collections.Int32Array, index: number }
-export type typeWait05 ={ ta:collections.Int32Array, index: number }
-export type typeWait03 ={ ta:collections.Int32Array, index: number, value: number ,timeout:number}
-export type typeWait06 ={ ta:collections.Int32Array, index: number, value: number ,timeout:number}
-export type typeWait07 = { ta: collections.Int32Array }
-export type typeWait11 = { sab: collections.ArrayBuffer }

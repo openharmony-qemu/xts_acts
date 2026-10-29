@@ -282,7 +282,8 @@ export default function atomicsXorTest() {
         return ops.map(op => ArkTSUtils.Atomics.xor(arr, op.idx, op.val));
       };
 
-      const oldValues = batchXor(ia, [{ idx: 0, val: 4 }, { idx: 1, val: 2 }]);
+      const ops: typeSub25[] = [{ idx: 0, val: 4 }, { idx: 1, val: 2 }];
+      const oldValues = batchXor(ia, ops);
       expect(oldValues).assertDeepEquals([3, 5]);
       expect(ia[0]).assertEqual(7); // 0b0111
       expect(ia[1]).assertEqual(7); // 0b0111
