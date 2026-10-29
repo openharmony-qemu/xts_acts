@@ -18,7 +18,6 @@ import { AppStorage, State } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';
 import {
-  Alignment,
   Builder,
   Button,
   ClickEvent,
@@ -99,10 +98,11 @@ struct FocusScopeId001 {
       }
     }.title('pageOne')
   }
+
   build() {
     Column() {
       Navigation(this.pageInfos) {
-        Row({ space: 5 }) {
+        Row({ space: 5 } as RowOptions) {
           Column() {
             Text('焦点组1，可删除')
             if (this.flag) {
@@ -141,7 +141,7 @@ struct FocusScopeId001 {
                 this.getUIContext().getFocusController().clearFocus()
               })
 
-            Button('更改第一个焦点组的isGroup:' + this.isGroupValue)
+            Button('更改isGroup:' + this.isGroupValue)
               .id('FocusScopeId001_changIsGroup')
               .focusOnTouch(true)
               .onClick((e: ClickEvent) => {

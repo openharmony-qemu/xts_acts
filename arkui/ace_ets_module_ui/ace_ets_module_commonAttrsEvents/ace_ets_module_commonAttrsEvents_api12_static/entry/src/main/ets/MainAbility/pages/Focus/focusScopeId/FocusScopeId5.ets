@@ -18,7 +18,6 @@ import { AppStorage, State } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';
 import {
-  Alignment,
   Builder,
   Button,
   ClickEvent,
@@ -87,66 +86,71 @@ struct FocusScopeId5 {
       }
     }.title('pageOne')
   }
+
   build() {
-    Column() {
+    Column({space: 5} as ColumnOptions) {
       Navigation(this.pageInfos) {
-        Column() {
-          Text('焦点组5')
-          Column() {
-            Button('单栏')
-              .id('FocusScopeId5_btn1_5')
-              .onClick((e: ClickEvent) => {
-                this.modeValue = NavigationMode.Stack
-              })
-              .focusOnTouch(true)
+        Column({ space: 5 } as ColumnOptions) {
 
-            Button('双栏')
-              .id('FocusScopeId5_btn2_5')
-              .onClick((e: ClickEvent) => {
-                this.modeValue = NavigationMode.Split
-              })
-              .focusOnTouch(true)
+            Text('焦点组5')
+            Column({ space: 5 } as ColumnOptions) {
+              Button('单栏')
+                .id('FocusScopeId5_btn1_5')
+                .onClick((e: ClickEvent) => {
+                  this.modeValue = NavigationMode.Stack
+                })
+                .focusOnTouch(true)
 
-            Button('pushPageOne')
-              .id('FocusScopeId5_btn3_5')
-              .onClick((e: ClickEvent) => {
-                this.pageInfos.pushPath({ name: 'pageOne' })
-              })
-              .focusOnTouch(true)
-          }
-          .focusScopeId('FocusScopeId5_focusGroup5', true)
-          .borderWidth(1)
+              Button('双栏')
+                .id('FocusScopeId5_btn2_5')
+                .onClick((e: ClickEvent) => {
+                  this.modeValue = NavigationMode.Split
+                })
+                .focusOnTouch(true)
 
-
-          Text('焦点组6，第三个按钮设置默认获焦')
-          Row() {
-            Column() {
-              Button('btn1').focusOnTouch(true)
-                .id('FocusScopeId5_btn1_6')
-              Button('btn2').focusOnTouch(true)
-                .id('FocusScopeId5_btn2_6')
-              Button('defaultFocus:true').focusOnTouch(true).defaultFocus(true)
-                .id('FocusScopeId5_btn3_6')
+              Button('pushPageOne')
+                .id('FocusScopeId5_btn3_5')
+                .onClick((e: ClickEvent) => {
+                  const pathInfo = new NavPathInfo('pageOne', null);
+                  this.pageInfos.pushPath(pathInfo);
+                })
+                .focusOnTouch(true)
             }
-            .focusScopeId('FocusScopeId5_focusGroup6', true, true)
+            .focusScopeId('FocusScopeId5_focusGroup5', true)
             .borderWidth(1)
 
-            Column() {
-              Button('clearFocus')
-                .id('FocusScopeId5_clearFocus')
-                .onClick((e: ClickEvent) => {
-                  this.getUIContext().getFocusController().clearFocus()
-                })
-              Button('requestFocus_焦点组1 btn2')
-                .id('FocusScopeId5_requestFocus')
-                .focusOnTouch(true)
-                .onClick((e: ClickEvent) => {
-                  this.getUIContext().getFocusController().requestFocus('FocusScopeId5_btn2_6')
-                })
-            }
-          }
 
-        }
+            Text('焦点组6，第三个按钮设置默认获焦')
+            Row() {
+              Column({ space: 5 } as ColumnOptions) {
+                Button('btn1').focusOnTouch(true)
+                  .id('FocusScopeId5_btn1_6')
+                Button('btn2').focusOnTouch(true)
+                  .id('FocusScopeId5_btn2_6')
+                Button('defaultFocus:true').focusOnTouch(true).defaultFocus(true)
+                  .id('FocusScopeId5_btn3_6')
+              }
+              .focusScopeId('FocusScopeId5_focusGroup6', true, true)
+              .borderWidth(1)
+
+              Column({ space: 5 } as ColumnOptions) {
+                Button('clearFocus')
+                  .id('FocusScopeId5_clearFocus')
+                  .focusOnTouch(true)
+                  .onClick((e: ClickEvent) => {
+                    this.getUIContext().getFocusController().clearFocus()
+                  })
+
+                Button('requestFocus_焦点组1 btn2')
+                  .id('FocusScopeId5_requestFocus')
+                  .focusOnTouch(true)
+                  .onClick((e: ClickEvent) => {
+                    this.getUIContext().getFocusController().requestFocus('FocusScopeId5_btn2_6')
+                  })
+              }
+            }
+
+          }
       }
       .id('FocusScopeId5_nav')
       .mode(this.modeValue)

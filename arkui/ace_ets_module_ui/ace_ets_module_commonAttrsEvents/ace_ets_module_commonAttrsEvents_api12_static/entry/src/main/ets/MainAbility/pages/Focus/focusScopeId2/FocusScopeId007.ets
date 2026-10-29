@@ -101,10 +101,10 @@ struct FocusScopeId007 {
   }
 
   build() {
-    Column({space: 5} as ColumnOptions) {
+    Column() {
       Navigation(this.pageInfos) {
         Scroll() {
-          Column({ space: 5 } as ColumnOptions) {
+          Column(){
             Row({ space: 5 } as RowOptions) {
               Column({ space: 2 } as ColumnOptions) {
                 Text('焦点组1，可删除')
@@ -240,8 +240,7 @@ struct FocusScopeId007 {
 
             }.height('30%').width('100%')
           }
-        }
-        .id('FocusScopeId007_scroll')
+        }.id('FocusScopeId007_scroll')
       }
       .id('FocusScopeId007_nav')
       .mode(this.modeValue)
@@ -249,7 +248,7 @@ struct FocusScopeId007 {
       .navDestination(this.PageMap)
       .height('100%')
 
-    }.width('100%').height('90%')
+    }.width('100%').height('90%').align(Alignment.Top)
     .id('FocusScopeId007_col')
   }
 }

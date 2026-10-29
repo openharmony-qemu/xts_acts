@@ -18,7 +18,6 @@ import { AppStorage, State } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';
 import {
-  Alignment,
   Builder,
   Button,
   ClickEvent,
@@ -100,14 +99,15 @@ struct FocusScopeId012 {
       }
     }.title('pageOne')
   }
-  build() {
-    Column() {
-      Scroll() {
-      Navigation(this.pageInfos) {
 
-            Row({ space: 5 }) {
+  build() {
+    Column({space: 5} as ColumnOptions) {
+      Navigation(this.pageInfos) {
+        Scroll() {
+          Column({ space: 5 } as ColumnOptions) {
+            Row({ space: 5 } as RowOptions) {
               Column({ space: 2 } as ColumnOptions) {
-                Text('焦点组1')
+                Text('焦点组1，可删除')
                 if (this.flag) {
                   Column({ space: 5 } as ColumnOptions) {
                     Button('btn1').focusOnTouch(true).id('FocusScopeId012_btn1_1')
@@ -138,7 +138,7 @@ struct FocusScopeId012 {
               }.width('16%')
 
               Column({ space: 2 } as ColumnOptions) {
-                Text('焦点组3')
+                Text('焦点组3内无可获焦子组件，父容器可获焦')
                 Column({ space: 5 } as ColumnOptions) {
                   Text('132')
                 }
@@ -147,9 +147,9 @@ struct FocusScopeId012 {
               }.width('16%')
 
               Column({ space: 2 } as ColumnOptions) {
-                Text('焦点组4')
+                Text('焦点组4，可设置不可见')
                 Column({ space: 5 } as ColumnOptions) {
-                  Button('btn1').focusOnTouch(true).id('FocusScopeId012_btn1_4')
+                  Button('btn1').focusOnTouch(true)
                   Button('btn2').focusOnTouch(true)
                 }
                 .focusScopeId('FocusScopeId012_focusGroup4', true)
@@ -185,7 +185,8 @@ struct FocusScopeId012 {
                   Button('pushPageOne')
                     .id('FocusScopeId012_btn3_5')
                     .onClick((e: ClickEvent) => {
-                      this.pageInfos.pushPath({ name: 'pageOne' })
+                      const pathInfo = new NavPathInfo('pageOne', null);
+                      this.pageInfos.pushPath(pathInfo);
                     })
                     .focusOnTouch(true)
                 }
@@ -194,7 +195,7 @@ struct FocusScopeId012 {
               }.width('16%')
 
               Column({ space: 2 } as ColumnOptions) {
-                Text('焦点组6')
+                Text('焦点组6，第三个按钮设置默认获焦')
                 Column({ space: 5 } as ColumnOptions) {
                   Button('btn1').focusOnTouch(true)
                     .id('FocusScopeId012_btn1_6')
@@ -210,7 +211,8 @@ struct FocusScopeId012 {
                 .borderWidth(1)
               }.width('16%')
             }.height('65%').width('100%')
-            
+            .id('FocusScopeId012_scroll')
+
             Divider().strokeWidth(2).height('5%').width('100%')
 
             Column({ space: 2 } as ColumnOptions) {
@@ -221,7 +223,7 @@ struct FocusScopeId012 {
                     this.getUIContext().getFocusController().clearFocus()
                   })
 
-                Button('改第一组的id:' + String(this.focusId[this.focusIdIndex]))
+                Button('更改第一个焦点组的id:' + String(this.focusId[this.focusIdIndex]))
                   .id('FocusScopeId012_changFocusId')
                   .focusOnTouch(true)
                   .onClick((e: ClickEvent) => {
@@ -239,7 +241,8 @@ struct FocusScopeId012 {
                   this.isGroupValue = !this.isGroupValue
                 })
             }.height('30%').width('100%')
-
+          }
+        }.id('FocusScopeId012_scroll')
       }
       .id('FocusScopeId012_nav')
       .mode(this.modeValue)
@@ -247,7 +250,6 @@ struct FocusScopeId012 {
       .navDestination(this.PageMap)
       .height('100%')
 
-      }.id('FocusScopeId012_scroll')
     }.width('100%').height('90%').align(Alignment.Top)
     .id('FocusScopeId012_col')
   }

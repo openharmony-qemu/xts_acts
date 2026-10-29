@@ -99,26 +99,16 @@ struct FocusScopeId006 {
       }
     }.title('pageOne')
   }
+
   build() {
     Column() {
-      Navigation(this.pageInfos){
-        Scroll(){
-          Column({space:5}){
-            Text('焦点组6，第三个按钮设置默认获焦')
-            Column({space:5}){
-              Button('btn1').focusOnTouch(true)
-                .id('FocusScopeId006_btn1_6')
-              Button('btn2').focusOnTouch(true)
-                .id('FocusScopeId006_btn2_6')
-              Button('defaultFocus:true').focusOnTouch(true).defaultFocus(true)
-                .id('FocusScopeId006_btn3_6')
-            }
-            .focusScopeId('FocusScopeId006_focusGroup6',true)
-            .borderWidth(1)
+      Navigation(this.pageInfos) {
+        Scroll() {
+          Column({ space: 5 } as ColumnOptions) {
 
             Text('焦点组1，可删除')
-            if(this.flag) {
-              Column({space:5}){
+            if (this.flag) {
+              Column({ space: 5 } as ColumnOptions) {
                 Button('btn1').focusOnTouch(true).id('FocusScopeId006_btn1_1')
                 Button('btn2').focusOnTouch(true).id('FocusScopeId006_btn2_1')
                 Button('btn3').focusOnTouch(true).id('FocusScopeId006_btn3_1')
@@ -128,93 +118,104 @@ struct FocusScopeId006 {
 
             Button('del').focusOnTouch(true)
               .id('FocusScopeId006_btn_del')
-              .onClick(()=>{
+              .onClick((e: ClickEvent) => {
                 this.flag = !this.flag
               })
 
 
             Text('焦点组2')
-            Column({space:5}){
+            Column({ space: 5 } as ColumnOptions) {
               Button('btn1').focusOnTouch(true).id('FocusScopeId006_btn1_2')
               Button('btn2').focusOnTouch(true).id('FocusScopeId006_btn2_2')
               Button('btn3').focusOnTouch(true)
             }
-            .focusScopeId('FocusScopeId006_focusGroup2',true)
+            .focusScopeId('FocusScopeId006_focusGroup2', true)
             .borderWidth(1)
 
             Button('button').focusOnTouch(true).id('FocusScopeId006_btn_btn')
 
 
-
             Text('焦点组3内无可获焦子组件，父容器可获焦')
-            Column({space:5}){
+            Column({ space: 5 } as ColumnOptions) {
               Text('132')
             }
-            .focusScopeId('FocusScopeId006_focusGroup3',true).focusable(true).backgroundColor(Color.Pink)
+            .focusScopeId('FocusScopeId006_focusGroup3', true).focusable(true).backgroundColor(Color.Pink)
             .borderWidth(1)
 
 
-
             Text('焦点组4，可设置不可见')
-            Column({space:5}){
+            Column({ space: 5 } as ColumnOptions) {
               Button('btn1').focusOnTouch(true)
               Button('btn2').focusOnTouch(true)
             }
-            .focusScopeId('FocusScopeId006_focusGroup4',true)
+            .focusScopeId('FocusScopeId006_focusGroup4', true)
             .borderWidth(1)
             .visibility(this.visibilityValue)
 
             Button('隐藏')
               .id('FocusScopeId006_btn_hide')
               .focusOnTouch(true)
-              .onClick(()=>{
-                this.visibilityValue = (this.visibilityValue == Visibility.Visible) ? Visibility.Hidden:Visibility.Visible
+              .onClick((e: ClickEvent) => {
+                this.visibilityValue =
+                  (this.visibilityValue == Visibility.Visible) ? Visibility.Hidden : Visibility.Visible
               })
 
 
             Text('焦点组5')
-            Column({space:5}){
+            Column({ space: 5 } as ColumnOptions) {
               Button('单栏')
                 .id('FocusScopeId006_btn1_5')
-                .onClick(()=>{
+                .onClick((e: ClickEvent) => {
                   this.modeValue = NavigationMode.Stack
                 })
                 .focusOnTouch(true)
 
               Button('双栏')
                 .id('FocusScopeId006_btn2_5')
-                .onClick(()=>{
+                .onClick((e: ClickEvent) => {
                   this.modeValue = NavigationMode.Split
                 })
                 .focusOnTouch(true)
 
               Button('pushPageOne')
                 .id('FocusScopeId006_btn3_5')
-                .onClick(()=>{
-                  this.pageInfos.pushPath({name:'pageOne'})
+                .onClick((e: ClickEvent) => {
+                  const pathInfo = new NavPathInfo('pageOne', null);
+                  this.pageInfos.pushPath(pathInfo);
                 })
                 .focusOnTouch(true)
             }
-            .focusScopeId('FocusScopeId006_focusGroup5',true)
+            .focusScopeId('FocusScopeId006_focusGroup5', true)
             .borderWidth(1)
 
 
+            Text('焦点组6，第三个按钮设置默认获焦')
+            Column({ space: 5 } as ColumnOptions) {
+              Button('btn1').focusOnTouch(true)
+                .id('FocusScopeId006_btn1_6')
+              Button('btn2').focusOnTouch(true)
+                .id('FocusScopeId006_btn2_6')
+              Button('defaultFocus:true').focusOnTouch(true).defaultFocus(true)
+                .id('FocusScopeId006_btn3_6')
+            }
+            .focusScopeId('FocusScopeId006_focusGroup6', true)
+            .borderWidth(1)
 
             Divider().strokeWidth(2)
 
-            Column({space:2}){
+            Column({ space: 2 } as ColumnOptions) {
               Button('clearFocus')
                 .id('FocusScopeId006_clearFocus')
-                .onClick(()=>{
+                .onClick((e: ClickEvent) => {
                   this.getUIContext().getFocusController().clearFocus()
                 })
 
               Button('更改第一个焦点组的id:' + String(this.focusId[this.focusIdIndex]))
                 .id('FocusScopeId006_changFocusId')
                 .focusOnTouch(true)
-                .onClick(()=>{
+                .onClick((e: ClickEvent) => {
                   this.focusIdIndex++
-                  if(this.focusIdIndex > this.focusId.length -1){
+                  if (this.focusIdIndex > this.focusId.length - 1) {
                     this.focusIdIndex = 0
                   }
                 })
@@ -222,7 +223,7 @@ struct FocusScopeId006 {
               Button('更改第一个焦点组的isGroup:' + this.isGroupValue)
                 .id('FocusScopeId006_changIsGroup')
                 .focusOnTouch(true)
-                .onClick(()=>{
+                .onClick((e: ClickEvent) => {
                   this.isGroupValue = !this.isGroupValue
                 })
 

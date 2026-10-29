@@ -86,10 +86,11 @@ struct FocusScopeId6 {
       }
     }.title('pageOne')
   }
+
   build() {
-    Column() {
+    Column({space: 5} as ColumnOptions) {
       Navigation(this.pageInfos) {
-        Row({ space: 5 }) {
+        Row({ space: 5 } as RowOptions) {
           Column({ space: 5 } as ColumnOptions) {
             Text('焦点组1，可删除')
             if (this.flag) {

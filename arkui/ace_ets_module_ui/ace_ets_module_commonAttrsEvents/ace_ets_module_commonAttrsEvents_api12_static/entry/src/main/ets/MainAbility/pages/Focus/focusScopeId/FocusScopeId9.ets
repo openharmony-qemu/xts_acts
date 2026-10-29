@@ -18,7 +18,6 @@ import { AppStorage, State } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';
 import {
-  Alignment,
   Builder,
   Button,
   ClickEvent,
@@ -95,12 +94,13 @@ struct FocusScopeId9 {
       }
     }.title('pageOne')
   }
+
   build() {
     Column() {
       Navigation(this.pageInfos) {
         Scroll() {
           Column({ space: 5 } as ColumnOptions) {
-            Row({ space: 2 }) {
+            Row({ space: 2 } as RowOptions) {
               Column({ space: 2 } as ColumnOptions) {
                 Text('焦点组1，可删除')
                 if (this.flag) {
@@ -135,7 +135,7 @@ struct FocusScopeId9 {
               Column({ space: 2 } as ColumnOptions) {
 
 
-                Text('焦点组3')
+                Text('焦点组3内无可获焦子组件，父容器可获焦')
                 Column({ space: 5 } as ColumnOptions) {
                   Text('132')
                 }
@@ -144,7 +144,7 @@ struct FocusScopeId9 {
               }.width('16%')
 
               Column({ space: 2 } as ColumnOptions) {
-                Text('焦点组4')
+                Text('焦点组4，可设置不可见')
                 Column({ space: 5 } as ColumnOptions) {
                   Button('btn1').focusOnTouch(true)
                   Button('btn2').focusOnTouch(true)
@@ -183,7 +183,8 @@ struct FocusScopeId9 {
                   Button('pushPageOne')
                     .id('FocusScopeId9_btn3_5')
                     .onClick((e: ClickEvent) => {
-                      this.pageInfos.pushPath({ name: 'pageOne' })
+                      const pathInfo = new NavPathInfo('pageOne', null);
+                      this.pageInfos.pushPath(pathInfo);
                     })
                     .focusOnTouch(true)
                 }
@@ -193,7 +194,7 @@ struct FocusScopeId9 {
 
               Column({ space: 2 } as ColumnOptions) {
 
-                Text('焦点组6')
+                Text('焦点组6，第三个按钮设置默认获焦')
                 Column({ space: 5 } as ColumnOptions) {
                   Button('btn1').focusOnTouch(true)
                     .id('FocusScopeId9_btn1_6')
