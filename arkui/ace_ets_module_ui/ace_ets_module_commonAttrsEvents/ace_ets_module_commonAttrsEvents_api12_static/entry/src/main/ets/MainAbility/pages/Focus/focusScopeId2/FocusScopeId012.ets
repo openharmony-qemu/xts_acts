@@ -102,9 +102,9 @@ struct FocusScopeId012 {
   }
   build() {
     Column() {
+      Scroll() {
       Navigation(this.pageInfos) {
-        Scroll() {
-          Column({} as ColumnOptions) {
+
             Row({ space: 5 }) {
               Column({ space: 2 } as ColumnOptions) {
                 Text('焦点组1')
@@ -210,8 +210,7 @@ struct FocusScopeId012 {
                 .borderWidth(1)
               }.width('16%')
             }.height('65%').width('100%')
-            .id('FocusScopeId012_scroll')
-
+            
             Divider().strokeWidth(2).height('5%').width('100%')
 
             Column({ space: 2 } as ColumnOptions) {
@@ -240,8 +239,7 @@ struct FocusScopeId012 {
                   this.isGroupValue = !this.isGroupValue
                 })
             }.height('30%').width('100%')
-          }
-        }.id('FocusScopeId012_scroll')
+
       }
       .id('FocusScopeId012_nav')
       .mode(this.modeValue)
@@ -249,6 +247,7 @@ struct FocusScopeId012 {
       .navDestination(this.PageMap)
       .height('100%')
 
+      }.id('FocusScopeId012_scroll')
     }.width('100%').height('90%').align(Alignment.Top)
     .id('FocusScopeId012_col')
   }
