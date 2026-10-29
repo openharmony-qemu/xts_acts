@@ -468,22 +468,17 @@ export default function CameraSessionAutoDeviceSwitchTest() {
     /**
      * @tc.name   SUB_MULTIMEDIA_CAMERA_ENABLE_AUTO_DEVICE_SWITCH_C_0100
      * @tc.number SUB_MULTIMEDIA_CAMERA_ENABLE_AUTO_DEVICE_SWITCH_C_0100
-     * @tc.desc   Enables the automatic switchover device when session not config
+     * @tc.desc   Enable auto device switch with null session, expect CAMERA_INVALID_ARGUMENT
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ENABLE_AUTO_DEVICE_SWITCH_C_0100', Level.LEVEL2, async () => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ENABLE_AUTO_DEVICE_SWITCH_C_0100--------------");
-      let autoSwitchSupportInfo = cameraObj.sessionIsAutoDeviceSwitchSupported();
-      if (autoSwitchSupportInfo.errorCode != 0) {
-        expect().assertFail();
-      }
-      if (autoSwitchSupportInfo.isSupported) {
-        cameraObj.sessionRelease();
-        let ret = cameraObj.sessionEnableAutoDeviceSwitch(true);
-        expect(ret).assertEqual(CAMERA_SESSION_NOT_CONFIG);
-      }
+      // session 参数为 nullptr 时，按 API 文档应返回 CAMERA_INVALID_ARGUMENT
+      let ret = cameraObj.oHCaptureSessionEnableAutoDeviceSwitch(Parameter_Setting.FIRST_PARAMETER_ERROR, true);
+      console.info(TAG + "EnableAutoDeviceSwitch(null session) ret: " + ret);
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_ENABLE_AUTO_DEVICE_SWITCH_C_0100 ends here");
     })
 

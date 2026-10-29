@@ -561,6 +561,8 @@ export const oHPhotoOutputUnregisterEstimatedCaptureDurationCallback: (index:num
 export const sessionIsAutoDeviceSwitchSupported: () => autoDeviceSwitchSupportInfo;
  
 export const sessionEnableAutoDeviceSwitch: (enable:boolean) => number;
+
+export const oHCaptureSessionEnableAutoDeviceSwitch: (useCaseCode:number, enable:boolean) => number;
  
 export const sessionRegisterAutoDeviceSwitchStatusChange: (index:number) => number;
  
