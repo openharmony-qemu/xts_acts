@@ -59,8 +59,10 @@ constexpr const char *GET_CREATOR_SURFACE_SYMBOL =
     "_ZN4OHOS5Media12ImageCreator17GetCreatorSurfaceEv";
 constexpr const char *ON_BUFFER_RELEASE_SYMBOL =
     "_ZN4OHOS5Media12ImageCreator15OnBufferReleaseERNS_4sptrINS_13SurfaceBufferEEE";
-constexpr const char *ACQUIRE_BUFFER_SYMBOL =
+constexpr const char *ACQUIRE_BUFFER_SYMBOL_64 =
     "_ZN4OHOS15ConsumerSurface13AcquireBufferERNS_4sptrINS_13SurfaceBufferEEERiRlRNS_4RectE";
+constexpr const char *ACQUIRE_BUFFER_SYMBOL_32 =
+    "_ZN4OHOS15ConsumerSurface13AcquireBufferERNS_4sptrINS_13SurfaceBufferEEERiRxRNS_4RectE";
 constexpr const char *RELEASE_BUFFER_SYMBOL =
     "_ZN4OHOS15ConsumerSurface13ReleaseBufferERNS_4sptrINS_13SurfaceBufferEEEi";
 constexpr const char *DEC_STRONG_REF_SYMBOL = "_ZN4OHOS7RefBase12DecStrongRefEPKv";
@@ -82,19 +84,25 @@ uint32_t GnuHash(const char *name)
     return hash;
 }
 
+bool Is64BitSystem()
+{
+#if defined(__aarch64__) || defined(__x86_64__) || defined(_LP64) || defined(__LP64__)
+    return true;
+#elif defined(__arm__) || defined(__i386__) || defined(_ILP32) || defined(__ILP32__)
+    return false;
+#else
+    return sizeof(void *) == 8;
+#endif
+}
+
 struct SymbolQuery {
     const char *library;
     const char *symbol;
     void *address = nullptr;
 };
 
-int FindLoadedSymbol(dl_phdr_info *info, size_t, void *data)
+int FindLoadedSymbol64(dl_phdr_info *info, SymbolQuery *query)
 {
-    auto *query = static_cast<SymbolQuery *>(data);
-    if (info->dlpi_name == nullptr || std::strstr(info->dlpi_name, query->library) == nullptr) {
-        return 0;
-    }
-
     const Elf64_Dyn *dynamic = nullptr;
     for (Elf64_Half index = 0; index < info->dlpi_phnum; ++index) {
         if (info->dlpi_phdr[index].p_type == PT_DYNAMIC) {
@@ -156,6 +164,83 @@ int FindLoadedSymbol(dl_phdr_info *info, size_t, void *data)
     }
 }
 
+int FindLoadedSymbol32(dl_phdr_info *info, SymbolQuery *query)
+{
+    const Elf32_Dyn *dynamic = nullptr;
+    for (Elf32_Half index = 0; index < info->dlpi_phnum; ++index) {
+        if (info->dlpi_phdr[index].p_type == PT_DYNAMIC) {
+            dynamic = reinterpret_cast<const Elf32_Dyn *>(info->dlpi_addr + info->dlpi_phdr[index].p_vaddr);
+            break;
+        }
+    }
+    if (dynamic == nullptr) {
+        return 0;
+    }
+
+    const Elf32_Sym *symbols = nullptr;
+    const char *strings = nullptr;
+    const uint32_t *gnuHash = nullptr;
+    for (const Elf32_Dyn *entry = dynamic; entry->d_tag != DT_NULL; ++entry) {
+        if (entry->d_tag == DT_SYMTAB) {
+            symbols = reinterpret_cast<const Elf32_Sym *>(info->dlpi_addr + entry->d_un.d_ptr);
+        } else if (entry->d_tag == DT_STRTAB) {
+            strings = reinterpret_cast<const char *>(info->dlpi_addr + entry->d_un.d_ptr);
+        } else if (entry->d_tag == DT_GNU_HASH) {
+            gnuHash = reinterpret_cast<const uint32_t *>(info->dlpi_addr + entry->d_un.d_ptr);
+        }
+    }
+    if (symbols == nullptr || strings == nullptr || gnuHash == nullptr) {
+        return 0;
+    }
+
+    const uint32_t bucketCount = gnuHash[0];
+    const uint32_t symbolOffset = gnuHash[1];
+    const uint32_t bloomSize = gnuHash[2];
+    const uint32_t bloomShift = gnuHash[3];
+    const auto *bloom = reinterpret_cast<const Elf32_Word *>(gnuHash + 4);
+    const auto *buckets = reinterpret_cast<const uint32_t *>(bloom + bloomSize);
+    const auto *chains = buckets + bucketCount;
+    const uint32_t hash = GnuHash(query->symbol);
+    constexpr uint32_t BLOOM_WORD_BITS = sizeof(Elf32_Word) * 8;
+    const Elf32_Word bloomWord = bloom[(hash / BLOOM_WORD_BITS) % bloomSize];
+    const Elf32_Word mask = (static_cast<Elf32_Word>(1) << (hash % BLOOM_WORD_BITS)) |
+        (static_cast<Elf32_Word>(1) << ((hash >> bloomShift) % BLOOM_WORD_BITS));
+    if ((bloomWord & mask) != mask) {
+        return 0;
+    }
+
+    uint32_t symbolIndex = buckets[hash % bucketCount];
+    if (symbolIndex < symbolOffset) {
+        return 0;
+    }
+    while (true) {
+        const uint32_t chainHash = chains[symbolIndex - symbolOffset];
+        if ((chainHash | 1U) == (hash | 1U) && std::strcmp(strings + symbols[symbolIndex].st_name,
+            query->symbol) == 0) {
+            query->address = reinterpret_cast<void *>(info->dlpi_addr + symbols[symbolIndex].st_value);
+            return 1;
+        }
+        if ((chainHash & 1U) != 0) {
+            return 0;
+        }
+        ++symbolIndex;
+    }
+}
+
+int FindLoadedSymbol(dl_phdr_info *info, size_t, void *data)
+{
+    auto *query = static_cast<SymbolQuery *>(data);
+    if (info->dlpi_name == nullptr || std::strstr(info->dlpi_name, query->library) == nullptr) {
+        return 0;
+    }
+
+    if (Is64BitSystem()) {
+        return FindLoadedSymbol64(info, query);
+    } else {
+        return FindLoadedSymbol32(info, query);
+    }
+}
+
 template<typename Function>
 Function Resolve(const char *library, const char *symbol)
 {
@@ -205,7 +290,8 @@ napi_value ConsumeOnce(napi_env env, napi_callback_info info)
         Resolve<GetCreatorSurface>("libimage_native.z.so", GET_CREATOR_SURFACE_SYMBOL);
     const OnBufferRelease onBufferRelease =
         Resolve<OnBufferRelease>("libimage_native.z.so", ON_BUFFER_RELEASE_SYMBOL);
-    const AcquireBuffer acquireBuffer = Resolve<AcquireBuffer>("libsurface.z.so", ACQUIRE_BUFFER_SYMBOL);
+    const char *acquireBufferSymbol = Is64BitSystem() ? ACQUIRE_BUFFER_SYMBOL_64 : ACQUIRE_BUFFER_SYMBOL_32;
+    const AcquireBuffer acquireBuffer = Resolve<AcquireBuffer>("libsurface.z.so", acquireBufferSymbol);
     const ReleaseBuffer releaseBuffer = Resolve<ReleaseBuffer>("libsurface.z.so", RELEASE_BUFFER_SYMBOL);
     const DecStrongRef decStrongRef = Resolve<DecStrongRef>("libutils.z.so", DEC_STRONG_REF_SYMBOL);
     if (getNativeCreator == nullptr) {
