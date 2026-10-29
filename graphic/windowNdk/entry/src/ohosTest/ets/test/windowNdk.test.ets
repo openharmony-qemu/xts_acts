@@ -468,7 +468,7 @@ export default function windowNdk() {
       console.info(`${caseName}: result: ${result}`);
       expect(result).assertEqual(0);
       await sleep(1000);
-      if((isStatusBarVisible && !isFreeWindowMode) || deviceType == 'car'){
+      if((isStatusBarVisible && !isFreeWindowMode)|| deviceType == 'tv' || deviceType == 'car'){
         WindowClass.off('avoidAreaChange')
         expect(flag).assertEqual(true)
         done()
@@ -500,7 +500,7 @@ export default function windowNdk() {
       console.info(`${caseName}: result: ${result}`);
       expect(result).assertEqual(0);
       await sleep(1000);
-      if((isStatusBarVisible && !isFreeWindowMode) || deviceType == 'car'){
+      if((isStatusBarVisible && !isFreeWindowMode)|| deviceType == 'tv' || deviceType == 'car'){
         WindowClass.off('avoidAreaChange')
         windowNdkTest.setWindowStatusBarEnabled(windowId, true, false);
         await sleep(500)
@@ -534,7 +534,7 @@ export default function windowNdk() {
       console.info(`${caseName}: result: ${result}`);
       expect(result).assertEqual(0);
       await sleep(1000);
-      if((isStatusBarVisible && !isFreeWindowMode) || deviceType == 'car'){
+      if((isStatusBarVisible && !isFreeWindowMode)|| deviceType == 'tv' || deviceType == 'car'){
         WindowClass.off('avoidAreaChange')
         windowNdkTest.setWindowStatusBarEnabled(windowId, true, false);
         await sleep(500)
