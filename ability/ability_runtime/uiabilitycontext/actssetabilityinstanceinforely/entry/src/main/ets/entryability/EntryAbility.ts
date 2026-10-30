@@ -72,11 +72,12 @@ export default class EntryAbility extends UIAbility {
         : this.context.setAbilityInstanceInfo('111111', pixelMap);
       callPromise.then(() => {
         commonEventManager.publish('setAbilityInstanceInfo_success', () => {});
-      }).catch((err: BusinessError) => {
-        hilog.info(DOMAIN, 'testTag', "setAbilityInstanceInfo failed: " + JSON.stringify(err))
-        commonEventManager.publish('setAbilityInstanceInfo_fail', {code: err?.code}, () => {});
+      }, (err: BusinessError) => {
+        hilog.info(DOMAIN, 'testTag', 'setAbilityInstanceInfo failed: ' + JSON.stringify(err));
+        commonEventManager.publish('setAbilityInstanceInfo_fail', { code: err.code }, () => {});
+      }).then(() => {
+        this.context.terminateSelf();
       });
-      this.context.terminateSelf();
     }, 300);
   }
 
