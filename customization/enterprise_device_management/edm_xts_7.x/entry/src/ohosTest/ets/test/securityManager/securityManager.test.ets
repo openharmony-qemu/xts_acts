@@ -5249,7 +5249,7 @@ function testGetPasswordLastChangedTime() {
       securityManager.getPasswordLastChangedTime(CURRENT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200001).assertTrue();
+      expect(error.code).assertEqual(9200001);
     }
     done();
   });
@@ -5268,7 +5268,7 @@ function testGetPasswordLastChangedTime() {
       securityManager.getPasswordLastChangedTime(CURRENT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200002).assertTrue();
+      expect(error.code).assertEqual(9200002);
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -5290,9 +5290,9 @@ function testGetPasswordLastChangedTime() {
       expect(result >= 0).assertTrue();
     } catch (error) {
       if (error.code === 9200016) {
-        expect(error.code === 9200016).assertTrue();
-      } else if (error.code === 9200012) {
-        expect(error.code === 9200012).assertTrue();
+        expect(error.code).assertEqual(9200016);
+      } else if (error.code === 9200006) {
+        expect(error.code).assertEqual(9200006);
       } else {
         expect(false).assertTrue();
       }
@@ -5316,7 +5316,7 @@ function testGetPasswordLastChangedTime() {
       securityManager.getPasswordLastChangedTime(INVALID_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200012).assertTrue();
+      expect(error.code).assertEqual(9200006);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -5337,7 +5337,7 @@ function testGetPasswordLastChangedTime() {
       securityManager.getPasswordLastChangedTime(null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -5358,7 +5358,7 @@ function testGetPasswordLastChangedTime() {
       securityManager.getPasswordLastChangedTime(undefined);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(error.code).assertEqual(401);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -5380,9 +5380,9 @@ function testGetPasswordLastChangedTime() {
       expect(result >= 0).assertTrue();
     } catch (error) {
       if (error.code === 9200016) {
-        expect(error.code === 9200016).assertTrue();
-      } else if (error.code === 9200012) {
-        expect(error.code === 9200012).assertTrue();
+        expect(error.code).assertEqual(9200016);
+      } else if (error.code === 9200006) {
+        expect(error.code).assertEqual(9200006);
       } else {
         expect(false).assertTrue();
       }
