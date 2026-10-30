@@ -163,7 +163,10 @@ export default function arkTSVMTest() {
         (value: object) => {
           expect(value).assertContain('blockSleep');
         }
-      )
+      ).catch((err: object) => {
+        console.error(`testGetMainThreadStackTrace003 execute failed: ${err}`);
+        expect().assertFail();
+      })
       recursion(10);
       let stackTrace = await taskpool.execute(task);
       expect(stackTrace).assertEqual('');
@@ -192,7 +195,10 @@ export default function arkTSVMTest() {
         (value: object) => {
           expect(value).assertContain('blockSleep');
         }
-      )
+      ).catch((err: object) => {
+        console.error(`testSetMultithreadingDetectionEnabled001 execute failed: ${err}`);
+        expect().assertFail();
+      })
       recursion(10);
       let stackTrace = await taskpool.execute(task);
       expect(stackTrace).assertEqual('');
@@ -234,6 +240,7 @@ export default function arkTSVMTest() {
      * @tc.level   LEVEL1
      */
     it('testSetMultithreadingDetectionEnabled0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let testFlag = 0;
       try {
         let options: util.MultithreadingDetectionOptions = {
           abort: true,
@@ -242,10 +249,10 @@ export default function arkTSVMTest() {
         };
         util.ArkTSVM.setMultithreadingDetectionEnabled(true, options);
         util.ArkTSVM.setMultithreadingDetectionEnabled(false);
-        expect(true).assertTrue();
       } catch (err) {
-        expect().assertFail();
+        testFlag = -1;
       }
+      expect(testFlag).assertEqual(0);
     });
 
     /**
@@ -257,13 +264,14 @@ export default function arkTSVMTest() {
      * @tc.level   LEVEL1
      */
     it('testSetMultithreadingDetectionEnabled0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let testFlag = 0;
       try {
         util.ArkTSVM.setMultithreadingDetectionEnabled(true);
         util.ArkTSVM.setMultithreadingDetectionEnabled(false);
-        expect(true).assertTrue();
       } catch (err) {
-        expect().assertFail();
+        testFlag = -1;
       }
+      expect(testFlag).assertEqual(0);
     });
 
     /**
@@ -275,14 +283,15 @@ export default function arkTSVMTest() {
      * @tc.level   LEVEL1
      */
     it('testSetMultithreadingDetectionEnabled0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let testFlag = 0;
       try {
         let options: util.MultithreadingDetectionOptions = {};
         util.ArkTSVM.setMultithreadingDetectionEnabled(true, options);
         util.ArkTSVM.setMultithreadingDetectionEnabled(false);
-        expect(true).assertTrue();
       } catch (err) {
-        expect().assertFail();
+        testFlag = -1;
       }
+      expect(testFlag).assertEqual(0);
     });
 
     /**
@@ -294,16 +303,17 @@ export default function arkTSVMTest() {
      * @tc.level   LEVEL1
      */
     it('testSetMultithreadingDetectionEnabled0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let testFlag = 0;
       try {
         let options: util.MultithreadingDetectionOptions = {
           interval: 0
         };
         util.ArkTSVM.setMultithreadingDetectionEnabled(true, options);
         util.ArkTSVM.setMultithreadingDetectionEnabled(false);
-        expect(true).assertTrue();
       } catch (err) {
-        expect().assertFail();
+        testFlag = -1;
       }
+      expect(testFlag).assertEqual(0);
     });
 
     /**
@@ -316,6 +326,7 @@ export default function arkTSVMTest() {
      * @tc.level  LEVEL2
      */
     it('testSetMultithreadingDetectionEnabled0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let testFlag = 0;
       try {
         let options: util.MultithreadingDetectionOptions = {
           abort: true,
@@ -324,10 +335,10 @@ export default function arkTSVMTest() {
         };
         util.ArkTSVM.setMultithreadingDetectionEnabled(true, options);
         util.ArkTSVM.setMultithreadingDetectionEnabled(false);
-        expect(true).assertTrue();
       } catch (err) {
-        expect().assertFail();
+        testFlag = -1;
       }
+      expect(testFlag).assertEqual(0);
     });
 
     /**
@@ -340,6 +351,7 @@ export default function arkTSVMTest() {
      * @tc.level  LEVEL2
      */
     it('testSetMultithreadingDetectionEnabled0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let testFlag = 0;
       try {
         let options: util.MultithreadingDetectionOptions = {
           abort: true,
@@ -348,10 +360,10 @@ export default function arkTSVMTest() {
         };
         util.ArkTSVM.setMultithreadingDetectionEnabled(true, options);
         util.ArkTSVM.setMultithreadingDetectionEnabled(false);
-        expect(true).assertTrue();
       } catch (err) {
-        expect().assertFail();
+        testFlag = -1;
       }
+      expect(testFlag).assertEqual(0);
     });
 
     /**
@@ -363,6 +375,7 @@ export default function arkTSVMTest() {
      * @tc.level  LEVEL2
      */
     it('testSetMultithreadingDetectionEnabled0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let testFlag = 0;
       try {
         let options: util.MultithreadingDetectionOptions = {
           abort: false,
@@ -370,10 +383,10 @@ export default function arkTSVMTest() {
           interval: 10
         };
         util.ArkTSVM.setMultithreadingDetectionEnabled(false, options);
-        expect(true).assertTrue();
       } catch (err) {
-        expect().assertFail();
+        testFlag = -1;
       }
+      expect(testFlag).assertEqual(0);
     });
 
     /**
@@ -384,13 +397,15 @@ export default function arkTSVMTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testEnableLocalHandleDetection001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testEnableLocalHandleDetection001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const TAG = 'testEnableLocalHandleDetection001';
       try {
         util.ArkTSVM.enableLocalHandleDetection();
+        done();
       } catch (err) {
         console.error(`${TAG} failed, error code: ${err.code}`);
         expect().assertFail();
+        done();
       }
     });
   })
