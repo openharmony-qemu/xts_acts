@@ -13,12 +13,16 @@
  * limitations under the License.
  */
 
-import { describe, it, expect } from '@ohos/hypium'
+import { beforeEach, describe, expect, it, TestType, Size, Level } from "@ohos/hypium-dynamic"
+import Utils from './Utils'
 import libc_single_threaded_test from 'liblibc_single_threaded_test.so'
 
 export default function LibcSingleThreadedTest() {
   describe('MuslLibcSingleThreadedTest', () => {
 
+    beforeEach(async () => {
+      await Utils.sleep(50)
+    })
     /**
      * @tc.name   testMuslLibcSingleThreaded0100
      * @tc.number SUB_THIRDPARTY_MUSL_LIBC_SINGLE_THREADED_0100
@@ -27,10 +31,11 @@ export default function LibcSingleThreadedTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_THIRDPARTY_MUSL_LIBC_SINGLE_THREADED_0100', 0, () => {
+    it('testMuslLibcSingleThreaded0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = libc_single_threaded_test.SingleThreaded_0100();
       expect(data).assertEqual(0);
-    });
+      done()
+    })
 
     /**
      * @tc.name   testMuslLibcSingleThreaded0200
@@ -40,10 +45,11 @@ export default function LibcSingleThreadedTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_THIRDPARTY_MUSL_LIBC_SINGLE_THREADED_0200', 0, () => {
+    it('testMuslLibcSingleThreaded0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = libc_single_threaded_test.SingleThreaded_0200();
       expect(data).assertEqual(0);
-    });
+      done()
+    })
 
     /**
      * @tc.name   testMuslLibcSingleThreaded0300
@@ -53,10 +59,11 @@ export default function LibcSingleThreadedTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_THIRDPARTY_MUSL_LIBC_SINGLE_THREADED_0300', 0, () => {
+    it('testMuslLibcSingleThreaded0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = libc_single_threaded_test.SingleThreaded_0300();
       expect(data).assertEqual(0);
-    });
+      done()
+    })
 
     /**
      * @tc.name   testMuslLibcSingleThreaded0400
@@ -66,10 +73,11 @@ export default function LibcSingleThreadedTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_THIRDPARTY_MUSL_LIBC_SINGLE_THREADED_0400', 0, () => {
+    it('testMuslLibcSingleThreaded0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = libc_single_threaded_test.SingleThreaded_0400();
       expect(data).assertEqual(0);
-    });
+      done()
+    })
 
     /**
      * @tc.name   testMuslLibcSingleThreaded0500
@@ -79,10 +87,11 @@ export default function LibcSingleThreadedTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_THIRDPARTY_MUSL_LIBC_SINGLE_THREADED_0500', 0, () => {
+    it('testMuslLibcSingleThreaded0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = libc_single_threaded_test.SingleThreaded_0500();
       expect(data).assertEqual(0);
-    });
+      done()
+    })
 
     /**
      * @tc.name   testMuslLibcSingleThreaded0600
@@ -92,10 +101,11 @@ export default function LibcSingleThreadedTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_THIRDPARTY_MUSL_LIBC_SINGLE_THREADED_0600', 0, () => {
+    it('testMuslLibcSingleThreaded0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data: number = libc_single_threaded_test.SingleThreaded_0600();
       expect(data).assertEqual(0);
-    });
+      done()
+    })
 
     /**
      * @tc.name   testMuslLibcSingleThreaded0700
@@ -105,10 +115,11 @@ export default function LibcSingleThreadedTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_THIRDPARTY_MUSL_LIBC_SINGLE_THREADED_0700', 0, () => {
+    it('testMuslLibcSingleThreaded0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data: number = libc_single_threaded_test.SingleThreaded_0700();
       expect(data).assertEqual(0);
-    });
+      done()
+    })
 
     /**
      * @tc.name   testMuslLibcSingleThreaded0800
@@ -118,10 +129,11 @@ export default function LibcSingleThreadedTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_THIRDPARTY_MUSL_LIBC_SINGLE_THREADED_0800', 0, () => {
+    it('testMuslLibcSingleThreaded0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = libc_single_threaded_test.SingleThreaded_0800();
       expect(data).assertEqual(0);
-    });
+      done()
+    })
 
     /**
      * @tc.name   testMuslLibcSingleThreaded0900
@@ -131,9 +143,10 @@ export default function LibcSingleThreadedTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_THIRDPARTY_MUSL_LIBC_SINGLE_THREADED_0900', 0, () => {
+    it('testMuslLibcSingleThreaded0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = libc_single_threaded_test.SingleThreaded_0900();
       expect(data).assertEqual(0);
-    });
+      done()
+    })
   })
 }

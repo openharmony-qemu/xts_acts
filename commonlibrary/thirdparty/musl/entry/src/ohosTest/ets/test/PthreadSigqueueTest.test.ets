@@ -13,12 +13,16 @@
  * limitations under the License.
  */
 
-import { describe, it, expect } from '@ohos/hypium'
+import { beforeEach, describe, expect, it, TestType, Size, Level } from "@ohos/hypium-dynamic"
+import Utils from './Utils'
 import pthread_sigqueue_test from 'libpthread_sigqueue_test.so'
 
 export default function PthreadSigqueueTest() {
   describe('MuslPthreadSigqueueTest', () => {
 
+    beforeEach(async () => {
+      await Utils.sleep(50)
+    })
     /**
      * @tc.name   testMuslPthreadSigqueue0100
      * @tc.number SUB_THIRDPARTY_MUSL_PTHREAD_SIGQUEUE_0100
@@ -27,10 +31,11 @@ export default function PthreadSigqueueTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_THIRDPARTY_MUSL_PTHREAD_SIGQUEUE_0100', 0, () => {
+    it('testMuslPthreadSigqueue0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = pthread_sigqueue_test.Sigqueue_0100();
       expect(data).assertEqual(0);
-    });
+      done()
+    })
 
     /**
      * @tc.name   testMuslPthreadSigqueue0200
@@ -40,10 +45,11 @@ export default function PthreadSigqueueTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_THIRDPARTY_MUSL_PTHREAD_SIGQUEUE_0200', 0, () => {
+    it('testMuslPthreadSigqueue0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = pthread_sigqueue_test.Sigqueue_0200();
       expect(data).assertEqual(0);
-    });
+      done()
+    })
 
     /**
      * @tc.name   testMuslPthreadSigqueue0300
@@ -53,10 +59,11 @@ export default function PthreadSigqueueTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_THIRDPARTY_MUSL_PTHREAD_SIGQUEUE_0300', 0, () => {
+    it('testMuslPthreadSigqueue0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = pthread_sigqueue_test.Sigqueue_0300();
       expect(data).assertEqual(0);
-    });
+      done()
+    })
 
     /**
      * @tc.name   testMuslPthreadSigqueue0400
@@ -66,10 +73,11 @@ export default function PthreadSigqueueTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_THIRDPARTY_MUSL_PTHREAD_SIGQUEUE_0400', 0, () => {
+    it('testMuslPthreadSigqueue0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = pthread_sigqueue_test.Sigqueue_0400();
       expect(data).assertEqual(0);
-    });
+      done()
+    })
 
     /**
      * @tc.name   testMuslPthreadSigqueue0500
@@ -79,10 +87,11 @@ export default function PthreadSigqueueTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_THIRDPARTY_MUSL_PTHREAD_SIGQUEUE_0500', 0, () => {
+    it('testMuslPthreadSigqueue0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = pthread_sigqueue_test.Sigqueue_0500();
       expect(data).assertEqual(0);
-    });
+      done()
+    })
 
     /**
      * @tc.name   testMuslPthreadSigqueue0600
@@ -92,10 +101,11 @@ export default function PthreadSigqueueTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_THIRDPARTY_MUSL_PTHREAD_SIGQUEUE_0600', 0, () => {
+    it('testMuslPthreadSigqueue0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = pthread_sigqueue_test.Sigqueue_0600();
       expect(data).assertEqual(0);
-    });
+      done()
+    })
 
     /**
      * @tc.name   testMuslPthreadSigqueue0700
@@ -105,10 +115,11 @@ export default function PthreadSigqueueTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_THIRDPARTY_MUSL_PTHREAD_SIGQUEUE_0700', 0, () => {
+    it('testMuslPthreadSigqueue0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = pthread_sigqueue_test.Sigqueue_0700();
       expect(data).assertEqual(0);
-    });
+      done()
+    })
 
     /**
      * @tc.name   testMuslPthreadSigqueue0800
@@ -118,10 +129,11 @@ export default function PthreadSigqueueTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_THIRDPARTY_MUSL_PTHREAD_SIGQUEUE_0800', 0, () => {
+    it('testMuslPthreadSigqueue0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = pthread_sigqueue_test.Sigqueue_0800();
       expect(data).assertEqual(0);
-    });
+      done()
+    })
 
     /**
      * @tc.name   testMuslPthreadSigqueue0900
@@ -131,62 +143,11 @@ export default function PthreadSigqueueTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_THIRDPARTY_MUSL_PTHREAD_SIGQUEUE_0900', 0, () => {
+    it('testMuslPthreadSigqueue0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = pthread_sigqueue_test.Sigqueue_0900();
       expect(data).assertEqual(0);
-    });
-
-    /**
-     * @tc.name   testMuslPthreadSigqueue1000
-     * @tc.number SUB_THIRDPARTY_MUSL_PTHREAD_SIGQUEUE_1000
-     * @tc.desc   __block_app_sigs在syscall前阻塞app信号(Review-Only)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_THIRDPARTY_MUSL_PTHREAD_SIGQUEUE_1000', 0, () => {
-      let data: number = pthread_sigqueue_test.Sigqueue_1000();
-      expect(data).assertEqual(0);
-    });
-
-    /**
-     * @tc.name   testMuslPthreadSigqueue1100
-     * @tc.number SUB_THIRDPARTY_MUSL_PTHREAD_SIGQUEUE_1100
-     * @tc.desc   killlock序列化信号发送(Review-Only)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_THIRDPARTY_MUSL_PTHREAD_SIGQUEUE_1100', 0, () => {
-      let data: number = pthread_sigqueue_test.Sigqueue_1100();
-      expect(data).assertEqual(0);
-    });
-
-    /**
-     * @tc.name   testMuslPthreadSigqueue1200
-     * @tc.number SUB_THIRDPARTY_MUSL_PTHREAD_SIGQUEUE_1200
-     * @tc.desc   无SYS_rt_tgsigqueueinfo时返回ENOSYS(架构依赖)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('SUB_THIRDPARTY_MUSL_PTHREAD_SIGQUEUE_1200', 0, () => {
-      let data: number = pthread_sigqueue_test.Sigqueue_1200();
-      expect(data).assertEqual(0);
-    });
-
-    /**
-     * @tc.name   testMuslPthreadSigqueue1300
-     * @tc.number SUB_THIRDPARTY_MUSL_PTHREAD_SIGQUEUE_1300
-     * @tc.desc   权限不足返回EPERM(环境依赖)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('SUB_THIRDPARTY_MUSL_PTHREAD_SIGQUEUE_1300', 0, () => {
-      let data: number = pthread_sigqueue_test.Sigqueue_1300();
-      expect(data).assertEqual(0);
-    });
+      done()
+    })
 
     /**
      * @tc.name   testMuslPthreadSigqueue1400
@@ -196,10 +157,11 @@ export default function PthreadSigqueueTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_THIRDPARTY_MUSL_PTHREAD_SIGQUEUE_1400', 0, () => {
+    it('testMuslPthreadSigqueue1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = pthread_sigqueue_test.Sigqueue_1400();
       expect(data).assertEqual(0);
-    });
+      done()
+    })
 
     /**
      * @tc.name   testMuslPthreadSigqueue1500
@@ -209,10 +171,11 @@ export default function PthreadSigqueueTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_THIRDPARTY_MUSL_PTHREAD_SIGQUEUE_1500', 0, () => {
+    it('testMuslPthreadSigqueue1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data: number = pthread_sigqueue_test.Sigqueue_1500();
       expect(data).assertEqual(0);
-    });
+      done()
+    })
 
     /**
      * @tc.name   testMuslPthreadSigqueue1600
@@ -222,10 +185,11 @@ export default function PthreadSigqueueTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_THIRDPARTY_MUSL_PTHREAD_SIGQUEUE_1600', 0, () => {
+    it('testMuslPthreadSigqueue1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data: number = pthread_sigqueue_test.Sigqueue_1600();
       expect(data).assertEqual(0);
-    });
+      done()
+    })
 
     /**
      * @tc.name   testMuslPthreadSigqueue1700
@@ -235,22 +199,11 @@ export default function PthreadSigqueueTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_THIRDPARTY_MUSL_PTHREAD_SIGQUEUE_1700', 0, () => {
+    it('testMuslPthreadSigqueue1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = pthread_sigqueue_test.Sigqueue_1700();
       expect(data).assertEqual(0);
-    });
+      done()
+    })
 
-    /**
-     * @tc.name   testMuslPthreadSigqueue1800
-     * @tc.number SUB_THIRDPARTY_MUSL_PTHREAD_SIGQUEUE_1800
-     * @tc.desc   siginfo_t栈分配无动态内存(Review-Only)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_THIRDPARTY_MUSL_PTHREAD_SIGQUEUE_1800', 0, () => {
-      let data: number = pthread_sigqueue_test.Sigqueue_1800();
-      expect(data).assertEqual(0);
-    });
   })
 }

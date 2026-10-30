@@ -134,9 +134,7 @@ import pthreadYieldTest from './PthreadYield.test';
 import pthreadTsdTest from './PthreadTsd.test';
 import pthreadKeyCreateTest from './PthreadKeyCreate.test';
 import GroupIpcTest from './GroupIpc.test';
-
-// PR#2705
-import openat64_2Test from './Openat64_2Test.test';
+import openat642Test from './Openat642Test.test';
 import closefromTest from './ClosefromTest.test';
 import closeRangeTest from './CloseRangeTest.test';
 import groupMemberTest from './GroupMemberTest.test';
@@ -144,7 +142,13 @@ import getpagesizeTest from './GetpagesizeTest.test';
 import libcSingleThreadedTest from './LibcSingleThreadedTest.test';
 import libcStackEndTest from './LibcStackEndTest.test';
 import pthreadSigqueueTest from './PthreadSigqueueTest.test';
-// PR#2705 strto
+import getgrentRTest from './GetgrentRTest.test';
+import getpwentRTest from './GetpwentRTest.test';
+import fgetpwentRTest from './FgetpwentRTest.test';
+import getprotobynameRTest from './GetprotobynameRTest.test';
+import getprotobynumberRTest from './GetprotobynumberRTest.test';
+import getprotoentRTest from './GetprotoentRTest.test';
+import getserventRTest from './GetserventRTest.test';
 import isoc23StrtolTest from './Isoc23StrtolTest.test';
 import isoc23StrtollTest from './Isoc23StrtollTest.test';
 import isoc23StrtoulTest from './Isoc23StrtoulTest.test';
@@ -155,26 +159,16 @@ import strtolLTest from './StrtolLTest.test';
 import isoc23StrtollLTest from './Isoc23StrtollLTest.test';
 import isoc23StrtoullLTest from './Isoc23StrtoullLTest.test';
 import strtolLegacyTest from './StrtolLegacyTest.test';
-// PR#2705 wcsto
 import isoc23WcstolTest from './Isoc23WcstolTest.test';
 import isoc23WcstollTest from './Isoc23WcstollTest.test';
 import isoc23WcstoulTest from './Isoc23WcstoulTest.test';
 import isoc23WcstoullTest from './Isoc23WcstoullTest.test';
-// PR#2705 scanf
 import isoc23FscanfTest from './Isoc23FscanfTest.test';
 import isoc23ScanfTest from './Isoc23ScanfTest.test';
 import isoc23SscanfTest from './Isoc23SscanfTest.test';
 import isoc23SwscanfTest from './Isoc23SwscanfTest.test';
 import isoc23VfscanfTest from './Isoc23VfscanfTest.test';
 import isoc23VsscanfTest from './Isoc23VsscanfTest.test';
-// PR#2699
-import getgrentRTest from './GetgrentRTest.test';
-import getpwentRTest from './GetpwentRTest.test';
-import fgetpwentRTest from './FgetpwentRTest.test';
-import getprotobynameRTest from './GetprotobynameRTest.test';
-import getprotobynumberRTest from './GetprotobynumberRTest.test';
-import getprotoentRTest from './GetprotoentRTest.test';
-import getserventRTest from './GetserventRTest.test';
 
 
 export default function testsuite() {
@@ -289,10 +283,7 @@ export default function testsuite() {
   pthreadYieldTest();
   pthreadTsdTest();
   pthreadKeyCreateTest();
-  
-  // PR#2705
-  // PR#2699
-  openat64_2Test();
+  openat642Test();
   closefromTest();
   closeRangeTest();
   groupMemberTest();
@@ -307,7 +298,6 @@ export default function testsuite() {
   getprotobynumberRTest();
   getprotoentRTest();
   getserventRTest();
-  // PR#2705 strto
   isoc23StrtolTest();
   isoc23StrtollTest();
   isoc23StrtoulTest();

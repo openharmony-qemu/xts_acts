@@ -13,12 +13,16 @@
  * limitations under the License.
  */
 
-import { describe, it, expect } from '@ohos/hypium'
+import { beforeEach, describe, expect, it, TestType, Size, Level } from "@ohos/hypium-dynamic"
+import Utils from './Utils'
 import libc_stack_end_test from 'liblibc_stack_end_test.so'
 
 export default function LibcStackEndTest() {
   describe('MuslLibcStackEndTest', () => {
 
+    beforeEach(async () => {
+      await Utils.sleep(50)
+    })
     /**
      * @tc.name   testMuslLibcStackEnd0100
      * @tc.number SUB_THIRDPARTY_MUSL_LIBC_STACK_END_0100
@@ -27,10 +31,11 @@ export default function LibcStackEndTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_THIRDPARTY_MUSL_LIBC_STACK_END_0100', 0, () => {
+    it('testMuslLibcStackEnd0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = libc_stack_end_test.StackEnd_0100();
       expect(data).assertEqual(0);
-    });
+      done()
+    })
 
     /**
      * @tc.name   testMuslLibcStackEnd0200
@@ -40,10 +45,11 @@ export default function LibcStackEndTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_THIRDPARTY_MUSL_LIBC_STACK_END_0200', 0, () => {
+    it('testMuslLibcStackEnd0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = libc_stack_end_test.StackEnd_0200();
       expect(data).assertEqual(0);
-    });
+      done()
+    })
 
     /**
      * @tc.name   testMuslLibcStackEnd0300
@@ -53,10 +59,11 @@ export default function LibcStackEndTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_THIRDPARTY_MUSL_LIBC_STACK_END_0300', 0, () => {
+    it('testMuslLibcStackEnd0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = libc_stack_end_test.StackEnd_0300();
       expect(data).assertEqual(0);
-    });
+      done()
+    })
 
     /**
      * @tc.name   testMuslLibcStackEnd0400
@@ -66,10 +73,11 @@ export default function LibcStackEndTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_THIRDPARTY_MUSL_LIBC_STACK_END_0400', 0, () => {
+    it('testMuslLibcStackEnd0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = libc_stack_end_test.StackEnd_0400();
       expect(data).assertEqual(0);
-    });
+      done()
+    })
 
     /**
      * @tc.name   testMuslLibcStackEnd0500
@@ -79,10 +87,11 @@ export default function LibcStackEndTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_THIRDPARTY_MUSL_LIBC_STACK_END_0500', 0, () => {
+    it('testMuslLibcStackEnd0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = libc_stack_end_test.StackEnd_0500();
       expect(data).assertEqual(0);
-    });
+      done()
+    })
 
     /**
      * @tc.name   testMuslLibcStackEnd0600
@@ -92,10 +101,11 @@ export default function LibcStackEndTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_THIRDPARTY_MUSL_LIBC_STACK_END_0600', 0, () => {
+    it('testMuslLibcStackEnd0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data: number = libc_stack_end_test.StackEnd_0600();
       expect(data).assertEqual(0);
-    });
+      done()
+    })
 
     /**
      * @tc.name   testMuslLibcStackEnd0700
@@ -105,10 +115,11 @@ export default function LibcStackEndTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_THIRDPARTY_MUSL_LIBC_STACK_END_0700', 0, () => {
+    it('testMuslLibcStackEnd0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data: number = libc_stack_end_test.StackEnd_0700();
       expect(data).assertEqual(0);
-    });
+      done()
+    })
 
     /**
      * @tc.name   testMuslLibcStackEnd0800
@@ -118,23 +129,25 @@ export default function LibcStackEndTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_THIRDPARTY_MUSL_LIBC_STACK_END_0800', 0, () => {
+    it('testMuslLibcStackEnd0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data: number = libc_stack_end_test.StackEnd_0800();
       expect(data).assertEqual(0);
-    });
+      done()
+    })
 
     /**
      * @tc.name   testMuslLibcStackEnd0900
      * @tc.number SUB_THIRDPARTY_MUSL_LIBC_STACK_END_0900
-     * @tc.desc   __libc_stack_end值按页大小对齐
+     * @tc.desc   __libc_stack_end值按指针大小对齐
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_THIRDPARTY_MUSL_LIBC_STACK_END_0900', 0, () => {
+    it('testMuslLibcStackEnd0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = libc_stack_end_test.StackEnd_0900();
       expect(data).assertEqual(0);
-    });
+      done()
+    })
 
     /**
      * @tc.name   testMuslLibcStackEnd1000
@@ -144,9 +157,10 @@ export default function LibcStackEndTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_THIRDPARTY_MUSL_LIBC_STACK_END_1000', 0, () => {
+    it('testMuslLibcStackEnd1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = libc_stack_end_test.StackEnd_1000();
       expect(data).assertEqual(0);
-    });
+      done()
+    })
   })
 }
