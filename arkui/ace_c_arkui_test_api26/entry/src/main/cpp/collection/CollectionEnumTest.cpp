@@ -17,6 +17,10 @@
 #include <arkui/native_render.h>
 #include <arkui/native_node_napi.h>
 #include <arkui/native_node.h>
+#include <arkui/ui_info_collection.h>
+#include <arkui/native_type_visual.h>
+#include <arkui/ui_json_wrapper.h>
+#include <arkui/error_code.h>
 #include <hilog/log.h>
  
 namespace ArkUICapiTest {
