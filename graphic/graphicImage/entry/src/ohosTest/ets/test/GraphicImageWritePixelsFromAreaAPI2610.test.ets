@@ -185,7 +185,6 @@ export default function GraphicImageWritePixelsFromAreaAPI2610() {
           console.info(msgStr + 'writePixelsFromArea success');
           await pixelMap.release();
           console.info(msgStr + 'release success');
-          expect(true).assertTrue();
           console.info(msgStr + 'end');
           done();
         } catch (error) {
@@ -215,7 +214,6 @@ export default function GraphicImageWritePixelsFromAreaAPI2610() {
           console.info(msgStr + 'writePixelsFromArea success');
           await pixelMap.release();
           console.info(msgStr + 'release success');
-          expect(true).assertTrue();
           console.info(msgStr + 'end');
           done();
         } catch (error) {
@@ -245,7 +243,6 @@ export default function GraphicImageWritePixelsFromAreaAPI2610() {
           console.info(msgStr + 'writePixelsFromArea success');
           await pixelMap.release();
           console.info(msgStr + 'release success');
-          expect(true).assertTrue();
           console.info(msgStr + 'end');
           done();
         } catch (error) {
@@ -275,7 +272,6 @@ export default function GraphicImageWritePixelsFromAreaAPI2610() {
           console.info(msgStr + 'writePixelsFromArea success');
           await pixelMap.release();
           console.info(msgStr + 'release success');
-          expect(true).assertTrue();
           console.info(msgStr + 'end');
           done();
         } catch (error) {
@@ -344,7 +340,6 @@ export default function GraphicImageWritePixelsFromAreaAPI2610() {
           console.info(msgStr + 'writePixelsFromArea success');
           await pixelMap.release();
           console.info(msgStr + 'release success');
-          expect(true).assertTrue();
           console.info(msgStr + 'end');
           done();
         } catch (error) {
@@ -805,7 +800,6 @@ export default function GraphicImageWritePixelsFromAreaAPI2610() {
           console.info(msgStr + 'writePixelsFromAreaSync success');
           pixelMap.release();
           console.info(msgStr + 'release success');
-          expect(true).assertTrue();
           console.info(msgStr + 'end');
           done();
         } catch (error) {
@@ -835,7 +829,6 @@ export default function GraphicImageWritePixelsFromAreaAPI2610() {
           console.info(msgStr + 'writePixelsFromAreaSync success');
           pixelMap.release();
           console.info(msgStr + 'release success');
-          expect(true).assertTrue();
           console.info(msgStr + 'end');
           done();
         } catch (error) {
@@ -865,7 +858,6 @@ export default function GraphicImageWritePixelsFromAreaAPI2610() {
           console.info(msgStr + 'writePixelsFromAreaSync success');
           pixelMap.release();
           console.info(msgStr + 'release success');
-          expect(true).assertTrue();
           console.info(msgStr + 'end');
           done();
         } catch (error) {
@@ -895,7 +887,6 @@ export default function GraphicImageWritePixelsFromAreaAPI2610() {
           console.info(msgStr + 'writePixelsFromAreaSync success');
           pixelMap.release();
           console.info(msgStr + 'release success');
-          expect(true).assertTrue();
           console.info(msgStr + 'end');
           done();
         } catch (error) {
@@ -964,7 +955,6 @@ export default function GraphicImageWritePixelsFromAreaAPI2610() {
           console.info(msgStr + 'writePixelsFromAreaSync success');
           pixelMap.release();
           console.info(msgStr + 'release success');
-          expect(true).assertTrue();
           console.info(msgStr + 'end');
           done();
         } catch (error) {
@@ -1347,7 +1337,6 @@ export default function GraphicImageWritePixelsFromAreaAPI2610() {
           console.info(msgStr + 'writePixelsFromArea success');
           await pixelMap.release();
           console.info(msgStr + 'release success');
-          expect(true).assertTrue();
           console.info(msgStr + 'end');
           done();
         } catch (error) {
@@ -1377,7 +1366,6 @@ export default function GraphicImageWritePixelsFromAreaAPI2610() {
           console.info(msgStr + 'writePixelsFromArea success');
           await pixelMap.release();
           console.info(msgStr + 'release success');
-          expect(true).assertTrue();
           console.info(msgStr + 'end');
           done();
         } catch (error) {
@@ -1407,7 +1395,6 @@ export default function GraphicImageWritePixelsFromAreaAPI2610() {
           console.info(msgStr + 'writePixelsFromArea success');
           await pixelMap.release();
           console.info(msgStr + 'release success');
-          expect(true).assertTrue();
           console.info(msgStr + 'end');
           done();
         } catch (error) {
@@ -1437,7 +1424,6 @@ export default function GraphicImageWritePixelsFromAreaAPI2610() {
           console.info(msgStr + 'writePixelsFromArea success');
           await pixelMap.release();
           console.info(msgStr + 'release success');
-          expect(true).assertTrue();
           console.info(msgStr + 'end');
           done();
         } catch (error) {
@@ -1467,7 +1453,6 @@ export default function GraphicImageWritePixelsFromAreaAPI2610() {
           console.info(msgStr + 'writePixelsFromArea success');
           await pixelMap.release();
           console.info(msgStr + 'release success');
-          expect(true).assertTrue();
           console.info(msgStr + 'end');
           done();
         } catch (error) {
@@ -1497,7 +1482,6 @@ export default function GraphicImageWritePixelsFromAreaAPI2610() {
           console.info(msgStr + 'writePixelsFromArea success');
           await pixelMap.release();
           console.info(msgStr + 'release success');
-          expect(true).assertTrue();
           console.info(msgStr + 'end');
           done();
         } catch (error) {
@@ -1533,7 +1517,6 @@ export default function GraphicImageWritePixelsFromAreaAPI2610() {
           console.info(msgStr + 'writePixelsFromArea success');
           await pixelMap.release();
           console.info(msgStr + 'release success');
-          expect(true).assertTrue();
           console.info(msgStr + 'end');
           done();
         } catch (error) {
@@ -1565,7 +1548,6 @@ export default function GraphicImageWritePixelsFromAreaAPI2610() {
           console.info(msgStr + 'writePixelsFromAreaSync success');
           pixelMap.release();
           console.info(msgStr + 'release success');
-          expect(true).assertTrue();
           console.info(msgStr + 'end');
           done();
         } catch (error) {
@@ -1595,7 +1577,6 @@ export default function GraphicImageWritePixelsFromAreaAPI2610() {
           console.info(msgStr + 'writePixelsFromAreaSync success');
           pixelMap.release();
           console.info(msgStr + 'release success');
-          expect(true).assertTrue();
           console.info(msgStr + 'end');
           done();
         } catch (error) {
@@ -1625,7 +1606,6 @@ export default function GraphicImageWritePixelsFromAreaAPI2610() {
           console.info(msgStr + 'writePixelsFromAreaSync success');
           pixelMap.release();
           console.info(msgStr + 'release success');
-          expect(true).assertTrue();
           console.info(msgStr + 'end');
           done();
         } catch (error) {
@@ -1655,7 +1635,6 @@ export default function GraphicImageWritePixelsFromAreaAPI2610() {
           console.info(msgStr + 'writePixelsFromAreaSync success');
           pixelMap.release();
           console.info(msgStr + 'release success');
-          expect(true).assertTrue();
           console.info(msgStr + 'end');
           done();
         } catch (error) {
@@ -1685,7 +1664,6 @@ export default function GraphicImageWritePixelsFromAreaAPI2610() {
           console.info(msgStr + 'writePixelsFromAreaSync success');
           pixelMap.release();
           console.info(msgStr + 'release success');
-          expect(true).assertTrue();
           console.info(msgStr + 'end');
           done();
         } catch (error) {
@@ -1715,7 +1693,6 @@ export default function GraphicImageWritePixelsFromAreaAPI2610() {
           console.info(msgStr + 'writePixelsFromAreaSync success');
           pixelMap.release();
           console.info(msgStr + 'release success');
-          expect(true).assertTrue();
           console.info(msgStr + 'end');
           done();
         } catch (error) {
@@ -1751,7 +1728,6 @@ export default function GraphicImageWritePixelsFromAreaAPI2610() {
           console.info(msgStr + 'writePixelsFromAreaSync success');
           pixelMap.release();
           console.info(msgStr + 'release success');
-          expect(true).assertTrue();
           console.info(msgStr + 'end');
           done();
         } catch (error) {
