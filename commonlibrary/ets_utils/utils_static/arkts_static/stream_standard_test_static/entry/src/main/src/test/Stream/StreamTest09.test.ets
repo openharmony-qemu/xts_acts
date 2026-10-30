@@ -82,8 +82,8 @@ class CustomDuplex extends stream.Duplex {
     super();
   }
 
-  doWritev(chunks: Array<string | Uint8Array>, callback: Function) {
-    chunks.forEach((chunk, index) => {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function) {
+    (chunks as string[]).forEach((chunk, index) => {
       if (index === 0 && chunk === 'data1') {
         const chunkProcessed = true;
       }
@@ -96,8 +96,8 @@ class CustomDuplex extends stream.Duplex {
 }
 
 class MixedDataDuplex extends stream.Duplex {
-  doWritev(chunks: (string | Uint8Array)[], callback: Function) {
-    chunks.forEach(chunk => {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function) {
+    (chunks as string[]).forEach(chunk => {
     });
     invokeCb(callback);
   }
@@ -111,8 +111,8 @@ class NormalDataDuplex extends stream.Duplex {
     super();
   }
 
-  doWritev(chunks: (string | Uint8Array)[], callback: Function) {
-    chunks.forEach((_chunk, _index) => {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function) {
+    (chunks as string[]).forEach((_chunk, _index) => {
     });
     invokeCb(callback);
   }
@@ -129,7 +129,7 @@ class BufferedDataDuplex extends stream.Duplex {
     super();
   }
 
-  doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function) {
     this.buffer.push(...chunks);
     invokeCb(callback);
   }
@@ -148,7 +148,7 @@ class InvalidParamDuplex extends stream.Duplex {
   doRead(_size: number): void {
   }
 
-  doWritev(_chunks: (string | Uint8Array)[], callback: Function) {
+  doWritev(_chunks: string[] | Uint8Array[], callback: Function) {
     const fakeChunks = ['not an array'] as (string | Uint8Array)[];
     if (!Array.isArray(fakeChunks)) {
       throw new TypeError('chunks must be an array');
@@ -158,7 +158,7 @@ class InvalidParamDuplex extends stream.Duplex {
 }
 
 class TypeCheckDuplex extends stream.Duplex {
-  doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function) {
     const testChunks: (string | Uint8Array | number)[] = [...chunks, 123];
     const invalidChunk = testChunks.find(chunk =>
     !(typeof chunk === 'string' || chunk instanceof Uint8Array)
@@ -176,7 +176,7 @@ class TypeCheckDuplex extends stream.Duplex {
 }
 
 class DoubleCallbackDuplex extends stream.Duplex {
-  doWritev(_chunks: (string | Uint8Array)[], callback: Function) {
+  doWritev(_chunks: string[] | Uint8Array[], callback: Function) {
     invokeCb(callback);
     invokeCb(callback);
     const callbackCallCount = 2;
