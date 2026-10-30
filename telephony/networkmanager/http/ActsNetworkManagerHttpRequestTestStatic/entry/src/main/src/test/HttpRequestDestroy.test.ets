@@ -383,6 +383,8 @@ export default function httpRequestDestroyTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         });
 
+
+
     })
 
 }

@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -38,7 +38,7 @@ const ExpectTrue = (n: boolean) => {
     }
 }
 
-export default function HttpCreateHttpResponseCacheTest() {
+export default function HttpCreateHttpResponseCacheTest(): void {
 
     describe("HttpCreateHttpResponseCacheTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
@@ -115,6 +115,5 @@ export default function HttpCreateHttpResponseCacheTest() {
         hilog.info(domain, tag, '%{public}s', caseName + '---test end');
       });
 
-    })
-
+  })
 }

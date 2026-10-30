@@ -17,18 +17,22 @@ import httpRequestMethodTest from "./HttpRequestMethod.test";
 import httpRequestOptionsTest from "./HttpRequestOptions.test";
 import httpRequestDestroyTest from './HttpRequestDestroy.test';
 import httpRequestErrorCodeTest from "./HttpRequestErrorCode.test";
+import HttpRequestInStreamTest from './HttpRequestInStream.test';
+import HttpRequestMaxAutoRedirectsTest from './HttpRequestRedirects.test';
 import EmptyTest from './Empty.test';
 import connection from '@ohos.net.connection';
 
 let isDefaultNet: boolean = connection.hasDefaultNetSync();
 
-export default function testsuite() {
+export default function testsuite(): void {
+    HttpRequestMaxAutoRedirectsTest();
     if(isDefaultNet){
         httpRequestMethodTest();
         httpRequestDestroyTest();
         httpRequestErrorCodeTest();
+        HttpRequestInStreamTest();
+        httpRequestOptionsTest();
     }else{
         EmptyTest();
     }
-
 }
