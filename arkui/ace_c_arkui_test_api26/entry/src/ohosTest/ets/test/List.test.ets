@@ -14,6 +14,7 @@
  */
 import AreaChangeErrorCodeTest from './onAreaChange/AreaChangeErrorCodeTest.test'
 import ScrollWithMouseTest from './scroll/scrollWithMouseTest.test';
+import ScrollWithKeyboardTest from './scroll/ScrollWithKeyboardTest.test';
 import AutoAdjustMarginTest from './scroll/autoAdjustMarginTest.test';
 import ScrollBarHeightTest from './scroll/scrollBarHeightTest.test';
 import ListBackBehaviorTest from './list/listBackBehaviorTest.test';
@@ -84,6 +85,7 @@ export default function testsuite() {
   UnregisterCommonAreaApproximateChangeEventTest();
   AreaChangeErrorCodeTest();
   ScrollWithMouseTest();
+  ScrollWithKeyboardTest();
   AutoAdjustMarginTest();
   ScrollBarHeightTest();
   ListBackBehaviorTest();

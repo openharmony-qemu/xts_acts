@@ -64,6 +64,9 @@
         "MainAbility/pages/ScrollScrollBarHeight",
         "MainAbility/pages/ScrollBarHeightModifier",
         "MainAbility/pages/Scroll/scrollGetScrollState",
-        "MainAbility/pages/Scroll/scrollWithMouse"
+        "MainAbility/pages/Scroll/scrollWithMouse",
+        "MainAbility/pages/scrollAnimation/ScrollKeyboardVertical",
+        "MainAbility/pages/scrollAnimation/ScrollKeyboardHorizontal",
+        "MainAbility/pages/scrollAnimation/ScrollKeyboardModifier"
     ]
 }
