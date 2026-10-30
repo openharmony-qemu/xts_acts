@@ -16,6 +16,7 @@ import display from '@ohos.display';
 import commoneventmanager from '@ohos.commonEventManager';
 import inputMethodEngine from '@ohos.inputMethodEngine';
 import { InputMethodExtraConfig } from '@kit.IMEKit';
+import { BusinessError } from '@ohos.base';
 
 let inputMethodAbility = inputMethodEngine.getInputMethodAbility();
 const TAG = 'keyboardController';
@@ -446,6 +447,170 @@ export class KeyboardController {
         case 176:
           console.info(TAG + '====>Sub_InputMethod_IME_updatePanelRectSync_3000 event:' + data.event);
           that.Sub_InputMethod_IME_updatePanelRectSync_3000();
+          break;
+        case 200:
+          console.info(TAG + '====>SUB_InputMethodEngine_GetRightRichTextSync_RETURN_0100 event:' + data.event);
+          that.testGetRightRichSyncText(5);
+          break;
+        case 201:
+          console.info(TAG + '====>SUB_InputMethodEngine_GetRightRichText_RETURN_0100 event:' + data.event);
+          that.testGetRightRichText(5);
+          break;
+        case 202:
+          console.info(TAG + '====>SUB_InputMethodEngine_GetRightRichTextSync_RETURN_0200 event:' + data.event);
+          that.testGetRightRichSyncText(0);
+          break;
+        case 203:
+          console.info(TAG + '====>SUB_InputMethodEngine_GetRightRichText_RETURN_0200 event:' + data.event);
+          that.testGetRightRichText(0);
+          break;
+        case 204:
+          console.info(TAG + '====>SUB_InputMethodEngine_GetRightRichTextSync_RETURN_0300 event:' + data.event);
+          that.testGetRightRichSyncText(4096);
+          break;
+        case 205:
+          console.info(TAG + '====>SUB_InputMethodEngine_GetRightRichText_RETURN_0300 event:' + data.event);
+          that.testGetRightRichText(4096);
+          break;
+        case 206:
+          console.info(TAG + '====>SUB_InputMethodEngine_GetRightRichTextSync_RETURN_0400 event:' + data.event);
+          that.testGetRightRichSyncError(-1);
+          break;
+        case 207:
+          console.info(TAG + '====>SUB_InputMethodEngine_GetRightRichText_RETURN_0400 event:' + data.event);
+          that.testGetRightRichError(-1);
+          break;
+        case 208:
+          console.info(TAG + '====>SUB_InputMethodEngine_GetRightRichTextSync_RETURN_0500 event:' + data.event);
+          that.testGetRightRichSyncError(4097);
+          break;
+        case 209:
+          console.info(TAG + '====>SUB_InputMethodEngine_GetRightRichText_RETURN_0500 event:' + data.event);
+          that.testGetRightRichError(4097);
+          break;
+        case 210:
+          console.info(TAG + '====>SUB_InputMethodEngine_GetRightRichTextSync_RETURN_0600 event:' + data.event);
+          that.testGetRightRichSyncError(null);
+          break;
+        case 211:
+          console.info(TAG + '====>SUB_InputMethodEngine_GetRightRichText_RETURN_0600 event:' + data.event);
+          that.testGetRightRichError(null);
+          break;
+        case 212:
+          console.info(TAG + '====>SUB_InputMethodEngine_GetRightRichTextSync_RETURN_0700 event:' + data.event);
+          that.testGetRightRichSyncError(undefined);
+          break;
+        case 213:
+          console.info(TAG + '====>SUB_InputMethodEngine_GetRightRichText_RETURN_0700 event:' + data.event);
+          that.testGetRightRichError(undefined);
+          break;
+        case 214:
+          console.info(TAG + '====>SUB_InputMethodEngine_GetRightRichTextSync_RETURN_0800 event:' + data.event);
+          that.testGetRightRichSyncImage(5);
+          break;
+        case 215:
+          console.info(TAG + '====>SUB_InputMethodEngine_GetRightRichText_RETURN_0800 event:' + data.event);
+          that.testGetRightRichImage(5);
+          break;
+        case 216:
+          console.info(TAG + '====>SUB_InputMethodEngine_GetRightRichTextSync_RETURN_0900 event:' + data.event);
+          that.testGetRightRichSyncSymbol(1);
+          break;
+        case 217:
+          console.info(TAG + '====>SUB_InputMethodEngine_GetRightRichText_RETURN_0900 event:' + data.event);
+          that.testGetRightRichSymbol(1);
+          break;
+        case 218:
+          console.info(TAG + '====>SUB_InputMethodEngine_GetLeftRichTextSync_RETURN_0100 event:' + data.event);
+          that.testGetLeftRichSyncText(5);
+          break;
+        case 219:
+          console.info(TAG + '====>SUB_InputMethodEngine_GetLeftRichText_RETURN_0100 event:' + data.event);
+          that.testGetLeftRichText(5);
+          break;
+        case 220:
+          console.info(TAG + '====>SUB_InputMethodEngine_GetLeftRichTextSync_RETURN_0200 event:' + data.event);
+          that.testGetLeftRichSyncText(0);
+          break;
+        case 221:
+          console.info(TAG + '====>SUB_InputMethodEngine_GetLeftRichText_RETURN_0200 event:' + data.event);
+          that.testGetLeftRichText(0);
+          break;
+        case 222:
+          console.info(TAG + '====>SUB_InputMethodEngine_GetLeftRichTextSync_RETURN_0300 event:' + data.event);
+          that.testGetLeftRichSyncText(4096);
+          break;
+        case 223:
+          console.info(TAG + '====>SUB_InputMethodEngine_GetLeftRichText_RETURN_0300 event:' + data.event);
+          that.testGetLeftRichText(4096);
+          break;
+        case 224:
+          console.info(TAG + '====>SUB_InputMethodEngine_GetLeftRichTextSync_RETURN_0400 event:' + data.event);
+          that.testGetLeftRichSyncError(-1);
+          break;
+        case 225:
+          console.info(TAG + '====>SUB_InputMethodEngine_GetLeftRichText_RETURN_0400 event:' + data.event);
+          that.testGetLeftRichError(-1);
+          break;
+        case 226:
+          console.info(TAG + '====>SUB_InputMethodEngine_GetLeftRichTextSync_RETURN_0500 event:' + data.event);
+          that.testGetLeftRichSyncError(4097);
+          break;
+        case 227:
+          console.info(TAG + '====>SUB_InputMethodEngine_GetLeftRichText_RETURN_0500 event:' + data.event);
+          that.testGetLeftRichError(4097);
+          break;
+        case 228:
+          console.info(TAG + '====>SUB_InputMethodEngine_GetLeftRichTextSync_RETURN_0600 event:' + data.event);
+          that.testGetLeftRichSyncError(null);
+          break;
+        case 229:
+          console.info(TAG + '====>SUB_InputMethodEngine_GetLeftRichText_RETURN_0600 event:' + data.event);
+          that.testGetLeftRichError(null);
+          break;
+        case 230:
+          console.info(TAG + '====>SUB_InputMethodEngine_GetLeftRichTextSync_RETURN_0700 event:' + data.event);
+          that.testGetLeftRichSyncError(undefined);
+          break;
+        case 231:
+          console.info(TAG + '====>SUB_InputMethodEngine_GetLeftRichText_RETURN_0700 event:' + data.event);
+          that.testGetLeftRichError(undefined);
+          break;
+        case 232:
+          console.info(TAG + '====>SUB_InputMethodEngine_GetLeftRichTextSync_RETURN_0800 event:' + data.event);
+          that.testGetLeftRichSyncImage(5);
+          break;
+        case 233:
+          console.info(TAG + '====>SUB_InputMethodEngine_GetLeftRichText_RETURN_0800 event:' + data.event);
+          that.testGetLeftRichImage(5);
+          break;
+        case 234:
+          console.info(TAG + '====>SUB_InputMethodEngine_GetLeftRichTextSync_RETURN_0900 event:' + data.event);
+          that.testGetLeftRichSyncSymbol(1);
+          break;
+        case 235:
+          console.info(TAG + '====>SUB_InputMethodEngine_GetLeftRichText_RETURN_0900 event:' + data.event);
+          that.testGetLeftRichSymbol(1);
+          break;
+        case 236:
+          console.info(TAG + '====>SUB_InputMethodEngine_GetRightRichTextSync_RETURN_1000 event:' + data.event);
+          that.testHideAndGetRichError(1);
+          break;
+        case 237:
+          console.info(TAG + '====>SUB_InputMethodEngine_GetRightRichText_RETURN_1000 event:' + data.event);
+          that.testHideAndGetRichError(2);
+          break;
+        case 238:
+          console.info(TAG + '====>SUB_InputMethodEngine_GetLeftRichTextSync_RETURN_1000 event:' + data.event);
+          that.testHideAndGetRichError(3);
+          break;
+        case 239:
+          console.info(TAG + '====>SUB_InputMethodEngine_GetLeftRichText_RETURN_1000 event:' + data.event);
+          that.testHideAndGetRichError(4);
+          break;
+        case 240:
+          console.info(TAG + '====>SUB_InputMethodEngine_GetLeftRichText_Enum_0100 event:' + data.event);
+          that.testEnumSpanType();
           break;
       }
     };
@@ -2335,6 +2500,500 @@ export class KeyboardController {
       }
       commoneventmanager.publish('Sub_InputMethod_IME_updatePanelRectSync_3000', commonEventPublishData, this.publishCallback);
     };
+  }
+
+  private publishResult(eventName: string, result: string): void {
+    let commonEventPublishData: commoneventmanager.CommonEventPublishData = {
+      data: result
+    };
+    commoneventmanager.publish(eventName, commonEventPublishData, this.publishCallback);
+  }
+
+  private sleep(ms: number): Promise<void> {
+    return new Promise<void>((resolve) => setTimeout(resolve, ms));
+  }
+
+  private testEnumSpanType(): void {
+    let EVENT: string = 'SUB_InputMethodEngine_GetLeftRichText_Enum_0100';
+    try {
+      let result = inputMethodEngine.SpanType.TEXT === 0 &&
+      inputMethodEngine.SpanType.IMAGE === 1 &&
+      inputMethodEngine.SpanType.SYMBOL === 2 &&
+      inputMethodEngine.SpanType.CUSTOM === 3;
+      if (result === true) {
+        this.publishResult(EVENT, 'SUCCESS');
+        return;
+      };
+      this.publishResult(EVENT, 'FALIED');
+    } catch (err) {
+      this.publishResult(EVENT, String((err as BusinessError).code));
+    }
+  }
+
+  private testgetRightRichTextSync(name: string): void {
+    try {
+      let richText = this.InputClient.getRightRichTextSync(5);
+      this.publishResult(name, 'FALIED');
+    } catch (err) {
+      console.info(`${name} catch,code: ${err.code},message: ${err.message}`);
+      if (err.code === 12800003) {
+        this.publishResult(name, 'SUCCESS');
+      } else {
+        this.publishResult(name, String((err as BusinessError).code))
+      }
+    }
+  }
+
+  private async testgetRightRichText(name: string): Promise<void> {
+    try {
+      let richText = await this.InputClient.getRightRichText(5);
+      this.publishResult(name, 'FALIED');
+    } catch (err) {
+      console.info(`${name} catch,code: ${err.code},message: ${err.message}`);
+      if (err.code === 12800003) {
+        this.publishResult(name, 'SUCCESS');
+      } else {
+        this.publishResult(name, String((err as BusinessError).code))
+      }
+    }
+  }
+
+  private testgetLeftRichTextSync(name: string): void {
+    try {
+      let richText = this.InputClient.getLeftRichTextSync(5);
+      this.publishResult(name, 'FALIED');
+    } catch (err) {
+      console.info(`${name} catch,code: ${err.code},message: ${err.message}`);
+      if (err.code === 12800003) {
+        this.publishResult(name, 'SUCCESS');
+      } else {
+        this.publishResult(name, String((err as BusinessError).code))
+      }
+    }
+  }
+
+  private async testgetLeftRichText(name: string): Promise<void> {
+    try {
+      let richText = await this.InputClient.getLeftRichText(5);
+      this.publishResult(name, 'FALIED');
+    } catch (err) {
+      console.info(`${name} catch,code: ${err.code},message: ${err.message}`);
+      if (err.code === 12800003) {
+        this.publishResult(name, 'SUCCESS');
+      } else {
+        this.publishResult(name, String((err as BusinessError).code))
+      }
+    }
+  }
+
+  private async testHideAndGetRichError(length: number): Promise<void> {
+    let EVENT: string = '';
+    try {
+      await this.keyboardController.hide();
+      await this.sleep(1000);
+      if (length === 1) {
+        EVENT = 'SUB_InputMethodEngine_GetRightRichTextSync_RETURN_1000';
+        this.testgetRightRichTextSync(EVENT);
+      } else if (length === 2) {
+        EVENT = 'SUB_InputMethodEngine_GetRightRichText_RETURN_1000';
+        this.testgetRightRichText(EVENT);
+      } else if (length === 3) {
+        EVENT = 'SUB_InputMethodEngine_GetLeftRichTextSync_RETURN_1000';
+        this.testgetLeftRichTextSync(EVENT);
+      } else if (length === 4) {
+        EVENT = 'SUB_InputMethodEngine_GetLeftRichText_RETURN_1000';
+        this.testgetLeftRichText(EVENT);
+      };
+    } catch (err) {
+      console.info(`${EVENT} catch,code: ${err.code},message: ${err.message}`);
+      this.publishResult(EVENT, String((err as BusinessError).code))
+    }
+  }
+
+  private testGetRightRichSyncText(length: number): void {
+    let EVENT: string = '';
+    if (length === 5) {
+      EVENT = 'SUB_InputMethodEngine_GetRightRichTextSync_RETURN_0100';
+    } else if (length === 0) {
+      EVENT = 'SUB_InputMethodEngine_GetRightRichTextSync_RETURN_0200';
+    } else if (length === 4096) {
+      EVENT = 'SUB_InputMethodEngine_GetRightRichTextSync_RETURN_0300';
+    };
+    try {
+      let richText = this.InputClient.getRightRichTextSync(length);
+      console.info(`${EVENT} success richText: ${JSON.stringify(richText)}`);
+      let spans = richText.getSpans();
+      let type = spans[0].getType();
+      let content = spans[0].getContent();
+      let contentRes = this.InputClient.getBackwardSync(length);
+      let range: inputMethodEngine.Range = spans[0].getRange();
+      console.info(`${EVENT} spans: ${JSON.stringify(richText)}`);
+      if (type === inputMethodEngine.SpanType.TEXT && content === contentRes &&
+         range.start >= 0 && range.start <= range.end) {
+        this.publishResult(EVENT, 'SUCCESS');
+        return;
+      };
+      this.publishResult(EVENT, 'FALIED');
+    } catch (err) {
+      this.publishResult(EVENT, String((err as BusinessError).code));
+    }
+  }
+
+  private async testGetRightRichText(length: number): Promise<void> {
+    let EVENT: string = '';
+    if (length === 5) {
+      EVENT = 'SUB_InputMethodEngine_GetRightRichText_RETURN_0100';
+    } else if (length === 0) {
+      EVENT = 'SUB_InputMethodEngine_GetRightRichText_RETURN_0200';
+    } else if (length === 4096) {
+      EVENT = 'SUB_InputMethodEngine_GetRightRichText_RETURN_0300';
+    };
+    try {
+      let richText = await this.InputClient.getRightRichText(length);
+      console.info(`${EVENT} success richText: ${JSON.stringify(richText)}`);
+      let spans = richText.getSpans();
+      let type = spans[0].getType();
+      let content = spans[0].getContent();
+      let contentRes = this.InputClient.getBackwardSync(length);
+      let range: inputMethodEngine.Range = spans[0].getRange();
+      console.info(`${EVENT} spans: ${JSON.stringify(richText)}`);
+      if (type === inputMethodEngine.SpanType.TEXT && content === contentRes &&
+         range.start >= 0 && range.start <= range.end) {
+        this.publishResult(EVENT, 'SUCCESS');
+        return;
+      };
+      this.publishResult(EVENT, 'FALIED');
+    } catch (err) {
+      console.info(`${EVENT} catch,code: ${err.code},message: ${err.message}`);
+      this.publishResult(EVENT, String((err as BusinessError).code))
+    }
+  }
+
+  private testGetRightRichSyncError(length: number | null | undefined): void {
+    let EVENT: string = '';
+    if (length === -1) {
+      EVENT = 'SUB_InputMethodEngine_GetRightRichTextSync_RETURN_0400';
+    } else if (length === 4097) {
+      EVENT = 'SUB_InputMethodEngine_GetRightRichTextSync_RETURN_0500';
+    } else if (length === null) {
+      EVENT = 'SUB_InputMethodEngine_GetRightRichTextSync_RETURN_0600';
+    } else if (length === undefined) {
+      EVENT = 'SUB_InputMethodEngine_GetRightRichTextSync_RETURN_0700';
+    };
+    try {
+      let richText = this.InputClient.getRightRichTextSync(length);
+      this.publishResult(EVENT, 'FALIED');
+    } catch (err) {
+      console.info(`${EVENT} catch,code: ${err.code},message: ${err.message}`);
+      if (err.code === 401) {
+        this.publishResult(EVENT, 'SUCCESS');
+      } else {
+        this.publishResult(EVENT, String((err as BusinessError).code))
+      }
+    }
+  }
+
+  private async testGetRightRichError(length: number | null | undefined): Promise<void> {
+    let EVENT: string = '';
+    if (length === -1) {
+      EVENT = 'SUB_InputMethodEngine_GetRightRichText_RETURN_0400';
+    } else if (length === 4097) {
+      EVENT = 'SUB_InputMethodEngine_GetRightRichText_RETURN_0500';
+    } else if (length === null) {
+      EVENT = 'SUB_InputMethodEngine_GetRightRichText_RETURN_0600';
+    } else if (length === undefined) {
+      EVENT = 'SUB_InputMethodEngine_GetRightRichText_RETURN_0700';
+    };
+    try {
+      let richText = await this.InputClient.getRightRichText(length);
+      this.publishResult(EVENT, 'FALIED');
+    } catch (err) {
+      console.info(`${EVENT} catch,code: ${err.code},message: ${err.message}`);
+      if (err.code === 401) {
+        this.publishResult(EVENT, 'SUCCESS');
+      } else {
+        this.publishResult(EVENT, String((err as BusinessError).code))
+      }
+    }
+  }
+
+  private testGetLeftRichSyncText(length: number): void {
+    let EVENT: string = '';
+    if (length === 5) {
+      EVENT = 'SUB_InputMethodEngine_GetLeftRichTextSync_RETURN_0100';
+    } else if (length === 0) {
+      EVENT = 'SUB_InputMethodEngine_GetLeftRichTextSync_RETURN_0200';
+    } else if (length === 4096) {
+      EVENT = 'SUB_InputMethodEngine_GetLeftRichTextSync_RETURN_0300';
+    };;
+    try {
+      let richText = this.InputClient.getLeftRichTextSync(length);
+      console.info(`${EVENT} success richText: ${JSON.stringify(richText)}`);
+      let spans = richText.getSpans();
+      let type = spans[0].getType();
+      let content = spans[0].getContent();
+      let contentRes = this.InputClient.getForwardSync(length);
+      let range: inputMethodEngine.Range = spans[0].getRange();
+      console.info(`${EVENT} spans: ${JSON.stringify(richText)}`);
+      if (type === inputMethodEngine.SpanType.TEXT && content === contentRes &&
+         range.start >= 0 && range.start <= range.end) {
+        this.publishResult(EVENT, 'SUCCESS');
+        return;
+      };
+      this.publishResult(EVENT, 'FALIED');
+    } catch (err) {
+      this.publishResult(EVENT, String((err as BusinessError).code))
+    }
+  }
+
+  private async testGetLeftRichText(length: number): Promise<void> {
+    let EVENT: string = '';
+    if (length === 5) {
+      EVENT = 'SUB_InputMethodEngine_GetLeftRichText_RETURN_0100';
+    } else if (length === 0) {
+      EVENT = 'SUB_InputMethodEngine_GetLeftRichText_RETURN_0200';
+    } else if (length === 4096) {
+      EVENT = 'SUB_InputMethodEngine_GetLeftRichText_RETURN_0300';
+    };
+    try {
+      let richText = await this.InputClient.getLeftRichText(length);
+      console.info(`${EVENT} success richText: ${JSON.stringify(richText)}`);
+      let spans = richText.getSpans();
+      let type = spans[0].getType();
+      let content = spans[0].getContent();
+      let contentRes = this.InputClient.getForwardSync(length);
+      let range: inputMethodEngine.Range = spans[0].getRange();
+      console.info(`${EVENT} spans: ${JSON.stringify(richText)}`);
+      if (type === inputMethodEngine.SpanType.TEXT && content === contentRes &&
+         range.start >= 0 && range.start <= range.end) {
+        this.publishResult(EVENT, 'SUCCESS');
+        return;
+      };
+      this.publishResult(EVENT, 'FALIED');
+    } catch (err) {
+      console.info(`${EVENT} catch,code: ${err.code},message: ${err.message}`);
+      this.publishResult(EVENT, String((err as BusinessError).code))
+    }
+  }
+
+  private testGetLeftRichSyncError(length: number): void {
+    let EVENT: string = '';
+    if (length === -1) {
+      EVENT = 'SUB_InputMethodEngine_GetLeftRichTextSync_RETURN_0400';
+    } else if (length === 4097) {
+      EVENT = 'SUB_InputMethodEngine_GetLeftRichTextSync_RETURN_0500';
+    } else if (length === null) {
+      EVENT = 'SUB_InputMethodEngine_GetLeftRichTextSync_RETURN_0600';
+    } else if (length === undefined) {
+      EVENT = 'SUB_InputMethodEngine_GetLeftRichTextSync_RETURN_0700';
+    };
+    try {
+      let richText = this.InputClient.getLeftRichTextSync(length);
+      this.publishResult(EVENT, 'FALIED');
+    } catch (err) {
+      console.info(`${EVENT} catch,code: ${err.code},message: ${err.message}`);
+      if (err.code === 401) {
+        this.publishResult(EVENT, 'SUCCESS');
+      } else {
+        this.publishResult(EVENT, String((err as BusinessError).code))
+      }
+    }
+  }
+
+  private async testGetLeftRichError(length: number): Promise<void> {
+    let EVENT: string = '';
+    if (length === -1) {
+      EVENT = 'SUB_InputMethodEngine_GetLeftRichText_RETURN_0400';
+    } else if (length === 4097) {
+      EVENT = 'SUB_InputMethodEngine_GetLeftRichText_RETURN_0500';
+    } else if (length === null) {
+      EVENT = 'SUB_InputMethodEngine_GetLeftRichText_RETURN_0600';
+    } else if (length === undefined) {
+      EVENT = 'SUB_InputMethodEngine_GetLeftRichText_RETURN_0700';
+    };
+    try {
+      let richText = await this.InputClient.getLeftRichText(length);
+      this.publishResult(EVENT, 'FALIED');
+    } catch (err) {
+      console.info(`${EVENT} catch,code: ${err.code},message: ${err.message}`);
+      if (err.code === 401) {
+        this.publishResult(EVENT, 'SUCCESS');
+      } else {
+        this.publishResult(EVENT, String((err as BusinessError).code))
+      }
+    }
+  }
+
+  private testGetRightRichSyncImage(length: number): void {
+    const EVENT = 'SUB_InputMethodEngine_GetRightRichTextSync_RETURN_0800';
+    try {
+      let richText = this.InputClient.getRightRichTextSync(length);
+      console.info(`${EVENT} success richText: ${JSON.stringify(richText)}`);
+      let spans = richText.getSpans();
+      let type = spans[0].getType();
+      let content = spans[0].getContent();
+      let range: inputMethodEngine.Range = spans[0].getRange();
+      console.info(`${EVENT} spans: ${JSON.stringify(richText)}`);
+      if (type === inputMethodEngine.SpanType.IMAGE && content === 'image_tag_001' &&
+         range.start >= 0 && range.start <= range.end) {
+        this.publishResult(EVENT, 'SUCCESS');
+        return;
+      };
+      this.publishResult(EVENT, 'FALIED');
+    } catch (err) {
+      this.publishResult(EVENT, String((err as BusinessError).code))
+    }
+  }
+
+  private async testGetRightRichImage(length: number): Promise<void> {
+    const EVENT = 'SUB_InputMethodEngine_GetRightRichText_RETURN_0800';
+    try {
+      let richText = await this.InputClient.getRightRichText(length);
+      console.info(`${EVENT} success richText: ${JSON.stringify(richText)}`);
+      let spans = richText.getSpans();
+      let type = spans[0].getType();
+      let content = spans[0].getContent();
+      let range: inputMethodEngine.Range = spans[0].getRange();
+      console.info(`${EVENT} spans: ${JSON.stringify(richText)}`);
+      if (type === inputMethodEngine.SpanType.IMAGE && content === 'image_tag_001' &&
+         range.start >= 0 && range.start <= range.end) {
+        this.publishResult(EVENT, 'SUCCESS');
+        return;
+      };
+      this.publishResult(EVENT, 'FALIED');
+    } catch (err) {
+      console.info(`${EVENT} catch,code: ${err.code},message: ${err.message}`);
+      this.publishResult(EVENT, String((err as BusinessError).code))
+    }
+  }
+
+  private testGetLeftRichSyncImage(length: number): void {
+    const EVENT = 'SUB_InputMethodEngine_GetLeftRichTextSync_RETURN_0800';
+    try {
+      let richText = this.InputClient.getLeftRichTextSync(length);
+      console.info(`${EVENT} success richText: ${JSON.stringify(richText)}`);
+      let spans = richText.getSpans();
+      let type = spans[0].getType();
+      let content = spans[0].getContent();
+      let range: inputMethodEngine.Range = spans[0].getRange();
+      console.info(`${EVENT} spans: ${JSON.stringify(richText)}`);
+      if (type === inputMethodEngine.SpanType.IMAGE && content === 'image_tag_001' &&
+         range.start >= 0 && range.start <= range.end) {
+        this.publishResult(EVENT, 'SUCCESS');
+        return;
+      };
+      this.publishResult(EVENT, 'FALIED');
+    } catch (err) {
+      this.publishResult(EVENT, String((err as BusinessError).code))
+    }
+  }
+
+  private async testGetLeftRichImage(length: number): Promise<void> {
+    const EVENT = 'SUB_InputMethodEngine_GetLeftRichText_RETURN_0800';
+    try {
+      let richText = await this.InputClient.getLeftRichText(length);
+      console.info(`${EVENT} success richText: ${JSON.stringify(richText)}`);
+      let spans = richText.getSpans();
+      let type = spans[0].getType();
+      let content = spans[0].getContent();
+      let range: inputMethodEngine.Range = spans[0].getRange();
+      console.info(`${EVENT} spans: ${JSON.stringify(richText)}`);
+      if (type === inputMethodEngine.SpanType.IMAGE && content === 'image_tag_001' &&
+         range.start >= 0 && range.start <= range.end) {
+        this.publishResult(EVENT, 'SUCCESS');
+        return;
+      };
+      this.publishResult(EVENT, 'FALIED');
+    } catch (err) {
+      console.info(`${EVENT} catch,code: ${err.code},message: ${err.message}`);
+      this.publishResult(EVENT, String((err as BusinessError).code))
+    }
+  }
+
+  private testGetRightRichSyncSymbol(length: number): void {
+    const EVENT = 'SUB_InputMethodEngine_GetRightRichTextSync_RETURN_0900';
+    try {
+      let richText = this.InputClient.getRightRichTextSync(length);
+      console.info(`${EVENT} success richText: ${JSON.stringify(richText)}`);
+      let spans = richText.getSpans();
+      let type = spans[0].getType();
+      let content = spans[0].getContent();
+      let range: inputMethodEngine.Range = spans[0].getRange();
+      console.info(`${EVENT} spans: ${JSON.stringify(richText)}`);
+      if (type === inputMethodEngine.SpanType.SYMBOL &&
+         range.start >= 0 && range.start <= range.end) {
+        this.publishResult(EVENT, 'SUCCESS');
+        return;
+      };
+      this.publishResult(EVENT, 'FALIED');
+    } catch (err) {
+      this.publishResult(EVENT, String((err as BusinessError).code))
+    }
+  }
+
+  private async testGetRightRichSymbol(length: number): Promise<void> {
+    const EVENT = 'SUB_InputMethodEngine_GetRightRichText_RETURN_0900';
+    try {
+      let richText = await this.InputClient.getRightRichText(length);
+      console.info(`${EVENT} success richText: ${JSON.stringify(richText)}`);
+      let spans = richText.getSpans();
+      let type = spans[0].getType();
+      let content = spans[0].getContent();
+      let range: inputMethodEngine.Range = spans[0].getRange();
+      console.info(`${EVENT} spans: ${JSON.stringify(richText)}`);
+      if (type === inputMethodEngine.SpanType.SYMBOL &&
+         range.start >= 0 && range.start <= range.end) {
+        this.publishResult(EVENT, 'SUCCESS');
+        return;
+      };
+      this.publishResult(EVENT, 'FALIED');
+    } catch (err) {
+      console.info(`${EVENT} catch,code: ${err.code},message: ${err.message}`);
+      this.publishResult(EVENT, String((err as BusinessError).code))
+    }
+  }
+
+  private testGetLeftRichSyncSymbol(length: number): void {
+    const EVENT = 'SUB_InputMethodEngine_GetLeftRichTextSync_RETURN_0900';
+    try {
+      let richText = this.InputClient.getLeftRichTextSync(length);
+      console.info(`${EVENT} success richText: ${JSON.stringify(richText)}`);
+      let spans = richText.getSpans();
+      let type = spans[0].getType();
+      let content = spans[0].getContent();
+      let range: inputMethodEngine.Range = spans[0].getRange();
+      console.info(`${EVENT} spans: ${JSON.stringify(richText)}`);
+      if (type === inputMethodEngine.SpanType.SYMBOL &&
+         range.start >= 0 && range.start <= range.end) {
+        this.publishResult(EVENT, 'SUCCESS');
+        return;
+      };
+      this.publishResult(EVENT, 'FALIED');
+    } catch (err) {
+      this.publishResult(EVENT, String((err as BusinessError).code))
+    }
+  }
+
+  private async testGetLeftRichSymbol(length: number): Promise<void> {
+    const EVENT = 'SUB_InputMethodEngine_GetLeftRichText_RETURN_0900';
+    try {
+      let richText = await this.InputClient.getLeftRichText(length);
+      console.info(`${EVENT} success richText: ${JSON.stringify(richText)}`);
+      let spans = richText.getSpans();
+      let type = spans[0].getType();
+      let content = spans[0].getContent();
+      let range: inputMethodEngine.Range = spans[0].getRange();
+      console.info(`${EVENT} spans: ${JSON.stringify(richText)}`);
+      if (type === inputMethodEngine.SpanType.SYMBOL &&
+         range.start >= 0 && range.start <= range.end) {
+        this.publishResult(EVENT, 'SUCCESS');
+        return;
+      };
+      this.publishResult(EVENT, 'FALIED');
+    } catch (err) {
+      console.info(`${EVENT} catch,code: ${err.code},message: ${err.message}`);
+      this.publishResult(EVENT, String((err as BusinessError).code))
+    }
   }
 
 }
