@@ -36,7 +36,7 @@ export default class EntryAbility extends UIAbility {
 
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     this.context.getApplicationContext().setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET);
-    this.withGroupId = want?.parameters?.['withGroupId'] === true;
+    this.withGroupId = want?.parameters?.withGroupId === true;
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onCreate withGroupId=' + this.withGroupId);
   }
 

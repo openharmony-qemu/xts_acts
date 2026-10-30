@@ -1206,7 +1206,7 @@ export default function abilityTest() {
       } catch (err) {
         hilog.info(DOMAIN, LOG_TAG, tag + ' err=' + JSON.stringify(err));
         let code = getBizCode(err);
-        // Invalid context may surface as 16000011; some runtimes reject earlier as 401.
+        // Invalid context commonly returns 16000011; some runtimes reject earlier as 401.
         expect(code === 16000011 || code === 401).assertTrue();
         hilog.info(DOMAIN, LOG_TAG, tag + ' success');
       }
