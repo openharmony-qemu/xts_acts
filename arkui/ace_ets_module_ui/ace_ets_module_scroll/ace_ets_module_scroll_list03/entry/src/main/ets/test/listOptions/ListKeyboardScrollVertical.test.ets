@@ -26,7 +26,7 @@ function getVListOffset(): number {
   let obj: Record<string, ESObject> = JSON.parse(strJson);
   let content: string = `${obj.$attrs.content}`;
   console.info("[listKeyboardScrollVertical] current offset content: " + content);
-  return Number.parseInt(content.substring('offset='.length));
+  return Number.parseInt(content.split('=')[1]);
 }
 
 export default function listKeyboardScrollVertical() {
@@ -64,10 +64,16 @@ export default function listKeyboardScrollVertical() {
     it('listKeyboardScrollVertical_0100', Level.LEVEL1, async () => {
       console.info('[listKeyboardScrollVertical_0100] START');
       let driver = await Driver.create();
+      await CommonFunc.sleep(500);
       let trueBtn: Component = await driver.findComponent(ON.id('V_LIST_TRUE'));
       await trueBtn.click();
       await CommonFunc.sleep(500);
-      console.info('[listKeyboardScrollVertical_0100] V_LIST inspector: ' + getInspectorByKey('V_LIST'));
+      let strJson: string = getInspectorByKey('V_LIST');
+      let obj: Record<string, ESObject> = JSON.parse(strJson);
+      console.info("[listKeyboardScrollVertical_0100] enableScrollWithKeyboard: " +
+        JSON.stringify(obj.$attrs.enableScrollWithKeyboard));
+      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual('true');
+
       let resetBtn: Component = await driver.findComponent(ON.id('V_LIST_RESET'));
       await resetBtn.click();
       await CommonFunc.sleep(500);
@@ -79,7 +85,7 @@ export default function listKeyboardScrollVertical() {
       await listComp.click();
       await CommonFunc.sleep(500);
 
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < 2; i++) {
         await driver.triggerKey(KEYCODE_DPAD_DOWN, displayId);
         await CommonFunc.sleep(500);
       }
@@ -87,10 +93,9 @@ export default function listKeyboardScrollVertical() {
       console.info('[listKeyboardScrollVertical_0100] offset after DPAD_DOWN: ' + offsetDown);
       expect(offsetDown > 0).assertTrue();
 
-      for (let i = 0; i < 2; i++) {
-        await driver.triggerKey(KEYCODE_DPAD_UP, displayId);
-        await CommonFunc.sleep(500);
-      }
+      await driver.triggerKey(KEYCODE_DPAD_UP, displayId);
+      await CommonFunc.sleep(500);
+
       let offsetUp: number = getVListOffset();
       console.info('[listKeyboardScrollVertical_0100] offset after DPAD_UP: ' + offsetUp);
       expect(offsetUp < offsetDown).assertTrue();
@@ -109,10 +114,16 @@ export default function listKeyboardScrollVertical() {
     it('listKeyboardScrollVertical_0200', Level.LEVEL1, async () => {
       console.info('[listKeyboardScrollVertical_0200] START');
       let driver = await Driver.create();
+      await CommonFunc.sleep(500);
       let falseBtn: Component = await driver.findComponent(ON.id('V_LIST_FALSE'));
       await falseBtn.click();
       await CommonFunc.sleep(500);
-      console.info('[listKeyboardScrollVertical_0200] V_LIST inspector: ' + getInspectorByKey('V_LIST'));
+      let strJson: string = getInspectorByKey('V_LIST');
+      let obj: Record<string, ESObject> = JSON.parse(strJson);
+      console.info("[listKeyboardScrollVertical_0200] enableScrollWithKeyboard: " +
+        JSON.stringify(obj.$attrs.enableScrollWithKeyboard));
+      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual('false');
+
       let resetBtn: Component = await driver.findComponent(ON.id('V_LIST_RESET'));
       await resetBtn.click();
       await CommonFunc.sleep(500);
@@ -124,13 +135,20 @@ export default function listKeyboardScrollVertical() {
       await listComp.click();
       await CommonFunc.sleep(500);
 
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < 2; i++) {
         await driver.triggerKey(KEYCODE_DPAD_DOWN, displayId);
         await CommonFunc.sleep(500);
       }
       let offsetDown: number = getVListOffset();
       console.info('[listKeyboardScrollVertical_0200] offset after DPAD_DOWN: ' + offsetDown);
       expect(offsetDown).assertEqual(0);
+
+      await driver.triggerKey(KEYCODE_DPAD_UP, displayId);
+      await CommonFunc.sleep(500);
+
+      let offsetUp: number = getVListOffset();
+      console.info('[listKeyboardScrollVertical_0200] offset after DPAD_UP: ' + offsetUp);
+      expect(offsetUp).assertEqual(0);
       console.info('[listKeyboardScrollVertical_0200] END');
     })
 
@@ -145,10 +163,16 @@ export default function listKeyboardScrollVertical() {
     it('listKeyboardScrollVertical_0300', Level.LEVEL1, async () => {
       console.info('[listKeyboardScrollVertical_0300] START');
       let driver = await Driver.create();
+      await CommonFunc.sleep(500);
       let undefBtn: Component = await driver.findComponent(ON.id('V_LIST_UNDEF'));
       await undefBtn.click();
       await CommonFunc.sleep(500);
-      console.info('[listKeyboardScrollVertical_0300] V_LIST inspector: ' + getInspectorByKey('V_LIST'));
+      let strJson: string = getInspectorByKey('V_LIST');
+      let obj: Record<string, ESObject> = JSON.parse(strJson);
+      console.info("[listKeyboardScrollVertical_0300] enableScrollWithKeyboard: " +
+        JSON.stringify(obj.$attrs.enableScrollWithKeyboard));
+      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual('true');
+
       let resetBtn: Component = await driver.findComponent(ON.id('V_LIST_RESET'));
       await resetBtn.click();
       await CommonFunc.sleep(500);
@@ -160,13 +184,20 @@ export default function listKeyboardScrollVertical() {
       await listComp.click();
       await CommonFunc.sleep(500);
 
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < 2; i++) {
         await driver.triggerKey(KEYCODE_DPAD_DOWN, displayId);
         await CommonFunc.sleep(500);
       }
       let offsetDown: number = getVListOffset();
       console.info('[listKeyboardScrollVertical_0300] offset after DPAD_DOWN: ' + offsetDown);
       expect(offsetDown > 0).assertTrue();
+
+      await driver.triggerKey(KEYCODE_DPAD_UP, displayId);
+      await CommonFunc.sleep(500);
+
+      let offsetUp: number = getVListOffset();
+      console.info('[listKeyboardScrollVertical_0300] offset after DPAD_UP: ' + offsetUp);
+      expect(offsetUp < offsetDown).assertTrue();
       console.info('[listKeyboardScrollVertical_0300] END');
     })
 
@@ -181,10 +212,16 @@ export default function listKeyboardScrollVertical() {
     it('listKeyboardScrollVertical_0400', Level.LEVEL1, async () => {
       console.info('[listKeyboardScrollVertical_0400] START');
       let driver = await Driver.create();
+      await CommonFunc.sleep(500);
       let nullBtn: Component = await driver.findComponent(ON.id('V_LIST_NULL'));
       await nullBtn.click();
       await CommonFunc.sleep(500);
-      console.info('[listKeyboardScrollVertical_0400] V_LIST inspector: ' + getInspectorByKey('V_LIST'));
+      let strJson: string = getInspectorByKey('V_LIST');
+      let obj: Record<string, ESObject> = JSON.parse(strJson);
+      console.info("[listKeyboardScrollVertical_0400] enableScrollWithKeyboard: " +
+        JSON.stringify(obj.$attrs.enableScrollWithKeyboard));
+      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual('true');
+
       let resetBtn: Component = await driver.findComponent(ON.id('V_LIST_RESET'));
       await resetBtn.click();
       await CommonFunc.sleep(500);
@@ -196,13 +233,20 @@ export default function listKeyboardScrollVertical() {
       await listComp.click();
       await CommonFunc.sleep(500);
 
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < 2; i++) {
         await driver.triggerKey(KEYCODE_DPAD_DOWN, displayId);
         await CommonFunc.sleep(500);
       }
       let offsetDown: number = getVListOffset();
       console.info('[listKeyboardScrollVertical_0400] offset after DPAD_DOWN: ' + offsetDown);
       expect(offsetDown > 0).assertTrue();
+
+      await driver.triggerKey(KEYCODE_DPAD_UP, displayId);
+      await CommonFunc.sleep(500);
+
+      let offsetUp: number = getVListOffset();
+      console.info('[listKeyboardScrollVertical_0400] offset after DPAD_UP: ' + offsetUp);
+      expect(offsetUp < offsetDown).assertTrue();
       console.info('[listKeyboardScrollVertical_0400] END');
     })
   })

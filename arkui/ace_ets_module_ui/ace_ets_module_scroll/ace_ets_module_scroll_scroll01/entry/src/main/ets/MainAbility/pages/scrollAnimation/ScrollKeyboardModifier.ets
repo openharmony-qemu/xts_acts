@@ -41,7 +41,7 @@ struct ScrollKeyboardModifier {
         .fontColor('#666666')
         .height('4%')
 
-      Row({ space: 8 }) {
+      Row() {
         Button('reset')
           .id('SCROLL_KB_MOD_RESET')
           .fontSize(14)
@@ -58,21 +58,22 @@ struct ScrollKeyboardModifier {
 
       Scroll(this.vScroller) {
         Column() {
-          ForEach(this.ten, (i: number) => {
-            Text(`${i}`)
+          ForEach(this.ten, (item: number) => {
+            Text(`${item}`)
               .width('100%')
               .height(60)
               .textAlign(TextAlign.Center)
               .fontSize(12)
-              .backgroundColor('#FFFFFF')
+              .backgroundColor(item % 2 === 0 ? '#E8F3FF' : '#D6E4FF')
               .borderRadius(6)
-          }, (i: number) => `mkb_${i}`)
+              .focusable(true)
+          }, (item: number) => `mkb_${item}`)
         }
       }
       .id('SCROLL_KB_MOD')
       .attributeModifier(this.modifier)
       .scrollable(ScrollDirection.Vertical)
-      .focusable(true)
+      .focusOnTouch(true)
       .backgroundColor('#E3E8F0')
       .borderRadius(6)
       .width('100%')

@@ -37,7 +37,7 @@ struct WaterFlowKeyboardScrollVertical {
         .fontColor('#666666')
         .height('4%')
 
-      Row({ space: 8 }) {
+      Row() {
         Button('true')
           .id('V_WF_TRUE')
           .fontSize(14)
@@ -52,9 +52,9 @@ struct WaterFlowKeyboardScrollVertical {
             this.changeIndex = 1;
           })
       }
-      .height('6%')
+      .height('5%')
 
-      Row({ space: 8 }) {
+      Row() {
         Button('undefined')
           .id('V_WF_UNDEF')
           .fontSize(14)
@@ -76,7 +76,7 @@ struct WaterFlowKeyboardScrollVertical {
             this.vScroller.scrollTo({ xOffset: 0, yOffset: 0 });
           })
       }
-      .height('6%')
+      .height('5%')
 
       Text(`offset=${this.vOff}`)
         .id('V_WF_OFFSET')
@@ -84,25 +84,26 @@ struct WaterFlowKeyboardScrollVertical {
         .height('4%')
 
       WaterFlow({ scroller: this.vScroller }) {
-        ForEach(this.ten, (i: number) => {
+        ForEach(this.ten, (item: number) => {
           FlowItem() {
-            Text(`${i}`)
+            Text(`${item}`)
               .width('100%')
               .height('100%')
               .textAlign(TextAlign.Center)
               .fontSize(12)
-              .backgroundColor('#FFFFFF')
+              .backgroundColor(item % 2 === 0 ? '#E8F3FF' : '#D6E4FF')
               .borderRadius(6)
+              .focusable(true)
           }
           .width('100%')
           .height('25%')
-        }, (i: number) => `vkbwf_${i}`)
+        }, (item: number) => `vkbwf_${item}`)
       }
       .id('V_WF_FLOW')
       .columnsTemplate('1fr')
       .rowsGap(3)
       .enableScrollWithKeyboard(this.keyboardScroll[this.changeIndex])
-      .focusable(true)
+      .focusOnTouch(true)
       .backgroundColor('#E3E8F0')
       .borderRadius(6)
       .width('100%')

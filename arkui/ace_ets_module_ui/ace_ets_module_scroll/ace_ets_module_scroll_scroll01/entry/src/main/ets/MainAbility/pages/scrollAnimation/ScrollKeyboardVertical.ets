@@ -37,7 +37,7 @@ struct ScrollKeyboardVertical {
         .fontColor('#666666')
         .height('4%')
 
-      Row({ space: 8 }) {
+      Row() {
         Button('true')
           .id('V_SCROLL_KB_TRUE')
           .fontSize(14)
@@ -52,9 +52,9 @@ struct ScrollKeyboardVertical {
             this.changeIndex = 1;
           })
       }
-      .height('6%')
+      .height('5%')
 
-      Row({ space: 8 }) {
+      Row() {
         Button('undefined')
           .id('V_SCROLL_KB_UNDEF')
           .fontSize(14)
@@ -76,7 +76,7 @@ struct ScrollKeyboardVertical {
             this.vScroller.scrollTo({ xOffset: 0, yOffset: 0 });
           })
       }
-      .height('6%')
+      .height('5%')
 
       Text(`offset=${this.vOff}`)
         .id('V_SCROLL_KB_OFFSET')
@@ -85,21 +85,22 @@ struct ScrollKeyboardVertical {
 
       Scroll(this.vScroller) {
         Column() {
-          ForEach(this.ten, (i: number) => {
-            Text(`${i}`)
+          ForEach(this.ten, (item: number) => {
+            Text(`${item}`)
               .width('100%')
               .height(60)
               .textAlign(TextAlign.Center)
               .fontSize(12)
-              .backgroundColor('#FFFFFF')
+              .backgroundColor(item % 2 === 0 ? '#E8F3FF' : '#D6E4FF')
               .borderRadius(6)
-          }, (i: number) => `vkb_${i}`)
+              .focusable(true)
+          }, (item: number) => `vkb_${item}`)
         }
       }
       .id('V_SCROLL_KB')
       .scrollable(ScrollDirection.Vertical)
       .enableScrollWithKeyboard(this.keyboardScroll[this.changeIndex])
-      .focusable(true)
+      .focusOnTouch(true)
       .backgroundColor('#E3E8F0')
       .borderRadius(6)
       .width('100%')

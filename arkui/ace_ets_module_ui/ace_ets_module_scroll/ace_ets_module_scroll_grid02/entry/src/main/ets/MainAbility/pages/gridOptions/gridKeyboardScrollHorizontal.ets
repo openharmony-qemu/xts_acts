@@ -37,7 +37,7 @@ struct GridKeyboardScrollHorizontal {
         .fontColor('#666666')
         .height('4%')
 
-      Row({ space: 8 }) {
+      Row() {
         Button('true')
           .id('HKB_GRID_TRUE')
           .fontSize(14)
@@ -52,9 +52,9 @@ struct GridKeyboardScrollHorizontal {
             this.changeIndex = 1;
           })
       }
-      .height('6%')
+      .height('5%')
 
-      Row({ space: 8 }) {
+      Row() {
         Button('undefined')
           .id('HKB_GRID_UNDEF')
           .fontSize(14)
@@ -76,7 +76,7 @@ struct GridKeyboardScrollHorizontal {
             this.hScroller.scrollTo({ xOffset: 0, yOffset: 0 });
           })
       }
-      .height('6%')
+      .height('5%')
 
       Text(`offset=${this.hOff}`)
         .id('HKB_GRID_OFFSET')
@@ -84,23 +84,23 @@ struct GridKeyboardScrollHorizontal {
         .height('4%')
 
       Grid(this.hScroller) {
-        ForEach(this.twenty, (i: number) => {
+        ForEach(this.twenty, (item: number) => {
           GridItem() {
-            Text(`${i}`)
+            Text(`${item}`)
               .width('30%')
               .height('100%')
               .textAlign(TextAlign.Center)
               .fontSize(12)
-              .backgroundColor('#FFFFFF')
-              .borderRadius(6)
+              .backgroundColor(item % 2 === 0 ? '#E8F3FF' : '#D6E4FF')
+              .focusable(true)
           }
-        }, (i: number) => `hkb_${i}`)
+        }, (item: number) => `hkb_${item}`)
       }
       .id('HKB_GRID')
       .rowsTemplate('1fr')
       .columnsGap(3)
       .enableScrollWithKeyboard(this.keyboardScroll[this.changeIndex])
-      .focusable(true)
+      .focusOnTouch(true)
       .backgroundColor('#E3E8F0')
       .borderRadius(6)
       .width('100%')

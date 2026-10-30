@@ -77,22 +77,23 @@ struct ScrollKeyboardModifierTest {
 
       Scroll(this.vScroller) {
         Column() {
-          ForEach(this.ten, (i: int) => {
-            Text(`${i}`)
+          ForEach(this.ten, (item: int) => {
+            Text(`${item}`)
               .width('100%')
               .height(60)
               .textAlign(TextAlign.Center)
               .fontSize(12)
-              .backgroundColor('#FFFFFF')
+              .backgroundColor(item % 2 === 0 ? '#E8F3FF' : '#D6E4FF')
               .borderRadius(6)
-          }, (i: int) => `mkb_${i}`)
+              .focusable(true)
+          }, (item: int) => `mkb_${item}`)
         }
         .width('100%')
       }
       .id('SCROLL_KB_MOD')
       .attributeModifier(this.modifier)
       .scrollable(ScrollDirection.Vertical)
-      .focusable(true)
+      .focusOnTouch(true)
       .backgroundColor('#E3E8F0')
       .borderRadius(6)
       .width('100%')

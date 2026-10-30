@@ -14,7 +14,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
-import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
+import { Driver, Component, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
 const KEYCODE_DPAD_UP: number = 2012;
@@ -26,7 +26,7 @@ function getVScrollOffset(): number {
   let obj: Record<string, ESObject> = JSON.parse(strJson);
   let content: string = `${obj.$attrs.content}`;
   console.info("[scrollKeyboardVertical] current offset content: " + content);
-  return Number.parseInt(content.substring('offset='.length));
+  return Number.parseInt(content.split('=')[1]);
 }
 
 export default function scrollKeyboardVertical() {
@@ -52,10 +52,6 @@ export default function scrollKeyboardVertical() {
       console.info("scrollKeyboardVertical beforeEach end");
       done();
     });
-    afterEach(async () => {
-      await CommonFunc.sleep(1000);
-      console.info("scrollKeyboardVertical after each called");
-    });
 
     /**
      * @tc.name   scrollKeyboardVertical_0100
@@ -69,10 +65,16 @@ export default function scrollKeyboardVertical() {
     it('scrollKeyboardVertical_0100', Level.LEVEL1, async () => {
       console.info('[scrollKeyboardVertical_0100] START');
       let driver = await Driver.create();
+      await CommonFunc.sleep(500);
       let trueBtn: Component = await driver.findComponent(ON.id('V_SCROLL_KB_TRUE'));
       await trueBtn.click();
       await CommonFunc.sleep(500);
-      console.info('[scrollKeyboardVertical_0100] V_SCROLL_KB inspector: ' + getInspectorByKey('V_SCROLL_KB'));
+      let strJson: string = getInspectorByKey('V_SCROLL_KB');
+      let obj: Record<string, ESObject> = JSON.parse(strJson);
+      console.info("[scrollKeyboardVertical_0100] enableScrollWithKeyboard: " +
+        JSON.stringify(obj.$attrs.enableScrollWithKeyboard));
+      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual('true');
+
       let resetBtn: Component = await driver.findComponent(ON.id('V_SCROLL_KB_RESET'));
       await resetBtn.click();
       await CommonFunc.sleep(500);
@@ -84,7 +86,7 @@ export default function scrollKeyboardVertical() {
       await scrollComp.click();
       await CommonFunc.sleep(500);
 
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < 2; i++) {
         await driver.triggerKey(KEYCODE_DPAD_DOWN, displayId);
         await CommonFunc.sleep(500);
       }
@@ -92,10 +94,9 @@ export default function scrollKeyboardVertical() {
       console.info('[scrollKeyboardVertical_0100] offset after DPAD_DOWN: ' + offsetDown);
       expect(offsetDown > 0).assertTrue();
 
-      for (let i = 0; i < 2; i++) {
-        await driver.triggerKey(KEYCODE_DPAD_UP, displayId);
-        await CommonFunc.sleep(500);
-      }
+      await driver.triggerKey(KEYCODE_DPAD_UP, displayId);
+      await CommonFunc.sleep(500);
+
       let offsetUp: number = getVScrollOffset();
       console.info('[scrollKeyboardVertical_0100] offset after DPAD_UP: ' + offsetUp);
       expect(offsetUp < offsetDown).assertTrue();
@@ -114,10 +115,16 @@ export default function scrollKeyboardVertical() {
     it('scrollKeyboardVertical_0200', Level.LEVEL1, async () => {
       console.info('[scrollKeyboardVertical_0200] START');
       let driver = await Driver.create();
+      await CommonFunc.sleep(500);
       let falseBtn: Component = await driver.findComponent(ON.id('V_SCROLL_KB_FALSE'));
       await falseBtn.click();
       await CommonFunc.sleep(500);
-      console.info('[scrollKeyboardVertical_0200] V_SCROLL_KB inspector: ' + getInspectorByKey('V_SCROLL_KB'));
+      let strJson: string = getInspectorByKey('V_SCROLL_KB');
+      let obj: Record<string, ESObject> = JSON.parse(strJson);
+      console.info("[scrollKeyboardVertical_0200] enableScrollWithKeyboard: " +
+        JSON.stringify(obj.$attrs.enableScrollWithKeyboard));
+      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual('false');
+
       let resetBtn: Component = await driver.findComponent(ON.id('V_SCROLL_KB_RESET'));
       await resetBtn.click();
       await CommonFunc.sleep(500);
@@ -129,13 +136,20 @@ export default function scrollKeyboardVertical() {
       await scrollComp.click();
       await CommonFunc.sleep(500);
 
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < 2; i++) {
         await driver.triggerKey(KEYCODE_DPAD_DOWN, displayId);
         await CommonFunc.sleep(500);
       }
       let offsetDown: number = getVScrollOffset();
       console.info('[scrollKeyboardVertical_0200] offset after DPAD_DOWN: ' + offsetDown);
       expect(offsetDown).assertEqual(0);
+
+      await driver.triggerKey(KEYCODE_DPAD_UP, displayId);
+      await CommonFunc.sleep(500);
+
+      let offsetUp: number = getVScrollOffset();
+      console.info('[scrollKeyboardVertical_0200] offset after DPAD_UP: ' + offsetUp);
+      expect(offsetUp).assertEqual(0);
       console.info('[scrollKeyboardVertical_0200] END');
     })
 
@@ -151,10 +165,16 @@ export default function scrollKeyboardVertical() {
     it('scrollKeyboardVertical_0300', Level.LEVEL1, async () => {
       console.info('[scrollKeyboardVertical_0300] START');
       let driver = await Driver.create();
+      await CommonFunc.sleep(500);
       let undefBtn: Component = await driver.findComponent(ON.id('V_SCROLL_KB_UNDEF'));
       await undefBtn.click();
       await CommonFunc.sleep(500);
-      console.info('[scrollKeyboardVertical_0300] V_SCROLL_KB inspector: ' + getInspectorByKey('V_SCROLL_KB'));
+      let strJson: string = getInspectorByKey('V_SCROLL_KB');
+      let obj: Record<string, ESObject> = JSON.parse(strJson);
+      console.info("[scrollKeyboardVertical_0300] enableScrollWithKeyboard: " +
+        JSON.stringify(obj.$attrs.enableScrollWithKeyboard));
+      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual('true');
+
       let resetBtn: Component = await driver.findComponent(ON.id('V_SCROLL_KB_RESET'));
       await resetBtn.click();
       await CommonFunc.sleep(500);
@@ -166,13 +186,20 @@ export default function scrollKeyboardVertical() {
       await scrollComp.click();
       await CommonFunc.sleep(500);
 
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < 2; i++) {
         await driver.triggerKey(KEYCODE_DPAD_DOWN, displayId);
         await CommonFunc.sleep(500);
       }
       let offsetDown: number = getVScrollOffset();
       console.info('[scrollKeyboardVertical_0300] offset after DPAD_DOWN: ' + offsetDown);
       expect(offsetDown > 0).assertTrue();
+
+      await driver.triggerKey(KEYCODE_DPAD_UP, displayId);
+      await CommonFunc.sleep(500);
+
+      let offsetUp: number = getVScrollOffset();
+      console.info('[scrollKeyboardVertical_0300] offset after DPAD_UP: ' + offsetUp);
+      expect(offsetUp < offsetDown).assertTrue();
       console.info('[scrollKeyboardVertical_0300] END');
     })
 
@@ -188,10 +215,16 @@ export default function scrollKeyboardVertical() {
     it('scrollKeyboardVertical_0400', Level.LEVEL1, async () => {
       console.info('[scrollKeyboardVertical_0400] START');
       let driver = await Driver.create();
+      await CommonFunc.sleep(500);
       let nullBtn: Component = await driver.findComponent(ON.id('V_SCROLL_KB_NULL'));
       await nullBtn.click();
       await CommonFunc.sleep(500);
-      console.info('[scrollKeyboardVertical_0400] V_SCROLL_KB inspector: ' + getInspectorByKey('V_SCROLL_KB'));
+      let strJson: string = getInspectorByKey('V_SCROLL_KB');
+      let obj: Record<string, ESObject> = JSON.parse(strJson);
+      console.info("[scrollKeyboardVertical_0400] enableScrollWithKeyboard: " +
+        JSON.stringify(obj.$attrs.enableScrollWithKeyboard));
+      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual('true');
+
       let resetBtn: Component = await driver.findComponent(ON.id('V_SCROLL_KB_RESET'));
       await resetBtn.click();
       await CommonFunc.sleep(500);
@@ -203,13 +236,20 @@ export default function scrollKeyboardVertical() {
       await scrollComp.click();
       await CommonFunc.sleep(500);
 
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < 2; i++) {
         await driver.triggerKey(KEYCODE_DPAD_DOWN, displayId);
         await CommonFunc.sleep(500);
       }
       let offsetDown: number = getVScrollOffset();
       console.info('[scrollKeyboardVertical_0400] offset after DPAD_DOWN: ' + offsetDown);
       expect(offsetDown > 0).assertTrue();
+
+      await driver.triggerKey(KEYCODE_DPAD_UP, displayId);
+      await CommonFunc.sleep(500);
+
+      let offsetUp: number = getVScrollOffset();
+      console.info('[scrollKeyboardVertical_0400] offset after DPAD_UP: ' + offsetUp);
+      expect(offsetUp < offsetDown).assertTrue();
       console.info('[scrollKeyboardVertical_0400] END');
     })
   })

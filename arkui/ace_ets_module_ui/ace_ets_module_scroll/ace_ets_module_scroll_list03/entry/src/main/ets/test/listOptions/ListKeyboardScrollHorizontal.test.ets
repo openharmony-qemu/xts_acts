@@ -26,7 +26,7 @@ function getHListOffset(): number {
   let obj: Record<string, ESObject> = JSON.parse(strJson);
   let content: string = `${obj.$attrs.content}`;
   console.info("[listKeyboardScrollHorizontal] current offset content: " + content);
-  return Number.parseInt(content.substring('offset='.length));
+  return Number.parseInt(content.split('=')[1]);
 }
 
 export default function listKeyboardScrollHorizontal() {
@@ -64,10 +64,16 @@ export default function listKeyboardScrollHorizontal() {
     it('listKeyboardScrollHorizontal_0500', Level.LEVEL1, async () => {
       console.info('[listKeyboardScrollHorizontal_0500] START');
       let driver = await Driver.create();
+      await CommonFunc.sleep(500);
       let trueBtn: Component = await driver.findComponent(ON.id('HKB_LIST_TRUE'));
       await trueBtn.click();
       await CommonFunc.sleep(500);
-      console.info('[listKeyboardScrollHorizontal_0500] HKB_LIST inspector: ' + getInspectorByKey('HKB_LIST'));
+      let strJson: string = getInspectorByKey('HKB_LIST');
+      let obj: Record<string, ESObject> = JSON.parse(strJson);
+      console.info("[listKeyboardScrollHorizontal_0500] enableScrollWithKeyboard: " +
+        JSON.stringify(obj.$attrs.enableScrollWithKeyboard));
+      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual('true');
+
       let resetBtn: Component = await driver.findComponent(ON.id('HKB_LIST_RESET'));
       await resetBtn.click();
       await CommonFunc.sleep(500);
@@ -79,7 +85,7 @@ export default function listKeyboardScrollHorizontal() {
       await listComp.click();
       await CommonFunc.sleep(500);
 
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < 2; i++) {
         await driver.triggerKey(KEYCODE_DPAD_RIGHT, displayId);
         await CommonFunc.sleep(500);
       }
@@ -87,10 +93,9 @@ export default function listKeyboardScrollHorizontal() {
       console.info('[listKeyboardScrollHorizontal_0500] offset after DPAD_RIGHT: ' + offsetRight);
       expect(offsetRight > 0).assertTrue();
 
-      for (let i = 0; i < 2; i++) {
-        await driver.triggerKey(KEYCODE_DPAD_LEFT, displayId);
-        await CommonFunc.sleep(500);
-      }
+      await driver.triggerKey(KEYCODE_DPAD_LEFT, displayId);
+      await CommonFunc.sleep(500);
+
       let offsetLeft: number = getHListOffset();
       console.info('[listKeyboardScrollHorizontal_0500] offset after DPAD_LEFT: ' + offsetLeft);
       expect(offsetLeft < offsetRight).assertTrue();
@@ -109,10 +114,16 @@ export default function listKeyboardScrollHorizontal() {
     it('listKeyboardScrollHorizontal_0600', Level.LEVEL1, async () => {
       console.info('[listKeyboardScrollHorizontal_0600] START');
       let driver = await Driver.create();
+      await CommonFunc.sleep(500);
       let falseBtn: Component = await driver.findComponent(ON.id('HKB_LIST_FALSE'));
       await falseBtn.click();
       await CommonFunc.sleep(500);
-      console.info('[listKeyboardScrollHorizontal_0600] HKB_LIST inspector: ' + getInspectorByKey('HKB_LIST'));
+      let strJson: string = getInspectorByKey('HKB_LIST');
+      let obj: Record<string, ESObject> = JSON.parse(strJson);
+      console.info("[listKeyboardScrollHorizontal_0600] enableScrollWithKeyboard: " +
+        JSON.stringify(obj.$attrs.enableScrollWithKeyboard));
+      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual('false');
+
       let resetBtn: Component = await driver.findComponent(ON.id('HKB_LIST_RESET'));
       await resetBtn.click();
       await CommonFunc.sleep(500);
@@ -124,13 +135,20 @@ export default function listKeyboardScrollHorizontal() {
       await listComp.click();
       await CommonFunc.sleep(500);
 
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < 2; i++) {
         await driver.triggerKey(KEYCODE_DPAD_RIGHT, displayId);
         await CommonFunc.sleep(500);
       }
       let offsetRight: number = getHListOffset();
       console.info('[listKeyboardScrollHorizontal_0600] offset after DPAD_RIGHT: ' + offsetRight);
       expect(offsetRight).assertEqual(0);
+
+      await driver.triggerKey(KEYCODE_DPAD_LEFT, displayId);
+      await CommonFunc.sleep(500);
+
+      let offsetLeft: number = getHListOffset();
+      console.info('[listKeyboardScrollHorizontal_0600] offset after DPAD_LEFT: ' + offsetLeft);
+      expect(offsetLeft).assertEqual(0);
       console.info('[listKeyboardScrollHorizontal_0600] END');
     })
 
@@ -146,10 +164,16 @@ export default function listKeyboardScrollHorizontal() {
     it('listKeyboardScrollHorizontal_0700', Level.LEVEL1, async () => {
       console.info('[listKeyboardScrollHorizontal_0700] START');
       let driver = await Driver.create();
+      await CommonFunc.sleep(500);
       let undefBtn: Component = await driver.findComponent(ON.id('HKB_LIST_UNDEF'));
       await undefBtn.click();
       await CommonFunc.sleep(500);
-      console.info('[listKeyboardScrollHorizontal_0700] HKB_LIST inspector: ' + getInspectorByKey('HKB_LIST'));
+      let strJson: string = getInspectorByKey('HKB_LIST');
+      let obj: Record<string, ESObject> = JSON.parse(strJson);
+      console.info("[listKeyboardScrollHorizontal_0700] enableScrollWithKeyboard: " +
+        JSON.stringify(obj.$attrs.enableScrollWithKeyboard));
+      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual('true');
+
       let resetBtn: Component = await driver.findComponent(ON.id('HKB_LIST_RESET'));
       await resetBtn.click();
       await CommonFunc.sleep(500);
@@ -161,13 +185,20 @@ export default function listKeyboardScrollHorizontal() {
       await listComp.click();
       await CommonFunc.sleep(500);
 
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < 2; i++) {
         await driver.triggerKey(KEYCODE_DPAD_RIGHT, displayId);
         await CommonFunc.sleep(500);
       }
       let offsetRight: number = getHListOffset();
       console.info('[listKeyboardScrollHorizontal_0700] offset after DPAD_RIGHT: ' + offsetRight);
       expect(offsetRight > 0).assertTrue();
+
+      await driver.triggerKey(KEYCODE_DPAD_LEFT, displayId);
+      await CommonFunc.sleep(500);
+
+      let offsetLeft: number = getHListOffset();
+      console.info('[listKeyboardScrollHorizontal_0700] offset after DPAD_LEFT: ' + offsetLeft);
+      expect(offsetLeft < offsetRight).assertTrue();
       console.info('[listKeyboardScrollHorizontal_0700] END');
     })
 
@@ -182,10 +213,16 @@ export default function listKeyboardScrollHorizontal() {
     it('listKeyboardScrollHorizontal_0800', Level.LEVEL1, async () => {
       console.info('[listKeyboardScrollHorizontal_0800] START');
       let driver = await Driver.create();
+      await CommonFunc.sleep(500);
       let nullBtn: Component = await driver.findComponent(ON.id('HKB_LIST_NULL'));
       await nullBtn.click();
       await CommonFunc.sleep(500);
-      console.info('[listKeyboardScrollHorizontal_0800] HKB_LIST inspector: ' + getInspectorByKey('HKB_LIST'));
+      let strJson: string = getInspectorByKey('HKB_LIST');
+      let obj: Record<string, ESObject> = JSON.parse(strJson);
+      console.info("[listKeyboardScrollHorizontal_0800] enableScrollWithKeyboard: " +
+        JSON.stringify(obj.$attrs.enableScrollWithKeyboard));
+      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual('true');
+
       let resetBtn: Component = await driver.findComponent(ON.id('HKB_LIST_RESET'));
       await resetBtn.click();
       await CommonFunc.sleep(500);
@@ -197,13 +234,20 @@ export default function listKeyboardScrollHorizontal() {
       await listComp.click();
       await CommonFunc.sleep(500);
 
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < 2; i++) {
         await driver.triggerKey(KEYCODE_DPAD_RIGHT, displayId);
         await CommonFunc.sleep(500);
       }
       let offsetRight: number = getHListOffset();
       console.info('[listKeyboardScrollHorizontal_0800] offset after DPAD_RIGHT: ' + offsetRight);
       expect(offsetRight > 0).assertTrue();
+
+      await driver.triggerKey(KEYCODE_DPAD_LEFT, displayId);
+      await CommonFunc.sleep(500);
+
+      let offsetLeft: number = getHListOffset();
+      console.info('[listKeyboardScrollHorizontal_0800] offset after DPAD_LEFT: ' + offsetLeft);
+      expect(offsetLeft < offsetRight).assertTrue();
       console.info('[listKeyboardScrollHorizontal_0800] END');
     })
   })

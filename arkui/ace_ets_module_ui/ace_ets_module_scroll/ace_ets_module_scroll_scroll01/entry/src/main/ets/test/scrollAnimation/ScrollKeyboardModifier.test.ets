@@ -14,7 +14,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
-import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
+import { Driver, Component, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
 const KEYCODE_DPAD_UP: number = 2012;
@@ -26,7 +26,7 @@ function getVScrollOffset(): number {
   let obj: Record<string, ESObject> = JSON.parse(strJson);
   let content: string = `${obj.$attrs.content}`;
   console.info("[scrollKeyboardModifier] current offset content: " + content);
-  return Number.parseInt(content.substring('offset='.length));
+  return Number.parseInt(content.split('=')[1]);
 }
 
 export default function scrollKeyboardModifier() {
@@ -52,10 +52,6 @@ export default function scrollKeyboardModifier() {
       console.info("scrollKeyboardModifier beforeEach end");
       done();
     });
-    afterEach(async () => {
-      await CommonFunc.sleep(1000);
-      console.info("scrollKeyboardModifier after each called");
-    });
 
     /**
      * @tc.name   scrollKeyboardModifier_0100
@@ -69,7 +65,13 @@ export default function scrollKeyboardModifier() {
     it('scrollKeyboardModifier_0100', Level.LEVEL1, async () => {
       console.info('[scrollKeyboardModifier_0100] START');
       let driver = await Driver.create();
-      console.info('[scrollKeyboardModifier_0100] SCROLL_KB_MOD inspector: ' + getInspectorByKey('SCROLL_KB_MOD'));
+      await CommonFunc.sleep(500);
+      let strJson: string = getInspectorByKey('SCROLL_KB_MOD');
+      let obj: Record<string, ESObject> = JSON.parse(strJson);
+      console.info("[scrollKeyboardModifier_0100] enableScrollWithKeyboard: " +
+        JSON.stringify(obj.$attrs.enableScrollWithKeyboard));
+      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual('true');
+
       let resetBtn: Component = await driver.findComponent(ON.id('SCROLL_KB_MOD_RESET'));
       await resetBtn.click();
       await CommonFunc.sleep(500);
@@ -81,7 +83,7 @@ export default function scrollKeyboardModifier() {
       await scrollComp.click();
       await CommonFunc.sleep(500);
 
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < 2; i++) {
         await driver.triggerKey(KEYCODE_DPAD_DOWN, displayId);
         await CommonFunc.sleep(500);
       }
@@ -89,10 +91,9 @@ export default function scrollKeyboardModifier() {
       console.info('[scrollKeyboardModifier_0100] offset after DPAD_DOWN: ' + offsetDown);
       expect(offsetDown > 0).assertTrue();
 
-      for (let i = 0; i < 2; i++) {
-        await driver.triggerKey(KEYCODE_DPAD_UP, displayId);
-        await CommonFunc.sleep(500);
-      }
+      await driver.triggerKey(KEYCODE_DPAD_UP, displayId);
+      await CommonFunc.sleep(500);
+
       let offsetUp: number = getVScrollOffset();
       console.info('[scrollKeyboardModifier_0100] offset after DPAD_UP: ' + offsetUp);
       expect(offsetUp < offsetDown).assertTrue();

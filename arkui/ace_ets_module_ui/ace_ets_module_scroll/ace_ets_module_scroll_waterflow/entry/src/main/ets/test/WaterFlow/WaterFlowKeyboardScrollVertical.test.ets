@@ -26,7 +26,7 @@ function getVWaterFlowOffset(): number {
   let obj: Record<string, ESObject> = JSON.parse(strJson);
   let content: string = `${obj.$attrs.content}`;
   console.info("[waterFlowKeyboardScrollVertical] current offset content: " + content);
-  return Number.parseInt(content.substring('offset='.length));
+  return Number.parseInt(content.split('=')[1]);
 }
 
 export default function waterFlowKeyboardScrollVertical() {
@@ -65,10 +65,16 @@ export default function waterFlowKeyboardScrollVertical() {
     it('waterFlowKeyboardScrollVertical_0100', Level.LEVEL1, async () => {
       console.info('[waterFlowKeyboardScrollVertical_0100] START');
       let driver = await Driver.create();
+      await CommonFunc.sleep(500);
       let trueBtn: Component = await driver.findComponent(ON.id('V_WF_TRUE'));
       await trueBtn.click();
       await CommonFunc.sleep(500);
-      console.info('[waterFlowKeyboardScrollVertical_0100] V_WF_FLOW inspector: ' + getInspectorByKey('V_WF_FLOW'));
+      let strJson: string = getInspectorByKey('V_WF_FLOW');
+      let obj: Record<string, ESObject> = JSON.parse(strJson);
+      console.info("[waterFlowKeyboardScrollVertical_0100] enableScrollWithKeyboard: " +
+        JSON.stringify(obj.$attrs.enableScrollWithKeyboard));
+      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual('true');
+
       let resetBtn: Component = await driver.findComponent(ON.id('V_WF_RESET'));
       await resetBtn.click();
       await CommonFunc.sleep(500);
@@ -80,7 +86,7 @@ export default function waterFlowKeyboardScrollVertical() {
       await flowComp.click();
       await CommonFunc.sleep(500);
 
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < 2; i++) {
         await driver.triggerKey(KEYCODE_DPAD_DOWN, displayId);
         await CommonFunc.sleep(500);
       }
@@ -88,10 +94,9 @@ export default function waterFlowKeyboardScrollVertical() {
       console.info('[waterFlowKeyboardScrollVertical_0100] offset after DPAD_DOWN: ' + offsetDown);
       expect(offsetDown > 0).assertTrue();
 
-      for (let i = 0; i < 2; i++) {
-        await driver.triggerKey(KEYCODE_DPAD_UP, displayId);
-        await CommonFunc.sleep(500);
-      }
+      await driver.triggerKey(KEYCODE_DPAD_UP, displayId);
+      await CommonFunc.sleep(500);
+
       let offsetUp: number = getVWaterFlowOffset();
       console.info('[waterFlowKeyboardScrollVertical_0100] offset after DPAD_UP: ' + offsetUp);
       expect(offsetUp < offsetDown).assertTrue();
@@ -110,10 +115,16 @@ export default function waterFlowKeyboardScrollVertical() {
     it('waterFlowKeyboardScrollVertical_0200', Level.LEVEL1, async () => {
       console.info('[waterFlowKeyboardScrollVertical_0200] START');
       let driver = await Driver.create();
+      await CommonFunc.sleep(500);
       let falseBtn: Component = await driver.findComponent(ON.id('V_WF_FALSE'));
       await falseBtn.click();
       await CommonFunc.sleep(500);
-      console.info('[waterFlowKeyboardScrollVertical_0200] V_WF_FLOW inspector: ' + getInspectorByKey('V_WF_FLOW'));
+      let strJson: string = getInspectorByKey('V_WF_FLOW');
+      let obj: Record<string, ESObject> = JSON.parse(strJson);
+      console.info("[waterFlowKeyboardScrollVertical_0200] enableScrollWithKeyboard: " +
+        JSON.stringify(obj.$attrs.enableScrollWithKeyboard));
+      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual('false');
+
       let resetBtn: Component = await driver.findComponent(ON.id('V_WF_RESET'));
       await resetBtn.click();
       await CommonFunc.sleep(500);
@@ -125,13 +136,20 @@ export default function waterFlowKeyboardScrollVertical() {
       await flowComp.click();
       await CommonFunc.sleep(500);
 
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < 2; i++) {
         await driver.triggerKey(KEYCODE_DPAD_DOWN, displayId);
         await CommonFunc.sleep(500);
       }
       let offsetDown: number = getVWaterFlowOffset();
       console.info('[waterFlowKeyboardScrollVertical_0200] offset after DPAD_DOWN: ' + offsetDown);
       expect(offsetDown).assertEqual(0);
+
+      await driver.triggerKey(KEYCODE_DPAD_UP, displayId);
+      await CommonFunc.sleep(500);
+
+      let offsetUp: number = getVWaterFlowOffset();
+      console.info('[waterFlowKeyboardScrollVertical_0200] offset after DPAD_UP: ' + offsetUp);
+      expect(offsetUp).assertEqual(0);
       console.info('[waterFlowKeyboardScrollVertical_0200] END');
     })
 
@@ -147,10 +165,16 @@ export default function waterFlowKeyboardScrollVertical() {
     it('waterFlowKeyboardScrollVertical_0300', Level.LEVEL1, async () => {
       console.info('[waterFlowKeyboardScrollVertical_0300] START');
       let driver = await Driver.create();
+      await CommonFunc.sleep(500);
       let undefBtn: Component = await driver.findComponent(ON.id('V_WF_UNDEF'));
       await undefBtn.click();
       await CommonFunc.sleep(500);
-      console.info('[waterFlowKeyboardScrollVertical_0300] V_WF_FLOW inspector: ' + getInspectorByKey('V_WF_FLOW'));
+      let strJson: string = getInspectorByKey('V_WF_FLOW');
+      let obj: Record<string, ESObject> = JSON.parse(strJson);
+      console.info("[waterFlowKeyboardScrollVertical_0300] enableScrollWithKeyboard: " +
+        JSON.stringify(obj.$attrs.enableScrollWithKeyboard));
+      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual('true');
+
       let resetBtn: Component = await driver.findComponent(ON.id('V_WF_RESET'));
       await resetBtn.click();
       await CommonFunc.sleep(500);
@@ -162,13 +186,20 @@ export default function waterFlowKeyboardScrollVertical() {
       await flowComp.click();
       await CommonFunc.sleep(500);
 
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < 2; i++) {
         await driver.triggerKey(KEYCODE_DPAD_DOWN, displayId);
         await CommonFunc.sleep(500);
       }
       let offsetDown: number = getVWaterFlowOffset();
       console.info('[waterFlowKeyboardScrollVertical_0300] offset after DPAD_DOWN: ' + offsetDown);
       expect(offsetDown > 0).assertTrue();
+
+      await driver.triggerKey(KEYCODE_DPAD_UP, displayId);
+      await CommonFunc.sleep(500);
+
+      let offsetUp: number = getVWaterFlowOffset();
+      console.info('[waterFlowKeyboardScrollVertical_0300] offset after DPAD_UP: ' + offsetUp);
+      expect(offsetUp < offsetDown).assertTrue();
       console.info('[waterFlowKeyboardScrollVertical_0300] END');
     })
 
@@ -184,10 +215,16 @@ export default function waterFlowKeyboardScrollVertical() {
     it('waterFlowKeyboardScrollVertical_0400', Level.LEVEL1, async () => {
       console.info('[waterFlowKeyboardScrollVertical_0400] START');
       let driver = await Driver.create();
+      await CommonFunc.sleep(500);
       let nullBtn: Component = await driver.findComponent(ON.id('V_WF_NULL'));
       await nullBtn.click();
       await CommonFunc.sleep(500);
-      console.info('[waterFlowKeyboardScrollVertical_0400] V_WF_FLOW inspector: ' + getInspectorByKey('V_WF_FLOW'));
+      let strJson: string = getInspectorByKey('V_WF_FLOW');
+      let obj: Record<string, ESObject> = JSON.parse(strJson);
+      console.info("[waterFlowKeyboardScrollVertical_0400] enableScrollWithKeyboard: " +
+        JSON.stringify(obj.$attrs.enableScrollWithKeyboard));
+      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual('true');
+
       let resetBtn: Component = await driver.findComponent(ON.id('V_WF_RESET'));
       await resetBtn.click();
       await CommonFunc.sleep(500);
@@ -199,13 +236,20 @@ export default function waterFlowKeyboardScrollVertical() {
       await flowComp.click();
       await CommonFunc.sleep(500);
 
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < 2; i++) {
         await driver.triggerKey(KEYCODE_DPAD_DOWN, displayId);
         await CommonFunc.sleep(500);
       }
       let offsetDown: number = getVWaterFlowOffset();
       console.info('[waterFlowKeyboardScrollVertical_0400] offset after DPAD_DOWN: ' + offsetDown);
       expect(offsetDown > 0).assertTrue();
+
+      await driver.triggerKey(KEYCODE_DPAD_UP, displayId);
+      await CommonFunc.sleep(500);
+
+      let offsetUp: number = getVWaterFlowOffset();
+      console.info('[waterFlowKeyboardScrollVertical_0400] offset after DPAD_UP: ' + offsetUp);
+      expect(offsetUp < offsetDown).assertTrue();
       console.info('[waterFlowKeyboardScrollVertical_0400] END');
     })
   })

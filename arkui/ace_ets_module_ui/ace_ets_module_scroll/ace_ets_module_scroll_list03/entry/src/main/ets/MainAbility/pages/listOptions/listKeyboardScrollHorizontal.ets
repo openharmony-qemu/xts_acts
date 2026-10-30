@@ -37,7 +37,7 @@ struct ListKeyboardScrollHorizontal {
         .fontColor('#666666')
         .height('4%')
 
-      Row({ space: 8 }) {
+      Row() {
         Button('true')
           .id('HKB_LIST_TRUE')
           .fontSize(14)
@@ -52,9 +52,9 @@ struct ListKeyboardScrollHorizontal {
             this.changeIndex = 1;
           })
       }
-      .height('6%')
+      .height('5%')
 
-      Row({ space: 8 }) {
+      Row() {
         Button('undefined')
           .id('HKB_LIST_UNDEF')
           .fontSize(14)
@@ -76,7 +76,7 @@ struct ListKeyboardScrollHorizontal {
             this.hScroller.scrollTo({ xOffset: 0, yOffset: 0 });
           })
       }
-      .height('6%')
+      .height('5%')
 
       Text(`offset=${this.hOff}`)
         .id('HKB_LIST_OFFSET')
@@ -84,22 +84,23 @@ struct ListKeyboardScrollHorizontal {
         .height('4%')
 
       List({ scroller: this.hScroller, space: 3 }) {
-        ForEach(this.ten, (i: number) => {
+        ForEach(this.ten, (item: number) => {
           ListItem() {
-            Text(`${i}`)
+            Text(`${item}`)
               .width('30%')
               .height('100%')
               .textAlign(TextAlign.Center)
               .fontSize(12)
-              .backgroundColor('#FFFFFF')
+              .backgroundColor(item % 2 === 0 ? '#E8F3FF' : '#D6E4FF')
               .borderRadius(6)
+              .focusable(true)
           }
-        }, (i: number) => `hkb_${i}`)
+        }, (item: number) => `hkb_${item}`)
       }
       .id('HKB_LIST')
       .listDirection(Axis.Horizontal)
       .enableScrollWithKeyboard(this.keyboardScroll[this.changeIndex])
-      .focusable(true)
+      .focusOnTouch(true)
       .backgroundColor('#E3E8F0')
       .borderRadius(6)
       .width('100%')
