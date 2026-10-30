@@ -71,6 +71,7 @@ import ImageAnimatorInterpolationTest from './image/ImageAnimatorInterpolationTe
 import ImageCollectionTakeItemByNodeIdTest from './node/ImageCollectionTakeItemByNodeId.test'
 import CalendarPickerFirstDayOfWeekTest from './calendarPicker/CalendarPickerFirstDayOfWeekTest.test'
 import AccessibilityBindExportTreeTest from './accessibilityBindExportTree/AccessibilityBindExportTreeTest.test'
+import CollectionEnumTest from "./collection/CollectionEnum.test"
 import UIEventInjectionTest from './uiEventInjection/UIEventInjectionTest.test'
 import BufferQueueSizeTest from './node/BufferQueueSizeTest.test'
 
@@ -132,6 +133,7 @@ export default function testsuite() {
   CalendarPickerFirstDayOfWeekTest()
   RuntimeCheckModeTest()
   AccessibilityBindExportTreeTest()
+  CollectionEnumTest()
   UIEventInjectionTest()
   BufferQueueSizeTest()
 }
