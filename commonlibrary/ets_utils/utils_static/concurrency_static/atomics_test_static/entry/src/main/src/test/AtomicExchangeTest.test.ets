@@ -2175,7 +2175,7 @@ export default function atomicsExchangeTest() {
           await Promise.all(updated.map((i) => {
             return new Promise<void>((resolve) => {
               setTimeout(() => {
-                Atomics.exchange(ia, i.toInt(), i === 0 ? initialA : initialB.toLong());
+                Atomics.exchange(ia, i.toInt(), i === 0 ? initialA.toLong() : initialB.toLong());
                 resolve(undefined);
               }, 1);
             });

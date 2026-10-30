@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -60,7 +60,7 @@ class MyButtonStyle implements ContentModifier<ButtonConfiguration> {
       .gesture(
         TapGesture({count:1}).onAction((event: GestureEvent)=>{
           config.triggerClick(event.fingerList[0].localX,event.fingerList[0].localY)
-        })).opacity(config.enabled ? 1 : 0.1)
+        })).opacity(config.enabled ? 1.0 : 0.1)
   }
 }
 

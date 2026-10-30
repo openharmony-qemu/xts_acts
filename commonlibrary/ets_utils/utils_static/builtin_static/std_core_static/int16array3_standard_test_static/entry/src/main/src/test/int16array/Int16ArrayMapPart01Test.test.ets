@@ -1412,7 +1412,7 @@ export default function int16ArrayMapPart01Test(): void {
       // --- [5] Verify map callback using array.includes(index) maps the matching element differently ---
       {
         let arr: Int16Array = Int16Array.of(1, 2, 3);
-        let result: Int16Array = arr.map((value: number, index: int, array: Int16Array): number => array.includes(index) ? value : -100);
+        let result: Int16Array = arr.map((value: number, index: int, array: Int16Array): number => array.includes(index) ? value : -100.0);
         expect(result.$_get(0)).assertEqual(-100);
         expect(result.$_get(1)).assertEqual(2);
         expect(result.$_get(2)).assertEqual(3);

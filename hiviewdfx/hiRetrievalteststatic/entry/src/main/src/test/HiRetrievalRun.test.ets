@@ -65,7 +65,7 @@ export default function abilityTest() {
                 expect().assertFail();
             } catch (err) {
                 hilog.info(0x0000, 'testTag', 'error code: %{public}d', err.code);
-                let res:number = (typeof err.code === 'number') ? err.code : Number(err.code) 
+                let res:number = err.code 
                 expect(res === 36000001).assertTrue();
             }
             hilog.info(0x0000, 'testTag', '*********** testHiRetrievalRun_0200 Test end***********');

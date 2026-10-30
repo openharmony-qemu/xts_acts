@@ -610,7 +610,7 @@ export default function IndexedCollections16Test(): void {
         console.log(TAG + ' start');
 
         const arr68: number[] = [1, NaN, 3];
-        const result68: number[] = arr68.map(x => isNaN(x) ? 0 : x);
+        const result68: number[] = arr68.map(x => isNaN(x) ? 0.0 : x);
         expect(result68.join(',') === '1,0,3').assertTrue();
 
         console.log(TAG + ' done');

@@ -1501,7 +1501,7 @@ export default function ArrayReduceRight2Test(): void {
         if (acc >= 0) {
           return acc;
         }
-        return cur % 2 === 0 ? index : acc;
+        return cur % 2 === 0 ? Int.toDouble(index) : acc;
       }, -1);
       expect(result).assertEqual(5);
       expect(visited).assertEqual('654321');

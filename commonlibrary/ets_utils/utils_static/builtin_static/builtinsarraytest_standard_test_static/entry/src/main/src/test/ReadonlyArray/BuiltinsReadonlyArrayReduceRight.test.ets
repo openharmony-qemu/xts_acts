@@ -127,7 +127,7 @@ export default function builtinsReadonlyArrayReduceRightTest(): void {
     it('BuiltinsReadonlyArrayReduceRightTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done:() => void) => {
       const numbers: readonly (number | undefined)[] = [1, undefined, 3];
       const result = numbers.reduceRight<number | undefined>((accumulator, currentValue) => {
-        return (accumulator !== undefined ? accumulator : 0) + (currentValue !== undefined ? currentValue : 0)
+        return (accumulator !== undefined ? accumulator : 0.0) + (currentValue !== undefined ? currentValue : 0.0)
       }, 0);
       console.log(`${result}`);
       expect(4).assertEqual(result);
@@ -161,7 +161,7 @@ export default function builtinsReadonlyArrayReduceRightTest(): void {
     it('BuiltinsReadonlyArrayReduceRightTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done:() => void) => {
       const numbers: readonly (number | undefined)[] = [undefined,];
       const result = numbers.reduceRight<number | undefined>((accumulator, currentValue) => {
-        return (accumulator !== undefined ? accumulator : 0) + (currentValue !== undefined ? currentValue : 0)
+        return (accumulator !== undefined ? accumulator : 0.0) + (currentValue !== undefined ? currentValue : 0.0)
       }, 0);
       console.log(`${result}`);
       expect(0).assertEqual(result);

@@ -446,7 +446,7 @@ export default function OperatorPrecedenceTest(): void {
       expect(res).assertEqual(3)
       res = t255 ^ t258.toByte()
       expect(res).assertEqual(253)
-      res = t3 <= t4 ? t257 : t258.toByte()
+      res = t3 <= t4 ? t257 : t258
       expect(res).assertEqual(257)
       res = t258 += t257.toByte()
       expect(res).assertEqual(259)

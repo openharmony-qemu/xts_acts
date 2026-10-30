@@ -517,7 +517,7 @@ export default function promiseCombTest(){
     it('PromiseAsyncAwaitTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let level5 = async (n: number): Promise<number> => {
         return new Promise<number>((resolve) => {
-          resolve(n <= 1 ? 1 : n * (n - 1));
+          resolve(n <= 1 ? 1.0 : n * (n - 1));
         });
       }
 
