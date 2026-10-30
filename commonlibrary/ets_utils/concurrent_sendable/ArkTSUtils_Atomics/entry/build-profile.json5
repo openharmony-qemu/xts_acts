@@ -16,7 +16,31 @@
   "apiType": 'stageMode',
   "buildOption": {
     "sourceOption": {
-      "workers": []
+      "workers": [
+        "./src/ohosTest/ets/test/ArkTSUtilsAtomics/workers/Worker01.ets",
+        "./src/ohosTest/ets/test/ArkTSUtilsAtomics/workers/Worker02.ets",
+        "./src/ohosTest/ets/test/ArkTSUtilsAtomics/workers/Worker03.ets",
+        "./src/ohosTest/ets/test/ArkTSUtilsAtomics/workers/Worker04.ets",
+        "./src/ohosTest/ets/test/ArkTSUtilsAtomics/workers/Worker05.ets",
+        "./src/ohosTest/ets/test/ArkTSUtilsAtomics/workers/Worker06.ets",
+        "./src/ohosTest/ets/test/ArkTSUtilsAtomics/workers/Worker07.ets",
+        "./src/ohosTest/ets/test/ArkTSUtilsAtomics/workers/Worker08.ets",
+        "./src/ohosTest/ets/test/ArkTSUtilsAtomics/workers/Worker09.ets",
+        "./src/ohosTest/ets/test/ArkTSUtilsAtomics/workers/Worker10.ets",
+        "./src/ohosTest/ets/test/ArkTSUtilsAtomics/workers/Worker11.ets",
+        "./src/ohosTest/ets/test/ArkTSUtilsAtomics/workers/Worker12.ets",
+        "./src/ohosTest/ets/testability/pages/workers/StoreWorker.ets",
+        "./src/ohosTest/ets/testability/pages/workers/Worker.ets",
+        "./src/ohosTest/ets/testability/pages/workers/Worker2.ets",
+        "./src/ohosTest/ets/testability/pages/workers/Worker3.ets",
+        "./src/ohosTest/ets/testability/pages/workers/Worker4.ets",
+        "./src/ohosTest/ets/testability/pages/workers/Worker5.ets",
+        "./src/ohosTest/ets/testability/pages/workers/Worker6.ets",
+        "./src/ohosTest/ets/testability/pages/workers/Worker7.ets",
+        "./src/ohosTest/ets/testability/pages/workers/Worker8.ets",
+        "./src/ohosTest/ets/testability/pages/workers/Worker9.ets",
+        "./src/ohosTest/ets/testability/pages/workers/XorWorker.ets"
+      ]
     }
   },
   "targets": [
