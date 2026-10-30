@@ -13,7 +13,8 @@
  * limitations under the License.
  */
 
- import { UIUtils, IReusableInfo } from '@kit.ArkUI';
+import { UIUtils, IReusableInfo, CustomComponentContext, IReusePool } from '@kit.ArkUI';
+
 
 
 @ReusableV2
@@ -105,10 +106,12 @@ struct GlobalChild {
   @Consumer() provide: number = 10;
   aboutToAppear() {
     console.info('GlobalChild aboutToAppear');
-    const pool = UIUtils.getCustomComponentContext(this).getReusePool();
+    const ctx: CustomComponentContext | undefined = UIUtils.getCustomComponentContext(this);
+    const pool: IReusePool | undefined = ctx.getReusePool();
     console.info('www:s' , pool);
     const info = pool?.getReusableInfo(LegacyComp) as IReusableInfo | undefined;
     AppStorage.setOrCreate('getReusableInfoUndefined', info)
+
 
   }
 
@@ -146,7 +149,8 @@ struct GlobalReusePool {
   @Local onUIFullyLoaded: boolean = false;
 
   aboutToAppear(): void {
-    const pool = UIUtils.getCustomComponentContext(this).getReusePool();
+    const ctx: CustomComponentContext | undefined = UIUtils.getCustomComponentContext(this);
+    const pool: IReusePool | undefined = ctx.getReusePool();
     pool!.preRender(wrapBuilder(preRenderBuilder), 1)
       .then(() => {
         this.onUIFullyLoaded = true;
@@ -157,8 +161,9 @@ struct GlobalReusePool {
     pool?.preRender(wrapBuilder(preRenderBuilder), undefined)
   }
   verifyPool(compName: string, comp: Function) {
-    const pool = UIUtils.getCustomComponentContext(this).getReusePool();
-    AppStorage.setOrCreate('getReusePoolNotUndefined', pool)
+    const ctx: CustomComponentContext | undefined = UIUtils.getCustomComponentContext(this);
+    const pool: IReusePool | undefined = ctx.getReusePool();
+    AppStorage.setOrCreate('getReusePoolNotUndefined', pool);
     if (!pool) {
       console.info('未找到池');
       return;
@@ -227,8 +232,9 @@ struct NotReusableChild {
   @Consumer() provide: number = 10;
 
   aboutToAppear() {
-    const pool = UIUtils.getCustomComponentContext(this).getReusePool();
-    AppStorage.setOrCreate('getReusePoolUndefined', pool)
+    const ctx: CustomComponentContext | undefined = UIUtils.getCustomComponentContext(this);
+    const pool: IReusePool | undefined = ctx.getReusePool();
+    AppStorage.setOrCreate('getReusePoolUndefined', pool);
     console.info('NotReusableChild aboutToAppear');
   }
 
