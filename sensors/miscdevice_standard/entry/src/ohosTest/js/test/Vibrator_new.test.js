@@ -708,5 +708,33 @@ describe("VibratorJsTest_misc_4", function () {
         vibrator.stopVibration(vibrator.VibratorStopMode.VIBRATOR_STOP_MODE_PRESET, vibrateCallback);
     })
 
+    /**
+     * @tc.name SUB_SensorSystem_Vibrator_Enumeration_0300
+     * @tc.number SUB_SensorSystem_Vibrator_Enumeration_0300
+     * @tc.desc Verification results of the incorrect parameters of the test interface.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it("SUB_SensorSystem_Vibrator_Enumeration_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+        TAG = "====>SUB_SensorSystem_Vibrator_Enumeration_0300"
+        let data1 = vibrator.HapticFeedback.EFFECT_IME_STRENGTH1;
+        console.info(TAG + ` data1: ${data1}`);
+        expect(data1).assertEqual('haptic.grade.normal.strength1');
+        let data2 = vibrator.HapticFeedback.EFFECT_IME_STRENGTH2;
+        console.info(TAG + ` data2: ${data2}`);
+        expect(data2).assertEqual('haptic.grade.normal.strength2');
+        let data3 = vibrator.HapticFeedback.EFFECT_IME_STRENGTH3;
+        console.info(TAG + ` data3: ${data3}`);
+        expect(data3).assertEqual('haptic.grade.normal.strength3');
+        let data4 = vibrator.HapticFeedback.EFFECT_IME_STRENGTH4;
+        console.info(TAG + ` data4: ${data4}`);
+        expect(data4).assertEqual('haptic.grade.normal.strength4');
+        let data5 = vibrator.HapticFeedback.EFFECT_IME_STRENGTH5;
+        console.info(TAG + ` data5: ${data5}`);
+        expect(data5).assertEqual('haptic.grade.normal.strength5');
+        done();
+    })
+
 })
 }
