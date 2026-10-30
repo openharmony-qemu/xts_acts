@@ -15,9 +15,14 @@
 
 #include "napi/native_api.h"
 #include <dlfcn.h>
-#include <errno.h>
-#include <stdlib.h>
-#include <limits.h>
+#include <cerrno>
+#include <cstdlib>
+#include <climits>
+
+#define EXPECTED_BIN_5 5
+#define EXPECTED_DEC_123 123
+#define EXPECTED_NEG_3 (-3)
+#define EXPECTED_NEG_5 (-5)
 
 typedef long (*StrtolFn)(const char *, char **, int);
 typedef unsigned long (*StrtoulFn)(const char *, char **, int);
@@ -56,7 +61,7 @@ static napi_value Isoc23Strtol_0100(napi_env env, napi_callback_info info)
     char *endptr = nullptr;
     long val = g_fn("0b101", &endptr, 0);
     int err = errno;
-    if (val == 5 && err == 0 && endptr != nullptr && *endptr == '\0') {
+    if (val == EXPECTED_BIN_5 && err == 0 && endptr != nullptr && *endptr == '\0') {
         return Ret(env, 0);
     }
     return Ret(env, 1);
@@ -72,7 +77,7 @@ static napi_value Isoc23Strtol_0200(napi_env env, napi_callback_info info)
     char *endptr = nullptr;
     long val = g_fn("0B101", &endptr, 2);
     int err = errno;
-    if (val == 5 && err == 0 && endptr != nullptr && *endptr == '\0') {
+    if (val == EXPECTED_BIN_5 && err == 0 && endptr != nullptr && *endptr == '\0') {
         return Ret(env, 0);
     }
     return Ret(env, 1);
@@ -120,7 +125,7 @@ static napi_value Isoc23Strtol_0500(napi_env env, napi_callback_info info)
     char *endptr = nullptr;
     long val = g_fn("-0b11", &endptr, 0);
     int err = errno;
-    if (val == -3 && err == 0 && endptr != nullptr && *endptr == '\0') {
+    if (val == EXPECTED_NEG_3 && err == 0 && endptr != nullptr && *endptr == '\0') {
         return Ret(env, 0);
     }
     return Ret(env, 1);
@@ -169,7 +174,7 @@ static napi_value Isoc23Strtol_0800(napi_env env, napi_callback_info info)
     errno = 0;
     long val = g_fn("123", nullptr, 10);
     int err = errno;
-    if (val == 123 && err == 0) {
+    if (val == EXPECTED_DEC_123 && err == 0) {
         return Ret(env, 0);
     }
     return Ret(env, 1);
@@ -191,7 +196,7 @@ static napi_value Isoc23Strtol_0900(napi_env env, napi_callback_info info)
     }
     errno = 0;
     unsigned long uval = g_strtoulFn("-1", nullptr, 10);
-    if (uval == (unsigned long)ULONG_MAX) {
+    if (uval == static_cast<unsigned long>(ULONG_MAX)) {
         return Ret(env, 0);
     }
     return Ret(env, 1);
@@ -222,7 +227,7 @@ static napi_value Isoc23Strtol_1100(napi_env env, napi_callback_info info)
     errno = 0;
     char *endptr1 = nullptr;
     long val1 = g_fn("0b101abc", &endptr1, 0);
-    if (!(val1 == 5 && endptr1 != nullptr && *endptr1 == 'a')) {
+    if (!(val1 == EXPECTED_BIN_5 && endptr1 != nullptr && *endptr1 == 'a')) {
         return Ret(env, 1);
     }
     errno = 0;
@@ -234,21 +239,15 @@ static napi_value Isoc23Strtol_1100(napi_env env, napi_callback_info info)
     errno = 0;
     char *endptr3 = nullptr;
     long val3 = g_fn("0b101", &endptr3, 0);
-    if (!(val3 == 5 && endptr3 != nullptr && *endptr3 == '\0')) {
+    if (!(val3 == EXPECTED_BIN_5 && endptr3 != nullptr && *endptr3 == '\0')) {
         return Ret(env, 1);
     }
     errno = 0;
     char *endptr4 = nullptr;
     long val4 = g_fn("-0b101", &endptr4, 0);
-    if (!(val4 == -5 && endptr4 != nullptr && *endptr4 == '\0')) {
+    if (!(val4 == EXPECTED_NEG_5 && endptr4 != nullptr && *endptr4 == '\0')) {
         return Ret(env, 1);
     }
-    return Ret(env, 0);
-}
-
-static napi_value Isoc23Strtol_1200(napi_env env, napi_callback_info info)
-{
-    (void)info;
     return Ret(env, 0);
 }
 
@@ -278,8 +277,6 @@ static napi_value Init(napi_env env, napi_value exports)
         {"Isoc23Strtol_1000", nullptr, Isoc23Strtol_1000,
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"Isoc23Strtol_1100", nullptr, Isoc23Strtol_1100,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"Isoc23Strtol_1200", nullptr, Isoc23Strtol_1200,
             nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);

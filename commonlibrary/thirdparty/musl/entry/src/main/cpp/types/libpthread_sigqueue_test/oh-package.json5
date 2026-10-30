@@ -1,6 +1,0 @@
-{
-  "name": "libpthread_sigqueue_test.so",
-  "types": "./Index.d.ts",
-  "version": "1.0.0",
-  "description": "pthread_sigqueue test module"
-}

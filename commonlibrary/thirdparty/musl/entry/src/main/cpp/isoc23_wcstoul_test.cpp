@@ -15,22 +15,26 @@
 
 #include "napi/native_api.h"
 #include <dlfcn.h>
-#include <errno.h>
-#include <wchar.h>
-#include <limits.h>
+#include <cerrno>
+#include <cwchar>
+#include <climits>
 
-typedef unsigned long (*wcstoul_fn)(const wchar_t *, wchar_t **, int);
+#define EXPECTED_BIN_5 5
+#define EXPECTED_NEG_5 (-5)
+#define EXPECTED_DEC_42 42
 
-static wcstoul_fn g_fn = nullptr;
+typedef unsigned long (*WcstoulFn)(const wchar_t *, wchar_t **, int);
+
+static WcstoulFn g_fn = nullptr;
 static bool g_loaded = false;
 
 static void LoadFunctions()
 {
-    if (g_loaded) return;
+    if (g_loaded) { return; }
     g_loaded = true;
     void *h = dlopen("libc.so", RTLD_LAZY);
     if (h) {
-        g_fn = (wcstoul_fn)dlsym(h, "__isoc23_wcstoul");
+        g_fn = (WcstoulFn)dlsym(h, "__isoc23_wcstoul");
     }
 }
 
@@ -57,7 +61,7 @@ static napi_value Isoc23Wcstoul_0100(napi_env env, napi_callback_info info)
     wchar_t *ep = nullptr;
     errno = 0;
     unsigned long val = g_fn(nptr, &ep, 0);
-    if (val == (unsigned long)5 && *ep == L'\0') {
+    if (val == static_cast<unsigned long>(EXPECTED_BIN_5) && *ep == L'\0') {
         return Ret(env, 0);
     }
     return Ret(env, 1);
@@ -92,7 +96,7 @@ static napi_value Isoc23Wcstoul_0300(napi_env env, napi_callback_info info)
     wchar_t *ep = nullptr;
     errno = 0;
     unsigned long val = g_fn(nptr, &ep, 10);
-    if (val == (unsigned long)(-5) && *ep == L'\0') {
+    if (val == static_cast<unsigned long>(EXPECTED_NEG_5) && *ep == L'\0') {
         return Ret(env, 0);
     }
     return Ret(env, 1);
@@ -143,8 +147,8 @@ static napi_value Isoc23Wcstoul_0600(napi_env env, napi_callback_info info)
     }
     const wchar_t *nptr = L"42xyz";
     errno = 0;
-    unsigned long val = g_fn(nptr, NULL, 0);
-    if (val == (unsigned long)42) {
+    unsigned long val = g_fn(nptr, nullptr, 0);
+    if (val == static_cast<unsigned long>(EXPECTED_DEC_42)) {
         return Ret(env, 0);
     }
     return Ret(env, 1);

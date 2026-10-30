@@ -14,21 +14,31 @@
  */
 
 #include "napi/native_api.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <errno.h>
-#include <math.h>
-#include <wchar.h>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <cerrno>
+#include <cmath>
+#include <cwchar>
 #include <dlfcn.h>
 #include <unistd.h>
 #include <fcntl.h>
 
-typedef int (*sscanf_fn)(const char*, const char*, ...);
-typedef long (*strtol_fn)(const char*, char**, int);
+#define EXPECTED_BIN_22 22
+#define EXPECTED_BIN_5 5
+#define EXPECTED_BIN_7 7
+#define EXPECTED_DEC_42 42
+#define EXPECTED_HEX_1F 31
+#define EXPECTED_OCT_8 8
+#define EXPECTED_RET_2 2
+#define EXPECTED_RET_3 3
+#define EXPECTED_W8D 12345678
 
-static sscanf_fn g_sscanf = nullptr;
-static strtol_fn g_strtol = nullptr;
+typedef int (*SscanfFn)(const char*, const char*, ...);
+typedef long (*StrtolFn)(const char*, char**, int);
+
+static SscanfFn g_sscanf = nullptr;
+static StrtolFn g_strtol = nullptr;
 
 static napi_value Ret(napi_env env, int32_t val)
 {
@@ -39,8 +49,8 @@ static napi_value Ret(napi_env env, int32_t val)
 
 static void LoadFunctions()
 {
-    g_sscanf = (sscanf_fn)dlsym(RTLD_DEFAULT, "__isoc23_sscanf");
-    g_strtol = (strtol_fn)dlsym(RTLD_DEFAULT, "__isoc23_strtol");
+    g_sscanf = (SscanfFn)dlsym(RTLD_DEFAULT, "__isoc23_sscanf");
+    g_strtol = (StrtolFn)dlsym(RTLD_DEFAULT, "__isoc23_strtol");
 }
 
 static bool IsSymbolReady()
@@ -56,7 +66,7 @@ static napi_value Isoc23Sscanf_0100(napi_env env, napi_callback_info info)
     }
     int dest = 0;
     int ret = g_sscanf("10110", "%b", &dest);
-    if (ret == 1 && dest == 22) {
+    if (ret == 1 && dest == EXPECTED_BIN_22) {
         return Ret(env, 0);
     }
     return Ret(env, 1);
@@ -68,9 +78,11 @@ static napi_value Isoc23Sscanf_0200(napi_env env, napi_callback_info info)
     if (!IsSymbolReady()) {
         return Ret(env, 0);
     }
-    int d1 = 0, d2 = 0, d3 = 0;
+    int d1 = 0;
+    int d2 = 0;
+    int d3 = 0;
     int ret = g_sscanf("0b111 0x1F 010", "%i %i %i", &d1, &d2, &d3);
-    if (ret == 3 && d1 == 7 && d2 == 31 && d3 == 8) {
+    if (ret == EXPECTED_RET_3 && d1 == EXPECTED_BIN_7 && d2 == EXPECTED_HEX_1F && d3 == EXPECTED_OCT_8) {
         return Ret(env, 0);
     }
     return Ret(env, 1);
@@ -84,7 +96,7 @@ static napi_value Isoc23Sscanf_0300(napi_env env, napi_callback_info info)
     }
     int dest = 0;
     int ret = g_sscanf("123456789", "%w8d", &dest);
-    if (ret == 1 && dest == 12345678) {
+    if (ret == 1 && dest == EXPECTED_W8D) {
         return Ret(env, 0);
     }
     return Ret(env, 0);
@@ -102,7 +114,7 @@ static napi_value Isoc23Sscanf_0400(napi_env env, napi_callback_info info)
         free(dest);
         return Ret(env, 0);
     }
-    if (dest) free(dest);
+    if (dest) { free(dest); }
     return Ret(env, 1);
 }
 
@@ -126,7 +138,7 @@ static napi_value Isoc23Sscanf_0600(napi_env env, napi_callback_info info)
     if (!IsSymbolReady()) {
         return Ret(env, 0);
     }
-    void* dest = (void*)0xDEAD;
+    void* dest = reinterpret_cast<void*>(0xDEAD);
     int ret = g_sscanf("(nil)", "%p", &dest);
     if (ret == 1 && dest == nullptr) {
         return Ret(env, 0);
@@ -168,7 +180,7 @@ static napi_value Isoc23Sscanf_0900(napi_env env, napi_callback_info info)
     if (!IsSymbolReady()) {
         return Ret(env, 0);
     }
-    char bad[2] = {(char)0xE4, 0};
+    char bad[2] = {static_cast<char>(0xE4), 0};
     wchar_t wbuf[16] = {0};
     errno = 0;
     int ret = g_sscanf(bad, "%ls", wbuf);
@@ -193,7 +205,7 @@ static napi_value Isoc23Sscanf_1000(napi_env env, napi_callback_info info)
         return Ret(env, 1);
     }
     long val = g_strtol(sub, nullptr, 10);
-    if (val == 42) {
+    if (val == EXPECTED_DEC_42) {
         return Ret(env, 0);
     }
     return Ret(env, 1);
@@ -214,7 +226,7 @@ static napi_value Isoc23Sscanf_1100(napi_env env, napi_callback_info info)
         return Ret(env, 1);
     }
     long val = g_strtol("0b101", nullptr, 0);
-    if (v == 5 && val == 5 && v == (int)val) {
+    if (v == EXPECTED_BIN_5 && val == EXPECTED_BIN_5 && v == static_cast<int>(val)) {
         return Ret(env, 0);
     }
     return Ret(env, 1);
@@ -226,9 +238,10 @@ static napi_value Isoc23Sscanf_1200(napi_env env, napi_callback_info info)
     if (!IsSymbolReady()) {
         return Ret(env, 0);
     }
-    unsigned int first = 0, last = 0;
+    unsigned int first = 0;
+    unsigned int last = 0;
     int ret = g_sscanf("3 7", "%u %u", &first, &last);
-    if (ret != 2) {
+    if (ret != EXPECTED_RET_2) {
         return Ret(env, 1);
     }
     return Ret(env, 0);
@@ -246,7 +259,7 @@ static napi_value Isoc23Sscanf_1300(napi_env env, napi_callback_info info)
         free(dest);
         return Ret(env, 0);
     }
-    if (dest) free(dest);
+    if (dest) { free(dest); }
     return Ret(env, 1);
 }
 
@@ -265,7 +278,7 @@ static napi_value Isoc23Sscanf_1400(napi_env env, napi_callback_info info)
         return Ret(env, 1);
     }
     long v1 = g_strtol("0b101", nullptr, 0);
-    if (v1 == 5 && v2 == 5) {
+    if (v1 == EXPECTED_BIN_5 && v2 == EXPECTED_BIN_5) {
         return Ret(env, 0);
     }
     return Ret(env, 1);

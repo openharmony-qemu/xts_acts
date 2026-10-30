@@ -15,9 +15,12 @@
 
 #include "napi/native_api.h"
 #include <dlfcn.h>
-#include <errno.h>
-#include <stdlib.h>
-#include <limits.h>
+#include <cerrno>
+#include <cstdlib>
+#include <climits>
+
+#define EXPECTED_BIN_15 15
+#define EXPECTED_BIN_5 5
 
 typedef unsigned long long (*StrtoullLFn)(const char *, char **, int, void *);
 
@@ -53,7 +56,7 @@ static napi_value Isoc23StrtoullL_0100(napi_env env, napi_callback_info info)
     char *endptr = nullptr;
     unsigned long long val = g_fn("0b101", &endptr, 0, nullptr);
     int err = errno;
-    if (val == 5 && err == 0 && endptr != nullptr && *endptr == '\0') {
+    if (val == EXPECTED_BIN_5 && err == 0 && endptr != nullptr && *endptr == '\0') {
         return Ret(env, 0);
     }
     return Ret(env, 1);
@@ -69,7 +72,7 @@ static napi_value Isoc23StrtoullL_0200(napi_env env, napi_callback_info info)
     char *endptr = nullptr;
     unsigned long long val = g_fn("-1", &endptr, 10, nullptr);
     int err = errno;
-    if (val == (unsigned long long)ULLONG_MAX && err == 0 && endptr != nullptr && *endptr == '\0') {
+    if (val == static_cast<unsigned long long>(ULLONG_MAX) && err == 0 && endptr != nullptr && *endptr == '\0') {
         return Ret(env, 0);
     }
     return Ret(env, 1);
@@ -84,13 +87,13 @@ static napi_value Isoc23StrtoullL_0300(napi_env env, napi_callback_info info)
     errno = 0;
     char *endptr1 = nullptr;
     unsigned long long val1 = g_fn("0b1111", &endptr1, 0, nullptr);
-    if (!(val1 == 15 && endptr1 != nullptr && *endptr1 == '\0')) {
+    if (!(val1 == EXPECTED_BIN_15 && endptr1 != nullptr && *endptr1 == '\0')) {
         return Ret(env, 1);
     }
     errno = 0;
     char *endptr2 = nullptr;
-    unsigned long long val2 = g_fn("0b1111", &endptr2, 0, (void *)1);
-    if (val2 == 15 && endptr2 != nullptr && *endptr2 == '\0') {
+    unsigned long long val2 = g_fn("0b1111", &endptr2, 0, reinterpret_cast<void*>(1));
+    if (val2 == EXPECTED_BIN_15 && endptr2 != nullptr && *endptr2 == '\0') {
         return Ret(env, 0);
     }
     return Ret(env, 1);

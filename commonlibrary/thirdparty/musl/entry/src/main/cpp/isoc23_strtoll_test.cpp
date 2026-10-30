@@ -15,9 +15,15 @@
 
 #include "napi/native_api.h"
 #include <dlfcn.h>
-#include <errno.h>
-#include <stdlib.h>
-#include <limits.h>
+#include <cerrno>
+#include <cstdlib>
+#include <climits>
+
+#define EXPECTED_BIN_10 10
+#define EXPECTED_DEC_100 100
+#define EXPECTED_BIN_255 255
+#define EXPECTED_NEG_3 (-3)
+#define TEST_ERRNO_SENTINEL 0x1234
 
 typedef long long (*StrtollFn)(const char *, char **, int);
 typedef unsigned long long (*StrtoullFn)(const char *, char **, int);
@@ -56,7 +62,7 @@ static napi_value Isoc23Strtoll_0100(napi_env env, napi_callback_info info)
     char *endptr = nullptr;
     long long val = g_fn("0b1010", &endptr, 0);
     int err = errno;
-    if (val == 10 && err == 0 && endptr != nullptr && *endptr == '\0') {
+    if (val == EXPECTED_BIN_10 && err == 0 && endptr != nullptr && *endptr == '\0') {
         return Ret(env, 0);
     }
     return Ret(env, 1);
@@ -120,7 +126,7 @@ static napi_value Isoc23Strtoll_0500(napi_env env, napi_callback_info info)
     char *endptr = nullptr;
     long long val = g_fn("-0b11", &endptr, 0);
     int err = errno;
-    if (val == -3 && err == 0 && endptr != nullptr && *endptr == '\0') {
+    if (val == EXPECTED_NEG_3 && err == 0 && endptr != nullptr && *endptr == '\0') {
         return Ret(env, 0);
     }
     return Ret(env, 1);
@@ -149,11 +155,11 @@ static napi_value Isoc23Strtoll_0700(napi_env env, napi_callback_info info)
     if (!IsSymbolReady()) {
         return Ret(env, 0);
     }
-    errno = 0x1234;
+    errno = TEST_ERRNO_SENTINEL;
     char *endptr = nullptr;
     long long val = g_fn("100", &endptr, 10);
     int err = errno;
-    if (val == 100 && err == 0x1234 && endptr != nullptr && *endptr == '\0') {
+    if (val == EXPECTED_DEC_100 && err == TEST_ERRNO_SENTINEL && endptr != nullptr && *endptr == '\0') {
         return Ret(env, 0);
     }
     return Ret(env, 1);
@@ -167,7 +173,7 @@ static napi_value Isoc23Strtoll_0800(napi_env env, napi_callback_info info)
     }
     errno = 0;
     long long sval = g_fn("0b11111111", nullptr, 0);
-    if (sval != 255) {
+    if (sval != EXPECTED_BIN_255) {
         return Ret(env, 1);
     }
     if (g_strtoullFn == nullptr) {
@@ -175,7 +181,7 @@ static napi_value Isoc23Strtoll_0800(napi_env env, napi_callback_info info)
     }
     errno = 0;
     unsigned long long uval = g_strtoullFn("0b11111111", nullptr, 0);
-    if (uval == 255) {
+    if (uval == EXPECTED_BIN_255) {
         return Ret(env, 0);
     }
     return Ret(env, 1);

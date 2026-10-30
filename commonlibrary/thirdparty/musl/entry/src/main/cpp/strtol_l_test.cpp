@@ -15,9 +15,14 @@
 
 #include "napi/native_api.h"
 #include <dlfcn.h>
-#include <errno.h>
-#include <stdlib.h>
-#include <limits.h>
+#include <cerrno>
+#include <cstdlib>
+#include <climits>
+
+#define EXPECTED_DEC_123 123
+#define EXPECTED_HEX_FF 255
+#define EXPECTED_OCTAL_777 511
+#define EXPECTED_BIN_5 5
 
 typedef long (*StrtolLFn)(const char *, char **, int, void *);
 typedef long (*StrtolFn)(const char *, char **, int);
@@ -72,7 +77,7 @@ static napi_value StrtolL_0200(napi_env env, napi_callback_info info)
     char *endptr = nullptr;
     long val = g_fn("0xff", &endptr, 0, nullptr);
     int err = errno;
-    if (val == 255 && err == 0 && endptr != nullptr && *endptr == '\0') {
+    if (val == EXPECTED_HEX_FF && err == 0 && endptr != nullptr && *endptr == '\0') {
         return Ret(env, 0);
     }
     return Ret(env, 1);
@@ -88,7 +93,7 @@ static napi_value StrtolL_0300(napi_env env, napi_callback_info info)
     char *endptr = nullptr;
     long val = g_fn("0777", &endptr, 0, nullptr);
     int err = errno;
-    if (val == 511 && err == 0 && endptr != nullptr && *endptr == '\0') {
+    if (val == EXPECTED_OCTAL_777 && err == 0 && endptr != nullptr && *endptr == '\0') {
         return Ret(env, 0);
     }
     return Ret(env, 1);
@@ -104,7 +109,7 @@ static napi_value StrtolL_0400(napi_env env, napi_callback_info info)
     char *endptr = nullptr;
     long val = g_fn("123", &endptr, 10, nullptr);
     int err = errno;
-    if (val == 123 && err == 0 && endptr != nullptr && *endptr == '\0') {
+    if (val == EXPECTED_DEC_123 && err == 0 && endptr != nullptr && *endptr == '\0') {
         return Ret(env, 0);
     }
     return Ret(env, 1);
@@ -160,7 +165,7 @@ static napi_value StrtolL_0700(napi_env env, napi_callback_info info)
     errno = 0;
     char *ep2 = nullptr;
     long cval = g_isoc23StrtolFn("0b101", &ep2, 0);
-    if (cval == 5 && ep2 != nullptr && *ep2 == '\0') {
+    if (cval == EXPECTED_BIN_5 && ep2 != nullptr && *ep2 == '\0') {
         return Ret(env, 0);
     }
     return Ret(env, 1);
@@ -182,7 +187,7 @@ static napi_value StrtolL_0800(napi_env env, napi_callback_info info)
     }
     errno = 0;
     long cval = g_isoc23StrtolFn("0b101", nullptr, 0);
-    if (cval == 5) {
+    if (cval == EXPECTED_BIN_5) {
         return Ret(env, 0);
     }
     return Ret(env, 1);
@@ -196,7 +201,7 @@ static napi_value StrtolL_0900(napi_env env, napi_callback_info info)
     }
     errno = 0;
     char *endptr1 = nullptr;
-    long val1 = g_fn("0b101", &endptr1, 0, (void *)1);
+    long val1 = g_fn("0b101", &endptr1, 0, reinterpret_cast<void*>(1));
     if (!(val1 == 0 && endptr1 != nullptr && *endptr1 == 'b')) {
         return Ret(env, 1);
     }

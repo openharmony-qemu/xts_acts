@@ -14,21 +14,26 @@
  */
 
 #include "napi/native_api.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <errno.h>
-#include <math.h>
-#include <stdarg.h>
-#include <wchar.h>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <cerrno>
+#include <cmath>
+#include <cstdarg>
+#include <cwchar>
 #include <dlfcn.h>
 #include <unistd.h>
 
-typedef int (*vfscanf_fn)(FILE*, const char*, va_list);
-typedef int (*vsscanf_fn)(const char*, const char*, va_list);
+#define EXPECTED_BIN_22 22
+#define EXPECTED_BIN_7 7
+#define EXPECTED_DEC_42 42
+#define EXPECTED_W8D 12345678
 
-static vfscanf_fn g_vfscanf = nullptr;
-static vsscanf_fn g_vsscanf = nullptr;
+typedef int (*VfscanfFn)(FILE*, const char*, va_list);
+typedef int (*VsscanfFn)(const char*, const char*, va_list);
+
+static VfscanfFn g_vfscanf = nullptr;
+static VsscanfFn g_vsscanf = nullptr;
 
 static napi_value Ret(napi_env env, int32_t val)
 {
@@ -39,8 +44,8 @@ static napi_value Ret(napi_env env, int32_t val)
 
 static void LoadFunctions()
 {
-    g_vfscanf = (vfscanf_fn)dlsym(RTLD_DEFAULT, "__isoc23_vfscanf");
-    g_vsscanf = (vsscanf_fn)dlsym(RTLD_DEFAULT, "__isoc23_vsscanf");
+    g_vfscanf = (VfscanfFn)dlsym(RTLD_DEFAULT, "__isoc23_vfscanf");
+    g_vsscanf = (VsscanfFn)dlsym(RTLD_DEFAULT, "__isoc23_vsscanf");
 }
 
 static bool IsSymbolReady()
@@ -51,11 +56,14 @@ static bool IsSymbolReady()
 static FILE* MakeStream(const char* content)
 {
     int pfd[2];
-    if (pipe(pfd) != 0) return nullptr;
+    if (pipe(pfd) != 0) { return nullptr; }
     write(pfd[1], content, strlen(content));
     close(pfd[1]);
     FILE* f = fdopen(pfd[0], "r");
-    if (!f) { close(pfd[0]); return nullptr; }
+    if (!f) {
+        close(pfd[0]);
+        return nullptr;
+    }
     return f;
 }
 
@@ -89,8 +97,8 @@ static napi_value Isoc23Vfscanf_0100(napi_env env, napi_callback_info info)
     }
     int dest = 0;
     int ret = CallVfscanf(f, "%b", &dest);
-    fclose(f);
-    if (ret == 1 && dest == 22) {
+    (void)fclose(f);
+    if (ret == 1 && dest == EXPECTED_BIN_22) {
         return Ret(env, 0);
     }
     return Ret(env, 1);
@@ -108,8 +116,8 @@ static napi_value Isoc23Vfscanf_0200(napi_env env, napi_callback_info info)
     }
     int dest = 0;
     int ret = CallVfscanf(f, "%i", &dest);
-    fclose(f);
-    if (ret == 1 && dest == 7) {
+    (void)fclose(f);
+    if (ret == 1 && dest == EXPECTED_BIN_7) {
         return Ret(env, 0);
     }
     return Ret(env, 1);
@@ -127,8 +135,8 @@ static napi_value Isoc23Vfscanf_0300(napi_env env, napi_callback_info info)
     }
     int dest = 0;
     int ret = CallVfscanf(f, "%w8d", &dest);
-    fclose(f);
-    if (ret == 1 && dest == 12345678) {
+    (void)fclose(f);
+    if (ret == 1 && dest == EXPECTED_W8D) {
         return Ret(env, 0);
     }
     return Ret(env, 0);
@@ -146,12 +154,12 @@ static napi_value Isoc23Vfscanf_0400(napi_env env, napi_callback_info info)
     }
     char* dest = nullptr;
     int ret = CallVfscanf(f, "%ms", &dest);
-    fclose(f);
+    (void)fclose(f);
     if (ret == 1 && dest != nullptr && strcmp(dest, "hello") == 0) {
         free(dest);
         return Ret(env, 0);
     }
-    if (dest) free(dest);
+    if (dest) { free(dest); }
     return Ret(env, 1);
 }
 
@@ -167,7 +175,7 @@ static napi_value Isoc23Vfscanf_0500(napi_env env, napi_callback_info info)
     }
     double dest = 0.0;
     int ret = CallVfscanf(f, "%lf", &dest);
-    fclose(f);
+    (void)fclose(f);
     if (ret == 1 && isnan(dest)) {
         return Ret(env, 0);
     }
@@ -184,9 +192,9 @@ static napi_value Isoc23Vfscanf_0600(napi_env env, napi_callback_info info)
     if (!f) {
         return Ret(env, 1);
     }
-    void* dest = (void*)0xDEAD;
+    void* dest = reinterpret_cast<void*>(0xDEAD);
     int ret = CallVfscanf(f, "%p", &dest);
-    fclose(f);
+    (void)fclose(f);
     if (ret == 1 && dest == nullptr) {
         return Ret(env, 0);
     }
@@ -205,7 +213,7 @@ static napi_value Isoc23Vfscanf_0700(napi_env env, napi_callback_info info)
     }
     int dest = 0;
     int ret = CallVfscanf(f, "%d", &dest);
-    fclose(f);
+    (void)fclose(f);
     if (ret == 0) {
         return Ret(env, 0);
     }
@@ -224,7 +232,7 @@ static napi_value Isoc23Vfscanf_0800(napi_env env, napi_callback_info info)
     }
     int dest = 0;
     int ret = CallVfscanf(f, "%d", &dest);
-    fclose(f);
+    (void)fclose(f);
     if (ret == EOF) {
         return Ret(env, 0);
     }
@@ -243,8 +251,8 @@ static napi_value Isoc23Vfscanf_0900(napi_env env, napi_callback_info info)
     }
     int dest = 0;
     int ret = CallVfscanf(f, "%d", &dest);
-    fclose(f);
-    if (ret == 1 && dest == 42) {
+    (void)fclose(f);
+    if (ret == 1 && dest == EXPECTED_DEC_42) {
         return Ret(env, 0);
     }
     return Ret(env, 1);
@@ -263,11 +271,12 @@ static napi_value Isoc23Vfscanf_1000(napi_env env, napi_callback_info info)
     if (!f) {
         return Ret(env, 1);
     }
-    int d1 = 0, d2 = 0;
+    int d1 = 0;
+    int d2 = 0;
     int r1 = CallVfscanf(f, "%i", &d1);
-    fclose(f);
+    (void)fclose(f);
     int r2 = CallVsscanf("0b111", "%i", &d2);
-    if (r1 == 1 && r2 == 1 && d1 == 7 && d2 == 7) {
+    if (r1 == 1 && r2 == 1 && d1 == EXPECTED_BIN_7 && d2 == EXPECTED_BIN_7) {
         return Ret(env, 0);
     }
     return Ret(env, 1);
@@ -285,12 +294,12 @@ static napi_value Isoc23Vfscanf_1100(napi_env env, napi_callback_info info)
     }
     char* dest = nullptr;
     int ret = CallVfscanf(f, "%ms", &dest);
-    fclose(f);
+    (void)fclose(f);
     if (ret == 1 && dest != nullptr) {
         free(dest);
         return Ret(env, 0);
     }
-    if (dest) free(dest);
+    if (dest) { free(dest); }
     return Ret(env, 1);
 }
 

@@ -15,10 +15,12 @@
 
 #include "napi/native_api.h"
 #include <dlfcn.h>
-#include <errno.h>
-#include <stdlib.h>
-#include <limits.h>
-#include <stdint.h>
+#include <cerrno>
+#include <cstdlib>
+#include <climits>
+#include <cstdint>
+
+#define EXPECTED_BIN_5 5
 
 typedef uintmax_t (*StrtoumaxFn)(const char *, char **, int);
 
@@ -54,7 +56,7 @@ static napi_value Isoc23Strtoumax_0100(napi_env env, napi_callback_info info)
     char *endptr = nullptr;
     uintmax_t val = g_fn("0b101", &endptr, 0);
     int err = errno;
-    if (val == 5 && err == 0 && endptr != nullptr && *endptr == '\0') {
+    if (val == EXPECTED_BIN_5 && err == 0 && endptr != nullptr && *endptr == '\0') {
         return Ret(env, 0);
     }
     return Ret(env, 1);
@@ -70,7 +72,7 @@ static napi_value Isoc23Strtoumax_0200(napi_env env, napi_callback_info info)
     char *endptr = nullptr;
     uintmax_t val = g_fn("-1", &endptr, 10);
     int err = errno;
-    if (val == (uintmax_t)UINTMAX_MAX && err == 0 && endptr != nullptr && *endptr == '\0') {
+    if (val == static_cast<uintmax_t>(UINTMAX_MAX) && err == 0 && endptr != nullptr && *endptr == '\0') {
         return Ret(env, 0);
     }
     return Ret(env, 1);

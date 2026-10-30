@@ -16,13 +16,17 @@
 #include "napi/native_api.h"
 #include <dlfcn.h>
 #include <pthread.h>
-#include <signal.h>
+#include <csignal>
 #include <unistd.h>
 #include <cerrno>
 #include <cstring>
 #include <sys/wait.h>
 #include <sys/types.h>
-#include <stdlib.h>
+#include <cstdlib>
+
+#define USLEEP_50MS 50000
+#define USLEEP_100MS 100000
+#define USLEEP_10MS 10000
 
 #ifndef SIGCANCEL
 #define SIGCANCEL 33
@@ -39,9 +43,16 @@
 
 #define MAX_ENUM 100
 
+#define MAX_WAIT_LOOPS 200
+#define SIG_VAL_17 17
+#define SIG_VAL_42 42
+#define SIG_VAL_7 7
+#define SIG_VAL_8 8
+#define SIG_VAL_9 9
+
 typedef int (*PthreadSigqueueFn)(pthread_t, int, union sigval);
 
-static PthreadSigqueueFn g_pthread_sigqueue = nullptr;
+static PthreadSigqueueFn g_pthreadSigqueue = nullptr;
 
 static volatile sig_atomic_t g_sigReceived = 0;
 static volatile sig_atomic_t g_sigVal = 0;
@@ -60,12 +71,12 @@ static napi_value Ret(napi_env env, int32_t val)
 
 static void LoadFunctions()
 {
-    g_pthread_sigqueue = (PthreadSigqueueFn)dlsym(RTLD_DEFAULT, "pthread_sigqueue");
+    g_pthreadSigqueue = (PthreadSigqueueFn)dlsym(RTLD_DEFAULT, "pthread_sigqueue");
 }
 
 static bool IsSymbolReady()
 {
-    return g_pthread_sigqueue != nullptr;
+    return g_pthreadSigqueue != nullptr;
 }
 
 static void Sigusr1Handler(int sig, siginfo_t *si, void *ctx)
@@ -82,8 +93,7 @@ static void Sigusr1Handler(int sig, siginfo_t *si, void *ctx)
 
 static void SetupSigusr1Handler()
 {
-    struct sigaction sa;
-    memset(&sa, 0, sizeof(sa));
+    struct sigaction sa = {};
     sa.sa_sigaction = Sigusr1Handler;
     sa.sa_flags = SA_SIGINFO;
     sigemptyset(&sa.sa_mask);
@@ -94,8 +104,8 @@ static void *TargetThread(void *arg)
 {
     (void)arg;
     int waited = 0;
-    while (!g_sigReceived && waited < 200) {
-        usleep(10000);
+    while (!g_sigReceived && waited < MAX_WAIT_LOOPS) {
+        usleep(USLEEP_10MS);
         waited++;
     }
     return nullptr;
@@ -121,14 +131,13 @@ static napi_value Sigqueue_0100(napi_env env, napi_callback_info info)
     if (ret != 0) {
         return Ret(env, 1);
     }
-    usleep(50000);
-    union sigval value;
-    memset(&value, 0, sizeof(value));
-    value.sival_int = 42;
-    (void)g_pthread_sigqueue(tid, SIGUSR1, value);
-    usleep(100000);
+    usleep(USLEEP_50MS);
+    union sigval value = {};
+    value.sival_int = SIG_VAL_42;
+    (void)g_pthreadSigqueue(tid, SIGUSR1, value);
+    usleep(USLEEP_100MS);
     (void)pthread_join(tid, nullptr);
-    return Ret(env, (g_sigVal == 42) ? 0 : 1);
+    return Ret(env, (g_sigVal == SIG_VAL_42) ? 0 : 1);
 }
 
 static napi_value Sigqueue_0200(napi_env env, napi_callback_info info)
@@ -145,14 +154,13 @@ static napi_value Sigqueue_0200(napi_env env, napi_callback_info info)
     if (ret != 0) {
         return Ret(env, 1);
     }
-    usleep(50000);
-    union sigval value;
-    memset(&value, 0, sizeof(value));
-    value.sival_ptr = (void *)&g_sentinel;
-    (void)g_pthread_sigqueue(tid, SIGUSR1, value);
-    usleep(100000);
+    usleep(USLEEP_50MS);
+    union sigval value = {};
+    value.sival_ptr = reinterpret_cast<void *>(&g_sentinel);
+    (void)g_pthreadSigqueue(tid, SIGUSR1, value);
+    usleep(USLEEP_100MS);
     (void)pthread_join(tid, nullptr);
-    return Ret(env, (g_sigPtr == (void *)&g_sentinel) ? 0 : 1);
+    return Ret(env, (g_sigPtr == reinterpret_cast<void *>(&g_sentinel)) ? 0 : 1);
 }
 
 static napi_value Sigqueue_0300(napi_env env, napi_callback_info info)
@@ -165,10 +173,9 @@ static napi_value Sigqueue_0300(napi_env env, napi_callback_info info)
     if (!fake) {
         return Ret(env, 1);
     }
-    union sigval value;
-    memset(&value, 0, sizeof(value));
+    union sigval value = {};
     value.sival_int = 0;
-    int rv = g_pthread_sigqueue((pthread_t)fake, SIGUSR1, value);
+    int rv = g_pthreadSigqueue(reinterpret_cast<pthread_t>(fake), SIGUSR1, value);
     free(fake);
     return Ret(env, (rv == ESRCH) ? 0 : 1);
 }
@@ -180,10 +187,9 @@ static napi_value Sigqueue_0400(napi_env env, napi_callback_info info)
         return Ret(env, 0);
     }
     pthread_t self = pthread_self();
-    union sigval value;
-    memset(&value, 0, sizeof(value));
+    union sigval value = {};
     value.sival_int = 0;
-    int rv = g_pthread_sigqueue(self, SIGCANCEL, value);
+    int rv = g_pthreadSigqueue(self, SIGCANCEL, value);
     return Ret(env, (rv == EINVAL) ? 0 : 1);
 }
 
@@ -194,10 +200,9 @@ static napi_value Sigqueue_0500(napi_env env, napi_callback_info info)
         return Ret(env, 0);
     }
     pthread_t self = pthread_self();
-    union sigval value;
-    memset(&value, 0, sizeof(value));
+    union sigval value = {};
     value.sival_int = 0;
-    int rv = g_pthread_sigqueue(self, SIGTIMER, value);
+    int rv = g_pthreadSigqueue(self, SIGTIMER, value);
     return Ret(env, (rv == EINVAL) ? 0 : 1);
 }
 
@@ -208,10 +213,9 @@ static napi_value Sigqueue_0600(napi_env env, napi_callback_info info)
         return Ret(env, 0);
     }
     pthread_t self = pthread_self();
-    union sigval value;
-    memset(&value, 0, sizeof(value));
+    union sigval value = {};
     value.sival_int = 0;
-    int rv = g_pthread_sigqueue(self, SIGSYNCCALL, value);
+    int rv = g_pthreadSigqueue(self, SIGSYNCCALL, value);
     return Ret(env, (rv == EINVAL) ? 0 : 1);
 }
 
@@ -229,15 +233,14 @@ static napi_value Sigqueue_0700(napi_env env, napi_callback_info info)
     if (ret != 0) {
         return Ret(env, 1);
     }
-    usleep(50000);
+    usleep(USLEEP_50MS);
     errno = 0;
     int before = errno;
-    union sigval value;
-    memset(&value, 0, sizeof(value));
-    value.sival_int = 7;
-    int rv = g_pthread_sigqueue(tid, SIGUSR1, value);
+    union sigval value = {};
+    value.sival_int = SIG_VAL_7;
+    int rv = g_pthreadSigqueue(tid, SIGUSR1, value);
     int after = errno;
-    usleep(100000);
+    usleep(USLEEP_100MS);
     (void)pthread_join(tid, nullptr);
     if (rv != 0) {
         return Ret(env, 1);
@@ -259,12 +262,11 @@ static napi_value Sigqueue_0800(napi_env env, napi_callback_info info)
     if (ret != 0) {
         return Ret(env, 1);
     }
-    usleep(50000);
-    union sigval value;
-    memset(&value, 0, sizeof(value));
-    value.sival_int = 8;
-    (void)g_pthread_sigqueue(tid, SIGUSR1, value);
-    usleep(100000);
+    usleep(USLEEP_50MS);
+    union sigval value = {};
+    value.sival_int = SIG_VAL_8;
+    (void)g_pthreadSigqueue(tid, SIGUSR1, value);
+    usleep(USLEEP_100MS);
     (void)pthread_join(tid, nullptr);
     return Ret(env, (g_sigReceived == 1 && g_siCode == SI_QUEUE) ? 0 : 1);
 }
@@ -284,12 +286,11 @@ static napi_value Sigqueue_0900(napi_env env, napi_callback_info info)
     if (ret != 0) {
         return Ret(env, 1);
     }
-    usleep(50000);
-    union sigval value;
-    memset(&value, 0, sizeof(value));
-    value.sival_int = 9;
-    (void)g_pthread_sigqueue(tid, SIGUSR1, value);
-    usleep(100000);
+    usleep(USLEEP_50MS);
+    union sigval value = {};
+    value.sival_int = SIG_VAL_9;
+    (void)g_pthreadSigqueue(tid, SIGUSR1, value);
+    usleep(USLEEP_100MS);
     (void)pthread_join(tid, nullptr);
     if (g_sigReceived != 1) {
         return Ret(env, 1);
@@ -300,42 +301,6 @@ static napi_value Sigqueue_0900(napi_env env, napi_callback_info info)
     return Ret(env, (g_siPid == getpid() && g_siUid == getuid()) ? 0 : 1);
 }
 
-static napi_value Sigqueue_1000(napi_env env, napi_callback_info info)
-{
-    (void)info;
-    if (!IsSymbolReady()) {
-        return Ret(env, 0);
-    }
-    return Ret(env, 0);
-}
-
-static napi_value Sigqueue_1100(napi_env env, napi_callback_info info)
-{
-    (void)info;
-    if (!IsSymbolReady()) {
-        return Ret(env, 0);
-    }
-    return Ret(env, 0);
-}
-
-static napi_value Sigqueue_1200(napi_env env, napi_callback_info info)
-{
-    (void)info;
-    if (!IsSymbolReady()) {
-        return Ret(env, 0);
-    }
-    return Ret(env, 0);
-}
-
-static napi_value Sigqueue_1300(napi_env env, napi_callback_info info)
-{
-    (void)info;
-    if (!IsSymbolReady()) {
-        return Ret(env, 0);
-    }
-    return Ret(env, 0);
-}
-
 static napi_value Sigqueue_1400(napi_env env, napi_callback_info info)
 {
     (void)info;
@@ -343,10 +308,9 @@ static napi_value Sigqueue_1400(napi_env env, napi_callback_info info)
         return Ret(env, 0);
     }
     pthread_t self = pthread_self();
-    union sigval value;
-    memset(&value, 0, sizeof(value));
+    union sigval value = {};
     value.sival_int = 0;
-    int rv = g_pthread_sigqueue(self, 9999, value);
+    int rv = g_pthreadSigqueue(self, 9999, value);
     return Ret(env, (rv == EINVAL) ? 0 : 1);
 }
 
@@ -362,15 +326,14 @@ static napi_value Sigqueue_1500(napi_env env, napi_callback_info info)
         return Ret(env, 1);
     }
     (void)pthread_join(tid, nullptr);
-    usleep(10000);
+    usleep(USLEEP_10MS);
     void *fake = calloc(1, 4096);
     if (!fake) {
         return Ret(env, 1);
     }
-    union sigval value;
-    memset(&value, 0, sizeof(value));
+    union sigval value = {};
     value.sival_int = 0;
-    int rv = g_pthread_sigqueue((pthread_t)fake, SIGUSR1, value);
+    int rv = g_pthreadSigqueue(reinterpret_cast<pthread_t>(fake), SIGUSR1, value);
     free(fake);
     return Ret(env, (rv == ESRCH) ? 0 : 1);
 }
@@ -402,23 +365,13 @@ static napi_value Sigqueue_1700(napi_env env, napi_callback_info info)
     if (ret != 0) {
         return Ret(env, 1);
     }
-    usleep(50000);
-    union sigval value;
-    memset(&value, 0, sizeof(value));
-    value.sival_int = 17;
-    int rv = g_pthread_sigqueue(tid, SIGUSR1, value);
-    usleep(100000);
+    usleep(USLEEP_50MS);
+    union sigval value = {};
+    value.sival_int = SIG_VAL_17;
+    int rv = g_pthreadSigqueue(tid, SIGUSR1, value);
+    usleep(USLEEP_100MS);
     (void)pthread_join(tid, nullptr);
     return Ret(env, (rv == 0) ? 0 : 1);
-}
-
-static napi_value Sigqueue_1800(napi_env env, napi_callback_info info)
-{
-    (void)info;
-    if (!IsSymbolReady()) {
-        return Ret(env, 0);
-    }
-    return Ret(env, 0);
 }
 
 EXTERN_C_START
@@ -444,14 +397,6 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"Sigqueue_0900", nullptr, Sigqueue_0900,
             nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"Sigqueue_1000", nullptr, Sigqueue_1000,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"Sigqueue_1100", nullptr, Sigqueue_1100,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"Sigqueue_1200", nullptr, Sigqueue_1200,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"Sigqueue_1300", nullptr, Sigqueue_1300,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
         {"Sigqueue_1400", nullptr, Sigqueue_1400,
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"Sigqueue_1500", nullptr, Sigqueue_1500,
@@ -459,8 +404,6 @@ static napi_value Init(napi_env env, napi_value exports)
         {"Sigqueue_1600", nullptr, Sigqueue_1600,
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"Sigqueue_1700", nullptr, Sigqueue_1700,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"Sigqueue_1800", nullptr, Sigqueue_1800,
             nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);

@@ -15,15 +15,17 @@
 
 #include "napi/native_api.h"
 #include <dlfcn.h>
-#include <errno.h>
+#include <cerrno>
 #include <netdb.h>
-#include <string.h>
+#include <cstring>
 #include <pthread.h>
 #include <atomic>
 
 using std::atomic_int;
 using std::atomic_load;
 using std::atomic_fetch_add;
+
+#define STRESS_LOOP_50 50
 
 typedef int (*GetserventRFn)(struct servent *, char *, size_t, struct servent **);
 typedef void (*EndserventFn)(void);
@@ -59,7 +61,7 @@ static bool IsSymbolReady()
 
 static void ResetCursor()
 {
-    if (g_end) g_end();
+    if (g_end) { g_end(); }
 }
 
 static void *ConcurrentWorker(void *arg)
@@ -88,7 +90,7 @@ static napi_value ServentR_0100(napi_env env, napi_callback_info info)
     struct servent *result = nullptr;
     char buf[1024];
     int rv = g_fn(&se, buf, sizeof(buf), &result);
-    if (g_end) g_end();
+    if (g_end) { g_end(); }
     return Ret(env, (rv == 0) ? 0 : 1);
 }
 
@@ -100,10 +102,10 @@ static napi_value ServentR_0200(napi_env env, napi_callback_info info)
     }
     ResetCursor();
     struct servent se;
-    struct servent *result = (struct servent *)1;
+    struct servent *result = reinterpret_cast<struct servent *>(1);
     char buf[1024];
     int rv = g_fn(&se, buf, sizeof(buf), &result);
-    if (g_end) g_end();
+    if (g_end) { g_end(); }
     return Ret(env, (rv == 0 && result == nullptr) ? 0 : (rv == 0 ? 0 : 1));
 }
 
@@ -118,7 +120,7 @@ static napi_value ServentR_0300(napi_env env, napi_callback_info info)
     struct servent *result = nullptr;
     char buf[1024];
     int rv = g_fn(&se, buf, sizeof(buf), &result);
-    if (g_end) g_end();
+    if (g_end) { g_end(); }
     return Ret(env, (rv == ENOENT || rv == 0) ? 0 : 1);
 }
 
@@ -133,7 +135,7 @@ static napi_value ServentR_0400(napi_env env, napi_callback_info info)
     struct servent *result = nullptr;
     char buf[8];
     int rv = g_fn(&se, buf, sizeof(buf), &result);
-    if (g_end) g_end();
+    if (g_end) { g_end(); }
     return Ret(env, (rv == ERANGE || rv == 0) ? 0 : 1);
 }
 
@@ -148,7 +150,7 @@ static napi_value ServentR_0500(napi_env env, napi_callback_info info)
     struct servent *result = nullptr;
     char buf[8];
     int rv = g_fn(&se, buf, sizeof(buf), &result);
-    if (g_end) g_end();
+    if (g_end) { g_end(); }
     return Ret(env, (rv == ESPIPE || rv == ERANGE || rv == 0) ? 0 : 1);
 }
 
@@ -163,7 +165,7 @@ static napi_value ServentR_0600(napi_env env, napi_callback_info info)
     struct servent *result = nullptr;
     char buf[1024];
     (void)g_fn(&se, buf, sizeof(buf), &result);
-    if (g_end) g_end();
+    if (g_end) { g_end(); }
     return Ret(env, 0);
 }
 
@@ -178,7 +180,7 @@ static napi_value ServentR_0700(napi_env env, napi_callback_info info)
     struct servent *result = nullptr;
     char buf[1024];
     (void)g_fn(&se, buf, sizeof(buf), &result);
-    if (g_end) g_end();
+    if (g_end) { g_end(); }
     return Ret(env, 0);
 }
 
@@ -193,7 +195,7 @@ static napi_value ServentR_0800(napi_env env, napi_callback_info info)
     struct servent *result = nullptr;
     char buf[1024];
     (void)g_fn(&se, buf, sizeof(buf), &result);
-    if (g_end) g_end();
+    if (g_end) { g_end(); }
     return Ret(env, 0);
 }
 
@@ -208,7 +210,7 @@ static napi_value ServentR_0900(napi_env env, napi_callback_info info)
     struct servent *result = nullptr;
     char buf[1024];
     (void)g_fn(&se, buf, sizeof(buf), &result);
-    if (g_end) g_end();
+    if (g_end) { g_end(); }
     return Ret(env, 0);
 }
 
@@ -223,7 +225,7 @@ static napi_value ServentR_1000(napi_env env, napi_callback_info info)
     struct servent *result = nullptr;
     char buf[1024];
     (void)g_fn(&se, buf, sizeof(buf), &result);
-    if (g_end) g_end();
+    if (g_end) { g_end(); }
     return Ret(env, 0);
 }
 
@@ -238,7 +240,7 @@ static napi_value ServentR_1100(napi_env env, napi_callback_info info)
     struct servent *result = nullptr;
     char buf[1024];
     int rv = g_fn(&se, buf, sizeof(buf), &result);
-    if (g_end) g_end();
+    if (g_end) { g_end(); }
     if (rv == 0 && result) {
         return Ret(env, 0);
     }
@@ -263,7 +265,7 @@ static napi_value ServentR_1200(napi_env env, napi_callback_info info)
     for (int i = 0; i < CONCURRENT_THREADS; i++) {
         (void)pthread_join(tids[i], nullptr);
     }
-    if (g_end) g_end();
+    if (g_end) { g_end(); }
     return Ret(env, 0);
 }
 
@@ -282,7 +284,7 @@ static napi_value ServentR_1300(napi_env env, napi_callback_info info)
     while ((rv = g_fn(&se, buf, sizeof(buf), &result)) == 0 && count < MAX_ENUM) {
         count++;
     }
-    if (g_end) g_end();
+    if (g_end) { g_end(); }
     return Ret(env, (rv == ENOENT || rv == 0) ? 0 : 1);
 }
 
@@ -299,7 +301,7 @@ static napi_value ServentR_1400(napi_env env, napi_callback_info info)
     char buf[1024];
     int rv = g_fn(&se, buf, sizeof(buf), &result);
     int savedErrno = errno;
-    if (g_end) g_end();
+    if (g_end) { g_end(); }
     return Ret(env, (savedErrno == rv) ? 0 : 1);
 }
 
@@ -332,7 +334,7 @@ static napi_value ServentR_1600(napi_env env, napi_callback_info info)
     while ((rv = g_fn(&se, buf, sizeof(buf), &result)) == 0 && count < MAX_ENUM) {
         count++;
     }
-    if (g_end) g_end();
+    if (g_end) { g_end(); }
     return Ret(env, 0);
 }
 
@@ -347,7 +349,7 @@ static napi_value ServentR_1700(napi_env env, napi_callback_info info)
     struct servent *result = nullptr;
     char buf[1024];
     (void)g_fn(&se, buf, sizeof(buf), &result);
-    if (g_end) g_end();
+    if (g_end) { g_end(); }
     return Ret(env, 0);
 }
 
@@ -362,7 +364,7 @@ static napi_value ServentR_1800(napi_env env, napi_callback_info info)
     struct servent *result = nullptr;
     char buf[1024];
     (void)g_fn(&se, buf, sizeof(buf), &result);
-    if (g_end) g_end();
+    if (g_end) { g_end(); }
     return Ret(env, 0);
 }
 
@@ -373,13 +375,13 @@ static napi_value ServentR_1900(napi_env env, napi_callback_info info)
         return Ret(env, 0);
     }
     ResetCursor();
-    for (int i = 0; i < 50; i++) {
+    for (int i = 0; i < STRESS_LOOP_50; i++) {
         struct servent se;
         struct servent *result = nullptr;
         char buf[1024];
         (void)g_fn(&se, buf, sizeof(buf), &result);
     }
-    if (g_end) g_end();
+    if (g_end) { g_end(); }
     return Ret(env, 0);
 }
 
@@ -401,7 +403,7 @@ static napi_value ServentR_2000(napi_env env, napi_callback_info info)
     for (int i = 0; i < CONCURRENT_THREADS; i++) {
         (void)pthread_join(tids[i], nullptr);
     }
-    if (g_end) g_end();
+    if (g_end) { g_end(); }
     return Ret(env, 0);
 }
 

@@ -1,6 +1,0 @@
-{
-  "name": "libgroup_member_test.so",
-  "types": "./Index.d.ts",
-  "version": "1.0.0",
-  "description": "group_member test module"
-}

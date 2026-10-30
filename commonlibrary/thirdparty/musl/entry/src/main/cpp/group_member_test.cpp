@@ -17,10 +17,11 @@
 #include <dlfcn.h>
 #include <unistd.h>
 #include <grp.h>
+#include <cstdlib>
 
-typedef int (*group_member_t)(gid_t gid);
+typedef int (*GroupMemberT)(gid_t gid);
 
-static group_member_t g_group_member = nullptr;
+static GroupMemberT g_groupMember = nullptr;
 
 static napi_value Ret(napi_env env, int32_t val)
 {
@@ -31,12 +32,12 @@ static napi_value Ret(napi_env env, int32_t val)
 
 static void LoadFunctions()
 {
-    g_group_member = (group_member_t)dlsym(RTLD_DEFAULT, "group_member");
+    g_groupMember = (GroupMemberT)dlsym(RTLD_DEFAULT, "group_member");
 }
 
 static bool IsSymbolReady()
 {
-    return g_group_member != nullptr;
+    return g_groupMember != nullptr;
 }
 
 static napi_value GroupMember_0100(napi_env env, napi_callback_info info)
@@ -45,7 +46,7 @@ static napi_value GroupMember_0100(napi_env env, napi_callback_info info)
     if (!IsSymbolReady()) {
         return Ret(env, 0);
     }
-    int rv = g_group_member(getegid());
+    int rv = g_groupMember(getegid());
     return Ret(env, (rv == 0 || rv == 1) ? 0 : 1);
 }
 
@@ -55,20 +56,22 @@ static napi_value GroupMember_0200(napi_env env, napi_callback_info info)
     if (!IsSymbolReady()) {
         return Ret(env, 0);
     }
-    int rv = g_group_member(99999);
+    int rv = g_groupMember(99999);
     return Ret(env, rv == 0 ? 0 : 1);
 }
 
 static napi_value GroupMember_0300(napi_env env, napi_callback_info info)
 {
     (void)info;
-    return Ret(env, 0);
-}
-
-static napi_value GroupMember_0400(napi_env env, napi_callback_info info)
-{
-    (void)info;
-    return Ret(env, 0);
+    if (!IsSymbolReady()) {
+        return Ret(env, 0);
+    }
+    int n = getgroups(0, nullptr);
+    if (n != 0) {
+        return Ret(env, 0);
+    }
+    int rv = g_groupMember(getgid());
+    return Ret(env, rv == 0 ? 0 : 1);
 }
 
 static napi_value GroupMember_0500(napi_env env, napi_callback_info info)
@@ -77,7 +80,7 @@ static napi_value GroupMember_0500(napi_env env, napi_callback_info info)
     if (!IsSymbolReady()) {
         return Ret(env, 0);
     }
-    int rv = g_group_member(0);
+    int rv = g_groupMember(0);
     return Ret(env, (rv == 0 || rv == 1) ? 0 : 1);
 }
 
@@ -87,20 +90,33 @@ static napi_value GroupMember_0600(napi_env env, napi_callback_info info)
     if (!IsSymbolReady()) {
         return Ret(env, 0);
     }
-    int rv = g_group_member(getegid());
+    int rv = g_groupMember(getegid());
     return Ret(env, (rv == 0 || rv == 1) ? 0 : 1);
 }
 
 static napi_value GroupMember_0700(napi_env env, napi_callback_info info)
 {
     (void)info;
-    return Ret(env, 0);
-}
-
-static napi_value GroupMember_0800(napi_env env, napi_callback_info info)
-{
-    (void)info;
-    return Ret(env, 0);
+    if (!IsSymbolReady()) {
+        return Ret(env, 0);
+    }
+    int n = getgroups(0, nullptr);
+    if (n <= 0) {
+        return Ret(env, 0);
+    }
+    gid_t *list = static_cast<gid_t *>(malloc(sizeof(gid_t) * n));
+    if (!list) {
+        return Ret(env, 1);
+    }
+    int cnt = getgroups(n, list);
+    if (cnt < 0) {
+        free(list);
+        return Ret(env, 1);
+    }
+    gid_t gidLast = list[cnt - 1];
+    free(list);
+    int rv = g_groupMember(gidLast);
+    return Ret(env, rv == 1 ? 0 : 1);
 }
 
 static napi_value GroupMember_0900(napi_env env, napi_callback_info info)
@@ -109,14 +125,8 @@ static napi_value GroupMember_0900(napi_env env, napi_callback_info info)
     if (!IsSymbolReady()) {
         return Ret(env, 0);
     }
-    int rv = g_group_member(getegid());
+    int rv = g_groupMember(getegid());
     return Ret(env, (rv == 0 || rv == 1) ? 0 : 1);
-}
-
-static napi_value GroupMember_1000(napi_env env, napi_callback_info info)
-{
-    (void)info;
-    return Ret(env, 0);
 }
 
 EXTERN_C_START
@@ -127,13 +137,10 @@ static napi_value Init(napi_env env, napi_value exports)
         {"GroupMember_0100", nullptr, GroupMember_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GroupMember_0200", nullptr, GroupMember_0200, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GroupMember_0300", nullptr, GroupMember_0300, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"GroupMember_0400", nullptr, GroupMember_0400, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GroupMember_0500", nullptr, GroupMember_0500, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GroupMember_0600", nullptr, GroupMember_0600, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GroupMember_0700", nullptr, GroupMember_0700, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"GroupMember_0800", nullptr, GroupMember_0800, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GroupMember_0900", nullptr, GroupMember_0900, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"GroupMember_1000", nullptr, GroupMember_1000, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

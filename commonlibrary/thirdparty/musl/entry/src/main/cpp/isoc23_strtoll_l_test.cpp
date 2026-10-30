@@ -15,9 +15,12 @@
 
 #include "napi/native_api.h"
 #include <dlfcn.h>
-#include <errno.h>
-#include <stdlib.h>
-#include <limits.h>
+#include <cerrno>
+#include <cstdlib>
+#include <climits>
+
+#define EXPECTED_BIN_10 10
+#define EXPECTED_HEX_FF 255
 
 typedef long long (*StrtollLFn)(const char *, char **, int, void *);
 
@@ -53,7 +56,7 @@ static napi_value Isoc23StrtollL_0100(napi_env env, napi_callback_info info)
     char *endptr = nullptr;
     long long val = g_fn("0b1010", &endptr, 0, nullptr);
     int err = errno;
-    if (val == 10 && err == 0 && endptr != nullptr && *endptr == '\0') {
+    if (val == EXPECTED_BIN_10 && err == 0 && endptr != nullptr && *endptr == '\0') {
         return Ret(env, 0);
     }
     return Ret(env, 1);
@@ -68,13 +71,13 @@ static napi_value Isoc23StrtollL_0200(napi_env env, napi_callback_info info)
     errno = 0;
     char *endptr1 = nullptr;
     long long val1 = g_fn("0xff", &endptr1, 0, nullptr);
-    if (!(val1 == 255 && endptr1 != nullptr && *endptr1 == '\0')) {
+    if (!(val1 == EXPECTED_HEX_FF && endptr1 != nullptr && *endptr1 == '\0')) {
         return Ret(env, 1);
     }
     errno = 0;
     char *endptr2 = nullptr;
-    long long val2 = g_fn("0xff", &endptr2, 0, (void *)1);
-    if (val2 == 255 && endptr2 != nullptr && *endptr2 == '\0') {
+    long long val2 = g_fn("0xff", &endptr2, 0, reinterpret_cast<void*>(1));
+    if (val2 == EXPECTED_HEX_FF && endptr2 != nullptr && *endptr2 == '\0') {
         return Ret(env, 0);
     }
     return Ret(env, 1);

@@ -15,9 +15,12 @@
 
 #include "napi/native_api.h"
 #include <dlfcn.h>
-#include <errno.h>
-#include <stdlib.h>
-#include <limits.h>
+#include <cerrno>
+#include <cstdlib>
+#include <climits>
+
+#define EXPECTED_BIN_5 5
+#define EXPECTED_DEC_255 255
 
 typedef unsigned long (*StrtoulFn)(const char *, char **, int);
 
@@ -53,7 +56,7 @@ static napi_value Isoc23Strtoul_0100(napi_env env, napi_callback_info info)
     char *endptr = nullptr;
     unsigned long val = g_fn("0b101", &endptr, 0);
     int err = errno;
-    if (val == 5 && err == 0 && endptr != nullptr && *endptr == '\0') {
+    if (val == EXPECTED_BIN_5 && err == 0 && endptr != nullptr && *endptr == '\0') {
         return Ret(env, 0);
     }
     return Ret(env, 1);
@@ -69,7 +72,7 @@ static napi_value Isoc23Strtoul_0200(napi_env env, napi_callback_info info)
     char *endptr = nullptr;
     unsigned long val = g_fn("-1", &endptr, 10);
     int err = errno;
-    if (val == (unsigned long)ULONG_MAX && err == 0 && endptr != nullptr && *endptr == '\0') {
+    if (val == static_cast<unsigned long>(ULONG_MAX) && err == 0 && endptr != nullptr && *endptr == '\0') {
         return Ret(env, 0);
     }
     return Ret(env, 1);
@@ -117,7 +120,7 @@ static napi_value Isoc23Strtoul_0500(napi_env env, napi_callback_info info)
     errno = 0;
     unsigned long val = g_fn("255", nullptr, 10);
     int err = errno;
-    if (val == 255 && err == 0) {
+    if (val == EXPECTED_DEC_255 && err == 0) {
         return Ret(env, 0);
     }
     return Ret(env, 1);

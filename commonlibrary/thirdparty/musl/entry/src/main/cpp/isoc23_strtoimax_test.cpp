@@ -15,10 +15,13 @@
 
 #include "napi/native_api.h"
 #include <dlfcn.h>
-#include <errno.h>
-#include <stdlib.h>
-#include <limits.h>
-#include <stdint.h>
+#include <cerrno>
+#include <cstdlib>
+#include <climits>
+#include <cstdint>
+
+#define EXPECTED_BIN_5 5
+#define EXPECTED_NEG_3 (-3)
 
 typedef intmax_t (*StrtoimaxFn)(const char *, char **, int);
 typedef uintmax_t (*StrtoumaxFn)(const char *, char **, int);
@@ -57,7 +60,7 @@ static napi_value Isoc23Strtoimax_0100(napi_env env, napi_callback_info info)
     char *endptr = nullptr;
     intmax_t val = g_fn("0b101", &endptr, 0);
     int err = errno;
-    if (val == 5 && err == 0 && endptr != nullptr && *endptr == '\0') {
+    if (val == EXPECTED_BIN_5 && err == 0 && endptr != nullptr && *endptr == '\0') {
         return Ret(env, 0);
     }
     return Ret(env, 1);
@@ -105,7 +108,7 @@ static napi_value Isoc23Strtoimax_0400(napi_env env, napi_callback_info info)
     char *endptr = nullptr;
     intmax_t val = g_fn("-0b11", &endptr, 0);
     int err = errno;
-    if (val == -3 && err == 0 && endptr != nullptr && *endptr == '\0') {
+    if (val == EXPECTED_NEG_3 && err == 0 && endptr != nullptr && *endptr == '\0') {
         return Ret(env, 0);
     }
     return Ret(env, 1);
@@ -137,7 +140,7 @@ static napi_value Isoc23Strtoimax_0600(napi_env env, napi_callback_info info)
     errno = 0;
     intmax_t val = g_fn("0b101", nullptr, 0);
     int err = errno;
-    if (val == 5 && err == 0) {
+    if (val == EXPECTED_BIN_5 && err == 0) {
         return Ret(env, 0);
     }
     return Ret(env, 1);
@@ -151,7 +154,7 @@ static napi_value Isoc23Strtoimax_0700(napi_env env, napi_callback_info info)
     }
     errno = 0;
     intmax_t sval = g_fn("0b101", nullptr, 0);
-    if (sval != 5) {
+    if (sval != EXPECTED_BIN_5) {
         return Ret(env, 1);
     }
     if (g_strtoumaxFn == nullptr) {
@@ -159,7 +162,7 @@ static napi_value Isoc23Strtoimax_0700(napi_env env, napi_callback_info info)
     }
     errno = 0;
     uintmax_t uval = g_strtoumaxFn("0b101", nullptr, 0);
-    if (uval == 5) {
+    if (uval == EXPECTED_BIN_5) {
         return Ret(env, 0);
     }
     return Ret(env, 1);

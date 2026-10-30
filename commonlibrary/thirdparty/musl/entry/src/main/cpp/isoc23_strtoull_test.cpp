@@ -15,9 +15,13 @@
 
 #include "napi/native_api.h"
 #include <dlfcn.h>
-#include <errno.h>
-#include <stdlib.h>
-#include <limits.h>
+#include <cerrno>
+#include <cstdlib>
+#include <climits>
+
+#define EXPECTED_BIN_5 5
+#define EXPECTED_VAL_15 15
+#define TEST_ERRNO_7 7
 
 typedef unsigned long long (*StrtoullFn)(const char *, char **, int);
 
@@ -53,7 +57,7 @@ static napi_value Isoc23Strtoull_0100(napi_env env, napi_callback_info info)
     char *endptr = nullptr;
     unsigned long long val = g_fn("0b101", &endptr, 2);
     int err = errno;
-    if (val == 5 && err == 0 && endptr != nullptr && *endptr == '\0') {
+    if (val == EXPECTED_BIN_5 && err == 0 && endptr != nullptr && *endptr == '\0') {
         return Ret(env, 0);
     }
     return Ret(env, 1);
@@ -69,7 +73,7 @@ static napi_value Isoc23Strtoull_0200(napi_env env, napi_callback_info info)
     char *endptr = nullptr;
     unsigned long long val = g_fn("-1", &endptr, 10);
     int err = errno;
-    if (val == (unsigned long long)ULLONG_MAX && err == 0 && endptr != nullptr && *endptr == '\0') {
+    if (val == static_cast<unsigned long long>(ULLONG_MAX) && err == 0 && endptr != nullptr && *endptr == '\0') {
         return Ret(env, 0);
     }
     return Ret(env, 1);
@@ -130,11 +134,11 @@ static napi_value Isoc23Strtoull_0600(napi_env env, napi_callback_info info)
     if (!IsSymbolReady()) {
         return Ret(env, 0);
     }
-    errno = 7;
+    errno = TEST_ERRNO_7;
     char *endptr = nullptr;
     unsigned long long val = g_fn("0b1111", &endptr, 0);
     int err = errno;
-    if (val == 15 && err == 7 && endptr != nullptr && *endptr == '\0') {
+    if (val == EXPECTED_VAL_15 && err == TEST_ERRNO_7 && endptr != nullptr && *endptr == '\0') {
         return Ret(env, 0);
     }
     return Ret(env, 1);
