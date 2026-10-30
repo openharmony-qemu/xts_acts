@@ -17,18 +17,45 @@ import httpRequestMethodTest from "./HttpRequestMethod.test";
 import httpRequestOptionsTest from "./HttpRequestOptions.test";
 import httpRequestDestroyTest from './HttpRequestDestroy.test';
 import httpRequestErrorCodeTest from "./HttpRequestErrorCode.test";
+import HttpRequestDataCATest from './HttpRequestCAData.test';
+import HttpRequestGmssl from './HttpRequestGmssl.test.ets';
+import HttpRequestInStreamTest from './HttpRequestInStream.test';
+import HttpRequestMaxAutoRedirectsTest from './HttpRequestRedirects.test';
+import HttpRequestCustomMethodTest from './HttpRequestCustomMethod.test';
+import HttpRequestSniTest from './HttpRequestSni.test';
+import HttpRequestCustomResponseHeaderTest from './HttpRequestCustomResponseHeader.test';
+import HttpRequestInactivityMsTest from './HttpRequestInactivityMs.test';
+import HttpRequestPatchTest from './HttpRequestPatch.test';
+import HttpRequestSyncTest from './HttpRequestSync.test';
+import HttpRequestEnableAutoCookieTest from './HttpRequestEnableAutoCookie.test';
+import HttpRequestTlsEnablePartialChainTest from './HttpRequestTlsEnablePartialChain.test';
+import HttpRequestReuseConnectionsTest from './HttpRequestReuseConnections.test';
+
 import EmptyTest from './Empty.test';
 import connection from '@ohos.net.connection';
 
 let isDefaultNet: boolean = connection.hasDefaultNetSync();
 
-export default function testsuite() {
+export default function testsuite(): void {
+    HttpRequestMaxAutoRedirectsTest();
+    HttpRequestCustomMethodTest();
+    HttpRequestCustomResponseHeaderTest();
     if(isDefaultNet){
         httpRequestMethodTest();
         httpRequestDestroyTest();
         httpRequestErrorCodeTest();
+        HttpRequestGmssl();
+        HttpRequestDataCATest();
+        HttpRequestInStreamTest();
+        httpRequestOptionsTest();
+        HttpRequestSniTest();
+        HttpRequestInactivityMsTest();
+        HttpRequestPatchTest();
+        HttpRequestSyncTest();
+        HttpRequestReuseConnectionsTest();
+        HttpRequestEnableAutoCookieTest();
+        HttpRequestTlsEnablePartialChainTest();
     }else{
         EmptyTest();
     }
-
 }
