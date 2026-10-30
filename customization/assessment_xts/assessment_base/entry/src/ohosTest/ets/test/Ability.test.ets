@@ -47,15 +47,15 @@ export default function AutomaticSceneConTest() {
     })
 
     /**
-     * @tc.number SUB_Customization_Assessment_begin_Success_001
-     * @tc.name   SUB_Customization_Assessment_begin_Success_001
+     * @tc.number SUB_Customization_Assessment_begin_Success_0001
+     * @tc.name   SUB_Customization_Assessment_begin_Success_0001
      * @tc.desc   begin interface is called successfully and isActive returns true
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_begin_Success_001', Level.LEVEL0, async () => {
-      const testNum = 'SUB_Customization_Assessment_begin_Success_001';
+    it('SUB_Customization_Assessment_begin_Success_0001', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_begin_Success_0001';
       let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
       try {
         // 应用上下文
@@ -97,15 +97,15 @@ export default function AutomaticSceneConTest() {
     })
 
     /**
-     * @tc.number SUB_Customization_Assessment_preparatory_begin_Success_002
-     * @tc.name   SUB_Customization_Assessment_preparatory_begin_Success_002
+     * @tc.number SUB_Customization_Assessment_preparatory_begin_Success_0002
+     * @tc.name   SUB_Customization_Assessment_preparatory_begin_Success_0002
      * @tc.desc   begin interface is called repeatedly without exception
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_preparatory_begin_Success_002', Level.LEVEL0, async () => {
-      const testNum = 'SUB_Customization_Assessment_preparatory_begin_Success_002';
+    it('SUB_Customization_Assessment_preparatory_begin_Success_0002', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_preparatory_begin_Success_0002';
       try {
         // 应用上下文
         let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
@@ -145,15 +145,15 @@ export default function AutomaticSceneConTest() {
     })
 
     /**
-     * @tc.number SUB_Customization_Assessment_begin_error_003
-     * @tc.name   SUB_Customization_Assessment_begin_error_003
+     * @tc.number SUB_Customization_Assessment_begin_error_0003
+     * @tc.name   SUB_Customization_Assessment_begin_error_0003
      * @tc.desc   begin interface is called again during an active assessment and throws 36700002
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_begin_error_003', Level.LEVEL0, async () => {
-      const testNum = 'SUB_Customization_Assessment_begin_error_003';
+    it('SUB_Customization_Assessment_begin_error_0003', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_begin_error_0003';
       let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
       try {
         // 应用上下文
@@ -193,15 +193,15 @@ export default function AutomaticSceneConTest() {
     })
 
     /**
-     * @tc.number SUB_Customization_Assessment_begin_userCancel_Success_001
-     * @tc.name   SUB_Customization_Assessment_begin_userCancel_Success_001
+     * @tc.number SUB_Customization_Assessment_begin_userCancel_Success_0001
+     * @tc.name   SUB_Customization_Assessment_begin_userCancel_Success_0001
      * @tc.desc   begin interface with user canceling the confirm dialog, onBegin callback returns USER_CANCEL and isActive returns false
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_begin_userCancel_Success_001', Level.LEVEL0, async () => {
-      const testNum = 'SUB_Customization_Assessment_begin_userCancel_Success_001';
+    it('SUB_Customization_Assessment_begin_userCancel_Success_0001', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_begin_userCancel_Success_0001';
       let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
       try {
         let config: assessment.AssessmentConfig = {
@@ -241,15 +241,15 @@ export default function AutomaticSceneConTest() {
     })
 
     /**
-     * @tc.number SUB_Customization_Assessment_begin_paramError_001
-     * @tc.name   SUB_Customization_Assessment_begin_paramError_001
+     * @tc.number SUB_Customization_Assessment_begin_paramError_0001
+     * @tc.name   SUB_Customization_Assessment_begin_paramError_0001
      * @tc.desc   begin interface with 11 allowedApps (max is 10) throws 401 parameter error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_begin_paramError_001', Level.LEVEL0, async () => {
-      const testNum = 'SUB_Customization_Assessment_begin_paramError_001';
+    it('SUB_Customization_Assessment_begin_paramError_0001', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_begin_paramError_0001';
       let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
       try {
         let allowedApps: string[] = [];
@@ -281,15 +281,15 @@ export default function AutomaticSceneConTest() {
 
 
     /**
-     * @tc.number SUB_Customization_Assessment_onBegin_Success_001
-     * @tc.name   SUB_Customization_Assessment_onBegin_Success_001
+     * @tc.number SUB_Customization_Assessment_onBegin_Success_0001
+     * @tc.name   SUB_Customization_Assessment_onBegin_Success_0001
      * @tc.desc   onBegin callback of the IAssessmentCallback interface returns OK after begin succeeds
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_onBegin_Success_001', Level.LEVEL0, async () => {
-      const testNum = 'SUB_Customization_Assessment_onBegin_Success_001';
+    it('SUB_Customization_Assessment_onBegin_Success_0001', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_onBegin_Success_0001';
       let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
       try {
         let config: assessment.AssessmentConfig = {
@@ -328,15 +328,15 @@ export default function AutomaticSceneConTest() {
 
 
     /**
-     * @tc.number SUB_Customization_Assessment_end_success_001
-     * @tc.name   SUB_Customization_Assessment_end_success_001
+     * @tc.number SUB_Customization_Assessment_end_success_0001
+     * @tc.name   SUB_Customization_Assessment_end_success_0001
      * @tc.desc   end interface is called successfully after the assessment began
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_end_success_001', Level.LEVEL0, async () => {
-      const testNum = 'SUB_Customization_Assessment_end_success_001';
+    it('SUB_Customization_Assessment_end_success_0001', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_end_success_0001';
       try {
         // 应用上下文
         let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
@@ -375,15 +375,15 @@ export default function AutomaticSceneConTest() {
     })
 
     /**
-     * @tc.number SUB_Customization_Assessment_onEnd_Success_001
-     * @tc.name   SUB_Customization_Assessment_onEnd_Success_001
+     * @tc.number SUB_Customization_Assessment_onEnd_Success_0001
+     * @tc.name   SUB_Customization_Assessment_onEnd_Success_0001
      * @tc.desc   onEnd callback of the IAssessmentCallback interface is triggered after end and isActive returns false
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_onEnd_Success_001', Level.LEVEL0, async () => {
-      const testNum = 'SUB_Customization_Assessment_onEnd_Success_001';
+    it('SUB_Customization_Assessment_onEnd_Success_0001', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_onEnd_Success_0001';
       let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
       try {
         let config: assessment.AssessmentConfig = {
@@ -425,15 +425,15 @@ export default function AutomaticSceneConTest() {
     })
 
     /**
-     * @tc.number SUB_Customization_Assessment_end_error_002
-     * @tc.name   SUB_Customization_Assessment_end_error_002
+     * @tc.number SUB_Customization_Assessment_end_error_0002
+     * @tc.name   SUB_Customization_Assessment_end_error_0002
      * @tc.desc   end interface is called when the assessment is not active and throws 36700003
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_end_error_002', Level.LEVEL0, async () => {
-      const testNum = 'SUB_Customization_Assessment_end_error_002';
+    it('SUB_Customization_Assessment_end_error_0002', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_end_error_0002';
       try {
         // 应用上下文
         let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
@@ -446,15 +446,15 @@ export default function AutomaticSceneConTest() {
     })
 
     /**
-     * @tc.number SUB_Customization_Assessment_isActive_Success_001
-     * @tc.name   SUB_Customization_Assessment_isActive_Success_001
+     * @tc.number SUB_Customization_Assessment_isActive_Success_0001
+     * @tc.name   SUB_Customization_Assessment_isActive_Success_0001
      * @tc.desc   isActive interface returns true during an active assessment
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_isActive_Success_001', Level.LEVEL0, async () => {
-      const testNum = 'SUB_Customization_Assessment_isActive_Success_001';
+    it('SUB_Customization_Assessment_isActive_Success_0001', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_isActive_Success_0001';
       let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
       try {
         // 应用上下文
@@ -497,15 +497,15 @@ export default function AutomaticSceneConTest() {
     })
 
     /**
-     * @tc.number SUB_Customization_Assessment_isActive_Success_002
-     * @tc.name   SUB_Customization_Assessment_isActive_Success_002
+     * @tc.number SUB_Customization_Assessment_isActive_Success_0002
+     * @tc.name   SUB_Customization_Assessment_isActive_Success_0002
      * @tc.desc   isActive interface returns false when not in assessment
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_isActive_Success_002', Level.LEVEL0, async () => {
-      const testNum = 'SUB_Customization_Assessment_isActive_Success_002';
+    it('SUB_Customization_Assessment_isActive_Success_0002', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_isActive_Success_0002';
       try {
         const active: boolean = assessment.isActive();
         expect(active).assertFalse()
@@ -516,15 +516,15 @@ export default function AutomaticSceneConTest() {
     })
 
     /**
-     * @tc.number SUB_Customization_Assessment_getConfiguration_Success_001
-     * @tc.name   SUB_Customization_Assessment_getConfiguration_Success_001
+     * @tc.number SUB_Customization_Assessment_getConfiguration_Success_0001
+     * @tc.name   SUB_Customization_Assessment_getConfiguration_Success_0001
      * @tc.desc   getConfiguration interface returns the configured duration during an active assessment
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_getConfiguration_Success_001', Level.LEVEL0, async () => {
-      const testNum = 'SUB_Customization_Assessment_getConfiguration_Success_001';
+    it('SUB_Customization_Assessment_getConfiguration_Success_0001', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_getConfiguration_Success_0001';
       let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
       try {
         // 应用上下文
@@ -567,15 +567,15 @@ export default function AutomaticSceneConTest() {
     })
 
     /**
-     * @tc.number SUB_Customization_Assessment_getConfiguration_Success_002
-     * @tc.name   SUB_Customization_Assessment_getConfiguration_Success_002
+     * @tc.number SUB_Customization_Assessment_getConfiguration_Success_0002
+     * @tc.name   SUB_Customization_Assessment_getConfiguration_Success_0002
      * @tc.desc   getConfiguration interface returns duration 0 when the assessment is not active
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_getConfiguration_Success_002', Level.LEVEL0, async () => {
-      const testNum = 'SUB_Customization_Assessment_getConfiguration_Success_002';
+    it('SUB_Customization_Assessment_getConfiguration_Success_0002', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_getConfiguration_Success_0002';
       try {
         const getconfig: assessment.AssessmentConfig = assessment.getConfiguration();
         expect(getconfig.duration).assertEqual(0)
@@ -586,15 +586,15 @@ export default function AutomaticSceneConTest() {
     })
 
     /**
-     * @tc.number SUB_Customization_Assessment_getConfiguration_Success_003
-     * @tc.name   SUB_Customization_Assessment_getConfiguration_Success_003
+     * @tc.number SUB_Customization_Assessment_getConfiguration_Success_0003
+     * @tc.name   SUB_Customization_Assessment_getConfiguration_Success_0003
      * @tc.desc   getConfiguration interface returns empty allowedApps when the assessment is not active
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_getConfiguration_Success_003', Level.LEVEL0, async () => {
-      const testNum = 'SUB_Customization_Assessment_getConfiguration_Success_003';
+    it('SUB_Customization_Assessment_getConfiguration_Success_0003', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_getConfiguration_Success_0003';
       try {
         const getconfig: assessment.AssessmentConfig = assessment.getConfiguration();
         expect(getconfig.allowedApps.length).assertEqual(0)
@@ -605,15 +605,15 @@ export default function AutomaticSceneConTest() {
     })
 
     /**
-     * @tc.number SUB_Customization_Assessment_getConfiguration_Success_004
-     * @tc.name   SUB_Customization_Assessment_getConfiguration_Success_004
+     * @tc.number SUB_Customization_Assessment_getConfiguration_Success_0004
+     * @tc.name   SUB_Customization_Assessment_getConfiguration_Success_0004
      * @tc.desc   getConfiguration interface returns the default config after the assessment ended
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_getConfiguration_Success_004', Level.LEVEL0, async () => {
-      const testNum = 'SUB_Customization_Assessment_getConfiguration_Success_004';
+    it('SUB_Customization_Assessment_getConfiguration_Success_0004', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_getConfiguration_Success_0004';
       let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
       try {
         // 应用上下文
@@ -656,15 +656,15 @@ export default function AutomaticSceneConTest() {
     })
 
     /**
-     * @tc.number SUB_Customization_Assessment_getConfiguration_Success_005
-     * @tc.name   SUB_Customization_Assessment_getConfiguration_Success_005
+     * @tc.number SUB_Customization_Assessment_getConfiguration_Success_0005
+     * @tc.name   SUB_Customization_Assessment_getConfiguration_Success_0005
      * @tc.desc   getConfiguration interface returns the configured allowedApps during an active assessment
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_getConfiguration_Success_005', Level.LEVEL0, async () => {
-      const testNum = 'SUB_Customization_Assessment_getConfiguration_Success_005';
+    it('SUB_Customization_Assessment_getConfiguration_Success_0005', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_getConfiguration_Success_0005';
       let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
       try {
         let config: assessment.AssessmentConfig = {
@@ -703,15 +703,15 @@ export default function AutomaticSceneConTest() {
     })
 
     /**
-     * @tc.number SUB_Customization_Assessment_duration_Success_001
-     * @tc.name   SUB_Customization_Assessment_duration_Success_001
+     * @tc.number SUB_Customization_Assessment_duration_Success_0001
+     * @tc.name   SUB_Customization_Assessment_duration_Success_0001
      * @tc.desc   the duration field of AssessmentConfig is set to 7200000 successfully
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_duration_Success_001', Level.LEVEL0, async () => {
-      const testNum = 'SUB_Customization_Assessment_duration_Success_001';
+    it('SUB_Customization_Assessment_duration_Success_0001', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_duration_Success_0001';
       hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
 
       // 评估配置：最大时长2小时（7200000毫秒），评估期间允许运行包名为com.samples.assessment的应用
@@ -725,15 +725,15 @@ export default function AutomaticSceneConTest() {
     })
 
     /**
-     * @tc.number SUB_Customization_Assessment_duration_Success_002
-     * @tc.name   SUB_Customization_Assessment_duration_Success_002
+     * @tc.number SUB_Customization_Assessment_duration_Success_0002
+     * @tc.name   SUB_Customization_Assessment_duration_Success_0002
      * @tc.desc   the duration field of AssessmentConfig is set to 0 which means unlimited
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_duration_Success_002', Level.LEVEL0, async () => {
-      const testNum = 'SUB_Customization_Assessment_duration_Success_002';
+    it('SUB_Customization_Assessment_duration_Success_0002', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_duration_Success_0002';
       hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
 
       // 评估配置：不限时（duration为0），评估期间允许运行包名为com.example.dictionary的应用
@@ -746,15 +746,15 @@ export default function AutomaticSceneConTest() {
     })
 
     /**
-     * @tc.number SUB_Customization_Assessment_duration_Success_003
-     * @tc.name   SUB_Customization_Assessment_duration_Success_003
+     * @tc.number SUB_Customization_Assessment_duration_Success_0003
+     * @tc.name   SUB_Customization_Assessment_duration_Success_0003
      * @tc.desc   the duration field of AssessmentConfig is set to 0 with allowedApps configured
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_duration_Success_003', Level.LEVEL0, async () => {
-      const testNum = 'SUB_Customization_Assessment_duration_Success_003';
+    it('SUB_Customization_Assessment_duration_Success_0003', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_duration_Success_0003';
       hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
 
       // 评估配置：不限时（duration为0），评估期间允许运行包名为com.example.dictionary的应用
@@ -768,15 +768,15 @@ export default function AutomaticSceneConTest() {
     })
 
     /**
-     * @tc.number SUB_Customization_Assessment_allowedApps_Success_001
-     * @tc.name   SUB_Customization_Assessment_allowedApps_Success_001
+     * @tc.number SUB_Customization_Assessment_allowedApps_Success_0001
+     * @tc.name   SUB_Customization_Assessment_allowedApps_Success_0001
      * @tc.desc   the allowedApps field of AssessmentConfig supports a list of package names
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_allowedApps_Success_001', Level.LEVEL0, async () => {
-      const testNum = 'SUB_Customization_Assessment_allowedApps_Success_001';
+    it('SUB_Customization_Assessment_allowedApps_Success_0001', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_allowedApps_Success_0001';
       hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
 
       // 评估配置：最大时长1小时（3600000毫秒），评估期间允许运行包名为com.example.dictionary等三个应用
@@ -791,15 +791,15 @@ export default function AutomaticSceneConTest() {
     })
 
     /**
-     * @tc.number SUB_Customization_Assessment_allowedApps_Success_002
-     * @tc.name   SUB_Customization_Assessment_allowedApps_Success_002
+     * @tc.number SUB_Customization_Assessment_allowedApps_Success_0002
+     * @tc.name   SUB_Customization_Assessment_allowedApps_Success_0002
      * @tc.desc   the allowedApps field of AssessmentConfig can be an empty array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_allowedApps_Success_002', Level.LEVEL0, async () => {
-      const testNum = 'SUB_Customization_Assessment_allowedApps_Success_002';
+    it('SUB_Customization_Assessment_allowedApps_Success_0002', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_allowedApps_Success_0002';
       hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
 
       // 评估配置：白名单为空数组
@@ -812,15 +812,15 @@ export default function AutomaticSceneConTest() {
     })
 
     /**
-     * @tc.number SUB_Customization_Assessment_allowedApps_Success_003
-     * @tc.name   SUB_Customization_Assessment_allowedApps_Success_003
+     * @tc.number SUB_Customization_Assessment_allowedApps_Success_0003
+     * @tc.name   SUB_Customization_Assessment_allowedApps_Success_0003
      * @tc.desc   the allowedApps field of AssessmentConfig supports at most 10 package names
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_allowedApps_Success_003', Level.LEVEL0, async () => {
-      const testNum = 'SUB_Customization_Assessment_allowedApps_Success_003';
+    it('SUB_Customization_Assessment_allowedApps_Success_0003', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_allowedApps_Success_0003';
       hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
 
       // 评估配置：白名单配置10个包名（接口规定最多支持10个）
@@ -838,15 +838,15 @@ export default function AutomaticSceneConTest() {
     })
 
     /**
-     * @tc.number SUB_Customization_Assessment_assessmentErrorCode_Success_001
-     * @tc.name   SUB_Customization_Assessment_assessmentErrorCode_Success_001
+     * @tc.number SUB_Customization_Assessment_assessmentErrorCode_Success_0001
+     * @tc.name   SUB_Customization_Assessment_assessmentErrorCode_Success_0001
      * @tc.desc   the values of the AssessmentErrorCode enum are as defined in the interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_assessmentErrorCode_Success_001', Level.LEVEL0, async () => {
-      const testNum = 'SUB_Customization_Assessment_assessmentErrorCode_Success_001';
+    it('SUB_Customization_Assessment_assessmentErrorCode_Success_0001', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_assessmentErrorCode_Success_0001';
       hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
 
       expect(assessment.AssessmentErrorCode.OK).assertEqual(0);
@@ -857,15 +857,15 @@ export default function AutomaticSceneConTest() {
     })
 
     /**
-     * @tc.number SUB_Customization_Assessment_assessmentError_Success_001
-     * @tc.name   SUB_Customization_Assessment_assessmentError_Success_001
+     * @tc.number SUB_Customization_Assessment_assessmentError_Success_0001
+     * @tc.name   SUB_Customization_Assessment_assessmentError_Success_0001
      * @tc.desc   the AssessmentError interface contains code and message
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_assessmentError_Success_001', Level.LEVEL0, async () => {
-      const testNum = 'SUB_Customization_Assessment_assessmentError_Success_001';
+    it('SUB_Customization_Assessment_assessmentError_Success_0001', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_assessmentError_Success_0001';
       hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
 
       let error: assessment.AssessmentError = {
@@ -878,15 +878,15 @@ export default function AutomaticSceneConTest() {
     })
 
     /**
-     * @tc.number SUB_Customization_Assessment_assessmentError_Success_002
-     * @tc.name   SUB_Customization_Assessment_assessmentError_Success_002
+     * @tc.number SUB_Customization_Assessment_assessmentError_Success_0002
+     * @tc.name   SUB_Customization_Assessment_assessmentError_Success_0002
      * @tc.desc   the message field of the AssessmentError interface is optional and defaults to an empty string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_assessmentError_Success_002', Level.LEVEL0, async () => {
-      const testNum = 'SUB_Customization_Assessment_assessmentError_Success_002';
+    it('SUB_Customization_Assessment_assessmentError_Success_0002', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_assessmentError_Success_0002';
       hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
       let error: assessment.AssessmentError = {
         code: assessment.AssessmentErrorCode.OK,
@@ -896,15 +896,15 @@ export default function AutomaticSceneConTest() {
     })
 
     /**
-     * @tc.number SUB_Customization_Assessment_assessmentError_Success_003
-     * @tc.name   SUB_Customization_Assessment_assessmentError_Success_003
+     * @tc.number SUB_Customization_Assessment_assessmentError_Success_0003
+     * @tc.name   SUB_Customization_Assessment_assessmentError_Success_0003
      * @tc.desc   the AssessmentError interface with USER_CANCEL code and message
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_assessmentError_Success_003', Level.LEVEL0, async () => {
-      const testNum = 'SUB_Customization_Assessment_assessmentError_Success_003';
+    it('SUB_Customization_Assessment_assessmentError_Success_0003', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_assessmentError_Success_0003';
       hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
 
       let error: assessment.AssessmentError = {
@@ -918,15 +918,15 @@ export default function AutomaticSceneConTest() {
     })
 
     /**
-     * @tc.number SUB_Customization_Assessment_assessmentInterruptInfo_Success_001
-     * @tc.name   SUB_Customization_Assessment_assessmentInterruptInfo_Success_001
+     * @tc.number SUB_Customization_Assessment_assessmentInterruptInfo_Success_0001
+     * @tc.name   SUB_Customization_Assessment_assessmentInterruptInfo_Success_0001
      * @tc.desc   the AssessmentInterruptInfo interface contains code and message
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_assessmentInterruptInfo_Success_001', Level.LEVEL0, async () => {
-      const testNum = 'SUB_Customization_Assessment_assessmentInterruptInfo_Success_001';
+    it('SUB_Customization_Assessment_assessmentInterruptInfo_Success_0001', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_assessmentInterruptInfo_Success_0001';
       hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
 
       let info: assessment.AssessmentInterruptInfo = {
