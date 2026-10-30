@@ -28,7 +28,7 @@ function getHGridOffset(): number {
   console.info("[gridKeyboardScrollHorizontal] current offset content: " + content);
   return Number.parseInt(content.split('=')[1]);
 }
-
+ 
 export default function gridKeyboardScrollHorizontal() {
   describe('gridKeyboardScrollHorizontal', () => {
     beforeEach(async (done: Function) => {
@@ -52,7 +52,7 @@ export default function gridKeyboardScrollHorizontal() {
       console.info("gridKeyboardScrollHorizontal beforeEach end");
       done();
     });
-
+ 
     /**
      * @tc.name   gridKeyboardScrollHorizontal_0500
      * @tc.number SUB_ARKUI_GRID_ENABLESCROLLWITHKEYBOARD_PARAM_0500
@@ -72,19 +72,19 @@ export default function gridKeyboardScrollHorizontal() {
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[gridKeyboardScrollHorizontal_0500] enableScrollWithKeyboard: " +
         JSON.stringify(obj.$attrs.enableScrollWithKeyboard));
-      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual('true');
-
+      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual(true);
+ 
       let resetBtn: Component = await driver.findComponent(ON.id('HKB_GRID_RESET'));
       await resetBtn.click();
       await CommonFunc.sleep(500);
       expect(getHGridOffset()).assertEqual(0);
-
+ 
       let gridComp: Component = await driver.findComponent(ON.id('HKB_GRID'));
       let displayId: number = await gridComp.getDisplayId();
       console.info('[gridKeyboardScrollHorizontal_0500] displayId: ' + displayId);
       await gridComp.click();
       await CommonFunc.sleep(500);
-
+ 
       for (let i = 0; i < 2; i++) {
         await driver.triggerKey(KEYCODE_DPAD_RIGHT, displayId);
         await CommonFunc.sleep(500);
@@ -92,16 +92,16 @@ export default function gridKeyboardScrollHorizontal() {
       let offsetRight: number = getHGridOffset();
       console.info('[gridKeyboardScrollHorizontal_0500] offset after DPAD_RIGHT: ' + offsetRight);
       expect(offsetRight > 0).assertTrue();
-
+ 
       await driver.triggerKey(KEYCODE_DPAD_LEFT, displayId);
       await CommonFunc.sleep(500);
-
+ 
       let offsetLeft: number = getHGridOffset();
       console.info('[gridKeyboardScrollHorizontal_0500] offset after DPAD_LEFT: ' + offsetLeft);
       expect(offsetLeft < offsetRight).assertTrue();
       console.info('[gridKeyboardScrollHorizontal_0500] END');
     })
-
+ 
     /**
      * @tc.name   gridKeyboardScrollHorizontal_0600
      * @tc.number SUB_ARKUI_GRID_ENABLESCROLLWITHKEYBOARD_PARAM_0600
@@ -122,19 +122,19 @@ export default function gridKeyboardScrollHorizontal() {
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[gridKeyboardScrollHorizontal_0600] enableScrollWithKeyboard: " +
         JSON.stringify(obj.$attrs.enableScrollWithKeyboard));
-      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual('false');
-
+      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual(false);
+ 
       let resetBtn: Component = await driver.findComponent(ON.id('HKB_GRID_RESET'));
       await resetBtn.click();
       await CommonFunc.sleep(500);
       expect(getHGridOffset()).assertEqual(0);
-
+ 
       let gridComp: Component = await driver.findComponent(ON.id('HKB_GRID'));
       let displayId: number = await gridComp.getDisplayId();
       console.info('[gridKeyboardScrollHorizontal_0600] displayId: ' + displayId);
       await gridComp.click();
       await CommonFunc.sleep(500);
-
+ 
       for (let i = 0; i < 2; i++) {
         await driver.triggerKey(KEYCODE_DPAD_RIGHT, displayId);
         await CommonFunc.sleep(500);
@@ -142,16 +142,16 @@ export default function gridKeyboardScrollHorizontal() {
       let offsetRight: number = getHGridOffset();
       console.info('[gridKeyboardScrollHorizontal_0600] offset after DPAD_RIGHT: ' + offsetRight);
       expect(offsetRight).assertEqual(0);
-
+ 
       await driver.triggerKey(KEYCODE_DPAD_LEFT, displayId);
       await CommonFunc.sleep(500);
-
+ 
       let offsetLeft: number = getHGridOffset();
       console.info('[gridKeyboardScrollHorizontal_0600] offset after DPAD_LEFT: ' + offsetLeft);
       expect(offsetLeft).assertEqual(0);
       console.info('[gridKeyboardScrollHorizontal_0600] END');
     })
-
+ 
     /**
      * @tc.name   gridKeyboardScrollHorizontal_0700
      * @tc.number SUB_ARKUI_GRID_ENABLESCROLLWITHKEYBOARD_PARAM_0700
@@ -172,19 +172,19 @@ export default function gridKeyboardScrollHorizontal() {
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[gridKeyboardScrollHorizontal_0700] enableScrollWithKeyboard: " +
         JSON.stringify(obj.$attrs.enableScrollWithKeyboard));
-      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual('true');
-
+      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual(true);
+ 
       let resetBtn: Component = await driver.findComponent(ON.id('HKB_GRID_RESET'));
       await resetBtn.click();
       await CommonFunc.sleep(500);
       expect(getHGridOffset()).assertEqual(0);
-
+ 
       let gridComp: Component = await driver.findComponent(ON.id('HKB_GRID'));
       let displayId: number = await gridComp.getDisplayId();
       console.info('[gridKeyboardScrollHorizontal_0700] displayId: ' + displayId);
       await gridComp.click();
       await CommonFunc.sleep(500);
-
+ 
       for (let i = 0; i < 2; i++) {
         await driver.triggerKey(KEYCODE_DPAD_RIGHT, displayId);
         await CommonFunc.sleep(500);
@@ -192,16 +192,16 @@ export default function gridKeyboardScrollHorizontal() {
       let offsetRight: number = getHGridOffset();
       console.info('[gridKeyboardScrollHorizontal_0700] offset after DPAD_RIGHT: ' + offsetRight);
       expect(offsetRight > 0).assertTrue();
-
+ 
       await driver.triggerKey(KEYCODE_DPAD_LEFT, displayId);
       await CommonFunc.sleep(500);
-
+ 
       let offsetLeft: number = getHGridOffset();
       console.info('[gridKeyboardScrollHorizontal_0700] offset after DPAD_LEFT: ' + offsetLeft);
       expect(offsetLeft < offsetRight).assertTrue();
       console.info('[gridKeyboardScrollHorizontal_0700] END');
     })
-
+ 
     /**
      * @tc.name   gridKeyboardScrollHorizontal_0800
      * @tc.number SUB_ARKUI_GRID_ENABLESCROLLWITHKEYBOARD_PARAM_0800
@@ -221,19 +221,19 @@ export default function gridKeyboardScrollHorizontal() {
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[gridKeyboardScrollHorizontal_0800] enableScrollWithKeyboard: " +
         JSON.stringify(obj.$attrs.enableScrollWithKeyboard));
-      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual('true');
-
+      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual(true);
+ 
       let resetBtn: Component = await driver.findComponent(ON.id('HKB_GRID_RESET'));
       await resetBtn.click();
       await CommonFunc.sleep(500);
       expect(getHGridOffset()).assertEqual(0);
-
+ 
       let gridComp: Component = await driver.findComponent(ON.id('HKB_GRID'));
       let displayId: number = await gridComp.getDisplayId();
       console.info('[gridKeyboardScrollHorizontal_0800] displayId: ' + displayId);
       await gridComp.click();
       await CommonFunc.sleep(500);
-
+ 
       for (let i = 0; i < 2; i++) {
         await driver.triggerKey(KEYCODE_DPAD_RIGHT, displayId);
         await CommonFunc.sleep(500);
@@ -241,10 +241,10 @@ export default function gridKeyboardScrollHorizontal() {
       let offsetRight: number = getHGridOffset();
       console.info('[gridKeyboardScrollHorizontal_0800] offset after DPAD_RIGHT: ' + offsetRight);
       expect(offsetRight > 0).assertTrue();
-
+ 
       await driver.triggerKey(KEYCODE_DPAD_LEFT, displayId);
       await CommonFunc.sleep(500);
-
+ 
       let offsetLeft: number = getHGridOffset();
       console.info('[gridKeyboardScrollHorizontal_0800] offset after DPAD_LEFT: ' + offsetLeft);
       expect(offsetLeft < offsetRight).assertTrue();

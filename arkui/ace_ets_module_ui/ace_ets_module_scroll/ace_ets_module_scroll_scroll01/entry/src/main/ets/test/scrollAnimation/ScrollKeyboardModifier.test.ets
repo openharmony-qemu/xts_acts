@@ -70,19 +70,19 @@ export default function scrollKeyboardModifier() {
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[scrollKeyboardModifier_0100] enableScrollWithKeyboard: " +
         JSON.stringify(obj.$attrs.enableScrollWithKeyboard));
-      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual('true');
-
+      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual(true);
+ 
       let resetBtn: Component = await driver.findComponent(ON.id('SCROLL_KB_MOD_RESET'));
       await resetBtn.click();
       await CommonFunc.sleep(500);
       expect(getVScrollOffset()).assertEqual(0);
-
+ 
       let scrollComp: Component = await driver.findComponent(ON.id('SCROLL_KB_MOD'));
       let displayId: number = await scrollComp.getDisplayId();
       console.info('[scrollKeyboardModifier_0100] displayId: ' + displayId);
       await scrollComp.click();
       await CommonFunc.sleep(500);
-
+ 
       for (let i = 0; i < 2; i++) {
         await driver.triggerKey(KEYCODE_DPAD_DOWN, displayId);
         await CommonFunc.sleep(500);
@@ -90,10 +90,10 @@ export default function scrollKeyboardModifier() {
       let offsetDown: number = getVScrollOffset();
       console.info('[scrollKeyboardModifier_0100] offset after DPAD_DOWN: ' + offsetDown);
       expect(offsetDown > 0).assertTrue();
-
+ 
       await driver.triggerKey(KEYCODE_DPAD_UP, displayId);
       await CommonFunc.sleep(500);
-
+ 
       let offsetUp: number = getVScrollOffset();
       console.info('[scrollKeyboardModifier_0100] offset after DPAD_UP: ' + offsetUp);
       expect(offsetUp < offsetDown).assertTrue();

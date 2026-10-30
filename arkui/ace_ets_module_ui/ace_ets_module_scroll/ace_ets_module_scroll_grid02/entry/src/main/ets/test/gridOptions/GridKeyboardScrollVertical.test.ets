@@ -16,10 +16,10 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import router from '@ohos.router';
 import { Driver, Component, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
-
+ 
 const KEYCODE_DPAD_UP: number = 2012;
 const KEYCODE_DPAD_DOWN: number = 2013;
-
+ 
 // 从VKB_GRID_OFFSET文本中解析当前纵向滚动偏移量，如'offset=123'解析为123
 function getVGridOffset(): number {
   let strJson: string = getInspectorByKey('VKB_GRID_OFFSET');
@@ -28,7 +28,7 @@ function getVGridOffset(): number {
   console.info("[gridKeyboardScrollVertical] current offset content: " + content);
   return Number.parseInt(content.split('=')[1]);
 }
-
+ 
 export default function gridKeyboardScrollVertical() {
   describe('gridKeyboardScrollVertical', () => {
     beforeEach(async (done: Function) => {
@@ -52,7 +52,7 @@ export default function gridKeyboardScrollVertical() {
       console.info("gridKeyboardScrollVertical beforeEach end");
       done();
     });
-
+ 
     /**
      * @tc.name   gridKeyboardScrollVertical_0100
      * @tc.number SUB_ARKUI_GRID_ENABLESCROLLWITHKEYBOARD_PARAM_0100
@@ -72,19 +72,19 @@ export default function gridKeyboardScrollVertical() {
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[gridKeyboardScrollVertical_0100] enableScrollWithKeyboard: " +
         JSON.stringify(obj.$attrs.enableScrollWithKeyboard));
-      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual('true');
-
+      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual(true);
+ 
       let resetBtn: Component = await driver.findComponent(ON.id('VKB_GRID_RESET'));
       await resetBtn.click();
       await CommonFunc.sleep(500);
       expect(getVGridOffset()).assertEqual(0);
-
+ 
       let gridComp: Component = await driver.findComponent(ON.id('VKB_GRID'));
       let displayId: number = await gridComp.getDisplayId();
       console.info('[gridKeyboardScrollVertical_0100] displayId: ' + displayId);
       await gridComp.click();
       await CommonFunc.sleep(500);
-
+ 
       for (let i = 0; i < 2; i++) {
         await driver.triggerKey(KEYCODE_DPAD_DOWN, displayId);
         await CommonFunc.sleep(500);
@@ -92,16 +92,16 @@ export default function gridKeyboardScrollVertical() {
       let offsetDown: number = getVGridOffset();
       console.info('[gridKeyboardScrollVertical_0100] offset after DPAD_DOWN: ' + offsetDown);
       expect(offsetDown > 0).assertTrue();
-
+ 
       await driver.triggerKey(KEYCODE_DPAD_UP, displayId);
       await CommonFunc.sleep(500);
-
+ 
       let offsetUp: number = getVGridOffset();
       console.info('[gridKeyboardScrollVertical_0100] offset after DPAD_UP: ' + offsetUp);
       expect(offsetUp < offsetDown).assertTrue();
       console.info('[gridKeyboardScrollVertical_0100] END');
     })
-
+ 
     /**
      * @tc.name   gridKeyboardScrollVertical_0200
      * @tc.number SUB_ARKUI_GRID_ENABLESCROLLWITHKEYBOARD_PARAM_0200
@@ -122,19 +122,19 @@ export default function gridKeyboardScrollVertical() {
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[gridKeyboardScrollVertical_0200] enableScrollWithKeyboard: " +
         JSON.stringify(obj.$attrs.enableScrollWithKeyboard));
-      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual('false');
-
+      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual(false);
+ 
       let resetBtn: Component = await driver.findComponent(ON.id('VKB_GRID_RESET'));
       await resetBtn.click();
       await CommonFunc.sleep(500);
       expect(getVGridOffset()).assertEqual(0);
-
+ 
       let gridComp: Component = await driver.findComponent(ON.id('VKB_GRID'));
       let displayId: number = await gridComp.getDisplayId();
       console.info('[gridKeyboardScrollVertical_0200] displayId: ' + displayId);
       await gridComp.click();
       await CommonFunc.sleep(500);
-
+ 
       for (let i = 0; i < 2; i++) {
         await driver.triggerKey(KEYCODE_DPAD_DOWN, displayId);
         await CommonFunc.sleep(500);
@@ -142,16 +142,16 @@ export default function gridKeyboardScrollVertical() {
       let offsetDown: number = getVGridOffset();
       console.info('[gridKeyboardScrollVertical_0200] offset after DPAD_DOWN: ' + offsetDown);
       expect(offsetDown).assertEqual(0);
-
+ 
       await driver.triggerKey(KEYCODE_DPAD_UP, displayId);
       await CommonFunc.sleep(500);
-
+ 
       let offsetUp: number = getVGridOffset();
       console.info('[gridKeyboardScrollVertical_0200] offset after DPAD_UP: ' + offsetUp);
       expect(offsetUp).assertEqual(0);
       console.info('[gridKeyboardScrollVertical_0200] END');
     })
-
+ 
     /**
      * @tc.name   gridKeyboardScrollVertical_0300
      * @tc.number SUB_ARKUI_GRID_ENABLESCROLLWITHKEYBOARD_PARAM_0300
@@ -172,19 +172,19 @@ export default function gridKeyboardScrollVertical() {
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[gridKeyboardScrollVertical_0300] enableScrollWithKeyboard: " +
         JSON.stringify(obj.$attrs.enableScrollWithKeyboard));
-      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual('true');
-
+      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual(true);
+ 
       let resetBtn: Component = await driver.findComponent(ON.id('VKB_GRID_RESET'));
       await resetBtn.click();
       await CommonFunc.sleep(500);
       expect(getVGridOffset()).assertEqual(0);
-
+ 
       let gridComp: Component = await driver.findComponent(ON.id('VKB_GRID'));
       let displayId: number = await gridComp.getDisplayId();
       console.info('[gridKeyboardScrollVertical_0300] displayId: ' + displayId);
       await gridComp.click();
       await CommonFunc.sleep(500);
-
+ 
       for (let i = 0; i < 2; i++) {
         await driver.triggerKey(KEYCODE_DPAD_DOWN, displayId);
         await CommonFunc.sleep(500);
@@ -192,16 +192,16 @@ export default function gridKeyboardScrollVertical() {
       let offsetDown: number = getVGridOffset();
       console.info('[gridKeyboardScrollVertical_0300] offset after DPAD_DOWN: ' + offsetDown);
       expect(offsetDown > 0).assertTrue();
-
+ 
       await driver.triggerKey(KEYCODE_DPAD_UP, displayId);
       await CommonFunc.sleep(500);
-
+ 
       let offsetUp: number = getVGridOffset();
       console.info('[gridKeyboardScrollVertical_0300] offset after DPAD_UP: ' + offsetUp);
       expect(offsetUp < offsetDown).assertTrue();
       console.info('[gridKeyboardScrollVertical_0300] END');
     })
-
+ 
     /**
      * @tc.name   gridKeyboardScrollVertical_0400
      * @tc.number SUB_ARKUI_GRID_ENABLESCROLLWITHKEYBOARD_PARAM_0400
@@ -221,19 +221,19 @@ export default function gridKeyboardScrollVertical() {
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[gridKeyboardScrollVertical_0400] enableScrollWithKeyboard: " +
         JSON.stringify(obj.$attrs.enableScrollWithKeyboard));
-      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual('true');
-
+      expect(obj.$attrs.enableScrollWithKeyboard).assertEqual(true);
+ 
       let resetBtn: Component = await driver.findComponent(ON.id('VKB_GRID_RESET'));
       await resetBtn.click();
       await CommonFunc.sleep(500);
       expect(getVGridOffset()).assertEqual(0);
-
+ 
       let gridComp: Component = await driver.findComponent(ON.id('VKB_GRID'));
       let displayId: number = await gridComp.getDisplayId();
       console.info('[gridKeyboardScrollVertical_0400] displayId: ' + displayId);
       await gridComp.click();
       await CommonFunc.sleep(500);
-
+ 
       for (let i = 0; i < 2; i++) {
         await driver.triggerKey(KEYCODE_DPAD_DOWN, displayId);
         await CommonFunc.sleep(500);
@@ -241,10 +241,10 @@ export default function gridKeyboardScrollVertical() {
       let offsetDown: number = getVGridOffset();
       console.info('[gridKeyboardScrollVertical_0400] offset after DPAD_DOWN: ' + offsetDown);
       expect(offsetDown > 0).assertTrue();
-
+ 
       await driver.triggerKey(KEYCODE_DPAD_UP, displayId);
       await CommonFunc.sleep(500);
-
+ 
       let offsetUp: number = getVGridOffset();
       console.info('[gridKeyboardScrollVertical_0400] offset after DPAD_UP: ' + offsetUp);
       expect(offsetUp < offsetDown).assertTrue();

@@ -20,10 +20,10 @@ import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import Utils from '../../../ets/MainAbility/common/Utils';
-
+ 
 const KEYCODE_DPAD_UP: Int = 2012;
 const KEYCODE_DPAD_DOWN: Int = 2013;
-
+ 
 // Parse the current vertical offset from SCROLL_KB_MOD_OFFSET text, e.g. 'offset=123' -> 123
 function getVScrollOffset(): number {
   let strJson: string = inspector.getInspectorByKey('SCROLL_KB_MOD_OFFSET');
@@ -32,10 +32,10 @@ function getVScrollOffset(): number {
   console.info('[scrollKeyboardModifierTest] current offset content: ' + content);
   return Number(content.split('=')[1]);
 }
-
+ 
 export default function scrollKeyboardModifierTest() {
   describe('scrollKeyboardModifierTest', () => {
-
+ 
     beforeEach(async () => {
       console.info('scrollKeyboardModifierTest beforeEach start');
       let options: router.RouterOptions = {
@@ -56,7 +56,7 @@ export default function scrollKeyboardModifierTest() {
       }
       console.info('scrollKeyboardModifierTest beforeEach end');
     });
-
+ 
     afterEach(async () => {
       await Utils.sleep(500);
       let driver = Driver.create();
@@ -66,7 +66,7 @@ export default function scrollKeyboardModifierTest() {
       await Utils.sleep(1500);
       console.info('scrollKeyboardModifierTest afterEach called');
     });
-
+ 
     /**
      * @tc.number   SUB_ARKUI_SCROLL_ENABLESCROLLWITHKEYBOARD_MODIFIER_STATIC_0100
      * @tc.name     scrollKeyboardModifier_static_0100
@@ -83,19 +83,19 @@ export default function scrollKeyboardModifierTest() {
         let strJson: string = inspector.getInspectorByKey('SCROLL_KB_MOD');
         let obj = JSON.parseJsonElement(strJson);
         console.info('[scrollKeyboardModifier_static_0100] enableScrollWithKeyboard: ' +
-          obj.getElement('$attrs').tryGetElement('enableScrollWithKeyboard'));
-        expect(obj.getElement('$attrs').getString('enableScrollWithKeyboard')).assertEqual('true');
-
+          obj.getElement('$attrs').getBoolean('enableScrollWithKeyboard'));
+        expect(obj.getElement('$attrs').getBoolean('enableScrollWithKeyboard')).assertEqual(true);
+ 
         let resetBtn = await driver.findComponent(ON.id('SCROLL_KB_MOD_RESET'));
         await (resetBtn?.click() as Promise<void>);
         await Utils.sleep(500);
         expect(getVScrollOffset()).assertEqual(0);
-
+ 
         let scrollComp = await driver.findComponent(ON.id('SCROLL_KB_MOD'));
         let displayId = await scrollComp!.getDisplayId();
         await (scrollComp?.click() as Promise<void>);
         await Utils.sleep(500);
-
+ 
         for (let i = 0; i < 2; i++) {
           await driver.triggerKey(KEYCODE_DPAD_DOWN, displayId);
           await Utils.sleep(500);
@@ -103,10 +103,10 @@ export default function scrollKeyboardModifierTest() {
         let offsetDown: number = getVScrollOffset();
         console.info('[scrollKeyboardModifier_static_0100] offset after DPAD_DOWN: ' + offsetDown);
         expect(offsetDown > 0).assertTrue();
-
+ 
         await driver.triggerKey(KEYCODE_DPAD_UP, displayId);
         await Utils.sleep(500);
-
+ 
         let offsetUp: number = getVScrollOffset();
         console.info('[scrollKeyboardModifier_static_0100] offset after DPAD_UP: ' + offsetUp);
         expect(offsetUp < offsetDown).assertTrue();

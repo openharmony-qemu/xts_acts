@@ -88,7 +88,7 @@ struct ScrollKeyboardVertical {
           ForEach(this.ten, (item: number) => {
             Text(`${item}`)
               .width('100%')
-              .height(60)
+              .height('20%')
               .textAlign(TextAlign.Center)
               .fontSize(12)
               .backgroundColor(item % 2 === 0 ? '#E8F3FF' : '#D6E4FF')

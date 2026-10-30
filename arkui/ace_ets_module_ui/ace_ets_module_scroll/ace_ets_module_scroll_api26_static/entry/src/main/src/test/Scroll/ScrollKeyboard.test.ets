@@ -32,10 +32,10 @@ function getVScrollOffset(): number {
   console.info('[scrollKeyboardTest] current offset content: ' + content);
   return Number(content.split('=')[1]);
 }
-
+ 
 export default function scrollKeyboardTest() {
   describe('scrollKeyboardTest', () => {
-
+ 
     beforeEach(async () => {
       console.info('scrollKeyboardTest beforeEach start');
       let options: router.RouterOptions = {
@@ -56,7 +56,7 @@ export default function scrollKeyboardTest() {
       }
       console.info('scrollKeyboardTest beforeEach end');
     });
-
+ 
     afterEach(async () => {
       await Utils.sleep(500);
       let driver = Driver.create();
@@ -66,7 +66,7 @@ export default function scrollKeyboardTest() {
       await Utils.sleep(1500);
       console.info('scrollKeyboardTest afterEach called');
     });
-
+ 
     /**
      * @tc.number   SUB_ARKUI_SCROLL_ENABLESCROLLWITHKEYBOARD_STATIC_0100
      * @tc.name     scrollKeyboard_static_0100
@@ -86,19 +86,19 @@ export default function scrollKeyboardTest() {
         let strJson: string = inspector.getInspectorByKey('V_SCROLL_KB');
         let obj = JSON.parseJsonElement(strJson);
         console.info('[scrollKeyboard_static_0100] enableScrollWithKeyboard: ' +
-          obj.getElement('$attrs').getString('enableScrollWithKeyboard'));
-        expect(obj.getElement('$attrs').getString('enableScrollWithKeyboard')).assertEqual('true');
-
+          obj.getElement('$attrs').getBoolean('enableScrollWithKeyboard'));
+        expect(obj.getElement('$attrs').getBoolean('enableScrollWithKeyboard')).assertEqual(true);
+ 
         let resetBtn = await driver.findComponent(ON.id('V_SCROLL_KB_RESET'));
         await (resetBtn?.click() as Promise<void>);
         await Utils.sleep(500);
         expect(getVScrollOffset()).assertEqual(0);
-
+ 
         let scrollComp = await driver.findComponent(ON.id('V_SCROLL_KB'));
         let displayId = await scrollComp!.getDisplayId();
         await (scrollComp?.click() as Promise<void>);
         await Utils.sleep(500);
-
+ 
         for (let i = 0; i < 2; i++) {
           await driver.triggerKey(KEYCODE_DPAD_DOWN, displayId);
           await Utils.sleep(500);
@@ -106,17 +106,17 @@ export default function scrollKeyboardTest() {
         let offsetDown: number = getVScrollOffset();
         console.info('[scrollKeyboard_static_0100] offset after DPAD_DOWN: ' + offsetDown);
         expect(offsetDown > 0).assertTrue();
-
+ 
         await driver.triggerKey(KEYCODE_DPAD_UP, displayId);
         await Utils.sleep(500);
-
+ 
         let offsetUp: number = getVScrollOffset();
         console.info('[scrollKeyboard_static_0100] offset after DPAD_UP: ' + offsetUp);
         expect(offsetUp < offsetDown).assertTrue();
         console.info('[scrollKeyboard_static_0100] END');
         done();
       });
-
+ 
     /**
      * @tc.number   SUB_ARKUI_SCROLL_ENABLESCROLLWITHKEYBOARD_STATIC_0200
      * @tc.name     scrollKeyboard_static_0200
@@ -136,19 +136,19 @@ export default function scrollKeyboardTest() {
         let strJson: string = inspector.getInspectorByKey('V_SCROLL_KB');
         let obj = JSON.parseJsonElement(strJson);
         console.info('[scrollKeyboard_static_0200] enableScrollWithKeyboard: ' +
-          obj.getElement('$attrs').getString('enableScrollWithKeyboard'));
-        expect(obj.getElement('$attrs').getString('enableScrollWithKeyboard')).assertEqual('false');
-
+          obj.getElement('$attrs').getBoolean('enableScrollWithKeyboard'));
+        expect(obj.getElement('$attrs').getBoolean('enableScrollWithKeyboard')).assertEqual(false);
+ 
         let resetBtn = await driver.findComponent(ON.id('V_SCROLL_KB_RESET'));
         await (resetBtn?.click() as Promise<void>);
         await Utils.sleep(500);
         expect(getVScrollOffset()).assertEqual(0);
-
+ 
         let scrollComp = await driver.findComponent(ON.id('V_SCROLL_KB'));
         let displayId = await scrollComp!.getDisplayId();
         await (scrollComp?.click() as Promise<void>);
         await Utils.sleep(500);
-
+ 
         for (let i = 0; i < 2; i++) {
           await driver.triggerKey(KEYCODE_DPAD_DOWN, displayId);
           await Utils.sleep(500);
@@ -156,17 +156,17 @@ export default function scrollKeyboardTest() {
         let offsetDown: number = getVScrollOffset();
         console.info('[scrollKeyboard_static_0200] offset after DPAD_DOWN: ' + offsetDown);
         expect(offsetDown).assertEqual(0);
-
+ 
         await driver.triggerKey(KEYCODE_DPAD_UP, displayId);
         await Utils.sleep(500);
-
+ 
         let offsetUp: number = getVScrollOffset();
         console.info('[scrollKeyboard_static_0200] offset after DPAD_UP: ' + offsetUp);
         expect(offsetUp).assertEqual(0);
         console.info('[scrollKeyboard_static_0200] END');
         done();
       });
-
+ 
     /**
      * @tc.number   SUB_ARKUI_SCROLL_ENABLESCROLLWITHKEYBOARD_STATIC_0300
      * @tc.name     scrollKeyboard_static_0300
@@ -186,19 +186,19 @@ export default function scrollKeyboardTest() {
         let strJson: string = inspector.getInspectorByKey('V_SCROLL_KB');
         let obj = JSON.parseJsonElement(strJson);
         console.info('[scrollKeyboard_static_0300] enableScrollWithKeyboard: ' +
-          obj.getElement('$attrs').tryGetElement('enableScrollWithKeyboard'));
-        expect(obj.getElement('$attrs').getString('enableScrollWithKeyboard')).assertEqual('true');
-
+          obj.getElement('$attrs').getBoolean('enableScrollWithKeyboard'));
+        expect(obj.getElement('$attrs').getBoolean('enableScrollWithKeyboard')).assertEqual(true);
+ 
         let resetBtn = await driver.findComponent(ON.id('V_SCROLL_KB_RESET'));
         await (resetBtn?.click() as Promise<void>);
         await Utils.sleep(500);
         expect(getVScrollOffset()).assertEqual(0);
-
+ 
         let scrollComp = await driver.findComponent(ON.id('V_SCROLL_KB'));
         let displayId = await scrollComp!.getDisplayId();
         await (scrollComp?.click() as Promise<void>);
         await Utils.sleep(500);
-
+ 
         for (let i = 0; i < 2; i++) {
           await driver.triggerKey(KEYCODE_DPAD_DOWN, displayId);
           await Utils.sleep(500);
@@ -206,10 +206,10 @@ export default function scrollKeyboardTest() {
         let offsetDown: number = getVScrollOffset();
         console.info('[scrollKeyboard_static_0300] offset after DPAD_DOWN: ' + offsetDown);
         expect(offsetDown > 0).assertTrue();
-
+ 
         await driver.triggerKey(KEYCODE_DPAD_UP, displayId);
         await Utils.sleep(500);
-
+ 
         let offsetUp: number = getVScrollOffset();
         console.info('[scrollKeyboard_static_0300] offset after DPAD_UP: ' + offsetUp);
         expect(offsetUp < offsetDown).assertTrue();

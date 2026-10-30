@@ -87,7 +87,7 @@ struct ScrollKeyboardHorizontal {
         Row({ space: 3 }) {
           ForEach(this.ten, (item: number) => {
             Text(`${item}`)
-              .width(80)
+              .width('20%')
               .height('100%')
               .textAlign(TextAlign.Center)
               .fontSize(12)
