@@ -39,7 +39,7 @@ async function executePeriodically(taskName: string): Promise<string> {
   try {
     taskpool.executePeriodically(-1, task);
   } catch (error) {
-    if (error.code === 10200096) {
+    if (error.code === 10200028) {
       return taskName;
     }
     return '';
