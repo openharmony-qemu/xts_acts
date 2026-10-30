@@ -54,7 +54,7 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_begin_Success_0001', Level.LEVEL0, async () => {
+    it('SUB_Customization_Assessment_begin_Success_0001', Level.LEVEL0, async (done) => {
       const testNum = 'SUB_Customization_Assessment_begin_Success_0001';
       let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
       try {
@@ -94,6 +94,7 @@ export default function AutomaticSceneConTest() {
         expect(false).assertTrue()
       }
       assessment.end(context);
+      done();
     })
 
     /**
@@ -104,7 +105,7 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_preparatory_begin_Success_0002', Level.LEVEL0, async () => {
+    it('SUB_Customization_Assessment_preparatory_begin_Success_0002', Level.LEVEL0, async (done) => {
       const testNum = 'SUB_Customization_Assessment_preparatory_begin_Success_0002';
       try {
         // 应用上下文
@@ -142,6 +143,7 @@ export default function AutomaticSceneConTest() {
         hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
         expect(false).assertTrue()
       }
+      done();
     })
 
     /**
@@ -152,7 +154,7 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_begin_error_0003', Level.LEVEL0, async () => {
+    it('SUB_Customization_Assessment_begin_error_0003', Level.LEVEL0, async (done) => {
       const testNum = 'SUB_Customization_Assessment_begin_error_0003';
       let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
       try {
@@ -190,6 +192,7 @@ export default function AutomaticSceneConTest() {
         expect(err.code).assertEqual(36700002)
       }
       assessment.end(context);
+      done();
     })
 
     /**
@@ -200,7 +203,7 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_begin_userCancel_Success_0001', Level.LEVEL0, async () => {
+    it('SUB_Customization_Assessment_begin_userCancel_Success_0001', Level.LEVEL0, async (done) => {
       const testNum = 'SUB_Customization_Assessment_begin_userCancel_Success_0001';
       let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
       try {
@@ -238,6 +241,7 @@ export default function AutomaticSceneConTest() {
         hilog.error(DOMAIN, TAG, `${testNum} 111111111failed, code: ${err.code}, message: ${err.message}`);
         expect(false).assertTrue()
       }
+      done();
     })
 
     /**
@@ -248,7 +252,7 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_begin_paramError_0001', Level.LEVEL0, async () => {
+    it('SUB_Customization_Assessment_begin_paramError_0001', Level.LEVEL0, async (done) => {
       const testNum = 'SUB_Customization_Assessment_begin_paramError_0001';
       let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
       try {
@@ -277,6 +281,7 @@ export default function AutomaticSceneConTest() {
         hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
         expect(err.code).assertEqual(401)
       }
+      done();
     })
 
 
@@ -288,7 +293,7 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_onBegin_Success_0001', Level.LEVEL0, async () => {
+    it('SUB_Customization_Assessment_onBegin_Success_0001', Level.LEVEL0, async (done) => {
       const testNum = 'SUB_Customization_Assessment_onBegin_Success_0001';
       let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
       try {
@@ -324,6 +329,7 @@ export default function AutomaticSceneConTest() {
         expect(false).assertTrue()
       }
       assessment.end(context);
+      done();
     })
 
 
@@ -335,7 +341,7 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_end_success_0001', Level.LEVEL0, async () => {
+    it('SUB_Customization_Assessment_end_success_0001', Level.LEVEL0, async (done) => {
       const testNum = 'SUB_Customization_Assessment_end_success_0001';
       try {
         // 应用上下文
@@ -372,6 +378,7 @@ export default function AutomaticSceneConTest() {
         hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
         expect(false).assertTrue()
       }
+      done();
     })
 
     /**
@@ -382,7 +389,7 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_onEnd_Success_0001', Level.LEVEL0, async () => {
+    it('SUB_Customization_Assessment_onEnd_Success_0001', Level.LEVEL0, async (done) => {
       const testNum = 'SUB_Customization_Assessment_onEnd_Success_0001';
       let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
       try {
@@ -422,6 +429,7 @@ export default function AutomaticSceneConTest() {
         hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
         expect(false).assertTrue()
       }
+      done();
     })
 
     /**
@@ -432,7 +440,7 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_end_error_0002', Level.LEVEL0, async () => {
+    it('SUB_Customization_Assessment_end_error_0002', Level.LEVEL0, async (done) => {
       const testNum = 'SUB_Customization_Assessment_end_error_0002';
       try {
         // 应用上下文
@@ -443,6 +451,7 @@ export default function AutomaticSceneConTest() {
         hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
         expect(err.code).assertEqual(36700003)
       }
+      done();
     })
 
     /**
@@ -453,7 +462,7 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_isActive_Success_0001', Level.LEVEL0, async () => {
+    it('SUB_Customization_Assessment_isActive_Success_0001', Level.LEVEL0, async (done) => {
       const testNum = 'SUB_Customization_Assessment_isActive_Success_0001';
       let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
       try {
@@ -494,6 +503,7 @@ export default function AutomaticSceneConTest() {
       }
       assessment.end(context);
 
+      done();
     })
 
     /**
@@ -504,7 +514,7 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_isActive_Success_0002', Level.LEVEL0, async () => {
+    it('SUB_Customization_Assessment_isActive_Success_0002', Level.LEVEL0, async (done) => {
       const testNum = 'SUB_Customization_Assessment_isActive_Success_0002';
       try {
         const active: boolean = assessment.isActive();
@@ -513,6 +523,7 @@ export default function AutomaticSceneConTest() {
         hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
         expect(false).assertTrue()
       }
+      done();
     })
 
     /**
@@ -523,7 +534,7 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_getConfiguration_Success_0001', Level.LEVEL0, async () => {
+    it('SUB_Customization_Assessment_getConfiguration_Success_0001', Level.LEVEL0, async (done) => {
       const testNum = 'SUB_Customization_Assessment_getConfiguration_Success_0001';
       let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
       try {
@@ -564,6 +575,7 @@ export default function AutomaticSceneConTest() {
       }
       assessment.end(context);
 
+      done();
     })
 
     /**
@@ -574,7 +586,7 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_getConfiguration_Success_0002', Level.LEVEL0, async () => {
+    it('SUB_Customization_Assessment_getConfiguration_Success_0002', Level.LEVEL0, async (done) => {
       const testNum = 'SUB_Customization_Assessment_getConfiguration_Success_0002';
       try {
         const getconfig: assessment.AssessmentConfig = assessment.getConfiguration();
@@ -583,6 +595,7 @@ export default function AutomaticSceneConTest() {
         hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
         expect(false).assertTrue()
       }
+      done();
     })
 
     /**
@@ -593,7 +606,7 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_getConfiguration_Success_0003', Level.LEVEL0, async () => {
+    it('SUB_Customization_Assessment_getConfiguration_Success_0003', Level.LEVEL0, async (done) => {
       const testNum = 'SUB_Customization_Assessment_getConfiguration_Success_0003';
       try {
         const getconfig: assessment.AssessmentConfig = assessment.getConfiguration();
@@ -602,6 +615,7 @@ export default function AutomaticSceneConTest() {
         hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
         expect(false).assertTrue()
       }
+      done();
     })
 
     /**
@@ -612,7 +626,7 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_getConfiguration_Success_0004', Level.LEVEL0, async () => {
+    it('SUB_Customization_Assessment_getConfiguration_Success_0004', Level.LEVEL0, async (done) => {
       const testNum = 'SUB_Customization_Assessment_getConfiguration_Success_0004';
       let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
       try {
@@ -653,6 +667,7 @@ export default function AutomaticSceneConTest() {
         hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
         expect(false).assertTrue()
       }
+      done();
     })
 
     /**
@@ -663,7 +678,7 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_getConfiguration_Success_0005', Level.LEVEL0, async () => {
+    it('SUB_Customization_Assessment_getConfiguration_Success_0005', Level.LEVEL0, async (done) => {
       const testNum = 'SUB_Customization_Assessment_getConfiguration_Success_0005';
       let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
       try {
@@ -700,6 +715,7 @@ export default function AutomaticSceneConTest() {
         expect(false).assertTrue()
       }
       assessment.end(context);
+      done();
     })
 
     /**
