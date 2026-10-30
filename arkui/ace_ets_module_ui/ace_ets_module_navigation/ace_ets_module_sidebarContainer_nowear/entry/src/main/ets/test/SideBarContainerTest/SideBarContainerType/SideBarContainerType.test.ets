@@ -473,7 +473,7 @@ export default function SideBarContainerTypeTest() {
     /**
      * @tc.name   SUB_ACE_SideBarContainerType_1100
      * @tc.number SUB_ACE_SideBarContainerType_1100
-     * @tc.desc   SSet the property minContentWidth value to 100vp
+     * @tc.desc   Set the property minContentWidth value to 300px
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -484,27 +484,27 @@ export default function SideBarContainerTypeTest() {
         name: 'SideBarContainerType', value: SideBarContainerType.AUTO
       })
       globalThis.value.message.notify({
-        name: 'width1', value: 300
+        name: 'width1', value: '600px'
       })
       globalThis.value.message.notify({
-        name: 'minContentWidth', value: '100vp'
+        name: 'minContentWidth', value: '300px'
       })
       globalThis.value.message.notify({
-        name: 'minSideBarWidth', value: 200
+        name: 'minSideBarWidth', value: '300px'
       })
       globalThis.value.message.notify({
-        name: 'maxSideBarWidth', value: 300
+        name: 'maxSideBarWidth', value: '300px'
       })
       await CommonFunc.sleep(500);
       console.log("get Initial value")
       let SideBar_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType' + '_SideBar_01');
       let sideBarContent_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType' + '_sideBarContent_01');
       let SideBarContainer_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType' + '_SideBarContainer_01');
-
       console.log("assert width")
-      expect(Math.abs(Math.round(SideBar_01.right - SideBar_01.left) - Math.round(vp2px(200))) <= 1).assertTrue();
+      // px 直接验证：Content=300px(minContentWidth)，SideBar=300px(600-300)
+      expect(Math.abs(Math.round(SideBar_01.right - SideBar_01.left) - 300) <= 1).assertTrue();
       console.log("SideBar_01.right - SideBar_01.left" + (SideBar_01.right - SideBar_01.left))
-      expect(Math.abs(Math.round(sideBarContent_01.right - sideBarContent_01.left) - Math.round(vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(sideBarContent_01.right - sideBarContent_01.left) - 300) <= 1).assertTrue();
       console.log("sideBarContent_01.right - sideBarContent_01.left" + (sideBarContent_01.right - sideBarContent_01.left))
 
       console.info('[SUB_ACE_SideBarContainerType_1100] END');
@@ -636,7 +636,7 @@ export default function SideBarContainerTypeTest() {
     /**
      * @tc.name   SUB_ACE_SideBarContainerType_1500
      * @tc.number SUB_ACE_SideBarContainerType_1500
-     * @tc.desc   SSet the property minContentWidth value to -10vp
+     * @tc.desc   Set the property minContentWidth value to -30px
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -647,7 +647,7 @@ export default function SideBarContainerTypeTest() {
         name: 'SideBarContainerType', value: SideBarContainerType.AUTO
       })
       globalThis.value.message.notify({
-        name: 'width1', value: 560
+        name: 'width1', value: Math.ceil(vp2px(560)) + 'px'
       })
       globalThis.value.message.notify({
         name: 'minContentWidth', value: '-10vp'
@@ -656,18 +656,17 @@ export default function SideBarContainerTypeTest() {
         name: 'minSideBarWidth', value: 200
       })
       globalThis.value.message.notify({
-        name: 'maxSideBarWidth', value: 300
+        name: 'maxSideBarWidth', value: Math.ceil(vp2px(300)) + 'px'
       })
       await CommonFunc.sleep(500);
       console.log("get Initial value")
-      let SideBar_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType' + '_SideBar_01');
-      let sideBarContent_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType' + '_sideBarContent_01');
-      let SideBarContainer_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType' + '_SideBarContainer_01');
-
+      let SideBar_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_SideBar_01');
+      let sideBarContent_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_sideBarContent_01');
+      let SideBarContainer_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_SideBarContainer_01');
       console.log("assert width")
-      expect(Math.abs(Math.round(SideBar_01.right - SideBar_01.left) - Math.round(vp2px(200))) <= 1).assertTrue();
+      expect(Math.abs(Math.ceil(SideBar_01.right - SideBar_01.left) - Math.ceil(vp2px(200))) <= 1).assertTrue();
       console.log("SideBar_01.right - SideBar_01.left" + (SideBar_01.right - SideBar_01.left))
-      expect(Math.abs(Math.round(sideBarContent_01.right - sideBarContent_01.left) - Math.round(vp2px(360))) <= 1).assertTrue();
+      expect(Math.abs(Math.ceil(sideBarContent_01.right - sideBarContent_01.left) - Math.ceil(vp2px(360))) <= 1).assertTrue();
       console.log("sideBarContent_01.right - sideBarContent_01.left" + (sideBarContent_01.right - sideBarContent_01.left))
 
       console.info('[SUB_ACE_SideBarContainerType_1500] END');
