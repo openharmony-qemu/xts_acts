@@ -71,10 +71,10 @@ it('scrollSourceDrag_0100', Level.LEVEL0, async (done: () => void): Promise<void
       await driver.dragBetween(
         { x: (Number.parseInt(`${(Math.round(left + width / 2)).toInt()}`)).toInt(),
           y: (Number.parseInt(`${(Math.round(top + height * 0.2)).toInt()}`)).toInt(),
-          displayId: displayId },
+          displayId: displayId.toInt() },
         { x: (Number.parseInt(`${(Math.round(left + width / 2)).toInt()}`)).toInt(),
           y: (Number.parseInt(`${(Math.round(top + height * 0.6)).toInt()}`)).toInt(),
-          displayId: displayId });
+          displayId: displayId.toInt() });
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('scroller_DRAG');
       console.info("[scrollSourceDrag_0100] component obj is: " +

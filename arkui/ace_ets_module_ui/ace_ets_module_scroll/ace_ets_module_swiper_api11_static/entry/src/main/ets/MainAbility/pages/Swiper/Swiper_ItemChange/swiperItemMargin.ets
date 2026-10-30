@@ -69,6 +69,9 @@ struct SwiperItemMarginTest {
       .loop(true)
       .displayCount(1)
       .index(0)
-    }.alignItems(HorizontalAlign.Start)
+    }
+    .padding(10)
+    .margin(10)
+    .alignItems(HorizontalAlign.Start)
   }
 }

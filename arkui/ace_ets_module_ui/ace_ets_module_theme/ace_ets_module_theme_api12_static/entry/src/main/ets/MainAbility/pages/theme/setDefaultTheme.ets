@@ -68,6 +68,9 @@ struct setDefaultTheme1 {
         .margin({ top: 20 } as Margin)
         .backgroundColor('#0D9FFB')
       }.width('100%')
-    }.height('100%')
+    }
+    .padding(10)
+    .margin(10)
+    .height('100%')
   }
 }

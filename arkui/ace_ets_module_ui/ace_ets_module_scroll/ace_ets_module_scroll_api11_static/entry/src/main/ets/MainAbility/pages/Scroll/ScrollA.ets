@@ -231,6 +231,8 @@ struct scroll_testcase {
       .height(200)
       .key('scroll3')
     }
+    .padding(10)
+    .margin(10)
     .key('flex')
 
   }

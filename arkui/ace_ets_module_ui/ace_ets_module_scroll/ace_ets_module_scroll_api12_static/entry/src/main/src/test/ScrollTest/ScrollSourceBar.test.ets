@@ -71,10 +71,10 @@ it('ScrollSourceBar_0100', Level.LEVEL0, async (done: () => void): Promise<void>
       await driver.swipeBetween(
         { x: (Number.parseInt(`${(Math.round(left + width / 2)).toInt()}`)).toInt(),
           y: (Number.parseInt(`${(Math.round(top + height * 0.1)).toInt()}`)).toInt(),
-          displayId: displayId },
+          displayId: displayId.toInt() },
         { x: (Number.parseInt(`${(Math.round(left + width / 2)).toInt()}`)).toInt(),
           y: (Number.parseInt(`${(Math.round(top + height * 0.6)).toInt()}`)).toInt(),
-          displayId: displayId },
+          displayId: displayId.toInt() },
         600);
       await CommonFunc.sleep(2000);
 

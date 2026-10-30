@@ -3563,6 +3563,20 @@ Camera_ErrorCode NDKCamera::EnableAutoDeviceSwitch(bool isEnable)
     }
     return ret_;
 }
+
+Camera_ErrorCode NDKCamera::EnableAutoDeviceSwitch(int useCaseCode, bool isEnable)
+{
+    LOG("EnableAutoDeviceSwitch useCaseCode: %{public}d, isEnable: %{public}d", useCaseCode, isEnable);
+    if (useCaseCode == PARAMETER_OK) {
+        ret_ = OH_CaptureSession_EnableAutoDeviceSwitch(captureSession_, isEnable);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_CaptureSession_EnableAutoDeviceSwitch(nullptr, isEnable);
+    }
+    if (ret_ != CAMERA_OK) {
+        LOG("OH_CaptureSession_EnableAutoDeviceSwitch failed. ret: %d", ret_);
+    }
+    return ret_;
+}
  
 void CameraAutoDeviceSwitchStatusInfoCallback(Camera_CaptureSession* session,
     Camera_AutoDeviceSwitchStatusInfo* autoDeviceSwitchStatusInfo)
@@ -4164,6 +4178,11 @@ Camera_ErrorCode NDKCamera::TestDelPhyApts()
     OH_Camera_PhysicalAperture* apertures = nullptr;
     Camera_ErrorCode ret = OH_CaptureSession_GetSupportedPhysicalApertures(
         captureSession_, &apertures, &size);
+    // 设备不支持物理光圈时返回 CAMERA_INVALID_ARGUMENT，此场景视为正常情况，直接返回 CAMERA_OK
+    if (ret == CAMERA_INVALID_ARGUMENT) {
+        LOG("TestDelPhyApts: GetSupportedPhysicalApertures not supported, treat as CAMERA_OK.");
+        return CAMERA_OK;
+    }
     if (ret != CAMERA_OK) {
         return ret;
     }

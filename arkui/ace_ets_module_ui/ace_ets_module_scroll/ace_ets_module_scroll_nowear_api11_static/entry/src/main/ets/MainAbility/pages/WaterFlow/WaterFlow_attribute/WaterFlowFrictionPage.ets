@@ -131,5 +131,7 @@ struct WaterFlowFrictionPage {
       .friction(this.friction)
       .key('WaterFlow_WaterFlowFriction')
     }
+    .padding(10)
+    .margin(10)
   }
 }

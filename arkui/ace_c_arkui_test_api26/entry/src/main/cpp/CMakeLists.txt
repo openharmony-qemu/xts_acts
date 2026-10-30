@@ -44,8 +44,9 @@ add_library(nativerender SHARED
 
 add_library(nativefunc SHARED
     NapiFuncInitTest.cpp
-    hovered/HoveredTest.cpp
     collection/CollectionEnumTest.cpp
+    hovered/HoveredTest.cpp    
+    node/BufferQueueSizeTest.cpp
 )
 
 add_library(nativeanim SHARED

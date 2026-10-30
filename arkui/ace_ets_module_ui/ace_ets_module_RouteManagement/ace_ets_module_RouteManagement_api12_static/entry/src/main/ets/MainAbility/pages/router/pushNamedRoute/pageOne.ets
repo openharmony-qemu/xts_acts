@@ -23,5 +23,7 @@ export struct pageOne1 {
     Column() {
       Text('pageOne').id('pageOne_text1')
     }
+    .padding(10)
+    .margin(10)
   }
 }

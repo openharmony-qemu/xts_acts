@@ -115,6 +115,9 @@ struct TabsExampleApi12I10 {
           this.currentIndex = (this.currentIndex + 1) % 4
           this.controller.changeIndex(this.currentIndex)
         }).key("changeIndexTest10")
-    }.width('100%')
+    }
+    .padding(10)
+    .margin(10)
+    .width('100%')
   }
 }

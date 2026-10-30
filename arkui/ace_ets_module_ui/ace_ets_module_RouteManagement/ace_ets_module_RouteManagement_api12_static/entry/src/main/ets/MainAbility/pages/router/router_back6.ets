@@ -36,6 +36,9 @@ struct router_back6 {
         .onClick((e:ClickEvent) => {
           this.getUIContext().getRouter().back(-1, { age: 18 } as AgeObj)
         })
-    }.width('100%').height('100%')
+    }
+    .padding(10)
+    .margin(10)
+    .width('100%').height('100%')
   }
 }

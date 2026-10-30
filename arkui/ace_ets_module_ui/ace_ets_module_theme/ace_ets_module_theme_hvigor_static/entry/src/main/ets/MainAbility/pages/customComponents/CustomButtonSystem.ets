@@ -49,5 +49,7 @@ export struct CustomButtonSystem {
         Button(this.btnText)
       }
     }
+    .padding(10)
+    .margin(10)
   }
 }

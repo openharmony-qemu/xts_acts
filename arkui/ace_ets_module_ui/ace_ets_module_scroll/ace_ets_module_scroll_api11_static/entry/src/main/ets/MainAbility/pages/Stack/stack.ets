@@ -82,7 +82,10 @@ struct StackAlignContent {
       }.key("Stack")
       .width('100%').height(150).margin({ top: 5 } as Margin)
 
-    }.width("100%").height("100%")
+    }
+    .padding(10)
+    .margin(10)
+    .width("100%").height("100%")
   }
 }
 

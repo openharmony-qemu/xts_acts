@@ -84,5 +84,7 @@ export struct CustomColorList {
         }, (item: DataClass) => String((item.token)) + item.text)
       }.alignItems(HorizontalAlign.Start)
     }
+    .padding(10)
+    .margin(10)
   }
 }

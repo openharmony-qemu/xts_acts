@@ -504,5 +504,7 @@ struct TabsExample {
       .key('defaultTabs')
 
     }
+    .padding(10)
+    .margin(10)
   }
 }

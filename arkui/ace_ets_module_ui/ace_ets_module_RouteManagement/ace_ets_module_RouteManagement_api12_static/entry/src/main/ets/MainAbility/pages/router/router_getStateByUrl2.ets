@@ -35,7 +35,10 @@ struct router_getStateByUrl2 {
           this.getUIContext().getRouter().pushUrl({ url: 'MainAbility/pages/router/router_getStateByUrl02', params: { age: 18 } as AgeObj })
         })
 
-    }.width('100%').height('100%')
+    }
+    .padding(10)
+    .margin(10)
+    .width('100%').height('100%')
 
   }
 }

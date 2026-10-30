@@ -75,5 +75,7 @@ struct TextTokenTypePage {
         }
       }
     }
+    .padding(10)
+    .margin(10)
   }
 }

@@ -358,6 +358,8 @@ struct LazyVGridLayoutHeaderFooterSticky {
       .height('100%')
       .width('100%')
     }
+    .padding(10)
+    .margin(10)
     .width('100%')
     .height('100%')
     .backgroundColor('#C0C0C0')

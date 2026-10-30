@@ -70,6 +70,8 @@ struct SetDefaultThemePage {
         .textAlign(TextAlign.Center)
         .width('100%')
     }
+    .padding(10)
+    .margin(10)
     .alignItems(VerticalAlign.Center)
     .width('100%')
     .height('100%')

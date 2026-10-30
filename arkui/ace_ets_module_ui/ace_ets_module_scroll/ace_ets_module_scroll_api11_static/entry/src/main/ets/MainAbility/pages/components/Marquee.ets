@@ -85,6 +85,8 @@ struct MarqueeExample {
         .height(60)
         .margin({ bottom: 20 } as Margin)
     }
+    .padding(10)
+    .margin(10)
     .width('100%')
     .height('100%')
   }

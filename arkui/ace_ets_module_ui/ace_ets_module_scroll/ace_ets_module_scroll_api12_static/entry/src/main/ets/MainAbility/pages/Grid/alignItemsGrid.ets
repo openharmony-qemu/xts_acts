@@ -121,6 +121,8 @@ struct alignItemsGridIndex {
       .alignItems(GridItemAlignment.STRETCH)
       .scrollBar(BarState.Off)
     }
+    .padding(10)
+    .margin(10)
     .height('100%')
     .width('100%')
   }

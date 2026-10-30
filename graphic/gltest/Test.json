@@ -29,7 +29,6 @@
                 "opengldata/librosen_context.z.so->/data/local/tmp/librosen_context.z.so",
                 "opengldata/libdeqp_spirv.z.so->/data/local/tmp/libdeqp_spirv.z.so",
                 "opengldata/libdeqp_amber.z.so->/data/local/tmp/libdeqp_amber.z.so",
-                "opengldata/libdeqp_spvremapper.z.so->/data/local/tmp/libdeqp_spvremapper.z.so",   
                 "opengldata/opengldata.tar.gz->/data/local/tmp/opengldata.tar.gz"               
             ],
             "type": "PushKit"
@@ -43,12 +42,10 @@
                 "rm -rf libdeqp_ohos_platform.z.so",
                 "rm -rf librosen_context.z.so",
                 "rm -rf libdeqp_spirv.z.so",
-                "rm -rf libdeqp_spvremapper.z.so",
                 "rm -rf libdeqp_amber.z.so",
                 "ln -s /data/local/tmp/libdeqp_ohos_platform.z.so /system/lib/libdeqp_ohos_platform.z.so",
                 "ln -s /data/local/tmp/librosen_context.z.so /system/lib/librosen_context.z.so",
                 "ln -s /data/local/tmp/libdeqp_spirv.z.so /system/lib/libdeqp_spirv.z.so",
-                "ln -s /data/local/tmp/libdeqp_spvremapper.z.so /system/lib/libdeqp_spvremapper.z.so",
                 "ln -s /data/local/tmp/libdeqp_amber.z.so /system/lib/libdeqp_amber.z.so"
             ],
             "teardown-localcommand": [

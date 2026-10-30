@@ -47,7 +47,10 @@ struct detail13 {
           console.log('current path = ' + page.path);
           this.pageIndex = page.index
         })
-    }.width('100%').height('100%')
+    }
+    .padding(10)
+    .margin(10)
+    .width('100%').height('100%')
 
 
   }

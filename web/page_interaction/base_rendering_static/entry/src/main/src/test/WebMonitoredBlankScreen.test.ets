@@ -164,6 +164,96 @@ export default function webMonitoredBlankScreenJsunit(): void {
       })
 
     /**
+     * @tc.name   testEnableBlankScreenMonitorUndefinedStatic001
+     * @tc.number SUB_WEB_ENABLEBLANKSCREENMONITOR_UNDEFINED_STATIC_0200
+     * @tc.desc   test enableBlankScreenMonitor(undefined)
+     */
+    it('testEnableBlankScreenMonitorUndefinedStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent('testEnableBlankScreenMonitorUndefined', 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testEnableBlankScreenMonitorUndefined', true, 20260459, done);
+        inspector.sendEventByKey('WebMonitoredBlankScreenButton', 10, '');
+        await Utils.msSleep(3000);
+        done();
+      })
+
+    /**
+     * @tc.name   testOnMonitoredBlankScreenReturnStatic001
+     * @tc.number SUB_WEB_ONMONITOREDBLANKSCREEN_RETURN_STATIC_0400
+     * @tc.desc   test onMonitoredBlankScreen chain returns this
+     */
+    it('testOnMonitoredBlankScreenReturnStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent('testOnMonitoredBlankScreenReturn', 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testOnMonitoredBlankScreenReturn', 'return-monitored-ok', 20260460, done);
+        inspector.sendEventByKey('WebMonitoredBlankScreenButton', 10, '');
+        await Utils.msSleep(3000);
+        done();
+      })
+
+    /**
+     * @tc.name   testEnableBlankScreenMonitorReturnStatic001
+     * @tc.number SUB_WEB_ENABLEBLANKSCREENMONITOR_RETURN_STATIC_0300
+     * @tc.desc   test enableBlankScreenMonitor chain returns this
+     */
+    it('testEnableBlankScreenMonitorReturnStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent('testEnableBlankScreenMonitorReturn', 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testEnableBlankScreenMonitorReturn', 'return-enable-ok', 20260461, done);
+        inspector.sendEventByKey('WebMonitoredBlankScreenButton', 10, '');
+        await Utils.msSleep(3000);
+        done();
+      })
+
+    /**
+     * @tc.name   testOnMonitoredBlankScreenUndefinedReturnStatic001
+     * @tc.number SUB_WEB_ONMONITOREDBLANKSCREEN_UNDEFINED_RETURN_STATIC_0410
+     * @tc.desc   onMonitoredBlankScreen(undefined) chain returns this
+     */
+    it('testOnMonitoredBlankScreenUndefinedReturnStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent('testOnMonitoredBlankScreenUndefinedReturn', 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testOnMonitoredBlankScreenUndefinedReturn', 'return-monitored-undefined-ok', 20260462, done);
+        inspector.sendEventByKey('WebMonitoredBlankScreenButton', 10, '');
+        await Utils.msSleep(3000);
+        done();
+      })
+
+    /**
+     * @tc.name   testEnableBlankScreenMonitorUndefinedReturnStatic001
+     * @tc.number SUB_WEB_ENABLEBLANKSCREENMONITOR_UNDEFINED_RETURN_STATIC_0310
+     * @tc.desc   enableBlankScreenMonitor(undefined) chain returns this
+     */
+    it('testEnableBlankScreenMonitorUndefinedReturnStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent('testEnableBlankScreenMonitorUndefinedReturn', 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testEnableBlankScreenMonitorUndefinedReturn', 'return-enable-undefined-ok', 20260463, done);
+        inspector.sendEventByKey('WebMonitoredBlankScreenButton', 10, '');
+        await Utils.msSleep(3000);
+        done();
+      })
+
+    /**
+     * @tc.name   testMonitoredBlankScreenDeclChainStatic001
+     * @tc.number SUB_WEB_MONITOREDBLANKSCREEN_DECL_CHAIN_STATIC_0420
+     * @tc.desc   enableBlankScreenMonitor+onMonitoredBlankScreen declarative chain returns this
+     */
+    it('testMonitoredBlankScreenDeclChainStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent('testMonitoredBlankScreenDeclChain', 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testMonitoredBlankScreenDeclChain', 'main-blank-chain-ok', 20260464, done);
+        inspector.sendEventByKey('WebMonitoredBlankScreenButton', 10, '');
+        await Utils.msSleep(3000);
+        done();
+      })
+
+    /**
      * @tc.name   testMonitoredBlankScreenEventInfoExtraMsgStatic001
      * @tc.number SUB_WEB_MONITOREDBLANKSCREENEVENTINFO_EXTRAMSG_STATIC_0100
      * @tc.desc   test MonitoredBlankScreenEventInfo.extraMsg

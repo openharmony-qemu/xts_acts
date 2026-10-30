@@ -36,6 +36,7 @@ export class StringFields {
 
 const CUSTOM_ERROR_CODE: int = 32159;
 const TEST_URL: string = 'ht' + 'tps://w' + 'ww.example.c' + 'om/';
+const EXAMPLE_HTTP_URL: string = 'ht' + 'tp://w' + 'ww.example.c' + 'om';
 
 @Entry
 @Component
@@ -100,6 +101,38 @@ struct webCustomErrorCode {
                 setTimeout(() => {
                   this.waitAndEmitCustomError(20);
                 }, 1000);
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+              }
+              break;
+            }
+            case 'testDidFail3CompleteFalseStatic001': {
+              try {
+                let didFailResult: string = 'pending';
+                this.schemeHandler = new webview.WebSchemeHandler();
+                this.schemeHandler.onRequestStart((
+                  request: webview.WebSchemeHandlerRequest,
+                  resourceHandler: webview.WebResourceHandler) => {
+                  try {
+                    let response = new webview.WebSchemeHandlerResponse();
+                    response.setUrl(EXAMPLE_HTTP_URL);
+                    response.setStatus(200);
+                    response.setStatusText('OK');
+                    response.setMimeType('text/html');
+                    response.setEncoding('utf-8');
+                    resourceHandler.didReceiveResponse(response);
+                    resourceHandler.didFail(WebNetErrorList.ERR_FAILED, false, CUSTOM_ERROR_CODE);
+                    didFailResult = 'success';
+                  } catch (error) {
+                    didFailResult = String((error as BusinessError).code);
+                  }
+                  Utils.emitEvent(didFailResult, 8825);
+                  return true;
+                });
+                this.controller.clearWebSchemeHandler();
+                this.controller.setWebSchemeHandler('https', this.schemeHandler);
+                this.controller.loadUrl(TEST_URL + '?t=' + Date.now());
               } catch (error) {
                 error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);

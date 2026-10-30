@@ -485,10 +485,10 @@ it('listLevel1Test_static_1500', Level.LEVEL1, async (done: () => void): Promise
       await driver.swipeBetween(
         { x: (Math.round(right - uiContext.vp2px(10))).toInt(),
           y: (Math.round(bottom - height / 2)).toInt(),
-          displayId: displayId },
+          displayId: displayId.toInt() },
         { x: (Math.round(left + width / 2)).toInt(),
           y: (Math.round(bottom - height / 2)).toInt(),
-          displayId: displayId });
+          displayId: displayId.toInt() });
       await CommonFunc.sleep(3000);
       try {
         AppStorage.setOrCreate<string>('startDeleteAreaDistance', "50")
@@ -532,10 +532,10 @@ it('listLevel1Test_static_1600', Level.LEVEL1, async (done: () => void): Promise
       await driver.swipeBetween(
         { x: (Math.round(left + uiContext.vp2px(10))).toInt(),
           y: (Math.round(bottom - height / 2)).toInt(),
-          displayId: displayId },
+          displayId: displayId.toInt() },
         { x: (Math.round(left + width / 2)).toInt(),
           y: (Math.round(bottom - height / 2)).toInt(),
-          displayId: displayId });
+          displayId: displayId.toInt() });
       await CommonFunc.sleep(3000);
       try {
         AppStorage.setOrCreate<string>('endDeleteAreaDistance', "50")
@@ -579,10 +579,10 @@ it('listLevel1Test_static_1700', Level.LEVEL1, async (done: () => void): Promise
       await driver.swipeBetween(
         { x: (Math.round(right - uiContext.vp2px(10))).toInt(),
           y: (Math.round(bottom - height / 2)).toInt(),
-          displayId: displayId },
+          displayId: displayId.toInt() },
         { x: (Math.round(left + width / 2)).toInt(),
           y: (Math.round(bottom - height / 2)).toInt(),
-          displayId: displayId });
+          displayId: displayId.toInt() });
       await CommonFunc.sleep(3000);
       try {
         AppStorage.setOrCreate<string>('startDeleteAreaDistance', "100")

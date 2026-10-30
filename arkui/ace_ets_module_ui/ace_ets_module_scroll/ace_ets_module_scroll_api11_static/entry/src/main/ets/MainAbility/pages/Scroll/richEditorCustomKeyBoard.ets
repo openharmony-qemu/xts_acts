@@ -85,5 +85,7 @@ struct RichEditorExample {
         .border({ width: 1 })
         .height(200)
     }
+    .padding(10)
+    .margin(10)
   }
 }

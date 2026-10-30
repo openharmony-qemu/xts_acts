@@ -368,16 +368,11 @@ function registerHidDeviceAsync3(): Promise<boolean> {
     const timeout = setTimeout(() => {
       reject(new Error("[bluetooth_js]registerHidDeviceAsync timeout"));
     }, 20000);
-    try {
-      hidDevice!.registerHidDevice(sdp3, inqos2, outqos, (data: boolean) => {
-        clearTimeout(timeout)
-        hilog.info(domain, tag, '[bluetooth_js] registerHidDeviceAsync success' + JSON.stringify(data));
-        resolve(data);
-      });
-    } catch (err) {
-      hilog.info(domain, tag, '[bluetooth_js] errcode' + err.code + 'err message' + err.message);
-      reject(new Error("[bluetooth_js]registerHidDeviceAsync err"));
-    }
+    hidDevice!.registerHidDevice(sdp3, inqos2, outqos, (data: boolean) => {
+      clearTimeout(timeout)
+      hilog.info(domain, tag, '[bluetooth_js] registerHidDeviceAsync success' + JSON.stringify(data));
+      resolve(data);
+    });
   });
 }
 

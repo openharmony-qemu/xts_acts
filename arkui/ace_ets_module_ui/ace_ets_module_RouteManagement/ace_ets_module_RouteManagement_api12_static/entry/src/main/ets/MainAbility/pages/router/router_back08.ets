@@ -45,7 +45,10 @@ struct router_back08 {
           console.info('backBtn1111111')
         })
 
-    }.width('100%').height('100%')
+    }
+    .padding(10)
+    .margin(10)
+    .width('100%').height('100%')
 
   }
 }

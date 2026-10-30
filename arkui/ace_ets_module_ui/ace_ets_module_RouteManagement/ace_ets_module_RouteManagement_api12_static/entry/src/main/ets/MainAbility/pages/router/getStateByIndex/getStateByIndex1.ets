@@ -45,7 +45,10 @@ struct getStateByIndex1 {
           this.str1 = String(this.getUIContext().getRouter().getStateByIndex(33))
         })
 
-    }.width('100%').height('100%')
+    }
+    .padding(10)
+    .margin(10)
+    .width('100%').height('100%')
 
 
   }

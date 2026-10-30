@@ -38,7 +38,10 @@ struct back5 {
           this.getUIContext().getRouter().back(0, {info: 'Home'} as InfoObj);
         })
 
-    }.width('100%').height('100%')
+    }
+    .padding(10)
+    .margin(10)
+    .width('100%').height('100%')
 
 
   }
