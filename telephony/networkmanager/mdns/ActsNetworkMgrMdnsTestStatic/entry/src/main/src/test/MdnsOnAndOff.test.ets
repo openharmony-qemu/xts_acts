@@ -123,9 +123,15 @@ export default function NetworkManagerMdnsTest(): void {
           let discoveryService = mdns.createDiscoveryService(context!, serviceTypeTcp);
           hilog.info(domain, tag, `discoveryService 1 -> ${JSON.stringify(discoveryService)}`)
           hilog.info(domain, tag, `discoveryService 2 -> ${discoveryService instanceof mdns.DiscoveryService}`)
-          discoveryService.onDiscoveryStart(() => {
-            hilog.info(domain, tag, `${caseName} on discoveryStart : startSearching `);
-            ExpectTrue(true);
+          discoveryService.onDiscoveryStart((data: mdns.DiscoveryEventInfo) => {
+            hilog.info(domain, tag, `${caseName} on discoveryStart : ${JSON.stringify(data)}`);
+            ExpectTrue(data !== undefined);
+            ExpectTrue(data.serviceInfo !== undefined);
+            ExpectTrue(data.serviceInfo.serviceType !== undefined);
+            ExpectTrue(typeof data.serviceInfo.serviceType === 'string');
+            ExpectTrue(data.serviceInfo.serviceType === serviceTypeTcp);
+            ExpectTrue(data.serviceInfo.serviceName !== undefined);
+            ExpectTrue(typeof data.serviceInfo.serviceName === 'string');
             removeTheService(localServiceInfo);
             done();
             hilog.info(domain, tag, `${caseName}---End`);
@@ -163,7 +169,9 @@ export default function NetworkManagerMdnsTest(): void {
         let caseName = 'testTelephonyNetManagerStartSearchingMDNS_static_0200';
         hilog.info(domain, tag, `${caseName} test start `);
         try {
+          let callbackCalled: boolean = false;
           let callback: () => void = () => {
+            callbackCalled = true;
             hilog.info(domain, tag, `${caseName}  on or off discoveryStart  `);
             ExpectFail();
             hilog.info(domain, tag, `${caseName}---End`);
@@ -176,7 +184,7 @@ export default function NetworkManagerMdnsTest(): void {
           let sleepAndDone = async (): Promise<void> => {
             try {
               await sleep(1000);
-              ExpectTrue(true);
+              ExpectTrue(!callbackCalled);
               removeTheService(localServiceInfo);
               done();
               hilog.info(domain, tag, `${caseName}---End`);
@@ -210,6 +218,66 @@ export default function NetworkManagerMdnsTest(): void {
 
 
     /**
+     * @tc.name   testTelephonyNetManagerStartSearchingMDNS_static_0300
+     * @tc.number SUB_Telephony_NetManager_startSearchingMDNS_0300
+     * @tc.desc   Unsubscribe from the notification of enabling the mDNS service listening function without parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyNetManagerStartSearchingMDNS_static_0300', Size.SMALLTEST | TestType.FUNCTION | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'testTelephonyNetManagerStartSearchingMDNS_static_0300';
+        hilog.info(domain, tag, `${caseName} test start `);
+        try {
+          let callbackCalled: boolean = false;
+          let callback: () => void = () => {
+            callbackCalled = true;
+            hilog.info(domain, tag, `${caseName}  on or off discoveryStart  `);
+            ExpectFail();
+            hilog.info(domain, tag, `${caseName}---End`);
+            done();
+          }
+          let localServiceInfo = localServiceInfoTypeTcp();
+          let discoveryService = mdns.createDiscoveryService(context!, serviceTypeTcp);
+          discoveryService.onDiscoveryStart(callback);
+          discoveryService.offDiscoveryStart();
+          let sleepAndDone = async (): Promise<void> => {
+            try {
+              await sleep(1000);
+              ExpectTrue(!callbackCalled);
+              removeTheService(localServiceInfo);
+              done();
+              hilog.info(domain, tag, `${caseName}---End`);
+            } catch (err) {
+              hilog.info(domain, tag, `${caseName} catch err is ` + JSON.stringify(err));
+              ExpectFail();
+              hilog.info(domain, tag, `${caseName}---End`);
+              done();
+            }
+          };
+          mdns.addLocalService(context!, localServiceInfo, (err: BusinessError | null, data: mdns.LocalServiceInfo | undefined) => {
+            if (err?.code !== 0) {
+              hilog.info(domain, tag, `${caseName} addLocalService fail ${JSON.stringify(err)}`);
+              ExpectFail();
+              hilog.info(domain, tag, `${caseName}---End`);
+              done();
+            } else {
+              hilog.info(domain, tag,
+                `${caseName} addLocalService success, LocalServiceInfo is ` + JSON.stringify(data));
+              discoveryService.startSearchingMDNS();
+              sleepAndDone();
+            }
+          });
+        } catch (err) {
+          hilog.info(domain, tag, `${caseName} catch err is ` + JSON.stringify(err));
+          ExpectFail();
+          hilog.info(domain, tag, `${caseName}---End`);
+          done();
+        }
+      });
+
+    /**
      * @tc.name   testTelephonyNetManagerStopSearchingMDNS_static_0100
      * @tc.number SUB_Telephony_NetManager_stopSearchingMDNS_0100
      * @tc.desc   Subscribe to the notification of stopping listening on the MDNS service.
@@ -224,9 +292,15 @@ export default function NetworkManagerMdnsTest(): void {
         try {
           let localServiceInfo = localServiceInfoTypeTcp();
           let discoveryService = mdns.createDiscoveryService(context!, serviceTypeTcp);
-          discoveryService.onDiscoveryStop(() => {
-            hilog.info(domain, tag, `${caseName} on discoveryStop : stopSearchingMDNS`);
-            ExpectTrue(true);
+          discoveryService.onDiscoveryStop((data: mdns.DiscoveryEventInfo) => {
+            hilog.info(domain, tag, `${caseName} on discoveryStop : ${JSON.stringify(data)}`);
+            ExpectTrue(data !== undefined);
+            ExpectTrue(data.serviceInfo !== undefined);
+            ExpectTrue(data.serviceInfo.serviceType !== undefined);
+            ExpectTrue(typeof data.serviceInfo.serviceType === 'string');
+            ExpectTrue(data.serviceInfo.serviceType === serviceTypeTcp);
+            ExpectTrue(data.serviceInfo.serviceName !== undefined);
+            ExpectTrue(typeof data.serviceInfo.serviceName === 'string');
             removeTheService(localServiceInfo);
             done();
           });
@@ -265,7 +339,9 @@ export default function NetworkManagerMdnsTest(): void {
         try {
           let localServiceInfo = localServiceInfoTypeTcp();
           let discoveryService = mdns.createDiscoveryService(context!, serviceTypeTcp);
+          let callbackCalled: boolean = false;
           let callback: () => void = () => {
+            callbackCalled = true;
             hilog.info(domain, tag, `${caseName}  on or off discoveryStop  `);
             ExpectFail();
             hilog.info(domain, tag, `${caseName}---End`);
@@ -276,7 +352,7 @@ export default function NetworkManagerMdnsTest(): void {
           let sleepAndDone = async (): Promise<void> => {
             try {
               await sleep(500);
-              ExpectTrue(true);
+              ExpectTrue(!callbackCalled);
               removeTheService(localServiceInfo);
               hilog.info(domain, tag, `${caseName}---End`);
               done();
@@ -310,6 +386,66 @@ export default function NetworkManagerMdnsTest(): void {
 
 
     /**
+     * @tc.name   testTelephonyNetManagerStopSearchingMDNS_static_0300
+     * @tc.number SUB_Telephony_NetManager_stopSearchingMDNS_0300
+     * @tc.desc   Unsubscribe from the notification of stopping listening on the MDNS service without parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyNetManagerStopSearchingMDNS_static_0300', Size.SMALLTEST | TestType.FUNCTION | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'testTelephonyNetManagerStopSearchingMDNS_static_0300';
+        hilog.info(domain, tag, `${caseName} test start `);
+        try {
+          let callbackCalled: boolean = false;
+          let callback: () => void = () => {
+            callbackCalled = true;
+            hilog.info(domain, tag, `${caseName}  on or off discoveryStop  `);
+            ExpectFail();
+            hilog.info(domain, tag, `${caseName}---End`);
+            done();
+          }
+          let localServiceInfo = localServiceInfoTypeTcp();
+          let discoveryService = mdns.createDiscoveryService(context!, serviceTypeTcp);
+          discoveryService.onDiscoveryStop(callback);
+          discoveryService.offDiscoveryStop();
+          let sleepAndDone = async (): Promise<void> => {
+            try {
+              await sleep(500);
+              ExpectTrue(!callbackCalled);
+              removeTheService(localServiceInfo);
+              hilog.info(domain, tag, `${caseName}---End`);
+              done();
+            } catch (err) {
+              hilog.info(domain, tag, `${caseName} catch err is ` + JSON.stringify(err));
+              ExpectFail();
+              hilog.info(domain, tag, `${caseName}---End`);
+              done();
+            }
+          };
+          mdns.addLocalService(context!, localServiceInfo, (err: BusinessError | null, data: mdns.LocalServiceInfo | undefined) => {
+            if (err?.code !== 0) {
+              hilog.info(domain, tag, `${caseName} addLocalService fail ${JSON.stringify(err)}`);
+              ExpectFail();
+              hilog.info(domain, tag, `${caseName}---End`);
+              done();
+            } else {
+              hilog.info(domain, tag, `${caseName} addLocalService success `);
+              discoveryService.startSearchingMDNS();
+              discoveryService.stopSearchingMDNS();
+              sleepAndDone();
+            }
+          });
+        } catch (err) {
+          hilog.info(domain, tag, `${caseName} catch err is ` + JSON.stringify(err));
+          ExpectFail();
+          hilog.info(domain, tag, `${caseName}---End`);
+          done();
+        }
+      });
+
+    /**
      * @tc.name   testTelephonyNetManagerOnServiceFound_static_0100
      * @tc.number SUB_Telephony_NetManager_on_serviceFound_0100
      * @tc.desc   Subscribe to notifications of MDNS service discovery.
@@ -326,7 +462,12 @@ export default function NetworkManagerMdnsTest(): void {
           let discoveryService = mdns.createDiscoveryService(context!, serviceTypeTcp);
           discoveryService.onServiceFound((data: mdns.LocalServiceInfo) => {
             hilog.info(domain, tag, `${caseName} on serviceFound , data is ${JSON.stringify(data)}`);
-            ExpectTrue(true);
+            ExpectTrue(data !== undefined);
+            ExpectTrue(data.serviceType !== undefined);
+            ExpectTrue(typeof data.serviceType === 'string');
+            ExpectTrue(data.serviceType === serviceTypeTcp);
+            ExpectTrue(data.serviceName !== undefined);
+            ExpectTrue(typeof data.serviceName === 'string');
             discoveryService.stopSearchingMDNS();
             removeTheService(localServiceInfo);
             hilog.info(domain, tag, `${caseName}---End`);
@@ -364,9 +505,11 @@ export default function NetworkManagerMdnsTest(): void {
         let caseName = 'testTelephonyNetManagerOnServiceFound_static_0200';
         hilog.info(domain, tag, `${caseName} test start `);
         try {
+          let callbackCalled: boolean = false;
           let localServiceInfo = localServiceInfoTypeTcp();
           let discoveryService = mdns.createDiscoveryService(context!, serviceTypeUdp);
           discoveryService.onServiceFound((data: mdns.LocalServiceInfo) => {
+            callbackCalled = true;
             hilog.info(domain, tag, `${caseName} on serviceFound , data is ${JSON.stringify(data)}`);
             ExpectFail();
             done();
@@ -374,7 +517,7 @@ export default function NetworkManagerMdnsTest(): void {
           let sleepAndDone = async (): Promise<void> => {
             try {
               await sleep(1000);
-              ExpectTrue(true);
+              ExpectTrue(!callbackCalled);
               discoveryService.stopSearchingMDNS();
               removeTheService(localServiceInfo);
               done();
@@ -420,7 +563,9 @@ export default function NetworkManagerMdnsTest(): void {
         let caseName = 'testTelephonyNetManagerOnServiceFound_static_0300';
         hilog.info(domain, tag, `${caseName} test start `);
         try {
+          let callbackCalled: boolean = false;
           let callback: () => void = () => {
+            callbackCalled = true;
             hilog.info(domain, tag, `${caseName}  on or off serviceFound  `);
             ExpectFail();
             hilog.info(domain, tag, `${caseName}---End`);
@@ -434,7 +579,7 @@ export default function NetworkManagerMdnsTest(): void {
             try {
               await sleep(500);
               removeTheService(localServiceInfo);
-              ExpectTrue(true);
+              ExpectTrue(!callbackCalled);
               done();
             } catch (err) {
               hilog.info(domain, tag, `${caseName} catch err is ` + JSON.stringify(err));
@@ -525,6 +670,64 @@ export default function NetworkManagerMdnsTest(): void {
       });
 
     /**
+     * @tc.name   testTelephonyNetManagerOnServiceFound_static_0500
+     * @tc.number SUB_Telephony_NetManager_on_serviceFound_0500
+     * @tc.desc   Unsubscribe from notifications about MDNS service discovery without parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyNetManagerOnServiceFound_static_0500', Size.SMALLTEST | TestType.FUNCTION | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'testTelephonyNetManagerOnServiceFound_static_0500';
+        hilog.info(domain, tag, `${caseName} test start `);
+        try {
+          let callbackCalled: boolean = false;
+          let callback: () => void = () => {
+            callbackCalled = true;
+            hilog.info(domain, tag, `${caseName}  on or off serviceFound  `);
+            ExpectFail();
+            hilog.info(domain, tag, `${caseName}---End`);
+            done();
+          }
+          let localServiceInfo = localServiceInfoTypeTcp();
+          let discoveryService = mdns.createDiscoveryService(context!, serviceTypeTcp);
+          discoveryService.onServiceFound(callback);
+          discoveryService.offServiceFound();
+          let sleepAndDone = async (): Promise<void> => {
+            try {
+              await sleep(500);
+              removeTheService(localServiceInfo);
+              ExpectTrue(!callbackCalled);
+              done();
+            } catch (err) {
+              hilog.info(domain, tag, `${caseName} catch err is ` + JSON.stringify(err));
+              ExpectFail();
+              hilog.info(domain, tag, `${caseName}---End`);
+              done();
+            }
+          };
+          mdns.addLocalService(context!, localServiceInfo, (err: BusinessError | null, data: mdns.LocalServiceInfo | undefined) => {
+            if (err?.code !== 0) {
+              hilog.info(domain, tag, `${caseName} addLocalService fail ${JSON.stringify(err)}`);
+              ExpectFail();
+              hilog.info(domain, tag, `${caseName}---End`);
+              done();
+            } else {
+              hilog.info(domain, tag, `${caseName} addLocalService success `);
+              discoveryService.startSearchingMDNS();
+              sleepAndDone();
+            }
+          });
+        } catch (err) {
+          hilog.info(domain, tag, `${caseName} catch err is ` + JSON.stringify(err));
+          ExpectFail();
+          hilog.info(domain, tag, `${caseName}---End`);
+          done();
+        }
+      });
+
+    /**
      * @tc.name   testTelephonyNetManagerOnServiceLost_static_0100
      * @tc.number SUB_Telephony_NetManager_on_serviceLost_0100
      * @tc.desc   Subscribe to the notification that the MDNS service is removed.
@@ -541,7 +744,12 @@ export default function NetworkManagerMdnsTest(): void {
           let discoveryService = mdns.createDiscoveryService(context!, serviceTypeTcp);
           discoveryService.onServiceLost((data: mdns.LocalServiceInfo) => {
             hilog.info(domain, tag, `${caseName} on serviceLost , data is ${JSON.stringify(data)}`);
-            ExpectTrue(true);
+            ExpectTrue(data !== undefined);
+            ExpectTrue(data.serviceType !== undefined);
+            ExpectTrue(typeof data.serviceType === 'string');
+            ExpectTrue(data.serviceType === serviceTypeTcp);
+            ExpectTrue(data.serviceName !== undefined);
+            ExpectTrue(typeof data.serviceName === 'string');
             done();
           });
           let sleepAndStop = async (): Promise<void> => {
@@ -586,9 +794,11 @@ export default function NetworkManagerMdnsTest(): void {
         let caseName = 'testTelephonyNetManagerOnServiceLost_static_0200';
         hilog.info(domain, tag, `${caseName} test start `);
         try {
+          let callbackCalled: boolean = false;
           let localServiceInfo = localServiceInfoTypeTcp();
           let discoveryService = mdns.createDiscoveryService(context!, serviceTypeUdp);
           discoveryService.onServiceLost((data: mdns.LocalServiceInfo) => {
+            callbackCalled = true;
             hilog.info(domain, tag, `${caseName} on serviceLost , data is ${JSON.stringify(data)}`);
             ExpectFail();
             done();
@@ -605,7 +815,7 @@ export default function NetworkManagerMdnsTest(): void {
           });
           removeTheService(localServiceInfo);
           await sleep(500);
-          ExpectTrue(true);
+          ExpectTrue(!callbackCalled);
           discoveryService.offServiceLost();
           done();
         } catch (err) {
@@ -629,7 +839,9 @@ export default function NetworkManagerMdnsTest(): void {
         let caseName = 'testTelephonyNetManagerOnServiceLost_static_0300';
         hilog.info(domain, tag, `${caseName} test start `);
         try {
+          let callbackCalled: boolean = false;
           let callback: () => void = () => {
+            callbackCalled = true;
             hilog.info(domain, tag, `${caseName}  on or off serviceLost  `);
             ExpectFail();
             hilog.info(domain, tag, `${caseName}---End`);
@@ -642,7 +854,7 @@ export default function NetworkManagerMdnsTest(): void {
           let sleepAndDone = async (): Promise<void> => {
             try {
               await sleep(500);
-              ExpectTrue(true);
+              ExpectTrue(!callbackCalled);
               done();
             } catch (err) {
               hilog.info(domain, tag, `${caseName} catch err is ` + JSON.stringify(err));
