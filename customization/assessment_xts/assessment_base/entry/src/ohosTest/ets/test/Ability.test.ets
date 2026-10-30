@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, TestType, Size, Level, it } from '@ohos/hypium'
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, TestType, Size, Level, it } from "@ohos/hypium"
 import { assessment } from '@kit.AutomaticSceneConfigurationKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { BusinessError } from '@ohos.base'
@@ -54,8 +54,8 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('actsAssessmentConfigBeginSuccess01', Level.LEVEL0, async () => {
-      const testNum = 'actsAssessmentConfigBeginSuccess01';
+    it('SUB_Customization_Assessment_begin_Success_001', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_begin_Success_001';
       let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
       try {
         // 应用上下文
@@ -104,8 +104,8 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('actsAssessmentConfigPreBeginSuccess02', Level.LEVEL0, async () => {
-      const testNum = 'actsAssessmentConfigPreBeginSuccess02';
+    it('SUB_Customization_Assessment_preparatory_begin_Success_002', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_preparatory_begin_Success_002';
       try {
         // 应用上下文
         let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
@@ -152,8 +152,8 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('actsAssessmentConfigBeginError03', Level.LEVEL0, async () => {
-      const testNum = 'actsAssessmentConfigBeginError03';
+    it('SUB_Customization_Assessment_begin_error_003', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_begin_error_003';
       let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
       try {
         // 应用上下文
@@ -200,8 +200,8 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('actsAssessmentConfigBeginUserCancelSuccess01', Level.LEVEL0, async () => {
-      const testNum = 'actsAssessmentConfigBeginUserCancelSuccess01';
+    it('SUB_Customization_Assessment_begin_userCancel_Success_001', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_begin_userCancel_Success_001';
       let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
       try {
         let config: assessment.AssessmentConfig = {
@@ -248,8 +248,8 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('actsAssessmentConfigBeginParamError01', Level.LEVEL0, async () => {
-      const testNum = 'actsAssessmentConfigBeginParamError01';
+    it('SUB_Customization_Assessment_begin_paramError_001', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_begin_paramError_001';
       let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
       try {
         let allowedApps: string[] = [];
@@ -279,6 +279,39 @@ export default function AutomaticSceneConTest() {
       }
     })
 
+    /**
+     * @tc.number SUB_Customization_Assessment_begin_paramError_002
+     * @tc.name   begin interface invalid duration test
+     * @tc.desc   begin interface with a negative duration throws 401 parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Customization_Assessment_begin_paramError_002', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_begin_paramError_002';
+      let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
+      try {
+        let config: assessment.AssessmentConfig = {
+          duration: -1,
+          allowedApps: ['com.samples.assessment']
+        };
+        let assessmentCallback: assessment.IAssessmentCallback = {
+          onBegin: (error: assessment.AssessmentError) => {
+            hilog.info(DOMAIN, TAG, `onBegin, code: ${error.code}, message: ${error.message}`);
+          },
+          onInterrupted: (info: assessment.AssessmentInterruptInfo) => {
+            hilog.warn(DOMAIN, TAG, `Assessment interrupted, code: ${info.code}, message: ${info.message}`);
+          },
+          onEnd: () => {
+            hilog.info(DOMAIN, TAG, 'Assessment ended.');
+          }
+        };
+        assessment.begin(context, config, assessmentCallback);
+      } catch (err) {
+        hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(401)
+      }
+    })
 
     /**
      * @tc.number SUB_Customization_Assessment_onBegin_Success_001
@@ -288,8 +321,8 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('actsAssessmentConfigOnBeginSuccess01', Level.LEVEL0, async () => {
-      const testNum = 'actsAssessmentConfigOnBeginSuccess01';
+    it('SUB_Customization_Assessment_onBegin_Success_001', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_onBegin_Success_001';
       let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
       try {
         let config: assessment.AssessmentConfig = {
@@ -335,8 +368,8 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('actsAssessmentConfigEndSuccess01', Level.LEVEL0, async () => {
-      const testNum = 'actsAssessmentConfigEndSuccess01';
+    it('SUB_Customization_Assessment_end_success_001', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_end_success_001';
       try {
         // 应用上下文
         let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
@@ -382,8 +415,8 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('actsAssessmentConfigOnEndSuccess01', Level.LEVEL0, async () => {
-      const testNum = 'actsAssessmentConfigOnEndSuccess01';
+    it('SUB_Customization_Assessment_onEnd_Success_001', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_onEnd_Success_001';
       let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
       try {
         let config: assessment.AssessmentConfig = {
@@ -432,8 +465,8 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('actsAssessmentConfigEndError02', Level.LEVEL0, async () => {
-      const testNum = 'actsAssessmentConfigEndError02';
+    it('SUB_Customization_Assessment_end_error_002', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_end_error_002';
       try {
         // 应用上下文
         let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
@@ -453,8 +486,8 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('actsAssessmentConfigIsActiveSuccess01', Level.LEVEL0, async () => {
-      const testNum = 'actsAssessmentConfigIsActiveSuccess01';
+    it('SUB_Customization_Assessment_isActive_Success_001', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_isActive_Success_001';
       let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
       try {
         // 应用上下文
@@ -504,8 +537,8 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('actsAssessmentConfigIsActiveSuccess02', Level.LEVEL0, async () => {
-      const testNum = 'actsAssessmentConfigIsActiveSuccess02';
+    it('SUB_Customization_Assessment_isActive_Success_002', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_isActive_Success_002';
       try {
         const active: boolean = assessment.isActive();
         expect(active).assertFalse()
@@ -523,8 +556,8 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('actsAssessmentConfigGetConfigurationSuccess01', Level.LEVEL0, async () => {
-      const testNum = 'actsAssessmentConfigGetConfigurationSuccess01';
+    it('SUB_Customization_Assessment_getConfiguration_Success_001', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_getConfiguration_Success_001';
       let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
       try {
         // 应用上下文
@@ -574,8 +607,8 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('actsAssessmentConfigGetConfigurationSuccess02', Level.LEVEL0, async () => {
-      const testNum = 'actsAssessmentConfigGetConfigurationSuccess02';
+    it('SUB_Customization_Assessment_getConfiguration_Success_002', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_getConfiguration_Success_002';
       try {
         const getconfig: assessment.AssessmentConfig = assessment.getConfiguration();
         expect(getconfig.duration).assertEqual(0)
@@ -593,8 +626,8 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('actsAssessmentConfigGetConfigurationSuccess03', Level.LEVEL0, async () => {
-      const testNum = 'actsAssessmentConfigGetConfigurationSuccess03';
+    it('SUB_Customization_Assessment_getConfiguration_Success_003', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_getConfiguration_Success_003';
       try {
         const getconfig: assessment.AssessmentConfig = assessment.getConfiguration();
         expect(getconfig.allowedApps.length).assertEqual(0)
@@ -612,8 +645,8 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('actsAssessmentConfigGetConfigurationSuccess04', Level.LEVEL0, async () => {
-      const testNum = 'actsAssessmentConfigGetConfigurationSuccess04';
+    it('SUB_Customization_Assessment_getConfiguration_Success_004', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_getConfiguration_Success_004';
       let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
       try {
         // 应用上下文
@@ -663,8 +696,8 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('actsAssessmentConfigGetConfigurationSuccess05', Level.LEVEL0, async () => {
-      const testNum = 'actsAssessmentConfigGetConfigurationSuccess05';
+    it('SUB_Customization_Assessment_getConfiguration_Success_005', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_getConfiguration_Success_005';
       let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
       try {
         let config: assessment.AssessmentConfig = {
@@ -710,8 +743,8 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('actsAssessmentConfigDurationSuccess01', Level.LEVEL0, async () => {
-      const testNum = 'actsAssessmentConfigDurationSuccess01';
+    it('SUB_Customization_Assessment_duration_Success_001', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_duration_Success_001';
       hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
 
       // 评估配置：最大时长2小时（7200000毫秒），评估期间允许运行包名为com.samples.assessment的应用
@@ -732,8 +765,8 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('actsAssessmentConfigDurationSuccess02', Level.LEVEL0, async () => {
-      const testNum = 'actsAssessmentConfigDurationSuccess02';
+    it('SUB_Customization_Assessment_duration_Success_002', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_duration_Success_002';
       hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
 
       // 评估配置：不限时（duration为0），评估期间允许运行包名为com.example.dictionary的应用
@@ -753,8 +786,8 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('actsAssessmentConfigDurationSuccess03', Level.LEVEL0, async () => {
-      const testNum = 'actsAssessmentConfigDurationSuccess03';
+    it('SUB_Customization_Assessment_duration_Success_003', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_duration_Success_003';
       hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
 
       // 评估配置：不限时（duration为0），评估期间允许运行包名为com.example.dictionary的应用
@@ -775,8 +808,8 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('actsAssessmentConfigAllowedAppsSuccess01', Level.LEVEL0, async () => {
-      const testNum = 'actsAssessmentConfigAllowedAppsSuccess01';
+    it('SUB_Customization_Assessment_allowedApps_Success_001', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_allowedApps_Success_001';
       hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
 
       // 评估配置：最大时长1小时（3600000毫秒），评估期间允许运行包名为com.example.dictionary等三个应用
@@ -798,8 +831,8 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('actsAssessmentConfigAllowedAppsSuccess02', Level.LEVEL0, async () => {
-      const testNum = 'actsAssessmentConfigAllowedAppsSuccess02';
+    it('SUB_Customization_Assessment_allowedApps_Success_002', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_allowedApps_Success_002';
       hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
 
       // 评估配置：白名单为空数组
@@ -819,8 +852,8 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('actsAssessmentConfigAllowedAppsSuccess03', Level.LEVEL0, async () => {
-      const testNum = 'actsAssessmentConfigAllowedAppsSuccess03';
+    it('SUB_Customization_Assessment_allowedApps_Success_003', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_allowedApps_Success_003';
       hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
 
       // 评估配置：白名单配置10个包名（接口规定最多支持10个）
@@ -845,8 +878,8 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('actsAssessmentConfigAssessmentErrorCodeSuccess01', Level.LEVEL0, async () => {
-      const testNum = 'actsAssessmentConfigAssessmentErrorCodeSuccess01';
+    it('SUB_Customization_Assessment_assessmentErrorCode_Success_001', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_assessmentErrorCode_Success_001';
       hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
 
       expect(assessment.AssessmentErrorCode.OK).assertEqual(0);
@@ -864,8 +897,8 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('actsAssessmentConfigAssessmentErrorSuccess01', Level.LEVEL0, async () => {
-      const testNum = 'actsAssessmentConfigAssessmentErrorSuccess01';
+    it('SUB_Customization_Assessment_assessmentError_Success_001', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_assessmentError_Success_001';
       hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
 
       let error: assessment.AssessmentError = {
@@ -885,8 +918,8 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('actsAssessmentConfigAssessmentErrorSuccess02', Level.LEVEL0, async () => {
-      const testNum = 'actsAssessmentConfigAssessmentErrorSuccess02';
+    it('SUB_Customization_Assessment_assessmentError_Success_002', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_assessmentError_Success_002';
       hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
       let error: assessment.AssessmentError = {
         code: assessment.AssessmentErrorCode.OK,
@@ -903,8 +936,8 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('actsAssessmentConfigAssessmentErrorSuccess03', Level.LEVEL0, async () => {
-      const testNum = 'actsAssessmentConfigAssessmentErrorSuccess03';
+    it('SUB_Customization_Assessment_assessmentError_Success_003', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_assessmentError_Success_003';
       hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
 
       let error: assessment.AssessmentError = {
@@ -925,8 +958,8 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('actsAssessmentConfigAssessmentInterruptInfoSuccess01', Level.LEVEL0, async () => {
-      const testNum = 'actsAssessmentConfigAssessmentInterruptInfoSuccess01';
+    it('SUB_Customization_Assessment_assessmentInterruptInfo_Success_001', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_assessmentInterruptInfo_Success_001';
       hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
 
       let info: assessment.AssessmentInterruptInfo = {
