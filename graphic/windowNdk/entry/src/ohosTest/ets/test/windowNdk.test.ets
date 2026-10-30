@@ -691,7 +691,7 @@ export default function windowNdk() {
       expect(result).assertEqual(0);
       await sleep(1000);
       console.info(`${caseName} flag: ${flag}`);
-      if (deviceType === 'phone' ||deviceType === 'wearable' || deviceType === 'tv' || deviceType === '2in1' || deviceType === 'tablet' || (deviceType == 'default'&& isSystemCapabilitySupport == true)){
+      if (deviceType === 'phone' || deviceType === 'wearable' || deviceType === 'tv' || deviceType === '2in1' || deviceType === 'tablet' || (deviceType == 'default'&& isSystemCapabilitySupport == true)){
          WindowClass.off('avoidAreaChange')
         expect(flag).assertEqual(false)
         done()
@@ -723,7 +723,7 @@ export default function windowNdk() {
       expect(result).assertEqual(0);
       await sleep(1000);
       console.info(`${caseName} flag: ${flag}`);
-      if(deviceType === 'phone' ||deviceType === 'wearable' || deviceType === 'tv' || deviceType === '2in1' || deviceType === 'tablet'||(deviceType == 'default'&& isSystemCapabilitySupport == true)){
+      if(deviceType === 'phone' ||deviceType === 'wearable' || deviceType === 'tv' || deviceType === '2in1'|| deviceType === 'tablet'||(deviceType == 'default'&& isSystemCapabilitySupport == true)){
         WindowClass.off('avoidAreaChange')
         expect(flag).assertEqual(false)
         done()
