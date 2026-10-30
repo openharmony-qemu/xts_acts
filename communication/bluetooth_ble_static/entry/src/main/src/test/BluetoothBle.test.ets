@@ -977,6 +977,7 @@ export default function bluetoothBleTest(): void {
         }
         done();
       })
+    
     /**
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVERGETSERVICES_0100
      * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICES_static_0100
@@ -1366,6 +1367,33 @@ export default function bluetoothBleTest(): void {
       })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_OFFNOPARAM_static_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCANOFFNOPARAM_0100
+     * @tc.desc   Test off-BLEDeviceFind without param api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_OFFNOPARAM_static_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        try {
+          bluetooth.onBLEDeviceFind(onReceiveEvent);
+          bluetooth.offBLEDeviceFind();
+          hilog.info(domain, tag, '[bluetooth_js]offBLEDeviceFind without param is success');
+        } catch (err) {
+          hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
+          if (err.code === 801) {
+            hilog.info(domain, tag, '[bluetooth_js]offBLEDeviceFind is not support');
+            expect(err.code).assertEqual(801);
+          } else {
+            expect(err.code).assertEqual(2900099);
+          }
+        }
+        done();
+      })
+
+    /**
      * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_static_0200
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0200
      * @tc.desc   Test startScan
@@ -1400,11 +1428,11 @@ export default function bluetoothBleTest(): void {
         } catch (err) {
           hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
           BleScanner!.offBLEDeviceFind(onReceiveEvents);
-          if (err.code === 801 || err.code === 2900009) {
+          if (err.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]startScan is not support or start scan as it is out of hardware');
-            expect(true).assertTrue();
+            expect(err.code).assertEqual(801);
           } else {
-            expect().assertFail();
+            expect(err.code).assertEqual(2900099);
           }
         }
         BleScanner!.offBLEDeviceFind(onReceiveEvents);
@@ -1442,7 +1470,7 @@ export default function bluetoothBleTest(): void {
           hilog.error(domain, tag, `${caseName} ` + "errCode:" + err.code + ",errMessage:" + err.message);
           if (err.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]startBLEScan is not support');
-            expect(true).assertTrue();
+            expect(err.code).assertEqual(801);
           } else {
             expect(err.code).assertEqual(2900099);
           }
@@ -1482,7 +1510,7 @@ export default function bluetoothBleTest(): void {
           hilog.error(domain, tag, `${caseName} ` + "errCode:" + err.code + ",errMessage:" + err.message);
           if (err.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]startBLEScan is not support');
-            expect(true).assertTrue();
+            expect(err.code).assertEqual(801);
           } else {
             expect(err.code).assertEqual(2900099);
           }
@@ -1522,7 +1550,7 @@ export default function bluetoothBleTest(): void {
           hilog.error(domain, tag, `${caseName} ` + "errCode:" + err.code + ",errMessage:" + err.message);
           if (err.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]startBLEScan is not support');
-            expect(true).assertTrue();
+            expect(err.code).assertEqual(801);
           } else {
             expect(err.code).assertEqual(2900099);
           }
@@ -1562,7 +1590,7 @@ export default function bluetoothBleTest(): void {
           hilog.error(domain, tag, `${caseName} ` + "errCode:" + err.code + ",errMessage:" + err.message);
           if (err.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]startBLEScan is not support');
-            expect(true).assertTrue();
+            expect(err.code).assertEqual(801);
           } else {
             expect(err.code).assertEqual(2900099);
           }
@@ -1623,11 +1651,11 @@ export default function bluetoothBleTest(): void {
           hilog.error(domain, tag, "isExtended errCode:" + err.code + ",errMessage:" + err.message);
           BleScanner!.offBLEDeviceFind(onReceiveEvents);
           hilog.info(domain, tag, 'lmq1 117');
-          if (err.code === 801 || err.code === 2900099) {
+          if (err.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]startScan is not support or start scan as it is out of hardware');
-            expect(true).assertTrue();
+            expect(err.code).assertEqual(801);
           } else {
-            expect().assertFail();
+            expect(err.code).assertEqual(2900099);
           }
         }
         BleScanner!.offBLEDeviceFind(onReceiveEvents);
@@ -1677,14 +1705,41 @@ export default function bluetoothBleTest(): void {
         } catch (err) {
           hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
           BleScanner!.offBLEDeviceFind(onReceiveEvents);
-          if (err.code === 801 || err.code === 2900009) {
+          if (err.code === 801) {
             hilog.info(domain, tag, '[bluetooth_js]startScan is not support or start scan as it is out of hardware');
-            expect(true).assertTrue();
+            expect(err.code).assertEqual(801);
           } else {
-            expect().assertFail();
+            expect(err.code).assertEqual(2900099);
           }
         }
         BleScanner!.offBLEDeviceFind(onReceiveEvents);
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_OFFNOPARAM_static_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLESCANNEROFFNOPARAM_0100
+     * @tc.desc   Test BleScanner off-BLEDeviceFind without param api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_OFFNOPARAM_static_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        try {
+          BleScanner!.onBLEDeviceFind(onReceiveEvents);
+          BleScanner!.offBLEDeviceFind();
+          hilog.info(domain, tag, '[bluetooth_js]BleScanner offBLEDeviceFind without param is success');
+        } catch (err) {
+          hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
+          if (err.code === 801) {
+            hilog.info(domain, tag, '[bluetooth_js]offBLEDeviceFind is not support');
+            expect(err.code).assertEqual(801);
+          } else {
+            expect(err.code).assertEqual(2900099);
+          }
+        }
         done();
       })
 
@@ -1854,6 +1909,35 @@ export default function bluetoothBleTest(): void {
       })
 
     /**
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICESERVICECHANGEOFFNOPARAM_0100
+     * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_SERVICECHANGE_OFFNOPARAM_static_0100
+     * @tc.desc 20251113API22用例覆盖 off_serviceChange 无入参调用.
+     * @tc.type Method
+     * @tc.size MEDIUMTEST
+     * @tc.level Level 0
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_SERVICECHANGE_OFFNOPARAM_static_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        try {
+          device!.onServiceChange(onReceiveEvent_void);
+          hilog.info(domain, tag, '[bt_arkts]return_on value type is null，device on success')
+          device!.offServiceChange();
+          hilog.info(domain, tag, '[bt_arkts]return_off value type is null，device off without param success')
+        } catch (error) {
+          hilog.error(domain, tag,
+            `[bt_arkts]service change is failed, code is ${error.code},message is ${error.message}`);
+          if (error.code === 801) {
+            hilog.info(domain, tag, '[bt_arkts]is not support');
+            expect(error.code === 801).assertTrue();
+          } else {
+            hilog.info(domain, tag, '[bt_arkts]device offServiceChange without param is error');
+            expect(error.code).assertEqual(2900099);
+          }
+        }
+        done();
+      })
+
+    /**
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVERGETSERVICE_0100
      * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICE_static_0100
      * @tc.desc 20251113API22用例覆盖 GattServer-getService 2901008 Gatt service is not found.
@@ -1990,6 +2074,7 @@ export default function bluetoothBleTest(): void {
         }
         done();
       })
+
 
     /**
      * @tc.name   SUB_COMMUNICATION_BLUETOOTH_GATTSERVER_REMOVEALLSERVICES_static_0100
