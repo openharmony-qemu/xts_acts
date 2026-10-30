@@ -60,45 +60,6 @@ async function runDynamicCase(
   return ok;
 }
 
-/** set/get zoom：环境对 WebviewController zoom API 支持不一致时，页面 true/false 均视为有效结果。 */
-async function runDynamicCaseZoomApiEnv(
-  emitAction: string,
-  registerName: string,
-  eventId: number,
-  waitLabel: string): Promise<number> {
-  Utils.emitEvent(emitAction, EVENT_KEY);
-  let ok = 0;
-  const onDone = (err?: Error) => {
-    if (err) {
-      console.error(JSON.stringify(err));
-    }
-    ok = 1;
-  };
-  Utils.registerBaseEvent(registerName, true, eventId, onDone,
-    (d: events_emitter.EventData, _expected: Object) => {
-      const action: Object | undefined = d?.data?.ACTION;
-      const boolResult: boolean = (action === true) || (action === false);
-      expect(boolResult).assertTrue();
-    });
-  try {
-    await Utils.waitAndClickComponent(driver, BTN);
-  } catch (e) {
-    console.error(JSON.stringify(e));
-  }
-  const okProbe = (err?: Error): number => {
-    if (err) {
-      console.error(JSON.stringify(err));
-    }
-    return ok;
-  };
-  try {
-    await Utils.waitForExist(okProbe, waitLabel, 1, 8000);
-  } catch (e) {
-    console.error(JSON.stringify(e));
-  }
-  return ok;
-}
-
 export default function dynamicSdkWebviewTest() {
   describe('DynamicSdkWebview', () => {
     beforeAll(async (done: Function) => {
@@ -113,14 +74,14 @@ export default function dynamicSdkWebviewTest() {
     /**
      * @tc.name   SUB_WEB_WEBVIEWCONTROLLER_SETZOOMFACTOR_0100
      * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETZOOMFACTOR_0100
-     * @tc.desc   setZoomFactor on webview controller (env: ACTION true or false pass)
+     * @tc.desc   setZoomFactor on webview controller
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('SUB_WEB_WEBVIEWCONTROLLER_SETZOOMFACTOR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-        const ok = await runDynamicCaseZoomApiEnv('testSetZoomFactor', 'testSetZoomFactor', 206130,
+        const ok = await runDynamicCase('testSetZoomFactor', 'testSetZoomFactor', true, 206130,
           'testSetZoomFactor');
         expect(ok).assertEqual(1);
         done();
@@ -129,14 +90,14 @@ export default function dynamicSdkWebviewTest() {
     /**
      * @tc.name   SUB_WEB_WEBVIEWCONTROLLER_GETZOOMFACTOR_0100
      * @tc.number SUB_WEB_WEBVIEWCONTROLLER_GETZOOMFACTOR_0100
-     * @tc.desc   getZoomFactor return value (env: ACTION true or false pass)
+     * @tc.desc   getZoomFactor return value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('SUB_WEB_WEBVIEWCONTROLLER_GETZOOMFACTOR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-        const ok = await runDynamicCaseZoomApiEnv('testGetZoomFactor', 'testGetZoomFactor', 206131,
+        const ok = await runDynamicCase('testGetZoomFactor', 'testGetZoomFactor', true, 206131,
           'testGetZoomFactor');
         expect(ok).assertEqual(1);
         done();
@@ -145,14 +106,14 @@ export default function dynamicSdkWebviewTest() {
     /**
      * @tc.name   SUB_WEB_WEBATTRIBUTE_ONZOOMCHANGE_0100
      * @tc.number SUB_WEB_WEBATTRIBUTE_ONZOOMCHANGE_0100
-     * @tc.desc   onZoomChange trigger via setZoomFactor (env: ACTION true or false pass)
+     * @tc.desc   onZoomChange trigger via setZoomFactor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('SUB_WEB_WEBATTRIBUTE_ONZOOMCHANGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-        const ok = await runDynamicCaseZoomApiEnv('testSetZoomTrigger', 'testSetZoomTrigger', 206215,
+        const ok = await runDynamicCase('testSetZoomTrigger', 'testSetZoomTrigger', true, 206215,
           'testSetZoomTrigger');
         expect(ok).assertEqual(1);
         done();

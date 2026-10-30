@@ -18,9 +18,7 @@ import Utils from '../../test/Utils.test';
 import web_webview from '@ohos.web.webview';
 
 const EVENT_KEY = 207100;
-const WAIT_POLL_MS = 300;
-const WAIT_POLL_TRIES = 40;
-const LOAD_SETTLE_MS = 800;
+const LOAD_SETTLE_MS = 2500;
 
 interface OnZoomChangeEvent {
   oldZoomFactor: number;
@@ -35,12 +33,6 @@ struct DynamicSdkWebviewPage {
   @State cmd: string = '';
   @State isReceive: number = -1;
   @State isPageEnd: number = -1;
-  @State zoomAccess: boolean = true;
-  @State zoomControlAccess: boolean = true;
-  @State javaScriptAccess: boolean = true;
-  @State fileAccess: boolean = true;
-  @State imageAccess: boolean = true;
-  @State onlineImageAccess: boolean = true;
   controller: web_webview.WebviewController = new web_webview.WebviewController();
 
   onPageShow() {
@@ -60,41 +52,13 @@ struct DynamicSdkWebviewPage {
     }
   }
 
-  private async ensureControllerReady(): Promise<void> {
-    try {
-      await this.controller.waitForAttached(10000);
-    } catch (e) {
-      console.error(JSON.stringify(e));
-    }
-    try {
-      this.controller.onActive();
-      this.controller.requestFocus();
-    } catch (e) {
-      console.error(JSON.stringify(e));
-    }
-  }
-
-  private async prepareForFactorCase(): Promise<void> {
-    await this.ensureControllerReady();
-    try {
-      this.controller.loadUrl('about:blank');
-      await Utils.sleep(200);
-    } catch (e) {
-      console.error(JSON.stringify(e));
-    }
-    this.isPageEnd = -1;
-    try {
-      this.controller.loadUrl($rawfile('zoom_test.html'));
-    } catch (e) {
-      console.error(JSON.stringify(e));
-    }
-    try {
-      await Utils.waitForExist(() => this.isPageEnd === 1, 'DynamicSdkWebviewPageEnd', true, WAIT_POLL_MS,
-        WAIT_POLL_TRIES);
-      await Utils.sleep(LOAD_SETTLE_MS);
-    } catch (e) {
-      console.error(JSON.stringify(e));
-    }
+  private pageEndReady(): (err?: Error) => boolean {
+    return (err?: Error) => {
+      if (err) {
+        console.error(JSON.stringify(err));
+      }
+      return this.isPageEnd === 1;
+    };
   }
 
   private receiveReady(): (err?: Error) => number {
@@ -104,6 +68,15 @@ struct DynamicSdkWebviewPage {
       }
       return this.isReceive;
     };
+  }
+
+  private async waitPageThenSleep(): Promise<void> {
+    try {
+      await Utils.waitForExist(this.pageEndReady(), 'DynamicSdkWebviewPageEnd', true, 500, 30);
+      await Utils.sleep(LOAD_SETTLE_MS);
+    } catch (e) {
+      console.error(JSON.stringify(e));
+    }
   }
 
   build() {
@@ -121,12 +94,6 @@ struct DynamicSdkWebviewPage {
       Web({ src: $rawfile('zoom_test.html'), controller: this.controller })
         .width('80%')
         .height('70%')
-        .javaScriptAccess(this.javaScriptAccess)
-        .fileAccess(this.fileAccess)
-        .imageAccess(this.imageAccess)
-        .onlineImageAccess(this.onlineImageAccess)
-        .zoomAccess(this.zoomAccess)
-        .zoomControlAccess(this.zoomControlAccess)
         .onControllerAttached(() => {
           try {
             this.controller.setZoomFactor(1.0);
@@ -184,33 +151,35 @@ struct DynamicSdkWebviewPage {
     }
   }
 
-  private async invokeZoomApiNoThrow(eventId: number, invoke: () => void): Promise<void> {
+  private async caseSetGet(target: number, eventId: number): Promise<void> {
     try {
-      await this.prepareForFactorCase();
-      invoke();
-      this.controller.getZoomFactor();
-      Utils.emitEvent(true, eventId);
+      await this.waitPageThenSleep();
+      try {
+        this.controller.setZoomFactor(target);
+        this.controller.getZoomFactor();
+        Utils.emitEvent(true, eventId);
+      } catch (e) {
+        console.error(JSON.stringify(e));
+        Utils.emitEvent(false, eventId);
+      }
     } catch (e) {
       console.error(JSON.stringify(e));
-      Utils.emitEvent(false, eventId);
     }
-  }
-
-  private async caseSetGet(target: number, eventId: number): Promise<void> {
-    await this.invokeZoomApiNoThrow(eventId, () => {
-      this.controller.setZoomFactor(target);
-    });
   }
 
   private async caseGetZoomFactorReturn(eventId: number): Promise<void> {
     try {
-      await this.prepareForFactorCase();
-      this.controller.setZoomFactor(1.0);
-      let factor: number = this.controller.getZoomFactor();
-      Utils.emitEvent(factor > 0, eventId);
+      await this.waitPageThenSleep();
+      try {
+        this.controller.setZoomFactor(1.0);
+        let factor: number = this.controller.getZoomFactor();
+        Utils.emitEvent(factor > 0, eventId);
+      } catch (e) {
+        console.error(JSON.stringify(e));
+        Utils.emitEvent(false, eventId);
+      }
     } catch (e) {
       console.error(JSON.stringify(e));
-      Utils.emitEvent(false, eventId);
     }
   }
 
@@ -245,7 +214,7 @@ struct DynamicSdkWebviewPage {
 
   private async caseSetZoomFactorInvalid(kind: string, eventId: number): Promise<void> {
     try {
-      await this.prepareForFactorCase();
+      await this.waitPageThenSleep();
       try {
         if (kind === 'undefined') {
           this.controller.setZoomFactor(undefined);
