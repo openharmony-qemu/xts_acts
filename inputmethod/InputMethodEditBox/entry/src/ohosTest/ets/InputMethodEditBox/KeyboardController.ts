@@ -2623,6 +2623,10 @@ export class KeyboardController {
       let richText = this.InputClient.getRightRichTextSync(length);
       console.info(`${EVENT} success richText: ${JSON.stringify(richText)}`);
       let spans = richText.getSpans();
+      if (spans.length === 0 && length === 0) {
+        this.publishResult(EVENT, 'SUCCESS');
+        return;
+      };
       let type = spans[0].getType();
       let content = spans[0].getContent();
       let contentRes = this.InputClient.getBackwardSync(length);
@@ -2652,6 +2656,10 @@ export class KeyboardController {
       let richText = await this.InputClient.getRightRichText(length);
       console.info(`${EVENT} success richText: ${JSON.stringify(richText)}`);
       let spans = richText.getSpans();
+      if (spans.length === 0 && length === 0) {
+        this.publishResult(EVENT, 'SUCCESS');
+        return;
+      };
       let type = spans[0].getType();
       let content = spans[0].getContent();
       let contentRes = this.InputClient.getBackwardSync(length);
@@ -2730,6 +2738,10 @@ export class KeyboardController {
       let richText = this.InputClient.getLeftRichTextSync(length);
       console.info(`${EVENT} success richText: ${JSON.stringify(richText)}`);
       let spans = richText.getSpans();
+      if (spans.length === 0 && length === 0) {
+        this.publishResult(EVENT, 'SUCCESS');
+        return;
+      };
       let type = spans[0].getType();
       let content = spans[0].getContent();
       let contentRes = this.InputClient.getForwardSync(length);
@@ -2759,6 +2771,10 @@ export class KeyboardController {
       let richText = await this.InputClient.getLeftRichText(length);
       console.info(`${EVENT} success richText: ${JSON.stringify(richText)}`);
       let spans = richText.getSpans();
+      if (spans.length === 0 && length === 0) {
+        this.publishResult(EVENT, 'SUCCESS');
+        return;
+      };
       let type = spans[0].getType();
       let content = spans[0].getContent();
       let contentRes = this.InputClient.getForwardSync(length);
