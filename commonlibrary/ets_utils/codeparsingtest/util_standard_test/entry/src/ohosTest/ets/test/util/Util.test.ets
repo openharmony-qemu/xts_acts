@@ -1,4 +1,4 @@
-﻿/*
+/*
 * Copyright (c) 2024 SwanLink (Jiangsu) Technology Development Co., LTD.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -1063,7 +1063,7 @@ export default function utilTest() {
           name: "Alice",
           age: 30,
           grade: ({
-            gname: '涓夊勾鍏彮',
+            gname: '三年八班',
             floor: 'Three'
           } as GeneratedObjectLiteralInterface_2)
         };
@@ -1130,7 +1130,7 @@ export default function utilTest() {
       const TAG = 'testUtilGetHash016';
       try {
         let value: GeneratedObjectLiteralInterface_6 = {
-          "name": "灏忔槑",
+          "name": "小明",
           "isStudent": true,
           "score": null
         };
@@ -2533,7 +2533,7 @@ export default function utilTest() {
     it('testEncode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testEncode001';
       let textEncoder = new util.TextEncoder();
-      let result = textEncoder.encode("\uD800楼楼");
+      let result = textEncoder.encode("\uD800¥¥");
       expect(JSON.stringify(result)).assertEqual('{"0":237,"1":160,"2":128,"3":194,"4":165,"5":194,"6":165}');
     });
 
@@ -2656,7 +2656,7 @@ export default function utilTest() {
       let decoder = new util.StringDecoder('utf-8');
       let input = new Uint8Array([0xE4, 0xBD, 0xA0, 0xE5, 0xA5, 0xBD]);
       const writeString = decoder.write(input.slice(0, 5));
-      expect(writeString).assertEqual("浣?);
+      expect(writeString).assertEqual("你");
       try {
         const endString = decoder.end();
       } catch (e) {
@@ -3337,7 +3337,7 @@ export default function utilTest() {
       const TAG = 'testTextEncoder0005';
       try {
         let textEncoder = new util.TextEncoder();
-        let result = textEncoder.encodeInto("\uD800楼楼");
+        let result = textEncoder.encodeInto("\uD800¥¥");
         console.info("result = " + result);
         console.log(`${TAG} result:::  ${result}`);
         expect(result.toString()).assertEqual('237,160,128,194,165,194,165')
@@ -3404,10 +3404,10 @@ export default function utilTest() {
         const heapInfos = await util.ArkTSVM.getAllVMHeapMemoryInfo();
         expect(heapInfos != null).assertTrue();
         expect(heapInfos.length > 0).assertTrue();
-
+        
         let hasLocalHeap = false;
         let hasSharedHeap = false;
-
+        
         for (let i = 0; i < heapInfos.length; i++) {
           const info = heapInfos[i];
           expect(info.heapType != null).assertTrue();
@@ -3415,7 +3415,7 @@ export default function utilTest() {
           expect(info.heapObjectSize != null).assertTrue();
           expect(typeof info.heapObjectSize === 'number').assertTrue();
           expect(info.heapObjectSize >= 0).assertTrue();
-
+          
           if (info.heapType === 'local') {
             hasLocalHeap = true;
             expect(info.threadName != null).assertTrue();
@@ -3428,7 +3428,7 @@ export default function utilTest() {
             expect(info.threadId).assertEqual(undefined);
           }
         }
-
+        
         expect(hasLocalHeap).assertTrue();
         done();
       } catch (err) {
