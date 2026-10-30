@@ -4,6 +4,7 @@
     "MainAbility/pages/second/second",
     "MainAbility/pages/second/pageOne",
     "MainAbility/pages/second/pageTwo",
-    "MainAbility/pages/index/indexPixel"
+    "MainAbility/pages/index/indexPixel",
+    "MainAbility/pages/index/indexWritePixel"
   ]
 }
