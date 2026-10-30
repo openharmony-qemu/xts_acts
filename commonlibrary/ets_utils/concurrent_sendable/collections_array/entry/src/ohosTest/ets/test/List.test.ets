@@ -63,6 +63,7 @@ import ArrayConcurrentTest from './ArrayConcurrent.test';
 import ArrayExtendedTest from './ArrayExtended.test';
 import CollectionsArrayAtTestTest from './All/CollectionsArrayAtTest.test';
 import CollectionsArrayCombinationTestErrTest from './All/CollectionsArrayCombinationTestErr.test';
+import CollectionsArrayErrorPathTest from './All/CollectionsArrayErrorPathTest.test';
 import CollectionsArrayConcatTestTest from './All/CollectionsArrayConcatTest.test';
 import CollectionsArrayConstructorTestTest from './All/CollectionsArrayConstructorTest.test';
 import CollectionsArrayCopyWithinTestTest from './All/CollectionsArrayCopyWithinTest.test';
@@ -183,6 +184,7 @@ export default function testsuite() {
   ArrayExtendedTest();
   CollectionsArrayAtTestTest();
   CollectionsArrayCombinationTestErrTest();
+  CollectionsArrayErrorPathTest();
   CollectionsArrayConcatTestTest();
   CollectionsArrayConstructorTestTest();
   CollectionsArrayCopyWithinTestTest();
