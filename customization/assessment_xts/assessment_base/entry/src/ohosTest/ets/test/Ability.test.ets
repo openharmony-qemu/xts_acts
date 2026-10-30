@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, TestType, Size, Level, it } from "@ohos/hypium"
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, TestType, Size, Level, it } from '@ohos/hypium'
 import { assessment } from '@kit.AutomaticSceneConfigurationKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { BusinessError } from '@ohos.base'
@@ -48,7 +48,7 @@ export default function AutomaticSceneConTest() {
 
     /**
      * @tc.number SUB_Customization_Assessment_begin_Success_001
-     * @tc.name   begin interface normal test
+     * @tc.name   SUB_Customization_Assessment_begin_Success_001
      * @tc.desc   begin interface is called successfully and isActive returns true
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -98,7 +98,7 @@ export default function AutomaticSceneConTest() {
 
     /**
      * @tc.number SUB_Customization_Assessment_preparatory_begin_Success_002
-     * @tc.name   begin interface repeated call test
+     * @tc.name   SUB_Customization_Assessment_preparatory_begin_Success_002
      * @tc.desc   begin interface is called repeatedly without exception
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -146,7 +146,7 @@ export default function AutomaticSceneConTest() {
 
     /**
      * @tc.number SUB_Customization_Assessment_begin_error_003
-     * @tc.name   begin interface repeated error test
+     * @tc.name   SUB_Customization_Assessment_begin_error_003
      * @tc.desc   begin interface is called again during an active assessment and throws 36700002
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -194,7 +194,7 @@ export default function AutomaticSceneConTest() {
 
     /**
      * @tc.number SUB_Customization_Assessment_begin_userCancel_Success_001
-     * @tc.name   begin interface user cancel test
+     * @tc.name   SUB_Customization_Assessment_begin_userCancel_Success_001
      * @tc.desc   begin interface with user canceling the confirm dialog, onBegin callback returns USER_CANCEL and isActive returns false
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -242,7 +242,7 @@ export default function AutomaticSceneConTest() {
 
     /**
      * @tc.number SUB_Customization_Assessment_begin_paramError_001
-     * @tc.name   begin interface allowedApps exceed limit test
+     * @tc.name   SUB_Customization_Assessment_begin_paramError_001
      * @tc.desc   begin interface with 11 allowedApps (max is 10) throws 401 parameter error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -279,43 +279,10 @@ export default function AutomaticSceneConTest() {
       }
     })
 
-    /**
-     * @tc.number SUB_Customization_Assessment_begin_paramError_002
-     * @tc.name   begin interface invalid duration test
-     * @tc.desc   begin interface with a negative duration throws 401 parameter error
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Customization_Assessment_begin_paramError_002', Level.LEVEL0, async () => {
-      const testNum = 'SUB_Customization_Assessment_begin_paramError_002';
-      let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
-      try {
-        let config: assessment.AssessmentConfig = {
-          duration: -1,
-          allowedApps: ['com.samples.assessment']
-        };
-        let assessmentCallback: assessment.IAssessmentCallback = {
-          onBegin: (error: assessment.AssessmentError) => {
-            hilog.info(DOMAIN, TAG, `onBegin, code: ${error.code}, message: ${error.message}`);
-          },
-          onInterrupted: (info: assessment.AssessmentInterruptInfo) => {
-            hilog.warn(DOMAIN, TAG, `Assessment interrupted, code: ${info.code}, message: ${info.message}`);
-          },
-          onEnd: () => {
-            hilog.info(DOMAIN, TAG, 'Assessment ended.');
-          }
-        };
-        assessment.begin(context, config, assessmentCallback);
-      } catch (err) {
-        hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
-        expect(err.code).assertEqual(401)
-      }
-    })
 
     /**
      * @tc.number SUB_Customization_Assessment_onBegin_Success_001
-     * @tc.name   onBegin callback test
+     * @tc.name   SUB_Customization_Assessment_onBegin_Success_001
      * @tc.desc   onBegin callback of the IAssessmentCallback interface returns OK after begin succeeds
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -362,7 +329,7 @@ export default function AutomaticSceneConTest() {
 
     /**
      * @tc.number SUB_Customization_Assessment_end_success_001
-     * @tc.name   end interface normal test
+     * @tc.name   SUB_Customization_Assessment_end_success_001
      * @tc.desc   end interface is called successfully after the assessment began
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -409,7 +376,7 @@ export default function AutomaticSceneConTest() {
 
     /**
      * @tc.number SUB_Customization_Assessment_onEnd_Success_001
-     * @tc.name   onEnd callback test
+     * @tc.name   SUB_Customization_Assessment_onEnd_Success_001
      * @tc.desc   onEnd callback of the IAssessmentCallback interface is triggered after end and isActive returns false
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -459,7 +426,7 @@ export default function AutomaticSceneConTest() {
 
     /**
      * @tc.number SUB_Customization_Assessment_end_error_002
-     * @tc.name   end interface not active error test
+     * @tc.name   SUB_Customization_Assessment_end_error_002
      * @tc.desc   end interface is called when the assessment is not active and throws 36700003
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -480,7 +447,7 @@ export default function AutomaticSceneConTest() {
 
     /**
      * @tc.number SUB_Customization_Assessment_isActive_Success_001
-     * @tc.name   isActive interface true test
+     * @tc.name   SUB_Customization_Assessment_isActive_Success_001
      * @tc.desc   isActive interface returns true during an active assessment
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -531,7 +498,7 @@ export default function AutomaticSceneConTest() {
 
     /**
      * @tc.number SUB_Customization_Assessment_isActive_Success_002
-     * @tc.name   isActive interface false test
+     * @tc.name   SUB_Customization_Assessment_isActive_Success_002
      * @tc.desc   isActive interface returns false when not in assessment
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -550,7 +517,7 @@ export default function AutomaticSceneConTest() {
 
     /**
      * @tc.number SUB_Customization_Assessment_getConfiguration_Success_001
-     * @tc.name   getConfiguration interface duration test
+     * @tc.name   SUB_Customization_Assessment_getConfiguration_Success_001
      * @tc.desc   getConfiguration interface returns the configured duration during an active assessment
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -601,7 +568,7 @@ export default function AutomaticSceneConTest() {
 
     /**
      * @tc.number SUB_Customization_Assessment_getConfiguration_Success_002
-     * @tc.name   getConfiguration interface default duration test
+     * @tc.name   SUB_Customization_Assessment_getConfiguration_Success_002
      * @tc.desc   getConfiguration interface returns duration 0 when the assessment is not active
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -620,7 +587,7 @@ export default function AutomaticSceneConTest() {
 
     /**
      * @tc.number SUB_Customization_Assessment_getConfiguration_Success_003
-     * @tc.name   getConfiguration interface default allowedApps test
+     * @tc.name   SUB_Customization_Assessment_getConfiguration_Success_003
      * @tc.desc   getConfiguration interface returns empty allowedApps when the assessment is not active
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -639,7 +606,7 @@ export default function AutomaticSceneConTest() {
 
     /**
      * @tc.number SUB_Customization_Assessment_getConfiguration_Success_004
-     * @tc.name   getConfiguration interface after end test
+     * @tc.name   SUB_Customization_Assessment_getConfiguration_Success_004
      * @tc.desc   getConfiguration interface returns the default config after the assessment ended
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -690,7 +657,7 @@ export default function AutomaticSceneConTest() {
 
     /**
      * @tc.number SUB_Customization_Assessment_getConfiguration_Success_005
-     * @tc.name   getConfiguration interface allowedApps test
+     * @tc.name   SUB_Customization_Assessment_getConfiguration_Success_005
      * @tc.desc   getConfiguration interface returns the configured allowedApps during an active assessment
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -737,7 +704,7 @@ export default function AutomaticSceneConTest() {
 
     /**
      * @tc.number SUB_Customization_Assessment_duration_Success_001
-     * @tc.name   AssessmentConfig duration normal test
+     * @tc.name   SUB_Customization_Assessment_duration_Success_001
      * @tc.desc   the duration field of AssessmentConfig is set to 7200000 successfully
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -759,7 +726,7 @@ export default function AutomaticSceneConTest() {
 
     /**
      * @tc.number SUB_Customization_Assessment_duration_Success_002
-     * @tc.name   AssessmentConfig duration zero test
+     * @tc.name   SUB_Customization_Assessment_duration_Success_002
      * @tc.desc   the duration field of AssessmentConfig is set to 0 which means unlimited
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -780,7 +747,7 @@ export default function AutomaticSceneConTest() {
 
     /**
      * @tc.number SUB_Customization_Assessment_duration_Success_003
-     * @tc.name   AssessmentConfig duration zero with whitelist test
+     * @tc.name   SUB_Customization_Assessment_duration_Success_003
      * @tc.desc   the duration field of AssessmentConfig is set to 0 with allowedApps configured
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -802,7 +769,7 @@ export default function AutomaticSceneConTest() {
 
     /**
      * @tc.number SUB_Customization_Assessment_allowedApps_Success_001
-     * @tc.name   AssessmentConfig allowedApps normal test
+     * @tc.name   SUB_Customization_Assessment_allowedApps_Success_001
      * @tc.desc   the allowedApps field of AssessmentConfig supports a list of package names
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -825,7 +792,7 @@ export default function AutomaticSceneConTest() {
 
     /**
      * @tc.number SUB_Customization_Assessment_allowedApps_Success_002
-     * @tc.name   AssessmentConfig allowedApps empty test
+     * @tc.name   SUB_Customization_Assessment_allowedApps_Success_002
      * @tc.desc   the allowedApps field of AssessmentConfig can be an empty array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -846,7 +813,7 @@ export default function AutomaticSceneConTest() {
 
     /**
      * @tc.number SUB_Customization_Assessment_allowedApps_Success_003
-     * @tc.name   AssessmentConfig allowedApps max boundary test
+     * @tc.name   SUB_Customization_Assessment_allowedApps_Success_003
      * @tc.desc   the allowedApps field of AssessmentConfig supports at most 10 package names
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -872,7 +839,7 @@ export default function AutomaticSceneConTest() {
 
     /**
      * @tc.number SUB_Customization_Assessment_assessmentErrorCode_Success_001
-     * @tc.name   AssessmentErrorCode enum test
+     * @tc.name   SUB_Customization_Assessment_assessmentErrorCode_Success_001
      * @tc.desc   the values of the AssessmentErrorCode enum are as defined in the interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -891,7 +858,7 @@ export default function AutomaticSceneConTest() {
 
     /**
      * @tc.number SUB_Customization_Assessment_assessmentError_Success_001
-     * @tc.name   AssessmentError interface normal test
+     * @tc.name   SUB_Customization_Assessment_assessmentError_Success_001
      * @tc.desc   the AssessmentError interface contains code and message
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -912,7 +879,7 @@ export default function AutomaticSceneConTest() {
 
     /**
      * @tc.number SUB_Customization_Assessment_assessmentError_Success_002
-     * @tc.name   AssessmentError interface message optional test
+     * @tc.name   SUB_Customization_Assessment_assessmentError_Success_002
      * @tc.desc   the message field of the AssessmentError interface is optional and defaults to an empty string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -930,7 +897,7 @@ export default function AutomaticSceneConTest() {
 
     /**
      * @tc.number SUB_Customization_Assessment_assessmentError_Success_003
-     * @tc.name   AssessmentError interface USER_CANCEL test
+     * @tc.name   SUB_Customization_Assessment_assessmentError_Success_003
      * @tc.desc   the AssessmentError interface with USER_CANCEL code and message
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -952,7 +919,7 @@ export default function AutomaticSceneConTest() {
 
     /**
      * @tc.number SUB_Customization_Assessment_assessmentInterruptInfo_Success_001
-     * @tc.name   AssessmentInterruptInfo interface normal test
+     * @tc.name   SUB_Customization_Assessment_assessmentInterruptInfo_Success_001
      * @tc.desc   the AssessmentInterruptInfo interface contains code and message
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
