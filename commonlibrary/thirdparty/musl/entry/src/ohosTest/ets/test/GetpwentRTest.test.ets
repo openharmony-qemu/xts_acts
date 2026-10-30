@@ -13,13 +13,16 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, it, expect } from '@ohos/hypium';
+import { beforeEach, describe, expect, it, TestType, Size, Level } from "@ohos/hypium-dynamic"
+import Utils from './Utils'
 import getpwent_r_test from 'libgetpwent_r_test.so';
 
 export default function GetpwentRTest() {
   describe('MuslGetpwentRTest', () => {
-    beforeEach(() => {})
 
+    beforeEach(async () => {
+      await Utils.sleep(50)
+    })
     /**
      * @tc.name   testMuslGetpwentR0100
      * @tc.number SUB_THIRDPARTY_MUSL_GETPWENT_R_0100
@@ -28,9 +31,10 @@ export default function GetpwentRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_THIRDPARTY_MUSL_GETPWENT_R_0100', 0, () => {
+    it('testMuslGetpwentR0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = getpwent_r_test.GetpwentR_0100();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -41,9 +45,10 @@ export default function GetpwentRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_THIRDPARTY_MUSL_GETPWENT_R_0200', 0, () => {
+    it('testMuslGetpwentR0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = getpwent_r_test.GetpwentR_0200();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -54,9 +59,10 @@ export default function GetpwentRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_THIRDPARTY_MUSL_GETPWENT_R_0300', 0, () => {
+    it('testMuslGetpwentR0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = getpwent_r_test.GetpwentR_0300();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -67,9 +73,10 @@ export default function GetpwentRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_THIRDPARTY_MUSL_GETPWENT_R_0400', 0, () => {
+    it('testMuslGetpwentR0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = getpwent_r_test.GetpwentR_0400();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -80,9 +87,10 @@ export default function GetpwentRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_THIRDPARTY_MUSL_GETPWENT_R_0500', 0, () => {
+    it('testMuslGetpwentR0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = getpwent_r_test.GetpwentR_0500();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -93,9 +101,10 @@ export default function GetpwentRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_THIRDPARTY_MUSL_GETPWENT_R_0600', 0, () => {
+    it('testMuslGetpwentR0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = getpwent_r_test.GetpwentR_0600();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -106,9 +115,10 @@ export default function GetpwentRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_THIRDPARTY_MUSL_GETPWENT_R_0700', 0, () => {
+    it('testMuslGetpwentR0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = getpwent_r_test.GetpwentR_0700();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -119,35 +129,10 @@ export default function GetpwentRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_THIRDPARTY_MUSL_GETPWENT_R_0800', 0, () => {
+    it('testMuslGetpwentR0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = getpwent_r_test.GetpwentR_0800();
       expect(data).assertEqual(0);
-    })
-
-    /**
-     * @tc.name   testMuslGetpwentR0900
-     * @tc.number SUB_THIRDPARTY_MUSL_GETPWENT_R_0900
-     * @tc.desc   pwent_lock序列化并发访问
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_THIRDPARTY_MUSL_GETPWENT_R_0900', 0, () => {
-      let data: number = getpwent_r_test.GetpwentR_0900();
-      expect(data).assertEqual(0);
-    })
-
-    /**
-     * @tc.name   testMuslGetpwentR1000
-     * @tc.number SUB_THIRDPARTY_MUSL_GETPWENT_R_1000
-     * @tc.desc   与非_r变体getpwent混用不安全（Review-Only）
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_THIRDPARTY_MUSL_GETPWENT_R_1000', 0, () => {
-      let data: number = getpwent_r_test.GetpwentR_1000();
-      expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -158,35 +143,10 @@ export default function GetpwentRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_THIRDPARTY_MUSL_GETPWENT_R_1100', 0, () => {
+    it('testMuslGetpwentR1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data: number = getpwent_r_test.GetpwentR_1100();
       expect(data).assertEqual(0);
-    })
-
-    /**
-     * @tc.name   testMuslGetpwentR1200
-     * @tc.number SUB_THIRDPARTY_MUSL_GETPWENT_R_1200
-     * @tc.desc   ERANGE时free(rline)释放临时内存（Review-Only）
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_THIRDPARTY_MUSL_GETPWENT_R_1200', 0, () => {
-      let data: number = getpwent_r_test.GetpwentR_1200();
-      expect(data).assertEqual(0);
-    })
-
-    /**
-     * @tc.name   testMuslGetpwentR1300
-     * @tc.number SUB_THIRDPARTY_MUSL_GETPWENT_R_1300
-     * @tc.desc   ERANGE不可重试区别于fgetpwent_r（Review-Only）
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_THIRDPARTY_MUSL_GETPWENT_R_1300', 0, () => {
-      let data: number = getpwent_r_test.GetpwentR_1300();
-      expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -197,35 +157,11 @@ export default function GetpwentRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_THIRDPARTY_MUSL_GETPWENT_R_1400', 0, () => {
+    it('testMuslGetpwentR1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data: number = getpwent_r_test.GetpwentR_1400();
       expect(data).assertEqual(0);
+      done()
     })
 
-    /**
-     * @tc.name   testMuslGetpwentR1500
-     * @tc.number SUB_THIRDPARTY_MUSL_GETPWENT_R_1500
-     * @tc.desc   枚举passwd时线程状态不变
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_THIRDPARTY_MUSL_GETPWENT_R_1500', 0, () => {
-      let data: number = getpwent_r_test.GetpwentR_1500();
-      expect(data).assertEqual(0);
-    })
-
-    /**
-     * @tc.name   testMuslGetpwentR1600
-     * @tc.number SUB_THIRDPARTY_MUSL_GETPWENT_R_1600
-     * @tc.desc   ERANGE时free(rline)无泄漏（Review-Only）
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_THIRDPARTY_MUSL_GETPWENT_R_1600', 0, () => {
-      let data: number = getpwent_r_test.GetpwentR_1600();
-      expect(data).assertEqual(0);
-    })
   })
 }

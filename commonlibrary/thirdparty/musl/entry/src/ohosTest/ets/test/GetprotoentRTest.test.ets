@@ -13,13 +13,16 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, it, expect } from '@ohos/hypium';
+import { beforeEach, describe, expect, it, TestType, Size, Level } from "@ohos/hypium-dynamic"
+import Utils from './Utils'
 import getprotoent_r_test from 'libgetprotoent_r_test.so';
 
 export default function GetprotoentRTest() {
   describe('MuslGetprotoentRTest', () => {
-    beforeEach(() => {})
 
+    beforeEach(async () => {
+      await Utils.sleep(50)
+    })
     /**
      * @tc.name   testMuslProtoentR0100
      * @tc.number SUB_THIRDPARTY_MUSL_GETPROTOENT_R_0100
@@ -28,9 +31,10 @@ export default function GetprotoentRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_THIRDPARTY_MUSL_GETPROTOENT_R_0100', 0, () => {
+    it('testMuslProtoentR0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = getprotoent_r_test.ProtoentR_0100();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -41,9 +45,10 @@ export default function GetprotoentRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_THIRDPARTY_MUSL_GETPROTOENT_R_0200', 0, () => {
+    it('testMuslProtoentR0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = getprotoent_r_test.ProtoentR_0200();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -54,9 +59,10 @@ export default function GetprotoentRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_THIRDPARTY_MUSL_GETPROTOENT_R_0300', 0, () => {
+    it('testMuslProtoentR0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = getprotoent_r_test.ProtoentR_0300();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -67,9 +73,10 @@ export default function GetprotoentRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_THIRDPARTY_MUSL_GETPROTOENT_R_0400', 0, () => {
+    it('testMuslProtoentR0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = getprotoent_r_test.ProtoentR_0400();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -80,9 +87,10 @@ export default function GetprotoentRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_THIRDPARTY_MUSL_GETPROTOENT_R_0500', 0, () => {
+    it('testMuslProtoentR0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = getprotoent_r_test.ProtoentR_0500();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -93,9 +101,10 @@ export default function GetprotoentRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_THIRDPARTY_MUSL_GETPROTOENT_R_0600', 0, () => {
+    it('testMuslProtoentR0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = getprotoent_r_test.ProtoentR_0600();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -106,9 +115,10 @@ export default function GetprotoentRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_THIRDPARTY_MUSL_GETPROTOENT_R_0700', 0, () => {
+    it('testMuslProtoentR0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = getprotoent_r_test.ProtoentR_0700();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -119,9 +129,10 @@ export default function GetprotoentRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_THIRDPARTY_MUSL_GETPROTOENT_R_0800', 0, () => {
+    it('testMuslProtoentR0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data: number = getprotoent_r_test.ProtoentR_0800();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -132,9 +143,10 @@ export default function GetprotoentRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_THIRDPARTY_MUSL_GETPROTOENT_R_0900', 0, () => {
+    it('testMuslProtoentR0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data: number = getprotoent_r_test.ProtoentR_0900();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -145,9 +157,10 @@ export default function GetprotoentRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_THIRDPARTY_MUSL_GETPROTOENT_R_1000', 0, () => {
+    it('testMuslProtoentR1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data: number = getprotoent_r_test.ProtoentR_1000();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -158,9 +171,10 @@ export default function GetprotoentRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_THIRDPARTY_MUSL_GETPROTOENT_R_1100', 0, () => {
+    it('testMuslProtoentR1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data: number = getprotoent_r_test.ProtoentR_1100();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -171,9 +185,10 @@ export default function GetprotoentRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_THIRDPARTY_MUSL_GETPROTOENT_R_1200', 0, () => {
+    it('testMuslProtoentR1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data: number = getprotoent_r_test.ProtoentR_1200();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -184,9 +199,10 @@ export default function GetprotoentRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_THIRDPARTY_MUSL_GETPROTOENT_R_1300', 0, () => {
+    it('testMuslProtoentR1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data: number = getprotoent_r_test.ProtoentR_1300();
       expect(data).assertEqual(0);
+      done()
     })
   })
 }

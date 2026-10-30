@@ -13,12 +13,16 @@
  * limitations under the License.
  */
 
-import { describe, it, expect } from '@ohos/hypium'
+import { beforeEach, describe, expect, it, TestType, Size, Level } from "@ohos/hypium-dynamic"
+import Utils from './Utils'
 import getpagesize_test from 'libgetpagesize_test.so'
 
 export default function GetpagesizeTest() {
   describe('MuslGetpagesizeTest', () => {
 
+    beforeEach(async () => {
+      await Utils.sleep(50)
+    })
     /**
      * @tc.name   testMuslGetpagesize0100
      * @tc.number SUB_THIRDPARTY_MUSL_GETPAGESIZE_0100
@@ -27,10 +31,11 @@ export default function GetpagesizeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_THIRDPARTY_MUSL_GETPAGESIZE_0100', 0, () => {
+    it('testMuslGetpagesize0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = getpagesize_test.Getpagesize_0100();
       expect(data).assertEqual(0);
-    });
+      done()
+    })
 
     /**
      * @tc.name   testMuslGetpagesize0200
@@ -40,10 +45,11 @@ export default function GetpagesizeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_THIRDPARTY_MUSL_GETPAGESIZE_0200', 0, () => {
+    it('testMuslGetpagesize0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = getpagesize_test.Getpagesize_0200();
       expect(data).assertEqual(0);
-    });
+      done()
+    })
 
     /**
      * @tc.name   testMuslGetpagesize0300
@@ -53,10 +59,11 @@ export default function GetpagesizeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_THIRDPARTY_MUSL_GETPAGESIZE_0300', 0, () => {
+    it('testMuslGetpagesize0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = getpagesize_test.Getpagesize_0300();
       expect(data).assertEqual(0);
-    });
+      done()
+    })
 
     /**
      * @tc.name   testMuslGetpagesize0400
@@ -66,10 +73,11 @@ export default function GetpagesizeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_THIRDPARTY_MUSL_GETPAGESIZE_0400', 0, () => {
+    it('testMuslGetpagesize0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = getpagesize_test.Getpagesize_0400();
       expect(data).assertEqual(0);
-    });
+      done()
+    })
 
     /**
      * @tc.name   testMuslGetpagesize0500
@@ -79,10 +87,11 @@ export default function GetpagesizeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_THIRDPARTY_MUSL_GETPAGESIZE_0500', 0, () => {
+    it('testMuslGetpagesize0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = getpagesize_test.Getpagesize_0500();
       expect(data).assertEqual(0);
-    });
+      done()
+    })
 
     /**
      * @tc.name   testMuslGetpagesize0600
@@ -92,10 +101,11 @@ export default function GetpagesizeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_THIRDPARTY_MUSL_GETPAGESIZE_0600', 0, () => {
+    it('testMuslGetpagesize0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data: number = getpagesize_test.Getpagesize_0600();
       expect(data).assertEqual(0);
-    });
+      done()
+    })
 
     /**
      * @tc.name   testMuslGetpagesize0700
@@ -105,10 +115,11 @@ export default function GetpagesizeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_THIRDPARTY_MUSL_GETPAGESIZE_0700', 0, () => {
+    it('testMuslGetpagesize0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data: number = getpagesize_test.Getpagesize_0700();
       expect(data).assertEqual(0);
-    });
+      done()
+    })
 
     /**
      * @tc.name   testMuslGetpagesize0800
@@ -118,10 +129,11 @@ export default function GetpagesizeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_THIRDPARTY_MUSL_GETPAGESIZE_0800', 0, () => {
+    it('testMuslGetpagesize0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data: number = getpagesize_test.Getpagesize_0800();
       expect(data).assertEqual(0);
-    });
+      done()
+    })
 
     /**
      * @tc.name   testMuslGetpagesize0900
@@ -131,9 +143,10 @@ export default function GetpagesizeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_THIRDPARTY_MUSL_GETPAGESIZE_0900', 0, () => {
+    it('testMuslGetpagesize0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = getpagesize_test.Getpagesize_0900();
       expect(data).assertEqual(0);
-    });
+      done()
+    })
   })
 }

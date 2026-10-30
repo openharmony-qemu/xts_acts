@@ -1,77 +1,92 @@
-import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect } from '@ohos/hypium';
+/*
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import { beforeEach, describe, expect, it, TestType, Size, Level } from "@ohos/hypium-dynamic"
+import Utils from './Utils'
 import mod from 'libisoc23_strtoll_l_test.so';
 
 export default function isoc23StrtollLTest() {
   describe('ActsIsoc23StrtollLTest', () => {
-    beforeAll(() => {})
-    beforeEach(() => {})
-    afterEach(() => {})
-    afterAll(() => {})
 
+    beforeEach(async () => {
+      await Utils.sleep(50)
+    })
     /**
      * @tc.name   testMuslIsoc23StrtollL0100
      * @tc.number SUB_THIRDPARTY_MUSL_ISOC23_STRTOLL_L_0100
-     * @tc.desc   base=0解析0b1010二进制成功返回10
+     * @tc.desc   test SUB_THIRDPARTY_MUSL_ISOC23_STRTOLL_L_0100
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_THIRDPARTY_MUSL_ISOC23_STRTOLL_L_0100', 0, () => {
+    it('testMuslIsoc23StrtollL0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = mod.Isoc23StrtollL_0100();
       expect(data).assertEqual(0);
+      done()
     })
-
     /**
      * @tc.name   testMuslIsoc23StrtollL0200
      * @tc.number SUB_THIRDPARTY_MUSL_ISOC23_STRTOLL_L_0200
-     * @tc.desc   base=16解析0xff成功返回255
+     * @tc.desc   test SUB_THIRDPARTY_MUSL_ISOC23_STRTOLL_L_0200
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_THIRDPARTY_MUSL_ISOC23_STRTOLL_L_0200', 0, () => {
+    it('testMuslIsoc23StrtollL0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = mod.Isoc23StrtollL_0200();
       expect(data).assertEqual(0);
+      done()
     })
-
     /**
      * @tc.name   testMuslIsoc23StrtollL0300
      * @tc.number SUB_THIRDPARTY_MUSL_ISOC23_STRTOLL_L_0300
-     * @tc.desc   仅前缀0b返回0且endptr指向b
+     * @tc.desc   test SUB_THIRDPARTY_MUSL_ISOC23_STRTOLL_L_0300
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_THIRDPARTY_MUSL_ISOC23_STRTOLL_L_0300', 0, () => {
+    it('testMuslIsoc23StrtollL0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = mod.Isoc23StrtollL_0300();
       expect(data).assertEqual(0);
+      done()
     })
-
     /**
      * @tc.name   testMuslIsoc23StrtollL0400
      * @tc.number SUB_THIRDPARTY_MUSL_ISOC23_STRTOLL_L_0400
-     * @tc.desc   十进制溢出返回LLONG_MAX并置ERANGE
+     * @tc.desc   test SUB_THIRDPARTY_MUSL_ISOC23_STRTOLL_L_0400
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_THIRDPARTY_MUSL_ISOC23_STRTOLL_L_0400', 0, () => {
+    it('testMuslIsoc23StrtollL0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = mod.Isoc23StrtollL_0400();
       expect(data).assertEqual(0);
+      done()
     })
-
     /**
      * @tc.name   testMuslIsoc23StrtollL0500
      * @tc.number SUB_THIRDPARTY_MUSL_ISOC23_STRTOLL_L_0500
-     * @tc.desc   base=1非法返回EINVAL
+     * @tc.desc   test SUB_THIRDPARTY_MUSL_ISOC23_STRTOLL_L_0500
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_THIRDPARTY_MUSL_ISOC23_STRTOLL_L_0500', 0, () => {
+    it('testMuslIsoc23StrtollL0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = mod.Isoc23StrtollL_0500();
       expect(data).assertEqual(0);
+      done()
     })
   })
 }

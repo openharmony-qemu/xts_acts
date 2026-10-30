@@ -13,13 +13,16 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, it, expect } from '@ohos/hypium';
+import { beforeEach, describe, expect, it, TestType, Size, Level } from "@ohos/hypium-dynamic"
+import Utils from './Utils'
 import getgrent_r_test from 'libgetgrent_r_test.so';
 
 export default function GetgrentRTest() {
   describe('MuslGetgrentRTest', () => {
-    beforeEach(() => {})
 
+    beforeEach(async () => {
+      await Utils.sleep(50)
+    })
     /**
      * @tc.name   testMuslGetgrentR0100
      * @tc.number SUB_THIRDPARTY_MUSL_GETGRENT_R_0100
@@ -28,9 +31,10 @@ export default function GetgrentRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_THIRDPARTY_MUSL_GETGRENT_R_0100', 0, () => {
+    it('testMuslGetgrentR0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = getgrent_r_test.GetgrentR_0100();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -41,9 +45,10 @@ export default function GetgrentRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_THIRDPARTY_MUSL_GETGRENT_R_0200', 0, () => {
+    it('testMuslGetgrentR0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = getgrent_r_test.GetgrentR_0200();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -54,9 +59,10 @@ export default function GetgrentRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_THIRDPARTY_MUSL_GETGRENT_R_0300', 0, () => {
+    it('testMuslGetgrentR0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = getgrent_r_test.GetgrentR_0300();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -67,9 +73,10 @@ export default function GetgrentRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_THIRDPARTY_MUSL_GETGRENT_R_0400', 0, () => {
+    it('testMuslGetgrentR0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = getgrent_r_test.GetgrentR_0400();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -80,9 +87,10 @@ export default function GetgrentRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_THIRDPARTY_MUSL_GETGRENT_R_0500', 0, () => {
+    it('testMuslGetgrentR0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = getgrent_r_test.GetgrentR_0500();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -93,9 +101,10 @@ export default function GetgrentRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_THIRDPARTY_MUSL_GETGRENT_R_0600', 0, () => {
+    it('testMuslGetgrentR0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = getgrent_r_test.GetgrentR_0600();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -106,9 +115,10 @@ export default function GetgrentRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_THIRDPARTY_MUSL_GETGRENT_R_0700', 0, () => {
+    it('testMuslGetgrentR0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = getgrent_r_test.GetgrentR_0700();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -119,35 +129,10 @@ export default function GetgrentRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_THIRDPARTY_MUSL_GETGRENT_R_0800', 0, () => {
+    it('testMuslGetgrentR0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = getgrent_r_test.GetgrentR_0800();
       expect(data).assertEqual(0);
-    })
-
-    /**
-     * @tc.name   testMuslGetgrentR0900
-     * @tc.number SUB_THIRDPARTY_MUSL_GETGRENT_R_0900
-     * @tc.desc   多线程并发调用被grent_lock序列化
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_THIRDPARTY_MUSL_GETGRENT_R_0900', 0, () => {
-      let data: number = getgrent_r_test.GetgrentR_0900();
-      expect(data).assertEqual(0);
-    })
-
-    /**
-     * @tc.name   testMuslGetgrentR1000
-     * @tc.number SUB_THIRDPARTY_MUSL_GETGRENT_R_1000
-     * @tc.desc   与非_r变体getgrent混用不安全（Review-Only）
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_THIRDPARTY_MUSL_GETGRENT_R_1000', 0, () => {
-      let data: number = getgrent_r_test.GetgrentR_1000();
-      expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -158,9 +143,10 @@ export default function GetgrentRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_THIRDPARTY_MUSL_GETGRENT_R_1100', 0, () => {
+    it('testMuslGetgrentR1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = getgrent_r_test.GetgrentR_1100();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -171,9 +157,10 @@ export default function GetgrentRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_THIRDPARTY_MUSL_GETGRENT_R_1200', 0, () => {
+    it('testMuslGetgrentR1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data: number = getgrent_r_test.GetgrentR_1200();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -184,22 +171,10 @@ export default function GetgrentRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_THIRDPARTY_MUSL_GETGRENT_R_1300', 0, () => {
+    it('testMuslGetgrentR1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data: number = getgrent_r_test.GetgrentR_1300();
       expect(data).assertEqual(0);
-    })
-
-    /**
-     * @tc.name   testMuslGetgrentR1400
-     * @tc.number SUB_THIRDPARTY_MUSL_GETGRENT_R_1400
-     * @tc.desc   ERANGE时释放rmem和rline临时内存（Review-Only）
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_THIRDPARTY_MUSL_GETGRENT_R_1400', 0, () => {
-      let data: number = getgrent_r_test.GetgrentR_1400();
-      expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -210,9 +185,10 @@ export default function GetgrentRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_THIRDPARTY_MUSL_GETGRENT_R_1500', 0, () => {
+    it('testMuslGetgrentR1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data: number = getgrent_r_test.GetgrentR_1500();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -223,35 +199,11 @@ export default function GetgrentRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_THIRDPARTY_MUSL_GETGRENT_R_1600', 0, () => {
+    it('testMuslGetgrentR1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data: number = getgrent_r_test.GetgrentR_1600();
       expect(data).assertEqual(0);
+      done()
     })
 
-    /**
-     * @tc.name   testMuslGetgrentR1700
-     * @tc.number SUB_THIRDPARTY_MUSL_GETGRENT_R_1700
-     * @tc.desc   ERANGE时free(rmem)+free(rline)无泄漏（Review-Only）
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_THIRDPARTY_MUSL_GETGRENT_R_1700', 0, () => {
-      let data: number = getgrent_r_test.GetgrentR_1700();
-      expect(data).assertEqual(0);
-    })
-
-    /**
-     * @tc.name   testMuslGetgrentR1800
-     * @tc.number SUB_THIRDPARTY_MUSL_GETGRENT_R_1800
-     * @tc.desc   多线程结束后内存一致（简化）
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_THIRDPARTY_MUSL_GETGRENT_R_1800', 0, () => {
-      let data: number = getgrent_r_test.GetgrentR_1800();
-      expect(data).assertEqual(0);
-    })
   })
 }

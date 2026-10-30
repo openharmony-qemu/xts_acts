@@ -13,13 +13,16 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, it, expect } from '@ohos/hypium';
+import { beforeEach, describe, expect, it, TestType, Size, Level } from "@ohos/hypium-dynamic"
+import Utils from './Utils'
 import getservent_r_test from 'libgetservent_r_test.so';
 
 export default function GetserventRTest() {
   describe('MuslGetserventRTest', () => {
-    beforeEach(() => {})
 
+    beforeEach(async () => {
+      await Utils.sleep(50)
+    })
     /**
      * @tc.name   testMuslServentR0100
      * @tc.number SUB_THIRDPARTY_MUSL_GETSERVENT_R_0100
@@ -28,9 +31,10 @@ export default function GetserventRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_THIRDPARTY_MUSL_GETSERVENT_R_0100', 0, () => {
+    it('testMuslServentR0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = getservent_r_test.ServentR_0100();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -41,9 +45,10 @@ export default function GetserventRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_THIRDPARTY_MUSL_GETSERVENT_R_0200', 0, () => {
+    it('testMuslServentR0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = getservent_r_test.ServentR_0200();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -54,9 +59,10 @@ export default function GetserventRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_THIRDPARTY_MUSL_GETSERVENT_R_0300', 0, () => {
+    it('testMuslServentR0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = getservent_r_test.ServentR_0300();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -67,9 +73,10 @@ export default function GetserventRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_THIRDPARTY_MUSL_GETSERVENT_R_0400', 0, () => {
+    it('testMuslServentR0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = getservent_r_test.ServentR_0400();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -80,9 +87,10 @@ export default function GetserventRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_THIRDPARTY_MUSL_GETSERVENT_R_0500', 0, () => {
+    it('testMuslServentR0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = getservent_r_test.ServentR_0500();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -93,9 +101,10 @@ export default function GetserventRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_THIRDPARTY_MUSL_GETSERVENT_R_0600', 0, () => {
+    it('testMuslServentR0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = getservent_r_test.ServentR_0600();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -106,9 +115,10 @@ export default function GetserventRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_THIRDPARTY_MUSL_GETSERVENT_R_0700', 0, () => {
+    it('testMuslServentR0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = getservent_r_test.ServentR_0700();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -119,9 +129,10 @@ export default function GetserventRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_THIRDPARTY_MUSL_GETSERVENT_R_0800', 0, () => {
+    it('testMuslServentR0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = getservent_r_test.ServentR_0800();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -132,9 +143,10 @@ export default function GetserventRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_THIRDPARTY_MUSL_GETSERVENT_R_0900', 0, () => {
+    it('testMuslServentR0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = getservent_r_test.ServentR_0900();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -145,9 +157,10 @@ export default function GetserventRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_THIRDPARTY_MUSL_GETSERVENT_R_1000', 0, () => {
+    it('testMuslServentR1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data: number = getservent_r_test.ServentR_1000();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -158,9 +171,10 @@ export default function GetserventRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_THIRDPARTY_MUSL_GETSERVENT_R_1100', 0, () => {
+    it('testMuslServentR1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data: number = getservent_r_test.ServentR_1100();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -171,9 +185,10 @@ export default function GetserventRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_THIRDPARTY_MUSL_GETSERVENT_R_1200', 0, () => {
+    it('testMuslServentR1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data: number = getservent_r_test.ServentR_1200();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -184,9 +199,10 @@ export default function GetserventRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_THIRDPARTY_MUSL_GETSERVENT_R_1300', 0, () => {
+    it('testMuslServentR1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = getservent_r_test.ServentR_1300();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -197,9 +213,10 @@ export default function GetserventRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_THIRDPARTY_MUSL_GETSERVENT_R_1400', 0, () => {
+    it('testMuslServentR1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data: number = getservent_r_test.ServentR_1400();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -210,9 +227,10 @@ export default function GetserventRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_THIRDPARTY_MUSL_GETSERVENT_R_1500', 0, () => {
+    it('testMuslServentR1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data: number = getservent_r_test.ServentR_1500();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -223,9 +241,10 @@ export default function GetserventRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_THIRDPARTY_MUSL_GETSERVENT_R_1600', 0, () => {
+    it('testMuslServentR1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data: number = getservent_r_test.ServentR_1600();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -236,9 +255,10 @@ export default function GetserventRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_THIRDPARTY_MUSL_GETSERVENT_R_1700', 0, () => {
+    it('testMuslServentR1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data: number = getservent_r_test.ServentR_1700();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -249,9 +269,10 @@ export default function GetserventRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_THIRDPARTY_MUSL_GETSERVENT_R_1800', 0, () => {
+    it('testMuslServentR1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data: number = getservent_r_test.ServentR_1800();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -262,9 +283,10 @@ export default function GetserventRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_THIRDPARTY_MUSL_GETSERVENT_R_1900', 0, () => {
+    it('testMuslServentR1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data: number = getservent_r_test.ServentR_1900();
       expect(data).assertEqual(0);
+      done()
     })
 
     /**
@@ -275,9 +297,10 @@ export default function GetserventRTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_THIRDPARTY_MUSL_GETSERVENT_R_2000', 0, () => {
+    it('testMuslServentR2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data: number = getservent_r_test.ServentR_2000();
       expect(data).assertEqual(0);
+      done()
     })
   })
 }
