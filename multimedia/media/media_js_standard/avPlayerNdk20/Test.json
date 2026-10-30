@@ -28,9 +28,10 @@
     {
       "type": "PushKit",
       "push": [
-        "./resource/media/AAC_48000_32_1.aac -> /data/app/el2/100/base/com.avplayer.napi20test/haps/com.avplayer.napi20test/files/",
-        "./resource/media/H264_AAC.mp4 -> /data/app/el2/100/base/com.avplayer.napi20test/haps/com.avplayer.napi20test/files/",
-        "./resource/media/AVPlayer/H264_AAC.mkv -> /data/app/el2/100/base/com.avplayer.napi20test/haps/com.avplayer.napi20test/files/"
+        "./resource/media/AAC_48000_32_1.aac -> /data/local/tmp/",
+        "./resource/media/H264_AAC.mp4 -> /data/local/tmp/",
+        "./resource/media/AVPlayer/H264_AAC.mkv -> /data/local/tmp/",
+        "./resource/media/setup_media_js_standard_avPlayerNdk20_test.sh -> /data/local/tmp/"
       ]
     },
     {
@@ -38,7 +39,9 @@
       "run-command": [
         "power-shell wakeup",
         "power-shell timeout -o 2147483647",
-        "power-shell setmode 602"
+        "power-shell setmode 602",
+        "chmod 755 /data/local/tmp/",
+        "sh /data/local/tmp/setup_media_js_standard_avPlayerNdk20_test.sh"
       ]
     }
   ]
