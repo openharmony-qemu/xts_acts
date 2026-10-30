@@ -1,1 +1,0 @@
-export const add01: (a: number, b: number) => number;

@@ -1,176 +1,144 @@
-import { describe, it, expect } from '@ohos/hypium';
+/*
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import { beforeEach, describe, expect, it, TestType, Size, Level } from "@ohos/hypium-dynamic"
+import Utils from './Utils'
 import close_range_test from 'libclose_range_test.so';
 
 export default function closeRangeTest() {
   describe('ActsCloseRangeTest', () => {
 
+    beforeEach(async () => {
+      await Utils.sleep(50)
+    })
     /**
      * @tc.name   testMuslCloseRange0100
      * @tc.number SUB_THIRDPARTY_MUSL_CLOSE_RANGE_0100
-     * @tc.desc   close_range(0,UINT_MAX,0)关闭全部fd成功
+     * @tc.desc   test SUB_THIRDPARTY_MUSL_CLOSE_RANGE_0100
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_THIRDPARTY_MUSL_CLOSE_RANGE_0100', 0, () => {
+    it('testMuslCloseRange0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = close_range_test.CloseRange_0100();
       expect(data).assertEqual(0);
-    });
-
+      done()
+    })
     /**
      * @tc.name   testMuslCloseRange0200
      * @tc.number SUB_THIRDPARTY_MUSL_CLOSE_RANGE_0200
-     * @tc.desc   first大于last返回EINVAL
+     * @tc.desc   test SUB_THIRDPARTY_MUSL_CLOSE_RANGE_0200
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_THIRDPARTY_MUSL_CLOSE_RANGE_0200', 0, () => {
+    it('testMuslCloseRange0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = close_range_test.CloseRange_0200();
       expect(data).assertEqual(0);
-    });
-
+      done()
+    })
     /**
      * @tc.name   testMuslCloseRange0300
      * @tc.number SUB_THIRDPARTY_MUSL_CLOSE_RANGE_0300
-     * @tc.desc   CLOSE_RANGE_UNSHARE标志调用不崩溃
+     * @tc.desc   test SUB_THIRDPARTY_MUSL_CLOSE_RANGE_0300
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_THIRDPARTY_MUSL_CLOSE_RANGE_0300', 0, () => {
+    it('testMuslCloseRange0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = close_range_test.CloseRange_0300();
       expect(data).assertEqual(0);
-    });
-
+      done()
+    })
     /**
      * @tc.name   testMuslCloseRange0400
      * @tc.number SUB_THIRDPARTY_MUSL_CLOSE_RANGE_0400
-     * @tc.desc   CLOSE_RANGE_CLOEXEC设置FD_CLOEXEC
+     * @tc.desc   test SUB_THIRDPARTY_MUSL_CLOSE_RANGE_0400
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_THIRDPARTY_MUSL_CLOSE_RANGE_0400', 0, () => {
+    it('testMuslCloseRange0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = close_range_test.CloseRange_0400();
       expect(data).assertEqual(0);
-    });
-
+      done()
+    })
     /**
      * @tc.name   testMuslCloseRange0500
      * @tc.number SUB_THIRDPARTY_MUSL_CLOSE_RANGE_0500
-     * @tc.desc   关闭fd5后访问返回EBADF
+     * @tc.desc   test SUB_THIRDPARTY_MUSL_CLOSE_RANGE_0500
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_THIRDPARTY_MUSL_CLOSE_RANGE_0500', 0, () => {
+    it('testMuslCloseRange0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = close_range_test.CloseRange_0500();
       expect(data).assertEqual(0);
-    });
-
+      done()
+    })
     /**
      * @tc.name   testMuslCloseRange0600
      * @tc.number SUB_THIRDPARTY_MUSL_CLOSE_RANGE_0600
-     * @tc.desc   关闭不存在fd范围100-200返回0
+     * @tc.desc   test SUB_THIRDPARTY_MUSL_CLOSE_RANGE_0600
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_THIRDPARTY_MUSL_CLOSE_RANGE_0600', 0, () => {
+    it('testMuslCloseRange0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = close_range_test.CloseRange_0600();
       expect(data).assertEqual(0);
-    });
-
+      done()
+    })
     /**
      * @tc.name   testMuslCloseRange0700
      * @tc.number SUB_THIRDPARTY_MUSL_CLOSE_RANGE_0700
-     * @tc.desc   范围外fd5保持打开
+     * @tc.desc   test SUB_THIRDPARTY_MUSL_CLOSE_RANGE_0700
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_THIRDPARTY_MUSL_CLOSE_RANGE_0700', 0, () => {
+    it('testMuslCloseRange0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = close_range_test.CloseRange_0700();
       expect(data).assertEqual(0);
-    });
-
+      done()
+    })
     /**
      * @tc.name   testMuslCloseRange0800
      * @tc.number SUB_THIRDPARTY_MUSL_CLOSE_RANGE_0800
-     * @tc.desc   关闭当前fd后再次close返回EBADF
+     * @tc.desc   test SUB_THIRDPARTY_MUSL_CLOSE_RANGE_0800
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('SUB_THIRDPARTY_MUSL_CLOSE_RANGE_0800', 0, () => {
+    it('testMuslCloseRange0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = close_range_test.CloseRange_0800();
       expect(data).assertEqual(0);
-    });
-
+      done()
+    })
     /**
      * @tc.name   testMuslCloseRange0900
      * @tc.number SUB_THIRDPARTY_MUSL_CLOSE_RANGE_0900
-     * @tc.desc   关闭fd3-7范围成功返回0
+     * @tc.desc   test SUB_THIRDPARTY_MUSL_CLOSE_RANGE_0900
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('SUB_THIRDPARTY_MUSL_CLOSE_RANGE_0900', 0, () => {
+    it('testMuslCloseRange0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = close_range_test.CloseRange_0900();
       expect(data).assertEqual(0);
-    });
-
-    /**
-     * @tc.name   testMuslCloseRange1000
-     * @tc.number SUB_THIRDPARTY_MUSL_CLOSE_RANGE_1000
-     * @tc.desc   close_range占位用例直接返回0（Review-Only）
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_THIRDPARTY_MUSL_CLOSE_RANGE_1000', 0, () => {
-      let data: number = close_range_test.CloseRange_1000();
-      expect(data).assertEqual(0);
-    });
-
-    /**
-     * @tc.name   testMuslCloseRange1100
-     * @tc.number SUB_THIRDPARTY_MUSL_CLOSE_RANGE_1100
-     * @tc.desc   close_range占位用例直接返回0（Review-Only）
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_THIRDPARTY_MUSL_CLOSE_RANGE_1100', 0, () => {
-      let data: number = close_range_test.CloseRange_1100();
-      expect(data).assertEqual(0);
-    });
-
-    /**
-     * @tc.name   testMuslCloseRange1200
-     * @tc.number SUB_THIRDPARTY_MUSL_CLOSE_RANGE_1200
-     * @tc.desc   close_range占位用例直接返回0（Review-Only）
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_THIRDPARTY_MUSL_CLOSE_RANGE_1200', 0, () => {
-      let data: number = close_range_test.CloseRange_1200();
-      expect(data).assertEqual(0);
-    });
-
-    /**
-     * @tc.name   testMuslCloseRange1300
-     * @tc.number SUB_THIRDPARTY_MUSL_CLOSE_RANGE_1300
-     * @tc.desc   close_range占位用例直接返回0（Review-Only）
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_THIRDPARTY_MUSL_CLOSE_RANGE_1300', 0, () => {
-      let data: number = close_range_test.CloseRange_1300();
-      expect(data).assertEqual(0);
-    });
+      done()
+    })
   });
 }
