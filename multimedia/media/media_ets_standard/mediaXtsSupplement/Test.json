@@ -10,6 +10,14 @@
     },
     "kits": [
         {
+            "test-file-name": [
+                "ActsMediaXtsSuppTest.hap",
+                "ActsMediaXtsMainSuppTest.hap"
+            ],
+            "type": "AppInstallKit",
+            "cleanup-apps": true
+        },
+        {
             "type": "PushKit",
             "pre-push": [],
             "push": [
@@ -55,14 +63,6 @@
                 "scanner",
                 "sleep 5"
             ]
-        },
-        {
-            "test-file-name": [
-                "ActsMediaXtsSuppTest.hap",
-                "ActsMediaXtsMainSuppTest.hap"
-            ],
-            "type": "AppInstallKit",
-            "cleanup-apps": true
         }
     ]
 }
