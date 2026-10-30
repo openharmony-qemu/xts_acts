@@ -14,18 +14,20 @@
  */
 
 #include "napi/native_api.h"
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
+#include <cstdlib>
+#include <cstdio>
+#include <cstring>
 #include <unistd.h>
-#include <errno.h>
+#include <cerrno>
 #include <dlfcn.h>
 
-typedef long (*strtol_fn)(const char *, char **, int);
-typedef int (*sscanf_fn)(const char *, const char *, ...);
+#define EXPECTED_BIN_5 5
 
-static strtol_fn g_strtol = nullptr;
-static sscanf_fn g_sscanf = nullptr;
+typedef long (*StrtolFn)(const char *, char **, int);
+typedef int (*SscanfFn)(const char *, const char *, ...);
+
+static StrtolFn g_strtol = nullptr;
+static SscanfFn g_sscanf = nullptr;
 
 static napi_value Ret(napi_env env, int32_t val)
 {
@@ -49,12 +51,10 @@ static napi_value Strtol_0100(napi_env env, napi_callback_info info)
     const char *s = "0b101";
 
     errno = 0;
-    long val = g_strtol(nptr, NULL, 0);
-
+    long val = g_strtol(nptr, nullptr, 0);
     int v = 0;
     int ret = g_sscanf ? g_sscanf(s, "%b", &v) : -1;
-
-    if (val == 5 && ret == 1 && v == 5) {
+    if (val == EXPECTED_BIN_5 && ret == 1 && v == EXPECTED_BIN_5) {
         return Ret(env, 0);
     }
     return Ret(env, 1);
@@ -73,11 +73,9 @@ static napi_value Strtol_0200(napi_env env, napi_callback_info info)
 
     int v = 0;
     int ret = g_sscanf("0b101", "%i", &v);
-
     errno = 0;
-    long val = g_strtol(nptr, NULL, 0);
-
-    if (ret == 1 && v == 5 && val == 5) {
+    long val = g_strtol(nptr, nullptr, 0);
+    if (ret == 1 && v == EXPECTED_BIN_5 && val == EXPECTED_BIN_5) {
         return Ret(env, 0);
     }
     return Ret(env, 1);
@@ -86,8 +84,8 @@ static napi_value Strtol_0200(napi_env env, napi_callback_info info)
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
-    g_strtol = (strtol_fn)dlsym(RTLD_DEFAULT, "__isoc23_strtol");
-    g_sscanf = (sscanf_fn)dlsym(RTLD_DEFAULT, "__isoc23_sscanf");
+    g_strtol = (StrtolFn)dlsym(RTLD_DEFAULT, "__isoc23_strtol");
+    g_sscanf = (SscanfFn)dlsym(RTLD_DEFAULT, "__isoc23_sscanf");
     napi_property_descriptor desc[] = {
         {"Strtol_0100", nullptr, Strtol_0100,
             nullptr, nullptr, nullptr, napi_default, nullptr},

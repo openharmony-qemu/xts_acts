@@ -15,19 +15,29 @@
 
 #include "napi/native_api.h"
 #include <dlfcn.h>
-#include <errno.h>
+#include <cerrno>
 #include <fcntl.h>
 #include <unistd.h>
 #include <sys/wait.h>
 #include <sys/prctl.h>
+#include <climits>
 
 #ifndef PR_GET_SECCOMP
 #define PR_GET_SECCOMP 21
 #endif
 
-typedef void (*closefrom_t)(int lowfd);
+#define FD_CLOSEFROM_START 6
+#define FD_HIGH 8
+#define FD_LOW 3
+#define FD_MID 5
+#define FD_RANGE_HIGH 200
+#define FD_RANGE_LOW 100
+#define FD_TOP 10
+#define FORK_NOT_SUPPORTED (-2)
 
-static closefrom_t g_closefrom = nullptr;
+typedef void (*ClosefromT)(int lowfd);
+
+static ClosefromT g_closefrom = nullptr;
 
 static napi_value Ret(napi_env env, int32_t val)
 {
@@ -38,7 +48,7 @@ static napi_value Ret(napi_env env, int32_t val)
 
 static void LoadFunctions()
 {
-    g_closefrom = (closefrom_t)dlsym(RTLD_DEFAULT, "closefrom");
+    g_closefrom = (ClosefromT)dlsym(RTLD_DEFAULT, "closefrom");
 }
 
 static bool IsSymbolReady()
@@ -54,10 +64,10 @@ static bool IsSymbolReady()
 
 static pid_t ForkChild()
 {
-    pid_t parent_pid = getpid();
+    pid_t parentPid = getpid();
     pid_t pid = fork();
-    if (pid == 0 && getpid() == parent_pid) {
-        return -2;
+    if (pid == 0 && getpid() == parentPid) {
+        return FORK_NOT_SUPPORTED;
     }
     return pid;
 }
@@ -88,9 +98,9 @@ static napi_value Closefrom_0100(napi_env env, napi_callback_info info)
         int fd3 = open("/dev/null", O_RDONLY);
         g_closefrom(fd1);
         int ok = 1;
-        if (fcntl(fd1, F_GETFD) != -1) ok = 0;
-        if (fcntl(fd2, F_GETFD) != -1) ok = 0;
-        if (fcntl(fd3, F_GETFD) != -1) ok = 0;
+        if (fcntl(fd1, F_GETFD) != -1) { ok = 0; }
+        if (fcntl(fd2, F_GETFD) != -1) { ok = 0; }
+        if (fcntl(fd3, F_GETFD) != -1) { ok = 0; }
         _exit(ok ? 0 : 1);
     }
     if (pid < 0) {
@@ -126,24 +136,18 @@ static napi_value Closefrom_0300(napi_env env, napi_callback_info info)
     if (pid == 0) {
         int fd1 = open("/dev/null", O_RDONLY);
         int fd2 = open("/dev/null", O_RDONLY);
-        g_closefrom(99999);
+        g_closefrom(INT_MAX);
         int ok = 1;
-        if (fcntl(fd1, F_GETFD) == -1) ok = 0;
-        if (fcntl(fd2, F_GETFD) == -1) ok = 0;
-        if (fd1 >= 0) close(fd1);
-        if (fd2 >= 0) close(fd2);
+        if (fcntl(fd1, F_GETFD) == -1) { ok = 0; }
+        if (fcntl(fd2, F_GETFD) == -1) { ok = 0; }
+        if (fd1 >= 0) { close(fd1); }
+        if (fd2 >= 0) { close(fd2); }
         _exit(ok ? 0 : 1);
     }
     if (pid < 0) {
         return Ret(env, 0);
     }
     return Ret(env, WaitChildExit(pid));
-}
-
-static napi_value Closefrom_0400(napi_env env, napi_callback_info info)
-{
-    (void)info;
-    return Ret(env, 0);
 }
 
 static napi_value Closefrom_0500(napi_env env, napi_callback_info info)
@@ -155,19 +159,19 @@ static napi_value Closefrom_0500(napi_env env, napi_callback_info info)
     pid_t pid = ForkChild();
     if (pid == 0) {
         int fd = open("/dev/null", O_RDONLY);
-        dup2(fd, 3);
-        dup2(fd, 5);
-        dup2(fd, 8);
-        dup2(fd, 10);
+        dup2(fd, FD_LOW);
+        dup2(fd, FD_MID);
+        dup2(fd, FD_HIGH);
+        dup2(fd, FD_TOP);
         close(fd);
-        g_closefrom(6);
+        g_closefrom(FD_CLOSEFROM_START);
         int ok = 1;
-        if (fcntl(3, F_GETFD) == -1) ok = 0;
-        if (fcntl(5, F_GETFD) == -1) ok = 0;
-        if (fcntl(8, F_GETFD) != -1) ok = 0;
-        if (fcntl(10, F_GETFD) != -1) ok = 0;
-        close(3);
-        close(5);
+        if (fcntl(FD_LOW, F_GETFD) == -1) { ok = 0; }
+        if (fcntl(FD_MID, F_GETFD) == -1) { ok = 0; }
+        if (fcntl(FD_HIGH, F_GETFD) != -1) { ok = 0; }
+        if (fcntl(FD_TOP, F_GETFD) != -1) { ok = 0; }
+        close(FD_LOW);
+        close(FD_MID);
         _exit(ok ? 0 : 1);
     }
     if (pid < 0) {
@@ -207,10 +211,10 @@ static napi_value Closefrom_0700(napi_env env, napi_callback_info info)
     pid_t pid = ForkChild();
     if (pid == 0) {
         int fd = open("/dev/null", O_RDONLY);
-        dup2(fd, 5);
+        dup2(fd, FD_MID);
         close(fd);
-        g_closefrom(10);
-        if (fcntl(5, F_GETFD) != -1) {
+        g_closefrom(FD_TOP);
+        if (fcntl(FD_MID, F_GETFD) != -1) {
             _exit(0);
         }
         _exit(1);
@@ -219,18 +223,6 @@ static napi_value Closefrom_0700(napi_env env, napi_callback_info info)
         return Ret(env, 0);
     }
     return Ret(env, WaitChildExit(pid));
-}
-
-static napi_value Closefrom_0800(napi_env env, napi_callback_info info)
-{
-    (void)info;
-    return Ret(env, 0);
-}
-
-static napi_value Closefrom_0900(napi_env env, napi_callback_info info)
-{
-    (void)info;
-    return Ret(env, 0);
 }
 
 static napi_value Closefrom_1000(napi_env env, napi_callback_info info)
@@ -242,10 +234,10 @@ static napi_value Closefrom_1000(napi_env env, napi_callback_info info)
     pid_t pid = ForkChild();
     if (pid == 0) {
         int fd = open("/dev/null", O_RDONLY);
-        dup2(fd, 10);
+        dup2(fd, FD_TOP);
         close(fd);
-        g_closefrom(10);
-        if (fcntl(10, F_GETFD) == -1 && errno == EBADF) {
+        g_closefrom(FD_TOP);
+        if (fcntl(FD_TOP, F_GETFD) == -1 && errno == EBADF) {
             _exit(0);
         }
         _exit(1);
@@ -256,24 +248,6 @@ static napi_value Closefrom_1000(napi_env env, napi_callback_info info)
     return Ret(env, WaitChildExit(pid));
 }
 
-static napi_value Closefrom_1100(napi_env env, napi_callback_info info)
-{
-    (void)info;
-    return Ret(env, 0);
-}
-
-static napi_value Closefrom_1200(napi_env env, napi_callback_info info)
-{
-    (void)info;
-    return Ret(env, 0);
-}
-
-static napi_value Closefrom_1300(napi_env env, napi_callback_info info)
-{
-    (void)info;
-    return Ret(env, 0);
-}
-
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -282,16 +256,10 @@ static napi_value Init(napi_env env, napi_value exports)
         {"Closefrom_0100", nullptr, Closefrom_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"Closefrom_0200", nullptr, Closefrom_0200, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"Closefrom_0300", nullptr, Closefrom_0300, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"Closefrom_0400", nullptr, Closefrom_0400, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"Closefrom_0500", nullptr, Closefrom_0500, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"Closefrom_0600", nullptr, Closefrom_0600, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"Closefrom_0700", nullptr, Closefrom_0700, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"Closefrom_0800", nullptr, Closefrom_0800, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"Closefrom_0900", nullptr, Closefrom_0900, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"Closefrom_1000", nullptr, Closefrom_1000, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"Closefrom_1100", nullptr, Closefrom_1100, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"Closefrom_1200", nullptr, Closefrom_1200, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"Closefrom_1300", nullptr, Closefrom_1300, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

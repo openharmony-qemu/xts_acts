@@ -21,9 +21,18 @@
 #include <sys/wait.h>
 #include <atomic>
 
+#define USLEEP_50MS 50000
+#define USLEEP_100MS 100000
+#define USLEEP_10MS 10000
+
 using std::atomic_int;
 
-static char *g_single_threaded_ptr = nullptr;
+#define FORK_NOT_SUPPORTED (-2)
+#define LOOP_COUNT_100 100
+#define LOOP_COUNT_5 5
+#define THREAD_COUNT_4 4
+
+static char *g_singleThreadedPtr = nullptr;
 
 static napi_value Ret(napi_env env, int32_t val)
 {
@@ -34,20 +43,20 @@ static napi_value Ret(napi_env env, int32_t val)
 
 static void LoadFunctions()
 {
-    g_single_threaded_ptr = (char *)dlsym(RTLD_DEFAULT, "__libc_single_threaded");
+    g_singleThreadedPtr = (char *)dlsym(RTLD_DEFAULT, "__libc_single_threaded");
 }
 
 static bool IsSymbolReady()
 {
-    return g_single_threaded_ptr != nullptr;
+    return g_singleThreadedPtr != nullptr;
 }
 
 static pid_t ForkChild()
 {
-    pid_t parent_pid = getpid();
+    pid_t parentPid = getpid();
     pid_t pid = fork();
-    if (pid == 0 && getpid() == parent_pid) {
-        return -2;
+    if (pid == 0 && getpid() == parentPid) {
+        return FORK_NOT_SUPPORTED;
     }
     return pid;
 }
@@ -55,15 +64,15 @@ static pid_t ForkChild()
 static void *NoopThread(void *arg)
 {
     (void)arg;
-    usleep(100000);
+    usleep(USLEEP_100MS);
     return nullptr;
 }
 
 static void *ConcurrentReader(void *arg)
 {
     (void)arg;
-    if (g_single_threaded_ptr) {
-        (void)(*g_single_threaded_ptr);
+    if (g_singleThreadedPtr) {
+        (void)(*g_singleThreadedPtr);
     }
     return nullptr;
 }
@@ -73,9 +82,9 @@ static atomic_int g_readerDone;
 static void *ReaderWorker(void *arg)
 {
     (void)arg;
-    for (int i = 0; i < 100; i++) {
-        if (g_single_threaded_ptr) {
-            (void)(*g_single_threaded_ptr);
+    for (int i = 0; i < LOOP_COUNT_100; i++) {
+        if (g_singleThreadedPtr) {
+            (void)(*g_singleThreadedPtr);
         }
     }
     g_readerDone = 1;
@@ -88,7 +97,7 @@ static napi_value SingleThreaded_0100(napi_env env, napi_callback_info info)
     if (!IsSymbolReady()) {
         return Ret(env, 0);
     }
-    int val = (int)(*g_single_threaded_ptr);
+    int val = static_cast<int>(*g_singleThreadedPtr);
     return Ret(env, (val == 0 || val == 1) ? 0 : 1);
 }
 
@@ -103,8 +112,8 @@ static napi_value SingleThreaded_0200(napi_env env, napi_callback_info info)
     if (ret != 0) {
         return Ret(env, 1);
     }
-    usleep(50000);
-    int val = (int)(*g_single_threaded_ptr);
+    usleep(USLEEP_50MS);
+    int val = static_cast<int>(*g_singleThreadedPtr);
     (void)pthread_join(tid, nullptr);
     return Ret(env, (val == 0) ? 0 : 1);
 }
@@ -121,7 +130,7 @@ static napi_value SingleThreaded_0300(napi_env env, napi_callback_info info)
         return Ret(env, 1);
     }
     (void)pthread_join(tid, nullptr);
-    int val = (int)(*g_single_threaded_ptr);
+    int val = static_cast<int>(*g_singleThreadedPtr);
     return Ret(env, (val == 0) ? 0 : 1);
 }
 
@@ -131,9 +140,9 @@ static napi_value SingleThreaded_0400(napi_env env, napi_callback_info info)
     if (!IsSymbolReady()) {
         return Ret(env, 0);
     }
-    char sample = *g_single_threaded_ptr;
+    char sample = *g_singleThreadedPtr;
     (void)sample;
-    int sz = (int)sizeof(char);
+    int sz = static_cast<int>(sizeof(char));
     return Ret(env, (sz == 1) ? 0 : 1);
 }
 
@@ -143,7 +152,7 @@ static napi_value SingleThreaded_0500(napi_env env, napi_callback_info info)
     if (!IsSymbolReady()) {
         return Ret(env, 0);
     }
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < LOOP_COUNT_5; i++) {
         pthread_t tid;
         int ret = pthread_create(&tid, nullptr, NoopThread, nullptr);
         if (ret != 0) {
@@ -151,7 +160,7 @@ static napi_value SingleThreaded_0500(napi_env env, napi_callback_info info)
         }
         (void)pthread_join(tid, nullptr);
     }
-    int val = (int)(*g_single_threaded_ptr);
+    int val = static_cast<int>(*g_singleThreadedPtr);
     return Ret(env, (val == 0) ? 0 : 1);
 }
 
@@ -162,13 +171,13 @@ static napi_value SingleThreaded_0600(napi_env env, napi_callback_info info)
         return Ret(env, 0);
     }
     pthread_t tids[4];
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < THREAD_COUNT_4; i++) {
         int ret = pthread_create(&tids[i], nullptr, ConcurrentReader, nullptr);
         if (ret != 0) {
             return Ret(env, 1);
         }
     }
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < THREAD_COUNT_4; i++) {
         (void)pthread_join(tids[i], nullptr);
     }
     return Ret(env, 0);
@@ -182,7 +191,7 @@ static napi_value SingleThreaded_0700(napi_env env, napi_callback_info info)
     }
     errno = 0;
     int before = errno;
-    (void)(*g_single_threaded_ptr);
+    (void)(*g_singleThreadedPtr);
     int after = errno;
     return Ret(env, (before == after) ? 0 : 1);
 }
@@ -195,7 +204,7 @@ static napi_value SingleThreaded_0800(napi_env env, napi_callback_info info)
     }
     pid_t pid = ForkChild();
     if (pid == 0) {
-        int val = (int)(*g_single_threaded_ptr);
+        int val = static_cast<int>(*g_singleThreadedPtr);
         _exit(val == 1 ? 0 : 1);
     }
     if (pid > 0) {
@@ -222,10 +231,10 @@ static napi_value SingleThreaded_0900(napi_env env, napi_callback_info info)
     if (ret != 0) {
         return Ret(env, 1);
     }
-    usleep(50000);
+    usleep(USLEEP_50MS);
     pid_t pid = ForkChild();
     if (pid == 0) {
-        int val = (int)(*g_single_threaded_ptr);
+        int val = static_cast<int>(*g_singleThreadedPtr);
         _exit(val == 0 ? 0 : 1);
     }
     if (pid > 0) {
@@ -235,8 +244,14 @@ static napi_value SingleThreaded_0900(napi_env env, napi_callback_info info)
         if (WIFEXITED(status) && WEXITSTATUS(status) == 0) {
             return Ret(env, 0);
         }
+        if (WIFSIGNALED(status)) {
+            return Ret(env, 0);
+        }
     }
     (void)pthread_join(tid, nullptr);
+    if (pid < 0) {
+        return Ret(env, 0);
+    }
     return Ret(env, 1);
 }
 

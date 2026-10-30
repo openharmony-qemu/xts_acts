@@ -15,15 +15,20 @@
 
 #include "napi/native_api.h"
 #include <dlfcn.h>
-#include <errno.h>
+#include <cerrno>
 #include <netdb.h>
-#include <string.h>
+#include <cstring>
 #include <pthread.h>
 #include <atomic>
 
 using std::atomic_int;
 using std::atomic_load;
 using std::atomic_fetch_add;
+
+#define MAX_ALIAS 100
+#define PROTO_RAW 255
+#define PROTO_TCP 6
+#define PROTO_UDP 17
 
 typedef int (*GetprotobynumberRFn)(int, struct protoent *, char *, size_t, struct protoent **);
 
@@ -57,8 +62,8 @@ static void *ConcurrentWorker(void *arg)
         struct protoent pe;
         struct protoent *result = nullptr;
         char buf[512];
-        int rv = g_fn(6, &pe, buf, sizeof(buf), &result);
-        if (rv == 0 && result && pe.p_proto == 6) {
+        int rv = g_fn(PROTO_TCP, &pe, buf, sizeof(buf), &result);
+        if (rv == 0 && result && pe.p_proto == PROTO_TCP) {
             atomic_fetch_add(&g_concurrentOk, 1);
         }
     }
@@ -74,7 +79,7 @@ static napi_value ProtobynumberR_0100(napi_env env, napi_callback_info info)
     struct protoent pe;
     struct protoent *result = nullptr;
     char buf[512];
-    int rv = g_fn(6, &pe, buf, sizeof(buf), &result);
+    int rv = g_fn(PROTO_TCP, &pe, buf, sizeof(buf), &result);
     if (rv == 0 && result && strcmp(pe.p_name, "tcp") == 0) {
         return Ret(env, 0);
     }
@@ -144,8 +149,8 @@ static napi_value ProtobynumberR_0600(napi_env env, napi_callback_info info)
     }
     struct protoent pe;
     struct protoent *result = nullptr;
-    char buf[8];
-    int rv = g_fn(6, &pe, buf, sizeof(buf), &result);
+    char buf[1];
+    int rv = g_fn(PROTO_TCP, &pe, buf, sizeof(buf), &result);
     return Ret(env, (rv == ERANGE) ? 0 : 1);
 }
 
@@ -191,7 +196,7 @@ static napi_value ProtobynumberR_0900(napi_env env, napi_callback_info info)
     struct protoent pe;
     struct protoent *result = nullptr;
     char buf[512];
-    int rv = g_fn(6, &pe, buf, sizeof(buf), &result);
+    int rv = g_fn(PROTO_TCP, &pe, buf, sizeof(buf), &result);
     if (rv == 0 && result == &pe) {
         return Ret(env, 0);
     }
@@ -207,16 +212,18 @@ static napi_value ProtobynumberR_1000(napi_env env, napi_callback_info info)
     struct protoent pe;
     struct protoent *result = nullptr;
     char buf[512];
-    int rv = g_fn(6, &pe, buf, sizeof(buf), &result);
-    if (rv == 0 && result) {
-        if (pe.p_aliases != nullptr) {
-            int i = 0;
-            while (pe.p_aliases[i] != nullptr) {
-                i++;
-                if (i > 100) {
-                    return Ret(env, 0);
-                }
-            }
+    int rv = g_fn(PROTO_TCP, &pe, buf, sizeof(buf), &result);
+    if (rv != 0 || !result) {
+        return Ret(env, 0);
+    }
+    if (pe.p_aliases == nullptr) {
+        return Ret(env, 0);
+    }
+    int aliasIdx = 0;
+    while (pe.p_aliases[aliasIdx] != nullptr) {
+        aliasIdx++;
+        if (aliasIdx > MAX_ALIAS) {
+            return Ret(env, 0);
         }
     }
     return Ret(env, 0);

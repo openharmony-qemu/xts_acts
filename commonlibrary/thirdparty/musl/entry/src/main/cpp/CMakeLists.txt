@@ -306,10 +306,6 @@ target_link_libraries(pthreadyield PUBLIC libace_napi.z.so)
 target_link_libraries(pthreadtsd PUBLIC libace_napi.z.so)
 target_link_libraries(pthreadkeycreate PUBLIC libace_napi.z.so)
 
-add_library(entry SHARED napi_init.cpp)
-target_link_libraries(entry PUBLIC libace_napi.z.so)
-
-# PR#2699接口（已合入，符号在libc.so中）
 add_library(openat64_2_test SHARED openat64_2_test.cpp)
 target_link_libraries(openat64_2_test PUBLIC libace_napi.z.so)
 
@@ -355,7 +351,6 @@ target_link_libraries(getprotoent_r_test PUBLIC libace_napi.z.so)
 add_library(getservent_r_test SHARED getservent_r_test.cpp)
 target_link_libraries(getservent_r_test PUBLIC libace_napi.z.so)
 
-# PR#2705 strto系列接口
 add_library(isoc23_strtol_test SHARED isoc23_strtol_test.cpp)
 target_link_libraries(isoc23_strtol_test PUBLIC libace_napi.z.so)
 
@@ -383,11 +378,9 @@ target_link_libraries(isoc23_strtoll_l_test PUBLIC libace_napi.z.so)
 add_library(isoc23_strtoull_l_test SHARED isoc23_strtoull_l_test.cpp)
 target_link_libraries(isoc23_strtoull_l_test PUBLIC libace_napi.z.so)
 
-# strtol legacy接口
 add_library(strtol_legacy_test SHARED strtol_legacy_test.cpp)
 target_link_libraries(strtol_legacy_test PUBLIC libace_napi.z.so)
 
-# PR#2705 wcsto系列接口
 add_library(isoc23_wcstol_test SHARED isoc23_wcstol_test.cpp)
 target_link_libraries(isoc23_wcstol_test PUBLIC libace_napi.z.so)
 
@@ -400,7 +393,6 @@ target_link_libraries(isoc23_wcstoul_test PUBLIC libace_napi.z.so)
 add_library(isoc23_wcstoull_test SHARED isoc23_wcstoull_test.cpp)
 target_link_libraries(isoc23_wcstoull_test PUBLIC libace_napi.z.so)
 
-# PR#2705 scanf系列接口
 add_library(isoc23_fscanf_test SHARED isoc23_fscanf_test.cpp)
 target_link_libraries(isoc23_fscanf_test PUBLIC libace_napi.z.so)
 

@@ -1,6 +1,0 @@
-{
-  "name": "libclosefrom_test.so",
-  "types": "./Index.d.ts",
-  "version": "1.0.0",
-  "description": "closefrom test module"
-}

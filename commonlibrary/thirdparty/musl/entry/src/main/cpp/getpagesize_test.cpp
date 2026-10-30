@@ -25,7 +25,7 @@
 typedef int (*GetpagesizeFn)(void);
 
 static GetpagesizeFn g_getpagesize = nullptr;
-static GetpagesizeFn g_alias_getpagesize = nullptr;
+static GetpagesizeFn g_aliasGetpagesize = nullptr;
 
 static napi_value Ret(napi_env env, int32_t val)
 {
@@ -37,7 +37,7 @@ static napi_value Ret(napi_env env, int32_t val)
 static void LoadFunctions()
 {
     g_getpagesize = (GetpagesizeFn)dlsym(RTLD_DEFAULT, "__getpagesize");
-    g_alias_getpagesize = (GetpagesizeFn)dlsym(RTLD_DEFAULT, "getpagesize");
+    g_aliasGetpagesize = (GetpagesizeFn)dlsym(RTLD_DEFAULT, "getpagesize");
 }
 
 static bool IsSymbolReady()

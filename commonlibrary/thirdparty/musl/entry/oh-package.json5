@@ -21,13 +21,5 @@
   "license": "",
   "dependencies": {
     "libentry.so": "file:./src/main/cpp/types/libentry",
-    "libopenat64_2_test.so": "file:./src/main/cpp/types/libopenat64_2_test",
-    "libclosefrom_test.so": "file:./src/main/cpp/types/libclosefrom_test",
-    "libclose_range_test.so": "file:./src/main/cpp/types/libclose_range_test",
-    "libgroup_member_test.so": "file:./src/main/cpp/types/libgroup_member_test",
-    "libgetpagesize_test.so": "file:./src/main/cpp/types/libgetpagesize_test",
-    "liblibc_single_threaded_test.so": "file:./src/main/cpp/types/liblibc_single_threaded_test",
-    "liblibc_stack_end_test.so": "file:./src/main/cpp/types/liblibc_stack_end_test",
-    "libpthread_sigqueue_test.so": "file:./src/main/cpp/types/libpthread_sigqueue_test"
   }
 }

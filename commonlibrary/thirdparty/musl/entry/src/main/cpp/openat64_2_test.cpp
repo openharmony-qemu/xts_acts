@@ -15,7 +15,7 @@
 
 #include "napi/native_api.h"
 #include <dlfcn.h>
-#include <errno.h>
+#include <cerrno>
 #include <fcntl.h>
 #include <unistd.h>
 
@@ -23,9 +23,9 @@
 #define O_TMPFILE 020200000
 #endif
 
-typedef int (*openat64_2_t)(int fd, const char *path, int oflag);
+typedef int (*Openat642T)(int fd, const char *path, int oflag);
 
-static openat64_2_t g_openat64_2 = nullptr;
+static Openat642T g_openat642 = nullptr;
 
 static napi_value Ret(napi_env env, int32_t val)
 {
@@ -36,30 +36,12 @@ static napi_value Ret(napi_env env, int32_t val)
 
 static void LoadFunctions()
 {
-    g_openat64_2 = (openat64_2_t)dlsym(RTLD_DEFAULT, "__openat64_2");
+    g_openat642 = (Openat642T)dlsym(RTLD_DEFAULT, "__openat64_2");
 }
 
 static bool IsSymbolReady()
 {
-    return g_openat64_2 != nullptr;
-}
-
-static napi_value Openat64_2_0100(napi_env env, napi_callback_info info)
-{
-    (void)info;
-    if (!IsSymbolReady()) {
-        return Ret(env, 0);
-    }
-    return Ret(env, 0);
-}
-
-static napi_value Openat64_2_0200(napi_env env, napi_callback_info info)
-{
-    (void)info;
-    if (!IsSymbolReady()) {
-        return Ret(env, 0);
-    }
-    return Ret(env, 0);
+    return g_openat642 != nullptr;
 }
 
 static napi_value Openat64_2_0300(napi_env env, napi_callback_info info)
@@ -69,7 +51,7 @@ static napi_value Openat64_2_0300(napi_env env, napi_callback_info info)
         return Ret(env, 0);
     }
     errno = 0;
-    int fd = g_openat64_2(AT_FDCWD, "/dev/null", O_RDONLY);
+    int fd = g_openat642(AT_FDCWD, "/dev/null", O_RDONLY);
     if (fd >= 0) {
         char buf[16];
         ssize_t n = read(fd, buf, sizeof(buf));
@@ -90,7 +72,7 @@ static napi_value Openat64_2_0400(napi_env env, napi_callback_info info)
     if (dirfd < 0) {
         return Ret(env, 0);
     }
-    int fd = g_openat64_2(dirfd, "null", O_RDONLY);
+    int fd = g_openat642(dirfd, "null", O_RDONLY);
     close(dirfd);
     if (fd >= 0) {
         close(fd);
@@ -106,7 +88,7 @@ static napi_value Openat64_2_0500(napi_env env, napi_callback_info info)
         return Ret(env, 0);
     }
     errno = 0;
-    int fd = g_openat64_2(AT_FDCWD, "/dev/null", O_WRONLY);
+    int fd = g_openat642(AT_FDCWD, "/dev/null", O_WRONLY);
     if (fd >= 0) {
         close(fd);
         return Ret(env, 0);
@@ -121,11 +103,11 @@ static napi_value Openat64_2_0600(napi_env env, napi_callback_info info)
         return Ret(env, 0);
     }
     errno = 0;
-    int fd = g_openat64_2(AT_FDCWD, "/nonexistent_xyz_123_test", O_RDONLY);
+    int fd = g_openat642(AT_FDCWD, "/nonexistent_xyz_123_test", O_RDONLY);
     if (fd == -1 && errno == ENOENT) {
         return Ret(env, 0);
     }
-    if (fd >= 0) close(fd);
+    if (fd >= 0) { close(fd); }
     return Ret(env, 1);
 }
 
@@ -136,75 +118,12 @@ static napi_value Openat64_2_0700(napi_env env, napi_callback_info info)
         return Ret(env, 0);
     }
     errno = 0;
-    int fd = g_openat64_2(9999, "relative_path_test", O_RDONLY);
+    int fd = g_openat642(9999, "relative_path_test", O_RDONLY);
     if (fd == -1 && errno == EBADF) {
         return Ret(env, 0);
     }
-    if (fd >= 0) close(fd);
+    if (fd >= 0) { close(fd); }
     return Ret(env, 1);
-}
-
-static napi_value Openat64_2_0800(napi_env env, napi_callback_info info)
-{
-    (void)info;
-    return Ret(env, 0);
-}
-
-static napi_value Openat64_2_0900(napi_env env, napi_callback_info info)
-{
-    (void)info;
-    return Ret(env, 0);
-}
-
-static napi_value Openat64_2_1000(napi_env env, napi_callback_info info)
-{
-    (void)info;
-    return Ret(env, 0);
-}
-
-static napi_value Openat64_2_1100(napi_env env, napi_callback_info info)
-{
-    (void)info;
-    return Ret(env, 0);
-}
-
-static napi_value Openat64_2_1200(napi_env env, napi_callback_info info)
-{
-    (void)info;
-    if (!IsSymbolReady()) {
-        return Ret(env, 0);
-    }
-    return Ret(env, 0);
-}
-
-static napi_value Openat64_2_1300(napi_env env, napi_callback_info info)
-{
-    (void)info;
-    return Ret(env, 0);
-}
-
-static napi_value Openat64_2_1400(napi_env env, napi_callback_info info)
-{
-    (void)info;
-    return Ret(env, 0);
-}
-
-static napi_value Openat64_2_1500(napi_env env, napi_callback_info info)
-{
-    (void)info;
-    return Ret(env, 0);
-}
-
-static napi_value Openat64_2_1600(napi_env env, napi_callback_info info)
-{
-    (void)info;
-    return Ret(env, 0);
-}
-
-static napi_value Openat64_2_1700(napi_env env, napi_callback_info info)
-{
-    (void)info;
-    return Ret(env, 0);
 }
 
 EXTERN_C_START
@@ -212,23 +131,11 @@ static napi_value Init(napi_env env, napi_value exports)
 {
     LoadFunctions();
     napi_property_descriptor desc[] = {
-        {"Openat64_2_0100", nullptr, Openat64_2_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"Openat64_2_0200", nullptr, Openat64_2_0200, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"Openat64_2_0300", nullptr, Openat64_2_0300, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"Openat64_2_0400", nullptr, Openat64_2_0400, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"Openat64_2_0500", nullptr, Openat64_2_0500, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"Openat64_2_0600", nullptr, Openat64_2_0600, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"Openat64_2_0700", nullptr, Openat64_2_0700, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"Openat64_2_0800", nullptr, Openat64_2_0800, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"Openat64_2_0900", nullptr, Openat64_2_0900, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"Openat64_2_1000", nullptr, Openat64_2_1000, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"Openat64_2_1100", nullptr, Openat64_2_1100, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"Openat64_2_1200", nullptr, Openat64_2_1200, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"Openat64_2_1300", nullptr, Openat64_2_1300, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"Openat64_2_1400", nullptr, Openat64_2_1400, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"Openat64_2_1500", nullptr, Openat64_2_1500, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"Openat64_2_1600", nullptr, Openat64_2_1600, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"Openat64_2_1700", nullptr, Openat64_2_1700, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

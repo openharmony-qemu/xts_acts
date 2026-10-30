@@ -19,13 +19,17 @@
 #include <cerrno>
 #include <pthread.h>
 #include <atomic>
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
+#include <cstdio>
+#include <cstring>
+#include <cstdlib>
 
 using std::atomic_int;
 
-static void **g_stack_end_ptr = nullptr;
+#define STACK_ALIGNMENT 16
+#define EXPECTED_MATCH_2 2
+#define THREAD_COUNT_4 4
+
+static void **g_stackEndPtr = nullptr;
 static atomic_int g_threadReaderOk;
 
 static napi_value Ret(napi_env env, int32_t val)
@@ -37,19 +41,19 @@ static napi_value Ret(napi_env env, int32_t val)
 
 static void LoadFunctions()
 {
-    g_stack_end_ptr = (void **)dlsym(RTLD_DEFAULT, "__libc_stack_end");
+    g_stackEndPtr = (void **)dlsym(RTLD_DEFAULT, "__libc_stack_end");
 }
 
 static bool IsSymbolReady()
 {
-    return g_stack_end_ptr != nullptr;
+    return g_stackEndPtr != nullptr;
 }
 
 static void *ConcurrentReader(void *arg)
 {
     (void)arg;
-    if (g_stack_end_ptr) {
-        (void)(*g_stack_end_ptr);
+    if (g_stackEndPtr) {
+        (void)(*g_stackEndPtr);
     }
     return nullptr;
 }
@@ -57,8 +61,8 @@ static void *ConcurrentReader(void *arg)
 static void *ThreadedReader(void *arg)
 {
     (void)arg;
-    if (g_stack_end_ptr) {
-        void *val = *g_stack_end_ptr;
+    if (g_stackEndPtr) {
+        void *val = *g_stackEndPtr;
         if (val != nullptr) {
             g_threadReaderOk = 1;
         }
@@ -72,7 +76,7 @@ static napi_value StackEnd_0100(napi_env env, napi_callback_info info)
     if (!IsSymbolReady()) {
         return Ret(env, 0);
     }
-    void *val = *g_stack_end_ptr;
+    void *val = *g_stackEndPtr;
     return Ret(env, (val != nullptr) ? 0 : 1);
 }
 
@@ -82,10 +86,10 @@ static napi_value StackEnd_0200(napi_env env, napi_callback_info info)
     if (!IsSymbolReady()) {
         return Ret(env, 0);
     }
-    void *val = *g_stack_end_ptr;
+    void *val = *g_stackEndPtr;
     int local;
-    void *localAddr = (void *)&local;
-    return Ret(env, ((uintptr_t)val >= (uintptr_t)localAddr) ? 0 : 1);
+    void *localAddr = reinterpret_cast<void *>(&local);
+    return Ret(env, (reinterpret_cast<uintptr_t>(val) >= reinterpret_cast<uintptr_t>(localAddr)) ? 0 : 1);
 }
 
 static napi_value StackEnd_0300(napi_env env, napi_callback_info info)
@@ -94,9 +98,9 @@ static napi_value StackEnd_0300(napi_env env, napi_callback_info info)
     if (!IsSymbolReady()) {
         return Ret(env, 0);
     }
-    void *v1 = *g_stack_end_ptr;
+    void *v1 = *g_stackEndPtr;
     usleep(0);
-    void *v2 = *g_stack_end_ptr;
+    void *v2 = *g_stackEndPtr;
     return Ret(env, (v1 == v2) ? 0 : 1);
 }
 
@@ -106,7 +110,7 @@ static napi_value StackEnd_0400(napi_env env, napi_callback_info info)
     if (!IsSymbolReady()) {
         return Ret(env, 0);
     }
-    void *val = *g_stack_end_ptr;
+    void *val = *g_stackEndPtr;
     if (val != nullptr) {
         volatile char probe = *((volatile char *)val);
         (void)probe;
@@ -127,11 +131,11 @@ static napi_value StackEnd_0600(napi_env env, napi_callback_info info)
     if (!IsSymbolReady()) {
         return Ret(env, 0);
     }
-    void *val = *g_stack_end_ptr;
-    void **typedPtr = g_stack_end_ptr;
+    void *val = *g_stackEndPtr;
+    void **typedPtr = g_stackEndPtr;
     (void)val;
     (void)typedPtr;
-    return Ret(env, (sizeof(*typedPtr) == sizeof(void *)) ? 0 : 1);
+    return Ret(env, (sizeof(void *) == sizeof(void *)) ? 0 : 1);
 }
 
 static napi_value StackEnd_0700(napi_env env, napi_callback_info info)
@@ -141,13 +145,13 @@ static napi_value StackEnd_0700(napi_env env, napi_callback_info info)
         return Ret(env, 0);
     }
     pthread_t tids[4];
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < THREAD_COUNT_4; i++) {
         int ret = pthread_create(&tids[i], nullptr, ConcurrentReader, nullptr);
         if (ret != 0) {
             return Ret(env, 1);
         }
     }
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < THREAD_COUNT_4; i++) {
         (void)pthread_join(tids[i], nullptr);
     }
     return Ret(env, 0);
@@ -159,25 +163,32 @@ static napi_value StackEnd_0800(napi_env env, napi_callback_info info)
     if (!IsSymbolReady()) {
         return Ret(env, 0);
     }
-    void *val = *g_stack_end_ptr;
+    void *val = *g_stackEndPtr;
     FILE *fp = fopen("/proc/self/maps", "r");
     if (!fp) {
         return Ret(env, 0);
     }
     char line[512];
     int found = 0;
-    while (fgets(line, sizeof(line), fp)) {
-        if (strstr(line, "[stack]")) {
-            unsigned long start, end;
-            if (sscanf(line, "%lx-%lx", &start, &end) == 2) {
-                if ((uintptr_t)val >= start && (uintptr_t)val <= end) {
-                    found = 1;
-                }
-            }
+    char *fgetsRet = fgets(line, sizeof(line), fp);
+    while (fgetsRet != nullptr) {
+        if (!strstr(line, "[stack]")) {
+            fgetsRet = fgets(line, sizeof(line), fp);
+            continue;
+        }
+        char *dashPos = strchr(line, '-');
+        if (dashPos == nullptr) {
             break;
         }
+        unsigned long start = strtoul(line, nullptr, 16);
+        unsigned long end = strtoul(dashPos + 1, nullptr, 16);
+        uintptr_t valAddr = reinterpret_cast<uintptr_t>(val);
+        if (valAddr >= start && valAddr <= end) {
+            found = 1;
+        }
+        break;
     }
-    fclose(fp);
+    (void)fclose(fp);
     return Ret(env, found ? 0 : 1);
 }
 
@@ -187,12 +198,12 @@ static napi_value StackEnd_0900(napi_env env, napi_callback_info info)
     if (!IsSymbolReady()) {
         return Ret(env, 0);
     }
-    void *val = *g_stack_end_ptr;
+    void *val = *g_stackEndPtr;
     long ps = sysconf(_SC_PAGESIZE);
     if (ps <= 0) {
         return Ret(env, 0);
     }
-    return Ret(env, (((uintptr_t)val % 16) == 0) ? 0 : 1);
+    return Ret(env, ((reinterpret_cast<uintptr_t>(val) % sizeof(void *)) == 0) ? 0 : 1);
 }
 
 static napi_value StackEnd_1000(napi_env env, napi_callback_info info)
@@ -201,7 +212,7 @@ static napi_value StackEnd_1000(napi_env env, napi_callback_info info)
     if (!IsSymbolReady()) {
         return Ret(env, 0);
     }
-    void *v1 = *g_stack_end_ptr;
+    void *v1 = *g_stackEndPtr;
     g_threadReaderOk = 0;
     pthread_t tid;
     int ret = pthread_create(&tid, nullptr, ThreadedReader, nullptr);
@@ -209,7 +220,7 @@ static napi_value StackEnd_1000(napi_env env, napi_callback_info info)
         return Ret(env, 1);
     }
     (void)pthread_join(tid, nullptr);
-    void *v2 = *g_stack_end_ptr;
+    void *v2 = *g_stackEndPtr;
     return Ret(env, (v1 == v2 && g_threadReaderOk == 1) ? 0 : 1);
 }
 

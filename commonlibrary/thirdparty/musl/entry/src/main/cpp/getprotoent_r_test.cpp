@@ -15,9 +15,9 @@
 
 #include "napi/native_api.h"
 #include <dlfcn.h>
-#include <errno.h>
+#include <cerrno>
 #include <netdb.h>
-#include <string.h>
+#include <cstring>
 #include <pthread.h>
 #include <atomic>
 
@@ -59,8 +59,8 @@ static bool IsSymbolReady()
 
 static void ResetCursor()
 {
-    if (g_end) g_end();
-    if (g_set) g_set(0);
+    if (g_end) { g_end(); }
+    if (g_set) { g_set(0); }
 }
 
 static void *ConcurrentWorker(void *arg)
@@ -87,7 +87,7 @@ static napi_value ProtoentR_0100(napi_env env, napi_callback_info info)
     struct protoent *result = nullptr;
     char buf[512];
     int rv = g_fn(&pe, buf, sizeof(buf), &result);
-    if (g_end) g_end();
+    if (g_end) { g_end(); }
     return Ret(env, (rv == 0 && result && pe.p_name != nullptr) ? 0 : 1);
 }
 
@@ -106,7 +106,7 @@ static napi_value ProtoentR_0200(napi_env env, napi_callback_info info)
     while ((rv = g_fn(&pe, buf, sizeof(buf), &result)) == 0 && count < MAX_ENUM) {
         count++;
     }
-    if (g_end) g_end();
+    if (g_end) { g_end(); }
     return Ret(env, (count > 1) ? 0 : 1);
 }
 
@@ -125,7 +125,7 @@ static napi_value ProtoentR_0300(napi_env env, napi_callback_info info)
     while ((rv = g_fn(&pe, buf, sizeof(buf), &result)) == 0 && count < MAX_ENUM) {
         count++;
     }
-    if (g_end) g_end();
+    if (g_end) { g_end(); }
     return Ret(env, (rv == ENOENT) ? 0 : 1);
 }
 
@@ -138,17 +138,17 @@ static napi_value ProtoentR_0400(napi_env env, napi_callback_info info)
     ResetCursor();
     struct protoent pe;
     struct protoent *result = nullptr;
-    char bufSmall[8];
+    char bufSmall[1];
     int rv1 = g_fn(&pe, bufSmall, sizeof(bufSmall), &result);
     if (rv1 != ERANGE) {
-        if (g_end) g_end();
+        if (g_end) { g_end(); }
         return Ret(env, (rv1 == ERANGE) ? 0 : 1);
     }
     char bufBig[512];
     struct protoent pe2;
     struct protoent *result2 = nullptr;
     int rv2 = g_fn(&pe2, bufBig, sizeof(bufBig), &result2);
-    if (g_end) g_end();
+    if (g_end) { g_end(); }
     if (rv2 == 0 && result2 && pe2.p_name != nullptr) {
         return Ret(env, (rv1 == ERANGE) ? 0 : 1);
     }
@@ -170,7 +170,7 @@ static napi_value ProtoentR_0500(napi_env env, napi_callback_info info)
     struct protoent pe2;
     struct protoent *result2 = nullptr;
     int rv2 = g_fn(&pe2, bufBig, sizeof(bufBig), &result2);
-    if (g_end) g_end();
+    if (g_end) { g_end(); }
     return Ret(env, 0);
 }
 
@@ -189,12 +189,12 @@ static napi_value ProtoentR_0600(napi_env env, napi_callback_info info)
     struct protoent *r2 = nullptr;
     char buf2[512];
     int rv2 = g_fn(&pe2, buf2, sizeof(buf2), &r2);
-    if (g_set) g_set(0);
+    if (g_set) { g_set(0); }
     struct protoent pe3;
     struct protoent *r3 = nullptr;
     char buf3[512];
     int rv3 = g_fn(&pe3, buf3, sizeof(buf3), &r3);
-    if (g_end) g_end();
+    if (g_end) { g_end(); }
     if (rv1 == 0 && rv3 == 0 && r1 && r3) {
         if (strcmp(pe1.p_name, pe3.p_name) == 0 && pe1.p_proto == pe3.p_proto) {
             return Ret(env, 0);
@@ -214,13 +214,13 @@ static napi_value ProtoentR_0700(napi_env env, napi_callback_info info)
     struct protoent *result = nullptr;
     char buf[512];
     (void)g_fn(&pe, buf, sizeof(buf), &result);
-    if (g_end) g_end();
+    if (g_end) { g_end(); }
     ResetCursor();
     struct protoent pe2;
     struct protoent *result2 = nullptr;
     char buf2[512];
     int rv = g_fn(&pe2, buf2, sizeof(buf2), &result2);
-    if (g_end) g_end();
+    if (g_end) { g_end(); }
     return Ret(env, (rv == 0) ? 0 : 1);
 }
 
@@ -242,7 +242,7 @@ static napi_value ProtoentR_0800(napi_env env, napi_callback_info info)
     for (int i = 0; i < CONCURRENT_THREADS; i++) {
         (void)pthread_join(tids[i], nullptr);
     }
-    if (g_end) g_end();
+    if (g_end) { g_end(); }
     return Ret(env, 0);
 }
 
@@ -261,7 +261,7 @@ static napi_value ProtoentR_0900(napi_env env, napi_callback_info info)
     struct protoent *r2 = nullptr;
     char buf2[512];
     int rv2 = g_fn(&pe2, buf2, sizeof(buf2), &r2);
-    if (g_end) g_end();
+    if (g_end) { g_end(); }
     if (rv1 == 0 && rv2 == 0 && r1 && r2) {
         if (strcmp(pe1.p_name, pe2.p_name) != 0 || pe1.p_proto != pe2.p_proto) {
             return Ret(env, 0);
@@ -281,7 +281,7 @@ static napi_value ProtoentR_1000(napi_env env, napi_callback_info info)
     struct protoent *result = nullptr;
     char buf[512];
     int rv = g_fn(&pe, buf, sizeof(buf), &result);
-    if (g_end) g_end();
+    if (g_end) { g_end(); }
     if (rv == 0 && result == &pe) {
         return Ret(env, 0);
     }
@@ -299,7 +299,7 @@ static napi_value ProtoentR_1100(napi_env env, napi_callback_info info)
     struct protoent *result = nullptr;
     char buf[512];
     (void)g_fn(&pe, buf, sizeof(buf), &result);
-    if (g_end) g_end();
+    if (g_end) { g_end(); }
     return Ret(env, 0);
 }
 
@@ -314,7 +314,7 @@ static napi_value ProtoentR_1200(napi_env env, napi_callback_info info)
     struct protoent *result = nullptr;
     char buf[512];
     int rv = g_fn(&pe, buf, sizeof(buf), &result);
-    if (g_end) g_end();
+    if (g_end) { g_end(); }
     if (rv == 0 && result && pe.p_name >= buf && pe.p_name < buf + sizeof(buf)) {
         return Ret(env, 0);
     }
@@ -332,7 +332,7 @@ static napi_value ProtoentR_1300(napi_env env, napi_callback_info info)
     struct protoent *result = nullptr;
     char buf[512];
     (void)g_fn(&pe, buf, sizeof(buf), &result);
-    if (g_end) g_end();
+    if (g_end) { g_end(); }
     return Ret(env, 0);
 }
 

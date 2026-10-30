@@ -15,22 +15,28 @@
 
 #include "napi/native_api.h"
 #include <dlfcn.h>
-#include <errno.h>
-#include <wchar.h>
-#include <limits.h>
+#include <cerrno>
+#include <cwchar>
+#include <climits>
 
-typedef long long (*wcstoll_fn)(const wchar_t *, wchar_t **, int);
+#define BIN_DIGIT_COUNT 64
+#define BIN_PREFIX_LEN 2
+#define EXPECTED_DEC_123 123
+#define NULL_TERM_POS 66
+#define WCHAR_BUF_SIZE 70
 
-static wcstoll_fn g_fn = nullptr;
+typedef long long (*WcstollFn)(const wchar_t *, wchar_t **, int);
+
+static WcstollFn g_fn = nullptr;
 static bool g_loaded = false;
 
 static void LoadFunctions()
 {
-    if (g_loaded) return;
+    if (g_loaded) { return; }
     g_loaded = true;
     void *h = dlopen("libc.so", RTLD_LAZY);
     if (h) {
-        g_fn = (wcstoll_fn)dlsym(h, "__isoc23_wcstoll");
+        g_fn = (WcstollFn)dlsym(h, "__isoc23_wcstoll");
     }
 }
 
@@ -56,10 +62,10 @@ static napi_value Isoc23Wcstoll_0100(napi_env env, napi_callback_info info)
     wchar_t nptr[70];
     nptr[0] = L'0';
     nptr[1] = L'b';
-    for (int i = 0; i < 64; i++) {
-        nptr[2 + i] = L'1';
+    for (int i = 0; i < BIN_DIGIT_COUNT; i++) {
+        nptr[BIN_PREFIX_LEN + i] = L'1';
     }
-    nptr[66] = L'\0';
+    nptr[NULL_TERM_POS] = L'\0';
     wchar_t *ep = nullptr;
     errno = 0;
     long long val = g_fn(nptr, &ep, 0);
@@ -150,8 +156,8 @@ static napi_value Isoc23Wcstoll_0600(napi_env env, napi_callback_info info)
     }
     const wchar_t *nptr = L"123abc";
     errno = 0;
-    long long val = g_fn(nptr, NULL, 10);
-    if (val == 123) {
+    long long val = g_fn(nptr, nullptr, 10);
+    if (val == EXPECTED_DEC_123) {
         return Ret(env, 0);
     }
     return Ret(env, 1);

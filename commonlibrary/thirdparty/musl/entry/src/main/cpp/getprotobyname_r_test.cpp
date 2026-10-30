@@ -15,9 +15,9 @@
 
 #include "napi/native_api.h"
 #include <dlfcn.h>
-#include <errno.h>
+#include <cerrno>
 #include <netdb.h>
-#include <string.h>
+#include <cstring>
 #include <pthread.h>
 #include <atomic>
 
@@ -26,6 +26,11 @@
 using std::atomic_int;
 using std::atomic_load;
 using std::atomic_fetch_add;
+
+#define MAX_ALIAS 100
+#define PROTO_RAW 255
+#define PROTO_TCP 6
+#define PROTO_UDP 17
 
 typedef int (*GetprotobynameRFn)(const char *, struct protoent *, char *, size_t, struct protoent **);
 typedef int (*GetprotobynumberRFn)(int, struct protoent *, char *, size_t, struct protoent **);
@@ -72,7 +77,7 @@ static void *ConcurrentWorker(void *arg)
         struct protoent *result = nullptr;
         char buf[512];
         int rv = g_fn("tcp", &pe, buf, sizeof(buf), &result);
-        if (rv == 0 && result && pe.p_proto == 6) {
+        if (rv == 0 && result && pe.p_proto == PROTO_TCP) {
             atomic_fetch_add(&g_concurrentOk, 1);
         }
     }
@@ -90,7 +95,7 @@ static napi_value ProtobynameR_0100(napi_env env, napi_callback_info info)
     char buf[512];
     int rv = g_fn("tcp", &pe, buf, sizeof(buf), &result);
     int proto = (rv == 0 && result) ? pe.p_proto : -1;
-    return Ret(env, (rv == 0 && proto == 6) ? 0 : 1);
+    return Ret(env, (rv == 0 && proto == PROTO_TCP) ? 0 : 1);
 }
 
 static napi_value ProtobynameR_0200(napi_env env, napi_callback_info info)
@@ -104,7 +109,7 @@ static napi_value ProtobynameR_0200(napi_env env, napi_callback_info info)
     char buf[512];
     int rv = g_fn("udp", &pe, buf, sizeof(buf), &result);
     int proto = (rv == 0 && result) ? pe.p_proto : -1;
-    return Ret(env, (rv == 0 && proto == 17) ? 0 : 1);
+    return Ret(env, (rv == 0 && proto == PROTO_UDP) ? 0 : 1);
 }
 
 static napi_value ProtobynameR_0300(napi_env env, napi_callback_info info)
@@ -132,7 +137,7 @@ static napi_value ProtobynameR_0400(napi_env env, napi_callback_info info)
     char buf[512];
     int rv = g_fn("raw", &pe, buf, sizeof(buf), &result);
     int proto = (rv == 0 && result) ? pe.p_proto : -1;
-    return Ret(env, (rv == 0 && proto == 255) ? 0 : 1);
+    return Ret(env, (rv == 0 && proto == PROTO_RAW) ? 0 : 1);
 }
 
 static napi_value ProtobynameR_0500(napi_env env, napi_callback_info info)
@@ -169,7 +174,7 @@ static napi_value ProtobynameR_0700(napi_env env, napi_callback_info info)
     }
     struct protoent pe;
     struct protoent *result = nullptr;
-    char buf[8];
+    char buf[1];
     int rv = g_fn("tcp", &pe, buf, sizeof(buf), &result);
     return Ret(env, (rv == ERANGE) ? 0 : 1);
 }
@@ -197,15 +202,17 @@ static napi_value ProtobynameR_0900(napi_env env, napi_callback_info info)
     struct protoent *result = nullptr;
     char buf[512];
     int rv = g_fn("tcp", &pe, buf, sizeof(buf), &result);
-    if (rv == 0 && result) {
-        if (pe.p_aliases != nullptr) {
-            int i = 0;
-            while (pe.p_aliases[i] != nullptr) {
-                i++;
-                if (i > 100) {
-                    return Ret(env, 0);
-                }
-            }
+    if (rv != 0 || !result) {
+        return Ret(env, 0);
+    }
+    if (pe.p_aliases == nullptr) {
+        return Ret(env, 0);
+    }
+    int aliasIdx = 0;
+    while (pe.p_aliases[aliasIdx] != nullptr) {
+        aliasIdx++;
+        if (aliasIdx > MAX_ALIAS) {
+            return Ret(env, 0);
         }
     }
     return Ret(env, 0);
@@ -259,7 +266,7 @@ static napi_value ProtobynameR_1200(napi_env env, napi_callback_info info)
     struct protoent *result = nullptr;
     char buf[512];
     int rv = g_fn("tcp", &pe, buf, sizeof(buf), &result);
-    if (rv == 0 && result && pe.p_proto == 6) {
+    if (rv == 0 && result && pe.p_proto == PROTO_TCP) {
         return Ret(env, 0);
     }
     return Ret(env, 0);
@@ -271,13 +278,16 @@ static napi_value ProtobynameR_1300(napi_env env, napi_callback_info info)
     if (!IsSymbolReady()) {
         return Ret(env, 0);
     }
-    struct protoent pe1, pe2;
-    struct protoent *r1 = nullptr, *r2 = nullptr;
-    char buf1[512], buf2[512];
+    struct protoent pe1;
+    struct protoent pe2;
+    struct protoent *r1 = nullptr;
+    struct protoent *r2 = nullptr;
+    char buf1[512];
+    char buf2[512];
     int rv1 = g_fn("tcp", &pe1, buf1, sizeof(buf1), &r1);
     int rv2 = 0;
     if (g_bynum) {
-        rv2 = g_bynum(6, &pe2, buf2, sizeof(buf2), &r2);
+        rv2 = g_bynum(PROTO_TCP, &pe2, buf2, sizeof(buf2), &r2);
     }
     if (rv1 == 0 && rv2 == 0 && r1 && r2) {
         if (pe1.p_proto == pe2.p_proto && strcmp(pe1.p_name, pe2.p_name) == 0) {
@@ -293,14 +303,14 @@ static napi_value ProtobynameR_1400(napi_env env, napi_callback_info info)
     if (!IsSymbolReady() || !g_ent) {
         return Ret(env, 0);
     }
-    if (g_end) g_end();
-    if (g_set) g_set(0);
+    if (g_end) { g_end(); }
+    if (g_set) { g_set(0); }
     struct protoent pe1;
     struct protoent *r1 = nullptr;
     char buf1[512];
     int rv1 = g_ent(&pe1, buf1, sizeof(buf1), &r1);
     if (rv1 != 0) {
-        if (g_end) g_end();
+        if (g_end) { g_end(); }
         return Ret(env, 0);
     }
     struct protoent pe2;
@@ -313,11 +323,11 @@ static napi_value ProtobynameR_1400(napi_env env, napi_callback_info info)
     int rv3 = g_ent(&pe3, buf3, sizeof(buf3), &r3);
     if (rv3 == 0 && r3) {
         if (strcmp(pe1.p_name, pe3.p_name) != 0) {
-            if (g_end) g_end();
+            if (g_end) { g_end(); }
             return Ret(env, 0);
         }
     }
-    if (g_end) g_end();
+    if (g_end) { g_end(); }
     return Ret(env, 0);
 }
 
@@ -327,37 +337,37 @@ static napi_value ProtobynameR_1500(napi_env env, napi_callback_info info)
     if (!IsSymbolReady()) {
         return Ret(env, 0);
     }
-    struct protoent peN;
-    struct protoent *rN = nullptr;
-    char bufN[512];
-    int rvN = g_fn("tcp", &peN, bufN, sizeof(bufN), &rN);
-    struct protoent peB;
-    struct protoent *rB = nullptr;
-    char bufB[512];
-    int rvB = 0;
+    struct protoent peName;
+    struct protoent *rName = nullptr;
+    char bufName[512];
+    int rvName = g_fn("tcp", &peName, bufName, sizeof(bufName), &rName);
+    struct protoent peByNum;
+    struct protoent *rByNum = nullptr;
+    char bufByNum[512];
+    int rvByNum = 0;
     if (g_bynum) {
-        rvB = g_bynum(6, &peB, bufB, sizeof(bufB), &rB);
+        rvByNum = g_bynum(PROTO_TCP, &peByNum, bufByNum, sizeof(bufByNum), &rByNum);
     }
     int found = 0;
     if (g_ent) {
-        if (g_end) g_end();
-        if (g_set) g_set(0);
-        struct protoent peE;
-        struct protoent *rE = nullptr;
-        char bufE[512];
-        int rvE = 0;
+        if (g_end) { g_end(); }
+        if (g_set) { g_set(0); }
+        struct protoent peEnum;
+        struct protoent *rEnum = nullptr;
+        char bufEnum[512];
+        int rvEnum = 0;
         int count = 0;
-        while ((rvE = g_ent(&peE, bufE, sizeof(bufE), &rE)) == 0 && count < MAX_ENUM) {
+        while ((rvEnum = g_ent(&peEnum, bufEnum, sizeof(bufEnum), &rEnum)) == 0 && count < MAX_ENUM) {
             count++;
-            if (rE && peE.p_proto == 6) {
+            if (rEnum && peEnum.p_proto == PROTO_TCP) {
                 found = 1;
                 break;
             }
         }
-        if (g_end) g_end();
+        if (g_end) { g_end(); }
     }
-    if (rvN == 0 && rvB == 0 && found) {
-        if (peN.p_proto == peB.p_proto && peN.p_proto == 6) {
+    if (rvName == 0 && rvByNum == 0 && found) {
+        if (peName.p_proto == peByNum.p_proto && peName.p_proto == PROTO_TCP) {
             return Ret(env, 0);
         }
     }
@@ -415,7 +425,7 @@ static napi_module demoModule = {
     .reserved = {0},
 };
 
-extern "C" __attribute__((constructor)) void RegisterEntryModule(void)
+extern "C" __attribute__((constructor)) void RegisterEnumntryModule(void)
 {
     napi_module_register(&demoModule);
 }

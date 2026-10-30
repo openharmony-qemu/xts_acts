@@ -24,7 +24,7 @@ typedef int (*GetpwentRFn)(struct passwd *, char *, size_t, struct passwd **);
 typedef void (*SetpwentFn)(void);
 typedef void (*EndpwentFn)(void);
 
-static GetpwentRFn g_getpwent_r = nullptr;
+static GetpwentRFn g_getpwentR = nullptr;
 static SetpwentFn g_setpwent = nullptr;
 static EndpwentFn g_endpwent = nullptr;
 
@@ -37,14 +37,14 @@ static napi_value Ret(napi_env env, int32_t val)
 
 static void LoadFunctions()
 {
-    g_getpwent_r = (GetpwentRFn)dlsym(RTLD_DEFAULT, "getpwent_r");
+    g_getpwentR = (GetpwentRFn)dlsym(RTLD_DEFAULT, "getpwent_r");
     g_setpwent = (SetpwentFn)dlsym(RTLD_DEFAULT, "setpwent");
     g_endpwent = (EndpwentFn)dlsym(RTLD_DEFAULT, "endpwent");
 }
 
 static bool IsSymbolReady()
 {
-    return g_getpwent_r != nullptr && g_setpwent != nullptr && g_endpwent != nullptr;
+    return g_getpwentR != nullptr && g_setpwent != nullptr && g_endpwent != nullptr;
 }
 
 static napi_value GetpwentR_0100(napi_env env, napi_callback_info info)
@@ -58,7 +58,7 @@ static napi_value GetpwentR_0100(napi_env env, napi_callback_info info)
     struct passwd pw;
     struct passwd *result = nullptr;
     char buf[1024];
-    int rv = g_getpwent_r(&pw, buf, sizeof(buf), &result);
+    int rv = g_getpwentR(&pw, buf, sizeof(buf), &result);
     g_endpwent();
     return Ret(env, (rv == 0) ? 0 : 1);
 }
@@ -76,7 +76,7 @@ static napi_value GetpwentR_0200(napi_env env, napi_callback_info info)
     char buf[1024];
     int count = 0;
     int rv = 0;
-    while ((rv = g_getpwent_r(&pw, buf, sizeof(buf), &result)) == 0 && count < MAX_ENUM) {
+    while ((rv = g_getpwentR(&pw, buf, sizeof(buf), &result)) == 0 && count < MAX_ENUM) {
         count++;
     }
     g_endpwent();
@@ -94,7 +94,7 @@ static napi_value GetpwentR_0300(napi_env env, napi_callback_info info)
     struct passwd pw;
     struct passwd *result = nullptr;
     char buf[8];
-    int rv = g_getpwent_r(&pw, buf, sizeof(buf), &result);
+    int rv = g_getpwentR(&pw, buf, sizeof(buf), &result);
     g_endpwent();
     return Ret(env, (rv == ERANGE) ? 0 : 1);
 }
@@ -110,11 +110,11 @@ static napi_value GetpwentR_0400(napi_env env, napi_callback_info info)
     struct passwd pw;
     struct passwd *result = nullptr;
     char smallbuf[8];
-    int rv = g_getpwent_r(&pw, smallbuf, sizeof(smallbuf), &result);
+    int rv = g_getpwentR(&pw, smallbuf, sizeof(smallbuf), &result);
     int rv2 = rv;
     if (rv == ERANGE) {
         char bigbuf[1024];
-        rv2 = g_getpwent_r(&pw, bigbuf, sizeof(bigbuf), &result);
+        rv2 = g_getpwentR(&pw, bigbuf, sizeof(bigbuf), &result);
     }
     g_endpwent();
     return Ret(env, (rv2 == 0) ? 0 : 1);
@@ -131,7 +131,7 @@ static napi_value GetpwentR_0500(napi_env env, napi_callback_info info)
     struct passwd pw;
     struct passwd *result = nullptr;
     char smallbuf[8];
-    int rv = g_getpwent_r(&pw, smallbuf, sizeof(smallbuf), &result);
+    int rv = g_getpwentR(&pw, smallbuf, sizeof(smallbuf), &result);
     g_endpwent();
     return Ret(env, (rv == ERANGE || rv == ESPIPE) ? 0 : 1);
 }
@@ -147,7 +147,7 @@ static napi_value GetpwentR_0600(napi_env env, napi_callback_info info)
     struct passwd pw;
     struct passwd *result = nullptr;
     char buf[1024];
-    int rv = g_getpwent_r(&pw, buf, sizeof(buf), &result);
+    int rv = g_getpwentR(&pw, buf, sizeof(buf), &result);
     g_endpwent();
     return Ret(env, 0);
 }
@@ -165,7 +165,7 @@ static napi_value GetpwentR_0700(napi_env env, napi_callback_info info)
     char buf[1024];
     int rv = 0;
     int count = 0;
-    while ((rv = g_getpwent_r(&pw, buf, sizeof(buf), &result)) == 0 && count < MAX_ENUM) {
+    while ((rv = g_getpwentR(&pw, buf, sizeof(buf), &result)) == 0 && count < MAX_ENUM) {
         count++;
     }
     g_endpwent();
@@ -184,22 +184,10 @@ static napi_value GetpwentR_0800(napi_env env, napi_callback_info info)
     struct passwd *result = nullptr;
     char buf[8];
     errno = 0;
-    int rv = g_getpwent_r(&pw, buf, sizeof(buf), &result);
+    int rv = g_getpwentR(&pw, buf, sizeof(buf), &result);
     int savedErrno = errno;
     g_endpwent();
     return Ret(env, (rv != 0 && savedErrno == rv) ? 0 : 1);
-}
-
-static napi_value GetpwentR_0900(napi_env env, napi_callback_info info)
-{
-    (void)info;
-    return Ret(env, 0);
-}
-
-static napi_value GetpwentR_1000(napi_env env, napi_callback_info info)
-{
-    (void)info;
-    return Ret(env, 0);
 }
 
 static napi_value GetpwentR_1100(napi_env env, napi_callback_info info)
@@ -213,25 +201,13 @@ static napi_value GetpwentR_1100(napi_env env, napi_callback_info info)
     struct passwd pw;
     struct passwd *result = nullptr;
     char buf[1024];
-    int rv = g_getpwent_r(&pw, buf, sizeof(buf), &result);
+    int rv = g_getpwentR(&pw, buf, sizeof(buf), &result);
     g_endpwent();
     if (rv == 0 && result != nullptr) {
         if (result->pw_name >= buf && result->pw_name < buf + sizeof(buf)) {
             return Ret(env, 0);
         }
     }
-    return Ret(env, 0);
-}
-
-static napi_value GetpwentR_1200(napi_env env, napi_callback_info info)
-{
-    (void)info;
-    return Ret(env, 0);
-}
-
-static napi_value GetpwentR_1300(napi_env env, napi_callback_info info)
-{
-    (void)info;
     return Ret(env, 0);
 }
 
@@ -246,23 +222,11 @@ static napi_value GetpwentR_1400(napi_env env, napi_callback_info info)
     struct passwd pw;
     struct passwd *result = nullptr;
     char buf[1024];
-    (void)g_getpwent_r(&pw, buf, sizeof(buf), &result);
+    (void)g_getpwentR(&pw, buf, sizeof(buf), &result);
     g_setpwent();
-    int rv = g_getpwent_r(&pw, buf, sizeof(buf), &result);
+    int rv = g_getpwentR(&pw, buf, sizeof(buf), &result);
     g_endpwent();
     return Ret(env, (rv == 0) ? 0 : 0);
-}
-
-static napi_value GetpwentR_1500(napi_env env, napi_callback_info info)
-{
-    (void)info;
-    return Ret(env, 0);
-}
-
-static napi_value GetpwentR_1600(napi_env env, napi_callback_info info)
-{
-    (void)info;
-    return Ret(env, 0);
 }
 
 EXTERN_C_START
@@ -286,21 +250,9 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetpwentR_0800", nullptr, GetpwentR_0800,
             nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"GetpwentR_0900", nullptr, GetpwentR_0900,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"GetpwentR_1000", nullptr, GetpwentR_1000,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetpwentR_1100", nullptr, GetpwentR_1100,
             nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"GetpwentR_1200", nullptr, GetpwentR_1200,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"GetpwentR_1300", nullptr, GetpwentR_1300,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetpwentR_1400", nullptr, GetpwentR_1400,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"GetpwentR_1500", nullptr, GetpwentR_1500,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"GetpwentR_1600", nullptr, GetpwentR_1600,
             nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);

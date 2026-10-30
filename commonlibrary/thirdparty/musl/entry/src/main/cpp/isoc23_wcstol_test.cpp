@@ -15,25 +15,29 @@
 
 #include "napi/native_api.h"
 #include <dlfcn.h>
-#include <errno.h>
-#include <wchar.h>
-#include <limits.h>
+#include <cerrno>
+#include <cwchar>
+#include <climits>
 
-typedef long (*wcstol_fn)(const wchar_t *, wchar_t **, int);
-typedef long (*strtol_fn)(const char *, char **, int);
+#define EXPECTED_BIN_5 5
+#define EXPECTED_DEC_42 42
+#define EXPECTED_NEG_5 (-5)
 
-static wcstol_fn g_fn = nullptr;
-static strtol_fn g_strtol_fn = nullptr;
+typedef long (*WcstolFn)(const wchar_t *, wchar_t **, int);
+typedef long (*StrtolFn)(const char *, char **, int);
+
+static WcstolFn g_fn = nullptr;
+static StrtolFn g_strtolFn = nullptr;
 static bool g_loaded = false;
 
 static void LoadFunctions()
 {
-    if (g_loaded) return;
+    if (g_loaded) { return; }
     g_loaded = true;
     void *h = dlopen("libc.so", RTLD_LAZY);
     if (h) {
-        g_fn = (wcstol_fn)dlsym(h, "__isoc23_wcstol");
-        g_strtol_fn = (strtol_fn)dlsym(h, "__isoc23_strtol");
+        g_fn = (WcstolFn)dlsym(h, "__isoc23_wcstol");
+        g_strtolFn = (StrtolFn)dlsym(h, "__isoc23_strtol");
     }
 }
 
@@ -60,7 +64,7 @@ static napi_value Isoc23Wcstol_0100(napi_env env, napi_callback_info info)
     wchar_t *ep = nullptr;
     errno = 0;
     long val = g_fn(nptr, &ep, 0);
-    if (val == 5 && *ep == L'\0') {
+    if (val == EXPECTED_BIN_5 && *ep == L'\0') {
         return Ret(env, 0);
     }
     return Ret(env, 1);
@@ -95,7 +99,7 @@ static napi_value Isoc23Wcstol_0300(napi_env env, napi_callback_info info)
     wchar_t *ep = nullptr;
     errno = 0;
     long val = g_fn(nptr, &ep, 10);
-    if (val == -5 && *ep == L'\0') {
+    if (val == EXPECTED_NEG_5 && *ep == L'\0') {
         return Ret(env, 0);
     }
     return Ret(env, 1);
@@ -146,8 +150,8 @@ static napi_value Isoc23Wcstol_0600(napi_env env, napi_callback_info info)
     }
     const wchar_t *nptr = L"42abc";
     errno = 0;
-    long val = g_fn(nptr, NULL, 0);
-    if (val == 42) {
+    long val = g_fn(nptr, nullptr, 0);
+    if (val == EXPECTED_DEC_42) {
         return Ret(env, 0);
     }
     return Ret(env, 1);
@@ -185,10 +189,10 @@ static napi_value Isoc23Wcstol_0800(napi_env env, napi_callback_info info)
     errno = 0;
     long wval = g_fn(wnptr, &wep, 0);
     long val = 0;
-    if (g_strtol_fn) {
-        val = g_strtol_fn(nptr, &ep, 0);
+    if (g_strtolFn) {
+        val = g_strtolFn(nptr, &ep, 0);
     }
-    if (wval == 5 && *wep == L'\0' && val == 5 && *ep == '\0') {
+    if (wval == EXPECTED_BIN_5 && *wep == L'\0' && val == EXPECTED_BIN_5 && *ep == '\0') {
         return Ret(env, 0);
     }
     return Ret(env, 1);
@@ -202,7 +206,7 @@ static napi_value Isoc23Wcstol_0900(napi_env env, napi_callback_info info)
         return Ret(env, 0);
     }
     wchar_t input[2];
-    input[0] = (wchar_t)0xD800;
+    input[0] = static_cast<wchar_t>(0xD800);
     input[1] = L'\0';
     wchar_t *ep = nullptr;
     errno = 0;

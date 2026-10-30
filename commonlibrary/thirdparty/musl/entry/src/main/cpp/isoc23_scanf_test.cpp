@@ -14,17 +14,21 @@
  */
 
 #include "napi/native_api.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <errno.h>
-#include <math.h>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <cerrno>
+#include <cmath>
 #include <dlfcn.h>
 #include <unistd.h>
 
-typedef int (*scanf_fn)(const char*, ...);
+#define EXPECTED_BIN_22 22
+#define EXPECTED_BIN_7 7
+#define EXPECTED_W4D 1234
 
-static scanf_fn g_scanf = nullptr;
+typedef int (*ScanfFn)(const char*, ...);
+
+static ScanfFn g_scanf = nullptr;
 
 static napi_value Ret(napi_env env, int32_t val)
 {
@@ -35,7 +39,7 @@ static napi_value Ret(napi_env env, int32_t val)
 
 static void LoadFunctions()
 {
-    g_scanf = (scanf_fn)dlsym(RTLD_DEFAULT, "__isoc23_scanf");
+    g_scanf = (ScanfFn)dlsym(RTLD_DEFAULT, "__isoc23_scanf");
 }
 
 static bool IsSymbolReady()
@@ -46,7 +50,7 @@ static bool IsSymbolReady()
 static int SetupStdin(const char* data)
 {
     int pfd[2];
-    if (pipe(pfd) != 0) return -1;
+    if (pipe(pfd) != 0) { return -1; }
     write(pfd[1], data, strlen(data));
     close(pfd[1]);
     if (dup2(pfd[0], STDIN_FILENO) < 0) {
@@ -61,15 +65,17 @@ static int SetupStdin(const char* data)
 static int SetupStdinEOF()
 {
     int pfd[2];
-    if (pipe(pfd) != 0) return -1;
+    if (pipe(pfd) != 0) { return -1; }
     close(pfd[1]);
     if (dup2(pfd[0], STDIN_FILENO) < 0) {
         close(pfd[0]);
         return -1;
     }
     close(pfd[0]);
-    int ch;
-    while ((ch = getchar()) != EOF);
+    int ch = getchar();
+    while (ch != EOF) {
+        ch = getchar();
+    }
     clearerr(stdin);
     return 0;
 }
@@ -85,7 +91,7 @@ static napi_value Isoc23Scanf_0100(napi_env env, napi_callback_info info)
     }
     int dest = 0;
     int ret = g_scanf("%b", &dest);
-    if (ret == 1 && dest == 22) {
+    if (ret == 1 && dest == EXPECTED_BIN_22) {
         return Ret(env, 0);
     }
     return Ret(env, 1);
@@ -102,7 +108,7 @@ static napi_value Isoc23Scanf_0200(napi_env env, napi_callback_info info)
     }
     int dest = 0;
     int ret = g_scanf("%i", &dest);
-    if (ret == 1 && dest == 7) {
+    if (ret == 1 && dest == EXPECTED_BIN_7) {
         return Ret(env, 0);
     }
     return Ret(env, 1);
@@ -119,7 +125,7 @@ static napi_value Isoc23Scanf_0300(napi_env env, napi_callback_info info)
     }
     int dest = 0;
     int ret = g_scanf("%w4d", &dest);
-    if (ret == 1 && dest == 1234) {
+    if (ret == 1 && dest == EXPECTED_W4D) {
         return Ret(env, 0);
     }
     return Ret(env, 0);
@@ -140,7 +146,7 @@ static napi_value Isoc23Scanf_0400(napi_env env, napi_callback_info info)
         free(dest);
         return Ret(env, 0);
     }
-    if (dest) free(dest);
+    if (dest) { free(dest); }
     return Ret(env, 1);
 }
 

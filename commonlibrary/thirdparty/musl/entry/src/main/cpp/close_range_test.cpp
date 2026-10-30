@@ -15,12 +15,12 @@
 
 #include "napi/native_api.h"
 #include <dlfcn.h>
-#include <errno.h>
+#include <cerrno>
 #include <fcntl.h>
 #include <unistd.h>
 #include <sys/wait.h>
-#include <stdint.h>
-#include <limits.h>
+#include <cstdint>
+#include <climits>
 #include <sys/prctl.h>
 
 #ifndef PR_GET_SECCOMP
@@ -34,9 +34,18 @@
 #define CLOSE_RANGE_UNSHARE (1U << 1)
 #endif
 
-typedef int (*close_range_t)(unsigned int first, unsigned int last, unsigned int flags);
+#define FD_CLOSEFROM_START 6
+#define FD_HIGH 8
+#define FD_LOW 3
+#define FD_MID 5
+#define FD_RANGE_HIGH 200
+#define FD_RANGE_LOW 100
+#define FD_TOP 10
+#define FORK_NOT_SUPPORTED (-2)
 
-static close_range_t g_close_range = nullptr;
+typedef int (*CloseRangeT)(unsigned int first, unsigned int last, unsigned int flags);
+
+static CloseRangeT g_closeRange = nullptr;
 
 static napi_value Ret(napi_env env, int32_t val)
 {
@@ -47,12 +56,12 @@ static napi_value Ret(napi_env env, int32_t val)
 
 static void LoadFunctions()
 {
-    g_close_range = (close_range_t)dlsym(RTLD_DEFAULT, "close_range");
+    g_closeRange = (CloseRangeT)dlsym(RTLD_DEFAULT, "close_range");
 }
 
 static bool IsSymbolReady()
 {
-    if (g_close_range == nullptr) {
+    if (g_closeRange == nullptr) {
         return false;
     }
     if (prctl(PR_GET_SECCOMP) != 0) {
@@ -63,10 +72,10 @@ static bool IsSymbolReady()
 
 static pid_t ForkChild()
 {
-    pid_t parent_pid = getpid();
+    pid_t parentPid = getpid();
     pid_t pid = fork();
-    if (pid == 0 && getpid() == parent_pid) {
-        return -2;
+    if (pid == 0 && getpid() == parentPid) {
+        return FORK_NOT_SUPPORTED;
     }
     return pid;
 }
@@ -92,10 +101,11 @@ static napi_value CloseRange_0100(napi_env env, napi_callback_info info)
     }
     pid_t pid = ForkChild();
     if (pid == 0) {
-        int rv = g_close_range(0, UINT_MAX, 0);
+        int rv = g_closeRange(0, UINT_MAX, 0);
         _exit(rv == 0 ? 0 : 1);
     }
-    if (pid < 0) { return Ret(env, 0);
+    if (pid < 0) {
+        return Ret(env, 0);
     }
     return Ret(env, WaitChildExit(pid));
 }
@@ -109,10 +119,11 @@ static napi_value CloseRange_0200(napi_env env, napi_callback_info info)
     pid_t pid = ForkChild();
     if (pid == 0) {
         errno = 0;
-        int rv = g_close_range(5, 3, 0);
+        int rv = g_closeRange(5, 3, 0);
         _exit((rv == -1 && errno == EINVAL) ? 0 : 1);
     }
-    if (pid < 0) { return Ret(env, 0);
+    if (pid < 0) {
+        return Ret(env, 0);
     }
     return Ret(env, WaitChildExit(pid));
 }
@@ -125,10 +136,11 @@ static napi_value CloseRange_0300(napi_env env, napi_callback_info info)
     }
     pid_t pid = ForkChild();
     if (pid == 0) {
-        int rv = g_close_range(0, 3, 1);
+        int rv = g_closeRange(0, 3, 1);
         _exit((rv == 0 || rv == -1) ? 0 : 1);
     }
-    if (pid < 0) { return Ret(env, 0);
+    if (pid < 0) {
+        return Ret(env, 0);
     }
     return Ret(env, WaitChildExit(pid));
 }
@@ -146,12 +158,13 @@ static napi_value CloseRange_0400(napi_env env, napi_callback_info info)
             _exit(1);
         }
         int before = fcntl(fd, F_GETFD);
-        g_close_range(fd, fd, CLOSE_RANGE_CLOEXEC);
+        g_closeRange(fd, fd, CLOSE_RANGE_CLOEXEC);
         int after = fcntl(fd, F_GETFD);
         close(fd);
         _exit((after != -1 && (after & FD_CLOEXEC)) ? 0 : 1);
     }
-    if (pid < 0) { return Ret(env, 0);
+    if (pid < 0) {
+        return Ret(env, 0);
     }
     return Ret(env, WaitChildExit(pid));
 }
@@ -165,15 +178,16 @@ static napi_value CloseRange_0500(napi_env env, napi_callback_info info)
     pid_t pid = ForkChild();
     if (pid == 0) {
         int fd = open("/dev/null", O_RDONLY);
-        dup2(fd, 5);
+        dup2(fd, FD_MID);
         close(fd);
-        g_close_range(5, 5, 0);
-        if (fcntl(5, F_GETFD) == -1 && errno == EBADF) {
+        g_closeRange(FD_MID, FD_MID, 0);
+        if (fcntl(FD_MID, F_GETFD) == -1 && errno == EBADF) {
             _exit(0);
         }
         _exit(1);
     }
-    if (pid < 0) { return Ret(env, 0);
+    if (pid < 0) {
+        return Ret(env, 0);
     }
     return Ret(env, WaitChildExit(pid));
 }
@@ -186,10 +200,11 @@ static napi_value CloseRange_0600(napi_env env, napi_callback_info info)
     }
     pid_t pid = ForkChild();
     if (pid == 0) {
-        int rv = g_close_range(100, 200, 0);
+        int rv = g_closeRange(FD_RANGE_LOW, FD_RANGE_HIGH, 0);
         _exit(rv == 0 ? 0 : 1);
     }
-    if (pid < 0) { return Ret(env, 0);
+    if (pid < 0) {
+        return Ret(env, 0);
     }
     return Ret(env, WaitChildExit(pid));
 }
@@ -203,15 +218,16 @@ static napi_value CloseRange_0700(napi_env env, napi_callback_info info)
     pid_t pid = ForkChild();
     if (pid == 0) {
         int fd = open("/dev/null", O_RDONLY);
-        dup2(fd, 5);
+        dup2(fd, FD_MID);
         close(fd);
-        g_close_range(100, 200, 0);
-        if (fcntl(5, F_GETFD) != -1) {
+        g_closeRange(FD_RANGE_LOW, FD_RANGE_HIGH, 0);
+        if (fcntl(FD_MID, F_GETFD) != -1) {
             _exit(0);
         }
         _exit(1);
     }
-    if (pid < 0) { return Ret(env, 0);
+    if (pid < 0) {
+        return Ret(env, 0);
     }
     return Ret(env, WaitChildExit(pid));
 }
@@ -225,14 +241,15 @@ static napi_value CloseRange_0800(napi_env env, napi_callback_info info)
     pid_t pid = ForkChild();
     if (pid == 0) {
         int fd = open("/dev/null", O_RDONLY);
-        g_close_range(fd, fd, 0);
+        g_closeRange(fd, fd, 0);
         int ret = close(fd);
         if (ret == -1 && errno == EBADF) {
             _exit(0);
         }
         _exit(1);
     }
-    if (pid < 0) { return Ret(env, 0);
+    if (pid < 0) {
+        return Ret(env, 0);
     }
     return Ret(env, WaitChildExit(pid));
 }
@@ -245,36 +262,13 @@ static napi_value CloseRange_0900(napi_env env, napi_callback_info info)
     }
     pid_t pid = ForkChild();
     if (pid == 0) {
-        int rv = g_close_range(3, 7, 0);
+        int rv = g_closeRange(3, 7, 0);
         _exit(rv == 0 ? 0 : 1);
     }
-    if (pid < 0) { return Ret(env, 0);
+    if (pid < 0) {
+        return Ret(env, 0);
     }
     return Ret(env, WaitChildExit(pid));
-}
-
-static napi_value CloseRange_1000(napi_env env, napi_callback_info info)
-{
-    (void)info;
-    return Ret(env, 0);
-}
-
-static napi_value CloseRange_1100(napi_env env, napi_callback_info info)
-{
-    (void)info;
-    return Ret(env, 0);
-}
-
-static napi_value CloseRange_1200(napi_env env, napi_callback_info info)
-{
-    (void)info;
-    return Ret(env, 0);
-}
-
-static napi_value CloseRange_1300(napi_env env, napi_callback_info info)
-{
-    (void)info;
-    return Ret(env, 0);
 }
 
 EXTERN_C_START
@@ -291,10 +285,6 @@ static napi_value Init(napi_env env, napi_value exports)
         {"CloseRange_0700", nullptr, CloseRange_0700, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"CloseRange_0800", nullptr, CloseRange_0800, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"CloseRange_0900", nullptr, CloseRange_0900, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"CloseRange_1000", nullptr, CloseRange_1000, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"CloseRange_1100", nullptr, CloseRange_1100, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"CloseRange_1200", nullptr, CloseRange_1200, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"CloseRange_1300", nullptr, CloseRange_1300, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
