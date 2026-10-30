@@ -24,23 +24,30 @@ const ERR_MODULE_NOT_EXIST = 16000021;
 const BUNDLE_NAME = 'com.example.createmodulecontexttest';
 
 export default function actsCreateModuleContextSyncTest() {
-  describe("CreateModuleContextSync", () => {
+  describe('CreateModuleContextSync', () => {
     let moduleContext: common.Context | null;
 
     /**
      * @tc.name   SUB_AA_CreateModuleContextSync_0100
      * @tc.number SUB_AA_CreateModuleContextSync_0100
-     * @tc.desc   Verify that the context of the application can be obtained
+     * @tc.desc   createModuleContextSync(context, moduleName): moduleName non-empty valid range;
+     *     returns Context with applicationInfo.name/filesDir/cacheDir.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_AA_CreateModuleContextSync_0100", Level.LEVEL0, (done:Function) => {
-      console.info("SUB_AA_CreateModuleContextSync_0100 begin");
+    it('SUB_AA_CreateModuleContextSync_0100', Level.LEVEL0, (done:Function) => {
+      console.info('SUB_AA_CreateModuleContextSync_0100 begin');
       moduleContext = application.createModuleContextSync(
-        globalThis.abilityContext, "entry_test");
+        globalThis.abilityContext, 'entry_test');
+      expect(moduleContext !== null).assertTrue();
+      expect(moduleContext !== undefined).assertTrue();
       let bundleName = moduleContext!.applicationInfo.name;
       expect(bundleName).assertEqual(BUNDLE_NAME);
+      expect(typeof moduleContext!.filesDir).assertEqual('string');
+      expect(moduleContext!.filesDir.length > 0).assertTrue();
+      expect(typeof moduleContext!.cacheDir).assertEqual('string');
+      expect(moduleContext!.cacheDir.length > 0).assertTrue();
       done();
     });
 
@@ -52,10 +59,10 @@ export default function actsCreateModuleContextSyncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_AA_CreateModuleContextSync_0200", Level.LEVEL0, (done:Function) => {
-      console.info("SUB_AA_CreateModuleContextSync_0200 begin");
+    it('SUB_AA_CreateModuleContextSync_0200', Level.LEVEL0, (done:Function) => {
+      console.info('SUB_AA_CreateModuleContextSync_0200 begin');
       moduleContext = application.createModuleContextSync(
-        globalThis.abilityContext, "feature");
+        globalThis.abilityContext, 'feature');
       let bundleName = moduleContext!.applicationInfo.name;
       expect(bundleName).assertEqual(BUNDLE_NAME);
       done();
@@ -69,16 +76,16 @@ export default function actsCreateModuleContextSyncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_AA_CreateModuleContextSync_0300", Level.LEVEL0, (done:Function) => {
-      console.info("SUB_AA_CreateModuleContextSync_0300 begin");
+    it('SUB_AA_CreateModuleContextSync_0300', Level.LEVEL0, (done:Function) => {
+      console.info('SUB_AA_CreateModuleContextSync_0300 begin');
       moduleContext = null;
       try {
         moduleContext = application.createModuleContextSync(
-          globalThis.abilityContext, "entry_assist");
+          globalThis.abilityContext, 'entry_assist');
         expect().assertFail();
       } catch (err) {
         let e = err as BusinessError;
-        console.debug("====>e====>" + JSON.stringify(e));
+        console.debug('====>e====>' + JSON.stringify(e));
         expect(e.code).assertEqual(ERR_MODULE_NOT_EXIST);
       }
       expect(moduleContext).assertEqual(null);
@@ -93,16 +100,16 @@ export default function actsCreateModuleContextSyncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_AA_CreateModuleContextSync_0400", Level.LEVEL0, (done:Function) => {
-      console.info("SUB_AA_CreateModuleContextSync_0400 begin");
+    it('SUB_AA_CreateModuleContextSync_0400', Level.LEVEL0, (done:Function) => {
+      console.info('SUB_AA_CreateModuleContextSync_0400 begin');
       moduleContext = null;
       try {
         moduleContext = application.createModuleContextSync(
-          globalThis.abilityContext, "abc");
+          globalThis.abilityContext, 'abc');
         expect().assertFail();
       } catch (err) {
         let e = err as BusinessError;
-        console.debug("====>e====>" + JSON.stringify(e));
+        console.debug('====>e====>' + JSON.stringify(e));
         expect(e.code).assertEqual(ERR_MODULE_NOT_EXIST);
       }
       expect(moduleContext).assertEqual(null);
@@ -112,13 +119,13 @@ export default function actsCreateModuleContextSyncTest() {
     /**
      * @tc.name   SUB_AA_CreateModuleContextSync_0500
      * @tc.number SUB_AA_CreateModuleContextSync_0500
-     * @tc.desc   Verify that createModuleContextSync throws 401 when moduleName is undefined
+     * @tc.desc   moduleName undefined out of valid range; expect BusinessError 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_AA_CreateModuleContextSync_0500", Level.LEVEL0, (done:Function) => {
-      console.info("SUB_AA_CreateModuleContextSync_0500 begin");
+    it('SUB_AA_CreateModuleContextSync_0500', Level.LEVEL0, (done:Function) => {
+      console.info('SUB_AA_CreateModuleContextSync_0500 begin');
       moduleContext = null;
       try {
         moduleContext = application.createModuleContextSync(
@@ -126,7 +133,31 @@ export default function actsCreateModuleContextSyncTest() {
         expect().assertFail();
       } catch (err) {
         let e = err as BusinessError;
-        console.debug("====>e====>" + JSON.stringify(e));
+        console.debug('====>e====>' + JSON.stringify(e));
+        expect(e.code).assertEqual(ERR_INVALID_PARAM);
+      }
+      expect(moduleContext).assertEqual(null);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_AA_CreateModuleContextSync_0510
+     * @tc.number SUB_AA_CreateModuleContextSync_0510
+     * @tc.desc   moduleName null out of valid range; expect BusinessError 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AA_CreateModuleContextSync_0510', Level.LEVEL0, (done:Function) => {
+      console.info('SUB_AA_CreateModuleContextSync_0510 begin');
+      moduleContext = null;
+      try {
+        moduleContext = application.createModuleContextSync(
+          globalThis.abilityContext, null);
+        expect().assertFail();
+      } catch (err) {
+        let e = err as BusinessError;
+        console.debug('====>e====>' + JSON.stringify(e));
         expect(e.code).assertEqual(ERR_INVALID_PARAM);
       }
       expect(moduleContext).assertEqual(null);
@@ -141,10 +172,10 @@ export default function actsCreateModuleContextSyncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_AA_CreateModuleContextSync_0600", Level.LEVEL0, (done:Function) => {
-      console.info("SUB_AA_CreateModuleContextSync_0600 begin");
+    it('SUB_AA_CreateModuleContextSync_0600', Level.LEVEL0, (done:Function) => {
+      console.info('SUB_AA_CreateModuleContextSync_0600 begin');
       moduleContext = application.createModuleContextSync(
-        globalThis.abilityStageContext, "entry_test");
+        globalThis.abilityStageContext, 'entry_test');
       let bundleName = moduleContext!.applicationInfo.name;
       expect(bundleName).assertEqual(BUNDLE_NAME);
       done();
@@ -158,10 +189,10 @@ export default function actsCreateModuleContextSyncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_AA_CreateModuleContextSync_0700", Level.LEVEL0, (done:Function) => {
-      console.info("SUB_AA_CreateModuleContextSync_0700 begin");
+    it('SUB_AA_CreateModuleContextSync_0700', Level.LEVEL0, (done:Function) => {
+      console.info('SUB_AA_CreateModuleContextSync_0700 begin');
       moduleContext = application.createModuleContextSync(
-        globalThis.abilityStageContext, "feature");
+        globalThis.abilityStageContext, 'feature');
       let bundleName = moduleContext!.applicationInfo.name;
       expect(bundleName).assertEqual(BUNDLE_NAME);
       done();
@@ -175,16 +206,16 @@ export default function actsCreateModuleContextSyncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_AA_CreateModuleContextSync_0800", Level.LEVEL0, (done:Function) => {
-      console.info("SUB_AA_CreateModuleContextSync_0800 begin");
+    it('SUB_AA_CreateModuleContextSync_0800', Level.LEVEL0, (done:Function) => {
+      console.info('SUB_AA_CreateModuleContextSync_0800 begin');
       moduleContext = null;
       try {
         moduleContext = application.createModuleContextSync(
-          globalThis.abilityStageContext, "entry_assist");
+          globalThis.abilityStageContext, 'entry_assist');
         expect().assertFail();
       } catch (err) {
         let e = err as BusinessError;
-        console.debug("====>e====>" + JSON.stringify(e));
+        console.debug('====>e====>' + JSON.stringify(e));
         expect(e.code).assertEqual(ERR_MODULE_NOT_EXIST);
       }
       expect(moduleContext).assertEqual(null);
@@ -199,16 +230,16 @@ export default function actsCreateModuleContextSyncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_AA_CreateModuleContextSync_0900", Level.LEVEL0, (done:Function) => {
-      console.info("SUB_AA_CreateModuleContextSync_0900 begin");
+    it('SUB_AA_CreateModuleContextSync_0900', Level.LEVEL0, (done:Function) => {
+      console.info('SUB_AA_CreateModuleContextSync_0900 begin');
       moduleContext = null;
       try {
         moduleContext = application.createModuleContextSync(
-          globalThis.abilityStageContext, "createmodue");
+          globalThis.abilityStageContext, 'createmodue');
         expect().assertFail();
       } catch (err) {
         let e = err as BusinessError;
-        console.debug("====>e====>" + JSON.stringify(e));
+        console.debug('====>e====>' + JSON.stringify(e));
         expect(e.code).assertEqual(ERR_MODULE_NOT_EXIST);
       }
       expect(moduleContext).assertEqual(null);
@@ -223,8 +254,8 @@ export default function actsCreateModuleContextSyncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_AA_CreateModuleContextSync_1000", Level.LEVEL0, (done:Function) => {
-      console.info("SUB_AA_CreateModuleContextSync_1000 begin");
+    it('SUB_AA_CreateModuleContextSync_1000', Level.LEVEL0, (done:Function) => {
+      console.info('SUB_AA_CreateModuleContextSync_1000 begin');
       moduleContext = null;
       try {
         moduleContext = application.createModuleContextSync(
@@ -232,7 +263,7 @@ export default function actsCreateModuleContextSyncTest() {
         expect().assertFail();
       } catch (err) {
         let e = err as BusinessError;
-        console.debug("====>e====>" + JSON.stringify(e));
+        console.debug('====>e====>' + JSON.stringify(e));
         expect(e.code).assertEqual(ERR_INVALID_PARAM);
       }
       expect(moduleContext).assertEqual(null);
@@ -247,16 +278,16 @@ export default function actsCreateModuleContextSyncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_AA_CreateModuleContextSync_1100", Level.LEVEL0, (done:Function) => {
-      console.info("SUB_AA_CreateModuleContextSync_1100 begin");
+    it('SUB_AA_CreateModuleContextSync_1100', Level.LEVEL0, (done:Function) => {
+      console.info('SUB_AA_CreateModuleContextSync_1100 begin');
       moduleContext = null;
       try {
         moduleContext = application.createModuleContextSync(
-          null, "entry_test");
+          null, 'entry_test');
         expect().assertFail();
       } catch (err) {
         let e = err as BusinessError;
-        console.debug("====>e====>" + JSON.stringify(e));
+        console.debug('====>e====>' + JSON.stringify(e));
         expect(e.code).assertEqual(ERR_INVALID_PARAM);
       }
       expect(moduleContext).assertEqual(null);
@@ -271,17 +302,17 @@ export default function actsCreateModuleContextSyncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_AA_CreateModuleContextSync_1200", Level.LEVEL0, (done:Function) => {
-      console.info("SUB_AA_CreateModuleContextSync_1200 begin");
+    it('SUB_AA_CreateModuleContextSync_1200', Level.LEVEL0, (done:Function) => {
+      console.info('SUB_AA_CreateModuleContextSync_1200 begin');
       moduleContext = null;
       let fakeContext = { stageMode: true } as common.Context;
       try {
         moduleContext = application.createModuleContextSync(
-          fakeContext, "entry_test");
+          fakeContext, 'entry_test');
         expect().assertFail();
       } catch (err) {
         let e = err as BusinessError;
-        console.debug("====>e====>" + JSON.stringify(e));
+        console.debug('====>e====>' + JSON.stringify(e));
         expect(e.code).assertEqual(ERR_CONTEXT_NOT_EXIST);
       }
       expect(moduleContext).assertEqual(null);
@@ -291,21 +322,21 @@ export default function actsCreateModuleContextSyncTest() {
     /**
      * @tc.name   SUB_AA_CreateModuleContextSync_1300
      * @tc.number SUB_AA_CreateModuleContextSync_1300
-     * @tc.desc   Verify that createModuleContextSync throws 16000021 when moduleName is empty
+     * @tc.desc   moduleName empty string "" length out of valid non-empty range; expect 16000021.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_AA_CreateModuleContextSync_1300", Level.LEVEL0, (done:Function) => {
-      console.info("SUB_AA_CreateModuleContextSync_1300 begin");
+    it('SUB_AA_CreateModuleContextSync_1300', Level.LEVEL0, (done:Function) => {
+      console.info('SUB_AA_CreateModuleContextSync_1300 begin');
       moduleContext = null;
       try {
         moduleContext = application.createModuleContextSync(
-          globalThis.abilityContext, "");
+          globalThis.abilityContext, '');
         expect().assertFail();
       } catch (err) {
         let e = err as BusinessError;
-        console.debug("====>e====>" + JSON.stringify(e));
+        console.debug('====>e====>' + JSON.stringify(e));
         expect(e.code).assertEqual(ERR_MODULE_NOT_EXIST);
       }
       expect(moduleContext).assertEqual(null);

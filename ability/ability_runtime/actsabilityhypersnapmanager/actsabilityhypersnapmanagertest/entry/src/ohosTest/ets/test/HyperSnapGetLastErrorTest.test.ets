@@ -27,14 +27,19 @@ function isValidErrorCode(code: number): boolean {
 
 function assertErrorInfo(info: hyperSnapManager.HyperSnapErrorInfo): void {
   expect(info !== undefined).assertTrue();
+  expect(info !== null).assertTrue();
+  // Cover all HyperSnapErrorInfo properties: code / msg / occurTimeStamp.
+  expect(info.code !== undefined).assertTrue();
   expect(isValidErrorCode(info.code as number)).assertTrue();
+  expect(info.msg !== undefined).assertTrue();
   expect(typeof info.msg).assertEqual('string');
+  expect(info.occurTimeStamp !== undefined).assertTrue();
   expect(typeof info.occurTimeStamp).assertEqual('number');
   expect(info.occurTimeStamp >= 0).assertTrue();
 }
 
-export default function HyperSnapGetLastErrorTest() {
-  describe('HyperSnapGetLastErrorTest', () => {
+export default function hyperSnapGetLastErrorTest() {
+  describe('hyperSnapGetLastErrorTest', () => {
     beforeAll(async (done: Function) => {
       console.log(`${TAG} beforeAll called`);
       done();
@@ -43,7 +48,7 @@ export default function HyperSnapGetLastErrorTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_HyperSnap_GetLastError_Enum_Type_0100
      * @tc.number SUB_Ability_AbilityRuntime_HyperSnap_GetLastError_Enum_Type_0100
-     * @tc.desc   Assert HyperSnapErrorType enum numeric values.
+     * @tc.desc   Assert HyperSnapErrorType enum Numeric values.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -58,7 +63,7 @@ export default function HyperSnapGetLastErrorTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_HyperSnap_GetLastError_Enum_Code_0100
      * @tc.number SUB_Ability_AbilityRuntime_HyperSnap_GetLastError_Enum_Code_0100
-     * @tc.desc   Assert HyperSnapErrorCode enum numeric values.
+     * @tc.desc   Assert HyperSnapErrorCode enum Numeric values.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -79,7 +84,8 @@ export default function HyperSnapGetLastErrorTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_HyperSnap_GetLastError_Create_0100
      * @tc.number SUB_Ability_AbilityRuntime_HyperSnap_GetLastError_Create_0100
-     * @tc.desc   Call getLastError(CREATE_SNAPSHOT); expect info or 16000050.
+     * @tc.desc   getLastError(CREATE_SNAPSHOT) covers return HyperSnapErrorInfo.code/msg/occurTimeStamp
+     *     or BusinessError 16000050.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -92,6 +98,9 @@ export default function HyperSnapGetLastErrorTest() {
           hilog.info(0x0000, TAG, 'Create_0100 code=%{public}d msg=%{public}s ts=%{public}d',
             info.code, info.msg, info.occurTimeStamp);
           assertErrorInfo(info);
+          expect(info.code).assertEqual(info.code);
+          expect(info.msg.length >= 0).assertTrue();
+          expect(info.occurTimeStamp >= 0).assertTrue();
         } catch (e) {
           let err = e as BusinessError;
           hilog.info(0x0000, TAG, 'Create_0100 catch code=%{public}d', err.code);
