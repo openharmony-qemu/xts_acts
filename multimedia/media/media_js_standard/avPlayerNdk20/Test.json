@@ -18,14 +18,6 @@
       "cleanup-apps": true
     },
     {
-      "type": "ShellKit",
-      "run-command": [
-        "remount",
-        "mkdir -p /data/app/el2/100/base/com.avplayer.napi20test/haps/com.avplayer.napi20test/files",
-        "chmod 777 -R /data/app/el2/100/base/com.avplayer.napi20test/haps/com.avplayer.napi20test"
-      ]
-    },
-    {
       "type": "PushKit",
       "push": [
         "./resource/media/AAC_48000_32_1.aac -> /data/local/tmp/",
