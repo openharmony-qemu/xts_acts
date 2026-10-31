@@ -29,6 +29,12 @@
       },
       {
         "name": "ohos.permission.EXEC_PUBLIC_CLI_TOOL"
+      },
+      {
+        "name": "ohos.permission.QUERY_CLI_TOOL"
+      },
+      {
+        "name": "ohos.permission.EXEC_CLI_TOOL"
       }
     ],
     "abilities": [
