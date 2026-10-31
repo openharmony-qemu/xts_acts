@@ -13,7 +13,9 @@
  * limitations under the License.
  */
 import InputMethodEditBox from './InputMethodEditBox.test'
+import InputMethodRichText from './InputMethodRichText.test'
 
 export default function testsuite() {
   InputMethodEditBox();
+  InputMethodRichText();
 }
