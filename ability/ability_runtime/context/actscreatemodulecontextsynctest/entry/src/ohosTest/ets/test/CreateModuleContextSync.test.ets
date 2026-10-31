@@ -28,16 +28,16 @@ export default function actsCreateModuleContextSyncTest() {
     let moduleContext: common.Context | null;
 
     /**
-     * @tc.name   SUB_AA_CreateModuleContextSync_0100
-     * @tc.number SUB_AA_CreateModuleContextSync_0100
+     * @tc.name   SUB_Ability_AbilityRuntime_CreateModuleContextSync_0100
+     * @tc.number SUB_Ability_AbilityRuntime_CreateModuleContextSync_0100
      * @tc.desc   createModuleContextSync(context, moduleName): moduleName non-empty valid range;
      *     returns Context with applicationInfo.name/filesDir/cacheDir.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_AA_CreateModuleContextSync_0100', Level.LEVEL0, (done:Function) => {
-      console.info('SUB_AA_CreateModuleContextSync_0100 begin');
+    it('SUB_Ability_AbilityRuntime_CreateModuleContextSync_0100', Level.LEVEL0, (done:Function) => {
+      console.info('SUB_Ability_AbilityRuntime_CreateModuleContextSync_0100 begin');
       moduleContext = application.createModuleContextSync(
         globalThis.abilityContext, 'entry_test');
       expect(moduleContext !== null).assertTrue();
@@ -52,15 +52,15 @@ export default function actsCreateModuleContextSyncTest() {
     });
 
     /**
-     * @tc.name   SUB_AA_CreateModuleContextSync_0200
-     * @tc.number SUB_AA_CreateModuleContextSync_0200
+     * @tc.name   SUB_Ability_AbilityRuntime_CreateModuleContextSync_0200
+     * @tc.number SUB_Ability_AbilityRuntime_CreateModuleContextSync_0200
      * @tc.desc   Verify that the context of the application can be obtained
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_AA_CreateModuleContextSync_0200', Level.LEVEL0, (done:Function) => {
-      console.info('SUB_AA_CreateModuleContextSync_0200 begin');
+    it('SUB_Ability_AbilityRuntime_CreateModuleContextSync_0200', Level.LEVEL0, (done:Function) => {
+      console.info('SUB_Ability_AbilityRuntime_CreateModuleContextSync_0200 begin');
       moduleContext = application.createModuleContextSync(
         globalThis.abilityContext, 'feature');
       let bundleName = moduleContext!.applicationInfo.name;
@@ -69,15 +69,15 @@ export default function actsCreateModuleContextSyncTest() {
     });
 
     /**
-     * @tc.name   SUB_AA_CreateModuleContextSync_0300
-     * @tc.number SUB_AA_CreateModuleContextSync_0300
+     * @tc.name   SUB_Ability_AbilityRuntime_CreateModuleContextSync_0300
+     * @tc.number SUB_Ability_AbilityRuntime_CreateModuleContextSync_0300
      * @tc.desc   Verify that the context of the application can not be obtained
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_AA_CreateModuleContextSync_0300', Level.LEVEL0, (done:Function) => {
-      console.info('SUB_AA_CreateModuleContextSync_0300 begin');
+    it('SUB_Ability_AbilityRuntime_CreateModuleContextSync_0300', Level.LEVEL0, (done:Function) => {
+      console.info('SUB_Ability_AbilityRuntime_CreateModuleContextSync_0300 begin');
       moduleContext = null;
       try {
         moduleContext = application.createModuleContextSync(
@@ -93,15 +93,15 @@ export default function actsCreateModuleContextSyncTest() {
     });
 
     /**
-     * @tc.name   SUB_AA_CreateModuleContextSync_0400
-     * @tc.number SUB_AA_CreateModuleContextSync_0400
+     * @tc.name   SUB_Ability_AbilityRuntime_CreateModuleContextSync_0400
+     * @tc.number SUB_Ability_AbilityRuntime_CreateModuleContextSync_0400
      * @tc.desc   Verify that the context of the application can not be obtained
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_AA_CreateModuleContextSync_0400', Level.LEVEL0, (done:Function) => {
-      console.info('SUB_AA_CreateModuleContextSync_0400 begin');
+    it('SUB_Ability_AbilityRuntime_CreateModuleContextSync_0400', Level.LEVEL0, (done:Function) => {
+      console.info('SUB_Ability_AbilityRuntime_CreateModuleContextSync_0400 begin');
       moduleContext = null;
       try {
         moduleContext = application.createModuleContextSync(
@@ -117,15 +117,15 @@ export default function actsCreateModuleContextSyncTest() {
     });
 
     /**
-     * @tc.name   SUB_AA_CreateModuleContextSync_0500
-     * @tc.number SUB_AA_CreateModuleContextSync_0500
+     * @tc.name   SUB_Ability_AbilityRuntime_CreateModuleContextSync_0500
+     * @tc.number SUB_Ability_AbilityRuntime_CreateModuleContextSync_0500
      * @tc.desc   moduleName undefined out of valid range; expect BusinessError 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_AA_CreateModuleContextSync_0500', Level.LEVEL0, (done:Function) => {
-      console.info('SUB_AA_CreateModuleContextSync_0500 begin');
+    it('SUB_Ability_AbilityRuntime_CreateModuleContextSync_0500', Level.LEVEL0, (done:Function) => {
+      console.info('SUB_Ability_AbilityRuntime_CreateModuleContextSync_0500 begin');
       moduleContext = null;
       try {
         moduleContext = application.createModuleContextSync(
@@ -141,15 +141,15 @@ export default function actsCreateModuleContextSyncTest() {
     });
 
     /**
-     * @tc.name   SUB_AA_CreateModuleContextSync_0510
-     * @tc.number SUB_AA_CreateModuleContextSync_0510
+     * @tc.name   SUB_Ability_AbilityRuntime_CreateModuleContextSync_0510
+     * @tc.number SUB_Ability_AbilityRuntime_CreateModuleContextSync_0510
      * @tc.desc   moduleName null out of valid range; expect BusinessError 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_AA_CreateModuleContextSync_0510', Level.LEVEL0, (done:Function) => {
-      console.info('SUB_AA_CreateModuleContextSync_0510 begin');
+    it('SUB_Ability_AbilityRuntime_CreateModuleContextSync_0510', Level.LEVEL0, (done:Function) => {
+      console.info('SUB_Ability_AbilityRuntime_CreateModuleContextSync_0510 begin');
       moduleContext = null;
       try {
         moduleContext = application.createModuleContextSync(
@@ -165,15 +165,15 @@ export default function actsCreateModuleContextSyncTest() {
     });
 
     /**
-     * @tc.name   SUB_AA_CreateModuleContextSync_0600
-     * @tc.number SUB_AA_CreateModuleContextSync_0600
+     * @tc.name   SUB_Ability_AbilityRuntime_CreateModuleContextSync_0600
+     * @tc.number SUB_Ability_AbilityRuntime_CreateModuleContextSync_0600
      * @tc.desc   Verify that the context of the application can be obtained
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_AA_CreateModuleContextSync_0600', Level.LEVEL0, (done:Function) => {
-      console.info('SUB_AA_CreateModuleContextSync_0600 begin');
+    it('SUB_Ability_AbilityRuntime_CreateModuleContextSync_0600', Level.LEVEL0, (done:Function) => {
+      console.info('SUB_Ability_AbilityRuntime_CreateModuleContextSync_0600 begin');
       moduleContext = application.createModuleContextSync(
         globalThis.abilityStageContext, 'entry_test');
       let bundleName = moduleContext!.applicationInfo.name;
@@ -182,15 +182,15 @@ export default function actsCreateModuleContextSyncTest() {
     });
 
     /**
-     * @tc.name   SUB_AA_CreateModuleContextSync_0700
-     * @tc.number SUB_AA_CreateModuleContextSync_0700
+     * @tc.name   SUB_Ability_AbilityRuntime_CreateModuleContextSync_0700
+     * @tc.number SUB_Ability_AbilityRuntime_CreateModuleContextSync_0700
      * @tc.desc   Verify that the context of the application can be obtained
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_AA_CreateModuleContextSync_0700', Level.LEVEL0, (done:Function) => {
-      console.info('SUB_AA_CreateModuleContextSync_0700 begin');
+    it('SUB_Ability_AbilityRuntime_CreateModuleContextSync_0700', Level.LEVEL0, (done:Function) => {
+      console.info('SUB_Ability_AbilityRuntime_CreateModuleContextSync_0700 begin');
       moduleContext = application.createModuleContextSync(
         globalThis.abilityStageContext, 'feature');
       let bundleName = moduleContext!.applicationInfo.name;
@@ -199,15 +199,15 @@ export default function actsCreateModuleContextSyncTest() {
     });
 
     /**
-     * @tc.name   SUB_AA_CreateModuleContextSync_0800
-     * @tc.number SUB_AA_CreateModuleContextSync_0800
+     * @tc.name   SUB_Ability_AbilityRuntime_CreateModuleContextSync_0800
+     * @tc.number SUB_Ability_AbilityRuntime_CreateModuleContextSync_0800
      * @tc.desc   Verify that createModuleContextSync throws 16000021 when module does not exist
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_AA_CreateModuleContextSync_0800', Level.LEVEL0, (done:Function) => {
-      console.info('SUB_AA_CreateModuleContextSync_0800 begin');
+    it('SUB_Ability_AbilityRuntime_CreateModuleContextSync_0800', Level.LEVEL0, (done:Function) => {
+      console.info('SUB_Ability_AbilityRuntime_CreateModuleContextSync_0800 begin');
       moduleContext = null;
       try {
         moduleContext = application.createModuleContextSync(
@@ -223,15 +223,15 @@ export default function actsCreateModuleContextSyncTest() {
     });
 
     /**
-     * @tc.name   SUB_AA_CreateModuleContextSync_0900
-     * @tc.number SUB_AA_CreateModuleContextSync_0900
+     * @tc.name   SUB_Ability_AbilityRuntime_CreateModuleContextSync_0900
+     * @tc.number SUB_Ability_AbilityRuntime_CreateModuleContextSync_0900
      * @tc.desc   Verify that createModuleContextSync throws 16000021 when module does not exist
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_AA_CreateModuleContextSync_0900', Level.LEVEL0, (done:Function) => {
-      console.info('SUB_AA_CreateModuleContextSync_0900 begin');
+    it('SUB_Ability_AbilityRuntime_CreateModuleContextSync_0900', Level.LEVEL0, (done:Function) => {
+      console.info('SUB_Ability_AbilityRuntime_CreateModuleContextSync_0900 begin');
       moduleContext = null;
       try {
         moduleContext = application.createModuleContextSync(
@@ -247,15 +247,15 @@ export default function actsCreateModuleContextSyncTest() {
     });
 
     /**
-     * @tc.name   SUB_AA_CreateModuleContextSync_1000
-     * @tc.number SUB_AA_CreateModuleContextSync_1000
+     * @tc.name   SUB_Ability_AbilityRuntime_CreateModuleContextSync_1000
+     * @tc.number SUB_Ability_AbilityRuntime_CreateModuleContextSync_1000
      * @tc.desc   Verify that createModuleContextSync throws 401 when moduleName is undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_AA_CreateModuleContextSync_1000', Level.LEVEL0, (done:Function) => {
-      console.info('SUB_AA_CreateModuleContextSync_1000 begin');
+    it('SUB_Ability_AbilityRuntime_CreateModuleContextSync_1000', Level.LEVEL0, (done:Function) => {
+      console.info('SUB_Ability_AbilityRuntime_CreateModuleContextSync_1000 begin');
       moduleContext = null;
       try {
         moduleContext = application.createModuleContextSync(
@@ -271,15 +271,15 @@ export default function actsCreateModuleContextSyncTest() {
     });
 
     /**
-     * @tc.name   SUB_AA_CreateModuleContextSync_1100
-     * @tc.number SUB_AA_CreateModuleContextSync_1100
+     * @tc.name   SUB_Ability_AbilityRuntime_CreateModuleContextSync_1100
+     * @tc.number SUB_Ability_AbilityRuntime_CreateModuleContextSync_1100
      * @tc.desc   Verify that createModuleContextSync throws 401 when context is null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_AA_CreateModuleContextSync_1100', Level.LEVEL0, (done:Function) => {
-      console.info('SUB_AA_CreateModuleContextSync_1100 begin');
+    it('SUB_Ability_AbilityRuntime_CreateModuleContextSync_1100', Level.LEVEL0, (done:Function) => {
+      console.info('SUB_Ability_AbilityRuntime_CreateModuleContextSync_1100 begin');
       moduleContext = null;
       try {
         moduleContext = application.createModuleContextSync(
@@ -295,15 +295,15 @@ export default function actsCreateModuleContextSyncTest() {
     });
 
     /**
-     * @tc.name   SUB_AA_CreateModuleContextSync_1200
-     * @tc.number SUB_AA_CreateModuleContextSync_1200
+     * @tc.name   SUB_Ability_AbilityRuntime_CreateModuleContextSync_1200
+     * @tc.number SUB_Ability_AbilityRuntime_CreateModuleContextSync_1200
      * @tc.desc   Verify that createModuleContextSync throws 16000011 when context does not exist
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_AA_CreateModuleContextSync_1200', Level.LEVEL0, (done:Function) => {
-      console.info('SUB_AA_CreateModuleContextSync_1200 begin');
+    it('SUB_Ability_AbilityRuntime_CreateModuleContextSync_1200', Level.LEVEL0, (done:Function) => {
+      console.info('SUB_Ability_AbilityRuntime_CreateModuleContextSync_1200 begin');
       moduleContext = null;
       let fakeContext = { stageMode: true } as common.Context;
       try {
@@ -320,15 +320,15 @@ export default function actsCreateModuleContextSyncTest() {
     });
 
     /**
-     * @tc.name   SUB_AA_CreateModuleContextSync_1300
-     * @tc.number SUB_AA_CreateModuleContextSync_1300
+     * @tc.name   SUB_Ability_AbilityRuntime_CreateModuleContextSync_1300
+     * @tc.number SUB_Ability_AbilityRuntime_CreateModuleContextSync_1300
      * @tc.desc   moduleName empty string "" length out of valid non-empty range; expect 16000021.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_AA_CreateModuleContextSync_1300', Level.LEVEL0, (done:Function) => {
-      console.info('SUB_AA_CreateModuleContextSync_1300 begin');
+    it('SUB_Ability_AbilityRuntime_CreateModuleContextSync_1300', Level.LEVEL0, (done:Function) => {
+      console.info('SUB_Ability_AbilityRuntime_CreateModuleContextSync_1300 begin');
       moduleContext = null;
       try {
         moduleContext = application.createModuleContextSync(

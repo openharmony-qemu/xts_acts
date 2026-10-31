@@ -98,9 +98,6 @@ export default function hyperSnapGetLastErrorTest() {
           hilog.info(0x0000, TAG, 'Create_0100 code=%{public}d msg=%{public}s ts=%{public}d',
             info.code, info.msg, info.occurTimeStamp);
           assertErrorInfo(info);
-          expect(info.code).assertEqual(info.code);
-          expect(info.msg.length >= 0).assertTrue();
-          expect(info.occurTimeStamp >= 0).assertTrue();
         } catch (e) {
           let err = e as BusinessError;
           hilog.info(0x0000, TAG, 'Create_0100 catch code=%{public}d', err.code);
