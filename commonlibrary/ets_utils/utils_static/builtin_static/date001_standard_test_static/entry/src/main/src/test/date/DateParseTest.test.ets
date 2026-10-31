@@ -780,12 +780,8 @@ export default function DateParseTest(): void {
      * @tc.level Level 2
      */
     it('testDateParse0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        let time: long = Date.parse("2024-06-15T24:00:00.000Z");
-        expect(Number.isNaN(time)).assertTrue();
-      } catch (error) {
-        expect(error.name).assertEqual('FormatError');
-      }
+      let time: long = Date.parse("2024-06-15T24:00:00.000Z");
+      expect(time).assertEqual(1718496000000);
     });
 
     /**

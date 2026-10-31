@@ -50,6 +50,7 @@ struct ErrorInfoApi {
 
 static ErrorInfoApi g_errorInfoApi;
 static bool g_errorInfoApiLoaded = false;
+
 static constexpr int32_t TEST_CUSTOM_ERROR_CODE = 32159;
 
 static void *ResolveOhWebSymbol(const char *name)
@@ -361,6 +362,281 @@ static napi_value OH_ArkWebResourceHandler_DidFailWithErrorInfo0200(napi_env env
     return result;
 }
 
+
+// DestroyErrorInfo with nullptr
+static napi_value OH_ArkWeb_DestroyErrorInfo0200(napi_env env, napi_callback_info info)
+{
+    int ret = -1;
+    if (LoadErrorInfoApi()) {
+        g_errorInfoApi.destroyErrorInfo(nullptr);
+        // If no crash, consider it handled
+        ret = 0;
+    }
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+// SetCompleteIfNoResponse with false
+static napi_value OH_ArkWebErrorInfo_SetCompleteIfNoResponse0300(napi_env env, napi_callback_info info)
+{
+    int ret = -1;
+    if (LoadErrorInfoApi()) {
+        ArkWeb_ErrorInfo *errorInfo = nullptr;
+        g_errorInfoApi.createErrorInfo(&errorInfo);
+        int32_t errcode = g_errorInfoApi.setCompleteIfNoResponse(errorInfo, false);
+        if (errcode == ARKWEB_NET_OK) {
+            ret = 0;
+        }
+        g_errorInfoApi.destroyErrorInfo(errorInfo);
+    }
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+// GetCompleteIfNoResponse with nullptr
+static napi_value OH_ArkWebErrorInfo_GetCompleteIfNoResponse0200(napi_env env, napi_callback_info info)
+{
+    int ret = -1;
+    if (LoadErrorInfoApi()) {
+        bool resultVal = g_errorInfoApi.getCompleteIfNoResponse(nullptr);
+        // nullptr should return false
+        if (!resultVal) {
+            ret = 0;
+        }
+    }
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+// GetCompleteIfNoResponse after set(false)
+static napi_value OH_ArkWebErrorInfo_GetCompleteIfNoResponse0300(napi_env env, napi_callback_info info)
+{
+    int ret = -1;
+    if (LoadErrorInfoApi()) {
+        ArkWeb_ErrorInfo *errorInfo = nullptr;
+        g_errorInfoApi.createErrorInfo(&errorInfo);
+        g_errorInfoApi.setCompleteIfNoResponse(errorInfo, false);
+        if (!g_errorInfoApi.getCompleteIfNoResponse(errorInfo)) {
+            ret = 0;
+        }
+        g_errorInfoApi.destroyErrorInfo(errorInfo);
+    }
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+// SetCustomErrorCode with boundary value 0
+static napi_value OH_ArkWebErrorInfo_SetCustomErrorCode0300(napi_env env, napi_callback_info info)
+{
+    int ret = -1;
+    if (LoadErrorInfoApi()) {
+        ArkWeb_ErrorInfo *errorInfo = nullptr;
+        g_errorInfoApi.createErrorInfo(&errorInfo);
+        int32_t errcode = g_errorInfoApi.setCustomErrorCode(errorInfo, 0);
+        if (errcode == ARKWEB_NET_OK) {
+            ret = 0;
+        }
+        g_errorInfoApi.destroyErrorInfo(errorInfo);
+    }
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+// SetCustomErrorCode with negative value
+static napi_value OH_ArkWebErrorInfo_SetCustomErrorCode0400(napi_env env, napi_callback_info info)
+{
+    int ret = -1;
+    if (LoadErrorInfoApi()) {
+        ArkWeb_ErrorInfo *errorInfo = nullptr;
+        g_errorInfoApi.createErrorInfo(&errorInfo);
+        int32_t errcode = g_errorInfoApi.setCustomErrorCode(errorInfo, -1);
+        if (errcode == ARKWEB_NET_OK) {
+            ret = 0;
+        }
+        g_errorInfoApi.destroyErrorInfo(errorInfo);
+    }
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+// GetCustomErrorCode without set (default value)
+static napi_value OH_ArkWebErrorInfo_GetCustomErrorCode0300(napi_env env, napi_callback_info info)
+{
+    int ret = -1;
+    if (LoadErrorInfoApi()) {
+        ArkWeb_ErrorInfo *errorInfo = nullptr;
+        g_errorInfoApi.createErrorInfo(&errorInfo);
+        int32_t code = g_errorInfoApi.getCustomErrorCode(errorInfo);
+        const int32_t defaultCustomErrorCode = 0;
+        if (code == defaultCustomErrorCode) {
+            ret = 0;
+        }
+        g_errorInfoApi.destroyErrorInfo(errorInfo);
+    }
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+// SetErrorCode with different ArkWeb_NetError value
+static napi_value OH_ArkWebErrorInfo_SetErrorCode0300(napi_env env, napi_callback_info info)
+{
+    int ret = -1;
+    if (LoadErrorInfoApi()) {
+        ArkWeb_ErrorInfo *errorInfo = nullptr;
+        g_errorInfoApi.createErrorInfo(&errorInfo);
+        int32_t errcode = g_errorInfoApi.setErrorCode(errorInfo, ARKWEB_ERR_INVALID_RESPONSE);
+        if (errcode == ARKWEB_NET_OK) {
+            ret = 0;
+        }
+        g_errorInfoApi.destroyErrorInfo(errorInfo);
+    }
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+// GetErrorCode without set (default value)
+static napi_value OH_ArkWebErrorInfo_GetErrorCode0300(napi_env env, napi_callback_info info)
+{
+    int ret = -1;
+    if (LoadErrorInfoApi()) {
+        ArkWeb_ErrorInfo *errorInfo = nullptr;
+        g_errorInfoApi.createErrorInfo(&errorInfo);
+        ArkWeb_NetError code = g_errorInfoApi.getErrorCode(errorInfo);
+        if (code == ARKWEB_NET_OK) {
+            ret = 0;
+        }
+        g_errorInfoApi.destroyErrorInfo(errorInfo);
+    }
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+// Response_SetErrorInfo with valid response + nullptr errorInfo
+static napi_value OH_ArkWebResponse_SetErrorInfo0300(napi_env env, napi_callback_info info)
+{
+    int ret = -1;
+    if (LoadErrorInfoApi()) {
+        ArkWeb_Response *response = nullptr;
+        OH_ArkWeb_CreateResponse(&response);
+        int32_t errcode = g_errorInfoApi.responseSetErrorInfo(response, nullptr);
+        if (errcode == ARKWEB_INVALID_PARAM) {
+            ret = 0;
+        }
+        OH_ArkWeb_DestroyResponse(response);
+    }
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+// Response_GetErrorInfo with nullptr
+static napi_value OH_ArkWebResponse_GetErrorInfo0200(napi_env env, napi_callback_info info)
+{
+    int ret = -1;
+    if (LoadErrorInfoApi()) {
+        ArkWeb_ErrorInfo *errorInfo = g_errorInfoApi.responseGetErrorInfo(nullptr);
+        if (errorInfo == nullptr) {
+            ret = 0;
+        }
+    }
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+// Response_GetErrorInfo without set (should return nullptr)
+static napi_value OH_ArkWebResponse_GetErrorInfo0300(napi_env env, napi_callback_info info)
+{
+    int ret = -1;
+    if (LoadErrorInfoApi()) {
+        ArkWeb_Response *response = nullptr;
+        OH_ArkWeb_CreateResponse(&response);
+        ArkWeb_ErrorInfo *errorInfo = g_errorInfoApi.responseGetErrorInfo(response);
+        if (errorInfo == nullptr) {
+            ret = 0;
+        }
+        OH_ArkWeb_DestroyResponse(response);
+    }
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+
+// Response_SetErrorInfo with nullptr response + valid errorInfo
+static napi_value OH_ArkWebResponse_SetErrorInfo0400(napi_env env, napi_callback_info info)
+{
+    int ret = -1;
+    if (LoadErrorInfoApi()) {
+        ArkWeb_ErrorInfo *errorInfo = nullptr;
+        g_errorInfoApi.createErrorInfo(&errorInfo);
+        int32_t errcode = g_errorInfoApi.responseSetErrorInfo(nullptr, errorInfo);
+        if (errcode == ARKWEB_INVALID_PARAM) {
+            ret = 0;
+        }
+        g_errorInfoApi.destroyErrorInfo(errorInfo);
+    }
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+
+// CreateErrorInfo with nullptr
+static napi_value OH_ArkWeb_CreateErrorInfo0200(napi_env env, napi_callback_info info)
+{
+    int ret = -1;
+    if (LoadErrorInfoApi()) {
+        g_errorInfoApi.createErrorInfo(nullptr);
+        ret = 0;
+    }
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+// GetCustomErrorCode with nullptr
+static napi_value OH_ArkWebErrorInfo_GetCustomErrorCode0200(napi_env env, napi_callback_info info)
+{
+    int ret = -1;
+    if (LoadErrorInfoApi()) {
+        int32_t code = g_errorInfoApi.getCustomErrorCode(nullptr);
+        OH_LOG_INFO(LOG_APP, "GetCustomErrorCode nullptr returned: %{public}d", code);
+        const int32_t expectedNullptrReturn = 0;
+        if (code == expectedNullptrReturn) {
+            ret = 0;
+        }
+    }
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+// GetErrorCode with nullptr
+static napi_value OH_ArkWebErrorInfo_GetErrorCode0200(napi_env env, napi_callback_info info)
+{
+    int ret = -1;
+    if (LoadErrorInfoApi()) {
+        ArkWeb_NetError code = g_errorInfoApi.getErrorCode(nullptr);
+        OH_LOG_INFO(LOG_APP, "GetErrorCode nullptr returned: %{public}d", code);
+        if (code == ARKWEB_NET_OK) {
+            ret = 0;
+        }
+    }
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
 void AddErrorInfoFunctions(std::vector<napi_property_descriptor> &descVector)
 {
     std::vector<napi_property_descriptor> descEx = {
@@ -388,6 +664,39 @@ void AddErrorInfoFunctions(std::vector<napi_property_descriptor> &descVector)
                               OH_ArkWebResourceHandler_DidFailWithErrorInfo0100),
         DECLARE_NAPI_FUNCTION("OH_ArkWebResourceHandler_DidFailWithErrorInfo0200",
                               OH_ArkWebResourceHandler_DidFailWithErrorInfo0200),
+    };
+
+    for (const auto &desc : descEx) {
+        descVector.push_back(desc);
+    }
+}
+
+void AddErrorInfoFunctionsEx(std::vector<napi_property_descriptor> &descVector)
+{
+    std::vector<napi_property_descriptor> descEx = {
+        DECLARE_NAPI_FUNCTION("OH_ArkWeb_DestroyErrorInfo0200", OH_ArkWeb_DestroyErrorInfo0200),
+        DECLARE_NAPI_FUNCTION("OH_ArkWebErrorInfo_SetCompleteIfNoResponse0300",
+                              OH_ArkWebErrorInfo_SetCompleteIfNoResponse0300),
+        DECLARE_NAPI_FUNCTION("OH_ArkWebErrorInfo_GetCompleteIfNoResponse0200",
+                              OH_ArkWebErrorInfo_GetCompleteIfNoResponse0200),
+        DECLARE_NAPI_FUNCTION("OH_ArkWebErrorInfo_GetCompleteIfNoResponse0300",
+                              OH_ArkWebErrorInfo_GetCompleteIfNoResponse0300),
+        DECLARE_NAPI_FUNCTION("OH_ArkWebErrorInfo_SetCustomErrorCode0300",
+                              OH_ArkWebErrorInfo_SetCustomErrorCode0300),
+        DECLARE_NAPI_FUNCTION("OH_ArkWebErrorInfo_SetCustomErrorCode0400",
+                              OH_ArkWebErrorInfo_SetCustomErrorCode0400),
+        DECLARE_NAPI_FUNCTION("OH_ArkWebErrorInfo_GetCustomErrorCode0300",
+                              OH_ArkWebErrorInfo_GetCustomErrorCode0300),
+        DECLARE_NAPI_FUNCTION("OH_ArkWebErrorInfo_SetErrorCode0300", OH_ArkWebErrorInfo_SetErrorCode0300),
+        DECLARE_NAPI_FUNCTION("OH_ArkWebErrorInfo_GetErrorCode0300", OH_ArkWebErrorInfo_GetErrorCode0300),
+        DECLARE_NAPI_FUNCTION("OH_ArkWebResponse_SetErrorInfo0300", OH_ArkWebResponse_SetErrorInfo0300),
+        DECLARE_NAPI_FUNCTION("OH_ArkWebResponse_GetErrorInfo0200", OH_ArkWebResponse_GetErrorInfo0200),
+        DECLARE_NAPI_FUNCTION("OH_ArkWebResponse_GetErrorInfo0300", OH_ArkWebResponse_GetErrorInfo0300),
+        DECLARE_NAPI_FUNCTION("OH_ArkWebResponse_SetErrorInfo0400", OH_ArkWebResponse_SetErrorInfo0400),
+        DECLARE_NAPI_FUNCTION("OH_ArkWeb_CreateErrorInfo0200", OH_ArkWeb_CreateErrorInfo0200),
+        DECLARE_NAPI_FUNCTION("OH_ArkWebErrorInfo_GetCustomErrorCode0200",
+                              OH_ArkWebErrorInfo_GetCustomErrorCode0200),
+        DECLARE_NAPI_FUNCTION("OH_ArkWebErrorInfo_GetErrorCode0200", OH_ArkWebErrorInfo_GetErrorCode0200),
     };
 
     for (const auto &desc : descEx) {

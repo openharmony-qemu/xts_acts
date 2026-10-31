@@ -66,6 +66,10 @@ function BondStateParam1(data: connection.BondStateParam) {
     data.cause);
 }
 
+function onReceiveEvent_ScanMode(data: connection.ScanMode) {
+  hilog.info(domain, tag, 'bluetooth scanModeChange result:' + JSON.stringify(data));
+}
+
 export default function bluetoothConnectionTest(): void {
 
   describe("bluetoothConnectionTest", (): void => {
@@ -2591,6 +2595,125 @@ export default function bluetoothConnectionTest(): void {
           hilog.info(domain, tag, "get error:" + JSON.stringify(err));
           hilog.info(domain, tag, "testBluetoothRawAddressType errCode:" + err.code + ",errMessage:" + err.message);
           expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.number  SUB_COMMUNICATION_BP_OFFSCANMODECHANGE_0100
+     * @tc.name    offScanModeChangeNoParamTest
+     * @tc.desc    Test offScanModeChange without param api23
+     * @tc.level   Level 0
+     * @tc.type    Function
+     * @tc.size    MEDIUMTEST
+     */
+    it("offScanModeChangeNoParamTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          connection.onScanModeChange(onReceiveEvent_ScanMode);
+          connection.offScanModeChange();
+          hilog.info(domain, tag, "[bluetooth_js]connection offScanModeChange without param is success ");
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.error(domain, tag,
+            "offScanModeChange errCode:" + err.code + ",errMessage:" + err.message);
+          if (err.code === 801) {
+            hilog.info(domain, tag, "[bluetooth_js]connection offScanModeChange is not support");
+            expect(err.code).assertEqual(801);
+          } else {
+            expect().assertFail();
+          }
+        }
+        done();
+      })
+
+    /**
+     * @tc.number  SUB_COMMUNICATION_BP_SETLOCALNAMEEMPTYSTRING_0100
+     * @tc.name    setLocalNameEmptyStringTest
+     * @tc.desc    Test setLocalName with empty string
+     * @tc.level   Level 0
+     * @tc.type    Function
+     * @tc.size    MEDIUMTEST
+     */
+    it("setLocalNameEmptyStringTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          connection.setLocalName("");
+          hilog.info(domain, tag, "setLocalName empty string success");
+          expect().assertFail();
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.info(domain, tag, "setLocalName errCode:" + err.code + ",errMessage:" + err.message);
+          if (err.code === 801) {
+            hilog.info(domain, tag, 'api is not support');
+            expect(err.code).assertEqual(801);
+          } else if (err.code === 401) {
+            hilog.info(domain, tag, 'invalid param');
+            expect(err.code).assertEqual(401);
+          } else {
+            expect().assertFail();
+          }
+        }
+        done();
+      })
+
+    /**
+     * @tc.number  SUB_COMMUNICATION_BP_GETREMOTEDEVICETRANSPORTEMPTYSTRING_0100
+     * @tc.name    getRemoteDeviceTransportEmptyStringTest
+     * @tc.desc    Test getRemoteDeviceTransport with empty string deviceId
+     * @tc.level   Level 0
+     * @tc.type    Function
+     * @tc.size    MEDIUMTEST
+     */
+    it("getRemoteDeviceTransportEmptyStringTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let transport: connection.BluetoothTransport = connection.getRemoteDeviceTransport("");
+          hilog.info(domain, tag, "getRemoteDeviceTransport result: " + JSON.stringify(transport));
+          expect().assertFail();
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.info(domain, tag,
+            "getRemoteDeviceTransport errCode:" + err.code + ",errMessage:" + err.message);
+          if (err.code === 801) {
+            hilog.info(domain, tag, 'api is not support');
+            expect(err.code).assertEqual(801);
+          } else if (err.code === 401) {
+            hilog.info(domain, tag, 'invalid param');
+            expect(err.code).assertEqual(401);
+          } else {
+            expect().assertFail();
+          }
+        }
+        done();
+      })
+
+    /**
+     * @tc.number  SUB_COMMUNICATION_BP_GETVIRTUALADDRESSBYHASHEMPTYHASHVALUE_0100
+     * @tc.name    getVirtualAddressByHashEmptyHashValueTest
+     * @tc.desc    Test getVirtualAddressByHash with empty string hashValue
+     * @tc.level   Level 0
+     * @tc.type    Function
+     * @tc.size    MEDIUMTEST
+     */
+    it("getVirtualAddressByHashEmptyHashValueTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let virtualAddress: string = connection.getVirtualAddressByHash(
+            connection.HashAlgorithmType.HASH_ALGORITHM_SHA256, "");
+          hilog.info(domain, tag, "getVirtualAddressByHash result: " + JSON.stringify(virtualAddress));
+          expect().assertFail();
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.info(domain, tag,
+            "getVirtualAddressByHash errCode:" + err.code + ",errMessage:" + err.message);
+          if (err.code === 801) {
+            hilog.info(domain, tag, 'api is not support');
+            expect(err.code).assertEqual(801);
+          } else {
+            hilog.info(domain, tag, 'invalid param');
+            expect(err.code).assertEqual(2900015);
+          } 
         }
         done();
       })

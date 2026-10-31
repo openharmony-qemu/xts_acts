@@ -367,5 +367,29 @@ export default function actsCreateModuleContextSyncTest() {
       expect(moduleContext).assertEqual(null);
       done();
     });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CreateModuleContextSync_1400
+     * @tc.number SUB_Ability_AbilityRuntime_CreateModuleContextSync_1400
+     * @tc.desc   Verify createModuleContextSync return Context properties for feature module
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Ability_AbilityRuntime_CreateModuleContextSync_1400", Level.LEVEL0, (done:Function) => {
+      console.info("SUB_Ability_AbilityRuntime_CreateModuleContextSync_1400 begin");
+      let ctx = application.createModuleContextSync(
+        globalThis.abilityContext, "feature");
+      expect(ctx !== null).assertTrue();
+      expect(ctx !== undefined).assertTrue();
+      expect(ctx.applicationInfo.name).assertEqual(BUNDLE_NAME);
+      expect(ctx.resourceManager !== undefined).assertTrue();
+      expect(typeof ctx.cacheDir).assertEqual('string');
+      expect(typeof ctx.filesDir).assertEqual('string');
+      expect(typeof ctx.tempDir).assertEqual('string');
+      expect(typeof ctx.databaseDir).assertEqual('string');
+      expect(`${ctx.stageMode}`).assertEqual('true');
+      done();
+    });
   });
 }

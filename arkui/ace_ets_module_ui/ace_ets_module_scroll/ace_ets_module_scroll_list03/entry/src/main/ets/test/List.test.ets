@@ -68,6 +68,8 @@ import headerFooterStyle from './ListItemGroup/headerFooterStyle.test';
 import listEnableEditMode from './listOptions/listEnableEditMode.test';
 import listEditModeChange from './listOptions/listEditModeChange.test';
 import listWithMouse from './List/ListWithMouse.test';
+import listKeyboardScrollVertical from './listOptions/ListKeyboardScrollVertical.test';
+import listKeyboardScrollHorizontal from './listOptions/ListKeyboardScrollHorizontal.test';
 
 export default function testsuite() {
   headerListJsunit()
@@ -125,4 +127,6 @@ export default function testsuite() {
   listEnableEditMode()
   listEditModeChange()
   listWithMouse()
+  listKeyboardScrollVertical()
+  listKeyboardScrollHorizontal()
 }

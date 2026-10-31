@@ -17,18 +17,21 @@
 import Ethernettest from './Ethernet.test';
 import EmptyTest from './Empty.test';
 import { canIUse } from '@internal.full.global';
-import ethernet from '@ohos.net.ethernet';
-import hilog from '@ohos.hilog';
+import connection from '@ohos.net.connection';
 
 export default function testsuite(): void {
     if (canIUse("SystemCapability.Communication.NetManager.Ethernet")) {
-        ethernet.getMacAddress().then((data: Array<ethernet.MacAddressInfo>) =>{
-            hilog.info(0x0000, "ActsEthernetTestStatic", ` getMacAddress success data: ${JSON.stringify(data)}`);
-            Ethernettest();
-        }).catch((err) =>{
-            hilog.info(0x0000, "ActsEthernetTestStatic", ` getMacAddress failed err: ${JSON.stringify(err)}`);
+        let netHandle = connection.getDefaultNetSync();
+        if (netHandle.netId > 0) {
+            const getNetCapabilitiesSync  = connection.getNetCapabilitiesSync(netHandle);
+            if (getNetCapabilitiesSync.bearerTypes.includes(connection.NetBearType.BEARER_ETHERNET)) {
+                Ethernettest();
+            } else {
+                EmptyTest();
+            }
+        } else {
             EmptyTest();
-        })
+        }
     } else {
         EmptyTest();
     }

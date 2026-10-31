@@ -77,6 +77,9 @@ import ScrollScrollBarHeight from './ScrollScrollBarHeight.test.ets';
 import ScrollBarHeightModifier from './ScrollBarHeightModifier.test.ets';
 import scrollGetScrollState from './Scroll/ScrollGetScrollState.test';
 import scrollWithMouse from './Scroll/ScrollWithMouse.test';
+import scrollKeyboardVertical from './scrollAnimation/ScrollKeyboardVertical.test';
+import scrollKeyboardHorizontal from './scrollAnimation/ScrollKeyboardHorizontal.test';
+import scrollKeyboardModifier from './scrollAnimation/ScrollKeyboardModifier.test';
 
 export default function testsuite() {
   ScrollScrollBarWidthTest()
@@ -143,4 +146,7 @@ export default function testsuite() {
   ScrollBarHeightModifier()
   scrollGetScrollState()
   scrollWithMouse()
+  scrollKeyboardVertical()
+  scrollKeyboardHorizontal()
+  scrollKeyboardModifier()
 }

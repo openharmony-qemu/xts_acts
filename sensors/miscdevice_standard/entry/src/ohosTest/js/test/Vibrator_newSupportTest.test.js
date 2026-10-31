@@ -475,4 +475,270 @@ describe("VibratorJsTest_misc_6", function () {
             done();
         }
     })
+
+    /**
+     * @tc.name SUB_SensorSystem_Vibrator_JsTest_1230
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1230
+     * @tc.desc Verification results of the incorrect parameters of the test interface.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it("SUB_SensorSystem_Vibrator_JsTest_1230", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+        TAG = "====>SUB_SensorSystem_Vibrator_JsTest_1230"
+        console.info(TAG + ' isAvailable ' + isAvailable);
+        try {
+            let ret = await vibrator.isSupportEffect(vibrator.HapticFeedback.EFFECT_IME_STRENGTH1);
+            console.info(TAG + "isSupportEffect success");
+            expect(typeof(ret)).assertEqual("boolean");
+            done();
+        } catch (error) {
+            console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+            expect(false).assertTrue();
+            done();
+        }
+    })
+
+    /**
+     * @tc.name SUB_SensorSystem_Vibrator_JsTest_1240
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1240
+     * @tc.desc Verification results of the incorrect parameters of the test interface.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it("SUB_SensorSystem_Vibrator_JsTest_1240", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+        TAG = "====>SUB_SensorSystem_Vibrator_JsTest_1240"
+        console.info(TAG + ' isAvailable ' + isAvailable);
+        try {
+            let ret = await vibrator.isSupportEffect(vibrator.HapticFeedback.EFFECT_IME_STRENGTH2);
+            console.info(TAG + "isSupportEffect success");
+            expect(typeof(ret)).assertEqual("boolean");
+            done();
+        } catch (error) {
+            console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+            expect(false).assertTrue();
+            done();
+        }
+    })
+
+    /**
+     * @tc.name SUB_SensorSystem_Vibrator_JsTest_1250
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1250
+     * @tc.desc Verification results of the incorrect parameters of the test interface.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it("SUB_SensorSystem_Vibrator_JsTest_1250", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+        TAG = "====>SUB_SensorSystem_Vibrator_JsTest_1250"
+        console.info(TAG + ' isAvailable ' + isAvailable);
+        try {
+            let ret = await vibrator.isSupportEffect(vibrator.HapticFeedback.EFFECT_IME_STRENGTH3);
+            console.info(TAG + "isSupportEffect success");
+            expect(typeof(ret)).assertEqual("boolean");
+            done();
+        } catch (error) {
+            console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+            expect(false).assertTrue();
+            done();
+        }
+    })
+
+    /**
+     * @tc.name SUB_SensorSystem_Vibrator_JsTest_1260
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1260
+     * @tc.desc Verification results of the incorrect parameters of the test interface.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it("SUB_SensorSystem_Vibrator_JsTest_1260", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+        TAG = "====>SUB_SensorSystem_Vibrator_JsTest_1260"
+        console.info(TAG + ' isAvailable ' + isAvailable);
+        try {
+            let ret = await vibrator.isSupportEffect(vibrator.HapticFeedback.EFFECT_IME_STRENGTH4);
+            console.info(TAG + "isSupportEffect success");
+            expect(typeof(ret)).assertEqual("boolean");
+            done();
+        } catch (error) {
+            console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+            expect(false).assertTrue();
+            done();
+        }
+    })
+
+    /**
+     * @tc.name SUB_SensorSystem_Vibrator_JsTest_1270
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1270
+     * @tc.desc Verification results of the incorrect parameters of the test interface.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it("SUB_SensorSystem_Vibrator_JsTest_1270", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+        TAG = "====>SUB_SensorSystem_Vibrator_JsTest_1270"
+        console.info(TAG + ' isAvailable ' + isAvailable);
+        try {
+            let ret = await vibrator.isSupportEffect(vibrator.HapticFeedback.EFFECT_IME_STRENGTH5);
+            console.info(TAG + "isSupportEffect success");
+            expect(typeof(ret)).assertEqual("boolean");
+            done();
+        } catch (error) {
+            console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+            expect(false).assertTrue();
+            done();
+        }
+    })
+
+    /**
+     * @tc.name SUB_SensorSystem_Vibrator_JsTest_1280
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1280
+     * @tc.desc Verification results of the incorrect parameters of the test interface.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it("SUB_SensorSystem_Vibrator_JsTest_1280", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+        TAG = "====>SUB_SensorSystem_Vibrator_JsTest_1280"
+        console.info(TAG + ' isAvailable ' + isAvailable);
+        try {
+            vibrator.isSupportEffect(vibrator.HapticFeedback.EFFECT_IME_STRENGTH1, (error, state) => {
+                if (error) {
+                    console.info(TAG + ` isSupportEffect error ,error.code: ${error.code},error.message: ${error.message}`);
+                    expect(false).assertTrue();
+                    done();
+                } else {
+                    console.info(TAG + 'isSupportEffect success');
+                    expect(typeof(state)).assertEqual("boolean");
+                    done();
+                }
+            });
+        } catch (error) {
+            console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+            expect(false).assertTrue();
+            done();
+        }
+    })
+
+    /**
+     * @tc.name SUB_SensorSystem_Vibrator_JsTest_1290
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1290
+     * @tc.desc Verification results of the incorrect parameters of the test interface.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it("SUB_SensorSystem_Vibrator_JsTest_1290", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+        TAG = "====>SUB_SensorSystem_Vibrator_JsTest_1290"
+        console.info(TAG + ' isAvailable ' + isAvailable);
+        try {
+            vibrator.isSupportEffect(vibrator.HapticFeedback.EFFECT_IME_STRENGTH2, (error, state) => {
+                if (error) {
+                    console.info(TAG + ` isSupportEffect error ,error.code: ${error.code},error.message: ${error.message}`);
+                    expect(false).assertTrue();
+                    done();
+                } else {
+                    console.info(TAG + 'isSupportEffect success');
+                    expect(typeof(state)).assertEqual("boolean");
+                    done();
+                }
+            });
+        } catch (error) {
+            console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+            expect(false).assertTrue();
+            done();
+        }
+    })
+
+    /**
+     * @tc.name SUB_SensorSystem_Vibrator_JsTest_1300
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1300
+     * @tc.desc Verification results of the incorrect parameters of the test interface.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it("SUB_SensorSystem_Vibrator_JsTest_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+        TAG = "====>SUB_SensorSystem_Vibrator_JsTest_1300"
+        console.info(TAG + ' isAvailable ' + isAvailable);
+        try {
+            vibrator.isSupportEffect(vibrator.HapticFeedback.EFFECT_IME_STRENGTH3, (error, state) => {
+                if (error) {
+                    console.info(TAG + ` isSupportEffect error ,error.code: ${error.code},error.message: ${error.message}`);
+                    expect(false).assertTrue();
+                    done();
+                } else {
+                    console.info(TAG + 'isSupportEffect success');
+                    expect(typeof(state)).assertEqual("boolean");
+                    done();
+                }
+            });
+        } catch (error) {
+            console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+            expect(false).assertTrue();
+            done();
+        }
+    })
+
+    /**
+     * @tc.name SUB_SensorSystem_Vibrator_JsTest_1310
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1310
+     * @tc.desc Verification results of the incorrect parameters of the test interface.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it("SUB_SensorSystem_Vibrator_JsTest_1310", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+        TAG = "====>SUB_SensorSystem_Vibrator_JsTest_1310"
+        console.info(TAG + ' isAvailable ' + isAvailable);
+        try {
+            vibrator.isSupportEffect(vibrator.HapticFeedback.EFFECT_IME_STRENGTH4, (error, state) => {
+                if (error) {
+                    console.info(TAG + ` isSupportEffect error ,error.code: ${error.code},error.message: ${error.message}`);
+                    expect(false).assertTrue();
+                    done();
+                } else {
+                    console.info(TAG + 'isSupportEffect success');
+                    expect(typeof(state)).assertEqual("boolean");
+                    done();
+                }
+            });
+        } catch (error) {
+            console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+            expect(false).assertTrue();
+            done();
+        }
+    })
+
+    /**
+     * @tc.name SUB_SensorSystem_Vibrator_JsTest_1320
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_1320
+     * @tc.desc Verification results of the incorrect parameters of the test interface.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it("SUB_SensorSystem_Vibrator_JsTest_1320", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+        TAG = "====>SUB_SensorSystem_Vibrator_JsTest_1320"
+        console.info(TAG + ' isAvailable ' + isAvailable);
+        try {
+            vibrator.isSupportEffect(vibrator.HapticFeedback.EFFECT_IME_STRENGTH5, (error, state) => {
+                if (error) {
+                    console.info(TAG + ` isSupportEffect error ,error.code: ${error.code},error.message: ${error.message}`);
+                    expect(false).assertTrue();
+                    done();
+                } else {
+                    console.info(TAG + 'isSupportEffect success');
+                    expect(typeof(state)).assertEqual("boolean");
+                    done();
+                }
+            });
+        } catch (error) {
+            console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+            expect(false).assertTrue();
+            done();
+        }
+    })
+
     })}

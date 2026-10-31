@@ -14,6 +14,7 @@
  */
 import AreaChangeErrorCodeTest from './onAreaChange/AreaChangeErrorCodeTest.test'
 import ScrollWithMouseTest from './scroll/scrollWithMouseTest.test';
+import ScrollWithKeyboardTest from './scroll/ScrollWithKeyboardTest.test';
 import AutoAdjustMarginTest from './scroll/autoAdjustMarginTest.test';
 import ScrollBarHeightTest from './scroll/scrollBarHeightTest.test';
 import ListBackBehaviorTest from './list/listBackBehaviorTest.test';
@@ -71,6 +72,7 @@ import ImageAnimatorInterpolationTest from './image/ImageAnimatorInterpolationTe
 import ImageCollectionTakeItemByNodeIdTest from './node/ImageCollectionTakeItemByNodeId.test'
 import CalendarPickerFirstDayOfWeekTest from './calendarPicker/CalendarPickerFirstDayOfWeekTest.test'
 import AccessibilityBindExportTreeTest from './accessibilityBindExportTree/AccessibilityBindExportTreeTest.test'
+import CollectionEnumTest from "./collection/CollectionEnum.test"
 import UIEventInjectionTest from './uiEventInjection/UIEventInjectionTest.test'
 import BufferQueueSizeTest from './node/BufferQueueSizeTest.test'
 
@@ -83,6 +85,7 @@ export default function testsuite() {
   UnregisterCommonAreaApproximateChangeEventTest();
   AreaChangeErrorCodeTest();
   ScrollWithMouseTest();
+  ScrollWithKeyboardTest();
   AutoAdjustMarginTest();
   ScrollBarHeightTest();
   ListBackBehaviorTest();
@@ -132,6 +135,7 @@ export default function testsuite() {
   CalendarPickerFirstDayOfWeekTest()
   RuntimeCheckModeTest()
   AccessibilityBindExportTreeTest()
+  CollectionEnumTest()
   UIEventInjectionTest()
   BufferQueueSizeTest()
 }
