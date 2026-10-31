@@ -39,13 +39,13 @@ let fontDescExpectData: Array<FontDescData> = [
   {
     "fontCount": 141,
     "hasDesc": true,
-    "fontDesc": {"path":"/system/fonts/NotoSansMath-Regular.ttf", "weight": text.FontWeight.W400, "postScriptName": "NotoSansMath-Regular", "fullName": "Noto Sans Math Regular", "fontFamily": "Noto Sans Math", "fontSubfamily": "Regular", "italic":0, "width":5, "monoSpace": false, "symbolic": false},
+    "fontDesc": {"path":"/system/fonts/HarmonyOS_Sans_TC.ttf", "weight": text.FontWeight.W400, "postScriptName": "HarmonyOS_Sans_TC", "fullName": "HarmonyOS Sans TC", "fontFamily": "HarmonyOS Sans TC", "fontSubfamily": "Regular", "italic":0, "width":5, "monoSpace": false, "symbolic": false},
     "matchCount": 1,
   },
   {
     "fontCount": 141,
     "hasDesc": true,
-    "fontDesc": {"path":"/system/fonts/NotoSansMath-Regular.ttf", "weight": text.FontWeight.W400, "postScriptName": "NotoSansMath-Regular", "fullName": "Noto Sans Math Regular", "fontFamily": "Noto Sans Math", "fontSubfamily": "Regular", "italic":0, "width":5, "monoSpace": false, "symbolic": false},
+    "fontDesc": {"path":"/system/fonts/HarmonyOS_Sans_TC.ttf", "weight": text.FontWeight.W400, "postScriptName": "HarmonyOS_Sans_TC", "fullName": "HarmonyOS Sans TC", "fontFamily": "HarmonyOS Sans TC", "fontSubfamily": "Regular", "italic":0, "width":5, "monoSpace": false, "symbolic": false},
     "matchCount": 1,
   },
   {
@@ -98,7 +98,7 @@ export default function TextGetFontDescTest() {
 
             console.info('www data type index ', index, type)
 
-            let fullName: string = "Noto Sans Math Regular";
+            let fullName: string = "HarmonyOS Sans TC";
             await text.getFontDescriptorByFullName(fullName, type).then((data: text.FontDescriptor | undefined) => {
               hilog.info(domain, tag, 'TEXT_LOG getFontDescriptorByFullName [%{public}s] data: %{public}s',
                 JSON.stringify(type), JSON.stringify(data));
