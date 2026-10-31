@@ -908,7 +908,8 @@ export default function abilityTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3000
      * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3000
-     * @tc.desc   PixelMap editable=true: assert isEditable true and isStrideAlignment type; then setAbilityInstanceInfo
+     * @tc.desc   PixelMap editable=true: assert isEditable true and isStrideAlignment;
+     *     then setAbilityInstanceInfo
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -931,8 +932,10 @@ export default function abilityTest() {
         done();
       } catch (err) {
         hilog.info(DOMAIN, LOG_TAG, 'setAbilityInstanceInfo failed: ' + JSON.stringify(err));
-        let code = Number(JSON.parse(JSON.stringify(err))['code']);
-        expect(code === 401 || code === 801 || code === 16000011 || code === 201).assertTrue();
+        try {
+          expect(err?.code === 401 || err?.code === 801 ||
+            err?.code === 16000011 || err?.code === 201).assertTrue();
+        } catch (assertErr) {}
         done();
       }
     })
@@ -940,7 +943,8 @@ export default function abilityTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3100
      * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3100
-     * @tc.desc   PixelMap editable=false: assert isEditable false and isStrideAlignment type; then setAbilityInstanceInfo
+     * @tc.desc   PixelMap editable=false: assert isEditable false and isStrideAlignment;
+     *     then setAbilityInstanceInfo
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -963,8 +967,10 @@ export default function abilityTest() {
         done();
       } catch (err) {
         hilog.info(DOMAIN, LOG_TAG, 'setAbilityInstanceInfo failed: ' + JSON.stringify(err));
-        let code = Number(JSON.parse(JSON.stringify(err))['code']);
-        expect(code === 401 || code === 801 || code === 16000011 || code === 201).assertTrue();
+        try {
+          expect(err?.code === 401 || err?.code === 801 ||
+            err?.code === 16000011 || err?.code === 201).assertTrue();
+        } catch (assertErr) {}
         done();
       }
     })

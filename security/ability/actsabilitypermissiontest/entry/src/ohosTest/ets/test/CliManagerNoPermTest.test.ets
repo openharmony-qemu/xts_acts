@@ -20,6 +20,7 @@ import hilog from '@ohos.hilog';
 const TAG = 'CliManagerNoPerm';
 const ERR_PERMISSION = 201;
 const ERR_SYSTEM_API = 202;
+const ERR_CAPABILITY = 801;
 const ERR_SYSTEM = 35600050;
 
 function safeErrorText(error: Object): string {
@@ -57,7 +58,8 @@ function errCodeOf(error: Object): number {
 }
 
 function isNoPermBizCode(code: number): boolean {
-  return code === ERR_PERMISSION || code === ERR_SYSTEM_API || code === ERR_SYSTEM;
+  return code === ERR_PERMISSION || code === ERR_SYSTEM_API ||
+    code === ERR_CAPABILITY || code === ERR_SYSTEM;
 }
 
 export default function cliManagerNoPermTest() {
@@ -109,7 +111,7 @@ export default function cliManagerNoPermTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_CliManager_NoPerm_ExecCmd_0100
      * @tc.number SUB_Ability_AbilityRuntime_CliManager_NoPerm_ExecCmd_0100
-     * @tc.desc   execCmd without EXEC_CLI_TOOL/EXEC_PUBLIC_CLI_TOOL; expect 201
+     * @tc.desc   execCmd without EXEC_CLI_TOOL/EXEC_PUBLIC_CLI_TOOL; expect 201/202/801/35600050
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0

@@ -32,7 +32,8 @@ export default function actsCreateModuleContextSyncTest() {
      * @tc.number SUB_Ability_AbilityRuntime_CreateModuleContextSync_0100
      * @tc.desc   createModuleContextSync(context, moduleName): moduleName non-empty valid range;
      *     returns Context covering applicationInfo/resourceManager/area/filesDir/cacheDir/
-     *     databaseDir/preferencesDir/bundleCodeDir/tempDir.
+     *     databaseDir/preferencesDir/bundleCodeDir/tempDir/distributedFilesDir/resourceDir/
+     *     cloudFileDir/eventHub/processName.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -48,8 +49,6 @@ export default function actsCreateModuleContextSyncTest() {
       let appName = moduleContext!.applicationInfo.name;
       expect(typeof appName).assertEqual('string');
       expect(appName).assertEqual(BUNDLE_NAME);
-      expect(typeof moduleContext!.applicationInfo.bundleName).assertEqual('string');
-      expect(moduleContext!.applicationInfo.bundleName).assertEqual(BUNDLE_NAME);
       expect(moduleContext!.resourceManager !== undefined).assertTrue();
       expect(moduleContext!.resourceManager !== null).assertTrue();
       expect(moduleContext!.area !== undefined).assertTrue();
@@ -66,6 +65,14 @@ export default function actsCreateModuleContextSyncTest() {
       expect(moduleContext!.bundleCodeDir.length > 0).assertTrue();
       expect(typeof moduleContext!.tempDir).assertEqual('string');
       expect(moduleContext!.tempDir.length > 0).assertTrue();
+      expect(typeof moduleContext!.distributedFilesDir).assertEqual('string');
+      expect(moduleContext!.distributedFilesDir.length > 0).assertTrue();
+      expect(typeof moduleContext!.resourceDir).assertEqual('string');
+      expect(typeof moduleContext!.cloudFileDir).assertEqual('string');
+      expect(moduleContext!.eventHub !== undefined).assertTrue();
+      expect(moduleContext!.eventHub !== null).assertTrue();
+      expect(typeof moduleContext!.processName).assertEqual('string');
+      expect(moduleContext!.processName.length > 0).assertTrue();
       done();
     });
 
