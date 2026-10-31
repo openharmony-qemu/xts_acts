@@ -2090,7 +2090,7 @@ export default function DisplayTest():void {
                     done();
                 }).catch((err: Error) :PromiseLike<void>|undefined=> {
                     hilog.info(domain, tag,caseName + 'Failed to makeUnique, err: ' + err.code + ', message:' + err.message);
-                    if (!isSyscapSessionManagerSupported) {
+                    if (!isSyscapSessionManagerSupported || deviceType !== 'wear') {
                         expect(err.code).assertEqual(801)
                         done();
                       } else {
