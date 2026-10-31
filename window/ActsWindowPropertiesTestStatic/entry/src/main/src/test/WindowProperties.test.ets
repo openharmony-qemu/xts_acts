@@ -3795,6 +3795,8 @@ export default function WindowPropertiesTest() {
 
                 }
                 windowClass.onFrameMetricsMeasured(callback1);
+                windowStage!.setCustomDensity(1.0);
+                await Utils.msSleep(1000);
                 windowStage!.setCustomDensity(2.0);
                 await Utils.msSleep(3000);
                 console.log(`${caseName}  callbackIndex 2: ${JSON.stringify(callbackIndex)}`);

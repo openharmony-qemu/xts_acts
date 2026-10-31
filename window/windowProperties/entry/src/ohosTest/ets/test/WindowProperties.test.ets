@@ -8061,11 +8061,15 @@ export default function windowPropertiesTest() {
           expect(res.inputHandlingDuration).assertLarger(0);
         }
         windowClass.on('frameMetricsMeasured', callback1);
+        windowClass.setWindowBackgroundColor("#ff9b2b99");
+        await sleep(1000);
         windowClass.setBackgroundColor("#008000");
         await sleep(3000);
         console.log(`${caseName}  callbackIndex 1: ${JSON.stringify(callbackIndex)}`);
         expect(callbackIndex).assertLarger(0)
         callbackIndex = 0;
+        windowStage.setCustomDensity(1.0);
+        await sleep(1000);
         windowStage.setCustomDensity(2.0);
         await sleep(3000);
         console.log(`${caseName}  callbackIndex 2: ${JSON.stringify(callbackIndex)}`);
