@@ -247,21 +247,14 @@ export default function WindowPCTest() {
                 console.info(`${caseName} point = ${JSON.stringify(point)}`);
                 await driver.dragBetween({x:point!.x,y:point!.y,displayId:displayId.toInt()}, {x:point!.x + 500, y:point!.y + 500,displayId:displayId.toInt()}, 200);
                 await Utils.msSleep(1000)
-                let text = await driver.findComponent(ON.id('startMovingText'));
-                await Utils.msSleep(1000)
-                console.info(`${caseName} text = ${JSON.stringify(text)}`);
-                let textDragged = await text!.getText();
-                await Utils.msSleep(5000)
-                console.info(`${caseName} textDragged = ${JSON.stringify(textDragged)}`);
-                if (textDragged == 'startMoving success') {
-                    expect().assertFail();
-                } else if (textDragged == 'startMoving 801') {
-                    console.info(`${caseName} textDragged = ${JSON.stringify(textDragged)}`);
-                } else if (textDragged == 'startMoving 1300001') {
-                    console.info(`${caseName} textDragged = ${JSON.stringify(textDragged)}`);
+                let errorCode = AppStorage.get<int>('teststartMovingStaticRepeated_errorCode') as int;
+                console.info(`${caseName} errorCode = ${JSON.stringify(errorCode)}`);
+                if(!canIUseRes){ 
+                 console.info(`${caseName} startMoving 801`);
+                 expect(errorCode).assertEqual(801);
                 } else {
-                    console.error(`${caseName} Error.`);
-                    expect(true).assertFalse()
+                 console.info(`${caseName} startMoving 1300001`);
+                 expect(errorCode).assertEqual(1300001);
                 }
                 await subWindowClass.destroyWindow();
                 done();

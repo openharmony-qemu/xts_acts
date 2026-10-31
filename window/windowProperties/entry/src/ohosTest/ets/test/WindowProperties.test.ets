@@ -6435,7 +6435,7 @@ export default function windowPropertiesTest() {
         console.info(`${msgStr} windowProperties: ${JSON.stringify(windowProperties)}`);
         let name = windowProperties.name;
         console.info(`${msgStr} name: ${JSON.stringify(name)}`);
-        expect(name).assertEqual('myapplication0');
+        expect(name).assertEqual('windowproperties0');
         done()
       } catch (error) {
         console.error(msgStr + ' Failed. Cause: ' + JSON.stringify(error));

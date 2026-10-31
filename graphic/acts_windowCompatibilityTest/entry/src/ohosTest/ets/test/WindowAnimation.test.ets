@@ -824,7 +824,7 @@ export default function windowAnimationTest(context: common.UIAbilityContext, wi
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
       let wantInfo: Want = {
-        bundleName: 'com.example.myapplication',
+        bundleName: 'com.example.actswindowcompatibilitytes',
         abilityName: 'StartTestAbility',
         parameters: {
           info:'来自StartTestAbility页面'
@@ -868,7 +868,7 @@ export default function windowAnimationTest(context: common.UIAbilityContext, wi
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
       let wantInfo: Want = {
-        bundleName: 'com.example.myapplication',
+        bundleName: 'com.example.actswindowcompatibilitytes',
         abilityName: 'StartTestAbility',
         parameters: {
           info:'来自StartTestAbility页面'
