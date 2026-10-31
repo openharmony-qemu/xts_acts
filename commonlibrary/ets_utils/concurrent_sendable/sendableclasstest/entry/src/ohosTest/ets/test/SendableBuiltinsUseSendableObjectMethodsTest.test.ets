@@ -84,7 +84,7 @@ export default function SendableBuiltinsUseSendableObjectMethodsTest() {
           const s: string = toLocaleStringDirect(obj)
           expect(s.length > 0).assertTrue()
         } catch (e) {
-          expect(true).assertTrue()
+          expect().assertFail()
         }
         done()
       })
@@ -275,13 +275,13 @@ export default function SendableBuiltinsUseSendableObjectMethodsTest() {
         try {
           expect(objectIsFrozen(obj)).assertFalse()
         } catch (e) {
-          expect(true).assertTrue()
+          expect().assertFail()
         }
         try {
           const sealed: boolean = objectIsSealed(obj)
           expect(sealed === true || sealed === false).assertTrue()
         } catch (e) {
-          expect(true).assertTrue()
+          expect().assertFail()
         }
         done()
       })
@@ -304,7 +304,7 @@ export default function SendableBuiltinsUseSendableObjectMethodsTest() {
           expect(target.age).assertEqual(28)
           expect(target.active).assertTrue()
         } catch (e) {
-          expect(true).assertTrue()
+          expect().assertFail()
         }
         done()
       })
@@ -362,12 +362,12 @@ export default function SendableBuiltinsUseSendableObjectMethodsTest() {
           const keys: string[] = objectKeys(obj)
           expect(keys.length).assertEqual(0)
         } catch (e) {
-          expect(true).assertTrue()
+          expect().assertFail()
         }
         try {
           expect(hasOwnProp(obj, 'x')).assertFalse()
         } catch (e) {
-          expect(true).assertTrue()
+          expect().assertFail()
         }
         expect(toStringDirect(obj)).assertEqual('[object Object]')
         done()

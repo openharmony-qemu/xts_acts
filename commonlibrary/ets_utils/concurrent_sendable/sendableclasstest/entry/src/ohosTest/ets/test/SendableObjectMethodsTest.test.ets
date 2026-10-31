@@ -85,12 +85,13 @@ function readSharedRounds(obj: ESObject, rounds: number): number {
 }
 
 function expectThrow(tag: string, action: () => void): void {
+  let threw: boolean = false
   try {
     action();
-    expect().assertFail();
   } catch (e) {
-    expect(true).assertTrue();
+    threw = true
   }
+  expect(threw).assertTrue()
 }
 
 export default function SendableObjectMethodsTest() {
@@ -299,7 +300,8 @@ export default function SendableObjectMethodsTest() {
      */
     it('testSendableToStringTagCustom', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       // Skipped: ArkTS strict mode bans Symbol and computed property names in @Sendable classes.
-      expect(true).assertTrue()
+      const obj: PlainSendable = new PlainSendable()
+      expect(toStringDirect(obj)).assertEqual('[object Object]')
       done()
     })
 
@@ -396,11 +398,11 @@ export default function SendableObjectMethodsTest() {
       const p: SendableObjectP = new SendableObjectP()
       try {
         expect(objectIsFrozen(p)).assertFalse()
-      } catch (e) { expect(true).assertTrue() }
+      } catch (e) { expect().assertFail() }
       try {
         const sealed: boolean = objectIsSealed(p)
         expect(sealed === true || sealed === false).assertTrue()
-      } catch (e) { expect(true).assertTrue() }
+      } catch (e) { expect().assertFail() }
       done()
     })
 
@@ -486,7 +488,7 @@ export default function SendableObjectMethodsTest() {
         expect(objectIsFrozen(null)).assertTrue()
         expect(objectIsSealed(undefined)).assertTrue()
         expect(objectIsSealed(null)).assertTrue()
-      } catch (e) { expect(true).assertTrue() }
+      } catch (e) { expect().assertFail() }
       done()
     })
 
@@ -513,10 +515,12 @@ export default function SendableObjectMethodsTest() {
      * @tc.level Level0
      */
     it('testSendableObjectSetPrototypeOfPrimitive', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let threw: boolean = false
+      let setResult: Object | null = null
       try {
-        const result: Object = objectSetPrototypeOf(1 as Object, null)
-        expect(result).assertEqual(1)
-      } catch (e) { expect(true).assertTrue() }
+        setResult = objectSetPrototypeOf(1 as Object, null)
+      } catch (e) { threw = true }
+      expect(threw || setResult === 1).assertTrue()
       done()
     })
 
@@ -588,10 +592,12 @@ export default function SendableObjectMethodsTest() {
      */
     it('testSendableObjectAssignSymbolKeys', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       // Symbol-keyed property test moved to .ts helper (Symbol banned in .ets)
+      let threw: boolean = false
+      let assignResult: boolean = false
       try {
-        const result: boolean = testSymbolKeyAssign()
-        expect(result).assertTrue()
-      } catch (e) { expect(true).assertTrue() }
+        assignResult = testSymbolKeyAssign()
+      } catch (e) { threw = true }
+      expect(threw || assignResult).assertTrue()
       done()
     })
 
