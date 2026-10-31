@@ -91,6 +91,7 @@ export const normalAVScreenCaptureStrategyForPauseTrue: () => number;
 export const normalAVScreenCaptureStrategyForMicAEC: () => number;
 export const normalAVScreenCaptureStrategyForMicAECFalse: () => number;
 export const normalAVScreenCaptureStrategyForMicAECVal: () => number;
+export const normalAVScreenCaptureStrategyForContentAutoPauseScenes: () => number;
 export const normalAVScreenCapturePauseResumeTest: () => number;
 export const normalAVScreenCapturePauseResumeTestStop: () => number;
 export const normalAVScreenCapturePauseScreenCaptureErr: () => number;
