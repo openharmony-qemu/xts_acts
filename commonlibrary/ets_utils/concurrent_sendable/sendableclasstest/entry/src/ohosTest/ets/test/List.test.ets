@@ -9,6 +9,8 @@ import SendableClassEcmaTest from './SendableClassEcmaTest.test';
 
 import useSendableTest from './UseSendableTest.test';
 import iSendableImplTest from './ISendableImplTest.test';
+import SendableObjectMethodsTest from './SendableObjectMethodsTest.test';
+import SendableBuiltinsUseSendableObjectMethodsTest from './SendableBuiltinsUseSendableObjectMethodsTest.test';
 
 export default function testsuite() {
   sendableClassTest();
@@ -22,4 +24,6 @@ export default function testsuite() {
 
   useSendableTest();
   iSendableImplTest();
+  SendableObjectMethodsTest();
+  SendableBuiltinsUseSendableObjectMethodsTest();
 }

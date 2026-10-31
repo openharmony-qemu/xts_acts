@@ -133,6 +133,12 @@ import ContainerComboTest from './collections/ContainerComboTest.test'
 import ConcurrentFactorComboTest from './collections/ConcurrentFactorComboTest.test'
 import RealWorldComboTest from './collections/RealWorldComboTest.test'
 import StressStabilityComboTest from './collections/StressStabilityComboTest.test'
+import CollectionsArrayConcurrentStrictTest from './All/CollectionsArrayConcurrentStrictTest.test';
+import CollectionsArrayForEachEdgeTest from './All/CollectionsArrayForEachEdgeTest.test';
+import CollectionsArrayReduceEdgeTest from './All/CollectionsArrayReduceEdgeTest.test';
+import CollectionsArrayStabilityTest from './All/CollectionsArrayStabilityTest.test';
+import CollectionsReceiverTypeCheckTest from './All/CollectionsReceiverTypeCheckTest.test';
+import CollectionsArrayThisArgTest from './All/CollectionsArrayThisArgTest.test';
 
 export default function testsuite() {
   CollectionsArrayCombinationTest();
@@ -252,4 +258,10 @@ export default function testsuite() {
   ContainerComboTest();
   ConcurrentFactorComboTest();
   RealWorldComboTest();
+  CollectionsArrayConcurrentStrictTest();
+  CollectionsArrayForEachEdgeTest();
+  CollectionsArrayReduceEdgeTest();
+  CollectionsArrayStabilityTest();
+  CollectionsReceiverTypeCheckTest();
+  CollectionsArrayThisArgTest();
 };
