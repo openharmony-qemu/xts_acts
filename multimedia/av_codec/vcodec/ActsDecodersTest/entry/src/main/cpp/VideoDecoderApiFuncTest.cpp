@@ -827,7 +827,6 @@ napi_value VideoDecCapApi0025(napi_env env, napi_callback_info info)
     bool checkMimeType = true;
     capHevcHw = OH_AVCodec_GetCapabilityByCategory(
         OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
-    if (capHevcHw == nullptr) { return CreateIntInt32Result(env, 0); }
     checkMimeType = OH_AVCapability_CheckMimeType(capHevcHw, nullptr);
     if (!checkMimeType) { return CreateIntInt32Result(env, -1); }
     return CreateIntInt32Result(env, 0);
