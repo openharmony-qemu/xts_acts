@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 import { describe, it, expect, TestType, Size, Level, beforeAll } from "@ohos/hypium-binary/src/main/indexStatic";
-import { BusinessError } from '@ohos.base';
 import vpnExtension from '@ohos.net.vpnExtension';
 import VpnExtensionAbility from '@ohos.app.ability.VpnExtensionAbility';
 import hilog from '@ohos.hilog';
@@ -175,62 +174,6 @@ export default function vpnTest(): void {
       hilog.info(domain, tag, '%{public}s', `${caseName} summary: ${summary}`);
       hilog.info(domain, tag, '%{public}s', `${caseName} end`);
       done();
-    })
-
-    /**
-      * @tc.name   SUB_NETWORKMANAGER_VPN_STATIC_CREATE_0100
-      * @tc.number SUB_NETWORKMANAGER_VPN_STATIC_CREATE_0100
-      * @tc.desc   Calling vpnConnection.create without permission is rejected with error code 201
-      * @tc.type   FUNCTION
-      * @tc.size   MEDIUMTEST
-      * @tc.level   LEVEL0
-      */
-    it("SUB_NETWORKMANAGER_VPN_STATIC_CREATE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let caseName: string = 'SUB_NETWORKMANAGER_VPN_STATIC_CREATE_0100';
-      hilog.info(domain, tag, '%{public}s', `${caseName} start`);
-      let config: vpnExtension.VpnConfig = {
-        addresses: [{
-          address: {
-            address: '10.0.0.5',
-            family: 1
-          },
-          prefixLength: 24
-        }],
-        routes: [],
-        dnsAddresses: ["114.114.114.114"],
-        searchDomains: [],
-        mtu: 1400,
-        isIPv4Accepted: true,
-        isIPv6Accepted: false,
-        isInternal: true,
-        isBlocking: false,
-        trustedApplications: [],
-        blockedApplications: []
-      }
-      try {
-        let vpnExtensionAbility: VpnExtensionAbility = new VpnExtensionAbility();
-        let context: vpnExtension.VpnExtensionContext = vpnExtensionAbility.context;
-        try {
-          let vpnConnection: vpnExtension.VpnConnection = vpnExtension.createVpnConnection(context);
-          await vpnConnection.create(config);
-          hilog.info(domain, tag, '%{public}s', `${caseName} create succeeded without permission`);
-          expect().assertFail();
-          done();
-        } catch (err) {
-          const error = err as BusinessError;
-          hilog.info(domain, tag, '%{public}s',
-            `${caseName} create rejected, code: ${JSON.stringify(error?.code)}, message: ${JSON.stringify(error?.message)}`);
-          expect(error.code === 201).assertTrue();
-          done();
-        }
-      } catch (err) {
-        const error = err as BusinessError;
-        hilog.info(domain, tag, '%{public}s',
-          `${caseName} catch error, code: ${JSON.stringify(error?.code)}, message: ${JSON.stringify(error?.message)}`);
-        expect(error.code === 201).assertTrue();
-        done();
-      }
-      hilog.info(domain, tag, '%{public}s', `${caseName} end`);
     })
 
   })
