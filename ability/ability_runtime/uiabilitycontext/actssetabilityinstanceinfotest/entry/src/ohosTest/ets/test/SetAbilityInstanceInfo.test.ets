@@ -904,5 +904,69 @@ export default function abilityTest() {
         done();
       }
     })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3000
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3000
+     * @tc.desc   PixelMap editable=true: assert isEditable true and isStrideAlignment type; then setAbilityInstanceInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3000', Level.LEVEL0, async (done: Function) => {
+      let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3000';
+      hilog.info(DOMAIN, LOG_TAG, tag + ' it begin');
+      let editOpts: image.InitializationOptions = {
+        editable: true,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        size: { height: 64, width: 64 }
+      };
+      let editMap: image.PixelMap = image.createPixelMapSync(color, editOpts);
+      expect(typeof editMap.isEditable).assertEqual('boolean');
+      expect(editMap.isEditable).assertEqual(true);
+      expect(typeof editMap.isStrideAlignment).assertEqual('boolean');
+      try {
+        await testContext.setAbilityInstanceInfo('label_editable_true', editMap);
+        hilog.info(DOMAIN, LOG_TAG, tag + ' success');
+        done();
+      } catch (err) {
+        hilog.info(DOMAIN, LOG_TAG, 'setAbilityInstanceInfo failed: ' + JSON.stringify(err));
+        let code = Number(JSON.parse(JSON.stringify(err))['code']);
+        expect(code === 401 || code === 801 || code === 16000011 || code === 201).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3100
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3100
+     * @tc.desc   PixelMap editable=false: assert isEditable false and isStrideAlignment type; then setAbilityInstanceInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3100', Level.LEVEL0, async (done: Function) => {
+      let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_3100';
+      hilog.info(DOMAIN, LOG_TAG, tag + ' it begin');
+      let roOpts: image.InitializationOptions = {
+        editable: false,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        size: { height: 64, width: 64 }
+      };
+      let roMap: image.PixelMap = image.createPixelMapSync(color, roOpts);
+      expect(typeof roMap.isEditable).assertEqual('boolean');
+      expect(roMap.isEditable).assertEqual(false);
+      expect(typeof roMap.isStrideAlignment).assertEqual('boolean');
+      try {
+        await testContext.setAbilityInstanceInfo('label_editable_false', roMap);
+        hilog.info(DOMAIN, LOG_TAG, tag + ' success');
+        done();
+      } catch (err) {
+        hilog.info(DOMAIN, LOG_TAG, 'setAbilityInstanceInfo failed: ' + JSON.stringify(err));
+        let code = Number(JSON.parse(JSON.stringify(err))['code']);
+        expect(code === 401 || code === 801 || code === 16000011 || code === 201).assertTrue();
+        done();
+      }
+    })
   })
 }

@@ -31,7 +31,8 @@ export default function actsCreateModuleContextSyncTest() {
      * @tc.name   SUB_Ability_AbilityRuntime_CreateModuleContextSync_0100
      * @tc.number SUB_Ability_AbilityRuntime_CreateModuleContextSync_0100
      * @tc.desc   createModuleContextSync(context, moduleName): moduleName non-empty valid range;
-     *     returns Context with applicationInfo.name/filesDir/cacheDir.
+     *     returns Context covering applicationInfo/resourceManager/area/filesDir/cacheDir/
+     *     databaseDir/preferencesDir/bundleCodeDir/tempDir.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -42,12 +43,27 @@ export default function actsCreateModuleContextSyncTest() {
         globalThis.abilityContext, 'entry_test');
       expect(moduleContext !== null).assertTrue();
       expect(moduleContext !== undefined).assertTrue();
+      expect(moduleContext!.applicationInfo !== undefined).assertTrue();
+      expect(moduleContext!.applicationInfo !== null).assertTrue();
       let bundleName = moduleContext!.applicationInfo.name;
+      expect(typeof bundleName).assertEqual('string');
       expect(bundleName).assertEqual(BUNDLE_NAME);
+      expect(moduleContext!.resourceManager !== undefined).assertTrue();
+      expect(moduleContext!.resourceManager !== null).assertTrue();
+      expect(moduleContext!.area !== undefined).assertTrue();
+      expect(typeof moduleContext!.area).assertEqual('number');
       expect(typeof moduleContext!.filesDir).assertEqual('string');
       expect(moduleContext!.filesDir.length > 0).assertTrue();
       expect(typeof moduleContext!.cacheDir).assertEqual('string');
       expect(moduleContext!.cacheDir.length > 0).assertTrue();
+      expect(typeof moduleContext!.databaseDir).assertEqual('string');
+      expect(moduleContext!.databaseDir.length > 0).assertTrue();
+      expect(typeof moduleContext!.preferencesDir).assertEqual('string');
+      expect(moduleContext!.preferencesDir.length > 0).assertTrue();
+      expect(typeof moduleContext!.bundleCodeDir).assertEqual('string');
+      expect(moduleContext!.bundleCodeDir.length > 0).assertTrue();
+      expect(typeof moduleContext!.tempDir).assertEqual('string');
+      expect(moduleContext!.tempDir.length > 0).assertTrue();
       done();
     });
 
