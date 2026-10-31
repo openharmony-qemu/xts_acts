@@ -23,6 +23,7 @@ import Int8ArrayNormalTest from './Normal/Int8ArrayNormal.test';
 import Int8ArrayTaskPoolTest from './TaskPool/Int8ArrayTaskPool.test';
 
 import IntByteArrayTest from './intArray/IntByteArrayTest.test'
+import Int8ArrayConstructorEdgeTest from './Int8ArrayConstructorEdgeTest.test';
 export default function testsuite() {
   Int8ArrayBasicTest();
   Int8ArrayFromTest();
@@ -34,4 +35,5 @@ export default function testsuite() {
   Int8ArrayTaskPoolTest();
   
   IntByteArrayTest();
+  Int8ArrayConstructorEdgeTest();
 }

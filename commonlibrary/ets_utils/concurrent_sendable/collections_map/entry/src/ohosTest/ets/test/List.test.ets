@@ -43,6 +43,8 @@ import MapNormalTest from './Normal/MapNormal.test';
 import MapTaskPoolTest from './TaskPool/MapTaskPool.test';
 
 import MapInheritanceTest from './collections/MapInheritanceTest.test';
+import CollectionsMapEntriesOrderTest from './CollectionsMapEntriesOrderTest.test';
+import CollectionsMapThisArgTest from './CollectionsMapThisArgTest.test';
 
 export default function testsuite() {
   CollectionsMapClearTest();
@@ -74,4 +76,6 @@ export default function testsuite() {
   MapTaskPoolTest();
   
   MapInheritanceTest();
+  CollectionsMapEntriesOrderTest();
+  CollectionsMapThisArgTest();
 };
