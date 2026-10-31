@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 import { describe, it, expect, TestType, Size, Level, beforeAll } from "@ohos/hypium-binary/src/main/indexStatic";
+import { BusinessError } from '@ohos.base';
 import vpnExtension from '@ohos.net.vpnExtension';
 import VpnExtensionAbility from '@ohos.app.ability.VpnExtensionAbility';
 import hilog from '@ohos.hilog';
