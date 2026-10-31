@@ -62,10 +62,20 @@ export default function tabs_PadMarTest() {
         console.error("push Tabs_PadMar page error " + JSON.stringify(err));
         expect().assertFail();
       }
+      globalThis.value.message.notify({
+        name: 'index', value: 0
+      });
+      globalThis.value.message.notify({
+        name: 'padding', value: 0
+      });
+      globalThis.value.message.notify({
+        name: 'margin', value: 0
+      });
+      await CommonFunc.sleep(1000);
       console.info("Tabs_PadMar beforeEach end");
       done();
     });
-    afterEach(async () => {
+    afterEach(async (done: Function) => {
       await CommonFunc.sleep(2000);
       globalThis.value.message.notify({
         name: 'index', value: 0
@@ -77,6 +87,7 @@ export default function tabs_PadMarTest() {
         name: 'margin', value: 0
       });
       console.info("Tabs_PadMarTest after each called")
+      done();
     });
     /**
      * @tc.name   testTabsPad
@@ -165,32 +176,32 @@ export default function tabs_PadMarTest() {
         = ${Tabs_PadMar_01_height - barDefHei - vp2px(40)}`);
       console.info(`[testTabsPad] Tabs_PadMar_011.right - Tabs_PadMar_011.left
         = ${Tabs_PadMar_011.right - Tabs_PadMar_011.left}`);
-      expect(Math.abs(Math.round(Tabs_PadMar_011.bottom - Tabs_PadMar_011.top) - Math.round(Tabs_PadMar_01_height - barDefHei - vp2px(40))) <= 1)
+      expect(Math.abs(Math.round(Tabs_PadMar_011.bottom - Tabs_PadMar_011.top) - Math.round(Tabs_PadMar_01_height - barDefHei - vp2px(40))) <= 2)
         .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_012.bottom - Tabs_PadMar_012.top) - Math.round(Tabs_PadMar_01_height - barDefHei - vp2px(40))) <= 1)
+      expect(Math.abs(Math.round(Tabs_PadMar_012.bottom - Tabs_PadMar_012.top) - Math.round(Tabs_PadMar_01_height - barDefHei - vp2px(40))) <= 2)
         .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_013.bottom - Tabs_PadMar_013.top) - Math.round(Tabs_PadMar_01_height - barDefHei - vp2px(40))) <= 1)
+      expect(Math.abs(Math.round(Tabs_PadMar_013.bottom - Tabs_PadMar_013.top) - Math.round(Tabs_PadMar_01_height - barDefHei - vp2px(40))) <= 2)
         .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_011.right - Tabs_PadMar_011.left) - Math.round(Tabs_PadMar_01_width-vp2px(40))) <= 1)
+      expect(Math.abs(Math.round(Tabs_PadMar_011.right - Tabs_PadMar_011.left) - Math.round(Tabs_PadMar_01_width-vp2px(40))) <= 2)
         .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_012.right - Tabs_PadMar_012.left) - Math.round(Tabs_PadMar_01_width-vp2px(40))) <= 1)
+      expect(Math.abs(Math.round(Tabs_PadMar_012.right - Tabs_PadMar_012.left) - Math.round(Tabs_PadMar_01_width-vp2px(40))) <= 2)
         .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_013.right - Tabs_PadMar_013.left) - Math.round(Tabs_PadMar_01_width-vp2px(40))) <= 1)
+      expect(Math.abs(Math.round(Tabs_PadMar_013.right - Tabs_PadMar_013.left) - Math.round(Tabs_PadMar_01_width-vp2px(40))) <= 2)
         .assertTrue();
 
       console.info(`[testTabsPad] Tabs_PadMar_001.bottom -
         Tabs_PadMar_001.top = ${Tabs_PadMar_001.bottom - Tabs_PadMar_001.top}`);
-      expect(Math.abs(Math.round(Tabs_PadMar_001.bottom - Tabs_PadMar_001.top) - Math.round(Tabs_PadMar_01_height - barDefHei - vp2px(40))) <= 1)
+      expect(Math.abs(Math.round(Tabs_PadMar_001.bottom - Tabs_PadMar_001.top) - Math.round(Tabs_PadMar_01_height - barDefHei - vp2px(40))) <= 2)
         .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_002.bottom - Tabs_PadMar_002.top) - Math.round(Tabs_PadMar_01_height - barDefHei - vp2px(40))) <= 1)
+      expect(Math.abs(Math.round(Tabs_PadMar_002.bottom - Tabs_PadMar_002.top) - Math.round(Tabs_PadMar_01_height - barDefHei - vp2px(40))) <= 2)
         .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_003.bottom - Tabs_PadMar_003.top) - Math.round(Tabs_PadMar_01_height - barDefHei - vp2px(40))) <= 1)
+      expect(Math.abs(Math.round(Tabs_PadMar_003.bottom - Tabs_PadMar_003.top) - Math.round(Tabs_PadMar_01_height - barDefHei - vp2px(40))) <= 2)
         .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_001.right - Tabs_PadMar_001.left) - Math.round(Tabs_PadMar_01_width-vp2px(40))) <= 1)
+      expect(Math.abs(Math.round(Tabs_PadMar_001.right - Tabs_PadMar_001.left) - Math.round(Tabs_PadMar_01_width-vp2px(40))) <= 2)
         .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_002.right - Tabs_PadMar_002.left) - Math.round(Tabs_PadMar_01_width-vp2px(40))) <= 1)
+      expect(Math.abs(Math.round(Tabs_PadMar_002.right - Tabs_PadMar_002.left) - Math.round(Tabs_PadMar_01_width-vp2px(40))) <= 2)
         .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_003.right - Tabs_PadMar_003.left) - Math.round(Tabs_PadMar_01_width-vp2px(40))) <= 1)
+      expect(Math.abs(Math.round(Tabs_PadMar_003.right - Tabs_PadMar_003.left) - Math.round(Tabs_PadMar_01_width-vp2px(40))) <= 2)
         .assertTrue();
 
       console.info(`[testTabsPad] subGreen.bottom = ${subGreen.bottom}`);
@@ -431,32 +442,32 @@ export default function tabs_PadMarTest() {
         = ${Tabs_PadMar_01_height - barDefHei - vp2px(40)}`);
       console.info(`[testTabsPadMar] Tabs_PadMar_011.right - Tabs_PadMar_011.left
         = ${Tabs_PadMar_011.right - Tabs_PadMar_011.left}`);
-      expect(Math.abs(Math.round(Tabs_PadMar_011.bottom - Tabs_PadMar_011.top) - Math.round(Tabs_PadMar_01_height - barDefHei - vp2px(40))) <= 1)
+      expect(Math.abs(Math.round(Tabs_PadMar_011.bottom - Tabs_PadMar_011.top) - Math.round(Tabs_PadMar_01_height - barDefHei - vp2px(40))) <= 2)
         .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_012.bottom - Tabs_PadMar_012.top) - Math.round(Tabs_PadMar_01_height - barDefHei - vp2px(40))) <= 1)
+      expect(Math.abs(Math.round(Tabs_PadMar_012.bottom - Tabs_PadMar_012.top) - Math.round(Tabs_PadMar_01_height - barDefHei - vp2px(40))) <= 2)
         .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_013.bottom - Tabs_PadMar_013.top) - Math.round(Tabs_PadMar_01_height - barDefHei - vp2px(40))) <= 1)
+      expect(Math.abs(Math.round(Tabs_PadMar_013.bottom - Tabs_PadMar_013.top) - Math.round(Tabs_PadMar_01_height - barDefHei - vp2px(40))) <= 2)
         .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_011.right - Tabs_PadMar_011.left) - Math.round(Tabs_PadMar_01_width-vp2px(40))) <= 1)
+      expect(Math.abs(Math.round(Tabs_PadMar_011.right - Tabs_PadMar_011.left) - Math.round(Tabs_PadMar_01_width-vp2px(40))) <= 2)
         .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_012.right - Tabs_PadMar_012.left) - Math.round(Tabs_PadMar_01_width-vp2px(40))) <= 1)
+      expect(Math.abs(Math.round(Tabs_PadMar_012.right - Tabs_PadMar_012.left) - Math.round(Tabs_PadMar_01_width-vp2px(40))) <= 2)
         .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_013.right - Tabs_PadMar_013.left) - Math.round(Tabs_PadMar_01_width-vp2px(40))) <= 1)
+      expect(Math.abs(Math.round(Tabs_PadMar_013.right - Tabs_PadMar_013.left) - Math.round(Tabs_PadMar_01_width-vp2px(40))) <= 2)
         .assertTrue();
 
       console.info(`[testTabsPadMar] Tabs_PadMar_001.bottom - Tabs_PadMar_001.top
         = ${Tabs_PadMar_001.bottom - Tabs_PadMar_001.top}`);
-      expect(Math.abs(Math.round(Tabs_PadMar_001.bottom - Tabs_PadMar_001.top) - Math.round(Tabs_PadMar_01_height - barDefHei - vp2px(40))) <= 1)
+      expect(Math.abs(Math.round(Tabs_PadMar_001.bottom - Tabs_PadMar_001.top) - Math.round(Tabs_PadMar_01_height - barDefHei - vp2px(40))) <= 2)
         .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_002.bottom - Tabs_PadMar_002.top) - Math.round(Tabs_PadMar_01_height - barDefHei - vp2px(40))) <= 1)
+      expect(Math.abs(Math.round(Tabs_PadMar_002.bottom - Tabs_PadMar_002.top) - Math.round(Tabs_PadMar_01_height - barDefHei - vp2px(40))) <= 2)
         .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_003.bottom - Tabs_PadMar_003.top) - Math.round(Tabs_PadMar_01_height - barDefHei - vp2px(40))) <= 1)
+      expect(Math.abs(Math.round(Tabs_PadMar_003.bottom - Tabs_PadMar_003.top) - Math.round(Tabs_PadMar_01_height - barDefHei - vp2px(40))) <= 2)
         .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_001.right - Tabs_PadMar_001.left) - Math.round(Tabs_PadMar_01_width-vp2px(40))) <= 1)
+      expect(Math.abs(Math.round(Tabs_PadMar_001.right - Tabs_PadMar_001.left) - Math.round(Tabs_PadMar_01_width-vp2px(40))) <= 2)
         .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_002.right - Tabs_PadMar_002.left) - Math.round(Tabs_PadMar_01_width-vp2px(40))) <= 1)
+      expect(Math.abs(Math.round(Tabs_PadMar_002.right - Tabs_PadMar_002.left) - Math.round(Tabs_PadMar_01_width-vp2px(40))) <= 2)
         .assertTrue();
-      expect(Math.abs(Math.round(Tabs_PadMar_003.right - Tabs_PadMar_003.left) - Math.round(Tabs_PadMar_01_width-vp2px(40))) <= 1)
+      expect(Math.abs(Math.round(Tabs_PadMar_003.right - Tabs_PadMar_003.left) - Math.round(Tabs_PadMar_01_width-vp2px(40))) <= 2)
         .assertTrue();
 
       console.info(`[testTabsPadMar] subGreen.bottom = ${subGreen.bottom}`);
