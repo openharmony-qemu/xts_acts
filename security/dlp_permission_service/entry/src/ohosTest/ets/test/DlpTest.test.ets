@@ -4772,7 +4772,7 @@ export default function dlpTest() {
             await dlpPermission.DlpConnManager.unregisterPlugin();
             expect(false).assertTrue();
           } catch (err) {
-            expect(err.code).assertEqual(19100011);
+            expect(err.code).assertEqual(201);
           }
         }
         done();
