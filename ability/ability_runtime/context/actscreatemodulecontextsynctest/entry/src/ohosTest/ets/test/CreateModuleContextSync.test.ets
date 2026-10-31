@@ -30,7 +30,7 @@ export default function actsCreateModuleContextSyncTest() {
     /**
      * @tc.name   SUB_AA_CreateModuleContextSync_0100
      * @tc.number SUB_AA_CreateModuleContextSync_0100
-     * @tc.desc   Verify that the context of the application can be obtained
+     * @tc.desc   Verify createModuleContextSync returns Context with applicationInfo and dirs
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -39,8 +39,17 @@ export default function actsCreateModuleContextSyncTest() {
       console.info("SUB_AA_CreateModuleContextSync_0100 begin");
       moduleContext = application.createModuleContextSync(
         globalThis.abilityContext, "entry_test");
-      let bundleName = moduleContext!.applicationInfo.name;
-      expect(bundleName).assertEqual(BUNDLE_NAME);
+      expect(moduleContext !== null).assertTrue();
+      expect(moduleContext !== undefined).assertTrue();
+      expect(moduleContext!.applicationInfo !== undefined).assertTrue();
+      expect(moduleContext!.applicationInfo.name).assertEqual(BUNDLE_NAME);
+      expect(moduleContext!.resourceManager !== undefined).assertTrue();
+      expect(typeof moduleContext!.cacheDir).assertEqual('string');
+      expect(moduleContext!.cacheDir.length > 0).assertTrue();
+      expect(typeof moduleContext!.filesDir).assertEqual('string');
+      expect(moduleContext!.filesDir.length > 0).assertTrue();
+      expect(typeof moduleContext!.tempDir).assertEqual('string');
+      expect(typeof moduleContext!.databaseDir).assertEqual('string');
       done();
     });
 
@@ -309,6 +318,30 @@ export default function actsCreateModuleContextSyncTest() {
         expect(e.code).assertEqual(ERR_MODULE_NOT_EXIST);
       }
       expect(moduleContext).assertEqual(null);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_AA_CreateModuleContextSync_1400
+     * @tc.number SUB_AA_CreateModuleContextSync_1400
+     * @tc.desc   Verify createModuleContextSync return Context properties for feature module
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_AA_CreateModuleContextSync_1400", Level.LEVEL0, (done:Function) => {
+      console.info("SUB_AA_CreateModuleContextSync_1400 begin");
+      let ctx = application.createModuleContextSync(
+        globalThis.abilityContext, "feature");
+      expect(ctx !== null).assertTrue();
+      expect(ctx !== undefined).assertTrue();
+      expect(ctx.applicationInfo.name).assertEqual(BUNDLE_NAME);
+      expect(ctx.resourceManager !== undefined).assertTrue();
+      expect(typeof ctx.cacheDir).assertEqual('string');
+      expect(typeof ctx.filesDir).assertEqual('string');
+      expect(typeof ctx.tempDir).assertEqual('string');
+      expect(typeof ctx.databaseDir).assertEqual('string');
+      expect(`${ctx.stageMode}`).assertEqual('true');
       done();
     });
   });
