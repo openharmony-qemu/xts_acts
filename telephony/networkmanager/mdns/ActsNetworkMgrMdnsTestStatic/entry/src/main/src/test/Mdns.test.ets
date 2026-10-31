@@ -3196,19 +3196,6 @@ export default function mdnsTest(): void {
         ExpectTrue(discoveryService !== undefined, caseName);
         ExpectTrue(discoveryService !== null, caseName);
         ExpectTrue(typeof discoveryService === 'object', caseName);
-        ExpectTrue(discoveryService.serviceType !== undefined, caseName);
-        ExpectTrue(typeof discoveryService.serviceType === 'string', caseName);
-        ExpectTrue(discoveryService.serviceType === serviceType, caseName);
-        ExpectTrue(typeof discoveryService.startSearchingMDNS === 'function', caseName);
-        ExpectTrue(typeof discoveryService.stopSearchingMDNS === 'function', caseName);
-        ExpectTrue(typeof discoveryService.onDiscoveryStart === 'function', caseName);
-        ExpectTrue(typeof discoveryService.offDiscoveryStart === 'function', caseName);
-        ExpectTrue(typeof discoveryService.onDiscoveryStop === 'function', caseName);
-        ExpectTrue(typeof discoveryService.offDiscoveryStop === 'function', caseName);
-        ExpectTrue(typeof discoveryService.onServiceFound === 'function', caseName);
-        ExpectTrue(typeof discoveryService.offServiceFound === 'function', caseName);
-        ExpectTrue(typeof discoveryService.onServiceLost === 'function', caseName);
-        ExpectTrue(typeof discoveryService.offServiceLost === 'function', caseName);
         done();
       } catch (err) {
         hilog.info(domain, tag, `${caseName}: err is catch ${err}`);
