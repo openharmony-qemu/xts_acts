@@ -37,7 +37,7 @@ export default function SendableBuiltinsUseSendableObjectMethodsTest() {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SENDABLE_USE_SENDABLE_OBJ_001
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_USE_SENDABLE_OBJ_0100
      * @tc.name testUseSendableHasOwnProperty
      * @tc.desc Verify hasOwnProperty on 'use sendable' class instances returns true for own properties and false for inherited/nonexistent
      * @tc.size MediumTest
@@ -55,7 +55,7 @@ export default function SendableBuiltinsUseSendableObjectMethodsTest() {
       })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SENDABLE_USE_SENDABLE_OBJ_002
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_USE_SENDABLE_OBJ_0200
      * @tc.name testUseSendableToString
      * @tc.desc Verify toString on 'use sendable' class instances returns "[object Object]"
      * @tc.size MediumTest
@@ -70,7 +70,7 @@ export default function SendableBuiltinsUseSendableObjectMethodsTest() {
       })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SENDABLE_USE_SENDABLE_OBJ_003
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_USE_SENDABLE_OBJ_0300
      * @tc.name testUseSendableToLocaleString
      * @tc.desc Verify toLocaleString on 'use sendable' class instances returns a non-empty string
      * @tc.size MediumTest
@@ -90,7 +90,7 @@ export default function SendableBuiltinsUseSendableObjectMethodsTest() {
       })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SENDABLE_USE_SENDABLE_OBJ_004
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_USE_SENDABLE_OBJ_0400
      * @tc.name testUseSendableValueOf
      * @tc.desc Verify valueOf on 'use sendable' class instances returns the object itself
      * @tc.size MediumTest
@@ -110,7 +110,7 @@ export default function SendableBuiltinsUseSendableObjectMethodsTest() {
       })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SENDABLE_USE_SENDABLE_OBJ_005
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_USE_SENDABLE_OBJ_0500
      * @tc.name testUseSendablePropertyIsEnumerable
      * @tc.desc Verify propertyIsEnumerable on 'use sendable' class instances returns true for own enumerable fields
      * @tc.size MediumTest
@@ -132,7 +132,7 @@ export default function SendableBuiltinsUseSendableObjectMethodsTest() {
       })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SENDABLE_USE_SENDABLE_OBJ_006
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_USE_SENDABLE_OBJ_0600
      * @tc.name testUseSendableObjectKeys
      * @tc.desc Verify Object.keys on 'use sendable' class instances returns own enumerable property names
      * @tc.size MediumTest
@@ -154,7 +154,7 @@ export default function SendableBuiltinsUseSendableObjectMethodsTest() {
       })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SENDABLE_USE_SENDABLE_OBJ_007
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_USE_SENDABLE_OBJ_0700
      * @tc.name testUseSendableObjectValues
      * @tc.desc Verify Object.values on 'use sendable' class instances returns own enumerable property values
      * @tc.size MediumTest
@@ -177,7 +177,7 @@ export default function SendableBuiltinsUseSendableObjectMethodsTest() {
       })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SENDABLE_USE_SENDABLE_OBJ_008
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_USE_SENDABLE_OBJ_0800
      * @tc.name testUseSendableObjectEntries
      * @tc.desc Verify Object.entries on 'use sendable' class instances returns [key, value] pairs
      * @tc.size MediumTest
@@ -197,7 +197,7 @@ export default function SendableBuiltinsUseSendableObjectMethodsTest() {
       })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SENDABLE_USE_SENDABLE_OBJ_009
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_USE_SENDABLE_OBJ_0900
      * @tc.name testUseSendableObjectGetOwnPropertyNames
      * @tc.desc Verify Object.getOwnPropertyNames on 'use sendable' class instances returns all own property names
      * @tc.size MediumTest
@@ -220,7 +220,7 @@ export default function SendableBuiltinsUseSendableObjectMethodsTest() {
       })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SENDABLE_USE_SENDABLE_OBJ_010
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_USE_SENDABLE_OBJ_1000
      * @tc.name testUseSendableObjectGetPrototypeOf
      * @tc.desc Verify Object.getPrototypeOf on 'use sendable' class instances returns a non-null prototype
      * @tc.size MediumTest
@@ -241,7 +241,7 @@ export default function SendableBuiltinsUseSendableObjectMethodsTest() {
       })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SENDABLE_USE_SENDABLE_OBJ_011
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_USE_SENDABLE_OBJ_1100
      * @tc.name testUseSendableObjectIs
      * @tc.desc Verify Object.is on 'use sendable' class instances: same instance is true, different is false
      * @tc.size MediumTest
@@ -262,7 +262,7 @@ export default function SendableBuiltinsUseSendableObjectMethodsTest() {
       })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SENDABLE_USE_SENDABLE_OBJ_012
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_USE_SENDABLE_OBJ_1200
      * @tc.name testUseSendableObjectIsFrozenIsSealed
      * @tc.desc Verify Object.isFrozen/isSealed on 'use sendable' class instances
      * @tc.size MediumTest
@@ -287,7 +287,7 @@ export default function SendableBuiltinsUseSendableObjectMethodsTest() {
       })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SENDABLE_USE_SENDABLE_OBJ_013
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_USE_SENDABLE_OBJ_1300
      * @tc.name testUseSendableObjectAssignFromSendable
      * @tc.desc Verify Object.assign copies own enumerable fields from 'use sendable' source to matching target
      * @tc.size MediumTest
@@ -310,7 +310,7 @@ export default function SendableBuiltinsUseSendableObjectMethodsTest() {
       })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SENDABLE_USE_SENDABLE_OBJ_014
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_USE_SENDABLE_OBJ_1400
      * @tc.name testUseSendableInstanceof
      * @tc.desc Verify instanceof on 'use sendable' class instances correctly identifies the class
      * @tc.size MediumTest
@@ -328,7 +328,7 @@ export default function SendableBuiltinsUseSendableObjectMethodsTest() {
       })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SENDABLE_USE_SENDABLE_OBJ_015
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_USE_SENDABLE_OBJ_1500
      * @tc.name testUseSendableConstructor
      * @tc.desc Verify the constructor property on 'use sendable' class instances
      * @tc.size MediumTest
@@ -348,7 +348,7 @@ export default function SendableBuiltinsUseSendableObjectMethodsTest() {
       })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SENDABLE_USE_SENDABLE_OBJ_016
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_USE_SENDABLE_OBJ_1600
      * @tc.name testUseSendableEmptyClassObjectMethods
      * @tc.desc Verify Object methods on 'use sendable' class with no own properties (empty class)
      * @tc.size MediumTest
@@ -374,7 +374,7 @@ export default function SendableBuiltinsUseSendableObjectMethodsTest() {
       })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SENDABLE_USE_SENDABLE_OBJ_017
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_USE_SENDABLE_OBJ_1700
      * @tc.name testUseSendableObjectGetOwnPropertyDescriptors
      * @tc.desc Verify Object.getOwnPropertyDescriptors on 'use sendable' class returns descriptors for own properties
      * @tc.size MediumTest
@@ -397,7 +397,7 @@ export default function SendableBuiltinsUseSendableObjectMethodsTest() {
       })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SENDABLE_USE_SENDABLE_OBJ_018
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_USE_SENDABLE_OBJ_1800
      * @tc.name testUseSendableObjectFreezeThrows
      * @tc.desc Verify Object.freeze on 'use sendable' class either throws or returns the object
      * @tc.size MediumTest
@@ -419,7 +419,7 @@ export default function SendableBuiltinsUseSendableObjectMethodsTest() {
       })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SENDABLE_USE_SENDABLE_OBJ_019
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_USE_SENDABLE_OBJ_1900
      * @tc.name testUseSendableTypeofAndFieldAccess
      * @tc.desc Verify typeof on 'use sendable' instances is 'object' and field reads work correctly
      * @tc.size MediumTest
@@ -439,7 +439,7 @@ export default function SendableBuiltinsUseSendableObjectMethodsTest() {
       })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_SENDABLE_USE_SENDABLE_OBJ_020
+     * @tc.number SUB_COMMONLIBRARY_ETS_UTILS_USE_SENDABLE_OBJ_2000
      * @tc.name testUseSendableMethodInvocation
      * @tc.desc Verify method invocation on 'use sendable' class instances works correctly
      * @tc.size MediumTest
