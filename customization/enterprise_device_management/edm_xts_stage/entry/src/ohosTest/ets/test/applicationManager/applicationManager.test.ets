@@ -11144,7 +11144,7 @@ export default function applicationManagerTest() {
         applicationManager.addOptimizationBatteryExclusionApps(apps, DEFAULT_USER_ID);
         expect().assertFail();
       } catch (error) {
-        expect(error.code).assertEqual(9200019);
+        expect(error.code).assertEqual(9201015);
       } finally {
         try {
           applicationManager.removeOptimizationBatteryExclusionApps(["com.edm.acts.normal"], DEFAULT_USER_ID);
