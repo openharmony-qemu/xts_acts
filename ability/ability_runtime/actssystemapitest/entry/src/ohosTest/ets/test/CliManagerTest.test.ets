@@ -179,8 +179,7 @@ export default function cliManagerTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_CliManager_QueryToolSummaries_0100
      * @tc.number SUB_Ability_AbilityRuntime_CliManager_QueryToolSummaries_0100
-     * @tc.desc   queryToolSummaries empty or non-empty Array; cover ToolSummary name/description/version
-     *     or BusinessError 201/202/35600050
+     * @tc.desc   queryToolSummaries returns Array; empty length===0 path or known biz error 201/202/35600050
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -189,19 +188,48 @@ export default function cliManagerTest() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
           let list = await cliManager.queryToolSummaries();
-          hilog.info(0x0000, TAG, 'QueryToolSummaries size=%{public}d', list.length);
+          hilog.info(0x0000, TAG, 'QueryToolSummaries empty-path size=%{public}d', list.length);
           expect(Array.isArray(list)).assertTrue();
           if (list.length === 0) {
             expect(list.length).assertEqual(0);
           } else {
+            // Device has tools: empty path not hit; still assert Array shape.
             expect(list.length > 0).assertTrue();
+          }
+        } catch (error) {
+          hilog.info(0x0000, TAG, 'QueryToolSummaries empty-path %{public}s', safeErrorText(error));
+          let code = errCodeOf(error);
+          expect(code === ERR_PERMISSION || code === ERR_SYSTEM_API || code === ERR_SYSTEM ||
+            isExpectedBizCode(code)).assertTrue();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CliManager_QueryToolSummaries_NonEmpty_0110
+     * @tc.number SUB_Ability_AbilityRuntime_CliManager_QueryToolSummaries_NonEmpty_0110
+     * @tc.desc   queryToolSummaries non-empty: assert ToolSummary name/description/version;
+     *     if empty on device, assert length===0; or BusinessError 201/202/35600050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_CliManager_QueryToolSummaries_NonEmpty_0110',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        try {
+          let list = await cliManager.queryToolSummaries();
+          hilog.info(0x0000, TAG, 'QueryToolSummaries non-empty size=%{public}d', list.length);
+          expect(Array.isArray(list)).assertTrue();
+          if (list.length > 0) {
             expect(typeof list[0].name).assertEqual('string');
             expect(list[0].name.length > 0).assertTrue();
             expect(typeof list[0].description).assertEqual('string');
             expect(typeof list[0].version).assertEqual('string');
+          } else {
+            expect(list.length).assertEqual(0);
           }
         } catch (error) {
-          hilog.info(0x0000, TAG, 'QueryToolSummaries %{public}s', safeErrorText(error));
+          hilog.info(0x0000, TAG, 'QueryToolSummaries non-empty %{public}s', safeErrorText(error));
           let code = errCodeOf(error);
           expect(code === ERR_PERMISSION || code === ERR_SYSTEM_API || code === ERR_SYSTEM ||
             isExpectedBizCode(code)).assertTrue();

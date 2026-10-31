@@ -45,9 +45,11 @@ export default function actsCreateModuleContextSyncTest() {
       expect(moduleContext !== undefined).assertTrue();
       expect(moduleContext!.applicationInfo !== undefined).assertTrue();
       expect(moduleContext!.applicationInfo !== null).assertTrue();
-      let bundleName = moduleContext!.applicationInfo.name;
-      expect(typeof bundleName).assertEqual('string');
-      expect(bundleName).assertEqual(BUNDLE_NAME);
+      let appName = moduleContext!.applicationInfo.name;
+      expect(typeof appName).assertEqual('string');
+      expect(appName).assertEqual(BUNDLE_NAME);
+      expect(typeof moduleContext!.applicationInfo.bundleName).assertEqual('string');
+      expect(moduleContext!.applicationInfo.bundleName).assertEqual(BUNDLE_NAME);
       expect(moduleContext!.resourceManager !== undefined).assertTrue();
       expect(moduleContext!.resourceManager !== null).assertTrue();
       expect(moduleContext!.area !== undefined).assertTrue();
