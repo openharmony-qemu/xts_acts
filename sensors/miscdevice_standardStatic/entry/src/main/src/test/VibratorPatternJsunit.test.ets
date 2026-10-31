@@ -2645,6 +2645,21 @@ export default function VibratorJsTest_misc_9() {
       let data6 = vibrator.HapticFeedback.EFFECT_NOTICE_WARNING;
       hilog.info(domain, tag, TAG + ` data6: ${data6}`);
       expect(data6).assertEqual('haptic.notice.warning');
+      let data7 = vibrator.HapticFeedback.EFFECT_IME_STRENGTH1;
+      hilog.info(domain, tag, TAG + ` data7: ${data7}`);
+      expect(data7).assertEqual('haptic.grade.normal.strength1');
+      let data8 = vibrator.HapticFeedback.EFFECT_IME_STRENGTH2;
+      hilog.info(domain, tag, TAG + ` data8: ${data8}`);
+      expect(data8).assertEqual('haptic.grade.normal.strength2');
+      let data9 = vibrator.HapticFeedback.EFFECT_IME_STRENGTH3;
+      hilog.info(domain, tag, TAG + ` data9: ${data9}`);
+      expect(data9).assertEqual('haptic.grade.normal.strength3');
+      let data10 = vibrator.HapticFeedback.EFFECT_IME_STRENGTH4;
+      hilog.info(domain, tag, TAG + ` data10: ${data10}`);
+      expect(data10).assertEqual('haptic.grade.normal.strength4');
+      let data11 = vibrator.HapticFeedback.EFFECT_IME_STRENGTH5;
+      hilog.info(domain, tag, TAG + ` data11: ${data11}`);
+      expect(data11).assertEqual('haptic.grade.normal.strength5');
       done();
     })
 
@@ -2874,6 +2889,157 @@ export default function VibratorJsTest_misc_9() {
         done();
       }
     })
+
+    /**
+     * @tc.name SUB_SensorSystem_Vibrator_JsTest_Static_0100
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_Static_0100
+     * @tc.desc Verification results of the incorrect parameters of the test interface.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it("SUB_SensorSystem_Vibrator_JsTest_Static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        TAG = 'SUB_SensorSystem_Vibrator_JsTest_Static_0100';
+        hilog.info(domain, tag, TAG + ' isAvailable ' + isAvailable);
+        if (isAvailable) {
+          try {
+            let isSupportEffectData: boolean = await vibrator.isSupportEffect(vibrator.HapticFeedback.EFFECT_IME_STRENGTH1);
+            hilog.info(domain, tag, TAG + ' isSupportEffect success ');
+            expect(typeof(isSupportEffectData)).assertEqual("boolean");
+            let isSupportEffectData1: boolean = await vibrator.isSupportEffect(vibrator.HapticFeedback.EFFECT_IME_STRENGTH2);
+            hilog.info(domain, tag, TAG + ' isSupportEffect1 success ');
+            expect(typeof(isSupportEffectData1)).assertEqual("boolean");
+            let isSupportEffectData2: boolean = await vibrator.isSupportEffect(vibrator.HapticFeedback.EFFECT_IME_STRENGTH3);
+            hilog.info(domain, tag, TAG + ' isSupportEffect2 success ');
+            expect(typeof(isSupportEffectData2)).assertEqual("boolean");
+            let isSupportEffectData3: boolean = await vibrator.isSupportEffect(vibrator.HapticFeedback.EFFECT_IME_STRENGTH4);
+            hilog.info(domain, tag, TAG + ' isSupportEffect3 success ');
+            expect(typeof(isSupportEffectData3)).assertEqual("boolean");
+            let isSupportEffectData4: boolean = await vibrator.isSupportEffect(vibrator.HapticFeedback.EFFECT_IME_STRENGTH5);
+            hilog.info(domain, tag, TAG + ' isSupportEffect4 success ');
+            expect(typeof(isSupportEffectData4)).assertEqual("boolean");
+            done();
+          } catch (error) {
+            hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+            expect().assertFail();
+            done();
+          }
+        } else {
+          hilog.info(domain, tag, TAG + ' is not supported on this device.');
+          done();
+        }
+      })
+
+    /**
+     * @tc.name SUB_SensorSystem_Vibrator_JsTest_Static_0200
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_Static_0200
+     * @tc.desc Verification results of the incorrect parameters of the test interface.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it("SUB_SensorSystem_Vibrator_JsTest_Static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        TAG = 'SUB_SensorSystem_Vibrator_JsTest_Static_0200';
+        hilog.info(domain, tag, TAG + ' isAvailable ' + isAvailable);
+        if (isAvailable) {
+          try {
+            let isSupportEffectData: boolean = vibrator.isSupportEffectSync(vibrator.HapticFeedback.EFFECT_IME_STRENGTH1);
+            hilog.info(domain, tag, TAG + ' isSupportEffectSync success ');
+            expect(typeof(isSupportEffectData)).assertEqual("boolean");
+            let isSupportEffectData1: boolean = vibrator.isSupportEffectSync(vibrator.HapticFeedback.EFFECT_IME_STRENGTH2);
+            hilog.info(domain, tag, TAG + ' isSupportEffectSync1 success ');
+            expect(typeof(isSupportEffectData1)).assertEqual("boolean");
+            let isSupportEffectData2: boolean = vibrator.isSupportEffectSync(vibrator.HapticFeedback.EFFECT_IME_STRENGTH3);
+            hilog.info(domain, tag, TAG + ' isSupportEffectSync2 success ');
+            expect(typeof(isSupportEffectData2)).assertEqual("boolean");
+            let isSupportEffectData3: boolean = vibrator.isSupportEffectSync(vibrator.HapticFeedback.EFFECT_IME_STRENGTH4);
+            hilog.info(domain, tag, TAG + ' isSupportEffectSync3 success ');
+            expect(typeof(isSupportEffectData3)).assertEqual("boolean");
+            let isSupportEffectData4: boolean = vibrator.isSupportEffectSync(vibrator.HapticFeedback.EFFECT_IME_STRENGTH5);
+            hilog.info(domain, tag, TAG + ' isSupportEffectSync4 success ');
+            expect(typeof(isSupportEffectData4)).assertEqual("boolean");
+            done();
+          } catch (error) {
+            hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+            expect().assertFail();
+            done();
+          }
+        } else {
+          hilog.info(domain, tag, TAG + ' is not supported on this device.');
+          done();
+        }
+      })
+
+    /**
+     * @tc.name SUB_SensorSystem_Vibrator_JsTest_Static_0300
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_Static_0300
+     * @tc.desc Verification results of the incorrect parameters of the test interface.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it("SUB_SensorSystem_Vibrator_JsTest_Static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        TAG = 'SUB_SensorSystem_Vibrator_JsTest_Static_0300';
+        hilog.info(domain, tag, TAG + ' isAvailable ' + isAvailable);
+        if (isAvailable) {
+          try {
+            const VibrationEffect: string[] = [vibrator.HapticFeedback.EFFECT_IME_STRENGTH1,vibrator.HapticFeedback.EFFECT_IME_STRENGTH2,
+              vibrator.HapticFeedback.EFFECT_IME_STRENGTH3,vibrator.HapticFeedback.EFFECT_IME_STRENGTH4,
+              vibrator.HapticFeedback.EFFECT_IME_STRENGTH5]
+            for (let i = 0; i < 5; i++) {
+              vibrator.isSupportEffect(VibrationEffect[i], (error: BusinessError<void> | null, state: boolean | undefined) : void=>{
+                if (error != null){
+                  hilog.info(domain, tag, TAG + ` error.code: ${error?.code} , error.message: ${error?.message}`);
+                  expect(false).assertTrue();
+                } else {
+                  hilog.info(domain, tag, TAG + ' isSupportEffect success ');
+                  expect(typeof(state)).assertEqual("boolean");
+                }
+              });
+            }
+            done();
+          } catch (error) {
+            hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+            expect().assertFail();
+            done();
+          }
+        } else {
+          hilog.info(domain, tag, TAG + ' is not supported on this device.');
+          done();
+        }
+      })
+
+    /**
+     * @tc.name SUB_SensorSystem_Vibrator_JsTest_Static_1330
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_Static_1330
+     * @tc.desc Verification results of the incorrect parameters of the test interface.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it("SUB_SensorSystem_Vibrator_JsTest_Static_1330", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        TAG = 'SUB_SensorSystem_Vibrator_JsTest_Static_1330';
+        hilog.info(domain, tag, TAG + ' isAvailable ' + isAvailable);
+        if (isAvailable) {
+          try {
+            const vibrators = vibrator.getVibratorInfoSync();
+            hilog.info(domain, tag, TAG + ' getVibratorInfoSync success ');
+            expect(typeof(vibrators[0].isSupportIntensity)).assertEqual('boolean');
+            done();
+          } catch (error) {
+            hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+            expect().assertFail();
+            done();
+          }
+        } else {
+          hilog.info(domain, tag, TAG + ' is not supported on this device.');
+          done();
+        }
+      })
 
   })
 }
