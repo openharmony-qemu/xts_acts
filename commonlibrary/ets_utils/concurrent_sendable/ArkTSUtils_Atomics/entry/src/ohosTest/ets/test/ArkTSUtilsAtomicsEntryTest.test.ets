@@ -15,17 +15,14 @@
 
 import { ArkTSUtils, collections } from '@kit.ArkTS';
 import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { ATOMIC_INDEX_ERROR, ATOMIC_PARAMETER_ERROR, expectAtomicBusinessError } from './ArkTSUtilsAtomicsErrorAssert';
 
 type AtomicEntryOperation = (array: collections.Int32Array) => void;
 
-function expectEntryTypeError(operation: AtomicEntryOperation, value: Object): void {
-  let typeError: boolean = false;
-  try {
+function expectEntryParameterError(operation: AtomicEntryOperation, value: Object): void {
+  expectAtomicBusinessError((): void => {
     operation(value as collections.Int32Array);
-  } catch (error) {
-    typeError = error instanceof TypeError;
-  }
-  expect(typeError).assertTrue();
+  }, ATOMIC_PARAMETER_ERROR);
 }
 
 function getArrayOperations(): AtomicEntryOperation[] {
@@ -61,7 +58,7 @@ function registerOrdinaryArrayTests(): void {
         new Uint16Array(1), new Int32Array(1), new Uint32Array(1), new Float32Array(1),
         new Float64Array(1), new Uint8ClampedArray(1)];
       getArrayOperations().forEach((operation: AtomicEntryOperation): void => {
-        values.forEach((value: Object): void => { expectEntryTypeError(operation, value); });
+        values.forEach((value: Object): void => { expectEntryParameterError(operation, value); });
       });
     });
 }
@@ -91,14 +88,10 @@ function registerSendableTests(): void {
       expect(ArkTSUtils.Atomics.wait(array, 0, 1, 0)).assertEqual('not-equal');
       expect(ArkTSUtils.Atomics.wait(array, 0, 0, 0)).assertEqual('timed-out');
       expect(ArkTSUtils.Atomics.notify(array, 0, 1)).assertEqual(0);
-      let rangeError: boolean = false;
-      try {
+      expectAtomicBusinessError((): void => {
         ArkTSUtils.Atomics.load(array, 1);
-      } catch (error) {
-        rangeError = error instanceof RangeError;
-      }
-      expect(rangeError).assertTrue();
-      expectEntryTypeError((value: collections.Int32Array): void => {
+      }, ATOMIC_INDEX_ERROR);
+      expectEntryParameterError((value: collections.Int32Array): void => {
         ArkTSUtils.Atomics.load(value, 0);
       }, new collections.Float32Array(1));
     });

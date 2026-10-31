@@ -14,6 +14,10 @@
  */
 
 import { ArkTSUtils, collections } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+export const ATOMIC_INDEX_ERROR: number = 10200001;
+export const ATOMIC_PARAMETER_ERROR: number = 401;
 
 export interface typeOld {
   old: number;
@@ -95,6 +99,7 @@ export interface type55 {
 export interface type88 {
   hasError: boolean;
   isFree: boolean;
+  errorCode: number;
 }
 
 export interface type51 {
@@ -444,10 +449,10 @@ export async function atomicsIsLockFreeTest088(): Promise<type88[]> {
     await delay(2);
     try {
       const isFree = ArkTSUtils.Atomics.isLockFree(sizes[i] as number);
-      const item: type88 = { hasError: false, isFree };
+      const item: type88 = { hasError: false, isFree, errorCode: 0 };
       results.push(item);
     } catch (err) {
-      const item: type88 = { hasError: true, isFree: false };
+      const item: type88 = { hasError: true, isFree: false, errorCode: (err as BusinessError).code };
       results.push(item);
     }
   }
