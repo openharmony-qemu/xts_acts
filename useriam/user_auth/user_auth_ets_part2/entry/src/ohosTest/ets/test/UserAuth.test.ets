@@ -129,9 +129,9 @@ export default function UserAuthTest() {
       console.info('SUB_Security_IAM_PassiveRecognition_Api_5002 start');
       let isSupport = !canIUse("SystemCapability.Security.DataLossPrevention");
       if (isSupport) {
-        let mgr: userAuth.UserRecognitionMgr | null = userAuth.getUserRecognitionMgr();
-        expect(mgr != null).assertTrue();
         try {
+          let mgr: userAuth.UserRecognitionMgr | null = userAuth.getUserRecognitionMgr();
+          expect(mgr != null).assertTrue();
           let result: userAuth.UserRecognitionResult = await mgr!.getUserRecognitionResult();
           console.info("SUB_Security_IAM_PassiveRecognition_Api_5002 status: " + result.status);
           expect(result != undefined).assertTrue();
@@ -170,9 +170,9 @@ export default function UserAuthTest() {
       console.info('SUB_Security_IAM_PassiveRecognition_Api_5003 start');
       let isSupport = !canIUse("SystemCapability.Security.DataLossPrevention");
       if (isSupport) {
-        let mgr: userAuth.UserRecognitionMgr | null = userAuth.getUserRecognitionMgr();
-        expect(mgr != null).assertTrue();
         try {
+          let mgr: userAuth.UserRecognitionMgr | null = userAuth.getUserRecognitionMgr();
+          expect(mgr != null).assertTrue();
           mgr!.onUserRecognitionChange((result: userAuth.UserRecognitionResult) =>{
             expect(result != undefined).assertTrue();
             expect(result.status != undefined).assertTrue();
@@ -211,12 +211,12 @@ export default function UserAuthTest() {
       console.info('SUB_Security_IAM_PassiveRecognition_Api_5004 start');
       let isSupport = !canIUse("SystemCapability.Security.DataLossPrevention");
       if (isSupport) {
-        let mgr: userAuth.UserRecognitionMgr | null = userAuth.getUserRecognitionMgr();
-        expect(mgr != null).assertTrue();
-        mgr!.onUserRecognitionChange((result) => {
-          expect(result != undefined).assertTrue();
-        });
         try {
+          let mgr: userAuth.UserRecognitionMgr | null = userAuth.getUserRecognitionMgr();
+          expect(mgr != null).assertTrue();
+          mgr!.onUserRecognitionChange((result) => {
+            expect(result != undefined).assertTrue();
+          });
           mgr!.offUserRecognitionChange((result: userAuth.UserRecognitionResult) => {
             expect(result != undefined).assertTrue();
             expect(result.status != undefined).assertTrue();
@@ -255,12 +255,12 @@ export default function UserAuthTest() {
       console.info('SUB_Security_IAM_PassiveRecognition_Api_5005 start');
       let isSupport = !canIUse("SystemCapability.Security.DataLossPrevention");
       if (isSupport) {
-        let mgr: userAuth.UserRecognitionMgr | null = userAuth.getUserRecognitionMgr();
-        expect(mgr != null).assertTrue();
-        mgr!.onUserRecognitionChange((result) => {
-          expect(result != undefined).assertTrue();
-        });
         try {
+          let mgr: userAuth.UserRecognitionMgr | null = userAuth.getUserRecognitionMgr();
+          expect(mgr != null).assertTrue();
+          mgr!.onUserRecognitionChange((result) => {
+            expect(result != undefined).assertTrue();
+          });
           mgr!.offUserRecognitionChange();
           console.info("SUB_Security_IAM_PassiveRecognition_Api_5005: offUserRecognitionChange success");
         } catch (err) {
@@ -308,9 +308,9 @@ export default function UserAuthTest() {
       console.info('SUB_Security_IAM_PassiveRecognition_Api_5007 start');
       let isSupport = !canIUse("SystemCapability.Security.DataLossPrevention");
       if (isSupport) {
-        let mgr: userAuth.UserRecognitionMgr | null = userAuth.getUserRecognitionMgr();
-        expect(mgr != null).assertTrue();
         try {
+          let mgr: userAuth.UserRecognitionMgr | null = userAuth.getUserRecognitionMgr();
+          expect(mgr != null).assertTrue();
           let ret = mgr!.offUserRecognitionChange();
           expect(ret === null || ret === undefined).assertTrue();
           console.info("SUB_Security_IAM_PassiveRecognition_Api_5007: offUserRecognitionChange returns null");

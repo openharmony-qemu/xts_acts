@@ -111,7 +111,7 @@ export default function UserAuthTest() {
           hilog.info(domain, tag, format, "SUB_Security_IAM_PassiveRecognition_Api_static_5001: getUserRecognitionMgr success");
         } catch (err) {
           hilog.info(domain, tag, format, "SUB_Security_IAM_PassiveRecognition_Api_static_5001: getUserRecognitionMgr failed, err.code " + err.code + ", err.message " + err.message);
-          expect(false).assertTrue();
+          expect(err.code).assertEqual(12500002);
         }
       } else {
         try {
@@ -137,9 +137,9 @@ export default function UserAuthTest() {
       hilog.info(domain, tag, format, 'SUB_Security_IAM_PassiveRecognition_Api_static_5002 start');
       let isSupport: boolean = !canIUse("SystemCapability.Security.DataLossPrevention");
       if (isSupport) {
-        let mgr: userAuth.UserRecognitionMgr | null = userAuth.getUserRecognitionMgr();
-        expect(mgr != null).assertTrue();
         try {
+          let mgr: userAuth.UserRecognitionMgr | null = userAuth.getUserRecognitionMgr();
+          expect(mgr != null).assertTrue();
           let result: userAuth.UserRecognitionResult = await mgr!.getUserRecognitionResult();
           hilog.info(domain, tag, format, "SUB_Security_IAM_PassiveRecognition_Api_static_5002 status: " + result.status);
           expect(result != undefined).assertTrue();
@@ -148,9 +148,9 @@ export default function UserAuthTest() {
           expect(result.userInfo != undefined).assertTrue();
           expect(result.authTrustLevel != undefined).assertTrue();
         } catch (err) {
-          hilog.info(domain, tag, format, "SUB_Security_IAM_PassiveRecognition_Api_static_5001: getUserRecognitionMgr failed, err.code " + err.code + ", err.message " + err.message);
+          hilog.info(domain, tag, format, "SUB_Security_IAM_PassiveRecognition_Api_static_5002: getUserRecognitionMgr failed, err.code " + err.code + ", err.message " + err.message);
           if (err.code === 12500002) {
-            hilog.info(domain, tag, format, "SUB_Security_IAM_PassiveRecognition_Api_static_5001 expected error code 12500002");
+            hilog.info(domain, tag, format, "SUB_Security_IAM_PassiveRecognition_Api_static_5002 expected error code 12500002");
             expect(err.code).assertEqual(12500002);
           } else {
             expect(false).assertTrue();
@@ -185,9 +185,9 @@ export default function UserAuthTest() {
       hilog.info(domain, tag, format, 'SUB_Security_IAM_PassiveRecognition_Api_static_5003 start');
       let isSupport: boolean = !canIUse("SystemCapability.Security.DataLossPrevention");
       if (isSupport) {
-        let mgr: userAuth.UserRecognitionMgr | null = userAuth.getUserRecognitionMgr();
-        expect(mgr != null).assertTrue();
         try {
+          let mgr: userAuth.UserRecognitionMgr | null = userAuth.getUserRecognitionMgr();
+          expect(mgr != null).assertTrue();
           mgr!.onUserRecognitionChange((result: userAuth.UserRecognitionResult) => {
             expect(result != undefined).assertTrue();
             expect(result.status != undefined).assertTrue();
@@ -228,12 +228,12 @@ export default function UserAuthTest() {
       hilog.info(domain, tag, format, 'SUB_Security_IAM_PassiveRecognition_Api_static_5004 start');
       let isSupport: boolean = !canIUse("SystemCapability.Security.DataLossPrevention");
       if (isSupport) {
-        let mgr: userAuth.UserRecognitionMgr | null = userAuth.getUserRecognitionMgr();
-        expect(mgr != null).assertTrue();
-        mgr!.onUserRecognitionChange((result: userAuth.UserRecognitionResult) => {
-          expect(result != undefined).assertTrue();
-        });
         try {
+          let mgr: userAuth.UserRecognitionMgr | null = userAuth.getUserRecognitionMgr();
+          expect(mgr != null).assertTrue();
+          mgr!.onUserRecognitionChange((result: userAuth.UserRecognitionResult) => {
+            expect(result != undefined).assertTrue();
+          });
           mgr!.offUserRecognitionChange((result: userAuth.UserRecognitionResult) => {
             expect(result != undefined).assertTrue();
             expect(result.status != undefined).assertTrue();
@@ -274,12 +274,12 @@ export default function UserAuthTest() {
       hilog.info(domain, tag, format, 'SUB_Security_IAM_PassiveRecognition_Api_static_5005 start');
       let isSupport: boolean = !canIUse("SystemCapability.Security.DataLossPrevention");
       if (isSupport) {
-        let mgr: userAuth.UserRecognitionMgr | null = userAuth.getUserRecognitionMgr();
-        expect(mgr != null).assertTrue();
-        mgr!.onUserRecognitionChange((result: userAuth.UserRecognitionResult) => {
-          expect(result != undefined).assertTrue();
-        });
         try {
+          let mgr: userAuth.UserRecognitionMgr | null = userAuth.getUserRecognitionMgr();
+          expect(mgr != null).assertTrue();
+          mgr!.onUserRecognitionChange((result: userAuth.UserRecognitionResult) => {
+            expect(result != undefined).assertTrue();
+          });
           mgr!.offUserRecognitionChange();
           hilog.info(domain, tag, format, "SUB_Security_IAM_PassiveRecognition_Api_static_5005: offUserRecognitionChange success");
         } catch (err) {
@@ -330,9 +330,9 @@ export default function UserAuthTest() {
       hilog.info(domain, tag, format, 'SUB_Security_IAM_PassiveRecognition_Api_static_5007 start');
       let isSupport: boolean = !canIUse("SystemCapability.Security.DataLossPrevention");
       if (isSupport) {
-        let mgr: userAuth.UserRecognitionMgr | null = userAuth.getUserRecognitionMgr();
-        expect(mgr != null).assertTrue();
         try {
+          let mgr: userAuth.UserRecognitionMgr | null = userAuth.getUserRecognitionMgr();
+          expect(mgr != null).assertTrue();
           let ret: void = mgr!.offUserRecognitionChange();
           expect(ret === null || ret === undefined).assertTrue();
           hilog.info(domain, tag, format, "SUB_Security_IAM_PassiveRecognition_Api_static_5007: offUserRecognitionChange returns null");
