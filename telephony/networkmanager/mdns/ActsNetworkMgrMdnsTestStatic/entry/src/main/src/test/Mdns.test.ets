@@ -2858,7 +2858,13 @@ export default function mdnsTest(): void {
           let discoveryService = mdns.createDiscoveryService(context!,  serviceType);
           discoveryService.onDiscoveryStart((data: mdns.DiscoveryEventInfo) => {
             hilog.info(domain, tag, `${caseName} result: ${JSON.stringify(data)}`);
-            ExpectTrue(data !== null, caseName);
+            ExpectTrue(data !== undefined, caseName);
+            ExpectTrue(data.serviceInfo !== undefined, caseName);
+            ExpectTrue(data.serviceInfo.serviceType !== undefined, caseName);
+            ExpectTrue(typeof data.serviceInfo.serviceType === 'string', caseName);
+            ExpectTrue(data.serviceInfo.serviceType === serviceType, caseName);
+            ExpectTrue(data.serviceInfo.serviceName !== undefined, caseName);
+            ExpectTrue(typeof data.serviceInfo.serviceName === 'string', caseName);
             done();
           });
           discoveryService.startSearchingMDNS();
@@ -2891,7 +2897,13 @@ export default function mdnsTest(): void {
         let discoveryService = mdns.createDiscoveryService(context!,  serviceType);
         discoveryService.onDiscoveryStart((data: mdns.DiscoveryEventInfo) => {
           hilog.info(domain, tag, `${caseName} result: ${JSON.stringify(data)}`);
-          ExpectTrue(data !== null, caseName);
+          ExpectTrue(data !== undefined, caseName);
+          ExpectTrue(data.serviceInfo !== undefined, caseName);
+          ExpectTrue(data.serviceInfo.serviceType !== undefined, caseName);
+          ExpectTrue(typeof data.serviceInfo.serviceType === 'string', caseName);
+          ExpectTrue(data.serviceInfo.serviceType === serviceType, caseName);
+          ExpectTrue(data.serviceInfo.serviceName !== undefined, caseName);
+          ExpectTrue(typeof data.serviceInfo.serviceName === 'string', caseName);
           done();
         });
         discoveryService.startSearchingMDNS();
@@ -2919,7 +2931,13 @@ export default function mdnsTest(): void {
         hilog.info(domain, tag, `${caseName} discoveryService: ${JSON.stringify(discoveryService)}`);
         discoveryService.onDiscoveryStart((data: mdns.DiscoveryEventInfo) => {
             hilog.info(domain, tag, `${caseName} result: ${JSON.stringify(data)}`);
-            ExpectTrue(data !== null, caseName);
+            ExpectTrue(data !== undefined, caseName);
+            ExpectTrue(data.serviceInfo !== undefined, caseName);
+            ExpectTrue(data.serviceInfo.serviceType !== undefined, caseName);
+            ExpectTrue(typeof data.serviceInfo.serviceType === 'string', caseName);
+            ExpectTrue(data.serviceInfo.serviceType === serviceType, caseName);
+            ExpectTrue(data.serviceInfo.serviceName !== undefined, caseName);
+            ExpectTrue(typeof data.serviceInfo.serviceName === 'string', caseName);
             done();
         });
         discoveryService.startSearchingMDNS();
@@ -2948,7 +2966,13 @@ export default function mdnsTest(): void {
         discoveryService.startSearchingMDNS();
         discoveryService.onDiscoveryStop((data: mdns.DiscoveryEventInfo) => {
           hilog.info(domain, tag, `${caseName} start: ${JSON.stringify(data)}`);
-          ExpectTrue(data !== null, caseName);
+          ExpectTrue(data !== undefined, caseName);
+          ExpectTrue(data.serviceInfo !== undefined, caseName);
+          ExpectTrue(data.serviceInfo.serviceType !== undefined, caseName);
+          ExpectTrue(typeof data.serviceInfo.serviceType === 'string', caseName);
+          ExpectTrue(data.serviceInfo.serviceType === serviceType, caseName);
+          ExpectTrue(data.serviceInfo.serviceName !== undefined, caseName);
+          ExpectTrue(typeof data.serviceInfo.serviceName === 'string', caseName);
           done();
         });
         discoveryService.stopSearchingMDNS();
@@ -3155,6 +3179,33 @@ export default function mdnsTest(): void {
     });
 
     /**
+     * @tc.name   testNetworkMgrCreateDiscoveryService_static_0800
+     * @tc.number SUB_NetworkMgr_Mdns_CreateDiscoveryService_0800
+     * @tc.desc   Verify the properties and methods of the returned DiscoveryService object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrCreateDiscoveryService_static_0800",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 ,async (done: () => void): Promise<void> => {
+      const caseName: string = "testNetworkMgrCreateDiscoveryService_static_0800";
+      hilog.info(domain, tag, `${caseName} test start `);
+      try {
+        let serviceType = "_print._tcp";
+        let discoveryService = mdns.createDiscoveryService(context!,  serviceType);
+        hilog.info(domain, tag, `${caseName} result :${JSON.stringify(discoveryService)}`);
+        ExpectTrue(discoveryService !== undefined, caseName);
+        ExpectTrue(discoveryService !== null, caseName);
+        ExpectTrue(typeof discoveryService === 'object', caseName);
+        done();
+      } catch (err) {
+        hilog.info(domain, tag, `${caseName}: err is catch ${err}`);
+        ExpectTrue(false, caseName);
+        done();
+      }
+      hilog.info(domain, tag, `${caseName} test end `);
+    });
+
+    /**
      * @tc.name   testNetworkMgrRemoveLocalService_static_0700
      * @tc.number SUB_NetworkMgr_Mdns_RemoveLocalService_0700
      * @tc.desc   Remove an mDNS service callBack
@@ -3212,7 +3263,13 @@ export default function mdnsTest(): void {
         discoveryService.onDiscoveryStart((data: mdns.DiscoveryEventInfo) => {
           hilog.info(domain, tag, `${caseName} result: ${JSON.stringify(data)}`);
           hilog.info(domain, tag, `${caseName} serviceInfo: ${JSON.stringify(data.serviceInfo)}`);
-          ExpectTrue(data !== null, caseName);
+          ExpectTrue(data !== undefined, caseName);
+          ExpectTrue(data.serviceInfo !== undefined, caseName);
+          ExpectTrue(data.serviceInfo.serviceType !== undefined, caseName);
+          ExpectTrue(typeof data.serviceInfo.serviceType === 'string', caseName);
+          ExpectTrue(data.serviceInfo.serviceType === serviceType, caseName);
+          ExpectTrue(data.serviceInfo.serviceName !== undefined, caseName);
+          ExpectTrue(typeof data.serviceInfo.serviceName === 'string', caseName);
           done();
         });
         discoveryService.startSearchingMDNS();
