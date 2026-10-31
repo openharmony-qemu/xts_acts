@@ -1,6 +1,7 @@
+import { BusinessError } from '@kit.BasicServicesKit';
 import { afterEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { ArkTSUtils, collections, worker, taskpool, ErrorEvent, MessageEvents } from '@kit.ArkTS';
-import { typeLoad95, typeStore80, typeStore85, typeStore88, typeStore95 } from './atomics';
+import { ATOMIC_INDEX_ERROR, typeLoad95, typeStore80, typeStore85, typeStore88, typeStore95 } from './atomics';
 import { sleep } from './utils';
 
 
@@ -220,11 +221,11 @@ export default function atomicsStoreTest() {
         try {
           return ArkTSUtils.Atomics.store(arr, idx, val);
         } catch (err) {
-          return (err as Error).name;
+          return (err as BusinessError).code;
         }
       }
       expect(safeStore(ta, 0, 80)).assertEqual(80);
-      expect(safeStore(ta, 1, 90)).assertEqual('RangeError');
+      expect(safeStore(ta, 1, 90)).assertEqual(ATOMIC_INDEX_ERROR);
       done();
     });
     /**
@@ -371,7 +372,7 @@ export default function atomicsStoreTest() {
           try {
             return ArkTSUtils.Atomics.store(arr, idx, val);
           } catch (err) {
-            if (retryCount < maxRetries && (err as Error).name === 'RangeError') {
+            if (retryCount < maxRetries && (err as BusinessError).code === ATOMIC_INDEX_ERROR) {
               retryCount++;
               await new Promise<void>(resolve => setTimeout(resolve, 2));
               return asyncStoreWithRetry(arr, 0, val, maxRetries); // Retry with valid index
@@ -1020,14 +1021,14 @@ export default function atomicsStoreTest() {
     it('testArkTSUtilsAtomicsStore0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const sab = new collections.ArrayBuffer(4);
       const ta = new collections.Int32Array(sab);
-      let errorLog: string[] = [];
+      const errorLog: number[] = [];
 
       const storeWithErrorLog = async (arr: collections.Int32Array, idx: number, val: number) => {
         try {
           return ArkTSUtils.Atomics.store(arr, idx, val);
         } catch (err) {
           await new Promise<void>(resolve => setTimeout(resolve, 2));
-          errorLog.push((err as Error).name);
+          errorLog.push((err as BusinessError).code);
           throw err as Error;
         }
       }
@@ -1037,7 +1038,7 @@ export default function atomicsStoreTest() {
       } catch (err) {
         // Expected error
       }
-      expect(errorLog).assertDeepEquals(['RangeError']);
+      expect(errorLog).assertDeepEquals([ATOMIC_INDEX_ERROR]);
       done();
     });
     /**

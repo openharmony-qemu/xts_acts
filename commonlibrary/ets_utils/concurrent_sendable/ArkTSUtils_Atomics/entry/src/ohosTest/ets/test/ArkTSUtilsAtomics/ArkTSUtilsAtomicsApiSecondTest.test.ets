@@ -13,9 +13,11 @@
  * limitations under the License.
  */
 
+import { BusinessError } from '@kit.BasicServicesKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { ArkTSUtils, collections, worker, taskpool, ErrorEvent, MessageEvents } from '@kit.ArkTS';
 import { sleep } from '../../testability/pages/TestUtils';
+import { ATOMIC_INDEX_ERROR, ATOMIC_PARAMETER_ERROR } from './atomics';
 
 export default function AtomicsAPISecondTest() {
   describe('AtomicsAPISecondTest', () => {
@@ -122,14 +124,14 @@ export default function AtomicsAPISecondTest() {
           ArkTSUtils.Atomics.notify(typedArray, typedArray.length);
           expect(false).assertTrue();
         } catch (error) {
-          expect(error instanceof RangeError).assertTrue();
+          expect((error as BusinessError).code).assertEqual(ATOMIC_INDEX_ERROR);
         }
         
         try {
           ArkTSUtils.Atomics.notify(typedArray, typedArray.length + 1);
           expect(false).assertTrue();
         } catch (error) {
-          expect(error instanceof RangeError).assertTrue();
+          expect((error as BusinessError).code).assertEqual(ATOMIC_INDEX_ERROR);
         }
         
       } catch (error) {
@@ -255,7 +257,7 @@ export default function AtomicsAPISecondTest() {
     /**
      * @tc.name   testArkTSUtilsAtomicsApiSecond0006
      * @tc.number SUB_ARKTSUTILS_ATOMICS_API_SECOND_0600
-     * @tc.desc   Test ArkTSUtils.Atomics.isLockFree method with null and undefined values which should return false
+     * @tc.desc   Verify isLockFree rejects null and undefined with BusinessError code 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -268,8 +270,16 @@ export default function AtomicsAPISecondTest() {
         const result0: boolean = ArkTSUtils.Atomics.isLockFree(0);
         expect(result0).assertFalse();
         const nullValues: (number | null | undefined)[] = [null, undefined];
-        expect(ArkTSUtils.Atomics.isLockFree(nullValues[0] as number)).assertFalse();
-        expect(ArkTSUtils.Atomics.isLockFree(nullValues[1] as number)).assertFalse();
+        for (const value of nullValues) {
+          let didThrow: boolean = false;
+          try {
+            ArkTSUtils.Atomics.isLockFree(value as number);
+          } catch (error) {
+            didThrow = true;
+            expect((error as BusinessError).code).assertEqual(ATOMIC_PARAMETER_ERROR);
+          }
+          expect(didThrow).assertTrue();
+        }
         
       } catch (error) {
         console.error(`${caseName} Test failed: ${error}`);
