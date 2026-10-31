@@ -22,7 +22,7 @@ interface IActionButton {
 }
 
 @Builder
-function ActionButton(ia: IActionButton): void {
+function actionButton(ia: IActionButton): void {
   Button(ia.label)
     .id('builder0060')
     .height('5%')
@@ -39,7 +39,7 @@ struct Builder0060 {
 
   build(): void {
     Column() {
-      ActionButton({
+      actionButton({
         onClick: () => {
           console.info('Button clicked');
           this.logText = 'Button clicked';
