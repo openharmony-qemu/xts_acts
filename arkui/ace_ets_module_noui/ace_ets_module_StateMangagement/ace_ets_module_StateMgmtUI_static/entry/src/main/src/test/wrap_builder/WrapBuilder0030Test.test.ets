@@ -68,26 +68,5 @@ export default function WrapBuilder0030Test() {
       console.info('[SUB_ARKUI_STATUSMANAGER_WRAPI_0100] END');
       done();
     });
-
-    /**
-     * @tc.name   SUB_ARKUI_STATUSMANAGER_WRAPI_0200
-     * @tc.number SUB_ARKUI_STATUSMANAGER_WRAPI_0200
-     * @tc.desc   Verify MutableBuilder with module import displays correct text
-     * @tc.type   Function
-     * @tc.size   MediumTest
-     * @tc.level  Level0
-     */
-    it('SUB_ARKUI_STATUSMANAGER_WRAPI_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[SUB_ARKUI_STATUSMANAGER_WRAPI_0200] START');
-      await CommonFunc.sleep(2000);
-      let strJson: string = inspector.getInspectorByKey('wrapBuilder0030_text2');
-      await CommonFunc.sleep(1000);
-      let obj = JSON.parseJsonElement(strJson).getElement('$attrs');
-      let content = obj.getString('content');
-      console.info("[SUB_ARKUI_STATUSMANAGER_WRAPI_0200] content is: " + content);
-      expect(content).assertEqual('MutableBuilder');
-      console.info('[SUB_ARKUI_STATUSMANAGER_WRAPI_0200] END');
-      done();
-    });
   })
 }

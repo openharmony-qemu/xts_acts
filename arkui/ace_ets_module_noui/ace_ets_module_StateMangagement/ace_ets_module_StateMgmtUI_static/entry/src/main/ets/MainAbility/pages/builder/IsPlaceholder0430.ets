@@ -78,7 +78,6 @@ struct ChildIsPlaceholder0430 {
 @ComponentV2
 struct IsPlaceholder0430 {
   @Local tmp: string = 'HelloBuilder'
-  @Local mutableBuilderVar: MutableBuilder<@Builder () => void> = mutableBuilder(placeholderMutableBuilder0430A)
 
   build(): void {
     Column() {

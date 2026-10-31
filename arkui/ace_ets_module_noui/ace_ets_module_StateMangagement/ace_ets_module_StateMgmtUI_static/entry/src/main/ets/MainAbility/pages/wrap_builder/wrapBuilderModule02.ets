@@ -16,7 +16,7 @@
 import { Builder, Text } from '@ohos.arkui.component';
 
 @Builder
-export function dynamicBuilder(value: string): void {
+export function staticBuilder(value: string): void {
   Text(value)
     .id('wrapBuilder0040_text2')
     .height('5%')

@@ -14,15 +14,13 @@
  * limitations under the License.
  */
 import {
-  Column, Component, CustomBuilderT, Entry, FlexAlign, MutableBuilder,
-  mutableBuilder, State, WrappedBuilder, wrapBuilder
+  Column, Component, CustomBuilderT, Entry, FlexAlign, State, WrappedBuilder, wrapBuilder
 } from '@kit.ArkUI';
-import { namespaceBuilder, mutableSourceBuilder } from './wrapBuilderModule01';
+import { namespaceBuilder } from './wrapBuilderModule01';
 
 const namespaceWrapped: WrappedBuilder<CustomBuilderT<string>> =
   wrapBuilder<CustomBuilderT<string>>(namespaceBuilder);
-const mutableWrapped: MutableBuilder<CustomBuilderT<string>> =
-  mutableBuilder<CustomBuilderT<string>>(mutableSourceBuilder);
+
 
 @Entry
 @Component
@@ -32,7 +30,6 @@ struct WrapBuilder0030 {
   build(): void {
     Column() {
       namespaceWrapped.builder('WrappedBuilder');
-      mutableWrapped.builder('MutableBuilder');
     }
     .height('100%')
     .width('100%')
