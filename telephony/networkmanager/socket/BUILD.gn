@@ -22,6 +22,9 @@ group("socket") {
     "socketnoptest:ActsNetworkMgrSocketNopTest",
     "ActsNetManagerSocketEtsTestStatic:ActsNetManagerSocketEtsStaticTest",
     "ActsNetworkMgrSocketHasNetTestStatic:ActsNetworkMgrSocketHasNetStaticTest",
+    "ActsNetworkMgrSocketTestStatic:ActsNetworkMgrSocketStaticTest",
+    "ActsSocketNoPApiTestStatic:ActsSocketNoPApiStaticTest",
+    "ActsTLSSupportSendArrayBufferTestStatic:ActsTLSSupportSendArrayBufferStaticTest",
     ]
   }
 }
