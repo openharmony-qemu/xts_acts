@@ -391,7 +391,7 @@ export default function SendableBuiltinsUseSendableObjectMethodsTest() {
           expect(keys.includes('x')).assertTrue()
           expect(keys.includes('y')).assertTrue()
         } catch (e) {
-          expect(true).assertTrue()
+          expect().assertFail()
         }
         done()
       })

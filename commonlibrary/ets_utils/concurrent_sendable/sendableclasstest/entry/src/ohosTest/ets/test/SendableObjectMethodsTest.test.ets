@@ -624,7 +624,7 @@ export default function SendableObjectMethodsTest() {
         expect(numKeys.length).assertEqual(0)
         const boolNames: string[] = objectGetOwnPropertyNames(true as Object)
         expect(boolNames.length).assertEqual(0)
-      } catch (e) { expect(true).assertTrue() }
+      } catch (e) { expect().assertFail() }
       done()
     })
 
