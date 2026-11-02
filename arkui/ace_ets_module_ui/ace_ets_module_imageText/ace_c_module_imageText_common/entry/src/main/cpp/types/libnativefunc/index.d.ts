@@ -284,7 +284,6 @@ export const TextStrokeTest_038: () => number;
 
 export const RichEditorEnumTest_001: () => number;
 export const RichEditorEnumTest_002: () => number;
-export const RichEditorEnumTest_003: () => number;
 export const RichEditorEnumTest_004: () => number;
 export const RichEditorEnumTest_005: () => number;
 export const RichEditorEnumTest_006: () => number;

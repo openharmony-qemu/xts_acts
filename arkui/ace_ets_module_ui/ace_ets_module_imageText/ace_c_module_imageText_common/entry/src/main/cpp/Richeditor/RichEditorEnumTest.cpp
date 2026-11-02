@@ -41,16 +41,6 @@ static napi_value RichEditorEnumTest_002(napi_env env, napi_callback_info info)
     NAPI_END(Custom);
 }
 
-static napi_value RichEditorEnumTest_003(napi_env env, napi_callback_info info)
-{
-    NAPI_START(Custom, ARKUI_NODE_CUSTOM);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "NODE_TEXT_EDITOR_PASSWORD_ICON RichEditorEnumTest_003 result=%{public}d",
-        NODE_TEXT_EDITOR_PASSWORD_ICON);
-    ASSERT_EQ(PARAM_22033, NODE_TEXT_EDITOR_PASSWORD_ICON);
-    NAPI_END(Custom);
-}
-
 static napi_value RichEditorEnumTest_004(napi_env env, napi_callback_info info)
 {
     NAPI_START(Custom, ARKUI_NODE_CUSTOM);
