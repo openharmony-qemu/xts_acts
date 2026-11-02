@@ -73,7 +73,7 @@ export default function abilityTest() {
           console.log("ACTS_getAbilityInfo_0500_entry_hapModuleInfo" + hapModuleInfo.name)
           expect(abilityInfo.name).assertEqual("com.example.staticquerytesttwo.MainAbility");
           expect(applicationInfo.name).assertEqual("com.example.staticquerytesttwo");
-          expect(hapModuleInfo.name).assertEqual("entry");
+          expect(hapModuleInfo.name).assertEqual("com.example.staticquerytesttwo");
         } else if (data.event == 'MainAbility_Start_CommonEvent_multiple_hap_entry'){
           FeatureHap = true;
           console.log("ACTS_getAbilityInfo_0500====> MainAbility_Start_CommonEvent_multi_hap_feature")
