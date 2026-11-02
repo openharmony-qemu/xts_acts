@@ -22,6 +22,7 @@ import graphicImagePixelMapAPI2601 from './GraphicImagePixelMapAPI2601.test';
 import graphicImagePixelMapAPI2602 from './GraphicImagePixelMapAPI2602.test';
 import graphicImagePixelMapAPI2603 from './GraphicImagePixelMapAPI2603.test';
 import GraphicImagePixelMapErrorCode from './GraphicImagePixelMapErrorCode.test';
+import GraphicImageWritePixelsFromAreaAPI2610 from './GraphicImageWritePixelsFromAreaAPI2610.test';
 export default function testsuite() {
   graphicImagePixelMap();
   graphicImagePixelMap2();
@@ -32,4 +33,5 @@ export default function testsuite() {
   graphicImagePixelMapAPI2602();
   graphicImagePixelMapAPI2603();
   GraphicImagePixelMapErrorCode();
+  GraphicImageWritePixelsFromAreaAPI2610();
 }
