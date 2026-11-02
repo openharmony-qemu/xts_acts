@@ -1,6 +1,7 @@
 'use static';
+
 /**
-* Copyright (c) 2025 Huawei Device Co., Ltd.
+* Copyright (c) 2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the 'License');
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -22,17 +23,18 @@ import { Chip,AccessibilitySelectedType,ChipSize,PrefixIconOptions } from '@ohos
 
 @Entry
 @Component
-struct accessibilitySelectedTypeTest {
+struct AccessibilitySelectedTypeTest {
   @State accessibilitySelectedType: AccessibilitySelectedType = AccessibilitySelectedType.CLICKED
 
   build() {
-    Column({ space: 10 } as ColumnOptions) {
-      Text('' + this.accessibilitySelectedType).id('text')
+    Column({ space: 3 } as ColumnOptions) {
+      Text('' + this.accessibilitySelectedType).id('text').height(15)
       Button('change accessibilitySelectedType')
         .id('btn')
         .onClick((e:ClickEvent)=>{
           this.accessibilitySelectedType = (( this.accessibilitySelectedType + 1 )% 3) as AccessibilitySelectedType
         })
+        .height(15)
       Chip({
         prefixIcon: {
           src: $r('app.media.icon'),
