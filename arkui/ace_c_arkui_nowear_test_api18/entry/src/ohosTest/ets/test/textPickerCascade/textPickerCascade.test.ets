@@ -30,7 +30,7 @@ export default function TextPickerCascadeTest(){
 
     /**
      * @tc.name   TextPickerCascadeTest_a
-     * @tc.number TextPickerCascadeTest_a
+     * @tc.number SUB_ARKUI_TEXTPICKER_TEXTPICKERRANGECONTENTARRAY_CREATE_NORMAL_0001
      * @tc.desc   TextPickerCascadeTest_a
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -46,7 +46,7 @@ export default function TextPickerCascadeTest(){
 
     /**
      * @tc.name   TextPickerCascadeTest_a1
-     * @tc.number TextPickerCascadeTest_a1
+     * @tc.number SUB_ARKUI_TEXTPICKER_TEXTPICKERRANGECONTENTARRAY_CREATE_INVALID_0001
      * @tc.desc   TextPickerCascadeTest_a1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -62,7 +62,7 @@ export default function TextPickerCascadeTest(){
 
     /**
      * @tc.name   TextPickerCascadeTest_a2
-     * @tc.number TextPickerCascadeTest_a2
+     * @tc.number SUB_ARKUI_TEXTPICKER_TEXTPICKERRANGECONTENTARRAY_CREATE_INVALID_0002
      * @tc.desc   TextPickerCascadeTest_a2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -77,7 +77,7 @@ export default function TextPickerCascadeTest(){
 
     /**
      * @tc.name   TextPickerCascadeTest_a3
-     * @tc.number TextPickerCascadeTest_a3
+     * @tc.number SUB_ARKUI_TEXTPICKER_TEXTPICKERRANGECONTENTARRAY_CREATE_BOUNDARY_0001
      * @tc.desc   OH_ArkUI_TextPickerRangeContentArray_Create boundary value length=0 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -92,7 +92,7 @@ export default function TextPickerCascadeTest(){
 
     /**
      * @tc.name   TextPickerCascadeTest_a4
-     * @tc.number TextPickerCascadeTest_a4
+     * @tc.number SUB_ARKUI_TEXTPICKER_TEXTPICKERRANGECONTENTARRAY_CREATE_BOUNDARY_0002
      * @tc.desc   OH_ArkUI_TextPickerRangeContentArray_Create boundary value length=1 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -107,7 +107,7 @@ export default function TextPickerCascadeTest(){
 
     /**
      * @tc.name   TextPickerCascadeTest_a5
-     * @tc.number TextPickerCascadeTest_a5
+     * @tc.number SUB_ARKUI_TEXTPICKER_TEXTPICKERRANGECONTENTARRAY_CREATE_BOUNDARY_0003
      * @tc.desc   OH_ArkUI_TextPickerRangeContentArray_Create boundary value length=-1 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -122,7 +122,7 @@ export default function TextPickerCascadeTest(){
 
     /**
      * @tc.name   TextPickerCascadeTest_a7
-     * @tc.number TextPickerCascadeTest_a7
+     * @tc.number SUB_ARKUI_TEXTPICKER_TEXTPICKERRANGECONTENTARRAY_CREATE_BOUNDARY_0004
      * @tc.desc   OH_ArkUI_TextPickerRangeContentArray_Create boundary value length=INT32_MIN test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -137,7 +137,7 @@ export default function TextPickerCascadeTest(){
 
     /**
      * @tc.name   TextPickerCascadeTest_a8
-     * @tc.number TextPickerCascadeTest_a8
+     * @tc.number SUB_ARKUI_TEXTPICKER_TEXTPICKERRANGECONTENTARRAY_CREATE_NORMAL_0002
      * @tc.desc   OH_ArkUI_TextPickerRangeContentArray_Create boundary value length=100 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -152,7 +152,7 @@ export default function TextPickerCascadeTest(){
 
     /**
      * @tc.name   TextPickerCascadeTest_a9
-     * @tc.number TextPickerCascadeTest_a9
+     * @tc.number SUB_ARKUI_TEXTPICKER_TEXTPICKERRANGECONTENTARRAY_CREATE_NORMAL_0003
      * @tc.desc   OH_ArkUI_TextPickerRangeContentArray_Create boundary value length=1000000 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -167,7 +167,7 @@ export default function TextPickerCascadeTest(){
 
     /**
      * @tc.name   TextPickerCascadeTest_a10
-     * @tc.number TextPickerCascadeTest_a10
+     * @tc.number SUB_ARKUI_TEXTPICKER_TEXTPICKERRANGECONTENTARRAY_CREATE_BOUNDARY_0005
      * @tc.desc   OH_ArkUI_TextPickerRangeContentArray_Create boundary value length=10000 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -182,7 +182,7 @@ export default function TextPickerCascadeTest(){
 
     /**
      * @tc.name   TextPickerCascadeTest_a11
-     * @tc.number TextPickerCascadeTest_a11
+     * @tc.number SUB_ARKUI_TEXTPICKER_TEXTPICKERRANGECONTENTARRAY_CREATE_BOUNDARY_0006
      * @tc.desc   OH_ArkUI_TextPickerRangeContentArray_Create boundary value length=10001 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -197,7 +197,7 @@ export default function TextPickerCascadeTest(){
 
     /**
      * @tc.name   TextPickerCascadeTest_b
-     * @tc.number TextPickerCascadeTest_b
+     * @tc.number SUB_ARKUI_TEXTPICKER_TEXTPICKERRANGECONTENTARRAY_SETICONATINDEX_NORMAL_0001
      * @tc.desc   TextPickerCascadeTest_b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -213,7 +213,7 @@ export default function TextPickerCascadeTest(){
 
     /**
      * @tc.name   TextPickerCascadeTest_b1
-     * @tc.number TextPickerCascadeTest_b1
+     * @tc.number SUB_ARKUI_TEXTPICKER_TEXTPICKERRANGECONTENTARRAY_SETICONATINDEX_INVALID_0001
      * @tc.desc   TextPickerCascadeTest_b1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -229,7 +229,7 @@ export default function TextPickerCascadeTest(){
 
       /**
      * @tc.name   TextPickerCascadeTest_b2
-     * @tc.number TextPickerCascadeTest_b2
+     * @tc.number SUB_ARKUI_TEXTPICKER_TEXTPICKERRANGECONTENTARRAY_SETICONATINDEX_NORMAL_0002
      * @tc.desc   TextPickerCascadeTest_b2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -244,7 +244,7 @@ export default function TextPickerCascadeTest(){
 
     /**
      * @tc.name   TextPickerCascadeTest_c
-     * @tc.number TextPickerCascadeTest_c
+     * @tc.number SUB_ARKUI_TEXTPICKER_TEXTPICKERRANGECONTENTARRAY_SETTEXTATINDEX_NORMAL_0001
      * @tc.desc   TextPickerCascadeTest_c
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -260,7 +260,7 @@ export default function TextPickerCascadeTest(){
 
     /**
      * @tc.name   TextPickerCascadeTest_c1
-     * @tc.number TextPickerCascadeTest_c1
+     * @tc.number SUB_ARKUI_TEXTPICKER_TEXTPICKERRANGECONTENTARRAY_SETTEXTATINDEX_INVALID_0001
      * @tc.desc   TextPickerCascadeTest_c1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -276,7 +276,7 @@ export default function TextPickerCascadeTest(){
 
     /**
      * @tc.name   TextPickerCascadeTest_c2
-     * @tc.number TextPickerCascadeTest_c2
+     * @tc.number SUB_ARKUI_TEXTPICKER_TEXTPICKERRANGECONTENTARRAY_SETTEXTATINDEX_NORMAL_0002
      * @tc.desc   TextPickerCascadeTest_c2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -291,7 +291,7 @@ export default function TextPickerCascadeTest(){
 
     /**
      * @tc.name   TextPickerCascadeTest_d
-     * @tc.number TextPickerCascadeTest_d
+     * @tc.number SUB_ARKUI_TEXTPICKER_TEXTCASCADEPICKERRANGECONTENTARRAY_CREATE_NORMAL_0001
      * @tc.desc   TextPickerCascadeTest_d
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -307,7 +307,7 @@ export default function TextPickerCascadeTest(){
 
     /**
      * @tc.name   TextPickerCascadeTest_d1
-     * @tc.number TextPickerCascadeTest_d1
+     * @tc.number SUB_ARKUI_TEXTPICKER_TEXTCASCADEPICKERRANGECONTENTARRAY_CREATE_INVALID_0001
      * @tc.desc   TextPickerCascadeTest_d1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -323,7 +323,7 @@ export default function TextPickerCascadeTest(){
 
     /**
      * @tc.name   TextPickerCascadeTest_d2
-     * @tc.number TextPickerCascadeTest_d2
+     * @tc.number SUB_ARKUI_TEXTPICKER_TEXTCASCADEPICKERRANGECONTENTARRAY_CREATE_INVALID_0002
      * @tc.desc   TextPickerCascadeTest_d2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -338,7 +338,7 @@ export default function TextPickerCascadeTest(){
 
     /**
      * @tc.name   TextPickerCascadeTest_e
-     * @tc.number TextPickerCascadeTest_e
+     * @tc.number SUB_ARKUI_TEXTPICKER_TEXTCASCADEPICKERRANGECONTENTARRAY_SETTEXTATINDEX_NORMAL_0001
      * @tc.desc   TextPickerCascadeTest_e
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -354,7 +354,7 @@ export default function TextPickerCascadeTest(){
 
     /**
      * @tc.name   TextPickerCascadeTest_e1
-     * @tc.number TextPickerCascadeTest_e1
+     * @tc.number SUB_ARKUI_TEXTPICKER_TEXTCASCADEPICKERRANGECONTENTARRAY_SETTEXTATINDEX_INVALID_0001
      * @tc.desc   TextPickerCascadeTest_e1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -370,7 +370,7 @@ export default function TextPickerCascadeTest(){
 
     /**
      * @tc.name   TextPickerCascadeTest_e2
-     * @tc.number TextPickerCascadeTest_e2
+     * @tc.number SUB_ARKUI_TEXTPICKER_TEXTCASCADEPICKERRANGECONTENTARRAY_SETTEXTATINDEX_NORMAL_0002
      * @tc.desc   TextPickerCascadeTest_e2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -385,7 +385,7 @@ export default function TextPickerCascadeTest(){
 
     /**
      * @tc.name   TextPickerCascadeTest_f
-     * @tc.number TextPickerCascadeTest_f
+     * @tc.number SUB_ARKUI_TEXTPICKER_TEXTCASCADEPICKERRANGECONTENTARRAY_SETCHILDATINDEX_NORMAL_0001
      * @tc.desc   TextPickerCascadeTest_f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -401,7 +401,7 @@ export default function TextPickerCascadeTest(){
 
     /**
      * @tc.name   TextPickerCascadeTest_f1
-     * @tc.number TextPickerCascadeTest_f1
+     * @tc.number SUB_ARKUI_TEXTPICKER_TEXTCASCADEPICKERRANGECONTENTARRAY_SETCHILDATINDEX_INVALID_0001
      * @tc.desc   TextPickerCascadeTest_f1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -417,7 +417,7 @@ export default function TextPickerCascadeTest(){
 
     /**
      * @tc.name   TextPickerCascadeTest_f2
-     * @tc.number TextPickerCascadeTest_f2
+     * @tc.number SUB_ARKUI_TEXTPICKER_TEXTCASCADEPICKERRANGECONTENTARRAY_SETCHILDATINDEX_INVALID_0002
      * @tc.desc   TextPickerCascadeTest_f2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -432,7 +432,7 @@ export default function TextPickerCascadeTest(){
 
     /**
      * @tc.name   TextPickerCascadeTest_f3
-     * @tc.number TextPickerCascadeTest_f3
+     * @tc.number SUB_ARKUI_TEXTPICKER_TEXTCASCADEPICKERRANGECONTENTARRAY_SETCHILDATINDEX_INVALID_0003
      * @tc.desc   TextPickerCascadeTest_f3
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
