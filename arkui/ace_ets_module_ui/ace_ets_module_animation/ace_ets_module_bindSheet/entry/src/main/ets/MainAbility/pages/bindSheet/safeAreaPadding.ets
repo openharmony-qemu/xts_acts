@@ -15,7 +15,7 @@
 
 @Entry
 @Component
-struct safeAreaPadding {
+struct sheetSafeAreaPadding {
   @State isShow: boolean = false
   @State mySheetTitleBarHoverMode: SheetTitleBarHoverMode | undefined = undefined
   @State myTitle: SheetTitleOptions | undefined = { title: 'title', subtitle: 'subtitle' }
