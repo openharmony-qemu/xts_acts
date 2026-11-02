@@ -232,16 +232,16 @@ export default function HttpDeleteTest(): void {
       });
 
     /**
-     * @tc.name   testNetworkMgrHttpHttpResponseCacheDelete_static_0301
-     * @tc.number SUB_NetworkMgr_Http_HttpResponseCache_Delete_0301
+     * @tc.name   testNetworkMgrHttpHttpResponseCacheDelete_static_0600
+     * @tc.number SUB_NetworkMgr_Http_HttpResponseCache_Delete_0600
      * @tc.desc   Disable cache and delete data within it.Use callback as an asynchronous method.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testNetworkMgrHttpHttpResponseCacheDelete_static_0301', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testNetworkMgrHttpHttpResponseCacheDelete_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-        const caseName: string = 'testNetworkMgrHttpHttpResponseCacheDelete_static_0301';
+        const caseName: string = 'testNetworkMgrHttpHttpResponseCacheDelete_static_0600';
         hilog.info(domain, tag, '%{public}s', `${caseName}---Start`);
         try {
           connection.getDefaultNet((error: BusinessError<void> | null, data: connection.NetHandle | undefined) => {
@@ -306,16 +306,16 @@ export default function HttpDeleteTest(): void {
       });
 
     /**
-     * @tc.name   testNetworkMgrHttpHttpResponseCacheDelete_static_0401
-     * @tc.number SUB_NetworkMgr_Http_HttpResponseCache_Delete_0401
+     * @tc.name   testNetworkMgrHttpHttpResponseCacheDelete_static_0500
+     * @tc.number SUB_NetworkMgr_Http_HttpResponseCache_Delete_0500
      * @tc.desc   Disable cache and delete data within it.Use callback as an asynchronous method.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testNetworkMgrHttpHttpResponseCacheDelete_static_0401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testNetworkMgrHttpHttpResponseCacheDelete_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-        const caseName: string = 'testNetworkMgrHttpHttpResponseCacheDelete_static_0401';
+        const caseName: string = 'testNetworkMgrHttpHttpResponseCacheDelete_static_0500';
         hilog.info(domain, tag, '%{public}s', `${caseName}---Start`);
         try {
           connection.getDefaultNet((error: BusinessError<void> | null, data: connection.NetHandle | undefined) => {
