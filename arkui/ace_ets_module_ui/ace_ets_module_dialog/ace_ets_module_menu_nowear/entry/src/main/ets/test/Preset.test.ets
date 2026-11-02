@@ -47,7 +47,7 @@ export default function PresetTest() {
 
     /**
      * @tc.name   PresetTest0001
-     * @tc.number PresetTest0001
+     * @tc.number SUB_ACE_PresetTest_0001
      * @tc.desc   preset about xiaoyi dialog
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
