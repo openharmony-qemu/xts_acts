@@ -1271,7 +1271,6 @@ export default function sendableImageSource() {
               }).catch((error: BusinessError) => {
                 console.info(`0x0000 ${tag} img getComponent failed`)
                 // 释放后 getComponent 应当失败，符合预期
-                expect(true).assertTrue()
                 releasePreview(photoSession).then(() => {
                   done()
                 })
