@@ -2,6 +2,27 @@
   "src": [
     "MainAbility/pages/index/index",
     "MainAbility/pages/AxisEvent/AxisEvent",
-    "MainAbility/pages/RollAngle/RollAngle"
+    "MainAbility/pages/RollAngle/RollAngle",
+    "MainAbility/pages/ResponseRegion/ResponseRegionIndex",
+    "MainAbility/pages/SourceType/SourceTypeIndex",
+    "MainAbility/pages/AxisEvent/AxisEventIndex",
+    "MainAbility/pages/DragEvent/DragEventIndex",
+    "MainAbility/pages/Common/CommonIndex",
+    "MainAbility/pages/CommonMethod/commonUndefined",
+    "MainAbility/pages/CommonMethod/commonAttrsModifierUndefined",
+    "MainAbility/pages/CommonMethod/onChildTouchTestUndefined",
+    "MainAbility/pages/CommonMethod/nextFocusUndefined",
+    "MainAbility/pages/CommonMethod/dragEventUndefined",
+    "MainAbility/pages/CommonMethod/dragEventAttrsModifierUndefined",
+    "MainAbility/pages/CommonMethod/onMouseUndefined",
+    "MainAbility/pages/CommonMethod/onMouseAttrsModifierUndefined",
+    "MainAbility/pages/CommonMethod/clickEffectUndefined",
+    "MainAbility/pages/CommonMethod/dragControlUndefined",
+    "MainAbility/pages/CommonMethod/clickEffectModifierUndefined",
+    "MainAbility/pages/CommonMethod/dragControlModifierUndefined",
+    "MainAbility/pages/CommonMethod/onBlurUndefined",
+    "MainAbility/pages/CommonMethod/tabIndexUndefined",
+    "MainAbility/pages/CommonMethod/onBlurModifierUndefined",
+    "MainAbility/pages/CommonMethod/tabIndexModifierUndefined"
   ]
 }
