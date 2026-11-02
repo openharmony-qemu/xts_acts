@@ -25,6 +25,7 @@ import DrawingTsTypefaceArgumentsPart2Test from './TypefaceArgumentsPart2.test';
 import rectUtils from './RectUtils.test'
 import DrawingTsRectUtilsPart2Test from './RectUtilsPart2.test'
 import PointUtils from './PointUtils.test'
+import casesAdditionalTest from './CasesAdditional.test';
 
 export default function testsuite() {
   samplingOptionsTest();
@@ -52,4 +53,5 @@ export default function testsuite() {
   rectUtils();
   DrawingTsRectUtilsPart2Test();
   PointUtils();
+  casesAdditionalTest();
 }
