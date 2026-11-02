@@ -106,6 +106,7 @@ const ERROR_CODE11 = 16000121;
 const ERROR_CODE12 = 16000130;
 const ERROR_CODE13 = 801;
 const ERROR_CODE14 = 16501011;
+const ERROR_CODE15 = 16501026;
 
 export default function formApiCoverTest() {
   describe('FormApiCoverTestTest', () => {
@@ -1146,6 +1147,310 @@ export default function formApiCoverTest() {
         done();
       }
       hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${itName} end`);
+    });
+
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0100
+     * @tc.number SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0100
+     * @tc.desc   setWindowBackgroundColor with empty string (length check)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG: string = 'SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0100';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
+      try {
+        let abilityTest: FormEditExtensionAbility = new FormEditExtensionAbility();
+        abilityTest.context.setWindowBackgroundColor('').then(() => {
+          hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} setWindowBackgroundColor success`);
+          expect().assertFail();
+          done();
+        }).catch((error: BusinessError) => {
+          hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} setWindowBackgroundColor, error: ${JSON.stringify(error)}`);
+          if (error.code === ERROR_CODE15) {
+            expect(error.code).assertEqual(ERROR_CODE15);
+          } else if (error.code === ERROR_CODE2) {
+            expect(error.code).assertEqual(ERROR_CODE2);
+          }
+          done();
+        });
+      } catch (error) {
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} exception: ${JSON.stringify(error)}`);
+        if (error.code === ERROR_CODE15) {
+          expect(error.code).assertEqual(ERROR_CODE15);
+        } else if (error.code === ERROR_CODE2) {
+          expect(error.code).assertEqual(ERROR_CODE2);
+        }
+        done();
+      }
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
+    });
+
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0200
+     * @tc.number SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0200
+     * @tc.desc   setWindowBackgroundColor without # prefix
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG: string = 'SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0200';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
+      try {
+        let abilityTest: FormEditExtensionAbility = new FormEditExtensionAbility();
+        abilityTest.context.setWindowBackgroundColor('FF0000').then(() => {
+          hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} setWindowBackgroundColor success`);
+          expect().assertFail();
+          done();
+        }).catch((error: BusinessError) => {
+          hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} setWindowBackgroundColor, error: ${JSON.stringify(error)}`);
+          if (error.code === ERROR_CODE15) {
+            expect(error.code).assertEqual(ERROR_CODE15);
+          } else if (error.code === ERROR_CODE2) {
+            expect(error.code).assertEqual(ERROR_CODE2);
+          }
+          done();
+        });
+      } catch (error) {
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} exception: ${JSON.stringify(error)}`);
+        if (error.code === ERROR_CODE15) {
+          expect(error.code).assertEqual(ERROR_CODE15);
+        } else if (error.code === ERROR_CODE2) {
+          expect(error.code).assertEqual(ERROR_CODE2);
+        }
+        done();
+      }
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
+    });
+
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0300
+     * @tc.number SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0300
+     * @tc.desc   setWindowBackgroundColor with non-hex characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG: string = 'SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0300';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
+      try {
+        let abilityTest: FormEditExtensionAbility = new FormEditExtensionAbility();
+        abilityTest.context.setWindowBackgroundColor('#GGGGGG').then(() => {
+          hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} setWindowBackgroundColor success`);
+          expect().assertFail();
+          done();
+        }).catch((error: BusinessError) => {
+          hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} setWindowBackgroundColor, error: ${JSON.stringify(error)}`);
+          if (error.code === ERROR_CODE15) {
+            expect(error.code).assertEqual(ERROR_CODE15);
+          } else if (error.code === ERROR_CODE2) {
+            expect(error.code).assertEqual(ERROR_CODE2);
+          }
+          done();
+        });
+      } catch (error) {
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} exception: ${JSON.stringify(error)}`);
+        if (error.code === ERROR_CODE15) {
+          expect(error.code).assertEqual(ERROR_CODE15);
+        } else if (error.code === ERROR_CODE2) {
+          expect(error.code).assertEqual(ERROR_CODE2);
+        }
+        done();
+      }
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
+    });
+
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0400
+     * @tc.number SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0400
+     * @tc.desc   setWindowBackgroundColor with wrong length (length check)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG: string = 'SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0400';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
+      try {
+        let abilityTest: FormEditExtensionAbility = new FormEditExtensionAbility();
+        abilityTest.context.setWindowBackgroundColor('#FF00').then(() => {
+          hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} setWindowBackgroundColor success`);
+          expect().assertFail();
+          done();
+        }).catch((error: BusinessError) => {
+          hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} setWindowBackgroundColor, error: ${JSON.stringify(error)}`);
+          if (error.code === ERROR_CODE15) {
+            expect(error.code).assertEqual(ERROR_CODE15);
+          } else if (error.code === ERROR_CODE2) {
+            expect(error.code).assertEqual(ERROR_CODE2);
+          }
+          done();
+        });
+      } catch (error) {
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} exception: ${JSON.stringify(error)}`);
+        if (error.code === ERROR_CODE15) {
+          expect(error.code).assertEqual(ERROR_CODE15);
+        } else if (error.code === ERROR_CODE2) {
+          expect(error.code).assertEqual(ERROR_CODE2);
+        }
+        done();
+      }
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
+    });
+
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0500
+     * @tc.number SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0500
+     * @tc.desc   setWindowBackgroundColor with valid uppercase RGB format (async reject path)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG: string = 'SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0500';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
+      try {
+        let abilityTest: FormEditExtensionAbility = new FormEditExtensionAbility();
+        abilityTest.context.setWindowBackgroundColor('#AABBCC').then(() => {
+          hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} setWindowBackgroundColor success`);
+          expect().assertFail();
+          done();
+        }).catch((error: BusinessError) => {
+          hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} setWindowBackgroundColor, error: ${JSON.stringify(error)}`);
+          if (error.code === ERROR_CODE2) {
+            expect(error.code).assertEqual(ERROR_CODE2);
+          } else if (error.code === ERROR_CODE15) {
+            expect(error.code).assertEqual(ERROR_CODE15);
+          }
+          done();
+        });
+      } catch (error) {
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} exception: ${JSON.stringify(error)}`);
+        if (error.code === ERROR_CODE2) {
+          expect(error.code).assertEqual(ERROR_CODE2);
+        } else if (error.code === ERROR_CODE15) {
+          expect(error.code).assertEqual(ERROR_CODE15);
+        }
+        done();
+      }
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
+    });
+
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0600
+     * @tc.number SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0600
+     * @tc.desc   setWindowBackgroundColor with valid ARGB format (async reject path)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG: string = 'SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0600';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
+      try {
+        let abilityTest: FormEditExtensionAbility = new FormEditExtensionAbility();
+        abilityTest.context.setWindowBackgroundColor('#FFAABBCC').then(() => {
+          hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} setWindowBackgroundColor success`);
+          expect().assertFail();
+          done();
+        }).catch((error: BusinessError) => {
+          hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} setWindowBackgroundColor, error: ${JSON.stringify(error)}`);
+          if (error.code === ERROR_CODE2) {
+            expect(error.code).assertEqual(ERROR_CODE2);
+          } else if (error.code === ERROR_CODE15) {
+            expect(error.code).assertEqual(ERROR_CODE15);
+          }
+          done();
+        });
+      } catch (error) {
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} exception: ${JSON.stringify(error)}`);
+        if (error.code === ERROR_CODE2) {
+          expect(error.code).assertEqual(ERROR_CODE2);
+        } else if (error.code === ERROR_CODE15) {
+          expect(error.code).assertEqual(ERROR_CODE15);
+        }
+        done();
+      }
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
+    });
+
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0700
+     * @tc.number SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0700
+     * @tc.desc   setWindowBackgroundColor with null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG: string = 'SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0700';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
+      try {
+        let abilityTest: FormEditExtensionAbility = new FormEditExtensionAbility();
+        abilityTest.context.setWindowBackgroundColor(null).then(() => {
+          hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} setWindowBackgroundColor success`);
+          expect().assertFail();
+          done();
+        }).catch((error: BusinessError) => {
+          hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} setWindowBackgroundColor, error: ${JSON.stringify(error)}`);
+          if (error.code === ERROR_CODE15) {
+            expect(error.code).assertEqual(ERROR_CODE15);
+          } else if (error.code === ERROR_CODE2) {
+            expect(error.code).assertEqual(ERROR_CODE2);
+          }
+          done();
+        });
+      } catch (error) {
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} exception: ${JSON.stringify(error)}`);
+        if (error.code === ERROR_CODE15) {
+          expect(error.code).assertEqual(ERROR_CODE15);
+        } else if (error.code === ERROR_CODE2) {
+          expect(error.code).assertEqual(ERROR_CODE2);
+        }
+        done();
+      }
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
+    });
+
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0800
+     * @tc.number SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0800
+     * @tc.desc   setWindowBackgroundColor with undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG: string = 'SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_0800';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
+      try {
+        let abilityTest: FormEditExtensionAbility = new FormEditExtensionAbility();
+        abilityTest.context.setWindowBackgroundColor(undefined).then(() => {
+          hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} setWindowBackgroundColor success`);
+          expect().assertFail();
+          done();
+        }).catch((error: BusinessError) => {
+          hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} setWindowBackgroundColor, error: ${JSON.stringify(error)}`);
+          if (error.code === ERROR_CODE15) {
+            expect(error.code).assertEqual(ERROR_CODE15);
+          } else if (error.code === ERROR_CODE2) {
+            expect(error.code).assertEqual(ERROR_CODE2);
+          }
+          done();
+        });
+      } catch (error) {
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} exception: ${JSON.stringify(error)}`);
+        if (error.code === ERROR_CODE15) {
+          expect(error.code).assertEqual(ERROR_CODE15);
+        } else if (error.code === ERROR_CODE2) {
+          expect(error.code).assertEqual(ERROR_CODE2);
+        }
+        done();
+      }
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
     });
   })
 }

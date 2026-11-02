@@ -34,6 +34,7 @@ const ERROR_CODE11 = 16000121;
 const ERROR_CODE12 = 16000130;
 const ERROR_CODE13 = 801;
 const ERROR_CODE14 = 16501011;
+const ERROR_CODE15 = 16501026;
 export default function OverflowApiCoverTest() {
   describe('OverflowApiCoverTest', () => {
 
@@ -304,6 +305,234 @@ export default function OverflowApiCoverTest() {
         }
       }
       done();
+      console.info(`${name} end`);
+    });
+
+    /**
+     * @tc.name   SetWindowBackgroundColor_Cover_Static_0100
+     * @tc.number SetWindowBackgroundColor_Cover_Static_0100
+     * @tc.desc   setWindowBackgroundColor with empty string (length check)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SetWindowBackgroundColor_Cover_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let name: string = 'SetWindowBackgroundColor_Cover_Static_0100';
+      console.info(`${name} start`);
+      try {
+        let feeAbility: FormEditExtensionAbility = new FormEditExtensionAbility();
+        feeAbility.formEditContext.setWindowBackgroundColor('').then(() => {
+          console.info(`${name} setWindowBackgroundColor success`);
+          expect().assertFail();
+          done();
+        }).catch((error: Error): void => {
+          console.info(`${name} setWindowBackgroundColor, error: ${JSON.stringify(error)}`);
+          if (error.code === ERROR_CODE15) {
+            expect(error.code).assertEqual(ERROR_CODE15);
+          } else if (error.code === ERROR_CODE2) {
+            expect(error.code).assertEqual(ERROR_CODE2);
+          }
+          done();
+        });
+      } catch (error) {
+        console.info(`${name} exception: ${JSON.stringify(error)}`);
+        if (error.code === ERROR_CODE15) {
+          expect(error.code).assertEqual(ERROR_CODE15);
+        } else if (error.code === ERROR_CODE2) {
+          expect(error.code).assertEqual(ERROR_CODE2);
+        }
+        done();
+      }
+      console.info(`${name} end`);
+    });
+
+    /**
+     * @tc.name   SetWindowBackgroundColor_Cover_Static_0200
+     * @tc.number SetWindowBackgroundColor_Cover_Static_0200
+     * @tc.desc   setWindowBackgroundColor without # prefix
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SetWindowBackgroundColor_Cover_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let name: string = 'SetWindowBackgroundColor_Cover_Static_0200';
+      console.info(`${name} start`);
+      try {
+        let feeAbility: FormEditExtensionAbility = new FormEditExtensionAbility();
+        feeAbility.formEditContext.setWindowBackgroundColor('FF0000').then(() => {
+          console.info(`${name} setWindowBackgroundColor success`);
+          expect().assertFail();
+          done();
+        }).catch((error: Error): void => {
+          console.info(`${name} setWindowBackgroundColor, error: ${JSON.stringify(error)}`);
+          if (error.code === ERROR_CODE15) {
+            expect(error.code).assertEqual(ERROR_CODE15);
+          } else if (error.code === ERROR_CODE2) {
+            expect(error.code).assertEqual(ERROR_CODE2);
+          }
+          done();
+        });
+      } catch (error) {
+        console.info(`${name} exception: ${JSON.stringify(error)}`);
+        if (error.code === ERROR_CODE15) {
+          expect(error.code).assertEqual(ERROR_CODE15);
+        } else if (error.code === ERROR_CODE2) {
+          expect(error.code).assertEqual(ERROR_CODE2);
+        }
+        done();
+      }
+      console.info(`${name} end`);
+    });
+
+    /**
+     * @tc.name   SetWindowBackgroundColor_Cover_Static_0300
+     * @tc.number SetWindowBackgroundColor_Cover_Static_0300
+     * @tc.desc   setWindowBackgroundColor with non-hex characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SetWindowBackgroundColor_Cover_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let name: string = 'SetWindowBackgroundColor_Cover_Static_0300';
+      console.info(`${name} start`);
+      try {
+        let feeAbility: FormEditExtensionAbility = new FormEditExtensionAbility();
+        feeAbility.formEditContext.setWindowBackgroundColor('#GGGGGG').then(() => {
+          console.info(`${name} setWindowBackgroundColor success`);
+          expect().assertFail();
+          done();
+        }).catch((error: Error): void => {
+          console.info(`${name} setWindowBackgroundColor, error: ${JSON.stringify(error)}`);
+          if (error.code === ERROR_CODE15) {
+            expect(error.code).assertEqual(ERROR_CODE15);
+          } else if (error.code === ERROR_CODE2) {
+            expect(error.code).assertEqual(ERROR_CODE2);
+          }
+          done();
+        });
+      } catch (error) {
+        console.info(`${name} exception: ${JSON.stringify(error)}`);
+        if (error.code === ERROR_CODE15) {
+          expect(error.code).assertEqual(ERROR_CODE15);
+        } else if (error.code === ERROR_CODE2) {
+          expect(error.code).assertEqual(ERROR_CODE2);
+        }
+        done();
+      }
+      console.info(`${name} end`);
+    });
+
+    /**
+     * @tc.name   SetWindowBackgroundColor_Cover_Static_0400
+     * @tc.number SetWindowBackgroundColor_Cover_Static_0400
+     * @tc.desc   setWindowBackgroundColor with wrong length (length check)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SetWindowBackgroundColor_Cover_Static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let name: string = 'SetWindowBackgroundColor_Cover_Static_0400';
+      console.info(`${name} start`);
+      try {
+        let feeAbility: FormEditExtensionAbility = new FormEditExtensionAbility();
+        feeAbility.formEditContext.setWindowBackgroundColor('#FF00').then(() => {
+          console.info(`${name} setWindowBackgroundColor success`);
+          expect().assertFail();
+          done();
+        }).catch((error: Error): void => {
+          console.info(`${name} setWindowBackgroundColor, error: ${JSON.stringify(error)}`);
+          if (error.code === ERROR_CODE15) {
+            expect(error.code).assertEqual(ERROR_CODE15);
+          } else if (error.code === ERROR_CODE2) {
+            expect(error.code).assertEqual(ERROR_CODE2);
+          }
+          done();
+        });
+      } catch (error) {
+        console.info(`${name} exception: ${JSON.stringify(error)}`);
+        if (error.code === ERROR_CODE15) {
+          expect(error.code).assertEqual(ERROR_CODE15);
+        } else if (error.code === ERROR_CODE2) {
+          expect(error.code).assertEqual(ERROR_CODE2);
+        }
+        done();
+      }
+      console.info(`${name} end`);
+    });
+
+    /**
+     * @tc.name   SetWindowBackgroundColor_Cover_Static_0500
+     * @tc.number SetWindowBackgroundColor_Cover_Static_0500
+     * @tc.desc   setWindowBackgroundColor with valid uppercase RGB format (async reject path)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SetWindowBackgroundColor_Cover_Static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let name: string = 'SetWindowBackgroundColor_Cover_Static_0500';
+      console.info(`${name} start`);
+      try {
+        let feeAbility: FormEditExtensionAbility = new FormEditExtensionAbility();
+        feeAbility.formEditContext.setWindowBackgroundColor('#AABBCC').then(() => {
+          console.info(`${name} setWindowBackgroundColor success`);
+          expect().assertFail();
+          done();
+        }).catch((error: Error): void => {
+          console.info(`${name} setWindowBackgroundColor, error: ${JSON.stringify(error)}`);
+          if (error.code === ERROR_CODE2) {
+            expect(error.code).assertEqual(ERROR_CODE2);
+          } else if (error.code === ERROR_CODE15) {
+            expect(error.code).assertEqual(ERROR_CODE15);
+          }
+          done();
+        });
+      } catch (error) {
+        console.info(`${name} exception: ${JSON.stringify(error)}`);
+        if (error.code === ERROR_CODE2) {
+          expect(error.code).assertEqual(ERROR_CODE2);
+        } else if (error.code === ERROR_CODE15) {
+          expect(error.code).assertEqual(ERROR_CODE15);
+        }
+        done();
+      }
+      console.info(`${name} end`);
+    });
+
+    /**
+     * @tc.name   SetWindowBackgroundColor_Cover_Static_0600
+     * @tc.number SetWindowBackgroundColor_Cover_Static_0600
+     * @tc.desc   setWindowBackgroundColor with valid ARGB format (async reject path)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SetWindowBackgroundColor_Cover_Static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let name: string = 'SetWindowBackgroundColor_Cover_Static_0600';
+      console.info(`${name} start`);
+      try {
+        let feeAbility: FormEditExtensionAbility = new FormEditExtensionAbility();
+        feeAbility.formEditContext.setWindowBackgroundColor('#FFAABBCC').then(() => {
+          console.info(`${name} setWindowBackgroundColor success`);
+          expect().assertFail();
+          done();
+        }).catch((error: Error): void => {
+          console.info(`${name} setWindowBackgroundColor, error: ${JSON.stringify(error)}`);
+          if (error.code === ERROR_CODE2) {
+            expect(error.code).assertEqual(ERROR_CODE2);
+          } else if (error.code === ERROR_CODE15) {
+            expect(error.code).assertEqual(ERROR_CODE15);
+          }
+          done();
+        });
+      } catch (error) {
+        console.info(`${name} exception: ${JSON.stringify(error)}`);
+        if (error.code === ERROR_CODE2) {
+          expect(error.code).assertEqual(ERROR_CODE2);
+        } else if (error.code === ERROR_CODE15) {
+          expect(error.code).assertEqual(ERROR_CODE15);
+        }
+        done();
+      }
       console.info(`${name} end`);
     });
   })
