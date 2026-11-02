@@ -16,6 +16,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from "@ohos/hypium-dynamic";
 import image from '@ohos.multimedia.image';
 import { BusinessError } from '@ohos.base';
+import { taskpoolTest } from '../MainAbility/utils/taskpool';
 
 const PIXEL_WIDTH: number = 4;
 const PIXEL_HEIGHT: number = 4;
@@ -1733,6 +1734,710 @@ export default function GraphicImageWritePixelsFromAreaAPI2610() {
         } catch (error) {
           console.error(msgStr + 'failed', error);
           expect().assertFail();
+          done();
+        }
+      })
+
+    // ==================== Group E: writePixelsFromArea async, error cases ====================
+
+    /**
+     * @tc.name   graphicImageWritePixelsFromArea_error_0100
+     * @tc.number SUB_GRAPHIC_image_writePixelsFromArea_error_0100
+     * @tc.desc   writePixelsFromArea area=null error test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImageWritePixelsFromArea_error_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = 'www data graphicImageWritePixelsFromArea_error_0100 ';
+        console.info(msgStr + 'begin');
+        let pixelMap: image.PixelMap = createPixelMapByFormat(image.PixelMapFormat.RGBA_8888);
+        try {
+          await pixelMap.writePixelsFromArea(null, image.PixelMapFormat.RGBA_8888);
+          console.error(msgStr + 'should fail but success');
+          await pixelMap.release();
+          expect().assertFail();
+          done();
+        } catch (error) {
+          let err: BusinessError = error as BusinessError;
+          console.info(msgStr + 'caught expected error code=' + err.code);
+          expect(err.code).assertEqual(7600206);
+          await pixelMap.release();
+          console.info(msgStr + 'release success');
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   graphicImageWritePixelsFromArea_error_0200
+     * @tc.number SUB_GRAPHIC_image_writePixelsFromArea_error_0200
+     * @tc.desc   writePixelsFromArea area=undefined error test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImageWritePixelsFromArea_error_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = 'www data graphicImageWritePixelsFromArea_error_0200 ';
+        console.info(msgStr + 'begin');
+        let pixelMap: image.PixelMap = createPixelMapByFormat(image.PixelMapFormat.RGBA_8888);
+        try {
+          await pixelMap.writePixelsFromArea(undefined, image.PixelMapFormat.RGBA_8888);
+          console.error(msgStr + 'should fail but success');
+          await pixelMap.release();
+          expect().assertFail();
+          done();
+        } catch (error) {
+          let err: BusinessError = error as BusinessError;
+          console.info(msgStr + 'caught expected error code=' + err.code);
+          expect(err.code).assertEqual(7600206);
+          await pixelMap.release();
+          console.info(msgStr + 'release success');
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   graphicImageWritePixelsFromArea_error_0300
+     * @tc.number SUB_GRAPHIC_image_writePixelsFromArea_error_0300
+     * @tc.desc   writePixelsFromArea sourcePixelFormat=null error test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImageWritePixelsFromArea_error_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = 'www data graphicImageWritePixelsFromArea_error_0300 ';
+        console.info(msgStr + 'begin');
+        let pixelMap: image.PixelMap = createPixelMapByFormat(image.PixelMapFormat.RGBA_8888);
+        let area: image.PositionArea = buildPositionArea(image.PixelMapFormat.RGBA_8888, PIXEL_WIDTH, PIXEL_HEIGHT);
+        try {
+          await pixelMap.writePixelsFromArea(area, null);
+          console.error(msgStr + 'should fail but success');
+          await pixelMap.release();
+          done();
+        } catch (error) {
+          let err: BusinessError = error as BusinessError;
+          console.info(msgStr + 'caught expected error code=' + err.code);
+          expect().assertFail();
+          await pixelMap.release();
+          console.info(msgStr + 'release success');
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   graphicImageWritePixelsFromArea_error_0400
+     * @tc.number SUB_GRAPHIC_image_writePixelsFromArea_error_0400
+     * @tc.desc   writePixelsFromArea sourcePixelFormat=undefined error test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImageWritePixelsFromArea_error_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = 'www data graphicImageWritePixelsFromArea_error_0400 ';
+        console.info(msgStr + 'begin');
+        let pixelMap: image.PixelMap = createPixelMapByFormat(image.PixelMapFormat.RGBA_8888);
+        let area: image.PositionArea = buildPositionArea(image.PixelMapFormat.RGBA_8888, PIXEL_WIDTH, PIXEL_HEIGHT);
+        try {
+          await pixelMap.writePixelsFromArea(area, undefined);
+          console.error(msgStr + 'should fail but success');
+          await pixelMap.release();
+          done();
+        } catch (error) {
+          let err: BusinessError = error as BusinessError;
+          console.info(msgStr + 'caught expected error code=' + err.code);
+          expect().assertFail();
+          await pixelMap.release();
+          console.info(msgStr + 'release success');
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   graphicImageWritePixelsFromArea_error_0500
+     * @tc.number SUB_GRAPHIC_image_writePixelsFromArea_error_0500
+     * @tc.desc   writePixelsFromArea sourcePixelFormat=-1 error test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImageWritePixelsFromArea_error_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = 'www data graphicImageWritePixelsFromArea_error_0500 ';
+        console.info(msgStr + 'begin');
+        let pixelMap: image.PixelMap = createPixelMapByFormat(image.PixelMapFormat.RGBA_8888);
+        let area: image.PositionArea = buildPositionArea(image.PixelMapFormat.RGBA_8888, PIXEL_WIDTH, PIXEL_HEIGHT);
+        try {
+          await pixelMap.writePixelsFromArea(area, -1);
+          console.error(msgStr + 'should fail but success');
+          await pixelMap.release();
+          expect().assertFail();
+          done();
+        } catch (error) {
+          let err: BusinessError = error as BusinessError;
+          console.info(msgStr + 'caught expected error code=' + err.code);
+          expect(err.code).assertEqual(7600206);
+          await pixelMap.release();
+          console.info(msgStr + 'release success');
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   graphicImageWritePixelsFromArea_error_0600
+     * @tc.number SUB_GRAPHIC_image_writePixelsFromArea_error_0600
+     * @tc.desc   writePixelsFromArea sourcePixelFormat=9999 error test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImageWritePixelsFromArea_error_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = 'www data graphicImageWritePixelsFromArea_error_0600 ';
+        console.info(msgStr + 'begin');
+        let pixelMap: image.PixelMap = createPixelMapByFormat(image.PixelMapFormat.RGBA_8888);
+        let area: image.PositionArea = buildPositionArea(image.PixelMapFormat.RGBA_8888, PIXEL_WIDTH, PIXEL_HEIGHT);
+        try {
+          await pixelMap.writePixelsFromArea(area, 9999);
+          console.error(msgStr + 'should fail but success');
+          await pixelMap.release();
+          expect().assertFail();
+          done();
+        } catch (error) {
+          let err: BusinessError = error as BusinessError;
+          console.info(msgStr + 'caught expected error code=' + err.code);
+          expect(err.code).assertEqual(7600206);
+          await pixelMap.release();
+          console.info(msgStr + 'release success');
+          done();
+        }
+      })
+
+    // ==================== Group F: writePixelsFromAreaSync, error cases ====================
+
+    /**
+     * @tc.name   graphicImageWritePixelsFromAreaSync_error_0100
+     * @tc.number SUB_GRAPHIC_image_writePixelsFromAreaSync_error_0100
+     * @tc.desc   writePixelsFromAreaSync area=null error test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImageWritePixelsFromAreaSync_error_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = 'www data graphicImageWritePixelsFromAreaSync_error_0100 ';
+        console.info(msgStr + 'begin');
+        let pixelMap: image.PixelMap = createPixelMapByFormat(image.PixelMapFormat.RGBA_8888);
+        try {
+          pixelMap.writePixelsFromAreaSync(null, image.PixelMapFormat.RGBA_8888);
+          console.error(msgStr + 'should fail but success');
+          pixelMap.release();
+          expect().assertFail();
+          done();
+        } catch (error) {
+          let err: BusinessError = error as BusinessError;
+          console.info(msgStr + 'caught expected error code=' + err.code);
+          expect(err.code).assertEqual(7600206);
+          pixelMap.release();
+          console.info(msgStr + 'release success');
+        }
+        console.info(msgStr + 'end');
+        done();
+      })
+
+    /**
+     * @tc.name   graphicImageWritePixelsFromAreaSync_error_0200
+     * @tc.number SUB_GRAPHIC_image_writePixelsFromAreaSync_error_0200
+     * @tc.desc   writePixelsFromAreaSync area=undefined error test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImageWritePixelsFromAreaSync_error_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = 'www data graphicImageWritePixelsFromAreaSync_error_0200 ';
+        console.info(msgStr + 'begin');
+        let pixelMap: image.PixelMap = createPixelMapByFormat(image.PixelMapFormat.RGBA_8888);
+        try {
+          pixelMap.writePixelsFromAreaSync(undefined, image.PixelMapFormat.RGBA_8888);
+          console.error(msgStr + 'should fail but success');
+          pixelMap.release();
+          expect().assertFail();
+          done();
+        } catch (error) {
+          let err: BusinessError = error as BusinessError;
+          console.info(msgStr + 'caught expected error code=' + err.code);
+          expect(err.code).assertEqual(7600206);
+          pixelMap.release();
+          console.info(msgStr + 'release success');
+        }
+        console.info(msgStr + 'end');
+        done();
+      })
+
+    /**
+     * @tc.name   graphicImageWritePixelsFromAreaSync_error_0300
+     * @tc.number SUB_GRAPHIC_image_writePixelsFromAreaSync_error_0300
+     * @tc.desc   writePixelsFromAreaSync sourcePixelFormat=null error test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImageWritePixelsFromAreaSync_error_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = 'www data graphicImageWritePixelsFromAreaSync_error_0300 ';
+        console.info(msgStr + 'begin');
+        let pixelMap: image.PixelMap = createPixelMapByFormat(image.PixelMapFormat.RGBA_8888);
+        let area: image.PositionArea = buildPositionArea(image.PixelMapFormat.RGBA_8888, PIXEL_WIDTH, PIXEL_HEIGHT);
+        try {
+          pixelMap.writePixelsFromAreaSync(area, null);
+          console.error(msgStr + 'should fail but success');
+          pixelMap.release();
+          done();
+        } catch (error) {
+          let err: BusinessError = error as BusinessError;
+          console.info(msgStr + 'caught expected error code=' + err.code);
+          expect().assertFail();
+          pixelMap.release();
+          console.info(msgStr + 'release success');
+        }
+        console.info(msgStr + 'end');
+        done();
+      })
+
+    /**
+     * @tc.name   graphicImageWritePixelsFromAreaSync_error_0400
+     * @tc.number SUB_GRAPHIC_image_writePixelsFromAreaSync_error_0400
+     * @tc.desc   writePixelsFromAreaSync sourcePixelFormat=undefined error test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImageWritePixelsFromAreaSync_error_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = 'www data graphicImageWritePixelsFromAreaSync_error_0400 ';
+        console.info(msgStr + 'begin');
+        let pixelMap: image.PixelMap = createPixelMapByFormat(image.PixelMapFormat.RGBA_8888);
+        let area: image.PositionArea = buildPositionArea(image.PixelMapFormat.RGBA_8888, PIXEL_WIDTH, PIXEL_HEIGHT);
+        try {
+          pixelMap.writePixelsFromAreaSync(area, undefined);
+          console.error(msgStr + 'should fail but success');
+          pixelMap.release();
+          done();
+        } catch (error) {
+          let err: BusinessError = error as BusinessError;
+          console.info(msgStr + 'caught expected error code=' + err.code);
+          expect().assertFail();
+          pixelMap.release();
+          console.info(msgStr + 'release success');
+        }
+        console.info(msgStr + 'end');
+        done();
+      })
+
+    /**
+     * @tc.name   graphicImageWritePixelsFromAreaSync_error_0500
+     * @tc.number SUB_GRAPHIC_image_writePixelsFromAreaSync_error_0500
+     * @tc.desc   writePixelsFromAreaSync sourcePixelFormat=-1 error test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImageWritePixelsFromAreaSync_error_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = 'www data graphicImageWritePixelsFromAreaSync_error_0500 ';
+        console.info(msgStr + 'begin');
+        let pixelMap: image.PixelMap = createPixelMapByFormat(image.PixelMapFormat.RGBA_8888);
+        let area: image.PositionArea = buildPositionArea(image.PixelMapFormat.RGBA_8888, PIXEL_WIDTH, PIXEL_HEIGHT);
+        try {
+          pixelMap.writePixelsFromAreaSync(area, -1);
+          console.error(msgStr + 'should fail but success');
+          pixelMap.release();
+          expect().assertFail();
+          done();
+        } catch (error) {
+          let err: BusinessError = error as BusinessError;
+          console.info(msgStr + 'caught expected error code=' + err.code);
+          expect(err.code).assertEqual(7600206);
+          pixelMap.release();
+          console.info(msgStr + 'release success');
+        }
+        console.info(msgStr + 'end');
+        done();
+      })
+
+    /**
+     * @tc.name   graphicImageWritePixelsFromAreaSync_error_0600
+     * @tc.number SUB_GRAPHIC_image_writePixelsFromAreaSync_error_0600
+     * @tc.desc   writePixelsFromAreaSync sourcePixelFormat=9999 error test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImageWritePixelsFromAreaSync_error_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = 'www data graphicImageWritePixelsFromAreaSync_error_0600 ';
+        console.info(msgStr + 'begin');
+        let pixelMap: image.PixelMap = createPixelMapByFormat(image.PixelMapFormat.RGBA_8888);
+        let area: image.PositionArea = buildPositionArea(image.PixelMapFormat.RGBA_8888, PIXEL_WIDTH, PIXEL_HEIGHT);
+        try {
+          pixelMap.writePixelsFromAreaSync(area, 9999);
+          console.error(msgStr + 'should fail but success');
+          pixelMap.release();
+          expect().assertFail();
+          done();
+        } catch (error) {
+          let err: BusinessError = error as BusinessError;
+          console.info(msgStr + 'caught expected error code=' + err.code);
+          expect(err.code).assertEqual(7600206);
+          pixelMap.release();
+          console.info(msgStr + 'release success');
+        }
+        console.info(msgStr + 'end');
+        done();
+      })
+
+    // ==================== Group G: writePixelsFromArea async, error code scenarios ====================
+
+    /**
+     * @tc.name   graphicImageWritePixelsFromArea_errCode_0100
+     * @tc.number SUB_GRAPHIC_image_writePixelsFromArea_errCode_0100
+     * @tc.desc   writePixelsFromArea released pixelmap error code 7600105 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImageWritePixelsFromArea_errCode_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = 'www data graphicImageWritePixelsFromArea_errCode_0100 ';
+        console.info(msgStr + 'begin');
+        let pixelMap: image.PixelMap = createPixelMapByFormat(image.PixelMapFormat.RGBA_8888);
+        let area: image.PositionArea = buildPositionArea(image.PixelMapFormat.RGBA_8888, PIXEL_WIDTH, PIXEL_HEIGHT);
+        await pixelMap.release();
+        console.info(msgStr + 'release success');
+        try {
+          await pixelMap.writePixelsFromArea(area, image.PixelMapFormat.RGBA_8888);
+          console.error(msgStr + 'should fail but success');
+          expect().assertFail();
+          done();
+        } catch (error) {
+          let err: BusinessError = error as BusinessError;
+          console.info(msgStr + 'caught expected error code=' + err.code);
+          expect(err.code).assertEqual(7600105);
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   graphicImageWritePixelsFromArea_errCode_0200
+     * @tc.number SUB_GRAPHIC_image_writePixelsFromArea_errCode_0200
+     * @tc.desc   writePixelsFromArea area pixels too small error code 7600206 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImageWritePixelsFromArea_errCode_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = 'www data graphicImageWritePixelsFromArea_errCode_0200 ';
+        console.info(msgStr + 'begin');
+        let pixelMap: image.PixelMap = createPixelMapByFormat(image.PixelMapFormat.RGBA_8888);
+        let smallArea: image.PositionArea = {
+          pixels: new ArrayBuffer(10),
+          offset: 0,
+          stride: 16,
+          region: { x: 0, y: 0, size: { width: PIXEL_WIDTH, height: PIXEL_HEIGHT } }
+        };
+        try {
+          await pixelMap.writePixelsFromArea(smallArea, image.PixelMapFormat.RGBA_8888);
+          console.error(msgStr + 'should fail but success');
+          await pixelMap.release();
+          expect().assertFail();
+          done();
+        } catch (error) {
+          let err: BusinessError = error as BusinessError;
+          console.info(msgStr + 'caught expected error code=' + err.code);
+          expect(err.code).assertEqual(7600206);
+          await pixelMap.release();
+          console.info(msgStr + 'release success');
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   graphicImageWritePixelsFromArea_errCode_0300
+     * @tc.number SUB_GRAPHIC_image_writePixelsFromArea_errCode_0300
+     * @tc.desc   writePixelsFromArea non-editable pixelmap error code 7600201 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImageWritePixelsFromArea_errCode_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = 'www data graphicImageWritePixelsFromArea_errCode_0300 ';
+        console.info(msgStr + 'begin');
+        let color: ArrayBuffer = new ArrayBuffer(64);
+        let opts: image.InitializationOptions = {
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.RGBA_8888,
+          pixelFormat: image.PixelMapFormat.RGBA_8888,
+          size: { height: PIXEL_HEIGHT, width: PIXEL_WIDTH }
+        };
+        let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
+        let area: image.PositionArea = buildPositionArea(image.PixelMapFormat.RGBA_8888, PIXEL_WIDTH, PIXEL_HEIGHT);
+        try {
+          await pixelMap.writePixelsFromArea(area, image.PixelMapFormat.RGBA_8888);
+          console.error(msgStr + 'should fail but success');
+          await pixelMap.release();
+          expect().assertFail();
+          done();
+        } catch (error) {
+          let err: BusinessError = error as BusinessError;
+          console.info(msgStr + 'caught expected error code=' + err.code);
+          expect(err.code).assertEqual(7600201);
+          await pixelMap.release();
+          console.info(msgStr + 'release success');
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   graphicImageWritePixelsFromArea_errCode_0400
+     * @tc.number SUB_GRAPHIC_image_writePixelsFromArea_errCode_0400
+     * @tc.desc   writePixelsFromArea pixelmap passed to another thread error code 7600106 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImageWritePixelsFromArea_errCode_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = 'www data graphicImageWritePixelsFromArea_errCode_0400 ';
+        console.info(msgStr + 'begin');
+        let pixelMap: image.PixelMap = createPixelMapByFormat(image.PixelMapFormat.RGBA_8888);
+        taskpoolTest(pixelMap);
+        let area: image.PositionArea = buildPositionArea(image.PixelMapFormat.RGBA_8888, PIXEL_WIDTH, PIXEL_HEIGHT);
+        try {
+          await pixelMap.writePixelsFromArea(area, image.PixelMapFormat.RGBA_8888);
+          console.error(msgStr + 'should fail but success');
+          expect().assertFail();
+          done();
+        } catch (error) {
+          let err: BusinessError = error as BusinessError;
+          console.info(msgStr + 'caught expected error code=' + err.code);
+          expect(err.code).assertEqual(7600106);
+          done();
+        } finally {
+          await pixelMap.release();
+          console.info(msgStr + 'release success');
+        }
+      })
+
+    /**
+     * @tc.name   graphicImageWritePixelsFromArea_errCode_0500
+     * @tc.number SUB_GRAPHIC_image_writePixelsFromArea_errCode_0500
+     * @tc.desc   writePixelsFromArea unsupported conversion error code 7600203 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImageWritePixelsFromArea_errCode_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = 'www data graphicImageWritePixelsFromArea_errCode_0500 ';
+        console.info(msgStr + 'begin');
+        let color: ArrayBuffer = new ArrayBuffer(24);
+        let opts: image.InitializationOptions = {
+          editable: true,
+          srcPixelFormat: image.PixelMapFormat.NV21,
+          pixelFormat: image.PixelMapFormat.NV21,
+          size: { height: PIXEL_HEIGHT, width: PIXEL_WIDTH }
+        };
+        let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
+        let area: image.PositionArea = buildPositionArea(image.PixelMapFormat.RGBA_8888, PIXEL_WIDTH, PIXEL_HEIGHT);
+        try {
+          await pixelMap.writePixelsFromArea(area, image.PixelMapFormat.RGBA_8888);
+          console.error(msgStr + 'should fail but success');
+          await pixelMap.release();
+          expect().assertFail();
+          done();
+        } catch (error) {
+          let err: BusinessError = error as BusinessError;
+          console.info(msgStr + 'caught expected error code=' + err.code);
+          expect(err.code).assertEqual(7600203);
+          await pixelMap.release();
+          console.info(msgStr + 'release success');
+          done();
+        }
+      })
+
+    // ==================== Group H: writePixelsFromAreaSync sync, error code scenarios ====================
+
+    /**
+     * @tc.name   graphicImageWritePixelsFromAreaSync_errCode_0100
+     * @tc.number SUB_GRAPHIC_image_writePixelsFromAreaSync_errCode_0100
+     * @tc.desc   writePixelsFromAreaSync released pixelmap error code 7600105 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImageWritePixelsFromAreaSync_errCode_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = 'www data graphicImageWritePixelsFromAreaSync_errCode_0100 ';
+        console.info(msgStr + 'begin');
+        let pixelMap: image.PixelMap = createPixelMapByFormat(image.PixelMapFormat.RGBA_8888);
+        let area: image.PositionArea = buildPositionArea(image.PixelMapFormat.RGBA_8888, PIXEL_WIDTH, PIXEL_HEIGHT);
+        pixelMap.release();
+        console.info(msgStr + 'release success');
+        try {
+          pixelMap.writePixelsFromAreaSync(area, image.PixelMapFormat.RGBA_8888);
+          console.error(msgStr + 'should fail but success');
+          expect().assertFail();
+          done();
+        } catch (error) {
+          let err: BusinessError = error as BusinessError;
+          console.info(msgStr + 'caught expected error code=' + err.code);
+          expect(err.code).assertEqual(7600105);
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   graphicImageWritePixelsFromAreaSync_errCode_0200
+     * @tc.number SUB_GRAPHIC_image_writePixelsFromAreaSync_errCode_0200
+     * @tc.desc   writePixelsFromAreaSync area pixels too small error code 7600206 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImageWritePixelsFromAreaSync_errCode_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = 'www data graphicImageWritePixelsFromAreaSync_errCode_0200 ';
+        console.info(msgStr + 'begin');
+        let pixelMap: image.PixelMap = createPixelMapByFormat(image.PixelMapFormat.RGBA_8888);
+        let smallArea: image.PositionArea = {
+          pixels: new ArrayBuffer(10),
+          offset: 0,
+          stride: 16,
+          region: { x: 0, y: 0, size: { width: PIXEL_WIDTH, height: PIXEL_HEIGHT } }
+        };
+        try {
+          pixelMap.writePixelsFromAreaSync(smallArea, image.PixelMapFormat.RGBA_8888);
+          console.error(msgStr + 'should fail but success');
+          pixelMap.release();
+          expect().assertFail();
+          done();
+        } catch (error) {
+          let err: BusinessError = error as BusinessError;
+          console.info(msgStr + 'caught expected error code=' + err.code);
+          expect(err.code).assertEqual(7600206);
+          pixelMap.release();
+          console.info(msgStr + 'release success');
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   graphicImageWritePixelsFromAreaSync_errCode_0300
+     * @tc.number SUB_GRAPHIC_image_writePixelsFromAreaSync_errCode_0300
+     * @tc.desc   writePixelsFromAreaSync non-editable pixelmap error code 7600201 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImageWritePixelsFromAreaSync_errCode_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = 'www data graphicImageWritePixelsFromAreaSync_errCode_0300 ';
+        console.info(msgStr + 'begin');
+        let color: ArrayBuffer = new ArrayBuffer(64);
+        let opts: image.InitializationOptions = {
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.RGBA_8888,
+          pixelFormat: image.PixelMapFormat.RGBA_8888,
+          size: { height: PIXEL_HEIGHT, width: PIXEL_WIDTH }
+        };
+        let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
+        let area: image.PositionArea = buildPositionArea(image.PixelMapFormat.RGBA_8888, PIXEL_WIDTH, PIXEL_HEIGHT);
+        try {
+          pixelMap.writePixelsFromAreaSync(area, image.PixelMapFormat.RGBA_8888);
+          console.error(msgStr + 'should fail but success');
+          pixelMap.release();
+          expect().assertFail();
+          done();
+        } catch (error) {
+          let err: BusinessError = error as BusinessError;
+          console.info(msgStr + 'caught expected error code=' + err.code);
+          expect(err.code).assertEqual(7600201);
+          pixelMap.release();
+          console.info(msgStr + 'release success');
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   graphicImageWritePixelsFromAreaSync_errCode_0400
+     * @tc.number SUB_GRAPHIC_image_writePixelsFromAreaSync_errCode_0400
+     * @tc.desc   writePixelsFromAreaSync pixelmap passed to another thread error code 7600106 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImageWritePixelsFromAreaSync_errCode_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = 'www data graphicImageWritePixelsFromAreaSync_errCode_0400 ';
+        console.info(msgStr + 'begin');
+        let pixelMap: image.PixelMap = createPixelMapByFormat(image.PixelMapFormat.RGBA_8888);
+        taskpoolTest(pixelMap);
+        let area: image.PositionArea = buildPositionArea(image.PixelMapFormat.RGBA_8888, PIXEL_WIDTH, PIXEL_HEIGHT);
+        try {
+          pixelMap.writePixelsFromAreaSync(area, image.PixelMapFormat.RGBA_8888);
+          console.error(msgStr + 'should fail but success');
+          expect().assertFail();
+          done();
+        } catch (error) {
+          let err: BusinessError = error as BusinessError;
+          console.info(msgStr + 'caught expected error code=' + err.code);
+          expect(err.code).assertEqual(7600106);
+          done();
+        } finally {
+          pixelMap.release();
+          console.info(msgStr + 'release success');
+        }
+      })
+
+    /**
+     * @tc.name   graphicImageWritePixelsFromAreaSync_errCode_0500
+     * @tc.number SUB_GRAPHIC_image_writePixelsFromAreaSync_errCode_0500
+     * @tc.desc   writePixelsFromAreaSync unsupported conversion error code 7600203 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImageWritePixelsFromAreaSync_errCode_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = 'www data graphicImageWritePixelsFromAreaSync_errCode_0500 ';
+        console.info(msgStr + 'begin');
+        let color: ArrayBuffer = new ArrayBuffer(24);
+        let opts: image.InitializationOptions = {
+          editable: true,
+          srcPixelFormat: image.PixelMapFormat.NV21,
+          pixelFormat: image.PixelMapFormat.NV21,
+          size: { height: PIXEL_HEIGHT, width: PIXEL_WIDTH }
+        };
+        let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
+        let area: image.PositionArea = buildPositionArea(image.PixelMapFormat.RGBA_8888, PIXEL_WIDTH, PIXEL_HEIGHT);
+        try {
+          pixelMap.writePixelsFromAreaSync(area, image.PixelMapFormat.RGBA_8888);
+          console.error(msgStr + 'should fail but success');
+          pixelMap.release();
+          expect().assertFail();
+          done();
+        } catch (error) {
+          let err: BusinessError = error as BusinessError;
+          console.info(msgStr + 'caught expected error code=' + err.code);
+          expect(err.code).assertEqual(7600203);
+          pixelMap.release();
+          console.info(msgStr + 'release success');
           done();
         }
       })
