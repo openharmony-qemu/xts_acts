@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Copyright (C) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,12 +12,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 {
   "module": {
     "name": "entry",
     "type": "entry",
-    "description": "$string:phone_entry_dsc",
+    "description": "$string:module_desc",
     "mainElement": "EntryAbility",
     "deviceTypes": [],
     "deliveryWithInstall": true,
@@ -26,23 +25,37 @@
     "abilities": [
       {
         "name": "EntryAbility",
-        "srcEntry": "./ets/entryability/EntryAbility.ets",
-        "description": "$string:phone_entry_main",
+        "srcEntry": "./ets/entryability/EntryAbility.ts",
+        "description": "$string:EntryAbility_desc",
         "icon": "$media:icon",
-        "label": "$string:entry_label",
+        "label": "$string:EntryAbility_label",
         "startWindowIcon": "$media:icon",
         "startWindowBackground": "$color:start_window_background",
         "exported": true,
         "skills": [
           {
-            "actions": [
-              "action.system.home"
-            ],
             "entities": [
               "entity.system.home"
+            ],
+            "actions": [
+              "action.system.home"
             ]
           }
         ]
+      }
+    ],
+    "requestPermissions": [
+      {
+          "name": "ohos.permission.SYSTEM_FLOAT_WINDOW",
+          "reason": "need use ohos.permission.SYSTEM_FLOAT_WINDOW"
+      },
+      {
+          "name": "ohos.permission.CAPTURE_SCREEN",
+          "reason": "need use ohos.permission.CAPTURE_SCREEN"
+      },
+      {
+          "name": "ohos.permission.PRIVACY_WINDOW",
+          "reason": "need use ohos.permission.PRIVACY_WINDOW"
       }
     ]
   }
