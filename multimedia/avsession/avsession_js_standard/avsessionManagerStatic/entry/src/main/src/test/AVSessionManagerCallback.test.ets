@@ -70,7 +70,7 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                 }
             });
-            await Utils.msSleep(500);
+            await Utils.msSleep(1500);
             try{
                 console.info('TestLog: Session 1');
                 await session!.destroy()
