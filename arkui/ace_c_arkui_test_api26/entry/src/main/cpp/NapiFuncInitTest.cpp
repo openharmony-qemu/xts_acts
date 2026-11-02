@@ -19,6 +19,7 @@
 #include "scroll/scrollWithKeyboardTest.cpp"
 #include "scroll/autoAdjustMarginTest.cpp"
 #include "scroll/scrollBarHeightTest.cpp"
+#include "scroll/scrollStateTest.cpp"
 #include "list/listBackBehaviorTest.cpp"
 #include "list/listEnableEditModeTest.cpp"
 #include "list/listEditModeOptionsTest.cpp"
@@ -110,6 +111,12 @@ static napi_value Init(napi_env env, napi_value exports)
         {"ScrollBarHeightTest_003", nullptr, ScrollBarHeightTest_003, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"ScrollBarHeightTest_004", nullptr, ScrollBarHeightTest_004, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"ScrollStateTest_001", nullptr, ScrollStateTest_001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"ScrollStateTest_002", nullptr, ScrollStateTest_002, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"ScrollStateTest_003", nullptr, ScrollStateTest_003, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"ScrollAlignmentStartTest_001", nullptr, ScrollAlignmentStartTest_001, nullptr, nullptr, nullptr,
          napi_default, nullptr},

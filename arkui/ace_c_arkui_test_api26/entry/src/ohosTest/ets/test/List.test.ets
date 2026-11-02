@@ -17,6 +17,7 @@ import ScrollWithMouseTest from './scroll/scrollWithMouseTest.test';
 import ScrollWithKeyboardTest from './scroll/ScrollWithKeyboardTest.test';
 import AutoAdjustMarginTest from './scroll/autoAdjustMarginTest.test';
 import ScrollBarHeightTest from './scroll/scrollBarHeightTest.test';
+import ScrollStateTest from './scroll/ScrollStateTest.test';
 import ListBackBehaviorTest from './list/listBackBehaviorTest.test';
 import ListEnableEditModeTest from './list/listEnableEditModeTest.test';
 import ListEditModeOptionsTest from './list/listEditModeOptionsTest.test';
@@ -88,6 +89,7 @@ export default function testsuite() {
   ScrollWithKeyboardTest();
   AutoAdjustMarginTest();
   ScrollBarHeightTest();
+  ScrollStateTest();
   ListBackBehaviorTest();
   ListEnableEditModeTest();
   ListEditModeOptionsTest();
