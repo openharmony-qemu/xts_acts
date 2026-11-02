@@ -16017,6 +16017,70 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
+     * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_3320
+     * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_3320
+     * @tc.desc   Test MessageSequence.readRemoteObjectArray with objects parameter after reclaim, expect error code 1900010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_MessageSequence_3320", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("---------------------start SUB_DSoftbus_IPC_API_Stage_MessageSequence_3320---------------------------");
+      let data: rpc.MessageSequence = rpc.MessageSequence.create();
+      try {
+        let listeners = [new TestRemoteObject("rpcListener"), new TestRemoteObject("rpcListener2"), new TestRemoteObject("rpcListener3")];
+        data.writeRemoteObjectArray(listeners);
+        data.reclaim();
+        let res: Array<rpc.IRemoteObject> = [];
+        data.readRemoteObjectArray(res);
+        expect(res.length == 0).assertTrue();
+      } catch (err) {
+        err = err as BusinessError;
+        testFlag = false;
+        console.info(logTag + 'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3320 err in catch is: ' + err);
+        console.info(logTag + 'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3320 error code is: ' + err.code);
+        expect(err.code === '1900010').assertTrue();
+        expect(err != null).assertTrue();
+      } finally {
+        expect(testFlag).assertFalse();
+        console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_MessageSequence_3320 reclaim done");
+      }
+      console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_MessageSequence_3320---------------------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_3330
+     * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_3330
+     * @tc.desc   Test MessageSequence.readBooleanArray with dataIn parameter after reclaim, expect error code 1900010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_MessageSequence_3330", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("---------------------start SUB_DSoftbus_IPC_API_Stage_MessageSequence_3330---------------------------");
+      let data: rpc.MessageSequence = rpc.MessageSequence.create();
+      try {
+        let wBooleanArryData = [false, true, false];
+        data.writeBooleanArray(wBooleanArryData);
+        data.reclaim();
+        let rBooleanArryData: boolean[] = [];
+        data.readBooleanArray(rBooleanArryData);
+        expect(rBooleanArryData.length == 0).assertTrue();
+      } catch (err) {
+        err = err as BusinessError;
+        testFlag = false;
+        console.info(logTag + 'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3330 err in catch is: ' + err);
+        console.info(logTag + 'SUB_DSoftbus_IPC_API_Stage_MessageSequence_3330 error code is: ' + err.code);
+        expect(err.code === '1900010').assertTrue();
+        expect(err != null).assertTrue();
+      } finally {
+        expect(testFlag).assertFalse();
+        console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_MessageSequence_3330 reclaim done");
+      }
+      console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_MessageSequence_3330---------------------------");
+    });
+
+    /**
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageOption_0200
      * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageOption_0200
      * @tc.desc   Test MessageOption constructor with syncFlags number parameter via subclass
@@ -16374,6 +16438,61 @@ export default function ActsRpcClientEtsTest() {
         expect(error == null).assertTrue();
       }
       console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0300---------------------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_API_Stage_RemoteObject_0390
+     * @tc.number SUB_DSoftbus_IPC_API_Stage_RemoteObject_0390
+     * @tc.desc   Test RemoteObject.getDescriptor on an invalid proxy constructed by new rpc.RemoteProxy (native object is null), expect error code 1900008
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_RemoteObject_0390", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("---------------------start SUB_DSoftbus_IPC_API_Stage_RemoteObject_0390---------------------------");
+      try {
+        let invalidProxy = new rpc.RemoteProxy();
+        invalidProxy.getDescriptor();
+      } catch (err) {
+        err = err as BusinessError;
+        testFlag = false;
+        console.info(logTag + 'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0390 err in catch is: ' + err);
+        console.info(logTag + 'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0390 error code is: ' + err.code);
+        expect(err.code === '1900008').assertTrue();
+        expect(err != null).assertTrue();
+      } finally {
+        expect(testFlag).assertFalse();
+        console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_RemoteObject_0390 done");
+      }
+      console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_RemoteObject_0390---------------------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0310
+     * @tc.number SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0310
+     * @tc.desc   Test RemoteProxy.registerDeathRecipient on a proxy constructed by new rpc.RemoteProxy (native object is null), expect error code 1900008
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0310", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("---------------------start SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0310---------------------------");
+      try {
+        let recipient = new MyregisterDeathRecipient();
+        let invalidProxy = new rpc.RemoteProxy();
+        invalidProxy.registerDeathRecipient(recipient, 0);
+      } catch (err) {
+        err = err as BusinessError;
+        testFlag = false;
+        console.info(logTag + 'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0310 err in catch is: ' + err);
+        console.info(logTag + 'SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0310 error code is: ' + err.code);
+        expect(err.code === '1900008').assertTrue();
+        expect(err != null).assertTrue();
+      } finally {
+        expect(testFlag).assertFalse();
+        console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0310 done");
+      }
+      console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0310---------------------------");
     });
 
     console.info("-----------------------SUB_DSoftbus_IPC_API_Stage_MessageSequence_Test is end-----------------------");
