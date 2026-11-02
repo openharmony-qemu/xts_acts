@@ -21,6 +21,7 @@
 #include <arkui/native_key_event.h>
 #include <arkui/ui_input_event.h>
 #include <string>
+#include <cstdint>
 
 #include <arkui/drag_and_drop.h>
 #include <arkui/native_node_napi.h>
@@ -63,6 +64,117 @@ napi_value TextPickerCascadeTest::TextPickerCascadeTest_a2(napi_env env, napi_ca
     int len = -5;
     auto array = OH_ArkUI_TextPickerRangeContentArray_Create(len);
     ASSERT_OBJ(array, nullptr);
+    NAPI_END;
+}
+
+napi_value TextPickerCascadeTest::TextPickerCascadeTest_a3(napi_env env, napi_callback_info info)
+{
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TextPickerCascadeTest_a3", "CreateNativeNode");
+    NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);
+    int len = 0;
+    auto array = OH_ArkUI_TextPickerRangeContentArray_Create(len);
+    int check = ((array == nullptr) ? ARKUI_ERROR_CODE_PARAM_INVALID : ARKUI_ERROR_CODE_NO_ERROR);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TextPickerCascadeTest_a3", "check %{public}d", check);
+    ASSERT_EQ(check, ARKUI_ERROR_CODE_PARAM_INVALID);
+    NAPI_END;
+}
+
+napi_value TextPickerCascadeTest::TextPickerCascadeTest_a4(napi_env env, napi_callback_info info)
+{
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TextPickerCascadeTest_a4", "CreateNativeNode");
+    NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);
+    int len = 1;
+    auto array = OH_ArkUI_TextPickerRangeContentArray_Create(len);
+    int check = ((array == nullptr) ? ARKUI_ERROR_CODE_PARAM_INVALID : ARKUI_ERROR_CODE_NO_ERROR);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TextPickerCascadeTest_a4", "check %{public}d", check);
+    ASSERT_EQ(check, ARKUI_ERROR_CODE_NO_ERROR);
+
+    OH_ArkUI_TextPickerRangeContentArray_Destroy(array);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TextPickerCascadeTest_a4", "Destroy ret void");
+    NAPI_END;
+}
+
+napi_value TextPickerCascadeTest::TextPickerCascadeTest_a5(napi_env env, napi_callback_info info)
+{
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TextPickerCascadeTest_a5", "CreateNativeNode");
+    NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);
+    int len = -1;
+    auto array = OH_ArkUI_TextPickerRangeContentArray_Create(len);
+    ASSERT_OBJ(array, nullptr);
+    NAPI_END;
+}
+
+napi_value TextPickerCascadeTest::TextPickerCascadeTest_a7(napi_env env, napi_callback_info info)
+{
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TextPickerCascadeTest_a7", "CreateNativeNode");
+    NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);
+    int len = INT32_MIN;
+    auto array = OH_ArkUI_TextPickerRangeContentArray_Create(len);
+    int check = ((array == nullptr) ? ARKUI_ERROR_CODE_PARAM_INVALID : ARKUI_ERROR_CODE_NO_ERROR);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TextPickerCascadeTest_a7", "check %{public}d", check);
+    ASSERT_EQ(check, ARKUI_ERROR_CODE_PARAM_INVALID);
+    NAPI_END;
+}
+
+napi_value TextPickerCascadeTest::TextPickerCascadeTest_a8(napi_env env, napi_callback_info info)
+{
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TextPickerCascadeTest_a8", "CreateNativeNode");
+    NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);
+    int len = 100;
+    auto array = OH_ArkUI_TextPickerRangeContentArray_Create(len);
+    int check = ((array == nullptr) ? ARKUI_ERROR_CODE_PARAM_INVALID : ARKUI_ERROR_CODE_NO_ERROR);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TextPickerCascadeTest_a8", "check %{public}d", check);
+    ASSERT_EQ(check, ARKUI_ERROR_CODE_NO_ERROR);
+
+    OH_ArkUI_TextPickerRangeContentArray_Destroy(array);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TextPickerCascadeTest_a8", "Destroy ret void");
+    NAPI_END;
+}
+
+napi_value TextPickerCascadeTest::TextPickerCascadeTest_a9(napi_env env, napi_callback_info info)
+{
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TextPickerCascadeTest_a9", "CreateNativeNode");
+    NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);
+    int len = 1000000;
+    auto array = OH_ArkUI_TextPickerRangeContentArray_Create(len);
+    int check = ((array == nullptr) ? ARKUI_ERROR_CODE_PARAM_INVALID : ARKUI_ERROR_CODE_NO_ERROR);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TextPickerCascadeTest_a9", "check %{public}d", check);
+    ASSERT_EQ(check, ARKUI_ERROR_CODE_NO_ERROR);
+
+    OH_ArkUI_TextPickerRangeContentArray_Destroy(array);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TextPickerCascadeTest_a9", "Destroy ret void");
+    NAPI_END;
+}
+
+napi_value TextPickerCascadeTest::TextPickerCascadeTest_a10(napi_env env, napi_callback_info info)
+{
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TextPickerCascadeTest_a10", "CreateNativeNode");
+    NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);
+    int len = PARAM_10000;
+    auto array = OH_ArkUI_TextPickerRangeContentArray_Create(len);
+    int check = ((array == nullptr) ? ARKUI_ERROR_CODE_PARAM_INVALID : ARKUI_ERROR_CODE_NO_ERROR);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TextPickerCascadeTest_a10",
+                 "boundary value length=10000, check %{public}d", check);
+    ASSERT_EQ(check, ARKUI_ERROR_CODE_NO_ERROR);
+
+    OH_ArkUI_TextPickerRangeContentArray_Destroy(array);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TextPickerCascadeTest_a10", "Destroy ret void");
+    NAPI_END;
+}
+
+napi_value TextPickerCascadeTest::TextPickerCascadeTest_a11(napi_env env, napi_callback_info info)
+{
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TextPickerCascadeTest_a11", "CreateNativeNode");
+    NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);
+    int len = PARAM_10000 + PARAM_1;
+    auto array = OH_ArkUI_TextPickerRangeContentArray_Create(len);
+    int check = ((array == nullptr) ? ARKUI_ERROR_CODE_PARAM_INVALID : ARKUI_ERROR_CODE_NO_ERROR);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TextPickerCascadeTest_a11",
+                 "boundary value length=10001, check %{public}d", check);
+    ASSERT_EQ(check, ARKUI_ERROR_CODE_NO_ERROR);
+
+    OH_ArkUI_TextPickerRangeContentArray_Destroy(array);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TextPickerCascadeTest_a11", "Destroy ret void");
     NAPI_END;
 }
 

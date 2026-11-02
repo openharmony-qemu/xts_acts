@@ -76,6 +76,126 @@ export default function TextPickerCascadeTest(){
     })
 
     /**
+     * @tc.name   TextPickerCascadeTest_a3
+     * @tc.number TextPickerCascadeTest_a3
+     * @tc.desc   OH_ArkUI_TextPickerRangeContentArray_Create boundary value length=0 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('TextPickerCascadeTest_a3',  Level.LEVEL0, async (done: Function) => {
+      expect(nativeRender.TextPickerCascadeTest_a3()).assertEqual(0)
+      console.log('TextPickerCascadeTest_a3 will drag and check:: ')
+      await Utils.sleep(200)
+      done()
+    })
+
+    /**
+     * @tc.name   TextPickerCascadeTest_a4
+     * @tc.number TextPickerCascadeTest_a4
+     * @tc.desc   OH_ArkUI_TextPickerRangeContentArray_Create boundary value length=1 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('TextPickerCascadeTest_a4',  Level.LEVEL0, async (done: Function) => {
+      expect(nativeRender.TextPickerCascadeTest_a4()).assertEqual(0)
+      console.log('TextPickerCascadeTest_a4 will drag and check:: ')
+      await Utils.sleep(200)
+      done()
+    })
+
+    /**
+     * @tc.name   TextPickerCascadeTest_a5
+     * @tc.number TextPickerCascadeTest_a5
+     * @tc.desc   OH_ArkUI_TextPickerRangeContentArray_Create boundary value length=-1 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('TextPickerCascadeTest_a5',  Level.LEVEL0, async (done: Function) => {
+      expect(nativeRender.TextPickerCascadeTest_a5()).assertEqual(0)
+      console.log('TextPickerCascadeTest_a5 will drag and check:: ')
+      await Utils.sleep(200)
+      done()
+    })
+
+    /**
+     * @tc.name   TextPickerCascadeTest_a7
+     * @tc.number TextPickerCascadeTest_a7
+     * @tc.desc   OH_ArkUI_TextPickerRangeContentArray_Create boundary value length=INT32_MIN test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('TextPickerCascadeTest_a7',  Level.LEVEL0, async (done: Function) => {
+      expect(nativeRender.TextPickerCascadeTest_a7()).assertEqual(0)
+      console.log('TextPickerCascadeTest_a7 will drag and check:: ')
+      await Utils.sleep(200)
+      done()
+    })
+
+    /**
+     * @tc.name   TextPickerCascadeTest_a8
+     * @tc.number TextPickerCascadeTest_a8
+     * @tc.desc   OH_ArkUI_TextPickerRangeContentArray_Create boundary value length=100 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('TextPickerCascadeTest_a8',  Level.LEVEL0, async (done: Function) => {
+      expect(nativeRender.TextPickerCascadeTest_a8()).assertEqual(0)
+      console.log('TextPickerCascadeTest_a8 will drag and check:: ')
+      await Utils.sleep(200)
+      done()
+    })
+
+    /**
+     * @tc.name   TextPickerCascadeTest_a9
+     * @tc.number TextPickerCascadeTest_a9
+     * @tc.desc   OH_ArkUI_TextPickerRangeContentArray_Create boundary value length=1000000 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('TextPickerCascadeTest_a9',  Level.LEVEL0, async (done: Function) => {
+      expect(nativeRender.TextPickerCascadeTest_a9()).assertEqual(0)
+      console.log('TextPickerCascadeTest_a9 will drag and check:: ')
+      await Utils.sleep(200)
+      done()
+    })
+
+    /**
+     * @tc.name   TextPickerCascadeTest_a10
+     * @tc.number TextPickerCascadeTest_a10
+     * @tc.desc   OH_ArkUI_TextPickerRangeContentArray_Create boundary value length=10000 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('TextPickerCascadeTest_a10',  Level.LEVEL0, async (done: Function) => {
+      expect(nativeRender.TextPickerCascadeTest_a10()).assertEqual(0)
+      console.log('TextPickerCascadeTest_a10 will drag and check:: ')
+      await Utils.sleep(200)
+      done()
+    })
+
+    /**
+     * @tc.name   TextPickerCascadeTest_a11
+     * @tc.number TextPickerCascadeTest_a11
+     * @tc.desc   OH_ArkUI_TextPickerRangeContentArray_Create boundary value length=10001 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('TextPickerCascadeTest_a11',  Level.LEVEL0, async (done: Function) => {
+      expect(nativeRender.TextPickerCascadeTest_a11()).assertEqual(0)
+      console.log('TextPickerCascadeTest_a11 will drag and check:: ')
+      await Utils.sleep(200)
+      done()
+    })
+
+    /**
      * @tc.name   TextPickerCascadeTest_b
      * @tc.number TextPickerCascadeTest_b
      * @tc.desc   TextPickerCascadeTest_b
