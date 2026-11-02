@@ -54,7 +54,7 @@ export class CapacityFixture {
         console.info('====> XtsProxyCapacity ' + mode + ' ' + this.root + '\n' + loggedOutput);
         return output;
       }
-      await EditorFixture.delay(100);
+      await new Promise<void>((resolve) => setTimeout(resolve, 100));
     }
     throw new Error('Real capacity fixture timed out: ' + mode + ' ' + this.root);
   }

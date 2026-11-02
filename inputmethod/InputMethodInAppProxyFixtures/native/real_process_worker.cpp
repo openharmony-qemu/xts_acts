@@ -1,131 +1,51 @@
-    return 0;
-}
+/*
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+#include "hilog/log.h"
+#include <atomic>
+#include <chrono>
+#include <csignal>
+#include <cstddef>
+#include <cstdint>
+#include <fcntl.h>
+#include <fstream>
+#include <iostream>
+#include <memory>
+#include <mutex>
+#include <sstream>
+#include <string>
+#include <sys/mman.h>
+#include <sys/stat.h>
+#include <thread>
+#include <unistd.h>
 
-int ValidateSpawnCommand(const std::string &command, const std::string &root, int &index, std::string &directory)
-{
-    if (command != "SPAWN" || !(std::cin >> index) || index < 0 || index >= MAX_CAPACITY_WORKERS ||
-        ReadThreadCount() != 1) {
-        return INVALID_SPAWN_COMMAND;
-    }
-    directory = root + "/w" + std::to_string(index);
-    struct stat info = {};
-    if (stat(directory.c_str(), &info) != 0 || !S_ISDIR(info.st_mode)) {
-        return INVALID_WORKER_DIRECTORY;
-    }
-    return 0;
-}
+#include "input_method_ability.h"
+#include "input_method_engine_listener.h"
+#include "securec.h"
+#include "transaction/rs_transaction.h"
+#include "ui/rs_surface_node.h"
+#include "window.h"
+#include "window_manager.h"
+#include "window_property.h"
+#include "wm/include/window_adapter.h"
+#include "zidl/window_stub.h"
 
-int RunForkChild(const std::string &directory)
-{
-    struct sigaction normal = {};
-    normal.sa_handler = SIG_DFL;
-    if (sigaction(SIGCHLD, &normal, nullptr) != 0) {
-        return CHILD_SIGNAL_SETUP_FAILED;
-    }
-    const int control = open((directory + "/control").c_str(), O_RDWR | O_CLOEXEC);
-    const int events =
-        open((directory + "/events.log").c_str(), O_WRONLY | O_CREAT | O_TRUNC | O_CLOEXEC, EVENT_FILE_MODE);
-    if (control < 0 || events < 0 || dup2(control, STDIN_FILENO) < 0 || dup2(events, STDOUT_FILENO) < 0 ||
-        dup2(events, STDERR_FILENO) < 0) {
-        return CHILD_IO_SETUP_FAILED;
-    }
-    close(control);
-    close(events);
-    // Retain normal fork semantics for descriptors owned by loaded libraries.
-    std::cin.clear();
-    std::cout << "FORK_CHILD pid=" << getpid() << " parent=" << getppid() << std::endl;
-    return RunClient();
-}
+using namespace OHOS;
+using namespace OHOS::MiscServices;
+using namespace OHOS::Rosen;
 
-int RunForkServer(const std::string &root)
-{
-    const auto setup = PrepareForkServer(root);
-    if (setup != 0) {
-        return setup;
-    }
-int CleanupCapacityClient(const std::unique_ptr<CapacityWindow> &window)
-{
-    auto ret = InputMethodAbility::GetInstance().UnregisterInAppProxyIme();
-    auto windowResult = OHOS::Rosen::WMError::WM_OK;
-    if (window != nullptr) {
-        windowResult = window->Destroy();
-    }
-    std::cout << "CLEANUP pid=" << getpid() << " ret=" << ret << std::endl;
-    return ret == ErrorCode::NO_ERROR && windowResult == OHOS::Rosen::WMError::WM_OK ? 0 : CLIENT_CLEANUP_FAILED;
-}
-
-bool FocusCapacityWindow(CapacityWindow &window, FocusChangeInfo &info)
-{
-    auto shown = window.Show();
-    auto focused = window.RequestFocus();
-    int stableSamples = 0;
-    const auto windowId = window.GetWindowId();
-    for (int i = 0; i < FOCUS_POLL_LIMIT; ++i) {
-        WindowManager::GetInstance().GetFocusWindowInfo(info, ImfCommonConst::DEFAULT_DISPLAY_ID);
-        stableSamples =
-            info.pid_ == getpid() && info.windowId_ == static_cast<int32_t>(windowId) ? stableSamples + 1 : 0;
-        if (stableSamples >= FOCUS_STABLE_SAMPLE_COUNT) {
-            break;
-        }
-        std::this_thread::sleep_for(std::chrono::milliseconds(FOCUS_POLL_INTERVAL_MS));
-    }
-    if (stableSamples < FOCUS_STABLE_SAMPLE_COUNT) {
-        window.Destroy();
-        std::cout << "====> FOCUS_FAILED pid=" << getpid() << " actual=" << info.pid_ <<
-                  " show=" << static_cast<int32_t>(shown) << " request=" << static_cast<int32_t>(focused) <<
-                  std::endl;
-        return false;
-    }
-    std::cout << "FOCUS_CONFIRMED pid=" << getpid() << " focused=" << info.pid_ << " window=" << windowId <<
-              " actual_window=" << info.windowId_ << " display=0 samples=" << stableSamples << std::endl;
-    return true;
-}
-
-void RegisterCapacityClient(const CapacityWindow &window, FocusChangeInfo &info)
-{
-    RegisterOptions options;
-    const auto registrationStart = std::chrono::steady_clock::now();
-    auto ret = InputMethodAbility::GetInstance().RegisterInAppProxyIme(options);
-    const auto registrationUs =
-        std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::steady_clock::now() - registrationStart)
-            .count();
-    std::cout << "REGISTERED pid=" << getpid() << " focused=" << info.pid_ << " ret=" << ret << std::endl;
-    std::cout << "REGISTER_MEASUREMENT pid=" << getpid() << " microseconds=" << registrationUs << " ret=" << ret <<
-              std::endl;
-    WindowManager::GetInstance().GetFocusWindowInfo(info, ImfCommonConst::DEFAULT_DISPLAY_ID);
-    std::cout << "FOCUS_AFTER pid=" << getpid() << " focused=" << info.pid_ << " window=" << window.GetWindowId() <<
-              " actual_window=" << info.windowId_ << std::endl;
-    ReclaimIdleClientPages("REGISTER");
-}
-
-int RunRegistrationCommand(const std::string &command, std::unique_ptr<CapacityWindow> &window)
-{
-    if (window == nullptr) {
-        window = CreateCapacityWindow();
-    }
-    if (window == nullptr) {
-        std::cout << "====> SETUP_FAILED create_window pid=" << getpid() << std::endl;
-        return WINDOW_SETUP_FAILED;
-    }
-    FocusChangeInfo info;
-    if (!FocusCapacityWindow(*window, info)) {
-        window = nullptr;
-        return 0;
-    }
-    RegisterCapacityClient(*window, info);
-    if (command == "REGISTER") {
-        // Keep the real registration alive and release only its fixture window.
-        // A subsequent command creates a new window and checks its real focus.
-        auto released = window->Destroy();
-        window = nullptr;
-        std::cout << "WINDOW_RELEASED pid=" << getpid() << " ret=" << static_cast<int32_t>(released) << std::endl;
-        if (released != OHOS::Rosen::WMError::WM_OK) {
-            return WINDOW_RELEASE_FAILED;
-        }
-    }
-    return 0;
-}
-
+namespace {
 constexpr size_t PSS_VALUE_OFFSET = 4;
 constexpr size_t THREAD_COUNT_VALUE_OFFSET = 8;
 constexpr size_t MAP_PERMISSION_BUFFER_SIZE = 5;
@@ -158,54 +78,6 @@ constexpr int FIRST_VALUE_ARGUMENT = 2;
 constexpr int SECOND_VALUE_ARGUMENT = 3;
 constexpr int THIRD_VALUE_ARGUMENT = 4;
 constexpr int FOURTH_VALUE_ARGUMENT = 5;
-#include "securec.h"
-#include <atomic>
-/*
- * Copyright (c) 2026 Huawei Device Co., Ltd.
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-#include "hilog/log.h"
-#include <chrono>
-#include <csignal>
-#include <cstddef>
-#include <cstdint>
-#include <fcntl.h>
-#include <fstream>
-#include <iostream>
-#include <memory>
-#include <mutex>
-#include <sstream>
-#include <string>
-#include <sys/mman.h>
-#include <sys/stat.h>
-#include <thread>
-#include <unistd.h>
-
-#include "input_method_ability.h"
-#include "input_method_engine_listener.h"
-#include "transaction/rs_transaction.h"
-#include "ui/rs_surface_node.h"
-#include "window.h"
-#include "window_manager.h"
-#include "window_property.h"
-#include "wm/include/window_adapter.h"
-#include "zidl/window_stub.h"
-
-using namespace OHOS;
-using namespace OHOS::MiscServices;
-using namespace OHOS::Rosen;
-
-namespace {
 std::mutex g_eventOutputMutex;
 
 int64_t ReadPssKb()
@@ -462,6 +334,89 @@ std::unique_ptr<CapacityWindow> CreateCapacityWindow()
     return window;
 }
 
+int CleanupCapacityClient(const std::unique_ptr<CapacityWindow> &window)
+{
+    auto ret = InputMethodAbility::GetInstance().UnregisterInAppProxyIme();
+    auto windowResult = OHOS::Rosen::WMError::WM_OK;
+    if (window != nullptr) {
+        windowResult = window->Destroy();
+    }
+    std::cout << "CLEANUP pid=" << getpid() << " ret=" << ret << std::endl;
+    return ret == ErrorCode::NO_ERROR && windowResult == OHOS::Rosen::WMError::WM_OK ? 0 : CLIENT_CLEANUP_FAILED;
+}
+
+bool FocusCapacityWindow(CapacityWindow &window, FocusChangeInfo &info)
+{
+    auto shown = window.Show();
+    auto focused = window.RequestFocus();
+    int stableSamples = 0;
+    const auto windowId = window.GetWindowId();
+    for (int i = 0; i < FOCUS_POLL_LIMIT; ++i) {
+        WindowManager::GetInstance().GetFocusWindowInfo(info, ImfCommonConst::DEFAULT_DISPLAY_ID);
+        stableSamples =
+            info.pid_ == getpid() && info.windowId_ == static_cast<int32_t>(windowId) ? stableSamples + 1 : 0;
+        if (stableSamples >= FOCUS_STABLE_SAMPLE_COUNT) {
+            break;
+        }
+        std::this_thread::sleep_for(std::chrono::milliseconds(FOCUS_POLL_INTERVAL_MS));
+    }
+    if (stableSamples < FOCUS_STABLE_SAMPLE_COUNT) {
+        window.Destroy();
+        std::cout << "====> FOCUS_FAILED pid=" << getpid() << " actual=" << info.pid_ <<
+                  " show=" << static_cast<int32_t>(shown) << " request=" << static_cast<int32_t>(focused) <<
+                  std::endl;
+        return false;
+    }
+    std::cout << "FOCUS_CONFIRMED pid=" << getpid() << " focused=" << info.pid_ << " window=" << windowId <<
+              " actual_window=" << info.windowId_ << " display=0 samples=" << stableSamples << std::endl;
+    return true;
+}
+
+void RegisterCapacityClient(const CapacityWindow &window, FocusChangeInfo &info)
+{
+    RegisterOptions options;
+    const auto registrationStart = std::chrono::steady_clock::now();
+    auto ret = InputMethodAbility::GetInstance().RegisterInAppProxyIme(options);
+    const auto registrationUs =
+        std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::steady_clock::now() - registrationStart)
+            .count();
+    std::cout << "REGISTERED pid=" << getpid() << " focused=" << info.pid_ << " ret=" << ret << std::endl;
+    std::cout << "REGISTER_MEASUREMENT pid=" << getpid() << " microseconds=" << registrationUs << " ret=" << ret <<
+              std::endl;
+    WindowManager::GetInstance().GetFocusWindowInfo(info, ImfCommonConst::DEFAULT_DISPLAY_ID);
+    std::cout << "FOCUS_AFTER pid=" << getpid() << " focused=" << info.pid_ << " window=" << window.GetWindowId() <<
+              " actual_window=" << info.windowId_ << std::endl;
+    ReclaimIdleClientPages("REGISTER");
+}
+
+int RunRegistrationCommand(const std::string &command, std::unique_ptr<CapacityWindow> &window)
+{
+    if (window == nullptr) {
+        window = CreateCapacityWindow();
+    }
+    if (window == nullptr) {
+        std::cout << "====> SETUP_FAILED create_window pid=" << getpid() << std::endl;
+        return WINDOW_SETUP_FAILED;
+    }
+    FocusChangeInfo info;
+    if (!FocusCapacityWindow(*window, info)) {
+        window = nullptr;
+        return 0;
+    }
+    RegisterCapacityClient(*window, info);
+    if (command == "REGISTER") {
+        // Keep the real registration alive and release only its fixture window.
+        // A subsequent command creates a new window and checks its real focus.
+        auto released = window->Destroy();
+        window = nullptr;
+        std::cout << "WINDOW_RELEASED pid=" << getpid() << " ret=" << static_cast<int32_t>(released) << std::endl;
+        if (released != OHOS::Rosen::WMError::WM_OK) {
+            return WINDOW_RELEASE_FAILED;
+        }
+    }
+    return 0;
+}
+
 int RunClient()
 {
     std::unique_ptr<CapacityWindow> window;
@@ -519,6 +474,51 @@ int PrepareForkServer(const std::string &root)
         return CHILD_REAP_SETUP_FAILED;
     }
     std::cout << "FORK_SERVER_READY pid=" << getpid() << " threads=1" << std::endl;
+    return 0;
+}
+
+int ValidateSpawnCommand(const std::string &command, const std::string &root, int &index, std::string &directory)
+{
+    if (command != "SPAWN" || !(std::cin >> index) || index < 0 || index >= MAX_CAPACITY_WORKERS ||
+        ReadThreadCount() != 1) {
+        return INVALID_SPAWN_COMMAND;
+    }
+    directory = root + "/w" + std::to_string(index);
+    struct stat info = {};
+    if (stat(directory.c_str(), &info) != 0 || !S_ISDIR(info.st_mode)) {
+        return INVALID_WORKER_DIRECTORY;
+    }
+    return 0;
+}
+
+int RunForkChild(const std::string &directory)
+{
+    struct sigaction normal = {};
+    normal.sa_handler = SIG_DFL;
+    if (sigaction(SIGCHLD, &normal, nullptr) != 0) {
+        return CHILD_SIGNAL_SETUP_FAILED;
+    }
+    const int control = open((directory + "/control").c_str(), O_RDWR | O_CLOEXEC);
+    const int events =
+        open((directory + "/events.log").c_str(), O_WRONLY | O_CREAT | O_TRUNC | O_CLOEXEC, EVENT_FILE_MODE);
+    if (control < 0 || events < 0 || dup2(control, STDIN_FILENO) < 0 || dup2(events, STDOUT_FILENO) < 0 ||
+        dup2(events, STDERR_FILENO) < 0) {
+        return CHILD_IO_SETUP_FAILED;
+    }
+    close(control);
+    close(events);
+    // Retain normal fork semantics for descriptors owned by loaded libraries.
+    std::cin.clear();
+    std::cout << "FORK_CHILD pid=" << getpid() << " parent=" << getppid() << std::endl;
+    return RunClient();
+}
+
+int RunForkServer(const std::string &root)
+{
+    const auto setup = PrepareForkServer(root);
+    if (setup != 0) {
+        return setup;
+    }
     std::string command;
     while (std::cin >> command) {
         if (command == "QUIT") {

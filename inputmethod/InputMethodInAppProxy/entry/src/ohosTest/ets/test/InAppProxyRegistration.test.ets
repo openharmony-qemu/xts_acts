@@ -1,3 +1,4 @@
+    afterEach(async () => { await EditorFixture.cleanup(); });
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,12 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, expect, Level } from '@ohos/hypium-dynamic';
+import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-dynamic';
 import { inputMethodEngine } from '@kit.IMEKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { abilityDelegatorRegistry } from '@kit.TestKit';
 import { EditorFixture } from './EditorFixture';
-import { proxyTest as it } from './Proxy.test';
 
 async function expectError(invoke: () => Promise<void>, code: number): Promise<void> {
   let caught: BusinessError | undefined = undefined;
@@ -52,6 +52,7 @@ function expectProxyDelegate(value: inputMethodEngine.ProxyKeyboardDelegate | nu
 export default function inAppProxyRegistration(): void {
   describe('inAppProxyRegistration', () => {
     beforeEach(async () => { await EditorFixture.cleanup(); });
+    afterEach(async () => { await EditorFixture.cleanup(); });
 
     /**
      * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0010
@@ -490,7 +491,7 @@ export default function inAppProxyRegistration(): void {
       EditorFixture.client = null;
       EditorFixture.focus();
       // Observe a bounded event window after the editor focus request.
-      await EditorFixture.delay(1000);
+      await new Promise<void>((resolve) => setTimeout(resolve, 1000));
       expect(EditorFixture.client === null).assertTrue();
     });
 
@@ -516,7 +517,7 @@ export default function inAppProxyRegistration(): void {
       EditorFixture.client = null;
       EditorFixture.focus();
       // Observe a bounded event window after the editor focus request.
-      await EditorFixture.delay(1000);
+      await new Promise<void>((resolve) => setTimeout(resolve, 1000));
       expect(EditorFixture.client === null).assertTrue();
     });
 

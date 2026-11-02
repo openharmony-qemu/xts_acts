@@ -1,3 +1,4 @@
+    afterEach(async () => { await EditorFixture.cleanup(); });
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,12 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, expect, Level } from '@ohos/hypium-dynamic';
+import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-dynamic';
 import { inputMethod, inputMethodEngine } from '@kit.IMEKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { Driver, ON } from '@kit.TestKit';
 import { EditorFixture } from './EditorFixture';
-import { proxyTest as it } from './Proxy.test';
 import { CapacityFixture } from './CapacityFixture';
 
 function expectProxyAbility(value: inputMethodEngine.ProxyInputMethodAbility | null): void {
@@ -39,6 +39,7 @@ function expectProxyDelegate(value: inputMethodEngine.ProxyKeyboardDelegate | nu
 export default function inAppProxyCapacity(): void {
   describe('inAppProxyCapacity', () => {
     beforeEach(async () => { await EditorFixture.cleanup(); });
+    afterEach(async () => { await EditorFixture.cleanup(); });
 
     /**
      * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0480
@@ -69,7 +70,7 @@ export default function inAppProxyCapacity(): void {
             unbound = true;
             break;
           }
-          await EditorFixture.delay(50);
+          await new Promise<void>((resolve) => setTimeout(resolve, 50));
         }
         expect(unbound).assertTrue();
         const sink = await Driver.create().waitForComponent(ON.id('focusSink').focused(true), 3000);
@@ -88,7 +89,7 @@ export default function inAppProxyCapacity(): void {
         await pool.evict();
         await pool.foreground();
         await EditorFixture.waitUntil(() => witness === 1);
-        await EditorFixture.delay(300);
+        await new Promise<void>((resolve) => setTimeout(resolve, 300));
         expect(witness).assertEqual(1);
         expect(count).assertEqual(1);
       } finally {
@@ -125,7 +126,7 @@ export default function inAppProxyCapacity(): void {
             unbound = true;
             break;
           }
-          await EditorFixture.delay(50);
+          await new Promise<void>((resolve) => setTimeout(resolve, 50));
         }
         expect(unbound).assertTrue();
         const sink = await Driver.create().waitForComponent(ON.id('focusSink').focused(true), 3000);
@@ -145,7 +146,7 @@ export default function inAppProxyCapacity(): void {
         await pool.evict();
         await pool.foreground();
         await EditorFixture.waitUntil(() => witness === 1);
-        await EditorFixture.delay(300);
+        await new Promise<void>((resolve) => setTimeout(resolve, 300));
         expect(witness).assertEqual(1);
         expect(count).assertEqual(0);
       } finally {
@@ -182,7 +183,7 @@ export default function inAppProxyCapacity(): void {
             unbound = true;
             break;
           }
-          await EditorFixture.delay(50);
+          await new Promise<void>((resolve) => setTimeout(resolve, 50));
         }
         expect(unbound).assertTrue();
         const sink = await Driver.create().waitForComponent(ON.id('focusSink').focused(true), 3000);
@@ -201,7 +202,7 @@ export default function inAppProxyCapacity(): void {
         await pool.evict();
         await pool.foreground();
         await EditorFixture.waitUntil(() => witness === 1);
-        await EditorFixture.delay(300);
+        await new Promise<void>((resolve) => setTimeout(resolve, 300));
         expect(witness).assertEqual(1);
         expect(count).assertEqual(1);
         expectProxyAbility(inputMethodEngine.getProxyInputMethodAbility());

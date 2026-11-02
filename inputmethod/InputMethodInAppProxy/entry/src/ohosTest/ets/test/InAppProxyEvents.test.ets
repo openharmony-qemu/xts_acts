@@ -1,3 +1,4 @@
+    afterEach(async () => { await EditorFixture.cleanup(); });
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,12 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, expect, Level } from '@ohos/hypium-dynamic';
+import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-dynamic';
 import { inputMethodEngine } from '@kit.IMEKit';
 import { abilityDelegatorRegistry } from '@kit.TestKit';
 import keyEvent from '@ohos.multimodalInput.keyEvent';
 import { EditorFixture } from './EditorFixture';
-import { proxyTest as it } from './Proxy.test';
 
 function sameCursor(left: number[], right: number[]): boolean {
   return left[0] === right[0] && left[1] === right[1] && left[2] === right[2];
@@ -46,7 +46,7 @@ async function verifyCursorRoundTrip(client: inputMethodEngine.ProxyTextInputCli
         if (clientCursor === target) {
           break;
         }
-        await EditorFixture.delay(50);
+        await new Promise<void>((resolve) => setTimeout(resolve, 50));
       }
       expect(clientCursor).assertEqual(target);
       const caret = EditorFixture.readCaret();
@@ -103,6 +103,7 @@ async function verifyCursorRoundTrip(client: inputMethodEngine.ProxyTextInputCli
 export default function inAppProxyEvents(): void {
   describe('inAppProxyEvents', () => {
     beforeEach(async () => { await EditorFixture.cleanup(); });
+    afterEach(async () => { await EditorFixture.cleanup(); });
 
     /**
      * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0400

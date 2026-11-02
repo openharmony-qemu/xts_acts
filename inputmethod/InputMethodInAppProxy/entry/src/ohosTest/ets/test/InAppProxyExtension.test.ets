@@ -1,3 +1,4 @@
+    afterEach(async () => { await EditorFixture.cleanup(); });
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,14 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, expect, Level } from '@ohos/hypium-dynamic';
+import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-dynamic';
 import { EditorFixture } from './EditorFixture';
-import { proxyTest as it } from './Proxy.test';
 import { extensionProbe } from './ExtensionFixture';
 
 export default function inAppProxyExtension(): void {
   describe('inAppProxyExtension', () => {
     beforeEach(async () => { await EditorFixture.cleanup(); });
+    afterEach(async () => { await EditorFixture.cleanup(); });
 
     /**
      * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0280

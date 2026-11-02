@@ -36,9 +36,9 @@ Such a report is not strict26.1 installation acceptance.
 
 The test ability owns actual TextInput/TextArea controls. Assertions inspect
 real text, caret/selection, editor attributes, callback values and key-event
-consumption. The proxyTest entry awaits listener/proxy cleanup on both success
-and failure, preserving the original error and reporting a simultaneous cleanup
-failure. beforeEach also clears earlier state before starting a case.
+consumption. Each case is registered directly with Hypium it(). The awaited afterEach hook
+releases listener/proxy resources after each case, including failed cases.
+Cleanup errors propagate to Hypium. beforeEach also clears earlier state before starting a case.
 
 The functional-key cases observe actual editor onSubmit values. UNSPECIFIED
 and NONE do not submit; a subsequent DONE callback witnesses event delivery. Caret
