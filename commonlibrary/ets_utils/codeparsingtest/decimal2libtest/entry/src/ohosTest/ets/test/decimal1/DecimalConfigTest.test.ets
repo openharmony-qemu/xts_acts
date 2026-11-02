@@ -16,8 +16,6 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import { Decimal } from '@kit.ArkTS';
 import * as common from '../common/DecimalTestCommon';
-import { BusinessError } from '@kit.BasicServicesKit';
-import * as decimalConfigPropertiesJsUtils from './DecimalConfigJsUtils';
 
 class MyCfg {
   precision: number = 5;
@@ -28,14 +26,15 @@ class CfgClass {
   precision: number = 5;
 }
 
-export default function DecimalConfigPropertiesTest() {
-  describe('DecimalConfigPropertiesTest', () => {
+export default function DecimalConfigPropertiesTest2() {
+  describe('DecimalConfigPropertiesTest2', () => {
     beforeAll(() => {});
     beforeEach(async () => {
       await common.sleep(common.DEFAULT_SLEEP_MS);
     });
     afterEach(() => { common.resetDecimalConfig(Decimal); });
     afterAll(() => {});
+
 
     /**
      * @tc.name testDecimalConfigPropertiesPart01Test001
@@ -56,12 +55,12 @@ export default function DecimalConfigPropertiesTest() {
       {
         Decimal.set({ defaults: true });
         let extra: ESObject = { precision: 5 };
-        decimalConfigPropertiesJsUtils.setUnsafe(Decimal, extra, 123);
+        common.setUnsafe(Decimal, extra, 123);
         expect(new Decimal(1).div(3).toString()).assertEqual('0.33333');
       }
       {
         Decimal.set({ defaults: true });
-        let cfg: ESObject = decimalConfigPropertiesJsUtils.nestedConfig('nestedA');
+        let cfg: ESObject = common.nestedConfig('nestedA');
         Decimal.set(cfg);
         expect(new Decimal(1).div(3).toString()).assertEqual('0.33333');
       }
@@ -73,19 +72,19 @@ export default function DecimalConfigPropertiesTest() {
       }
       {
         Decimal.set({ defaults: true });
-        let cfg: ESObject = decimalConfigPropertiesJsUtils.nestedConfig('deepX');
+        let cfg: ESObject = common.nestedConfig('deepX');
         Decimal.set(cfg);
         expect(new Decimal('0.0001').toString()).assertEqual('1e-4');
       }
       {
         Decimal.set({ defaults: true });
-        let cfg: ESObject = decimalConfigPropertiesJsUtils.nestedConfig('nestedPrecision');
+        let cfg: ESObject = common.nestedConfig('nestedPrecision');
         Decimal.set(cfg);
         expect(new Decimal(1).div(3).toString()).assertEqual('0.33333');
       }
       {
         Decimal.set({ defaults: true });
-        let sk: ESObject = decimalConfigPropertiesJsUtils.createSymbol('cfg');
+        let sk: ESObject = common.createSymbol('cfg');
         let cfg: ESObject = { precision: 5 };
         cfg[sk] = 99;
         Decimal.set(cfg);
@@ -93,8 +92,8 @@ export default function DecimalConfigPropertiesTest() {
       }
       {
         Decimal.set({ defaults: true });
-        let s1: ESObject = decimalConfigPropertiesJsUtils.createSymbol('a');
-        let s2: ESObject = decimalConfigPropertiesJsUtils.createSymbol('b');
+        let s1: ESObject = common.createSymbol('a');
+        let s2: ESObject = common.createSymbol('b');
         let cfg: ESObject = { precision: 5, rounding: 0 };
         cfg[s1] = 1;
         cfg[s2] = 2;
@@ -105,7 +104,7 @@ export default function DecimalConfigPropertiesTest() {
       {
         Decimal.set({ defaults: true });
         let cfg: ESObject = { precision: 5 };
-        cfg[decimalConfigPropertiesJsUtils.createSymbol('iterator')] = 42;
+        cfg[common.createSymbol('iterator')] = 42;
         Decimal.set(cfg);
         expect(new Decimal(1).div(3).toString()).assertEqual('0.33333');
       }
@@ -123,7 +122,7 @@ export default function DecimalConfigPropertiesTest() {
       {
         Decimal.set({ defaults: true });
         let cfg: ESObject = {};
-        decimalConfigPropertiesJsUtils.defineProperty(cfg, 'precision', {
+        common.defineProperty(cfg, 'precision', {
           value: 5,
           enumerable: false,
           configurable: true,
@@ -135,7 +134,7 @@ export default function DecimalConfigPropertiesTest() {
       {
         Decimal.set({ defaults: true });
         let cfg: ESObject = { precision: 5 };
-        decimalConfigPropertiesJsUtils.defineProperty(cfg, 'rounding', {
+        common.defineProperty(cfg, 'rounding', {
           value: 0,
           enumerable: false,
           configurable: true,
@@ -147,7 +146,7 @@ export default function DecimalConfigPropertiesTest() {
       {
         Decimal.set({ defaults: true });
         let cfg: ESObject = {};
-        decimalConfigPropertiesJsUtils.defineProperty(cfg, 'precision', {
+        common.defineProperty(cfg, 'precision', {
           value: 5,
           enumerable: true,
           configurable: false,
@@ -159,16 +158,16 @@ export default function DecimalConfigPropertiesTest() {
       {
         Decimal.set({ defaults: true });
         let proto: ESObject = { precision: 5 };
-        let cfg: ESObject = decimalConfigPropertiesJsUtils.createObject(proto);
+        let cfg: ESObject = common.createObject(proto);
         Decimal.set(cfg);
         expect(new Decimal(1).div(3).toString()).assertEqual('0.33333');
       }
       {
         Decimal.set({ defaults: true });
-        let sk: ESObject = decimalConfigPropertiesJsUtils.createSymbol('p');
+        let sk: ESObject = common.createSymbol('p');
         let proto: ESObject = {};
         proto[sk] = 99;
-        let cfg: ESObject = decimalConfigPropertiesJsUtils.createObject(proto);
+        let cfg: ESObject = common.createObject(proto);
         cfg.precision = 5;
         Decimal.set(cfg);
         expect(new Decimal(1).div(3).toString()).assertEqual('0.33333');
@@ -176,7 +175,7 @@ export default function DecimalConfigPropertiesTest() {
       {
         Decimal.set({ defaults: true });
         let proto: ESObject = { precision: 5 };
-        let cfg: ESObject = decimalConfigPropertiesJsUtils.createObject(proto);
+        let cfg: ESObject = common.createObject(proto);
         cfg.precision = 8;
         Decimal.set(cfg);
         expect(new Decimal(1).div(3).toString()).assertEqual('0.33333333');
@@ -184,16 +183,16 @@ export default function DecimalConfigPropertiesTest() {
       {
         Decimal.set({ defaults: true });
         let l1: ESObject = { rounding: 0 };
-        let l2: ESObject = decimalConfigPropertiesJsUtils.createObject(l1);
-        let cfg: ESObject = decimalConfigPropertiesJsUtils.createObject(l2);
+        let l2: ESObject = common.createObject(l1);
+        let cfg: ESObject = common.createObject(l2);
         Decimal.set(cfg);
         expect(new Decimal('1.004').toFixed(2)).assertEqual('1.01');
       }
       {
         Decimal.set({ defaults: true });
         let proto: ESObject = {};
-        decimalConfigPropertiesJsUtils.defineProperty(proto, 'precision', { value: 5, enumerable: false });
-        let cfg: ESObject = decimalConfigPropertiesJsUtils.createObject(proto);
+        common.defineProperty(proto, 'precision', { value: 5, enumerable: false });
+        let cfg: ESObject = common.createObject(proto);
         Decimal.set(cfg);
         expect(new Decimal(1).div(3).toString()).assertEqual('0.33333');
       }
@@ -210,27 +209,27 @@ export default function DecimalConfigPropertiesTest() {
     it('testDecimalConfigPropertiesPart01Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       {
         Decimal.set({ defaults: true });
-        let cfg: ESObject = decimalConfigPropertiesJsUtils.freeze({ precision: 5, rounding: 0 });
+        let cfg: ESObject = common.freeze({ precision: 5, rounding: 0 });
         Decimal.set(cfg);
         expect(new Decimal('1.004').toFixed(2)).assertEqual('1.01');
         expect(new Decimal(1).div(3).toString()).assertEqual('0.33334');
       }
       {
         Decimal.set({ defaults: true });
-        let cfg: ESObject = decimalConfigPropertiesJsUtils.seal({ precision: 5 });
+        let cfg: ESObject = common.seal({ precision: 5 });
         Decimal.set(cfg);
         expect(new Decimal(1).div(3).toString()).assertEqual('0.33333');
       }
       {
         Decimal.set({ defaults: true });
         let cfg: ESObject = { precision: 5 };
-        decimalConfigPropertiesJsUtils.preventExtensions(cfg);
+        common.preventExtensions(cfg);
         Decimal.set(cfg);
         expect(new Decimal(1).div(3).toString()).assertEqual('0.33333');
       }
       {
         Decimal.set({ defaults: true });
-        let cfg: ESObject = decimalConfigPropertiesJsUtils.freeze(decimalConfigPropertiesJsUtils.nestedConfig('nestedA'));
+        let cfg: ESObject = common.freeze(common.nestedConfig('nestedA'));
         Decimal.set(cfg);
         expect(new Decimal(1).div(3).toString()).assertEqual('0.33333');
       }
@@ -261,7 +260,7 @@ export default function DecimalConfigPropertiesTest() {
       {
         Decimal.set({ defaults: true });
         let cfg: ESObject = { precision: 5 };
-        decimalConfigPropertiesJsUtils.defineProperty(cfg, '__proto__', {
+        common.defineProperty(cfg, '__proto__', {
           value: 42,
           enumerable: true,
           configurable: true,
@@ -354,7 +353,7 @@ export default function DecimalConfigPropertiesTest() {
       {
         Decimal.set({ defaults: true });
         let cfg: ESObject = {};
-        decimalConfigPropertiesJsUtils.defineProperty(cfg, 'precision', {
+        common.defineProperty(cfg, 'precision', {
           get: (): number => {
             return 5;
           },
@@ -385,12 +384,12 @@ export default function DecimalConfigPropertiesTest() {
       {
         Decimal.set({ defaults: true });
         Decimal.set({ precision: 5 });
-        let cfg: ESObject = decimalConfigPropertiesJsUtils.nestedConfig('invalidPrecision');
+        let cfg: ESObject = common.nestedConfig('invalidPrecision');
         try {
           Decimal.set(cfg);
           expect().assertFail();
         } catch (e) {
-          let err: BusinessError = e as BusinessError;
+          let err: ESObject = e;
           expect(err.code).assertEqual(10200001);
         }
         expect(new Decimal(1).div(3).toString()).assertEqual('0.33333');
@@ -463,7 +462,7 @@ export default function DecimalConfigPropertiesTest() {
           Decimal.set(cfg);
           expect().assertFail();
         } catch (e) {
-          let err: BusinessError = e as BusinessError;
+          let err: ESObject = e;
           expect(typeof err.code).assertEqual('number');
         }
       }
@@ -474,7 +473,7 @@ export default function DecimalConfigPropertiesTest() {
           Decimal.set(cfg);
           expect().assertFail();
         } catch (e) {
-          let err: BusinessError = e as BusinessError;
+          let err: ESObject = e;
           expect(typeof err.code).assertEqual('number');
         }
       }
@@ -638,14 +637,14 @@ export default function DecimalConfigPropertiesTest() {
         Decimal.set({ defaults: true });
         Decimal.set({ precision: 5 });
         let cfg: ESObject = { precision: 8 };
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'precision');
+        common.deleteProperty(cfg, 'precision');
         Decimal.set(cfg);
         expect(new Decimal(1).div(3).toString()).assertEqual('0.33333');
       }
       {
         Decimal.set({ defaults: true });
         let cfg: ESObject = { precision: 5 };
-        let del: boolean = decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'nonexist');
+        let del: boolean = common.deleteProperty(cfg, 'nonexist');
         expect(del).assertTrue();
         Decimal.set(cfg);
         expect(new Decimal(1).div(3).toString()).assertEqual('0.33333');
@@ -653,21 +652,21 @@ export default function DecimalConfigPropertiesTest() {
       {
         Decimal.set({ defaults: true });
         let proto: ESObject = { precision: 5 };
-        let cfg: ESObject = decimalConfigPropertiesJsUtils.createObject(proto);
+        let cfg: ESObject = common.createObject(proto);
         cfg.precision = 8;
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'precision');
+        common.deleteProperty(cfg, 'precision');
         Decimal.set(cfg);
         expect(new Decimal(1).div(3).toString()).assertEqual('0.33333');
       }
       {
         Decimal.set({ defaults: true });
         let cfg: ESObject = {};
-        decimalConfigPropertiesJsUtils.defineProperty(cfg, 'precision', {
+        common.defineProperty(cfg, 'precision', {
           value: 5,
           enumerable: true,
           configurable: false,
         });
-        let deleted: boolean = decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'precision');
+        let deleted: boolean = common.deleteProperty(cfg, 'precision');
         expect(deleted).assertFalse();
         Decimal.set(cfg);
         expect(new Decimal(1).div(3).toString()).assertEqual('0.33333');
@@ -675,7 +674,7 @@ export default function DecimalConfigPropertiesTest() {
       {
         Decimal.set({ defaults: true });
         let arr: ESObject = [1, 2, 3];
-        decimalConfigPropertiesJsUtils.deleteProperty(arr, 0);
+        common.deleteProperty(arr, 0);
         let cfg: ESObject = { precision: 5, extra: arr };
         Decimal.set(cfg);
         expect((arr as ESObject)[0] === undefined).assertTrue();
@@ -684,17 +683,17 @@ export default function DecimalConfigPropertiesTest() {
       {
         Decimal.set({ defaults: true });
         let cfg: ESObject = { precision: 8 };
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'precision');
+        common.deleteProperty(cfg, 'precision');
         cfg.precision = 5;
         Decimal.set(cfg);
         expect(new Decimal(1).div(3).toString()).assertEqual('0.33333');
       }
       {
         Decimal.set({ defaults: true });
-        let sk: ESObject = decimalConfigPropertiesJsUtils.createSymbol('p');
+        let sk: ESObject = common.createSymbol('p');
         let cfg: ESObject = { precision: 5 };
         cfg[sk] = 99;
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, sk);
+        common.deleteProperty(cfg, sk);
         Decimal.set(cfg);
         expect(new Decimal(1).div(3).toString()).assertEqual('0.33333');
       }
@@ -702,24 +701,24 @@ export default function DecimalConfigPropertiesTest() {
         Decimal.set({ defaults: true });
         Decimal.set({ precision: 5 });
         let cfg: ESObject = { precision: 8, rounding: 0 };
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'precision');
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'rounding');
+        common.deleteProperty(cfg, 'precision');
+        common.deleteProperty(cfg, 'rounding');
         Decimal.set(cfg);
         expect(new Decimal(1).div(3).toString()).assertEqual('0.33333');
       }
       {
         Decimal.set({ defaults: true });
         let proto: ESObject = {};
-        decimalConfigPropertiesJsUtils.defineProperty(proto, 'rounding', {
+        common.defineProperty(proto, 'rounding', {
           value: 0,
           enumerable: true,
           configurable: false,
         });
-        let cfg: ESObject = decimalConfigPropertiesJsUtils.createObject(proto);
+        let cfg: ESObject = common.createObject(proto);
         try {
-          decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'rounding');
+          common.deleteProperty(cfg, 'rounding');
         } catch (e) {
-          let err: BusinessError = e as BusinessError;
+          let err: ESObject = e;
           expect(err.code !== undefined).assertTrue();
         }
         Decimal.set(cfg);
@@ -728,17 +727,18 @@ export default function DecimalConfigPropertiesTest() {
       {
         Decimal.set({ defaults: true });
         let cfg: ESObject = {};
-        decimalConfigPropertiesJsUtils.defineProperty(cfg, 'precision', {
+        common.defineProperty(cfg, 'precision', {
           value: 5,
           enumerable: false,
           configurable: true,
           writable: true,
         });
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'precision');
+        common.deleteProperty(cfg, 'precision');
         Decimal.set(cfg);
         expect(new Decimal(1).div(3).toString()).assertEqual('0.33333333333333333333');
       }
     });
+
 
     /**
      * @tc.name testDecimalConfigPropertiesPart02Test001
@@ -891,7 +891,7 @@ export default function DecimalConfigPropertiesTest() {
           Decimal.set(cfg3);
           expect().assertFail();
         } catch (e) {
-          let err: BusinessError = e as BusinessError;
+          let err: ESObject = e;
           expect(err.code).assertEqual(10200001);
         }
         let p8: Decimal = new Decimal(1).div(3);
@@ -904,7 +904,7 @@ export default function DecimalConfigPropertiesTest() {
           Decimal.set(cfg4);
           expect().assertFail();
         } catch (e) {
-          let err: BusinessError = e as BusinessError;
+          let err: ESObject = e;
           expect(err.code).assertEqual(10200001);
         }
         let p9: Decimal = new Decimal(1).div(3);
@@ -1528,7 +1528,7 @@ export default function DecimalConfigPropertiesTest() {
         Decimal.set({ defaults: true });
       }
       {
-        let sym: ESObject = decimalConfigPropertiesJsUtils.createSymbol('precision');
+        let sym: ESObject = common.createSymbol('precision');
         let cfg27: ESObject = { precision: 5 };
         cfg27[sym] = 7;
         Decimal.set(cfg27);
@@ -1538,7 +1538,7 @@ export default function DecimalConfigPropertiesTest() {
       }
       {
         let cfg28: ESObject = {};
-        decimalConfigPropertiesJsUtils.defineProperty(cfg28, 'precision', { value: 5, enumerable: false });
+        common.defineProperty(cfg28, 'precision', { value: 5, enumerable: false });
         Decimal.set(cfg28);
         let o3: Decimal = new Decimal(1).div(3);
         expect(o3.toString()).assertEqual('0.33333');
@@ -1546,7 +1546,7 @@ export default function DecimalConfigPropertiesTest() {
       }
       {
         let proto: ESObject = { precision: 5 };
-        let cfg29: ESObject = decimalConfigPropertiesJsUtils.createObject(proto);
+        let cfg29: ESObject = common.createObject(proto);
         Decimal.set(cfg29);
         let o4: Decimal = new Decimal(1).div(3);
         expect(o4.toString()).assertEqual('0.33333');
@@ -1554,7 +1554,7 @@ export default function DecimalConfigPropertiesTest() {
       }
       {
         let cfg30: ESObject = { precision: 5 };
-        decimalConfigPropertiesJsUtils.freeze(cfg30);
+        common.freeze(cfg30);
         Decimal.set(cfg30);
         let o5: Decimal = new Decimal(1).div(3);
         expect(o5.toString()).assertEqual('0.33333');
@@ -1562,7 +1562,7 @@ export default function DecimalConfigPropertiesTest() {
       }
       {
         let cfg31: ESObject = { precision: 5 };
-        decimalConfigPropertiesJsUtils.seal(cfg31);
+        common.seal(cfg31);
         Decimal.set(cfg31);
         let o6: Decimal = new Decimal(1).div(3);
         expect(o6.toString()).assertEqual('0.33333');
@@ -1585,7 +1585,7 @@ export default function DecimalConfigPropertiesTest() {
       }
       {
         let cfg34: ESObject = {};
-        decimalConfigPropertiesJsUtils.defineProperty(cfg34, 'precision', {
+        common.defineProperty(cfg34, 'precision', {
           get: (): number => {
             return 5;
           },
@@ -1598,14 +1598,14 @@ export default function DecimalConfigPropertiesTest() {
       }
       {
         let target10: ESObject = { precision: 5 };
-        let proxy10: ESObject = decimalConfigPropertiesJsUtils.createProxy(target10, 'transparent');
+        let proxy10: ESObject = common.createProxy(target10, 'transparent');
         Decimal.set(proxy10);
         let o10: Decimal = new Decimal(1).div(3);
         expect(o10.toString()).assertEqual('0.33333');
         Decimal.set({ defaults: true });
       }
       {
-        let cfg35: ESObject = decimalConfigPropertiesJsUtils.assign({}, { precision: 5 });
+        let cfg35: ESObject = common.assign({}, { precision: 5 });
         Decimal.set(cfg35);
         let o11: Decimal = new Decimal(1).div(3);
         expect(o11.toString()).assertEqual('0.33333');
@@ -1613,7 +1613,7 @@ export default function DecimalConfigPropertiesTest() {
       }
       {
         let threw: boolean = false;
-        let cfg36: ESObject = decimalConfigPropertiesJsUtils.nestedConfig('precisionA');
+        let cfg36: ESObject = common.nestedConfig('precisionA');
         try {
           Decimal.set(cfg36);
         } catch (e) {
@@ -1656,7 +1656,7 @@ export default function DecimalConfigPropertiesTest() {
       {
         Decimal.set({ precision: 5 });
         let dlcfg1: ESObject = { precision: 7, rounding: 3 };
-        decimalConfigPropertiesJsUtils.deleteProperty(dlcfg1, 'precision');
+        common.deleteProperty(dlcfg1, 'precision');
         Decimal.set(dlcfg1);
         let dl1: Decimal = new Decimal(1).div(3);
         expect(dl1.toString()).assertEqual('0.33333');
@@ -1664,7 +1664,7 @@ export default function DecimalConfigPropertiesTest() {
       }
       {
         let dlcfg2: ESObject = { precision: 5 };
-        let del2: boolean = decimalConfigPropertiesJsUtils.deleteProperty(dlcfg2, 'nope');
+        let del2: boolean = common.deleteProperty(dlcfg2, 'nope');
         expect(del2).assertTrue();
         Decimal.set(dlcfg2);
         let dl2: Decimal = new Decimal(1).div(3);
@@ -1673,11 +1673,11 @@ export default function DecimalConfigPropertiesTest() {
       }
       {
         let dlcfg3: ESObject = {};
-        decimalConfigPropertiesJsUtils.defineProperty(dlcfg3, 'precision', { value: 5, configurable: false });
+        common.defineProperty(dlcfg3, 'precision', { value: 5, configurable: false });
         let delThrew: boolean = false;
         let del3: boolean = false;
         try {
-          del3 = decimalConfigPropertiesJsUtils.deleteProperty(dlcfg3, 'precision');
+          del3 = common.deleteProperty(dlcfg3, 'precision');
         } catch (e) {
           delThrew = true;
         }
@@ -1689,8 +1689,8 @@ export default function DecimalConfigPropertiesTest() {
       }
       {
         let proto4: ESObject = { precision: 5 };
-        let dlcfg4: ESObject = decimalConfigPropertiesJsUtils.createObject(proto4);
-        decimalConfigPropertiesJsUtils.deleteProperty(dlcfg4, 'precision');
+        let dlcfg4: ESObject = common.createObject(proto4);
+        common.deleteProperty(dlcfg4, 'precision');
         Decimal.set(dlcfg4);
         let dl4: Decimal = new Decimal(1).div(3);
         expect(dl4.toString()).assertEqual('0.33333');
@@ -1698,7 +1698,7 @@ export default function DecimalConfigPropertiesTest() {
       }
       {
         let dlarr: ESObject = [{ precision: 5 }, { precision: 7 }];
-        decimalConfigPropertiesJsUtils.deleteProperty(dlarr, 1);
+        common.deleteProperty(dlarr, 1);
         expect((dlarr as ESObject)[1] === undefined).assertTrue();
         Decimal.set(dlarr[0]);
         let dl5: Decimal = new Decimal(1).div(3);
@@ -1707,7 +1707,7 @@ export default function DecimalConfigPropertiesTest() {
       }
       {
         let dlcfg6: ESObject = { precision: 5 };
-        decimalConfigPropertiesJsUtils.deleteProperty(dlcfg6, 'precision');
+        common.deleteProperty(dlcfg6, 'precision');
         dlcfg6.precision = 7;
         Decimal.set(dlcfg6);
         let dl6: Decimal = new Decimal(1).div(3);
@@ -1716,7 +1716,7 @@ export default function DecimalConfigPropertiesTest() {
       }
       {
         let dlcfg7: ESObject = { precision: 5 };
-        let del7: boolean = decimalConfigPropertiesJsUtils.deleteProperty(dlcfg7, 'precision');
+        let del7: boolean = common.deleteProperty(dlcfg7, 'precision');
         expect(del7).assertTrue();
         expect(dlcfg7.precision === undefined).assertTrue();
         Decimal.set(dlcfg7);
@@ -1725,6 +1725,7 @@ export default function DecimalConfigPropertiesTest() {
         Decimal.set({ defaults: true });
       }
     });
+
 
     /**
      * @tc.name testDecimalConfigPropertiesPart03Test001
@@ -1737,63 +1738,63 @@ export default function DecimalConfigPropertiesTest() {
     it('testDecimalConfigPropertiesPart03Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       {
         let cfg: ESObject = { precision: 5, rounding: 4 };
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'precision');
-        expect(decimalConfigPropertiesJsUtils.hasProperty(cfg, 'precision')).assertFalse();
+        common.deleteProperty(cfg, 'precision');
+        expect(common.hasProperty(cfg, 'precision')).assertFalse();
       }
       {
         let cfg: ESObject = { precision: 5 };
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'precision');
+        common.deleteProperty(cfg, 'precision');
         expect(cfg['precision'] === undefined).assertTrue();
       }
       {
         let cfg: ESObject = { precision: 5, rounding: 4 };
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'precision');
-        expect(decimalConfigPropertiesJsUtils.hasOwnProperty(cfg, 'precision')).assertFalse();
+        common.deleteProperty(cfg, 'precision');
+        expect(common.hasOwnProperty(cfg, 'precision')).assertFalse();
       }
       {
         let cfg: ESObject = { precision: 5 };
-        let deleted: boolean = decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'precision');
+        let deleted: boolean = common.deleteProperty(cfg, 'precision');
         expect(deleted).assertTrue();
       }
       {
         let cfg: ESObject = { precision: 5, rounding: 4 };
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'rounding');
-        expect(decimalConfigPropertiesJsUtils.objectKeys(cfg).indexOf('rounding')).assertEqual(-1);
+        common.deleteProperty(cfg, 'rounding');
+        expect(common.objectKeys(cfg).indexOf('rounding')).assertEqual(-1);
       }
       {
         let cfg: ESObject = { toExpNeg: -7 };
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'toExpNeg');
-        expect(decimalConfigPropertiesJsUtils.hasProperty(cfg, 'toExpNeg')).assertFalse();
+        common.deleteProperty(cfg, 'toExpNeg');
+        expect(common.hasProperty(cfg, 'toExpNeg')).assertFalse();
       }
       {
         let cfg: ESObject = { toExpPos: 21 };
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'toExpPos');
-        expect(decimalConfigPropertiesJsUtils.hasOwnProperty(cfg, 'toExpPos')).assertFalse();
+        common.deleteProperty(cfg, 'toExpPos');
+        expect(common.hasOwnProperty(cfg, 'toExpPos')).assertFalse();
       }
       {
         let cfg: ESObject = { minE: -9e15 };
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'minE');
+        common.deleteProperty(cfg, 'minE');
         expect(cfg['minE'] === undefined).assertTrue();
       }
       {
         let cfg: ESObject = { maxE: 9e15 };
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'maxE');
-        expect(decimalConfigPropertiesJsUtils.hasProperty(cfg, 'maxE')).assertFalse();
+        common.deleteProperty(cfg, 'maxE');
+        expect(common.hasProperty(cfg, 'maxE')).assertFalse();
       }
       {
         let cfg: ESObject = { crypto: false, precision: 3 };
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'crypto');
-        expect(decimalConfigPropertiesJsUtils.hasOwnProperty(cfg, 'crypto')).assertFalse();
+        common.deleteProperty(cfg, 'crypto');
+        expect(common.hasOwnProperty(cfg, 'crypto')).assertFalse();
       }
       {
         let cfg: ESObject = { modulo: 1 };
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'modulo');
+        common.deleteProperty(cfg, 'modulo');
         expect(cfg['modulo'] === undefined).assertTrue();
       }
       {
         let cfg: ESObject = { defaults: false };
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'defaults');
-        expect(decimalConfigPropertiesJsUtils.hasProperty(cfg, 'defaults')).assertFalse();
+        common.deleteProperty(cfg, 'defaults');
+        expect(common.hasProperty(cfg, 'defaults')).assertFalse();
       }
     });
 
@@ -1808,47 +1809,47 @@ export default function DecimalConfigPropertiesTest() {
     it('testDecimalConfigPropertiesPart03Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       {
         let cfg: ESObject = { precision: 5, rounding: 4, modulo: 1 };
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'precision');
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'rounding');
-        expect(decimalConfigPropertiesJsUtils.hasProperty(cfg, 'precision')).assertFalse();
-        expect(decimalConfigPropertiesJsUtils.hasProperty(cfg, 'rounding')).assertFalse();
-        expect(decimalConfigPropertiesJsUtils.hasProperty(cfg, 'modulo')).assertTrue();
+        common.deleteProperty(cfg, 'precision');
+        common.deleteProperty(cfg, 'rounding');
+        expect(common.hasProperty(cfg, 'precision')).assertFalse();
+        expect(common.hasProperty(cfg, 'rounding')).assertFalse();
+        expect(common.hasProperty(cfg, 'modulo')).assertTrue();
       }
       {
         let cfg: ESObject = { precision: 5 };
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'precision');
+        common.deleteProperty(cfg, 'precision');
         cfg['precision'] = 8;
         expect(cfg['precision']).assertEqual(8);
-        expect(decimalConfigPropertiesJsUtils.hasProperty(cfg, 'precision')).assertTrue();
+        expect(common.hasProperty(cfg, 'precision')).assertTrue();
       }
       {
         let cfg: ESObject = { precision: 5 };
-        let sym: ESObject = decimalConfigPropertiesJsUtils.createSymbol('hidden');
-        decimalConfigPropertiesJsUtils.defineProperty(cfg, sym, { value: 9, configurable: true, enumerable: true });
-        expect(decimalConfigPropertiesJsUtils.ownPropertySymbols(cfg).length).assertEqual(1);
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, sym);
-        expect(decimalConfigPropertiesJsUtils.ownPropertySymbols(cfg).length).assertEqual(0);
+        let sym: ESObject = common.createSymbol('hidden');
+        common.defineProperty(cfg, sym, { value: 9, configurable: true, enumerable: true });
+        expect(common.ownPropertySymbols(cfg).length).assertEqual(1);
+        common.deleteProperty(cfg, sym);
+        expect(common.ownPropertySymbols(cfg).length).assertEqual(0);
       }
       {
         let inner: ESObject = { precision: 5, rounding: 4 };
         let outer: ESObject = { cfg: inner };
-        decimalConfigPropertiesJsUtils.deleteProperty(inner, 'precision');
-        expect(decimalConfigPropertiesJsUtils.hasProperty(outer['cfg'], 'precision')).assertFalse();
-        expect(decimalConfigPropertiesJsUtils.objectKeys(inner).length).assertEqual(1);
+        common.deleteProperty(inner, 'precision');
+        expect(common.hasProperty(outer['cfg'], 'precision')).assertFalse();
+        expect(common.objectKeys(inner).length).assertEqual(1);
       }
       {
         let cfg: ESObject = { precision: 5, rounding: 4, modulo: 1 };
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'modulo');
-        expect(decimalConfigPropertiesJsUtils.ownPropertyNames(cfg).indexOf('modulo')).assertEqual(-1);
-        expect(decimalConfigPropertiesJsUtils.ownPropertyNames(cfg).length).assertEqual(2);
+        common.deleteProperty(cfg, 'modulo');
+        expect(common.ownPropertyNames(cfg).indexOf('modulo')).assertEqual(-1);
+        expect(common.ownPropertyNames(cfg).length).assertEqual(2);
       }
       {
         let cfg: ESObject = {};
         cfg['0'] = 10;
         cfg['1'] = 20;
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, '0');
-        expect(decimalConfigPropertiesJsUtils.hasProperty(cfg, '0')).assertFalse();
-        expect(decimalConfigPropertiesJsUtils.hasProperty(cfg, '1')).assertTrue();
+        common.deleteProperty(cfg, '0');
+        expect(common.hasProperty(cfg, '0')).assertFalse();
+        expect(common.hasProperty(cfg, '1')).assertTrue();
         expect(cfg['1']).assertEqual(20);
       }
     });
@@ -1865,7 +1866,7 @@ export default function DecimalConfigPropertiesTest() {
       {
         Decimal.set({ precision: 5, rounding: 4 });
         let cfg: ESObject = { precision: 2, rounding: 4 };
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'precision');
+        common.deleteProperty(cfg, 'precision');
         let pass: ESObject = { rounding: cfg['rounding'] };
         Decimal.set(pass);
         expect(new Decimal(10).div(3).toString()).assertEqual('3.3333');
@@ -1874,7 +1875,7 @@ export default function DecimalConfigPropertiesTest() {
       {
         Decimal.set({ defaults: true });
         let cfg: ESObject = { precision: 5, rounding: 1 };
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'rounding');
+        common.deleteProperty(cfg, 'rounding');
         let pass: ESObject = { precision: cfg['precision'] };
         Decimal.set(pass);
         expect(new Decimal('2.5').toDecimalPlaces(0).toString()).assertEqual('3');
@@ -1883,7 +1884,7 @@ export default function DecimalConfigPropertiesTest() {
       {
         Decimal.set({ rounding: 1 });
         let cfg: ESObject = { precision: 5, rounding: 4 };
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'rounding');
+        common.deleteProperty(cfg, 'rounding');
         let pass: ESObject = { precision: cfg['precision'] };
         Decimal.set(pass);
         expect(new Decimal('2.5').toDecimalPlaces(0).toString()).assertEqual('2');
@@ -1892,7 +1893,7 @@ export default function DecimalConfigPropertiesTest() {
       {
         Decimal.set({ toExpPos: 21 });
         let cfg: ESObject = { toExpPos: 30, precision: 6 };
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'toExpPos');
+        common.deleteProperty(cfg, 'toExpPos');
         let pass: ESObject = { precision: cfg['precision'] };
         Decimal.set(pass);
         expect(new Decimal('1e22').toString()).assertEqual('1e+22');
@@ -1901,7 +1902,7 @@ export default function DecimalConfigPropertiesTest() {
       {
         Decimal.set({ toExpNeg: -7 });
         let cfg: ESObject = { toExpNeg: -20, precision: 6 };
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'toExpNeg');
+        common.deleteProperty(cfg, 'toExpNeg');
         let pass: ESObject = { precision: cfg['precision'] };
         Decimal.set(pass);
         expect(new Decimal('1e-8').toString()).assertEqual('1e-8');
@@ -1910,7 +1911,7 @@ export default function DecimalConfigPropertiesTest() {
       {
         Decimal.set({ modulo: 9 });
         let cfg: ESObject = { modulo: 1, precision: 5 };
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'modulo');
+        common.deleteProperty(cfg, 'modulo');
         let pass: ESObject = { precision: cfg['precision'] };
         Decimal.set(pass);
         expect(new Decimal(-7).mod(3).toString()).assertEqual('2');
@@ -1930,7 +1931,7 @@ export default function DecimalConfigPropertiesTest() {
       {
         Decimal.set({ maxE: 5 });
         let cfg: ESObject = { maxE: 9e15, precision: 5 };
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'maxE');
+        common.deleteProperty(cfg, 'maxE');
         let pass: ESObject = { precision: cfg['precision'] };
         Decimal.set(pass);
         expect(new Decimal('1e10').toString()).assertEqual('Infinity');
@@ -1939,7 +1940,7 @@ export default function DecimalConfigPropertiesTest() {
       {
         Decimal.set({ minE: -5 });
         let cfg: ESObject = { minE: -9e15, precision: 5 };
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'minE');
+        common.deleteProperty(cfg, 'minE');
         let pass: ESObject = { precision: cfg['precision'] };
         Decimal.set(pass);
         expect(new Decimal('1e-10').toString()).assertEqual('0');
@@ -1948,9 +1949,9 @@ export default function DecimalConfigPropertiesTest() {
       {
         Decimal.set({ precision: 3, rounding: 1 });
         let cfg: ESObject = { precision: 7, rounding: 4, modulo: 9 };
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'precision');
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'rounding');
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'modulo');
+        common.deleteProperty(cfg, 'precision');
+        common.deleteProperty(cfg, 'rounding');
+        common.deleteProperty(cfg, 'modulo');
         let empty: ESObject = {};
         Decimal.set(empty);
         expect(new Decimal(10).div(3).toString()).assertEqual('3.33');
@@ -1960,7 +1961,7 @@ export default function DecimalConfigPropertiesTest() {
       {
         Decimal.set({ precision: 9 });
         let cfg: ESObject = { defaults: false, precision: 3 };
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'defaults');
+        common.deleteProperty(cfg, 'defaults');
         let pass: ESObject = { precision: cfg['precision'] };
         Decimal.set(pass);
         expect(new Decimal(10).div(3).toString()).assertEqual('3.33');
@@ -1972,15 +1973,15 @@ export default function DecimalConfigPropertiesTest() {
         let pass: ESObject = { precision: cfg['precision'] };
         Decimal.set(pass);
         expect(new Decimal(10).div(3).toString()).assertEqual('3.33');
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'precision');
+        common.deleteProperty(cfg, 'precision');
         expect(new Decimal(10).div(3).toString()).assertEqual('3.33');
         Decimal.set({ defaults: true });
       }
       {
         Decimal.set({ precision: 9, rounding: 1 });
         let cfg: ESObject = { precision: 4, rounding: 1, modulo: 1 };
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'rounding');
-        let remaining: string[] = decimalConfigPropertiesJsUtils.objectKeys(cfg);
+        common.deleteProperty(cfg, 'rounding');
+        let remaining: string[] = common.objectKeys(cfg);
         expect(remaining.indexOf('rounding')).assertEqual(-1);
         Decimal.set({ precision: 4, modulo: 1 });
         expect(new Decimal(10).div(3).toString()).assertEqual('3.333');
@@ -1989,7 +1990,7 @@ export default function DecimalConfigPropertiesTest() {
       {
         Decimal.set({ precision: 9 });
         let cfg: ESObject = { precision: 2 };
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'precision');
+        common.deleteProperty(cfg, 'precision');
         cfg['precision'] = 4;
         let pass: ESObject = { precision: cfg['precision'] };
         Decimal.set(pass);
@@ -1999,7 +2000,7 @@ export default function DecimalConfigPropertiesTest() {
       {
         Decimal.set({ defaults: true });
         let cfg: ESObject = { precision: 3 };
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'precision');
+        common.deleteProperty(cfg, 'precision');
         Decimal.set({ rounding: 4 });
         let r: Decimal = new Decimal(1).div(3);
         expect(r.toString()).assertEqual('0.33333333333333333333');
@@ -2018,33 +2019,33 @@ export default function DecimalConfigPropertiesTest() {
       Decimal.set({ defaults: true });
       {
         let arr: ESObject = [1, 2, 3];
-        decimalConfigPropertiesJsUtils.deleteProperty(arr, 1);
+        common.deleteProperty(arr, 1);
         expect(arr.length).assertEqual(3);
       }
       {
         let arr: ESObject = [1, 2, 3];
-        decimalConfigPropertiesJsUtils.deleteProperty(arr, 1);
+        common.deleteProperty(arr, 1);
         expect(arr[1] === undefined).assertTrue();
       }
       {
         let arr: ESObject = [1, 2, 3];
-        decimalConfigPropertiesJsUtils.deleteProperty(arr, 1);
-        expect(decimalConfigPropertiesJsUtils.hasProperty(arr, '1')).assertFalse();
-        expect(decimalConfigPropertiesJsUtils.hasProperty(arr, '0')).assertTrue();
+        common.deleteProperty(arr, 1);
+        expect(common.hasProperty(arr, '1')).assertFalse();
+        expect(common.hasProperty(arr, '0')).assertTrue();
       }
       {
         let arr: ESObject = [1, 2, 3];
-        decimalConfigPropertiesJsUtils.deleteProperty(arr, 2);
-        expect(decimalConfigPropertiesJsUtils.hasOwnProperty(arr, '2')).assertFalse();
+        common.deleteProperty(arr, 2);
+        expect(common.hasOwnProperty(arr, '2')).assertFalse();
       }
       {
         let arr: ESObject = [1, 2, 3];
-        decimalConfigPropertiesJsUtils.deleteProperty(arr, 0);
+        common.deleteProperty(arr, 0);
         expect(Array.isArray(arr)).assertTrue();
       }
       {
         let arr: ESObject = [1, 2, 3];
-        decimalConfigPropertiesJsUtils.deleteProperty(arr, 2);
+        common.deleteProperty(arr, 2);
         expect(arr.length).assertEqual(3);
         expect(arr[2] === undefined).assertTrue();
         let popArr: ESObject = [1, 2, 3];
@@ -2053,13 +2054,13 @@ export default function DecimalConfigPropertiesTest() {
       }
       {
         let arr: ESObject = [1, 2, 3];
-        decimalConfigPropertiesJsUtils.deleteProperty(arr, 1);
-        let count: number = decimalConfigPropertiesJsUtils.enumerableKeyCount(arr);
+        common.deleteProperty(arr, 1);
+        let count: number = common.enumerableKeyCount(arr);
         expect(count).assertEqual(2);
       }
       {
         let arr: ESObject = [5, 6, 7];
-        decimalConfigPropertiesJsUtils.deleteProperty(arr, 1);
+        common.deleteProperty(arr, 1);
         expect(arr.indexOf(undefined)).assertEqual(-1);
         let arr2: ESObject = [5, 6, 7];
         arr2[1] = undefined;
@@ -2068,22 +2069,22 @@ export default function DecimalConfigPropertiesTest() {
       {
         let arr: ESObject = [1, 2, 3];
         arr['name'] = 99;
-        decimalConfigPropertiesJsUtils.deleteProperty(arr, 'name');
+        common.deleteProperty(arr, 'name');
         expect(arr.length).assertEqual(3);
-        expect(decimalConfigPropertiesJsUtils.hasProperty(arr, 'name')).assertFalse();
+        expect(common.hasProperty(arr, 'name')).assertFalse();
       }
       {
         let sparse: ESObject = new Array(3);
         sparse[1] = 2;
-        decimalConfigPropertiesJsUtils.deleteProperty(sparse, 1);
+        common.deleteProperty(sparse, 1);
         expect(sparse.length).assertEqual(3);
         expect(sparse.every((x: number): boolean => x === 0)).assertTrue();
       }
       {
         let arr: ESObject = [4, 5, 6];
-        decimalConfigPropertiesJsUtils.deleteProperty(arr, 0);
-        decimalConfigPropertiesJsUtils.deleteProperty(arr, 1);
-        decimalConfigPropertiesJsUtils.deleteProperty(arr, 2);
+        common.deleteProperty(arr, 0);
+        common.deleteProperty(arr, 1);
+        common.deleteProperty(arr, 2);
         expect(arr.length).assertEqual(3);
         expect(arr.every((x: number): boolean => x === -1)).assertTrue();
       }
@@ -2100,84 +2101,84 @@ export default function DecimalConfigPropertiesTest() {
     it('testDecimalConfigPropertiesPart03Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       {
         let cfg: ESObject = { precision: 5 };
-        let deleted: boolean = decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'missing');
+        let deleted: boolean = common.deleteProperty(cfg, 'missing');
         expect(deleted).assertTrue();
       }
       {
         let cfg: ESObject = { precision: 5, rounding: 4 };
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'ghost');
+        common.deleteProperty(cfg, 'ghost');
         expect(cfg['precision']).assertEqual(5);
         expect(cfg['rounding']).assertEqual(4);
       }
       {
         let cfg: ESObject = { precision: 5 };
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'nope');
-        expect(decimalConfigPropertiesJsUtils.hasProperty(cfg, 'nope')).assertFalse();
+        common.deleteProperty(cfg, 'nope');
+        expect(common.hasProperty(cfg, 'nope')).assertFalse();
       }
       {
         let cfg: ESObject = { precision: 5 };
-        expect(decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'precision')).assertTrue();
-        expect(decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'precision')).assertTrue();
+        expect(common.deleteProperty(cfg, 'precision')).assertTrue();
+        expect(common.deleteProperty(cfg, 'precision')).assertTrue();
       }
       {
         let proto: ESObject = { base: 7 };
-        let inst: ESObject = decimalConfigPropertiesJsUtils.createObject(proto);
-        expect(decimalConfigPropertiesJsUtils.deleteProperty(inst, 'base')).assertTrue();
+        let inst: ESObject = common.createObject(proto);
+        expect(common.deleteProperty(inst, 'base')).assertTrue();
         expect(inst['base']).assertEqual(7);
       }
       {
         let empty: ESObject = {};
-        expect(decimalConfigPropertiesJsUtils.deleteProperty(empty, 'anything')).assertTrue();
+        expect(common.deleteProperty(empty, 'anything')).assertTrue();
       }
       {
         let proto: ESObject = { base: 5 };
-        let inst: ESObject = decimalConfigPropertiesJsUtils.createObject(proto);
-        decimalConfigPropertiesJsUtils.deleteProperty(inst, 'base');
+        let inst: ESObject = common.createObject(proto);
+        common.deleteProperty(inst, 'base');
         expect(inst['base']).assertEqual(5);
       }
       {
         let proto: ESObject = { base: 5 };
-        let inst: ESObject = decimalConfigPropertiesJsUtils.createObject(proto);
+        let inst: ESObject = common.createObject(proto);
         inst['base'] = 8;
         expect(inst['base']).assertEqual(8);
-        decimalConfigPropertiesJsUtils.deleteProperty(inst, 'base');
+        common.deleteProperty(inst, 'base');
         expect(inst['base']).assertEqual(5);
       }
       {
         let proto: ESObject = { base: 5 };
-        let inst: ESObject = decimalConfigPropertiesJsUtils.createObject(proto);
+        let inst: ESObject = common.createObject(proto);
         inst['own'] = 1;
-        decimalConfigPropertiesJsUtils.deleteProperty(inst, 'own');
-        expect(decimalConfigPropertiesJsUtils.hasOwnProperty(inst, 'own')).assertFalse();
+        common.deleteProperty(inst, 'own');
+        expect(common.hasOwnProperty(inst, 'own')).assertFalse();
         expect(inst['base']).assertEqual(5);
       }
       {
         let proto: ESObject = { base: 5 };
-        let inst: ESObject = decimalConfigPropertiesJsUtils.createObject(proto);
-        decimalConfigPropertiesJsUtils.deleteProperty(proto, 'base');
+        let inst: ESObject = common.createObject(proto);
+        common.deleteProperty(proto, 'base');
         expect(inst['base'] === undefined).assertTrue();
       }
       {
         let root: ESObject = { r: 1 };
-        let mid: ESObject = decimalConfigPropertiesJsUtils.createObject(root);
+        let mid: ESObject = common.createObject(root);
         mid['m'] = 2;
-        let leaf: ESObject = decimalConfigPropertiesJsUtils.createObject(mid);
-        decimalConfigPropertiesJsUtils.deleteProperty(mid, 'm');
+        let leaf: ESObject = common.createObject(mid);
+        common.deleteProperty(mid, 'm');
         expect(leaf['m'] === undefined).assertTrue();
         expect(leaf['r']).assertEqual(1);
       }
       {
         let proto: ESObject = { base: 5 };
-        let inst: ESObject = decimalConfigPropertiesJsUtils.createObject(proto);
-        expect(decimalConfigPropertiesJsUtils.deleteProperty(inst, 'absent')).assertTrue();
+        let inst: ESObject = common.createObject(proto);
+        expect(common.deleteProperty(inst, 'absent')).assertTrue();
         expect(inst['base']).assertEqual(5);
       }
       {
         let proto: ESObject = { base: 5 };
-        let inst: ESObject = decimalConfigPropertiesJsUtils.createObject(proto);
+        let inst: ESObject = common.createObject(proto);
         inst['own'] = 3;
-        decimalConfigPropertiesJsUtils.deleteProperty(inst, 'own');
-        expect(decimalConfigPropertiesJsUtils.getPrototypeOf(inst) === proto).assertTrue();
+        common.deleteProperty(inst, 'own');
+        expect(common.getPrototypeOf(inst) === proto).assertTrue();
       }
     });
 
@@ -2192,14 +2193,14 @@ export default function DecimalConfigPropertiesTest() {
     it('testDecimalConfigPropertiesPart03Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       {
         let cfg: ESObject = { precision: 5 };
-        decimalConfigPropertiesJsUtils.defineProperty(cfg, 'locked', {
+        common.defineProperty(cfg, 'locked', {
           value: 7,
           configurable: false,
           writable: true,
           enumerable: true,
         });
         try {
-          decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'locked');
+          common.deleteProperty(cfg, 'locked');
         } catch (e) {
           expect(e === null).assertFalse();
         }
@@ -2207,41 +2208,41 @@ export default function DecimalConfigPropertiesTest() {
       }
       {
         let cfg: ESObject = { precision: 5 };
-        decimalConfigPropertiesJsUtils.defineProperty(cfg, 'locked', {
+        common.defineProperty(cfg, 'locked', {
           value: 7,
           configurable: false,
           writable: true,
           enumerable: true,
         });
         try {
-          decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'locked');
+          common.deleteProperty(cfg, 'locked');
         } catch (e) {
           expect(e === null).assertFalse();
         }
-        expect(decimalConfigPropertiesJsUtils.hasProperty(cfg, 'locked')).assertTrue();
+        expect(common.hasProperty(cfg, 'locked')).assertTrue();
       }
       {
         let cfg: ESObject = { precision: 5 };
-        decimalConfigPropertiesJsUtils.defineProperty(cfg, 'removable', {
+        common.defineProperty(cfg, 'removable', {
           value: 9,
           configurable: true,
           writable: true,
           enumerable: true,
         });
-        let ok: boolean = decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'removable');
+        let ok: boolean = common.deleteProperty(cfg, 'removable');
         expect(ok).assertTrue();
-        expect(decimalConfigPropertiesJsUtils.hasProperty(cfg, 'removable')).assertFalse();
+        expect(common.hasProperty(cfg, 'removable')).assertFalse();
       }
       {
         let cfg: ESObject = { precision: 5 };
         let backing: number = 3;
-        decimalConfigPropertiesJsUtils.defineProperty(cfg, 'acc', {
+        common.defineProperty(cfg, 'acc', {
           get: (): number => backing,
           configurable: false,
           enumerable: true,
         });
         try {
-          decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'acc');
+          common.deleteProperty(cfg, 'acc');
         } catch (e) {
           expect(e === null).assertFalse();
         }
@@ -2250,79 +2251,79 @@ export default function DecimalConfigPropertiesTest() {
       {
         let cfg: ESObject = { precision: 5 };
         let backing: number = 3;
-        decimalConfigPropertiesJsUtils.defineProperty(cfg, 'acc', {
+        common.defineProperty(cfg, 'acc', {
           get: (): number => backing,
           configurable: true,
           enumerable: true,
         });
-        let ok: boolean = decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'acc');
+        let ok: boolean = common.deleteProperty(cfg, 'acc');
         expect(ok).assertTrue();
-        expect(decimalConfigPropertiesJsUtils.hasProperty(cfg, 'acc')).assertFalse();
+        expect(common.hasProperty(cfg, 'acc')).assertFalse();
       }
       {
         let cfg: ESObject = { precision: 5 };
-        decimalConfigPropertiesJsUtils.defineProperty(cfg, 'ro', {
+        common.defineProperty(cfg, 'ro', {
           value: 11,
           configurable: true,
           writable: false,
           enumerable: true,
         });
-        let ok: boolean = decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'ro');
+        let ok: boolean = common.deleteProperty(cfg, 'ro');
         expect(ok).assertTrue();
         expect(cfg['ro'] === undefined).assertTrue();
       }
       {
         let cfg: ESObject = { precision: 5 };
-        decimalConfigPropertiesJsUtils.defineProperty(cfg, 'locked', {
+        common.defineProperty(cfg, 'locked', {
           value: 13,
           configurable: false,
           writable: true,
           enumerable: true,
         });
         try {
-          decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'locked');
+          common.deleteProperty(cfg, 'locked');
         } catch (e) {
           expect(e === null).assertFalse();
         }
-        let desc: ESObject = decimalConfigPropertiesJsUtils.ownPropertyDescriptor(cfg, 'locked');
+        let desc: ESObject = common.ownPropertyDescriptor(cfg, 'locked');
         expect(desc.configurable).assertFalse();
         expect(desc.writable).assertTrue();
       }
       {
         let cfg: ESObject = { precision: 5, rounding: 4 };
-        let desc: ESObject = decimalConfigPropertiesJsUtils.ownPropertyDescriptor(cfg, 'precision');
+        let desc: ESObject = common.ownPropertyDescriptor(cfg, 'precision');
         expect(desc.configurable).assertTrue();
-        let ok: boolean = decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'precision');
+        let ok: boolean = common.deleteProperty(cfg, 'precision');
         expect(ok).assertTrue();
       }
       {
         let cfg: ESObject = { precision: 5 };
-        decimalConfigPropertiesJsUtils.defineProperty(cfg, 'a', { value: 1, configurable: false });
-        decimalConfigPropertiesJsUtils.defineProperty(cfg, 'b', { value: 2, configurable: true });
+        common.defineProperty(cfg, 'a', { value: 1, configurable: false });
+        common.defineProperty(cfg, 'b', { value: 2, configurable: true });
         try {
-          decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'a');
+          common.deleteProperty(cfg, 'a');
         } catch (e) {
           expect(e === null).assertFalse();
         }
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'b');
-        expect(decimalConfigPropertiesJsUtils.hasProperty(cfg, 'a')).assertTrue();
-        expect(decimalConfigPropertiesJsUtils.hasProperty(cfg, 'b')).assertFalse();
+        common.deleteProperty(cfg, 'b');
+        expect(common.hasProperty(cfg, 'a')).assertTrue();
+        expect(common.hasProperty(cfg, 'b')).assertFalse();
       }
       {
         let cfg: ESObject = { precision: 5 };
-        decimalConfigPropertiesJsUtils.defineProperty(cfg, 'locked', {
+        common.defineProperty(cfg, 'locked', {
           value: 7,
           configurable: false,
           enumerable: true,
           writable: true,
         });
-        let before: number = decimalConfigPropertiesJsUtils.objectKeys(cfg).length;
+        let before: number = common.objectKeys(cfg).length;
         try {
-          decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'locked');
+          common.deleteProperty(cfg, 'locked');
         } catch (e) {
           expect(e === null).assertFalse();
         }
-        expect(decimalConfigPropertiesJsUtils.objectKeys(cfg).length).assertEqual(before);
+        expect(common.objectKeys(cfg).length).assertEqual(before);
       }
     });
 
@@ -2337,56 +2338,57 @@ export default function DecimalConfigPropertiesTest() {
     it('testDecimalConfigPropertiesPart03Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       {
         let cfg: ESObject = { precision: 5 };
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'precision');
-        expect(decimalConfigPropertiesJsUtils.hasProperty(cfg, 'precision')).assertFalse();
+        common.deleteProperty(cfg, 'precision');
+        expect(common.hasProperty(cfg, 'precision')).assertFalse();
         cfg['precision'] = undefined;
-        expect(decimalConfigPropertiesJsUtils.hasProperty(cfg, 'precision')).assertTrue();
+        expect(common.hasProperty(cfg, 'precision')).assertTrue();
         expect(cfg['precision'] === undefined).assertTrue();
       }
       {
         let cfg: ESObject = { precision: 5 };
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'precision');
+        common.deleteProperty(cfg, 'precision');
         expect(typeof cfg['precision']).assertEqual('undefined');
       }
       {
         let cfg: ESObject = { precision: 5 };
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'precision');
+        common.deleteProperty(cfg, 'precision');
         expect(cfg['precision'] == null).assertTrue();
       }
       {
         let cfg: ESObject = { precision: 5, rounding: 4 };
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'precision');
-        expect(decimalConfigPropertiesJsUtils.stringify(cfg)).assertEqual('{"rounding":4}');
+        common.deleteProperty(cfg, 'precision');
+        expect(common.stringify(cfg)).assertEqual('{"rounding":4}');
       }
       {
         let cfg: ESObject = { precision: 5, rounding: 4, modulo: 1 };
-        let before: number = decimalConfigPropertiesJsUtils.objectKeys(cfg).length;
-        decimalConfigPropertiesJsUtils.deleteProperty(cfg, 'modulo');
-        expect(decimalConfigPropertiesJsUtils.objectKeys(cfg).length).assertEqual(before - 1);
+        let before: number = common.objectKeys(cfg).length;
+        common.deleteProperty(cfg, 'modulo');
+        expect(common.objectKeys(cfg).length).assertEqual(before - 1);
       }
       {
         let arr: ESObject = [1, 2, 3];
-        expect(decimalConfigPropertiesJsUtils.deleteProperty(arr, 1)).assertTrue();
+        expect(common.deleteProperty(arr, 1)).assertTrue();
       }
       {
         let cfg: ESObject = {};
-        let sym: ESObject = decimalConfigPropertiesJsUtils.createSymbol('k');
-        decimalConfigPropertiesJsUtils.defineProperty(cfg, sym, { value: 4, configurable: true, enumerable: true });
-        expect(decimalConfigPropertiesJsUtils.deleteProperty(cfg, sym)).assertTrue();
-        expect(decimalConfigPropertiesJsUtils.ownPropertySymbols(cfg).length).assertEqual(0);
+        let sym: ESObject = common.createSymbol('k');
+        common.defineProperty(cfg, sym, { value: 4, configurable: true, enumerable: true });
+        expect(common.deleteProperty(cfg, sym)).assertTrue();
+        expect(common.ownPropertySymbols(cfg).length).assertEqual(0);
       }
       {
         let arr: ESObject = [1, 2, 3];
-        expect(decimalConfigPropertiesJsUtils.deleteProperty(arr, 9)).assertTrue();
+        expect(common.deleteProperty(arr, 9)).assertTrue();
         expect(arr.length).assertEqual(3);
       }
       {
         let arr: ESObject = [7, 8];
         let obj: ESObject = { p: 1 };
-        expect(decimalConfigPropertiesJsUtils.deleteProperty(obj, 'p')).assertTrue();
-        expect(decimalConfigPropertiesJsUtils.deleteProperty(arr, 0)).assertTrue();
+        expect(common.deleteProperty(obj, 'p')).assertTrue();
+        expect(common.deleteProperty(arr, 0)).assertTrue();
       }
     });
+
 
     /**
      * @tc.name testDecimalConfigPropertiesPart04Test001
@@ -2647,7 +2649,7 @@ export default function DecimalConfigPropertiesTest() {
      */
     it('testDecimalConfigPropertiesPart04Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let o1cfg: ESObject = {};
-      decimalConfigPropertiesJsUtils.defineProperty(o1cfg, 'precision', {
+      common.defineProperty(o1cfg, 'precision', {
         get: (): number => { throw new Error('boom'); },
         enumerable: true,
       });
@@ -2658,7 +2660,7 @@ export default function DecimalConfigPropertiesTest() {
 
       Decimal.set({ precision: 5 });
       let o2cfg: ESObject = {};
-      decimalConfigPropertiesJsUtils.defineProperty(o2cfg, 'precision', {
+      common.defineProperty(o2cfg, 'precision', {
         set: (v: number): void => {},
         enumerable: true,
       });
@@ -2668,7 +2670,7 @@ export default function DecimalConfigPropertiesTest() {
       Decimal.set({ defaults: true });
 
       let target3: ESObject = {};
-      let proxy3: ESObject = decimalConfigPropertiesJsUtils.createProxy(target3, 'precision7');
+      let proxy3: ESObject = common.createProxy(target3, 'precision7');
       Decimal.set(proxy3);
       let o3: Decimal = new Decimal(1).div(3);
       expect(o3.toString()).assertEqual('0.3333333');
@@ -2676,7 +2678,7 @@ export default function DecimalConfigPropertiesTest() {
 
       Decimal.set({ precision: 5 });
       let target4: ESObject = { precision: 7 };
-      let proxy4: ESObject = decimalConfigPropertiesJsUtils.createProxy(target4, 'undefined');
+      let proxy4: ESObject = common.createProxy(target4, 'undefined');
       Decimal.set(proxy4);
       let o4: Decimal = new Decimal(1).div(3);
       expect(o4.toString()).assertEqual('0.33333');
@@ -2684,7 +2686,7 @@ export default function DecimalConfigPropertiesTest() {
 
       let o18cfg: ESObject = {};
       let counter: number = 0;
-      decimalConfigPropertiesJsUtils.defineProperty(o18cfg, 'precision', {
+      common.defineProperty(o18cfg, 'precision', {
         get: (): number => { counter = counter + 1; return counter; },
         enumerable: true,
       });
@@ -2694,7 +2696,7 @@ export default function DecimalConfigPropertiesTest() {
       Decimal.set({ defaults: true });
 
       let target19: ESObject = { precision: 5 };
-      let proxy19: ESObject = decimalConfigPropertiesJsUtils.createProxy(target19, 'throw');
+      let proxy19: ESObject = common.createProxy(target19, 'throw');
       let threw49: boolean = false;
       try { Decimal.set(proxy19); } catch (e) { threw49 = true; }
       expect(threw49).assertTrue();
@@ -2710,7 +2712,7 @@ export default function DecimalConfigPropertiesTest() {
      * @tc.level LEVEL2
      */
     it('testDecimalConfigPropertiesPart04Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let o5cfg: ESObject = decimalConfigPropertiesJsUtils.createObject(null);
+      let o5cfg: ESObject = common.createObject(null);
       o5cfg.precision = 5;
       Decimal.set(o5cfg);
       let o5: Decimal = new Decimal(1).div(3);
@@ -2718,7 +2720,7 @@ export default function DecimalConfigPropertiesTest() {
       Decimal.set({ defaults: true });
 
       let o6cfg: ESObject = { precision: 5 };
-      decimalConfigPropertiesJsUtils.defineProperty(o6cfg, '__proto__', { value: { precision: 7 }, enumerable: true });
+      common.defineProperty(o6cfg, '__proto__', { value: { precision: 7 }, enumerable: true });
       Decimal.set(o6cfg);
       let o6: Decimal = new Decimal(1).div(3);
       expect(o6.toString()).assertEqual('0.33333');
@@ -2763,34 +2765,34 @@ export default function DecimalConfigPropertiesTest() {
       expect(o11.toString()).assertEqual('0.33333');
       Decimal.set({ defaults: true });
 
-      let cfg42: ESObject = decimalConfigPropertiesJsUtils.nestedConfig('childConfig');
+      let cfg42: ESObject = common.nestedConfig('childConfig');
       Decimal.set(cfg42);
       let o12: Decimal = new Decimal(1).div(3);
       expect(o12.toString()).assertEqual('0.33333333333333333333');
       Decimal.set({ defaults: true });
 
       let farProto: ESObject = { rounding: 1 };
-      let nearProto: ESObject = decimalConfigPropertiesJsUtils.createObject(farProto);
+      let nearProto: ESObject = common.createObject(farProto);
       nearProto.precision = 5;
-      let o13cfg: ESObject = decimalConfigPropertiesJsUtils.createObject(nearProto);
+      let o13cfg: ESObject = common.createObject(nearProto);
       Decimal.set(o13cfg);
       let o13: Decimal = new Decimal(1).div(3);
       expect(o13.toString()).assertEqual('0.33333');
       Decimal.set({ defaults: true });
 
       let proto14: ESObject = {};
-      decimalConfigPropertiesJsUtils.defineProperty(proto14, 'precision', {
+      common.defineProperty(proto14, 'precision', {
         get: (): number => { return 5; },
         enumerable: true,
       });
-      let o14cfg: ESObject = decimalConfigPropertiesJsUtils.createObject(proto14);
+      let o14cfg: ESObject = common.createObject(proto14);
       Decimal.set(o14cfg);
       let o14: Decimal = new Decimal(1).div(3);
       expect(o14.toString()).assertEqual('0.33333');
       Decimal.set({ defaults: true });
 
       let o15cfg: ESObject = {};
-      decimalConfigPropertiesJsUtils.defineProperty(o15cfg, 'precision', {
+      common.defineProperty(o15cfg, 'precision', {
         value: 5,
         writable: false,
         configurable: false,
@@ -2826,7 +2828,7 @@ export default function DecimalConfigPropertiesTest() {
      * @tc.level LEVEL2
      */
     it('testDecimalConfigPropertiesPart04Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let o20cfg: ESObject = decimalConfigPropertiesJsUtils.nestedConfig('arrayLike');
+      let o20cfg: ESObject = common.nestedConfig('arrayLike');
       Decimal.set(o20cfg);
       let o20: Decimal = new Decimal(1).div(3);
       expect(o20.toString()).assertEqual('0.33333');
@@ -2839,21 +2841,21 @@ export default function DecimalConfigPropertiesTest() {
       Decimal.set({ defaults: true });
 
       let o22cfg: ESObject = {};
-      decimalConfigPropertiesJsUtils.defineProperty(o22cfg, 'precision', { value: 5, writable: false });
-      decimalConfigPropertiesJsUtils.freeze(o22cfg);
+      common.defineProperty(o22cfg, 'precision', { value: 5, writable: false });
+      common.freeze(o22cfg);
       Decimal.set(o22cfg);
       let o22: Decimal = new Decimal(1).div(3);
       expect(o22.toString()).assertEqual('0.33333');
       Decimal.set({ defaults: true });
 
-      let o23cfg: ESObject = decimalConfigPropertiesJsUtils.preventExtensions({ precision: 5 });
+      let o23cfg: ESObject = common.preventExtensions({ precision: 5 });
       Decimal.set(o23cfg);
       let o23: Decimal = new Decimal(1).div(3);
       expect(o23.toString()).assertEqual('0.33333');
       Decimal.set({ defaults: true });
 
       Decimal.set({ precision: 5 });
-      let sym24: ESObject = decimalConfigPropertiesJsUtils.createSymbol('precision');
+      let sym24: ESObject = common.createSymbol('precision');
       let o24cfg: ESObject = {};
       o24cfg[sym24] = 7;
       Decimal.set(o24cfg);
@@ -2862,8 +2864,8 @@ export default function DecimalConfigPropertiesTest() {
       Decimal.set({ defaults: true });
 
       let proto25: ESObject = {};
-      decimalConfigPropertiesJsUtils.defineProperty(proto25, 'precision', { value: 5, enumerable: false });
-      let o25cfg: ESObject = decimalConfigPropertiesJsUtils.createObject(proto25);
+      common.defineProperty(proto25, 'precision', { value: 5, enumerable: false });
+      let o25cfg: ESObject = common.createObject(proto25);
       Decimal.set(o25cfg);
       let o25: Decimal = new Decimal(1).div(3);
       expect(o25.toString()).assertEqual('0.33333');
@@ -2871,8 +2873,8 @@ export default function DecimalConfigPropertiesTest() {
 
       Decimal.set({ precision: 5 });
       let dl1cfg: ESObject = { precision: 7, rounding: 3 };
-      decimalConfigPropertiesJsUtils.deleteProperty(dl1cfg, 'precision');
-      decimalConfigPropertiesJsUtils.deleteProperty(dl1cfg, 'rounding');
+      common.deleteProperty(dl1cfg, 'precision');
+      common.deleteProperty(dl1cfg, 'rounding');
       Decimal.set(dl1cfg);
       let dl1: Decimal = new Decimal(1).div(3);
       expect(dl1.toString()).assertEqual('0.33333');
@@ -2880,7 +2882,7 @@ export default function DecimalConfigPropertiesTest() {
 
       Decimal.set({ precision: 5 });
       let dl2cfg: ESObject = { precision: 7 };
-      let del2: boolean = decimalConfigPropertiesJsUtils.deleteProperty(dl2cfg, 'precision');
+      let del2: boolean = common.deleteProperty(dl2cfg, 'precision');
       expect(del2).assertTrue();
       Decimal.set(dl2cfg);
       let dl2: Decimal = new Decimal(1).div(3);
@@ -2888,19 +2890,19 @@ export default function DecimalConfigPropertiesTest() {
       Decimal.set({ defaults: true });
 
       Decimal.set({ precision: 5 });
-      let dl3cfg: ESObject = decimalConfigPropertiesJsUtils.createObject(null);
+      let dl3cfg: ESObject = common.createObject(null);
       dl3cfg.precision = 7;
-      let del3: boolean = decimalConfigPropertiesJsUtils.deleteProperty(dl3cfg, 'precision');
+      let del3: boolean = common.deleteProperty(dl3cfg, 'precision');
       expect(del3).assertTrue();
       Decimal.set(dl3cfg);
       let dl3: Decimal = new Decimal(1).div(3);
       expect(dl3.toString()).assertEqual('0.33333');
       Decimal.set({ defaults: true });
 
-      let sym4: ESObject = decimalConfigPropertiesJsUtils.createSymbol('x');
+      let sym4: ESObject = common.createSymbol('x');
       let dl4cfg: ESObject = { precision: 7 };
       dl4cfg[sym4] = 9;
-      let del4: boolean = decimalConfigPropertiesJsUtils.deleteProperty(dl4cfg, sym4);
+      let del4: boolean = common.deleteProperty(dl4cfg, sym4);
       expect(del4).assertTrue();
       Decimal.set(dl4cfg);
       let dl4: Decimal = new Decimal(1).div(3);
@@ -2908,18 +2910,18 @@ export default function DecimalConfigPropertiesTest() {
       Decimal.set({ defaults: true });
 
       let proto5: ESObject = { precision: 5 };
-      let dl5cfg: ESObject = decimalConfigPropertiesJsUtils.createObject(proto5);
+      let dl5cfg: ESObject = common.createObject(proto5);
       dl5cfg.precision = 7;
-      let del5: boolean = decimalConfigPropertiesJsUtils.deleteProperty(dl5cfg, 'precision');
+      let del5: boolean = common.deleteProperty(dl5cfg, 'precision');
       expect(del5).assertTrue();
       Decimal.set(dl5cfg);
       let dl5: Decimal = new Decimal(1).div(3);
       expect(dl5.toString()).assertEqual('0.33333');
       Decimal.set({ defaults: true });
 
-      let dl6cfg: ESObject = decimalConfigPropertiesJsUtils.freeze({ precision: 5 });
+      let dl6cfg: ESObject = common.freeze({ precision: 5 });
       let deleted: boolean = false;
-      try { deleted = decimalConfigPropertiesJsUtils.deleteProperty(dl6cfg, 'precision'); } catch (e) { deleted = false; }
+      try { deleted = common.deleteProperty(dl6cfg, 'precision'); } catch (e) { deleted = false; }
       expect(deleted).assertFalse();
       Decimal.set(dl6cfg);
       let dl6: Decimal = new Decimal(1).div(3);
@@ -2927,15 +2929,15 @@ export default function DecimalConfigPropertiesTest() {
       Decimal.set({ defaults: true });
 
       let dl7cfg: ESObject = { precision: 7 };
-      decimalConfigPropertiesJsUtils.deleteProperty(dl7cfg, 'precision');
-      decimalConfigPropertiesJsUtils.defineProperty(dl7cfg, 'precision', { value: 5, enumerable: true });
+      common.deleteProperty(dl7cfg, 'precision');
+      common.defineProperty(dl7cfg, 'precision', { value: 5, enumerable: true });
       Decimal.set(dl7cfg);
       let dl7: Decimal = new Decimal(1).div(3);
       expect(dl7.toString()).assertEqual('0.33333');
       Decimal.set({ defaults: true });
 
       let dl8arr: ESObject = [{ precision: 5 }, { precision: 7 }];
-      let del8: boolean = decimalConfigPropertiesJsUtils.deleteProperty(dl8arr, 0);
+      let del8: boolean = common.deleteProperty(dl8arr, 0);
       expect(del8).assertTrue();
       expect(dl8arr[0] === undefined).assertTrue();
       Decimal.set(dl8arr[1]);
@@ -2944,17 +2946,17 @@ export default function DecimalConfigPropertiesTest() {
       Decimal.set({ defaults: true });
 
       let dl9arr: ESObject = [{ precision: 5 }, { precision: 7 }, { precision: 5 }];
-      decimalConfigPropertiesJsUtils.deleteProperty(dl9arr, 1);
-      expect(decimalConfigPropertiesJsUtils.hasProperty(dl9arr, '1')).assertFalse();
+      common.deleteProperty(dl9arr, 1);
+      expect(common.hasProperty(dl9arr, '1')).assertFalse();
       Decimal.set(dl9arr[0]);
       let dl9: Decimal = new Decimal(1).div(3);
       expect(dl9.toString()).assertEqual('0.33333');
       Decimal.set({ defaults: true });
 
       let proto10: ESObject = { precision: 7 };
-      let del10: boolean = decimalConfigPropertiesJsUtils.deleteProperty(proto10, 'precision');
+      let del10: boolean = common.deleteProperty(proto10, 'precision');
       expect(del10).assertTrue();
-      let dl10cfg: ESObject = decimalConfigPropertiesJsUtils.createObject(proto10);
+      let dl10cfg: ESObject = common.createObject(proto10);
       Decimal.set(dl10cfg);
       let dl10: Decimal = new Decimal(1).div(3);
       expect(dl10.toString()).assertEqual('0.33333333333333333333');
@@ -2962,12 +2964,12 @@ export default function DecimalConfigPropertiesTest() {
 
       Decimal.set({ precision: 5 });
       let dl11cfg: ESObject = { rounding: 0 };
-      decimalConfigPropertiesJsUtils.defineProperty(dl11cfg, 'precision', {
+      common.defineProperty(dl11cfg, 'precision', {
         get: (): number => { return 7; },
         configurable: true,
         enumerable: true,
       });
-      let del11: boolean = decimalConfigPropertiesJsUtils.deleteProperty(dl11cfg, 'precision');
+      let del11: boolean = common.deleteProperty(dl11cfg, 'precision');
       expect(del11).assertTrue();
       Decimal.set(dl11cfg);
       let dl11: Decimal = new Decimal(1).div(3);
@@ -2976,11 +2978,11 @@ export default function DecimalConfigPropertiesTest() {
 
       Decimal.set({ precision: 5 });
       let dl12cfg: ESObject = { precision: 7, rounding: 0, toExpPos: 2, modulo: 0, crypto: true };
-      decimalConfigPropertiesJsUtils.deleteProperty(dl12cfg, 'precision');
-      decimalConfigPropertiesJsUtils.deleteProperty(dl12cfg, 'rounding');
-      decimalConfigPropertiesJsUtils.deleteProperty(dl12cfg, 'toExpPos');
-      decimalConfigPropertiesJsUtils.deleteProperty(dl12cfg, 'modulo');
-      decimalConfigPropertiesJsUtils.deleteProperty(dl12cfg, 'crypto');
+      common.deleteProperty(dl12cfg, 'precision');
+      common.deleteProperty(dl12cfg, 'rounding');
+      common.deleteProperty(dl12cfg, 'toExpPos');
+      common.deleteProperty(dl12cfg, 'modulo');
+      common.deleteProperty(dl12cfg, 'crypto');
       Decimal.set(dl12cfg);
       let dl12: Decimal = new Decimal(1).div(3);
       expect(dl12.toString()).assertEqual('0.33333');
@@ -2988,7 +2990,7 @@ export default function DecimalConfigPropertiesTest() {
 
       let dl13cfg: ESObject = { precision: 7 };
       Decimal.set(dl13cfg);
-      decimalConfigPropertiesJsUtils.deleteProperty(dl13cfg, 'precision');
+      common.deleteProperty(dl13cfg, 'precision');
       Decimal.set(dl13cfg);
       let dl13: Decimal = new Decimal(1).div(3);
       expect(dl13.toString()).assertEqual('0.3333333');
@@ -2996,7 +2998,7 @@ export default function DecimalConfigPropertiesTest() {
 
       Decimal.set({ precision: 5 });
       let dl14cfg: ESObject = { precision: 7 };
-      let del14: boolean = decimalConfigPropertiesJsUtils.deleteProperty(dl14cfg, 'precision');
+      let del14: boolean = common.deleteProperty(dl14cfg, 'precision');
       if (del14 === true) {
         Decimal.set(dl14cfg);
       } else {
@@ -3050,7 +3052,7 @@ export default function DecimalConfigPropertiesTest() {
       Decimal.set({ defaults: true });
 
       let threw79: boolean = false;
-      let cfg79: ESObject = decimalConfigPropertiesJsUtils.nestedConfig('cryptoObject');
+      let cfg79: ESObject = common.nestedConfig('cryptoObject');
       try { Decimal.set(cfg79); } catch (e) { threw79 = true; }
       expect(threw79).assertTrue();
       Decimal.set({ defaults: true });
@@ -3062,7 +3064,7 @@ export default function DecimalConfigPropertiesTest() {
       Decimal.set({ defaults: true });
 
       let threw81: boolean = false;
-      let cfg81: ESObject = decimalConfigPropertiesJsUtils.nestedConfig('toExpPosObject');
+      let cfg81: ESObject = common.nestedConfig('toExpPosObject');
       try { Decimal.set(cfg81); } catch (e) { threw81 = true; }
       expect(threw81).assertTrue();
       Decimal.set({ defaults: true });
@@ -3073,6 +3075,7 @@ export default function DecimalConfigPropertiesTest() {
       expect(threw82).assertTrue();
       Decimal.set({ defaults: true });
     });
+
 
     /**
      * @tc.name testDecimalConfigPropertiesPart05Test001
@@ -3090,7 +3093,7 @@ export default function DecimalConfigPropertiesTest() {
         obj.set();
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(typeof err.code).assertEqual('undefined');
       }
 
@@ -3098,7 +3101,7 @@ export default function DecimalConfigPropertiesTest() {
         Decimal.set(undefined as ESObject);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(typeof err.code).assertEqual('undefined');
       }
 
@@ -3106,7 +3109,7 @@ export default function DecimalConfigPropertiesTest() {
         Decimal.set(null as ESObject);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(typeof err.code).assertEqual('undefined');
       }
 
@@ -3121,7 +3124,7 @@ export default function DecimalConfigPropertiesTest() {
         Decimal.set(cfgNum);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(typeof err.code).assertEqual('undefined');
       }
     });
@@ -3153,7 +3156,7 @@ export default function DecimalConfigPropertiesTest() {
         Decimal.set(cfg8);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(typeof err.code).assertEqual('number');
       }
 
@@ -3172,7 +3175,7 @@ export default function DecimalConfigPropertiesTest() {
         Decimal.set({ precision: 0 });
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
 
@@ -3181,7 +3184,7 @@ export default function DecimalConfigPropertiesTest() {
         Decimal.set({ precision: 1000000001 });
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
 
@@ -3191,7 +3194,7 @@ export default function DecimalConfigPropertiesTest() {
         Decimal.set(cfg13);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
 
@@ -3201,7 +3204,7 @@ export default function DecimalConfigPropertiesTest() {
         Decimal.set(cfg14);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
     });
@@ -3232,7 +3235,7 @@ export default function DecimalConfigPropertiesTest() {
         Decimal.set(cfg17);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(typeof err.code).assertEqual('number');
       }
 
@@ -3252,7 +3255,7 @@ export default function DecimalConfigPropertiesTest() {
         Decimal.set(cfg20);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
 
@@ -3262,7 +3265,7 @@ export default function DecimalConfigPropertiesTest() {
         Decimal.set(cfg21);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
 
@@ -3272,7 +3275,7 @@ export default function DecimalConfigPropertiesTest() {
         Decimal.set(cfg22);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
 
@@ -3282,7 +3285,7 @@ export default function DecimalConfigPropertiesTest() {
         Decimal.set(cfg23);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
     });
@@ -3315,7 +3318,7 @@ export default function DecimalConfigPropertiesTest() {
         Decimal.set(cfg26);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(typeof err.code).assertEqual('number');
       }
 
@@ -3329,7 +3332,7 @@ export default function DecimalConfigPropertiesTest() {
         Decimal.set({ toExpNeg: -9007199254740991 });
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
       let d28: Decimal = new Decimal('0.5');
@@ -3340,7 +3343,7 @@ export default function DecimalConfigPropertiesTest() {
         Decimal.set({ toExpNeg: 1 });
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
 
@@ -3378,7 +3381,7 @@ export default function DecimalConfigPropertiesTest() {
         Decimal.set(cfg33);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(typeof err.code).assertEqual('number');
       }
 
@@ -3392,7 +3395,7 @@ export default function DecimalConfigPropertiesTest() {
         Decimal.set({ toExpPos: 9007199254740991 });
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
       let d35: Decimal = new Decimal('1e21');
@@ -3403,7 +3406,7 @@ export default function DecimalConfigPropertiesTest() {
         Decimal.set({ toExpPos: -1 });
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
 
@@ -3439,7 +3442,7 @@ export default function DecimalConfigPropertiesTest() {
         Decimal.set(cfg40);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(typeof err.code).assertEqual('number');
       }
 
@@ -3453,7 +3456,7 @@ export default function DecimalConfigPropertiesTest() {
         Decimal.set({ minE: -9007199254740991 });
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
       let d42: Decimal = new Decimal('1e-7');
@@ -3464,7 +3467,7 @@ export default function DecimalConfigPropertiesTest() {
         Decimal.set({ minE: 1 });
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
 
@@ -3500,7 +3503,7 @@ export default function DecimalConfigPropertiesTest() {
         Decimal.set(cfg47);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(typeof err.code).assertEqual('number');
       }
 
@@ -3516,7 +3519,7 @@ export default function DecimalConfigPropertiesTest() {
         Decimal.set({ maxE: 9007199254740991 });
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
       let d49: Decimal = new Decimal('1e21');
@@ -3527,7 +3530,7 @@ export default function DecimalConfigPropertiesTest() {
         Decimal.set({ maxE: -1 });
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
 
@@ -3564,7 +3567,7 @@ export default function DecimalConfigPropertiesTest() {
         Decimal.set(cfg54);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(typeof err.code).assertEqual('number');
       }
 
@@ -3584,7 +3587,7 @@ export default function DecimalConfigPropertiesTest() {
         Decimal.set(cfg57);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(typeof err.code).assertEqual('number');
       }
 
@@ -3605,7 +3608,7 @@ export default function DecimalConfigPropertiesTest() {
         Decimal.set(cfg60);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(typeof err.code).assertEqual('number');
       }
 
@@ -3631,7 +3634,7 @@ export default function DecimalConfigPropertiesTest() {
         Decimal.set(cfg64);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
     });
@@ -3686,7 +3689,7 @@ export default function DecimalConfigPropertiesTest() {
      */
     it('testDecimalConfigPropertiesPart05Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       Decimal.set({ defaults: true });
-      let sk: ESObject = decimalConfigPropertiesJsUtils.createSymbol('precision');
+      let sk: ESObject = common.createSymbol('precision');
       let cfg70: ESObject = { precision: 3, rounding: 4 };
       cfg70[sk] = 999;
       Decimal.set(cfg70);
@@ -3695,28 +3698,28 @@ export default function DecimalConfigPropertiesTest() {
 
       Decimal.set({ defaults: true });
       let cfg71: ESObject = {};
-      decimalConfigPropertiesJsUtils.defineProperty(cfg71, 'precision', { value: 3, enumerable: false });
+      common.defineProperty(cfg71, 'precision', { value: 3, enumerable: false });
       Decimal.set(cfg71);
       let d71: Decimal = new Decimal(1).div(7);
       expect(d71.toString()).assertEqual('0.143');
 
       Decimal.set({ defaults: true });
       let proto72: ESObject = { precision: 3 };
-      let cfg72: ESObject = decimalConfigPropertiesJsUtils.createObject(proto72);
+      let cfg72: ESObject = common.createObject(proto72);
       Decimal.set(cfg72);
       let d72: Decimal = new Decimal(1).div(7);
       expect(d72.toString()).assertEqual('0.143');
 
       Decimal.set({ defaults: true });
       let cfg73: ESObject = { precision: 3 };
-      decimalConfigPropertiesJsUtils.freeze(cfg73);
+      common.freeze(cfg73);
       Decimal.set(cfg73);
       let d73: Decimal = new Decimal(1).div(7);
       expect(d73.toString()).assertEqual('0.143');
 
       Decimal.set({ defaults: true });
       let cfg74: ESObject = { precision: 3 };
-      decimalConfigPropertiesJsUtils.seal(cfg74);
+      common.seal(cfg74);
       Decimal.set(cfg74);
       let d74: Decimal = new Decimal(1).div(7);
       expect(d74.toString()).assertEqual('0.143');
@@ -3729,21 +3732,21 @@ export default function DecimalConfigPropertiesTest() {
       expect(d75.toString()).assertEqual('0.143');
 
       Decimal.set({ defaults: true });
-      let cfg76: ESObject = decimalConfigPropertiesJsUtils.createObject(null);
+      let cfg76: ESObject = common.createObject(null);
       cfg76.precision = 3;
       Decimal.set(cfg76);
       let d76: Decimal = new Decimal(1).div(7);
       expect(d76.toString()).assertEqual('0.143');
 
       Decimal.set({ defaults: true });
-      let cfg77: ESObject = decimalConfigPropertiesJsUtils.nestedConfig('deepExtra');
+      let cfg77: ESObject = common.nestedConfig('deepExtra');
       Decimal.set(cfg77);
       let d77: Decimal = new Decimal(1).div(7);
       expect(d77.toString()).assertEqual('0.143');
 
       Decimal.set({ defaults: true });
       let cfg78: ESObject = {};
-      decimalConfigPropertiesJsUtils.defineProperty(cfg78, 'precision', {
+      common.defineProperty(cfg78, 'precision', {
         get: (): number => { return 3; },
         enumerable: true,
       });
@@ -3753,7 +3756,7 @@ export default function DecimalConfigPropertiesTest() {
 
       Decimal.set({ defaults: true });
       let cfg79: ESObject = {};
-      decimalConfigPropertiesJsUtils.defineProperty(cfg79, 'precision', {
+      common.defineProperty(cfg79, 'precision', {
         get: (): number => { throw new Error('boom'); },
         enumerable: true,
       });
@@ -3761,7 +3764,7 @@ export default function DecimalConfigPropertiesTest() {
         Decimal.set(cfg79);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(typeof err.code).assertEqual('undefined');
       }
 
@@ -3774,9 +3777,9 @@ export default function DecimalConfigPropertiesTest() {
       expect(d80.toString()).assertEqual('0.143');
 
       Decimal.set({ defaults: true });
-      let sk81: ESObject = decimalConfigPropertiesJsUtils.createSymbol('rounding');
+      let sk81: ESObject = common.createSymbol('rounding');
       let cfg81: ESObject = { precision: 3 };
-      decimalConfigPropertiesJsUtils.defineProperty(cfg81, sk81, { value: 0, enumerable: false });
+      common.defineProperty(cfg81, sk81, { value: 0, enumerable: false });
       Decimal.set(cfg81);
       let d81: Decimal = new Decimal(1).div(7);
       expect(d81.toString()).assertEqual('0.143');
@@ -3800,7 +3803,7 @@ export default function DecimalConfigPropertiesTest() {
         Decimal.set(cfg84);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(typeof err.code).assertEqual('number');
       }
     });
@@ -3816,7 +3819,7 @@ export default function DecimalConfigPropertiesTest() {
     it('testDecimalConfigPropertiesPart05Test085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       Decimal.set({ defaults: true });
       let cfg85: ESObject = { precision: 3 };
-      decimalConfigPropertiesJsUtils.deleteProperty(cfg85, 'precision');
+      common.deleteProperty(cfg85, 'precision');
       Decimal.set(cfg85);
       let d85: Decimal = new Decimal(1).div(3);
       expect(d85.toString()).assertEqual('0.33333333333333333333');
@@ -3824,18 +3827,18 @@ export default function DecimalConfigPropertiesTest() {
       Decimal.set({ defaults: true });
       let cfg86: ESObject = { precision: 3 };
       Decimal.set(cfg86);
-      decimalConfigPropertiesJsUtils.deleteProperty(cfg86, 'precision');
+      common.deleteProperty(cfg86, 'precision');
       let d86: Decimal = new Decimal(1).div(7);
       expect(d86.toString()).assertEqual('0.143');
 
       Decimal.set({ defaults: true });
       let cfg87: ESObject = {};
-      decimalConfigPropertiesJsUtils.defineProperty(cfg87, 'precision', { value: 3, configurable: false });
+      common.defineProperty(cfg87, 'precision', { value: 3, configurable: false });
       try {
-        let deleted: boolean = decimalConfigPropertiesJsUtils.deleteProperty(cfg87, 'precision');
+        let deleted: boolean = common.deleteProperty(cfg87, 'precision');
         expect(deleted).assertFalse();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code !== undefined).assertFalse();
       }
       Decimal.set(cfg87);
@@ -3844,8 +3847,8 @@ export default function DecimalConfigPropertiesTest() {
 
       Decimal.set({ defaults: true });
       let proto88: ESObject = { precision: 3 };
-      let cfg88: ESObject = decimalConfigPropertiesJsUtils.createObject(proto88);
-      let deleted88: boolean = decimalConfigPropertiesJsUtils.deleteProperty(cfg88, 'ownProp');
+      let cfg88: ESObject = common.createObject(proto88);
+      let deleted88: boolean = common.deleteProperty(cfg88, 'ownProp');
       expect(deleted88).assertTrue();
       Decimal.set(cfg88);
       let d88: Decimal = new Decimal(1).div(7);
@@ -3853,23 +3856,23 @@ export default function DecimalConfigPropertiesTest() {
 
       Decimal.set({ defaults: true });
       let cfg89: ESObject = { precision: undefined };
-      decimalConfigPropertiesJsUtils.deleteProperty(cfg89, 'precision');
+      common.deleteProperty(cfg89, 'precision');
       Decimal.set(cfg89);
       let d89: Decimal = new Decimal(1).div(3);
       expect(d89.toString()).assertEqual('0.33333333333333333333');
 
       Decimal.set({ defaults: true });
       let cfg90: ESObject = { precision: 3, rounding: 0 };
-      decimalConfigPropertiesJsUtils.deleteProperty(cfg90, 'precision');
-      decimalConfigPropertiesJsUtils.deleteProperty(cfg90, 'rounding');
+      common.deleteProperty(cfg90, 'precision');
+      common.deleteProperty(cfg90, 'rounding');
       Decimal.set(cfg90);
       let d90: Decimal = new Decimal(1).div(3);
       expect(d90.toString()).assertEqual('0.33333333333333333333');
 
       Decimal.set({ defaults: true });
       let cfg91: ESObject = { precision: 3 };
-      decimalConfigPropertiesJsUtils.deleteProperty(cfg91, 'precision');
-      decimalConfigPropertiesJsUtils.deleteProperty(cfg91, 'precision');
+      common.deleteProperty(cfg91, 'precision');
+      common.deleteProperty(cfg91, 'precision');
       expect(cfg91.precision === undefined).assertTrue();
       Decimal.set(cfg91);
       let d91: Decimal = new Decimal(1).div(3);
@@ -3877,7 +3880,7 @@ export default function DecimalConfigPropertiesTest() {
 
       Decimal.set({ defaults: true });
       let cfg92: ESObject = { precision: 3 };
-      decimalConfigPropertiesJsUtils.deleteProperty(cfg92, 'precision');
+      common.deleteProperty(cfg92, 'precision');
       cfg92.precision = 5;
       Decimal.set(cfg92);
       let d92: Decimal = new Decimal(1).div(7);
@@ -3901,7 +3904,7 @@ export default function DecimalConfigPropertiesTest() {
         Decimal.set(cfg95);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(typeof err.code).assertEqual('number');
       }
 
@@ -3912,7 +3915,7 @@ export default function DecimalConfigPropertiesTest() {
         Decimal.set(cfg96);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(typeof err.code).assertEqual('number');
       }
       let d96: Decimal = new Decimal(1).div(7);
