@@ -16,7 +16,6 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import { Decimal } from '@kit.ArkTS';
 import * as common from '../common/DecimalTestCommon';
-import { BusinessError } from '@kit.BasicServicesKit';
 
 type Rounding = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
 
@@ -43,6 +42,7 @@ export default function DecimalToBinaryTest(): void {
     });
     afterEach(() => { common.resetDecimalConfig(Decimal); });
     afterAll(() => {});
+
 
     /**
      * @tc.name testDecimalToBinaryPart01Test001
@@ -190,35 +190,35 @@ export default function DecimalToBinaryTest(): void {
         new Decimal(3).toBinary(1.9, Decimal.ROUND_DOWN);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
       try {
         new Decimal(1).toBinary(0, Decimal.ROUND_HALF_UP);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
       try {
         new Decimal(1).toBinary(-1, Decimal.ROUND_HALF_UP);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
       try {
         new Decimal(1).toBinary(1e9 + 1, Decimal.ROUND_HALF_UP);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
       try {
         new Decimal(1).toBinary(Infinity, Decimal.ROUND_HALF_UP);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
       try {
@@ -226,7 +226,7 @@ export default function DecimalToBinaryTest(): void {
         new Decimal(1).toBinary(1, rm as Rounding);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
       try {
@@ -234,7 +234,7 @@ export default function DecimalToBinaryTest(): void {
         new Decimal(1).toBinary(1, rm as Rounding);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
       try {
@@ -242,7 +242,7 @@ export default function DecimalToBinaryTest(): void {
         new Decimal(1).toBinary(1, rm as Rounding);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
       try {
@@ -250,7 +250,7 @@ export default function DecimalToBinaryTest(): void {
         new Decimal(1).toBinary(1, rm as Rounding);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
     });
@@ -281,7 +281,11 @@ export default function DecimalToBinaryTest(): void {
       let v: number = Number.MAX_SAFE_INTEGER + 1;
       let pow53Exp: string = '0b1' + '0'.repeat(53);
       expect(new Decimal(v).toBinary()).assertEqual(pow53Exp);
+      let out01: string = new Decimal(0.1).toBinary();
+      expect(out01.indexOf('0b') === 0).assertTrue();
+      expect(out01.length).assertEqual(27);
     });
+
 
     /**
      * @tc.name testDecimalToBinaryPart02Test001
@@ -325,7 +329,7 @@ export default function DecimalToBinaryTest(): void {
           new Decimal(256).toBinary(val as number);
           expect().assertFail();
         } catch (e) {
-          let err: BusinessError = e as BusinessError;
+          let err: ESObject = e;
           expect(typeof err.code).assertEqual('number');
         }
       };
@@ -335,7 +339,7 @@ export default function DecimalToBinaryTest(): void {
         new Decimal(256).toBinary(n as number);
         expect().assertFail();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(typeof err.code).assertEqual('number');
       }
       let v: ESObject = undefined;
@@ -455,7 +459,7 @@ export default function DecimalToBinaryTest(): void {
           new Decimal(256).toBinary(sd as number);
           expect().assertFail();
         } catch (e) {
-          expect((e as BusinessError).code).assertEqual(10200001);
+          expect((e as ESObject).code).assertEqual(10200001);
         }
       };
       probeThrows(0);
@@ -530,6 +534,7 @@ export default function DecimalToBinaryTest(): void {
       Decimal.set({ defaults: true });
     });
 
+
     /**
      * @tc.name testDecimalToBinaryPart03Test001
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_BINARY_PART03_TEST_0100
@@ -563,7 +568,7 @@ export default function DecimalToBinaryTest(): void {
         let s: string = dec5b.toBinary(n as number);
         expect(typeof s).assertEqual('string');
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code !== undefined).assertTrue();
       }
       expect(dec5b.toString()).assertEqual('5');
@@ -653,7 +658,7 @@ export default function DecimalToBinaryTest(): void {
         let s: string = dec3e.toBinary(1, rmS as Rounding);
         expect(s === '0b1p+2' || s === '0b1p+1').assertTrue();
       } catch (e) {
-        let err: BusinessError = e as BusinessError;
+        let err: ESObject = e;
         expect(err.code !== undefined).assertTrue();
       }
       let dec3f: Decimal = new Decimal(3);
@@ -666,7 +671,7 @@ export default function DecimalToBinaryTest(): void {
         try {
           dec.toBinary(1, rm as Rounding);
         } catch (e) {
-          errCode = (e as BusinessError).code;
+          errCode = (e as ESObject).code;
         }
         expect(errCode).assertEqual(10200001);
       };
@@ -751,7 +756,7 @@ export default function DecimalToBinaryTest(): void {
       try {
         dec3.toBinary(0);
       } catch (e) {
-        errCode = (e as BusinessError).code;
+        errCode = (e as ESObject).code;
       }
       expect(errCode).assertEqual(10200001);
       expect(dec3.toString()).assertEqual('3');
@@ -763,7 +768,7 @@ export default function DecimalToBinaryTest(): void {
       try {
         dec3b.toBinary(0);
       } catch (e) {
-        errCodeB = (e as BusinessError).code;
+        errCodeB = (e as ESObject).code;
       }
       expect(errCodeB).assertEqual(10200001);
       expect(dec3b.d === arr).assertTrue();
@@ -774,7 +779,7 @@ export default function DecimalToBinaryTest(): void {
       try {
         dec3c.toBinary(0);
       } catch (e) {
-        errCodeC = (e as BusinessError).code;
+        errCodeC = (e as ESObject).code;
       }
       expect(errCodeC).assertEqual(10200001);
       expect(dec3c.add(1).toString()).assertEqual('4');
@@ -783,7 +788,7 @@ export default function DecimalToBinaryTest(): void {
       try {
         dec3d.toBinary(0);
       } catch (e) {
-        errCodeD = (e as BusinessError).code;
+        errCodeD = (e as ESObject).code;
       }
       expect(errCodeD).assertEqual(10200001);
       expect(dec3d.toBinary()).assertEqual('0b11');
@@ -793,7 +798,7 @@ export default function DecimalToBinaryTest(): void {
         let rm: ESObject = 9;
         dec3e.toBinary(1, rm as Rounding);
       } catch (e) {
-        errCodeE = (e as BusinessError).code;
+        errCodeE = (e as ESObject).code;
       }
       expect(errCodeE).assertEqual(10200001);
       expect(dec3e.toString()).assertEqual('3');
@@ -804,7 +809,7 @@ export default function DecimalToBinaryTest(): void {
         let rm: ESObject = 9;
         dec7.toBinary(0, rm as Rounding);
       } catch (e) {
-        errCode7 = (e as BusinessError).code;
+        errCode7 = (e as ESObject).code;
       }
       expect(errCode7).assertEqual(10200001);
       expect(dec7.d === arr7).assertTrue();
@@ -813,7 +818,7 @@ export default function DecimalToBinaryTest(): void {
       try {
         dec3f.toBinary(-1);
       } catch (e) {
-        errCodeF = (e as BusinessError).code;
+        errCodeF = (e as ESObject).code;
       }
       expect(errCodeF).assertEqual(10200001);
       let errCodeF2: number = -1;
@@ -821,7 +826,7 @@ export default function DecimalToBinaryTest(): void {
         let rm: ESObject = -1;
         dec3f.toBinary(1, rm as Rounding);
       } catch (e) {
-        errCodeF2 = (e as BusinessError).code;
+        errCodeF2 = (e as ESObject).code;
       }
       expect(errCodeF2).assertEqual(10200001);
       expect(dec3f.add(2).toString()).assertEqual('5');
@@ -830,7 +835,7 @@ export default function DecimalToBinaryTest(): void {
       try {
         dec3g.toBinary(0);
       } catch (e) {
-        errCodeG = (e as BusinessError).code;
+        errCodeG = (e as ESObject).code;
       }
       expect(errCodeG).assertEqual(10200001);
       expect(dec3g.toBinary(1, Decimal.ROUND_DOWN)).assertEqual('0b1p+1');
@@ -935,7 +940,7 @@ export default function DecimalToBinaryTest(): void {
       try {
         dec3.toBinary(0, Decimal.ROUND_HALF_UP);
       } catch (e) {
-        errCode = (e as BusinessError).code;
+        errCode = (e as ESObject).code;
       }
       expect(errCode).assertEqual(10200001);
       let errCode2: number = -1;
@@ -943,7 +948,7 @@ export default function DecimalToBinaryTest(): void {
         let rm: ESObject = 9;
         dec3.toBinary(1, rm as Rounding);
       } catch (e) {
-        errCode2 = (e as BusinessError).code;
+        errCode2 = (e as ESObject).code;
       }
       expect(errCode2).assertEqual(10200001);
       let dec5: Decimal = new Decimal(5);
@@ -954,7 +959,7 @@ export default function DecimalToBinaryTest(): void {
         try {
           dec.toBinary(sd as number);
         } catch (e) {
-          errCode = (e as BusinessError).code;
+          errCode = (e as ESObject).code;
         }
         expect(errCode).assertEqual(10200001);
       };
