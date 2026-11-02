@@ -1,0 +1,39 @@
+{
+  "description": "Input method in-app proxy API tests",
+  "driver": {
+    "type": "OHJSUnitTest",
+    "test-timeout": "1200000",
+    "shell-timeout": "1200000",
+    "bundle-name": "com.acts.inputmethod.inappproxy",
+    "module-name": "entry_test",
+    "testcase-timeout": "300000"
+  },
+  "kits": [
+    {
+      "type": "PushKit",
+      "pre-push": [
+        "mkdir -p /data/local/tmp/ActsInputMethodInAppProxyFixtures"
+      ],
+      "push": [
+        "ActsInputMethodInAppProxyCapacityWorker -> /data/local/tmp/ActsInputMethodInAppProxyFixtures/ActsInputMethodInAppProxyCapacityWorker",
+        "ActsInputMethodInAppProxyCapacity.sh -> /data/local/tmp/ActsInputMethodInAppProxyFixtures/capacity.sh"
+      ],
+      "post-push": [
+        "chmod 700 /data/local/tmp/ActsInputMethodInAppProxyFixtures/ActsInputMethodInAppProxyCapacityWorker",
+        "sh /data/local/tmp/ActsInputMethodInAppProxyFixtures/capacity.sh stop-server",
+        "nohup sh /data/local/tmp/ActsInputMethodInAppProxyFixtures/capacity.sh serve >/data/local/tmp/ActsInputMethodInAppProxyFixtures/server.log 2>&1 </dev/null &"
+      ],
+      "teardown-push": [
+        "sh /data/local/tmp/ActsInputMethodInAppProxyFixtures/capacity.sh stop-server"
+      ],
+      "uninstall": true
+    },
+    {
+      "type": "AppInstallKit",
+      "test-file-name": [
+        "ActsInputMethodInAppProxyTest.hap"
+      ],
+      "cleanup-apps": true
+    }
+  ]
+}

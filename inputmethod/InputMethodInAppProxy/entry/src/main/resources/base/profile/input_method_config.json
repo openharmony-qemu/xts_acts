@@ -1,0 +1,11 @@
+{
+  "subtypes": [
+    {
+      "id": "InputMethodService",
+      "icon": "$media:app_icon",
+      "label": "$string:ime_probe_name",
+      "locale": "en-US",
+      "mode": "lower"
+    }
+  ]
+}
