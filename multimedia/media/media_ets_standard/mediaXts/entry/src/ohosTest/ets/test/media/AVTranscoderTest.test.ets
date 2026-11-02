@@ -1805,5 +1805,324 @@ export default function AVTranscoderTest() {
       }
       done();
     })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ENABLESTABLEQUALITYMODE_PARAM_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ENABLESTABLEQUALITYMODE_PARAM_0100
+     * @tc.desc   Test AVTranscoderConfig.enableStableQualityMode set true with valid sqrFactor 26.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ENABLESTABLEQUALITYMODE_PARAM_0100', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ENABLESTABLEQUALITYMODE_PARAM_0100';
+      try {
+        let isSupportHardware: number = await myavcapability.AVCapabilityIsSupportedHEVCHardware();
+        console.info('isSupportHardware:', isSupportHardware)
+        if (isSupportHardware == -1) {
+          console.info('the device capability is not supported!');
+        } else {
+          console.info('the device capability is supported! start transcoder!');
+          let sqrConfig: media.AVTranscoderConfig = {
+            audioBitrate: 200000,
+            audioCodec: media.CodecMimeType.AUDIO_AAC,
+            fileFormat: media.ContainerFormatType.CFT_MPEG_4,
+            videoBitrate: 3000000,
+            videoCodec: media.CodecMimeType.VIDEO_HEVC,
+            enableStableQualityMode: true,
+            sqrFactor: 26,
+          };
+          await createAVTranscoder(done, testContext, testName);
+          await prepareAVTranscoderNormal(sqrConfig, done, testName);
+          await startAVTranscoder(done, testName);
+          await listenComplete(done);
+        }
+      } catch (err) {
+        console.error(testName + ' failed with error:', JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ENABLESTABLEQUALITYMODE_PARAM_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ENABLESTABLEQUALITYMODE_PARAM_0200
+     * @tc.desc   Test AVTranscoderConfig.enableStableQualityMode set false with valid sqrFactor 26.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ENABLESTABLEQUALITYMODE_PARAM_0200', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ENABLESTABLEQUALITYMODE_PARAM_0200';
+      try {
+        let isSupportHardware: number = await myavcapability.AVCapabilityIsSupportedHEVCHardware();
+        console.info('isSupportHardware:', isSupportHardware)
+        if (isSupportHardware == -1) {
+          console.info('the device capability is not supported!');
+        } else {
+          console.info('the device capability is supported! start transcoder!');
+          let sqrConfig: media.AVTranscoderConfig = {
+            audioBitrate: 200000,
+            audioCodec: media.CodecMimeType.AUDIO_AAC,
+            fileFormat: media.ContainerFormatType.CFT_MPEG_4,
+            videoBitrate: 3000000,
+            videoCodec: media.CodecMimeType.VIDEO_HEVC,
+            enableStableQualityMode: false,
+            sqrFactor: 26,
+          };
+          await createAVTranscoder(done, testContext, testName);
+          await prepareAVTranscoderNormal(sqrConfig, done, testName);
+          await startAVTranscoder(done, testName);
+          await listenComplete(done);
+        }
+      } catch (err) {
+        console.error(testName + ' failed with error:', JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ENABLESTABLEQUALITYMODE_PARAM_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ENABLESTABLEQUALITYMODE_PARAM_0300
+     * @tc.desc   Test AVTranscoderConfig.enableStableQualityMode set true without sqrFactor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ENABLESTABLEQUALITYMODE_PARAM_0300', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ENABLESTABLEQUALITYMODE_PARAM_0300';
+      try {
+        let isSupportHardware: number = await myavcapability.AVCapabilityIsSupportedHEVCHardware();
+        console.info('isSupportHardware:', isSupportHardware)
+        if (isSupportHardware == -1) {
+          console.info('the device capability is not supported!');
+        } else {
+          console.info('the device capability is supported! start transcoder!');
+          let sqrConfig: media.AVTranscoderConfig = {
+            audioBitrate: 200000,
+            audioCodec: media.CodecMimeType.AUDIO_AAC,
+            fileFormat: media.ContainerFormatType.CFT_MPEG_4,
+            videoBitrate: 3000000,
+            videoCodec: media.CodecMimeType.VIDEO_HEVC,
+            enableStableQualityMode: true,
+          };
+          await createAVTranscoder(done, testContext, testName);
+          await prepareAVTranscoderNormal(sqrConfig, done, testName);
+          await startAVTranscoder(done, testName);
+          await listenComplete(done);
+        }
+      } catch (err) {
+        console.error(testName + ' failed with error:', JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_SQRFACTOR_PARAM_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_SQRFACTOR_PARAM_0100
+     * @tc.desc   Test AVTranscoderConfig.sqrFactor set to 26 without enableStableQualityMode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_SQRFACTOR_PARAM_0100', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_SQRFACTOR_PARAM_0100';
+      try {
+        let isSupportHardware: number = await myavcapability.AVCapabilityIsSupportedHEVCHardware();
+        console.info('isSupportHardware:', isSupportHardware)
+        if (isSupportHardware == -1) {
+          console.info('the device capability is not supported!');
+        } else {
+          console.info('the device capability is supported! start transcoder!');
+          let sqrConfig: media.AVTranscoderConfig = {
+            audioBitrate: 200000,
+            audioCodec: media.CodecMimeType.AUDIO_AAC,
+            fileFormat: media.ContainerFormatType.CFT_MPEG_4,
+            videoBitrate: 3000000,
+            videoCodec: media.CodecMimeType.VIDEO_HEVC,
+            sqrFactor: 26,
+          };
+          await createAVTranscoder(done, testContext, testName);
+          await prepareAVTranscoderNormal(sqrConfig, done, testName);
+          await startAVTranscoder(done, testName);
+          await listenComplete(done);
+        }
+      } catch (err) {
+        console.error(testName + ' failed with error:', JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_SQRFACTOR_BOUNDARY_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_SQRFACTOR_BOUNDARY_0100
+     * @tc.desc   Test AVTranscoderConfig.sqrFactor lower boundary value 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_SQRFACTOR_BOUNDARY_0100', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_SQRFACTOR_BOUNDARY_0100';
+      try {
+        let isSupportHardware: number = await myavcapability.AVCapabilityIsSupportedHEVCHardware();
+        console.info('isSupportHardware:', isSupportHardware)
+        if (isSupportHardware == -1) {
+          console.info('the device capability is not supported!');
+        } else {
+          console.info('the device capability is supported! start transcoder!');
+          let sqrConfig: media.AVTranscoderConfig = {
+            audioBitrate: 200000,
+            audioCodec: media.CodecMimeType.AUDIO_AAC,
+            fileFormat: media.ContainerFormatType.CFT_MPEG_4,
+            videoBitrate: 3000000,
+            videoCodec: media.CodecMimeType.VIDEO_HEVC,
+            enableStableQualityMode: true,
+            sqrFactor: 0,
+          };
+          await createAVTranscoder(done, testContext, testName);
+          await prepareAVTranscoderNormal(sqrConfig, done, testName);
+          await startAVTranscoder(done, testName);
+          await listenComplete(done);
+        }
+      } catch (err) {
+        console.error(testName + ' failed with error:', JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_SQRFACTOR_BOUNDARY_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_SQRFACTOR_BOUNDARY_0200
+     * @tc.desc   Test AVTranscoderConfig.sqrFactor upper boundary value 51.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_SQRFACTOR_BOUNDARY_0200', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_SQRFACTOR_BOUNDARY_0200';
+      try {
+        let isSupportHardware: number = await myavcapability.AVCapabilityIsSupportedHEVCHardware();
+        console.info('isSupportHardware:', isSupportHardware)
+        if (isSupportHardware == -1) {
+          console.info('the device capability is not supported!');
+        } else {
+          console.info('the device capability is supported! start transcoder!');
+          let sqrConfig: media.AVTranscoderConfig = {
+            audioBitrate: 200000,
+            audioCodec: media.CodecMimeType.AUDIO_AAC,
+            fileFormat: media.ContainerFormatType.CFT_MPEG_4,
+            videoBitrate: 3000000,
+            videoCodec: media.CodecMimeType.VIDEO_HEVC,
+            enableStableQualityMode: true,
+            sqrFactor: 51,
+          };
+          await createAVTranscoder(done, testContext, testName);
+          await prepareAVTranscoderNormal(sqrConfig, done, testName);
+          await startAVTranscoder(done, testName);
+          await listenComplete(done);
+        }
+      } catch (err) {
+        console.error(testName + ' failed with error:', JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_SQRFACTOR_ERROR_401_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_SQRFACTOR_ERROR_401_0100
+     * @tc.desc   Test AVTranscoderConfig.sqrFactor 52 exceeds upper boundary, expect 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_SQRFACTOR_ERROR_401_0100', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_SQRFACTOR_ERROR_401_0100';
+      await createAVTranscoder(done, testContext, testName);
+      let sqrErrorConfig: media.AVTranscoderConfig = {
+        audioBitrate: 200000,
+        audioCodec: media.CodecMimeType.AUDIO_AAC,
+        fileFormat: media.ContainerFormatType.CFT_MPEG_4,
+        videoBitrate: 3000000,
+        videoCodec: media.CodecMimeType.VIDEO_HEVC,
+        enableStableQualityMode: true,
+        sqrFactor: 52,
+      };
+      await mTranscoder?.prepare(sqrErrorConfig).then(() => {
+        console.error(TAG, testName + ' prepare should fail.');
+        expect().assertFail();
+        done();
+      }).catch((error: BusinessError) => {
+        console.info(TAG, testName + ' prepare failed as expected, code: ' + error.code + ', msg: ' + error.message);
+        expect(error.code).assertEqual(401);
+        done();
+      });
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_SQRFACTOR_ERROR_401_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_SQRFACTOR_ERROR_401_0200
+     * @tc.desc   Test AVTranscoderConfig.sqrFactor -1 below lower boundary, expect 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_SQRFACTOR_ERROR_401_0200', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_SQRFACTOR_ERROR_401_0200';
+      await createAVTranscoder(done, testContext, testName);
+      let sqrErrorConfig: media.AVTranscoderConfig = {
+        audioBitrate: 200000,
+        audioCodec: media.CodecMimeType.AUDIO_AAC,
+        fileFormat: media.ContainerFormatType.CFT_MPEG_4,
+        videoBitrate: 3000000,
+        videoCodec: media.CodecMimeType.VIDEO_HEVC,
+        enableStableQualityMode: true,
+        sqrFactor: -1,
+      };
+      await mTranscoder?.prepare(sqrErrorConfig).then(() => {
+        console.error(TAG, testName + ' prepare should fail.');
+        expect().assertFail();
+        done();
+      }).catch((error: BusinessError) => {
+        console.info(TAG, testName + ' prepare failed as expected, code: ' + error.code + ', msg: ' + error.message);
+        expect(error.code).assertEqual(401);
+        done();
+      });
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_SQRFACTOR_ERROR_401_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_SQRFACTOR_ERROR_401_0300
+     * @tc.desc   Test AVTranscoderConfig.sqrFactor 100 far exceeds upper boundary, expect 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_SQRFACTOR_ERROR_401_0300', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_SQRFACTOR_ERROR_401_0300';
+      await createAVTranscoder(done, testContext, testName);
+      let sqrErrorConfig: media.AVTranscoderConfig = {
+        audioBitrate: 200000,
+        audioCodec: media.CodecMimeType.AUDIO_AAC,
+        fileFormat: media.ContainerFormatType.CFT_MPEG_4,
+        videoBitrate: 3000000,
+        videoCodec: media.CodecMimeType.VIDEO_HEVC,
+        enableStableQualityMode: true,
+        sqrFactor: 100,
+      };
+      await mTranscoder?.prepare(sqrErrorConfig).then(() => {
+        console.error(TAG, testName + ' prepare should fail.');
+        expect().assertFail();
+        done();
+      }).catch((error: BusinessError) => {
+        console.info(TAG, testName + ' prepare failed as expected, code: ' + error.code + ', msg: ' + error.message);
+        expect(error.code).assertEqual(401);
+        done();
+      });
+    })
   })
 }
