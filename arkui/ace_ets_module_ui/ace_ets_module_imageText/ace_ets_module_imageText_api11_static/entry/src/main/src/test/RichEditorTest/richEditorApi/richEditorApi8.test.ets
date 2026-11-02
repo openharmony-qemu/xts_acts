@@ -41,6 +41,8 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+
 export default function richEditorApi8() {
   describe('richEditorApi8', () => {
     beforeEach(async (): Promise<void> => {
@@ -55,14 +57,14 @@ export default function richEditorApi8() {
         console.info("get richEditorApi8 state pages:" + JSON.stringify(pages));
         if (!("richEditorApi8" == pages.name)) {
           console.info("get richEditorApi8 pages.name:" + '');
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // await router 有已知问题，先注释使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
           // console.info("push richEditorApi8 page result:" + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push richEditorApi8 page error:" + err);
+        console.log("push richEditorApi8 page error:" + err);
       }
       console.info("richEditorApi8 beforeEach end");
     });
@@ -92,9 +94,14 @@ export default function richEditorApi8() {
       await CommonFunc.sleep(1000);
       let richEditor = CommonFunc.getComponentRectOnScreen('RichEditor8');
 
-      await driver.mouseClick({
-        x:(Math.round(richEditor.left).toInt()) + 300, y: (Math.round(richEditor.top).toInt()) + 300
-      }, MouseButton.MOUSE_BUTTON_LEFT)
+      try {
+        await driver.mouseClick({
+          x:(Math.round(richEditor.left).toInt()) + 300, y: (Math.round(richEditor.top).toInt()) + 300,
+          displayId: displayID
+        }, MouseButton.MOUSE_BUTTON_LEFT)
+      } catch (err) {
+        console.log('driver.mouseClick error: ' + JSON.stringify(err));
+      }
 
       await CommonFunc.sleep(2000);
       let text1 = inspector.getInspectorByKey('richEditorApi8' + '_text1');

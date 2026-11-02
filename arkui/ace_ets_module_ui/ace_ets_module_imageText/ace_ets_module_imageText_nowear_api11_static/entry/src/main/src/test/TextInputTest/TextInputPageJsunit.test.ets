@@ -39,6 +39,8 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+
 export default function TextInputPageJsunit() {
   describe('TextInputPageJsunit', () :void=> {
     beforeAll(async (): Promise<void> => {
@@ -63,7 +65,7 @@ export default function TextInputPageJsunit() {
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error("push TextInputPageJsunit page error:" + err);
+        console.log("push TextInputPageJsunit page error:" + err);
       }
       console.info("TextInputPageJsunit beforeEach end");
     });
@@ -219,7 +221,11 @@ it('TextInputPageJsunit_static_0400', Level.LEVEL1, async (done: ()=>void) => {
       await (textComponent?.click() as Promise<void>)
       await CommonFunc.sleep(500);
       await (textComponent?.inputText("hello") as Promise<void>)
-	    await driver.triggerKey(2047)
+	    try {
+	      await driver.triggerKey(2047, displayID)
+	    } catch (err) {
+	      console.log('driver.triggerKey error: ' + JSON.stringify(err));
+	    }
       await CommonFunc.sleep(1000);
       let component = await driver.findComponent(ON.id('text'));
       let text = await (component?.getText() as Promise<string>);
@@ -248,12 +254,20 @@ it('TextInputPageJsunit_static_0400', Level.LEVEL1, async (done: ()=>void) => {
       let textInputRect = CommonFunc.getComponentRectOnScreen('textInput')
       let clickX = Math.round((textInputRect.right + textInputRect.left)/2).toInt()
       let clickY = Math.round((textInputRect.bottom + textInputRect.top)/2).toInt()
-      await driverX.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_RIGHT)
+      try {
+        await driverX.mouseClick({ x: clickX, y: clickY, displayId: displayID }, MouseButton.MOUSE_BUTTON_RIGHT)
+      } catch (err) {
+        console.log('driver.mouseClick error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(3000);
       let textComponent3 = await driver.findComponent(ON.text('全选'));
       await (textComponent3?.click() as Promise<void>)
       await CommonFunc.sleep(3000);
-      await driverX.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_RIGHT)
+      try {
+        await driverX.mouseClick({ x: clickX, y: clickY, displayId: displayID }, MouseButton.MOUSE_BUTTON_RIGHT)
+      } catch (err) {
+        console.log('driver.mouseClick error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let textComponent4 = await driver.findComponent(ON.text('复制'));
       await (textComponent4?.click() as Promise<void>)
@@ -269,12 +283,20 @@ it('TextInputPageJsunit_static_0400', Level.LEVEL1, async (done: ()=>void) => {
       console.info("[TextInputPageJsunit_0400] Verify copy succ !");
 
       // Verify onCut function of TextInput component
-      await driverX.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_RIGHT)
+      try {
+        await driverX.mouseClick({ x: clickX, y: clickY, displayId: displayID }, MouseButton.MOUSE_BUTTON_RIGHT)
+      } catch (err) {
+        console.log('driver.mouseClick error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let textComponent5 = await driver.findComponent(ON.text('全选'));
       await (textComponent5?.click() as Promise<void>)
       await CommonFunc.sleep(3000);
-      await driverX.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_RIGHT)
+      try {
+        await driverX.mouseClick({ x: clickX, y: clickY, displayId: displayID }, MouseButton.MOUSE_BUTTON_RIGHT)
+      } catch (err) {
+        console.log('driver.mouseClick error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let textComponent6 = await driver.findComponent(ON.text('剪切'));
       await (textComponent6?.click() as Promise<void>)
@@ -287,7 +309,11 @@ it('TextInputPageJsunit_static_0400', Level.LEVEL1, async (done: ()=>void) => {
       console.info("[TextInputPageJsunit_0400] Verify cut succ !");
 
       // Verify onPaste function of TextInput component
-      await driverX.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_RIGHT)
+      try {
+        await driverX.mouseClick({ x: clickX, y: clickY, displayId: displayID }, MouseButton.MOUSE_BUTTON_RIGHT)
+      } catch (err) {
+        console.log('driver.mouseClick error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let textComponent7 = await driver.findComponent(ON.text('粘贴'));
       await (textComponent7?.click() as Promise<void>)

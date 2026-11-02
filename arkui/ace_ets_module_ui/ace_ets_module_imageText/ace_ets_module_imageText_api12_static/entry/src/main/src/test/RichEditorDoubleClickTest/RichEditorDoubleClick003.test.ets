@@ -39,6 +39,7 @@ import { KeyCode } from '@ohos.multimodalInput.keyCode';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
 export default function RichEditorDoubleClick003() {
   describe('RichEditorDoubleClick003', () => {
     beforeAll(async (): Promise<void> => {
@@ -62,7 +63,7 @@ export default function RichEditorDoubleClick003() {
           console.info("push RichEditorDoubleClick003 success");
         }
       } catch (err) {
-        console.error("push RichEditorDoubleClick003 page error: " + err);
+        console.log("push RichEditorDoubleClick003 page error: " + err);
         expect().assertFail();
       }
     });
@@ -80,7 +81,11 @@ export default function RichEditorDoubleClick003() {
       let rich = await (driver.findComponent(ON.id('RichEditorDoubleClick003')) as Promise<Component>);
       let pointCenter = await rich.getBoundsCenter();
       await CommonFunc.sleep(500);
-      await driver.click(pointCenter.x, pointCenter.y);
+      try {
+        await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       let addImage = await (driver.findComponent(ON.id('addImage')) as Promise<Component>);
       await addImage.click();
@@ -89,9 +94,17 @@ export default function RichEditorDoubleClick003() {
       await setCenter.click();
       await CommonFunc.sleep(500);
 
-      await driver.click(pointCenter.x, pointCenter.y);
+      try {
+        await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(100);
-      await driver.click(pointCenter.x, pointCenter.y);
+      try {
+        await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(100);
       let message = await (driver.findComponent(ON.id('message')) as Promise<Component>);
       let messageText = await message.getText();

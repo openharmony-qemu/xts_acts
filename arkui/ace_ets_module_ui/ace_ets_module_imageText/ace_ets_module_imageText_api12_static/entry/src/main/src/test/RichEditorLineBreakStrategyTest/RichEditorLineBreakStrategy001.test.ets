@@ -35,6 +35,8 @@ import { KeyCode } from '@ohos.multimodalInput.keyCode';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+
 export default function RichEditorLineBreakStrategy001() {
   describe('RichEditorLineBreakStrategy001', () => {
     beforeAll(async (): Promise<void> => {
@@ -58,7 +60,7 @@ export default function RichEditorLineBreakStrategy001() {
           console.info("push RichEditorLineBreakStrategy001 success");
         }
       } catch (err) {
-        console.error("push RichEditorLineBreakStrategy001 page error: " + err);
+        console.log("push RichEditorLineBreakStrategy001 page error: " + err);
         expect().assertFail();
       }
     });
@@ -75,7 +77,11 @@ export default function RichEditorLineBreakStrategy001() {
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('RichEditorLineBreakStrategy001')) as Promise<Component>);
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      try {
+        await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
       let getAttr = await (driver.findComponent(ON.id('getAttr')) as Promise<Component>);

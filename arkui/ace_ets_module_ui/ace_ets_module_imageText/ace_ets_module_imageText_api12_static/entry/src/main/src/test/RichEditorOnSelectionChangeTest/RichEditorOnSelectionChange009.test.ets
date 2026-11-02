@@ -35,6 +35,7 @@ import { KeyCode } from '@ohos.multimodalInput.keyCode';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
 export default function RichEditorOnSelectionChange009() {
   describe('RichEditorOnSelectionChange009', () => {
     beforeAll(async (): Promise<void> => {
@@ -58,7 +59,7 @@ export default function RichEditorOnSelectionChange009() {
           console.info("push RichEditorOnSelectionChange009 success");
         }
       } catch (err) {
-        console.error("push RichEditorOnSelectionChange009 page error: " + err);
+        console.log("push RichEditorOnSelectionChange009 page error: " + err);
         expect().assertFail();
       }
     });
@@ -75,20 +76,40 @@ export default function RichEditorOnSelectionChange009() {
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('rich_struct')) as Promise<Component>);
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      try {
+        await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.click error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
       let setCaretOffset = await (driver.findComponent(ON.id('setCaretOffset')) as Promise<Component>)
       await setCaretOffset.click();
       await CommonFunc.sleep(500);
 
-      driver.triggerKey(KeyCode.KEYCODE_DPAD_RIGHT);
+      try {
+        driver.triggerKey(KeyCode.KEYCODE_DPAD_RIGHT, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      driver.triggerKey(KeyCode.KEYCODE_DPAD_DOWN);
+      try {
+        driver.triggerKey(KeyCode.KEYCODE_DPAD_DOWN, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      driver.triggerKey(KeyCode.KEYCODE_DPAD_LEFT);
+      try {
+        driver.triggerKey(KeyCode.KEYCODE_DPAD_LEFT, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      driver.triggerKey(KeyCode.KEYCODE_DPAD_UP);
+      try {
+        driver.triggerKey(KeyCode.KEYCODE_DPAD_UP, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       let onSelectCallBack = await (driver.findComponent(ON.id('onSelectCallBack')) as Promise<Component>);
       let onSelectCallBackText = await onSelectCallBack.getText();
@@ -105,9 +126,17 @@ export default function RichEditorOnSelectionChange009() {
       let set1 = await (driver.findComponent(ON.id('set1')) as Promise<Component>)
       await set1.click();
       await CommonFunc.sleep(500);
-      driver.triggerKey(KeyCode.KEYCODE_DPAD_RIGHT);
+      try {
+        driver.triggerKey(KeyCode.KEYCODE_DPAD_RIGHT, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      driver.triggerKey(KeyCode.KEYCODE_DPAD_DOWN);
+      try {
+        driver.triggerKey(KeyCode.KEYCODE_DPAD_DOWN, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       onSelectCallBackText = await onSelectCallBack.getText();
       await CommonFunc.sleep(500);
@@ -117,9 +146,17 @@ export default function RichEditorOnSelectionChange009() {
       await CommonFunc.sleep(500);
       await set1.click();
       await CommonFunc.sleep(500);
-      driver.triggerKey(KeyCode.KEYCODE_DPAD_LEFT);
+      try {
+        driver.triggerKey(KeyCode.KEYCODE_DPAD_LEFT, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      driver.triggerKey(KeyCode.KEYCODE_DPAD_UP);
+      try {
+        driver.triggerKey(KeyCode.KEYCODE_DPAD_UP, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       onSelectCallBackText = await onSelectCallBack.getText();
       await CommonFunc.sleep(500);

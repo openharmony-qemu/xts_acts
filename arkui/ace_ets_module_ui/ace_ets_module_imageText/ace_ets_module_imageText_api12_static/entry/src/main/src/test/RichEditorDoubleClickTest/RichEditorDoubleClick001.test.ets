@@ -36,6 +36,7 @@ import { KeyCode } from '@ohos.multimodalInput.keyCode';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
 export default function RichEditorDoubleClick001() {
   describe('RichEditorDoubleClick001', () => {
     beforeAll(async (): Promise<void> => {
@@ -59,7 +60,7 @@ export default function RichEditorDoubleClick001() {
           console.info("push RichEditorDoubleClick001 success");
         }
       } catch (err) {
-        console.error("push RichEditorDoubleClick001 page error: " + err);
+        console.log("push RichEditorDoubleClick001 page error: " + err);
         expect().assertFail();
       }
     });
@@ -77,20 +78,40 @@ export default function RichEditorDoubleClick001() {
       let rich = await (driver.findComponent(ON.id('RichEditorDoubleClick001')) as Promise<Component>);
       let getBounds = await rich.getBounds();
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.left + 30, getBounds.top + 20);
+      try {
+        await driver.clickAt({ x: getBounds.left + 30, y: getBounds.top + 20, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.left + 65, getBounds.top + 30);
+      try {
+        await driver.clickAt({ x: getBounds.left + 65, y: getBounds.top + 30, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 65, getBounds.top + 30);
+      try {
+        await driver.clickAt({ x: getBounds.left + 65, y: getBounds.top + 30, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(100);
       let message = await (driver.findComponent(ON.id('message')) as Promise<Component>);
       let messageText = await message.getText();
       await CommonFunc.sleep(1000);
       expect(messageText).assertContain('"start"');
       expect(messageText).assertContain('"end"');
-      await driver.click(getBounds.left + 30, getBounds.top + 70);
+      try {
+        await driver.clickAt({ x: getBounds.left + 30, y: getBounds.top + 70, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 30, getBounds.top + 70);
+      try {
+        await driver.clickAt({ x: getBounds.left + 30, y: getBounds.top + 70, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(100);
       messageText = await message.getText();
       await CommonFunc.sleep(1000);

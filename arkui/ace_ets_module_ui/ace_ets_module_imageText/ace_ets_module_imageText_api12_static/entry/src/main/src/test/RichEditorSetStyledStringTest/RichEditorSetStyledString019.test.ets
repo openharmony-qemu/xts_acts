@@ -34,6 +34,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
 export default function RichEditorSetStyledString019() {
   describe('RichEditorSetStyledString019', () => {
     beforeAll(async (): Promise<void> => {
@@ -57,7 +58,7 @@ export default function RichEditorSetStyledString019() {
           console.info("push RichEditorSetStyledString019 success");
         }
       } catch (err) {
-        console.error("push RichEditorSetStyledString019 page error: " + err);
+        console.log("push RichEditorSetStyledString019 page error: " + err);
         expect().assertFail();
       }
     });
@@ -75,7 +76,11 @@ export default function RichEditorSetStyledString019() {
       let rich = await (driver.findComponent(ON.id('RichEditorSetStyledString019')) as Promise<Component>);
       let getBounds = await rich.getBoundsCenter();
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.x, getBounds.y);
+      try {
+        await driver.clickAt({ x: getBounds.x, y: getBounds.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let get_paragraphStyle = await (driver.findComponent(ON.id('get_paragraphStyle')) as Promise<Component>);
       await get_paragraphStyle.click();
@@ -117,7 +122,11 @@ export default function RichEditorSetStyledString019() {
       let image_center = await (driver.findComponent(ON.id('image_center')) as Promise<Component>);
       await image_center.click();
       await CommonFunc.sleep(500);
-      driver.triggerKey(KeyCode.KEYCODE_A);
+      try {
+        driver.triggerKey(KeyCode.KEYCODE_A, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       let isEditingCall = await (driver.findComponent(ON.id('isEditingCall')) as Promise<Component>);
       let isEditingCallText = await isEditingCall.getText();

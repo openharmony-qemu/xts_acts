@@ -31,6 +31,8 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+
 export default function textAreaInputTest() {
   describe('textAreaInputTest', () => {
 
@@ -53,14 +55,14 @@ export default function textAreaInputTest() {
         console.info("get textAreaInputTest state pages:" + JSON.stringify(pages));
         if (!("textAreaInputTest" == pages.name)) {
           console.info("get textAreaInputTest pages.name:" + '');
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // await router 有已知问题，先注释使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);
           routerInstance.replaceUrl(options);
           await CommonFunc.sleep(2000);
           // console.info("push textAreaInputTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push textAreaInputTest page error:" + err);
+        console.log("push textAreaInputTest page error:" + err);
       }
       console.info("textAreaInputTest beforeEach end");
     });
@@ -96,7 +98,7 @@ export default function textAreaInputTest() {
             await button?.click();
             await CommonFunc.sleep(1000);
           }
-          await driver.triggerKey(2070);
+          await driver.triggerKey(2070, displayID);
           await CommonFunc.sleep(1000);
           let button1 = await driver.findComponent(ON.text('下一步'));
           await CommonFunc.sleep(500);
@@ -116,7 +118,7 @@ export default function textAreaInputTest() {
           let button3 = await driver.findComponent(ON.text('全选'));
           await CommonFunc.sleep(1000);
           button3 ? await button3!.click() : null
-          console.info('textAreaInputTest_static_0001 全选 success');
+          console.info('textAreaInputTest_static_0001 全选success');
           await CommonFunc.sleep(1000);
 
           await textArea1?.dragTo(textArea2!);
@@ -134,7 +136,7 @@ export default function textAreaInputTest() {
           await CommonFunc.sleep(1000);
           button5 ? await button5!.click() : null
           await CommonFunc.sleep(1000);
-          console.info('textAreaInputTest_static_0001 2 全选 success');
+          console.info('textAreaInputTest_static_0001 2 全选success');
           let button6 = await driver.findComponent(ON.text('复制'));
           await CommonFunc.sleep(1000);
           button6 ? await button6!.click() : null

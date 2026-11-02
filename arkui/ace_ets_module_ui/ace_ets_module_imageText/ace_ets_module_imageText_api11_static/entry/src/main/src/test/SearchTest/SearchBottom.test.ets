@@ -42,6 +42,8 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+
 export default function search_bottom() {
   describe('search_bottom', () => {
     beforeAll(async (): Promise<void> => {
@@ -69,7 +71,7 @@ export default function search_bottom() {
           // console.info("push search_bottom page result: " + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push search_bottom page error: " + err);
+        console.log("push search_bottom page error: " + err);
         expect().assertFail();
       }
     });
@@ -94,18 +96,28 @@ export default function search_bottom() {
         let Column_1 = CommonFunc.getComponentRect('search_bottom' + '_Column_1');
         let driver = Driver.create();
         await CommonFunc.sleep(500);
-        await (driver.mouseScroll({
-          x: 360, y: 640
-        }, true, 30, 2072) as Promise<void>)
+        try {
+          await (driver.mouseScroll({
+            x: 360, y: 640,
+            displayId: displayID
+          }, true, 30, 2072) as Promise<void>)
+        } catch (err) {
+          console.log('driver.mouseScroll error: ' + JSON.stringify(err));
+        }
         await CommonFunc.sleep(1000);
         console.log('get swipe after Initial value')
         let search_01 = CommonFunc.getComponentRect('search_bottom' + '_search_01');
         console.log('assert click before position')
         let y1 = search_01.bottom
-        await (driver.click(
-          Math.round(search_01.left + (search_01.right - search_01.left) / 2).toInt(),
-          Math.round(search_01.top + (search_01.bottom - search_01.top) / 2).toInt()
-        ) as Promise<void>)
+        try {
+          await (driver.clickAt({
+            x: Math.round(search_01.left + (search_01.right - search_01.left) / 2).toInt(),
+            y: Math.round(search_01.top + (search_01.bottom - search_01.top) / 2).toInt(),
+            displayId: displayID
+          }) as Promise<void>)
+        } catch (err) {
+          console.log('driver.clickAt error: ' + JSON.stringify(err));
+        }
         await CommonFunc.sleep(1000);
         console.log('get click after Initial value')
         let search_02 = CommonFunc.getComponentRect('search_bottom' + '_search_01');

@@ -31,6 +31,7 @@ let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
 export default function HapticFeedbackModeTest() {
   describe('HapticFeedbackModeTest', () => {
     beforeAll(async (): Promise<void> => {
@@ -56,7 +57,7 @@ export default function HapticFeedbackModeTest() {
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error("push ImageSpanVisibility page error:" + err);
+        console.log("push ImageSpanVisibility page error:" + err);
       }
       console.info("ImageSpanVisibility beforeEach end");
     });
@@ -86,7 +87,7 @@ export default function HapticFeedbackModeTest() {
         await CommonFunc.sleep(500);
         let point = await (richEditor?.getBoundsCenter() as Promise<Point>);
         await CommonFunc.sleep(500);
-        await (driver?.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT) as Promise<void>);
+        await (driver?.mouseClick({ x: point.x, y: point.y, displayId: displayID }, MouseButton.MOUSE_BUTTON_RIGHT) as Promise<void>);
         await CommonFunc.sleep(500);
         await driver.assertComponentExist(ON.text('HapticFeedbackMode'));
         console.info("[HapticFeedbackModeTest0001] end");
@@ -144,7 +145,7 @@ export default function HapticFeedbackModeTest() {
         await CommonFunc.sleep(500);
         let point = await image.getBoundsCenter();
         await CommonFunc.sleep(500);
-        await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT);
+        await driver.mouseClick({ x: point.x, y: point.y, displayId: displayID }, MouseButton.MOUSE_BUTTON_RIGHT);
         await CommonFunc.sleep(500);
         await driver.assertComponentExist(ON.text('HapticFeedbackMode'));
         console.info("[HapticFeedbackModeTest0003] end");

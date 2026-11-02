@@ -34,6 +34,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
 export default function RichEditorSetStyledString012() {
   describe('RichEditorSetStyledString012', () => {
     beforeAll(async (): Promise<void> => {
@@ -57,7 +58,7 @@ export default function RichEditorSetStyledString012() {
           console.info("push RichEditorSetStyledString012 success");
         }
       } catch (err) {
-        console.error("push RichEditorSetStyledString012 page error: " + err);
+        console.log("push RichEditorSetStyledString012 page error: " + err);
         expect().assertFail();
       }
     });
@@ -76,12 +77,20 @@ it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_static_0022', Level.LEV
       let rich = await (driver.findComponent(ON.id('RichEditorSetStyledString012')) as Promise<Component>);
       let getBounds = await rich.getBoundsCenter();
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.x, getBounds.y);
+      try {
+        await driver.clickAt({ x: getBounds.x, y: getBounds.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let image_top = await (driver.findComponent(ON.id('image_top')) as Promise<Component>);
       await image_top.click();
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A);
+      try {
+        driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       let onSelectionChangeCall = await (driver.findComponent(ON.id('onSelectionChangeCall')) as Promise<Component>);
       let onSelectionChangeCallText = await onSelectionChangeCall.getText();
@@ -108,9 +117,17 @@ it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_static_0025', Level.LEV
       let rich = await (driver.findComponent(ON.id('RichEditorSetStyledString012')) as Promise<Component>);
       let getBounds = await rich.getBoundsCenter();
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.x, getBounds.y);
+      try {
+        await driver.clickAt({ x: getBounds.x, y: getBounds.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A);
+      try {
+        driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A, 0, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       let onSelectCallBack = await (driver.findComponent(ON.id('onSelectCallBack')) as Promise<Component>);
       let onSelectCallBackText = await onSelectCallBack.getText();
@@ -133,8 +150,16 @@ it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_static_0026', Level.LEV
       let rich = await (driver.findComponent(ON.id('RichEditorSetStyledString012')) as Promise<Component>);
       let getBounds = await rich.getBoundsCenter();
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.x, getBounds.y);
-      await driver.triggerKey(KeyCode.KEYCODE_A);
+      try {
+        await driver.clickAt({ x: getBounds.x, y: getBounds.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
+      try {
+        await driver.triggerKey(KeyCode.KEYCODE_A, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       let aboutToIMEInputCall = await (driver.findComponent(ON.id('aboutToIMEInputCall')) as Promise<Component>);
       let aboutToIMEInputCallText = await aboutToIMEInputCall.getText();
@@ -154,7 +179,11 @@ it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_static_0026', Level.LEV
 it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_static_0035', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_static_0035 START');
       let driver = Driver.create();
-      await driver.triggerKey(KeyCode.KEYCODE_B);
+      try {
+        await driver.triggerKey(KeyCode.KEYCODE_B, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       let onIMEInputCompleteCall = await (driver.findComponent(ON.id('onIMEInputCompleteCall')) as Promise<Component>);
       let onIMEInputCompleteCallText = await onIMEInputCompleteCall.getText();
@@ -174,9 +203,17 @@ it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_static_0035', Level.LEV
 it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_static_0036', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_static_0036 START');
       let driver = Driver.create();
-      await driver.triggerKey(KeyCode.KEYCODE_DEL);
+      try {
+        await driver.triggerKey(KeyCode.KEYCODE_DEL, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      await driver.triggerKey(KeyCode.KEYCODE_DEL);
+      try {
+        await driver.triggerKey(KeyCode.KEYCODE_DEL, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       let aboutToDeleteCall = await (driver.findComponent(ON.id('aboutToDeleteCall')) as Promise<Component>);
       let aboutToDeleteCallText = await aboutToDeleteCall.getText();
@@ -196,9 +233,17 @@ it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_static_0036', Level.LEV
 it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_static_0037', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_static_0037 START');
       let driver = Driver.create();
-      await driver.triggerKey(KeyCode.KEYCODE_DEL);
+      try {
+        await driver.triggerKey(KeyCode.KEYCODE_DEL, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      await driver.triggerKey(KeyCode.KEYCODE_DEL);
+      try {
+        await driver.triggerKey(KeyCode.KEYCODE_DEL, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       let onDeleteCompleteCall = await (driver.findComponent(ON.id('onDeleteCompleteCall')) as Promise<Component>);
       let onDeleteCompleteCallText = await onDeleteCompleteCall.getText();

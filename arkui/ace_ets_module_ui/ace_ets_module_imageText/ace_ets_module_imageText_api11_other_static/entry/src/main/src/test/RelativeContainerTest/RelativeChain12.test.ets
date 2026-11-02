@@ -57,6 +57,7 @@ let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
 
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
 export default function RelativeChain12() {
   describe('RelativeChain12', () => {
     beforeAll(async () => {
@@ -81,7 +82,7 @@ export default function RelativeChain12() {
         }
 
       } catch (err) {
-        console.error("push RelativeChain12 page error:" + err);
+        console.log("push RelativeChain12 page error:" + err);
       }
       console.info("RelativeChain12 foreEach end");
 
@@ -143,8 +144,12 @@ it('RelativeChain12_static_002', Level.LEVEL3, async (done: () => void): Promise
       await CommonFunc.sleep(1000);
       let rel = CommonFunc.getComponentRect('RelativeChain122');
       let driver: Driver = Driver.create();
-      await driver.mouseClick({ x: Math.round(rel.left + UIContext.resolveUIContext()!.vp2px(50)).toInt(), y: Math.round(rel.top + UIContext.resolveUIContext()!.vp2px(80)).toInt() },
-        MouseButton.MOUSE_BUTTON_LEFT);
+      try {
+        await driver.mouseClick({ x: Math.round(rel.left + UIContext.resolveUIContext()!.vp2px(50)).toInt(), y: Math.round(rel.top + UIContext.resolveUIContext()!.vp2px(80)).toInt(), displayId: displayID },
+          MouseButton.MOUSE_BUTTON_LEFT);
+      } catch (err) {
+        console.log('driver.mouseClick error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('RelativeChain12Text');
       await CommonFunc.sleep(200);

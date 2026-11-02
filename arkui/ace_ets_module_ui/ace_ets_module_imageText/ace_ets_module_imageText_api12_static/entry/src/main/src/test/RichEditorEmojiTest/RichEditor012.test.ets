@@ -35,6 +35,8 @@ import { KeyCode } from '@ohos.multimodalInput.keyCode';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+
 export default function RichEditor012() {
   describe('RichEditor012', () => {
     beforeAll(async (): Promise<void> => {
@@ -58,7 +60,7 @@ export default function RichEditor012() {
           console.info("push RichEditor012 success");
         }
       } catch (err) {
-        console.error("push RichEditor012 page error: " + err);
+        console.log("push RichEditor012 page error: " + err);
         expect().assertFail();
       }
     });
@@ -75,7 +77,11 @@ export default function RichEditor012() {
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('rich_struct')) as Promise<Component>);
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      try {
+        await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
       let back = await (driver.findComponent(ON.id('back_emoji')) as Promise<Component>);
@@ -88,7 +94,11 @@ export default function RichEditor012() {
       let beginPosition = await text.getText();
 
       //KEYCODE_FORWARD_DEL
-      await driver.triggerKey(2071);
+      try {
+        await driver.triggerKey(2071, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
 
       await point.click();

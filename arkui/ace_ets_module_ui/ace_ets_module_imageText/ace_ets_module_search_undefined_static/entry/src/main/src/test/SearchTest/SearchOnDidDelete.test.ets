@@ -39,6 +39,8 @@ import Utils from '../../../ets/MainAbility/common/Utils';
 import { Driver, ON, Component } from '@kit.TestKit';
 
 
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+
 export default function SearchOnDidDelete() {
   describe('SearchOnDidDelete', () => {
     beforeAll(async (): Promise<void> => {
@@ -64,7 +66,7 @@ export default function SearchOnDidDelete() {
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error("push SearchOnDidDelete page error: " + err);
+        console.log("push SearchOnDidDelete page error: " + err);
         expect().assertFail();
       }
     });
@@ -82,7 +84,11 @@ export default function SearchOnDidDelete() {
       let button = await driver.findComponent(ON.id('changeOnDidDeleteButton')) as Component;
       await text.inputText('9');
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2055);
+      try {
+        await driver.triggerKey(2055, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('deleteValueText')
       await CommonFunc.sleep(200);
@@ -94,7 +100,11 @@ export default function SearchOnDidDelete() {
       await CommonFunc.sleep(1000);
       await text.inputText('6');
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2055);
+      try {
+        await driver.triggerKey(2055, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson2 = inspector.getInspectorByKey('deleteValueText')
       await CommonFunc.sleep(200);
@@ -104,7 +114,11 @@ export default function SearchOnDidDelete() {
       await CommonFunc.sleep(1000);
       await text.inputText('9');
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2055);
+      try {
+        await driver.triggerKey(2055, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson3 = inspector.getInspectorByKey('deleteValueText')
       await CommonFunc.sleep(200);

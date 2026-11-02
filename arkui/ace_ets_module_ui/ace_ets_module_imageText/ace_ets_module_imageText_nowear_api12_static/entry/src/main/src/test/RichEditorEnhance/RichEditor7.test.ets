@@ -30,6 +30,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
 
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
 export default function RichEditor7() {
   describe('RichEditor7', () => {
     beforeAll(async (): Promise<void> => {
@@ -58,7 +59,7 @@ export default function RichEditor7() {
           // console.info("push RichEditor7 page result:" + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push RichEditor7 page error:" + err);
+        console.log("push RichEditor7 page error:" + err);
       }
       console.info("RichEditor7 beforeEach end");
     });
@@ -121,7 +122,11 @@ export default function RichEditor7() {
       await CommonFunc.sleep(500);
       await (RichEditorGetAttribute?.inputText('1') as Promise<void>)
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2054)
+      try {
+        await driver.triggerKey(2054, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       let OnSubmitEnterKey = await driver.findComponent(ON.id("EnterKey"));
       await CommonFunc.sleep(500);
@@ -170,7 +175,11 @@ export default function RichEditor7() {
       await CommonFunc.sleep(500);
       await (RichEditorGetAttribute?.inputText('1') as Promise<void>)
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2054)
+      try {
+        await driver.triggerKey(2054, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       let OnSubmitEnterKey = await driver.findComponent(ON.id("EnterKey"));
       await CommonFunc.sleep(500);

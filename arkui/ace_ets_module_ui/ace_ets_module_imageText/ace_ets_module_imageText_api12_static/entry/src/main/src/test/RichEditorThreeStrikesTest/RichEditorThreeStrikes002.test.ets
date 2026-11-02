@@ -35,6 +35,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
 export default function RichEditorThreeStrikes002() {
   describe('RichEditorThreeStrikes002', () => {
     beforeAll(async (): Promise<void> => {
@@ -58,7 +59,7 @@ export default function RichEditorThreeStrikes002() {
           console.info("push RichEditorThreeStrikes002 success");
         }
       } catch (err) {
-        console.error("push RichEditorThreeStrikes002 page error: " + err);
+        console.log("push RichEditorThreeStrikes002 page error: " + err);
         expect().assertFail();
       }
     });
@@ -75,7 +76,11 @@ export default function RichEditorThreeStrikes002() {
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('RichEditorThreeStrikes002')) as Promise<Component>);
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      try {
+        await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       let builder = await (driver.findComponent(ON.id('builder')) as Promise<Component>);
       await builder.click();
@@ -85,74 +90,170 @@ export default function RichEditorThreeStrikes002() {
       await CommonFunc.sleep(500);
       let getBounds = await rich.getBounds();
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.left + 50, getBounds.top + 30);
+      try {
+        await driver.clickAt({ x: getBounds.left + 50, y: getBounds.top + 30, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 50, getBounds.top + 30);
+      try {
+        await driver.clickAt({ x: getBounds.left + 50, y: getBounds.top + 30, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 50, getBounds.top + 30);
+      try {
+        await driver.clickAt({ x: getBounds.left + 50, y: getBounds.top + 30, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 50, getBounds.top + 30);
+      try {
+        await driver.clickAt({ x: getBounds.left + 50, y: getBounds.top + 30, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(100);
       let message = await (driver.findComponent(ON.id('message')) as Promise<Component>);
       let messageText = await message.getText();
       await CommonFunc.sleep(500);
       expect(messageText).assertContain('"start"');
       expect(messageText).assertContain('"end"');
-      await driver.click(getBounds.left + 160, getBounds.top + 30);
+      try {
+        await driver.clickAt({ x: getBounds.left + 160, y: getBounds.top + 30, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 160, getBounds.top + 30);
+      try {
+        await driver.clickAt({ x: getBounds.left + 160, y: getBounds.top + 30, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 160, getBounds.top + 30);
+      try {
+        await driver.clickAt({ x: getBounds.left + 160, y: getBounds.top + 30, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 160, getBounds.top + 30);
-      await CommonFunc.sleep(100);
-      messageText = await message.getText();
-      await CommonFunc.sleep(500);
-      expect(messageText).assertContain('"start"');
-      expect(messageText).assertContain('"end"');
-      await driver.click(getBounds.left + 45, getBounds.top + 90);
-      await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 45, getBounds.top + 90);
-      await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 45, getBounds.top + 90);
-      await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 45, getBounds.top + 90);
-      await CommonFunc.sleep(100);
-      messageText = await message.getText();
-      await CommonFunc.sleep(500);
-      expect(messageText).assertContain('"start"');
-      expect(messageText).assertContain('"end"');
-      await driver.click(getBounds.left + 80, getBounds.top + 90);
-      await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 80, getBounds.top + 90);
-      await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 80, getBounds.top + 90);
-      await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 80, getBounds.top + 90);
+      try {
+        await driver.clickAt({ x: getBounds.left + 160, y: getBounds.top + 30, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(100);
       messageText = await message.getText();
       await CommonFunc.sleep(500);
       expect(messageText).assertContain('"start"');
       expect(messageText).assertContain('"end"');
-      await driver.click(getBounds.left + 150, getBounds.top + 90);
+      try {
+        await driver.clickAt({ x: getBounds.left + 45, y: getBounds.top + 90, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 150, getBounds.top + 90);
+      try {
+        await driver.clickAt({ x: getBounds.left + 45, y: getBounds.top + 90, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 150, getBounds.top + 90);
+      try {
+        await driver.clickAt({ x: getBounds.left + 45, y: getBounds.top + 90, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 150, getBounds.top + 90);
+      try {
+        await driver.clickAt({ x: getBounds.left + 45, y: getBounds.top + 90, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(100);
       messageText = await message.getText();
       await CommonFunc.sleep(500);
       expect(messageText).assertContain('"start"');
       expect(messageText).assertContain('"end"');
-      await driver.click(getBounds.left + 200, getBounds.top + 90);
+      try {
+        await driver.clickAt({ x: getBounds.left + 80, y: getBounds.top + 90, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 200, getBounds.top + 90);
+      try {
+        await driver.clickAt({ x: getBounds.left + 80, y: getBounds.top + 90, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 200, getBounds.top + 90);
+      try {
+        await driver.clickAt({ x: getBounds.left + 80, y: getBounds.top + 90, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 200, getBounds.top + 90);
+      try {
+        await driver.clickAt({ x: getBounds.left + 80, y: getBounds.top + 90, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
+      await CommonFunc.sleep(100);
+      messageText = await message.getText();
+      await CommonFunc.sleep(500);
+      expect(messageText).assertContain('"start"');
+      expect(messageText).assertContain('"end"');
+      try {
+        await driver.clickAt({ x: getBounds.left + 150, y: getBounds.top + 90, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
+      await CommonFunc.sleep(100);
+      try {
+        await driver.clickAt({ x: getBounds.left + 150, y: getBounds.top + 90, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
+      await CommonFunc.sleep(100);
+      try {
+        await driver.clickAt({ x: getBounds.left + 150, y: getBounds.top + 90, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
+      await CommonFunc.sleep(100);
+      try {
+        await driver.clickAt({ x: getBounds.left + 150, y: getBounds.top + 90, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
+      await CommonFunc.sleep(100);
+      messageText = await message.getText();
+      await CommonFunc.sleep(500);
+      expect(messageText).assertContain('"start"');
+      expect(messageText).assertContain('"end"');
+      try {
+        await driver.clickAt({ x: getBounds.left + 200, y: getBounds.top + 90, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
+      await CommonFunc.sleep(100);
+      try {
+        await driver.clickAt({ x: getBounds.left + 200, y: getBounds.top + 90, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
+      await CommonFunc.sleep(100);
+      try {
+        await driver.clickAt({ x: getBounds.left + 200, y: getBounds.top + 90, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
+      await CommonFunc.sleep(100);
+      try {
+        await driver.clickAt({ x: getBounds.left + 200, y: getBounds.top + 90, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(100);
       messageText = await message.getText();
       await CommonFunc.sleep(500);

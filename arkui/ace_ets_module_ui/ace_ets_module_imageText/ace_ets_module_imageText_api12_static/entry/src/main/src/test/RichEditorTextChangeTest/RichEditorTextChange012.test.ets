@@ -34,6 +34,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
 export default function RichEditorTextChange012() {
   describe('RichEditorTextChange012', () => {
     beforeAll(async (): Promise<void> => {
@@ -57,7 +58,7 @@ export default function RichEditorTextChange012() {
           console.info("push RichEditorTextChange012 success");
         }
       } catch (err) {
-        console.error("push RichEditorTextChange012 page error: " + err);
+        console.log("push RichEditorTextChange012 page error: " + err);
         expect().assertFail();
       }
     });
@@ -74,7 +75,11 @@ export default function RichEditorTextChange012() {
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
 
-      driver.triggerKey(KeyCode.KEYCODE_TAB)
+      try {
+        driver.triggerKey(KeyCode.KEYCODE_TAB, displayID)
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
       let onEditingChangeCallBack = await (driver.findComponent(ON.id('onEditingChangeCallBack')) as Promise<Component>);
@@ -87,7 +92,11 @@ export default function RichEditorTextChange012() {
       await CommonFunc.sleep(500);
       expect(isEditingFlagText).assertEqual('isEditingFlag:true');
 
-      driver.triggerKey(KeyCode.KEYCODE_TAB)
+      try {
+        driver.triggerKey(KeyCode.KEYCODE_TAB, displayID)
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
       onEditingChangeCallBackText = await onEditingChangeCallBack.getText();

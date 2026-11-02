@@ -39,6 +39,8 @@ import Utils from '../../../ets/MainAbility/common/Utils';
 import { Driver, ON, Component } from '@kit.TestKit';
 
 
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+
 export default function SearchOnDidInsert() {
   describe('SearchOnDidInsert', () => {
     beforeAll(async (): Promise<void> => {
@@ -64,7 +66,7 @@ export default function SearchOnDidInsert() {
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error("push SearchOnDidInsert page error: " + err);
+        console.log("push SearchOnDidInsert page error: " + err);
         expect().assertFail();
       }
     });
@@ -82,7 +84,11 @@ export default function SearchOnDidInsert() {
       let button = await driver.findComponent(ON.id('changeOnDidInsertButton')) as Component;
       await text1.inputText('9');
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('insertValueText')
       await CommonFunc.sleep(200);
@@ -94,7 +100,11 @@ export default function SearchOnDidInsert() {
       await CommonFunc.sleep(1000);
       await text1.inputText('6');
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson2 = inspector.getInspectorByKey('insertValueText')
       await CommonFunc.sleep(200);
@@ -104,7 +114,11 @@ export default function SearchOnDidInsert() {
       await CommonFunc.sleep(1000);
       await text1.inputText('9');
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson3 = inspector.getInspectorByKey('insertValueText')
       await CommonFunc.sleep(200);

@@ -39,6 +39,7 @@ import { KeyCode } from '@ohos.multimodalInput.keyCode';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
 export default function RichEditorAction001() {
   describe('RichEditorAction001', () => {
     beforeAll(async (): Promise<void> => {
@@ -62,7 +63,7 @@ export default function RichEditorAction001() {
           console.info("push RichEditorAction001 success");
         }
       } catch (err) {
-        console.error("push RichEditorAction001 page error: " + err);
+        console.log("push RichEditorAction001 page error: " + err);
         expect().assertFail();
       }
     });
@@ -79,12 +80,24 @@ export default function RichEditorAction001() {
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('RichEditorAction001')) as Promise<Component>);
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      try {
+        await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.click error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
-      driver.triggerKey(KeyCode.KEYCODE_A);
+      try {
+        driver.triggerKey(KeyCode.KEYCODE_A, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_A, KeyCode.KEYCODE_B, KeyCode.KEYCODE_C);
+      try {
+        driver.triggerCombineKeys(KeyCode.KEYCODE_A, KeyCode.KEYCODE_B, KeyCode.KEYCODE_C, displayID);
+      } catch (err) {
+        console.log('driver.triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
       let input_value = await (driver.findComponent(ON.id('input_value')) as Promise<Component>);

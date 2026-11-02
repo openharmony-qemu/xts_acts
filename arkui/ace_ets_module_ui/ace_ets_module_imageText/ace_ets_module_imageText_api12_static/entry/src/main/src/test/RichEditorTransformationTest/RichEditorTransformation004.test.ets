@@ -34,6 +34,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
 export default function RichEditorTransformation004() {
   describe('RichEditorTransformation004', () => {
     beforeAll(async (): Promise<void> => {
@@ -57,7 +58,7 @@ export default function RichEditorTransformation004() {
           console.info("push RichEditorTransformation004 success");
         }
       } catch (err) {
-        console.error("push RichEditorTransformation004 page error: " + err);
+        console.log("push RichEditorTransformation004 page error: " + err);
         expect().assertFail();
       }
     });
@@ -74,16 +75,28 @@ export default function RichEditorTransformation004() {
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('RichEditorTransformation004')) as Promise<Component>);
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      try {
+        await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('RichEditorTransformation004');
       let obj = JSON.parseJsonElement(strJson);
       await CommonFunc.sleep(1000);
       let setTypingStyle = await (driver.findComponent(ON.id('setTypingStyle')) as Promise<Component>);
       await setTypingStyle.click();
-      driver.triggerKey(KeyCode.KEYCODE_A);
+      try {
+        driver.triggerKey(KeyCode.KEYCODE_A, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      driver.triggerKey(KeyCode.KEYCODE_F);
+      try {
+        driver.triggerKey(KeyCode.KEYCODE_F, displayID);
+      } catch (err) {
+        console.log('driver.triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       let getTypingStyle = await (driver.findComponent(ON.id('getTypingStyle')) as Promise<Component>);
       await getTypingStyle.click();

@@ -34,6 +34,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
 export default function RichEditorPreventDefault003() {
   describe('RichEditorPreventDefault003', () => {
     beforeAll(async (): Promise<void> => {
@@ -57,7 +58,7 @@ export default function RichEditorPreventDefault003() {
           console.info("push RichEditorPreventDefault003 success");
         }
       } catch (err) {
-        console.error("push RichEditorPreventDefault003 page error: " + err);
+        console.log("push RichEditorPreventDefault003 page error: " + err);
         expect().assertFail();
       }
     });
@@ -76,10 +77,18 @@ export default function RichEditorPreventDefault003() {
       let getBounds = await rich.getBounds();
       await CommonFunc.sleep(500);
 
-      await driver.click(getBounds.left + 30, getBounds.top + 30);
+      try {
+        await driver.clickAt({ x: getBounds.left + 30, y: getBounds.top + 30, displayId: displayID });
+      } catch (err) {
+        console.log('driver.click error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
-      await driver.doubleClick(getBounds.left + 30, getBounds.top + 30);
+      try {
+        await driver.doubleClickAt({ x: getBounds.left + 30, y: getBounds.top + 30, displayId: displayID });
+      } catch (err) {
+        console.log('driver.doubleClick error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
       let callNum = await (driver.findComponent(ON.id('callNum')) as Promise<Component>);

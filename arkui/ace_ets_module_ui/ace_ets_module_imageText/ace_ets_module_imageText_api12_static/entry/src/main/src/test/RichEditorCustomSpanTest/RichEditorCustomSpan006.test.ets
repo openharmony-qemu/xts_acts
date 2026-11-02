@@ -35,6 +35,7 @@ import { KeyCode } from '@ohos.multimodalInput.keyCode';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
 export default function RichEditorCustomSpan006() {
   describe('RichEditorCustomSpan006', () => {
     beforeAll(async (): Promise<void> => {
@@ -58,7 +59,7 @@ export default function RichEditorCustomSpan006() {
           console.info("push RichEditorCustomSpan006 success");
         }
       } catch (err) {
-        console.error("push RichEditorCustomSpan006 page error: " + err);
+        console.log("push RichEditorCustomSpan006 page error: " + err);
         expect().assertFail();
       }
     });
@@ -76,7 +77,11 @@ export default function RichEditorCustomSpan006() {
       let rich = await (driver.findComponent(ON.id('RichEditorCustomSpan006')) as Promise<Component>);
       let getBounds = await rich.getBoundsCenter();
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.x, getBounds.y);
+      try {
+        await driver.clickAt({ x: getBounds.x, y: getBounds.y, displayId: displayID });
+      } catch (err) {
+        console.log('driver.clickAt error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let getCustomSpanInfo = await (driver.findComponent(ON.id('getCustomSpanInfo')) as Promise<Component>);
       await getCustomSpanInfo.click();
