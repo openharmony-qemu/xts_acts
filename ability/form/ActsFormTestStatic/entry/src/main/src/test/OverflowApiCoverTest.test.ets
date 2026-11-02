@@ -309,15 +309,15 @@ export default function OverflowApiCoverTest() {
     });
 
     /**
-     * @tc.name   SetWindowBackgroundColor_Cover_Static_0100
-     * @tc.number SetWindowBackgroundColor_Cover_Static_0100
+     * @tc.name   SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0100
+     * @tc.number SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0100
      * @tc.desc   setWindowBackgroundColor with empty string (length check)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SetWindowBackgroundColor_Cover_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let name: string = 'SetWindowBackgroundColor_Cover_Static_0100';
+    it('SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let name: string = 'SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0100';
       console.info(`${name} start`);
       try {
         let feeAbility: FormEditExtensionAbility = new FormEditExtensionAbility();
@@ -347,15 +347,15 @@ export default function OverflowApiCoverTest() {
     });
 
     /**
-     * @tc.name   SetWindowBackgroundColor_Cover_Static_0200
-     * @tc.number SetWindowBackgroundColor_Cover_Static_0200
+     * @tc.name   SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0200
+     * @tc.number SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0200
      * @tc.desc   setWindowBackgroundColor without # prefix
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SetWindowBackgroundColor_Cover_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let name: string = 'SetWindowBackgroundColor_Cover_Static_0200';
+    it('SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let name: string = 'SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0200';
       console.info(`${name} start`);
       try {
         let feeAbility: FormEditExtensionAbility = new FormEditExtensionAbility();
@@ -385,15 +385,15 @@ export default function OverflowApiCoverTest() {
     });
 
     /**
-     * @tc.name   SetWindowBackgroundColor_Cover_Static_0300
-     * @tc.number SetWindowBackgroundColor_Cover_Static_0300
+     * @tc.name   SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0300
+     * @tc.number SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0300
      * @tc.desc   setWindowBackgroundColor with non-hex characters
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SetWindowBackgroundColor_Cover_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let name: string = 'SetWindowBackgroundColor_Cover_Static_0300';
+    it('SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let name: string = 'SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0300';
       console.info(`${name} start`);
       try {
         let feeAbility: FormEditExtensionAbility = new FormEditExtensionAbility();
@@ -423,15 +423,15 @@ export default function OverflowApiCoverTest() {
     });
 
     /**
-     * @tc.name   SetWindowBackgroundColor_Cover_Static_0400
-     * @tc.number SetWindowBackgroundColor_Cover_Static_0400
+     * @tc.name   SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0400
+     * @tc.number SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0400
      * @tc.desc   setWindowBackgroundColor with wrong length (length check)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SetWindowBackgroundColor_Cover_Static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let name: string = 'SetWindowBackgroundColor_Cover_Static_0400';
+    it('SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let name: string = 'SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0400';
       console.info(`${name} start`);
       try {
         let feeAbility: FormEditExtensionAbility = new FormEditExtensionAbility();
@@ -461,15 +461,15 @@ export default function OverflowApiCoverTest() {
     });
 
     /**
-     * @tc.name   SetWindowBackgroundColor_Cover_Static_0500
-     * @tc.number SetWindowBackgroundColor_Cover_Static_0500
+     * @tc.name   SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0500
+     * @tc.number SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0500
      * @tc.desc   setWindowBackgroundColor with valid uppercase RGB format (async reject path)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SetWindowBackgroundColor_Cover_Static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let name: string = 'SetWindowBackgroundColor_Cover_Static_0500';
+    it('SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let name: string = 'SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0500';
       console.info(`${name} start`);
       try {
         let feeAbility: FormEditExtensionAbility = new FormEditExtensionAbility();
@@ -499,15 +499,15 @@ export default function OverflowApiCoverTest() {
     });
 
     /**
-     * @tc.name   SetWindowBackgroundColor_Cover_Static_0600
-     * @tc.number SetWindowBackgroundColor_Cover_Static_0600
+     * @tc.name   SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0600
+     * @tc.number SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0600
      * @tc.desc   setWindowBackgroundColor with valid ARGB format (async reject path)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SetWindowBackgroundColor_Cover_Static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let name: string = 'SetWindowBackgroundColor_Cover_Static_0600';
+    it('SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let name: string = 'SUB_ABILITY_FORM_FWK_SET_WINDOW_BACKGROUND_COLOR_STATIC_0600';
       console.info(`${name} start`);
       try {
         let feeAbility: FormEditExtensionAbility = new FormEditExtensionAbility();
