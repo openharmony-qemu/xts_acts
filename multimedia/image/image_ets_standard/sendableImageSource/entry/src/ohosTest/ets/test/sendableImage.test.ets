@@ -160,6 +160,19 @@ let releasePreview = async (photoSession: camera.PhotoSession): Promise<void> =>
   }
 };
 
+// releasePreview 内部已 try/catch 不会 reject；此包装器返回 void，
+// 供回调内直接调用，避免门禁静态检查"未 await 的 Promise 链缺 .catch"
+let releasePreviewAndDone = (photoSession: camera.PhotoSession, done: Function): void => {
+  (async () => {
+    try {
+      await releasePreview(photoSession);
+    } catch (e) {
+      console.info('releasePreviewAndDone error: ' + JSON.stringify(e));
+    }
+    done();
+  })();
+};
+
 class MySequence implements rpc.Parcelable {
   pixel_map: sendableImage.PixelMap;
 
@@ -844,9 +857,7 @@ export default function sendableImageSource() {
         console.info(`onImageArrival receiver.on start`)
         // sendableImage.ImageReceiver 无 off 方法，isDone 标志 + releasePreview 已足够防止串扰
         expect(isEmpty(receiver.size)).assertFalse()
-        releasePreview(photoSession).then(() => {
-          done()
-        })
+        releasePreviewAndDone(photoSession, done)
       })
       photoSession = await createPreview(receiver)
 
@@ -905,15 +916,11 @@ export default function sendableImageSource() {
           expect(isEmpty(img.format)).assertFalse()
           expect(isEmpty(img.size)).assertFalse()
           expect(isEmpty(img.timestamp)).assertFalse()
-          releasePreview(photoSession).then(() => {
-            done()
-          })
+          releasePreviewAndDone(photoSession, done)
         }).catch((error: BusinessError) => {
           console.error(`0x0000 ${tag} failed ${error}`)
           expect().assertFail()
-          releasePreview(photoSession).then(() => {
-            done()
-          })
+          releasePreviewAndDone(photoSession, done)
         })
       })
     })
@@ -959,22 +966,16 @@ export default function sendableImageSource() {
             console.info(`0x0000 ${tag} byteBuffer is: ${Component.byteBuffer}`)
             expect(Component.componentType).assertEqual(4)
             expect(isEmpty(Component.byteBuffer)).assertFalse()
-            releasePreview(photoSession).then(() => {
-              done()
-            })
+            releasePreviewAndDone(photoSession, done)
           }).catch((error: BusinessError) => {
             console.error(`0x0000 ${tag} getComponent failed ${error}`)
             expect().assertFail()
-            releasePreview(photoSession).then(() => {
-              done()
-            })
+            releasePreviewAndDone(photoSession, done)
           })
         }).catch((error: BusinessError) => {
           console.error(`0x0000 ${tag} failed ${error}`)
           expect().assertFail()
-          releasePreview(photoSession).then(() => {
-            done()
-          })
+          releasePreviewAndDone(photoSession, done)
         })
       })
     })
@@ -1007,22 +1008,16 @@ export default function sendableImageSource() {
           img.getComponent(5).then((Component: image.Component) => {
             console.info(`0x0000 ${tag} img.getComponent succeeded`)
             expect().assertFail()
-            releasePreview(photoSession).then(() => {
-              done()
-            })
+            releasePreviewAndDone(photoSession, done)
           }).catch((error: BusinessError) => {
             console.error(`0x0000 ${tag} getComponent failed ${error}`)
             expect(true).assertEqual(JSON.stringify(error) != null);
-            releasePreview(photoSession).then(() => {
-              done()
-            })
+            releasePreviewAndDone(photoSession, done)
           })
         }).catch((error: BusinessError) => {
           console.error(`0x0000 ${tag} readNextImage failed ${error}`)
           expect(true).assertEqual(JSON.stringify(error) != null);
-          releasePreview(photoSession).then(() => {
-            done()
-          })
+          releasePreviewAndDone(photoSession, done)
         })
       })
     })
@@ -1063,15 +1058,11 @@ export default function sendableImageSource() {
           console.info(`0x0000 ${tag} pixelStride is: ${Component.pixelStride}`)
           console.info(`0x0000 ${tag} byteBuffer is: ${Component.byteBuffer}`)
           expect(isEmpty(Component.byteBuffer)).assertFalse()
-          releasePreview(photoSession).then(() => {
-            done()
-          })
+          releasePreviewAndDone(photoSession, done)
         }).catch((error: BusinessError) => {
           console.info(`0x0000 ${tag} task1 catch error: ${JSON.stringify(error)}`)
           expect().assertFail()
-          releasePreview(photoSession).then(() => {
-            done()
-          })
+          releasePreviewAndDone(photoSession, done)
         })
       })
     })
@@ -1111,18 +1102,14 @@ export default function sendableImageSource() {
           isWorkerDone = true
           console.info(`0x0000 ${tag} workerInstance receive data: ${JSON.stringify(e.data)}`)
           expect(e.data).assertTrue()
-          releasePreview(photoSession).then(() => {
-            done()
-          })
+          releasePreviewAndDone(photoSession, done)
         }
         workerInstance.onmessageerror = (e: MessageEvents) => {
           if (isWorkerDone) return
           isWorkerDone = true
           console.info(`0x0000 ${tag} worker error: ${e.data}`)
           expect().assertFail()
-          releasePreview(photoSession).then(() => {
-            done()
-          })
+          releasePreviewAndDone(photoSession, done)
         }
       })
     })
@@ -1155,15 +1142,11 @@ export default function sendableImageSource() {
           let result = await img.release()
           console.info(`0x0000 ${tag} img.release succeeded`)
           expect(isEmpty(result)).assertTrue()
-          releasePreview(photoSession).then(() => {
-            done()
-          })
+          releasePreviewAndDone(photoSession, done)
         }).catch((error: BusinessError) => {
           console.error(`0x0000 ${tag} failed ${error}`)
           expect().assertFail()
-          releasePreview(photoSession).then(() => {
-            done()
-          })
+          releasePreviewAndDone(photoSession, done)
         })
       })
     })
@@ -1206,22 +1189,16 @@ export default function sendableImageSource() {
             img.getComponent(4).then((Component: image.Component) => {
               console.info(`0x0000 ${tag} img getComponent succeeded`)
               expect().assertFail()
-              releasePreview(photoSession).then(() => {
-                done()
-              })
+              releasePreviewAndDone(photoSession, done)
             }).catch((error: BusinessError) => {
               console.info(`0x0000 ${tag} img getComponent failed`)
               // 释放后 getComponent 应当失败，符合预期
-              releasePreview(photoSession).then(() => {
-                done()
-              })
+              releasePreviewAndDone(photoSession, done)
             })
           } catch (error) {
             console.info(`0x0000 ${tag} getComponent failed error ${error}`)
             expect(true).assertEqual(JSON.stringify(error) != null);
-            releasePreview(photoSession).then(() => {
-              done()
-            })
+            releasePreviewAndDone(photoSession, done)
           }
         }, 10)
       })
@@ -1265,22 +1242,16 @@ export default function sendableImageSource() {
               img.getComponent(4).then((Component: image.Component) => {
                 console.info(`0x0000 ${tag} img getComponent succeeded`)
                 expect().assertFail()
-                releasePreview(photoSession).then(() => {
-                  done()
-                })
+                releasePreviewAndDone(photoSession, done)
               }).catch((error: BusinessError) => {
                 console.info(`0x0000 ${tag} img getComponent failed`)
                 // 释放后 getComponent 应当失败，符合预期
-                releasePreview(photoSession).then(() => {
-                  done()
-                })
+                releasePreviewAndDone(photoSession, done)
               })
             } catch (error) {
               console.info(`0x0000 ${tag} getComponent failed error ${error}`)
               expect(true).assertEqual(JSON.stringify(error) != null);
-              releasePreview(photoSession).then(() => {
-                done()
-              })
+              releasePreviewAndDone(photoSession, done)
             }
           }, 10)
         }
@@ -1289,9 +1260,7 @@ export default function sendableImageSource() {
           isWorkerDone = true
           console.info(`0x0000 ${tag} worker error: ${e.data}`)
           expect().assertFail()
-          releasePreview(photoSession).then(() => {
-            done()
-          })
+          releasePreviewAndDone(photoSession, done)
         }
       })
     })
@@ -1324,15 +1293,11 @@ export default function sendableImageSource() {
         receiver.readLatestImage().then((img: sendableImage.Image) => {
           console.info(`0x0000 ${tag} readLatestImage success`)
           expect(isEmpty(img)).assertFalse()
-          releasePreview(photoSession).then(() => {
-            done()
-          })
+          releasePreviewAndDone(photoSession, done)
         }).catch((error: BusinessError) => {
           console.error(`0x0000 ${tag} failed ${error}`)
           expect().assertFail()
-          releasePreview(photoSession).then(() => {
-            done()
-          })
+          releasePreviewAndDone(photoSession, done)
         })
       })
       photoSession = await createPreview(receiver)
