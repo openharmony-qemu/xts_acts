@@ -18,28 +18,21 @@
             "cleanup-apps": true
         },
         {
-            "type": "ShellKit",
-            "run-command": [
-                "mkdir -p /data/app/el2/100/base/com.example.avimagegeneratorndk/haps/entry_test/files/",
-                "chmod -R 666 /data/app/el2/100/base/com.example.avimagegeneratorndk/haps/entry_test/files/*",
-                "mkdir -p /data/app/el2/100/base/com.example.avimagegeneratorndk/haps/entry_test/cache/",
-                "chmod -R 777 /data/app/el2/100/base/com.example.avimagegeneratorndk/haps/entry_test/*"
-            ]
-        },
-        {
             "type": "PushKit",
             "pre-push": [],
             "push": [
-                "./resource/media/metadata/H264_AAC.mp4 ->/data/app/el2/100/base/com.example.avimagegeneratorndk/haps/entry_test/files"
+                "./resource/media/metadata/H264_AAC.mp4 -> /data/local/tmp/",
+                "./resource/media/setup_media_ndk_standard_avImageGeneratorndk_test.sh -> /data/local/tmp/"
             ]
         },
         {
             "type": "ShellKit",
             "run-command": [
-                "chmod -R 777 /data/app/el2/100/base/com.example.avimagegeneratorndk/haps/entry_test/files/*",
                 "power-shell wakeup",
                 "power-shell timeout -o 2147483647",
-                "power-shell setmode 602"
+                "power-shell setmode 602",
+                "chmod 755 /data/local/tmp/",
+                "sh /data/local/tmp/setup_media_ndk_standard_avImageGeneratorndk_test.sh"
             ]
         }
     ]
