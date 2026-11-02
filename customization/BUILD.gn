@@ -20,7 +20,7 @@ group("customization") {
       "config_policy:ActsConfigPolicyTest",
       "enterprise_device_management:edm_test_grop",
       "config_policy_static:ActsConfigPolicyStaticTest",
-      "assessment_xts/assessment_base_static:ActsNotificationAnsReduceAlertsStaticTest",
+      "assessment_base_static:ActsNotificationAnsReduceAlertsStaticTest",
     ]
   }
 }
