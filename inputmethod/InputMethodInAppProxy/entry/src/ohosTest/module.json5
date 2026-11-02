@@ -3,10 +3,7 @@
     "name": "entry_test",
     "type": "feature",
     "mainElement": "TestAbility",
-    "deviceTypes": [
-      "default",
-      "tablet"
-    ],
+    "deviceTypes": [],
     "deliveryWithInstall": true,
     "installationFree": false,
     "pages": "$profile:test_pages",
