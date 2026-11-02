@@ -1,3 +1,4 @@
+    "bounds_checking_function:libsec_shared",
 # Copyright (c) 2026 Huawei Device Co., Ltd.
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,7 +14,7 @@
 
 import("//test/xts/tools/build/suite.gni")
 
-ohos_executable("ActsInputMethodInAppProxyCapacityWorker") {
+ohos_xts_executable("ActsInputMethodInAppProxyCapacityWorker") {
   testonly = true
   branch_protector_ret = "pac_ret"
   sanitize = {
@@ -47,6 +48,7 @@ ohos_executable("ActsInputMethodInAppProxyCapacityWorker") {
     "ability_base:configuration",
     "ability_runtime:ability_context_native",
     "ability_runtime:ability_manager",
+    "bounds_checking_function:libsec_shared",
     "bundle_framework:appexecfwk_base",
     "c_utils:utils",
     "graphic_2d:librender_service_base",

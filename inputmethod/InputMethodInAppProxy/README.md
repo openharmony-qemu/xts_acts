@@ -35,13 +35,13 @@ Such a report is not strict26.1 installation acceptance.
 ## Real test resources and recovery
 
 The test ability owns actual TextInput/TextArea controls. Assertions inspect
-real text, cursor/selection, editor attributes, callback values and key-event
+real text, caret/selection, editor attributes, callback values and key-event
 consumption. The proxyTest entry awaits listener/proxy cleanup on both success
 and failure, preserving the original error and reporting a simultaneous cleanup
 failure. beforeEach also clears earlier state before starting a case.
 
 The functional-key cases observe actual editor onSubmit values. UNSPECIFIED
-and NONE do not submit; a subsequent DONE callback witnesses event delivery. Cursor
+and NONE do not submit; a subsequent DONE callback witnesses event delivery. Caret
 cases compare real index changes, independent editor caret offsets and delegate
 coordinates over a 4-to-5-to-4 round trip without fixed screen coordinates.
 

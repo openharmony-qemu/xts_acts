@@ -17,7 +17,7 @@ import { inputMethod, inputMethodEngine } from '@kit.IMEKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { Driver, ON } from '@kit.TestKit';
 import { EditorFixture } from './EditorFixture';
-import { proxyTest as it } from './ProxyTest';
+import { proxyTest as it } from './Proxy.test';
 import { CapacityFixture } from './CapacityFixture';
 
 function expectProxyAbility(value: inputMethodEngine.ProxyInputMethodAbility | null): void {
@@ -41,14 +41,14 @@ export default function inAppProxyCapacity(): void {
     beforeEach(async () => { await EditorFixture.cleanup(); });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0480
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0480
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0480
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0480
      * @tc.desc 真实注册容量超限淘汰本进程后触发 onUnregister。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0480', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0480', Level.LEVEL1, async () => {
       const pool = new CapacityFixture();
       try {
         await pool.prepare();
@@ -69,7 +69,7 @@ export default function inAppProxyCapacity(): void {
             unbound = true;
             break;
           }
-          await new Promise<void>((resolve) => setTimeout(resolve, 50));
+          await EditorFixture.delay(50);
         }
         expect(unbound).assertTrue();
         const sink = await Driver.create().waitForComponent(ON.id('focusSink').focused(true), 3000);
@@ -88,7 +88,7 @@ export default function inAppProxyCapacity(): void {
         await pool.evict();
         await pool.foreground();
         await EditorFixture.waitUntil(() => witness === 1);
-        await new Promise<void>((resolve) => setTimeout(resolve, 300));
+        await EditorFixture.delay(300);
         expect(witness).assertEqual(1);
         expect(count).assertEqual(1);
       } finally {
@@ -97,14 +97,14 @@ export default function inAppProxyCapacity(): void {
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0490
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0490
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0490
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0490
      * @tc.desc offUnregister 取消全部回调，真实淘汰时由独立活跃监听作事件见证。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0490', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0490', Level.LEVEL1, async () => {
       const pool = new CapacityFixture();
       try {
         await pool.prepare();
@@ -125,7 +125,7 @@ export default function inAppProxyCapacity(): void {
             unbound = true;
             break;
           }
-          await new Promise<void>((resolve) => setTimeout(resolve, 50));
+          await EditorFixture.delay(50);
         }
         expect(unbound).assertTrue();
         const sink = await Driver.create().waitForComponent(ON.id('focusSink').focused(true), 3000);
@@ -145,7 +145,7 @@ export default function inAppProxyCapacity(): void {
         await pool.evict();
         await pool.foreground();
         await EditorFixture.waitUntil(() => witness === 1);
-        await new Promise<void>((resolve) => setTimeout(resolve, 300));
+        await EditorFixture.delay(300);
         expect(witness).assertEqual(1);
         expect(count).assertEqual(0);
       } finally {
@@ -154,14 +154,14 @@ export default function inAppProxyCapacity(): void {
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0550
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0550
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0550
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0550
      * @tc.desc 被动注销后监听对象仍可获取，重新注册后恢复真实编辑。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0550', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0550', Level.LEVEL1, async () => {
       const pool = new CapacityFixture();
       try {
         await pool.prepare();
@@ -182,7 +182,7 @@ export default function inAppProxyCapacity(): void {
             unbound = true;
             break;
           }
-          await new Promise<void>((resolve) => setTimeout(resolve, 50));
+          await EditorFixture.delay(50);
         }
         expect(unbound).assertTrue();
         const sink = await Driver.create().waitForComponent(ON.id('focusSink').focused(true), 3000);
@@ -201,7 +201,7 @@ export default function inAppProxyCapacity(): void {
         await pool.evict();
         await pool.foreground();
         await EditorFixture.waitUntil(() => witness === 1);
-        await new Promise<void>((resolve) => setTimeout(resolve, 300));
+        await EditorFixture.delay(300);
         expect(witness).assertEqual(1);
         expect(count).assertEqual(1);
         expectProxyAbility(inputMethodEngine.getProxyInputMethodAbility());

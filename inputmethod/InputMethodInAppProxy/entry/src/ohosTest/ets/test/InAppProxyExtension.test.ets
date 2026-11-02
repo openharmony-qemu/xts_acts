@@ -14,7 +14,7 @@
  */
 import { describe, beforeEach, expect, Level } from '@ohos/hypium-dynamic';
 import { EditorFixture } from './EditorFixture';
-import { proxyTest as it } from './ProxyTest';
+import { proxyTest as it } from './Proxy.test';
 import { extensionProbe } from './ExtensionFixture';
 
 export default function inAppProxyExtension(): void {
@@ -22,14 +22,14 @@ export default function inAppProxyExtension(): void {
     beforeEach(async () => { await EditorFixture.cleanup(); });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0280
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0280
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0280
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0280
      * @tc.desc registerInAppProxyIme：调用方是输入法扩展。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0280', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0280', Level.LEVEL1, async () => {
       const rows = await extensionProbe();
       const row = rows.find((value) => value.operation === 'register');
       expect(row !== undefined).assertTrue();
@@ -40,14 +40,14 @@ export default function inAppProxyExtension(): void {
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0340
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0340
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0340
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0340
      * @tc.desc 输入法扩展调用注销接口的幂等清理行为。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0340', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0340', Level.LEVEL1, async () => {
       const rows = await extensionProbe();
       const row = rows.find((value) => value.operation === 'unregister');
       expect(row !== undefined).assertTrue();
@@ -57,14 +57,14 @@ export default function inAppProxyExtension(): void {
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0370
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0370
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0370
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0370
      * @tc.desc getProxyInputMethodAbility：从 Extension 调用。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0370', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0370', Level.LEVEL1, async () => {
       const rows = await extensionProbe();
       const row = rows.find((value) => value.operation === 'ability');
       expect(row !== undefined).assertTrue();
@@ -75,14 +75,14 @@ export default function inAppProxyExtension(): void {
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0380
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0380
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0380
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0380
      * @tc.desc getProxyKeyboardDelegate：从 Extension 调用。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0380', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0380', Level.LEVEL1, async () => {
       const rows = await extensionProbe();
       const row = rows.find((value) => value.operation === 'delegate');
       expect(row !== undefined).assertTrue();
@@ -93,14 +93,14 @@ export default function inAppProxyExtension(): void {
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0390
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0390
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0390
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0390
      * @tc.desc getProxyInputMethodAbility：throw 路径验证。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0390', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0390', Level.LEVEL1, async () => {
       const rows = await extensionProbe();
       const row = rows.find((value) => value.operation === 'ability');
       expect(row !== undefined).assertTrue();

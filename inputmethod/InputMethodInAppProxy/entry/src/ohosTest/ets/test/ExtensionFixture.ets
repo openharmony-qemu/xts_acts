@@ -68,7 +68,7 @@ export async function extensionProbe(): Promise<ExtensionResult[]> {
       if (rows.length === 4) {
         break;
       }
-      await new Promise<void>((resolve) => setTimeout(resolve, 100));
+      await EditorFixture.delay(100);
     }
     if (rows.length !== 4) {
       throw new Error('No complete result from the actual extension process');

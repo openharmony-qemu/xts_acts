@@ -17,7 +17,7 @@ import { inputMethodEngine } from '@kit.IMEKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { Driver, ON } from '@kit.TestKit';
 import { EditorFixture } from './EditorFixture';
-import { proxyTest as it } from './ProxyTest';
+import { proxyTest as it } from './Proxy.test';
 
 async function expectError(invoke: () => Promise<void>, code: number): Promise<void> {
   let caught: BusinessError | undefined = undefined;
@@ -38,14 +38,14 @@ export default function inAppProxyEditing(): void {
     beforeEach(async () => { await EditorFixture.cleanup(); });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0610
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0610
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0610
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0610
      * @tc.desc deleteForward：length=1 删除1字符。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0610', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0610', Level.LEVEL1, async () => {
       await EditorFixture.bind();
       const client = EditorFixture.getClient();
       await client.deleteForward(1);
@@ -54,14 +54,14 @@ export default function inAppProxyEditing(): void {
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0620
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0620
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0620
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0620
      * @tc.desc deleteForward：length=0（不删，下界）。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0620', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0620', Level.LEVEL1, async () => {
       await EditorFixture.bind();
       const client = EditorFixture.getClient();
       await client.deleteForward(0);
@@ -70,28 +70,28 @@ export default function inAppProxyEditing(): void {
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0630
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0630
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0630
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0630
      * @tc.desc deleteForward：length=-1（负数）。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0630', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0630', Level.LEVEL1, async () => {
       await EditorFixture.bind();
       const client = EditorFixture.getClient();
       await expectError(() => client.deleteForward(-1), 401);
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0640
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0640
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0640
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0640
      * @tc.desc deleteBackward：deleteBackward length=1。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0640', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0640', Level.LEVEL1, async () => {
       await EditorFixture.bind();
       const client = EditorFixture.getClient();
       await client.deleteBackward(1);
@@ -100,14 +100,14 @@ export default function inAppProxyEditing(): void {
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0650
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0650
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0650
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0650
      * @tc.desc deleteBackward：length=0。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0650', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0650', Level.LEVEL1, async () => {
       await EditorFixture.bind();
       const client = EditorFixture.getClient();
       await client.deleteBackward(0);
@@ -116,126 +116,126 @@ export default function inAppProxyEditing(): void {
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0660
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0660
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0660
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0660
      * @tc.desc deleteBackward：length=-1。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0660', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0660', Level.LEVEL1, async () => {
       await EditorFixture.bind();
       const client = EditorFixture.getClient();
       await expectError(() => client.deleteBackward(-1), 401);
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0710
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0710
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0710
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0710
      * @tc.desc getForward：length=3 取3字符。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0710', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0710', Level.LEVEL1, async () => {
       await EditorFixture.bind();
       const client = EditorFixture.getClient();
       expect(await client.getForward(3)).assertEqual('abc');
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0720
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0720
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0720
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0720
      * @tc.desc getForward：length=0（返回空串，下界）。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0720', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0720', Level.LEVEL1, async () => {
       await EditorFixture.bind();
       const client = EditorFixture.getClient();
       expect(await client.getForward(0)).assertEqual('');
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0730
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0730
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0730
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0730
      * @tc.desc getForward：length=-1。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0730', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0730', Level.LEVEL1, async () => {
       await EditorFixture.bind();
       const client = EditorFixture.getClient();
       await expectError(async () => { await client.getForward(-1); }, 401);
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0750
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0750
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0750
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0750
      * @tc.desc getBackward：getBackward length=3。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0750', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0750', Level.LEVEL1, async () => {
       await EditorFixture.bind();
       const client = EditorFixture.getClient();
       expect(await client.getBackward(3)).assertEqual('def');
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0760
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0760
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0760
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0760
      * @tc.desc getBackward：length=0。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0760', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0760', Level.LEVEL1, async () => {
       await EditorFixture.bind();
       const client = EditorFixture.getClient();
       expect(await client.getBackward(0)).assertEqual('');
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0770
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0770
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0770
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0770
      * @tc.desc getBackward：length=-1。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0770', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0770', Level.LEVEL1, async () => {
       await EditorFixture.bind();
       const client = EditorFixture.getClient();
       await expectError(async () => { await client.getBackward(-1); }, 401);
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0740
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0740
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0740
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0740
      * @tc.desc getForward：返回值类型验证。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0740', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0740', Level.LEVEL1, async () => {
       await EditorFixture.bind();
       const client = EditorFixture.getClient();
       expect(await client.getForward(3)).assertEqual('abc');
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0670
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0670
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0670
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0670
      * @tc.desc insertText：正常文本。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0670', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0670', Level.LEVEL1, async () => {
       await EditorFixture.bind();
       const client = EditorFixture.getClient();
       const inserted = 'hello';
@@ -245,14 +245,14 @@ export default function inAppProxyEditing(): void {
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0680
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0680
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0680
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0680
      * @tc.desc insertText：空字符串。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0680', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0680', Level.LEVEL1, async () => {
       await EditorFixture.bind();
       const client = EditorFixture.getClient();
       const inserted = '';
@@ -262,14 +262,14 @@ export default function inAppProxyEditing(): void {
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0690
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0690
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0690
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0690
      * @tc.desc insertText：特殊字符。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0690', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0690', Level.LEVEL1, async () => {
       await EditorFixture.bind('abcdef', 3, true);
       const client = EditorFixture.getClient();
       const inserted = '你好👋\n\t';
@@ -279,14 +279,14 @@ export default function inAppProxyEditing(): void {
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0700
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0700
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0700
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0700
      * @tc.desc insertText 插入 xyz 后真实编辑框文本按光标位置更新。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0700', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0700', Level.LEVEL1, async () => {
       await EditorFixture.bind();
       const client = EditorFixture.getClient();
       const inserted = 'xyz';
@@ -296,14 +296,14 @@ export default function inAppProxyEditing(): void {
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0820
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0820
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0820
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0820
      * @tc.desc moveCursor：direction=1 上。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0820', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0820', Level.LEVEL1, async () => {
       await EditorFixture.bind('11\n11\n11', 4, true);
       const client = EditorFixture.getClient();
       expect(await client.getTextIndexAtCursor()).assertEqual(4);
@@ -314,14 +314,14 @@ export default function inAppProxyEditing(): void {
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0830
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0830
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0830
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0830
      * @tc.desc moveCursor：direction=2 下。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0830', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0830', Level.LEVEL1, async () => {
       await EditorFixture.bind('11\n11\n11', 4, true);
       const client = EditorFixture.getClient();
       expect(await client.getTextIndexAtCursor()).assertEqual(4);
@@ -332,14 +332,14 @@ export default function inAppProxyEditing(): void {
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0840
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0840
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0840
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0840
      * @tc.desc moveCursor：direction=3 左。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0840', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0840', Level.LEVEL1, async () => {
       await EditorFixture.bind();
       const client = EditorFixture.getClient();
       expect(await client.getTextIndexAtCursor()).assertEqual(3);
@@ -350,14 +350,14 @@ export default function inAppProxyEditing(): void {
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0850
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0850
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0850
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0850
      * @tc.desc moveCursor：direction=4 右。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0850', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0850', Level.LEVEL1, async () => {
       await EditorFixture.bind();
       const client = EditorFixture.getClient();
       expect(await client.getTextIndexAtCursor()).assertEqual(3);
@@ -368,56 +368,56 @@ export default function inAppProxyEditing(): void {
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0860
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0860
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0860
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0860
      * @tc.desc moveCursor：direction=0（非法）。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0860', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0860', Level.LEVEL1, async () => {
       await EditorFixture.bind();
       const client = EditorFixture.getClient();
       await expectError(() => client.moveCursor(0 as inputMethodEngine.Direction), 401);
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0870
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0870
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0870
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0870
      * @tc.desc moveCursor：direction=5（超出范围）。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0870', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0870', Level.LEVEL1, async () => {
       await EditorFixture.bind();
       const client = EditorFixture.getClient();
       await expectError(() => client.moveCursor(5 as inputMethodEngine.Direction), 401);
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0880
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0880
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0880
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0880
      * @tc.desc moveCursor：direction=-1（负数）。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0880', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0880', Level.LEVEL1, async () => {
       await EditorFixture.bind();
       const client = EditorFixture.getClient();
       await expectError(() => client.moveCursor(-1 as inputMethodEngine.Direction), 401);
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0780
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0780
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0780
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0780
      * @tc.desc getEditorAttribute：无参调用。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0780', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0780', Level.LEVEL1, async () => {
       await EditorFixture.bind();
       const client = EditorFixture.getClient();
       const attribute = await client.getEditorAttribute();
@@ -427,14 +427,14 @@ export default function inAppProxyEditing(): void {
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0790
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0790
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0790
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0790
      * @tc.desc getEditorAttribute：返回值非 null。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0790', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0790', Level.LEVEL1, async () => {
       await EditorFixture.bind();
       const client = EditorFixture.getClient();
       const attribute = await client.getEditorAttribute();
@@ -444,14 +444,14 @@ export default function inAppProxyEditing(): void {
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0810
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0810
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0810
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0810
      * @tc.desc getEditorAttribute：返回值属性验证。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0810', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0810', Level.LEVEL1, async () => {
       await EditorFixture.bind();
       const client = EditorFixture.getClient();
       const attribute = await client.getEditorAttribute();
@@ -461,42 +461,42 @@ export default function inAppProxyEditing(): void {
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0930
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0930
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0930
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0930
      * @tc.desc getTextIndexAtCursor：无参调用。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0930', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0930', Level.LEVEL1, async () => {
       await EditorFixture.bind();
       const client = EditorFixture.getClient();
       expect(await client.getTextIndexAtCursor()).assertEqual(3);
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0940
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0940
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0940
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0940
      * @tc.desc getTextIndexAtCursor：返回值≥0。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0940', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0940', Level.LEVEL1, async () => {
       await EditorFixture.bind();
       const client = EditorFixture.getClient();
       expect(await client.getTextIndexAtCursor()).assertEqual(3);
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0890
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0890
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0890
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0890
      * @tc.desc selectByRange：合法 Range。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0890', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0890', Level.LEVEL1, async () => {
       await EditorFixture.bind();
       const client = EditorFixture.getClient();
       await client.selectByRange({ start: 0, end: 5 });
@@ -506,14 +506,14 @@ export default function inAppProxyEditing(): void {
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0900
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0900
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0900
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0900
      * @tc.desc selectByRange：Range start==end（空选区）。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0900', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0900', Level.LEVEL1, async () => {
       await EditorFixture.bind();
       const client = EditorFixture.getClient();
       await client.selectByRange({ start: 2, end: 2 });
@@ -523,14 +523,14 @@ export default function inAppProxyEditing(): void {
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0910
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0910
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0910
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0910
      * @tc.desc selectByRange：resolve 验证。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0910', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0910', Level.LEVEL1, async () => {
       await EditorFixture.bind();
       const client = EditorFixture.getClient();
       await client.selectByRange({ start: 0, end: 5 });
@@ -540,14 +540,14 @@ export default function inAppProxyEditing(): void {
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0920
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0920
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0920
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0920
      * @tc.desc selectByMovement 接受含 direction 的 Movement 对象并改变真实选区。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0920', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0920', Level.LEVEL1, async () => {
       await EditorFixture.bind();
       const client = EditorFixture.getClient();
       await client.selectByMovement({ direction: inputMethodEngine.CURSOR_LEFT });
@@ -557,14 +557,14 @@ export default function inAppProxyEditing(): void {
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0950
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0950
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0950
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0950
      * @tc.desc sendExtendAction：合法 ExtendAction。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0950', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0950', Level.LEVEL1, async () => {
       await EditorFixture.bind();
       const client = EditorFixture.getClient();
       await client.sendExtendAction(inputMethodEngine.ExtendAction.SELECT_ALL);
@@ -574,14 +574,14 @@ export default function inAppProxyEditing(): void {
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0570
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0570
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0570
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0570
      * @tc.desc UNSPECIFIED和NONE均不提交文本，以DONE的真实onSubmit作为正向见证。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0570', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0570', Level.LEVEL1, async () => {
       await EditorFixture.bind();
       const client = EditorFixture.getClient();
       const before = EditorFixture.submissions.length;
@@ -598,14 +598,14 @@ export default function inAppProxyEditing(): void {
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0580
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0580
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0580
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0580
      * @tc.desc DONE 触发真实编辑框 onSubmit，返回操作类型和提交前的完整文本。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0580', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0580', Level.LEVEL1, async () => {
       await EditorFixture.bind();
       const client = EditorFixture.getClient();
       const before = EditorFixture.submissions.length;
@@ -620,42 +620,42 @@ export default function inAppProxyEditing(): void {
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0590
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0590
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0590
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0590
      * @tc.desc sendKeyFunction rejects 9, outside exported ENTER_KEY_TYPE constants.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0590', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0590', Level.LEVEL1, async () => {
       await EditorFixture.bind();
       const client = EditorFixture.getClient();
       await expectError(() => client.sendKeyFunction(9), 401);
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0600
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0600
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0600
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0600
      * @tc.desc sendKeyFunction rejects a negative action with 401.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0600', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0600', Level.LEVEL1, async () => {
       await EditorFixture.bind();
       const client = EditorFixture.getClient();
       await expectError(() => client.sendKeyFunction(-1), 401);
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0960
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0960
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0960
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0960
      * @tc.desc hideSelf 通知真实 ArkUI 编辑框；按当前进程及唯一标记核对接收和应用日志。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0960', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0960', Level.LEVEL1, async () => {
       await EditorFixture.bind();
       const controller = EditorFixture.controller;
       if (controller === null) {
@@ -667,14 +667,14 @@ export default function inAppProxyEditing(): void {
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0980
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0980
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0980
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0980
      * @tc.desc hideSelf 后重新绑定编辑框，两次均核对各自独立标记内的实际接收日志。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0980', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0980', Level.LEVEL1, async () => {
       await EditorFixture.bind();
       const controller = EditorFixture.controller;
       if (controller === null) {
@@ -694,14 +694,14 @@ export default function inAppProxyEditing(): void {
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0970
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0970
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0970
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0970
      * @tc.desc 连续两次 hideSelf 分别收到真实编辑框通知，第一次通知后客户端仍可读。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0970', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0970', Level.LEVEL1, async () => {
       await EditorFixture.bind();
       const client = EditorFixture.getClient();
       const controller = EditorFixture.controller;
@@ -716,14 +716,14 @@ export default function inAppProxyEditing(): void {
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0990
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0990
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0990
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0990
      * @tc.desc hideSelf：reject 路径-detail。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0990', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0990', Level.LEVEL1, async () => {
       await EditorFixture.bind();
       const client = EditorFixture.getClient();
       const controller = EditorFixture.controller;
@@ -736,14 +736,14 @@ export default function inAppProxyEditing(): void {
     });
 
     /**
-     * @tc.name Sub_InputMethod_IME_CustomKeyboard_0800
-     * @tc.number Sub_InputMethod_IME_CustomKeyboard_0800
+     * @tc.name SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0800
+     * @tc.number SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0800
      * @tc.desc getEditorAttribute：保持代理注册，仅失焦且经事件及实际焦点确认。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level Level1
      */
-    it('Sub_InputMethod_IME_CustomKeyboard_0800', Level.LEVEL1, async () => {
+    it('SUB_INPUTMETHOD_IME_CUSTOMKEYBOARD_0800', Level.LEVEL1, async () => {
       await EditorFixture.bind();
       const client = EditorFixture.getClient();
       const driver = await Driver.create();

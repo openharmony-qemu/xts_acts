@@ -1,3 +1,7 @@
+  static delay(milliseconds: number): Promise<void> {
+    return new Promise<void>((resolve) => setTimeout(resolve, milliseconds));
+  }
+
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -66,6 +70,10 @@ export class EditorFixture {
 
   static onSinkFocus(): void {
     EditorFixture.sinkFocusEvents++;
+  }
+
+  static delay(milliseconds: number): Promise<void> {
+    return new Promise<void>((resolve) => setTimeout(resolve, milliseconds));
   }
 
   static async waitUntil(check: () => boolean): Promise<void> {
