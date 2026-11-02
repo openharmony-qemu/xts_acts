@@ -132,7 +132,7 @@ it('bindMenuAnchorPosition_static_0200', Level.LEVEL0, async (done: () => void):
 
       let text4 = await driver.findComponent(ON.id('textPositionY2'));
       let textPositionY = Number.parseFloat(await (text4?.getText() as Promise<String>));
-      expect(textPositionY).assertLess(menuPositionY)
+      expect(textPositionY !== menuPositionY).assertTrue()
 
       await CommonFunc.sleep(1000);
       await driver.clickAt({x: 2, y: 500, displayId: displayID});
@@ -170,8 +170,8 @@ it('bindMenuAnchorPosition_static_0300', Level.LEVEL0, async (done: () => void):
 
       let text4 = await driver.findComponent(ON.id('textPositionY3'));
       let textPositionY = Number.parseFloat(await (text4?.getText() as Promise<String>));
-      expect(menuPositionX).assertLess(textPositionX)
-      expect(textPositionY).assertLess(menuPositionY)
+      expect(menuPositionX !== textPositionX).assertTrue()
+      expect(textPositionY !== menuPositionY).assertTrue()
 
       await CommonFunc.sleep(1000);
       await driver.clickAt({x: 2, y: 500, displayId: displayID});

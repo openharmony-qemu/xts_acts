@@ -22,27 +22,11 @@ export default function SelectTest() {
   describe('SelectTest', () => {
     beforeEach(async (done: Function) => {
       console.info("SelectTest beforeEach start");
-      let options: router.RouterOptions = {
-        url: 'MainAbility/pages/select/Select',
-      }
-      try {
-        router.clear();
-        let pages = router.getState();
-        console.info("get SelectTest state pages: " + JSON.stringify(pages));
-        if (!("Select" == pages.name)) {
-          console.info("get SelectTest state pages.name:" + JSON.stringify(pages.name));
-          let result = await router.push(options);
-          await CommonFunc.sleep(2000);
-          console.info("push SelectTest page result:" + JSON.stringify(result));
-        }
-      } catch (err) {
-        console.error("push SelectTest page error:" + err);
-      }
+      await CommonFunc.sleep(500);
       done()
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
       console.info("overlay after each called");
     });
 
@@ -54,10 +38,6 @@ export default function SelectTest() {
      */
     it('ArkUX_Select_Visual_0030', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Select_Visual_0030 START');
-      let driver = await Driver.create()
-      await CommonFunc.sleep(1000);
-      let buttonS = await driver.findComponent(ON.id('ArkUX_Select_Visual_0030'));
-      await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('ArkUX_Select_Visual_0030');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("ArkUX_Select_Visual_0030 obj is: " + JSON.stringify(obj));
@@ -78,10 +58,6 @@ export default function SelectTest() {
      */
     it('ArkUX_Select_Visual_0040', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Select_Visual_0040 START');
-      let driver = await Driver.create()
-      await CommonFunc.sleep(1000);
-      let buttonS = await driver.findComponent(ON.id('ArkUX_Select_Visual_0040'));
-      await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('ArkUX_Select_Visual_0040');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("ArkUX_Select_Visual_0040 obj is: " + JSON.stringify(obj));
@@ -102,12 +78,6 @@ export default function SelectTest() {
      */
     it('ArkUX_Select_Visual_0050', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Select_Visual_0050 START');
-      await CommonFunc.sleep(1000);
-
-      let driver = await Driver.create()
-      await CommonFunc.sleep(1000);
-      let buttonS = await driver.findComponent(ON.id('ArkUX_Select_Visual_0050'));
-      await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('ArkUX_Select_Visual_0050');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("ArkUX_Select_Visual_0050 obj is: " + JSON.stringify(obj));
@@ -128,12 +98,6 @@ export default function SelectTest() {
      */
     it('ArkUX_Select_Visual_0060', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Select_Visual_0060 START');
-      await CommonFunc.sleep(1000);
-
-      let driver = await Driver.create()
-      await CommonFunc.sleep(1000);
-      let buttonS = await driver.findComponent(ON.id('ArkUX_Select_Visual_0060'));
-      await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('ArkUX_Select_Visual_0060');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("ArkUX_Select_Visual_0060 obj is: " + JSON.stringify(obj));
@@ -155,11 +119,6 @@ export default function SelectTest() {
      */
     it('ArkUX_Select_Visual_0070', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Select_Visual_0070 START');
-      await CommonFunc.sleep(1000);
-      let driver = await Driver.create()
-      await CommonFunc.sleep(1000);
-      let buttonS = await driver.findComponent(ON.id('ArkUX_Select_Visual_0070'));
-      await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('ArkUX_Select_Visual_0070');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("ArkUX_Select_Visual_0070 obj is: " + JSON.stringify(obj));

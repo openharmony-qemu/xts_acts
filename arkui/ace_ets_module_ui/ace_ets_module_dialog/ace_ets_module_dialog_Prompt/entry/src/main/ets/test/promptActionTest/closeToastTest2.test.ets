@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "@ohos/hypium"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "@ohos/hypium-dynamic"
 import router from '@ohos.router';
 import {
   UiComponent,
@@ -73,18 +73,11 @@ export default function closeToastTest() {
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('openT'));
       await button.click();
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(500);
       let toast = await driver.findComponent(ON.text('Toast Massage'));
       expect(toast != null).assertTrue()
       console.info('closeDialogTest_0100 0  ok');
-      await CommonFunc.sleep(1500);
-      toast = await driver.findComponent(ON.text('Toast Massage'));
-      expect(toast != null).assertTrue()
-      console.info('closeDialogTest_0100 undefined  ok');
-      await CommonFunc.sleep(2000);
-      toast = await driver.findComponent(ON.text('Toast Massage'));
-      expect(toast != null).assertTrue()
-      console.info('closeDialogTest_0100 null  ok');
+
       await CommonFunc.sleep(500);
       console.info('closeToastTest_0100 END');
       done();

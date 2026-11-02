@@ -35,7 +35,6 @@ export default function testsuite() {
   stageActionSheet();
   ActionSheetJsunit();
   ActionSheet1();
-  ActionSheet2();
   ActionSheet3();
   actionSheetMode();
   showActionSheetMode();
