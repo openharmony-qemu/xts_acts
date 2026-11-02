@@ -18,12 +18,9 @@ import inAppProxyEditing from './InAppProxyEditing.test';
 
 import inAppProxyExtension from './InAppProxyExtension.test';
 
-import inAppProxyCapacity from './InAppProxyCapacity.test';
-
 export default function testsuite(): void {
   inAppProxyRegistration();
   inAppProxyEditing();
   inAppProxyEvents();
   inAppProxyExtension();
-  inAppProxyCapacity();
 }

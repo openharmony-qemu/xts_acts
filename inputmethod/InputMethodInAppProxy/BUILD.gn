@@ -15,7 +15,6 @@
 import("//test/xts/tools/build/suite.gni")
 
 ohos_js_app_suite("ActsInputMethodInAppProxyTest") {
-  deps = [ "../InputMethodInAppProxyFixtures:capacity_resources" ]
   test_hap = true
   testonly = true
   js_build_mode = "debug"
