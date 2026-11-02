@@ -211,7 +211,7 @@ struct WebComponent {
                       MouseButton.MOUSE_BUTTON_RIGHT);
                     let buttonThree = await driver.waitForComponent(ON.text('撤销'), 10000);
                     await buttonThree.click();
-                    Utils.sleep(3000)
+                    await Utils.sleep(5000)
                     console.info('redo mouseClick')
                     await driver.mouseClick({ x: downX, y: downY, displayId: displayId },
                       MouseButton.MOUSE_BUTTON_RIGHT);

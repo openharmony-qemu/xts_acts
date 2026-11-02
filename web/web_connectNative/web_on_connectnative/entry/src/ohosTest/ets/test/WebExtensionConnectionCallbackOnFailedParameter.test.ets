@@ -131,7 +131,7 @@ export default function webExtensionConnectionCallbackOnFailedParameterTest() {
         
         let connId = webNativeMessagingExtensionManager.connectNative(context, invalidWant, callback);
         hilog.info(0x0000, 'testTag', `${tcNumber} connectNative called with connId: ${connId}`);
-        expect(connId).not().assertUndefined();
+        expect(connId > 0).assertTrue();
         
         // 等待足够长的时间让所有回调执行
         setTimeout(() => {
@@ -234,7 +234,7 @@ export default function webExtensionConnectionCallbackOnFailedParameterTest() {
         
         let connId = webNativeMessagingExtensionManager.connectNative(context, invalidWant, callback);
         hilog.info(0x0000, 'testTag', `${tcNumber} connectNative called with connId: ${connId}`);
-        expect(connId).not().assertUndefined();
+        expect(connId > 0).assertTrue();
         
         // 等待足够长的时间让所有回调执行
         setTimeout(() => {
@@ -337,7 +337,7 @@ export default function webExtensionConnectionCallbackOnFailedParameterTest() {
         
         let connId = webNativeMessagingExtensionManager.connectNative(context, invalidWant, callback);
         hilog.info(0x0000, 'testTag', `${tcNumber} connectNative called with connId: ${connId}`);
-        expect(connId).not().assertUndefined();
+        expect(connId > 0).assertTrue();
         
         // 等待足够长的时间让所有回调执行
         setTimeout(() => {
@@ -440,7 +440,7 @@ export default function webExtensionConnectionCallbackOnFailedParameterTest() {
         
         let connId = webNativeMessagingExtensionManager.connectNative(context, invalidWant, callback);
         hilog.info(0x0000, 'testTag', `${tcNumber} connectNative called with connId: ${connId}`);
-        expect(connId).not().assertUndefined();
+        expect(connId > 0).assertTrue();
         
         // 等待足够长的时间让所有回调执行
         setTimeout(() => {

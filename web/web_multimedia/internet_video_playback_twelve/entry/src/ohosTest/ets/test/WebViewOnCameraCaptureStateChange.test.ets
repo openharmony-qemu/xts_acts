@@ -94,6 +94,10 @@ export default function ActsAceWebViewOnCameraCaptureStateChangeCase() {
           let buttonFour = await driver.waitForComponent(ON.text('本次使用允许'),10000);
           await buttonFour?.click();
         }
+        buttonThree = await driver.waitForComponent(ON.text('开启'),10000);
+        if(buttonThree){
+          await buttonThree.click();
+        }
         let buttonOne = await driver.waitForComponent(ON.text('开启摄像头'), 10000);
         await buttonOne.click();
         let buttonTwo = await driver.waitForComponent(ON.text('onConfirm'), 10000);
