@@ -68,6 +68,10 @@ export class EditorFixture {
     EditorFixture.sinkFocusEvents++;
   }
 
+  static delay(milliseconds: number): Promise<void> {
+    return new Promise<void>((resolve) => setTimeout(resolve, milliseconds));
+  }
+
   static async waitUntil(check: () => boolean): Promise<void> {
     for (let attempt = 0; attempt < 100; attempt++) {
       if (check()) {

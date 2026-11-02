@@ -1,4 +1,3 @@
-    afterEach(async () => { await EditorFixture.cleanup(); });
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -46,7 +45,7 @@ async function verifyCursorRoundTrip(client: inputMethodEngine.ProxyTextInputCli
         if (clientCursor === target) {
           break;
         }
-        await new Promise<void>((resolve) => setTimeout(resolve, 50));
+        await EditorFixture.delay(50);
       }
       expect(clientCursor).assertEqual(target);
       const caret = EditorFixture.readCaret();

@@ -47,6 +47,7 @@ ohos_xts_executable("ActsInputMethodInAppProxyCapacityWorker") {
     "ability_base:configuration",
     "ability_runtime:ability_context_native",
     "ability_runtime:ability_manager",
+    "bounds_checking_function:libsec_shared",
     "bundle_framework:appexecfwk_base",
     "c_utils:utils",
     "graphic_2d:librender_service_base",

@@ -1,4 +1,3 @@
-    afterEach(async () => { await EditorFixture.cleanup(); });
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -491,7 +490,7 @@ export default function inAppProxyRegistration(): void {
       EditorFixture.client = null;
       EditorFixture.focus();
       // Observe a bounded event window after the editor focus request.
-      await new Promise<void>((resolve) => setTimeout(resolve, 1000));
+      await EditorFixture.delay(1000);
       expect(EditorFixture.client === null).assertTrue();
     });
 
@@ -517,7 +516,7 @@ export default function inAppProxyRegistration(): void {
       EditorFixture.client = null;
       EditorFixture.focus();
       // Observe a bounded event window after the editor focus request.
-      await new Promise<void>((resolve) => setTimeout(resolve, 1000));
+      await EditorFixture.delay(1000);
       expect(EditorFixture.client === null).assertTrue();
     });
 
