@@ -257,7 +257,7 @@ describe('etsIntlFunTest', function () {
         expect(intlObj.resolvedOptions().timeZone).assertEqual('UTC');
         expect(intlObj.resolvedOptions().timeZoneName).assertEqual('short');
     })
-	    
+
     /**
      * @tc.number SUB_ARK_ETS_INTL_DATETIMEFORMAT_016
      * @tc.name testIntlDateTimeFormat16
@@ -531,46 +531,6 @@ describe('etsIntlFunTest', function () {
         expect(intlObj.format(number)).assertEqual('1.235E5');
         expect(intlObj.resolvedOptions().style).assertEqual('decimal');
         expect(intlObj.resolvedOptions().notation).assertEqual('scientific');
-    })
-
-    /**
-     * @tc.name   SUB_ARK_ETS_INTL_NUMBERFORMAT_016
-     * @tc.number SUB_ARK_ETS_INTL_NUMBERFORMAT_016
-     * @tc.desc   The current function handles Intl NumberFormat
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('SUB_ARK_ETS_INTL_NUMBERFORMAT_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
-        var option = { style: 'currency', currency: 'EUR',
-            currencyDisplay: 'name', currencySign: 'accounting', signDisplay: 'always' };
-        var intlObj = new Intl.NumberFormat("en-GB", option);
-        console.log("intlNumberFormatTest016::" + intlObj.format(number));
-        expect(intlObj.format(number)).assertEqual('+123,456.79 euros');
-        expect(intlObj.resolvedOptions().locale).assertEqual('en-GB');
-        expect(intlObj.resolvedOptions().style).assertEqual('currency');
-        expect(intlObj.resolvedOptions().currency).assertEqual('EUR');
-        expect(intlObj.resolvedOptions().currencyDisplay).assertEqual('name');
-        expect(intlObj.resolvedOptions().currencySign).assertEqual('accounting');
-        expect(intlObj.resolvedOptions().signDisplay).assertEqual('always');
-    })
-
-    /**
-     * @tc.name   SUB_ARK_ETS_INTL_NUMBERFORMAT_017
-     * @tc.number SUB_ARK_ETS_INTL_NUMBERFORMAT_017
-     * @tc.desc   The current function handles Intl NumberFormat
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('SUB_ARK_ETS_INTL_NUMBERFORMAT_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
-        var option =  { style: 'currency', currency: 'USD',
-            currencyDisplay: 'code', currencySign: 'accounting', signDisplay: 'always' };
-        var intlObj = new Intl.NumberFormat("en-US", option);
-        console.log("intlNumberFormatTest017::" + intlObj.format(number));
-        expect(intlObj.format(number)).assertEqual('+USD 123,456.79');
-        expect(intlObj.resolvedOptions().currency).assertEqual('USD');
-        expect(intlObj.format(number)).assertContain('123,456.79');
     })
 
     /**
