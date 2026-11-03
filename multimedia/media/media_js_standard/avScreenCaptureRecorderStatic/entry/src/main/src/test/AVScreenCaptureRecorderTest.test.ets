@@ -494,12 +494,6 @@ export default function AVScreenCaptureRecorderTest() {
         mediaTestBase.SETONCALLBACK_EVENT,
         // setPickerMode
         mediaTestBase.SET_PICKER_MODE_EVENT,
-        // start recorder
-        mediaTestBase.STARTRECORDER_EVENT,
-        // skip PrivacyMode
-        mediaTestBase.SKIPPRIVACYMODE_EVENT,
-        // stop recorder
-        mediaTestBase.STOPRECORDER_EVENT,
         // release recorder
         // close fd
         mediaTestBase.RELEASECORDER_EVENT,
@@ -545,12 +539,6 @@ export default function AVScreenCaptureRecorderTest() {
         mediaTestBase.SETONCALLBACK_EVENT,
         // excludePickerWindows
         mediaTestBase.EXCLUDE_PICKER_WINDOWS_EVENT,
-        // start recorder
-        mediaTestBase.STARTRECORDER_EVENT,
-        // skip PrivacyMode
-        mediaTestBase.SKIPPRIVACYMODE_EVENT,
-        // stop recorder
-        mediaTestBase.STOPRECORDER_EVENT,
         // release recorder
         // close fd
         mediaTestBase.RELEASECORDER_EVENT,
@@ -593,12 +581,12 @@ export default function AVScreenCaptureRecorderTest() {
         // init
         mediaTestBase.INIT_EVENT,
         mediaTestBase.SETONCALLBACK_EVENT,
+        // setMicEnable
+        mediaTestBase.SET_MIC_ENABLE_EVENT,
         // start recorder
         mediaTestBase.STARTRECORDER_EVENT,
         // PresentPicker
         mediaTestBase.PRESENT_PICKER,
-        // skip PrivacyMode
-        mediaTestBase.SKIPPRIVACYMODE_EVENT,
         // stop recorder
         mediaTestBase.STOPRECORDER_EVENT,
         // release recorder
