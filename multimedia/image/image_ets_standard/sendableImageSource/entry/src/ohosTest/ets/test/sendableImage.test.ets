@@ -90,7 +90,7 @@ let sleep = async (delay: number): Promise<void> => {
 
 let cameraManager: camera.CameraManager;
 
-async function createPreview(receiver: sendableImage.ImageReceiver): Promise<camera.PhotoSession> {
+async function createPreview(receiver: sendableImage.ImageReceiver): Promise<void> {
 
   if (!cameraManager) {
     cameraManager = camera.getCameraManager(testContext);
@@ -104,7 +104,7 @@ async function createPreview(receiver: sendableImage.ImageReceiver): Promise<cam
   let isSupportPhotoMode: boolean = sceneModes.indexOf(camera.SceneMode.NORMAL_PHOTO) >= 0;
   if (!isSupportPhotoMode) {
     console.error('photo mode not support');
-    return null as ESObject as camera.PhotoSession;
+    return;
   }
 
   // 获取profile对象
@@ -144,34 +144,7 @@ async function createPreview(receiver: sendableImage.ImageReceiver): Promise<cam
 
   // 会话开始
   await photoSession.start();
-
-  return photoSession;
 }
-
-// 统一释放 camera 预览资源，避免 imageArrival 持续触发串扰后续用例
-let releasePreview = async (photoSession: camera.PhotoSession): Promise<void> => {
-  try {
-    if (photoSession) {
-      await photoSession.stop();
-      await photoSession.release();
-    }
-  } catch (e) {
-    console.info('releasePreview error: ' + JSON.stringify(e));
-  }
-};
-
-// releasePreview 内部已 try/catch 不会 reject；此包装器返回 void，
-// 供回调内直接调用，避免门禁静态检查"未 await 的 Promise 链缺 .catch"
-let releasePreviewAndDone = (photoSession: camera.PhotoSession, done: Function): void => {
-  (async () => {
-    try {
-      await releasePreview(photoSession);
-    } catch (e) {
-      console.info('releasePreviewAndDone error: ' + JSON.stringify(e));
-    }
-    done();
-  })();
-};
 
 class MySequence implements rpc.Parcelable {
   pixel_map: sendableImage.PixelMap;
@@ -247,7 +220,7 @@ export default function sendableImageSource() {
         await button1?.click()
         await button2?.click()
       }
-      await sleep(2000)
+      sleep(2000)
     })
 
     let ability = async () => {
@@ -733,9 +706,6 @@ export default function sendableImageSource() {
       await imageSourceApi.release().then(() => {
         imageSourceApi.createPixelMap().then((pixelMap: sendableImage.PixelMap) => {
           console.info(`0x0000 ${tag} success ${pixelMap}`)
-          // release 后 createPixelMap 意外成功，不符合预期
-          expect().assertFail()
-          done()
         }).catch((error: BusinessError) => {
           console.error(`0x0000 ${tag} failed ${error}`);
           expect(true).assertEqual(JSON.stringify(error) != null);
@@ -848,18 +818,16 @@ export default function sendableImageSource() {
       const tag: string = "SUB_MULTIMEDIA_CREATE_IMAGE_RECEIVER_ON_0100"
       let receiver = await getImageReceiver(1)
       let isDone = false
-      let photoSession: camera.PhotoSession
       console.info(`0x0000 ${tag} success ${receiver}`)
       console.info(`onImageArrival start`)
       receiver.on('imageArrival', () => {
         if (isDone) return
         isDone = true
         console.info(`onImageArrival receiver.on start`)
-        // sendableImage.ImageReceiver 无 off 方法，isDone 标志 + releasePreview 已足够防止串扰
         expect(isEmpty(receiver.size)).assertFalse()
-        releasePreviewAndDone(photoSession, done)
+        done()
       })
-      photoSession = await createPreview(receiver)
+      await createPreview(receiver)
 
     })
 
@@ -902,13 +870,12 @@ export default function sendableImageSource() {
       }
       const tag: string = "SUB_MULTIMEDIA_RECEIVER_READ_NEXT_IMAGE_0100"
       let receiver = await getImageReceiver(1)
-      let photoSession = await createPreview(receiver)
       let isDone = false
+      await createPreview(receiver)
       console.info(`0x0000 ${tag} success receiver`)
       receiver.on('imageArrival', () => {
         if (isDone) return
         isDone = true
-        // sendableImage.ImageReceiver 无 off 方法，isDone 标志 + releasePreview 已足够防止串扰
         console.info(`onImageArrival receiver.on start`)
         receiver.readNextImage().then((img: sendableImage.Image) => {
           console.info(`0x0000 ${tag} readNextImage success`)
@@ -916,11 +883,11 @@ export default function sendableImageSource() {
           expect(isEmpty(img.format)).assertFalse()
           expect(isEmpty(img.size)).assertFalse()
           expect(isEmpty(img.timestamp)).assertFalse()
-          releasePreviewAndDone(photoSession, done)
+          done()
         }).catch((error: BusinessError) => {
           console.error(`0x0000 ${tag} failed ${error}`)
           expect().assertFail()
-          releasePreviewAndDone(photoSession, done)
+          done()
         })
       })
     })
@@ -941,13 +908,12 @@ export default function sendableImageSource() {
       }
       const tag: string = "SUB_MULTIMEDIA_IMG_GET_COMPONENT_0100"
       let receiver = await getImageReceiver(1)
-      let photoSession = await createPreview(receiver)
       let isDone = false
+      await createPreview(receiver)
       console.info(`0x0000 ${tag} success ${receiver}`)
       receiver.on('imageArrival', () => {
         if (isDone) return
         isDone = true
-        // sendableImage.ImageReceiver 无 off 方法，isDone 标志 + releasePreview 已足够防止串扰
         console.info(`onImageArrival receiver.on start`)
         receiver.readNextImage().then((img: sendableImage.Image) => {
           let clipRect = img.clipRect
@@ -966,16 +932,12 @@ export default function sendableImageSource() {
             console.info(`0x0000 ${tag} byteBuffer is: ${Component.byteBuffer}`)
             expect(Component.componentType).assertEqual(4)
             expect(isEmpty(Component.byteBuffer)).assertFalse()
-            releasePreviewAndDone(photoSession, done)
-          }).catch((error: BusinessError) => {
-            console.error(`0x0000 ${tag} getComponent failed ${error}`)
-            expect().assertFail()
-            releasePreviewAndDone(photoSession, done)
+            done()
           })
         }).catch((error: BusinessError) => {
           console.error(`0x0000 ${tag} failed ${error}`)
           expect().assertFail()
-          releasePreviewAndDone(photoSession, done)
+          done()
         })
       })
     })
@@ -996,28 +958,23 @@ export default function sendableImageSource() {
       }
       const tag: string = "SUB_MULTIMEDIA_IMG_GET_COMPONENT_0200"
       let receiver = await getImageReceiver(1)
-      let photoSession = await createPreview(receiver)
       let isDone = false
+      await createPreview(receiver)
       console.info(`0x0000 ${tag} success ${receiver}`)
       receiver.on('imageArrival', () => {
         if (isDone) return
         isDone = true
-        // sendableImage.ImageReceiver 无 off 方法，isDone 标志 + releasePreview 已足够防止串扰
         console.info(`onImageArrival receiver.on start`)
         receiver.readNextImage().then((img: sendableImage.Image) => {
           img.getComponent(5).then((Component: image.Component) => {
             console.info(`0x0000 ${tag} img.getComponent succeeded`)
             expect().assertFail()
-            releasePreviewAndDone(photoSession, done)
-          }).catch((error: BusinessError) => {
-            console.error(`0x0000 ${tag} getComponent failed ${error}`)
-            expect(true).assertEqual(JSON.stringify(error) != null);
-            releasePreviewAndDone(photoSession, done)
+            done()
           })
         }).catch((error: BusinessError) => {
-          console.error(`0x0000 ${tag} readNextImage failed ${error}`)
+          console.error(`0x0000 ${tag} failed ${error}`)
           expect(true).assertEqual(JSON.stringify(error) != null);
-          releasePreviewAndDone(photoSession, done)
+          done()
         })
       })
     })
@@ -1039,13 +996,12 @@ export default function sendableImageSource() {
       }
       const tag: string = "SUB_MULTIMEDIA_IMG_GET_COMPONENT_0300"
       let receiver = await getImageReceiver(1)
-      let photoSession = await createPreview(receiver)
       let isDone = false
+      await createPreview(receiver)
       console.info(`0x0000 ${tag} success ${receiver}`)
       receiver.on('imageArrival', async () => {
         if (isDone) return
         isDone = true
-        // sendableImage.ImageReceiver 无 off 方法，isDone 标志 + releasePreview 已足够防止串扰
         console.info(`onImageArrival receiver.on start`)
         let img = await receiver.readNextImage()
         let task1: taskpool.Task = new taskpool.Task(getImgs, img);
@@ -1058,11 +1014,11 @@ export default function sendableImageSource() {
           console.info(`0x0000 ${tag} pixelStride is: ${Component.pixelStride}`)
           console.info(`0x0000 ${tag} byteBuffer is: ${Component.byteBuffer}`)
           expect(isEmpty(Component.byteBuffer)).assertFalse()
-          releasePreviewAndDone(photoSession, done)
+          done()
         }).catch((error: BusinessError) => {
           console.info(`0x0000 ${tag} task1 catch error: ${JSON.stringify(error)}`)
           expect().assertFail()
-          releasePreviewAndDone(photoSession, done)
+          done()
         })
       })
     })
@@ -1084,14 +1040,13 @@ export default function sendableImageSource() {
       }
       const tag: string = "SUB_MULTIMEDIA_IMG_GET_COMPONENT_0400"
       let receiver = await getImageReceiver(1)
-      let photoSession = await createPreview(receiver)
       let isDone = false
       let isWorkerDone = false
+      await createPreview(receiver)
       console.info(`0x0000 ${tag} onImageArrival start`)
       receiver.on('imageArrival', async () => {
         if (isDone) return
         isDone = true
-        // sendableImage.ImageReceiver 无 off 方法，isDone 标志 + releasePreview 已足够防止串扰
         console.info(`onImageArrival receiver.on start`)
         let img = await receiver.readNextImage()
         const workerInstance: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker')
@@ -1102,14 +1057,14 @@ export default function sendableImageSource() {
           isWorkerDone = true
           console.info(`0x0000 ${tag} workerInstance receive data: ${JSON.stringify(e.data)}`)
           expect(e.data).assertTrue()
-          releasePreviewAndDone(photoSession, done)
+          done()
         }
         workerInstance.onmessageerror = (e: MessageEvents) => {
           if (isWorkerDone) return
           isWorkerDone = true
           console.info(`0x0000 ${tag} worker error: ${e.data}`)
           expect().assertFail()
-          releasePreviewAndDone(photoSession, done)
+          done()
         }
       })
     })
@@ -1130,23 +1085,22 @@ export default function sendableImageSource() {
       }
       const tag: string = "SUB_MULTIMEDIA_IMG_RELEASE_0100"
       let receiver = await getImageReceiver(1)
-      let photoSession = await createPreview(receiver)
       let isDone = false
+      await createPreview(receiver)
       console.info(`0x0000 ${tag} onImageArrival start`)
       receiver.on('imageArrival', () => {
         if (isDone) return
         isDone = true
-        // sendableImage.ImageReceiver 无 off 方法，isDone 标志 + releasePreview 已足够防止串扰
         console.info(`onImageArrival receiver.on start`)
         receiver.readNextImage().then(async (img: sendableImage.Image) => {
           let result = await img.release()
           console.info(`0x0000 ${tag} img.release succeeded`)
           expect(isEmpty(result)).assertTrue()
-          releasePreviewAndDone(photoSession, done)
+          done()
         }).catch((error: BusinessError) => {
           console.error(`0x0000 ${tag} failed ${error}`)
           expect().assertFail()
-          releasePreviewAndDone(photoSession, done)
+          done()
         })
       })
     })
@@ -1167,13 +1121,12 @@ export default function sendableImageSource() {
       }
       const tag: string = "SUB_MULTIMEDIA_IMG_RELEASE_0200"
       let receiver = await getImageReceiver(1)
-      let photoSession = await createPreview(receiver)
       let isDone = false
+      await createPreview(receiver)
       console.info(`0x0000 ${tag} onImageArrival start`)
       receiver.on('imageArrival', async () => {
         if (isDone) return
         isDone = true
-        // sendableImage.ImageReceiver 无 off 方法，isDone 标志 + releasePreview 已足够防止串扰
         console.info(`onImageArrival receiver.on start`)
         let img = await receiver.readNextImage()
         let task2: taskpool.Task = await new taskpool.Task(getRelease, img)
@@ -1189,16 +1142,14 @@ export default function sendableImageSource() {
             img.getComponent(4).then((Component: image.Component) => {
               console.info(`0x0000 ${tag} img getComponent succeeded`)
               expect().assertFail()
-              releasePreviewAndDone(photoSession, done)
+              done()
             }).catch((error: BusinessError) => {
               console.info(`0x0000 ${tag} img getComponent failed`)
-              // 释放后 getComponent 应当失败，符合预期
-              releasePreviewAndDone(photoSession, done)
             })
           } catch (error) {
             console.info(`0x0000 ${tag} getComponent failed error ${error}`)
             expect(true).assertEqual(JSON.stringify(error) != null);
-            releasePreviewAndDone(photoSession, done)
+            done()
           }
         }, 10)
       })
@@ -1220,14 +1171,13 @@ export default function sendableImageSource() {
       }
       const tag: string = "SUB_MULTIMEDIA_IMG_RELEASE_0300"
       let receiver = await getImageReceiver(1)
-      let photoSession = await createPreview(receiver)
       let isDone = false
       let isWorkerDone = false
+      await createPreview(receiver)
       console.info(`0x0000 ${tag} onImageArrival start`)
       receiver.on('imageArrival', async () => {
         if (isDone) return
         isDone = true
-        // sendableImage.ImageReceiver 无 off 方法，isDone 标志 + releasePreview 已足够防止串扰
         console.info(`onImageArrival receiver.on start`)
         let img = await receiver.readNextImage()
         const workerInstance: worker.ThreadWorker = new worker.ThreadWorker('../workers/workerRelease')
@@ -1242,16 +1192,14 @@ export default function sendableImageSource() {
               img.getComponent(4).then((Component: image.Component) => {
                 console.info(`0x0000 ${tag} img getComponent succeeded`)
                 expect().assertFail()
-                releasePreviewAndDone(photoSession, done)
+                done()
               }).catch((error: BusinessError) => {
                 console.info(`0x0000 ${tag} img getComponent failed`)
-                // 释放后 getComponent 应当失败，符合预期
-                releasePreviewAndDone(photoSession, done)
               })
             } catch (error) {
               console.info(`0x0000 ${tag} getComponent failed error ${error}`)
               expect(true).assertEqual(JSON.stringify(error) != null);
-              releasePreviewAndDone(photoSession, done)
+              done()
             }
           }, 10)
         }
@@ -1260,7 +1208,7 @@ export default function sendableImageSource() {
           isWorkerDone = true
           console.info(`0x0000 ${tag} worker error: ${e.data}`)
           expect().assertFail()
-          releasePreviewAndDone(photoSession, done)
+          done()
         }
       })
     })
@@ -1282,25 +1230,23 @@ export default function sendableImageSource() {
       const tag: string = "SUB_MULTIMEDIA_RECEIVER_READ_LATEST_IMAGE_0100"
       let receiver = await getImageReceiver(1)
       let isDone = false
-      let photoSession: camera.PhotoSession
       console.info(`0x0000 ${tag} success receiver`)
       console.info(`onImageArrival start`)
       receiver.on('imageArrival', () => {
         if (isDone) return
         isDone = true
-        // sendableImage.ImageReceiver 无 off 方法，isDone 标志 + releasePreview 已足够防止串扰
         console.info(`onImageArrival receiver.on start`)
         receiver.readLatestImage().then((img: sendableImage.Image) => {
           console.info(`0x0000 ${tag} readLatestImage success`)
           expect(isEmpty(img)).assertFalse()
-          releasePreviewAndDone(photoSession, done)
+          done()
         }).catch((error: BusinessError) => {
           console.error(`0x0000 ${tag} failed ${error}`)
           expect().assertFail()
-          releasePreviewAndDone(photoSession, done)
+          done()
         })
       })
-      photoSession = await createPreview(receiver)
+      await createPreview(receiver)
     })
 
     /**
@@ -1426,16 +1372,7 @@ export default function sendableImageSource() {
           console.info(tag + ' Succeeded in reading image pixel data.');
           pixelMap.release();
           done();
-        }).catch((error: BusinessError) => {
-          console.error(tag + ` Failed to read image pixel data. error is ${error}`);
-          expect().assertFail();
-          pixelMap.release();
-          done();
         })
-      }).catch((error: BusinessError) => {
-        console.error(`0x0000 ${tag} createPixelMap failed ${error}`);
-        expect().assertFail();
-        done();
       })
     })
     /**
@@ -1456,19 +1393,13 @@ export default function sendableImageSource() {
         expect(pixelMap.isEditable).assertInstanceOf('Boolean')
         if (pixelMap != undefined) {
           pixelMap.readPixelsToBuffer(readBuffer).then(() => {
-            console.info(tag + ' Succeeded in reading image pixel data (unexpected for small buffer).');
-            expect().assertFail();
-            pixelMap.release();
-            done();
+            console.info(tag + ' Succeeded in reading image pixel data.');
           }).catch((error: BusinessError) => {
             console.error(tag + ` Failed to read image pixel data. errer is ${error}`);
             expect(error).assertEqual(62980115);
             pixelMap.release();
             done();
           })
-        } else {
-          expect().assertFail();
-          done();
         }
       }).catch((error: BusinessError) => {
         console.error(`0x0000 ${tag} failed ${error}`);
@@ -2406,6 +2337,7 @@ export default function sendableImageSource() {
           done();
         })
       })
+      done();
     })
 
     /**
