@@ -31,10 +31,10 @@ export default function SelectTest() {
     });
 
 
-    /*
-     *@tc.number SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0030
-     *@tc.name   SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0030
-     *@tc.desc   Sets the optionWidth and optionHeight property parameter to 200
+    /**
+     * @tc.number SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0030
+     * @tc.name   SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0030
+     * @tc.desc   Sets the optionWidth and optionHeight property parameter to 200
      */
     it('SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0030', Level.LEVEL1, async (done: Function) => {
       console.info('SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0030 START');
@@ -51,10 +51,10 @@ export default function SelectTest() {
       done();
     });
 
-    /*
-     *@tc.number SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0040
-     *@tc.name   SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0040
-     *@tc.desc   Sets the optionWidth and optionHeight property parameter to 400
+    /**
+     * @tc.number SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0040
+     * @tc.name   SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0040
+     * @tc.desc   Sets the optionWidth and optionHeight property parameter to 400
      */
     it('SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0040', Level.LEVEL1, async (done: Function) => {
       console.info('SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0040 START');
@@ -71,10 +71,10 @@ export default function SelectTest() {
       done();
     });
 
-    /*
-     *@tc.number SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0050
-     *@tc.name   SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0050
-     *@tc.desc   Sets the optionWidth and optionHeight property parameter to FIT_TRIGGER and 600
+    /**
+     * @tc.number SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0050
+     * @tc.name   SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0050
+     * @tc.desc   Sets the optionWidth and optionHeight property parameter to FIT_TRIGGER and 600
      */
     it('SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0050', Level.LEVEL1, async (done: Function) => {
       console.info('SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0050 START');
@@ -91,10 +91,10 @@ export default function SelectTest() {
       done();
     });
 
-    /*
-     *@tc.number SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0060
-     *@tc.name   SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0060
-     *@tc.desc   Sets the optionWidth and optionHeight property parameter to FIT_CONTENT and 600
+    /**
+     * @tc.number SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0060
+     * @tc.name   SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0060
+     * @tc.desc   Sets the optionWidth and optionHeight property parameter to FIT_CONTENT and 600
      */
     it('SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0060', Level.LEVEL1, async (done: Function) => {
       console.info('SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0060 START');
@@ -112,10 +112,10 @@ export default function SelectTest() {
       done();
     });
 
-    /*
-     *@tc.number SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0070
-     *@tc.name   SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0070
-     *@tc.desc   Sets the optionWidth and optionHeight property parameter to default value
+    /**
+     * @tc.number SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0070
+     * @tc.name   SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0070
+     * @tc.desc   Sets the optionWidth and optionHeight property parameter to default value
      */
     it('SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0070', Level.LEVEL1, async (done: Function) => {
       console.info('SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0070 START');
