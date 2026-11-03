@@ -249,7 +249,7 @@ export default function EtherNetTest(): void {
         ExpectTrue(localProxy.exclusionList.length === 2);
         const ethernetProxy: ethernet.HttpProxy = {
           host: localProxy.host,
-          port: localProxy.port as int,
+          port: localProxy.port.toInt(),
           exclusionList: localProxy.exclusionList
         } as ethernet.HttpProxy;
         ExpectTrue(ethernetProxy.host === localProxy.host);
