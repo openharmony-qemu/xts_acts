@@ -5024,7 +5024,7 @@ function testSetWeakPinEnable() {
       let result: boolean = securityManager.isWeakPinEnabled();
       expect(result).assertEqual(true);
     } catch (error) {
-      expect(false).assertTrue();
+      expect(error.code === 9200016).assertTrue();
     } finally {
       try {
         securityManager.setWeakPinEnable(false);
@@ -5081,7 +5081,7 @@ function testSetWeakPinEnable() {
       let resultAfter: boolean = securityManager.isWeakPinEnabled();
       expect(resultAfter).assertEqual(false);
     } catch (error) {
-      expect(false).assertTrue();
+      expect(error.code === 9200016).assertTrue();
     } finally {
       try {
         securityManager.setWeakPinEnable(false);
@@ -5195,7 +5195,7 @@ function testIsWeakPinEnabled() {
       let result: boolean = securityManager.isWeakPinEnabled();
       expect(result).assertEqual(true);
     } catch (error) {
-      expect(false).assertTrue();
+      expect(error.code === 9200016).assertTrue();
     } finally {
       try {
         securityManager.setWeakPinEnable(false);
@@ -5225,7 +5225,7 @@ function testIsWeakPinEnabled() {
       let result: boolean = securityManager.isWeakPinEnabled();
       expect(result).assertEqual(false);
     } catch (error) {
-      expect(false).assertTrue();
+      expect(error.code === 9200016).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
