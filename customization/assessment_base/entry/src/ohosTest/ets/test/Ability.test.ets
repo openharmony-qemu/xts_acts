@@ -825,7 +825,7 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_duration_Success_0001', Level.LEVEL0, async () => {
+    it('SUB_Customization_Assessment_duration_Success_0001', Level.LEVEL0, async (done: () => void) => {
       const testNum = 'SUB_Customization_Assessment_duration_Success_0001';
       hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
 
@@ -837,6 +837,7 @@ export default function AutomaticSceneConTest() {
       expect(config.duration).assertEqual(7200000);
       expect(typeof config.duration).assertEqual('number');
 
+      done();
     })
 
     /**
@@ -847,7 +848,7 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_duration_Success_0002', Level.LEVEL0, async () => {
+    it('SUB_Customization_Assessment_duration_Success_0002', Level.LEVEL0, async (done: () => void) => {
       const testNum = 'SUB_Customization_Assessment_duration_Success_0002';
       hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
 
@@ -858,6 +859,7 @@ export default function AutomaticSceneConTest() {
       };
       expect(config.duration).assertEqual(0);
       expect(typeof config.duration).assertEqual('number');
+      done();
     })
 
     /**
@@ -868,7 +870,7 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_duration_Success_0003', Level.LEVEL0, async () => {
+    it('SUB_Customization_Assessment_duration_Success_0003', Level.LEVEL0, async (done: () => void) => {
       const testNum = 'SUB_Customization_Assessment_duration_Success_0003';
       hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
 
@@ -880,6 +882,7 @@ export default function AutomaticSceneConTest() {
       expect(config.duration).assertEqual(0);
       expect(config.allowedApps.length).assertEqual(1);
       expect(config.allowedApps[0]).assertEqual('com.example.dictionary');
+      done();
     })
 
     /**
@@ -890,7 +893,7 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_allowedApps_Success_0001', Level.LEVEL0, async () => {
+    it('SUB_Customization_Assessment_allowedApps_Success_0001', Level.LEVEL0, async (done: () => void) => {
       const testNum = 'SUB_Customization_Assessment_allowedApps_Success_0001';
       hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
 
@@ -903,6 +906,7 @@ export default function AutomaticSceneConTest() {
       expect(config.allowedApps[0]).assertEqual('com.example.dictionary');
       expect(config.allowedApps[1]).assertEqual('com.example.app2');
       expect(config.allowedApps[2]).assertEqual('com.example.app3');
+      done();
     })
 
     /**
@@ -913,7 +917,7 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_allowedApps_Success_0002', Level.LEVEL0, async () => {
+    it('SUB_Customization_Assessment_allowedApps_Success_0002', Level.LEVEL0, async (done: () => void) => {
       const testNum = 'SUB_Customization_Assessment_allowedApps_Success_0002';
       hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
 
@@ -924,6 +928,7 @@ export default function AutomaticSceneConTest() {
       };
       expect(config.allowedApps.length).assertEqual(0);
       expect(Array.isArray(config.allowedApps)).assertTrue();
+      done();
     })
 
     /**
@@ -934,7 +939,7 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_allowedApps_Success_0003', Level.LEVEL0, async () => {
+    it('SUB_Customization_Assessment_allowedApps_Success_0003', Level.LEVEL0, async (done: () => void) => {
       const testNum = 'SUB_Customization_Assessment_allowedApps_Success_0003';
       hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
 
@@ -950,6 +955,7 @@ export default function AutomaticSceneConTest() {
       expect(config.allowedApps.length).assertEqual(10);
       expect(config.allowedApps[0]).assertEqual('com.samples.app0');
       expect(config.allowedApps[9]).assertEqual('com.samples.app9');
+      done();
     })
 
     /**
@@ -960,7 +966,7 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_assessmentErrorCode_Success_0001', Level.LEVEL0, async () => {
+    it('SUB_Customization_Assessment_assessmentErrorCode_Success_0001', Level.LEVEL0, async (done: () => void) => {
       const testNum = 'SUB_Customization_Assessment_assessmentErrorCode_Success_0001';
       hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
 
@@ -969,6 +975,7 @@ export default function AutomaticSceneConTest() {
       expect(assessment.AssessmentErrorCode.TIMEOUT).assertEqual(2);
       expect(assessment.AssessmentErrorCode.SYSTEM_ERROR).assertEqual(3);
       expect(assessment.AssessmentErrorCode.ENV_ANOMALY).assertEqual(4);
+      done();
     })
 
 
@@ -980,7 +987,7 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_assessmentError_Success_0001', Level.LEVEL0, async () => {
+    it('SUB_Customization_Assessment_assessmentError_Success_0001', Level.LEVEL0, async (done: () => void) => {
       const testNum = 'SUB_Customization_Assessment_assessmentError_Success_0001';
       hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
 
@@ -1025,17 +1032,18 @@ export default function AutomaticSceneConTest() {
       expect(captureInterruptInfo!.code).assertEqual(0);
       expect(captureInterruptInfo!.code).assertEqual(assessment.AssessmentErrorCode.OK);
       expect(captureInterruptInfo!.message).assertEqual('Assessment begin  successfully');
+      done();
     })
 
     /**
      * @tc.number SUB_Customization_Assessment_assessmentError_Success_0002
      * @tc.name   SUB_Customization_Assessment_assessmentError_Success_0002
-     * @tc.desc   the message field of the AssessmentError interface is optional and defaults to an empty string
+     * @tc.desc   the message field of the AssessmentError interface is optional and is undefined when not provided
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_assessmentError_Success_0002', Level.LEVEL0, async () => {
+    it('SUB_Customization_Assessment_assessmentError_Success_0002', Level.LEVEL0, async (done: () => void) => {
       const testNum = 'SUB_Customization_Assessment_assessmentError_Success_0002';
       hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
       let error: assessment.AssessmentError = {
@@ -1077,6 +1085,7 @@ export default function AutomaticSceneConTest() {
       expect(captureInterruptInfo!.code).assertEqual(0);
       expect(captureInterruptInfo!.code).assertEqual(assessment.AssessmentErrorCode.OK);
       expect(captureInterruptInfo!.message).assertEqual(undefined);
+      done();
     })
 
     /**
@@ -1087,7 +1096,7 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_assessmentError_Success_0003', Level.LEVEL0, async () => {
+    it('SUB_Customization_Assessment_assessmentError_Success_0003', Level.LEVEL0, async (done: () => void) => {
       const testNum = 'SUB_Customization_Assessment_assessmentError_Success_0003';
       hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
 
@@ -1133,17 +1142,18 @@ export default function AutomaticSceneConTest() {
       expect(captureInterruptInfo!.code).assertEqual(1);
       expect(captureInterruptInfo!.code).assertEqual(assessment.AssessmentErrorCode.USER_CANCEL);
       expect(captureInterruptInfo!.message).assertEqual('User cancelled the assessment');
+      done();
     })
 
     /**
      * @tc.number SUB_Customization_Assessment_assessmentError_Success_0004
      * @tc.name   SUB_Customization_Assessment_assessmentError_Success_0004
-     * @tc.desc   the AssessmentError interface with USER_CANCEL code and message
+     * @tc.desc   the AssessmentError interface with TIMEOUT code and message
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_assessmentError_Success_0004', Level.LEVEL0, async () => {
+    it('SUB_Customization_Assessment_assessmentError_Success_0004', Level.LEVEL0, async (done: () => void) => {
       const testNum = 'SUB_Customization_Assessment_assessmentError_Success_0004';
       hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
 
@@ -1189,17 +1199,18 @@ export default function AutomaticSceneConTest() {
       expect(captureInterruptInfo!.code).assertEqual(2);
       expect(captureInterruptInfo!.code).assertEqual(assessment.AssessmentErrorCode.TIMEOUT);
       expect(captureInterruptInfo!.message).assertEqual('User cancelled the assessment');
+      done();
     })
 
     /**
      * @tc.number SUB_Customization_Assessment_assessmentError_Success_0005
      * @tc.name   SUB_Customization_Assessment_assessmentError_Success_0005
-     * @tc.desc   the AssessmentError interface with USER_CANCEL code and message
+     * @tc.desc   the AssessmentError interface with SYSTEM_ERROR code and message
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_assessmentError_Success_0005', Level.LEVEL0, async () => {
+    it('SUB_Customization_Assessment_assessmentError_Success_0005', Level.LEVEL0, async (done: () => void) => {
       const testNum = 'SUB_Customization_Assessment_assessmentError_Success_0005';
       hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
 
@@ -1245,17 +1256,18 @@ export default function AutomaticSceneConTest() {
       expect(captureInterruptInfo!.code).assertEqual(3);
       expect(captureInterruptInfo!.code).assertEqual(assessment.AssessmentErrorCode.SYSTEM_ERROR);
       expect(captureInterruptInfo!.message).assertEqual('User cancelled the assessment');
+      done();
     })
 
     /**
      * @tc.number SUB_Customization_Assessment_assessmentError_Success_0006
      * @tc.name   SUB_Customization_Assessment_assessmentError_Success_0006
-     * @tc.desc   the AssessmentError interface with USER_CANCEL code and message
+     * @tc.desc   the AssessmentError interface with ENV_ANOMALY code and message
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_assessmentError_Success_0006', Level.LEVEL0, async () => {
+    it('SUB_Customization_Assessment_assessmentError_Success_0006', Level.LEVEL0, async (done: () => void) => {
       const testNum = 'SUB_Customization_Assessment_assessmentError_Success_0006';
       hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
 
@@ -1301,6 +1313,7 @@ export default function AutomaticSceneConTest() {
       expect(captureInterruptInfo!.code).assertEqual(4);
       expect(captureInterruptInfo!.code).assertEqual(assessment.AssessmentErrorCode.ENV_ANOMALY);
       expect(captureInterruptInfo!.message).assertEqual('User cancelled the assessment');
+      done();
     })
 
 
@@ -1312,7 +1325,7 @@ export default function AutomaticSceneConTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Customization_Assessment_assessmentInterruptInfo_Success_0001', Level.LEVEL0, async () => {
+    it('SUB_Customization_Assessment_assessmentInterruptInfo_Success_0001', Level.LEVEL0, async (done: () => void) => {
       const testNum = 'SUB_Customization_Assessment_assessmentInterruptInfo_Success_0001';
       hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
 
@@ -1324,6 +1337,7 @@ export default function AutomaticSceneConTest() {
       expect(info.code).assertEqual(assessment.AssessmentErrorCode.USER_CANCEL);
       expect(typeof info.message).assertEqual('string');
       expect(info.message).assertEqual('User cancelled the assessment');
+      done();
     })
 
     /**
@@ -1913,7 +1927,7 @@ export default function AutomaticSceneConTest() {
     /**
      * @tc.number SUB_Customization_Assessment_assessmentError_Success_0008
      * @tc.name SUB_Customization_Assessment_assessmentError_Success_0008
-     * @tc.desc the AssessmentError interface contains code and message
+     * @tc.desc the AssessmentError interface accepts an illegal code -1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL0
@@ -1947,7 +1961,7 @@ export default function AutomaticSceneConTest() {
     /**
      * @tc.number SUB_Customization_Assessment_assessmentError_Success_0009
      * @tc.name SUB_Customization_Assessment_assessmentError_Success_0009
-     * @tc.desc the AssessmentError interface contains code and message
+     * @tc.desc the AssessmentError object with an illegal code -1 cast to AssessmentInterruptInfo
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL0
@@ -1977,6 +1991,674 @@ export default function AutomaticSceneConTest() {
           expect(err.code).assertEqual(undefined);
         }
       }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_Customization_Assessment_onBegin_errorCode_OK_0001
+     * @tc.name   SUB_Customization_Assessment_onBegin_errorCode_OK_0001
+     * @tc.desc   onBegin callback receives the AssessmentError with OK code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Customization_Assessment_onBegin_errorCode_OK_0001', Level.LEVEL0, async (done: () => void) => {
+      const testNum = 'SUB_Customization_Assessment_onBegin_errorCode_OK_0001';
+      hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
+
+      let error: assessment.AssessmentError = {
+        code: assessment.AssessmentErrorCode.OK,
+        message: 'Assessment begin successfully'
+      };
+      let captureBeginErr: assessment.AssessmentError | null = null;
+      let assessmentCallback: assessment.IAssessmentCallback = {
+        onBegin: (err) => {
+          captureBeginErr = err;
+          if (err.code === assessment.AssessmentErrorCode.OK) {
+            hilog.info(DOMAIN, TAG, 'Assessment began successfully.');
+          } else {
+            hilog.error(DOMAIN, TAG, `Assessment begin failed, code: ${err.code}, message: ${err.message}`);
+          }
+        },
+        onInterrupted: (info: assessment.AssessmentInterruptInfo) => {
+          hilog.warn(DOMAIN, TAG, `Assessment interrupted, code: ${info.code}, message: ${info.message}`);
+        },
+        onEnd: () => {
+          hilog.info(DOMAIN, TAG, 'Assessment ended.');
+        }
+      };
+
+      assessmentCallback.onBegin(error);
+
+      expect(captureBeginErr!.code).assertEqual(0);
+      expect(captureBeginErr!.code).assertEqual(assessment.AssessmentErrorCode.OK);
+      expect(captureBeginErr!.message).assertEqual('Assessment begin successfully');
+      done();
+    })
+
+    /**
+     * @tc.number SUB_Customization_Assessment_onBegin_errorCode_USER_CANCEL_0002
+     * @tc.name   SUB_Customization_Assessment_onBegin_errorCode_USER_CANCEL_0002
+     * @tc.desc   onBegin callback receives the AssessmentError with USER_CANCEL code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Customization_Assessment_onBegin_errorCode_USER_CANCEL_0002', Level.LEVEL0, async (done: () => void) => {
+      const testNum = 'SUB_Customization_Assessment_onBegin_errorCode_USER_CANCEL_0002';
+      hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
+
+      let error: assessment.AssessmentError = {
+        code: assessment.AssessmentErrorCode.USER_CANCEL,
+        message: 'User cancelled the assessment'
+      };
+      let captureBeginErr: assessment.AssessmentError | null = null;
+      let assessmentCallback: assessment.IAssessmentCallback = {
+        onBegin: (err) => {
+          captureBeginErr = err;
+          if (err.code === assessment.AssessmentErrorCode.OK) {
+            hilog.info(DOMAIN, TAG, 'Assessment began successfully.');
+          } else {
+            hilog.error(DOMAIN, TAG, `Assessment begin failed, code: ${err.code}, message: ${err.message}`);
+          }
+        },
+        onInterrupted: (info: assessment.AssessmentInterruptInfo) => {
+          hilog.warn(DOMAIN, TAG, `Assessment interrupted, code: ${info.code}, message: ${info.message}`);
+        },
+        onEnd: () => {
+          hilog.info(DOMAIN, TAG, 'Assessment ended.');
+        }
+      };
+
+      assessmentCallback.onBegin(error);
+
+      expect(captureBeginErr!.code).assertEqual(1);
+      expect(captureBeginErr!.code).assertEqual(assessment.AssessmentErrorCode.USER_CANCEL);
+      expect(captureBeginErr!.message).assertEqual('User cancelled the assessment');
+      done();
+    })
+
+    /**
+     * @tc.number SUB_Customization_Assessment_onBegin_errorCode_TIMEOUT_0003
+     * @tc.name   SUB_Customization_Assessment_onBegin_errorCode_TIMEOUT_0003
+     * @tc.desc   onBegin callback receives the AssessmentError with TIMEOUT code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Customization_Assessment_onBegin_errorCode_TIMEOUT_0003', Level.LEVEL0, async (done: () => void) => {
+      const testNum = 'SUB_Customization_Assessment_onBegin_errorCode_TIMEOUT_0003';
+      hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
+
+      let error: assessment.AssessmentError = {
+        code: assessment.AssessmentErrorCode.TIMEOUT,
+        message: 'Assessment timed out'
+      };
+      let captureBeginErr: assessment.AssessmentError | null = null;
+      let assessmentCallback: assessment.IAssessmentCallback = {
+        onBegin: (err) => {
+          captureBeginErr = err;
+          if (err.code === assessment.AssessmentErrorCode.OK) {
+            hilog.info(DOMAIN, TAG, 'Assessment began successfully.');
+          } else {
+            hilog.error(DOMAIN, TAG, `Assessment begin failed, code: ${err.code}, message: ${err.message}`);
+          }
+        },
+        onInterrupted: (info: assessment.AssessmentInterruptInfo) => {
+          hilog.warn(DOMAIN, TAG, `Assessment interrupted, code: ${info.code}, message: ${info.message}`);
+        },
+        onEnd: () => {
+          hilog.info(DOMAIN, TAG, 'Assessment ended.');
+        }
+      };
+
+      assessmentCallback.onBegin(error);
+
+      expect(captureBeginErr!.code).assertEqual(2);
+      expect(captureBeginErr!.code).assertEqual(assessment.AssessmentErrorCode.TIMEOUT);
+      expect(captureBeginErr!.message).assertEqual('Assessment timed out');
+      done();
+    })
+
+    /**
+     * @tc.number SUB_Customization_Assessment_onBegin_errorCode_SYSTEM_ERROR_0004
+     * @tc.name   SUB_Customization_Assessment_onBegin_errorCode_SYSTEM_ERROR_0004
+     * @tc.desc   onBegin callback receives the AssessmentError with SYSTEM_ERROR code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Customization_Assessment_onBegin_errorCode_SYSTEM_ERROR_0004', Level.LEVEL0, async (done: () => void) => {
+      const testNum = 'SUB_Customization_Assessment_onBegin_errorCode_SYSTEM_ERROR_0004';
+      hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
+
+      let error: assessment.AssessmentError = {
+        code: assessment.AssessmentErrorCode.SYSTEM_ERROR,
+        message: 'Assessment system error'
+      };
+      let captureBeginErr: assessment.AssessmentError | null = null;
+      let assessmentCallback: assessment.IAssessmentCallback = {
+        onBegin: (err) => {
+          captureBeginErr = err;
+          if (err.code === assessment.AssessmentErrorCode.OK) {
+            hilog.info(DOMAIN, TAG, 'Assessment began successfully.');
+          } else {
+            hilog.error(DOMAIN, TAG, `Assessment begin failed, code: ${err.code}, message: ${err.message}`);
+          }
+        },
+        onInterrupted: (info: assessment.AssessmentInterruptInfo) => {
+          hilog.warn(DOMAIN, TAG, `Assessment interrupted, code: ${info.code}, message: ${info.message}`);
+        },
+        onEnd: () => {
+          hilog.info(DOMAIN, TAG, 'Assessment ended.');
+        }
+      };
+
+      assessmentCallback.onBegin(error);
+
+      expect(captureBeginErr!.code).assertEqual(3);
+      expect(captureBeginErr!.code).assertEqual(assessment.AssessmentErrorCode.SYSTEM_ERROR);
+      expect(captureBeginErr!.message).assertEqual('Assessment system error');
+      done();
+    })
+
+    /**
+     * @tc.number SUB_Customization_Assessment_onBegin_errorCode_ENV_ANOMALY_0005
+     * @tc.name   SUB_Customization_Assessment_onBegin_errorCode_ENV_ANOMALY_0005
+     * @tc.desc   onBegin callback receives the AssessmentError with ENV_ANOMALY code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Customization_Assessment_onBegin_errorCode_ENV_ANOMALY_0005', Level.LEVEL0, async (done: () => void) => {
+      const testNum = 'SUB_Customization_Assessment_onBegin_errorCode_ENV_ANOMALY_0005';
+      hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
+
+      let error: assessment.AssessmentError = {
+        code: assessment.AssessmentErrorCode.ENV_ANOMALY,
+        message: 'Assessment environment anomaly'
+      };
+      let captureBeginErr: assessment.AssessmentError | null = null;
+      let assessmentCallback: assessment.IAssessmentCallback = {
+        onBegin: (err) => {
+          captureBeginErr = err;
+          if (err.code === assessment.AssessmentErrorCode.OK) {
+            hilog.info(DOMAIN, TAG, 'Assessment began successfully.');
+          } else {
+            hilog.error(DOMAIN, TAG, `Assessment begin failed, code: ${err.code}, message: ${err.message}`);
+          }
+        },
+        onInterrupted: (info: assessment.AssessmentInterruptInfo) => {
+          hilog.warn(DOMAIN, TAG, `Assessment interrupted, code: ${info.code}, message: ${info.message}`);
+        },
+        onEnd: () => {
+          hilog.info(DOMAIN, TAG, 'Assessment ended.');
+        }
+      };
+
+      assessmentCallback.onBegin(error);
+
+      expect(captureBeginErr!.code).assertEqual(4);
+      expect(captureBeginErr!.code).assertEqual(assessment.AssessmentErrorCode.ENV_ANOMALY);
+      expect(captureBeginErr!.message).assertEqual('Assessment environment anomaly');
+      done();
+    })
+
+    /**
+     * @tc.number SUB_Customization_Assessment_onBegin_errorCode_illegal_0006
+     * @tc.name   SUB_Customization_Assessment_onBegin_errorCode_illegal_0006
+     * @tc.desc   onBegin callback receives the AssessmentError with illegal code -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Customization_Assessment_onBegin_errorCode_illegal_0006', Level.LEVEL0, async (done: () => void) => {
+      const testNum = 'SUB_Customization_Assessment_onBegin_errorCode_illegal_0006';
+      hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
+
+      let error: assessment.AssessmentError = {
+        code: -1 as assessment.AssessmentErrorCode,
+        message: 'Assessment begin successfully'
+      };
+      let captureBeginErr: assessment.AssessmentError | null = null;
+      let assessmentCallback: assessment.IAssessmentCallback = {
+        onBegin: (err) => {
+          captureBeginErr = err;
+          if (err.code === assessment.AssessmentErrorCode.OK) {
+            hilog.info(DOMAIN, TAG, 'Assessment began successfully.');
+          } else {
+            hilog.error(DOMAIN, TAG, `Assessment begin failed, code: ${err.code}, message: ${err.message}`);
+          }
+        },
+        onInterrupted: (info: assessment.AssessmentInterruptInfo) => {
+          hilog.warn(DOMAIN, TAG, `Assessment interrupted, code: ${info.code}, message: ${info.message}`);
+        },
+        onEnd: () => {
+          hilog.info(DOMAIN, TAG, 'Assessment ended.');
+        }
+      };
+
+      assessmentCallback.onBegin(error);
+
+      expect(captureBeginErr!.code).assertEqual(-1);
+      expect(captureBeginErr!.message).assertEqual('Assessment begin successfully');
+      done();
+    })
+
+    /**
+     * @tc.number SUB_Customization_Assessment_onBegin_errorCode_illegal_0007
+     * @tc.name   SUB_Customization_Assessment_onBegin_errorCode_illegal_0007
+     * @tc.desc   onBegin callback receives the AssessmentError with illegal code 5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Customization_Assessment_onBegin_errorCode_illegal_0007', Level.LEVEL0, async (done: () => void) => {
+      const testNum = 'SUB_Customization_Assessment_onBegin_errorCode_illegal_0007';
+      hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
+
+      let error: assessment.AssessmentError = {
+        code: 5 as assessment.AssessmentErrorCode,
+        message: 'Assessment begin successfully'
+      };
+      let captureBeginErr: assessment.AssessmentError | null = null;
+      let assessmentCallback: assessment.IAssessmentCallback = {
+        onBegin: (err) => {
+          captureBeginErr = err;
+          if (err.code === assessment.AssessmentErrorCode.OK) {
+            hilog.info(DOMAIN, TAG, 'Assessment began successfully.');
+          } else {
+            hilog.error(DOMAIN, TAG, `Assessment begin failed, code: ${err.code}, message: ${err.message}`);
+          }
+        },
+        onInterrupted: (info: assessment.AssessmentInterruptInfo) => {
+          hilog.warn(DOMAIN, TAG, `Assessment interrupted, code: ${info.code}, message: ${info.message}`);
+        },
+        onEnd: () => {
+          hilog.info(DOMAIN, TAG, 'Assessment ended.');
+        }
+      };
+
+      assessmentCallback.onBegin(error);
+
+      expect(captureBeginErr!.code).assertEqual(5);
+      expect(captureBeginErr!.message).assertEqual('Assessment begin successfully');
+      done();
+    })
+
+    /**
+     * @tc.number SUB_Customization_Assessment_onInterrupted_errorCode_OK_0001
+     * @tc.name   SUB_Customization_Assessment_onInterrupted_errorCode_OK_0001
+     * @tc.desc   onInterrupted callback receives the AssessmentInterruptInfo with OK code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Customization_Assessment_onInterrupted_errorCode_OK_0001', Level.LEVEL0, async (done: () => void) => {
+      const testNum = 'SUB_Customization_Assessment_onInterrupted_errorCode_OK_0001';
+      hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
+
+      let interruptInfo: assessment.AssessmentInterruptInfo = {
+        code: assessment.AssessmentErrorCode.OK,
+        message: 'Assessment interrupted'
+      };
+      let captureInterruptInfo: assessment.AssessmentInterruptInfo | null = null;
+      let assessmentCallback: assessment.IAssessmentCallback = {
+        onBegin: (err) => {
+          if (err.code === assessment.AssessmentErrorCode.OK) {
+            hilog.info(DOMAIN, TAG, 'Assessment began successfully.');
+          } else {
+            hilog.error(DOMAIN, TAG, `Assessment begin failed, code: ${err.code}, message: ${err.message}`);
+          }
+        },
+        onInterrupted: (info: assessment.AssessmentInterruptInfo) => {
+          captureInterruptInfo = info;
+          hilog.warn(DOMAIN, TAG, `Assessment interrupted, code: ${info.code}, message: ${info.message}`);
+        },
+        onEnd: () => {
+          hilog.info(DOMAIN, TAG, 'Assessment ended.');
+        }
+      };
+
+      assessmentCallback.onInterrupted(interruptInfo);
+
+      expect(captureInterruptInfo!.code).assertEqual(0);
+      expect(captureInterruptInfo!.code).assertEqual(assessment.AssessmentErrorCode.OK);
+      expect(captureInterruptInfo!.message).assertEqual('Assessment interrupted');
+      done();
+    })
+
+    /**
+     * @tc.number SUB_Customization_Assessment_onInterrupted_errorCode_USER_CANCEL_0002
+     * @tc.name   SUB_Customization_Assessment_onInterrupted_errorCode_USER_CANCEL_0002
+     * @tc.desc   onInterrupted callback receives the AssessmentInterruptInfo with USER_CANCEL code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Customization_Assessment_onInterrupted_errorCode_USER_CANCEL_0002', Level.LEVEL0, async (done: () => void) => {
+      const testNum = 'SUB_Customization_Assessment_onInterrupted_errorCode_USER_CANCEL_0002';
+      hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
+
+      let interruptInfo: assessment.AssessmentInterruptInfo = {
+        code: assessment.AssessmentErrorCode.USER_CANCEL,
+        message: 'User cancelled the assessment'
+      };
+      let captureInterruptInfo: assessment.AssessmentInterruptInfo | null = null;
+      let assessmentCallback: assessment.IAssessmentCallback = {
+        onBegin: (err) => {
+          if (err.code === assessment.AssessmentErrorCode.OK) {
+            hilog.info(DOMAIN, TAG, 'Assessment began successfully.');
+          } else {
+            hilog.error(DOMAIN, TAG, `Assessment begin failed, code: ${err.code}, message: ${err.message}`);
+          }
+        },
+        onInterrupted: (info: assessment.AssessmentInterruptInfo) => {
+          captureInterruptInfo = info;
+          hilog.warn(DOMAIN, TAG, `Assessment interrupted, code: ${info.code}, message: ${info.message}`);
+        },
+        onEnd: () => {
+          hilog.info(DOMAIN, TAG, 'Assessment ended.');
+        }
+      };
+
+      assessmentCallback.onInterrupted(interruptInfo);
+
+      expect(captureInterruptInfo!.code).assertEqual(1);
+      expect(captureInterruptInfo!.code).assertEqual(assessment.AssessmentErrorCode.USER_CANCEL);
+      expect(captureInterruptInfo!.message).assertEqual('User cancelled the assessment');
+      done();
+    })
+
+    /**
+     * @tc.number SUB_Customization_Assessment_onInterrupted_errorCode_TIMEOUT_0003
+     * @tc.name   SUB_Customization_Assessment_onInterrupted_errorCode_TIMEOUT_0003
+     * @tc.desc   onInterrupted callback receives the AssessmentInterruptInfo with TIMEOUT code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Customization_Assessment_onInterrupted_errorCode_TIMEOUT_0003', Level.LEVEL0, async (done: () => void) => {
+      const testNum = 'SUB_Customization_Assessment_onInterrupted_errorCode_TIMEOUT_0003';
+      hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
+
+      let interruptInfo: assessment.AssessmentInterruptInfo = {
+        code: assessment.AssessmentErrorCode.TIMEOUT,
+        message: 'Assessment timed out'
+      };
+      let captureInterruptInfo: assessment.AssessmentInterruptInfo | null = null;
+      let assessmentCallback: assessment.IAssessmentCallback = {
+        onBegin: (err) => {
+          if (err.code === assessment.AssessmentErrorCode.OK) {
+            hilog.info(DOMAIN, TAG, 'Assessment began successfully.');
+          } else {
+            hilog.error(DOMAIN, TAG, `Assessment begin failed, code: ${err.code}, message: ${err.message}`);
+          }
+        },
+        onInterrupted: (info: assessment.AssessmentInterruptInfo) => {
+          captureInterruptInfo = info;
+          hilog.warn(DOMAIN, TAG, `Assessment interrupted, code: ${info.code}, message: ${info.message}`);
+        },
+        onEnd: () => {
+          hilog.info(DOMAIN, TAG, 'Assessment ended.');
+        }
+      };
+
+      assessmentCallback.onInterrupted(interruptInfo);
+
+      expect(captureInterruptInfo!.code).assertEqual(2);
+      expect(captureInterruptInfo!.code).assertEqual(assessment.AssessmentErrorCode.TIMEOUT);
+      expect(captureInterruptInfo!.message).assertEqual('Assessment timed out');
+      done();
+    })
+
+    /**
+     * @tc.number SUB_Customization_Assessment_onInterrupted_errorCode_SYSTEM_ERROR_0004
+     * @tc.name   SUB_Customization_Assessment_onInterrupted_errorCode_SYSTEM_ERROR_0004
+     * @tc.desc   onInterrupted callback receives the AssessmentInterruptInfo with SYSTEM_ERROR code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Customization_Assessment_onInterrupted_errorCode_SYSTEM_ERROR_0004', Level.LEVEL0, async (done: () => void) => {
+      const testNum = 'SUB_Customization_Assessment_onInterrupted_errorCode_SYSTEM_ERROR_0004';
+      hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
+
+      let interruptInfo: assessment.AssessmentInterruptInfo = {
+        code: assessment.AssessmentErrorCode.SYSTEM_ERROR,
+        message: 'Assessment system error'
+      };
+      let captureInterruptInfo: assessment.AssessmentInterruptInfo | null = null;
+      let assessmentCallback: assessment.IAssessmentCallback = {
+        onBegin: (err) => {
+          if (err.code === assessment.AssessmentErrorCode.OK) {
+            hilog.info(DOMAIN, TAG, 'Assessment began successfully.');
+          } else {
+            hilog.error(DOMAIN, TAG, `Assessment begin failed, code: ${err.code}, message: ${err.message}`);
+          }
+        },
+        onInterrupted: (info: assessment.AssessmentInterruptInfo) => {
+          captureInterruptInfo = info;
+          hilog.warn(DOMAIN, TAG, `Assessment interrupted, code: ${info.code}, message: ${info.message}`);
+        },
+        onEnd: () => {
+          hilog.info(DOMAIN, TAG, 'Assessment ended.');
+        }
+      };
+
+      assessmentCallback.onInterrupted(interruptInfo);
+
+      expect(captureInterruptInfo!.code).assertEqual(3);
+      expect(captureInterruptInfo!.code).assertEqual(assessment.AssessmentErrorCode.SYSTEM_ERROR);
+      expect(captureInterruptInfo!.message).assertEqual('Assessment system error');
+      done();
+    })
+
+    /**
+     * @tc.number SUB_Customization_Assessment_onInterrupted_errorCode_ENV_ANOMALY_0005
+     * @tc.name   SUB_Customization_Assessment_onInterrupted_errorCode_ENV_ANOMALY_0005
+     * @tc.desc   onInterrupted callback receives the AssessmentInterruptInfo with ENV_ANOMALY code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Customization_Assessment_onInterrupted_errorCode_ENV_ANOMALY_0005', Level.LEVEL0, async (done: () => void) => {
+      const testNum = 'SUB_Customization_Assessment_onInterrupted_errorCode_ENV_ANOMALY_0005';
+      hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
+
+      let interruptInfo: assessment.AssessmentInterruptInfo = {
+        code: assessment.AssessmentErrorCode.ENV_ANOMALY,
+        message: 'Assessment environment anomaly'
+      };
+      let captureInterruptInfo: assessment.AssessmentInterruptInfo | null = null;
+      let assessmentCallback: assessment.IAssessmentCallback = {
+        onBegin: (err) => {
+          if (err.code === assessment.AssessmentErrorCode.OK) {
+            hilog.info(DOMAIN, TAG, 'Assessment began successfully.');
+          } else {
+            hilog.error(DOMAIN, TAG, `Assessment begin failed, code: ${err.code}, message: ${err.message}`);
+          }
+        },
+        onInterrupted: (info: assessment.AssessmentInterruptInfo) => {
+          captureInterruptInfo = info;
+          hilog.warn(DOMAIN, TAG, `Assessment interrupted, code: ${info.code}, message: ${info.message}`);
+        },
+        onEnd: () => {
+          hilog.info(DOMAIN, TAG, 'Assessment ended.');
+        }
+      };
+
+      assessmentCallback.onInterrupted(interruptInfo);
+
+      expect(captureInterruptInfo!.code).assertEqual(4);
+      expect(captureInterruptInfo!.code).assertEqual(assessment.AssessmentErrorCode.ENV_ANOMALY);
+      expect(captureInterruptInfo!.message).assertEqual('Assessment environment anomaly');
+      done();
+    })
+
+    /**
+     * @tc.number SUB_Customization_Assessment_onInterrupted_errorCode_illegal_0006
+     * @tc.name   SUB_Customization_Assessment_onInterrupted_errorCode_illegal_0006
+     * @tc.desc   onInterrupted callback receives the AssessmentInterruptInfo with illegal code -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Customization_Assessment_onInterrupted_errorCode_illegal_0006', Level.LEVEL0, async (done: () => void) => {
+      const testNum = 'SUB_Customization_Assessment_onInterrupted_errorCode_illegal_0006';
+      hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
+
+      let interruptInfo: assessment.AssessmentInterruptInfo = {
+        code: -1 as assessment.AssessmentErrorCode,
+        message: 'Assessment interrupted'
+      };
+      let captureInterruptInfo: assessment.AssessmentInterruptInfo | null = null;
+      let assessmentCallback: assessment.IAssessmentCallback = {
+        onBegin: (err) => {
+          if (err.code === assessment.AssessmentErrorCode.OK) {
+            hilog.info(DOMAIN, TAG, 'Assessment began successfully.');
+          } else {
+            hilog.error(DOMAIN, TAG, `Assessment begin failed, code: ${err.code}, message: ${err.message}`);
+          }
+        },
+        onInterrupted: (info: assessment.AssessmentInterruptInfo) => {
+          captureInterruptInfo = info;
+          hilog.warn(DOMAIN, TAG, `Assessment interrupted, code: ${info.code}, message: ${info.message}`);
+        },
+        onEnd: () => {
+          hilog.info(DOMAIN, TAG, 'Assessment ended.');
+        }
+      };
+
+      assessmentCallback.onInterrupted(interruptInfo);
+
+      expect(captureInterruptInfo!.code).assertEqual(-1);
+      expect(captureInterruptInfo!.message).assertEqual('Assessment interrupted');
+      done();
+    })
+
+    /**
+     * @tc.number SUB_Customization_Assessment_onInterrupted_errorCode_illegal_0007
+     * @tc.name   SUB_Customization_Assessment_onInterrupted_errorCode_illegal_0007
+     * @tc.desc   onInterrupted callback receives the AssessmentInterruptInfo with illegal code 5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Customization_Assessment_onInterrupted_errorCode_illegal_0007', Level.LEVEL0, async (done: () => void) => {
+      const testNum = 'SUB_Customization_Assessment_onInterrupted_errorCode_illegal_0007';
+      hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
+
+      let interruptInfo: assessment.AssessmentInterruptInfo = {
+        code: 5 as assessment.AssessmentErrorCode,
+        message: 'Assessment interrupted'
+      };
+      let captureInterruptInfo: assessment.AssessmentInterruptInfo | null = null;
+      let assessmentCallback: assessment.IAssessmentCallback = {
+        onBegin: (err) => {
+          if (err.code === assessment.AssessmentErrorCode.OK) {
+            hilog.info(DOMAIN, TAG, 'Assessment began successfully.');
+          } else {
+            hilog.error(DOMAIN, TAG, `Assessment begin failed, code: ${err.code}, message: ${err.message}`);
+          }
+        },
+        onInterrupted: (info: assessment.AssessmentInterruptInfo) => {
+          captureInterruptInfo = info;
+          hilog.warn(DOMAIN, TAG, `Assessment interrupted, code: ${info.code}, message: ${info.message}`);
+        },
+        onEnd: () => {
+          hilog.info(DOMAIN, TAG, 'Assessment ended.');
+        }
+      };
+
+      assessmentCallback.onInterrupted(interruptInfo);
+
+      expect(captureInterruptInfo!.code).assertEqual(5);
+      expect(captureInterruptInfo!.message).assertEqual('Assessment interrupted');
+      done();
+    })
+
+    /**
+     * @tc.number SUB_Customization_Assessment_onBegin_emptyMessage_0001
+     * @tc.name   SUB_Customization_Assessment_onBegin_emptyMessage_0001
+     * @tc.desc   onBegin callback receives the AssessmentError with an empty message
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Customization_Assessment_onBegin_emptyMessage_0001', Level.LEVEL0, async (done: () => void) => {
+      const testNum = 'SUB_Customization_Assessment_onBegin_emptyMessage_0001';
+      hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
+
+      let error: assessment.AssessmentError = {
+        code: assessment.AssessmentErrorCode.OK,
+        message: ''
+      };
+      let captureBeginErr: assessment.AssessmentError | null = null;
+      let assessmentCallback: assessment.IAssessmentCallback = {
+        onBegin: (err) => {
+          captureBeginErr = err;
+          if (err.code === assessment.AssessmentErrorCode.OK) {
+            hilog.info(DOMAIN, TAG, 'Assessment began successfully.');
+          } else {
+            hilog.error(DOMAIN, TAG, `Assessment begin failed, code: ${err.code}, message: ${err.message}`);
+          }
+        },
+        onInterrupted: (info: assessment.AssessmentInterruptInfo) => {
+          hilog.warn(DOMAIN, TAG, `Assessment interrupted, code: ${info.code}, message: ${info.message}`);
+        },
+        onEnd: () => {
+          hilog.info(DOMAIN, TAG, 'Assessment ended.');
+        }
+      };
+
+      assessmentCallback.onBegin(error);
+
+      expect(captureBeginErr!.code).assertEqual(0);
+      expect(captureBeginErr!.code).assertEqual(assessment.AssessmentErrorCode.OK);
+      expect(captureBeginErr!.message).assertEqual('');
+      done();
+    })
+
+    /**
+     * @tc.number SUB_Customization_Assessment_onInterrupted_emptyMessage_0001
+     * @tc.name   SUB_Customization_Assessment_onInterrupted_emptyMessage_0001
+     * @tc.desc   onInterrupted callback receives the AssessmentInterruptInfo with an empty message
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Customization_Assessment_onInterrupted_emptyMessage_0001', Level.LEVEL0, async (done: () => void) => {
+      const testNum = 'SUB_Customization_Assessment_onInterrupted_emptyMessage_0001';
+      hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
+
+      let interruptInfo: assessment.AssessmentInterruptInfo = {
+        code: assessment.AssessmentErrorCode.OK,
+        message: ''
+      };
+      let captureInterruptInfo: assessment.AssessmentInterruptInfo | null = null;
+      let assessmentCallback: assessment.IAssessmentCallback = {
+        onBegin: (err) => {
+          if (err.code === assessment.AssessmentErrorCode.OK) {
+            hilog.info(DOMAIN, TAG, 'Assessment began successfully.');
+          } else {
+            hilog.error(DOMAIN, TAG, `Assessment begin failed, code: ${err.code}, message: ${err.message}`);
+          }
+        },
+        onInterrupted: (info: assessment.AssessmentInterruptInfo) => {
+          captureInterruptInfo = info;
+          hilog.warn(DOMAIN, TAG, `Assessment interrupted, code: ${info.code}, message: ${info.message}`);
+        },
+        onEnd: () => {
+          hilog.info(DOMAIN, TAG, 'Assessment ended.');
+        }
+      };
+
+      assessmentCallback.onInterrupted(interruptInfo);
+
+      expect(captureInterruptInfo!.code).assertEqual(0);
+      expect(captureInterruptInfo!.code).assertEqual(assessment.AssessmentErrorCode.OK);
+      expect(captureInterruptInfo!.message).assertEqual('');
       done();
     })
 
