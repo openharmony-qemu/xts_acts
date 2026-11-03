@@ -38,6 +38,8 @@ constexpr int MIN_VIDEO_WIDTH = 2;
 constexpr int MAX_VIDEO_WIDTH = 1920;
 constexpr int VC1_PROFILE_COUNT = 3;
 constexpr int WMV3_PROFILE_COUNT = 2;
+constexpr int WMV1_DEFAULT_WIDTH = 320;
+constexpr int WMV1_DEFAULT_HEIGHT = 240;
 constexpr int PIXEL_FORMAT_COUNT = 3;
 static OH_AVCodec *venc_ = nullptr;
 
@@ -85,9 +87,21 @@ static const string CODEC_NAME_RAWVIDEO = "OH.Media.Codec.Decoder.Video.RAWVIDEO
 static const string CODEC_NAME_MPEG1 = "OH.Media.Codec.Decoder.Video.MPEG";
 static const string CODEC_NAME_WVC1 = "OH.Media.Codec.Decoder.Video.WVC1";
 static const string CODEC_NAME_WMV3 = "OH.Media.Codec.Decoder.Video.WMV3";
+static const string CODEC_NAME_WMV1 = "OH.Media.Codec.Decoder.Video.WMV1";
 static const string CODEC_NAME_DVVIDEO = "OH.Media.Codec.Decoder.Video.DVVIDEO";
 static constexpr uint32_t DEFAULT_WIDTH = 1920;
 static constexpr uint32_t DEFAULT_HEIGHT = 1080;
+
+static bool CheckWmv1PixelFormat(int32_t pixformat)
+{
+    if (pixformat == AV_PIXEL_FORMAT_YUVI420 ||
+        pixformat == AV_PIXEL_FORMAT_NV12 ||
+        pixformat == AV_PIXEL_FORMAT_NV21 ||
+        pixformat == AV_PIXEL_FORMAT_RGBA) {
+        return true;
+    }
+    return false;
+}
 
 static bool CheckPixelFormat(int32_t pixformat)
 {
@@ -429,6 +443,111 @@ napi_value VideoMsvideo1DecCapApi0012(napi_env env, napi_callback_info info)
         }
         return CreateIntInt32Result(env, 0);
     }
+    return CreateIntInt32Result(env, 0);
+}
+
+static bool IsSizeInRange(const OH_AVRange &widthRange, const OH_AVRange &heightRange,
+                          int32_t width, int32_t height)
+{
+    return width >= widthRange.minVal && width <= widthRange.maxVal &&
+           height >= heightRange.minVal && height <= heightRange.maxVal;
+}
+
+// Test WMV1 decoder capability API
+napi_value VideoWmv1DecCapApi0001(napi_env env, napi_callback_info info)
+{
+    OH_AVCapability *cap = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_WMV1, false);
+    if (cap != nullptr) {
+        string codecName = OH_AVCapability_GetName(cap);
+        if (CODEC_NAME_WMV1 == codecName) { return CreateIntInt32Result(env, 0); }
+        return CreateIntInt32Result(env, -1);
+    }
+    return CreateIntInt32Result(env, 0);
+}
+
+// Test WMV1 decoder video width and height range
+napi_value VideoWmv1DecCapApi0002(napi_env env, napi_callback_info info)
+{
+    OH_AVRange widthRange;
+    OH_AVRange heightRange;
+    SecureMemset(&widthRange, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
+    SecureMemset(&heightRange, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
+    OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_WMV1,
+                                                                     false, SOFTWARE);
+    if (capability == nullptr) { return CreateIntInt32Result(env, 0); }
+    if (OH_AVCapability_GetVideoWidthRange(capability, &widthRange) != AV_ERR_OK) {
+        return CreateIntInt32Result(env, -1);
+    }
+    if (OH_AVCapability_GetVideoHeightRange(capability, &heightRange) != AV_ERR_OK) {
+        return CreateIntInt32Result(env, -1);
+    }
+    if (widthRange.minVal > widthRange.maxVal || heightRange.minVal > heightRange.maxVal) {
+        return CreateIntInt32Result(env, -1);
+    }
+    if (!IsSizeInRange(widthRange, heightRange, WMV1_DEFAULT_WIDTH, WMV1_DEFAULT_HEIGHT)) {
+        return CreateIntInt32Result(env, -1);
+    }
+    if (!IsSizeInRange(widthRange, heightRange, DEFAULT_WIDTH, DEFAULT_HEIGHT)) {
+        return CreateIntInt32Result(env, -1);
+    }
+    return CreateIntInt32Result(env, 0);
+}
+
+// Test WMV1 decoder supported pixel formats
+napi_value VideoWmv1DecCapApi0003(napi_env env, napi_callback_info info)
+{
+    const int32_t *pixelFormat = nullptr;
+    uint32_t pixelFormatNum = 0;
+    OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_WMV1,
+                                                                     false, SOFTWARE);
+    if (capability == nullptr) { return CreateIntInt32Result(env, 0); }
+    if (OH_AVCapability_GetVideoSupportedPixelFormats(capability, &pixelFormat, &pixelFormatNum) != AV_ERR_OK ||
+        pixelFormat == nullptr || pixelFormatNum == 0) {
+        return CreateIntInt32Result(env, -1);
+    }
+    for (uint32_t i = 0; i < pixelFormatNum; i++) {
+        if (!CheckWmv1PixelFormat(pixelFormat[i])) { return CreateIntInt32Result(env, -1); }
+        OH_AVCodec *vdec = OH_VideoDecoder_CreateByName(CODEC_NAME_WMV1.c_str());
+        if (vdec == nullptr) { return CreateIntInt32Result(env, -1); }
+        OH_AVFormat *format = OH_AVFormat_Create();
+        if (format == nullptr) {
+            OH_VideoDecoder_Destroy(vdec);
+            return CreateIntInt32Result(env, -1);
+        }
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, WMV1_DEFAULT_WIDTH);
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, WMV1_DEFAULT_HEIGHT);
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, pixelFormat[i]);
+        if (OH_VideoDecoder_Configure(vdec, format) != AV_ERR_OK) {
+            OH_AVFormat_Destroy(format);
+            OH_VideoDecoder_Destroy(vdec);
+            return CreateIntInt32Result(env, -1);
+        }
+        OH_AVFormat_Destroy(format);
+        OH_VideoDecoder_Destroy(vdec);
+    }
+    return CreateIntInt32Result(env, 0);
+}
+
+// Test WMV1 decoder rejects the unsupported pixel format
+napi_value VideoWmv1DecCapApi0004(napi_env env, napi_callback_info info)
+{
+    OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_WMV1,
+                                                                     false, SOFTWARE);
+    if (capability == nullptr) { return CreateIntInt32Result(env, 0); }
+    OH_AVCodec *vdec = OH_VideoDecoder_CreateByName(CODEC_NAME_WMV1.c_str());
+    if (vdec == nullptr) { return CreateIntInt32Result(env, -1); }
+    OH_AVFormat *format = OH_AVFormat_Create();
+    if (format == nullptr) {
+        OH_VideoDecoder_Destroy(vdec);
+        return CreateIntInt32Result(env, -1);
+    }
+    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, WMV1_DEFAULT_WIDTH);
+    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, WMV1_DEFAULT_HEIGHT);
+    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV21 + AV_PIXEL_FORMAT_NV21);
+    OH_AVErrCode ret = OH_VideoDecoder_Configure(vdec, format);
+    OH_AVFormat_Destroy(format);
+    OH_VideoDecoder_Destroy(vdec);
+    if (ret == AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
     return CreateIntInt32Result(env, 0);
 }
 
