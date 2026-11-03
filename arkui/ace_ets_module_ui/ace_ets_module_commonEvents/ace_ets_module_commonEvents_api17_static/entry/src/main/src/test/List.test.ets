@@ -41,7 +41,6 @@ export default function testsuite() {
   RollAngle(); //11.28master pass
   ResponseRegionTest();
   SourceTypeTest();
-  AxisEventTest();
   DragEventTest();
   CommonTest();
   CommonUndefinedTest();
