@@ -21,6 +21,10 @@
 #include "napi/native_api.h"
 #include "utils.cpp"
 #include "huks_api_test.h"
+#include "huks_external_crypto_test.h"
+#include "huks_external_crypto_error_test.h"
+#include "huksnapi/huks_napi_register.h"
+#include "nativehuks/NativeHuksRegister.h"
 
 #define FAIL (-1)
 #define PARAM_0 0
@@ -1418,9 +1422,35 @@ static napi_value Init(napi_env env, napi_value exports)
         {"huksNativeApi22Type0500", nullptr, OHHuksNativeApi22Type0500, nullptr, nullptr, nullptr, napi_default,
             nullptr},
         {"huksNativeApi22Type0600", nullptr, OHHuksNativeApi22Type0600, nullptr, nullptr, nullptr, napi_default,
+            nullptr},
+        {"huksNativeApi22Type0100", nullptr, OHHuksNativeApi22Type0100, nullptr, nullptr, nullptr, napi_default,
+            nullptr},
+        {"huksNativeApi22Type0200", nullptr, OHHuksNativeApi22Type0200, nullptr, nullptr, nullptr, napi_default,
+            nullptr},
+        {"huksNativeApi22KeyAlg0100", nullptr, OHHuksNativeApi22KeyAlg0100, nullptr, nullptr, nullptr, napi_default,
+            nullptr},
+        {"huksNativeApi22Struct0100", nullptr, OHHuksNativeApi22Struct0100, nullptr, nullptr, nullptr, napi_default,
+            nullptr},
+        {"huksNativeApi22Struct0200", nullptr, OHHuksNativeApi22Struct0200, nullptr, nullptr, nullptr, napi_default,
+            nullptr},
+        {"huksNativeApi22Utils0100", nullptr, OHHuksNativeApi22Utils0100, nullptr, nullptr, nullptr, napi_default,
+            nullptr},
+        {"huksNativeApi22Err0100", nullptr, OHHuksNativeApi22Err0100, nullptr, nullptr, nullptr, napi_default,
+            nullptr},
+        {"huksNativeApi22Err0200", nullptr, OHHuksNativeApi22Err0200, nullptr, nullptr, nullptr, napi_default,
+            nullptr},
+        {"huksNativeApi22Err0300", nullptr, OHHuksNativeApi22Err0300, nullptr, nullptr, nullptr, napi_default,
+            nullptr},
+        {"huksNativeApi22Err0400", nullptr, OHHuksNativeApi22Err0400, nullptr, nullptr, nullptr, napi_default,
+            nullptr},
+        {"huksNativeApi22Err0500", nullptr, OHHuksNativeApi22Err0500, nullptr, nullptr, nullptr, napi_default,
+            nullptr},
+        {"huksNativeApi22Err0600", nullptr, OHHuksNativeApi22Err0600, nullptr, nullptr, nullptr, napi_default,
             nullptr}
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+    RegisterHuksNapiTests(env, exports);
+    NativeHuksTest::RegisterNativeHuksTests(env, exports);
     return exports;
 }
 

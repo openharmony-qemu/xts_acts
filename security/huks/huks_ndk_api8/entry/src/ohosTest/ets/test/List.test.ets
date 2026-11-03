@@ -14,8 +14,18 @@
  */
 import huksNdkTest from './huksNdk.test';
 import HuksApiTest from './HuksApi.test';
+import HuksExternalCryptoTest from './HuksExternalCrypto.test';
+import HuksExternalCryptoErrorTest from './HuksExternalCryptoError.test';
+import huksNapiSuite from './huksNapi/List.test';
+import nativeHuksSuite from './nativehuks/List.test';
 
 export default function testsuite() {
   huksNdkTest();
   HuksApiTest();
+  huksNapiSuite();
+  nativeHuksSuite();
+  if (canIUse('SystemCapability.Security.Huks.CryptoExtension')) {
+    HuksExternalCryptoTest();
+    HuksExternalCryptoErrorTest();
+  }
 }
