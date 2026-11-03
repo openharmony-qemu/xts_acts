@@ -20,7 +20,7 @@ import { Want } from '@kit.AbilityKit';
 struct EmbeddedComponentPage {
   @State message: string = 'Message: '
   private want: Want = {
-    bundleName: 'com.example.myapplication',
+    bundleName: 'com.example.windowstagetwo',
     abilityName: 'EvnEmbeddedAbility',
     parameters: {
       'ohos.extension.processMode.hostInstance': 'true',

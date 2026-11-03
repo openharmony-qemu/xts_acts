@@ -22,7 +22,7 @@ struct EmbeddedComponentPage {
   @State width1:number = 500;
   @State height1:number = 500;
   private want: Want = {
-    bundleName: 'com.example.myapplication',
+    bundleName: 'com.example.windowstagetwo',
     abilityName: 'EmbeddedGetWindowAvoidAreaAbility',
     parameters: {
       'ohos.extension.processMode.hostInstance': 'true',
