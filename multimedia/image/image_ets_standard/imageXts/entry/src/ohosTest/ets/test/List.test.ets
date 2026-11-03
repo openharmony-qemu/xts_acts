@@ -44,7 +44,6 @@ import createImageSourceTest from './image/image/createImageSource.test';
 import createIncrementalSourceTest from './image/image/createIncrementalSource.test';
 import createImagePackerTest from './image/image/createImagePacker.test';
 import createImageReceiverPackerTest from './image/image/createImageReceiver.test';
-import createImageCreatorTest from './image/image/createImageCreator.test';
 import createPictureTest from './image/image/createPicture.test';
 import createPictureFromParcelTest from './image/image/createPictureFromParcel.test';
 import createAuxiliaryPictureTest from './image/image/createAuxiliaryPicture.test';
@@ -77,8 +76,6 @@ import imagePackerPackingTest from './image/ImagePacker/packing.test';
 import ImageGetComponentTest from './image/Image_operation/getComponent.test';
 import ImageReleaseTest from './image/Image_operation/release.test';
 import ImageReceiverGetReceivingSurfaceIdTest from './image/ImageReceiver/getReceivingSurfaceId.test';
-import ImageCreatorDequeueImageTest from './image/ImageCreator/dequeueImage.test';
-import ImageCreatorQueueImageTest from './image/ImageCreator/queueImage.test';
 import PictureSetMetadataTest from './image/Picture/setMetadata.test';
 import PictureSetAuxiliaryPictureTest from './image/Picture/setAuxiliaryPicture.test';
 import AuxiliaryPictureWritePixelsFromBufferTest from './image/AuxiliaryPicture/writePixelsFromBuffer.test';
@@ -150,7 +147,6 @@ export default function testsuite() {
   createIncrementalSourceTest();
   createImagePackerTest();
   createImageReceiverPackerTest();
-  createImageCreatorTest();
   createPictureTest();
   createPictureFromParcelTest();
   createAuxiliaryPictureTest();
@@ -196,6 +192,4 @@ export default function testsuite() {
   ImageReleaseTest();
   ImageReceiverGetReceivingSurfaceIdTest();
   ImageReceiverReleaseTest();
-  ImageCreatorDequeueImageTest();
-  ImageCreatorQueueImageTest();
 }
