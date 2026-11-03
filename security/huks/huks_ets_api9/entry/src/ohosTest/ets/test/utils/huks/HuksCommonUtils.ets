@@ -20,3 +20,10 @@ export const HuksMaxAliasLength = 128;
 export const HuksMinGroupId = "group".padEnd(7, "01");
 
 export const HuksMaxGroupId = "group".padEnd(127, "1234567890_.");
+
+// ===== merged from huksApi12 utils =====
+export const HuksDefaultKeyVersion = 3;
+
+export const HuksDefaultOsVersion = 1;
+
+export const HuksDefaultOsPatchLevel = 1;

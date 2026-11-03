@@ -222,3 +222,19 @@ export async function MacCallbackEndWithAbort(keyAlias: string, macOptions: huks
   macOptions.inData = macData.finishData as Uint8Array;
   return await huksCallback.abortSession(handle, macOptions);
 }
+
+// ===== merged from huksApi12 utils =====
+export function GetHmacMacOptions(): huks.HuksOptions {
+  let huksOptions: huks.HuksOptions = {
+    properties: new Array(
+      GenParam(huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_HMAC),
+      GenParam(huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_MAC)
+    )
+  }
+  return huksOptions;
+}
+
+export async function MacByOption(keyAlias: string, macOption: huks.HuksOptions): Promise<huks.HuksReturnResult> {
+  let handle: number = (await huks.initSession(keyAlias, macOption)).handle;
+  return huks.finishSession(handle, macOption);
+}
