@@ -24,6 +24,7 @@
     "MainAbility/pages/capsuleSegmentButtonV2/BackgroundSystemMaterialV2",
     "MainAbility/pages/segmentButton/BackgroundSystemMaterial",
     "MainAbility/pages/segmentButton/AccessibilitySelectedTypeTest",
-    "MainAbility/pages/segmentButton/MaxFontScaleTest"
+    "MainAbility/pages/segmentButton/MaxFontScaleTest",
+    "MainAbility/pages/segmentButton/SegmentButtonInteractionMode"
   ]
 }

@@ -39,6 +39,7 @@ import BackgroundSystemMaterialV2Test from './capsuleSegmentButtonV2/BackgroundS
 import BackgroundSystemMaterialTest from './segmentButton/BackgroundSystemMaterialTest.test';
 import MaxFontScaleTest from './segmentButton/MaxFontScaleTest.test'
 import AccessibilitySelectedTypeTest from './segmentButton/AccessibilitySelectedTypeTest.test';
+import SegmentButtonInteractionModeTest from './segmentButton/SegmentButtonInteractionModeTest.test';
 
 export default function testsuite() {
   SegmentButtonOptionsTest();
@@ -66,4 +67,5 @@ export default function testsuite() {
   BackgroundSystemMaterialTest();
   MaxFontScaleTest()  
   AccessibilitySelectedTypeTest() 
+  SegmentButtonInteractionModeTest();
 }
