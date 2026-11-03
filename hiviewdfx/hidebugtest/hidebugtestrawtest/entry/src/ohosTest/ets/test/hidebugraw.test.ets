@@ -10,7 +10,7 @@
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
- * limitations under the License.111
+ * limitations under the License.
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size} from '@ohos/hypium-dynamic'
@@ -1017,6 +1017,112 @@ export default function HidebugrawTest() {
         done();
       }
       console.info("SUB_DFX_DFR_Hidebug_Ets_Raw_2800 end");
+    })
+
+    /**
+     * @tc.name   testHidebugAppRunningUniqueId_0100
+     * @tc.number SUB_DFX_DFR_Hidebug_Ets_AppRunningUniqueId_0100
+     * @tc.desc   验证getAppRunningUniqueId()接口返回值类型为string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHidebugAppRunningUniqueId_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_Hidebug_Ets_AppRunningUniqueId_0100 start");
+      try {
+        let uniqueId = hidebug.getAppRunningUniqueId();
+        console.info("SUB_DFX_DFR_Hidebug_Ets_AppRunningUniqueId_0100 uniqueId: " + uniqueId);
+        expect(typeof uniqueId === 'string').assertTrue();
+        done();
+      } catch (error) {
+        console.error(`SUB_DFX_DFR_Hidebug_Ets_AppRunningUniqueId_0100 > err code: ${(error as BusinessError).code}, err msg: ${(error as BusinessError).message}`);
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_Hidebug_Ets_AppRunningUniqueId_0100 end");
+    })
+
+    /**
+     * @tc.name   testHidebugAppRunningUniqueId_0200
+     * @tc.number SUB_DFX_DFR_Hidebug_Ets_AppRunningUniqueId_0200
+     * @tc.desc   验证getAppRunningUniqueId()接口返回值不为空
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHidebugAppRunningUniqueId_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_Hidebug_Ets_AppRunningUniqueId_0200 start");
+      try {
+        let uniqueId = hidebug.getAppRunningUniqueId();
+        console.info("SUB_DFX_DFR_Hidebug_Ets_AppRunningUniqueId_0200 uniqueId: " + uniqueId);
+        expect(typeof uniqueId === 'string').assertTrue();
+        expect(uniqueId.length > 0).assertTrue();
+        done();
+      } catch (error) {
+        console.error(`SUB_DFX_DFR_Hidebug_Ets_AppRunningUniqueId_0200 > err code: ${(error as BusinessError).code}, err msg: ${(error as BusinessError).message}`);
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_Hidebug_Ets_AppRunningUniqueId_0200 end");
+    })
+
+    /**
+     * @tc.name   testHidebugAppRunningUniqueId_0300
+     * @tc.number SUB_DFX_DFR_Hidebug_Ets_AppRunningUniqueId_0300
+     * @tc.desc   验证getAppRunningUniqueId()接口连续多次调用返回值一致
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHidebugAppRunningUniqueId_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_Hidebug_Ets_AppRunningUniqueId_0300 start");
+      try {
+        let uniqueId1 = hidebug.getAppRunningUniqueId();
+        let uniqueId2 = hidebug.getAppRunningUniqueId();
+        let uniqueId3 = hidebug.getAppRunningUniqueId();
+        console.info("SUB_DFX_DFR_Hidebug_Ets_AppRunningUniqueId_0300 uniqueId1: " + uniqueId1);
+        console.info("SUB_DFX_DFR_Hidebug_Ets_AppRunningUniqueId_0300 uniqueId2: " + uniqueId2);
+        console.info("SUB_DFX_DFR_Hidebug_Ets_AppRunningUniqueId_0300 uniqueId3: " + uniqueId3);
+        expect(typeof uniqueId1 === 'string').assertTrue();
+        expect(typeof uniqueId2 === 'string').assertTrue();
+        expect(typeof uniqueId3 === 'string').assertTrue();
+        expect(uniqueId1 === uniqueId2).assertTrue();
+        expect(uniqueId1 === uniqueId3).assertTrue();
+        done();
+      } catch (error) {
+        console.error(`SUB_DFX_DFR_Hidebug_Ets_AppRunningUniqueId_0300 > err code: ${(error as BusinessError).code}, err msg: ${(error as BusinessError).message}`);
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_Hidebug_Ets_AppRunningUniqueId_0300 end");
+    })
+
+    /**
+     * @tc.name   testHidebugAppRunningUniqueId_0400
+     * @tc.number SUB_DFX_DFR_Hidebug_Ets_AppRunningUniqueId_0400
+     * @tc.desc   验证getAppRunningUniqueId()接口调用稳定性测试(连续调用100次)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testHidebugAppRunningUniqueId_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info("SUB_DFX_DFR_Hidebug_Ets_AppRunningUniqueId_0400 start");
+      try {
+        let firstUniqueId = hidebug.getAppRunningUniqueId();
+        expect(typeof firstUniqueId === 'string').assertTrue();
+        for (let i = 0; i < 100; i++) {
+          let uniqueId = hidebug.getAppRunningUniqueId();
+          expect(typeof uniqueId === 'string').assertTrue();
+          expect(uniqueId === firstUniqueId).assertTrue();
+        }
+        console.info("SUB_DFX_DFR_Hidebug_Ets_AppRunningUniqueId_0400 100 times success, uniqueId: " + firstUniqueId);
+        done();
+      } catch (error) {
+        console.error(`SUB_DFX_DFR_Hidebug_Ets_AppRunningUniqueId_0400 > err code: ${(error as BusinessError).code}, err msg: ${(error as BusinessError).message}`);
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_Hidebug_Ets_AppRunningUniqueId_0400 end");
     })
   })
 }
