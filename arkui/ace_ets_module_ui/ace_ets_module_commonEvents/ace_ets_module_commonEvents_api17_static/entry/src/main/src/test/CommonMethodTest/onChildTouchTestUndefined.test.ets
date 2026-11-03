@@ -56,7 +56,7 @@ export default function OnChildTouchTestUndefinedTest() {
 
 
     /**
-     * @tc.number   OnChildTouchTestUndefinedTest_static_0100
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_ON_CHILD_TOUCH_TEST_UNDEFINED_STATIC_0100
      * @tc.name     OnChildTouchTestUndefinedTest_static_0100
      * @tc.desc     OnChildTouchTestUndefinedTest_static_0100
      * @tc.level    Level.LEVEL1

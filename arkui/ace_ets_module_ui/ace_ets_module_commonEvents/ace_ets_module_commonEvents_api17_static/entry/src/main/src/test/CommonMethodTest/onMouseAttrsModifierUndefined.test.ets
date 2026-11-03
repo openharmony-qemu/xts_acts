@@ -57,7 +57,7 @@ export default function OnMouseAttrsModifierUndefinedTest() {
 
 
   /**
-   * @tc.number   OnMouseAttrsModifierUndefinedTest_static_0100
+   * @tc.number   SUB_ARKUI_ACE_ENGINE_ON_MOUSE_ATTRS_MODIFIER_UNDEFINED_STATIC_0100
    * @tc.name     OnMouseAttrsModifierUndefinedTest_static_0100
    * @tc.desc     OnMouseAttrsModifierUndefinedTest_static_0100
    * @tc.level    Level.LEVEL1

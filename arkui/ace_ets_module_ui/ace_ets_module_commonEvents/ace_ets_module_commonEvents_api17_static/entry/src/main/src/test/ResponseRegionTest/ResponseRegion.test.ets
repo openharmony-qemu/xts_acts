@@ -45,7 +45,7 @@ export default function ResponseRegionTest() {
     });
 
     /**
-     * @tc.number responseRegionListTest_0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_RESPONSE_REGION_LIST_0100
      * @tc.name responseRegionListTest_0100
      * @tc.desc responseRegionListTest default []
      * @tc.type FUNCTION
@@ -72,7 +72,7 @@ export default function ResponseRegionTest() {
     });
 
     /**
-     * @tc.number responseRegionListTest_0300
+     * @tc.number SUB_ARKUI_ACE_ENGINE_RESPONSE_REGION_LIST_0300
      * @tc.name responseRegionListTest_0300
      * @tc.desc responseRegionListTest change responseRegion
      * @tc.type FUNCTION
@@ -99,7 +99,7 @@ export default function ResponseRegionTest() {
     });
 
     /**
-     * @tc.number responseRegionListTest_0400
+     * @tc.number SUB_ARKUI_ACE_ENGINE_RESPONSE_REGION_LIST_0400
      * @tc.name responseRegionListTest_0400
      * @tc.desc responseRegionListTest change responseRegion
      * @tc.type FUNCTION
@@ -126,7 +126,7 @@ export default function ResponseRegionTest() {
     });
 
     /**
-     * @tc.number responseRegionListTest_0500
+     * @tc.number SUB_ARKUI_ACE_ENGINE_RESPONSE_REGION_LIST_0500
      * @tc.name responseRegionListTest_0500
      * @tc.desc responseRegionListTest change responseRegion
      * @tc.type FUNCTION

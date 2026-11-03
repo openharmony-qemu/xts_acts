@@ -91,7 +91,7 @@ static std::shared_ptr<ButtonComponent> CreateButtonNodeWithInterrupter(
     button->SetHeight(SIZE_20);
     button->SetId(id);
     button->SetBackgroundColor(COLOR_RED);
-    button->SetMargin(2);
+    button->SetMargin(PARAM_2);
     auto tapGesture = gestureAPI->createTapGesture(PARAM_1, PARAM_1);
     gestureAPI->setGestureEventTarget(tapGesture, GESTURE_EVENT_ACTION_ACCEPT, nullptr, nullptr);
     gestureAPI->addGestureToNode(button->GetComponent(), tapGesture, NORMAL, NORMAL_GESTURE_MASK);
@@ -117,7 +117,7 @@ static std::shared_ptr<ButtonComponent> CreateButtonNodeWithInput(
     button->SetHeight(SIZE_20);
     button->SetId(id);
     button->SetBackgroundColor(COLOR_RED);
-    button->SetMargin(2);
+    button->SetMargin(PARAM_2);
     auto tapGesture = gestureAPI->createTapGesture(PARAM_1, PARAM_1);
     gestureAPI->setGestureEventTarget(tapGesture, GESTURE_EVENT_ACTION_ACCEPT, nullptr, OnEventGesture);
     gestureAPI->addGestureToNode(button->GetComponent(), tapGesture, NORMAL, NORMAL_GESTURE_MASK);

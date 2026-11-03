@@ -57,7 +57,7 @@ export default function NextFocusUndefinedTest() {
 
 
     /**
-     * @tc.number   NextFocusUndefinedTest_static_0100
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_NEXT_FOCUS_UNDEFINED_STATIC_0100
      * @tc.name     NextFocusUndefinedTest_static_0100
      * @tc.desc     NextFocusUndefinedTest_static_0100
      * @tc.level    Level.LEVEL1

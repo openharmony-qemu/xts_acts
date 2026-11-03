@@ -49,7 +49,7 @@ export default function SourceTypeTest() {
     });
 
     /**
-     * @tc.number SourceTypeTest_001
+     * @tc.number SUB_ARKUI_ACE_ENGINE_SOURCE_TYPE_0001
      * @tc.name key
      * @tc.desc Verify SourceType.KEY enum value
      * @tc.type FUNCTION
@@ -62,7 +62,7 @@ export default function SourceTypeTest() {
     });
 
     /**
-     * @tc.number SourceTypeTest_002
+     * @tc.number SUB_ARKUI_ACE_ENGINE_SOURCE_TYPE_0002
      * @tc.name joystick
      * @tc.desc Verify SourceType.JOYSTICK enum value
      * @tc.type FUNCTION

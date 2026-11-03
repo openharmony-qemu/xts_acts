@@ -50,7 +50,7 @@ export default function DragEventTest() {
     });
 
     /**
-     * @tc.number DragEventTest_001
+     * @tc.number SUB_ARKUI_ACE_ENGINE_DRAG_EVENT_0001
      * @tc.name getDisplayId
      * @tc.desc Verify DragEvent.getDisplayId method via onDragMove callback
      * @tc.type FUNCTION

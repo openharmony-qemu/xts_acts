@@ -20,22 +20,22 @@ import SourceTypeTest from './SourceTypeTest/SourceType.test';
 import AxisEventTest from './AxisEventTest/AxisEvent.test';
 import DragEventTest from './DragEventTest/DragEvent.test';
 import CommonTest from './CommonTest/Common.test';
-import CommonUndefinedTest from './CommonMethodTest/commonUndefined.test';
-import CommonAttrsModifierUndefinedTest from './CommonMethodTest/commonAttrsModifierUndefined.test';
-import OnChildTouchTestUndefinedTest from './CommonMethodTest/onChildTouchTestUndefined.test';
-import NextFocusUndefinedTest from './CommonMethodTest/nextFocusUndefined.test';
-import DragEventUndefinedTest from './CommonMethodTest/dragEventUndefined.test';
-import DragEventAttrsModifierUndefinedTest from './CommonMethodTest/dragEventAttrsModifierUndefined.test';
-import OnMouseUndefinedTest from './CommonMethodTest/onMouseUndefined.test';
-import OnMouseAttrsModifierUndefinedTest from './CommonMethodTest/onMouseAttrsModifierUndefined.test';
-import clickEffectUndefined from './CommonMethodTest/clickEffectUndefined.test';
-import dragControlUndefined from './CommonMethodTest/dragControlUndefined.test';
-import clickEffectModifierUndefined from './CommonMethodTest/clickEffectModifierUndefined.test';
-import dragControlModifierUndefined from './CommonMethodTest/dragControlModifierUndefined.test';
-import onBlurUndefinedTest from './CommonMethodTest/onBlurUndefined.test';
-import tabIndexUndefinedTest from './CommonMethodTest/tabIndexUndefined.test';
-import onBlurModifierUndefinedTest from './CommonMethodTest/onBlurModifierUndefined.test';
-import tabIndexModifierUndefinedTest from './CommonMethodTest/tabIndexModifierUndefined.test';
+import CommonUndefinedTest from './CommonMethodTest/CommonUndefined.test';
+import CommonAttrsModifierUndefinedTest from './CommonMethodTest/CommonAttrsModifierUndefined.test';
+import OnChildTouchTestUndefinedTest from './CommonMethodTest/OnChildTouchTestUndefined.test';
+import NextFocusUndefinedTest from './CommonMethodTest/NextFocusUndefined.test';
+import DragEventUndefinedTest from './CommonMethodTest/DragEventUndefined.test';
+import DragEventAttrsModifierUndefinedTest from './CommonMethodTest/DragEventAttrsModifierUndefined.test';
+import OnMouseUndefinedTest from './CommonMethodTest/OnMouseUndefined.test';
+import OnMouseAttrsModifierUndefinedTest from './CommonMethodTest/OnMouseAttrsModifierUndefined.test';
+import clickEffectUndefined from './CommonMethodTest/ClickEffectUndefined.test';
+import dragControlUndefined from './CommonMethodTest/DragControlUndefined.test';
+import clickEffectModifierUndefined from './CommonMethodTest/ClickEffectModifierUndefined.test';
+import dragControlModifierUndefined from './CommonMethodTest/DragControlModifierUndefined.test';
+import onBlurUndefinedTest from './CommonMethodTest/OnBlurUndefined.test';
+import tabIndexUndefinedTest from './CommonMethodTest/TabIndexUndefined.test';
+import onBlurModifierUndefinedTest from './CommonMethodTest/OnBlurModifierUndefined.test';
+import tabIndexModifierUndefinedTest from './CommonMethodTest/TabIndexModifierUndefined.test';
 export default function testsuite() {
   AxisEvent(); //11.28master pass
   RollAngle(); //11.28master pass

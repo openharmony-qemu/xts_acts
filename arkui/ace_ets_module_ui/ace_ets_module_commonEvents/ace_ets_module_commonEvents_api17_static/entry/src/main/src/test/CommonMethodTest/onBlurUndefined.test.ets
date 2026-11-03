@@ -51,7 +51,7 @@ export default function onBlurUndefinedTest() {
     });
 
     /**
-     * @tc.number    onBlurUndefinedTest_static_0100
+     * @tc.number    SUB_ARKUI_ACE_ENGINE_ON_BLUR_UNDEFINED_STATIC_0100
      * @tc.name      onBlurUndefinedTest_static_0100
      * @tc.desc      onBlurUndefinedTest_static_0100
      * @tc.level     Level.LEVEL1

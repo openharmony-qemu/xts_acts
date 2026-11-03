@@ -47,7 +47,7 @@ export default function tabIndexUndefinedTest() {
     });
 
     /**
-     * @tc.number    tabIndexUndefinedTest_static_0100
+     * @tc.number    SUB_ARKUI_ACE_ENGINE_TAB_INDEX_UNDEFINED_STATIC_0100
      * @tc.name      tabIndexUndefinedTest_static_0100
      * @tc.desc      tabIndexUndefinedTest_static_0100
      * @tc.level     Level.LEVEL1

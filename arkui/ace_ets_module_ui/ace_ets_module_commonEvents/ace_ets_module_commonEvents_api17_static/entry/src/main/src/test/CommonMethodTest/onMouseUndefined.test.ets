@@ -57,7 +57,7 @@ export default function OnMouseUndefinedTest() {
 
 
     /**
-     * @tc.number   OnMouseUndefinedTest_static_0100
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_ON_MOUSE_UNDEFINED_STATIC_0100
      * @tc.name     OnMouseUndefinedTest_static_0100
      * @tc.desc     OnMouseUndefinedTest_static_0100
      * @tc.level    Level.LEVEL1

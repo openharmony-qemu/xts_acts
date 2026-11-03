@@ -56,7 +56,7 @@ export default function DragEventUndefinedTest() {
 
 
     /**
-     * @tc.number   DragEventUndefinedTest_static_0100
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_DRAG_EVENT_UNDEFINED_STATIC_0100
      * @tc.name     DragEventUndefinedTest_static_0100
      * @tc.desc     DragEventUndefinedTest_static_0100
      * @tc.level    Level.LEVEL1
@@ -92,7 +92,7 @@ export default function DragEventUndefinedTest() {
     });
 
     /**
-     * @tc.number   DragEventUndefinedTest_static_0200
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_DRAG_EVENT_UNDEFINED_STATIC_0200
      * @tc.name     DragEventUndefinedTest_static_0200
      * @tc.desc     DragEventUndefinedTest_static_0200
      * @tc.level    Level.LEVEL1
@@ -128,7 +128,7 @@ export default function DragEventUndefinedTest() {
     });
 
     /**
-     * @tc.number   DragEventUndefinedTest_static_0300
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_DRAG_EVENT_UNDEFINED_STATIC_0300
      * @tc.name     DragEventUndefinedTest_static_0300
      * @tc.desc     DragEventUndefinedTest_static_0300
      * @tc.level    Level.LEVEL1
@@ -164,7 +164,7 @@ export default function DragEventUndefinedTest() {
     });
 
     /**
-     * @tc.number   DragEventUndefinedTest_static_0400
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_DRAG_EVENT_UNDEFINED_STATIC_0400
      * @tc.name     DragEventUndefinedTest_static_0400
      * @tc.desc     DragEventUndefinedTest_static_0400
      * @tc.level    Level.LEVEL1
@@ -200,7 +200,7 @@ export default function DragEventUndefinedTest() {
     });
 
     /**
-     * @tc.number   DragEventUndefinedTest_static_0500
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_DRAG_EVENT_UNDEFINED_STATIC_0500
      * @tc.name     DragEventUndefinedTest_static_0500
      * @tc.desc     DragEventUndefinedTest_static_0500
      * @tc.level    Level.LEVEL1

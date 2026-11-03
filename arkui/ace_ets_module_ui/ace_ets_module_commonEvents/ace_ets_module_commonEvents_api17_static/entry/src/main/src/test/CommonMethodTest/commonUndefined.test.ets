@@ -56,7 +56,7 @@ export default function CommonUndefinedTest() {
 
 
     /**
-     * @tc.number   CommonUndefinedTest_static_0100
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_COMMON_UNDEFINED_STATIC_0100
      * @tc.name     CommonUndefinedTest_static_0100
      * @tc.desc     CommonUndefinedTest_static_0100
      * @tc.level    Level.LEVEL1
@@ -88,7 +88,7 @@ export default function CommonUndefinedTest() {
     });
 
     /**
-     * @tc.number   CommonUndefinedTest_static_0200
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_COMMON_UNDEFINED_STATIC_0200
      * @tc.name     CommonUndefinedTest_static_0200
      * @tc.desc     CommonUndefinedTest_static_0200
      * @tc.level    Level.LEVEL1
@@ -120,7 +120,7 @@ export default function CommonUndefinedTest() {
     });
 
     /**
-     * @tc.number   CommonUndefinedTest_static_0300
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_COMMON_UNDEFINED_STATIC_0300
      * @tc.name     CommonUndefinedTest_static_0300
      * @tc.desc     CommonUndefinedTest_static_0300
      * @tc.level    Level.LEVEL1
@@ -152,7 +152,7 @@ export default function CommonUndefinedTest() {
     });
 
     /**
-     * @tc.number   CommonUndefinedTest_static_0400
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_COMMON_UNDEFINED_STATIC_0400
      * @tc.name     CommonUndefinedTest_static_0400
      * @tc.desc     CommonUndefinedTest_static_0400
      * @tc.level    Level.LEVEL1
@@ -184,7 +184,7 @@ export default function CommonUndefinedTest() {
     });
 
     /**
-     * @tc.number   CommonUndefinedTest_static_0500
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_COMMON_UNDEFINED_STATIC_0500
      * @tc.name     CommonUndefinedTest_static_0500
      * @tc.desc     CommonUndefinedTest_static_0500
      * @tc.level    Level.LEVEL1

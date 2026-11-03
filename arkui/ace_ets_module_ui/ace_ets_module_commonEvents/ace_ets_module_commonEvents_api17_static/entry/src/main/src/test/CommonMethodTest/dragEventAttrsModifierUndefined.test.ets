@@ -56,7 +56,7 @@ export default function DragEventAttrsModifierUndefinedTest() {
 
 
     /**
-     * @tc.number   DragEventAttrsModifierUndefinedTest_static_0100
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_DRAG_EVENT_ATTRS_MODIFIER_UNDEFINED_STATIC_0100
      * @tc.name     DragEventAttrsModifierUndefinedTest_static_0100
      * @tc.desc     DragEventAttrsModifierUndefinedTest_static_0100
      * @tc.level    Level.LEVEL1
@@ -92,7 +92,7 @@ export default function DragEventAttrsModifierUndefinedTest() {
     });
 
     /**
-     * @tc.number   DragEventAttrsModifierUndefinedTest_static_0200
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_DRAG_EVENT_ATTRS_MODIFIER_UNDEFINED_STATIC_0200
      * @tc.name     DragEventAttrsModifierUndefinedTest_static_0200
      * @tc.desc     DragEventAttrsModifierUndefinedTest_static_0200
      * @tc.level    Level.LEVEL1
@@ -128,7 +128,7 @@ export default function DragEventAttrsModifierUndefinedTest() {
     });
 
     /**
-     * @tc.number   DragEventAttrsModifierUndefinedTest_static_0300
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_DRAG_EVENT_ATTRS_MODIFIER_UNDEFINED_STATIC_0300
      * @tc.name     DragEventAttrsModifierUndefinedTest_static_0300
      * @tc.desc     DragEventAttrsModifierUndefinedTest_static_0300
      * @tc.level    Level.LEVEL1
@@ -164,7 +164,7 @@ export default function DragEventAttrsModifierUndefinedTest() {
     });
 
     /**
-     * @tc.number   DragEventAttrsModifierUndefinedTest_static_0400
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_DRAG_EVENT_ATTRS_MODIFIER_UNDEFINED_STATIC_0400
      * @tc.name     DragEventAttrsModifierUndefinedTest_static_0400
      * @tc.desc     DragEventAttrsModifierUndefinedTest_static_0400
      * @tc.level    Level.LEVEL1
@@ -200,7 +200,7 @@ export default function DragEventAttrsModifierUndefinedTest() {
     });
 
     /**
-     * @tc.number   DragEventAttrsModifierUndefinedTest_static_0500
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_DRAG_EVENT_ATTRS_MODIFIER_UNDEFINED_STATIC_0500
      * @tc.name     DragEventAttrsModifierUndefinedTest_static_0500
      * @tc.desc     DragEventAttrsModifierUndefinedTest_static_0500
      * @tc.level    Level.LEVEL1

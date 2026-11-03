@@ -56,7 +56,7 @@ export default function CommonAttrsModifierUndefinedTest() {
 
 
     /**
-     * @tc.number   CommonAttrsModifierUndefinedTest_static_0100
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_COMMON_ATTRS_MODIFIER_UNDEFINED_STATIC_0100
      * @tc.name     CommonAttrsModifierUndefinedTest_static_0100
      * @tc.desc     CommonAttrsModifierUndefinedTest_static_0100
      * @tc.level    Level.LEVEL1
@@ -87,7 +87,7 @@ export default function CommonAttrsModifierUndefinedTest() {
       done();
     });
     /**
-     * @tc.number   CommonAttrsModifierUndefinedTest_static_0200
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_COMMON_ATTRS_MODIFIER_UNDEFINED_STATIC_0200
      * @tc.name     CommonAttrsModifierUndefinedTest_static_0200
      * @tc.desc     CommonAttrsModifierUndefinedTest_static_0200
      * @tc.level    Level.LEVEL1
@@ -118,7 +118,7 @@ export default function CommonAttrsModifierUndefinedTest() {
       done();
     });
     /**
-     * @tc.number   CommonAttrsModifierUndefinedTest_static_0300
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_COMMON_ATTRS_MODIFIER_UNDEFINED_STATIC_0300
      * @tc.name     CommonAttrsModifierUndefinedTest_static_0300
      * @tc.desc     CommonAttrsModifierUndefinedTest_static_0300
      * @tc.level    Level.LEVEL1
@@ -149,7 +149,7 @@ export default function CommonAttrsModifierUndefinedTest() {
       done();
     });
     /**
-     * @tc.number   CommonAttrsModifierUndefinedTest_static_0400
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_COMMON_ATTRS_MODIFIER_UNDEFINED_STATIC_0400
      * @tc.name     CommonAttrsModifierUndefinedTest_static_0400
      * @tc.desc     CommonAttrsModifierUndefinedTest_static_0400
      * @tc.level    Level.LEVEL1
@@ -181,7 +181,7 @@ export default function CommonAttrsModifierUndefinedTest() {
     });
 
     /**
-     * @tc.number   CommonAttrsModifierUndefinedTest_static_0500
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_COMMON_ATTRS_MODIFIER_UNDEFINED_STATIC_0500
      * @tc.name     CommonAttrsModifierUndefinedTest_static_0500
      * @tc.desc     CommonAttrsModifierUndefinedTest_static_0500
      * @tc.level    Level.LEVEL1

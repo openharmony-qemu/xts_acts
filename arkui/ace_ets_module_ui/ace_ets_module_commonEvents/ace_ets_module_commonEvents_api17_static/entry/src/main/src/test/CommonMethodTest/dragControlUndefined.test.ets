@@ -57,7 +57,7 @@ export default function dragControlUndefined() {
 
 
     /**
-     * @tc.number   dragControlUndefined_static_0001
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_DRAG_CONTROL_UNDEFINED_STATIC_0001
      * @tc.name     dragControlUndefined_static_0001
      * @tc.desc     test allowDrop value to undefined
      * @tc.level    Level.LEVEL1
@@ -99,7 +99,7 @@ export default function dragControlUndefined() {
 
 
     /**
-     * @tc.number   dragControlUndefined_static_0002
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_DRAG_CONTROL_UNDEFINED_STATIC_0002
      * @tc.name     dragControlUndefined_static_0002
      * @tc.desc     test allowDrop null to undefined
      * @tc.level    Level.LEVEL1
@@ -142,7 +142,7 @@ export default function dragControlUndefined() {
     });
 
     /**
-     * @tc.number   dragControlUndefined_static_0003
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_DRAG_CONTROL_UNDEFINED_STATIC_0003
      * @tc.name     dragControlUndefined_static_0003
      * @tc.desc     test dragControlUndefined_static_0003 null to undefined
      * @tc.level    Level.LEVEL1

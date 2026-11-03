@@ -57,7 +57,7 @@ export default function clickEffectUndefined() {
 
 
     /**
-     * @tc.number   clickEffectUndefined_static_0001
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_CLICK_EFFECT_UNDEFINED_STATIC_0001
      * @tc.name     clickEffectUndefined_static_0001
      * @tc.desc     test clickEffect value to undefined
      * @tc.level    Level.LEVEL1
@@ -90,7 +90,7 @@ export default function clickEffectUndefined() {
     });
 
     /**
-     * @tc.number   clickEffectUndefined_static_0002
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_CLICK_EFFECT_UNDEFINED_STATIC_0002
      * @tc.name     clickEffectUndefined_static_0002
      * @tc.desc     test clickEffect null to undefined
      * @tc.level    Level.LEVEL1

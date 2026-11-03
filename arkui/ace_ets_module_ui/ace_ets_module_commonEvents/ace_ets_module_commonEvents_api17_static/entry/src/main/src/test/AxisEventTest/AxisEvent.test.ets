@@ -50,7 +50,7 @@ export default function AxisEventTest() {
     });
 
     /**
-     * @tc.number AxisEventTest_001
+     * @tc.number SUB_ARKUI_ACE_ENGINE_AXIS_EVENT_0001
      * @tc.name hasAxis
      * @tc.desc Verify AxisEvent.hasAxis method via onAxisEvent callback on Scroll
      * @tc.type FUNCTION
