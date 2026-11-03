@@ -890,8 +890,8 @@ export default function DecimalToNearestTest() {
       let dec39: Decimal = new Decimal(2.3);
       let ref39: Decimal = new Decimal(0.5);
       let s39: Decimal = dec39.toNearest('0.5', Decimal.ROUND_UP);
-      let d39: Decimal = dec39.toNearest(ref39, Decimal.ROUND_UP);
-      expect(s39.toString()).assertEqual(d39.toString());
+      let decimal39: Decimal = dec39.toNearest(ref39, Decimal.ROUND_UP);
+      expect(s39.toString()).assertEqual(decimal39.toString());
       expect(s39.toString()).assertEqual('2.5');
       let dec40: Decimal = new Decimal(5.2);
       let ref40: Decimal = new Decimal(1);

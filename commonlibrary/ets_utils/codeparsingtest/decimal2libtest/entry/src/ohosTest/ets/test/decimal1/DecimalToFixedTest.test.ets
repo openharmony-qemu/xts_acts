@@ -375,12 +375,12 @@ export default function DecimalToFixedTest() {
       }
       expect(nullThrown2).assertTrue();
       expect(undefThrown2).assertFalse();
-      let d2: Decimal = new Decimal(3.456);
-      expect(d2.toFixed()).assertEqual('3.456');
+      let decimal2: Decimal = new Decimal(3.456);
+      expect(decimal2.toFixed()).assertEqual('3.456');
       let thrown1: boolean = false;
       try {
         let v: ESObject = undefined;
-        d2.toFixed(v as number);
+        decimal2.toFixed(v as number);
       } catch (e) {
         thrown1 = true;
       }
@@ -458,18 +458,18 @@ export default function DecimalToFixedTest() {
       expect(d.toFixed(1)).assertEqual('3.4');
       let r: string = new Decimal(3.456).toFixed(2);
       expect(typeof r).assertEqual('string');
-      let d2: Decimal = new Decimal(3.456);
-      d2.toFixed(2);
-      expect(d2.toString()).assertEqual('3.456');
-      let d3: Decimal = new Decimal(3.456);
-      let a: string = d3.toFixed(2);
-      let b: string = d3.toFixed(2);
+      let decimal2: Decimal = new Decimal(3.456);
+      decimal2.toFixed(2);
+      expect(decimal2.toString()).assertEqual('3.456');
+      let decimal3: Decimal = new Decimal(3.456);
+      let a: string = decimal3.toFixed(2);
+      let b: string = decimal3.toFixed(2);
       expect(a).assertEqual(b);
       expect(a).assertEqual('3.46');
-      let d4: Decimal = new Decimal(3.456);
-      expect(d4.toFixed(0)).assertEqual('3');
-      expect(d4.toFixed(1)).assertEqual('3.5');
-      expect(d4.toFixed(2)).assertEqual('3.46');
+      let decimal4: Decimal = new Decimal(3.456);
+      expect(decimal4.toFixed(0)).assertEqual('3');
+      expect(decimal4.toFixed(1)).assertEqual('3.5');
+      expect(decimal4.toFixed(2)).assertEqual('3.46');
     });
 
 
@@ -486,17 +486,17 @@ export default function DecimalToFixedTest() {
       expect(d.toFixed()).assertEqual('3.456');
       expect(d.toFixed(2)).assertEqual('3.46');
       expect(d.toFixed(2, Decimal.ROUND_DOWN)).assertEqual('3.45');
-      let d2: Decimal = new Decimal('3.5');
-      expect(d2.toFixed()).assertEqual('3.5');
-      expect(d2.toFixed(0)).assertEqual('4');
-      expect(d2.toFixed()).assertEqual('3.5');
-      expect(d2.toFixed(0, Decimal.ROUND_DOWN)).assertEqual('3');
-      let d3: Decimal = new Decimal('3.456');
-      expect(d3.toFixed(2)).assertEqual('3.46');
-      expect(d3.toFixed(2, Decimal.ROUND_HALF_UP)).assertEqual('3.46');
-      let d4: Decimal = new Decimal('3.456');
-      expect(d4.toFixed(2, Decimal.ROUND_DOWN)).assertEqual('3.45');
-      expect(toFixedExtra(d4, 2, Decimal.ROUND_DOWN, 99)).assertEqual('3.45');
+      let decimal2: Decimal = new Decimal('3.5');
+      expect(decimal2.toFixed()).assertEqual('3.5');
+      expect(decimal2.toFixed(0)).assertEqual('4');
+      expect(decimal2.toFixed()).assertEqual('3.5');
+      expect(decimal2.toFixed(0, Decimal.ROUND_DOWN)).assertEqual('3');
+      let decimal3: Decimal = new Decimal('3.456');
+      expect(decimal3.toFixed(2)).assertEqual('3.46');
+      expect(decimal3.toFixed(2, Decimal.ROUND_HALF_UP)).assertEqual('3.46');
+      let decimal4: Decimal = new Decimal('3.456');
+      expect(decimal4.toFixed(2, Decimal.ROUND_DOWN)).assertEqual('3.45');
+      expect(toFixedExtra(decimal4, 2, Decimal.ROUND_DOWN, 99)).assertEqual('3.45');
       let dn: Decimal = new Decimal('-3.456');
       expect(dn.toFixed()).assertEqual('-3.456');
       expect(dn.toFixed(2)).assertEqual('-3.46');
@@ -531,39 +531,39 @@ export default function DecimalToFixedTest() {
      */
     it('testDecimalToFixedPart03Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       Decimal.set({ rounding: Decimal.ROUND_UP });
-      let d1: Decimal = new Decimal('2.225');
-      let r1: string = d1.toFixed(2);
+      let decimal1: Decimal = new Decimal('2.225');
+      let r1: string = decimal1.toFixed(2);
       Decimal.set({ rounding: Decimal.ROUND_DOWN });
-      let r2: string = d1.toFixed(2);
+      let r2: string = decimal1.toFixed(2);
       Decimal.set({ defaults: true });
       expect(r1).assertEqual('2.23');
       expect(r2).assertEqual('2.22');
       Decimal.set({ rounding: Decimal.ROUND_UP });
-      let d2: Decimal = new Decimal('3.456');
-      let r0: string = d2.toFixed();
+      let decimal2: Decimal = new Decimal('3.456');
+      let r0: string = decimal2.toFixed();
       Decimal.set({ defaults: true });
       expect(r0).assertEqual('3.456');
       Decimal.set({ rounding: Decimal.ROUND_UP });
-      let d3: Decimal = new Decimal('3.4');
-      let r: string = d3.toFixed(0);
+      let decimal3: Decimal = new Decimal('3.4');
+      let r: string = decimal3.toFixed(0);
       Decimal.set({ defaults: true });
       expect(r).assertEqual('4');
       Decimal.set({ rounding: Decimal.ROUND_UP });
-      let d4: Decimal = new Decimal('3.44');
-      let r1a: string = d4.toFixed(1);
+      let decimal4: Decimal = new Decimal('3.44');
+      let r1a: string = decimal4.toFixed(1);
       Decimal.set({ defaults: true });
-      let r2a: string = d4.toFixed(1);
+      let r2a: string = decimal4.toFixed(1);
       expect(r1a).assertEqual('3.5');
       expect(r2a).assertEqual('3.4');
       Decimal.set({ rounding: Decimal.ROUND_UP });
-      let d5: Decimal = new Decimal('3.44');
-      let r1b: string = d5.toFixed(1, Decimal.ROUND_DOWN);
+      let decimal5: Decimal = new Decimal('3.44');
+      let r1b: string = decimal5.toFixed(1, Decimal.ROUND_DOWN);
       Decimal.set({ defaults: true });
       expect(r1b).assertEqual('3.4');
-      let d6: Decimal = new Decimal('3.44');
-      let before: string = d6.toFixed(1);
+      let decimal6: Decimal = new Decimal('3.44');
+      let before: string = decimal6.toFixed(1);
       Decimal.set({ rounding: Decimal.ROUND_UP });
-      let after: string = d6.toFixed(1);
+      let after: string = decimal6.toFixed(1);
       Decimal.set({ defaults: true });
       expect(before).assertEqual('3.4');
       expect(after).assertEqual('3.5');
@@ -576,9 +576,9 @@ export default function DecimalToFixedTest() {
       expect(rp).assertEqual('1.5');
       expect(rn).assertEqual('-1.4');
       Decimal.set({ rounding: Decimal.ROUND_DOWN });
-      let d7: Decimal = new Decimal('3.5');
-      let r0b: string = d7.toFixed();
-      let r1c: string = d7.toFixed(0);
+      let decimal7: Decimal = new Decimal('3.5');
+      let r0b: string = decimal7.toFixed();
+      let r1c: string = decimal7.toFixed(0);
       Decimal.set({ defaults: true });
       expect(r0b).assertEqual('3.5');
       expect(r1c).assertEqual('3');
@@ -601,72 +601,72 @@ export default function DecimalToFixedTest() {
      * @tc.level LEVEL2
      */
     it('testDecimalToFixedPart03Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let d1: Decimal = new Decimal('3.456');
+      let decimal1: Decimal = new Decimal('3.456');
       let threw1: boolean = false;
-      try { d1.toFixed(-1); } catch (e) { threw1 = true; let err: ESObject = e; expect(err.code).assertEqual(10200001); }
+      try { decimal1.toFixed(-1); } catch (e) { threw1 = true; let err: ESObject = e; expect(err.code).assertEqual(10200001); }
       expect(threw1).assertTrue();
-      expect(d1.toString()).assertEqual('3.456');
-      expect(d1.s).assertEqual(1);
-      expect(d1.e).assertEqual(0);
-      let d2: Decimal = new Decimal('3.456');
+      expect(decimal1.toString()).assertEqual('3.456');
+      expect(decimal1.s).assertEqual(1);
+      expect(decimal1.e).assertEqual(0);
+      let decimal2: Decimal = new Decimal('3.456');
       let threw2: boolean = false;
-      try { d2.toFixed(1e9 + 1); } catch (e) { threw2 = true; let err: ESObject = e; expect(err.code).assertEqual(10200001); }
+      try { decimal2.toFixed(1e9 + 1); } catch (e) { threw2 = true; let err: ESObject = e; expect(err.code).assertEqual(10200001); }
       expect(threw2).assertTrue();
-      expect(d2.toFixed(2)).assertEqual('3.46');
-      let d3: Decimal = new Decimal('3.456');
+      expect(decimal2.toFixed(2)).assertEqual('3.46');
+      let decimal3: Decimal = new Decimal('3.456');
       let threw3: boolean = false;
-      try { let rm: ESObject = 9; d3.toFixed(2, rm as Rounding); } catch (e) { threw3 = true; let err: ESObject = e; expect(err.code).assertEqual(10200001); }
+      try { let rm: ESObject = 9; decimal3.toFixed(2, rm as Rounding); } catch (e) { threw3 = true; let err: ESObject = e; expect(err.code).assertEqual(10200001); }
       expect(threw3).assertTrue();
-      expect(d3.toString()).assertEqual('3.456');
-      let d4: Decimal = new Decimal('3.456');
+      expect(decimal3.toString()).assertEqual('3.456');
+      let decimal4: Decimal = new Decimal('3.456');
       let threw4: boolean = false;
-      try { let rm: ESObject = -1; d4.toFixed(2, rm as Rounding); } catch (e) { threw4 = true; let err: ESObject = e; expect(err.code).assertEqual(10200001); }
+      try { let rm: ESObject = -1; decimal4.toFixed(2, rm as Rounding); } catch (e) { threw4 = true; let err: ESObject = e; expect(err.code).assertEqual(10200001); }
       expect(threw4).assertTrue();
-      expect(d4.toFixed()).assertEqual('3.456');
-      let d5: Decimal = new Decimal('3.456');
+      expect(decimal4.toFixed()).assertEqual('3.456');
+      let decimal5: Decimal = new Decimal('3.456');
       let threw5: boolean = false;
-      try { let rm: ESObject = NaN; d5.toFixed(2, rm as Rounding); } catch (e) { threw5 = true; expect(e === null).assertFalse(); }
+      try { let rm: ESObject = NaN; decimal5.toFixed(2, rm as Rounding); } catch (e) { threw5 = true; expect(e === null).assertFalse(); }
       expect(threw5).assertTrue();
-      expect(d5.toString()).assertEqual('3.456');
-      let d6: Decimal = new Decimal('3.456');
+      expect(decimal5.toString()).assertEqual('3.456');
+      let decimal6: Decimal = new Decimal('3.456');
       let threw6: boolean = false;
-      try { d6.toFixed(2.5); } catch (e) { threw6 = true; expect(e === null).assertFalse(); }
+      try { decimal6.toFixed(2.5); } catch (e) { threw6 = true; expect(e === null).assertFalse(); }
       expect(threw6).assertTrue();
-      expect(d6.toString()).assertEqual('3.456');
-      let d7: Decimal = new Decimal('3.456');
-      try { d7.toFixed(-1); } catch (e) { let err: ESObject = e; expect(err.code).assertEqual(10200001); }
-      expect(d7.toFixed()).assertEqual('3.456');
-      let d8: Decimal = new Decimal('3.456');
-      let ts0: string = d8.toString();
-      try { d8.toFixed(-1); } catch (e) { let err: ESObject = e; expect(err.code).assertEqual(10200001); }
-      expect(d8.toString()).assertEqual(ts0);
-      let d9: Decimal = new Decimal('3.456');
-      let beforeD: number[] = d9.d.slice();
-      let beforeE: number = d9.e;
-      let beforeS: number = d9.s;
+      expect(decimal6.toString()).assertEqual('3.456');
+      let decimal7: Decimal = new Decimal('3.456');
+      try { decimal7.toFixed(-1); } catch (e) { let err: ESObject = e; expect(err.code).assertEqual(10200001); }
+      expect(decimal7.toFixed()).assertEqual('3.456');
+      let decimal8: Decimal = new Decimal('3.456');
+      let ts0: string = decimal8.toString();
+      try { decimal8.toFixed(-1); } catch (e) { let err: ESObject = e; expect(err.code).assertEqual(10200001); }
+      expect(decimal8.toString()).assertEqual(ts0);
+      let decimal9: Decimal = new Decimal('3.456');
+      let beforeD: number[] = decimal9.d.slice();
+      let beforeE: number = decimal9.e;
+      let beforeS: number = decimal9.s;
       let errorCode: number = -1;
-      try { d9.toFixed(-1); } catch (e) { let err: ESObject = e; errorCode = err.code; expect(err.code).assertEqual(10200001); }
+      try { decimal9.toFixed(-1); } catch (e) { let err: ESObject = e; errorCode = err.code; expect(err.code).assertEqual(10200001); }
       expect(errorCode).assertEqual(10200001);
-      let afterD: number[] = d9.d;
+      let afterD: number[] = decimal9.d;
       expect(afterD.length).assertEqual(beforeD.length);
       for (let i: number = 0; i < beforeD.length; i++) { expect(afterD[i]).assertEqual(beforeD[i]); }
-      expect(d9.e).assertEqual(beforeE);
-      expect(d9.s).assertEqual(beforeS);
-      let d10: Decimal = new Decimal('3.456');
-      try { d10.toFixed(-1); } catch (e) { let err: ESObject = e; expect(err.code).assertEqual(10200001); }
-      let sum: Decimal = d10.add(1);
+      expect(decimal9.e).assertEqual(beforeE);
+      expect(decimal9.s).assertEqual(beforeS);
+      let decimal10: Decimal = new Decimal('3.456');
+      try { decimal10.toFixed(-1); } catch (e) { let err: ESObject = e; expect(err.code).assertEqual(10200001); }
+      let sum: Decimal = decimal10.add(1);
       expect(sum.toString()).assertEqual('4.456');
-      let d11: Decimal = new Decimal('3.456');
+      let decimal11: Decimal = new Decimal('3.456');
       for (let i: number = 0; i < 3; i++) {
         let threw: boolean = false;
-        try { d11.toFixed(-1); } catch (e) { threw = true; let err: ESObject = e; expect(err.code).assertEqual(10200001); }
+        try { decimal11.toFixed(-1); } catch (e) { threw = true; let err: ESObject = e; expect(err.code).assertEqual(10200001); }
         expect(threw).assertTrue();
       }
-      expect(d11.toString()).assertEqual('3.456');
-      let d12: Decimal = new Decimal('3.456');
+      expect(decimal11.toString()).assertEqual('3.456');
+      let decimal12: Decimal = new Decimal('3.456');
       let normal: Decimal = new Decimal('3.456');
-      try { let rm: ESObject = 9; d12.toFixed(2, rm as Rounding); } catch (e) { let err: ESObject = e; expect(err.code).assertEqual(10200001); }
-      expect(d12.toFixed()).assertEqual(normal.toFixed());
+      try { let rm: ESObject = 9; decimal12.toFixed(2, rm as Rounding); } catch (e) { let err: ESObject = e; expect(err.code).assertEqual(10200001); }
+      expect(decimal12.toFixed()).assertEqual(normal.toFixed());
     });
 
     /**
@@ -844,21 +844,21 @@ export default function DecimalToFixedTest() {
       let r3: string = '';
       try { let und: ESObject = undefined; r3 = d.toFixed(und as number, Decimal.ROUND_DOWN); } catch (e) { threw3 = true; expect(e === null).assertFalse(); }
       if (!threw3) { expect(typeof r3).assertEqual('string'); }
-      let d2: Decimal = new Decimal('3.456');
-      expect(d2.toFixed(0)).assertEqual('3');
-      expect(d2.toFixed(0, Decimal.ROUND_HALF_UP)).assertEqual('3');
-      let d3: Decimal = new Decimal('3.456');
+      let decimal2: Decimal = new Decimal('3.456');
+      expect(decimal2.toFixed(0)).assertEqual('3');
+      expect(decimal2.toFixed(0, Decimal.ROUND_HALF_UP)).assertEqual('3');
+      let decimal3: Decimal = new Decimal('3.456');
       let dpObj: Decimal = new Decimal('2');
       let dpAny: ESObject = dpObj;
       let threw4: boolean = false;
-      try { let r: string = d3.toFixed(dpAny as number); } catch (e) { threw4 = true; expect(e === null).assertFalse(); }
-      if (!threw4) { expect(typeof d3.toFixed(dpAny as number)).assertEqual('string'); }
-      let d4: Decimal = new Decimal('3.456');
-      expect(d4.toFixed(0, Decimal.ROUND_UP)).assertEqual('4');
-      expect(d4.toFixed(0, Decimal.ROUND_DOWN)).assertEqual('3');
-      expect(d4.toFixed(0, Decimal.ROUND_HALF_EVEN)).assertEqual('3');
-      let d5: Decimal = new Decimal('3.456');
-      let swapped: string = d5.toFixed(Decimal.ROUND_DOWN, 2);
+      try { let r: string = decimal3.toFixed(dpAny as number); } catch (e) { threw4 = true; expect(e === null).assertFalse(); }
+      if (!threw4) { expect(typeof decimal3.toFixed(dpAny as number)).assertEqual('string'); }
+      let decimal4: Decimal = new Decimal('3.456');
+      expect(decimal4.toFixed(0, Decimal.ROUND_UP)).assertEqual('4');
+      expect(decimal4.toFixed(0, Decimal.ROUND_DOWN)).assertEqual('3');
+      expect(decimal4.toFixed(0, Decimal.ROUND_HALF_EVEN)).assertEqual('3');
+      let decimal5: Decimal = new Decimal('3.456');
+      let swapped: string = decimal5.toFixed(Decimal.ROUND_DOWN, 2);
       expect(swapped).assertEqual('3.5');
     });
   });

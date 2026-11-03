@@ -26,8 +26,8 @@ class CfgClass {
   precision: number = 5;
 }
 
-export default function DecimalConfigPropertiesTest2() {
-  describe('DecimalConfigPropertiesTest2', () => {
+export default function DecimalConfigTest() {
+  describe('DecimalConfigTest', () => {
     beforeAll(() => {});
     beforeEach(async () => {
       await common.sleep(common.DEFAULT_SLEEP_MS);
@@ -38,7 +38,7 @@ export default function DecimalConfigPropertiesTest2() {
 
     /**
      * @tc.name testDecimalConfigPropertiesPart01Test001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PROPERTIES_PART01_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PART01_TEST_0100
      * @tc.desc Consolidated: Verify config object shape, extra keys and Symbol keys are handled correctly
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -112,7 +112,7 @@ export default function DecimalConfigPropertiesTest2() {
 
     /**
      * @tc.name testDecimalConfigPropertiesPart01Test010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PROPERTIES_PART01_TEST_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PART01_TEST_1000
      * @tc.desc Consolidated: Verify property enumerability, prototype chain and property shadowing semantics
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -200,7 +200,7 @@ export default function DecimalConfigPropertiesTest2() {
 
     /**
      * @tc.name testDecimalConfigPropertiesPart01Test018
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PROPERTIES_PART01_TEST_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PART01_TEST_1800
      * @tc.desc Consolidated: Verify object integrity (freeze/seal/preventExtensions), circular refs and __proto__
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -272,7 +272,7 @@ export default function DecimalConfigPropertiesTest2() {
 
     /**
      * @tc.name testDecimalConfigPropertiesPart01Test026
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PROPERTIES_PART01_TEST_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PART01_TEST_2600
      * @tc.desc Consolidated: Verify extra key types (constructor/toString/undefined/null/function) and non-object configs
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -343,7 +343,7 @@ export default function DecimalConfigPropertiesTest2() {
 
     /**
      * @tc.name testDecimalConfigPropertiesPart01Test035
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PROPERTIES_PART01_TEST_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PART01_TEST_3500
      * @tc.desc Consolidated: Verify getter, key order, idempotency and single-property set behavior
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -425,7 +425,7 @@ export default function DecimalConfigPropertiesTest2() {
 
     /**
      * @tc.name testDecimalConfigPropertiesPart01Test043
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PROPERTIES_PART01_TEST_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PART01_TEST_4300
      * @tc.desc Consolidated: Verify undefined/null/false/true defaults and defaults-true restore behavior
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -518,7 +518,7 @@ export default function DecimalConfigPropertiesTest2() {
 
     /**
      * @tc.name testDecimalConfigPropertiesPart01Test054
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PROPERTIES_PART01_TEST_5400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PART01_TEST_5400
      * @tc.desc Consolidated: Verify all-properties set, partial update and default value observation
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -597,7 +597,7 @@ export default function DecimalConfigPropertiesTest2() {
 
     /**
      * @tc.name testDecimalConfigPropertiesPart01Test063
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PROPERTIES_PART01_TEST_6300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PART01_TEST_6300
      * @tc.desc Consolidated: Verify set return type, null/undefined config throws and delete behaviors
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -742,7 +742,7 @@ export default function DecimalConfigPropertiesTest2() {
 
     /**
      * @tc.name testDecimalConfigPropertiesPart02Test001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PROPERTIES_PART02_TEST_0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PART02_TEST_0010
      * @tc.desc Consolidated: Verify setting each single config property independently
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -820,7 +820,7 @@ export default function DecimalConfigPropertiesTest2() {
 
     /**
      * @tc.name testDecimalConfigPropertiesPart02Test011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PROPERTIES_PART02_TEST_0110
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PART02_TEST_0110
      * @tc.desc Consolidated: Verify precision bounds, coercion and edge values
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -926,7 +926,7 @@ export default function DecimalConfigPropertiesTest2() {
 
     /**
      * @tc.name testDecimalConfigPropertiesPart02Test021
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PROPERTIES_PART02_TEST_0210
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PART02_TEST_0210
      * @tc.desc Consolidated: Verify rounding bounds, non-integer values and null handling
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1008,7 +1008,7 @@ export default function DecimalConfigPropertiesTest2() {
 
     /**
      * @tc.name testDecimalConfigPropertiesPart02Test029
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PROPERTIES_PART02_TEST_0290
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PART02_TEST_0290
      * @tc.desc Consolidated: Verify toExpNeg and toExpPos bounds, non-integer values and throws
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1131,7 +1131,7 @@ export default function DecimalConfigPropertiesTest2() {
 
     /**
      * @tc.name testDecimalConfigPropertiesPart02Test043
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PROPERTIES_PART02_TEST_0430
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PART02_TEST_0430
      * @tc.desc Consolidated: Verify minE and maxE bounds, non-integer values and overflow/underflow
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1260,7 +1260,7 @@ export default function DecimalConfigPropertiesTest2() {
 
     /**
      * @tc.name testDecimalConfigPropertiesPart02Test058
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PROPERTIES_PART02_TEST_0580
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PART02_TEST_0580
      * @tc.desc Consolidated: Verify crypto and modulo bounds, non-integer values and throws
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1391,7 +1391,7 @@ export default function DecimalConfigPropertiesTest2() {
 
     /**
      * @tc.name testDecimalConfigPropertiesPart02Test070
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PROPERTIES_PART02_TEST_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PART02_TEST_0700
      * @tc.desc Consolidated: Verify defaults behavior, global effect, instance independence and invalid config throws
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1400,37 +1400,37 @@ export default function DecimalConfigPropertiesTest2() {
     it('testDecimalConfigPropertiesPart02Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       {
         Decimal.set({ precision: 7, defaults: true });
-        let d1: Decimal = new Decimal(1).div(3);
-        expect(d1.toString()).assertEqual('0.3333333');
+        let decimal1: Decimal = new Decimal(1).div(3);
+        expect(decimal1.toString()).assertEqual('0.3333333');
         Decimal.set({ defaults: true });
       }
       {
         Decimal.set({ toExpPos: 2 });
         Decimal.set({ defaults: true });
-        let d2: Decimal = new Decimal(100);
-        expect(d2.toString()).assertEqual('100');
+        let decimal2: Decimal = new Decimal(100);
+        expect(decimal2.toString()).assertEqual('100');
         Decimal.set({ defaults: true });
       }
       {
         Decimal.set({ precision: 5 });
         Decimal.set({ defaults: false });
-        let d3: Decimal = new Decimal(1).div(3);
-        expect(d3.toString()).assertEqual('0.33333');
+        let decimal3: Decimal = new Decimal(1).div(3);
+        expect(decimal3.toString()).assertEqual('0.33333');
         Decimal.set({ defaults: true });
       }
       {
         Decimal.set({ precision: 5 });
         let cfg23: ESObject = { defaults: 1 };
         Decimal.set(cfg23);
-        let d4: Decimal = new Decimal(1).div(3);
-        expect(d4.toString()).assertEqual('0.33333');
+        let decimal4: Decimal = new Decimal(1).div(3);
+        expect(decimal4.toString()).assertEqual('0.33333');
         Decimal.set({ defaults: true });
       }
       {
         Decimal.set({ precision: 5 });
         Decimal.set({ rounding: 3 });
-        let d5: Decimal = new Decimal(2).div(3);
-        expect(d5.toString()).assertEqual('0.66666');
+        let decimal5: Decimal = new Decimal(2).div(3);
+        expect(decimal5.toString()).assertEqual('0.66666');
         Decimal.set({ defaults: true });
       }
       {
@@ -1513,7 +1513,7 @@ export default function DecimalConfigPropertiesTest2() {
 
     /**
      * @tc.name testDecimalConfigPropertiesPart02Test083
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PROPERTIES_PART02_TEST_0830
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PART02_TEST_0830
      * @tc.desc Consolidated: Verify object shapes, integrity, accessors, proxy, nested throws and case sensitivity
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1646,7 +1646,7 @@ export default function DecimalConfigPropertiesTest2() {
 
     /**
      * @tc.name testDecimalConfigPropertiesPart02Test097
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PROPERTIES_PART02_TEST_0970
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PART02_TEST_0970
      * @tc.desc Consolidated: Verify delete behaviors including omission, non-existent, non-configurable and reassignment
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1729,7 +1729,7 @@ export default function DecimalConfigPropertiesTest2() {
 
     /**
      * @tc.name testDecimalConfigPropertiesPart03Test001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PROPERTIES_PART03_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PART03_TEST_0100
      * @tc.desc Consolidated: Verify deleting config keys makes them invisible via in, hasOwnProperty, Object.keys and direct access
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1800,7 +1800,7 @@ export default function DecimalConfigPropertiesTest2() {
 
     /**
      * @tc.name testDecimalConfigPropertiesPart03Test013
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PROPERTIES_PART03_TEST_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PART03_TEST_1300
      * @tc.desc Consolidated: Verify consecutive deletes, reassignment, Symbol key and nested object deletes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1856,7 +1856,7 @@ export default function DecimalConfigPropertiesTest2() {
 
     /**
      * @tc.name testDecimalConfigPropertiesPart03Test019
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PROPERTIES_PART03_TEST_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PART03_TEST_1900
      * @tc.desc Consolidated: Verify deleting config keys keeps global config values for precision/rounding/toExp/modulo
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1921,7 +1921,7 @@ export default function DecimalConfigPropertiesTest2() {
 
     /**
      * @tc.name testDecimalConfigPropertiesPart03Test025
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PROPERTIES_PART03_TEST_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PART03_TEST_2500
      * @tc.desc Consolidated: Verify deleting maxE/minE/defaults keeps global config, source deletion and rebuild
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -2009,7 +2009,7 @@ export default function DecimalConfigPropertiesTest2() {
 
     /**
      * @tc.name testDecimalConfigPropertiesPart03Test033
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PROPERTIES_PART03_TEST_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PART03_TEST_3300
      * @tc.desc Consolidated: Verify array element deletion preserves length, creates holes and affects iteration
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -2092,7 +2092,7 @@ export default function DecimalConfigPropertiesTest2() {
 
     /**
      * @tc.name testDecimalConfigPropertiesPart03Test044
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PROPERTIES_PART03_TEST_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PART03_TEST_4400
      * @tc.desc Consolidated: Verify deleting nonexistent properties and prototype chain interactions
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -2184,7 +2184,7 @@ export default function DecimalConfigPropertiesTest2() {
 
     /**
      * @tc.name testDecimalConfigPropertiesPart03Test057
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PROPERTIES_PART03_TEST_5700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PART03_TEST_5700
      * @tc.desc Consolidated: Verify configurable and non-configurable property deletion behaviors
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -2329,7 +2329,7 @@ export default function DecimalConfigPropertiesTest2() {
 
     /**
      * @tc.name testDecimalConfigPropertiesPart03Test067
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PROPERTIES_PART03_TEST_6700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PART03_TEST_6700
      * @tc.desc Consolidated: Verify type checks, JSON.stringify, Object.keys, Symbol and array delete return values
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -2392,7 +2392,7 @@ export default function DecimalConfigPropertiesTest2() {
 
     /**
      * @tc.name testDecimalConfigPropertiesPart04Test001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PROPERTIES_PART04_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PART04_TEST_0100
      * @tc.desc Verify legal config combinations and single-call defaults-true restores plus post-config state
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -2429,18 +2429,18 @@ export default function DecimalConfigPropertiesTest2() {
       Decimal.set({ defaults: true });
 
       Decimal.set({ precision: 5, defaults: true });
-      let d19: Decimal = new Decimal(1).div(3);
-      expect(d19.toString()).assertEqual('0.33333');
+      let decimal19: Decimal = new Decimal(1).div(3);
+      expect(decimal19.toString()).assertEqual('0.33333');
       Decimal.set({ defaults: true });
 
       Decimal.set({ rounding: 2, defaults: true });
-      let d20: Decimal = new Decimal(2).div(3);
-      expect(d20.toString()).assertEqual('0.66666666666666666667');
+      let decimal20: Decimal = new Decimal(2).div(3);
+      expect(decimal20.toString()).assertEqual('0.66666666666666666667');
       Decimal.set({ defaults: true });
 
       Decimal.set({ toExpPos: 2, defaults: true });
-      let d21: Decimal = new Decimal(100);
-      expect(d21.toString()).assertEqual('1e+2');
+      let decimal21: Decimal = new Decimal(100);
+      expect(decimal21.toString()).assertEqual('1e+2');
       Decimal.set({ defaults: true });
 
       Decimal.set({ toExpPos: 9 });
@@ -2463,7 +2463,7 @@ export default function DecimalConfigPropertiesTest2() {
 
     /**
      * @tc.name testDecimalConfigPropertiesPart04Test005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PROPERTIES_PART04_TEST_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PART04_TEST_0500
      * @tc.desc Verify null property values throw as type mismatch (precision/rounding/toExpNeg/toExpPos/minE/maxE/crypto/modulo)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -2541,7 +2541,7 @@ export default function DecimalConfigPropertiesTest2() {
 
     /**
      * @tc.name testDecimalConfigPropertiesPart04Test015
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PROPERTIES_PART04_TEST_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PART04_TEST_1500
      * @tc.desc Verify defaults null/undefined/false and all-undefined omission plus mixed precision+toExpNeg null+defaults throws
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -2558,14 +2558,14 @@ export default function DecimalConfigPropertiesTest2() {
       Decimal.set({ precision: 5 });
       let cfg16: ESObject = { defaults: undefined };
       Decimal.set(cfg16);
-      let d9: Decimal = new Decimal(1).div(3);
-      expect(d9.toString()).assertEqual('0.33333');
+      let decimal9: Decimal = new Decimal(1).div(3);
+      expect(decimal9.toString()).assertEqual('0.33333');
       Decimal.set({ defaults: true });
 
       Decimal.set({ precision: 5 });
       Decimal.set({ defaults: false });
-      let d10: Decimal = new Decimal(1).div(3);
-      expect(d10.toString()).assertEqual('0.33333');
+      let decimal10: Decimal = new Decimal(1).div(3);
+      expect(decimal10.toString()).assertEqual('0.33333');
       Decimal.set({ defaults: true });
 
       Decimal.set({ precision: 5 });
@@ -2583,8 +2583,8 @@ export default function DecimalConfigPropertiesTest2() {
       };
       try { Decimal.set(cfg29); } catch (e) { threw29 = true; }
       expect(threw29).assertFalse();
-      let d22: Decimal = new Decimal(1).div(3);
-      expect(d22.toString()).assertEqual('0.33333');
+      let decimal22: Decimal = new Decimal(1).div(3);
+      expect(decimal22.toString()).assertEqual('0.33333');
       Decimal.set({ defaults: true });
 
       let threw30: boolean = false;
@@ -2596,7 +2596,7 @@ export default function DecimalConfigPropertiesTest2() {
 
     /**
      * @tc.name testDecimalConfigPropertiesPart04Test019
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PROPERTIES_PART04_TEST_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PART04_TEST_1900
      * @tc.desc Verify legal single-property values for modulo / rounding / precision / toExpPos / toExpNeg
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -2604,44 +2604,44 @@ export default function DecimalConfigPropertiesTest2() {
      */
     it('testDecimalConfigPropertiesPart04Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       Decimal.set({ modulo: 5 });
-      let d12: Decimal = new Decimal(-8).mod(3);
-      expect(d12.toString()).assertEqual('1');
+      let decimal12: Decimal = new Decimal(-8).mod(3);
+      expect(decimal12.toString()).assertEqual('1');
       Decimal.set({ defaults: true });
 
       Decimal.set({ precision: 2, rounding: 1 });
-      let d13: Decimal = new Decimal(1).div(8);
-      expect(d13.toString()).assertEqual('0.12');
+      let decimal13: Decimal = new Decimal(1).div(8);
+      expect(decimal13.toString()).assertEqual('0.12');
       Decimal.set({ defaults: true });
 
       Decimal.set({ precision: 2, rounding: 7 });
-      let d14: Decimal = new Decimal(1).div(8);
-      expect(d14.toString()).assertEqual('0.13');
+      let decimal14: Decimal = new Decimal(1).div(8);
+      expect(decimal14.toString()).assertEqual('0.13');
       Decimal.set({ defaults: true });
 
       Decimal.set({ precision: 20 });
-      let d15: Decimal = new Decimal(1).div(3);
-      expect(d15.toString()).assertEqual('0.33333333333333333333');
+      let decimal15: Decimal = new Decimal(1).div(3);
+      expect(decimal15.toString()).assertEqual('0.33333333333333333333');
       Decimal.set({ defaults: true });
 
       Decimal.set({ precision: 30 });
-      let d16: Decimal = new Decimal(1).div(3);
-      expect(d16.toString()).assertEqual('0.333333333333333333333333333333');
+      let decimal16: Decimal = new Decimal(1).div(3);
+      expect(decimal16.toString()).assertEqual('0.333333333333333333333333333333');
       Decimal.set({ defaults: true });
 
       Decimal.set({ toExpPos: 21 });
-      let d17: Decimal = new Decimal('1e22');
-      expect(d17.toString()).assertEqual('1e+22');
+      let decimal17: Decimal = new Decimal('1e22');
+      expect(decimal17.toString()).assertEqual('1e+22');
       Decimal.set({ defaults: true });
 
       Decimal.set({ toExpNeg: -7 });
-      let d18: Decimal = new Decimal('1e-8');
-      expect(d18.toString()).assertEqual('1e-8');
+      let decimal18: Decimal = new Decimal('1e-8');
+      expect(decimal18.toString()).assertEqual('1e-8');
       Decimal.set({ defaults: true });
     });
 
     /**
      * @tc.name testDecimalConfigPropertiesPart04Test031
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PROPERTIES_PART04_TEST_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PART04_TEST_3100
      * @tc.desc Verify throwing getter / setter-only / Proxy get trap config behaviors
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -2705,7 +2705,7 @@ export default function DecimalConfigPropertiesTest2() {
 
     /**
      * @tc.name testDecimalConfigPropertiesPart04Test035
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PROPERTIES_PART04_TEST_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PART04_TEST_3500
      * @tc.desc Verify object/prototype/frozen/extra-key config behaviors including prototype chain reads
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -2821,7 +2821,7 @@ export default function DecimalConfigPropertiesTest2() {
 
     /**
      * @tc.name testDecimalConfigPropertiesPart04Test050
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PROPERTIES_PART04_TEST_5000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PART04_TEST_5000
      * @tc.desc Verify array-like / Decimal instance / freeze / preventExtensions / Symbol / non-enumerable / delete property behaviors
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -3011,7 +3011,7 @@ export default function DecimalConfigPropertiesTest2() {
 
     /**
      * @tc.name testDecimalConfigPropertiesPart04Test073
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PROPERTIES_PART04_TEST_7300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PART04_TEST_7300
      * @tc.desc Verify type-mismatch / out-of-range values throw (boolean/string/object/NaN/Infinity for toExpNeg/toExpPos/minE/maxE/rounding/crypto/modulo)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -3079,7 +3079,7 @@ export default function DecimalConfigPropertiesTest2() {
 
     /**
      * @tc.name testDecimalConfigPropertiesPart05Test001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PROPERTIES_PART05_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PART05_TEST_0100
      * @tc.desc Verify missing / undefined / null / primitive-number config argument throws backfilled code and empty object accepted
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -3131,7 +3131,7 @@ export default function DecimalConfigPropertiesTest2() {
 
     /**
      * @tc.name testDecimalConfigPropertiesPart05Test006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PROPERTIES_PART05_TEST_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PART05_TEST_0600
      * @tc.desc Verify precision omitted / undefined / null / boundary / out-of-range / type-mismatch behaviors
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -3140,15 +3140,15 @@ export default function DecimalConfigPropertiesTest2() {
     it('testDecimalConfigPropertiesPart05Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       Decimal.set({ defaults: true });
       Decimal.set({ rounding: 4 });
-      let d6: Decimal = new Decimal(1).div(3);
-      expect(d6.toString()).assertEqual('0.33333333333333333333');
+      let decimal6: Decimal = new Decimal(1).div(3);
+      expect(decimal6.toString()).assertEqual('0.33333333333333333333');
 
       Decimal.set({ defaults: true });
       Decimal.set({ precision: 3 });
       let cfg7: ESObject = { precision: undefined };
       Decimal.set(cfg7);
-      let d7: Decimal = new Decimal(1).div(7);
-      expect(d7.toString()).assertEqual('0.143');
+      let decimal7: Decimal = new Decimal(1).div(7);
+      expect(decimal7.toString()).assertEqual('0.143');
 
       Decimal.set({ defaults: true });
       try {
@@ -3162,13 +3162,13 @@ export default function DecimalConfigPropertiesTest2() {
 
       Decimal.set({ defaults: true });
       Decimal.set({ precision: 1 });
-      let d9: Decimal = new Decimal(1).div(3);
-      expect(d9.toString()).assertEqual('0.3');
+      let decimal9: Decimal = new Decimal(1).div(3);
+      expect(decimal9.toString()).assertEqual('0.3');
 
       Decimal.set({ defaults: true });
       Decimal.set({ precision: 1000000000 });
-      let d10: Decimal = new Decimal('1.5');
-      expect(d10.toString()).assertEqual('1.5');
+      let decimal10: Decimal = new Decimal('1.5');
+      expect(decimal10.toString()).assertEqual('1.5');
 
       Decimal.set({ defaults: true });
       try {
@@ -3211,7 +3211,7 @@ export default function DecimalConfigPropertiesTest2() {
 
     /**
      * @tc.name testDecimalConfigPropertiesPart05Test015
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PROPERTIES_PART05_TEST_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PART05_TEST_1500
      * @tc.desc Verify rounding omitted / undefined / null / boundary / out-of-range / type-mismatch behaviors
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -3219,15 +3219,15 @@ export default function DecimalConfigPropertiesTest2() {
      */
     it('testDecimalConfigPropertiesPart05Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       Decimal.set({ defaults: true });
-      let d15: Decimal = new Decimal(2).div(3);
-      expect(d15.toString()).assertEqual('0.66666666666666666667');
+      let decimal15: Decimal = new Decimal(2).div(3);
+      expect(decimal15.toString()).assertEqual('0.66666666666666666667');
 
       Decimal.set({ defaults: true });
       Decimal.set({ rounding: 0 });
       let cfg16: ESObject = { rounding: undefined };
       Decimal.set(cfg16);
-      let d16: Decimal = new Decimal(2).div(3);
-      expect(d16.toString()).assertEqual('0.66666666666666666667');
+      let decimal16: Decimal = new Decimal(2).div(3);
+      expect(decimal16.toString()).assertEqual('0.66666666666666666667');
 
       Decimal.set({ defaults: true });
       try {
@@ -3241,13 +3241,13 @@ export default function DecimalConfigPropertiesTest2() {
 
       Decimal.set({ defaults: true });
       Decimal.set({ precision: 3, rounding: 0 });
-      let d18: Decimal = new Decimal(1).div(7);
-      expect(d18.toString()).assertEqual('0.143');
+      let decimal18: Decimal = new Decimal(1).div(7);
+      expect(decimal18.toString()).assertEqual('0.143');
 
       Decimal.set({ defaults: true });
       Decimal.set({ rounding: 8 });
-      let d19: Decimal = Decimal.round(new Decimal('2.5'));
-      expect(d19.toString()).assertEqual('2');
+      let decimal19: Decimal = Decimal.round(new Decimal('2.5'));
+      expect(decimal19.toString()).assertEqual('2');
 
       Decimal.set({ defaults: true });
       try {
@@ -3292,7 +3292,7 @@ export default function DecimalConfigPropertiesTest2() {
 
     /**
      * @tc.name testDecimalConfigPropertiesPart05Test024
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PROPERTIES_PART05_TEST_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PART05_TEST_2400
      * @tc.desc Verify toExpNeg omitted / undefined / null / legal / extreme / illegal-sign behaviors
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -3309,8 +3309,8 @@ export default function DecimalConfigPropertiesTest2() {
       Decimal.set({ toExpNeg: 0 });
       let cfg25: ESObject = { toExpNeg: undefined };
       Decimal.set(cfg25);
-      let d25: Decimal = new Decimal('0.1');
-      expect(d25.toString()).assertEqual('1e-1');
+      let decimal25: Decimal = new Decimal('0.1');
+      expect(decimal25.toString()).assertEqual('1e-1');
 
       Decimal.set({ defaults: true });
       try {
@@ -3324,8 +3324,8 @@ export default function DecimalConfigPropertiesTest2() {
 
       Decimal.set({ defaults: true });
       Decimal.set({ toExpNeg: 0 });
-      let d27: Decimal = new Decimal('0.5');
-      expect(d27.toString()).assertEqual('5e-1');
+      let decimal27: Decimal = new Decimal('0.5');
+      expect(decimal27.toString()).assertEqual('5e-1');
 
       Decimal.set({ defaults: true });
       try {
@@ -3335,8 +3335,8 @@ export default function DecimalConfigPropertiesTest2() {
         let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
-      let d28: Decimal = new Decimal('0.5');
-      expect(d28.toString()).assertEqual('0.5');
+      let decimal28: Decimal = new Decimal('0.5');
+      expect(decimal28.toString()).assertEqual('0.5');
 
       Decimal.set({ defaults: true });
       try {
@@ -3349,13 +3349,13 @@ export default function DecimalConfigPropertiesTest2() {
 
       Decimal.set({ defaults: true });
       Decimal.set({ toExpNeg: -5 });
-      let d30: Decimal = new Decimal('0.00001');
-      expect(d30.toString()).assertEqual('1e-5');
+      let decimal30: Decimal = new Decimal('0.00001');
+      expect(decimal30.toString()).assertEqual('1e-5');
     });
 
     /**
      * @tc.name testDecimalConfigPropertiesPart05Test031
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PROPERTIES_PART05_TEST_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PART05_TEST_3100
      * @tc.desc Verify toExpPos omitted / undefined / null / legal / extreme / illegal-sign behaviors
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -3372,8 +3372,8 @@ export default function DecimalConfigPropertiesTest2() {
       Decimal.set({ toExpPos: 0 });
       let cfg32: ESObject = { toExpPos: undefined };
       Decimal.set(cfg32);
-      let d32: Decimal = new Decimal('10');
-      expect(d32.toString()).assertEqual('1e+1');
+      let decimal32: Decimal = new Decimal('10');
+      expect(decimal32.toString()).assertEqual('1e+1');
 
       Decimal.set({ defaults: true });
       try {
@@ -3387,8 +3387,8 @@ export default function DecimalConfigPropertiesTest2() {
 
       Decimal.set({ defaults: true });
       Decimal.set({ toExpPos: 0 });
-      let d34: Decimal = new Decimal('100');
-      expect(d34.toString()).assertEqual('1e+2');
+      let decimal34: Decimal = new Decimal('100');
+      expect(decimal34.toString()).assertEqual('1e+2');
 
       Decimal.set({ defaults: true });
       try {
@@ -3398,8 +3398,8 @@ export default function DecimalConfigPropertiesTest2() {
         let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
-      let d35: Decimal = new Decimal('1e21');
-      expect(d35.toString()).assertEqual('1e+21');
+      let decimal35: Decimal = new Decimal('1e21');
+      expect(decimal35.toString()).assertEqual('1e+21');
 
       Decimal.set({ defaults: true });
       try {
@@ -3412,13 +3412,13 @@ export default function DecimalConfigPropertiesTest2() {
 
       Decimal.set({ defaults: true });
       Decimal.set({ toExpPos: 5 });
-      let d37: Decimal = new Decimal('100000');
-      expect(d37.toString()).assertEqual('1e+5');
+      let decimal37: Decimal = new Decimal('100000');
+      expect(decimal37.toString()).assertEqual('1e+5');
     });
 
     /**
      * @tc.name testDecimalConfigPropertiesPart05Test038
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PROPERTIES_PART05_TEST_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PART05_TEST_3800
      * @tc.desc Verify minE omitted / undefined / null / legal / extreme / illegal-sign behaviors
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -3426,15 +3426,15 @@ export default function DecimalConfigPropertiesTest2() {
      */
     it('testDecimalConfigPropertiesPart05Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       Decimal.set({ defaults: true });
-      let d38: Decimal = new Decimal('1e-7');
-      expect(d38.toString()).assertEqual('1e-7');
+      let decimal38: Decimal = new Decimal('1e-7');
+      expect(decimal38.toString()).assertEqual('1e-7');
 
       Decimal.set({ defaults: true });
       Decimal.set({ minE: -3 });
       let cfg39: ESObject = { minE: undefined };
       Decimal.set(cfg39);
-      let d39: Decimal = new Decimal('1e-5');
-      expect(d39.toString()).assertEqual('0');
+      let decimal39: Decimal = new Decimal('1e-5');
+      expect(decimal39.toString()).assertEqual('0');
 
       Decimal.set({ defaults: true });
       try {
@@ -3448,8 +3448,8 @@ export default function DecimalConfigPropertiesTest2() {
 
       Decimal.set({ defaults: true });
       Decimal.set({ minE: 0 });
-      let d41: Decimal = new Decimal('1e-1');
-      expect(d41.toString()).assertEqual('0');
+      let decimal41: Decimal = new Decimal('1e-1');
+      expect(decimal41.toString()).assertEqual('0');
 
       Decimal.set({ defaults: true });
       try {
@@ -3459,8 +3459,8 @@ export default function DecimalConfigPropertiesTest2() {
         let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
-      let d42: Decimal = new Decimal('1e-7');
-      expect(d42.toString()).assertEqual('1e-7');
+      let decimal42: Decimal = new Decimal('1e-7');
+      expect(decimal42.toString()).assertEqual('1e-7');
 
       Decimal.set({ defaults: true });
       try {
@@ -3473,13 +3473,13 @@ export default function DecimalConfigPropertiesTest2() {
 
       Decimal.set({ defaults: true });
       Decimal.set({ minE: -5 });
-      let d44: Decimal = new Decimal('1e-6');
-      expect(d44.toString()).assertEqual('0');
+      let decimal44: Decimal = new Decimal('1e-6');
+      expect(decimal44.toString()).assertEqual('0');
     });
 
     /**
      * @tc.name testDecimalConfigPropertiesPart05Test045
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PROPERTIES_PART05_TEST_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PART05_TEST_4500
      * @tc.desc Verify maxE omitted / undefined / null / legal / extreme / illegal-sign behaviors
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -3487,15 +3487,15 @@ export default function DecimalConfigPropertiesTest2() {
      */
     it('testDecimalConfigPropertiesPart05Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       Decimal.set({ defaults: true });
-      let d45: Decimal = new Decimal('1e21');
-      expect(d45.isFinite()).assertTrue();
+      let decimal45: Decimal = new Decimal('1e21');
+      expect(decimal45.isFinite()).assertTrue();
 
       Decimal.set({ defaults: true });
       Decimal.set({ maxE: 2 });
       let cfg46: ESObject = { maxE: undefined };
       Decimal.set(cfg46);
-      let d46: Decimal = new Decimal('1e3');
-      expect(d46.toString()).assertEqual('Infinity');
+      let decimal46: Decimal = new Decimal('1e3');
+      expect(decimal46.toString()).assertEqual('Infinity');
 
       Decimal.set({ defaults: true });
       try {
@@ -3522,8 +3522,8 @@ export default function DecimalConfigPropertiesTest2() {
         let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
-      let d49: Decimal = new Decimal('1e21');
-      expect(d49.toString()).assertEqual('1e+21');
+      let decimal49: Decimal = new Decimal('1e21');
+      expect(decimal49.toString()).assertEqual('1e+21');
 
       Decimal.set({ defaults: true });
       try {
@@ -3536,13 +3536,13 @@ export default function DecimalConfigPropertiesTest2() {
 
       Decimal.set({ defaults: true });
       Decimal.set({ maxE: 5 });
-      let d51: Decimal = new Decimal('1e6');
-      expect(d51.toString()).assertEqual('Infinity');
+      let decimal51: Decimal = new Decimal('1e6');
+      expect(decimal51.toString()).assertEqual('Infinity');
     });
 
     /**
      * @tc.name testDecimalConfigPropertiesPart05Test052
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PROPERTIES_PART05_TEST_5200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PART05_TEST_5200
      * @tc.desc Verify crypto and modulo omitted / undefined / null / legal / out-of-range / type-mismatch behaviors
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -3551,15 +3551,15 @@ export default function DecimalConfigPropertiesTest2() {
     it('testDecimalConfigPropertiesPart05Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       Decimal.set({ defaults: true });
       Decimal.set({ precision: 20 });
-      let d52: Decimal = new Decimal(1).add(2);
-      expect(d52.toString()).assertEqual('3');
+      let decimal52: Decimal = new Decimal(1).add(2);
+      expect(decimal52.toString()).assertEqual('3');
 
       Decimal.set({ defaults: true });
       Decimal.set({ crypto: false });
       let cfg53: ESObject = { crypto: undefined };
       Decimal.set(cfg53);
-      let d53: Decimal = new Decimal(1).add(2);
-      expect(d53.toString()).assertEqual('3');
+      let decimal53: Decimal = new Decimal(1).add(2);
+      expect(decimal53.toString()).assertEqual('3');
 
       Decimal.set({ defaults: true });
       try {
@@ -3578,8 +3578,8 @@ export default function DecimalConfigPropertiesTest2() {
 
       Decimal.set({ defaults: true });
       Decimal.set({ crypto: false });
-      let d56: Decimal = new Decimal(1).mul(2);
-      expect(d56.toString()).assertEqual('2');
+      let decimal56: Decimal = new Decimal(1).mul(2);
+      expect(decimal56.toString()).assertEqual('2');
 
       Decimal.set({ defaults: true });
       try {
@@ -3592,15 +3592,15 @@ export default function DecimalConfigPropertiesTest2() {
       }
 
       Decimal.set({ defaults: true });
-      let d58: Decimal = new Decimal(-1).mod(3);
-      expect(d58.toString()).assertEqual('-1');
+      let decimal58: Decimal = new Decimal(-1).mod(3);
+      expect(decimal58.toString()).assertEqual('-1');
 
       Decimal.set({ defaults: true });
       Decimal.set({ modulo: 0 });
       let cfg59: ESObject = { modulo: undefined };
       Decimal.set(cfg59);
-      let d59: Decimal = new Decimal(-1).mod(3);
-      expect(d59.toString()).assertEqual('2');
+      let decimal59: Decimal = new Decimal(-1).mod(3);
+      expect(decimal59.toString()).assertEqual('2');
 
       Decimal.set({ defaults: true });
       try {
@@ -3614,13 +3614,13 @@ export default function DecimalConfigPropertiesTest2() {
 
       Decimal.set({ defaults: true });
       Decimal.set({ modulo: 0 });
-      let d61: Decimal = new Decimal(-7).mod(4);
-      expect(d61.toString()).assertEqual('1');
+      let decimal61: Decimal = new Decimal(-7).mod(4);
+      expect(decimal61.toString()).assertEqual('1');
 
       Decimal.set({ defaults: true });
       Decimal.set({ modulo: 9 });
-      let d62: Decimal = new Decimal(7).mod(4);
-      expect(d62.toString()).assertEqual('3');
+      let decimal62: Decimal = new Decimal(7).mod(4);
+      expect(decimal62.toString()).assertEqual('3');
 
       Decimal.set({ defaults: true });
       let threw63: boolean = false;
@@ -3641,7 +3641,7 @@ export default function DecimalConfigPropertiesTest2() {
 
     /**
      * @tc.name testDecimalConfigPropertiesPart05Test065
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PROPERTIES_PART05_TEST_6500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PART05_TEST_6500
      * @tc.desc Verify defaults true/false restore behaviors including same-call override
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -3651,37 +3651,37 @@ export default function DecimalConfigPropertiesTest2() {
       Decimal.set({ defaults: true });
       Decimal.set({ precision: 3 });
       Decimal.set({ defaults: true });
-      let d65: Decimal = new Decimal(1).div(3);
-      expect(d65.toString()).assertEqual('0.33333333333333333333');
+      let decimal65: Decimal = new Decimal(1).div(3);
+      expect(decimal65.toString()).assertEqual('0.33333333333333333333');
 
       Decimal.set({ defaults: true });
       Decimal.set({ precision: 3 });
       Decimal.set({ defaults: false });
-      let d66: Decimal = new Decimal(1).div(7);
-      expect(d66.toString()).assertEqual('0.143');
+      let decimal66: Decimal = new Decimal(1).div(7);
+      expect(decimal66.toString()).assertEqual('0.143');
 
       Decimal.set({ defaults: true });
       Decimal.set({ precision: 3 });
       Decimal.set({ defaults: true, precision: 5 });
-      let d67: Decimal = new Decimal(1).div(7);
-      expect(d67.toString()).assertEqual('0.14286');
+      let decimal67: Decimal = new Decimal(1).div(7);
+      expect(decimal67.toString()).assertEqual('0.14286');
 
       Decimal.set({ defaults: true });
       Decimal.set({ toExpPos: 0 });
       Decimal.set({ defaults: true });
-      let d68: Decimal = new Decimal('10');
-      expect(d68.toString()).assertEqual('10');
+      let decimal68: Decimal = new Decimal('10');
+      expect(decimal68.toString()).assertEqual('10');
 
       Decimal.set({ defaults: true });
       Decimal.set({ rounding: 0 });
       Decimal.set({ defaults: true });
-      let d69: Decimal = new Decimal(2).div(3);
-      expect(d69.toString()).assertEqual('0.66666666666666666667');
+      let decimal69: Decimal = new Decimal(2).div(3);
+      expect(decimal69.toString()).assertEqual('0.66666666666666666667');
     });
 
     /**
      * @tc.name testDecimalConfigPropertiesPart05Test070
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PROPERTIES_PART05_TEST_7000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PART05_TEST_7000
      * @tc.desc Verify Symbol-keyed / non-enumerable / inherited / frozen / sealed / self-circular / null-prototype / nested / getter config behaviors
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -3693,56 +3693,56 @@ export default function DecimalConfigPropertiesTest2() {
       let cfg70: ESObject = { precision: 3, rounding: 4 };
       cfg70[sk] = 999;
       Decimal.set(cfg70);
-      let d70: Decimal = new Decimal(1).div(7);
-      expect(d70.toString()).assertEqual('0.143');
+      let decimal70: Decimal = new Decimal(1).div(7);
+      expect(decimal70.toString()).assertEqual('0.143');
 
       Decimal.set({ defaults: true });
       let cfg71: ESObject = {};
       common.defineProperty(cfg71, 'precision', { value: 3, enumerable: false });
       Decimal.set(cfg71);
-      let d71: Decimal = new Decimal(1).div(7);
-      expect(d71.toString()).assertEqual('0.143');
+      let decimal71: Decimal = new Decimal(1).div(7);
+      expect(decimal71.toString()).assertEqual('0.143');
 
       Decimal.set({ defaults: true });
       let proto72: ESObject = { precision: 3 };
       let cfg72: ESObject = common.createObject(proto72);
       Decimal.set(cfg72);
-      let d72: Decimal = new Decimal(1).div(7);
-      expect(d72.toString()).assertEqual('0.143');
+      let decimal72: Decimal = new Decimal(1).div(7);
+      expect(decimal72.toString()).assertEqual('0.143');
 
       Decimal.set({ defaults: true });
       let cfg73: ESObject = { precision: 3 };
       common.freeze(cfg73);
       Decimal.set(cfg73);
-      let d73: Decimal = new Decimal(1).div(7);
-      expect(d73.toString()).assertEqual('0.143');
+      let decimal73: Decimal = new Decimal(1).div(7);
+      expect(decimal73.toString()).assertEqual('0.143');
 
       Decimal.set({ defaults: true });
       let cfg74: ESObject = { precision: 3 };
       common.seal(cfg74);
       Decimal.set(cfg74);
-      let d74: Decimal = new Decimal(1).div(7);
-      expect(d74.toString()).assertEqual('0.143');
+      let decimal74: Decimal = new Decimal(1).div(7);
+      expect(decimal74.toString()).assertEqual('0.143');
 
       Decimal.set({ defaults: true });
       let cfg75: ESObject = { precision: 3 };
       cfg75.self = cfg75;
       Decimal.set(cfg75);
-      let d75: Decimal = new Decimal(1).div(7);
-      expect(d75.toString()).assertEqual('0.143');
+      let decimal75: Decimal = new Decimal(1).div(7);
+      expect(decimal75.toString()).assertEqual('0.143');
 
       Decimal.set({ defaults: true });
       let cfg76: ESObject = common.createObject(null);
       cfg76.precision = 3;
       Decimal.set(cfg76);
-      let d76: Decimal = new Decimal(1).div(7);
-      expect(d76.toString()).assertEqual('0.143');
+      let decimal76: Decimal = new Decimal(1).div(7);
+      expect(decimal76.toString()).assertEqual('0.143');
 
       Decimal.set({ defaults: true });
       let cfg77: ESObject = common.nestedConfig('deepExtra');
       Decimal.set(cfg77);
-      let d77: Decimal = new Decimal(1).div(7);
-      expect(d77.toString()).assertEqual('0.143');
+      let decimal77: Decimal = new Decimal(1).div(7);
+      expect(decimal77.toString()).assertEqual('0.143');
 
       Decimal.set({ defaults: true });
       let cfg78: ESObject = {};
@@ -3751,8 +3751,8 @@ export default function DecimalConfigPropertiesTest2() {
         enumerable: true,
       });
       Decimal.set(cfg78);
-      let d78: Decimal = new Decimal(1).div(7);
-      expect(d78.toString()).assertEqual('0.143');
+      let decimal78: Decimal = new Decimal(1).div(7);
+      expect(decimal78.toString()).assertEqual('0.143');
 
       Decimal.set({ defaults: true });
       let cfg79: ESObject = {};
@@ -3773,29 +3773,29 @@ export default function DecimalConfigPropertiesTest2() {
       cfg80.toString = (): string => { return 'hacked'; };
       cfg80.constructor = null;
       Decimal.set(cfg80);
-      let d80: Decimal = new Decimal(1).div(7);
-      expect(d80.toString()).assertEqual('0.143');
+      let decimal80: Decimal = new Decimal(1).div(7);
+      expect(decimal80.toString()).assertEqual('0.143');
 
       Decimal.set({ defaults: true });
       let sk81: ESObject = common.createSymbol('rounding');
       let cfg81: ESObject = { precision: 3 };
       common.defineProperty(cfg81, sk81, { value: 0, enumerable: false });
       Decimal.set(cfg81);
-      let d81: Decimal = new Decimal(1).div(7);
-      expect(d81.toString()).assertEqual('0.143');
+      let decimal81: Decimal = new Decimal(1).div(7);
+      expect(decimal81.toString()).assertEqual('0.143');
 
       Decimal.set({ defaults: true });
       let cfg82: ESObject = { precision: 3 };
       Decimal.set(cfg82);
       Decimal.set(cfg82);
-      let d82: Decimal = new Decimal(1).div(7);
-      expect(d82.toString()).assertEqual('0.143');
+      let decimal82: Decimal = new Decimal(1).div(7);
+      expect(decimal82.toString()).assertEqual('0.143');
 
       Decimal.set({ defaults: true });
       let cfg83: ESObject = { precision: 3, rounding: undefined, toExpNeg: undefined };
       Decimal.set(cfg83);
-      let d83: Decimal = new Decimal(1).div(7);
-      expect(d83.toString()).assertEqual('0.143');
+      let decimal83: Decimal = new Decimal(1).div(7);
+      expect(decimal83.toString()).assertEqual('0.143');
 
       Decimal.set({ defaults: true });
       let cfg84: ESObject = { precision: NaN };
@@ -3810,7 +3810,7 @@ export default function DecimalConfigPropertiesTest2() {
 
     /**
      * @tc.name testDecimalConfigPropertiesPart05Test085
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PROPERTIES_PART05_TEST_8500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_CONFIG_PART05_TEST_8500
      * @tc.desc Verify delete property behaviors and multi-property set / failed-set no partial apply
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -3821,15 +3821,15 @@ export default function DecimalConfigPropertiesTest2() {
       let cfg85: ESObject = { precision: 3 };
       common.deleteProperty(cfg85, 'precision');
       Decimal.set(cfg85);
-      let d85: Decimal = new Decimal(1).div(3);
-      expect(d85.toString()).assertEqual('0.33333333333333333333');
+      let decimal85: Decimal = new Decimal(1).div(3);
+      expect(decimal85.toString()).assertEqual('0.33333333333333333333');
 
       Decimal.set({ defaults: true });
       let cfg86: ESObject = { precision: 3 };
       Decimal.set(cfg86);
       common.deleteProperty(cfg86, 'precision');
-      let d86: Decimal = new Decimal(1).div(7);
-      expect(d86.toString()).assertEqual('0.143');
+      let decimal86: Decimal = new Decimal(1).div(7);
+      expect(decimal86.toString()).assertEqual('0.143');
 
       Decimal.set({ defaults: true });
       let cfg87: ESObject = {};
@@ -3842,8 +3842,8 @@ export default function DecimalConfigPropertiesTest2() {
         expect(err.code !== undefined).assertFalse();
       }
       Decimal.set(cfg87);
-      let d87: Decimal = new Decimal(1).div(7);
-      expect(d87.toString()).assertEqual('0.143');
+      let decimal87: Decimal = new Decimal(1).div(7);
+      expect(decimal87.toString()).assertEqual('0.143');
 
       Decimal.set({ defaults: true });
       let proto88: ESObject = { precision: 3 };
@@ -3851,23 +3851,23 @@ export default function DecimalConfigPropertiesTest2() {
       let deleted88: boolean = common.deleteProperty(cfg88, 'ownProp');
       expect(deleted88).assertTrue();
       Decimal.set(cfg88);
-      let d88: Decimal = new Decimal(1).div(7);
-      expect(d88.toString()).assertEqual('0.143');
+      let decimal88: Decimal = new Decimal(1).div(7);
+      expect(decimal88.toString()).assertEqual('0.143');
 
       Decimal.set({ defaults: true });
       let cfg89: ESObject = { precision: undefined };
       common.deleteProperty(cfg89, 'precision');
       Decimal.set(cfg89);
-      let d89: Decimal = new Decimal(1).div(3);
-      expect(d89.toString()).assertEqual('0.33333333333333333333');
+      let decimal89: Decimal = new Decimal(1).div(3);
+      expect(decimal89.toString()).assertEqual('0.33333333333333333333');
 
       Decimal.set({ defaults: true });
       let cfg90: ESObject = { precision: 3, rounding: 0 };
       common.deleteProperty(cfg90, 'precision');
       common.deleteProperty(cfg90, 'rounding');
       Decimal.set(cfg90);
-      let d90: Decimal = new Decimal(1).div(3);
-      expect(d90.toString()).assertEqual('0.33333333333333333333');
+      let decimal90: Decimal = new Decimal(1).div(3);
+      expect(decimal90.toString()).assertEqual('0.33333333333333333333');
 
       Decimal.set({ defaults: true });
       let cfg91: ESObject = { precision: 3 };
@@ -3875,16 +3875,16 @@ export default function DecimalConfigPropertiesTest2() {
       common.deleteProperty(cfg91, 'precision');
       expect(cfg91.precision === undefined).assertTrue();
       Decimal.set(cfg91);
-      let d91: Decimal = new Decimal(1).div(3);
-      expect(d91.toString()).assertEqual('0.33333333333333333333');
+      let decimal91: Decimal = new Decimal(1).div(3);
+      expect(decimal91.toString()).assertEqual('0.33333333333333333333');
 
       Decimal.set({ defaults: true });
       let cfg92: ESObject = { precision: 3 };
       common.deleteProperty(cfg92, 'precision');
       cfg92.precision = 5;
       Decimal.set(cfg92);
-      let d92: Decimal = new Decimal(1).div(7);
-      expect(d92.toString()).assertEqual('0.14286');
+      let decimal92: Decimal = new Decimal(1).div(7);
+      expect(decimal92.toString()).assertEqual('0.14286');
 
       Decimal.set({ defaults: true });
       let before: string = new Decimal('2').add('3').toString();
@@ -3895,8 +3895,8 @@ export default function DecimalConfigPropertiesTest2() {
 
       Decimal.set({ defaults: true });
       Decimal.set({ precision: 5, rounding: 0, toExpNeg: -3, toExpPos: 3, crypto: false });
-      let d94: Decimal = new Decimal(1).div(7);
-      expect(d94.toString()).assertEqual('0.14286');
+      let decimal94: Decimal = new Decimal(1).div(7);
+      expect(decimal94.toString()).assertEqual('0.14286');
 
       Decimal.set({ defaults: true });
       try {
@@ -3918,8 +3918,8 @@ export default function DecimalConfigPropertiesTest2() {
         let err: ESObject = e;
         expect(typeof err.code).assertEqual('number');
       }
-      let d96: Decimal = new Decimal(1).div(7);
-      expect(d96.toString()).assertEqual('0.143');
+      let decimal96: Decimal = new Decimal(1).div(7);
+      expect(decimal96.toString()).assertEqual('0.143');
     });
   });
 }

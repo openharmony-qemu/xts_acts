@@ -43,10 +43,10 @@ export default function DecimalToSignificantDigitsTest() {
       expect(new Decimal('987.654321').toSignificantDigits().toString()).assertEqual('987.654321');
       expect(new Decimal(0).toSignificantDigits().toString()).assertEqual('0');
       expect(new Decimal('1.23456789012345678901').toSignificantDigits().toString()).assertEqual('1.234567890123456789');
-      let d4: Decimal = new Decimal('123.456');
-      let r4: Decimal = d4.toSignificantDigits();
-      expect(d4.toString()).assertEqual('123.456');
-      expect(r4 === d4).assertFalse();
+      let decimal4: Decimal = new Decimal('123.456');
+      let r4: Decimal = decimal4.toSignificantDigits();
+      expect(decimal4.toString()).assertEqual('123.456');
+      expect(r4 === decimal4).assertFalse();
       expect(new Decimal('987.654321').toSignificantDigits(6, 4).toString()).assertEqual('987.654');
       expect(new Decimal(0).toSignificantDigits(3, 4).toString()).assertEqual('0');
       expect(new Decimal('987.654321').toSignificantDigits(1, 4).toString()).assertEqual('1000');
@@ -153,19 +153,19 @@ export default function DecimalToSignificantDigitsTest() {
      * @tc.level LEVEL2
      */
     it('testDecimalToSignificantDigitsPart01Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let d53: Decimal = new Decimal('987.654321');
+      let decimal53: Decimal = new Decimal('987.654321');
       let errCode53: number = -1;
       try {
         let rm: ESObject = 9;
-        d53.toSignificantDigits(6, rm as Rounding);
+        decimal53.toSignificantDigits(6, rm as Rounding);
       } catch (e) {
         errCode53 = (e as ESObject).code;
       }
       expect(errCode53).assertEqual(10200001);
-      let d54: Decimal = new Decimal('987.654321');
+      let decimal54: Decimal = new Decimal('987.654321');
       let errCode54: number = -1;
       try {
-        d54.toSignificantDigits(0, 8);
+        decimal54.toSignificantDigits(0, 8);
       } catch (e) {
         errCode54 = (e as ESObject).code;
       }
@@ -178,8 +178,8 @@ export default function DecimalToSignificantDigitsTest() {
       expect(r58.e).assertEqual(2);
       expect(r58.s).assertEqual(1);
       expect(r58.toString()).assertEqual('123.5');
-      let d59: Decimal = new Decimal('987.654321');
-      expect(d59.toSignificantDigits().comparedTo(d59)).assertEqual(0);
+      let decimal59: Decimal = new Decimal('987.654321');
+      expect(decimal59.toSignificantDigits().comparedTo(decimal59)).assertEqual(0);
       expect(new Decimal('12.3456').toSignificantDigits(3, 4).toString()).assertEqual('12.3');
       expect(new Decimal('123.456').toSignificantDigits(3, 4).add(1).toString()).assertEqual('124');
       let r62: Decimal = new Decimal('-987.654321').toSignificantDigits(3, 4);
@@ -244,9 +244,9 @@ export default function DecimalToSignificantDigitsTest() {
     it('testDecimalToSignificantDigitsPart02Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new Decimal(45.6).toSignificantDigits(2).toString()).assertEqual('46');
       expect(new Decimal(987.654321).toSignificantDigits(6).toString()).assertEqual('987.654');
-      let d3: Decimal = new Decimal(45.6);
+      let decimal3: Decimal = new Decimal(45.6);
       let sd: number = 3;
-      expect(d3.toSignificantDigits(sd).toString()).assertEqual('45.6');
+      expect(decimal3.toSignificantDigits(sd).toString()).assertEqual('45.6');
       expect(new Decimal(123.456).toSignificantDigits().toString()).assertEqual('123.456');
       expect(new Decimal(1.25).toSignificantDigits(2, Decimal.ROUND_DOWN).toString()).assertEqual('1.2');
       expect(new Decimal(45.6).toSignificantDigits(1e6).toString()).assertEqual('45.6');
@@ -309,116 +309,116 @@ export default function DecimalToSignificantDigitsTest() {
      * @tc.level LEVEL2
      */
     it('testDecimalToSignificantDigitsPart02Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let d33: Decimal = new Decimal(45.6);
+      let decimal33: Decimal = new Decimal(45.6);
       let thrown33: boolean = false;
       try {
         let sdU: ESObject = undefined;
-        d33.toSignificantDigits(sdU as number);
+        decimal33.toSignificantDigits(sdU as number);
       } catch (e) {
         thrown33 = true;
         let err: ESObject = e;
         expect(err.code !== undefined).assertTrue();
       }
       expect(thrown33).assertFalse();
-      let d34: Decimal = new Decimal(45.6);
+      let decimal34: Decimal = new Decimal(45.6);
       let thrown34: boolean = false;
       try {
         let sdN: ESObject = null;
-        d34.toSignificantDigits(sdN as number);
+        decimal34.toSignificantDigits(sdN as number);
       } catch (e) {
         thrown34 = true;
         let err: ESObject = e;
         expect(err.code !== undefined).assertTrue();
       }
       expect(thrown34).assertTrue();
-      let d35: Decimal = new Decimal(45.6);
-      expect(d35.toSignificantDigits().toString()).assertEqual('45.6');
+      let decimal35: Decimal = new Decimal(45.6);
+      expect(decimal35.toSignificantDigits().toString()).assertEqual('45.6');
       let thrown35: boolean = false;
       try {
         let sdU: ESObject = undefined;
-        d35.toSignificantDigits(sdU as number);
+        decimal35.toSignificantDigits(sdU as number);
       } catch (e) {
         thrown35 = true;
       }
       expect(thrown35).assertFalse();
-      let d36: Decimal = new Decimal(45.6);
+      let decimal36: Decimal = new Decimal(45.6);
       let sdB: ESObject = true;
       let thrown36: boolean = false;
       try {
-        d36.toSignificantDigits(sdB as number);
+        decimal36.toSignificantDigits(sdB as number);
       } catch (e) {
         thrown36 = true;
         expect((e as ESObject).code).assertEqual(10200001);
       }
       expect(thrown36).assertTrue();
-      let d37: Decimal = new Decimal(45.6);
+      let decimal37: Decimal = new Decimal(45.6);
       let thrown37: boolean = false;
       try {
         let sdB2: ESObject = false;
-        d37.toSignificantDigits(sdB2 as number);
+        decimal37.toSignificantDigits(sdB2 as number);
       } catch (e) {
         thrown37 = true;
         let err: ESObject = e;
         expect(err.code !== undefined).assertTrue();
       }
       expect(thrown37).assertTrue();
-      let d38: Decimal = new Decimal(45.6);
+      let decimal38: Decimal = new Decimal(45.6);
       let thrown38: boolean = false;
       try {
         let sdE: ESObject = '';
-        d38.toSignificantDigits(sdE as number);
+        decimal38.toSignificantDigits(sdE as number);
       } catch (e) {
         thrown38 = true;
         let err: ESObject = e;
         expect(err.code !== undefined).assertTrue();
       }
       expect(thrown38).assertTrue();
-      let d39: Decimal = new Decimal(45.6);
+      let decimal39: Decimal = new Decimal(45.6);
       let sdS: ESObject = '2';
       let thrown39: boolean = false;
       try {
-        d39.toSignificantDigits(sdS as number);
+        decimal39.toSignificantDigits(sdS as number);
       } catch (e) {
         thrown39 = true;
         expect((e as ESObject).code).assertEqual(10200001);
       }
       expect(thrown39).assertTrue();
-      let d40: Decimal = new Decimal(987.654321);
+      let decimal40: Decimal = new Decimal(987.654321);
       let sdS2: ESObject = '6';
       let thrown40: boolean = false;
       try {
-        d40.toSignificantDigits(sdS2 as number);
+        decimal40.toSignificantDigits(sdS2 as number);
       } catch (e) {
         thrown40 = true;
         expect((e as ESObject).code).assertEqual(10200001);
       }
       expect(thrown40).assertTrue();
-      let d41: Decimal = new Decimal(45.6);
+      let decimal41: Decimal = new Decimal(45.6);
       let arr: ESObject = [2];
       let thrown41: boolean = false;
       try {
-        d41.toSignificantDigits(arr as number);
+        decimal41.toSignificantDigits(arr as number);
       } catch (e) {
         thrown41 = true;
         expect((e as ESObject).code).assertEqual(10200001);
       }
       expect(thrown41).assertTrue();
-      let d42: Decimal = new Decimal(45.6);
+      let decimal42: Decimal = new Decimal(45.6);
       let thrown42: boolean = false;
       try {
         let arr2: ESObject = [3, 4];
-        d42.toSignificantDigits(arr2 as number);
+        decimal42.toSignificantDigits(arr2 as number);
       } catch (e) {
         thrown42 = true;
         let err: ESObject = e;
         expect(err.code !== undefined).assertTrue();
       }
       expect(thrown42).assertTrue();
-      let d43: Decimal = new Decimal(45.6);
+      let decimal43: Decimal = new Decimal(45.6);
       let thrown43: boolean = false;
       try {
         let obj: ESObject = {};
-        d43.toSignificantDigits(obj as number);
+        decimal43.toSignificantDigits(obj as number);
       } catch (e) {
         thrown43 = true;
         let err: ESObject = e;
@@ -523,33 +523,33 @@ export default function DecimalToSignificantDigitsTest() {
         expect(err.code !== undefined).assertTrue();
       }
       expect(thrown56).assertFalse();
-      let d57: Decimal = new Decimal(45.6);
+      let decimal57: Decimal = new Decimal(45.6);
       let sdAny4: ESObject = 2;
-      expect(d57.toSignificantDigits(sdAny4 as number).toString()).assertEqual('46');
+      expect(decimal57.toSignificantDigits(sdAny4 as number).toString()).assertEqual('46');
       sdAny4 = null;
       let thrown57: boolean = false;
-      try { d57.toSignificantDigits(sdAny4 as number); } catch (e) { thrown57 = true; }
+      try { decimal57.toSignificantDigits(sdAny4 as number); } catch (e) { thrown57 = true; }
       expect(thrown57).assertTrue();
-      let d58: Decimal = new Decimal(45.6);
-      let r58: Decimal = d58.toSignificantDigits(2);
+      let decimal58: Decimal = new Decimal(45.6);
+      let r58: Decimal = decimal58.toSignificantDigits(2);
       expect(typeof r58).assertEqual('object');
-      let d59: Decimal = new Decimal(45.6);
-      let r59: Decimal = d59.toSignificantDigits(2);
-      expect(r59 === d59).assertFalse();
-      expect(d59.toString()).assertEqual('45.6');
-      let d60: Decimal = new Decimal(45.6);
-      let r60: Decimal = d60.toSignificantDigits(2);
+      let decimal59: Decimal = new Decimal(45.6);
+      let r59: Decimal = decimal59.toSignificantDigits(2);
+      expect(r59 === decimal59).assertFalse();
+      expect(decimal59.toString()).assertEqual('45.6');
+      let decimal60: Decimal = new Decimal(45.6);
+      let r60: Decimal = decimal60.toSignificantDigits(2);
       expect(r60.toNumber()).assertEqual(46);
-      let d61: Decimal = new Decimal(123.456);
-      expect(d61.toSignificantDigits(4).toSignificantDigits(3).toString()).assertEqual('124');
-      let d62: Decimal = new Decimal(987.654321);
-      let a62: Decimal = d62.toSignificantDigits(6);
-      let b62: Decimal = d62.toSignificantDigits(6);
+      let decimal61: Decimal = new Decimal(123.456);
+      expect(decimal61.toSignificantDigits(4).toSignificantDigits(3).toString()).assertEqual('124');
+      let decimal62: Decimal = new Decimal(987.654321);
+      let a62: Decimal = decimal62.toSignificantDigits(6);
+      let b62: Decimal = decimal62.toSignificantDigits(6);
       expect(a62.toString()).assertEqual('987.654');
       expect(b62.toString()).assertEqual('987.654');
-      let d63: Decimal = new Decimal(123.456);
-      let r3: Decimal = d63.toSignificantDigits(3);
-      let r5: Decimal = d63.toSignificantDigits(5);
+      let decimal63: Decimal = new Decimal(123.456);
+      let r3: Decimal = decimal63.toSignificantDigits(3);
+      let r5: Decimal = decimal63.toSignificantDigits(5);
       expect(r3.toString()).assertEqual('123');
       expect(r5.toString()).assertEqual('123.46');
     });
@@ -564,12 +564,12 @@ export default function DecimalToSignificantDigitsTest() {
      */
     it('testDecimalToSignificantDigitsPart02Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new Decimal(45.6).toSignificantDigits(10).toString()).assertEqual('45.6');
-      let d65: Decimal = new Decimal(45.6);
-      let r65: Decimal = d65.toSignificantDigits(2);
+      let decimal65: Decimal = new Decimal(45.6);
+      let r65: Decimal = decimal65.toSignificantDigits(2);
       expect(r65.s).assertEqual(1);
       expect(r65.e).assertEqual(1);
-      let d66: Decimal = new Decimal(45.6);
-      let r66: Decimal = d66.toSignificantDigits(2);
+      let decimal66: Decimal = new Decimal(45.6);
+      let r66: Decimal = decimal66.toSignificantDigits(2);
       let sum: Decimal = r66.add(new Decimal(4));
       expect(sum.toString()).assertEqual('50');
       expect(new Decimal(0).toSignificantDigits(3).toString()).assertEqual('0');
@@ -606,24 +606,24 @@ export default function DecimalToSignificantDigitsTest() {
         }
         expect(errCode).assertEqual(10200001);
       }
-      let d81: Decimal = new Decimal(45.6);
+      let decimal81: Decimal = new Decimal(45.6);
       let thrown81: boolean = false;
       try {
-        d81.toSignificantDigits(0);
+        decimal81.toSignificantDigits(0);
       } catch (e) { thrown81 = true; }
       expect(thrown81).assertTrue();
-      expect(d81.toSignificantDigits(2).toString()).assertEqual('46');
-      let d82: Decimal = new Decimal(45.6);
+      expect(decimal81.toSignificantDigits(2).toString()).assertEqual('46');
+      let decimal82: Decimal = new Decimal(45.6);
       let errCode82: number = -1;
       try {
-        d82.toSignificantDigits(0);
+        decimal82.toSignificantDigits(0);
       } catch (e) {
         errCode82 = (e as ESObject).code;
       }
       expect(errCode82).assertEqual(10200001);
       let errCode82b: number = -1;
       try {
-        d82.toSignificantDigits(-5);
+        decimal82.toSignificantDigits(-5);
       } catch (e) {
         errCode82b = (e as ESObject).code;
       }

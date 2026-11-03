@@ -161,8 +161,8 @@ const INVALID_VALUES: Array<DecimalInvalidValue> = [
   DECIMAL_INVALID_FUNCTION,
 ];
 
-export default function decimalUnionTest() {
-  describe('decimalUnionTest', () => {
+export default function DecimalUnionTest() {
+  describe('DecimalUnionTest', () => {
     beforeAll(() => {});
     beforeEach(async () => {});
     afterEach(() => { common.resetDecimalConfig(Decimal); });

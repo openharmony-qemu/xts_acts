@@ -40,13 +40,13 @@ export default function DecimalToStringTest() {
       let d: Decimal = new Decimal(123.45);
       let s: string = d.toString();
       expect(typeof s).assertEqual('string');
-      let d2: Decimal = new Decimal(5);
-      let s2: string = d2.toString();
+      let decimal2: Decimal = new Decimal(5);
+      let s2: string = decimal2.toString();
       expect(s2 === '').assertFalse();
       expect(s2).assertEqual('5');
-      let d3: Decimal = new Decimal('7.25');
-      let first: string = d3.toString();
-      let second: string = d3.toString();
+      let decimal3: Decimal = new Decimal('7.25');
+      let first: string = decimal3.toString();
+      let second: string = decimal3.toString();
       expect(first).assertEqual(second);
       expect(first).assertEqual('7.25');
       expect(new Decimal(5).toString()).assertEqual('5');
@@ -187,15 +187,15 @@ export default function DecimalToStringTest() {
       expect(new Decimal(-Infinity).toString()).assertEqual('-Infinity');
       expect(new Decimal(0).toString()).assertEqual('0');
       expect(new Decimal(-0).toString()).assertEqual('0');
-      let d52: Decimal = new Decimal(-0);
-      expect(d52.valueOf()).assertEqual('-0');
-      expect(d52.toString()).assertEqual('0');
+      let decimal52: Decimal = new Decimal(-0);
+      expect(decimal52.valueOf()).assertEqual('-0');
+      expect(decimal52.toString()).assertEqual('0');
       expect(new Decimal('NaN').toString()).assertEqual('NaN');
       expect(new Decimal('Infinity').toString()).assertEqual('Infinity');
       expect(new Decimal('-Infinity').toString()).assertEqual('-Infinity');
-      let d56: Decimal = new Decimal('-0');
-      expect(d56.toString()).assertEqual('0');
-      expect(d56.valueOf()).assertEqual('-0');
+      let decimal56: Decimal = new Decimal('-0');
+      expect(decimal56.toString()).assertEqual('0');
+      expect(decimal56.valueOf()).assertEqual('-0');
     });
 
     /**
@@ -243,9 +243,9 @@ export default function DecimalToStringTest() {
       Decimal.set({ toExpPos: 4 });
       expect(new Decimal(9999).toString()).assertEqual('9999');
       Decimal.set({ defaults: true });
-      let d73: Decimal = new Decimal(0.000001);
+      let decimal73: Decimal = new Decimal(0.000001);
       Decimal.set({ toExpNeg: 0 });
-      expect(d73.toString()).assertEqual('1e-6');
+      expect(decimal73.toString()).assertEqual('1e-6');
       Decimal.set({ defaults: true });
       Decimal.set({ toExpPos: 5 });
       Decimal.set({ defaults: true });

@@ -420,39 +420,39 @@ export default function DecimalToNumberTest() {
      * @tc.level LEVEL2
      */
     it('testDecimalToNumberPart02Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let d2: Decimal = new Decimal(5);
-      let r1_2: number = toNumberWith1(d2, 123);
-      let r2_2: number = d2.toNumber();
+      let decimal2: Decimal = new Decimal(5);
+      let r1_2: number = toNumberWith1(decimal2, 123);
+      let r2_2: number = decimal2.toNumber();
       expect(r1_2).assertEqual(r2_2);
       expect(r1_2).assertEqual(5);
-      let d3: Decimal = new Decimal(7);
-      let r1_3: number = toNumberWith1(d3, undefined);
-      expect(r1_3).assertEqual(d3.toNumber());
-      let d4: Decimal = new Decimal(9);
-      let r1_4: number = toNumberWith1(d4, null);
+      let decimal3: Decimal = new Decimal(7);
+      let r1_3: number = toNumberWith1(decimal3, undefined);
+      expect(r1_3).assertEqual(decimal3.toNumber());
+      let decimal4: Decimal = new Decimal(9);
+      let r1_4: number = toNumberWith1(decimal4, null);
       expect(r1_4).assertEqual(9);
-      let d19: Decimal = new Decimal('42');
-      expect(d19.toNumber() === null).assertFalse();
-      let d20: Decimal = new Decimal('42');
-      expect(d20.toNumber() === undefined).assertFalse();
-      let d21: Decimal = new Decimal('42');
-      expect(typeof d21.toNumber()).assertEqual('number');
-      let d22: Decimal = new Decimal(0);
-      expect(d22.toNumber()).assertEqual(0);
-      expect(d22.toNumber() === null).assertFalse();
-      expect(d22.toNumber() === undefined).assertFalse();
-      let d23: Decimal = new Decimal(Infinity);
-      expect(d23.toNumber() === Infinity).assertTrue();
-      expect(d23.toNumber() === null).assertFalse();
-      let d24: Decimal = new Decimal(NaN);
-      expect(Number.isNaN(d24.toNumber())).assertTrue();
-      expect(d24.toNumber() === null).assertFalse();
-      let d34: Decimal = new Decimal('123.456');
-      expect(d34.toNumber()).assertEqual(123.456);
+      let decimal19: Decimal = new Decimal('42');
+      expect(decimal19.toNumber() === null).assertFalse();
+      let decimal20: Decimal = new Decimal('42');
+      expect(decimal20.toNumber() === undefined).assertFalse();
+      let decimal21: Decimal = new Decimal('42');
+      expect(typeof decimal21.toNumber()).assertEqual('number');
+      let decimal22: Decimal = new Decimal(0);
+      expect(decimal22.toNumber()).assertEqual(0);
+      expect(decimal22.toNumber() === null).assertFalse();
+      expect(decimal22.toNumber() === undefined).assertFalse();
+      let decimal23: Decimal = new Decimal(Infinity);
+      expect(decimal23.toNumber() === Infinity).assertTrue();
+      expect(decimal23.toNumber() === null).assertFalse();
+      let decimal24: Decimal = new Decimal(NaN);
+      expect(Number.isNaN(decimal24.toNumber())).assertTrue();
+      expect(decimal24.toNumber() === null).assertFalse();
+      let decimal34: Decimal = new Decimal('123.456');
+      expect(decimal34.toNumber()).assertEqual(123.456);
       Decimal.set({ precision: 1 });
       try {
-        let d35: Decimal = new Decimal('123.456');
-        expect(d35.toNumber()).assertEqual(123.456);
+        let decimal35: Decimal = new Decimal('123.456');
+        expect(decimal35.toNumber()).assertEqual(123.456);
       } finally {
         Decimal.set({ precision: 20, rounding: 4, toExpNeg: -7, toExpPos: 21, maxE: 9e15, minE: -9e15, modulo: 1, crypto: false });
       }
@@ -474,8 +474,8 @@ export default function DecimalToNumberTest() {
      */
     it('testDecimalToNumberPart02Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v1_11: ESObject = '5';
-      let d11: Decimal = new Decimal(v1_11 as Value);
-      expect(d11.toNumber()).assertEqual(5);
+      let decimal11: Decimal = new Decimal(v1_11 as Value);
+      expect(decimal11.toNumber()).assertEqual(5);
       let v2_11: ESObject = null;
       let threw11: boolean = false;
       try {
@@ -488,8 +488,8 @@ export default function DecimalToNumberTest() {
       }
       expect(threw11).assertTrue();
       let v1_12: ESObject = 5;
-      let d12: Decimal = new Decimal(v1_12 as Value);
-      expect(d12.toNumber()).assertEqual(5);
+      let decimal12: Decimal = new Decimal(v1_12 as Value);
+      expect(decimal12.toNumber()).assertEqual(5);
       let v2_12: ESObject = undefined;
       let threw12: boolean = false;
       try {
@@ -502,8 +502,8 @@ export default function DecimalToNumberTest() {
       }
       expect(threw12).assertTrue();
       let v1_13: ESObject = new Decimal('5');
-      let d13: Decimal = new Decimal(v1_13 as Value);
-      expect(d13.toNumber()).assertEqual(5);
+      let decimal13: Decimal = new Decimal(v1_13 as Value);
+      expect(decimal13.toNumber()).assertEqual(5);
       let v2_13: ESObject = null;
       let threw13: boolean = false;
       try {
@@ -548,8 +548,8 @@ export default function DecimalToNumberTest() {
       expect(copy17.toNumber()).assertEqual(src17.toNumber());
       expect(copy17.toNumber()).assertEqual(123.45);
       let v18: Decimal | string = '7.5';
-      let d18: Decimal = new Decimal(v18);
-      expect(d18.toNumber()).assertEqual(7.5);
+      let decimal18: Decimal = new Decimal(v18);
+      expect(decimal18.toNumber()).assertEqual(7.5);
     });
 
     /**
@@ -589,8 +589,8 @@ export default function DecimalToNumberTest() {
         let err: ESObject = e;
         expect(err.code).assertEqual(401);
       }
-      let d30: Decimal = new Decimal('5');
-      expect(d30.toNumber()).assertEqual(5);
+      let decimal30: Decimal = new Decimal('5');
+      expect(decimal30.toNumber()).assertEqual(5);
       expect(threw30).assertTrue();
       let v31: ESObject = null;
       let usedGuard31: boolean = false;

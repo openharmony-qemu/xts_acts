@@ -310,38 +310,38 @@ export default function DecimalToOctalTest(): void {
      * @tc.level LEVEL2
      */
     it('testDecimalToOctalPart02Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let d1: Decimal = new Decimal(256);
-      let r1: string = d1.toOctal(1);
+      let decimal1: Decimal = new Decimal(256);
+      let r1: string = decimal1.toOctal(1);
       expect(r1.startsWith('0o')).assertTrue();
       expect(r1.length > 2).assertTrue();
-      let d2: Decimal = new Decimal(256);
-      let r2: string = d2.toOctal(3);
+      let decimal2: Decimal = new Decimal(256);
+      let r2: string = decimal2.toOctal(3);
       expect(r2).assertEqual('0o1p+8');
-      let d3: Decimal = new Decimal(0.5);
-      let r3: string = d3.toOctal(1);
+      let decimal3: Decimal = new Decimal(0.5);
+      let r3: string = decimal3.toOctal(1);
       expect(r3.startsWith('0o1p-')).assertTrue();
-      let d4: Decimal = new Decimal(256);
+      let decimal4: Decimal = new Decimal(256);
       let errCode4: number = -1;
       try {
-        d4.toOctal(0);
+        decimal4.toOctal(0);
       } catch (e) {
         errCode4 = (e as ESObject).code;
       }
       expect(errCode4).assertEqual(10200001);
-      let d5: Decimal = new Decimal(255);
-      let r5: string = d5.toOctal(3);
+      let decimal5: Decimal = new Decimal(255);
+      let r5: string = decimal5.toOctal(3);
       expect(r5).assertEqual('0o1p+8');
-      let d6: Decimal = new Decimal(7);
-      let r6: string = d6.toOctal(2);
+      let decimal6: Decimal = new Decimal(7);
+      let r6: string = decimal6.toOctal(2);
       expect(r6).assertEqual('0o1.6p+2');
-      let d7: Decimal = new Decimal(-0.5);
-      let r7: string = d7.toOctal(1);
+      let decimal7: Decimal = new Decimal(-0.5);
+      let r7: string = decimal7.toOctal(1);
       expect(r7.startsWith('-0o')).assertTrue();
-      let d8: Decimal = new Decimal(16);
-      let r8: string = d8.toOctal(3);
+      let decimal8: Decimal = new Decimal(16);
+      let r8: string = decimal8.toOctal(3);
       expect(r8).assertEqual('0o1p+4');
-      let d9: Decimal = new Decimal(65535);
-      let r9: string = d9.toOctal(6);
+      let decimal9: Decimal = new Decimal(65535);
+      let r9: string = decimal9.toOctal(6);
       expect(r9).assertEqual('0o1.77777p+15');
     });
 
@@ -354,81 +354,81 @@ export default function DecimalToOctalTest(): void {
      * @tc.level LEVEL2
      */
     it('testDecimalToOctalPart02Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let d10: Decimal = new Decimal(256);
+      let decimal10: Decimal = new Decimal(256);
       let u10: ESObject = undefined;
-      let r10: string = d10.toOctal(u10 as number);
+      let r10: string = decimal10.toOctal(u10 as number);
       expect(r10).assertEqual('0o400');
-      let d11: Decimal = new Decimal(256);
+      let decimal11: Decimal = new Decimal(256);
       try {
         let nl: ESObject = null;
-        d11.toOctal(nl as number);
+        decimal11.toOctal(nl as number);
         expect().assertFail();
       } catch (e) {
         expect(e === null).assertFalse();
       }
-      let d12: Decimal = new Decimal(256);
-      let noArg12: string = d12.toOctal();
+      let decimal12: Decimal = new Decimal(256);
+      let noArg12: string = decimal12.toOctal();
       expect(noArg12).assertEqual('0o400');
       let u12: ESObject = undefined;
-      let rUndef12: string = d12.toOctal(u12 as number);
+      let rUndef12: string = decimal12.toOctal(u12 as number);
       expect(rUndef12).assertEqual(noArg12);
-      let d13: Decimal = new Decimal(256);
+      let decimal13: Decimal = new Decimal(256);
       let errNull13: boolean = false;
       let errUndef13: boolean = false;
       try {
         let nl: ESObject = null;
-        d13.toOctal(nl as number);
+        decimal13.toOctal(nl as number);
       } catch (e) {
         errNull13 = true;
       }
       try {
         let u: ESObject = undefined;
-        d13.toOctal(u as number);
+        decimal13.toOctal(u as number);
       } catch (e) {
         errUndef13 = true;
       }
       expect(errNull13).assertTrue();
       expect(errUndef13).assertFalse();
-      let d14: Decimal = new Decimal(0.5);
-      let defaultStr14: string = d14.toOctal();
+      let decimal14: Decimal = new Decimal(0.5);
+      let defaultStr14: string = decimal14.toOctal();
       try {
         let nl: ESObject = null;
-        d14.toOctal(nl as number);
+        decimal14.toOctal(nl as number);
         expect().assertFail();
       } catch (e) {
         expect(e === null).assertFalse();
       }
       expect(defaultStr14.startsWith('0o')).assertTrue();
-      let d15: Decimal = new Decimal(255);
-      let before15: string = d15.toString();
+      let decimal15: Decimal = new Decimal(255);
+      let before15: string = decimal15.toString();
       try {
         let nl: ESObject = null;
-        d15.toOctal(nl as number);
+        decimal15.toOctal(nl as number);
       } catch (e) {
         let err: ESObject = e;
         expect(err.code !== undefined).assertTrue();
       }
       try {
         let u: ESObject = undefined;
-        d15.toOctal(u as number);
+        decimal15.toOctal(u as number);
       } catch (e) {
         let err: ESObject = e;
         expect(err.code !== undefined).assertTrue();
       }
-      expect(d15.toString()).assertEqual(before15);
-      let d16: Decimal = new Decimal(255);
+      expect(decimal15.toString()).assertEqual(before15);
+      let decimal16: Decimal = new Decimal(255);
       let codeNull16: number = -1;
       let codeUndef16: number = -1;
       try {
         let nl: ESObject = null;
-        d16.toOctal(nl as number);
+        decimal16.toOctal(nl as number);
       } catch (e) {
         let err: ESObject = e;
         codeNull16 = err.code;
       }
       try {
         let u: ESObject = undefined;
-        d16.toOctal(u as number);
+        decimal16.toOctal(u as number);
       } catch (e) {
         let err: ESObject = e;
         codeUndef16 = err.code;
@@ -446,47 +446,47 @@ export default function DecimalToOctalTest(): void {
      * @tc.level LEVEL2
      */
     it('testDecimalToOctalPart02Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let d17: Decimal = new Decimal(12345.678);
-      let r17: string = d17.toOctal(1);
+      let decimal17: Decimal = new Decimal(12345.678);
+      let r17: string = decimal17.toOctal(1);
       expect(r17.startsWith('0o')).assertTrue();
-      let d18: Decimal = new Decimal(15);
-      let r18: string = d18.toOctal(100000);
+      let decimal18: Decimal = new Decimal(15);
+      let r18: string = decimal18.toOctal(100000);
       expect(r18).assertEqual('0o1.7p+3');
-      let d19: Decimal = new Decimal(255);
-      let a19: string = d19.toOctal(99999);
-      let b19: string = d19.toOctal(100000);
+      let decimal19: Decimal = new Decimal(255);
+      let a19: string = decimal19.toOctal(99999);
+      let b19: string = decimal19.toOctal(100000);
       expect(a19).assertEqual(b19);
-      let d28: Decimal = new Decimal(1.5);
-      let r28: string = d28.toOctal(2);
+      let decimal28: Decimal = new Decimal(1.5);
+      let r28: string = decimal28.toOctal(2);
       expect(r28.startsWith('0o')).assertTrue();
-      let d29: Decimal = new Decimal(15);
+      let decimal29: Decimal = new Decimal(15);
       try {
-        let r: string = d29.toOctal(1.5);
+        let r: string = decimal29.toOctal(1.5);
         expect(r.startsWith('0o')).assertTrue();
       } catch (e) {
         expect(e === null).assertFalse();
       }
-      let d30: Decimal = new Decimal(15);
+      let decimal30: Decimal = new Decimal(15);
       try {
-        let r: string = d30.toOctal(1000000000.5);
+        let r: string = decimal30.toOctal(1000000000.5);
         expect(r.startsWith('0o')).assertTrue();
       } catch (e) {
         expect(e === null).assertFalse();
       }
-      let d31: Decimal = new Decimal(271);
-      let r31: string = d31.toOctal(1);
+      let decimal31: Decimal = new Decimal(271);
+      let r31: string = decimal31.toOctal(1);
       expect(r31.startsWith('0o')).assertTrue();
-      let d70: Decimal = new Decimal(255);
-      let low70: string = d70.toOctal(1);
-      let high70: string = d70.toOctal(100000);
+      let decimal70: Decimal = new Decimal(255);
+      let low70: string = decimal70.toOctal(1);
+      let high70: string = decimal70.toOctal(100000);
       expect(low70.startsWith('0o')).assertTrue();
       expect(high70.startsWith('0o')).assertTrue();
-      let d71: Decimal = new Decimal(256);
-      let r71: string = d71.toOctal(2);
+      let decimal71: Decimal = new Decimal(256);
+      let r71: string = decimal71.toOctal(2);
       expect(r71.startsWith('0o')).assertTrue();
-      let d72: Decimal = new Decimal(65535);
-      let full72: string = d72.toOctal();
-      let sig72: string = d72.toOctal(6);
+      let decimal72: Decimal = new Decimal(65535);
+      let full72: string = decimal72.toOctal();
+      let sig72: string = decimal72.toOctal(6);
       expect(full72.startsWith('0o')).assertTrue();
       expect(sig72.startsWith('0o')).assertTrue();
     });
@@ -511,17 +511,17 @@ export default function DecimalToOctalTest(): void {
         }
         expect(errCode).assertEqual(10200001);
       }
-      let d25: Decimal = new Decimal(15);
+      let decimal25: Decimal = new Decimal(15);
       try {
-        let r: string = d25.toOctal(2.5);
+        let r: string = decimal25.toOctal(2.5);
         expect(r).assertFail();
       } catch (e) {
         let err: ESObject = e;
         expect(err.code).assertEqual(10200001);
       }
-      let d26: Decimal = new Decimal(15);
+      let decimal26: Decimal = new Decimal(15);
       try {
-        let r: string = d26.toOctal(0.1);
+        let r: string = decimal26.toOctal(0.1);
         expect(r.startsWith('0o')).assertTrue();
       } catch (e) {
         expect(e === null).assertFalse();
@@ -548,23 +548,23 @@ export default function DecimalToOctalTest(): void {
         }
         expect(errCode).assertEqual(10200001);
       }
-      let d56: Decimal = new Decimal(255);
+      let decimal56: Decimal = new Decimal(255);
       try {
-        let r: string = d56.toOctal(Number.MIN_VALUE);
+        let r: string = decimal56.toOctal(Number.MIN_VALUE);
         expect(r.startsWith('0o')).assertTrue();
       } catch (e) {
         expect(e === null).assertFalse();
       }
-      let d68: Decimal = new Decimal(255);
+      let decimal68: Decimal = new Decimal(255);
       let pos: boolean = false;
       let neg: boolean = false;
       try {
-        d68.toOctal(Infinity);
+        decimal68.toOctal(Infinity);
       } catch (e) {
         pos = true;
       }
       try {
-        d68.toOctal(-Infinity);
+        decimal68.toOctal(-Infinity);
       } catch (e) {
         neg = true;
       }
@@ -604,48 +604,48 @@ export default function DecimalToOctalTest(): void {
      * @tc.level LEVEL2
      */
     it('testDecimalToOctalPart02Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let d40: Decimal = new Decimal(15);
-      let r40: string = d40.toOctal(2);
+      let decimal40: Decimal = new Decimal(15);
+      let r40: string = decimal40.toOctal(2);
       expect(typeof r40).assertEqual('string');
-      let d41: Decimal = new Decimal(255);
-      let r41: string = d41.toOctal(3);
+      let decimal41: Decimal = new Decimal(255);
+      let r41: string = decimal41.toOctal(3);
       expect(r41.startsWith('0o')).assertTrue();
-      let d42: Decimal = new Decimal(100);
-      let r42: string = d42.toOctal(3);
+      let decimal42: Decimal = new Decimal(100);
+      let r42: string = decimal42.toOctal(3);
       expect(r42).assertEqual('0o1.44p+6');
-      let d43: Decimal = new Decimal(-255);
-      let r43: string = d43.toOctal(4);
+      let decimal43: Decimal = new Decimal(-255);
+      let r43: string = decimal43.toOctal(4);
       expect(r43.startsWith('-0o')).assertTrue();
-      let d44: Decimal = new Decimal(0.5);
-      let r44: string = d44.toOctal(1);
+      let decimal44: Decimal = new Decimal(0.5);
+      let r44: string = decimal44.toOctal(1);
       expect(r44).assertEqual('0o1p-1');
-      let d45: Decimal = new Decimal(256);
-      let r45: string = d45.toOctal(1);
+      let decimal45: Decimal = new Decimal(256);
+      let r45: string = decimal45.toOctal(1);
       expect(r45).assertEqual('0o1p+8');
-      let d46: Decimal = new Decimal(255);
-      let r46: string = d46.toOctal(3);
+      let decimal46: Decimal = new Decimal(255);
+      let r46: string = decimal46.toOctal(3);
       expect(r46.indexOf(' ')).assertEqual(-1);
-      let d47: Decimal = new Decimal(187);
-      let r47: string = d47.toOctal(3);
+      let decimal47: Decimal = new Decimal(187);
+      let r47: string = decimal47.toOctal(3);
       expect(r47).assertEqual('0o1.36p+7');
-      let d48: Decimal = new Decimal(255);
-      let before48: string = d48.toString();
-      d48.toOctal(2);
-      expect(d48.toString()).assertEqual(before48);
-      let d49: Decimal = new Decimal(255);
-      let a49: string = d49.toOctal(3);
-      let b49: string = d49.toOctal(3);
+      let decimal48: Decimal = new Decimal(255);
+      let before48: string = decimal48.toString();
+      decimal48.toOctal(2);
+      expect(decimal48.toString()).assertEqual(before48);
+      let decimal49: Decimal = new Decimal(255);
+      let a49: string = decimal49.toOctal(3);
+      let b49: string = decimal49.toOctal(3);
       expect(a49).assertEqual(b49);
-      let d50: Decimal = new Decimal(16);
-      let sd1_50: string = d50.toOctal(1);
-      let sd3_50: string = d50.toOctal(3);
+      let decimal50: Decimal = new Decimal(16);
+      let sd1_50: string = decimal50.toOctal(1);
+      let sd3_50: string = decimal50.toOctal(3);
       expect(sd1_50 === sd3_50).assertTrue();
       expect(sd1_50).assertEqual('0o1p+4');
-      let d51: Decimal = new Decimal(1024);
-      let r51: string = d51.toOctal(1);
+      let decimal51: Decimal = new Decimal(1024);
+      let r51: string = decimal51.toOctal(1);
       expect(r51).assertEqual('0o1p+10');
-      let d52: Decimal = new Decimal(4);
-      let r52: string = d52.toOctal(1);
+      let decimal52: Decimal = new Decimal(4);
+      let r52: string = decimal52.toOctal(1);
       expect(r52).assertEqual('0o1p+2');
     });
 
@@ -658,10 +658,10 @@ export default function DecimalToOctalTest(): void {
      * @tc.level LEVEL2
      */
     it('testDecimalToOctalPart02Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let d62: Decimal = new Decimal(255);
+      let decimal62: Decimal = new Decimal(255);
       let ok62: boolean = true;
       try {
-        let r: string = d62.toOctal();
+        let r: string = decimal62.toOctal();
         ok62 = r.startsWith('0o');
       } catch (e) {
         ok62 = false;
@@ -670,63 +670,63 @@ export default function DecimalToOctalTest(): void {
       let threw62: boolean = false;
       try {
         let u: ESObject = undefined;
-        d62.toOctal(u as number);
+        decimal62.toOctal(u as number);
       } catch (e) {
         threw62 = true;
       }
       expect(threw62).assertFalse();
-      let d63: Decimal = new Decimal(255);
+      let decimal63: Decimal = new Decimal(255);
       let nullThrew63: boolean = false;
       let undefThrew63: boolean = false;
       try {
         let nl: ESObject = null;
-        d63.toOctal(nl as number);
+        decimal63.toOctal(nl as number);
       } catch (e) {
         nullThrew63 = true;
       }
       try {
         let u: ESObject = undefined;
-        d63.toOctal(u as number);
+        decimal63.toOctal(u as number);
       } catch (e) {
         undefThrew63 = true;
       }
       expect(nullThrew63).assertTrue();
       expect(undefThrew63).assertFalse();
-      let d64: Decimal = new Decimal(64);
-      let r64: string = d64.toOctal(3);
+      let decimal64: Decimal = new Decimal(64);
+      let r64: string = decimal64.toOctal(3);
       expect(r64).assertEqual('0o1p+6');
-      let d65: Decimal = new Decimal(255);
+      let decimal65: Decimal = new Decimal(255);
       let u65: ESObject = undefined;
-      let r65: string = d65.toOctal(u65 as number);
+      let r65: string = decimal65.toOctal(u65 as number);
       expect(r65).assertEqual('0o377');
-      let d66: Decimal = new Decimal(255);
+      let decimal66: Decimal = new Decimal(255);
       try {
         let nl: ESObject = null;
-        d66.toOctal(nl as number);
+        decimal66.toOctal(nl as number);
         expect().assertFail();
       } catch (e) {
         expect(e === null).assertFalse();
       }
-      let d73: Decimal = new Decimal(1.5);
-      let r73: string = d73.toOctal(1);
+      let decimal73: Decimal = new Decimal(1.5);
+      let r73: string = decimal73.toOctal(1);
       expect(r73.startsWith('0o')).assertTrue();
-      let d74: Decimal = new Decimal(255);
+      let decimal74: Decimal = new Decimal(255);
       let okCount74: number = 0;
       try {
         let nl: ESObject = null;
-        d74.toOctal(nl as number);
+        decimal74.toOctal(nl as number);
       } catch (e) {
         okCount74++;
       }
       try {
         let u: ESObject = undefined;
-        d74.toOctal(u as number);
+        decimal74.toOctal(u as number);
       } catch (e) {
         okCount74++;
       }
       expect(okCount74).assertEqual(1);
-      let d75: Decimal = new Decimal(255);
-      let a75: string = d75.toOctal(1);
+      let decimal75: Decimal = new Decimal(255);
+      let a75: string = decimal75.toOctal(1);
       expect(a75).assertEqual('0o1p+8');
     });
 
@@ -1052,7 +1052,7 @@ export default function DecimalToOctalTest(): void {
       let s47: string = dec47.toOctal(2, 4);
       expect(s47).assertEqual('0o1p+3');
       let dec48: Decimal = new Decimal(10);
-      let d48: number[] = dec48.d;
+      let decimal48: number[] = dec48.d;
       let e48: number = dec48.e;
       let s48: number = dec48.s;
       try {
@@ -1062,7 +1062,7 @@ export default function DecimalToOctalTest(): void {
       } catch (err) {
         expect().assertFail();
       }
-      expect(dec48.d).assertEqual(d48);
+      expect(dec48.d).assertEqual(decimal48);
       expect(dec48.e).assertEqual(e48);
       expect(dec48.s).assertEqual(s48);
       expect(dec48.toOctal()).assertEqual('0o12');

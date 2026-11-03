@@ -314,10 +314,10 @@ export default function DecimalToBinaryTest(): void {
         threw4 = true;
       }
       expect(threw4).assertTrue();
-      let d1: Decimal = new Decimal(256);
+      let decimal1: Decimal = new Decimal(256);
       let u: ESObject = undefined;
-      let s1: string = d1.toBinary(u as number);
-      let s2: string = d1.toBinary();
+      let s1: string = decimal1.toBinary(u as number);
+      let s2: string = decimal1.toBinary();
       expect(s1).assertEqual('0b100000000');
       expect(s1).assertEqual(s2);
       let u2: ESObject = undefined;
@@ -413,14 +413,14 @@ export default function DecimalToBinaryTest(): void {
       let d: Decimal = new Decimal(256);
       d.toBinary(1);
       expect(d.toString()).assertEqual('256');
-      let d5: Decimal = new Decimal(5);
-      let first: string = d5.toBinary(3);
-      let second: string = d5.toBinary(3);
+      let decimal5: Decimal = new Decimal(5);
+      let first: string = decimal5.toBinary(3);
+      let second: string = decimal5.toBinary(3);
       expect(first).assertEqual('0b1.01p+2');
       expect(second).assertEqual('0b1.01p+2');
-      let d3: Decimal = new Decimal(3);
-      expect(d3.toBinary(1)).assertEqual('0b1p+2');
-      expect(d3.toBinary(2)).assertEqual('0b1.1p+1');
+      let decimal3: Decimal = new Decimal(3);
+      expect(decimal3.toBinary(1)).assertEqual('0b1p+2');
+      expect(decimal3.toBinary(2)).assertEqual('0b1.1p+1');
       expect(new Decimal(256).toBinary(1)).assertEqual(new Decimal('256').toBinary(1));
       expect(new Decimal(128).add(128).toBinary(1)).assertEqual('0b1p+8');
       expect(new Decimal('0b1p+8').toString()).assertEqual('256');
