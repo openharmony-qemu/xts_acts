@@ -4018,6 +4018,10 @@ Camera_ErrorCode NDKCamera::GetSupportedISORange(int useCaseCode)
     } else if (useCaseCode == PARAMETER3_ERROR) {
         ret_ = OH_CaptureSession_GetSupportedISORange(captureSession_, &minIsoValue, nullptr);
     }
+    if (ret_ == 0 && minIsoValue == 0 && maxIsoValue == 0) {
+        LOG("GetSupportedISORange return device not support.");
+        return Camera_ErrorCode::CAMERA_OPERATION_NOT_ALLOWED;
+    }
     return ret_;
 }
 
