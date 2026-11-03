@@ -214,13 +214,11 @@ function pemToDer(pemCert: string): ArrayBuffer {
 
   // 替换回车换行 \r
 
-  base64Data = base64Data.replace(new RegExp('\\r\
-', 'g'), '');
+  base64Data = base64Data.replace(new RegExp('\\r\\n', 'g'), '');
 
   // 替换换行
 
-  base64Data = base64Data.replace(new RegExp('\
-', 'g'), '');
+  base64Data = base64Data.replace(new RegExp('\\n', 'g'), '');
 
   // 替换空格
   base64Data = base64Data.replace(new RegExp('\\s', 'g'), '');
@@ -2226,7 +2224,7 @@ export default function netWorkSecurityVerChainTest(): void {
     /**
      * @tc.name   testNetworkMgrNetworkSecurityVerifyCertChain_static_4200
      * @tc.number SUB_NetworkMgr_NetworkSecurity_VerifyCertChain_4200
-     * @tc.desc   Certs cert type is an invalid enum value -1, expect error code 401 or 2305001.
+     * @tc.desc   Certs cert type mismatches data format (DER type with PEM data), expect error code 401 or 2305001.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -2236,9 +2234,9 @@ export default function netWorkSecurityVerChainTest(): void {
         let caseName: string = 'testNetworkMgrNetworkSecurityVerifyCertChain_static_4200';
         hilog.info(domain, tag, '%{public}s', `${caseName} test start`);
         try {
-          const invalidType: networkSecurity.CertType = -1 as networkSecurity.CertType;
+          const mismatchType: networkSecurity.CertType = networkSecurity.CertType.CERT_TYPE_DER;
           const certs: networkSecurity.CertBlob[] = [
-            { type: invalidType, data: LEAF_CERT },
+            { type: mismatchType, data: LEAF_CERT },
             { type: networkSecurity.CertType.CERT_TYPE_PEM, data: INTERMEDIATE_CA_CERT }
           ];
           const caCert: networkSecurity.CertBlob = {
@@ -2269,7 +2267,7 @@ export default function netWorkSecurityVerChainTest(): void {
     /**
      * @tc.name   testNetworkMgrNetworkSecurityVerifyCertChain_static_4300
      * @tc.number SUB_NetworkMgr_NetworkSecurity_VerifyCertChain_4300
-     * @tc.desc   Certs cert type is an invalid enum value 99, expect error code 401 or 2305001.
+     * @tc.desc   Certs cert type mismatches data format (DER type with PEM data), expect error code 401 or 2305001.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -2279,9 +2277,9 @@ export default function netWorkSecurityVerChainTest(): void {
         let caseName: string = 'testNetworkMgrNetworkSecurityVerifyCertChain_static_4300';
         hilog.info(domain, tag, '%{public}s', `${caseName} test start`);
         try {
-          const invalidType: networkSecurity.CertType = 99 as networkSecurity.CertType;
+          const mismatchType: networkSecurity.CertType = networkSecurity.CertType.CERT_TYPE_DER;
           const certs: networkSecurity.CertBlob[] = [
-            { type: invalidType, data: LEAF_CERT },
+            { type: mismatchType, data: LEAF_CERT },
             { type: networkSecurity.CertType.CERT_TYPE_PEM, data: INTERMEDIATE_CA_CERT }
           ];
           const caCert: networkSecurity.CertBlob = {
@@ -2312,7 +2310,7 @@ export default function netWorkSecurityVerChainTest(): void {
     /**
      * @tc.name   testNetworkMgrNetworkSecurityVerifyCertChain_static_4400
      * @tc.number SUB_NetworkMgr_NetworkSecurity_VerifyCertChain_4400
-     * @tc.desc   CaCert type is an invalid enum value 99, expect error code 401 or 2305001.
+     * @tc.desc   CaCert type mismatches data format (DER type with PEM data), expect error code 401 or 2305001.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -2326,9 +2324,9 @@ export default function netWorkSecurityVerChainTest(): void {
             { type: networkSecurity.CertType.CERT_TYPE_PEM, data: LEAF_CERT },
             { type: networkSecurity.CertType.CERT_TYPE_PEM, data: INTERMEDIATE_CA_CERT }
           ];
-          const invalidType: networkSecurity.CertType = 99 as networkSecurity.CertType;
+          const mismatchType: networkSecurity.CertType = networkSecurity.CertType.CERT_TYPE_DER;
           const caCert: networkSecurity.CertBlob = {
-            type: invalidType,
+            type: mismatchType,
             data: ROOT_CA_CERT
           };
           networkSecurity.verifyCertChain(certs, caCert).then((result: networkSecurity.CertBlob[]) => {
