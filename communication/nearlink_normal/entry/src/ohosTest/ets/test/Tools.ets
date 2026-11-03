@@ -49,11 +49,11 @@ export async function clickGetPermission(): Promise<void> {
     }
     console.info('[nearlink_Permission_demo] getPermission clickRequestPermission start');
     let cmd = `aa start -a ${DEMO_ABILITY_NAME} -b ${DEMO_BUNDLE_NAME}`;
-      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
-      if(user !== undefined){
-          cmd += ' -u ' + user;
-      }
-      await abilityDelegatorRegistry.getAbilityDelegator().executeShellCommand(cmd);
+    let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
+    await abilityDelegatorRegistry.getAbilityDelegator().executeShellCommand(cmd);
     let driver = Driver.create();
     await driver.delayMs(1000);
     // 当demo有权限时，跳过，否则点击获取权限，
@@ -85,11 +85,11 @@ export async function clickOpenNearLinkSwitch(): Promise<void> {
   try {
     console.info('nearLink clickOpenNearLinkSwitch start');
     let cmd = `aa start -a ${DEMO_ABILITY_NAME} -b ${DEMO_BUNDLE_NAME}`;
-      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
-      if(user !== undefined){
-          cmd += ' -u ' + user;
-      }
-      await abilityDelegatorRegistry.getAbilityDelegator().executeShellCommand(cmd);
+    let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
+    await abilityDelegatorRegistry.getAbilityDelegator().executeShellCommand(cmd);
     let driver = Driver.create();
     await driver.delayMs(1000);
     let button = await getbutton(driver,Get_Permission);
@@ -105,11 +105,11 @@ export async function clickCloseNearLinkSwitch(): Promise<void> {
   try {
     console.info('nearLink clickCloseNearLinkSwitch start');
     let cmd = `aa start -a ${DEMO_ABILITY_NAME} -b ${DEMO_BUNDLE_NAME}`;
-      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
-      if(user !== undefined){
-          cmd += ' -u ' + user;
-      }
-      await abilityDelegatorRegistry.getAbilityDelegator().executeShellCommand(cmd);
+    let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
+    await abilityDelegatorRegistry.getAbilityDelegator().executeShellCommand(cmd);
     await clickGetPermission();
     let driver = Driver.create();
     await driver.delayMs(1000);
@@ -126,11 +126,11 @@ export async function system_support_nearlink(): Promise<string> {
   try {
     console.info('nearLink clickCloseNearLinkSwitch start');
     let cmd = `aa start -a ${DEMO_ABILITY_NAME} -b ${DEMO_BUNDLE_NAME}`;
-      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
-      if(user !== undefined){
-          cmd += ' -u ' + user;
-      }
-      await abilityDelegatorRegistry.getAbilityDelegator().executeShellCommand(cmd);
+    let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
+    await abilityDelegatorRegistry.getAbilityDelegator().executeShellCommand(cmd);
     await clickGetPermission();
     let driver = Driver.create();
     await driver.delayMs(1000);
