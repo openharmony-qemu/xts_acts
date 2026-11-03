@@ -725,6 +725,111 @@ export default function HidebugnewTest() {
 
 
 
+  /**
+     * @tc.name   testHiprofilerInterface55
+     * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_5500
+     * @tc.desc   验证getAppRunningUniqueId接口返回值类型为string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHiprofilerInterface55', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info("SUB_DFX_DFR_Hiprofiler_Interface_5500 start");
+      try {
+        let uniqueId: string = hidebug.getAppRunningUniqueId();
+        console.info("SUB_DFX_DFR_Hiprofiler_Interface_5500 uniqueId: " + uniqueId);
+        expect(typeof uniqueId === 'string').assertTrue();
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_Hiprofiler_Interface_5500 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_Hiprofiler_Interface_5500 end");
+    })
+
+    /**
+     * @tc.name   testHiprofilerInterface56
+     * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_5600
+     * @tc.desc   验证getAppRunningUniqueId接口返回值不为空
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHiprofilerInterface56', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info("SUB_DFX_DFR_Hiprofiler_Interface_5600 start");
+      try {
+        let uniqueId: string = hidebug.getAppRunningUniqueId();
+        console.info("SUB_DFX_DFR_Hiprofiler_Interface_5600 uniqueId: " + uniqueId);
+        expect(typeof uniqueId === 'string').assertTrue();
+        expect(uniqueId.length > 0).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_Hiprofiler_Interface_5600 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_Hiprofiler_Interface_5600 end");
+    })
+
+    /**
+     * @tc.name   testHiprofilerInterface57
+     * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_5700
+     * @tc.desc   验证getAppRunningUniqueId接口连续多次调用返回值一致
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHiprofilerInterface57', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info("SUB_DFX_DFR_Hiprofiler_Interface_5700 start");
+      try {
+        let uniqueId1: string = hidebug.getAppRunningUniqueId();
+        let uniqueId2: string = hidebug.getAppRunningUniqueId();
+        let uniqueId3: string = hidebug.getAppRunningUniqueId();
+        console.info("SUB_DFX_DFR_Hiprofiler_Interface_5700 uniqueId1: " + uniqueId1);
+        console.info("SUB_DFX_DFR_Hiprofiler_Interface_5700 uniqueId2: " + uniqueId2);
+        console.info("SUB_DFX_DFR_Hiprofiler_Interface_5700 uniqueId3: " + uniqueId3);
+        expect(typeof uniqueId1 === 'string').assertTrue();
+        expect(typeof uniqueId2 === 'string').assertTrue();
+        expect(typeof uniqueId3 === 'string').assertTrue();
+        expect(uniqueId1 === uniqueId2).assertTrue();
+        expect(uniqueId1 === uniqueId3).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_Hiprofiler_Interface_5700 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_Hiprofiler_Interface_5700 end");
+    })
+
+    /**
+     * @tc.name   testHiprofilerInterface58
+     * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_5800
+     * @tc.desc   验证getAppRunningUniqueId接口调用稳定性测试(连续调用100次)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testHiprofilerInterface58', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("SUB_DFX_DFR_Hiprofiler_Interface_5800 start");
+      try {
+        let firstUniqueId: string = hidebug.getAppRunningUniqueId();
+        expect(typeof firstUniqueId === 'string').assertTrue();
+        for (let i = 0; i < 100; i++) {
+          let uniqueId: string = hidebug.getAppRunningUniqueId();
+          expect(typeof uniqueId === 'string').assertTrue();
+          expect(uniqueId === firstUniqueId).assertTrue();
+        }
+        console.info("SUB_DFX_DFR_Hiprofiler_Interface_5800 100 times success, uniqueId: " + firstUniqueId);
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_Hiprofiler_Interface_5800 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_Hiprofiler_Interface_5800 end");
+    })
   })
 
 }
