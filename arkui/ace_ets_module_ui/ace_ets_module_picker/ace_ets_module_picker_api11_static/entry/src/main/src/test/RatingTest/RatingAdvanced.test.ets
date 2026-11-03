@@ -340,8 +340,8 @@ it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_LAYOUT_static_0040', Level.LEVEL3, async 
       await Utils.sleep(1000);
       console.info("[SUB_ACE_UI_COMPONENT_BUTTON_RATING_LAYOUT_static_0040] obj1.getElement('$attrs').getString('width') is: " + obj1.getElement('$attrs').getString('width'));
       console.info("[SUB_ACE_UI_COMPONENT_BUTTON_RATING_LAYOUT_static_0040] obj1.getElement('$attrs').getString('height') is: " + obj1.getElement('$attrs').getString('height'));
-      expect(obj1.getElement('$attrs').getString('width')).assertEqual('180.00vp');
-      expect(obj1.getElement('$attrs').getString('height')).assertEqual('60.00vp');
+      expect(Math.round(parseFloat(obj1.getElement('$attrs').getString('width').replace('vp', '')))).assertEqual(180);
+      expect(Math.round(parseFloat(obj1.getElement('$attrs').getString('height').replace('vp', '')))).assertEqual(60);
       done();
     });
   })

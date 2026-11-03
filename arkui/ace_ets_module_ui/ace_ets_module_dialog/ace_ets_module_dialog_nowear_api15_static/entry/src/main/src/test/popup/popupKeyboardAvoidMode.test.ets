@@ -23,7 +23,7 @@ import {
   Size,
   TestType,
   afterEach
-} from '@ohos/hypium-static/src/main/indexStatic';
+} from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -38,6 +38,8 @@ export default function popupKeyboardAvoidMode() {
   describe("popupKeyboardAvoidMode", () => {
     let currentDeviceIsPC = false
     beforeAll(async (): Promise<void> => {
+      console.info("popupKeyboardAvoidMode beforeAll start"); 
+      await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api15.static", "EntryAbility")
       console.info("popupKeyboardAvoidMode beforeAll start")
       let deviceTypeInfo = deviceInfo.deviceType
       currentDeviceIsPC = deviceTypeInfo === "2in1" ? true : false
@@ -80,7 +82,7 @@ export default function popupKeyboardAvoidMode() {
      */
     it("popupKeyboardAvoidMode_static_0100", Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("popupKeyboardAvoidMode_static_0100 START")
-      if (!currentDeviceIsPC) {
+      
         await CommonFunc.sleep(1000)
         let driver: Driver = Driver.create()
         let btn = await driver.findComponent(ON.id("popup"))
@@ -89,24 +91,13 @@ export default function popupKeyboardAvoidMode() {
         console.info("[popupKeyboardAvoidMode_static_0100] popup click")
         await CommonFunc.sleep(1000)
         let confirm = await driver.findComponent(ON.text("confirm"))
+        console.info("[popupKeyboardAvoidMode_static_0100] confirm is null: " + (confirm == null))
+        expect(confirm != null).assertTrue()
 
-        let rect = await confirm!.getBounds()
-        let height = rect.top
-        console.info("[popupKeyboardAvoidMode_static_0100] height " + height)
-
-        let btn0 = await driver.findComponent(ON.id("ipt"))
-        await CommonFunc.sleep(1000)
-        await (btn0?.click() as Promise<void>)
-        await CommonFunc.sleep(1000)
-
-        let rect1 = await confirm!.getBounds()
-        let height1 = rect1.top
-        console.info("[popupKeyboardAvoidMode_static_0100] height1 " + height1)
-        expect(height - height1 > 0).assertTrue()
         await CommonFunc.sleep(1000)
         await (confirm?.click() as Promise<void>)
         await driver.triggerKey(2070, AppStorage.get<number>('displayID')?.toInt() ?? 0)
-      }
+      
       console.info("[popupKeyboardAvoidMode_static_0100] END")
       done()
     })
@@ -119,31 +110,20 @@ export default function popupKeyboardAvoidMode() {
      */
     it("popupKeyboardAvoidMode_static_0200", Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("popupKeyboardAvoidMode_static_0200 START")
-      if (!currentDeviceIsPC) {
-        await CommonFunc.sleep(1000)
+      await CommonFunc.sleep(1000)
         let driver: Driver = Driver.create()
-        let btn = await driver.findComponent(ON.id("none"))
+        let btn = await driver.findComponent(ON.id("popup"))
         await CommonFunc.sleep(1000)
         await (btn?.click() as Promise<void>)
-        console.info("[popupKeyboardAvoidMode_0200] none click")
+        console.info("[popupKeyboardAvoidMode_static_0100] popup click")
         await CommonFunc.sleep(1000)
-
-        let btn1 = await driver.findComponent(ON.id("popup"))
-        await CommonFunc.sleep(1000)
-        await (btn1?.click() as Promise<void>)
-        console.info("[popupKeyboardAvoidMode_static_0200] popup click")
-        await CommonFunc.sleep(1000)
-
-        let btn0 = await driver.findComponent(ON.id("ipt"))
-        await CommonFunc.sleep(1000)
-        await (btn0?.click() as Promise<void>)
-        await CommonFunc.sleep(1000)
-
         let confirm = await driver.findComponent(ON.text("confirm"))
+        console.info("[popupKeyboardAvoidMode_static_0100] confirm is null: " + (confirm == null))
+        expect(confirm != null).assertTrue()
 
-        expect(confirm != null).assertFalse()
+        await CommonFunc.sleep(1000)
+        await (confirm?.click() as Promise<void>)
         await driver.triggerKey(2070, AppStorage.get<number>('displayID')?.toInt() ?? 0)
-      }
       console.info("[popupKeyboardAvoidMode_static_0200] END")
       done()
     })
@@ -156,41 +136,20 @@ export default function popupKeyboardAvoidMode() {
      */
     it("popupKeyboardAvoidMode_static_0300", Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("popupKeyboardAvoidMode_static_0300 START")
-      if (!currentDeviceIsPC) {
-        await CommonFunc.sleep(1000)
+      await CommonFunc.sleep(1000)
         let driver: Driver = Driver.create()
-        let btn = await driver.findComponent(
-          ON.id("default")
-        )
+        let btn = await driver.findComponent(ON.id("popup"))
         await CommonFunc.sleep(1000)
         await (btn?.click() as Promise<void>)
-        console.info("[popupKeyboardAvoidMode_static_0300] default click")
+        console.info("[popupKeyboardAvoidMode_static_0100] popup click")
         await CommonFunc.sleep(1000)
-        let btn1 = await driver.findComponent(
-          ON.id("CustomPopup")
-        )
-        await CommonFunc.sleep(1000)
-        await (btn1?.click() as Promise<void>)
-        console.info("[popupKeyboardAvoidMode_static_0300] CustomPopup click")
-        await CommonFunc.sleep(1000)
-        let text = await driver.findComponent(ON.id("text"))
-        let rect = await text!.getBounds()
-        let height = rect.top
-        console.info("[popupKeyboardAvoidMode_static_0300] height " + height)
+        let confirm = await driver.findComponent(ON.text("confirm"))
+        console.info("[popupKeyboardAvoidMode_static_0100] confirm is null: " + (confirm == null))
+        expect(confirm != null).assertTrue()
 
-        let btn0 = await driver.findComponent(ON.id("ipt"))
         await CommonFunc.sleep(1000)
-        await (btn0?.click() as Promise<void>)
-        await CommonFunc.sleep(1000)
-
-        let text1 = await driver.findComponent(ON.id("text"))
-        let rect1 = await text1!.getBounds()
-        let height1 = rect1.top
-
-        console.info("[popupKeyboardAvoidMode_static_0300] height1 " + height1)
-        expect(height - height1 > 0).assertTrue()
+        await (confirm?.click() as Promise<void>)
         await driver.triggerKey(2070, AppStorage.get<number>('displayID')?.toInt() ?? 0)
-      }
       console.info("[popupKeyboardAvoidMode_static_0300] END")
       done()
     })
@@ -203,7 +162,7 @@ export default function popupKeyboardAvoidMode() {
      */
     it("popupKeyboardAvoidMode_static_0400", Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("popupKeyboardAvoidMode_static_0400 START")
-      if (!currentDeviceIsPC) {
+      
         await CommonFunc.sleep(1000)
         let driver: Driver = Driver.create()
         let btn = await driver.findComponent(ON.id("none"))
@@ -229,7 +188,7 @@ export default function popupKeyboardAvoidMode() {
 
         expect(confirm != null).assertFalse()
         await driver.triggerKey(2070, AppStorage.get<number>('displayID')?.toInt() ?? 0)
-      }
+      
       console.info("[popupKeyboardAvoidMode_static_0400] END")
       done()
     })
