@@ -21,7 +21,7 @@ import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
 import { MyCallback } from '../models/MyCallback';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UIContext } from '@ohos.arkui.UIContext';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import common from "@ohos.app.ability.common";
 
 class EntryAbility extends UIAbility {
@@ -62,7 +62,9 @@ class EntryAbility extends UIAbility {
           }
           // Obtain a UIContext instance.
           if (windowClass !== null) {
-            AppStorage.setOrCreate<UIContext>('uiContent', windowClass!.getUIContext());
+            let uiContext: UIContext = windowClass!.getUIContext();
+            AppStorage.setOrCreate<UIContext>('uiContent', uiContext);
+            AppStorage.setOrCreate<Router>('router', uiContext.getRouter());
           }
         })
         hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent ok');
