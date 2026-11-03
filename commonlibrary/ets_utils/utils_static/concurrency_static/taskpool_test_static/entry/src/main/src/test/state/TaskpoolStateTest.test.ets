@@ -178,7 +178,7 @@ export default function TaskpoolStateTest(): void {
         taskpool.cancel(task);
       } catch (error) {
         cancelThrows = true;
-        expect(error.code).assertEqual(10200085);
+        expect(error.code).assertEqual(10200057);
       }
       expect(cancelThrows).assertTrue();
       done();
@@ -220,7 +220,7 @@ export default function TaskpoolStateTest(): void {
         await taskpool.execute(task, { timeout: 500 });
       } catch (error) {
         timeoutError = true;
-        expect(error.code).assertEqual(10200115);
+        expect(error.code).assertEqual(10200058);
       }
       expect(timeoutError).assertTrue();
       done();
