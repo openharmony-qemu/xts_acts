@@ -216,7 +216,7 @@ class Person {
   }
 
   static getAge(age?: number): number {
-    return age !== undefined ? age : 28;
+    return age !== undefined ? age : 28.0;
   }
 }
 
