@@ -21,6 +21,7 @@ group("customization") {
       "enterprise_device_management:edm_test_grop",
       "config_policy_static:ActsConfigPolicyStaticTest",
       "assessment_base:ActsAssessmentTest",
+      "assessment_base_permission:ActsAssessmentPermissionTest",
     ]
   }
 }

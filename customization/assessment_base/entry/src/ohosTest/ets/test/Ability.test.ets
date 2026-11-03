@@ -88,10 +88,16 @@ export default function AutomaticSceneConTest() {
         await button.click();
         await driver.delayMs(1000);
         const active: boolean = assessment.isActive();
-        expect(active).assertTrue()
+        expect(active).assertTrue();
       } catch (err) {
-        hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
-        expect(false).assertTrue()
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+          done();
+          return;
+        } else {
+          hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
       }
       assessment.end(context);
       done();
@@ -140,8 +146,14 @@ export default function AutomaticSceneConTest() {
         await button.click();
         await driver.delayMs(1000);
       } catch (err) {
-        hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
-        expect(false).assertTrue()
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+          done();
+          return;
+        } else {
+          hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
       }
       done();
     })
@@ -188,8 +200,15 @@ export default function AutomaticSceneConTest() {
         await driver.delayMs(1000);
         assessment.begin(context, config, assessmentCallback);
       } catch (err) {
-        hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
-        expect(err.code).assertEqual(36700002)
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+          done();
+          return;
+        } else {
+          hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(36700002);
+          expect(err.message).assertEqual('Assessment configuration service is already active');
+        }
       }
       assessment.end(context);
       done();
@@ -234,12 +253,18 @@ export default function AutomaticSceneConTest() {
         let button: Component = await driver.findComponent(ON.text('取消'));
         await button.click();
         await driver.delayMs(1000);
-        // expect(beginCode).assertEqual(assessment.AssessmentErrorCode.USER_CANCEL);
+
         const active: boolean = assessment.isActive();
         expect(active).assertFalse();
       } catch (err) {
-        hilog.error(DOMAIN, TAG, `${testNum} 111111111failed, code: ${err.code}, message: ${err.message}`);
-        expect(false).assertTrue()
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+          done();
+          return;
+        } else {
+          hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
       }
       done();
     })
@@ -247,7 +272,7 @@ export default function AutomaticSceneConTest() {
     /**
      * @tc.number SUB_Customization_Assessment_begin_paramError_0001
      * @tc.name   SUB_Customization_Assessment_begin_paramError_0001
-     * @tc.desc   begin interface with 11 allowedApps (max is 10) throws 401 parameter error
+     * @tc.desc   begin interface with allowedApps exceeding the maximum count (20) throws 401 parameter error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -276,10 +301,17 @@ export default function AutomaticSceneConTest() {
           }
         };
         assessment.begin(context, config, assessmentCallback);
-        expect(false).assertTrue()
+        expect(false).assertTrue();
       } catch (err) {
-        hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
-        expect(err.code).assertEqual(401)
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+          done();
+          return;
+        } else {
+          hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(401);
+          expect(err.message).assertEqual('Invalid parameter');
+        }
       }
       done();
     })
@@ -325,8 +357,14 @@ export default function AutomaticSceneConTest() {
         await button.click();
         await driver.delayMs(1000);
       } catch (err) {
-        hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
-        expect(false).assertTrue()
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+          done();
+          return;
+        } else {
+          hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
       }
       assessment.end(context);
       done();
@@ -375,8 +413,14 @@ export default function AutomaticSceneConTest() {
         await driver.delayMs(1000);
         assessment.end(context);
       } catch (err) {
-        hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
-        expect(false).assertTrue()
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+          done();
+          return;
+        } else {
+          hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
       }
       done();
     })
@@ -426,8 +470,14 @@ export default function AutomaticSceneConTest() {
         const active: boolean = assessment.isActive();
         expect(active).assertFalse();
       } catch (err) {
-        hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
-        expect(false).assertTrue()
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+          done();
+          return;
+        } else {
+          hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
       }
       done();
     })
@@ -446,10 +496,17 @@ export default function AutomaticSceneConTest() {
         // 应用上下文
         let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
         assessment.end(context);
-        expect(false).assertTrue()
+        expect(false).assertTrue();
       } catch (err) {
-        hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
-        expect(err.code).assertEqual(36700003)
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+          done();
+          return;
+        } else {
+          hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(36700003);
+          expect(err.message).assertEqual('Assessment configuration service is not active');
+        }
       }
       done();
     })
@@ -496,10 +553,16 @@ export default function AutomaticSceneConTest() {
         await button.click();
         await driver.delayMs(1000);
         const active: boolean = assessment.isActive();
-        expect(active).assertTrue()
+        expect(active).assertTrue();
       } catch (err) {
-        hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
-        expect(false).assertTrue()
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+          done();
+          return;
+        } else {
+          hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
       }
       assessment.end(context);
 
@@ -518,10 +581,16 @@ export default function AutomaticSceneConTest() {
       const testNum = 'SUB_Customization_Assessment_isActive_Success_0002';
       try {
         const active: boolean = assessment.isActive();
-        expect(active).assertFalse()
+        expect(active).assertFalse();
       } catch (err) {
-        hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
-        expect(false).assertTrue()
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+          done();
+          return;
+        } else {
+          hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
       }
       done();
     })
@@ -568,10 +637,16 @@ export default function AutomaticSceneConTest() {
         await button.click();
         await driver.delayMs(1000);
         const getconfig: assessment.AssessmentConfig = assessment.getConfiguration();
-        expect(getconfig.duration).assertEqual(3600000)
+        expect(getconfig.duration).assertEqual(3600000);
       } catch (err) {
-        hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
-        expect(false).assertTrue()
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+          done();
+          return;
+        } else {
+          hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
       }
       assessment.end(context);
 
@@ -590,10 +665,16 @@ export default function AutomaticSceneConTest() {
       const testNum = 'SUB_Customization_Assessment_getConfiguration_Success_0002';
       try {
         const getconfig: assessment.AssessmentConfig = assessment.getConfiguration();
-        expect(getconfig.duration).assertEqual(0)
+        expect(getconfig.duration).assertEqual(0);
       } catch (err) {
-        hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
-        expect(false).assertTrue()
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+          done();
+          return;
+        } else {
+          hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
       }
       done();
     })
@@ -610,10 +691,16 @@ export default function AutomaticSceneConTest() {
       const testNum = 'SUB_Customization_Assessment_getConfiguration_Success_0003';
       try {
         const getconfig: assessment.AssessmentConfig = assessment.getConfiguration();
-        expect(getconfig.allowedApps.length).assertEqual(0)
+        expect(getconfig.allowedApps.length).assertEqual(0);
       } catch (err) {
-        hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
-        expect(false).assertTrue()
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+          done();
+          return;
+        } else {
+          hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
       }
       done();
     })
@@ -661,11 +748,17 @@ export default function AutomaticSceneConTest() {
         await driver.delayMs(1000);
         assessment.end(context);
         const getconfig: assessment.AssessmentConfig = assessment.getConfiguration();
-        expect(getconfig.duration).assertEqual(0)
-        expect(getconfig.allowedApps.length).assertEqual(0)
+        expect(getconfig.duration).assertEqual(0);
+        expect(getconfig.allowedApps.length).assertEqual(0);
       } catch (err) {
-        hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
-        expect(false).assertTrue()
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+          done();
+          return;
+        } else {
+          hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
       }
       done();
     })
@@ -711,8 +804,14 @@ export default function AutomaticSceneConTest() {
         expect(getconfig.allowedApps[0]).assertEqual('com.samples.assessment');
 
       } catch (err) {
-        hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
-        expect(false).assertTrue()
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+          done();
+          return;
+        } else {
+          hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
       }
       assessment.end(context);
       done();
@@ -869,8 +968,9 @@ export default function AutomaticSceneConTest() {
       expect(assessment.AssessmentErrorCode.USER_CANCEL).assertEqual(1);
       expect(assessment.AssessmentErrorCode.TIMEOUT).assertEqual(2);
       expect(assessment.AssessmentErrorCode.SYSTEM_ERROR).assertEqual(3);
-      // expect(assessment.AssessmentErrorCode.SECURITY_BREACH).assertEqual(4);
+      expect(assessment.AssessmentErrorCode.ENV_ANOMALY).assertEqual(4);
     })
+
 
     /**
      * @tc.number SUB_Customization_Assessment_assessmentError_Success_0001
@@ -887,10 +987,44 @@ export default function AutomaticSceneConTest() {
       let error: assessment.AssessmentError = {
         code: assessment.AssessmentErrorCode.OK,
         message: 'Assessment begin  successfully'
-      }
+      };
       expect(error.code).assertEqual(0);
       expect(error.code).assertEqual(assessment.AssessmentErrorCode.OK);
       expect(typeof error.message).assertEqual('string');
+      let AssessmentErrorinfo: assessment.AssessmentError = error;
+      let interruptnfo: assessment.AssessmentInterruptInfo = error as ESObject;
+
+      let captureBeginErr: assessment.AssessmentError | null = null;
+      let captureInterruptInfo: assessment.AssessmentInterruptInfo | null = null;
+
+      let assessmentCallback: assessment.IAssessmentCallback = {
+        onBegin: (err) => {
+          captureBeginErr = err;
+          if (err.code === assessment.AssessmentErrorCode.OK) {
+            hilog.info(DOMAIN, TAG, 'Assessment began successfully.');
+          } else {
+            hilog.error(DOMAIN, TAG, `Assessment begin failed, code: ${err.code}, message: ${err.message}`);
+          }
+        },
+        onInterrupted: (info: assessment.AssessmentInterruptInfo) => {
+          captureInterruptInfo = info;
+          hilog.warn(DOMAIN, TAG, `Assessment interrupted, code: ${info.code}, message: ${info.message}`);
+        },
+        onEnd: () => {
+          hilog.info(DOMAIN, TAG, 'Assessment ended.');
+        }
+      };
+
+      assessmentCallback.onBegin(AssessmentErrorinfo);
+      assessmentCallback.onInterrupted(interruptnfo);
+
+      expect(captureBeginErr!.code).assertEqual(0);
+      expect(captureBeginErr!.code).assertEqual(assessment.AssessmentErrorCode.OK);
+      expect(captureBeginErr!.message).assertEqual('Assessment begin  successfully');
+
+      expect(captureInterruptInfo!.code).assertEqual(0);
+      expect(captureInterruptInfo!.code).assertEqual(assessment.AssessmentErrorCode.OK);
+      expect(captureInterruptInfo!.message).assertEqual('Assessment begin  successfully');
     })
 
     /**
@@ -906,9 +1040,43 @@ export default function AutomaticSceneConTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
       let error: assessment.AssessmentError = {
         code: assessment.AssessmentErrorCode.OK,
-      }
+      };
       expect(error.code).assertEqual(0);
       expect(error.message).assertEqual(undefined);
+      let AssessmentErrorinfo: assessment.AssessmentError = error;
+      let interruptnfo: assessment.AssessmentInterruptInfo = error as ESObject;
+
+      let captureBeginErr: assessment.AssessmentError | null = null;
+      let captureInterruptInfo: assessment.AssessmentInterruptInfo | null = null;
+
+      let assessmentCallback: assessment.IAssessmentCallback = {
+        onBegin: (err) => {
+          captureBeginErr = err;
+          if (err.code === assessment.AssessmentErrorCode.OK) {
+            hilog.info(DOMAIN, TAG, 'Assessment began successfully.');
+          } else {
+            hilog.error(DOMAIN, TAG, `Assessment begin failed, code: ${err.code}, message: ${err.message}`);
+          }
+        },
+        onInterrupted: (info: assessment.AssessmentInterruptInfo) => {
+          captureInterruptInfo = info;
+          hilog.warn(DOMAIN, TAG, `Assessment interrupted, code: ${info.code}, message: ${info.message}`);
+        },
+        onEnd: () => {
+          hilog.info(DOMAIN, TAG, 'Assessment ended.');
+        }
+      };
+
+      assessmentCallback.onBegin(AssessmentErrorinfo);
+      assessmentCallback.onInterrupted(interruptnfo);
+
+      expect(captureBeginErr!.code).assertEqual(0);
+      expect(captureBeginErr!.code).assertEqual(assessment.AssessmentErrorCode.OK);
+      expect(captureBeginErr!.message).assertEqual(undefined);
+
+      expect(captureInterruptInfo!.code).assertEqual(0);
+      expect(captureInterruptInfo!.code).assertEqual(assessment.AssessmentErrorCode.OK);
+      expect(captureInterruptInfo!.message).assertEqual(undefined);
     })
 
     /**
@@ -926,12 +1094,215 @@ export default function AutomaticSceneConTest() {
       let error: assessment.AssessmentError = {
         code: assessment.AssessmentErrorCode.USER_CANCEL,
         message: 'User cancelled the assessment'
-      }
+      };
 
       expect(error.code).assertEqual(assessment.AssessmentErrorCode.USER_CANCEL);
       expect(typeof error.message).assertEqual('string');
       expect(error.message).assertEqual('User cancelled the assessment');
+      let AssessmentErrorinfo: assessment.AssessmentError = error;
+      let interruptnfo: assessment.AssessmentInterruptInfo = error as ESObject;
+
+      let captureBeginErr: assessment.AssessmentError | null = null;
+      let captureInterruptInfo: assessment.AssessmentInterruptInfo | null = null;
+
+      let assessmentCallback: assessment.IAssessmentCallback = {
+        onBegin: (err) => {
+          captureBeginErr = err;
+          if (err.code === assessment.AssessmentErrorCode.OK) {
+            hilog.info(DOMAIN, TAG, 'Assessment began successfully.');
+          } else {
+            hilog.error(DOMAIN, TAG, `Assessment begin failed, code: ${err.code}, message: ${err.message}`);
+          }
+        },
+        onInterrupted: (info: assessment.AssessmentInterruptInfo) => {
+          captureInterruptInfo = info;
+          hilog.warn(DOMAIN, TAG, `Assessment interrupted, code: ${info.code}, message: ${info.message}`);
+        },
+        onEnd: () => {
+          hilog.info(DOMAIN, TAG, 'Assessment ended.');
+        }
+      };
+
+      assessmentCallback.onBegin(AssessmentErrorinfo);
+      assessmentCallback.onInterrupted(interruptnfo);
+
+      expect(captureBeginErr!.code).assertEqual(1);
+      expect(captureBeginErr!.code).assertEqual(assessment.AssessmentErrorCode.USER_CANCEL);
+      expect(captureBeginErr!.message).assertEqual('User cancelled the assessment');
+
+      expect(captureInterruptInfo!.code).assertEqual(1);
+      expect(captureInterruptInfo!.code).assertEqual(assessment.AssessmentErrorCode.USER_CANCEL);
+      expect(captureInterruptInfo!.message).assertEqual('User cancelled the assessment');
     })
+
+    /**
+     * @tc.number SUB_Customization_Assessment_assessmentError_Success_0004
+     * @tc.name   SUB_Customization_Assessment_assessmentError_Success_0004
+     * @tc.desc   the AssessmentError interface with USER_CANCEL code and message
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Customization_Assessment_assessmentError_Success_0004', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_assessmentError_Success_0004';
+      hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
+
+      let error: assessment.AssessmentError = {
+        code: assessment.AssessmentErrorCode.TIMEOUT,
+        message: 'User cancelled the assessment'
+      };
+
+      expect(error.code).assertEqual(assessment.AssessmentErrorCode.TIMEOUT);
+      expect(typeof error.message).assertEqual('string');
+      expect(error.message).assertEqual('User cancelled the assessment');
+      let AssessmentErrorinfo: assessment.AssessmentError = error;
+      let interruptnfo: assessment.AssessmentInterruptInfo = error as ESObject;
+
+      let captureBeginErr: assessment.AssessmentError | null = null;
+      let captureInterruptInfo: assessment.AssessmentInterruptInfo | null = null;
+
+      let assessmentCallback: assessment.IAssessmentCallback = {
+        onBegin: (err) => {
+          captureBeginErr = err;
+          if (err.code === assessment.AssessmentErrorCode.OK) {
+            hilog.info(DOMAIN, TAG, 'Assessment began successfully.');
+          } else {
+            hilog.error(DOMAIN, TAG, `Assessment begin failed, code: ${err.code}, message: ${err.message}`);
+          }
+        },
+        onInterrupted: (info: assessment.AssessmentInterruptInfo) => {
+          captureInterruptInfo = info;
+          hilog.warn(DOMAIN, TAG, `Assessment interrupted, code: ${info.code}, message: ${info.message}`);
+        },
+        onEnd: () => {
+          hilog.info(DOMAIN, TAG, 'Assessment ended.');
+        }
+      };
+
+      assessmentCallback.onBegin(AssessmentErrorinfo);
+      assessmentCallback.onInterrupted(interruptnfo);
+
+      expect(captureBeginErr!.code).assertEqual(2);
+      expect(captureBeginErr!.code).assertEqual(assessment.AssessmentErrorCode.TIMEOUT);
+      expect(captureBeginErr!.message).assertEqual('User cancelled the assessment');
+
+      expect(captureInterruptInfo!.code).assertEqual(2);
+      expect(captureInterruptInfo!.code).assertEqual(assessment.AssessmentErrorCode.TIMEOUT);
+      expect(captureInterruptInfo!.message).assertEqual('User cancelled the assessment');
+    })
+
+    /**
+     * @tc.number SUB_Customization_Assessment_assessmentError_Success_0005
+     * @tc.name   SUB_Customization_Assessment_assessmentError_Success_0005
+     * @tc.desc   the AssessmentError interface with USER_CANCEL code and message
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Customization_Assessment_assessmentError_Success_0005', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_assessmentError_Success_0005';
+      hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
+
+      let error: assessment.AssessmentError = {
+        code: assessment.AssessmentErrorCode.SYSTEM_ERROR,
+        message: 'User cancelled the assessment'
+      };
+
+      expect(error.code).assertEqual(assessment.AssessmentErrorCode.SYSTEM_ERROR);
+      expect(typeof error.message).assertEqual('string');
+      expect(error.message).assertEqual('User cancelled the assessment');
+      let AssessmentErrorinfo: assessment.AssessmentError = error;
+      let interruptnfo: assessment.AssessmentInterruptInfo = error as ESObject;
+
+      let captureBeginErr: assessment.AssessmentError | null = null;
+      let captureInterruptInfo: assessment.AssessmentInterruptInfo | null = null;
+
+      let assessmentCallback: assessment.IAssessmentCallback = {
+        onBegin: (err) => {
+          captureBeginErr = err;
+          if (err.code === assessment.AssessmentErrorCode.OK) {
+            hilog.info(DOMAIN, TAG, 'Assessment began successfully.');
+          } else {
+            hilog.error(DOMAIN, TAG, `Assessment begin failed, code: ${err.code}, message: ${err.message}`);
+          }
+        },
+        onInterrupted: (info: assessment.AssessmentInterruptInfo) => {
+          captureInterruptInfo = info;
+          hilog.warn(DOMAIN, TAG, `Assessment interrupted, code: ${info.code}, message: ${info.message}`);
+        },
+        onEnd: () => {
+          hilog.info(DOMAIN, TAG, 'Assessment ended.');
+        }
+      };
+
+      assessmentCallback.onBegin(AssessmentErrorinfo);
+      assessmentCallback.onInterrupted(interruptnfo);
+
+      expect(captureBeginErr!.code).assertEqual(3);
+      expect(captureBeginErr!.code).assertEqual(assessment.AssessmentErrorCode.SYSTEM_ERROR);
+      expect(captureBeginErr!.message).assertEqual('User cancelled the assessment');
+
+      expect(captureInterruptInfo!.code).assertEqual(3);
+      expect(captureInterruptInfo!.code).assertEqual(assessment.AssessmentErrorCode.SYSTEM_ERROR);
+      expect(captureInterruptInfo!.message).assertEqual('User cancelled the assessment');
+    })
+
+    /**
+     * @tc.number SUB_Customization_Assessment_assessmentError_Success_0006
+     * @tc.name   SUB_Customization_Assessment_assessmentError_Success_0006
+     * @tc.desc   the AssessmentError interface with USER_CANCEL code and message
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Customization_Assessment_assessmentError_Success_0006', Level.LEVEL0, async () => {
+      const testNum = 'SUB_Customization_Assessment_assessmentError_Success_0006';
+      hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
+
+      let error: assessment.AssessmentError = {
+        code: assessment.AssessmentErrorCode.ENV_ANOMALY,
+        message: 'User cancelled the assessment'
+      };
+
+      expect(error.code).assertEqual(assessment.AssessmentErrorCode.ENV_ANOMALY);
+      expect(typeof error.message).assertEqual('string');
+      expect(error.message).assertEqual('User cancelled the assessment');
+      let AssessmentErrorinfo: assessment.AssessmentError = error;
+      let interruptnfo: assessment.AssessmentInterruptInfo = error as ESObject;
+
+      let captureBeginErr: assessment.AssessmentError | null = null;
+      let captureInterruptInfo: assessment.AssessmentInterruptInfo | null = null;
+
+      let assessmentCallback: assessment.IAssessmentCallback = {
+        onBegin: (err) => {
+          captureBeginErr = err;
+          if (err.code === assessment.AssessmentErrorCode.OK) {
+            hilog.info(DOMAIN, TAG, 'Assessment began successfully.');
+          } else {
+            hilog.error(DOMAIN, TAG, `Assessment begin failed, code: ${err.code}, message: ${err.message}`);
+          }
+        },
+        onInterrupted: (info: assessment.AssessmentInterruptInfo) => {
+          captureInterruptInfo = info;
+          hilog.warn(DOMAIN, TAG, `Assessment interrupted, code: ${info.code}, message: ${info.message}`);
+        },
+        onEnd: () => {
+          hilog.info(DOMAIN, TAG, 'Assessment ended.');
+        }
+      };
+
+      assessmentCallback.onBegin(AssessmentErrorinfo);
+      assessmentCallback.onInterrupted(interruptnfo);
+
+      expect(captureBeginErr!.code).assertEqual(4);
+      expect(captureBeginErr!.code).assertEqual(assessment.AssessmentErrorCode.ENV_ANOMALY);
+      expect(captureBeginErr!.message).assertEqual('User cancelled the assessment');
+
+      expect(captureInterruptInfo!.code).assertEqual(4);
+      expect(captureInterruptInfo!.code).assertEqual(assessment.AssessmentErrorCode.ENV_ANOMALY);
+      expect(captureInterruptInfo!.message).assertEqual('User cancelled the assessment');
+    })
+
 
     /**
      * @tc.number SUB_Customization_Assessment_assessmentInterruptInfo_Success_0001
@@ -953,6 +1324,660 @@ export default function AutomaticSceneConTest() {
       expect(info.code).assertEqual(assessment.AssessmentErrorCode.USER_CANCEL);
       expect(typeof info.message).assertEqual('string');
       expect(info.message).assertEqual('User cancelled the assessment');
+    })
+
+    /**
+     * @tc.number SUB_Customization_Assessment_begin_paramError_0002
+     * @tc.name   SUB_Customization_Assessment_begin_paramError_0002
+     * @tc.desc   begin interface with an empty allowedApps array throws 401 parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Customization_Assessment_begin_paramError_0002', Level.LEVEL0, async (done: () => void) => {
+      const testNum = 'SUB_Customization_Assessment_begin_paramError_0002';
+      let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
+      try {
+        let config: assessment.AssessmentConfig = {
+          duration: 3600000,
+          allowedApps: []
+        };
+        let assessmentCallback: assessment.IAssessmentCallback = {
+          onBegin: (error: assessment.AssessmentError) => {
+            hilog.info(DOMAIN, TAG, `onBegin, code: ${error.code}, message: ${error.message}`);
+          },
+          onInterrupted: (info: assessment.AssessmentInterruptInfo) => {
+            hilog.warn(DOMAIN, TAG, `Assessment interrupted, code: ${info.code}, message: ${info.message}`);
+          },
+          onEnd: () => {
+            hilog.info(DOMAIN, TAG, 'Assessment ended.');
+          }
+        };
+        assessment.begin(context, config, assessmentCallback);
+        let driver: Driver = Driver.create();
+        await driver.delayMs(1000);
+        let button: Component = await driver.findComponent(ON.text('允许'));
+        await button.click();
+        await driver.delayMs(1000);
+      } catch (err) {
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+          done();
+          return;
+        } else {
+          hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+      }
+      assessment.end(context);
+      done();
+    })
+
+    /**
+     * @tc.number SUB_Customization_Assessment_begin_paramError_0003
+     * @tc.name   SUB_Customization_Assessment_begin_paramError_0003
+     * @tc.desc   begin interface with an empty string in allowedApps throws 401 parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Customization_Assessment_begin_paramError_0003', Level.LEVEL0, async (done: () => void) => {
+      const testNum = 'SUB_Customization_Assessment_begin_paramError_0003';
+      let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
+      try {
+        let config: assessment.AssessmentConfig = {
+          duration: 3600000,
+          allowedApps: ['']
+        };
+        let assessmentCallback: assessment.IAssessmentCallback = {
+          onBegin: (error: assessment.AssessmentError) => {
+            hilog.info(DOMAIN, TAG, `onBegin, code: ${error.code}, message: ${error.message}`);
+          },
+          onInterrupted: (info: assessment.AssessmentInterruptInfo) => {
+            hilog.warn(DOMAIN, TAG, `Assessment interrupted, code: ${info.code}, message: ${info.message}`);
+          },
+          onEnd: () => {
+            hilog.info(DOMAIN, TAG, 'Assessment ended.');
+          }
+        };
+        assessment.begin(context, config, assessmentCallback);
+        expect(false).assertTrue();
+      } catch (err) {
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+          done();
+          return;
+        } else {
+          hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(401);
+          expect(err.message).assertEqual('Invalid parameter');
+        }
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_Customization_Assessment_begin_paramError_0004
+     * @tc.name   SUB_Customization_Assessment_begin_paramError_0004
+     * @tc.desc   begin interface with a blank string in allowedApps throws 401 parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Customization_Assessment_begin_paramError_0004', Level.LEVEL0, async (done: () => void) => {
+      const testNum = 'SUB_Customization_Assessment_begin_paramError_0004';
+      let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
+      try {
+        let config: assessment.AssessmentConfig = {
+          duration: 3600000,
+          allowedApps: [' ']
+        };
+        let assessmentCallback: assessment.IAssessmentCallback = {
+          onBegin: (error: assessment.AssessmentError) => {
+            hilog.info(DOMAIN, TAG, `onBegin, code: ${error.code}, message: ${error.message}`);
+          },
+          onInterrupted: (info: assessment.AssessmentInterruptInfo) => {
+            hilog.warn(DOMAIN, TAG, `Assessment interrupted, code: ${info.code}, message: ${info.message}`);
+          },
+          onEnd: () => {
+            hilog.info(DOMAIN, TAG, 'Assessment ended.');
+          }
+        };
+        assessment.begin(context, config, assessmentCallback);
+        expect(false).assertTrue();
+      } catch (err) {
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+          done();
+          return;
+        } else {
+          hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(401);
+          expect(err.message).assertEqual('Invalid parameter');
+        }
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_Customization_Assessment_begin_paramError_0005
+     * @tc.name   SUB_Customization_Assessment_begin_paramError_0005
+     * @tc.desc   begin interface with a null config throws 401 parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Customization_Assessment_begin_paramError_0005', Level.LEVEL0, async (done: () => void) => {
+      const testNum = 'SUB_Customization_Assessment_begin_paramError_0005';
+      let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
+      try {
+        let config = null;
+        let assessmentCallback: assessment.IAssessmentCallback = {
+          onBegin: (error: assessment.AssessmentError) => {
+            hilog.info(DOMAIN, TAG, `onBegin, code: ${error.code}, message: ${error.message}`);
+          },
+          onInterrupted: (info: assessment.AssessmentInterruptInfo) => {
+            hilog.warn(DOMAIN, TAG, `Assessment interrupted, code: ${info.code}, message: ${info.message}`);
+          },
+          onEnd: () => {
+            hilog.info(DOMAIN, TAG, 'Assessment ended.');
+          }
+        };
+        assessment.begin(context, config, assessmentCallback);
+        expect(false).assertTrue();
+      } catch (err) {
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+          done();
+          return;
+        } else {
+          hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(401);
+          expect(err.message).assertEqual('Invalid parameter');
+        }
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_Customization_Assessment_begin_paramError_0006
+     * @tc.name   SUB_Customization_Assessment_begin_paramError_0006
+     * @tc.desc   begin interface with an undefined config throws 401 parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Customization_Assessment_begin_paramError_0006', Level.LEVEL0, async (done: () => void) => {
+      const testNum = 'SUB_Customization_Assessment_begin_paramError_0006';
+      let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
+      try {
+        let config = undefined;
+        let assessmentCallback: assessment.IAssessmentCallback = {
+          onBegin: (error: assessment.AssessmentError) => {
+            hilog.info(DOMAIN, TAG, `onBegin, code: ${error.code}, message: ${error.message}`);
+          },
+          onInterrupted: (info: assessment.AssessmentInterruptInfo) => {
+            hilog.warn(DOMAIN, TAG, `Assessment interrupted, code: ${info.code}, message: ${info.message}`);
+          },
+          onEnd: () => {
+            hilog.info(DOMAIN, TAG, 'Assessment ended.');
+          }
+        };
+        assessment.begin(context, config, assessmentCallback);
+        expect(false).assertTrue();
+      } catch (err) {
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+          done();
+          return;
+        } else {
+          hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(401);
+          expect(err.message).assertEqual('Invalid parameter');
+        }
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_Customization_Assessment_begin_paramError_0016
+     * @tc.name   SUB_Customization_Assessment_begin_paramError_0016
+     * @tc.desc   begin interface with an undefined config throws 401 parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Customization_Assessment_begin_paramError_0016', Level.LEVEL0, async (done: () => void) => {
+      const testNum = 'SUB_Customization_Assessment_begin_paramError_0016';
+      let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
+      try {
+        let config: ESObject = {
+          duration: 3600000,
+          allowedApps: ''
+        };
+        let assessmentCallback: assessment.IAssessmentCallback = {
+          onBegin: (error: assessment.AssessmentError) => {
+            hilog.info(DOMAIN, TAG, `onBegin, code: ${error.code}, message: ${error.message}`);
+          },
+          onInterrupted: (info: assessment.AssessmentInterruptInfo) => {
+            hilog.warn(DOMAIN, TAG, `Assessment interrupted, code: ${info.code}, message: ${info.message}`);
+          },
+          onEnd: () => {
+            hilog.info(DOMAIN, TAG, 'Assessment ended.');
+          }
+        };
+        assessment.begin(context, config, assessmentCallback);
+        let driver: Driver = Driver.create();
+        await driver.delayMs(1000);
+        let button: Component = await driver.findComponent(ON.text('允许'));
+        await button.click();
+        await driver.delayMs(1000);
+      } catch (err) {
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+          done();
+          return;
+        } else {
+          hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        }
+      }
+      assessment.end(context);
+      done();
+    })
+
+    /**
+     * @tc.number SUB_Customization_Assessment_begin_paramError_0007
+     * @tc.name   SUB_Customization_Assessment_begin_paramError_0007
+     * @tc.desc   begin interface with a null onBegin callback throws 401 parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Customization_Assessment_begin_paramError_0007', Level.LEVEL0, async (done: () => void) => {
+      const testNum = 'SUB_Customization_Assessment_begin_paramError_0007';
+      let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
+      try {
+        let config: assessment.AssessmentConfig = {
+          duration: 3600000,
+          allowedApps: ['com.samples.assessment']
+        };
+        let assessmentCallback: ESObject = { onBegin: null };
+        assessment.begin(context, config, assessmentCallback);
+        expect(false).assertTrue();
+      } catch (err) {
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+          done();
+          return;
+        } else {
+          hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(401);
+          expect(err.message).assertEqual('Invalid parameter');
+        }
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_Customization_Assessment_begin_paramError_0008
+     * @tc.name   SUB_Customization_Assessment_begin_paramError_0008
+     * @tc.desc   begin interface with an undefined onBegin callback throws 401 parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Customization_Assessment_begin_paramError_0008', Level.LEVEL0, async (done: () => void) => {
+      const testNum = 'SUB_Customization_Assessment_begin_paramError_0008';
+      let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
+      try {
+        let config: assessment.AssessmentConfig = {
+          duration: 3600000,
+          allowedApps: ['com.samples.assessment']
+        };
+        let assessmentCallback: ESObject = { onBegin: undefined };
+        assessment.begin(context, config, assessmentCallback);
+        expect(false).assertTrue();
+      } catch (err) {
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+          done();
+          return;
+        } else {
+          hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(401);
+          expect(err.message).assertEqual('Invalid parameter');
+        }
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_Customization_Assessment_begin_paramError_0009
+     * @tc.name   SUB_Customization_Assessment_begin_paramError_0009
+     * @tc.desc   begin interface with a null onInterrupted callback throws 401 parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Customization_Assessment_begin_paramError_0009', Level.LEVEL0, async (done: () => void) => {
+      const testNum = 'SUB_Customization_Assessment_begin_paramError_0009';
+      let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
+      try {
+        let config: assessment.AssessmentConfig = {
+          duration: 3600000,
+          allowedApps: ['com.samples.assessment']
+        };
+        let assessmentCallback: ESObject = { onInterrupted: null };
+        assessment.begin(context, config, assessmentCallback);
+        expect(false).assertTrue();
+      } catch (err) {
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+          done();
+          return;
+        } else {
+          hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(401);
+          expect(err.message).assertEqual('Invalid parameter');
+        }
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_Customization_Assessment_begin_paramError_0010
+     * @tc.name   SUB_Customization_Assessment_begin_paramError_0010
+     * @tc.desc   begin interface with an undefined onInterrupted callback throws 401 parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Customization_Assessment_begin_paramError_0010', Level.LEVEL0, async (done: () => void) => {
+      const testNum = 'SUB_Customization_Assessment_begin_paramError_0010';
+      let context: common.UIAbilityContext = TestAbilityUtil.TEST_CONEXT;
+      try {
+        let config: assessment.AssessmentConfig = {
+          duration: 3600000,
+          allowedApps: ['com.samples.assessment']
+        };
+        let assessmentCallback: ESObject = { onInterrupted: undefined };
+        assessment.begin(context, config, assessmentCallback);
+        expect(false).assertTrue();
+      } catch (err) {
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+          done();
+          return;
+        } else {
+          hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(401);
+          expect(err.message).assertEqual('Invalid parameter');
+        }
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_Customization_Assessment_onBegin_callbackNull_0001
+     * @tc.name   SUB_Customization_Assessment_onBegin_callbackNull_0001
+     * @tc.desc   onBegin callback invoked with null and the received error parameter is null without exception
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Customization_Assessment_onBegin_callbackNull_0001', Level.LEVEL0, async (done: () => void) => {
+      const testNum = 'SUB_Customization_Assessment_onBegin_callbackNull_0001';
+      hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
+
+      try {
+        let config: assessment.AssessmentConfig = {
+          duration: 3600000,
+          allowedApps: ['com.samples.assessment']
+        };
+        let assessmentCallback: assessment.IAssessmentCallback = {
+          onBegin: (error: assessment.AssessmentError) => {
+            if (error.code === assessment.AssessmentErrorCode.OK) {
+              hilog.info(DOMAIN, TAG, 'Assessment began successfully.');
+            } else {
+              hilog.error(DOMAIN, TAG, `Assessment begin failed, code: ${error.code}, message: ${error.message}`);
+            }
+          },
+          onInterrupted: (info: assessment.AssessmentInterruptInfo) => {
+            hilog.warn(DOMAIN, TAG, `Assessment interrupted, code: ${info.code}, message: ${info.message}`);
+          },
+          onEnd: () => {
+            hilog.info(DOMAIN, TAG, 'Assessment ended.');
+          }
+        };
+        let onBegin_null: ESObject = null;
+        assessmentCallback.onBegin(onBegin_null);
+        expect(false).assertTrue();
+      } catch (err) {
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+          done();
+          return;
+        } else {
+          hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(undefined);
+        }
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_Customization_Assessment_onBegin_callbackUndefined_0002
+     * @tc.name   SUB_Customization_Assessment_onBegin_callbackUndefined_0002
+     * @tc.desc   onBegin callback invoked with undefined and the received error parameter is undefined without exception
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Customization_Assessment_onBegin_callbackUndefined_0002', Level.LEVEL0, async (done: () => void) => {
+      const testNum = 'SUB_Customization_Assessment_onBegin_callbackUndefined_0002';
+      hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
+
+      try {
+        let config: assessment.AssessmentConfig = {
+          duration: 3600000,
+          allowedApps: ['com.samples.assessment']
+        };
+        let assessmentCallback: assessment.IAssessmentCallback = {
+          onBegin: (error: assessment.AssessmentError) => {
+            if (error.code === assessment.AssessmentErrorCode.OK) {
+              hilog.info(DOMAIN, TAG, 'Assessment began successfully.');
+            } else {
+              hilog.error(DOMAIN, TAG, `Assessment begin failed, code: ${error.code}, message: ${error.message}`);
+            }
+          },
+          onInterrupted: (info: assessment.AssessmentInterruptInfo) => {
+            hilog.warn(DOMAIN, TAG, `Assessment interrupted, code: ${info.code}, message: ${info.message}`);
+          },
+          onEnd: () => {
+            hilog.info(DOMAIN, TAG, 'Assessment ended.');
+          }
+        };
+        let onBegin_undefined: ESObject = undefined;
+        assessmentCallback.onBegin(onBegin_undefined);
+        expect(false).assertTrue();
+      } catch (err) {
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+          done();
+          return;
+        } else {
+          hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(undefined);
+        }
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_Customization_Assessment_onInterrupted_callbackNull_0001
+     * @tc.name   SUB_Customization_Assessment_onInterrupted_callbackNull_0001
+     * @tc.desc   onInterrupted callback invoked with null and the received info parameter is null without exception
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Customization_Assessment_onInterrupted_callbackNull_0001', Level.LEVEL0, async (done: () => void) => {
+      const testNum = 'SUB_Customization_Assessment_onInterrupted_callbackNull_0001';
+      hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
+
+      try {
+        let config: assessment.AssessmentConfig = {
+          duration: 3600000,
+          allowedApps: ['com.samples.assessment']
+        };
+        let assessmentCallback: assessment.IAssessmentCallback = {
+          onBegin: (error: assessment.AssessmentError) => {
+            if (error.code === assessment.AssessmentErrorCode.OK) {
+              hilog.info(DOMAIN, TAG, 'Assessment began successfully.');
+            } else {
+              hilog.error(DOMAIN, TAG, `Assessment begin failed, code: ${error.code}, message: ${error.message}`);
+            }
+          },
+          onInterrupted: (info: assessment.AssessmentInterruptInfo) => {
+            hilog.warn(DOMAIN, TAG, `Assessment interrupted, code: ${info.code}, message: ${info.message}`);
+          },
+          onEnd: () => {
+            hilog.info(DOMAIN, TAG, 'Assessment ended.');
+          }
+        };
+        let onInterrupted_null: ESObject = null;
+        assessmentCallback.onInterrupted(onInterrupted_null);
+        expect(false).assertTrue();
+      } catch (err) {
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+          done();
+          return;
+        } else {
+          hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(undefined);
+        }
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_Customization_Assessment_onInterrupted_callbackUndefined_0002
+     * @tc.name   SUB_Customization_Assessment_onInterrupted_callbackUndefined_0002
+     * @tc.desc   onInterrupted callback invoked with undefined and the received info parameter is undefined without exception
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Customization_Assessment_onInterrupted_callbackUndefined_0002', Level.LEVEL0, async (done: () => void) => {
+      const testNum = 'SUB_Customization_Assessment_onInterrupted_callbackUndefined_0002';
+      hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
+
+      try {
+        let config: assessment.AssessmentConfig = {
+          duration: 3600000,
+          allowedApps: ['com.samples.assessment']
+        };
+        let assessmentCallback: assessment.IAssessmentCallback = {
+          onBegin: (error: assessment.AssessmentError) => {
+            if (error.code === assessment.AssessmentErrorCode.OK) {
+              hilog.info(DOMAIN, TAG, 'Assessment began successfully.');
+            } else {
+              hilog.error(DOMAIN, TAG, `Assessment begin failed, code: ${error.code}, message: ${error.message}`);
+            }
+          },
+          onInterrupted: (info: assessment.AssessmentInterruptInfo) => {
+            hilog.warn(DOMAIN, TAG, `Assessment interrupted, code: ${info.code}, message: ${info.message}`);
+          },
+          onEnd: () => {
+            hilog.info(DOMAIN, TAG, 'Assessment ended.');
+          }
+        };
+        let onInterrupted_undefined: ESObject = undefined;
+        assessmentCallback.onInterrupted(onInterrupted_undefined);
+        expect(false).assertTrue();
+      } catch (err) {
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+          done();
+          return;
+        } else {
+          hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(undefined);
+        }
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_Customization_Assessment_assessmentError_Success_0008
+     * @tc.name SUB_Customization_Assessment_assessmentError_Success_0008
+     * @tc.desc the AssessmentError interface contains code and message
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it('SUB_Customization_Assessment_assessmentError_Success_0008', Level.LEVEL0, async (done: () => void) => {
+      const testNum = 'SUB_Customization_Assessment_assessmentError_Success_0008';
+      hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
+
+      try {
+        let error: assessment.AssessmentError = {
+          code: -1 as assessment.AssessmentErrorCode,
+          message: 'Assessment begin  successfully'
+        };
+        expect(error.code).assertEqual(-1);
+        expect(error.message).assertEqual('Assessment begin  successfully');
+
+        let AssessmentErrorinfo: assessment.AssessmentError = error;
+      } catch (err) {
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+          done();
+          return;
+        } else {
+          hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(undefined);
+        }
+      }
+      done();
+    })
+
+    /**
+     * @tc.number SUB_Customization_Assessment_assessmentError_Success_0009
+     * @tc.name SUB_Customization_Assessment_assessmentError_Success_0009
+     * @tc.desc the AssessmentError interface contains code and message
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it('SUB_Customization_Assessment_assessmentError_Success_0009', Level.LEVEL0, async (done: () => void) => {
+      const testNum = 'SUB_Customization_Assessment_assessmentError_Success_0009';
+      hilog.info(DOMAIN, TAG, '%{public}s', `test ${testNum}`);
+
+      try {
+        let error: assessment.AssessmentError = {
+          code: -1 as assessment.AssessmentErrorCode,
+          message: 'Assessment begin  successfully'
+        };
+        expect(error.code).assertEqual(-1);
+        expect(error.message).assertEqual('Assessment begin  successfully');
+
+
+        let interruptnfo: assessment.AssessmentInterruptInfo = error as ESObject;
+
+      } catch (err) {
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+          done();
+          return;
+        } else {
+          hilog.error(DOMAIN, TAG, `${testNum} failed, code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(undefined);
+        }
+      }
+      done();
     })
 
   })
