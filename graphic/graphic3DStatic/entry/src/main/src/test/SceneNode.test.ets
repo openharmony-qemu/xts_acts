@@ -1239,7 +1239,7 @@ export default function sceneNodeTest() {
 
     /**
      * @tc.name   testPointLightCreation
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1050
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1900
      * @tc.desc   Test createLight with LightType.POINT and verify lightType
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1269,7 +1269,7 @@ export default function sceneNodeTest() {
 
     /**
      * @tc.name   testPointLightRange
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1060
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_2000
      * @tc.desc   Test PointLight range property set and get
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1300,7 +1300,7 @@ export default function sceneNodeTest() {
 
     /**
      * @tc.name   testRectLightCreation
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1070
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_2100
      * @tc.desc   Test createLight with LightType.RECT and verify lightType
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1330,7 +1330,7 @@ export default function sceneNodeTest() {
 
     /**
      * @tc.name   testRectLightWidth
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1080
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_2200
      * @tc.desc   Test RectLight width property default value and set/get
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1363,7 +1363,7 @@ export default function sceneNodeTest() {
 
     /**
      * @tc.name   testRectLightHeight
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1090
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_2300
      * @tc.desc   Test RectLight height property default value and set/get
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1396,7 +1396,7 @@ export default function sceneNodeTest() {
 
     /**
      * @tc.name   testRectLightTwoSided
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1100
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_2400
      * @tc.desc   Test RectLight twoSided property default value and set/get
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1429,7 +1429,7 @@ export default function sceneNodeTest() {
 
     /**
      * @tc.name   testCreateLightAllTypes
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1110
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_2500
      * @tc.desc   Test createLight with all LightType values and verify lightType for each
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
