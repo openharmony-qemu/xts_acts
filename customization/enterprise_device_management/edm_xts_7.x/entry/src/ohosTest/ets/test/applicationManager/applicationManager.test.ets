@@ -2834,27 +2834,18 @@ export default function applicationManagerTest() {
         let result: Array<applicationManager.MainWindowStates> = applicationManager.getAllMainWindowStates();
         expect(Array.isArray(result)).assertTrue();
         expect(result.length > 0).assertTrue();
+        let found: boolean = false;
         for (let i = 0; i < result.length; i++) {
           let mainWindowState: applicationManager.MainWindowStates = result[i];
           expect(mainWindowState.pid > 0).assertTrue();
           expect(typeof (mainWindowState.bundleName)).assertEqual("string");
-          let state: applicationManager.WindowState = mainWindowState.state;
-          if (state === applicationManager.WindowState.DISCONNECT) {
-            expect(state).assertEqual(applicationManager.WindowState.DISCONNECT);
-          } else if (state === applicationManager.WindowState.CONNECT) {
-            expect(state).assertEqual(applicationManager.WindowState.CONNECT);
-          } else if (state === applicationManager.WindowState.FOREGROUND) {
-            expect(state).assertEqual(applicationManager.WindowState.FOREGROUND);
-          } else if (state === applicationManager.WindowState.ACTIVE) {
-            expect(state).assertEqual(applicationManager.WindowState.ACTIVE);
-          } else if (state === applicationManager.WindowState.INACTIVE) {
-            expect(state).assertEqual(applicationManager.WindowState.INACTIVE);
-          } else if (state === applicationManager.WindowState.BACKGROUND) {
-            expect(state).assertEqual(applicationManager.WindowState.BACKGROUND);
-          } else {
-            expect(false).assertTrue();
+          expect(mainWindowState.state >= applicationManager.WindowState.DISCONNECT).assertTrue();
+          expect(mainWindowState.state <= applicationManager.WindowState.BACKGROUND).assertTrue();
+          if (mainWindowState.bundleName === SELFHAPNAME) {
+            found = true;
           }
         }
+        expect(found).assertTrue();
       } catch (error) {
         expect(false).assertTrue();
       } finally {
