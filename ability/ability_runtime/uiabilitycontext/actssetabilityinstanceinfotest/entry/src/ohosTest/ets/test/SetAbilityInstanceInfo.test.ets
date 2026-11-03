@@ -14,7 +14,7 @@
  */
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
-import { common } from '@kit.AbilityKit';
+import { common, UIAbility } from '@kit.AbilityKit';
 import { abilityDelegatorRegistry } from '@kit.TestKit';
 import { JSON } from '@kit.ArkTS';
 import { image } from '@kit.ImageKit';
@@ -968,19 +968,32 @@ export default function abilityTest() {
         done();
         return;
       }
-      let fakeContext = { stageMode: true } as common.UIAbilityContext;
+      let delegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
-        await fakeContext.setAbilityInstanceInfo('label_ctx', pixelMap);
-        hilog.info(DOMAIN, LOG_TAG, tag + " fail");
-        try { expect().assertFail(); } catch (err) {}
-        done();
+        await testContext.startAbility({
+          bundleName: 'com.acts.ability.setabilityinstanceinfo',
+          abilityName: 'EntryAbility'
+        });
+        await sleep(200);
+        let ability: UIAbility = await delegator.getCurrentTopAbility();
+        let staleContext: common.UIAbilityContext = ability.context;
+        await staleContext.terminateSelf();
+        await sleep(300);
+        try {
+          await staleContext.setAbilityInstanceInfo('label_ctx', pixelMap);
+          hilog.info(DOMAIN, LOG_TAG, tag + " unexpected success");
+          try { expect().assertFail(); } catch (err) {}
+        } catch (err) {
+          hilog.info(DOMAIN, LOG_TAG, "setAbilityInstanceInfo failed: " + JSON.stringify(err))
+          let bizError = err as BusinessError;
+          expect(bizError.code === 16000011 || bizError.code === 401).assertTrue();
+          hilog.info(DOMAIN, LOG_TAG, tag + " success");
+        }
       } catch (err) {
-        hilog.info(DOMAIN, LOG_TAG, "setAbilityInstanceInfo failed: " + JSON.stringify(err))
-        let bizError = err as BusinessError;
-        expect(bizError.code === 16000011 || bizError.code === 401).assertTrue();
-        hilog.info(DOMAIN, LOG_TAG, tag + " success");
-        done();
+        hilog.info(DOMAIN, LOG_TAG, tag + " setup failed: " + JSON.stringify(err));
+        try { expect().assertFail(); } catch (err) {}
       }
+      done();
     })
 
     /**
