@@ -37,6 +37,8 @@ import SegmentButtonItemOptionsArrayTest from './segmentButton/SegmentButtonItem
 import segmentButtonEnableStateAnimation from './segmentButton/segmentButtonEnableStateAnimation.test';
 import BackgroundSystemMaterialV2Test from './capsuleSegmentButtonV2/BackgroundSystemMaterialV2Test.test';
 import BackgroundSystemMaterialTest from './segmentButton/BackgroundSystemMaterialTest.test';
+import MaxFontScaleTest from './segmentButton/MaxFontScaleTest.test'
+import AccessibilitySelectedTypeTest from './segmentButton/AccessibilitySelectedTypeTest.test';
 
 export default function testsuite() {
   SegmentButtonOptionsTest();
@@ -62,4 +64,6 @@ export default function testsuite() {
   segmentButtonEnableStateAnimation();
   BackgroundSystemMaterialV2Test();
   BackgroundSystemMaterialTest();
+  MaxFontScaleTest()  
+  AccessibilitySelectedTypeTest() 
 }

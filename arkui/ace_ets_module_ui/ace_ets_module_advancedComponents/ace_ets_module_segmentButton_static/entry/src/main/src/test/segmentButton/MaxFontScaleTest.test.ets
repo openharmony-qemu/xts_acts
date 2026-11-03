@@ -21,53 +21,50 @@ import { Driver, ON } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-export default function maxFontScaleTest() {
-  describe('maxFontScaleTest', () => {
+export default function MaxFontScaleTest() {
+  describe('MaxFontScaleTest', () => {
 
     beforeEach(async () => {
-      console.info('maxFontScaleTest beforeEach start');
+      console.info('MaxFontScaleTest beforeEach start');
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/segmentButton/maxFontScaleTest',
+        url: 'MainAbility/pages/segmentButton/MaxFontScaleTest',
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages = routerInstance.getState();
-        console.info('get maxFontScaleTest state pages:' + JSON.stringify(pages));
-        if (!('maxFontScaleTest' == pages.name)) {
-          console.info('get maxFontScaleTest pages.name:' + JSON.stringify(pages.name));
+        console.info('get MaxFontScaleTest state pages:' + JSON.stringify(pages));
+        if (!('MaxFontScaleTest' == pages.name)) {
+          console.info('get MaxFontScaleTest pages.name:' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error('push maxFontScaleTest page error:' + err); 
+        console.error('push MaxFontScaleTest page error:' + err); 
       }
-      console.info('maxFontScaleTest beforeEach end');
+      console.info('MaxFontScaleTest beforeEach end');
     });
     afterEach(async () => {
     });
 
-    
-    
-    
-    
     /**
-     * @tc.number   maxFontScaleTest_static_0100
-     * @tc.name     maxFontScaleTest_static_0100
-     * @tc.desc     maxFontScaleTest_static_0100
-     * @tc.level    Level.LEVEL3
+     * @tc.name   SUB_ARKUI_API_MaxFontScaleTest_static_0100
+     * @tc.number SUB_ARKUI_API_MaxFontScaleTest_static_0100
+     * @tc.desc   add advancedComponents xts 
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
-it('maxFontScaleTest_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
-
-     console.info('[maxFontScaleTest_static_0100] START');
+    it('SUB_ARKUI_API_MaxFontScaleTest_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+     console.info('[SUB_ARKUI_API_MaxFontScaleTest_static_0100] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
       let text = inspector.getInspectorByKey('text');
-      console.info("[maxFontScaleTest_static_0100] JSON.parseJsonElement(text) is: " + JSON.stringifyJsonElement(JSON.parseJsonElement(text)));
+      console.info("[SUB_ARKUI_API_MaxFontScaleTest_static_0100] JSON.parseJsonElement(text) is: " + JSON.stringifyJsonElement(JSON.parseJsonElement(text)));
       expect(JSON.parseJsonElement(text).getElement('$attrs').getString('content')).assertEqual('maxFontScale: 2');
-      console.info('[maxFontScaleTest_static_0100] END');
+      console.info('[SUB_ARKUI_API_MaxFontScaleTest_static_0100] END');
       done();
     });
   })

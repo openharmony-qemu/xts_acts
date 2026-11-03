@@ -21,66 +21,63 @@ import { Driver, ON } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-export default function accessibilitySelectedTypeTest() {
-  describe('accessibilitySelectedTypeTest', () => {
+export default function AccessibilitySelectedTypeTest() {
+  describe('AccessibilitySelectedTypeTest', () => {
 
     beforeEach(async () => {
-      console.info('accessibilitySelectedTypeTest beforeEach start');
+      console.info('AccessibilitySelectedTypeTest beforeEach start');
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/chip/accessibilitySelectedTypeTest',
+        url: 'MainAbility/pages/segmentButton/AccessibilitySelectedTypeTest',
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages = routerInstance.getState();
-        console.info('get accessibilitySelectedTypeTest state pages:' + JSON.stringify(pages));
-        if (!('accessibilitySelectedTypeTest' == pages.name)) {
-          console.info('get accessibilitySelectedTypeTest pages.name:' + JSON.stringify(pages.name));
+        console.info('get AccessibilitySelectedTypeTest state pages:' + JSON.stringify(pages));
+        if (!('AccessibilitySelectedTypeTest' == pages.name)) {
+          console.info('get AccessibilitySelectedTypeTest pages.name:' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error('push accessibilitySelectedTypeTest page error:' + err);
+        console.error('push AccessibilitySelectedTypeTest page error:' + err);
       }
-      console.info('accessibilitySelectedTypeTest beforeEach end');
+      console.info('AccessibilitySelectedTypeTest beforeEach end');
     });
     afterEach(async () => {
     });
 
-    
-    
-    
-    
     /**
-     * @tc.number   accessibilitySelectedTypeTest_static_0100
-     * @tc.name     accessibilitySelectedTypeTest_static_0100
-     * @tc.desc     accessibilitySelectedTypeTest_static_0100
-     * @tc.level    Level.LEVEL3
+     * @tc.name   SUB_ARKUI_API_AccessibilitySelectedTypeTest_static_0100
+     * @tc.number SUB_ARKUI_API_AccessibilitySelectedTypeTest_static_0100
+     * @tc.desc   add advancedComponents xts 
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
-it('accessibilitySelectedTypeTest_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
-
-     console.info('[accessibilitySelectedTypeTest_static_0100] START');
+    it('SUB_ARKUI_API_AccessibilitySelectedTypeTest_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+     console.info('[SUB_ARKUI_API_AccessibilitySelectedTypeTest_static_0100] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
       
       let strJson1 = inspector.getInspectorByKey('text');
       let obj1 = JSON.parseJsonElement(strJson1);
-      console.info('[accessibilitySelectedTypeTest_static_0100] obj1.$attrs.content is: ' + obj1.getElement('$attrs').getString('content'));
+      console.info('[SUB_ARKUI_API_AccessibilitySelectedTypeTest_static_0100] obj1.$attrs.content is: ' + obj1.getElement('$attrs').getString('content'));
       expect(obj1.getElement('$attrs').getString('content')).assertEqual('0');
       let btn1 = await driver.findComponent(ON.id('btn'));
       await btn1!.click()
       await CommonFunc.sleep(1000);
       let strJson2 = inspector.getInspectorByKey('text');
       let obj2 = JSON.parseJsonElement(strJson2);
-      console.info('[accessibilitySelectedTypeTest_static_0100] obj2.$attrs.content is: ' + obj2.getElement('$attrs').getString('content'));
+      console.info('[SUB_ARKUI_API_AccessibilitySelectedTypeTest_static_0100] obj2.$attrs.content is: ' + obj2.getElement('$attrs').getString('content'));
       expect(obj2.getElement('$attrs').getString('content')).assertEqual('1');
       await btn1!.click()
       await CommonFunc.sleep(1000);
       let strJson3 = inspector.getInspectorByKey('text');
       let obj3 = JSON.parseJsonElement(strJson3);
-      console.info('[accessibilitySelectedTypeTest_static_0100] obj3.$attrs.content is: ' + obj3.getElement('$attrs').getString('content'));
+      console.info('[SUB_ARKUI_API_AccessibilitySelectedTypeTest_static_0100] obj3.$attrs.content is: ' + obj3.getElement('$attrs').getString('content'));
       expect(obj3.getElement('$attrs').getString('content')).assertEqual('2');
       done();
     });

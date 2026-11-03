@@ -1,6 +1,7 @@
 'use static';
+
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -14,7 +15,6 @@
  * limitations under the License.
  */
 
-
 import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
   Row, ClickEvent, Margin, ButtonType, ColumnOptions, $r,BlurStyle
 } from '@ohos.arkui.component'
@@ -23,10 +23,9 @@ import { SegmentButtonItemOptions,SegmentButtonTextItem,SegmentButton,
   SegmentButtonOptions,SegmentButtonItemTuple,TabSegmentButtonConstructionOptions,
   ItemRestriction,CapsuleSegmentButtonConstructionOptions,SegmentButtonIconItem,SegmentButtonIconTextItem } from '@ohos.arkui.advanced.SegmentButton'
 
-
 @Entry
 @Component
-struct maxFontScaleTest {
+struct MaxFontScaleTest {
   @State maxFontScale: number = 2
   @State tabOptions: SegmentButtonOptions = SegmentButtonOptions.tab({
     buttons: [{ text: '页签按钮1', accessibilityLevel: 'yes', accessibilityDescription: '页签按钮1 新手提醒' },
@@ -120,9 +119,9 @@ struct maxFontScaleTest {
   @State multiplySelectIconTextCapsuleSelectedIndexes: int[] = [1, 2]
 
   build() {
-    Column({ space: 20 }  as ColumnOptions) {
-      Column({ space: 25 }  as ColumnOptions) {
-        Text('maxFontScale: ' + this.maxFontScale).id('text')
+    Column({ space: 3 }  as ColumnOptions) {
+      Column({ space: 2 }  as ColumnOptions) {
+        Text('maxFontScale: ' + this.maxFontScale).id('text').height(15)
         SegmentButton({
           options: this.tabOptions,
           selectedIndexes: this.tabSelectedIndexes,
@@ -152,7 +151,7 @@ struct maxFontScaleTest {
               accessibilityDescription: 'SegmentButtonIconTextItem 新手提醒'
             }))
           })
-      }.width('90%')
+      }.width('80%')
     }
     .height('100%')
     .width('100%')
