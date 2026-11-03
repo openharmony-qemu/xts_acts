@@ -9739,6 +9739,7 @@ export default function ConnectionPublicTest(): void {
         let caseName: string = "testNetworkMgrPolicyShowAppNetPolicySetting_static_0100";
         hilog.info(domain, tag, `${caseName}---Start`);
         try {
+          g_context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
           policy.showAppNetPolicySettings(g_context).then(() => {
             hilog.info(domain, tag, `${caseName} showAppNetPolicySettings success`);
             ExpectTrue(true);
