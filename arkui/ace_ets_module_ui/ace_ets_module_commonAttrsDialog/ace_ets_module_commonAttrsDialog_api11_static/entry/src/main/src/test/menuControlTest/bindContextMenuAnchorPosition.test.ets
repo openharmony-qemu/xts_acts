@@ -66,13 +66,13 @@ export default function bindContextMenuAnchorPosition() {
     
     
     /**
-     * @tc.number   bindContextMenuAnchorPosition_static_0100
-     * @tc.name     bindContextMenuAnchorPosition_static_0100
-     * @tc.desc     bindContextMenuAnchorPosition_static_0100
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_BINDCONTEXTMENUANCHORPOSITION_STATIC_0100
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_BINDCONTEXTMENUANCHORPOSITION_STATIC_0100
+     * @tc.desc     SUB_ARKUI_ACE_ENGINE_BINDCONTEXTMENUANCHORPOSITION_STATIC_0100
      * @tc.level    Level.LEVEL0
      */
-it('bindContextMenuAnchorPosition_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('bindContextMenuAnchorPosition_static_0100 START');
+it('SUB_ARKUI_ACE_ENGINE_BINDCONTEXTMENUANCHORPOSITION_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('SUB_ARKUI_ACE_ENGINE_BINDCONTEXTMENUANCHORPOSITION_STATIC_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('bindContextMenuAnchorPosition1'));
@@ -97,20 +97,20 @@ it('bindContextMenuAnchorPosition_static_0100', Level.LEVEL0, async (done: () =>
       await CommonFunc.sleep(1000);
       await driver.clickAt({x: 2, y: 500, displayId: displayID});
       await CommonFunc.sleep(2000);
-      console.info('[bindContextMenuAnchorPosition_static_0100] END');
+      console.info('[SUB_ARKUI_ACE_ENGINE_BINDCONTEXTMENUANCHORPOSITION_STATIC_0100] END');
       done();
     });
 
     
     
     /**
-     * @tc.number   bindContextMenuAnchorPosition_static_0200
-     * @tc.name     bindContextMenuAnchorPosition_static_0200
-     * @tc.desc     bindContextMenuAnchorPosition_static_0200
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_BINDCONTEXTMENUANCHORPOSITION_STATIC_0200
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_BINDCONTEXTMENUANCHORPOSITION_STATIC_0200
+     * @tc.desc     SUB_ARKUI_ACE_ENGINE_BINDCONTEXTMENUANCHORPOSITION_STATIC_0200
      * @tc.level    Level.LEVEL0
      */
-it('bindContextMenuAnchorPosition_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('bindContextMenuAnchorPosition_static_0200 START');
+it('SUB_ARKUI_ACE_ENGINE_BINDCONTEXTMENUANCHORPOSITION_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('SUB_ARKUI_ACE_ENGINE_BINDCONTEXTMENUANCHORPOSITION_STATIC_0200 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('bindContextMenuAnchorPosition2'));
@@ -136,20 +136,20 @@ it('bindContextMenuAnchorPosition_static_0200', Level.LEVEL0, async (done: () =>
       await CommonFunc.sleep(1000);
       await driver.clickAt({x: 2, y: 500, displayId: displayID});
       await CommonFunc.sleep(2000);
-      console.info('[bindContextMenuAnchorPosition_static_0200] END');
+      console.info('[SUB_ARKUI_ACE_ENGINE_BINDCONTEXTMENUANCHORPOSITION_STATIC_0200] END');
       done();
     });
 
     
     
     /**
-     * @tc.number   bindContextMenuAnchorPosition_static_0300
-     * @tc.name     bindContextMenuAnchorPosition_static_0300
-     * @tc.desc     bindContextMenuAnchorPosition_static_0300
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_BINDCONTEXTMENUANCHORPOSITION_STATIC_0300
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_BINDCONTEXTMENUANCHORPOSITION_STATIC_0300
+     * @tc.desc     SUB_ARKUI_ACE_ENGINE_BINDCONTEXTMENUANCHORPOSITION_STATIC_0300
      * @tc.level    Level.LEVEL0
      */
-it('bindContextMenuAnchorPosition_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('bindContextMenuAnchorPosition_static_0300 START');
+it('SUB_ARKUI_ACE_ENGINE_BINDCONTEXTMENUANCHORPOSITION_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('SUB_ARKUI_ACE_ENGINE_BINDCONTEXTMENUANCHORPOSITION_STATIC_0300 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('bindContextMenuAnchorPosition3'));
@@ -175,7 +175,7 @@ it('bindContextMenuAnchorPosition_static_0300', Level.LEVEL0, async (done: () =>
       await CommonFunc.sleep(1000);
       await driver.clickAt({x: 2, y: 500, displayId: displayID});
       await CommonFunc.sleep(2000);
-      console.info('[bindContextMenuAnchorPosition_static_0300] END');
+      console.info('[SUB_ARKUI_ACE_ENGINE_BINDCONTEXTMENUANCHORPOSITION_STATIC_0300] END');
       done();
     });
   })

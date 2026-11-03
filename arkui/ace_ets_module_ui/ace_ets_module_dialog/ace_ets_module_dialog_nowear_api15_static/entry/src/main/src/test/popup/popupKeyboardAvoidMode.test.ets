@@ -75,100 +75,100 @@ export default function popupKeyboardAvoidMode() {
     })
 
     /**
-     * @tc.number   popupKeyboardAvoidMode_static_0100
-     * @tc.name     popupKeyboardAvoidMode_static_0100
-     * @tc.desc     popupKeyboardAvoidMode_static_0100
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_POPUPKEYBOARDAVOIDMODE_STATIC_0100
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_POPUPKEYBOARDAVOIDMODE_STATIC_0100
+     * @tc.desc     SUB_ARKUI_ACE_ENGINE_POPUPKEYBOARDAVOIDMODE_STATIC_0100
      * @tc.level    Level.LEVEL1
      */
-    it("popupKeyboardAvoidMode_static_0100", Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info("popupKeyboardAvoidMode_static_0100 START")
+    it("SUB_ARKUI_ACE_ENGINE_POPUPKEYBOARDAVOIDMODE_STATIC_0100", Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info("SUB_ARKUI_ACE_ENGINE_POPUPKEYBOARDAVOIDMODE_STATIC_0100 START")
       
         await CommonFunc.sleep(1000)
         let driver: Driver = Driver.create()
         let btn = await driver.findComponent(ON.id("popup"))
         await CommonFunc.sleep(1000)
         await (btn?.click() as Promise<void>)
-        console.info("[popupKeyboardAvoidMode_static_0100] popup click")
+        console.info("[SUB_ARKUI_ACE_ENGINE_POPUPKEYBOARDAVOIDMODE_STATIC_0100] popup click")
         await CommonFunc.sleep(1000)
         let confirm = await driver.findComponent(ON.text("confirm"))
-        console.info("[popupKeyboardAvoidMode_static_0100] confirm is null: " + (confirm == null))
+        console.info("[SUB_ARKUI_ACE_ENGINE_POPUPKEYBOARDAVOIDMODE_STATIC_0100] confirm is null: " + (confirm == null))
         expect(confirm != null).assertTrue()
 
         await CommonFunc.sleep(1000)
         await (confirm?.click() as Promise<void>)
         await driver.triggerKey(2070, AppStorage.get<number>('displayID')?.toInt() ?? 0)
       
-      console.info("[popupKeyboardAvoidMode_static_0100] END")
+      console.info("[SUB_ARKUI_ACE_ENGINE_POPUPKEYBOARDAVOIDMODE_STATIC_0100] END")
       done()
     })
 
     /**
-     * @tc.number   popupKeyboardAvoidMode_static_0200
-     * @tc.name     popupKeyboardAvoidMode_static_0200
-     * @tc.desc     popupKeyboardAvoidMode_static_0200
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_POPUPKEYBOARDAVOIDMODE_STATIC_0200
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_POPUPKEYBOARDAVOIDMODE_STATIC_0200
+     * @tc.desc     SUB_ARKUI_ACE_ENGINE_POPUPKEYBOARDAVOIDMODE_STATIC_0200
      * @tc.level    Level.LEVEL1
      */
-    it("popupKeyboardAvoidMode_static_0200", Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info("popupKeyboardAvoidMode_static_0200 START")
+    it("SUB_ARKUI_ACE_ENGINE_POPUPKEYBOARDAVOIDMODE_STATIC_0200", Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info("SUB_ARKUI_ACE_ENGINE_POPUPKEYBOARDAVOIDMODE_STATIC_0200 START")
       await CommonFunc.sleep(1000)
         let driver: Driver = Driver.create()
         let btn = await driver.findComponent(ON.id("popup"))
         await CommonFunc.sleep(1000)
         await (btn?.click() as Promise<void>)
-        console.info("[popupKeyboardAvoidMode_static_0100] popup click")
+        console.info("[SUB_ARKUI_ACE_ENGINE_POPUPKEYBOARDAVOIDMODE_STATIC_0100] popup click")
         await CommonFunc.sleep(1000)
         let confirm = await driver.findComponent(ON.text("confirm"))
-        console.info("[popupKeyboardAvoidMode_static_0100] confirm is null: " + (confirm == null))
+        console.info("[SUB_ARKUI_ACE_ENGINE_POPUPKEYBOARDAVOIDMODE_STATIC_0100] confirm is null: " + (confirm == null))
         expect(confirm != null).assertTrue()
 
         await CommonFunc.sleep(1000)
         await (confirm?.click() as Promise<void>)
         await driver.triggerKey(2070, AppStorage.get<number>('displayID')?.toInt() ?? 0)
-      console.info("[popupKeyboardAvoidMode_static_0200] END")
+      console.info("[SUB_ARKUI_ACE_ENGINE_POPUPKEYBOARDAVOIDMODE_STATIC_0200] END")
       done()
     })
 
     /**
-     * @tc.number   popupKeyboardAvoidMode_static_0300
-     * @tc.name     popupKeyboardAvoidMode_static_0300
-     * @tc.desc     popupKeyboardAvoidMode_static_0300
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_POPUPKEYBOARDAVOIDMODE_STATIC_0300
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_POPUPKEYBOARDAVOIDMODE_STATIC_0300
+     * @tc.desc     SUB_ARKUI_ACE_ENGINE_POPUPKEYBOARDAVOIDMODE_STATIC_0300
      * @tc.level    Level.LEVEL1
      */
-    it("popupKeyboardAvoidMode_static_0300", Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info("popupKeyboardAvoidMode_static_0300 START")
+    it("SUB_ARKUI_ACE_ENGINE_POPUPKEYBOARDAVOIDMODE_STATIC_0300", Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info("SUB_ARKUI_ACE_ENGINE_POPUPKEYBOARDAVOIDMODE_STATIC_0300 START")
       await CommonFunc.sleep(1000)
         let driver: Driver = Driver.create()
         let btn = await driver.findComponent(ON.id("popup"))
         await CommonFunc.sleep(1000)
         await (btn?.click() as Promise<void>)
-        console.info("[popupKeyboardAvoidMode_static_0100] popup click")
+        console.info("[SUB_ARKUI_ACE_ENGINE_POPUPKEYBOARDAVOIDMODE_STATIC_0100] popup click")
         await CommonFunc.sleep(1000)
         let confirm = await driver.findComponent(ON.text("confirm"))
-        console.info("[popupKeyboardAvoidMode_static_0100] confirm is null: " + (confirm == null))
+        console.info("[SUB_ARKUI_ACE_ENGINE_POPUPKEYBOARDAVOIDMODE_STATIC_0100] confirm is null: " + (confirm == null))
         expect(confirm != null).assertTrue()
 
         await CommonFunc.sleep(1000)
         await (confirm?.click() as Promise<void>)
         await driver.triggerKey(2070, AppStorage.get<number>('displayID')?.toInt() ?? 0)
-      console.info("[popupKeyboardAvoidMode_static_0300] END")
+      console.info("[SUB_ARKUI_ACE_ENGINE_POPUPKEYBOARDAVOIDMODE_STATIC_0300] END")
       done()
     })
 
     /**
-     * @tc.number   popupKeyboardAvoidMode_static_0400
-     * @tc.name     popupKeyboardAvoidMode_static_0400
-     * @tc.desc     popupKeyboardAvoidMode_static_0400
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_POPUPKEYBOARDAVOIDMODE_STATIC_0400
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_POPUPKEYBOARDAVOIDMODE_STATIC_0400
+     * @tc.desc     SUB_ARKUI_ACE_ENGINE_POPUPKEYBOARDAVOIDMODE_STATIC_0400
      * @tc.level    Level.LEVEL1
      */
-    it("popupKeyboardAvoidMode_static_0400", Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info("popupKeyboardAvoidMode_static_0400 START")
+    it("SUB_ARKUI_ACE_ENGINE_POPUPKEYBOARDAVOIDMODE_STATIC_0400", Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info("SUB_ARKUI_ACE_ENGINE_POPUPKEYBOARDAVOIDMODE_STATIC_0400 START")
       
         await CommonFunc.sleep(1000)
         let driver: Driver = Driver.create()
         let btn = await driver.findComponent(ON.id("none"))
         await CommonFunc.sleep(1000)
         await (btn?.click() as Promise<void>)
-        console.info("[popupKeyboardAvoidMode_static_0400] none click")
+        console.info("[SUB_ARKUI_ACE_ENGINE_POPUPKEYBOARDAVOIDMODE_STATIC_0400] none click")
         await CommonFunc.sleep(1000)
 
         let btn1 = await driver.findComponent(
@@ -176,7 +176,7 @@ export default function popupKeyboardAvoidMode() {
         )
         await CommonFunc.sleep(1000)
         await (btn1?.click() as Promise<void>)
-        console.info("[popupKeyboardAvoidMode_static_0400] CustomPopup click")
+        console.info("[SUB_ARKUI_ACE_ENGINE_POPUPKEYBOARDAVOIDMODE_STATIC_0400] CustomPopup click")
         await CommonFunc.sleep(1000)
 
         let btn0 = await driver.findComponent(ON.id("ipt"))
@@ -189,7 +189,7 @@ export default function popupKeyboardAvoidMode() {
         expect(confirm != null).assertFalse()
         await driver.triggerKey(2070, AppStorage.get<number>('displayID')?.toInt() ?? 0)
       
-      console.info("[popupKeyboardAvoidMode_static_0400] END")
+      console.info("[SUB_ARKUI_ACE_ENGINE_POPUPKEYBOARDAVOIDMODE_STATIC_0400] END")
       done()
     })
   })

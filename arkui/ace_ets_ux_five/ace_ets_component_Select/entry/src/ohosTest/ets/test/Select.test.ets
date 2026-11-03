@@ -32,75 +32,75 @@ export default function SelectTest() {
 
 
     /*
-     *@tc.number ArkUX_Select_Visual_0030
-     *@tc.name   ArkUX_Select_Visual_0030
+     *@tc.number SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0030
+     *@tc.name   SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0030
      *@tc.desc   Sets the optionWidth and optionHeight property parameter to 200
      */
-    it('ArkUX_Select_Visual_0030', Level.LEVEL1, async (done: Function) => {
-      console.info('ArkUX_Select_Visual_0030 START');
-      let strJson = getInspectorByKey('ArkUX_Select_Visual_0030');
+    it('SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0030', Level.LEVEL1, async (done: Function) => {
+      console.info('SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0030 START');
+      let strJson = getInspectorByKey('SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0030');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      console.info("ArkUX_Select_Visual_0030 obj is: " + JSON.stringify(obj));
+      console.info("SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0030 obj is: " + JSON.stringify(obj));
       let optionWidth: ESObject = obj.$attrs.optionWidth;
       let optionHeight: ESObject = obj.$attrs.optionHeight;
 
       expect(Math.abs(Math.round(optionWidth) - 300) <= 2).assertTrue();
       expect(Math.abs(Math.round(optionHeight) - 300) <= 2).assertTrue();
 
-      console.info('ArkUX_Select_Visual_0030 END ');
+      console.info('SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0030 END ');
       done();
     });
 
     /*
-     *@tc.number ArkUX_Select_Visual_0040
-     *@tc.name   ArkUX_Select_Visual_0040
+     *@tc.number SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0040
+     *@tc.name   SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0040
      *@tc.desc   Sets the optionWidth and optionHeight property parameter to 400
      */
-    it('ArkUX_Select_Visual_0040', Level.LEVEL1, async (done: Function) => {
-      console.info('ArkUX_Select_Visual_0040 START');
-      let strJson = getInspectorByKey('ArkUX_Select_Visual_0040');
+    it('SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0040', Level.LEVEL1, async (done: Function) => {
+      console.info('SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0040 START');
+      let strJson = getInspectorByKey('SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0040');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      console.info("ArkUX_Select_Visual_0040 obj is: " + JSON.stringify(obj));
+      console.info("SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0040 obj is: " + JSON.stringify(obj));
       let optionWidth: ESObject = obj.$attrs.optionWidth;
       let optionHeight: ESObject = obj.$attrs.optionHeight;
 
       expect(Math.abs(Math.round(optionWidth) - 600) <= 2).assertTrue();
       expect(Math.abs(Math.round(optionHeight) - 600) <= 2).assertTrue();
 
-      console.info('ArkUX_Select_Visual_0040 END ');
+      console.info('SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0040 END ');
       done();
     });
 
     /*
-     *@tc.number ArkUX_Select_Visual_0050
-     *@tc.name   ArkUX_Select_Visual_0050
+     *@tc.number SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0050
+     *@tc.name   SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0050
      *@tc.desc   Sets the optionWidth and optionHeight property parameter to FIT_TRIGGER and 600
      */
-    it('ArkUX_Select_Visual_0050', Level.LEVEL1, async (done: Function) => {
-      console.info('ArkUX_Select_Visual_0050 START');
-      let strJson = getInspectorByKey('ArkUX_Select_Visual_0050');
+    it('SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0050', Level.LEVEL1, async (done: Function) => {
+      console.info('SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0050 START');
+      let strJson = getInspectorByKey('SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0050');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      console.info("ArkUX_Select_Visual_0050 obj is: " + JSON.stringify(obj));
+      console.info("SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0050 obj is: " + JSON.stringify(obj));
       let optionWidth: ESObject = obj.$attrs.optionWidth;
       let optionHeight: ESObject = obj.$attrs.optionHeight;
 
       expect(Math.abs(Math.round(optionWidth) - 900) <= 2).assertTrue();
       expect(Math.abs(Math.round(optionHeight) - 900) <= 2).assertTrue();
 
-      console.info('ArkUX_Select_Visual_0050 END ');
+      console.info('SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0050 END ');
       done();
     });
 
     /*
-     *@tc.number ArkUX_Select_Visual_0060
-     *@tc.name   ArkUX_Select_Visual_0060
+     *@tc.number SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0060
+     *@tc.name   SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0060
      *@tc.desc   Sets the optionWidth and optionHeight property parameter to FIT_CONTENT and 600
      */
-    it('ArkUX_Select_Visual_0060', Level.LEVEL1, async (done: Function) => {
-      console.info('ArkUX_Select_Visual_0060 START');
-      let strJson = getInspectorByKey('ArkUX_Select_Visual_0060');
+    it('SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0060', Level.LEVEL1, async (done: Function) => {
+      console.info('SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0060 START');
+      let strJson = getInspectorByKey('SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0060');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      console.info("ArkUX_Select_Visual_0060 obj is: " + JSON.stringify(obj));
+      console.info("SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0060 obj is: " + JSON.stringify(obj));
 
       let optionWidth: ESObject = obj.$attrs.optionWidth;
       let optionHeight: ESObject = obj.$attrs.optionHeight;
@@ -108,27 +108,27 @@ export default function SelectTest() {
       expect(Math.abs(Math.round(optionWidth) - 1200) <= 2).assertTrue();
       expect(Math.abs(Math.round(optionHeight) - 1200) <= 2).assertTrue();
 
-      console.info('ArkUX_Select_Visual_0060 END ');
+      console.info('SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0060 END ');
       done();
     });
 
     /*
-     *@tc.number ArkUX_Select_Visual_0070
-     *@tc.name   ArkUX_Select_Visual_0070
+     *@tc.number SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0070
+     *@tc.name   SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0070
      *@tc.desc   Sets the optionWidth and optionHeight property parameter to default value
      */
-    it('ArkUX_Select_Visual_0070', Level.LEVEL1, async (done: Function) => {
-      console.info('ArkUX_Select_Visual_0070 START');
-      let strJson = getInspectorByKey('ArkUX_Select_Visual_0070');
+    it('SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0070', Level.LEVEL1, async (done: Function) => {
+      console.info('SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0070 START');
+      let strJson = getInspectorByKey('SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0070');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      console.info("ArkUX_Select_Visual_0070 obj is: " + JSON.stringify(obj));
+      console.info("SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0070 obj is: " + JSON.stringify(obj));
       let optionWidth: ESObject = obj.$attrs.optionWidth;
       let optionHeight: ESObject = obj.$attrs.optionHeight;
 
       expect(Math.abs(Math.round(optionWidth) - 1500) <= 2).assertTrue();
       expect(Math.abs(Math.round(optionHeight) - 1500) <= 2).assertTrue();
 
-      console.info('ArkUX_Select_Visual_0070 END ');
+      console.info('SUB_ARKUI_ACE_ENGINE_SELECT_VISUAL_0070 END ');
       done();
     });
 	

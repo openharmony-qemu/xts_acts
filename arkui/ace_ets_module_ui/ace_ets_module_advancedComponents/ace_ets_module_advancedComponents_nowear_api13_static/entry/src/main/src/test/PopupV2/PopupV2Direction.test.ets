@@ -62,95 +62,95 @@ export default function PopupV2DirectionTest() {
     });
 
     /**
-     * @tc.number   SUB_ACE_ARKUI_POPUPV2DIRECTION_STATIC_0100
-     * @tc.name     SUB_ACE_ARKUI_POPUPV2DIRECTION_STATIC_0100
-     * @tc.desc     SUB_ACE_ARKUI_POPUPV2DIRECTION_STATIC_0100
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_POPUPV2DIRECTION_STATIC_0100
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_POPUPV2DIRECTION_STATIC_0100
+     * @tc.desc     SUB_ARKUI_ACE_ENGINE_POPUPV2DIRECTION_STATIC_0100
      * @tc.level    Level.LEVEL2
      */
-    it('SUB_ACE_ARKUI_POPUPV2DIRECTION_STATIC_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('[SUB_ACE_ARKUI_POPUPV2DIRECTION_STATIC_0100] START');
+    it('SUB_ARKUI_ACE_ENGINE_POPUPV2DIRECTION_STATIC_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info('[SUB_ARKUI_ACE_ENGINE_POPUPV2DIRECTION_STATIC_0100] START');
       await CommonFunc.sleep(1000);
       let PopupV2List = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")
-      console.info('[SUB_ACE_ARKUI_POPUPV2DIRECTION_STATIC_0100] length ' + PopupV2List?.length);
+      console.info('[SUB_ARKUI_ACE_ENGINE_POPUPV2DIRECTION_STATIC_0100] length ' + PopupV2List?.length);
       expect(PopupV2List?.length).assertEqual(4);
-      console.info('[SUB_ACE_ARKUI_POPUPV2DIRECTION_STATIC_0100] END');
+      console.info('[SUB_ARKUI_ACE_ENGINE_POPUPV2DIRECTION_STATIC_0100] END');
       done();
     });
 
     /**
-     * @tc.number   SUB_ACE_ARKUI_POPUPV2DIRECTION_STATIC_0200
-     * @tc.name     SUB_ACE_ARKUI_POPUPV2DIRECTION_STATIC_0200
-     * @tc.desc     SUB_ACE_ARKUI_POPUPV2DIRECTION_STATIC_0200
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_POPUPV2DIRECTION_STATIC_0200
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_POPUPV2DIRECTION_STATIC_0200
+     * @tc.desc     SUB_ARKUI_ACE_ENGINE_POPUPV2DIRECTION_STATIC_0200
      * @tc.level    Level.LEVEL2
      */
-    it('SUB_ACE_ARKUI_POPUPV2DIRECTION_STATIC_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('[SUB_ACE_ARKUI_POPUPV2DIRECTION_STATIC_0200] START');
+    it('SUB_ARKUI_ACE_ENGINE_POPUPV2DIRECTION_STATIC_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info('[SUB_ARKUI_ACE_ENGINE_POPUPV2DIRECTION_STATIC_0200] START');
       await CommonFunc.sleep(1000);
       let Btn = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[0]
 
-      console.info("[SUB_ACE_ARKUI_POPUPV2DIRECTION_STATIC_0200] component direction is: " + Btn.getElement('$attrs').getString('direction'));
+      console.info("[SUB_ARKUI_ACE_ENGINE_POPUPV2DIRECTION_STATIC_0200] component direction is: " + Btn.getElement('$attrs').getString('direction'));
       expect(Btn.getElement('$attrs').getString('direction')).assertEqual('Direction.Auto');
-      console.info('[SUB_ACE_ARKUI_POPUPV2DIRECTION_STATIC_0200] END');
+      console.info('[SUB_ARKUI_ACE_ENGINE_POPUPV2DIRECTION_STATIC_0200] END');
       done();
     });
 
     /**
-     * @tc.number   SUB_ACE_ARKUI_POPUPV2DIRECTION_STATIC_0300
-     * @tc.name     SUB_ACE_ARKUI_POPUPV2DIRECTION_STATIC_0300
-     * @tc.desc     SUB_ACE_ARKUI_POPUPV2DIRECTION_STATIC_0300
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_POPUPV2DIRECTION_STATIC_0300
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_POPUPV2DIRECTION_STATIC_0300
+     * @tc.desc     SUB_ARKUI_ACE_ENGINE_POPUPV2DIRECTION_STATIC_0300
      * @tc.level    Level.LEVEL2
      */
-    it('SUB_ACE_ARKUI_POPUPV2DIRECTION_STATIC_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('[SUB_ACE_ARKUI_POPUPV2DIRECTION_STATIC_0300] START');
+    it('SUB_ARKUI_ACE_ENGINE_POPUPV2DIRECTION_STATIC_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info('[SUB_ARKUI_ACE_ENGINE_POPUPV2DIRECTION_STATIC_0300] START');
       await CommonFunc.sleep(1000);
       let Btn = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[1]
 
-      console.info("[SUB_ACE_ARKUI_POPUPV2DIRECTION_STATIC_0300] component direction is: " + Btn.getElement('$attrs').getString('direction'));
+      console.info("[SUB_ARKUI_ACE_ENGINE_POPUPV2DIRECTION_STATIC_0300] component direction is: " + Btn.getElement('$attrs').getString('direction'));
       expect(Btn.getElement('$attrs').getString('direction')).assertEqual('Direction.Auto');
-      console.info('[SUB_ACE_ARKUI_POPUPV2DIRECTION_STATIC_0300] END');
+      console.info('[SUB_ARKUI_ACE_ENGINE_POPUPV2DIRECTION_STATIC_0300] END');
       done();
     });
 
     /**
-     * @tc.number   SUB_ACE_ARKUI_POPUPV2DIRECTION_STATIC_0400
-     * @tc.name     SUB_ACE_ARKUI_POPUPV2DIRECTION_STATIC_0400
-     * @tc.desc     SUB_ACE_ARKUI_POPUPV2DIRECTION_STATIC_0400
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_POPUPV2DIRECTION_STATIC_0400
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_POPUPV2DIRECTION_STATIC_0400
+     * @tc.desc     SUB_ARKUI_ACE_ENGINE_POPUPV2DIRECTION_STATIC_0400
      * @tc.level    Level.LEVEL2
      */
-    it('SUB_ACE_ARKUI_POPUPV2DIRECTION_STATIC_0400', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('[SUB_ACE_ARKUI_POPUPV2DIRECTION_STATIC_0400] START');
+    it('SUB_ARKUI_ACE_ENGINE_POPUPV2DIRECTION_STATIC_0400', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info('[SUB_ARKUI_ACE_ENGINE_POPUPV2DIRECTION_STATIC_0400] START');
       await CommonFunc.sleep(1000);
       let Btn = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[2]
 
-      console.info("[SUB_ACE_ARKUI_POPUPV2DIRECTION_STATIC_0400] component direction is: " + Btn.getElement('$attrs').getString('direction'));
+      console.info("[SUB_ARKUI_ACE_ENGINE_POPUPV2DIRECTION_STATIC_0400] component direction is: " + Btn.getElement('$attrs').getString('direction'));
       expect(Btn.getElement('$attrs').getString('direction')).assertEqual('Direction.Ltr');
-      console.info('[SUB_ACE_ARKUI_POPUPV2DIRECTION_STATIC_0400] END');
+      console.info('[SUB_ARKUI_ACE_ENGINE_POPUPV2DIRECTION_STATIC_0400] END');
       done();
     });
 
     /**
-     * @tc.number   SUB_ACE_ARKUI_POPUPV2DIRECTION_STATIC_0500
-     * @tc.name     SUB_ACE_ARKUI_POPUPV2DIRECTION_STATIC_0500
-     * @tc.desc     SUB_ACE_ARKUI_POPUPV2DIRECTION_STATIC_0500
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_POPUPV2DIRECTION_STATIC_0500
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_POPUPV2DIRECTION_STATIC_0500
+     * @tc.desc     SUB_ARKUI_ACE_ENGINE_POPUPV2DIRECTION_STATIC_0500
      * @tc.level    Level.LEVEL2
      */
-    it('SUB_ACE_ARKUI_POPUPV2DIRECTION_STATIC_0500', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('[SUB_ACE_ARKUI_POPUPV2DIRECTION_STATIC_0500] START');
+    it('SUB_ARKUI_ACE_ENGINE_POPUPV2DIRECTION_STATIC_0500', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info('[SUB_ARKUI_ACE_ENGINE_POPUPV2DIRECTION_STATIC_0500] START');
       await CommonFunc.sleep(1000);
       let Btn = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[3]
-      console.info("[SUB_ACE_ARKUI_POPUPV2DIRECTION_STATIC_0500] component direction is: " + Btn.getElement('$attrs').getString('direction'));
+      console.info("[SUB_ARKUI_ACE_ENGINE_POPUPV2DIRECTION_STATIC_0500] component direction is: " + Btn.getElement('$attrs').getString('direction'));
       expect(Btn.getElement('$attrs').getString('direction')).assertEqual('Direction.Rtl');
-      console.info('[SUB_ACE_ARKUI_POPUPV2DIRECTION_STATIC_0500] END');
+      console.info('[SUB_ARKUI_ACE_ENGINE_POPUPV2DIRECTION_STATIC_0500] END');
       done();
     });
   })
