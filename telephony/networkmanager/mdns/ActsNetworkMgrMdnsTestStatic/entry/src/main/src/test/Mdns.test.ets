@@ -2897,6 +2897,14 @@ export default function mdnsTest(): void {
         let discoveryService = mdns.createDiscoveryService(context!,  serviceType);
         discoveryService.onDiscoveryStart((data: mdns.DiscoveryEventInfo) => {
           hilog.info(domain, tag, `${caseName} result: ${JSON.stringify(data)}`);
+          if (data.errorCode === undefined) {
+            ExpectTrue(data.errorCode === undefined, caseName);
+          } else {
+            ExpectTrue(data.errorCode === mdns.MdnsError.INTERNAL_ERROR ||
+              data.errorCode === mdns.MdnsError.ALREADY_ACTIVE ||
+              data.errorCode === mdns.MdnsError.MAX_LIMIT, caseName);
+          }
+          ExpectTrue(data !== null, caseName);
           ExpectTrue(data !== undefined, caseName);
           ExpectTrue(data.serviceInfo !== undefined, caseName);
           ExpectTrue(data.serviceInfo.serviceType !== undefined, caseName);
@@ -3279,6 +3287,24 @@ export default function mdnsTest(): void {
         done();
       }
       hilog.info(domain, tag, `${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testNetworkMgrMdnsError_static_0100
+     * @tc.number SUB_NetworkMgr_Mdns_MdnsError_0100
+     * @tc.desc   Test MdnsError Enum value
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrMdnsError_static_0100",TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3 ,async (done: () => void): Promise<void> => {
+      const caseName: string = "testNetworkMgrMdnsError_static_0100";
+      hilog.info(domain, tag, `${caseName} test start `);
+      ExpectTrue(0 === mdns.MdnsError.INTERNAL_ERROR, caseName);
+      ExpectTrue(1 === mdns.MdnsError.ALREADY_ACTIVE, caseName);
+      ExpectTrue(2 === mdns.MdnsError.MAX_LIMIT, caseName);
+      hilog.info(domain, tag, `${caseName} test end `);
+      done();
     });
   });
 }
