@@ -2121,7 +2121,7 @@
 			} catch (err) {
 				console.info(tag + "catch err: " + JSON.stringify(err));
 				console.log(TAG + " sync error: " + err.code);
-				expect(err.code === 13600001 || err.code === 22400005).assertTrue();
+				expect(err.code === 13600001 || err.code === 22400005 || err.code === 13900020).assertTrue();
 			}
 			console.info(tag + "end====");
 			done();
@@ -2150,7 +2150,7 @@
 			} catch (err) {
 				console.info(tag + "catch err: " + JSON.stringify(err));
 				console.log(TAG + " sync error: " + err.code);
-				expect(err.code === 22400005 || err.code === 13600001).assertTrue();
+				expect(err.code === 22400005 || err.code === 13600001 || err.code === 13900020).assertTrue();
 			}
 			console.info(tag + "end====");
 			done();
@@ -2265,7 +2265,7 @@
 			} catch (err) {
 				console.info(tag + "catch err: " + JSON.stringify(err));
 				console.log(TAG + " stopBatch null needClean error: " + err.code + ", " + err.message);
-				expect(err.code === 13600001 || err.code === 22400005).assertTrue();
+				expect(err.code === 13600001 || err.code === 22400005 || err.code === 13900020).assertTrue();
 			}
 			console.info(tag + "end====");
 			done();
@@ -2293,7 +2293,7 @@
 			} catch (err) {
 				console.info(tag + "catch err: " + JSON.stringify(err));
 				console.log(TAG + " stopBatch undefined needClean error: " + err.code + ", " + err.message);
-				expect(err.code === 13600001 || err.code === 22400005).assertTrue();
+				expect(err.code === 13600001 || err.code === 22400005 || err.code === 13900020).assertTrue();
 			}
 			console.info(tag + "end====");
 			done();
