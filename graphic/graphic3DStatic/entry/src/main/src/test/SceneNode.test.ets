@@ -28,10 +28,12 @@ import {
   Node,
   NodeType,
   PlaneGeometry,
+  PointLight,
   Position3,
   PostProcessSettings,
   Quaternion,
   RaycastResult,
+  RectLight,
   Scale3,
   Scene,
   SceneNodeParameters,
@@ -1230,6 +1232,238 @@ export default function sceneNodeTest() {
         done();
       } catch (err) {
         console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testPointLightCreation
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1050
+     * @tc.desc   Test createLight with LightType.POINT and verify lightType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPointLightCreation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testPointLightCreation";
+      console.info(msg + ' begin ');
+      try {
+        scene = await Scene.load();
+        expect(scene != null).assertTrue();
+        rf = scene!.getResourceFactory();
+
+        let pl: PointLight = await rf!.createLight({ name: "PointLight" }, LightType.POINT) as PointLight;
+        expect(pl != null).assertTrue();
+        expect(pl.lightType).assertEqual(LightType.POINT);
+        expect(pl.nodeType).assertEqual(NodeType.LIGHT);
+        console.info(msg + " PointLight created successfully");
+
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testPointLightCreation " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testPointLightRange
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1060
+     * @tc.desc   Test PointLight range property set and get
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPointLightRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testPointLightRange";
+      console.info(msg + ' begin ');
+      try {
+        scene = await Scene.load();
+        expect(scene != null).assertTrue();
+        rf = scene!.getResourceFactory();
+
+        let pl: PointLight = await rf!.createLight({ name: "PointLight" }, LightType.POINT) as PointLight;
+        expect(pl != null).assertTrue();
+
+        pl.range = 10.0;
+        expect(pl.range).assertEqual(10.0);
+        console.info(msg + " PointLight range verified");
+
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testPointLightRange " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testRectLightCreation
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1070
+     * @tc.desc   Test createLight with LightType.RECT and verify lightType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testRectLightCreation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testRectLightCreation";
+      console.info(msg + ' begin ');
+      try {
+        scene = await Scene.load();
+        expect(scene != null).assertTrue();
+        rf = scene!.getResourceFactory();
+
+        let rl: RectLight = await rf!.createLight({ name: "RectLight" }, LightType.RECT) as RectLight;
+        expect(rl != null).assertTrue();
+        expect(rl.lightType).assertEqual(LightType.RECT);
+        expect(rl.nodeType).assertEqual(NodeType.LIGHT);
+        console.info(msg + " RectLight created successfully");
+
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testRectLightCreation " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testRectLightWidth
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1080
+     * @tc.desc   Test RectLight width property default value and set/get
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testRectLightWidth', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testRectLightWidth";
+      console.info(msg + ' begin ');
+      try {
+        scene = await Scene.load();
+        expect(scene != null).assertTrue();
+        rf = scene!.getResourceFactory();
+
+        let rl: RectLight = await rf!.createLight({ name: "RectLight" }, LightType.RECT) as RectLight;
+        expect(rl != null).assertTrue();
+
+        expect(rl.width).assertEqual(1.0);
+
+        rl.width = 2.5;
+        expect(rl.width).assertEqual(2.5);
+        console.info(msg + " RectLight width verified");
+
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testRectLightWidth " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testRectLightHeight
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1090
+     * @tc.desc   Test RectLight height property default value and set/get
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testRectLightHeight', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testRectLightHeight";
+      console.info(msg + ' begin ');
+      try {
+        scene = await Scene.load();
+        expect(scene != null).assertTrue();
+        rf = scene!.getResourceFactory();
+
+        let rl: RectLight = await rf!.createLight({ name: "RectLight" }, LightType.RECT) as RectLight;
+        expect(rl != null).assertTrue();
+
+        expect(rl.height).assertEqual(1.0);
+
+        rl.height = 3.0;
+        expect(rl.height).assertEqual(3.0);
+        console.info(msg + " RectLight height verified");
+
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testRectLightHeight " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testRectLightTwoSided
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1100
+     * @tc.desc   Test RectLight twoSided property default value and set/get
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testRectLightTwoSided', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testRectLightTwoSided";
+      console.info(msg + ' begin ');
+      try {
+        scene = await Scene.load();
+        expect(scene != null).assertTrue();
+        rf = scene!.getResourceFactory();
+
+        let rl: RectLight = await rf!.createLight({ name: "RectLight" }, LightType.RECT) as RectLight;
+        expect(rl != null).assertTrue();
+
+        expect(rl.twoSided).assertFalse();
+
+        rl.twoSided = true;
+        expect(rl.twoSided).assertTrue();
+        console.info(msg + " RectLight twoSided verified");
+
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testRectLightTwoSided " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testCreateLightAllTypes
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1110
+     * @tc.desc   Test createLight with all LightType values and verify lightType for each
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCreateLightAllTypes', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testCreateLightAllTypes";
+      console.info(msg + ' begin ');
+      try {
+        scene = await Scene.load();
+        expect(scene != null).assertTrue();
+        rf = scene!.getResourceFactory();
+
+        let dirLight: Light = await rf!.createLight({ name: "DirLight" }, LightType.DIRECTIONAL);
+        expect(dirLight.lightType).assertEqual(LightType.DIRECTIONAL);
+
+        let spotLight: Light = await rf!.createLight({ name: "SpotLight" }, LightType.SPOT);
+        expect(spotLight.lightType).assertEqual(LightType.SPOT);
+
+        let pointLight: Light = await rf!.createLight({ name: "PointLight" }, LightType.POINT);
+        expect(pointLight.lightType).assertEqual(LightType.POINT);
+
+        let rectLight: Light = await rf!.createLight({ name: "RectLight" }, LightType.RECT);
+        expect(rectLight.lightType).assertEqual(LightType.RECT);
+
+        expect(LightType.DIRECTIONAL).assertEqual(1);
+        expect(LightType.SPOT).assertEqual(2);
+        expect(LightType.POINT).assertEqual(3);
+        expect(LightType.RECT).assertEqual(4);
+        console.info(msg + " All LightType enum values verified");
+
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testCreateLightAllTypes " + JSON.stringify(err));
         expect().assertFail();
         done();
       }
