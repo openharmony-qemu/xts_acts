@@ -150,6 +150,7 @@ export default function list_ListInitialIndex5Test() {
 
 
       let driver = Driver.create();
+      await CommonFunc.sleep(500);
       let swipeComponent = await driver.findComponent(ON.id('List_ListInitialIndex5_Container01'));
       let displayId = await swipeComponent.getDisplayId();
       await driver.swipeBetween(

@@ -121,12 +121,12 @@ struct GridEventUndefined {
           ForEach(this.data, (day: string) => {
             GridItem() {
               Text(day).fontSize(16)
-            }.width(40).height(40).borderWidth(2).borderColor(Color.Red)
+            }.width(40).height('20%').borderWidth(2).borderColor(Color.Red)
           }, (item: string) => item)
         }
         .id('GridM')
         .columnsTemplate('1fr 1fr')
-        .height(200)
+        .height('60%')
         .columnsGap(10)
         .rowsGap(10)
         .attributeModifier(this.myModifier)
@@ -150,6 +150,7 @@ struct GridEventUndefined {
               this.myModifier.message = 'Hello World';
             })
         }
+        .height('5%')
 
         Row() {
           Button('' + this.myModifier.onScrollFrameBeginValue)
@@ -168,6 +169,7 @@ struct GridEventUndefined {
               this.myModifier.onReachStartValue = !this.myModifier.onReachStartValue
             })
         }
+        .height('5%')
 
         Row() {
           Button('' + this.myModifier.onReachEndValue)
@@ -186,6 +188,7 @@ struct GridEventUndefined {
               this.myModifier.onScrollStopValue = !this.myModifier.onScrollStopValue
             })
         }
+        .height('5%')
 
         Row() {
           Button('' + this.myModifier.onScrollBarUpdateValue)
@@ -199,6 +202,7 @@ struct GridEventUndefined {
               this.myModifier.onScrollIndexValue = !this.myModifier.onScrollIndexValue
             })
         }
+        .height('5%')
 
       }
     }.width('100%').margin({ top: 5 } as Margin)
