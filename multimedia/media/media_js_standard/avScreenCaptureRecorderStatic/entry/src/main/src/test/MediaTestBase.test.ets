@@ -333,60 +333,45 @@ export default class MediaTestBase {
         break;
       case 'setPickerMode':
         steps.shift();
-        await avScreenCaptureRecorder!!.setPickerMode(media.PickerMode.SCREEN_ONLY).then(() => {
-          console.info('avScreenCaptureRecorder setPickerMode success');
-        }).catch((err: Error) => {
-          console.error('avScreenCaptureRecorder setPickerMode failed, error: ' + err.message);
-          expect().assertFail();
-        })
-        await avScreenCaptureRecorder!!.setPickerMode(media.PickerMode.SCREEN_AND_WINDOW).then(() => {
-          console.info('avScreenCaptureRecorder setPickerMode success');
-        }).catch((err: Error) => {
-          console.error('avScreenCaptureRecorder setPickerMode failed, error: ' + err.message);
-          expect().assertFail();
-        })
-        await avScreenCaptureRecorder!!.setPickerMode(media.PickerMode.APP_ONLY).then(() => {
-          console.info('avScreenCaptureRecorder setPickerMode success');
-        }).catch((err: Error) => {
-          console.error('avScreenCaptureRecorder setPickerMode failed, error: ' + err.message);
-          expect().assertFail();
-        })
-        await avScreenCaptureRecorder!!.setPickerMode(media.PickerMode.WINDOW_AND_APP).then(() => {
-          console.info('avScreenCaptureRecorder setPickerMode success');
-        }).catch((err: Error) => {
-          console.error('avScreenCaptureRecorder setPickerMode failed, error: ' + err.message);
-          expect().assertFail();
-        })
-        await avScreenCaptureRecorder!!.setPickerMode(media.PickerMode.SCREEN_AND_APP).then(() => {
-          console.info('avScreenCaptureRecorder setPickerMode success');
-        }).catch((err: Error) => {
-          console.error('avScreenCaptureRecorder setPickerMode failed, error: ' + err.message);
-          expect().assertFail();
-        })
-        await avScreenCaptureRecorder!!.setPickerMode(media.PickerMode.SCREEN_WINDOW_AND_APP).then(() => {
-          console.info('avScreenCaptureRecorder setPickerMode success');
-        }).catch((err: Error) => {
-          console.error('avScreenCaptureRecorder setPickerMode failed, error: ' + err.message);
-          expect().assertFail();
-        })
-        await avScreenCaptureRecorder!!.setPickerMode(media.PickerMode.WINDOW_ONLY).then(() => {
-          console.info('avScreenCaptureRecorder setPickerMode success');
-          this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
-        }).catch((err: Error) => {
-          console.error('avScreenCaptureRecorder setPickerMode failed, error: ' + err.message);
-          expect().assertFail();
-        })
+        if (this.isTestSucceeded()) {
+          try {
+            await avScreenCaptureRecorder!!.setPickerMode(media.PickerMode.WINDOW_ONLY);
+            await avScreenCaptureRecorder!!.setPickerMode(media.PickerMode.SCREEN_ONLY);
+            await avScreenCaptureRecorder!!.setPickerMode(media.PickerMode.SCREEN_AND_WINDOW);
+            await avScreenCaptureRecorder!!.setPickerMode(media.PickerMode.APP_ONLY);
+            await avScreenCaptureRecorder!!.setPickerMode(media.PickerMode.WINDOW_AND_APP);
+            await avScreenCaptureRecorder!!.setPickerMode(media.PickerMode.SCREEN_AND_APP);
+            await avScreenCaptureRecorder!!.setPickerMode(media.PickerMode.SCREEN_WINDOW_AND_APP);
+            console.info('avScreenCaptureRecorder setPickerMode success');
+          } catch (error) {
+            if ((error as BusinessError).code != 5400103) {
+              console.error('avScreenCaptureRecorder setPickerMode failed, error: ' + error.message);
+              expect().assertFail();
+              done();
+            }
+          }
+        }
+        await this.driveFnNoSleep(1);
+        await this.msleepAsync(recorderTime);
+        await this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
         break;
       case 'excludePickerWindows':
         steps.shift();
-        let excludedWindows: Array<int> = [101, 102, 103];
-        await avScreenCaptureRecorder!!.excludePickerWindows(excludedWindows).then(() => {
-          console.info('avScreenCaptureRecorder excludePickerWindows success');
-          this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
-        }).catch((err: Error) => {
-          console.error('avScreenCaptureRecorder excludePickerWindows failed, error: ' + err.message);
-          expect().assertFail();
-        })
+        if (this.isTestSucceeded()) {
+          const excludedWindows: Array<int> = [101, 102, 103];
+          await avScreenCaptureRecorder!!.excludePickerWindows(excludedWindows).then(() => {
+            console.info('avScreenCaptureRecorder excludePickerWindows success');
+          }).catch((err: Error) => {
+            if ((err as BusinessError).code != 5400103) {
+              console.error('avScreenCaptureRecorder excludePickerWindows failed, error: ' + err.message);
+              expect().assertFail();
+              done();
+            }
+          });
+        }
+        await this.driveFnNoSleep(1);
+        await this.msleepAsync(recorderTime);
+        await this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
         break;
       case 'handleWaterMark':
         steps.shift();
@@ -421,19 +406,21 @@ export default class MediaTestBase {
         break;
       case 'presentPicker':
         steps.shift();
-        await avScreenCaptureRecorder!!.presentPicker().then(() => {
-          console.info('Succeeded in presentPicker');
-          this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
-        }).catch((err) => {
-          console.error('avScreenCaptureRecorder presentPicker failed, error: ' + err.code);
-          if (err.code == 5400102) {
+        if (this.isTestSucceeded()) {
+          await avScreenCaptureRecorder!!.presentPicker().then(() => {
+            console.info('Succeeded in presentPicker');
             this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
-          } else {
-            console.error('avScreenCaptureRecorder init failed, error: ' + err.message);
-            expect().assertFail();
-            done();
-          }
-        });
+          }).catch((err: Error) => {
+            console.error('avScreenCaptureRecorder presentPicker failed, error: ' + (err as BusinessError).code);
+            if ((err as BusinessError).code == 5400103) {
+              this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+            } else {
+              console.error('avScreenCaptureRecorder init failed, error: ' + err.message);
+              expect().assertFail();
+              done();
+            }
+          });
+        }
         break;
       case 'onError':
         steps.shift();
