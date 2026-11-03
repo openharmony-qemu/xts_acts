@@ -335,15 +335,15 @@ export function photoSessionInfoChangeStaticTest(): void {
 
 
     /**
-     * @tc.name: SUB_MULTIMEDIA_CAMERA_onExposureInfoChange_callback_triggered_static_0100
-     * @tc.number: SUB_MULTIMEDIA_CAMERA_onExposureInfoChange_callback_triggered_static_0100
-     * @tc.desc: onExposureInfoChange callback triggered test.
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL1
+     * @tc.name SUB_MULTIMEDIA_CAMERA_ONEXPOSUREINFOCHANGE_CALLBACK_TRIGGERED_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ONEXPOSUREINFOCHANGE_CALLBACK_TRIGGERED_STATIC_0100
+     * @tc.desc onExposureInfoChange callback triggered test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
-    it('SUB_MULTIMEDIA_CAMERA_onExposureInfoChange_callback_triggered_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
-      const testName: string = 'SUB_MULTIMEDIA_CAMERA_onExposureInfoChange_callback_triggered_static_0100';
+    it('SUB_MULTIMEDIA_CAMERA_ONEXPOSUREINFOCHANGE_CALLBACK_TRIGGERED_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+      const testName: string = 'SUB_MULTIMEDIA_CAMERA_ONEXPOSUREINFOCHANGE_CALLBACK_TRIGGERED_STATIC_0100';
       console.info(TAG, testName + ' begin.');
       // ========== 预制过程 ==========
       createPhotoOutput();
@@ -370,15 +370,15 @@ export function photoSessionInfoChangeStaticTest(): void {
     });
 
     /**
-     * @tc.name: SUB_MULTIMEDIA_CAMERA_onExposureInfoChange_callback_triggered_static_0200
-     * @tc.number: SUB_MULTIMEDIA_CAMERA_onExposureInfoChange_callback_triggered_static_0200
-     * @tc.desc: onExposureInfoChange callback triggered test.
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL1
+     * @tc.name SUB_MULTIMEDIA_CAMERA_ONEXPOSUREINFOCHANGE_CALLBACK_TRIGGERED_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ONEXPOSUREINFOCHANGE_CALLBACK_TRIGGERED_STATIC_0200
+     * @tc.desc onExposureInfoChange callback triggered test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
-    it('SUB_MULTIMEDIA_CAMERA_onExposureInfoChange_callback_triggered_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
-      const testName: string = 'SUB_MULTIMEDIA_CAMERA_onExposureInfoChange_callback_triggered_static_0200';
+    it('SUB_MULTIMEDIA_CAMERA_ONEXPOSUREINFOCHANGE_CALLBACK_TRIGGERED_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+      const testName: string = 'SUB_MULTIMEDIA_CAMERA_ONEXPOSUREINFOCHANGE_CALLBACK_TRIGGERED_STATIC_0200';
       console.info(TAG, testName + ' begin.');
       // ========== 预制过程 ==========
       createVideoOutput();
@@ -405,15 +405,15 @@ export function photoSessionInfoChangeStaticTest(): void {
     });
 
     /**
-     * @tc.name: SUB_MULTIMEDIA_CAMERA_onExposureInfoChange_callback_triggered_static_0300
-     * @tc.number: SUB_MULTIMEDIA_CAMERA_onExposureInfoChange_callback_triggered_static_0300
-     * @tc.desc: onExposureInfoChange callback triggered test.
-     * @tc.type: FUNCTION
-     * @tc.size: MEDIUMTEST
-     * @tc.level: LEVEL1
+     * @tc.name SUB_MULTIMEDIA_CAMERA_ONEXPOSUREINFOCHANGE_CALLBACK_TRIGGERED_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ONEXPOSUREINFOCHANGE_CALLBACK_TRIGGERED_STATIC_0300
+     * @tc.desc onExposureInfoChange callback triggered test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
      */
-    it('SUB_MULTIMEDIA_CAMERA_onExposureInfoChange_callback_triggered_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
-      const testName: string = 'SUB_MULTIMEDIA_CAMERA_onExposureInfoChange_callback_triggered_static_0300';
+    it('SUB_MULTIMEDIA_CAMERA_ONEXPOSUREINFOCHANGE_CALLBACK_TRIGGERED_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+      const testName: string = 'SUB_MULTIMEDIA_CAMERA_ONEXPOSUREINFOCHANGE_CALLBACK_TRIGGERED_STATIC_0300';
       console.info(TAG, testName + ' begin.');
       // ========== 预制过程 ==========
       createVideoOutput();
