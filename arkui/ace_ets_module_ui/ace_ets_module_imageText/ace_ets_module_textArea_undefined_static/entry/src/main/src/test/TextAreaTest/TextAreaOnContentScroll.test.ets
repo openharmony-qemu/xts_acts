@@ -28,7 +28,7 @@ let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 
 export default function textAreaOnContentScroll() {
   describe('textAreaOnContentScroll', () => {
@@ -59,6 +59,7 @@ export default function textAreaOnContentScroll() {
         console.log("push textAreaOnContentScroll page error:" + err);
       }
       console.info("textAreaOnContentScroll beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
 

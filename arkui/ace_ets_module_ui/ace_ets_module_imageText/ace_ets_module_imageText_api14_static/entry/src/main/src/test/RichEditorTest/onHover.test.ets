@@ -31,7 +31,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
 
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 export default function RichEditorOnHoverTest() {
   describe('RichEditorOnHoverTest', () => {
     beforeAll(async (): Promise<void> => {
@@ -60,6 +60,7 @@ export default function RichEditorOnHoverTest() {
         console.log("push RichEditorOnHoverTest page error:" + err);
       }
       console.info("RichEditorOnHoverTest beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     }); 
 
 

@@ -39,7 +39,7 @@ import Utils from '../../../ets/MainAbility/common/Utils';
 import { Driver, ON, Component } from '@kit.TestKit';
 
 
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 
 export default function SearchOnDidInsertModifier() {
   describe('SearchOnDidInsertModifier', () => {
@@ -69,6 +69,7 @@ export default function SearchOnDidInsertModifier() {
         console.log("push SearchOnDidInsertModifier page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
     /**
          * @tc.number   SearchOnDidInsertModifier_static_0010

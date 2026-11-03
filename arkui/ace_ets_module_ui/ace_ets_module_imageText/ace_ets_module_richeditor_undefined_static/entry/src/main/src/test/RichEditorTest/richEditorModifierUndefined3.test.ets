@@ -40,7 +40,7 @@ import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility } from '../Util.test';
 import type { KeyCode } from '@ohos.multimodalInput.keyCode';
 
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 export default function richEditorModifierUndefined3() {
   describe('richEditorModifierUndefined3', () => {
     beforeAll(async (): Promise<void> => {
@@ -70,6 +70,7 @@ export default function richEditorModifierUndefined3() {
         console.log("push richEditorModifierUndefined3 page error:" + err);
       }
       console.info("richEditorModifierUndefined3 beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
 
     });
     afterEach(async () => {

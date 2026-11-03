@@ -30,7 +30,7 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 
 export default function textInputApi1() {
   describe('textInputApi1', () => {
@@ -39,7 +39,6 @@ export default function textInputApi1() {
       console.info("textInputApi1 beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
-
     });
 
     beforeEach(async (): Promise<void> => {
@@ -64,6 +63,7 @@ export default function textInputApi1() {
         console.log("push textInputApi1 page error:" + err);
       }
       console.info("textInputApi1 beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
 

@@ -32,7 +32,7 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 
 export default function TextMenuItemId() {
   describe('TextMenuItemId', () => {
@@ -61,6 +61,7 @@ export default function TextMenuItemId() {
         console.log("push TextMenuItemId page error:" + err);
       }
       console.info("TextMenuItemId beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     

@@ -30,7 +30,7 @@ import { UtilsTest } from '../Util.test';
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 export default function textAreaInputTest() {
   describe('textAreaInputTest', () => {
     beforeAll(async (): Promise<void> => {
@@ -57,6 +57,7 @@ export default function textAreaInputTest() {
         console.log("push textAreaInputTest page error:" + err);
       }
       console.info("textAreaInputTest beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
     afterEach(async () => {
       await CommonFunc.sleep(1000);

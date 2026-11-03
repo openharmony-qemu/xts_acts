@@ -30,7 +30,7 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 export default function RichEditorOnWillChangeTest() {
   describe('RichEditorOnWillChangeTest', () => {
     beforeAll(async (): Promise<void> => {
@@ -59,6 +59,7 @@ export default function RichEditorOnWillChangeTest() {
         console.log("push RichEditorOnWillChangeTest page error:" + err);
       }
       console.info("RichEditorOnWillChangeTest beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     }); 
 
 

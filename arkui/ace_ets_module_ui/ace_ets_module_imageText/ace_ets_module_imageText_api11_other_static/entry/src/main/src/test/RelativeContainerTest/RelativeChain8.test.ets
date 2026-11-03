@@ -57,13 +57,12 @@ let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
 
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 export default function RelativeChain8() {
   describe('RelativeChain8', () => {
     beforeAll(async () => {
       
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.other.static", "EntryAbility")
-      
     });
 
     beforeEach(async (): Promise<void> => {
@@ -85,6 +84,7 @@ export default function RelativeChain8() {
         console.log("push RelativeChain8 page error:" + err);
       }
       console.info("RelativeChain8 foreEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
 
     });
     afterEach(async () => {

@@ -30,7 +30,7 @@ let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 export default function SearchEvent2() {
   describe('SearchEvent2', (): void => {
     beforeAll(async (): Promise<void> => {
@@ -58,6 +58,7 @@ export default function SearchEvent2() {
         console.log("push FontSettingOptions page error:" + err);
       }
       console.info("FontSettingOptions beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     afterEach(async () : Promise<void> => {

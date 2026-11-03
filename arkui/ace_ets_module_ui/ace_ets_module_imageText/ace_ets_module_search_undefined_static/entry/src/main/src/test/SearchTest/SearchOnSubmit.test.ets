@@ -37,7 +37,7 @@ import Utils from '../../../ets/MainAbility/common/Utils';
 import { Driver, ON, Component } from '@kit.TestKit';
 
 
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 
 export default function SearchOnSubmitTest() {
   describe('SearchOnSubmitTest', () => {
@@ -67,6 +67,7 @@ export default function SearchOnSubmitTest() {
         console.log("push SearchOnSubmitTest page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
 

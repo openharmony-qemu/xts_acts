@@ -46,7 +46,7 @@ const searchIconLeftSpace = 12;
 const searchIconRightSpace = 8;
 const defaultSearchIconWidth = 16;
 
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 
 export default function search_gesture() {
   describe('search_gesture', () => {
@@ -75,6 +75,7 @@ export default function search_gesture() {
         console.log("push search_gesture page error:" + err);
       }
       console.info("search_gesture beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
     
     /**

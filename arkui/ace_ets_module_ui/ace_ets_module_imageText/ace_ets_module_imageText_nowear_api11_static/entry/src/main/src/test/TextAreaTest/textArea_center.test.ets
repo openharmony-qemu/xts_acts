@@ -29,7 +29,7 @@ import { UtilsTest } from '../Util.test';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 export default function textArea_center() {
   describe('textArea_center', () : void=> {
     beforeAll(async (): Promise<void> => {
@@ -57,6 +57,7 @@ export default function textArea_center() {
         console.log("push textArea_center page error:" + err);
       }
       console.info("textArea_center beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
 

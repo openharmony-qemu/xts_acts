@@ -17,7 +17,7 @@ let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 
 export default function TextAreaOnWillInsert() {
   describe('TextAreaOnWillInsert', () => {
@@ -46,6 +46,7 @@ export default function TextAreaOnWillInsert() {
       } catch (err) {
         console.log("push TextAreaOnWillInsert page error: " + err);
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     afterEach(async () => {

@@ -40,7 +40,7 @@ import { BusinessError } from '@ohos.base';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 export default function searchOnContentScrollModifier() {
   describe('searchOnContentScrollModifier', () => {
     beforeAll(async (): Promise<void> => {
@@ -72,6 +72,7 @@ export default function searchOnContentScrollModifier() {
         console.log("push searchOnContentScrollModifier page error:" + err);
       }
       console.info("searchOnContentScrollModifier beforeEach start4");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
 
@@ -93,8 +94,10 @@ export default function searchOnContentScrollModifier() {
       console.info('[' + tagName + '] START============================');
       let driver = Driver.create();
       //正常值
+      let inputStr:string = 'placeholder(search)placeholder(search)placeholder(search)placeholder(search)' +
+          'placeholder(search)placeholder(search)placeholder(search)placeholder(search)'
       let text = await driver.findComponent(ON.id('key_search_onContentScrollModifier_001'))
-      await (text?.inputText('placeholder(search)placeholder(search)placeholder(search)placeholder(search)') as Promise<void>)
+      await (text?.inputText(inputStr) as Promise<void>)
       await CommonFunc.sleep(2000);
       try {
         driver.triggerKey(2070, displayID);
@@ -117,7 +120,7 @@ export default function searchOnContentScrollModifier() {
       button2?.click()
       await CommonFunc.sleep(1000);
       let text1 = await driver.findComponent(ON.id('key_search_onContentScrollModifier_001'))
-      await (text1?.inputText('placeholder(search)placeholder(search)placeholder(search)placeholder(search)') as Promise<void>)
+      await (text1?.inputText(inputStr) as Promise<void>)
       await CommonFunc.sleep(1000);
       try {
         driver.triggerKey(2070, displayID);

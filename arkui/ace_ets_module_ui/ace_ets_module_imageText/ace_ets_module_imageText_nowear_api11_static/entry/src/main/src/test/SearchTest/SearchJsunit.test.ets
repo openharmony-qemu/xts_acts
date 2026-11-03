@@ -35,7 +35,7 @@ let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
 
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 
 export default function SearchJsunit() {
   describe('SearchJsunit', (): void => {
@@ -63,6 +63,7 @@ export default function SearchJsunit() {
         console.log("push SearchJsunit page error:" + err);
       }
       console.info("SearchJsunit beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     /**

@@ -32,13 +32,12 @@ let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 export default function monitorInvisibleAreaTest() {
   describe('monitorInvisibleAreaTest', () => {
     beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api18.static", "EntryAbility")
-
     });
     beforeEach(async (): Promise<void> => {
       console.info("monitorInvisibleAreaTest beforeEach start");
@@ -59,6 +58,7 @@ export default function monitorInvisibleAreaTest() {
         console.log("push monitorInvisibleAreaTest page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
 

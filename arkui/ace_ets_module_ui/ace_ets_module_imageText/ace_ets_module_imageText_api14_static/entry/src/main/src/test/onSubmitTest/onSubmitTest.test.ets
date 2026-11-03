@@ -32,7 +32,7 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 export default function onSubmitTest() {
   describe('onSubmitTest', () => {
     beforeAll(async (): Promise<void> => {
@@ -59,6 +59,7 @@ export default function onSubmitTest() {
         console.log("push onSubmitTest page error: " + err);
         expect().assertFail();
       }
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
 
     

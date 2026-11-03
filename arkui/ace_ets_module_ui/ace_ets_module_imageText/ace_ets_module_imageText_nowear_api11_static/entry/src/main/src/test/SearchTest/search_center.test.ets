@@ -47,7 +47,7 @@ let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
 
-let displayID: int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+let displayID: Int = 0;
 
 export default function search_center() {
   describe('search_center', () => {
@@ -79,6 +79,7 @@ export default function search_center() {
         console.log("push search_center page error:" + err);
       }
       console.info("search_center beforeEach end");
+      displayID = (AppStorage.get<number>('displayID') ?? 0).toInt();
     });
     
     /**
